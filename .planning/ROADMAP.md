@@ -7,7 +7,7 @@ This optimization transforms the Essentials politician lookup flow from heavywei
 ## Phases
 
 - [x] **Phase 1: Backend Cache Status Endpoint** - Lightweight status-check endpoint for cache freshness *(completed 2026-02-10)*
-- [ ] **Phase 2: Frontend Polling Optimization** - Custom hook with status polling and single data fetch
+- [x] **Phase 2: Frontend Polling Optimization** - Custom hook with status polling and single data fetch *(completed 2026-02-10)*
 - [ ] **Phase 3: SSE Preparation** - Strategy pattern for future transport swap
 
 ## Phase Details
@@ -47,8 +47,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — API helpers (checkCacheStatus, fetchPoliticiansSingle) and usePoliticianData custom hook
-- [ ] 02-02-PLAN.md — Migrate Dashboard.jsx, Results.jsx, and Home.jsx to use the new hook
+- [x] 02-01-PLAN.md — API helpers (checkCacheStatus, fetchPoliticiansSingle) and usePoliticianData custom hook
+- [x] 02-02-PLAN.md — Migrate Dashboard.jsx, Results.jsx, and Home.jsx to use the new hook
 
 ### Phase 3: SSE Preparation
 **Goal**: Codebase is ready for SSE migration with minimal future changes
@@ -73,9 +73,9 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Backend Cache Status Endpoint | 1/1 | ✓ Complete | 2026-02-10 |
-| 2. Frontend Polling Optimization | 0/2 | Planned | - |
+| 2. Frontend Polling Optimization | 2/2 | ✓ Complete | 2026-02-10 |
 | 3. SSE Preparation | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-02-10*
-*Last updated: 2026-02-10 — Phase 2 planned (2 plans)*
+*Last updated: 2026-02-10 — Phase 2 complete (2/2 plans, verified)*
