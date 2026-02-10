@@ -44,12 +44,11 @@ Plans:
   4. All three components (Dashboard.jsx, Results.jsx, Home.jsx) use the optimized hook
   5. Polling uses exponential backoff (1s -> 1.5s -> 2s -> 3s) instead of fixed intervals
 
-**Plans**: TBD (to be determined during phase planning)
+**Plans:** 2 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md — API helpers (checkCacheStatus, fetchPoliticiansSingle) and usePoliticianData custom hook
+- [ ] 02-02-PLAN.md — Migrate Dashboard.jsx, Results.jsx, and Home.jsx to use the new hook
 
 ### Phase 3: SSE Preparation
 **Goal**: Codebase is ready for SSE migration with minimal future changes
@@ -74,9 +73,9 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Backend Cache Status Endpoint | 1/1 | ✓ Complete | 2026-02-10 |
-| 2. Frontend Polling Optimization | 0/TBD | Not started | - |
+| 2. Frontend Polling Optimization | 0/2 | Planned | - |
 | 3. SSE Preparation | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-02-10*
-*Last updated: 2026-02-10 — Phase 1 complete*
+*Last updated: 2026-02-10 — Phase 2 planned (2 plans)*
