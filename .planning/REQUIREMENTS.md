@@ -52,26 +52,26 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BKND-01 | — | Pending |
-| BKND-02 | — | Pending |
-| BKND-03 | — | Pending |
-| BKND-04 | — | Pending |
-| BKND-05 | — | Pending |
-| BKND-06 | — | Pending |
-| FRNT-01 | — | Pending |
-| FRNT-02 | — | Pending |
-| FRNT-03 | — | Pending |
-| FRNT-04 | — | Pending |
-| FRNT-05 | — | Pending |
-| FRNT-06 | — | Pending |
-| FRNT-07 | — | Pending |
-| FRNT-08 | — | Pending |
+| BKND-01 | Phase 1 | Pending |
+| BKND-02 | Phase 1 | Pending |
+| BKND-03 | Phase 1 | Pending |
+| BKND-04 | Phase 1 | Pending |
+| BKND-05 | Phase 1 | Pending |
+| BKND-06 | Phase 1 | Pending |
+| FRNT-01 | Phase 2 | Pending |
+| FRNT-02 | Phase 2 | Pending |
+| FRNT-03 | Phase 2 | Pending |
+| FRNT-04 | Phase 2 | Pending |
+| FRNT-05 | Phase 2 | Pending |
+| FRNT-06 | Phase 3 | Pending |
+| FRNT-07 | Phase 2 | Pending |
+| FRNT-08 | Phase 2 | Pending |
 
 **Coverage:**
 - v1 requirements: 14 total
-- Mapped to phases: 0
-- Unmapped: 14
+- Mapped to phases: 14
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-09*
-*Last updated: 2026-02-09 after initial definition*
+*Last updated: 2026-02-10 after roadmap creation (traceability added)*
