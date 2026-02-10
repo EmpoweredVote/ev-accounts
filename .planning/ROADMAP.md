@@ -25,12 +25,10 @@ This optimization transforms the Essentials politician lookup flow from heavywei
   3. Backend includes Retry-After and Server-Timing headers in cache-status responses
   4. Existing /essentials/politicians/{zip} endpoint behavior is unchanged (backward compatible)
 
-**Plans**: TBD (to be determined during phase planning)
+**Plans:** 1 plan
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
-- [ ] 01-03: TBD
+- [ ] 01-01-PLAN.md — Implement cache status endpoint (handler, helpers, route registration)
 
 ### Phase 2: Frontend Polling Optimization
 **Goal**: Users experience 2-4x faster load times with 80%+ reduction in network traffic
@@ -44,7 +42,7 @@ Plans:
   2. Network traffic reduced by 80%+ during cache warming (1 data fetch instead of 8)
   3. Components unmount cleanly without memory leaks from polling timers
   4. All three components (Dashboard.jsx, Results.jsx, Home.jsx) use the optimized hook
-  5. Polling uses exponential backoff (1s → 1.5s → 2s → 3s) instead of fixed intervals
+  5. Polling uses exponential backoff (1s -> 1.5s -> 2s -> 3s) instead of fixed intervals
 
 **Plans**: TBD (to be determined during phase planning)
 
@@ -75,7 +73,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Backend Cache Status Endpoint | 0/TBD | Not started | - |
+| 1. Backend Cache Status Endpoint | 0/1 | Not started | - |
 | 2. Frontend Polling Optimization | 0/TBD | Not started | - |
 | 3. SSE Preparation | 0/TBD | Not started | - |
 
