@@ -6,7 +6,7 @@ This optimization transforms the Essentials politician lookup flow from heavywei
 
 ## Phases
 
-- [ ] **Phase 1: Backend Cache Status Endpoint** - Lightweight status-check endpoint for cache freshness
+- [x] **Phase 1: Backend Cache Status Endpoint** - Lightweight status-check endpoint for cache freshness *(completed 2026-02-10)*
 - [ ] **Phase 2: Frontend Polling Optimization** - Custom hook with status polling and single data fetch
 - [ ] **Phase 3: SSE Preparation** - Strategy pattern for future transport swap
 
@@ -28,7 +28,7 @@ This optimization transforms the Essentials politician lookup flow from heavywei
 **Plans:** 1 plan
 
 Plans:
-- [ ] 01-01-PLAN.md — Implement cache status endpoint (handler, helpers, route registration)
+- [x] 01-01-PLAN.md — Implement cache status endpoint (handler, helpers, route registration)
 
 ### Phase 2: Frontend Polling Optimization
 **Goal**: Users experience 2-4x faster load times with 80%+ reduction in network traffic
@@ -73,10 +73,10 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Backend Cache Status Endpoint | 0/1 | Not started | - |
+| 1. Backend Cache Status Endpoint | 1/1 | ✓ Complete | 2026-02-10 |
 | 2. Frontend Polling Optimization | 0/TBD | Not started | - |
 | 3. SSE Preparation | 0/TBD | Not started | - |
 
 ---
 *Roadmap created: 2026-02-10*
-*Last updated: 2026-02-10*
+*Last updated: 2026-02-10 — Phase 1 complete*
