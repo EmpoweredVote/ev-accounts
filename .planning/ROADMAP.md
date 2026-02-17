@@ -43,12 +43,12 @@ Plans:
   3. After a guest completes the quiz, a save prompt appears — not a login gate before viewing results
   4. When a guest creates an account, their answers carry over to the new account (server-wins if account already had answers)
   5. "Clear compass" is not visible to regular users — it appears only in the profile dropdown for admin accounts
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: Backend — add guest_state handling to /auth/register and /auth/login; add stance_seed to user model
-- [ ] 02-02: Frontend — CompassContext localStorage-first pattern; remove login gate; post-completion save prompt
-- [ ] 02-03: Frontend — admin-only clear compass in profile dropdown
+- [ ] 02-01-PLAN.md — Backend: RegisterHandler accepts guest_state, auto-login on register, DELETE /compass/answers/me (admin-only)
+- [ ] 02-02-PLAN.md — Frontend: CompassContext localStorage-first, route ungating, Quiz/Compass server call guards, Layout guest indicator + admin clear
+- [ ] 02-03-PLAN.md — Frontend: Save prompt modal with inline registration, banner nudge, Login.jsx server-wins merge toast
 
 ### Phase 3: Compass Visual Fixes
 **Goal**: The compass visualization renders correctly at all viewport sizes with no visual artifacts from spoke inversion
