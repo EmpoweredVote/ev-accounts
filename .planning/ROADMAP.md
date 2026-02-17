@@ -28,10 +28,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. A developer can log in, stay logged in across tab reloads, and log out without any changes to behavior from current production
   2. Cookie configuration is documented — domain, SameSite, Secure, and HttpOnly settings are written down with a note on what changes before domain goes live
   3. All Chi routes are categorized as public, guest-ok, or auth-required in a written audit so guest auth work has a clear contract
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Audit cookie config and document current session behavior; produce route auth level manifest
+- [ ] 01-01-PLAN.md — Middleware unit tests, auth integration tests, and auth audit document with route manifest and Phase 2 handoff
 
 ### Phase 2: Guest-First Auth
 **Goal**: Users can use the compass fully without creating an account, and admin controls are correctly gated
