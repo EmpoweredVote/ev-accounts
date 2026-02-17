@@ -2,38 +2,38 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-09)
+See: .planning/PROJECT.md (updated 2026-02-17)
 
-**Core value:** When a user searches a ZIP code, they get their politicians fast without the backend being hammered by redundant expensive queries during cache warming.
-
-**Current focus:** Phase 2 - Frontend Polling Optimization
+**Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
+**Current focus:** Phase 1 — Auth Safety Audit
 
 ## Current Position
 
-Phase: 2 of 3 (Frontend Polling Optimization)
-Plan: 2 of 2 in current phase (completed)
-Status: Phase complete
-Last activity: 2026-02-10 — Completed plan 02-02 (Component migration to polling hook)
+Phase: 1 of 5 (Auth Safety Audit)
+Plan: 0 of 1 in current phase
+Status: Ready to plan
+Last activity: 2026-02-17 — Roadmap created
 
-Progress: [██████░░░░] 67%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 1.9 minutes
-- Total execution time: 0.09 hours
+- Total plans completed: 0
+- Average duration: —
+- Total execution time: —
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-backend-cache-status-endpoint | 1 | 2.1m | 2.1m |
-| 02-frontend-polling-optimization | 2 | 3.9m | 1.9m |
+| - | - | - | - |
 
 **Recent Trend:**
-- Last 3 plans: 1.9m average
-- Trend: Consistent velocity
+- Last 5 plans: —
+- Trend: —
+
+*Updated after each plan completion*
 
 ## Accumulated Context
 
@@ -42,13 +42,9 @@ Progress: [██████░░░░] 67%
 Decisions are logged in PROJECT.md Key Decisions table.
 Recent decisions affecting current work:
 
-- Lightweight status endpoint over SSE (Render doesn't support SSE reliably)
-- No Redis for cache status (Postgres indexed lookup is fast enough)
-- Structure frontend for SSE swap (AWS migration planned, minimize rework)
-- [Phase 02-frontend-polling-optimization]: Exponential backoff with jitter for cache-status polling (1s * 1.5^attempt, max 5s)
-- [Phase 02-frontend-polling-optimization]: Split ZIP and address query paths in usePoliticianData hook
-- [Phase 02-frontend-polling-optimization]: Keep sessionStorage logic in components, not in hook (Results-specific behavior)
-- [Phase 02-frontend-polling-optimization]: Use activeQuery state to drive hook reactively (prevents fetching on every keystroke)
+- [Roadmap]: Monorepo migration deferred to v2 — no infrastructure phases in this milestone
+- [Roadmap]: Phase 3 (visual fixes) depends only on Phase 1, can run parallel to Phase 2 if two devs available
+- [Roadmap]: Stance randomization is direction-flip only (not full shuffle) — simpler, spectrum-preserving
 
 ### Pending Todos
 
@@ -56,14 +52,12 @@ None yet.
 
 ### Blockers/Concerns
 
-None yet.
+- AUTH-01 must land and be verified before Phase 2 begins — cookie config change + auth model change in same deploy risks silent logouts
+- Phase 5 candidate query: district-to-ZIP mapping for candidates differs from officeholder path — validate against election_records schema before 05-01 begins
+- Building images (ESST-04): confirm demo target localities before asset curation (assumed: U.S. Capitol, state capitols, Bloomington City Hall, LA City Hall)
 
 ## Session Continuity
 
-Last session: 2026-02-10T17:11:19Z
-Stopped at: Completed 02-02-PLAN.md (Component migration to polling hook)
+Last session: 2026-02-17
+Stopped at: Roadmap created, no plans written yet
 Resume file: None
-
----
-*State initialized: 2026-02-10*
-*Last updated: 2026-02-10T17:11:19Z*

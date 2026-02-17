@@ -1,81 +1,116 @@
-# Roadmap: Essentials Cache Polling Optimization
+# Roadmap: Empowered Vote — Quality & Consolidation
 
 ## Overview
 
-This optimization transforms the Essentials politician lookup flow from heavyweight polling (8 full queries during cache warming) to lightweight status checks with a single data fetch. Three phases deliver incremental value: backend gains a fast cache-status endpoint, frontend refactors polling logic into a custom hook with exponential backoff, and the architecture prepares for future SSE migration with a strategy pattern abstraction.
+Five phases that harden the auth foundation, open the compass to guests, fix visual regressions, enrich the compass UX with question context and stance randomization, then surface candidate data and display improvements in Essentials. Each phase delivers a coherent, testable capability before the next begins. The result is a platform that runs without login friction, renders correctly across screen sizes, and gives voters clear context about their elected officials and candidates.
 
 ## Phases
 
-- [x] **Phase 1: Backend Cache Status Endpoint** - Lightweight status-check endpoint for cache freshness *(completed 2026-02-10)*
-- [x] **Phase 2: Frontend Polling Optimization** - Custom hook with status polling and single data fetch *(completed 2026-02-10)*
-- [ ] **Phase 3: SSE Preparation** - Strategy pattern for future transport swap
+**Phase Numbering:**
+- Integer phases (1, 2, 3): Planned milestone work
+- Decimal phases (2.1, 2.2): Urgent insertions (marked with INSERTED)
+
+Decimal phases appear between their surrounding integers in numeric order.
+
+- [ ] **Phase 1: Auth Safety Audit** - Verify cookie/session config is stable before any auth model changes
+- [ ] **Phase 2: Guest-First Auth** - Users take the full quiz without logging in; admin controls tightened
+- [ ] **Phase 3: Compass Visual Fixes** - Fix sizing, title clipping, and spoke visual artifacts
+- [ ] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators
+- [ ] **Phase 5: Essentials Improvements** - Candidate display, building imagery, federal reordering, position dates
 
 ## Phase Details
 
-### Phase 1: Backend Cache Status Endpoint
-**Goal**: Backend provides fast cache-status checks without expensive JOIN queries
-
+### Phase 1: Auth Safety Audit
+**Goal**: The existing auth flow is confirmed safe before any session/cookie changes ship
 **Depends on**: Nothing (first phase)
-
-**Requirements**: BKND-01, BKND-02, BKND-03, BKND-04, BKND-05, BKND-06
-
+**Requirements**: AUTH-01
 **Success Criteria** (what must be TRUE):
-  1. Backend responds to cache-status requests in under 100ms
-  2. Backend returns per-tier freshness data (federal/state/local) with warming status
-  3. Backend includes Retry-After and Server-Timing headers in cache-status responses
-  4. Existing /essentials/politicians/{zip} endpoint behavior is unchanged (backward compatible)
-
-**Plans:** 1 plan
+  1. A developer can log in, stay logged in across tab reloads, and log out without any changes to behavior from current production
+  2. Cookie configuration is documented — domain, SameSite, Secure, and HttpOnly settings are written down with a note on what changes before domain goes live
+  3. All Chi routes are categorized as public, guest-ok, or auth-required in a written audit so guest auth work has a clear contract
+**Plans**: TBD
 
 Plans:
-- [x] 01-01-PLAN.md — Implement cache status endpoint (handler, helpers, route registration)
+- [ ] 01-01: Audit cookie config and document current session behavior; produce route auth level manifest
 
-### Phase 2: Frontend Polling Optimization
-**Goal**: Users experience 2-4x faster load times with 80%+ reduction in network traffic
-
+### Phase 2: Guest-First Auth
+**Goal**: Users can use the compass fully without creating an account, and admin controls are correctly gated
 **Depends on**: Phase 1
-
-**Requirements**: FRNT-01, FRNT-02, FRNT-03, FRNT-04, FRNT-05, FRNT-07, FRNT-08
-
+**Requirements**: AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06
 **Success Criteria** (what must be TRUE):
-  1. Users see appropriate loading states during cold cache warming without errors
-  2. Network traffic reduced by 80%+ during cache warming (1 data fetch instead of 8)
-  3. Components unmount cleanly without memory leaks from polling timers
-  4. All three components (Dashboard.jsx, Results.jsx, Home.jsx) use the optimized hook
-  5. Polling uses exponential backoff (1s -> 1.5s -> 2s -> 3s) instead of fixed intervals
-
-**Plans:** 2 plans
+  1. A user who has never logged in can open the compass, answer questions, and see their radar chart without being redirected to login
+  2. A guest who closes the browser and returns sees their previous answers already populated (localStorage persistence)
+  3. After a guest completes the quiz, a save prompt appears — not a login gate before viewing results
+  4. When a guest creates an account, their answers carry over to the new account (server-wins if account already had answers)
+  5. "Clear compass" is not visible to regular users — it appears only in the profile dropdown for admin accounts
+**Plans**: TBD
 
 Plans:
-- [x] 02-01-PLAN.md — API helpers (checkCacheStatus, fetchPoliticiansSingle) and usePoliticianData custom hook
-- [x] 02-02-PLAN.md — Migrate Dashboard.jsx, Results.jsx, and Home.jsx to use the new hook
+- [ ] 02-01: Backend — add guest_state handling to /auth/register and /auth/login; add stance_seed to user model
+- [ ] 02-02: Frontend — CompassContext localStorage-first pattern; remove login gate; post-completion save prompt
+- [ ] 02-03: Frontend — admin-only clear compass in profile dropdown
 
-### Phase 3: SSE Preparation
-**Goal**: Codebase is ready for SSE migration with minimal future changes
-
-**Depends on**: Phase 2
-
-**Requirements**: FRNT-06
-
+### Phase 3: Compass Visual Fixes
+**Goal**: The compass visualization renders correctly at all viewport sizes with no visual artifacts from spoke inversion
+**Depends on**: Phase 1
+**Requirements**: QUIZ-04, QUIZ-05, QUIZ-06, QUIZ-07
 **Success Criteria** (what must be TRUE):
-  1. Hook API remains stable when swapping polling for SSE transport
-  2. Strategy pattern documented and tested with mock SSE implementation
-  3. Environment variable toggles transport mechanism without code changes
-
-**Plans**: TBD (to be determined during phase planning)
+  1. On a standard laptop browser (1280px wide), the full compass chart fits on screen without any vertical scroll
+  2. Long issue titles do not push the chart to the left or cause any label clipping at the chart edge
+  3. Inverted spokes and non-inverted spokes look identical — no dashed/solid line difference is visible
+  4. The help box contains no references to dashed or solid lines
+**Plans**: TBD
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01: Fix compass sizing (fit-to-viewport) and title clipping layout bug
+- [ ] 03-02: Remove dashed/solid spoke visual distinction; update help box copy
+
+### Phase 4: Compass UX Enhancements
+**Goal**: Issue cards and the compass show meaningful question prompts, stances arrive in a stable randomized order per user, and users can edit answers inline from the library
+**Depends on**: Phase 2 (stance seed from guest identity), Phase 3 (visual fixes landed)
+**Requirements**: QUIZ-01, QUIZ-02, QUIZ-03, QUIZ-08, QUIZ-09
+**Success Criteria** (what must be TRUE):
+  1. Every issue card and the compare page show a question or prompt (e.g., "What should the government do about X?") instead of a bare category title
+  2. The order of stances on an issue is flipped or not-flipped permanently for each user — it never changes between sessions for the same user on the same issue
+  3. A user on the Library page can click any issue card and see a popup with the question, all stances, their current selection highlighted, and can change their selection without navigating away
+  4. Each issue card shows a badge or label indicating whether the issue is federal, state, or local in scope
+**Plans**: TBD
+
+Plans:
+- [ ] 04-01: Backend — add question TEXT column to compass.topics; admin UI textarea; DTO update
+- [ ] 04-02: Frontend — render question on issue cards and compare page with title fallback
+- [ ] 04-03: Frontend — stance randomization using permanent per-user seed (Fisher-Yates direction flip)
+- [ ] 04-04: Frontend — clickable issue card popup on library page (inline answer editing)
+- [ ] 04-05: Frontend — federal/state/local level indicator on issue cards
+
+### Phase 5: Essentials Improvements
+**Goal**: Voters can optionally see candidates alongside officials, the federal section is ordered correctly, and profiles show position dates and building imagery
+**Depends on**: Phase 1
+**Requirements**: ESST-01, ESST-02, ESST-03, ESST-04, ESST-05, ESST-06
+**Success Criteria** (what must be TRUE):
+  1. By default, Essentials shows only elected officials; a toggle reveals candidates who are running for office in the same results
+  2. Candidate cards are visually distinct from official cards — a badge or label makes the distinction unmistakable
+  3. Candidate cards show the election date for the race they are running in
+  4. The federal section shows U.S. Senate and U.S. House before executive branch officials (President/VP, Cabinet, Agencies)
+  5. A politician's profile card shows their position start date and, where known, their end date
+  6. Section headers for federal, state, and local tiers show a relevant building image (U.S. Capitol, state capitol, local city hall)
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: Backend — GET /essentials/candidates/{zip} endpoint; CandidateOut DTO; safe query path separate from officeholder upsert
+- [ ] 05-02: Frontend — Officials/Candidates toggle in Dashboard; candidate badge on card; election date display
+- [ ] 05-03: Frontend — federal category reordering in classify.js; building images from Supabase Storage; position start/end dates on profile card
 
 ## Progress
 
+**Execution Order:**
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if two developers are available.
+
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Backend Cache Status Endpoint | 1/1 | ✓ Complete | 2026-02-10 |
-| 2. Frontend Polling Optimization | 2/2 | ✓ Complete | 2026-02-10 |
-| 3. SSE Preparation | 0/TBD | Not started | - |
-
----
-*Roadmap created: 2026-02-10*
-*Last updated: 2026-02-10 — Phase 2 complete (2/2 plans, verified)*
+| 1. Auth Safety Audit | 0/1 | Not started | - |
+| 2. Guest-First Auth | 0/3 | Not started | - |
+| 3. Compass Visual Fixes | 0/2 | Not started | - |
+| 4. Compass UX Enhancements | 0/5 | Not started | - |
+| 5. Essentials Improvements | 0/3 | Not started | - |

@@ -83,33 +83,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| AUTH-03 | — | Pending |
-| AUTH-04 | — | Pending |
-| AUTH-05 | — | Pending |
-| AUTH-06 | — | Pending |
-| QUIZ-01 | — | Pending |
-| QUIZ-02 | — | Pending |
-| QUIZ-03 | — | Pending |
-| QUIZ-04 | — | Pending |
-| QUIZ-05 | — | Pending |
-| QUIZ-06 | — | Pending |
-| QUIZ-07 | — | Pending |
-| QUIZ-08 | — | Pending |
-| QUIZ-09 | — | Pending |
-| ESST-01 | — | Pending |
-| ESST-02 | — | Pending |
-| ESST-03 | — | Pending |
-| ESST-04 | — | Pending |
-| ESST-05 | — | Pending |
-| ESST-06 | — | Pending |
+| AUTH-01 | Phase 1 | Pending |
+| AUTH-02 | Phase 2 | Pending |
+| AUTH-03 | Phase 2 | Pending |
+| AUTH-04 | Phase 2 | Pending |
+| AUTH-05 | Phase 2 | Pending |
+| AUTH-06 | Phase 2 | Pending |
+| QUIZ-01 | Phase 4 | Pending |
+| QUIZ-02 | Phase 4 | Pending |
+| QUIZ-03 | Phase 4 | Pending |
+| QUIZ-04 | Phase 3 | Pending |
+| QUIZ-05 | Phase 3 | Pending |
+| QUIZ-06 | Phase 3 | Pending |
+| QUIZ-07 | Phase 3 | Pending |
+| QUIZ-08 | Phase 4 | Pending |
+| QUIZ-09 | Phase 4 | Pending |
+| ESST-01 | Phase 5 | Pending |
+| ESST-02 | Phase 5 | Pending |
+| ESST-03 | Phase 5 | Pending |
+| ESST-04 | Phase 5 | Pending |
+| ESST-05 | Phase 5 | Pending |
+| ESST-06 | Phase 5 | Pending |
 
 **Coverage:**
 - v1 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21 ⚠️
+- Mapped to phases: 21
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-17*
-*Last updated: 2026-02-17 after initial definition*
+*Last updated: 2026-02-17 after roadmap creation*
