@@ -1,50 +1,81 @@
-# Requirements: Essentials Cache Polling Optimization
+# Requirements: Empowered Vote — Quality & Consolidation
 
-**Defined:** 2026-02-09
-**Core Value:** When a user searches a ZIP code, they get their politicians fast without the backend being hammered by redundant expensive queries during cache warming.
+**Defined:** 2026-02-17
+**Core Value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
 
 ## v1 Requirements
 
 Requirements for this milestone. Each maps to roadmap phases.
 
-### Backend Status Endpoint
+### Auth & Guest Flow
 
-- [ ] **BKND-01**: Backend exposes `GET /essentials/cache-status/{zip}` that returns per-tier freshness (federal, state, local) as booleans plus an overall `allFresh` flag
-- [ ] **BKND-02**: Cache status endpoint responds in under 100ms using only indexed cache table lookups (no JOINs, no politician data)
-- [ ] **BKND-03**: Cache status endpoint returns `warming` boolean indicating if background warming is in progress
-- [ ] **BKND-04**: Cache status response includes `Retry-After` header when warming is in progress
-- [ ] **BKND-05**: Cache status response includes `Server-Timing` header with query duration
-- [ ] **BKND-06**: Existing `/essentials/politicians/{zip}` endpoint behavior is unchanged (backward compatible)
+- [ ] **AUTH-01**: Audit current cookie/session configuration to ensure guest-first auth changes don't break existing login flow across current domains (Netlify + Render/AWS)
+- [ ] **AUTH-02**: User can take full compass quiz without logging in
+- [ ] **AUTH-03**: Guest answers persist in localStorage across browser sessions
+- [ ] **AUTH-04**: Post-completion save prompt appears after quiz completion, not before
+- [ ] **AUTH-05**: Guest localStorage state merges to server on account creation (server-wins strategy)
+- [ ] **AUTH-06**: Clear compass is admin-only, accessible from profile dropdown
 
-### Frontend Polling Refactor
+### Compass Quiz UX
 
-- [ ] **FRNT-01**: Frontend polls `cache-status/{zip}` endpoint instead of full politicians endpoint during cache warming
-- [ ] **FRNT-02**: Frontend makes a single full data fetch to `/essentials/politicians/{zip}` only after status confirms `allFresh: true`
-- [ ] **FRNT-03**: All polling uses AbortController with proper cleanup on component unmount to prevent memory leaks
-- [ ] **FRNT-04**: Polling uses exponential backoff (1s, 1.5s, 2s, 3s) instead of fixed 1.5s intervals
-- [ ] **FRNT-05**: Custom `usePoliticianData` hook encapsulates status polling, data fetching, and state management
-- [ ] **FRNT-06**: Hook exposes consistent API that can be swapped from polling to SSE transport in the future
-- [ ] **FRNT-07**: Dashboard.jsx, Results.jsx, and Home.jsx all use the new hook (no callers left on old polling pattern)
-- [ ] **FRNT-08**: Cold miss case (no cached data, warmer in progress) shows appropriate loading state without errors
+- [ ] **QUIZ-01**: Issue cards show question/prompt instead of category title
+- [ ] **QUIZ-02**: Compare page shows question/prompt above politician stances
+- [ ] **QUIZ-03**: Clicking issue card on library page opens popup with question, stances, and user's current selection (editable in-place)
+- [ ] **QUIZ-04**: Compass visualization fits on page without scrolling (except screens smaller than mobile breakpoint)
+- [ ] **QUIZ-05**: Compass title cutoff fixed — long titles no longer push chart left or get clipped
+- [ ] **QUIZ-06**: Dashed/solid line visual distinction removed from inverted spokes (inversion logic preserved)
+- [ ] **QUIZ-07**: Help box updated to remove dashed/solid line references
+- [ ] **QUIZ-08**: Stance order randomly inverted per user, permanent per issue (direction flip preserving spectrum)
+- [ ] **QUIZ-09**: Federal/state/local level indicators shown on issue cards
+
+### Essentials Data & Display
+
+- [ ] **ESST-01**: Candidates appear in Essentials results with opt-in toggle (default: officials only)
+- [ ] **ESST-02**: Candidates visually differentiated from elected officials via badge or label
+- [ ] **ESST-03**: Election date shown on candidate cards
+- [ ] **ESST-04**: Building images shown for federal/state/local sections (U.S. Capitol, state capitols, courthouses for LA and Bloomington)
+- [ ] **ESST-05**: Federal section reordered — U.S. Senate and U.S. House shown before executive branch officials
+- [ ] **ESST-06**: Position start date and end date shown on politician profile card
 
 ## v2 Requirements
 
-Deferred to future milestone (AWS migration).
+Deferred to future release. Tracked but not in current roadmap.
 
-- **SSE-01**: Backend exposes SSE endpoint for real-time cache status updates
-- **SSE-02**: Frontend hook supports SSE transport via environment variable toggle
-- **SSE-03**: Progressive display shows federal/state data immediately while local cache warms
+### Compass Enhancements
+
+- **COMP-01**: Issue importance weighting per user (affects match quality)
+- **COMP-02**: Shareable result links encoding quiz seed in URL
+- **COMP-03**: Separate federal/state/local compass views
+- **COMP-04**: State and local issue content for compass topics
+
+### Infrastructure & Structure
+
+- **INFR-01**: Monorepo migration with npm workspaces (ev-ui as local dependency)
+- **INFR-02**: Infrastructure decision — AWS vs Netlify vs Render for production hosting
+- **INFR-03**: Cookie domain configuration for `.empowered.vote` when domain is active
+- **INFR-04**: Unified app consolidation (single SPA with shared navigation)
+
+### Essentials Enhancements
+
+- **ESST-07**: Candidate grouping with incumbent they are challenging
+- **ESST-08**: "Upcoming election" banner on sections with active races
+- **ESST-09**: Supabase politician image proxy (if BallotReady CDN URLs prove unstable)
 
 ## Out of Scope
 
+Explicitly excluded. Documented to prevent scope creep.
+
 | Feature | Reason |
 |---------|--------|
-| Redis for cache status | Postgres indexed lookup is fast enough; avoids new infrastructure dependency |
-| WebSocket infrastructure | Overkill for unidirectional status updates |
-| Changes to cache TTL (90-day) | Current TTL is working well |
-| Changes to warming logic or advisory locks | Current concurrency pattern is sound |
-| Changes to address search flow | Already returns immediately, no polling issue |
-| Mobile-specific polling optimizations | Can be added later if needed |
+| Mobile app | Web-first; mobile later |
+| Real-time chat | High complexity, not core to civic engagement value |
+| New prototype features | Focus on polishing existing ones this milestone |
+| Data import automation | Manual processes acceptable for now |
+| Full monorepo migration | Developer tooling improvement deferred; current structure works for demo |
+| Infrastructure migration | Research only for v2; keep current hosting |
+| OAuth login (Google, GitHub) | Email/password sufficient for current user base |
+| TypeScript migration | Introduces overhead disproportionate to team size |
+| Vite version reconciliation | Unnecessary risk mid-milestone (CompassV2 on 6.x, essentials on 7.x) |
 
 ## Traceability
 
@@ -52,26 +83,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BKND-01 | Phase 1 | Pending |
-| BKND-02 | Phase 1 | Pending |
-| BKND-03 | Phase 1 | Pending |
-| BKND-04 | Phase 1 | Pending |
-| BKND-05 | Phase 1 | Pending |
-| BKND-06 | Phase 1 | Pending |
-| FRNT-01 | Phase 2 | Pending |
-| FRNT-02 | Phase 2 | Pending |
-| FRNT-03 | Phase 2 | Pending |
-| FRNT-04 | Phase 2 | Pending |
-| FRNT-05 | Phase 2 | Pending |
-| FRNT-06 | Phase 3 | Pending |
-| FRNT-07 | Phase 2 | Pending |
-| FRNT-08 | Phase 2 | Pending |
+| AUTH-01 | — | Pending |
+| AUTH-02 | — | Pending |
+| AUTH-03 | — | Pending |
+| AUTH-04 | — | Pending |
+| AUTH-05 | — | Pending |
+| AUTH-06 | — | Pending |
+| QUIZ-01 | — | Pending |
+| QUIZ-02 | — | Pending |
+| QUIZ-03 | — | Pending |
+| QUIZ-04 | — | Pending |
+| QUIZ-05 | — | Pending |
+| QUIZ-06 | — | Pending |
+| QUIZ-07 | — | Pending |
+| QUIZ-08 | — | Pending |
+| QUIZ-09 | — | Pending |
+| ESST-01 | — | Pending |
+| ESST-02 | — | Pending |
+| ESST-03 | — | Pending |
+| ESST-04 | — | Pending |
+| ESST-05 | — | Pending |
+| ESST-06 | — | Pending |
 
 **Coverage:**
-- v1 requirements: 14 total
-- Mapped to phases: 14
-- Unmapped: 0
+- v1 requirements: 21 total
+- Mapped to phases: 0
+- Unmapped: 21 ⚠️
 
 ---
-*Requirements defined: 2026-02-09*
-*Last updated: 2026-02-10 after roadmap creation (traceability added)*
+*Requirements defined: 2026-02-17*
+*Last updated: 2026-02-17 after initial definition*
