@@ -5,34 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 2 — Guest-First Auth (Phase 1 complete)
+**Current focus:** Phase 2 complete — ready for Phase 3 (Visual Polish)
 
 ## Current Position
 
-Phase: 2 of 5 (Guest-First Auth) — IN PROGRESS
-Plan: 2 of 3 in current phase — COMPLETE
-Status: Phase 2 Plan 02 complete; ready for Plan 03 (save prompt modal)
-Last activity: 2026-02-17 — Phase 2 Plan 02 executed (frontend guest-first state and route ungating)
+Phase: 2 of 5 (Guest-First Auth) — COMPLETE
+Plan: 3 of 3 in current phase — COMPLETE
+Status: Phase 2 fully complete; ready for Phase 3 (visual polish / essentials UI)
+Last activity: 2026-02-17 — Phase 2 Plan 03 executed (save prompt modal + login toast)
 
-Progress: [████░░░░░░] 40%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 4 min
-- Total execution time: 7 min
+- Total plans completed: 3
+- Average duration: 3 min
+- Total execution time: 9 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
-| 02-guest-first-auth | 2 (of 3) | 4 min | 2 min |
+| 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min, 2 min
-- Trend: fast execution on focused backend tasks
+- Last 5 plans: 5 min, 2 min, 2 min
+- Trend: fast execution on focused frontend tasks
 
 *Updated after each plan completion*
 
@@ -53,6 +53,9 @@ Recent decisions affecting current work:
 - [02-01]: Session creation on register uses Create (not upsert) since user is brand new and cannot have existing session
 - [02-02]: CompassContext owns auth state (isLoggedIn/username) via /auth/me on mount; Layout.jsx no longer maintains its own auth fetch
 - [02-02]: Logout clears both server session and localStorage answers/writeIns for clean state reset
+- [02-03]: Inline modal registration uses custom form (not ev-ui AuthForm) — AuthForm is full-page and unsuitable for modal embedding
+- [02-03]: Login toast uses bg-[#00657c] literal hex — Tailwind JIT may not resolve custom color aliases; literal is always safe
+- [02-03]: Banner links to /register page rather than re-embedding inline form — persistent nudge is intentionally lower friction
 
 ### Pending Todos
 
@@ -67,5 +70,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-17
-Stopped at: Completed Phase 2 Plan 02 (02-02-PLAN.md)
-Resume file: .planning/phases/02-guest-first-auth/02-02-SUMMARY.md
+Stopped at: Completed Phase 2 Plan 03 (02-03-PLAN.md) — Phase 2 fully complete
+Resume file: .planning/phases/02-guest-first-auth/02-03-SUMMARY.md
