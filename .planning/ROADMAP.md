@@ -59,11 +59,11 @@ Plans:
   2. Long issue titles do not push the chart to the left or cause any label clipping at the chart edge
   3. Inverted spokes and non-inverted spokes look identical — no dashed/solid line difference is visible
   4. The help box contains no references to dashed or solid lines
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 03-01: Fix compass sizing (fit-to-viewport) and title clipping layout bug
-- [ ] 03-02: Remove dashed/solid spoke visual distinction; update help box copy
+- [ ] 03-01-PLAN.md — Fix compass chart viewport sizing (max-height constraint) and label overflow (2-line cap + font-size fallback); publish ev-ui 0.1.15
+- [ ] 03-02-PLAN.md — Remove dashed/solid spoke visual distinction from RadarChartCore; remove help box legend from SpokeHint; publish ev-ui 0.1.16
 
 ### Phase 4: Compass UX Enhancements
 **Goal**: Issue cards and the compass show meaningful question prompts, stances arrive in a stable randomized order per user, and users can edit answers inline from the library
