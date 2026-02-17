@@ -1,347 +1,271 @@
-# Feature Landscape
+# Features Research — Empowered Vote Platform
 
-**Domain:** Cache Status API & Background Data Loading UX
-**Researched:** 2026-02-09
+**Research date:** 2026-02-17
+**Milestone:** Platform quality & consolidation — demo-ready improvements
+**Question:** What features do civic engagement platforms have for quiz UX, candidate display, and multi-level government navigation? What's table stakes vs differentiating?
 
-## Table Stakes
+---
 
-Features users expect. Missing = product feels incomplete.
+## 1. Guest-First Quiz Experiences with Optional Account Creation
 
-| Feature | Why Expected | Complexity | Notes |
-|---------|--------------|------------|-------|
-| HTTP 202 Accepted for async operations | Industry standard for long-running operations | Low | Backend already returns 202, just needs consistency |
-| Status endpoint returning current state | Core async pattern - clients need to know if data is ready | Low | New endpoint: GET /essentials/cache/status |
-| Overall cache freshness indicator | Users need to know if they're seeing fresh vs stale data | Low | Backend already has this logic (X-Data-Status header) |
-| Retry-After header on 202 responses | Standard HTTP mechanism for polling guidance | Low | Backend already returns this, just needs verification |
-| Exponential backoff for polling | Prevents server overload, industry best practice | Medium | Client-side implementation, needs tuning per tier |
-| Skeleton loading UI | Reduces perceived wait time by 40% vs spinners | Medium | React component with shimmer animation |
-| Error state handling | Warmers can fail - users need clear messaging | Low | Display API errors, provide retry action |
-| Automatic reconnection on network failure | Mobile users expect resilient connections | Medium | Already handles via polling loop, needs testing |
+### What the market does
 
-## Differentiators
+iSideWith (the largest political quiz platform by traffic) allows full quiz completion without login. Results appear immediately. Account creation is surfaced post-completion as an optional "save your results" CTA. Vote Compass (used by national broadcasters for major elections) follows the same pattern: no login gate, results always visible, sharing is the viral loop. Pew Research Political Typology quiz is fully anonymous with no account option at all.
 
-Features that set product apart. Not expected, but valued.
+The pattern across all high-traffic political quizzes: **friction-free entry, optional persistence**.
 
-| Feature | Value Proposition | Complexity | Notes |
-|---------|-------------------|------------|-------|
-| Granular tier status (federal/state/local) | Shows which data is ready, enables progressive display | Medium | Status per tier: fresh/stale/warming/warmed |
-| Progressive result display | Show federal officials immediately while local warms | Medium | Display as each tier completes |
-| Progress indication with percentage | Reduces anxiety for longer waits (>5s) | Medium | Track warmer progress, return % complete |
-| Time estimate (time anchors) | "About 10 seconds" feels better than spinner | High | Needs historical timing data per tier |
-| Estimated completion time in status | Helps clients optimize polling intervals | High | Calculate based on typical BallotReady API latency |
-| Partial results flag | Clearly communicate "showing 8 of 15 officials" | Low | Backend already knows this, just expose it |
-| Containment status in response | Show which officials fully vs partially cover ZIP | Low | Backend has is_contained field, just expose it |
-| Smart polling with dynamic intervals | Faster polls initially, slower if taking long | Medium | Client adjusts based on Retry-After and progress |
-| Visual indication of data completeness | Progress bar or badge showing cache coverage | Medium | Requires percentage from status endpoint |
-| Optimistic UI for cached data | Show stale data immediately with "updating" indicator | Low | Frontend pattern, backend already returns stale data |
+### Table stakes
 
-## Anti-Features
+- Quiz runs fully in-browser without requiring an account
+- Results are visible before any save/login prompt
+- localStorage is used to persist responses across sessions for returning guests
+- "Save your results" CTA appears after quiz completion, not before
+- Returning guests see their previous answers without logging in
 
-Features to explicitly NOT build.
+### Differentiators
 
-| Anti-Feature | Why Avoid | What to Do Instead |
-|--------------|-----------|-------------------|
-| WebSocket for status updates | Overkill for infrequent updates (every 1-2s) | Stick with HTTP polling with smart intervals |
-| Real-time SSE for cache status | Adds complexity, not needed for 90-day TTL cache | Use status endpoint with exponential backoff |
-| Per-politician progress tracking | Too granular, adds DB overhead | Track at tier level (federal/state/local) |
-| Cache status in main data endpoint | Keeps data endpoint heavy during warming | Separate lightweight status endpoint |
-| Sub-second polling intervals | Hammers server, BallotReady API is inherently slow | Minimum 1s, typical 1.5-3s with backoff |
-| Manual "refresh" button | Implies broken auto-refresh, confuses users | Auto-polling handles everything |
-| Spinner-only loading state | Increases perceived wait time | Use skeleton screens showing expected layout |
-| "Loading..." text without context | Doesn't explain what's loading or why | "Finding your elected officials..." with tier context |
-| Time remaining countdown to the second | Feels torturous and often inaccurate | Use time anchors (5s, 10s, 15s, 30s) |
-| Polling without backoff | Wastes bandwidth, server resources | Exponential backoff with Retry-After hints |
+- Seamless account merge: guest localStorage state is promoted to server-side on login without data loss
+- Shareable result links that work for non-registered users
+- "Continue where you left off" messaging when a returning guest lands on the quiz
 
-## Feature Dependencies
+### Anti-features (deliberately avoid)
 
-```
-Overall cache status → Granular tier status (tier status enables overall)
-Granular tier status → Progressive result display (can't show progressively without knowing tier status)
-Granular tier status → Progress indication (needs per-tier completion to calculate %)
-Progress indication → Time estimate (% enables remaining time calculation)
-Status endpoint → Smart polling (status data informs polling intervals)
-Partial results flag → Visual completeness indicator (flag enables UI badge/message)
-Skeleton loading → Optimistic UI (skeleton is baseline, optimistic builds on it)
-```
+- Login walls before any quiz interaction — this is the primary conversion killer for political quiz tools
+- Mandatory email collection to see results
+- Showing a "register to unlock" gate in the middle of the quiz
 
-## MVP Recommendation
+### Complexity: Low-Medium
+The core change is unwrapping `ProtectedRoute` from quiz routes and routing localStorage answers through the existing `CompassContext`. The tricky part is the merge flow when a guest logs in mid-session: the client must POST buffered localStorage answers to the server and then clear local state. This is a known pattern (Shopify cart merge, etc.) but needs careful sequencing.
 
-Prioritize:
+### Dependencies
+- Requires `CompassContext` to work without a user ID (use `null` or a guest UUID)
+- "Clear compass" must be admin-only before guest mode ships — otherwise any user can clear their own results without login and the feature becomes pointless
+- Server-side answer persistence stays as-is; guest answers stay in localStorage only
 
-1. **Status endpoint with overall cache state** (table stakes, low complexity)
-   - GET /essentials/cache/status?zip={zip}
-   - Returns: { status: "fresh"|"stale"|"warming"|"warmed", retry_after: 2 }
+---
 
-2. **Granular tier status** (differentiator, medium complexity)
-   - Extends status endpoint: { tiers: { federal: "fresh", state: "fresh", local: "warming" } }
+## 2. Political Compass/Quiz UX Patterns — Stance Presentation and Bias Mitigation
 
-3. **Skeleton loading UI** (table stakes, medium complexity)
-   - Shows 3 cards (Federal/State/Local) with shimmer animation
-   - Much better perceived performance than spinner
+### What the market does
 
-4. **Progressive result display** (differentiator, medium complexity)
-   - Display federal/state immediately if fresh
-   - Show "Loading local officials..." skeleton for warming tier
-   - Update when local tier completes
+Positional bias (primacy/recency effects) is well-documented in survey research and explicitly addressed in political quiz design. The Prism Political Quiz uses a fixed seed for randomization so users can share a "same quiz" experience. Research on LLM political bias testing explicitly randomizes answer option order per administration to control for selection bias.
 
-5. **Smart polling with exponential backoff** (table stakes, medium complexity)
-   - Start: 1s interval
-   - If still warming: 1.5s → 2s → 3s → 4s → 6s (max)
-   - Respect Retry-After header when provided
-   - Max 8 attempts (16-20s total) then show "Taking longer than expected" message
+The Political Compass test uses agree/disagree on fixed statements — no ordering — which sidesteps the problem by design. iSideWith shows stances as radio buttons with fixed ordering (strongly agree → strongly disagree) because their scale is unidimensional. EV's quiz is multi-dimensional with custom stances per issue, which makes random ordering both necessary and more complex.
 
-6. **Partial results flag** (differentiator, low complexity)
-   - Status returns: { partial: true, loaded: 8, expected: 15 }
-   - UI shows: "Showing 8 of 15 officials (updating...)"
+The current EV implementation already randomizes which spokes are inverted (via `initRandomInversions`). The gap is that stance buttons within each issue are displayed in their database insertion order — a subtle but real bias vector.
 
-Defer:
+### Table stakes
 
-- **Progress percentage** (differentiator, medium complexity) - Nice to have, but tier status gives enough feedback
-- **Time estimates** (differentiator, high complexity) - Requires historical data collection, accuracy is hard
-- **Optimistic UI with stale data** (differentiator, low complexity) - MVP can work with skeleton only, add later for smoother UX
+- Stances presented in an order that does not systematically advantage any position
+- If stances have a natural spectrum (most supportive → least supportive), the full spectrum is preserved but the direction is randomized (not the internal ordering of a spectrum)
+- The per-user ordering is permanent once set — changing it on each visit would confuse returning users
 
-## Implementation Phases
+### Differentiators
 
-### Phase 1: Core Status Endpoint (Week 1)
-- Backend: Create /essentials/cache/status endpoint
-- Returns overall status + granular tier status
-- Includes partial results metadata
-- Respects existing X-Data-Status header logic
+- Showing a question/prompt above each issue rather than just a category title — users understand what they are being asked, not just the topic area
+- "Importance" weighting per issue (iSideWith does this; it significantly improves match quality)
+- Neutral "skip" option separate from a midpoint answer
 
-### Phase 2: Frontend Polling Refactor (Week 1-2)
-- Replace data endpoint polling with status endpoint polling
-- Implement exponential backoff (1s → 1.5s → 2s → 3s → max 6s)
-- Respect Retry-After header
-- Max 8 polls then fetch data regardless
+### Anti-features
 
-### Phase 3: Progressive Loading UX (Week 2)
-- Skeleton loading for each tier (Federal/State/Local cards)
-- Display ready tiers immediately
-- Show loading skeleton for warming tiers
-- Update as each tier completes
+- Randomizing stance ordering differently on every page visit — users who return and remember their previous answer will get confused
+- Hiding the stance labels until a user scrolls — all options must be immediately visible for informed choice
+- Showing stances with a visual scale that implies ordinal ranking when the stances are categorical
 
-### Phase 4: Polish (Week 3)
-- Visual indicators for partial results
-- "Taking longer than expected" message after 20s
-- Error states with retry action
-- Automatic reconnection testing
+### Complexity: Low
+The per-user permanent randomization is low complexity: generate a boolean per (user_id OR guest_uuid, topic_id) on first encounter, store in localStorage (guest) or server (authenticated), and use it to determine whether to reverse the stances array before render. The spectrum is preserved — only the direction flips. The existing `initRandomInversions` pattern in `CompassContext` is the right template; apply the same approach to stances.
 
-## UX Flow Example
+### Dependencies
+- Requires a question/prompt field on the `Topic` model (currently only `title` and `short_title` exist — `start_phrase` is close but used differently)
+- Guest randomization state lives in localStorage alongside guest answers
 
-**User searches ZIP 12345, cache is stale:**
+---
 
-1. **T=0s**: Dashboard shows 3 skeleton cards (Federal/State/Local with shimmer)
-   - Status: POST /search → 202 Accepted, Retry-After: 2
-   - Backend: Kicks warmers for all 3 tiers
+## 3. Candidate vs. Incumbent Display Patterns in Voter Guides
 
-2. **T=1s**: Poll 1 → Status endpoint
-   - Response: { status: "warming", tiers: { federal: "warming", state: "warming", local: "warming" } }
-   - UI: Continue showing skeletons
+### What the market does
 
-3. **T=2.5s**: Poll 2 (1.5s interval)
-   - Response: { status: "warming", tiers: { federal: "warmed", state: "warmed", local: "warming" } }
-   - UI: Replace Federal/State skeletons with actual official cards, keep Local skeleton
+Ballotpedia distinguishes incumbents with a badge and sorts them first within their race. Guides.vote (7M+ distribution in 2024) shows candidates grouped by race with clear "Incumbent" labels. Vote.gov links to official state voter guides which universally label incumbents.
 
-4. **T=4.5s**: Poll 3 (2s interval)
-   - Response: { status: "warming", tiers: { federal: "warmed", state: "warmed", local: "warming" }, partial: true, loaded: 10, expected: 15 }
-   - UI: Show banner "Showing 10 of 15 local officials (updating...)"
+The Center for Civic Design's voter guide field guide recommends presenting candidates with equal visual weight per position — not emphasizing incumbents over challengers — but does recommend clearly labeling status. The practical consensus: label the distinction, do not re-rank by it.
 
-5. **T=7.5s**: Poll 4 (3s interval)
-   - Response: { status: "warmed", tiers: { federal: "warmed", state: "warmed", local: "warmed" } }
-   - UI: Fetch full data, update Local section with all 15 officials, remove banner
+For EV's use case (politician lookup by ZIP, not a ballot context), the incumbent/candidate split is more about data freshness and relevance than ballot context. A candidate is someone running for an office they do not currently hold; showing them alongside current officeholders is genuinely useful for voters doing pre-election research.
 
-**User searches ZIP 54321, cache is fresh:**
+### Table stakes
 
-1. **T=0s**: Dashboard shows 3 skeleton cards
-   - Status: POST /search → 200 OK with data
-   - UI: Immediately replace skeletons with actual officials (no polling needed)
+- Clear visual distinction between current officeholders and candidates (badge, border style, or section header)
+- Candidate cards do not appear unless the user has explicitly opted in (toggle or filter) — candidates are noisier data and the primary use case is "who represents me now"
+- Election date shown on candidate cards so users know when the race is
+- Party affiliation on both incumbent and candidate cards
 
-## API Design Specification
+### Differentiators
 
-### Status Endpoint
+- Grouping candidates with the incumbent they are challenging (e.g., "Senate — Illinois" shows the incumbent plus any declared challengers in the same cluster)
+- "Upcoming election" banner on a section when candidates exist for that race
+- Linking candidate and incumbent profiles for direct comparison
 
-**Request:**
-```
-GET /essentials/cache/status?zip=12345
-```
+### Anti-features
 
-**Response (warming):**
-```json
-{
-  "status": "warming",
-  "retry_after": 2,
-  "tiers": {
-    "federal": "warmed",
-    "state": "warmed",
-    "local": "warming"
-  },
-  "partial": true,
-  "counts": {
-    "federal": 5,
-    "state": 8,
-    "local": 10,
-    "expected_local": 15
-  },
-  "timestamp": "2026-02-09T10:30:45Z"
-}
-```
+- Mixing candidates and incumbents in the same undifferentiated list — this is the worst UX pattern from a user trust perspective; users think they are seeing current officeholders
+- Showing candidate data without a clear "running for" or "candidate" label
+- Displaying candidates by default when users expect to see current representation
 
-**Response (fresh):**
-```json
-{
-  "status": "fresh",
-  "tiers": {
-    "federal": "fresh",
-    "state": "fresh",
-    "local": "fresh"
-  },
-  "counts": {
-    "federal": 5,
-    "state": 8,
-    "local": 15
-  },
-  "cached_at": "2026-02-08T14:20:00Z",
-  "timestamp": "2026-02-09T10:30:45Z"
-}
-```
+### Complexity: Medium
+The data model already has `ElectionRecord` and the BallotReady candidacy fetch. The work is: (1) a backend flag or separate endpoint for candidates vs. incumbents, (2) frontend toggle UI, (3) card visual variant for candidates. The BallotReady candidacy data already distinguishes these via the `is_appointed`/`is_vacant` fields and race data.
 
-**Status values:**
-- `fresh` - Cache is current (< 90 days old)
-- `stale` - Cache exists but expired, returning stale data
-- `warming` - Background warmers are actively fetching from BallotReady
-- `warmed` - Warming completed, fresh data available
+### Dependencies
+- BallotReady candidacy fetch (lazy-loaded on profile view) must run proactively for ZIP results, not just profiles, to populate candidates in the ZIP view
+- ElectionRecord must reliably distinguish current term vs. upcoming race
 
-### Modified Search Endpoint Behavior
+---
 
-**Address Search:**
-```
-POST /essentials/politicians/search
-Body: { "address": "123 Main St, Anytown, ST 12345" }
-```
+## 4. Multi-Level Government Navigation (Federal/State/Local)
 
-**Response when fresh:**
-```
-Status: 200 OK
-X-Data-Status: fresh
-X-Cache-Age: 2d
+### What the market does
 
-[...politician data...]
-```
+The existing three-tier tab UI (Federal / State / Local) matches what Ballotpedia, Google's "Who represents me" feature, and most congressional contact tools use. The tab pattern is standard. The differentiation opportunity is in the sub-grouping and ordering within each tier.
 
-**Response when stale (kicks warmers):**
-```
-Status: 202 Accepted
-X-Data-Status: warming
-Retry-After: 2
+Ballotpedia orders federal content as: Executive → Senate → House → Independent Agencies. This matches importance/familiarity. EV currently shows local before state before federal in the "All" view — the reverse of how most voters think about salience.
 
-[...stale politician data or empty array...]
-```
+The U.S. Web Design System (used by federal agencies) recommends leading with the most immediately actionable content for users' current context. For a ZIP-based lookup, local officials are often most actionable (council members, school board). But for name recognition and initial orientation, federal is usually the user's starting mental model.
 
-## Polling Algorithm (Client)
+### Table stakes
 
-```javascript
-async function pollCacheStatus(zip, maxAttempts = 8) {
-  const intervals = [1000, 1500, 2000, 3000, 4000, 6000, 6000, 6000]; // ms
+- Three-tier navigation (Federal / State / Local) is expected and must be present
+- Federal section always shows president/VP plus the user's senators and representative
+- State section always shows governor plus the user's state legislators
+- Within-tier grouping by category (e.g., U.S. Senate, U.S. House) with clear category headers
+- Category ordering matches political salience: for federal — President/VP, Senate, House, then Cabinet/agencies
 
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    const status = await fetch(`/essentials/cache/status?zip=${zip}`);
-    const data = await status.json();
+### Differentiators
 
-    if (data.status === 'warmed' || data.status === 'fresh') {
-      return data; // Done!
-    }
+- Building/landmark imagery per tier as visual anchoring (Capitol dome for federal, state capitol for state, city hall/courthouse for local)
+- "Your representatives" quick-jump to show only directly elected officials (filter out appointed/cabinet)
+- Position start/end dates on cards for context ("Term ends 2026")
+- Level indicator on compass issues (this issue affects federal policy vs. state law vs. local ordinance)
 
-    // Respect Retry-After if provided
-    const delay = data.retry_after
-      ? data.retry_after * 1000
-      : intervals[attempt];
+### Anti-features
 
-    await sleep(delay);
-  }
+- Infinite scroll within a tier with no visual grouping — users lose context
+- Hiding all three tiers behind a single long scrolling list without tier headers
+- Building images that are generic stock photos rather than actual local landmarks — this erodes trust with users who recognize their local buildings
 
-  // Max attempts reached, fetch data anyway
-  return { status: 'timeout' };
-}
-```
+### Complexity: Low-Medium
+Reordering federal categories is a frontend-only change to the `FEDERAL_ORDER` sort constant. Building images require curating a small asset library (one image per major government building type) and associating them with tier headers. The image sourcing/licensing is the hard part, not the implementation. Level indicators on compass issues require a new `level` field on the `Topic` model and a UI badge.
 
-## Complexity Assessment
+### Dependencies
+- Federal reordering: standalone, no backend changes
+- Building images: need to decide on image sourcing (Unsplash, Wikipedia Commons, or custom photography for local buildings)
+- Issue level indicators: requires `Topic` model migration (add `level` enum field) and admin UI to set it
 
-| Feature | Backend Effort | Frontend Effort | Risk |
-|---------|---------------|-----------------|------|
-| Status endpoint | 2-3 hours | - | Low (reuses existing cache logic) |
-| Granular tier status | 2-4 hours | - | Low (cache tables already separated) |
-| Polling refactor | - | 4-6 hours | Medium (needs careful state management) |
-| Skeleton loading | - | 3-4 hours | Low (UI component only) |
-| Progressive display | 1 hour | 4-5 hours | Medium (coordinate tier updates) |
-| Partial results | 1-2 hours | 2 hours | Low (straightforward counting) |
-| Smart backoff | - | 2-3 hours | Low (well-established pattern) |
+---
 
-**Total MVP estimate:** 6-12 hours backend, 15-20 hours frontend = 21-32 hours
+## 5. Building/Landmark Imagery for Government Levels
 
-## Success Metrics
+### What the market does
 
-**Performance:**
-- Status endpoint responds in < 100ms (database query only, no external API)
-- Average time to display first results: < 2s (federal/state tiers)
-- Average time to complete display: < 8s (all tiers)
-- Reduced API calls during warming: 8+ polls to data endpoint → 3-4 polls to status endpoint
+USA.gov uses the Capitol dome as a visual anchor for federal content. State government portals use state capitol photos. Most civic platforms that include building imagery use it as section headers or background cards — not inline with each politician card.
 
-**UX:**
-- Perceived wait time reduction: 40% (skeleton vs spinner)
-- User sees partial results within 2-3s instead of waiting 8-10s
-- Clear communication when data is incomplete
-- No confused users wondering if page is broken
+The pattern is: one representative image per tier/section, not one per politician or per category.
+
+### Table stakes
+
+- A recognizable civic building image per government tier (federal, state, local)
+- Images are used as section headers or background treatments, not card thumbnails
+- Alt text that identifies the building for accessibility
+
+### Differentiators
+
+- Actual local buildings: the Bloomington City Hall for Bloomington local section, the Los Angeles City Hall for LA local section — this makes the platform feel locally grounded
+- State capitol buildings: sourced from Wikipedia Commons (public domain), one per state
+- Graceful fallback: a generic civic building placeholder when a specific building image is not available
+
+### Anti-features
+
+- Using stock civic imagery that looks generic (a generic courthouse stock photo for every city)
+- Full-bleed background images that compete with politician card readability
+- Images that are not indexed/responsive, causing layout shift on mobile
+
+### Complexity: Low (implementation) / Medium (asset curation)
+The component work is straightforward — a section header with a background image. The effort is in sourcing and curating a reasonable set: U.S. Capitol (public domain), state capitols (Wikipedia Commons), and specific local buildings for cities the platform actively supports (LA, Bloomington initially).
+
+### Dependencies
+- Requires knowing which cities/localities the platform will actively support at launch — don't build image infrastructure for 50 cities if only 2 matter for the demo
+
+---
+
+## 6. Project Consolidation Patterns for Multi-App Platforms
+
+### What the market does
+
+The civic tech space has examples across the full spectrum:
+
+- **Monorepo + separate deployments** (e.g., Vote.org, Rock the Vote): All apps in one repo with shared component libraries, each deploying independently. Works well for 2-5 person teams. The shared library approach (EV's ev-ui pattern) is consistent with this.
+- **Unified single-page app with tab/section navigation**: Less common in civic tech, more common in SaaS. High integration cost but single deployment.
+- **Loosely coupled microsite federation**: Each feature is its own deployment (current EV pattern). Works at small scale; becomes harder to manage as the number of apps grows.
+
+For a 2-3 person team with existing apps, the decision criteria are: (1) how often do changes span multiple apps, (2) how much shared state needs to flow between apps, and (3) what is the deployment complexity budget.
+
+### Table stakes
+
+- Shared authentication across all apps (currently working via cookie-based session)
+- Consistent visual design language (currently working via Tailwind tokens and ev-ui)
+- Users do not need to re-login when moving between apps
+
+### Differentiators (if consolidating)
+
+- Single URL structure (e.g., `empowered.vote/compass`, `empowered.vote/find`) instead of subdomains/separate deployments
+- Shared navigation that makes the platform feel like one product, not a collection of tools
+- One build/deploy pipeline instead of one per app
+
+### Anti-features
+
+- Forcing a full monorepo rewrite before the platform is demo-ready — this is a distraction from the actual milestone
+- Building a shared-state architecture (global Redux/Zustand across apps) before the use cases are proven
+- Over-engineering the build pipeline (e.g., Nx or Turborepo) when the current multi-repo structure works and changes are infrequent across apps
+
+### Complexity: High (if consolidating now)
+A full monorepo migration during a demo-preparation milestone is high risk. The research question is right ("research and decide") — the answer should be: converge on a target architecture, do not migrate yet. The target is most likely a path-based SPA or a Vite multi-app monorepo, but migration should wait until after the demo. The current structure (separate apps, shared ev-ui library) can support the demo milestone without consolidation.
+
+### Dependencies
+- CORS and cookie domain settings in the backend must be updated if app URLs change
+- ev-ui library versioning becomes more complex in a monorepo (shared symlink vs. published package)
+
+---
+
+## Summary: Table Stakes vs. Differentiators vs. Anti-Features
+
+| Feature Area | Table Stakes | Differentiators | Anti-Features |
+|---|---|---|---|
+| Guest quiz | Full quiz without login; localStorage persistence; post-completion save prompt | Seamless guest-to-account merge; shareable result links | Login gate before quiz starts; email required to see results |
+| Stance presentation | Order does not systematically bias; permanent per-user randomization | Question/prompt field above issue; importance weighting per issue | Per-visit randomization; hidden stance labels |
+| Candidate display | Clear visual badge (Candidate vs. Incumbent); opt-in toggle; election date shown | Grouping challenger with incumbent; "Upcoming election" banner | Undifferentiated candidate/incumbent list; no "running for" label |
+| Multi-level navigation | Three-tier tabs; expected category grouping; correct priority ordering (Senate before agencies) | Building imagery; position start/end dates; issue level indicators | Infinite scroll without grouping; generic stock building images |
+| Project consolidation | Shared auth and design language (already done) | Single URL structure; unified nav; one deploy pipeline | Full monorepo migration during demo milestone; premature shared-state architecture |
+
+---
+
+## Key Dependencies Between Features
+
+1. **Guest quiz → stance randomization**: Both need a guest identity (localStorage UUID). Design one guest identity scheme and use it for both.
+2. **Stance randomization → question/prompt field**: The prompt gives users context when stances arrive in non-default order. Shipping randomization without the prompt degrades UX.
+3. **Candidate display → BallotReady candidacy data**: Candidates only appear if the candidacy lazy-fetch is running. This currently triggers on profile view, not on ZIP results. A ZIP-level candidacy pass is needed.
+4. **Building images → known city/locale list**: Do not build image infrastructure before confirming which localities the platform demonstrates. Start with U.S. Capitol + state capitols + Bloomington City Hall + LA City Hall as the minimum viable set.
+5. **Federal reordering → no backend changes**: This is purely a frontend sort constant. It is a quick win with zero risk.
+6. **Issue level indicators → Topic model migration**: A new `level` field on `compass.topics` requires a migration and admin UI. This is a backend + frontend change. Do not block other features on it.
+
+---
 
 ## Sources
 
-### Async API Patterns
-- [Asynchronous Operations in REST APIs](https://zuplo.com/learning-center/asynchronous-operations-in-rest-apis-managing-long-running-tasks)
-- [Microsoft: Asynchronous Request-Reply pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply)
-- [REST API Design for Long-Running Tasks](https://restfulapi.net/rest-api-design-for-long-running-tasks/)
-- [Adidas API Guidelines: Polling](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/execution/long-running-tasks/polling)
-
-### HTTP Headers
-- [HTTP Headers: Retry-After Patterns](https://thelinuxcode.com/http-headers-retry-after-practical-patterns-pitfalls-and-production-ready-use/)
-- [Retry-After Header Guide](https://http.dev/retry-after)
-- [MDN: Retry-After header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Retry-After)
-- [Retry-After in Practice](https://nurkiewicz.com/2015/02/retry-after-http-header-in-practice.html)
-
-### Caching Best Practices
-- [Speakeasy: Caching Best Practices in REST API Design](https://www.speakeasy.com/api-design/caching)
-- [API Caching Strategies](https://blog.dreamfactory.com/api-caching-strategies-challenges-and-examples)
-- [CloudThat: API Gateway Caching Strategies](https://www.cloudthat.com/resources/blog/api-gateway-caching-strategies-for-high-performance-apis)
-
-### Loading UX Patterns
-- [NN/G: Skeleton Screens 101](https://www.nngroup.com/articles/skeleton-screens/)
-- [LogRocket: Skeleton Loading Screen Design](https://blog.logrocket.com/ux-design/skeleton-loading-screen-design/)
-- [Carbon Design: Loading Patterns](https://carbondesignsystem.com/patterns/loading-pattern/)
-- [Medium: 6 Loading State Patterns That Feel Premium](https://medium.com/uxdworld/6-loading-state-patterns-that-feel-premium-716aa0fe63e8)
-
-### Progress Indication
-- [UserGuiding: Progress Trackers and Indicators](https://userguiding.com/blog/progress-trackers-and-indicators)
-- [NN/G: Progress Indicators Make a Slow System Less Insufferable](https://www.nngroup.com/articles/progress-indicators/)
-- [Prototypr: Guidelines for Time Indication and Progress Bars](https://blog.prototypr.io/guidelines-for-time-indication-and-progress-bars-in-user-interaction-design-4d5038084c84)
-- [Mobbin: Progress Indicator UI Design](https://mobbin.com/glossary/progress-indicator)
-
-### Real-Time Updates
-- [SSE vs WebSockets vs Long Polling 2025](https://dev.to/haraf/server-sent-events-sse-vs-websockets-vs-long-polling-whats-best-in-2025-5ep8)
-- [RxDB: WebSockets vs SSE vs Polling](https://rxdb.info/articles/websockets-sse-polling-webrtc-webtransport.html)
-- [ByteByteGo: Short/Long Polling, SSE, WebSocket](https://bytebytego.com/guides/shortlong-polling-sse-websocket/)
-- [Ably: WebSockets vs SSE](https://ably.com/blog/websockets-vs-sse)
-
-### Cache Warming
-- [Cache Warming Explained: Aerospike](https://aerospike.com/blog/cache-warming-explained)
-- [OneUpTime: Cache Warming Strategies 2026](https://oneuptime.com/blog/post/2026-01-30-cache-warming-strategies/view)
-- [GeeksforGeeks: Cold and Warm Cache in System Design](https://www.geeksforgeeks.org/system-design/cold-and-warm-cache-in-system-design/)
-- [Fasterize: Cache Warming Why and How](https://www.fasterize.com/en/blog/cache-warming-why-and-how/)
-
-### API Design Granularity
-- [Medium: API Design Granularity Concerns](https://medium.com/@mikolunar/api-design-granularity-concerns-part-1-da596eda3696)
-- [DZone: RESTful API Design Principle Granularity](https://dzone.com/articles/restful-api-design-principle-deciding-levels-of-gr)
-- [Nordic APIs: How Granular Should You Design APIs](https://nordicapis.com/how-granular-should-you-design-apis/)
-
-### Optimistic UI
-- [React: useOptimistic](https://react.dev/reference/react/useOptimistic)
-- [LogRocket: Understanding Optimistic UI React Hook](https://blog.logrocket.com/understanding-optimistic-ui-react-useoptimistic-hook/)
-- [FreeCodeCamp: Optimistic UI Pattern](https://www.freecodecamp.org/news/how-to-use-the-optimistic-ui-pattern-with-the-useoptimistic-hook-in-react/)
-- [RxDB: Building Optimistic UI](https://rxdb.info/articles/optimistic-ui.html)
+- [iSideWith — Political Quiz](https://www.isidewith.com/political-quiz)
+- [Vote Compass — 2024 United States Election](https://votecompass.com/)
+- [Guides.vote — Candidate Quiz](https://guides.vote/candidate-quiz)
+- [The Political Compass](https://www.politicalcompass.org/test)
+- [Pew Research Center — Political Typology Quiz](https://www.pewresearch.org/politics/quiz/political-typology/)
+- [Prism Political Quiz — Randomization Pattern](https://prismquiz.github.io/)
+- [Center for Civic Design — Designing a Voter Guide](https://civicdesign.org/fieldguides/designing-a-voter-guide-to-an-election/)
+- [Center for Civic Design — Best Practices for Official Voter Guides (PDF)](https://civicdesign.org/wp-content/uploads/2016/02/VoterGuides-DesignGuide-16-0221.pdf)
+- [Rock the Vote — Tech for Civic Engagement](https://www.rockthevote.org/programs-and-partner-resources/tech-for-civic-engagement/)
+- [Civic Design Systems: Ultimate Guide to Smart UX](https://www.maxiomtech.com/accessible-ux-civic-design-systems/)
+- [The political preferences of LLMs — PLOS One (response order bias research)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0306621)

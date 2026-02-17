@@ -1,336 +1,195 @@
 # Project Research Summary
 
-**Project:** Empowered Vote Essentials - Cache Status Polling Optimization
-**Domain:** Progressive loading with cache warming for political data API
-**Researched:** 2026-02-09
+**Project:** Empowered Vote — Quality & Consolidation Milestone
+**Domain:** Civic engagement platform (multi-app, guest-first quiz + politician discovery)
+**Researched:** 2026-02-17
 **Confidence:** HIGH
 
 ## Executive Summary
 
-This optimization project addresses performance bottlenecks in the existing politician data loading system by introducing a lightweight cache-status endpoint and refactoring frontend polling logic. Currently, the frontend polls a heavyweight endpoint returning full politician datasets (50KB+) every 1.5 seconds during cache warming, resulting in excessive bandwidth usage, database load, and poor user experience during the 8-12 second warming period.
+Empowered Vote is a brownfield civic engagement platform with a working Go + React stack. This milestone is not greenfield — it is six targeted improvements to an existing, deployed product: guest-first quiz access, compass topic prompts, stance randomization, candidate display, building imagery, and project consolidation. All four research dimensions agree on a central finding: none of these improvements require new runtime dependencies or architectural pivots. The existing stack (Go/Chi/GORM, React 19/Vite/Tailwind, Supabase PostgreSQL) handles every requirement, and the right moves are additive data model changes, localStorage-first state patterns, and an incremental monorepo migration.
 
-The recommended approach is a three-phase implementation: (1) add a lightweight cache-status endpoint in Go/Chi that returns minimal JSON (~200 bytes) from simple cache table queries, (2) refactor React 19 frontend to poll the status endpoint and fetch full data only once when ready, and (3) abstract the polling pattern using a strategy pattern to enable future SSE migration when moving to AWS infrastructure. This reduces bandwidth by 87%, database load by 62-87%, and perceived load time from 12 seconds to 2-4.5 seconds.
+The recommended approach is sequenced by dependency, not by feature complexity. The cookie domain fix and route audit must ship first — before any guest auth work — because existing sessions can be silently broken if cookie config changes alongside the auth model. Once that blocker is resolved, the guest-first auth flow unlocks stance randomization (both share the same guest identity/seed pattern), while topic question fields and candidate display can proceed in parallel on the backend. Building images are a low-risk late-milestone item. Consolidation to npm workspaces is a developer experience improvement, not a user-facing feature, and should be the first structural change so parallel dev streams benefit from the reduced ev-ui publish friction.
 
-The critical risk is a TOCTOU (Time-Of-Check-Time-Of-Use) race condition where cache status changes between the status check and data fetch. This is mitigated by either returning status and data atomically in a single response, or including cache version tokens for validation. Other key risks include advisory lock contention during BallotReady API calls, frontend memory leaks from uncleaned polling timers, and backward compatibility during rolling deployments. All risks have well-documented prevention strategies.
+The primary risk cluster is data integrity during the auth model transition and candidate data handling. Guest state must be explicitly synced on registration (not silently dropped), candidate records must be visually and data-model separated from incumbent records, and any schema changes on live tables must use explicit SQL migrations with backfills rather than relying on GORM AutoMigrate alone. For a 2-3 person team on a nonprofit civic platform, sequencing is the discipline: finishing shared dependencies (auth layer, data model) before dependent features begin is more important than parallelizing everything.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The existing stack (Go 1.24.3, Chi router, GORM, PostgreSQL, React 19, Vite) requires no new dependencies for this optimization. The approach leverages Go's stdlib `encoding/json` for minimal JSON responses, GORM's `Select()` with indexed queries for lightweight cache checks, and React's `useEffect` + `AbortController` for proper polling cleanup. For future SSE migration, Go stdlib provides SSE capabilities without additional libraries, and browser-native EventSource API requires no frontend dependencies.
+No new runtime dependencies are required for any of the six improvement areas. The existing Go 1.24.3/Chi/GORM backend, React 19/Vite/Tailwind CSS 4 frontends, and Supabase PostgreSQL handle all requirements. Supabase Storage (already the database provider) handles building images at $0 marginal cost via public bucket URLs. For project structure, npm workspaces at the repo root eliminates the ev-ui publish cycle without adding new tooling. Turborepo, Auth0, Clerk, React Query, and TypeScript migration are all explicitly out of scope for this milestone — each introduces overhead disproportionate to a 2-3 person team.
 
-**Core technologies:**
-- Chi Router (v5.x) — HTTP routing for status endpoint, already in stack, minimal and composable
-- GORM with single-table queries — Lightweight cache status checks avoiding JOINs, <10ms response time
-- React hooks (useState/useEffect/useRef) — Custom hook abstraction for poll/SSE strategy swap, zero new dependencies
-- Strategy pattern — Enables poll→SSE migration via environment variable without component changes
+**Core technologies (unchanged):**
+- Go + Chi + GORM: API backend — no changes; all new features are additive endpoints and schema columns
+- React 19 + Vite + Tailwind CSS 4: frontend — no version upgrades needed mid-milestone
+- Supabase PostgreSQL: database — AutoMigrate for dev convenience, explicit SQL migrations for live-table changes
+- Supabase Storage: building images — public bucket, direct `<img src>` with no SDK required
+- npm workspaces: project consolidation — local ev-ui symlink replaces publish cycle, medium confidence
 
-**Future-ready (SSE migration):**
-- Go stdlib `http.Flusher` or `tmaxmax/go-sse` — SSE server implementation when migrating to AWS
-- Browser EventSource API — Native SSE client, no library needed
+**Critical version note:** Vite version skew exists (CompassV2 on 6.x, essentials on 7.x). Do not attempt to reconcile during this milestone; it creates unnecessary risk.
 
 ### Expected Features
 
-Research identified clear distinctions between table stakes (must have), competitive differentiators (should have), and anti-features (explicitly avoid). The MVP should focus on core progressive loading improvements while deferring complex features like progress percentages and time estimates.
+Research across iSideWith, Vote Compass, Ballotpedia, Center for Civic Design, and Guides.vote identifies clear table-stakes patterns that EV is missing and differentiators worth building now vs. deferring.
 
 **Must have (table stakes):**
-- Lightweight cache-status endpoint returning freshness state (fresh/warming/stale)
-- Granular tier status (federal/state/local) for progressive display
-- Exponential backoff polling (1s → 1.5s → 2s → 3s max 6s)
-- Skeleton loading UI reducing perceived wait time by 40%
-- Proper error handling with retry actions
+- Guest quiz without login — all high-traffic political quiz platforms (iSideWith, Vote Compass, Pew Typology) run without auth gates; this is the primary conversion driver
+- localStorage answer persistence for returning guests — users expect their answers to survive tab close
+- Post-completion save prompt, not pre-quiz login gate — the login wall before quiz results is the primary conversion killer
+- Permanent per-user stance ordering — re-randomizing on each visit confuses returning users; the order must be stable once set
+- Clear visual distinction between candidates and officeholders — mixing them in one undifferentiated list is a misinformation risk on a civic platform
+- Opt-in candidate toggle (default: officials only) — candidates are noisier data; users' primary need is "who represents me now"
+- Three-tier government navigation (Federal/State/Local) with correct priority ordering — standard across all voter guide platforms
 
-**Should have (competitive):**
-- Progressive result display (show federal/state immediately while local warms)
-- Partial results flag ("Showing 8 of 15 officials")
-- Containment status (which officials fully vs partially cover ZIP)
-- Smart polling respecting Retry-After headers
-- Optimistic UI showing stale data with "updating" indicator
+**Should have (competitive differentiators):**
+- Seamless guest-to-account merge (localStorage state promoted to server on registration)
+- Question/prompt field above each stance issue (gives context when stances arrive in non-default order)
+- Building/landmark imagery per government tier (U.S. Capitol, state capitols, actual local city halls)
+- Election date shown on candidate cards
+- Federal category ordering: President/VP → Senate → House → Cabinet/Agencies (currently reversed)
 
-**Defer (v2+):**
-- Progress percentage tracking (nice-to-have, tier status provides sufficient feedback)
-- Time estimates (requires historical data, hard to make accurate)
-- Real-time SSE (defer until AWS migration, polling sufficient for 90-day TTL cache)
-
-**Anti-features (do NOT build):**
-- WebSocket for status updates (overkill for infrequent updates)
-- Sub-second polling intervals (hammers server, BallotReady API is inherently slow)
-- Per-politician progress tracking (too granular, adds DB overhead)
-- Spinner-only loading (increases perceived wait time vs skeletons)
+**Defer to v2+:**
+- Issue-level importance weighting (iSideWith does this; significant complexity, skip for now)
+- Shareable result links encoding quiz seed in URL
+- Issue level indicators on compass topics (requires `level` enum on Topic model + admin UI — additive but not blocking)
+- Full unified SPA (separate apps remain separate for this milestone)
+- Supabase politician image proxy (only if BallotReady CDN URLs prove unstable)
 
 ### Architecture Approach
 
-The architecture maintains existing module patterns in EV-Backend (handlers/routes/models) while introducing minimal new components. Backend adds a single CacheStatusHandler to existing handlers.go with routes for each cache tier (zip/state/federal). Frontend introduces a usePoliticianData custom hook encapsulating polling logic with strategy pattern for future SSE swap. Critical architectural decision: status and data should be returned atomically in a single response to avoid TOCTOU race conditions, rather than separate endpoints.
+The target architecture is additive: new fields on existing models, new endpoints alongside existing ones, and localStorage as the primary persistence layer for guest state. No existing interfaces change meaning — all new fields use `omitempty` for backward compatibility and backend deploys precede frontend deploys. The guest auth flow uses a well-established pattern (localStorage state included as `guest_state` in the register/login request body, cleared on success) with server-wins merge strategy when a returning user already has server-side answers.
 
 **Major components:**
-
-1. **CacheStatusHandler (backend)** — Queries single cache table (zip_caches/state_caches/federal_cache) with indexed WHERE clause, returns {fresh: bool, lastFetch: time, ttl: int} in ~200 bytes JSON
-2. **usePoliticianData hook (frontend)** — Custom React hook exposing {politicians, loading, error} state, internally manages polling lifecycle with AbortController cleanup
-3. **PollingStrategy (frontend)** — Encapsulates poll logic (status check → data fetch once ready), designed for easy swap to SSEStrategy via environment variable
-4. **Data flow** — Status check (lightweight) → conditional full fetch (once) → progressive rendering, replacing current pattern of 8 full fetches
+1. **CompassContext (React)** — Always persists answers/topics/inversions/seed to localStorage regardless of auth state; syncs to server only when authenticated
+2. **EV-Backend /auth handlers** — Accept optional `guest_state` body on register/login; write guest answers in a single transaction; return `stance_seed` on `/auth/me`
+3. **EV-Backend /compass/topics** — Extended with nullable `question TEXT` column; `omitempty` in DTO; no regression for existing consumers
+4. **EV-Backend /essentials/candidates/{zip}** — New endpoint querying `election_records JOIN politicians` for upcoming elections; returns `CandidateOut` DTO with race context
+5. **essentials Dashboard (React)** — Officials/Candidates toggle; visual differentiation via badge/label on candidate cards
+6. **npm workspace root** — Symlinks `packages/ev-ui` so consuming apps get changes without publish cycle
 
 **Key patterns:**
-- Lightweight status queries (single-row SELECT, no JOINs, <10ms)
-- Proper cleanup with AbortController (prevents memory leaks)
-- Strategy pattern for transport swapping (poll→SSE without component changes)
-- Advisory locks only during DB operations (release before BallotReady API calls)
+- Backend deploys first (new nullable fields), frontend deploys second (reads new field with fallback)
+- Guest identity: localStorage UUID (`ev_stance_seed`, `ev_guest_answers`) synced to `app_auth.users.stance_seed` on registration
+- Candidate data: separate query path from officeholder data; never upsert candidate records over incumbent records
 
 ### Critical Pitfalls
 
-Research identified 15 pitfalls across three severity levels. The top 5 critical pitfalls could cause rewrites or data corruption if not addressed upfront.
+1. **Cookie domain must be fixed before any auth model changes** — The `.empowered.vote` cookie domain is currently omitted for cross-domain dev (noted in CLAUDE.md). If cookie config changes simultaneously with the guest auth rollout, existing logged-in users can be silently logged out. Fix the cookie domain in a standalone deploy first, verify session continuity across browsers, then begin guest auth work.
 
-1. **TOCTOU race between status check and data fetch** — Cache status changes between API calls, user receives stale data marked as fresh. Prevent by returning status+data atomically, or using cache version tokens for validation.
+2. **Guest state merge must be explicit, not assumed** — The most common failure in guest-to-auth flows is that merge never actually happens: the backend creates a new session, the frontend reads localStorage, but no sync POST is made. Design the `guest_state` payload in the register/login request body from day one and test the merge path explicitly. The "server wins" merge strategy (server answers take precedence over local answers for returning users) prevents data clobbering.
 
-2. **Advisory lock held during network I/O** — PostgreSQL lock held during 3-5 second BallotReady API call serializes all warming requests, destroying concurrency. Release lock before external API calls, re-acquire for DB upserts only.
+3. **Candidate data must not overwrite incumbent data** — BallotReady returns both officeholders and candidates. If the upsert logic uses `external_id` as the conflict key without a type discriminator, a candidate record can clobber the sitting politician's office title, district, or contact data. Treat candidates as a separate data entity with their own record type or discriminator; candidacy data enriches but does not replace officeholder data.
 
-3. **Frontend memory leak from uncleaned polling timers** — User navigates away mid-polling, setInterval continues firing, updating unmounted component. Use AbortController cleanup in useEffect return function.
+4. **Schema changes on live tables need explicit SQL migrations, not AutoMigrate alone** — GORM AutoMigrate adds columns but does not backfill existing rows. Adding `question TEXT` or `stance_seed TEXT` via AutoMigrate leaves existing rows with NULL; if the frontend or Go struct assumes the field is always present, API responses break for old records. Use AutoMigrate for dev convenience, write explicit migration scripts for production, and mark new fields as `omitempty` in JSON until all rows are backfilled.
 
-4. **Cold miss returns before waitForDataMin completes** — Status endpoint returns "warming" but data endpoint has no rows yet, breaking progressive loading UX. Status and data must be unified or status must guarantee minimum row count.
-
-5. **Backward incompatibility during rolling deployment** — Old frontend expects X-Data-Status header, new backend only returns JSON endpoint, 50% of users see broken UI during deployment. Support both header and endpoint for 1-2 week transition period.
-
-**Moderate pitfalls:**
-- N+1 query pattern from separate status+data calls (consider unified response)
-- Polling interval mismatch (frontend 1.5s, backend 200ms) causing stuttering UX
-- Excessive polling during traffic spikes (add jitter and exponential backoff)
-- State normalization lost across Results/Dashboard/Home components (use canonical callback interface)
+5. **Parallel work streams on shared files cause merge conflicts** — With 2-3 developers, concurrent branches touching `internal/auth/`, `CompassContext.jsx`, and `ev-ui` simultaneously produce unmanageable conflicts. Sequence milestones so shared dependencies (auth layer, data model columns) merge to main before dependent features begin. Treat `ev-ui` and `internal/auth/` as shared infrastructure requiring explicit team sign-off before merge.
 
 ## Implications for Roadmap
 
-Based on research, this optimization naturally divides into three phases with clear dependencies and incremental value delivery. Each phase addresses specific pitfalls and builds toward SSE-ready infrastructure.
+Based on combined research, the dependency graph is clear. Cookie domain fix is a non-negotiable prerequisite. Monorepo migration is a developer tooling improvement that benefits all subsequent work. Guest auth unlocks stance randomization. Topic question fields and candidate display can proceed in parallel once the data model groundwork is laid. Building images are independent and low-risk.
 
-### Phase 1: Lightweight Cache-Status Endpoint (Backend)
+### Phase 1: Cookie Domain Fix and Route Audit
+**Rationale:** Pitfall #4 and #15 are explicit blockers. Any auth model change that ships before the cookie domain is resolved risks silently logging out existing users. This is a 1-2 hour backend change that must land and be verified in production before any other auth work begins. The route audit (documenting which Chi routes are public/guest-ok/auth-required) is the planning artifact that prevents Pitfall #3.
+**Delivers:** Production-safe cookie config; route manifest documenting auth levels per endpoint
+**Avoids:** Pitfalls 3, 4, 15 (session collision, route exposure, cross-subdomain auth breakage)
 
-**Rationale:** Backend foundation must exist before frontend can be refactored. This phase is fully backward-compatible and can deploy independently without frontend changes. Creates lightweight status-check capability that reduces database load even for existing polling implementation.
+### Phase 2: Monorepo Migration (npm Workspaces)
+**Rationale:** ARCHITECTURE.md recommends doing this first to unblock parallel work. Once ev-ui is a local workspace package, all subsequent phases that touch shared components (PoliticianCard for candidate badges, any new ev-ui exports) get changes immediately without a publish cycle. This is a structural change with no user-visible impact — the right time is before feature work begins.
+**Delivers:** Single `npm install` at root; ev-ui as local symlink; shared dev dependencies hoisted; Netlify per-app build configs updated
+**Avoids:** Pitfalls 13, 16 (ev-ui version skew, NPM_TOKEN breaking in CI)
+**Research flag:** Standard npm workspaces pattern — skip phase research, follow ARCHITECTURE.md implementation steps directly
 
-**Delivers:**
-- New route: `GET /essentials/cache-status/{type}/{identifier}` where type=zip|state|federal
-- CacheStatusHandler querying single cache table with indexed lookups
-- JSON response: `{fresh: bool, lastFetch: time, ttl: int, identifier: string}`
-- Response time <10ms (3 indexed queries, no JOINs)
-- Existing endpoints unchanged (maintains backward compatibility)
+### Phase 3: Guest-First Auth + Stance Seed
+**Rationale:** Guest auth is the highest-impact user-facing change (it removes the primary conversion blocker per FEATURES.md). Stance seed is architecturally coupled — both use the same guest identity pattern (`ev_stance_seed` in localStorage, `stance_seed` on the user record) and the seed is included in the `guest_state` sync payload on registration. They should be a single phase to avoid building the guest identity twice.
+**Delivers:** Full quiz access without login; localStorage-persisted answers for guests; permanent per-user stance randomization; guest-to-account merge on registration
+**Addresses:** Must-have table stakes (guest quiz, localStorage persistence, post-completion save prompt)
+**Implements:** CompassContext localStorage-first pattern; `/auth/register` and `/auth/login` `guest_state` handling; `stance_seed` field on user model; deterministic Fisher-Yates shuffle in `util/`
+**Avoids:** Pitfalls 1, 2, 9, 10 (merge never happens, no guest identity, non-reproducible seed, biased shuffle)
+**Research flag:** Well-documented pattern — skip phase research. Use ARCHITECTURE.md Section 1 (guest auth) and Section 3 (stance randomization) as implementation spec.
 
-**Addresses features:**
-- Lightweight cache-status endpoint (table stakes)
-- Foundation for granular tier status (federal/state/local)
+### Phase 4: Topic Question Field
+**Rationale:** Independent of auth (no shared dependencies with Phase 3) and can be executed in parallel by a second developer. However, it is a prerequisite for the stance randomization UX to make sense — users need the question/prompt for context when stances arrive in a non-default order. FEATURES.md explicitly notes this dependency. Schema migration is safe (nullable column, AutoMigrate in dev, explicit SQL for production, `omitempty` in DTO).
+**Delivers:** `question TEXT` column on `compass.topics`; question rendered above stance options with `title` fallback; admin UI textarea for question input
+**Addresses:** "Should have" differentiator (question/prompt above issue)
+**Avoids:** Pitfalls 5, 6 (non-nullable field breakage, field meaning change)
+**Research flag:** Standard additive schema change — skip phase research.
 
-**Avoids pitfalls:**
-- TOCTOU race (design decision: atomic response vs separate endpoints)
-- Advisory lock contention (audit lock-holding duration during BallotReady calls)
-- Backward compatibility (new endpoint doesn't break old clients)
-- Cache-status response cacheability (add Cache-Control headers from start)
+### Phase 5: Candidate Display in Essentials
+**Rationale:** BallotReady candidacy data is already fetched and stored (Phase B complete per CLAUDE.md). The remaining work is the query path, DTO, and frontend toggle. This is a medium-complexity phase because of the data integrity risks (Pitfalls 7, 8, 11, 12). It should not run in parallel with Phase 3 if the same developer is working on both — concurrent changes to `internal/essentials/` and `internal/auth/` create conflict risk.
+**Delivers:** `GET /essentials/candidates/{zip}` endpoint; Officials/Candidates toggle in Dashboard; candidate badge/label on PoliticianCard; `CandidateOut` DTO with race context (office sought, election date)
+**Addresses:** Table-stakes candidate display (clear visual distinction, opt-in toggle, election date shown)
+**Implements:** Separate query path (election_records JOIN politicians); type discriminator to prevent overwriting incumbent data; shorter TTL for candidate cache (7-14 days vs 90-day incumbent TTL)
+**Avoids:** Pitfalls 7, 8, 11, 12 (candidate overwrites incumbent, stale candidates, visual conflation, missing race context)
+**Research flag:** Medium complexity due to data integrity requirements. Recommend a short research phase to confirm the district-to-ZIP mapping query for candidates (different from the officeholder path) and to validate BallotReady candidacy data freshness.
 
-**Implementation notes:**
-- Add CacheStatusHandler to existing `internal/essentials/handlers.go` (don't create new file)
-- Register route in `internal/essentials/routes.go`
-- Reuse existing cache models (ZipCache, StateCache, FederalCache)
-- Add unit tests for fresh/stale/missing cache scenarios
-- Deploy backend independently, frontend continues using old pattern
-
-**Estimated effort:** 1-2 hours (handler + route + tests)
-
-### Phase 2: Frontend Polling Refactor (React)
-
-**Rationale:** With backend endpoint available, frontend can optimize polling to check lightweight status instead of fetching full datasets. This phase delivers immediate UX improvements (87% bandwidth reduction, 2-4.5s load times vs 12s) and prepares for SSE migration by abstracting polling logic.
-
-**Delivers:**
-- Custom hook: `usePoliticianData(identifier, type, options)` exposing {politicians, loading, error}
-- API client functions: `checkCacheStatus()`, `fetchPoliticiansOnce()`
-- Exponential backoff polling (1s → 1.5s → 2s → 3s → max 6s)
-- AbortController cleanup preventing memory leaks
-- Strategy pattern structure (PollingStrategy) for future SSE swap
-- Migration of Dashboard.jsx, Results.jsx, Home.jsx to new hook
-
-**Addresses features:**
-- Exponential backoff polling (table stakes)
-- Smart polling with Retry-After header respect (table stakes)
-- Skeleton loading UI foundation (table stakes)
-- Progressive result display readiness (differentiator)
-
-**Avoids pitfalls:**
-- Frontend memory leaks (AbortController cleanup in useEffect)
-- State normalization issues (canonical ProgressUpdate callback interface)
-- Polling interval mismatch (configurable intervals per component)
-- Prop drilling (hook encapsulation with sensible defaults)
-
-**Implementation notes:**
-- Create `essentials/src/hooks/usePoliticianData.js`
-- Add `checkCacheStatus()` and `fetchPoliticiansOnce()` to `essentials/src/lib/api.jsx`
-- Keep `fetchPoliticiansProgressive()` for backward compatibility, mark deprecated
-- Migrate components one-by-one: Dashboard → Results → Home
-- Test cleanup: verify AbortController prevents memory leaks on navigation
-- Measure performance: network tab should show 1-4 status checks + 1 data fetch (not 8 data fetches)
-
-**Estimated effort:** 4-6 hours (hook + API + migration + testing)
-
-### Phase 3: SSE Preparation (Future-Ready Abstraction)
-
-**Rationale:** While SSE implementation is deferred until AWS migration, the abstraction layer should be designed now to avoid future refactoring. This phase doesn't change behavior (still uses polling) but structures code for easy transport swap via environment variable.
-
-**Delivers:**
-- Strategy interface: `DataFetchStrategy` with `start()`, `stop()` methods
-- PollingStrategy implementation (current behavior extracted)
-- SSEStrategy stub implementation (documented, not deployed)
-- Factory function: `createFetchStrategy()` selecting based on `VITE_FEATURE_SSE` env var
-- Updated `usePoliticianData` hook using strategy pattern
-- Documentation for SSE backend endpoint specification
-
-**Addresses features:**
-- Future SSE readiness (enables instant cache-ready notifications)
-- Transport-agnostic abstraction (easy A/B testing of poll vs SSE)
-
-**Avoids pitfalls:**
-- Future refactoring when adding SSE (abstraction exists upfront)
-- Component coupling to transport mechanism (strategy swap via config only)
-
-**Implementation notes:**
-- Create `essentials/src/strategies/DataFetchStrategy.js` with base class
-- Extract polling logic from hook into PollingStrategy class
-- Create SSEStrategy stub with EventSource (not deployed, documented only)
-- Update hook to use `createFetchStrategy()` factory
-- No behavior change: VITE_FEATURE_SSE defaults to false, uses PollingStrategy
-- Document SSE backend endpoint contract for future Phase 4 implementation
-
-**Estimated effort:** 2-3 hours (strategy extraction + abstraction + documentation)
-
-### Phase 4: SSE Implementation (Future - AWS Migration)
-
-**Rationale:** Deferred until AWS infrastructure migration (current Render deployment may not support long-lived SSE connections reliably). When ready, SSE reduces polling overhead to single persistent connection with sub-second cache-ready notifications. This phase is fully non-breaking: strategy swap happens via environment variable, components unchanged.
-
-**Delivers:** (future)
-- Backend SSE endpoint: `GET /essentials/cache-status/{type}/{identifier}/stream`
-- Go stdlib SSE implementation with `http.Flusher` or `tmaxmax/go-sse` library
-- Event emission: `cache-ready`, `cache-warming`, `error` events
-- Frontend SSEStrategy activation via `VITE_FEATURE_SSE=true`
-- Gradual rollout with feature flag (5% → 50% → 100%)
-
-**Phase dependencies:** Requires Phase 1 (backend endpoint) and Phase 3 (strategy abstraction) complete. Can skip Phase 3 and implement SSE directly, but requires refactoring hook at that time.
+### Phase 6: Federal Category Reordering + Building Imagery
+**Rationale:** Two independent, low-risk frontend items. Federal reordering is a constant change in `classify.js` — zero backend changes, zero risk. Building imagery is a static asset curation task with straightforward Supabase Storage implementation. Both improve the government navigation UX per FEATURES.md recommendations. Group them to avoid a trivial single-item phase.
+**Delivers:** Federal section ordered President/VP → Senate → House → Cabinet/Agencies; building images (U.S. Capitol, state capitols, Bloomington City Hall, LA City Hall) served from Supabase Storage public bucket; graceful `onError` fallback on all politician images
+**Addresses:** "Should have" differentiators (building imagery, correct category priority ordering); image expiry resilience
+**Avoids:** Pitfalls 17, 18 (inconsistent image aspect ratios, BallotReady image 404s)
+**Research flag:** Standard implementation — skip phase research. Use STACK.md Section 5 for Supabase Storage setup.
 
 ### Phase Ordering Rationale
 
-- **Backend before frontend:** Phase 1 must complete before Phase 2 integration testing, but development can be parallel if OpenAPI spec or mock endpoint provided.
-- **Polling optimization before SSE:** Phase 2 delivers immediate value (87% improvement) without architectural risk of SSE. Validates assumptions about cache warming patterns before committing to SSE.
-- **Abstraction before implementation:** Phase 3 structures code for SSE while still using proven polling transport. De-risks Phase 4 by ensuring component decoupling works correctly.
-- **Backward compatibility first:** Each phase maintains compatibility with previous versions, enabling safe incremental rollout and easy rollback.
-- **Pitfall prevention early:** Critical pitfalls (TOCTOU, lock contention, memory leaks) addressed in Phase 1-2 design, not retrofitted later.
+- **Cookie fix before auth (Phase 1 before 3):** Explicit blocker from PITFALLS.md — cannot safely change auth model with broken cookie config
+- **Monorepo before features (Phase 2 before 3-6):** Removes the ev-ui publish friction that slows all subsequent phases; structural change with no user-visible risk
+- **Guest auth before stance seed (combined in Phase 3):** Seed is part of the guest identity; building them separately would require refactoring the guest state schema twice
+- **Question field parallel to guest auth (Phase 4 alongside 3):** No shared code or schema dependencies; safe for a second developer to run simultaneously
+- **Candidates after auth (Phase 5 after 3-4):** Prevents concurrent changes to `internal/essentials/` and `internal/auth/` from the same developer; also ensures the candidate card visual design can reference the same `PoliticianCard` patterns established during guest auth work
+- **Building images last (Phase 6):** Zero blocking dependencies; deferring keeps the critical path uncluttered; asset curation work can proceed asynchronously while Phase 5 is in progress
 
 ### Research Flags
 
-**Phases with standard patterns (skip additional research):**
-- **Phase 1 (Backend endpoint):** Well-documented Chi + GORM patterns, matches existing handlers.go conventions. Research complete.
-- **Phase 2 (Frontend hook):** Standard React hooks patterns, polling abstraction widely used. Research complete.
-- **Phase 3 (Strategy pattern):** Common JavaScript/React pattern, well-established. Research complete.
+**Phases needing deeper research during planning:**
+- **Phase 5 (Candidates):** District-to-ZIP mapping query for candidates is not the same as the officeholder path (officeholders have confirmed districts; candidates have prospective districts). Validate query approach against actual BallotReady candidacy data schema before implementation begins.
 
-**Phases needing deeper research during implementation:**
-- **Phase 4 (SSE implementation):** Research provided Go SSE patterns but codebase-specific integration (Chi middleware, CORS, authentication with cookies) needs validation during implementation. Test SSE cookie authentication in Render environment vs AWS environment. May need to defer until AWS migration.
-
-**Validation points during implementation:**
-- Phase 1: Measure actual cache status query performance (target <10ms). Verify advisory lock holding duration during BallotReady calls (should release before external I/O).
-- Phase 2: Load test frontend with 10 concurrent ZIP searches. Verify memory doesn't leak on repeated navigation (Chrome DevTools memory profiler).
-- Phase 3: Verify strategy swap works via env var without component changes. Document SSE endpoint contract for future implementation.
+**Phases with standard patterns (skip research-phase):**
+- **Phase 1 (Cookie fix):** Documented configuration change in CLAUDE.md — no research needed
+- **Phase 2 (Monorepo):** npm workspaces is a well-documented pattern; ARCHITECTURE.md Section 6 provides step-by-step migration
+- **Phase 3 (Guest auth + seed):** ARCHITECTURE.md Sections 1 and 3 serve as implementation spec; pattern matches Shopify cart merge and Google Docs anonymous → signed-in flows
+- **Phase 4 (Question field):** Additive schema migration with established AutoMigrate + explicit SQL approach
+- **Phase 6 (Federal order + images):** Frontend constant change + Supabase Storage public bucket; no research needed
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Standard library patterns, matches existing codebase conventions, zero new dependencies |
-| Features | HIGH | Clear distinctions between table stakes/differentiators/anti-features based on UX research and async API patterns |
-| Architecture | HIGH | Backend handler pattern matches existing EV-Backend modules, React hooks are standard, strategy pattern widely used |
-| Pitfalls | HIGH | Well-documented race conditions, lock contention, memory leaks with clear prevention strategies and detection methods |
+| Stack | HIGH | All six improvement areas explicitly assessed against existing stack; zero new dependencies identified; versions current |
+| Features | HIGH | Cross-referenced against iSideWith, Vote Compass, Ballotpedia, Center for Civic Design, Guides.vote; table stakes vs. differentiators well-supported |
+| Architecture | HIGH | Component boundaries, data flows, and build orders are specific to this codebase; not generic advice |
+| Pitfalls | HIGH | 20 pitfalls identified with prevention strategies; all grounded in the specific codebase state described in CLAUDE.md |
 
-**Overall confidence:** HIGH
-
-Research is comprehensive with official documentation sources (Go stdlib, GORM docs, React docs), industry best practices (async REST patterns, polling best practices, SSE patterns), and project-specific context (existing handlers.go patterns, cache architecture). All recommendations map directly to existing codebase patterns.
+**Overall confidence: HIGH**
 
 ### Gaps to Address
 
-While overall confidence is high, these areas need validation during implementation:
-
-- **Advisory lock holding duration:** Research identifies lock contention risk but doesn't measure actual duration in current codebase. Phase 1 must audit warmLocal functions to verify locks are released before BallotReady API calls. Add logging to measure lock hold time.
-
-- **TOCTOU race mitigation decision:** Research presents three options (atomic response, version tokens, timestamp validation). Architecture document recommends atomic response (single endpoint returning status+data), but this conflicts with separate status endpoint approach. **Decision needed in Phase 1:** Unified response (status+data) vs separate endpoints with versioning. Recommendation: Start with separate endpoints + cached_at timestamp validation, consolidate if TOCTOU issues observed.
-
-- **Polling interval optimization:** Frontend polls every 1.5s, backend waitForDataMin polls DB every 200ms. Research notes potential mismatch but doesn't validate optimal intervals. Phase 2 should A/B test intervals (500ms, 1000ms, 1500ms) to balance UX smoothness vs server load.
-
-- **SSE authentication with cookies:** Research confirms EventSource supports cookies but doesn't validate with EV-Backend's current session-based auth (HTTP-only cookies). Phase 4 must verify SSE connections include cookies automatically or require URL-based token authentication.
-
-- **Connection pool impact under load:** Research identifies potential exhaustion (waitForDataMin polls every 200ms) but doesn't measure current pool utilization. Phase 1 should baseline DB connection pool metrics before optimization to validate improvement.
-
-**How to handle during implementation:**
-- Phase 1: Add observability (lock hold time, query performance, connection pool metrics) BEFORE implementing optimization to establish baseline.
-- Phase 1 decision point: TOCTOU race mitigation strategy (atomic vs separate endpoints) based on measured race frequency in staging.
-- Phase 2: Gradual rollout (Dashboard first, Results second, Home last) with performance monitoring to validate improvements match research estimates.
-- Phase 4: Feature flag SSE in staging environment for 1-2 weeks to validate cookie authentication before production rollout.
+- **Candidate district-to-ZIP mapping query:** The officeholder path uses `zip_politicians` which links confirmed incumbents. Candidates may not have a confirmed district yet (they are running for a future seat). The query strategy for `GET /essentials/candidates/{zip}` needs validation against the actual `election_records` schema before Phase 5 implementation begins. Flag for the Phase 5 research step.
+- **Stance randomization spectrum semantics:** STACK.md flags an open question: does "spectrum preserved" mean (a) shuffle any order or (b) flip direction only? Clarify with the team before Phase 3 begins — the implementation differs. Option (b) (flip direction) is simpler and recommended.
+- **City/locale list for building images:** FEATURES.md notes that building image infrastructure should not be built for 50 cities if only 2 matter for the demo. Confirm the demo target localities (currently assumed: U.S. Capitol, state capitols generically, Bloomington City Hall, LA City Hall) before Phase 6 begins.
+- **Monorepo Netlify site configuration:** Each app needs a Netlify site with `Base directory` set. Confirm which apps have active Netlify deployments before executing Phase 2 migration to avoid breaking CI for deployed sites.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-
-**Go/Chi backend patterns:**
-- Go Chi router documentation: https://go-chi.io (official routing patterns)
-- Go encoding/json package: https://pkg.go.dev/encoding/json (minimal JSON output)
-- GORM Performance Documentation: https://gorm.io/docs/performance.html (Select() optimization)
-- GORM Advanced Query: https://gorm.io/docs/advanced_query.html (lightweight queries)
-- GORM GitHub Discussion #6000: https://github.com/go-gorm/gorm/discussions/6000 (Exists() method status)
-
-**React patterns:**
-- React useEffect documentation: https://react.dev/reference/react/hooks (official patterns)
-- React useEffect Cleanup: https://refine.dev/blog/useeffect-cleanup/ (cleanup function best practices)
-- AbortController Complete Guide: https://www.localcan.com/blog/abortcontroller-nodejs-react-complete-guide-examples
-- Preventing Memory Leaks in React: https://www.c-sharpcorner.com/article/preventing-memory-leaks-in-react-with-useeffect-hooks/
-
-**SSE patterns (future):**
-- Writing SSE Server in Go - Thoughtbot: https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go
-- Go Real-time Applications with SSE - OneUpTime: https://oneuptime.com/blog/post/2026-02-01-go-realtime-applications-sse/view
-- alexandrevicenzi/go-sse GitHub: https://github.com/alexandrevicenzi/go-sse (Chi integration example)
-- tmaxmax/go-sse GitHub: https://github.com/tmaxmax/go-sse (spec-compliant library)
-- MDN EventSource API: https://developer.mozilla.org/en-US/docs/Web/API/EventSource (browser support)
-
-**Async API patterns:**
-- Microsoft Asynchronous Request-Reply pattern: https://learn.microsoft.com/en-us/azure/architecture/patterns/async-request-reply
-- REST API Design for Long-Running Tasks: https://restfulapi.net/rest-api-design-for-long-running-tasks/
-- Adidas API Guidelines Polling: https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/execution/long-running-tasks/polling
-
-**Loading UX patterns:**
-- Nielsen Norman Group: Skeleton Screens 101: https://www.nngroup.com/articles/skeleton-screens/
-- LogRocket: Skeleton Loading Screen Design: https://blog.logrocket.com/ux-design/skeleton-loading-screen-design/
-- Carbon Design: Loading Patterns: https://carbondesignsystem.com/patterns/loading-pattern/
+- iSideWith — political quiz UX patterns, guest-first quiz design
+- Vote Compass — no-login quiz pattern, post-completion save CTA
+- Center for Civic Design — voter guide field guide, candidate/incumbent labeling recommendations
+- Ballotpedia — candidate vs. incumbent display, federal content ordering
+- CLAUDE.md (codebase) — existing stack, completed phases, current implementation state
+- EV-Backend source (Go modules) — Chi/GORM/Supabase versions and patterns
+- Supabase Storage documentation — public bucket URLs, CDN capabilities, free tier limits
 
 ### Secondary (MEDIUM confidence)
+- Pew Research Political Typology Quiz — fully anonymous quiz pattern
+- Guides.vote (7M+ distribution) — candidate display in voter guide context
+- Prism Political Quiz — seeded randomization for shareable quiz results
+- PLOS One: "The political preferences of LLMs" — response order bias research validating stance randomization need
+- npm workspaces documentation — monorepo consolidation pattern
 
-**Race conditions and caching:**
-- Race Conditions in REST APIs Developer's Guide: https://medium.com/@mgaurang123/race-conditions-in-rest-apis-a-developers-guide-to-building-reliable-systems-42d4f8eabc1e
-- When Caches Collide Solving Race Conditions: https://dzone.com/articles/fare-cache-race-conditions-troubleshooting
-- Ultimate Caching Definition: https://stack.convex.dev/caching-in
-
-**TOCTOU (Time-of-Check-Time-of-Use):**
-- Wikipedia TOCTOU: https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use
-- CWE-367 TOCTOU Race Condition: https://cwe.mitre.org/data/definitions/367.html
-- TOCTOU Leads to Broken Authentication: https://infosecwriteups.com/time-of-check-time-of-use-toctou-race-condition-leads-to-broken-authentication-critical-finding-b55993c92abc
-
-**PostgreSQL advisory locks:**
-- Using PostgreSQL Advisory Locks to Avoid Race Conditions: https://firehydrant.com/blog/using-advisory-locks-to-avoid-race-conditions-in-rails/
-- How to Use Advisory Locks in PostgreSQL: https://oneuptime.com/blog/post/2026-01-25-use-advisory-locks-postgresql/view
-- PostgreSQL Advisory Locks: https://www.netguru.com/blog/advisory-locks
-
-**API versioning and backward compatibility:**
-- API Versioning Best Practices: https://www.gravitee.io/blog/api-versioning-best-practices
-- Handling API Versioning and Backward Compatibility: https://dev.to/neelendra_tomar_27/handling-api-versioning-and-backward-compatibility-on-the-frontend-297p
-- Avoiding Backward Compatibility Breaks: https://medium.com/carvago-development/avoiding-backward-compatibility-breaks-in-api-design-a-developers-guide-b6b4d280d423
-
-**Cache warming:**
-- Cache Warming Explained Aerospike: https://aerospike.com/blog/cache-warming-explained
-- Cache Warming Strategies OneUpTime: https://oneuptime.com/blog/post/2026-01-30-cache-warming-strategies/view
-- Cold and Warm Cache in System Design: https://www.geeksforgeeks.org/system-design/cold-and-warm-cache-in-system-design/
-
-### Tertiary (contextual references)
-
-**Project-specific patterns:**
-- EV-Backend module structure: internal/essentials/, internal/compass/, internal/treasury/ (established patterns)
-- Existing progressive loading: essentials/src/lib/api.jsx fetchPoliticiansProgressive() (current implementation)
-- Cache architecture: federal_cache, state_caches, zip_caches with 90-day TTL (verified in codebase)
+### Tertiary (LOW confidence)
+- Assumed BallotReady candidacy data freshness (7-14 day cycle) — should be validated against actual BallotReady release cadence before setting candidate cache TTL
+- State capitol image availability on Wikipedia Commons — assumed public domain; verify licenses before use in production
 
 ---
-
-*Research completed: 2026-02-09*
+*Research completed: 2026-02-17*
 *Ready for roadmap: yes*

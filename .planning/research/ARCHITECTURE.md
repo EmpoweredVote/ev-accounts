@@ -1,1184 +1,586 @@
-# Architecture Patterns: Cache Status Polling Optimization
+# Architecture Research
 
-**Domain:** Political data API with progressive loading
-**Researched:** 2026-02-09
-**Confidence:** HIGH
+**Research Date:** 2026-02-17
+**Research Type:** Project Research — Architecture dimension
+**Question:** How do multi-app civic engagement platforms structure their codebase, handle guest-to-user auth transitions, and manage image assets?
 
-## Executive Summary
+---
 
-This architecture focuses on adding a lightweight cache-status endpoint to the existing EV-Backend essentials module and abstracting frontend polling to support future SSE migration. The design maintains the existing module pattern (handlers/routes/models) while introducing minimal new components.
+## Scope
 
-**Key decisions:**
-1. **Backend:** New lightweight handler in existing handlers.go, single-query cache status check
-2. **Frontend:** React hook abstraction with strategy pattern for poll-to-SSE migration path
-3. **Data flow:** Status check → conditional full fetch → progressive rendering
+This document covers six architectural decisions relevant to the next milestone:
 
-## Recommended Architecture
+1. Guest-first auth with localStorage → server sync on account creation
+2. Data model evolution: adding question/prompt to compass topics
+3. Per-user stance randomization (seed-based or stored)
+4. Candidate data alongside elected officials in Essentials
+5. Image storage (Supabase Storage vs S3 vs CDN)
+6. Multi-app consolidation (monorepo vs unified SPA vs micro-frontends)
 
-### System Overview
+---
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│ Frontend (React)                                            │
-│                                                             │
-│  ┌──────────────────────┐                                  │
-│  │ Dashboard/Results/   │                                  │
-│  │ Home components      │                                  │
-│  └──────────┬───────────┘                                  │
-│             │                                               │
-│             v                                               │
-│  ┌──────────────────────┐    ┌─────────────────────────┐  │
-│  │ usePoliticianData()  │───>│ PollingStrategy         │  │
-│  │ (custom hook)        │    │ (poll vs SSE)           │  │
-│  └──────────┬───────────┘    └─────────────┬───────────┘  │
-│             │                               │               │
-│             │ 1. Check cache status         │               │
-│             v                               v               │
-│  ┌─────────────────────────────────────────────────────┐  │
-│  │ API Client (api.jsx)                                │  │
-│  │ - checkCacheStatus()                                │  │
-│  │ - fetchPoliticiansOnce()                            │  │
-│  └──────────┬──────────────────────────────────────────┘  │
-└─────────────┼──────────────────────────────────────────────┘
-              │
-              v HTTP/HTTPS
-┌─────────────┼──────────────────────────────────────────────┐
-│ Backend (Go/Chi)                                           │
-│             │                                               │
-│  ┌──────────v──────────────────────────────────────────┐  │
-│  │ Router (routes.go)                                   │  │
-│  │ GET /essentials/cache-status/{type}/{identifier}    │  │
-│  │ GET /essentials/politicians/{zip}                    │  │
-│  │ POST /essentials/politicians/search                  │  │
-│  └──────────┬──────────────────────────────────────────┘  │
-│             │                                               │
-│             v                                               │
-│  ┌──────────────────────────────────────────────────────┐ │
-│  │ Handlers (handlers.go)                               │ │
-│  │                                                       │ │
-│  │ CacheStatusHandler(w, r)                             │ │
-│  │  - Parse type + identifier                           │ │
-│  │  - Single query to appropriate cache table           │ │
-│  │  - Return {fresh: bool, lastFetch: time, ttl: int}   │ │
-│  │                                                       │ │
-│  │ GetPoliticiansByZIPHandler(w, r)                     │ │
-│  │  - Check cache freshness                             │ │
-│  │  - Return cached + kick background warmers           │ │
-│  └──────────┬───────────────────────────────────────────┘ │
-│             │                                               │
-│             v                                               │
-│  ┌──────────────────────────────────────────────────────┐ │
-│  │ Database (PostgreSQL via GORM)                       │ │
-│  │                                                       │ │
-│  │ essentials.federal_cache (single row)                │ │
-│  │ essentials.state_caches (keyed by state)             │ │
-│  │ essentials.zip_caches (keyed by ZIP)                 │ │
-│  │ essentials.politicians                               │ │
-│  │ essentials.zip_politicians                           │ │
-│  └──────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────┘
-```
+## 1. Guest-First Auth with localStorage → Server Sync
 
-## Component Boundaries
+### Pattern
 
-### Backend Components
+Guest-first auth means the app works fully without a login, persisting state locally, then migrates that state to the server when the user creates an account. This is the pattern used by Google Docs (anonymous → signed-in merge), Notion, and most quiz/survey tools.
 
-| Component | Responsibility | Communicates With |
-|-----------|---------------|-------------------|
-| **CacheStatusHandler** | Parse type/ID, query single cache table, return freshness status | Database (cache tables only) |
-| **GetPoliticiansByZIPHandler** | Return cached politicians, trigger background warmers if stale | Database (all essentials tables), BallotReady provider |
-| **Router (routes.go)** | Map HTTP paths to handlers | All handlers |
-| **Cache Models** | FederalCache, StateCache, ZipCache GORM models | Database |
-| **Background Warmers** | Goroutines that call BallotReady API and upsert data | BallotReady provider, Database |
+### How It Works in This Codebase
 
-### Frontend Components
+**Current state:** CompassV2 requires login. Topics load from the server. Answers are stored server-side via `POST /compass/answers`. Selected topics and spoke inversions persist to localStorage.
 
-| Component | Responsibility | Communicates With |
-|-----------|---------------|-------------------|
-| **usePoliticianData** | Custom hook providing {politicians, loading, error} state | PollingStrategy, API Client |
-| **PollingStrategy** | Encapsulates poll vs SSE logic, exposes uniform interface | API Client |
-| **API Client (api.jsx)** | HTTP requests to backend | Backend handlers |
-| **Dashboard/Results/Home** | UI components consuming politician data | usePoliticianData hook |
+**Target state:** Guest can take the quiz, get results, compare politicians — all without login. When they optionally create an account, their local state syncs to the server.
 
-## Data Flow
+### Data to Persist Locally (Guest)
 
-### Current Flow (Progressive Loading)
+| Data | localStorage Key | Server Table on Sync |
+|------|-----------------|----------------------|
+| Quiz answers | `ev_guest_answers` | `compass.answers` |
+| Selected compass topics | existing `selectedTopics` key | `compass.user_compass` |
+| Spoke inversions | existing `inverted` key | `compass.user_compass` |
+| Randomization seed | `ev_guest_seed` | `app_auth.users` (new column) |
+
+### Sync Strategy
+
+On account creation (`POST /auth/register`):
+1. Frontend reads all `ev_guest_*` keys from localStorage
+2. Includes them as `guest_state` in the register request body
+3. Backend handler unpacks and writes to appropriate tables in a single transaction
+4. Frontend clears `ev_guest_*` keys
+
+On login (existing user returning):
+- If localStorage has guest data AND the user already has server answers: merge strategy needed
+- Simplest approach: **server wins** — local data discarded if server already has answers for this user
+- If server has no answers: treat like new registration (sync local → server)
+
+### Backend Changes Required
+
+- `/auth/register` handler: accept optional `guest_state` body field
+- Write guest answers inside the registration transaction
+- `/auth/login` handler: optionally accept and sync guest state (only if server has no existing answers)
+- No schema changes needed — existing `compass.answers`, `compass.user_compass` tables handle this
+
+### Frontend Changes Required
+
+- `CompassContext`: always persist answers to localStorage, regardless of auth state
+- Remove auth gate on quiz load (allow unauthenticated)
+- Register/login flow: pass localStorage guest state in request body
+- After successful auth: clear guest localStorage keys
+
+### Component Boundaries
 
 ```
-User enters ZIP
-    │
-    v
-Dashboard calls fetchPoliticiansProgressive(zip, {maxAttempts: 8, intervalMs: 1500})
-    │
-    v
-Loop (up to 8 times):
-    │
-    ├─> API: GET /essentials/politicians/{zip}
-    │       │
-    │       v
-    │   Backend: Check cache freshness
-    │       │
-    │       ├─> Fresh? Return cached politicians
-    │       │       │
-    │       │       v
-    │       │   Frontend: Update state, continue polling
-    │       │
-    │       └─> Stale? Kick background warmers + return partial
-    │               │
-    │               v
-    │           Frontend: Update state, continue polling
-    │
-    └─> Wait 1500ms, repeat
+[CompassContext] → reads/writes localStorage (always)
+                → writes server (if logged in)
+
+[RegisterForm]  → reads localStorage guest state
+                → includes in POST /auth/register
+                → clears localStorage on success
+
+[LoginForm]     → reads localStorage guest state
+                → includes in POST /auth/login (optional sync)
+                → clears localStorage on success
+
+[ProtectedRoute] → remove from Quiz, Compass, Library pages
+                 → keep on Profile, Admin pages
 ```
 
-**Problem:** 8 full queries to `/politicians/{zip}` even when cache is fresh on first attempt. Each query returns full politician dataset (~1-50 politicians with images/degrees/experiences).
+### Build Order
 
-### Proposed Flow (Status Check → Conditional Fetch)
+1. Remove `ProtectedRoute` from quiz-related routes
+2. Update `CompassContext` to always write to localStorage (guest mode)
+3. Expose guest state via context or hook
+4. Update register/login forms to pass guest state
+5. Update backend `/auth/register` and `/auth/login` to handle `guest_state`
+6. Test merge edge case (logged-in user with existing answers)
 
-```
-User enters ZIP
-    │
-    v
-Dashboard calls usePoliticianData(zip, 'zip')
-    │
-    v
-PollingStrategy.start()
-    │
-    v
-Loop (up to 8 times):
-    │
-    ├─> API: GET /essentials/cache-status/zip/{zip}
-    │       │
-    │       v
-    │   Backend: Single query to essentials.zip_caches WHERE zip_code = $1
-    │       │
-    │       v
-    │   Return: {fresh: true/false, lastFetch: "2026-02-09T10:00:00Z", ttl: 90}
-    │       │
-    │       v
-    │   Frontend: Check if fresh
-    │       │
-    │       ├─> Fresh? Call fetchPoliticiansOnce(zip) → Update state → STOP polling
-    │       │       │
-    │       │       v
-    │       │   API: GET /essentials/politicians/{zip}
-    │       │       │
-    │       │       v
-    │       │   Return full politician dataset
-    │       │
-    │       └─> Stale? Wait 1500ms, continue loop
-    │
-    └─> Wait 1500ms, repeat
+---
+
+## 2. Data Model Evolution: Question/Prompt on Compass Topics
+
+### Current Schema
+
+The `compass.topics` table has: `id`, `title`, `short_title`, `stances[]`, and related fields. There is no `question` or `prompt` field.
+
+### What the Feature Needs
+
+Issue cards and the compare page should display a question (e.g., "How should the federal government approach healthcare?") instead of or alongside the category title (e.g., "Healthcare"). This is a content-level change, not a structural redesign.
+
+### Schema Change
+
+Add a `question` column to `compass.topics`:
+
+```sql
+ALTER TABLE compass.topics ADD COLUMN question TEXT;
 ```
 
-**Benefit:** Status endpoint returns ~200 bytes JSON vs ~50KB+ politician dataset. Full fetch only happens once when cache is fresh.
+This is backward-compatible — existing topics have `question = NULL`, which the frontend handles by falling back to `title`. GORM AutoMigrate handles this without downtime.
 
-### Future Flow (SSE Push)
+### Migration Strategy
 
-```
-User enters ZIP
-    │
-    v
-Dashboard calls usePoliticianData(zip, 'zip')
-    │
-    v
-PollingStrategy detects SSE support
-    │
-    v
-SSEStrategy.start()
-    │
-    ├─> API: GET /essentials/cache-status/zip/{zip}/stream (SSE endpoint)
-    │       │
-    │       v
-    │   Backend: Open SSE connection, emit initial status
-    │       │
-    │       ├─> Fresh? Emit {event: "cache-ready"}
-    │       │       │
-    │       │       v
-    │       │   Frontend: Call fetchPoliticiansOnce(zip) → Close SSE
-    │       │
-    │       └─> Stale? Emit {event: "cache-warming"}
-    │               │
-    │               v
-    │           Background warmer completes
-    │               │
-    │               v
-    │           Emit {event: "cache-ready"}
-    │               │
-    │               v
-    │           Frontend: Call fetchPoliticiansOnce(zip) → Close SSE
-    │
-    └─> Connection closed
-```
+- **Phase 1:** Add column, deploy backend (AutoMigrate). All questions are NULL, UI falls back to title. No regression.
+- **Phase 2:** Admin UI (or seed data) populates `question` values for existing topics. This is content work, not code work.
+- **Phase 3:** Update frontend to render `question` when present, `title` as fallback.
 
-**Benefit:** No polling loop, immediate notification when cache is ready.
+### API Impact
 
-## Patterns to Follow
-
-### Pattern 1: Lightweight Cache Status Handler
-
-**What:** Dedicated handler that queries only cache tables, returns minimal JSON.
-
-**When:** Frontend needs to check if cached data is ready without fetching full dataset.
-
-**Backend Implementation:**
+Add `question` to the topic response DTO:
 
 ```go
-// In internal/essentials/handlers.go (add to existing file)
-
-type CacheStatusResponse struct {
-    Fresh      bool      `json:"fresh"`
-    LastFetch  time.Time `json:"last_fetch"`
-    TTLDays    int       `json:"ttl_days"`
-    Identifier string    `json:"identifier"` // zip/state/federal
-}
-
-func CacheStatusHandler(w http.ResponseWriter, r *http.Request) {
-    cacheType := chi.URLParam(r, "type")       // "zip", "state", "federal"
-    identifier := chi.URLParam(r, "identifier") // "12345", "IN", "federal"
-
-    var status CacheStatusResponse
-    status.Identifier = identifier
-    status.TTLDays = 90
-
-    now := time.Now()
-    staleThreshold := now.Add(-90 * 24 * time.Hour)
-
-    switch cacheType {
-    case "zip":
-        var cache ZipCache
-        err := db.DB.Where("zip_code = ?", identifier).First(&cache).Error
-        if err != nil {
-            // Cache doesn't exist yet
-            status.Fresh = false
-            status.LastFetch = time.Time{} // zero value
-        } else {
-            status.Fresh = cache.LastFetched.After(staleThreshold)
-            status.LastFetch = cache.LastFetched
-        }
-
-    case "state":
-        var cache StateCache
-        err := db.DB.Where("state_code = ?", strings.ToUpper(identifier)).First(&cache).Error
-        if err != nil {
-            status.Fresh = false
-            status.LastFetch = time.Time{}
-        } else {
-            status.Fresh = cache.LastFetched.After(staleThreshold)
-            status.LastFetch = cache.LastFetched
-        }
-
-    case "federal":
-        var cache FederalCache
-        err := db.DB.First(&cache).Error
-        if err != nil {
-            status.Fresh = false
-            status.LastFetch = time.Time{}
-        } else {
-            status.Fresh = cache.LastFetched.After(staleThreshold)
-            status.LastFetch = cache.LastFetched
-        }
-
-    default:
-        http.Error(w, "Invalid cache type", http.StatusBadRequest)
-        return
-    }
-
-    w.Header().Set("Content-Type", "application/json")
-    json.NewEncoder(w).Encode(status)
+type TopicOut struct {
+    ID         uint   `json:"id"`
+    Title      string `json:"title"`
+    ShortTitle string `json:"short_title,omitempty"`
+    Question   string `json:"question,omitempty"`  // NEW
+    // ...stances
 }
 ```
 
-**Route Registration (routes.go):**
+`omitempty` ensures backward compatibility — consumers that don't know about `question` are unaffected.
 
-```go
-// In internal/essentials/routes.go (add to SetupRoutes function)
+### Frontend Impact
 
-func SetupRoutes() http.Handler {
-    r := chi.NewRouter()
+In `CompassContext`, topics already flow through to components. Update issue card and compare page components to use `topic.question || topic.title`. No context changes needed.
 
-    // Existing routes...
-    r.Get("/politicians/{zip}", GetPoliticiansByZIPHandler)
-    r.Post("/politicians/search", SearchPoliticiansByAddressHandler)
+### Build Order
 
-    // New cache status endpoint
-    r.Get("/cache-status/{type}/{identifier}", CacheStatusHandler)
+1. Add `Question string` field to `compass/models.go` Topic struct
+2. Deploy backend (AutoMigrate adds column)
+3. Add `question` to TopicOut DTO and serialization
+4. Update frontend issue card and compare page: `topic.question || topic.title`
+5. Admin: add question field to topic editor
+6. Content: populate question values for existing topics
 
-    return r
-}
-```
+---
 
-**Why this approach:**
-- Single query per check (fast, minimal DB load)
-- Reuses existing cache table logic (FederalCache, StateCache, ZipCache)
-- No coupling to BallotReady provider (read-only cache tables)
-- Returns minimal JSON (~200 bytes vs 50KB+ politician data)
+## 3. Per-User Stance Randomization
 
-### Pattern 2: React Hook Abstraction with Strategy Pattern
+### The Problem
 
-**What:** Custom hook that encapsulates polling logic and provides uniform interface for poll → SSE migration.
+When stance options are always listed in the same order (e.g., "Strongly Agree" first), users show positional bias — they're more likely to pick the first option. Randomizing order removes this, but the order must be **permanent per user** so returning users see the same presentation.
 
-**When:** Multiple components need politician data with progressive loading (Dashboard, Results, Home).
+### Two Implementation Approaches
 
-**Frontend Implementation:**
+#### Approach A: Client-Side Seed (Recommended)
 
-```javascript
-// essentials/src/hooks/usePoliticianData.js
+Generate a random seed at first visit, store it in localStorage (guest) or user profile (authenticated). Use the seed with a deterministic shuffle (e.g., mulberry32 PRNG or seeded Fisher-Yates) to derive stance order per topic.
 
-import { useState, useEffect, useRef } from 'react';
-import { checkCacheStatus, fetchPoliticiansOnce } from '../lib/api';
+**Pros:**
+- No backend API call for randomization
+- Works in guest mode
+- Seed syncs to server on account creation (part of guest_state sync)
+- Deterministic: same seed = same order on any device after login
 
-/**
- * Hook for fetching politicians with progressive loading.
- *
- * @param {string} identifier - ZIP code, state code, or "federal"
- * @param {string} type - "zip", "state", or "federal"
- * @param {object} options - Configuration
- * @param {number} options.maxAttempts - Max status checks before giving up (default: 8)
- * @param {number} options.intervalMs - Milliseconds between status checks (default: 1500)
- * @param {boolean} options.autoStart - Start polling on mount (default: true)
- * @returns {{politicians: array, loading: boolean, error: string|null, refetch: function}}
- */
-export function usePoliticianData(identifier, type = 'zip', options = {}) {
-    const {
-        maxAttempts = 8,
-        intervalMs = 1500,
-        autoStart = true
-    } = options;
-
-    const [politicians, setPoliticians] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-
-    const attemptCountRef = useRef(0);
-    const timeoutIdRef = useRef(null);
-    const abortedRef = useRef(false);
-
-    const cleanup = () => {
-        if (timeoutIdRef.current) {
-            clearTimeout(timeoutIdRef.current);
-            timeoutIdRef.current = null;
-        }
-        abortedRef.current = true;
-    };
-
-    const fetchData = async () => {
-        try {
-            setLoading(true);
-            setError(null);
-            abortedRef.current = false;
-            attemptCountRef.current = 0;
-
-            const pollCacheStatus = async () => {
-                if (abortedRef.current) return;
-
-                attemptCountRef.current += 1;
-
-                try {
-                    // Step 1: Check cache status (lightweight)
-                    const status = await checkCacheStatus(type, identifier);
-
-                    if (status.fresh) {
-                        // Step 2: Cache is ready, fetch full data
-                        const data = await fetchPoliticiansOnce(identifier, type);
-                        if (!abortedRef.current) {
-                            setPoliticians(data);
-                            setLoading(false);
-                        }
-                        return; // Stop polling
-                    }
-
-                    // Cache is still warming
-                    if (attemptCountRef.current >= maxAttempts) {
-                        // Give up after max attempts
-                        if (!abortedRef.current) {
-                            setError('Cache is taking longer than expected. Please try again.');
-                            setLoading(false);
-                        }
-                        return;
-                    }
-
-                    // Schedule next check
-                    timeoutIdRef.current = setTimeout(pollCacheStatus, intervalMs);
-
-                } catch (err) {
-                    if (!abortedRef.current) {
-                        setError(err.message || 'Failed to check cache status');
-                        setLoading(false);
-                    }
-                }
-            };
-
-            pollCacheStatus();
-
-        } catch (err) {
-            if (!abortedRef.current) {
-                setError(err.message || 'Failed to fetch politicians');
-                setLoading(false);
-            }
-        }
-    };
-
-    useEffect(() => {
-        if (autoStart && identifier) {
-            fetchData();
-        }
-
-        return cleanup;
-    }, [identifier, type]);
-
-    return {
-        politicians,
-        loading,
-        error,
-        refetch: fetchData
-    };
-}
-```
-
-**API Client Updates (api.jsx):**
-
-```javascript
-// essentials/src/lib/api.jsx
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.empowered.vote';
-
-/**
- * Check cache status without fetching full dataset.
- *
- * @param {string} type - "zip", "state", or "federal"
- * @param {string} identifier - ZIP code, state code, or "federal"
- * @returns {Promise<{fresh: boolean, lastFetch: string, ttlDays: number}>}
- */
-export async function checkCacheStatus(type, identifier) {
-    const response = await fetch(
-        `${API_BASE_URL}/essentials/cache-status/${type}/${identifier}`,
-        { credentials: 'include' }
-    );
-
-    if (!response.ok) {
-        throw new Error(`Cache status check failed: ${response.statusText}`);
-    }
-
-    return response.json();
-}
-
-/**
- * Fetch politicians once (no polling).
- *
- * @param {string} identifier - ZIP code or address
- * @param {string} type - "zip" or "address"
- * @returns {Promise<array>}
- */
-export async function fetchPoliticiansOnce(identifier, type = 'zip') {
-    if (type === 'address') {
-        const response = await fetch(
-            `${API_BASE_URL}/essentials/politicians/search`,
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                credentials: 'include',
-                body: JSON.stringify({ address: identifier })
-            }
-        );
-
-        if (!response.ok) {
-            throw new Error(`Search failed: ${response.statusText}`);
-        }
-
-        return response.json();
-    }
-
-    // ZIP code
-    const response = await fetch(
-        `${API_BASE_URL}/essentials/politicians/${identifier}`,
-        { credentials: 'include' }
-    );
-
-    if (!response.ok) {
-        throw new Error(`Fetch failed: ${response.statusText}`);
-    }
-
-    return response.json();
-}
-
-/**
- * DEPRECATED: Use usePoliticianData hook instead.
- * Legacy progressive loading function.
- */
-export async function fetchPoliticiansProgressive(zip, options = {}) {
-    console.warn('fetchPoliticiansProgressive is deprecated. Use usePoliticianData hook.');
-    // ... existing implementation for backward compatibility
-}
-```
-
-**Component Migration Example (Dashboard.jsx):**
-
-```javascript
-// Before:
-import { fetchPoliticiansProgressive } from '../lib/api';
-
-function Dashboard() {
-    const [politicians, setPoliticians] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    const handleSearch = async (zip) => {
-        setLoading(true);
-        const data = await fetchPoliticiansProgressive(zip, {
-            maxAttempts: 8,
-            intervalMs: 1500
-        });
-        setPoliticians(data);
-        setLoading(false);
-    };
-
-    // ... rest of component
-}
-
-// After:
-import { usePoliticianData } from '../hooks/usePoliticianData';
-
-function Dashboard() {
-    const [currentZip, setCurrentZip] = useState('');
-    const { politicians, loading, error } = usePoliticianData(currentZip, 'zip', {
-        maxAttempts: 8,
-        intervalMs: 1500,
-        autoStart: false // Wait for user input
-    });
-
-    const handleSearch = (zip) => {
-        setCurrentZip(zip); // Triggers hook to fetch
-    };
-
-    // ... rest of component
-}
-```
-
-**Why this approach:**
-- Single source of truth for polling logic (DRY)
-- Familiar React hooks API (useState, useEffect patterns)
-- Easy migration for existing components (minimal changes)
-- Future SSE support via strategy swap (hook internals change, API stays same)
-
-### Pattern 3: Strategy Pattern for Poll → SSE Migration
-
-**What:** Encapsulate polling/SSE logic in interchangeable strategies with uniform interface.
-
-**When:** Preparing for SSE migration without breaking existing functionality.
+**Cons:**
+- JS-only: server-side rendering would need seed passed down (not relevant here)
 
 **Implementation:**
 
 ```javascript
-// essentials/src/strategies/DataFetchStrategy.js
+// On first load (CompassContext)
+const seed = localStorage.getItem('ev_stance_seed')
+  ?? generateSeed()  // Math.random()-based, stored immediately
+localStorage.setItem('ev_stance_seed', seed)
 
-/**
- * Base interface for data fetching strategies.
- */
-export class DataFetchStrategy {
-    /**
-     * @param {object} config
-     * @param {string} config.identifier - ZIP/state/federal
-     * @param {string} config.type - "zip"/"state"/"federal"
-     * @param {function} config.onData - Callback when data arrives
-     * @param {function} config.onError - Callback on error
-     */
-    constructor(config) {
-        this.config = config;
-    }
-
-    /** Start fetching data */
-    start() {
-        throw new Error('Must implement start()');
-    }
-
-    /** Stop fetching data */
-    stop() {
-        throw new Error('Must implement stop()');
-    }
-}
-
-/**
- * Polling strategy (current implementation).
- */
-export class PollingStrategy extends DataFetchStrategy {
-    constructor(config) {
-        super(config);
-        this.attemptCount = 0;
-        this.maxAttempts = config.maxAttempts || 8;
-        this.intervalMs = config.intervalMs || 1500;
-        this.timeoutId = null;
-        this.aborted = false;
-    }
-
-    async start() {
-        this.aborted = false;
-        this.attemptCount = 0;
-        await this.poll();
-    }
-
-    stop() {
-        this.aborted = true;
-        if (this.timeoutId) {
-            clearTimeout(this.timeoutId);
-            this.timeoutId = null;
-        }
-    }
-
-    async poll() {
-        if (this.aborted) return;
-
-        this.attemptCount += 1;
-
-        try {
-            const status = await checkCacheStatus(this.config.type, this.config.identifier);
-
-            if (status.fresh) {
-                const data = await fetchPoliticiansOnce(this.config.identifier, this.config.type);
-                if (!this.aborted) {
-                    this.config.onData(data);
-                }
-                return;
-            }
-
-            if (this.attemptCount >= this.maxAttempts) {
-                this.config.onError(new Error('Cache warming timeout'));
-                return;
-            }
-
-            this.timeoutId = setTimeout(() => this.poll(), this.intervalMs);
-
-        } catch (err) {
-            if (!this.aborted) {
-                this.config.onError(err);
-            }
-        }
-    }
-}
-
-/**
- * SSE strategy (future implementation).
- */
-export class SSEStrategy extends DataFetchStrategy {
-    constructor(config) {
-        super(config);
-        this.eventSource = null;
-    }
-
-    start() {
-        const { type, identifier } = this.config;
-        const url = `${API_BASE_URL}/essentials/cache-status/${type}/${identifier}/stream`;
-
-        this.eventSource = new EventSource(url, { withCredentials: true });
-
-        this.eventSource.addEventListener('cache-ready', async () => {
-            try {
-                const data = await fetchPoliticiansOnce(identifier, type);
-                this.config.onData(data);
-                this.stop();
-            } catch (err) {
-                this.config.onError(err);
-            }
-        });
-
-        this.eventSource.addEventListener('error', (err) => {
-            this.config.onError(err);
-            this.stop();
-        });
-    }
-
-    stop() {
-        if (this.eventSource) {
-            this.eventSource.close();
-            this.eventSource = null;
-        }
-    }
-}
-
-/**
- * Factory to select strategy based on feature flags.
- */
-export function createFetchStrategy(config) {
-    // Feature flag: check if SSE is enabled
-    const useSSE = import.meta.env.VITE_FEATURE_SSE === 'true';
-
-    if (useSSE && typeof EventSource !== 'undefined') {
-        return new SSEStrategy(config);
-    }
-
-    return new PollingStrategy(config);
+// Shuffle stances for a topic (deterministic)
+function shuffleStances(stances, topicId, seed) {
+  const combined = hashCombine(seed, topicId)  // topic-specific variation
+  return seededShuffle(stances, combined)
 }
 ```
 
-**Updated Hook with Strategy:**
+**Server sync:** Include `stance_seed` in `guest_state` payload on registration. Store in a new `users.stance_seed` column (or `app_auth.users`).
 
-```javascript
-// essentials/src/hooks/usePoliticianData.js
+#### Approach B: Server-Generated Seed per User
 
-import { useState, useEffect, useRef } from 'react';
-import { createFetchStrategy } from '../strategies/DataFetchStrategy';
+Backend generates and stores a random seed per user. Frontend fetches it from `/auth/me` or `/compass/preferences`.
 
-export function usePoliticianData(identifier, type = 'zip', options = {}) {
-    const [politicians, setPoliticians] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+**Pros:** Seed survives browser clears, works on new devices immediately after login.
+**Cons:** Requires backend change, requires auth (breaks guest flow).
 
-    const strategyRef = useRef(null);
+### Recommendation
 
-    useEffect(() => {
-        if (!identifier || !options.autoStart) return;
+**Use Approach A (client-side seed)** because:
+- Works without auth (guest mode)
+- Syncs to server as part of the existing guest_state sync pattern
+- Simpler backend: just store and return the seed value
 
-        setLoading(true);
-        setError(null);
+### Schema Change
 
-        strategyRef.current = createFetchStrategy({
-            identifier,
-            type,
-            maxAttempts: options.maxAttempts || 8,
-            intervalMs: options.intervalMs || 1500,
-            onData: (data) => {
-                setPoliticians(data);
-                setLoading(false);
-            },
-            onError: (err) => {
-                setError(err.message);
-                setLoading(false);
-            }
-        });
-
-        strategyRef.current.start();
-
-        return () => {
-            if (strategyRef.current) {
-                strategyRef.current.stop();
-            }
-        };
-    }, [identifier, type]);
-
-    return { politicians, loading, error };
-}
+```sql
+ALTER TABLE app_auth.users ADD COLUMN stance_seed TEXT;
 ```
 
-**Why this approach:**
-- Swap poll → SSE via environment variable (VITE_FEATURE_SSE=true)
-- No changes to components (hook API stays the same)
-- Easy to test each strategy in isolation
-- Clear migration path (enable SSE per environment, not per component)
+### Build Order
 
-## Anti-Patterns to Avoid
+1. Add `StanceSeed` to user model and `/auth/me` response
+2. Add seed generation + localStorage persistence to CompassContext
+3. Add deterministic shuffle function to `util/`
+4. Apply shuffle in quiz question rendering
+5. Include seed in guest_state sync on register/login
 
-### Anti-Pattern 1: Inline Cache Freshness Logic in Existing Handlers
+---
 
-**What:** Adding cache status checks directly to GetPoliticiansByZIPHandler.
+## 4. Candidate Data Alongside Elected Officials in Essentials
 
-**Why bad:**
-- Violates single responsibility (handler already does cache check, fetch, background warm)
-- No way to check status without triggering full fetch
-- Couples status check to politician data serialization
-- Makes testing harder (can't test status endpoint independently)
+### Current State
 
-**Instead:** Dedicated CacheStatusHandler that only queries cache tables.
+The Essentials app shows `is_elected = true` officials. BallotReady's candidacy data is already fetched (via `FetchCandidacy`) and stored in `essentials.election_records`. The data is there; it's a display decision.
 
-### Anti-Pattern 2: Fetching Full Politician Data on Every Poll
+### Feature Request
 
-**What:** Continuing to call `/politicians/{zip}` in polling loop.
+Toggle between elected officials and candidates. Candidates should be visually differentiated.
 
-**Why bad:**
-- Wasteful: 50KB+ response when only need boolean "is cache ready?"
-- DB load: Joins across politicians, offices, chambers, districts, images, degrees, experiences
-- Bandwidth: 8 attempts × 50KB = 400KB+ for same data
+### Data Already Available
 
-**Instead:** Call `/cache-status/{type}/{identifier}` until fresh, then fetch once.
+From the existing BallotReady integration (`essentials.election_records`, `essentials.endorsements`, `essentials.politician_stances`):
+- Candidate name, party, office sought
+- Election date, is_incumbent
+- Endorsements, stances
 
-### Anti-Pattern 3: Multiple Queries Per Status Check
+### What's Missing
 
-**What:** Joining across all essentials tables to compute freshness.
+A query path to return candidates by ZIP code. The current `GET /essentials/politicians/{zip}` only returns current officeholders. Need a parallel endpoint or query parameter.
 
-```go
-// BAD: Over-fetching
-var count int64
-db.DB.Table("essentials.zip_politicians").
-    Joins("JOIN essentials.politicians ON ...").
-    Joins("JOIN essentials.offices ON ...").
-    Where("zip_code = ?", zip).
-    Count(&count)
-```
+### Recommended Approach
 
-**Why bad:**
-- Unnecessary joins for simple timestamp check
-- Slower query execution
-- Higher DB load
+**Add `?include_candidates=true` query param** to the existing ZIP endpoint, or a new endpoint `GET /essentials/candidates/{zip}`.
 
-**Instead:** Single query to cache table only.
+The candidacy data is linked to politicians via the existing `essentials.politicians` table (each candidate is a politician with election records). The query needs to:
+1. Find all elections with a district overlapping the ZIP
+2. Return associated politicians with candidacy context (is_incumbent, election_date, party_on_ticket)
 
-```go
-// GOOD: Minimal query
-var cache ZipCache
-db.DB.Where("zip_code = ?", zip).First(&cache)
-```
-
-### Anti-Pattern 4: Creating New Files for Tiny Features
-
-**What:** Creating `internal/essentials/cache_status.go` with 50 lines.
-
-**Why bad:**
-- Fragment codebase (harder to navigate)
-- Breaks existing convention (handlers.go is 2700 lines, adding handlers there is normal)
-- Adds cognitive overhead (is this a new module? separate concern?)
-
-**Instead:** Add CacheStatusHandler to existing handlers.go with clear comment separator.
-
-### Anti-Pattern 5: Prop Drilling Polling Config
-
-**What:** Passing `{maxAttempts, intervalMs}` through multiple component layers.
-
-```javascript
-// BAD: Prop drilling
-<App maxAttempts={8} intervalMs={1500}>
-  <Router maxAttempts={8} intervalMs={1500}>
-    <Dashboard maxAttempts={8} intervalMs={1500} />
-  </Router>
-</App>
-```
-
-**Why bad:**
-- Tight coupling between parent and child components
-- Hard to change defaults globally
-- Component reuse becomes difficult
-
-**Instead:** Encapsulate in hook with sensible defaults, override only when needed.
-
-```javascript
-// GOOD: Hook with defaults
-const { politicians, loading } = usePoliticianData(zip, 'zip'); // Uses defaults
-const { politicians, loading } = usePoliticianData(zip, 'zip', { maxAttempts: 12 }); // Override
-```
-
-## Migration Path for Existing Components
-
-### Step 1: Add Backend Endpoint (No Breaking Changes)
-
-1. Add `CacheStatusHandler` to `internal/essentials/handlers.go`
-2. Add route to `internal/essentials/routes.go`: `r.Get("/cache-status/{type}/{identifier}", CacheStatusHandler)`
-3. Deploy backend (new endpoint available, existing endpoints unchanged)
-
-**Impact:** None. Existing frontend continues to work.
-
-### Step 2: Add Frontend Hook (Parallel Implementation)
-
-1. Create `essentials/src/hooks/usePoliticianData.js`
-2. Add `checkCacheStatus` to `essentials/src/lib/api.jsx`
-3. Keep `fetchPoliticiansProgressive` for backward compatibility (mark deprecated)
-
-**Impact:** None. Existing components continue using old API.
-
-### Step 3: Migrate Components One-by-One
-
-**Order:**
-1. **Dashboard.jsx** (highest traffic, most benefit)
-2. **Results.jsx** (similar usage pattern)
-3. **Home.jsx** (lowest traffic, least critical)
-
-**Per component:**
-1. Replace `fetchPoliticiansProgressive` with `usePoliticianData` hook
-2. Update loading states to use hook's `loading` prop
-3. Update error handling to use hook's `error` prop
-4. Test polling behavior (8 attempts, 1500ms interval)
-5. Verify network tab shows cache-status calls instead of full fetches
-
-**Impact:** Progressive migration. Each component can be tested independently.
-
-### Step 4: Remove Deprecated Code (After All Components Migrated)
-
-1. Remove `fetchPoliticiansProgressive` from `api.jsx`
-2. Remove any unused polling logic
-3. Update any tests referencing old API
-
-**Impact:** Cleanup only. All components already migrated.
-
-### Step 5: Add SSE Support (Future)
-
-1. Implement SSE endpoint in backend: `GET /essentials/cache-status/{type}/{identifier}/stream`
-2. Add `SSEStrategy` to `essentials/src/strategies/DataFetchStrategy.js`
-3. Update `createFetchStrategy` to detect SSE support
-4. Enable via environment variable: `VITE_FEATURE_SSE=true`
-5. Test with feature flag in staging
-6. Roll out to production
-
-**Impact:** Zero changes to components. Hook internals swap strategies automatically.
-
-## Scalability Considerations
-
-| Concern | At 100 users | At 10K users | At 1M users |
-|---------|--------------|--------------|-------------|
-| **Cache status queries** | Negligible (~10 QPS) | Low (~1K QPS, single-row SELECT) | Cache in Redis, 1s TTL per ZIP |
-| **Full politician fetches** | Minimal DB load | Moderate (after cache fresh) | Add read replicas, CDN for images |
-| **Background warmers** | Rarely triggered | Concurrent goroutines (current) | Queue system (Redis/SQS) |
-| **Polling overhead** | Acceptable | Network bandwidth concern | SSE reduces to single connection |
-| **BallotReady API rate limits** | No issue | Monitor rate limits | Cache aggressively, batch warmers |
-
-### Optimization Triggers
-
-**When to add Redis caching:**
-- Cache status queries exceed 5K QPS
-- Latency for status checks > 50ms p95
-
-**When to implement SSE:**
-- Polling bandwidth exceeds 10GB/day
-- User complaints about "loading" delays
-- Infrastructure costs for polling > $100/month
-
-**When to add read replicas:**
-- Full politician fetch queries exceed 2K QPS
-- DB CPU utilization > 70%
-- Latency for politician fetches > 200ms p95
-
-## Build Order Implications
-
-### Backend Build Order
-
-1. **CacheStatusHandler** (independent, no dependencies)
-2. **Route registration** (depends on handler)
-3. **Deployment** (no schema changes, safe to deploy)
-
-**Estimated effort:** 1-2 hours (handler + route + manual testing)
-
-### Frontend Build Order
-
-1. **API client function** (`checkCacheStatus` in api.jsx)
-2. **Hook implementation** (`usePoliticianData`)
-3. **Strategy pattern** (optional for Phase 1, required for SSE)
-4. **Component migration** (one at a time)
-
-**Estimated effort:** 3-4 hours (hook + API + migration + testing)
-
-### Dependencies
+### Component Boundaries
 
 ```
 Backend:
-  CacheStatusHandler
-    ├─> No new dependencies
-    └─> Uses existing: GORM models (ZipCache, StateCache, FederalCache)
+  GET /essentials/candidates/{zip}
+    → query essentials.election_records JOIN essentials.politicians
+    → filter by upcoming elections (election_date > now())
+    → return CandidateOut DTO (extends OfficialOut with election context)
 
-Frontend:
-  usePoliticianData hook
-    ├─> checkCacheStatus (api.jsx)
-    ├─> fetchPoliticiansOnce (api.jsx, already exists)
-    └─> React hooks (useState, useEffect, useRef)
-
-  PollingStrategy (optional)
-    ├─> checkCacheStatus (api.jsx)
-    └─> fetchPoliticiansOnce (api.jsx)
-
-  SSEStrategy (future)
-    ├─> SSE backend endpoint (not yet implemented)
-    └─> Browser EventSource API
+Frontend (essentials/Dashboard.jsx):
+  → Toggle: "Officials" | "Candidates"
+  → fetchCandidates(zip) separate from fetchPoliticians(zip)
+  → Visual differentiation: candidate badge, "Running for [Office]" label
+  → Sorted by office, then by election date
 ```
 
-**Critical path:** Backend endpoint must deploy before frontend hook can be tested. Hook can be built in parallel with backend, but integration testing requires backend deployment.
+### Build Order
 
-**Parallel work:** Backend and frontend teams can work simultaneously if backend provides OpenAPI spec or mock endpoint.
+1. Add `GET /essentials/candidates/{zip}` backend handler
+2. Query election_records for upcoming elections with district-to-ZIP mapping
+3. Return CandidateOut DTO (reuse OfficialOut structure + add election fields)
+4. Add `fetchCandidates(zip)` to `essentials/src/lib/api.jsx`
+5. Add toggle UI to Dashboard
+6. Add visual differentiation to PoliticianCard (badge/label for candidates)
 
-## Testing Strategy
+---
 
-### Backend Tests
+## 5. Image Storage
 
-**Unit tests (handlers_test.go):**
-```go
-func TestCacheStatusHandler_ZipFresh(t *testing.T) {
-    // Setup: Insert fresh cache entry
-    // Call: CacheStatusHandler
-    // Assert: {fresh: true, lastFetch: recent, ttl: 90}
+### Current State
+
+Politician profile images are URLs sourced directly from BallotReady (stored as strings in `essentials.politician_images`). No local image storage exists.
+
+### The Question
+
+Should images be stored locally (Supabase Storage, S3) or served directly from BallotReady CDN URLs?
+
+### Option Comparison
+
+| Option | Cost | Complexity | Control | Risk |
+|--------|------|------------|---------|------|
+| BallotReady CDN (current) | Free | None | Low | URL expiry, BallotReady outage |
+| Supabase Storage | Free tier 1GB | Low | High | Supabase dependency |
+| AWS S3 | ~$0.02/GB | Medium | High | Cost, setup |
+| Cloudflare R2 | Free 10GB | Medium | High | Another service |
+| Netlify Large Media | Free tier | Low | Medium | Git LFS complexity |
+
+### Recommendation: Keep BallotReady CDN for Now
+
+**Rationale:**
+- BallotReady images are served from a CDN already. No egress cost.
+- Platform has nonprofit cost constraints — adding storage infrastructure is waste unless URLs expire or break.
+- If BallotReady image URLs prove unstable (404s, expiry), migrate to Supabase Storage.
+- Supabase Storage is the easiest migration path given the existing Supabase PostgreSQL dependency.
+
+**If migration becomes necessary:**
+
+Supabase Storage approach:
+1. Create bucket `politician-images` (private or public)
+2. Background job: for each politician image URL, download and upload to Supabase Storage
+3. Store Supabase Storage URL in `essentials.politician_images` alongside original URL
+4. Backend serves Supabase URL, with fallback to BallotReady URL if Storage URL is null
+
+**For building images (Capitol, state capitols, courthouses):**
+These are static assets. Store directly in the frontend project's `public/` directory or `src/assets/`. No cloud storage needed for a handful of building photos.
+
+### Component Boundaries (If Storage Added)
+
+```
+[background job / admin endpoint]
+  → download image from BallotReady URL
+  → upload to Supabase Storage bucket
+  → update essentials.politician_images.supabase_url
+
+[Backend GET /essentials/politicians/{zip}]
+  → prefer supabase_url over ballotready_url in response
+  → omit if both null
+
+[Frontend PoliticianCard]
+  → no change: renders whatever URL the API returns
+```
+
+---
+
+## 6. Multi-App Consolidation
+
+### Current Structure
+
+Four separate React apps, each deployed independently to Netlify:
+- `CompassV2/` — political compass quiz
+- `essentials/` — politician discovery
+- `EV-prototypes/` — treasury tracker, read-rank, badges, data-entry
+- `ev-ui/` — shared component library (npm package)
+
+### Three Patterns to Consider
+
+#### Pattern A: Keep Current (Separate Repos / Apps)
+
+**What it is:** Each app is an independent Vite React project. `ev-ui` is published to GitHub npm registry and consumed by other apps as a versioned package.
+
+**Pros:**
+- Existing structure — zero migration cost
+- Independent deployment: changes to one app don't risk others
+- Clear separation: `ev-ui` version bumps are explicit
+
+**Cons:**
+- `ev-ui` publish cycle is manual and slow (bump version, publish, update all consumers)
+- No code sharing beyond what's in `ev-ui` (no shared hooks, utils, API clients)
+- Four separate `node_modules` trees, four separate Netlify deploys
+
+**Best for:** Teams where app-level independence matters more than development speed. Works fine at 2-3 person scale.
+
+#### Pattern B: Monorepo (Recommended for This Team)
+
+**What it is:** All apps live in one repo (or one workspace). Uses npm workspaces or pnpm workspaces to share packages without publishing.
+
+```
+/
+├── packages/
+│   ├── ev-ui/          # shared component library
+│   ├── api-client/     # shared fetch functions + hooks
+│   └── utils/          # shared helper functions
+├── apps/
+│   ├── compass/        # CompassV2 → compass
+│   ├── essentials/     # essentials
+│   └── prototypes/     # EV-prototypes
+└── package.json        # workspace root
+```
+
+**Pros:**
+- `ev-ui` changes are immediately available to all apps (no publish cycle)
+- Shared `api-client` package for fetch wrappers — eliminates duplication of API logic
+- Single `node_modules` (hoisted by workspace manager)
+- One CI pipeline covers everything
+- Atomic commits across apps (fix `ev-ui` and update consumers in one PR)
+
+**Cons:**
+- Migration cost (restructure directories, update imports, configure workspaces)
+- Netlify needs per-app build config (base directory + build command per site)
+- Slightly more complex Vite config (workspace-relative paths)
+
+**Implementation using npm workspaces:**
+
+```json
+// root package.json
+{
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev:compass": "npm run dev -w apps/compass",
+    "dev:essentials": "npm run dev -w apps/essentials"
+  }
 }
+```
 
-func TestCacheStatusHandler_ZipStale(t *testing.T) {
-    // Setup: Insert stale cache entry (91 days old)
-    // Call: CacheStatusHandler
-    // Assert: {fresh: false, lastFetch: old, ttl: 90}
+Internal package consumption replaces npm registry:
+```json
+// apps/compass/package.json
+{
+  "dependencies": {
+    "@ev/ev-ui": "*",      // resolved from packages/ev-ui
+    "@ev/api-client": "*"  // resolved from packages/api-client
+  }
 }
-
-func TestCacheStatusHandler_ZipMissing(t *testing.T) {
-    // Setup: No cache entry
-    // Call: CacheStatusHandler
-    // Assert: {fresh: false, lastFetch: zero, ttl: 90}
-}
 ```
 
-**Integration tests:**
-```bash
-# Manual testing with curl
-curl https://api.empowered.vote/essentials/cache-status/zip/47408
-# Expect: {"fresh": true, "last_fetch": "2026-02-09T10:00:00Z", "ttl_days": 90}
+**Netlify per-app config:** Each app gets its own Netlify site with `Base directory: apps/compass` and `Build command: npm run build`.
 
-curl https://api.empowered.vote/essentials/cache-status/state/IN
-# Expect: {"fresh": true, "last_fetch": "2026-02-09T09:00:00Z", "ttl_days": 90}
+#### Pattern C: Unified SPA
 
-curl https://api.empowered.vote/essentials/cache-status/federal/federal
-# Expect: {"fresh": true, "last_fetch": "2026-02-08T10:00:00Z", "ttl_days": 90}
+**What it is:** Merge all apps into one React app with React Router. One Netlify deploy, one bundle.
+
+**Pros:**
+- Single deployment, single dev server
+- Shared state without cross-app coordination
+
+**Cons:**
+- Large bundle: users downloading treasury tracker JS when using compass
+- Merge complexity: CSS, routing conflicts between existing apps
+- All-or-nothing deployment: compass bug → all apps down
+- Loses natural boundary between civic apps (compass is a tool; essentials is a directory)
+
+**Not recommended** for this team size and app diversity. The apps serve different user journeys and have different update cadences.
+
+### Recommendation: Monorepo (Pattern B)
+
+**Why for this team:**
+- The `ev-ui` publish cycle is the biggest day-to-day friction. A monorepo eliminates it.
+- Shared API client would prevent drift between how `essentials` and `CompassV2` call the same backend.
+- 2-3 person team benefits from atomic cross-app changes without coordination overhead.
+- Netlify supports monorepo deployments natively with `Base directory` config.
+
+**Migration path (low-risk, incremental):**
+
+1. Create `package.json` at repo root with `"workspaces": ["packages/*", "apps/*"]`
+2. Move `ev-ui/` → `packages/ev-ui/` — update internal name to `@ev/ev-ui`
+3. Move `CompassV2/` → `apps/compass/` — update import paths
+4. Move `essentials/` → `apps/essentials/` — update import paths
+5. Update Netlify sites: set `Base directory` per app
+6. Stop publishing `ev-ui` to GitHub npm registry (or keep as fallback)
+7. Optionally extract `packages/api-client/` from shared fetch patterns
+
+This is a 1-2 day migration with no functional changes. Each step is independently safe to revert.
+
+---
+
+## Component Boundaries Summary
+
+### Current Boundaries
+
+```
+EV-Backend (Go)
+  ├── /auth        → session CRUD
+  ├── /compass     → topics, answers, stances
+  ├── /essentials  → politicians, offices, ZIP cache
+  ├── /treasury    → budgets, cities, line items
+  └── /staging     → volunteer data entry
+
+CompassV2 (React)   → /compass endpoints
+essentials (React)  → /essentials endpoints
+EV-prototypes       → /treasury, /staging endpoints
+ev-ui (npm)         → RadarChartCore, PoliticianCard, PoliticianProfile
 ```
 
-### Frontend Tests
+### Target Boundaries (After Milestone)
 
-**Unit tests (usePoliticianData.test.js):**
-```javascript
-import { renderHook, waitFor } from '@testing-library/react';
-import { usePoliticianData } from './usePoliticianData';
-import * as api from '../lib/api';
+```
+EV-Backend (Go) — same module structure, new fields/endpoints
+  ├── /auth          → + guest_state sync on register/login
+  │                  → + stance_seed field on users
+  ├── /compass       → + question field on topics
+  └── /essentials    → + /candidates/{zip} endpoint
 
-jest.mock('../lib/api');
+apps/compass (React)  → guest-first, no ProtectedRoute on quiz
+                       → localStorage-backed state always on
+                       → guest_state sync on register/login
 
-test('fetches politicians when cache is fresh on first check', async () => {
-    api.checkCacheStatus.mockResolvedValue({ fresh: true });
-    api.fetchPoliticiansOnce.mockResolvedValue([{ id: 1, name: 'Test' }]);
+apps/essentials (React) → officials/candidates toggle
+                         → visual differentiation for candidates
 
-    const { result } = renderHook(() => usePoliticianData('12345', 'zip'));
+packages/ev-ui          → shared components, updated PoliticianCard
 
-    await waitFor(() => expect(result.current.loading).toBe(false));
-
-    expect(api.checkCacheStatus).toHaveBeenCalledTimes(1);
-    expect(api.fetchPoliticiansOnce).toHaveBeenCalledTimes(1);
-    expect(result.current.politicians).toHaveLength(1);
-});
-
-test('polls multiple times when cache is stale', async () => {
-    api.checkCacheStatus
-        .mockResolvedValueOnce({ fresh: false })
-        .mockResolvedValueOnce({ fresh: false })
-        .mockResolvedValueOnce({ fresh: true });
-    api.fetchPoliticiansOnce.mockResolvedValue([{ id: 1, name: 'Test' }]);
-
-    const { result } = renderHook(() =>
-        usePoliticianData('12345', 'zip', { intervalMs: 100 })
-    );
-
-    await waitFor(() => expect(result.current.loading).toBe(false), { timeout: 5000 });
-
-    expect(api.checkCacheStatus).toHaveBeenCalledTimes(3);
-    expect(api.fetchPoliticiansOnce).toHaveBeenCalledTimes(1);
-});
+packages/api-client     → shared fetch wrappers (optional extraction)
 ```
 
-**Integration tests:**
-```javascript
-// Manual testing in browser console
-const { checkCacheStatus, fetchPoliticiansOnce } = await import('./lib/api.js');
+---
 
-// Test status check
-const status = await checkCacheStatus('zip', '47408');
-console.log('Status:', status); // {fresh: true, ...}
+## Data Flow (New Features)
 
-// Test full fetch
-const politicians = await fetchPoliticiansOnce('47408', 'zip');
-console.log('Politicians:', politicians.length);
+### Guest Auth Flow
+
+```
+User opens CompassV2 (no login)
+  → CompassContext generates stance_seed, stores in localStorage
+  → User answers quiz → answers stored ONLY in localStorage
+  → User views results → computed locally from localStorage answers
+  → User optionally registers
+      → RegisterForm reads localStorage: answers, selectedTopics, inverted, stance_seed
+      → POST /auth/register { username, password, guest_state: { answers, ... } }
+      → Backend: create user, write answers to compass.answers, write seed to users.stance_seed
+      → Frontend: clear ev_guest_* localStorage keys
+  → On subsequent logins: /auth/me returns stance_seed
+  → CompassContext uses server seed instead of localStorage seed
 ```
 
-**E2E tests (Playwright/Cypress):**
-```javascript
-test('Dashboard progressive loading with cache status', async ({ page }) => {
-    await page.goto('http://localhost:5173');
+### Stance Randomization Flow
 
-    // Enter ZIP
-    await page.fill('input[placeholder="Enter ZIP"]', '47408');
-    await page.click('button:has-text("Search")');
-
-    // Verify loading state appears
-    await page.waitForSelector('text=Loading...');
-
-    // Verify cache status API called (network tab)
-    const statusRequest = await page.waitForRequest(
-        req => req.url().includes('/cache-status/zip/47408')
-    );
-    expect(statusRequest).toBeTruthy();
-
-    // Verify politicians loaded
-    await page.waitForSelector('[data-testid="politician-card"]', { timeout: 10000 });
-
-    // Verify only ONE full fetch happened (not 8)
-    const politicianRequests = page.requests().filter(
-        req => req.url().includes('/politicians/47408')
-    );
-    expect(politicianRequests.length).toBe(1);
-});
+```
+Topic loads into CompassContext
+  → seed = localStorage.getItem('ev_stance_seed') || user.stance_seed
+  → For each topic: shuffledStances = seededShuffle(topic.stances, seed, topic.id)
+  → Rendered order is stable across page refreshes (same seed = same shuffle)
+  → Answers stored by stance ID, not position — order doesn't affect data integrity
 ```
 
-## Performance Metrics
+### Candidate Discovery Flow
 
-### Before Optimization (Current State)
+```
+User views essentials Dashboard
+  → Toggle to "Candidates" tab
+  → fetchCandidates(zip) → GET /essentials/candidates/{zip}
+  → Backend: query election_records JOIN politicians WHERE election_date > now()
+               AND district covers zip
+  → Return CandidateOut[] with office_sought, election_date, is_incumbent
+  → Frontend: render CandidateCard with "Running for [Office]" badge
+  → Click → profile page (same /politician/:id route, additional election context)
+```
 
-**Per ZIP search:**
-- 8 API calls to `/politicians/{zip}` (1 every 1.5s)
-- 8 × ~50KB = ~400KB transferred
-- 8 DB queries with joins across 7+ tables
-- Total time: ~12 seconds (8 attempts × 1.5s interval)
+---
 
-### After Optimization (Status Check Pattern)
+## Build Order (Cross-Feature Dependencies)
 
-**Per ZIP search (cache fresh on first check):**
-- 1 API call to `/cache-status/zip/{zip}` (~200 bytes)
-- 1 API call to `/politicians/{zip}` (~50KB)
-- 1 cache table query (single row SELECT)
-- 1 full politician query
-- Total time: ~2 seconds (status check + full fetch)
+The features have these dependencies:
 
-**Savings:**
-- 83% reduction in API calls (8 → 1 status + 1 full = 2 total)
-- 87% reduction in bandwidth (400KB → 50.2KB)
-- 87% reduction in DB load (8 full queries → 1 cache + 1 full)
-- 83% reduction in time (12s → 2s)
+```
+[Monorepo migration]  → independent, do first to unblock parallel work
+        ↓
+[Guest-first auth]    → depends on: nothing (pure frontend + small backend change)
+        ↓
+[Stance seed]         → depends on: guest-first auth (seed is part of guest_state)
+        ↓
+[Question/prompt]     → independent of auth, depends on: schema migration only
+        ↓
+[Candidates]          → independent, depends on: existing candidacy data (already fetched)
+        ↓
+[Image storage]       → deferred unless BallotReady URLs break
+```
 
-**Per ZIP search (cache stale, warms on 3rd attempt):**
-- 3 API calls to `/cache-status/zip/{zip}` (~600 bytes)
-- 1 API call to `/politicians/{zip}` (~50KB)
-- 3 cache table queries
-- 1 full politician query
-- Total time: ~4.5 seconds (3 × 1.5s + fetch time)
+### Recommended Phase Sequence
 
-**Savings:**
-- 50% reduction in API calls (8 → 4 total)
-- 87% reduction in bandwidth (400KB → 50.6KB)
-- 62% reduction in DB load (8 full queries → 3 cache + 1 full)
-- 62% reduction in time (12s → 4.5s)
+| Phase | Work | Parallelizable? |
+|-------|------|-----------------|
+| 1 | Monorepo migration | Solo — everyone benefits immediately |
+| 2a | Guest-first auth (frontend) | Dev A |
+| 2b | Question/prompt field (backend + frontend) | Dev B |
+| 3a | Stance seed (depends on guest auth) | Dev A, after 2a |
+| 3b | Candidates endpoint + toggle (backend + frontend) | Dev B, after 2b |
+| 4 | Image storage | Deferred — only if needed |
 
-### SSE Future State
+---
 
-**Per ZIP search:**
-- 1 SSE connection to `/cache-status/zip/{zip}/stream` (minimal overhead)
-- 1 API call to `/politicians/{zip}` (~50KB)
-- SSE push when cache ready (sub-second notification)
-- Total time: ~1-2 seconds (SSE latency + full fetch)
+## Decisions This Research Supports
 
-**Savings over polling:**
-- 50% reduction in API calls (4 → 2 total, even in stale case)
-- Near-instant notification when cache ready (no polling interval waste)
-- Persistent connection reduces HTTP overhead
+| Decision | Recommendation | Rationale |
+|----------|---------------|-----------|
+| Guest-first auth sync pattern | localStorage → guest_state in register/login body | No new tables, syncs atomically, works in guest mode |
+| Question/prompt field | Add `question TEXT` column, omitempty in API | Backward-compatible, content-fillable independently |
+| Stance randomization | Client-side seed, synced to server on registration | Works guest-first, deterministic across devices after login |
+| Candidate display | New `/candidates/{zip}` endpoint, toggle in Dashboard | Data already exists, clean separation from officials view |
+| Image storage | Keep BallotReady CDN; Supabase Storage if URLs break | Zero cost, zero complexity until proven necessary |
+| Project structure | Monorepo with npm workspaces | Eliminates ev-ui publish friction, enables shared api-client |
 
-## Confidence Assessment
+---
 
-| Area | Confidence | Rationale |
-|------|------------|-----------|
-| **Backend handler design** | HIGH | Standard Chi + GORM pattern, similar to existing handlers, single-query approach proven |
-| **Frontend hook pattern** | HIGH | React hooks are standard, polling abstraction is well-established pattern, strategy pattern widely used |
-| **Cache status query** | HIGH | Simple SELECT with WHERE clause, indexed columns (zip_code, state_code), minimal DB impact |
-| **Migration path** | HIGH | Backward-compatible, components migrate independently, no breaking changes |
-| **SSE feasibility** | MEDIUM | SSE supported by all modern browsers, but backend SSE implementation in Go/Chi requires research (not in scope for this milestone) |
-| **Performance estimates** | MEDIUM | Based on current payload sizes and query counts, actual savings may vary with data growth |
-
-## Sources
-
-**Go/Chi backend patterns:**
-- Go-Chi documentation: https://go-chi.io (official router patterns)
-- GORM documentation: https://gorm.io/docs (query optimization, single-table queries)
-- Existing codebase patterns: EV-Backend/internal/essentials/handlers.go (2700 lines, established conventions)
-
-**React polling patterns:**
-- React hooks documentation: https://react.dev/reference/react/hooks (useEffect, useState patterns)
-- MDN EventSource API: https://developer.mozilla.org/en-US/docs/Web/API/EventSource (SSE browser support)
-- Strategy pattern: Design Patterns (GoF), widely used in JavaScript/React ecosystems
-
-**Performance patterns:**
-- HTTP polling vs SSE: https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events (official comparison)
-- Cache-aside pattern: Standard caching architecture (check cache, fetch if miss, update cache)
-
-**Project-specific:**
-- EV-Backend module structure: internal/essentials/, internal/compass/, internal/treasury/ (consistent pattern across modules)
-- Existing progressive loading: essentials/src/lib/api.jsx fetchPoliticiansProgressive implementation
-- Cache architecture: federal_cache, state_caches, zip_caches with 90-day TTL
+*Research complete: 2026-02-17*

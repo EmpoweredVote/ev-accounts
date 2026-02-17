@@ -1,557 +1,385 @@
-# Domain Pitfalls: Cache Polling Optimization
+# PITFALLS.md — Empowered Vote Platform Improvements
 
-**Domain:** Progressive loading with cache-status endpoints
-**Researched:** 2026-02-09
-
-## Critical Pitfalls
-
-Mistakes that cause rewrites, data corruption, or catastrophic user experience degradation.
-
-### Pitfall 1: TOCTOU Race Between Status Check and Data Fetch
-
-**What goes wrong:** Status endpoint says "fresh" but subsequent data fetch returns stale/empty data because warming completed between the two requests.
-
-**Why it happens:** In a TOCTOU (Time-Of-Check-Time-Of-Use) race condition, the status check and data fetch are separate HTTP calls with a time gap between them. Another client could trigger cache invalidation, warming could complete and flip status, or TTL could expire in the window between status check and fetch.
-
-**Consequences:**
-- Frontend shows "fresh" spinner/UI state but receives stale data
-- User sees incorrect/outdated information with no warning
-- Progressive loading logic breaks (expects "warming" but gets "fresh" with old data)
-- Silent data corruption if frontend assumes status=fresh guarantees current data
-
-**Prevention:**
-- **Option 1 (Atomic):** Return both status AND data in single response (recommended for this codebase)
-  ```go
-  // Single atomic read
-  type StatusResponse struct {
-    Status     string        `json:"status"`
-    Data       []OfficialOut `json:"data"`
-    CachedAt   time.Time     `json:"cached_at"`
-    ExpiresAt  time.Time     `json:"expires_at"`
-  }
-  ```
-- **Option 2 (Versioned):** Include cache version token in status response; data fetch validates token
-  ```go
-  // Status endpoint returns: {"status": "fresh", "version": "abc123"}
-  // Data endpoint validates: If-Match: "abc123" → 412 Precondition Failed if changed
-  ```
-- **Option 3 (Timestamp):** Status includes cached_at timestamp; frontend validates data matches
-  ```json
-  {"status": "fresh", "cached_at": "2026-02-09T10:00:00Z"}
-  // Data response includes same cached_at; frontend rejects mismatches
-  ```
-
-**Detection:**
-- Monitor for X-Data-Status="fresh" with empty/partial data arrays
-- Log status endpoint calls with timestamp; correlate with subsequent data fetch timestamps >200ms apart
-- Unit test: warmLocal completes between status check and data fetch
-- E2E test: Parallel clients racing status/fetch endpoints
-
-**Phase mapping:** Phase 1 (API design) must address this atomically. Retrofitting after Phase 2 (frontend integration) requires breaking changes.
+Research type: Pitfalls
+Question: What do civic engagement and multi-app platform projects commonly get wrong when adding guest auth, evolving data models, and consolidating codebases?
 
 ---
 
-### Pitfall 2: Advisory Lock Held During Network I/O
+## Domain: Guest Auth / Login-Optional Conversion
 
-**What goes wrong:** PostgreSQL advisory lock held while calling BallotReady API causes all warming requests to serialize, destroying concurrency benefits.
+### PITFALL 1: Session identity collision when guest becomes authenticated user
 
-**Why it happens:** Current warmLocal pattern acquires lock → fetches from BallotReady (3-5 seconds) → upserts DB → releases lock. If lock is held during the slow network call, only one ZIP can warm at a time across all servers.
+**What goes wrong:** A guest user takes a quiz or builds up state (answers, selected topics, progress). When they create an account or log in, the backend creates a new session but the frontend still holds the guest state in localStorage or component memory. The merge never happens, so the user loses their work — or worse, the guest state silently overwrites the authenticated user's server-side state.
 
-**Consequences:**
-- Multiple ZIP searches at same time (realistic: 5-10 concurrent users) wait in serial
-- First ZIP takes 3 seconds, second takes 6 seconds, third takes 9 seconds, etc.
-- Advisory lock meant to dedupe warming now creates bottleneck
-- Frontend polling times out (8 attempts × 1.5s = 12 seconds) before warming completes
+**Warning signs:**
+- Any "save progress" CTA that routes to login without a post-login redirect that triggers a sync
+- localStorage keys that are written under a guest key and never migrated on auth
+- Backend session endpoint returns a new user ID with no merge/claim mechanism
 
-**Prevention:**
-- **Pattern:** Acquire lock → check if warming needed → release lock → fetch external data → re-acquire lock → upsert → release
-  ```go
-  // WRONG: Lock held during network I/O
-  if !tryAcquireLock(ctx, lockKey) { return }
-  defer releaseLock(ctx, lockKey)
-  data := ballotready.Fetch(zip) // 3-5 seconds with lock held
-  upsert(data)
-
-  // CORRECT: Lock only for DB operations
-  if !tryAcquireLock(ctx, lockKey) { return }
-  needsWarm := checkIfStale(zip)
-  releaseLock(ctx, lockKey)
-  if !needsWarm { return }
-
-  data := ballotready.Fetch(zip) // No lock during network I/O
-
-  if !tryAcquireLock(ctx, lockKey) { return } // Re-acquire for upsert
-  defer releaseLock(ctx, lockKey)
-  upsert(data)
-  ```
-- Use finer-grained locks: ZIP-level locks instead of global cache lock
-- Document lock holding duration limits (target: <50ms per acquisition)
-
-**Detection:**
-- Prometheus metric: advisory_lock_held_duration_seconds{p99} > 1000ms
-- Log warning if lock held >500ms
-- Load test: 10 concurrent ZIP requests should complete in <5 seconds total (not 30 seconds serial)
-
-**Phase mapping:** Review in Phase 1 (backend architecture). Lock-holding duration must be characterized before adding cache-status endpoint.
+**Prevention strategy:**
+- Design a guest session token (anonymous UUID, stored in a cookie or localStorage) from day one
+- On login/register, POST the guest token to the backend so the server can merge guest state into the new account
+- Compass: before launching guest mode, define which state is mergeable (quiz answers) vs. discarded (temporary UI state)
+- **Phase:** Guest auth phase (before any frontend work ships guest-first flows)
 
 ---
 
-### Pitfall 3: Frontend Memory Leak from Uncleaned Polling Timers
+### PITFALL 2: Treating "guest" as "no auth" rather than a distinct identity tier
 
-**What goes wrong:** User navigates away from Results page while polling; setInterval/setTimeout continues firing, updating unmounted component state, causing memory leak and console errors.
+**What goes wrong:** The team implements guest mode by simply removing the auth guard. There is no persistent guest identity. Every page refresh resets the user. Analytics, personalization, and A/B experiments become impossible. When the user eventually creates an account there is nothing to associate.
 
-**Why it happens:** fetchPoliticiansProgressive uses async/await with sleep() loops. If component unmounts mid-polling, the loop continues executing. Each attempt calls onUpdate callback which tries to setState on unmounted component.
+**Warning signs:**
+- "Guest" is implemented as a boolean flag on existing session logic
+- No cookie or token is issued to the guest browser
+- Backend has no guest user row or ephemeral session record
 
-**Consequences:**
-- React warning: "Can't perform a state update on an unmounted component"
-- Memory accumulates with each navigation (zombie polling loops)
-- API spam: abandoned polls continue hitting backend every 1.5 seconds
-- User navigates Results → Profile → Results → Profile (5 times) = 5 concurrent polling loops
-
-**Prevention:**
-- **Pattern 1 (AbortController):** Cancel in-flight fetch and polling loop on unmount
-  ```javascript
-  useEffect(() => {
-    const abortController = new AbortController();
-
-    fetchPoliticiansProgressive(zip, onUpdate, {
-      signal: abortController.signal // Pass to fetch calls
-    });
-
-    return () => abortController.abort(); // Cleanup
-  }, [zip]);
-  ```
-- **Pattern 2 (Mounted flag):** Check if component still mounted before setState
-  ```javascript
-  useEffect(() => {
-    let isMounted = true;
-
-    const onUpdate = (result) => {
-      if (!isMounted) return; // Ignore updates after unmount
-      setList(result.data);
-    };
-
-    fetchPoliticiansProgressive(zip, onUpdate);
-
-    return () => { isMounted = false; };
-  }, [zip]);
-  ```
-- **Pattern 3 (Ref-based):** Store abort flag in ref (survives re-renders)
-  ```javascript
-  const abortRef = useRef(false);
-
-  useEffect(() => {
-    abortRef.current = false;
-    // Pass abortRef to polling function; check before each iteration
-    return () => { abortRef.current = true; };
-  }, [zip]);
-  ```
-
-**Detection:**
-- React DevTools Profiler: component unmounted but re-renders continue
-- Console warnings: "Can't perform state update on unmounted component"
-- Network tab: requests continue after navigation away
-- Memory profiler: heap grows with repeated navigation
-
-**Phase mapping:** Must fix in Phase 2 (frontend refactor) BEFORE adding cache-status endpoint. New polling pattern will inherit the leak if not addressed.
+**Prevention strategy:**
+- Issue a real (but limited) session or anonymous ID to every visitor, even before login
+- Store minimal guest state server-side (or at minimum sign it client-side) so it survives tab close
+- Compass: the quiz answer set and topic selections are the key mergeable artifacts — design for that from the start
+- **Phase:** Guest auth phase, auth layer design step
 
 ---
 
-### Pitfall 4: Cold Miss Returns Before waitForDataMin Completes
+### PITFALL 3: Guarded API endpoints accidentally exposed to guests (or vice versa)
 
-**What goes wrong:** Cache-status endpoint returns "warming" but data endpoint returns empty array because waitForDataMin timeout (10 seconds) hasn't elapsed yet.
+**What goes wrong:** After removing the login gate from the frontend, developers forget that certain backend routes require a valid session. Guests hit 401s on data they should see. Alternatively, routes are opened too broadly and authenticated-only writes (saving stances, account preferences) accept unauthenticated requests.
 
-**Why it happens:** Current design: data endpoint calls waitForDataMin (polls DB every 200ms for up to 10 seconds). If cache-status endpoint bypasses this wait, it returns "warming" immediately. Frontend then calls data endpoint expecting at least partial data, but warmer hasn't written any rows yet.
+**Warning signs:**
+- Chi middleware applied at the router level rather than per-route or per-group
+- No integration test that makes unauthenticated requests to every route and asserts the expected status code
+- Frontend silently swallows 401s without distinguishing "not logged in" from "actually forbidden"
 
-**Consequences:**
-- Frontend shows "Loading..." spinner indefinitely (status says warming but no data arrives)
-- User abandons search thinking it's broken
-- Progressive loading UX breaks: designed to show partial results incrementally, but gets empty array
-- Race between cache-status "warming" and first DB row insert
-
-**Prevention:**
-- **Option 1 (Unified endpoint):** Status and data in single response eliminates race
-  ```go
-  // Always call waitForDataMin with minCount=1
-  if warming, ok := waitForDataMin(ctx, zip, "", 10*time.Second, 200*time.Millisecond, 1); ok {
-    return StatusResponse{Status: "warming", Data: warming, Count: len(warming)}
-  }
-  return StatusResponse{Status: "warming", Data: []OfficialOut{}, Count: 0}
-  ```
-- **Option 2 (Guaranteed minimum):** Status endpoint also waits for minCount=1 before returning "warming"
-  ```go
-  // Status endpoint logic
-  if fresh { return "fresh" }
-  if warming, ok := waitForDataMin(ctx, zip, "", 2*time.Second, 200*time.Millisecond, 1); ok {
-    return "warming" // Guaranteed at least 1 row exists
-  }
-  return "cold" // No data yet, caller should wait longer
-  ```
-- **Option 3 (Count field):** Return count in status; frontend knows whether to expect data
-  ```json
-  {"status": "warming", "count": 0}  // No data yet, keep polling
-  {"status": "warming", "count": 5}  // 5 rows available, fetch now
-  ```
-
-**Detection:**
-- Log: status="warming" returned but zip_politicians row count = 0
-- Frontend logs: onUpdate called with data=[] and status="warming" (should have at least 1)
-- E2E test: Cold cache → status endpoint → data endpoint within 500ms → assert data.length > 0
-
-**Phase mapping:** Critical for Phase 1 (API design). Defines contract between status and data endpoints. Frontend polling logic (Phase 2) depends on this guarantee.
+**Prevention strategy:**
+- Audit the Chi route tree in EV-Backend: explicitly mark every route as public, guest-ok, or auth-required
+- Add a middleware pattern (e.g., `OptionalSession` vs. `RequireSession`) so intent is encoded in the route definition, not assumed
+- Write a route manifest document during auth phase that lists expected auth levels per endpoint
+- **Phase:** Guest auth phase, backend route audit step
 
 ---
 
-### Pitfall 5: Backward Incompatibility During Rolling Deployment
+### PITFALL 4: Compass live users lose existing sessions during the auth model change
 
-**What goes wrong:** Old frontend (expects X-Data-Status header) hits new backend (cache-status endpoint returns JSON); progressive loading breaks for 10-30 minutes during deployment.
+**What goes wrong:** The session cookie domain, SameSite, or expiry changes as part of the guest auth rollout. Existing logged-in users are silently logged out. On a civic platform used during election season this can cause real trust damage.
 
-**Why it happens:** Rolling deployment deploys new backend instances incrementally. Load balancer routes some requests to old backend (with headers), some to new backend (with JSON endpoint). Frontend doesn't handle mixed responses gracefully.
+**Warning signs:**
+- Cookie config changes (domain, SameSite, Secure flags) in the same deploy as guest mode
+- No session migration or backward-compatible cookie handling for existing sessions
+- The CLAUDE.md "Cookie Domain Configuration" note is not resolved before the auth change ships
 
-**Consequences:**
-- 50% of users see broken UI during deployment window
-- fetchPoliticiansProgressive expects header, gets 404 for new endpoint
-- Error handling falls back to timeout, 12-second wait before showing error
-- Support tickets spike during every deployment
-- Rollback required if not caught in staging
-
-**Prevention:**
-- **Option 1 (Dual-mode backend):** New backend supports BOTH header and endpoint
-  ```go
-  // New backend preserves X-Data-Status header for backward compatibility
-  w.Header().Set("X-Data-Status", status)
-  writeJSON(w, StatusResponse{Status: status, Data: data})
-  ```
-- **Option 2 (Feature detection):** Frontend detects which backend version
-  ```javascript
-  // Try new endpoint; fall back to header-based on 404
-  async function getStatus(zip) {
-    const res = await fetch(`/api/cache-status/${zip}`);
-    if (res.status === 404) {
-      return parseHeaderStatus(await fetch(`/api/politicians/${zip}`));
-    }
-    return await res.json();
-  }
-  ```
-- **Option 3 (Version header):** Backend advertises API version
-  ```
-  X-API-Version: 2
-  X-Data-Status: warming  // Deprecated but still returned for v1 clients
-  ```
-- **Option 4 (Phased rollout):**
-  1. Deploy backend with both header AND endpoint (week 1)
-  2. Deploy frontend to use endpoint, falls back to header (week 2)
-  3. Remove header from backend (week 3)
-
-**Detection:**
-- Canary deployment: 5% of traffic to new backend, monitor error rate
-- Feature flag: gradual rollout of new frontend code
-- Logs: track header-based vs endpoint-based requests; alert if endpoint 404 rate >1%
-- Staging environment: old frontend + new backend, new frontend + old backend (both combos)
-
-**Phase mapping:** Critical for Phase 3 (deployment strategy). Must be designed BEFORE implementing Phase 1 or Phase 2. Backward compatibility is not a refactoring concern; it's an architecture decision.
+**Prevention strategy:**
+- Resolve the cookie domain issue (restore `.empowered.vote` domain) in a separate deploy before any auth model changes
+- Test existing session continuity on Compass with real browsers (Safari, Chrome, Firefox) after every deploy that touches auth middleware
+- Keep session TTL and cookie attributes stable during the guest auth rollout; change only the issuance logic
+- **Phase:** Pre-guest-auth — cookie domain fix must ship first
 
 ---
 
-## Moderate Pitfalls
+## Domain: Data Model Evolution on Live Data
 
-Issues that degrade performance or UX but don't cause data corruption or require rewrites.
+### PITFALL 5: Adding a non-nullable field to a table with existing rows
 
-### Pitfall 6: Cache-Status Endpoint Creates N+1 Query Pattern
+**What goes wrong:** A new column (`question`, `prompt`, `is_candidate`) is added via AutoMigrate without a DEFAULT. Existing rows get NULL. The Go struct has `not null` or the frontend assumes the field is always present. API responses break for old records. Alternatively, the migration adds a DEFAULT that semantically wrong for existing data.
 
-**What goes wrong:** Frontend checks cache status, then fetches data. For 3 pages using progressive loading (Dashboard, Results, Home), what was 1 request becomes 2 requests per page load.
+**Warning signs:**
+- AutoMigrate used for schema changes on tables with production data (AutoMigrate adds columns but does not alter or backfill)
+- New Go struct fields added without `gorm:"default:..."` or a corresponding SQL migration script
+- No backfill step planned for existing rows after adding the column
 
-**Why it happens:** Separating status from data seems cleaner but doubles HTTP overhead. Each page load: OPTIONS (CORS preflight) + cache-status + politicians endpoint = 3 requests instead of 1.
-
-**Prevention:**
-- Measure current performance: time-to-first-byte for combined response
-- Compare against separate status + data: round-trip latency matters (50-100ms per request)
-- Justify separation: "Status checks allow us to skip fetching 200KB JSON when cache is fresh" (but current design already returns empty array when warming, so this benefit is unclear)
-- Consider: Does cache-status endpoint enable new UX? (e.g., "Last updated 5 minutes ago") If not, added complexity may not pay off.
-
-**Detection:**
-- Network waterfall: sequential requests to cache-status → politicians endpoint
-- Backend metric: requests_per_search{p50} increases from 1 to 2
-
-**Phase mapping:** Evaluate in Phase 1 (API design). If status+data in single response meets requirements, skip separate endpoint entirely.
+**Prevention strategy:**
+- For every new column on an existing table: write an explicit SQL migration (not just AutoMigrate) with a safe DEFAULT, then a separate backfill query, then (if needed) a NOT NULL constraint
+- Compass topics table: add `question` and `prompt` as nullable with `omitempty` in JSON; make them required only after all rows are backfilled
+- Treat AutoMigrate as a development convenience only — any column change on a live table needs an explicit migration script
+- **Phase:** Data model evolution phase, schema change step
 
 ---
 
-### Pitfall 7: Polling Interval Mismatch Creates Stuttering UX
+### PITFALL 6: Changing the meaning of an existing field breaks client contracts
 
-**What goes wrong:** Frontend polls every 1.5 seconds, but backend waitForDataMin polls DB every 200ms. Frontend misses 7 out of 8 updates, making UI appear frozen then suddenly populate.
+**What goes wrong:** `shortTitle` on a Compass topic was the quiz card label. The team decides it should now be the question stem. Old frontend code reads `shortTitle` expecting a 2-4 word label; new frontend reads it expecting a full sentence question. Both are in production at the same time during a deploy window. Users see garbled UI.
 
-**Why it happens:** Backend discovers new rows every 200ms (0s, 0.2s, 0.4s, 0.6s...). Frontend checks at 0s, 1.5s, 3s, 4.5s. Most incremental updates are skipped.
+**Warning signs:**
+- Field is repurposed without a new field name or versioned API response
+- Frontend and backend deploy simultaneously rather than backend-first
+- No API versioning or additive-only field policy
 
-**Prevention:**
-- Align polling intervals: if backend polls DB every 200ms, frontend should poll API every 200-500ms for smooth incremental updates
-- Or change strategy: backend buffers updates, returns batches every 1.5 seconds (aligns with frontend polling)
-- Current settings (maxAttempts=8, intervalMs=1500) = 12 seconds max wait; ensure backend TTL and warming time support this
-
-**Detection:**
-- User testing: "Politicians appear in chunks, not smoothly"
-- Frontend logs: onUpdate called with same data.length multiple times, then jumps from 3 → 15
-
-**Phase mapping:** Tune in Phase 2 (frontend refactor). Requires coordination with backend timing assumptions from Phase 1.
+**Prevention strategy:**
+- Never change the meaning of an existing field — add a new field instead (`question_text`, `prompt_text`)
+- Deprecate the old field with `omitempty` and remove it only after all clients have migrated
+- Backend deploys first (new field present but optional), frontend deploys second (reads new field, falls back to old)
+- **Phase:** Data model evolution phase, field design step
 
 ---
 
-### Pitfall 8: Excessive Polling During Coordinated Traffic Spikes
+### PITFALL 7: BallotReady candidate data overwrites incumbent data
 
-**What goes wrong:** Viral social media post → 500 users search their ZIP simultaneously → 4000 polling requests (500 users × 8 attempts) in 12 seconds overwhelm backend.
+**What goes wrong:** The BallotReady API returns both officeholders and candidates in certain queries. The upsert logic (which uses `external_id` as the conflict key) treats a candidate record as an update to the sitting politician record, clobbering office title, district, or contact data.
 
-**Why it happens:** Progressive polling is exponential under load. Each user generates 8 API calls. Warming is deduplicated (advisory lock) but status checks are not.
+**Warning signs:**
+- A single `external_id` appears in both officeholder and candidacy API responses with different field values
+- Upsert uses ON CONFLICT DO UPDATE with broad SET clauses that overwrite every column
+- No `is_candidate` / `is_officeholder` flags on the politician record to distinguish record types
 
-**Prevention:**
-- Add jitter to polling interval: `intervalMs + random(0, 500)` spreads requests
-- Implement backoff after first few attempts: 1.5s → 2s → 3s → 5s
-- Backend rate limiting: 429 Too Many Requests if >10 requests/second from same IP
-- CDN caching for cache-status endpoint: if status=fresh, cache for 60 seconds at edge
-
-**Detection:**
-- Metrics: requests_per_second spikes correlate with warming events
-- 500 errors from connection pool exhaustion
-- Load test: 100 concurrent ZIP searches, measure total request count
-
-**Phase mapping:** Consider in Phase 1 (API design). Rate limiting and caching headers must be designed upfront.
+**Prevention strategy:**
+- Treat candidates as a separate data entity: either a separate table (`essentials.candidates`) or a type discriminator column on politicians
+- Upsert logic should be additive: candidacy data enriches but does not replace officeholder data
+- During BallotReady candidacy fetch, check if the `external_id` already exists as an officeholder before writing
+- **Phase:** Candidate data phase, BallotReady integration step
 
 ---
 
-### Pitfall 9: State Normalization Lost During Refactor
+### PITFALL 8: ZIP/cache invalidation logic doesn't account for candidates who are not yet officials
 
-**What goes wrong:** Results.jsx uses setList(data), Dashboard.jsx uses setPoliticians(data), Home.jsx uses setData(data). Refactoring fetchPoliticiansProgressive callback signature breaks callers in subtle ways.
+**What goes wrong:** The 90-day TTL cache was designed for incumbent data that changes rarely. Candidates appear and drop out on a weeks-long cycle during election season. Stale candidate data (a candidate who dropped out 3 weeks ago is still showing) erodes user trust on a civic platform where accuracy is the core value proposition.
 
-**Why it happens:** Each page passes different onUpdate callback shape. Changing callback parameters (e.g., adding retryAfter field) requires updating all 3 callers. Easy to miss one.
+**Warning signs:**
+- Candidate data stored in the same cache tables as officeholder data with the same TTL
+- No election-cycle-aware refresh logic (candidates should refresh more frequently near election dates)
+- Frontend shows "running for office" for a candidate who withdrew
 
-**Prevention:**
-- Define canonical callback interface:
-  ```typescript
-  type ProgressUpdate = {
-    status: 'fresh' | 'warming' | 'stale' | 'timeout';
-    data: OfficialOut[];
-    error?: string;
-    retryAfter?: number;
-    cachedAt?: string;
-    count?: number;
-  };
-  type OnUpdateCallback = (update: ProgressUpdate) => void;
-  ```
-- Extract shared logic into custom hook:
-  ```javascript
-  function usePoliticianSearch(zip) {
-    const [state, setState] = useState({status: 'idle', data: []});
-
-    useEffect(() => {
-      fetchPoliticiansProgressive(zip, (update) => setState(update));
-    }, [zip]);
-
-    return state;
-  }
-  // Usage: const {status, data, error} = usePoliticianSearch(zip);
-  ```
-- TypeScript for compile-time safety (even if rest of codebase is JS, type-check api.jsx)
-
-**Detection:**
-- Search codebase: `fetchPoliticiansProgressive` has 3 call sites; verify all updated
-- Regression test: navigate to Results, Dashboard, Home in sequence; verify all load correctly
-- Console errors: "Cannot read property 'data' of undefined"
-
-**Phase mapping:** Fix in Phase 2 (frontend refactor). Define callback contract in Phase 1 before implementing new endpoint.
+**Prevention strategy:**
+- Use a shorter TTL for candidate data (7-14 days vs 90 days) or store separately with its own cache table
+- Add an `election_date` field so the system can auto-expire candidate records after the election
+- Consider a manual "force refresh" admin endpoint to invalidate candidate data on demand
+- **Phase:** Candidate data phase, caching strategy step
 
 ---
 
-### Pitfall 10: Cache-Status Endpoint Exposes Internal Implementation Details
+## Domain: Deterministic Randomization
 
-**What goes wrong:** Status endpoint returns "warming_local", "warming_state", "warming_federal" exposing 3-tier cache structure. Frontend now depends on internal backend architecture.
+### PITFALL 9: Seeded randomization that is not reproducible across sessions or servers
 
-**Why it happens:** Temptation to expose granular status for debugging. "Why is it slow? Oh, warming_federal takes longer because it's nationwide."
+**What goes wrong:** Quiz topics are randomized so users see different questions each visit. A seeded PRNG is used. The seed is the current timestamp or a short session ID that differs between page loads. Users who refresh get a completely different quiz, making it impossible to share "I got question set #42" or to A/B test consistently.
 
-**Prevention:**
-- External API should return abstract states: "fresh", "warming", "stale"
-- Internal details in separate debugging endpoint: GET /admin/cache-debug/{zip} (requires auth)
-- Server-Timing headers for observability without coupling:
-  ```
-  Server-Timing: dbread;dur=50, wait;dur=200, ballotready;dur=3000
-  ```
+**Warning signs:**
+- `Math.random()` or `rand.Intn()` used without an explicit seed
+- Seed derived from `Date.now()` or a UUID that changes per session
+- No way to reconstruct a given randomization from a URL or user ID
 
-**Detection:**
-- API documentation review: are internal states documented in public API?
-- Frontend code search: if status.includes("warming_") { ... } = coupling to internals
-- Contract test: mock backend returns only "fresh"|"warming"|"stale"; frontend handles gracefully
-
-**Phase mapping:** Prevent in Phase 1 (API design). Once exposed, removing fields is breaking change.
+**Prevention strategy:**
+- Seed the PRNG with a stable per-user value: authenticated user ID (hashed) or a guest session token
+- For shareable quiz sets, encode the seed in the URL so the exact question order is reproducible
+- Validate: given the same seed + topic pool, the output must be identical across backend restarts and across the Go/JS boundary if both sides randomize
+- **Phase:** Compass guest-first phase, quiz randomization step
 
 ---
 
-## Minor Pitfalls
+### PITFALL 10: Seeded randomization feels less random than expected (short cycles, clustering)
 
-Small issues that cause confusion or require minor fixes but don't significantly impact users.
+**What goes wrong:** A simple LCG or modulo seed produces visually non-random distributions when the topic pool is small (10-20 items). Users notice that questions always cluster in the same political categories. The platform looks biased even when it is not.
 
-### Pitfall 11: Inconsistent Status String Casing
+**Warning signs:**
+- Topic pool is small enough that seed collisions produce near-identical sequences
+- No shuffle quality check (run 100 seeds, verify even distribution across topic categories)
+- Topics not tagged by category, making it impossible to enforce balance in the shuffle
 
-**What goes wrong:** Backend returns "Warming", "FRESH", "stale" inconsistently. Frontend uses .toLowerCase() everywhere to normalize but missed one code path.
-
-**Prevention:**
-- Define status as enum/constant:
-  ```go
-  const (
-    StatusFresh   = "fresh"
-    StatusWarming = "warming"
-    StatusStale   = "stale"
-  )
-  ```
-- API tests assert exact casing
-- Frontend: define string literal union type (TypeScript) or constants object (JavaScript)
-
-**Detection:**
-- Grep codebase for string literals: "fresh", "Fresh", "FRESH"
-- Unit test: assert response.status === "fresh" (exact match, not includes/toLowerCase)
-
-**Phase mapping:** Establish in Phase 1 (API design). Trivial fix but prevents bugs.
+**Prevention strategy:**
+- Use Fisher-Yates shuffle with a well-seeded PRNG (e.g., a 64-bit seed derived from user ID + topic set hash)
+- Add category-balanced selection: ensure each shuffle draws proportionally from each political topic area
+- Run a distribution test during development: generate 1,000 seeded shuffles and verify topic category spread
+- **Phase:** Compass randomization phase, algorithm validation step
 
 ---
 
-### Pitfall 12: Missing Error Handling for Concurrent Upserts
+## Domain: Candidate Data Alongside Incumbents
 
-**What goes wrong:** Two warmers race to upsert politician with same external_id. Unique constraint violation crashes one goroutine, leaving cache partially populated.
+### PITFALL 11: UI conflates candidates with officeholders — no clear distinction
 
-**Why it happens:** ON CONFLICT DO UPDATE should handle this, but if transaction isolation is wrong or GORM generates unexpected SQL, uniqueness violations can surface.
+**What goes wrong:** The Essentials app shows a mix of sitting officials and candidates on the same ZIP results page with no visual distinction. Users think a candidate is already in office, or think an incumbent is just running again. In a civic context, this is a misinformation risk.
 
-**Prevention:**
-- Test concurrent upserts: spawn 2 goroutines upserting same ZIP simultaneously
-- Log unique constraint violations at INFO level (expected during races), not ERROR
-- Verify GORM generates correct SQL:
-  ```sql
-  INSERT INTO essentials.politicians (...) VALUES (...)
-  ON CONFLICT (external_id) DO UPDATE SET ...
-  ```
-- Idempotent upserts: running twice produces same result
+**Warning signs:**
+- Same card component used for both politician types with no badge or label
+- `is_candidate` / `is_officeholder` fields exist in the API but are not used in the UI
+- No UX review of the candidate card design before launch
 
-**Detection:**
-- Logs: "duplicate key value violates unique constraint" errors
-- Missing politicians after warming (partial cache population)
-- DB query: `SELECT external_id, COUNT(*) FROM essentials.politicians GROUP BY external_id HAVING COUNT(*) > 1` (should be empty)
-
-**Phase mapping:** Verify in Phase 1 (backend warming logic audit). Should already be correct, but high-concurrency scenarios may reveal bugs.
+**Prevention strategy:**
+- Design and enforce a visual distinction at the component level: "Currently in office" vs. "Candidate — [Office] — [Election date]"
+- Make the distinction data-driven: derive from `is_appointed`, `is_vacant`, and election record fields already captured from BallotReady
+- Add a filter toggle on the Dashboard ("Show officials" / "Show candidates" / "Show both") so users can control the view
+- **Phase:** Candidate data phase, frontend integration step
 
 ---
 
-### Pitfall 13: Cache-Status Response Not Cacheable
+### PITFALL 12: Missing or inconsistent race/election context on candidate records
 
-**What goes wrong:** Every status check hits backend, even if cache-status would be identical for 60 seconds. CDN/browser can't cache response without headers.
+**What goes wrong:** BallotReady returns candidate data tied to a specific race. The backend stores the candidate but loses the race context (which office, which election date, which district). Downstream, it is impossible to answer "Who is running for City Council in my district?" because the race is not linked.
 
-**Prevention:**
-- Add Cache-Control header when status=fresh:
-  ```go
-  if status == StatusFresh && age < 30*time.Minute {
-    w.Header().Set("Cache-Control", "public, max-age=60")
-  } else {
-    w.Header().Set("Cache-Control", "no-store")
-  }
-  ```
-- ETags for conditional requests: `If-None-Match` → 304 Not Modified
+**Warning signs:**
+- `ElectionRecord` stored but not joined to the politician in API responses
+- Frontend queries politicians by ZIP and gets candidates back with no office/race context
+- District on a candidate record is NULL because the district hasn't been won yet (it is a future position)
 
-**Detection:**
-- Network tab: cache-status requests show (from disk cache) or (from memory cache)
-- CDN logs: cache hit ratio for /cache-status/* endpoint
-
-**Phase mapping:** Add in Phase 1 (API implementation). Caching headers are part of API contract.
+**Prevention strategy:**
+- Store race context on the candidacy record: target office title, district, election date, race ID from BallotReady
+- API responses for candidates must always include race context (do not rely on the politician's current office, which may not exist yet)
+- During fetch, if a candidate has no existing district record, create a pending/prospective district entry rather than leaving it null
+- **Phase:** Candidate data phase, data model design step
 
 ---
 
-### Pitfall 14: Misleading Status During TTL Window
+## Domain: Multi-App Consolidation
 
-**What goes wrong:** Cache is 89 days old (TTL=90 days). Status returns "fresh" but data is 3 months stale. User expects current information.
+### PITFALL 13: Shared component library version skew causes silent visual regressions
 
-**Prevention:**
-- Define "fresh" more strictly: cache age <7 days = fresh, 7-90 days = stale (but usable)
-- Add staleness indicator in response:
-  ```json
-  {
-    "status": "fresh",
-    "cached_at": "2025-11-10T10:00:00Z",
-    "age_days": 89,
-    "is_stale": true
-  }
-  ```
-- Frontend shows "Last updated 89 days ago" warning
+**What goes wrong:** `ev-ui` (`@chrisandrewsedu/ev-ui`) is updated for the consolidated app. Compass and Essentials pull the new version. `RadarChartCore` behaves differently with the new prop interface. One app gets the fix, the other does not, or both break in different ways. Because there is no visual regression test, the breakage only appears in production.
 
-**Detection:**
-- User feedback: "Why is my representative from 2024 showing?"
-- Logs: status=fresh but age >30 days
+**Warning signs:**
+- `ev-ui` version pinned differently across Compass, Essentials, and the consolidated app
+- No Storybook or isolated component test for `RadarChartCore`
+- Prop interface changes made without a deprecation period
 
-**Phase mapping:** Decide in Phase 1 (API semantics). "Fresh" definition is core to API contract.
+**Prevention strategy:**
+- Pin `ev-ui` to an exact version in every consumer app's `package.json` (not `^` or `~`)
+- Before bumping the version in any consumer, test the component in isolation with the new version
+- For breaking prop interface changes, bump the major version and provide a migration guide in the changelog
+- **Phase:** Consolidation phase, shared library audit step
 
 ---
 
-### Pitfall 15: Database Connection Pool Exhaustion from Polling
+### PITFALL 14: Route namespace collisions when combining apps under one domain
 
-**What goes wrong:** waitForDataMin polls DB every 200ms. Under load, 50 concurrent polls × 10 seconds = 2500 DB queries in 10 seconds. Connection pool (max 25 connections) exhausted.
+**What goes wrong:** Compass uses `/quiz`, `/compass`, `/library`. Essentials uses `/dashboard`, `/profile/:id`. When consolidated, both route to a shared router. If the consolidated app reuses component names (e.g., `Dashboard` from both apps), the wrong component renders or imports break.
 
-**Prevention:**
-- Use single connection with long-polling query (LISTEN/NOTIFY in PostgreSQL)
-- Limit concurrent waitForDataMin calls: semaphore with max 10 concurrent
-- Increase connection pool size if DB server can handle it
-- Reduce polling frequency: 500ms instead of 200ms (5 queries/second instead of 5)
+**Warning signs:**
+- Both apps have a component named `Dashboard`, `Profile`, or `Layout`
+- No agreed-upon URL namespace before consolidation begins (e.g., `/compass/*` vs `/essentials/*`)
+- React Router config is copy-pasted from both apps into one without conflict check
 
-**Detection:**
-- Metrics: db_connection_pool_wait_time_seconds > 100ms
-- Logs: "database connection pool exhausted"
-- Load test: 50 concurrent ZIP searches trigger connection errors
-
-**Phase mapping:** Audit in Phase 1 (backend scalability). May require architectural change (LISTEN/NOTIFY) if issue confirmed.
+**Prevention strategy:**
+- Before consolidating, audit all routes in every app and define a canonical URL map for the consolidated app
+- Rename conflicting components at the source level before merging (e.g., `CompassDashboard`, `EssentialsDashboard`)
+- Use React Router's nested route layout pattern to scope each sub-app under its own prefix
+- **Phase:** Consolidation phase, route design step (must be done before any code merge)
 
 ---
 
-## Phase-Specific Warnings
+### PITFALL 15: Four separate Netlify deployments means four separate auth cookie scopes
 
-| Phase Topic | Likely Pitfall | Mitigation |
-|-------------|---------------|------------|
-| Phase 1: API Design | TOCTOU race (status check → data fetch) | Return status+data in single atomic response |
-| Phase 1: Locking Strategy | Advisory lock held during BallotReady API call | Release lock before network I/O; re-acquire for DB upsert |
-| Phase 1: Backward Compatibility | Breaking header-based clients | Support both header and endpoint for 1-2 weeks |
-| Phase 2: Frontend Refactor | Memory leak from uncleaned polling timers | AbortController cleanup in useEffect return |
-| Phase 2: Callback Contract | Breaking Results.jsx/Dashboard.jsx/Home.jsx | Define canonical ProgressUpdate type; use custom hook |
-| Phase 2: Polling Tuning | Interval mismatch (frontend 1.5s, backend 200ms) | Align intervals or batch backend updates |
-| Phase 3: Deployment | Old frontend + new backend incompatibility | Feature detection or dual-mode backend |
-| Phase 3: Load Testing | Connection pool exhaustion under concurrent polling | Semaphore to limit concurrent waitForDataMin calls |
+**What goes wrong:** Compass at `compass.empowered.vote` sets a session cookie for `.empowered.vote`. The user navigates to `essentials.empowered.vote`. The cookie is present but CORS or SameSite policy on the API blocks the credentials. The user appears logged out. Alternatively, after consolidation to one domain, the old subdomains 404 and existing links from social/email break.
+
+**Warning signs:**
+- Each app has `credentials: "include"` but no test that verifies the cookie is sent cross-subdomain
+- API CORS allow-list does not include all four frontend origins
+- No redirect plan for old subdomain URLs post-consolidation
+
+**Prevention strategy:**
+- Resolve cookie domain to `.empowered.vote` (already noted in CLAUDE.md) before any cross-app auth is needed
+- Update CORS allow-list in `internal/middleware/middleware.go` every time a new subdomain is added or consolidated
+- When consolidating, add Netlify redirects from old subdomain URLs to the new consolidated paths; keep old subdomains alive for 60+ days
+- **Phase:** Pre-consolidation — cookie domain fix and CORS audit are blockers
 
 ---
 
-## Sources
+### PITFALL 16: NPM_TOKEN for GitHub registry breaks during consolidation
 
-### Race Conditions and Caching
-- [Race Conditions in REST APIs: A Developer's Guide](https://medium.com/@mgaurang123/race-conditions-in-rest-apis-a-developers-guide-to-building-reliable-systems-42d4f8eabc1e)
-- [When Caches Collide: Solving Race Conditions in Fare Updates](https://dzone.com/articles/fare-cache-race-conditions-troubleshooting)
-- [The Ultimate Caching Definition: Invalidation, Optimization, and Layers](https://stack.convex.dev/caching-in)
+**What goes wrong:** The consolidated app merges the `package.json` from Compass and Essentials. The `.npmrc` from one app is used, which contains the GitHub registry config. But the other app's `.npmrc` is dropped. Netlify CI fails because it cannot pull `@chrisandrewsedu/ev-ui` without `NPM_TOKEN`.
 
-### TOCTOU (Time-of-Check-Time-of-Use)
-- [Time-of-check to time-of-use - Wikipedia](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
-- [CWE-367: Time-of-check Time-of-use (TOCTOU) Race Condition](https://cwe.mitre.org/data/definitions/367.html)
-- [Time-of-check Time-of-use (TOCTOU) Race Condition Leads to Broken Authentication](https://infosecwriteups.com/time-of-check-time-of-use-toctou-race-condition-leads-to-broken-authentication-critical-finding-b55993c92abc)
+**Warning signs:**
+- `.npmrc` is not committed in the consolidated app root (or committed without the `//npm.pkg.github.com/` line)
+- `NPM_TOKEN` env var not set in the new Netlify site's environment settings
+- Local installs work (because `~/.npmrc` has the token) but CI fails silently
 
-### PostgreSQL Advisory Locks
-- [Using PostgreSQL advisory locks to avoid race conditions](https://firehydrant.com/blog/using-advisory-locks-to-avoid-race-conditions-in-rails/)
-- [How to Use Advisory Locks in PostgreSQL](https://oneuptime.com/blog/post/2026-01-25-use-advisory-locks-postgresql/view)
-- [PostgreSQL Advisory Locks](https://www.netguru.com/blog/advisory-locks)
-- [PostgreSQL: How to use with_advisory_lock to prevent race conditions](https://makandracards.com/makandra/482969-postgresql-how-to-use-with_advisory_lock-to-prevent-race-conditions)
+**Prevention strategy:**
+- The consolidated app's `.npmrc` must include `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` (per MEMORY.md)
+- Verify `NPM_TOKEN` is configured in Netlify environment settings for the consolidated site during site setup
+- Add a CI check step that validates the package can be installed before running the build
+- **Phase:** Consolidation phase, CI/CD setup step
 
-### React Memory Leaks and useEffect Cleanup
-- [Preventing Memory Leaks in React with useEffect Hooks](https://www.c-sharpcorner.com/article/preventing-memory-leaks-in-react-with-useeffect-hooks/)
-- [Understanding React's useEffect cleanup function](https://blog.logrocket.com/understanding-react-useeffect-cleanup-function/)
-- [How to Fix Memory Leaks in React Applications](https://www.freecodecamp.org/news/fix-memory-leaks-in-react-apps/)
-- [5 React Memory Leaks That Kill Performance (Fix Them Now)](https://www.codewalnut.com/insights/5-react-memory-leaks-that-kill-performance)
+---
 
-### API Versioning and Backward Compatibility
-- [API Versioning Best Practices: How to Manage Changes Effectively](https://www.gravitee.io/blog/api-versioning-best-practices)
-- [Handling API Versioning and Backward Compatibility on the Frontend](https://dev.to/neelendra_tomar_27/handling-api-versioning-and-backward-compatibility-on-the-frontend-297p)
-- [Avoiding Backward Compatibility Breaks in API Design: A Developer's Guide](https://medium.com/carvago-development/avoiding-backward-compatibility-breaks-in-api-design-a-developers-guide-b6b4d280d423)
+## Domain: Government/Civic Image Management
 
-### Polling and Cache Patterns
-- [How to Implement Long Polling Without WebSockets in Go](https://oneuptime.com/blog/post/2026-01-25-long-polling-without-websockets-go/view)
-- [How to Implement Cache Warming Strategies](https://oneuptime.com/blog/post/2026-01-30-cache-warming-strategies/view)
-- [Cache Warming Explained: Benefits, Pitfalls, and Alternatives](https://aerospike.com/blog/cache-warming-explained)
+### PITFALL 17: Government building images have inconsistent aspect ratios across contexts
 
-### Progressive Loading and Refactoring
-- [Progressive loading for modern web applications via code splitting](https://medium.com/@lavrton/progressive-loading-for-modern-web-applications-via-code-splitting-fb43999735c6)
-- [The Death of useCallback: Refactoring Event Handlers for the React Compiler Era](https://sameerthite.medium.com/the-death-of-usecallback-refactoring-event-handlers-for-the-react-compiler-era-6fd2e2814145)
+**What goes wrong:** A government building image is used as a hero banner on a politician profile (wide, 16:9), as a card thumbnail in search results (square, 1:1), and as a background in a quiz card (variable). The same image URL is used in all contexts. Some displays are stretched, cropped incorrectly, or too small to be recognizable.
+
+**Warning signs:**
+- Image `<img>` elements without explicit `object-fit` and `object-position` CSS
+- Only one image size/URL stored in the database per building (no thumbnail variants)
+- Building images sourced from Wikipedia Commons or similar with unpredictable dimensions
+
+**Prevention strategy:**
+- Store at minimum two variants per image: original (for hero/banner) and thumbnail (for cards)
+- Use CSS `object-fit: cover` universally for building images in card contexts
+- Define a canonical aspect ratio per usage context (profile hero: 3:1, card thumbnail: 1:1) and enforce at the component level
+- **Phase:** Candidate/profile data phase, image component design step
+
+---
+
+### PITFALL 18: BallotReady politician images expire or return 404 after a period
+
+**What goes wrong:** BallotReady provides CDN image URLs for politician headshots. These URLs are stored in `essentials.politician_images`. After 6-12 months, BallotReady rotates CDN keys or changes the URL structure. All stored image URLs 404. The platform shows broken images for every politician.
+
+**Warning signs:**
+- Image URLs stored verbatim with no expiry tracking
+- No fallback image or graceful degradation in the frontend when `<img>` fails to load
+- No periodic health check on stored image URLs
+
+**Prevention strategy:**
+- Always implement an `onError` fallback on every politician image (`<img onError={...}>`): show initials avatar or a generic silhouette
+- Track `image_fetched_at` timestamp alongside the URL; re-fetch from BallotReady during the 90-day cache refresh cycle
+- Consider proxying images through the backend or re-uploading to Supabase Storage to own the CDN lifecycle
+- **Phase:** Image handling phase; fallback is a day-one requirement, proxy is a later optimization
+
+---
+
+## Domain: Small Team / Nonprofit Constraints
+
+### PITFALL 19: Demo-readiness and production-readiness treated as the same thing
+
+**What goes wrong:** The team scrambles to make features demo-ready (hardcoded data, disabled error handling, skipped edge cases). These demo shortcuts ship to production because there is no clear line between the two environments. Live users encounter demo-quality code.
+
+**Warning signs:**
+- "Demo" data or flags hardcoded in shared environment config
+- Features flagged as "demo-only" with a TODO comment but no tracking issue
+- Production deploy pipeline is the same as the demo pipeline
+
+**Prevention strategy:**
+- Maintain a dedicated demo Netlify site (or deploy preview) that is not the production URL
+- Use Vite environment variables (`VITE_DEMO_MODE=true`) to enable demo shortcuts, and ensure these are never set on the production Netlify site
+- Create a "demo debt" tracking label in GitHub Issues; review before each production deploy
+- **Phase:** All phases — establish this discipline before the first milestone ships
+
+---
+
+### PITFALL 20: 2-3 person team accumulates too many open state changes across apps
+
+**What goes wrong:** Work begins on guest auth in Compass at the same time as consolidation planning and candidate data integration. Each stream makes changes to shared files (`internal/essentials/`, `ev-ui`, shared auth middleware). Merge conflicts multiply. The team spends more time on merge resolution than on features.
+
+**Warning signs:**
+- More than one active branch touching the same Go package or React component at once
+- No agreed-upon branch strategy (feature branches vs trunk-based development)
+- PRs sit open for more than 2-3 days because reviewers are working on conflicting branches
+
+**Prevention strategy:**
+- Sequence milestones so that shared dependencies (auth, data model) are completed and merged before dependent features begin
+- Use trunk-based development with short-lived feature flags rather than long-lived feature branches
+- Treat `ev-ui` and `internal/auth/` as shared infrastructure: changes require explicit team sign-off before merge
+- **Phase:** Project planning level — enforce before milestone 1 begins
+
+---
+
+## Summary Table
+
+| # | Pitfall | Phase |
+|---|---------|-------|
+| 1 | Guest→auth state merge never happens | Guest auth phase |
+| 2 | Guest has no persistent identity | Guest auth phase |
+| 3 | Wrong API endpoints exposed/protected for guests | Guest auth phase |
+| 4 | Existing sessions broken during auth model change | Pre-guest-auth (cookie fix first) |
+| 5 | Non-nullable column added without backfill | Data model evolution phase |
+| 6 | Field meaning changes break client contracts | Data model evolution phase |
+| 7 | Candidate upsert overwrites incumbent data | Candidate data phase |
+| 8 | Candidate cache TTL too long for election cycle | Candidate data phase |
+| 9 | Seeded randomization not reproducible | Compass randomization phase |
+| 10 | Seeded shuffle produces biased distributions | Compass randomization phase |
+| 11 | UI conflates candidates with officeholders | Candidate data — frontend phase |
+| 12 | Candidate records missing race/election context | Candidate data — data model phase |
+| 13 | ev-ui version skew causes visual regressions | Consolidation phase |
+| 14 | Route namespace collisions when merging apps | Consolidation phase |
+| 15 | Cookie scope breaks cross-subdomain auth | Pre-consolidation (cookie fix blocker) |
+| 16 | NPM_TOKEN missing in consolidated Netlify site | Consolidation phase — CI/CD setup |
+| 17 | Building images wrong aspect ratio across contexts | Profile/image component phase |
+| 18 | BallotReady image URLs expire and 404 | Image handling phase |
+| 19 | Demo shortcuts ship to production | All phases |
+| 20 | Parallel streams cause unmanageable merge conflicts | Project planning level |

@@ -1,436 +1,422 @@
-# Technology Stack
+# Stack Research — Empowered Vote Feature Improvements
 
-**Project:** Empowered Vote Essentials - Cache Status Polling Optimization
-**Researched:** 2026-02-09
-**Confidence:** HIGH
-
-## Overview
-
-This stack analysis focuses on implementing a lightweight cache status endpoint in Go/Chi and refactoring React 19 frontend polling to be SSE-ready. The existing system uses Go 1.24.3 with Chi router and GORM + PostgreSQL on the backend, and React 19 with Vite on the frontend.
-
-## Backend Patterns
-
-### Lightweight Status Endpoint (Chi Router)
-
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| Chi Router | v5.x | HTTP routing | Already in stack; minimal, idiomatic, composable |
-| Go stdlib `encoding/json` | Go 1.24.3 | JSON responses | Zero dependencies, produces minimal JSON by default |
-| GORM | Existing | Database queries | Already in stack; supports lightweight queries |
-
-**Pattern: Minimal JSON Response Handler**
-
-Chi's handler pattern is simple and lightweight - it accepts standard `http.HandlerFunc`. For status endpoints that return small JSON payloads:
-
-```go
-func CacheStatusHandler(w http.ResponseWriter, r *http.Request) {
-    // Lightweight query
-    status := checkCacheStatus() // Returns struct
-
-    w.Header().Set("Content-Type", "application/json")
-    w.WriteHeader(http.StatusOK)
-    json.NewEncoder(w).Encode(status)
-}
-```
-
-**Rationale:** Go's `encoding/json` package produces compact JSON without whitespace by default, which is optimal for status endpoints. The `json.NewEncoder(w).Encode()` pattern streams directly to the ResponseWriter without intermediate buffering. Use struct tags with `omitempty` to exclude zero values and minimize payload size.
-
-**Source:** [Go encoding/json package documentation](https://pkg.go.dev/encoding/json) shows that by default, no whitespace is added, producing minimal JSON representation per RFC 7493.
-
-**Confidence:** HIGH - Standard library patterns, well-documented, proven in production.
+**Research Date:** 2026-02-17
+**Milestone:** Quality & Consolidation — brownfield improvements to existing platform
 
 ---
 
-### GORM Lightweight Queries
+## Scope
 
-| Technique | Purpose | Performance Impact |
-|-----------|---------|-------------------|
-| `Select()` with specific fields | Query only needed columns | Reduces I/O, smaller result sets |
-| Avoid JOINs for status checks | Query cache tables directly | Eliminates multi-table scan overhead |
-| Use indexes on cache key columns | Fast lookups on ZIP/state/federal keys | Sub-millisecond query times |
+This document covers only *new or changed* stack decisions for the upcoming milestone. Existing stack (Go 1.24.3 + Chi + GORM, React 19 + Vite + Tailwind CSS 4, ev-ui) is retained as-is. Research focuses on six improvement areas:
 
-**Pattern: Minimal Cache Status Query**
-
-```go
-type CacheStatus struct {
-    ZipFresh    bool `json:"zip_fresh"`
-    StateFresh  bool `json:"state_fresh"`
-    FederalFresh bool `json:"federal_fresh"`
-}
-
-func checkCacheStatus(zip string, state string) CacheStatus {
-    var status CacheStatus
-
-    // Check each cache table independently (no JOINs)
-    db.DB.Model(&ZipCache{}).
-        Select("updated_at").
-        Where("zip_code = ? AND updated_at > ?", zip, cutoff).
-        Take(&zipTime) // Returns error if not found or stale
-
-    status.ZipFresh = (zipTime != nil && !isStale(zipTime))
-    // Repeat for state and federal
-
-    return status
-}
-```
-
-**Rationale:** Cache status tables (`zip_caches`, `state_caches`, `federal_cache`) are small lookup tables. Direct queries with indexed WHERE clauses are faster than JOINs with politician tables. GORM's `Select()` reduces result set size. Use `Take()` instead of `First()` when you don't need ordering.
-
-**Source:** [GORM Performance Documentation](https://gorm.io/docs/performance.html) recommends selecting only needed fields and avoiding JOINs when filtering. [GORM Advanced Query](https://gorm.io/docs/advanced_query.html) shows `Select()` optimization patterns.
-
-**Note:** GORM currently lacks a built-in `Exists()` method (as of [GitHub Discussion #6000](https://github.com/go-gorm/gorm/discussions/6000)), but `Take()` with `Select("1")` achieves similar performance for existence checks.
-
-**Confidence:** HIGH - Well-documented GORM patterns, matches existing codebase patterns.
+1. Guest-first auth flow with localStorage persistence
+2. Data model changes (question/prompt field on compass topics)
+3. Random stance ordering with per-user permanence
+4. Candidate data support in Essentials
+5. Image storage and delivery (building photos)
+6. Project structure consolidation
 
 ---
 
-### SSE-Ready Backend Design (Future Migration)
+## 1. Guest-First Auth Flow
 
-| Library | Purpose | Chi Compatibility | Maturity |
-|---------|---------|-------------------|----------|
-| `alexandrevicenzi/go-sse` | SSE server implementation | Native Chi support via `r.Mount()` | Stable, Go 1.9+ |
-| `tmaxmax/go-sse` | Spec-compliant SSE with replayer | Standard `http.Handler` interface | Fully featured, newer |
-| Go stdlib only | Manual SSE with `http.Flusher` | Native Chi compatibility | Zero dependencies |
+### Problem
 
-**Pattern: SSE Endpoint Structure (For Future Reference)**
+Every Compass route is wrapped in `ProtectedRoute`, which calls `/auth/me` and redirects to `/401` if no session exists. This blocks new users from experiencing the quiz. The goal is to allow full quiz access without login while optionally persisting answers to an account.
 
-When migrating from polling to SSE, the Go stdlib provides all necessary tools:
+### Current State
 
-```go
-func SSECacheStatusHandler(w http.ResponseWriter, r *http.Request) {
-    // Type assert for flusher support
-    flusher, ok := w.(http.Flusher)
-    if !ok {
-        http.Error(w, "Streaming unsupported", http.StatusInternalServerError)
-        return
-    }
+- `CompassContext.jsx` already stores `selectedTopics` and `invertedSpokes` in `localStorage`
+- `compass.answers` table requires a `user_id` string (not nullable, no guest concept)
+- Backend `/compass/answers` route is in the session-protected group
+- `ProtectedRoute` checks `/auth/me` synchronously on every protected page mount
 
-    // Set SSE headers
-    w.Header().Set("Content-Type", "text/event-stream")
-    w.Header().Set("Cache-Control", "no-cache")
-    w.Header().Set("Connection", "keep-alive")
-    w.WriteHeader(http.StatusOK)
+### Recommendation: localStorage-first with Optional Server Sync
 
-    // Stream events
-    for {
-        select {
-        case <-r.Context().Done():
-            return // Client disconnected
-        case event := <-eventChan:
-            fmt.Fprintf(w, "data: %s\n\n", event)
-            flusher.Flush() // Send immediately
-        }
-    }
-}
-```
+**Confidence: High**
 
-**Rationale for SSE Libraries:**
-- **alexandrevicenzi/go-sse:** Simplest integration with Chi via `r.Mount("/events/", sseServer)`. Good for basic use cases. [Example with Chi](https://github.com/alexandrevicenzi/go-sse/blob/master/_examples/chi.go) shows direct mounting pattern.
-- **tmaxmax/go-sse:** More feature-rich with event replaying (send missed events to reconnecting clients), spec-compliant, better for production. Implements `http.Handler` so works with any router.
-- **Stdlib only:** Zero dependencies, full control, but requires manual implementation of reconnection logic and event buffering.
+No new libraries are needed. The pattern is:
 
-**Recommendation:** Start with stdlib polling → polling optimization → stdlib SSE → upgrade to `tmaxmax/go-sse` if replay/persistence needed.
+1. Remove `ProtectedRoute` from quiz, library, build, and results routes
+2. Treat all compass state (answers, selected topics, inverted spokes) as localStorage-first
+3. On login/register, offer to import localStorage answers to the server
+4. Server endpoints remain gated — they're used only if a session exists
 
-**Sources:**
-- [Writing SSE Server in Go (Thoughtbot)](https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go)
-- [Go Real-time Applications with SSE](https://oneuptime.com/blog/post/2026-02-01-go-realtime-applications-sse/view)
-- [go-sse Chi Example](https://github.com/alexandrevicenzi/go-sse/blob/master/_examples/chi.go)
-- [tmaxmax/go-sse GitHub](https://github.com/tmaxmax/go-sse)
+**Why not a new auth library (Auth0, Clerk, etc.):** The existing session-based auth is working and appropriate for a small-team nonprofit. Introducing a third-party auth service adds cost, complexity, and a dependency that would require migrating all existing sessions. Not justified for this use case.
 
-**Confidence:** HIGH for stdlib pattern, MEDIUM for library recommendations (limited production usage data for this specific stack).
+**Why not anonymous/guest sessions on the backend:** Creating server-side guest sessions (with UUID tokens in localStorage) adds backend complexity — session cleanup, TTL management, and migration logic. Pure localStorage avoids all of that. The quiz data is low-stakes and doesn't need server persistence for guests.
 
----
-
-## Frontend Patterns (React 19)
-
-### Polling with Cleanup (Current Implementation)
-
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| React | 19.x | UI framework | Already in stack |
-| `useEffect` + `setInterval` | React 19 stdlib | Polling loop | Native, zero dependencies |
-| `AbortController` | Browser API | Request cancellation | Prevents memory leaks, built-in |
-| Custom Hook | React pattern | Abstraction | Reusability, testability, swap-ability |
-
-**Pattern: Polling with Proper Cleanup**
+### Implementation Pattern
 
 ```javascript
-function usePolling(endpoint, interval, shouldPoll) {
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
+// CompassContext.jsx — no API calls if no session
+const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  React.useEffect(() => {
-    if (!shouldPoll) return;
+useEffect(() => {
+  fetch(`${API_URL}/auth/me`, { credentials: "include" })
+    .then(res => { if (res.ok) setIsAuthenticated(true); })
+    .catch(() => {}); // silent — not required
+}, []);
 
-    const abortController = new AbortController();
+// Sync to server only when authenticated
+useEffect(() => {
+  if (!isAuthenticated || !serverLoaded.current) return;
+  // existing server sync logic
+}, [selectedTopics, isAuthenticated]);
+```
 
-    const poll = async () => {
-      try {
-        const response = await fetch(endpoint, {
-          signal: abortController.signal,
-          credentials: 'include'
-        });
-        const json = await response.json();
-        setData(json);
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err);
-        }
-      }
-    };
+### Backend Changes Required
 
-    poll(); // Initial fetch
-    const intervalId = setInterval(poll, interval);
+The `/compass/answers` GET/POST routes need a conditional path:
+- Authenticated: read/write to `compass.answers` table (existing behavior)
+- Unauthenticated: 401 is fine — frontend reads from localStorage only
 
-    // Cleanup function
-    return () => {
-      clearInterval(intervalId);
-      abortController.abort();
-    };
-  }, [endpoint, interval, shouldPoll]);
+No new Go packages needed. The existing `SessionMiddleware` already handles 401 gracefully.
 
-  return { data, error };
+### What NOT to Do
+
+- Do NOT add `user_id` nullable column to `compass.answers` for guest tracking — unnecessary complexity
+- Do NOT use `sessionStorage` — doesn't survive tab close, breaking the UX goal
+- Do NOT add Zustand to CompassV2 — the existing Context pattern is sufficient and switching state libraries mid-feature is wasteful
+
+---
+
+## 2. Data Model Evolution — Question/Prompt on Topics
+
+### Problem
+
+The `compass.topics` table has `title`, `short_title`, and `start_phrase`. There is no dedicated `question` or `prompt` field. Issue cards need to display a contextual question (e.g., "How should the US handle border security?") rather than a category title.
+
+### Current Model
+
+```go
+type Topic struct {
+    ID          uuid.UUID
+    TopicKey    string    // unique identifier
+    Title       string    // e.g., "Immigration"
+    ShortTitle  string    // e.g., "Immigration" (used on radar chart)
+    StartPhrase string    // legacy field, partial sentence
+    IsActive    bool
+    Stances     []Stance
+    Categories  []Category
 }
 ```
 
-**Critical Details:**
+### Recommendation: Add `question` Column to `compass.topics`
 
-1. **Store interval ID inside useEffect:** Don't store at component scope. The cleanup function needs access to the specific interval created by this effect.
+**Confidence: High**
 
-2. **Always return cleanup function:** Clears interval when component unmounts or dependencies change. Without this, intervals stack and cause memory leaks.
+Add a single `question` text column. GORM AutoMigrate handles the column addition safely (additive only).
 
-3. **Use AbortController for fetch:** Create fresh instance per effect. Abort in cleanup. Prevents "Can't perform state update on unmounted component" warnings.
-
-4. **Check error name:** `AbortError` is expected when cleanup runs. Don't treat it as a real error.
-
-5. **Fresh AbortController per effect:** AbortControllers are single-use. Once aborted, they cannot be reused.
-
-**Sources:**
-- [React useEffect Cleanup Best Practices](https://www.dhiwise.com/post/a-guide-to-real-time-applications-with-react-polling)
-- [AbortController in React - Complete Guide](https://www.localcan.com/blog/abortcontroller-nodejs-react-complete-guide-examples)
-- [Preventing Memory Leaks in React with useEffect](https://www.c-sharpcorner.com/article/preventing-memory-leaks-in-react-with-useeffect-hooks/)
-- [React useEffect Cleanup Function](https://refine.dev/blog/useeffect-cleanup/)
-
-**Confidence:** HIGH - Official React patterns, well-documented, critical for memory leak prevention.
-
----
-
-### SSE-Ready Polling Abstraction (Migration Strategy)
-
-**Pattern: Transport-Agnostic Hook**
-
-The key to making polling swappable for SSE is to abstract the transport mechanism behind a consistent interface:
-
-```javascript
-// Abstract interface
-function useRealtimeData(endpoint, options = {}) {
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
-
-  React.useEffect(() => {
-    let cleanup;
-
-    if (options.transport === 'sse') {
-      // SSE transport
-      const eventSource = new EventSource(endpoint);
-
-      eventSource.onmessage = (event) => {
-        setData(JSON.parse(event.data));
-      };
-
-      eventSource.onerror = (err) => {
-        setError(err);
-      };
-
-      cleanup = () => {
-        eventSource.close();
-      };
-    } else {
-      // Polling transport (default)
-      const abortController = new AbortController();
-
-      const poll = async () => {
-        try {
-          const response = await fetch(endpoint, {
-            signal: abortController.signal,
-            credentials: 'include'
-          });
-          setData(await response.json());
-        } catch (err) {
-          if (err.name !== 'AbortError') setError(err);
-        }
-      };
-
-      poll();
-      const intervalId = setInterval(poll, options.interval || 1500);
-
-      cleanup = () => {
-        clearInterval(intervalId);
-        abortController.abort();
-      };
-    }
-
-    return cleanup;
-  }, [endpoint, options.transport, options.interval]);
-
-  return { data, error };
+```go
+type Topic struct {
+    // ... existing fields ...
+    Question string `json:"question"` // e.g., "How should the US approach immigration reform?"
 }
 ```
 
-**Usage:**
+**Why a new column vs. repurposing existing fields:**
+- `title` is used on the radar chart axis labels — cannot be replaced with a long question
+- `start_phrase` is legacy and inconsistently populated — don't overload it
+- A separate `question` column makes intent explicit and allows independent editing in the admin UI
+
+**Migration approach:** AutoMigrate adds the column with empty string default. Populate via admin UI or direct SQL. No data loss risk.
+
+**Admin UI:** The existing `TopicEditor.jsx` / `CreateTopic.jsx` components need a new `question` textarea input. The existing `PATCH /compass/topics/update` handler needs to include `question` in the update payload. No new infrastructure needed.
+
+**What NOT to Do:**
+- Do NOT rename `title` to `question` — breaks radar chart labels and requires a coordinated frontend+backend change
+- Do NOT use a separate `compass.topic_questions` join table — one topic, one question, no need for normalization
+
+---
+
+## 3. Random Stance Order with Per-User Permanence
+
+### Problem
+
+Stances displayed in a fixed order create positional bias (users tend to pick the first option). The fix is to randomize stance order per user, permanently — so a returning user sees the same randomized order they always saw (preventing confusion from changed positions).
+
+### Current State
+
+- `compass.stances` has a `value` integer field (used for scoring, e.g., -2 to 2 or 1 to 5)
+- Stance order is currently determined by `value` sort in the frontend
+- No per-user ordering is stored anywhere
+
+### Recommendation: Client-Side Shuffle with localStorage Persistence
+
+**Confidence: High**
+
+No backend changes required for the stance randomization itself.
+
+**Approach:**
+1. Generate a random but deterministic shuffle order per topic per user, seeded by topic ID + a stable user salt
+2. Store the shuffle map in `localStorage` as `stanceOrder: { [topicId]: [stanceId, stanceId, ...] }`
+3. On first visit to a topic, generate and store the order. On return visits, read from storage.
 
 ```javascript
-// Current: Polling
-const { data } = useRealtimeData('/api/cache-status', {
-  transport: 'polling',
-  interval: 1500
-});
-
-// Future: SSE (change one prop)
-const { data } = useRealtimeData('/api/cache-status', {
-  transport: 'sse'
-});
+// In CompassContext or a hook
+function getStanceOrder(topicId, stances) {
+  const stored = safeParse(localStorage.getItem("stanceOrder"), {});
+  if (stored[topicId]) {
+    // Return stances sorted by stored order
+    return stances.slice().sort((a, b) =>
+      stored[topicId].indexOf(a.id) - stored[topicId].indexOf(b.id)
+    );
+  }
+  // First time: shuffle and persist
+  const shuffled = [...stances].sort(() => Math.random() - 0.5);
+  stored[topicId] = shuffled.map(s => s.id);
+  localStorage.setItem("stanceOrder", JSON.stringify(stored));
+  return shuffled;
+}
 ```
 
-**Rationale for Abstraction:**
+**Spectrum preservation note:** The requirement says "spectrum preserved" — this likely means the visual left-to-right ordering on the spectrum (negative to positive stance values) should be maintained, but the specific mapping of stance values to positions should be shuffled. Clarify with the team whether "spectrum preserved" means:
+- (a) Just shuffle the display order randomly (any order), or
+- (b) Invert the spectrum for some users (some users see negative-to-positive, others see positive-to-negative)
 
-1. **Single Responsibility:** Each transport implementation handles its own lifecycle.
-2. **Consistent Interface:** Component using the hook doesn't care about transport.
-3. **Easy Migration:** Change transport via prop/config, no component refactor.
-4. **Type Safety:** Both transports return same data shape.
+Option (b) is simpler and more meaningful — randomly flip the spectrum direction per topic per user. Store a boolean `flipped: { [topicId]: true|false }` in localStorage.
 
-**EventSource Details:**
+**If server sync is desired (for returning users on new devices):** Add a nullable `stance_order_salt` or `flipped_topics` column to `compass.user_compasses`. But for the current milestone, localStorage-only is the right call — same pattern as `invertedSpokes`.
 
-- Browser-native API, zero dependencies
-- Automatic reconnection on disconnect (default 3-second retry)
-- Cannot set custom headers in constructor (authentication via URL params or cookies)
-- For authenticated SSE, use `credentials: 'include'` on server endpoint or pass token in URL
-
-**Sources:**
-- [How to Implement SSE in React](https://oneuptime.com/blog/post/2026-01-15-server-sent-events-sse-react/view)
-- [Using EventSource (SSE) with React Query](https://rustedcompiler.medium.com/using-eventsource-sse-with-react-query-b72e20923d8c)
-- [SSE, WebSockets, or Polling? Build Real-Time Stock App](https://dev.to/itaybenami/sse-websockets-or-polling-build-a-real-time-stock-app-with-react-and-hono-1h1g)
-- [Developing Real-Time Web Apps with SSE](https://auth0.com/blog/developing-real-time-web-applications-with-server-sent-events/)
-
-**Confidence:** MEDIUM-HIGH - Pattern is sound and well-documented, but project-specific edge cases may require adjustments during SSE migration.
+**What NOT to Do:**
+- Do NOT store stance order in the database for the initial implementation — adds complexity for minimal benefit
+- Do NOT use crypto.getRandomValues for seeding — unnecessary; Math.random() is fine for UI ordering
 
 ---
 
-## Recommended Implementation Order
+## 4. Candidate Data Support in Essentials
 
-### Phase 1: Lightweight Status Endpoint (Go/Chi)
-1. Create new route in `essentials` package: `GET /essentials/cache-status?zip={zip}`
-2. Handler queries 3 cache tables (zip, state, federal) with GORM `Select("updated_at")`
-3. Returns minimal JSON: `{"zip_fresh": bool, "state_fresh": bool, "federal_fresh": bool}`
-4. Add indexes on `zip_code`, `state_code` if not present
+### Problem
 
-**Expected Performance:** <10ms response time (3 indexed lookups, no JOINs)
+Essentials currently shows only elected officials (incumbent officeholders). BallotReady also provides candidacy data (people running for office who are not yet elected). The requirement is to show candidates in the UI with visual differentiation from elected officials.
 
-### Phase 2: Frontend Polling Refactor (React)
-1. Create `usePolling` custom hook with proper cleanup
-2. Change Dashboard to poll `/cache-status` instead of `/politicians`
-3. When all caches fresh → abort polling, fetch full `/politicians` once
-4. Maintain existing AbortController for cleanup
+### Current State
 
-**Expected Impact:** Reduces backend load by 95% during warming period (3 small table queries vs 1 multi-JOIN query)
+- BallotReady candidacy data is already fetched and stored (Phase B is complete)
+- `essentials.election_records`, `essentials.endorsements`, `essentials.politician_stances` tables exist
+- The `politicians` table has `is_appointed`, `is_vacant` fields but no `is_candidate` flag
+- The frontend `classify.js` only handles elected/appointed officials
 
-### Phase 3: SSE Preparation (Optional - Future)
-1. Refactor `usePolling` → `useRealtimeData` with transport param
-2. Default to `transport: 'polling'` (no behavior change)
-3. Update tests to verify both transports
-4. When migrating to AWS: flip transport to 'sse', implement SSE handler
+### Recommendation: Add `is_candidate` Flag and Candidacy API Endpoint
 
-**Migration Risk:** LOW - Abstraction layer isolates changes, polling remains functional fallback
+**Confidence: High**
 
----
+**Backend changes (no new libraries):**
 
-## Alternative Approaches Considered
+Add a boolean field to indicate this politician record represents a candidate in an active race, not a current officeholder:
 
-| Approach | Why Not Recommended |
-|----------|-------------------|
-| WebSockets | Bidirectional overkill for unidirectional cache status. More complex than SSE. |
-| GraphQL Subscriptions | Heavy dependency, requires new server setup. SSE simpler for single-direction updates. |
-| Long Polling | More complex than short polling for this use case, no advantage over SSE for future migration. |
-| Third-party SSE libraries on frontend | EventSource is browser-native and sufficient. Libraries add bundle size without value. |
-| GORM `Exists()` helper | Doesn't exist yet ([Discussion #6000](https://github.com/go-gorm/gorm/discussions/6000)). `Take()` pattern achieves same performance. |
-
----
-
-## Dependencies
-
-### Current (No New Dependencies)
-```bash
-# Backend - Already in stack
-go get github.com/go-chi/chi/v5
-go get gorm.io/gorm
-
-# Frontend - Already in stack
-npm install react@19
+```go
+// In models.go — extend Politician struct
+IsCandidate bool `json:"is_candidate" gorm:"default:false"`
 ```
 
-### Future (SSE Migration - Optional)
-```bash
-# Backend - If stdlib SSE insufficient
-go get github.com/tmaxmax/go-sse
+Add or extend the existing ZIP-based query to optionally include candidates:
 
-# Frontend - Zero new dependencies (EventSource is browser-native)
+```
+GET /essentials/politicians/{zip}?include_candidates=true
 ```
 
----
+The existing `fetchOfficialsFromDB` function needs a conditional JOIN or filter to include/exclude candidates. The existing `ElectionRecord` table can determine candidacy status (active election date in the future).
 
-## Performance Benchmarks (Expected)
+**Frontend changes (no new libraries):**
 
-| Scenario | Current (8 polls × full query) | Optimized (8 polls × status) | Improvement |
-|----------|-------------------------------|------------------------------|-------------|
-| Backend CPU per poll | ~50ms (multi-JOIN) | ~5ms (3 indexed lookups) | 10x faster |
-| Network payload per poll | ~50KB JSON (politicians array) | ~50 bytes JSON (status object) | 1000x smaller |
-| Total warming overhead | 400ms CPU, 400KB network | 40ms CPU, 400 bytes network | 10x reduction |
+1. Add a toggle control to `Dashboard.jsx` — "Show Candidates" (default off)
+2. Extend `classify.js` to handle candidate records — they belong in the same tiers but with a visual badge
+3. In `PoliticianCard.jsx`, add a "Candidate" badge when `is_candidate === true`
 
-**Assumptions:** 8 polls during 12-second warming period, 50 politicians average per ZIP, indexed cache tables.
+**Visual differentiation approach:** Use a subtle border or badge variant — `ring-2 ring-ev-yellow` or a "Candidate" label badge. The existing Tailwind classes cover this without new dependencies.
 
----
-
-## Sources
-
-### Go/Chi Backend
-- [Chi Router GitHub](https://github.com/go-chi/chi)
-- [Chi Router Documentation](https://go-chi.io/)
-- [Go encoding/json Package](https://pkg.go.dev/encoding/json)
-- [GORM Performance Documentation](https://gorm.io/docs/performance.html)
-- [GORM Advanced Query](https://gorm.io/docs/advanced_query.html)
-
-### Go SSE (Future Reference)
-- [Writing SSE Server in Go - Thoughtbot](https://thoughtbot.com/blog/writing-a-server-sent-events-server-in-go)
-- [Go Real-time Applications with SSE - OneUpTime](https://oneuptime.com/blog/post/2026-02-01-go-realtime-applications-sse/view)
-- [alexandrevicenzi/go-sse GitHub](https://github.com/alexandrevicenzi/go-sse)
-- [go-sse Chi Integration Example](https://github.com/alexandrevicenzi/go-sse/blob/master/_examples/chi.go)
-- [tmaxmax/go-sse GitHub](https://github.com/tmaxmax/go-sse)
-
-### React Polling
-- [Best Practices for React Polling - DhiWise](https://www.dhiwise.com/post/a-guide-to-real-time-applications-with-react-polling)
-- [Implementing Polling in React - Medium](https://medium.com/@sfcofc/implementing-polling-in-react-a-guide-for-efficient-real-time-data-fetching-47f0887c54a7)
-- [AbortController Complete Guide - LocalCan](https://www.localcan.com/blog/abortcontroller-nodejs-react-complete-guide-examples)
-- [Preventing Memory Leaks in React with useEffect](https://www.c-sharpcorner.com/article/preventing-memory-leaks-in-react-with-useeffect-hooks/)
-- [React useEffect Cleanup Function - Refine](https://refine.dev/blog/useeffect-cleanup/)
-
-### React SSE (Future Reference)
-- [How to Implement SSE in React - OneUpTime](https://oneuptime.com/blog/post/2026-01-15-server-sent-events-sse-react/view)
-- [Using EventSource (SSE) with React Query - Medium](https://rustedcompiler.medium.com/using-eventsource-sse-with-react-query-b72e20923d8c)
-- [SSE, WebSockets, or Polling? - DEV](https://dev.to/itaybenami/sse-websockets-or-polling-build-a-real-time-stock-app-with-react-and-hono-1h1g)
-- [Developing Real-Time Web Apps with SSE - Auth0](https://auth0.com/blog/developing-real-time-web-applications-with-server-sent-events/)
-- [How to Implement EventSource and SSE - DEV](https://dev.to/lagoni/how-to-implement-eventsource-and-sse-in-your-frontend-and-backend-18co)
+**What NOT to Do:**
+- Do NOT create a separate candidates API endpoint if candidates can be returned from the existing ZIP endpoint via query param — keeps the frontend polling logic simple
+- Do NOT add a new frontend page for candidates — integrate into the existing results view with the toggle
 
 ---
 
-## Confidence Assessment
+## 5. Image Storage and Delivery (Building Photos)
 
-| Area | Confidence | Reasoning |
-|------|------------|-----------|
-| Go Chi status endpoint pattern | HIGH | Standard library patterns, matches existing codebase, well-documented |
-| GORM lightweight queries | HIGH | Official GORM documentation, proven optimization techniques |
-| React polling with cleanup | HIGH | Critical React patterns, extensively documented, prevents memory leaks |
-| SSE-ready abstraction pattern | MEDIUM-HIGH | Sound architectural pattern, but untested in this specific codebase |
-| Go SSE libraries | MEDIUM | Limited production usage data for this stack combination |
-| EventSource browser support | HIGH | Native browser API, widely supported (IE11+, all modern browsers) |
+### Problem
 
-**Overall Confidence:** HIGH for current optimization (Phases 1-2), MEDIUM-HIGH for future SSE migration preparation (Phase 3).
+The platform needs building images for Federal/State/Local sections (US Capitol, state capitols, courthouses for LA and Bloomington). These are static editorial images — not user uploads, not politician photos (those already come from BallotReady CDN URLs).
+
+### Current State
+
+- No cloud file storage integration exists
+- Politician profile images are served directly from BallotReady CDN URLs stored in the database
+- No `File Storage` infrastructure exists for editorial content
+
+### Options Evaluated
+
+#### Option A: Supabase Storage (Recommended)
+
+**Confidence: High**
+
+Supabase Storage is already the project's database provider. The free tier includes 1 GB storage and 2 GB egress/month. The Pro plan includes image transformations at $5/1,000 origin images.
+
+**Rationale:**
+- Already paying for Supabase — no new vendor
+- Built-in CDN with 285+ edge nodes worldwide
+- Public bucket URLs work without SDK: `https://[project_id].supabase.co/storage/v1/object/public/[bucket]/[asset-name]`
+- Image transformation for responsive sizing (width/height params)
+- For a small number of static editorial images (~10-20 photos), the free tier is more than sufficient
+- No new Go or React dependencies needed — just store URLs in config/DB
+
+**Implementation:**
+1. Create a public bucket `editorial-images` in Supabase dashboard
+2. Upload building photos manually (one-time; not automated)
+3. Store public URLs in a config file or a small `editorial_images` table
+4. Frontend fetches URLs from config or a new lightweight endpoint
+
+**URL pattern:**
+```
+https://[project_id].supabase.co/storage/v1/object/public/editorial-images/federal/us-capitol.jpg
+https://[project_id].supabase.co/storage/v1/object/public/editorial-images/state/indiana-statehouse.jpg
+```
+
+**No SDK needed for reading:** Public bucket URLs are accessible directly from `<img>` tags. No `@supabase/supabase-js` client needed on the frontend for read-only image access.
+
+#### Option B: Netlify Large Media / Git LFS
+
+**Not recommended.** Netlify Large Media is deprecated. Git LFS adds complexity for a small number of static images.
+
+#### Option C: Store in GitHub repo as static assets
+
+**Acceptable for 10-20 small images** but not scalable and adds repository bloat. Supabase Storage is cleaner and already available.
+
+#### Option D: Cloudflare R2 / AWS S3
+
+**Overkill for this use case.** Would require new vendor credentials, IAM setup, and additional complexity. Not justified when Supabase Storage already covers the need at $0 marginal cost.
+
+### What NOT to Do
+
+- Do NOT install `@supabase/supabase-js` on the frontend just for reading public image URLs — direct `<img src="...">` is sufficient
+- Do NOT use image transformation for these static editorial images unless needed for performance — the images are hand-curated and can be pre-optimized before upload
+- Do NOT add the images to the Git repository — keep the repo lean
+
+---
+
+## 6. Project Structure Consolidation
+
+### Problem
+
+The current workspace has 5+ separate React apps (CompassV2, essentials, EV-prototypes/*, ev-ui), each with independent `node_modules`, `package.json`, and `npm install`. This causes:
+- Diverging dependency versions across apps (Vite 6 vs 7, React 19.0 vs 19.1.1)
+- ev-ui must be published to GitHub npm registry before changes reflect in consuming apps
+- No shared tooling config (ESLint, TypeScript settings)
+- EV-prototypes already uses a manual multi-build script (not true workspaces)
+
+### Options Evaluated
+
+#### Option A: npm Workspaces at the Workspace Root (Recommended)
+
+**Confidence: Medium**
+
+**What it is:** A single `package.json` at the repo root with a `workspaces` array pointing to each app. npm v7+ handles hoisted `node_modules` and symlinks local packages.
+
+**Benefits for this team:**
+- ev-ui becomes a local workspace package — no publish cycle needed during development
+- Single `npm install` at root installs all dependencies
+- Shared dev dependencies (ESLint, TypeScript types) can be hoisted to root
+- Works with existing Vite setups — no Vite config changes needed
+- No new tooling to learn
+
+**Drawbacks:**
+- Requires restructuring the root `package.json` (currently not an npm package)
+- Netlify build commands need updating to target specific workspace packages
+- Some hoisting conflicts possible with peer dependencies (manageable)
+
+**Root package.json:**
+```json
+{
+  "name": "empowered-vote",
+  "private": true,
+  "workspaces": [
+    "CompassV2",
+    "essentials",
+    "ev-ui",
+    "EV-prototypes/read-rank",
+    "EV-prototypes/treasury-tracker",
+    "EV-prototypes/data-entry",
+    "EV-prototypes/empowered-badges"
+  ]
+}
+```
+
+**ev-ui as local package:**
+In consuming apps, replace:
+```json
+"@chrisandrewsedu/ev-ui": "^0.1.14"
+```
+with:
+```json
+"@chrisandrewsedu/ev-ui": "*"
+```
+npm workspaces automatically symlinks the local `ev-ui/` package.
+
+#### Option B: Turborepo
+
+**Not recommended for current milestone.**
+
+Turborepo adds task orchestration (parallel builds, caching) on top of npm/pnpm workspaces. Useful for teams with complex build pipelines and CI caching needs. For a 2-3 person nonprofit team with manual Netlify deploys, the overhead of learning and configuring Turborepo is not justified. Evaluate post-consolidation if build times become painful.
+
+**What NOT to Do:** Do NOT adopt Turborepo for this milestone — the benefit is real but the setup cost is disproportionate to team size.
+
+#### Option C: Keep Current Structure (Status Quo)
+
+**Acceptable if consolidation is deferred.** The current multi-repo-style structure works and has clear boundaries. The main pain is the ev-ui publish cycle during active component development.
+
+**Recommendation:** Proceed with Option A (npm workspaces) for ev-ui linkage only in the first step. Full workspace consolidation of all apps can follow. This is the lowest-risk migration path.
+
+#### Option D: Unified Single React App (Vite with sub-routes)
+
+**Not recommended.** Merging CompassV2 and essentials into one app would require a large routing restructure, shared auth state decisions, and increases deployment surface area. The apps serve different user flows and can stay separate.
+
+---
+
+## Summary Table
+
+| Area | Decision | New Dependencies | Confidence |
+|------|----------|-----------------|------------|
+| Guest-first auth | localStorage-first, optional server sync | None | High |
+| Topic question field | Add `question` column to `compass.topics` | None | High |
+| Stance randomization | Client-side shuffle, localStorage-persisted | None | High |
+| Candidate support | `is_candidate` flag + query param filter | None | High |
+| Building images | Supabase Storage public bucket | None (direct URL) | High |
+| Project consolidation | npm workspaces (ev-ui first) | None | Medium |
+
+**Key finding:** None of the six improvement areas require new runtime dependencies. The existing stack handles all requirements. The work is architectural and data-model level, not library selection.
+
+---
+
+## Versions Reference (as of 2026-02-17)
+
+These are the versions already in use. No upgrades are recommended for this milestone — upgrading mid-milestone creates unnecessary risk.
+
+| Package | Current Version | Latest | Action |
+|---------|----------------|--------|--------|
+| React | 19.1.x | 19.1.x | No change |
+| Vite | 6.3.5 (CompassV2), 7.1.2 (essentials) | 7.x | No change |
+| Tailwind CSS | 4.1.x | 4.1.x | No change |
+| Zustand | 5.0.9 | 5.0.x | No change |
+| GORM | 1.30.0 | 1.30.x | No change |
+| Chi | v5.2.1 | v5.x | No change |
+| Go | 1.24.3 | 1.24.3 | No change |
+
+---
+
+## What NOT to Adopt This Milestone
+
+| Considered | Reason to Skip |
+|------------|---------------|
+| Auth0 / Clerk | Cost + migration complexity; existing session auth is fine |
+| Turborepo | Overhead disproportionate to 2-3 person team |
+| Anonymous backend sessions for guests | Pure localStorage avoids backend complexity |
+| @supabase/supabase-js (frontend) | Not needed for reading public image URLs |
+| TypeScript migration | Would require coordinated effort across all apps; not this milestone |
+| New state management (Jotai, Valtio) | Context + localStorage already handles the use cases |
+| React Query / SWR | Would require rewriting existing polling hooks; defer until needed |
+| Cloudflare R2 / AWS S3 | Supabase Storage already covers image hosting need at $0 marginal cost |
+
+---
+
+*Stack research: 2026-02-17*
