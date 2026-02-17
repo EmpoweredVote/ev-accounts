@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-17)
 ## Current Position
 
 Phase: 2 of 5 (Guest-First Auth) — IN PROGRESS
-Plan: 1 of 3 in current phase — COMPLETE
-Status: Phase 2 Plan 01 complete; ready for Plan 02 (frontend guest state) and Plan 03 (save prompt modal)
-Last activity: 2026-02-17 — Phase 2 Plan 01 executed (backend changes for guest-first auth)
+Plan: 2 of 3 in current phase — COMPLETE
+Status: Phase 2 Plan 02 complete; ready for Plan 03 (save prompt modal)
+Last activity: 2026-02-17 — Phase 2 Plan 02 executed (frontend guest-first state and route ungating)
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
@@ -28,7 +28,7 @@ Progress: [███░░░░░░░] 30%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
-| 02-guest-first-auth | 1 (of 3) | 2 min | 2 min |
+| 02-guest-first-auth | 2 (of 3) | 4 min | 2 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min
@@ -51,6 +51,8 @@ Recent decisions affecting current work:
 - [01-01]: AdminMiddleware DB-dependent path not unit tested — requires admin user seeding; missing-userID path covered without DB
 - [02-01]: Circular import (auth->compass->auth) resolved by using GORM Table() with anonymous structs — no behavioral change, same Postgres tables written
 - [02-01]: Session creation on register uses Create (not upsert) since user is brand new and cannot have existing session
+- [02-02]: CompassContext owns auth state (isLoggedIn/username) via /auth/me on mount; Layout.jsx no longer maintains its own auth fetch
+- [02-02]: Logout clears both server session and localStorage answers/writeIns for clean state reset
 
 ### Pending Todos
 
@@ -65,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-17
-Stopped at: Completed Phase 2 Plan 01 (02-01-PLAN.md)
-Resume file: .planning/phases/02-guest-first-auth/02-01-SUMMARY.md
+Stopped at: Completed Phase 2 Plan 02 (02-02-PLAN.md)
+Resume file: .planning/phases/02-guest-first-auth/02-02-SUMMARY.md
