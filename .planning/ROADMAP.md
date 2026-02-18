@@ -27,7 +27,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Milestone Goal:** Polish the Essentials app layout, building imagery, and term date display for a demo-ready user experience.
 
 - [x] **Phase 8: Layout** - Sidebar stays fixed while representatives panel scrolls independently (completed 2026-02-18)
-- [ ] **Phase 9: Building Imagery** - Real building photos display per location and tier with scroll-spy on "All" mode
+- [x] **Phase 9: Building Imagery** - Real building photos display per location and tier with scroll-spy on "All" mode (completed 2026-02-18)
 - [ ] **Phase 10: Term Dates** - Term dates removed from dashboard cards and surfaced on politician profile pages
 
 ## Phase Details
@@ -55,7 +55,7 @@ Plans:
   4. Selecting a tier filter (Federal, State, or Local) immediately shows that tier's building photo
   5. In "All" mode, the building photo swaps instantly as the user scrolls from one tier section into another
   6. Searching a location not covered by real photos shows the existing SVG illustrated image instead of a broken image
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 09-01-PLAN.md — Real building photographs and updated image mapping with human verification
 
@@ -80,5 +80,5 @@ Plans:
 | 6. Audit Gap Closure | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 7. Integration Polish | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 9. Building Imagery | v1.1 | 0/? | Not started | - |
+| 9. Building Imagery | 1/1 | Complete   | 2026-02-18 | - |
 | 10. Term Dates | v1.1 | 0/? | Not started | - |

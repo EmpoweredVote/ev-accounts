@@ -35,6 +35,7 @@ Progress: [███░░░░░░░] 33% (v1.1)
 | 7. Integration Polish | 1 | Complete |
 
 *v1.1 metrics begin after first plan completion*
+| Phase 09-building-imagery P01 | 3 | 1 tasks | 6 files |
 
 ## Accumulated Context
 
@@ -46,6 +47,8 @@ All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for f
 v1.1 decisions:
 - [Phase 08-layout]: Sidebar width increased to 300px and building image aspect ratio changed to 1/2.25 (portrait) for Results page sticky layout
 - [Phase 08-layout]: IntersectionObserver root set to scrolling main panel ref on desktop so scroll-spy tier-swap works correctly in two-panel layout
+- [Phase 09-building-imagery]: Sourced all building photos from Wikimedia Commons (public domain/CC) to avoid licensing concerns in civic app
+- [Phase 09-building-imagery]: FALLBACK.Federal stays as us-capitol.svg — CURATED map exclusively serves real photos; fallback always uses SVGs for unsupported cities
 
 ### Pending Todos
 

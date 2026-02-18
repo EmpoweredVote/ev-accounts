@@ -14,12 +14,12 @@ Requirements for Essentials UX Polish milestone. Each maps to roadmap phases.
 
 ### Imagery
 
-- [ ] **IMG-01**: Real photo of US Capitol displays for federal tier
-- [ ] **IMG-02**: Real photo of state capitol displays for state tier (Indiana State House for IN, California State Capitol for CA)
-- [ ] **IMG-03**: Real photo of city hall displays for local tier (Bloomington City Hall for IN, LA City Hall for CA)
-- [ ] **IMG-04**: Selecting a specific tier filter shows that tier's building image
-- [ ] **IMG-05**: On "All" mode, building image swaps instantly as user scrolls between Local, State, and Federal sections
-- [ ] **IMG-06**: Unsupported locations fall back to existing SVG illustrated images
+- [x] **IMG-01**: Real photo of US Capitol displays for federal tier
+- [x] **IMG-02**: Real photo of state capitol displays for state tier (Indiana State House for IN, California State Capitol for CA)
+- [x] **IMG-03**: Real photo of city hall displays for local tier (Bloomington City Hall for IN, LA City Hall for CA)
+- [x] **IMG-04**: Selecting a specific tier filter shows that tier's building image
+- [x] **IMG-05**: On "All" mode, building image swaps instantly as user scrolls between Local, State, and Federal sections
+- [x] **IMG-06**: Unsupported locations fall back to existing SVG illustrated images
 
 ### Profile
 
@@ -47,12 +47,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | LAYOUT-01 | Phase 8 | Complete |
 | LAYOUT-02 | Phase 8 | Complete |
-| IMG-01 | Phase 9 | Pending |
-| IMG-02 | Phase 9 | Pending |
-| IMG-03 | Phase 9 | Pending |
-| IMG-04 | Phase 9 | Pending |
-| IMG-05 | Phase 9 | Pending |
-| IMG-06 | Phase 9 | Pending |
+| IMG-01 | Phase 9 | Complete |
+| IMG-02 | Phase 9 | Complete |
+| IMG-03 | Phase 9 | Complete |
+| IMG-04 | Phase 9 | Complete |
+| IMG-05 | Phase 9 | Complete |
+| IMG-06 | Phase 9 | Complete |
 | PROF-01 | Phase 10 | Pending |
 | PROF-02 | Phase 10 | Pending |
 
