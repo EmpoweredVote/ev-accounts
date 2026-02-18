@@ -55,7 +55,9 @@ Plans:
   4. Selecting a tier filter (Federal, State, or Local) immediately shows that tier's building photo
   5. In "All" mode, the building photo swaps instantly as the user scrolls from one tier section into another
   6. Searching a location not covered by real photos shows the existing SVG illustrated image instead of a broken image
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 09-01-PLAN.md — Real building photographs and updated image mapping with human verification
 
 ### Phase 10: Term Dates
 **Goal**: Users see term dates in the right context — profile detail, not card clutter
