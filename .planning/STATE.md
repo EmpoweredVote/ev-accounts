@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 4 (Compass UX Enhancements) — COMPLETE (8 of 8 plans done)
+**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (2 of 5 plans done)
 
 ## Current Position
 
-Phase: 4 of 5 (Compass UX Enhancements) — COMPLETE
-Plan: 8 of 8 in current phase — complete (phase done)
-Status: Phase 4 complete; Phase 5 (candidate discovery) is next
-Last activity: 2026-02-18 — Phase 4 Plan 08 executed (LibraryDrawer write-in support with drag-to-position and server persistence)
+Phase: 5 of 5 (Essentials Improvements) — IN PROGRESS
+Plan: 2 of 5 in current phase — complete
+Status: Phase 5 Plan 02 complete; Plan 03 is next
+Last activity: 2026-02-18 — Phase 5 Plan 02 executed (PoliticianCard badge prop + ev-ui 0.1.17 published)
 
 Progress: [████████░░] 80%
 
@@ -84,6 +84,8 @@ Recent decisions affecting current work:
 - [04-08]: LibraryDrawer useEffect depends on topic?.id only — resets write-in state on topic change without re-firing on currentAnswer updates within same topic
 - [04-08]: handleDrawerSelect clears writeIns context when predefined stance chosen — selecting a predefined stance replaces any existing write-in for that topic
 - [04-verify]: answeredTopicIDs useEffect uses answersRef (not answers) to prevent infinite fetch loop — effect calls setAnswers, so answers in deps creates infinite cycle
+- [05-02]: Badge rendered inside card container (not outside) — overflow:hidden on card would clip external absolute elements; internal absolute positioning is unaffected
+- [05-02]: Badge zIndex:1 ensures render above imageWrapper in both horizontal and vertical variants
 
 ### Pending Todos
 
@@ -98,5 +100,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Phase 5 context gathered
-Resume file: .planning/phases/05-essentials-improvements/05-CONTEXT.md
+Stopped at: Phase 5 Plan 02 complete — ev-ui 0.1.17 published with badge prop
+Resume file: .planning/phases/05-essentials-improvements/05-03-PLAN.md
