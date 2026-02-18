@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 3 (Compass Visual Fixes) — COMPLETE (both plans done)
+**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 02 of 04 complete
 
 ## Current Position
 
-Phase: 3 of 5 (Compass Visual Fixes) — COMPLETE
-Plan: 2 of 2 in current phase — COMPLETE
-Status: Phase 3 fully complete; ready for Phase 4
-Last activity: 2026-02-18 — Phase 3 Plan 02 executed (uniform spoke lines + SpokeHint legend removed + ev-ui 0.1.16)
+Phase: 4 of 5 (Compass UX Enhancements) — IN PROGRESS
+Plan: 2 of 4 in current phase — complete (plans 01 and 02 done)
+Status: Phase 4 Plan 02 complete; ready for Phase 4 Plan 03
+Last activity: 2026-02-18 — Phase 4 Plan 02 executed (seeded stance randomization with guestId + djb2 hash)
 
-Progress: [███████░░░] 62%
+Progress: [███████░░░] 65%
 
 ## Performance Metrics
 
@@ -30,6 +30,7 @@ Progress: [███████░░░] 62%
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 | 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
+| 04-compass-ux-enhancements | 2 (of 4 so far) | 2 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min
@@ -62,6 +63,8 @@ Recent decisions affecting current work:
 - [03-01]: Desktop chrome offset=180px (header ~75 + back ~32 + buttons ~48 + margins ~25); mobile=240px for tab bar
 - [03-02]: strokeDasharray omitted entirely (not "none") — inversion is internal state only, not visually indicated on spoke lines
 - [03-02]: invertedSpokes prop preserved in polygon point calculations — click-to-invert behavior unchanged
+- [Phase 04]: QUIZ-08: initRandomInversions accepts topic objects (id + short_title) — hash seed requires numeric topic.id
+- [Phase 04]: guestId not cleared on logout — stance order persists across login/logout on same browser
 
 ### Pending Todos
 
@@ -75,6 +78,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-17
-Stopped at: Phase 4 context gathered
-Resume file: .planning/phases/04-compass-ux-enhancements/04-CONTEXT.md
+Last session: 2026-02-18
+Stopped at: Completed 04-02-PLAN.md (seeded stance randomization)
+Resume file: .planning/phases/04-compass-ux-enhancements/04-03-PLAN.md
