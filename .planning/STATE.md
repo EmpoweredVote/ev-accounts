@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (2 of 5 plans done)
+**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (4 of 5 plans done)
 
 ## Current Position
 
 Phase: 5 of 5 (Essentials Improvements) — IN PROGRESS
-Plan: 2 of 5 in current phase — complete
-Status: Phase 5 Plan 02 complete; Plan 03 is next
-Last activity: 2026-02-18 — Phase 5 Plan 02 executed (PoliticianCard badge prop + ev-ui 0.1.17 published)
+Plan: 4 of 5 in current phase — complete
+Status: Phase 5 Plan 04 complete; Plan 05 is next
+Last activity: 2026-02-18 — Phase 5 Plan 04 executed (GET /candidates/{zip} endpoint from BallotReady races query)
 
 Progress: [████████░░] 80%
 
@@ -37,6 +37,7 @@ Progress: [████████░░] 80%
 - Trend: fast execution on focused frontend tasks
 
 *Updated after each plan completion*
+| Phase 05 P01 | 3 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,9 @@ Recent decisions affecting current work:
 - [04-verify]: answeredTopicIDs useEffect uses answersRef (not answers) to prevent infinite fetch loop — effect calls setAnswers, so answers in deps creates infinite cycle
 - [05-02]: Badge rendered inside card container (not outside) — overflow:hidden on card would clip external absolute elements; internal absolute positioning is unaffected
 - [05-02]: Badge zIndex:1 ensures render above imageWrapper in both horizontal and vertical variants
+- [05-04]: RaceNode/CandidacyNode type names used instead of Race/Candidacy to avoid conflicts with Phase B candidacy history types
+- [05-04]: levelToDistrictType uses keyword matching on position name for NATIONAL_UPPER/LOWER discrimination (BallotReady provides broad level only)
+- [05-04]: Candidates endpoint is live-fetch from BallotReady races query (no caching) since election data changes frequently near election dates
 
 ### Pending Todos
 
@@ -100,5 +104,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Phase 5 Plan 02 complete — ev-ui 0.1.17 published with badge prop
-Resume file: .planning/phases/05-essentials-improvements/05-03-PLAN.md
+Stopped at: Completed 05-04-PLAN.md
+Resume file: .planning/phases/05-essentials-improvements/05-05-PLAN.md

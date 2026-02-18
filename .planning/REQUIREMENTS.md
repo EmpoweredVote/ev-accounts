@@ -30,9 +30,9 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Essentials Data & Display
 
-- [ ] **ESST-01**: Candidates appear in Essentials results with opt-in toggle (default: officials only)
+- [x] **ESST-01**: Candidates appear in Essentials results with opt-in toggle (default: officials only)
 - [x] **ESST-02**: Candidates visually differentiated from elected officials via badge or label
-- [ ] **ESST-03**: Election date shown on candidate cards
+- [x] **ESST-03**: Election date shown on candidate cards
 - [ ] **ESST-04**: Building images shown for federal/state/local sections (U.S. Capitol, state capitols, courthouses for LA and Bloomington)
 - [ ] **ESST-05**: Federal section reordered — U.S. Senate and U.S. House shown before executive branch officials
 - [ ] **ESST-06**: Position start date and end date shown on politician profile card
@@ -98,9 +98,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QUIZ-07 | Phase 3 | Pending |
 | QUIZ-08 | Phase 4 | Complete |
 | QUIZ-09 | Phase 4 | Complete |
-| ESST-01 | Phase 5 | Pending |
+| ESST-01 | Phase 5 | Complete |
 | ESST-02 | Phase 5 | Complete |
-| ESST-03 | Phase 5 | Pending |
+| ESST-03 | Phase 5 | Complete |
 | ESST-04 | Phase 5 | Pending |
 | ESST-05 | Phase 5 | Pending |
 | ESST-06 | Phase 5 | Pending |
