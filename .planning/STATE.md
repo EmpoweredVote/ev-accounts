@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 8 of 10 (Layout)
-Plan: 0 of ? in current phase
-Status: Ready to plan
-Last activity: 2026-02-18 — Roadmap created for v1.1 (Phases 8-10)
+Plan: 1 of 1 in current phase (at checkpoint — awaiting human verify)
+Status: In progress — checkpoint:human-verify
+Last activity: 2026-02-18 — Executed 08-01-PLAN.md tasks 1-2, hit Task 3 human-verify checkpoint
 
-Progress: [░░░░░░░░░░] 0% (v1.1)
+Progress: [█░░░░░░░░░] 10% (v1.1)
 
 ## Performance Metrics
 
@@ -43,7 +43,9 @@ Progress: [░░░░░░░░░░] 0% (v1.1)
 Decisions are logged in PROJECT.md Key Decisions table.
 All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for full history.
 
-v1.1 decisions: none yet.
+v1.1 decisions:
+- [Phase 08-layout]: Sidebar width increased to 300px and building image aspect ratio changed to 1/2.25 (portrait) for Results page sticky layout
+- [Phase 08-layout]: IntersectionObserver root set to scrolling main panel ref on desktop so scroll-spy tier-swap works correctly in two-panel layout
 
 ### Pending Todos
 
@@ -56,5 +58,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Phase 8 context gathered
-Resume file: .planning/phases/08-layout/08-CONTEXT.md
+Stopped at: Checkpoint: Task 3 human-verify for 08-01-PLAN.md (Tasks 1-2 complete, awaiting visual verification)
+Resume file: .planning/phases/08-layout/08-01-SUMMARY.md

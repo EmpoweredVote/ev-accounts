@@ -26,7 +26,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 **Milestone Goal:** Polish the Essentials app layout, building imagery, and term date display for a demo-ready user experience.
 
-- [ ] **Phase 8: Layout** - Sidebar stays fixed while representatives panel scrolls independently
+- [x] **Phase 8: Layout** - Sidebar stays fixed while representatives panel scrolls independently (completed 2026-02-18)
 - [ ] **Phase 9: Building Imagery** - Real building photos display per location and tier with scroll-spy on "All" mode
 - [ ] **Phase 10: Term Dates** - Term dates removed from dashboard cards and surfaced on politician profile pages
 
@@ -40,7 +40,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   1. User scrolls a long list of representatives and the sidebar (search, tier filter, building image) stays visible at all times
   2. The representatives panel scrolls independently without the full page moving
   3. Sidebar and panel reach their natural bottom edges independently — no clipped content
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 08-01-PLAN.md — Fixed sidebar + independently scrolling representatives panel
 
@@ -77,6 +77,6 @@ Plans:
 | 5. Essentials Improvements | v1.0 | 5/5 | Complete | 2026-02-18 |
 | 6. Audit Gap Closure | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 7. Integration Polish | v1.0 | 1/1 | Complete | 2026-02-18 |
-| 8. Layout | v1.1 | 0/1 | Planned | - |
+| 8. Layout | 1/1 | Complete   | 2026-02-18 | - |
 | 9. Building Imagery | v1.1 | 0/? | Not started | - |
 | 10. Term Dates | v1.1 | 0/? | Not started | - |

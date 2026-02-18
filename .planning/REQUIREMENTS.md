@@ -9,8 +9,8 @@ Requirements for Essentials UX Polish milestone. Each maps to roadmap phases.
 
 ### Layout
 
-- [ ] **LAYOUT-01**: Sidebar stays fixed in position while user scrolls the representatives panel
-- [ ] **LAYOUT-02**: Representatives panel scrolls independently within its container
+- [x] **LAYOUT-01**: Sidebar stays fixed in position while user scrolls the representatives panel
+- [x] **LAYOUT-02**: Representatives panel scrolls independently within its container
 
 ### Imagery
 
@@ -45,8 +45,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| LAYOUT-01 | Phase 8 | Pending |
-| LAYOUT-02 | Phase 8 | Pending |
+| LAYOUT-01 | Phase 8 | Complete |
+| LAYOUT-02 | Phase 8 | Complete |
 | IMG-01 | Phase 9 | Pending |
 | IMG-02 | Phase 9 | Pending |
 | IMG-03 | Phase 9 | Pending |
