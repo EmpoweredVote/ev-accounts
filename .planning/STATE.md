@@ -56,5 +56,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Roadmap created — Phase 8 ready to plan
-Resume file: none
+Stopped at: Phase 8 context gathered
+Resume file: .planning/phases/08-layout/08-CONTEXT.md
