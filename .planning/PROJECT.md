@@ -45,7 +45,14 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(None — define in next milestone via `/gsd:new-milestone`)
+## Current Milestone: v1.1 Essentials UX Polish
+
+**Goal:** Improve Essentials layout, imagery, and profile data display for a more polished user experience.
+
+**Target features:**
+- Sticky sidebar with scrollable representatives panel
+- Dynamic real building photos based on location and tier (scroll-spy on "All" mode)
+- Term dates moved from dashboard cards to politician profile page
 
 ### Out of Scope
 
@@ -98,4 +105,4 @@ Known tech debt: RadarChart.jsx dead code block, SVG placeholder building images
 | Candidate endpoint is live-fetch (no caching) | Election data changes frequently near elections | ✓ Good — freshness more important than speed for candidates |
 
 ---
-*Last updated: 2026-02-18 after v1.0 milestone*
+*Last updated: 2026-02-18 after v1.1 milestone started*

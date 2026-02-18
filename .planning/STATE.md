@@ -5,15 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.0 milestone shipped — planning next milestone
+**Current focus:** v1.1 Essentials UX Polish
 
 ## Current Position
 
-Phase: v1.0 complete (7 phases, 21 plans)
-Status: Milestone shipped 2026-02-18
-Last activity: 2026-02-18 — v1.0 milestone archived
-
-Progress: [██████████] 100% (v1.0)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-18 — Milestone v1.1 started
 
 ## Accumulated Context
 
@@ -28,10 +27,10 @@ None.
 
 ### Blockers/Concerns
 
-None — v1.0 shipped cleanly.
+None.
 
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: v1.0 milestone completed and archived
-Resume file: none (start next milestone with `/gsd:new-milestone`)
+Stopped at: Defining v1.1 requirements
+Resume file: none
