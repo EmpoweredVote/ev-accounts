@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Auth Safety Audit** - Verify cookie/session config is stable before any auth model changes
 - [ ] **Phase 2: Guest-First Auth** - Users take the full quiz without logging in; admin controls tightened
 - [ ] **Phase 3: Compass Visual Fixes** - Fix sizing, title clipping, and spoke visual artifacts
-- [ ] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators
+- [x] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators (completed 2026-02-18)
 - [ ] **Phase 5: Essentials Improvements** - Candidate display, building imagery, federal reordering, position dates
 
 ## Phase Details
@@ -111,5 +111,5 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 1. Auth Safety Audit | 0/1 | Not started | - |
 | 2. Guest-First Auth | 0/3 | Not started | - |
 | 3. Compass Visual Fixes | 0/2 | Not started | - |
-| 4. Compass UX Enhancements | 0/4 | Not started | - |
+| 4. Compass UX Enhancements | 0/4 | Complete    | 2026-02-18 |
 | 5. Essentials Improvements | 0/3 | Not started | - |
