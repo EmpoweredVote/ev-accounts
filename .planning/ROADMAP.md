@@ -42,7 +42,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   3. Sidebar and panel reach their natural bottom edges independently — no clipped content
 **Plans:** 1/1 plans complete
 Plans:
-- [ ] 08-01-PLAN.md — Fixed sidebar + independently scrolling representatives panel
+- [x] 08-01-PLAN.md — Fixed sidebar + independently scrolling representatives panel
 
 ### Phase 9: Building Imagery
 **Goal**: Users see real building photos matched to their location and the tier they are viewing
@@ -77,6 +77,6 @@ Plans:
 | 5. Essentials Improvements | v1.0 | 5/5 | Complete | 2026-02-18 |
 | 6. Audit Gap Closure | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 7. Integration Polish | v1.0 | 1/1 | Complete | 2026-02-18 |
-| 8. Layout | 1/1 | Complete   | 2026-02-18 | - |
+| 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | v1.1 | 0/? | Not started | - |
 | 10. Term Dates | v1.1 | 0/? | Not started | - |
