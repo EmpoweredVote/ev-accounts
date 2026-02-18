@@ -14,7 +14,7 @@ Plan: 8 of 8 in current phase — complete (phase done)
 Status: Phase 4 complete; Phase 5 (candidate discovery) is next
 Last activity: 2026-02-18 — Phase 4 Plan 08 executed (LibraryDrawer write-in support with drag-to-position and server persistence)
 
-Progress: [██████████] 90%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -83,6 +83,7 @@ Recent decisions affecting current work:
 - [04-08]: SortableStanceLabel and SortableWriteInCard copied exactly from Quiz.jsx — pure presentation components, no need to abstract to a shared module
 - [04-08]: LibraryDrawer useEffect depends on topic?.id only — resets write-in state on topic change without re-firing on currentAnswer updates within same topic
 - [04-08]: handleDrawerSelect clears writeIns context when predefined stance chosen — selecting a predefined stance replaces any existing write-in for that topic
+- [04-verify]: answeredTopicIDs useEffect uses answersRef (not answers) to prevent infinite fetch loop — effect calls setAnswers, so answers in deps creates infinite cycle
 
 ### Pending Todos
 
