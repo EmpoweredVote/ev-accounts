@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 04 of 04 complete (phase complete)
+**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 05 of 06 complete (gap closure in progress)
 
 ## Current Position
 
-Phase: 4 of 5 (Compass UX Enhancements) — COMPLETE
-Plan: 4 of 4 in current phase — complete (all plans done)
-Status: Phase 4 complete; ready for Phase 5
-Last activity: 2026-02-17 — Phase 4 Plan 04 executed (Library drawer inline answer editing with slide-in panel)
+Phase: 4 of 5 (Compass UX Enhancements) — IN PROGRESS
+Plan: 5 of 6 in current phase — complete (1 plan remaining)
+Status: Phase 4 gap closure plans executing; Plan 06 is next
+Last activity: 2026-02-18 — Phase 4 Plan 05 executed (LibraryDrawer crash fix + stance flip rendering)
 
-Progress: [█████████░] 80%
+Progress: [█████████░] 82%
 
 ## Performance Metrics
 
@@ -30,7 +30,7 @@ Progress: [█████████░] 80%
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 | 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
-| 04-compass-ux-enhancements | 4 (of 4) | 5 min | 1 min |
+| 04-compass-ux-enhancements | 5 (of 6) | 6 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min
@@ -75,6 +75,9 @@ Recent decisions affecting current work:
 - [04-04]: Card click opens drawer (setDrawerTopic) instead of toggling compass topic selection
 - [04-04]: Drawer panel stays open after stance selection — no auto-close on answer
 
+- [04-05]: Frontend-only fix for drawer crash — backend CategoryHandler not modified (adding Preload(Topics.Stances) would be wasteful since full topics already available in context)
+- [04-05]: Two-layer defense: Library.jsx context lookup (primary) + LibraryDrawer null guard (secondary)
+
 ### Pending Todos
 
 None.
@@ -87,6 +90,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-17
-Stopped at: Completed 04-04-PLAN.md (Library drawer inline answer editing — phase 04 complete)
-Resume file: .planning/phases/05-*/05-01-PLAN.md
+Last session: 2026-02-18
+Stopped at: Completed 04-05-PLAN.md (LibraryDrawer crash fix + stance flip rendering)
+Resume file: .planning/phases/04-compass-ux-enhancements/04-06-PLAN.md
