@@ -65,6 +65,8 @@ Recent decisions affecting current work:
 - [03-02]: invertedSpokes prop preserved in polygon point calculations — click-to-invert behavior unchanged
 - [Phase 04]: QUIZ-08: initRandomInversions accepts topic objects (id + short_title) — hash seed requires numeric topic.id
 - [Phase 04]: guestId not cleared on logout — stance order persists across login/logout on same browser
+- [04-01]: New PATCH fields (question_text, level) use snake_case JSON; existing fields (Title, ShortTitle) keep PascalCase for backward compatibility
+- [04-01]: QuestionText and Level use empty string zero-value in Topic struct (not nullable pointer) — GORM stores empty string, omitempty suppresses from JSON when blank
 
 ### Pending Todos
 
@@ -79,5 +81,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 04-02-PLAN.md (seeded stance randomization)
-Resume file: .planning/phases/04-compass-ux-enhancements/04-03-PLAN.md
+Stopped at: Completed 04-01-PLAN.md (question_text + level on compass.topics + admin UI)
+Resume file: .planning/phases/04-compass-ux-enhancements/04-02-PLAN.md
