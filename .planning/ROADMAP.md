@@ -97,12 +97,14 @@ Plans:
   4. The federal section shows U.S. Senate and U.S. House before executive branch officials (President/VP, Cabinet, Agencies)
   5. A politician's profile card shows their position start date and, where known, their end date
   6. Section headers for federal, state, and local tiers show a relevant building image (U.S. Capitol, state capitol, local city hall)
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 05-01: Backend — GET /essentials/candidates/{zip} endpoint; CandidateOut DTO; safe query path separate from officeholder upsert
-- [ ] 05-02: Frontend — Officials/Candidates toggle in Dashboard; candidate badge on card; election date display
-- [ ] 05-03: Frontend — federal category reordering in classify.js; building images from Supabase Storage; position start/end dates on profile card
+- [ ] 05-01-PLAN.md — Federal category reorder in classify.js + backend term dates (valid_from/valid_to) in OfficialOut DTO
+- [ ] 05-02-PLAN.md — ev-ui PoliticianCard badge prop + publish 0.1.17
+- [ ] 05-03-PLAN.md — Frontend term date rendering on cards + building images with scroll-spy in Results.jsx
+- [ ] 05-04-PLAN.md — Backend GET /essentials/candidates/{zip} endpoint with BallotReady races query + CandidateOut DTO
+- [ ] 05-05-PLAN.md — Frontend candidate toggle, badge rendering, election date display in Results.jsx
 
 ## Progress
 
@@ -116,4 +118,4 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 2. Guest-First Auth | 0/3 | Not started | - |
 | 3. Compass Visual Fixes | 0/2 | Not started | - |
 | 4. Compass UX Enhancements | 8/8 | Complete | 2026-02-18 |
-| 5. Essentials Improvements | 0/3 | Not started | - |
+| 5. Essentials Improvements | 0/5 | Not started | - |
