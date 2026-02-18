@@ -12,11 +12,12 @@ Five phases that harden the auth foundation, open the compass to guests, fix vis
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Auth Safety Audit** - Verify cookie/session config is stable before any auth model changes
-- [ ] **Phase 2: Guest-First Auth** - Users take the full quiz without logging in; admin controls tightened
-- [ ] **Phase 3: Compass Visual Fixes** - Fix sizing, title clipping, and spoke visual artifacts
+- [x] **Phase 1: Auth Safety Audit** - Verify cookie/session config is stable before any auth model changes (completed 2026-02-17)
+- [x] **Phase 2: Guest-First Auth** - Users take the full quiz without logging in; admin controls tightened (completed 2026-02-17)
+- [x] **Phase 3: Compass Visual Fixes** - Fix sizing, title clipping, and spoke visual artifacts (completed 2026-02-18)
 - [x] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators
 - [x] **Phase 5: Essentials Improvements** - Candidate display, building imagery, federal reordering, position dates (completed 2026-02-18)
+- [ ] **Phase 6: Audit Gap Closure** - Fix Quiz.jsx question_text, Register.jsx guest_state, CandidateOut.ChamberName
 
 ## Phase Details
 
@@ -106,16 +107,31 @@ Plans:
 - [ ] 05-04-PLAN.md — Backend GET /essentials/candidates/{zip} endpoint with BallotReady races query + CandidateOut DTO
 - [ ] 05-05-PLAN.md — Frontend candidate toggle, badge rendering, election date display in Results.jsx
 
+### Phase 6: Audit Gap Closure
+**Goal**: Close integration gaps found by milestone audit — Quiz.jsx shows question prompts, Register.jsx preserves guest answers, candidate executive grouping is accurate
+**Depends on**: Phase 4, Phase 5 (fixes gaps in delivered work)
+**Requirements**: QUIZ-01, AUTH-05
+**Gap Closure**: Closes gaps from v1 milestone audit
+**Success Criteria** (what must be TRUE):
+  1. Quiz.jsx renders `question_text` (with title fallback) as the card heading in both full and curated quiz modes — not the bare category title
+  2. Register.jsx sends `guest_state` (localStorage answers + writeIns) in the POST body to `/auth/register` — guests who register via the banner path retain their quiz answers
+  3. CandidateOut.ChamberName is populated from the BallotReady race data so executive candidates classify into correct sub-groups
+**Plans**: 1 plan
+
+Plans:
+- [ ] 06-01-PLAN.md — Quiz.jsx question_text fallback + Register.jsx guest_state + CandidateOut.ChamberName population
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if two developers are available.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Auth Safety Audit | 0/1 | Not started | - |
-| 2. Guest-First Auth | 0/3 | Not started | - |
-| 3. Compass Visual Fixes | 0/2 | Not started | - |
+| 1. Auth Safety Audit | 1/1 | Complete | 2026-02-17 |
+| 2. Guest-First Auth | 3/3 | Complete | 2026-02-17 |
+| 3. Compass Visual Fixes | 2/2 | Complete | 2026-02-18 |
 | 4. Compass UX Enhancements | 8/8 | Complete | 2026-02-18 |
-| 5. Essentials Improvements | 4/5 | Complete    | 2026-02-18 |
+| 5. Essentials Improvements | 5/5 | Complete | 2026-02-18 |
+| 6. Audit Gap Closure | 0/1 | Not started | - |

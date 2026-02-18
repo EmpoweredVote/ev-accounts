@@ -9,22 +9,22 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Auth & Guest Flow
 
-- [ ] **AUTH-01**: Audit current cookie/session configuration to ensure guest-first auth changes don't break existing login flow across current domains (Netlify + Render/AWS)
-- [ ] **AUTH-02**: User can take full compass quiz without logging in
-- [ ] **AUTH-03**: Guest answers persist in localStorage across browser sessions
-- [ ] **AUTH-04**: Post-completion save prompt appears after quiz completion, not before
+- [x] **AUTH-01**: Audit current cookie/session configuration to ensure guest-first auth changes don't break existing login flow across current domains (Netlify + Render/AWS)
+- [x] **AUTH-02**: User can take full compass quiz without logging in
+- [x] **AUTH-03**: Guest answers persist in localStorage across browser sessions
+- [x] **AUTH-04**: Post-completion save prompt appears after quiz completion, not before
 - [ ] **AUTH-05**: Guest localStorage state merges to server on account creation (server-wins strategy)
-- [ ] **AUTH-06**: Clear compass is admin-only, accessible from profile dropdown
+- [x] **AUTH-06**: Clear compass is admin-only, accessible from profile dropdown
 
 ### Compass Quiz UX
 
-- [x] **QUIZ-01**: Issue cards show question/prompt instead of category title
+- [ ] **QUIZ-01**: Issue cards show question/prompt instead of category title
 - [x] **QUIZ-02**: Compare page shows question/prompt above politician stances
 - [x] **QUIZ-03**: Clicking issue card on library page opens popup with question, stances, and user's current selection (editable in-place)
-- [ ] **QUIZ-04**: Compass visualization fits on page without scrolling (except screens smaller than mobile breakpoint)
-- [ ] **QUIZ-05**: Compass title cutoff fixed — long titles no longer push chart left or get clipped
-- [ ] **QUIZ-06**: Dashed/solid line visual distinction removed from inverted spokes (inversion logic preserved)
-- [ ] **QUIZ-07**: Help box updated to remove dashed/solid line references
+- [x] **QUIZ-04**: Compass visualization fits on page without scrolling (except screens smaller than mobile breakpoint)
+- [x] **QUIZ-05**: Compass title cutoff fixed — long titles no longer push chart left or get clipped
+- [x] **QUIZ-06**: Dashed/solid line visual distinction removed from inverted spokes (inversion logic preserved)
+- [x] **QUIZ-07**: Help box updated to remove dashed/solid line references
 - [x] **QUIZ-08**: Stance order randomly inverted per user, permanent per issue (direction flip preserving spectrum)
 - [x] **QUIZ-09**: Federal/state/local level indicators shown on issue cards
 
@@ -83,19 +83,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 2 | Pending |
-| AUTH-03 | Phase 2 | Pending |
-| AUTH-04 | Phase 2 | Pending |
-| AUTH-05 | Phase 2 | Pending |
-| AUTH-06 | Phase 2 | Pending |
-| QUIZ-01 | Phase 4 | Complete |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 2 | Complete |
+| AUTH-03 | Phase 2 | Complete |
+| AUTH-04 | Phase 2 | Complete |
+| AUTH-05 | Phase 6 | Pending |
+| AUTH-06 | Phase 2 | Complete |
+| QUIZ-01 | Phase 6 | Pending |
 | QUIZ-02 | Phase 4 | Complete |
 | QUIZ-03 | Phase 4 | Complete |
-| QUIZ-04 | Phase 3 | Pending |
-| QUIZ-05 | Phase 3 | Pending |
-| QUIZ-06 | Phase 3 | Pending |
-| QUIZ-07 | Phase 3 | Pending |
+| QUIZ-04 | Phase 3 | Complete |
+| QUIZ-05 | Phase 3 | Complete |
+| QUIZ-06 | Phase 3 | Complete |
+| QUIZ-07 | Phase 3 | Complete |
 | QUIZ-08 | Phase 4 | Complete |
 | QUIZ-09 | Phase 4 | Complete |
 | ESST-01 | Phase 5 | Complete |
@@ -112,4 +112,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-17*
-*Last updated: 2026-02-18 after Phase 4 completion*
+*Last updated: 2026-02-18 after milestone audit — gap closure Phase 6 added*
