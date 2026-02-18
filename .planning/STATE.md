@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 2 complete — ready for Phase 3 (Visual Polish)
+**Current focus:** Phase 3 (Compass Visual Fixes) — Plan 01 complete, Plan 02 pending
 
 ## Current Position
 
-Phase: 2 of 5 (Guest-First Auth) — COMPLETE
-Plan: 3 of 3 in current phase — COMPLETE
-Status: Phase 2 fully complete; ready for Phase 3 (visual polish / essentials UI)
-Last activity: 2026-02-17 — Phase 2 Plan 03 executed (save prompt modal + login toast)
+Phase: 3 of 5 (Compass Visual Fixes) — IN PROGRESS
+Plan: 1 of 2 in current phase — COMPLETE
+Status: Phase 3 Plan 01 complete; ready for Phase 3 Plan 02
+Last activity: 2026-02-18 — Phase 3 Plan 01 executed (label overflow fix + viewport sizing + ev-ui 0.1.15)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 57%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
+- Total plans completed: 4
 - Average duration: 3 min
-- Total execution time: 9 min
+- Total execution time: 11 min
 
 **By Phase:**
 
@@ -29,9 +29,10 @@ Progress: [█████░░░░░] 50%
 |-------|-------|-------|----------|
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
+| 03-compass-visual-fixes | 1 (of 2) | 2 min | 2 min |
 
 **Recent Trend:**
-- Last 5 plans: 5 min, 2 min, 2 min
+- Last 5 plans: 5 min, 2 min, 2 min, 2 min
 - Trend: fast execution on focused frontend tasks
 
 *Updated after each plan completion*
@@ -56,6 +57,9 @@ Recent decisions affecting current work:
 - [02-03]: Inline modal registration uses custom form (not ev-ui AuthForm) — AuthForm is full-page and unsuitable for modal embedding
 - [02-03]: Login toast uses bg-[#00657c] literal hex — Tailwind JIT may not resolve custom color aliases; literal is always safe
 - [02-03]: Banner links to /register page rather than re-embedding inline form — persistent nudge is intentionally lower friction
+- [03-01]: Label fallback uses 3 steps (16->13->11px) matching 10->14->18 char/line thresholds; hard-cap at 2 lines if still overflowing at 11px
+- [03-01]: dynamicLabelOffset adds +8px only for multi-line labels; single-word labels use independent font-size path
+- [03-01]: Desktop chrome offset=180px (header ~75 + back ~32 + buttons ~48 + margins ~25); mobile=240px for tab bar
 
 ### Pending Todos
 
@@ -69,6 +73,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-17
-Stopped at: Completed Phase 2 Plan 03 (02-03-PLAN.md) — Phase 2 fully complete
-Resume file: .planning/phases/02-guest-first-auth/02-03-SUMMARY.md
+Last session: 2026-02-18
+Stopped at: Completed Phase 3 Plan 01 (03-01-PLAN.md) — label overflow fix + ev-ui 0.1.15
+Resume file: .planning/phases/03-compass-visual-fixes/03-01-SUMMARY.md
