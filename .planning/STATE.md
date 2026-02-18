@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 02 of 04 complete
+**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 03 of 04 complete
 
 ## Current Position
 
 Phase: 4 of 5 (Compass UX Enhancements) — IN PROGRESS
-Plan: 2 of 4 in current phase — complete (plans 01 and 02 done)
-Status: Phase 4 Plan 02 complete; ready for Phase 4 Plan 03
-Last activity: 2026-02-18 — Phase 4 Plan 02 executed (seeded stance randomization with guestId + djb2 hash)
+Plan: 3 of 4 in current phase — complete (plans 01, 02, and 03 done)
+Status: Phase 4 Plan 03 complete; ready for Phase 4 Plan 04
+Last activity: 2026-02-18 — Phase 4 Plan 03 executed (Library question text cards + level badges + ComparePanel question header)
 
-Progress: [███████░░░] 65%
+Progress: [████████░░] 72%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 3 min
-- Total execution time: 13 min
+- Total plans completed: 6
+- Average duration: 2 min
+- Total execution time: 15 min
 
 **By Phase:**
 
@@ -30,7 +30,7 @@ Progress: [███████░░░] 65%
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 | 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
-| 04-compass-ux-enhancements | 2 (of 4 so far) | 2 min | 1 min |
+| 04-compass-ux-enhancements | 3 (of 4 so far) | 4 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min
@@ -67,6 +67,9 @@ Recent decisions affecting current work:
 - [Phase 04]: guestId not cleared on logout — stance order persists across login/logout on same browser
 - [04-01]: New PATCH fields (question_text, level) use snake_case JSON; existing fields (Title, ShortTitle) keep PascalCase for backward compatibility
 - [04-01]: QuestionText and Level use empty string zero-value in Topic struct (not nullable pointer) — GORM stores empty string, omitempty suppresses from JSON when blank
+- [04-03]: getQuestion helper defined at module scope — pure function with no closure over state, avoids re-creation on each render
+- [04-03]: Category sub-label removed from Library cards — category heading above grid already provides context; level badge takes footer slot
+- [04-03]: LEVEL_CONFIG uses inline SVG paths — consistent color control and sizing via Tailwind, no external assets
 
 ### Pending Todos
 
@@ -81,5 +84,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 04-01-PLAN.md (question_text + level on compass.topics + admin UI)
-Resume file: .planning/phases/04-compass-ux-enhancements/04-02-PLAN.md
+Stopped at: Completed 04-03-PLAN.md (Library question text cards + level badges + ComparePanel question header)
+Resume file: .planning/phases/04-compass-ux-enhancements/04-04-PLAN.md
