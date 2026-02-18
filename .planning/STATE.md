@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 3 (Compass Visual Fixes) — Plan 01 complete, Plan 02 pending
+**Current focus:** Phase 3 (Compass Visual Fixes) — COMPLETE (both plans done)
 
 ## Current Position
 
-Phase: 3 of 5 (Compass Visual Fixes) — IN PROGRESS
-Plan: 1 of 2 in current phase — COMPLETE
-Status: Phase 3 Plan 01 complete; ready for Phase 3 Plan 02
-Last activity: 2026-02-18 — Phase 3 Plan 01 executed (label overflow fix + viewport sizing + ev-ui 0.1.15)
+Phase: 3 of 5 (Compass Visual Fixes) — COMPLETE
+Plan: 2 of 2 in current phase — COMPLETE
+Status: Phase 3 fully complete; ready for Phase 4
+Last activity: 2026-02-18 — Phase 3 Plan 02 executed (uniform spoke lines + SpokeHint legend removed + ev-ui 0.1.16)
 
-Progress: [██████░░░░] 57%
+Progress: [███████░░░] 62%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 3 min
-- Total execution time: 11 min
+- Total execution time: 13 min
 
 **By Phase:**
 
@@ -29,7 +29,7 @@ Progress: [██████░░░░] 57%
 |-------|-------|-------|----------|
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
-| 03-compass-visual-fixes | 1 (of 2) | 2 min | 2 min |
+| 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min
@@ -60,6 +60,8 @@ Recent decisions affecting current work:
 - [03-01]: Label fallback uses 3 steps (16->13->11px) matching 10->14->18 char/line thresholds; hard-cap at 2 lines if still overflowing at 11px
 - [03-01]: dynamicLabelOffset adds +8px only for multi-line labels; single-word labels use independent font-size path
 - [03-01]: Desktop chrome offset=180px (header ~75 + back ~32 + buttons ~48 + margins ~25); mobile=240px for tab bar
+- [03-02]: strokeDasharray omitted entirely (not "none") — inversion is internal state only, not visually indicated on spoke lines
+- [03-02]: invertedSpokes prop preserved in polygon point calculations — click-to-invert behavior unchanged
 
 ### Pending Todos
 
@@ -74,5 +76,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed Phase 3 Plan 01 (03-01-PLAN.md) — label overflow fix + ev-ui 0.1.15
-Resume file: .planning/phases/03-compass-visual-fixes/03-01-SUMMARY.md
+Stopped at: Completed Phase 3 Plan 02 (03-02-PLAN.md) — uniform spoke lines + SpokeHint legend removed + ev-ui 0.1.16
+Resume file: .planning/phases/03-compass-visual-fixes/03-02-SUMMARY.md
