@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 03 of 04 complete
+**Current focus:** Phase 4 (Compass UX Enhancements) — Plan 04 of 04 complete (phase complete)
 
 ## Current Position
 
-Phase: 4 of 5 (Compass UX Enhancements) — IN PROGRESS
-Plan: 3 of 4 in current phase — complete (plans 01, 02, and 03 done)
-Status: Phase 4 Plan 03 complete; ready for Phase 4 Plan 04
-Last activity: 2026-02-18 — Phase 4 Plan 03 executed (Library question text cards + level badges + ComparePanel question header)
+Phase: 4 of 5 (Compass UX Enhancements) — COMPLETE
+Plan: 4 of 4 in current phase — complete (all plans done)
+Status: Phase 4 complete; ready for Phase 5
+Last activity: 2026-02-17 — Phase 4 Plan 04 executed (Library drawer inline answer editing with slide-in panel)
 
-Progress: [████████░░] 72%
+Progress: [█████████░] 80%
 
 ## Performance Metrics
 
@@ -30,7 +30,7 @@ Progress: [████████░░] 72%
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 | 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
-| 04-compass-ux-enhancements | 3 (of 4 so far) | 4 min | 1 min |
+| 04-compass-ux-enhancements | 4 (of 4) | 5 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min
@@ -71,6 +71,10 @@ Recent decisions affecting current work:
 - [04-03]: Category sub-label removed from Library cards — category heading above grid already provides context; level badge takes footer slot
 - [04-03]: LEVEL_CONFIG uses inline SVG paths — consistent color control and sizing via Tailwind, no external assets
 
+- [04-04]: AnimatePresence wraps conditional children — no early return guard on LibraryDrawer to allow exit animation
+- [04-04]: Card click opens drawer (setDrawerTopic) instead of toggling compass topic selection
+- [04-04]: Drawer panel stays open after stance selection — no auto-close on answer
+
 ### Pending Todos
 
 None.
@@ -83,6 +87,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-18
-Stopped at: Completed 04-03-PLAN.md (Library question text cards + level badges + ComparePanel question header)
-Resume file: .planning/phases/04-compass-ux-enhancements/04-04-PLAN.md
+Last session: 2026-02-17
+Stopped at: Completed 04-04-PLAN.md (Library drawer inline answer editing — phase 04 complete)
+Resume file: .planning/phases/05-*/05-01-PLAN.md
