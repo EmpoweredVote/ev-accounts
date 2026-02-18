@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Compass Visual Fixes** - Fix sizing, title clipping, and spoke visual artifacts (completed 2026-02-18)
 - [x] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators
 - [x] **Phase 5: Essentials Improvements** - Candidate display, building imagery, federal reordering, position dates (completed 2026-02-18)
-- [ ] **Phase 6: Audit Gap Closure** - Fix Quiz.jsx question_text, Register.jsx guest_state, CandidateOut.ChamberName
+- [x] **Phase 6: Audit Gap Closure** - Fix Quiz.jsx question_text, Register.jsx guest_state, CandidateOut.ChamberName (completed 2026-02-18)
 
 ## Phase Details
 
@@ -134,4 +134,4 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 3. Compass Visual Fixes | 2/2 | Complete | 2026-02-18 |
 | 4. Compass UX Enhancements | 8/8 | Complete | 2026-02-18 |
 | 5. Essentials Improvements | 5/5 | Complete | 2026-02-18 |
-| 6. Audit Gap Closure | 0/1 | Not started | - |
+| 6. Audit Gap Closure | 1/1 | Complete   | 2026-02-18 |

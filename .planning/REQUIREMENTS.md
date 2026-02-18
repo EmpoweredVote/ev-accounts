@@ -13,12 +13,12 @@ Requirements for this milestone. Each maps to roadmap phases.
 - [x] **AUTH-02**: User can take full compass quiz without logging in
 - [x] **AUTH-03**: Guest answers persist in localStorage across browser sessions
 - [x] **AUTH-04**: Post-completion save prompt appears after quiz completion, not before
-- [ ] **AUTH-05**: Guest localStorage state merges to server on account creation (server-wins strategy)
+- [x] **AUTH-05**: Guest localStorage state merges to server on account creation (server-wins strategy)
 - [x] **AUTH-06**: Clear compass is admin-only, accessible from profile dropdown
 
 ### Compass Quiz UX
 
-- [ ] **QUIZ-01**: Issue cards show question/prompt instead of category title
+- [x] **QUIZ-01**: Issue cards show question/prompt instead of category title
 - [x] **QUIZ-02**: Compare page shows question/prompt above politician stances
 - [x] **QUIZ-03**: Clicking issue card on library page opens popup with question, stances, and user's current selection (editable in-place)
 - [x] **QUIZ-04**: Compass visualization fits on page without scrolling (except screens smaller than mobile breakpoint)
@@ -87,9 +87,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AUTH-02 | Phase 2 | Complete |
 | AUTH-03 | Phase 2 | Complete |
 | AUTH-04 | Phase 2 | Complete |
-| AUTH-05 | Phase 6 | Pending |
+| AUTH-05 | Phase 6 | Complete |
 | AUTH-06 | Phase 2 | Complete |
-| QUIZ-01 | Phase 6 | Pending |
+| QUIZ-01 | Phase 6 | Complete |
 | QUIZ-02 | Phase 4 | Complete |
 | QUIZ-03 | Phase 4 | Complete |
 | QUIZ-04 | Phase 3 | Complete |

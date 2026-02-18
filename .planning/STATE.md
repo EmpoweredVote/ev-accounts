@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 5 (Essentials Improvements) — COMPLETE (5 of 5 plans done)
+**Current focus:** Phase 6 (Audit Gap Closure) — COMPLETE (1 of 1 plans done)
 
 ## Current Position
 
-Phase: 5 of 5 (Essentials Improvements) — COMPLETE
-Plan: 5 of 5 in current phase — complete (all 5 plans done)
-Status: Phase 5 all plans complete; milestone v1.0 complete
-Last activity: 2026-02-18 — Phase 5 Plan 05 executed (candidate toggle + badge rendering in Results)
+Phase: 6 of 6 (Audit Gap Closure) — COMPLETE
+Plan: 1 of 1 in current phase — complete (all plans done)
+Status: Phase 6 complete — all 3 v1 audit gap items closed; QUIZ-01, AUTH-05, ChamberName resolved
+Last activity: 2026-02-18 — Phase 6 Plan 01 executed (question_text quiz headings + guest_state register + ChamberName)
 
 Progress: [██████████] 100%
 
@@ -40,6 +40,7 @@ Progress: [██████████] 100%
 | Phase 05 P01 | 3 | 1 tasks | 2 files |
 | Phase 05 P03 | 3 | 2 tasks | 9 files |
 | Phase 05 P05 | 2 | 2 tasks | 4 files |
+| Phase 06 P01 | 2 | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -102,6 +103,8 @@ Recent decisions affecting current work:
 - [05-05]: renderPoliticianCard extracted as module-scope function receiving handlePoliticianClick as parameter — avoids closure-over-state issues
 - [05-05]: Candidate id prefixed with candidate- to prevent React key collisions with official IDs
 - [05-05]: candidateData cleared when toggle turned off — no stale data persists between toggle cycles
+- [Phase 06]: Register.jsx stays on page after registration — banner disappears because isLoggedIn becomes true
+- [Phase 06]: raceChamberName uses normalizedPosition.name first, falls back to position.name — covers all cases without extra API calls
 
 ### Pending Todos
 
@@ -116,5 +119,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 05-05-PLAN.md (Phase 5 complete — all 5 plans done)
-Resume file: none (Phase 5 milestone complete)
+Stopped at: Completed 06-01-PLAN.md (Phase 6 complete — all 3 gap closure tasks done)
+Resume file: none (Phase 6 complete — all v1 audit gaps resolved)
