@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 6 (Audit Gap Closure) — COMPLETE (1 of 1 plans done)
+**Current focus:** Phase 7 (Integration Polish) — COMPLETE (1 of 1 plans done)
 
 ## Current Position
 
-Phase: 6 of 6 (Audit Gap Closure) — COMPLETE
+Phase: 7 of 7 (Integration Polish) — COMPLETE
 Plan: 1 of 1 in current phase — complete (all plans done)
-Status: Phase 6 complete — all 3 v1 audit gap items closed; QUIZ-01, AUTH-05, ChamberName resolved
-Last activity: 2026-02-18 — Phase 6 Plan 01 executed (question_text quiz headings + guest_state register + ChamberName)
+Status: Phase 7 complete — all 3 v1.0 integration polish gaps closed; GAP-01, GAP-02, GAP-03 resolved
+Last activity: 2026-02-18 — Phase 7 Plan 01 executed (Library guest 401 guard + Register sign-in link + buildGuestState empty-topics guard)
 
 Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: 2 min
-- Total execution time: 15 min
+- Total execution time: 17 min
 
 **By Phase:**
 
@@ -41,6 +41,7 @@ Progress: [██████████] 100%
 | Phase 05 P03 | 3 | 2 tasks | 9 files |
 | Phase 05 P05 | 2 | 2 tasks | 4 files |
 | Phase 06 P01 | 2 | 3 tasks | 5 files |
+| Phase 07 P01 | 2 | 1 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -105,6 +106,9 @@ Recent decisions affecting current work:
 - [05-05]: candidateData cleared when toggle turned off — no stale data persists between toggle cycles
 - [Phase 06]: Register.jsx stays on page after registration — banner disappears because isLoggedIn becomes true
 - [Phase 06]: raceChamberName uses normalizedPosition.name first, falls back to position.name — covers all cases without extra API calls
+- [Phase 07]: Library batch fetch useEffect guards with if (!isLoggedIn) return — same pattern as answers fetch and handleDrawerSelect
+- [Phase 07]: Register empty-topics fallback sends answers:[] — backend handles empty guest_state.answers gracefully
+- [Phase 07]: isLoggedIn added to Library batch fetch dependency array — re-evaluates when auth state changes
 
 ### Pending Todos
 
@@ -119,5 +123,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 06-01-PLAN.md (Phase 6 complete — all 3 gap closure tasks done)
-Resume file: none (Phase 6 complete — all v1 audit gaps resolved)
+Stopped at: Completed 07-01-PLAN.md (Phase 7 complete — all 3 v1.0 integration polish gaps closed)
+Resume file: none (Phase 7 complete — v1.0 milestone fully delivered)
