@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (4 of 5 plans done, plan 03 now complete)
+**Current focus:** Phase 5 (Essentials Improvements) — COMPLETE (5 of 5 plans done)
 
 ## Current Position
 
-Phase: 5 of 5 (Essentials Improvements) — IN PROGRESS
-Plan: 4 of 5 in current phase — complete (plan 03 completed out-of-order; plans 01, 02, 03, 04 done)
-Status: Phase 5 Plans 01, 02, 03, 04 complete; Plan 05 is next
-Last activity: 2026-02-18 — Phase 5 Plan 03 executed (term dates on cards + scroll-spy building images)
+Phase: 5 of 5 (Essentials Improvements) — COMPLETE
+Plan: 5 of 5 in current phase — complete (all 5 plans done)
+Status: Phase 5 all plans complete; milestone v1.0 complete
+Last activity: 2026-02-18 — Phase 5 Plan 05 executed (candidate toggle + badge rendering in Results)
 
-Progress: [████████░░] 80%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
@@ -39,6 +39,7 @@ Progress: [████████░░] 80%
 *Updated after each plan completion*
 | Phase 05 P01 | 3 | 1 tasks | 2 files |
 | Phase 05 P03 | 3 | 2 tasks | 9 files |
+| Phase 05 P05 | 2 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -96,6 +97,11 @@ Recent decisions affecting current work:
 - [Phase 05]: SVG placeholder files with .svg extension instead of .jpg — simpler MVP; real photos replace by updating buildingImages.js mapping
 - [Phase 05]: Term date rendered below card in wrapper div (not inside PoliticianCard title prop) — avoids ev-ui modifications and clamping issues
 - [Phase 05]: Scroll-spy only active when selectedFilter === All — specific tier filters use static image for that tier
+- [05-05]: fetchCandidates returns empty array for non-ZIP queries — no candidate-by-address endpoint exists yet; graceful degradation
+- [05-05]: showCandidates toggle defaults to false — officials-only is the default experience per ESST-01
+- [05-05]: renderPoliticianCard extracted as module-scope function receiving handlePoliticianClick as parameter — avoids closure-over-state issues
+- [05-05]: Candidate id prefixed with candidate- to prevent React key collisions with official IDs
+- [05-05]: candidateData cleared when toggle turned off — no stale data persists between toggle cycles
 
 ### Pending Todos
 
@@ -110,5 +116,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 05-04-PLAN.md
-Resume file: .planning/phases/05-essentials-improvements/05-05-PLAN.md
+Stopped at: Completed 05-05-PLAN.md (Phase 5 complete — all 5 plans done)
+Resume file: none (Phase 5 milestone complete)
