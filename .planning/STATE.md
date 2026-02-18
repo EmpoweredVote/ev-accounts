@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (4 of 5 plans done)
+**Current focus:** Phase 5 (Essentials Improvements) — IN PROGRESS (4 of 5 plans done, plan 03 now complete)
 
 ## Current Position
 
 Phase: 5 of 5 (Essentials Improvements) — IN PROGRESS
-Plan: 4 of 5 in current phase — complete
-Status: Phase 5 Plan 04 complete; Plan 05 is next
-Last activity: 2026-02-18 — Phase 5 Plan 04 executed (GET /candidates/{zip} endpoint from BallotReady races query)
+Plan: 4 of 5 in current phase — complete (plan 03 completed out-of-order; plans 01, 02, 03, 04 done)
+Status: Phase 5 Plans 01, 02, 03, 04 complete; Plan 05 is next
+Last activity: 2026-02-18 — Phase 5 Plan 03 executed (term dates on cards + scroll-spy building images)
 
 Progress: [████████░░] 80%
 
@@ -38,6 +38,7 @@ Progress: [████████░░] 80%
 
 *Updated after each plan completion*
 | Phase 05 P01 | 3 | 1 tasks | 2 files |
+| Phase 05 P03 | 3 | 2 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,9 @@ Recent decisions affecting current work:
 - [05-04]: Candidates endpoint is live-fetch from BallotReady races query (no caching) since election data changes frequently near election dates
 - [Phase 05]: [05-01]: FEDERAL_ORDER puts legislative branch first (Senate > House > President/VP) — matches user requirement for discovery-first UX
 - [Phase 05]: [05-01]: TermStart/TermEnd use omitempty — backward-compatible API extension surfacing existing valid_from/valid_to DB columns
+- [Phase 05]: SVG placeholder files with .svg extension instead of .jpg — simpler MVP; real photos replace by updating buildingImages.js mapping
+- [Phase 05]: Term date rendered below card in wrapper div (not inside PoliticianCard title prop) — avoids ev-ui modifications and clamping issues
+- [Phase 05]: Scroll-spy only active when selectedFilter === All — specific tier filters use static image for that tier
 
 ### Pending Todos
 

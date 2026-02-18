@@ -118,4 +118,4 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 2. Guest-First Auth | 0/3 | Not started | - |
 | 3. Compass Visual Fixes | 0/2 | Not started | - |
 | 4. Compass UX Enhancements | 8/8 | Complete | 2026-02-18 |
-| 5. Essentials Improvements | 3/5 | In Progress|  |
+| 5. Essentials Improvements | 4/5 | In Progress|  |
