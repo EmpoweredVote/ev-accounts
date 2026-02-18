@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-17)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 4 (Compass UX Enhancements) — COMPLETE (6 of 6 plans done)
+**Current focus:** Phase 4 (Compass UX Enhancements) — COMPLETE (8 of 8 plans done)
 
 ## Current Position
 
 Phase: 4 of 5 (Compass UX Enhancements) — COMPLETE
-Plan: 6 of 6 in current phase — complete (phase done)
+Plan: 8 of 8 in current phase — complete (phase done)
 Status: Phase 4 complete; Phase 5 (candidate discovery) is next
-Last activity: 2026-02-18 — Phase 4 Plan 06 executed (multi-level topic support, save fix, Library badge array rendering)
+Last activity: 2026-02-18 — Phase 4 Plan 08 executed (LibraryDrawer write-in support with drag-to-position and server persistence)
 
 Progress: [██████████] 90%
 
@@ -30,7 +30,7 @@ Progress: [██████████] 90%
 | 01-auth-safety-audit | 1 | 5 min | 5 min |
 | 02-guest-first-auth | 3 (of 3) | 6 min | 2 min |
 | 03-compass-visual-fixes | 2 (of 2) | 4 min | 2 min |
-| 04-compass-ux-enhancements | 6 (of 6) | 8 min | 1 min |
+| 04-compass-ux-enhancements | 8 (of 8) | 10 min | 1 min |
 
 **Recent Trend:**
 - Last 5 plans: 5 min, 2 min, 2 min, 2 min, 2 min
@@ -80,6 +80,9 @@ Recent decisions affecting current work:
 - [Phase 04]: Level stored as pq.StringArray (text[]) — GORM AutoMigrate alters column; getLevels helper normalizes at display time for backward compat
 - [Phase 04]: Optimistic setTopics now syncs all editable fields (title, short_title, question_text, level) — fixes silent stale state bug after save
 - [Phase 04]: topicRes.ok check added to TopicUpdateHandler fetch — failed PATCH now throws and shows alert instead of silently continuing
+- [04-08]: SortableStanceLabel and SortableWriteInCard copied exactly from Quiz.jsx — pure presentation components, no need to abstract to a shared module
+- [04-08]: LibraryDrawer useEffect depends on topic?.id only — resets write-in state on topic change without re-firing on currentAnswer updates within same topic
+- [04-08]: handleDrawerSelect clears writeIns context when predefined stance chosen — selecting a predefined stance replaces any existing write-in for that topic
 
 ### Pending Todos
 
@@ -94,5 +97,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 04-06-PLAN.md (multi-level topic support, save fix, Library badge array rendering — Phase 4 complete)
+Stopped at: Completed 04-08-PLAN.md (LibraryDrawer write-in support with drag-to-position and server persistence — Phase 4 fully complete)
 Resume file: .planning/phases/05-candidate-discovery/05-01-PLAN.md (when Phase 5 begins)
