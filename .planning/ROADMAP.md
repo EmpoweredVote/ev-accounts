@@ -74,14 +74,13 @@ Plans:
   2. The order of stances on an issue is flipped or not-flipped permanently for each user — it never changes between sessions for the same user on the same issue
   3. A user on the Library page can click any issue card and see a popup with the question, all stances, their current selection highlighted, and can change their selection without navigating away
   4. Each issue card shows a badge or label indicating whether the issue is federal, state, or local in scope
-**Plans**: TBD
+**Plans**: 4 plans
 
 Plans:
-- [ ] 04-01: Backend — add question TEXT column to compass.topics; admin UI textarea; DTO update
-- [ ] 04-02: Frontend — render question on issue cards and compare page with title fallback
-- [ ] 04-03: Frontend — stance randomization using permanent per-user seed (Fisher-Yates direction flip)
-- [ ] 04-04: Frontend — clickable issue card popup on library page (inline answer editing)
-- [ ] 04-05: Frontend — federal/state/local level indicator on issue cards
+- [ ] 04-01-PLAN.md — Backend: add question_text + level columns to compass.topics; extend PATCH handler; admin TopicEditor textarea + dropdown
+- [ ] 04-02-PLAN.md — Frontend: seeded stance randomization using guestId + topicId hash (replaces Math.random); both quiz modes
+- [ ] 04-03-PLAN.md — Frontend: question text as card primary label + ComparePanel header + level badges on Library cards
+- [ ] 04-04-PLAN.md — Frontend: slide-in drawer on Library cards for inline answer editing with instant save
 
 ### Phase 5: Essentials Improvements
 **Goal**: Voters can optionally see candidates alongside officials, the federal section is ordered correctly, and profiles show position dates and building imagery
@@ -112,5 +111,5 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 1. Auth Safety Audit | 0/1 | Not started | - |
 | 2. Guest-First Auth | 0/3 | Not started | - |
 | 3. Compass Visual Fixes | 0/2 | Not started | - |
-| 4. Compass UX Enhancements | 0/5 | Not started | - |
+| 4. Compass UX Enhancements | 0/4 | Not started | - |
 | 5. Essentials Improvements | 0/3 | Not started | - |
