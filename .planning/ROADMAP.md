@@ -18,6 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: Compass UX Enhancements** - Question prompts, stance randomization, interactive issue cards, level indicators
 - [x] **Phase 5: Essentials Improvements** - Candidate display, building imagery, federal reordering, position dates (completed 2026-02-18)
 - [x] **Phase 6: Audit Gap Closure** - Fix Quiz.jsx question_text, Register.jsx guest_state, CandidateOut.ChamberName (completed 2026-02-18)
+- [ ] **Phase 7: Integration Polish** - Close 3 non-blocking integration gaps from v1.0 audit (Library batch fetch guard, Register navigation fix, buildGuestState race condition)
 
 ## Phase Details
 
@@ -121,11 +122,24 @@ Plans:
 Plans:
 - [ ] 06-01-PLAN.md — Quiz.jsx question_text fallback + Register.jsx guest_state + CandidateOut.ChamberName population
 
+### Phase 7: Integration Polish
+**Goal**: Close 3 non-blocking integration gaps found by v1.0 milestone audit — console noise, navigation UX, and race condition guard
+**Depends on**: Phase 6 (fixes gaps in delivered work)
+**Requirements**: None (all requirements already satisfied; these are quality-of-life fixes)
+**Gap Closure**: Closes GAP-01, GAP-02, GAP-03 from v1.0 milestone audit
+**Success Criteria** (what must be TRUE):
+  1. Library.jsx batch fetch does not fire for guests — no 401 console errors when browsing Library as guest
+  2. Register.jsx "Sign In" link navigates to `/login`, not `/` (Library)
+  3. Register.jsx buildGuestState() handles case where topics haven't loaded yet without silently dropping answers
+**Plans**: 1 plan
+
+Plans:
+- [ ] 07-01-PLAN.md — Library batch fetch isLoggedIn guard + Register navigate fix + buildGuestState topics guard
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
-Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if two developers are available.
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -134,4 +148,5 @@ Note: Phase 3 depends only on Phase 1 and can run in parallel with Phase 2 if tw
 | 3. Compass Visual Fixes | 2/2 | Complete | 2026-02-18 |
 | 4. Compass UX Enhancements | 8/8 | Complete | 2026-02-18 |
 | 5. Essentials Improvements | 5/5 | Complete | 2026-02-18 |
-| 6. Audit Gap Closure | 1/1 | Complete   | 2026-02-18 |
+| 6. Audit Gap Closure | 1/1 | Complete | 2026-02-18 |
+| 7. Integration Polish | 0/1 | Pending | — |
