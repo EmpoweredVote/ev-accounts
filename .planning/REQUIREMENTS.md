@@ -34,8 +34,8 @@ Requirements for this milestone. Each maps to roadmap phases.
 - [x] **ESST-02**: Candidates visually differentiated from elected officials via badge or label
 - [x] **ESST-03**: Election date shown on candidate cards
 - [ ] **ESST-04**: Building images shown for federal/state/local sections (U.S. Capitol, state capitols, courthouses for LA and Bloomington)
-- [ ] **ESST-05**: Federal section reordered — U.S. Senate and U.S. House shown before executive branch officials
-- [ ] **ESST-06**: Position start date and end date shown on politician profile card
+- [x] **ESST-05**: Federal section reordered — U.S. Senate and U.S. House shown before executive branch officials
+- [x] **ESST-06**: Position start date and end date shown on politician profile card
 
 ## v2 Requirements
 
@@ -102,8 +102,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ESST-02 | Phase 5 | Complete |
 | ESST-03 | Phase 5 | Complete |
 | ESST-04 | Phase 5 | Pending |
-| ESST-05 | Phase 5 | Pending |
-| ESST-06 | Phase 5 | Pending |
+| ESST-05 | Phase 5 | Complete |
+| ESST-06 | Phase 5 | Complete |
 
 **Coverage:**
 - v1 requirements: 21 total

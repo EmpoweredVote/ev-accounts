@@ -90,6 +90,8 @@ Recent decisions affecting current work:
 - [05-04]: RaceNode/CandidacyNode type names used instead of Race/Candidacy to avoid conflicts with Phase B candidacy history types
 - [05-04]: levelToDistrictType uses keyword matching on position name for NATIONAL_UPPER/LOWER discrimination (BallotReady provides broad level only)
 - [05-04]: Candidates endpoint is live-fetch from BallotReady races query (no caching) since election data changes frequently near election dates
+- [Phase 05]: [05-01]: FEDERAL_ORDER puts legislative branch first (Senate > House > President/VP) — matches user requirement for discovery-first UX
+- [Phase 05]: [05-01]: TermStart/TermEnd use omitempty — backward-compatible API extension surfacing existing valid_from/valid_to DB columns
 
 ### Pending Todos
 
