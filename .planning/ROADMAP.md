@@ -114,7 +114,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 10. Term Dates | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 11. Tech Debt Cleanup | 1/1 | Complete   | 2026-02-19 | - |
+| 11. Tech Debt Cleanup | 1/1 | Complete    | 2026-02-19 | - |
 | 12. Quick UX Fixes | v1.2 | 0/TBD | Not started | - |
 | 13. Topic Selection Enforcement | v1.2 | 0/TBD | Not started | - |
 | 14. Guided Onboarding Flow | v1.2 | 0/TBD | Not started | - |
