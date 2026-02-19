@@ -66,7 +66,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Dashboard politician cards no longer show start or end dates
   2. A politician's profile page displays their term start and end dates below their title
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 10-01-PLAN.md — Remove term dates from cards, add term date subtitle to profile pages
 
 ## Progress
 
@@ -81,4 +83,4 @@ Plans:
 | 7. Integration Polish | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | 1/1 | Complete    | 2026-02-19 | - |
-| 10. Term Dates | v1.1 | 0/? | Not started | - |
+| 10. Term Dates | v1.1 | 0/1 | Not started | - |
