@@ -29,7 +29,7 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 ### Question Framing
 
 - [x] **QFRM-01**: Default question framing changes from "What should the government do about..." to "Where do you stand on [topic]?"
-- [ ] **QFRM-02**: Content pass on topic titles that are too vague for the new framing (e.g., "Misinformation" becomes more descriptive)
+- [x] **QFRM-02**: Content pass on topic titles that are too vague for the new framing (e.g., "Misinformation" becomes more descriptive)
 
 ### Tech Debt
 
@@ -74,7 +74,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEBT-03 | Phase 11 | Complete |
 | LIBR-01 | Phase 12 | Complete |
 | QFRM-01 | Phase 12 | Complete |
-| QFRM-02 | Phase 12 | Pending |
+| QFRM-02 | Phase 12 | Complete |
 | TSEL-01 | Phase 13 | Pending |
 | TSEL-02 | Phase 13 | Pending |
 | TSEL-03 | Phase 13 | Pending |
