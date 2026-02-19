@@ -24,7 +24,7 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 ### Library UX
 
 - [x] **LIBR-01**: Library page defaults to showing all topics (not "unanswered only")
-- [ ] **LIBR-02**: "Start Quiz" fixed bottom button is removed/replaced by the onboarding overlay on the compass
+- [x] **LIBR-02**: "Start Quiz" fixed bottom button is removed/replaced by the onboarding overlay on the compass
 
 ### Question Framing
 
@@ -82,7 +82,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ONBD-02 | Phase 14 | Pending |
 | ONBD-03 | Phase 14 | Pending |
 | ONBD-04 | Phase 14 | Pending |
-| LIBR-02 | Phase 14 | Pending |
+| LIBR-02 | Phase 14 | Complete |
 | ONBD-05 | Phase 15 | Pending |
 
 **Coverage:**
