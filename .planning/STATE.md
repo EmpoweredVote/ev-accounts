@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 13 of 15 (Topic Selection Enforcement)
-Plan: 1 of 2 in current phase — plan 01 complete
-Status: Phase 13 in progress — plan 01 executed
-Last activity: 2026-02-19 — completed 13-01 (Library page counter badge, on-compass card indicators, add/remove toggle with confirmation popover)
+Plan: 2 of 2 in current phase — PHASE COMPLETE
+Status: Phase 13 complete — all plans executed
+Last activity: 2026-02-19 — completed 13-02 (Compass 3-topic minimum gate, LibraryDrawer remove action, AddTopicModal 8-topic cap)
 
-Progress: [██░░░░░░░░░░░░░░░░░░] 11% (v1.2)
+Progress: [███░░░░░░░░░░░░░░░░░] 13% (v1.2)
 
 ## Performance Metrics
 
@@ -27,7 +27,7 @@ Progress: [██░░░░░░░░░░░░░░░░░░] 11% (v1
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 4
+- Total plans completed: 5
 
 ## Accumulated Context
 
@@ -47,6 +47,9 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (13-01) Tasks 1 and 2 committed together — single Library.jsx file, cohesive implementation, no natural commit seam between them
 - (13-01) Card click while popover open dismisses popover (not drawer) — prevents misclick-to-drawer on confirmation
 - (13-01) wouldDropBelow3 uses selectedTopics.length <= 3 (current count) — removing 1 from 3 drops to 2, below minimum
+- (13-02) Compare button hidden (not disabled) when showChart is false — cleaner than a disabled state when chart itself isn't visible
+- (13-02) compassTopicCount <= 3 shows below-3 warning — triggers at exactly 3 since removal will drop to 2, breaking the minimum
+- (13-02) No CTA button to Library in MinimumProgress — bottom nav already provides that navigation path
 
 ### Pending Todos
 
@@ -59,5 +62,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 13-01-PLAN.md (Library indicators, counter badge, add/remove toggle)
-Resume file: .planning/phases/13-topic-selection-enforcement/13-02-PLAN.md
+Stopped at: Completed 13-02-PLAN.md (Compass minimum gate, LibraryDrawer remove action, AddTopicModal cap)
+Resume file: .planning/phases/14-PLAN.md
