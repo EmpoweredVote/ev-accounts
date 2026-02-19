@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 14 of 15 (Guided Onboarding Flow)
-Plan: 1 of 4 in current phase — plan 01 complete
-Status: Phase 14 in progress — 1 of 4 plans executed
-Last activity: 2026-02-19 — completed 14-01 (Remove Start Quiz button, rebrand quiz to calibrate)
+Plan: 2 of 4 in current phase — plan 02 complete
+Status: Phase 14 in progress — 2 of 4 plans executed
+Last activity: 2026-02-19 — completed 14-02 (Compass spoke-click-to-drawer, reset compass menu)
 
 Progress: [████░░░░░░░░░░░░░░░░] 16% (v1.2)
 
@@ -27,7 +27,7 @@ Progress: [████░░░░░░░░░░░░░░░░] 16% (v1
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 6
+- Total plans completed: 7
 
 ## Accumulated Context
 
@@ -52,6 +52,9 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (13-02) No CTA button to Library in MinimumProgress — bottom nav already provides that navigation path
 - (14-01) BuildCompass.jsx required no changes — heading "Build Your Compass" uses compass language, not quiz language
 - (14-01) Route path /quiz and internal variable names preserved unchanged — only user-facing text rebranded
+- (14-02) Tasks 1 and 2 committed together — single Compass.jsx file, cohesive implementation, no natural commit seam
+- (14-02) onReplaceTopic receives shortTitle (string) from RadarChartCore — must look up full topic object via topics.find()
+- (14-02) Reset clears onboarding_spokeFlip from localStorage so spoke hint reappears after fresh start
 
 ### Pending Todos
 
@@ -64,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 14-01-PLAN.md
-Resume file: .planning/phases/14-guided-onboarding-flow/14-01-SUMMARY.md
+Stopped at: Completed 14-02-PLAN.md
+Resume file: .planning/phases/14-guided-onboarding-flow/14-02-SUMMARY.md
