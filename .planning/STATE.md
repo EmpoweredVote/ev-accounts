@@ -2,25 +2,28 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-18)
+See: .planning/PROJECT.md (updated 2026-02-19)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.1 Essentials UX Polish — Phase 10: Term Dates
+**Current focus:** Planning next milestone
 
 ## Current Position
 
-Phase: 10 of 10 (Term Dates)
-Plan: 1 of 1 in current phase (complete)
-Status: Phase complete — all plans done
-Last activity: 2026-02-18 — Completed 10-01-PLAN.md with human-verify approval
+Phase: None — between milestones
+Status: v1.1 shipped, awaiting next milestone definition
+Last activity: 2026-02-19 — Completed v1.1 Essentials UX Polish milestone
 
-Progress: [████████░░] 80% (v1.1)
+Progress: [██████████] 100% (v1.1)
 
 ## Performance Metrics
 
 **Velocity (v1.0):**
 - Total plans completed: 21
 - v1.0 phases: 7 phases, 21 plans
+
+**Velocity (v1.1):**
+- Total plans completed: 3
+- v1.1 phases: 3 phases, 3 plans
 
 **By Phase (v1.0):**
 
@@ -48,16 +51,7 @@ Progress: [████████░░] 80% (v1.1)
 
 Decisions are logged in PROJECT.md Key Decisions table.
 All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for full history.
-
-v1.1 decisions:
-- [Phase 08-layout]: Sidebar width increased to 300px and building image aspect ratio changed to 1/2.25 (portrait) for Results page sticky layout
-- [Phase 08-layout]: IntersectionObserver root set to scrolling main panel ref on desktop so scroll-spy tier-swap works correctly in two-panel layout
-- [Phase 09-building-imagery]: Sourced all building photos from Wikimedia Commons (public domain/CC) to avoid licensing concerns in civic app
-- [Phase 09-building-imagery]: FALLBACK.Federal stays as us-capitol.svg — CURATED map exclusively serves real photos; fallback always uses SVGs for unsupported cities
-- [Phase 09-building-imagery]: Extract city name from chamber_name regex when representing_city is empty — BallotReady transform doesn't populate representing_city
-- [Phase 10-term-dates]: Use en-dash (U+2013) for date ranges in term date display — typographically correct for date spans
-- [Phase 10-term-dates]: Hide term date line entirely when both start and end are null — no placeholder text
-- [Phase 10-term-dates]: Start-only dates display as "Since Jan 2023" — forward-looking phrasing for ongoing terms
+All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for full history.
 
 ### Pending Todos
 
@@ -69,6 +63,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-18
-Stopped at: Completed 10-01-PLAN.md — phase 10 done, human-verify approved
-Resume file: None — phase 10 complete, v1.1 milestone all phases done
+Last session: 2026-02-19
+Stopped at: Completed v1.1 milestone archival
+Resume file: None — between milestones

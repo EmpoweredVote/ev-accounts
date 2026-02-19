@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by location (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, Render, and AWS App Runner. The compass works without login (guest-first), renders cleanly across devices, and Essentials surfaces both officials and candidates with building imagery and term dates.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by location (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, Render, and AWS App Runner. The compass works without login (guest-first), renders cleanly across devices, and Essentials surfaces both officials and candidates with real building photographs, sticky sidebar layout, and contextual term dates on profile pages.
 
 ## Core Value
 
@@ -43,41 +43,40 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Position start/end dates on politician cards — v1.0
 - ✓ Auth safety audit — middleware tests, integration tests, 62-route manifest — v1.0
 
+- ✓ Sticky sidebar with independently scrolling representatives panel — v1.1
+- ✓ Real building photographs for federal/state/local tiers (Wikimedia Commons, CC-licensed) — v1.1
+- ✓ Scroll-spy building image swap in "All" mode — v1.1
+- ✓ Term dates relocated from dashboard cards to profile pages with en-dash formatting — v1.1
+- ✓ ev-ui 0.1.19 with formatTermDate/getTermLine helpers — v1.1
+
 ### Active
 
-## Current Milestone: v1.1 Essentials UX Polish
-
-**Goal:** Improve Essentials layout, imagery, and profile data display for a more polished user experience.
-
-**Target features:**
-- Sticky sidebar with scrollable representatives panel
-- Dynamic real building photos based on location and tier (scroll-spy on "All" mode)
-- Term dates moved from dashboard cards to politician profile page
+(No active milestone — run `/gsd:new-milestone` to start next)
 
 ### Out of Scope
 
 - Infrastructure migration — research only, migrate in future milestone
 - Mobile app — web-first
 - Real-time chat — high complexity, not core
-- New prototype features — focus on polishing existing ones
 - Data import automation — manual processes acceptable for now
 - Full state/local issue coverage for compass — indicators shipped, content later
 - Monorepo migration — deferred to v2, current multi-repo structure works
 - OAuth login (Google, GitHub) — email/password sufficient for current user base
+- Building images for all US locations — only Bloomington IN and Los Angeles CA covered, SVG fallback for others
 
 ## Context
 
-Shipped v1.0 with ~28K LOC across 4 repos:
+Shipped v1.1 with ~28K LOC across 4 repos:
 - **CompassV2** (React 19): 6.8K LOC — compass quiz, Library, guest auth flow
 - **EV-Backend** (Go 1.24): 15.4K LOC — auth, compass, essentials, treasury, staging modules
-- **ev-ui** (React/tsup): 2.7K LOC — RadarChartCore, PoliticianCard with badge prop
-- **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, building imagery
+- **ev-ui** (React/tsup): 2.7K LOC — RadarChartCore, PoliticianProfile with term dates, FilterSidebar
+- **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, real building photos, sticky layout
 
 Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB.
 BallotReady API is the primary data source for politicians and candidates.
-ev-ui published to GitHub npm registry (v0.1.17), consumed by CompassV2 and essentials.
+ev-ui published to GitHub npm registry (v0.1.19), consumed by CompassV2 and essentials.
 
-Known tech debt: RadarChart.jsx dead code block, SVG placeholder building images, ev-ui version pin mismatch between CompassV2 (^0.1.16) and essentials (^0.1.17).
+Known tech debt: RadarChart.jsx dead code block, CompassV2 pins ev-ui ^0.1.16 (essentials ^0.1.19), BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx).
 
 ## Constraints
 
@@ -103,6 +102,12 @@ Known tech debt: RadarChart.jsx dead code block, SVG placeholder building images
 | Level stored as pq.StringArray (text[]) | Topics can have multiple governance levels | ✓ Good — flexible, backward compatible |
 | LibraryDrawer write-in support | Users need to add custom stances from Library | ✓ Good — full drag-to-position UX with persistence |
 | Candidate endpoint is live-fetch (no caching) | Election data changes frequently near elections | ✓ Good — freshness more important than speed for candidates |
+| Sticky two-panel layout with overflow:hidden | Sidebar must stay visible while scrolling long representative lists | ✓ Good — position:sticky + overflow-y:auto pattern works cleanly |
+| IntersectionObserver root scoped to scroll container | Scroll-spy must detect tier boundaries within the panel, not viewport | ✓ Good — tier-swap works correctly in two-panel layout |
+| Wikimedia Commons photos (public domain/CC) | Civic app needs license-safe building images | ✓ Good — 5 buildings covered, SVG fallback for unsupported locations |
+| Chamber_name regex for city extraction | BallotReady transform doesn't populate representing_city | ⚠️ Revisit — frontend workaround; backend fix deferred |
+| En-dash for date ranges | Typographically correct for date spans | ✓ Good — consistent formatting on profile pages |
+| Hide term dates when both null | Avoid empty space or confusing placeholder text | ✓ Good — clean profile display |
 
 ---
-*Last updated: 2026-02-18 after v1.1 milestone started*
+*Last updated: 2026-02-19 after v1.1 milestone completion*
