@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.2 Compass Onboarding & UX — Phase 11: Tech Debt Cleanup
+**Current focus:** v1.2 Compass Onboarding & UX — Phase 12: Quick UX Fixes
 
 ## Current Position
 
-Phase: 11 of 15 (Tech Debt Cleanup)
-Plan: 1 of 1 in current phase
-Status: Phase complete
-Last activity: 2026-02-19 — completed 11-01 tech debt cleanup (RadarChart dead code, ev-ui alignment, getQuestionText helper)
+Phase: 12 of 15 (Quick UX Fixes)
+Plan: 0 of TBD in current phase
+Status: Context gathered, ready for planning
+Last activity: 2026-02-18 — captured phase 12 context (Library default filter, question framing, topic rewrites)
 
 Progress: [█░░░░░░░░░░░░░░░░░░░] 7% (v1.2)
 
@@ -51,6 +51,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-19
-Stopped at: Completed 11-01-PLAN.md (Phase 11 complete — 1/1 plans done)
-Resume file: None
+Last session: 2026-02-18
+Stopped at: Phase 12 context gathered
+Resume file: .planning/phases/12-quick-ux-fixes/12-CONTEXT.md
