@@ -92,7 +92,11 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   3. After answering 3 topics, user can exit the guided flow and land on a usable compass — or continue up to 8
   4. After completing or exiting onboarding, user is on the compass page with all answered topics displayed
   5. "Start Quiz" fixed bottom button is absent from the Library page — the overlay on the compass serves this entry point
-**Plans**: TBD
+**Plans**: 4 plans
+- [ ] 14-01-PLAN.md — Remove Start Quiz button from Library, rebrand "quiz" to "calibrate"
+- [ ] 14-02-PLAN.md — Compass spoke-click-to-drawer and Reset Compass settings menu
+- [ ] 14-03-PLAN.md — CalibrationOverlay component with welcome, topic picker, answering flow, and completion
+- [ ] 14-04-PLAN.md — Visual/functional verification checkpoint
 
 ### Phase 15: Help Page Update
 **Goal**: The /help page accurately describes how the compass and Library work after v1.2 changes
@@ -121,5 +125,5 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 11. Tech Debt Cleanup | 1/1 | Complete    | 2026-02-19 | - |
 | 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
-| 14. Guided Onboarding Flow | v1.2 | 0/TBD | Not started | - |
+| 14. Guided Onboarding Flow | v1.2 | 0/4 | Planning complete | - |
 | 15. Help Page Update | v1.2 | 0/TBD | Not started | - |
