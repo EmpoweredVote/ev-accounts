@@ -23,8 +23,8 @@ Requirements for Essentials UX Polish milestone. Each maps to roadmap phases.
 
 ### Profile
 
-- [ ] **PROF-01**: Start/end dates are removed from politician cards on dashboard page
-- [ ] **PROF-02**: Start/end dates display below the politician's title on the profile page
+- [x] **PROF-01**: Start/end dates are removed from politician cards on dashboard page
+- [x] **PROF-02**: Start/end dates display below the politician's title on the profile page
 
 ## Future Requirements
 
@@ -53,8 +53,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | IMG-04 | Phase 9 | Complete |
 | IMG-05 | Phase 9 | Complete |
 | IMG-06 | Phase 9 | Complete |
-| PROF-01 | Phase 10 | Pending |
-| PROF-02 | Phase 10 | Pending |
+| PROF-01 | Phase 10 | Complete |
+| PROF-02 | Phase 10 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 10 total
@@ -63,4 +63,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-18*
-*Last updated: 2026-02-18 after roadmap creation (v1.1)*
+*Last updated: 2026-02-18 after phase 10 completion (all v1.1 requirements complete)*

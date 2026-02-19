@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.1 Essentials UX Polish — Phase 9: Building Imagery
+**Current focus:** v1.1 Essentials UX Polish — Phase 10: Term Dates
 
 ## Current Position
 
-Phase: 9 of 10 (Building Imagery)
+Phase: 10 of 10 (Term Dates)
 Plan: 1 of 1 in current phase (complete)
 Status: Phase complete — all plans done
-Last activity: 2026-02-18 — Completed 09-01-PLAN.md with human-verify approval
+Last activity: 2026-02-18 — Completed 10-01-PLAN.md with human-verify approval
 
-Progress: [██████░░░░] 66% (v1.1)
+Progress: [████████░░] 80% (v1.1)
 
 ## Performance Metrics
 
@@ -40,6 +40,7 @@ Progress: [██████░░░░] 66% (v1.1)
 |-------|-------|--------|
 | 8. Layout | 1 | Complete |
 | 9. Building Imagery | 1 | Complete |
+| 10. Term Dates | 1 | Complete |
 
 ## Accumulated Context
 
@@ -54,6 +55,9 @@ v1.1 decisions:
 - [Phase 09-building-imagery]: Sourced all building photos from Wikimedia Commons (public domain/CC) to avoid licensing concerns in civic app
 - [Phase 09-building-imagery]: FALLBACK.Federal stays as us-capitol.svg — CURATED map exclusively serves real photos; fallback always uses SVGs for unsupported cities
 - [Phase 09-building-imagery]: Extract city name from chamber_name regex when representing_city is empty — BallotReady transform doesn't populate representing_city
+- [Phase 10-term-dates]: Use en-dash (U+2013) for date ranges in term date display — typographically correct for date spans
+- [Phase 10-term-dates]: Hide term date line entirely when both start and end are null — no placeholder text
+- [Phase 10-term-dates]: Start-only dates display as "Since Jan 2023" — forward-looking phrasing for ongoing terms
 
 ### Pending Todos
 
@@ -66,5 +70,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 09-01-PLAN.md — phase 9 done, human-verify approved
-Resume file: None — phase 9 complete, ready for phase 10 (Term Dates)
+Stopped at: Completed 10-01-PLAN.md — phase 10 done, human-verify approved
+Resume file: None — phase 10 complete, v1.1 milestone all phases done
