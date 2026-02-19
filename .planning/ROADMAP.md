@@ -80,5 +80,5 @@ Plans:
 | 6. Audit Gap Closure | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 7. Integration Polish | v1.0 | 1/1 | Complete | 2026-02-18 |
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 9. Building Imagery | 1/1 | Complete   | 2026-02-19 | - |
+| 9. Building Imagery | 1/1 | Complete    | 2026-02-19 | - |
 | 10. Term Dates | v1.1 | 0/? | Not started | - |
