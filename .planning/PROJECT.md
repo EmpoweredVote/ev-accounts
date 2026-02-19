@@ -51,7 +51,17 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active milestone — run `/gsd:new-milestone` to start next)
+## Current Milestone: v1.2 Compass Onboarding & UX
+
+**Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
+
+**Target features:**
+- Guided first-time topic selection flow (card-by-card, 3-8 issues)
+- "Calibrate your Compass" overlay on empty compass for new guests
+- Enforce 8-topic maximum on compass (bug fix)
+- Default Library filter fix (not "unanswered only")
+- Question framing: "Where do you stand on [topic]?" + content pass on vague titles
+- Tech debt: RadarChart.jsx dead code removal, ev-ui version pin alignment
 
 ### Out of Scope
 
@@ -110,4 +120,4 @@ Known tech debt: RadarChart.jsx dead code block, CompassV2 pins ev-ui ^0.1.16 (e
 | Hide term dates when both null | Avoid empty space or confusing placeholder text | ✓ Good — clean profile display |
 
 ---
-*Last updated: 2026-02-19 after v1.1 milestone completion*
+*Last updated: 2026-02-18 after v1.2 milestone start*

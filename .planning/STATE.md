@@ -2,18 +2,17 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-19)
+See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v1.2 Compass Onboarding & UX
 
 ## Current Position
 
-Phase: None — between milestones
-Status: v1.1 shipped, awaiting next milestone definition
-Last activity: 2026-02-19 — Completed v1.1 Essentials UX Polish milestone
-
-Progress: [██████████] 100% (v1.1)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-18 — Milestone v1.2 started
 
 ## Performance Metrics
 
@@ -63,6 +62,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-19
-Stopped at: Completed v1.1 milestone archival
-Resume file: None — between milestones
+Last session: 2026-02-18
+Stopped at: Defining v1.2 requirements
+Resume file: None
