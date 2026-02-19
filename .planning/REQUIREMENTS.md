@@ -69,27 +69,27 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ONBD-01 | — | Pending |
-| ONBD-02 | — | Pending |
-| ONBD-03 | — | Pending |
-| ONBD-04 | — | Pending |
-| ONBD-05 | — | Pending |
-| TSEL-01 | — | Pending |
-| TSEL-02 | — | Pending |
-| TSEL-03 | — | Pending |
-| LIBR-01 | — | Pending |
-| LIBR-02 | — | Pending |
-| QFRM-01 | — | Pending |
-| QFRM-02 | — | Pending |
-| DEBT-01 | — | Pending |
-| DEBT-02 | — | Pending |
-| DEBT-03 | — | Pending |
+| DEBT-01 | Phase 11 | Pending |
+| DEBT-02 | Phase 11 | Pending |
+| DEBT-03 | Phase 11 | Pending |
+| LIBR-01 | Phase 12 | Pending |
+| QFRM-01 | Phase 12 | Pending |
+| QFRM-02 | Phase 12 | Pending |
+| TSEL-01 | Phase 13 | Pending |
+| TSEL-02 | Phase 13 | Pending |
+| TSEL-03 | Phase 13 | Pending |
+| ONBD-01 | Phase 14 | Pending |
+| ONBD-02 | Phase 14 | Pending |
+| ONBD-03 | Phase 14 | Pending |
+| ONBD-04 | Phase 14 | Pending |
+| LIBR-02 | Phase 14 | Pending |
+| ONBD-05 | Phase 15 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 15 total
-- Mapped to phases: 0
-- Unmapped: 15 (awaiting roadmap)
+- Mapped to phases: 15
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-18*
-*Last updated: 2026-02-18 after initial definition*
+*Last updated: 2026-02-18 after roadmap creation*

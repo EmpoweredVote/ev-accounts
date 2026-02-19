@@ -5,14 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.2 Compass Onboarding & UX
+**Current focus:** v1.2 Compass Onboarding & UX — Phase 11: Tech Debt Cleanup
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-02-18 — Milestone v1.2 started
+Phase: 11 of 15 (Tech Debt Cleanup)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-02-18 — v1.2 roadmap created, phases 11-15 defined
+
+Progress: [░░░░░░░░░░░░░░░░░░░░] 0% (v1.2)
 
 ## Performance Metrics
 
@@ -24,25 +26,8 @@ Last activity: 2026-02-18 — Milestone v1.2 started
 - Total plans completed: 3
 - v1.1 phases: 3 phases, 3 plans
 
-**By Phase (v1.0):**
-
-| Phase | Plans | Status |
-|-------|-------|--------|
-| 1. Auth Safety Audit | 1 | Complete |
-| 2. Guest-First Auth | 3 | Complete |
-| 3. Compass Visual Fixes | 2 | Complete |
-| 4. Compass UX Enhancements | 8 | Complete |
-| 5. Essentials Improvements | 5 | Complete |
-| 6. Audit Gap Closure | 1 | Complete |
-| 7. Integration Polish | 1 | Complete |
-
-**By Phase (v1.1):**
-
-| Phase | Plans | Status |
-|-------|-------|--------|
-| 8. Layout | 1 | Complete |
-| 9. Building Imagery | 1 | Complete |
-| 10. Term Dates | 1 | Complete |
+**v1.2 (in progress):**
+- Total plans completed: 0
 
 ## Accumulated Context
 
@@ -63,5 +48,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Defining v1.2 requirements
+Stopped at: v1.2 roadmap written, ready to plan Phase 11
 Resume file: None
