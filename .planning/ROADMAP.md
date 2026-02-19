@@ -54,7 +54,8 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   1. RadarChart.jsx no longer contains the commented-out block (lines 9-263 removed)
   2. CompassV2 package.json pins ev-ui at ^0.1.19, matching essentials
   3. question_text fallback string exists in exactly one place in the codebase and is imported wherever needed
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 11-01-PLAN.md — Remove dead code, update ev-ui version, consolidate question_text fallback
 
 ### Phase 12: Quick UX Fixes
 **Goal**: Library opens showing all topics by default, and question framing is clear and consistent
@@ -113,7 +114,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 10. Term Dates | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 11. Tech Debt Cleanup | v1.2 | 0/TBD | Not started | - |
+| 11. Tech Debt Cleanup | v1.2 | 0/1 | Planned | - |
 | 12. Quick UX Fixes | v1.2 | 0/TBD | Not started | - |
 | 13. Topic Selection Enforcement | v1.2 | 0/TBD | Not started | - |
 | 14. Guided Onboarding Flow | v1.2 | 0/TBD | Not started | - |
