@@ -9,9 +9,9 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 
 ### Onboarding
 
-- [ ] **ONBD-01**: First-time user sees a "Calibrate your Compass" overlay on the empty compass page instead of the "Start Quiz" button at the bottom of Library
-- [ ] **ONBD-02**: Guided onboarding presents topic cards one at a time with stance selection, and the compass renders in real time as each topic is answered
-- [ ] **ONBD-03**: User can stop the guided flow after answering 3 topics (compass is usable) or continue up to 8
+- [x] **ONBD-01**: First-time user sees a "Calibrate your Compass" overlay on the empty compass page instead of the "Start Quiz" button at the bottom of Library
+- [x] **ONBD-02**: Guided onboarding presents topic cards one at a time with stance selection, and the compass renders in real time as each topic is answered
+- [x] **ONBD-03**: User can stop the guided flow after answering 3 topics (compass is usable) or continue up to 8
 - [x] **ONBD-04**: After onboarding completes, user lands on their compass with all answered topics displayed
 - [ ] **ONBD-05**: `/help` onboarding page is updated to reflect the new drawer-based flow and guided onboarding
 
@@ -78,9 +78,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TSEL-01 | Phase 13 | Complete |
 | TSEL-02 | Phase 13 | Complete |
 | TSEL-03 | Phase 13 | Complete |
-| ONBD-01 | Phase 14 | Pending |
-| ONBD-02 | Phase 14 | Pending |
-| ONBD-03 | Phase 14 | Pending |
+| ONBD-01 | Phase 14 | Complete |
+| ONBD-02 | Phase 14 | Complete |
+| ONBD-03 | Phase 14 | Complete |
 | ONBD-04 | Phase 14 | Complete |
 | LIBR-02 | Phase 14 | Complete |
 | ONBD-05 | Phase 15 | Pending |

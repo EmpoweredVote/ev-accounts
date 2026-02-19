@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 14 of 15 (Guided Onboarding Flow)
-Plan: 2 of 4 in current phase — plan 02 complete
-Status: Phase 14 in progress — 2 of 4 plans executed
-Last activity: 2026-02-19 — completed 14-02 (Compass spoke-click-to-drawer, reset compass menu)
+Plan: 3 of 4 in current phase — plan 03 complete
+Status: Phase 14 in progress — 3 of 4 plans executed
+Last activity: 2026-02-19 — completed 14-03 (CalibrationOverlay component and Compass integration)
 
 Progress: [████░░░░░░░░░░░░░░░░] 16% (v1.2)
 
@@ -27,7 +27,7 @@ Progress: [████░░░░░░░░░░░░░░░░] 16% (v1
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 7
+- Total plans completed: 8
 
 ## Accumulated Context
 
@@ -55,6 +55,9 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (14-02) Tasks 1 and 2 committed together — single Compass.jsx file, cohesive implementation, no natural commit seam
 - (14-02) onReplaceTopic receives shortTitle (string) from RadarChartCore — must look up full topic object via topics.find()
 - (14-02) Reset clears onboarding_spokeFlip from localStorage so spoke hint reappears after fresh start
+- (14-03) calibrationCompleted flag persisted to localStorage so post-onboarding topic removal shows MinimumProgress not overlay
+- (14-03) No write-in support during onboarding — users can write in later from the Library drawer
+- (14-03) handleResetCompass clears calibration_skipped + calibration_completed + calibration_progress so overlay re-appears on reset
 
 ### Pending Todos
 
@@ -67,5 +70,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 14-02-PLAN.md
-Resume file: .planning/phases/14-guided-onboarding-flow/14-02-SUMMARY.md
+Stopped at: Completed 14-03-PLAN.md
+Resume file: .planning/phases/14-guided-onboarding-flow/14-03-SUMMARY.md
