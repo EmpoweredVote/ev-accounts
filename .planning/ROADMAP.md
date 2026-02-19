@@ -38,7 +38,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 **Milestone Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
 
-- [ ] **Phase 11: Tech Debt Cleanup** - Remove dead code, align dependency versions, consolidate duplicated helpers
+- [x] **Phase 11: Tech Debt Cleanup** - Remove dead code, align dependency versions, consolidate duplicated helpers (completed 2026-02-19)
 - [ ] **Phase 12: Quick UX Fixes** - Fix Library default filter and update question framing across all topics
 - [ ] **Phase 13: Topic Selection Enforcement** - Cap compass at 8 topics, enforce 3-topic minimum, add on-compass visual indicators to Library cards
 - [ ] **Phase 14: Guided Onboarding Flow** - Replace "Start Quiz" with calibration overlay and guided card-by-card onboarding with live compass rendering
@@ -114,7 +114,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 10. Term Dates | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 11. Tech Debt Cleanup | v1.2 | 0/1 | Planned | - |
+| 11. Tech Debt Cleanup | 1/1 | Complete   | 2026-02-19 | - |
 | 12. Quick UX Fixes | v1.2 | 0/TBD | Not started | - |
 | 13. Topic Selection Enforcement | v1.2 | 0/TBD | Not started | - |
 | 14. Guided Onboarding Flow | v1.2 | 0/TBD | Not started | - |

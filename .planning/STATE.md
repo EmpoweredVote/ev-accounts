@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 11 of 15 (Tech Debt Cleanup)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-02-18 — v1.2 roadmap created, phases 11-15 defined
+Plan: 1 of 1 in current phase
+Status: Phase complete
+Last activity: 2026-02-19 — completed 11-01 tech debt cleanup (RadarChart dead code, ev-ui alignment, getQuestionText helper)
 
-Progress: [░░░░░░░░░░░░░░░░░░░░] 0% (v1.2)
+Progress: [█░░░░░░░░░░░░░░░░░░░] 7% (v1.2)
 
 ## Performance Metrics
 
@@ -27,7 +27,7 @@ Progress: [░░░░░░░░░░░░░░░░░░░░] 0% (v1.
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 0
+- Total plans completed: 1
 
 ## Accumulated Context
 
@@ -36,6 +36,10 @@ Progress: [░░░░░░░░░░░░░░░░░░░░] 0% (v1.
 Decisions are logged in PROJECT.md Key Decisions table.
 All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for full history.
 All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for full history.
+
+**v1.2 decisions:**
+- (11-01) Keep `getQuestion` alias in Library.jsx delegating to `getQuestionText` rather than renaming all call sites — avoids churn in a large file
+- (11-01) TopicEditor.jsx placeholder text left unchanged — it is a UI hint string, not the runtime fallback
 
 ### Pending Todos
 
@@ -47,6 +51,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-18
-Stopped at: v1.2 roadmap written, ready to plan Phase 11
+Last session: 2026-02-19
+Stopped at: Completed 11-01-PLAN.md (Phase 11 complete — 1/1 plans done)
 Resume file: None

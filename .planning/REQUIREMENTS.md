@@ -33,9 +33,9 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 
 ### Tech Debt
 
-- [ ] **DEBT-01**: RadarChart.jsx dead code block (lines 9-263) is removed
-- [ ] **DEBT-02**: CompassV2 ev-ui version pin updated from ^0.1.16 to ^0.1.19
-- [ ] **DEBT-03**: Duplicated question_text fallback string consolidated into a shared helper
+- [x] **DEBT-01**: RadarChart.jsx dead code block (lines 9-263) is removed
+- [x] **DEBT-02**: CompassV2 ev-ui version pin updated from ^0.1.16 to ^0.1.19
+- [x] **DEBT-03**: Duplicated question_text fallback string consolidated into a shared helper
 
 ## Future Requirements
 
@@ -69,9 +69,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DEBT-01 | Phase 11 | Pending |
-| DEBT-02 | Phase 11 | Pending |
-| DEBT-03 | Phase 11 | Pending |
+| DEBT-01 | Phase 11 | Complete |
+| DEBT-02 | Phase 11 | Complete |
+| DEBT-03 | Phase 11 | Complete |
 | LIBR-01 | Phase 12 | Pending |
 | QFRM-01 | Phase 12 | Pending |
 | QFRM-02 | Phase 12 | Pending |
