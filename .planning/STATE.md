@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.1 Essentials UX Polish — Phase 8: Layout
+**Current focus:** v1.1 Essentials UX Polish — Phase 9: Building Imagery
 
 ## Current Position
 
-Phase: 8 of 10 (Layout)
+Phase: 9 of 10 (Building Imagery)
 Plan: 1 of 1 in current phase (complete)
 Status: Phase complete — all plans done
-Last activity: 2026-02-18 — Completed 08-01-PLAN.md all 3 tasks including human-verify approval
+Last activity: 2026-02-18 — Completed 09-01-PLAN.md with human-verify approval
 
-Progress: [███░░░░░░░] 33% (v1.1)
+Progress: [██████░░░░] 66% (v1.1)
 
 ## Performance Metrics
 
@@ -34,8 +34,12 @@ Progress: [███░░░░░░░] 33% (v1.1)
 | 6. Audit Gap Closure | 1 | Complete |
 | 7. Integration Polish | 1 | Complete |
 
-*v1.1 metrics begin after first plan completion*
-| Phase 09-building-imagery P01 | 3 | 1 tasks | 6 files |
+**By Phase (v1.1):**
+
+| Phase | Plans | Status |
+|-------|-------|--------|
+| 8. Layout | 1 | Complete |
+| 9. Building Imagery | 1 | Complete |
 
 ## Accumulated Context
 
@@ -49,6 +53,7 @@ v1.1 decisions:
 - [Phase 08-layout]: IntersectionObserver root set to scrolling main panel ref on desktop so scroll-spy tier-swap works correctly in two-panel layout
 - [Phase 09-building-imagery]: Sourced all building photos from Wikimedia Commons (public domain/CC) to avoid licensing concerns in civic app
 - [Phase 09-building-imagery]: FALLBACK.Federal stays as us-capitol.svg — CURATED map exclusively serves real photos; fallback always uses SVGs for unsupported cities
+- [Phase 09-building-imagery]: Extract city name from chamber_name regex when representing_city is empty — BallotReady transform doesn't populate representing_city
 
 ### Pending Todos
 
@@ -61,5 +66,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-18
-Stopped at: Completed 08-01-PLAN.md — phase 8 done, all 3 tasks complete including human-verify approval
-Resume file: None — phase 8 complete, ready for phase 9 (Building Imagery)
+Stopped at: Completed 09-01-PLAN.md — phase 9 done, human-verify approved
+Resume file: None — phase 9 complete, ready for phase 10 (Term Dates)
