@@ -65,7 +65,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   1. User opens Library and sees all topics without toggling any filter
   2. Every issue card displays "Where do you stand on [topic]?" as the framing prompt
   3. Formerly vague topic titles read as specific, answerable questions in the new framing
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 12-01-PLAN.md — Add short_name backend field, update question framing, replace Library checkbox with toggle switch
+- [ ] 12-02-PLAN.md — Draft and apply topic title rewrites (with user approval checkpoint)
 
 ### Phase 13: Topic Selection Enforcement
 **Goal**: Users cannot over-fill or under-use the compass — limits are enforced everywhere, and Library cards show current compass status
