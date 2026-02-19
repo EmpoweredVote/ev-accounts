@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 14 of 15 (Guided Onboarding Flow)
-Plan: 3 of 4 in current phase — plan 03 complete
-Status: Phase 14 in progress — 3 of 4 plans executed
-Last activity: 2026-02-19 — completed 14-03 (CalibrationOverlay component and Compass integration)
+Plan: 4 of 4 in current phase — PHASE COMPLETE
+Status: Phase 14 complete — all plans executed and verified
+Last activity: 2026-02-19 — completed 14-04 (visual/functional verification with bug fixes)
 
-Progress: [████░░░░░░░░░░░░░░░░] 16% (v1.2)
+Progress: [████████████████░░░░] 80% (v1.2)
 
 ## Performance Metrics
 
@@ -27,7 +27,7 @@ Progress: [████░░░░░░░░░░░░░░░░] 16% (v1
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 8
+- Total plans completed: 9
 
 ## Accumulated Context
 
@@ -49,7 +49,7 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (13-01) wouldDropBelow3 uses selectedTopics.length <= 3 (current count) — removing 1 from 3 drops to 2, below minimum
 - (13-02) Compare button hidden (not disabled) when showChart is false — cleaner than a disabled state when chart itself isn't visible
 - (13-02) compassTopicCount <= 3 shows below-3 warning — triggers at exactly 3 since removal will drop to 2, breaking the minimum
-- (13-02) No CTA button to Library in MinimumProgress — bottom nav already provides that navigation path
+- (13-02) No CTA button to Library in MinimumProgress — bottom nav already provides that navigation path (later reversed in 14-04: added "Browse Topics in Library" button)
 - (14-01) BuildCompass.jsx required no changes — heading "Build Your Compass" uses compass language, not quiz language
 - (14-01) Route path /quiz and internal variable names preserved unchanged — only user-facing text rebranded
 - (14-02) Tasks 1 and 2 committed together — single Compass.jsx file, cohesive implementation, no natural commit seam
@@ -58,6 +58,10 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (14-03) calibrationCompleted flag persisted to localStorage so post-onboarding topic removal shows MinimumProgress not overlay
 - (14-03) No write-in support during onboarding — users can write in later from the Library drawer
 - (14-03) handleResetCompass clears calibration_skipped + calibration_completed + calibration_progress so overlay re-appears on reset
+- (14-04) CalibrationOverlay uses calibrationActive state instead of answeredCompassCount < 3 to prevent premature unmount mid-flow
+- (14-04) SavePromptModal gated on hasAnswers — only shows when user has answered at least one stance
+- (14-04) LibraryDrawer closes after removing topic from compass on compass page
+- (14-04) Cosmetic issues deferred: settings gear placement, spoke inversion persistence across views
 
 ### Pending Todos
 
@@ -70,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 14-03-PLAN.md
-Resume file: .planning/phases/14-guided-onboarding-flow/14-03-SUMMARY.md
+Stopped at: Phase 14 complete — proceeding to verification
+Resume file: .planning/phases/14-guided-onboarding-flow/14-04-SUMMARY.md

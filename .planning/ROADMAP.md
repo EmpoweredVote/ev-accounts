@@ -125,5 +125,5 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 11. Tech Debt Cleanup | 1/1 | Complete    | 2026-02-19 | - |
 | 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
-| 14. Guided Onboarding Flow | 3/4 | In Progress|  | - |
+| 14. Guided Onboarding Flow | v1.2 | 4/4 | Complete | 2026-02-19 |
 | 15. Help Page Update | v1.2 | 0/TBD | Not started | - |
