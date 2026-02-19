@@ -78,7 +78,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   2. Compass page does not render the chart until the user has at least 3 answered topics
   3. A Library card for a topic already on the compass shows a visual indicator (e.g., checkmark or "On compass" label) distinguishable from cards not yet added
   4. User can remove a topic from the compass directly from its Library card
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 13-01-PLAN.md — Library page: counter badge, on-compass card indicators, add/remove toggle with confirmation popover, cap enforcement
+- [ ] 13-02-PLAN.md — Compass page: 3-topic minimum with progress dots, drawer remove action, AddTopicModal cap enforcement
 
 ### Phase 14: Guided Onboarding Flow
 **Goal**: A first-time user arriving at an empty compass is guided through topic selection one card at a time, with the compass rendering live as they answer
@@ -118,6 +120,6 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 10. Term Dates | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 11. Tech Debt Cleanup | 1/1 | Complete    | 2026-02-19 | - |
 | 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
-| 13. Topic Selection Enforcement | v1.2 | 0/TBD | Not started | - |
+| 13. Topic Selection Enforcement | v1.2 | 0/2 | Not started | - |
 | 14. Guided Onboarding Flow | v1.2 | 0/TBD | Not started | - |
 | 15. Help Page Update | v1.2 | 0/TBD | Not started | - |
