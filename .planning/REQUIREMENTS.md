@@ -17,9 +17,9 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 
 ### Topic Selection
 
-- [ ] **TSEL-01**: User cannot add more than 8 topics to the compass via any path (drawer, onboarding, or quiz)
+- [x] **TSEL-01**: User cannot add more than 8 topics to the compass via any path (drawer, onboarding, or quiz)
 - [ ] **TSEL-02**: User needs at least 3 answered topics before the compass renders meaningfully
-- [ ] **TSEL-03**: Topic cards in Library show a clear visual indicator when the topic is on the compass, with a way to remove it
+- [x] **TSEL-03**: Topic cards in Library show a clear visual indicator when the topic is on the compass, with a way to remove it
 
 ### Library UX
 
@@ -75,9 +75,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LIBR-01 | Phase 12 | Complete |
 | QFRM-01 | Phase 12 | Complete |
 | QFRM-02 | Phase 12 | Complete |
-| TSEL-01 | Phase 13 | Pending |
+| TSEL-01 | Phase 13 | Complete |
 | TSEL-02 | Phase 13 | Pending |
-| TSEL-03 | Phase 13 | Pending |
+| TSEL-03 | Phase 13 | Complete |
 | ONBD-01 | Phase 14 | Pending |
 | ONBD-02 | Phase 14 | Pending |
 | ONBD-03 | Phase 14 | Pending |
