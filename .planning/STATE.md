@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 12 of 15 (Quick UX Fixes)
-Plan: 0 of TBD in current phase
-Status: Context gathered, ready for planning
-Last activity: 2026-02-18 — captured phase 12 context (Library default filter, question framing, topic rewrites)
+Plan: 1 of 2 in current phase
+Status: In progress — plan 01 complete, plan 02 pending
+Last activity: 2026-02-19 — completed 12-01 (framing, Library toggle, short_name backend field)
 
-Progress: [█░░░░░░░░░░░░░░░░░░░] 7% (v1.2)
+Progress: [██░░░░░░░░░░░░░░░░░░] 11% (v1.2)
 
 ## Performance Metrics
 
@@ -27,7 +27,7 @@ Progress: [█░░░░░░░░░░░░░░░░░░░] 7% (v1.
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 1
+- Total plans completed: 2
 
 ## Accumulated Context
 
@@ -40,6 +40,8 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 **v1.2 decisions:**
 - (11-01) Keep `getQuestion` alias in Library.jsx delegating to `getQuestionText` rather than renaming all call sites — avoids churn in a large file
 - (11-01) TopicEditor.jsx placeholder text left unchanged — it is a UI hint string, not the runtime fallback
+- [Phase 12-quick-ux-fixes]: short_name has no uniqueIndex constraint — multiple topics could share a radar label, acceptable per plan spec
+- [Phase 12-quick-ux-fixes]: Library defaults to showAll=true (All view) — inverted from previous hideAnswered=true default, users see all topics by default
 
 ### Pending Todos
 
@@ -51,6 +53,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-18
-Stopped at: Phase 12 context gathered
-Resume file: .planning/phases/12-quick-ux-fixes/12-CONTEXT.md
+Last session: 2026-02-19
+Stopped at: Completed 12-01-PLAN.md
+Resume file: .planning/phases/12-quick-ux-fixes/12-02-PLAN.md

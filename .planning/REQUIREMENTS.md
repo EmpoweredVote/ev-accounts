@@ -23,12 +23,12 @@ Requirements for Compass Onboarding & UX milestone. Each maps to roadmap phases.
 
 ### Library UX
 
-- [ ] **LIBR-01**: Library page defaults to showing all topics (not "unanswered only")
+- [x] **LIBR-01**: Library page defaults to showing all topics (not "unanswered only")
 - [ ] **LIBR-02**: "Start Quiz" fixed bottom button is removed/replaced by the onboarding overlay on the compass
 
 ### Question Framing
 
-- [ ] **QFRM-01**: Default question framing changes from "What should the government do about..." to "Where do you stand on [topic]?"
+- [x] **QFRM-01**: Default question framing changes from "What should the government do about..." to "Where do you stand on [topic]?"
 - [ ] **QFRM-02**: Content pass on topic titles that are too vague for the new framing (e.g., "Misinformation" becomes more descriptive)
 
 ### Tech Debt
@@ -72,8 +72,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEBT-01 | Phase 11 | Complete |
 | DEBT-02 | Phase 11 | Complete |
 | DEBT-03 | Phase 11 | Complete |
-| LIBR-01 | Phase 12 | Pending |
-| QFRM-01 | Phase 12 | Pending |
+| LIBR-01 | Phase 12 | Complete |
+| QFRM-01 | Phase 12 | Complete |
 | QFRM-02 | Phase 12 | Pending |
 | TSEL-01 | Phase 13 | Pending |
 | TSEL-02 | Phase 13 | Pending |
