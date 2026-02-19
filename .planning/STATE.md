@@ -62,5 +62,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Completed 13-02-PLAN.md (Compass minimum gate, LibraryDrawer remove action, AddTopicModal cap)
-Resume file: .planning/phases/14-PLAN.md
+Stopped at: Phase 14 context gathered
+Resume file: .planning/phases/14-guided-onboarding-flow/14-CONTEXT.md
