@@ -47,3 +47,28 @@
 
 ---
 
+
+## v1.2 Compass Onboarding & UX (Shipped: 2026-02-20)
+
+**Phases completed:** 6 phases, 12 plans, 27 tasks
+**Timeline:** 2 days (2026-02-18 - 2026-02-20)
+**Requirements:** 15/15 satisfied
+**Repos:** CompassV2, EV-Backend
+
+**Delivered:** Compass quiz made intuitive for first-time users with guided card-by-card onboarding, topic selection enforcement, and a complete question framing overhaul.
+
+**Key accomplishments:**
+1. Guided onboarding flow — CalibrationOverlay on empty compass walks new users through topic selection card-by-card with live radar rendering
+2. Topic selection enforcement — 8-topic cap and 3-topic minimum enforced across all paths (Library, onboarding, quiz)
+3. Library UX improvements — default "All" filter, on-compass card indicators with add/remove toggle, X/8 counter badge
+4. Question framing overhaul — rebranded to "Where do you stand on [topic]?" with 7 vague topic titles rewritten in database
+5. Help page & auto-routing — 5-slide walkthrough with responsive screenshots, HelpGuard routes new users through /help first
+6. Audit gap closure — fixed non-admin compass reset (403 bug), synced help_seen from DB completed_onboarding flag, removed unused imports
+
+**Tech debt carried forward:**
+- BallotReady transform.go doesn't map SubAreaName to RepresentingCity — frontend workaround in Results.jsx
+- Settings gear placement and spoke inversion persistence across views — cosmetic, deferred
+- QFRM-02 topic title rewrites are database-only (needs live server to verify display)
+
+---
+

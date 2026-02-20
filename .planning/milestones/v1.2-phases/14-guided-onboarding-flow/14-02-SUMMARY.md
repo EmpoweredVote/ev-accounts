@@ -71,7 +71,7 @@ Both tasks committed together (single file, cohesive implementation):
 
 1. **Tasks 1 + 2: Spoke-click-to-drawer + Reset compass menu** - `9966466` (feat)
 
-**Plan metadata:** (pending)
+**Plan metadata:** `ca9eef5` (docs: complete plan)
 
 ## Files Created/Modified
 - `CompassV2/src/pages/Compass.jsx` - Replaced ReplaceTopicModal with LibraryDrawer integration; added settings gear icon and handleResetCompass; removed showReplaceModal, replacingTopic, handleReplace state/function
@@ -101,3 +101,9 @@ None - no external service configuration required.
 ---
 *Phase: 14-guided-onboarding-flow*
 *Completed: 2026-02-19*
+
+## Self-Check: PASSED
+- FOUND: CompassV2/src/pages/Compass.jsx
+- FOUND: .planning/phases/14-guided-onboarding-flow/14-02-SUMMARY.md
+- FOUND: commit 9966466 (feat: spoke-click-to-drawer + reset menu)
+- FOUND: commit ca9eef5 (docs: plan metadata)

@@ -89,6 +89,14 @@ None - no external service configuration required.
 - Quiz page calibrate branding is consistent with new onboarding language
 - Route paths unchanged, navigation works correctly
 
+## Self-Check: PASSED
+
+- FOUND: CompassV2/src/pages/Library.jsx
+- FOUND: CompassV2/src/pages/Quiz.jsx
+- FOUND: .planning/phases/14-guided-onboarding-flow/14-01-SUMMARY.md
+- FOUND: f5fcea5 (Task 1 commit)
+- FOUND: d2f0757 (Task 2 commit)
+
 ---
 *Phase: 14-guided-onboarding-flow*
 *Completed: 2026-02-19*

@@ -34,94 +34,19 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 </details>
 
-### v1.2 Compass Onboarding & UX
+<details>
+<summary>✅ v1.2 Compass Onboarding & UX (Phases 11-16) — SHIPPED 2026-02-20</summary>
 
-**Milestone Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
+- [x] Phase 11: Tech Debt Cleanup (1/1 plans) — completed 2026-02-19
+- [x] Phase 12: Quick UX Fixes (2/2 plans) — completed 2026-02-19
+- [x] Phase 13: Topic Selection Enforcement (2/2 plans) — completed 2026-02-19
+- [x] Phase 14: Guided Onboarding Flow (4/4 plans) — completed 2026-02-19
+- [x] Phase 15: Help Page Update (2/2 plans) — completed 2026-02-19
+- [x] Phase 16: Audit Bug Fixes (1/1 plan) — completed 2026-02-20
 
-- [x] **Phase 11: Tech Debt Cleanup** - Remove dead code, align dependency versions, consolidate duplicated helpers (completed 2026-02-19)
-- [x] **Phase 12: Quick UX Fixes** - Fix Library default filter and update question framing across all topics (completed 2026-02-19)
-- [x] **Phase 13: Topic Selection Enforcement** - Cap compass at 8 topics, enforce 3-topic minimum, add on-compass visual indicators to Library cards (completed 2026-02-19)
-- [x] **Phase 14: Guided Onboarding Flow** - Replace "Start Quiz" with calibration overlay and guided card-by-card onboarding with live compass rendering (completed 2026-02-19)
-- [x] **Phase 15: Help Page Update** - Update /help to reflect the new guided onboarding and drawer-based flow (completed 2026-02-19)
-- [x] **Phase 16: Audit Bug Fixes** - Fix compass reset route, sync help_seen with DB flag, remove unused import (completed 2026-02-20)
+Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
-## Phase Details
-
-### Phase 11: Tech Debt Cleanup
-**Goal**: Codebase is clean — dead code removed, dependency versions aligned, duplicated strings consolidated
-**Depends on**: Nothing (first v1.2 phase)
-**Requirements**: DEBT-01, DEBT-02, DEBT-03
-**Success Criteria** (what must be TRUE):
-  1. RadarChart.jsx no longer contains the commented-out block (lines 9-263 removed)
-  2. CompassV2 package.json pins ev-ui at ^0.1.19, matching essentials
-  3. question_text fallback string exists in exactly one place in the codebase and is imported wherever needed
-**Plans**: 1 plan
-- [ ] 11-01-PLAN.md — Remove dead code, update ev-ui version, consolidate question_text fallback
-
-### Phase 12: Quick UX Fixes
-**Goal**: Library opens showing all topics by default, and question framing is clear and consistent
-**Depends on**: Phase 11
-**Requirements**: LIBR-01, QFRM-01, QFRM-02
-**Success Criteria** (what must be TRUE):
-  1. User opens Library and sees all topics without toggling any filter
-  2. Every issue card displays "Where do you stand on [topic]?" as the framing prompt
-  3. Formerly vague topic titles read as specific, answerable questions in the new framing
-**Plans**: 2 plans
-- [ ] 12-01-PLAN.md — Add short_name backend field, update question framing, replace Library checkbox with toggle switch
-- [ ] 12-02-PLAN.md — Draft and apply topic title rewrites (with user approval checkpoint)
-
-### Phase 13: Topic Selection Enforcement
-**Goal**: Users cannot over-fill or under-use the compass — limits are enforced everywhere, and Library cards show current compass status
-**Depends on**: Phase 12
-**Requirements**: TSEL-01, TSEL-02, TSEL-03
-**Success Criteria** (what must be TRUE):
-  1. User with 8 topics on the compass cannot add a ninth via the Library drawer, onboarding, or quiz — the add action is disabled or blocked
-  2. Compass page does not render the chart until the user has at least 3 answered topics
-  3. A Library card for a topic already on the compass shows a visual indicator (e.g., checkmark or "On compass" label) distinguishable from cards not yet added
-  4. User can remove a topic from the compass directly from its Library card
-**Plans**: 2 plans
-- [ ] 13-01-PLAN.md — Library page: counter badge, on-compass card indicators, add/remove toggle with confirmation popover, cap enforcement
-- [ ] 13-02-PLAN.md — Compass page: 3-topic minimum with progress dots, drawer remove action, AddTopicModal cap enforcement
-
-### Phase 14: Guided Onboarding Flow
-**Goal**: A first-time user arriving at an empty compass is guided through topic selection one card at a time, with the compass rendering live as they answer
-**Depends on**: Phase 13
-**Requirements**: ONBD-01, ONBD-02, ONBD-03, ONBD-04, LIBR-02
-**Success Criteria** (what must be TRUE):
-  1. User with no compass data sees a "Calibrate your Compass" overlay on the compass page, not a blank chart
-  2. Activating the overlay presents topic cards one at a time with stance selection, and the compass behind updates in real time after each answer
-  3. After answering 3 topics, user can exit the guided flow and land on a usable compass — or continue up to 8
-  4. After completing or exiting onboarding, user is on the compass page with all answered topics displayed
-  5. "Start Quiz" fixed bottom button is absent from the Library page — the overlay on the compass serves this entry point
-**Plans**: 4 plans
-- [ ] 14-01-PLAN.md — Remove Start Quiz button from Library, rebrand "quiz" to "calibrate"
-- [ ] 14-02-PLAN.md — Compass spoke-click-to-drawer and Reset Compass settings menu
-- [ ] 14-03-PLAN.md — CalibrationOverlay component with welcome, topic picker, answering flow, and completion
-- [ ] 14-04-PLAN.md — Visual/functional verification checkpoint
-
-### Phase 15: Help Page Update
-**Goal**: The /help page accurately describes how the compass and Library work after v1.2 changes
-**Depends on**: Phase 14
-**Requirements**: ONBD-05
-**Success Criteria** (what must be TRUE):
-  1. /help page describes the "Calibrate your Compass" onboarding overlay as the starting point for new users
-  2. /help page references the drawer-based Library flow (no mention of obsolete "Start Quiz" button)
-  3. Instructions on /help match the actual UI — a first-time user reading the page can follow along without confusion
-**Plans**: 2 plans
-- [ ] 15-01-PLAN.md — Capture responsive screenshots of current UI for help page slides
-- [ ] 15-02-PLAN.md — Rewrite Onboarding.jsx with new content, responsive screenshots, auto-routing, and verification
-
-### Phase 16: Audit Bug Fixes
-**Goal**: Fix integration bugs and code cleanup identified by v1.2 milestone audit
-**Depends on**: Phase 15
-**Requirements**: None (all v1.2 requirements already satisfied — this phase closes integration/flow gaps)
-**Gap Closure**: Closes gaps from v1.2 audit
-**Success Criteria** (what must be TRUE):
-  1. DELETE /compass/answers/me accepts requests from any logged-in user (not just admins) — non-admin reset clears server state
-  2. Returning logged-in users on new devices do NOT see /help again if completed_onboarding is true in DB
-  3. No unused imports in App.jsx
-**Plans**: 1 plan
-- [ ] 16-01-PLAN.md — Move DELETE route to session group, seed help_seen from completed_onboarding, remove unused import
+</details>
 
 ## Progress
 

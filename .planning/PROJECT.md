@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by location (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, Render, and AWS App Runner. The compass works without login (guest-first), renders cleanly across devices, and Essentials surfaces both officials and candidates with real building photographs, sticky sidebar layout, and contextual term dates on profile pages.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by location (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, Render, and AWS App Runner. The compass works without login (guest-first) with guided onboarding for first-time users, renders cleanly across devices, and Essentials surfaces both officials and candidates with real building photographs, sticky sidebar layout, and contextual term dates on profile pages.
 
 ## Core Value
 
@@ -49,19 +49,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Term dates relocated from dashboard cards to profile pages with en-dash formatting — v1.1
 - ✓ ev-ui 0.1.19 with formatTermDate/getTermLine helpers — v1.1
 
+- ✓ Guided onboarding — CalibrationOverlay on empty compass with card-by-card topic selection and live radar rendering — v1.2
+- ✓ 8-topic cap enforced across all paths (Library, onboarding, quiz) — v1.2
+- ✓ 3-topic minimum before compass renders meaningfully — v1.2
+- ✓ Library cards show on-compass indicator with add/remove toggle — v1.2
+- ✓ Library defaults to showing all topics — v1.2
+- ✓ "Start Quiz" button replaced by CalibrationOverlay entry point — v1.2
+- ✓ Question framing: "Where do you stand on [topic]?" with content pass on vague titles — v1.2
+- ✓ Tech debt cleanup — dead code removed, ev-ui version aligned, getQuestionText consolidated — v1.2
+- ✓ Help page updated with 5 walkthrough slides, responsive screenshots, HelpGuard auto-routing — v1.2
+- ✓ Compass reset works for all logged-in users (not admin-only) — v1.2
+- ✓ help_seen synced from DB completed_onboarding flag for cross-device consistency — v1.2
+
 ### Active
 
-## Current Milestone: v1.2 Compass Onboarding & UX
-
-**Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
-
-**Target features:**
-- Guided first-time topic selection flow (card-by-card, 3-8 issues)
-- "Calibrate your Compass" overlay on empty compass for new guests
-- Enforce 8-topic maximum on compass (bug fix)
-- Default Library filter fix (not "unanswered only")
-- Question framing: "Where do you stand on [topic]?" + content pass on vague titles
-- Tech debt: RadarChart.jsx dead code removal, ev-ui version pin alignment
+(None — planning next milestone)
 
 ### Out of Scope
 
@@ -73,11 +75,12 @@ Users can explore political issues and discover their elected officials without 
 - Monorepo migration — deferred to v2, current multi-repo structure works
 - OAuth login (Google, GitHub) — email/password sufficient for current user base
 - Building images for all US locations — only Bloomington IN and Los Angeles CA covered, SVG fallback for others
+- Full quiz mode redesign — onboarding flow sufficient, full quiz stays as-is
 
 ## Context
 
-Shipped v1.1 with ~28K LOC across 4 repos:
-- **CompassV2** (React 19): 6.8K LOC — compass quiz, Library, guest auth flow
+Shipped v1.2 with ~33K LOC across 4 repos:
+- **CompassV2** (React 19): ~11.7K LOC — compass quiz, Library, guided onboarding, guest auth flow, help walkthrough
 - **EV-Backend** (Go 1.24): 15.4K LOC — auth, compass, essentials, treasury, staging modules
 - **ev-ui** (React/tsup): 2.7K LOC — RadarChartCore, PoliticianProfile with term dates, FilterSidebar
 - **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, real building photos, sticky layout
@@ -86,7 +89,7 @@ Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + 
 BallotReady API is the primary data source for politicians and candidates.
 ev-ui published to GitHub npm registry (v0.1.19), consumed by CompassV2 and essentials.
 
-Known tech debt: RadarChart.jsx dead code block, CompassV2 pins ev-ui ^0.1.16 (essentials ^0.1.19), BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx).
+Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx). Settings gear placement and spoke inversion persistence across views deferred.
 
 ## Constraints
 
@@ -104,7 +107,7 @@ Known tech debt: RadarChart.jsx dead code block, CompassV2 pins ev-ui ^0.1.16 (e
 | Convert issue titles to questions/prompts | Users need context for what each issue is asking | ✓ Good — question_text column added, rendered on cards and compare page |
 | Per-user permanent stance randomization | Prevent positional bias without confusing returning users | ✓ Good — hash-based seed from guestId+topicId, direction-flip only |
 | Project structure: keep multi-repo | Team needs clear boundaries for parallel work | ✓ Good — monorepo deferred to v2, current structure supports independent deploys |
-| Infrastructure: defer migration | Nonprofit needs cost-effective hosting | — Pending — research only, no action taken in v1.0 |
+| Infrastructure: defer migration | Nonprofit needs cost-effective hosting | — Pending — research only, no action taken |
 | Integration tests use real Supabase DB | Postgres schema namespacing requires real DB for accuracy | ✓ Good — caught real issues mock DB would miss |
 | Circular import fix via GORM Table() | auth->compass->auth cycle in Go packages | ✓ Good — anonymous structs, no behavioral change |
 | CompassContext owns auth state | Single source of truth for isLoggedIn/username | ✓ Good — eliminated duplicate auth fetches |
@@ -118,6 +121,14 @@ Known tech debt: RadarChart.jsx dead code block, CompassV2 pins ev-ui ^0.1.16 (e
 | Chamber_name regex for city extraction | BallotReady transform doesn't populate representing_city | ⚠️ Revisit — frontend workaround; backend fix deferred |
 | En-dash for date ranges | Typographically correct for date spans | ✓ Good — consistent formatting on profile pages |
 | Hide term dates when both null | Avoid empty space or confusing placeholder text | ✓ Good — clean profile display |
+| CalibrationOverlay with localStorage persistence | Mid-flow resume for interrupted onboarding | ✓ Good — calibration_progress, calibration_completed, calibration_skipped flags |
+| Rebrand "quiz" to "calibrate" in user-facing text only | Keep route paths and variable names stable | ✓ Good — avoids churn while improving UX language |
+| 8-topic cap enforced at 4 points | Library add, drawer add, onboarding, AddTopicModal | ✓ Good — comprehensive, no bypass path |
+| Library defaults to showAll=true | Users should see all topics, not just unanswered | ✓ Good — inverted from previous hideAnswered=true default |
+| short_name field for radar labels | Compass needs shorter labels than full topic titles | ✓ Good — no uniqueIndex constraint, acceptable for radar display |
+| HelpGuard wraps each route individually | Simpler than layout wrapper pattern | ✓ Good — clear, explicit routing |
+| help_seen seeded one-way from DB | DB wins for cross-device; localStorage-only for guests | ✓ Good — preserves guest flow while fixing logged-in cross-device gap |
+| DELETE /compass/answers/me for all users | Any logged-in user should reset their own compass | ✓ Good — moved from admin group to session group |
 
 ---
-*Last updated: 2026-02-18 after v1.2 milestone start*
+*Last updated: 2026-02-20 after v1.2 milestone completion*
