@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 Quality & Consolidation** — Phases 1-7 (shipped 2026-02-18)
 - ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
-- 🚧 **v1.2 Compass Onboarding & UX** — Phases 11-15 (in progress)
+- ✅ **v1.2 Compass Onboarding & UX** — Phases 11-15 (shipped 2026-02-19)
 
 ## Phases
 
@@ -34,7 +34,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.2 Compass Onboarding & UX (In Progress)
+### ✅ v1.2 Compass Onboarding & UX (SHIPPED 2026-02-19)
 
 **Milestone Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
 
@@ -42,7 +42,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] **Phase 12: Quick UX Fixes** - Fix Library default filter and update question framing across all topics (completed 2026-02-19)
 - [x] **Phase 13: Topic Selection Enforcement** - Cap compass at 8 topics, enforce 3-topic minimum, add on-compass visual indicators to Library cards (completed 2026-02-19)
 - [x] **Phase 14: Guided Onboarding Flow** - Replace "Start Quiz" with calibration overlay and guided card-by-card onboarding with live compass rendering (completed 2026-02-19)
-- [ ] **Phase 15: Help Page Update** - Update /help to reflect the new guided onboarding and drawer-based flow
+- [x] **Phase 15: Help Page Update** - Update /help to reflect the new guided onboarding and drawer-based flow (completed 2026-02-19)
 
 ## Phase Details
 
@@ -128,4 +128,4 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
 | 14. Guided Onboarding Flow | v1.2 | Complete    | 2026-02-19 | 2026-02-19 |
-| 15. Help Page Update | v1.2 | 1/2 | In progress | - |
+| 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |

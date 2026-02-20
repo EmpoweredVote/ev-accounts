@@ -53,13 +53,14 @@ completed: 2026-02-19
 - **Duration:** ~15 min
 - **Started:** 2026-02-19T00:00:00Z
 - **Completed:** 2026-02-19T00:15:00Z
-- **Tasks:** 2 of 3 (Task 3 is human-verify checkpoint)
+- **Tasks:** 3 of 3 (all complete including human-verify checkpoint)
 - **Files modified:** 3
 
 ## Accomplishments
 - Rewrote Onboarding.jsx: replaced 5 GIF imports with 10 responsive PNG screenshots, updated all 5 slide titles and descriptions, changed Close (X) and CTA to navigate to /results, renamed final CTA button to "Calibrate Your Compass", set help_seen in localStorage on close and complete
 - Added HelpGuard component to App.jsx: checks localStorage.help_seen, redirects to /help for first-time users on /, /library, /quiz, /build, /results, /home routes — bypasses /help, /login, /register, /admin, /401
 - Updated Login.jsx: post-login redirect for completed_onboarding users changed from /library to /results in all 3 navigation call sites
+- Human verification passed: fresh visit auto-redirect confirmed, all 5 slides correct, navigation to /results verified, no "Start Quiz" references; two cosmetic notes (screenshot sizing, slide 5 compass crop) are known pre-existing issues, not blocking
 
 ## Task Commits
 
@@ -67,6 +68,7 @@ Each task was committed atomically:
 
 1. **Task 1: Rewrite Onboarding.jsx with new slide content and responsive screenshots** - `e89287b` (feat)
 2. **Task 2: Add first-visit auto-routing to /help** - `12a51a1` (feat)
+3. **Task 3: Verify /help page flow end-to-end** - approved by human tester (checkpoint, no code commit)
 
 ## Files Created/Modified
 - `CompassV2/src/pages/Onboarding.jsx` - Rewritten: 5 slides with screenshot images, responsive swap, /results navigation, help_seen localStorage
@@ -92,9 +94,10 @@ None.
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- Task 3 (human-verify checkpoint) is pending — user needs to verify the end-to-end /help flow in browser
-- After checkpoint approval, plan 15-02 is fully complete and phase 15 is done
-- Build succeeds cleanly; all changes ready for deployment
+- Phase 15 is the final phase of v1.2. All plans in this phase are now complete.
+- v1.2 Compass Onboarding & UX milestone is complete.
+- Deferred cosmetic items: screenshot sizes could be increased in a future polish pass; slide 5 compass screenshot has a known resize crop that can be revisited when a new screenshot is captured.
+- Build succeeds cleanly; all changes ready for deployment.
 
 ## Self-Check: PASSED
 
