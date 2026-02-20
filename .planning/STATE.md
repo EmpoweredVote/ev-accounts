@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.2 Compass Onboarding & UX — Phase 16: Audit Bug Fixes
+**Current focus:** v1.2 Compass Onboarding & UX — Phase 16: Audit Bug Fixes (Complete)
 
 ## Current Position
 
 Phase: 16 of 16 (Audit Bug Fixes)
-Plan: 0 of 1 in current phase
-Status: Phase 16 created from milestone audit gap closure
-Last activity: 2026-02-19 — gap closure phase created from v1.2 audit
+Plan: 1 of 1 in current phase
+Status: Phase 16 complete — all v1.2 audit gaps closed
+Last activity: 2026-02-20 — 16-01 audit bug fixes executed
 
-Progress: [███████████████████░] 94% (15/16 phases complete)
+Progress: [████████████████████] 100% (16/16 phases complete)
 
 ## Performance Metrics
 
@@ -38,6 +38,9 @@ All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for f
 All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for full history.
 
 **v1.2 decisions:**
+- (16-01) Reset compass not gated on admin — any logged-in user can reset their own compass via session-authenticated DELETE /compass/answers/me
+- (16-01) Floating ? button at bottom-right (z-40) — unobtrusive, always visible, does not require ev-ui modification
+- (16-01) help_seen seeded one-way from DB (completed_onboarding) — DB wins; localStorage-only flow preserved for guests
 - (11-01) Keep `getQuestion` alias in Library.jsx delegating to `getQuestionText` rather than renaming all call sites — avoids churn in a large file
 - (11-01) TopicEditor.jsx placeholder text left unchanged — it is a UI hint string, not the runtime fallback
 - [Phase 12-quick-ux-fixes]: short_name has no uniqueIndex constraint — multiple topics could share a radar label, acceptable per plan spec
@@ -77,5 +80,5 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-19
-Stopped at: Completed 15-02-PLAN.md — Phase 15 and v1.2 milestone fully complete
+Last session: 2026-02-20
+Stopped at: Completed 16-01-PLAN.md — Phase 16 complete, v1.2 milestone audit gaps fully closed

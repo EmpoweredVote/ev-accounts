@@ -43,7 +43,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] **Phase 13: Topic Selection Enforcement** - Cap compass at 8 topics, enforce 3-topic minimum, add on-compass visual indicators to Library cards (completed 2026-02-19)
 - [x] **Phase 14: Guided Onboarding Flow** - Replace "Start Quiz" with calibration overlay and guided card-by-card onboarding with live compass rendering (completed 2026-02-19)
 - [x] **Phase 15: Help Page Update** - Update /help to reflect the new guided onboarding and drawer-based flow (completed 2026-02-19)
-- [ ] **Phase 16: Audit Bug Fixes** - Fix compass reset route, sync help_seen with DB flag, remove unused import
+- [x] **Phase 16: Audit Bug Fixes** - Fix compass reset route, sync help_seen with DB flag, remove unused import (completed 2026-02-20)
 
 ## Phase Details
 
@@ -142,4 +142,4 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
 | 14. Guided Onboarding Flow | v1.2 | Complete    | 2026-02-19 | 2026-02-19 |
 | 15. Help Page Update | v1.2 | Complete    | 2026-02-20 | 2026-02-19 |
-| 16. Audit Bug Fixes | v1.2 | Pending | 0/1 | - |
+| 16. Audit Bug Fixes | 1/1 | Complete   | 2026-02-20 | - |
