@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 Quality & Consolidation** — Phases 1-7 (shipped 2026-02-18)
 - ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
-- 🔧 **v1.2 Compass Onboarding & UX** — Phases 11-16 (audit fixes pending)
+- ✅ **v1.2 Compass Onboarding & UX** — Phases 11-16 (shipped 2026-02-20)
 
 ## Phases
 
@@ -137,9 +137,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 8. Layout | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 9. Building Imagery | v1.1 | 1/1 | Complete | 2026-02-18 |
 | 10. Term Dates | v1.1 | 1/1 | Complete | 2026-02-18 |
-| 11. Tech Debt Cleanup | 1/1 | Complete    | 2026-02-19 | - |
-| 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
-| 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
-| 14. Guided Onboarding Flow | v1.2 | Complete    | 2026-02-19 | 2026-02-19 |
-| 15. Help Page Update | v1.2 | Complete    | 2026-02-20 | 2026-02-19 |
-| 16. Audit Bug Fixes | 1/1 | Complete   | 2026-02-20 | - |
+| 11. Tech Debt Cleanup | v1.2 | 1/1 | Complete | 2026-02-19 |
+| 12. Quick UX Fixes | v1.2 | 2/2 | Complete | 2026-02-19 |
+| 13. Topic Selection Enforcement | v1.2 | 2/2 | Complete | 2026-02-19 |
+| 14. Guided Onboarding Flow | v1.2 | 4/4 | Complete | 2026-02-19 |
+| 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
+| 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
