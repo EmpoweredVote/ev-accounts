@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.2 Compass Onboarding & UX — Phase 15: Help Page Update
+**Current focus:** v1.2 Compass Onboarding & UX — Phase 16: Audit Bug Fixes
 
 ## Current Position
 
-Phase: 15 of 15 (Help Page Update)
-Plan: 2 of 2 in current phase — COMPLETE
-Status: Phase 15 complete — all plans done; v1.2 milestone complete
-Last activity: 2026-02-19 — completed 15-02 (human verification approved; Onboarding.jsx rewritten, HelpGuard added, Login.jsx updated)
+Phase: 16 of 16 (Audit Bug Fixes)
+Plan: 0 of 1 in current phase
+Status: Phase 16 created from milestone audit gap closure
+Last activity: 2026-02-19 — gap closure phase created from v1.2 audit
 
-Progress: [████████████████████] 100% (v1.2 complete)
+Progress: [███████████████████░] 94% (15/16 phases complete)
 
 ## Performance Metrics
 

@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 Quality & Consolidation** — Phases 1-7 (shipped 2026-02-18)
 - ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
-- ✅ **v1.2 Compass Onboarding & UX** — Phases 11-15 (shipped 2026-02-19)
+- 🔧 **v1.2 Compass Onboarding & UX** — Phases 11-16 (audit fixes pending)
 
 ## Phases
 
@@ -34,7 +34,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 </details>
 
-### ✅ v1.2 Compass Onboarding & UX (SHIPPED 2026-02-19)
+### v1.2 Compass Onboarding & UX
 
 **Milestone Goal:** Make the compass quiz intuitive for first-time users with guided onboarding, and fix UX issues that create friction.
 
@@ -43,6 +43,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] **Phase 13: Topic Selection Enforcement** - Cap compass at 8 topics, enforce 3-topic minimum, add on-compass visual indicators to Library cards (completed 2026-02-19)
 - [x] **Phase 14: Guided Onboarding Flow** - Replace "Start Quiz" with calibration overlay and guided card-by-card onboarding with live compass rendering (completed 2026-02-19)
 - [x] **Phase 15: Help Page Update** - Update /help to reflect the new guided onboarding and drawer-based flow (completed 2026-02-19)
+- [ ] **Phase 16: Audit Bug Fixes** - Fix compass reset route, sync help_seen with DB flag, remove unused import
 
 ## Phase Details
 
@@ -110,6 +111,18 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [ ] 15-01-PLAN.md — Capture responsive screenshots of current UI for help page slides
 - [ ] 15-02-PLAN.md — Rewrite Onboarding.jsx with new content, responsive screenshots, auto-routing, and verification
 
+### Phase 16: Audit Bug Fixes
+**Goal**: Fix integration bugs and code cleanup identified by v1.2 milestone audit
+**Depends on**: Phase 15
+**Requirements**: None (all v1.2 requirements already satisfied — this phase closes integration/flow gaps)
+**Gap Closure**: Closes gaps from v1.2 audit
+**Success Criteria** (what must be TRUE):
+  1. DELETE /compass/answers/me accepts requests from any logged-in user (not just admins) — non-admin reset clears server state
+  2. Returning logged-in users on new devices do NOT see /help again if completed_onboarding is true in DB
+  3. No unused imports in App.jsx
+**Plans**: 1 plan
+- [ ] 16-01-PLAN.md — Move DELETE route to session group, seed help_seen from completed_onboarding, remove unused import
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -129,3 +142,4 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
 | 14. Guided Onboarding Flow | v1.2 | Complete    | 2026-02-19 | 2026-02-19 |
 | 15. Help Page Update | v1.2 | Complete    | 2026-02-20 | 2026-02-19 |
+| 16. Audit Bug Fixes | v1.2 | Pending | 0/1 | - |
