@@ -106,7 +106,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   1. /help page describes the "Calibrate your Compass" onboarding overlay as the starting point for new users
   2. /help page references the drawer-based Library flow (no mention of obsolete "Start Quiz" button)
   3. Instructions on /help match the actual UI — a first-time user reading the page can follow along without confusion
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 15-01-PLAN.md — Capture responsive screenshots of current UI for help page slides
+- [ ] 15-02-PLAN.md — Rewrite Onboarding.jsx with new content, responsive screenshots, auto-routing, and verification
 
 ## Progress
 
