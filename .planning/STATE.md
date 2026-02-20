@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-18)
 ## Current Position
 
 Phase: 15 of 15 (Help Page Update)
-Plan: 1 of 2 in current phase
-Status: Plan 15-01 complete — screenshots captured, executing 15-02
-Last activity: 2026-02-19 — completed 15-01 (responsive screenshots for help page)
+Plan: 2 of 2 in current phase
+Status: Tasks 1-2 of 15-02 complete — at checkpoint, awaiting human verification of /help flow
+Last activity: 2026-02-19 — completed tasks 1-2 of 15-02 (rewritten Onboarding.jsx, HelpGuard, Login.jsx updates)
 
 Progress: [██████████████████░░] 90% (v1.2)
 
@@ -62,6 +62,10 @@ All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for f
 - (14-04) SavePromptModal gated on hasAnswers — only shows when user has answered at least one stance
 - (14-04) LibraryDrawer closes after removing topic from compass on compass page
 - (14-04) Cosmetic issues deferred: settings gear placement, spoke inversion persistence across views
+- (15-02) Responsive images via CSS display classes (md:hidden / hidden md:block) — simpler than JS media query hook
+- (15-02) HelpGuard wraps each guarded route individually in App.jsx rather than a wrapping layout
+- (15-02) help_seen set on both close (X) and CTA — any exit path marks walkthrough as seen
+- (15-02) Login.jsx post-login redirect changed from /library to /results to match new primary destination
 
 ### Pending Todos
 
@@ -74,5 +78,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Phase 15 plan 15-01 complete, executing 15-02
-Resume file: .planning/phases/15-help-page-update/15-01-SUMMARY.md
+Stopped at: 15-02 checkpoint:human-verify — Task 3 awaiting user verification of /help flow end-to-end
+Resume file: .planning/phases/15-help-page-update/15-02-SUMMARY.md
