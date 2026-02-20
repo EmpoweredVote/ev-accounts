@@ -128,4 +128,4 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 12. Quick UX Fixes | 2/2 | Complete    | 2026-02-19 | - |
 | 13. Topic Selection Enforcement | 2/2 | Complete    | 2026-02-19 | - |
 | 14. Guided Onboarding Flow | v1.2 | Complete    | 2026-02-19 | 2026-02-19 |
-| 15. Help Page Update | v1.2 | 0/TBD | Not started | - |
+| 15. Help Page Update | v1.2 | 1/2 | In progress | - |

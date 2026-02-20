@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.2 Compass Onboarding & UX — Phase 14: Guided Onboarding Flow
+**Current focus:** v1.2 Compass Onboarding & UX — Phase 15: Help Page Update
 
 ## Current Position
 
-Phase: 14 of 15 (Guided Onboarding Flow)
-Plan: 4 of 4 in current phase — PHASE COMPLETE
-Status: Phase 14 complete — all plans executed and verified
-Last activity: 2026-02-19 — completed 14-04 (visual/functional verification with bug fixes)
+Phase: 15 of 15 (Help Page Update)
+Plan: 1 of 2 in current phase
+Status: Plan 15-01 complete — screenshots captured, executing 15-02
+Last activity: 2026-02-19 — completed 15-01 (responsive screenshots for help page)
 
-Progress: [████████████████░░░░] 80% (v1.2)
+Progress: [██████████████████░░] 90% (v1.2)
 
 ## Performance Metrics
 
@@ -27,7 +27,7 @@ Progress: [████████████████░░░░] 80% (v1
 - v1.1 phases: 3 phases, 3 plans
 
 **v1.2 (in progress):**
-- Total plans completed: 9
+- Total plans completed: 10
 
 ## Accumulated Context
 
@@ -74,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Phase 15 context gathered
-Resume file: .planning/phases/15-help-page-update/15-CONTEXT.md
+Stopped at: Phase 15 plan 15-01 complete, executing 15-02
+Resume file: .planning/phases/15-help-page-update/15-01-SUMMARY.md
