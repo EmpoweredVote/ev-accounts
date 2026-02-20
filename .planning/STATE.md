@@ -74,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-19
-Stopped at: Phase 14 complete — proceeding to verification
-Resume file: .planning/phases/14-guided-onboarding-flow/14-04-SUMMARY.md
+Stopped at: Phase 15 context gathered
+Resume file: .planning/phases/15-help-page-update/15-CONTEXT.md
