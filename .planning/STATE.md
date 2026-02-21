@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — Plan 1 complete; calibration auto-routing and resumption flow done
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — Plan 2 in progress; Task 1 complete (gray dashed spokes), awaiting checkpoint human verification
 
 ## Current Position
 
 Phase: 19 of 20 (Calibration Flow Fixes)
-Plan: 1 of 1 complete
-Status: Phase complete
-Last activity: 2026-02-21 — 19-01 complete: calibration auto-routing for unanswered topics, resumption flow skipping pick step, topic pills with checkmarks, exit gating at 3+ answered, MinimumProgress CTA updated to Start Calibration
+Plan: 2 of 2 in progress — Task 1 complete (760e6ca, 57dad4d); checkpoint awaiting human verify
+Status: Checkpoint paused
+Last activity: 2026-02-21 — 19-02 Task 1: gray dashed unanswered spokes added to RadarChartCore and Compass.jsx data pipe; ev-ui 0.1.20 published; awaiting human verify of all 3 CALIB scenarios
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -67,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Completed 19-01-PLAN.md — calibration auto-routing and resumption flow; topic pills with checkmarks; exit gating; MinimumProgress CTA updated; Phase 19 complete
+Stopped at: 19-02-PLAN.md Task 1 complete — gray dashed unanswered spokes in RadarChartCore + Compass.jsx; ev-ui 0.1.20 published; paused at Task 2 checkpoint:human-verify
 Resume file: None
