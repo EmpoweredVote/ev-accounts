@@ -140,4 +140,4 @@ Plans:
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
 | 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
 | 19. Calibration Flow Fixes | 2/2 | Complete    | 2026-02-21 | - |
-| 20. Compare Bug Fix | 1/1 | Complete   | 2026-02-21 | - |
+| 20. Compare Bug Fix | 1/1 | Complete    | 2026-02-21 | - |
