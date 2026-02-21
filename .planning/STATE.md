@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-20)
 ## Current Position
 
 Phase: 17 of 20 (Title Standardization — Backend)
-Plan: 1 of 2 complete
-Status: In progress
-Last activity: 2026-02-20 — 17-01 complete: all 21 topic tension titles, short titles, and questions drafted and user-approved
+Plan: 2 of 2 complete
+Status: Phase complete
+Last activity: 2026-02-21 — 17-02 complete: all 21 topics updated in DB with tension titles/short titles/questions; ShortName and StartPhrase removed from model and handlers
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -44,6 +44,8 @@ Recent v1.3 decisions:
 - [Phase 19]: Calibration flow fixes depend on Phase 18 so that topic names are correct in the same pass users see calibration
 - [17-01]: Tension title format uses em dash separator and policy outcome pairs (not partisan labels); pole order randomized per topic — 10 right-first, 11 left-first verified
 - [17-01]: Two short titles renamed for clarity: Taxes -> Taxes & Spending, Tariffs -> Trade & Tariffs
+- [17-02]: Database is now canonical source of truth for all topic naming — no hardcoded fallbacks needed in frontend
+- [17-02]: ShortName and StartPhrase dropped at DB and model level simultaneously to keep code/schema in sync
 
 ### Pending Todos
 
@@ -55,6 +57,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-20
-Stopped at: Completed 17-01-PLAN.md — all 21 topic drafts approved by user, ready for 17-02 database migration
+Last session: 2026-02-21
+Stopped at: Completed 17-02-PLAN.md — Phase 17 fully complete; DB updated with canonical topic names, model cleaned
 Resume file: None

@@ -53,7 +53,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 **Milestone Goal:** Fix calibration flow edge cases, standardize topic naming from server through display, and eliminate the double-overlay compare bug.
 
-- [ ] **Phase 17: Title Standardization (Backend)** - Canonical topic naming established as server-side source of truth
+- [x] **Phase 17: Title Standardization (Backend)** - Canonical topic naming established as server-side source of truth (completed 2026-02-21)
 - [ ] **Phase 18: Title Display (Frontend)** - Compass labels, Library cards, and calibration all render clean names from server data
 - [ ] **Phase 19: Calibration Flow Fixes** - Compass handles all mixed answered/unanswered topic states without dead ends
 - [ ] **Phase 20: Compare Bug Fix** - Comparison overlay renders exactly one shape on the radar chart
@@ -68,7 +68,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   1. Every topic in the database has a title, short_name, and question_text that are internally consistent with each other
   2. The API response for topics returns names that match what the compass labels, Library cards, and calibration cards should display
   3. No topic has a question_text that begins with "Where do you stand on" when fetched from the server
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 17-01-PLAN.md — Draft and review standardized topic naming content (tension titles, spoke labels, custom questions) for all 21 topics
@@ -126,7 +126,7 @@ Plans:
 | 14. Guided Onboarding Flow | v1.2 | 4/4 | Complete | 2026-02-19 |
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
-| 17. Title Standardization (Backend) | 1/2 | In Progress|  | - |
+| 17. Title Standardization (Backend) | 2/2 | Complete   | 2026-02-21 | - |
 | 18. Title Display (Frontend) | v1.3 | 0/TBD | Not started | - |
 | 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
