@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 18: Title Display (Frontend)
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 18: Title Display (Frontend) COMPLETE; next: Phase 19 Calibration Flow
 
 ## Current Position
 
 Phase: 18 of 20 (Title Display — Frontend)
-Plan: 1 of 2 complete
-Status: In progress
-Last activity: 2026-02-21 — 18-01 complete: parseTensionTitle helper added; Library cards and calibration pick-step cards updated to two-line tension title layout; "Where do you stand on" prefix removed
+Plan: 2 of 2 complete
+Status: Phase complete
+Last activity: 2026-02-21 — 18-02 complete: tension titles + italic QuestionText added to LibraryDrawer, CalibrationOverlay answer step, Quiz (both modes), and ComparePanel; start_phrase removed from all views; build verified
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -49,6 +49,9 @@ Recent v1.3 decisions:
 - [18-01]: parseTensionTitle splits at first colon — name is before colon, poles is after; falls back to short_title when no colon
 - [18-01]: getQuestionText "Where do you stand on" fallback removed — returns empty string; server data is now canonical
 - [18-01]: Library and calibration pick cards use identical two-line layout: topic name primary (text-sm font-medium), poles muted (text-xs text-gray-500)
+- [18-02]: Admin TopicEditor placeholder text "Where do you stand on...?" is admin form guidance, not a user-facing fallback — left unchanged (out of scope)
+- [18-02]: ComparePanel dropdown value stays as short_title (data key) while display text uses tension title name — backward compatible
+- [18-02]: stanceContent in Quiz is shared between full/curated modes; start_phrase removal cleaned both simultaneously
 
 ### Pending Todos
 
@@ -61,5 +64,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Completed 18-01-PLAN.md — parseTensionTitle helper added; Library and calibration pick-step cards updated to two-line layout
+Stopped at: Completed 18-02-PLAN.md — tension titles applied to all remaining views (LibraryDrawer, CalibrationOverlay answer, Quiz both modes, ComparePanel); Phase 18 complete
 Resume file: None

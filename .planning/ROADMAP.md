@@ -54,7 +54,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 **Milestone Goal:** Fix calibration flow edge cases, standardize topic naming from server through display, and eliminate the double-overlay compare bug.
 
 - [x] **Phase 17: Title Standardization (Backend)** - Canonical topic naming established as server-side source of truth (completed 2026-02-21)
-- [ ] **Phase 18: Title Display (Frontend)** - Compass labels, Library cards, and calibration all render clean names from server data
+- [x] **Phase 18: Title Display (Frontend)** - Compass labels, Library cards, and calibration all render clean names from server data (completed 2026-02-21)
 - [ ] **Phase 19: Calibration Flow Fixes** - Compass handles all mixed answered/unanswered topic states without dead ends
 - [ ] **Phase 20: Compare Bug Fix** - Comparison overlay renders exactly one shape on the radar chart
 
@@ -83,7 +83,7 @@ Plans:
   2. Calibration cards display the same topic name as Library cards for the same topic
   3. Compass radar chart spoke labels match the topic names shown in Library and calibration
   4. A user scanning Library, then calibration, then the compass sees the same name for every topic in all three places
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 18-01-PLAN.md — Add parseTensionTitle helper, clean getQuestionText fallback, update Library cards and calibration pick step with two-line tension title
@@ -131,6 +131,6 @@ Plans:
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
-| 18. Title Display (Frontend) | 1/2 | In Progress|  | - |
+| 18. Title Display (Frontend) | 2/2 | Complete   | 2026-02-21 | - |
 | 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
