@@ -68,7 +68,11 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   1. Every topic in the database has a title, short_name, and question_text that are internally consistent with each other
   2. The API response for topics returns names that match what the compass labels, Library cards, and calibration cards should display
   3. No topic has a question_text that begins with "Where do you stand on" when fetched from the server
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 17-01-PLAN.md — Draft and review standardized topic naming content (tension titles, spoke labels, custom questions) for all 21 topics
+- [ ] 17-02-PLAN.md — Apply approved names to database, remove deprecated ShortName/StartPhrase columns, clean up handlers
 
 ### Phase 18: Title Display (Frontend)
 **Goal**: Compass labels, Library cards, and calibration cards all render identical topic names sourced from the server, with no "Where do you stand on..." prefix visible to users
@@ -122,7 +126,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 14. Guided Onboarding Flow | v1.2 | 4/4 | Complete | 2026-02-19 |
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
-| 17. Title Standardization (Backend) | v1.3 | 0/TBD | Not started | - |
+| 17. Title Standardization (Backend) | v1.3 | 0/2 | Not started | - |
 | 18. Title Display (Frontend) | v1.3 | 0/TBD | Not started | - |
 | 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
