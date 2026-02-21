@@ -16,8 +16,8 @@ Requirements for Compass bug fixes and title standardization. Each maps to roadm
 ### Title Standardization
 
 - [x] **TITLE-01**: All topic naming (title, short_name, question_text) is standardized in the database as a single source of truth
-- [ ] **TITLE-02**: Library cards and calibration cards display clean topic names without "Where do you stand on..." prefix
-- [ ] **TITLE-03**: Topic name mismatches resolved — compass labels, Library cards, and calibration all render identically from the same server data
+- [x] **TITLE-02**: Library cards and calibration cards display clean topic names without "Where do you stand on..." prefix
+- [x] **TITLE-03**: Topic name mismatches resolved — compass labels, Library cards, and calibration all render identically from the same server data
 
 ### Compare
 
@@ -52,8 +52,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | TITLE-01 | Phase 17 | Complete |
-| TITLE-02 | Phase 18 | Pending |
-| TITLE-03 | Phase 18 | Pending |
+| TITLE-02 | Phase 18 | Complete |
+| TITLE-03 | Phase 18 | Complete |
 | CALIB-01 | Phase 19 | Pending |
 | CALIB-02 | Phase 19 | Pending |
 | CALIB-03 | Phase 19 | Pending |

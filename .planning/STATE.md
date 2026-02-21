@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 17: Title Standardization (Backend)
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 18: Title Display (Frontend)
 
 ## Current Position
 
-Phase: 17 of 20 (Title Standardization — Backend)
-Plan: 2 of 2 complete
-Status: Phase complete
-Last activity: 2026-02-21 — 17-02 complete: all 21 topics updated in DB with tension titles/short titles/questions; ShortName and StartPhrase removed from model and handlers
+Phase: 18 of 20 (Title Display — Frontend)
+Plan: 1 of 2 complete
+Status: In progress
+Last activity: 2026-02-21 — 18-01 complete: parseTensionTitle helper added; Library cards and calibration pick-step cards updated to two-line tension title layout; "Where do you stand on" prefix removed
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -46,6 +46,9 @@ Recent v1.3 decisions:
 - [17-01]: Two short titles renamed for clarity: Taxes -> Taxes & Spending, Tariffs -> Trade & Tariffs
 - [17-02]: Database is now canonical source of truth for all topic naming — no hardcoded fallbacks needed in frontend
 - [17-02]: ShortName and StartPhrase dropped at DB and model level simultaneously to keep code/schema in sync
+- [18-01]: parseTensionTitle splits at first colon — name is before colon, poles is after; falls back to short_title when no colon
+- [18-01]: getQuestionText "Where do you stand on" fallback removed — returns empty string; server data is now canonical
+- [18-01]: Library and calibration pick cards use identical two-line layout: topic name primary (text-sm font-medium), poles muted (text-xs text-gray-500)
 
 ### Pending Todos
 
@@ -58,5 +61,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Completed 17-02-PLAN.md — Phase 17 fully complete; DB updated with canonical topic names, model cleaned
+Stopped at: Completed 18-01-PLAN.md — parseTensionTitle helper added; Library and calibration pick-step cards updated to two-line layout
 Resume file: None
