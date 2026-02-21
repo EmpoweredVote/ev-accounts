@@ -63,7 +63,11 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(None — planning next milestone)
+- [ ] Library → Compass transition auto-enters calibration for unanswered topics (starting at first unanswered, not from scratch) — v1.3
+- [ ] Double comparison overlay bug on compare page fixed — v1.3
+- [ ] Topic titles standardized server-side: consistent naming across compass labels, Library cards, calibration — v1.3
+- [ ] "Where do you stand on..." prefix removed from card display for scannability — v1.3
+- [ ] Compass renders correctly with mixed answered/unanswered topics (no empty spokes or dead-end states) — v1.3
 
 ### Out of Scope
 
@@ -131,4 +135,4 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | DELETE /compass/answers/me for all users | Any logged-in user should reset their own compass | ✓ Good — moved from admin group to session group |
 
 ---
-*Last updated: 2026-02-20 after v1.2 milestone completion*
+*Last updated: 2026-02-20 after v1.3 milestone started*

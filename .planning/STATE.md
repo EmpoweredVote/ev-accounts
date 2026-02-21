@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization
 
 ## Current Position
 
-Phase: 16 of 16 (all milestones complete)
-Plan: N/A
-Status: v1.2 shipped — ready for next milestone
-Last activity: 2026-02-20 — v1.2 milestone archived
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-20 — Milestone v1.3 started
 
-Progress: [████████████████████] 100% (16/16 phases complete across 3 milestones)
+Progress: [░░░░░░░░░░░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -50,4 +50,4 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-20
-Stopped at: v1.2 milestone archived — ready for /gsd:new-milestone
+Stopped at: Defining v1.3 requirements
