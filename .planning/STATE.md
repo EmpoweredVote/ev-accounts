@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 18: Title Display (Frontend) COMPLETE; next: Phase 19 Calibration Flow
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — Plan 1 complete; calibration auto-routing and resumption flow done
 
 ## Current Position
 
-Phase: 18 of 20 (Title Display — Frontend)
-Plan: 2 of 2 complete
+Phase: 19 of 20 (Calibration Flow Fixes)
+Plan: 1 of 1 complete
 Status: Phase complete
-Last activity: 2026-02-21 — 18-02 complete: tension titles + italic QuestionText added to LibraryDrawer, CalibrationOverlay answer step, Quiz (both modes), and ComparePanel; start_phrase removed from all views; build verified
+Last activity: 2026-02-21 — 19-01 complete: calibration auto-routing for unanswered topics, resumption flow skipping pick step, topic pills with checkmarks, exit gating at 3+ answered, MinimumProgress CTA updated to Start Calibration
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -52,6 +52,9 @@ Recent v1.3 decisions:
 - [18-02]: Admin TopicEditor placeholder text "Where do you stand on...?" is admin form guidance, not a user-facing fallback — left unchanged (out of scope)
 - [18-02]: ComparePanel dropdown value stays as short_title (data key) while display text uses tension title name — backward compatible
 - [18-02]: stanceContent in Quiz is shared between full/curated modes; start_phrase removal cleaned both simultaneously
+- [Phase 19]: needsCalibration triggers on ANY unanswered selected topics; calibrationCompleted guards re-trigger when deselecting topics below 3
+- [Phase 19]: resumeMode lazy-init via useRef waits for topics to load from context before initializing CalibrationOverlay state
+- [Phase 19]: Exit gating replaces X button entirely: hidden spacer below-3, View Compass text button at 3+
 
 ### Pending Todos
 
@@ -64,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: Completed 18-02-PLAN.md — tension titles applied to all remaining views (LibraryDrawer, CalibrationOverlay answer, Quiz both modes, ComparePanel); Phase 18 complete
+Stopped at: Completed 19-01-PLAN.md — calibration auto-routing and resumption flow; topic pills with checkmarks; exit gating; MinimumProgress CTA updated; Phase 19 complete
 Resume file: None

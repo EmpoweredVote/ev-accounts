@@ -98,7 +98,7 @@ Plans:
   2. A user with mixed answered and unanswered topics sees a compass with no empty spokes or missing spoke positions
   3. A user whose answered topic count drops below 3 sees the calibration entry prompt instead of a dead-end "answer more topics" message
   4. A user who completes calibration from a mixed state arrives at a fully rendered compass without needing to refresh
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 19-01-PLAN.md -- Auto-routing into calibration for unanswered topics, CalibrationOverlay resumption flow with topic pills and checkmarks, below-3 threshold with calibration CTA
@@ -136,5 +136,5 @@ Plans:
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
 | 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
-| 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
+| 19. Calibration Flow Fixes | 1/2 | In Progress|  | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
