@@ -69,7 +69,7 @@ Each task was committed atomically:
 1. **Task 1: Query current topic data and draft all 21 topic names** - `ec718c3` (feat)
 2. **Task 2: User reviews and approves all 21 topic drafts** - `42c68a2` (chore)
 
-**Plan metadata:** _(pending docs commit)_
+**Plan metadata:** `35dd5d6` (docs: complete topic naming drafts plan)
 
 ## Files Created/Modified
 - `.planning/phases/17-title-standardization-backend/topic-drafts.md` - Approved naming content for all 21 compass topics
@@ -95,6 +95,14 @@ None — no external service configuration required.
 - topic-drafts.md contains approved canonical content for all 21 topics
 - Plan 17-02 can now apply these names to the database via SQL UPDATE statements
 - Content is ready: tension titles, short titles, and custom questions all approved
+
+## Self-Check: PASSED
+
+- FOUND: `.planning/phases/17-title-standardization-backend/17-01-SUMMARY.md`
+- FOUND: `.planning/phases/17-title-standardization-backend/topic-drafts.md`
+- FOUND commit: `ec718c3` (Task 1)
+- FOUND commit: `42c68a2` (Task 2 — user approval)
+- FOUND commit: `35dd5d6` (plan metadata)
 
 ---
 *Phase: 17-title-standardization-backend*
