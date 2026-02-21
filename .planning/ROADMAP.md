@@ -83,7 +83,11 @@ Plans:
   2. Calibration cards display the same topic name as Library cards for the same topic
   3. Compass radar chart spoke labels match the topic names shown in Library and calibration
   4. A user scanning Library, then calibration, then the compass sees the same name for every topic in all three places
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 18-01-PLAN.md — Add parseTensionTitle helper, clean getQuestionText fallback, update Library cards and calibration pick step with two-line tension title
+- [ ] 18-02-PLAN.md — Update LibraryDrawer, CalibrationOverlay answer step, Quiz, and ComparePanel with tension titles and QuestionText placement
 
 ### Phase 19: Calibration Flow Fixes
 **Goal**: The compass correctly routes users into calibration whenever they have unanswered topics, handles mixed answered/unanswered state without empty spokes, and never leaves users in a dead end when topic count drops below 3
@@ -127,6 +131,6 @@ Plans:
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
-| 18. Title Display (Frontend) | v1.3 | 0/TBD | Not started | - |
+| 18. Title Display (Frontend) | v1.3 | 0/2 | Not started | - |
 | 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
