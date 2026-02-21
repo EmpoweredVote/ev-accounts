@@ -51,19 +51,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CALIB-01 | — | Pending |
-| CALIB-02 | — | Pending |
-| CALIB-03 | — | Pending |
-| TITLE-01 | — | Pending |
-| TITLE-02 | — | Pending |
-| TITLE-03 | — | Pending |
-| COMP-01 | — | Pending |
+| TITLE-01 | Phase 17 | Pending |
+| TITLE-02 | Phase 18 | Pending |
+| TITLE-03 | Phase 18 | Pending |
+| CALIB-01 | Phase 19 | Pending |
+| CALIB-02 | Phase 19 | Pending |
+| CALIB-03 | Phase 19 | Pending |
+| COMP-01 | Phase 20 | Pending |
 
 **Coverage:**
 - v1.3 requirements: 7 total
-- Mapped to phases: 0
-- Unmapped: 7 ⚠️
+- Mapped to phases: 7
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-20*
-*Last updated: 2026-02-20 after initial definition*
+*Last updated: 2026-02-20 after roadmap creation*
