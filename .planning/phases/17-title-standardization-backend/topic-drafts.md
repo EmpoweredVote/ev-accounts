@@ -5,7 +5,7 @@
 **Format:** Each entry shows current names (for reference) and three new fields:
 - **Title (tension title):** `[Topic]: [Pole A] — [Pole B]` — policy outcome pairs, not partisan labels
 - **ShortTitle (spoke label):** Concise label for radar chart spokes
-- **QuestionText:** Direct, policy-focused question — no leading phrases
+- **QuestionText:** Direct, policy-focused question — no leading phrases, level-neutral (works for federal, state, or local)
 
 **Anti-partisan principle:** Pole order is randomized per topic — no consistent left-to-right pattern. Nobody should detect which direction is "default" or "correct" from the format.
 
@@ -13,80 +13,80 @@
 
 ---
 
-## Batch 1: Domestic & Economic Policy
+## Batch 1: Economic & Fiscal Policy
 
 ### 1. Healthcare
 
 | Field | Value |
 |-------|-------|
-| topic_key | `healthcare` (assumed) |
+| topic_key | `healthcare` |
 | Current title | Healthcare Access and Affordability |
 | Current short_title | Healthcare |
 | **NEW Title** | **Healthcare: Market-Driven Care — Universal Coverage** |
 | **NEW ShortTitle** | **Healthcare** |
-| **NEW QuestionText** | **How should the U.S. healthcare system be structured?** |
+| **NEW QuestionText** | **How should the healthcare system be structured?** |
 
-*Pole note: Market-Driven first, Universal second — randomized.*
-
----
-
-### 2. Climate Change
-
-| Field | Value |
-|-------|-------|
-| topic_key | `climate` (assumed) |
-| Current title | Climate Change and Environmental Protection |
-| Current short_title | Climate Change |
-| **NEW Title** | **Climate: Aggressive Emissions Cuts — Economic-First Energy Policy** |
-| **NEW ShortTitle** | **Climate** |
-| **NEW QuestionText** | **What priority should climate change receive in U.S. energy and economic policy?** |
-
-*Pole note: Aggressive Cuts first — randomized.*
+*Pole: Right first (Market-Driven)*
 
 ---
 
-### 3. Economic Inequality
+### 2. Taxes
 
 | Field | Value |
 |-------|-------|
-| topic_key | `economic_inequality` (assumed) |
-| Current title | Economic Inequality and Job Security |
-| Current short_title | Economic Inequality |
-| **NEW Title** | **Wealth Gap: Market-Led Growth — Redistributive Policy** |
-| **NEW ShortTitle** | **Wealth Gap** |
-| **NEW QuestionText** | **What role should government play in reducing economic inequality?** |
-
-*Pole note: Market-Led first — randomized.*
-
----
-
-### 4. Education
-
-| Field | Value |
-|-------|-------|
-| topic_key | `education` (assumed) |
-| Current title | Education Quality and Funding |
-| Current short_title | Education |
-| **NEW Title** | **Education: Universal Public Funding — School Choice & Privatization** |
-| **NEW ShortTitle** | **Education** |
-| **NEW QuestionText** | **How should K-12 and higher education be funded and governed?** |
-
-*Pole note: Public Funding first — randomized.*
-
----
-
-### 5. Taxes
-
-| Field | Value |
-|-------|-------|
-| topic_key | `taxes` (assumed) |
+| topic_key | `taxes` |
 | Current title | Taxation and Government Spending |
 | Current short_title | Taxes |
-| **NEW Title** | **Taxes: Lower Rates & Smaller Government — Progressive Taxation** |
+| **NEW Title** | **Taxes: Lower Rates & Smaller Government — Progressive Taxation & Public Investment** |
 | **NEW ShortTitle** | **Taxes & Spending** |
-| **NEW QuestionText** | **How should the U.S. balance tax rates and government spending?** |
+| **NEW QuestionText** | **How should governments balance tax rates and public spending?** |
 
-*Pole note: Lower Rates first — randomized.*
+*Pole: Right first (Lower Rates)*
+
+---
+
+### 3. Medicare / Medicaid
+
+| Field | Value |
+|-------|-------|
+| topic_key | `medicare` |
+| Current title | Medicare / Medicaid |
+| Current short_title | Medicare/aid |
+| **NEW Title** | **Medicare/Medicaid: Expand Coverage & Benefits — Reduce Scope & Privatize** |
+| **NEW ShortTitle** | **Medicare/Medicaid** |
+| **NEW QuestionText** | **How should Medicare and Medicaid be funded and structured?** |
+
+*Pole: Left first (Expand Coverage)*
+
+---
+
+### 4. Social Security
+
+| Field | Value |
+|-------|-------|
+| topic_key | `social-security` |
+| Current title | Social Security |
+| Current short_title | Social Security |
+| **NEW Title** | **Social Security: Privatize & Restructure Benefits — Expand Benefits & Increase Funding** |
+| **NEW ShortTitle** | **Social Security** |
+| **NEW QuestionText** | **How should Social Security be funded and structured for the future?** |
+
+*Pole: Right first (Privatize)*
+
+---
+
+### 5. Tariffs
+
+| Field | Value |
+|-------|-------|
+| topic_key | `tariffs` |
+| Current title | United States Tariff Policy |
+| Current short_title | Tariffs |
+| **NEW Title** | **Tariffs: Protective Tariffs & Domestic Industry — Free Trade & Open Markets** |
+| **NEW ShortTitle** | **Trade & Tariffs** |
+| **NEW QuestionText** | **How should trade policy balance domestic industry with global commerce?** |
+
+*Pole: Right first (Protective Tariffs)*
 
 ---
 
@@ -94,306 +94,307 @@
 
 | Field | Value |
 |-------|-------|
-| topic_key | `housing` (assumed) |
+| topic_key | `housing` |
 | Current title | Affordable Housing and Homelessness |
 | Current short_title | Housing |
 | **NEW Title** | **Housing: Public Investment & Tenant Protections — Market-Driven Supply** |
 | **NEW ShortTitle** | **Housing** |
-| **NEW QuestionText** | **What approach should the U.S. take to address housing affordability and homelessness?** |
+| **NEW QuestionText** | **What approach should government take to address housing affordability and homelessness?** |
 
-*Pole note: Public Investment first — randomized.*
+*Pole: Left first (Public Investment)*
 
 ---
 
-### 7. Wages
+## Batch 2: Environment & Energy
+
+### 7. Climate Change
 
 | Field | Value |
 |-------|-------|
-| topic_key | `wages` (assumed) |
-| Current title | Wages and Labor Rights |
-| Current short_title | Wages |
-| **NEW Title** | **Labor: Employer Flexibility & Market Wages — Minimum Wage & Union Rights** |
-| **NEW ShortTitle** | **Labor & Wages** |
-| **NEW QuestionText** | **How should the U.S. set and enforce labor standards and wages?** |
+| topic_key | `climate-change` |
+| Current title | Climate Change and Environmental Protection |
+| Current short_title | Climate Change |
+| **NEW Title** | **Climate: Economic-First Energy Policy — Aggressive Emissions Reductions** |
+| **NEW ShortTitle** | **Climate** |
+| **NEW QuestionText** | **What priority should climate change receive in energy and economic policy?** |
 
-*Pole note: Employer Flexibility first — randomized.*
+*Pole: Right first (Economic-First)*
 
 ---
 
-### 8. National Debt
+### 8. Fossil Fuels
 
 | Field | Value |
 |-------|-------|
-| topic_key | `national_debt` (assumed) |
-| Current title | National Debt and Deficit Spending |
-| Current short_title | Debt |
-| **NEW Title** | **Federal Budget: Deficit Spending for Growth — Balanced Budget & Debt Reduction** |
-| **NEW ShortTitle** | **National Debt** |
-| **NEW QuestionText** | **How should the federal government manage deficit spending and the national debt?** |
+| topic_key | `fossil-fuels` |
+| Current title | Fossil Fuel Policy |
+| Current short_title | Fossil Fuels |
+| **NEW Title** | **Fossil Fuels: Rapid Phase-Out & Renewable Transition — Continued Production & Energy Independence** |
+| **NEW ShortTitle** | **Fossil Fuels** |
+| **NEW QuestionText** | **What role should fossil fuels play in the nation's energy future?** |
 
-*Pole note: Deficit Spending first — randomized.*
+*Pole: Left first (Rapid Phase-Out)*
 
 ---
 
-## Batch 2: Criminal Justice & Civil Rights
+## Batch 3: Immigration & Foreign Affairs
 
-### 9. Policing & Criminal Justice
+### 9. Immigration
 
 | Field | Value |
 |-------|-------|
-| topic_key | `policing` (assumed) |
-| Current title | Policing and Criminal Justice Reform |
-| Current short_title | Policing |
-| **NEW Title** | **Policing: Expanded Law Enforcement — Community-Based Reform** |
-| **NEW ShortTitle** | **Policing** |
-| **NEW QuestionText** | **How should the U.S. approach policing and criminal justice?** |
+| topic_key | `immigration` |
+| Current title | Immigration Policy |
+| Current short_title | Immigration |
+| **NEW Title** | **Immigration: Open Borders & Expanded Entry — Closed Borders & Restricted Entry** |
+| **NEW ShortTitle** | **Immigration** |
+| **NEW QuestionText** | **How open or restrictive should immigration policy be?** |
 
-*Pole note: Expanded Enforcement first — randomized.*
+*Pole: Left first (Open Borders)*
 
 ---
 
-### 10. Gun Laws
+### 10. Deportation
 
 | Field | Value |
 |-------|-------|
-| topic_key | `gun_laws` (assumed) |
-| Current title | Gun Laws and Public Safety |
-| Current short_title | Gun Control |
-| **NEW Title** | **Guns: Unrestricted Ownership — Comprehensive Regulation** |
-| **NEW ShortTitle** | **Gun Laws** |
-| **NEW QuestionText** | **What limits, if any, should the U.S. place on civilian gun ownership?** |
+| topic_key | `deportation` |
+| Current title | Deportation of Immigrants |
+| Current short_title | Deportation |
+| **NEW Title** | **Deportation: Pathways to Legal Status — Strict Enforcement & Removal** |
+| **NEW ShortTitle** | **Deportation** |
+| **NEW QuestionText** | **How should government handle undocumented immigrants currently in the country?** |
 
-*Pole note: Unrestricted first — randomized.*
+*Pole: Left first (Pathways)*
 
 ---
 
-### 11. Voting Rights
+### 11. Ukraine
 
 | Field | Value |
 |-------|-------|
-| topic_key | `voting` (assumed) |
-| Current title | Voting Rights and Electoral Integrity |
-| Current short_title | Voting |
-| **NEW Title** | **Voting: Expanded Access & Automatic Registration — Stricter ID & Verification** |
-| **NEW ShortTitle** | **Voting Rights** |
-| **NEW QuestionText** | **How should the U.S. balance voter access with election security?** |
+| topic_key | `ukraine-support` |
+| Current title | Ukraine - Russia Conflict |
+| Current short_title | Ukraine Support |
+| **NEW Title** | **Ukraine: Full Military & Financial Commitment — Withdraw Support & Pursue Diplomacy** |
+| **NEW ShortTitle** | **Ukraine** |
+| **NEW QuestionText** | **What level of military and financial support should be provided to Ukraine?** |
 
-*Pole note: Expanded Access first — randomized.*
+*Pole: Left first (Full Commitment)*
 
 ---
+
+## Batch 4: Civil Rights & Social Issues
 
 ### 12. Civil Rights
 
 | Field | Value |
 |-------|-------|
-| topic_key | `civil_rights` (assumed) |
+| topic_key | `civil-rights` |
 | Current title | Civil Rights and Social Justice |
 | Current short_title | Civil Rights |
-| **NEW Title** | **Civil Rights: Equal Treatment Under Law — Targeted Equity Programs** |
+| **NEW Title** | **Civil Rights: Targeted Equity Programs — Equal Treatment Under Law** |
 | **NEW ShortTitle** | **Civil Rights** |
 | **NEW QuestionText** | **What role should government play in addressing racial and social inequality?** |
 
-*Pole note: Equal Treatment first — randomized.*
+*Pole: Left first (Targeted Equity)*
 
 ---
 
-### 13. Reproductive Rights
+### 13. Abortion
 
 | Field | Value |
 |-------|-------|
-| topic_key | `abortion` (assumed) |
+| topic_key | `abortion` |
 | Current title | Reproductive Rights and Abortion Access |
 | Current short_title | Abortion |
-| **NEW Title** | **Abortion: Legal Access — Legal Restrictions or Bans** |
+| **NEW Title** | **Abortion: Legal Restrictions & Fetal Protections — Unrestricted Legal Access** |
 | **NEW ShortTitle** | **Abortion** |
-| **NEW QuestionText** | **What legal framework should govern abortion access in the U.S.?** |
+| **NEW QuestionText** | **What legal framework should govern abortion access?** |
 
-*Pole note: Legal Access first — randomized.*
-
----
-
-## Batch 3: Social Policy
-
-### 14. Trans Rights
-
-| Field | Value |
-|-------|-------|
-| topic_key | `trans_rights` (assumed) |
-| Current title | Gender Identity and Trans Rights |
-| Current short_title | Trans Rights |
-| **NEW Title** | **Gender Identity: Legal Recognition & Protections — Restrictions on Transition** |
-| **NEW ShortTitle** | **Trans Rights** |
-| **NEW QuestionText** | **What legal protections and policies should apply to transgender and nonbinary people?** |
-
-*Pole note: Legal Recognition first — randomized.*
+*Pole: Right first (Restrictions)*
 
 ---
 
-### 15. DEI Programs
+### 14. Same-Sex Marriage
 
 | Field | Value |
 |-------|-------|
-| topic_key | `dei` (assumed) |
-| Current title | DEI (Diversity, Equity, Inclusion) Programs and Workplace Policy |
-| Current short_title | DEI |
-| **NEW Title** | **DEI: Mandate Equity Programs — Merit-Only, No Preferential Policies** |
-| **NEW ShortTitle** | **DEI Programs** |
-| **NEW QuestionText** | **What role should diversity, equity, and inclusion programs play in workplaces and institutions?** |
+| topic_key | `same-sex-marriage` |
+| Current title | Same-Sex Marriage |
+| Current short_title | Same-Sex Marriage |
+| **NEW Title** | **Same-Sex Marriage: Full Legal Recognition — Traditional Marriage Definition** |
+| **NEW ShortTitle** | **Same-Sex Marriage** |
+| **NEW QuestionText** | **What legal recognition should same-sex marriages receive?** |
 
-*Pole note: Mandate Equity first — randomized.*
+*Pole: Left first (Full Recognition)*
 
 ---
 
-### 16. Book Bans
+### 15. Transgender Athletes
 
 | Field | Value |
 |-------|-------|
-| topic_key | `book_bans` (assumed) |
-| Current title | Book Bans and Curriculum Restrictions in Schools |
-| Current short_title | Book Bans |
-| **NEW Title** | **School Curriculum: Parental Removal Rights — Full Inclusion & No Bans** |
-| **NEW ShortTitle** | **School Content** |
-| **NEW QuestionText** | **Who should decide what books and topics are taught in public schools?** |
+| topic_key | `trans-athletes` |
+| Current title | Transgender Athletes |
+| Current short_title | Trans Athletes |
+| **NEW Title** | **Trans Athletes: Compete by Birth Sex — Compete by Gender Identity** |
+| **NEW ShortTitle** | **Trans Athletes** |
+| **NEW QuestionText** | **How should sports leagues determine eligibility for transgender athletes?** |
 
-*Pole note: Parental Removal first — randomized.*
+*Pole: Right first (Birth Sex)*
 
 ---
 
-### 17. Religion in Government
+### 16. Religious Freedom
 
 | Field | Value |
 |-------|-------|
-| topic_key | `religion` (assumed) |
-| Current title | Religious Freedom and the Role of Religion in Government |
-| Current short_title | Religion |
-| **NEW Title** | **Church & State: Strict Separation — Religious Values in Public Life** |
-| **NEW ShortTitle** | **Church & State** |
+| topic_key | `religious-freedom` |
+| Current title | Religious Freedom |
+| Current short_title | Religious Freedom |
+| **NEW Title** | **Religious Freedom: Broad Exemptions & Public Expression — Strict Church-State Separation** |
+| **NEW ShortTitle** | **Religious Freedom** |
 | **NEW QuestionText** | **What role should religion play in government, public institutions, and policymaking?** |
 
-*Pole note: Strict Separation first — randomized.*
+*Pole: Right first (Broad Exemptions)*
 
 ---
 
-### 18. Mental Health & Addiction
+## Batch 5: Democracy & Governance
+
+### 17. Voting Rights
 
 | Field | Value |
 |-------|-------|
-| topic_key | `mental_health` (assumed) |
-| Current title | Mental Health and Addiction Services |
-| Current short_title | Mental Health |
-| **NEW Title** | **Mental Health: Universal Access & Public Funding — Private & Personal Responsibility** |
-| **NEW ShortTitle** | **Mental Health** |
-| **NEW QuestionText** | **How should the U.S. fund and deliver mental health and addiction treatment?** |
+| topic_key | `voting-rights` |
+| Current title | Voting Rights and Electoral Integrity |
+| Current short_title | Voting Rights |
+| **NEW Title** | **Voting: Expanded Access & Automatic Registration — Stricter ID & Verification** |
+| **NEW ShortTitle** | **Voting Rights** |
+| **NEW QuestionText** | **How should voter access be balanced with election security?** |
 
-*Pole note: Universal Access first — randomized.*
+*Pole: Left first (Expanded Access)*
 
 ---
 
-## Batch 4: Foreign Policy
-
-### 19. Immigration
+### 18. Campaign Finance
 
 | Field | Value |
 |-------|-------|
-| topic_key | `immigration` (assumed) |
-| Current title | Immigration Policy |
-| Current short_title | Immigration |
-| **NEW Title** | **Immigration: Secure Borders & Strict Enforcement — Open Pathways & Legalization** |
-| **NEW ShortTitle** | **Immigration** |
-| **NEW QuestionText** | **How should the U.S. manage immigration and border policy?** |
+| topic_key | `campaign-finance` |
+| Current title | Campaign Finance Reform |
+| Current short_title | Campaign Finance |
+| **NEW Title** | **Campaign Finance: Unlimited Political Spending — Strict Contribution Limits & Public Funding** |
+| **NEW ShortTitle** | **Campaign Finance** |
+| **NEW QuestionText** | **What rules should govern money in political campaigns and elections?** |
 
-*Pole note: Secure Borders first — randomized.*
+*Pole: Right first (Unlimited Spending)*
 
 ---
 
-### 20. Foreign Policy & Defense
+### 19. Redistricting
 
 | Field | Value |
 |-------|-------|
-| topic_key | `foreign_policy` (assumed) |
-| Current title | Foreign Policy and National Security |
-| Current short_title | Foreign Policy |
-| **NEW Title** | **Foreign Policy: Diplomatic Engagement — Military Strength & National Interest** |
-| **NEW ShortTitle** | **Foreign Policy** |
-| **NEW QuestionText** | **How should the U.S. engage with the world — through diplomacy, military strength, or both?** |
+| topic_key | `redistricting` |
+| Current title | State Redistricting and Gerrymandering |
+| Current short_title | Redistricting |
+| **NEW Title** | **Redistricting: Independent Commissions & Nonpartisan Maps — Legislative Control of District Lines** |
+| **NEW ShortTitle** | **Redistricting** |
+| **NEW QuestionText** | **Who should draw electoral district boundaries and how should they be determined?** |
 
-*Pole note: Diplomatic Engagement first — randomized.*
+*Pole: Left first (Independent Commissions)*
 
 ---
 
-### 21. Ukraine (Inactive)
+## Batch 6: Technology & Information
+
+### 20. AI Regulation
 
 | Field | Value |
 |-------|-------|
-| topic_key | `ukraine` (assumed) |
-| Current title | U.S. Military Support to Ukraine |
-| Current short_title | Ukraine |
-| is_active | false |
-| **NEW Title** | **Ukraine: Withdraw U.S. Support — Full Military Commitment** |
-| **NEW ShortTitle** | **Ukraine Aid** |
-| **NEW QuestionText** | **What level of U.S. military and financial support should be provided to Ukraine?** |
+| topic_key | `ai-regulation` |
+| Current title | Artificial Intelligence Regulation |
+| Current short_title | AI Regulation |
+| **NEW Title** | **AI Regulation: Strict Oversight & Safety Standards — Innovation-First & Light Regulation** |
+| **NEW ShortTitle** | **AI Regulation** |
+| **NEW QuestionText** | **How should artificial intelligence development and deployment be regulated?** |
 
-*Pole note: Withdraw Support first — randomized. Topic inactive.*
+*Pole: Left first (Strict Oversight)*
+
+---
+
+### 21. Misinformation
+
+| Field | Value |
+|-------|-------|
+| topic_key | `misinformation` |
+| Current title | Misinformation and the Role of Algorithms in Democracy |
+| Current short_title | Misinformation |
+| **NEW Title** | **Misinformation: Platform Self-Regulation — Government Oversight & Algorithm Transparency** |
+| **NEW ShortTitle** | **Misinformation** |
+| **NEW QuestionText** | **What responsibility do platforms and government have in combating online misinformation?** |
+
+*Pole: Right first (Platform Self-Regulation)*
 
 ---
 
 ## Summary Table
 
-| # | ShortTitle | NEW Title | NEW ShortTitle | Prohibited phrase? |
-|---|------------|-----------|----------------|--------------------|
-| 1 | Healthcare | Healthcare: Market-Driven Care — Universal Coverage | Healthcare | No |
-| 2 | Climate Change | Climate: Aggressive Emissions Cuts — Economic-First Energy Policy | Climate | No |
-| 3 | Economic Inequality | Wealth Gap: Market-Led Growth — Redistributive Policy | Wealth Gap | No |
-| 4 | Education | Education: Universal Public Funding — School Choice & Privatization | Education | No |
-| 5 | Taxes | Taxes: Lower Rates & Smaller Government — Progressive Taxation | Taxes & Spending | No |
-| 6 | Housing | Housing: Public Investment & Tenant Protections — Market-Driven Supply | Housing | No |
-| 7 | Wages | Labor: Employer Flexibility & Market Wages — Minimum Wage & Union Rights | Labor & Wages | No |
-| 8 | Debt | Federal Budget: Deficit Spending for Growth — Balanced Budget & Debt Reduction | National Debt | No |
-| 9 | Policing | Policing: Expanded Law Enforcement — Community-Based Reform | Policing | No |
-| 10 | Gun Control | Guns: Unrestricted Ownership — Comprehensive Regulation | Gun Laws | No |
-| 11 | Voting | Voting: Expanded Access & Automatic Registration — Stricter ID & Verification | Voting Rights | No |
-| 12 | Civil Rights | Civil Rights: Equal Treatment Under Law — Targeted Equity Programs | Civil Rights | No |
-| 13 | Abortion | Abortion: Legal Access — Legal Restrictions or Bans | Abortion | No |
-| 14 | Trans Rights | Gender Identity: Legal Recognition & Protections — Restrictions on Transition | Trans Rights | No |
-| 15 | DEI | DEI: Mandate Equity Programs — Merit-Only, No Preferential Policies | DEI Programs | No |
-| 16 | Book Bans | School Curriculum: Parental Removal Rights — Full Inclusion & No Bans | School Content | No |
-| 17 | Religion | Church & State: Strict Separation — Religious Values in Public Life | Church & State | No |
-| 18 | Mental Health | Mental Health: Universal Access & Public Funding — Private & Personal Responsibility | Mental Health | No |
-| 19 | Immigration | Immigration: Secure Borders & Strict Enforcement — Open Pathways & Legalization | Immigration | No |
-| 20 | Foreign Policy | Foreign Policy: Diplomatic Engagement — Military Strength & National Interest | Foreign Policy | No |
-| 21 | Ukraine | Ukraine: Withdraw U.S. Support — Full Military Commitment | Ukraine Aid | No |
+| # | topic_key | NEW Title | NEW ShortTitle | NEW QuestionText |
+|---|-----------|-----------|----------------|------------------|
+| 1 | `healthcare` | Healthcare: Market-Driven Care — Universal Coverage | Healthcare | How should the healthcare system be structured? |
+| 2 | `taxes` | Taxes: Lower Rates & Smaller Government — Progressive Taxation & Public Investment | Taxes & Spending | How should governments balance tax rates and public spending? |
+| 3 | `medicare` | Medicare/Medicaid: Expand Coverage & Benefits — Reduce Scope & Privatize | Medicare/Medicaid | How should Medicare and Medicaid be funded and structured? |
+| 4 | `social-security` | Social Security: Privatize & Restructure Benefits — Expand Benefits & Increase Funding | Social Security | How should Social Security be funded and structured for the future? |
+| 5 | `tariffs` | Tariffs: Protective Tariffs & Domestic Industry — Free Trade & Open Markets | Trade & Tariffs | How should trade policy balance domestic industry with global commerce? |
+| 6 | `housing` | Housing: Public Investment & Tenant Protections — Market-Driven Supply | Housing | What approach should government take to address housing affordability and homelessness? |
+| 7 | `climate-change` | Climate: Economic-First Energy Policy — Aggressive Emissions Reductions | Climate | What priority should climate change receive in energy and economic policy? |
+| 8 | `fossil-fuels` | Fossil Fuels: Rapid Phase-Out & Renewable Transition — Continued Production & Energy Independence | Fossil Fuels | What role should fossil fuels play in the nation's energy future? |
+| 9 | `immigration` | Immigration: Open Borders & Expanded Entry — Closed Borders & Restricted Entry | Immigration | How open or restrictive should immigration policy be? |
+| 10 | `deportation` | Deportation: Pathways to Legal Status — Strict Enforcement & Removal | Deportation | How should government handle undocumented immigrants currently in the country? |
+| 11 | `ukraine-support` | Ukraine: Full Military & Financial Commitment — Withdraw Support & Pursue Diplomacy | Ukraine | What level of military and financial support should be provided to Ukraine? |
+| 12 | `civil-rights` | Civil Rights: Targeted Equity Programs — Equal Treatment Under Law | Civil Rights | What role should government play in addressing racial and social inequality? |
+| 13 | `abortion` | Abortion: Legal Restrictions & Fetal Protections — Unrestricted Legal Access | Abortion | What legal framework should govern abortion access? |
+| 14 | `same-sex-marriage` | Same-Sex Marriage: Full Legal Recognition — Traditional Marriage Definition | Same-Sex Marriage | What legal recognition should same-sex marriages receive? |
+| 15 | `trans-athletes` | Trans Athletes: Compete by Birth Sex — Compete by Gender Identity | Trans Athletes | How should sports leagues determine eligibility for transgender athletes? |
+| 16 | `religious-freedom` | Religious Freedom: Broad Exemptions & Public Expression — Strict Church-State Separation | Religious Freedom | What role should religion play in government, public institutions, and policymaking? |
+| 17 | `voting-rights` | Voting: Expanded Access & Automatic Registration — Stricter ID & Verification | Voting Rights | How should voter access be balanced with election security? |
+| 18 | `campaign-finance` | Campaign Finance: Unlimited Political Spending — Strict Contribution Limits & Public Funding | Campaign Finance | What rules should govern money in political campaigns and elections? |
+| 19 | `redistricting` | Redistricting: Independent Commissions & Nonpartisan Maps — Legislative Control of District Lines | Redistricting | Who should draw electoral district boundaries and how should they be determined? |
+| 20 | `ai-regulation` | AI Regulation: Strict Oversight & Safety Standards — Innovation-First & Light Regulation | AI Regulation | How should artificial intelligence development and deployment be regulated? |
+| 21 | `misinformation` | Misinformation: Platform Self-Regulation — Government Oversight & Algorithm Transparency | Misinformation | What responsibility do platforms and government have in combating online misinformation? |
 
 ---
 
 ## Anti-Partisan Pole Order Verification
 
-Checking that pole order is randomized — no consistent left-first or right-first pattern:
-
-| # | Topic | First Pole Direction |
-|---|-------|---------------------|
+| # | Topic | First Pole Leans |
+|---|-------|-----------------|
 | 1 | Healthcare | Right (Market) |
-| 2 | Climate | Left (Aggressive Cuts) |
-| 3 | Wealth Gap | Right (Market-Led) |
-| 4 | Education | Left (Universal Public) |
-| 5 | Taxes | Right (Lower Rates) |
+| 2 | Taxes | Right (Lower Rates) |
+| 3 | Medicare/Medicaid | Left (Expand) |
+| 4 | Social Security | Right (Privatize) |
+| 5 | Tariffs | Right (Protective) |
 | 6 | Housing | Left (Public Investment) |
-| 7 | Labor | Right (Employer Flexibility) |
-| 8 | Debt | Left (Deficit Spending) |
-| 9 | Policing | Right (Expanded Enforcement) |
-| 10 | Guns | Right (Unrestricted) |
-| 11 | Voting | Left (Expanded Access) |
-| 12 | Civil Rights | Right (Equal Treatment/No Preferential) |
-| 13 | Abortion | Left (Legal Access) |
-| 14 | Trans Rights | Left (Legal Recognition) |
-| 15 | DEI | Left (Mandate) |
-| 16 | School Content | Right (Parental Removal) |
-| 17 | Church & State | Left (Strict Separation) |
-| 18 | Mental Health | Left (Universal Access) |
-| 19 | Immigration | Right (Secure Borders) |
-| 20 | Foreign Policy | Left (Diplomatic) |
-| 21 | Ukraine | Right (Withdraw) |
+| 7 | Climate | Right (Economic-First) |
+| 8 | Fossil Fuels | Left (Phase-Out) |
+| 9 | Immigration | Left (Open Borders) |
+| 10 | Deportation | Left (Pathways) |
+| 11 | Ukraine | Left (Full Commitment) |
+| 12 | Civil Rights | Left (Targeted Equity) |
+| 13 | Abortion | Right (Restrictions) |
+| 14 | Same-Sex Marriage | Left (Full Recognition) |
+| 15 | Trans Athletes | Right (Birth Sex) |
+| 16 | Religious Freedom | Right (Broad Exemptions) |
+| 17 | Voting Rights | Left (Expanded Access) |
+| 18 | Campaign Finance | Right (Unlimited Spending) |
+| 19 | Redistricting | Left (Independent Commissions) |
+| 20 | AI Regulation | Left (Strict Oversight) |
+| 21 | Misinformation | Right (Self-Regulation) |
 
-**Result:** 10 right-first, 11 left-first — roughly balanced. No detectable partisan pattern.
+**Result:** 10 right-first, 11 left-first — balanced. No detectable partisan pattern.
 
 ---
 
