@@ -98,7 +98,11 @@ Plans:
   2. A user with mixed answered and unanswered topics sees a compass with no empty spokes or missing spoke positions
   3. A user whose answered topic count drops below 3 sees the calibration entry prompt instead of a dead-end "answer more topics" message
   4. A user who completes calibration from a mixed state arrives at a fully rendered compass without needing to refresh
-**Plans**: TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 19-01-PLAN.md -- Auto-routing into calibration for unanswered topics, CalibrationOverlay resumption flow with topic pills and checkmarks, below-3 threshold with calibration CTA
+- [ ] 19-02-PLAN.md -- Mixed-state radar chart with gray dashed spokes for unanswered topics, ev-ui RadarChartCore update, human verification
 
 ### Phase 20: Compare Bug Fix
 **Goal**: The comparison politician overlay renders exactly once on the radar chart, eliminating the double-shape visual artifact on the compare page
