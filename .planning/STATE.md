@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — Plan 2 in progress; Task 1 complete (gray dashed spokes), awaiting checkpoint human verification
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — COMPLETE; Phase 20 is next
 
 ## Current Position
 
-Phase: 19 of 20 (Calibration Flow Fixes)
-Plan: 2 of 2 in progress — Task 1 complete (760e6ca, 57dad4d); checkpoint awaiting human verify
-Status: Checkpoint paused
-Last activity: 2026-02-21 — 19-02 Task 1: gray dashed unanswered spokes added to RadarChartCore and Compass.jsx data pipe; ev-ui 0.1.20 published; awaiting human verify of all 3 CALIB scenarios
+Phase: 19 of 20 (Calibration Flow Fixes) — COMPLETE
+Plan: 2 of 2 complete — 19-02 CALIB-03 fixes applied; all tasks done
+Status: Active
+Last activity: 2026-02-21 — 19-02: CALIB-03 UX fixes applied: manual Next, grayed chart overlay (BelowThresholdChart), startAtPick prop, completion loop fix; build passes
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -55,6 +55,11 @@ Recent v1.3 decisions:
 - [Phase 19]: needsCalibration triggers on ANY unanswered selected topics; calibrationCompleted guards re-trigger when deselecting topics below 3
 - [Phase 19]: resumeMode lazy-init via useRef waits for topics to load from context before initializing CalibrationOverlay state
 - [Phase 19]: Exit gating replaces X button entirely: hidden spacer below-3, View Compass text button at 3+
+- [19-02]: startAtPick is separate from resumeMode — startAtPick opens pick step, resumeMode skips to answer step
+- [19-02]: Below-3 display uses real RadarChart at opacity-25 with overlay card, not blank MinimumProgress replacement
+- [19-02]: handleStartCalibrationFromBelow3 does NOT clear localStorage calibration flags — preserves completed/skipped state
+- [19-02]: Completion celebration skipped when finalAnsweredCount < 3 — calls onComplete directly to show grayed overlay
+- [19-02]: Auto-advance after stance selection removed entirely — user clicks Next manually
 
 ### Pending Todos
 
@@ -67,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: 19-02-PLAN.md Task 1 complete — gray dashed unanswered spokes in RadarChartCore + Compass.jsx; ev-ui 0.1.20 published; paused at Task 2 checkpoint:human-verify
+Stopped at: 19-02-PLAN.md complete — all CALIB-03 issues resolved; 19-02-SUMMARY.md created
 Resume file: None

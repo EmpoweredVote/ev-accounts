@@ -10,7 +10,7 @@ Requirements for Compass bug fixes and title standardization. Each maps to roadm
 ### Calibration Flow
 
 - [x] **CALIB-01**: User navigating to compass with unanswered topics on their compass is auto-routed into calibration starting at the first unanswered topic
-- [ ] **CALIB-02**: Compass page correctly handles mixed answered/unanswered topics without showing empty spokes or dead-end states
+- [x] **CALIB-02**: Compass page correctly handles mixed answered/unanswered topics without showing empty spokes or dead-end states
 - [x] **CALIB-03**: If user's answered topic count drops below 3, compass shows calibration entry instead of "answer more" dead end
 
 ### Title Standardization
@@ -55,7 +55,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TITLE-02 | Phase 18 | Complete |
 | TITLE-03 | Phase 18 | Complete |
 | CALIB-01 | Phase 19 | Complete |
-| CALIB-02 | Phase 19 | Pending |
+| CALIB-02 | Phase 19 | Complete |
 | CALIB-03 | Phase 19 | Complete |
 | COMP-01 | Phase 20 | Pending |
 
