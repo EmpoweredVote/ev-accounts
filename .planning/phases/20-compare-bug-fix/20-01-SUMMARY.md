@@ -56,7 +56,7 @@ completed: 2026-02-21
 - **Duration:** ~2 min
 - **Started:** 2026-02-21T00:02:13Z
 - **Completed:** 2026-02-21T00:04:00Z
-- **Tasks:** 2 of 3 complete (Task 3 is human verification checkpoint)
+- **Tasks:** 3 of 3 complete
 - **Files modified:** 5
 
 ## Accomplishments
@@ -74,7 +74,7 @@ Each task was committed atomically (in their respective repos):
 
 1. **Task 1: Fix RadarChartCore compare polygon rendering and publish ev-ui** - `c5132cd` (feat) — ev-ui repo
 2. **Task 2: Stabilize compare answer fetching and install updated ev-ui in CompassV2** - `12b7431` (feat) — CompassV2 repo
-3. **Task 3: Verify single compare overlay on radar chart** - PENDING human verification
+3. **Task 3: Verify single compare overlay on radar chart** - User approved (human verification checkpoint)
 
 ## Files Created/Modified
 - `ev-ui/src/RadarChartCore.jsx` - Three compare overlay bug fixes (spoke alignment, spring cleanup, keyed polygons)
@@ -115,8 +115,9 @@ None — no external service configuration required beyond running the dev serve
 ## Next Phase Readiness
 - ev-ui@0.1.21 published and installed in CompassV2
 - CompassV2 build passes
-- Awaiting human verification (Task 3 checkpoint) that single overlay renders correctly on desktop and mobile
-- After human approval, COMP-01 requirement will be fully satisfied
+- Human verification approved: single overlay renders correctly (Task 3 checkpoint passed)
+- COMP-01 requirement fully satisfied
+- v1.3 milestone complete — all 4 phases (17-20) done
 
 ---
 *Phase: 20-compare-bug-fix*
