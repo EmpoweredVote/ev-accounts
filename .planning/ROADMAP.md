@@ -112,7 +112,10 @@ Plans:
   1. Selecting a politician to compare on the radar chart produces exactly one colored overlay shape
   2. The overlay shape does not flicker, duplicate, or stack multiple transparent layers when navigating to the compare page
   3. Removing the comparison and re-adding it produces the same single clean overlay
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 20-01-PLAN.md -- Fix compare polygon rendering in ev-ui RadarChartCore, stabilize compare answer fetching in CompassV2, verify single overlay
 
 ## Progress
 
@@ -137,4 +140,4 @@ Plans:
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
 | 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
 | 19. Calibration Flow Fixes | 2/2 | Complete    | 2026-02-21 | - |
-| 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
+| 20. Compare Bug Fix | v1.3 | 0/1 | Planned | - |
