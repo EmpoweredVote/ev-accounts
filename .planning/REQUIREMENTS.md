@@ -21,7 +21,7 @@ Requirements for Compass bug fixes and title standardization. Each maps to roadm
 
 ### Compare
 
-- [ ] **COMP-01**: Comparison politician renders exactly one overlay shape on the radar chart (fix double overlay bug)
+- [x] **COMP-01**: Comparison politician renders exactly one overlay shape on the radar chart (fix double overlay bug)
 
 ## Future Requirements
 
@@ -57,7 +57,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CALIB-01 | Phase 19 | Complete |
 | CALIB-02 | Phase 19 | Complete |
 | CALIB-03 | Phase 19 | Complete |
-| COMP-01 | Phase 20 | Pending |
+| COMP-01 | Phase 20 | Complete |
 
 **Coverage:**
 - v1.3 requirements: 7 total

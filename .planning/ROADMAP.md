@@ -56,7 +56,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 - [x] **Phase 17: Title Standardization (Backend)** - Canonical topic naming established as server-side source of truth (completed 2026-02-21)
 - [x] **Phase 18: Title Display (Frontend)** - Compass labels, Library cards, and calibration all render clean names from server data (completed 2026-02-21)
 - [x] **Phase 19: Calibration Flow Fixes** - Compass handles all mixed answered/unanswered topic states without dead ends (completed 2026-02-21)
-- [ ] **Phase 20: Compare Bug Fix** - Comparison overlay renders exactly one shape on the radar chart
+- [x] **Phase 20: Compare Bug Fix** - Comparison overlay renders exactly one shape on the radar chart (completed 2026-02-21)
 
 ## Phase Details
 
@@ -112,7 +112,7 @@ Plans:
   1. Selecting a politician to compare on the radar chart produces exactly one colored overlay shape
   2. The overlay shape does not flicker, duplicate, or stack multiple transparent layers when navigating to the compare page
   3. Removing the comparison and re-adding it produces the same single clean overlay
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 
 Plans:
 - [ ] 20-01-PLAN.md -- Fix compare polygon rendering in ev-ui RadarChartCore, stabilize compare answer fetching in CompassV2, verify single overlay
@@ -140,4 +140,4 @@ Plans:
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
 | 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
 | 19. Calibration Flow Fixes | 2/2 | Complete    | 2026-02-21 | - |
-| 20. Compare Bug Fix | v1.3 | 0/1 | Planned | - |
+| 20. Compare Bug Fix | 1/1 | Complete   | 2026-02-21 | - |

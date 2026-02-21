@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-20)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 19: Calibration Flow Fixes — COMPLETE; Phase 20 is next
+**Current focus:** v1.3 Compass Bug Fixes & Title Standardization — Phase 20: Compare Bug Fix — PAUSED at human verification checkpoint
 
 ## Current Position
 
-Phase: 19 of 20 (Calibration Flow Fixes) — COMPLETE
-Plan: 2 of 2 complete — 19-02 CALIB-03 fixes applied; all tasks done
+Phase: 20 of 20 (Compare Bug Fix) — IN PROGRESS
+Plan: 1 of 1 — 20-01 tasks 1 & 2 complete; awaiting human verification (Task 3 checkpoint)
 Status: Active
-Last activity: 2026-02-21 — 19-02: CALIB-03 UX fixes applied: manual Next, grayed chart overlay (BelowThresholdChart), startAtPick prop, completion loop fix; build passes
+Last activity: 2026-02-21 — 20-01: Fixed double-overlay compare bug in RadarChartCore; ev-ui@0.1.21 published and installed in CompassV2; paused at human-verify checkpoint
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -60,6 +60,9 @@ Recent v1.3 decisions:
 - [19-02]: handleStartCalibrationFromBelow3 does NOT clear localStorage calibration flags — preserves completed/skipped state
 - [19-02]: Completion celebration skipped when finalAnsweredCount < 3 — calls onComplete directly to show grayed overlay
 - [19-02]: Auto-advance after stance selection removed entirely — user clicks Next manually
+- [20-01]: Compare polygon iterates spokes (user data order) not compareData keys — guarantees correct angle alignment regardless of politician's topic coverage
+- [20-01]: compareSpring uses immediate:true when comparePoints is null — prevents stale spring animation from prior comparison
+- [20-01]: topics removed from compare answer useEffect deps — topicsRef.current used instead, mirroring user answer fetch pattern
 
 ### Pending Todos
 
@@ -72,5 +75,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-21
-Stopped at: 19-02-PLAN.md complete — all CALIB-03 issues resolved; 19-02-SUMMARY.md created
+Stopped at: 20-01-PLAN.md tasks 1 & 2 complete — ev-ui@0.1.21 published, CompassV2 updated; paused at Task 3 human-verify checkpoint
 Resume file: None
