@@ -131,6 +131,6 @@ Plans:
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
 | 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
-| 18. Title Display (Frontend) | 2/2 | Complete   | 2026-02-21 | - |
+| 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
 | 19. Calibration Flow Fixes | v1.3 | 0/TBD | Not started | - |
 | 20. Compare Bug Fix | v1.3 | 0/TBD | Not started | - |
