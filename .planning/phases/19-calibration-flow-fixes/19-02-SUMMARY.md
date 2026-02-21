@@ -32,6 +32,7 @@ key-files:
   modified:
     - CompassV2/src/components/CalibrationOverlay.jsx
     - CompassV2/src/pages/Compass.jsx
+    - CompassV2/src/pages/Library.jsx
 
 key-decisions:
   - "startAtPick is a separate prop from resumeMode: startAtPick=pick step, resumeMode=answer step"
@@ -44,7 +45,7 @@ key-decisions:
 patterns-established:
   - "Calibration entry paths: welcome->pick->answer (first time), resumeMode->answer (unanswered topics), startAtPick->pick (below-3 path)"
 
-requirements-completed: [CALIB-02]
+requirements-completed: [CALIB-02, CALIB-03]
 
 # Metrics
 duration: 20min
@@ -78,13 +79,15 @@ Each task was committed atomically:
 
 1. **Task 1: Add gray dashed spoke rendering to RadarChartCore and update data pipe** - `760e6ca` (feat) [ev-ui], `57dad4d` (feat) [CompassV2]
 2. **Task 2 (CALIB-03 fix): Manual Next, grayed chart overlay, startAtPick, completion loop** - `c289dc6` (fix)
+3. **Task 2 cont: Below-3 auto-route to pick + Library grayed preview** - `94b8203` (fix), `86c9921` (fix)
 
 **Plan metadata:** *(this commit)*
 
 ## Files Created/Modified
 
 - `CompassV2/src/components/CalibrationOverlay.jsx` - Added `startAtPick` prop, `getInitialState` startAtPick branch, removed auto-advance setTimeout, fixed `handleFinish` completion threshold, fixed pick step back button
-- `CompassV2/src/pages/Compass.jsx` - Added `BelowThresholdChart` component (replaces `MinimumProgress`), added `startAtPick` state and `handleStartCalibrationFromBelow3`, updated both desktop and mobile chart-or-below rendering blocks, passed `startAtPick` to `CalibrationOverlay`
+- `CompassV2/src/pages/Compass.jsx` - Added `BelowThresholdChart` component (replaces `MinimumProgress`), added `startAtPick` state and `handleStartCalibrationFromBelow3`, auto-route to pick screen when below-3, passed `startAtPick` to `CalibrationOverlay`
+- `CompassV2/src/pages/Library.jsx` - Grayed compass preview (opacity-25) with "Add X more topics" overlay when answered compass topics < 3; uses `answeredCompassCount` (selected topics with answers) not total answered count
 
 ## Decisions Made
 
