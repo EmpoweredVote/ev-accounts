@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-20)
 ## Current Position
 
 Phase: 17 of 20 (Title Standardization — Backend)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-02-20 — v1.3 roadmap created, 4 phases defined (17-20), 7/7 requirements mapped
+Plan: 1 of 2 complete
+Status: In progress
+Last activity: 2026-02-20 — 17-01 complete: all 21 topic tension titles, short titles, and questions drafted and user-approved
 
 Progress: [████████░░░░░░░░░░░░] 40% (16/20 phases complete across all milestones)
 
@@ -42,6 +42,8 @@ All v1.2 decisions resolved — see `.planning/milestones/v1.2-ROADMAP.md` for f
 Recent v1.3 decisions:
 - [Phase 17]: Title standardization is backend-first — server data must be canonical before frontend display phases run
 - [Phase 19]: Calibration flow fixes depend on Phase 18 so that topic names are correct in the same pass users see calibration
+- [17-01]: Tension title format uses em dash separator and policy outcome pairs (not partisan labels); pole order randomized per topic — 10 right-first, 11 left-first verified
+- [17-01]: Two short titles renamed for clarity: Taxes -> Taxes & Spending, Tariffs -> Trade & Tariffs
 
 ### Pending Todos
 
@@ -54,5 +56,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-20
-Stopped at: Roadmap created for v1.3 — Phase 17 ready to plan
+Stopped at: Completed 17-01-PLAN.md — all 21 topic drafts approved by user, ready for 17-02 database migration
 Resume file: None
