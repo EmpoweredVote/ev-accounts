@@ -97,3 +97,26 @@
 
 ---
 
+
+## v1.4 Compass Polish & Tech Debt (Shipped: 2026-02-22)
+
+**Phases completed:** 5 phases, 9 plans
+**Timeline:** 1 day (2026-02-22)
+**Requirements:** 17/17 satisfied
+**Repos:** CompassV2, EV-Backend, ev-ui
+
+**Delivered:** Compass polished for demo-ready quality — guest flow fixed, radar labels readable, stale UI removed, question-text hierarchy unified, dead code cleaned up, and onboarding-to-calibration redirect working.
+
+**Key accomplishments:**
+1. Guest flow fix — BuildCompass uses localStorage answers for guests, gracefully handles 401 for logged-in users, no more infinite spinner
+2. Radar label fixes — dynamic horizontal padding, minimum font size, word wrap in ev-ui RadarChartCore, published as ev-ui@0.1.26
+3. UX cleanup — Edit Topics and Clear buttons removed, mobile stat card layout fixed, question-text-first hierarchy across all 4 compass views (Library, LibraryDrawer, Quiz, CalibrationOverlay)
+4. Tech debt cleanup — StartPhrase references removed from compassimport/seed CLI, short_name removed from admin TopicEditor/TopicAccordion
+5. Onboarding-to-calibration redirect — fresh users from onboarding enter calibration via ?calibrate=1 URL param, returning uncalibrated users trigger CalibrationOverlay via selectedTopics.length === 0 condition
+6. Compare page text fix — ComparePanel now uses question-text-first hierarchy matching all other views
+
+**Tech debt carried forward:**
+- BallotReady transform.go SubAreaName → RepresentingCity mapping fix — frontend workaround in Results.jsx (carried from v1.1)
+
+---
+

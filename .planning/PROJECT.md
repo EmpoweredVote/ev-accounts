@@ -67,17 +67,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ "Where do you stand on..." prefix removed from card display for scannability — v1.3
 - ✓ Compass renders correctly with mixed answered/unanswered topics (no empty spokes or dead-end states) — v1.3
 
+- ✓ BuildCompass guest support — "View Full Compass" and quiz completion work without login — v1.4
+- ✓ Radar chart label clipping fixed — labels on far left/right edges no longer cut off — v1.4
+- ✓ Radar chart label minimum size — short labels (Misinformation, Immigration, Medicare/Medicaid) remain readable — v1.4
+- ✓ "Edit Topics" button removed from compass page — Library page handles topic editing — v1.4
+- ✓ "Clear" button removed from Library page — v1.4
+- ✓ Library stat cards fill full width on mobile — v1.4
+- ✓ QuestionText more prominent on LibraryDrawer and stance selection — v1.4
+- ✓ Tech debt: compassimport/seed CLI StartPhrase references cleaned up — v1.4
+- ✓ Tech debt: Admin TopicEditor vestigial short_name field removed — v1.4
+- ✓ Onboarding-to-calibration redirect — fresh users enter calibration, not dead-end — v1.4
+- ✓ Compare page question-text-first display — matches LibraryDrawer/Quiz hierarchy — v1.4
+
 ### Active
 
-- [ ] BuildCompass guest support — "View Full Compass" and quiz completion work without login — v1.4
-- [ ] Radar chart label clipping fixed — labels on far left/right edges no longer cut off — v1.4
-- [ ] Radar chart label minimum size — short labels (Misinformation, Immigration, Medicare/Medicaid) remain readable — v1.4
-- [ ] "Edit Topics" button removed from compass page — Library page handles topic editing — v1.4
-- [ ] "Clear" button removed from Library page — v1.4
-- [ ] Library stat cards fill full width on mobile — v1.4
-- [ ] QuestionText more prominent on LibraryDrawer and stance selection — v1.4
-- [ ] Tech debt: compassimport/seed CLI StartPhrase references cleaned up — v1.4
-- [ ] Tech debt: Admin TopicEditor vestigial short_name field removed — v1.4
+(No active requirements — start next milestone with `/gsd:new-milestone`)
 
 ### Out of Scope
 
@@ -93,17 +97,17 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v1.3 with ~34K LOC across 4 repos:
-- **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration auto-routing, guest auth flow, help walkthrough
+Shipped v1.4 with ~34K LOC across 4 repos:
+- **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration, guest auth, help walkthrough, question-text-first hierarchy
 - **EV-Backend** (Go 1.24): 15.4K LOC — auth, compass, essentials, treasury, staging modules
-- **ev-ui** (React/tsup): 2.8K LOC — RadarChartCore with unanswered spokes and compare fix, PoliticianProfile, FilterSidebar
+- **ev-ui** (React/tsup): 2.9K LOC — RadarChartCore with dynamic label padding/sizing, unanswered spokes, PoliticianProfile, FilterSidebar
 - **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, real building photos, sticky layout
 
 Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB.
 BallotReady API is the primary data source for politicians and candidates.
-ev-ui published to GitHub npm registry (v0.1.21), consumed by CompassV2 and essentials.
+ev-ui published to GitHub npm registry (v0.1.26), consumed by CompassV2 and essentials.
 
-Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx). Settings gear placement and spoke inversion persistence across views deferred. compassimport/models.go and seed CLI reference dropped StartPhrase column. Admin TopicEditor sends vestigial short_name field.
+Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx).
 
 ## Constraints
 
@@ -151,6 +155,11 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | Exit gating replaces X button in calibration | Force users to reach 3+ topics before viewing compass | ✓ Good — hidden spacer below-3, View Compass text button at 3+ |
 | Gray dashed spokes for unanswered topics | Visual differentiation without removing spoke positions | ✓ Good — opacity-25 + dashed stroke, clickable to route to calibration |
 | Compare polygon iterates spokes not compareData keys | Guarantees correct angle alignment regardless of topic coverage | ✓ Good — fixed double-overlay bug in ev-ui@0.1.21 |
+| answersRef pattern in BuildCompass | Read context inside effect without dep array churn | ✓ Good — matches Library.jsx convention |
+| Dynamic label padding via char-width estimation | No DOM measurement needed for SVG label sizing | ✓ Good — charCount * fontSize * 0.6 ratio |
+| Question-text-first across all views | Users scan by question, not tension title | ✓ Good — consistent across Library, Quiz, Calibration, Compare |
+| ?calibrate=1 URL param for onboarding redirect | Cleaner than localStorage flag for one-time signal | ✓ Good — cleared with replace:true, preserves back button |
+| needsCalibration OR selectedTopics.length === 0 | Returning uncalibrated users also get CalibrationOverlay | ✓ Good — covers both onboarding and direct-nav paths |
 
 ---
-*Last updated: 2026-02-22 after v1.4 milestone started*
+*Last updated: 2026-02-22 after v1.4 milestone*
