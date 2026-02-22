@@ -79,7 +79,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
   1. A guest user clicking "View Full Compass" sees the full radar chart rendered from their localStorage answers — no 401 error, no blank screen
   2. A guest user who finishes the quiz is routed to a working compass/completion page — no blank screen or console errors
   3. BuildCompass.jsx skips the `/compass/answers` fetch (or handles 401 gracefully) when no session exists
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 - [x] 21-01-PLAN.md -- Make BuildCompass guest-safe (localStorage answers for guests, server fetch for logged-in users)
 
 ### Phase 22: Radar Label Fixes
@@ -139,7 +139,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 | 18. Title Display (Frontend) | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 19. Calibration Flow Fixes | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |
-| 21. Guest Flow Fix | v1.4 | 1/1 | Complete | 2026-02-22 |
+| 21. Guest Flow Fix | v1.4 | Complete    | 2026-02-22 | 2026-02-22 |
 | 22. Radar Label Fixes | v1.4 | 0/? | Not started | - |
 | 23. UX Cleanup | v1.4 | 0/? | Not started | - |
 | 24. Tech Debt Cleanup | v1.4 | 0/? | Not started | - |
