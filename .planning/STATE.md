@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 27 in progress
+**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 28 in progress
 
 ## Current Position
 
-Phase: 27 of 29 (Cache-Only Candidates & Warmer Cleanup)
-Plan: 2 of 2 complete
-Status: Phase 27 complete
-Last activity: 2026-02-22 — Phase 27 Plan 02 executed: removed BallotReady provider from startup, deleted cache table GORM models, added DROP TABLE statements for federal_cache/state_caches/zip_caches
+Phase: 28 of 29 (Address Autocomplete)
+Plan: 1 of 2 complete
+Status: Phase 28 in progress
+Last activity: 2026-02-22 — Phase 28 Plan 01 executed: extended useGooglePlacesAutocomplete hook with loadError, refactored Landing page to address-only with selection validation and degraded mode
 
-Progress: [████░░░░░░] 40% (v1.5)
+Progress: [█████░░░░░] 50% (v1.5)
 
 ## Performance Metrics
 
@@ -31,6 +31,7 @@ Progress: [████░░░░░░] 40% (v1.5)
 | 26-geofence-only-search | 02 | 1min | 2 | 3 |
 | 27-cache-only-candidates-warmer-cleanup | 01 | 7min | 2 | 5 |
 | 27-cache-only-candidates-warmer-cleanup | 02 | 5min | 2 | 2 |
+| 28-address-autocomplete | 01 | 4min | 1 | 2 |
 
 ## Accumulated Context
 
@@ -67,6 +68,11 @@ v1.5 decisions from Phase 27 Plan 02:
 - external_global_id kept in upsert map (data-ingestion path) — not the GetPoliticianByID query ref that was removed in Plan 01
 - DROP TABLE IF EXISTS added to Init() before AutoMigrate — idempotent, safe to run on every server start
 
+v1.5 decisions from Phase 28 Plan 01:
+- onPlaceSelected does NOT call navigate() — user must explicitly click Search after selecting suggestion (locked plan decision)
+- handleKeyDown removed entirely — Google autocomplete handles Enter internally; hasValidSelection guard blocks raw text submission
+- Search button disabled prop checks !addressInput.trim() || loadError only; hasValidSelection check inside handleSearch shows hint rather than silently blocking
+
 ### Pending Todos
 
 None.
@@ -79,5 +85,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 27-cache-only-candidates-warmer-cleanup/27-02-PLAN.md
+Stopped at: Completed 28-address-autocomplete/28-01-PLAN.md
 Resume file: None
