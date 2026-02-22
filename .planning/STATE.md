@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 26 ready to plan
+**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 26 in progress
 
 ## Current Position
 
 Phase: 26 of 29 (Geofence-Only Search)
-Plan: —
-Status: Ready to plan
-Last activity: 2026-02-22 — v1.5 roadmap created, phases 26-29 defined
+Plan: 1 of 1 complete
+Status: Phase 26 Plan 01 complete
+Last activity: 2026-02-22 — Phase 26 Plan 01 executed: geofence-only address search, no-geofence fallback
 
-Progress: [░░░░░░░░░░] 0% (v1.5)
+Progress: [██░░░░░░░░] 25% (v1.5)
 
 ## Performance Metrics
 
@@ -23,6 +23,11 @@ Progress: [░░░░░░░░░░] 0% (v1.5)
 **Velocity (v1.2):** 6 phases, 12 plans, 27 tasks
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
+
+**v1.5 progress:**
+| Phase | Plan | Duration | Tasks | Files |
+|-------|------|----------|-------|-------|
+| 26-geofence-only-search | 01 | 3min | 2 | 3 |
 
 ## Accumulated Context
 
@@ -37,6 +42,12 @@ v1.5 key decisions entering Phase 26:
 - Federal/state fallback path implemented in Phase 26 alongside fallback removal — never shipped separately to avoid blank-page states
 - Legacy Google Maps `Autocomplete` class acceptable for Phase 28 (existing key predates March 2025 cutoff); `PlaceAutocompleteElement` preferred for forward compatibility
 
+v1.5 decisions from Phase 26 Plan 01:
+- Use fetchFederalAndStateFromDB (not fetchStatewideFromDB) in no-geofence path — includes NATIONAL_LOWER and STATE_UPPER/STATE_LOWER
+- International addresses (empty State from geocoder) return 422 Unprocessable Entity
+- Nil GeoClient returns 503 Service Unavailable — no BallotReady escape hatch remains
+- ZIP delegation to handleZipLookup preserved inside SearchPoliticians until Phase 28
+
 ### Pending Todos
 
 None.
@@ -50,5 +61,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: v1.5 roadmap created — ready to plan Phase 26
+Stopped at: Completed 26-geofence-only-search/26-01-PLAN.md
 Resume file: None
