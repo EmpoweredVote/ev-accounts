@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 25 — Onboarding-to-Calibration Redirect & Topic Display Fix
-Plan: 01 (complete)
-Status: Phase 25 Plan 01 execution complete
-Last activity: 2026-02-22 — Onboarding redirect to calibration fixed; topic card display regression diagnosed and resolved
+Plan: 02 (complete) — Phase Complete
+Status: Phase 25 complete — all onboarding/calibration requirements satisfied
+Last activity: 2026-02-22 — needsCalibration extended to cover returning uncalibrated users with zero selected topics
 
-Progress: [##..................] 50% (2/4 v1.4 phases complete)
+Progress: [###.................] 75% (3/4 v1.4 phases complete)
 
 ## Performance Metrics
 
@@ -57,6 +57,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 - **Phase 24-01**: start_phrase column already dropped from DB in Phase 17 — only CLI tooling still referenced the dead field; removed from compassimport package and cmd/seed seeder
 - **Phase 24-02**: short_name field removed from admin components — no architectural decisions needed, straightforward dead code cleanup of 4 removal sites
 - **Phase 25-01**: Use ?calibrate=1 URL param (not localStorage) to signal calibration intent from Onboarding to Compass — cleared with replace:true to preserve back-button behavior; topic card "regression" was a routing dead-end, not a rendering bug
+- **Phase 25-02**: Expand needsCalibration to OR-in selectedTopics.length === 0 — covers returning uncalibrated users who bypass the URL param path; calibration_skipped/calibration_completed flags still gate re-triggering
 
 ### Pending Todos
 
@@ -73,5 +74,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 25-01-PLAN.md
+Stopped at: Completed 25-02-PLAN.md (Phase 25 complete)
 Resume file: None

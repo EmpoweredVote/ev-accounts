@@ -35,9 +35,9 @@ Requirements for compass polish, bug fixes, and tech debt cleanup. Each maps to 
 ### Onboarding & Topic Display
 
 - [x] **ONBOARD-01**: Topic/issue cards display correctly across all compass views (Library, CalibrationOverlay pick step, Quiz) — regression from recent changes fixed
-- [ ] **ONBOARD-02**: After completing onboarding (/help), user is redirected to calibration flow (not /results)
-- [ ] **ONBOARD-03**: After calibration completes (3+ topics answered), user arrives at /results with their radar chart
-- [ ] **ONBOARD-04**: Back button during calibration navigates within calibration steps only — does not exit to onboarding or Library
+- [x] **ONBOARD-02**: After completing onboarding (/help), user is redirected to calibration flow (not /results)
+- [x] **ONBOARD-03**: After calibration completes (3+ topics answered), user arrives at /results with their radar chart
+- [x] **ONBOARD-04**: Back button during calibration navigates within calibration steps only — does not exit to onboarding or Library
 
 ## Future Requirements
 
@@ -81,9 +81,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEBT-03 | Phase 24 | Complete |
 | DEBT-04 | Phase 24 | Complete |
 | ONBOARD-01 | Phase 25 | Complete |
-| ONBOARD-02 | Phase 25 | Pending |
-| ONBOARD-03 | Phase 25 | Pending |
-| ONBOARD-04 | Phase 25 | Pending |
+| ONBOARD-02 | Phase 25 | Complete |
+| ONBOARD-03 | Phase 25 | Complete |
+| ONBOARD-04 | Phase 25 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 17 total
