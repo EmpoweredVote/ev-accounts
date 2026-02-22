@@ -163,7 +163,7 @@ Plans:
   2. After completing onboarding, user enters the calibration flow — not a "need 3 more topics" dead-end
   3. After calibration (3+ topics answered), user sees their radar chart on /results
   4. Back button during calibration stays within calibration steps
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 25-01-PLAN.md -- Diagnose and fix topic card display regression

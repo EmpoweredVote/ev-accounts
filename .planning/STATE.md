@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 24: Tech Debt Cleanup
+**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 25: Onboarding-to-Calibration Redirect & Topic Display Fix
 
 ## Current Position
 
-Phase: 24 — Tech Debt Cleanup
+Phase: 25 — Onboarding-to-Calibration Redirect & Topic Display Fix
 Plan: 01 (complete)
-Status: Phase 24 Plan 01 execution complete
-Last activity: 2026-02-22 — Phase 24-01 start_phrase dead field removed from CLI import tools (compassimport package + cmd/seed seeder)
+Status: Phase 25 Plan 01 execution complete
+Last activity: 2026-02-22 — Onboarding redirect to calibration fixed; topic card display regression diagnosed and resolved
 
 Progress: [##..................] 50% (2/4 v1.4 phases complete)
 
@@ -56,6 +56,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 - **Phase 23-02**: Question-text-first hierarchy across all four compass views; tension poles removed; fallback to topic name when no question_text exists; suppress subtitle when fallback used to avoid duplicate display
 - **Phase 24-01**: start_phrase column already dropped from DB in Phase 17 — only CLI tooling still referenced the dead field; removed from compassimport package and cmd/seed seeder
 - **Phase 24-02**: short_name field removed from admin components — no architectural decisions needed, straightforward dead code cleanup of 4 removal sites
+- **Phase 25-01**: Use ?calibrate=1 URL param (not localStorage) to signal calibration intent from Onboarding to Compass — cleared with replace:true to preserve back-button behavior; topic card "regression" was a routing dead-end, not a rendering bug
 
 ### Pending Todos
 
@@ -72,5 +73,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 24-01-PLAN.md
+Stopped at: Completed 25-01-PLAN.md
 Resume file: None
