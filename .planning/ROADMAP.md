@@ -102,15 +102,18 @@ Plans:
 - [x] 26-02-PLAN.md — Frontend: address-only input, formatted address display, local empty-state message
 
 ### Phase 27: Cache-Only Candidates & Warmer Cleanup
-**Goal**: All remaining BallotReady live API call sites are replaced — candidates come from the database, warmers are stubs, and the BallotReady provider is de-registered at startup
+**Goal**: All remaining BallotReady live API call sites are replaced — candidates come from the database, warmers are fully removed, and the BallotReady provider is de-registered at startup
 **Depends on**: Phase 26
 **Requirements**: BR-03, BR-04, CAND-01
 **Success Criteria** (what must be TRUE):
   1. The candidate toggle on the Essentials dashboard shows candidates sourced from `essentials.election_records` with no live BallotReady fetch occurring
   2. A politician profile page loads candidacy data (endorsements, stances, elections) from the database without triggering a background goroutine to BallotReady
   3. The backend starts without initializing or logging any BallotReady provider connection
-  4. ZIP-based cache warmers (`warmFederal`, `warmState`, `warmLocal`) no longer fire goroutines that call BallotReady — they log "cached-data-only mode" and return
-**Plans**: TBD
+  4. ZIP-based cache warmers (`warmFederal`, `warmState`, `warmLocal`) are fully deleted — no stubs, no dead code
+**Plans**: 2 plans
+Plans:
+- [ ] 27-01-PLAN.md — DB-only candidate endpoint and warmer/cache cleanup
+- [ ] 27-02-PLAN.md — BallotReady provider deregistration and cache table removal
 
 ### Phase 28: Address Autocomplete
 **Goal**: Users enter their address using Google Maps Places autocomplete as the sole search input — the ZIP code path is removed and every search result shows the validated address
@@ -164,6 +167,6 @@ Plans:
 | 24. Tech Debt Cleanup | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 25. Onboarding-to-Calibration Redirect & Topic Display Fix | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
-| 27. Cache-Only Candidates & Warmer Cleanup | v1.5 | 0/TBD | Not started | - |
+| 27. Cache-Only Candidates & Warmer Cleanup | v1.5 | 0/2 | Not started | - |
 | 28. Address Autocomplete | v1.5 | 0/TBD | Not started | - |
 | 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |
