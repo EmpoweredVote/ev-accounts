@@ -66,7 +66,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 
 - [x] **Phase 21: Guest Flow Fix** - Fix 401 errors so guests can view and complete the compass without login — completed 2026-02-22
 - [x] **Phase 22: Radar Label Fixes** - Fix label clipping, minimum size, and word-wrap in ev-ui RadarChartCore (completed 2026-02-22)
-- [ ] **Phase 23: UX Cleanup** - Remove stale buttons, fix mobile stat cards, and elevate QuestionText prominence
+- [x] **Phase 23: UX Cleanup** - Remove stale buttons, fix mobile stat cards, and elevate QuestionText prominence (completed 2026-02-22)
 - [ ] **Phase 24: Tech Debt Cleanup** - Remove dropped-column references from EV-Backend CLI tools and vestigial admin fields
 
 ## Phase Details
@@ -105,7 +105,7 @@ Plans:
   2. The Library page has no "Clear" button — the action is removed entirely
   3. The Answered/Remaining stat cards on the Library page fill full width on a mobile screen (no partial-width or misaligned layout)
   4. QuestionText in LibraryDrawer and stance selection views is visually larger and closer to title weight — clearly more prominent than the supporting body text
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [ ] 23-01-PLAN.md -- Remove stale buttons (Edit Topics, Clear) and fix mobile stat card layout
 - [ ] 23-02-PLAN.md -- Restructure text hierarchy: question text becomes title, topic name becomes subtitle, poles removed
@@ -147,5 +147,5 @@ Plans:
 | 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |
 | 21. Guest Flow Fix | v1.4 | Complete    | 2026-02-22 | 2026-02-22 |
 | 22. Radar Label Fixes | 1/2 | Complete    | 2026-02-22 | - |
-| 23. UX Cleanup | 1/2 | In Progress|  | - |
+| 23. UX Cleanup | 2/2 | Complete   | 2026-02-22 | - |
 | 24. Tech Debt Cleanup | v1.4 | 0/? | Not started | - |

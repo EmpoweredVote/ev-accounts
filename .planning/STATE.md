@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 23 — UX Cleanup
-Plan: 01 (complete)
-Status: Phase 23 Plan 01 execution complete
-Last activity: 2026-02-22 — Phase 23-01 button cleanup and mobile stat card fix
+Plan: 02 (complete)
+Status: Phase 23 Plan 02 execution complete
+Last activity: 2026-02-22 — Phase 23-02 text hierarchy restructure, tension poles removed
 
 Progress: [##..................] 50% (2/4 v1.4 phases complete)
 
@@ -45,6 +45,7 @@ All v1.2 decisions resolved — see `.planning/milestones/v1.2-ROADMAP.md` for f
 All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for full history.
 - [Phase 23-ux-cleanup]: Remove Edit Topics button entirely — AddTopicModal is dead UI redundant with Library page topic management
 - [Phase 23-ux-cleanup]: Remove Clear button — clearSelections restored to compassTopicsRef snapshot with unclear semantics
+- [Phase 23-ux-cleanup]: Phase 23-02: Question-text-first hierarchy across LibraryDrawer, Quiz, Library, and CalibrationOverlay — tension poles removed entirely
 
 ### Key Decisions (v1.4)
 
@@ -52,6 +53,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 - **Phase 22-01**: Estimate label widths using charCount * fontSize * 0.6 ratio (no DOM measurement); classify label sides via sin(angle) > 0.1 threshold; padding prop retained as vertical-only
 - **Phase 22-02**: Uniform font sizing instead of adaptive (varying sizes looked inconsistent); default labelFontSize 18px; max-w-2xl on desktop chart container; dynamic padding capped at 2x base
 - **Phase 23-01**: Remove Edit Topics button entirely — AddTopicModal is dead UI redundant with Library page; Remove Clear button — clearSelections unclear semantics; Add w-full to stat card containers and parents for mobile width
+- **Phase 23-02**: Question-text-first hierarchy across all four compass views; tension poles removed; fallback to topic name when no question_text exists; suppress subtitle when fallback used to avoid duplicate display
 
 ### Pending Todos
 
@@ -64,5 +66,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 23-01-PLAN.md
+Stopped at: Completed 23-02-PLAN.md
 Resume file: None
