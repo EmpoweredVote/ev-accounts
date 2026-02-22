@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.4 Compass Polish & Tech Debt — defining requirements
+**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 21: Guest Flow Fix
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-02-22 — Milestone v1.4 started
+Phase: 21 — Guest Flow Fix
+Plan: TBD
+Status: Roadmap created, ready for planning
+Last activity: 2026-02-22 — v1.4 roadmap created (4 phases, 13 requirements)
 
-Progress: [████████████████████] 100% (20/20 phases complete across all milestones)
+Progress: [....................] 0% (0/4 v1.4 phases complete)
 
 ## Performance Metrics
 
@@ -55,5 +55,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: v1.3 milestone archived — ready for next milestone
+Stopped at: v1.4 roadmap created — Phase 21 ready for planning
 Resume file: None

@@ -60,25 +60,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GUEST-01 | — | Pending |
-| GUEST-02 | — | Pending |
-| LABEL-01 | — | Pending |
-| LABEL-02 | — | Pending |
-| LABEL-03 | — | Pending |
-| UX-01 | — | Pending |
-| UX-02 | — | Pending |
-| UX-03 | — | Pending |
-| UX-04 | — | Pending |
-| DEBT-01 | — | Pending |
-| DEBT-02 | — | Pending |
-| DEBT-03 | — | Pending |
-| DEBT-04 | — | Pending |
+| GUEST-01 | Phase 21 | Pending |
+| GUEST-02 | Phase 21 | Pending |
+| LABEL-01 | Phase 22 | Pending |
+| LABEL-02 | Phase 22 | Pending |
+| LABEL-03 | Phase 22 | Pending |
+| UX-01 | Phase 23 | Pending |
+| UX-02 | Phase 23 | Pending |
+| UX-03 | Phase 23 | Pending |
+| UX-04 | Phase 23 | Pending |
+| DEBT-01 | Phase 24 | Pending |
+| DEBT-02 | Phase 24 | Pending |
+| DEBT-03 | Phase 24 | Pending |
+| DEBT-04 | Phase 24 | Pending |
 
 **Coverage:**
 - v1.4 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13 ⚠️
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-22*
-*Last updated: 2026-02-22 after initial definition*
+*Last updated: 2026-02-22 after v1.4 roadmap created*

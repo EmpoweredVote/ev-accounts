@@ -6,6 +6,7 @@
 - ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
 - ✅ **v1.2 Compass Onboarding & UX** — Phases 11-16 (shipped 2026-02-20)
 - ✅ **v1.3 Compass Bug Fixes & Title Standardization** — Phases 17-20 (shipped 2026-02-21)
+- 🔄 **v1.4 Compass Polish & Tech Debt** — Phases 21-24 (in progress)
 
 ## Phases
 
@@ -61,6 +62,58 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 
 </details>
 
+### v1.4 Compass Polish & Tech Debt
+
+- [ ] **Phase 21: Guest Flow Fix** - Fix 401 errors so guests can view and complete the compass without login
+- [ ] **Phase 22: Radar Label Fixes** - Fix label clipping, minimum size, and word-wrap in ev-ui RadarChartCore
+- [ ] **Phase 23: UX Cleanup** - Remove stale buttons, fix mobile stat cards, and elevate QuestionText prominence
+- [ ] **Phase 24: Tech Debt Cleanup** - Remove dropped-column references from EV-Backend CLI tools and vestigial admin fields
+
+## Phase Details
+
+### Phase 21: Guest Flow Fix
+**Goal**: Guest users can view the full compass and complete the quiz without hitting authentication errors
+**Depends on**: Nothing
+**Requirements**: GUEST-01, GUEST-02
+**Success Criteria** (what must be TRUE):
+  1. A guest user clicking "View Full Compass" sees the full radar chart rendered from their localStorage answers — no 401 error, no blank screen
+  2. A guest user who finishes the quiz is routed to a working compass/completion page — no blank screen or console errors
+  3. BuildCompass.jsx skips the `/compass/answers` fetch (or handles 401 gracefully) when no session exists
+**Plans**: TBD
+
+### Phase 22: Radar Label Fixes
+**Goal**: Radar chart labels are fully visible and readable at all positions in ev-ui RadarChartCore
+**Depends on**: Nothing (ev-ui change, independent of Phase 21)
+**Requirements**: LABEL-01, LABEL-02, LABEL-03
+**Success Criteria** (what must be TRUE):
+  1. Labels on the far left and far right edges of the radar chart are not clipped — no text cut off by the SVG or container boundary
+  2. Short single-word labels (e.g., "Misinformation", "Immigration") render at a readable minimum font size — not shrunk below legibility
+  3. Multi-word labels that wrap (e.g., "AI Regulation") display all words — no lines truncated or missing
+  4. ev-ui is published at a new patch version and CompassV2 is updated to consume it
+**Plans**: TBD
+
+### Phase 23: UX Cleanup
+**Goal**: Compass and Library pages are free of stale controls, display correctly on mobile, and give QuestionText appropriate visual weight
+**Depends on**: Nothing (independent CompassV2 changes)
+**Requirements**: UX-01, UX-02, UX-03, UX-04
+**Success Criteria** (what must be TRUE):
+  1. The compass page has no "Edit Topics" button — users navigate to Library to edit topics
+  2. The Library page has no "Clear" button — the action is removed entirely
+  3. The Answered/Remaining stat cards on the Library page fill full width on a mobile screen (no partial-width or misaligned layout)
+  4. QuestionText in LibraryDrawer and stance selection views is visually larger and closer to title weight — clearly more prominent than the supporting body text
+**Plans**: TBD
+
+### Phase 24: Tech Debt Cleanup
+**Goal**: EV-Backend CLI tools and CompassV2 admin components no longer reference dropped columns
+**Depends on**: Nothing (independent cleanup tasks)
+**Requirements**: DEBT-01, DEBT-02, DEBT-03, DEBT-04
+**Success Criteria** (what must be TRUE):
+  1. compassimport/models.go compiles without any StartPhrase field or start_phrase column reference
+  2. cmd/seed/compass_csv_seeder.go compiles without any StartPhrase or start_phrase reference
+  3. Admin TopicEditor PATCH request body contains no short_name field
+  4. Admin TopicAccordion state initialization contains no editedFields.short_name entry
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -85,3 +138,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 | 18. Title Display (Frontend) | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 19. Calibration Flow Fixes | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |
+| 21. Guest Flow Fix | v1.4 | 0/? | Not started | - |
+| 22. Radar Label Fixes | v1.4 | 0/? | Not started | - |
+| 23. UX Cleanup | v1.4 | 0/? | Not started | - |
+| 24. Tech Debt Cleanup | v1.4 | 0/? | Not started | - |
