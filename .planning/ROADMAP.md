@@ -167,6 +167,6 @@ Plans:
 | 24. Tech Debt Cleanup | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 25. Onboarding-to-Calibration Redirect & Topic Display Fix | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
-| 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete   | 2026-02-22 | - |
+| 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
 | 28. Address Autocomplete | v1.5 | 0/TBD | Not started | - |
 | 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |
