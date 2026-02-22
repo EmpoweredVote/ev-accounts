@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 24 — Tech Debt Cleanup
-Plan: 02 (complete)
-Status: Phase 24 Plan 02 execution complete
-Last activity: 2026-02-22 — Phase 24-02 vestigial short_name field removed from CompassV2 admin components
+Plan: 01 (complete)
+Status: Phase 24 Plan 01 execution complete
+Last activity: 2026-02-22 — Phase 24-01 start_phrase dead field removed from CLI import tools (compassimport package + cmd/seed seeder)
 
 Progress: [##..................] 50% (2/4 v1.4 phases complete)
 
@@ -54,6 +54,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 - **Phase 22-02**: Uniform font sizing instead of adaptive (varying sizes looked inconsistent); default labelFontSize 18px; max-w-2xl on desktop chart container; dynamic padding capped at 2x base
 - **Phase 23-01**: Remove Edit Topics button entirely — AddTopicModal is dead UI redundant with Library page; Remove Clear button — clearSelections unclear semantics; Add w-full to stat card containers and parents for mobile width
 - **Phase 23-02**: Question-text-first hierarchy across all four compass views; tension poles removed; fallback to topic name when no question_text exists; suppress subtitle when fallback used to avoid duplicate display
+- **Phase 24-01**: start_phrase column already dropped from DB in Phase 17 — only CLI tooling still referenced the dead field; removed from compassimport package and cmd/seed seeder
 - **Phase 24-02**: short_name field removed from admin components — no architectural decisions needed, straightforward dead code cleanup of 4 removal sites
 
 ### Pending Todos
@@ -67,5 +68,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 24-02-PLAN.md
+Stopped at: Completed 24-01-PLAN.md
 Resume file: None
