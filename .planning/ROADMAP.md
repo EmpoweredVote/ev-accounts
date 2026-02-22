@@ -91,7 +91,10 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
   2. Short single-word labels (e.g., "Misinformation", "Immigration") render at a readable minimum font size — not shrunk below legibility
   3. Multi-word labels that wrap (e.g., "AI Regulation") display all words — no lines truncated or missing
   4. ev-ui is published at a new patch version and CompassV2 is updated to consume it
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 22-01-PLAN.md -- Fix label rendering: wrapLabel, font sizing, dynamic horizontal padding
+- [ ] 22-02-PLAN.md -- Publish ev-ui 0.1.22, update CompassV2, visual verification
 
 ### Phase 23: UX Cleanup
 **Goal**: Compass and Library pages are free of stale controls, display correctly on mobile, and give QuestionText appropriate visual weight
@@ -140,6 +143,6 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 | 19. Calibration Flow Fixes | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |
 | 21. Guest Flow Fix | v1.4 | Complete    | 2026-02-22 | 2026-02-22 |
-| 22. Radar Label Fixes | v1.4 | 0/? | Not started | - |
+| 22. Radar Label Fixes | v1.4 | 0/2 | Not started | - |
 | 23. UX Cleanup | v1.4 | 0/? | Not started | - |
 | 24. Tech Debt Cleanup | v1.4 | 0/? | Not started | - |
