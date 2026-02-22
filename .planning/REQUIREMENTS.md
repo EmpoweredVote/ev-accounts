@@ -9,8 +9,8 @@ Requirements for compass polish, bug fixes, and tech debt cleanup. Each maps to 
 
 ### Guest Flow
 
-- [ ] **GUEST-01**: Guest user clicking "View Full Compass" sees the full radar chart using localStorage answers (no 401 error)
-- [ ] **GUEST-02**: Guest user completing the full quiz is routed to a working completion/compass page (no blank screen)
+- [x] **GUEST-01**: Guest user clicking "View Full Compass" sees the full radar chart using localStorage answers (no 401 error)
+- [x] **GUEST-02**: Guest user completing the full quiz is routed to a working completion/compass page (no blank screen)
 
 ### Radar Chart Labels
 
@@ -60,8 +60,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GUEST-01 | Phase 21 | Pending |
-| GUEST-02 | Phase 21 | Pending |
+| GUEST-01 | Phase 21 | Complete |
+| GUEST-02 | Phase 21 | Complete |
 | LABEL-01 | Phase 22 | Pending |
 | LABEL-02 | Phase 22 | Pending |
 | LABEL-03 | Phase 22 | Pending |
@@ -81,4 +81,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-02-22*
-*Last updated: 2026-02-22 after v1.4 roadmap created*
+*Last updated: 2026-02-22 after Phase 21 guest flow fix — GUEST-01, GUEST-02 complete*
