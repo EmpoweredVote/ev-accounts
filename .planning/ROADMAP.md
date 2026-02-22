@@ -125,7 +125,10 @@ Plans:
   3. After selecting an address, the results page displays the confirmed formatted address (e.g., "Showing results for Bloomington, IN") so users know what was searched
   4. When an address is outside geofence coverage, a visible message explains that local representative data is not yet available for their area
   5. If the Google Maps API fails to load, the autocomplete degrades to a plain text input that still submits to the backend
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 28-01-PLAN.md — Hook extension (loadError) + Landing page address-only refactor with selection validation and degraded mode
+- [ ] 28-02-PLAN.md — Results page layout restructure: full-width address bar, local sidebar, loading skeletons, formatted address display, no-geofence message
 
 ### Phase 29: Validation, Polish & Key Removal
 **Goal**: All BallotReady references are confirmed gone via grep audit, the API key is decommissioned from all environments, and Google Maps billing monitoring is in place
@@ -168,5 +171,5 @@ Plans:
 | 25. Onboarding-to-Calibration Redirect & Topic Display Fix | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
 | 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
-| 28. Address Autocomplete | v1.5 | 0/TBD | Not started | - |
+| 28. Address Autocomplete | v1.5 | 0/2 | Not started | - |
 | 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |
