@@ -61,6 +61,10 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 
 None.
 
+### Roadmap Evolution
+
+- Phase 25 added: Onboarding-to-Calibration Redirect & Topic Display Fix
+
 ### Blockers/Concerns
 
 None.
