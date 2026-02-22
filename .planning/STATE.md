@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 26 of 29 (Geofence-Only Search)
-Plan: 1 of 1 complete
-Status: Phase 26 Plan 01 complete
-Last activity: 2026-02-22 — Phase 26 Plan 01 executed: geofence-only address search, no-geofence fallback
+Plan: 2 of 2 complete
+Status: Phase 26 Plan 02 complete
+Last activity: 2026-02-22 — Phase 26 Plan 02 executed: frontend address input, formatted address display, local empty-state
 
-Progress: [██░░░░░░░░] 25% (v1.5)
+Progress: [███░░░░░░░] 37% (v1.5)
 
 ## Performance Metrics
 
@@ -28,6 +28,7 @@ Progress: [██░░░░░░░░] 25% (v1.5)
 | Phase | Plan | Duration | Tasks | Files |
 |-------|------|----------|-------|-------|
 | 26-geofence-only-search | 01 | 3min | 2 | 3 |
+| 26-geofence-only-search | 02 | 1min | 2 | 3 |
 
 ## Accumulated Context
 
@@ -48,6 +49,11 @@ v1.5 decisions from Phase 26 Plan 01:
 - Nil GeoClient returns 503 Service Unavailable — no BallotReady escape hatch remains
 - ZIP delegation to handleZipLookup preserved inside SearchPoliticians until Phase 28
 
+v1.5 decisions from Phase 26 Plan 02:
+- All searches route through ?q= parameter from UI — backend isZip5 check still handles ZIP strings server-side
+- formattedAddress only populated in address search branch (not ZIP branch) — correct behavior, ZIP branch has no X-Formatted-Address header
+- Local empty-state condition includes activeQuery guard so message never appears on initial Dashboard load
+
 ### Pending Todos
 
 None.
@@ -61,5 +67,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 26-geofence-only-search/26-01-PLAN.md
+Stopped at: Completed 26-geofence-only-search/26-02-PLAN.md
 Resume file: None

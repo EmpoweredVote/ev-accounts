@@ -80,7 +80,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 **Milestone Goal:** Replace BallotReady API dependency with Google Maps address validation and PostGIS geofence-only politician matching, making the platform self-sufficient with cached data.
 
-- [ ] **Phase 26: Geofence-Only Search** - Remove BallotReady fallback from address search; return federal/state from cache when local geofence is empty
+- [x] **Phase 26: Geofence-Only Search** - Remove BallotReady fallback from address search; return federal/state from cache when local geofence is empty
 - [ ] **Phase 27: Cache-Only Candidates & Warmer Cleanup** - Replace live candidate fetch with DB query; stub warmers; de-register BallotReady provider
 - [ ] **Phase 28: Address Autocomplete** - Google Maps Places autocomplete replaces plain text input; remove ZIP path; show confirmed address and no-coverage message
 - [ ] **Phase 29: Validation, Polish & Key Removal** - Grep audit confirms zero BallotReady call sites; remove API key; configure Google Maps billing alert
@@ -98,8 +98,8 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
   4. The search response never returns a completely empty politician list for a valid US address
 **Plans**: 2 plans
 Plans:
-- [ ] 26-01-PLAN.md — Backend: remove BallotReady fallback, implement geofence-only search with federal/state cache fallback
-- [ ] 26-02-PLAN.md — Frontend: address-only input, formatted address display, local empty-state message
+- [x] 26-01-PLAN.md — Backend: remove BallotReady fallback, implement geofence-only search with federal/state cache fallback
+- [x] 26-02-PLAN.md — Frontend: address-only input, formatted address display, local empty-state message
 
 ### Phase 27: Cache-Only Candidates & Warmer Cleanup
 **Goal**: All remaining BallotReady live API call sites are replaced — candidates come from the database, warmers are stubs, and the BallotReady provider is de-registered at startup
