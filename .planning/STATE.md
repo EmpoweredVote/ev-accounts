@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 27 of 29 (Cache-Only Candidates & Warmer Cleanup)
-Plan: 1 of 2 complete
-Status: Phase 27 Plan 01 complete
-Last activity: 2026-02-22 — Phase 27 Plan 01 executed: DB-only GetCandidatesByZip, deleted all warmers and cache status endpoint, removed lock infrastructure
+Plan: 2 of 2 complete
+Status: Phase 27 complete
+Last activity: 2026-02-22 — Phase 27 Plan 02 executed: removed BallotReady provider from startup, deleted cache table GORM models, added DROP TABLE statements for federal_cache/state_caches/zip_caches
 
 Progress: [████░░░░░░] 40% (v1.5)
 
@@ -30,6 +30,7 @@ Progress: [████░░░░░░] 40% (v1.5)
 | 26-geofence-only-search | 01 | 3min | 2 | 3 |
 | 26-geofence-only-search | 02 | 1min | 2 | 3 |
 | 27-cache-only-candidates-warmer-cleanup | 01 | 7min | 2 | 5 |
+| 27-cache-only-candidates-warmer-cleanup | 02 | 5min | 2 | 2 |
 
 ## Accumulated Context
 
@@ -61,6 +62,11 @@ v1.5 decisions from Phase 27 Plan 01:
 - ensureCandidacyData removed entirely (no stub): profile pages read from DB only
 - FederalCache/StateCache/ZipCache GORM models kept in this plan — table drops deferred to Plan 02 (remove all reads before dropping tables)
 
+v1.5 decisions from Phase 27 Plan 02:
+- cicero blank import kept in setup.go — handlers.go still directly references cicero types/functions; Phase 29 will audit remaining cicero dependencies
+- external_global_id kept in upsert map (data-ingestion path) — not the GetPoliticianByID query ref that was removed in Plan 01
+- DROP TABLE IF EXISTS added to Init() before AutoMigrate — idempotent, safe to run on every server start
+
 ### Pending Todos
 
 None.
@@ -73,5 +79,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 27-cache-only-candidates-warmer-cleanup/27-01-PLAN.md
+Stopped at: Completed 27-cache-only-candidates-warmer-cleanup/27-02-PLAN.md
 Resume file: None

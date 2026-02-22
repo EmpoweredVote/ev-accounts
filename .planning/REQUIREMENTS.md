@@ -12,7 +12,7 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 - [x] **BR-01**: Address search uses geofence-only matching (no BallotReady fallback)
 - [x] **BR-02**: User sees federal and state officials from cache when local geofence data is unavailable for their address
 - [x] **BR-03**: Background cache warmers (warmFederal, warmState, warmLocal) no longer call BallotReady API
-- [ ] **BR-04**: BallotReady provider is de-registered from setup (no initialization at startup)
+- [x] **BR-04**: BallotReady provider is de-registered from setup (no initialization at startup)
 
 ### Candidates
 
@@ -64,7 +64,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BR-01 | Phase 26 | Complete |
 | BR-02 | Phase 26 | Complete |
 | BR-03 | Phase 27 | Complete |
-| BR-04 | Phase 27 | Pending |
+| BR-04 | Phase 27 | Complete |
 | CAND-01 | Phase 27 | Complete |
 | ADDR-01 | Phase 28 | Pending |
 | ADDR-02 | Phase 28 | Pending |
