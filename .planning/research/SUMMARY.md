@@ -1,195 +1,228 @@
 # Project Research Summary
 
-**Project:** Empowered Vote — Quality & Consolidation Milestone
-**Domain:** Civic engagement platform (multi-app, guest-first quiz + politician discovery)
-**Researched:** 2026-02-17
+**Project:** v1.5 — Address Verification & BallotReady Independence
+**Domain:** Civic tech — address-based politician lookup with geofence district matching
+**Researched:** 2026-02-22
 **Confidence:** HIGH
 
 ## Executive Summary
 
-Empowered Vote is a brownfield civic engagement platform with a working Go + React stack. This milestone is not greenfield — it is six targeted improvements to an existing, deployed product: guest-first quiz access, compass topic prompts, stance randomization, candidate display, building imagery, and project consolidation. All four research dimensions agree on a central finding: none of these improvements require new runtime dependencies or architectural pivots. The existing stack (Go/Chi/GORM, React 19/Vite/Tailwind, Supabase PostgreSQL) handles every requirement, and the right moves are additive data model changes, localStorage-first state patterns, and an incremental monorepo migration.
+This milestone is a focused infrastructure cleanup, not a new product build. The core technical infrastructure is already in place: Google Maps geocoding is wired (`geocoding/google.go`), PostGIS geofence matching works (`geofence_lookup.go`), and the address search endpoint exists (`SearchPoliticians`). The primary work is removing two layers of technical debt — the BallotReady API dependency that sits as a fallback beneath the working geofence flow, and the legacy Google Maps Autocomplete class that needs a forward-compatible replacement. No new Go packages and no new npm packages are required.
 
-The recommended approach is sequenced by dependency, not by feature complexity. The cookie domain fix and route audit must ship first — before any guest auth work — because existing sessions can be silently broken if cookie config changes alongside the auth model. Once that blocker is resolved, the guest-first auth flow unlocks stance randomization (both share the same guest identity/seed pattern), while topic question fields and candidate display can proceed in parallel on the backend. Building images are a low-risk late-milestone item. Consolidation to npm workspaces is a developer experience improvement, not a user-facing feature, and should be the first structural change so parallel dev streams benefit from the reduced ev-ui publish friction.
+The recommended approach is surgical removal in a backend-first, track-parallel build order. Backend work (removing BallotReady fallbacks, replacing live candidate fetch with a cached DB query) is entirely independent of frontend work (migrating from the legacy `Autocomplete` class to `PlaceAutocompleteElement`). Both tracks can proceed simultaneously. The most important architectural decision is what happens when local geofence data is absent for an address — users must still see federal and state officials from cache rather than an empty page, and the response must include a clear explanation of why local data is unavailable.
 
-The primary risk cluster is data integrity during the auth model transition and candidate data handling. Guest state must be explicitly synced on registration (not silently dropped), candidate records must be visually and data-model separated from incumbent records, and any schema changes on live tables must use explicit SQL migrations with backfills rather than relying on GORM AutoMigrate alone. For a 2-3 person team on a nonprofit civic platform, sequencing is the discipline: finishing shared dependencies (auth layer, data model) before dependent features begin is more important than parallelizing everything.
+The key risk is incomplete BallotReady removal. The client is called from at least four distinct locations in `handlers.go`, and any missed call site will silently fire API requests after the key is revoked, producing empty results with no error. Treat removal as an explicit migration checklist with a `grep` verification step, not a casual refactor. Secondary risk is Google Maps billing: session tokens must be correctly scoped to one per search session or autocomplete costs can spike 3-10x. Both risks are well-understood and preventable with discipline.
 
 ## Key Findings
 
 ### Recommended Stack
 
-No new runtime dependencies are required for any of the six improvement areas. The existing Go 1.24.3/Chi/GORM backend, React 19/Vite/Tailwind CSS 4 frontends, and Supabase PostgreSQL handle all requirements. Supabase Storage (already the database provider) handles building images at $0 marginal cost via public bucket URLs. For project structure, npm workspaces at the repo root eliminates the ev-ui publish cycle without adding new tooling. Turborepo, Auth0, Clerk, React Query, and TypeScript migration are all explicitly out of scope for this milestone — each introduces overhead disproportionate to a 2-3 person team.
+No new dependencies are introduced in v1.5. The existing stack handles everything: Go 1.24.3 + Chi + GORM on the backend, React 19 + Vite 7 + Tailwind CSS 4 on the frontend. The only stack change is deprecating BallotReady as a data provider and stopping its initialization in `setup.go`.
 
-**Core technologies (unchanged):**
-- Go + Chi + GORM: API backend — no changes; all new features are additive endpoints and schema columns
-- React 19 + Vite + Tailwind CSS 4: frontend — no version upgrades needed mid-milestone
-- Supabase PostgreSQL: database — AutoMigrate for dev convenience, explicit SQL migrations for live-table changes
-- Supabase Storage: building images — public bucket, direct `<img src>` with no SDK required
-- npm workspaces: project consolidation — local ev-ui symlink replaces publish cycle, medium confidence
+**Core technologies:**
+- `@googlemaps/js-api-loader` v2.0.2: Google Places Autocomplete — already installed in `essentials/package.json`; supports `PlaceAutocompleteElement` via `importLibrary('places')`; no upgrade needed
+- `geocoding/google.go` custom client: backend geocoding via Google Maps REST API — 135-line implementation; zero new Go dependencies; one-line change to remove the ZIP-required check for the geofence-only flow
+- PostGIS `ST_Contains` + GiST index: geofence district matching — already implemented and indexed in `geofence_lookup.go`; no changes needed
+- `essentials.election_records` table: cached candidate data — populated by previous BallotReady imports (Phase B); queried by new `fetchCandidatesFromDB()` function to replace the live BallotReady call
 
-**Critical version note:** Vite version skew exists (CompassV2 on 6.x, essentials on 7.x). Do not attempt to reconcile during this milestone; it creates unnecessary risk.
+**Version notes:**
+- `PlaceAutocompleteElement` requires `@googlemaps/js-api-loader` v2.x (already installed at `^2.0.2`)
+- Legacy `google.maps.places.Autocomplete` class is closed to new API keys as of March 2025 but still works for the existing EV key — migration to `PlaceAutocompleteElement` is a forward-compatibility upgrade, not an emergency fix
+- The official Go Maps SDK (`googlemaps.github.io/maps` v1.7.0, last released December 2023) is not worth adding — the custom geocoding client already covers all required fields with 135 lines
 
 ### Expected Features
 
-Research across iSideWith, Vote Compass, Ballotpedia, Center for Civic Design, and Guides.vote identifies clear table-stakes patterns that EV is missing and differentiators worth building now vs. deferring.
+**Must have (table stakes — P1 for v1.5):**
+- Address autocomplete as the only primary search input — remove ZIP-specific routing from `Results.jsx`; label the field "Your address"
+- Confirmed address display after selection — show Google's `formatted_address` as a results sub-header to build trust that the system understood the input
+- Geofence-based politician matching with no BallotReady fallback — the primary flow already works; removal of the fallback block is the deliverable
+- Federal/state officials from cache when local geofence returns 0 results — use `geoResult.State` to derive state and serve from cache; prevents blank pages for addresses outside covered geofence areas
+- "No local coverage" user message — explicit frontend branch distinguishing "no local data" from "no officials at all"
+- Cached-only candidate display — new `fetchCandidatesFromDB()` SQL query replaces the live `brProvider.Client().FetchRacesByZip()` call; filters `election_date >= today`
+- BallotReady API key removed from required env vars — `BALLOTREADY_API_KEY` becomes unused after all live call sites are replaced
 
-**Must have (table stakes):**
-- Guest quiz without login — all high-traffic political quiz platforms (iSideWith, Vote Compass, Pew Typology) run without auth gates; this is the primary conversion driver
-- localStorage answer persistence for returning guests — users expect their answers to survive tab close
-- Post-completion save prompt, not pre-quiz login gate — the login wall before quiz results is the primary conversion killer
-- Permanent per-user stance ordering — re-randomizing on each visit confuses returning users; the order must be stable once set
-- Clear visual distinction between candidates and officeholders — mixing them in one undifferentiated list is a misinformation risk on a civic platform
-- Opt-in candidate toggle (default: officials only) — candidates are noisier data; users' primary need is "who represents me now"
-- Three-tier government navigation (Federal/State/Local) with correct priority ordering — standard across all voter guide platforms
+**Should have (P2 — v1.5.x polish pass):**
+- "Showing results for [City, State]" sub-header — orientation/trust signal; city + state already available in the geocoding response
+- Coverage indicator badge (geofence-matched vs. cache-only) — wire to existing `X-Data-Status` response header; frontend-only change
+- Candidate data freshness date ("as of [date]") — show import timestamp alongside the candidate toggle
 
-**Should have (competitive differentiators):**
-- Seamless guest-to-account merge (localStorage state promoted to server on registration)
-- Question/prompt field above each stance issue (gives context when stances arrive in non-default order)
-- Building/landmark imagery per government tier (U.S. Capitol, state capitols, actual local city halls)
-- Election date shown on candidate cards
-- Federal category ordering: President/VP → Senate → House → Cabinet/Agencies (currently reversed)
-
-**Defer to v2+:**
-- Issue-level importance weighting (iSideWith does this; significant complexity, skip for now)
-- Shareable result links encoding quiz seed in URL
-- Issue level indicators on compass topics (requires `level` enum on Topic model + admin UI — additive but not blocking)
-- Full unified SPA (separate apps remain separate for this milestone)
-- Supabase politician image proxy (only if BallotReady CDN URLs prove unstable)
+**Defer (v2+):**
+- Full `PlaceAutocompleteElement` migration (new Google web component) — existing customers unaffected; migrate when forced by deprecation
+- Address Validation API (Google) — separate billing SKU, session complexity; autocomplete self-validates via suggestion selection
+- Wider geofence coverage (more TIGER shapefiles) — data import / ops work; currently covers Monroe County IN + LA County CA only
+- Geocoding result caching table (`geocoded_addresses`) — optimization worth adding only at 500+ DAU
 
 ### Architecture Approach
 
-The target architecture is additive: new fields on existing models, new endpoints alongside existing ones, and localStorage as the primary persistence layer for guest state. No existing interfaces change meaning — all new fields use `omitempty` for backward compatibility and backend deploys precede frontend deploys. The guest auth flow uses a well-established pattern (localStorage state included as `guest_state` in the register/login request body, cleared on success) with server-wins merge strategy when a returning user already has server-side answers.
+The architecture follows two independent parallel tracks that converge at deployment. Track A (backend) touches `handlers.go` in five targeted locations and `setup.go` in one location. Track B (frontend) creates one new component (`AddressSearch.jsx`) and one utility (`loadMapsApi.js`), then swaps the `<input>` in `Dashboard.jsx` and `Landing.jsx`. No new API routes are needed. No schema changes are required. No new environment variables are added beyond what already exists.
 
 **Major components:**
-1. **CompassContext (React)** — Always persists answers/topics/inversions/seed to localStorage regardless of auth state; syncs to server only when authenticated
-2. **EV-Backend /auth handlers** — Accept optional `guest_state` body on register/login; write guest answers in a single transaction; return `stance_seed` on `/auth/me`
-3. **EV-Backend /compass/topics** — Extended with nullable `question TEXT` column; `omitempty` in DTO; no regression for existing consumers
-4. **EV-Backend /essentials/candidates/{zip}** — New endpoint querying `election_records JOIN politicians` for upcoming elections; returns `CandidateOut` DTO with race context
-5. **essentials Dashboard (React)** — Officials/Candidates toggle; visual differentiation via badge/label on candidate cards
-6. **npm workspace root** — Symlinks `packages/ev-ui` so consuming apps get changes without publish cycle
+1. `SearchPoliticians()` in `handlers.go` — Remove the BallotReady fallback block (~lines 2916-3035); extend the zero-geofence-results path to call `fetchStatewideFromDB(geoResult.State)`; set `X-Data-Status: no-geofence-data` header
+2. `GetCandidatesByZip()` in `handlers.go` — Replace live BallotReady call with `fetchCandidatesFromDB(ctx, zip)` querying `essentials.election_records` filtered to upcoming elections
+3. `ensureCandidacyData()` in `handlers.go` — Remove the lazy-fetch goroutine; serve profile from whatever candidacy data is already in DB
+4. `warmFederal/warmState/warmLocal()` in `handlers.go` — Stub function bodies with log message; remove goroutine-kick from `handleZipLookup` and `GetCacheStatus`; keep cache timestamp infrastructure
+5. `setup.go` — Remove `_ ballotready` import side-effect; comment out `Provider` init; log "cached-data-only mode"
+6. `AddressSearch.jsx` (new) — `PlaceAutocompleteElement` wrapper (or legacy `Autocomplete` as interim); `onSelect(formattedAddress)` callback; US-only address restriction; graceful degrade to plain `<input>` if Maps API fails to load
+7. `loadMapsApi.js` (new) — Dynamic script injection using `import.meta.env.VITE_GOOGLE_MAPS_API_KEY`; avoids Vite env-var limitation in raw HTML files; resolves a Promise when the API is ready
 
 **Key patterns:**
-- Backend deploys first (new nullable fields), frontend deploys second (reads new field with fallback)
-- Guest identity: localStorage UUID (`ev_stance_seed`, `ev_guest_answers`) synced to `app_auth.users.stance_seed` on registration
-- Candidate data: separate query path from officeholder data; never upsert candidate records over incumbent records
+- Frontend sends `formattedAddress` string to existing `POST /politicians/search` endpoint (Option A); backend geocodes again — acceptable at nonprofit traffic scale, avoids a new endpoint
+- Warmer functions become no-ops; cache tables remain as the read path; data is populated by admin import, not background warmers
+- `ballotready/` package directory is kept in the codebase (not deleted) to preserve historical reference and avoid breaking admin import pipeline
 
 ### Critical Pitfalls
 
-1. **Cookie domain must be fixed before any auth model changes** — The `.empowered.vote` cookie domain is currently omitted for cross-domain dev (noted in CLAUDE.md). If cookie config changes simultaneously with the guest auth rollout, existing logged-in users can be silently logged out. Fix the cookie domain in a standalone deploy first, verify session continuity across browsers, then begin guest auth work.
+1. **BallotReady dead code executes silently after cutover** — The client is called from at least 4 locations in `handlers.go`. Any missed call site fires API requests after the key is revoked, producing empty results silently. Prevention: create an explicit checklist of every call site; verify removal with `grep -r "ballotReadyClient\|FetchRacesByZip\|FetchCandidacy\|BALLOTREADY" EV-Backend/`; delete the BallotReady client struct last, after all consumers are confirmed removed.
 
-2. **Guest state merge must be explicit, not assumed** — The most common failure in guest-to-auth flows is that merge never actually happens: the backend creates a new session, the frontend reads localStorage, but no sync POST is made. Design the `guest_state` payload in the register/login request body from day one and test the merge path explicitly. The "server wins" merge strategy (server answers take precedence over local answers for returning users) prevents data clobbering.
+2. **Autocomplete session billing spikes 3-10x from abandoned sessions** — If the `AutocompleteSessionToken` is regenerated on each keystroke instead of once per search session, Google bills per request rather than per session. Prevention: use `useMemo([], ...)` for the session token (one token per component mount, not per query); add 300ms debounce; verify in Cloud Console that "Autocomplete - Per Session" SKU appears, not "Autocomplete - Per Request" SKU.
 
-3. **Candidate data must not overwrite incumbent data** — BallotReady returns both officeholders and candidates. If the upsert logic uses `external_id` as the conflict key without a type discriminator, a candidate record can clobber the sitting politician's office title, district, or contact data. Treat candidates as a separate data entity with their own record type or discriminator; candidacy data enriches but does not replace officeholder data.
+3. **TIGER coverage gaps produce blank pages rather than partial results** — Outside the two currently imported geofence areas (Monroe County IN + LA County CA), every address returns zero local geofence matches. Without explicit handling, users see an empty list with no explanation. Prevention: implement the federal/state fallback path in the same phase as BallotReady removal — never ship a search path that can return a blank page.
 
-4. **Schema changes on live tables need explicit SQL migrations, not AutoMigrate alone** — GORM AutoMigrate adds columns but does not backfill existing rows. Adding `question TEXT` or `stance_seed TEXT` via AutoMigrate leaves existing rows with NULL; if the frontend or Go struct assumes the field is always present, API responses break for old records. Use AutoMigrate for dev convenience, write explicit migration scripts for production, and mark new fields as `omitempty` in JSON until all rows are backfilled.
+4. **`ST_Within` vs `ST_Covers` boundary semantics** — Street addresses geocoded to district boundary lines return false for `ST_Within`, producing zero districts for valid addresses. Prevention: use `ST_Covers` from the start (already noted in `geofence_lookup.go` as the correct operator); add a boundary-point test case to confirm.
 
-5. **Parallel work streams on shared files cause merge conflicts** — With 2-3 developers, concurrent branches touching `internal/auth/`, `CompassContext.jsx`, and `ev-ui` simultaneously produce unmanageable conflicts. Sequence milestones so shared dependencies (auth layer, data model columns) merge to main before dependent features begin. Treat `ev-ui` and `internal/auth/` as shared infrastructure requiring explicit team sign-off before merge.
+5. **SRID mismatch between TIGER shapefiles (NAD83/4269) and Google coordinates (WGS84/4326)** — If future TIGER imports are done without the `-s 4269:4326` reprojection flag, all geofence queries silently return zero. Prevention: add a `CHECK` constraint on `geofence_boundaries` enforcing `ST_SRID(geom) = 4326`; run `SELECT DISTINCT ST_SRID(geom)` validation after every shapefile import.
 
 ## Implications for Roadmap
 
-Based on combined research, the dependency graph is clear. Cookie domain fix is a non-negotiable prerequisite. Monorepo migration is a developer tooling improvement that benefits all subsequent work. Guest auth unlocks stance randomization. Topic question fields and candidate display can proceed in parallel once the data model groundwork is laid. Building images are independent and low-risk.
+Based on combined research, this milestone decomposes naturally into 4 phases. The build order is dependency-driven: BallotReady removal must be phased correctly (remove fallbacks before removing the client itself), and frontend work is fully parallel to backend work. The critical ordering constraint is that the federal/state fallback path must be implemented in the same phase as BallotReady removal — not as a follow-up — because it is the mechanism that prevents blank pages for the vast majority of US addresses that fall outside the two imported geofence areas.
 
-### Phase 1: Cookie Domain Fix and Route Audit
-**Rationale:** Pitfall #4 and #15 are explicit blockers. Any auth model change that ships before the cookie domain is resolved risks silently logging out existing users. This is a 1-2 hour backend change that must land and be verified in production before any other auth work begins. The route audit (documenting which Chi routes are public/guest-ok/auth-required) is the planning artifact that prevents Pitfall #3.
-**Delivers:** Production-safe cookie config; route manifest documenting auth levels per endpoint
-**Avoids:** Pitfalls 3, 4, 15 (session collision, route exposure, cross-subdomain auth breakage)
+### Phase 1: Backend — BallotReady Fallback Removal
 
-### Phase 2: Monorepo Migration (npm Workspaces)
-**Rationale:** ARCHITECTURE.md recommends doing this first to unblock parallel work. Once ev-ui is a local workspace package, all subsequent phases that touch shared components (PoliticianCard for candidate badges, any new ev-ui exports) get changes immediately without a publish cycle. This is a structural change with no user-visible impact — the right time is before feature work begins.
-**Delivers:** Single `npm install` at root; ev-ui as local symlink; shared dev dependencies hoisted; Netlify per-app build configs updated
-**Avoids:** Pitfalls 13, 16 (ev-ui version skew, NPM_TOKEN breaking in CI)
-**Research flag:** Standard npm workspaces pattern — skip phase research, follow ARCHITECTURE.md implementation steps directly
+**Rationale:** This is the highest-risk, highest-dependency work. The BallotReady fallback in `SearchPoliticians` is the core of what v1.5 removes. Everything else (frontend autocomplete, candidate endpoint) depends on having a clean backend that does not call BallotReady. Doing this first also validates that the geofence path works correctly as the sole lookup mechanism, and the federal/state fallback prevents blank pages in the uncovered majority of the US.
 
-### Phase 3: Guest-First Auth + Stance Seed
-**Rationale:** Guest auth is the highest-impact user-facing change (it removes the primary conversion blocker per FEATURES.md). Stance seed is architecturally coupled — both use the same guest identity pattern (`ev_stance_seed` in localStorage, `stance_seed` on the user record) and the seed is included in the `guest_state` sync payload on registration. They should be a single phase to avoid building the guest identity twice.
-**Delivers:** Full quiz access without login; localStorage-persisted answers for guests; permanent per-user stance randomization; guest-to-account merge on registration
-**Addresses:** Must-have table stakes (guest quiz, localStorage persistence, post-completion save prompt)
-**Implements:** CompassContext localStorage-first pattern; `/auth/register` and `/auth/login` `guest_state` handling; `stance_seed` field on user model; deterministic Fisher-Yates shuffle in `util/`
-**Avoids:** Pitfalls 1, 2, 9, 10 (merge never happens, no guest identity, non-reproducible seed, biased shuffle)
-**Research flag:** Well-documented pattern — skip phase research. Use ARCHITECTURE.md Section 1 (guest auth) and Section 3 (stance randomization) as implementation spec.
+**Delivers:** A backend that uses geofence-only lookup for address search, with proper empty-state handling (federal/state officials from cache when local geofence returns 0 results), and no BallotReady fallback executing in `SearchPoliticians`.
 
-### Phase 4: Topic Question Field
-**Rationale:** Independent of auth (no shared dependencies with Phase 3) and can be executed in parallel by a second developer. However, it is a prerequisite for the stance randomization UX to make sense — users need the question/prompt for context when stances arrive in a non-default order. FEATURES.md explicitly notes this dependency. Schema migration is safe (nullable column, AutoMigrate in dev, explicit SQL for production, `omitempty` in DTO).
-**Delivers:** `question TEXT` column on `compass.topics`; question rendered above stance options with `title` fallback; admin UI textarea for question input
-**Addresses:** "Should have" differentiator (question/prompt above issue)
-**Avoids:** Pitfalls 5, 6 (non-nullable field breakage, field meaning change)
-**Research flag:** Standard additive schema change — skip phase research.
+**Addresses features:** Geofence-only politician matching (P1); federal/state fallback when local unavailable (P1); groundwork for BallotReady key removal (P1)
 
-### Phase 5: Candidate Display in Essentials
-**Rationale:** BallotReady candidacy data is already fetched and stored (Phase B complete per CLAUDE.md). The remaining work is the query path, DTO, and frontend toggle. This is a medium-complexity phase because of the data integrity risks (Pitfalls 7, 8, 11, 12). It should not run in parallel with Phase 3 if the same developer is working on both — concurrent changes to `internal/essentials/` and `internal/auth/` create conflict risk.
-**Delivers:** `GET /essentials/candidates/{zip}` endpoint; Officials/Candidates toggle in Dashboard; candidate badge/label on PoliticianCard; `CandidateOut` DTO with race context (office sought, election date)
-**Addresses:** Table-stakes candidate display (clear visual distinction, opt-in toggle, election date shown)
-**Implements:** Separate query path (election_records JOIN politicians); type discriminator to prevent overwriting incumbent data; shorter TTL for candidate cache (7-14 days vs 90-day incumbent TTL)
-**Avoids:** Pitfalls 7, 8, 11, 12 (candidate overwrites incumbent, stale candidates, visual conflation, missing race context)
-**Research flag:** Medium complexity due to data integrity requirements. Recommend a short research phase to confirm the district-to-ZIP mapping query for candidates (different from the officeholder path) and to validate BallotReady candidacy data freshness.
+**Avoids pitfalls:** BallotReady dead code (Pitfall 5, partial); TIGER coverage gaps producing blank pages (Pitfall 6)
 
-### Phase 6: Federal Category Reordering + Building Imagery
-**Rationale:** Two independent, low-risk frontend items. Federal reordering is a constant change in `classify.js` — zero backend changes, zero risk. Building imagery is a static asset curation task with straightforward Supabase Storage implementation. Both improve the government navigation UX per FEATURES.md recommendations. Group them to avoid a trivial single-item phase.
-**Delivers:** Federal section ordered President/VP → Senate → House → Cabinet/Agencies; building images (U.S. Capitol, state capitols, Bloomington City Hall, LA City Hall) served from Supabase Storage public bucket; graceful `onError` fallback on all politician images
-**Addresses:** "Should have" differentiators (building imagery, correct category priority ordering); image expiry resilience
-**Avoids:** Pitfalls 17, 18 (inconsistent image aspect ratios, BallotReady image 404s)
-**Research flag:** Standard implementation — skip phase research. Use STACK.md Section 5 for Supabase Storage setup.
+**Implementation scope:** Delete the fallback block in `SearchPoliticians()` at ~lines 2916-3035; extend zero-geofence path to call `fetchStatewideFromDB(geoResult.State)`; set `X-Data-Status: no-geofence-data` response header; return federal/state from cache when local geofence is empty.
+
+**Research flag:** Standard patterns — ARCHITECTURE.md documents the exact file locations and line numbers. Skip research-phase.
+
+---
+
+### Phase 2: Backend — Cache-Only Candidates and Warmer Cleanup
+
+**Rationale:** After Phase 1 confirms the geofence path is clean, tackle the two remaining live BallotReady call sites: the candidate endpoint and the lazy-fetch candidacy goroutine. Also stub the warmer functions and remove goroutine-kick from `handleZipLookup`. This completes all backend BallotReady removal and enables the API key to be safely decommissioned.
+
+**Delivers:** `GetCandidatesByZip` reads from `essentials.election_records` (no live API call); `ensureCandidacyData` serves profile from DB only; warmer functions are stubs with log messages; `handleZipLookup` no longer kicks background goroutines; `_ ballotready` import removed from `setup.go`.
+
+**Addresses features:** Cached-only candidate display (P1); BallotReady key removal (P1 — backend side complete)
+
+**Avoids pitfalls:** BallotReady dead code (Pitfall 5, complete — all call sites removed and verified via grep)
+
+**Implementation scope:** Write `fetchCandidatesFromDB(ctx, zip)` querying `election_records` with upcoming-election filter; delete goroutine in `ensureCandidacyData`; stub warmer bodies; remove warmer-kick blocks from `handleZipLookup` and `GetCacheStatus`; remove `_ ballotready` import from `setup.go`.
+
+**Research flag:** The exact SQL for `fetchCandidatesFromDB` needs brief implementation research — `election_records` must join through politician → office → district → `zip_politicians` for a ZIP-scoped filter. Inspect the table schemas and join keys before writing this function. Otherwise standard patterns.
+
+---
+
+### Phase 3: Frontend — Address Autocomplete
+
+**Rationale:** Fully parallel to Phases 1-2 on the backend. Sequenced here for narrative clarity. `VITE_GOOGLE_MAPS_API_KEY` must be confirmed set in the Netlify environment before the component can be tested in a deployed preview — that env var check is the blocking dependency for this track, not any backend work.
+
+**Delivers:** `AddressSearch.jsx` wrapping `PlaceAutocompleteElement` (or legacy `Autocomplete` as interim for existing key); `loadMapsApi.js` dynamic loader reading from `VITE_GOOGLE_MAPS_API_KEY`; `Dashboard.jsx` and `Landing.jsx` using `<AddressSearch>` instead of plain `<input>`; graceful degrade to plain `<input>` if the Maps API fails to load.
+
+**Addresses features:** Address autocomplete as primary input (P1); confirmed address display after selection (P1)
+
+**Avoids pitfalls:** Autocomplete session billing spike (Pitfall 2 — session token in `useMemo([])`; 300ms debounce); hardcoded API key in HTML (Anti-Pattern 5 from ARCHITECTURE.md — use `loadMapsApi.js` dynamic loader, not raw HTML script tag)
+
+**Stack notes:** Use `importLibrary('places')` from `@googlemaps/js-api-loader` v2.0.2 (already installed). `PlaceAutocompleteElement` preferred for forward compatibility; legacy `Autocomplete` class is acceptable as an interim since the existing API key predates the March 2025 cutoff. Use two separate API keys: browser-restricted key for frontend autocomplete, IP-restricted key for backend geocoding.
+
+**Research flag:** Standard patterns — ARCHITECTURE.md includes complete component code examples for both `AddressSearch.jsx` and `loadMapsApi.js`. Skip research-phase.
+
+---
+
+### Phase 4: Validation, Polish, and Key Removal
+
+**Rationale:** Only after Phases 1-3 are confirmed working in a deployed preview can the BallotReady API key be safely removed from App Runner and Netlify environment variables. This phase also covers the P2 polish items and the explicit "looks done but isn't" verification checklist from PITFALLS.md. It is strictly last because it depends on all prior phases being stable.
+
+**Delivers:** `BALLOTREADY_API_KEY` removed from all environment configurations (App Runner + Netlify); frontend "no local coverage" message for addresses outside geofence areas; "Showing results for [City, State]" sub-header (P2); coverage badge wired to `X-Data-Status` header (P2); Google Cloud billing alert configured; Google for Nonprofits credits confirmed.
+
+**Addresses features:** BallotReady key removal (P1 — final step); city/state sub-header (P2); coverage indicator badge (P2)
+
+**Avoids pitfalls:** Missed BallotReady call sites (Pitfall 5 — final grep verification); Google API cost spike (Pitfall 2 — billing alert at $10/month)
+
+**Verification checklist (from PITFALLS.md):**
+- `grep -r "ballotReadyClient\|BallotReady\|BALLOTREADY" EV-Backend/` returns zero matches in Go files
+- Cloud Console shows "Autocomplete - Per Session" SKU, not "Autocomplete - Per Request" SKU in billing breakdown
+- Searching an address in a known non-geofence area (e.g., rural Iowa) returns federal and state officials with an explicit local-unavailable message
+- Blank/empty-state message is present and visible when local geofence returns 0 results
+- Google Maps API key restrictions set: browser key scoped to `*.empowered.vote`, server key IP-restricted to App Runner egress IP
+- `VACUUM ANALYZE geofences.districts` run after any new TIGER shapefile import
+
+**Research flag:** Standard patterns — mostly configuration and UI polish. Skip research-phase.
+
+---
 
 ### Phase Ordering Rationale
 
-- **Cookie fix before auth (Phase 1 before 3):** Explicit blocker from PITFALLS.md — cannot safely change auth model with broken cookie config
-- **Monorepo before features (Phase 2 before 3-6):** Removes the ev-ui publish friction that slows all subsequent phases; structural change with no user-visible risk
-- **Guest auth before stance seed (combined in Phase 3):** Seed is part of the guest identity; building them separately would require refactoring the guest state schema twice
-- **Question field parallel to guest auth (Phase 4 alongside 3):** No shared code or schema dependencies; safe for a second developer to run simultaneously
-- **Candidates after auth (Phase 5 after 3-4):** Prevents concurrent changes to `internal/essentials/` and `internal/auth/` from the same developer; also ensures the candidate card visual design can reference the same `PoliticianCard` patterns established during guest auth work
-- **Building images last (Phase 6):** Zero blocking dependencies; deferring keeps the critical path uncluttered; asset curation work can proceed asynchronously while Phase 5 is in progress
+- Backend phases (1 and 2) are ordered by dependency: the `SearchPoliticians` fallback must be removed before the backend can be considered BallotReady-independent; the candidate endpoint and warmer cleanup are independent of each other but logically follow Phase 1 so the main lookup path is proven clean first.
+- Frontend (Phase 3) is fully parallel to Phases 1-2. It is listed third for narrative clarity only. `B1 → B2 → B3 → B4` is the internal frontend sequence per ARCHITECTURE.md.
+- Phase 4 is strictly last: the BallotReady API key cannot be safely removed until all call sites are confirmed gone and the replacement paths are validated in production preview.
+- The most critical ordering constraint: the federal/state fallback path must be in Phase 1 alongside BallotReady removal. Deferring it to Phase 4 would mean that after Phase 1 deploys, any address outside Monroe County IN or LA County CA returns a blank page. That is not acceptable for a deployed product.
 
 ### Research Flags
 
-**Phases needing deeper research during planning:**
-- **Phase 5 (Candidates):** District-to-ZIP mapping query for candidates is not the same as the officeholder path (officeholders have confirmed districts; candidates have prospective districts). Validate query approach against actual BallotReady candidacy data schema before implementation begins.
+Phases likely needing deeper research during planning:
+- **Phase 2 (fetchCandidatesFromDB SQL):** The join path from `election_records` to `zip_politicians` for a ZIP-scoped candidate query is not fully spelled out in the research files. Inspect actual table schemas before writing this query to confirm join keys and the correct filter for "upcoming elections."
 
-**Phases with standard patterns (skip research-phase):**
-- **Phase 1 (Cookie fix):** Documented configuration change in CLAUDE.md — no research needed
-- **Phase 2 (Monorepo):** npm workspaces is a well-documented pattern; ARCHITECTURE.md Section 6 provides step-by-step migration
-- **Phase 3 (Guest auth + seed):** ARCHITECTURE.md Sections 1 and 3 serve as implementation spec; pattern matches Shopify cart merge and Google Docs anonymous → signed-in flows
-- **Phase 4 (Question field):** Additive schema migration with established AutoMigrate + explicit SQL approach
-- **Phase 6 (Federal order + images):** Frontend constant change + Supabase Storage public bucket; no research needed
+Phases with standard patterns (skip research-phase):
+- **Phase 1:** Documented in ARCHITECTURE.md with exact file, function names, and approximate line numbers.
+- **Phase 3:** ARCHITECTURE.md includes complete code for `AddressSearch.jsx` and `loadMapsApi.js`.
+- **Phase 4:** Configuration changes and UI polish; no research needed.
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All six improvement areas explicitly assessed against existing stack; zero new dependencies identified; versions current |
-| Features | HIGH | Cross-referenced against iSideWith, Vote Compass, Ballotpedia, Center for Civic Design, Guides.vote; table stakes vs. differentiators well-supported |
-| Architecture | HIGH | Component boundaries, data flows, and build orders are specific to this codebase; not generic advice |
-| Pitfalls | HIGH | 20 pitfalls identified with prevention strategies; all grounded in the specific codebase state described in CLAUDE.md |
+| Stack | HIGH | Research is based on direct codebase inspection of the actual implementation files; no new packages reduces uncertainty to near-zero |
+| Features | HIGH | Feature boundaries are clear; all P1 features map directly to named functions and existing code locations; P2/P3 boundaries are well-justified |
+| Architecture | HIGH | ARCHITECTURE.md was produced from source inspection of `handlers.go`, `setup.go`, `geofence_lookup.go`, `geocoding/google.go`, and frontend files; exact line number ranges cited |
+| Pitfalls | HIGH (PostGIS/billing), MEDIUM (BallotReady cutover) | PostGIS SRID and billing pitfalls sourced from official documentation; BallotReady cutover patterns are project-specific inferences from codebase review rather than external documentation |
 
-**Overall confidence: HIGH**
+**Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **Candidate district-to-ZIP mapping query:** The officeholder path uses `zip_politicians` which links confirmed incumbents. Candidates may not have a confirmed district yet (they are running for a future seat). The query strategy for `GET /essentials/candidates/{zip}` needs validation against the actual `election_records` schema before Phase 5 implementation begins. Flag for the Phase 5 research step.
-- **Stance randomization spectrum semantics:** STACK.md flags an open question: does "spectrum preserved" mean (a) shuffle any order or (b) flip direction only? Clarify with the team before Phase 3 begins — the implementation differs. Option (b) (flip direction) is simpler and recommended.
-- **City/locale list for building images:** FEATURES.md notes that building image infrastructure should not be built for 50 cities if only 2 matter for the demo. Confirm the demo target localities (currently assumed: U.S. Capitol, state capitols generically, Bloomington City Hall, LA City Hall) before Phase 6 begins.
-- **Monorepo Netlify site configuration:** Each app needs a Netlify site with `Base directory` set. Confirm which apps have active Netlify deployments before executing Phase 2 migration to avoid breaking CI for deployed sites.
+- **`fetchCandidatesFromDB` join path:** The exact SQL to join `election_records` to `zip_politicians` for a ZIP-scoped candidate query was not fully resolved in research. Inspect `essentials.election_records` schema columns before writing this function — particularly how election records link to districts, and how districts link to ZIP coverage.
+
+- **`PlaceAutocompleteElement` shadow DOM styling:** The new web component uses shadow DOM, which limits Tailwind CSS targeting to the outer container only. Internal input styling requires `gmp-place-autocomplete::part(input)` CSS selector (limited browser support). If EV's design requires precise styling of the autocomplete input field internals, this may require a design tradeoff decision during Phase 3.
+
+- **Google for Nonprofits application status:** Research flagged that the universal $200/month credit was replaced in March 2025 with per-SKU free tiers. Whether EV has applied for or received Google for Nonprofits credits ($250+/month additional) is unknown. Confirm before Phase 4 ships to production to avoid unexpected billing.
+
+- **Boundary-point test coverage:** No test coordinates are currently documented for Monroe County IN or LA County CA district boundary edges. Phase 1 validation should include at minimum one coordinate known to sit exactly on a district boundary line to confirm `ST_Covers` (not `ST_Within`) behavior.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- iSideWith — political quiz UX patterns, guest-first quiz design
-- Vote Compass — no-login quiz pattern, post-completion save CTA
-- Center for Civic Design — voter guide field guide, candidate/incumbent labeling recommendations
-- Ballotpedia — candidate vs. incumbent display, federal content ordering
-- CLAUDE.md (codebase) — existing stack, completed phases, current implementation state
-- EV-Backend source (Go modules) — Chi/GORM/Supabase versions and patterns
-- Supabase Storage documentation — public bucket URLs, CDN capabilities, free tier limits
+- Direct source inspection: `EV-Backend/internal/essentials/geocoding/google.go` — geocoding client implementation, ZIP-required check that needs removal
+- Direct source inspection: `EV-Backend/internal/essentials/geofence_lookup.go` — PostGIS ST_Contains query, GiST index usage
+- Direct source inspection: `EV-Backend/internal/essentials/handlers.go` — BallotReady call site locations (lines 1266, 2917, 3674) and warmer function implementations
+- Direct source inspection: `EV-Backend/internal/essentials/setup.go` — Provider initialization, GeoClient init pattern
+- Direct source inspection: `essentials/src/hooks/useGooglePlacesAutocomplete.js` — existing autocomplete hook implementation
+- Direct source inspection: `essentials/src/pages/Dashboard.jsx` — current plain input implementation
+- Direct source inspection: `essentials/package.json` — confirmed `@googlemaps/js-api-loader: ^2.0.2` already installed
+- [Google Maps Place Autocomplete Widget (legacy)](https://developers.google.com/maps/documentation/javascript/legacy/place-autocomplete) — API status and deprecation timeline for existing keys
+- [Google Maps Place Autocomplete (new)](https://developers.google.com/maps/documentation/javascript/place-autocomplete-new) — PlaceAutocompleteElement specification
+- [Google Maps Session Pricing](https://developers.google.com/maps/documentation/places/web-service/session-pricing) — abandoned session billing behavior and per-session vs per-request SKU distinction
+- [Google Maps Security Best Practices](https://developers.google.com/maps/api-security-best-practices) — separate browser/server keys recommendation
+- [PostGIS ST_Covers docs](https://postgis.net/docs/ST_ContainsProperly.html) — boundary semantics vs ST_Within
+- [PostGIS Spatial Indexing](http://postgis.net/workshops/postgis-intro/indexing.html) — GiST index requirements and VACUUM ANALYZE necessity
+- [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) — SRID documentation and annual release cadence
 
 ### Secondary (MEDIUM confidence)
-- Pew Research Political Typology Quiz — fully anonymous quiz pattern
-- Guides.vote (7M+ distribution) — candidate display in voter guide context
-- Prism Political Quiz — seeded randomization for shareable quiz results
-- PLOS One: "The political preferences of LLMs" — response order bias research validating stance randomization need
-- npm workspaces documentation — monorepo consolidation pattern
+- [visgl/react-google-maps issue #736](https://github.com/visgl/react-google-maps/issues/736) — legacy Autocomplete unavailable to new API keys since March 2025
+- [pkg.go.dev/googlemaps.github.io/maps](https://pkg.go.dev/googlemaps.github.io/maps) — Go SDK v1.7.0 last release date (December 2023), informing the "do not add" recommendation
+- [Google Maps Platform March 2025 Billing Changes](https://developers.google.com/maps/billing-and-pricing/march-2025) — $200 universal credit replaced by per-SKU free tiers
+- [TIGER Boundary Files — Redistricting Data Hub](https://redistrictingdatahub.org/data/about-our-data/tiger-boundary-files/) — documented TIGER coverage gaps for local districts
+- [Ballotpedia "Who Represents Me"](https://ballotpedia.org/lookup/elected-officials.php) — competitor no-coverage handling patterns
 
 ### Tertiary (LOW confidence)
-- Assumed BallotReady candidacy data freshness (7-14 day cycle) — should be validated against actual BallotReady release cadence before setting candidate cache TTL
-- State capitol image availability on Wikipedia Commons — assumed public domain; verify licenses before use in production
+- [PostGIS Performance — Crunchy Data](https://www.crunchydata.com/blog/postgis-performance-indexing-and-explain) — GiST index and VACUUM ANALYZE behavior (aligns with PostGIS official docs)
+- [ST_Contains vs ST_Covers — Medium](https://mentin.medium.com/which-predicate-cb608b470471) — boundary semantics comparison (aligns with PostGIS official docs)
 
 ---
-*Research completed: 2026-02-17*
+*Research completed: 2026-02-22*
 *Ready for roadmap: yes*

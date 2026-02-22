@@ -1,586 +1,646 @@
 # Architecture Research
 
-**Research Date:** 2026-02-17
-**Research Type:** Project Research — Architecture dimension
-**Question:** How do multi-app civic engagement platforms structure their codebase, handle guest-to-user auth transitions, and manage image assets?
+**Domain:** Civic tech — address verification and BallotReady independence (v1.5)
+**Researched:** 2026-02-22
+**Confidence:** HIGH — based on direct source inspection of all relevant backend and frontend files
 
 ---
 
-## Scope
+## System Overview
 
-This document covers six architectural decisions relevant to the next milestone:
+Current state (v1.4) annotated to show v1.5 changes:
 
-1. Guest-first auth with localStorage → server sync on account creation
-2. Data model evolution: adding question/prompt to compass topics
-3. Per-user stance randomization (seed-based or stored)
-4. Candidate data alongside elected officials in Essentials
-5. Image storage (Supabase Storage vs S3 vs CDN)
-6. Multi-app consolidation (monorepo vs unified SPA vs micro-frontends)
+```
+┌──────────────────────────────────────────────────────────────────┐
+│                   FRONTEND (essentials React app)                 │
+├──────────────────────────────────────────────────────────────────┤
+│  ┌───────────────────────┐   ┌──────────────────────────────────┐ │
+│  │  Dashboard.jsx        │   │  AddressSearch.jsx  [NEW]        │ │
+│  │  plain <input> today  │   │  Google Places Autocomplete      │ │
+│  │  [REPLACE input with  │   │  widget → formattedAddress       │ │
+│  │   AddressSearch]      │   │  string → onSelect(address)      │ │
+│  └───────────────────────┘   └──────────────────────────────────┘ │
+│               POST /essentials/politicians/search                  │
+│               body: { query: "123 Main St, Bloomington IN 47401" } │
+└────────────────────────────┬─────────────────────────────────────┘
+                             │
+┌────────────────────────────▼─────────────────────────────────────┐
+│                   GO BACKEND (EV-Backend)                         │
+├──────────────────────────────────────────────────────────────────┤
+│  SearchPoliticians() handler                                      │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  1. isZip5() check                                       │    │
+│  │  2. GeoClient.Geocode(address) → lat, lng    [EXISTING]  │    │
+│  │  3. FindGeoIDsByPoint(lat, lng)  [EXISTING PostGIS]      │    │
+│  │  4. FindPoliticiansByGeoMatches()  [EXISTING DB join]    │    │
+│  │  5. Supplement with federal+state from DB  [EXISTING]    │    │
+│  │  6. [REMOVE] BallotReady fallback block                  │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                   │
+│  handleZipLookup()                                                │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  [REMOVE] warmer-kick goroutines (stale check + go func) │    │
+│  │  [KEEP] fetchOfficialsFromDB(zip, state)                 │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                   │
+│  Warmers (modified)                                               │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  warmFederal() — [STUB] remove Provider.FetchFederal()   │    │
+│  │  warmState()   — [STUB] remove Provider.FetchByState()   │    │
+│  │  warmLocal()   — [STUB] remove Provider.FetchByZip()     │    │
+│  │  All keep cache timestamp update logic                   │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                   │
+│  setup.go                                                         │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  [REMOVE] _ "ballotready" import side-effect             │    │
+│  │  [REMOVE] provider.NewProvider(cfg) initialization       │    │
+│  │  Provider = nil  (intentional)                           │    │
+│  │  GeoClient init  [UNCHANGED]                             │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                   │
+│  GetCandidatesByZip()                                             │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  [REPLACE] brProvider.Client().FetchRacesByZip()         │    │
+│  │  [WITH]    fetchCandidatesFromDB(ctx, zip)               │    │
+│  └──────────────────────────────────────────────────────────┘    │
+│                                                                   │
+│  ensureCandidacyData()                                            │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │  [REMOVE] lazy-fetch goroutine to BallotReady            │    │
+│  │  [KEEP] serve profile from whatever is in DB             │    │
+│  └──────────────────────────────────────────────────────────┘    │
+├──────────────────────────────────────────────────────────────────┤
+│  EXTERNAL: Google Maps Geocoding API (backend only)               │
+│  maps.googleapis.com/api/geocode — address → lat, lng            │
+│  Already implemented in geocoding/google.go — no changes         │
+├──────────────────────────────────────────────────────────────────┤
+│  DATABASE (Supabase/PostgreSQL + PostGIS)                         │
+│  ┌─────────────────┐  ┌──────────────┐  ┌────────────────────┐  │
+│  │ geofence_       │  │ politicians  │  │ federal/state/zip  │  │
+│  │ boundaries      │  │ offices      │  │ cache tables       │  │
+│  │ (PostGIS GIST)  │  │ districts    │  │                    │  │
+│  └─────────────────┘  └──────────────┘  └────────────────────┘  │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## 1. Guest-First Auth with localStorage → Server Sync
+## Component Responsibilities
 
-### Pattern
-
-Guest-first auth means the app works fully without a login, persisting state locally, then migrates that state to the server when the user creates an account. This is the pattern used by Google Docs (anonymous → signed-in merge), Notion, and most quiz/survey tools.
-
-### How It Works in This Codebase
-
-**Current state:** CompassV2 requires login. Topics load from the server. Answers are stored server-side via `POST /compass/answers`. Selected topics and spoke inversions persist to localStorage.
-
-**Target state:** Guest can take the quiz, get results, compare politicians — all without login. When they optionally create an account, their local state syncs to the server.
-
-### Data to Persist Locally (Guest)
-
-| Data | localStorage Key | Server Table on Sync |
-|------|-----------------|----------------------|
-| Quiz answers | `ev_guest_answers` | `compass.answers` |
-| Selected compass topics | existing `selectedTopics` key | `compass.user_compass` |
-| Spoke inversions | existing `inverted` key | `compass.user_compass` |
-| Randomization seed | `ev_guest_seed` | `app_auth.users` (new column) |
-
-### Sync Strategy
-
-On account creation (`POST /auth/register`):
-1. Frontend reads all `ev_guest_*` keys from localStorage
-2. Includes them as `guest_state` in the register request body
-3. Backend handler unpacks and writes to appropriate tables in a single transaction
-4. Frontend clears `ev_guest_*` keys
-
-On login (existing user returning):
-- If localStorage has guest data AND the user already has server answers: merge strategy needed
-- Simplest approach: **server wins** — local data discarded if server already has answers for this user
-- If server has no answers: treat like new registration (sync local → server)
-
-### Backend Changes Required
-
-- `/auth/register` handler: accept optional `guest_state` body field
-- Write guest answers inside the registration transaction
-- `/auth/login` handler: optionally accept and sync guest state (only if server has no existing answers)
-- No schema changes needed — existing `compass.answers`, `compass.user_compass` tables handle this
-
-### Frontend Changes Required
-
-- `CompassContext`: always persist answers to localStorage, regardless of auth state
-- Remove auth gate on quiz load (allow unauthenticated)
-- Register/login flow: pass localStorage guest state in request body
-- After successful auth: clear guest localStorage keys
-
-### Component Boundaries
-
-```
-[CompassContext] → reads/writes localStorage (always)
-                → writes server (if logged in)
-
-[RegisterForm]  → reads localStorage guest state
-                → includes in POST /auth/register
-                → clears localStorage on success
-
-[LoginForm]     → reads localStorage guest state
-                → includes in POST /auth/login (optional sync)
-                → clears localStorage on success
-
-[ProtectedRoute] → remove from Quiz, Compass, Library pages
-                 → keep on Profile, Admin pages
-```
-
-### Build Order
-
-1. Remove `ProtectedRoute` from quiz-related routes
-2. Update `CompassContext` to always write to localStorage (guest mode)
-3. Expose guest state via context or hook
-4. Update register/login forms to pass guest state
-5. Update backend `/auth/register` and `/auth/login` to handle `guest_state`
-6. Test merge edge case (logged-in user with existing answers)
+| Component | Current Responsibility | v1.5 Change |
+|-----------|----------------------|-------------|
+| `geocoding/google.go` | HTTP client wrapping Geocoding API, returns lat/lng + address components | None — already complete and correct |
+| `geofence_lookup.go` | PostGIS ST_Contains query + politician DB join with MTFCC disambiguation | None — already complete and correct |
+| `handlers.go: SearchPoliticians()` | ZIP/address detection, GeoClient geocoding, geofence lookup, BallotReady fallback | Delete BallotReady fallback block |
+| `handlers.go: handleZipLookup()` | Cache freshness check, kick background warmers, serve from DB | Remove warmer-kick goroutines; keep DB fetch |
+| `handlers.go: warmFederal/State/Local()` | Fetch from BallotReady via Provider + upsert + update cache timestamp | Remove Provider.Fetch*() body; keep cache timestamp update |
+| `handlers.go: GetCandidatesByZip()` | Live BallotReady races query | Replace with DB-only query against election_records |
+| `handlers.go: ensureCandidacyData()` | Lazy-fetch candidacy from BallotReady on profile view | Remove lazy-fetch goroutine; serve from DB or return empty |
+| `setup.go: Init()` | Initializes Provider + GeoClient | Remove ballotready import; stop initializing Provider |
+| `provider/` package | OfficialProvider interface + registry | No changes — keep for future extensibility |
+| `ballotready/` package | GraphQL client + transform + candidacy | Keep in place but unused; remove import from setup.go |
+| `AddressSearch.jsx` | Does not exist yet | New component — Places Autocomplete wrapper |
+| `Dashboard.jsx` | Plain text input, calls searchPoliticians on submit | Replace input with AddressSearch component |
+| `Landing.jsx` | Plain text input | Same swap |
+| `api.jsx` | POST /politicians/search with query string | No changes — already sends address string to backend |
 
 ---
 
-## 2. Data Model Evolution: Question/Prompt on Compass Topics
+## Recommended Project Structure
 
-### Current Schema
+No new directories needed. All changes are within existing files plus one new component file:
 
-The `compass.topics` table has: `id`, `title`, `short_title`, `stances[]`, and related fields. There is no `question` or `prompt` field.
+```
+EV-Backend/internal/essentials/
+├── geocoding/
+│   └── google.go               # UNCHANGED — already complete
+├── ballotready/
+│   ├── client.go               # UNCHANGED — kept but unused
+│   ├── provider.go             # UNCHANGED — kept but unused
+│   ├── transform.go            # UNCHANGED — kept but unused
+│   └── transform_candidacy.go  # UNCHANGED — kept but unused
+├── geofence_lookup.go          # UNCHANGED — already complete
+├── geofence_models.go          # UNCHANGED
+├── handlers.go                 # PRIMARY CHANGE TARGET
+├── setup.go                    # Remove ballotready import + Provider init
+└── routes.go                   # UNCHANGED
 
-### What the Feature Needs
-
-Issue cards and the compare page should display a question (e.g., "How should the federal government approach healthcare?") instead of or alongside the category title (e.g., "Healthcare"). This is a content-level change, not a structural redesign.
-
-### Schema Change
-
-Add a `question` column to `compass.topics`:
-
-```sql
-ALTER TABLE compass.topics ADD COLUMN question TEXT;
+essentials/src/
+├── components/
+│   └── AddressSearch.jsx       # NEW — Places Autocomplete wrapper
+├── pages/
+│   ├── Dashboard.jsx           # Swap <input> for <AddressSearch>
+│   └── Landing.jsx             # Same swap
+├── lib/
+│   └── api.jsx                 # UNCHANGED
+└── index.html                  # Add Maps JS API script tag
 ```
 
-This is backward-compatible — existing topics have `question = NULL`, which the frontend handles by falling back to `title`. GORM AutoMigrate handles this without downtime.
+---
 
-### Migration Strategy
+## Architectural Patterns
 
-- **Phase 1:** Add column, deploy backend (AutoMigrate). All questions are NULL, UI falls back to title. No regression.
-- **Phase 2:** Admin UI (or seed data) populates `question` values for existing topics. This is content work, not code work.
-- **Phase 3:** Update frontend to render `question` when present, `title` as fallback.
+### Pattern 1: Geocode-Then-Geofence (primary address lookup path)
 
-### API Impact
+**What:** Google Maps Geocoding converts an address string to lat/lng. That point is fed into PostGIS `ST_Contains` against preloaded TIGER shapefile polygons. The matching `geo_id` values are joined to the politicians table filtered by MTFCC-compatible district types.
 
-Add `question` to the topic response DTO:
+**This path already exists and already works** in `SearchPoliticians()`. The BallotReady fallback beneath it is what gets removed.
+
+**Existing code flow (after BallotReady fallback removed):**
+```
+POST /politicians/search { query: "123 Main St, Bloomington IN" }
+  → isZip5() → false (address query)
+  → GeoClient.Geocode(query) → Result{Lat: 39.165, Lng: -86.526, State: "IN", Zip: "47401"}
+  → FindGeoIDsByPoint(39.165, -86.526)
+      → SELECT geo_id, mtfcc FROM essentials.geofence_boundaries
+         WHERE ST_Contains(geometry, ST_SetSRID(ST_MakePoint(-86.526, 39.165), 4326))
+      → [{GeoID: "18105", MTFCC: "G4020"}, {GeoID: "1847916", MTFCC: "G4110"}, ...]
+  → FindPoliticiansByGeoMatches(matches)
+      → WHERE (d.geo_id = '18105' AND d.district_type = ANY({'COUNTY','JUDICIAL'}))
+           OR (d.geo_id = '1847916' AND d.district_type = ANY({'LOCAL','LOCAL_EXEC'}))
+      → []OfficialOut (local/county politicians)
+  → fetchOfficialsFromDB("47401", "IN") to supplement with federal+state from cache
+  → deduplicate by ExternalID
+  → return []OfficialOut
+  → [REMOVED] BallotReady fallback when geofence returns 0 results
+```
+
+**After removal:** If geofence returns 0 results (area not imported), return empty array with `X-Data-Status: no-geofence-data` header. Frontend shows a clear message.
+
+### Pattern 2: Warmers as No-Ops (BallotReady removed)
+
+**What:** The three warmer functions (`warmFederal`, `warmState`, `warmLocal`) exist to populate the DB from an external API when caches are stale. With BallotReady removed, there is no external API to call. They become no-ops.
+
+**Recommended approach — remove warmer-kick from request path:**
+Do not call warmers from `handleZipLookup` or `GetCacheStatus` at all. The 90-day stale check becomes irrelevant when there's nothing to refresh from. Data is populated via the admin import tool (`POST /admin/import`). Remove the goroutine-spawning blocks from `handleZipLookup`:
 
 ```go
-type TopicOut struct {
-    ID         uint   `json:"id"`
-    Title      string `json:"title"`
-    ShortTitle string `json:"short_title,omitempty"`
-    Question   string `json:"question,omitempty"`  // NEW
-    // ...stances
+// REMOVE these blocks from handleZipLookup:
+if !federalFresh {
+    if tryAcquireLock(ctx, "federal") {
+        go func() { ... warmFederal ... }()
+    }
+}
+// (same for state + local)
+```
+
+**Warmer function bodies become:**
+```go
+func warmFederal(ctx context.Context) error {
+    log.Printf("[warmFederal] No-op: BallotReady removed. Use admin import to refresh data.")
+    return nil
 }
 ```
 
-`omitempty` ensures backward compatibility — consumers that don't know about `question` are unaffected.
+**Keep:** The `FederalCache`, `StateCache`, `ZipCache` table models and the `fetchOfficialsFromDB` query that uses them. The cache table approach is still the right architecture — it just gets populated by admin import now instead of background warmers.
 
-### Frontend Impact
+### Pattern 3: Google Places Autocomplete Widget (frontend)
 
-In `CompassContext`, topics already flow through to components. Update issue card and compare page components to use `topic.question || topic.title`. No context changes needed.
+**What:** Replace the plain `<input>` in Dashboard.jsx and Landing.jsx with a Google Places Autocomplete widget. On selection the user gets address suggestions; on pick the widget provides a `formattedAddress` string that is sent to the existing `POST /politicians/search` endpoint.
 
-### Build Order
+**Design decision — who geocodes?**
 
-1. Add `Question string` field to `compass/models.go` Topic struct
-2. Deploy backend (AutoMigrate adds column)
-3. Add `question` to TopicOut DTO and serialization
-4. Update frontend issue card and compare page: `topic.question || topic.title`
-5. Admin: add question field to topic editor
-6. Content: populate question values for existing topics
+Two options exist:
 
----
+**Option A: Frontend autocomplete for UX, backend geocodes (recommended for v1.5)**
+- Frontend: Places Autocomplete widget shows suggestions as user types
+- On selection: sends `formattedAddress` string to existing endpoint
+- Backend: calls `GeoClient.Geocode(address)` as it already does
+- Pros: No change to backend endpoint; consistent with existing flow; backend API key not exposed
+- Cons: Two geocoding-equivalent calls per address search (Places API internally geocodes, then backend geocodes again)
 
-## 3. Per-User Stance Randomization
+**Option B: Frontend resolves lat/lng, backend receives coordinates**
+- Frontend: after selection calls `place.fetchFields(['location'])` to get lat/lng
+- Sends `{ lat, lng }` to a new backend endpoint `POST /politicians/locate`
+- Backend calls `FindGeoIDsByPoint` directly, skips geocoding
+- Pros: Eliminates redundant geocoding call; more precise (autocomplete selection = exact point)
+- Cons: New endpoint; `VITE_GOOGLE_MAPS_API_KEY` exposes Places key to browser (already needed for autocomplete widget anyway)
 
-### The Problem
+**Use Option A for v1.5.** The redundant geocoding call is acceptable at nonprofit traffic scale. Option B is a clean optimization for a future milestone once the address flow is proven stable.
 
-When stance options are always listed in the same order (e.g., "Strongly Agree" first), users show positional bias — they're more likely to pick the first option. Randomizing order removes this, but the order must be **permanent per user** so returning users see the same presentation.
+**Implementation for Option A:**
 
-### Two Implementation Approaches
+```jsx
+// essentials/src/components/AddressSearch.jsx
+import { useEffect, useRef } from "react";
 
-#### Approach A: Client-Side Seed (Recommended)
+export function AddressSearch({ onSelect, placeholder, className }) {
+  const inputRef = useRef(null);
 
-Generate a random seed at first visit, store it in localStorage (guest) or user profile (authenticated). Use the seed with a deterministic shuffle (e.g., mulberry32 PRNG or seeded Fisher-Yates) to derive stance order per topic.
+  useEffect(() => {
+    if (!window.google?.maps?.places || !inputRef.current) return;
 
-**Pros:**
-- No backend API call for randomization
-- Works in guest mode
-- Seed syncs to server on account creation (part of guest_state sync)
-- Deterministic: same seed = same order on any device after login
+    const autocomplete = new window.google.maps.places.Autocomplete(
+      inputRef.current,
+      {
+        types: ["address"],
+        componentRestrictions: { country: "us" },
+      }
+    );
 
-**Cons:**
-- JS-only: server-side rendering would need seed passed down (not relevant here)
+    const listener = autocomplete.addListener("place_changed", () => {
+      const place = autocomplete.getPlace();
+      if (place?.formatted_address) {
+        onSelect(place.formatted_address);
+      }
+    });
 
-**Implementation:**
+    return () => window.google.maps.event.removeListener(listener);
+  }, [onSelect]);
 
+  return (
+    <input
+      ref={inputRef}
+      type="text"
+      placeholder={placeholder || "Enter your address"}
+      className={className}
+    />
+  );
+}
+```
+
+**Load Maps JS API in `essentials/index.html`:**
+```html
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=%VITE_GOOGLE_MAPS_API_KEY%&libraries=places"
+  async
+  defer
+></script>
+```
+
+Note: Vite doesn't replace env vars in raw HTML. Options:
+1. Inject via `vite-plugin-html` (adds a dependency)
+2. Use a JS loader in `main.jsx` that reads `import.meta.env.VITE_GOOGLE_MAPS_API_KEY`
+3. Set the key via Netlify environment substitution in `_headers` or build plugins
+
+**Recommended: JS dynamic loader in main.jsx:**
 ```javascript
-// On first load (CompassContext)
-const seed = localStorage.getItem('ev_stance_seed')
-  ?? generateSeed()  // Math.random()-based, stored immediately
-localStorage.setItem('ev_stance_seed', seed)
-
-// Shuffle stances for a topic (deterministic)
-function shuffleStances(stances, topicId, seed) {
-  const combined = hashCombine(seed, topicId)  // topic-specific variation
-  return seededShuffle(stances, combined)
+// essentials/src/loadMapsApi.js
+export function loadGoogleMapsApi(key) {
+  return new Promise((resolve, reject) => {
+    if (window.google?.maps?.places) { resolve(); return; }
+    const script = document.createElement("script");
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places`;
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
 }
 ```
 
-**Server sync:** Include `stance_seed` in `guest_state` payload on registration. Store in a new `users.stance_seed` column (or `app_auth.users`).
-
-#### Approach B: Server-Generated Seed per User
-
-Backend generates and stores a random seed per user. Frontend fetches it from `/auth/me` or `/compass/preferences`.
-
-**Pros:** Seed survives browser clears, works on new devices immediately after login.
-**Cons:** Requires backend change, requires auth (breaks guest flow).
-
-### Recommendation
-
-**Use Approach A (client-side seed)** because:
-- Works without auth (guest mode)
-- Syncs to server as part of the existing guest_state sync pattern
-- Simpler backend: just store and return the seed value
-
-### Schema Change
-
-```sql
-ALTER TABLE app_auth.users ADD COLUMN stance_seed TEXT;
+Call in `App.jsx` or `main.jsx`:
+```javascript
+loadGoogleMapsApi(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
+  .catch(err => console.warn("Maps API failed to load:", err));
 ```
 
-### Build Order
+**Billing note:** The legacy `google.maps.places.Autocomplete` widget manages session tokens automatically. Billing is per session (~$0.017/session in the US) rather than per keystroke. The new `PlaceAutocompleteElement` (Web Component) is still in alpha/beta — avoid it.
 
-1. Add `StanceSeed` to user model and `/auth/me` response
-2. Add seed generation + localStorage persistence to CompassContext
-3. Add deterministic shuffle function to `util/`
-4. Apply shuffle in quiz question rendering
-5. Include seed in guest_state sync on register/login
+### Pattern 4: Candidates from DB Cache Only
 
----
+**What:** `GetCandidatesByZip` currently calls `brProvider.Client().FetchRacesByZip()` live against the BallotReady API. After removal, it queries the `election_records` table that was populated during the last BallotReady import run.
 
-## 4. Candidate Data Alongside Elected Officials in Essentials
+**What changes:**
+```go
+// BEFORE: live BallotReady races call
+func GetCandidatesByZip(w http.ResponseWriter, r *http.Request) {
+    brProvider, ok := Provider.(*ballotready.BallotReadyProvider)
+    if !ok {
+        writeJSON(w, []CandidateOut{})
+        return
+    }
+    races, err := brProvider.Client().FetchRacesByZip(r.Context(), zip)
+    // ...
+}
 
-### Current State
-
-The Essentials app shows `is_elected = true` officials. BallotReady's candidacy data is already fetched (via `FetchCandidacy`) and stored in `essentials.election_records`. The data is there; it's a display decision.
-
-### Feature Request
-
-Toggle between elected officials and candidates. Candidates should be visually differentiated.
-
-### Data Already Available
-
-From the existing BallotReady integration (`essentials.election_records`, `essentials.endorsements`, `essentials.politician_stances`):
-- Candidate name, party, office sought
-- Election date, is_incumbent
-- Endorsements, stances
-
-### What's Missing
-
-A query path to return candidates by ZIP code. The current `GET /essentials/politicians/{zip}` only returns current officeholders. Need a parallel endpoint or query parameter.
-
-### Recommended Approach
-
-**Add `?include_candidates=true` query param** to the existing ZIP endpoint, or a new endpoint `GET /essentials/candidates/{zip}`.
-
-The candidacy data is linked to politicians via the existing `essentials.politicians` table (each candidate is a politician with election records). The query needs to:
-1. Find all elections with a district overlapping the ZIP
-2. Return associated politicians with candidacy context (is_incumbent, election_date, party_on_ticket)
-
-### Component Boundaries
-
-```
-Backend:
-  GET /essentials/candidates/{zip}
-    → query essentials.election_records JOIN essentials.politicians
-    → filter by upcoming elections (election_date > now())
-    → return CandidateOut DTO (extends OfficialOut with election context)
-
-Frontend (essentials/Dashboard.jsx):
-  → Toggle: "Officials" | "Candidates"
-  → fetchCandidates(zip) separate from fetchPoliticians(zip)
-  → Visual differentiation: candidate badge, "Running for [Office]" label
-  → Sorted by office, then by election date
-```
-
-### Build Order
-
-1. Add `GET /essentials/candidates/{zip}` backend handler
-2. Query election_records for upcoming elections with district-to-ZIP mapping
-3. Return CandidateOut DTO (reuse OfficialOut structure + add election fields)
-4. Add `fetchCandidates(zip)` to `essentials/src/lib/api.jsx`
-5. Add toggle UI to Dashboard
-6. Add visual differentiation to PoliticianCard (badge/label for candidates)
-
----
-
-## 5. Image Storage
-
-### Current State
-
-Politician profile images are URLs sourced directly from BallotReady (stored as strings in `essentials.politician_images`). No local image storage exists.
-
-### The Question
-
-Should images be stored locally (Supabase Storage, S3) or served directly from BallotReady CDN URLs?
-
-### Option Comparison
-
-| Option | Cost | Complexity | Control | Risk |
-|--------|------|------------|---------|------|
-| BallotReady CDN (current) | Free | None | Low | URL expiry, BallotReady outage |
-| Supabase Storage | Free tier 1GB | Low | High | Supabase dependency |
-| AWS S3 | ~$0.02/GB | Medium | High | Cost, setup |
-| Cloudflare R2 | Free 10GB | Medium | High | Another service |
-| Netlify Large Media | Free tier | Low | Medium | Git LFS complexity |
-
-### Recommendation: Keep BallotReady CDN for Now
-
-**Rationale:**
-- BallotReady images are served from a CDN already. No egress cost.
-- Platform has nonprofit cost constraints — adding storage infrastructure is waste unless URLs expire or break.
-- If BallotReady image URLs prove unstable (404s, expiry), migrate to Supabase Storage.
-- Supabase Storage is the easiest migration path given the existing Supabase PostgreSQL dependency.
-
-**If migration becomes necessary:**
-
-Supabase Storage approach:
-1. Create bucket `politician-images` (private or public)
-2. Background job: for each politician image URL, download and upload to Supabase Storage
-3. Store Supabase Storage URL in `essentials.politician_images` alongside original URL
-4. Backend serves Supabase URL, with fallback to BallotReady URL if Storage URL is null
-
-**For building images (Capitol, state capitols, courthouses):**
-These are static assets. Store directly in the frontend project's `public/` directory or `src/assets/`. No cloud storage needed for a handful of building photos.
-
-### Component Boundaries (If Storage Added)
-
-```
-[background job / admin endpoint]
-  → download image from BallotReady URL
-  → upload to Supabase Storage bucket
-  → update essentials.politician_images.supabase_url
-
-[Backend GET /essentials/politicians/{zip}]
-  → prefer supabase_url over ballotready_url in response
-  → omit if both null
-
-[Frontend PoliticianCard]
-  → no change: renders whatever URL the API returns
-```
-
----
-
-## 6. Multi-App Consolidation
-
-### Current Structure
-
-Four separate React apps, each deployed independently to Netlify:
-- `CompassV2/` — political compass quiz
-- `essentials/` — politician discovery
-- `EV-prototypes/` — treasury tracker, read-rank, badges, data-entry
-- `ev-ui/` — shared component library (npm package)
-
-### Three Patterns to Consider
-
-#### Pattern A: Keep Current (Separate Repos / Apps)
-
-**What it is:** Each app is an independent Vite React project. `ev-ui` is published to GitHub npm registry and consumed by other apps as a versioned package.
-
-**Pros:**
-- Existing structure — zero migration cost
-- Independent deployment: changes to one app don't risk others
-- Clear separation: `ev-ui` version bumps are explicit
-
-**Cons:**
-- `ev-ui` publish cycle is manual and slow (bump version, publish, update all consumers)
-- No code sharing beyond what's in `ev-ui` (no shared hooks, utils, API clients)
-- Four separate `node_modules` trees, four separate Netlify deploys
-
-**Best for:** Teams where app-level independence matters more than development speed. Works fine at 2-3 person scale.
-
-#### Pattern B: Monorepo (Recommended for This Team)
-
-**What it is:** All apps live in one repo (or one workspace). Uses npm workspaces or pnpm workspaces to share packages without publishing.
-
-```
-/
-├── packages/
-│   ├── ev-ui/          # shared component library
-│   ├── api-client/     # shared fetch functions + hooks
-│   └── utils/          # shared helper functions
-├── apps/
-│   ├── compass/        # CompassV2 → compass
-│   ├── essentials/     # essentials
-│   └── prototypes/     # EV-prototypes
-└── package.json        # workspace root
-```
-
-**Pros:**
-- `ev-ui` changes are immediately available to all apps (no publish cycle)
-- Shared `api-client` package for fetch wrappers — eliminates duplication of API logic
-- Single `node_modules` (hoisted by workspace manager)
-- One CI pipeline covers everything
-- Atomic commits across apps (fix `ev-ui` and update consumers in one PR)
-
-**Cons:**
-- Migration cost (restructure directories, update imports, configure workspaces)
-- Netlify needs per-app build config (base directory + build command per site)
-- Slightly more complex Vite config (workspace-relative paths)
-
-**Implementation using npm workspaces:**
-
-```json
-// root package.json
-{
-  "workspaces": ["packages/*", "apps/*"],
-  "scripts": {
-    "dev:compass": "npm run dev -w apps/compass",
-    "dev:essentials": "npm run dev -w apps/essentials"
-  }
+// AFTER: DB-only query
+func GetCandidatesByZip(w http.ResponseWriter, r *http.Request) {
+    candidates, err := fetchCandidatesFromDB(r.Context(), zip)
+    if err != nil {
+        log.Printf("[GetCandidatesByZip] db error: %v", err)
+        writeJSON(w, []CandidateOut{})
+        return
+    }
+    writeJSON(w, candidates)
 }
 ```
 
-Internal package consumption replaces npm registry:
-```json
-// apps/compass/package.json
-{
-  "dependencies": {
-    "@ev/ev-ui": "*",      // resolved from packages/ev-ui
-    "@ev/api-client": "*"  // resolved from packages/api-client
-  }
-}
-```
-
-**Netlify per-app config:** Each app gets its own Netlify site with `Base directory: apps/compass` and `Build command: npm run build`.
-
-#### Pattern C: Unified SPA
-
-**What it is:** Merge all apps into one React app with React Router. One Netlify deploy, one bundle.
-
-**Pros:**
-- Single deployment, single dev server
-- Shared state without cross-app coordination
-
-**Cons:**
-- Large bundle: users downloading treasury tracker JS when using compass
-- Merge complexity: CSS, routing conflicts between existing apps
-- All-or-nothing deployment: compass bug → all apps down
-- Loses natural boundary between civic apps (compass is a tool; essentials is a directory)
-
-**Not recommended** for this team size and app diversity. The apps serve different user journeys and have different update cadences.
-
-### Recommendation: Monorepo (Pattern B)
-
-**Why for this team:**
-- The `ev-ui` publish cycle is the biggest day-to-day friction. A monorepo eliminates it.
-- Shared API client would prevent drift between how `essentials` and `CompassV2` call the same backend.
-- 2-3 person team benefits from atomic cross-app changes without coordination overhead.
-- Netlify supports monorepo deployments natively with `Base directory` config.
-
-**Migration path (low-risk, incremental):**
-
-1. Create `package.json` at repo root with `"workspaces": ["packages/*", "apps/*"]`
-2. Move `ev-ui/` → `packages/ev-ui/` — update internal name to `@ev/ev-ui`
-3. Move `CompassV2/` → `apps/compass/` — update import paths
-4. Move `essentials/` → `apps/essentials/` — update import paths
-5. Update Netlify sites: set `Base directory` per app
-6. Stop publishing `ev-ui` to GitHub npm registry (or keep as fallback)
-7. Optionally extract `packages/api-client/` from shared fetch patterns
-
-This is a 1-2 day migration with no functional changes. Each step is independently safe to revert.
+`fetchCandidatesFromDB` queries `essentials.election_records` joined via politician → office → district, filtered to districts whose `geo_id` appears in the geofence lookup result for the ZIP's centroid (or the ZIP cache's state mapping).
 
 ---
 
-## Component Boundaries Summary
+## Data Flow
 
-### Current Boundaries
-
-```
-EV-Backend (Go)
-  ├── /auth        → session CRUD
-  ├── /compass     → topics, answers, stances
-  ├── /essentials  → politicians, offices, ZIP cache
-  ├── /treasury    → budgets, cities, line items
-  └── /staging     → volunteer data entry
-
-CompassV2 (React)   → /compass endpoints
-essentials (React)  → /essentials endpoints
-EV-prototypes       → /treasury, /staging endpoints
-ev-ui (npm)         → RadarChartCore, PoliticianCard, PoliticianProfile
-```
-
-### Target Boundaries (After Milestone)
+### Address Search (v1.5 — geofence path)
 
 ```
-EV-Backend (Go) — same module structure, new fields/endpoints
-  ├── /auth          → + guest_state sync on register/login
-  │                  → + stance_seed field on users
-  ├── /compass       → + question field on topics
-  └── /essentials    → + /candidates/{zip} endpoint
+User types partial address in AddressSearch widget
+    ↓
+Google Places Autocomplete shows suggestions (session-billed)
+    ↓
+User selects → place.formatted_address = "123 Main St, Bloomington, IN 47401"
+    ↓
+onSelect(formattedAddress) → setActiveQuery(formattedAddress) in Dashboard.jsx
+    ↓
+usePoliticianData(activeQuery) → searchPoliticians(query) in api.jsx
+    ↓
+POST /essentials/politicians/search { query: "123 Main St, Bloomington, IN 47401" }
+    ↓
+[SearchPoliticians()] isZip5? NO
+    ↓
+GeoClient.Geocode("123 Main St...") → { lat: 39.165, lng: -86.526, state: "IN" }
+Google Maps Geocoding API: ~200ms, ~$0.005
+    ↓
+FindGeoIDsByPoint(39.165, -86.526)
+PostGIS ST_Contains: ~10-50ms with GiST index
+    → matches: [{G4020/18105}, {G4110/1847916}, {G5220/4702}, {G5210/4702}]
+    ↓
+FindPoliticiansByGeoMatches(matches)
+DB join with MTFCC-restricted district types: ~20-100ms
+    → localOfficials: []OfficialOut (county + city + school board...)
+    ↓
+fetchOfficialsFromDB("47401", "IN")
+    → federalOfficials + stateOfficials from cache tables
+    ↓
+Deduplicate by ExternalID, merge results
+    ↓
+Return []OfficialOut (local + state + federal)
 
-apps/compass (React)  → guest-first, no ProtectedRoute on quiz
-                       → localStorage-backed state always on
-                       → guest_state sync on register/login
+Total backend time: ~250-400ms (mostly geocoding API call)
+```
 
-apps/essentials (React) → officials/candidates toggle
-                         → visual differentiation for candidates
+### ZIP Search (largely unchanged)
 
-packages/ev-ui          → shared components, updated PoliticianCard
+```
+User types "47401"
+    ↓
+AddressSearch widget shows no suggestions (not an address)
+User presses Enter or clicks search
+    ↓
+POST /essentials/politicians/search { query: "47401" }
+    ↓
+[SearchPoliticians()] isZip5? YES → handleZipLookup("47401")
+    ↓
+Check cache tables (federal, state, zip)
+[NO WARMERS TRIGGERED — warmers removed from request path]
+    ↓
+fetchOfficialsFromDB("47401", "IN")
+    → politicians from zip_politicians JOIN politicians JOIN offices JOIN districts
+    ↓
+Return []OfficialOut
+[If empty, return [] with X-Data-Status: no-cache-data]
+```
 
-packages/api-client     → shared fetch wrappers (optional extraction)
+### Profile View (candidacy data)
+
+```
+GET /essentials/politician/{id}
+    ↓
+fetchPoliticianFromDB(id) → OfficialOut
+    ↓
+[REMOVED] ensureCandidacyData() lazy-fetch goroutine
+    ↓
+Return politician — endorsements, stances, elections served from DB
+(populated by last admin import run)
 ```
 
 ---
 
-## Data Flow (New Features)
+## New vs Modified Components
 
-### Guest Auth Flow
+### New (create from scratch)
+
+| Component | File | What It Does |
+|-----------|------|-------------|
+| AddressSearch | `essentials/src/components/AddressSearch.jsx` | Google Places Autocomplete input wrapper; calls `onSelect(formattedAddress)` on pick; US-only address type restriction |
+| Maps API loader | `essentials/src/loadMapsApi.js` | Dynamic script tag injection using `VITE_GOOGLE_MAPS_API_KEY`; resolves Promise when ready |
+
+### Modified (targeted changes)
+
+| Component | File | Change | Scope |
+|-----------|------|--------|-------|
+| SearchPoliticians handler | `handlers.go` | Delete BallotReady fallback block | ~lines 2916-3035 |
+| handleZipLookup | `handlers.go` | Remove warmer-kick goroutines (3 blocks); keep fetchOfficialsFromDB | ~lines 266-323 |
+| GetCacheStatus | `handlers.go` | Remove warmer-kick goroutines; keep status check | ~lines 192-232 |
+| GetCandidatesByZip | `handlers.go` | Replace live BallotReady call with fetchCandidatesFromDB() | ~lines 3662-3750 |
+| ensureCandidacyData | `handlers.go` | Remove lazy-fetch goroutine; keep DB-only serve logic | ~lines 1250-1290 |
+| warmFederal | `handlers.go` | Remove Provider.FetchFederal() body; keep cache timestamp update | ~lines 1294-1343 |
+| warmState | `handlers.go` | Remove Provider.FetchByState() body; keep cache timestamp update | ~lines 1348-1400 |
+| warmLocal | `handlers.go` | Remove Provider.FetchByZip() body + containment logic; keep cache timestamp update | ~lines 1404-1530 |
+| Init() | `setup.go` | Remove `_ ballotready` import; comment out Provider init; log "cached-data-only mode" | lines 11-92 |
+| Dashboard.jsx | `essentials/src/pages/Dashboard.jsx` | Import AddressSearch; replace `<input>` with `<AddressSearch onSelect={setZip} />` | ~lines 130-150 |
+| Landing.jsx | `essentials/src/pages/Landing.jsx` | Same swap | ~lines 50-65 |
+| main.jsx or App.jsx | `essentials/src/main.jsx` | Call loadGoogleMapsApi() on mount | top-level |
+
+### Kept Unchanged
+
+| Component | Why |
+|-----------|-----|
+| `geocoding/google.go` | Already fully implemented — no changes needed |
+| `geofence_lookup.go` | Already fully implemented — no changes needed |
+| `geofence_models.go` | No schema changes needed |
+| `provider/` package | Interface + registry kept for future extensibility |
+| `ballotready/` directory | Code retained for historical reference; just not imported |
+| `routes.go` | No new routes needed |
+| `api.jsx` | Already POSTs address string to correct endpoint |
+| All DB models and schemas | No schema changes required |
+
+---
+
+## Build Order (dependency-aware)
+
+Two independent tracks. Track A (backend) has no dependencies on Track B (frontend), so they can proceed in parallel.
+
+### Track A: Backend
+
+**Step A1 — Remove BallotReady fallback from SearchPoliticians()**
+- Delete the fallback block starting at the comment `/ Fallback: BallotReady address lookup`
+- Verify: when geofence returns 0 results, the handler returns `[]OfficialOut{}` with `X-Data-Status: no-geofence-data`
+- Test: POST a Bloomington IN address → returns politicians from existing geofence data
+
+**Step A2 — Disable Provider initialization in setup.go**
+- Remove the `_ "github.com/EmpoweredVote/EV-Backend/internal/essentials/ballotready"` import line
+- Remove or comment out the `provider.NewProvider(cfg)` call
+- Set `Provider = nil` explicitly with a log: `[essentials] Running in cached-data-only mode`
+- Keep `GeoClient` initialization unchanged
+
+**Step A3 — Remove warmer-kick goroutines from request handlers**
+- In `handleZipLookup`: delete the three `if !xFresh { if tryAcquireLock... { go func()... } }` blocks
+- In `GetCacheStatus`: delete the same three blocks
+- Keep the cache freshness check reads (they're informational; used in X-Data-Status header)
+- Stub warmer function bodies with a log message
+
+**Step A4 — Replace GetCandidatesByZip with DB-only query**
+- Implement `fetchCandidatesFromDB(ctx context.Context, zip string) ([]CandidateOut, error)`
+- Query `essentials.election_records` joined to politicians via standard joins
+- Filter to upcoming elections (election_date >= today) and districts that cover the ZIP
+- Return empty slice gracefully if no data exists (election_records may be empty for most ZIPs initially)
+
+**Step A5 — Remove ensureCandidacyData lazy-fetch**
+- Delete the goroutine that calls `brProvider.Client().FetchCandidacy()`
+- Profile views return whatever candidacy data is in the DB from the last import
+
+### Track B: Frontend
+
+**Step B1 — Add VITE_GOOGLE_MAPS_API_KEY to Netlify environment**
+- Set in Netlify UI under essentials site environment variables
+- This is a blocking dependency for B2 and B3 — do first
+- Use a key restricted to `places` library and HTTP referrer `essentials.empowered.vote`
+
+**Step B2 — Create loadMapsApi.js and wire into App.jsx**
+- Dynamic script injection using env var
+- AddressSearch component checks `window.google?.maps?.places` before attaching widget
+
+**Step B3 — Build AddressSearch.jsx**
+- `types: ["address"]` for street-level autocomplete
+- `componentRestrictions: { country: "us" }` — US addresses only
+- `onSelect(place.formatted_address)` callback on `place_changed` event
+- Graceful degrade: if `window.google` not loaded, render plain `<input>` (identical UX to current)
+
+**Step B4 — Swap input in Dashboard.jsx and Landing.jsx**
+- Import and render `<AddressSearch>` where `<input>` exists today
+- Pass `onSelect={val => { setZip(val); setActiveQuery(val); }}` or equivalent
+- Keep existing `onSearchClick` / `setSearchParams` logic for Enter key and button click
+
+### Blocking Dependencies
 
 ```
-User opens CompassV2 (no login)
-  → CompassContext generates stance_seed, stores in localStorage
-  → User answers quiz → answers stored ONLY in localStorage
-  → User views results → computed locally from localStorage answers
-  → User optionally registers
-      → RegisterForm reads localStorage: answers, selectedTopics, inverted, stance_seed
-      → POST /auth/register { username, password, guest_state: { answers, ... } }
-      → Backend: create user, write answers to compass.answers, write seed to users.stance_seed
-      → Frontend: clear ev_guest_* localStorage keys
-  → On subsequent logins: /auth/me returns stance_seed
-  → CompassContext uses server seed instead of localStorage seed
-```
+A1 → A2 → A3   (sequential, each builds on previous)
+A4             (independent of A1-A3, can be done in parallel)
+A5             (independent, can be done in parallel)
 
-### Stance Randomization Flow
+B1 → B2 → B3 → B4   (sequential)
 
-```
-Topic loads into CompassContext
-  → seed = localStorage.getItem('ev_stance_seed') || user.stance_seed
-  → For each topic: shuffledStances = seededShuffle(topic.stances, seed, topic.id)
-  → Rendered order is stable across page refreshes (same seed = same shuffle)
-  → Answers stored by stance ID, not position — order doesn't affect data integrity
-```
-
-### Candidate Discovery Flow
-
-```
-User views essentials Dashboard
-  → Toggle to "Candidates" tab
-  → fetchCandidates(zip) → GET /essentials/candidates/{zip}
-  → Backend: query election_records JOIN politicians WHERE election_date > now()
-               AND district covers zip
-  → Return CandidateOut[] with office_sought, election_date, is_incumbent
-  → Frontend: render CandidateCard with "Running for [Office]" badge
-  → Click → profile page (same /politician/:id route, additional election context)
+A track and B track are fully parallel.
+B1 (Netlify env var) must be set before B3/B4 can be tested in deployed preview.
 ```
 
 ---
 
-## Build Order (Cross-Feature Dependencies)
+## Integration Points
 
-The features have these dependencies:
+### Google Maps Geocoding API (backend)
 
-```
-[Monorepo migration]  → independent, do first to unblock parallel work
-        ↓
-[Guest-first auth]    → depends on: nothing (pure frontend + small backend change)
-        ↓
-[Stance seed]         → depends on: guest-first auth (seed is part of guest_state)
-        ↓
-[Question/prompt]     → independent of auth, depends on: schema migration only
-        ↓
-[Candidates]          → independent, depends on: existing candidacy data (already fetched)
-        ↓
-[Image storage]       → deferred unless BallotReady URLs break
-```
+| Aspect | Details |
+|--------|---------|
+| File | `internal/essentials/geocoding/google.go` — already complete |
+| Auth | `GOOGLE_MAPS_API_KEY` environment variable |
+| API restriction | Backend key: restrict to Geocoding API only in Google Cloud Console |
+| Graceful degrade | `GeoClient == nil` when key not set → SearchPoliticians falls through to empty result with appropriate status header |
+| Billing | ~$5 per 1,000 geocoding calls; free tier covers first $200/month |
+| Error handling | Already implemented: HTTP error codes, status != "OK", missing ZIP in result |
 
-### Recommended Phase Sequence
+### Google Maps Places Autocomplete (frontend)
 
-| Phase | Work | Parallelizable? |
-|-------|------|-----------------|
-| 1 | Monorepo migration | Solo — everyone benefits immediately |
-| 2a | Guest-first auth (frontend) | Dev A |
-| 2b | Question/prompt field (backend + frontend) | Dev B |
-| 3a | Stance seed (depends on guest auth) | Dev A, after 2a |
-| 3b | Candidates endpoint + toggle (backend + frontend) | Dev B, after 2b |
-| 4 | Image storage | Deferred — only if needed |
+| Aspect | Details |
+|--------|---------|
+| Integration | Dynamic script tag injection in `loadMapsApi.js` using `VITE_GOOGLE_MAPS_API_KEY` |
+| Auth | `VITE_GOOGLE_MAPS_API_KEY` in Netlify environment variables |
+| API restriction | Frontend key: restrict to Places API; HTTP referrer to `essentials.empowered.vote` |
+| Session billing | Legacy Autocomplete widget manages session tokens automatically; ~$0.017 per session |
+| Widget version | Use legacy `google.maps.places.Autocomplete`, not new PlaceAutocompleteElement (alpha) |
+| Graceful degrade | If Maps API fails to load, component renders a plain `<input>` — existing UX preserved |
+
+### PostGIS (existing, unchanged)
+
+| Aspect | Details |
+|--------|---------|
+| Function | `FindGeoIDsByPoint(lat, lng)` → `ST_Contains` query in `geofence_lookup.go` |
+| Index | `idx_geofence_boundaries_geometry` — GiST index created in `setup.go` |
+| MTFCC disambiguation | Existing logic in `FindPoliticiansByGeoMatches` handles SLDU vs SLDL correctly |
+| Coverage gap | Areas without imported TIGER data → 0 geofence results → empty response with clear header |
+
+### BallotReady API (removed)
+
+| Aspect | Where Removed |
+|--------|--------------|
+| `SearchPoliticians` fallback | Delete the fallback block in handlers.go |
+| `GetCandidatesByZip` live call | Replace with fetchCandidatesFromDB() |
+| `ensureCandidacyData` lazy-fetch | Delete the BallotReady goroutine |
+| `warmFederal/State/Local` API calls | Stub function bodies |
+| Import side-effect | Remove `_ ballotready` from setup.go |
+| `BALLOTREADY_API_KEY` env var | Can be removed from App Runner config after cutover |
+| `ballotready/` package | Kept in codebase but unused |
 
 ---
 
-## Decisions This Research Supports
+## Anti-Patterns
 
-| Decision | Recommendation | Rationale |
-|----------|---------------|-----------|
-| Guest-first auth sync pattern | localStorage → guest_state in register/login body | No new tables, syncs atomically, works in guest mode |
-| Question/prompt field | Add `question TEXT` column, omitempty in API | Backward-compatible, content-fillable independently |
-| Stance randomization | Client-side seed, synced to server on registration | Works guest-first, deterministic across devices after login |
-| Candidate display | New `/candidates/{zip}` endpoint, toggle in Dashboard | Data already exists, clean separation from officials view |
-| Image storage | Keep BallotReady CDN; Supabase Storage if URLs break | Zero cost, zero complexity until proven necessary |
-| Project structure | Monorepo with npm workspaces | Eliminates ev-ui publish friction, enables shared api-client |
+### Anti-Pattern 1: Moving Geocoding to the Frontend
+
+**What people do:** Call `place.fetchFields(['location'])` in the frontend to get lat/lng, then send coordinates directly to a new backend endpoint.
+
+**Why it's wrong (for v1.5):** It requires a new backend endpoint and splits address-resolution responsibility across two systems. The existing `POST /politicians/search` already works end-to-end. The redundant geocoding call (Places autocomplete internally geocodes, then backend geocodes again) costs a few cents per day at nonprofit scale — not worth the added complexity in this milestone.
+
+**Do this instead:** Send `formattedAddress` to the existing endpoint. Add Option B (frontend resolves lat/lng → new endpoint) in a future milestone when addressing a scaling or cost concern.
+
+### Anti-Pattern 2: Deleting the ballotready/ Package
+
+**What people do:** Remove the entire `internal/essentials/ballotready/` directory for cleanliness.
+
+**Why it's wrong:** The admin import tool (`StartBulkImport`, `GetImportStatus`) uses the `upsertNormalizedOfficial` pipeline which references BallotReady transform types. The DB already contains BallotReady-sourced data. The transform logic documents the data model. Deletion creates unnecessary risk and loses the historical reference.
+
+**Do this instead:** Remove only the import side-effect in `setup.go` (`_ "github.com/EmpoweredVote/EV-Backend/internal/essentials/ballotready"`). The package compiles but is not registered in the provider registry and never called at runtime.
+
+### Anti-Pattern 3: Removing Warmer Infrastructure Entirely
+
+**What people do:** Delete `warmFederal`, `warmState`, `warmLocal`, the lock functions, and all cache table references.
+
+**Why it's wrong:** The cache tables (`federal_cache`, `state_caches`, `zip_caches`) are read by `fetchOfficialsFromDB` to build accurate queries. The lock functions (`tryAcquireLock`/`releaseLock`) prevent thundering herd and are used elsewhere. Removing the cache tables would require restructuring the entire DB fetch query.
+
+**Do this instead:** Remove only the API-call body inside each warmer function. Keep the function signatures, the cache timestamp updates, and the lock infrastructure intact. If a future data source is wired in, the infrastructure is already there.
+
+### Anti-Pattern 4: Loading Maps JS API via npm Package
+
+**What people do:** `npm install @vis.gl/react-google-maps` or `react-google-autocomplete` to avoid a `<script>` tag.
+
+**Why it's wrong:** Adds bundle weight and a maintenance dependency. The native `google.maps.places.Autocomplete` widget loaded via script tag is lighter, handles session tokens automatically, and requires no npm package. The new `@vis.gl/react-google-maps` PlaceAutocompleteElement is still alpha/beta and not production-ready.
+
+**Do this instead:** Load via dynamic script injection in `loadMapsApi.js`. Wrap in a React component using `useRef` + `useEffect` to attach after mount. This is the established pattern for Places Autocomplete in vanilla JS apps.
+
+### Anti-Pattern 5: Hardcoding the Maps API Key in index.html
+
+**What people do:** Put the API key directly in the `<script src>` URL in `index.html`.
+
+**Why it's wrong:** Vite does not perform env var substitution in raw HTML files. The literal `%VITE_GOOGLE_MAPS_API_KEY%` string would be sent to the browser, breaking the widget.
+
+**Do this instead:** Use the `loadMapsApi.js` dynamic loader that reads `import.meta.env.VITE_GOOGLE_MAPS_API_KEY`. This runs through Vite's env var system at build time.
 
 ---
 
-*Research complete: 2026-02-17*
+## Scaling Considerations
+
+| Scale | Architecture Notes |
+|-------|-------------------|
+| Current (100-1k users) | Single backend; PostGIS queries <50ms with GiST index; geocoding adds ~200ms per address search; total response ~400ms |
+| 1k-10k users | Geocoding API cost becomes notable (~$30-300/month at 10k searches/day); consider caching geocoding results keyed on normalized address string |
+| 10k+ users | Add `geocoded_addresses` table (normalized_input, lat, lng, formatted); check cache before calling Google; PostGIS read replicas for geofence queries |
+
+**First bottleneck at scale:** Google Maps API cost and rate limits. The free tier covers $200/month. Geocoding is ~$5/1k calls; Places Autocomplete sessions are ~$17/1k sessions. At 1k daily unique searches: ~$600/month in API costs without caching.
+
+**Mitigation before that point:** Cache geocoding results. A `geocoded_addresses` table keyed on `lower(trim(input_address))` turns repeated searches (same city) into a single API call.
+
+---
+
+## Sources
+
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geocoding/google.go` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geofence_lookup.go` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/handlers.go` — HIGH confidence (full review)
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/setup.go` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/provider/provider.go` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/ballotready/provider.go` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/essentials/src/pages/Dashboard.jsx` — HIGH confidence
+- Source inspection: `/Users/chrisandrews/Documents/GitHub/essentials/src/lib/api.jsx` — HIGH confidence
+- [Google Maps Place Autocomplete Widget (legacy)](https://developers.google.com/maps/documentation/javascript/legacy/place-autocomplete) — HIGH confidence
+- [Google Maps Place Autocomplete Data API](https://developers.google.com/maps/documentation/javascript/place-autocomplete-data) — HIGH confidence
+- [Autocomplete session pricing](https://developers.google.com/maps/documentation/places/web-service/session-pricing) — HIGH confidence
+- [Google Maps Geocoding API overview](https://developers.google.com/maps/documentation/geocoding/overview) — HIGH confidence
+- [PostGIS point-in-polygon for civic representative lookup](https://medium.com/@nidhipandya1606/from-zip-codes-to-point-in-polygon-architecting-accurate-representative-lookup-for-voice-463c8f70a9ea) — MEDIUM confidence (external blog, aligns with existing implementation)
+
+---
+
+*Architecture research for: Address Verification & BallotReady Independence (v1.5)*
+*Researched: 2026-02-22*

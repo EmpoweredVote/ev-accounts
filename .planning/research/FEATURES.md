@@ -1,271 +1,244 @@
-# Features Research — Empowered Vote Platform
+# Feature Research — v1.5 Address Verification & BallotReady Independence
 
-**Research date:** 2026-02-17
-**Milestone:** Platform quality & consolidation — demo-ready improvements
-**Question:** What features do civic engagement platforms have for quiz UX, candidate display, and multi-level government navigation? What's table stakes vs differentiating?
-
----
-
-## 1. Guest-First Quiz Experiences with Optional Account Creation
-
-### What the market does
-
-iSideWith (the largest political quiz platform by traffic) allows full quiz completion without login. Results appear immediately. Account creation is surfaced post-completion as an optional "save your results" CTA. Vote Compass (used by national broadcasters for major elections) follows the same pattern: no login gate, results always visible, sharing is the viral loop. Pew Research Political Typology quiz is fully anonymous with no account option at all.
-
-The pattern across all high-traffic political quizzes: **friction-free entry, optional persistence**.
-
-### Table stakes
-
-- Quiz runs fully in-browser without requiring an account
-- Results are visible before any save/login prompt
-- localStorage is used to persist responses across sessions for returning guests
-- "Save your results" CTA appears after quiz completion, not before
-- Returning guests see their previous answers without logging in
-
-### Differentiators
-
-- Seamless account merge: guest localStorage state is promoted to server-side on login without data loss
-- Shareable result links that work for non-registered users
-- "Continue where you left off" messaging when a returning guest lands on the quiz
-
-### Anti-features (deliberately avoid)
-
-- Login walls before any quiz interaction — this is the primary conversion killer for political quiz tools
-- Mandatory email collection to see results
-- Showing a "register to unlock" gate in the middle of the quiz
-
-### Complexity: Low-Medium
-The core change is unwrapping `ProtectedRoute` from quiz routes and routing localStorage answers through the existing `CompassContext`. The tricky part is the merge flow when a guest logs in mid-session: the client must POST buffered localStorage answers to the server and then clear local state. This is a known pattern (Shopify cart merge, etc.) but needs careful sequencing.
-
-### Dependencies
-- Requires `CompassContext` to work without a user ID (use `null` or a guest UUID)
-- "Clear compass" must be admin-only before guest mode ships — otherwise any user can clear their own results without login and the feature becomes pointless
-- Server-side answer persistence stays as-is; guest answers stay in localStorage only
+**Domain:** Civic engagement — address-based politician lookup
+**Researched:** 2026-02-22
+**Confidence:** HIGH (based on existing codebase + official Google Maps docs; civic UX from market observation)
 
 ---
 
-## 2. Political Compass/Quiz UX Patterns — Stance Presentation and Bias Mitigation
+## Scope Note
 
-### What the market does
-
-Positional bias (primacy/recency effects) is well-documented in survey research and explicitly addressed in political quiz design. The Prism Political Quiz uses a fixed seed for randomization so users can share a "same quiz" experience. Research on LLM political bias testing explicitly randomizes answer option order per administration to control for selection bias.
-
-The Political Compass test uses agree/disagree on fixed statements — no ordering — which sidesteps the problem by design. iSideWith shows stances as radio buttons with fixed ordering (strongly agree → strongly disagree) because their scale is unidimensional. EV's quiz is multi-dimensional with custom stances per issue, which makes random ordering both necessary and more complex.
-
-The current EV implementation already randomizes which spokes are inverted (via `initRandomInversions`). The gap is that stance buttons within each issue are displayed in their database insertion order — a subtle but real bias vector.
-
-### Table stakes
-
-- Stances presented in an order that does not systematically advantage any position
-- If stances have a natural spectrum (most supportive → least supportive), the full spectrum is preserved but the direction is randomized (not the internal ordering of a spectrum)
-- The per-user ordering is permanent once set — changing it on each visit would confuse returning users
-
-### Differentiators
-
-- Showing a question/prompt above each issue rather than just a category title — users understand what they are being asked, not just the topic area
-- "Importance" weighting per issue (iSideWith does this; it significantly improves match quality)
-- Neutral "skip" option separate from a midpoint answer
-
-### Anti-features
-
-- Randomizing stance ordering differently on every page visit — users who return and remember their previous answer will get confused
-- Hiding the stance labels until a user scrolls — all options must be immediately visible for informed choice
-- Showing stances with a visual scale that implies ordinal ranking when the stances are categorical
-
-### Complexity: Low
-The per-user permanent randomization is low complexity: generate a boolean per (user_id OR guest_uuid, topic_id) on first encounter, store in localStorage (guest) or server (authenticated), and use it to determine whether to reverse the stances array before render. The spectrum is preserved — only the direction flips. The existing `initRandomInversions` pattern in `CompassContext` is the right template; apply the same approach to stances.
-
-### Dependencies
-- Requires a question/prompt field on the `Topic` model (currently only `title` and `short_title` exist — `start_phrase` is close but used differently)
-- Guest randomization state lives in localStorage alongside guest answers
+This file covers only the NEW features for v1.5. Existing features (ZIP code search, 3-tier cache, geofence infrastructure, lazy-load candidacy, X-Data-Status headers) are built and working. Research here addresses: address autocomplete UX, BallotReady removal, coverage gap handling, and cached-only candidates display.
 
 ---
 
-## 3. Candidate vs. Incumbent Display Patterns in Voter Guides
+## Feature Landscape
 
-### What the market does
+### Table Stakes (Users Expect These)
 
-Ballotpedia distinguishes incumbents with a badge and sorts them first within their race. Guides.vote (7M+ distribution in 2024) shows candidates grouped by race with clear "Incumbent" labels. Vote.gov links to official state voter guides which universally label incumbents.
+Features users assume exist in any address-based lookup tool. Missing these = product feels broken or untrustworthy.
 
-The Center for Civic Design's voter guide field guide recommends presenting candidates with equal visual weight per position — not emphasizing incumbents over challengers — but does recommend clearly labeling status. The practical consensus: label the distinction, do not re-rank by it.
+| Feature | Why Expected | Complexity | Notes |
+|---------|--------------|------------|-------|
+| Address autocomplete dropdown | Every address input on modern civic sites (Ballotpedia, vote.gov, Google "Who represents me") shows suggestions as you type. A bare text field with a Search button feels like 2010. | MEDIUM | `useGooglePlacesAutocomplete` hook already exists in Results.jsx. Work is removing the ZIP-code path as the primary entry and making address the only path. |
+| Confirmed address display after search | After selecting an address, users expect to see the canonical formatted address (e.g., "123 Main St, Bloomington, IN 47401") not their raw typed input. Builds trust that the system understood them. | LOW | Google's `formatted_address` field is already returned in the Places response. Show it above results. |
+| Graceful "no coverage" message | If an address geocodes but the geofence has no data, users need to understand why the list is empty — not just see a blank page. Civic apps universally show a message like "We don't have local representatives for this area yet." | LOW | Backend returns `X-Geofence-Count: 0` header already. Frontend can branch on empty results + this header. |
+| Federal/state officials shown when local is missing | When local geofence data is absent, users still expect to see their Senators, Representative, and Governor. Not showing federal officials because local coverage is missing is a trust failure. | LOW | Backend `SearchPoliticians` already supplements geofence results with federal/state from DB cache. The gap is what happens when geofences return 0 matches — need to fall back to ZIP-derived state. |
+| Candidate toggle still works with cached data | The existing "Show Candidates" toggle must continue to work. Users who have come to rely on it expect it to function. The only change is the source of data — cached instead of live. | MEDIUM | Currently `GetCandidatesByZip` calls BallotReady live. Must convert to a DB read from `essentials.election_records` and related tables, filtered for upcoming elections. |
+| No broken experience when BallotReady is unavailable | After cutting BallotReady, address search must not break if Google geocoding fails. Must have a clear error path, not a 502 or blank page. | LOW | Current fallback path already calls BallotReady when geocoding fails or geofences are empty. That fallback path must be removed and replaced with a useful user message. |
 
-For EV's use case (politician lookup by ZIP, not a ballot context), the incumbent/candidate split is more about data freshness and relevance than ballot context. A candidate is someone running for an office they do not currently hold; showing them alongside current officeholders is genuinely useful for voters doing pre-election research.
+### Differentiators (Competitive Advantage)
 
-### Table stakes
+Features that distinguish EV from generic tools. Not required for v1.5 to ship, but improve the experience.
 
-- Clear visual distinction between current officeholders and candidates (badge, border style, or section header)
-- Candidate cards do not appear unless the user has explicitly opted in (toggle or filter) — candidates are noisier data and the primary use case is "who represents me now"
-- Election date shown on candidate cards so users know when the race is
-- Party affiliation on both incumbent and candidate cards
+| Feature | Value Proposition | Complexity | Notes |
+|---------|-------------------|------------|-------|
+| Address instead of ZIP as primary input | ZIP codes are not how people think about their address. Street address is more natural and more precise (ZIP codes cross district boundaries). Civic tools that accept street addresses feel more sophisticated. | LOW | The architecture already prefers address. This is a UI framing change — remove the ZIP input path and label the field "Your address" instead of "ZIP code or address." |
+| "Showing officials for [City, State]" sub-header | When results load, showing "Showing representatives for Bloomington, IN" confirms the system interpreted the address correctly. Reduces user uncertainty about coverage. | LOW | The `formatted` address is already in the geocoding response. Extract city + state and display as a results header. `ResultsHeader` component in the codebase is the right place. |
+| Coverage indicator (geofence vs. cache-only) | For power users, knowing whether local results come from precise geofence matching vs. a ZIP-level cache is useful. A subtle badge or tooltip ("District-matched" vs. "Zip-estimated") builds trust. | LOW | `X-Data-Status: fresh-local` vs `X-Data-Status: stale` already exists. Wire it to a UI indicator. This is a minor polish item. |
+| Cached candidates with freshness date | Showing "Candidates as of [date]" when displaying cached candidate data sets honest expectations. Users understand the data may not include last-minute changes. | LOW | `election_records` table has election dates. Show the most recent import timestamp with the candidate toggle. |
+| Address validation feedback (not just geocoding) | Google's Address Validation API (distinct from Geocoding) can flag undeliverable addresses before submitting. This prevents users from entering "123 fake street" and getting a confusing empty result. | HIGH | This is the new `PlaceAutocompleteElement` (post-March 2025). Adds session-based billing complexity. Consider deferred to v1.6. See Anti-Features below. |
 
-### Differentiators
+### Anti-Features (Commonly Requested, Often Problematic)
 
-- Grouping candidates with the incumbent they are challenging (e.g., "Senate — Illinois" shows the incumbent plus any declared challengers in the same cluster)
-- "Upcoming election" banner on a section when candidates exist for that race
-- Linking candidate and incumbent profiles for direct comparison
+Features that seem helpful for v1.5 but create disproportionate cost or complexity.
 
-### Anti-features
-
-- Mixing candidates and incumbents in the same undifferentiated list — this is the worst UX pattern from a user trust perspective; users think they are seeing current officeholders
-- Showing candidate data without a clear "running for" or "candidate" label
-- Displaying candidates by default when users expect to see current representation
-
-### Complexity: Medium
-The data model already has `ElectionRecord` and the BallotReady candidacy fetch. The work is: (1) a backend flag or separate endpoint for candidates vs. incumbents, (2) frontend toggle UI, (3) card visual variant for candidates. The BallotReady candidacy data already distinguishes these via the `is_appointed`/`is_vacant` fields and race data.
-
-### Dependencies
-- BallotReady candidacy fetch (lazy-loaded on profile view) must run proactively for ZIP results, not just profiles, to populate candidates in the ZIP view
-- ElectionRecord must reliably distinguish current term vs. upcoming race
-
----
-
-## 4. Multi-Level Government Navigation (Federal/State/Local)
-
-### What the market does
-
-The existing three-tier tab UI (Federal / State / Local) matches what Ballotpedia, Google's "Who represents me" feature, and most congressional contact tools use. The tab pattern is standard. The differentiation opportunity is in the sub-grouping and ordering within each tier.
-
-Ballotpedia orders federal content as: Executive → Senate → House → Independent Agencies. This matches importance/familiarity. EV currently shows local before state before federal in the "All" view — the reverse of how most voters think about salience.
-
-The U.S. Web Design System (used by federal agencies) recommends leading with the most immediately actionable content for users' current context. For a ZIP-based lookup, local officials are often most actionable (council members, school board). But for name recognition and initial orientation, federal is usually the user's starting mental model.
-
-### Table stakes
-
-- Three-tier navigation (Federal / State / Local) is expected and must be present
-- Federal section always shows president/VP plus the user's senators and representative
-- State section always shows governor plus the user's state legislators
-- Within-tier grouping by category (e.g., U.S. Senate, U.S. House) with clear category headers
-- Category ordering matches political salience: for federal — President/VP, Senate, House, then Cabinet/agencies
-
-### Differentiators
-
-- Building/landmark imagery per tier as visual anchoring (Capitol dome for federal, state capitol for state, city hall/courthouse for local)
-- "Your representatives" quick-jump to show only directly elected officials (filter out appointed/cabinet)
-- Position start/end dates on cards for context ("Term ends 2026")
-- Level indicator on compass issues (this issue affects federal policy vs. state law vs. local ordinance)
-
-### Anti-features
-
-- Infinite scroll within a tier with no visual grouping — users lose context
-- Hiding all three tiers behind a single long scrolling list without tier headers
-- Building images that are generic stock photos rather than actual local landmarks — this erodes trust with users who recognize their local buildings
-
-### Complexity: Low-Medium
-Reordering federal categories is a frontend-only change to the `FEDERAL_ORDER` sort constant. Building images require curating a small asset library (one image per major government building type) and associating them with tier headers. The image sourcing/licensing is the hard part, not the implementation. Level indicators on compass issues require a new `level` field on the `Topic` model and a UI badge.
-
-### Dependencies
-- Federal reordering: standalone, no backend changes
-- Building images: need to decide on image sourcing (Unsplash, Wikipedia Commons, or custom photography for local buildings)
-- Issue level indicators: requires `Topic` model migration (add `level` enum field) and admin UI to set it
+| Feature | Why Requested | Why Problematic | Alternative |
+|---------|---------------|-----------------|-------------|
+| Google Address Validation API (full validation) | Confirms addresses are real before geocoding, prevents garbage input | Separate billing SKU from Geocoding; requires session token management; adds latency; `PlaceAutocompleteElement` (new web component) requires migrating off the current hook-based approach which already works. As of March 1, 2025, legacy `Autocomplete` class is closed to new customers but existing customers are unaffected — the current hook still works. | Keep existing `useGooglePlacesAutocomplete` hook. Autocomplete suggestions are self-validating (user selects a real address from the dropdown). Only validate backend-side if geocoding fails to return a result. |
+| Live BallotReady fallback for uncovered areas | Ensures users in un-imported areas always see data | The entire point of v1.5 is removing BallotReady dependency. A "live fallback" undermines this. It also means the API key must remain active. | Show a clear "coverage unavailable" message with federal/state officials from the cache. Set expectations that local coverage is expanding. |
+| Accepting ZIP codes as a second input mode alongside address | Some users know their ZIP, not their address. Having both keeps them happy. | Two input modes = two code paths = two sets of edge cases. ZIP path does not use the geofence lookup. It triggers the old warmer flow. Maintaining both during a migration creates a split implementation that is hard to reason about. | During v1.5, unify on address. The existing ZIP warmer cache remains — a ZIP lookup against the backend still works internally. Users who type a ZIP into the address field will get geocoded results (Google geocodes ZIPs to coordinates, which then hit the geofence). |
+| Real-time candidate data for uncached areas | Some candidates will not appear in cached data if they declared recently | Real-time candidate fetching was the BallotReady dependency. The whole point of this milestone is removing it. Keeping real-time for candidates means keeping the API key and all the transform logic. | Show candidates from cache only. Add a "data as of [date]" note. This is the correct trade-off for removing BallotReady dependency. |
+| ZIP-code autocomplete suggestions (e.g., "90210 → Beverly Hills, CA") | Some users prefer ZIP. Showing city name for a ZIP helps them confirm they entered the right one. | ZIP autocomplete is a separate API pattern that requires a ZIP-to-city dataset or the Geocoding API. It does not help with district-level matching. | Not needed. Address autocomplete handles this use case entirely. Users who know their ZIP will type it; the geocoding API will resolve it to coordinates. |
 
 ---
 
-## 5. Building/Landmark Imagery for Government Levels
+## Feature Dependencies
 
-### What the market does
+```
+Google Places Autocomplete (frontend)
+    └──provides formatted address──> Backend SearchPoliticians endpoint
+            └──requires──> Google Geocoding API (already integrated in geocoding/google.go)
+                    └──provides lat/lng──> PostGIS FindGeoIDsByPoint (geofence_lookup.go)
+                            └──provides geo matches──> FindPoliticiansByGeoMatches
+                                    └──returns──> Officials list (geofence-matched)
 
-USA.gov uses the Capitol dome as a visual anchor for federal content. State government portals use state capitol photos. Most civic platforms that include building imagery use it as section headers or background cards — not inline with each politician card.
+Officials list
+    └──supplemented by──> Federal/State cache (existing ZIP-based cache)
+            └──requires──> State derived from geocoded address (geoResult.State already available)
 
-The pattern is: one representative image per tier/section, not one per politician or per category.
+Candidate toggle
+    └──requires──> Cached ElectionRecord data (Phase B already populated this)
+            └──filters on──> election_date >= today (future elections)
+            └──requires──> New backend endpoint: GET /candidates/search (address-based)
+                    OR reuse existing /candidates/{zip} with ZIP from geocoded result
 
-### Table stakes
+BallotReady removal
+    └──blocks until──> Address search path (geofence) covers the primary use case
+    └──blocks until──> Candidate cached data endpoint exists
+    └──allows removal of──> ballotready/client.go calls in SearchPoliticians
+    └──allows removal of──> GetCandidatesByZip live-fetch path
+    └──allows removal of──> BALLOTREADY_API_KEY env var dependency
+```
 
-- A recognizable civic building image per government tier (federal, state, local)
-- Images are used as section headers or background treatments, not card thumbnails
-- Alt text that identifies the building for accessibility
+### Dependency Notes
 
-### Differentiators
-
-- Actual local buildings: the Bloomington City Hall for Bloomington local section, the Los Angeles City Hall for LA local section — this makes the platform feel locally grounded
-- State capitol buildings: sourced from Wikipedia Commons (public domain), one per state
-- Graceful fallback: a generic civic building placeholder when a specific building image is not available
-
-### Anti-features
-
-- Using stock civic imagery that looks generic (a generic courthouse stock photo for every city)
-- Full-bleed background images that compete with politician card readability
-- Images that are not indexed/responsive, causing layout shift on mobile
-
-### Complexity: Low (implementation) / Medium (asset curation)
-The component work is straightforward — a section header with a background image. The effort is in sourcing and curating a reasonable set: U.S. Capitol (public domain), state capitols (Wikipedia Commons), and specific local buildings for cities the platform actively supports (LA, Bloomington initially).
-
-### Dependencies
-- Requires knowing which cities/localities the platform will actively support at launch — don't build image infrastructure for 50 cities if only 2 matter for the demo
-
----
-
-## 6. Project Consolidation Patterns for Multi-App Platforms
-
-### What the market does
-
-The civic tech space has examples across the full spectrum:
-
-- **Monorepo + separate deployments** (e.g., Vote.org, Rock the Vote): All apps in one repo with shared component libraries, each deploying independently. Works well for 2-5 person teams. The shared library approach (EV's ev-ui pattern) is consistent with this.
-- **Unified single-page app with tab/section navigation**: Less common in civic tech, more common in SaaS. High integration cost but single deployment.
-- **Loosely coupled microsite federation**: Each feature is its own deployment (current EV pattern). Works at small scale; becomes harder to manage as the number of apps grows.
-
-For a 2-3 person team with existing apps, the decision criteria are: (1) how often do changes span multiple apps, (2) how much shared state needs to flow between apps, and (3) what is the deployment complexity budget.
-
-### Table stakes
-
-- Shared authentication across all apps (currently working via cookie-based session)
-- Consistent visual design language (currently working via Tailwind tokens and ev-ui)
-- Users do not need to re-login when moving between apps
-
-### Differentiators (if consolidating)
-
-- Single URL structure (e.g., `empowered.vote/compass`, `empowered.vote/find`) instead of subdomains/separate deployments
-- Shared navigation that makes the platform feel like one product, not a collection of tools
-- One build/deploy pipeline instead of one per app
-
-### Anti-features
-
-- Forcing a full monorepo rewrite before the platform is demo-ready — this is a distraction from the actual milestone
-- Building a shared-state architecture (global Redux/Zustand across apps) before the use cases are proven
-- Over-engineering the build pipeline (e.g., Nx or Turborepo) when the current multi-repo structure works and changes are infrequent across apps
-
-### Complexity: High (if consolidating now)
-A full monorepo migration during a demo-preparation milestone is high risk. The research question is right ("research and decide") — the answer should be: converge on a target architecture, do not migrate yet. The target is most likely a path-based SPA or a Vite multi-app monorepo, but migration should wait until after the demo. The current structure (separate apps, shared ev-ui library) can support the demo milestone without consolidation.
-
-### Dependencies
-- CORS and cookie domain settings in the backend must be updated if app URLs change
-- ev-ui library versioning becomes more complex in a monorepo (shared symlink vs. published package)
+- **Address autocomplete requires active Google Maps API key:** `VITE_GOOGLE_MAPS_API_KEY` (frontend) and `GOOGLE_MAPS_API_KEY` (backend geocoding). Both already present — no new credentials needed.
+- **Cached candidate display requires ElectionRecord population:** Phase B already seeded `essentials.election_records` from BallotReady. The data exists. The work is exposing it via a non-live endpoint that filters for upcoming elections. This is a new SQL query, not a new data collection step.
+- **Federal/state supplemental requires state from geocoded address:** The `geoResult.State` field is already returned from `geocoding/google.go` and used in `SearchPoliticians`. When geofence matches are 0 (uncovered area), the backend can still use `geoResult.State` to derive the state and return federal + state officials from cache. This is a small code path extension — the state-from-geocode mechanism already exists.
+- **BallotReady removal is a trailing action:** All the fallback paths (live officeholder fetch, live candidate fetch) depend on BallotReady. They can only be removed after the replacement paths are validated. Remove BallotReady last, not first.
 
 ---
 
-## Summary: Table Stakes vs. Differentiators vs. Anti-Features
+## MVP Definition
 
-| Feature Area | Table Stakes | Differentiators | Anti-Features |
-|---|---|---|---|
-| Guest quiz | Full quiz without login; localStorage persistence; post-completion save prompt | Seamless guest-to-account merge; shareable result links | Login gate before quiz starts; email required to see results |
-| Stance presentation | Order does not systematically bias; permanent per-user randomization | Question/prompt field above issue; importance weighting per issue | Per-visit randomization; hidden stance labels |
-| Candidate display | Clear visual badge (Candidate vs. Incumbent); opt-in toggle; election date shown | Grouping challenger with incumbent; "Upcoming election" banner | Undifferentiated candidate/incumbent list; no "running for" label |
-| Multi-level navigation | Three-tier tabs; expected category grouping; correct priority ordering (Senate before agencies) | Building imagery; position start/end dates; issue level indicators | Infinite scroll without grouping; generic stock building images |
-| Project consolidation | Shared auth and design language (already done) | Single URL structure; unified nav; one deploy pipeline | Full monorepo migration during demo milestone; premature shared-state architecture |
+### Launch With (v1.5)
+
+Minimum viable set to achieve the milestone goal: address-only search, BallotReady removed, cached candidates.
+
+- [x] Address autocomplete as the primary (only) search input — remove ZIP-specific input path from Results.jsx UI; address field label reads "Your address"
+- [x] Confirmed address display after selection — show `formatted_address` from Google as a results sub-header
+- [x] Geofence-based politician matching for covered areas — already works; ensure it is the primary path with no BallotReady fallback
+- [x] Federal/state officials from cache when local geofence returns 0 results — extend the "no geofence matches" path in `SearchPoliticians` to still return federal + state for the geocoded state
+- [x] "No local coverage" message when local data is unavailable — frontend branch when local politicians = 0 but federal/state present
+- [x] Cached-only candidate display — new backend endpoint (or modify `/candidates/{zip}`) to read from `essentials.election_records` instead of calling BallotReady; filter `election_date >= today`
+- [x] BallotReady API key removed from required env vars — both the live officeholder path and live candidate path replaced; `BALLOTREADY_API_KEY` becomes optional/unused
+
+### Add After Validation (v1.x)
+
+Features to add once the core v1.5 flow is confirmed working.
+
+- [ ] "Showing results for [City, State]" sub-header — low effort polish once address flow works
+- [ ] Coverage indicator badge (geofence-matched vs. cache-only) — uses existing `X-Data-Status` header, frontend only
+- [ ] Candidate data freshness date ("as of [date]") — show import timestamp with candidate toggle
+- [ ] Address-based candidate endpoint instead of ZIP fallback — currently candidates fetch by ZIP derived from geocoded address; a true address-based candidate endpoint would be more precise
+
+### Future Consideration (v2+)
+
+Features to defer: significant complexity or not needed for stated milestone goal.
+
+- [ ] `PlaceAutocompleteElement` migration (new Google API) — existing customers unaffected until deprecation; current hook still works for EV; migrate when forced
+- [ ] Full address validation (undeliverable address detection) — requires `PlaceAutocompleteElement` + Address Validation API; adds session billing complexity
+- [ ] Wider geofence coverage (import TIGER shapefiles for more states/counties) — data import work, not feature work; needed before the platform is useful nationally
+- [ ] Candidate endorsement/stances display in ZIP results (not just profile) — requires significant frontend rework; currently lazy-loaded on profile view only
 
 ---
 
-## Key Dependencies Between Features
+## Feature Prioritization Matrix
 
-1. **Guest quiz → stance randomization**: Both need a guest identity (localStorage UUID). Design one guest identity scheme and use it for both.
-2. **Stance randomization → question/prompt field**: The prompt gives users context when stances arrive in non-default order. Shipping randomization without the prompt degrades UX.
-3. **Candidate display → BallotReady candidacy data**: Candidates only appear if the candidacy lazy-fetch is running. This currently triggers on profile view, not on ZIP results. A ZIP-level candidacy pass is needed.
-4. **Building images → known city/locale list**: Do not build image infrastructure before confirming which localities the platform demonstrates. Start with U.S. Capitol + state capitols + Bloomington City Hall + LA City Hall as the minimum viable set.
-5. **Federal reordering → no backend changes**: This is purely a frontend sort constant. It is a quick win with zero risk.
-6. **Issue level indicators → Topic model migration**: A new `level` field on `compass.topics` requires a migration and admin UI. This is a backend + frontend change. Do not block other features on it.
+| Feature | User Value | Implementation Cost | Priority |
+|---------|------------|---------------------|----------|
+| Address autocomplete as primary input | HIGH — reduces friction, removes ZIP guessing | LOW — hook already exists, UI change only | P1 |
+| Confirmed address display | MEDIUM — trust signal, UX polish | LOW — `formatted_address` already available | P1 |
+| Geofence-only politician matching | HIGH — core milestone requirement | LOW — already works; remove BallotReady fallback | P1 |
+| Federal/state when local unavailable | HIGH — prevents blank results outside covered areas | LOW — extend existing `SearchPoliticians` path | P1 |
+| "No local coverage" user message | HIGH — prevents confused blank pages | LOW — frontend branch, no backend changes | P1 |
+| Cached candidate endpoint | HIGH — removes last live BallotReady call | MEDIUM — new SQL query, endpoint, data mapping | P1 |
+| BallotReady key removal | HIGH — the milestone's defining outcome | LOW — env var change + code cleanup after above | P1 |
+| "Showing results for [City]" header | MEDIUM — trust/orientation signal | LOW — cosmetic | P2 |
+| Coverage indicator badge | LOW — power user only | LOW — uses existing header | P2 |
+| Candidate freshness date | MEDIUM — honest about data age | LOW — add import timestamp to response | P2 |
+| PlaceAutocompleteElement migration | LOW for existing customers | HIGH — requires hook rewrite, session tokens | P3 |
+| Wider geofence coverage | HIGH for national launch | HIGH — data import / ops work | P3 |
+
+**Priority key:**
+- P1: Must have for v1.5 launch
+- P2: Should have, add in v1.5.x polish pass
+- P3: Future milestone
+
+---
+
+## Edge Case Behavior Specifications
+
+These are the specific scenarios that need explicit implementation decisions. Research shows civic apps consistently fail silently on these; explicit handling is what separates polished tools from MVP hacks.
+
+### Case 1: Address geocodes but geofence has no data
+
+**What happens today:** `SearchPoliticians` logs "no politicians found for geo-IDs (area not pre-populated)" and falls through to BallotReady live fetch.
+
+**What must happen in v1.5:** Fall back to federal + state officials from cache using `geoResult.State`. Return them with `X-Data-Status: cache-only`. Frontend shows: "We found your representatives at the federal and state level. Local district data for this address is not yet available."
+
+**Why this matters:** This is the most common case for any address outside Bloomington, IN and Los Angeles, CA (the only areas with imported geofences). Getting this wrong means the vast majority of addresses return an empty page.
+
+### Case 2: Google geocoding fails (bad address, API error)
+
+**What happens today:** Falls through to BallotReady live address lookup.
+
+**What must happen in v1.5:** Return HTTP 400 with message "We could not find this address. Please check the address and try again." Frontend catches this and shows the error. No fallback to BallotReady.
+
+**Why this matters:** Without the BallotReady fallback, a geocoding failure must produce a user-friendly error — not a 502 or silent empty result.
+
+### Case 3: Address autocomplete selection vs. typed ZIP
+
+**What happens today (Results.jsx):** The hook detects ZIP (`/^\d{5}$/.test()`) vs address and routes differently. ZIP goes to `/politicians/{zip}`, address goes to `/politicians/search`.
+
+**What must happen in v1.5:** Typing a ZIP into the address field will work because Google Places Autocomplete converts a ZIP to a formatted address (e.g., "47401" becomes "Bloomington, IN 47401, USA"). The backend geocodes that formatted string and gets coordinates. The geofence lookup then runs. The ZIP warmer cache is not triggered. This is correct behavior — geofence is more precise than ZIP-grid.
+
+**Implementation note:** The frontend `isZip` detection and the `/politicians/{zip}` path can be deprecated in the Results page. The address path handles ZIPs automatically through Google.
+
+### Case 4: Candidate toggle — no cached data exists
+
+**What happens today:** Live BallotReady fetch returns real candidates.
+
+**What must happen in v1.5:** If `essentials.election_records` has no future elections for the inferred ZIP/location, the toggle shows nothing (or a message: "No upcoming election candidates are available for this area"). This is honest and correct — it is not a bug.
+
+**Why this matters:** Election records are only populated for politicians who have been fetched from BallotReady candidacy data. Areas that were never fetched will have no records. This is a data coverage gap, not an application error. The UX must distinguish between "no candidates" and "feature unavailable."
+
+### Case 5: Google Maps API key missing or quota exceeded
+
+**What happens today:** `geocoding/google.go` `NewClient()` returns nil when key is missing — graceful degradation.
+
+**What must happen in v1.5:** When `GeoClient` is nil (no key), the address search endpoint should return a clear error: "Address search is currently unavailable. Please try again later." This path is already handled by the `GeoClient != nil` guard in `SearchPoliticians`. The only change is the error response when it's nil.
+
+---
+
+## Competitor Reference: How Comparable Tools Handle These Cases
+
+| Tool | Address input type | No coverage handling | Candidate display |
+|------|--------------------|----------------------|-------------------|
+| Ballotpedia "Who Represents Me" | Google Places autocomplete (legacy widget) | "We encountered an error determining your location. Please go back and try again." — unhelpful generic error | Shows candidates inline with incumbents, labeled with "Candidate" badge; grouped by race |
+| Google "Who represents me" | Native Google Maps search with full Places | Falls back to county/state level if local data absent; shows what it has | Election-specific; not a permanent feature |
+| My Reps (datamade.us) | Free-text address, no autocomplete | "We couldn't find any representatives for that address. Please try again." | Does not show candidates |
+| vote.gov | Address input with autocomplete | Redirects to state election office if no data | No candidates; links to state ballot lookup |
+| EV Essentials (current) | ZIP or address (both accepted) | Empty result list + loading spinner | Live BallotReady fetch via toggle (v1.0+) |
+| EV Essentials (v1.5 target) | Address only (ZIP still works via geocode) | Federal/state from cache + coverage message | Cached election records, toggle opt-in |
+
+**Key observation:** Every tool uses Google Places Autocomplete (or equivalent) for address input. None show a blank page on no coverage — they all show partial data or an explanatory message. EV's approach of showing federal/state from cache when local is unavailable is more useful than competitor error messages.
+
+---
+
+## Google Maps Places API: Critical Notes for v1.5
+
+**Current implementation (HIGH confidence — from codebase):**
+- Frontend: `useGooglePlacesAutocomplete` hook uses `@googlemaps/js-api-loader`, `importLibrary('places')`, `placesLib.Autocomplete` (legacy class), restricted to US, `types: ['geocode']`
+- Backend: `geocoding/google.go` uses Geocoding API (not Places) to convert address strings to lat/lng
+
+**API status (HIGH confidence — Google official docs, March 2025):**
+- `google.maps.places.Autocomplete` (legacy class) is closed to NEW customers as of March 1, 2025
+- Existing customers (EV is an existing customer) are unaffected — the legacy class still works, still receives bug fixes for major regressions
+- `PlaceAutocompleteElement` (new web component) is the recommended replacement but is not required for existing customers
+- Migration to `PlaceAutocompleteElement` is a v2+ concern unless forced by deprecation
+
+**Billing (MEDIUM confidence — Google docs, current pricing page):**
+- Session-based billing: ~$2.83 per 1,000 autocomplete requests without sessions; session pricing bundles requests
+- For EV's scale (nonprofit, low volume), autocomplete costs are minimal — Google provides $200/month free credit which covers ~70,000 session-based autocomplete interactions
+- Backend Geocoding API (server-side) is billed separately: $5/1,000 requests, covered by the same $200 credit
+- Risk: cost spike if search volume grows unexpectedly — monitor with billing alerts
 
 ---
 
 ## Sources
 
-- [iSideWith — Political Quiz](https://www.isidewith.com/political-quiz)
-- [Vote Compass — 2024 United States Election](https://votecompass.com/)
-- [Guides.vote — Candidate Quiz](https://guides.vote/candidate-quiz)
-- [The Political Compass](https://www.politicalcompass.org/test)
-- [Pew Research Center — Political Typology Quiz](https://www.pewresearch.org/politics/quiz/political-typology/)
-- [Prism Political Quiz — Randomization Pattern](https://prismquiz.github.io/)
-- [Center for Civic Design — Designing a Voter Guide](https://civicdesign.org/fieldguides/designing-a-voter-guide-to-an-election/)
-- [Center for Civic Design — Best Practices for Official Voter Guides (PDF)](https://civicdesign.org/wp-content/uploads/2016/02/VoterGuides-DesignGuide-16-0221.pdf)
-- [Rock the Vote — Tech for Civic Engagement](https://www.rockthevote.org/programs-and-partner-resources/tech-for-civic-engagement/)
-- [Civic Design Systems: Ultimate Guide to Smart UX](https://www.maxiomtech.com/accessible-ux-civic-design-systems/)
-- [The political preferences of LLMs — PLOS One (response order bias research)](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0306621)
+- Google Maps Platform — Place Autocomplete Widget (New): https://developers.google.com/maps/documentation/javascript/place-autocomplete-new
+- Google Maps Platform — Session Pricing: https://developers.google.com/maps/documentation/javascript/session-pricing
+- Google Maps Platform — Legacy Autocomplete (status): https://developers.google.com/maps/documentation/javascript/legacy/place-autocomplete
+- visgl/react-google-maps Issue #736 — March 2025 legacy Autocomplete deprecation notice: https://github.com/visgl/react-google-maps/issues/736
+- Ballotpedia "Who Represents Me" tool (observed behavior): https://ballotpedia.org/lookup/elected-officials.php
+- My Reps (DataMade) — no-coverage fallback message: https://myreps.datamade.us/
+- EV Codebase: `essentials/src/hooks/useGooglePlacesAutocomplete.js`, `EV-Backend/internal/essentials/geocoding/google.go`, `EV-Backend/internal/essentials/geofence_lookup.go`, `EV-Backend/internal/essentials/handlers.go` (SearchPoliticians, GetCandidatesByZip)
+- EV PROJECT.md — v1.5 milestone definition
+
+---
+
+*Feature research for: v1.5 Address Verification & BallotReady Independence*
+*Researched: 2026-02-22*

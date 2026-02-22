@@ -1,422 +1,377 @@
-# Stack Research — Empowered Vote Feature Improvements
+# Stack Research — v1.5 Address Verification & BallotReady Independence
 
-**Research Date:** 2026-02-17
-**Milestone:** Quality & Consolidation — brownfield improvements to existing platform
+**Domain:** Civic engagement platform — address-based politician lookup
+**Researched:** 2026-02-22
+**Confidence:** HIGH
 
 ---
 
 ## Scope
 
-This document covers only *new or changed* stack decisions for the upcoming milestone. Existing stack (Go 1.24.3 + Chi + GORM, React 19 + Vite + Tailwind CSS 4, ev-ui) is retained as-is. Research focuses on six improvement areas:
+This document covers only *new or changed* stack decisions for v1.5. The existing stack (Go 1.24.3 + Chi + GORM, React 19 + Vite 7 + Tailwind CSS 4) is retained as-is. Research focuses on three areas:
 
-1. Guest-first auth flow with localStorage persistence
-2. Data model changes (question/prompt field on compass topics)
-3. Random stance ordering with per-user permanence
-4. Candidate data support in Essentials
-5. Image storage and delivery (building photos)
-6. Project structure consolidation
+1. Google Maps Places autocomplete on the frontend (`essentials` app)
+2. Google Maps Geocoding API on the backend (Go)
+3. Removing BallotReady API dependency
 
 ---
 
-## 1. Guest-First Auth Flow
+## 1. Frontend: Google Maps Places Autocomplete
 
-### Problem
+### Current State (Already Implemented)
 
-Every Compass route is wrapped in `ProtectedRoute`, which calls `/auth/me` and redirects to `/401` if no session exists. This blocks new users from experiencing the quiz. The goal is to allow full quiz access without login while optionally persisting answers to an account.
+The `essentials` app already has a working Places autocomplete implementation:
 
-### Current State
+- **Package:** `@googlemaps/js-api-loader` `^2.0.2` (already installed in `essentials/package.json`)
+- **Hook:** `src/hooks/useGooglePlacesAutocomplete.js` — custom hook using `setOptions` + `importLibrary('places')`
+- **Usage:** `Landing.jsx` attaches autocomplete to an `inputRef` via the hook
+- **API used:** `google.maps.places.Autocomplete` (legacy class, attached to existing `<input>`)
 
-- `CompassContext.jsx` already stores `selectedTopics` and `invertedSpokes` in `localStorage`
-- `compass.answers` table requires a `user_id` string (not nullable, no guest concept)
-- Backend `/compass/answers` route is in the session-protected group
-- `ProtectedRoute` checks `/auth/me` synchronously on every protected page mount
+### Critical Finding: Deprecation of Legacy Autocomplete
 
-### Recommendation: localStorage-first with Optional Server Sync
+As of March 1, 2025, `google.maps.places.Autocomplete` is **not available to new API keys** (MEDIUM confidence, from official Google docs and GitHub issue #736 on visgl/react-google-maps). The recommended replacement is `PlaceAutocompleteElement`.
 
-**Confidence: High**
+**However:** The existing Google Cloud project has an API key created before March 1, 2025. The legacy `Autocomplete` class continues working for existing keys with at least 12 months notice before discontinuation. The current implementation is functional.
 
-No new libraries are needed. The pattern is:
+### Recommendation: Migrate to PlaceAutocompleteElement (Do in v1.5)
 
-1. Remove `ProtectedRoute` from quiz, library, build, and results routes
-2. Treat all compass state (answers, selected topics, inverted spokes) as localStorage-first
-3. On login/register, offer to import localStorage answers to the server
-4. Server endpoints remain gated — they're used only if a session exists
+**Confidence: HIGH**
 
-**Why not a new auth library (Auth0, Clerk, etc.):** The existing session-based auth is working and appropriate for a small-team nonprofit. Introducing a third-party auth service adds cost, complexity, and a dependency that would require migrating all existing sessions. Not justified for this use case.
+Migrate `useGooglePlacesAutocomplete.js` from `google.maps.places.Autocomplete` to `google.maps.places.PlaceAutocompleteElement`. This is a forward-compatible upgrade that avoids future breakage.
 
-**Why not anonymous/guest sessions on the backend:** Creating server-side guest sessions (with UUID tokens in localStorage) adds backend complexity — session cleanup, TTL management, and migration logic. Pure localStorage avoids all of that. The quiz data is low-stakes and doesn't need server persistence for guests.
+**Key differences:**
+- `PlaceAutocompleteElement` is a Web Component with its own shadow DOM — it **cannot attach to an existing `<input>` element**
+- Use `includedRegionCodes: ['us']` instead of `componentRestrictions: { country: 'us' }`
+- Listen for `'gmp-select'` event instead of `'place_changed'`
+- Call `place.fetchFields(['formattedAddress'])` to get the address string
 
-### Implementation Pattern
+**Migration approach** (no new npm packages needed):
 
 ```javascript
-// CompassContext.jsx — no API calls if no session
-const [isAuthenticated, setIsAuthenticated] = useState(false);
+// useGooglePlacesAutocomplete.js — updated hook
+import { useEffect, useRef } from 'react';
+import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
 
-useEffect(() => {
-  fetch(`${API_URL}/auth/me`, { credentials: "include" })
-    .then(res => { if (res.ok) setIsAuthenticated(true); })
-    .catch(() => {}); // silent — not required
-}, []);
+const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
-// Sync to server only when authenticated
-useEffect(() => {
-  if (!isAuthenticated || !serverLoaded.current) return;
-  // existing server sync logic
-}, [selectedTopics, isAuthenticated]);
+export default function useGooglePlacesAutocomplete(containerRef, { onPlaceSelected }) {
+  const callbackRef = useRef(onPlaceSelected);
+  callbackRef.current = onPlaceSelected;
+
+  useEffect(() => {
+    if (!API_KEY || !containerRef.current) return;
+
+    if (!window.google?.maps?.importLibrary) {
+      setOptions({ key: API_KEY });
+    }
+
+    let placeAutocomplete = null;
+
+    importLibrary('places').then((placesLib) => {
+      if (!containerRef.current) return;
+
+      placeAutocomplete = new placesLib.PlaceAutocompleteElement({
+        includedRegionCodes: ['us'],
+      });
+
+      containerRef.current.appendChild(placeAutocomplete);
+
+      placeAutocomplete.addEventListener('gmp-select', async ({ placePrediction }) => {
+        const place = placePrediction.toPlace();
+        await place.fetchFields({ fields: ['formattedAddress'] });
+        if (place.formattedAddress) {
+          callbackRef.current(place.formattedAddress);
+        }
+      });
+    });
+
+    return () => {
+      if (placeAutocomplete && containerRef.current?.contains(placeAutocomplete)) {
+        containerRef.current.removeChild(placeAutocomplete);
+      }
+    };
+  }, [containerRef]);
+}
 ```
 
-### Backend Changes Required
+**Styling:** `PlaceAutocompleteElement` uses shadow DOM. Outer container CSS applies normally; internal input requires `gmp-place-autocomplete::part(input)` CSS parts selector (limited). For Tailwind-styled designs, wrap in a `div` container and style the container.
 
-The `/compass/answers` GET/POST routes need a conditional path:
-- Authenticated: read/write to `compass.answers` table (existing behavior)
-- Unauthenticated: 401 is fine — frontend reads from localStorage only
-
-No new Go packages needed. The existing `SessionMiddleware` already handles 401 gracefully.
+**No new npm packages required.** `@googlemaps/js-api-loader` v2.0.2 (already installed) supports `PlaceAutocompleteElement` via `importLibrary('places')`.
 
 ### What NOT to Do
 
-- Do NOT add `user_id` nullable column to `compass.answers` for guest tracking — unnecessary complexity
-- Do NOT use `sessionStorage` — doesn't survive tab close, breaking the UX goal
-- Do NOT add Zustand to CompassV2 — the existing Context pattern is sufficient and switching state libraries mid-feature is wasteful
+| Avoid | Why | Use Instead |
+|-------|-----|-------------|
+| `@vis.gl/react-google-maps` | Adds a new dependency for a use case already covered by the existing hook pattern | Continue with custom hook + `@googlemaps/js-api-loader` |
+| `use-places-autocomplete` npm package | Adds a third-party wrapper; the hook pattern is already working | Keep custom hook |
+| `react-google-autocomplete` | Uses legacy `Autocomplete` class internally; will deprecate | `PlaceAutocompleteElement` directly |
+| Keeping legacy `Autocomplete` class long-term | Not available to new API keys; Google will eventually remove it | `PlaceAutocompleteElement` |
 
 ---
 
-## 2. Data Model Evolution — Question/Prompt on Topics
+## 2. Backend: Google Maps Geocoding (Go)
 
-### Problem
+### Current State (Already Implemented)
 
-The `compass.topics` table has `title`, `short_title`, and `start_phrase`. There is no dedicated `question` or `prompt` field. Issue cards need to display a contextual question (e.g., "How should the US handle border security?") rather than a category title.
+The backend already has a complete, working geocoding implementation:
 
-### Current Model
+- **Location:** `internal/essentials/geocoding/google.go`
+- **Approach:** Raw `net/http` calls to the Geocoding REST API — no Go SDK
+- **Client:** `geocoding.Client` with 5-second timeout, initialized from `GOOGLE_MAPS_API_KEY` env var
+- **Entry point:** `GeoClient` package-level var in `setup.go`, initialized in `Init()`
+- **Used in:** `SearchPoliticians` handler — geocodes the query string, feeds lat/lng to `FindGeoIDsByPoint()`
+
+The implementation is complete. The geocoding flow is:
+
+```
+POST /essentials/politicians/search { query: "123 Main St, City, IN" }
+  → geocoding.Client.Geocode()   (Google Maps REST API)
+  → FindGeoIDsByPoint()           (PostGIS ST_Contains)
+  → FindPoliticiansByGeoMatches() (DB lookup by geo_id + MTFCC)
+  → supplemental fetch from DB cache (federal + state)
+  → return []OfficialOut
+```
+
+### Recommendation: Do NOT Add googlemaps/google-maps-services-go
+
+**Confidence: HIGH**
+
+The official Go SDK (`googlemaps.github.io/maps`, v1.7.0, last released December 2023) provides geocoding via `maps.Client.Geocode()`. However, the existing `net/http` implementation in `geocoding/google.go` already does everything needed:
+
+- Parses `postal_code`, `administrative_area_level_1`, `administrative_area_level_2`, `locality`
+- Returns structured `Result{Zip, State, County, City, Formatted, Lat, Lng}`
+- Has graceful nil-client degradation when `GOOGLE_MAPS_API_KEY` is unset
+- Has a passing test in `geocoding/google_test.go`
+
+Adding the SDK introduces a new `go.mod` dependency for zero additional capability. The custom client is 135 lines and covers exactly the fields needed. Keep it.
+
+**If the geocoding needs were more complex** (rate limiting, retry with backoff, reverse geocoding, elevation, etc.), the SDK would be worth it. For a single-endpoint REST call, it is not.
+
+### What IS Needed: Extend Geocoding for Geofence-Only Flow
+
+The geocoding client needs one targeted change to support v1.5: **remove the ZIP requirement**.
+
+Currently `Geocode()` returns an error if no `postal_code` is found:
+```go
+if out.Zip == "" {
+    return nil, fmt.Errorf("no ZIP code found in geocoding result for: %s", address)
+}
+```
+
+For geofence-only lookups, a lat/lng is sufficient — ZIP is not needed. The fix is to make ZIP optional and return the result regardless:
 
 ```go
-type Topic struct {
-    ID          uuid.UUID
-    TopicKey    string    // unique identifier
-    Title       string    // e.g., "Immigration"
-    ShortTitle  string    // e.g., "Immigration" (used on radar chart)
-    StartPhrase string    // legacy field, partial sentence
-    IsActive    bool
-    Stances     []Stance
-    Categories  []Category
-}
+// Remove the ZIP check — lat/lng is all the geofence lookup needs
+return out, nil
 ```
 
-### Recommendation: Add `question` Column to `compass.topics`
+This is a one-line change to `geocoding/google.go`. No new packages.
 
-**Confidence: High**
+### Integration Points with Existing PostGIS Infrastructure
 
-Add a single `question` text column. GORM AutoMigrate handles the column addition safely (additive only).
+The `SearchPoliticians` handler already wires geocoding → PostGIS → DB correctly:
+
+```
+GeoClient.Geocode(query) → (lat, lng)
+FindGeoIDsByPoint(lat, lng) → []GeoMatch{GeoID, MTFCC}
+FindPoliticiansByGeoMatches(matches) → []OfficialOut
+fetchStatewideFromDB(state) → supplemental federal + state officials
+```
+
+The only infrastructure gap is geofence coverage: `geofence_boundaries` currently has TIGER 2024 data for Monroe County IN and LA County CA. Expanding coverage is a data problem, not a code problem.
+
+---
+
+## 3. Removing BallotReady API Dependency
+
+### Current BallotReady Usage (What Needs Removal)
+
+BallotReady is used in four places in the backend:
+
+| Usage | File | Location | Purpose |
+|-------|------|----------|---------|
+| Fallback address lookup | `handlers.go` | `SearchPoliticians()` line 2917 | Address search when geofence misses |
+| Candidacy lazy-fetch | `handlers.go` | `ensureCandidacyData()` line 1266 | Fetch endorsements/stances on profile view |
+| Candidate races | `handlers.go` | `GetCandidatesByZip()` line 3674 | Live candidate/race data by ZIP |
+| Cache warmers | `handlers.go` | `warmFederal/warmState/warmLocal()` | Populate politicians from BallotReady API |
+
+### Recommendation: Phased Removal
+
+**Confidence: HIGH**
+
+**Phase 1 — Remove address search fallback (core of v1.5):**
+
+In `SearchPoliticians()` at line 2916, the code falls back to BallotReady when geofence returns no results. Replace this with a clean error response:
 
 ```go
-type Topic struct {
-    // ... existing fields ...
-    Question string `json:"question"` // e.g., "How should the US approach immigration reform?"
+// Replace BallotReady fallback with informative error
+if len(geoMatches) == 0 {
+    w.Header().Set("X-Data-Status", "no-geofence-coverage")
+    writeJSON(w, []OfficialOut{})
+    return
 }
 ```
 
-**Why a new column vs. repurposing existing fields:**
-- `title` is used on the radar chart axis labels — cannot be replaced with a long question
-- `start_phrase` is legacy and inconsistently populated — don't overload it
-- A separate `question` column makes intent explicit and allows independent editing in the admin UI
+The frontend should handle empty results gracefully (already does for the warming case).
 
-**Migration approach:** AutoMigrate adds the column with empty string default. Populate via admin UI or direct SQL. No data loss risk.
+**Phase 2 — Remove live candidate fetching:**
 
-**Admin UI:** The existing `TopicEditor.jsx` / `CreateTopic.jsx` components need a new `question` textarea input. The existing `PATCH /compass/topics/update` handler needs to include `question` in the update payload. No new infrastructure needed.
-
-**What NOT to Do:**
-- Do NOT rename `title` to `question` — breaks radar chart labels and requires a coordinated frontend+backend change
-- Do NOT use a separate `compass.topic_questions` join table — one topic, one question, no need for normalization
-
----
-
-## 3. Random Stance Order with Per-User Permanence
-
-### Problem
-
-Stances displayed in a fixed order create positional bias (users tend to pick the first option). The fix is to randomize stance order per user, permanently — so a returning user sees the same randomized order they always saw (preventing confusion from changed positions).
-
-### Current State
-
-- `compass.stances` has a `value` integer field (used for scoring, e.g., -2 to 2 or 1 to 5)
-- Stance order is currently determined by `value` sort in the frontend
-- No per-user ordering is stored anywhere
-
-### Recommendation: Client-Side Shuffle with localStorage Persistence
-
-**Confidence: High**
-
-No backend changes required for the stance randomization itself.
-
-**Approach:**
-1. Generate a random but deterministic shuffle order per topic per user, seeded by topic ID + a stable user salt
-2. Store the shuffle map in `localStorage` as `stanceOrder: { [topicId]: [stanceId, stanceId, ...] }`
-3. On first visit to a topic, generate and store the order. On return visits, read from storage.
-
-```javascript
-// In CompassContext or a hook
-function getStanceOrder(topicId, stances) {
-  const stored = safeParse(localStorage.getItem("stanceOrder"), {});
-  if (stored[topicId]) {
-    // Return stances sorted by stored order
-    return stances.slice().sort((a, b) =>
-      stored[topicId].indexOf(a.id) - stored[topicId].indexOf(b.id)
-    );
-  }
-  // First time: shuffle and persist
-  const shuffled = [...stances].sort(() => Math.random() - 0.5);
-  stored[topicId] = shuffled.map(s => s.id);
-  localStorage.setItem("stanceOrder", JSON.stringify(stored));
-  return shuffled;
-}
-```
-
-**Spectrum preservation note:** The requirement says "spectrum preserved" — this likely means the visual left-to-right ordering on the spectrum (negative to positive stance values) should be maintained, but the specific mapping of stance values to positions should be shuffled. Clarify with the team whether "spectrum preserved" means:
-- (a) Just shuffle the display order randomly (any order), or
-- (b) Invert the spectrum for some users (some users see negative-to-positive, others see positive-to-negative)
-
-Option (b) is simpler and more meaningful — randomly flip the spectrum direction per topic per user. Store a boolean `flipped: { [topicId]: true|false }` in localStorage.
-
-**If server sync is desired (for returning users on new devices):** Add a nullable `stance_order_salt` or `flipped_topics` column to `compass.user_compasses`. But for the current milestone, localStorage-only is the right call — same pattern as `invertedSpokes`.
-
-**What NOT to Do:**
-- Do NOT store stance order in the database for the initial implementation — adds complexity for minimal benefit
-- Do NOT use crypto.getRandomValues for seeding — unnecessary; Math.random() is fine for UI ordering
-
----
-
-## 4. Candidate Data Support in Essentials
-
-### Problem
-
-Essentials currently shows only elected officials (incumbent officeholders). BallotReady also provides candidacy data (people running for office who are not yet elected). The requirement is to show candidates in the UI with visual differentiation from elected officials.
-
-### Current State
-
-- BallotReady candidacy data is already fetched and stored (Phase B is complete)
-- `essentials.election_records`, `essentials.endorsements`, `essentials.politician_stances` tables exist
-- The `politicians` table has `is_appointed`, `is_vacant` fields but no `is_candidate` flag
-- The frontend `classify.js` only handles elected/appointed officials
-
-### Recommendation: Add `is_candidate` Flag and Candidacy API Endpoint
-
-**Confidence: High**
-
-**Backend changes (no new libraries):**
-
-Add a boolean field to indicate this politician record represents a candidate in an active race, not a current officeholder:
+`GetCandidatesByZip()` calls `brProvider.Client().FetchRacesByZip()` for live race data. Replace with DB-only:
 
 ```go
-// In models.go — extend Politician struct
-IsCandidate bool `json:"is_candidate" gorm:"default:false"`
+// Instead of live BallotReady call, query essentials.election_records
+// for future elections in the given ZIP's districts
 ```
 
-Add or extend the existing ZIP-based query to optionally include candidates:
+This requires a `GET /candidates/{zip}` DB-backed query using `election_records` + `essentials.zip_politicians`. The data is already stored from previous BallotReady imports — the live call is just a freshness mechanism.
 
-```
-GET /essentials/politicians/{zip}?include_candidates=true
-```
+**Phase 3 — Remove candidacy lazy-fetch:**
 
-The existing `fetchOfficialsFromDB` function needs a conditional JOIN or filter to include/exclude candidates. The existing `ElectionRecord` table can determine candidacy status (active election date in the future).
+`ensureCandidacyData()` calls BallotReady on first profile view. Once BallotReady is removed, this becomes a no-op. The data already stored in `endorsements`, `politician_stances`, `election_records` is the source of truth.
 
-**Frontend changes (no new libraries):**
+**Phase 4 — Remove Provider interface from warmers:**
 
-1. Add a toggle control to `Dashboard.jsx` — "Show Candidates" (default off)
-2. Extend `classify.js` to handle candidate records — they belong in the same tiers but with a visual badge
-3. In `PoliticianCard.jsx`, add a "Candidate" badge when `is_candidate === true`
+`warmFederal/warmState/warmLocal` currently call `Provider.FetchFederal/FetchByState/FetchByZip`. When BallotReady is removed, these become no-ops (or removed entirely). The cached data in the DB is permanent.
 
-**Visual differentiation approach:** Use a subtle border or badge variant — `ring-2 ring-ev-yellow` or a "Candidate" label badge. The existing Tailwind classes cover this without new dependencies.
+### What to Keep
 
-**What NOT to Do:**
-- Do NOT create a separate candidates API endpoint if candidates can be returned from the existing ZIP endpoint via query param — keeps the frontend polling logic simple
-- Do NOT add a new frontend page for candidates — integrate into the existing results view with the toggle
+- `internal/essentials/ballotready/` package — keep as dead code until all imports are removed (avoids breaking the build mid-migration)
+- `provider/` package interface — keep as scaffolding; set `Provider = nil` at startup
+- All DB tables and cached politician data — the data is the asset; only the live API calls go away
+
+### No New Go Packages Needed
+
+The removal is subtractive. No new dependencies are introduced. The geofence lookup (`FindGeoIDsByPoint`, `FindPoliticiansByGeoMatches`) and DB cache queries already cover the replacement functionality.
 
 ---
 
-## 5. Image Storage and Delivery (Building Photos)
+## 4. New Environment Variables
 
-### Problem
-
-The platform needs building images for Federal/State/Local sections (US Capitol, state capitols, courthouses for LA and Bloomington). These are static editorial images — not user uploads, not politician photos (those already come from BallotReady CDN URLs).
-
-### Current State
-
-- No cloud file storage integration exists
-- Politician profile images are served directly from BallotReady CDN URLs stored in the database
-- No `File Storage` infrastructure exists for editorial content
-
-### Options Evaluated
-
-#### Option A: Supabase Storage (Recommended)
-
-**Confidence: High**
-
-Supabase Storage is already the project's database provider. The free tier includes 1 GB storage and 2 GB egress/month. The Pro plan includes image transformations at $5/1,000 origin images.
-
-**Rationale:**
-- Already paying for Supabase — no new vendor
-- Built-in CDN with 285+ edge nodes worldwide
-- Public bucket URLs work without SDK: `https://[project_id].supabase.co/storage/v1/object/public/[bucket]/[asset-name]`
-- Image transformation for responsive sizing (width/height params)
-- For a small number of static editorial images (~10-20 photos), the free tier is more than sufficient
-- No new Go or React dependencies needed — just store URLs in config/DB
-
-**Implementation:**
-1. Create a public bucket `editorial-images` in Supabase dashboard
-2. Upload building photos manually (one-time; not automated)
-3. Store public URLs in a config file or a small `editorial_images` table
-4. Frontend fetches URLs from config or a new lightweight endpoint
-
-**URL pattern:**
-```
-https://[project_id].supabase.co/storage/v1/object/public/editorial-images/federal/us-capitol.jpg
-https://[project_id].supabase.co/storage/v1/object/public/editorial-images/state/indiana-statehouse.jpg
-```
-
-**No SDK needed for reading:** Public bucket URLs are accessible directly from `<img>` tags. No `@supabase/supabase-js` client needed on the frontend for read-only image access.
-
-#### Option B: Netlify Large Media / Git LFS
-
-**Not recommended.** Netlify Large Media is deprecated. Git LFS adds complexity for a small number of static images.
-
-#### Option C: Store in GitHub repo as static assets
-
-**Acceptable for 10-20 small images** but not scalable and adds repository bloat. Supabase Storage is cleaner and already available.
-
-#### Option D: Cloudflare R2 / AWS S3
-
-**Overkill for this use case.** Would require new vendor credentials, IAM setup, and additional complexity. Not justified when Supabase Storage already covers the need at $0 marginal cost.
-
-### What NOT to Do
-
-- Do NOT install `@supabase/supabase-js` on the frontend just for reading public image URLs — direct `<img src="...">` is sufficient
-- Do NOT use image transformation for these static editorial images unless needed for performance — the images are hand-curated and can be pre-optimized before upload
-- Do NOT add the images to the Git repository — keep the repo lean
+| Variable | Used By | Status |
+|----------|---------|--------|
+| `GOOGLE_MAPS_API_KEY` | Backend geocoding client | Already in use |
+| `VITE_GOOGLE_MAPS_API_KEY` | Frontend Places autocomplete | Already in use (via `useGooglePlacesAutocomplete.js`) |
+| `BALLOTREADY_API_KEY` | BallotReady provider | Remove after full cutover |
 
 ---
 
-## 6. Project Structure Consolidation
+## Recommended Stack (New Additions Only)
 
-### Problem
+### Core Technologies
 
-The current workspace has 5+ separate React apps (CompassV2, essentials, EV-prototypes/*, ev-ui), each with independent `node_modules`, `package.json`, and `npm install`. This causes:
-- Diverging dependency versions across apps (Vite 6 vs 7, React 19.0 vs 19.1.1)
-- ev-ui must be published to GitHub npm registry before changes reflect in consuming apps
-- No shared tooling config (ESLint, TypeScript settings)
-- EV-prototypes already uses a manual multi-build script (not true workspaces)
+No new core technologies. All required infrastructure is already in place:
+- Google Maps Geocoding REST API (already calling via `geocoding/google.go`)
+- Google Maps Places JavaScript API (already loaded via `@googlemaps/js-api-loader`)
+- PostGIS ST_Contains queries (already implemented in `geofence_lookup.go`)
+- TIGER 2024 geofence data (already imported for Monroe County IN + LA County CA)
 
-### Options Evaluated
+### Supporting Libraries
 
-#### Option A: npm Workspaces at the Workspace Root (Recommended)
+| Library | Version | Purpose | Status |
+|---------|---------|---------|--------|
+| `@googlemaps/js-api-loader` | `^2.0.2` | Load Google Maps JS API dynamically | Already installed |
 
-**Confidence: Medium**
+No new npm or Go packages are required for this milestone.
 
-**What it is:** A single `package.json` at the repo root with a `workspaces` array pointing to each app. npm v7+ handles hoisted `node_modules` and symlinks local packages.
+---
 
-**Benefits for this team:**
-- ev-ui becomes a local workspace package — no publish cycle needed during development
-- Single `npm install` at root installs all dependencies
-- Shared dev dependencies (ESLint, TypeScript types) can be hoisted to root
-- Works with existing Vite setups — no Vite config changes needed
-- No new tooling to learn
+## Installation
 
-**Drawbacks:**
-- Requires restructuring the root `package.json` (currently not an npm package)
-- Netlify build commands need updating to target specific workspace packages
-- Some hoisting conflicts possible with peer dependencies (manageable)
+No new packages to install. Verify the existing package is current:
 
-**Root package.json:**
-```json
-{
-  "name": "empowered-vote",
-  "private": true,
-  "workspaces": [
-    "CompassV2",
-    "essentials",
-    "ev-ui",
-    "EV-prototypes/read-rank",
-    "EV-prototypes/treasury-tracker",
-    "EV-prototypes/data-entry",
-    "EV-prototypes/empowered-badges"
-  ]
-}
+```bash
+# In essentials/
+npm list @googlemaps/js-api-loader
+# Should show 2.0.2 or higher
+
+# In EV-Backend/ — no new packages
+go list -m all | grep google  # No google packages should appear
 ```
 
-**ev-ui as local package:**
-In consuming apps, replace:
-```json
-"@chrisandrewsedu/ev-ui": "^0.1.14"
+---
+
+## Alternatives Considered
+
+| Recommended | Alternative | Why Not |
+|-------------|-------------|---------|
+| Custom `geocoding.Client` (existing) | `googlemaps.github.io/maps` Go SDK | SDK is v1.7.0 (Dec 2023, limited recent activity); custom client already works and covers all needed fields with 135 lines |
+| Custom hook + `@googlemaps/js-api-loader` | `@vis.gl/react-google-maps` | Adds dependency for use case already covered by existing hook pattern |
+| `PlaceAutocompleteElement` | Keep legacy `Autocomplete` class | Legacy class not available to new API keys since March 2025; forward-compat migration costs nothing |
+| Empty response for uncovered geofence areas | BallotReady fallback for uncovered areas | Removing the fallback is the whole point of v1.5; uncovered areas return empty with a clear status header |
+
+---
+
+## What NOT to Add
+
+| Avoid | Why | Use Instead |
+|-------|-----|-------------|
+| `googlemaps.github.io/maps` Go package | Zero benefit over existing `net/http` implementation; v1.7.0 last released Dec 2023 | Existing `geocoding/google.go` custom client |
+| `use-places-autocomplete` npm | Third-party wrapper around a deprecated class (uses `AutocompleteService`); adds an npm dependency | `@googlemaps/js-api-loader` + `PlaceAutocompleteElement` directly |
+| `react-google-autocomplete` npm | Uses legacy `Autocomplete` class; will break on new API keys | Custom hook with `PlaceAutocompleteElement` |
+| Google Address Validation API | Adds billing complexity; Places autocomplete + Geocoding is sufficient for point-in-polygon matching | Existing Geocoding API |
+| Any new Go web framework or router | Existing Chi router handles all needed routes | Keep Chi |
+| PostGIS Go helper libraries | Raw SQL queries in `geofence_lookup.go` are clear, tested, and cover the use case | Existing `db.DB.WithContext(ctx).Raw(query, ...)` pattern |
+
+---
+
+## Version Compatibility
+
+| Package | Version | Compatible With | Notes |
+|---------|---------|-----------------|-------|
+| `@googlemaps/js-api-loader` | `^2.0.2` | React 19, Vite 7 | v2.x is ESM-first; works with Vite without config changes |
+| `@googlemaps/js-api-loader` | `^2.0.2` | `PlaceAutocompleteElement` | `importLibrary('places')` exposes `PlaceAutocompleteElement` |
+| Google Maps JS API | `weekly` channel | `PlaceAutocompleteElement` | `weekly` channel always has latest stable |
+
+---
+
+## Integration Map: How Components Connect
+
 ```
-with:
-```json
-"@chrisandrewsedu/ev-ui": "*"
+Frontend (essentials)
+  Landing.jsx / Results.jsx
+    └─ useGooglePlacesAutocomplete hook
+         └─ @googlemaps/js-api-loader v2.0.2
+              └─ google.maps.places.PlaceAutocompleteElement
+                   └─ gmp-select event → formattedAddress string
+                        └─ navigate('/results?q=<address>')
+
+Backend (EV-Backend)
+  POST /essentials/politicians/search { query: "<address>" }
+    └─ geocoding.Client.Geocode(address)
+         └─ Google Maps Geocoding REST API
+              └─ { lat, lng, state, zip, formatted }
+                   └─ FindGeoIDsByPoint(lat, lng)
+                        └─ PostGIS ST_Contains on essentials.geofence_boundaries
+                             └─ []GeoMatch{GeoID, MTFCC}
+                                  └─ FindPoliticiansByGeoMatches(matches)
+                                       └─ DB join: politicians → offices → districts
+                                            └─ + fetchStatewideFromDB(state)
+                                                 └─ []OfficialOut → JSON response
 ```
-npm workspaces automatically symlinks the local `ev-ui/` package.
 
-#### Option B: Turborepo
-
-**Not recommended for current milestone.**
-
-Turborepo adds task orchestration (parallel builds, caching) on top of npm/pnpm workspaces. Useful for teams with complex build pipelines and CI caching needs. For a 2-3 person nonprofit team with manual Netlify deploys, the overhead of learning and configuring Turborepo is not justified. Evaluate post-consolidation if build times become painful.
-
-**What NOT to Do:** Do NOT adopt Turborepo for this milestone — the benefit is real but the setup cost is disproportionate to team size.
-
-#### Option C: Keep Current Structure (Status Quo)
-
-**Acceptable if consolidation is deferred.** The current multi-repo-style structure works and has clear boundaries. The main pain is the ev-ui publish cycle during active component development.
-
-**Recommendation:** Proceed with Option A (npm workspaces) for ev-ui linkage only in the first step. Full workspace consolidation of all apps can follow. This is the lowest-risk migration path.
-
-#### Option D: Unified Single React App (Vite with sub-routes)
-
-**Not recommended.** Merging CompassV2 and essentials into one app would require a large routing restructure, shared auth state decisions, and increases deployment surface area. The apps serve different user flows and can stay separate.
+The entire flow is already wired. v1.5 work is:
+1. Migrate frontend hook from legacy `Autocomplete` to `PlaceAutocompleteElement`
+2. Remove ZIP-required check from `geocoding/google.go`
+3. Remove BallotReady fallback from `SearchPoliticians()`
+4. Replace live BallotReady candidate call with DB-backed query
+5. Remove `ensureCandidacyData` BallotReady live-fetch
 
 ---
 
-## Summary Table
+## Sources
 
-| Area | Decision | New Dependencies | Confidence |
-|------|----------|-----------------|------------|
-| Guest-first auth | localStorage-first, optional server sync | None | High |
-| Topic question field | Add `question` column to `compass.topics` | None | High |
-| Stance randomization | Client-side shuffle, localStorage-persisted | None | High |
-| Candidate support | `is_candidate` flag + query param filter | None | High |
-| Building images | Supabase Storage public bucket | None (direct URL) | High |
-| Project consolidation | npm workspaces (ev-ui first) | None | Medium |
-
-**Key finding:** None of the six improvement areas require new runtime dependencies. The existing stack handles all requirements. The work is architectural and data-model level, not library selection.
-
----
-
-## Versions Reference (as of 2026-02-17)
-
-These are the versions already in use. No upgrades are recommended for this milestone — upgrading mid-milestone creates unnecessary risk.
-
-| Package | Current Version | Latest | Action |
-|---------|----------------|--------|--------|
-| React | 19.1.x | 19.1.x | No change |
-| Vite | 6.3.5 (CompassV2), 7.1.2 (essentials) | 7.x | No change |
-| Tailwind CSS | 4.1.x | 4.1.x | No change |
-| Zustand | 5.0.9 | 5.0.x | No change |
-| GORM | 1.30.0 | 1.30.x | No change |
-| Chi | v5.2.1 | v5.x | No change |
-| Go | 1.24.3 | 1.24.3 | No change |
+- `essentials/package.json` — confirmed `@googlemaps/js-api-loader: ^2.0.2` already installed
+- `essentials/src/hooks/useGooglePlacesAutocomplete.js` — existing hook implementation
+- `EV-Backend/internal/essentials/geocoding/google.go` — existing custom geocoding client
+- `EV-Backend/internal/essentials/geofence_lookup.go` — existing PostGIS integration
+- `EV-Backend/internal/essentials/handlers.go` — confirmed BallotReady usage locations (lines 1266, 2917, 3674)
+- [Google Maps JS API Loader GitHub](https://github.com/googlemaps/js-api-loader) — v2.0.2 confirmed latest release (October 2025), HIGH confidence
+- [PlaceAutocompleteElement docs](https://developers.google.com/maps/documentation/javascript/place-autocomplete-new) — replacement for legacy Autocomplete, HIGH confidence
+- [visgl/react-google-maps issue #736](https://github.com/visgl/react-google-maps/issues/736) — legacy Autocomplete not available to new API keys since March 2025, MEDIUM confidence
+- [pkg.go.dev/googlemaps.github.io/maps](https://pkg.go.dev/googlemaps.github.io/maps) — Go SDK v1.7.0, last released December 2023, MEDIUM confidence
+- [Google Geocoding API overview](https://developers.google.com/maps/documentation/geocoding/overview) — Geocoding vs Address Validation API distinction, HIGH confidence
 
 ---
 
-## What NOT to Adopt This Milestone
-
-| Considered | Reason to Skip |
-|------------|---------------|
-| Auth0 / Clerk | Cost + migration complexity; existing session auth is fine |
-| Turborepo | Overhead disproportionate to 2-3 person team |
-| Anonymous backend sessions for guests | Pure localStorage avoids backend complexity |
-| @supabase/supabase-js (frontend) | Not needed for reading public image URLs |
-| TypeScript migration | Would require coordinated effort across all apps; not this milestone |
-| New state management (Jotai, Valtio) | Context + localStorage already handles the use cases |
-| React Query / SWR | Would require rewriting existing polling hooks; defer until needed |
-| Cloudflare R2 / AWS S3 | Supabase Storage already covers image hosting need at $0 marginal cost |
-
----
-
-*Stack research: 2026-02-17*
+*Stack research for: v1.5 Address Verification & BallotReady Independence*
+*Researched: 2026-02-22*

@@ -1,385 +1,316 @@
-# PITFALLS.md — Empowered Vote Platform Improvements
+# Pitfalls Research
 
-Research type: Pitfalls
-Question: What do civic engagement and multi-app platform projects commonly get wrong when adding guest auth, evolving data models, and consolidating codebases?
+**Domain:** Address verification, geofence-based district matching, external API removal (civic tech)
+**Researched:** 2026-02-22
+**Confidence:** HIGH (PostGIS/TIGER behaviors), HIGH (Google Maps billing), MEDIUM (BallotReady cutover patterns — specific to this project)
 
 ---
 
-## Domain: Guest Auth / Login-Optional Conversion
+## Critical Pitfalls
 
-### PITFALL 1: Session identity collision when guest becomes authenticated user
+### Pitfall 1: SRID Mismatch Between TIGER Data and Stored Points
 
-**What goes wrong:** A guest user takes a quiz or builds up state (answers, selected topics, progress). When they create an account or log in, the backend creates a new session but the frontend still holds the guest state in localStorage or component memory. The merge never happens, so the user loses their work — or worse, the guest state silently overwrites the authenticated user's server-side state.
+**What goes wrong:**
+TIGER shapefiles ship in NAD83 (SRID 4269), but most geocoding APIs (including Google Maps) return coordinates in WGS84 (SRID 4326). If you load TIGER geometries into PostGIS without re-projecting to 4326, or if you store Google-returned lat/lng as SRID 4326 and your district polygons are SRID 4269, every `ST_Within` call silently fails or throws `ERROR: Operation on mixed SRID geometries`. The query returns zero results for every address. This is not a data gap — it is a configuration bug that looks like a data gap.
+
+**Why it happens:**
+Developers load shapefiles with `shp2pgsql` using the default SRID from the `.prj` file (4269 for TIGER data), then store geocoded coordinates as `ST_Point(lng, lat, 4326)`. PostGIS enforces SRID consistency on spatial operations. The mismatch is invisible until a live query fires.
+
+**How to avoid:**
+Pick one SRID for the entire pipeline and enforce it at import time. WGS84 (4326) is the right choice because Google Maps returns 4326 coordinates. Load TIGER shapefiles with explicit reprojection:
+```bash
+shp2pgsql -s 4269:4326 tl_2025_us_cd119.shp districts | psql -d empowered_vote
+```
+Alternatively, add a geometry column check constraint on the district table:
+```sql
+ALTER TABLE geofences.districts
+  ADD CONSTRAINT enforce_srid CHECK (ST_SRID(geom) = 4326);
+```
+This fails fast during import if the SRID is wrong, rather than silently producing empty query results.
 
 **Warning signs:**
-- Any "save progress" CTA that routes to login without a post-login redirect that triggers a sync
-- localStorage keys that are written under a guest key and never migrated on auth
-- Backend session endpoint returns a new user ID with no merge/claim mechanism
+- PostGIS error: `Operation on mixed SRID geometries (Geometry, 4269) != (Geometry, 4326)` in backend logs
+- `ST_Within` or `ST_Contains` queries return 0 rows for all addresses, even major city centers
+- QGIS or pgAdmin shows misaligned layers when overlaying district polygons and address points
 
-**Prevention strategy:**
-- Design a guest session token (anonymous UUID, stored in a cookie or localStorage) from day one
-- On login/register, POST the guest token to the backend so the server can merge guest state into the new account
-- Compass: before launching guest mode, define which state is mergeable (quiz answers) vs. discarded (temporary UI state)
-- **Phase:** Guest auth phase (before any frontend work ships guest-first flows)
+**Phase to address:**
+Geofence data load phase — enforce SRID before a single district polygon enters the database. Run a validation query after every shapefile import:
+```sql
+SELECT DISTINCT ST_SRID(geom) FROM geofences.districts;
+```
+Expected result: exactly one row, value `4326`.
 
 ---
 
-### PITFALL 2: Treating "guest" as "no auth" rather than a distinct identity tier
+### Pitfall 2: Abandoned Google Maps Autocomplete Sessions Billed Per-Request
 
-**What goes wrong:** The team implements guest mode by simply removing the auth guard. There is no persistent guest identity. Every page refresh resets the user. Analytics, personalization, and A/B experiments become impossible. When the user eventually creates an account there is nothing to associate.
+**What goes wrong:**
+Google's Places Autocomplete uses session tokens to group keystrokes + final selection into one billable unit. If the user types an address, sees suggestions, then closes the modal or navigates away without selecting a result, that session is "abandoned." Every individual keystroke request is then billed at the per-request Autocomplete rate instead of the session rate. For a civic app with moderate traffic, abandoned sessions are common (users try address search, get distracted, close it). This can 3-10x the actual billing cost.
+
+**Why it happens:**
+Two implementation errors cause this:
+1. A new session token is generated on each keystroke instead of one per search session
+2. Session termination uses `Place Details (IDs Only)` — which is technically free — meaning Google treats it as if no session token was used and reverts all Autocomplete calls in that session to per-request pricing
+
+**How to avoid:**
+Generate one UUID session token when the autocomplete input mounts (or when the user first focuses the input). Pass the same token on every keystroke request. Terminate the session with a `Place Details` call that fetches at minimum `geometry/location` and `address_components` (these are billable, which satisfies Google's session termination requirement). Set a hard debounce of 300ms on the input — do not fire an API request on every keystroke. Use `@vis.gl/react-google-maps` (Google's endorsed React library as of 2025) which has built-in hooks for the Place Autocomplete Data API and handles session token lifecycle correctly.
+
+```typescript
+// Correct: one token per search session
+const sessionToken = useMemo(
+  () => new google.maps.places.AutocompleteSessionToken(),
+  [] // only one token per component mount
+);
+```
 
 **Warning signs:**
-- "Guest" is implemented as a boolean flag on existing session logic
-- No cookie or token is issued to the guest browser
-- Backend has no guest user row or ephemeral session record
+- Google Cloud Console billing shows "Autocomplete - Per Request" SKU charges instead of "Autocomplete - Per Session" SKU
+- Session token is generated inside a `useEffect` that depends on the query string (recreates on each character)
+- The `PlacesService.getDetails()` call uses `fields: ['place_id']` only (IDs Only tier, voids session benefit)
 
-**Prevention strategy:**
-- Issue a real (but limited) session or anonymous ID to every visitor, even before login
-- Store minimal guest state server-side (or at minimum sign it client-side) so it survives tab close
-- Compass: the quiz answer set and topic selections are the key mergeable artifacts — design for that from the start
-- **Phase:** Guest auth phase, auth layer design step
+**Phase to address:**
+Google Maps integration phase — before wiring up autocomplete. Test the billing impact with Cloud Console's usage dashboard after the first real integration test. Set a billing alert at $10/month in Google Cloud to catch runaway sessions early.
 
 ---
 
-### PITFALL 3: Guarded API endpoints accidentally exposed to guests (or vice versa)
+### Pitfall 3: ST_Within Returns No District for Points on Shared Boundaries
 
-**What goes wrong:** After removing the login gate from the frontend, developers forget that certain backend routes require a valid session. Guests hit 401s on data they should see. Alternatively, routes are opened too broadly and authenticated-only writes (saving stances, account preferences) accept unauthenticated requests.
+**What goes wrong:**
+`ST_Within(point, polygon)` requires that the point's interior intersects the polygon's interior — a point exactly on the boundary line returns `false` for both adjacent polygons. In practice, street addresses near district borders (addresses on the edge of a city, or exactly on a county line) match zero districts. The user gets a "no representatives found" error that has nothing to do with data coverage — the address is fully valid and should match.
+
+**Why it happens:**
+This is a documented PostGIS behavior difference: `ST_Within` excludes boundary points; `ST_Covers`/`ST_Contains` have different boundary semantics. Geocoded addresses from Google Maps have precision up to 6 decimal places, and Google often places coordinates directly on street centerlines, which frequently coincide with district boundary edges.
+
+**How to avoid:**
+Use `ST_Covers` instead of `ST_Within` for the primary query. `ST_Covers` returns true when a point is on the boundary of the polygon. Alternatively, use `ST_DWithin` with a small tolerance (1 meter) to catch near-boundary points:
+```sql
+SELECT d.*
+FROM geofences.districts d
+WHERE ST_Covers(d.geom, ST_SetSRID(ST_Point($1, $2), 4326))
+   OR ST_DWithin(d.geom, ST_SetSRID(ST_Point($1, $2), 4326)::geography, 1);
+```
+Run the fallback `ST_DWithin` check only when the primary `ST_Covers` returns zero results.
 
 **Warning signs:**
-- Chi middleware applied at the router level rather than per-route or per-group
-- No integration test that makes unauthenticated requests to every route and asserts the expected status code
-- Frontend silently swallows 401s without distinguishing "not logged in" from "actually forbidden"
+- Addresses on major roads or county borders return zero districts while nearby addresses work correctly
+- Systematic "no results" for addresses in specific neighborhoods, particularly near city boundaries
+- Query logs show 0 rows returned for coordinates that visually sit inside a district in QGIS
 
-**Prevention strategy:**
-- Audit the Chi route tree in EV-Backend: explicitly mark every route as public, guest-ok, or auth-required
-- Add a middleware pattern (e.g., `OptionalSession` vs. `RequireSession`) so intent is encoded in the route definition, not assumed
-- Write a route manifest document during auth phase that lists expected auth levels per endpoint
-- **Phase:** Guest auth phase, backend route audit step
+**Phase to address:**
+Geofence matching implementation phase — use `ST_Covers` from day one. Add a test case with a coordinate known to sit exactly on a district boundary line.
 
 ---
 
-### PITFALL 4: Compass live users lose existing sessions during the auth model change
+### Pitfall 4: Missing GiST Index Causes Full-Table Scan on Every Address Search
 
-**What goes wrong:** The session cookie domain, SameSite, or expiry changes as part of the guest auth rollout. Existing logged-in users are silently logged out. On a civic platform used during election season this can cause real trust damage.
+**What goes wrong:**
+PostGIS point-in-polygon queries against `ST_Within` or `ST_Covers` without a spatial index perform a sequential scan of every district polygon. For a table with national-level TIGER districts (Congressional, State Senate, State House, County, School District, Municipal, etc.), this could be 50,000+ polygons per query. Response times exceed 10-30 seconds on even a modest Supabase tier. The app appears broken.
+
+**Why it happens:**
+The most common mistake: creating a table and loading data, then running queries, and only adding the index later when slowness is noticed. The GiST index is not created by default on geometry columns. GORM AutoMigrate does not add spatial indexes.
+
+**How to avoid:**
+Create the GiST index immediately after defining the geometry column, before loading any data:
+```sql
+CREATE INDEX idx_districts_geom ON geofences.districts USING GIST (geom);
+```
+After bulk loading all shapefiles, run `VACUUM ANALYZE geofences.districts;` to update the planner statistics. Without ANALYZE, the query planner may ignore the index even when it exists. Verify the index is used with:
+```sql
+EXPLAIN ANALYZE SELECT * FROM geofences.districts WHERE ST_Covers(geom, ST_SetSRID(ST_Point(-86.5, 39.2), 4326));
+```
+The plan should show "Index Scan using idx_districts_geom" not "Seq Scan".
 
 **Warning signs:**
-- Cookie config changes (domain, SameSite, Secure flags) in the same deploy as guest mode
-- No session migration or backward-compatible cookie handling for existing sessions
-- The CLAUDE.md "Cookie Domain Configuration" note is not resolved before the auth change ships
+- Address search endpoint takes >3 seconds for any query
+- PostgreSQL `pg_stat_user_tables` shows `seq_scan` count climbing on the districts table
+- `EXPLAIN ANALYZE` output shows "Seq Scan on districts" instead of "Index Scan"
 
-**Prevention strategy:**
-- Resolve the cookie domain issue (restore `.empowered.vote` domain) in a separate deploy before any auth model changes
-- Test existing session continuity on Compass with real browsers (Safari, Chrome, Firefox) after every deploy that touches auth middleware
-- Keep session TTL and cookie attributes stable during the guest auth rollout; change only the issuance logic
-- **Phase:** Pre-guest-auth — cookie domain fix must ship first
+**Phase to address:**
+Geofence data load phase — index is a prerequisite for the first query test. Never run a geofence query against unindexed data in any environment, including development.
 
 ---
 
-## Domain: Data Model Evolution on Live Data
+### Pitfall 5: BallotReady Cutover Leaves Silent Dead Code Paths That Execute in Production
 
-### PITFALL 5: Adding a non-nullable field to a table with existing rows
+**What goes wrong:**
+The existing codebase has BallotReady API calls scattered across the `internal/essentials/` package: `warmLocal`, `warmFederal`, `warmState`, background goroutines, and the address search handler. Removing these requires touching many files. If any call site is missed, the code compiles fine but still fires BallotReady API requests in production — after the API key is revoked or the contract expires. These silently fail, triggering fallback logic that returns empty results. Users see no politicians but no clear error.
 
-**What goes wrong:** A new column (`question`, `prompt`, `is_candidate`) is added via AutoMigrate without a DEFAULT. Existing rows get NULL. The Go struct has `not null` or the frontend assumes the field is always present. API responses break for old records. Alternatively, the migration adds a DEFAULT that semantically wrong for existing data.
+**Why it happens:**
+The BallotReady client is passed as a dependency to warming functions. If a warming function is still being triggered (even if never explicitly called in new code paths), it may fire when the background cache-refresh goroutines run on a schedule. It is not enough to remove the obvious call sites — every goroutine and cache-check trigger must be audited.
+
+**How to avoid:**
+Before the cutover, do a full audit: search the entire codebase for every reference to `ballotReadyClient`, `FetchOfficeholders`, `FetchPositionContainmentByZip`, `candidacyQuery`, and related identifiers. Create a checklist of every call site. After removing each one, verify with `go build` that the package compiles, then `grep` for any remaining references. Only delete the BallotReady client struct and API key environment variable after every call site is confirmed removed.
 
 **Warning signs:**
-- AutoMigrate used for schema changes on tables with production data (AutoMigrate adds columns but does not alter or backfill)
-- New Go struct fields added without `gorm:"default:..."` or a corresponding SQL migration script
-- No backfill step planned for existing rows after adding the column
+- `BALLOTREADY_API_KEY` environment variable still referenced in `.env` or `apprunner.yaml` after cutover
+- Background goroutines for cache warming continue to start on server boot
+- Log lines like "BallotReady: fetching officeholders for ZIP..." appear after the cutover deploys
+- Errors about BallotReady API authentication in production logs
 
-**Prevention strategy:**
-- For every new column on an existing table: write an explicit SQL migration (not just AutoMigrate) with a safe DEFAULT, then a separate backfill query, then (if needed) a NOT NULL constraint
-- Compass topics table: add `question` and `prompt` as nullable with `omitempty` in JSON; make them required only after all rows are backfilled
-- Treat AutoMigrate as a development convenience only — any column change on a live table needs an explicit migration script
-- **Phase:** Data model evolution phase, schema change step
+**Phase to address:**
+BallotReady removal phase — treat this as a migration with an explicit checklist, not a "delete some code" task. The BallotReady client struct should be the last thing deleted, after all consumers are removed.
 
 ---
 
-### PITFALL 6: Changing the meaning of an existing field breaks client contracts
+### Pitfall 6: TIGER Local District Coverage Gaps Return "No Representatives" for Valid Addresses
 
-**What goes wrong:** `shortTitle` on a Compass topic was the quiz card label. The team decides it should now be the question stem. Old frontend code reads `shortTitle` expecting a 2-4 word label; new frontend reads it expecting a full sentence question. Both are in production at the same time during a deploy window. Users see garbled UI.
+**What goes wrong:**
+TIGER shapefiles have documented coverage gaps for local districts. Some states assigned "ZZZ" codes to areas without defined State Legislative Districts. School district spatial data has known holes and overlaps in certain counties. Special districts (fire, water, utility) are often not in TIGER at all. When a user enters a valid address in one of these areas, the geofence query returns zero local results. Without explicit handling, the UI shows an empty state with no explanation — the user assumes the platform is broken.
+
+**Why it happens:**
+Developers test the geofence system with addresses in well-covered major metros (Chicago, LA, New York) and assume coverage is universal. Edge cases — rural addresses, state-level coverage gaps, special jurisdiction areas — only appear in production with real user traffic.
+
+**How to avoid:**
+Design the response to differentiate between "no cached data" and "geofence returned no districts." When geofence returns no local districts, still return federal and state officials from the cache (these are stored nationally and do not depend on local geofence coverage). Show a specific message for the local section: "Local representative data is not yet available for this address" rather than a blank list. Track which addresses return zero local districts so coverage gaps can be identified and addressed with additional data sources (OpenStates, Represent Boundaries, or manual additions).
 
 **Warning signs:**
-- Field is repurposed without a new field name or versioned API response
-- Frontend and backend deploy simultaneously rather than backend-first
-- No API versioning or additive-only field policy
+- Test addresses in rural Indiana, Connecticut, or Illinois return zero local results
+- The essentials frontend `classify.js` receives empty local-tier data and renders nothing with no message
+- No distinction in API response between "district matched, no officials found" and "no district matched"
 
-**Prevention strategy:**
-- Never change the meaning of an existing field — add a new field instead (`question_text`, `prompt_text`)
-- Deprecate the old field with `omitempty` and remove it only after all clients have migrated
-- Backend deploys first (new field present but optional), frontend deploys second (reads new field, falls back to old)
-- **Phase:** Data model evolution phase, field design step
+**Phase to address:**
+Geofence matching phase — design the degradation response before launch. The federal/state fallback must be implemented in the same phase, not as a follow-up. Never ship a search feature that can return an empty page with no explanation.
 
 ---
 
-### PITFALL 7: BallotReady candidate data overwrites incumbent data
+## Technical Debt Patterns
 
-**What goes wrong:** The BallotReady API returns both officeholders and candidates in certain queries. The upsert logic (which uses `external_id` as the conflict key) treats a candidate record as an update to the sitting politician record, clobbering office title, district, or contact data.
+Shortcuts that seem reasonable but create long-term problems.
 
-**Warning signs:**
-- A single `external_id` appears in both officeholder and candidacy API responses with different field values
-- Upsert uses ON CONFLICT DO UPDATE with broad SET clauses that overwrite every column
-- No `is_candidate` / `is_officeholder` flags on the politician record to distinguish record types
-
-**Prevention strategy:**
-- Treat candidates as a separate data entity: either a separate table (`essentials.candidates`) or a type discriminator column on politicians
-- Upsert logic should be additive: candidacy data enriches but does not replace officeholder data
-- During BallotReady candidacy fetch, check if the `external_id` already exists as an officeholder before writing
-- **Phase:** Candidate data phase, BallotReady integration step
+| Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
+|----------|-------------------|----------------|-----------------|
+| Use one Google Maps API key for both frontend and backend calls | Simpler setup | Key cannot be restricted by both HTTP referrer and IP simultaneously; key exposed in browser if browser-restricted rules aren't applied | Never — use separate keys: one browser-restricted for autocomplete, one IP-restricted for server-side geocoding |
+| Skip `VACUUM ANALYZE` after shapefile bulk load | Saves 5 minutes | Query planner uses stale statistics; may ignore GiST index entirely, causing full scans on every query | Never for production or staging environments |
+| Load TIGER shapefiles for only a few test counties before launch | Faster initial setup | Users in uncovered areas see empty results; harder to add remaining data retroactively under load | Only in development, never in any user-accessible environment |
+| Keep BallotReady warming goroutines running but return early | Safe rollback option | Dead code in production that fires on server boot; if API key lapses, logs fill with auth errors | Never — remove the goroutines entirely at cutover, use feature flags if rollback is needed |
+| Store geocoded coordinates as plain float columns instead of PostGIS geometry | No PostGIS dependency | Cannot use spatial indexes or spatial functions; every district query requires client-side distance calculation | Never if PostGIS is already in the stack |
+| Use `ST_Within` instead of `ST_Covers` for simplicity | Slightly simpler SQL | Silent failures for addresses on district boundaries, which are disproportionately common for street addresses | Never — the performance difference is zero, correctness difference is significant |
 
 ---
 
-### PITFALL 8: ZIP/cache invalidation logic doesn't account for candidates who are not yet officials
+## Integration Gotchas
 
-**What goes wrong:** The 90-day TTL cache was designed for incumbent data that changes rarely. Candidates appear and drop out on a weeks-long cycle during election season. Stale candidate data (a candidate who dropped out 3 weeks ago is still showing) erodes user trust on a civic platform where accuracy is the core value proposition.
+Common mistakes when connecting to external services.
 
-**Warning signs:**
-- Candidate data stored in the same cache tables as officeholder data with the same TTL
-- No election-cycle-aware refresh logic (candidates should refresh more frequently near election dates)
-- Frontend shows "running for office" for a candidate who withdrew
-
-**Prevention strategy:**
-- Use a shorter TTL for candidate data (7-14 days vs 90 days) or store separately with its own cache table
-- Add an `election_date` field so the system can auto-expire candidate records after the election
-- Consider a manual "force refresh" admin endpoint to invalidate candidate data on demand
-- **Phase:** Candidate data phase, caching strategy step
-
----
-
-## Domain: Deterministic Randomization
-
-### PITFALL 9: Seeded randomization that is not reproducible across sessions or servers
-
-**What goes wrong:** Quiz topics are randomized so users see different questions each visit. A seeded PRNG is used. The seed is the current timestamp or a short session ID that differs between page loads. Users who refresh get a completely different quiz, making it impossible to share "I got question set #42" or to A/B test consistently.
-
-**Warning signs:**
-- `Math.random()` or `rand.Intn()` used without an explicit seed
-- Seed derived from `Date.now()` or a UUID that changes per session
-- No way to reconstruct a given randomization from a URL or user ID
-
-**Prevention strategy:**
-- Seed the PRNG with a stable per-user value: authenticated user ID (hashed) or a guest session token
-- For shareable quiz sets, encode the seed in the URL so the exact question order is reproducible
-- Validate: given the same seed + topic pool, the output must be identical across backend restarts and across the Go/JS boundary if both sides randomize
-- **Phase:** Compass guest-first phase, quiz randomization step
+| Integration | Common Mistake | Correct Approach |
+|-------------|----------------|------------------|
+| Google Maps Places Autocomplete | Generating a new session token on every keystroke (token in component state that reacts to query changes) | Generate one token per search session using `useMemo([])`; the same token persists until the user selects a result |
+| Google Maps Places Autocomplete | Using `Place Details (IDs Only)` to terminate the session cheaply | IDs Only tier voids the session discount entirely; terminate with `geometry` + `address_components` fields instead |
+| Google Maps Geocoding API | Using Places autocomplete on the frontend but Geocoding API on the backend with the same API key | Browser-restricted keys cannot make server-side calls; use two keys with separate restrictions |
+| PostGIS shp2pgsql | Running shp2pgsql without `-s FROM_SRID:TO_SRID` flag | TIGER data loads as NAD83 (4269); Google Maps coordinates are WGS84 (4326); specify `-s 4269:4326` at import |
+| PostGIS bulk load | Creating GiST index after loading data | Create index first, then load data, then `VACUUM ANALYZE` — or at minimum create the index before any query runs |
+| TIGER data refresh | Treating TIGER shapefiles as static, permanent data | TIGER releases annually (January cutoff); redistricting data can lag 6 months; Congressional districts change after elections. Plan an annual refresh process |
+| Google Maps nonprofit credits | Assuming the $200 monthly credit still applies | Google replaced the universal $200 credit in March 2025 with per-SKU free tiers; apply for the nonprofit program separately ($250+/month additional credits for verified nonprofits via Google for Nonprofits) |
 
 ---
 
-### PITFALL 10: Seeded randomization feels less random than expected (short cycles, clustering)
+## Performance Traps
 
-**What goes wrong:** A simple LCG or modulo seed produces visually non-random distributions when the topic pool is small (10-20 items). Users notice that questions always cluster in the same political categories. The platform looks biased even when it is not.
+Patterns that work at small scale but fail as usage grows.
 
-**Warning signs:**
-- Topic pool is small enough that seed collisions produce near-identical sequences
-- No shuffle quality check (run 100 seeds, verify even distribution across topic categories)
-- Topics not tagged by category, making it impossible to enforce balance in the shuffle
-
-**Prevention strategy:**
-- Use Fisher-Yates shuffle with a well-seeded PRNG (e.g., a 64-bit seed derived from user ID + topic set hash)
-- Add category-balanced selection: ensure each shuffle draws proportionally from each political topic area
-- Run a distribution test during development: generate 1,000 seeded shuffles and verify topic category spread
-- **Phase:** Compass randomization phase, algorithm validation step
+| Trap | Symptoms | Prevention | When It Breaks |
+|------|----------|------------|----------------|
+| No GiST index on district geometry column | Address search takes 15-30s; backend logs show slow queries | Create GiST index before first query; verify with EXPLAIN ANALYZE | Immediately, even with 100 rows — spatial scans are expensive |
+| Querying all district layers simultaneously without limiting scope | Each address triggers 5-7 separate ST_Covers queries (federal, state-upper, state-lower, county, municipal, school, local) | Run a single query joining all relevant district layers; use UNION ALL with LIMIT per tier | At moderate load (50 concurrent users) |
+| Loading all TIGER district geometries including high-resolution coastline detail | District query returns full polygon vertex data in response; large memory footprint per query | Store simplified geometries for query (ST_Simplify on import); only use full-res for display | When district polygon has 10,000+ vertices (common for coastal congressional districts) |
+| Storing Google Maps autocomplete results in React state without debounce | API called on every keystroke; 5-10 calls per second per user | Debounce at 300ms minimum before firing the autocomplete request | Immediately in development; billing impact shows up in first week of user traffic |
+| Not caching geocoded address → district results | Same address triggers a fresh PostGIS query every time; common for shared ZIP code households | Cache geocoded results (lat/lng + district IDs) in a short-TTL table (24 hours); many users in the same building will search the same address | At 500+ daily active users in dense urban areas |
 
 ---
 
-## Domain: Candidate Data Alongside Incumbents
+## Security Mistakes
 
-### PITFALL 11: UI conflates candidates with officeholders — no clear distinction
+Domain-specific security issues beyond general web security.
 
-**What goes wrong:** The Essentials app shows a mix of sitting officials and candidates on the same ZIP results page with no visual distinction. Users think a candidate is already in office, or think an incumbent is just running again. In a civic context, this is a misinformation risk.
-
-**Warning signs:**
-- Same card component used for both politician types with no badge or label
-- `is_candidate` / `is_officeholder` fields exist in the API but are not used in the UI
-- No UX review of the candidate card design before launch
-
-**Prevention strategy:**
-- Design and enforce a visual distinction at the component level: "Currently in office" vs. "Candidate — [Office] — [Election date]"
-- Make the distinction data-driven: derive from `is_appointed`, `is_vacant`, and election record fields already captured from BallotReady
-- Add a filter toggle on the Dashboard ("Show officials" / "Show candidates" / "Show both") so users can control the view
-- **Phase:** Candidate data phase, frontend integration step
+| Mistake | Risk | Prevention |
+|---------|------|------------|
+| Using one unrestricted Google Maps API key for all environments | Key scraped from frontend JavaScript; attacker runs up billing charges | Create three keys: (1) browser-restricted to production domain for frontend autocomplete, (2) browser-restricted to localhost for dev, (3) IP-restricted for backend geocoding in Go. Never put an unrestricted key in any deployed code |
+| Storing the Google Maps API key in React source code without environment variable | Key visible in compiled JS bundle via source maps | Use `VITE_GOOGLE_MAPS_API_KEY` environment variable in Vite; verify the key is not visible in production bundle with browser dev tools |
+| No Google Maps API quotas set | Single burst of traffic (or a scraper) consumes monthly budget in hours | Set per-day quotas in Google Cloud Console: start at 1,000 geocodes/day and 500 autocomplete sessions/day; increase only when justified |
+| Geocoding user-entered addresses on the frontend | Address strings proxied directly to Google from the browser; no rate limiting | Route geocoding through the Go backend for server-side calls; frontend autocomplete uses session-token approach which is designed for direct browser use |
 
 ---
 
-### PITFALL 12: Missing or inconsistent race/election context on candidate records
+## UX Pitfalls
 
-**What goes wrong:** BallotReady returns candidate data tied to a specific race. The backend stores the candidate but loses the race context (which office, which election date, which district). Downstream, it is impossible to answer "Who is running for City Council in my district?" because the race is not linked.
+Common user experience mistakes in this domain.
 
-**Warning signs:**
-- `ElectionRecord` stored but not joined to the politician in API responses
-- Frontend queries politicians by ZIP and gets candidates back with no office/race context
-- District on a candidate record is NULL because the district hasn't been won yet (it is a future position)
-
-**Prevention strategy:**
-- Store race context on the candidacy record: target office title, district, election date, race ID from BallotReady
-- API responses for candidates must always include race context (do not rely on the politician's current office, which may not exist yet)
-- During fetch, if a candidate has no existing district record, create a pending/prospective district entry rather than leaving it null
-- **Phase:** Candidate data phase, data model design step
+| Pitfall | User Impact | Better Approach |
+|---------|-------------|-----------------|
+| Replacing ZIP input with address autocomplete without preserving ZIP fallback | Users who know their ZIP but not their full address (common for rural users) cannot search | Keep the ZIP path working in parallel during transition; deprecate only after monitoring shows address search covers >90% of user needs |
+| Showing "No representatives found" with no explanation when geofence returns empty | User assumes the platform is broken or their address is invalid | Distinguish three states: (a) federal/state found, local unavailable — show what was found with a note; (b) district matched, no officials cached — show "data coming soon"; (c) no district matched — ask user to check the address |
+| Autocomplete suggestions include points of interest (restaurants, parks) not useful for district lookup | Users select "Central Park" and get a coordinate in the middle of a park with no street address | Set `types: ['address']` in the Places Autocomplete request to restrict to street addresses only |
+| Showing a full-screen spinner while geocoding completes | Users do not know if the app is working or frozen; abandonment increases | Show inline loading state on the search input itself; display cached federal/state officials immediately while local geofence query runs in parallel |
+| No clear indication that the searched address is outside supported coverage | User in a state with known TIGER gaps thinks the platform is broken | Add an explicit "Coverage is best for [covered regions]" note during the transition period; plan a coverage status page |
+| Autocomplete dropdown disappears before user can tap on mobile | Mobile keyboard dismiss event triggers blur on the input, closing suggestions before touch registers | Add a 150ms delay to the `onBlur` handler that closes the suggestion list; test on iOS Safari specifically |
 
 ---
 
-## Domain: Multi-App Consolidation
+## "Looks Done But Isn't" Checklist
 
-### PITFALL 13: Shared component library version skew causes silent visual regressions
+Things that appear complete but are missing critical pieces.
 
-**What goes wrong:** `ev-ui` (`@chrisandrewsedu/ev-ui`) is updated for the consolidated app. Compass and Essentials pull the new version. `RadarChartCore` behaves differently with the new prop interface. One app gets the fix, the other does not, or both break in different ways. Because there is no visual regression test, the breakage only appears in production.
-
-**Warning signs:**
-- `ev-ui` version pinned differently across Compass, Essentials, and the consolidated app
-- No Storybook or isolated component test for `RadarChartCore`
-- Prop interface changes made without a deprecation period
-
-**Prevention strategy:**
-- Pin `ev-ui` to an exact version in every consumer app's `package.json` (not `^` or `~`)
-- Before bumping the version in any consumer, test the component in isolation with the new version
-- For breaking prop interface changes, bump the major version and provide a migration guide in the changelog
-- **Phase:** Consolidation phase, shared library audit step
+- [ ] **TIGER data loaded:** Verify SRID is exactly 4326 with `SELECT DISTINCT ST_SRID(geom) FROM geofences.districts;` — do not trust the import command's success message alone
+- [ ] **GiST index active:** Confirm `EXPLAIN ANALYZE` shows "Index Scan" not "Seq Scan" on a live point-in-polygon query before declaring geofence complete
+- [ ] **ST_Covers boundary test:** Run a test query with a coordinate known to sit exactly on a district boundary — it must return a result, not zero rows
+- [ ] **Autocomplete session tokens:** Confirm in Google Cloud Console that "Autocomplete - Per Session" SKU is being charged, not "Autocomplete - Per Request" SKU — they appear separately in the billing report
+- [ ] **BallotReady fully removed:** `grep -r "ballotReadyClient\|BallotReady\|BALLOTREADY" EV-Backend/` returns zero results across all Go files
+- [ ] **API key restrictions set:** Verify in Google Cloud Console that the browser key has HTTP referrer restriction to `*.empowered.vote` and the server key has IP restriction to the App Runner egress IP
+- [ ] **Nonprofit credits applied:** Confirm the Google for Nonprofits application is approved and credits appear in the billing account before going live
+- [ ] **Federal/state fallback works:** Search an address in a known TIGER coverage gap — federal and state officials must still appear
+- [ ] **Empty-state messaging present:** The UI shows a meaningful message (not a blank list) when local geofence returns no results
+- [ ] **VACUUM ANALYZE run after load:** Run `VACUUM ANALYZE geofences.districts;` after each shapefile import and verify with `pg_stat_user_tables` that `last_analyze` is recent
 
 ---
 
-### PITFALL 14: Route namespace collisions when combining apps under one domain
+## Recovery Strategies
 
-**What goes wrong:** Compass uses `/quiz`, `/compass`, `/library`. Essentials uses `/dashboard`, `/profile/:id`. When consolidated, both route to a shared router. If the consolidated app reuses component names (e.g., `Dashboard` from both apps), the wrong component renders or imports break.
+When pitfalls occur despite prevention, how to recover.
 
-**Warning signs:**
-- Both apps have a component named `Dashboard`, `Profile`, or `Layout`
-- No agreed-upon URL namespace before consolidation begins (e.g., `/compass/*` vs `/essentials/*`)
-- React Router config is copy-pasted from both apps into one without conflict check
-
-**Prevention strategy:**
-- Before consolidating, audit all routes in every app and define a canonical URL map for the consolidated app
-- Rename conflicting components at the source level before merging (e.g., `CompassDashboard`, `EssentialsDashboard`)
-- Use React Router's nested route layout pattern to scope each sub-app under its own prefix
-- **Phase:** Consolidation phase, route design step (must be done before any code merge)
+| Pitfall | Recovery Cost | Recovery Steps |
+|---------|---------------|----------------|
+| SRID mismatch discovered in production (all queries return zero results) | MEDIUM | Re-run shapefile imports with `-s 4269:4326`; no data is lost, only reimport time. Add constraint and redeploy. Typical recovery: 2-4 hours |
+| Abandoned session billing spike discovered | LOW-MEDIUM | Immediately add debounce and fix token generation; billing already occurred but stops immediately on fix. Review Cloud Console for the billing period impact |
+| BallotReady goroutines still running after cutover | LOW | Remove remaining call sites, redeploy. No data corruption risk since goroutines only read from API. Recovery: same-day |
+| PostGIS full-table scan (missing GiST index) discovered under load | LOW | `CREATE INDEX CONCURRENTLY idx_districts_geom ON geofences.districts USING GIST (geom);` — runs without table lock; queries slow during build but service stays up. Recovery: minutes to hours depending on data size |
+| TIGER coverage gap causes empty results for real users | MEDIUM | Immediate: deploy federal/state fallback if not already present. Medium-term: add missing district data from alternative source (OpenStates, Represent Boundaries). No database corruption, only data gap |
+| Google Maps API key compromised and billing abuse detected | HIGH | Immediately rotate key in Google Cloud Console; update environment variables in Netlify and App Runner; redeploy both frontend and backend. Add restrictions to new key. Review billing for dispute eligibility |
 
 ---
 
-### PITFALL 15: Four separate Netlify deployments means four separate auth cookie scopes
+## Pitfall-to-Phase Mapping
 
-**What goes wrong:** Compass at `compass.empowered.vote` sets a session cookie for `.empowered.vote`. The user navigates to `essentials.empowered.vote`. The cookie is present but CORS or SameSite policy on the API blocks the credentials. The user appears logged out. Alternatively, after consolidation to one domain, the old subdomains 404 and existing links from social/email break.
+How roadmap phases should address these pitfalls.
 
-**Warning signs:**
-- Each app has `credentials: "include"` but no test that verifies the cookie is sent cross-subdomain
-- API CORS allow-list does not include all four frontend origins
-- No redirect plan for old subdomain URLs post-consolidation
-
-**Prevention strategy:**
-- Resolve cookie domain to `.empowered.vote` (already noted in CLAUDE.md) before any cross-app auth is needed
-- Update CORS allow-list in `internal/middleware/middleware.go` every time a new subdomain is added or consolidated
-- When consolidating, add Netlify redirects from old subdomain URLs to the new consolidated paths; keep old subdomains alive for 60+ days
-- **Phase:** Pre-consolidation — cookie domain fix and CORS audit are blockers
+| Pitfall | Prevention Phase | Verification |
+|---------|------------------|--------------|
+| SRID mismatch (Pitfall 1) | Geofence data load | Query `SELECT DISTINCT ST_SRID(geom)` returns single row with value 4326 |
+| Autocomplete session billing (Pitfall 2) | Google Maps integration | Cloud Console shows "Per Session" SKU not "Per Request" SKU in billing breakdown |
+| Boundary point returns no district (Pitfall 3) | Geofence matching implementation | Test case: coordinate on a known district boundary returns at least one district |
+| Missing GiST index (Pitfall 4) | Geofence data load | `EXPLAIN ANALYZE` shows Index Scan; query returns in <200ms |
+| BallotReady dead code (Pitfall 5) | BallotReady removal phase | Zero grep matches for BallotReady client references; no BallotReady log lines in production |
+| TIGER coverage gaps (Pitfall 6) | Geofence matching + degradation phase | Rural test address returns federal/state officials with explicit local-unavailable message |
 
 ---
 
-### PITFALL 16: NPM_TOKEN for GitHub registry breaks during consolidation
+## Sources
 
-**What goes wrong:** The consolidated app merges the `package.json` from Compass and Essentials. The `.npmrc` from one app is used, which contains the GitHub registry config. But the other app's `.npmrc` is dropped. Netlify CI fails because it cannot pull `@chrisandrewsedu/ev-ui` without `NPM_TOKEN`.
-
-**Warning signs:**
-- `.npmrc` is not committed in the consolidated app root (or committed without the `//npm.pkg.github.com/` line)
-- `NPM_TOKEN` env var not set in the new Netlify site's environment settings
-- Local installs work (because `~/.npmrc` has the token) but CI fails silently
-
-**Prevention strategy:**
-- The consolidated app's `.npmrc` must include `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` (per MEMORY.md)
-- Verify `NPM_TOKEN` is configured in Netlify environment settings for the consolidated site during site setup
-- Add a CI check step that validates the package can be installed before running the build
-- **Phase:** Consolidation phase, CI/CD setup step
-
----
-
-## Domain: Government/Civic Image Management
-
-### PITFALL 17: Government building images have inconsistent aspect ratios across contexts
-
-**What goes wrong:** A government building image is used as a hero banner on a politician profile (wide, 16:9), as a card thumbnail in search results (square, 1:1), and as a background in a quiz card (variable). The same image URL is used in all contexts. Some displays are stretched, cropped incorrectly, or too small to be recognizable.
-
-**Warning signs:**
-- Image `<img>` elements without explicit `object-fit` and `object-position` CSS
-- Only one image size/URL stored in the database per building (no thumbnail variants)
-- Building images sourced from Wikipedia Commons or similar with unpredictable dimensions
-
-**Prevention strategy:**
-- Store at minimum two variants per image: original (for hero/banner) and thumbnail (for cards)
-- Use CSS `object-fit: cover` universally for building images in card contexts
-- Define a canonical aspect ratio per usage context (profile hero: 3:1, card thumbnail: 1:1) and enforce at the component level
-- **Phase:** Candidate/profile data phase, image component design step
+- PostGIS official documentation: [ST_Within](https://postgis.net/docs/ST_Within.html), [ST_Covers](https://postgis.net/docs/ST_ContainsProperly.html), [Spatial Indexing](http://postgis.net/workshops/postgis-intro/indexing.html)
+- PostGIS SRID mismatch: [PostGIS ticket #771](https://trac.osgeo.org/postgis/ticket/771), [Hasura issue #7665](https://github.com/hasura/graphql-engine/issues/7665)
+- [Google Places API Session Pricing](https://developers.google.com/maps/documentation/places/web-service/session-pricing) — abandoned session billing behavior
+- [Google Maps Platform Public Programs](https://developers.google.com/maps/billing-and-pricing/public-programs) — nonprofit credits ($250+/month for verified nonprofits)
+- [Google Maps Platform March 2025 Billing Changes](https://developers.google.com/maps/billing-and-pricing/march-2025) — universal $200 credit replaced by per-SKU free tiers
+- [Google Maps API Security Best Practices](https://developers.google.com/maps/api-security-best-practices) — separate browser/server keys
+- [@vis.gl/react-google-maps](https://visgl.github.io/react-google-maps/) — Google-endorsed React library for Maps JavaScript API
+- [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) — Census Bureau, 2025 release (January 1, 2025 boundaries)
+- [TIGER Boundary Files — Redistricting Data Hub](https://redistrictingdatahub.org/data/about-our-data/tiger-boundary-files/) — known coverage gaps documentation
+- [Census TIGER errata (2008)](https://www.census.gov/programs-surveys/geography/technical-documentation/user-note/tiger-geo-line.2008.html) — documented school district boundary holes and county subdivision bleeds
+- [PostGIS Performance — Crunchy Data](https://www.crunchydata.com/blog/postgis-performance-indexing-and-explain) — GiST index gotchas, VACUUM ANALYZE requirements
+- [ST_Contains vs ST_Covers — Medium](https://mentin.medium.com/which-predicate-cb608b470471) — boundary semantics comparison
+- [BallotReady API Documentation](https://github.com/BallotReady/api-documentation) — existing integration reference
+- [Google Civic API shutdown notice](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — civic API migration context
+- [Geocoding Address Validation — Google](https://developers.google.com/maps/architecture/geocoding-address-validation) — Places vs Geocoding API difference for real-time input
 
 ---
-
-### PITFALL 18: BallotReady politician images expire or return 404 after a period
-
-**What goes wrong:** BallotReady provides CDN image URLs for politician headshots. These URLs are stored in `essentials.politician_images`. After 6-12 months, BallotReady rotates CDN keys or changes the URL structure. All stored image URLs 404. The platform shows broken images for every politician.
-
-**Warning signs:**
-- Image URLs stored verbatim with no expiry tracking
-- No fallback image or graceful degradation in the frontend when `<img>` fails to load
-- No periodic health check on stored image URLs
-
-**Prevention strategy:**
-- Always implement an `onError` fallback on every politician image (`<img onError={...}>`): show initials avatar or a generic silhouette
-- Track `image_fetched_at` timestamp alongside the URL; re-fetch from BallotReady during the 90-day cache refresh cycle
-- Consider proxying images through the backend or re-uploading to Supabase Storage to own the CDN lifecycle
-- **Phase:** Image handling phase; fallback is a day-one requirement, proxy is a later optimization
-
----
-
-## Domain: Small Team / Nonprofit Constraints
-
-### PITFALL 19: Demo-readiness and production-readiness treated as the same thing
-
-**What goes wrong:** The team scrambles to make features demo-ready (hardcoded data, disabled error handling, skipped edge cases). These demo shortcuts ship to production because there is no clear line between the two environments. Live users encounter demo-quality code.
-
-**Warning signs:**
-- "Demo" data or flags hardcoded in shared environment config
-- Features flagged as "demo-only" with a TODO comment but no tracking issue
-- Production deploy pipeline is the same as the demo pipeline
-
-**Prevention strategy:**
-- Maintain a dedicated demo Netlify site (or deploy preview) that is not the production URL
-- Use Vite environment variables (`VITE_DEMO_MODE=true`) to enable demo shortcuts, and ensure these are never set on the production Netlify site
-- Create a "demo debt" tracking label in GitHub Issues; review before each production deploy
-- **Phase:** All phases — establish this discipline before the first milestone ships
-
----
-
-### PITFALL 20: 2-3 person team accumulates too many open state changes across apps
-
-**What goes wrong:** Work begins on guest auth in Compass at the same time as consolidation planning and candidate data integration. Each stream makes changes to shared files (`internal/essentials/`, `ev-ui`, shared auth middleware). Merge conflicts multiply. The team spends more time on merge resolution than on features.
-
-**Warning signs:**
-- More than one active branch touching the same Go package or React component at once
-- No agreed-upon branch strategy (feature branches vs trunk-based development)
-- PRs sit open for more than 2-3 days because reviewers are working on conflicting branches
-
-**Prevention strategy:**
-- Sequence milestones so that shared dependencies (auth, data model) are completed and merged before dependent features begin
-- Use trunk-based development with short-lived feature flags rather than long-lived feature branches
-- Treat `ev-ui` and `internal/auth/` as shared infrastructure: changes require explicit team sign-off before merge
-- **Phase:** Project planning level — enforce before milestone 1 begins
-
----
-
-## Summary Table
-
-| # | Pitfall | Phase |
-|---|---------|-------|
-| 1 | Guest→auth state merge never happens | Guest auth phase |
-| 2 | Guest has no persistent identity | Guest auth phase |
-| 3 | Wrong API endpoints exposed/protected for guests | Guest auth phase |
-| 4 | Existing sessions broken during auth model change | Pre-guest-auth (cookie fix first) |
-| 5 | Non-nullable column added without backfill | Data model evolution phase |
-| 6 | Field meaning changes break client contracts | Data model evolution phase |
-| 7 | Candidate upsert overwrites incumbent data | Candidate data phase |
-| 8 | Candidate cache TTL too long for election cycle | Candidate data phase |
-| 9 | Seeded randomization not reproducible | Compass randomization phase |
-| 10 | Seeded shuffle produces biased distributions | Compass randomization phase |
-| 11 | UI conflates candidates with officeholders | Candidate data — frontend phase |
-| 12 | Candidate records missing race/election context | Candidate data — data model phase |
-| 13 | ev-ui version skew causes visual regressions | Consolidation phase |
-| 14 | Route namespace collisions when merging apps | Consolidation phase |
-| 15 | Cookie scope breaks cross-subdomain auth | Pre-consolidation (cookie fix blocker) |
-| 16 | NPM_TOKEN missing in consolidated Netlify site | Consolidation phase — CI/CD setup |
-| 17 | Building images wrong aspect ratio across contexts | Profile/image component phase |
-| 18 | BallotReady image URLs expire and 404 | Image handling phase |
-| 19 | Demo shortcuts ship to production | All phases |
-| 20 | Parallel streams cause unmanageable merge conflicts | Project planning level |
+*Pitfalls research for: v1.5 Address Verification & BallotReady Independence*
+*Researched: 2026-02-22*
