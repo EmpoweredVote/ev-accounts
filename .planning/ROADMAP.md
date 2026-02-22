@@ -96,7 +96,10 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
   2. Searching an address outside any covered geofence area (e.g., rural Iowa) returns federal and state officials from cache rather than an empty page
   3. The `X-Data-Status: no-geofence-data` response header is present when local geofence returns zero results
   4. The search response never returns a completely empty politician list for a valid US address
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 26-01-PLAN.md — Backend: remove BallotReady fallback, implement geofence-only search with federal/state cache fallback
+- [ ] 26-02-PLAN.md — Frontend: address-only input, formatted address display, local empty-state message
 
 ### Phase 27: Cache-Only Candidates & Warmer Cleanup
 **Goal**: All remaining BallotReady live API call sites are replaced — candidates come from the database, warmers are stubs, and the BallotReady provider is de-registered at startup
@@ -160,7 +163,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 | 23. UX Cleanup | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 24. Tech Debt Cleanup | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 25. Onboarding-to-Calibration Redirect & Topic Display Fix | v1.4 | 2/2 | Complete | 2026-02-22 |
-| 26. Geofence-Only Search | v1.5 | 0/TBD | Not started | - |
+| 26. Geofence-Only Search | v1.5 | 0/2 | Planned | - |
 | 27. Cache-Only Candidates & Warmer Cleanup | v1.5 | 0/TBD | Not started | - |
 | 28. Address Autocomplete | v1.5 | 0/TBD | Not started | - |
 | 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |
