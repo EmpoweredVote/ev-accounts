@@ -151,4 +151,4 @@ Plans:
 | 21. Guest Flow Fix | v1.4 | Complete    | 2026-02-22 | 2026-02-22 |
 | 22. Radar Label Fixes | 1/2 | Complete    | 2026-02-22 | - |
 | 23. UX Cleanup | 2/2 | Complete    | 2026-02-22 | - |
-| 24. Tech Debt Cleanup | 2/2 | Complete   | 2026-02-22 | - |
+| 24. Tech Debt Cleanup | 2/2 | Complete    | 2026-02-22 | - |
