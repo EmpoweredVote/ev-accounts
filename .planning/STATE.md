@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 26 in progress
+**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 27 in progress
 
 ## Current Position
 
-Phase: 26 of 29 (Geofence-Only Search)
-Plan: 2 of 2 complete
-Status: Phase 26 Plan 02 complete
-Last activity: 2026-02-22 — Phase 26 Plan 02 executed: frontend address input, formatted address display, local empty-state
+Phase: 27 of 29 (Cache-Only Candidates & Warmer Cleanup)
+Plan: 1 of 2 complete
+Status: Phase 27 Plan 01 complete
+Last activity: 2026-02-22 — Phase 27 Plan 01 executed: DB-only GetCandidatesByZip, deleted all warmers and cache status endpoint, removed lock infrastructure
 
-Progress: [███░░░░░░░] 37% (v1.5)
+Progress: [████░░░░░░] 40% (v1.5)
 
 ## Performance Metrics
 
@@ -29,6 +29,7 @@ Progress: [███░░░░░░░] 37% (v1.5)
 |-------|------|----------|-------|-------|
 | 26-geofence-only-search | 01 | 3min | 2 | 3 |
 | 26-geofence-only-search | 02 | 1min | 2 | 3 |
+| 27-cache-only-candidates-warmer-cleanup | 01 | 7min | 2 | 5 |
 
 ## Accumulated Context
 
@@ -54,18 +55,23 @@ v1.5 decisions from Phase 26 Plan 02:
 - formattedAddress only populated in address search branch (not ZIP branch) — correct behavior, ZIP branch has no X-Formatted-Address header
 - Local empty-state condition includes activeQuery guard so message never appears on initial Dashboard load
 
+v1.5 decisions from Phase 27 Plan 01:
+- admin.go WarmZip/WarmZipWith removed; runBulkImport returns immediate failure — live warmer no longer available, data import needs new pipeline in a future phase
+- cmd/bulk-import deprecated in place (main.go prints message and exits) — file preserved, not deleted
+- ensureCandidacyData removed entirely (no stub): profile pages read from DB only
+- FederalCache/StateCache/ZipCache GORM models kept in this plan — table drops deferred to Plan 02 (remove all reads before dropping tables)
+
 ### Pending Todos
 
 None.
 
 ### Blockers/Concerns
 
-- Phase 27 research flag: `fetchCandidatesFromDB` join path from `election_records` to `zip_politicians` needs schema inspection before writing SQL — confirm join keys and upcoming-election filter before execution
 - Phase 28 shadow DOM gap: `PlaceAutocompleteElement` limits Tailwind targeting to outer container; internal styling requires `gmp-place-autocomplete::part(input)` — may require design tradeoff decision
 - Phase 29 dependency: Google for Nonprofits credits status unknown; confirm before shipping to production to avoid unexpected billing
 
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 26-geofence-only-search/26-02-PLAN.md
+Stopped at: Completed 27-cache-only-candidates-warmer-cleanup/27-01-PLAN.md
 Resume file: None
