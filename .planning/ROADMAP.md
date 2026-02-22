@@ -105,7 +105,10 @@ Plans:
   2. The Library page has no "Clear" button — the action is removed entirely
   3. The Answered/Remaining stat cards on the Library page fill full width on a mobile screen (no partial-width or misaligned layout)
   4. QuestionText in LibraryDrawer and stance selection views is visually larger and closer to title weight — clearly more prominent than the supporting body text
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 23-01-PLAN.md -- Remove stale buttons (Edit Topics, Clear) and fix mobile stat card layout
+- [ ] 23-02-PLAN.md -- Restructure text hierarchy: question text becomes title, topic name becomes subtitle, poles removed
 
 ### Phase 24: Tech Debt Cleanup
 **Goal**: EV-Backend CLI tools and CompassV2 admin components no longer reference dropped columns
