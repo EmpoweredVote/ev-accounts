@@ -119,7 +119,10 @@ Plans:
   2. cmd/seed/compass_csv_seeder.go compiles without any StartPhrase or start_phrase reference
   3. Admin TopicEditor PATCH request body contains no short_name field
   4. Admin TopicAccordion state initialization contains no editedFields.short_name entry
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 24-01-PLAN.md -- Remove StartPhrase/start_phrase from compassimport package and CSV seeder
+- [ ] 24-02-PLAN.md -- Remove vestigial short_name from admin TopicEditor and TopicAccordion
 
 ## Progress
 
