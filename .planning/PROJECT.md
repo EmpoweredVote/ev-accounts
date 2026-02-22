@@ -81,7 +81,16 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active requirements — start next milestone with `/gsd:new-milestone`)
+**Current Milestone: v1.5 Address Verification & BallotReady Independence**
+
+**Goal:** Replace BallotReady API dependency with Google Maps address validation + PostGIS geofence-only politician matching, making the platform self-sufficient with cached data.
+
+**Target features:**
+- Address-only search with Google Maps Places autocomplete (replace ZIP code entry)
+- Full BallotReady API cutover — remove all live API calls
+- Geofence-only politician matching (PostGIS point-in-polygon against TIGER shapefiles)
+- Federal/state officials from cache when local data unavailable
+- Cached-only candidate race data (no live fetching)
 
 ### Out of Scope
 
@@ -162,4 +171,4 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | needsCalibration OR selectedTopics.length === 0 | Returning uncalibrated users also get CalibrationOverlay | ✓ Good — covers both onboarding and direct-nav paths |
 
 ---
-*Last updated: 2026-02-22 after v1.4 milestone*
+*Last updated: 2026-02-22 after v1.5 milestone start*

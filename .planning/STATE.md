@@ -5,16 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 25: Onboarding-to-Calibration Redirect & Topic Display Fix
+**Current focus:** v1.5 Address Verification & BallotReady Independence
 
 ## Current Position
 
-Phase: 25 — Onboarding-to-Calibration Redirect & Topic Display Fix
-Plan: 02 (complete) — Phase Complete
-Status: Phase 25 complete — all onboarding/calibration requirements satisfied
-Last activity: 2026-02-22 — needsCalibration extended to cover returning uncalibrated users with zero selected topics
-
-Progress: [###.................] 75% (3/4 v1.4 phases complete)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-22 — Milestone v1.5 started
 
 ## Performance Metrics
 
@@ -34,6 +32,10 @@ Progress: [###.................] 75% (3/4 v1.4 phases complete)
 - Total plans completed: 7
 - v1.3 phases: 4 phases, 7 plans
 
+**Velocity (v1.4):**
+- Total plans completed: 9
+- v1.4 phases: 5 phases, 9 plans
+
 ## Accumulated Context
 
 ### Decisions
@@ -43,21 +45,7 @@ All v1.0 decisions resolved — see `.planning/milestones/v1.0-ROADMAP.md` for f
 All v1.1 decisions resolved — see `.planning/milestones/v1.1-ROADMAP.md` for full history.
 All v1.2 decisions resolved — see `.planning/milestones/v1.2-ROADMAP.md` for full history.
 All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for full history.
-- [Phase 23-ux-cleanup]: Remove Edit Topics button entirely — AddTopicModal is dead UI redundant with Library page topic management
-- [Phase 23-ux-cleanup]: Remove Clear button — clearSelections restored to compassTopicsRef snapshot with unclear semantics
-- [Phase 23-ux-cleanup]: Phase 23-02: Question-text-first hierarchy across LibraryDrawer, Quiz, Library, and CalibrationOverlay — tension poles removed entirely
-
-### Key Decisions (v1.4)
-
-- **Phase 21**: answersRef pattern in BuildCompass — use useRef to read context answers inside effect without adding to dep array, matching Library.jsx convention exactly
-- **Phase 22-01**: Estimate label widths using charCount * fontSize * 0.6 ratio (no DOM measurement); classify label sides via sin(angle) > 0.1 threshold; padding prop retained as vertical-only
-- **Phase 22-02**: Uniform font sizing instead of adaptive (varying sizes looked inconsistent); default labelFontSize 18px; max-w-2xl on desktop chart container; dynamic padding capped at 2x base
-- **Phase 23-01**: Remove Edit Topics button entirely — AddTopicModal is dead UI redundant with Library page; Remove Clear button — clearSelections unclear semantics; Add w-full to stat card containers and parents for mobile width
-- **Phase 23-02**: Question-text-first hierarchy across all four compass views; tension poles removed; fallback to topic name when no question_text exists; suppress subtitle when fallback used to avoid duplicate display
-- **Phase 24-01**: start_phrase column already dropped from DB in Phase 17 — only CLI tooling still referenced the dead field; removed from compassimport package and cmd/seed seeder
-- **Phase 24-02**: short_name field removed from admin components — no architectural decisions needed, straightforward dead code cleanup of 4 removal sites
-- **Phase 25-01**: Use ?calibrate=1 URL param (not localStorage) to signal calibration intent from Onboarding to Compass — cleared with replace:true to preserve back-button behavior; topic card "regression" was a routing dead-end, not a rendering bug
-- **Phase 25-02**: Expand needsCalibration to OR-in selectedTopics.length === 0 — covers returning uncalibrated users who bypass the URL param path; calibration_skipped/calibration_completed flags still gate re-triggering
+All v1.4 decisions resolved — see `.planning/milestones/v1.4-ROADMAP.md` for full history.
 
 ### Pending Todos
 
@@ -65,7 +53,7 @@ None.
 
 ### Roadmap Evolution
 
-- Phase 25 added: Onboarding-to-Calibration Redirect & Topic Display Fix
+(New milestone — no roadmap changes yet)
 
 ### Blockers/Concerns
 
@@ -74,5 +62,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 25-02-PLAN.md (Phase 25 complete)
+Stopped at: Milestone v1.5 initialization
 Resume file: None
