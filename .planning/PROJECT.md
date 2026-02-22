@@ -69,7 +69,15 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(None — next milestone not yet defined)
+- [ ] BuildCompass guest support — "View Full Compass" and quiz completion work without login — v1.4
+- [ ] Radar chart label clipping fixed — labels on far left/right edges no longer cut off — v1.4
+- [ ] Radar chart label minimum size — short labels (Misinformation, Immigration, Medicare/Medicaid) remain readable — v1.4
+- [ ] "Edit Topics" button removed from compass page — Library page handles topic editing — v1.4
+- [ ] "Clear" button removed from Library page — v1.4
+- [ ] Library stat cards fill full width on mobile — v1.4
+- [ ] QuestionText more prominent on LibraryDrawer and stance selection — v1.4
+- [ ] Tech debt: compassimport/seed CLI StartPhrase references cleaned up — v1.4
+- [ ] Tech debt: Admin TopicEditor vestigial short_name field removed — v1.4
 
 ### Out of Scope
 
@@ -145,4 +153,4 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | Compare polygon iterates spokes not compareData keys | Guarantees correct angle alignment regardless of topic coverage | ✓ Good — fixed double-overlay bug in ev-ui@0.1.21 |
 
 ---
-*Last updated: 2026-02-22 after v1.3 milestone*
+*Last updated: 2026-02-22 after v1.4 milestone started*

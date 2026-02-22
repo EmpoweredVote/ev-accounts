@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v1.4 Compass Polish & Tech Debt — defining requirements
 
 ## Current Position
 
-Phase: All milestones complete (v1.0-v1.3)
-Plan: N/A
-Status: Between milestones
-Last activity: 2026-02-22 — v1.3 milestone archived (4 phases, 7 plans, 7/7 requirements satisfied)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-22 — Milestone v1.4 started
 
 Progress: [████████████████████] 100% (20/20 phases complete across all milestones)
 
