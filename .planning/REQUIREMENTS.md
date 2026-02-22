@@ -20,9 +20,9 @@ Requirements for compass polish, bug fixes, and tech debt cleanup. Each maps to 
 
 ### UX Cleanup
 
-- [ ] **UX-01**: "Edit Topics" button removed from the compass page — users edit topics via the Library
-- [ ] **UX-02**: "Clear" button removed from the Library page
-- [ ] **UX-03**: Answered/Remaining stat cards on the Library page fill full width on mobile screens
+- [x] **UX-01**: "Edit Topics" button removed from the compass page — users edit topics via the Library
+- [x] **UX-02**: "Clear" button removed from the Library page
+- [x] **UX-03**: Answered/Remaining stat cards on the Library page fill full width on mobile screens
 - [ ] **UX-04**: QuestionText is more visually prominent on LibraryDrawer and stance selection views (larger size, closer to title weight)
 
 ### Tech Debt
@@ -65,9 +65,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | LABEL-01 | Phase 22 | Complete |
 | LABEL-02 | Phase 22 | Complete |
 | LABEL-03 | Phase 22 | Complete |
-| UX-01 | Phase 23 | Pending |
-| UX-02 | Phase 23 | Pending |
-| UX-03 | Phase 23 | Pending |
+| UX-01 | Phase 23 | Complete |
+| UX-02 | Phase 23 | Complete |
+| UX-03 | Phase 23 | Complete |
 | UX-04 | Phase 23 | Pending |
 | DEBT-01 | Phase 24 | Pending |
 | DEBT-02 | Phase 24 | Pending |
