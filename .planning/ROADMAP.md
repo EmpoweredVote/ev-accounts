@@ -65,7 +65,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 ### v1.4 Compass Polish & Tech Debt
 
 - [x] **Phase 21: Guest Flow Fix** - Fix 401 errors so guests can view and complete the compass without login — completed 2026-02-22
-- [ ] **Phase 22: Radar Label Fixes** - Fix label clipping, minimum size, and word-wrap in ev-ui RadarChartCore
+- [x] **Phase 22: Radar Label Fixes** - Fix label clipping, minimum size, and word-wrap in ev-ui RadarChartCore (completed 2026-02-22)
 - [ ] **Phase 23: UX Cleanup** - Remove stale buttons, fix mobile stat cards, and elevate QuestionText prominence
 - [ ] **Phase 24: Tech Debt Cleanup** - Remove dropped-column references from EV-Backend CLI tools and vestigial admin fields
 
@@ -143,6 +143,6 @@ Plans:
 | 19. Calibration Flow Fixes | v1.3 | 2/2 | Complete | 2026-02-21 |
 | 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |
 | 21. Guest Flow Fix | v1.4 | Complete    | 2026-02-22 | 2026-02-22 |
-| 22. Radar Label Fixes | 1/2 | In Progress|  | - |
+| 22. Radar Label Fixes | 1/2 | Complete    | 2026-02-22 | - |
 | 23. UX Cleanup | v1.4 | 0/? | Not started | - |
 | 24. Tech Debt Cleanup | v1.4 | 0/? | Not started | - |
