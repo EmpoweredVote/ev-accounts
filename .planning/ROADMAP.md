@@ -82,7 +82,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 - [x] **Phase 26: Geofence-Only Search** - Remove BallotReady fallback from address search; return federal/state from cache when local geofence is empty
 - [x] **Phase 27: Cache-Only Candidates & Warmer Cleanup** - Replace live candidate fetch with DB query; stub warmers; de-register BallotReady provider (completed 2026-02-22)
-- [ ] **Phase 28: Address Autocomplete** - Google Maps Places autocomplete replaces plain text input; remove ZIP path; show confirmed address and no-coverage message
+- [x] **Phase 28: Address Autocomplete** - Google Maps Places autocomplete replaces plain text input; remove ZIP path; show confirmed address and no-coverage message (completed 2026-02-22)
 - [ ] **Phase 29: Validation, Polish & Key Removal** - Grep audit confirms zero BallotReady call sites; remove API key; configure Google Maps billing alert
 
 ## Phase Details
@@ -171,5 +171,5 @@ Plans:
 | 25. Onboarding-to-Calibration Redirect & Topic Display Fix | v1.4 | 2/2 | Complete | 2026-02-22 |
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
 | 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
-| 28. Address Autocomplete | 1/2 | In Progress|  | - |
+| 28. Address Autocomplete | 2/2 | Complete   | 2026-02-22 | - |
 | 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |

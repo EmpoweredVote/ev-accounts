@@ -22,8 +22,8 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 
 - [x] **ADDR-01**: User enters address via Google Maps Places autocomplete widget
 - [x] **ADDR-02**: ZIP code search path is removed — address is the only search input
-- [ ] **ADDR-03**: User sees their validated/confirmed address in search results
-- [ ] **ADDR-04**: User sees a clear message when local-level data is not available for their area
+- [x] **ADDR-03**: User sees their validated/confirmed address in search results
+- [x] **ADDR-04**: User sees a clear message when local-level data is not available for their area
 
 ### Cleanup
 
@@ -68,8 +68,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CAND-01 | Phase 27 | Complete |
 | ADDR-01 | Phase 28 | Complete |
 | ADDR-02 | Phase 28 | Complete |
-| ADDR-03 | Phase 28 | Pending |
-| ADDR-04 | Phase 28 | Pending |
+| ADDR-03 | Phase 28 | Complete |
+| ADDR-04 | Phase 28 | Complete |
 | CLEAN-01 | Phase 29 | Pending |
 | CLEAN-02 | Phase 29 | Pending |
 | CLEAN-03 | Phase 29 | Pending |

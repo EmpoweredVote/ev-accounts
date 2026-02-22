@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 28 of 29 (Address Autocomplete)
-Plan: 1 of 2 complete
-Status: Phase 28 in progress
-Last activity: 2026-02-22 — Phase 28 Plan 01 executed: extended useGooglePlacesAutocomplete hook with loadError, refactored Landing page to address-only with selection validation and degraded mode
+Plan: 2 of 2 complete
+Status: Phase 28 complete
+Last activity: 2026-02-22 — Phase 28 Plan 02 executed: created LocalFilterSidebar component, restructured Results page with address bar, loading skeletons, no-geofence message, LocalFilterSidebar, removed all ZIP code paths
 
-Progress: [█████░░░░░] 50% (v1.5)
+Progress: [██████████] 100% (v1.5)
 
 ## Performance Metrics
 
@@ -32,6 +32,7 @@ Progress: [█████░░░░░] 50% (v1.5)
 | 27-cache-only-candidates-warmer-cleanup | 01 | 7min | 2 | 5 |
 | 27-cache-only-candidates-warmer-cleanup | 02 | 5min | 2 | 2 |
 | 28-address-autocomplete | 01 | 4min | 1 | 2 |
+| 28-address-autocomplete | 02 | 5min | 2 | 2 |
 
 ## Accumulated Context
 
@@ -73,6 +74,12 @@ v1.5 decisions from Phase 28 Plan 01:
 - handleKeyDown removed entirely — Google autocomplete handles Enter internally; hasValidSelection guard blocks raw text submission
 - Search button disabled prop checks !addressInput.trim() || loadError only; hasValidSelection check inside handleSearch shows hint rather than silently blocking
 
+v1.5 decisions from Phase 28 Plan 02:
+- LocalFilterSidebar created locally (not published to ev-ui) to avoid publish cycle — clean migration path if needed later
+- dataStatus 'no-geofence-data' message placed in address bar section (above two-panel) so it's always visible regardless of scroll position
+- defaultSort and GROUP_SORT_OPTIONS kept as internal code (sort dropdown UI removed, not the underlying sort logic)
+- Skeleton sections shown during both 'loading' and 'warming' phases; results rendered only after phase leaves loading state
+
 ### Pending Todos
 
 None.
@@ -85,5 +92,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 28-address-autocomplete/28-01-PLAN.md
+Stopped at: Completed 28-address-autocomplete/28-02-PLAN.md
 Resume file: None
