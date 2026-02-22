@@ -152,3 +152,19 @@ Plans:
 | 22. Radar Label Fixes | 1/2 | Complete    | 2026-02-22 | - |
 | 23. UX Cleanup | 2/2 | Complete    | 2026-02-22 | - |
 | 24. Tech Debt Cleanup | 2/2 | Complete    | 2026-02-22 | - |
+
+### Phase 25: Onboarding-to-Calibration Redirect & Topic Display Fix
+
+**Goal:** Topic cards display correctly across all views and users flow from onboarding through calibration to /results without dead-ends
+**Depends on:** Phase 24
+**Requirements:** ONBOARD-01, ONBOARD-02, ONBOARD-03, ONBOARD-04
+**Success Criteria** (what must be TRUE):
+  1. Topic/issue cards are visible on the Library page, CalibrationOverlay pick step, and Quiz page
+  2. After completing onboarding, user enters the calibration flow — not a "need 3 more topics" dead-end
+  3. After calibration (3+ topics answered), user sees their radar chart on /results
+  4. Back button during calibration stays within calibration steps
+**Plans:** 2 plans
+
+Plans:
+- [ ] 25-01-PLAN.md -- Diagnose and fix topic card display regression
+- [ ] 25-02-PLAN.md -- Fix onboarding redirect to trigger calibration flow
