@@ -72,3 +72,28 @@
 
 ---
 
+
+## v1.3 Compass Bug Fixes & Title Standardization (Shipped: 2026-02-22)
+
+**Phases completed:** 4 phases, 7 plans
+**Timeline:** 2 days (2026-02-20 - 2026-02-21)
+**Requirements:** 7/7 satisfied
+**Repos:** CompassV2, EV-Backend, ev-ui
+
+**Delivered:** Compass topic naming standardized server-side, calibration flow fixed for all mixed-state edge cases, and double-overlay compare bug eliminated.
+
+**Key accomplishments:**
+1. Title standardization — all 21 compass topics use tension title format (Topic: Pole A — Pole B) as server-side canonical source of truth, with deprecated ShortName/StartPhrase columns dropped
+2. Unified topic display — parseTensionTitle helper renders consistent two-line layout across Library cards, calibration cards, compass spoke labels, quiz, and compare panel
+3. Calibration auto-routing — users with unanswered topics auto-enter calibration starting at first unanswered topic, with resume flow that skips pick step and exit gating until 3+ answered
+4. Mixed-state radar chart — gray dashed unanswered spokes in RadarChartCore, below-3 threshold shows grayed chart overlay with calibration CTA instead of dead end
+5. Compare bug fix — single polygon rendering with spoke-order iteration and immediate spring reset, published as ev-ui@0.1.21
+6. Anti-partisan design — pole order randomized per topic (10 right-first, 11 left-first) to prevent visual bias
+
+**Tech debt carried forward:**
+- compassimport/models.go and cmd/seed/compass_csv_seeder.go still reference dropped StartPhrase column — standalone CLI tools, would fail at runtime
+- Admin TopicEditor sends short_name in PATCH body (silently ignored) and initializes vestigial editedFields.short_name
+- BallotReady transform.go SubAreaName → RepresentingCity mapping fix — frontend workaround in Results.jsx (carried from v1.1)
+
+---
+

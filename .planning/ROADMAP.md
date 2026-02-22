@@ -5,7 +5,7 @@
 - ✅ **v1.0 Quality & Consolidation** — Phases 1-7 (shipped 2026-02-18)
 - ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
 - ✅ **v1.2 Compass Onboarding & UX** — Phases 11-16 (shipped 2026-02-20)
-- 🚧 **v1.3 Compass Bug Fixes & Title Standardization** — Phases 17-20 (in progress)
+- ✅ **v1.3 Compass Bug Fixes & Title Standardization** — Phases 17-20 (shipped 2026-02-21)
 
 ## Phases
 
@@ -49,73 +49,17 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.3 Compass Bug Fixes & Title Standardization (In Progress)
+<details>
+<summary>✅ v1.3 Compass Bug Fixes & Title Standardization (Phases 17-20) — SHIPPED 2026-02-21</summary>
 
-**Milestone Goal:** Fix calibration flow edge cases, standardize topic naming from server through display, and eliminate the double-overlay compare bug.
+- [x] Phase 17: Title Standardization (Backend) (2/2 plans) — completed 2026-02-21
+- [x] Phase 18: Title Display (Frontend) (2/2 plans) — completed 2026-02-21
+- [x] Phase 19: Calibration Flow Fixes (2/2 plans) — completed 2026-02-21
+- [x] Phase 20: Compare Bug Fix (1/1 plan) — completed 2026-02-21
 
-- [x] **Phase 17: Title Standardization (Backend)** - Canonical topic naming established as server-side source of truth (completed 2026-02-21)
-- [x] **Phase 18: Title Display (Frontend)** - Compass labels, Library cards, and calibration all render clean names from server data (completed 2026-02-21)
-- [x] **Phase 19: Calibration Flow Fixes** - Compass handles all mixed answered/unanswered topic states without dead ends (completed 2026-02-21)
-- [x] **Phase 20: Compare Bug Fix** - Comparison overlay renders exactly one shape on the radar chart (completed 2026-02-21)
+Full details: `.planning/milestones/v1.3-ROADMAP.md`
 
-## Phase Details
-
-### Phase 17: Title Standardization (Backend)
-**Goal**: All topic naming fields (title, short_name, question_text) are consistent and canonical in the database, eliminating the source of downstream display mismatches
-**Depends on**: Nothing (first phase of v1.3)
-**Requirements**: TITLE-01
-**Success Criteria** (what must be TRUE):
-  1. Every topic in the database has a title, short_name, and question_text that are internally consistent with each other
-  2. The API response for topics returns names that match what the compass labels, Library cards, and calibration cards should display
-  3. No topic has a question_text that begins with "Where do you stand on" when fetched from the server
-**Plans:** 2/2 plans complete
-
-Plans:
-- [ ] 17-01-PLAN.md — Draft and review standardized topic naming content (tension titles, spoke labels, custom questions) for all 21 topics
-- [ ] 17-02-PLAN.md — Apply approved names to database, remove deprecated ShortName/StartPhrase columns, clean up handlers
-
-### Phase 18: Title Display (Frontend)
-**Goal**: Compass labels, Library cards, and calibration cards all render identical topic names sourced from the server, with no "Where do you stand on..." prefix visible to users
-**Depends on**: Phase 17
-**Requirements**: TITLE-02, TITLE-03
-**Success Criteria** (what must be TRUE):
-  1. Library cards display the topic name only (no "Where do you stand on..." prefix)
-  2. Calibration cards display the same topic name as Library cards for the same topic
-  3. Compass radar chart spoke labels match the topic names shown in Library and calibration
-  4. A user scanning Library, then calibration, then the compass sees the same name for every topic in all three places
-**Plans:** 2/2 plans complete
-
-Plans:
-- [ ] 18-01-PLAN.md — Add parseTensionTitle helper, clean getQuestionText fallback, update Library cards and calibration pick step with two-line tension title
-- [ ] 18-02-PLAN.md — Update LibraryDrawer, CalibrationOverlay answer step, Quiz, and ComparePanel with tension titles and QuestionText placement
-
-### Phase 19: Calibration Flow Fixes
-**Goal**: The compass correctly routes users into calibration whenever they have unanswered topics, handles mixed answered/unanswered state without empty spokes, and never leaves users in a dead end when topic count drops below 3
-**Depends on**: Phase 18
-**Requirements**: CALIB-01, CALIB-02, CALIB-03
-**Success Criteria** (what must be TRUE):
-  1. A user who navigates to the compass with unanswered topics on their compass is auto-routed into calibration, starting at the first unanswered topic (not from the beginning)
-  2. A user with mixed answered and unanswered topics sees a compass with no empty spokes or missing spoke positions
-  3. A user whose answered topic count drops below 3 sees the calibration entry prompt instead of a dead-end "answer more topics" message
-  4. A user who completes calibration from a mixed state arrives at a fully rendered compass without needing to refresh
-**Plans:** 2/2 plans complete
-
-Plans:
-- [ ] 19-01-PLAN.md -- Auto-routing into calibration for unanswered topics, CalibrationOverlay resumption flow with topic pills and checkmarks, below-3 threshold with calibration CTA
-- [ ] 19-02-PLAN.md -- Mixed-state radar chart with gray dashed spokes for unanswered topics, ev-ui RadarChartCore update, human verification
-
-### Phase 20: Compare Bug Fix
-**Goal**: The comparison politician overlay renders exactly once on the radar chart, eliminating the double-shape visual artifact on the compare page
-**Depends on**: Phase 19
-**Requirements**: COMP-01
-**Success Criteria** (what must be TRUE):
-  1. Selecting a politician to compare on the radar chart produces exactly one colored overlay shape
-  2. The overlay shape does not flicker, duplicate, or stack multiple transparent layers when navigating to the compare page
-  3. Removing the comparison and re-adding it produces the same single clean overlay
-**Plans:** 1/1 plans complete
-
-Plans:
-- [ ] 20-01-PLAN.md -- Fix compare polygon rendering in ev-ui RadarChartCore, stabilize compare answer fetching in CompassV2, verify single overlay
+</details>
 
 ## Progress
 
@@ -137,7 +81,7 @@ Plans:
 | 14. Guided Onboarding Flow | v1.2 | 4/4 | Complete | 2026-02-19 |
 | 15. Help Page Update | v1.2 | 2/2 | Complete | 2026-02-19 |
 | 16. Audit Bug Fixes | v1.2 | 1/1 | Complete | 2026-02-20 |
-| 17. Title Standardization (Backend) | 2/2 | Complete    | 2026-02-21 | - |
-| 18. Title Display (Frontend) | 2/2 | Complete    | 2026-02-21 | - |
-| 19. Calibration Flow Fixes | 2/2 | Complete    | 2026-02-21 | - |
-| 20. Compare Bug Fix | 1/1 | Complete    | 2026-02-21 | - |
+| 17. Title Standardization (Backend) | v1.3 | 2/2 | Complete | 2026-02-21 |
+| 18. Title Display (Frontend) | v1.3 | 2/2 | Complete | 2026-02-21 |
+| 19. Calibration Flow Fixes | v1.3 | 2/2 | Complete | 2026-02-21 |
+| 20. Compare Bug Fix | v1.3 | 1/1 | Complete | 2026-02-21 |

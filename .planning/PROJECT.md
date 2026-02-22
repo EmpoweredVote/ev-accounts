@@ -61,13 +61,15 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Compass reset works for all logged-in users (not admin-only) — v1.2
 - ✓ help_seen synced from DB completed_onboarding flag for cross-device consistency — v1.2
 
+- ✓ Library → Compass transition auto-enters calibration for unanswered topics (starting at first unanswered, not from scratch) — v1.3
+- ✓ Double comparison overlay bug on compare page fixed — v1.3
+- ✓ Topic titles standardized server-side: consistent naming across compass labels, Library cards, calibration — v1.3
+- ✓ "Where do you stand on..." prefix removed from card display for scannability — v1.3
+- ✓ Compass renders correctly with mixed answered/unanswered topics (no empty spokes or dead-end states) — v1.3
+
 ### Active
 
-- [ ] Library → Compass transition auto-enters calibration for unanswered topics (starting at first unanswered, not from scratch) — v1.3
-- [ ] Double comparison overlay bug on compare page fixed — v1.3
-- [ ] Topic titles standardized server-side: consistent naming across compass labels, Library cards, calibration — v1.3
-- [ ] "Where do you stand on..." prefix removed from card display for scannability — v1.3
-- [ ] Compass renders correctly with mixed answered/unanswered topics (no empty spokes or dead-end states) — v1.3
+(None — next milestone not yet defined)
 
 ### Out of Scope
 
@@ -83,17 +85,17 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v1.2 with ~33K LOC across 4 repos:
-- **CompassV2** (React 19): ~11.7K LOC — compass quiz, Library, guided onboarding, guest auth flow, help walkthrough
+Shipped v1.3 with ~34K LOC across 4 repos:
+- **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration auto-routing, guest auth flow, help walkthrough
 - **EV-Backend** (Go 1.24): 15.4K LOC — auth, compass, essentials, treasury, staging modules
-- **ev-ui** (React/tsup): 2.7K LOC — RadarChartCore, PoliticianProfile with term dates, FilterSidebar
+- **ev-ui** (React/tsup): 2.8K LOC — RadarChartCore with unanswered spokes and compare fix, PoliticianProfile, FilterSidebar
 - **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, real building photos, sticky layout
 
 Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB.
 BallotReady API is the primary data source for politicians and candidates.
-ev-ui published to GitHub npm registry (v0.1.19), consumed by CompassV2 and essentials.
+ev-ui published to GitHub npm registry (v0.1.21), consumed by CompassV2 and essentials.
 
-Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx). Settings gear placement and spoke inversion persistence across views deferred.
+Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx). Settings gear placement and spoke inversion persistence across views deferred. compassimport/models.go and seed CLI reference dropped StartPhrase column. Admin TopicEditor sends vestigial short_name field.
 
 ## Constraints
 
@@ -133,6 +135,14 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | HelpGuard wraps each route individually | Simpler than layout wrapper pattern | ✓ Good — clear, explicit routing |
 | help_seen seeded one-way from DB | DB wins for cross-device; localStorage-only for guests | ✓ Good — preserves guest flow while fixing logged-in cross-device gap |
 | DELETE /compass/answers/me for all users | Any logged-in user should reset their own compass | ✓ Good — moved from admin group to session group |
+| Tension title format with em dash (Topic: Pole A — Pole B) | Clear separation of topic name and policy poles, anti-partisan | ✓ Good — parseTensionTitle splits at colon, consistent across all surfaces |
+| Backend-first title standardization | Server data must be canonical before frontend display | ✓ Good — Phase 17 before 18, eliminated hardcoded fallbacks |
+| ShortName/StartPhrase columns dropped from DB | Clean break from deprecated naming fields | ✓ Good — standalone CLI tools still reference (tech debt) |
+| Anti-partisan pole order randomization | Prevent visual bias (10 right-first, 11 left-first) | ✓ Good — verified across all 21 topics |
+| Calibration resumeMode via useRef lazy-init | Wait for async context data before initializing state | ✓ Good — prevents race condition with topic loading |
+| Exit gating replaces X button in calibration | Force users to reach 3+ topics before viewing compass | ✓ Good — hidden spacer below-3, View Compass text button at 3+ |
+| Gray dashed spokes for unanswered topics | Visual differentiation without removing spoke positions | ✓ Good — opacity-25 + dashed stroke, clickable to route to calibration |
+| Compare polygon iterates spokes not compareData keys | Guarantees correct angle alignment regardless of topic coverage | ✓ Good — fixed double-overlay bug in ev-ui@0.1.21 |
 
 ---
-*Last updated: 2026-02-20 after v1.3 milestone started*
+*Last updated: 2026-02-22 after v1.3 milestone*
