@@ -14,9 +14,9 @@ Requirements for compass polish, bug fixes, and tech debt cleanup. Each maps to 
 
 ### Radar Chart Labels
 
-- [ ] **LABEL-01**: Radar chart labels on the far left and far right edges are not clipped by the container
-- [ ] **LABEL-02**: Short single-word labels (Misinformation, Immigration, Medicare/Medicaid) render at a readable minimum font size
-- [ ] **LABEL-03**: Multi-word labels that wrap (e.g., "AI Regulation") display all words without truncation
+- [x] **LABEL-01**: Radar chart labels on the far left and far right edges are not clipped by the container
+- [x] **LABEL-02**: Short single-word labels (Misinformation, Immigration, Medicare/Medicaid) render at a readable minimum font size
+- [x] **LABEL-03**: Multi-word labels that wrap (e.g., "AI Regulation") display all words without truncation
 
 ### UX Cleanup
 
@@ -62,9 +62,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | GUEST-01 | Phase 21 | Complete |
 | GUEST-02 | Phase 21 | Complete |
-| LABEL-01 | Phase 22 | Pending |
-| LABEL-02 | Phase 22 | Pending |
-| LABEL-03 | Phase 22 | Pending |
+| LABEL-01 | Phase 22 | Complete |
+| LABEL-02 | Phase 22 | Complete |
+| LABEL-03 | Phase 22 | Complete |
 | UX-01 | Phase 23 | Pending |
 | UX-02 | Phase 23 | Pending |
 | UX-03 | Phase 23 | Pending |

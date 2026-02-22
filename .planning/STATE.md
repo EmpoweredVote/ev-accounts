@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 21: Guest Flow Fix
+**Current focus:** v1.4 Compass Polish & Tech Debt — Phase 22: Radar Label Fixes
 
 ## Current Position
 
-Phase: 21 — Guest Flow Fix
+Phase: 22 — Radar Label Fixes
 Plan: 01 (complete)
-Status: Phase 21 complete — ready for Phase 22
-Last activity: 2026-02-22 — Phase 21 guest flow fix complete
+Status: Phase 22 plan 01 complete
+Last activity: 2026-02-22 — Phase 22-01 radar label fixes complete
 
 Progress: [#...................] 25% (1/4 v1.4 phases complete)
 
@@ -47,6 +47,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 ### Key Decisions (v1.4)
 
 - **Phase 21**: answersRef pattern in BuildCompass — use useRef to read context answers inside effect without adding to dep array, matching Library.jsx convention exactly
+- **Phase 22-01**: Estimate label widths using charCount * fontSize * 0.6 ratio (no DOM measurement); classify label sides via sin(angle) > 0.1 threshold; padding prop retained as vertical-only
 
 ### Pending Todos
 
@@ -59,5 +60,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 21-01-PLAN.md — Phase 21 Guest Flow Fix done
+Stopped at: Completed 22-01-PLAN.md — Phase 22 Plan 01 Radar Label Fixes done
 Resume file: None
