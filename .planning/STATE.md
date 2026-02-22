@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 22 — Radar Label Fixes
-Plan: 01 (complete)
-Status: Phase 22 plan 01 complete
-Last activity: 2026-02-22 — Phase 22-01 radar label fixes complete
+Plan: 02 (complete) — all plans done, awaiting verification
+Status: Phase 22 execution complete, pending verification
+Last activity: 2026-02-22 — Phase 22-02 publish & verify complete
 
 Progress: [#...................] 25% (1/4 v1.4 phases complete)
 
@@ -48,6 +48,7 @@ All v1.3 decisions resolved — see `.planning/milestones/v1.3-ROADMAP.md` for f
 
 - **Phase 21**: answersRef pattern in BuildCompass — use useRef to read context answers inside effect without adding to dep array, matching Library.jsx convention exactly
 - **Phase 22-01**: Estimate label widths using charCount * fontSize * 0.6 ratio (no DOM measurement); classify label sides via sin(angle) > 0.1 threshold; padding prop retained as vertical-only
+- **Phase 22-02**: Uniform font sizing instead of adaptive (varying sizes looked inconsistent); default labelFontSize 18px; max-w-2xl on desktop chart container; dynamic padding capped at 2x base
 
 ### Pending Todos
 
@@ -60,5 +61,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 22-01-PLAN.md — Phase 22 Plan 01 Radar Label Fixes done
+Stopped at: Phase 22 execution complete — all plans done, proceeding to verification
 Resume file: None
