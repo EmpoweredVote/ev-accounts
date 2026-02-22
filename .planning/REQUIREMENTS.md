@@ -29,8 +29,8 @@ Requirements for compass polish, bug fixes, and tech debt cleanup. Each maps to 
 
 - [ ] **DEBT-01**: compassimport/models.go no longer references dropped StartPhrase column
 - [ ] **DEBT-02**: cmd/seed/compass_csv_seeder.go no longer references StartPhrase/start_phrase
-- [ ] **DEBT-03**: Admin TopicEditor no longer sends vestigial short_name field in PATCH body
-- [ ] **DEBT-04**: Admin TopicAccordion no longer initializes vestigial editedFields.short_name
+- [x] **DEBT-03**: Admin TopicEditor no longer sends vestigial short_name field in PATCH body
+- [x] **DEBT-04**: Admin TopicAccordion no longer initializes vestigial editedFields.short_name
 
 ## Future Requirements
 
@@ -71,8 +71,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UX-04 | Phase 23 | Complete |
 | DEBT-01 | Phase 24 | Pending |
 | DEBT-02 | Phase 24 | Pending |
-| DEBT-03 | Phase 24 | Pending |
-| DEBT-04 | Phase 24 | Pending |
+| DEBT-03 | Phase 24 | Complete |
+| DEBT-04 | Phase 24 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 13 total
