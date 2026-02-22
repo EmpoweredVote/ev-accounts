@@ -61,24 +61,24 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BR-01 | — | Pending |
-| BR-02 | — | Pending |
-| BR-03 | — | Pending |
-| BR-04 | — | Pending |
-| CAND-01 | — | Pending |
-| ADDR-01 | — | Pending |
-| ADDR-02 | — | Pending |
-| ADDR-03 | — | Pending |
-| ADDR-04 | — | Pending |
-| CLEAN-01 | — | Pending |
-| CLEAN-02 | — | Pending |
-| CLEAN-03 | — | Pending |
+| BR-01 | Phase 26 | Pending |
+| BR-02 | Phase 26 | Pending |
+| BR-03 | Phase 27 | Pending |
+| BR-04 | Phase 27 | Pending |
+| CAND-01 | Phase 27 | Pending |
+| ADDR-01 | Phase 28 | Pending |
+| ADDR-02 | Phase 28 | Pending |
+| ADDR-03 | Phase 28 | Pending |
+| ADDR-04 | Phase 28 | Pending |
+| CLEAN-01 | Phase 29 | Pending |
+| CLEAN-02 | Phase 29 | Pending |
+| CLEAN-03 | Phase 29 | Pending |
 
 **Coverage:**
 - v1.5 requirements: 12 total
-- Mapped to phases: 0
-- Unmapped: 12
+- Mapped to phases: 12
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-22*
-*Last updated: 2026-02-22 after initial definition*
+*Last updated: 2026-02-22 after roadmap creation*
