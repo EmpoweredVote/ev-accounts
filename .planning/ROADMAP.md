@@ -7,7 +7,7 @@
 - ✅ **v1.2 Compass Onboarding & UX** — Phases 11-16 (shipped 2026-02-20)
 - ✅ **v1.3 Compass Bug Fixes & Title Standardization** — Phases 17-20 (shipped 2026-02-21)
 - ✅ **v1.4 Compass Polish & Tech Debt** — Phases 21-25 (shipped 2026-02-22)
-- 🚧 **v1.5 Address Verification & BallotReady Independence** — Phases 26-29 (in progress)
+- ✅ **v1.5 Address Verification & BallotReady Independence** — Phases 26-29 (shipped 2026-02-23)
 
 ## Phases
 
@@ -76,14 +76,14 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.5 Address Verification & BallotReady Independence (In Progress)
+### ✅ v1.5 Address Verification & BallotReady Independence (Shipped 2026-02-23)
 
 **Milestone Goal:** Replace BallotReady API dependency with Google Maps address validation and PostGIS geofence-only politician matching, making the platform self-sufficient with cached data.
 
 - [x] **Phase 26: Geofence-Only Search** - Remove BallotReady fallback from address search; return federal/state from cache when local geofence is empty
 - [x] **Phase 27: Cache-Only Candidates & Warmer Cleanup** - Replace live candidate fetch with DB query; stub warmers; de-register BallotReady provider (completed 2026-02-22)
 - [x] **Phase 28: Address Autocomplete** - Google Maps Places autocomplete replaces plain text input; remove ZIP path; show confirmed address and no-coverage message (completed 2026-02-22)
-- [ ] **Phase 29: Validation, Polish & Key Removal** - Grep audit confirms zero BallotReady call sites; remove API key; configure Google Maps billing alert
+- [x] **Phase 29: Validation, Polish & Key Removal** - Grep audit confirms zero BallotReady call sites; BALLOTREADY_KEY removed from Render production env; Google Maps billing alert configured (completed 2026-02-23)
 
 ## Phase Details
 
@@ -175,4 +175,4 @@ Plans:
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
 | 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
 | 28. Address Autocomplete | 2/2 | Complete    | 2026-02-23 | - |
-| 29. Validation, Polish & Key Removal | 1/2 | In Progress|  | - |
+| 29. Validation, Polish & Key Removal | 2/2 | Complete   | 2026-02-23 | 2026-02-23 |

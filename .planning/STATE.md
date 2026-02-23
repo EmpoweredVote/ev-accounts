@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.5 Validation Polish Key Removal — Phase 29 in progress
+**Current focus:** v1.5 complete — BallotReady independence shipped
 
 ## Current Position
 
 Phase: 29 of 29 (Validation Polish Key Removal)
-Plan: 1 of 2 complete
-Status: Phase 29 in progress
-Last activity: 2026-02-22 — Phase 29 Plan 01 executed: removed BallotReady provider config from provider/, cleaned .env.local of BALLOTREADY_KEY, audit confirms zero active BallotReady references in Go source files
+Plan: 2 of 2 complete
+Status: Phase 29 complete — v1.5 milestone shipped 2026-02-23
+Last activity: 2026-02-23 — Phase 29 Plan 02 executed: BALLOTREADY_KEY removed from Render production environment variables, Google Cloud Monitoring alert configured at 5,000 Maps API requests/month threshold — v1.5 milestone complete
 
 Progress: [██████████] 100% (v1.5)
 
@@ -34,6 +34,7 @@ Progress: [██████████] 100% (v1.5)
 | 28-address-autocomplete | 01 | 4min | 1 | 2 |
 | 28-address-autocomplete | 02 | 5min | 2 | 2 |
 | 29-validation-polish-key-removal | 01 | 8min | 2 | 5 |
+| 29-validation-polish-key-removal | 02 | ~10min | 2 | 0 |
 
 ## Accumulated Context
 
@@ -86,6 +87,10 @@ v1.5 decisions from Phase 29 Plan 01:
 - ballotready/ package intentionally left as dead code (failing to compile) — confirms it has no active imports from main codebase
 - .env.local POLITICIAN_PROVIDER and BALLOTREADY_KEY removed; server defaults to cicero provider when POLITICIAN_PROVIDER is unset
 
+v1.5 decisions from Phase 29 Plan 02:
+- Backend is deployed on Render (not AWS App Runner as originally documented) — BALLOTREADY_KEY was found and removed from Render env vars
+- Google Maps API monitoring: informational-only alerting at 5,000 requests/month (50% of free tier) — no quota cap, API fully open
+
 ### Pending Todos
 
 None.
@@ -93,10 +98,9 @@ None.
 ### Blockers/Concerns
 
 - Phase 28 shadow DOM gap: `PlaceAutocompleteElement` limits Tailwind targeting to outer container; internal styling requires `gmp-place-autocomplete::part(input)` — may require design tradeoff decision
-- Phase 29 dependency: Google for Nonprofits credits status unknown; confirm before shipping to production to avoid unexpected billing
 
 ## Session Continuity
 
-Last session: 2026-02-22
-Stopped at: Completed 29-validation-polish-key-removal/29-01-PLAN.md
+Last session: 2026-02-23
+Stopped at: Completed 29-validation-polish-key-removal/29-02-PLAN.md — v1.5 milestone complete
 Resume file: None
