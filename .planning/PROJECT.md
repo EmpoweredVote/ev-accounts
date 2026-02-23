@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by location (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, Render, and AWS App Runner. The compass works without login (guest-first) with guided onboarding for first-time users, renders cleanly across devices, and Essentials surfaces both officials and candidates with real building photographs, sticky sidebar layout, and contextual term dates on profile pages.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface officials and candidates with real building photographs, chamber/district subtitles, initials avatars, and contextual term dates on profile pages.
 
 ## Core Value
 
@@ -79,18 +79,27 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Onboarding-to-calibration redirect — fresh users enter calibration, not dead-end — v1.4
 - ✓ Compare page question-text-first display — matches LibraryDrawer/Quiz hierarchy — v1.4
 
+- ✓ Address search uses PostGIS geofence-only matching — no BallotReady API fallback — v1.5
+- ✓ Federal/state officials from cache when local geofence data unavailable — v1.5
+- ✓ All BallotReady cache warmers and provider infrastructure removed — v1.5
+- ✓ Google Maps Places autocomplete as sole search input (ZIP code path removed) — v1.5
+- ✓ Validated/confirmed address displayed in search results — v1.5
+- ✓ Clear no-geofence-data coverage message for unsupported areas — v1.5
+- ✓ BALLOTREADY_API_KEY decommissioned from all environments — v1.5
+- ✓ Google Maps API billing alert configured — v1.5
+- ✓ Cached-only candidate/race data from election_records — v1.5
+- ✓ CalibrationOverlay 50/50 layout with write-in drag-and-drop — v1.5
+- ✓ Chamber/district subtitles on politician cards (3-line layout) — v1.5
+- ✓ Initials avatar for missing profile images — v1.5
+- ✓ Labeled term dates and years in office on profiles — v1.5
+- ✓ Office description shown, bio_text and Issues section removed from profiles — v1.5
+- ✓ Bloomington city council district boundaries imported (Districts 1-6) — v1.5
+- ✓ X0001 MTFCC mapped to LOCAL district type — v1.5
+- ✓ ev-ui 0.1.27 with updated PoliticianProfile and PoliticianCard — v1.5
+
 ### Active
 
-**Current Milestone: v1.5 Address Verification & BallotReady Independence**
-
-**Goal:** Replace BallotReady API dependency with Google Maps address validation + PostGIS geofence-only politician matching, making the platform self-sufficient with cached data.
-
-**Target features:**
-- Address-only search with Google Maps Places autocomplete (replace ZIP code entry)
-- Full BallotReady API cutover — remove all live API calls
-- Geofence-only politician matching (PostGIS point-in-polygon against TIGER shapefiles)
-- Federal/state officials from cache when local data unavailable
-- Cached-only candidate race data (no live fetching)
+(No active milestone — use `/gsd:new-milestone` to start next)
 
 ### Out of Scope
 
@@ -103,27 +112,31 @@ Users can explore political issues and discover their elected officials without 
 - OAuth login (Google, GitHub) — email/password sufficient for current user base
 - Building images for all US locations — only Bloomington IN and Los Angeles CA covered, SVG fallback for others
 - Full quiz mode redesign — onboarding flow sufficient, full quiz stays as-is
+- ZIP code fallback for privacy — address-only; geographic filters in future
+- TIGER shapefile expansion beyond Monroe County IN + LA County CA — future milestone
+- Real-time candidate data — cached-only; live data requires new provider
+- PlaceAutocompleteElement migration — legacy Autocomplete class works for existing key
 
 ## Context
 
-Shipped v1.4 with ~34K LOC across 4 repos:
-- **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration, guest auth, help walkthrough, question-text-first hierarchy
-- **EV-Backend** (Go 1.24): 15.4K LOC — auth, compass, essentials, treasury, staging modules
-- **ev-ui** (React/tsup): 2.9K LOC — RadarChartCore with dynamic label padding/sizing, unanswered spokes, PoliticianProfile, FilterSidebar
-- **essentials** (React 19): 3K LOC — politician discovery, candidate toggle, real building photos, sticky layout
+Shipped v1.5 with ~35K LOC across 4 repos:
+- **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration with write-in support, guest auth, help walkthrough
+- **EV-Backend** (Go 1.24): ~15K LOC — auth, compass, essentials (geofence-only), treasury, staging modules; BallotReady provider removed
+- **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile (subtitles, initials avatars), PoliticianCard (3-line layout)
+- **essentials** (React 19): ~3K LOC — address autocomplete, geofence results, building photos, local filter sidebar
 
-Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB.
-BallotReady API is the primary data source for politicians and candidates.
-ev-ui published to GitHub npm registry (v0.1.26), consumed by CompassV2 and essentials.
+Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB + PostGIS.
+Politician data served entirely from cached database (BallotReady API removed). Google Maps Places API for address autocomplete.
+ev-ui published to GitHub npm registry (v0.1.27), consumed by CompassV2 and essentials.
 
-Known tech debt: BallotReady transform.go doesn't map SubAreaName to RepresentingCity (frontend workaround in Results.jsx).
+Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI.
 
 ## Constraints
 
 - **Tech stack**: Existing Go backend + React frontends — no framework migrations
-- **Data source**: BallotReady API for politician data (until manual tool is ready)
-- **Hosting**: Keep current hosting for now (Netlify, Supabase, Render/AWS App Runner)
-- **Budget**: Nonprofit — prefer solutions that use existing AWS credits or free tiers
+- **Data source**: Cached politician data from database (no live API provider); Google Maps for geocoding
+- **Hosting**: Netlify (frontends), Supabase (DB), Render (backend)
+- **Budget**: Nonprofit — prefer solutions that use existing AWS credits or free tiers; Google Maps free tier (28K requests/month)
 - **Team**: 2-3 devs — changes should be parallelizable and not create merge conflicts
 
 ## Key Decisions
@@ -141,11 +154,11 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | Inline modal registration (custom form) | AuthForm is full-page, unsuitable for modal | ✓ Good — clean save prompt UX |
 | Level stored as pq.StringArray (text[]) | Topics can have multiple governance levels | ✓ Good — flexible, backward compatible |
 | LibraryDrawer write-in support | Users need to add custom stances from Library | ✓ Good — full drag-to-position UX with persistence |
-| Candidate endpoint is live-fetch (no caching) | Election data changes frequently near elections | ✓ Good — freshness more important than speed for candidates |
+| Candidate endpoint is live-fetch (no caching) | Election data changes frequently near elections | ⚠️ Revisit — replaced by DB-only in v1.5 |
 | Sticky two-panel layout with overflow:hidden | Sidebar must stay visible while scrolling long representative lists | ✓ Good — position:sticky + overflow-y:auto pattern works cleanly |
 | IntersectionObserver root scoped to scroll container | Scroll-spy must detect tier boundaries within the panel, not viewport | ✓ Good — tier-swap works correctly in two-panel layout |
 | Wikimedia Commons photos (public domain/CC) | Civic app needs license-safe building images | ✓ Good — 5 buildings covered, SVG fallback for unsupported locations |
-| Chamber_name regex for city extraction | BallotReady transform doesn't populate representing_city | ⚠️ Revisit — frontend workaround; backend fix deferred |
+| Chamber_name regex for city extraction | BallotReady transform doesn't populate representing_city | ✓ Good — buildSubtitle() in v1.5 provides proper chamber/district display |
 | En-dash for date ranges | Typographically correct for date spans | ✓ Good — consistent formatting on profile pages |
 | Hide term dates when both null | Avoid empty space or confusing placeholder text | ✓ Good — clean profile display |
 | CalibrationOverlay with localStorage persistence | Mid-flow resume for interrupted onboarding | ✓ Good — calibration_progress, calibration_completed, calibration_skipped flags |
@@ -169,6 +182,18 @@ Known tech debt: BallotReady transform.go doesn't map SubAreaName to Representin
 | Question-text-first across all views | Users scan by question, not tension title | ✓ Good — consistent across Library, Quiz, Calibration, Compare |
 | ?calibrate=1 URL param for onboarding redirect | Cleaner than localStorage flag for one-time signal | ✓ Good — cleared with replace:true, preserves back button |
 | needsCalibration OR selectedTopics.length === 0 | Returning uncalibrated users also get CalibrationOverlay | ✓ Good — covers both onboarding and direct-nav paths |
+| Geofence-only search (remove BallotReady fallback) | Platform self-sufficiency with cached data | ✓ Good — PostGIS point-in-polygon matching, federal/state cache fallback |
+| Keep ballotready/ package as dead code | Preserve admin import pipeline for historical reference | ✓ Good — isolated, cannot compile, no active imports |
+| Legacy Google Maps Autocomplete class (not PlaceAutocompleteElement) | Existing API key predates March 2025 cutoff | ✓ Good — works reliably; migration deferred to Out of Scope |
+| hasValidSelection guard on search | Prevent raw text submission to address search | ✓ Good — user must select from Google suggestions |
+| LocalFilterSidebar created locally in essentials | Avoid ev-ui publish cycle for one-off component | ✓ Good — clean migration path if needed later |
+| DROP TABLE for cache tables in Init() | Idempotent cleanup of deprecated federal/state/zip caches | ✓ Good — safe to run on every server start |
+| Candidate endpoint is DB-only (no live fetch) | BallotReady removed; candidates from election_records | ✓ Good — replaces previous live-fetch decision |
+| 50/50 CalibrationOverlay layout | Give stances more breathing room vs 60/40 split | ✓ Good — question text anchored above stances |
+| buildSubtitle() for chamber+district | LOCAL edge case: chamber_name === office_title falls back to district_label | ✓ Good — clean 3-line card layout |
+| Circle photo/avatar shape on profiles | Visual consistency between actual photos and initials placeholder | ✓ Good — borderRadius 50% on both |
+| X0001 MTFCC → LOCAL district type | BallotReady custom code for city council ward sub-district boundaries | ✓ Good — Bloomington council districts visible in search |
+| Bloomington districts from ArcGIS FeatureServer | Official city data source for council district boundaries | ✓ Good — 6 districts imported with ST_MakeValid for geometry fixes |
 
 ---
-*Last updated: 2026-02-22 after v1.5 milestone start*
+*Last updated: 2026-02-23 after v1.5 milestone*

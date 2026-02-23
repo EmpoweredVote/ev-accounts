@@ -120,3 +120,31 @@
 
 ---
 
+
+## v1.5 Address Verification & BallotReady Independence (Shipped: 2026-02-23)
+
+**Phases completed:** 6 phases, 13 plans, 25 tasks
+**Timeline:** 14 days (2026-02-09 - 2026-02-23)
+**Requirements:** 23/23 satisfied (12 v1.5 core + 11 Phase 31 profile/district)
+**Repos:** EV-Backend, essentials, ev-ui, CompassV2
+
+**Delivered:** Platform made self-sufficient by removing BallotReady API dependency — address search uses Google Maps autocomplete with PostGIS geofence matching, plus Compass calibration layout polished and Essentials profiles enhanced with district data.
+
+**Key accomplishments:**
+1. BallotReady independence — address search uses PostGIS geofence-only matching; all cache warmers, provider infrastructure, and API keys fully removed from codebase and production environments
+2. Google Maps Places autocomplete — replaces ZIP code input as sole search method with address validation, formatted address display, and graceful degradation
+3. Federal/state cache fallback — addresses outside geofence coverage return federal and state officials from DB cache with clear coverage limitation messaging
+4. CalibrationOverlay layout fix — 50/50 chart/stances split with write-in drag-and-drop support matching Quiz.jsx pattern
+5. Essentials profile enhancements — chamber/district subtitles on cards, initials avatars, labeled term dates, office descriptions; bio_text and Issues section removed
+6. Bloomington district visibility — city council Districts 1-6 boundaries imported from ArcGIS into geofence_boundaries; X0001 MTFCC mapped to LOCAL district type
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (intentional — cannot compile, isolated)
+- Orphaned `checkCacheStatus` function in essentials `api.jsx` calls deleted `/cache-status/{zip}` route
+- Stale comment in handlers.go lines 1757-1758 mentions BallotReady (comment-only)
+- `Home.jsx` entirely commented-out dead code in essentials
+- Candidates toggle returns empty array for address queries (no `/candidates/search-by-address` endpoint)
+- Deprecated `cmd/bulk-import/main.go` and `runBulkImport` placeholder in admin.go
+
+---
+
