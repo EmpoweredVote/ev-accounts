@@ -181,7 +181,7 @@ Plans:
 
 **Goal:** Fix the answer step layout in CalibrationOverlay to be cohesive (50/50 chart/stances split, question text above stances not centered on page) and add the write-in option that already exists in Quiz/LibraryDrawer but is missing from the calibration flow
 **Depends on:** Phase 29
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 30-01-PLAN.md — Layout restructure: 50/50 split, question text above stances, chart vertical centering

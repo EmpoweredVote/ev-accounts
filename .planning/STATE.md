@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 30 of 31 (Fix Compass Calibration Flow Layout and Write-In Option)
-Plan: 1 of 2 complete
-Status: Phase 30 Plan 01 complete — CalibrationOverlay answer step layout restructured
-Last activity: 2026-02-23 — Phase 30 Plan 01 executed: CalibrationOverlay answer step restructured to 50/50 split with question text anchored above stances and radar chart vertically centered
+Plan: 2 of 2 complete — Phase 30 DONE
+Status: Phase 30 complete — CalibrationOverlay write-in drag-and-drop option added
+Last activity: 2026-02-23 — Phase 30 Plan 02 executed: CalibrationOverlay write-in stance option added with dnd-kit drag-and-drop, decimal answer values, and topic-change state restoration
 
 Progress: [██████████] In progress (post-v1.5)
 
@@ -35,6 +35,8 @@ Progress: [██████████] In progress (post-v1.5)
 | 28-address-autocomplete | 02 | 5min | 2 | 2 |
 | 29-validation-polish-key-removal | 01 | 8min | 2 | 5 |
 | 29-validation-polish-key-removal | 02 | ~10min | 2 | 0 |
+| 30-fix-compass-calibration-flow-layout-and-write-in-option | 01 | 1min | 1 | 1 |
+| 30-fix-compass-calibration-flow-layout-and-write-in-option | 02 | 2min | 2 | 1 |
 
 ## Accumulated Context
 
@@ -97,6 +99,11 @@ Phase 30 Plan 01 decisions:
 - items-center on chart column vertically centers radar chart against natural height of question + stances block
 - Responsive chart sizing: max-w-[280px] mobile / max-w-[400px] desktop with aspect-square
 
+Phase 30 Plan 02 decisions:
+- SortableStanceLabel and SortableWriteInCard copied verbatim from Quiz.jsx — avoids divergence and ensures behavioral parity
+- Topic-change useEffect derives stances inside effect using isFlippedInEffect — avoids stale closure over outer orderedStances
+- handleSelectStance clears writeIns entry when a predefined stance is selected — prevents write-in persisting after user reverts to standard option
+
 ### Roadmap Evolution
 
 - Phase 30 added: Fix Compass calibration flow layout and write-in option
@@ -113,5 +120,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Completed 30-fix-compass-calibration-flow-layout-and-write-in-option/30-01-PLAN.md — CalibrationOverlay answer step layout restructured to 50/50 split
+Stopped at: Completed 30-fix-compass-calibration-flow-layout-and-write-in-option/30-02-PLAN.md — Phase 30 complete; CalibrationOverlay write-in option added
 Resume file: None
