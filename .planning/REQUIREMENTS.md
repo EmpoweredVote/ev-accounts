@@ -35,23 +35,23 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 
 ### Profile Display
 
-- [ ] **PROF-01**: User sees chamber name and district as a subtitle below the office title on profile pages (e.g., "Indiana Senate, District 40")
-- [ ] **PROF-02**: Term dates on profile use labeled format ("First elected: Jan 2020 — Term ends: Jan 2026")
-- [ ] **PROF-03**: Years in office displayed below the term dates on profile
-- [ ] **PROF-04**: Missing profile images show an initials avatar circle (not a grey rectangle)
-- [ ] **PROF-05**: Office description shown as italicized context near the title; bio_text is not displayed
+- [x] **PROF-01**: User sees chamber name and district as a subtitle below the office title on profile pages (e.g., "Indiana Senate, District 40")
+- [x] **PROF-02**: Term dates on profile use labeled format ("First elected: Jan 2020 — Term ends: Jan 2026")
+- [x] **PROF-03**: Years in office displayed below the term dates on profile
+- [x] **PROF-04**: Missing profile images show an initials avatar circle (not a grey rectangle)
+- [x] **PROF-05**: Office description shown as italicized context near the title; bio_text is not displayed
 - [ ] **PROF-06**: Issues and Prioritization card removed from profile page
 
 ### Card Display
 
-- [ ] **CARD-01**: Cards show 3 lines: Name, Office Title, Chamber + District subtitle
-- [ ] **CARD-02**: Cards with empty chamber/district data gracefully fall back to 2 lines
-- [ ] **CARD-03**: No party affiliation displayed on cards or profiles
+- [x] **CARD-01**: Cards show 3 lines: Name, Office Title, Chamber + District subtitle
+- [x] **CARD-02**: Cards with empty chamber/district data gracefully fall back to 2 lines
+- [x] **CARD-03**: No party affiliation displayed on cards or profiles
 
 ### District Visibility
 
 - [ ] **DIST-01**: Bloomington, IN city council district members appear in search results for Bloomington addresses
-- [ ] **DIST-02**: X0001 MTFCC code mapped to LOCAL district type in geofence lookup
+- [x] **DIST-02**: X0001 MTFCC code mapped to LOCAL district type in geofence lookup
 
 ## Future Requirements
 

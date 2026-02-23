@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 
 ## Current Position
 
-Phase: 30 of 31 (Fix Compass Calibration Flow Layout and Write-In Option)
-Plan: 2 of 2 complete — Phase 30 DONE
-Status: Phase 30 complete — CalibrationOverlay write-in drag-and-drop option added
-Last activity: 2026-02-23 — Phase 30 Plan 02 executed: CalibrationOverlay write-in stance option added with dnd-kit drag-and-drop, decimal answer values, and topic-change state restoration
+Phase: 31 of 31 (Essentials Profile and District Data Fixes)
+Plan: 2 of 3 complete
+Status: Phase 31 in progress — Plan 02 complete, ev-ui@0.1.27 published
+Last activity: 2026-02-23 — Phase 31 Plan 02 executed: PoliticianProfile subtitle/labeled terms/initials avatar, PoliticianCard subtitle prop and initials avatar, published ev-ui@0.1.27
 
 Progress: [██████████] In progress (post-v1.5)
 
@@ -37,6 +37,8 @@ Progress: [██████████] In progress (post-v1.5)
 | 29-validation-polish-key-removal | 02 | ~10min | 2 | 0 |
 | 30-fix-compass-calibration-flow-layout-and-write-in-option | 01 | 1min | 1 | 1 |
 | 30-fix-compass-calibration-flow-layout-and-write-in-option | 02 | 2min | 2 | 1 |
+| Phase 31 P02 | 2min | 3 tasks | 3 files |
+| Phase 31-essentials-profile-and-district-data-fixes P01 | 2min | 2 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -103,6 +105,11 @@ Phase 30 Plan 02 decisions:
 - SortableStanceLabel and SortableWriteInCard copied verbatim from Quiz.jsx — avoids divergence and ensures behavioral parity
 - Topic-change useEffect derives stances inside effect using isFlippedInEffect — avoids stale closure over outer orderedStances
 - handleSelectStance clears writeIns entry when a predefined stance is selected — prevents write-in persisting after user reverts to standard option
+- [Phase 31]: buildSubtitle() composes chamber+district with LOCAL edge case handling (chamber_name === office_title falls back to district_label)
+- [Phase 31]: Photo and placeholder both changed to circle shape in PoliticianProfile for visual consistency
+- [Phase 31]: bio_text removed from PoliticianProfile entirely — no biography section rendered
+- [Phase 31-01]: Use district_id_text alias to avoid collision with offices.district_id UUID FK when selecting d.district_id in multi-table joins
+- [Phase 31-01]: X0001 MTFCC mapped to LOCAL (not LOCAL_EXEC) — BallotReady custom code for city council ward sub-district boundaries
 
 ### Roadmap Evolution
 
@@ -120,5 +127,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Completed 30-fix-compass-calibration-flow-layout-and-write-in-option/30-02-PLAN.md — Phase 30 complete; CalibrationOverlay write-in option added
+Stopped at: Completed 31-essentials-profile-and-district-data-fixes/31-02-PLAN.md — ev-ui@0.1.27 published with updated PoliticianProfile and PoliticianCard
 Resume file: None
