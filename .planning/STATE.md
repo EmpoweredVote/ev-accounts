@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 31 of 31 (Essentials Profile and District Data Fixes)
-Plan: 2 of 3 complete
-Status: Phase 31 in progress — Plan 02 complete, ev-ui@0.1.27 published
-Last activity: 2026-02-23 — Phase 31 Plan 02 executed: PoliticianProfile subtitle/labeled terms/initials avatar, PoliticianCard subtitle prop and initials avatar, published ev-ui@0.1.27
+Plan: 2 of 3 complete (Plans 01 and 02 done)
+Status: Phase 31 in progress — Plans 01 and 02 complete; district_id in all API paths, X0001 MTFCC mapped, ev-ui@0.1.27 published
+Last activity: 2026-02-23 — Phase 31 Plan 01 executed: district_id added to all 4 politician API query paths; X0001 MTFCC mapped to LOCAL for city council sub-district geofence matching
 
 Progress: [██████████] In progress (post-v1.5)
 
