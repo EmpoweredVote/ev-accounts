@@ -40,7 +40,7 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 - [x] **PROF-03**: Years in office displayed below the term dates on profile
 - [x] **PROF-04**: Missing profile images show an initials avatar circle (not a grey rectangle)
 - [x] **PROF-05**: Office description shown as italicized context near the title; bio_text is not displayed
-- [ ] **PROF-06**: Issues and Prioritization card removed from profile page
+- [x] **PROF-06**: Issues and Prioritization card removed from profile page
 
 ### Card Display
 
@@ -50,7 +50,7 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 
 ### District Visibility
 
-- [ ] **DIST-01**: Bloomington, IN city council district members appear in search results for Bloomington addresses
+- [x] **DIST-01**: Bloomington, IN city council district members appear in search results for Bloomington addresses
 - [x] **DIST-02**: X0001 MTFCC code mapped to LOCAL district type in geofence lookup
 
 ## Future Requirements

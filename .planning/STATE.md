@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 ## Current Position
 
 Phase: 31 of 31 (Essentials Profile and District Data Fixes)
-Plan: 2 of 3 complete (Plans 01 and 02 done)
-Status: Phase 31 in progress — Plans 01 and 02 complete; district_id in all API paths, X0001 MTFCC mapped, ev-ui@0.1.27 published
-Last activity: 2026-02-23 — Phase 31 Plan 01 executed: district_id added to all 4 politician API query paths; X0001 MTFCC mapped to LOCAL for city council sub-district geofence matching
+Plan: 3 of 3 complete (All plans done — phase complete)
+Status: Phase 31 complete — all 3 plans executed; subtitle on cards, profile cleaned, Bloomington district boundaries imported
+Last activity: 2026-02-23 — Phase 31 Plan 03 executed: essentials wired to ev-ui@0.1.27, subtitle on politician cards, Issues section removed from profile, Bloomington Districts 1-6 imported into geofence_boundaries
 
 Progress: [██████████] In progress (post-v1.5)
 
@@ -39,6 +39,7 @@ Progress: [██████████] In progress (post-v1.5)
 | 30-fix-compass-calibration-flow-layout-and-write-in-option | 02 | 2min | 2 | 1 |
 | Phase 31 P02 | 2min | 3 tasks | 3 files |
 | Phase 31-essentials-profile-and-district-data-fixes P01 | 2min | 2 tasks | 2 files |
+| Phase 31 P03 | 4 | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -110,6 +111,9 @@ Phase 30 Plan 02 decisions:
 - [Phase 31]: bio_text removed from PoliticianProfile entirely — no biography section rendered
 - [Phase 31-01]: Use district_id_text alias to avoid collision with offices.district_id UUID FK when selecting d.district_id in multi-table joins
 - [Phase 31-01]: X0001 MTFCC mapped to LOCAL (not LOCAL_EXEC) — BallotReady custom code for city council ward sub-district boundaries
+- [Phase 31]: geo_id format for Bloomington council districts: 18058600000X (12 chars) matching existing BallotReady districts table entries
+- [Phase 31]: District 2 boundary geometry fixed with ST_MakeValid after nested shells topology warning from ArcGIS source data
+- [Phase 31]: Bloomington council district boundaries sourced from official city ArcGIS FeatureServer (City_Council_Districts, 2024) via services9.arcgis.com/47GwVXZ9a8thrviM
 
 ### Roadmap Evolution
 
@@ -127,5 +131,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Completed 31-essentials-profile-and-district-data-fixes/31-02-PLAN.md — ev-ui@0.1.27 published with updated PoliticianProfile and PoliticianCard
+Stopped at: Completed 31-essentials-profile-and-district-data-fixes/31-03-PLAN.md — essentials wired to ev-ui@0.1.27, subtitle on cards, profile cleaned, Bloomington Districts 1-6 imported into geofence_boundaries; Phase 31 complete
 Resume file: None

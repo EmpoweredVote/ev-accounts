@@ -192,7 +192,7 @@ Plans:
 **Goal:** Fix data display on politician profiles and result cards — add chamber/district subtitles, labeled term dates, circular initials avatars, remove bio_text and Issues section from profiles, eliminate party display, and import Bloomington city council district boundaries for local council member visibility
 **Depends on:** Phase 30
 **Requirements:** PROF-01, PROF-02, PROF-03, PROF-04, PROF-05, PROF-06, CARD-01, CARD-02, CARD-03, DIST-01, DIST-02
-**Plans:** 2/3 plans executed
+**Plans:** 3/3 plans complete
 
 Plans:
 - [ ] 31-01-PLAN.md — Backend: add district_id to API responses + X0001 MTFCC mapping
