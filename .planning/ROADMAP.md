@@ -138,7 +138,10 @@ Plans:
   1. Running `grep -r "ballotReadyClient\|BallotReady\|BALLOTREADY" EV-Backend/` returns zero matches in Go source files
   2. `BALLOTREADY_API_KEY` is absent from App Runner environment variables and all Netlify environment configs — the backend starts and operates normally without it
   3. A Google Cloud billing alert is active and configured to notify at a monthly threshold so autocomplete cost spikes are caught before they compound
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 29-01-PLAN.md — Codebase audit, provider config cleanup, and .env.local key removal
+- [ ] 29-02-PLAN.md — AWS environment verification and Google Cloud Monitoring alert setup
 
 ## Progress
 
