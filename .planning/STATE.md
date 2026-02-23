@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 
 ## Current Position
 
-Phase: 29 of 31 (Validation Polish Key Removal)
-Plan: 2 of 2 complete
-Status: Phase 29 complete — v1.5 milestone shipped 2026-02-23
-Last activity: 2026-02-23 — Phase 29 Plan 02 executed: BALLOTREADY_KEY removed from Render production environment variables, Google Cloud Monitoring alert configured at 5,000 Maps API requests/month threshold — v1.5 milestone complete
+Phase: 30 of 31 (Fix Compass Calibration Flow Layout and Write-In Option)
+Plan: 1 of 2 complete
+Status: Phase 30 Plan 01 complete — CalibrationOverlay answer step layout restructured
+Last activity: 2026-02-23 — Phase 30 Plan 01 executed: CalibrationOverlay answer step restructured to 50/50 split with question text anchored above stances and radar chart vertically centered
 
-Progress: [██████████] 100% (v1.5)
+Progress: [██████████] In progress (post-v1.5)
 
 ## Performance Metrics
 
@@ -91,6 +91,12 @@ v1.5 decisions from Phase 29 Plan 02:
 - Backend is deployed on Render (not AWS App Runner as originally documented) — BALLOTREADY_KEY was found and removed from Render env vars
 - Google Maps API monitoring: informational-only alerting at 5,000 requests/month (50% of free tier) — no quota cap, API fully open
 
+Phase 30 Plan 01 decisions:
+- Question text moved into right column as first child — eliminates full-width centering, anchors text directly above stances
+- 50/50 split (md:basis-1/2) replaces 60/40 (md:basis-3/5 / md:basis-2/5) to give stances more horizontal breathing room
+- items-center on chart column vertically centers radar chart against natural height of question + stances block
+- Responsive chart sizing: max-w-[280px] mobile / max-w-[400px] desktop with aspect-square
+
 ### Roadmap Evolution
 
 - Phase 30 added: Fix Compass calibration flow layout and write-in option
@@ -107,5 +113,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: Completed 29-validation-polish-key-removal/29-02-PLAN.md — v1.5 milestone complete
+Stopped at: Completed 30-fix-compass-calibration-flow-layout-and-write-in-option/30-01-PLAN.md — CalibrationOverlay answer step layout restructured to 50/50 split
 Resume file: None
