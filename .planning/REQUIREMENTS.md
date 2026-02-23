@@ -27,8 +27,8 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 
 ### Cleanup
 
-- [ ] **CLEAN-01**: BALLOTREADY_API_KEY removed from all environment configurations
-- [ ] **CLEAN-02**: Full codebase audit confirms zero active BallotReady API references
+- [x] **CLEAN-01**: BALLOTREADY_API_KEY removed from all environment configurations
+- [x] **CLEAN-02**: Full codebase audit confirms zero active BallotReady API references
 - [ ] **CLEAN-03**: Google Maps API billing alerts configured for cost monitoring
 
 ## Future Requirements
@@ -70,8 +70,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ADDR-02 | Phase 28 | Complete |
 | ADDR-03 | Phase 28 | Complete |
 | ADDR-04 | Phase 28 | Complete |
-| CLEAN-01 | Phase 29 | Pending |
-| CLEAN-02 | Phase 29 | Pending |
+| CLEAN-01 | Phase 29 | Complete |
+| CLEAN-02 | Phase 29 | Complete |
 | CLEAN-03 | Phase 29 | Pending |
 
 **Coverage:**

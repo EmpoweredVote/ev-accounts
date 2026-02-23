@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.5 Address Verification & BallotReady Independence — Phase 28 in progress
+**Current focus:** v1.5 Validation Polish Key Removal — Phase 29 in progress
 
 ## Current Position
 
-Phase: 28 of 29 (Address Autocomplete)
-Plan: 2 of 2 complete
-Status: Phase 28 complete
-Last activity: 2026-02-22 — Phase 28 Plan 02 executed: created LocalFilterSidebar component, restructured Results page with address bar, loading skeletons, no-geofence message, LocalFilterSidebar, removed all ZIP code paths
+Phase: 29 of 29 (Validation Polish Key Removal)
+Plan: 1 of 2 complete
+Status: Phase 29 in progress
+Last activity: 2026-02-22 — Phase 29 Plan 01 executed: removed BallotReady provider config from provider/, cleaned .env.local of BALLOTREADY_KEY, audit confirms zero active BallotReady references in Go source files
 
 Progress: [██████████] 100% (v1.5)
 
@@ -33,6 +33,7 @@ Progress: [██████████] 100% (v1.5)
 | 27-cache-only-candidates-warmer-cleanup | 02 | 5min | 2 | 2 |
 | 28-address-autocomplete | 01 | 4min | 1 | 2 |
 | 28-address-autocomplete | 02 | 5min | 2 | 2 |
+| 29-validation-polish-key-removal | 01 | 8min | 2 | 5 |
 
 ## Accumulated Context
 
@@ -80,6 +81,11 @@ v1.5 decisions from Phase 28 Plan 02:
 - defaultSort and GROUP_SORT_OPTIONS kept as internal code (sort dropdown UI removed, not the underlying sort logic)
 - Skeleton sections shown during both 'loading' and 'warming' phases; results rendered only after phase leaves loading state
 
+v1.5 decisions from Phase 29 Plan 01:
+- provider/config.go switch statement simplified to only handle default case after ballotready branch removed — no ProviderBallotReady constant remains
+- ballotready/ package intentionally left as dead code (failing to compile) — confirms it has no active imports from main codebase
+- .env.local POLITICIAN_PROVIDER and BALLOTREADY_KEY removed; server defaults to cicero provider when POLITICIAN_PROVIDER is unset
+
 ### Pending Todos
 
 None.
@@ -92,5 +98,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-22
-Stopped at: Completed 28-address-autocomplete/28-02-PLAN.md
+Stopped at: Completed 29-validation-polish-key-removal/29-01-PLAN.md
 Resume file: None

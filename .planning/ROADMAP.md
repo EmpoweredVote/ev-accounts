@@ -175,4 +175,4 @@ Plans:
 | 26. Geofence-Only Search | 2/2 | Complete    | 2026-02-22 | - |
 | 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
 | 28. Address Autocomplete | 2/2 | Complete    | 2026-02-23 | - |
-| 29. Validation, Polish & Key Removal | v1.5 | 0/TBD | Not started | - |
+| 29. Validation, Polish & Key Removal | 1/2 | In Progress|  | - |
