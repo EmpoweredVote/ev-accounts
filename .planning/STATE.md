@@ -9,7 +9,7 @@ See: .planning/PROJECT.md (updated 2026-02-22)
 
 ## Current Position
 
-Phase: 29 of 29 (Validation Polish Key Removal)
+Phase: 29 of 31 (Validation Polish Key Removal)
 Plan: 2 of 2 complete
 Status: Phase 29 complete — v1.5 milestone shipped 2026-02-23
 Last activity: 2026-02-23 — Phase 29 Plan 02 executed: BALLOTREADY_KEY removed from Render production environment variables, Google Cloud Monitoring alert configured at 5,000 Maps API requests/month threshold — v1.5 milestone complete
@@ -90,6 +90,11 @@ v1.5 decisions from Phase 29 Plan 01:
 v1.5 decisions from Phase 29 Plan 02:
 - Backend is deployed on Render (not AWS App Runner as originally documented) — BALLOTREADY_KEY was found and removed from Render env vars
 - Google Maps API monitoring: informational-only alerting at 5,000 requests/month (50% of free tier) — no quota cap, API fully open
+
+### Roadmap Evolution
+
+- Phase 30 added: Fix Compass calibration flow layout and write-in option
+- Phase 31 added: Essentials profile and district data fixes
 
 ### Pending Todos
 
