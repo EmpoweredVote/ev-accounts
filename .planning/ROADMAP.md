@@ -176,3 +176,22 @@ Plans:
 | 27. Cache-Only Candidates & Warmer Cleanup | 2/2 | Complete    | 2026-02-22 | - |
 | 28. Address Autocomplete | 2/2 | Complete    | 2026-02-23 | - |
 | 29. Validation, Polish & Key Removal | 2/2 | Complete    | 2026-02-23 | 2026-02-23 |
+
+### Phase 30: Fix Compass calibration flow layout and write-in option
+
+**Goal:** Fix the answer step layout in CalibrationOverlay to be cohesive (50/50 chart/stances split, question text above stances not centered on page) and add the write-in option that already exists in Quiz/LibraryDrawer but is missing from the calibration flow
+**Depends on:** Phase 29
+**Plans:** 2 plans
+
+Plans:
+- [ ] 30-01-PLAN.md — Layout restructure: 50/50 split, question text above stances, chart vertical centering
+- [ ] 30-02-PLAN.md — Write-in integration: dnd-kit drag-and-drop, stance positioning, topic-change restoration
+
+### Phase 31: Essentials profile and district data fixes
+
+**Goal:** [To be planned]
+**Depends on:** Phase 30
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 31 to break down)
