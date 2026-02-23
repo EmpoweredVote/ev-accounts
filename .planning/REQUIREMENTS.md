@@ -31,6 +31,28 @@ Requirements for v1.5 milestone. Each maps to roadmap phases.
 - [x] **CLEAN-02**: Full codebase audit confirms zero active BallotReady API references
 - [x] **CLEAN-03**: Google Maps API billing alerts configured for cost monitoring
 
+## Phase 31 Requirements
+
+### Profile Display
+
+- [ ] **PROF-01**: User sees chamber name and district as a subtitle below the office title on profile pages (e.g., "Indiana Senate, District 40")
+- [ ] **PROF-02**: Term dates on profile use labeled format ("First elected: Jan 2020 — Term ends: Jan 2026")
+- [ ] **PROF-03**: Years in office displayed below the term dates on profile
+- [ ] **PROF-04**: Missing profile images show an initials avatar circle (not a grey rectangle)
+- [ ] **PROF-05**: Office description shown as italicized context near the title; bio_text is not displayed
+- [ ] **PROF-06**: Issues and Prioritization card removed from profile page
+
+### Card Display
+
+- [ ] **CARD-01**: Cards show 3 lines: Name, Office Title, Chamber + District subtitle
+- [ ] **CARD-02**: Cards with empty chamber/district data gracefully fall back to 2 lines
+- [ ] **CARD-03**: No party affiliation displayed on cards or profiles
+
+### District Visibility
+
+- [ ] **DIST-01**: Bloomington, IN city council district members appear in search results for Bloomington addresses
+- [ ] **DIST-02**: X0001 MTFCC code mapped to LOCAL district type in geofence lookup
+
 ## Future Requirements
 
 ### Geographic Filters
@@ -74,11 +96,23 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CLEAN-02 | Phase 29 | Complete |
 | CLEAN-03 | Phase 29 | Complete |
 
+| PROF-01 | Phase 31 | Planned |
+| PROF-02 | Phase 31 | Planned |
+| PROF-03 | Phase 31 | Planned |
+| PROF-04 | Phase 31 | Planned |
+| PROF-05 | Phase 31 | Planned |
+| PROF-06 | Phase 31 | Planned |
+| CARD-01 | Phase 31 | Planned |
+| CARD-02 | Phase 31 | Planned |
+| CARD-03 | Phase 31 | Planned |
+| DIST-01 | Phase 31 | Planned |
+| DIST-02 | Phase 31 | Planned |
+
 **Coverage:**
-- v1.5 requirements: 12 total
-- Mapped to phases: 12
+- v1.5 requirements: 12 total (all complete)
+- Phase 31 requirements: 11 total (planned)
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-22*
-*Last updated: 2026-02-22 after roadmap creation*
+*Last updated: 2026-02-22 after Phase 31 planning*

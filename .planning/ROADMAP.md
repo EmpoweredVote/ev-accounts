@@ -189,9 +189,12 @@ Plans:
 
 ### Phase 31: Essentials profile and district data fixes
 
-**Goal:** [To be planned]
+**Goal:** Fix data display on politician profiles and result cards — add chamber/district subtitles, labeled term dates, circular initials avatars, remove bio_text and Issues section from profiles, eliminate party display, and import Bloomington city council district boundaries for local council member visibility
 **Depends on:** Phase 30
-**Plans:** 0 plans
+**Requirements:** PROF-01, PROF-02, PROF-03, PROF-04, PROF-05, PROF-06, CARD-01, CARD-02, CARD-03, DIST-01, DIST-02
+**Plans:** 3 plans
 
 Plans:
-- [ ] TBD (run /gsd:plan-phase 31 to break down)
+- [ ] 31-01-PLAN.md — Backend: add district_id to API responses + X0001 MTFCC mapping
+- [ ] 31-02-PLAN.md — ev-ui: profile subtitle, term labels, initials avatar, card subtitle prop; publish v0.1.27
+- [ ] 31-03-PLAN.md — Essentials: wire subtitle to cards, remove Issues section from profile, import Bloomington district boundaries
