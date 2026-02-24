@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 38 (VACUUM ANALYZE)
+**Current focus:** v1.6 LA County Full Coverage — COMPLETE
 
 ## Current Position
 
-Phase: 37 of 38 (Politician Gap-Fill — City Councils and School Boards)
-Plan: 2 of 2 in current phase
-Status: Complete (Plan 01 and Plan 02 both complete)
-Last activity: 2026-02-24 — Phase 37 Plan 02 complete (79 LA County school districts scraped, 402 school board members, 100% coverage, POL-04 satisfied)
+Phase: 38 of 38 (Validation and Performance)
+Plan: 1 of 1 in current phase
+Status: Complete (all v1.6 phases complete)
+Last activity: 2026-02-24 — Phase 38 Plan 01 complete (VACUUM ANALYZE run, GiST index confirmed, 16/16 PIP addresses PASS, all VAL requirements satisfied)
 
-Progress: [████████░░] 85% (v1.6 phases 32-38, 6/7 phases complete, Phase 38 pending)
+Progress: [██████████] 100% (v1.6 phases 32-38, 7/7 phases complete)
 
 ## Performance Metrics
 
@@ -24,7 +24,7 @@ Progress: [████████░░] 85% (v1.6 phases 32-38, 6/7 phases co
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min; Phase 37 Plan 02 — 2 tasks, 2 files, ~90 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min; Phase 37 Plan 02 — 2 tasks, 2 files, ~90 min; Phase 38 Plan 01 — 2 tasks (1 no-op), 1 file, ~2 min
 
 ## Accumulated Context
 
@@ -85,6 +85,11 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [37-02] Duplicate district IDs fixed: el_monte_city/el_monte_union_high and whittier_city/whittier_union_high — original CDE ArcGIS slugs were non-unique
 - [37-02] OCD-ID LIKE pattern uses ':' not '/' before slug: 'ocd-division/country:us/state:ca/school_district:%'
 
+**v1.6 Decisions (Phase 38 Plan 01):**
+- [38-01] Task 2 confirmed no-op — all 16/16 addresses passed on first run; no gap remediation required
+- [38-01] County tier satisfied by county-wide officials (Assessor, DA, Sheriff) even when Supervisor geofence edge is missed (Malibu) — county-wide officials ARE in county tier
+- [38-01] LA County supervisor tier classification: detect via ocd_id pattern 'county:los_angeles/council_district' or 'Supervisor' in office_title — not via district_type=COUNTY (Phase 35-01 confirmed correct)
+
 ### Key v1.6 Constraints
 
 - Phase 32 (schema) must complete before any import work — wrong unique constraint silently destroys multi-layer imports
@@ -107,5 +112,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 37-02-PLAN.md — hardcoded roster batch importer executed; 79/79 LA County school districts scraped, 402 active board members, 0 duplicates, PIP tests pass (LAUSD: 7, Glendale: 5); POL-04 satisfied; ready for Phase 38 (VACUUM ANALYZE)
+Stopped at: Completed 38-01-PLAN.md — VACUUM ANALYZE run (3.0s), GiST index confirmed (Index Scan), 16/16 PIP addresses PASS, all VAL-01 through VAL-04 satisfied; v1.6 LA County pipeline COMPLETE
 Resume file: None

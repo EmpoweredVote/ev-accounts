@@ -40,10 +40,10 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 
 ### Validation & Performance
 
-- [ ] **VAL-01**: Point-in-polygon verification passes for test addresses (incorporated city, unincorporated area, boundary edge)
-- [ ] **VAL-02**: VACUUM ANALYZE run on geofence_boundaries after all imports
-- [ ] **VAL-03**: GiST index confirmed active (EXPLAIN ANALYZE shows Index Scan, not Seq Scan)
-- [ ] **VAL-04**: Any LA County address returns full representative hierarchy (federal, state, county, city, school board)
+- [x] **VAL-01**: Point-in-polygon verification passes for test addresses (incorporated city, unincorporated area, boundary edge)
+- [x] **VAL-02**: VACUUM ANALYZE run on geofence_boundaries after all imports
+- [x] **VAL-03**: GiST index confirmed active (EXPLAIN ANALYZE shows Index Scan, not Seq Scan)
+- [x] **VAL-04**: Any LA County address returns full representative hierarchy (federal, state, county, city, school board)
 
 ## Future Requirements
 
@@ -94,10 +94,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | POL-03 | Phase 37 | Complete |
 | POL-04 | Phase 37 | Complete |
 | POL-05 | Phase 36 | Complete |
-| VAL-01 | Phase 38 | Pending |
-| VAL-02 | Phase 38 | Pending |
-| VAL-03 | Phase 38 | Pending |
-| VAL-04 | Phase 38 | Pending |
+| VAL-01 | Phase 38 | Complete |
+| VAL-02 | Phase 38 | Complete |
+| VAL-03 | Phase 38 | Complete |
+| VAL-04 | Phase 38 | Complete |
 
 **Coverage:**
 - v1.6 requirements: 23 total
