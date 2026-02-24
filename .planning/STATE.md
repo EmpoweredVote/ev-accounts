@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 36 (next)
+**Current focus:** v1.6 LA County Full Coverage — Phase 37 (next)
 
 ## Current Position
 
 Phase: 36 of 38 (Politician Gap-Fill — Supervisors and LA City Council)
-Plan: 1 of 2 in current phase
-Status: In Progress
-Last activity: 2026-02-24 — Phase 36 Plan 01 complete (is_active/data_source schema prep, gap_fill_geo_ids.py created, Go build fixed; ready for Plan 02 scraper)
+Plan: 2 of 2 in current phase
+Status: Complete
+Last activity: 2026-02-24 — Phase 36 Plan 02 complete (scraper + dedup framework, all 21 LA officials in DB, POL-01/02/05 satisfied; ready for Phase 37)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min
 
 ## Accumulated Context
 
@@ -67,6 +67,12 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [36-01] gap_fill_geo_ids.py uses geo_id = ocd_id for LOCAL districts; geo_id = '0644000' (Census GEOID) for LA City mayor LOCAL_EXEC to match Phase 34 G4110 geofence
 - [36-01] Rule 1 auto-fix: ProviderBallotReady const and BallotReadyKey/Endpoint fields added to provider/config.go — pre-existing omission that blocked go build ./...
 
+**v1.6 Decisions (Phase 36 Plan 02):**
+- [36-02] rapidfuzz replaces python-Levenshtein — same Levenshtein API surface, builds cleanly on macOS without C extension compilation issues
+- [36-02] Fuzzy last-name threshold = 1 (not 2) — short names like "Hahn" are too collision-prone at threshold 2; tight threshold confirmed by RESEARCH.md Pitfall 5
+- [36-02] Curren D. Price Jr. treated as new person in D9 seat — name-with-suffix differs from "Curren D. Price"; old record deactivated, new record inserted per seat-first dedup logic
+- [36-02] Photo re-hosting to Supabase Storage deferred — photo_origin_url stores scraped URL; download+re-host is a distinct infrastructure concern
+
 ### Key v1.6 Constraints
 
 - Phase 32 (schema) must complete before any import work — wrong unique constraint silently destroys multi-layer imports
@@ -90,5 +96,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 36-01-PLAN.md — is_active/data_source on politicians, gap_fill_geo_ids.py created, Go build fixed (ProviderBallotReady), beautifulsoup4+python-Levenshtein pinned; ready for Phase 36 Plan 02 scraper
+Stopped at: Completed 36-02-PLAN.md — config-driven scraper (politician_sources.json + scrape_la_officials.py) executed; all 21 LA officials in DB (5 supervisors + 15 council + 1 mayor); POL-01/POL-02/POL-05 satisfied; PIP tests pass; Phase 36 complete; ready for Phase 37
 Resume file: None
