@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 32
+**Current focus:** v1.6 LA County Full Coverage — Phase 33
 
 ## Current Position
 
-Phase: 32 of 38 (Schema Fixes and Lookup Bug Correction)
+Phase: 33 of 38 (Pipeline Infrastructure)
 Plan: 1 of 1 in current phase
-Status: In progress
-Last activity: 2026-02-24 — Phase 32 Plan 01 complete (schema fixes + MTFCC map)
+Status: Complete
+Last activity: 2026-02-24 — Phase 33 Plan 01 complete (shared utils.py + requirements.txt + canonical script refactor)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min
 
 ## Accumulated Context
 
@@ -39,6 +39,12 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [32-01] ST_Covers replaces ST_Contains — identical argument order, Covers returns TRUE for boundary-coincident points
 - [32-01] G4120 maps to LOCAL/LOCAL_EXEC (same as G4110) — consolidated cities use identical BallotReady district types as incorporated places
 - [32-01] G5400/G5410 map to SCHOOL — all school district variants use the same BallotReady district type as G5420
+
+**v1.6 Decisions (Phase 33):**
+- [33-01] v1.6 synthetic external IDs start at -200001 (not -100001) to avoid collision with v1.5 promote_scraped_officials.py range
+- [33-01] urllib.parse imports stay inside get_engine() body in utils.py — matches the existing pattern
+- [33-01] promote_scraped_officials.py not refactored — v1.5 one-time script kept isolated from pipeline infrastructure
+- [33-01] No __init__.py added to scripts/ — scripts run directly, not imported as package
 
 ### Key v1.6 Constraints
 
@@ -64,5 +70,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 32-01-PLAN.md — schema fixes and MTFCC lookup bug correction done
+Stopped at: Completed 33-01-PLAN.md — shared utils.py, requirements.txt, canonical script refactor, README update
 Resume file: None

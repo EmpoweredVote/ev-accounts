@@ -117,7 +117,7 @@ Plans:
   1. `EV-Backend/scripts/utils.py` exists with `get_engine()`, `load_env()`, and `next_ext_id()` — new scripts import from it rather than duplicating logic
   2. `EV-Backend/scripts/requirements.txt` pins geopandas 1.1.2, SQLAlchemy 2.0.46, psycopg2-binary, requests, and shapely — any developer can reproduce the import environment with one `pip install -r`
   3. A new developer can run any import script against a fresh Supabase project by following the documented `DATABASE_URL` setup (direct connection, port 5432)
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 33-01-PLAN.md — Create shared utils.py + requirements.txt, update canonical scripts and README
 
@@ -209,7 +209,7 @@ Plans:
 | 30. Fix Compass Calibration Layout & Write-in | v1.5 | 2/2 | Complete | 2026-02-23 |
 | 31. Essentials Profile & District Data Fixes | v1.5 | 3/3 | Complete | 2026-02-23 |
 | 32. Schema Fixes and Lookup Bug Correction | 1/1 | Complete    | 2026-02-24 | - |
-| 33. Pipeline Infrastructure | v1.6 | 0/TBD | Not started | - |
+| 33. Pipeline Infrastructure | 1/1 | Complete   | 2026-02-24 | - |
 | 34. TIGER Geofences — Federal, State, School, City | v1.6 | 0/TBD | Not started | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | v1.6 | 0/TBD | Not started | - |
 | 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 0/TBD | Not started | - |

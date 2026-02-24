@@ -15,9 +15,9 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 
 ### Pipeline Infrastructure
 
-- [ ] **PIPE-01**: Shared utils.py extracted from existing import scripts with get_engine, load_env, next_ext_id
-- [ ] **PIPE-02**: requirements.txt with pinned versions for all import script dependencies
-- [ ] **PIPE-03**: Import pipeline is parameterized and documented for reuse with other regions
+- [x] **PIPE-01**: Shared utils.py extracted from existing import scripts with get_engine, load_env, next_ext_id
+- [x] **PIPE-02**: requirements.txt with pinned versions for all import script dependencies
+- [x] **PIPE-03**: Import pipeline is parameterized and documented for reuse with other regions
 
 ### Geofence Boundaries
 
@@ -78,9 +78,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCHEMA-01 | Phase 32 | Complete |
 | SCHEMA-02 | Phase 32 | Complete |
 | SCHEMA-03 | Phase 32 | Complete |
-| PIPE-01 | Phase 33 | Pending |
-| PIPE-02 | Phase 33 | Pending |
-| PIPE-03 | Phase 33 | Pending |
+| PIPE-01 | Phase 33 | Complete |
+| PIPE-02 | Phase 33 | Complete |
+| PIPE-03 | Phase 33 | Complete |
 | GEO-01 | Phase 34 | Pending |
 | GEO-02 | Phase 34 | Pending |
 | GEO-03 | Phase 34 | Pending |
