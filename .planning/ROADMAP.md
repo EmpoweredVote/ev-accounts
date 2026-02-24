@@ -220,6 +220,6 @@ Plans:
 | 33. Pipeline Infrastructure | 1/1 | Complete    | 2026-02-24 | - |
 | 34. TIGER Geofences — Federal, State, School, City | 1/1 | Complete    | 2026-02-24 | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | 2/2 | Complete    | 2026-02-24 | - |
-| 36. Politician Gap-Fill — Supervisors and LA City Council | 2/2 | Complete   | 2026-02-24 | - |
+| 36. Politician Gap-Fill — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-24 | - |
 | 37. Politician Gap-Fill — City Councils and School Boards | v1.6 | 0/TBD | Not started | - |
 | 38. Validation and Performance | v1.6 | 0/TBD | Not started | - |
