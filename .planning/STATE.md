@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 34
+**Current focus:** v1.6 LA County Full Coverage — Phase 35
 
 ## Current Position
 
-Phase: 34 of 38 (TIGER Geofences — Federal, State, School, City)
-Plan: 1 of 1 in current phase
+Phase: 35 of 38 (LA County ArcGIS Geofences — Supervisor Districts and City Council Wards)
+Plan: 1 of 2 in current phase
 Status: Complete
-Last activity: 2026-02-24 — Phase 34 Plan 01 complete (CA G4110 place boundaries imported; all five GEO requirements verified)
+Last activity: 2026-02-24 — Phase 35 Plan 01 complete (5 supervisor districts + 15 LA City council wards imported; all GEO-04 and GEO-07 requirements verified)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min
 
 ## Accumulated Context
 
@@ -51,6 +51,11 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [34-01] ocd_id left NULL for G4110 — consistent with Indiana G4110 records; geofence_lookup.go uses geo_id not ocd_id
 - [34-01] No FUNCSTAT filter applied — CA G4110 count of exactly 482 is within expected range (450-520)
 
+**v1.6 Decisions (Phase 35 Plan 01):**
+- [35-01] Use X0001 MTFCC (not G4020) for supervisor district geofences — G4020 maps to COUNTY/JUDICIAL, but LA supervisors are district_type=LOCAL; X0001 maps to LOCAL
+- [35-01] OCD-ID string used as geo_id for X0001 boundaries — direct match to essentials.districts.ocd_id confirmed by DB query, enables Phase 36 join
+- [35-01] Direct ALTER TABLE to widen geo_id to varchar(255) — GORM AutoMigrate does not widen existing varchar columns
+
 ### Key v1.6 Constraints
 
 - Phase 32 (schema) must complete before any import work — wrong unique constraint silently destroys multi-layer imports
@@ -68,12 +73,11 @@ None.
 
 ### Blockers/Concerns
 
-- ArcGIS FeatureServer field names for supervisor district number unverified — inspect endpoint before Phase 35 implementation
-- Existing geo_id format for LA City council districts must be queried from DB before Phase 36 — Bloomington 12-char format is inferred, not confirmed for CA
+- Remaining city council boundaries (Long Beach, Pasadena, Torrance, Inglewood, Downey, West Covina, Santa Clarita) have TBD ArcGIS URLs — Phase 35 Plan 02 must resolve these
 - Federal/state CA politician coverage must be verified at Phase 36 start — if BallotReady never warmed CA state officials, Phase 36 scope expands
 
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 34-01-PLAN.md — CA G4110 place boundaries imported (482 records), all five GEO requirements verified
+Stopped at: Completed 35-01-PLAN.md — 5 LA County supervisor districts and 15 LA City council wards imported (20 records), GEO-04 and GEO-07 requirements verified
 Resume file: None
