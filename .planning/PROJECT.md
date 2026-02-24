@@ -99,7 +99,15 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active milestone — use `/gsd:new-milestone` to start next)
+## Current Milestone: v1.6 LA County Full Coverage
+
+**Goal:** Expand geofence coverage so any LA County address returns the full hierarchy of representatives — federal, state, county, city, school board — with a repeatable import pipeline for future regional expansion.
+
+**Target features:**
+- TIGER shapefile import pipeline (congressional, state legislative, county, school district boundaries)
+- LA County GIS Portal data import (city boundaries, supervisor districts)
+- Politician record gap-fill for LA County local offices with deduplication against existing data
+- Repeatable import tooling for expanding to other regions
 
 ### Out of Scope
 
@@ -196,4 +204,4 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | Bloomington districts from ArcGIS FeatureServer | Official city data source for council district boundaries | ✓ Good — 6 districts imported with ST_MakeValid for geometry fixes |
 
 ---
-*Last updated: 2026-02-23 after v1.5 milestone*
+*Last updated: 2026-02-23 after v1.6 milestone started*

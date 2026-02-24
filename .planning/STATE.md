@@ -5,16 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v1.6 LA County Full Coverage
 
 ## Current Position
 
-Phase: 31 of 31 (all milestones complete through v1.5)
-Plan: N/A
-Status: v1.5 shipped — all 6 milestones complete (v1.0-v1.5, 31 phases, 72 plans)
-Last activity: 2026-02-23 — v1.5 milestone archived
-
-Progress: [██████████] Complete
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-23 — Milestone v1.6 started
 
 ## Performance Metrics
 
@@ -34,7 +32,7 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 
 ### Roadmap Evolution
 
-All phases through 31 complete. Next milestone not yet planned.
+All phases through 31 complete. v1.6 requirements being defined.
 
 ### Pending Todos
 
@@ -47,5 +45,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-23
-Stopped at: v1.5 milestone archived
+Stopped at: v1.6 milestone started — defining requirements
 Resume file: None
