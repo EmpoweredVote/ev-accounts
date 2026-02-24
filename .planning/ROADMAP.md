@@ -105,7 +105,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. `geofence_boundaries` has a composite unique constraint on `(geo_id, mtfcc)` — idempotent upserts across boundary types do not silently drop rows
   2. `geofence_lookup.go` uses `ST_Covers` instead of `ST_Contains` — addresses on district boundary lines return results
   3. `mtfccToDistrictTypes` includes G4110, G4120, G5400, G5410 — city, place, and school district boundaries map to correct district types
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 32-01-PLAN.md — Schema constraint, spatial predicate fix, and MTFCC map expansion
 
 ### Phase 33: Pipeline Infrastructure
 **Goal**: A shared utility layer and pinned dependency manifest exist so all new import scripts use consistent patterns
