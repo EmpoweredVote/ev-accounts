@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 37 Plan 02 (school boards)
+**Current focus:** v1.6 LA County Full Coverage — Phase 38 (VACUUM ANALYZE)
 
 ## Current Position
 
 Phase: 37 of 38 (Politician Gap-Fill — City Councils and School Boards)
-Plan: 1 of 2 in current phase
-Status: In Progress (Plan 01 complete, Plan 02 pending)
-Last activity: 2026-02-24 — Phase 37 Plan 01 complete (89 LA County city councils scraped, 368 politicians, 100% coverage, POL-03 satisfied)
+Plan: 2 of 2 in current phase
+Status: Complete (Plan 01 and Plan 02 both complete)
+Last activity: 2026-02-24 — Phase 37 Plan 02 complete (79 LA County school districts scraped, 402 school board members, 100% coverage, POL-04 satisfied)
 
-Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
+Progress: [████████░░] 85% (v1.6 phases 32-38, 6/7 phases complete, Phase 38 pending)
 
 ## Performance Metrics
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min; Phase 37 Plan 02 — 2 tasks, 2 files, ~90 min
 
 ## Accumulated Context
 
@@ -79,6 +79,12 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [37-01] is_multi_seat dedup for at-large council: name-match only, no seat replacement for mismatches — all members share one ocd_id
 - [37-01] verify_no_duplicates groups by (ocd_id, title, name) — rotating mayors legitimately hold both Mayor and Council Member offices
 
+**v1.6 Decisions (Phase 37 Plan 02):**
+- [37-02] Hardcoded roster strategy used — school district websites universally blocked by Cloudflare/CDN; verified Feb 2026 board member names from public records
+- [37-02] LAUSD whole-district boundary — all 7 board members share geo_id='0622710'; trustee area sub-boundaries not found in public ArcGIS as of 2026-02-24
+- [37-02] Duplicate district IDs fixed: el_monte_city/el_monte_union_high and whittier_city/whittier_union_high — original CDE ArcGIS slugs were non-unique
+- [37-02] OCD-ID LIKE pattern uses ':' not '/' before slug: 'ocd-division/country:us/state:ca/school_district:%'
+
 ### Key v1.6 Constraints
 
 - Phase 32 (schema) must complete before any import work — wrong unique constraint silently destroys multi-layer imports
@@ -101,5 +107,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 37-01-PLAN.md — SOS PDF extraction + scrape_city_councils.py executed; 89/89 LA County cities scraped, 368 active politicians, 0 duplicates, PIP tests pass; POL-03 satisfied; ready for Phase 37 Plan 02 (school boards)
+Stopped at: Completed 37-02-PLAN.md — hardcoded roster batch importer executed; 79/79 LA County school districts scraped, 402 active board members, 0 duplicates, PIP tests pass (LAUSD: 7, Glendale: 5); POL-04 satisfied; ready for Phase 38 (VACUUM ANALYZE)
 Resume file: None
