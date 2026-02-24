@@ -169,7 +169,7 @@ Plans:
   1. City council member records exist for the 87 incorporated LA County cities (excluding LA City covered in Phase 36) — any incorporated-city address returns local council representatives
   2. School board member records exist for LA County unified school districts — any address in an LAUSD or other UNSD boundary returns school board representatives
   3. All new politician records link to district rows whose `geo_id` values match `geofence_boundaries` rows imported in Phase 34 — no politician record is orphaned from a boundary
-**Plans:** 2/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 37-01-PLAN.md — City council gap-fill: SOS PDF extraction + config + scraper for 87 LA County cities (POL-03)
 - [x] 37-02-PLAN.md — School board gap-fill: hardcoded-roster importer for 79 LA County school districts (POL-04)
@@ -224,5 +224,5 @@ Plans:
 | 34. TIGER Geofences — Federal, State, School, City | 1/1 | Complete    | 2026-02-24 | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | 2/2 | Complete    | 2026-02-24 | - |
 | 36. Politician Gap-Fill — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-24 | - |
-| 37. Politician Gap-Fill — City Councils and School Boards | 1/2 | In Progress|  | - |
+| 37. Politician Gap-Fill — City Councils and School Boards | 1/2 | Complete    | 2026-02-24 | - |
 | 38. Validation and Performance | v1.6 | 0/TBD | Not started | - |
