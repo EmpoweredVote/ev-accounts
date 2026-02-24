@@ -113,7 +113,17 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active requirements — define with `/gsd:new-milestone`)
+## Current Milestone: v1.7 LA County Data Enrichment
+
+**Goal:** Enrich ~389 LA County officials (county + city, excluding school board) with photos, contact info, term data, bios, education, and experience via a reproducible scraping pipeline — targeting 80%+ coverage for headshots and contact info.
+
+**Target features:**
+- Headshot photos for county supervisors and city council members
+- City hall building photos for 89 LA County cities
+- Contact info enrichment (email, phone, website, office address)
+- Term/election data (elected date, term end, years in office)
+- Biographical text, education, and work experience where available
+- Reproducible scraping pipeline designed for future regional expansion
 
 ### Out of Scope
 
@@ -225,4 +235,4 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | 5 district-election cities treated as at-large | SOS PDF provides district=0; per-ward assignment deferred | ⚠️ Revisit — works but loses ward-level precision |
 
 ---
-*Last updated: 2026-02-24 after v1.6 milestone*
+*Last updated: 2026-02-24 after v1.7 milestone started*

@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v1.7 LA County Data Enrichment
 
 ## Current Position
 
-Phase: None — between milestones
-Plan: N/A
-Status: v1.6 shipped, awaiting next milestone definition
-Last activity: 2026-02-24 — v1.6 LA County Full Coverage milestone completed and archived
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-24 — Milestone v1.7 started
 
-Progress: [██████████] 100% (v1.0-v1.6 complete, 38 phases shipped)
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -44,5 +44,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: v1.6 milestone archived. Next: `/gsd:new-milestone` for next milestone.
+Stopped at: Defining v1.7 requirements
 Resume file: None
