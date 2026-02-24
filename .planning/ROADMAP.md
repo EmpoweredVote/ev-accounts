@@ -117,7 +117,9 @@ Plans:
   1. `EV-Backend/scripts/utils.py` exists with `get_engine()`, `load_env()`, and `next_ext_id()` — new scripts import from it rather than duplicating logic
   2. `EV-Backend/scripts/requirements.txt` pins geopandas 1.1.2, SQLAlchemy 2.0.46, psycopg2-binary, requests, and shapely — any developer can reproduce the import environment with one `pip install -r`
   3. A new developer can run any import script against a fresh Supabase project by following the documented `DATABASE_URL` setup (direct connection, port 5432)
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 33-01-PLAN.md — Create shared utils.py + requirements.txt, update canonical scripts and README
 
 ### Phase 34: TIGER Geofences — Federal, State, School, and City Boundaries
 **Goal**: Federal legislative, state legislative, school district, and incorporated city boundaries for the LA County area are in the database
