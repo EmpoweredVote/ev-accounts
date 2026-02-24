@@ -9,9 +9,9 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 
 ### Schema & Bug Fixes
 
-- [ ] **SCHEMA-01**: Geofence_boundaries table has composite unique constraint on (geo_id, mtfcc)
-- [ ] **SCHEMA-02**: Address lookup uses ST_Covers instead of ST_Contains for boundary matching
-- [ ] **SCHEMA-03**: MTFCC-to-district-type map includes G4110, G4120, G5400, G5410
+- [x] **SCHEMA-01**: Geofence_boundaries table has composite unique constraint on (geo_id, mtfcc)
+- [x] **SCHEMA-02**: Address lookup uses ST_Covers instead of ST_Contains for boundary matching
+- [x] **SCHEMA-03**: MTFCC-to-district-type map includes G4110, G4120, G5400, G5410
 
 ### Pipeline Infrastructure
 
@@ -75,9 +75,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHEMA-01 | Phase 32 | Pending |
-| SCHEMA-02 | Phase 32 | Pending |
-| SCHEMA-03 | Phase 32 | Pending |
+| SCHEMA-01 | Phase 32 | Complete |
+| SCHEMA-02 | Phase 32 | Complete |
+| SCHEMA-03 | Phase 32 | Complete |
 | PIPE-01 | Phase 33 | Pending |
 | PIPE-02 | Phase 33 | Pending |
 | PIPE-03 | Phase 33 | Pending |

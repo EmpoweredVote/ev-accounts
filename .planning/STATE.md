@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-23)
 ## Current Position
 
 Phase: 32 of 38 (Schema Fixes and Lookup Bug Correction)
-Plan: — of — in current phase
-Status: Ready to plan
-Last activity: 2026-02-23 — v1.6 roadmap created, Phase 32 ready for planning
+Plan: 1 of 1 in current phase
+Status: In progress
+Last activity: 2026-02-24 — Phase 32 Plan 01 complete (schema fixes + MTFCC map)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,6 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min
 
 ## Accumulated Context
 
@@ -31,6 +32,13 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 
 Decisions are logged in PROJECT.md Key Decisions table.
 All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full history.
+
+**v1.6 Decisions (Phase 32):**
+- [32-01] Use `id DESC` (not `imported_at DESC`) for geofence dedup ordering — imported_at may be NULL for pre-existing rows
+- [32-01] Dedup error uses log.Printf warning (not Fatal) — table may not exist on fresh database, expected behavior
+- [32-01] ST_Covers replaces ST_Contains — identical argument order, Covers returns TRUE for boundary-coincident points
+- [32-01] G4120 maps to LOCAL/LOCAL_EXEC (same as G4110) — consolidated cities use identical BallotReady district types as incorporated places
+- [32-01] G5400/G5410 map to SCHOOL — all school district variants use the same BallotReady district type as G5420
 
 ### Key v1.6 Constraints
 
@@ -55,6 +63,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-23
-Stopped at: v1.6 roadmap created — Phase 32 ready for planning
+Last session: 2026-02-24
+Stopped at: Completed 32-01-PLAN.md — schema fixes and MTFCC lookup bug correction done
 Resume file: None

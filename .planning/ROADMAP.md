@@ -105,7 +105,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. `geofence_boundaries` has a composite unique constraint on `(geo_id, mtfcc)` — idempotent upserts across boundary types do not silently drop rows
   2. `geofence_lookup.go` uses `ST_Covers` instead of `ST_Contains` — addresses on district boundary lines return results
   3. `mtfccToDistrictTypes` includes G4110, G4120, G5400, G5410 — city, place, and school district boundaries map to correct district types
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 32-01-PLAN.md — Schema constraint, spatial predicate fix, and MTFCC map expansion
 
@@ -206,7 +206,7 @@ Plans:
 | 29. Validation, Polish & Key Removal | v1.5 | 2/2 | Complete | 2026-02-23 |
 | 30. Fix Compass Calibration Layout & Write-in | v1.5 | 2/2 | Complete | 2026-02-23 |
 | 31. Essentials Profile & District Data Fixes | v1.5 | 3/3 | Complete | 2026-02-23 |
-| 32. Schema Fixes and Lookup Bug Correction | v1.6 | 0/TBD | Not started | - |
+| 32. Schema Fixes and Lookup Bug Correction | 1/1 | Complete   | 2026-02-24 | - |
 | 33. Pipeline Infrastructure | v1.6 | 0/TBD | Not started | - |
 | 34. TIGER Geofences — Federal, State, School, City | v1.6 | 0/TBD | Not started | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | v1.6 | 0/TBD | Not started | - |
