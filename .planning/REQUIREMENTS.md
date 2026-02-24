@@ -32,11 +32,11 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 
 ### Politician Data
 
-- [ ] **POL-01**: 5 LA County supervisors created with matching district geo_ids
-- [ ] **POL-02**: 15 LA City council members + mayor created with matching district geo_ids
+- [x] **POL-01**: 5 LA County supervisors created with matching district geo_ids
+- [x] **POL-02**: 15 LA City council members + mayor created with matching district geo_ids
 - [ ] **POL-03**: City council members for all 87 other incorporated LA County cities populated
 - [ ] **POL-04**: School board members for 80+ LA County unified school districts populated
-- [ ] **POL-05**: All politician records deduplicated against existing BallotReady-cached records
+- [x] **POL-05**: All politician records deduplicated against existing BallotReady-cached records
 
 ### Validation & Performance
 
@@ -89,11 +89,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEO-06 | Phase 34 | Complete |
 | GEO-07 | Phase 35 | Complete |
 | GEO-08 | Phase 35 | Complete |
-| POL-01 | Phase 36 | Pending |
-| POL-02 | Phase 36 | Pending |
+| POL-01 | Phase 36 | Complete |
+| POL-02 | Phase 36 | Complete |
 | POL-03 | Phase 37 | Pending |
 | POL-04 | Phase 37 | Pending |
-| POL-05 | Phase 36 | Pending |
+| POL-05 | Phase 36 | Complete |
 | VAL-01 | Phase 38 | Pending |
 | VAL-02 | Phase 38 | Pending |
 | VAL-03 | Phase 38 | Pending |
