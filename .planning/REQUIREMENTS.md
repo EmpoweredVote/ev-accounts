@@ -75,35 +75,35 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHEMA-01 | — | Pending |
-| SCHEMA-02 | — | Pending |
-| SCHEMA-03 | — | Pending |
-| PIPE-01 | — | Pending |
-| PIPE-02 | — | Pending |
-| PIPE-03 | — | Pending |
-| GEO-01 | — | Pending |
-| GEO-02 | — | Pending |
-| GEO-03 | — | Pending |
-| GEO-04 | — | Pending |
-| GEO-05 | — | Pending |
-| GEO-06 | — | Pending |
-| GEO-07 | — | Pending |
-| GEO-08 | — | Pending |
-| POL-01 | — | Pending |
-| POL-02 | — | Pending |
-| POL-03 | — | Pending |
-| POL-04 | — | Pending |
-| POL-05 | — | Pending |
-| VAL-01 | — | Pending |
-| VAL-02 | — | Pending |
-| VAL-03 | — | Pending |
-| VAL-04 | — | Pending |
+| SCHEMA-01 | Phase 32 | Pending |
+| SCHEMA-02 | Phase 32 | Pending |
+| SCHEMA-03 | Phase 32 | Pending |
+| PIPE-01 | Phase 33 | Pending |
+| PIPE-02 | Phase 33 | Pending |
+| PIPE-03 | Phase 33 | Pending |
+| GEO-01 | Phase 34 | Pending |
+| GEO-02 | Phase 34 | Pending |
+| GEO-03 | Phase 34 | Pending |
+| GEO-04 | Phase 35 | Pending |
+| GEO-05 | Phase 34 | Pending |
+| GEO-06 | Phase 34 | Pending |
+| GEO-07 | Phase 35 | Pending |
+| GEO-08 | Phase 35 | Pending |
+| POL-01 | Phase 36 | Pending |
+| POL-02 | Phase 36 | Pending |
+| POL-03 | Phase 37 | Pending |
+| POL-04 | Phase 37 | Pending |
+| POL-05 | Phase 36 | Pending |
+| VAL-01 | Phase 38 | Pending |
+| VAL-02 | Phase 38 | Pending |
+| VAL-03 | Phase 38 | Pending |
+| VAL-04 | Phase 38 | Pending |
 
 **Coverage:**
 - v1.6 requirements: 23 total
-- Mapped to phases: 0
-- Unmapped: 23 (pending roadmap)
+- Mapped to phases: 23
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-23*
-*Last updated: 2026-02-23 after initial definition*
+*Last updated: 2026-02-23 after roadmap creation*
