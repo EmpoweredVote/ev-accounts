@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface officials and candidates with real building photographs, chamber/district subtitles, initials avatars, and contextual term dates on profile pages.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy — federal, state, county, city, and school board — for LA County addresses, with real building photographs, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. A repeatable TIGER + ArcGIS import pipeline supports expansion to additional regions.
 
 ## Core Value
 
@@ -97,17 +97,23 @@ Users can explore political issues and discover their elected officials without 
 - ✓ X0001 MTFCC mapped to LOCAL district type — v1.5
 - ✓ ev-ui 0.1.27 with updated PoliticianProfile and PoliticianCard — v1.5
 
+- ✓ Geofence schema: composite unique constraint on (geo_id, mtfcc) for idempotent multi-layer imports — v1.6
+- ✓ ST_Covers spatial predicate for boundary-inclusive address matching — v1.6
+- ✓ MTFCC map expanded: G4110, G4120, G5400, G5410 for city/school district boundaries — v1.6
+- ✓ Shared Python import utilities (utils.py + requirements.txt) for consistent pipeline scripts — v1.6
+- ✓ TIGER 2024 geofences: congressional (G5200), state senate (G5210), state assembly (G5220), school districts (G5420), 482 CA city boundaries (G4110) — v1.6
+- ✓ LA County ArcGIS geofences: 5 supervisor districts, 15 LA City council wards, 31 other city council ward boundaries — v1.6
+- ✓ Politician gap-fill: 21 LA County officials (supervisors + city council + mayor) with config-driven scraper — v1.6
+- ✓ City council gap-fill: 368 politicians across 89 LA County cities via SOS PDF extraction — v1.6
+- ✓ School board gap-fill: 402 board members across 79 LA County unified school districts — v1.6
+- ✓ Deduplication: seat-first dedup with rapidfuzz matching, zero duplicate violations — v1.6
+- ✓ Point-in-polygon validation: 16/16 test addresses pass full tier verification — v1.6
+- ✓ PostGIS performance: VACUUM ANALYZE + GiST index confirmed active after bulk imports — v1.6
+- ✓ Import pipeline runbook: 545-line step-by-step documentation for future regional expansion — v1.6
+
 ### Active
 
-## Current Milestone: v1.6 LA County Full Coverage
-
-**Goal:** Expand geofence coverage so any LA County address returns the full hierarchy of representatives — federal, state, county, city, school board — with a repeatable import pipeline for future regional expansion.
-
-**Target features:**
-- TIGER shapefile import pipeline (congressional, state legislative, county, school district boundaries)
-- LA County GIS Portal data import (city boundaries, supervisor districts)
-- Politician record gap-fill for LA County local offices with deduplication against existing data
-- Repeatable import tooling for expanding to other regions
+(No active requirements — define with `/gsd:new-milestone`)
 
 ### Out of Scope
 
@@ -121,23 +127,27 @@ Users can explore political issues and discover their elected officials without 
 - Building images for all US locations — only Bloomington IN and Los Angeles CA covered, SVG fallback for others
 - Full quiz mode redesign — onboarding flow sufficient, full quiz stays as-is
 - ZIP code fallback for privacy — address-only; geographic filters in future
-- TIGER shapefile expansion beyond Monroe County IN + LA County CA — future milestone
+- TIGER shapefile expansion beyond Monroe County IN + LA County CA — pipeline reusable, next county is future milestone
 - Real-time candidate data — cached-only; live data requires new provider
 - PlaceAutocompleteElement migration — legacy Autocomplete class works for existing key
+- Per-ward council assignment for 5 district-election cities — at-large treatment acceptable for now
+- Photo re-hosting to Supabase Storage — scraped URLs work; infrastructure concern for later
 
 ## Context
 
-Shipped v1.5 with ~35K LOC across 4 repos:
+Shipped v1.6 with ~35K LOC across 4 repos + Python import scripts:
 - **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration with write-in support, guest auth, help walkthrough
-- **EV-Backend** (Go 1.24): ~15K LOC — auth, compass, essentials (geofence-only), treasury, staging modules; BallotReady provider removed
+- **EV-Backend** (Go 1.24): ~15K LOC — auth, compass, essentials (geofence-only + PostGIS), treasury, staging modules
+- **EV-Backend/scripts** (Python): ~3K LOC — TIGER shapefile importers, ArcGIS geofence importers, politician scrapers, shared utils
 - **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile (subtitles, initials avatars), PoliticianCard (3-line layout)
 - **essentials** (React 19): ~3K LOC — address autocomplete, geofence results, building photos, local filter sidebar
 
 Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB + PostGIS.
-Politician data served entirely from cached database (BallotReady API removed). Google Maps Places API for address autocomplete.
+Politician data: cached database records + 791 gap-filled LA County politicians from config-driven scrapers. Google Maps Places API for address autocomplete.
+Geofence coverage: Bloomington IN (6 council districts) + full LA County (federal, state, county, city, school board boundaries).
 ev-ui published to GitHub npm registry (v0.1.27), consumed by CompassV2 and essentials.
 
-Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI.
+Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI; IMPORT-PIPELINE.md references `--source` flag not implemented in script.
 
 ## Constraints
 
@@ -202,6 +212,17 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | Circle photo/avatar shape on profiles | Visual consistency between actual photos and initials placeholder | ✓ Good — borderRadius 50% on both |
 | X0001 MTFCC → LOCAL district type | BallotReady custom code for city council ward sub-district boundaries | ✓ Good — Bloomington council districts visible in search |
 | Bloomington districts from ArcGIS FeatureServer | Official city data source for council district boundaries | ✓ Good — 6 districts imported with ST_MakeValid for geometry fixes |
+| Composite unique (geo_id, mtfcc) on geofence_boundaries | Idempotent upserts across boundary types without row loss | ✓ Good — multi-layer TIGER + ArcGIS imports coexist safely |
+| ST_Covers replaces ST_Contains | Addresses on boundary lines must return results | ✓ Good — identical API, covers boundary-coincident points |
+| Shared utils.py for import scripts | Prevent get_engine() duplication across 6+ scripts | ✓ Good — consistent patterns, synthetic ID allocation |
+| Synthetic external IDs start at -200001 | Avoid collision with v1.5 -100001 range | ✓ Good — clear ID namespace separation per milestone |
+| OCD-ID as geo_id for X0001 boundaries | Direct match to essentials.districts.ocd_id enables join chain | ✓ Good — supervisor and council ward lookup works end-to-end |
+| Config-driven scraper with seat-first dedup | Reusable across cities; dedup by seat not just name | ✓ Good — 89 cities, 0 duplicate violations |
+| rapidfuzz replaces python-Levenshtein | Same API, builds cleanly on macOS without C extension | ✓ Good — tight threshold (1) prevents false matches on short names |
+| SOS PDF bulk extraction for city councils | Authoritative statewide source; avoids per-city website scraping | ✓ Good — 368 politicians from single data source |
+| Hardcoded roster for school boards | District websites universally blocked by Cloudflare | ✓ Good — 402 board members verified from public records |
+| UNSD (G5420) only, no G5400/G5410 | Prevent school board triple-match in overlapping district areas | ✓ Good — clean single-match per address |
+| 5 district-election cities treated as at-large | SOS PDF provides district=0; per-ward assignment deferred | ⚠️ Revisit — works but loses ward-level precision |
 
 ---
-*Last updated: 2026-02-23 after v1.6 milestone started*
+*Last updated: 2026-02-24 after v1.6 milestone*

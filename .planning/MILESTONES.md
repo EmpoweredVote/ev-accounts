@@ -148,3 +148,32 @@
 
 ---
 
+
+## v1.6 LA County Full Coverage (Shipped: 2026-02-24)
+
+**Phases completed:** 7 phases, 11 plans, 23 tasks
+**Timeline:** 1 day (2026-02-24)
+**Requirements:** 23/23 satisfied
+**Repos:** EV-Backend (schema, scripts, Go models)
+
+**Delivered:** Full LA County geofence coverage — any LA County address returns the complete representative hierarchy (federal, state, county, city, school board) with a repeatable import pipeline for future regional expansion.
+
+**Key accomplishments:**
+1. Complete 5-layer geofence hierarchy — 482 CA city boundaries (G4110), 51 LA County local district boundaries (X0001), plus federal/state/school boundaries from TIGER + ArcGIS sources
+2. 791 politicians gap-filled — 21 LA County officials (supervisors + city council + mayor), 368 city council members across 89 cities, 402 school board members across 79 districts
+3. Reusable import pipeline — config-driven scrapers with seat-first dedup, shared Python utils (utils.py + requirements.txt), hardcoded roster fallback for anti-bot-protected sites
+4. Point-in-polygon validation — 16/16 test addresses pass full tier verification, GiST index confirmed active after VACUUM ANALYZE
+5. 545-line import runbook — step-by-step repeatable pipeline documentation for future county/region expansion
+
+**Known Gaps (from audit):**
+- MISS-01 (low): IMPORT-PIPELINE.md documents `--source` flag that import_arcgis_geofences.py doesn't implement — script always runs import_all()
+- FLOW-01 (low): Runbook selective import commands would silently fail — no argparse in script
+
+**Tech debt carried forward:**
+- Photo re-hosting to Supabase Storage deferred — photo_origin_url stores scraped URL
+- 5 district-election cities (Long Beach, Torrance, Pasadena, Inglewood, West Covina) treated as at-large — per-ward council assignment deferred
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials (carried from v1.5)
+
+---
+
