@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 33
+**Current focus:** v1.6 LA County Full Coverage — Phase 34
 
 ## Current Position
 
-Phase: 33 of 38 (Pipeline Infrastructure)
+Phase: 34 of 38 (TIGER Geofences — Federal, State, School, City)
 Plan: 1 of 1 in current phase
 Status: Complete
-Last activity: 2026-02-24 — Phase 33 Plan 01 complete (shared utils.py + requirements.txt + canonical script refactor)
+Last activity: 2026-02-24 — Phase 34 Plan 01 complete (CA G4110 place boundaries imported; all five GEO requirements verified)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min
 
 ## Accumulated Context
 
@@ -45,6 +45,11 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [33-01] urllib.parse imports stay inside get_engine() body in utils.py — matches the existing pattern
 - [33-01] promote_scraped_officials.py not refactored — v1.5 one-time script kept isolated from pipeline infrastructure
 - [33-01] No __init__.py added to scripts/ — scripts run directly, not imported as package
+
+**v1.6 Decisions (Phase 34):**
+- [34-01] NAMELSAD column used for G4110 name field (e.g., "Los Angeles city") — matches legislative script pattern, more descriptive than NAME
+- [34-01] ocd_id left NULL for G4110 — consistent with Indiana G4110 records; geofence_lookup.go uses geo_id not ocd_id
+- [34-01] No FUNCSTAT filter applied — CA G4110 count of exactly 482 is within expected range (450-520)
 
 ### Key v1.6 Constraints
 
@@ -70,5 +75,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 33-01-PLAN.md — shared utils.py, requirements.txt, canonical script refactor, README update
+Stopped at: Completed 34-01-PLAN.md — CA G4110 place boundaries imported (482 records), all five GEO requirements verified
 Resume file: None

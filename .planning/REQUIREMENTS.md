@@ -21,12 +21,12 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 
 ### Geofence Boundaries
 
-- [ ] **GEO-01**: Congressional district boundaries (G5200) imported for LA County area
-- [ ] **GEO-02**: CA State Senate district boundaries (G5210) imported for LA County area
-- [ ] **GEO-03**: CA State Assembly district boundaries (G5220) imported for LA County area
+- [x] **GEO-01**: Congressional district boundaries (G5200) imported for LA County area
+- [x] **GEO-02**: CA State Senate district boundaries (G5210) imported for LA County area
+- [x] **GEO-03**: CA State Assembly district boundaries (G5220) imported for LA County area
 - [ ] **GEO-04**: LA County Supervisorial district boundaries (G4020) imported from LA County ArcGIS
-- [ ] **GEO-05**: Unified School District boundaries (G5420) imported for LA County area
-- [ ] **GEO-06**: Incorporated place/city boundaries (G4110) imported for LA County area
+- [x] **GEO-05**: Unified School District boundaries (G5420) imported for LA County area
+- [x] **GEO-06**: Incorporated place/city boundaries (G4110) imported for LA County area
 - [ ] **GEO-07**: LA City council ward boundaries (X0001) imported from LA City GeoHub
 - [ ] **GEO-08**: City council district/ward boundaries imported where available for LA County incorporated cities
 
@@ -81,12 +81,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PIPE-01 | Phase 33 | Complete |
 | PIPE-02 | Phase 33 | Complete |
 | PIPE-03 | Phase 33 | Complete |
-| GEO-01 | Phase 34 | Pending |
-| GEO-02 | Phase 34 | Pending |
-| GEO-03 | Phase 34 | Pending |
+| GEO-01 | Phase 34 | Complete |
+| GEO-02 | Phase 34 | Complete |
+| GEO-03 | Phase 34 | Complete |
 | GEO-04 | Phase 35 | Pending |
-| GEO-05 | Phase 34 | Pending |
-| GEO-06 | Phase 34 | Pending |
+| GEO-05 | Phase 34 | Complete |
+| GEO-06 | Phase 34 | Complete |
 | GEO-07 | Phase 35 | Pending |
 | GEO-08 | Phase 35 | Pending |
 | POL-01 | Phase 36 | Pending |
