@@ -131,7 +131,9 @@ Plans:
   3. Unified School District boundaries (G5420) are present — school district officials can be linked for LAUSD and other LA County districts
   4. Incorporated place boundaries (G4110) are present for all 88 LA County cities — city council officials can be linked per city
   5. All imported geometries pass `ST_IsValid` — no silent insert failures from topology errors
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 34-01-PLAN.md — Import CA G4110 place boundaries and verify all five GEO requirements
 
 ### Phase 35: LA County ArcGIS Geofences — Supervisor Districts and City Council Wards
 **Goal**: LA County supervisor district boundaries and LA City council ward boundaries are in the database from their authoritative GIS sources
@@ -210,7 +212,7 @@ Plans:
 | 31. Essentials Profile & District Data Fixes | v1.5 | 3/3 | Complete | 2026-02-23 |
 | 32. Schema Fixes and Lookup Bug Correction | 1/1 | Complete    | 2026-02-24 | - |
 | 33. Pipeline Infrastructure | 1/1 | Complete    | 2026-02-24 | - |
-| 34. TIGER Geofences — Federal, State, School, City | v1.6 | 0/TBD | Not started | - |
+| 34. TIGER Geofences — Federal, State, School, City | v1.6 | 0/1 | Not started | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | v1.6 | 0/TBD | Not started | - |
 | 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 0/TBD | Not started | - |
 | 37. Politician Gap-Fill — City Councils and School Boards | v1.6 | 0/TBD | Not started | - |
