@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-02-23)
 ## Current Position
 
 Phase: 38 of 38 (Validation and Performance)
-Plan: 1 of 1 in current phase
-Status: Complete (all v1.6 phases complete)
-Last activity: 2026-02-24 — Phase 38 Plan 01 complete (VACUUM ANALYZE run, GiST index confirmed, 16/16 PIP addresses PASS, all VAL requirements satisfied)
+Plan: 2 of 2 in current phase
+Status: Complete (all v1.6 phases complete, including pipeline runbook)
+Last activity: 2026-02-24 — Phase 38 Plan 02 complete (IMPORT-PIPELINE.md runbook written, 545 lines, all 5 pipeline phases documented, VAL-04 fully satisfied)
 
 Progress: [██████████] 100% (v1.6 phases 32-38, 7/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [██████████] 100% (v1.6 phases 32-38, 7/7 phases c
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min; Phase 37 Plan 02 — 2 tasks, 2 files, ~90 min; Phase 38 Plan 01 — 2 tasks (1 no-op), 1 file, ~2 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min; Phase 36 Plan 01 — 2 tasks, 5 files, ~2 min; Phase 36 Plan 02 — 2 tasks, 3 files, ~15 min; Phase 37 Plan 01 — 2 tasks, 3 files, ~120 min; Phase 37 Plan 02 — 2 tasks, 2 files, ~90 min; Phase 38 Plan 01 — 2 tasks (1 no-op), 1 file, ~2 min; Phase 38 Plan 02 — 1 task, 1 file, ~3 min
 
 ## Accumulated Context
 
@@ -90,6 +90,9 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [38-01] County tier satisfied by county-wide officials (Assessor, DA, Sheriff) even when Supervisor geofence edge is missed (Malibu) — county-wide officials ARE in county tier
 - [38-01] LA County supervisor tier classification: detect via ocd_id pattern 'county:los_angeles/council_district' or 'Supervisor' in office_title — not via district_type=COUNTY (Phase 35-01 confirmed correct)
 
+**v1.6 Decisions (Phase 38 Plan 02):**
+- [38-02] Documentation-only plan — no code changes; all pipeline decisions already recorded in STATE.md from Phases 32-38
+
 ### Key v1.6 Constraints
 
 - Phase 32 (schema) must complete before any import work — wrong unique constraint silently destroys multi-layer imports
@@ -112,5 +115,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 38-01-PLAN.md — VACUUM ANALYZE run (3.0s), GiST index confirmed (Index Scan), 16/16 PIP addresses PASS, all VAL-01 through VAL-04 satisfied; v1.6 LA County pipeline COMPLETE
+Stopped at: Completed 38-02-PLAN.md — IMPORT-PIPELINE.md runbook written (545 lines), all 5 pipeline phases documented with data sources, scripts, verification steps, and what-varies-by-region guidance; VAL-04 fully satisfied; v1.6 LA County pipeline COMPLETE
 Resume file: None
