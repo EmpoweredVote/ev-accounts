@@ -1,14 +1,48 @@
-# Feature Research — v1.5 Address Verification & BallotReady Independence
+# Feature Research — v1.6 LA County Full Coverage & Repeatable Import Pipeline
 
-**Domain:** Civic engagement — address-based politician lookup
-**Researched:** 2026-02-22
-**Confidence:** HIGH (based on existing codebase + official Google Maps docs; civic UX from market observation)
+**Domain:** Civic engagement — geofence boundary import, politician data pipeline, regional expansion
+**Researched:** 2026-02-23
+**Confidence:** HIGH (existing codebase directly inspected; TIGER/Census docs verified; LA County GIS Portal confirmed; MTFCC mapping already implemented in geofence_lookup.go)
 
 ---
 
 ## Scope Note
 
-This file covers only the NEW features for v1.5. Existing features (ZIP code search, 3-tier cache, geofence infrastructure, lazy-load candidacy, X-Data-Status headers) are built and working. Research here addresses: address autocomplete UX, BallotReady removal, coverage gap handling, and cached-only candidates display.
+This file covers only the NEW features for v1.6. The existing infrastructure — PostGIS point-in-polygon queries, MTFCC-to-district-type mapping, `essentials.geofence_boundaries` table, `essentials.districts` geo_id column, and the Bloomington city council import (X0001 MTFCC) — is already built and working. Research here addresses: what TIGER boundary types are needed for LA County full coverage, what LA County GIS Portal provides beyond TIGER, how politician records gap-fill should work, and what a repeatable pipeline requires.
+
+---
+
+## Boundary Type Inventory: LA County
+
+Understanding what to import requires knowing what boundary types exist and which political bodies they represent. The existing MTFCC mapping in `geofence_lookup.go` defines the full translation table — import work must populate geometry for each of these codes.
+
+### TIGER/Line Shapefiles (U.S. Census Bureau)
+
+All available from `https://www2.census.gov/geo/tiger/TIGER2025/` — free, public domain, annual vintage.
+
+| TIGER Layer | MTFCC Code | District Type (existing mapping) | What it covers in LA County | Already imported? |
+|-------------|-----------|----------------------------------|------------------------------|-------------------|
+| Congressional Districts (119th) | G5200 | `NATIONAL_LOWER` | ~14 congressional districts overlap LA County | No |
+| State Legislative Upper (CA Senate) | G5210 | `STATE_UPPER` | ~11 CA Senate districts | No |
+| State Legislative Lower (CA Assembly) | G5220 | `STATE_LOWER` | ~24 CA Assembly districts | No |
+| Unified School Districts | G5420 | `SCHOOL` | 80+ unified school districts | No |
+| County boundaries | G4020 | `COUNTY` / `JUDICIAL` | LA County itself (one polygon) | No |
+| Places (incorporated cities) | G4110 | `LOCAL` / `LOCAL_EXEC` | 88 incorporated cities | No |
+
+Note: TIGER does NOT include county supervisor districts or community service area (CSA) boundaries — those come from LA County GIS Portal.
+
+### LA County GIS Portal (egis-lacounty.hub.arcgis.com)
+
+Free ArcGIS Hub with REST API endpoints and direct Shapefile/GeoJSON download. No TIGER equivalent for these layers.
+
+| Layer | MTFCC to Use | District Type | What it covers | Available format |
+|-------|-------------|---------------|----------------|-----------------|
+| Supervisorial Districts (Current, 2021 redistricting) | G4020 (county-level admin) | `COUNTY` / `LOCAL_EXEC` | 5 supervisor districts covering all of LA County | Shapefile, GeoJSON, ArcGIS REST |
+| School District Boundaries (LA County EGIS) | G5420 | `SCHOOL` | All school districts in the county, maintained by Registrar-Recorder | Shapefile, GeoJSON |
+| City Boundaries (legal) | G4110 | `LOCAL` | 88 incorporated cities + unincorporated boundaries | Shapefile, GeoJSON |
+| Countywide Statistical Areas (CSAs) | X0001 or G4110 | `LOCAL` | ~140 unincorporated named communities | Shapefile, GeoJSON |
+
+Note: The LA County GIS supervisor district data uses 2021 post-redistricting boundaries, which are the current official boundaries until 2031. These are NOT in TIGER with this level of precision.
 
 ---
 
@@ -16,111 +50,140 @@ This file covers only the NEW features for v1.5. Existing features (ZIP code sea
 
 ### Table Stakes (Users Expect These)
 
-Features users assume exist in any address-based lookup tool. Missing these = product feels broken or untrustworthy.
+Features that LA County users assume exist. Missing these = address search returns visibly incomplete results — federal-only or nothing.
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| Address autocomplete dropdown | Every address input on modern civic sites (Ballotpedia, vote.gov, Google "Who represents me") shows suggestions as you type. A bare text field with a Search button feels like 2010. | MEDIUM | `useGooglePlacesAutocomplete` hook already exists in Results.jsx. Work is removing the ZIP-code path as the primary entry and making address the only path. |
-| Confirmed address display after search | After selecting an address, users expect to see the canonical formatted address (e.g., "123 Main St, Bloomington, IN 47401") not their raw typed input. Builds trust that the system understood them. | LOW | Google's `formatted_address` field is already returned in the Places response. Show it above results. |
-| Graceful "no coverage" message | If an address geocodes but the geofence has no data, users need to understand why the list is empty — not just see a blank page. Civic apps universally show a message like "We don't have local representatives for this area yet." | LOW | Backend returns `X-Geofence-Count: 0` header already. Frontend can branch on empty results + this header. |
-| Federal/state officials shown when local is missing | When local geofence data is absent, users still expect to see their Senators, Representative, and Governor. Not showing federal officials because local coverage is missing is a trust failure. | LOW | Backend `SearchPoliticians` already supplements geofence results with federal/state from DB cache. The gap is what happens when geofences return 0 matches — need to fall back to ZIP-derived state. |
-| Candidate toggle still works with cached data | The existing "Show Candidates" toggle must continue to work. Users who have come to rely on it expect it to function. The only change is the source of data — cached instead of live. | MEDIUM | Currently `GetCandidatesByZip` calls BallotReady live. Must convert to a DB read from `essentials.election_records` and related tables, filtered for upcoming elections. |
-| No broken experience when BallotReady is unavailable | After cutting BallotReady, address search must not break if Google geocoding fails. Must have a clear error path, not a 502 or blank page. | LOW | Current fallback path already calls BallotReady when geocoding fails or geofences are empty. That fallback path must be removed and replaced with a useful user message. |
+| Congressional district boundary import | Any civic address lookup for LA County users must return their U.S. Representative. CA has 14 districts that overlap LA County (CDs 25, 27-34, 36-38, 40, 42, 43 in the 119th Congress). Without geofences for these, the backend cannot match. | LOW | Download `tl_2025_us_cd119.zip` from TIGER FTP. Filter by STATEFP=06 (California). Run `ogr2ogr` into `essentials.geofence_boundaries` with MTFCC=G5200. GEOIDs are district-level and match the `geo_id` column in `essentials.districts`. |
+| CA State Senate district boundary import | Users expect their state senator. 11 CA Senate districts overlap LA County. | LOW | Download `tl_2025_06_sldu.zip` (California SLDU). Same ogr2ogr pattern with MTFCC=G5210. |
+| CA State Assembly district boundary import | Users expect their Assembly member. 24 CA Assembly districts touch LA County. | LOW | Download `tl_2025_06_sldl.zip` (California SLDL). MTFCC=G5220. |
+| School district boundary import | School board elections are the most numerous local elections. Users with children especially expect to see their school board. LA County has 80+ school districts. | MEDIUM | LA County GIS Portal has a single school district layer maintained by the Registrar-Recorder with all district types combined. Alternatively use TIGER `tl_2025_06_unsd.zip` for unified districts. The LA County portal layer is preferred as it includes elementary and secondary splits maintained locally. |
+| City boundary import (incorporated places) | LA County's 88 cities each have their own city council. For residents of any incorporated city, city council is a core local representative. | MEDIUM | TIGER PLACE layer (`tl_2025_06_place.zip`) covers incorporated places. Filter by COUNTYFP=037 (LA County) or use TIGER's place-county relationship file. MTFCC=G4110 already maps to LOCAL district type. City names must match politician records for the geo_id linkage to work. |
+| Supervisor district boundary import | LA County Board of Supervisors (5 members) governs unincorporated areas and county services. For the ~1M unincorporated residents of LA County, supervisors are their primary local representatives. | LOW | Download from LA County GIS Portal: `Supervisorial Districts (Current)` layer — not available from TIGER at sufficient accuracy. GeoJSON or Shapefile format, ArcGIS REST endpoint confirmed. |
+| Politician records for LA County offices | Geofences without matching politician records return zero results. For any new district type (school board, city council, supervisors), politician records must exist in `essentials.politicians` and `essentials.districts` with matching `geo_id` values. | HIGH | This is the largest work item. Politician records for state/federal offices may already exist from BallotReady import (check `essentials.politicians` where `source='ballotready'` and `representing_state='CA'`). Local politicians (city council, school board, supervisors) likely do NOT exist — they must be created manually or sourced from an alternative. |
 
 ### Differentiators (Competitive Advantage)
 
-Features that distinguish EV from generic tools. Not required for v1.5 to ship, but improve the experience.
+Features that make the LA County expansion trustworthy and reusable — not just a one-off import.
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| Address instead of ZIP as primary input | ZIP codes are not how people think about their address. Street address is more natural and more precise (ZIP codes cross district boundaries). Civic tools that accept street addresses feel more sophisticated. | LOW | The architecture already prefers address. This is a UI framing change — remove the ZIP input path and label the field "Your address" instead of "ZIP code or address." |
-| "Showing officials for [City, State]" sub-header | When results load, showing "Showing representatives for Bloomington, IN" confirms the system interpreted the address correctly. Reduces user uncertainty about coverage. | LOW | The `formatted` address is already in the geocoding response. Extract city + state and display as a results header. `ResultsHeader` component in the codebase is the right place. |
-| Coverage indicator (geofence vs. cache-only) | For power users, knowing whether local results come from precise geofence matching vs. a ZIP-level cache is useful. A subtle badge or tooltip ("District-matched" vs. "Zip-estimated") builds trust. | LOW | `X-Data-Status: fresh-local` vs `X-Data-Status: stale` already exists. Wire it to a UI indicator. This is a minor polish item. |
-| Cached candidates with freshness date | Showing "Candidates as of [date]" when displaying cached candidate data sets honest expectations. Users understand the data may not include last-minute changes. | LOW | `election_records` table has election dates. Show the most recent import timestamp with the candidate toggle. |
-| Address validation feedback (not just geocoding) | Google's Address Validation API (distinct from Geocoding) can flag undeliverable addresses before submitting. This prevents users from entering "123 fake street" and getting a confusing empty result. | HIGH | This is the new `PlaceAutocompleteElement` (post-March 2025). Adds session-based billing complexity. Consider deferred to v1.6. See Anti-Features below. |
+| Repeatable import script (shell/bash + ogr2ogr) | Running a single script that downloads, validates, and loads a TIGER layer into PostGIS means future regional expansions (e.g., Cook County IL, Harris County TX) follow the same pattern without reinventing. | MEDIUM | Pattern: download ZIP from TIGER FTP → unzip → run ST_MakeValid → insert into geofence_boundaries with correct MTFCC, Source="census_tiger_2025", state filter. Parameterized by state FIPS and layer type. A shell script with documented parameters is sufficient — Go CLI is optional. |
+| GEOID → geo_id linkage validation step | TIGER GEOIDs must match the `geo_id` values stored in `essentials.districts` for the geofence lookup to return politicians. A validation query (SELECT districts with no matching geofence_boundary, and geofence_boundaries with no matching district) catches mismatches before deploys. | LOW | Add a SQL diagnostic query to the import tooling. Run after every import to surface unmatched boundaries. |
+| Source + vintage metadata on every imported boundary | Tagging each row with `source="census_tiger_2025"` and `valid_from`/`valid_to` dates allows future updates to replace boundaries by vintage without manual cleanup. The existing `GeofenceBoundary` model already has these columns — they just need to be populated. | LOW | Already modeled. Only enforcement needed: import script always sets source and valid_from. |
+| Idempotent import (upsert, not re-import) | Re-running the import script after a TIGER update should update changed boundaries, not create duplicates. | LOW | `geo_id` + `mtfcc` can serve as a composite unique key (note: `GeofenceBoundary` has a comment "unique constraint managed manually"). Add a PostgreSQL `ON CONFLICT (geo_id, mtfcc) DO UPDATE` clause to the import. Requires confirming the unique constraint exists or adding it. |
+| Politician deduplication by external_id (BallotReady) | For state and federal politicians already in the DB from BallotReady imports, new records must not be created. Match by `external_id` (BallotReady integer ID) as the primary key. geo_id linkage must update the existing `essentials.districts` row rather than creating a new politician. | MEDIUM | The `Politician` model already has `external_id` with a uniqueIndex. The gap is ensuring `essentials.districts.geo_id` is set correctly for CA districts so the geofence lookup hits them. Run a diagnostic: for CA politicians in DB, does their district have a `geo_id` that matches the TIGER GEOID? |
+| Coverage dashboard / import log | A simple admin endpoint or SQL view showing which MTFCC types have geofence boundaries, how many, and when last imported, gives the team visibility into coverage gaps without a full GIS client. | LOW | Could be a SQL view on `essentials.geofence_boundaries GROUP BY mtfcc, source`. No UI required for v1.6 — a query in the README is sufficient. |
 
 ### Anti-Features (Commonly Requested, Often Problematic)
 
-Features that seem helpful for v1.5 but create disproportionate cost or complexity.
-
 | Feature | Why Requested | Why Problematic | Alternative |
 |---------|---------------|-----------------|-------------|
-| Google Address Validation API (full validation) | Confirms addresses are real before geocoding, prevents garbage input | Separate billing SKU from Geocoding; requires session token management; adds latency; `PlaceAutocompleteElement` (new web component) requires migrating off the current hook-based approach which already works. As of March 1, 2025, legacy `Autocomplete` class is closed to new customers but existing customers are unaffected — the current hook still works. | Keep existing `useGooglePlacesAutocomplete` hook. Autocomplete suggestions are self-validating (user selects a real address from the dropdown). Only validate backend-side if geocoding fails to return a result. |
-| Live BallotReady fallback for uncovered areas | Ensures users in un-imported areas always see data | The entire point of v1.5 is removing BallotReady dependency. A "live fallback" undermines this. It also means the API key must remain active. | Show a clear "coverage unavailable" message with federal/state officials from the cache. Set expectations that local coverage is expanding. |
-| Accepting ZIP codes as a second input mode alongside address | Some users know their ZIP, not their address. Having both keeps them happy. | Two input modes = two code paths = two sets of edge cases. ZIP path does not use the geofence lookup. It triggers the old warmer flow. Maintaining both during a migration creates a split implementation that is hard to reason about. | During v1.5, unify on address. The existing ZIP warmer cache remains — a ZIP lookup against the backend still works internally. Users who type a ZIP into the address field will get geocoded results (Google geocodes ZIPs to coordinates, which then hit the geofence). |
-| Real-time candidate data for uncached areas | Some candidates will not appear in cached data if they declared recently | Real-time candidate fetching was the BallotReady dependency. The whole point of this milestone is removing it. Keeping real-time for candidates means keeping the API key and all the transform logic. | Show candidates from cache only. Add a "data as of [date]" note. This is the correct trade-off for removing BallotReady dependency. |
-| ZIP-code autocomplete suggestions (e.g., "90210 → Beverly Hills, CA") | Some users prefer ZIP. Showing city name for a ZIP helps them confirm they entered the right one. | ZIP autocomplete is a separate API pattern that requires a ZIP-to-city dataset or the Geocoding API. It does not help with district-level matching. | Not needed. Address autocomplete handles this use case entirely. Users who know their ZIP will type it; the geocoding API will resolve it to coordinates. |
+| Automated nightly TIGER sync | TIGER publishes new vintages annually (September). Automating annual re-imports sounds appealing. | TIGER vintages only matter after redistricting (every 10 years) or major changes. The 2025 vintage is valid until 2030 boundaries change. Automating annual re-imports creates operational complexity for no real benefit. Redistricting is a known event — handle it as a planned migration. | Manual import on redistricting events (2031 for current boundaries). Script is repeatable so the manual step is low-effort. |
+| Real-time politician data sync for LA County local offices | Keeping city council and school board members up-to-date as officials change | This requires an API that has the data (BallotReady is removed; no other free API covers local officials). Manual data entry is slow. Automated sync requires a new data provider contract. | Initial import covers known officers. Data-entry tool (`/staging/*`) allows volunteers to submit and review changes. Accept staleness on local officials; federal/state data is more complete. |
+| Using PostGIS TIGER geocoder (tiger schema) instead of custom geofence table | PostGIS ships with a TIGER geocoder extension that auto-loads data | The PostGIS TIGER geocoder is designed for address-level geocoding (house numbers, street segments). EV's use case is point-in-polygon (lat/lng → district). The TIGER geocoder adds a 500MB+ database footprint and schema complexity for a different problem. | Keep the existing `essentials.geofence_boundaries` table with ST_Contains queries. It's purpose-built for point-in-polygon. |
+| Voting precinct (VTD) boundaries | VTDs are the most granular geographic unit in TIGER and are used for precinct-level election results | VTDs do not correspond to representative bodies. They are election administration units, not districts. Importing them would create false matches in the MTFCC mapping and flood search results with phantom "districts" that have no politicians. | Do not import VTD layer. If precinct-level election results become a feature, create a separate `election_precincts` table with no politician linkage. |
+| Los Angeles City Council district boundaries (separate layer) | LA City has 15 council districts — very relevant for city residents | LA City council districts are X0001 MTFCC (BallotReady custom code, same as Bloomington). The LA County GIS Portal has an "LA City Council Districts (2021)" layer. However, without LA City council member records in `essentials.politicians`, importing the boundaries produces no results. Politicians must come first. | Import LA City council boundaries only after politician records for LA City council members are in the DB. This is a dependency, not an anti-feature. Flag as a phase sequencing requirement. |
+| Full state of California TIGER import | "While we're at it, let's cover all of CA" | Full CA includes 58 counties with hundreds of incorporated places. Local politician data does not exist for most of them. Importing boundaries with no matching politician records wastes storage and creates confusing empty results. | Import only LA County-relevant boundaries (filter by county FIPS 037 or state FIPS 06 for state-level layers). Expand county by county as politician data is added. |
 
 ---
 
 ## Feature Dependencies
 
 ```
-Google Places Autocomplete (frontend)
-    └──provides formatted address──> Backend SearchPoliticians endpoint
-            └──requires──> Google Geocoding API (already integrated in geocoding/google.go)
-                    └──provides lat/lng──> PostGIS FindGeoIDsByPoint (geofence_lookup.go)
-                            └──provides geo matches──> FindPoliticiansByGeoMatches
-                                    └──returns──> Officials list (geofence-matched)
+TIGER Congressional District Geofences (G5200)
+    └──enables──> Geofence match for NATIONAL_LOWER officials
+            └──requires──> Existing CA politicians in DB with district geo_id = TIGER GEOID
+                    └──validation──> Diagnostic query: unmatched geofences ↔ districts
 
-Officials list
-    └──supplemented by──> Federal/State cache (existing ZIP-based cache)
-            └──requires──> State derived from geocoded address (geoResult.State already available)
+TIGER State Senate Geofences (G5210)
+    └──enables──> Geofence match for STATE_UPPER officials
+            └──same dependency──> CA state senator records in DB with matching geo_id
 
-Candidate toggle
-    └──requires──> Cached ElectionRecord data (Phase B already populated this)
-            └──filters on──> election_date >= today (future elections)
-            └──requires──> New backend endpoint: GET /candidates/search (address-based)
-                    OR reuse existing /candidates/{zip} with ZIP from geocoded result
+TIGER State Assembly Geofences (G5220)
+    └──enables──> Geofence match for STATE_LOWER officials
 
-BallotReady removal
-    └──blocks until──> Address search path (geofence) covers the primary use case
-    └──blocks until──> Candidate cached data endpoint exists
-    └──allows removal of──> ballotready/client.go calls in SearchPoliticians
-    └──allows removal of──> GetCandidatesByZip live-fetch path
-    └──allows removal of──> BALLOTREADY_API_KEY env var dependency
+LA County Supervisor District Geofences (G4020 from LA County GIS)
+    └──enables──> Geofence match for COUNTY officials
+            └──requires──> 5 supervisor politician records in DB with geo_id matching supervisor district GEOID
+                    └──gap-fill required──> supervisor records likely NOT in DB from BallotReady
+
+TIGER/LA County School District Geofences (G5420)
+    └──enables──> Geofence match for SCHOOL officials
+            └──requires──> School board member records with matching geo_id
+                    └──gap-fill required──> school board records likely NOT in DB from BallotReady
+
+TIGER City Boundaries (G4110)
+    └──enables──> Geofence match for LOCAL officials (city council)
+            └──requires──> City council member records with matching geo_id
+                    └──conditional──> LA City council boundaries (X0001) need city council records
+                    └──conditional──> Smaller city councils may not be in BallotReady data
+
+Politician gap-fill (any source)
+    └──requires first──> Boundary geofences imported (know which geo_ids need records)
+    └──requires first──> Diagnostic query identifying which geo_ids have 0 politicians
+    └──options for source──>
+            BallotReady historical data (dead package exists as reference)
+            Manual entry via /staging/* data-entry tool
+            Scraped from official sources (city/county websites)
+
+Repeatable import script
+    └──enables──> Future regional expansion without per-region custom code
+            └──parameterized by──> state FIPS, county FIPS, TIGER layer type, MTFCC
+            └──outputs──> Idempotent upsert into essentials.geofence_boundaries
+
+GEOID ↔ geo_id validation query
+    └──blocks deployment of──> Any new boundary type until mismatches are resolved
+    └──requires──> Both geofences AND districts tables populated
 ```
 
 ### Dependency Notes
 
-- **Address autocomplete requires active Google Maps API key:** `VITE_GOOGLE_MAPS_API_KEY` (frontend) and `GOOGLE_MAPS_API_KEY` (backend geocoding). Both already present — no new credentials needed.
-- **Cached candidate display requires ElectionRecord population:** Phase B already seeded `essentials.election_records` from BallotReady. The data exists. The work is exposing it via a non-live endpoint that filters for upcoming elections. This is a new SQL query, not a new data collection step.
-- **Federal/state supplemental requires state from geocoded address:** The `geoResult.State` field is already returned from `geocoding/google.go` and used in `SearchPoliticians`. When geofence matches are 0 (uncovered area), the backend can still use `geoResult.State` to derive the state and return federal + state officials from cache. This is a small code path extension — the state-from-geocode mechanism already exists.
-- **BallotReady removal is a trailing action:** All the fallback paths (live officeholder fetch, live candidate fetch) depend on BallotReady. They can only be removed after the replacement paths are validated. Remove BallotReady last, not first.
+- **Geofences before politicians (for new boundary types):** Import the boundary first to learn which `geo_id` values are needed. Then ensure politician records have districts with those `geo_id` values. This avoids creating districts with placeholder GEOIDs.
+- **Federal/state politicians likely already exist:** The BallotReady import (pre-v1.5 removal) fetched CA federal and state officials. Check `essentials.politicians WHERE source='ballotready'` filtered for CA representatives. Their districts may already have `geo_id` values from BallotReady's OCD-ID data. If so, congressional/state boundary import just needs the geofence geometry — no new politician records needed.
+- **Local politician gap-fill is the hard part:** City council members, school board members, and supervisors are NOT in the BallotReady import data (BallotReady focused on state/federal and candidates). These must come from a separate source — the staging data-entry tool is the only in-platform option without a new API provider.
+- **LA City council districts depend on X0001 MTFCC:** The existing X0001 mapping (`LOCAL`) is correct for city council sub-districts. LA City council districts would use the same MTFCC as Bloomington city council. The boundary layer exists in LA County GIS Portal. Politician records are the blocker.
+- **Supervisor districts conflict note:** G4020 maps to `["COUNTY", "JUDICIAL"]`. Supervisor districts ARE county-level administration so G4020 is the right MTFCC. However, the existing JUDICIAL mapping for G4020 is for county-level judicial courts (same geo_id). In LA County, county court judges would share the same geofence as supervisors. This is correct behavior — the district_type filter in `FindPoliticiansByGeoMatches` prevents cross-matching.
 
 ---
 
 ## MVP Definition
 
-### Launch With (v1.5)
+### Launch With (v1.6)
 
-Minimum viable set to achieve the milestone goal: address-only search, BallotReady removed, cached candidates.
+Minimum viable set to achieve full hierarchy coverage for LA County addresses.
 
-- [x] Address autocomplete as the primary (only) search input — remove ZIP-specific input path from Results.jsx UI; address field label reads "Your address"
-- [x] Confirmed address display after selection — show `formatted_address` from Google as a results sub-header
-- [x] Geofence-based politician matching for covered areas — already works; ensure it is the primary path with no BallotReady fallback
-- [x] Federal/state officials from cache when local geofence returns 0 results — extend the "no geofence matches" path in `SearchPoliticians` to still return federal + state for the geocoded state
-- [x] "No local coverage" message when local data is unavailable — frontend branch when local politicians = 0 but federal/state present
-- [x] Cached-only candidate display — new backend endpoint (or modify `/candidates/{zip}`) to read from `essentials.election_records` instead of calling BallotReady; filter `election_date >= today`
-- [x] BallotReady API key removed from required env vars — both the live officeholder path and live candidate path replaced; `BALLOTREADY_API_KEY` becomes optional/unused
+- [ ] TIGER congressional district boundaries imported for LA County (G5200, ~14 districts) — enables NATIONAL_LOWER match
+- [ ] TIGER CA Senate district boundaries imported (G5210, ~11 districts) — enables STATE_UPPER match
+- [ ] TIGER CA Assembly district boundaries imported (G5220, ~24 districts) — enables STATE_LOWER match
+- [ ] LA County Supervisorial District boundaries imported (5 districts, from LA County GIS Portal) — enables COUNTY match
+- [ ] LA County school district boundaries imported (G5420, 80+ districts, from LA County EGIS or TIGER UNSD) — enables SCHOOL match
+- [ ] TIGER incorporated places imported for LA County cities (G4110, 88 cities) — enables LOCAL match for city councils
+- [ ] Diagnostic SQL: for each imported geofence, does a district + politician exist? Surface unmatched geo_ids as a report
+- [ ] Politician gap-fill for LA County supervisors (5 records) — minimum needed to show county-level results
+- [ ] Politician gap-fill for at least LA City council members (15 members) — LA City is the largest single city
+- [ ] Repeatable import script documented with parameters for state FIPS, county FIPS, TIGER layer — usable for next region
+- [ ] Idempotent upsert: `ON CONFLICT (geo_id, mtfcc) DO UPDATE` on geofence_boundaries
 
-### Add After Validation (v1.x)
+### Add After Validation (v1.6.x)
 
-Features to add once the core v1.5 flow is confirmed working.
+Features to add once core coverage is working and tested with real LA County addresses.
 
-- [ ] "Showing results for [City, State]" sub-header — low effort polish once address flow works
-- [ ] Coverage indicator badge (geofence-matched vs. cache-only) — uses existing `X-Data-Status` header, frontend only
-- [ ] Candidate data freshness date ("as of [date]") — show import timestamp with candidate toggle
-- [ ] Address-based candidate endpoint instead of ZIP fallback — currently candidates fetch by ZIP derived from geocoded address; a true address-based candidate endpoint would be more precise
+- [ ] Politician gap-fill for remaining 87 city councils (data entry tool for most, manual for largest) — full LOCAL coverage
+- [ ] Politician gap-fill for LA County school board members (80+ school districts) — full SCHOOL coverage
+- [ ] Coverage dashboard query showing MTFCC coverage with district + politician match rate
+- [ ] LA City council district boundaries (X0001, 15 districts) imported once LA City council records exist
+- [ ] "Showing results for Los Angeles, CA" building image — LA city hall photograph for LOCAL tier
 
 ### Future Consideration (v2+)
 
-Features to defer: significant complexity or not needed for stated milestone goal.
+Features to defer: scope creep or requires non-existent data sources.
 
-- [ ] `PlaceAutocompleteElement` migration (new Google API) — existing customers unaffected until deprecation; current hook still works for EV; migrate when forced
-- [ ] Full address validation (undeliverable address detection) — requires `PlaceAutocompleteElement` + Address Validation API; adds session billing complexity
-- [ ] Wider geofence coverage (import TIGER shapefiles for more states/counties) — data import work, not feature work; needed before the platform is useful nationally
-- [ ] Candidate endorsement/stances display in ZIP results (not just profile) — requires significant frontend rework; currently lazy-loaded on profile view only
+- [ ] Automated TIGER vintage refresh — handle as planned event on redistricting cycles, not automation
+- [ ] Expansion to other CA counties (San Diego, Orange County) — same pipeline, new politician data needed
+- [ ] Full national coverage — requires politician data for every county, not a boundary problem
+- [ ] Voting precinct (VTD) boundaries — different use case, separate table if ever needed
+- [ ] Real-time LA County official sync — requires new data provider contract
 
 ---
 
@@ -128,117 +191,183 @@ Features to defer: significant complexity or not needed for stated milestone goa
 
 | Feature | User Value | Implementation Cost | Priority |
 |---------|------------|---------------------|----------|
-| Address autocomplete as primary input | HIGH — reduces friction, removes ZIP guessing | LOW — hook already exists, UI change only | P1 |
-| Confirmed address display | MEDIUM — trust signal, UX polish | LOW — `formatted_address` already available | P1 |
-| Geofence-only politician matching | HIGH — core milestone requirement | LOW — already works; remove BallotReady fallback | P1 |
-| Federal/state when local unavailable | HIGH — prevents blank results outside covered areas | LOW — extend existing `SearchPoliticians` path | P1 |
-| "No local coverage" user message | HIGH — prevents confused blank pages | LOW — frontend branch, no backend changes | P1 |
-| Cached candidate endpoint | HIGH — removes last live BallotReady call | MEDIUM — new SQL query, endpoint, data mapping | P1 |
-| BallotReady key removal | HIGH — the milestone's defining outcome | LOW — env var change + code cleanup after above | P1 |
-| "Showing results for [City]" header | MEDIUM — trust/orientation signal | LOW — cosmetic | P2 |
-| Coverage indicator badge | LOW — power user only | LOW — uses existing header | P2 |
-| Candidate freshness date | MEDIUM — honest about data age | LOW — add import timestamp to response | P2 |
-| PlaceAutocompleteElement migration | LOW for existing customers | HIGH — requires hook rewrite, session tokens | P3 |
-| Wider geofence coverage | HIGH for national launch | HIGH — data import / ops work | P3 |
+| Congressional district boundaries (G5200) | HIGH — every address shows U.S. Rep | LOW — single ogr2ogr command, filter CA | P1 |
+| CA Senate boundaries (G5210) | HIGH — every address shows state senator | LOW — single ogr2ogr command | P1 |
+| CA Assembly boundaries (G5220) | HIGH — every address shows Assembly member | LOW — single ogr2ogr command | P1 |
+| LA County supervisor boundaries (GIS Portal) | HIGH — county residents expect supervisors | LOW — GeoJSON download, one insert | P1 |
+| School district boundaries (G5420) | HIGH — school board elections are high-volume | MEDIUM — 80+ districts, GEOID matching | P1 |
+| City boundaries (G4110) | HIGH — 88 cities with city councils | MEDIUM — TIGER PLACE layer, county filter | P1 |
+| Politician gap-fill: 5 supervisors | HIGH — needed for supervisor districts to return results | LOW — 5 records, manual entry acceptable | P1 |
+| Politician gap-fill: 15 LA City council | HIGH — largest city, most users | MEDIUM — 15 records + district geo_id linkage | P1 |
+| GEOID ↔ geo_id diagnostic query | HIGH — prevents silent failures | LOW — SQL query, run after every import | P1 |
+| Repeatable import script | MEDIUM — enables future regions | MEDIUM — parameterized bash + ogr2ogr | P1 |
+| Idempotent upsert | MEDIUM — safe re-runs | LOW — single SQL change | P1 |
+| Politician gap-fill: 87 remaining city councils | HIGH value when complete | HIGH — hundreds of records, data sourcing | P2 |
+| School board member records (80+ districts) | HIGH value when complete | HIGH — hundreds of records, data sourcing | P2 |
+| LA City council district boundaries (X0001) | MEDIUM — needed for ward-level precision | LOW — boundary only, blocked on politician records | P2 |
+| Coverage dashboard SQL view | MEDIUM — ops visibility | LOW | P2 |
+| LA City hall building photo | LOW — visual polish | LOW | P3 |
 
 **Priority key:**
-- P1: Must have for v1.5 launch
-- P2: Should have, add in v1.5.x polish pass
-- P3: Future milestone
+- P1: Must have for v1.6 launch — full federal/state/county/school coverage for any LA County address
+- P2: Should have — completes local city council and school board coverage
+- P3: Nice to have — visual polish and ops tooling
 
 ---
 
-## Edge Case Behavior Specifications
+## TIGER Boundary Import: Technical Notes
 
-These are the specific scenarios that need explicit implementation decisions. Research shows civic apps consistently fail silently on these; explicit handling is what separates polished tools from MVP hacks.
+### Layer Download URLs (2025 Vintage)
 
-### Case 1: Address geocodes but geofence has no data
+All from `https://www2.census.gov/geo/tiger/TIGER2025/`:
 
-**What happens today:** `SearchPoliticians` logs "no politicians found for geo-IDs (area not pre-populated)" and falls through to BallotReady live fetch.
+| Layer | Directory | File Pattern | Filter for LA County |
+|-------|-----------|--------------|----------------------|
+| Congressional Districts (119th) | `CD119/` | `tl_2025_us_cd119.zip` | STATEFP = '06' (California) |
+| CA State Senate | `SLDU/` | `tl_2025_06_sldu.zip` | State-scoped, no county filter needed |
+| CA State Assembly | `SLDL/` | `tl_2025_06_sldl.zip` | State-scoped, no county filter needed |
+| Unified School Districts | `UNSD/` | `tl_2025_06_unsd.zip` | STATEFP='06'; spatial intersection with LA County |
+| Places (incorporated cities) | `PLACE/` | `tl_2025_06_place.zip` | STATEFP='06'; COUNTYFP via relationship file or spatial filter |
+| County | `COUNTY/` | `tl_2025_us_county.zip` | STATEFP='06', COUNTYFP='037' |
 
-**What must happen in v1.5:** Fall back to federal + state officials from cache using `geoResult.State`. Return them with `X-Data-Status: cache-only`. Frontend shows: "We found your representatives at the federal and state level. Local district data for this address is not yet available."
+### GEOID Format by Layer Type
 
-**Why this matters:** This is the most common case for any address outside Bloomington, IN and Los Angeles, CA (the only areas with imported geofences). Getting this wrong means the vast majority of addresses return an empty page.
+TIGER GEOIDs follow predictable patterns that must match `essentials.districts.geo_id`:
 
-### Case 2: Google geocoding fails (bad address, API error)
+| Layer | GEOID Format | Example |
+|-------|-------------|---------|
+| Congressional Districts | `STATEFP(2) + CD number(2)` | `0633` = CA 33rd district |
+| State Senate (SLDU) | `STATEFP(2) + district(3)` | `06025` = CA Senate district 25 |
+| State Assembly (SLDL) | `STATEFP(2) + district(3)` | `06050` = CA Assembly district 50 |
+| Places | `STATEFP(2) + PLACEFP(5)` | `0644000` = City of Los Angeles |
+| Unified School Districts | `STATEFP(2) + UNSDLEA(5)` | `0610000` = specific district |
+| County | `STATEFP(2) + COUNTYFP(3)` | `06037` = LA County |
 
-**What happens today:** Falls through to BallotReady live address lookup.
+Critical note: The `geo_id` values in `essentials.districts` come from BallotReady's `geo_id` field, which uses Census GEOIDs. They should match — but verify with the diagnostic query before assuming alignment.
 
-**What must happen in v1.5:** Return HTTP 400 with message "We could not find this address. Please check the address and try again." Frontend catches this and shows the error. No fallback to BallotReady.
+### ogr2ogr Command Pattern
 
-**Why this matters:** Without the BallotReady fallback, a geocoding failure must produce a user-friendly error — not a 502 or silent empty result.
+```bash
+# Congressional Districts (G5200) — filter CA only
+ogr2ogr -f PostgreSQL \
+  PG:"host=HOST dbname=DB user=USER password=PASS" \
+  tl_2025_us_cd119.shp \
+  -nln essentials.geofence_boundaries_staging \
+  -where "STATEFP = '06'" \
+  -t_srs EPSG:4326 \
+  -nlt PROMOTE_TO_MULTI \
+  -sql "SELECT GEOID as geo_id, 'G5200' as mtfcc, NAMELSAD as name, STATEFP as state, 'census_tiger_2025' as source FROM tl_2025_us_cd119"
+```
 
-### Case 3: Address autocomplete selection vs. typed ZIP
+Then upsert from staging:
+```sql
+INSERT INTO essentials.geofence_boundaries (geo_id, mtfcc, name, state, source, geometry)
+SELECT geo_id, mtfcc, name, state, source, ST_Multi(ST_MakeValid(wkb_geometry))
+FROM essentials.geofence_boundaries_staging
+ON CONFLICT (geo_id, mtfcc) DO UPDATE
+  SET geometry = EXCLUDED.geometry,
+      source = EXCLUDED.source,
+      imported_at = now();
+```
 
-**What happens today (Results.jsx):** The hook detects ZIP (`/^\d{5}$/.test()`) vs address and routes differently. ZIP goes to `/politicians/{zip}`, address goes to `/politicians/search`.
+### LA County GIS Portal: ArcGIS REST Download
 
-**What must happen in v1.5:** Typing a ZIP into the address field will work because Google Places Autocomplete converts a ZIP to a formatted address (e.g., "47401" becomes "Bloomington, IN 47401, USA"). The backend geocodes that formatted string and gets coordinates. The geofence lookup then runs. The ZIP warmer cache is not triggered. This is correct behavior — geofence is more precise than ZIP-grid.
+Supervisorial Districts available via ArcGIS feature service confirmed active:
 
-**Implementation note:** The frontend `isZip` detection and the `/politicians/{zip}` path can be deprecated in the Results page. The address path handles ZIPs automatically through Google.
+- REST endpoint: `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27`
+- Layer: "Supervisorial District (Current)" (ID: 27)
+- Download formats: Shapefile, GeoJSON, CSV, KML via eGIS Hub
+- Hub URL: `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about`
 
-### Case 4: Candidate toggle — no cached data exists
+School District Boundaries (LA County EGIS Hub):
+- Layer: "School District Boundaries" (ID: 25 in Political_Boundaries service)
+- Hub: `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::school-district-boundaries/about`
+- Alternative: TIGER UNSD layer (statewide, same GEOID format)
 
-**What happens today:** Live BallotReady fetch returns real candidates.
-
-**What must happen in v1.5:** If `essentials.election_records` has no future elections for the inferred ZIP/location, the toggle shows nothing (or a message: "No upcoming election candidates are available for this area"). This is honest and correct — it is not a bug.
-
-**Why this matters:** Election records are only populated for politicians who have been fetched from BallotReady candidacy data. Areas that were never fetched will have no records. This is a data coverage gap, not an application error. The UX must distinguish between "no candidates" and "feature unavailable."
-
-### Case 5: Google Maps API key missing or quota exceeded
-
-**What happens today:** `geocoding/google.go` `NewClient()` returns nil when key is missing — graceful degradation.
-
-**What must happen in v1.5:** When `GeoClient` is nil (no key), the address search endpoint should return a clear error: "Address search is currently unavailable. Please try again later." This path is already handled by the `GeoClient != nil` guard in `SearchPoliticians`. The only change is the error response when it's nil.
+City Boundaries:
+- Hub: `https://hub.arcgis.com/datasets/lacounty::la-county-city-boundaries`
+- LA County city boundaries vs. TIGER PLACE: TIGER PLACE is preferred (standard GEOID, consistent MTFCC)
 
 ---
 
-## Competitor Reference: How Comparable Tools Handle These Cases
+## Politician Record Gap-Fill Strategy
 
-| Tool | Address input type | No coverage handling | Candidate display |
-|------|--------------------|----------------------|-------------------|
-| Ballotpedia "Who Represents Me" | Google Places autocomplete (legacy widget) | "We encountered an error determining your location. Please go back and try again." — unhelpful generic error | Shows candidates inline with incumbents, labeled with "Candidate" badge; grouped by race |
-| Google "Who represents me" | Native Google Maps search with full Places | Falls back to county/state level if local data absent; shows what it has | Election-specific; not a permanent feature |
-| My Reps (datamade.us) | Free-text address, no autocomplete | "We couldn't find any representatives for that address. Please try again." | Does not show candidates |
-| vote.gov | Address input with autocomplete | Redirects to state election office if no data | No candidates; links to state ballot lookup |
-| EV Essentials (current) | ZIP or address (both accepted) | Empty result list + loading spinner | Live BallotReady fetch via toggle (v1.0+) |
-| EV Essentials (v1.5 target) | Address only (ZIP still works via geocode) | Federal/state from cache + coverage message | Cached election records, toggle opt-in |
+### What Likely Already Exists (from BallotReady Import, pre-v1.5)
 
-**Key observation:** Every tool uses Google Places Autocomplete (or equivalent) for address input. None show a blank page on no coverage — they all show partial data or an explanatory message. EV's approach of showing federal/state from cache when local is unavailable is more useful than competitor error messages.
+State and federal officials for California were fetched during the BallotReady cache warming period. These records have `external_id` from BallotReady and their districts should have `geo_id` populated from BallotReady's `geo_id` field. The congressional and state legislative boundary imports (G5200, G5210, G5220) primarily need the geometry — not new politician records.
+
+**Verification query:**
+```sql
+SELECT district_type, COUNT(*) as count
+FROM essentials.politicians p
+JOIN essentials.offices o ON o.politician_id = p.id
+JOIN essentials.districts d ON o.district_id = d.id
+WHERE d.state = 'CA'
+GROUP BY district_type;
+```
+
+If this returns rows for `NATIONAL_LOWER`, `STATE_UPPER`, `STATE_LOWER`, those politicians exist. Missing `geo_id` values on their districts is the only remaining gap.
+
+### What Does NOT Exist (requires gap-fill)
+
+Local LA County officials were NOT fetched by the BallotReady warmer. BallotReady's API was address-specific and local results depended on cache warming for specific ZIP codes. LA County local offices (supervisors, city councils, school boards) require separate sourcing.
+
+**Deduplication strategy for manual gap-fill:**
+
+1. External ID first: if the politician was ever fetched from BallotReady, they have an `external_id`. Match on `external_id` before creating a new record. The `Politician.ExternalID` field has a `uniqueIndex` — duplicate external IDs will fail at DB level.
+2. No external ID (locally sourced): assign a synthetic negative integer or use a separate source tag (`source='manual'`) to avoid collisions with BallotReady's positive integer IDs. The staging tool (`/staging/*`) supports manual politician creation and review workflow.
+3. Name + district as soft match: if a politician appears in both a BallotReady partial record and manual entry, compare full_name + district_type + state. Do not merge automatically — flag for human review via the staging workflow.
+4. OCD-ID as secondary identifier: LA County supervisors and some city officials have OCD-IDs (Open Civic Data identifiers). If known, store in `essentials.districts.ocd_id` and `essentials.geofence_boundaries.ocd_id`. OCD-IDs are stable across data sources and can resolve duplicates when BallotReady external_id is unknown.
+
+### Data Sources for Gap-Fill
+
+| Politician type | Count in LA County | Data source | Effort |
+|-----------------|-------------------|-------------|--------|
+| U.S. Representatives | ~14 | Likely in DB already | Verify geo_id |
+| CA State Senators | ~11 | Likely in DB already | Verify geo_id |
+| CA Assembly members | ~24 | Likely in DB already | Verify geo_id |
+| LA County Supervisors | 5 | Manual entry (official site: bos.lacounty.gov) | 1-2 hours |
+| LA City Council | 15 | Manual entry (lacity.gov/council) | 2-4 hours |
+| LA City Mayor/exec | 1-3 | Manual entry | 30 min |
+| School board members | ~300+ across 80+ districts | Too many for manual; requires data sourcing | Deferred to v1.6.x or later |
+| Other city councils | ~800+ across 87 cities | Too many for manual | Deferred to v2+ |
+
+The realistic v1.6 MVP focuses on: verify federal/state records exist, add 5 supervisors, add 15 LA City council members. School boards and smaller city councils are deferred.
 
 ---
 
-## Google Maps Places API: Critical Notes for v1.5
+## Competitor Reference: How Comparable Tools Handle Regional Coverage
 
-**Current implementation (HIGH confidence — from codebase):**
-- Frontend: `useGooglePlacesAutocomplete` hook uses `@googlemaps/js-api-loader`, `importLibrary('places')`, `placesLib.Autocomplete` (legacy class), restricted to US, `types: ['geocode']`
-- Backend: `geocoding/google.go` uses Geocoding API (not Places) to convert address strings to lat/lng
+| Tool | Coverage model | Boundary source | Gap-fill for local officials |
+|------|----------------|-----------------|-------------------------------|
+| Ballotpedia "Who Represents Me" | National, all districts | Proprietary data + TIGER | Comprehensive editorial team |
+| Google "Who represents me" | National federal + state | Proprietary | Does not cover local elections |
+| My Reps (DataMade) | City of Chicago focus | Custom shapefiles | Manual curation |
+| vote.gov | Links to state election offices | None (redirection model) | N/A |
+| OpenStates | State legislative only | TIGER SLDU/SLDL | No local |
+| EV Essentials (v1.6 target) | LA County full hierarchy | TIGER + LA County GIS | Manual entry for supervisors + LA City council; deferred for rest |
 
-**API status (HIGH confidence — Google official docs, March 2025):**
-- `google.maps.places.Autocomplete` (legacy class) is closed to NEW customers as of March 1, 2025
-- Existing customers (EV is an existing customer) are unaffected — the legacy class still works, still receives bug fixes for major regressions
-- `PlaceAutocompleteElement` (new web component) is the recommended replacement but is not required for existing customers
-- Migration to `PlaceAutocompleteElement` is a v2+ concern unless forced by deprecation
-
-**Billing (MEDIUM confidence — Google docs, current pricing page):**
-- Session-based billing: ~$2.83 per 1,000 autocomplete requests without sessions; session pricing bundles requests
-- For EV's scale (nonprofit, low volume), autocomplete costs are minimal — Google provides $200/month free credit which covers ~70,000 session-based autocomplete interactions
-- Backend Geocoding API (server-side) is billed separately: $5/1,000 requests, covered by the same $200 credit
-- Risk: cost spike if search volume grows unexpectedly — monitor with billing alerts
+**Key observation:** No tool covers all local levels (city council, school board) comprehensively without a large editorial/data team or paid API. The realistic EV approach is: cover the high-value local offices (supervisors, largest cities) manually and build the import pipeline infrastructure so coverage can grow incrementally.
 
 ---
 
 ## Sources
 
-- Google Maps Platform — Place Autocomplete Widget (New): https://developers.google.com/maps/documentation/javascript/place-autocomplete-new
-- Google Maps Platform — Session Pricing: https://developers.google.com/maps/documentation/javascript/session-pricing
-- Google Maps Platform — Legacy Autocomplete (status): https://developers.google.com/maps/documentation/javascript/legacy/place-autocomplete
-- visgl/react-google-maps Issue #736 — March 2025 legacy Autocomplete deprecation notice: https://github.com/visgl/react-google-maps/issues/736
-- Ballotpedia "Who Represents Me" tool (observed behavior): https://ballotpedia.org/lookup/elected-officials.php
-- My Reps (DataMade) — no-coverage fallback message: https://myreps.datamade.us/
-- EV Codebase: `essentials/src/hooks/useGooglePlacesAutocomplete.js`, `EV-Backend/internal/essentials/geocoding/google.go`, `EV-Backend/internal/essentials/geofence_lookup.go`, `EV-Backend/internal/essentials/handlers.go` (SearchPoliticians, GetCandidatesByZip)
-- EV PROJECT.md — v1.5 milestone definition
+- U.S. Census Bureau TIGER/Line Shapefiles 2025: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+- TIGER FTP directory: https://www2.census.gov/geo/tiger/TIGER2025/
+- LA County GIS Portal — Political Boundaries ArcGIS REST: https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/layers
+- LA County Enterprise GIS Hub: https://egis-lacounty.hub.arcgis.com/
+- LA County Supervisorial Districts (Current): https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about
+- LA County City Boundaries: https://hub.arcgis.com/datasets/lacounty::la-county-city-boundaries
+- LA County School District Boundaries: https://egis-lacounty.hub.arcgis.com/datasets/lacounty::school-district-boundaries/about
+- LA County Open Data Portal: https://data.lacounty.gov/
+- OCD-ID standard for civic data deduplication: https://medium.com/cicero-data/how-to-use-open-civic-data-identifiers-to-organize-political-data-c27755702509
+- ogr2ogr PostGIS import documentation: https://docs.geoserver.geo-solutions.it/edu/en/adding_data/shp_postgis_ogr.html
+- PostGIS loading data overview: https://www.crunchydata.com/blog/loading-data-into-postgis-an-overview
+- EV Codebase: `EV-Backend/internal/essentials/geofence_models.go`, `EV-Backend/internal/essentials/geofence_lookup.go` (MTFCC mapping), `EV-Backend/internal/essentials/models.go` (District.geo_id, Politician.external_id)
+- EV PROJECT.md — v1.6 milestone definition
 
 ---
 
-*Feature research for: v1.5 Address Verification & BallotReady Independence*
-*Researched: 2026-02-22*
+*Feature research for: v1.6 LA County Full Coverage & Repeatable Import Pipeline*
+*Researched: 2026-02-23*

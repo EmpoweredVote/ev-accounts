@@ -1,410 +1,409 @@
 # Architecture Research
 
-**Domain:** Civic tech — address verification and BallotReady independence (v1.5)
-**Researched:** 2026-02-22
-**Confidence:** HIGH — based on direct source inspection of all relevant backend and frontend files
+**Domain:** Civic tech — geofence import pipeline and LA County coverage expansion (v1.6)
+**Researched:** 2026-02-23
+**Confidence:** HIGH — based on direct source inspection of all backend files, prior phase summaries, and verified external sources
 
 ---
 
 ## System Overview
 
-Current state (v1.4) annotated to show v1.5 changes:
+The existing system after v1.5 ships politician data via a geofence-only lookup path. The v1.6 milestone adds coverage by populating the `geofence_boundaries` table with more polygons and the `politicians`/`offices`/`districts` tables with corresponding LA County official records. No new request-path code is needed — the lookup already works; the data is absent.
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                   FRONTEND (essentials React app)                 │
-├──────────────────────────────────────────────────────────────────┤
-│  ┌───────────────────────┐   ┌──────────────────────────────────┐ │
-│  │  Dashboard.jsx        │   │  AddressSearch.jsx  [NEW]        │ │
-│  │  plain <input> today  │   │  Google Places Autocomplete      │ │
-│  │  [REPLACE input with  │   │  widget → formattedAddress       │ │
-│  │   AddressSearch]      │   │  string → onSelect(address)      │ │
-│  └───────────────────────┘   └──────────────────────────────────┘ │
-│               POST /essentials/politicians/search                  │
-│               body: { query: "123 Main St, Bloomington IN 47401" } │
-└────────────────────────────┬─────────────────────────────────────┘
-                             │
-┌────────────────────────────▼─────────────────────────────────────┐
-│                   GO BACKEND (EV-Backend)                         │
-├──────────────────────────────────────────────────────────────────┤
-│  SearchPoliticians() handler                                      │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  1. isZip5() check                                       │    │
-│  │  2. GeoClient.Geocode(address) → lat, lng    [EXISTING]  │    │
-│  │  3. FindGeoIDsByPoint(lat, lng)  [EXISTING PostGIS]      │    │
-│  │  4. FindPoliticiansByGeoMatches()  [EXISTING DB join]    │    │
-│  │  5. Supplement with federal+state from DB  [EXISTING]    │    │
-│  │  6. [REMOVE] BallotReady fallback block                  │    │
-│  └──────────────────────────────────────────────────────────┘    │
-│                                                                   │
-│  handleZipLookup()                                                │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  [REMOVE] warmer-kick goroutines (stale check + go func) │    │
-│  │  [KEEP] fetchOfficialsFromDB(zip, state)                 │    │
-│  └──────────────────────────────────────────────────────────┘    │
-│                                                                   │
-│  Warmers (modified)                                               │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  warmFederal() — [STUB] remove Provider.FetchFederal()   │    │
-│  │  warmState()   — [STUB] remove Provider.FetchByState()   │    │
-│  │  warmLocal()   — [STUB] remove Provider.FetchByZip()     │    │
-│  │  All keep cache timestamp update logic                   │    │
-│  └──────────────────────────────────────────────────────────┘    │
-│                                                                   │
-│  setup.go                                                         │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  [REMOVE] _ "ballotready" import side-effect             │    │
-│  │  [REMOVE] provider.NewProvider(cfg) initialization       │    │
-│  │  Provider = nil  (intentional)                           │    │
-│  │  GeoClient init  [UNCHANGED]                             │    │
-│  └──────────────────────────────────────────────────────────┘    │
-│                                                                   │
-│  GetCandidatesByZip()                                             │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  [REPLACE] brProvider.Client().FetchRacesByZip()         │    │
-│  │  [WITH]    fetchCandidatesFromDB(ctx, zip)               │    │
-│  └──────────────────────────────────────────────────────────┘    │
-│                                                                   │
-│  ensureCandidacyData()                                            │
-│  ┌──────────────────────────────────────────────────────────┐    │
-│  │  [REMOVE] lazy-fetch goroutine to BallotReady            │    │
-│  │  [KEEP] serve profile from whatever is in DB             │    │
-│  └──────────────────────────────────────────────────────────┘    │
-├──────────────────────────────────────────────────────────────────┤
-│  EXTERNAL: Google Maps Geocoding API (backend only)               │
-│  maps.googleapis.com/api/geocode — address → lat, lng            │
-│  Already implemented in geocoding/google.go — no changes         │
-├──────────────────────────────────────────────────────────────────┤
-│  DATABASE (Supabase/PostgreSQL + PostGIS)                         │
-│  ┌─────────────────┐  ┌──────────────┐  ┌────────────────────┐  │
-│  │ geofence_       │  │ politicians  │  │ federal/state/zip  │  │
-│  │ boundaries      │  │ offices      │  │ cache tables       │  │
-│  │ (PostGIS GIST)  │  │ districts    │  │                    │  │
-│  └─────────────────┘  └──────────────┘  └────────────────────┘  │
-└──────────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                IMPORT PIPELINE (offline, runs locally or in CI)      │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  ┌───────────────┐  ┌────────────────────┐  ┌───────────────────┐  │
+│  │ TIGER         │  │ LA County eGIS     │  │ LA City GeoHub   │  │
+│  │ Shapefiles    │  │ ArcGIS FeatureServer│  │ ArcGIS REST API  │  │
+│  │ (Census FTP)  │  │ (supervisor dists) │  │ (council dists)  │  │
+│  └──────┬────────┘  └─────────┬──────────┘  └────────┬─────────┘  │
+│         │                     │                       │             │
+│         ▼                     ▼                       ▼             │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │           cmd/import-geofences/main.go  (NEW CLI)            │  │
+│  │                                                              │  │
+│  │  1. Download/read source file (shapefile or GeoJSON)         │  │
+│  │  2. Reproject to WGS84 (EPSG:4326) via ogr2ogr if needed    │  │
+│  │  3. For each feature:                                        │  │
+│  │     a. Map MTFCC code from source to known type              │  │
+│  │     b. Build geo_id per TIGER or BallotReady convention      │  │
+│  │     c. INSERT INTO essentials.geofence_boundaries            │  │
+│  │        ON CONFLICT (geo_id) DO UPDATE SET geometry = ...     │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+│  ┌──────────────────────────────────────────────────────────────┐  │
+│  │           cmd/import-politicians/main.go  (NEW CLI)          │  │
+│  │                                                              │  │
+│  │  Reads a CSV/JSON manifest of LA County officials            │  │
+│  │  Maps to existing politicians/offices/districts tables       │  │
+│  │  Uses external_id-keyed upsert (ON CONFLICT DO UPDATE)       │  │
+│  │  Links to districts via geo_id → district.geo_id lookup      │  │
+│  └──────────────────────────────────────────────────────────────┘  │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              DATABASE (Supabase / PostgreSQL + PostGIS)              │
+├─────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  essentials.geofence_boundaries  [PRIMARY WRITE TARGET]             │
+│  ┌──────────┬──────────┬──────────┬──────────┬────────────────────┐ │
+│  │ geo_id   │ mtfcc    │ state    │ geometry │ source             │ │
+│  │ (unique) │ G5200... │ "06"     │ PostGIS  │ "census_tiger_2024"│ │
+│  └──────────┴──────────┴──────────┴──────────┴────────────────────┘ │
+│                                                                      │
+│  essentials.districts  [LINK TABLE — geo_id joins to geofences]     │
+│  ┌──────────┬──────────────┬──────────────┬─────────────────────┐  │
+│  │ geo_id   │ district_type│ external_id  │ ocd_id              │  │
+│  │ "0637001"│ "STATE_UPPER"│ (BallotReady)│ ocd-division/...    │  │
+│  └──────────┴──────────────┴──────────────┴─────────────────────┘  │
+│                                                                      │
+│  essentials.politicians / offices / chambers / governments           │
+│  [NEW RECORDS for LA County local officials]                         │
+│                                                                      │
+│  EXISTING (unchanged) LOOKUP PATH:                                   │
+│  geofence_boundaries ←── ST_Contains(geometry, point) ──────────►  │
+│  geo_id → districts.geo_id → offices → politicians                  │
+│                                                                      │
+└─────────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼ (unchanged request path)
+┌─────────────────────────────────────────────────────────────────────┐
+│              EV-BACKEND (Go / Chi / GORM)                            │
+│  internal/essentials/                                                │
+│  ├── geofence_lookup.go  — FindGeoIDsByPoint + FindPoliticians       │
+│  │   (unchanged — mtfccToDistrictTypes map may need new entries)     │
+│  ├── handlers.go          — SearchPoliticians, GetPoliticianByID     │
+│  │   (unchanged)                                                     │
+│  └── routes.go            — HTTP route registration                  │
+│      (unchanged)                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## Component Responsibilities
 
-| Component | Current Responsibility | v1.5 Change |
-|-----------|----------------------|-------------|
-| `geocoding/google.go` | HTTP client wrapping Geocoding API, returns lat/lng + address components | None — already complete and correct |
-| `geofence_lookup.go` | PostGIS ST_Contains query + politician DB join with MTFCC disambiguation | None — already complete and correct |
-| `handlers.go: SearchPoliticians()` | ZIP/address detection, GeoClient geocoding, geofence lookup, BallotReady fallback | Delete BallotReady fallback block |
-| `handlers.go: handleZipLookup()` | Cache freshness check, kick background warmers, serve from DB | Remove warmer-kick goroutines; keep DB fetch |
-| `handlers.go: warmFederal/State/Local()` | Fetch from BallotReady via Provider + upsert + update cache timestamp | Remove Provider.Fetch*() body; keep cache timestamp update |
-| `handlers.go: GetCandidatesByZip()` | Live BallotReady races query | Replace with DB-only query against election_records |
-| `handlers.go: ensureCandidacyData()` | Lazy-fetch candidacy from BallotReady on profile view | Remove lazy-fetch goroutine; serve from DB or return empty |
-| `setup.go: Init()` | Initializes Provider + GeoClient | Remove ballotready import; stop initializing Provider |
-| `provider/` package | OfficialProvider interface + registry | No changes — keep for future extensibility |
-| `ballotready/` package | GraphQL client + transform + candidacy | Keep in place but unused; remove import from setup.go |
-| `AddressSearch.jsx` | Does not exist yet | New component — Places Autocomplete wrapper |
-| `Dashboard.jsx` | Plain text input, calls searchPoliticians on submit | Replace input with AddressSearch component |
-| `Landing.jsx` | Plain text input | Same swap |
-| `api.jsx` | POST /politicians/search with query string | No changes — already sends address string to backend |
+### Existing Components (unchanged in v1.6)
+
+| Component | Responsibility | v1.6 Change |
+|-----------|---------------|-------------|
+| `geofence_lookup.go: FindGeoIDsByPoint()` | PostGIS ST_Contains query against `geofence_boundaries`; returns (geo_id, MTFCC) pairs | None — works correctly once boundaries exist |
+| `geofence_lookup.go: FindPoliticiansByGeoMatches()` | Joins geo_id matches to politicians via districts, applies MTFCC type filters | `mtfccToDistrictTypes` may need new MTFCC entries if LA County data sources use codes not yet mapped |
+| `geofence_lookup.go: mtfccToDistrictTypes` | Maps MTFCC codes to BallotReady district types for type-restricted SQL WHERE clauses | Add any new MTFCC codes from LA County sources (e.g., G5200 for congressional already present) |
+| `handlers.go: SearchPoliticians()` | Geocodes address → geofence lookup → politician DB join | None |
+| `essentials.geofence_boundaries` table | Stores polygon geometry with geo_id + MTFCC | New rows inserted by import CLIs |
+| `essentials.districts` table | Links district geo_id to politicians; `geo_id` column is the join key | Existing rows have geo_ids matching TIGER; ensure new politician records also have matching geo_ids |
+
+### New Components (v1.6)
+
+| Component | File | Responsibility |
+|-----------|------|---------------|
+| Geofence import CLI | `EV-Backend/cmd/import-geofences/main.go` | Downloads TIGER shapefiles or reads ArcGIS GeoJSON; reprojects to EPSG:4326; inserts into `geofence_boundaries` with idempotent upsert on `geo_id`; supports `--source tiger`, `--source arcgis-featureserver`, `--state 06`, `--layer cd`, etc. |
+| Politician gap-fill CLI | `EV-Backend/cmd/import-politicians/main.go` | Reads a manifest CSV/JSON of LA County officials not yet in the DB; inserts/updates politicians, offices, districts, chambers, governments; uses `external_id`-keyed ON CONFLICT DO UPDATE; links districts to geofences via shared geo_id |
+| TIGER download helper | Inside CLI or `internal/import/tiger.go` | Constructs Census FTP URLs from state FIPS + layer name; downloads zip; extracts shapefile; passes to ogr2ogr subprocess |
+| ArcGIS REST fetcher | Inside CLI or `internal/import/arcgis.go` | Calls ArcGIS FeatureServer `/query?outFields=*&f=geojson&where=1%3D1`; paginates if needed; returns GeoJSON FeatureCollection |
+| MTFCC mapper | Inside CLI or `internal/import/mtfcc.go` | Maps shapefile-provided MTFCC codes (or inferred codes for ArcGIS sources) to BallotReady district types; validates against `mtfccToDistrictTypes` in geofence_lookup.go |
+| geo_id builder | Inside CLI | Assembles geo_id per TIGER convention (state FIPS + district number) or BallotReady convention (place FIPS + zero-padded ward) for X0001 city council sub-districts |
 
 ---
 
 ## Recommended Project Structure
 
-No new directories needed. All changes are within existing files plus one new component file:
-
 ```
-EV-Backend/internal/essentials/
-├── geocoding/
-│   └── google.go               # UNCHANGED — already complete
-├── ballotready/
-│   ├── client.go               # UNCHANGED — kept but unused
-│   ├── provider.go             # UNCHANGED — kept but unused
-│   ├── transform.go            # UNCHANGED — kept but unused
-│   └── transform_candidacy.go  # UNCHANGED — kept but unused
-├── geofence_lookup.go          # UNCHANGED — already complete
-├── geofence_models.go          # UNCHANGED
-├── handlers.go                 # PRIMARY CHANGE TARGET
-├── setup.go                    # Remove ballotready import + Provider init
-└── routes.go                   # UNCHANGED
-
-essentials/src/
-├── components/
-│   └── AddressSearch.jsx       # NEW — Places Autocomplete wrapper
-├── pages/
-│   ├── Dashboard.jsx           # Swap <input> for <AddressSearch>
-│   └── Landing.jsx             # Same swap
-├── lib/
-│   └── api.jsx                 # UNCHANGED
-└── index.html                  # Add Maps JS API script tag
+EV-Backend/
+├── cmd/
+│   ├── bulk-import/main.go         # DEPRECATED placeholder (keep, do not delete)
+│   ├── compass-import/main.go      # Existing CLI
+│   ├── seed/main.go                # Existing CLI
+│   ├── backfill-state-exec/main.go # Existing CLI
+│   ├── import-geofences/           # NEW
+│   │   └── main.go                 # TIGER shapefile + ArcGIS REST → geofence_boundaries
+│   └── import-politicians/         # NEW
+│       └── main.go                 # Official manifest → politicians/offices/districts upsert
+└── internal/
+    └── essentials/
+        ├── geofence_models.go      # UNCHANGED — GeofenceBoundary struct
+        ├── geofence_lookup.go      # MINOR EDIT — mtfccToDistrictTypes may add entries
+        └── [all other files]       # UNCHANGED
 ```
+
+### Structure Rationale
+
+- **`cmd/import-geofences/`:** Follows the existing `cmd/` pattern for standalone CLI tools. Runs locally or in CI, not as a server request handler. The geofence import is a one-time-per-region operation and does not belong in the HTTP request path.
+- **`cmd/import-politicians/`:** Separate from geofence import because the two pipelines have different source data (shapefiles vs. manual manifest or structured CSV) and different target tables.
+- **No new `internal/` packages required:** The import CLIs are self-contained enough to include helper functions within their own `main.go`. If the helpers grow beyond ~300 lines, extract to `internal/import/` sub-package.
 
 ---
 
 ## Architectural Patterns
 
-### Pattern 1: Geocode-Then-Geofence (primary address lookup path)
+### Pattern 1: Two-Table Join (the critical link between geofences and politicians)
 
-**What:** Google Maps Geocoding converts an address string to lat/lng. That point is fed into PostGIS `ST_Contains` against preloaded TIGER shapefile polygons. The matching `geo_id` values are joined to the politicians table filtered by MTFCC-compatible district types.
+**What:** The lookup pipeline joins `geofence_boundaries.geo_id` to `districts.geo_id`. Both must have matching values for a politician to be returned. This is the central architectural constraint for v1.6: importing a geofence boundary row does nothing unless a `districts` row with the same `geo_id` also exists, and importing a politician record does nothing unless a geofence row covers the address point.
 
-**This path already exists and already works** in `SearchPoliticians()`. The BallotReady fallback beneath it is what gets removed.
+**When to use:** Applies to every data import decision in v1.6. Before inserting a geofence boundary, verify whether a matching `districts` row already exists (from BallotReady data). Before inserting a politician record, verify that a geofence boundary for that district's `geo_id` will exist after the import runs.
 
-**Existing code flow (after BallotReady fallback removed):**
-```
-POST /politicians/search { query: "123 Main St, Bloomington IN" }
-  → isZip5() → false (address query)
-  → GeoClient.Geocode(query) → Result{Lat: 39.165, Lng: -86.526, State: "IN", Zip: "47401"}
-  → FindGeoIDsByPoint(39.165, -86.526)
-      → SELECT geo_id, mtfcc FROM essentials.geofence_boundaries
-         WHERE ST_Contains(geometry, ST_SetSRID(ST_MakePoint(-86.526, 39.165), 4326))
-      → [{GeoID: "18105", MTFCC: "G4020"}, {GeoID: "1847916", MTFCC: "G4110"}, ...]
-  → FindPoliticiansByGeoMatches(matches)
-      → WHERE (d.geo_id = '18105' AND d.district_type = ANY({'COUNTY','JUDICIAL'}))
-           OR (d.geo_id = '1847916' AND d.district_type = ANY({'LOCAL','LOCAL_EXEC'}))
-      → []OfficialOut (local/county politicians)
-  → fetchOfficialsFromDB("47401", "IN") to supplement with federal+state from cache
-  → deduplicate by ExternalID
-  → return []OfficialOut
-  → [REMOVED] BallotReady fallback when geofence returns 0 results
-```
+**Trade-offs:** Tight coupling between geofences and districts means import order matters. The safe order is: (1) ensure `districts` rows exist (from existing BallotReady data or new insertions), (2) insert matching `geofence_boundaries` rows. The reverse order — insert geofences first, then politicians — also works because the join is read-only at request time.
 
-**After removal:** If geofence returns 0 results (area not imported), return empty array with `X-Data-Status: no-geofence-data` header. Frontend shows a clear message.
-
-### Pattern 2: Warmers as No-Ops (BallotReady removed)
-
-**What:** The three warmer functions (`warmFederal`, `warmState`, `warmLocal`) exist to populate the DB from an external API when caches are stale. With BallotReady removed, there is no external API to call. They become no-ops.
-
-**Recommended approach — remove warmer-kick from request path:**
-Do not call warmers from `handleZipLookup` or `GetCacheStatus` at all. The 90-day stale check becomes irrelevant when there's nothing to refresh from. Data is populated via the admin import tool (`POST /admin/import`). Remove the goroutine-spawning blocks from `handleZipLookup`:
-
+**Example (the critical join in FindPoliticiansByGeoMatches):**
 ```go
-// REMOVE these blocks from handleZipLookup:
-if !federalFresh {
-    if tryAcquireLock(ctx, "federal") {
-        go func() { ... warmFederal ... }()
-    }
-}
-// (same for state + local)
+// geofence_lookup.go — this query is the integration point
+// geo_id from geofence_boundaries must match geo_id in districts
+query := `
+  SELECT DISTINCT ON (p.id) ...
+  FROM essentials.politicians p
+  JOIN essentials.offices o ON o.politician_id = p.id
+  JOIN essentials.districts d ON o.district_id = d.id
+  WHERE (d.geo_id = $1 AND d.district_type = ANY($2))
+`
 ```
 
-**Warmer function bodies become:**
+### Pattern 2: Idempotent Upsert on geo_id
+
+**What:** Both import CLIs use PostgreSQL `ON CONFLICT (geo_id) DO UPDATE SET geometry = EXCLUDED.geometry, ...` for geofence inserts, and `ON CONFLICT (external_id) DO UPDATE SET ...` for politician inserts. This makes re-running the import safe and allows refreshing boundaries when TIGER releases updated shapefiles annually.
+
+**When to use:** Every INSERT into `geofence_boundaries` and `politicians`. Never use bare INSERT without conflict handling — repeated runs (reruns after error, annual TIGER refresh) must not duplicate rows.
+
+**Trade-offs:** Requires the unique constraint on `geo_id` in `geofence_boundaries` to be present. The model comment in `geofence_models.go` says "unique constraint managed manually" — verify this constraint exists in Supabase before running the import.
+
+**Example:**
+```sql
+INSERT INTO essentials.geofence_boundaries
+  (id, geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
+VALUES
+  (uuid_generate_v4(), $1, $2, $3, $4, $5,
+   ST_GeomFromGeoJSON($6), $7, NOW()::text)
+ON CONFLICT (geo_id)
+DO UPDATE SET
+  geometry   = EXCLUDED.geometry,
+  source     = EXCLUDED.source,
+  imported_at = EXCLUDED.imported_at;
+```
+
+### Pattern 3: ogr2ogr as External Subprocess for Reprojection
+
+**What:** TIGER shapefiles use NAD83 (EPSG:4269). The `geofence_boundaries` table stores WGS84 (EPSG:4326). The Go CLI invokes `ogr2ogr` as a subprocess to reproject and convert shapefiles to GeoJSON, which is then inserted via `ST_GeomFromGeoJSON()`. This is the same approach used in v1.5 for Bloomington imports (ogr2ogr was used interactively; v1.6 automates it).
+
+**When to use:** Any TIGER shapefile import. ArcGIS FeatureServer data (LA County eGIS, LA City GeoHub) is typically served in WGS84 already — skip reprojection for those sources.
+
+**Trade-offs:** Requires ogr2ogr (GDAL) installed in the build/run environment. The alternative — Go shapefile libraries — exist (everystreet/go-shapefile, twpayne/go-shapefile) but are dormant or limited (last release 2021, no support for M/Z shapefile variants). Using ogr2ogr as a subprocess is pragmatic: it handles all shapefile variants and projection math correctly, and GDAL is a standard tool available on any developer machine and in CI.
+
+**Example (Go subprocess call):**
 ```go
-func warmFederal(ctx context.Context) error {
-    log.Printf("[warmFederal] No-op: BallotReady removed. Use admin import to refresh data.")
-    return nil
+func reprojectShapefile(shpPath, outGeoJSONPath, sourceEPSG, targetEPSG string) error {
+    cmd := exec.Command("ogr2ogr",
+        "-f", "GeoJSON",
+        "-s_srs", "EPSG:"+sourceEPSG,
+        "-t_srs", "EPSG:"+targetEPSG,
+        outGeoJSONPath,
+        shpPath,
+    )
+    return cmd.Run()
 }
 ```
 
-**Keep:** The `FederalCache`, `StateCache`, `ZipCache` table models and the `fetchOfficialsFromDB` query that uses them. The cache table approach is still the right architecture — it just gets populated by admin import now instead of background warmers.
+### Pattern 4: Layer-Based MTFCC Assignment for ArcGIS Sources
 
-### Pattern 3: Google Places Autocomplete Widget (frontend)
+**What:** TIGER shapefiles include an MTFCC attribute per feature. ArcGIS FeatureServer data (LA County supervisor districts, LA City council districts) does not include MTFCC — the MTFCC must be assigned based on which layer is being imported. The import CLI accepts a `--mtfcc` flag that is applied to all features from that run.
 
-**What:** Replace the plain `<input>` in Dashboard.jsx and Landing.jsx with a Google Places Autocomplete widget. On selection the user gets address suggestions; on pick the widget provides a `formattedAddress` string that is sent to the existing `POST /politicians/search` endpoint.
+**When to use:** Any ArcGIS REST source where MTFCC is not embedded in the feature attributes. The correct MTFCC for each LA County layer:
 
-**Design decision — who geocodes?**
+| Source Layer | MTFCC to Assign | District Type Mapped |
+|-------------|----------------|---------------------|
+| TIGER congressional (tl_2024_06_cd119) | G5200 (from shapefile) | NATIONAL_LOWER |
+| TIGER state senate (tl_2024_06_sldu) | G5210 (from shapefile) | STATE_UPPER |
+| TIGER state assembly (tl_2024_06_sldl) | G5220 (from shapefile) | STATE_LOWER |
+| TIGER county (tl_2024_06_county) | G4020 (from shapefile) | COUNTY, JUDICIAL |
+| TIGER unified school district (tl_2024_06_unsd) | G5420 (from shapefile) | SCHOOL |
+| LA County supervisor districts (eGIS FeatureServer) | G4020 (inferred — county-level) | COUNTY |
+| LA City council districts (GeoHub FeatureServer) | X0001 (inferred — ward sub-district) | LOCAL |
+| Other incorporated city boundaries (TIGER G4110) | G4110 (from shapefile) | LOCAL, LOCAL_EXEC |
 
-Two options exist:
+**Trade-offs:** Assigning MTFCC at the layer level (not per-feature) is correct for all homogeneous layers. It would fail if a single ArcGIS layer mixed district types, which does not occur in practice for the target datasets.
 
-**Option A: Frontend autocomplete for UX, backend geocodes (recommended for v1.5)**
-- Frontend: Places Autocomplete widget shows suggestions as user types
-- On selection: sends `formattedAddress` string to existing endpoint
-- Backend: calls `GeoClient.Geocode(address)` as it already does
-- Pros: No change to backend endpoint; consistent with existing flow; backend API key not exposed
-- Cons: Two geocoding-equivalent calls per address search (Places API internally geocodes, then backend geocodes again)
+### Pattern 5: geo_id Construction per Source Convention
 
-**Option B: Frontend resolves lat/lng, backend receives coordinates**
-- Frontend: after selection calls `place.fetchFields(['location'])` to get lat/lng
-- Sends `{ lat, lng }` to a new backend endpoint `POST /politicians/locate`
-- Backend calls `FindGeoIDsByPoint` directly, skips geocoding
-- Pros: Eliminates redundant geocoding call; more precise (autocomplete selection = exact point)
-- Cons: New endpoint; `VITE_GOOGLE_MAPS_API_KEY` exposes Places key to browser (already needed for autocomplete widget anyway)
+**What:** The `geo_id` in `geofence_boundaries` must match the `geo_id` in `essentials.districts` for the lookup join to work. TIGER shapefiles include a GEOID attribute that can be used directly. ArcGIS sources and the X0001 ward boundary convention require constructing the geo_id from component fields.
 
-**Use Option A for v1.5.** The redundant geocoding call is acceptable at nonprofit traffic scale. Option B is a clean optimization for a future milestone once the address flow is proven stable.
+**Conventions:**
 
-**Implementation for Option A:**
+| Layer Type | TIGER GEOID Format | Example |
+|-----------|-------------------|---------|
+| Congressional district | state FIPS (2) + district number (2, zero-padded) | "0637" = CA district 37 |
+| State senate (SLDU) | state FIPS (2) + district number (3, zero-padded) | "06037" = CA SD-37 |
+| State assembly (SLDL) | state FIPS (2) + district number (3, zero-padded) | "06060" = CA AD-60 |
+| County | state FIPS (2) + county FIPS (3) | "06037" = LA County |
+| Unified school district | state FIPS (2) + LEA code (5) | "0622590" = LAUSD |
+| Incorporated place (city) | state FIPS (2) + place FIPS (5) | "0644000" = LA City |
+| City council ward (X0001) | place FIPS (7) + ward number (5, zero-padded) | "064400000001" = LA CD-1 |
+| Supervisor district (G4020) | county FIPS (5) + district number (3, zero-padded) | "06037001" = LA Sup Dist 1 |
 
-```jsx
-// essentials/src/components/AddressSearch.jsx
-import { useEffect, useRef } from "react";
+**Critical:** The geo_id in `geofence_boundaries` must exactly match what BallotReady stored in `essentials.districts.geo_id`. Before importing geofences, query the districts table to see what geo_ids already exist for the target area, and import matching values.
 
-export function AddressSearch({ onSelect, placeholder, className }) {
-  const inputRef = useRef(null);
-
-  useEffect(() => {
-    if (!window.google?.maps?.places || !inputRef.current) return;
-
-    const autocomplete = new window.google.maps.places.Autocomplete(
-      inputRef.current,
-      {
-        types: ["address"],
-        componentRestrictions: { country: "us" },
-      }
-    );
-
-    const listener = autocomplete.addListener("place_changed", () => {
-      const place = autocomplete.getPlace();
-      if (place?.formatted_address) {
-        onSelect(place.formatted_address);
-      }
-    });
-
-    return () => window.google.maps.event.removeListener(listener);
-  }, [onSelect]);
-
-  return (
-    <input
-      ref={inputRef}
-      type="text"
-      placeholder={placeholder || "Enter your address"}
-      className={className}
-    />
-  );
-}
-```
-
-**Load Maps JS API in `essentials/index.html`:**
-```html
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=%VITE_GOOGLE_MAPS_API_KEY%&libraries=places"
-  async
-  defer
-></script>
-```
-
-Note: Vite doesn't replace env vars in raw HTML. Options:
-1. Inject via `vite-plugin-html` (adds a dependency)
-2. Use a JS loader in `main.jsx` that reads `import.meta.env.VITE_GOOGLE_MAPS_API_KEY`
-3. Set the key via Netlify environment substitution in `_headers` or build plugins
-
-**Recommended: JS dynamic loader in main.jsx:**
-```javascript
-// essentials/src/loadMapsApi.js
-export function loadGoogleMapsApi(key) {
-  return new Promise((resolve, reject) => {
-    if (window.google?.maps?.places) { resolve(); return; }
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${key}&libraries=places`;
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-}
-```
-
-Call in `App.jsx` or `main.jsx`:
-```javascript
-loadGoogleMapsApi(import.meta.env.VITE_GOOGLE_MAPS_API_KEY)
-  .catch(err => console.warn("Maps API failed to load:", err));
-```
-
-**Billing note:** The legacy `google.maps.places.Autocomplete` widget manages session tokens automatically. Billing is per session (~$0.017/session in the US) rather than per keystroke. The new `PlaceAutocompleteElement` (Web Component) is still in alpha/beta — avoid it.
-
-### Pattern 4: Candidates from DB Cache Only
-
-**What:** `GetCandidatesByZip` currently calls `brProvider.Client().FetchRacesByZip()` live against the BallotReady API. After removal, it queries the `election_records` table that was populated during the last BallotReady import run.
-
-**What changes:**
+**Example (supervisor district geo_id):**
 ```go
-// BEFORE: live BallotReady races call
-func GetCandidatesByZip(w http.ResponseWriter, r *http.Request) {
-    brProvider, ok := Provider.(*ballotready.BallotReadyProvider)
-    if !ok {
-        writeJSON(w, []CandidateOut{})
-        return
-    }
-    races, err := brProvider.Client().FetchRacesByZip(r.Context(), zip)
-    // ...
-}
-
-// AFTER: DB-only query
-func GetCandidatesByZip(w http.ResponseWriter, r *http.Request) {
-    candidates, err := fetchCandidatesFromDB(r.Context(), zip)
-    if err != nil {
-        log.Printf("[GetCandidatesByZip] db error: %v", err)
-        writeJSON(w, []CandidateOut{})
-        return
-    }
-    writeJSON(w, candidates)
-}
+// LA County FIPS = "06037"
+// Supervisor District 1 → geo_id = "06037001"
+geoID := fmt.Sprintf("%s%03d", countyFIPS, districtNumber)
 ```
-
-`fetchCandidatesFromDB` queries `essentials.election_records` joined via politician → office → district, filtered to districts whose `geo_id` appears in the geofence lookup result for the ZIP's centroid (or the ZIP cache's state mapping).
 
 ---
 
 ## Data Flow
 
-### Address Search (v1.5 — geofence path)
+### Address Lookup (existing, unchanged)
 
 ```
-User types partial address in AddressSearch widget
+User enters address → Google Places Autocomplete → formattedAddress
     ↓
-Google Places Autocomplete shows suggestions (session-billed)
+POST /essentials/politicians/search { query: "123 Main St, Los Angeles CA 90012" }
     ↓
-User selects → place.formatted_address = "123 Main St, Bloomington, IN 47401"
+GeoClient.Geocode("123 Main St...") → { lat: 34.052, lng: -118.243, state: "CA" }
     ↓
-onSelect(formattedAddress) → setActiveQuery(formattedAddress) in Dashboard.jsx
-    ↓
-usePoliticianData(activeQuery) → searchPoliticians(query) in api.jsx
-    ↓
-POST /essentials/politicians/search { query: "123 Main St, Bloomington, IN 47401" }
-    ↓
-[SearchPoliticians()] isZip5? NO
-    ↓
-GeoClient.Geocode("123 Main St...") → { lat: 39.165, lng: -86.526, state: "IN" }
-Google Maps Geocoding API: ~200ms, ~$0.005
-    ↓
-FindGeoIDsByPoint(39.165, -86.526)
-PostGIS ST_Contains: ~10-50ms with GiST index
-    → matches: [{G4020/18105}, {G4110/1847916}, {G5220/4702}, {G5210/4702}]
+FindGeoIDsByPoint(34.052, -118.243)
+  SELECT geo_id, mtfcc FROM essentials.geofence_boundaries
+  WHERE ST_Contains(geometry, ST_SetSRID(ST_MakePoint(-118.243, 34.052), 4326))
+  → e.g. [{geo_id:"06037", mtfcc:"G4020"}, {geo_id:"0637", mtfcc:"G5200"},
+          {geo_id:"06065", mtfcc:"G5210"}, {geo_id:"06049", mtfcc:"G5220"},
+          {geo_id:"0644000", mtfcc:"G4110"}, {geo_id:"064400000001", mtfcc:"X0001"}]
     ↓
 FindPoliticiansByGeoMatches(matches)
-DB join with MTFCC-restricted district types: ~20-100ms
-    → localOfficials: []OfficialOut (county + city + school board...)
+  WHERE (d.geo_id = '06037' AND d.district_type = ANY({'COUNTY','JUDICIAL'}))
+     OR (d.geo_id = '0637'  AND d.district_type = ANY({'NATIONAL_LOWER'}))
+     OR (d.geo_id = '06065' AND d.district_type = ANY({'STATE_UPPER'}))
+     OR (d.geo_id = '06049' AND d.district_type = ANY({'STATE_LOWER'}))
+     OR (d.geo_id = '0644000' AND d.district_type = ANY({'LOCAL','LOCAL_EXEC'}))
+     OR (d.geo_id = '064400000001' AND d.district_type = ANY({'LOCAL'}))
+  → []OfficialOut (county supervisor, House member, senator, assemblymember,
+                   mayor/city officials, city council member)
     ↓
-fetchOfficialsFromDB("47401", "IN")
-    → federalOfficials + stateOfficials from cache tables
+fetchOfficialsFromDB(zip, "CA") → supplement with federal+state from DB
     ↓
-Deduplicate by ExternalID, merge results
-    ↓
-Return []OfficialOut (local + state + federal)
-
-Total backend time: ~250-400ms (mostly geocoding API call)
+Deduplicate → return merged []OfficialOut
 ```
 
-### ZIP Search (largely unchanged)
+### Import Pipeline (new, offline)
 
 ```
-User types "47401"
+Developer runs: go run ./cmd/import-geofences --source tiger --state 06 --layers cd,sldu,sldl,county,unsd,place
     ↓
-AddressSearch widget shows no suggestions (not an address)
-User presses Enter or clicks search
+For each layer:
+  Download ZIP from https://www2.census.gov/geo/tiger/TIGER2024/[LAYER]/tl_2024_06_[layer].zip
     ↓
-POST /essentials/politicians/search { query: "47401" }
+  Run ogr2ogr to reproject NAD83→WGS84, output GeoJSON
     ↓
-[SearchPoliticians()] isZip5? YES → handleZipLookup("47401")
+  Parse GeoJSON features
     ↓
-Check cache tables (federal, state, zip)
-[NO WARMERS TRIGGERED — warmers removed from request path]
+  For each feature:
+    geoID  = feature.properties["GEOID"]       (TIGER shapefiles always include GEOID)
+    mtfcc  = feature.properties["MTFCC"]        (TIGER shapefiles always include MTFCC)
+    geometry = feature.geometry (already WGS84 after ogr2ogr)
     ↓
-fetchOfficialsFromDB("47401", "IN")
-    → politicians from zip_politicians JOIN politicians JOIN offices JOIN districts
+    INSERT INTO essentials.geofence_boundaries (geo_id, mtfcc, geometry, ...)
+    ON CONFLICT (geo_id) DO UPDATE SET geometry = EXCLUDED.geometry
     ↓
-Return []OfficialOut
-[If empty, return [] with X-Data-Status: no-cache-data]
+  Log: imported N features, M conflicts updated
+
+Developer runs: go run ./cmd/import-geofences --source arcgis \
+  --url "https://services3.arcgis.com/[...]/FeatureServer/0/query?outFields=*&f=geojson&where=1%3D1" \
+  --mtfcc G4020 --state 06 --geo-id-field "SUPERVISORIAL_DISTRICT" --geo-id-prefix "06037"
+    ↓
+  Fetch paginated GeoJSON from FeatureServer
+    ↓
+  For each feature:
+    distNum = feature.properties["SUPERVISORIAL_DISTRICT"]  (e.g. "1")
+    geoID   = "06037" + fmt.Sprintf("%03d", distNum)        (e.g. "06037001")
+    mtfcc   = "G4020" (from CLI flag)
+    geometry = feature.geometry (FeatureServer returns WGS84)
+    ↓
+    INSERT INTO essentials.geofence_boundaries ... ON CONFLICT DO UPDATE
 ```
 
-### Profile View (candidacy data)
+### Politician Gap-Fill (new, offline)
 
 ```
-GET /essentials/politician/{id}
+Developer runs: go run ./cmd/import-politicians --manifest la_county_officials.json
     ↓
-fetchPoliticianFromDB(id) → OfficialOut
+  Read manifest JSON (array of official records)
     ↓
-[REMOVED] ensureCandidacyData() lazy-fetch goroutine
+  For each official:
+    Look up district by geo_id in essentials.districts
+    If district exists: use existing district.id
+    If not: INSERT district (external_id auto-assigned from BallotReady or set to 0 with manual flag)
     ↓
-Return politician — endorsements, stances, elections served from DB
-(populated by last admin import run)
+    UPSERT government, chamber, district, politician, office
+    ON CONFLICT (external_id) DO UPDATE
+    ↓
+  Log: inserted N officials, M updated, K districts linked
 ```
+
+---
+
+## Integration Points
+
+### Census TIGER/Line FTP (geofence source 1)
+
+| Aspect | Details |
+|--------|---------|
+| Base URL | `https://www2.census.gov/geo/tiger/TIGER2024/` |
+| Layer directories | `CD/` (congressional), `SLDU/` (state senate), `SLDL/` (state assembly), `COUNTY/`, `PLACE/`, `UNSD/` (unified school district) |
+| File naming | `tl_2024_{state_fips}_{layer}.zip` — e.g., `tl_2024_06_cd119.zip` for CA congressional |
+| National layers | `tl_2024_us_county.zip` — some layers are national, not per-state |
+| GEOID attribute | Always present in TIGER shapefiles as `GEOID` attribute field |
+| MTFCC attribute | Always present in TIGER shapefiles as `MTFCC` attribute field |
+| SRID | NAD83 / EPSG:4269 — requires reprojection to WGS84 (EPSG:4326) via ogr2ogr `-s_srs EPSG:4269 -t_srs EPSG:4326` |
+| Confidence | HIGH — established Census data product, annual releases |
+
+### LA County eGIS ArcGIS FeatureServer (geofence source 2)
+
+| Aspect | Details |
+|--------|---------|
+| Hub | `https://egis-lacounty.hub.arcgis.com/` |
+| Supervisor districts dataset | Available at `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about` |
+| School district boundaries | Available at `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::school-district-boundaries/about` |
+| REST query pattern | `[ServiceURL]/FeatureServer/[layerId]/query?outFields=*&f=geojson&where=1%3D1` |
+| SRID | ArcGIS Hub serves in WGS84 by default — no reprojection needed |
+| Attribute for district number | Supervisor: field named `SUPERVISORIAL_DISTRICT` or similar; must be inspected per dataset |
+| Pagination | ArcGIS FeatureServer returns max 1000 or 2000 features per query; use `resultOffset` for pagination |
+| Confidence | MEDIUM — URLs discovered, REST pattern standard, specific field names unverified without direct API call |
+
+### LA City GeoHub ArcGIS FeatureServer (geofence source 3)
+
+| Aspect | Details |
+|--------|---------|
+| Hub | `https://geohub.lacity.org/` |
+| Council districts dataset | `https://geohub.lacity.org/datasets/76104f230e384f38871eb3c4782f903d_13/about` |
+| REST API | ArcGIS Hub — same `/FeatureServer/[layerId]/query?outFields=*&f=geojson&where=1%3D1` pattern |
+| District number attribute | Likely `CD_NUM` or `DISTRICT_N` — verify by fetching one feature |
+| MTFCC to assign | X0001 (city council ward sub-district, BallotReady convention — already in mtfccToDistrictTypes) |
+| geo_id to build | LA City place FIPS = `0644000`; council district 1 → `064400000001` (matches BallotReady geo_id in districts table) |
+| Verify districts exist | Query `essentials.districts WHERE state = 'CA' AND district_type = 'LOCAL'` before import — existing BallotReady records for LA City council members should have these geo_ids |
+| Confidence | MEDIUM — dataset exists, REST API pattern standard, specific field names need runtime verification |
+
+### PostGIS (existing, central)
+
+| Aspect | Details |
+|--------|---------|
+| Table | `essentials.geofence_boundaries` — `geo_id` text unique, `geometry geometry(Geometry,4326)` |
+| Spatial index | `idx_geofence_boundaries_geometry` GIST index — already created in `setup.go`; use `VACUUM ANALYZE essentials.geofence_boundaries` after bulk import |
+| Geometry validity | Run `ST_MakeValid(geometry)` on all imported geometries before INSERT to handle topology issues (precedent: Bloomington District 2 required ST_MakeValid in Phase 31) |
+| Unique constraint on geo_id | Comment in `geofence_models.go` says "unique constraint managed manually" — confirm it exists: `SELECT indexname FROM pg_indexes WHERE tablename = 'geofence_boundaries' AND indexname LIKE '%geo_id%'` |
+| SRID check | Validate: `SELECT DISTINCT ST_SRID(geometry) FROM essentials.geofence_boundaries` — must return only 4326 after import |
+
+### essentials.districts (existing join table)
+
+| Aspect | Details |
+|--------|---------|
+| Role | The `geo_id` column in `districts` is the join key between geofences and politicians |
+| Pre-existing records | BallotReady already populated districts for federal and state officials; their geo_ids use TIGER-compatible format |
+| Gap-fill requirement | LA County local officials (city council, supervisor) may not have `districts` rows if they were never in BallotReady |
+| Verify before importing geofences | `SELECT geo_id, district_type FROM essentials.districts WHERE state = 'CA' LIMIT 50` to see what already exists |
+| Lookup during politician import | CLI must JOIN on `geo_id` to find existing `districts.id` — do not blindly create new district rows if one with the same `geo_id` already exists |
 
 ---
 
@@ -412,201 +411,103 @@ Return politician — endorsements, stances, elections served from DB
 
 ### New (create from scratch)
 
-| Component | File | What It Does |
-|-----------|------|-------------|
-| AddressSearch | `essentials/src/components/AddressSearch.jsx` | Google Places Autocomplete input wrapper; calls `onSelect(formattedAddress)` on pick; US-only address type restriction |
-| Maps API loader | `essentials/src/loadMapsApi.js` | Dynamic script tag injection using `VITE_GOOGLE_MAPS_API_KEY`; resolves Promise when ready |
+| Component | File | Notes |
+|-----------|------|-------|
+| Geofence import CLI | `EV-Backend/cmd/import-geofences/main.go` | Replaces deprecated `cmd/bulk-import/main.go` for geofence data; does not reuse any of the old code |
+| Politician gap-fill CLI | `EV-Backend/cmd/import-politicians/main.go` | Reads a structured manifest; no live API calls |
 
 ### Modified (targeted changes)
 
 | Component | File | Change | Scope |
 |-----------|------|--------|-------|
-| SearchPoliticians handler | `handlers.go` | Delete BallotReady fallback block | ~lines 2916-3035 |
-| handleZipLookup | `handlers.go` | Remove warmer-kick goroutines (3 blocks); keep fetchOfficialsFromDB | ~lines 266-323 |
-| GetCacheStatus | `handlers.go` | Remove warmer-kick goroutines; keep status check | ~lines 192-232 |
-| GetCandidatesByZip | `handlers.go` | Replace live BallotReady call with fetchCandidatesFromDB() | ~lines 3662-3750 |
-| ensureCandidacyData | `handlers.go` | Remove lazy-fetch goroutine; keep DB-only serve logic | ~lines 1250-1290 |
-| warmFederal | `handlers.go` | Remove Provider.FetchFederal() body; keep cache timestamp update | ~lines 1294-1343 |
-| warmState | `handlers.go` | Remove Provider.FetchByState() body; keep cache timestamp update | ~lines 1348-1400 |
-| warmLocal | `handlers.go` | Remove Provider.FetchByZip() body + containment logic; keep cache timestamp update | ~lines 1404-1530 |
-| Init() | `setup.go` | Remove `_ ballotready` import; comment out Provider init; log "cached-data-only mode" | lines 11-92 |
-| Dashboard.jsx | `essentials/src/pages/Dashboard.jsx` | Import AddressSearch; replace `<input>` with `<AddressSearch onSelect={setZip} />` | ~lines 130-150 |
-| Landing.jsx | `essentials/src/pages/Landing.jsx` | Same swap | ~lines 50-65 |
-| main.jsx or App.jsx | `essentials/src/main.jsx` | Call loadGoogleMapsApi() on mount | top-level |
+| MTFCC map | `EV-Backend/internal/essentials/geofence_lookup.go` | Add entries for any MTFCC codes that appear in imported data but are not yet in `mtfccToDistrictTypes` | 1-3 lines; only if new MTFCC codes are used |
 
 ### Kept Unchanged
 
 | Component | Why |
 |-----------|-----|
-| `geocoding/google.go` | Already fully implemented — no changes needed |
-| `geofence_lookup.go` | Already fully implemented — no changes needed |
-| `geofence_models.go` | No schema changes needed |
-| `provider/` package | Interface + registry kept for future extensibility |
-| `ballotready/` directory | Code retained for historical reference; just not imported |
-| `routes.go` | No new routes needed |
-| `api.jsx` | Already POSTs address string to correct endpoint |
-| All DB models and schemas | No schema changes required |
+| `geofence_lookup.go: FindGeoIDsByPoint()` | PostGIS query is correct as-is; new boundaries work automatically |
+| `geofence_lookup.go: FindPoliticiansByGeoMatches()` | Join logic is correct; just needs matching data |
+| `geofence_models.go` | Schema unchanged |
+| `handlers.go` | All request-path handlers unchanged |
+| `routes.go` | No new endpoints |
+| `setup.go` | No new initialization needed |
+| All frontend code | No frontend changes needed for this milestone |
 
 ---
 
 ## Build Order (dependency-aware)
 
-Two independent tracks. Track A (backend) has no dependencies on Track B (frontend), so they can proceed in parallel.
+The dependencies flow strictly from data → schema → import → verification. Parallelism exists within import steps for different layers.
 
-### Track A: Backend
+### Step 1: Schema and Constraint Verification (blocking)
 
-**Step A1 — Remove BallotReady fallback from SearchPoliticians()**
-- Delete the fallback block starting at the comment `/ Fallback: BallotReady address lookup`
-- Verify: when geofence returns 0 results, the handler returns `[]OfficialOut{}` with `X-Data-Status: no-geofence-data`
-- Test: POST a Bloomington IN address → returns politicians from existing geofence data
+Before any import runs, verify:
+- Unique constraint on `geofence_boundaries.geo_id` exists in Supabase
+- `ST_MakeValid` and `ST_GeomFromGeoJSON` are available (PostGIS already enabled)
+- Query existing `districts.geo_id` values for CA to understand what geo_ids already exist from BallotReady
 
-**Step A2 — Disable Provider initialization in setup.go**
-- Remove the `_ "github.com/EmpoweredVote/EV-Backend/internal/essentials/ballotready"` import line
-- Remove or comment out the `provider.NewProvider(cfg)` call
-- Set `Provider = nil` explicitly with a log: `[essentials] Running in cached-data-only mode`
-- Keep `GeoClient` initialization unchanged
+This is a read-only verification step, 15 minutes of SQL queries. It is blocking because import strategy depends on findings.
 
-**Step A3 — Remove warmer-kick goroutines from request handlers**
-- In `handleZipLookup`: delete the three `if !xFresh { if tryAcquireLock... { go func()... } }` blocks
-- In `GetCacheStatus`: delete the same three blocks
-- Keep the cache freshness check reads (they're informational; used in X-Data-Status header)
-- Stub warmer function bodies with a log message
+### Step 2: TIGER Shapefile Geofences — Federal + State (independent of local)
 
-**Step A4 — Replace GetCandidatesByZip with DB-only query**
-- Implement `fetchCandidatesFromDB(ctx context.Context, zip string) ([]CandidateOut, error)`
-- Query `essentials.election_records` joined to politicians via standard joins
-- Filter to upcoming elections (election_date >= today) and districts that cover the ZIP
-- Return empty slice gracefully if no data exists (election_records may be empty for most ZIPs initially)
+Import order within this step is flexible; all layers are independent of each other:
 
-**Step A5 — Remove ensureCandidacyData lazy-fetch**
-- Delete the goroutine that calls `brProvider.Client().FetchCandidacy()`
-- Profile views return whatever candidacy data is in the DB from the last import
+| Order | Layer | TIGER File | MTFCC | Districts Mapped |
+|-------|-------|-----------|-------|-----------------|
+| 2a | Congressional districts | `tl_2024_06_cd119.zip` | G5200 | NATIONAL_LOWER |
+| 2b | State senate (SLDU) | `tl_2024_06_sldu.zip` | G5210 | STATE_UPPER |
+| 2c | State assembly (SLDL) | `tl_2024_06_sldl.zip` | G5220 | STATE_LOWER |
+| 2d | County boundaries | `tl_2024_06_county.zip` | G4020 | COUNTY, JUDICIAL |
+| 2e | Unified school districts | `tl_2024_06_unsd.zip` | G5420 | SCHOOL |
+| 2f | Incorporated places (cities) | `tl_2024_06_place.zip` | G4110 | LOCAL, LOCAL_EXEC |
 
-### Track B: Frontend
+These feed federal, state, county, school board, and city-level (at-large) politicians — the majority of what LA County addresses need. Steps 2a-2f can run in any order or in parallel.
 
-**Step B1 — Add VITE_GOOGLE_MAPS_API_KEY to Netlify environment**
-- Set in Netlify UI under essentials site environment variables
-- This is a blocking dependency for B2 and B3 — do first
-- Use a key restricted to `places` library and HTTP referrer `essentials.empowered.vote`
+### Step 3: LA County ArcGIS Geofences — Supervisor Districts (parallel to Step 2)
 
-**Step B2 — Create loadMapsApi.js and wire into App.jsx**
-- Dynamic script injection using env var
-- AddressSearch component checks `window.google?.maps?.places` before attaching widget
+Fetch supervisor district polygons from LA County eGIS FeatureServer. These use G4020 MTFCC (county-level) and need a geo_id that matches BallotReady's `districts.geo_id` for LA County supervisors. Verify existing `districts` geo_ids before choosing the geo_id format.
 
-**Step B3 — Build AddressSearch.jsx**
-- `types: ["address"]` for street-level autocomplete
-- `componentRestrictions: { country: "us" }` — US addresses only
-- `onSelect(place.formatted_address)` callback on `place_changed` event
-- Graceful degrade: if `window.google` not loaded, render plain `<input>` (identical UX to current)
+### Step 4: LA City GeoHub Geofences — City Council Districts (depends on Step 2f)
 
-**Step B4 — Swap input in Dashboard.jsx and Landing.jsx**
-- Import and render `<AddressSearch>` where `<input>` exists today
-- Pass `onSelect={val => { setZip(val); setActiveQuery(val); }}` or equivalent
-- Keep existing `onSearchClick` / `setSearchParams` logic for Enter key and button click
+Import LA City council district polygons with `mtfcc = 'X0001'` and geo_ids matching `064400000{nn}` format. Step 2f (incorporated places) must complete first because it provides the G4110 polygon for city-level at-large officials, which works independently; Step 4 adds per-district ward precision.
+
+### Step 5: Verify Geofence Coverage
+
+After Steps 2-4, run point-in-polygon tests against known LA County addresses:
+- Downtown LA address → should return federal + state + county supervisor + city at-large + city council district members
+- Santa Monica address → should return federal + state + county + Santa Monica city officials (from G4110)
+- Unincorporated area → federal + state + county (no G4110 or X0001 match — expected)
+
+### Step 6: Politician Gap-Fill (depends on Steps 2-5)
+
+After verifying which addresses return which politicians, identify gaps: addresses that return geofence hits but no politician records for those geo_ids. These are the district/chamber/politician rows that need to be created.
+
+Run `import-politicians` CLI with a manifest of missing officials. The manifest is built manually from a verified source (LA County registrar, BallotReady archived data, official county website).
+
+### Step 7: VACUUM ANALYZE
+
+```sql
+VACUUM ANALYZE essentials.geofence_boundaries;
+```
+
+Run after all imports complete to update PostGIS planner statistics. Required for optimal GiST index performance after bulk inserts.
 
 ### Blocking Dependencies
 
 ```
-A1 → A2 → A3   (sequential, each builds on previous)
-A4             (independent of A1-A3, can be done in parallel)
-A5             (independent, can be done in parallel)
-
-B1 → B2 → B3 → B4   (sequential)
-
-A track and B track are fully parallel.
-B1 (Netlify env var) must be set before B3/B4 can be tested in deployed preview.
+Step 1 (verify schema)
+  ↓
+Steps 2a-2f (TIGER shapefiles) ←→ Step 3 (LA County ArcGIS)  [parallel]
+  ↓
+Step 4 (LA City council)
+  ↓
+Step 5 (verify coverage)
+  ↓
+Step 6 (politician gap-fill)
+  ↓
+Step 7 (VACUUM ANALYZE)
 ```
-
----
-
-## Integration Points
-
-### Google Maps Geocoding API (backend)
-
-| Aspect | Details |
-|--------|---------|
-| File | `internal/essentials/geocoding/google.go` — already complete |
-| Auth | `GOOGLE_MAPS_API_KEY` environment variable |
-| API restriction | Backend key: restrict to Geocoding API only in Google Cloud Console |
-| Graceful degrade | `GeoClient == nil` when key not set → SearchPoliticians falls through to empty result with appropriate status header |
-| Billing | ~$5 per 1,000 geocoding calls; free tier covers first $200/month |
-| Error handling | Already implemented: HTTP error codes, status != "OK", missing ZIP in result |
-
-### Google Maps Places Autocomplete (frontend)
-
-| Aspect | Details |
-|--------|---------|
-| Integration | Dynamic script tag injection in `loadMapsApi.js` using `VITE_GOOGLE_MAPS_API_KEY` |
-| Auth | `VITE_GOOGLE_MAPS_API_KEY` in Netlify environment variables |
-| API restriction | Frontend key: restrict to Places API; HTTP referrer to `essentials.empowered.vote` |
-| Session billing | Legacy Autocomplete widget manages session tokens automatically; ~$0.017 per session |
-| Widget version | Use legacy `google.maps.places.Autocomplete`, not new PlaceAutocompleteElement (alpha) |
-| Graceful degrade | If Maps API fails to load, component renders a plain `<input>` — existing UX preserved |
-
-### PostGIS (existing, unchanged)
-
-| Aspect | Details |
-|--------|---------|
-| Function | `FindGeoIDsByPoint(lat, lng)` → `ST_Contains` query in `geofence_lookup.go` |
-| Index | `idx_geofence_boundaries_geometry` — GiST index created in `setup.go` |
-| MTFCC disambiguation | Existing logic in `FindPoliticiansByGeoMatches` handles SLDU vs SLDL correctly |
-| Coverage gap | Areas without imported TIGER data → 0 geofence results → empty response with clear header |
-
-### BallotReady API (removed)
-
-| Aspect | Where Removed |
-|--------|--------------|
-| `SearchPoliticians` fallback | Delete the fallback block in handlers.go |
-| `GetCandidatesByZip` live call | Replace with fetchCandidatesFromDB() |
-| `ensureCandidacyData` lazy-fetch | Delete the BallotReady goroutine |
-| `warmFederal/State/Local` API calls | Stub function bodies |
-| Import side-effect | Remove `_ ballotready` from setup.go |
-| `BALLOTREADY_API_KEY` env var | Can be removed from App Runner config after cutover |
-| `ballotready/` package | Kept in codebase but unused |
-
----
-
-## Anti-Patterns
-
-### Anti-Pattern 1: Moving Geocoding to the Frontend
-
-**What people do:** Call `place.fetchFields(['location'])` in the frontend to get lat/lng, then send coordinates directly to a new backend endpoint.
-
-**Why it's wrong (for v1.5):** It requires a new backend endpoint and splits address-resolution responsibility across two systems. The existing `POST /politicians/search` already works end-to-end. The redundant geocoding call (Places autocomplete internally geocodes, then backend geocodes again) costs a few cents per day at nonprofit scale — not worth the added complexity in this milestone.
-
-**Do this instead:** Send `formattedAddress` to the existing endpoint. Add Option B (frontend resolves lat/lng → new endpoint) in a future milestone when addressing a scaling or cost concern.
-
-### Anti-Pattern 2: Deleting the ballotready/ Package
-
-**What people do:** Remove the entire `internal/essentials/ballotready/` directory for cleanliness.
-
-**Why it's wrong:** The admin import tool (`StartBulkImport`, `GetImportStatus`) uses the `upsertNormalizedOfficial` pipeline which references BallotReady transform types. The DB already contains BallotReady-sourced data. The transform logic documents the data model. Deletion creates unnecessary risk and loses the historical reference.
-
-**Do this instead:** Remove only the import side-effect in `setup.go` (`_ "github.com/EmpoweredVote/EV-Backend/internal/essentials/ballotready"`). The package compiles but is not registered in the provider registry and never called at runtime.
-
-### Anti-Pattern 3: Removing Warmer Infrastructure Entirely
-
-**What people do:** Delete `warmFederal`, `warmState`, `warmLocal`, the lock functions, and all cache table references.
-
-**Why it's wrong:** The cache tables (`federal_cache`, `state_caches`, `zip_caches`) are read by `fetchOfficialsFromDB` to build accurate queries. The lock functions (`tryAcquireLock`/`releaseLock`) prevent thundering herd and are used elsewhere. Removing the cache tables would require restructuring the entire DB fetch query.
-
-**Do this instead:** Remove only the API-call body inside each warmer function. Keep the function signatures, the cache timestamp updates, and the lock infrastructure intact. If a future data source is wired in, the infrastructure is already there.
-
-### Anti-Pattern 4: Loading Maps JS API via npm Package
-
-**What people do:** `npm install @vis.gl/react-google-maps` or `react-google-autocomplete` to avoid a `<script>` tag.
-
-**Why it's wrong:** Adds bundle weight and a maintenance dependency. The native `google.maps.places.Autocomplete` widget loaded via script tag is lighter, handles session tokens automatically, and requires no npm package. The new `@vis.gl/react-google-maps` PlaceAutocompleteElement is still alpha/beta and not production-ready.
-
-**Do this instead:** Load via dynamic script injection in `loadMapsApi.js`. Wrap in a React component using `useRef` + `useEffect` to attach after mount. This is the established pattern for Places Autocomplete in vanilla JS apps.
-
-### Anti-Pattern 5: Hardcoding the Maps API Key in index.html
-
-**What people do:** Put the API key directly in the `<script src>` URL in `index.html`.
-
-**Why it's wrong:** Vite does not perform env var substitution in raw HTML files. The literal `%VITE_GOOGLE_MAPS_API_KEY%` string would be sent to the browser, breaking the widget.
-
-**Do this instead:** Use the `loadMapsApi.js` dynamic loader that reads `import.meta.env.VITE_GOOGLE_MAPS_API_KEY`. This runs through Vite's env var system at build time.
 
 ---
 
@@ -614,33 +515,80 @@ B1 (Netlify env var) must be set before B3/B4 can be tested in deployed preview.
 
 | Scale | Architecture Notes |
 |-------|-------------------|
-| Current (100-1k users) | Single backend; PostGIS queries <50ms with GiST index; geocoding adds ~200ms per address search; total response ~400ms |
-| 1k-10k users | Geocoding API cost becomes notable (~$30-300/month at 10k searches/day); consider caching geocoding results keyed on normalized address string |
-| 10k+ users | Add `geocoded_addresses` table (normalized_input, lat, lng, formatted); check cache before calling Google; PostGIS read replicas for geofence queries |
+| Current (100-1k users) | PostGIS GiST index handles thousands of geofence polygons in <50ms per point-in-polygon query; no changes needed |
+| Adding CA statewide | All CA congressional (52 districts), SLDU (40), SLDL (80), counties (58), school districts (~1000), places (~1500) — total ~2700 polygons; GiST index handles this without modification |
+| Adding all 50 states | ~50k polygons total; GiST index handles millions of polygons; partitioning by state is an option if queries slow beyond 200ms |
+| Annual TIGER refresh | Idempotent upsert means re-running import with updated shapefile updates geometries without duplication; safe to automate |
 
-**First bottleneck at scale:** Google Maps API cost and rate limits. The free tier covers $200/month. Geocoding is ~$5/1k calls; Places Autocomplete sessions are ~$17/1k sessions. At 1k daily unique searches: ~$600/month in API costs without caching.
+---
 
-**Mitigation before that point:** Cache geocoding results. A `geocoded_addresses` table keyed on `lower(trim(input_address))` turns repeated searches (same city) into a single API call.
+## Anti-Patterns
+
+### Anti-Pattern 1: Importing Geofences Without Verifying Matching Districts
+
+**What people do:** Import 58 California county polygons into `geofence_boundaries`, then wonder why county supervisors are not showing up in search results.
+
+**Why it's wrong:** The lookup joins `geofence_boundaries.geo_id` to `essentials.districts.geo_id`. If no `districts` row with that `geo_id` exists, the join returns nothing. The geofence boundary is invisible at query time.
+
+**Do this instead:** Before importing, query `SELECT geo_id, district_type FROM essentials.districts WHERE state = 'CA'` to see what district records already exist from BallotReady. Import geofence boundaries whose `geo_id` matches existing district records first. Then identify which districts have no matching geofence (Step 5) and which districts have no politicians (Step 6).
+
+### Anti-Pattern 2: Using X0001 MTFCC Without Verifying BallotReady District geo_ids
+
+**What people do:** Build X0001 geo_ids as `{placeFIPS}{paddedWardNum}` using a formula, import them, then discover the BallotReady `districts` table uses a slightly different padding or prefix.
+
+**Why it's wrong:** The geo_id join is an exact string match. If BallotReady stored `064400000001` and you imported `06440000001` (different padding), the join fails silently.
+
+**Do this instead:** Before building X0001 geo_ids for LA City council, query `essentials.districts WHERE district_type = 'LOCAL' AND city = 'Los Angeles'` to see the exact format BallotReady used. Use that format exactly. The Bloomington precedent confirmed: BallotReady uses 12-character geo_ids (`18058600000X`), matching the `{7-digit place FIPS}{5-digit zero-padded ward}` formula.
+
+### Anti-Pattern 3: Importing All Politicians from an External Source Without Deduplication
+
+**What people do:** Scrape LA County official website, insert all records into `politicians` table, then discover duplicates when some officials were already imported from BallotReady with different `external_id` values.
+
+**Why it's wrong:** The `politicians` table has a unique index on `external_id`. Gap-fill imports that create new records (external_id = 0 or sentinel value) will not conflict with BallotReady records, but the resulting duplicate records will cause the same official to appear twice in search results.
+
+**Do this instead:** Before inserting any politician, query by full name + office title + geo_id combination to check if a record already exists in the DB. If a BallotReady record exists with a different external_id but the same name and district, update it rather than insert a new one. The politician gap-fill import should be additive only for officials who genuinely have no DB record.
+
+### Anti-Pattern 4: Skipping ST_MakeValid on Imported Geometries
+
+**What people do:** Insert raw geometry from shapefiles or ArcGIS without validation; some features pass silently but others cause later spatial query errors.
+
+**Why it's wrong:** Real-world boundary data from official sources (including ArcGIS FeatureServer) can contain topology issues (self-intersections, nested shells) that pass through the INSERT but break `ST_Contains` queries. This was encountered in Phase 31 (Bloomington District 2 had a nested shells issue from the ArcGIS source).
+
+**Do this instead:** Wrap every geometry in `ST_MakeValid()` before INSERT. For TIGER shapefiles this is rarely needed but costs nothing. For ArcGIS FeatureServer data it is essential.
+
+```sql
+ST_MakeValid(ST_GeomFromGeoJSON($1))
+-- instead of
+ST_GeomFromGeoJSON($1)
+```
+
+### Anti-Pattern 5: Rebuilding the Import CLI as a Server-Side Admin Endpoint
+
+**What people do:** Add a new HTTP admin endpoint like `POST /admin/import/tiger?state=06&layer=cd` that downloads and imports TIGER shapefiles on-demand.
+
+**Why it's wrong:** TIGER downloads are large (hundreds of MB per state), take minutes to process, and are only run a few times per year. Wrapping this in an HTTP endpoint adds complexity, timeout risk, and running-in-production risk. The deprecated `cmd/bulk-import/main.go` pattern already shows this lesson was learned.
+
+**Do this instead:** Keep geofence imports as CLI tools that run locally or in a CI job. The import writes directly to Supabase via `DATABASE_URL`. The admin endpoint pattern (`POST /admin/import`) is appropriate for small, fast operations (like the original ZIP-based BallotReady warmer); it is not appropriate for large shapefile downloads.
 
 ---
 
 ## Sources
 
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geocoding/google.go` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geofence_lookup.go` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/handlers.go` — HIGH confidence (full review)
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/setup.go` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/provider/provider.go` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/ballotready/provider.go` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/essentials/src/pages/Dashboard.jsx` — HIGH confidence
-- Source inspection: `/Users/chrisandrews/Documents/GitHub/essentials/src/lib/api.jsx` — HIGH confidence
-- [Google Maps Place Autocomplete Widget (legacy)](https://developers.google.com/maps/documentation/javascript/legacy/place-autocomplete) — HIGH confidence
-- [Google Maps Place Autocomplete Data API](https://developers.google.com/maps/documentation/javascript/place-autocomplete-data) — HIGH confidence
-- [Autocomplete session pricing](https://developers.google.com/maps/documentation/places/web-service/session-pricing) — HIGH confidence
-- [Google Maps Geocoding API overview](https://developers.google.com/maps/documentation/geocoding/overview) — HIGH confidence
-- [PostGIS point-in-polygon for civic representative lookup](https://medium.com/@nidhipandya1606/from-zip-codes-to-point-in-polygon-architecting-accurate-representative-lookup-for-voice-463c8f70a9ea) — MEDIUM confidence (external blog, aligns with existing implementation)
+- Direct source inspection: `EV-Backend/internal/essentials/geofence_lookup.go` — mtfccToDistrictTypes map, FindGeoIDsByPoint, FindPoliticiansByGeoMatches — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/geofence_models.go` — GeofenceBoundary struct, geo_id unique constraint note — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/models.go` — Politician, District, Office, Chamber models; external_id uniqueIndex — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/setup.go` — GiST index creation, PostGIS extension init — HIGH confidence
+- Direct source inspection: `EV-Backend/cmd/bulk-import/main.go` — confirmed deprecated, no reuse value — HIGH confidence
+- Phase 31 SUMMARY (31-03-SUMMARY.md) — Bloomington ArcGIS FeatureServer pattern, ST_MakeValid precedent, geo_id format verification against districts table — HIGH confidence
+- Phase 31 RESEARCH (31-RESEARCH.md) — X0001 MTFCC, geo_id construction formula, geofence boundary data sources — HIGH confidence
+- [LA County Enterprise GIS Hub](https://egis-lacounty.hub.arcgis.com/) — supervisor districts and school district boundary datasets confirmed available — MEDIUM confidence (URLs discovered, field names not verified)
+- [LA City GeoHub — Council Districts](https://geohub.lacity.org/datasets/76104f230e384f38871eb3c4782f903d_13/about) — ArcGIS FeatureServer source for LA City council districts — MEDIUM confidence
+- [Census TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) — annual shapefile releases, FTP access pattern — HIGH confidence
+- [TIGER 2025 Technical Documentation](https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2025/TGRSHP2025_TechDoc.pdf) — MTFCC codes and GEOID formats — HIGH confidence (Census authoritative source)
+- [ogr2ogr documentation](https://gdal.org/en/stable/programs/ogr2ogr.html) — reprojection flags, GeoJSON output format — HIGH confidence
+- [go-shapefile library](https://github.com/everystreet/go-shapefile) — evaluated as insufficient (dormant, limited shape types); ogr2ogr preferred — MEDIUM confidence
 
 ---
 
-*Architecture research for: Address Verification & BallotReady Independence (v1.5)*
-*Researched: 2026-02-22*
+*Architecture research for: LA County Full Coverage + Repeatable Import Pipeline (v1.6)*
+*Researched: 2026-02-23*

@@ -1,257 +1,299 @@
-# Stack Research — v1.5 Address Verification & BallotReady Independence
+# Stack Research — v1.6 LA County Full Coverage
 
-**Domain:** Civic engagement platform — address-based politician lookup
-**Researched:** 2026-02-22
+**Domain:** Civic engagement platform — geofence expansion and politician data pipeline
+**Researched:** 2026-02-23
 **Confidence:** HIGH
 
 ---
 
 ## Scope
 
-This document covers only *new or changed* stack decisions for v1.5. The existing stack (Go 1.24.3 + Chi + GORM, React 19 + Vite 7 + Tailwind CSS 4) is retained as-is. Research focuses on three areas:
+This document covers only *new or changed* stack decisions for v1.6. The existing stack (Go 1.24.3 + Chi + GORM + PostgreSQL/PostGIS, React 19 + Vite + Tailwind, Python import scripts) is retained as-is. Research focuses on four areas:
 
-1. Google Maps Places autocomplete on the frontend (`essentials` app)
-2. Google Maps Geocoding API on the backend (Go)
-3. Removing BallotReady API dependency
+1. Bulk TIGER shapefile import into PostGIS
+2. LA County GIS Portal API/data access
+3. Politician record creation with deduplication against existing `external_id`-keyed records
+4. Repeatable import pipeline tooling
 
 ---
 
-## 1. Frontend: Google Maps Places Autocomplete
+## 1. TIGER Shapefile Import Pipeline
 
-### Current State (Already Implemented)
+### Current State
 
-The `essentials` app already has a working Places autocomplete implementation:
+The project already has working shapefile import scripts in `EV-Backend/scripts/`:
 
-- **Package:** `@googlemaps/js-api-loader` `^2.0.2` (already installed in `essentials/package.json`)
-- **Hook:** `src/hooks/useGooglePlacesAutocomplete.js` — custom hook using `setOptions` + `importLibrary('places')`
-- **Usage:** `Landing.jsx` attaches autocomplete to an `inputRef` via the hook
-- **API used:** `google.maps.places.Autocomplete` (legacy class, attached to existing `<input>`)
+| Script | Status | What it does |
+|--------|--------|--------------|
+| `import_shapefiles_fixed.py` | Working, production-proven | Downloads TIGER shapefiles, reprojects to EPSG:4326, calls `gdf.to_postgis()` |
+| `import_ca_legislative_geofences.py` | Working, production-proven | CA congressional + state legislative districts with OCD-ID generation |
+| `import_missing_geofences.py` | Working, production-proven | IN SLDL + CD with upsert conflict handling |
+| `import_shapefiles.sh` | Superseded | Uses `ogr2ogr` into a staging table; replaced by Python scripts |
 
-### Critical Finding: Deprecation of Legacy Autocomplete
+The Python approach (`geopandas` + `SQLAlchemy` + `to_postgis()`) is the established pattern. **Do not switch to `ogr2ogr` or introduce a Go-based shapefile reader.**
 
-As of March 1, 2025, `google.maps.places.Autocomplete` is **not available to new API keys** (MEDIUM confidence, from official Google docs and GitHub issue #736 on visgl/react-google-maps). The recommended replacement is `PlaceAutocompleteElement`.
-
-**However:** The existing Google Cloud project has an API key created before March 1, 2025. The legacy `Autocomplete` class continues working for existing keys with at least 12 months notice before discontinuation. The current implementation is functional.
-
-### Recommendation: Migrate to PlaceAutocompleteElement (Do in v1.5)
+### Stack Decision: Keep Python + GeoPandas + SQLAlchemy
 
 **Confidence: HIGH**
 
-Migrate `useGooglePlacesAutocomplete.js` from `google.maps.places.Autocomplete` to `google.maps.places.PlaceAutocompleteElement`. This is a forward-compatible upgrade that avoids future breakage.
+GeoPandas 1.1.2 (current stable, PyPI) is the correct choice because:
+- `to_postgis()` handles EPSG reprojection, geometry type promotion, and schema-qualified table names in one call
+- `gdf.read_file()` handles shapefile, GeoJSON, and ArcGIS FeatureServer GeoJSON in a single API
+- Already in use across 5 existing scripts — no new learning curve
+- `sqlalchemy.create_engine()` with psycopg2 is the battle-tested pattern; the existing scripts already handle URL-encoding of special characters in Supabase passwords
 
-**Key differences:**
-- `PlaceAutocompleteElement` is a Web Component with its own shadow DOM — it **cannot attach to an existing `<input>` element**
-- Use `includedRegionCodes: ['us']` instead of `componentRestrictions: { country: 'us' }`
-- Listen for `'gmp-select'` event instead of `'place_changed'`
-- Call `place.fetchFields(['formattedAddress'])` to get the address string
+**Why not `ogr2ogr` (shell):** The bash script in `import_shapefiles.sh` used `ogr2ogr` into a staging table then ran a SQL migration. This adds complexity (two-step import), requires GDAL installed on the developer machine, and lacks the per-record duplicate handling the Python scripts implement. The Python scripts supersede it.
 
-**Migration approach** (no new npm packages needed):
+**Why not a Go CLI for shapefiles:** There is no mature Go shapefile library that integrates cleanly with PostGIS. The `github.com/jonas-p/go-shp` package exists but lacks CRS reprojection and PostGIS geometry encoding. Adding a Go CLI for shapefile import would require wrapping GDAL via cgo. Python + GeoPandas is a complete, maintained solution.
 
-```javascript
-// useGooglePlacesAutocomplete.js — updated hook
-import { useEffect, useRef } from 'react';
-import { setOptions, importLibrary } from '@googlemaps/js-api-loader';
+### Required Python Libraries
 
-const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+| Library | Version | Purpose | Notes |
+|---------|---------|---------|-------|
+| `geopandas` | `1.1.2` | Read shapefiles/GeoJSON, reproject, write to PostGIS | Latest stable; requires Python 3.10+ |
+| `SQLAlchemy` | `2.0.46` | Database engine for `to_postgis()` | `2.0.x` required; `2.1.0b1` is beta |
+| `psycopg2-binary` | `2.9.x` | PostgreSQL adapter | `-binary` variant avoids libpq compile dependency |
+| `requests` | `2.32.x` | Download Census files, ArcGIS FeatureServer GeoJSON | Already used in existing scripts |
+| `shapely` | `2.0.x` | Geometry validation (`ST_MakeValid` equivalent) | Pulled in automatically by geopandas |
 
-export default function useGooglePlacesAutocomplete(containerRef, { onPlaceSelected }) {
-  const callbackRef = useRef(onPlaceSelected);
-  callbackRef.current = onPlaceSelected;
+### TIGER Shapefile Coverage for LA County
 
-  useEffect(() => {
-    if (!API_KEY || !containerRef.current) return;
+The following Census TIGER files are needed for full LA County coverage. The existing `import_ca_legislative_geofences.py` already handles congressional + state legislative districts. Remaining gaps:
 
-    if (!window.google?.maps?.importLibrary) {
-      setOptions({ key: API_KEY });
-    }
+| TIGER File | MTFCC | What it covers | Census URL pattern |
+|-----------|-------|----------------|--------------------|
+| Counties | `G4020` | LA County boundary | `TIGER2024/COUNTY/tl_2024_us_county.zip` |
+| Unified School Districts | `G5420` | LAUSD + other unified districts | `TIGER2024/UNSD/tl_2024_06_unsd.zip` |
+| Congressional Districts (119th) | `G5200` | All CA CDs | `TIGER2024/CD/tl_2024_06_cd119.zip` |
+| State Senate (SLDU) | `G5210` | CA Senate districts | `TIGER2024/SLDU/tl_2024_06_sldu.zip` |
+| State Assembly (SLDL) | `G5220` | CA Assembly districts | `TIGER2024/SLDL/tl_2024_06_sldl.zip` |
 
-    let placeAutocomplete = null;
+The CA legislative and congressional TIGER files are **already imported** per v1.5 work. The county boundary and school district TIGER files need to be verified and imported if missing.
 
-    importLibrary('places').then((placesLib) => {
-      if (!containerRef.current) return;
+**City boundary coverage** is NOT available via TIGER at the granularity needed for LA County city council districts. LA County has 88 incorporated cities each with their own city council. The TIGER `PLACE` layer (G4110) provides incorporated place boundaries but does **not** give city council ward sub-districts — those require the LA County GIS Portal (see Section 2).
 
-      placeAutocomplete = new placesLib.PlaceAutocompleteElement({
-        includedRegionCodes: ['us'],
-      });
+### Installation
 
-      containerRef.current.appendChild(placeAutocomplete);
-
-      placeAutocomplete.addEventListener('gmp-select', async ({ placePrediction }) => {
-        const place = placePrediction.toPlace();
-        await place.fetchFields({ fields: ['formattedAddress'] });
-        if (place.formattedAddress) {
-          callbackRef.current(place.formattedAddress);
-        }
-      });
-    });
-
-    return () => {
-      if (placeAutocomplete && containerRef.current?.contains(placeAutocomplete)) {
-        containerRef.current.removeChild(placeAutocomplete);
-      }
-    };
-  }, [containerRef]);
-}
+```bash
+pip install geopandas==1.1.2 SQLAlchemy==2.0.46 psycopg2-binary requests shapely
 ```
 
-**Styling:** `PlaceAutocompleteElement` uses shadow DOM. Outer container CSS applies normally; internal input requires `gmp-place-autocomplete::part(input)` CSS parts selector (limited). For Tailwind-styled designs, wrap in a `div` container and style the container.
+Or add to a `requirements.txt` in `EV-Backend/scripts/`:
 
-**No new npm packages required.** `@googlemaps/js-api-loader` v2.0.2 (already installed) supports `PlaceAutocompleteElement` via `importLibrary('places')`.
-
-### What NOT to Do
-
-| Avoid | Why | Use Instead |
-|-------|-----|-------------|
-| `@vis.gl/react-google-maps` | Adds a new dependency for a use case already covered by the existing hook pattern | Continue with custom hook + `@googlemaps/js-api-loader` |
-| `use-places-autocomplete` npm package | Adds a third-party wrapper; the hook pattern is already working | Keep custom hook |
-| `react-google-autocomplete` | Uses legacy `Autocomplete` class internally; will deprecate | `PlaceAutocompleteElement` directly |
-| Keeping legacy `Autocomplete` class long-term | Not available to new API keys; Google will eventually remove it | `PlaceAutocompleteElement` |
+```
+geopandas==1.1.2
+SQLAlchemy==2.0.46
+psycopg2-binary>=2.9
+requests>=2.32
+shapely>=2.0
+```
 
 ---
 
-## 2. Backend: Google Maps Geocoding (Go)
+## 2. LA County GIS Portal Data Access
 
-### Current State (Already Implemented)
+### Available Endpoints (Verified)
 
-The backend already has a complete, working geocoding implementation:
+LA County maintains ArcGIS REST services at `arcgis.gis.lacounty.gov`. The relevant layers are:
 
-- **Location:** `internal/essentials/geocoding/google.go`
-- **Approach:** Raw `net/http` calls to the Geocoding REST API — no Go SDK
-- **Client:** `geocoding.Client` with 5-second timeout, initialized from `GOOGLE_MAPS_API_KEY` env var
-- **Entry point:** `GeoClient` package-level var in `setup.go`, initialized in `Init()`
-- **Used in:** `SearchPoliticians` handler — geocodes the query string, feeds lat/lng to `FindGeoIDsByPoint()`
+| Dataset | Endpoint | Layer ID | Format |
+|---------|----------|----------|--------|
+| Supervisorial Districts (Current) | `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27/query` | 27 | GeoJSON (with `?f=geojson&outSR=4326&where=1=1`) |
+| City Boundaries (polygons) | `https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer/0/query` | 0 | GeoJSON |
+| School District Boundaries (LACOE) | `https://egis2.lacounty.gov/arcgis/rest/services/LACOE/HARS/MapServer` | varies | GeoJSON |
 
-The implementation is complete. The geocoding flow is:
+**Critical note on Supervisorial Districts:** The Political_Boundaries MapServer at layer 27 uses California State Plane Coordinate System, Zone 5 (EPSG:2229), **not** WGS84. Always pass `outSR=4326` in the query parameters to get WGS84 output. Failure to specify `outSR=4326` will produce coordinates in US survey feet that will silently corrupt the PostGIS geometry.
 
-```
-POST /essentials/politicians/search { query: "123 Main St, City, IN" }
-  → geocoding.Client.Geocode()   (Google Maps REST API)
-  → FindGeoIDsByPoint()           (PostGIS ST_Contains)
-  → FindPoliticiansByGeoMatches() (DB lookup by geo_id + MTFCC)
-  → supplemental fetch from DB cache (federal + state)
-  → return []OfficialOut
-```
+**Critical note on record limits:** ArcGIS FeatureServer/MapServer services impose a `maxRecordCount` (typically 1000). LA County has 88 incorporated cities — this fits within a single request. But school districts may require pagination. Use `resultOffset` and `resultRecordCount` parameters for pagination when needed.
 
-### Recommendation: Do NOT Add googlemaps/google-maps-services-go
+### Stack Decision: `requests` + `geopandas.GeoDataFrame.from_features()` for ArcGIS Data
 
 **Confidence: HIGH**
 
-The official Go SDK (`googlemaps.github.io/maps`, v1.7.0, last released December 2023) provides geocoding via `maps.Client.Geocode()`. However, the existing `net/http` implementation in `geocoding/google.go` already does everything needed:
+Pattern already established by `import_school_board_districts.py`:
 
-- Parses `postal_code`, `administrative_area_level_1`, `administrative_area_level_2`, `locality`
-- Returns structured `Result{Zip, State, County, City, Formatted, Lat, Lng}`
-- Has graceful nil-client degradation when `GOOGLE_MAPS_API_KEY` is unset
-- Has a passing test in `geocoding/google_test.go`
+```python
+import requests
+import geopandas as gpd
 
-Adding the SDK introduces a new `go.mod` dependency for zero additional capability. The custom client is 135 lines and covers exactly the fields needed. Keep it.
-
-**If the geocoding needs were more complex** (rate limiting, retry with backoff, reverse geocoding, elevation, etc.), the SDK would be worth it. For a single-endpoint REST call, it is not.
-
-### What IS Needed: Extend Geocoding for Geofence-Only Flow
-
-The geocoding client needs one targeted change to support v1.5: **remove the ZIP requirement**.
-
-Currently `Geocode()` returns an error if no `postal_code` is found:
-```go
-if out.Zip == "" {
-    return nil, fmt.Errorf("no ZIP code found in geocoding result for: %s", address)
-}
+url = (
+    "https://arcgis.gis.lacounty.gov/arcgis/rest/services/"
+    "LACounty_Dynamic/Political_Boundaries/MapServer/27/query"
+    "?where=1%3D1&outFields=DISTRICT,LABEL&outSR=4326&f=geojson"
+)
+resp = requests.get(url)
+gdf = gpd.read_file(resp.text)  # or gpd.GeoDataFrame.from_features(resp.json()['features'])
 ```
 
-For geofence-only lookups, a lat/lng is sufficient — ZIP is not needed. The fix is to make ZIP optional and return the result regardless:
+`geopandas.read_file()` can read a GeoJSON string or URL directly. No additional ArcGIS SDK needed.
 
-```go
-// Remove the ZIP check — lat/lng is all the geofence lookup needs
-return out, nil
-```
+**Why not the ArcGIS Python API (`arcgis` package):** The `arcgis` package is Esri's official SDK but requires authentication for many operations, adds a large dependency (~50MB), and is overkill for read-only GeoJSON queries. The `requests` + `read_file()` pattern is simpler and already proven in the codebase.
 
-This is a one-line change to `geocoding/google.go`. No new packages.
+### MTFCC Codes for LA County GIS Data
 
-### Integration Points with Existing PostGIS Infrastructure
+LA County GIS Portal data does **not** use MTFCC codes — those are TIGER-specific. The import pipeline must assign MTFCC codes manually when inserting into `essentials.geofence_boundaries`:
 
-The `SearchPoliticians` handler already wires geocoding → PostGIS → DB correctly:
+| Source | What it represents | Assign MTFCC | District type |
+|--------|-------------------|--------------|---------------|
+| Supervisorial Districts | Board of Supervisors districts (5 districts) | `G4020` | `COUNTY` |
+| City Boundaries | Incorporated city polygons (88 cities) | `G4110` | `LOCAL_EXEC` |
+| City Council Districts | Sub-district wards within cities | `X0001` | `LOCAL` |
+| School District Boundaries | LAUSD + unified districts | `G5420` | `SCHOOL` |
 
-```
-GeoClient.Geocode(query) → (lat, lng)
-FindGeoIDsByPoint(lat, lng) → []GeoMatch{GeoID, MTFCC}
-FindPoliticiansByGeoMatches(matches) → []OfficialOut
-fetchStatewideFromDB(state) → supplemental federal + state officials
-```
+**The `geo_id` field** must be set consistently. For supervisorial districts, use `06037SD{N}` format (e.g., `06037SD1`). For city boundaries, prefer Census GEOID (FIPS) if available from the ArcGIS source; fall back to `lacounty_city_{id}` if not. Consistency matters because `essentials.districts.geo_id` must match `essentials.geofence_boundaries.geo_id` for the lookup to work.
 
-The only infrastructure gap is geofence coverage: `geofence_boundaries` currently has TIGER 2024 data for Monroe County IN and LA County CA. Expanding coverage is a data problem, not a code problem.
+### No New Libraries Needed for LA County GIS
+
+`requests` is already in use across existing scripts. `geopandas.read_file()` already handles GeoJSON. No new Python packages are required.
 
 ---
 
-## 3. Removing BallotReady API Dependency
+## 3. Politician Record Creation with Deduplication
 
-### Current BallotReady Usage (What Needs Removal)
+### Current Deduplication Approach
 
-BallotReady is used in four places in the backend:
+The codebase has an established pattern in `promote_scraped_officials.py`:
 
-| Usage | File | Location | Purpose |
-|-------|------|----------|---------|
-| Fallback address lookup | `handlers.go` | `SearchPoliticians()` line 2917 | Address search when geofence misses |
-| Candidacy lazy-fetch | `handlers.go` | `ensureCandidacyData()` line 1266 | Fetch endorsements/stances on profile view |
-| Candidate races | `handlers.go` | `GetCandidatesByZip()` line 3674 | Live candidate/race data by ZIP |
-| Cache warmers | `handlers.go` | `warmFederal/warmState/warmLocal()` | Populate politicians from BallotReady API |
+1. Scrape or import raw officials into `essentials.scraped_officials` staging table
+2. Run name-matching against `essentials.politicians` (exact → likely → possible → none)
+3. For matched records: update existing district `geo_id` and `mtfcc` fields
+4. For unmatched records: create new politicians, offices, districts with synthetic `external_id` (negative integers starting at -100001)
+5. Mark scraped records as `promoted`
 
-### Recommendation: Phased Removal
+This pattern is correct. **Do not replace it.** The key insight is that `external_id` is the primary deduplication key — it comes from BallotReady and is globally unique. For locally-created records (from scraping/GIS), negative synthetic `external_id` values avoid collision.
+
+### Stack Decision: psycopg2 with `ON CONFLICT DO NOTHING` / `DO UPDATE`
 
 **Confidence: HIGH**
 
-**Phase 1 — Remove address search fallback (core of v1.5):**
+For the geofence import pipeline, use `psycopg2.extras.execute_values()` for bulk upserts:
 
-In `SearchPoliticians()` at line 2916, the code falls back to BallotReady when geofence returns no results. Replace this with a clean error response:
+```python
+from psycopg2.extras import execute_values
 
-```go
-// Replace BallotReady fallback with informative error
-if len(geoMatches) == 0 {
-    w.Header().Set("X-Data-Status", "no-geofence-coverage")
-    writeJSON(w, []OfficialOut{})
-    return
-}
+# Upsert geofence boundaries (conflict on geo_id + mtfcc)
+execute_values(cur, """
+    INSERT INTO essentials.geofence_boundaries
+        (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
+    VALUES %s
+    ON CONFLICT (geo_id, mtfcc) DO UPDATE SET
+        geometry = EXCLUDED.geometry,
+        name = EXCLUDED.name,
+        imported_at = EXCLUDED.imported_at
+""", rows)
 ```
 
-The frontend should handle empty results gracefully (already does for the warming case).
+For politician records, use `ON CONFLICT (external_id) DO NOTHING` to preserve existing BallotReady data:
 
-**Phase 2 — Remove live candidate fetching:**
-
-`GetCandidatesByZip()` calls `brProvider.Client().FetchRacesByZip()` for live race data. Replace with DB-only:
-
-```go
-// Instead of live BallotReady call, query essentials.election_records
-// for future elections in the given ZIP's districts
+```python
+execute_values(cur, """
+    INSERT INTO essentials.politicians
+        (id, external_id, first_name, last_name, full_name, party, source, ...)
+    VALUES %s
+    ON CONFLICT (external_id) DO NOTHING
+""", rows)
 ```
 
-This requires a `GET /candidates/{zip}` DB-backed query using `election_records` + `essentials.zip_politicians`. The data is already stored from previous BallotReady imports — the live call is just a freshness mechanism.
+**Why `DO NOTHING` for politicians:** BallotReady-sourced records are richer (photos, bio, experience) than scraped records. If a politician already exists from BallotReady, the scraped data should not overwrite it.
 
-**Phase 3 — Remove candidacy lazy-fetch:**
+**Why `execute_values` not `to_postgis`:** `to_postgis()` is ideal for geometry data (handles WKB encoding automatically). For non-geometry politician records, `execute_values()` is faster, more explicit about conflict handling, and easier to audit.
 
-`ensureCandidacyData()` calls BallotReady on first profile view. Once BallotReady is removed, this becomes a no-op. The data already stored in `endorsements`, `politician_stances`, `election_records` is the source of truth.
+### Required psycopg2 Usage Pattern
 
-**Phase 4 — Remove Provider interface from warmers:**
+The existing scripts use a consistent URL-encoding pattern for Supabase passwords containing special characters:
 
-`warmFederal/warmState/warmLocal` currently call `Provider.FetchFederal/FetchByState/FetchByZip`. When BallotReady is removed, these become no-ops (or removed entirely). The cached data in the DB is permanent.
+```python
+from urllib.parse import urlparse, quote_plus, urlunparse
 
-### What to Keep
+def get_engine():
+    raw_url = os.getenv("DATABASE_URL")
+    parsed = urlparse(raw_url)
+    if parsed.password:
+        encoded_pw = quote_plus(parsed.password)
+        netloc = f"{parsed.username}:{encoded_pw}@{parsed.hostname}"
+        if parsed.port:
+            netloc += f":{parsed.port}"
+        safe_url = urlunparse((parsed.scheme, netloc, parsed.path,
+                               parsed.params, parsed.query, parsed.fragment))
+    else:
+        safe_url = raw_url
+    return create_engine(safe_url)
+```
 
-- `internal/essentials/ballotready/` package — keep as dead code until all imports are removed (avoids breaking the build mid-migration)
-- `provider/` package interface — keep as scaffolding; set `Provider = nil` at startup
-- All DB tables and cached politician data — the data is the asset; only the live API calls go away
+Every new import script must use this pattern. Supabase connection strings contain `@` in the password, which breaks naive URL parsing.
 
-### No New Go Packages Needed
+### Synthetic External ID Strategy
 
-The removal is subtractive. No new dependencies are introduced. The geofence lookup (`FindGeoIDsByPoint`, `FindPoliticiansByGeoMatches`) and DB cache queries already cover the replacement functionality.
+For records created from GIS/scrape sources (not BallotReady), use negative integers:
+
+```python
+EXT_ID_COUNTER = -200001  # Start at -200001 for v1.6 (v1.5 used -100001)
+
+def next_ext_id():
+    global EXT_ID_COUNTER
+    val = EXT_ID_COUNTER
+    EXT_ID_COUNTER -= 1
+    return val
+```
+
+Using a new starting range (-200001) avoids collisions with any synthetic IDs created during the `promote_scraped_officials.py` run in v1.5.
 
 ---
 
-## 4. New Environment Variables
+## 4. Repeatable Import Pipeline Tooling
 
-| Variable | Used By | Status |
-|----------|---------|--------|
-| `GOOGLE_MAPS_API_KEY` | Backend geocoding client | Already in use |
-| `VITE_GOOGLE_MAPS_API_KEY` | Frontend Places autocomplete | Already in use (via `useGooglePlacesAutocomplete.js`) |
-| `BALLOTREADY_API_KEY` | BallotReady provider | Remove after full cutover |
+### Current Pipeline Structure
+
+The existing scripts are standalone one-off importers. The v1.6 goal is a repeatable pipeline for future regional expansion. The architecture should remain **a collection of Python scripts** — not a Go CLI, not a Makefile-based build system, not a scheduled job system.
+
+Rationale: The team is 2-3 devs. Scripts are easier to audit, modify, and re-run selectively than compiled CLI tools or workflow systems. The import pipeline runs maybe quarterly — not a production hot path.
+
+### Recommended Structure for v1.6
+
+```
+EV-Backend/scripts/
+├── requirements.txt          # Pin all Python dependencies
+├── utils.py                  # Shared: get_engine(), load_env(), next_ext_id(), import_individually()
+├── import_tiger_ca.py        # TIGER shapefiles for California (already largely done)
+├── import_lacounty_gis.py    # LA County GIS Portal: supervisor districts, city boundaries
+├── import_lacounty_officials.py  # Politician records from lavote.gov scraper output
+├── promote_officials.py      # Deduplication and promotion to essentials schema
+└── verify_lacounty.py        # Point-in-polygon verification for test addresses
+```
+
+The key structural improvement over the current state is a shared `utils.py`. All scripts currently duplicate the `get_engine()` / `load_env()` / URL-encoding logic. Extract into a single module.
+
+### Stack Decision: Shared `utils.py`, No New Frameworks
+
+**Confidence: HIGH**
+
+Do not add:
+- `click` or `argparse` CLI frameworks — the existing `argparse` usage in `lavote_scraper.py` is sufficient
+- `luigi`, `prefect`, `airflow` task scheduling — way too heavy for a quarterly one-off import
+- `alembic` migrations for schema changes — GORM AutoMigrate handles schema in Go
+- `poetry` or `pipenv` — a plain `requirements.txt` with pinned versions is sufficient for a 5-file script collection
+
+### `.env.local` Autodiscovery Pattern
+
+Every script should auto-discover `DATABASE_URL` from `../.env.local` (the EV-Backend root env file). This pattern is already in `import_ca_legislative_geofences.py` and `promote_scraped_officials.py`:
+
+```python
+def load_env():
+    if os.getenv("DATABASE_URL"):
+        return
+    env_path = Path(__file__).parent.parent / ".env.local"
+    if env_path.exists():
+        with open(env_path) as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("DATABASE_URL="):
+                    os.environ["DATABASE_URL"] = line.split("=", 1)[1]
+                    return
+    print("Error: DATABASE_URL not set and .env.local not found")
+    sys.exit(1)
+```
+
+Every new script must include this function verbatim (or import from `utils.py` once that exists).
 
 ---
 
@@ -259,34 +301,20 @@ The removal is subtractive. No new dependencies are introduced. The geofence loo
 
 ### Core Technologies
 
-No new core technologies. All required infrastructure is already in place:
-- Google Maps Geocoding REST API (already calling via `geocoding/google.go`)
-- Google Maps Places JavaScript API (already loaded via `@googlemaps/js-api-loader`)
-- PostGIS ST_Contains queries (already implemented in `geofence_lookup.go`)
-- TIGER 2024 geofence data (already imported for Monroe County IN + LA County CA)
+No new core technologies. The import pipeline is Python scripts that connect to the existing PostgreSQL/PostGIS database.
 
-### Supporting Libraries
+### Supporting Libraries (Import Pipeline)
 
-| Library | Version | Purpose | Status |
-|---------|---------|---------|--------|
-| `@googlemaps/js-api-loader` | `^2.0.2` | Load Google Maps JS API dynamically | Already installed |
+| Library | Version | Purpose | When to Use |
+|---------|---------|---------|-------------|
+| `geopandas` | `1.1.2` | Read shapefiles, GeoJSON; reproject; write to PostGIS | All geometry imports (TIGER + ArcGIS GeoJSON) |
+| `SQLAlchemy` | `2.0.46` | Engine for `to_postgis()` | Geometry imports only; use raw psycopg2 for politician records |
+| `psycopg2-binary` | `>=2.9` | Direct DB operations, bulk upserts | Politician/district/office record creation |
+| `requests` | `>=2.32` | Download TIGER ZIPs, fetch ArcGIS GeoJSON | All HTTP downloads |
+| `shapely` | `>=2.0` | Geometry validation, `ST_MakeValid` equivalent | When ArcGIS data has geometry errors (call `.buffer(0)` to fix) |
+| `beautifulsoup4` | `>=4.12` | HTML parsing for lavote.gov scraper | Already in use; only for scraper scripts |
 
-No new npm or Go packages are required for this milestone.
-
----
-
-## Installation
-
-No new packages to install. Verify the existing package is current:
-
-```bash
-# In essentials/
-npm list @googlemaps/js-api-loader
-# Should show 2.0.2 or higher
-
-# In EV-Backend/ — no new packages
-go list -m all | grep google  # No google packages should appear
-```
+No new Go packages needed. No new npm packages needed. No changes to the existing Go backend for geofence data loading.
 
 ---
 
@@ -294,10 +322,12 @@ go list -m all | grep google  # No google packages should appear
 
 | Recommended | Alternative | Why Not |
 |-------------|-------------|---------|
-| Custom `geocoding.Client` (existing) | `googlemaps.github.io/maps` Go SDK | SDK is v1.7.0 (Dec 2023, limited recent activity); custom client already works and covers all needed fields with 135 lines |
-| Custom hook + `@googlemaps/js-api-loader` | `@vis.gl/react-google-maps` | Adds dependency for use case already covered by existing hook pattern |
-| `PlaceAutocompleteElement` | Keep legacy `Autocomplete` class | Legacy class not available to new API keys since March 2025; forward-compat migration costs nothing |
-| Empty response for uncovered geofence areas | BallotReady fallback for uncovered areas | Removing the fallback is the whole point of v1.5; uncovered areas return empty with a clear status header |
+| Python `geopandas` scripts | Go CLI with CGO + GDAL | No mature Go shapefile library; CGO introduces build complexity; GDAL dependency on the machine anyway |
+| Python `geopandas` scripts | `ogr2ogr` shell scripts | Two-step import (staging → final); requires GDAL; lacks per-record conflict handling; already superseded |
+| `psycopg2` + `execute_values` for politician records | `to_postgis()` for all data | `to_postgis()` doesn't support `ON CONFLICT`; upsert logic requires raw SQL |
+| `requirements.txt` with pinned versions | `poetry`/`pipenv` | Import scripts are not a Python package; lockfile tooling adds overhead for 5 scripts run quarterly |
+| ArcGIS REST GeoJSON via `requests` | `arcgis` Python package | Esri SDK is 50MB, requires authentication tokens, overkill for read-only GeoJSON queries |
+| Negative synthetic `external_id` values | UUID-based identifiers | `external_id` is INT in the schema; maintaining int type avoids schema changes |
 
 ---
 
@@ -305,12 +335,41 @@ go list -m all | grep google  # No google packages should appear
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| `googlemaps.github.io/maps` Go package | Zero benefit over existing `net/http` implementation; v1.7.0 last released Dec 2023 | Existing `geocoding/google.go` custom client |
-| `use-places-autocomplete` npm | Third-party wrapper around a deprecated class (uses `AutocompleteService`); adds an npm dependency | `@googlemaps/js-api-loader` + `PlaceAutocompleteElement` directly |
-| `react-google-autocomplete` npm | Uses legacy `Autocomplete` class; will break on new API keys | Custom hook with `PlaceAutocompleteElement` |
-| Google Address Validation API | Adds billing complexity; Places autocomplete + Geocoding is sufficient for point-in-polygon matching | Existing Geocoding API |
-| Any new Go web framework or router | Existing Chi router handles all needed routes | Keep Chi |
-| PostGIS Go helper libraries | Raw SQL queries in `geofence_lookup.go` are clear, tested, and cover the use case | Existing `db.DB.WithContext(ctx).Raw(query, ...)` pattern |
+| `ogr2ogr` (GDAL CLI) | Requires system GDAL install; staging table pattern; superseded by Python scripts | `geopandas.to_postgis()` |
+| `arcgis` Python SDK | 50MB dependency; auth required; overkill for GeoJSON reads | `requests` + `geopandas.read_file()` |
+| `luigi`/`prefect`/`airflow` | Heavy task orchestration for a quarterly one-off import | Plain Python scripts with shared `utils.py` |
+| `alembic` migrations | Schema managed by GORM AutoMigrate in Go server | Keep GORM AutoMigrate; script-only schema changes via `db.Exec()` |
+| Any new Go packages | No Go code needed for data import | All import work stays in Python scripts |
+| `geoalchemy2` directly | Only needed if writing raw geometry SQL; `to_postgis()` handles it | `geopandas.to_postgis()` uses it internally |
+| TIGER `PLACE` for LA city council | TIGER provides city *boundaries*, not city *council ward sub-districts* | LA County eGIS ArcGIS FeatureServer per city |
+
+---
+
+## Stack Patterns by Use Case
+
+**If importing TIGER shapefiles (congressional, state legislative, county, school):**
+- Use `geopandas.read_file(shp_path)` to load
+- Filter by `STATEFP == '06'` (California)
+- Reproject with `.to_crs("EPSG:4326")` if not already WGS84
+- Assign `mtfcc` from the TIGER filename/field
+- Generate OCD-ID from GEOID using the established `geoid_to_ocd_id()` pattern in `import_ca_legislative_geofences.py`
+- Call `gdf.to_postgis("geofence_boundaries", engine, schema="essentials", if_exists="append")`
+- Handle `UniqueViolation` by falling back to `import_individually()` (already in 3 scripts)
+
+**If importing LA County GIS Portal data (supervisor districts, city boundaries):**
+- Fetch with `requests.get(url + "?where=1%3D1&outSR=4326&f=geojson")`
+- Parse with `gpd.read_file(resp.text)` or `gpd.GeoDataFrame.from_features(resp.json()['features'])`
+- Manually assign `mtfcc` based on the layer type (G4020 for supervisorial, G4110 for city boundaries)
+- Generate a consistent `geo_id` (e.g., `06037SD1` for Supervisor District 1)
+- Import via `to_postgis()` with `if_exists="append"`
+- Handle `outSR=4326` — the Political_Boundaries MapServer uses CA State Plane (EPSG:2229) by default; **always** pass `outSR=4326`
+
+**If creating politician records from scraped/GIS data:**
+- Always check for `external_id` conflict first
+- Use negative synthetic `external_id` starting at -200001 (not -100001, already used in v1.5)
+- Use `psycopg2.extras.execute_values()` with `ON CONFLICT (external_id) DO NOTHING`
+- Always link district `geo_id` to a corresponding `geofence_boundaries.geo_id` (import geofences first)
+- Mark with `source = 'scraped'` or `source = 'lacounty_gis'` for auditability
 
 ---
 
@@ -318,60 +377,62 @@ go list -m all | grep google  # No google packages should appear
 
 | Package | Version | Compatible With | Notes |
 |---------|---------|-----------------|-------|
-| `@googlemaps/js-api-loader` | `^2.0.2` | React 19, Vite 7 | v2.x is ESM-first; works with Vite without config changes |
-| `@googlemaps/js-api-loader` | `^2.0.2` | `PlaceAutocompleteElement` | `importLibrary('places')` exposes `PlaceAutocompleteElement` |
-| Google Maps JS API | `weekly` channel | `PlaceAutocompleteElement` | `weekly` channel always has latest stable |
+| `geopandas` | `1.1.2` | `SQLAlchemy 2.0.x` | geopandas 1.1 raised minimum tested SA to 2.0 |
+| `geopandas` | `1.1.2` | `psycopg2 2.9.x` | Supports both psycopg2 and psycopg (v3) |
+| `SQLAlchemy` | `2.0.46` | `psycopg2-binary 2.9.x` | psycopg2 remains default dialect for `postgresql://` URLs in SA 2.0 |
+| `SQLAlchemy` | `2.0.46` | `geopandas 1.1.2` | SA 2.1 is beta only; use 2.0.46 |
+| `shapely` | `2.0.x` | `geopandas 1.1.2` | geopandas 1.x requires shapely 2.x |
+| `psycopg2-binary` | `2.9.x` | `PostgreSQL 15` (Supabase) | -binary avoids libpq compile; works for import scripts |
 
 ---
 
-## Integration Map: How Components Connect
+## LA County GIS Portal — Verified Endpoints
 
+| Dataset | URL | Notes |
+|---------|-----|-------|
+| Supervisorial Districts (Current) | `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27/query?where=1%3D1&outFields=DISTRICT,LABEL&outSR=4326&f=geojson` | 5 districts; default CRS is EPSG:2229 — always add `outSR=4326` |
+| City Boundaries (polygons) | `https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer/0/query?where=1%3D1&outSR=4326&f=geojson` | 88 incorporated cities; maintained by LA County DPW |
+| School Districts (LACOE) | `https://egis2.lacounty.gov/arcgis/rest/services/LACOE/HARS/MapServer` | Multiple layers; verify active layer ID before importing |
+
+These endpoints were verified February 2026 (HIGH confidence — confirmed via direct ArcGIS REST API responses).
+
+---
+
+## Integration with Existing Go/PostGIS Stack
+
+No changes to the Go backend are needed for this milestone. The import pipeline writes directly to the same `essentials.geofence_boundaries` and `essentials.politicians` tables that the Go backend reads from.
+
+The existing `FindGeoIDsByPoint()` and `FindPoliticiansByGeoMatches()` in `geofence_lookup.go` will automatically return LA County officials once:
+1. Geofence boundaries are imported (geofence_boundaries rows with correct geo_id + mtfcc)
+2. Politician records exist (politicians + offices + districts rows with matching geo_id on districts)
+
+The `mtfccToDistrictTypes` map in `geofence_lookup.go` already handles the MTFCC codes needed:
+
+```go
+"G4020": {"COUNTY", "JUDICIAL"},    // County — Supervisorial districts
+"G4110": {"LOCAL", "LOCAL_EXEC"},   // Incorporated Place — City boundaries
+"G5420": {"SCHOOL"},                // Unified School District
+"X0001": {"LOCAL"},                 // City council sub-districts
 ```
-Frontend (essentials)
-  Landing.jsx / Results.jsx
-    └─ useGooglePlacesAutocomplete hook
-         └─ @googlemaps/js-api-loader v2.0.2
-              └─ google.maps.places.PlaceAutocompleteElement
-                   └─ gmp-select event → formattedAddress string
-                        └─ navigate('/results?q=<address>')
 
-Backend (EV-Backend)
-  POST /essentials/politicians/search { query: "<address>" }
-    └─ geocoding.Client.Geocode(address)
-         └─ Google Maps Geocoding REST API
-              └─ { lat, lng, state, zip, formatted }
-                   └─ FindGeoIDsByPoint(lat, lng)
-                        └─ PostGIS ST_Contains on essentials.geofence_boundaries
-                             └─ []GeoMatch{GeoID, MTFCC}
-                                  └─ FindPoliticiansByGeoMatches(matches)
-                                       └─ DB join: politicians → offices → districts
-                                            └─ + fetchStatewideFromDB(state)
-                                                 └─ []OfficialOut → JSON response
-```
-
-The entire flow is already wired. v1.5 work is:
-1. Migrate frontend hook from legacy `Autocomplete` to `PlaceAutocompleteElement`
-2. Remove ZIP-required check from `geocoding/google.go`
-3. Remove BallotReady fallback from `SearchPoliticians()`
-4. Replace live BallotReady candidate call with DB-backed query
-5. Remove `ensureCandidacyData` BallotReady live-fetch
+No Go code changes are needed unless a new MTFCC is introduced.
 
 ---
 
 ## Sources
 
-- `essentials/package.json` — confirmed `@googlemaps/js-api-loader: ^2.0.2` already installed
-- `essentials/src/hooks/useGooglePlacesAutocomplete.js` — existing hook implementation
-- `EV-Backend/internal/essentials/geocoding/google.go` — existing custom geocoding client
-- `EV-Backend/internal/essentials/geofence_lookup.go` — existing PostGIS integration
-- `EV-Backend/internal/essentials/handlers.go` — confirmed BallotReady usage locations (lines 1266, 2917, 3674)
-- [Google Maps JS API Loader GitHub](https://github.com/googlemaps/js-api-loader) — v2.0.2 confirmed latest release (October 2025), HIGH confidence
-- [PlaceAutocompleteElement docs](https://developers.google.com/maps/documentation/javascript/place-autocomplete-new) — replacement for legacy Autocomplete, HIGH confidence
-- [visgl/react-google-maps issue #736](https://github.com/visgl/react-google-maps/issues/736) — legacy Autocomplete not available to new API keys since March 2025, MEDIUM confidence
-- [pkg.go.dev/googlemaps.github.io/maps](https://pkg.go.dev/googlemaps.github.io/maps) — Go SDK v1.7.0, last released December 2023, MEDIUM confidence
-- [Google Geocoding API overview](https://developers.google.com/maps/documentation/geocoding/overview) — Geocoding vs Address Validation API distinction, HIGH confidence
+- `EV-Backend/scripts/import_ca_legislative_geofences.py` — established Python + geopandas import pattern, HIGH confidence
+- `EV-Backend/scripts/promote_scraped_officials.py` — established dedup pattern, HIGH confidence
+- `EV-Backend/internal/essentials/geofence_lookup.go` — MTFCC → district_type mapping, HIGH confidence
+- [GeoPandas 1.1.2 changelog](https://geopandas.org/en/stable/docs/changelog.html) — current stable release February 2026, HIGH confidence
+- [geopandas.GeoDataFrame.to_postgis docs](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.to_postgis.html) — requires SQLAlchemy 2.0 + psycopg2, HIGH confidence
+- [SQLAlchemy releases](https://github.com/sqlalchemy/sqlalchemy/releases) — 2.0.46 current stable January 2026, HIGH confidence
+- [arcgis.gis.lacounty.gov Political_Boundaries MapServer/27](https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27) — Supervisorial Districts endpoint verified, HIGH confidence
+- [dpw.gis.lacounty.gov CityBoundaries MapServer](https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer) — City boundaries polygon service, HIGH confidence
+- [psycopg2 docs execute_values](https://www.psycopg.org/docs/) — psycopg2 2.9.11 current stable, HIGH confidence
+- Census TIGER/Line FTP `https://www2.census.gov/geo/tiger/TIGER2024/` — directory structure verified, HIGH confidence
 
 ---
 
-*Stack research for: v1.5 Address Verification & BallotReady Independence*
-*Researched: 2026-02-22*
+*Stack research for: v1.6 LA County Full Coverage — geofence expansion and politician data pipeline*
+*Researched: 2026-02-23*

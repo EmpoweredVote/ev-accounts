@@ -1,175 +1,267 @@
 # Pitfalls Research
 
-**Domain:** Address verification, geofence-based district matching, external API removal (civic tech)
-**Researched:** 2026-02-22
-**Confidence:** HIGH (PostGIS/TIGER behaviors), HIGH (Google Maps billing), MEDIUM (BallotReady cutover patterns — specific to this project)
+**Domain:** TIGER shapefile import pipeline, LA County GIS integration, politician deduplication, PostGIS geofence scaling (civic tech)
+**Researched:** 2026-02-23
+**Confidence:** HIGH (PostGIS/geometry behaviors — verified against PostGIS docs + GDAL issues), HIGH (Supabase pooler limitation — verified against Supabase docs), HIGH (MTFCC gap — verified against Census docs + BallotReady support), MEDIUM (deduplication patterns — verified against OpenSanctions + Cicero articles), MEDIUM (LA County GIS rate limits — API observed, no official docs)
 
 ---
 
 ## Critical Pitfalls
 
-### Pitfall 1: SRID Mismatch Between TIGER Data and Stored Points
+### Pitfall 1: `ON CONFLICT (geo_id) DO NOTHING` Silently Drops Valid Boundaries When geo_id Is Not Unique Across MTFCC Types
 
 **What goes wrong:**
-TIGER shapefiles ship in NAD83 (SRID 4269), but most geocoding APIs (including Google Maps) return coordinates in WGS84 (SRID 4326). If you load TIGER geometries into PostGIS without re-projecting to 4326, or if you store Google-returned lat/lng as SRID 4326 and your district polygons are SRID 4269, every `ST_Within` call silently fails or throws `ERROR: Operation on mixed SRID geometries`. The query returns zero results for every address. This is not a data gap — it is a configuration bug that looks like a data gap.
+The current import script uses `ON CONFLICT (geo_id) DO NOTHING` when moving rows from the staging table into `essentials.geofence_boundaries`. This assumes `geo_id` is globally unique across all district types. It is not. The same Census GEOID can appear in multiple TIGER shapefiles with different MTFCC codes — for example, a county GEOID (`06037`) appears in the county shapefile (G4020) and may also appear as a component of school district or place GEOIDs. More critically, G5400 (Elementary), G5410 (Secondary), and G5420 (Unified) school districts in LA County can produce rows with overlapping spatial coverage even when their geo_ids differ, but SLDU and SLDL districts for the same state leg district number often share the same geo_id prefix structure. When the first import run inserts `geo_id = '0606' + district_number` for State Senate, a second run importing State House districts with the same derived ID key silently drops the House district. The address search returns Senate matches but never House matches for those districts — and no error is thrown.
 
 **Why it happens:**
-Developers load shapefiles with `shp2pgsql` using the default SRID from the `.prj` file (4269 for TIGER data), then store geocoded coordinates as `ST_Point(lng, lat, 4326)`. PostGIS enforces SRID consistency on spatial operations. The mismatch is invisible until a live query fires.
+The staging → production INSERT was designed for the first import run where geo_ids were assumed to be globally unique. As more district types are added (school districts, county subdivisions, places), the uniqueness assumption breaks. The `DO NOTHING` clause means failures are invisible — the row count in the summary query looks correct because it counts all rows in the table, not the rows that were actually inserted in this run.
 
 **How to avoid:**
-Pick one SRID for the entire pipeline and enforce it at import time. WGS84 (4326) is the right choice because Google Maps returns 4326 coordinates. Load TIGER shapefiles with explicit reprojection:
+Change the unique constraint from `geo_id` alone to `(geo_id, mtfcc)` — this is the true unique key for geofence boundaries. Update the import script's conflict clause to match:
+```sql
+ON CONFLICT (geo_id, mtfcc) DO UPDATE SET
+    geometry = EXCLUDED.geometry,
+    name = EXCLUDED.name,
+    source = EXCLUDED.source,
+    imported_at = EXCLUDED.imported_at;
+```
+This also makes re-imports idempotent: re-running the script updates existing rows rather than silently skipping them. Add a post-import verification query that counts rows per MTFCC and compares against expected counts for the region:
+```sql
+SELECT mtfcc, COUNT(*) as count FROM essentials.geofence_boundaries
+WHERE source = 'census_tiger_2024' GROUP BY mtfcc ORDER BY mtfcc;
+```
+Cross-reference against expected TIGER counts: CA has ~30 congressional districts, 40 state senate districts, 80 assembly districts, 80+ unified school districts in LA County alone.
+
+**Warning signs:**
+- Post-import count per MTFCC shows 0 for a layer you just imported (e.g., `G5210` shows 0 rows after running the state senate import)
+- Address lookups in a specific region consistently return Federal + State senators but never State Assembly members
+- Running the import script twice produces different row count totals in the summary
+- `SELECT COUNT(*) FROM staging` is greater than `SELECT COUNT(*) FROM final WHERE source = 'census_tiger_2024'` — the difference is silently dropped rows
+
+**Phase to address:**
+Shapefile pipeline design phase — before importing a single layer for LA County. Fix the unique constraint before the first multi-MTFCC import. This is a schema change, not just a script fix.
+
+---
+
+### Pitfall 2: Invalid Geometries in TIGER Shapefiles Fail Silently with ogr2ogr — No Error, No Row
+
+**What goes wrong:**
+TIGER shapefiles occasionally contain geometries that fail PostGIS's validity checks: self-intersecting rings, zero-area slivers, or ring touches that violate OGC geometry rules. When ogr2ogr encounters a geometry that cannot be stored in the PostGIS column constraint, it skips the row and continues — unless you run with `-skipfailures` explicitly, in which case it always skips. Either way, the import appears to succeed but some districts are missing. For coastal congressional districts in California (which have complex coastline polygons with many vertices), invalid geometry failures are especially common. The Bloomington import already used `ST_MakeValid` to patch this for the city council data — LA County will need the same treatment at scale.
+
+**Why it happens:**
+TIGER geometric data is generated for cartographic accuracy, not topological validity. Coastal boundaries trace irregular shorelines with thousands of vertices that sometimes produce self-intersections when simplified. The `import_shapefiles.sh` script does not pass `--makevalid` or use `ST_MakeValid` in the post-processing SQL. It also does not validate row counts before and after import.
+
+**How to avoid:**
+Add `-makevalid` to every `ogr2ogr` call as a baseline safeguard:
 ```bash
-shp2pgsql -s 4269:4326 tl_2025_us_cd119.shp districts | psql -d empowered_vote
+ogr2ogr -f PostgreSQL "PG:$DB_CONNECTION" "$shp_file" \
+    -nln essentials.geofence_boundaries_staging \
+    -append \
+    -t_srs EPSG:4326 \
+    -makevalid \
+    ...
 ```
-Alternatively, add a geometry column check constraint on the district table:
+Note: ogr2ogr's `-makevalid` can produce `GeometryCollection` types when a repair results in mixed geometry types (known GDAL issue #6340, fixed in GDAL 3.5+). Verify your GDAL version with `ogr2ogr --version`. If you are on GDAL < 3.5, apply `ST_MakeValid` in the post-processing SQL instead and use `ST_CollectionExtract` to extract only polygon geometries:
 ```sql
-ALTER TABLE geofences.districts
-  ADD CONSTRAINT enforce_srid CHECK (ST_SRID(geom) = 4326);
+INSERT INTO essentials.geofence_boundaries (geo_id, mtfcc, name, geometry, source, imported_at)
+SELECT
+    geo_id, mtfcc, name,
+    ST_Multi(ST_CollectionExtract(ST_MakeValid(geometry), 3)) as geometry,
+    'census_tiger_2024',
+    NOW()
+FROM essentials.geofence_boundaries_staging
+WHERE ST_GeometryType(ST_MakeValid(geometry)) NOT IN ('GEOMETRYCOLLECTION', 'POINT', 'LINESTRING')
+   OR ST_GeometryType(ST_MakeValid(ST_CollectionExtract(geometry, 3))) IS NOT NULL
+ON CONFLICT (geo_id, mtfcc) DO UPDATE SET geometry = EXCLUDED.geometry;
 ```
-This fails fast during import if the SRID is wrong, rather than silently producing empty query results.
+Run a pre-insert validity check to quantify the problem before fixing it:
+```sql
+SELECT COUNT(*) as invalid_count, mtfcc
+FROM essentials.geofence_boundaries_staging
+WHERE NOT ST_IsValid(geometry)
+GROUP BY mtfcc;
+```
 
 **Warning signs:**
-- PostGIS error: `Operation on mixed SRID geometries (Geometry, 4269) != (Geometry, 4326)` in backend logs
-- `ST_Within` or `ST_Contains` queries return 0 rows for all addresses, even major city centers
-- QGIS or pgAdmin shows misaligned layers when overlaying district polygons and address points
+- `SELECT COUNT(*) FROM essentials.geofence_boundaries_staging` differs from `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE source = 'census_tiger_2024'` — the gap is missing rows due to import failures
+- ogr2ogr output shows `Features without geometry skipped: N` where N > 0
+- Congressional districts in the import cover all of California but a specific coastal district (e.g., CA-36 or CA-47) never returns results for any address
+- `ST_IsValid(geometry)` returns false for some rows: `SELECT geo_id, ST_IsValidReason(geometry) FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry)`
 
 **Phase to address:**
-Geofence data load phase — enforce SRID before a single district polygon enters the database. Run a validation query after every shapefile import:
-```sql
-SELECT DISTINCT ST_SRID(geom) FROM geofences.districts;
-```
-Expected result: exactly one row, value `4326`.
+Shapefile import execution phase — before moving data from staging to production. The pre-insert validity check must run before the final `INSERT ... ON CONFLICT` statement. Never promote staging data to production without verifying zero invalid geometries.
 
 ---
 
-### Pitfall 2: Abandoned Google Maps Autocomplete Sessions Billed Per-Request
+### Pitfall 3: Supabase Pooler (Port 6543) Breaks ogr2ogr and psql COPY — Use Direct Connection for All Imports
 
 **What goes wrong:**
-Google's Places Autocomplete uses session tokens to group keystrokes + final selection into one billable unit. If the user types an address, sees suggestions, then closes the modal or navigates away without selecting a result, that session is "abandoned." Every individual keystroke request is then billed at the per-request Autocomplete rate instead of the session rate. For a civic app with moderate traffic, abandoned sessions are common (users try address search, get distracted, close it). This can 3-10x the actual billing cost.
+The Supabase connection string available from the dashboard defaults to the Supavisor connection pooler on port 6543, which runs in transaction mode. ogr2ogr, shp2pgsql-piped-to-psql, and multi-statement psql scripts all fail or behave incorrectly through the pooler because:
+1. Transaction-mode poolers do not support prepared statements, which ogr2ogr uses internally
+2. The pooler may route different statements in a multi-statement transaction to different backend connections, breaking transactional guarantees
+3. Long-running bulk inserts (thousands of rows from a national TIGER file) time out at the pooler's connection limit before completing
+
+The import appears to run but silently commits partial data, leaving the table in an inconsistent mid-import state with no error returned to the shell script.
 
 **Why it happens:**
-Two implementation errors cause this:
-1. A new session token is generated on each keystroke instead of one per search session
-2. Session termination uses `Place Details (IDs Only)` — which is technically free — meaning Google treats it as if no session token was used and reverts all Autocomplete calls in that session to per-request pricing
+Developers copy the connection string from the Supabase dashboard "Connection String" tab, which presents the pooler URL by default. The direct connection URL requires explicitly selecting "Direct connection" in the dashboard. The error message from ogr2ogr is not always clear that prepared statements are the cause — it may fail with a generic "connection error" or "server closed the connection unexpectedly" after partial import.
 
 **How to avoid:**
-Generate one UUID session token when the autocomplete input mounts (or when the user first focuses the input). Pass the same token on every keystroke request. Terminate the session with a `Place Details` call that fetches at minimum `geometry/location` and `address_components` (these are billable, which satisfies Google's session termination requirement). Set a hard debounce of 300ms on the input — do not fire an API request on every keystroke. Use `@vis.gl/react-google-maps` (Google's endorsed React library as of 2025) which has built-in hooks for the Place Autocomplete Data API and handles session token lifecycle correctly.
+Always use the direct connection URL (port 5432) for all shapefile imports, psql scripts, and any bulk data operation. From the Supabase dashboard: Project Settings > Database > Connection string — switch to the "Direct connection" tab, not "Connection pooling". Verify the port in your `DATABASE_URL`:
+```bash
+# Correct for imports (direct connection)
+DATABASE_URL=postgresql://postgres:PASSWORD@db.PROJECTID.supabase.co:5432/postgres
 
-```typescript
-// Correct: one token per search session
-const sessionToken = useMemo(
-  () => new google.maps.places.AutocompleteSessionToken(),
-  [] // only one token per component mount
-);
+# Wrong for imports (pooler — will fail for ogr2ogr)
+DATABASE_URL=postgresql://postgres.PROJECTID:PASSWORD@aws-0-REGION.pooler.supabase.com:6543/postgres
+```
+Add a connection validation step at the start of every import script:
+```bash
+psql "$DATABASE_URL" -c "SELECT 1" || { echo "ERROR: Cannot connect to database"; exit 1; }
 ```
 
 **Warning signs:**
-- Google Cloud Console billing shows "Autocomplete - Per Request" SKU charges instead of "Autocomplete - Per Session" SKU
-- Session token is generated inside a `useEffect` that depends on the query string (recreates on each character)
-- The `PlacesService.getDetails()` call uses `fields: ['place_id']` only (IDs Only tier, voids session benefit)
+- ogr2ogr exits with "ERROR 1: Error executing: PQexec() -- server closed the connection unexpectedly"
+- `psql "$DATABASE_URL" -c "\d essentials.geofence_boundaries"` returns `prepared statement "..." does not exist`
+- Import appears to complete but row counts are lower than expected
+- DATABASE_URL in `.env` or CI script contains port 6543 or the `pooler.supabase.com` hostname
 
 **Phase to address:**
-Google Maps integration phase — before wiring up autocomplete. Test the billing impact with Cloud Console's usage dashboard after the first real integration test. Set a billing alert at $10/month in Google Cloud to catch runaway sessions early.
+Import tooling setup phase — verify the connection string before writing a single line of import logic. The direct connection URL must be documented in the project's import runbook and enforced by the import script's preflight checks.
 
 ---
 
-### Pitfall 3: ST_Within Returns No District for Points on Shared Boundaries
+### Pitfall 4: MTFCC Mapping Table Is Incomplete — Unknown Codes Return All District Types and Match Wrong Politicians
 
 **What goes wrong:**
-`ST_Within(point, polygon)` requires that the point's interior intersects the polygon's interior — a point exactly on the boundary line returns `false` for both adjacent polygons. In practice, street addresses near district borders (addresses on the edge of a city, or exactly on a county line) match zero districts. The user gets a "no representatives found" error that has nothing to do with data coverage — the address is fully valid and should match.
+The `mtfccToDistrictTypes` map in `geofence_lookup.go` currently handles 8 MTFCC codes. LA County imports will introduce codes not yet in the map. When `FindPoliticiansByGeoMatches` encounters an unknown MTFCC, it falls through to the else branch: `d.geo_id = $N` with no district type filter. This means any politician in any district that shares that geo_id — regardless of district type — gets returned. A user in an unincorporated LA County area might receive city council members from an adjacent incorporated city as if they represent them, simply because the geo_id is present in the districts table.
+
+Known MTFCC codes that will appear in LA County imports but are not yet in the map:
+- `G5400` — Elementary School District (separate from G5420 Unified)
+- `G5410` — Secondary School District (separate from G5420 Unified)
+- `G4110` — Incorporated Place (city boundary — distinct from county subdivision G4040)
+- `G4120` — Consolidated City (not common, but present in some CA data)
+- `G5200` is already mapped as `NATIONAL_LOWER`, but the current script imports congressional districts for Indiana only — re-importing CA congressional data may introduce duplicate MTFCC rows with same geo_id structure
 
 **Why it happens:**
-This is a documented PostGIS behavior difference: `ST_Within` excludes boundary points; `ST_Covers`/`ST_Contains` have different boundary semantics. Geocoded addresses from Google Maps have precision up to 6 decimal places, and Google often places coordinates directly on street centerlines, which frequently coincide with district boundary edges.
+The MTFCC map was built incrementally for Bloomington (Monroe County) requirements. Each new region adds new district types. The code path for unknown MTFCCs is intentionally permissive to avoid dropping data, but this permissiveness becomes a correctness bug at scale.
 
 **How to avoid:**
-Use `ST_Covers` instead of `ST_Within` for the primary query. `ST_Covers` returns true when a point is on the boundary of the polygon. Alternatively, use `ST_DWithin` with a small tolerance (1 meter) to catch near-boundary points:
+Audit all MTFCC codes that will appear in LA County imports before writing import scripts. Cross-reference the TIGER 2024 Technical Documentation Appendix E with the current `mtfccToDistrictTypes` map and add all missing codes before the first import. For codes without a clear district type mapping (e.g., G4120 Consolidated City), add them as LOCAL:
+```go
+var mtfccToDistrictTypes = map[string][]string{
+    "G5210": {"STATE_UPPER"},
+    "G5220": {"STATE_LOWER"},
+    "G5200": {"NATIONAL_LOWER"},
+    "G4020": {"COUNTY", "JUDICIAL"},
+    "G4040": {"LOCAL", "LOCAL_EXEC"},          // County Subdivision (township/unincorporated)
+    "G4110": {"LOCAL", "LOCAL_EXEC"},           // Incorporated Place (city)
+    "G4120": {"LOCAL", "LOCAL_EXEC"},           // Consolidated City
+    "G5400": {"SCHOOL"},                        // Elementary School District
+    "G5410": {"SCHOOL"},                        // Secondary School District
+    "G5420": {"SCHOOL"},                        // Unified School District (existing)
+    "X0001": {"LOCAL"},                         // BallotReady city council sub-districts
+}
+```
+After each import, run a query to identify unmapped MTFCCs in the database:
 ```sql
-SELECT d.*
-FROM geofences.districts d
-WHERE ST_Covers(d.geom, ST_SetSRID(ST_Point($1, $2), 4326))
-   OR ST_DWithin(d.geom, ST_SetSRID(ST_Point($1, $2), 4326)::geography, 1);
+SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries
+WHERE mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','X0001');
 ```
-Run the fallback `ST_DWithin` check only when the primary `ST_Covers` returns zero results.
+Any row returned from this query represents a coverage gap that will cause the permissive fallback to fire.
 
 **Warning signs:**
-- Addresses on major roads or county borders return zero districts while nearby addresses work correctly
-- Systematic "no results" for addresses in specific neighborhoods, particularly near city boundaries
-- Query logs show 0 rows returned for coordinates that visually sit inside a district in QGIS
+- Post-import query for unknown MTFCCs returns non-zero rows
+- Address search in an unincorporated LA County area (like Altadena or East LA) returns city council members from the adjacent incorporated city
+- `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries` shows codes not in the Go map
+- A politician with `district_type = 'LOCAL'` appears in search results for an address outside their geographic area
 
 **Phase to address:**
-Geofence matching implementation phase — use `ST_Covers` from day one. Add a test case with a coordinate known to sit exactly on a district boundary line.
+MTFCC mapping audit must happen before the first LA County import run. It is a prerequisite for correct search results, not a polish step.
 
 ---
 
-### Pitfall 4: Missing GiST Index Causes Full-Table Scan on Every Address Search
+### Pitfall 5: Politician Deduplication Fails When Manual Records and Automated Records Share the Same Person
 
 **What goes wrong:**
-PostGIS point-in-polygon queries against `ST_Within` or `ST_Covers` without a spatial index perform a sequential scan of every district polygon. For a table with national-level TIGER districts (Congressional, State Senate, State House, County, School District, Municipal, etc.), this could be 50,000+ polygons per query. Response times exceed 10-30 seconds on even a modest Supabase tier. The app appears broken.
+The system will have three sources of politician records for LA County: (1) the dead BallotReady import pipeline data already in the database, (2) new manual records entered via the staging module, and (3) potentially future automated imports. When these sources describe the same official, they create duplicate rows in `essentials.politicians`. The current unique key is `external_id` (an integer, set from BallotReady's numeric ID). Manual staging records have `external_id = 0` or a made-up value, so `ON CONFLICT (external_id) DO UPDATE` does not deduplicate them — it silently creates a second record for the same person. The address search query uses `DISTINCT ON (p.id)`, so both records appear in results. Users see the same supervisor or council member twice.
+
+The problem is compounded by name variations: "Karen Bass" vs. "Karen L. Bass", "Bob García" vs. "Robert Garcia", or records where `full_name` differs but `first_name` + `last_name` + `district_id` uniquely identify the same person.
 
 **Why it happens:**
-The most common mistake: creating a table and loading data, then running queries, and only adding the index later when slowness is noticed. The GiST index is not created by default on geometry columns. GORM AutoMigrate does not add spatial indexes.
+Manual records entered via the staging module have no external_id from BallotReady. The staging workflow was designed for new stances on existing politicians, not for creating new politician records. When it is repurposed to add gap-fill LA County officials, the uniqueness infrastructure (based on `external_id`) does not apply.
 
 **How to avoid:**
-Create the GiST index immediately after defining the geometry column, before loading any data:
+Before inserting any new politician record (whether manual or scripted), run an existence check using the `essentials.districts` geo_id and normalized name:
 ```sql
-CREATE INDEX idx_districts_geom ON geofences.districts USING GIST (geom);
+SELECT p.id FROM essentials.politicians p
+JOIN essentials.offices o ON o.politician_id = p.id
+JOIN essentials.districts d ON o.district_id = d.id
+WHERE d.geo_id = $1
+  AND LOWER(TRIM(p.last_name)) = LOWER(TRIM($2))
+  AND LOWER(TRIM(p.first_name)) = LOWER(TRIM($3));
 ```
-After bulk loading all shapefiles, run `VACUUM ANALYZE geofences.districts;` to update the planner statistics. Without ANALYZE, the query planner may ignore the index even when it exists. Verify the index is used with:
+If a match is found, update the existing record rather than inserting a new one. Use OCD-IDs as a secondary deduplication key when available — the `essentials.districts.ocd_id` field already stores these and they are stable identifiers intended for cross-source matching.
+
+For politician names specifically: normalize to lowercase, strip accents (García → garcia), strip Jr/Sr/III suffixes before comparison. Full name fuzzy matching (trigram similarity) is over-engineering for a 2-3 person team at this scale — exact normalized match on last_name + first_name + district geo_id is sufficient for a single-county import.
+
+Add a post-import duplicate detection query to the import runbook:
 ```sql
-EXPLAIN ANALYZE SELECT * FROM geofences.districts WHERE ST_Covers(geom, ST_SetSRID(ST_Point(-86.5, 39.2), 4326));
+SELECT p.last_name, p.first_name, d.geo_id, COUNT(DISTINCT p.id) as duplicate_count
+FROM essentials.politicians p
+JOIN essentials.offices o ON o.politician_id = p.id
+JOIN essentials.districts d ON o.district_id = d.id
+GROUP BY p.last_name, p.first_name, d.geo_id
+HAVING COUNT(DISTINCT p.id) > 1;
 ```
-The plan should show "Index Scan using idx_districts_geom" not "Seq Scan".
 
 **Warning signs:**
-- Address search endpoint takes >3 seconds for any query
-- PostgreSQL `pg_stat_user_tables` shows `seq_scan` count climbing on the districts table
-- `EXPLAIN ANALYZE` output shows "Seq Scan on districts" instead of "Index Scan"
+- The post-import duplicate detection query returns any rows
+- Address search result list shows the same person's name twice with different UUIDs in the response
+- Two politicians share the same `first_name`, `last_name`, and district label in the admin data entry UI
+- Manual staging entries have `source = ''` or `source = 'manual'` while the DB also has `source = 'ballotready'` entries with the same name
 
 **Phase to address:**
-Geofence data load phase — index is a prerequisite for the first query test. Never run a geofence query against unindexed data in any environment, including development.
+Politician gap-fill phase — deduplification check must run before inserting any manual record and again as a post-import validation step. The staging module workflow should surface the existence check result before allowing a new record to be created.
 
 ---
 
-### Pitfall 5: BallotReady Cutover Leaves Silent Dead Code Paths That Execute in Production
+### Pitfall 6: School District Overlap in LA County — Three Parallel Shapefiles Return Three Matches for One Address
 
 **What goes wrong:**
-The existing codebase has BallotReady API calls scattered across the `internal/essentials/` package: `warmLocal`, `warmFederal`, `warmState`, background goroutines, and the address search handler. Removing these requires touching many files. If any call site is missed, the code compiles fine but still fires BallotReady API requests in production — after the API key is revoked or the contract expires. These silently fail, triggering fallback logic that returns empty results. Users see no politicians but no clear error.
+LA County has three separate TIGER school district types: Unified (G5420), Elementary (G5400), and Secondary (G5410). An address in Los Angeles Unified School District (LAUSD) will match all three layers — LAUSD covers both elementary and secondary grades as a unified district. If all three shapefiles are imported and no deduplication logic exists, the geofence query returns three school district geo_id matches for one address. `FindPoliticiansByGeoMatches` builds a WHERE clause with three separate conditions, each potentially matching the same school board member's district record. The result: school board members appear three times in the API response. On the frontend, the school board section lists the same person three times.
+
+The same issue affects LA County's 5 supervisorial districts: if both the COUSUB (G4040) shapefile and a separate LA County GIS supervisor district import produce overlapping boundaries for unincorporated areas, a supervisor appears twice.
 
 **Why it happens:**
-The BallotReady client is passed as a dependency to warming functions. If a warming function is still being triggered (even if never explicitly called in new code paths), it may fire when the background cache-refresh goroutines run on a schedule. It is not enough to remove the obvious call sites — every goroutine and cache-check trigger must be audited.
+Importing all three school district shapefiles (UNSD + ELSD + SCSD) without a layer-selection strategy is a natural mistake — the script downloads all three by default. The Go lookup code does not deduplicate by politician ID beyond `DISTINCT ON (p.id)`, but that deduplication only works if the politician is matched once. Three separate WHERE conditions can each independently match the same politician row.
 
 **How to avoid:**
-Before the cutover, do a full audit: search the entire codebase for every reference to `ballotReadyClient`, `FetchOfficeholders`, `FetchPositionContainmentByZip`, `candidacyQuery`, and related identifiers. Create a checklist of every call site. After removing each one, verify with `go build` that the package compiles, then `grep` for any remaining references. Only delete the BallotReady client struct and API key environment variable after every call site is confirmed removed.
+For any given address, only import the school district layer that corresponds to the district type in the database. Since the politicians table uses `district_type = 'SCHOOL'` without distinguishing elementary/secondary/unified, choose one canonical shapefile — import only UNSD (G5420, Unified) for LA County, which covers the overwhelming majority of LA County students. Elementary-only and Secondary-only districts are edge cases that exist in a few rural California counties, not in metro LA County.
+
+If multiple school district layers must coexist, add deduplication logic in `FindPoliticiansByGeoMatches` before building the WHERE clause:
+```go
+// Deduplicate matches by MTFCC priority: prefer G5420 if any school district matches
+seenSchoolDistrict := false
+for _, m := range matches {
+    if m.MTFCC == "G5420" || m.MTFCC == "G5400" || m.MTFCC == "G5410" {
+        if seenSchoolDistrict && m.MTFCC != "G5420" {
+            continue // Skip elementary/secondary if unified already matched
+        }
+        seenSchoolDistrict = true
+    }
+    // ... add to conditions
+}
+```
 
 **Warning signs:**
-- `BALLOTREADY_API_KEY` environment variable still referenced in `.env` or `apprunner.yaml` after cutover
-- Background goroutines for cache warming continue to start on server boot
-- Log lines like "BallotReady: fetching officeholders for ZIP..." appear after the cutover deploys
-- Errors about BallotReady API authentication in production logs
+- An address in LAUSD returns the same school board member 2-3 times in the API response
+- `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420')` shows rows for all three types in the same geographic area
+- The frontend school board section renders duplicated cards for the same person
+- The API response JSON contains the same `id` UUID appearing in multiple entries in the officials array
 
 **Phase to address:**
-BallotReady removal phase — treat this as a migration with an explicit checklist, not a "delete some code" task. The BallotReady client struct should be the last thing deleted, after all consumers are removed.
-
----
-
-### Pitfall 6: TIGER Local District Coverage Gaps Return "No Representatives" for Valid Addresses
-
-**What goes wrong:**
-TIGER shapefiles have documented coverage gaps for local districts. Some states assigned "ZZZ" codes to areas without defined State Legislative Districts. School district spatial data has known holes and overlaps in certain counties. Special districts (fire, water, utility) are often not in TIGER at all. When a user enters a valid address in one of these areas, the geofence query returns zero local results. Without explicit handling, the UI shows an empty state with no explanation — the user assumes the platform is broken.
-
-**Why it happens:**
-Developers test the geofence system with addresses in well-covered major metros (Chicago, LA, New York) and assume coverage is universal. Edge cases — rural addresses, state-level coverage gaps, special jurisdiction areas — only appear in production with real user traffic.
-
-**How to avoid:**
-Design the response to differentiate between "no cached data" and "geofence returned no districts." When geofence returns no local districts, still return federal and state officials from the cache (these are stored nationally and do not depend on local geofence coverage). Show a specific message for the local section: "Local representative data is not yet available for this address" rather than a blank list. Track which addresses return zero local districts so coverage gaps can be identified and addressed with additional data sources (OpenStates, Represent Boundaries, or manual additions).
-
-**Warning signs:**
-- Test addresses in rural Indiana, Connecticut, or Illinois return zero local results
-- The essentials frontend `classify.js` receives empty local-tier data and renders nothing with no message
-- No distinction in API response between "district matched, no officials found" and "no district matched"
-
-**Phase to address:**
-Geofence matching phase — design the degradation response before launch. The federal/state fallback must be implemented in the same phase, not as a follow-up. Never ship a search feature that can return an empty page with no explanation.
+Shapefile layer selection phase — before running import scripts, explicitly decide which school district layers to import for each county. Document the decision. For LA County: import UNSD only. For Indiana (Monroe County): UNSD only (already the current behavior).
 
 ---
 
@@ -179,12 +271,12 @@ Shortcuts that seem reasonable but create long-term problems.
 
 | Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
 |----------|-------------------|----------------|-----------------|
-| Use one Google Maps API key for both frontend and backend calls | Simpler setup | Key cannot be restricted by both HTTP referrer and IP simultaneously; key exposed in browser if browser-restricted rules aren't applied | Never — use separate keys: one browser-restricted for autocomplete, one IP-restricted for server-side geocoding |
-| Skip `VACUUM ANALYZE` after shapefile bulk load | Saves 5 minutes | Query planner uses stale statistics; may ignore GiST index entirely, causing full scans on every query | Never for production or staging environments |
-| Load TIGER shapefiles for only a few test counties before launch | Faster initial setup | Users in uncovered areas see empty results; harder to add remaining data retroactively under load | Only in development, never in any user-accessible environment |
-| Keep BallotReady warming goroutines running but return early | Safe rollback option | Dead code in production that fires on server boot; if API key lapses, logs fill with auth errors | Never — remove the goroutines entirely at cutover, use feature flags if rollback is needed |
-| Store geocoded coordinates as plain float columns instead of PostGIS geometry | No PostGIS dependency | Cannot use spatial indexes or spatial functions; every district query requires client-side distance calculation | Never if PostGIS is already in the stack |
-| Use `ST_Within` instead of `ST_Covers` for simplicity | Slightly simpler SQL | Silent failures for addresses on district boundaries, which are disproportionately common for street addresses | Never — the performance difference is zero, correctness difference is significant |
+| `ON CONFLICT (geo_id) DO NOTHING` in import script | Idempotent re-runs without error | Silently drops valid boundaries when geo_id collides across MTFCC types; second import of a new layer appears to succeed but inserts zero rows | Never — fix to `ON CONFLICT (geo_id, mtfcc)` before first multi-layer LA County import |
+| Importing all three school district shapefiles (UNSD + ELSD + SCSD) for completeness | Appears more thorough | Same person appears 2-3x in results; deduplication requires additional query-layer logic; frontend renders duplicate cards | Never for a single-county display use case — pick one canonical layer (UNSD) |
+| Using Supabase pooler URL (port 6543) for import scripts | Only one connection string to manage | ogr2ogr fails silently via prepared statement errors; partial imports create inconsistent table state | Never for bulk data imports — always use direct connection (port 5432) |
+| Adding LA County politicians by hand without a dedup check | Fast gap-fill for a demo | Creates duplicate records that survive future automated imports and appear as doubled cards in search | Acceptable only if post-insert dedup validation query is run immediately after and confirmed zero results |
+| Skipping `ST_IsValid` check before staging → production migration | Saves 2 minutes per import run | Invalid geometries fail spatial queries silently; district exists in DB but never matches any address | Never — validity check is a 5-second query that prevents hours of debugging |
+| Leaving unknown MTFCC codes as permissive fallback in `geofence_lookup.go` | No code change required when new layer is imported | Wrong politicians returned for users in areas covered by unmapped district types | Never for production — audit and map every MTFCC before importing its shapefile layer |
 
 ---
 
@@ -194,13 +286,12 @@ Common mistakes when connecting to external services.
 
 | Integration | Common Mistake | Correct Approach |
 |-------------|----------------|------------------|
-| Google Maps Places Autocomplete | Generating a new session token on every keystroke (token in component state that reacts to query changes) | Generate one token per search session using `useMemo([])`; the same token persists until the user selects a result |
-| Google Maps Places Autocomplete | Using `Place Details (IDs Only)` to terminate the session cheaply | IDs Only tier voids the session discount entirely; terminate with `geometry` + `address_components` fields instead |
-| Google Maps Geocoding API | Using Places autocomplete on the frontend but Geocoding API on the backend with the same API key | Browser-restricted keys cannot make server-side calls; use two keys with separate restrictions |
-| PostGIS shp2pgsql | Running shp2pgsql without `-s FROM_SRID:TO_SRID` flag | TIGER data loads as NAD83 (4269); Google Maps coordinates are WGS84 (4326); specify `-s 4269:4326` at import |
-| PostGIS bulk load | Creating GiST index after loading data | Create index first, then load data, then `VACUUM ANALYZE` — or at minimum create the index before any query runs |
-| TIGER data refresh | Treating TIGER shapefiles as static, permanent data | TIGER releases annually (January cutoff); redistricting data can lag 6 months; Congressional districts change after elections. Plan an annual refresh process |
-| Google Maps nonprofit credits | Assuming the $200 monthly credit still applies | Google replaced the universal $200 credit in March 2025 with per-SKU free tiers; apply for the nonprofit program separately ($250+/month additional credits for verified nonprofits via Google for Nonprofits) |
+| LA County GIS Hub (ArcGIS FeatureServer) | Downloading data as JSON via the REST API page, which paginates at 1000 features and silently truncates results | Use `&resultOffset=0&resultRecordCount=2000&f=geojson` with explicit pagination, or download the full dataset as a Shapefile via the "Download" button on the Hub page — always verify feature count against the metadata `count` field |
+| LA County GIS Hub (ArcGIS FeatureServer) | Importing the raw GeoJSON response without projection checking — ArcGIS data may be in EPSG:3857 (Web Mercator) or a California State Plane projection rather than WGS84 | Run `ogrinfo -al -so layer.geojson` before any import to verify the CRS; reproject with `-t_srs EPSG:4326` in ogr2ogr if needed |
+| Census TIGER FTP downloads | Using stale 2022 or 2023 files when 2024 files are available — congressional districts changed after 2022 redistricting | Always download from `www2.census.gov/geo/tiger/TIGER2024/` or `TIGER2025/` and confirm the year in the filename; verify congressional district count matches the expected 52 for California (post-2022 redistricting) |
+| Supabase direct connection | Forgetting that Supabase direct connections require IPv4 Add-on or session-mode pooler for IPv4-only CI/CD environments | For CI pipelines running in IPv4-only environments (most GitHub Actions runners), use the session-mode pooler (port 5432 on pooler.supabase.com) or enable the IPv4 add-on; session mode supports prepared statements unlike transaction mode |
+| ogr2ogr + PostGIS schema-qualified table names | Using `-nln essentials.geofence_boundaries` without creating the schema first — ogr2ogr cannot create schemas, only tables | Always run `CREATE SCHEMA IF NOT EXISTS essentials;` via psql before any ogr2ogr import that targets a non-public schema |
+| ogr2ogr geometry column naming | ogr2ogr defaults to `wkb_geometry` as the geometry column name; the existing `essentials.geofence_boundaries` table uses `geometry` | Always pass `-lco GEOMETRY_NAME=geometry` to match the existing column name; without this flag, ogr2ogr creates a second geometry column or fails with a column-not-found error |
 
 ---
 
@@ -210,11 +301,11 @@ Patterns that work at small scale but fail as usage grows.
 
 | Trap | Symptoms | Prevention | When It Breaks |
 |------|----------|------------|----------------|
-| No GiST index on district geometry column | Address search takes 15-30s; backend logs show slow queries | Create GiST index before first query; verify with EXPLAIN ANALYZE | Immediately, even with 100 rows — spatial scans are expensive |
-| Querying all district layers simultaneously without limiting scope | Each address triggers 5-7 separate ST_Covers queries (federal, state-upper, state-lower, county, municipal, school, local) | Run a single query joining all relevant district layers; use UNION ALL with LIMIT per tier | At moderate load (50 concurrent users) |
-| Loading all TIGER district geometries including high-resolution coastline detail | District query returns full polygon vertex data in response; large memory footprint per query | Store simplified geometries for query (ST_Simplify on import); only use full-res for display | When district polygon has 10,000+ vertices (common for coastal congressional districts) |
-| Storing Google Maps autocomplete results in React state without debounce | API called on every keystroke; 5-10 calls per second per user | Debounce at 300ms minimum before firing the autocomplete request | Immediately in development; billing impact shows up in first week of user traffic |
-| Not caching geocoded address → district results | Same address triggers a fresh PostGIS query every time; common for shared ZIP code households | Cache geocoded results (lat/lng + district IDs) in a short-TTL table (24 hours); many users in the same building will search the same address | At 500+ daily active users in dense urban areas |
+| Importing all California congressional districts (52 districts) + all state assembly (80) + all state senate (40) + all school districts (80+ in LA County) without GiST index in place | First address lookup after import takes 15-30 seconds; pgAdmin shows Seq Scan on geofence_boundaries | Create GiST index before loading any data: `CREATE INDEX IF NOT EXISTS idx_geofence_boundaries_geometry ON essentials.geofence_boundaries USING GIST (geometry)` — then load data — then VACUUM ANALYZE | Immediately at first query, even in development |
+| Using `ST_Contains` instead of `ST_Covers` for point-in-polygon on newly imported data | Addresses on district border streets (very common in urban LA County grids) return zero results; no error | Use `ST_Covers` everywhere in `FindGeoIDsByPoint`; the function currently uses `ST_Contains` (line 42 of `geofence_lookup.go`) — this is a pre-existing bug that becomes more visible at LA County scale where grid streets often sit exactly on district boundaries | Always — but will appear more often with 50+ imported layers than with 6 Bloomington districts |
+| Not running `VACUUM ANALYZE` after each shapefile import | Query planner ignores GiST index despite it existing; `EXPLAIN ANALYZE` shows Seq Scan even with index present | Always run `VACUUM ANALYZE essentials.geofence_boundaries;` at the end of each import script's post-processing SQL block | After any bulk load of 1,000+ rows |
+| Complex multipolygon geometries (coastal California congressional districts) stored at full TIGER resolution | Each spatial query loads 50KB+ geometry blobs from disk per candidate polygon; query time grows linearly with polygon complexity | After import, apply selective simplification for large polygons: `UPDATE essentials.geofence_boundaries SET geometry = ST_SimplifyPreserveTopology(geometry, 0.0001) WHERE ST_NPoints(geometry) > 5000 AND mtfcc IN ('G5200', 'G5210', 'G5220')` — tolerance of 0.0001 degrees preserves accuracy to ~11m at latitude 34° | When geofence_boundaries table contains coastal districts with 10,000+ polygon vertices — measurable at >500 concurrent users |
+| Building the `FindPoliticiansByGeoMatches` WHERE clause with 15+ OR conditions (one per geo_id match) | Query plan shows nested loop join instead of index scan as condition count grows; response time climbs from 50ms to 400ms | Refactor to use a temporary values table with a JOIN rather than a long OR chain when match count exceeds 10: pass geo_ids as a `pq.Array` with `d.geo_id = ANY($1)` and handle MTFCC filtering in application code | When an LA County address matches 12+ district layers simultaneously (congressional + state senate + state assembly + county + 5+ city + 3+ school layers) |
 
 ---
 
@@ -224,25 +315,23 @@ Domain-specific security issues beyond general web security.
 
 | Mistake | Risk | Prevention |
 |---------|------|------------|
-| Using one unrestricted Google Maps API key for all environments | Key scraped from frontend JavaScript; attacker runs up billing charges | Create three keys: (1) browser-restricted to production domain for frontend autocomplete, (2) browser-restricted to localhost for dev, (3) IP-restricted for backend geocoding in Go. Never put an unrestricted key in any deployed code |
-| Storing the Google Maps API key in React source code without environment variable | Key visible in compiled JS bundle via source maps | Use `VITE_GOOGLE_MAPS_API_KEY` environment variable in Vite; verify the key is not visible in production bundle with browser dev tools |
-| No Google Maps API quotas set | Single burst of traffic (or a scraper) consumes monthly budget in hours | Set per-day quotas in Google Cloud Console: start at 1,000 geocodes/day and 500 autocomplete sessions/day; increase only when justified |
-| Geocoding user-entered addresses on the frontend | Address strings proxied directly to Google from the browser; no rate limiting | Route geocoding through the Go backend for server-side calls; frontend autocomplete uses session-token approach which is designed for direct browser use |
+| Storing `DATABASE_URL` with direct Supabase connection credentials in the import shell script | Credentials committed to git; anyone with repo access can directly connect to the production database | Source DATABASE_URL from environment variable only; import scripts must never hardcode or echo the connection string; add `DATABASE_URL` to `.gitignore` for any `.env` file in `EV-Backend/scripts/` |
+| Using the same Supabase connection string for import scripts and the running Go backend | A compromised import script or misconfigured CI job can drop/truncate production tables that the backend relies on | Use a separate PostgreSQL role for imports that has INSERT/UPDATE on `essentials.geofence_boundaries` and `essentials.politicians` but NOT DROP TABLE or TRUNCATE; the Go backend role needs only SELECT/INSERT/UPDATE on its own tables |
+| Including raw addresses or geocoded lat/lng in import script logs | Shell script `set -x` debug mode will print DATABASE_URL and query parameters to stdout; if logged to a file, these constitute PII | Never run import scripts with `set -x`; redirect output to a log file that excludes sensitive parameters; treat geocoded coordinates as PII under California CCPA |
+| Publishing the import runbook (with example DATABASE_URL) in a public-facing document | Direct connection to Supabase exposes the database | Keep the import runbook in `.planning/` (already gitignored for secrets) or a private Notion/Confluence page; never include actual connection strings in documentation |
 
 ---
 
 ## UX Pitfalls
 
-Common user experience mistakes in this domain.
+Common user experience mistakes when expanding geofence coverage for the first time.
 
 | Pitfall | User Impact | Better Approach |
 |---------|-------------|-----------------|
-| Replacing ZIP input with address autocomplete without preserving ZIP fallback | Users who know their ZIP but not their full address (common for rural users) cannot search | Keep the ZIP path working in parallel during transition; deprecate only after monitoring shows address search covers >90% of user needs |
-| Showing "No representatives found" with no explanation when geofence returns empty | User assumes the platform is broken or their address is invalid | Distinguish three states: (a) federal/state found, local unavailable — show what was found with a note; (b) district matched, no officials cached — show "data coming soon"; (c) no district matched — ask user to check the address |
-| Autocomplete suggestions include points of interest (restaurants, parks) not useful for district lookup | Users select "Central Park" and get a coordinate in the middle of a park with no street address | Set `types: ['address']` in the Places Autocomplete request to restrict to street addresses only |
-| Showing a full-screen spinner while geocoding completes | Users do not know if the app is working or frozen; abandonment increases | Show inline loading state on the search input itself; display cached federal/state officials immediately while local geofence query runs in parallel |
-| No clear indication that the searched address is outside supported coverage | User in a state with known TIGER gaps thinks the platform is broken | Add an explicit "Coverage is best for [covered regions]" note during the transition period; plan a coverage status page |
-| Autocomplete dropdown disappears before user can tap on mobile | Mobile keyboard dismiss event triggers blur on the input, closing suggestions before touch registers | Add a 150ms delay to the `onBlur` handler that closes the suggestion list; test on iOS Safari specifically |
+| Expanding to LA County without updating `buildSubtitle()` for new district label patterns | LA County GIS data uses different label conventions than Bloomington data — "5th District" vs. "District 5", "Supervisorial District 3" vs. "County Board District 3"; the `buildSubtitle()` function parses chamber_name and district_label string patterns that are tied to Bloomington data | Review all district labels from LA County before releasing; add a manual QA step that inspects subtitle rendering for all 5 supervisorial districts, all LA City Council districts, and all LAUSD board members |
+| Showing imported districts with no politician data as empty sections | If shapefile import succeeds but politician gap-fill for a district is incomplete, the frontend receives a district match but zero officials — the section header renders with no cards beneath it | The API `SearchPoliticians` handler must not return a district match that has zero associated politicians; filter out empty district hits at the SQL layer before responding |
+| Not updating `building_images` config for LA County sections | The essentials frontend shows a building image for each tier; LA County additions need a new building photo source; the current mapping covers only Bloomington IN and Los Angeles CA federal sections | Verify building image config covers all new sections (county, school board, city council) before launch; use existing SVG fallback rather than a broken image |
+| Importing LA County data without testing an address in an unincorporated area | Unincorporated areas (East LA, West Hollywood pre-incorporation, Altadena) are served by county supervisors but not city councils — test with an Altadena address to confirm only county officials appear and no incorporated-city officials bleed through | Add at least 3 test addresses to the QA checklist: one incorporated city (e.g., Pasadena), one unincorporated area (e.g., Altadena), one area with contested city/county boundary (e.g., East LA) |
 
 ---
 
@@ -250,16 +339,18 @@ Common user experience mistakes in this domain.
 
 Things that appear complete but are missing critical pieces.
 
-- [ ] **TIGER data loaded:** Verify SRID is exactly 4326 with `SELECT DISTINCT ST_SRID(geom) FROM geofences.districts;` — do not trust the import command's success message alone
-- [ ] **GiST index active:** Confirm `EXPLAIN ANALYZE` shows "Index Scan" not "Seq Scan" on a live point-in-polygon query before declaring geofence complete
-- [ ] **ST_Covers boundary test:** Run a test query with a coordinate known to sit exactly on a district boundary — it must return a result, not zero rows
-- [ ] **Autocomplete session tokens:** Confirm in Google Cloud Console that "Autocomplete - Per Session" SKU is being charged, not "Autocomplete - Per Request" SKU — they appear separately in the billing report
-- [ ] **BallotReady fully removed:** `grep -r "ballotReadyClient\|BallotReady\|BALLOTREADY" EV-Backend/` returns zero results across all Go files
-- [ ] **API key restrictions set:** Verify in Google Cloud Console that the browser key has HTTP referrer restriction to `*.empowered.vote` and the server key has IP restriction to the App Runner egress IP
-- [ ] **Nonprofit credits applied:** Confirm the Google for Nonprofits application is approved and credits appear in the billing account before going live
-- [ ] **Federal/state fallback works:** Search an address in a known TIGER coverage gap — federal and state officials must still appear
-- [ ] **Empty-state messaging present:** The UI shows a meaningful message (not a blank list) when local geofence returns no results
-- [ ] **VACUUM ANALYZE run after load:** Run `VACUUM ANALYZE geofences.districts;` after each shapefile import and verify with `pg_stat_user_tables` that `last_analyze` is recent
+- [ ] **Unique constraint updated:** Verify `(geo_id, mtfcc)` composite unique constraint exists on `essentials.geofence_boundaries` — not just `geo_id` — before running any multi-layer import: `SELECT conname, pg_get_constraintdef(oid) FROM pg_constraint WHERE conrelid = 'essentials.geofence_boundaries'::regclass`
+- [ ] **Geometry validity verified:** Run `SELECT COUNT(*), mtfcc FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry) GROUP BY mtfcc` after every import — expected result: zero rows
+- [ ] **GiST index active:** Confirm `EXPLAIN ANALYZE SELECT geo_id, mtfcc FROM essentials.geofence_boundaries WHERE ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-118.25, 34.05), 4326))` shows "Index Scan" not "Seq Scan"
+- [ ] **ST_Contains replaced with ST_Covers:** Verify `geofence_lookup.go` line 42 uses `ST_Covers` not `ST_Contains` — the current code uses `ST_Contains`, which silently fails for addresses exactly on district boundaries
+- [ ] **MTFCC map complete:** Run `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries WHERE mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','X0001')` — expected result: zero rows
+- [ ] **No duplicate politicians:** Run the duplicate detection query after every gap-fill import: `SELECT last_name, first_name, COUNT(DISTINCT id) FROM essentials.politicians GROUP BY last_name, first_name HAVING COUNT(DISTINCT id) > 1` — cross-reference with district geo_ids to confirm true duplicates vs. same-named different people
+- [ ] **Direct connection used for import:** Verify `DATABASE_URL` used in import scripts contains port 5432 and `db.*.supabase.co` hostname, not port 6543 or `pooler.supabase.com`
+- [ ] **School district layer single-type:** Confirm `SELECT mtfcc, COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420') GROUP BY mtfcc` shows only one MTFCC type with rows for any given geographic area
+- [ ] **Row count matches expected:** Post-import, verify congressional district count = 52 for California, State Senate = 40, State Assembly = 80 — cross-reference against known TIGER feature counts
+- [ ] **Import pipeline idempotent:** Re-run the import script for a previously imported layer and verify row counts do not change (ON CONFLICT updates existing rows rather than inserting or ignoring)
+- [ ] **Unincorporated area test passes:** Search an Altadena address — result must include county supervisor but must NOT include any incorporated city council member
+- [ ] **VACUUM ANALYZE run:** Verify `SELECT last_analyze FROM pg_stat_user_tables WHERE relname = 'geofence_boundaries'` shows a timestamp within the last hour of completing each import
 
 ---
 
@@ -269,12 +360,13 @@ When pitfalls occur despite prevention, how to recover.
 
 | Pitfall | Recovery Cost | Recovery Steps |
 |---------|---------------|----------------|
-| SRID mismatch discovered in production (all queries return zero results) | MEDIUM | Re-run shapefile imports with `-s 4269:4326`; no data is lost, only reimport time. Add constraint and redeploy. Typical recovery: 2-4 hours |
-| Abandoned session billing spike discovered | LOW-MEDIUM | Immediately add debounce and fix token generation; billing already occurred but stops immediately on fix. Review Cloud Console for the billing period impact |
-| BallotReady goroutines still running after cutover | LOW | Remove remaining call sites, redeploy. No data corruption risk since goroutines only read from API. Recovery: same-day |
-| PostGIS full-table scan (missing GiST index) discovered under load | LOW | `CREATE INDEX CONCURRENTLY idx_districts_geom ON geofences.districts USING GIST (geom);` — runs without table lock; queries slow during build but service stays up. Recovery: minutes to hours depending on data size |
-| TIGER coverage gap causes empty results for real users | MEDIUM | Immediate: deploy federal/state fallback if not already present. Medium-term: add missing district data from alternative source (OpenStates, Represent Boundaries). No database corruption, only data gap |
-| Google Maps API key compromised and billing abuse detected | HIGH | Immediately rotate key in Google Cloud Console; update environment variables in Netlify and App Runner; redeploy both frontend and backend. Add restrictions to new key. Review billing for dispute eligibility |
+| `ON CONFLICT (geo_id) DO NOTHING` drops valid boundaries | MEDIUM | (1) Drop and recreate the unique constraint as `(geo_id, mtfcc)`. (2) Re-run the import script — all previously skipped rows now insert. (3) Run VACUUM ANALYZE. (4) Re-verify row counts per MTFCC. Recovery time: 30-60 minutes depending on shapefile size |
+| Invalid geometries silently omitted from import | MEDIUM | (1) Run `ST_IsValid` audit on staging table before promotion. (2) Apply `ST_MakeValid` + `ST_CollectionExtract` to fix broken geometries in staging. (3) Re-insert from staging with repaired geometries. (4) No production data is lost — staging is a separate table. Recovery time: 1-2 hours |
+| Supabase pooler used for import — partial data committed | MEDIUM-HIGH | (1) Identify which rows were imported by checking `imported_at` timestamp and source tag. (2) Delete the partial import: `DELETE FROM essentials.geofence_boundaries WHERE source = 'census_tiger_2024' AND imported_at > '[partial_start_time]'`. (3) Re-run import with direct connection (port 5432). No data corruption — only partial data that needs replacement. Recovery time: 1 hour |
+| Duplicate politician records in production | MEDIUM | (1) Run duplicate detection query to identify duplicate UUID pairs. (2) Identify the authoritative record (prefer source = 'ballotready' over 'manual'; prefer record with more non-null fields). (3) UPDATE all referencing tables (offices, images, degrees, endorsements, stances, election_records) to point to the authoritative UUID. (4) DELETE the duplicate record. (5) Test address search to confirm single result. Recovery time: 2-4 hours depending on number of duplicates |
+| Unknown MTFCC returns wrong politicians | LOW | (1) Add the unknown MTFCC code to `mtfccToDistrictTypes` in `geofence_lookup.go`. (2) Deploy backend. No data changes required. Recovery time: under 1 hour including deploy |
+| Duplicate school board entries from multiple shapefile layers | MEDIUM | (1) Identify which MTFCC codes to retire: `SELECT mtfcc, COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420') GROUP BY mtfcc`. (2) Delete the redundant layers: `DELETE FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410') AND state = '06'`. (3) VACUUM ANALYZE. Recovery time: 30 minutes |
+| `ST_Contains` vs `ST_Covers` — addresses on boundaries return zero districts | LOW | (1) Update `geofence_lookup.go` line 42: replace `ST_Contains` with `ST_Covers`. (2) Deploy backend. No data changes required. Recovery time: under 1 hour including deploy. This is a pre-existing bug in the current codebase; the v1.5 PITFALLS.md flagged it but it was not fixed in v1.5 |
 
 ---
 
@@ -284,33 +376,32 @@ How roadmap phases should address these pitfalls.
 
 | Pitfall | Prevention Phase | Verification |
 |---------|------------------|--------------|
-| SRID mismatch (Pitfall 1) | Geofence data load | Query `SELECT DISTINCT ST_SRID(geom)` returns single row with value 4326 |
-| Autocomplete session billing (Pitfall 2) | Google Maps integration | Cloud Console shows "Per Session" SKU not "Per Request" SKU in billing breakdown |
-| Boundary point returns no district (Pitfall 3) | Geofence matching implementation | Test case: coordinate on a known district boundary returns at least one district |
-| Missing GiST index (Pitfall 4) | Geofence data load | `EXPLAIN ANALYZE` shows Index Scan; query returns in <200ms |
-| BallotReady dead code (Pitfall 5) | BallotReady removal phase | Zero grep matches for BallotReady client references; no BallotReady log lines in production |
-| TIGER coverage gaps (Pitfall 6) | Geofence matching + degradation phase | Rural test address returns federal/state officials with explicit local-unavailable message |
+| `ON CONFLICT (geo_id) DO NOTHING` drops layers (Pitfall 1) | Shapefile pipeline design — first phase of v1.6 | Query `SELECT conname FROM pg_constraint WHERE conrelid = 'essentials.geofence_boundaries'::regclass` shows `(geo_id, mtfcc)` composite constraint |
+| Invalid geometry silent drops (Pitfall 2) | Shapefile import execution | `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry)` returns 0 |
+| Supabase pooler breaks ogr2ogr (Pitfall 3) | Import tooling setup — first phase | Import script validation step passes: `psql "$DATABASE_URL" -c "SELECT 1"` on port 5432 |
+| Incomplete MTFCC map (Pitfall 4) | MTFCC audit before first LA import | `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries WHERE mtfcc NOT IN (...)` returns 0 rows |
+| Politician deduplication failure (Pitfall 5) | Politician gap-fill phase | Duplicate detection query returns 0 rows after each import batch |
+| School district triple-match (Pitfall 6) | Shapefile layer selection — documented decision before import | Only G5420 (or exactly one school district MTFCC) present per geographic area in geofence_boundaries |
+| ST_Contains vs ST_Covers boundary bug (Performance Traps) | Geofence query correctness phase | Test address on known district boundary returns at least one result |
+| Missing VACUUM ANALYZE (Performance Traps) | Each import execution | `EXPLAIN ANALYZE` on a live geofence query shows Index Scan; `pg_stat_user_tables.last_analyze` is recent |
 
 ---
 
 ## Sources
 
-- PostGIS official documentation: [ST_Within](https://postgis.net/docs/ST_Within.html), [ST_Covers](https://postgis.net/docs/ST_ContainsProperly.html), [Spatial Indexing](http://postgis.net/workshops/postgis-intro/indexing.html)
-- PostGIS SRID mismatch: [PostGIS ticket #771](https://trac.osgeo.org/postgis/ticket/771), [Hasura issue #7665](https://github.com/hasura/graphql-engine/issues/7665)
-- [Google Places API Session Pricing](https://developers.google.com/maps/documentation/places/web-service/session-pricing) — abandoned session billing behavior
-- [Google Maps Platform Public Programs](https://developers.google.com/maps/billing-and-pricing/public-programs) — nonprofit credits ($250+/month for verified nonprofits)
-- [Google Maps Platform March 2025 Billing Changes](https://developers.google.com/maps/billing-and-pricing/march-2025) — universal $200 credit replaced by per-SKU free tiers
-- [Google Maps API Security Best Practices](https://developers.google.com/maps/api-security-best-practices) — separate browser/server keys
-- [@vis.gl/react-google-maps](https://visgl.github.io/react-google-maps/) — Google-endorsed React library for Maps JavaScript API
-- [TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) — Census Bureau, 2025 release (January 1, 2025 boundaries)
-- [TIGER Boundary Files — Redistricting Data Hub](https://redistrictingdatahub.org/data/about-our-data/tiger-boundary-files/) — known coverage gaps documentation
-- [Census TIGER errata (2008)](https://www.census.gov/programs-surveys/geography/technical-documentation/user-note/tiger-geo-line.2008.html) — documented school district boundary holes and county subdivision bleeds
-- [PostGIS Performance — Crunchy Data](https://www.crunchydata.com/blog/postgis-performance-indexing-and-explain) — GiST index gotchas, VACUUM ANALYZE requirements
-- [ST_Contains vs ST_Covers — Medium](https://mentin.medium.com/which-predicate-cb608b470471) — boundary semantics comparison
-- [BallotReady API Documentation](https://github.com/BallotReady/api-documentation) — existing integration reference
-- [Google Civic API shutdown notice](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — civic API migration context
-- [Geocoding Address Validation — Google](https://developers.google.com/maps/architecture/geocoding-address-validation) — Places vs Geocoding API difference for real-time input
+- PostGIS official documentation: [ST_MakeValid](https://postgis.net/docs/ST_MakeValid.html), [ST_IsValid](https://postgis.net/docs/ST_IsValid.html), [Validity chapter](https://postgis.net/workshops/postgis-intro/validity.html), [Spatial Indexing](http://postgis.net/workshops/postgis-intro/indexing.html)
+- GDAL issue #6340: [ogr2ogr -makevalid GeometryCollection behavior](https://github.com/OSGeo/gdal/issues/6340) — documents how -makevalid can produce GeometryCollection types that break typed PostGIS columns
+- Crunchy Data: [PostGIS Performance — Indexing and EXPLAIN](https://www.crunchydata.com/blog/postgis-performance-indexing-and-explain), [Waiting for PostGIS 3.2: ST_MakeValid](https://www.crunchydata.com/blog/waiting-for-postgis-3.2-st_makevalid), [Loading Data into PostGIS](https://www.crunchydata.com/blog/loading-data-into-postgis-an-overview)
+- Supabase docs: [Connecting to Postgres](https://supabase.com/docs/guides/database/connecting-to-postgres) — direct connection vs pooler guidance; [Connection management](https://supabase.com/docs/guides/database/connection-management)
+- Supabase: [Session Mode Deprecation Discussion](https://github.com/orgs/supabase/discussions/32755) — Supavisor transaction mode limitations with prepared statements
+- Census Bureau: [TIGER/Line Shapefiles 2024 Technical Documentation](https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2024/TGRSHP2024_TechDoc.pdf) — MTFCC codes in Appendix E; [MAF/TIGER Feature Class Code Definitions](https://www.census.gov/library/reference/code-lists/mt-feature-class-codes.html); [2022 MTFCC codes PDF](https://www2.census.gov/geo/pdfs/reference/mtfccs2022.pdf)
+- BallotReady Support: [Interpreting MTFCC and geo_id](https://support.ballotready.org/interpreting-mtfcc-and-geoid) — documents X0001 custom code and geo_id structure for city council sub-districts
+- Cicero Data: [OCD-IDs for cross-source politician matching](https://medium.com/cicero-data/how-to-use-open-civic-data-identifiers-to-organize-political-data-c27755702509)
+- OpenSanctions: [Deduplication across data sources](https://www.opensanctions.org/articles/2021-11-11-deduplication/) — multi-source record deduplication patterns
+- LA County GIS Hub: [Supervisorial Districts (Current)](https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about), [Enterprise GIS ArcGIS REST services](https://egis-lacounty.hub.arcgis.com/ArcGIS/rest/services)
+- GDAL documentation: [ogr2ogr options reference](https://gdal.org/en/stable/programs/ogr2ogr.html) — `-makevalid`, `-nlt`, `-lco GEOMETRY_NAME`, `-t_srs` flags
+- Codebase: `EV-Backend/scripts/import_shapefiles.sh`, `EV-Backend/internal/essentials/geofence_lookup.go`, `EV-Backend/internal/essentials/geofence_models.go` — project-specific behaviors documented from direct code review
 
 ---
-*Pitfalls research for: v1.5 Address Verification & BallotReady Independence*
-*Researched: 2026-02-22*
+*Pitfalls research for: v1.6 LA County Full Coverage — TIGER shapefile import pipeline, geofence scaling, politician deduplication*
+*Researched: 2026-02-23*
