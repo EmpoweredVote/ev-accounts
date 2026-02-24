@@ -156,7 +156,10 @@ Plans:
   1. 5 LA County supervisor records exist in `essentials.politicians` with matching `districts.geo_id` values — an unincorporated LA County address returns all 5 supervisors in the correct tier
   2. 15 LA City council member records and 1 LA City mayor record exist with matching `districts.geo_id` values — an LA City address returns the correct council member and mayor
   3. A duplicate detection query after import returns zero rows — no politician appears twice from both BallotReady cache and manual gap-fill
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 36-01-PLAN.md — Schema additions (is_active, data_source), Go model update, geo_id fix for all CA LOCAL districts
+- [ ] 36-02-PLAN.md — Config-driven scraper framework, scrape/upsert LA officials, dedup verification
 
 ### Phase 37: Politician Gap-Fill — City Councils and School Boards
 **Goal**: City council members for all 87 other incorporated LA County cities and school board members for LA County unified school districts are populated in the database
@@ -217,6 +220,6 @@ Plans:
 | 33. Pipeline Infrastructure | 1/1 | Complete    | 2026-02-24 | - |
 | 34. TIGER Geofences — Federal, State, School, City | 1/1 | Complete    | 2026-02-24 | - |
 | 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | 2/2 | Complete    | 2026-02-24 | - |
-| 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 0/TBD | Not started | - |
+| 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 0/2 | Planned | - |
 | 37. Politician Gap-Fill — City Councils and School Boards | v1.6 | 0/TBD | Not started | - |
 | 38. Validation and Performance | v1.6 | 0/TBD | Not started | - |
