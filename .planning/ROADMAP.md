@@ -143,7 +143,10 @@ Plans:
   1. 5 LA County Supervisorial District polygons (G4020) are in `geofence_boundaries` with `geo_id` values matching `essentials.districts` — unincorporated LA County addresses return a supervisor match
   2. 15 LA City council ward boundaries (X0001) are in `geofence_boundaries` — LA City addresses return the correct council member ward
   3. City council district/ward boundaries for LA County incorporated cities with district-based elections are imported where source data is available
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 35-01-PLAN.md — Schema prep, config file, supervisor districts and LA City council ward import (GEO-04, GEO-07)
+- [ ] 35-02-PLAN.md — Discover and import other LA County city council ward boundaries (GEO-08)
 
 ### Phase 36: Politician Gap-Fill — Supervisors and LA City Council
 **Goal**: LA County supervisors and LA City council members exist in the database with geo_ids that join to the Phase 35 geofences, enabling the full local hierarchy for the highest-impact addresses
@@ -213,7 +216,7 @@ Plans:
 | 32. Schema Fixes and Lookup Bug Correction | 1/1 | Complete    | 2026-02-24 | - |
 | 33. Pipeline Infrastructure | 1/1 | Complete    | 2026-02-24 | - |
 | 34. TIGER Geofences — Federal, State, School, City | 1/1 | Complete    | 2026-02-24 | - |
-| 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | v1.6 | 0/TBD | Not started | - |
+| 35. LA County ArcGIS Geofences — Supervisor Districts and City Council Wards | v1.6 | 0/2 | Not started | - |
 | 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 0/TBD | Not started | - |
 | 37. Politician Gap-Fill — City Councils and School Boards | v1.6 | 0/TBD | Not started | - |
 | 38. Validation and Performance | v1.6 | 0/TBD | Not started | - |
