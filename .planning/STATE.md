@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-02-23)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.6 LA County Full Coverage — Phase 35
+**Current focus:** v1.6 LA County Full Coverage — Phase 36 (next)
 
 ## Current Position
 
 Phase: 35 of 38 (LA County ArcGIS Geofences — Supervisor Districts and City Council Wards)
-Plan: 1 of 2 in current phase
+Plan: 2 of 2 in current phase
 Status: Complete
-Last activity: 2026-02-24 — Phase 35 Plan 01 complete (5 supervisor districts + 15 LA City council wards imported; all GEO-04 and GEO-07 requirements verified)
+Last activity: 2026-02-24 — Phase 35 Plan 02 complete (31 city council ward boundaries for Long Beach/Pasadena/Torrance/Inglewood/West Covina; 5 gap cities documented; Phase 35 complete with 51 total X0001 CA geofences, all GEO requirements verified)
 
 Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases complete)
 
@@ -24,7 +24,7 @@ Progress: [░░░░░░░░░░] 0% (v1.6 phases 32-38, 0/7 phases com
 **Velocity (v1.3):** 4 phases, 7 plans
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
-**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min
+**Velocity (v1.6):** Phase 32 — 1 plan, 2 tasks, 2 files, ~1 min; Phase 33 — 1 plan, 2 tasks, 6 files, ~5 min; Phase 34 — 1 plan, 2 tasks, 1 file, ~2 min; Phase 35 Plan 01 — 2 tasks, 3 files, ~4 min; Phase 35 Plan 02 — 2 tasks, 2 files, ~8 min
 
 ## Accumulated Context
 
@@ -55,6 +55,12 @@ All v1.0–v1.5 decisions resolved — see `.planning/milestones/` for full hist
 - [35-01] Use X0001 MTFCC (not G4020) for supervisor district geofences — G4020 maps to COUNTY/JUDICIAL, but LA supervisors are district_type=LOCAL; X0001 maps to LOCAL
 - [35-01] OCD-ID string used as geo_id for X0001 boundaries — direct match to essentials.districts.ocd_id confirmed by DB query, enables Phase 36 join
 - [35-01] Direct ALTER TABLE to widen geo_id to varchar(255) — GORM AutoMigrate does not widen existing varchar columns
+**v1.6 Decisions (Phase 35 Plan 02):**
+- [35-02] Long Beach council districts sourced from services6.arcgis.com/yCArG7wGXGyWLqav (ArcGIS item c21dc4adc0d344c49a3298e3bc4adeb3) — COUNCIL_NUMBER field (integer 1-9)
+- [35-02] Torrance DISTRICTID and West Covina DISTRICT fields contain "District N" strings — added district_field_format config key and parse_district_number() to import script
+- [35-02] Inglewood CD=2 appears twice in source (two polygons) — dissolved via unary_union, quality_flag=geometry_dissolved
+- [35-02] West Covina service layer is ID 2 (not 0) — inspect /FeatureServer?f=json to confirm layer IDs before hardcoding /0
+- [35-02] 5 cities documented as gaps: Santa Clarita, Downey, El Monte, Palmdale, Pomona — no ArcGIS FeatureServer found
 
 ### Key v1.6 Constraints
 
@@ -73,11 +79,11 @@ None.
 
 ### Blockers/Concerns
 
-- Remaining city council boundaries (Long Beach, Pasadena, Torrance, Inglewood, Downey, West Covina, Santa Clarita) have TBD ArcGIS URLs — Phase 35 Plan 02 must resolve these
 - Federal/state CA politician coverage must be verified at Phase 36 start — if BallotReady never warmed CA state officials, Phase 36 scope expands
+- El Monte BallotReady records have malformed OCD-IDs (state:nv instead of state:ca) — may need correction in Phase 37
 
 ## Session Continuity
 
 Last session: 2026-02-24
-Stopped at: Completed 35-01-PLAN.md — 5 LA County supervisor districts and 15 LA City council wards imported (20 records), GEO-04 and GEO-07 requirements verified
+Stopped at: Completed 35-02-PLAN.md — Phase 35 complete: 51 X0001 CA geofences (5 supervisor + 15 LA City + 31 other cities); GEO-04, GEO-07, GEO-08 all verified; ready for Phase 36
 Resume file: None

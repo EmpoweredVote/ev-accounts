@@ -28,7 +28,7 @@ Requirements for LA County Full Coverage milestone. Each maps to roadmap phases.
 - [x] **GEO-05**: Unified School District boundaries (G5420) imported for LA County area
 - [x] **GEO-06**: Incorporated place/city boundaries (G4110) imported for LA County area
 - [x] **GEO-07**: LA City council ward boundaries (X0001) imported from LA City GeoHub
-- [ ] **GEO-08**: City council district/ward boundaries imported where available for LA County incorporated cities
+- [x] **GEO-08**: City council district/ward boundaries imported where available for LA County incorporated cities
 
 ### Politician Data
 
@@ -88,7 +88,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GEO-05 | Phase 34 | Complete |
 | GEO-06 | Phase 34 | Complete |
 | GEO-07 | Phase 35 | Complete |
-| GEO-08 | Phase 35 | Pending |
+| GEO-08 | Phase 35 | Complete |
 | POL-01 | Phase 36 | Pending |
 | POL-02 | Phase 36 | Pending |
 | POL-03 | Phase 37 | Pending |
