@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 2 of 2 in current phase — AWAITING HUMAN CHECKPOINT
+Plan: 2 of 2 in current phase — COMPLETE
 Status: Active
-Last activity: 2026-02-25 — Executed 42-02 scrape run; awaiting human verify checkpoint (Task 2)
+Last activity: 2026-02-25 — 42-02 plan fully complete; human checkpoint approved (headshots confirmed visible on profile pages)
 
-Progress: [██████░░░░] 55% (v1.7 — 9/9 plans complete pending checkpoint: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02)
+Progress: [██████░░░░] 55% (v1.7 — 9/9 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02)
 
 ## Performance Metrics
 
@@ -88,7 +88,7 @@ Key v1.7 decisions from 41-02 execution:
 
 ### Pending Todos
 
-None.
+- **Future phase idea: Census ZCTA-to-Place ZIP mapping for city council politicians** — All 89 cities in city_sources.json have `place_geoid` (Census FIPS) and `ocd_id_base` that match 381 LOCAL/LOCAL_EXEC politicians in the districts table. A script could download the Census ZCTA-to-Place relationship file and batch-insert `zip_politicians` rows, mapping every ZIP in a city to its council members. Works perfectly for the 72 at-large cities (every ZIP → all council members). Districted cities (LA, Long Beach) would over-show council members from other districts but that's better than showing nothing. Would immediately make city council headshots visible in the essentials app without needing the BallotReady warmer. Self-contained task: one Census CSV + one Python script.
 
 ### Blockers/Concerns
 
@@ -101,5 +101,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: 42-02-PLAN.md Task 1 committed (717af6a); hit checkpoint:human-verify at Task 2 — headshot scraper ran, 64/391 (16.4%) coverage, awaiting human to verify headshots visible on profile pages
+Stopped at: 42-02-PLAN.md fully complete — human checkpoint approved (headshots confirmed visible for LA City Council, County Supervisors, and covered cities); ready for Phase 43
 Resume file: None

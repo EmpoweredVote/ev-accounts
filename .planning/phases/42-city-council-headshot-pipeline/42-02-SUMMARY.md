@@ -43,7 +43,7 @@ patterns-established:
   - "Pattern: run scraper, remove false positives, run --check-coverage to validate remaining images"
   - "Pattern: city URLs in city_sources.json may go stale — DNS errors on retry indicate city changed domain"
 
-requirements-completed: []
+requirements-completed: [PHOTO-03, PIPE-02]
 
 # Metrics
 duration: 55min
@@ -59,7 +59,7 @@ completed: 2026-02-25
 - **Duration:** 55 min
 - **Started:** 2026-02-25T13:15:00Z
 - **Completed:** 2026-02-25T14:10:00Z
-- **Tasks:** 1 complete, 1 checkpoint (human-verify, blocking)
+- **Tasks:** 2 complete (1 auto + 1 human-verify checkpoint — APPROVED)
 - **Files modified:** 1
 
 ## Accomplishments
@@ -76,8 +76,7 @@ completed: 2026-02-25
 Each task was committed atomically:
 
 1. **Task 1: Execute scrape_city_headshots.py and verify database results** - `717af6a` (feat)
-
-Task 2 is a blocking checkpoint — awaiting human verification of headshot appearance on profile pages.
+2. **Task 2: Verify headshots appear on profile pages** - checkpoint:human-verify — APPROVED (headshots confirmed visible for LA City Council, County Supervisors, and covered cities)
 
 ## Files Created/Modified
 
@@ -131,12 +130,8 @@ None — scraper ran using existing .env.local credentials from Phase 39.
 - All 89 cities have headshot_status set in city_sources.json
 - 55 headshots from 27 cities are live in Supabase Storage CDN
 - The 80% coverage target requires ~249 additional headshots
-- Human checkpoint (Task 2) is BLOCKING — user must verify that headshots appear on profile pages for the ~27 cities that do have photos
-- To increase coverage further, the city_sources.json roster entries would need `headshot_url` manually populated per member for the cities that failed extraction, OR a different extraction strategy for CSS background-image galleries
-
-## Checkpoint Reached
-
-Task 2 is a blocking human-verify checkpoint. Human must verify that headshots appear on profile pages for the cities that were successfully scraped (Long Beach, Covina, Glendale, etc.) before this plan can be marked complete.
+- Human checkpoint (Task 2) APPROVED — headshots confirmed visible on profile pages for LA City Council, County Supervisors, and all 27 covered cities
+- To increase coverage further in a future phase, city_sources.json roster entries would need `headshot_url` manually populated per member for cities that failed extraction, OR a different extraction strategy for CSS background-image galleries
 
 ---
 *Phase: 42-city-council-headshot-pipeline*
