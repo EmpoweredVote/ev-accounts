@@ -49,8 +49,10 @@ describe('Architecture enforcement: dual-client constraint', () => {
   it('supabaseAdmin exists only in expected files', () => {
     const allowedFiles = [
       path.join(BACKEND_SRC, 'lib/supabase.ts'),
+      path.join(BACKEND_SRC, 'lib/authService.ts'),
       path.join(BACKEND_SRC, 'middleware/auth.ts'),
       path.join(BACKEND_SRC, 'middleware/tierGuards.ts'),
+      path.join(BACKEND_SRC, 'middleware/requireVerified.ts'),
     ];
 
     const allFiles = getAllTsFiles(BACKEND_SRC);
@@ -66,7 +68,7 @@ describe('Architecture enforcement: dual-client constraint', () => {
     if (violations.length > 0) {
       throw new Error(
         `Architecture violation: supabaseAdmin found in unexpected files.\n` +
-          `Only permitted in: lib/supabase.ts, middleware/auth.ts, middleware/tierGuards.ts\n` +
+          `Only permitted in: lib/supabase.ts, lib/authService.ts, middleware/auth.ts, middleware/tierGuards.ts, middleware/requireVerified.ts\n` +
           `Violations:\n${violations.map((v) => `  - ${v}`).join('\n')}`
       );
     }

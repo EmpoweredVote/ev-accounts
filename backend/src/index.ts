@@ -4,6 +4,8 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import healthRouter from './routes/health.js';
+import authRouter from './routes/auth.js';
+import accountRouter from './routes/account.js';
 
 const app = express();
 
@@ -17,7 +19,8 @@ app.use(express.json());
 
 // Routes
 app.use('/api/health', healthRouter);
-// Phase 2+ routes mounted here
+app.use('/api/auth', authRouter);
+app.use('/api/account', accountRouter);
 
 export { app }; // For testing
 
