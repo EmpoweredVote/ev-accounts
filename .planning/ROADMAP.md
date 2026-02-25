@@ -114,7 +114,7 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
 - [x] **Phase 39: Schema and Infrastructure Preparation** - Add building_photos table, photo_license column, term_date_precision column, and Supabase Storage bucket before any pipeline runs (completed 2026-02-25)
 - [x] **Phase 40: High-Value Headshots — Supervisors and LA City Council** - Scrape and re-host headshots for 20 high-profile officials, proving the full Supabase Storage upload flow (completed 2026-02-25)
 - [x] **Phase 41: Building Photos, Term Data, and Contact Enrichment** - Populate city hall building photos (LA City + top 20), term dates for supervisors, and contact websites for 89 cities (completed 2026-02-25)
-- [x] **Phase 42: City Council Headshot Pipeline (89 Cities)** - Executed headshot scraper against all 89 LA County cities; achieved 84/391 (21.5%) automated coverage; 80% target deferred — Cloudflare WAF + CivicPlus JS CMS block ~55 cities from automation (completed 2026-02-25)
+- [ ] **Phase 42: City Council Headshot Pipeline (89 Cities)** - Automated scraping achieved 84/391 (21.5%); gap closure plans 05-06 add manual headshot curation to reach 80% target (in progress)
 - [ ] **Phase 43: Go API and Frontend Updates** - Add contacts to profile API response, building photo endpoint, and ContactSection in ev-ui
 - [ ] **Phase 44: Bio Enrichment and Coverage Validation** - Scrape bio text for 20 high-profile officials and run HEAD-request coverage audit confirming milestone targets met
 
@@ -176,12 +176,14 @@ Plans:
   2. Visiting a city council member profile for a covered city shows a headshot photo (not the initials avatar) the majority of the time
   3. Scraping runs at no faster than one city per 1.5 seconds on average (rate limiting enforced)
   4. Cities blocked by Cloudflare are marked with status "blocked" (not "failed") in the config and skipped on re-run rather than retried
-**Plans**: 4 plans
+**Plans**: 6 plans
 Plans:
 - [x] 42-01-PLAN.md — Build scrape_city_headshots.py batch headshot scraper
 - [x] 42-02-PLAN.md — Execute scraper, verify DB results, human-verify profile pages
 - [x] 42-03-PLAN.md — Gap closure: CSS background-image extraction, fix failed URLs, manual overrides
 - [x] 42-04-PLAN.md — Gap closure: Re-execute enhanced scraper, validate 80%+ coverage
+- [ ] 42-05-PLAN.md — Gap closure: Process Pomona/Santa Monica overrides, build research manifest
+- [ ] 42-06-PLAN.md — Gap closure: Manual headshot URL curation sprint, batch process, validate 80%+
 
 ### Phase 43: Go API and Frontend Updates
 **Goal**: Users can see contact information and building photos on the Essentials frontend, served from the enriched database
@@ -251,6 +253,6 @@ Plans:
 | 39. Schema and Infrastructure Preparation | 2/2 | Complete    | 2026-02-25 | - |
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
-| 42. City Council Headshot Pipeline (89 Cities) | 4/4 | Complete | 2026-02-25 | - |
+| 42. City Council Headshot Pipeline (89 Cities) | 4/6 | In Progress | 2026-02-25 | - |
 | 43. Go API and Frontend Updates | v1.7 | 0/TBD | Not started | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
