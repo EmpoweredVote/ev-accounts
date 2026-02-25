@@ -130,7 +130,10 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
   3. `politicians.term_date_precision` column exists and accepts values "year", "month", "day"
   4. Supabase Storage "politician-photos" bucket exists with public CDN access and service-role-only upload policy
   5. Python utils.py in EV-Backend/scripts exports a re-usable Supabase Storage upload function with correct MIME type handling
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 39-01-PLAN.md — GORM schema additions (BuildingPhoto table, photo_license, term_date_precision)
+- [ ] 39-02-PLAN.md — Python Supabase upload utilities, pipeline config, and bucket setup
 
 ### Phase 40: High-Value Headshots — Supervisors and LA City Council
 **Goal**: Users can see professional headshots for all 5 LA County supervisors and all 15 LA City council members, stored in Supabase Storage CDN
@@ -233,7 +236,7 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
 | 36. Politician Gap-Fill — Supervisors and LA City Council | v1.6 | 2/2 | Complete | 2026-02-24 |
 | 37. Politician Gap-Fill — City Councils and School Boards | v1.6 | 2/2 | Complete | 2026-02-24 |
 | 38. Validation and Performance | v1.6 | 2/2 | Complete | 2026-02-24 |
-| 39. Schema and Infrastructure Preparation | v1.7 | 0/TBD | Not started | - |
+| 39. Schema and Infrastructure Preparation | v1.7 | 0/2 | In progress | - |
 | 40. High-Value Headshots — Supervisors and LA City Council | v1.7 | 0/TBD | Not started | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | v1.7 | 0/TBD | Not started | - |
 | 42. City Council Headshot Pipeline (89 Cities) | v1.7 | 0/TBD | Not started | - |
