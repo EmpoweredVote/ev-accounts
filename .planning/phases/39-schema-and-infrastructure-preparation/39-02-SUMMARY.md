@@ -65,7 +65,7 @@ completed: 2026-02-25
 - **Duration:** ~2 min
 - **Started:** 2026-02-25T01:02:10Z
 - **Completed:** 2026-02-25T01:04:50Z
-- **Tasks:** 2 of 3 completed (Task 3 is a human-verify checkpoint)
+- **Tasks:** 3 of 3 completed
 - **Files modified:** 3
 
 ## Accomplishments
@@ -80,7 +80,7 @@ Each task was committed atomically in EV-Backend repo:
 
 1. **Task 1: Add Supabase upload utilities to utils.py and update requirements.txt** - `570cc9c` (feat)
 2. **Task 2: Create pipeline_config.json with LA County region definition** - `1944124` (feat)
-3. **Task 3: Verify Supabase bucket and credentials** - AWAITING HUMAN VERIFICATION (checkpoint)
+3. **Task 3: Verify Supabase bucket and credentials** - VERIFIED (bucket exists, public access, upload returns CDN URL with correct content-type)
 
 ## Files Created/Modified
 - `EV-Backend/scripts/utils.py` - Added load_supabase_env, get_supabase_client, upload_photo_to_storage, load_pipeline_config; bumped ext ID to -300001
