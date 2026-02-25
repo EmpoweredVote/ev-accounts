@@ -161,7 +161,11 @@ Plans:
   4. A city council member's profile page shows a derived term end date where election year is known
   5. All 89 LA County cities have a website URL stored in politician_contacts that can appear on their representatives' profiles
   6. Building photos have a CC license attribution recorded in the building_photos table
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 41-01-PLAN.md — Building photos: Wikimedia Commons fetch, Supabase upload, buildingImages.js CDN URLs
+- [ ] 41-02-PLAN.md — Term dates: supervisor term imports, Go API TermDatePrecision wire-through, formatTermDate precision fix
+- [ ] 41-03-PLAN.md — Contact enrichment: WebsiteURL model field, city website + supervisor phone imports
 
 ### Phase 42: City Council Headshot Pipeline (89 Cities)
 **Goal**: Users can see headshots for 80%+ of city council members across all 89 LA County cities, all images stored in Supabase Storage
