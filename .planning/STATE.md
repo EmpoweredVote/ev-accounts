@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 40 of 44 (High-Value Headshots — Supervisors and LA City Council)
-Plan: 1 of 3 in current phase
+Plan: 2 of 3 in current phase
 Status: Active
-Last activity: 2026-02-25 — Completed 40-01 headshot config registry and scrape_headshots.py script
+Last activity: 2026-02-25 — Completed 40-02 headshot scrape execution and visual verification
 
-Progress: [███░░░░░░░] 30% (v1.7 — 3/3 plans complete in phases 39+40-01)
+Progress: [███░░░░░░░] 33% (v1.7 — 4/4 plans complete in phases 39+40-01+40-02)
 
 ## Performance Metrics
 
@@ -53,6 +53,10 @@ Key v1.7 decisions from 40-01 execution:
 - Storage filenames use human-readable name slugs (e.g., hilda-l-solis.jpg) not UUIDs — readable in Supabase bucket browser
 - Content-type detected from HTTP response header not URL extension — government CDNs sometimes serve .jpg URLs as image/webp
 
+Key v1.7 decisions from 40-02 execution:
+- scrape_headshots.py ran cleanly on first attempt — all 20 officials processed (19 uploaded, 1 skipped Monica Rodriguez), idempotent re-run confirmed no duplicates
+- Human checkpoint approved: headshots visible on essentials app profile pages, loading from *.supabase.co CDN URLs verified via DevTools
+
 ### Pending Todos
 
 None.
@@ -68,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 40-01-PLAN.md — Tasks 1-2 committed (5a729d9, a321e54 in EV-Backend repo).
+Stopped at: Completed 40-02-PLAN.md — Task 1 committed (e0a169d in EV-Backend repo); Task 2 human-verify checkpoint approved by user.
 Resume file: None
