@@ -88,33 +88,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PHOTO-01 | — | Pending |
-| PHOTO-02 | — | Pending |
-| PHOTO-03 | — | Pending |
-| PHOTO-04 | — | Pending |
-| PHOTO-05 | — | Pending |
-| BLDG-01 | — | Pending |
-| BLDG-02 | — | Pending |
-| BLDG-03 | — | Pending |
-| CONT-01 | — | Pending |
-| CONT-02 | — | Pending |
-| CONT-03 | — | Pending |
-| CONT-04 | — | Pending |
-| TERM-01 | — | Pending |
-| TERM-02 | — | Pending |
-| TERM-03 | — | Pending |
-| BIO-01 | — | Pending |
-| BIO-02 | — | Pending |
-| PIPE-01 | — | Pending |
-| PIPE-02 | — | Pending |
-| PIPE-03 | — | Pending |
-| PIPE-04 | — | Pending |
+| PHOTO-01 | Phase 40 | Pending |
+| PHOTO-02 | Phase 40 | Pending |
+| PHOTO-03 | Phase 42 | Pending |
+| PHOTO-04 | Phase 40 | Pending |
+| PHOTO-05 | Phase 40 | Pending |
+| BLDG-01 | Phase 41 | Pending |
+| BLDG-02 | Phase 41 | Pending |
+| BLDG-03 | Phase 41 | Pending |
+| CONT-01 | Phase 41 | Pending |
+| CONT-02 | Phase 41 | Pending |
+| CONT-03 | Phase 43 | Pending |
+| CONT-04 | Phase 43 | Pending |
+| TERM-01 | Phase 41 | Pending |
+| TERM-02 | Phase 41 | Pending |
+| TERM-03 | Phase 41 | Pending |
+| BIO-01 | Phase 44 | Pending |
+| BIO-02 | Phase 44 | Pending |
+| PIPE-01 | Phase 39 | Pending |
+| PIPE-02 | Phase 42 | Pending |
+| PIPE-03 | Phase 44 | Pending |
+| PIPE-04 | Phase 39 | Pending |
 
 **Coverage:**
 - v1.7 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21
+- Mapped to phases: 21
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after initial definition*
+*Last updated: 2026-02-24 after roadmap creation — all 21 requirements mapped*
