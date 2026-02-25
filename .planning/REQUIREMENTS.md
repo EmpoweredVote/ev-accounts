@@ -11,7 +11,7 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 
 - [x] **PHOTO-01**: User sees headshot photo for each LA County supervisor on their profile page
 - [x] **PHOTO-02**: User sees headshot photo for each LA City council member on their profile page
-- [ ] **PHOTO-03**: User sees headshot photo for 80%+ of city council members across 89 LA County cities
+- [x] **PHOTO-03**: User sees headshot photo for 80%+ of city council members across 89 LA County cities
 - [x] **PHOTO-04**: All scraped headshots stored in Supabase Storage CDN (not hotlinked from source sites)
 - [x] **PHOTO-05**: Photo licensing tracked for each scraped image
 
@@ -42,7 +42,7 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 ### Pipeline
 
 - [x] **PIPE-01**: Enrichment scripts are idempotent and config-driven (re-runnable without duplicates)
-- [ ] **PIPE-02**: Scraping respects rate limits with delays between requests
+- [x] **PIPE-02**: Scraping respects rate limits with delays between requests
 - [ ] **PIPE-03**: Coverage report validates 80%+ headshot and contact targets
 - [x] **PIPE-04**: Pipeline designed for future regional expansion (config-driven, not LA-specific)
 
@@ -90,7 +90,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | PHOTO-01 | Phase 40 | Complete |
 | PHOTO-02 | Phase 40 | Complete |
-| PHOTO-03 | Phase 42 | Pending |
+| PHOTO-03 | Phase 42 | Complete |
 | PHOTO-04 | Phase 40 | Complete |
 | PHOTO-05 | Phase 40 | Complete |
 | BLDG-01 | Phase 41 | Complete |
@@ -106,7 +106,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | BIO-01 | Phase 44 | Pending |
 | BIO-02 | Phase 44 | Pending |
 | PIPE-01 | Phase 39 | Complete |
-| PIPE-02 | Phase 42 | Pending |
+| PIPE-02 | Phase 42 | Complete |
 | PIPE-03 | Phase 44 | Pending |
 | PIPE-04 | Phase 39 | Complete |
 

@@ -1,3 +1,16 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: LA County Data Enrichment
+status: unknown
+last_updated: "2026-02-25T18:11:45.186Z"
+progress:
+  total_phases: 4
+  completed_phases: 3
+  total_plans: 9
+  completed_plans: 8
+---
+
 # Project State
 
 ## Project Reference
@@ -5,16 +18,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.7 — Phase 41: Building Photos, Term Data, and Contact Enrichment
+**Current focus:** v1.7 — Phase 42: City Council Headshot Pipeline
 
 ## Current Position
 
-Phase: 41 of 44 (Building Photos, Term Data, and Contact Enrichment)
-Plan: 3 of 3 in current phase — COMPLETE
+Phase: 42 of 44 (City Council Headshot Pipeline)
+Plan: 1 of 2 in current phase — COMPLETE
 Status: Active
-Last activity: 2026-02-25 — Completed 41-03 city website contacts and supervisor phones import
+Last activity: 2026-02-25 — Completed 42-01 scrape_city_headshots.py batch scraper
 
-Progress: [█████░░░░░] 50% (v1.7 — 7/7 plans complete in phases 39+40-01+40-02+41-01+41-02+41-03)
+Progress: [█████░░░░░] 50% (v1.7 — 8/8 plans complete in phases 39+40-01+40-02+41-01+41-02+41-03+42-01)
 
 ## Performance Metrics
 
@@ -68,6 +81,8 @@ Key v1.7 decisions from 41-02 execution:
 - formatTermDate uses parseInt(dateStr, 10) for year precision — avoids UTC timezone bug where new Date('2024') shows 'Dec 2023' in US local timezone
 - City council term dates deferred — city_sources.json has no election_year field; requires per-city research in future phase
 - [Phase 41]: Name-based matching used for city roster politicians instead of OCD-ID join — scraped roster politicians have office_id=null so district join returns 0 results; name matching achieves 97% hit rate
+- [Phase 42-city-council-headshot-pipeline]: extract_headshot_url uses 3-strategy cascade (name proximity, alt-text, Wikipedia) — returns None over wrong image; false negatives preferred over false positives
+- [Phase 42-city-council-headshot-pipeline]: Cloudflare detection requires BOTH status code AND cf-ray/server header — plain 403 from nginx is marked failed (retries), not blocked (skipped forever)
 
 ### Pending Todos
 
@@ -84,5 +99,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 41-03-PLAN.md — Task 1 committed (9852349 in EV-Backend repo); Task 2 committed (684d568 in EV-Backend repo); Phase 41 complete
+Stopped at: Completed 42-01-PLAN.md — Task 1 committed (07ea1bc in EV-Backend repo); Task 2 validation passed (no code changes needed); Plan 42-01 complete
 Resume file: None
