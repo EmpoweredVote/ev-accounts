@@ -19,26 +19,26 @@
 
 ### Auth (AUTH)
 
-- [ ] **AUTH-01**: User can sign up with email and password via Supabase Auth; `public.users` record created via trigger on `auth.users` insert
-- [ ] **AUTH-02**: User can log in and receive a session token
-- [ ] **AUTH-03**: User can log out, invalidating their session
-- [ ] **AUTH-04**: `GET /api/account/me` returns tier-appropriate fields — `tolerance_rating` only returned to the owning user, `legal_name` only returned to Empowered account owner; never to other users
-- [ ] **AUTH-05**: `PATCH /api/account/me` allows updates to display name and preferences for Connected+ users
+- [x] **AUTH-01**: User can sign up with email and password via Supabase Auth; `public.users` record created via trigger on `auth.users` insert
+- [x] **AUTH-02**: User can log in and receive a session token
+- [x] **AUTH-03**: User can log out, invalidating their session
+- [x] **AUTH-04**: `GET /api/account/me` returns tier-appropriate fields — `tolerance_rating` only returned to the owning user, `legal_name` only returned to Empowered account owner; never to other users
+- [x] **AUTH-05**: `PATCH /api/account/me` allows updates to display name and preferences for Connected+ users
 
 ### Connect Flow (CONN)
 
-- [ ] **CONN-01**: User can begin the Connect verification flow; progress stored in `verification_sessions` (resumable if user abandons mid-flow)
-- [ ] **CONN-02**: User can check their current `verification_status` (`pending` / `verified` / `suspended`)
-- [ ] **CONN-03**: User can complete the Connect flow, creating a `connected_profiles` record with `verification_status: 'verified'`
-- [ ] **CONN-04**: User can import anonymous compass calibration from localStorage; import handles topic version mismatches gracefully and requires user confirmation before saving; localStorage cleared after successful import
+- [x] **CONN-01**: User can begin the Connect verification flow; progress stored in `verification_sessions` (resumable if user abandons mid-flow)
+- [x] **CONN-02**: User can check their current `verification_status` (`pending` / `verified` / `suspended`)
+- [x] **CONN-03**: User can complete the Connect flow, creating a `connected_profiles` record with `verification_status: 'verified'`
+- [x] **CONN-04**: User can import anonymous compass calibration from localStorage; import handles topic version mismatches gracefully and requires user confirmation before saving; localStorage cleared after successful import
 
 ### Invite System (INVT)
 
-- [ ] **INVT-01**: Invite codes are 64-character cryptographically random tokens, single-use, and expire after a configurable TTL
-- [ ] **INVT-02**: Invite chain is permanently recorded (inviter_id → invitee_id) and never deleted
-- [ ] **INVT-03**: When an invitee's account is sanctioned, the direct inviter's Tolerance Rating is adjusted (one level only — does not propagate further up the chain)
-- [ ] **INVT-04**: Invite send is rate-limited per `user_id`; self-invitation is blocked; email is normalized (lowercased, plus-addressing stripped) before uniqueness check
-- [ ] **INVT-05**: Invite claim is atomic via Postgres `FOR UPDATE` row lock — no two users can claim the same code simultaneously
+- [x] **INVT-01**: Invite codes are 64-character cryptographically random tokens, single-use, and expire after a configurable TTL
+- [x] **INVT-02**: Invite chain is permanently recorded (inviter_id → invitee_id) and never deleted
+- [x] **INVT-03**: When an invitee's account is sanctioned, the direct inviter's Tolerance Rating is adjusted (one level only — does not propagate further up the chain)
+- [x] **INVT-04**: Invite send is rate-limited per `user_id`; self-invitation is blocked; email is normalized (lowercased, plus-addressing stripped) before uniqueness check
+- [x] **INVT-05**: Invite claim is atomic via Postgres `FOR UPDATE` row lock — no two users can claim the same code simultaneously
 
 ### Compass (COMP)
 
@@ -143,20 +143,20 @@
 | FOUND-07 | Phase 1 — Foundation | Complete |
 | FOUND-08 | Phase 1 — Foundation | Complete |
 | FOUND-09 | Phase 1 — Foundation | Complete |
-| AUTH-01 | Phase 2 — Auth Routes and Account Core | Pending |
-| AUTH-02 | Phase 2 — Auth Routes and Account Core | Pending |
-| AUTH-03 | Phase 2 — Auth Routes and Account Core | Pending |
-| AUTH-04 | Phase 2 — Auth Routes and Account Core | Pending |
-| AUTH-05 | Phase 2 — Auth Routes and Account Core | Pending |
-| CONN-01 | Phase 3 — Alpha Enrollment | Pending |
-| CONN-02 | Phase 3 — Alpha Enrollment | Pending |
-| CONN-03 | Phase 3 — Alpha Enrollment | Pending |
-| CONN-04 | Phase 3 — Alpha Enrollment | Pending |
-| INVT-01 | Phase 3 — Alpha Enrollment | Pending |
-| INVT-02 | Phase 3 — Alpha Enrollment | Pending |
-| INVT-03 | Phase 3 — Alpha Enrollment | Pending |
-| INVT-04 | Phase 3 — Alpha Enrollment | Pending |
-| INVT-05 | Phase 3 — Alpha Enrollment | Pending |
+| AUTH-01 | Phase 2 — Auth Routes and Account Core | Complete |
+| AUTH-02 | Phase 2 — Auth Routes and Account Core | Complete |
+| AUTH-03 | Phase 2 — Auth Routes and Account Core | Complete |
+| AUTH-04 | Phase 2 — Auth Routes and Account Core | Complete |
+| AUTH-05 | Phase 2 — Auth Routes and Account Core | Complete |
+| CONN-01 | Phase 3 — Alpha Enrollment | Complete |
+| CONN-02 | Phase 3 — Alpha Enrollment | Complete |
+| CONN-03 | Phase 3 — Alpha Enrollment | Complete |
+| CONN-04 | Phase 3 — Alpha Enrollment | Complete |
+| INVT-01 | Phase 3 — Alpha Enrollment | Complete |
+| INVT-02 | Phase 3 — Alpha Enrollment | Complete |
+| INVT-03 | Phase 3 — Alpha Enrollment | Complete |
+| INVT-04 | Phase 3 — Alpha Enrollment | Complete |
+| INVT-05 | Phase 3 — Alpha Enrollment | Complete |
 | COMP-01 | Phase 4 — Compass Routes | Pending |
 | COMP-02 | Phase 4 — Compass Routes | Pending |
 | COMP-03 | Phase 4 — Compass Routes | Pending |
@@ -194,4 +194,4 @@
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after roadmap creation*
+*Last updated: 2026-02-25 after Phase 3 completion*

@@ -13,8 +13,8 @@ Eight phases that build the foundational three-tier account infrastructure for E
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Complete Supabase schema, RLS policies, RPC functions, dual client pattern, JWT middleware, health check
-- [ ] **Phase 2: Auth Routes and Account Core** - Sign up, login, logout, /api/account/me read and update
-- [ ] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
+- [x] **Phase 2: Auth Routes and Account Core** - Sign up, login, logout, /api/account/me read and update
+- [x] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
 - [ ] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
 - [ ] **Phase 5: Empower Flow** - Preflight checks, atomic empowerment, atomic demotion, slug generation
 - [ ] **Phase 6: Gems, Roles, and Social Graph** - Gem ledger, role system, peer connections, follows
@@ -48,11 +48,11 @@ Plans:
   2. A logged-in user can call `GET /api/account/me` and receive their own `tolerance_rating`; a different authenticated user calling the same endpoint cannot see that field in the response
   3. A Connected user can call `PATCH /api/account/me` and change their display name; the update persists across sessions
   4. After calling `POST /api/auth/logout`, the session token is invalidated and subsequent authenticated requests return 401
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Auth routes (signup, login, logout) and public.users trigger
-- [ ] 02-02: Account routes (GET /api/account/me, PATCH /api/account/me) with field-level privacy enforcement
+- [x] 02-01-PLAN.md — Auth routes (signup, login, logout), authService wrapper, migration 013 (UPDATE RLS policies), architecture test update
+- [x] 02-02-PLAN.md — Account routes (GET/PATCH /api/account/me) with field-level privacy enforcement, requireVerified middleware
 
 ### Phase 3: Alpha Enrollment
 **Goal**: Invite-only access is enforced and the full enrollment pipeline — from receiving an invite to holding a verified Connected profile — is complete and abuse-resistant
@@ -67,8 +67,9 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Invite system (code generation, claim atomicity, chain storage, rate limiting, Tolerance Rating cascade)
-- [ ] 03-02: Connect flow (verification session, status check, connected_profiles creation, compass import)
+- [x] 03-01-PLAN.md — Phase 3 schema migration: invite tables, notification events, view update, TR adjustment RPC
+- [x] 03-02-PLAN.md — Invite system: service layer, atomic claim, rate limiting, invite routes
+- [x] 03-03-PLAN.md — Connect flow routes + integration tests
 
 ### Phase 4: Compass Routes
 **Goal**: Users can calibrate their political compass, track changes over time, and compare stances with others — with visibility rules enforced at the API layer
@@ -155,8 +156,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | Complete | 2026-02-24 |
-| 2. Auth Routes and Account Core | 0/2 | Not started | - |
-| 3. Alpha Enrollment | 0/2 | Not started | - |
+| 2. Auth Routes and Account Core | 2/2 | Complete | 2026-02-25 |
+| 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
 | 4. Compass Routes | 0/2 | Not started | - |
 | 5. Empower Flow | 0/2 | Not started | - |
 | 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
