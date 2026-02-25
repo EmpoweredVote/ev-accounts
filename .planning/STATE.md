@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 41 of 44 (Building Photos, Term Data, and Contact Enrichment)
-Plan: 3 of 3 in current phase
+Plan: 3 of 3 in current phase — COMPLETE
 Status: Active
-Last activity: 2026-02-25 — Completed 41-02 supervisor term dates and precision-aware display
+Last activity: 2026-02-25 — Completed 41-03 city website contacts and supervisor phones import
 
-Progress: [████░░░░░░] 43% (v1.7 — 6/6 plans complete in phases 39+40-01+40-02+41-01+41-02)
+Progress: [█████░░░░░] 50% (v1.7 — 7/7 plans complete in phases 39+40-01+40-02+41-01+41-02+41-03)
 
 ## Performance Metrics
 
@@ -67,6 +67,7 @@ Key v1.7 decisions from 41-02 execution:
 - TermDatePrecision wired through all 3 DB query paths (fetchOfficialsFromDB, fetchFederalAndStateFromDBFiltered, GetPoliticianByID); Cicero legacy path left without precision
 - formatTermDate uses parseInt(dateStr, 10) for year precision — avoids UTC timezone bug where new Date('2024') shows 'Dec 2023' in US local timezone
 - City council term dates deferred — city_sources.json has no election_year field; requires per-city research in future phase
+- [Phase 41]: Name-based matching used for city roster politicians instead of OCD-ID join — scraped roster politicians have office_id=null so district join returns 0 results; name matching achieves 97% hit rate
 
 ### Pending Todos
 
@@ -83,5 +84,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 41-02-PLAN.md — Task 1 committed (87805b2 in EV-Backend repo); Task 2 committed (99aed65 in ev-ui repo)
+Stopped at: Completed 41-03-PLAN.md — Task 1 committed (9852349 in EV-Backend repo); Task 2 committed (684d568 in EV-Backend repo); Phase 41 complete
 Resume file: None

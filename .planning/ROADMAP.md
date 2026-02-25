@@ -113,7 +113,7 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
 
 - [x] **Phase 39: Schema and Infrastructure Preparation** - Add building_photos table, photo_license column, term_date_precision column, and Supabase Storage bucket before any pipeline runs (completed 2026-02-25)
 - [x] **Phase 40: High-Value Headshots — Supervisors and LA City Council** - Scrape and re-host headshots for 20 high-profile officials, proving the full Supabase Storage upload flow (completed 2026-02-25)
-- [ ] **Phase 41: Building Photos, Term Data, and Contact Enrichment** - Populate city hall building photos (LA City + top 20), term dates for supervisors, and contact websites for 89 cities
+- [x] **Phase 41: Building Photos, Term Data, and Contact Enrichment** - Populate city hall building photos (LA City + top 20), term dates for supervisors, and contact websites for 89 cities (completed 2026-02-25)
 - [ ] **Phase 42: City Council Headshot Pipeline (89 Cities)** - Scale headshot scraping to 369 council members across 89 LA County cities targeting 80%+ coverage
 - [ ] **Phase 43: Go API and Frontend Updates** - Add contacts to profile API response, building photo endpoint, and ContactSection in ev-ui
 - [ ] **Phase 44: Bio Enrichment and Coverage Validation** - Scrape bio text for 20 high-profile officials and run HEAD-request coverage audit confirming milestone targets met
@@ -245,7 +245,7 @@ Plans:
 | 38. Validation and Performance | v1.6 | 2/2 | Complete | 2026-02-24 |
 | 39. Schema and Infrastructure Preparation | 2/2 | Complete    | 2026-02-25 | - |
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
-| 41. Building Photos, Term Data, and Contact Enrichment | 2/3 | In Progress|  | - |
+| 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete   | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | v1.7 | 0/TBD | Not started | - |
 | 43. Go API and Frontend Updates | v1.7 | 0/TBD | Not started | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
