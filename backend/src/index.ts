@@ -6,6 +6,8 @@ import cors from 'cors';
 import healthRouter from './routes/health.js';
 import authRouter from './routes/auth.js';
 import accountRouter from './routes/account.js';
+import invitesRouter from './routes/invites.js';
+import connectRouter from './routes/connect.js';
 
 const app = express();
 
@@ -21,6 +23,8 @@ app.use(express.json());
 app.use('/api/health', healthRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/account', accountRouter);
+app.use('/api/invites', invitesRouter);
+app.use('/api/connect', connectRouter);
 
 export { app }; // For testing
 
