@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 1 of 2 in current phase — COMPLETE
+Plan: 2 of 2 in current phase — AWAITING HUMAN CHECKPOINT
 Status: Active
-Last activity: 2026-02-25 — Completed 42-01 scrape_city_headshots.py batch scraper
+Last activity: 2026-02-25 — Executed 42-02 scrape run; awaiting human verify checkpoint (Task 2)
 
-Progress: [█████░░░░░] 50% (v1.7 — 8/8 plans complete in phases 39+40-01+40-02+41-01+41-02+41-03+42-01)
+Progress: [██████░░░░] 55% (v1.7 — 9/9 plans complete pending checkpoint: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02)
 
 ## Performance Metrics
 
@@ -83,6 +83,8 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 41]: Name-based matching used for city roster politicians instead of OCD-ID join — scraped roster politicians have office_id=null so district join returns 0 results; name matching achieves 97% hit rate
 - [Phase 42-city-council-headshot-pipeline]: extract_headshot_url uses 3-strategy cascade (name proximity, alt-text, Wikipedia) — returns None over wrong image; false negatives preferred over false positives
 - [Phase 42-city-council-headshot-pipeline]: Cloudflare detection requires BOTH status code AND cf-ray/server header — plain 403 from nginx is marked failed (retries), not blocked (skipped forever)
+- [Phase 42-02]: Wikipedia Strategy 3 has false positive risk for common names — "Ray Pearl" matched historical Dr. Raymond Pearl (1879-1940), "Octavio Martinez" matched Mexican general's flag; deleted before checkpoint
+- [Phase 42-02]: Name-proximity extraction covers ~16% of city council politicians (64/391) — CSS card gallery layouts with background-image CSS are invisible to BeautifulSoup/Playwright img-tag scanning; reaching 80% requires manual headshot_url curation per roster member
 
 ### Pending Todos
 
@@ -99,5 +101,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 42-01-PLAN.md — Task 1 committed (07ea1bc in EV-Backend repo); Task 2 validation passed (no code changes needed); Plan 42-01 complete
+Stopped at: 42-02-PLAN.md Task 1 committed (717af6a); hit checkpoint:human-verify at Task 2 — headshot scraper ran, 64/391 (16.4%) coverage, awaiting human to verify headshots visible on profile pages
 Resume file: None
