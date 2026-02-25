@@ -9,11 +9,11 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 
 ### Headshot Photos
 
-- [ ] **PHOTO-01**: User sees headshot photo for each LA County supervisor on their profile page
-- [ ] **PHOTO-02**: User sees headshot photo for each LA City council member on their profile page
+- [x] **PHOTO-01**: User sees headshot photo for each LA County supervisor on their profile page
+- [x] **PHOTO-02**: User sees headshot photo for each LA City council member on their profile page
 - [ ] **PHOTO-03**: User sees headshot photo for 80%+ of city council members across 89 LA County cities
-- [ ] **PHOTO-04**: All scraped headshots stored in Supabase Storage CDN (not hotlinked from source sites)
-- [ ] **PHOTO-05**: Photo licensing tracked for each scraped image
+- [x] **PHOTO-04**: All scraped headshots stored in Supabase Storage CDN (not hotlinked from source sites)
+- [x] **PHOTO-05**: Photo licensing tracked for each scraped image
 
 ### Building Photos
 
@@ -88,11 +88,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PHOTO-01 | Phase 40 | Pending |
-| PHOTO-02 | Phase 40 | Pending |
+| PHOTO-01 | Phase 40 | Complete |
+| PHOTO-02 | Phase 40 | Complete |
 | PHOTO-03 | Phase 42 | Pending |
-| PHOTO-04 | Phase 40 | Pending |
-| PHOTO-05 | Phase 40 | Pending |
+| PHOTO-04 | Phase 40 | Complete |
+| PHOTO-05 | Phase 40 | Complete |
 | BLDG-01 | Phase 41 | Pending |
 | BLDG-02 | Phase 41 | Pending |
 | BLDG-03 | Phase 41 | Pending |
