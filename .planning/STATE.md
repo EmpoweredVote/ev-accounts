@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 4 of 4 in current phase — all plans complete
+Plan: 5 of 6 in current phase (gap closure plans)
 Status: Active
-Last activity: 2026-02-25 — 42-04 plan complete; scraper executed against all 89 cities, 84/391 (21.5%) coverage; 80% target not achievable via automated scraping alone (Cloudflare WAF blocks ~35 cities, CivicPlus JS CMS blocks ~20 cities)
+Last activity: 2026-02-25 — 42-05 plan complete; processed Pomona/Santa Monica overrides (both 0 uploads — override URLs broken: Akamai 403 / 404); created generate_headshot_manifest.py producing 300-row CSV of missing headshots across 82 cities for Plan 06 manual curation sprint
 
-Progress: [███████░░░] 64% (v1.7 — 11/11 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04)
+Progress: [███████░░░] 65% (v1.7 — 12/12 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05)
 
 ## Performance Metrics
 
@@ -90,6 +90,9 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 42-04]: PHOTO-03 (80% headshot coverage) is not achievable via automated scraping alone for LA County city councils — Cloudflare WAF blocks ~35 cities, CivicPlus/MunicoSite CMS renders member data via JavaScript with no HTML fallback; 21.5% (84/391) accepted as automated maximum
 - [Phase 42-04]: EXCLUDE_PATTERNS must include social media icon filenames (twitter-x, fb, chat_bubble) to prevent Revize CMS pages from matching social icons near member names as headshots
 - [Phase 42-04]: CSS url() extraction should match any CSS property containing url(), not just background-image — Avada WordPress theme uses --awb-background-image-front custom property
+- [Phase 42-05]: Pomona override URLs (showpublisheddocument) blocked by Akamai CDN 403; Santa Monica override URLs (/sites/default/files/Council/*.jpg) return 404 — manual URL research required in Plan 06
+- [Phase 42-05]: generate_headshot_manifest.py uses DISTINCT ON (p.id) to deduplicate politicians with multiple office records in the missing-headshots SQL query
+- [Phase 42-05]: Manifest CSV sorted by city gap size descending so Plan 06 curator starts with highest-impact cities first (Santa Monica 7, Artesia 6, Pomona 6, etc.)
 
 ### Pending Todos
 
@@ -106,5 +109,5 @@ Key v1.7 decisions from 41-02 execution:
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: 42-04-PLAN.md fully complete — executed enhanced scraper against all 89 LA County cities; coverage improved from 64→84/391 (16.4%→21.5%); 80% PHOTO-03 target deferred (Cloudflare WAF and CivicPlus JS CMS block automated scraping for ~55 cities); Phase 42 complete, ready for Phase 43
+Stopped at: 42-05-PLAN.md complete — processed Pomona/Santa Monica overrides (0 headshots, both URLs broken); created generate_headshot_manifest.py and headshot_research_manifest.csv (300 politicians missing headshots across 82 cities); ready for 42-06 manual curation sprint
 Resume file: None
