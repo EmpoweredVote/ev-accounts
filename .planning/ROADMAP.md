@@ -176,7 +176,12 @@ Plans:
   2. Visiting a city council member profile for a covered city shows a headshot photo (not the initials avatar) the majority of the time
   3. Scraping runs at no faster than one city per 1.5 seconds on average (rate limiting enforced)
   4. Cities blocked by Cloudflare are marked with status "blocked" (not "failed") in the config and skipped on re-run rather than retried
-**Plans**: TBD
+**Plans**: 4 plans
+Plans:
+- [x] 42-01-PLAN.md — Build scrape_city_headshots.py batch headshot scraper
+- [x] 42-02-PLAN.md — Execute scraper, verify DB results, human-verify profile pages
+- [ ] 42-03-PLAN.md — Gap closure: CSS background-image extraction, fix failed URLs, manual overrides
+- [ ] 42-04-PLAN.md — Gap closure: Re-execute enhanced scraper, validate 80%+ coverage
 
 ### Phase 43: Go API and Frontend Updates
 **Goal**: Users can see contact information and building photos on the Essentials frontend, served from the enriched database
@@ -246,6 +251,6 @@ Plans:
 | 39. Schema and Infrastructure Preparation | 2/2 | Complete    | 2026-02-25 | - |
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
-| 42. City Council Headshot Pipeline (89 Cities) | 2/2 | Complete   | 2026-02-25 | - |
+| 42. City Council Headshot Pipeline (89 Cities) | 2/4 | In Progress (gap closure) | - | - |
 | 43. Go API and Frontend Updates | v1.7 | 0/TBD | Not started | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
