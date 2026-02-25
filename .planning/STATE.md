@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: LA County Data Enrichment
-status: unknown
-last_updated: "2026-02-25T21:01:44.844Z"
+status: active
+last_updated: "2026-02-25T23:59:00.000Z"
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 11
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 3 of 4 in current phase — plan 03 complete, plan 04 pending
+Plan: 4 of 4 in current phase — all plans complete
 Status: Active
-Last activity: 2026-02-25 — 42-03 plan complete; enhanced scraper with CSS bg-image extraction, 61 cities reset for re-processing, 17 URLs fixed
+Last activity: 2026-02-25 — 42-04 plan complete; scraper executed against all 89 cities, 84/391 (21.5%) coverage; 80% target not achievable via automated scraping alone (Cloudflare WAF blocks ~35 cities, CivicPlus JS CMS blocks ~20 cities)
 
-Progress: [██████░░░░] 58% (v1.7 — 10/11 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03)
+Progress: [███████░░░] 64% (v1.7 — 11/11 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04)
 
 ## Performance Metrics
 
@@ -87,6 +87,9 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 42-02]: Name-proximity extraction covers ~16% of city council politicians (64/391) — CSS card gallery layouts with background-image CSS are invisible to BeautifulSoup/Playwright img-tag scanning; reaching 80% requires manual headshot_url curation per roster member
 - [Phase 42-city-council-headshot-pipeline]: fetch_council_page uses start/stop Playwright pattern (not context manager) when keep_page=True — allows caller to keep page open for CSS extraction before closing
 - [Phase 42-city-council-headshot-pipeline]: Wikipedia guard checks first paragraph for California/council/mayor terms — prevents false positives for common names matching historical figures
+- [Phase 42-04]: PHOTO-03 (80% headshot coverage) is not achievable via automated scraping alone for LA County city councils — Cloudflare WAF blocks ~35 cities, CivicPlus/MunicoSite CMS renders member data via JavaScript with no HTML fallback; 21.5% (84/391) accepted as automated maximum
+- [Phase 42-04]: EXCLUDE_PATTERNS must include social media icon filenames (twitter-x, fb, chat_bubble) to prevent Revize CMS pages from matching social icons near member names as headshots
+- [Phase 42-04]: CSS url() extraction should match any CSS property containing url(), not just background-image — Avada WordPress theme uses --awb-background-image-front custom property
 
 ### Pending Todos
 
@@ -103,5 +106,5 @@ Key v1.7 decisions from 41-02 execution:
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: 42-03-PLAN.md fully complete — enhanced scraper with CSS bg-image extraction (Strategies 1b/2b), Playwright CSS extraction, manual override support, Wikipedia false-positive guard, --force-retry flag; 61 cities reset for re-processing; ready for 42-04
+Stopped at: 42-04-PLAN.md fully complete — executed enhanced scraper against all 89 LA County cities; coverage improved from 64→84/391 (16.4%→21.5%); 80% PHOTO-03 target deferred (Cloudflare WAF and CivicPlus JS CMS block automated scraping for ~55 cities); Phase 42 complete, ready for Phase 43
 Resume file: None
