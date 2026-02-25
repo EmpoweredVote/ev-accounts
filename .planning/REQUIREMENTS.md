@@ -30,9 +30,9 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 
 ### Term Data
 
-- [ ] **TERM-01**: User sees term start and end dates for county supervisors on profile page
-- [ ] **TERM-02**: User sees derived term dates for city council members where election year is known
-- [ ] **TERM-03**: Term date display respects precision (year-only shows "2024" not "Jan 2024")
+- [x] **TERM-01**: User sees term start and end dates for county supervisors on profile page
+- [x] **TERM-02**: User sees derived term dates for city council members where election year is known
+- [x] **TERM-03**: Term date display respects precision (year-only shows "2024" not "Jan 2024")
 
 ### Bio
 
@@ -100,9 +100,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONT-02 | Phase 41 | Pending |
 | CONT-03 | Phase 43 | Pending |
 | CONT-04 | Phase 43 | Pending |
-| TERM-01 | Phase 41 | Pending |
-| TERM-02 | Phase 41 | Pending |
-| TERM-03 | Phase 41 | Pending |
+| TERM-01 | Phase 41 | Complete |
+| TERM-02 | Phase 41 | Complete |
+| TERM-03 | Phase 41 | Complete |
 | BIO-01 | Phase 44 | Pending |
 | BIO-02 | Phase 44 | Pending |
 | PIPE-01 | Phase 39 | Complete |

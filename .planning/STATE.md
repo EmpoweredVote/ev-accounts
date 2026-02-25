@@ -62,6 +62,12 @@ Key v1.7 decisions from 41-01 execution:
 - LA City (0644000) now served from Supabase CDN instead of static /images/la-city-hall.jpg — CDN is re-scrape-safe
 - All 11 Wikimedia Commons city hall photos confirmed available and uploaded with 0 errors on first run
 
+Key v1.7 decisions from 41-02 execution:
+- import_term_dates.py uses urlparse pattern (not psycopg2.connect(url)) — pooler URL with @ in password fails direct connect; urlparse extracts components as kwargs
+- TermDatePrecision wired through all 3 DB query paths (fetchOfficialsFromDB, fetchFederalAndStateFromDBFiltered, GetPoliticianByID); Cicero legacy path left without precision
+- formatTermDate uses parseInt(dateStr, 10) for year precision — avoids UTC timezone bug where new Date('2024') shows 'Dec 2023' in US local timezone
+- City council term dates deferred — city_sources.json has no election_year field; requires per-city research in future phase
+
 ### Pending Todos
 
 None.
@@ -77,5 +83,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 41-01-PLAN.md — Task 1 committed (442d1d9 in EV-Backend repo); Task 2 committed (9982ad2 in essentials repo)
+Stopped at: Completed 41-02-PLAN.md — Task 1 committed (87805b2 in EV-Backend repo); Task 2 committed (99aed65 in ev-ui repo)
 Resume file: None
