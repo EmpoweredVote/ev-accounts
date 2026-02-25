@@ -12,7 +12,7 @@ Eight phases that build the foundational three-tier account infrastructure for E
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Complete Supabase schema, RLS policies, RPC functions, dual client pattern, JWT middleware, health check
+- [x] **Phase 1: Foundation** - Complete Supabase schema, RLS policies, RPC functions, dual client pattern, JWT middleware, health check
 - [ ] **Phase 2: Auth Routes and Account Core** - Sign up, login, logout, /api/account/me read and update
 - [ ] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
 - [ ] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
@@ -33,11 +33,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. `supabase.rpc('execute_empowerment', ...)` and `supabase.rpc('execute_demotion', ...)` roll back all changes on a simulated exception — no partial state survives
   4. `GET /api/health` returns `{ status: 'ok', timestamp: <number> }` with a 200 status and the service starts with invalid env vars producing a startup error, not a silent misconfiguration
   5. The dual Supabase client pattern is enforced: `supabaseAdmin` is never used in any code path that returns data to a user; user-scoped client (anon key + user JWT) is used for all reads that feed API responses
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: Schema migrations — all 4 schemas, all tables, all RLS policies, all RPC functions
-- [ ] 01-02: Server bootstrap — project setup, dual Supabase client, JWT middleware, Zod env validation, health endpoint
+- [x] 01-01-PLAN.md — Schema migrations: all 4 schemas, all tables, all RLS policies, all RPC functions
+- [x] 01-02-PLAN.md — Server bootstrap: project setup, dual Supabase client, JWT middleware, Zod env validation, health endpoint
 
 ### Phase 2: Auth Routes and Account Core
 **Goal**: Users can create accounts, authenticate, and access their tier-appropriate profile — and the API enforces field-level privacy on every response
@@ -150,11 +150,11 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Not started | - |
+| 1. Foundation | 2/2 | Complete | 2026-02-24 |
 | 2. Auth Routes and Account Core | 0/2 | Not started | - |
 | 3. Alpha Enrollment | 0/2 | Not started | - |
 | 4. Compass Routes | 0/2 | Not started | - |

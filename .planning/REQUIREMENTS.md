@@ -7,15 +7,15 @@
 
 ### Foundation (FOUND)
 
-- [ ] **FOUND-01**: Complete Supabase schema across all 4 schemas (public, connect, empower, inform) delivered as numbered CLI migrations — no manual Studio changes, ever
-- [ ] **FOUND-02**: RLS policies on every table enforced at the database level; `tolerance_rating` and `legal_name` never accessible to non-owning users via any policy
-- [ ] **FOUND-03**: Postgres RPC functions for empowerment (`execute_empowerment`), demotion (`execute_demotion`), and calibration lapse query (`get_calibration_lapsed_users`) — SECURITY DEFINER, full rollback on any exception
-- [ ] **FOUND-04**: Dual Supabase client pattern: `supabaseAdmin` (service role, trusted writes only — never used for reads that feed API responses) + per-request user-scoped client (anon key + user JWT, RLS enforced)
-- [ ] **FOUND-05**: JWT middleware with local JWKS verification (avoids network round-trip per request); JWT verification includes issuer and audience validation
-- [ ] **FOUND-06**: `GET /api/health` returns `{ status: 'ok', timestamp: Date.now() }` — first endpoint built
-- [ ] **FOUND-07**: Env var validation at startup via Zod; service role key validated as present, never logged, never returned in any response
-- [ ] **FOUND-08**: `admin_audit_log` table scaffolded in schema (populated by admin routes in Phase 7)
-- [ ] **FOUND-09**: `account_standing` field on `connected_profiles` with values `('active', 'suspended')` — default `'active'`; Communal Council integration deferred to that feature repo
+- [x] **FOUND-01**: Complete Supabase schema across all 4 schemas (public, connect, empower, inform) delivered as numbered CLI migrations — no manual Studio changes, ever
+- [x] **FOUND-02**: RLS policies on every table enforced at the database level; `tolerance_rating` and `legal_name` never accessible to non-owning users via any policy
+- [x] **FOUND-03**: Postgres RPC functions for empowerment (`execute_empowerment`), demotion (`execute_demotion`), and calibration lapse query (`get_calibration_lapsed_users`) — SECURITY DEFINER, full rollback on any exception
+- [x] **FOUND-04**: Dual Supabase client pattern: `supabaseAdmin` (service role, trusted writes only — never used for reads that feed API responses) + per-request user-scoped client (anon key + user JWT, RLS enforced)
+- [x] **FOUND-05**: JWT middleware with local JWKS verification (avoids network round-trip per request); JWT verification includes issuer and audience validation
+- [x] **FOUND-06**: `GET /api/health` returns `{ status: 'ok', timestamp: Date.now() }` — first endpoint built
+- [x] **FOUND-07**: Env var validation at startup via Zod; service role key validated as present, never logged, never returned in any response
+- [x] **FOUND-08**: `admin_audit_log` table scaffolded in schema (populated by admin routes in Phase 7)
+- [x] **FOUND-09**: `account_standing` field on `connected_profiles` with values `('active', 'suspended', 'quarantined')` — default `'active'`; Communal Council integration deferred to that feature repo
 
 ### Auth (AUTH)
 
@@ -134,15 +134,15 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 | Phase 1 — Foundation | Pending |
-| FOUND-02 | Phase 1 — Foundation | Pending |
-| FOUND-03 | Phase 1 — Foundation | Pending |
-| FOUND-04 | Phase 1 — Foundation | Pending |
-| FOUND-05 | Phase 1 — Foundation | Pending |
-| FOUND-06 | Phase 1 — Foundation | Pending |
-| FOUND-07 | Phase 1 — Foundation | Pending |
-| FOUND-08 | Phase 1 — Foundation | Pending |
-| FOUND-09 | Phase 1 — Foundation | Pending |
+| FOUND-01 | Phase 1 — Foundation | Complete |
+| FOUND-02 | Phase 1 — Foundation | Complete |
+| FOUND-03 | Phase 1 — Foundation | Complete |
+| FOUND-04 | Phase 1 — Foundation | Complete |
+| FOUND-05 | Phase 1 — Foundation | Complete |
+| FOUND-06 | Phase 1 — Foundation | Complete |
+| FOUND-07 | Phase 1 — Foundation | Complete |
+| FOUND-08 | Phase 1 — Foundation | Complete |
+| FOUND-09 | Phase 1 — Foundation | Complete |
 | AUTH-01 | Phase 2 — Auth Routes and Account Core | Pending |
 | AUTH-02 | Phase 2 — Auth Routes and Account Core | Pending |
 | AUTH-03 | Phase 2 — Auth Routes and Account Core | Pending |
