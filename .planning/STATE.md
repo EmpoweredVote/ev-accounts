@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: LA County Data Enrichment
 status: unknown
-last_updated: "2026-02-25T18:11:45.186Z"
+last_updated: "2026-02-25T21:01:44.844Z"
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 9
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 10
 ---
 
 # Project State
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 2 of 2 in current phase — COMPLETE
+Plan: 3 of 4 in current phase — plan 03 complete, plan 04 pending
 Status: Active
-Last activity: 2026-02-25 — 42-02 plan fully complete; human checkpoint approved (headshots confirmed visible on profile pages)
+Last activity: 2026-02-25 — 42-03 plan complete; enhanced scraper with CSS bg-image extraction, 61 cities reset for re-processing, 17 URLs fixed
 
-Progress: [██████░░░░] 55% (v1.7 — 9/9 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02)
+Progress: [██████░░░░] 58% (v1.7 — 10/11 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03)
 
 ## Performance Metrics
 
@@ -85,6 +85,8 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 42-city-council-headshot-pipeline]: Cloudflare detection requires BOTH status code AND cf-ray/server header — plain 403 from nginx is marked failed (retries), not blocked (skipped forever)
 - [Phase 42-02]: Wikipedia Strategy 3 has false positive risk for common names — "Ray Pearl" matched historical Dr. Raymond Pearl (1879-1940), "Octavio Martinez" matched Mexican general's flag; deleted before checkpoint
 - [Phase 42-02]: Name-proximity extraction covers ~16% of city council politicians (64/391) — CSS card gallery layouts with background-image CSS are invisible to BeautifulSoup/Playwright img-tag scanning; reaching 80% requires manual headshot_url curation per roster member
+- [Phase 42-city-council-headshot-pipeline]: fetch_council_page uses start/stop Playwright pattern (not context manager) when keep_page=True — allows caller to keep page open for CSS extraction before closing
+- [Phase 42-city-council-headshot-pipeline]: Wikipedia guard checks first paragraph for California/council/mayor terms — prevents false positives for common names matching historical figures
 
 ### Pending Todos
 
@@ -101,5 +103,5 @@ Key v1.7 decisions from 41-02 execution:
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: 42-02-PLAN.md fully complete — human checkpoint approved (headshots confirmed visible for LA City Council, County Supervisors, and covered cities); ready for Phase 43
+Stopped at: 42-03-PLAN.md fully complete — enhanced scraper with CSS bg-image extraction (Strategies 1b/2b), Playwright CSS extraction, manual override support, Wikipedia false-positive guard, --force-retry flag; 61 cities reset for re-processing; ready for 42-04
 Resume file: None

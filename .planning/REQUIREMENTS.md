@@ -11,7 +11,7 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 
 - [x] **PHOTO-01**: User sees headshot photo for each LA County supervisor on their profile page
 - [x] **PHOTO-02**: User sees headshot photo for each LA City council member on their profile page
-- [ ] **PHOTO-03**: User sees headshot photo for 80%+ of city council members across 89 LA County cities
+- [x] **PHOTO-03**: User sees headshot photo for 80%+ of city council members across 89 LA County cities
 - [x] **PHOTO-04**: All scraped headshots stored in Supabase Storage CDN (not hotlinked from source sites)
 - [x] **PHOTO-05**: Photo licensing tracked for each scraped image
 
