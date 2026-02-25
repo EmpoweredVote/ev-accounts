@@ -145,7 +145,10 @@ Plans:
   3. All 20 headshot URLs in the database point to the Supabase CDN domain (not government website domains)
   4. Every stored headshot record has a non-null photo_license value
   5. scrape_headshots.py script is idempotent — re-running it does not create duplicate rows or overwrite non-empty existing photos
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 40-01-PLAN.md — Config-driven photo URLs and scrape_headshots.py script
+- [ ] 40-02-PLAN.md — Execute scraper, verify DB results, and human-verify profile pages
 
 ### Phase 41: Building Photos, Term Data, and Contact Enrichment
 **Goal**: Users see city hall building photos for LA City and top 20 LA County cities, term dates for county supervisors, and a contact website link for all 89 cities
