@@ -14,7 +14,7 @@
 - [ ] **FOUND-05**: JWT middleware with local JWKS verification (avoids network round-trip per request); JWT verification includes issuer and audience validation
 - [ ] **FOUND-06**: `GET /api/health` returns `{ status: 'ok', timestamp: Date.now() }` — first endpoint built
 - [ ] **FOUND-07**: Env var validation at startup via Zod; service role key validated as present, never logged, never returned in any response
-- [ ] **FOUND-08**: `admin_audit_log` table scaffolded in schema (populated by admin routes in Phase 9)
+- [ ] **FOUND-08**: `admin_audit_log` table scaffolded in schema (populated by admin routes in Phase 7)
 - [ ] **FOUND-09**: `account_standing` field on `connected_profiles` with values `('active', 'suspended')` — default `'active'`; Communal Council integration deferred to that feature repo
 
 ### Auth (AUTH)
@@ -130,27 +130,68 @@
 
 ## Traceability
 
-*Populated during roadmap creation.*
+*Populated during roadmap creation — 2026-02-24*
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FOUND-01 through FOUND-09 | Phase 1 | Pending |
-| AUTH-01 through AUTH-05 | Phase 2 | Pending |
-| CONN-01 through CONN-04 | Phase 3 | Pending |
-| INVT-01 through INVT-05 | Phase 4 | Pending |
-| COMP-01 through COMP-05 | Phase 5 | Pending |
-| EMPR-01 through EMPR-04 | Phase 6 | Pending |
-| CIVIC-01 through CIVIC-04 | Phase 7 | Pending |
-| SOCL-01 through SOCL-03 | Phase 8 | Pending |
-| ADMN-01 through ADMN-06 | Phase 9 | Pending |
-| CRON-01 through CRON-04 | Phase 10 | Pending |
-| CAND-01 through CAND-03 | Phase 11 | Pending |
+| FOUND-01 | Phase 1 — Foundation | Pending |
+| FOUND-02 | Phase 1 — Foundation | Pending |
+| FOUND-03 | Phase 1 — Foundation | Pending |
+| FOUND-04 | Phase 1 — Foundation | Pending |
+| FOUND-05 | Phase 1 — Foundation | Pending |
+| FOUND-06 | Phase 1 — Foundation | Pending |
+| FOUND-07 | Phase 1 — Foundation | Pending |
+| FOUND-08 | Phase 1 — Foundation | Pending |
+| FOUND-09 | Phase 1 — Foundation | Pending |
+| AUTH-01 | Phase 2 — Auth Routes and Account Core | Pending |
+| AUTH-02 | Phase 2 — Auth Routes and Account Core | Pending |
+| AUTH-03 | Phase 2 — Auth Routes and Account Core | Pending |
+| AUTH-04 | Phase 2 — Auth Routes and Account Core | Pending |
+| AUTH-05 | Phase 2 — Auth Routes and Account Core | Pending |
+| CONN-01 | Phase 3 — Alpha Enrollment | Pending |
+| CONN-02 | Phase 3 — Alpha Enrollment | Pending |
+| CONN-03 | Phase 3 — Alpha Enrollment | Pending |
+| CONN-04 | Phase 3 — Alpha Enrollment | Pending |
+| INVT-01 | Phase 3 — Alpha Enrollment | Pending |
+| INVT-02 | Phase 3 — Alpha Enrollment | Pending |
+| INVT-03 | Phase 3 — Alpha Enrollment | Pending |
+| INVT-04 | Phase 3 — Alpha Enrollment | Pending |
+| INVT-05 | Phase 3 — Alpha Enrollment | Pending |
+| COMP-01 | Phase 4 — Compass Routes | Pending |
+| COMP-02 | Phase 4 — Compass Routes | Pending |
+| COMP-03 | Phase 4 — Compass Routes | Pending |
+| COMP-04 | Phase 4 — Compass Routes | Pending |
+| COMP-05 | Phase 4 — Compass Routes | Pending |
+| EMPR-01 | Phase 5 — Empower Flow | Pending |
+| EMPR-02 | Phase 5 — Empower Flow | Pending |
+| EMPR-03 | Phase 5 — Empower Flow | Pending |
+| EMPR-04 | Phase 5 — Empower Flow | Pending |
+| CIVIC-01 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| CIVIC-02 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| CIVIC-03 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| CIVIC-04 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| SOCL-01 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| SOCL-02 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| SOCL-03 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| ADMN-01 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| ADMN-02 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| ADMN-03 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| ADMN-04 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| ADMN-05 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| ADMN-06 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| CRON-01 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| CRON-02 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| CRON-03 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| CRON-04 | Phase 7 — Admin Tool and Calibration Cron | Pending |
+| CAND-01 | Phase 8 — Public Candidate Pages | Pending |
+| CAND-02 | Phase 8 — Public Candidate Pages | Pending |
+| CAND-03 | Phase 8 — Public Candidate Pages | Pending |
 
 **Coverage:**
-- v1 requirements: 48 total
-- Mapped to phases: 48
-- Unmapped: 0 ✓
+- v1 requirements: 52 total
+- Mapped to phases: 52
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-24 after initial definition*
+*Last updated: 2026-02-24 after roadmap creation*
