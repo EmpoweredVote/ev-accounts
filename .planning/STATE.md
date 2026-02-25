@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.7 — Phase 40: High-Value Headshots — Supervisors and LA City Council
+**Current focus:** v1.7 — Phase 41: Building Photos, Term Data, and Contact Enrichment
 
 ## Current Position
 
-Phase: 40 of 44 (High-Value Headshots — Supervisors and LA City Council)
-Plan: 2 of 3 in current phase
+Phase: 41 of 44 (Building Photos, Term Data, and Contact Enrichment)
+Plan: 3 of 3 in current phase
 Status: Active
-Last activity: 2026-02-25 — Completed 40-02 headshot scrape execution and visual verification
+Last activity: 2026-02-25 — Completed 41-02 supervisor term dates and precision-aware display
 
-Progress: [███░░░░░░░] 33% (v1.7 — 4/4 plans complete in phases 39+40-01+40-02)
+Progress: [████░░░░░░] 43% (v1.7 — 6/6 plans complete in phases 39+40-01+40-02+41-01+41-02)
 
 ## Performance Metrics
 
@@ -57,6 +57,11 @@ Key v1.7 decisions from 40-02 execution:
 - scrape_headshots.py ran cleanly on first attempt — all 20 officials processed (19 uploaded, 1 skipped Monica Rodriguez), idempotent re-run confirmed no duplicates
 - Human checkpoint approved: headshots visible on essentials app profile pages, loading from *.supabase.co CDN URLs verified via DevTools
 
+Key v1.7 decisions from 41-01 execution:
+- buildingImages.js CURATED_LOCAL uses hardcoded CDN URLs (not new Go API endpoint) — simpler for fixed 11 cities, avoids architectural complexity
+- LA City (0644000) now served from Supabase CDN instead of static /images/la-city-hall.jpg — CDN is re-scrape-safe
+- All 11 Wikimedia Commons city hall photos confirmed available and uploaded with 0 errors on first run
+
 ### Pending Todos
 
 None.
@@ -72,5 +77,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 40-02-PLAN.md — Task 1 committed (e0a169d in EV-Backend repo); Task 2 human-verify checkpoint approved by user.
+Stopped at: Completed 41-01-PLAN.md — Task 1 committed (442d1d9 in EV-Backend repo); Task 2 committed (9982ad2 in essentials repo)
 Resume file: None

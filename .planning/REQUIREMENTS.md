@@ -17,9 +17,9 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 
 ### Building Photos
 
-- [ ] **BLDG-01**: User sees city hall building photo in the local tier section for LA City
-- [ ] **BLDG-02**: User sees city hall building photos for top 20 LA County cities by population
-- [ ] **BLDG-03**: Building photos sourced from Wikimedia Commons (CC-licensed)
+- [x] **BLDG-01**: User sees city hall building photo in the local tier section for LA City
+- [x] **BLDG-02**: User sees city hall building photos for top 20 LA County cities by population
+- [x] **BLDG-03**: Building photos sourced from Wikimedia Commons (CC-licensed)
 
 ### Contact Info
 
@@ -93,9 +93,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PHOTO-03 | Phase 42 | Pending |
 | PHOTO-04 | Phase 40 | Complete |
 | PHOTO-05 | Phase 40 | Complete |
-| BLDG-01 | Phase 41 | Pending |
-| BLDG-02 | Phase 41 | Pending |
-| BLDG-03 | Phase 41 | Pending |
+| BLDG-01 | Phase 41 | Complete |
+| BLDG-02 | Phase 41 | Complete |
+| BLDG-03 | Phase 41 | Complete |
 | CONT-01 | Phase 41 | Pending |
 | CONT-02 | Phase 41 | Pending |
 | CONT-03 | Phase 43 | Pending |
