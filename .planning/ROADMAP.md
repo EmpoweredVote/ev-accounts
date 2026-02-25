@@ -245,7 +245,7 @@ Plans:
 | 38. Validation and Performance | v1.6 | 2/2 | Complete | 2026-02-24 |
 | 39. Schema and Infrastructure Preparation | 2/2 | Complete    | 2026-02-25 | - |
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
-| 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete   | 2026-02-25 | - |
+| 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | v1.7 | 0/TBD | Not started | - |
 | 43. Go API and Frontend Updates | v1.7 | 0/TBD | Not started | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
