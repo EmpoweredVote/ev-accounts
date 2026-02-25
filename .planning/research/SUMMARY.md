@@ -1,219 +1,204 @@
 # Project Research Summary
 
-**Project:** v1.6 LA County Full Coverage & Repeatable Import Pipeline
-**Domain:** Civic tech — geofence expansion and politician data pipeline
-**Researched:** 2026-02-23
+**Project:** v1.7 LA County Data Enrichment
+**Domain:** Civic tech — offline Python scraping pipeline enriching ~389 LA County politician records with headshots, building photos, contact info, and term data
+**Researched:** 2026-02-24
 **Confidence:** HIGH
 
 ## Executive Summary
 
-The v1.6 milestone is a data pipeline problem, not a software architecture problem. The existing Go backend's `geofence_lookup.go` already implements the correct point-in-polygon query and MTFCC-to-district-type translation. The lookup infrastructure works; the geofence boundaries and local politician records for LA County are simply absent from the database. The entire scope of this milestone is: import the right boundary polygons, populate the right politician records, and ensure the two sides join correctly via `geo_id`. No new API endpoints, no frontend changes, and no new Go packages are required.
+v1.7 is a data enrichment milestone, not a new feature build. The existing system already has 791 LA County politician records in the database, all the schema columns that v1.7 needs to populate (photo_origin_url, valid_from, valid_to, bio_text, politician_images, politician_contacts, degrees, experiences), and a working Go API + React frontend that renders those fields automatically. The entire v1.7 effort lives in the Python scraping pipeline — roughly 4-6 new Python scripts that write enrichment data into existing tables. The read path (Go API + essentials app) requires only minor additions: one new endpoint for building photos, contacts added to the profile response, and a ContactSection in the ev-ui component library.
 
-The recommended approach is a Python-based import pipeline (geopandas 1.1.2 + SQLAlchemy 2.0.46 + psycopg2) layered over the existing PostgreSQL/PostGIS database. This stack is already proven across five existing import scripts in `EV-Backend/scripts/`. TIGER shapefiles cover federal, state, county, school, and incorporated-city boundaries; the LA County eGIS ArcGIS FeatureServer fills the gap for supervisor district boundaries not available from TIGER at sufficient accuracy. Geofences must be imported first to establish which `geo_id` values are needed, then politician records are created or verified to ensure matching `districts.geo_id` values. For federal and state officials, records likely already exist from BallotReady; only local officials (5 supervisors, 15 LA City council members) require manual gap-fill at v1.6 scope.
+The recommended approach is to build the enrichment pipeline in dependency order: schema preparation first (adds only one new table, `building_photos`, and two new columns for photo licensing and term date precision), then run headshot scraping, building photo collection, contact enrichment, and term data enrichment as independent parallel-capable scripts, then land the small Go API changes, then the frontend additions. The 80% headshot coverage target is achievable — supervisors and LA City council have professional photos at predictable URLs (100% expected); the 369 remaining city council members require per-city scraping with ~68-80% combined coverage from city websites plus hardcoded fallbacks. Wikimedia Commons is the correct source for building photos (free, CC-licensed, permanent URLs); Google Places API must not be used.
 
-The dominant risks are schema and data quality issues that fail silently: the `geofence_boundaries` unique constraint must be changed from `geo_id` to `(geo_id, mtfcc)` before any multi-layer import, invalid geometries must be repaired with `ST_MakeValid` before promotion from staging, and the Supabase direct connection (port 5432) must be used instead of the pooler (port 6543). A pre-existing bug in `geofence_lookup.go` — `ST_Contains` instead of `ST_Covers` — will cause addresses on district boundaries to return zero results and must be fixed before LA County testing. All six pitfalls identified in PITFALLS.md have specific verification queries that should be run as post-import checks.
+The highest-risk decisions all require design choices before any code is written: (1) photo hosting — hotlinking government URLs will break silently within 2-4 years when city websites redesign; downloading and uploading to Supabase Storage during the pipeline run is the correct fix and must not be deferred again as it was in v1.6; (2) image licensing — California government works are not automatically public domain, so Wikimedia Commons must be checked before scraping city websites; (3) term date precision — storing year-only data as "YYYY-01-01" will display as "Jan YYYY" in the frontend, requiring a term_date_precision column and a frontend ev-ui update before any term dates are stored.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The import pipeline requires no new core technologies. The established Python + geopandas + SQLAlchemy pattern used in existing scripts handles both TIGER shapefiles (via `geopandas.read_file()` + `to_postgis()`) and ArcGIS FeatureServer GeoJSON (via `requests` + `gpd.GeoDataFrame.from_features()`). A shared `utils.py` should be extracted to eliminate duplicated `get_engine()`, `load_env()`, and URL-encoding logic that currently exists in five separate scripts. Synthetic external IDs for non-BallotReady records must start at -200001 to avoid colliding with any -100001-range IDs created in v1.5.
+The existing Python scraper stack requires only two changes: upgrade Playwright from 1.44.0 to 1.58.0 for better JS-rendered government site support, and add Pillow 12.1.1 for image validation before database insertion. Every other dependency (requests, BeautifulSoup, psycopg2-binary, rapidfuzz, pdfplumber) is already in requirements.txt and works as-is. The Go backend requires no new packages — a single GORM model addition handles the one new table. The React frontend requires no new npm packages — building photos go to `essentials/public/images/` as static assets via a code-only change to `buildingImages.js`.
 
 **Core technologies:**
-- `geopandas 1.1.2`: Read shapefiles/GeoJSON, reproject CRS, write to PostGIS — the established pattern in all existing import scripts; requires Python 3.10+ and shapely 2.x
-- `SQLAlchemy 2.0.46`: Engine for `to_postgis()` — required version; 2.1 is beta; pin explicitly
-- `psycopg2-binary >=2.9`: Bulk upserts via `execute_values()` with `ON CONFLICT` — use for politician records; `to_postgis()` for geometry-only inserts
-- `requests >=2.32`: Download TIGER ZIPs and fetch ArcGIS FeatureServer GeoJSON — already in use across existing scripts
-- `shapely >=2.0`: Geometry validation (`.buffer(0)` for topology repair) — pulled in automatically by geopandas
-- `ogr2ogr` (GDAL, system dependency): TIGER shapefiles are NAD83 (EPSG:4269); reprojection to WGS84 (EPSG:4326) handled via ogr2ogr subprocess; GDAL 3.5+ required for `-makevalid` flag to avoid GeometryCollection output
+- Python 3.13 + requests + BeautifulSoup: scraping pipeline runtime — already proven across all v1.6 scripts
+- psycopg2-binary 2.9.11: direct PostgreSQL writes — already in use; upsert pattern with ON CONFLICT established
+- Playwright 1.58.0 (upgrade from 1.44.0): JS-rendered government site fallback — already integrated via fetch_html_with_fallback(); upgrade adds Chromium 133 support
+- Pillow 12.1.1 (new): image validation before DB insert — replaces deprecated imghdr (removed in Python 3.13); validates minimum 80x80px, JPEG/PNG only
+- Wikimedia Commons API via plain requests: building photo acquisition — free, CC-licensed, no auth required; raw requests is simpler than any Wikimedia SDK
 
-**What not to add:** no Go CLI for shapefiles (no mature Go shapefile library), no `arcgis` Python SDK (50MB, requires auth, overkill), no `luigi`/`prefect`/`airflow` (quarterly import does not need a workflow system), no `alembic` (GORM AutoMigrate handles schema).
+**What NOT to add:** SPARQLWrapper (unmaintained since March 2022), pyWikiCommons (thin wrapper, no benefit), Google Places API (billing complexity, non-permanent URLs), asyncio/aiohttp (serial requests required for polite government site scraping), Scrapy (heavy framework overkill for 389 records), any new Go packages (existing GORM models and API patterns sufficient).
 
 ### Expected Features
 
-**Must have (table stakes — v1.6 MVP, full hierarchy for any LA County address):**
-- TIGER congressional district boundaries (G5200, ~14 districts) — enables NATIONAL_LOWER match
-- TIGER CA State Senate boundaries (G5210, ~11 districts) — enables STATE_UPPER match
-- TIGER CA State Assembly boundaries (G5220, ~24 districts) — enables STATE_LOWER match
-- LA County Supervisorial District boundaries from eGIS ArcGIS (G4020, 5 districts) — enables COUNTY match; TIGER lacks precision
-- School district boundaries (G5420, 80+ districts) — enables SCHOOL match; import UNSD only, never G5400/G5410
-- TIGER incorporated places (G4110, 88 cities) — enables LOCAL match for city councils
-- Politician gap-fill: 5 LA County supervisors — minimum to return county-level results
-- Politician gap-fill: 15 LA City council members + mayor — highest-population city, most users
-- Diagnostic SQL: geo_id match rate between `geofence_boundaries` and `districts` — prevents silent failures
-- Idempotent upsert: `ON CONFLICT (geo_id, mtfcc) DO UPDATE` on geofence_boundaries
+The feature set is scoped and well-defined by the existing DB schema and data source inventory. Research confirms data availability is highest for high-profile officials (supervisors, LA City council) and degrades across 89 independent city websites, which sets realistic expectations for the 80% coverage target.
 
-**Should have (competitive, v1.6.x):**
-- Politician gap-fill for remaining 87 city councils via data-entry tool
-- School board member records for 80+ districts (hundreds of records — staged effort)
-- LA City council ward boundaries (X0001, 15 districts) once politician records exist
-- Coverage dashboard SQL view showing MTFCC coverage with district + politician match rate
+**Must have (table stakes):**
+- Headshots for all 5 LA County supervisors — professional photos at predictable bos.lacounty.gov URLs; 100% expected coverage
+- Headshots for all 15 LA City council members — lacity.gov council-district pages; 100% expected with hardcoded fallback
+- City hall building photo for LA City section — extensive Wikimedia Commons coverage; mechanism already exists from v1.1
+- Term dates for 5 county supervisors — lavote.gov scraper already captured year_elected and term_length; only a DB write script needed
+- Contact website URL for all 89 cities — derivable from existing city_sources.json url field; 100% coverage with no scraping required
+- Enrichment coverage report — SQL/Python confirming 80%+ headshot and contact targets met before milestone sign-off
 
-**Defer (v2+):**
-- Automated TIGER vintage refresh — handle as a planned event on redistricting cycles (2031), not automation
-- Expansion to other CA counties — same pipeline, new politician data required per county
-- Full national coverage — boundary pipeline is solved; politician data sourcing is the blocker
-- Voting precinct (VTD) boundaries — different use case; separate table if ever needed
-- Real-time LA County official sync — requires new data provider contract
+**Should have (competitive differentiators):**
+- Headshots for 369 remaining city council members — per-city scraping; 60-80% expected; no competitor covers this at city council level
+- City hall building photos for top 20 LA County cities — Wikidata SPARQL batch query; 40-60% estimated Wikidata coverage
+- Contact phone for 5 county supervisors — data already in lavote.gov output; DB write only
+- Bio text for supervisors and LA City council — available on official pages; 20 high-profile officials, low-medium effort
+
+**Defer to v1.7.x or later:**
+- City hall photos for remaining 69 cities — SVG fallback already handles gaps
+- Bio/education/experience for smaller city council members — ~30% availability, high per-city parsing effort
+- Photo re-hosting to Supabase Storage — NOTE: PITFALLS.md argues this must NOT be deferred (see Critical Pitfalls); the PROJECT.md "out of scope" designation conflicts with the hotlinking risk identified in research
+- Automated nightly enrichment re-run — manual re-runs sufficient for now; complex orchestration not justified
 
 ### Architecture Approach
 
-The architecture is a strict separation between the offline import pipeline and the unchanged online request path. The Go backend's `geofence_lookup.go` requires zero changes for the lookup to work with LA County data — new boundary rows in `essentials.geofence_boundaries` and new politician rows linked via matching `districts.geo_id` are the entire deliverable. The import pipeline consists of Python scripts that write directly to Supabase via `DATABASE_URL`. The critical join is `geofence_boundaries.geo_id = districts.geo_id`; both sides must use identical geo_id values or the join silently returns zero results.
+The architecture is a clean three-layer separation: offline Python pipeline writes into the database; existing Go API serves the data with minor additions; existing React frontend renders it with minor additions. One new database table (`essentials.building_photos`, keyed by Census place_geoid) is the only structural addition. The entire enrichment pipeline writes into existing columns on existing tables.
 
 **Major components:**
-1. `EV-Backend/scripts/utils.py` (NEW) — shared `get_engine()`, `load_env()`, `next_ext_id()` extracted from existing scripts; URL-encoding pattern for Supabase passwords with special characters
-2. `EV-Backend/scripts/import_tiger_ca.py` (NEW) — downloads TIGER shapefiles for California layers not yet imported (congressional, state leg, school districts, incorporated places); handles NAD83→WGS84 reprojection; applies `ST_MakeValid`
-3. `EV-Backend/scripts/import_lacounty_gis.py` (NEW) — fetches LA County ArcGIS FeatureServer data (supervisor districts, city boundaries); assigns MTFCC manually per layer; builds consistent geo_ids (`06037{NNN}` format for supervisors)
-4. `EV-Backend/scripts/import_lacounty_officials.py` (NEW) — politician gap-fill from structured manifest; uses `execute_values()` with `ON CONFLICT (external_id) DO NOTHING`; checks for existing records before inserting
-5. `EV-Backend/scripts/verify_lacounty.py` (NEW) — point-in-polygon verification for test addresses (incorporated city, unincorporated area, contested boundary); post-import diagnostic queries
-6. `EV-Backend/internal/essentials/geofence_lookup.go` (MINOR EDIT) — add missing MTFCC codes (G4110, G4120, G5400, G5410) to `mtfccToDistrictTypes`; replace `ST_Contains` with `ST_Covers` (pre-existing bug)
+1. **Enrichment pipeline (new Python scripts)** — scrape_headshots.py, scrape_building_photos.py, enrich_contacts.py, enrich_term_data.py (and optional enrich_bio_edu_exp.py); all read from politician_sources.json and city_sources.json configs; all use seat-first dedup logic extracted to utils.py
+2. **Config layer (modified)** — politician_sources.json gains photo_selector and contact_fields per source; city_sources.json gains building_photo_url and building_photo_attribution per city
+3. **Database layer (existing tables + one new)** — enrichment data writes to photo_origin_url, valid_from, valid_to, bio_text on politicians; politician_images (DELETE+INSERT per scrape); politician_contacts (DELETE+INSERT where source='scraped'); building_photos is the only new table
+4. **Go API (minor additions)** — contacts added to GetPoliticianByID response (~15 lines); GetBuildingPhoto handler (~20 lines); one new route line
+5. **ev-ui component library (minor addition)** — ContactSection render block (~30 lines); requires version bump and publish to GitHub npm registry; essentials and CompassV2 must update their ev-ui version dependency
 
-**Key patterns:**
-- Import order: schema verification → geofences → coverage diagnostic → politician gap-fill → VACUUM ANALYZE
-- `(geo_id, mtfcc)` composite unique constraint is the correct key for idempotent geofence upserts
-- `ST_MakeValid()` wraps every geometry before INSERT — mandatory, not optional
-- All imports use Supabase direct connection (port 5432), never the pooler (port 6543)
-- Import only UNSD (G5420) school districts — not G5400 or G5410 — to prevent triple-match in LAUSD
-- Geo_id format must exactly match what BallotReady stored in `districts.geo_id` — verify from DB before building import logic for any layer
+**Key patterns to follow:**
+- Politician-ID-keyed upsert: always resolve politician_id via seat-first dedup before writing any enrichment data
+- DELETE + INSERT (not ON CONFLICT UPDATE) for child tables — same pattern as BallotReady upsert in handlers.go
+- Per-source commit (not global transaction) — one city failure does not roll back the other 88
+- Conditional UPDATE: only fill gaps, never overwrite existing non-empty data (prevents degrading BallotReady photos with lower-quality scraped photos)
+- time.sleep(random.uniform(1.5, 3.5)) between city requests — mandatory for rate limiting
 
 ### Critical Pitfalls
 
-1. **`ON CONFLICT (geo_id)` silently drops valid boundaries across MTFCC types** — the unique constraint must be `(geo_id, mtfcc)` before the first multi-layer import; verify with post-import count-per-MTFCC query; this is a schema change required before any data lands.
+Eight pitfalls identified; three require schema design decisions before any pipeline code is written:
 
-2. **Invalid geometries fail silently — no error, no row, no district** — run `SELECT COUNT(*), mtfcc FROM staging WHERE NOT ST_IsValid(geometry)` before promoting staging to production; wrap all inserts in `ST_Multi(ST_CollectionExtract(ST_MakeValid(geometry), 3))`; verify GDAL version is 3.5+ if using `-makevalid` flag.
+1. **Photo hotlinking breaks silently within 2-4 years** — Storing government website image URLs as the displayed photo source creates dependencies on 89 different city websites staying structurally stable. Government sites redesign frequently; hotlink blocking via Cloudflare policy can break all photos overnight with no monitoring alert. Prevention: download every scraped headshot at scrape time and upload to Supabase Storage "politician-photos" bucket; store the Supabase CDN URL in politician_images.photo_url; keep photo_origin_url as audit metadata only, never render it directly. This must be implemented in the first scraper — the v1.6 deferral in scrape_la_officials.py (lines 29-33) must be resolved before any v1.7 headshot scraping merges.
 
-3. **Supabase pooler (port 6543) breaks ogr2ogr and bulk imports** — always use direct connection (port 5432, `db.*.supabase.co` hostname); add a preflight `psql "$DATABASE_URL" -c "SELECT 1"` validation before any import logic; partial imports through the pooler create inconsistent table state with no error.
+2. **California government photos are not automatically public domain** — Unlike federal works (17 U.S.C. § 105), CA state and local governments can assert copyright (Government Code § 6254.9). Professional headshots on city websites may be taken by contracted photographers with the copyright held by the city. Scraping and re-hosting at scale without license assessment creates legal exposure. Prevention: check Wikimedia Commons first for each official batch (60-70% coverage for prominent officials); check city media kits and press rooms second; only scrape city websites as last resort; add photo_license field to politician_images ("cc_by_sa", "press_use", "scraped_no_license"); never serve "scraped_no_license" in production until reviewed.
 
-4. **Incomplete MTFCC map returns wrong politicians via permissive fallback** — audit `mtfccToDistrictTypes` before the first LA County import; add G4110, G4120, G5400, G5410 at minimum; run post-import query for unmapped codes in the table; the permissive fallback returns unfiltered results for unknown codes.
+3. **Term date precision must be tracked before any dates are stored** — lavote.gov provides year_elected as a bare year string ("2024"). Storing this as "2024-01-01" causes the frontend's formatTermDate() to display "Jan 2024" when the official was elected in November — factually wrong. Prevention: add term_date_precision column ("year"/"month"/"day") before any term dates are inserted; update formatTermDate() in ev-ui to suppress month/day when precision is "year"; requires ev-ui version bump and publish before term data pipeline runs.
 
-5. **Politician deduplication fails across BallotReady + manual sources** — before inserting any politician, check for existing record by normalized `(last_name, first_name, district.geo_id)` match; run duplicate detection query after every gap-fill batch; staging module was not designed for bulk politician creation and lacks external_id-keyed deduplication.
+4. **JS-rendered city pages fail silently with wrong Playwright threshold** — ~20-30% of CA city websites use React/Vue/CMS platforms (Granicus, CivicPlus, Municode) that render content client-side. The existing fetch_html_with_fallback() Playwright trigger uses a byte-count threshold (500 chars) that misses pages with full HTML shells but no rendered content. Prevention: replace byte-count threshold with name-pattern detection — require at least 2 matches of `r'\b[A-Z][a-z]+\s+[A-Z][a-z]+\b'` before accepting the requests result as valid.
 
-6. **School district triple-match for LAUSD addresses** — importing G5400 + G5410 + G5420 for the same area causes the same school board member to appear 2-3x in results; import UNSD (G5420) only for LA County; document the decision; verify with `SELECT mtfcc, COUNT(*) FROM geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420') GROUP BY mtfcc`.
+5. **Cloudflare blocks cause transient failures to be marked permanent** — Sequential requests to 89 city websites without rate limiting trigger bot detection; cities marked status:"failed" are skipped on reruns. Prevention: add random delay between city requests; distinguish "blocked" (429/403) from "failed" (scraper logic error) with separate status values and retry_after timestamps; accept SOS PDF names-only coverage for persistently blocked sites rather than attempting bypasses.
 
 ## Implications for Roadmap
 
-The build order is strictly dependency-driven. Geofences must exist before politicians can be linked. Schema correctness must be verified before any boundary data lands in production. The `ST_Contains` → `ST_Covers` bug fix and MTFCC map expansion are prerequisites that must ship before any geofence data is tested with real addresses. All six pitfalls have specific verification queries that belong in the import pipeline as automated post-import checks, not manual steps.
+The dependency chain is clear: schema and infrastructure decisions must be locked before any scraping begins. High-value targets (supervisors, LA City) validate the pipeline before mass city scraping. API and frontend changes are genuinely last because they depend on data existing in the database to be useful.
 
-### Phase 1: Schema Verification and Bug Fixes
+### Phase 1: Schema and Infrastructure Preparation
+**Rationale:** Three blocking dependencies must be resolved before any enrichment data is written: the Supabase Storage bucket must exist, the photo_license column must be in the schema, and term_date_precision must be in the schema. If these are missing when the first script runs, the entire pipeline produces data that requires a retroactive migration. These are small changes (one new table, two new columns, one Storage bucket) but they are hard blockers.
+**Delivers:** building_photos table created via Go AutoMigrate; photo_license column added to politician_images; term_date_precision column added to politicians; Supabase Storage "politician-photos" bucket created with public CDN access and service-role-only upload policy; seat-first dedup logic extracted from scrape_la_officials.py to utils.py; composite unique constraint on politician_contacts verified or added
+**Addresses:** Pitfalls 1, 2, 3, 6 — all require schema decisions before first inserts
+**Avoids:** The v1.6 deferral pattern for Supabase Storage; building pipeline code before the destination schema is finalized
 
-**Rationale:** All subsequent work depends on these being correct. A wrong unique constraint silently destroys import results. The `ST_Contains` bug means boundary testing is unreliable until fixed. These changes are small (1-10 lines each) and low-risk but are hard blockers — no import work should proceed until they are confirmed.
-**Delivers:** Correct `(geo_id, mtfcc)` composite unique constraint confirmed or created on `geofence_boundaries`; `ST_Covers` replacing `ST_Contains` in `geofence_lookup.go` line 42; expanded `mtfccToDistrictTypes` with G4110, G4120, G5400, G5410; verified direct-connection `DATABASE_URL` with port 5432.
-**Addresses:** Pitfalls 1, 3, 4 — prevents the three most damaging silent failure modes.
-**Avoids:** Importing any boundary data before the schema is correct; testing address lookups before the boundary-match bug is fixed.
+### Phase 2: High-Value Headshots (Supervisors + LA City Council)
+**Rationale:** 20 officials (5 supervisors + 15 LA City) yield near-100% coverage with well-structured, non-Cloudflare source pages. These are the most-viewed profiles. Completing these first proves the full Supabase Storage upload flow and photo_license population before scaling to 89 cities. The fetch_html_with_fallback() name-pattern fix (Pitfall 4) must be in place before this phase — even though these pages are mostly static, the fix should be validated here on a small batch.
+**Delivers:** Headshots for 5 county supervisors (bos.lacounty.gov); headshots for 15 LA City council members (lacity.gov); Supabase Storage upload pipeline proven end-to-end; photo_license populated for each image; Wikimedia Commons checked first for each official before city website fallback; scrape_headshots.py script with rate limiting and per-source commit pattern
+**Addresses:** P1 features: headshots for high-profile officials; Pitfall 1 (Supabase Storage upload proven), Pitfall 2 (Wikimedia Commons first)
+**Avoids:** Pitfall 3 (rate limiting — small set, easy to validate behavior), Pitfall 5 (overwriting existing photos — conditional UPDATE in place)
 
-### Phase 2: Shared Utils and Pipeline Scaffolding
+### Phase 3: Building Photos, Term Data, and Contact Enrichment
+**Rationale:** These three data types are independent of headshot scraping and can be developed in parallel with Phase 4. Term dates for supervisors and contact websites for 89 cities are near-zero-effort — lavote.gov data is already captured, city_sources.json URLs already exist. Building photos require Wikidata SPARQL research but no per-politician parsing complexity. Grouping them here keeps the scope focused: these all write into existing tables or the new building_photos table, and none require the complex per-city HTML parsing that Phase 4 requires.
+**Delivers:** building_photos table populated for LA City + top 20 LA County cities (Wikidata SPARQL query results); term dates for 5 supervisors written to valid_from/valid_to with term_date_precision="year"; contact website for 89 cities written from city_sources.json; contact phone for 5 supervisors written from lavote.gov output; enrich_contacts.py and enrich_term_data.py scripts with contact_synced_at timestamps; scrape_building_photos.py populating building_photos table
+**Addresses:** P1 features: term dates for supervisors, contact website for all cities; P2 features: building photos for top 20 cities; Pitfall 4 (contact info staleness — contact_synced_at implemented)
+**Avoids:** Pitfall 6 (term_date_precision — must be in Phase 1 schema before any date is stored here)
 
-**Rationale:** Five existing scripts duplicate `get_engine()`, `load_env()`, and URL-encoding logic. Extracting `utils.py` before writing new scripts prevents a sixth and seventh copy. The `requirements.txt` pin prevents version drift between developer machines.
-**Delivers:** `EV-Backend/scripts/utils.py` with shared database utilities; `requirements.txt` with pinned versions (geopandas 1.1.2, SQLAlchemy 2.0.46, psycopg2-binary, requests, shapely); documented `DATABASE_URL` setup for direct Supabase connection.
-**Uses:** Python + geopandas + SQLAlchemy + psycopg2 stack from STACK.md.
-**Implements:** Shared utils component; lays groundwork for all subsequent import scripts.
+### Phase 4: City Council Headshot Pipeline (89 Cities)
+**Rationale:** This is the highest-complexity, highest-risk phase — 369 officials across 89 different city websites with variable HTML structure, anti-bot protection, and JS rendering variability. Phase 2 must complete first to prove the Supabase Storage upload pipeline. The fetch_html_with_fallback() name-pattern fix must be live. A sampling audit of 10 cities (2 known-JS, 8 static) should be performed before writing the full pipeline to identify which cities need playwright fetch_method override in city_sources.json.
+**Delivers:** Headshots for 369 city council members; 60-80% combined coverage target; city_sources.json enriched with per-city photo_selector and fetch_method overrides; hardcoded photo_url fallbacks in city_sources.json for Cloudflare-protected cities; coverage validation script reporting verified HEAD request success rate (not just non-null DB rows); all images in Supabase Storage with photo_license populated
+**Addresses:** P1 feature: headshots for 89 cities; Pitfall 2 (JS-rendered pages — name-pattern fallback), Pitfall 3 (Cloudflare — rate limiting, blocked/failed status distinction)
+**Avoids:** Pitfall 5 (overwriting BallotReady photos — conditional UPDATE); Anti-pattern: duplicating dedup logic (imports from utils.py); Anti-pattern: global transaction (per-source commit)
 
-### Phase 3: TIGER Shapefile Geofences — Federal and State Layers
+### Phase 5: Go API Additions and Frontend Updates
+**Rationale:** The API and frontend changes are minor in scope but depend on enrichment data existing in the database to be meaningful on deploy. ContactSection should show actual contacts when it ships, not render an empty section. Building photo endpoint is only useful once building_photos table has rows. These changes can be drafted in parallel with Phases 2-4 but should be deployed after data is confirmed in the database.
+**Delivers:** contacts[] added to GetPoliticianByID response with Contacts []ContactOut field (omitempty); GetBuildingPhoto handler at GET /essentials/cities/{geo_id}/building-photo; ContactSection in ev-ui PoliticianProfile.jsx showing phone, email, office address with contact_synced_at "as of" display; Dashboard.jsx fetching and displaying building photo for resolved city geo_id; new ev-ui version published to GitHub npm registry; essentials and CompassV2 updated to new ev-ui version
+**Addresses:** Architecture additions: Go API contacts fetch, building photo endpoint, ev-ui ContactSection, Dashboard building photo fetch; UX pitfall: contact info freshness indicator visible to users
+**Avoids:** Pitfall 4 (contact staleness — "as of [date]" shown in ContactSection); Anti-pattern: fetching external images at request time (store URLs, let browser fetch)
 
-**Rationale:** Congressional, state senate, and state assembly boundaries are independent of each other and of local data. They feed the highest-visibility officials (U.S. Representatives, senators, assembly members) and their politician records likely already exist from BallotReady. This phase produces immediate visible results for any LA County address without requiring any manual politician entry.
-**Delivers:** Geofence boundaries for G5200 (congressional, ~14 LA County districts), G5210 (CA Senate, ~11), G5220 (CA Assembly, ~24), G4020 (county, 1 LA County polygon), G5420 (unified school districts, 80+), G4110 (incorporated places, 88 cities); all with `ST_MakeValid` applied and staging-to-production migration validated.
-**Addresses:** Congressional, state senate, state assembly, county, school, and city boundary imports from FEATURES.md P1 list.
-**Avoids:** Importing G5400 or G5410 school district layers alongside G5420; importing without `ST_MakeValid`; using pooler connection; importing all 58 CA counties when only LA County-relevant boundaries are needed.
-
-### Phase 4: LA County ArcGIS Geofences — Supervisor Districts
-
-**Rationale:** Supervisor district boundaries are not available from TIGER at the precision needed and must come from the LA County eGIS ArcGIS FeatureServer. This is a separate source with different integration patterns (ArcGIS REST vs. Census FTP), a different geo_id construction requirement, and field names that must be verified at runtime before the import logic is written.
-**Delivers:** 5 supervisor district polygons in `geofence_boundaries` with `mtfcc = 'G4020'` and `geo_id` values in `06037{NNN}` format matching BallotReady's convention; verified ArcGIS FeatureServer field names and CRS (must request `outSR=4326` to avoid EPSG:2229 coordinates).
-**Addresses:** LA County Supervisorial District boundaries from FEATURES.md P1 list.
-**Avoids:** Using TIGER county boundary for supervisor districts (wrong granularity — one county polygon, not 5 supervisor districts); assuming ArcGIS data is already in WGS84 without checking; truncating at the 1000-feature FeatureServer default (use pagination).
-
-### Phase 5: Geofence Coverage Diagnostic
-
-**Rationale:** Before creating any politician records, the diagnostic step identifies which imported `geo_id` values already have matching `districts` rows (from BallotReady) and which do not. This determines the exact scope of gap-fill work in Phase 6 and prevents creating unnecessary duplicate district rows.
-**Delivers:** SQL diagnostic report: for each imported geofence boundary, does a matching `districts` row exist? For each matching district, does at least one politician record exist? Categorized by MTFCC type. Point-in-polygon tests for 3+ LA County addresses (incorporated city, unincorporated area, address on a district boundary line).
-**Addresses:** GEOID ↔ geo_id diagnostic query from FEATURES.md P1 list; Anti-Pattern 1 from ARCHITECTURE.md (importing geofences without verifying matching districts).
-**Avoids:** Creating politician records for districts that already exist from BallotReady; building gap-fill manifests before knowing which geo_ids are genuinely missing.
-
-### Phase 6: Politician Gap-Fill — Supervisors and LA City Council
-
-**Rationale:** Phase 5 identifies exactly which district geo_ids have zero politicians. The v1.6 MVP scope for gap-fill is: 5 LA County supervisors (low entry effort, high value — county residents see no results without these) and 15 LA City council members (highest-population city). Federal and state politicians are expected to already exist from BallotReady.
-**Delivers:** 5 LA County supervisor records in `politicians`/`offices`/`districts` with geo_ids matching Phase 4 geofences; 15 LA City council member records with geo_ids matching Phase 3 G4110 city boundary; deduplication check passes (zero rows in post-import duplicate detection query); `import_lacounty_officials.py` with documented manifest JSON format for future county expansions.
-**Addresses:** Politician gap-fill for supervisors and LA City council from FEATURES.md P1 list; Pitfall 5 (deduplication).
-**Avoids:** Inserting politicians before verifying no matching record exists by normalized name + district; using staging module (`/staging/*`) for bulk import (it lacks `external_id`-keyed deduplication at scale).
-
-### Phase 7: End-to-End Validation and VACUUM ANALYZE
-
-**Rationale:** A full-stack test with real LA County addresses confirms the pipeline produced correct results before declaring the milestone complete. VACUUM ANALYZE is required for the PostGIS query planner to use the GiST index after bulk inserts.
-**Delivers:** `verify_lacounty.py` with address-based point-in-polygon tests; `VACUUM ANALYZE essentials.geofence_boundaries`; confirmed `EXPLAIN ANALYZE` shows Index Scan (not Seq Scan); all items in PITFALLS.md "Looks Done But Isn't" checklist verified green; import pipeline documented as repeatable for future regions.
-**Addresses:** Performance trap (missing VACUUM ANALYZE) and UX pitfalls (unincorporated area test, district label patterns) from PITFALLS.md.
-**Avoids:** Shipping without confirming the GiST index is active post-bulk-insert; skipping the unincorporated area test (Altadena) that catches boundary bleed-through from adjacent incorporated cities.
+### Phase 6: Bio Enrichment and Coverage Validation
+**Rationale:** Bio text is the lowest-priority enrichment (lower availability, highest per-city parsing complexity) and should only run after all higher-priority enrichment is confirmed in production. Coverage validation is the official milestone gate — it must use HEAD request audits, not null-count SQL, to confirm actual display success.
+**Delivers:** Bio text for 5 supervisors (bos.lacounty.gov) and 15 LA City council members (lacity.gov); bio quality filter (100-2000 chars, no boilerplate strings, at least one sentence-ending punctuation); bio_source_url stored alongside bio_text; enrichment coverage report showing verified photo HEAD request success rate >= 80%; deduplication integrity check passes (zero duplicate officials in post-enrichment query)
+**Addresses:** P2 features: bio text for high-profile officials; Pitfall 7 (bio boilerplate — quality filter in place), Pitfall 8 (coverage metric inflation — HEAD request audit as canonical measure)
+**Avoids:** "Looks Done But Isn't" checklist: photo_url must point to Supabase CDN domain (not government domains), photo_license non-null for all scraped images, term_date_precision non-null for all term dates, contact_synced_at non-null for all contact records
 
 ### Phase Ordering Rationale
 
-- **Schema before data:** The `(geo_id, mtfcc)` constraint fix is non-negotiable first. Importing any boundary data with the wrong constraint produces silent data loss that is invisible until Phase 5 diagnostic reveals it — by which point fixing the constraint and re-running is extra work.
-- **Geofences before politicians:** The diagnostic in Phase 5 uses imported geofences to determine which `geo_id` values need politician records. Doing gap-fill before geofences means building to unknown targets and risks creating districts with placeholder geo_ids that don't match any boundary.
-- **Federal/state before local (Phase 3):** These are highest-impact, most likely to have existing BallotReady politician records, and use a single well-tested TIGER FTP source. Delivers visible results fastest.
-- **LA County ArcGIS separate from TIGER (Phase 4):** Different source, different integration pattern, different geo_id construction formula. Keeping it isolated reduces debugging surface.
-- **Diagnostic before gap-fill (Phase 5 before Phase 6):** The diagnostic determines the exact scope of Phase 6. Without it, gap-fill risks duplicating existing BallotReady records or creating records for districts that don't yet have geofence boundaries.
-- **VACUUM ANALYZE last:** Required after all bulk inserts to update PostGIS planner statistics; must come after all import phases are complete.
+- Schema and infrastructure must precede all pipeline phases because photo_license, term_date_precision, and the Supabase Storage bucket are needed from the first scraper run — adding them retroactively requires a migration and data backfill
+- High-value headshots before mass city scraping validates the full pipeline (Storage upload, photo_license, dedup) on a manageable 20-record batch before scaling to 369 records across 89 sites
+- Building photos, term data, and contacts are independent of headshot complexity and can be developed in parallel with Phase 4, but are grouped as Phase 3 because they share simpler, well-understood source patterns
+- Go API and frontend are genuinely last — they serve data that must already exist in the database to be useful on deploy; ContactSection with no contacts is noise
+- Bio enrichment is last because it is optional, has lowest source availability, and its quality filter must be right before production data is affected
 
 ### Research Flags
 
-Phases likely needing deeper research during planning:
-- **Phase 4 (LA County ArcGIS):** ArcGIS FeatureServer field names for supervisor district number are unverified — must inspect the actual endpoint response (`?outFields=*&f=geojson&resultRecordCount=1`) before building geo_id construction. Expected to be `SUPERVISORIAL_DISTRICT` or similar but requires runtime confirmation. MEDIUM confidence.
-- **Phase 6 (Politician gap-fill, X0001 geo_id format):** The exact `geo_id` format stored by BallotReady for LA City council members must be queried from `essentials.districts` before constructing geo_ids for new records. The 12-character format from Bloomington (`{7-digit place FIPS}{5-digit ward}`) is the inferred standard but must be verified against actual LA City data in the DB.
+Phases that may need targeted research before implementation:
+- **Phase 4 (City Council Headshots — per-city audit):** A 10-city sampling pass is required before building the full pipeline. Identify which cities use Granicus/CivicPlus/Municode (mark fetch_method:"playwright" in city_sources.json), which have Cloudflare protection, and which HTML structure is used for headshot placement. This is a pre-planning audit step, not a full research phase.
+- **Phase 1 (Supabase Storage Python upload):** The supabase-py Python client upload API has documented pitfalls: base64 encoding corrupts image files; content-type must be explicitly passed in file_options; bucket must be pre-created manually. Verify the exact upload pattern against current Supabase Python docs before writing the first upload function.
 
-Phases with standard patterns (skip deeper research):
-- **Phase 1 (Schema fixes):** Verified SQL patterns; `ST_Covers` vs `ST_Contains` is a known, documented PostGIS difference; MTFCC codes sourced from Census official documentation.
-- **Phase 2 (Utils scaffolding):** Extract existing patterns; no new design decisions required.
-- **Phase 3 (TIGER shapefiles):** Census TIGER FTP structure is HIGH confidence; geopandas import pattern is established across 5 existing scripts with no variation needed.
-- **Phase 5 (Diagnostic):** All SQL patterns are documented in PITFALLS.md; no research needed.
-- **Phase 7 (Validation):** Standard PostGIS diagnostic queries; VACUUM ANALYZE is a known step.
+Phases with standard, well-documented patterns (skip research phase):
+- **Phase 2 (Supervisor/LA City headshots):** bos.lacounty.gov and lacity.gov are public, well-structured; hardcoded fallback pattern already established; Wikimedia Commons search pattern documented in STACK.md
+- **Phase 3 (Building photos, term/contact data):** Wikimedia Commons API query pattern documented in STACK.md; lavote.gov data already captured in known format; city_sources.json URL field already populated
+- **Phase 5 (Go API + frontend):** All changes are additive with clear scope (15-30 lines each); ContactSection follows existing ev-ui component patterns; building photo endpoint follows existing handler structure
+- **Phase 6 (Bio + coverage validation):** Bio quality filter pattern and HEAD request audit code both fully documented in PITFALLS.md
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Python + geopandas + SQLAlchemy pattern is production-proven in 5 existing scripts; library versions verified against PyPI release notes and geopandas changelog |
-| Features | HIGH | TIGER layer coverage and priority list derived directly from existing MTFCC map in codebase; BallotReady gap identified from code inspection of `handlers.go` and `setup.go` |
-| Architecture | HIGH | Existing lookup path inspected in `geofence_lookup.go`; import pipeline follows established `cmd/` and `scripts/` patterns; two-table join mechanics verified from source |
-| Pitfalls | HIGH (PostGIS, Supabase) / MEDIUM (ArcGIS field names, dedup at scale) | PostGIS geometry behaviors and Supabase pooler limitations verified against official docs and GDAL issue tracker; ArcGIS field names and rate limits are observed/inferred rather than officially documented |
+| Stack | HIGH | Direct codebase inspection of all existing scripts and requirements.txt; Playwright 1.58.0 and Pillow 12.1.1 versions verified against PyPI; Wikimedia Commons API pattern confirmed via MediaWiki docs |
+| Features | HIGH | Existing DB schema directly inspected (models.go confirms all target columns exist); data sources verified (bos.lacounty.gov, lacity.gov, lavote.gov, SOS PDF URLs confirmed live); coverage estimates based on CA government website norms and lavote.gov scraper output structure |
+| Architecture | HIGH | All source files directly inspected; schema columns, handler structure (GetPoliticianByID steps 1-7), ev-ui component logic (getImageURL, getTermLine), and config file formats all verified against actual code in repository |
+| Pitfalls | HIGH (hotlinking, Cloudflare, JS pages) / MEDIUM (contact staleness, coverage metric, bio boilerplate) | Hotlinking behavior: verified against mySociety PopIt tracker + Pixsy. CA copyright: verified against EFF records + Wikipedia copyright status article. Cloudflare patterns: verified against City-Bureau/city-scrapers patterns + Scrapfly docs. Supabase Storage: verified against Supabase Python docs + community issue tracker. Contact staleness and coverage inflation: pattern reasoning from v1.6 codebase history |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **ArcGIS FeatureServer field names (Phase 4):** The attribute name for supervisor district number in the LA County eGIS FeatureServer is not verified. Inspect the actual API response before building the import script. This is a 5-minute check but must happen before Phase 4 implementation.
+- **Photo re-hosting scope decision:** PROJECT.md marks Supabase Storage re-hosting as "out of scope for v1.7." PITFALLS.md argues this must not be deferred because hotlinking at scale is a production reliability problem. This conflict requires an explicit decision before Phase 1 begins. Recommendation from research: implement Supabase Storage upload in v1.7 because deferring it again means scraping 389 government URLs that will require re-scraping when sites redesign.
 
-- **Existing geo_id format for LA City council districts (Phase 6):** Before building X0001 geo_ids for LA City council members, query `SELECT geo_id, district_type FROM essentials.districts WHERE state = 'CA' AND district_type = 'LOCAL'` to confirm exact format. The Bloomington 12-character format is inferred as the standard.
+- **Composite unique constraint on politician_contacts:** STACK.md notes "The politician_contacts table currently lacks a composite unique constraint in the Go model definition — verify one exists or add it before running enrichment scripts." This must be checked in models.go and the database schema before Phase 3 contact upserts run.
 
-- **Federal/state politician coverage verification (Phase 5):** Research assumes federal and state CA politicians exist in the DB from BallotReady cache warming. Verify at Phase 5 start with: `SELECT district_type, COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON o.district_id = d.id WHERE d.state = 'CA' GROUP BY district_type`. If counts are zero or low, Phase 6 scope expands significantly.
+- **Wikimedia Commons actual coverage for 89 LA County cities:** Research estimates 40-60% coverage from Wikidata SPARQL. The actual query output (which cities have P18 images) is not known until the query runs. SVG fallback handles gaps, but Phase 3 building photo scope depends on actual results. Run the SPARQL query during Phase 1 planning to size Phase 3 correctly.
 
-- **LA County school district GEOID alignment:** TIGER UNSD GEOIDs for LA County school districts must align with any existing `districts.geo_id` values in the DB. If BallotReady never fetched school board data for CA, importing G5420 geofences will have no matching district rows and Phase 6 scope expands to include school board member records (hundreds of records — currently deferred to v1.6.x).
+- **External ID range for v1.7:** ARCHITECTURE.md notes "v1.6 = -200001 range, v1.7 should use -300001 range" for synthetic external IDs on scraped records. The exact range initialization must be set in utils.py before any v1.7 script assigns new external IDs.
+
+- **photo_license legal review workflow:** Research identifies the licensing risk but does not define the review process for "scraped_no_license" images. A decision is needed: either accept "scraped_no_license" images with a tag (serving them with a disclaimer) or gate production serving on a manual review pass per city batch. This determines whether Phase 4 headshots are immediately live in production or staged behind a review gate.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- `EV-Backend/internal/essentials/geofence_lookup.go` — MTFCC-to-district-type map, `FindGeoIDsByPoint`, `FindPoliticiansByGeoMatches`, `ST_Contains` bug location
-- `EV-Backend/internal/essentials/geofence_models.go` — `GeofenceBoundary` struct, geo_id unique constraint note ("managed manually")
-- `EV-Backend/internal/essentials/models.go` — `Politician`, `District`, `Office` models; `external_id` uniqueIndex
-- `EV-Backend/internal/essentials/setup.go` — GiST index creation, PostGIS extension initialization
-- `EV-Backend/scripts/import_ca_legislative_geofences.py` — established Python + geopandas import pattern
-- `EV-Backend/scripts/promote_scraped_officials.py` — established dedup pattern with synthetic external_id
-- `https://www2.census.gov/geo/tiger/TIGER2024/` — Census TIGER FTP directory structure and shapefile naming conventions
-- `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27` — Supervisorial Districts endpoint verified February 2026
-- `https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer` — City boundaries polygon service verified February 2026
-- Census TIGER 2024 Technical Documentation Appendix E — authoritative MTFCC code definitions
-- PostGIS docs: ST_MakeValid, ST_IsValid, ST_Covers vs ST_Contains semantics, GiST indexing
-- Supabase docs: direct connection vs pooler (port 5432 vs 6543), prepared statement limitations in transaction mode
+- `EV-Backend/scripts/requirements.txt` — current pinned dependencies; scraper infrastructure baseline
+- `EV-Backend/scripts/scrape_la_officials.py` — seat-first dedup, upsert logic, photo_origin_url precedent, v1.6 Supabase Storage deferral TODO (lines 29-33)
+- `EV-Backend/scripts/scrape_city_councils.py` — fetch_html_with_fallback(), byte-count threshold limitation, per-city commit pattern, city_sources.json structure
+- `EV-Backend/scripts/city_sources.json` — 89 city configs, place_geoid values, council page URLs, 382 roster entries
+- `EV-Backend/scripts/politician_sources.json` — 3 existing source configs
+- `EV-Backend/internal/essentials/models.go` — PoliticianImage, PoliticianContact, Degree, Experience, Politician structs; all target columns confirmed present
+- `EV-Backend/internal/essentials/handlers.go` — GetPoliticianByID steps 1-7; OfficialOut struct; PoliticianProfileOut structure; contacts not yet in response
+- `ev-ui/src/PoliticianProfile.jsx` — getImageURL() (images[]/photo_origin_url fallback chain), getTermLine() (valid_from/valid_to), initials avatar fallback
+- `essentials/src/lib/buildingImages.js` — CURATED_LOCAL static asset pattern, getBuildingImages() function, SVG fallback
+- [Playwright Python PyPI](https://pypi.org/project/playwright/) — v1.58.0 current stable January 2026
+- [Pillow PyPI](https://pypi.org/project/pillow/) — v12.1.1 current stable February 2026
+- [Supabase Python Storage docs](https://supabase.com/docs/reference/python/storage-from-upload) — MIME type requirement, file_options format, upload pattern
+- [Wikimedia Commons API:Etiquette](https://www.mediawiki.org/wiki/API:Etiquette) — no auth needed for reads, User-Agent required
 
 ### Secondary (MEDIUM confidence)
-- `https://egis-lacounty.hub.arcgis.com/` — LA County Enterprise GIS Hub; dataset URLs confirmed, field names unverified without direct API call
-- `https://geohub.lacity.org/datasets/76104f230e384f38871eb3c4782f903d_13/about` — LA City GeoHub council districts; ArcGIS FeatureServer pattern standard, specific field names need runtime verification
-- GDAL GitHub issue #6340 — `-makevalid` GeometryCollection behavior in GDAL < 3.5
-- Crunchy Data: PostGIS performance, ST_MakeValid, loading data overview
-- OpenSanctions deduplication article — multi-source record deduplication patterns
-- Phase 31 SUMMARY and RESEARCH docs — Bloomington ArcGIS FeatureServer pattern, ST_MakeValid precedent, X0001 geo_id format verification
+- [Wikimedia Rate Limits](https://api.wikimedia.org/wiki/Rate_limits) — no hard limit on read requests; serial requests recommended
+- [Wikidata SPARQL service](https://query.wikidata.org/) — P18 (image), P31 (instance of city hall, Q16560), P131 (located in LA County, Q816459) query patterns
+- [California SOS Roster 2026](https://admin.cdn.sos.ca.gov/ca-roster/2026/complete-roster.pdf) — city-level contact data availability
+- mySociety PopIt issue #461 — hotlink blocking behavior from government websites returning 403
+- [City-Bureau/city-scrapers](https://github.com/City-Bureau/city-scrapers) — community patterns for JS-rendered government page handling
+- [Supabase community: PNG corruption on upload](https://github.com/orgs/supabase/discussions/26257) — base64 encoding pitfall with Python upload
+- `scrapers/lavote_scraper.py` — year_elected as bare year string; term_length output format; ~75 officials captured
 
-### Tertiary (LOW confidence)
-- LA County GIS Hub rate limits — observed behavior only; no official documentation; paginate with `resultOffset` as a precaution
-- School board member existence in BallotReady import — assumed absent based on BallotReady's historical focus on election candidates rather than current officeholders; must be verified by querying the DB
+### Tertiary (informational)
+- EFF: [California Legislature Drops Proposal to Copyright All Government Works](https://www.eff.org/deeplinks/2016/06/california-legislature-drops-proposal-copyright-all-government-works) — AB 2880 history; CA governments can assert copyright unlike federal
+- Wikipedia: [Copyright status of works by subnational governments of the United States](https://en.wikipedia.org/wiki/Copyright_status_of_works_by_subnational_governments_of_the_United_States) — state/local government copyright rules differ from 17 U.S.C. § 105
+- Scrapfly: [How to Bypass Cloudflare When Web Scraping](https://scrapfly.io/blog/posts/how-to-bypass-cloudflare-anti-scraping) — Cloudflare bot detection mechanisms; headless browser fingerprinting
+- [SPARQLWrapper PyPI](https://pypi.org/project/SPARQLWrapper/) — last release March 2022; confirming it must NOT be added as a dependency
 
 ---
-*Research completed: 2026-02-23*
+*Research completed: 2026-02-24*
 *Ready for roadmap: yes*

@@ -1,267 +1,342 @@
 # Pitfalls Research
 
-**Domain:** TIGER shapefile import pipeline, LA County GIS integration, politician deduplication, PostGIS geofence scaling (civic tech)
-**Researched:** 2026-02-23
-**Confidence:** HIGH (PostGIS/geometry behaviors — verified against PostGIS docs + GDAL issues), HIGH (Supabase pooler limitation — verified against Supabase docs), HIGH (MTFCC gap — verified against Census docs + BallotReady support), MEDIUM (deduplication patterns — verified against OpenSanctions + Cicero articles), MEDIUM (LA County GIS rate limits — API observed, no official docs)
+**Domain:** Politician data enrichment — headshot scraping, building photos, contact info, term data, bios, education, experience; civic tech scraping pipeline for ~389 LA County officials
+**Researched:** 2026-02-24
+**Confidence:** HIGH (image hosting/hotlinking — verified against mySociety PopIt issue tracker + Pixsy), HIGH (California copyright law — verified against EFF + CA Legislature records), HIGH (anti-bot/JS-rendered pages — verified against Playwright docs + city-scrapers project patterns), MEDIUM (Supabase Storage image pitfalls — verified against Supabase docs + community discussions), MEDIUM (contact info staleness — verified against city-scrapers project learnings + codebase history), LOW (coverage regression detection — pattern reasoning from v1.6 deduplication experience)
 
 ---
 
 ## Critical Pitfalls
 
-### Pitfall 1: `ON CONFLICT (geo_id) DO NOTHING` Silently Drops Valid Boundaries When geo_id Is Not Unique Across MTFCC Types
+### Pitfall 1: Hotlinking Government Headshots Instead of Re-hosting Them — Photos Disappear Without Warning
 
 **What goes wrong:**
-The current import script uses `ON CONFLICT (geo_id) DO NOTHING` when moving rows from the staging table into `essentials.geofence_boundaries`. This assumes `geo_id` is globally unique across all district types. It is not. The same Census GEOID can appear in multiple TIGER shapefiles with different MTFCC codes — for example, a county GEOID (`06037`) appears in the county shapefile (G4020) and may also appear as a component of school district or place GEOIDs. More critically, G5400 (Elementary), G5410 (Secondary), and G5420 (Unified) school districts in LA County can produce rows with overlapping spatial coverage even when their geo_ids differ, but SLDU and SLDL districts for the same state leg district number often share the same geo_id prefix structure. When the first import run inserts `geo_id = '0606' + district_number` for State Senate, a second run importing State House districts with the same derived ID key silently drops the House district. The address search returns Senate matches but never House matches for those districts — and no error is thrown.
+The v1.6 pipeline stores `photo_origin_url` pointing directly at government website image URLs (e.g., `https://bos.lacounty.gov/wp-content/uploads/2021/11/hilda-solis.jpg`). The profile page renders these hotlinked URLs as `<img src>`. Government websites redesign frequently — typically within 2-4 years — and when they do, image paths change or directories are restructured. The image URLs break silently: the `<img>` tag renders a broken image icon with no error logged, no monitoring alert, and no way to know which of the 389 officials is now missing a headshot unless a human clicks every profile.
+
+Beyond redesigns, some government IT departments explicitly block hotlinking by checking the HTTP `Referer` header. A Guatemalan government website case documented in mySociety's PopIt tracker shows the server returns `403 Forbidden` with message "The owner of this website does not allow hotlinking to that resource" — a completely silent failure from the browser's perspective. City of LA currently does not block hotlinking, but this can change with any Cloudflare policy update.
 
 **Why it happens:**
-The staging → production INSERT was designed for the first import run where geo_ids were assumed to be globally unique. As more district types are added (school districts, county subdivisions, places), the uniqueness assumption breaks. The `DO NOTHING` clause means failures are invisible — the row count in the summary query looks correct because it counts all rows in the table, not the rows that were actually inserted in this run.
+The v1.6 TODO comment in `scrape_la_officials.py` (line 29-33) explicitly deferred photo re-hosting: "Photo re-hosting to Supabase Storage is planned but deferred. Currently storing photo_origin_url pointing to government site URLs." The scraping pipeline was built for names and districts first; image hosting was scoped out of v1.6. v1.7 adds headshot scraping — if it repeats the same deferral pattern, photos will be scraped and stored as hotlinked URLs, creating a fragile dependency on 89 different city websites staying structurally stable forever.
 
 **How to avoid:**
-Change the unique constraint from `geo_id` alone to `(geo_id, mtfcc)` — this is the true unique key for geofence boundaries. Update the import script's conflict clause to match:
-```sql
-ON CONFLICT (geo_id, mtfcc) DO UPDATE SET
-    geometry = EXCLUDED.geometry,
-    name = EXCLUDED.name,
-    source = EXCLUDED.source,
-    imported_at = EXCLUDED.imported_at;
+Download every scraped headshot at scrape time and upload it to a Supabase Storage bucket during the Python pipeline run. Do not store government image URLs as the canonical source in `essentials.politician_images`. Store the Supabase CDN URL as `photo_url` (the field `essentials.politician_images.photo_url` is already used by BallotReady photos) and keep `photo_origin_url` as audit metadata only — never render it directly.
+
+```python
+import httpx
+from supabase import create_client
+
+def download_and_upload_headshot(photo_url, politician_id, supabase_client):
+    """Download headshot from government site; upload to Supabase Storage."""
+    resp = httpx.get(photo_url, timeout=15, follow_redirects=True)
+    resp.raise_for_status()
+
+    content_type = resp.headers.get("content-type", "image/jpeg")
+    # Derive extension from content type
+    ext = "jpg" if "jpeg" in content_type else content_type.split("/")[-1]
+    path = f"headshots/{politician_id}.{ext}"
+
+    supabase_client.storage.from_("politician-photos").upload(
+        path=path,
+        file=resp.content,
+        file_options={"content-type": content_type, "upsert": "true"}
+    )
+    return supabase_client.storage.from_("politician-photos").get_public_url(path)
 ```
-This also makes re-imports idempotent: re-running the script updates existing rows rather than silently skipping them. Add a post-import verification query that counts rows per MTFCC and compares against expected counts for the region:
-```sql
-SELECT mtfcc, COUNT(*) as count FROM essentials.geofence_boundaries
-WHERE source = 'census_tiger_2024' GROUP BY mtfcc ORDER BY mtfcc;
-```
-Cross-reference against expected TIGER counts: CA has ~30 congressional districts, 40 state senate districts, 80 assembly districts, 80+ unified school districts in LA County alone.
+
+When Supabase Storage upload fails (network error, invalid MIME type), log the failure and store `photo_origin_url` as the fallback — but flag the record for manual review. Never silently proceed without a CDN URL when image persistence is a stated milestone goal.
 
 **Warning signs:**
-- Post-import count per MTFCC shows 0 for a layer you just imported (e.g., `G5210` shows 0 rows after running the state senate import)
-- Address lookups in a specific region consistently return Federal + State senators but never State Assembly members
-- Running the import script twice produces different row count totals in the summary
-- `SELECT COUNT(*) FROM staging` is greater than `SELECT COUNT(*) FROM final WHERE source = 'census_tiger_2024'` — the difference is silently dropped rows
+- Profile pages show broken image icons for some officials but not others — different government websites failing at different times
+- `essentials.politician_images` rows where `photo_url` contains `bos.lacounty.gov`, `cityofburbank.net`, or any city domain rather than a Supabase CDN URL
+- `last_synced` on politician records is recent but `photo_url` still points to a government domain
+- HTTP 403 response when the backend (Go) tries to fetch `photo_origin_url` for a validity check
 
 **Phase to address:**
-Shapefile pipeline design phase — before importing a single layer for LA County. Fix the unique constraint before the first multi-MTFCC import. This is a schema change, not just a script fix.
+Headshot scraping pipeline design phase — before writing a single line of image URL storage. The Supabase Storage bucket must exist and upload logic must be implemented in the first scraper, not treated as a follow-up task. The v1.6 TODO in `scrape_la_officials.py` must be resolved before the v1.7 enrichment scraper is merged.
 
 ---
 
-### Pitfall 2: Invalid Geometries in TIGER Shapefiles Fail Silently with ogr2ogr — No Error, No Row
+### Pitfall 2: JavaScript-Rendered City Council Pages Return Empty HTML to requests — Scraper Misreports 0 Officials Found
 
 **What goes wrong:**
-TIGER shapefiles occasionally contain geometries that fail PostGIS's validity checks: self-intersecting rings, zero-area slivers, or ring touches that violate OGC geometry rules. When ogr2ogr encounters a geometry that cannot be stored in the PostGIS column constraint, it skips the row and continues — unless you run with `-skipfailures` explicitly, in which case it always skips. Either way, the import appears to succeed but some districts are missing. For coastal congressional districts in California (which have complex coastline polygons with many vertices), invalid geometry failures are especially common. The Bloomington import already used `ST_MakeValid` to patch this for the city council data — LA County will need the same treatment at scale.
+Approximately 20-30% of California city government websites use JavaScript frameworks (React, Vue, or CMS platforms like Granicus, Municode, CivicPlus) that render content client-side. A `requests.get()` + `BeautifulSoup` scrape of these pages returns the shell HTML with zero council member names — the content div is present but empty. The scraper's count check (`len(officials) == expected_count`) reports a mismatch, falls back to... nothing, because unlike `scrape_la_officials.py` which has hardcoded fallbacks for 21 specific officials, there is no fallback for 89 city websites. The city is marked `status: "failed"` in `city_sources.json` and skipped on re-runs.
+
+The `scrape_city_councils.py` script already has a Playwright fallback (`fetch_html_with_fallback`) that triggers when `len(body_text) < 500`. This works for pages with a minimal HTML shell, but fails for pages that return a full HTML document (5KB+) with meaningful-looking content that is actually JavaScript placeholders — the `body_text > 500` guard never triggers Playwright fallback.
 
 **Why it happens:**
-TIGER geometric data is generated for cartographic accuracy, not topological validity. Coastal boundaries trace irregular shorelines with thousands of vertices that sometimes produce self-intersections when simplified. The `import_shapefiles.sh` script does not pass `--makevalid` or use `ST_MakeValid` in the post-processing SQL. It also does not validate row counts before and after import.
+The Playwright fallback threshold is byte-count-based (`len(body_text) > 500`), not content-quality-based. A page template with navigation, footer, and placeholder `<div id="council-members"></div>` will pass the `> 500` threshold but return no member names. The scraper then runs `parse_generic_council_page` on empty content, returns 0 results, and the city fails. This is the difference between "empty page" and "populated page" — the scraper cannot currently distinguish them.
 
 **How to avoid:**
-Add `-makevalid` to every `ogr2ogr` call as a baseline safeguard:
-```bash
-ogr2ogr -f PostgreSQL "PG:$DB_CONNECTION" "$shp_file" \
-    -nln essentials.geofence_boundaries_staging \
-    -append \
-    -t_srs EPSG:4326 \
-    -makevalid \
+Replace the byte-count threshold with a content-quality check: after BeautifulSoup parsing, look for at least 2 person-like name patterns (two capitalized words adjacent, typical of "First Last" format) in the body text. If fewer than 2 name patterns are found, trigger the Playwright path regardless of body length:
+
+```python
+import re
+
+def looks_like_has_names(html):
+    """Return True if HTML appears to contain rendered person names."""
+    soup = BeautifulSoup(html, "html.parser")
+    body_text = soup.get_text()
+    # Look for at least 2 adjacent capitalized word pairs (likely names)
+    name_matches = re.findall(r'\b[A-Z][a-z]{1,15}\s+[A-Z][a-z]{1,20}\b', body_text)
+    return len(name_matches) >= 2
+
+def fetch_html_with_fallback(url, timeout=15):
+    html = ""
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=timeout)
+        resp.raise_for_status()
+        html = resp.text
+        if looks_like_has_names(html):
+            return html, False
+    except Exception as e:
+        print(f"    requests failed: {e}")
+    # Fall back to Playwright
     ...
 ```
-Note: ogr2ogr's `-makevalid` can produce `GeometryCollection` types when a repair results in mixed geometry types (known GDAL issue #6340, fixed in GDAL 3.5+). Verify your GDAL version with `ogr2ogr --version`. If you are on GDAL < 3.5, apply `ST_MakeValid` in the post-processing SQL instead and use `ST_CollectionExtract` to extract only polygon geometries:
-```sql
-INSERT INTO essentials.geofence_boundaries (geo_id, mtfcc, name, geometry, source, imported_at)
-SELECT
-    geo_id, mtfcc, name,
-    ST_Multi(ST_CollectionExtract(ST_MakeValid(geometry), 3)) as geometry,
-    'census_tiger_2024',
-    NOW()
-FROM essentials.geofence_boundaries_staging
-WHERE ST_GeometryType(ST_MakeValid(geometry)) NOT IN ('GEOMETRYCOLLECTION', 'POINT', 'LINESTRING')
-   OR ST_GeometryType(ST_MakeValid(ST_CollectionExtract(geometry, 3))) IS NOT NULL
-ON CONFLICT (geo_id, mtfcc) DO UPDATE SET geometry = EXCLUDED.geometry;
-```
-Run a pre-insert validity check to quantify the problem before fixing it:
-```sql
-SELECT COUNT(*) as invalid_count, mtfcc
-FROM essentials.geofence_boundaries_staging
-WHERE NOT ST_IsValid(geometry)
-GROUP BY mtfcc;
-```
+
+Additionally: identify JS-rendered cities during the source config build phase (before scraping) by manually checking 10 random cities. Mark them `"fetch_method": "playwright"` in `city_sources.json` so the scraper skips `requests` entirely for known JS sites.
 
 **Warning signs:**
-- `SELECT COUNT(*) FROM essentials.geofence_boundaries_staging` differs from `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE source = 'census_tiger_2024'` — the gap is missing rows due to import failures
-- ogr2ogr output shows `Features without geometry skipped: N` where N > 0
-- Congressional districts in the import cover all of California but a specific coastal district (e.g., CA-36 or CA-47) never returns results for any address
-- `ST_IsValid(geometry)` returns false for some rows: `SELECT geo_id, ST_IsValidReason(geometry) FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry)`
+- `process_city` returns `False` with reason "No roster data (SOS PDF empty, website failed)" for cities that visibly have council pages
+- Playwright is never triggered during a full run (counter stays at 0) despite known CivicPlus cities in the roster
+- City council page renders correctly in a browser but `requests.get` + `BeautifulSoup(html).get_text()` contains headings but no names
+- `city_sources.json` `failure_reason` field shows "Website parse returned 0 officials" for 15+ cities
 
 **Phase to address:**
-Shapefile import execution phase — before moving data from staging to production. The pre-insert validity check must run before the final `INSERT ... ON CONFLICT` statement. Never promote staging data to production without verifying zero invalid geometries.
+Headshot + contact scraping pipeline design phase — before running the batch enrichment scraper for all 89 cities. Validate the fetch quality on a sample of 10 cities (2 known-JS, 8 static) before running the full pipeline. Known JS-heavy platforms: Granicus, CivicPlus, Municode.
 
 ---
 
-### Pitfall 3: Supabase Pooler (Port 6543) Breaks ogr2ogr and psql COPY — Use Direct Connection for All Imports
+### Pitfall 3: Cloudflare and Rate Limiting on City Websites Cause Transient Failures Misreported as Permanent Failures
 
 **What goes wrong:**
-The Supabase connection string available from the dashboard defaults to the Supavisor connection pooler on port 6543, which runs in transaction mode. ogr2ogr, shp2pgsql-piped-to-psql, and multi-statement psql scripts all fail or behave incorrectly through the pooler because:
-1. Transaction-mode poolers do not support prepared statements, which ogr2ogr uses internally
-2. The pooler may route different statements in a multi-statement transaction to different backend connections, breaking transactional guarantees
-3. Long-running bulk inserts (thousands of rows from a national TIGER file) time out at the pooler's connection limit before completing
+Several LA County city websites (the v1.6 `scrape_school_boards.py` noted "District websites universally blocked by Cloudflare") run behind Cloudflare Bot Management. A scraping run that hits 89 city websites sequentially without rate limiting will trigger Cloudflare's bot detection on some of them — typically the larger cities with more traffic. The scraper receives HTTP 403 or a Cloudflare challenge page (200 status code with a JS challenge body). The city gets marked `status: "failed"` in `city_sources.json` and is permanently skipped on reruns due to the `if city_config.get("status") == "scraped"` skip guard — except for failures, which are retried but often hit the same Cloudflare block since the IP hasn't changed.
 
-The import appears to run but silently commits partial data, leaving the table in an inconsistent mid-import state with no error returned to the shell script.
+The issue compounds with `photo_origin_url` scraping: downloading 5+ images from the same city domain in rapid succession triggers rate limiting even on sites that allow scraping, because image servers have lower rate limits than HTML pages.
 
 **Why it happens:**
-Developers copy the connection string from the Supabase dashboard "Connection String" tab, which presents the pooler URL by default. The direct connection URL requires explicitly selecting "Direct connection" in the dashboard. The error message from ogr2ogr is not always clear that prepared statements are the cause — it may fail with a generic "connection error" or "server closed the connection unexpectedly" after partial import.
+The existing scraper has no rate limiting between city requests (`time.sleep()` is absent from `scrape_city_councils.py`). The `fetch_html_with_fallback` function adds a Playwright fallback, but Playwright headless Chromium is detectable by Cloudflare's browser fingerprinting — `navigator.webdriver` is exposed unless specifically patched. Most importantly: there is no distinction between "permanently blocked" (429 Too Many Requests, 403 from Cloudflare) and "server error" (500, 503) in the retry logic.
 
 **How to avoid:**
-Always use the direct connection URL (port 5432) for all shapefile imports, psql scripts, and any bulk data operation. From the Supabase dashboard: Project Settings > Database > Connection string — switch to the "Direct connection" tab, not "Connection pooling". Verify the port in your `DATABASE_URL`:
-```bash
-# Correct for imports (direct connection)
-DATABASE_URL=postgresql://postgres:PASSWORD@db.PROJECTID.supabase.co:5432/postgres
+Add a minimum delay between city requests: `time.sleep(2)` between cities, `time.sleep(0.5)` between images from the same city. Use randomized delays (`random.uniform(1.5, 3.5)`) to avoid fingerprinting based on request cadence. Add exponential backoff retry logic for HTTP 429 and 503 responses (max 3 retries with 5s, 15s, 45s waits).
 
-# Wrong for imports (pooler — will fail for ogr2ogr)
-DATABASE_URL=postgresql://postgres.PROJECTID:PASSWORD@aws-0-REGION.pooler.supabase.com:6543/postgres
-```
-Add a connection validation step at the start of every import script:
-```bash
-psql "$DATABASE_URL" -c "SELECT 1" || { echo "ERROR: Cannot connect to database"; exit 1; }
+For Cloudflare-protected sites specifically: use `playwright-stealth` to patch the headless browser fingerprint before any page navigation. If stealth Playwright is still blocked, fall back to the SOS PDF data already loaded in `city_sources.json` for name data — accept that contact info and headshots won't be available for Cloudflare-protected sites rather than burning time on bypasses.
+
+```python
+import time, random
+
+for city_config in cities:
+    # ... process city
+    time.sleep(random.uniform(1.5, 3.5))  # Between cities
+
+# When downloading images from the same city:
+for i, photo_url in enumerate(photo_urls):
+    if i > 0:
+        time.sleep(0.5)  # Between images from same domain
+    download_image(photo_url)
 ```
 
 **Warning signs:**
-- ogr2ogr exits with "ERROR 1: Error executing: PQexec() -- server closed the connection unexpectedly"
-- `psql "$DATABASE_URL" -c "\d essentials.geofence_boundaries"` returns `prepared statement "..." does not exist`
-- Import appears to complete but row counts are lower than expected
-- DATABASE_URL in `.env` or CI script contains port 6543 or the `pooler.supabase.com` hostname
+- Multiple cities from the same geographic area fail simultaneously (same Cloudflare edge node blocking the scraper IP)
+- HTTP 403 response body contains "Cloudflare" in the HTML title or meta description
+- `city_sources.json` failure_reason for 5+ cities reads "403 Client Error" or "Challenge page returned"
+- Playwright successfully loads the page but the rendered content shows a "checking your browser" message
+- Image download failures cluster by city domain (all images from `cityofburbank.net` fail, but not `cityofpasadena.net`)
 
 **Phase to address:**
-Import tooling setup phase — verify the connection string before writing a single line of import logic. The direct connection URL must be documented in the project's import runbook and enforced by the import script's preflight checks.
+Scraping pipeline implementation phase — rate limiting and retry logic must be in the initial implementation, not added after Cloudflare blocks start appearing. Add a 72-hour "blocked" cooldown: if a city returns 429/403, mark it `status: "blocked"` rather than `status: "failed"`, and add a `retry_after` timestamp. Only reattempt after the cooldown.
 
 ---
 
-### Pitfall 4: MTFCC Mapping Table Is Incomplete — Unknown Codes Return All District Types and Match Wrong Politicians
+### Pitfall 4: Contact Info Scraping Returns Stale Data — Phone Numbers and Emails Silently Outdated
 
 **What goes wrong:**
-The `mtfccToDistrictTypes` map in `geofence_lookup.go` currently handles 8 MTFCC codes. LA County imports will introduce codes not yet in the map. When `FindPoliticiansByGeoMatches` encounters an unknown MTFCC, it falls through to the else branch: `d.geo_id = $N` with no district type filter. This means any politician in any district that shares that geo_id — regardless of district type — gets returned. A user in an unincorporated LA County area might receive city council members from an adjacent incorporated city as if they represent them, simply because the geo_id is present in the districts table.
+City council member contact info (phone numbers, email addresses, office addresses) changes frequently: after elections (new members, new district assignments), after office reorganizations, and when members leave. A scraper run captures contact info that is current at scrape time. If the database is not refreshed, users see outdated phone numbers and dead email addresses that bounce — damaging trust in the platform without any visible error.
 
-Known MTFCC codes that will appear in LA County imports but are not yet in the map:
-- `G5400` — Elementary School District (separate from G5420 Unified)
-- `G5410` — Secondary School District (separate from G5420 Unified)
-- `G4110` — Incorporated Place (city boundary — distinct from county subdivision G4040)
-- `G4120` — Consolidated City (not common, but present in some CA data)
-- `G5200` is already mapped as `NATIONAL_LOWER`, but the current script imports congressional districts for Indiana only — re-importing CA congressional data may introduce duplicate MTFCC rows with same geo_id structure
+The existing pipeline has `last_synced` timestamps on politician records but no corresponding TTL enforcement for the enrichment fields (contact info, headshots, bio). Once scraped, these fields persist indefinitely in `essentials.politicians` and related tables. A city council election in November could render 30% of contact info stale by January, with no mechanism to detect or surface this.
 
 **Why it happens:**
-The MTFCC map was built incrementally for Bloomington (Monroe County) requirements. Each new region adds new district types. The code path for unknown MTFCCs is intentionally permissive to avoid dropping data, but this permissiveness becomes a correctness bug at scale.
+The scraping pipeline is designed as a one-time gap-fill operation, not a recurring refresh system. The `status: "scraped"` field in `city_sources.json` permanently marks cities as done, causing them to be skipped on re-runs. This is appropriate for name/seat data (seat changes are tracked by `is_active` flag) but incorrect for contact info (which can change without a seat change — same person, new phone number).
 
 **How to avoid:**
-Audit all MTFCC codes that will appear in LA County imports before writing import scripts. Cross-reference the TIGER 2024 Technical Documentation Appendix E with the current `mtfccToDistrictTypes` map and add all missing codes before the first import. For codes without a clear district type mapping (e.g., G4120 Consolidated City), add them as LOCAL:
-```go
-var mtfccToDistrictTypes = map[string][]string{
-    "G5210": {"STATE_UPPER"},
-    "G5220": {"STATE_LOWER"},
-    "G5200": {"NATIONAL_LOWER"},
-    "G4020": {"COUNTY", "JUDICIAL"},
-    "G4040": {"LOCAL", "LOCAL_EXEC"},          // County Subdivision (township/unincorporated)
-    "G4110": {"LOCAL", "LOCAL_EXEC"},           // Incorporated Place (city)
-    "G4120": {"LOCAL", "LOCAL_EXEC"},           // Consolidated City
-    "G5400": {"SCHOOL"},                        // Elementary School District
-    "G5410": {"SCHOOL"},                        // Secondary School District
-    "G5420": {"SCHOOL"},                        // Unified School District (existing)
-    "X0001": {"LOCAL"},                         // BallotReady city council sub-districts
-}
-```
-After each import, run a query to identify unmapped MTFCCs in the database:
-```sql
-SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries
-WHERE mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','X0001');
-```
-Any row returned from this query represents a coverage gap that will cause the permissive fallback to fire.
+Separate the enrichment data TTL from the seat occupancy TTL. Treat contact info (phone, email, website) and headshots as having a 90-day freshness window — the same TTL used for BallotReady cache warmers in the existing system. Add a `contact_synced_at` timestamp to the relevant tables. The pipeline should re-scrape contact info for any record where `contact_synced_at` is older than 90 days, regardless of `status: "scraped"`.
+
+For the v1.7 milestone specifically: after elections (November 2026, March 2026 primary), run the enrichment scraper as a refresh pass with `--force-refresh-contact` flag to bypass the `status: "scraped"` skip guard for contact fields while keeping name/seat data stable.
+
+Add a data freshness indicator to profile pages: "Contact info last updated: [date]" — this sets user expectations and makes staleness visible rather than hidden.
 
 **Warning signs:**
-- Post-import query for unknown MTFCCs returns non-zero rows
-- Address search in an unincorporated LA County area (like Altadena or East LA) returns city council members from the adjacent incorporated city
-- `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries` shows codes not in the Go map
-- A politician with `district_type = 'LOCAL'` appears in search results for an address outside their geographic area
+- User reports that a phone number goes to voicemail for a different council member
+- `last_synced` on `essentials.politicians` is > 90 days old but contact fields are actively displayed
+- Post-election: `essentials.politicians` records show is_active=true for officials who lost their seat (name scraper ran, but contact info for the new member was never scraped)
+- `city_sources.json` shows all 89 cities as `status: "scraped"` — no city will ever be re-scraped for contact refreshes
 
 **Phase to address:**
-MTFCC mapping audit must happen before the first LA County import run. It is a prerequisite for correct search results, not a polish step.
+Contact info storage design phase — before writing a single contact field to the database. Decide the refresh cadence and implement `contact_synced_at` tracking upfront. Do not build a system where data freshness is invisible.
 
 ---
 
-### Pitfall 5: Politician Deduplication Fails When Manual Records and Automated Records Share the Same Person
+### Pitfall 5: Image Licensing Ambiguity for State and Local Government Photos — Contractor-Taken Photos Are Not Public Domain
 
 **What goes wrong:**
-The system will have three sources of politician records for LA County: (1) the dead BallotReady import pipeline data already in the database, (2) new manual records entered via the staging module, and (3) potentially future automated imports. When these sources describe the same official, they create duplicate rows in `essentials.politicians`. The current unique key is `external_id` (an integer, set from BallotReady's numeric ID). Manual staging records have `external_id = 0` or a made-up value, so `ON CONFLICT (external_id) DO UPDATE` does not deduplicate them — it silently creates a second record for the same person. The address search query uses `DISTINCT ON (p.id)`, so both records appear in results. Users see the same supervisor or council member twice.
+Federal government works are unambiguously public domain under 17 U.S.C. § 105. State and local government works in California are NOT automatically public domain — this is a common misconception in civic tech. Under California law (Government Code § 6254.9), state agencies can claim copyright in their works. Cities and counties can also copyright materials they produce, unlike the federal government.
 
-The problem is compounded by name variations: "Karen Bass" vs. "Karen L. Bass", "Bob García" vs. "Robert Garcia", or records where `full_name` differs but `first_name` + `last_name` + `district_id` uniquely identify the same person.
+The practical implication: a professional headshot taken by a photographer hired by the City of Burbank and published on burbank.ca.gov may be copyrighted by the photographer (work for hire → city owns copyright, city can restrict use). Scraping and hosting that photo in a Supabase bucket and serving it via a commercial civic tech platform constitutes reproduction and distribution of a potentially copyrighted work.
+
+The 2016 California AB 2880 debate clarified that CA governments were already asserting copyright on some works — the bill would have expanded this; it was amended but not to protect against copyright. California city websites routinely include Terms of Use language like "All content on this site is the property of the City of [X] and may not be reproduced without permission."
 
 **Why it happens:**
-Manual records entered via the staging module have no external_id from BallotReady. The staging workflow was designed for new stances on existing politicians, not for creating new politician records. When it is repurposed to add gap-fill LA County officials, the uniqueness infrastructure (based on `external_id`) does not apply.
+Developers familiar with federal government data (Congress, FEC, PACER) assume the same public domain rules apply to city websites. They do not. The lavote.gov scraper already in the codebase uses "EmpoweredVote-Scraper/1.0" as the User-Agent — this identifies the scraper but provides no license notice. Scraping + re-hosting photos without a license assessment is done quickly during prototyping and never revisited.
 
 **How to avoid:**
-Before inserting any new politician record (whether manual or scripted), run an existence check using the `essentials.districts` geo_id and normalized name:
-```sql
-SELECT p.id FROM essentials.politicians p
-JOIN essentials.offices o ON o.politician_id = p.id
-JOIN essentials.districts d ON o.district_id = d.id
-WHERE d.geo_id = $1
-  AND LOWER(TRIM(p.last_name)) = LOWER(TRIM($2))
-  AND LOWER(TRIM(p.first_name)) = LOWER(TRIM($3));
-```
-If a match is found, update the existing record rather than inserting a new one. Use OCD-IDs as a secondary deduplication key when available — the `essentials.districts.ocd_id` field already stores these and they are stable identifiers intended for cross-source matching.
+Use a licensed source for headshots wherever available. Priority order:
+1. **Wikimedia Commons** — Politician photos available under CC BY-SA or public domain. Search `commons.wikimedia.org` for each official by name. Coverage is ~60-70% for prominent LA County officials (supervisors, LA City Council), lower for smaller cities.
+2. **Official government press releases / media kits** — Many city websites have a "Newsroom" or "Media" section with explicitly downloadable photos labeled "for press use." This is implicit license for reproduction.
+3. **Scraped without explicit license** — Store `photo_origin_url` only; flag for legal review before moving to CDN. Do not serve at scale.
 
-For politician names specifically: normalize to lowercase, strip accents (García → garcia), strip Jr/Sr/III suffixes before comparison. Full name fuzzy matching (trigram similarity) is over-engineering for a 2-3 person team at this scale — exact normalized match on last_name + first_name + district geo_id is sufficient for a single-county import.
-
-Add a post-import duplicate detection query to the import runbook:
-```sql
-SELECT p.last_name, p.first_name, d.geo_id, COUNT(DISTINCT p.id) as duplicate_count
-FROM essentials.politicians p
-JOIN essentials.offices o ON o.politician_id = p.id
-JOIN essentials.districts d ON o.district_id = d.id
-GROUP BY p.last_name, p.first_name, d.geo_id
-HAVING COUNT(DISTINCT p.id) > 1;
-```
+Add a `photo_license` field to `essentials.politician_images`: `"public_domain"`, `"cc_by"`, `"cc_by_sa"`, `"press_use"`, `"scraped_no_license"`. Only serve photos where `photo_license != "scraped_no_license"` in production until legal review is complete.
 
 **Warning signs:**
-- The post-import duplicate detection query returns any rows
-- Address search result list shows the same person's name twice with different UUIDs in the response
-- Two politicians share the same `first_name`, `last_name`, and district label in the admin data entry UI
-- Manual staging entries have `source = ''` or `source = 'manual'` while the DB also has `source = 'ballotready'` entries with the same name
+- City website Terms of Use page contains "All rights reserved" or "may not be reproduced without written permission"
+- Photo URL path contains `/wp-content/uploads/` suggesting the city hired a photographer (WordPress CMS)
+- No `alt` text or caption on city website photo indicating it's from an external photographer's portfolio
+- `photo_origin_url` points to a city domain but Wikimedia Commons search finds no image for the same official
 
 **Phase to address:**
-Politician gap-fill phase — deduplification check must run before inserting any manual record and again as a post-import validation step. The staging module workflow should surface the existence check result before allowing a new record to be created.
+Headshot sourcing design phase — before scraping begins. Build the `photo_license` field into the schema. Check Wikimedia Commons first for every official batch before attempting city website scraping. For officials not on Wikimedia Commons: check city media kits and press rooms. Only scrape city websites as a last resort, with explicit `photo_license: "scraped_no_license"` flagging.
 
 ---
 
-### Pitfall 6: School District Overlap in LA County — Three Parallel Shapefiles Return Three Matches for One Address
+### Pitfall 6: Term and Election Date Data Is Inconsistent Across Sources — Year vs. Full Date, Different Epoch Conventions
 
 **What goes wrong:**
-LA County has three separate TIGER school district types: Unified (G5420), Elementary (G5400), and Secondary (G5410). An address in Los Angeles Unified School District (LAUSD) will match all three layers — LAUSD covers both elementary and secondary grades as a unified district. If all three shapefiles are imported and no deduplication logic exists, the geofence query returns three school district geo_id matches for one address. `FindPoliticiansByGeoMatches` builds a WHERE clause with three separate conditions, each potentially matching the same school board member's district record. The result: school board members appear three times in the API response. On the frontend, the school board section lists the same person three times.
+Term data from different sources uses incompatible formats. The lavote.gov scraper captures `year_elected` as a bare year string ("2024"). The CA Secretary of State PDF provides term start dates in some columns and election years in others. City websites may show "Elected November 2022, Term expires December 2026" or "2022-2026" or just "Term: 4 years" with no actual date. Some cities show the date of the election; others show the date the member was sworn in; others show the date the term ends.
 
-The same issue affects LA County's 5 supervisorial districts: if both the COUSUB (G4040) shapefile and a separate LA County GIS supervisor district import produce overlapping boundaries for unincorporated areas, a supervisor appears twice.
+When these fields are stored in `essentials.politicians` (current schema has `term_start`, `term_end` as nullable date columns), inconsistent inputs produce a mix of NULL, year-only strings stored as "2024-01-01" (with arbitrary month/day), and correctly formatted dates. The frontend's `formatTermDate()` helper in ev-ui formats all dates, so "2024-01-01" displays as "Jan 2024" — which looks correct but is wrong (the actual swearing-in was December 2022).
 
 **Why it happens:**
-Importing all three school district shapefiles (UNSD + ELSD + SCSD) without a layer-selection strategy is a natural mistake — the script downloads all three by default. The Go lookup code does not deduplicate by politician ID beyond `DISTINCT ON (p.id)`, but that deduplication only works if the politician is matched once. Three separate WHERE conditions can each independently match the same politician row.
+The existing `lavote_scraper.py` captures `year_elected` as a string from table cells that contain year-only data. The `scrape_la_officials.py` main upsert doesn't touch `term_start` or `term_end` at all — these fields are left NULL for gap-filled politicians. v1.7 will add this data, and the temptation is to store whatever format each source provides, coercing year strings to dates at write time with `f"{year}-01-01"` as a placeholder.
 
 **How to avoid:**
-For any given address, only import the school district layer that corresponds to the district type in the database. Since the politicians table uses `district_type = 'SCHOOL'` without distinguishing elementary/secondary/unified, choose one canonical shapefile — import only UNSD (G5420, Unified) for LA County, which covers the overwhelming majority of LA County students. Elementary-only and Secondary-only districts are edge cases that exist in a few rural California counties, not in metro LA County.
+Add a `term_date_precision` field alongside `term_start` and `term_end`: `"year"`, `"month"`, `"day"`, `"unknown"`. Store dates at the precision available:
+- "2024" → store `term_start = "2024-01-01"`, `term_date_precision = "year"` — frontend renders as "2024"
+- "December 2022" → `term_start = "2022-12-01"`, `term_date_precision = "month"` — frontend renders as "Dec 2022"
+- "December 5, 2022" → `term_start = "2022-12-05"`, `term_date_precision = "day"` — frontend renders as "Dec 5, 2022"
 
-If multiple school district layers must coexist, add deduplication logic in `FindPoliticiansByGeoMatches` before building the WHERE clause:
-```go
-// Deduplicate matches by MTFCC priority: prefer G5420 if any school district matches
-seenSchoolDistrict := false
-for _, m := range matches {
-    if m.MTFCC == "G5420" || m.MTFCC == "G5400" || m.MTFCC == "G5410" {
-        if seenSchoolDistrict && m.MTFCC != "G5420" {
-            continue // Skip elementary/secondary if unified already matched
-        }
-        seenSchoolDistrict = true
-    }
-    // ... add to conditions
-}
-```
+The `formatTermDate()` in ev-ui must be updated to accept precision metadata. If precision is `"year"`, suppress month/day display entirely. Never render `"Jan 2022"` when the source only provided `"2022"`.
+
+Additionally: normalize the epoch convention. LA County has 4-year terms for most positions. If `year_elected = "2022"`, `term_end` should be `"2026-01-01"` (precision: year), not NULL. Calculate term end from year elected + standard term length when the end date is not explicitly provided.
 
 **Warning signs:**
-- An address in LAUSD returns the same school board member 2-3 times in the API response
-- `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420')` shows rows for all three types in the same geographic area
-- The frontend school board section renders duplicated cards for the same person
-- The API response JSON contains the same `id` UUID appearing in multiple entries in the officials array
+- `term_start` values cluster around "YYYY-01-01" in the database — a strong signal of year-coercion rather than real January 1st start dates
+- Profile pages show "Jan 2022" for officials elected in November 2022 (wrong month)
+- `term_start` is non-null but `term_end` is NULL for all gap-filled officials — term end was never calculated
+- A council member with a 4-year term elected in 2020 shows no "Term ends:" line on their profile despite the data being inferrable
 
 **Phase to address:**
-Shapefile layer selection phase — before running import scripts, explicitly decide which school district layers to import for each county. Document the decision. For LA County: import UNSD only. For Indiana (Monroe County): UNSD only (already the current behavior).
+Term data schema design phase — before writing any term dates. Implement `term_date_precision` before the first INSERT. The frontend `formatTermDate()` helper must be updated in ev-ui before the enrichment data goes live.
+
+---
+
+### Pitfall 7: Bio and Education Scraping Returns Navigation Text, Boilerplate, and Footer Content Mixed Into Bio Fields
+
+**What goes wrong:**
+Biography text scraped from city council "About" pages frequently captures the wrong content. The generic `parse_generic_council_page()` function looks for text near headings — but individual council member pages often have:
+- Navigation breadcrumbs: "Home > City Council > District 3 > Councilmember Name"
+- Boilerplate committee language: "The City Council meets the first and third Tuesday of each month..."
+- Footer copyright: "© 2025 City of Burbank. All rights reserved."
+- Other council members' bios if the page lists all members on one page
+
+When `bio_text` is stored in `essentials.politicians`, these artifacts create garbled bio text that undermines user trust more than having no bio at all. The `essentials` frontend renders `bio_text` directly; there is no sanitization layer.
+
+**Why it happens:**
+Scraping bio text from generic city pages requires the scraper to understand page structure — which element is the bio vs. which is navigation. The existing generic parser (Strategy 3 in `scrape_city_councils.py`) uses sibling elements after a "council" heading, which is a reasonable heuristic but will fail for pages where the bio is in a different structural relationship to the heading.
+
+**How to avoid:**
+Use a character budget and content quality heuristic for bio text:
+- Minimum 100 characters (shorter text is likely a title or label, not a bio)
+- Maximum 2000 characters (longer text likely spans multiple sections)
+- Must not contain any of: "©", "Cookie", "Privacy Policy", "All rights reserved", "Click here", "Home >"
+- Must contain at least one sentence-ending punctuation mark (period or exclamation mark)
+
+```python
+def is_valid_bio(text):
+    """Return True if text looks like a genuine bio, not boilerplate."""
+    if not text or len(text) < 100 or len(text) > 2000:
+        return False
+    BLOCKLIST = ["©", "cookie", "privacy policy", "all rights reserved",
+                 "click here", "home >", "sitemap", "skip to content"]
+    lower = text.lower()
+    if any(b in lower for b in BLOCKLIST):
+        return False
+    if "." not in text and "!" not in text:
+        return False
+    return True
+```
+
+Store `bio_source_url` alongside `bio_text` so the scrape can be re-verified manually. When no valid bio is found, store NULL rather than storing low-quality text.
+
+**Warning signs:**
+- `bio_text` in the database contains "©" or "Cookie Policy" substrings
+- `bio_text` is less than 80 characters (likely a job title, not a biography)
+- Multiple council members for the same city have identical `bio_text` (boilerplate about council meeting schedules was captured instead of individual bios)
+- `bio_text` begins with "Home >" or "You are here:" (navigation breadcrumb captured)
+
+**Phase to address:**
+Bio scraping implementation phase — implement the quality filter before storing any bio text. During QA, run `SELECT full_name, LEFT(bio_text, 100) FROM essentials.politicians WHERE bio_text IS NOT NULL AND LENGTH(bio_text) < 100 LIMIT 20` to spot low-quality text before it reaches the frontend.
+
+---
+
+### Pitfall 8: Photo Coverage "80%" Metric Counts Records, Not Display Success — Broken Images Count as "Covered"
+
+**What goes wrong:**
+The v1.7 milestone states "80%+ coverage target for headshots and contact info." Coverage is tempting to measure as: "percentage of officials where `photo_url IS NOT NULL`." But this metric is misleading if `photo_url` contains a hotlinked government URL that is broken, or a Supabase Storage URL where the upload failed or was deleted. The database says 85% coverage, users see 40% coverage (broken images silently rendering as placeholder avatars).
+
+**Why it happens:**
+Coverage metrics are written into the milestone spec before the pipeline architecture is finalized. The Python script that checks coverage after a run counts non-null DB rows — it cannot distinguish a working image from a broken one without making an HTTP request to each URL.
+
+**How to avoid:**
+Define coverage as verifiable display success, not database row presence. After the scraping pipeline completes, run a coverage validation script that makes HEAD requests to every `photo_url` and counts HTTP 200 responses:
+
+```python
+def verify_photo_coverage(conn):
+    cur = conn.cursor()
+    cur.execute("""
+        SELECT p.id, pi.photo_url
+        FROM essentials.politicians p
+        JOIN essentials.politician_images pi ON pi.politician_id = p.id
+        WHERE p.is_active = true
+          AND p.source = 'scraped'
+          AND pi.photo_url IS NOT NULL
+    """)
+    rows = cur.fetchall()
+
+    working = 0
+    for politician_id, url in rows:
+        try:
+            resp = requests.head(url, timeout=5)
+            if resp.status_code == 200:
+                working += 1
+        except Exception:
+            pass
+
+    total = len(rows)
+    all_active = get_total_active_scraped_politicians(conn)
+    print(f"Photo coverage: {working}/{all_active} = {working/all_active*100:.1f}%")
+    print(f"Photos in DB: {total} ({total/all_active*100:.1f}%)")
+    print(f"Photos working: {working} ({working/total*100:.1f}% of stored URLs)")
+```
+
+Run this validation script as the final step of every pipeline run and include its output in the pipeline run log.
+
+**Warning signs:**
+- Pipeline summary shows "headshot coverage: 87%" but `essentials` frontend shows placeholder avatars for most city council members
+- HEAD request audit shows >10% of stored `photo_url` values return non-200 responses
+- Supabase Storage dashboard shows fewer files than the database has non-null `photo_url` rows
+- Coverage metric increased after a run but no new images were uploaded to Supabase Storage (URL pattern unchanged)
+
+**Phase to address:**
+Coverage verification phase — implement the HEAD request audit as part of the pipeline run from day one. The milestone success criteria must reference verified display coverage, not database coverage.
 
 ---
 
@@ -271,67 +346,67 @@ Shortcuts that seem reasonable but create long-term problems.
 
 | Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
 |----------|-------------------|----------------|-----------------|
-| `ON CONFLICT (geo_id) DO NOTHING` in import script | Idempotent re-runs without error | Silently drops valid boundaries when geo_id collides across MTFCC types; second import of a new layer appears to succeed but inserts zero rows | Never — fix to `ON CONFLICT (geo_id, mtfcc)` before first multi-layer LA County import |
-| Importing all three school district shapefiles (UNSD + ELSD + SCSD) for completeness | Appears more thorough | Same person appears 2-3x in results; deduplication requires additional query-layer logic; frontend renders duplicate cards | Never for a single-county display use case — pick one canonical layer (UNSD) |
-| Using Supabase pooler URL (port 6543) for import scripts | Only one connection string to manage | ogr2ogr fails silently via prepared statement errors; partial imports create inconsistent table state | Never for bulk data imports — always use direct connection (port 5432) |
-| Adding LA County politicians by hand without a dedup check | Fast gap-fill for a demo | Creates duplicate records that survive future automated imports and appear as doubled cards in search | Acceptable only if post-insert dedup validation query is run immediately after and confirmed zero results |
-| Skipping `ST_IsValid` check before staging → production migration | Saves 2 minutes per import run | Invalid geometries fail spatial queries silently; district exists in DB but never matches any address | Never — validity check is a 5-second query that prevents hours of debugging |
-| Leaving unknown MTFCC codes as permissive fallback in `geofence_lookup.go` | No code change required when new layer is imported | Wrong politicians returned for users in areas covered by unmapped district types | Never for production — audit and map every MTFCC before importing its shapefile layer |
+| Store `photo_origin_url` as the displayed image URL (hotlinking) | No CDN setup required, pipeline runs faster | Photos break silently when city websites redesign (expected every 2-4 years); hotlink blocking can break all photos overnight | Never for production display — acceptable only as audit metadata |
+| Store `year_elected` as "YYYY-01-01" date without precision tracking | Simple schema, no new columns | Frontend shows "Jan 2022" when official was elected in November; misleads users about term timing | Never — add `term_date_precision` before storing any term dates |
+| Use `bio_text IS NOT NULL` as coverage metric | Easy to compute in SQL | Counts broken, boilerplate, and empty-looking text as "covered"; masks true quality issues | Never — use the quality filter + HEAD request audit as the canonical coverage measure |
+| Skip Wikimedia Commons check and go straight to city website scraping | Faster initial scraping | Scrapes potentially copyrighted contractor photos at scale; creates legal exposure for a nonprofit; Wikimedia photos are CDN-hosted and license-verified | Never — Wikimedia check must come first in the sourcing priority chain |
+| Single transaction for all 89 cities in `scrape_city_councils.py` | Simpler code | One city failure rolls back all others; pipeline must restart from scratch | Never — v1.6 already uses per-city COMMIT; enrichment pipeline must maintain this pattern |
+| No rate limiting between city website requests | Faster scraping run | Triggers Cloudflare bot detection; IP blocked; entire batch fails; cities marked "failed" permanently | Never — minimum 2s delay between cities, 0.5s between images from same domain |
 
 ---
 
 ## Integration Gotchas
 
-Common mistakes when connecting to external services.
+Common mistakes when connecting to external services for this enrichment pipeline.
 
 | Integration | Common Mistake | Correct Approach |
 |-------------|----------------|------------------|
-| LA County GIS Hub (ArcGIS FeatureServer) | Downloading data as JSON via the REST API page, which paginates at 1000 features and silently truncates results | Use `&resultOffset=0&resultRecordCount=2000&f=geojson` with explicit pagination, or download the full dataset as a Shapefile via the "Download" button on the Hub page — always verify feature count against the metadata `count` field |
-| LA County GIS Hub (ArcGIS FeatureServer) | Importing the raw GeoJSON response without projection checking — ArcGIS data may be in EPSG:3857 (Web Mercator) or a California State Plane projection rather than WGS84 | Run `ogrinfo -al -so layer.geojson` before any import to verify the CRS; reproject with `-t_srs EPSG:4326` in ogr2ogr if needed |
-| Census TIGER FTP downloads | Using stale 2022 or 2023 files when 2024 files are available — congressional districts changed after 2022 redistricting | Always download from `www2.census.gov/geo/tiger/TIGER2024/` or `TIGER2025/` and confirm the year in the filename; verify congressional district count matches the expected 52 for California (post-2022 redistricting) |
-| Supabase direct connection | Forgetting that Supabase direct connections require IPv4 Add-on or session-mode pooler for IPv4-only CI/CD environments | For CI pipelines running in IPv4-only environments (most GitHub Actions runners), use the session-mode pooler (port 5432 on pooler.supabase.com) or enable the IPv4 add-on; session mode supports prepared statements unlike transaction mode |
-| ogr2ogr + PostGIS schema-qualified table names | Using `-nln essentials.geofence_boundaries` without creating the schema first — ogr2ogr cannot create schemas, only tables | Always run `CREATE SCHEMA IF NOT EXISTS essentials;` via psql before any ogr2ogr import that targets a non-public schema |
-| ogr2ogr geometry column naming | ogr2ogr defaults to `wkb_geometry` as the geometry column name; the existing `essentials.geofence_boundaries` table uses `geometry` | Always pass `-lco GEOMETRY_NAME=geometry` to match the existing column name; without this flag, ogr2ogr creates a second geometry column or fails with a column-not-found error |
+| Supabase Storage (Python) | Not setting `content-type` in `file_options` — defaults to `text/plain`, breaks image rendering | Always pass `file_options={"content-type": "image/jpeg"}` (or correct MIME type from HTTP response `Content-Type` header) |
+| Supabase Storage (Python) | Base64-encoding image bytes before upload — corrupts the file | Pass `resp.content` (raw bytes) directly to `supabase.storage.from_().upload()`, no encoding |
+| Supabase Storage (Python) | Uploading to a non-existent bucket — raises `StorageApiError` with cryptic message | Create the `politician-photos` bucket manually in Supabase dashboard before running the pipeline; verify with `supabase.storage.list_buckets()` at pipeline startup |
+| Wikimedia Commons API | Searching by politician full name returns zero results for officials who go by a different display name | Search by last name only first, then filter by state/role context; also try the politician's Wikipedia page URL (search Commons for files linked from that Wikipedia article) |
+| City website rate limiting | Requesting images and HTML from same domain in rapid succession | Use separate delays: 2s between HTML page requests, 0.5s between image downloads, 5s after any 429 response |
+| `city_sources.json` status field | Re-running the enrichment scraper overwrites `status: "scraped"` with `status: "failed"` if the enrichment pass fails, preventing future name/seat re-scrapes | Use separate status fields: `roster_status` (names from SOS PDF — stable) and `enrichment_status` (photos/contacts — refreshable) |
 
 ---
 
 ## Performance Traps
 
-Patterns that work at small scale but fail as usage grows.
+Patterns that work at small scale but fail at 389 officials.
 
 | Trap | Symptoms | Prevention | When It Breaks |
 |------|----------|------------|----------------|
-| Importing all California congressional districts (52 districts) + all state assembly (80) + all state senate (40) + all school districts (80+ in LA County) without GiST index in place | First address lookup after import takes 15-30 seconds; pgAdmin shows Seq Scan on geofence_boundaries | Create GiST index before loading any data: `CREATE INDEX IF NOT EXISTS idx_geofence_boundaries_geometry ON essentials.geofence_boundaries USING GIST (geometry)` — then load data — then VACUUM ANALYZE | Immediately at first query, even in development |
-| Using `ST_Contains` instead of `ST_Covers` for point-in-polygon on newly imported data | Addresses on district border streets (very common in urban LA County grids) return zero results; no error | Use `ST_Covers` everywhere in `FindGeoIDsByPoint`; the function currently uses `ST_Contains` (line 42 of `geofence_lookup.go`) — this is a pre-existing bug that becomes more visible at LA County scale where grid streets often sit exactly on district boundaries | Always — but will appear more often with 50+ imported layers than with 6 Bloomington districts |
-| Not running `VACUUM ANALYZE` after each shapefile import | Query planner ignores GiST index despite it existing; `EXPLAIN ANALYZE` shows Seq Scan even with index present | Always run `VACUUM ANALYZE essentials.geofence_boundaries;` at the end of each import script's post-processing SQL block | After any bulk load of 1,000+ rows |
-| Complex multipolygon geometries (coastal California congressional districts) stored at full TIGER resolution | Each spatial query loads 50KB+ geometry blobs from disk per candidate polygon; query time grows linearly with polygon complexity | After import, apply selective simplification for large polygons: `UPDATE essentials.geofence_boundaries SET geometry = ST_SimplifyPreserveTopology(geometry, 0.0001) WHERE ST_NPoints(geometry) > 5000 AND mtfcc IN ('G5200', 'G5210', 'G5220')` — tolerance of 0.0001 degrees preserves accuracy to ~11m at latitude 34° | When geofence_boundaries table contains coastal districts with 10,000+ polygon vertices — measurable at >500 concurrent users |
-| Building the `FindPoliticiansByGeoMatches` WHERE clause with 15+ OR conditions (one per geo_id match) | Query plan shows nested loop join instead of index scan as condition count grows; response time climbs from 50ms to 400ms | Refactor to use a temporary values table with a JOIN rather than a long OR chain when match count exceeds 10: pass geo_ids as a `pq.Array` with `d.geo_id = ANY($1)` and handle MTFCC filtering in application code | When an LA County address matches 12+ district layers simultaneously (congressional + state senate + state assembly + county + 5+ city + 3+ school layers) |
+| Sequential HEAD requests to verify photo coverage (one per official) | Coverage validation script takes 10+ minutes for 389 officials | Use `concurrent.futures.ThreadPoolExecutor(max_workers=10)` for parallel HEAD requests with a semaphore to cap concurrency | Immediately at 100+ officials if running sequentially |
+| Downloading all headshots in a single Python session without progress checkpointing | If the script crashes 3/4 through (network error, OOM), all work is lost and must restart from the beginning | Checkpoint progress to a JSON file after each city's images are uploaded; check this file on startup to skip already-completed cities | Always — 89 cities × ~5 officials × image download = thousands of HTTP requests, crash probability is high |
+| Using `requests` synchronously for photo downloads from 89 different domains | Full pipeline run takes 2+ hours at ~2s per image | Use `asyncio` + `httpx.AsyncClient` for image downloads with domain-level rate limiting (semaphore per domain) | At 200+ images — acceptable for MVP if pipeline is run overnight |
+| Storing large bio text (2000+ chars) in `essentials.politicians.bio_text` for all 791 politicians | SELECT queries on the full politicians table pull 2000+ bytes of text per row even when bio is not needed | Add `bio_text` to a separate `essentials.politician_bios` table or use PostgreSQL `TOAST` compression (automatic for text > 2KB) — at 791 politicians this is minor, but sets the right pattern for expansion | At 5,000+ politicians — not a current concern, but worth designing for |
 
 ---
 
 ## Security Mistakes
 
-Domain-specific security issues beyond general web security.
+Domain-specific security issues for the enrichment pipeline.
 
 | Mistake | Risk | Prevention |
 |---------|------|------------|
-| Storing `DATABASE_URL` with direct Supabase connection credentials in the import shell script | Credentials committed to git; anyone with repo access can directly connect to the production database | Source DATABASE_URL from environment variable only; import scripts must never hardcode or echo the connection string; add `DATABASE_URL` to `.gitignore` for any `.env` file in `EV-Backend/scripts/` |
-| Using the same Supabase connection string for import scripts and the running Go backend | A compromised import script or misconfigured CI job can drop/truncate production tables that the backend relies on | Use a separate PostgreSQL role for imports that has INSERT/UPDATE on `essentials.geofence_boundaries` and `essentials.politicians` but NOT DROP TABLE or TRUNCATE; the Go backend role needs only SELECT/INSERT/UPDATE on its own tables |
-| Including raw addresses or geocoded lat/lng in import script logs | Shell script `set -x` debug mode will print DATABASE_URL and query parameters to stdout; if logged to a file, these constitute PII | Never run import scripts with `set -x`; redirect output to a log file that excludes sensitive parameters; treat geocoded coordinates as PII under California CCPA |
-| Publishing the import runbook (with example DATABASE_URL) in a public-facing document | Direct connection to Supabase exposes the database | Keep the import runbook in `.planning/` (already gitignored for secrets) or a private Notion/Confluence page; never include actual connection strings in documentation |
+| Storing Supabase service role key in `city_sources.json` or any config file committed to git | Service role key bypasses Row Level Security; anyone with repo access can read/write all tables | Use environment variable `SUPABASE_SERVICE_KEY` only; never commit to `city_sources.json` or any JSON config file; add `SUPABASE_SERVICE_KEY` to `.gitignore` patterns |
+| Making Supabase Storage bucket public without restricting file types | Anyone can upload files to the bucket via the public URL, including non-image payloads | Set bucket to public (for CDN access) but restrict uploads via Storage Policy to authenticated service role only; never use `anon` key for uploads |
+| Logging `photo_origin_url` values that may contain politician home addresses if scraped from unofficial sources | CCPA compliance risk if logged to any persistent log file | Sanitize log output — log politician IDs and scrape status, not scraped URLs or personal contact information |
+| Not verifying image MIME type before uploading to Storage — a government site could serve JavaScript or HTML at an image URL | Malformed "image" served to users; potential XSS if a browser interprets a `text/html` response from the CDN URL | Verify `content-type` header starts with `image/` before uploading; reject and log any non-image content type |
 
 ---
 
 ## UX Pitfalls
 
-Common user experience mistakes when expanding geofence coverage for the first time.
+Common user experience mistakes when displaying enrichment data.
 
 | Pitfall | User Impact | Better Approach |
 |---------|-------------|-----------------|
-| Expanding to LA County without updating `buildSubtitle()` for new district label patterns | LA County GIS data uses different label conventions than Bloomington data — "5th District" vs. "District 5", "Supervisorial District 3" vs. "County Board District 3"; the `buildSubtitle()` function parses chamber_name and district_label string patterns that are tied to Bloomington data | Review all district labels from LA County before releasing; add a manual QA step that inspects subtitle rendering for all 5 supervisorial districts, all LA City Council districts, and all LAUSD board members |
-| Showing imported districts with no politician data as empty sections | If shapefile import succeeds but politician gap-fill for a district is incomplete, the frontend receives a district match but zero officials — the section header renders with no cards beneath it | The API `SearchPoliticians` handler must not return a district match that has zero associated politicians; filter out empty district hits at the SQL layer before responding |
-| Not updating `building_images` config for LA County sections | The essentials frontend shows a building image for each tier; LA County additions need a new building photo source; the current mapping covers only Bloomington IN and Los Angeles CA federal sections | Verify building image config covers all new sections (county, school board, city council) before launch; use existing SVG fallback rather than a broken image |
-| Importing LA County data without testing an address in an unincorporated area | Unincorporated areas (East LA, West Hollywood pre-incorporation, Altadena) are served by county supervisors but not city councils — test with an Altadena address to confirm only county officials appear and no incorporated-city officials bleed through | Add at least 3 test addresses to the QA checklist: one incorporated city (e.g., Pasadena), one unincorporated area (e.g., Altadena), one area with contested city/county boundary (e.g., East LA) |
+| Showing "No photo available" text instead of initials avatar when headshot scraping failed | Empty-looking profile that erodes trust; initials avatars already exist in ev-ui | Keep the initials avatar as the unconditional fallback — never show text like "Photo coming soon" |
+| Displaying contact info (phone, email) scraped more than 6 months ago without a freshness indicator | User calls a dead number or emails a bouncing address; immediate trust failure | Show "Contact info as of [month year]" below each contact field; link to official city website for the most current info |
+| Rendering term dates as "Jan 2022" when only the year was available | Users think the official started in January when they actually started in December | Implement `term_date_precision` (see Pitfall 6) and render "2022" when precision is year-only |
+| Showing "Education: None listed" vs hiding the education section entirely | "None listed" implies the data was looked for and not found, which may not be true | Hide the education section entirely when no degrees are scraped — do not distinguish "has no education" from "education not found"; show section only when at least one degree exists |
+| Rendering all 89 cities' contact info without grouping by recency | Users cannot tell which contact info is freshly verified vs. year-old | Group by `contact_synced_at` recency — officials enriched in the current pipeline run are marked "verified [month year]"; older records show "last verified [older date]" |
 
 ---
 
@@ -339,18 +414,16 @@ Common user experience mistakes when expanding geofence coverage for the first t
 
 Things that appear complete but are missing critical pieces.
 
-- [ ] **Unique constraint updated:** Verify `(geo_id, mtfcc)` composite unique constraint exists on `essentials.geofence_boundaries` — not just `geo_id` — before running any multi-layer import: `SELECT conname, pg_get_constraintdef(oid) FROM pg_constraint WHERE conrelid = 'essentials.geofence_boundaries'::regclass`
-- [ ] **Geometry validity verified:** Run `SELECT COUNT(*), mtfcc FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry) GROUP BY mtfcc` after every import — expected result: zero rows
-- [ ] **GiST index active:** Confirm `EXPLAIN ANALYZE SELECT geo_id, mtfcc FROM essentials.geofence_boundaries WHERE ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-118.25, 34.05), 4326))` shows "Index Scan" not "Seq Scan"
-- [ ] **ST_Contains replaced with ST_Covers:** Verify `geofence_lookup.go` line 42 uses `ST_Covers` not `ST_Contains` — the current code uses `ST_Contains`, which silently fails for addresses exactly on district boundaries
-- [ ] **MTFCC map complete:** Run `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries WHERE mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420','X0001')` — expected result: zero rows
-- [ ] **No duplicate politicians:** Run the duplicate detection query after every gap-fill import: `SELECT last_name, first_name, COUNT(DISTINCT id) FROM essentials.politicians GROUP BY last_name, first_name HAVING COUNT(DISTINCT id) > 1` — cross-reference with district geo_ids to confirm true duplicates vs. same-named different people
-- [ ] **Direct connection used for import:** Verify `DATABASE_URL` used in import scripts contains port 5432 and `db.*.supabase.co` hostname, not port 6543 or `pooler.supabase.com`
-- [ ] **School district layer single-type:** Confirm `SELECT mtfcc, COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420') GROUP BY mtfcc` shows only one MTFCC type with rows for any given geographic area
-- [ ] **Row count matches expected:** Post-import, verify congressional district count = 52 for California, State Senate = 40, State Assembly = 80 — cross-reference against known TIGER feature counts
-- [ ] **Import pipeline idempotent:** Re-run the import script for a previously imported layer and verify row counts do not change (ON CONFLICT updates existing rows rather than inserting or ignoring)
-- [ ] **Unincorporated area test passes:** Search an Altadena address — result must include county supervisor but must NOT include any incorporated city council member
-- [ ] **VACUUM ANALYZE run:** Verify `SELECT last_analyze FROM pg_stat_user_tables WHERE relname = 'geofence_boundaries'` shows a timestamp within the last hour of completing each import
+- [ ] **Photo re-hosting:** Verify `essentials.politician_images` rows where `photo_url` contains a Supabase CDN domain, NOT a government domain — run `SELECT COUNT(*) FROM essentials.politician_images WHERE photo_url NOT LIKE '%supabase%'` and expect 0 rows after pipeline run
+- [ ] **Photo license field populated:** Verify `photo_license` column exists and is non-null for all inserted images — `SELECT COUNT(*) FROM essentials.politician_images WHERE photo_license IS NULL AND politician_id IN (SELECT id FROM essentials.politicians WHERE source='scraped')` expects 0
+- [ ] **Coverage metric is verified, not counted:** Run HEAD request audit on all stored photo URLs; confirm >= 80% return HTTP 200 (not just 80% of rows have non-null `photo_url`)
+- [ ] **Term date precision tracked:** Verify `term_date_precision` column exists in schema and is set for every row where `term_start IS NOT NULL` — `SELECT COUNT(*) FROM essentials.politicians WHERE term_start IS NOT NULL AND term_date_precision IS NULL` expects 0
+- [ ] **Bio quality validated:** Run `SELECT full_name, LEFT(bio_text, 100) FROM essentials.politicians WHERE bio_text IS NOT NULL ORDER BY LENGTH(bio_text) ASC LIMIT 20` — manually review shortest bios to confirm they are not boilerplate or navigation text
+- [ ] **Contact info has synced timestamp:** Verify `contact_synced_at IS NOT NULL` for all officials where at least one contact field (phone, email, website) is non-null
+- [ ] **Rate limiting verified:** After full pipeline run, confirm no cities are marked `status: "blocked"` due to Cloudflare; if any are blocked, add a `retry_after` timestamp and re-run after 72 hours
+- [ ] **Supabase Storage bucket exists and is public:** `supabase.storage.list_buckets()` shows `politician-photos` with `public: true`; verify a test image URL resolves from a browser without authentication
+- [ ] **Playwright fallback tested:** Manually identify 3 JS-rendered city pages, run `fetch_html_with_fallback` on them, confirm Playwright path is triggered and names are found
+- [ ] **Deduplication still passes:** After enrichment upserts, re-run the duplicate check query from v1.6: `SELECT d.ocd_id, p.full_name, COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON o.district_id = d.id WHERE p.is_active = true GROUP BY d.ocd_id, p.full_name HAVING COUNT(*) > 1` — expects 0 rows
 
 ---
 
@@ -360,13 +433,12 @@ When pitfalls occur despite prevention, how to recover.
 
 | Pitfall | Recovery Cost | Recovery Steps |
 |---------|---------------|----------------|
-| `ON CONFLICT (geo_id) DO NOTHING` drops valid boundaries | MEDIUM | (1) Drop and recreate the unique constraint as `(geo_id, mtfcc)`. (2) Re-run the import script — all previously skipped rows now insert. (3) Run VACUUM ANALYZE. (4) Re-verify row counts per MTFCC. Recovery time: 30-60 minutes depending on shapefile size |
-| Invalid geometries silently omitted from import | MEDIUM | (1) Run `ST_IsValid` audit on staging table before promotion. (2) Apply `ST_MakeValid` + `ST_CollectionExtract` to fix broken geometries in staging. (3) Re-insert from staging with repaired geometries. (4) No production data is lost — staging is a separate table. Recovery time: 1-2 hours |
-| Supabase pooler used for import — partial data committed | MEDIUM-HIGH | (1) Identify which rows were imported by checking `imported_at` timestamp and source tag. (2) Delete the partial import: `DELETE FROM essentials.geofence_boundaries WHERE source = 'census_tiger_2024' AND imported_at > '[partial_start_time]'`. (3) Re-run import with direct connection (port 5432). No data corruption — only partial data that needs replacement. Recovery time: 1 hour |
-| Duplicate politician records in production | MEDIUM | (1) Run duplicate detection query to identify duplicate UUID pairs. (2) Identify the authoritative record (prefer source = 'ballotready' over 'manual'; prefer record with more non-null fields). (3) UPDATE all referencing tables (offices, images, degrees, endorsements, stances, election_records) to point to the authoritative UUID. (4) DELETE the duplicate record. (5) Test address search to confirm single result. Recovery time: 2-4 hours depending on number of duplicates |
-| Unknown MTFCC returns wrong politicians | LOW | (1) Add the unknown MTFCC code to `mtfccToDistrictTypes` in `geofence_lookup.go`. (2) Deploy backend. No data changes required. Recovery time: under 1 hour including deploy |
-| Duplicate school board entries from multiple shapefile layers | MEDIUM | (1) Identify which MTFCC codes to retire: `SELECT mtfcc, COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410','G5420') GROUP BY mtfcc`. (2) Delete the redundant layers: `DELETE FROM essentials.geofence_boundaries WHERE mtfcc IN ('G5400','G5410') AND state = '06'`. (3) VACUUM ANALYZE. Recovery time: 30 minutes |
-| `ST_Contains` vs `ST_Covers` — addresses on boundaries return zero districts | LOW | (1) Update `geofence_lookup.go` line 42: replace `ST_Contains` with `ST_Covers`. (2) Deploy backend. No data changes required. Recovery time: under 1 hour including deploy. This is a pre-existing bug in the current codebase; the v1.5 PITFALLS.md flagged it but it was not fixed in v1.5 |
+| Hotlinked photos breaking (city website redesign) | MEDIUM | (1) Run coverage validation script — identify all non-200 photo URLs. (2) Re-run headshot scraper for affected cities with `--force` flag. (3) New URLs found → download + re-upload to Supabase Storage. (4) If city page restructured and image not findable, search Wikimedia Commons as fallback. Recovery time: 2-4 hours per batch |
+| JS-rendered cities marked as permanent failures | LOW | (1) Identify failed cities in `city_sources.json`. (2) Test each with Playwright manually. (3) Mark `"fetch_method": "playwright"` in config. (4) Remove `status: "failed"` for those cities. (5) Re-run pipeline. Recovery time: 30 min setup + pipeline re-run time |
+| Cloudflare blocking scraper IP | LOW | (1) Wait 24-48 hours for IP unblock. (2) Add `time.sleep(random.uniform(3, 6))` between all requests. (3) For persistently blocked sites, accept SOS PDF names-only coverage — no contact/photos. Recovery time: 1 day wait + 1 hour code change |
+| Bio text contains boilerplate in production | LOW | (1) Run quality filter query to identify affected records. (2) UPDATE `bio_text = NULL` for records failing quality check. (3) Add quality filter to scraper for future runs. Recovery time: under 1 hour |
+| Coverage metric inflated (counts null URLs as missing but counts broken URLs as covered) | LOW | (1) Run HEAD request audit. (2) Update `photo_url = NULL` for records returning non-200. (3) Implement verified coverage metric going forward. Recovery time: 2 hours |
+| Term dates stored as year-coerced "YYYY-01-01" displayed as "Jan YYYY" | MEDIUM | (1) Add `term_date_precision` column if missing. (2) UPDATE `term_date_precision = 'year'` for all rows where `EXTRACT(MONTH FROM term_start) = 1 AND EXTRACT(DAY FROM term_start) = 1`. (3) Update `formatTermDate()` in ev-ui to suppress month/day when precision is "year". (4) Publish new ev-ui version. Recovery time: 3-5 hours including ev-ui publish cycle |
 
 ---
 
@@ -376,32 +448,31 @@ How roadmap phases should address these pitfalls.
 
 | Pitfall | Prevention Phase | Verification |
 |---------|------------------|--------------|
-| `ON CONFLICT (geo_id) DO NOTHING` drops layers (Pitfall 1) | Shapefile pipeline design — first phase of v1.6 | Query `SELECT conname FROM pg_constraint WHERE conrelid = 'essentials.geofence_boundaries'::regclass` shows `(geo_id, mtfcc)` composite constraint |
-| Invalid geometry silent drops (Pitfall 2) | Shapefile import execution | `SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE NOT ST_IsValid(geometry)` returns 0 |
-| Supabase pooler breaks ogr2ogr (Pitfall 3) | Import tooling setup — first phase | Import script validation step passes: `psql "$DATABASE_URL" -c "SELECT 1"` on port 5432 |
-| Incomplete MTFCC map (Pitfall 4) | MTFCC audit before first LA import | `SELECT DISTINCT mtfcc FROM essentials.geofence_boundaries WHERE mtfcc NOT IN (...)` returns 0 rows |
-| Politician deduplication failure (Pitfall 5) | Politician gap-fill phase | Duplicate detection query returns 0 rows after each import batch |
-| School district triple-match (Pitfall 6) | Shapefile layer selection — documented decision before import | Only G5420 (or exactly one school district MTFCC) present per geographic area in geofence_boundaries |
-| ST_Contains vs ST_Covers boundary bug (Performance Traps) | Geofence query correctness phase | Test address on known district boundary returns at least one result |
-| Missing VACUUM ANALYZE (Performance Traps) | Each import execution | `EXPLAIN ANALYZE` on a live geofence query shows Index Scan; `pg_stat_user_tables.last_analyze` is recent |
+| Hotlinking (Pitfall 1) | Headshot scraping pipeline design — Supabase Storage setup must precede any headshot scraping | `SELECT COUNT(*) FROM essentials.politician_images WHERE photo_url NOT LIKE '%supabase%'` = 0 |
+| JS-rendered page failures (Pitfall 2) | Pre-scraping audit — classify 10 sample cities before writing pipeline | Playwright fallback triggered for known-JS cities; coverage for JS cities >= static cities |
+| Cloudflare rate limiting (Pitfall 3) | Scraping pipeline implementation — rate limiting in initial commit | No cities marked `status: "blocked"` after a full run |
+| Contact info staleness (Pitfall 4) | Contact storage schema design — `contact_synced_at` column before first INSERT | `SELECT COUNT(*) FROM essentials.politicians WHERE (phone IS NOT NULL OR email IS NOT NULL) AND contact_synced_at IS NULL` = 0 |
+| Image licensing (Pitfall 5) | Headshot sourcing design — Wikimedia Commons check before city scraping | `photo_license` is non-null for all stored images; "scraped_no_license" images not served in production |
+| Term date inconsistency (Pitfall 6) | Term data schema design — `term_date_precision` column before first INSERT | `SELECT COUNT(*) FROM essentials.politicians WHERE term_start IS NOT NULL AND term_date_precision IS NULL` = 0 |
+| Bio boilerplate (Pitfall 7) | Bio scraping implementation — quality filter in first implementation | Manual QA of 20 shortest bio_text values shows all are genuine biographies |
+| Coverage metric inflation (Pitfall 8) | Coverage verification design — HEAD request audit as pipeline final step | Coverage report shows verified working URLs, not just non-null DB rows |
 
 ---
 
 ## Sources
 
-- PostGIS official documentation: [ST_MakeValid](https://postgis.net/docs/ST_MakeValid.html), [ST_IsValid](https://postgis.net/docs/ST_IsValid.html), [Validity chapter](https://postgis.net/workshops/postgis-intro/validity.html), [Spatial Indexing](http://postgis.net/workshops/postgis-intro/indexing.html)
-- GDAL issue #6340: [ogr2ogr -makevalid GeometryCollection behavior](https://github.com/OSGeo/gdal/issues/6340) — documents how -makevalid can produce GeometryCollection types that break typed PostGIS columns
-- Crunchy Data: [PostGIS Performance — Indexing and EXPLAIN](https://www.crunchydata.com/blog/postgis-performance-indexing-and-explain), [Waiting for PostGIS 3.2: ST_MakeValid](https://www.crunchydata.com/blog/waiting-for-postgis-3.2-st_makevalid), [Loading Data into PostGIS](https://www.crunchydata.com/blog/loading-data-into-postgis-an-overview)
-- Supabase docs: [Connecting to Postgres](https://supabase.com/docs/guides/database/connecting-to-postgres) — direct connection vs pooler guidance; [Connection management](https://supabase.com/docs/guides/database/connection-management)
-- Supabase: [Session Mode Deprecation Discussion](https://github.com/orgs/supabase/discussions/32755) — Supavisor transaction mode limitations with prepared statements
-- Census Bureau: [TIGER/Line Shapefiles 2024 Technical Documentation](https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2024/TGRSHP2024_TechDoc.pdf) — MTFCC codes in Appendix E; [MAF/TIGER Feature Class Code Definitions](https://www.census.gov/library/reference/code-lists/mt-feature-class-codes.html); [2022 MTFCC codes PDF](https://www2.census.gov/geo/pdfs/reference/mtfccs2022.pdf)
-- BallotReady Support: [Interpreting MTFCC and geo_id](https://support.ballotready.org/interpreting-mtfcc-and-geoid) — documents X0001 custom code and geo_id structure for city council sub-districts
-- Cicero Data: [OCD-IDs for cross-source politician matching](https://medium.com/cicero-data/how-to-use-open-civic-data-identifiers-to-organize-political-data-c27755702509)
-- OpenSanctions: [Deduplication across data sources](https://www.opensanctions.org/articles/2021-11-11-deduplication/) — multi-source record deduplication patterns
-- LA County GIS Hub: [Supervisorial Districts (Current)](https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about), [Enterprise GIS ArcGIS REST services](https://egis-lacounty.hub.arcgis.com/ArcGIS/rest/services)
-- GDAL documentation: [ogr2ogr options reference](https://gdal.org/en/stable/programs/ogr2ogr.html) — `-makevalid`, `-nlt`, `-lco GEOMETRY_NAME`, `-t_srs` flags
-- Codebase: `EV-Backend/scripts/import_shapefiles.sh`, `EV-Backend/internal/essentials/geofence_lookup.go`, `EV-Backend/internal/essentials/geofence_models.go` — project-specific behaviors documented from direct code review
+- mySociety PopIt issue #461: [Detect when image hotlinking is prevented](https://github.com/mysociety/popit/issues/461) — documented hotlink blocking behavior from Guatemalan government website returning 403 with explicit hotlink message; PopIt project (civic data platform) archived 2018 after not solving this
+- Pixsy: [Hotlinking: What Is It & How To Prevent It](https://www.pixsy.com/image-protection/hotlinking) — hotlink protection mechanics; broken link risk when host moves image
+- EFF: [California Legislature Drops Proposal to Copyright All Government Works](https://www.eff.org/deeplinks/2016/06/california-legislature-drops-proposal-copyright-all-government-works) — AB 2880 history; CA governments can assert copyright, unlike federal
+- Wikipedia: [Copyright status of works by subnational governments of the United States](https://en.wikipedia.org/wiki/Copyright_status_of_works_by_subnational_governments_of_the_United_States) — state/local government copyright rules differ from federal; California does not have automatic public domain for government works
+- Wikimedia Commons: [Commons:Licensing](https://commons.wikimedia.org/wiki/Commons:Licensing) — CC BY-SA and public domain terms for Commons-hosted images; Fair use not accepted
+- USA.gov: [Learn about copyright and federal government materials](https://www.usa.gov/government-copyright) — federal works are public domain; state/local NOT covered by same rule
+- Supabase docs: [Python API Reference — Storage Upload](https://supabase.com/docs/reference/python/storage-from-upload) — MIME type requirement, file_options format
+- Supabase community: [PNG Image becomes corrupted after uploading to storage bucket](https://github.com/orgs/supabase/discussions/26257) — base64 encoding pitfall with Python upload
+- Scrapfly: [How to Bypass Cloudflare When Web Scraping](https://scrapfly.io/blog/posts/how-to-bypass-cloudflare-anti-scraping) — Cloudflare bot detection mechanisms; headless browser fingerprinting
+- City Bureau: [City Scrapers project](https://github.com/City-Bureau/city-scrapers) — community patterns for scraping government websites; JS-rendered page handling patterns
+- Codebase: `EV-Backend/scripts/scrape_la_officials.py` (lines 29-33) — existing TODO for photo re-hosting deferral; `EV-Backend/scripts/scrape_city_councils.py` (fetch_html_with_fallback) — byte-count threshold limitation; `scrapers/lavote_scraper.py` — year_elected as bare string pattern; v1.6 school board comment "universally blocked by Cloudflare"
 
 ---
-*Pitfalls research for: v1.6 LA County Full Coverage — TIGER shapefile import pipeline, geofence scaling, politician deduplication*
-*Researched: 2026-02-23*
+*Pitfalls research for: v1.7 LA County Data Enrichment — headshot scraping, building photos, contact/term data, bio/education/experience pipeline*
+*Researched: 2026-02-24*

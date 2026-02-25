@@ -1,86 +1,135 @@
 # Architecture Research
 
-**Domain:** Civic tech — geofence import pipeline and LA County coverage expansion (v1.6)
-**Researched:** 2026-02-23
-**Confidence:** HIGH — based on direct source inspection of all backend files, prior phase summaries, and verified external sources
+**Domain:** Civic tech — politician data enrichment pipeline (headshots, building photos, contact/term data, bios, education, experience) for ~389 LA County officials (v1.7)
+**Researched:** 2026-02-24
+**Confidence:** HIGH — based on direct source inspection of all relevant backend files, Python scripts, frontend components, and existing pipeline conventions
 
 ---
 
 ## System Overview
 
-The existing system after v1.5 ships politician data via a geofence-only lookup path. The v1.6 milestone adds coverage by populating the `geofence_boundaries` table with more polygons and the `politicians`/`offices`/`districts` tables with corresponding LA County official records. No new request-path code is needed — the lookup already works; the data is absent.
+The v1.7 enrichment milestone adds data to existing politician records — it does not change the request path or the geofence lookup chain. The pipeline reads from authoritative sources (government websites, Wikimedia Commons, public records), writes enriched data into existing database tables, and the existing API and frontend consume it automatically via fields already in the schema.
+
+The architecture has three distinct layers: the enrichment pipeline (offline Python scripts), the database (existing tables with existing columns), and the read path (unchanged Go API + React frontend).
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                IMPORT PIPELINE (offline, runs locally or in CI)      │
+│            ENRICHMENT PIPELINE (offline, runs locally)               │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                      │
-│  ┌───────────────┐  ┌────────────────────┐  ┌───────────────────┐  │
-│  │ TIGER         │  │ LA County eGIS     │  │ LA City GeoHub   │  │
-│  │ Shapefiles    │  │ ArcGIS FeatureServer│  │ ArcGIS REST API  │  │
-│  │ (Census FTP)  │  │ (supervisor dists) │  │ (council dists)  │  │
-│  └──────┬────────┘  └─────────┬──────────┘  └────────┬─────────┘  │
-│         │                     │                       │             │
-│         ▼                     ▼                       ▼             │
-│  ┌──────────────────────────────────────────────────────────────┐  │
-│  │           cmd/import-geofences/main.go  (NEW CLI)            │  │
-│  │                                                              │  │
-│  │  1. Download/read source file (shapefile or GeoJSON)         │  │
-│  │  2. Reproject to WGS84 (EPSG:4326) via ogr2ogr if needed    │  │
-│  │  3. For each feature:                                        │  │
-│  │     a. Map MTFCC code from source to known type              │  │
-│  │     b. Build geo_id per TIGER or BallotReady convention      │  │
-│  │     c. INSERT INTO essentials.geofence_boundaries            │  │
-│  │        ON CONFLICT (geo_id) DO UPDATE SET geometry = ...     │  │
-│  └──────────────────────────────────────────────────────────────┘  │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
+│  │ City/County       │  │ Wikimedia Commons │  │ Public Records   │   │
+│  │ Government Sites  │  │ (building photos) │  │ (term/bio data)  │   │
+│  └────────┬─────────┘  └────────┬─────────┘  └────────┬─────────┘   │
+│           │                     │                      │              │
+│           ▼                     ▼                      ▼              │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │               scrape_headshots.py  (NEW)                     │   │
+│  │  - Reads politician_sources.json for per-city config         │   │
+│  │  - Fetches headshot URL from each source's roster page       │   │
+│  │  - Matches politician by full_name (seat-first dedup)        │   │
+│  │  - UPDATEs photo_origin_url on politicians table             │   │
+│  │  - Inserts into politician_images (type="default")           │   │
+│  └──────────────────────────────────────────────────────────────┘   │
 │                                                                      │
-│  ┌──────────────────────────────────────────────────────────────┐  │
-│  │           cmd/import-politicians/main.go  (NEW CLI)          │  │
-│  │                                                              │  │
-│  │  Reads a CSV/JSON manifest of LA County officials            │  │
-│  │  Maps to existing politicians/offices/districts tables       │  │
-│  │  Uses external_id-keyed upsert (ON CONFLICT DO UPDATE)       │  │
-│  │  Links to districts via geo_id → district.geo_id lookup      │  │
-│  └──────────────────────────────────────────────────────────────┘  │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │               scrape_building_photos.py  (NEW)               │   │
+│  │  - Reads city list from city_sources.json                    │   │
+│  │  - Fetches Wikimedia Commons image URLs (CC-licensed)        │   │
+│  │  - Writes to essentials.building_photos table  (NEW TABLE)   │   │
+│  │  - Keyed on place_geoid (joins to geofence_boundaries)       │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                                                                      │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │               enrich_contacts.py  (NEW)                      │   │
+│  │  - Reads per-city config from politician_sources.json        │   │
+│  │  - Scrapes office address, phone, email from roster pages    │   │
+│  │  - UPSERTs into essentials.politician_contacts               │   │
+│  │    (existing table, source='scraped')                        │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                                                                      │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │               enrich_term_data.py  (NEW)                     │   │
+│  │  - Reads term/election data from government sites or         │   │
+│  │    public records (first elected, term end dates)            │   │
+│  │  - UPDATEs politicians.valid_from, valid_to                  │   │
+│  │  - May UPDATE politicians.total_years_in_office              │   │
+│  └──────────────────────────────────────────────────────────────┘   │
+│                                                                      │
+│  ┌──────────────────────────────────────────────────────────────┐   │
+│  │               enrich_bio_edu_exp.py  (NEW, optional)         │   │
+│  │  - Scrapes bio text, education, work experience where avail  │   │
+│  │  - UPDATEs politicians.bio_text                              │   │
+│  │  - INSERTs into essentials.degrees, essentials.experiences   │   │
+│  └──────────────────────────────────────────────────────────────┘   │
 │                                                                      │
 └─────────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│              DATABASE (Supabase / PostgreSQL + PostGIS)              │
+│              DATABASE (Supabase / PostgreSQL + PostGIS)               │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                      │
-│  essentials.geofence_boundaries  [PRIMARY WRITE TARGET]             │
-│  ┌──────────┬──────────┬──────────┬──────────┬────────────────────┐ │
-│  │ geo_id   │ mtfcc    │ state    │ geometry │ source             │ │
-│  │ (unique) │ G5200... │ "06"     │ PostGIS  │ "census_tiger_2024"│ │
-│  └──────────┴──────────┴──────────┴──────────┴────────────────────┘ │
+│  EXISTING TABLES (populated by enrichment pipeline):                │
 │                                                                      │
-│  essentials.districts  [LINK TABLE — geo_id joins to geofences]     │
-│  ┌──────────┬──────────────┬──────────────┬─────────────────────┐  │
-│  │ geo_id   │ district_type│ external_id  │ ocd_id              │  │
-│  │ "0637001"│ "STATE_UPPER"│ (BallotReady)│ ocd-division/...    │  │
-│  └──────────┴──────────────┴──────────────┴─────────────────────┘  │
+│  essentials.politicians                                              │
+│  ┌─────────────────┬──────────────────┬────────────────────────┐   │
+│  │ photo_origin_url│ valid_from        │ valid_to               │   │
+│  │ (scraped URL)   │ (term start date) │ (term end date)        │   │
+│  │ bio_text        │ total_years_in_office                      │   │
+│  └─────────────────┴──────────────────┴────────────────────────┘   │
 │                                                                      │
-│  essentials.politicians / offices / chambers / governments           │
-│  [NEW RECORDS for LA County local officials]                         │
+│  essentials.politician_images  (existing — add headshot rows)        │
+│  ┌──────────────┬──────────┬───────────────────────────────────┐   │
+│  │ politician_id│ url      │ type ("default" or "thumb")       │   │
+│  └──────────────┴──────────┴───────────────────────────────────┘   │
 │                                                                      │
-│  EXISTING (unchanged) LOOKUP PATH:                                   │
-│  geofence_boundaries ←── ST_Contains(geometry, point) ──────────►  │
-│  geo_id → districts.geo_id → offices → politicians                  │
+│  essentials.politician_contacts  (existing — add contact rows)       │
+│  ┌──────────────┬────────┬────────┬────────┬──────────────────┐    │
+│  │ politician_id│ email  │ phone  │ source │ contact_type     │    │
+│  │              │        │        │"scraped"│"office"/"district"│   │
+│  └──────────────┴────────┴────────┴────────┴──────────────────┘    │
+│                                                                      │
+│  essentials.degrees  (existing — add education rows)                 │
+│  essentials.experiences  (existing — add work history rows)          │
+│                                                                      │
+│  NEW TABLE: essentials.building_photos                               │
+│  ┌──────────────┬──────────────┬──────────────┬───────────────┐    │
+│  │ id (uuid pk) │ place_geoid  │ photo_url    │ attribution   │    │
+│  │              │ (e.g."0644000")│ (Wikimedia) │ (CC license) │    │
+│  │ city_name    │ state        │ created_at   │               │    │
+│  └──────────────┴──────────────┴──────────────┴───────────────┘    │
 │                                                                      │
 └─────────────────────────────────────────────────────────────────────┘
                               │
-                              ▼ (unchanged request path)
+                              ▼ (largely unchanged request path)
 ┌─────────────────────────────────────────────────────────────────────┐
 │              EV-BACKEND (Go / Chi / GORM)                            │
 │  internal/essentials/                                                │
-│  ├── geofence_lookup.go  — FindGeoIDsByPoint + FindPoliticians       │
-│  │   (unchanged — mtfccToDistrictTypes map may need new entries)     │
-│  ├── handlers.go          — SearchPoliticians, GetPoliticianByID     │
-│  │   (unchanged)                                                     │
-│  └── routes.go            — HTTP route registration                  │
-│      (unchanged)                                                     │
+│  ├── handlers.go      — GetPoliticianByID (minor: add contacts fetch)│
+│  │   (minor edit: add PoliticianContact fetch step 8.5)             │
+│  ├── handlers.go      — GetPoliticiansByAddress (UNCHANGED)          │
+│  ├── routes.go        — add GET /cities/{geo_id}/building-photo (NEW)│
+│  └── models.go        — add BuildingPhoto GORM model (NEW)           │
+└─────────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│              FRONTEND (essentials React app + ev-ui library)         │
+│                                                                      │
+│  essentials/src/pages/Profile.jsx                                    │
+│  ├── Already renders: images[], degrees[], experiences[]             │
+│  ├── Already renders: term_start/term_end via PoliticianProfile      │
+│  ├── NEW: render contacts[] (office phone, email, address)           │
+│                                                                      │
+│  essentials/src/pages/Dashboard.jsx                                  │
+│  ├── Already renders: building photos per tier (federal/state/local) │
+│  ├── NEW: fetch building photo for city via /cities/{geo_id}/building │
+│                                                                      │
+│  ev-ui/src/PoliticianProfile.jsx                                     │
+│  ├── Already has: getImageURL() with images[]/photo_origin_url logic │
+│  ├── Already has: getTermLine() for valid_from/valid_to              │
+│  ├── NEW: ContactSection component (phone, email, office address)    │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -88,27 +137,35 @@ The existing system after v1.5 ships politician data via a geofence-only lookup 
 
 ## Component Responsibilities
 
-### Existing Components (unchanged in v1.6)
+### Existing Components (unchanged or minor edit in v1.7)
 
-| Component | Responsibility | v1.6 Change |
+| Component | Responsibility | v1.7 Change |
 |-----------|---------------|-------------|
-| `geofence_lookup.go: FindGeoIDsByPoint()` | PostGIS ST_Contains query against `geofence_boundaries`; returns (geo_id, MTFCC) pairs | None — works correctly once boundaries exist |
-| `geofence_lookup.go: FindPoliticiansByGeoMatches()` | Joins geo_id matches to politicians via districts, applies MTFCC type filters | `mtfccToDistrictTypes` may need new MTFCC entries if LA County data sources use codes not yet mapped |
-| `geofence_lookup.go: mtfccToDistrictTypes` | Maps MTFCC codes to BallotReady district types for type-restricted SQL WHERE clauses | Add any new MTFCC codes from LA County sources (e.g., G5200 for congressional already present) |
-| `handlers.go: SearchPoliticians()` | Geocodes address → geofence lookup → politician DB join | None |
-| `essentials.geofence_boundaries` table | Stores polygon geometry with geo_id + MTFCC | New rows inserted by import CLIs |
-| `essentials.districts` table | Links district geo_id to politicians; `geo_id` column is the join key | Existing rows have geo_ids matching TIGER; ensure new politician records also have matching geo_ids |
+| `scrape_la_officials.py` | Config-driven scraper for LA County supervisors + LA City council/mayor; seat-first dedup; upserts politician records | Extend to also write photo_origin_url and politician_images when roster page includes headshots |
+| `scrape_city_councils.py` | Batch scraper for 87 LA County cities; SOS PDF primary source; city website fallback | Extend to write photo_origin_url and politician_images when city site includes headshots |
+| `politician_sources.json` | Per-source scraper config (URL, parser, ocd_id_template, district_type, title) | Add `photo_selector` field for per-source CSS selector or URL pattern for headshot extraction |
+| `city_sources.json` | City list with SOS PDF roster, place_geoid, and city website URL | Add `building_photo_url` field for Wikimedia Commons URL of city hall image |
+| `utils.py` | Shared load_env(), get_engine(), next_ext_id() utilities | No change |
+| `essentials.politician_images` | Stores headshot URLs with type field ("default", "thumb") | New rows inserted by enrichment scripts |
+| `essentials.politician_contacts` | Stores contact info; already has source, email, phone, contact_type fields | New rows inserted by enrich_contacts.py; source='scraped' |
+| `essentials.politicians` | Core politician records with photo_origin_url, valid_from, valid_to, bio_text, total_years_in_office | Fields updated by enrichment scripts |
+| `GetPoliticianByID` (handlers.go) | Returns full profile including images[], degrees[], experiences[]; currently steps 1-7 fetch associated data | Add step 8.5: fetch politician_contacts for this politician_id; add to profile response |
+| `PoliticianProfile.jsx` (ev-ui) | Renders profile card, term dates (getTermLine), images (getImageURL with images[]/photo_origin_url fallback) | Add ContactSection render block; publish new ev-ui version |
 
-### New Components (v1.6)
+### New Components (v1.7)
 
 | Component | File | Responsibility |
 |-----------|------|---------------|
-| Geofence import CLI | `EV-Backend/cmd/import-geofences/main.go` | Downloads TIGER shapefiles or reads ArcGIS GeoJSON; reprojects to EPSG:4326; inserts into `geofence_boundaries` with idempotent upsert on `geo_id`; supports `--source tiger`, `--source arcgis-featureserver`, `--state 06`, `--layer cd`, etc. |
-| Politician gap-fill CLI | `EV-Backend/cmd/import-politicians/main.go` | Reads a manifest CSV/JSON of LA County officials not yet in the DB; inserts/updates politicians, offices, districts, chambers, governments; uses `external_id`-keyed ON CONFLICT DO UPDATE; links districts to geofences via shared geo_id |
-| TIGER download helper | Inside CLI or `internal/import/tiger.go` | Constructs Census FTP URLs from state FIPS + layer name; downloads zip; extracts shapefile; passes to ogr2ogr subprocess |
-| ArcGIS REST fetcher | Inside CLI or `internal/import/arcgis.go` | Calls ArcGIS FeatureServer `/query?outFields=*&f=geojson&where=1%3D1`; paginates if needed; returns GeoJSON FeatureCollection |
-| MTFCC mapper | Inside CLI or `internal/import/mtfcc.go` | Maps shapefile-provided MTFCC codes (or inferred codes for ArcGIS sources) to BallotReady district types; validates against `mtfccToDistrictTypes` in geofence_lookup.go |
-| geo_id builder | Inside CLI | Assembles geo_id per TIGER convention (state FIPS + district number) or BallotReady convention (place FIPS + zero-padded ward) for X0001 city council sub-districts |
+| Headshot scraper | `EV-Backend/scripts/scrape_headshots.py` | Targeted scraper focused only on headshot URL extraction; reads politician_sources.json + city_sources.json; updates existing politician records |
+| Building photo scraper | `EV-Backend/scripts/scrape_building_photos.py` | Fetches Wikimedia Commons URLs for 89 LA County city halls; inserts/updates building_photos table |
+| Contact enrichment script | `EV-Backend/scripts/enrich_contacts.py` | Scrapes contact info (office phone, email, office address) from government websites; upserts into politician_contacts |
+| Term data enrichment script | `EV-Backend/scripts/enrich_term_data.py` | Reads elected dates and term end dates from public records; updates politicians.valid_from, valid_to |
+| Bio/edu/exp enrichment script | `EV-Backend/scripts/enrich_bio_edu_exp.py` | Scrapes bio text, education history, work experience where available; writes to bio_text, degrees, experiences |
+| BuildingPhoto GORM model | `EV-Backend/internal/essentials/models.go` | New struct with TableName() = "essentials.building_photos" |
+| Building photo endpoint | `EV-Backend/internal/essentials/handlers.go` | GET /cities/{geo_id}/building-photo — returns photo_url + attribution for a city |
+| Building photo route | `EV-Backend/internal/essentials/routes.go` | Register GET /cities/{geo_id}/building-photo |
+| Building photo migration | `EV-Backend/internal/essentials/setup.go` | AutoMigrate(&BuildingPhoto{}) — creates table |
+| ContactSection (frontend) | `ev-ui/src/PoliticianProfile.jsx` | Renders contact info (phone, email, office address) on profile page |
 
 ---
 
@@ -116,294 +173,307 @@ The existing system after v1.5 ships politician data via a geofence-only lookup 
 
 ```
 EV-Backend/
-├── cmd/
-│   ├── bulk-import/main.go         # DEPRECATED placeholder (keep, do not delete)
-│   ├── compass-import/main.go      # Existing CLI
-│   ├── seed/main.go                # Existing CLI
-│   ├── backfill-state-exec/main.go # Existing CLI
-│   ├── import-geofences/           # NEW
-│   │   └── main.go                 # TIGER shapefile + ArcGIS REST → geofence_boundaries
-│   └── import-politicians/         # NEW
-│       └── main.go                 # Official manifest → politicians/offices/districts upsert
+├── scripts/
+│   ├── politician_sources.json     # MODIFIED — add photo_selector field
+│   ├── city_sources.json           # MODIFIED — add building_photo_url field per city
+│   ├── utils.py                    # UNCHANGED
+│   ├── scrape_la_officials.py      # UNCHANGED (or minor headshot extension)
+│   ├── scrape_city_councils.py     # UNCHANGED (or minor headshot extension)
+│   ├── scrape_headshots.py         # NEW — headshot URL extraction for ~389 officials
+│   ├── scrape_building_photos.py   # NEW — building photo URL collection for 89 cities
+│   ├── enrich_contacts.py          # NEW — phone/email/address per official
+│   ├── enrich_term_data.py         # NEW — valid_from/valid_to per official
+│   └── enrich_bio_edu_exp.py       # NEW — bio_text/degrees/experiences (optional)
 └── internal/
     └── essentials/
-        ├── geofence_models.go      # UNCHANGED — GeofenceBoundary struct
-        ├── geofence_lookup.go      # MINOR EDIT — mtfccToDistrictTypes may add entries
+        ├── models.go               # MINOR ADD — BuildingPhoto struct
+        ├── setup.go                # MINOR ADD — AutoMigrate(&BuildingPhoto{})
+        ├── handlers.go             # MINOR EDIT — contacts fetch in GetPoliticianByID
+        │                          #            — GetBuildingPhoto handler (NEW)
+        ├── routes.go               # MINOR ADD — GET /cities/{geo_id}/building-photo
         └── [all other files]       # UNCHANGED
+
+ev-ui/
+└── src/
+    └── PoliticianProfile.jsx       # MINOR ADD — ContactSection render block
+                                    # (publish new ev-ui version after change)
+
+essentials/
+└── src/
+    └── pages/
+        └── Dashboard.jsx           # MINOR EDIT — fetch + display building photo per city
 ```
 
 ### Structure Rationale
 
-- **`cmd/import-geofences/`:** Follows the existing `cmd/` pattern for standalone CLI tools. Runs locally or in CI, not as a server request handler. The geofence import is a one-time-per-region operation and does not belong in the HTTP request path.
-- **`cmd/import-politicians/`:** Separate from geofence import because the two pipelines have different source data (shapefiles vs. manual manifest or structured CSV) and different target tables.
-- **No new `internal/` packages required:** The import CLIs are self-contained enough to include helper functions within their own `main.go`. If the helpers grow beyond ~300 lines, extract to `internal/import/` sub-package.
+- **Separate scripts per concern:** Each enrichment script (headshots, building photos, contacts, term data, bio/edu/exp) is independent. They can be run in any order and re-run safely without side effects. This matches the existing pattern from v1.6 (separate `scrape_la_officials.py`, `scrape_city_councils.py`, `scrape_school_boards.py`).
+- **Config extension rather than new config files:** Adding `photo_selector` to `politician_sources.json` and `building_photo_url` to `city_sources.json` keeps configs co-located with the scraper that reads them. Avoids proliferating config files.
+- **One new DB table only (`building_photos`):** All other enrichment data goes into existing columns (photo_origin_url, valid_from, valid_to, bio_text) or existing tables (politician_images, politician_contacts, degrees, experiences). The building_photos table is genuinely new because no existing table captures city-level building image metadata.
+- **Minor Go backend changes:** The enrichment pipeline writes directly to the DB via Python. The Go API only needs: (1) contacts added to the GetPoliticianByID response, (2) one new endpoint for building photos. No structural changes to the handler architecture.
+- **ev-ui publish required:** ContactSection is new UI that goes in the shared component library. Any ev-ui change requires a version bump and publish to GitHub npm registry, then version update in essentials and CompassV2.
 
 ---
 
 ## Architectural Patterns
 
-### Pattern 1: Two-Table Join (the critical link between geofences and politicians)
+### Pattern 1: Politician-ID-Keyed Upsert for Enrichment Data
 
-**What:** The lookup pipeline joins `geofence_boundaries.geo_id` to `districts.geo_id`. Both must have matching values for a politician to be returned. This is the central architectural constraint for v1.6: importing a geofence boundary row does nothing unless a `districts` row with the same `geo_id` also exists, and importing a politician record does nothing unless a geofence row covers the address point.
+**What:** All enrichment scripts find the target `politician.id` first (by matching full_name + district/seat, using the same seat-first dedup logic from `scrape_la_officials.py`), then write enrichment data using that UUID as the foreign key. For `politician_contacts` and `politician_images`, the pattern is DELETE-where-source='scraped' + INSERT for the current scrape, making re-runs safe.
 
-**When to use:** Applies to every data import decision in v1.6. Before inserting a geofence boundary, verify whether a matching `districts` row already exists (from BallotReady data). Before inserting a politician record, verify that a geofence boundary for that district's `geo_id` will exist after the import runs.
+**When to use:** Every write to `politician_contacts`, `politician_images`, `degrees`, `experiences`. Never insert blindly without first resolving the politician_id.
 
-**Trade-offs:** Tight coupling between geofences and districts means import order matters. The safe order is: (1) ensure `districts` rows exist (from existing BallotReady data or new insertions), (2) insert matching `geofence_boundaries` rows. The reverse order — insert geofences first, then politicians — also works because the join is read-only at request time.
-
-**Example (the critical join in FindPoliticiansByGeoMatches):**
-```go
-// geofence_lookup.go — this query is the integration point
-// geo_id from geofence_boundaries must match geo_id in districts
-query := `
-  SELECT DISTINCT ON (p.id) ...
-  FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
-  JOIN essentials.districts d ON o.district_id = d.id
-  WHERE (d.geo_id = $1 AND d.district_type = ANY($2))
-`
-```
-
-### Pattern 2: Idempotent Upsert on geo_id
-
-**What:** Both import CLIs use PostgreSQL `ON CONFLICT (geo_id) DO UPDATE SET geometry = EXCLUDED.geometry, ...` for geofence inserts, and `ON CONFLICT (external_id) DO UPDATE SET ...` for politician inserts. This makes re-running the import safe and allows refreshing boundaries when TIGER releases updated shapefiles annually.
-
-**When to use:** Every INSERT into `geofence_boundaries` and `politicians`. Never use bare INSERT without conflict handling — repeated runs (reruns after error, annual TIGER refresh) must not duplicate rows.
-
-**Trade-offs:** Requires the unique constraint on `geo_id` in `geofence_boundaries` to be present. The model comment in `geofence_models.go` says "unique constraint managed manually" — verify this constraint exists in Supabase before running the import.
+**Trade-offs:** Requires the same seat-first dedup logic that already exists in `scrape_la_officials.py`. Rather than duplicating this logic, enrichment scripts should import the `find_existing_politician_for_seat()` function from `scrape_la_officials.py` (or extract it to `utils.py` as a shared helper).
 
 **Example:**
-```sql
-INSERT INTO essentials.geofence_boundaries
-  (id, geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
-VALUES
-  (uuid_generate_v4(), $1, $2, $3, $4, $5,
-   ST_GeomFromGeoJSON($6), $7, NOW()::text)
-ON CONFLICT (geo_id)
-DO UPDATE SET
-  geometry   = EXCLUDED.geometry,
-  source     = EXCLUDED.source,
-  imported_at = EXCLUDED.imported_at;
+```python
+# Shared pattern: resolve politician_id before writing enrichment data
+pol_id, match_type = find_existing_politician_for_seat(
+    cur, ocd_id, title, scraped_name
+)
+if pol_id and match_type in ("exact", "fuzzy"):
+    # Safe to write enrichment data for this politician_id
+    cur.execute("""
+        DELETE FROM essentials.politician_contacts
+        WHERE politician_id = %s AND source = 'scraped'
+    """, (pol_id,))
+    cur.execute("""
+        INSERT INTO essentials.politician_contacts
+            (id, politician_id, source, email, phone, contact_type)
+        VALUES (%s, %s, 'scraped', %s, %s, 'office')
+    """, (str(uuid.uuid4()), pol_id, scraped_email, scraped_phone))
 ```
 
-### Pattern 3: ogr2ogr as External Subprocess for Reprojection
+### Pattern 2: photo_origin_url for Headshots (Existing Field, No New Table)
 
-**What:** TIGER shapefiles use NAD83 (EPSG:4269). The `geofence_boundaries` table stores WGS84 (EPSG:4326). The Go CLI invokes `ogr2ogr` as a subprocess to reproject and convert shapefiles to GeoJSON, which is then inserted via `ST_GeomFromGeoJSON()`. This is the same approach used in v1.5 for Bloomington imports (ogr2ogr was used interactively; v1.6 automates it).
+**What:** The `politicians.photo_origin_url` field already exists and is served by the API via the `photo_origin_url` field in `OfficialOut`. The `PoliticianProfile` component already has `getImageURL()` logic that prefers `images[]` (from BallotReady) and falls back to `photo_origin_url`. For scraped officials (data_source='scraped'), `images[]` will be empty — so writing to `photo_origin_url` is sufficient for the card and profile to show the headshot.
 
-**When to use:** Any TIGER shapefile import. ArcGIS FeatureServer data (LA County eGIS, LA City GeoHub) is typically served in WGS84 already — skip reprojection for those sources.
+Optionally, also insert into `politician_images` with type="default" to be consistent with BallotReady records and enable the `images[]` array pathway. This is the cleaner approach.
 
-**Trade-offs:** Requires ogr2ogr (GDAL) installed in the build/run environment. The alternative — Go shapefile libraries — exist (everystreet/go-shapefile, twpayne/go-shapefile) but are dormant or limited (last release 2021, no support for M/Z shapefile variants). Using ogr2ogr as a subprocess is pragmatic: it handles all shapefile variants and projection math correctly, and GDAL is a standard tool available on any developer machine and in CI.
+**When to use:** For all ~389 LA County officials. Prefer the dual write (photo_origin_url + politician_images) so the frontend getImageURL() logic works identically regardless of data source.
 
-**Example (Go subprocess call):**
-```go
-func reprojectShapefile(shpPath, outGeoJSONPath, sourceEPSG, targetEPSG string) error {
-    cmd := exec.Command("ogr2ogr",
-        "-f", "GeoJSON",
-        "-s_srs", "EPSG:"+sourceEPSG,
-        "-t_srs", "EPSG:"+targetEPSG,
-        outGeoJSONPath,
-        shpPath,
-    )
-    return cmd.Run()
+**Trade-offs:** `photo_origin_url` stores the scraped government site URL directly (no re-hosting). The v1.6 source comment in `scrape_la_officials.py` acknowledges this: "Photo re-hosting to Supabase Storage is planned but deferred." This remains out of scope for v1.7 per PROJECT.md.
+
+**Example:**
+```python
+# Dual write: photo_origin_url + politician_images
+cur.execute("""
+    UPDATE essentials.politicians
+    SET photo_origin_url = %s, last_synced = NOW()
+    WHERE id = %s AND (photo_origin_url IS NULL OR photo_origin_url = '')
+""", (scraped_photo_url, pol_id))
+
+# Also insert into politician_images (delete-recreate if already exists)
+cur.execute("""
+    DELETE FROM essentials.politician_images
+    WHERE politician_id = %s AND type = 'default'
+""", (pol_id,))
+cur.execute("""
+    INSERT INTO essentials.politician_images (id, politician_id, url, type)
+    VALUES (%s, %s, %s, 'default')
+""", (str(uuid.uuid4()), pol_id, scraped_photo_url))
+```
+
+### Pattern 3: Config-Driven Source Declaration for Photo/Contact Data
+
+**What:** Rather than hardcoding per-city scraping logic in Python, store per-source metadata in `politician_sources.json` (for supervisors/LA city) and `city_sources.json` (for 87 other cities). The v1.6 scraping scripts already read these configs. For v1.7, add new fields to the existing configs:
+
+For `politician_sources.json`:
+```json
+{
+  "id": "la_county_supervisors",
+  "photo_selector": "img.supervisor-photo",
+  "contact_fields": {"phone": ".phone-number", "email": "a[href^='mailto:']"}
 }
 ```
 
-### Pattern 4: Layer-Based MTFCC Assignment for ArcGIS Sources
-
-**What:** TIGER shapefiles include an MTFCC attribute per feature. ArcGIS FeatureServer data (LA County supervisor districts, LA City council districts) does not include MTFCC — the MTFCC must be assigned based on which layer is being imported. The import CLI accepts a `--mtfcc` flag that is applied to all features from that run.
-
-**When to use:** Any ArcGIS REST source where MTFCC is not embedded in the feature attributes. The correct MTFCC for each LA County layer:
-
-| Source Layer | MTFCC to Assign | District Type Mapped |
-|-------------|----------------|---------------------|
-| TIGER congressional (tl_2024_06_cd119) | G5200 (from shapefile) | NATIONAL_LOWER |
-| TIGER state senate (tl_2024_06_sldu) | G5210 (from shapefile) | STATE_UPPER |
-| TIGER state assembly (tl_2024_06_sldl) | G5220 (from shapefile) | STATE_LOWER |
-| TIGER county (tl_2024_06_county) | G4020 (from shapefile) | COUNTY, JUDICIAL |
-| TIGER unified school district (tl_2024_06_unsd) | G5420 (from shapefile) | SCHOOL |
-| LA County supervisor districts (eGIS FeatureServer) | G4020 (inferred — county-level) | COUNTY |
-| LA City council districts (GeoHub FeatureServer) | X0001 (inferred — ward sub-district) | LOCAL |
-| Other incorporated city boundaries (TIGER G4110) | G4110 (from shapefile) | LOCAL, LOCAL_EXEC |
-
-**Trade-offs:** Assigning MTFCC at the layer level (not per-feature) is correct for all homogeneous layers. It would fail if a single ArcGIS layer mixed district types, which does not occur in practice for the target datasets.
-
-### Pattern 5: geo_id Construction per Source Convention
-
-**What:** The `geo_id` in `geofence_boundaries` must match the `geo_id` in `essentials.districts` for the lookup join to work. TIGER shapefiles include a GEOID attribute that can be used directly. ArcGIS sources and the X0001 ward boundary convention require constructing the geo_id from component fields.
-
-**Conventions:**
-
-| Layer Type | TIGER GEOID Format | Example |
-|-----------|-------------------|---------|
-| Congressional district | state FIPS (2) + district number (2, zero-padded) | "0637" = CA district 37 |
-| State senate (SLDU) | state FIPS (2) + district number (3, zero-padded) | "06037" = CA SD-37 |
-| State assembly (SLDL) | state FIPS (2) + district number (3, zero-padded) | "06060" = CA AD-60 |
-| County | state FIPS (2) + county FIPS (3) | "06037" = LA County |
-| Unified school district | state FIPS (2) + LEA code (5) | "0622590" = LAUSD |
-| Incorporated place (city) | state FIPS (2) + place FIPS (5) | "0644000" = LA City |
-| City council ward (X0001) | place FIPS (7) + ward number (5, zero-padded) | "064400000001" = LA CD-1 |
-| Supervisor district (G4020) | county FIPS (5) + district number (3, zero-padded) | "06037001" = LA Sup Dist 1 |
-
-**Critical:** The geo_id in `geofence_boundaries` must exactly match what BallotReady stored in `essentials.districts.geo_id`. Before importing geofences, query the districts table to see what geo_ids already exist for the target area, and import matching values.
-
-**Example (supervisor district geo_id):**
-```go
-// LA County FIPS = "06037"
-// Supervisor District 1 → geo_id = "06037001"
-geoID := fmt.Sprintf("%s%03d", countyFIPS, districtNumber)
+For `city_sources.json`:
+```json
+{
+  "place_geoid": "0644000",
+  "city": "Los Angeles",
+  "building_photo_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Los_Angeles_City_Hall_2013.jpg",
+  "building_photo_attribution": "Photo: Carol Highsmith, Public Domain"
+}
 ```
+
+**When to use:** Every new data type that requires per-source configuration. Avoids hardcoding selectors or URLs in Python.
+
+**Trade-offs:** Some sources will not have machine-parseable headshots (Cloudflare-protected sites, no consistent DOM structure) — these fall back to hardcoded URLs or remain empty. The config should include a `photo_url_override` for this case, matching the existing `hardcoded fallback` pattern.
+
+### Pattern 4: Building Photo as City-Level Record (New Table)
+
+**What:** Building photos are city-level, not politician-level. They belong to a city (keyed by `place_geoid`) rather than to any individual politician. The `building_photos` table is new because no existing table captures this.
+
+The Dashboard already displays building photos by tier (federal = Capitol building, state = Capitol, local = city hall). Currently these are hardcoded in the frontend for the cities that have been manually configured. The new table enables dynamic lookup.
+
+**Schema:**
+```go
+type BuildingPhoto struct {
+    ID          uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+    PlaceGeoID  string    `gorm:"uniqueIndex"` // Census GEOID e.g. "0644000" for LA City
+    CityName    string
+    State       string
+    PhotoURL    string
+    Attribution string    // CC license attribution text
+    CreatedAt   time.Time
+}
+
+func (BuildingPhoto) TableName() string {
+    return "essentials.building_photos"
+}
+```
+
+**API endpoint:**
+```
+GET /essentials/cities/{geo_id}/building-photo
+→ { photo_url: "...", attribution: "...", city_name: "..." }
+```
+
+**Frontend usage:** Dashboard fetches building photo for the user's city after address lookup resolves, replaces the static hardcoded building image with the dynamic response.
+
+**When to use:** This approach works for all 89 LA County cities in v1.7. For future regional expansion, the same table and endpoint cover any city where a building photo has been curated.
+
+**Trade-offs:** Requires a Wikimedia Commons research pass (one URL per city hall). ~89 lookups, manual or semi-automated via Wikimedia API. Not every city hall will have a high-quality Wikimedia Commons image — these get no image or a generic fallback.
 
 ---
 
 ## Data Flow
 
-### Address Lookup (existing, unchanged)
+### Enrichment Pipeline Data Flow (offline, developer runs locally)
 
 ```
-User enters address → Google Places Autocomplete → formattedAddress
+Developer runs: python3 scrape_headshots.py
     ↓
-POST /essentials/politicians/search { query: "123 Main St, Los Angeles CA 90012" }
+Read politician_sources.json + city_sources.json
     ↓
-GeoClient.Geocode("123 Main St...") → { lat: 34.052, lng: -118.243, state: "CA" }
+For each source:
+    Fetch roster HTML (requests + BeautifulSoup)
+    Parse official names + headshot URLs
+    For each official:
+        find_existing_politician_for_seat(cur, ocd_id, title, name)
+            → politician_id (UUID)
+        UPDATE politicians SET photo_origin_url = ... WHERE id = politician_id
+        DELETE FROM politician_images WHERE politician_id = ... AND type = 'default'
+        INSERT INTO politician_images (politician_id, url, type='default')
+    Commit per-source (not global transaction — follows scrape_city_councils.py convention)
     ↓
-FindGeoIDsByPoint(34.052, -118.243)
-  SELECT geo_id, mtfcc FROM essentials.geofence_boundaries
-  WHERE ST_Contains(geometry, ST_SetSRID(ST_MakePoint(-118.243, 34.052), 4326))
-  → e.g. [{geo_id:"06037", mtfcc:"G4020"}, {geo_id:"0637", mtfcc:"G5200"},
-          {geo_id:"06065", mtfcc:"G5210"}, {geo_id:"06049", mtfcc:"G5220"},
-          {geo_id:"0644000", mtfcc:"G4110"}, {geo_id:"064400000001", mtfcc:"X0001"}]
-    ↓
-FindPoliticiansByGeoMatches(matches)
-  WHERE (d.geo_id = '06037' AND d.district_type = ANY({'COUNTY','JUDICIAL'}))
-     OR (d.geo_id = '0637'  AND d.district_type = ANY({'NATIONAL_LOWER'}))
-     OR (d.geo_id = '06065' AND d.district_type = ANY({'STATE_UPPER'}))
-     OR (d.geo_id = '06049' AND d.district_type = ANY({'STATE_LOWER'}))
-     OR (d.geo_id = '0644000' AND d.district_type = ANY({'LOCAL','LOCAL_EXEC'}))
-     OR (d.geo_id = '064400000001' AND d.district_type = ANY({'LOCAL'}))
-  → []OfficialOut (county supervisor, House member, senator, assemblymember,
-                   mayor/city officials, city council member)
-    ↓
-fetchOfficialsFromDB(zip, "CA") → supplement with federal+state from DB
-    ↓
-Deduplicate → return merged []OfficialOut
+Print coverage report: N headshots found out of M officials
 ```
 
-### Import Pipeline (new, offline)
-
 ```
-Developer runs: go run ./cmd/import-geofences --source tiger --state 06 --layers cd,sldu,sldl,county,unsd,place
+Developer runs: python3 scrape_building_photos.py
     ↓
-For each layer:
-  Download ZIP from https://www2.census.gov/geo/tiger/TIGER2024/[LAYER]/tl_2024_06_[layer].zip
+Read city_sources.json
     ↓
-  Run ogr2ogr to reproject NAD83→WGS84, output GeoJSON
+For each city with building_photo_url field:
+    INSERT INTO essentials.building_photos (place_geoid, city_name, photo_url, attribution)
+    ON CONFLICT (place_geoid) DO UPDATE SET photo_url = EXCLUDED.photo_url
     ↓
-  Parse GeoJSON features
-    ↓
-  For each feature:
-    geoID  = feature.properties["GEOID"]       (TIGER shapefiles always include GEOID)
-    mtfcc  = feature.properties["MTFCC"]        (TIGER shapefiles always include MTFCC)
-    geometry = feature.geometry (already WGS84 after ogr2ogr)
-    ↓
-    INSERT INTO essentials.geofence_boundaries (geo_id, mtfcc, geometry, ...)
-    ON CONFLICT (geo_id) DO UPDATE SET geometry = EXCLUDED.geometry
-    ↓
-  Log: imported N features, M conflicts updated
-
-Developer runs: go run ./cmd/import-geofences --source arcgis \
-  --url "https://services3.arcgis.com/[...]/FeatureServer/0/query?outFields=*&f=geojson&where=1%3D1" \
-  --mtfcc G4020 --state 06 --geo-id-field "SUPERVISORIAL_DISTRICT" --geo-id-prefix "06037"
-    ↓
-  Fetch paginated GeoJSON from FeatureServer
-    ↓
-  For each feature:
-    distNum = feature.properties["SUPERVISORIAL_DISTRICT"]  (e.g. "1")
-    geoID   = "06037" + fmt.Sprintf("%03d", distNum)        (e.g. "06037001")
-    mtfcc   = "G4020" (from CLI flag)
-    geometry = feature.geometry (FeatureServer returns WGS84)
-    ↓
-    INSERT INTO essentials.geofence_boundaries ... ON CONFLICT DO UPDATE
+Print: N city hall photos inserted/updated
 ```
 
-### Politician Gap-Fill (new, offline)
+```
+Developer runs: python3 enrich_contacts.py
+    ↓
+For each source in politician_sources.json:
+    Fetch roster HTML
+    Parse contact fields (phone, email, office address)
+    For each official:
+        find_existing_politician_for_seat() → politician_id
+        DELETE FROM politician_contacts WHERE politician_id = ... AND source = 'scraped'
+        INSERT INTO politician_contacts (politician_id, source='scraped', phone, email, contact_type)
+    Commit per-source
+    ↓
+Print: N contact records written
+```
+
+### Profile Page Read Flow (existing, unchanged except contacts addition)
 
 ```
-Developer runs: go run ./cmd/import-politicians --manifest la_county_officials.json
+User clicks politician card → navigate to /politician/{id}
     ↓
-  Read manifest JSON (array of official records)
+GET /essentials/politician/{id}
     ↓
-  For each official:
-    Look up district by geo_id in essentials.districts
-    If district exists: use existing district.id
-    If not: INSERT district (external_id auto-assigned from BallotReady or set to 0 with manual flag)
+GetPoliticianByID handler:
+    Step 1: SELECT ... FROM politicians JOIN offices JOIN districts JOIN chambers JOIN governments
+    Step 2: SELECT * FROM addresses WHERE politician_id = ?
+    Step 3: SELECT * FROM identifiers WHERE politician_id = ?
+    Step 4: SELECT name, position, urls FROM committees JOIN politician_committees
+    Step 5: SELECT * FROM politician_images WHERE politician_id = ?     [headshots from pipeline]
+    Step 6: SELECT * FROM degrees WHERE politician_id = ?               [from pipeline]
+    Step 7: SELECT * FROM experiences WHERE politician_id = ?           [from pipeline]
+    Step 8.5 (NEW): SELECT * FROM politician_contacts WHERE politician_id = ?
     ↓
-    UPSERT government, chamber, district, politician, office
-    ON CONFLICT (external_id) DO UPDATE
+Assemble PoliticianProfileOut (add contacts[] field)
     ↓
-  Log: inserted N officials, M updated, K districts linked
+PoliticianProfile.jsx renders:
+    - getImageURL(): images[0].url → photo_origin_url (headshot from pipeline)
+    - getTermLine(): valid_from → valid_to (term dates from pipeline)
+    - ContactSection (NEW): contacts[].phone, contacts[].email, contacts[].contact_type
+    - degrees[]: education section (from pipeline)
+    - experiences[]: work history section (from pipeline)
+    - bio_text: biography (from pipeline)
+```
+
+### Building Photo Read Flow (new)
+
+```
+User address search → geofence results → Dashboard resolves city geo_id from G4110 match
+    ↓
+GET /essentials/cities/{place_geoid}/building-photo
+    ↓
+GetBuildingPhoto handler:
+    SELECT photo_url, attribution, city_name FROM essentials.building_photos WHERE place_geoid = ?
+    → { photo_url: "https://commons.wikimedia.org/...", attribution: "...", city_name: "..." }
+    ↓
+Dashboard replaces placeholder building image with fetched URL
 ```
 
 ---
 
 ## Integration Points
 
-### Census TIGER/Line FTP (geofence source 1)
+### Existing Tables Used by Pipeline (no schema changes needed)
 
-| Aspect | Details |
-|--------|---------|
-| Base URL | `https://www2.census.gov/geo/tiger/TIGER2024/` |
-| Layer directories | `CD/` (congressional), `SLDU/` (state senate), `SLDL/` (state assembly), `COUNTY/`, `PLACE/`, `UNSD/` (unified school district) |
-| File naming | `tl_2024_{state_fips}_{layer}.zip` — e.g., `tl_2024_06_cd119.zip` for CA congressional |
-| National layers | `tl_2024_us_county.zip` — some layers are national, not per-state |
-| GEOID attribute | Always present in TIGER shapefiles as `GEOID` attribute field |
-| MTFCC attribute | Always present in TIGER shapefiles as `MTFCC` attribute field |
-| SRID | NAD83 / EPSG:4269 — requires reprojection to WGS84 (EPSG:4326) via ogr2ogr `-s_srs EPSG:4269 -t_srs EPSG:4326` |
-| Confidence | HIGH — established Census data product, annual releases |
+| Table | Fields Written | Notes |
+|-------|----------------|-------|
+| `essentials.politicians` | `photo_origin_url`, `valid_from`, `valid_to`, `bio_text`, `total_years_in_office` | All columns exist; enrichment scripts write via UPDATE WHERE id = ? |
+| `essentials.politician_images` | `politician_id`, `url`, `type` | Existing table; DELETE + INSERT pattern (same as BallotReady upsert in handlers.go) |
+| `essentials.politician_contacts` | `politician_id`, `source`, `email`, `phone`, `fax`, `contact_type` | Existing table; source='scraped'; DELETE WHERE source='scraped' + INSERT pattern |
+| `essentials.degrees` | `politician_id`, `degree`, `major`, `school`, `grad_year` | Existing table; delete + recreate |
+| `essentials.experiences` | `politician_id`, `title`, `organization`, `type`, `start`, `end` | Existing table; delete + recreate |
 
-### LA County eGIS ArcGIS FeatureServer (geofence source 2)
+### New Table
 
-| Aspect | Details |
-|--------|---------|
-| Hub | `https://egis-lacounty.hub.arcgis.com/` |
-| Supervisor districts dataset | Available at `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::supervisorial-districts-current/about` |
-| School district boundaries | Available at `https://egis-lacounty.hub.arcgis.com/datasets/lacounty::school-district-boundaries/about` |
-| REST query pattern | `[ServiceURL]/FeatureServer/[layerId]/query?outFields=*&f=geojson&where=1%3D1` |
-| SRID | ArcGIS Hub serves in WGS84 by default — no reprojection needed |
-| Attribute for district number | Supervisor: field named `SUPERVISORIAL_DISTRICT` or similar; must be inspected per dataset |
-| Pagination | ArcGIS FeatureServer returns max 1000 or 2000 features per query; use `resultOffset` for pagination |
-| Confidence | MEDIUM — URLs discovered, REST pattern standard, specific field names unverified without direct API call |
+| Table | Fields | Unique Key | Notes |
+|-------|--------|------------|-------|
+| `essentials.building_photos` | `id`, `place_geoid`, `city_name`, `state`, `photo_url`, `attribution`, `created_at` | `place_geoid` | Keyed on Census GEOID for incorporated places (G4110 MTFCC); matches geofence_boundaries.geo_id for city-level records |
 
-### LA City GeoHub ArcGIS FeatureServer (geofence source 3)
+### Go API Changes (internal boundaries)
 
-| Aspect | Details |
-|--------|---------|
-| Hub | `https://geohub.lacity.org/` |
-| Council districts dataset | `https://geohub.lacity.org/datasets/76104f230e384f38871eb3c4782f903d_13/about` |
-| REST API | ArcGIS Hub — same `/FeatureServer/[layerId]/query?outFields=*&f=geojson&where=1%3D1` pattern |
-| District number attribute | Likely `CD_NUM` or `DISTRICT_N` — verify by fetching one feature |
-| MTFCC to assign | X0001 (city council ward sub-district, BallotReady convention — already in mtfccToDistrictTypes) |
-| geo_id to build | LA City place FIPS = `0644000`; council district 1 → `064400000001` (matches BallotReady geo_id in districts table) |
-| Verify districts exist | Query `essentials.districts WHERE state = 'CA' AND district_type = 'LOCAL'` before import — existing BallotReady records for LA City council members should have these geo_ids |
-| Confidence | MEDIUM — dataset exists, REST API pattern standard, specific field names need runtime verification |
+| Boundary | Change | Scope |
+|----------|--------|-------|
+| `GetPoliticianByID` (handlers.go) | Add step 8.5: fetch politician_contacts; add `Contacts []ContactOut` to `PoliticianProfileOut` | ~15 lines; one new SELECT + mapping |
+| `PoliticianProfileOut` (handlers.go) | Add `Contacts []ContactOut` field | 1 line; backward-compatible (omitempty) |
+| New handler `GetBuildingPhoto` (handlers.go) | SELECT from building_photos WHERE place_geoid = ?; return JSON | ~20 lines |
+| `routes.go` | `r.Get("/cities/{geo_id}/building-photo", GetBuildingPhoto)` | 1 line |
+| `models.go` | Add `BuildingPhoto` struct with TableName() | ~10 lines |
+| `setup.go` | Add `db.DB.AutoMigrate(&BuildingPhoto{})` | 1 line |
 
-### PostGIS (existing, central)
+### Frontend Changes (ev-ui + essentials app)
 
-| Aspect | Details |
-|--------|---------|
-| Table | `essentials.geofence_boundaries` — `geo_id` text unique, `geometry geometry(Geometry,4326)` |
-| Spatial index | `idx_geofence_boundaries_geometry` GIST index — already created in `setup.go`; use `VACUUM ANALYZE essentials.geofence_boundaries` after bulk import |
-| Geometry validity | Run `ST_MakeValid(geometry)` on all imported geometries before INSERT to handle topology issues (precedent: Bloomington District 2 required ST_MakeValid in Phase 31) |
-| Unique constraint on geo_id | Comment in `geofence_models.go` says "unique constraint managed manually" — confirm it exists: `SELECT indexname FROM pg_indexes WHERE tablename = 'geofence_boundaries' AND indexname LIKE '%geo_id%'` |
-| SRID check | Validate: `SELECT DISTINCT ST_SRID(geometry) FROM essentials.geofence_boundaries` — must return only 4326 after import |
+| Component | Change | Scope |
+|-----------|--------|-------|
+| `PoliticianProfile.jsx` (ev-ui) | Add ContactSection render block that displays contacts[]; conditionally show if contacts non-empty | ~30 lines; requires ev-ui version bump + publish |
+| `essentials/src/pages/Dashboard.jsx` | After address search resolves city geo_id, fetch building photo and pass to building image slot | ~15 lines; no ev-ui publish needed |
 
-### essentials.districts (existing join table)
+### External Services
 
-| Aspect | Details |
-|--------|---------|
-| Role | The `geo_id` column in `districts` is the join key between geofences and politicians |
-| Pre-existing records | BallotReady already populated districts for federal and state officials; their geo_ids use TIGER-compatible format |
-| Gap-fill requirement | LA County local officials (city council, supervisor) may not have `districts` rows if they were never in BallotReady |
-| Verify before importing geofences | `SELECT geo_id, district_type FROM essentials.districts WHERE state = 'CA' LIMIT 50` to see what already exists |
-| Lookup during politician import | CLI must JOIN on `geo_id` to find existing `districts.id` — do not blindly create new district rows if one with the same `geo_id` already exists |
+| Service | How Used | Notes |
+|---------|----------|-------|
+| Government websites (bos.lacounty.gov, clerk.lacity.gov, city sites) | Headshot + contact scraping | Same sites already used by v1.6 scrapers; browser User-Agent required; hardcoded fallbacks for Cloudflare-blocked sites |
+| Wikimedia Commons | City hall building photo URLs (cc-licensed) | Use Special:FilePath redirect for stable URLs; verify CC license before adding; ~89 manual lookups |
+| Public records (county registrar, city clerks) | Term/election date data | Variable structure; may require manual research for some cities |
 
 ---
 
@@ -413,101 +483,189 @@ Developer runs: go run ./cmd/import-politicians --manifest la_county_officials.j
 
 | Component | File | Notes |
 |-----------|------|-------|
-| Geofence import CLI | `EV-Backend/cmd/import-geofences/main.go` | Replaces deprecated `cmd/bulk-import/main.go` for geofence data; does not reuse any of the old code |
-| Politician gap-fill CLI | `EV-Backend/cmd/import-politicians/main.go` | Reads a structured manifest; no live API calls |
+| Headshot scraper | `EV-Backend/scripts/scrape_headshots.py` | Focused on photo_origin_url + politician_images; re-uses find_existing_politician_for_seat() |
+| Building photo scraper | `EV-Backend/scripts/scrape_building_photos.py` | Reads city_sources.json; writes to building_photos table |
+| Contact enrichment script | `EV-Backend/scripts/enrich_contacts.py` | Reads politician_sources.json + city_sources.json; writes politician_contacts |
+| Term data enrichment script | `EV-Backend/scripts/enrich_term_data.py` | Writes politicians.valid_from, valid_to |
+| Bio/edu/exp enrichment script | `EV-Backend/scripts/enrich_bio_edu_exp.py` | Lowest priority; skip if no machine-readable sources found |
+| BuildingPhoto model | `EV-Backend/internal/essentials/models.go` (addition) | Go struct + TableName() |
+| GetBuildingPhoto handler | `EV-Backend/internal/essentials/handlers.go` (addition) | ~20 lines |
+| Building photo route | `EV-Backend/internal/essentials/routes.go` (addition) | 1 line |
 
-### Modified (targeted changes)
+### Modified (targeted changes to existing files)
 
 | Component | File | Change | Scope |
 |-----------|------|--------|-------|
-| MTFCC map | `EV-Backend/internal/essentials/geofence_lookup.go` | Add entries for any MTFCC codes that appear in imported data but are not yet in `mtfccToDistrictTypes` | 1-3 lines; only if new MTFCC codes are used |
+| politician_sources.json | `EV-Backend/scripts/politician_sources.json` | Add `photo_selector` and `contact_fields` fields per source | 3-4 lines per source |
+| city_sources.json | `EV-Backend/scripts/city_sources.json` | Add `building_photo_url` and `building_photo_attribution` per city | 2 lines per city |
+| PoliticianProfileOut | `EV-Backend/internal/essentials/handlers.go` | Add `Contacts []ContactOut` field | 1 line |
+| GetPoliticianByID | `EV-Backend/internal/essentials/handlers.go` | Add contacts fetch (step 8.5) | ~15 lines |
+| setup.go | `EV-Backend/internal/essentials/setup.go` | Add AutoMigrate(&BuildingPhoto{}) | 1 line |
+| PoliticianProfile.jsx | `ev-ui/src/PoliticianProfile.jsx` | Add ContactSection render block | ~30 lines; new ev-ui version |
+| Dashboard.jsx | `essentials/src/pages/Dashboard.jsx` | Fetch + display building photo | ~15 lines |
 
 ### Kept Unchanged
 
 | Component | Why |
 |-----------|-----|
-| `geofence_lookup.go: FindGeoIDsByPoint()` | PostGIS query is correct as-is; new boundaries work automatically |
-| `geofence_lookup.go: FindPoliticiansByGeoMatches()` | Join logic is correct; just needs matching data |
-| `geofence_models.go` | Schema unchanged |
-| `handlers.go` | All request-path handlers unchanged |
-| `routes.go` | No new endpoints |
-| `setup.go` | No new initialization needed |
-| All frontend code | No frontend changes needed for this milestone |
+| geofence_lookup.go | Lookup logic is correct as-is; enrichment data doesn't affect geofences |
+| FindGeoIDsByPoint() | No change to spatial query |
+| FindPoliticiansByGeoMatches() | No change to join logic |
+| SearchPoliticians handler | No change to address search path |
+| scrape_la_officials.py | Core upsert/dedup logic intact; headshot extraction is additive |
+| scrape_city_councils.py | Same; dedup logic intact |
+| promote_scraped_officials.py | v1.5 script; no v1.7 changes |
+| All geofence import scripts | v1.6 scripts; no v1.7 changes |
+| CompassV2 | No politician data display; unaffected |
 
 ---
 
 ## Build Order (dependency-aware)
 
-The dependencies flow strictly from data → schema → import → verification. Parallelism exists within import steps for different layers.
+Dependencies flow: schema → pipeline scripts → coverage verification → API changes → frontend changes.
 
-### Step 1: Schema and Constraint Verification (blocking)
+### Step 1: Schema Migration (blocking for all pipeline scripts)
 
-Before any import runs, verify:
-- Unique constraint on `geofence_boundaries.geo_id` exists in Supabase
-- `ST_MakeValid` and `ST_GeomFromGeoJSON` are available (PostGIS already enabled)
-- Query existing `districts.geo_id` values for CA to understand what geo_ids already exist from BallotReady
+Add `building_photos` table:
 
-This is a read-only verification step, 15 minutes of SQL queries. It is blocking because import strategy depends on findings.
+```go
+// models.go — add this struct
+type BuildingPhoto struct {
+    ID          uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+    PlaceGeoID  string    `gorm:"uniqueIndex"`
+    CityName    string
+    State       string
+    PhotoURL    string
+    Attribution string
+    CreatedAt   time.Time
+}
 
-### Step 2: TIGER Shapefile Geofences — Federal + State (independent of local)
-
-Import order within this step is flexible; all layers are independent of each other:
-
-| Order | Layer | TIGER File | MTFCC | Districts Mapped |
-|-------|-------|-----------|-------|-----------------|
-| 2a | Congressional districts | `tl_2024_06_cd119.zip` | G5200 | NATIONAL_LOWER |
-| 2b | State senate (SLDU) | `tl_2024_06_sldu.zip` | G5210 | STATE_UPPER |
-| 2c | State assembly (SLDL) | `tl_2024_06_sldl.zip` | G5220 | STATE_LOWER |
-| 2d | County boundaries | `tl_2024_06_county.zip` | G4020 | COUNTY, JUDICIAL |
-| 2e | Unified school districts | `tl_2024_06_unsd.zip` | G5420 | SCHOOL |
-| 2f | Incorporated places (cities) | `tl_2024_06_place.zip` | G4110 | LOCAL, LOCAL_EXEC |
-
-These feed federal, state, county, school board, and city-level (at-large) politicians — the majority of what LA County addresses need. Steps 2a-2f can run in any order or in parallel.
-
-### Step 3: LA County ArcGIS Geofences — Supervisor Districts (parallel to Step 2)
-
-Fetch supervisor district polygons from LA County eGIS FeatureServer. These use G4020 MTFCC (county-level) and need a geo_id that matches BallotReady's `districts.geo_id` for LA County supervisors. Verify existing `districts` geo_ids before choosing the geo_id format.
-
-### Step 4: LA City GeoHub Geofences — City Council Districts (depends on Step 2f)
-
-Import LA City council district polygons with `mtfcc = 'X0001'` and geo_ids matching `064400000{nn}` format. Step 2f (incorporated places) must complete first because it provides the G4110 polygon for city-level at-large officials, which works independently; Step 4 adds per-district ward precision.
-
-### Step 5: Verify Geofence Coverage
-
-After Steps 2-4, run point-in-polygon tests against known LA County addresses:
-- Downtown LA address → should return federal + state + county supervisor + city at-large + city council district members
-- Santa Monica address → should return federal + state + county + Santa Monica city officials (from G4110)
-- Unincorporated area → federal + state + county (no G4110 or X0001 match — expected)
-
-### Step 6: Politician Gap-Fill (depends on Steps 2-5)
-
-After verifying which addresses return which politicians, identify gaps: addresses that return geofence hits but no politician records for those geo_ids. These are the district/chamber/politician rows that need to be created.
-
-Run `import-politicians` CLI with a manifest of missing officials. The manifest is built manually from a verified source (LA County registrar, BallotReady archived data, official county website).
-
-### Step 7: VACUUM ANALYZE
-
-```sql
-VACUUM ANALYZE essentials.geofence_boundaries;
+func (BuildingPhoto) TableName() string {
+    return "essentials.building_photos"
+}
 ```
 
-Run after all imports complete to update PostGIS planner statistics. Required for optimal GiST index performance after bulk inserts.
+```go
+// setup.go — add one line to AutoMigrate call
+db.DB.AutoMigrate(&BuildingPhoto{})
+```
+
+Run `go run .` to apply migration. Verify table exists in Supabase.
+
+All other enrichment data goes into existing tables — no additional schema changes needed.
+
+### Step 2: Headshot Pipeline (parallel-capable, highest impact)
+
+Build and run `scrape_headshots.py`. This is the highest-value step: headshots are the most visible enrichment on politician cards. Target: 80%+ of ~389 officials.
+
+Sub-steps:
+1. Audit `politician_sources.json` for each source: fetch the roster page, determine which HTML element contains the headshot (CSS selector or URL pattern)
+2. Add `photo_selector` field to each source config
+3. For city_sources.json: add `headshot_base_url` or `photo_selector` per city where photos are accessible
+4. Run scrape_headshots.py
+5. Query coverage: `SELECT COUNT(*) FROM essentials.politicians WHERE (photo_origin_url IS NOT NULL AND photo_origin_url != '') AND data_source IN ('scraped') AND state = 'CA'`
+
+### Step 3: Building Photo Pipeline (independent, can run in parallel with Step 2)
+
+Research Wikimedia Commons URLs for 89 LA County city halls. This is manual/semi-automated.
+
+1. Add `building_photo_url` + `building_photo_attribution` to city_sources.json for each city
+2. Run `scrape_building_photos.py` to populate `building_photos` table
+3. Verify: `SELECT COUNT(*) FROM essentials.building_photos WHERE state = 'CA'`
+
+### Step 4: Contact Enrichment (depends on Step 1 only, independent of Steps 2-3)
+
+1. Run `enrich_contacts.py`
+2. Verify: `SELECT COUNT(*) FROM essentials.politician_contacts WHERE source = 'scraped'`
+3. Spot-check: confirm phone/email populated for known officials
+
+### Step 5: Term Data Enrichment (independent)
+
+1. Run `enrich_term_data.py`
+2. Verify: `SELECT COUNT(*) FROM essentials.politicians WHERE valid_from IS NOT NULL AND valid_from != '' AND data_source = 'scraped'`
+
+### Step 6: Bio/Education/Experience Enrichment (optional, lowest priority)
+
+Run only for sources that have machine-readable bio/edu/exp data. Many city council websites will not have this. This step is explicitly lower priority than headshots and contacts.
+
+### Step 7: Go API Changes (depends on Steps 1-6 being populated, can be done in parallel)
+
+1. Add `ContactOut` DTO and `contacts []ContactOut` to `PoliticianProfileOut`
+2. Add contacts fetch (step 8.5) to `GetPoliticianByID`
+3. Add `GetBuildingPhoto` handler and register route
+4. Test: `curl https://api.empowered.vote/essentials/politician/{id}` — verify contacts[] populated
+5. Test: `curl https://api.empowered.vote/essentials/cities/0644000/building-photo` — verify response
+
+### Step 8: Frontend Changes (depends on Step 7 Go API changes)
+
+1. Add `ContactSection` to `ev-ui/src/PoliticianProfile.jsx`
+2. Bump ev-ui version, publish to GitHub npm registry
+3. Update ev-ui version in essentials/ and CompassV2/ package.json
+4. Add building photo fetch to `essentials/src/pages/Dashboard.jsx`
+5. Test profile page: contacts visible for LA County officials
+6. Test dashboard: city hall photo appears for LA addresses
 
 ### Blocking Dependencies
 
 ```
-Step 1 (verify schema)
+Step 1 (schema migration)
   ↓
-Steps 2a-2f (TIGER shapefiles) ←→ Step 3 (LA County ArcGIS)  [parallel]
+Steps 2, 3, 4, 5, 6  [all parallel — each is independent]
   ↓
-Step 4 (LA City council)
+Step 7 (Go API changes) — can start in parallel with Steps 2-6 using empty tables
   ↓
-Step 5 (verify coverage)
-  ↓
-Step 6 (politician gap-fill)
-  ↓
-Step 7 (VACUUM ANALYZE)
+Step 8 (frontend changes) — requires Step 7 deployed
 ```
+
+---
+
+## Anti-Patterns
+
+### Anti-Pattern 1: Separate Deduplication Logic in Each Enrichment Script
+
+**What people do:** Copy-paste the seat-first dedup logic (ocd_id lookup → exact name match → fuzzy last-name match) into each new enrichment script.
+
+**Why it's wrong:** The dedup logic already exists and was carefully validated in v1.6 (Levenshtein threshold=1, specific handling of "Jr." suffixes, supervisor district type=LOCAL not COUNTY). Duplicating it creates maintenance risk — one copy gets updated, others drift.
+
+**Do this instead:** Extract `find_existing_politician_for_seat()` from `scrape_la_officials.py` into `utils.py`. All enrichment scripts import from utils. This is the v1.6 precedent (get_engine, next_ext_id already moved to utils.py when they were needed by multiple scripts).
+
+### Anti-Pattern 2: Global Transaction for Multi-City Enrichment Run
+
+**What people do:** Wrap the entire run (89 cities) in a single database transaction, so any one city failure rolls back all progress.
+
+**Why it's wrong:** The v1.6 `scrape_city_councils.py` explicitly solved this with per-city commits: "Per-city COMMIT (not global transaction) — one failed city won't roll back all." A government website going down or returning unexpected HTML should not undo enrichment for the other 88 cities.
+
+**Do this instead:** Follow the per-source commit pattern established in v1.6 — commit after each source/city, log failures, continue to the next source. This is directly documented in `scrape_city_councils.py`'s docstring.
+
+### Anti-Pattern 3: Overwriting Existing High-Quality Data with Scraped Data
+
+**What people do:** Unconditionally UPDATE `photo_origin_url` for all officials, replacing BallotReady-provided photos (which are professional headshots) with potentially lower-quality scraped government website photos.
+
+**Why it's wrong:** ~389 LA County officials have `data_source = 'scraped'` and empty `photo_origin_url`. But some officials may already have photos from BallotReady (those imported via `promote_scraped_officials.py` with `match_confidence = 'exact'` or `'likely'`). Overwriting those with government site photos is a downgrade in photo quality.
+
+**Do this instead:** Use a conditional UPDATE:
+```sql
+UPDATE essentials.politicians
+SET photo_origin_url = %s
+WHERE id = %s AND (photo_origin_url IS NULL OR photo_origin_url = '')
+```
+Only fill gaps; never overwrite existing photos. Same principle for `politician_images`: skip INSERT if a non-scraped image already exists for this politician.
+
+### Anti-Pattern 4: Hardcoding Building Photo URLs in Frontend
+
+**What people do:** Extend the existing hardcoded building photo configuration in `Dashboard.jsx` by adding 89 more `if/else` branches or a static map object.
+
+**Why it's wrong:** The v1.1 building photo implementation was explicitly designed as temporary. The `building_photos` table solves this correctly: dynamic lookup, attributions stored with photos, reusable for future regional expansion.
+
+**Do this instead:** Build the `building_photos` table + API endpoint (Step 1/3/7 above). The frontend makes one fetch per city. This is cleaner, attributions are tracked, and expansion to future regions requires only adding rows to the table — not frontend deploys.
+
+### Anti-Pattern 5: Fetching External Images at Request Time
+
+**What people do:** Add an API endpoint that proxies the government website image URL on each profile page load (to avoid cross-origin issues or CORS restrictions).
+
+**Why it's wrong:** Government websites are unreliable, have aggressive rate limiting, and may block Render's IP ranges. Proxying images adds latency to every profile page load and creates a new failure mode on the hot path.
+
+**Do this instead:** Store the URL in the database and have the browser fetch the image directly from the government site (or Wikimedia Commons). This is the current approach with `photo_origin_url` and it works. If cross-origin issues arise for specific sources, note them in the script and skip those sources rather than building a proxy.
 
 ---
 
@@ -515,80 +673,26 @@ Step 7 (VACUUM ANALYZE)
 
 | Scale | Architecture Notes |
 |-------|-------------------|
-| Current (100-1k users) | PostGIS GiST index handles thousands of geofence polygons in <50ms per point-in-polygon query; no changes needed |
-| Adding CA statewide | All CA congressional (52 districts), SLDU (40), SLDL (80), counties (58), school districts (~1000), places (~1500) — total ~2700 polygons; GiST index handles this without modification |
-| Adding all 50 states | ~50k polygons total; GiST index handles millions of polygons; partitioning by state is an option if queries slow beyond 200ms |
-| Annual TIGER refresh | Idempotent upsert means re-running import with updated shapefile updates geometries without duplication; safe to automate |
-
----
-
-## Anti-Patterns
-
-### Anti-Pattern 1: Importing Geofences Without Verifying Matching Districts
-
-**What people do:** Import 58 California county polygons into `geofence_boundaries`, then wonder why county supervisors are not showing up in search results.
-
-**Why it's wrong:** The lookup joins `geofence_boundaries.geo_id` to `essentials.districts.geo_id`. If no `districts` row with that `geo_id` exists, the join returns nothing. The geofence boundary is invisible at query time.
-
-**Do this instead:** Before importing, query `SELECT geo_id, district_type FROM essentials.districts WHERE state = 'CA'` to see what district records already exist from BallotReady. Import geofence boundaries whose `geo_id` matches existing district records first. Then identify which districts have no matching geofence (Step 5) and which districts have no politicians (Step 6).
-
-### Anti-Pattern 2: Using X0001 MTFCC Without Verifying BallotReady District geo_ids
-
-**What people do:** Build X0001 geo_ids as `{placeFIPS}{paddedWardNum}` using a formula, import them, then discover the BallotReady `districts` table uses a slightly different padding or prefix.
-
-**Why it's wrong:** The geo_id join is an exact string match. If BallotReady stored `064400000001` and you imported `06440000001` (different padding), the join fails silently.
-
-**Do this instead:** Before building X0001 geo_ids for LA City council, query `essentials.districts WHERE district_type = 'LOCAL' AND city = 'Los Angeles'` to see the exact format BallotReady used. Use that format exactly. The Bloomington precedent confirmed: BallotReady uses 12-character geo_ids (`18058600000X`), matching the `{7-digit place FIPS}{5-digit zero-padded ward}` formula.
-
-### Anti-Pattern 3: Importing All Politicians from an External Source Without Deduplication
-
-**What people do:** Scrape LA County official website, insert all records into `politicians` table, then discover duplicates when some officials were already imported from BallotReady with different `external_id` values.
-
-**Why it's wrong:** The `politicians` table has a unique index on `external_id`. Gap-fill imports that create new records (external_id = 0 or sentinel value) will not conflict with BallotReady records, but the resulting duplicate records will cause the same official to appear twice in search results.
-
-**Do this instead:** Before inserting any politician, query by full name + office title + geo_id combination to check if a record already exists in the DB. If a BallotReady record exists with a different external_id but the same name and district, update it rather than insert a new one. The politician gap-fill import should be additive only for officials who genuinely have no DB record.
-
-### Anti-Pattern 4: Skipping ST_MakeValid on Imported Geometries
-
-**What people do:** Insert raw geometry from shapefiles or ArcGIS without validation; some features pass silently but others cause later spatial query errors.
-
-**Why it's wrong:** Real-world boundary data from official sources (including ArcGIS FeatureServer) can contain topology issues (self-intersections, nested shells) that pass through the INSERT but break `ST_Contains` queries. This was encountered in Phase 31 (Bloomington District 2 had a nested shells issue from the ArcGIS source).
-
-**Do this instead:** Wrap every geometry in `ST_MakeValid()` before INSERT. For TIGER shapefiles this is rarely needed but costs nothing. For ArcGIS FeatureServer data it is essential.
-
-```sql
-ST_MakeValid(ST_GeomFromGeoJSON($1))
--- instead of
-ST_GeomFromGeoJSON($1)
-```
-
-### Anti-Pattern 5: Rebuilding the Import CLI as a Server-Side Admin Endpoint
-
-**What people do:** Add a new HTTP admin endpoint like `POST /admin/import/tiger?state=06&layer=cd` that downloads and imports TIGER shapefiles on-demand.
-
-**Why it's wrong:** TIGER downloads are large (hundreds of MB per state), take minutes to process, and are only run a few times per year. Wrapping this in an HTTP endpoint adds complexity, timeout risk, and running-in-production risk. The deprecated `cmd/bulk-import/main.go` pattern already shows this lesson was learned.
-
-**Do this instead:** Keep geofence imports as CLI tools that run locally or in a CI job. The import writes directly to Supabase via `DATABASE_URL`. The admin endpoint pattern (`POST /admin/import`) is appropriate for small, fast operations (like the original ZIP-based BallotReady warmer); it is not appropriate for large shapefile downloads.
+| Current (v1.7, ~389 LA County officials) | All enrichment fits in existing schema; single-region scope; pipeline runs in minutes |
+| Next region (e.g. Bloomington IN expansion) | Same scripts; add sources to politician_sources.json/city_sources.json; building_photos table already designed for multi-city; external_id counter already has dedicated ranges per milestone (v1.6 = -200001 range, v1.7 should use -300001 range) |
+| All CA counties | Same pattern; city_sources.json grows to ~500 cities; enrichment scripts are idempotent so re-runs are safe; no Go API changes needed |
 
 ---
 
 ## Sources
 
-- Direct source inspection: `EV-Backend/internal/essentials/geofence_lookup.go` — mtfccToDistrictTypes map, FindGeoIDsByPoint, FindPoliticiansByGeoMatches — HIGH confidence
-- Direct source inspection: `EV-Backend/internal/essentials/geofence_models.go` — GeofenceBoundary struct, geo_id unique constraint note — HIGH confidence
-- Direct source inspection: `EV-Backend/internal/essentials/models.go` — Politician, District, Office, Chamber models; external_id uniqueIndex — HIGH confidence
-- Direct source inspection: `EV-Backend/internal/essentials/setup.go` — GiST index creation, PostGIS extension init — HIGH confidence
-- Direct source inspection: `EV-Backend/cmd/bulk-import/main.go` — confirmed deprecated, no reuse value — HIGH confidence
-- Phase 31 SUMMARY (31-03-SUMMARY.md) — Bloomington ArcGIS FeatureServer pattern, ST_MakeValid precedent, geo_id format verification against districts table — HIGH confidence
-- Phase 31 RESEARCH (31-RESEARCH.md) — X0001 MTFCC, geo_id construction formula, geofence boundary data sources — HIGH confidence
-- [LA County Enterprise GIS Hub](https://egis-lacounty.hub.arcgis.com/) — supervisor districts and school district boundary datasets confirmed available — MEDIUM confidence (URLs discovered, field names not verified)
-- [LA City GeoHub — Council Districts](https://geohub.lacity.org/datasets/76104f230e384f38871eb3c4782f903d_13/about) — ArcGIS FeatureServer source for LA City council districts — MEDIUM confidence
-- [Census TIGER/Line Shapefiles](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) — annual shapefile releases, FTP access pattern — HIGH confidence
-- [TIGER 2025 Technical Documentation](https://www2.census.gov/geo/pdfs/maps-data/data/tiger/tgrshp2025/TGRSHP2025_TechDoc.pdf) — MTFCC codes and GEOID formats — HIGH confidence (Census authoritative source)
-- [ogr2ogr documentation](https://gdal.org/en/stable/programs/ogr2ogr.html) — reprojection flags, GeoJSON output format — HIGH confidence
-- [go-shapefile library](https://github.com/everystreet/go-shapefile) — evaluated as insufficient (dormant, limited shape types); ogr2ogr preferred — MEDIUM confidence
+- Direct source inspection: `EV-Backend/scripts/scrape_la_officials.py` — seat-first dedup, upsert logic, commit pattern, photo_origin_url precedent — HIGH confidence
+- Direct source inspection: `EV-Backend/scripts/scrape_city_councils.py` — per-city commit pattern, city_sources.json structure, ext_id counter initialization — HIGH confidence
+- Direct source inspection: `EV-Backend/scripts/utils.py` — v1.6 external ID range (-200001), get_engine(), load_env() — HIGH confidence
+- Direct source inspection: `EV-Backend/scripts/politician_sources.json` — 3 existing sources, config structure — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/models.go` — Politician, PoliticianImage, PoliticianContact, Degree, Experience structs; all target fields confirmed present — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/handlers.go` — GetPoliticianByID steps 1-7, OfficialOut struct, PoliticianProfileOut structure, contacts not yet included in response — HIGH confidence
+- Direct source inspection: `EV-Backend/internal/essentials/geofence_lookup.go` — mtfccToDistrictTypes, FindGeoIDsByPoint, FindPoliticiansByGeoMatches — HIGH confidence
+- Direct source inspection: `ev-ui/src/PoliticianProfile.jsx` — getImageURL() (images[]/photo_origin_url), getTermLine() (valid_from/valid_to) — HIGH confidence
+- Direct source inspection: `ev-ui/src/PoliticianCard.jsx` — imageSrc, name, title, subtitle props; no contacts rendering currently — HIGH confidence
+- Direct source inspection: `.planning/PROJECT.md` — v1.7 milestone goal, out-of-scope items (photo re-hosting, infrastructure migration) — HIGH confidence
 
 ---
 
-*Architecture research for: LA County Full Coverage + Repeatable Import Pipeline (v1.6)*
-*Researched: 2026-02-23*
+*Architecture research for: LA County Data Enrichment Pipeline Integration (v1.7)*
+*Researched: 2026-02-24*

@@ -1,333 +1,275 @@
-# Stack Research — v1.6 LA County Full Coverage
+# Stack Research — v1.7 LA County Data Enrichment
 
-**Domain:** Civic engagement platform — geofence expansion and politician data pipeline
-**Researched:** 2026-02-23
+**Domain:** Civic engagement platform — politician photo scraping, building photo acquisition, contact/term data extraction
+**Researched:** 2026-02-24
 **Confidence:** HIGH
 
 ---
 
 ## Scope
 
-This document covers only *new or changed* stack decisions for v1.6. The existing stack (Go 1.24.3 + Chi + GORM + PostgreSQL/PostGIS, React 19 + Vite + Tailwind, Python import scripts) is retained as-is. Research focuses on four areas:
+This document covers only *new or changed* stack decisions for v1.7. The existing stack is retained as-is:
 
-1. Bulk TIGER shapefile import into PostGIS
-2. LA County GIS Portal API/data access
-3. Politician record creation with deduplication against existing `external_id`-keyed records
-4. Repeatable import pipeline tooling
+- **Go 1.24.3 + Chi + GORM + PostgreSQL/PostGIS** — backend unchanged
+- **React 19 + Vite + Tailwind** — frontends unchanged
+- **Python import scripts + shared `utils.py`** — scraper infrastructure reused, extended
+- **`PoliticianImage`, `PoliticianContact`, `Degree`, `Experience` models** — already in DB schema, scripts write into them
+- **`politician_sources.json` / `city_sources.json`** — config-driven scraper pattern reused
+
+v1.7 adds four new capabilities to the existing Python scraper pipeline:
+1. Headshot photo scraping from city/county government websites
+2. City hall building photo acquisition via Wikimedia Commons API
+3. Contact/term data extraction (email, phone, website, term dates)
+4. Bio/education/experience enrichment where available
 
 ---
 
-## 1. TIGER Shapefile Import Pipeline
+## Recommended Stack
 
-### Current State
+### Core Technologies (Unchanged)
 
-The project already has working shapefile import scripts in `EV-Backend/scripts/`:
+| Technology | Version | Purpose | Why |
+|------------|---------|---------|-----|
+| Python | 3.13 | Scraping pipeline runtime | Already in use; venv at `scripts/.venv/lib/python3.13` |
+| psycopg2-binary | 2.9.11 | Direct PostgreSQL writes | Already in use across all scripts |
+| requests | 2.32.5 | HTTP fetching | Already in use; handles government site scraping |
+| beautifulsoup4 | 4.12.3 | HTML parsing | Already in use; 4.14.3 available but 4.12.3 is pinned and working |
+| rapidfuzz | 3.12.1 | Name deduplication matching | Already in use; 3.14.3 available but current version is correct |
 
-| Script | Status | What it does |
-|--------|--------|--------------|
-| `import_shapefiles_fixed.py` | Working, production-proven | Downloads TIGER shapefiles, reprojects to EPSG:4326, calls `gdf.to_postgis()` |
-| `import_ca_legislative_geofences.py` | Working, production-proven | CA congressional + state legislative districts with OCD-ID generation |
-| `import_missing_geofences.py` | Working, production-proven | IN SLDL + CD with upsert conflict handling |
-| `import_shapefiles.sh` | Superseded | Uses `ogr2ogr` into a staging table; replaced by Python scripts |
+### New Libraries for v1.7
 
-The Python approach (`geopandas` + `SQLAlchemy` + `to_postgis()`) is the established pattern. **Do not switch to `ogr2ogr` or introduce a Go-based shapefile reader.**
+| Library | Version | Purpose | Why Recommended |
+|---------|---------|---------|-----------------|
+| `playwright` | `1.58.0` | JS-rendered government sites | Already in `requirements.txt` at 1.44.0; upgrade to 1.58.0 for Chromium 133. Government council pages increasingly use React/Angular rendering that `requests` + BeautifulSoup cannot reach. The `fetch_html_with_fallback()` pattern in `scrape_city_councils.py` already uses Playwright as fallback — this is the established pattern to extend. |
+| `Pillow` | `12.1.1` | Image validation before DB write | NEW. Validates downloaded headshots are actual images (not 404 HTML, placeholder GIFs, or broken files) before inserting into `essentials.politician_images`. Verifies minimum dimensions. Pure Python, no system dependencies. |
 
-### Stack Decision: Keep Python + GeoPandas + SQLAlchemy
+### No New Libraries for Wikimedia Commons
 
-**Confidence: HIGH**
+The Wikimedia Commons MediaWiki API is accessed via plain `requests` GET calls to `https://commons.wikimedia.org/w/api.php` — no additional library needed. Authentication is not required for read-only image searches. The API accepts `action=query&list=allimages&aisearch={term}&aiprop=url|title&ailimit=5&format=json` with a descriptive `User-Agent` header. This is the same `requests` + JSON parsing pattern used in all existing scripts.
 
-GeoPandas 1.1.2 (current stable, PyPI) is the correct choice because:
-- `to_postgis()` handles EPSG reprojection, geometry type promotion, and schema-qualified table names in one call
-- `gdf.read_file()` handles shapefile, GeoJSON, and ArcGIS FeatureServer GeoJSON in a single API
-- Already in use across 5 existing scripts — no new learning curve
-- `sqlalchemy.create_engine()` with psycopg2 is the battle-tested pattern; the existing scripts already handle URL-encoding of special characters in Supabase passwords
+Do NOT add `pyWikiCommons`, `wikipedia`, `SPARQLWrapper`, or any Wikimedia SDK. `SPARQLWrapper` 2.0.0 has not been updated since March 2022 and is effectively unmaintained on PyPI. The plain `requests` approach is simpler and already proven in the codebase.
 
-**Why not `ogr2ogr` (shell):** The bash script in `import_shapefiles.sh` used `ogr2ogr` into a staging table then ran a SQL migration. This adds complexity (two-step import), requires GDAL installed on the developer machine, and lacks the per-record duplicate handling the Python scripts implement. The Python scripts supersede it.
+### No Google Places API for Building Photos
 
-**Why not a Go CLI for shapefiles:** There is no mature Go shapefile library that integrates cleanly with PostGIS. The `github.com/jonas-p/go-shp` package exists but lacks CRS reprojection and PostGIS geometry encoding. Adding a Go CLI for shapefile import would require wrapping GDAL via cgo. Python + GeoPandas is a complete, maintained solution.
+The existing `buildingImages.js` frontend approach (curated static image map with Wikimedia Commons sources and SVG fallback) is the correct pattern for building photos. Do NOT use Google Places API for building photo acquisition:
+- Places Photos API has per-request billing (even on free tier, 10K requests/month cap)
+- Photos are not permanently linkable URLs — they expire or require API key in URL
+- The project already has `/images/la-city-hall.jpg` and the Wikimedia Commons pattern from v1.1
 
-### Required Python Libraries
+For LA County city halls, acquire photos via Wikimedia Commons API (free, CC-licensed, permanent URLs) and store them as static assets in the `essentials` frontend, following the same pattern as existing building images.
 
-| Library | Version | Purpose | Notes |
-|---------|---------|---------|-------|
-| `geopandas` | `1.1.2` | Read shapefiles/GeoJSON, reproject, write to PostGIS | Latest stable; requires Python 3.10+ |
-| `SQLAlchemy` | `2.0.46` | Database engine for `to_postgis()` | `2.0.x` required; `2.1.0b1` is beta |
-| `psycopg2-binary` | `2.9.x` | PostgreSQL adapter | `-binary` variant avoids libpq compile dependency |
-| `requests` | `2.32.x` | Download Census files, ArcGIS FeatureServer GeoJSON | Already used in existing scripts |
-| `shapely` | `2.0.x` | Geometry validation (`ST_MakeValid` equivalent) | Pulled in automatically by geopandas |
+---
 
-### TIGER Shapefile Coverage for LA County
+## Integration Points
 
-The following Census TIGER files are needed for full LA County coverage. The existing `import_ca_legislative_geofences.py` already handles congressional + state legislative districts. Remaining gaps:
+### Photo Storage: `essentials.politician_images` Table (Existing)
 
-| TIGER File | MTFCC | What it covers | Census URL pattern |
-|-----------|-------|----------------|--------------------|
-| Counties | `G4020` | LA County boundary | `TIGER2024/COUNTY/tl_2024_us_county.zip` |
-| Unified School Districts | `G5420` | LAUSD + other unified districts | `TIGER2024/UNSD/tl_2024_06_unsd.zip` |
-| Congressional Districts (119th) | `G5200` | All CA CDs | `TIGER2024/CD/tl_2024_06_cd119.zip` |
-| State Senate (SLDU) | `G5210` | CA Senate districts | `TIGER2024/SLDU/tl_2024_06_sldu.zip` |
-| State Assembly (SLDL) | `G5220` | CA Assembly districts | `TIGER2024/SLDL/tl_2024_06_sldl.zip` |
+The `PoliticianImage` model already exists in Go (`models.go` line 159):
 
-The CA legislative and congressional TIGER files are **already imported** per v1.5 work. The county boundary and school district TIGER files need to be verified and imported if missing.
-
-**City boundary coverage** is NOT available via TIGER at the granularity needed for LA County city council districts. LA County has 88 incorporated cities each with their own city council. The TIGER `PLACE` layer (G4110) provides incorporated place boundaries but does **not** give city council ward sub-districts — those require the LA County GIS Portal (see Section 2).
-
-### Installation
-
-```bash
-pip install geopandas==1.1.2 SQLAlchemy==2.0.46 psycopg2-binary requests shapely
+```go
+type PoliticianImage struct {
+    ID           uuid.UUID
+    PoliticianID uuid.UUID
+    URL          string
+    Type         string  // "default" or "thumb"
+}
 ```
 
-Or add to a `requirements.txt` in `EV-Backend/scripts/`:
+Python scraper inserts rows via psycopg2:
+```python
+cur.execute("""
+    INSERT INTO essentials.politician_images (id, politician_id, url, type)
+    VALUES (%s, %s, %s, 'default')
+    ON CONFLICT DO NOTHING
+""", (str(uuid.uuid4()), politician_id, photo_url))
+```
+
+The Go API already reads `politician_images` and includes them in profile responses. No Go changes needed once rows are inserted.
+
+### Contact Storage: `essentials.politician_contacts` Table (Existing)
+
+The `PoliticianContact` model already exists in Go (`models.go` line 249):
+
+```go
+type PoliticianContact struct {
+    ID           uuid.UUID
+    PoliticianID uuid.UUID
+    Source       string   // "person" or "officeholder"
+    Email        string
+    Phone        string
+    Fax          string
+    ContactType  string   // "district", "capitol", etc.
+}
+```
+
+For scraped officials, use `Source = "officeholder"` and `ContactType = "district"`. Upsert pattern:
+```python
+cur.execute("""
+    INSERT INTO essentials.politician_contacts
+        (id, politician_id, source, email, phone, contact_type)
+    VALUES (%s, %s, 'officeholder', %s, %s, 'district')
+    ON CONFLICT (politician_id, source, contact_type) DO UPDATE SET
+        email = EXCLUDED.email,
+        phone = EXCLUDED.phone
+""", (str(uuid.uuid4()), politician_id, email, phone))
+```
+
+Note: The `politician_contacts` table currently lacks a composite unique constraint in the Go model definition — verify one exists or add it before running enrichment scripts. If not present, use `DO NOTHING` and manage upserts by querying first.
+
+### Term Data Storage: `essentials.offices` and `essentials.politicians` Tables
+
+Term start/end dates are not yet a distinct field in the schema. The `Politician` model has `ValidFrom` / `ValidTo` fields (line 14-15 in `models.go`) and `Office` has no start/end date fields. For v1.7:
+
+- Store `term_start` date in `politicians.valid_from` (string field, accepts ISO date)
+- Store `term_end` date in `politicians.valid_to` (string field)
+- Store `total_years_in_office` in `politicians.total_years_in_office` (int field)
+
+No schema changes needed — these fields exist.
+
+### Building Photo Storage: Static Assets in Frontend
+
+City hall building photos go to `essentials/public/images/` and are registered in `essentials/src/lib/buildingImages.js` in the `CURATED_LOCAL` map. This is a code change in the `essentials` React app, not a database operation.
+
+Pattern to follow (from `buildingImages.js` line 73-75):
+```js
+const CURATED_LOCAL = {
+  bloomington: '/images/bloomington-city-hall.jpg',
+  'los angeles': '/images/la-city-hall.jpg',
+  // Add new cities here: 'burbank': '/images/burbank-city-hall.jpg'
+};
+```
+
+Key matching is on `city.includes(key)` — the city name from politician data (lowercase). For LA County cities where the `representing_city` on council members may be the council chamber name rather than a clean city name, coordinate with the `buildSubtitle()` pattern to extract the city name.
+
+---
+
+## Supporting Libraries — Updated `requirements.txt`
+
+Current pinned versions in `EV-Backend/scripts/requirements.txt`:
+```
+geopandas==1.1.2
+SQLAlchemy==2.0.46
+psycopg2-binary==2.9.11
+shapely==2.0.7
+requests==2.32.5
+beautifulsoup4==4.12.3
+rapidfuzz==3.12.1
+pdfplumber==0.11.4
+playwright==1.44.0
+```
+
+For v1.7, add one library and upgrade Playwright:
 
 ```
 geopandas==1.1.2
 SQLAlchemy==2.0.46
-psycopg2-binary>=2.9
-requests>=2.32
-shapely>=2.0
+psycopg2-binary==2.9.11
+shapely==2.0.7
+requests==2.32.5
+beautifulsoup4==4.12.3
+rapidfuzz==3.12.1
+pdfplumber==0.11.4
+playwright==1.58.0        # Upgraded from 1.44.0 — Chromium 133, better JS site support
+Pillow==12.1.1            # NEW — image validation before DB insert
 ```
+
+After upgrading Playwright, run `playwright install chromium` to download the updated browser binary.
 
 ---
 
-## 2. LA County GIS Portal Data Access
+## Wikimedia Commons API — How to Use
 
-### Available Endpoints (Verified)
-
-LA County maintains ArcGIS REST services at `arcgis.gis.lacounty.gov`. The relevant layers are:
-
-| Dataset | Endpoint | Layer ID | Format |
-|---------|----------|----------|--------|
-| Supervisorial Districts (Current) | `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27/query` | 27 | GeoJSON (with `?f=geojson&outSR=4326&where=1=1`) |
-| City Boundaries (polygons) | `https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer/0/query` | 0 | GeoJSON |
-| School District Boundaries (LACOE) | `https://egis2.lacounty.gov/arcgis/rest/services/LACOE/HARS/MapServer` | varies | GeoJSON |
-
-**Critical note on Supervisorial Districts:** The Political_Boundaries MapServer at layer 27 uses California State Plane Coordinate System, Zone 5 (EPSG:2229), **not** WGS84. Always pass `outSR=4326` in the query parameters to get WGS84 output. Failure to specify `outSR=4326` will produce coordinates in US survey feet that will silently corrupt the PostGIS geometry.
-
-**Critical note on record limits:** ArcGIS FeatureServer/MapServer services impose a `maxRecordCount` (typically 1000). LA County has 88 incorporated cities — this fits within a single request. But school districts may require pagination. Use `resultOffset` and `resultRecordCount` parameters for pagination when needed.
-
-### Stack Decision: `requests` + `geopandas.GeoDataFrame.from_features()` for ArcGIS Data
-
-**Confidence: HIGH**
-
-Pattern already established by `import_school_board_districts.py`:
+No additional library needed. Query pattern using existing `requests`:
 
 ```python
 import requests
-import geopandas as gpd
 
-url = (
-    "https://arcgis.gis.lacounty.gov/arcgis/rest/services/"
-    "LACounty_Dynamic/Political_Boundaries/MapServer/27/query"
-    "?where=1%3D1&outFields=DISTRICT,LABEL&outSR=4326&f=geojson"
-)
-resp = requests.get(url)
-gdf = gpd.read_file(resp.text)  # or gpd.GeoDataFrame.from_features(resp.json()['features'])
+WIKIMEDIA_USER_AGENT = "EmpoweredVote/1.7 (contact@empowered.vote)"
+
+def search_wikimedia_image(search_term: str) -> str | None:
+    """Search Wikimedia Commons for an image. Returns URL or None."""
+    params = {
+        "action": "query",
+        "list": "allimages",
+        "aisearch": search_term,
+        "aiprop": "url|title|mime",
+        "aisort": "name",
+        "ailimit": "5",
+        "format": "json",
+    }
+    resp = requests.get(
+        "https://commons.wikimedia.org/w/api.php",
+        params=params,
+        headers={"User-Agent": WIKIMEDIA_USER_AGENT},
+        timeout=10,
+    )
+    resp.raise_for_status()
+    images = resp.json().get("query", {}).get("allimages", [])
+    # Filter: JPEG/PNG only, skip icons/logos
+    for img in images:
+        mime = img.get("mime", "")
+        url = img.get("url", "")
+        if mime in ("image/jpeg", "image/png") and "city_hall" in url.lower():
+            return url
+    return images[0]["url"] if images else None
 ```
 
-`geopandas.read_file()` can read a GeoJSON string or URL directly. No additional ArcGIS SDK needed.
+Search terms for city hall building photos: `"{City Name} City Hall"` as the `aisearch` parameter. For LA County Supervisors: `"Los Angeles County Hall of Administration"` or `"Kenneth Hahn Hall of Administration"`.
 
-**Why not the ArcGIS Python API (`arcgis` package):** The `arcgis` package is Esri's official SDK but requires authentication for many operations, adds a large dependency (~50MB), and is overkill for read-only GeoJSON queries. The `requests` + `read_file()` pattern is simpler and already proven in the codebase.
-
-### MTFCC Codes for LA County GIS Data
-
-LA County GIS Portal data does **not** use MTFCC codes — those are TIGER-specific. The import pipeline must assign MTFCC codes manually when inserting into `essentials.geofence_boundaries`:
-
-| Source | What it represents | Assign MTFCC | District type |
-|--------|-------------------|--------------|---------------|
-| Supervisorial Districts | Board of Supervisors districts (5 districts) | `G4020` | `COUNTY` |
-| City Boundaries | Incorporated city polygons (88 cities) | `G4110` | `LOCAL_EXEC` |
-| City Council Districts | Sub-district wards within cities | `X0001` | `LOCAL` |
-| School District Boundaries | LAUSD + unified districts | `G5420` | `SCHOOL` |
-
-**The `geo_id` field** must be set consistently. For supervisorial districts, use `06037SD{N}` format (e.g., `06037SD1`). For city boundaries, prefer Census GEOID (FIPS) if available from the ArcGIS source; fall back to `lacounty_city_{id}` if not. Consistency matters because `essentials.districts.geo_id` must match `essentials.geofence_boundaries.geo_id` for the lookup to work.
-
-### No New Libraries Needed for LA County GIS
-
-`requests` is already in use across existing scripts. `geopandas.read_file()` already handles GeoJSON. No new Python packages are required.
+Rate limit: No hard limit on read requests; send requests in series (not parallel). The free API does not require API keys or OAuth.
 
 ---
 
-## 3. Politician Record Creation with Deduplication
+## Headshot Scraping Strategy
 
-### Current Deduplication Approach
-
-The codebase has an established pattern in `promote_scraped_officials.py`:
-
-1. Scrape or import raw officials into `essentials.scraped_officials` staging table
-2. Run name-matching against `essentials.politicians` (exact → likely → possible → none)
-3. For matched records: update existing district `geo_id` and `mtfcc` fields
-4. For unmatched records: create new politicians, offices, districts with synthetic `external_id` (negative integers starting at -100001)
-5. Mark scraped records as `promoted`
-
-This pattern is correct. **Do not replace it.** The key insight is that `external_id` is the primary deduplication key — it comes from BallotReady and is globally unique. For locally-created records (from scraping/GIS), negative synthetic `external_id` values avoid collision.
-
-### Stack Decision: psycopg2 with `ON CONFLICT DO NOTHING` / `DO UPDATE`
-
-**Confidence: HIGH**
-
-For the geofence import pipeline, use `psycopg2.extras.execute_values()` for bulk upserts:
+The existing `scrape_city_councils.py` already has `fetch_html_with_fallback()` which tries `requests` first, falls back to Playwright. For headshot extraction, extend the generic parser:
 
 ```python
-from psycopg2.extras import execute_values
+def extract_headshot_from_page(soup, official_name: str) -> str | None:
+    """Extract headshot URL for a named official from a parsed council page.
 
-# Upsert geofence boundaries (conflict on geo_id + mtfcc)
-execute_values(cur, """
-    INSERT INTO essentials.geofence_boundaries
-        (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
-    VALUES %s
-    ON CONFLICT (geo_id, mtfcc) DO UPDATE SET
-        geometry = EXCLUDED.geometry,
-        name = EXCLUDED.name,
-        imported_at = EXCLUDED.imported_at
-""", rows)
+    Strategy:
+    1. Find img tags near the official's name text
+    2. Filter: skip logos, icons, background images
+    3. Return absolute URL or None
+    """
+    from urllib.parse import urljoin
+    # Look for heading/card containing the name, extract nearby img
+    # Filter: width > 50px (src attribute or adjacent style), skip .svg, skip generic site logos
+    ...
 ```
 
-For politician records, use `ON CONFLICT (external_id) DO NOTHING` to preserve existing BallotReady data:
+Image validation with Pillow before DB insert:
 
 ```python
-execute_values(cur, """
-    INSERT INTO essentials.politicians
-        (id, external_id, first_name, last_name, full_name, party, source, ...)
-    VALUES %s
-    ON CONFLICT (external_id) DO NOTHING
-""", rows)
+from PIL import Image
+import io
+
+def is_valid_headshot(image_bytes: bytes, min_px: int = 80) -> bool:
+    """Validate bytes are a real image with minimum dimensions."""
+    try:
+        img = Image.open(io.BytesIO(image_bytes))
+        w, h = img.size
+        return w >= min_px and h >= min_px
+    except Exception:
+        return False
 ```
 
-**Why `DO NOTHING` for politicians:** BallotReady-sourced records are richer (photos, bio, experience) than scraped records. If a politician already exists from BallotReady, the scraped data should not overwrite it.
-
-**Why `execute_values` not `to_postgis`:** `to_postgis()` is ideal for geometry data (handles WKB encoding automatically). For non-geometry politician records, `execute_values()` is faster, more explicit about conflict handling, and easier to audit.
-
-### Required psycopg2 Usage Pattern
-
-The existing scripts use a consistent URL-encoding pattern for Supabase passwords containing special characters:
-
-```python
-from urllib.parse import urlparse, quote_plus, urlunparse
-
-def get_engine():
-    raw_url = os.getenv("DATABASE_URL")
-    parsed = urlparse(raw_url)
-    if parsed.password:
-        encoded_pw = quote_plus(parsed.password)
-        netloc = f"{parsed.username}:{encoded_pw}@{parsed.hostname}"
-        if parsed.port:
-            netloc += f":{parsed.port}"
-        safe_url = urlunparse((parsed.scheme, netloc, parsed.path,
-                               parsed.params, parsed.query, parsed.fragment))
-    else:
-        safe_url = raw_url
-    return create_engine(safe_url)
-```
-
-Every new import script must use this pattern. Supabase connection strings contain `@` in the password, which breaks naive URL parsing.
-
-### Synthetic External ID Strategy
-
-For records created from GIS/scrape sources (not BallotReady), use negative integers:
-
-```python
-EXT_ID_COUNTER = -200001  # Start at -200001 for v1.6 (v1.5 used -100001)
-
-def next_ext_id():
-    global EXT_ID_COUNTER
-    val = EXT_ID_COUNTER
-    EXT_ID_COUNTER -= 1
-    return val
-```
-
-Using a new starting range (-200001) avoids collisions with any synthetic IDs created during the `promote_scraped_officials.py` run in v1.5.
-
----
-
-## 4. Repeatable Import Pipeline Tooling
-
-### Current Pipeline Structure
-
-The existing scripts are standalone one-off importers. The v1.6 goal is a repeatable pipeline for future regional expansion. The architecture should remain **a collection of Python scripts** — not a Go CLI, not a Makefile-based build system, not a scheduled job system.
-
-Rationale: The team is 2-3 devs. Scripts are easier to audit, modify, and re-run selectively than compiled CLI tools or workflow systems. The import pipeline runs maybe quarterly — not a production hot path.
-
-### Recommended Structure for v1.6
-
-```
-EV-Backend/scripts/
-├── requirements.txt          # Pin all Python dependencies
-├── utils.py                  # Shared: get_engine(), load_env(), next_ext_id(), import_individually()
-├── import_tiger_ca.py        # TIGER shapefiles for California (already largely done)
-├── import_lacounty_gis.py    # LA County GIS Portal: supervisor districts, city boundaries
-├── import_lacounty_officials.py  # Politician records from lavote.gov scraper output
-├── promote_officials.py      # Deduplication and promotion to essentials schema
-└── verify_lacounty.py        # Point-in-polygon verification for test addresses
-```
-
-The key structural improvement over the current state is a shared `utils.py`. All scripts currently duplicate the `get_engine()` / `load_env()` / URL-encoding logic. Extract into a single module.
-
-### Stack Decision: Shared `utils.py`, No New Frameworks
-
-**Confidence: HIGH**
-
-Do not add:
-- `click` or `argparse` CLI frameworks — the existing `argparse` usage in `lavote_scraper.py` is sufficient
-- `luigi`, `prefect`, `airflow` task scheduling — way too heavy for a quarterly one-off import
-- `alembic` migrations for schema changes — GORM AutoMigrate handles schema in Go
-- `poetry` or `pipenv` — a plain `requirements.txt` with pinned versions is sufficient for a 5-file script collection
-
-### `.env.local` Autodiscovery Pattern
-
-Every script should auto-discover `DATABASE_URL` from `../.env.local` (the EV-Backend root env file). This pattern is already in `import_ca_legislative_geofences.py` and `promote_scraped_officials.py`:
-
-```python
-def load_env():
-    if os.getenv("DATABASE_URL"):
-        return
-    env_path = Path(__file__).parent.parent / ".env.local"
-    if env_path.exists():
-        with open(env_path) as f:
-            for line in f:
-                line = line.strip()
-                if line.startswith("DATABASE_URL="):
-                    os.environ["DATABASE_URL"] = line.split("=", 1)[1]
-                    return
-    print("Error: DATABASE_URL not set and .env.local not found")
-    sys.exit(1)
-```
-
-Every new script must include this function verbatim (or import from `utils.py` once that exists).
-
----
-
-## Recommended Stack (New Additions Only)
-
-### Core Technologies
-
-No new core technologies. The import pipeline is Python scripts that connect to the existing PostgreSQL/PostGIS database.
-
-### Supporting Libraries (Import Pipeline)
-
-| Library | Version | Purpose | When to Use |
-|---------|---------|---------|-------------|
-| `geopandas` | `1.1.2` | Read shapefiles, GeoJSON; reproject; write to PostGIS | All geometry imports (TIGER + ArcGIS GeoJSON) |
-| `SQLAlchemy` | `2.0.46` | Engine for `to_postgis()` | Geometry imports only; use raw psycopg2 for politician records |
-| `psycopg2-binary` | `>=2.9` | Direct DB operations, bulk upserts | Politician/district/office record creation |
-| `requests` | `>=2.32` | Download TIGER ZIPs, fetch ArcGIS GeoJSON | All HTTP downloads |
-| `shapely` | `>=2.0` | Geometry validation, `ST_MakeValid` equivalent | When ArcGIS data has geometry errors (call `.buffer(0)` to fix) |
-| `beautifulsoup4` | `>=4.12` | HTML parsing for lavote.gov scraper | Already in use; only for scraper scripts |
-
-No new Go packages needed. No new npm packages needed. No changes to the existing Go backend for geofence data loading.
+Download the image, validate, then insert the URL (not the bytes — store URLs only, per the existing pattern).
 
 ---
 
 ## Alternatives Considered
 
-| Recommended | Alternative | Why Not |
-|-------------|-------------|---------|
-| Python `geopandas` scripts | Go CLI with CGO + GDAL | No mature Go shapefile library; CGO introduces build complexity; GDAL dependency on the machine anyway |
-| Python `geopandas` scripts | `ogr2ogr` shell scripts | Two-step import (staging → final); requires GDAL; lacks per-record conflict handling; already superseded |
-| `psycopg2` + `execute_values` for politician records | `to_postgis()` for all data | `to_postgis()` doesn't support `ON CONFLICT`; upsert logic requires raw SQL |
-| `requirements.txt` with pinned versions | `poetry`/`pipenv` | Import scripts are not a Python package; lockfile tooling adds overhead for 5 scripts run quarterly |
-| ArcGIS REST GeoJSON via `requests` | `arcgis` Python package | Esri SDK is 50MB, requires authentication tokens, overkill for read-only GeoJSON queries |
-| Negative synthetic `external_id` values | UUID-based identifiers | `external_id` is INT in the schema; maintaining int type avoids schema changes |
+| Recommended | Alternative | When to Use Alternative |
+|-------------|-------------|-------------------------|
+| Wikimedia Commons REST API via `requests` | `pyWikiCommons` library | Never — `pyWikiCommons` 0.2.0 is a thin wrapper that adds a dependency for no benefit; raw `requests` is already in use |
+| Wikimedia Commons REST API via `requests` | Google Places API for building photos | Never for this project — Places API has billing complexity, non-permanent URLs, and per-request cost; Wikimedia is free, CC-licensed, permanent URLs |
+| Wikimedia Commons REST API via `requests` | Wikidata SPARQL (SPARQLWrapper) | Not needed for this scope — SPARQL overkill for building photo lookup; SPARQLWrapper is effectively unmaintained on PyPI (last release March 2022) |
+| `Pillow==12.1.1` for image validation | In-memory `imghdr` stdlib | `imghdr` deprecated in Python 3.11+, removed in 3.13; Pillow is the correct replacement |
+| Playwright `1.58.0` (upgraded from `1.44.0`) | Stay on `1.44.0` | If Chromium browser binary disk space is a constraint (unlikely); `1.58.0` adds better mobile viewport support useful for government sites optimized for mobile |
+| Store photo URLs in `politician_images` | Download to Supabase Storage | Out of scope for v1.7 — `TODO` comment in `scrape_la_officials.py` explicitly defers this. Scraped URLs work now; infrastructure concern for later milestone |
+| Static assets in `essentials/public/images/` for building photos | Database-backed building photo URLs | Static is simpler — no API endpoint needed, no DB row, no frontend fetch; existing `buildingImages.js` already uses this pattern |
 
 ---
 
@@ -335,104 +277,92 @@ No new Go packages needed. No new npm packages needed. No changes to the existin
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| `ogr2ogr` (GDAL CLI) | Requires system GDAL install; staging table pattern; superseded by Python scripts | `geopandas.to_postgis()` |
-| `arcgis` Python SDK | 50MB dependency; auth required; overkill for GeoJSON reads | `requests` + `geopandas.read_file()` |
-| `luigi`/`prefect`/`airflow` | Heavy task orchestration for a quarterly one-off import | Plain Python scripts with shared `utils.py` |
-| `alembic` migrations | Schema managed by GORM AutoMigrate in Go server | Keep GORM AutoMigrate; script-only schema changes via `db.Exec()` |
-| Any new Go packages | No Go code needed for data import | All import work stays in Python scripts |
-| `geoalchemy2` directly | Only needed if writing raw geometry SQL; `to_postgis()` handles it | `geopandas.to_postgis()` uses it internally |
-| TIGER `PLACE` for LA city council | TIGER provides city *boundaries*, not city *council ward sub-districts* | LA County eGIS ArcGIS FeatureServer per city |
+| `SPARQLWrapper` | Effectively unmaintained on PyPI (last release 2022); adds complexity for SPARQL queries that can be made with raw `requests` to Wikidata endpoint | `requests.get("https://query.wikidata.org/sparql", params={"query": sparql_string, "format": "json"})` — same API, no extra dependency |
+| `pyWikiCommons` | Thin wrapper, adds PyPI dependency, no benefits over raw `requests` to `commons.wikimedia.org/w/api.php` | Plain `requests` with User-Agent header |
+| `google-maps-services-python` or Google Places API Photos | Billing per request, non-permanent photo URLs, 10K free/month cap applies to existing autocomplete use | Wikimedia Commons API (free, CC-licensed, permanent URLs) |
+| `wikipedia` Python library | Heavyweight for this use case; designed for article content, not image fetching | Raw `requests` to MediaWiki API |
+| Async scraping (`asyncio`, `aiohttp`) | Government sites need polite serial requests anyway; overhead for ~389 officials is not a bottleneck; adds complexity to simple scripts | Synchronous `requests` + Playwright sync API (already in use) |
+| `Scrapy` framework | Heavy framework for one-off ~389-record enrichment; config-driven `politician_sources.json` pattern is sufficient | Extend existing config-driven `scrape_*.py` pattern |
+| Image re-hosting to Supabase Storage | Explicitly out of scope in PROJECT.md; scraped URLs work for now | Keep scraped photo URLs, link directly from DB |
+| Any new Go packages | No Go changes needed — `PoliticianImage`, `PoliticianContact` models and API endpoints already exist | Python scripts write directly to existing tables |
+| Any new npm packages | Building photos go to `public/images/` as static assets; `buildingImages.js` code change only | Extend `CURATED_LOCAL` map in `buildingImages.js` |
 
 ---
 
-## Stack Patterns by Use Case
+## Stack Patterns by Task
 
-**If importing TIGER shapefiles (congressional, state legislative, county, school):**
-- Use `geopandas.read_file(shp_path)` to load
-- Filter by `STATEFP == '06'` (California)
-- Reproject with `.to_crs("EPSG:4326")` if not already WGS84
-- Assign `mtfcc` from the TIGER filename/field
-- Generate OCD-ID from GEOID using the established `geoid_to_ocd_id()` pattern in `import_ca_legislative_geofences.py`
-- Call `gdf.to_postgis("geofence_boundaries", engine, schema="essentials", if_exists="append")`
-- Handle `UniqueViolation` by falling back to `import_individually()` (already in 3 scripts)
+**If scraping headshot photos from government websites:**
+- Use existing `fetch_html_with_fallback()` from `scrape_city_councils.py`
+- Extract img src URLs near the official's name element
+- Download the image bytes with `requests.get(img_url)`
+- Validate with `Pillow.Image.open()` — require minimum 80x80px, JPEG or PNG
+- Store the original URL (not bytes) in `essentials.politician_images` via psycopg2
+- Skip if image already exists: `SELECT 1 FROM essentials.politician_images WHERE politician_id = %s LIMIT 1`
 
-**If importing LA County GIS Portal data (supervisor districts, city boundaries):**
-- Fetch with `requests.get(url + "?where=1%3D1&outSR=4326&f=geojson")`
-- Parse with `gpd.read_file(resp.text)` or `gpd.GeoDataFrame.from_features(resp.json()['features'])`
-- Manually assign `mtfcc` based on the layer type (G4020 for supervisorial, G4110 for city boundaries)
-- Generate a consistent `geo_id` (e.g., `06037SD1` for Supervisor District 1)
-- Import via `to_postgis()` with `if_exists="append"`
-- Handle `outSR=4326` — the Political_Boundaries MapServer uses CA State Plane (EPSG:2229) by default; **always** pass `outSR=4326`
+**If acquiring city hall building photos for 89 LA County cities:**
+- Query Wikimedia Commons API: `GET https://commons.wikimedia.org/w/api.php?action=query&list=allimages&aisearch={City+Name+City+Hall}&format=json`
+- Filter results: JPEG/PNG only, URL contains "city_hall" or "hall" in path
+- Download image, validate with Pillow, store in `essentials/public/images/{city-slug}-city-hall.jpg`
+- Add entry to `CURATED_LOCAL` map in `essentials/src/lib/buildingImages.js`
+- SVG fallback already handles cities where no photo is found — no code needed for fallback case
 
-**If creating politician records from scraped/GIS data:**
-- Always check for `external_id` conflict first
-- Use negative synthetic `external_id` starting at -200001 (not -100001, already used in v1.5)
-- Use `psycopg2.extras.execute_values()` with `ON CONFLICT (external_id) DO NOTHING`
-- Always link district `geo_id` to a corresponding `geofence_boundaries.geo_id` (import geofences first)
-- Mark with `source = 'scraped'` or `source = 'lacounty_gis'` for auditability
+**If extracting contact info (email, phone, website) from government sites:**
+- Parse with BeautifulSoup; look for `mailto:` links (email), `tel:` links (phone), official website links
+- Common regex patterns: `r'[\w\.-]+@[\w\.-]+\.\w+'` for email, `r'\(?\d{3}\)?[\s\-]\d{3}[\s\-]\d{4}'` for phone
+- Upsert into `essentials.politician_contacts` with `source = 'officeholder'`, `contact_type = 'district'`
+
+**If extracting term/election dates:**
+- Parse from government bio pages: look for "elected", "term", "took office" patterns
+- Store as ISO date strings in `politicians.valid_from` (term start) and `politicians.valid_to` (term end)
+- For `total_years_in_office`, compute from dates or use scraped "X years" text
+- These fields are already in the `Politician` model — no schema changes needed
+
+**If a government site blocks requests or requires JS:**
+- Already handled by `fetch_html_with_fallback()` in `scrape_city_councils.py`
+- Playwright 1.58.0 handles JS-rendered pages
+- School board sites (already established in v1.6) use hardcoded rosters when Cloudflare blocks — apply same pattern for blocked city sites
 
 ---
 
 ## Version Compatibility
 
-| Package | Version | Compatible With | Notes |
-|---------|---------|-----------------|-------|
-| `geopandas` | `1.1.2` | `SQLAlchemy 2.0.x` | geopandas 1.1 raised minimum tested SA to 2.0 |
-| `geopandas` | `1.1.2` | `psycopg2 2.9.x` | Supports both psycopg2 and psycopg (v3) |
-| `SQLAlchemy` | `2.0.46` | `psycopg2-binary 2.9.x` | psycopg2 remains default dialect for `postgresql://` URLs in SA 2.0 |
-| `SQLAlchemy` | `2.0.46` | `geopandas 1.1.2` | SA 2.1 is beta only; use 2.0.46 |
-| `shapely` | `2.0.x` | `geopandas 1.1.2` | geopandas 1.x requires shapely 2.x |
-| `psycopg2-binary` | `2.9.x` | `PostgreSQL 15` (Supabase) | -binary avoids libpq compile; works for import scripts |
+| Package | Current Version | v1.7 Version | Notes |
+|---------|----------------|--------------|-------|
+| `playwright` | `1.44.0` | `1.58.0` | Run `playwright install chromium` after upgrade; sync API unchanged |
+| `Pillow` | not installed | `12.1.1` | Requires Python 3.9+; current env is Python 3.13 — compatible |
+| `beautifulsoup4` | `4.12.3` | `4.12.3` | 4.14.3 available; stay pinned for stability |
+| `requests` | `2.32.5` | `2.32.5` | Current; no upgrade needed |
+| `rapidfuzz` | `3.12.1` | `3.12.1` | 3.14.3 available; stay pinned for stability |
+| `pdfplumber` | `0.11.4` | `0.11.4` | 0.11.9 available; no v1.7 PDF extraction needed beyond existing SOS PDF work |
 
 ---
 
-## LA County GIS Portal — Verified Endpoints
+## External API Requirements
 
-| Dataset | URL | Notes |
-|---------|-----|-------|
-| Supervisorial Districts (Current) | `https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27/query?where=1%3D1&outFields=DISTRICT,LABEL&outSR=4326&f=geojson` | 5 districts; default CRS is EPSG:2229 — always add `outSR=4326` |
-| City Boundaries (polygons) | `https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer/0/query?where=1%3D1&outSR=4326&f=geojson` | 88 incorporated cities; maintained by LA County DPW |
-| School Districts (LACOE) | `https://egis2.lacounty.gov/arcgis/rest/services/LACOE/HARS/MapServer` | Multiple layers; verify active layer ID before importing |
-
-These endpoints were verified February 2026 (HIGH confidence — confirmed via direct ArcGIS REST API responses).
-
----
-
-## Integration with Existing Go/PostGIS Stack
-
-No changes to the Go backend are needed for this milestone. The import pipeline writes directly to the same `essentials.geofence_boundaries` and `essentials.politicians` tables that the Go backend reads from.
-
-The existing `FindGeoIDsByPoint()` and `FindPoliticiansByGeoMatches()` in `geofence_lookup.go` will automatically return LA County officials once:
-1. Geofence boundaries are imported (geofence_boundaries rows with correct geo_id + mtfcc)
-2. Politician records exist (politicians + offices + districts rows with matching geo_id on districts)
-
-The `mtfccToDistrictTypes` map in `geofence_lookup.go` already handles the MTFCC codes needed:
-
-```go
-"G4020": {"COUNTY", "JUDICIAL"},    // County — Supervisorial districts
-"G4110": {"LOCAL", "LOCAL_EXEC"},   // Incorporated Place — City boundaries
-"G5420": {"SCHOOL"},                // Unified School District
-"X0001": {"LOCAL"},                 // City council sub-districts
-```
-
-No Go code changes are needed unless a new MTFCC is introduced.
+| API | Auth Required | Rate Limit | Cost | Usage in v1.7 |
+|-----|--------------|------------|------|---------------|
+| Wikimedia Commons MediaWiki API | None (read-only) | No hard limit; serial requests recommended | Free | Building photo search for 89 cities |
+| Government websites (lacounty.gov, lacity.gov, city sites) | None | Varies; use 1-2s delay between requests | Free | Headshot and contact scraping |
+| Google Maps Places API | YES (existing key) | 28K requests/month free (autocomplete SKU) | Existing billing | NOT used for v1.7 — no new Places API calls |
 
 ---
 
 ## Sources
 
-- `EV-Backend/scripts/import_ca_legislative_geofences.py` — established Python + geopandas import pattern, HIGH confidence
-- `EV-Backend/scripts/promote_scraped_officials.py` — established dedup pattern, HIGH confidence
-- `EV-Backend/internal/essentials/geofence_lookup.go` — MTFCC → district_type mapping, HIGH confidence
-- [GeoPandas 1.1.2 changelog](https://geopandas.org/en/stable/docs/changelog.html) — current stable release February 2026, HIGH confidence
-- [geopandas.GeoDataFrame.to_postgis docs](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.to_postgis.html) — requires SQLAlchemy 2.0 + psycopg2, HIGH confidence
-- [SQLAlchemy releases](https://github.com/sqlalchemy/sqlalchemy/releases) — 2.0.46 current stable January 2026, HIGH confidence
-- [arcgis.gis.lacounty.gov Political_Boundaries MapServer/27](https://arcgis.gis.lacounty.gov/arcgis/rest/services/LACounty_Dynamic/Political_Boundaries/MapServer/27) — Supervisorial Districts endpoint verified, HIGH confidence
-- [dpw.gis.lacounty.gov CityBoundaries MapServer](https://dpw.gis.lacounty.gov/dpw/rest/services/CityBoundaries/MapServer) — City boundaries polygon service, HIGH confidence
-- [psycopg2 docs execute_values](https://www.psycopg.org/docs/) — psycopg2 2.9.11 current stable, HIGH confidence
-- Census TIGER/Line FTP `https://www2.census.gov/geo/tiger/TIGER2024/` — directory structure verified, HIGH confidence
+- `EV-Backend/scripts/requirements.txt` — current pinned dependencies, HIGH confidence
+- `EV-Backend/scripts/scrape_city_councils.py` — `fetch_html_with_fallback()` Playwright pattern, HIGH confidence
+- `EV-Backend/scripts/scrape_la_officials.py` — `photo_origin_url` TODO comment, scraper architecture, HIGH confidence
+- `EV-Backend/internal/essentials/models.go` — `PoliticianImage`, `PoliticianContact`, `Degree`, `Experience` schema, HIGH confidence
+- `essentials/src/lib/buildingImages.js` — `CURATED_LOCAL` static asset pattern, `getBuildingImages()` function, HIGH confidence
+- [Playwright Python PyPI](https://pypi.org/project/playwright/) — v1.58.0 current stable January 2026, HIGH confidence (verified PyPI)
+- [Pillow PyPI](https://pypi.org/project/pillow/) — v12.1.1 current stable February 2026, HIGH confidence (verified via WebSearch)
+- [Wikimedia Commons API:Etiquette](https://www.mediawiki.org/wiki/API:Etiquette) — no auth needed for reads, serial requests recommended, User-Agent required since late 2025, MEDIUM confidence (verified via WebSearch)
+- [Wikimedia Rate Limits](https://api.wikimedia.org/wiki/Rate_limits) — read requests have no hard limit, MEDIUM confidence (verified via WebSearch)
+- [pdfplumber PyPI](https://pypi.org/project/pdfplumber/) — v0.11.9 current stable January 2026 (not needed for v1.7), HIGH confidence (verified via WebFetch)
+- [SPARQLWrapper PyPI](https://pypi.org/project/SPARQLWrapper/) — v2.0.0, last release March 2022, effectively unmaintained, HIGH confidence (verified via WebSearch)
+- [SQLAlchemy releases](https://www.sqlalchemy.org/blog/) — 2.0.46 stable January 2026, HIGH confidence (verified via WebSearch)
 
 ---
 
-*Stack research for: v1.6 LA County Full Coverage — geofence expansion and politician data pipeline*
-*Researched: 2026-02-23*
+*Stack research for: v1.7 LA County Data Enrichment — headshot photos, building photos, contact/term data extraction*
+*Researched: 2026-02-24*
