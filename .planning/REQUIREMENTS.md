@@ -44,7 +44,7 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 - [x] **PIPE-01**: Enrichment scripts are idempotent and config-driven (re-runnable without duplicates)
 - [ ] **PIPE-02**: Scraping respects rate limits with delays between requests
 - [ ] **PIPE-03**: Coverage report validates 80%+ headshot and contact targets
-- [ ] **PIPE-04**: Pipeline designed for future regional expansion (config-driven, not LA-specific)
+- [x] **PIPE-04**: Pipeline designed for future regional expansion (config-driven, not LA-specific)
 
 ## Future Requirements
 
@@ -108,7 +108,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PIPE-01 | Phase 39 | Complete |
 | PIPE-02 | Phase 42 | Pending |
 | PIPE-03 | Phase 44 | Pending |
-| PIPE-04 | Phase 39 | Pending |
+| PIPE-04 | Phase 39 | Complete |
 
 **Coverage:**
 - v1.7 requirements: 21 total

@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 39 of 44 (Schema and Infrastructure Preparation)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-02-25 — Completed 39-01 schema prerequisites (BuildingPhoto, PhotoLicense, TermDatePrecision)
+Plan: 2 of 2 in current phase
+Status: Checkpoint — awaiting human verify (Supabase bucket creation + credential test)
+Last activity: 2026-02-25 — Completed 39-02 Python Supabase upload utilities and pipeline_config.json (checkpoint at Task 3: bucket setup)
 
-Progress: [█░░░░░░░░░] 10% (v1.7 — 1/2 plans complete in phase 39)
+Progress: [██░░░░░░░░] 20% (v1.7 — 2/2 plans complete in phase 39, pending bucket verify)
 
 ## Performance Metrics
 
@@ -40,6 +40,13 @@ Key v1.7 decisions from 39-01 execution:
 - BuildingPhoto uses PlaceGeoid (Census GEOID string, size:20) as primary key — GEOIDs are stable, globally unique government identifiers that serve as natural PKs without needing surrogate keys
 - New fields (PhotoLicense, TermDatePrecision) use omitempty JSON tags for backward-compatible API responses
 
+Key v1.7 decisions from 39-02 execution:
+- Supabase import is lazy (inside get_supabase_client) to avoid requiring the package for DB-only scripts
+- upload_photo_to_storage() uses explicit content-type — SDK defaults to text/plain which corrupts image serving
+- upsert=true on upload so re-running scripts is idempotent — same CDN URL on overwrite
+- pipeline_config.json is separate from city_sources.json — v1.7 enrichment master config vs v1.6 scraper config
+- Ext ID counter advanced to -300001 for v1.7 to avoid collisions with v1.6 IDs
+
 ### Pending Todos
 
 None.
@@ -54,5 +61,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-02-25
-Stopped at: Completed 39-01-PLAN.md (schema prerequisites: BuildingPhoto, PhotoLicense, TermDatePrecision)
+Stopped at: 39-02-PLAN.md checkpoint — Task 3 (human-verify: Supabase bucket creation and credential test). Tasks 1-2 committed (570cc9c, 1944124 in EV-Backend repo).
 Resume file: None
