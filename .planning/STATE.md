@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 39 of 44 (Schema and Infrastructure Preparation)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-02-24 — Roadmap created for v1.7 LA County Data Enrichment (6 phases, 21 requirements mapped)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-02-25 — Completed 39-01 schema prerequisites (BuildingPhoto, PhotoLicense, TermDatePrecision)
 
-Progress: [░░░░░░░░░░] 0% (v1.7)
+Progress: [█░░░░░░░░░] 10% (v1.7 — 1/2 plans complete in phase 39)
 
 ## Performance Metrics
 
@@ -36,6 +36,10 @@ Key v1.7 decisions locked during research:
 - photo_license column required before any headshot is stored — CA government photos are not automatically public domain
 - term_date_precision column required before any term dates are stored — "2024-01-01" displays as "Jan 2024" without it
 
+Key v1.7 decisions from 39-01 execution:
+- BuildingPhoto uses PlaceGeoid (Census GEOID string, size:20) as primary key — GEOIDs are stable, globally unique government identifiers that serve as natural PKs without needing surrogate keys
+- New fields (PhotoLicense, TermDatePrecision) use omitempty JSON tags for backward-compatible API responses
+
 ### Pending Todos
 
 None.
@@ -49,6 +53,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-02-24
-Stopped at: Roadmap created, ready to plan Phase 39
+Last session: 2026-02-25
+Stopped at: Completed 39-01-PLAN.md (schema prerequisites: BuildingPhoto, PhotoLicense, TermDatePrecision)
 Resume file: None
