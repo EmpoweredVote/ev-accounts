@@ -144,7 +144,9 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
   2. The seeds/topics.go seed function no longer exists
   3. The seeds/categories.go hardcoded category map no longer exists
   4. The 21-topic/5-stance CSV and compass_csv_seeder.go are present and unchanged
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 45-01-PLAN.md — Delete deprecated 50-topic seed files and old topics.json
 
 ### Phase 46: Research Infrastructure & State Officials
 **Goal**: The stance research CSV format is defined and CA/IN governors and lt. governors have sourced stance data across all 20 compass topics
@@ -248,7 +250,7 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 | 42. City Council Headshot Pipeline | v1.7 | 5/6 | Complete* | 2026-02-26 |
 | 43. Go API and Frontend Updates | v1.7 | 2/2 | Complete | 2026-02-26 |
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
-| 45. Legacy Cleanup | v1.8 | 0/TBD | Not started | - |
+| 45. Legacy Cleanup | v1.8 | 0/1 | Not started | - |
 | 46. Research Infrastructure & State Officials | v1.8 | 0/TBD | Not started | - |
 | 47. Federal Officials Research | v1.8 | 0/TBD | Not started | - |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
