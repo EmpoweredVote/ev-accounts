@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 45 of 50 (Legacy Cleanup — plan 01 complete)
+Phase: 46 of 50 (Research Infrastructure & CA State Officials — plan 01 complete)
 Plan: 01 complete
-Status: Phase 45 plan 01 done
-Last activity: 2026-02-26 — Removed deprecated internal/seeds/ package and 50-topic topics.json
+Status: Phase 46 plan 01 done
+Last activity: 2026-02-26 — Created stance research CSV with CA Governor Newsom (21 topics) and Lt. Gov. Kounalakis (10 topics) stance data
 
-Progress: [█░░░░░░░░░] 8% (0/6 phases, 1/1 plans in phase 45)
+Progress: [██░░░░░░░░] 14% (1/6 phases, 1/2 plans in phase 46)
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Decisions are logged in PROJECT.md Key Decisions table.
 See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 
 - **45-01:** Deleted cmd/seed/main.go stub entirely (not just emptied) — compass_csv_seeder.go already owns func main() in the same package, making the stub a potential build conflict as well as dead code.
+- **46-01:** Newsom trans-athletes assigned value 2 (allow with documentation) based on 2023 veto of anti-trans sports ban. Newsom ai-regulation assigned value 3 — vetoed SB 1047 (heavy regulation) but signed 17 AI transparency/safety bills. Kounalakis coverage limited to 10 of 21 topics where documented positions exist.
 
 ### Pending Todos
 
@@ -56,5 +57,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 45-01-PLAN.md — deprecated seeds cleanup done
+Stopped at: Completed 46-01-PLAN.md — CA stance research CSV infrastructure created
 Resume file: None
