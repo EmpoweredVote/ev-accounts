@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: LA County Data Enrichment
 status: active
-last_updated: "2026-02-25T23:59:00.000Z"
+last_updated: "2026-02-26T01:23:48Z"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.7 — Phase 42: City Council Headshot Pipeline
+**Current focus:** v1.7 — Phase 43: Go API and Frontend Updates
 
 ## Current Position
 
-Phase: 42 of 44 (City Council Headshot Pipeline)
-Plan: 5 of 6 in current phase (gap closure plans)
+Phase: 43 of 44 (Go API and Frontend Updates)
+Plan: 1 of 2 complete in current phase
 Status: Active
-Last activity: 2026-02-25 — 42-05 plan complete; processed Pomona/Santa Monica overrides (both 0 uploads — override URLs broken: Akamai 403 / 404); created generate_headshot_manifest.py producing 300-row CSV of missing headshots across 82 cities for Plan 06 manual curation sprint
+Last activity: 2026-02-26 — 43-01 plan complete; added contacts array to GET /essentials/politician/{id} response and new GET /essentials/cities/{geo_id}/building-photo endpoint
 
-Progress: [███████░░░] 65% (v1.7 — 12/12 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05)
+Progress: [███████░░░] 68% (v1.7 — 13/13 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01)
 
 ## Performance Metrics
 
@@ -93,6 +93,9 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 42-05]: Pomona override URLs (showpublisheddocument) blocked by Akamai CDN 403; Santa Monica override URLs (/sites/default/files/Council/*.jpg) return 404 — manual URL research required in Plan 06
 - [Phase 42-05]: generate_headshot_manifest.py uses DISTINCT ON (p.id) to deduplicate politicians with multiple office records in the missing-headshots SQL query
 - [Phase 42-05]: Manifest CSV sorted by city gap size descending so Plan 06 curator starts with highest-impact cities first (Santa Monica 7, Artesia 6, Pomona 6, etc.)
+- [Phase 43-01]: ContactSyncedAt uses *time.Time pointer so GORM treats nil (NULL in DB) as never-set; omitempty on pointer omits nil from JSON responses
+- [Phase 43-01]: Empty contact rows filtered server-side (all of phone/email/fax/website_url blank) so frontend never receives degenerate rows
+- [Phase 43-01]: GetBuildingPhoto returns map[string]interface{} directly — response is simple and fixed, named DTO adds no value
 
 ### Pending Todos
 
@@ -108,6 +111,6 @@ Key v1.7 decisions from 41-02 execution:
 
 ## Session Continuity
 
-Last session: 2026-02-25
-Stopped at: 42-05-PLAN.md complete — processed Pomona/Santa Monica overrides (0 headshots, both URLs broken); created generate_headshot_manifest.py and headshot_research_manifest.csv (300 politicians missing headshots across 82 cities); ready for 42-06 manual curation sprint
+Last session: 2026-02-26
+Stopped at: 43-01-PLAN.md complete — contacts array wired into GET /essentials/politician/{id}, GetBuildingPhoto handler added, GET /cities/{geo_id}/building-photo route registered; ready for 43-02 frontend contact section
 Resume file: None

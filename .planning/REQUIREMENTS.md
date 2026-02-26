@@ -26,7 +26,7 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 - [x] **CONT-01**: User sees website URL on profile for officials in all 89 LA County cities
 - [x] **CONT-02**: User sees phone number on profile for county supervisors
 - [ ] **CONT-03**: User sees contact info section on politician profile page (phone, email, website)
-- [ ] **CONT-04**: Go API returns contacts in politician profile response
+- [x] **CONT-04**: Go API returns contacts in politician profile response
 
 ### Term Data
 
@@ -99,7 +99,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONT-01 | Phase 41 | Complete |
 | CONT-02 | Phase 41 | Complete |
 | CONT-03 | Phase 43 | Pending |
-| CONT-04 | Phase 43 | Pending |
+| CONT-04 | Phase 43 | Complete |
 | TERM-01 | Phase 41 | Complete |
 | TERM-02 | Phase 41 | Complete |
 | TERM-03 | Phase 41 | Complete |
