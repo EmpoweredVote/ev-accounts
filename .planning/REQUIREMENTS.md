@@ -16,7 +16,7 @@ Requirements for v1.8: Compass Data & Politician Research. Each maps to roadmap 
 - [x] **STANCE-05**: CA US Senators researched — Padilla, Schiff
 - [x] **STANCE-06**: IN US Senators researched — Young, Banks
 - [x] **STANCE-07**: Monroe County, IN US House representative(s) researched
-- [ ] **STANCE-08**: All LA County, CA US House representatives researched
+- [x] **STANCE-08**: All LA County, CA US House representatives researched
 - [ ] **STANCE-09**: Bloomington, IN Mayor Thomson researched
 - [ ] **STANCE-10**: Los Angeles, CA Mayor Bass researched
 
@@ -75,7 +75,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STANCE-05 | Phase 47 | Complete |
 | STANCE-06 | Phase 47 | Complete |
 | STANCE-07 | Phase 47 | Complete |
-| STANCE-08 | Phase 47 | Pending |
+| STANCE-08 | Phase 47 | Complete |
 | STANCE-09 | Phase 48 | Pending |
 | STANCE-10 | Phase 48 | Pending |
 | QUOTE-01 | Phase 49 | Pending |
