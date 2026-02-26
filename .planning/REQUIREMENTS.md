@@ -22,10 +22,10 @@ Requirements for v1.8: Compass Data & Politician Research. Each maps to roadmap 
 
 ### Quote Collection
 
-- [ ] **QUOTE-01**: Direct quotes gathered from target politicians on compass topics
-- [ ] **QUOTE-02**: Each quote includes source URL and date of statement
-- [ ] **QUOTE-03**: Quotes are verbatim statements from the politicians (not paraphrased)
-- [ ] **QUOTE-04**: Quote data formatted as CSV ready for Read & Rank import
+- [x] **QUOTE-01**: Direct quotes gathered from target politicians on compass topics
+- [x] **QUOTE-02**: Each quote includes source URL and date of statement
+- [x] **QUOTE-03**: Quotes are verbatim statements from the politicians (not paraphrased)
+- [x] **QUOTE-04**: Quote data formatted as CSV ready for Read & Rank import
 
 ### Legacy Cleanup
 
@@ -78,10 +78,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STANCE-08 | Phase 47 | Complete |
 | STANCE-09 | Phase 48 | Complete |
 | STANCE-10 | Phase 48 | Complete |
-| QUOTE-01 | Phase 49 | Pending |
-| QUOTE-02 | Phase 49 | Pending |
-| QUOTE-03 | Phase 49 | Pending |
-| QUOTE-04 | Phase 49 | Pending |
+| QUOTE-01 | Phase 49 | Complete |
+| QUOTE-02 | Phase 49 | Complete |
+| QUOTE-03 | Phase 49 | Complete |
+| QUOTE-04 | Phase 49 | Complete |
 | CLEAN-01 | Phase 45 | Complete |
 | CLEAN-02 | Phase 45 | Complete |
 | CLEAN-03 | Phase 45 | Complete |

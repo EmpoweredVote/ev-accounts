@@ -200,7 +200,14 @@ Plans:
   2. Every quote row includes a source URL and date of statement
   3. All quotes are verbatim (not paraphrased) politician statements
   4. The quote data is formatted as a CSV matching the Read & Rank import format
-**Plans**: TBD
+**Plans**: 6 plans
+Plans:
+- [ ] 49-01-PLAN.md — Create quote CSV and research CA state officials (Newsom, Kounalakis)
+- [ ] 49-02-PLAN.md — Research IN officials (Braun, Beckwith, Thomson)
+- [ ] 49-03-PLAN.md — Research CA senators and LA mayor (Padilla, Schiff, Bass)
+- [ ] 49-04-PLAN.md — Research IN federal officials (Young, Banks, Houchin)
+- [ ] 49-05-PLAN.md — Research LA County House batch 1 (Whitesides, Friedman, Sherman, Cardenas, Chu, Aguilar)
+- [ ] 49-06-PLAN.md — Research LA County House batch 2 (Gomez, Lieu, Kamlager-Dove, Sanchez, Waters, Barragan) + final validation
 
 ### Phase 50: Data Import Scripts
 **Goal**: Import scripts exist that load the stance CSV into compass.answers and the quote CSV into Read & Rank, with validation
@@ -264,7 +271,7 @@ Plans:
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
 | 48. Mayors Research | 2/2 | Complete    | 2026-02-26 | - |
-| 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
+| 49. Quote Collection | 1/6 | In Progress|  | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
