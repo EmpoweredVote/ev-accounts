@@ -207,7 +207,9 @@ Plans:
   1. A coverage report script confirms via HEAD requests that 80%+ of LA County headshot URLs return HTTP 200 from Supabase CDN
   2. The coverage report confirms contact website URLs are present for all 89 LA County cities
   3. All scraped headshot URLs point to the Supabase CDN domain — zero government domain hotlinks remain in the database
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 44-01-PLAN.md — Create coverage_report.py with 3 validation checks (CDN HEAD audit, contact presence, hotlink scan)
 
 ## Progress
 
@@ -256,4 +258,4 @@ Plans:
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | 5/6 | In Progress|  | - |
 | 43. Go API and Frontend Updates | 2/2 | Complete    | 2026-02-26 | - |
-| 44. Coverage Validation | v1.7 | 0/TBD | Not started | - |
+| 44. Coverage Validation | v1.7 | 0/1 | Not started | - |
