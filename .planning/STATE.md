@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 46 of 50 (Research Infrastructure & CA State Officials — plan 01 complete)
-Plan: 01 complete
-Status: Phase 46 plan 01 done
-Last activity: 2026-02-26 — Created stance research CSV with CA Governor Newsom (21 topics) and Lt. Gov. Kounalakis (10 topics) stance data
+Phase: 46 of 50 (Research Infrastructure & State Officials — plan 02 complete)
+Plan: 02 complete
+Status: Phase 46 plan 02 done
+Last activity: 2026-02-26 — Appended IN state official stances: Gov. Braun (21 topics) and Lt. Gov. Beckwith (13 topics); CSV now has 65 rows for all 4 officials
 
-Progress: [██░░░░░░░░] 14% (1/6 phases, 1/2 plans in phase 46)
+Progress: [██░░░░░░░░] 14% (1/6 phases, 2/2 plans in phase 46)
 
 ## Performance Metrics
 
@@ -44,6 +44,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 
 - **45-01:** Deleted cmd/seed/main.go stub entirely (not just emptied) — compass_csv_seeder.go already owns func main() in the same package, making the stub a potential build conflict as well as dead code.
 - **46-01:** Newsom trans-athletes assigned value 2 (allow with documentation) based on 2023 veto of anti-trans sports ban. Newsom ai-regulation assigned value 3 — vetoed SB 1047 (heavy regulation) but signed 17 AI transparency/safety bills. Kounalakis coverage limited to 10 of 21 topics where documented positions exist.
+- **46-02:** Braun ukraine-support assigned value 3 (mixed Senate voting record on aid bills). Braun same-sex-marriage assigned value 4 based on 2022 Politico interview (states should decide). Braun ai-regulation assigned value 1 (deregulatory stance; 1=allow freely on this topic scale). Beckwith coverage limited to 13 of 21 topics. Braun and Beckwith BallotReady external_ids left blank — not locatable via public sources; Phase 50 import will need manual resolution.
 
 ### Pending Todos
 
@@ -57,5 +58,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 46-01-PLAN.md — CA stance research CSV infrastructure created
+Stopped at: Completed 46-02-PLAN.md — IN state official stances appended; phase 46 complete
 Resume file: None

@@ -12,7 +12,7 @@ Requirements for v1.8: Compass Data & Politician Research. Each maps to roadmap 
 - [x] **STANCE-01**: Stance data CSV exists with politician name, topic_key, stance value (1-5), and source URL columns
 - [x] **STANCE-02**: Each stance is supported by multiple reputable sources where possible (news sites, campaign websites, voting records, bills sponsored/signed/vetoed)
 - [x] **STANCE-03**: CA state officials researched — Governor Newsom, Lt. Governor Kounalakis
-- [ ] **STANCE-04**: IN state officials researched — Governor Braun, Lt. Governor Beckwith
+- [x] **STANCE-04**: IN state officials researched — Governor Braun, Lt. Governor Beckwith
 - [ ] **STANCE-05**: CA US Senators researched — Padilla, Schiff
 - [ ] **STANCE-06**: IN US Senators researched — Young, Banks
 - [ ] **STANCE-07**: Monroe County, IN US House representative(s) researched
@@ -71,7 +71,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STANCE-01 | Phase 46 | Complete |
 | STANCE-02 | Phase 46 | Complete |
 | STANCE-03 | Phase 46 | Complete |
-| STANCE-04 | Phase 46 | Pending |
+| STANCE-04 | Phase 46 | Complete |
 | STANCE-05 | Phase 47 | Pending |
 | STANCE-06 | Phase 47 | Pending |
 | STANCE-07 | Phase 47 | Pending |
