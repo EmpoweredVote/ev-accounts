@@ -271,7 +271,7 @@ Plans:
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
 | 48. Mayors Research | 2/2 | Complete    | 2026-02-26 | - |
-| 49. Quote Collection | 1/6 | In Progress|  | - |
+| 49. Quote Collection | 2/6 | In Progress|  | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
