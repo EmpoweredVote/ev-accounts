@@ -172,7 +172,14 @@ Plans:
   2. IN US Senators Young and Banks have stance values and source URLs for all applicable compass topics
   3. Monroe County IN House representative(s) have stance values and source URLs for all applicable compass topics
   4. All LA County CA House representatives have stance values and source URLs for all applicable compass topics
-**Plans**: TBD
+**Plans**: 6 plans
+Plans:
+- [ ] 47-01-PLAN.md — Research CA US Senators (Padilla, Schiff)
+- [ ] 47-02-PLAN.md — Research IN US Senators (Young, Banks)
+- [ ] 47-03-PLAN.md — Research Monroe County IN House representative(s)
+- [ ] 47-04-PLAN.md — Identify LA County House districts and research first batch (~6 reps)
+- [ ] 47-05-PLAN.md — Research second batch of LA County House representatives (~6 reps)
+- [ ] 47-06-PLAN.md — Research remaining LA County House representatives and final validation
 
 ### Phase 48: Mayors Research
 **Goal**: Bloomington IN and Los Angeles CA mayors have sourced stance data across all compass topics
@@ -255,7 +262,7 @@ Plans:
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
 | 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
-| 47. Federal Officials Research | v1.8 | 0/TBD | Not started | - |
+| 47. Federal Officials Research | 1/6 | In Progress|  | - |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
 | 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
