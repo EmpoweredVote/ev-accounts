@@ -116,7 +116,7 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
 - [x] **Phase 41: Building Photos, Term Data, and Contact Enrichment** - Populate city hall building photos (LA City + top 20), term dates for supervisors, and contact websites for 89 cities (completed 2026-02-25)
 - [ ] **Phase 42: City Council Headshot Pipeline (89 Cities)** - Automated scraping achieved 84/391 (21.5%); gap closure plans 05-06 add manual headshot curation to reach 80% target (in progress)
 - [x] **Phase 43: Go API and Frontend Updates** - Add contacts to profile API response, building photo endpoint, and ContactSection in ev-ui (completed 2026-02-26)
-- [ ] **Phase 44: Bio Enrichment and Coverage Validation** - Scrape bio text for 20 high-profile officials and run HEAD-request coverage audit confirming milestone targets met
+- [ ] **Phase 44: Coverage Validation** - Run HEAD-request coverage audit confirming milestone headshot and contact targets met
 
 ## Phase Details
 
@@ -199,16 +199,14 @@ Plans:
 - [ ] 43-01-PLAN.md — Go API: add contacts to politician profile response, add building photo endpoint
 - [ ] 43-02-PLAN.md — Frontend: add contact section to PoliticianProfile component, export from ev-ui
 
-### Phase 44: Bio Enrichment and Coverage Validation
-**Goal**: Users see biography text for LA County supervisors and LA City council members, and the milestone is officially validated against its 80% headshot and contact coverage targets
+### Phase 44: Coverage Validation
+**Goal**: The milestone is officially validated against its 80% headshot and contact coverage targets via a reproducible coverage report script
 **Depends on**: Phase 43
-**Requirements**: BIO-01, BIO-02, PIPE-03
+**Requirements**: PIPE-03
 **Success Criteria** (what must be TRUE):
-  1. A county supervisor's profile page shows a biography paragraph of meaningful length (100–2000 characters, not boilerplate placeholder text)
-  2. An LA City council member's profile page shows a biography paragraph
-  3. A coverage report script confirms via HEAD requests that 80%+ of LA County headshot URLs return HTTP 200 from Supabase CDN
-  4. The coverage report confirms contact website URLs are present for all 89 LA County cities
-  5. All scraped headshot URLs point to the Supabase CDN domain — zero government domain hotlinks remain in the database
+  1. A coverage report script confirms via HEAD requests that 80%+ of LA County headshot URLs return HTTP 200 from Supabase CDN
+  2. The coverage report confirms contact website URLs are present for all 89 LA County cities
+  3. All scraped headshot URLs point to the Supabase CDN domain — zero government domain hotlinks remain in the database
 **Plans**: TBD
 
 ## Progress
@@ -258,4 +256,4 @@ Plans:
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | 5/6 | In Progress|  | - |
 | 43. Go API and Frontend Updates | 2/2 | Complete    | 2026-02-26 | - |
-| 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
+| 44. Coverage Validation | v1.7 | 0/TBD | Not started | - |

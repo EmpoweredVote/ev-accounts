@@ -34,11 +34,6 @@ Requirements for LA County data enrichment. Each maps to roadmap phases.
 - [x] **TERM-02**: User sees derived term dates for city council members where election year is known
 - [x] **TERM-03**: Term date display respects precision (year-only shows "2024" not "Jan 2024")
 
-### Bio
-
-- [ ] **BIO-01**: User sees biography text for county supervisors on profile page
-- [ ] **BIO-02**: User sees biography text for LA City council members on profile page
-
 ### Pipeline
 
 - [x] **PIPE-01**: Enrichment scripts are idempotent and config-driven (re-runnable without duplicates)
@@ -57,6 +52,8 @@ Deferred to future release. Tracked but not in current roadmap.
 
 ### Bio/Education/Experience
 
+- **BIO-01**: Bio text for county supervisors on profile page
+- **BIO-02**: Bio text for LA City council members on profile page
 - **BIO-03**: Bio text for city council members across 89 cities where available
 - **BIO-04**: Education history (degrees, schools) for county supervisors and LA City council
 - **BIO-05**: Work/office experience timeline for county supervisors and LA City council
@@ -103,16 +100,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 | TERM-01 | Phase 41 | Complete |
 | TERM-02 | Phase 41 | Complete |
 | TERM-03 | Phase 41 | Complete |
-| BIO-01 | Phase 44 | Pending |
-| BIO-02 | Phase 44 | Pending |
 | PIPE-01 | Phase 39 | Complete |
 | PIPE-02 | Phase 42 | Complete |
 | PIPE-03 | Phase 44 | Pending |
 | PIPE-04 | Phase 39 | Complete |
 
 **Coverage:**
-- v1.7 requirements: 21 total
-- Mapped to phases: 21
+- v1.7 requirements: 19 total (BIO-01, BIO-02 deferred to future)
+- Mapped to phases: 19
 - Unmapped: 0
 
 ---
