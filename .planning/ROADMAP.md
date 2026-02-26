@@ -130,7 +130,7 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 - [x] **Phase 46: Research Infrastructure & State Officials** - Define CSV schema and research CA/IN governors and lt. governors (completed 2026-02-26)
 - [x] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN (completed 2026-02-26)
 - [x] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors (completed 2026-02-26)
-- [ ] **Phase 49: Quote Collection** - Gather verbatim politician quotes on compass topics for Read & Rank
+- [x] **Phase 49: Quote Collection** - Gather verbatim politician quotes on compass topics for Read & Rank (completed 2026-02-26)
 - [ ] **Phase 50: Data Import Scripts** - Build import scripts to load stance and quote CSVs into the database
 
 ## Phase Details
@@ -271,7 +271,7 @@ Plans:
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
 | 48. Mayors Research | 2/2 | Complete    | 2026-02-26 | - |
-| 49. Quote Collection | 5/6 | In Progress|  | - |
+| 49. Quote Collection | 6/6 | Complete   | 2026-02-26 | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
