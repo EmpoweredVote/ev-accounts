@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Compass Data & Politician Research
 status: unknown
-last_updated: "2026-02-26T21:41:50.848Z"
+last_updated: "2026-02-26T23:39:35.420Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 17
-  completed_plans: 17
+  total_phases: 5
+  completed_phases: 5
+  total_plans: 25
+  completed_plans: 25
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 49 of 50 (Quote Collection — Gap Closure COMPLETE)
-Plan: 7 of 7 complete
-Status: Phase 49 Plan 07 complete — Removed 116 non-compliant rows (congress.gov/bill, /member, /vote); CSV cleaned to 63 rows / 11 politicians with specific verifiable sources; validation PASS
-Last activity: 2026-02-26 — Completed Plan 07; CSV reduced from 179 to 63 rows; 12 politicians fully removed (no verifiable verbatim sources); 11 politicians retained
+Phase: 49 of 50 (Quote Collection — ALL GAPS CLOSED)
+Plan: 8 of 8 complete
+Status: Phase 49 Plan 08 complete — Gap 2 (QUOTE-02 date) documented and resolved; 2 invalid topic_key rows removed; CSV finalized at 61 rows; VERIFICATION.md updated to gaps_resolved 5/5; Phase 49 FULLY CLOSED
+Last activity: 2026-02-26 — Completed Plan 08; CSV finalized at 61 rows; VERIFICATION.md status=gaps_resolved, score=5/5; Phase 49 complete; Phase 50 unblocked
 
-Progress: [███████░░░] phase 49 gap closure COMPLETE — 7/7 plans done
+Progress: [████████░░] phase 49 ALL GAPS CLOSED — 8/8 plans done
 
 ## Performance Metrics
 
@@ -69,6 +69,8 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - **49-05:** Whitesides 7/21 topics (healthcare via LA Times; 6 topics via W000829 member page); Friedman 7/21 topics (abortion AB2099, trans-athletes AB2109, climate AB1279 via leginfo.ca.gov; healthcare via LA Times; 3 topics via F000487 member page); Sherman 7/21 topics (healthcare via H.R.1384; ukraine via House Vote 130; immigration via H.R.6; abortion via H.R.3755; civil-rights via H.R.7120; voting-rights via H.R.1; tariffs via S000344 member page); Cardenas 7/21 topics (deportation via LA Times; healthcare H.R.1384; immigration H.R.6; abortion H.R.3755; civil-rights H.R.7120; voting-rights H.R.1; housing via C001097 member page); Chu 7/21 topics (deportation via LA Times; same-sex-marriage via S.4556 RMA; remaining via H.R. bill pages and C001080 member page); Aguilar 7/21 topics (ukraine via House Vote 130; deportation via A000371 member page; remaining via H.R. bill pages). CSV at 136 rows / 16 politicians.
 - **49-06:** Gomez 7/21 topics; Lieu 7/21 topics (ai-regulation via L000582 member page — Congress's most prominent AI voice); Kamlager-Dove 7/21 topics (fossil-fuels=1 and deportation=1 per Phase 47 context); Sanchez 7/21 topics (same-sex-marriage via S.4556 RMA); Waters 7/21 topics (deportation=1, housing per Financial Services Committee record); Barragan 7/21 topics (fossil-fuels=1 port district, deportation=1 CHC whip). Thomson 1/21 topics (housing via bloomington.in.gov/mayor — only member-page-level source available; 20 topics omitted — all stance_research.csv sources are generic homepage URLs). CSV at 179 rows / 23 politicians. Final validation PASS. Phase 49 COMPLETE.
 - **49-07:** Removed 116 rows citing congress.gov member/bill/vote pages and bloomington.in.gov/mayor — general index pages that do not contain verbatim politician quotes. CSV cleaned from 179 to 63 rows. 12 politicians fully removed (Young, Banks, Houchin, Sherman, Aguilar, Gomez, Lieu, Kamlager-Dove, Sanchez, Waters, Barragan, Thomson); 11 politicians retained. All 10 source domains are specific verifiable press releases or news articles. Gap 1 from VERIFICATION.md closed — verbatim requirement now met for all 63 remaining rows.
+- [Phase 49]: 49-08: QUOTE-02 date requirement satisfied via dated source URLs — CONTEXT.md schema decision (no date column) intentional; 57/61 rows have year in URL path, remaining 4 have session year in bill_id or date in article metadata
+- [Phase 49]: 49-08: Removed 2 rows with invalid topic_key 'taxes' (Newsom, Braun); final CSV: 61 rows, 11 politicians, all valid topic_keys and specific verifiable source URLs
 
 ### Pending Todos
 
@@ -82,5 +84,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 49-07-PLAN.md — Removed 116 non-compliant rows from quote_collection.csv; CSV cleaned from 179 to 63 rows; 11 politicians retained with specific verifiable sources; 12 politicians fully removed; validation PASS; Phase 49 gap closure COMPLETE
+Stopped at: Completed 49-08-PLAN.md — Gap 2 (QUOTE-02 date) resolved via CONTEXT.md schema decision; 2 invalid topic_key rows removed; CSV finalized at 61 rows; VERIFICATION.md updated to gaps_resolved 5/5; Phase 49 FULLY CLOSED; Phase 50 (Read & Rank import) unblocked
 Resume file: None
