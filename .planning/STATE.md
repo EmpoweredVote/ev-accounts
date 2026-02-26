@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Compass Data & Politician Research
 status: unknown
-last_updated: "2026-02-26T19:51:26Z"
+last_updated: "2026-02-26T19:57:32.405Z"
 progress:
   total_phases: 3
   completed_phases: 2
-  total_plans: 9
-  completed_plans: 9
+  total_plans: 15
+  completed_plans: 13
 ---
 
 # Project State
@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 47 of 50 (Federal Officials Research — plan 09 complete)
-Plan: 09 complete
-Status: Phase 47 URL cleanup in progress (plans 10-12 are remaining URL verification plans)
-Last activity: 2026-02-26 — Completed Plan 09 URL cleanup; removed 168 fabricated URLs (84 AP year-suffix + 84 house.gov slug-only) from Houchin, Whitesides, Friedman, Sherman rows; zero AP year-suffix URLs remain for these 4 House representatives
+Phase: 47 of 50 (Federal Officials Research — plan 10 complete)
+Plan: 10 complete
+Status: Phase 47 URL cleanup in progress (plans 11-12 are remaining URL verification plans)
+Last activity: 2026-02-26 — Completed Plan 10 URL cleanup; removed 168 fabricated URLs (84 AP year-suffix + 84 house.gov slug-only) from Cardenas, Chu, Aguilar, Gomez rows; zero AP year-suffix URLs remain for these 4 House representatives
 
-Progress: [███▒▒▒▒▒▒▒] plan 09/12 complete in phase 47
+Progress: [████▒▒▒▒▒▒] plan 10/12 complete in phase 47
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - **47-07:** Cleared 51 hallucinated AP News year-suffix URLs from Newsom (8), Kounalakis (9), Braun (21), Beckwith (13) rows. Also removed suspicious Newsom trans-athletes AP URL with repeated hash pattern. Promoted url_2 to url_1 in 13 rows where url_1 was hallucinated. No WebSearch available — applied plan fallback rule (clear rather than fabricate). AP URLs with legitimate hex hashes (Newsom abortion, religious-freedom) left in place as they don't match year-suffix criterion.
 - **47-08:** Cleared 216 fabricated URLs from Padilla, Schiff, Young, Banks rows: 84 AP year-suffix URLs + 21 padilla.senate.gov + 21 young.senate.gov + 21 schiff.house.gov + 2 schiff.senate.gov + 21 banks.house.gov slug-only press release URLs. No WebSearch available — applied Plan 07 fallback rule. congress.gov bill/vote/member URLs promoted to url_1 where needed. All 84 rows retain url_1.
 - **47-09:** Cleared 168 fabricated URLs from Houchin, Whitesides, Friedman, Sherman rows: 84 AP year-suffix + 84 house.gov slug-only press release URLs. Retained LA Times and leginfo.ca.gov URLs where present (Whitesides healthcare; Friedman healthcare/abortion/trans-athletes/climate-change). Added congress.gov member page fallbacks for Whitesides (20 rows, bioguide W000829) and Friedman (17 rows, bioguide F000487) where no other verified URL existed. Sherman deportation row used S000344 member page fallback. All 84 rows retain url_1.
+- **47-10:** Cleared 168 fabricated URLs from Cardenas, Chu, Aguilar, Gomez rows: 84 AP year-suffix + 84 house.gov slug-only press release URLs. Retained LA Times deportation URLs for Cardenas and Chu (real, verifiable). Promoted congress.gov bill/vote URLs to url_1; used member page fallbacks (C001097 Cardenas, C001080 Chu, A000371 Aguilar, G000585 Gomez) for rows lacking congress.gov bill citation. All 84 rows retain url_1.
 
 ### Pending Todos
 
@@ -67,5 +68,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 47-09-PLAN.md — Removed 168 fabricated URLs from Houchin, Whitesides, Friedman, Sherman; zero AP year-suffix URLs remain for these 4 House representatives
+Stopped at: Completed 47-10-PLAN.md — Removed 168 fabricated URLs from Cardenas, Chu, Aguilar, Gomez; zero AP year-suffix URLs remain for these 4 House representatives
 Resume file: None
