@@ -194,7 +194,10 @@ Plans:
   2. A new GET /essentials/cities/{geo_id}/building-photo endpoint returns the building photo URL and attribution for cities in the building_photos table
   3. A politician profile page in the essentials app shows a contact section with phone, website, or office address when that data exists in the database
   4. The contact section shows a "last updated" date using the contact_synced_at field so users know when the data was last verified
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 43-01-PLAN.md — Go API: add contacts to politician profile response, add building photo endpoint
+- [ ] 43-02-PLAN.md — Frontend: add contact section to PoliticianProfile component, export from ev-ui
 
 ### Phase 44: Bio Enrichment and Coverage Validation
 **Goal**: Users see biography text for LA County supervisors and LA City council members, and the milestone is officially validated against its 80% headshot and contact coverage targets
@@ -254,5 +257,5 @@ Plans:
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | 5/6 | In Progress|  | - |
-| 43. Go API and Frontend Updates | v1.7 | 0/TBD | Not started | - |
+| 43. Go API and Frontend Updates | v1.7 | 0/2 | Not started | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
