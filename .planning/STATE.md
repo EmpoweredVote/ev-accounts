@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: LA County Data Enrichment
 status: active
-last_updated: "2026-02-26T01:23:48Z"
+last_updated: "2026-02-26T01:45:00Z"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 43 of 44 (Go API and Frontend Updates)
-Plan: 1 of 2 complete in current phase
-Status: Active
-Last activity: 2026-02-26 — 43-01 plan complete; added contacts array to GET /essentials/politician/{id} response and new GET /essentials/cities/{geo_id}/building-photo endpoint
+Plan: 2 of 2 complete in current phase
+Status: Verifying
+Last activity: 2026-02-25 — 43-02 plan complete; contact section consolidated under profile photo with icon-identified links, PoliticianProfile exported from ev-ui
 
-Progress: [███████░░░] 68% (v1.7 — 13/13 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01)
+Progress: [████████░░] 75% (v1.7 — 15/15 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01+43-02)
 
 ## Performance Metrics
 
@@ -96,6 +96,9 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 43-01]: ContactSyncedAt uses *time.Time pointer so GORM treats nil (NULL in DB) as never-set; omitempty on pointer omits nil from JSON responses
 - [Phase 43-01]: Empty contact rows filtered server-side (all of phone/email/fax/website_url blank) so frontend never receives degenerate rows
 - [Phase 43-01]: GetBuildingPhoto returns map[string]interface{} directly — response is simple and fixed, named DTO adds no value
+- [Phase 43-02]: Contact section placed below profile photo in left column — icons identify contact type (phone, globe, envelope) instead of text labels
+- [Phase 43-02]: BallotReady person-level urls/email_addresses merged with enriched contacts and deduplicated — single source of truth for contact display
+- [Phase 43-02]: SocialLinks reused for social media icons only — email/website moved to contact list with full text display
 
 ### Pending Todos
 
@@ -111,6 +114,6 @@ Key v1.7 decisions from 41-02 execution:
 
 ## Session Continuity
 
-Last session: 2026-02-26
-Stopped at: 43-01-PLAN.md complete — contacts array wired into GET /essentials/politician/{id}, GetBuildingPhoto handler added, GET /cities/{geo_id}/building-photo route registered; ready for 43-02 frontend contact section
+Last session: 2026-02-25
+Stopped at: Phase 43 plans complete (43-01 + 43-02); running phase verification
 Resume file: None

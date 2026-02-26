@@ -115,7 +115,7 @@ Full details: `.planning/milestones/v1.6-ROADMAP.md`
 - [x] **Phase 40: High-Value Headshots — Supervisors and LA City Council** - Scrape and re-host headshots for 20 high-profile officials, proving the full Supabase Storage upload flow (completed 2026-02-25)
 - [x] **Phase 41: Building Photos, Term Data, and Contact Enrichment** - Populate city hall building photos (LA City + top 20), term dates for supervisors, and contact websites for 89 cities (completed 2026-02-25)
 - [ ] **Phase 42: City Council Headshot Pipeline (89 Cities)** - Automated scraping achieved 84/391 (21.5%); gap closure plans 05-06 add manual headshot curation to reach 80% target (in progress)
-- [ ] **Phase 43: Go API and Frontend Updates** - Add contacts to profile API response, building photo endpoint, and ContactSection in ev-ui
+- [x] **Phase 43: Go API and Frontend Updates** - Add contacts to profile API response, building photo endpoint, and ContactSection in ev-ui (completed 2026-02-26)
 - [ ] **Phase 44: Bio Enrichment and Coverage Validation** - Scrape bio text for 20 high-profile officials and run HEAD-request coverage audit confirming milestone targets met
 
 ## Phase Details
@@ -257,5 +257,5 @@ Plans:
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | 5/6 | In Progress|  | - |
-| 43. Go API and Frontend Updates | 1/2 | In Progress|  | - |
+| 43. Go API and Frontend Updates | 2/2 | Complete   | 2026-02-26 | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
