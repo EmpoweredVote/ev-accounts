@@ -23,11 +23,11 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 ## Current Position
 
 Phase: 49 of 50 (Quote Collection — in progress)
-Plan: 2 of 6 complete
-Status: Phase 49 Plan 02 complete — IN officials (Braun 11 rows / 11 topics, Beckwith 4 rows / 4 topics, Thomson 0 rows — gap); CSV at 52 rows
-Last activity: 2026-02-26 — Completed Plan 02; Braun + Beckwith quotes added, Thomson omitted (generic URL gap), Python validation PASS
+Plan: 3 of 6 complete
+Status: Phase 49 Plan 03 complete — CA senators + LA mayor (Padilla 7 rows / 7 topics, Schiff 7 rows / 7 topics, Bass 7 rows / 7 topics); CSV at 73 rows
+Last activity: 2026-02-26 — Completed Plan 03; Padilla + Schiff + Bass quotes added, Python validation PASS
 
-Progress: [██░░░░░░░░] plan 2/6 complete in phase 49
+Progress: [███░░░░░░░] plan 3/6 complete in phase 49
 
 ## Performance Metrics
 
@@ -64,6 +64,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - [Phase 48]: 48-02: Bass 21/21 topics; congress.gov member page primary fallback; mayor.lacity.org for mayoral stances; Phase 48 COMPLETE
 - **49-01:** Newsom all 21 topics covered with 26 quote rows; Kounalakis 10 topics (11 federal/national topics omitted — no documented positions for Lt. Governor). All source URLs from verified stance_research.csv existing sources. Quote CSV schema: full_name,topic_key,quote_text,source_url,source_name.
 - **49-02:** Braun 11 topics covered (Politico same-sex-marriage verbatim + in.gov EO press releases + IndyStar articles); Beckwith 4 topics (IndyStar articles from stance_research.csv); Thomson 0 rows — all stance_research.csv sources are generic bloomington.in.gov section homepages that cannot support verbatim quote attribution.
+- **49-03:** Padilla 7/21 topics (tariffs/deportation from LA Times stance_research.csv URLs; 5 topics via congress.gov member page P000145); Schiff 7/21 topics (deportation from LA Times; 6 topics via congress.gov member page S001150); Bass 7/21 topics (housing from mayor.lacity.org ED1 press release; 6 topics via congress.gov member page B001270). Phase 47 rule maintained: no unverified senate.gov/house.gov slug URLs. CSV at 73 rows / 7 politicians.
 
 ### Pending Todos
 
@@ -77,5 +78,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 49-02-PLAN.md — Braun 11 rows (11 topics) + Beckwith 4 rows (4 topics); Thomson 0 rows (generic URL gap); CSV at 52 rows total; Python validation PASS
+Stopped at: Completed 49-03-PLAN.md — Padilla 7 rows (7 topics) + Schiff 7 rows (7 topics) + Bass 7 rows (7 topics); CSV at 73 rows total; Python validation PASS
 Resume file: None
