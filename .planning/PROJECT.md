@@ -123,9 +123,11 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Building photo API endpoint (GET /essentials/cities/{geo_id}/building-photo) — v1.7
 - ✓ Config-driven pipeline_config.json for enrichment scripts — v1.7
 
-### Active
+### Active — Milestone v1.8: Compass Data & Politician Research
 
-(No active milestone — run `/gsd:new-milestone` to plan next)
+- [ ] Sourced politician stance data for 20 active compass topics across target politicians (CA/IN governors, lt. governors, US senators, House reps, mayors)
+- [ ] Actual politician quotes on compass topics for Read & Rank
+- [ ] Legacy compass data cleanup (remove 50-topic/10-stance files, keep 21-topic/5-stance only)
 
 ### Out of Scope
 
@@ -248,4 +250,4 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | Coverage validation as standalone Python script | Reproducible, CI-integrable, no Go dependency | ✓ Good — exit code 0/1 for pass/fail gating |
 
 ---
-*Last updated: 2026-02-26 after v1.7 milestone*
+*Last updated: 2026-02-26 after v1.8 milestone started*
