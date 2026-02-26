@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: LA County Data Enrichment
 status: unknown
-last_updated: "2026-02-26T03:36:37.820Z"
+last_updated: "2026-02-26T04:00:00.000Z"
 progress:
-  total_phases: 5
-  completed_phases: 4
-  total_plans: 15
-  completed_plans: 14
+  total_phases: 6
+  completed_phases: 5
+  total_plans: 16
+  completed_plans: 15
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.7 — Phase 43: Go API and Frontend Updates
+**Current focus:** v1.7 — Phase 44: Coverage Validation (complete)
 
 ## Current Position
 
-Phase: 43 of 44 (Go API and Frontend Updates)
-Plan: 2 of 2 complete in current phase
-Status: Verifying
-Last activity: 2026-02-25 — 43-02 plan complete; contact section consolidated under profile photo with icon-identified links, PoliticianProfile exported from ev-ui
+Phase: 44 of 44 (Coverage Validation)
+Plan: 1 of 1 complete in current phase
+Status: Complete
+Last activity: 2026-02-26 — 44-01 plan complete; coverage_report.py validates v1.7 milestone — 84/84 CDN URLs pass (100%), 89/89 cities have contact websites, 0 hotlinks found
 
-Progress: [████████░░] 75% (v1.7 — 15/15 plans complete: 39+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01+43-02)
+Progress: [█████████░] 94% (v1.7 — 16/16 plans complete: 39-01+39-02+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01+43-02+44-01)
 
 ## Performance Metrics
 
@@ -99,6 +99,9 @@ Key v1.7 decisions from 41-02 execution:
 - [Phase 43-02]: Contact section placed below profile photo in left column — icons identify contact type (phone, globe, envelope) instead of text labels
 - [Phase 43-02]: BallotReady person-level urls/email_addresses merged with enriched contacts and deduplicated — single source of truth for contact display
 - [Phase 43-02]: SocialLinks reused for social media icons only — email/website moved to contact list with full text display
+- [Phase 44-01]: Check 1 reports TWO metrics: CDN health % (pass/fail gate at 80%) and population coverage % (informational) — CDN health is what matters for availability, not raw headshot count
+- [Phase 44-01]: Check 2 uses city_sources.json as source of truth for 89-city list — same source used by scraping pipeline, avoiding drift
+- [Phase 44-01]: Check 3 is SQL-only (no HTTP) — hotlink elimination is a binary database state check, not a live CDN health check
 
 ### Pending Todos
 
@@ -114,6 +117,6 @@ Key v1.7 decisions from 41-02 execution:
 
 ## Session Continuity
 
-Last session: 2026-02-25
-Stopped at: Phase 43 plans complete (43-01 + 43-02); running phase verification
+Last session: 2026-02-26
+Stopped at: Phase 44 plan 44-01 complete; v1.7 milestone validated — coverage_report.py confirms all targets met
 Resume file: None
