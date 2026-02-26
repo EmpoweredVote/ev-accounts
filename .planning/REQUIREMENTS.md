@@ -68,33 +68,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STANCE-01 | — | Pending |
-| STANCE-02 | — | Pending |
-| STANCE-03 | — | Pending |
-| STANCE-04 | — | Pending |
-| STANCE-05 | — | Pending |
-| STANCE-06 | — | Pending |
-| STANCE-07 | — | Pending |
-| STANCE-08 | — | Pending |
-| STANCE-09 | — | Pending |
-| STANCE-10 | — | Pending |
-| QUOTE-01 | — | Pending |
-| QUOTE-02 | — | Pending |
-| QUOTE-03 | — | Pending |
-| QUOTE-04 | — | Pending |
-| CLEAN-01 | — | Pending |
-| CLEAN-02 | — | Pending |
-| CLEAN-03 | — | Pending |
-| CLEAN-04 | — | Pending |
-| IMPORT-01 | — | Pending |
-| IMPORT-02 | — | Pending |
-| IMPORT-03 | — | Pending |
+| STANCE-01 | Phase 46 | Pending |
+| STANCE-02 | Phase 46 | Pending |
+| STANCE-03 | Phase 46 | Pending |
+| STANCE-04 | Phase 46 | Pending |
+| STANCE-05 | Phase 47 | Pending |
+| STANCE-06 | Phase 47 | Pending |
+| STANCE-07 | Phase 47 | Pending |
+| STANCE-08 | Phase 47 | Pending |
+| STANCE-09 | Phase 48 | Pending |
+| STANCE-10 | Phase 48 | Pending |
+| QUOTE-01 | Phase 49 | Pending |
+| QUOTE-02 | Phase 49 | Pending |
+| QUOTE-03 | Phase 49 | Pending |
+| QUOTE-04 | Phase 49 | Pending |
+| CLEAN-01 | Phase 45 | Pending |
+| CLEAN-02 | Phase 45 | Pending |
+| CLEAN-03 | Phase 45 | Pending |
+| CLEAN-04 | Phase 45 | Pending |
+| IMPORT-01 | Phase 50 | Pending |
+| IMPORT-02 | Phase 50 | Pending |
+| IMPORT-03 | Phase 50 | Pending |
 
 **Coverage:**
 - v1.8 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21 ⚠️
+- Mapped to phases: 21
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-02-26*
-*Last updated: 2026-02-26 after initial definition*
+*Last updated: 2026-02-26 after roadmap creation (phases 45-50)*

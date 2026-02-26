@@ -10,6 +10,7 @@
 - ✅ **v1.5 Address Verification & BallotReady Independence** — Phases 26-31 (shipped 2026-02-23)
 - ✅ **v1.6 LA County Full Coverage** — Phases 32-38 (shipped 2026-02-24)
 - ✅ **v1.7 LA County Data Enrichment** — Phases 39-44 (shipped 2026-02-26)
+- 🚧 **v1.8 Compass Data & Politician Research** — Phases 45-50 (in progress)
 
 ## Phases
 
@@ -121,6 +122,84 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 
 </details>
 
+### 🚧 v1.8 Compass Data & Politician Research (In Progress)
+
+**Milestone Goal:** Populate the compass with real politician stances and sourced quotes so users can compare themselves to actual elected officials across CA and IN.
+
+- [ ] **Phase 45: Legacy Cleanup** - Remove deprecated 50-topic data files and old seed functions
+- [ ] **Phase 46: Research Infrastructure & State Officials** - Define CSV schema and research CA/IN governors and lt. governors
+- [ ] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN
+- [ ] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors
+- [ ] **Phase 49: Quote Collection** - Gather verbatim politician quotes on compass topics for Read & Rank
+- [ ] **Phase 50: Data Import Scripts** - Build import scripts to load stance and quote CSVs into the database
+
+## Phase Details
+
+### Phase 45: Legacy Cleanup
+**Goal**: The repository is free of deprecated 50-topic compass data files and old seed code, leaving the 21-topic/5-stance CSV as the sole source of truth
+**Depends on**: Nothing (first phase of v1.8)
+**Requirements**: CLEAN-01, CLEAN-02, CLEAN-03, CLEAN-04
+**Success Criteria** (what must be TRUE):
+  1. The old 50-topic topics.json file no longer exists in the repository
+  2. The seeds/topics.go seed function no longer exists
+  3. The seeds/categories.go hardcoded category map no longer exists
+  4. The 21-topic/5-stance CSV and compass_csv_seeder.go are present and unchanged
+**Plans**: TBD
+
+### Phase 46: Research Infrastructure & State Officials
+**Goal**: The stance research CSV format is defined and CA/IN governors and lt. governors have sourced stance data across all 20 compass topics
+**Depends on**: Phase 45
+**Requirements**: STANCE-01, STANCE-02, STANCE-03, STANCE-04
+**Success Criteria** (what must be TRUE):
+  1. A stance data CSV exists with politician name, topic_key, stance value (1-5), and source URL columns
+  2. Governor Newsom has stance values and source URLs for all applicable compass topics
+  3. Lt. Governor Kounalakis has stance values and source URLs for all applicable compass topics
+  4. Governor Braun has stance values and source URLs for all applicable compass topics
+  5. Lt. Governor Beckwith has stance values and source URLs for all applicable compass topics
+**Plans**: TBD
+
+### Phase 47: Federal Officials Research
+**Goal**: US senators and House representatives for CA and IN have sourced stance data across all compass topics
+**Depends on**: Phase 46
+**Requirements**: STANCE-05, STANCE-06, STANCE-07, STANCE-08
+**Success Criteria** (what must be TRUE):
+  1. CA US Senators Padilla and Schiff have stance values and source URLs for all applicable compass topics
+  2. IN US Senators Young and Banks have stance values and source URLs for all applicable compass topics
+  3. Monroe County IN House representative(s) have stance values and source URLs for all applicable compass topics
+  4. All LA County CA House representatives have stance values and source URLs for all applicable compass topics
+**Plans**: TBD
+
+### Phase 48: Mayors Research
+**Goal**: Bloomington IN and Los Angeles CA mayors have sourced stance data across all compass topics
+**Depends on**: Phase 47
+**Requirements**: STANCE-09, STANCE-10
+**Success Criteria** (what must be TRUE):
+  1. Bloomington IN Mayor Thomson has stance values and source URLs for all applicable compass topics
+  2. Los Angeles CA Mayor Bass has stance values and source URLs for all applicable compass topics
+  3. All researched politicians are represented in the stance CSV with at least one source per stance
+**Plans**: TBD
+
+### Phase 49: Quote Collection
+**Goal**: A quote CSV exists with verbatim, sourced statements from target politicians on compass topics, ready for Read & Rank import
+**Depends on**: Phase 46
+**Requirements**: QUOTE-01, QUOTE-02, QUOTE-03, QUOTE-04
+**Success Criteria** (what must be TRUE):
+  1. Direct quotes exist for target politicians covering compass topics
+  2. Every quote row includes a source URL and date of statement
+  3. All quotes are verbatim (not paraphrased) politician statements
+  4. The quote data is formatted as a CSV matching the Read & Rank import format
+**Plans**: TBD
+
+### Phase 50: Data Import Scripts
+**Goal**: Import scripts exist that load the stance CSV into compass.answers and the quote CSV into Read & Rank, with validation
+**Depends on**: Phase 48, Phase 49
+**Requirements**: IMPORT-01, IMPORT-02, IMPORT-03
+**Success Criteria** (what must be TRUE):
+  1. Running the stance import script loads politician stances into compass.answers with correct politician_id mapping
+  2. Running the quote import script loads quotes into a format usable by Read & Rank
+  3. The import script rejects rows where stance values are outside 1-5 or topic_keys do not match existing topics
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -169,5 +248,11 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 | 42. City Council Headshot Pipeline | v1.7 | 5/6 | Complete* | 2026-02-26 |
 | 43. Go API and Frontend Updates | v1.7 | 2/2 | Complete | 2026-02-26 |
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
+| 45. Legacy Cleanup | v1.8 | 0/TBD | Not started | - |
+| 46. Research Infrastructure & State Officials | v1.8 | 0/TBD | Not started | - |
+| 47. Federal Officials Research | v1.8 | 0/TBD | Not started | - |
+| 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
+| 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
+| 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
