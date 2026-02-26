@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 47 of 50 (Federal Officials Research — plan 04 complete)
-Plan: 04 complete
-Status: Phase 47 plan 04 done
-Last activity: 2026-02-26 — Identified all 12 LA County congressional districts; appended 126 rows for 6 reps (Judy Chu, Tony Cárdenas, George Whitesides, Laura Friedman, Brad Sherman, Jimmy Gómez); CSV now has 296 data rows for 15 officials
+Phase: 47 of 50 (Federal Officials Research — plan 05 complete)
+Plan: 05 complete
+Status: Phase 47 plan 05 done
+Last activity: 2026-02-26 — Completed all 12 LA County House reps across Plans 04-05; appended 126 rows for 6 reps (Pete Aguilar, Ted Lieu, Sydney Kamlager-Dove, Linda Sanchez, Maxine Waters, Nanette Barragan); CSV now has 422 data rows for 21 officials
 
-Progress: [██████░░░░] 67% (4/6 plans in phase 47 complete)
+Progress: [████████░░] 83% (5/6 plans in phase 47 complete)
 
 ## Performance Metrics
 
@@ -49,6 +49,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - **47-02:** Young same-sex-marriage value 2 (voted for RMA crossing party lines; RMA includes religious exemptions). Young ai-regulation value 3 (CHIPS Act co-lead, balanced oversight stance). Banks ukraine-support value 4 (voted against aid packages; America First wing). Banks medicare/social-security value 5 (RSC Budget under Banks proposed premium support and private investment accounts). Banks ai-regulation value 1 (no documented support for any oversight framework). Both senators BallotReady external_ids left blank.
 - **47-03:** Houchin (IN-9) ukraine-support value 4 (voted NO on Ukraine supplemental H.R. 8035 April 2024). Tariffs value 4 (America First approach). AI-regulation value 1 (deregulatory stance). Housing value 4 (market-based but not full eliminate-all). BallotReady external_id left blank. Monroe County IN confirmed entirely in IN-9 (single district, one rep).
 - **47-04:** LA County has 12 overlapping congressional districts (CA-27, 28, 29, 30, 32, 33, 34, 36, 37, 38, 43, 44), all held by Democrats in 119th Congress. Whitesides (CA-27) immigration value 2 (swing district, emphasized border security alongside pathways). Whitesides ai-regulation value 2 (former Virgin Galactic CEO, supports safety frameworks). Gómez (CA-34) housing value 1 (introduced housing guarantee legislation, more aggressive than value 2). All 6 BallotReady external_ids left blank.
+- **47-05:** Kamlager-Dove (CA-37) ukraine-support value 2 (Progressive Caucus, questioned prioritizing military aid over diplomacy). Kamlager-Dove fossil-fuels value 1 (Green New Deal cosponsor, opposes all new drilling). Waters (CA-43) deportation value 1 (most vocal opponent, stop-all-deportations position). Barragan (CA-44) fossil-fuels value 1 (Green New Deal, port district interests). All 12 LA County House reps now complete across Plans 04-05. All 6 BallotReady external_ids left blank.
 
 ### Pending Todos
 
@@ -62,5 +63,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Completed 47-04-PLAN.md — First 6 LA County House reps appended (126 rows, 21 topics each); 296 data rows total across 15 officials
+Stopped at: Completed 47-05-PLAN.md — All 12 LA County House reps complete; 126 new rows for 6 reps (Aguilar, Lieu, Kamlager-Dove, Sanchez, Waters, Barragan); CSV now has 422 data rows across 21 officials
 Resume file: None
