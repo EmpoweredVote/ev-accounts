@@ -257,5 +257,5 @@ Plans:
 | 40. High-Value Headshots — Supervisors and LA City Council | 2/2 | Complete    | 2026-02-25 | - |
 | 41. Building Photos, Term Data, and Contact Enrichment | 3/3 | Complete    | 2026-02-25 | - |
 | 42. City Council Headshot Pipeline (89 Cities) | 5/6 | In Progress|  | - |
-| 43. Go API and Frontend Updates | 2/2 | Complete   | 2026-02-26 | - |
+| 43. Go API and Frontend Updates | 2/2 | Complete    | 2026-02-26 | - |
 | 44. Bio Enrichment and Coverage Validation | v1.7 | 0/TBD | Not started | - |
