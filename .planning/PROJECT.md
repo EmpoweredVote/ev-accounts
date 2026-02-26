@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy — federal, state, county, city, and school board — for LA County addresses, with real building photographs, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. A repeatable TIGER + ArcGIS import pipeline supports expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy — federal, state, county, city, and school board — for LA County addresses, with headshot photos (Supabase CDN), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
 
 ## Core Value
 
@@ -111,19 +111,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ PostGIS performance: VACUUM ANALYZE + GiST index confirmed active after bulk imports — v1.6
 - ✓ Import pipeline runbook: 545-line step-by-step documentation for future regional expansion — v1.6
 
+- ✓ Headshot photos for LA County supervisors and LA City council (20 officials) in Supabase CDN — v1.7
+- ✓ City hall building photos from Wikimedia Commons for 11 LA County cities in Supabase CDN — v1.7
+- ✓ Contact website URLs for all 89 LA County cities + supervisor phone numbers — v1.7
+- ✓ Term date precision (year/month/day) with UTC-safe frontend formatting — v1.7
+- ✓ All scraped photos re-hosted to Supabase Storage CDN (zero government hotlinks) — v1.7
+- ✓ Photo licensing tracked per image (photo_license column) — v1.7
+- ✓ Batch headshot scraper (1,247 lines, 5-strategy extraction) for city councils — v1.7
+- ✓ Coverage validation script (CDN HEAD audit, contact presence, hotlink scan) — v1.7
+- ✓ Contacts API endpoint and frontend contact section in ev-ui PoliticianProfile — v1.7
+- ✓ Building photo API endpoint (GET /essentials/cities/{geo_id}/building-photo) — v1.7
+- ✓ Config-driven pipeline_config.json for enrichment scripts — v1.7
+
 ### Active
 
-## Current Milestone: v1.7 LA County Data Enrichment
-
-**Goal:** Enrich ~389 LA County officials (county + city, excluding school board) with photos, contact info, term data, bios, education, and experience via a reproducible scraping pipeline — targeting 80%+ coverage for headshots and contact info.
-
-**Target features:**
-- Headshot photos for county supervisors and city council members
-- City hall building photos for 89 LA County cities
-- Contact info enrichment (email, phone, website, office address)
-- Term/election data (elected date, term end, years in office)
-- Biographical text, education, and work experience where available
-- Reproducible scraping pipeline designed for future regional expansion
+(No active milestone — run `/gsd:new-milestone` to plan next)
 
 ### Out of Scope
 
@@ -141,23 +143,25 @@ Users can explore political issues and discover their elected officials without 
 - Real-time candidate data — cached-only; live data requires new provider
 - PlaceAutocompleteElement migration — legacy Autocomplete class works for existing key
 - Per-ward council assignment for 5 district-election cities — at-large treatment acceptable for now
-- Photo re-hosting to Supabase Storage — scraped URLs work; infrastructure concern for later
+- City council headshot coverage beyond 21.5% — requires ~4-6 hours manual browser research per Plan 42-06; pipeline infrastructure ready
+- School board data enrichment — 402 members, low data availability, high anti-bot protections
+- Bio/education/experience for city council members — ~30% availability, high per-city effort
 
 ## Context
 
-Shipped v1.6 with ~35K LOC across 4 repos + Python import scripts:
+Shipped v1.7 with ~38K LOC across 4 repos + Python enrichment/import scripts:
 - **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration with write-in support, guest auth, help walkthrough
-- **EV-Backend** (Go 1.24): ~15K LOC — auth, compass, essentials (geofence-only + PostGIS), treasury, staging modules
-- **EV-Backend/scripts** (Python): ~3K LOC — TIGER shapefile importers, ArcGIS geofence importers, politician scrapers, shared utils
-- **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile (subtitles, initials avatars), PoliticianCard (3-line layout)
+- **EV-Backend** (Go 1.24): ~16K LOC — auth, compass, essentials (geofence-only + PostGIS, contacts API, building photo endpoint), treasury, staging modules
+- **EV-Backend/scripts** (Python): ~5K LOC — TIGER/ArcGIS importers, headshot scrapers (scrape_headshots.py, scrape_city_headshots.py), building photo fetcher, contact/term importers, coverage_report.py, shared utils with Supabase Storage upload
+- **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile (contact section, subtitles, initials avatars), PoliticianCard (3-line layout)
 - **essentials** (React 19): ~3K LOC — address autocomplete, geofence results, building photos, local filter sidebar
 
-Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB + PostGIS.
-Politician data: cached database records + 791 gap-filled LA County politicians from config-driven scrapers. Google Maps Places API for address autocomplete.
+Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB + PostGIS + Supabase Storage CDN.
+Politician data: cached database records + 791 gap-filled LA County politicians. 84 headshots + 11 building photos in Supabase Storage. 381 contact records. Google Maps Places API for address autocomplete.
 Geofence coverage: Bloomington IN (6 council districts) + full LA County (federal, state, county, city, school board boundaries).
-ev-ui published to GitHub npm registry (v0.1.27), consumed by CompassV2 and essentials.
+ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 
-Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI; IMPORT-PIPELINE.md references `--source` flag not implemented in script.
+Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI; IMPORT-PIPELINE.md references `--source` flag not implemented; 5 district-election cities treated as at-large; city council headshot coverage at 21.5% (pipeline ready, needs manual curation).
 
 ## Constraints
 
@@ -233,6 +237,15 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | Hardcoded roster for school boards | District websites universally blocked by Cloudflare | ✓ Good — 402 board members verified from public records |
 | UNSD (G5420) only, no G5400/G5410 | Prevent school board triple-match in overlapping district areas | ✓ Good — clean single-match per address |
 | 5 district-election cities treated as at-large | SOS PDF provides district=0; per-ward assignment deferred | ⚠️ Revisit — works but loses ward-level precision |
+| Supabase Storage for all scraped photos | Government URLs break silently; CDN re-hosting is durable | ✓ Good — 84 headshots + 11 building photos in CDN, zero hotlinks |
+| Wikipedia Commons as primary headshot source | CC-licensed, stable URLs, proper portrait orientation | ✓ Good — 14/20 high-value headshots from Commons |
+| Photo_license column required before storing | CA government photos not automatically public domain | ✓ Good — every image has license tracked |
+| 5-strategy headshot extraction cascade | Name proximity → alt-text → CSS background → Playwright → Wikipedia | ✓ Good — maximizes automated coverage before manual fallback |
+| Cloudflare detection: status + cf-ray header | Plain 403 from nginx is "failed" (retries), not "blocked" (skipped) | ✓ Good — prevents false permanent skips |
+| Manual headshot_url override in city_sources.json | ~55 cities block automated scraping; manual research is only path | ✓ Good — pipeline supports overrides; manifest CSV ready |
+| BuildingImages CURATED_LOCAL hardcoded CDN URLs | Simpler than Go API endpoint for fixed 11 cities | ✓ Good — no architectural complexity for static data |
+| Contact section below profile photo (left column) | Icons identify contact type; narrow column optimized | ✓ Good — phone/globe/envelope SVG icons |
+| Coverage validation as standalone Python script | Reproducible, CI-integrable, no Go dependency | ✓ Good — exit code 0/1 for pass/fail gating |
 
 ---
-*Last updated: 2026-02-24 after v1.7 milestone started*
+*Last updated: 2026-02-26 after v1.7 milestone*

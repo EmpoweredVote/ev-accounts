@@ -1,12 +1,12 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
+milestone: v1.7
 milestone_name: LA County Data Enrichment
-status: unknown
-last_updated: "2026-02-26T14:18:23.732Z"
+status: complete
+last_updated: "2026-02-26"
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 16
   completed_plans: 15
 ---
@@ -15,19 +15,19 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-24)
+See: .planning/PROJECT.md (updated 2026-02-26)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v1.7 — Phase 44: Coverage Validation (complete)
+**Current focus:** Between milestones — v1.7 complete, next milestone not started
 
 ## Current Position
 
 Phase: 44 of 44 (Coverage Validation)
-Plan: 1 of 1 complete in current phase
-Status: Complete
-Last activity: 2026-02-26 — 44-01 plan complete; coverage_report.py validates v1.7 milestone — 84/84 CDN URLs pass (100%), 89/89 cities have contact websites, 0 hotlinks found
+Plan: Complete
+Status: Milestone v1.7 archived
+Last activity: 2026-02-26 — v1.7 milestone completed and archived
 
-Progress: [█████████░] 94% (v1.7 — 16/16 plans complete: 39-01+39-02+40-01+40-02+41-01+41-02+41-03+42-01+42-02+42-03+42-04+42-05+43-01+43-02+44-01)
+Progress: [██████████] 100% (v1.7 complete)
 
 ## Performance Metrics
 
@@ -38,70 +38,14 @@ Progress: [█████████░] 94% (v1.7 — 16/16 plans complete: 3
 **Velocity (v1.4):** 5 phases, 9 plans
 **Velocity (v1.5):** 6 phases, 13 plans, 25 tasks
 **Velocity (v1.6):** 7 phases, 11 plans, 23 tasks
+**Velocity (v1.7):** 6 phases, 15 plans, 36 tasks (1 plan deferred)
 
 ## Accumulated Context
 
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
-Key v1.7 decisions locked during research:
-- Photo re-hosting to Supabase Storage is IN SCOPE (not deferred) — hotlinking 89 government URLs will break silently within 2-4 years
-- photo_license column required before any headshot is stored — CA government photos are not automatically public domain
-- term_date_precision column required before any term dates are stored — "2024-01-01" displays as "Jan 2024" without it
-
-Key v1.7 decisions from 39-01 execution:
-- BuildingPhoto uses PlaceGeoid (Census GEOID string, size:20) as primary key — GEOIDs are stable, globally unique government identifiers that serve as natural PKs without needing surrogate keys
-- New fields (PhotoLicense, TermDatePrecision) use omitempty JSON tags for backward-compatible API responses
-
-Key v1.7 decisions from 39-02 execution:
-- Supabase import is lazy (inside get_supabase_client) to avoid requiring the package for DB-only scripts
-- upload_photo_to_storage() uses explicit content-type — SDK defaults to text/plain which corrupts image serving
-- upsert=true on upload so re-running scripts is idempotent — same CDN URL on overwrite
-- pipeline_config.json is separate from city_sources.json — v1.7 enrichment master config vs v1.6 scraper config
-- Ext ID counter advanced to -300001 for v1.7 to avoid collisions with v1.6 IDs
-
-Key v1.7 decisions from 40-01 execution:
-- Wikipedia Commons chosen as primary source for 10 council members lacking government site portraits — CC-licensed (cc_by_sa_4.0), stable URLs, proper portrait orientation
-- Monica Rodriguez (CD7) assigned null photo_url — no portrait available (only landscape action photos; no Wikipedia article)
-- Storage filenames use human-readable name slugs (e.g., hilda-l-solis.jpg) not UUIDs — readable in Supabase bucket browser
-- Content-type detected from HTTP response header not URL extension — government CDNs sometimes serve .jpg URLs as image/webp
-
-Key v1.7 decisions from 40-02 execution:
-- scrape_headshots.py ran cleanly on first attempt — all 20 officials processed (19 uploaded, 1 skipped Monica Rodriguez), idempotent re-run confirmed no duplicates
-- Human checkpoint approved: headshots visible on essentials app profile pages, loading from *.supabase.co CDN URLs verified via DevTools
-
-Key v1.7 decisions from 41-01 execution:
-- buildingImages.js CURATED_LOCAL uses hardcoded CDN URLs (not new Go API endpoint) — simpler for fixed 11 cities, avoids architectural complexity
-- LA City (0644000) now served from Supabase CDN instead of static /images/la-city-hall.jpg — CDN is re-scrape-safe
-- All 11 Wikimedia Commons city hall photos confirmed available and uploaded with 0 errors on first run
-
-Key v1.7 decisions from 41-02 execution:
-- import_term_dates.py uses urlparse pattern (not psycopg2.connect(url)) — pooler URL with @ in password fails direct connect; urlparse extracts components as kwargs
-- TermDatePrecision wired through all 3 DB query paths (fetchOfficialsFromDB, fetchFederalAndStateFromDBFiltered, GetPoliticianByID); Cicero legacy path left without precision
-- formatTermDate uses parseInt(dateStr, 10) for year precision — avoids UTC timezone bug where new Date('2024') shows 'Dec 2023' in US local timezone
-- City council term dates deferred — city_sources.json has no election_year field; requires per-city research in future phase
-- [Phase 41]: Name-based matching used for city roster politicians instead of OCD-ID join — scraped roster politicians have office_id=null so district join returns 0 results; name matching achieves 97% hit rate
-- [Phase 42-city-council-headshot-pipeline]: extract_headshot_url uses 3-strategy cascade (name proximity, alt-text, Wikipedia) — returns None over wrong image; false negatives preferred over false positives
-- [Phase 42-city-council-headshot-pipeline]: Cloudflare detection requires BOTH status code AND cf-ray/server header — plain 403 from nginx is marked failed (retries), not blocked (skipped forever)
-- [Phase 42-02]: Wikipedia Strategy 3 has false positive risk for common names — "Ray Pearl" matched historical Dr. Raymond Pearl (1879-1940), "Octavio Martinez" matched Mexican general's flag; deleted before checkpoint
-- [Phase 42-02]: Name-proximity extraction covers ~16% of city council politicians (64/391) — CSS card gallery layouts with background-image CSS are invisible to BeautifulSoup/Playwright img-tag scanning; reaching 80% requires manual headshot_url curation per roster member
-- [Phase 42-city-council-headshot-pipeline]: fetch_council_page uses start/stop Playwright pattern (not context manager) when keep_page=True — allows caller to keep page open for CSS extraction before closing
-- [Phase 42-city-council-headshot-pipeline]: Wikipedia guard checks first paragraph for California/council/mayor terms — prevents false positives for common names matching historical figures
-- [Phase 42-04]: PHOTO-03 (80% headshot coverage) is not achievable via automated scraping alone for LA County city councils — Cloudflare WAF blocks ~35 cities, CivicPlus/MunicoSite CMS renders member data via JavaScript with no HTML fallback; 21.5% (84/391) accepted as automated maximum
-- [Phase 42-04]: EXCLUDE_PATTERNS must include social media icon filenames (twitter-x, fb, chat_bubble) to prevent Revize CMS pages from matching social icons near member names as headshots
-- [Phase 42-04]: CSS url() extraction should match any CSS property containing url(), not just background-image — Avada WordPress theme uses --awb-background-image-front custom property
-- [Phase 42-05]: Pomona override URLs (showpublisheddocument) blocked by Akamai CDN 403; Santa Monica override URLs (/sites/default/files/Council/*.jpg) return 404 — manual URL research required in Plan 06
-- [Phase 42-05]: generate_headshot_manifest.py uses DISTINCT ON (p.id) to deduplicate politicians with multiple office records in the missing-headshots SQL query
-- [Phase 42-05]: Manifest CSV sorted by city gap size descending so Plan 06 curator starts with highest-impact cities first (Santa Monica 7, Artesia 6, Pomona 6, etc.)
-- [Phase 43-01]: ContactSyncedAt uses *time.Time pointer so GORM treats nil (NULL in DB) as never-set; omitempty on pointer omits nil from JSON responses
-- [Phase 43-01]: Empty contact rows filtered server-side (all of phone/email/fax/website_url blank) so frontend never receives degenerate rows
-- [Phase 43-01]: GetBuildingPhoto returns map[string]interface{} directly — response is simple and fixed, named DTO adds no value
-- [Phase 43-02]: Contact section placed below profile photo in left column — icons identify contact type (phone, globe, envelope) instead of text labels
-- [Phase 43-02]: BallotReady person-level urls/email_addresses merged with enriched contacts and deduplicated — single source of truth for contact display
-- [Phase 43-02]: SocialLinks reused for social media icons only — email/website moved to contact list with full text display
-- [Phase 44-01]: Check 1 reports TWO metrics: CDN health % (pass/fail gate at 80%) and population coverage % (informational) — CDN health is what matters for availability, not raw headshot count
-- [Phase 44-01]: Check 2 uses city_sources.json as source of truth for 89-city list — same source used by scraping pipeline, avoiding drift
-- [Phase 44-01]: Check 3 is SQL-only (no HTTP) — hotlink elimination is a binary database state check, not a live CDN health check
+See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 
 ### Pending Todos
 
@@ -109,14 +53,10 @@ Key v1.7 decisions from 41-02 execution:
 
 ### Blockers/Concerns
 
-- Phase 39 (pre-planning): Verify Supabase Storage Python upload pattern against current docs before writing upload function — RESOLVED in 39-02
-- Phase 39 (pre-planning): Run Wikidata SPARQL query for LA County city hall P18 images before Phase 41 to size building photo scope correctly
-- Phase 39 (pre-planning): Confirm composite unique constraint exists on politician_contacts in models.go before Phase 41 contact upserts run
-- Phase 40 (pre-planning): photo_license review workflow decision needed — RESOLVED: serve "scraped_no_license" images immediately (no gating), track license type for compliance
-- Phase 40 ongoing: Monica Rodriguez (CD7) has no available headshot portrait — only landscape action photos on district site; no Wikipedia article. May need manual research in a future pass.
+(None — milestone complete)
 
 ## Session Continuity
 
 Last session: 2026-02-26
-Stopped at: Phase 44 plan 44-01 complete; v1.7 milestone validated — coverage_report.py confirms all targets met
+Stopped at: v1.7 milestone archived
 Resume file: None

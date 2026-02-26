@@ -177,3 +177,34 @@
 
 ---
 
+
+## v1.7 LA County Data Enrichment (Shipped: 2026-02-26)
+
+**Phases completed:** 6 phases, 15 plans executed (1 deferred), 36 tasks
+**Timeline:** 3 days (2026-02-24 - 2026-02-26)
+**Requirements:** 18/19 satisfied (CONT-03 shipped but checkbox missed; PHOTO-03 at 21.5% vs 80% target)
+**Repos:** EV-Backend (Go models, Python scripts), ev-ui, essentials
+
+**Delivered:** LA County officials enriched with headshots, building photos, contact info, and term data via a reproducible scraping pipeline — 84 headshots in Supabase CDN, 11 city hall photos, 381 contact records, and coverage validation tooling.
+
+**Key accomplishments:**
+1. City council headshot pipeline — 1,247-line batch scraper with 5-strategy extraction cascade, Cloudflare detection, Supabase Storage CDN upload, and manual headshot_url override support; 84 headshots across 34 cities
+2. High-value headshots — All 20 LA County supervisors and LA City council members have CC-licensed headshots from Wikipedia Commons, re-hosted to Supabase Storage
+3. Building photos — 11 Wikimedia Commons city hall photos uploaded to Supabase CDN, served via buildingImages.js CURATED_LOCAL
+4. Contact enrichment — 381 contact records imported (376 city website URLs for 89 cities + 5 supervisor phones), contacts API endpoint and frontend contact section in ev-ui PoliticianProfile
+5. Term date precision — Supervisor term dates with UTC-safe year-precision formatting wired through Go API to frontend
+6. Coverage validation — Standalone coverage_report.py confirms 84/84 CDN URLs pass, 89/89 cities have contacts, 0 government hotlinks
+
+**Known Gaps:**
+- PHOTO-03: Headshot coverage at 84/391 (21.5%) vs 80% target — automated pipeline hit ceiling at ~55 Cloudflare/CivicPlus-blocked cities; Plan 42-06 (manual browser curation sprint, ~4-6 hours) deferred
+- Research manifest ready: `headshot_research_manifest.csv` (300 politicians, 82 cities) for future manual sprint
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- PHOTO-03 coverage gap — pipeline infrastructure complete, data gap requires human research
+- REQUIREMENTS.md had PHOTO-03 marked [x] despite 21.5% actual coverage
+
+---
+
