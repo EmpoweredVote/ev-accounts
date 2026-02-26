@@ -262,7 +262,7 @@ Plans:
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
 | 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
-| 47. Federal Officials Research | v1.8 | 6/6 | Complete | 2026-02-26 |
+| 47. Federal Officials Research | 7/12 | In Progress|  | 2026-02-26 |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
 | 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
