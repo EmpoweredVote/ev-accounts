@@ -263,7 +263,7 @@ Plans:
 | 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
-| 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
+| 48. Mayors Research | 1/2 | In Progress|  | - |
 | 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
