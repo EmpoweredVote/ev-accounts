@@ -149,7 +149,7 @@ Plans:
 - [ ] 45-01-PLAN.md — Delete deprecated 50-topic seed files and old topics.json
 
 ### Phase 46: Research Infrastructure & State Officials
-**Goal**: The stance research CSV format is defined and CA/IN governors and lt. governors have sourced stance data across all 20 compass topics
+**Goal**: The stance research CSV format is defined and CA/IN governors and lt. governors have sourced stance data across all 21 compass topics
 **Depends on**: Phase 45
 **Requirements**: STANCE-01, STANCE-02, STANCE-03, STANCE-04
 **Success Criteria** (what must be TRUE):
@@ -158,7 +158,10 @@ Plans:
   3. Lt. Governor Kounalakis has stance values and source URLs for all applicable compass topics
   4. Governor Braun has stance values and source URLs for all applicable compass topics
   5. Lt. Governor Beckwith has stance values and source URLs for all applicable compass topics
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 46-01-PLAN.md — Create CSV schema and research CA state officials (Newsom, Kounalakis)
+- [ ] 46-02-PLAN.md — Research IN state officials (Braun, Beckwith)
 
 ### Phase 47: Federal Officials Research
 **Goal**: US senators and House representatives for CA and IN have sourced stance data across all compass topics
