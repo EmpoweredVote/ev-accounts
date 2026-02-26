@@ -29,10 +29,10 @@ Requirements for v1.8: Compass Data & Politician Research. Each maps to roadmap 
 
 ### Legacy Cleanup
 
-- [ ] **CLEAN-01**: Old 50-topic topics.json data file removed from repository
-- [ ] **CLEAN-02**: Old seeds/topics.go seed function removed
-- [ ] **CLEAN-03**: Old seeds/categories.go hardcoded category map removed
-- [ ] **CLEAN-04**: 21-topic/5-stance CSV and compass_csv_seeder.go remain as sole source of truth
+- [x] **CLEAN-01**: Old 50-topic topics.json data file removed from repository
+- [x] **CLEAN-02**: Old seeds/topics.go seed function removed
+- [x] **CLEAN-03**: Old seeds/categories.go hardcoded category map removed
+- [x] **CLEAN-04**: 21-topic/5-stance CSV and compass_csv_seeder.go remain as sole source of truth
 
 ### Data Import
 
@@ -82,10 +82,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | QUOTE-02 | Phase 49 | Pending |
 | QUOTE-03 | Phase 49 | Pending |
 | QUOTE-04 | Phase 49 | Pending |
-| CLEAN-01 | Phase 45 | Pending |
-| CLEAN-02 | Phase 45 | Pending |
-| CLEAN-03 | Phase 45 | Pending |
-| CLEAN-04 | Phase 45 | Pending |
+| CLEAN-01 | Phase 45 | Complete |
+| CLEAN-02 | Phase 45 | Complete |
+| CLEAN-03 | Phase 45 | Complete |
+| CLEAN-04 | Phase 45 | Complete |
 | IMPORT-01 | Phase 50 | Pending |
 | IMPORT-02 | Phase 50 | Pending |
 | IMPORT-03 | Phase 50 | Pending |

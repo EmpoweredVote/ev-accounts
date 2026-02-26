@@ -126,7 +126,7 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 
 **Milestone Goal:** Populate the compass with real politician stances and sourced quotes so users can compare themselves to actual elected officials across CA and IN.
 
-- [ ] **Phase 45: Legacy Cleanup** - Remove deprecated 50-topic data files and old seed functions
+- [x] **Phase 45: Legacy Cleanup** - Remove deprecated 50-topic data files and old seed functions (completed 2026-02-26)
 - [ ] **Phase 46: Research Infrastructure & State Officials** - Define CSV schema and research CA/IN governors and lt. governors
 - [ ] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN
 - [ ] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors
@@ -250,7 +250,7 @@ Plans:
 | 42. City Council Headshot Pipeline | v1.7 | 5/6 | Complete* | 2026-02-26 |
 | 43. Go API and Frontend Updates | v1.7 | 2/2 | Complete | 2026-02-26 |
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
-| 45. Legacy Cleanup | v1.8 | 0/1 | Not started | - |
+| 45. Legacy Cleanup | 1/1 | Complete   | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | v1.8 | 0/TBD | Not started | - |
 | 47. Federal Officials Research | v1.8 | 0/TBD | Not started | - |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
