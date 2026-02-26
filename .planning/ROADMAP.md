@@ -128,7 +128,7 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 
 - [x] **Phase 45: Legacy Cleanup** - Remove deprecated 50-topic data files and old seed functions (completed 2026-02-26)
 - [x] **Phase 46: Research Infrastructure & State Officials** - Define CSV schema and research CA/IN governors and lt. governors (completed 2026-02-26)
-- [ ] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN
+- [x] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN (completed 2026-02-26)
 - [ ] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors
 - [ ] **Phase 49: Quote Collection** - Gather verbatim politician quotes on compass topics for Read & Rank
 - [ ] **Phase 50: Data Import Scripts** - Build import scripts to load stance and quote CSVs into the database
@@ -174,12 +174,12 @@ Plans:
   4. All LA County CA House representatives have stance values and source URLs for all applicable compass topics
 **Plans**: 6 plans
 Plans:
-- [ ] 47-01-PLAN.md — Research CA US Senators (Padilla, Schiff)
-- [ ] 47-02-PLAN.md — Research IN US Senators (Young, Banks)
-- [ ] 47-03-PLAN.md — Research Monroe County IN House representative(s)
-- [ ] 47-04-PLAN.md — Identify LA County House districts and research first batch (~6 reps)
-- [ ] 47-05-PLAN.md — Research second batch of LA County House representatives (~6 reps)
-- [ ] 47-06-PLAN.md — Research remaining LA County House representatives and final validation
+- [x] 47-01-PLAN.md — Research CA US Senators (Padilla, Schiff)
+- [x] 47-02-PLAN.md — Research IN US Senators (Young, Banks)
+- [x] 47-03-PLAN.md — Research Monroe County IN House representative(s)
+- [x] 47-04-PLAN.md — Identify LA County House districts and research first batch (~6 reps)
+- [x] 47-05-PLAN.md — Research second batch of LA County House representatives (~6 reps)
+- [x] 47-06-PLAN.md — Research remaining LA County House representatives and final validation
 
 ### Phase 48: Mayors Research
 **Goal**: Bloomington IN and Los Angeles CA mayors have sourced stance data across all compass topics
@@ -262,7 +262,7 @@ Plans:
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
 | 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
-| 47. Federal Officials Research | 5/6 | In Progress|  | - |
+| 47. Federal Officials Research | v1.8 | 6/6 | Complete | 2026-02-26 |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
 | 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
