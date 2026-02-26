@@ -129,7 +129,7 @@ Full details: `.planning/milestones/v1.7-ROADMAP.md`
 - [x] **Phase 45: Legacy Cleanup** - Remove deprecated 50-topic data files and old seed functions (completed 2026-02-26)
 - [x] **Phase 46: Research Infrastructure & State Officials** - Define CSV schema and research CA/IN governors and lt. governors (completed 2026-02-26)
 - [x] **Phase 47: Federal Officials Research** - Research US senators and House representatives for CA and IN (completed 2026-02-26)
-- [ ] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors
+- [x] **Phase 48: Mayors Research** - Research Bloomington IN and Los Angeles CA mayors (completed 2026-02-26)
 - [ ] **Phase 49: Quote Collection** - Gather verbatim politician quotes on compass topics for Read & Rank
 - [ ] **Phase 50: Data Import Scripts** - Build import scripts to load stance and quote CSVs into the database
 
@@ -263,7 +263,7 @@ Plans:
 | 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
-| 48. Mayors Research | 1/2 | In Progress|  | - |
+| 48. Mayors Research | 2/2 | Complete   | 2026-02-26 | - |
 | 49. Quote Collection | v1.8 | 0/TBD | Not started | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
