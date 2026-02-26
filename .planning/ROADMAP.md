@@ -250,7 +250,7 @@ Plans:
 | 42. City Council Headshot Pipeline | v1.7 | 5/6 | Complete* | 2026-02-26 |
 | 43. Go API and Frontend Updates | v1.7 | 2/2 | Complete | 2026-02-26 |
 | 44. Coverage Validation | v1.7 | 1/1 | Complete | 2026-02-26 |
-| 45. Legacy Cleanup | 1/1 | Complete   | 2026-02-26 | - |
+| 45. Legacy Cleanup | 1/1 | Complete    | 2026-02-26 | - |
 | 46. Research Infrastructure & State Officials | v1.8 | 0/TBD | Not started | - |
 | 47. Federal Officials Research | v1.8 | 0/TBD | Not started | - |
 | 48. Mayors Research | v1.8 | 0/TBD | Not started | - |
