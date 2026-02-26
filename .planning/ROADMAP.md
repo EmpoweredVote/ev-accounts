@@ -206,7 +206,7 @@ Plans:
 - [ ] 49-02-PLAN.md — Research IN officials (Braun, Beckwith, Thomson)
 - [ ] 49-03-PLAN.md — Research CA senators and LA mayor (Padilla, Schiff, Bass)
 - [ ] 49-04-PLAN.md — Research IN federal officials (Young, Banks, Houchin)
-- [ ] 49-05-PLAN.md — Research LA County House batch 1 (Whitesides, Friedman, Sherman, Cardenas, Chu, Aguilar)
+- [x] 49-05-PLAN.md — Research LA County House batch 1 (Whitesides, Friedman, Sherman, Cardenas, Chu, Aguilar)
 - [ ] 49-06-PLAN.md — Research LA County House batch 2 (Gomez, Lieu, Kamlager-Dove, Sanchez, Waters, Barragan) + final validation
 
 ### Phase 50: Data Import Scripts
@@ -271,7 +271,7 @@ Plans:
 | 46. Research Infrastructure & State Officials | 2/2 | Complete    | 2026-02-26 | - |
 | 47. Federal Officials Research | 12/12 | Complete    | 2026-02-26 | 2026-02-26 |
 | 48. Mayors Research | 2/2 | Complete    | 2026-02-26 | - |
-| 49. Quote Collection | 4/6 | In Progress|  | - |
+| 49. Quote Collection | 5/6 | In Progress|  | - |
 | 50. Data Import Scripts | v1.8 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
