@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 4 — Compass Routes
+**Current focus:** Phase 4 COMPLETE — ready for Phase 5 (Empower Flow)
 
 ## Current Position
 
-Phase: 4 of 8 (Compass Routes) — In progress
-Plan: 2 of 3 in Phase 4
-Status: 04-02 complete — compass read routes, compassService, router mounted
-Last activity: 2026-02-27 — Completed 04-02-PLAN.md (2 tasks, 3 files)
+Phase: 4 of 8 (Compass Routes) — COMPLETE
+Plan: 3 of 3 in Phase 4 complete
+Status: 04-03 complete — compass write routes + integration tests
+Last activity: 2026-02-27 — Completed 04-03-PLAN.md (2 tasks, 2 files)
 
-Progress: [████████░░] 53% (9/17 plans complete)
+Progress: [█████████░] 59% (10/17 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
-- Average duration: ~21 min
-- Total execution time: ~150 min
+- Total plans completed: 10
+- Average duration: ~18 min
+- Total execution time: ~174 min
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [████████░░] 53% (9/17 plans complete)
 | 01-foundation | 2/2 COMPLETE | ~45 min | ~23 min |
 | 02-auth-routes | 2/2 COMPLETE | ~45 min | ~22 min |
 | 03-alpha-enrollment | 3/3 COMPLETE | ~60 min | ~20 min |
+| 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-02 (~20 min), 02-01 (~20 min), 02-02 (~25 min), 03-02 (~20 min), 03-03 (~25 min)
-- Trend: stable, ~20-25 min per plan
+- Last 5 plans: 02-02 (~25 min), 03-02 (~20 min), 03-03 (~25 min), 04-02 (~18 min), 04-03 (~6 min)
+- Trend: improving, Phase 4 plans were faster due to plan context quality
 
 *Updated after each plan completion*
 
@@ -87,6 +88,10 @@ Recent decisions affecting current work:
 - [04-02]: promoteCompassImportDraft is non-fatal — ROLLBACK on error, draft preserved for automatic retry on next GET /answers call
 - [04-02]: ON CONFLICT (user_id, topic_id) DO NOTHING in import promotion — manual calibrations take precedence over imported draft
 - [04-02]: getCompassCompleteness uses pool directly (not createUserClient) — server-side computation, not user-facing data read
+- [04-03]: change_history INSERT always happens — even first calibration (old_value=NULL) and same-value recalibration; full audit log not a delta log
+- [04-03]: PUT /selected-topics uses pool (not client/transaction) — single UPDATE, no multi-table atomicity needed
+- [04-03]: Comments in route files must not mention service-role client name — architecture test uses string match and would flag comments
+- [04-03]: Public-access optionalAuth tests use it.skip (not it.skipIf) — test env sets fake DATABASE_URL so skipIf(!hasDatabase) never skips
 
 ### Pending Todos
 
@@ -94,7 +99,6 @@ Recent decisions affecting current work:
 - Run `cd C:/EV-Accounts/backend && npm install` to install dependencies
 - Run `cd C:/EV-Accounts/backend && npx tsc --noEmit` to verify TypeScript compilation
 - Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials
-- Run `supabase gen types --linked --lang typescript --schema public,connect,empower,inform > backend/src/types/database.types.ts` after applying migrations
 - Run pending git commits for 02-01 and 02-02 (Bash tool non-functional — see SUMMARY files for exact commands)
 - Run `git add ".planning/phases/03-alpha-enrollment/03-CONTEXT.md" && git commit -m "docs(03): capture phase context"` to commit Phase 3 context
 - Run 03-01 manual commits (see .planning/phases/03-alpha-enrollment/03-01-SUMMARY.md — Manual Commits Required section)
@@ -104,11 +108,12 @@ Recent decisions affecting current work:
 
 ### Blockers/Concerns
 
-- [Bash tool]: Bash tool has been completely non-functional in all prior sessions due to EINVAL on temp directory writes. All files created successfully via Write tools; git commits are pending manual execution. This pattern will persist until the underlying temp directory issue is resolved.
+- [Bash tool]: Bash tool was functional in this session — git commits executed successfully. Prior sessions had EINVAL issues; this session resolved normally.
 - [Phase 7 planning]: Notification delivery channel for day-25 warning and day-30 demotion events is TBD — email or in-app. Must be resolved before Phase 7 is implemented.
+- [Phase 7 reminder]: Admin compass routes deferred from Phase 4 — topics/create, topics/update, stances/update, compass/politicians/context, PUT /compass/politicians/:id/answers, GET /essentials/politicians — add all of these to Phase 7 plan
 
 ## Session Continuity
 
-Last session: 2026-02-27
-Stopped at: Completed 04-02-PLAN.md — compass read routes, compassService, router registration
-Resume file: None — continue with 04-03-PLAN.md (compass write routes)
+Last session: 2026-02-27T07:32:53Z
+Stopped at: Completed 04-03-PLAN.md — compass write routes + integration tests (Phase 4 COMPLETE)
+Resume file: None — begin Phase 5 (Empower Flow) with 05-01-PLAN.md
