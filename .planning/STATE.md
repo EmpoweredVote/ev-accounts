@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 4 COMPLETE — ready for Phase 5 (Empower Flow)
+**Current focus:** Phase 5 (Empower Flow) — in progress
 
 ## Current Position
 
-Phase: 4 of 8 (Compass Routes) — COMPLETE
-Plan: 3 of 3 in Phase 4 complete
-Status: 04-03 complete — compass write routes + integration tests
-Last activity: 2026-02-27 — Completed 04-03-PLAN.md (2 tasks, 2 files)
+Phase: 5 of 8 (Empower Flow) — In progress
+Plan: 1 of 3 in Phase 5 complete
+Status: 05-01 complete — Phase 5 schema migration, architecture test, /account/me demotion state
+Last activity: 2026-02-27 — Completed 05-01-PLAN.md (2 tasks, 3 files)
 
-Progress: [█████████░] 59% (10/17 plans complete)
+Progress: [██████████] 65% (11/17 plans complete)
 
 ## Performance Metrics
 
@@ -31,10 +31,11 @@ Progress: [█████████░] 59% (10/17 plans complete)
 | 02-auth-routes | 2/2 COMPLETE | ~45 min | ~22 min |
 | 03-alpha-enrollment | 3/3 COMPLETE | ~60 min | ~20 min |
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
+| 05-empower-flow | 1/3 in progress | ~4 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~25 min), 03-02 (~20 min), 03-03 (~25 min), 04-02 (~18 min), 04-03 (~6 min)
-- Trend: improving, Phase 4 plans were faster due to plan context quality
+- Last 5 plans: 03-03 (~25 min), 04-01 (~8 min), 04-02 (~18 min), 04-03 (~6 min), 05-01 (~4 min)
+- Trend: improving, schema-only plans are very fast (no runtime testing)
 
 *Updated after each plan completion*
 
@@ -92,6 +93,10 @@ Recent decisions affecting current work:
 - [04-03]: PUT /selected-topics uses pool (not client/transaction) — single UPDATE, no multi-table atomicity needed
 - [04-03]: Comments in route files must not mention service-role client name — architecture test uses string match and would flag comments
 - [04-03]: Public-access optionalAuth tests use it.skip (not it.skipIf) — test env sets fake DATABASE_URL so skipIf(!hasDatabase) never skips
+- [05-01]: Tier derivation updated — (empowered && empowered.is_active) ? 'empowered' : connected ? 'connected' : 'inform' — demoted users return tier:'connected', empowerment_status distinguishes active vs. demoted
+- [05-01]: empowerment_status omitted entirely (not null) from /account/me when no empowered_profiles row exists — callers check field presence
+- [05-01]: Re-empowerment clears demoted_at = NULL and demotion_reason = NULL on the row — record reflects current state, not history; consent_records is audit trail
+- [05-01]: consent_records table writes via service layer (pg pool) only — no INSERT/UPDATE/DELETE RLS policies; authenticated users read own records via SELECT policy
 
 ### Pending Todos
 
@@ -114,6 +119,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-27T07:32:53Z
-Stopped at: Completed 04-03-PLAN.md — compass write routes + integration tests (Phase 4 COMPLETE)
-Resume file: None — begin Phase 5 (Empower Flow) with 05-01-PLAN.md
+Last session: 2026-02-27T15:56:12Z
+Stopped at: Completed 05-01-PLAN.md — Phase 5 schema migration, architecture test, /account/me demotion state
+Resume file: None — continue Phase 5 with 05-02-PLAN.md
