@@ -10,6 +10,8 @@ import invitesRouter from './routes/invites.js';
 import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import empowerRouter from './routes/empower.js';
+import gemsRouter from './routes/gems.js';
+import rolesRouter from './routes/roles.js';
 
 const app = express();
 
@@ -29,6 +31,8 @@ app.use('/api/invites', invitesRouter);
 app.use('/api/connect', connectRouter);
 app.use('/api/compass', compassRouter);
 app.use('/api/empower', empowerRouter);
+app.use('/api/gems', gemsRouter);
+app.use('/api/roles', rolesRouter);
 
 export { app }; // For testing
 
