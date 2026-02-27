@@ -8,6 +8,7 @@ import authRouter from './routes/auth.js';
 import accountRouter from './routes/account.js';
 import invitesRouter from './routes/invites.js';
 import connectRouter from './routes/connect.js';
+import compassRouter from './routes/compass.js';
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/invites', invitesRouter);
 app.use('/api/connect', connectRouter);
+app.use('/api/compass', compassRouter);
 
 export { app }; // For testing
 
