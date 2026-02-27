@@ -108,16 +108,16 @@ Plans:
 **Requirements**: CIVIC-01, CIVIC-02, CIVIC-03, CIVIC-04, SOCL-01, SOCL-02, SOCL-03
 **Success Criteria** (what must be TRUE):
   1. A gem debit that would take the balance negative is rejected atomically — a concurrent debit and a check that passes simultaneously cannot both succeed
-  2. A stipend that would push a user's gem balance above the reserve cap silently caps at the reserve; no error is returned, no excess gems are granted
+  2. A stipend that would push a user's gem balance above the reserve cap silently caps at the reserve; no error is returned, no excess gems are granted [NOTE: reserve cap deferred per CONTEXT.md — this success criterion is overridden]
   3. A role with tier eligibility requirements (e.g., Maven requires Empowered) cannot be granted to a Connected user; the API returns a clear rejection
   4. Two Connected users can send, accept, decline, and block peer connection requests; after blocking, neither user can send a new request to the other
   5. A Connected user can follow an Empowered account and unfollow it; following does not require approval from the Empowered account
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: Gem ledger (append-only transactions, atomic debit enforcement, reserve cap at stipend)
-- [ ] 06-02: Role system (grant, revoke with soft revocation, conflict enforcement, tier eligibility)
-- [ ] 06-03: Social graph (peer connections with full state machine, follows)
+- [ ] 06-01-PLAN.md — Schema migrations: gem ledger extension, role ENUM-to-lookup migration, unified social_relationships table, RLS, RPCs
+- [ ] 06-02-PLAN.md — Gem service + routes (balance, transactions) and role service + routes (list, user roles), architecture test
+- [ ] 06-03-PLAN.md — Social service + routes (peer connections, follows, follower count), role conflict enforcement (CIVIC-04)
 
 ### Phase 7: Admin Tool and Calibration Cron
 **Goal**: Administrators can manage the Alpha cohort through a secure internal UI, and the platform automatically enforces calibration commitments via a daily scheduled job — with every action and every automated event logged
