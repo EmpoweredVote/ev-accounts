@@ -334,7 +334,7 @@ export async function confirmEmpowerment(
     .schema('empower')
     .rpc('execute_empowerment', {
       p_user_id: userId,
-      p_legal_name: connectedProfile.legal_name,
+      p_legal_name: connectedProfile.legal_name ?? '',
       p_connected_profile_id: connectedProfile.id,
       p_reserved_slug: reservedSlug,
     });

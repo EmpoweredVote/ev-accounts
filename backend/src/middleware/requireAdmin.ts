@@ -1,4 +1,4 @@
-import { Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import type { AuthenticatedRequest } from './auth.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 
@@ -15,14 +15,15 @@ import { supabaseAdmin } from '../lib/supabase.js';
  * Usage: router.use(requireAuth, requireAdmin)
  */
 export async function requireAdmin(
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> {
+  const authReq = req as AuthenticatedRequest;
   const { data, error } = await supabaseAdmin
     .from('admin_users')
     .select('user_id')
-    .eq('user_id', req.userId)
+    .eq('user_id', authReq.userId)
     .maybeSingle();
 
   if (error || !data) {

@@ -28,7 +28,7 @@ import { executeDemotion } from './empowerService.js';
 
 interface LapsedUser {
   user_id: string;
-  overdue_topic_ids: number[];
+  overdue_topic_ids: string[];
   days_overdue: number;
 }
 

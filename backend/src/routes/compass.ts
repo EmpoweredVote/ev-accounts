@@ -366,7 +366,7 @@ router.get(
   optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     try {
-      const politicianId = req.params.id;
+      const politicianId = req.params.id as string;
 
       if (!UUID_REGEX.test(politicianId)) {
         res
@@ -404,7 +404,8 @@ router.get(
   optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     try {
-      const { id: politicianId, topicId } = req.params;
+      const politicianId = req.params.id as string;
+      const topicId = req.params.topicId as string;
 
       if (!UUID_REGEX.test(politicianId) || !UUID_REGEX.test(topicId)) {
         res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid ID format' });

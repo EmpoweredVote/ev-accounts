@@ -80,7 +80,7 @@ router.patch(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      await acceptPeerRequest(req.params.id!, authReq.userId);
+      await acceptPeerRequest(req.params.id as string, authReq.userId);
       res.status(200).json({ accepted: true });
     } catch (err) {
       const code = (err as { code?: string }).code;
@@ -110,7 +110,7 @@ router.patch(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      await declinePeerRequest(req.params.id!, authReq.userId);
+      await declinePeerRequest(req.params.id as string, authReq.userId);
       res.status(200).json({ declined: true });
     } catch (err) {
       const code = (err as { code?: string }).code;
@@ -232,7 +232,7 @@ router.delete(
     const authReq = req as AuthenticatedRequest;
 
     try {
-      await unfollow(authReq.userId, req.params.target_id!);
+      await unfollow(authReq.userId, req.params.target_id as string);
       res.status(200).json({ unfollowed: true });
     } catch (err) {
       console.error('[DELETE /social/follow/:target_id] error:', err);
@@ -277,7 +277,7 @@ router.get(
   '/followers/count/:user_id',
   requireAuth,
   async (req: Request, res: Response): Promise<void> => {
-    const userId = req.params.user_id!;
+    const userId = req.params.user_id as string;
 
     // Validate target is an Empowered account
     const { rows: empRows } = await pool.query(

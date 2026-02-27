@@ -1,4 +1,4 @@
-import { Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import type { AuthenticatedRequest } from './auth.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 
@@ -13,15 +13,16 @@ import { supabaseAdmin } from '../lib/supabase.js';
  * The architecture enforcement test allowlist includes this file.
  */
 export async function requireVerified(
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> {
+  const authReq = req as AuthenticatedRequest;
   try {
     const {
       data: { user },
       error,
-    } = await supabaseAdmin.auth.admin.getUserById(req.userId);
+    } = await supabaseAdmin.auth.admin.getUserById(authReq.userId);
 
     if (error || !user?.email_confirmed_at) {
       res.status(403).json({

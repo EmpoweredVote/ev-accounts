@@ -46,7 +46,7 @@ export async function creditGems(
     p_gem_type: gemType,
     p_amount: amount,
     p_transaction_type: transactionType,
-    p_source_ref: sourceRef ?? null,
+    p_source_ref: sourceRef,
   });
 
   if (error) {
@@ -75,7 +75,7 @@ export async function debitGems(
     p_gem_type: gemType,
     p_amount: amount,
     p_transaction_type: transactionType,
-    p_source_ref: sourceRef ?? null,
+    p_source_ref: sourceRef,
   });
 
   if (error) {

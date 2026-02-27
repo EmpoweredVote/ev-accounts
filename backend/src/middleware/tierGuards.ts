@@ -1,4 +1,4 @@
-import { Response, NextFunction } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import type { AuthenticatedRequest } from './auth.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 
@@ -7,15 +7,16 @@ import { supabaseAdmin } from '../lib/supabase.js';
 // src/routes/ for supabaseAdmin usage; src/middleware/ is excluded by design.
 
 export async function requireConnected(
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> {
+  const authReq = req as AuthenticatedRequest;
   const { data, error } = await supabaseAdmin
     .schema('connect')
     .from('connected_profiles')
     .select('id, verification_status')
-    .eq('user_id', req.userId)
+    .eq('user_id', authReq.userId)
     .maybeSingle();
 
   if (error || !data) {
@@ -32,15 +33,16 @@ export async function requireConnected(
 }
 
 export async function requireEmpowered(
-  req: AuthenticatedRequest,
+  req: Request,
   res: Response,
   next: NextFunction
 ): Promise<void> {
+  const authReq = req as AuthenticatedRequest;
   const { data, error } = await supabaseAdmin
     .schema('empower')
     .from('empowered_profiles')
     .select('id, is_active')
-    .eq('user_id', req.userId)
+    .eq('user_id', authReq.userId)
     .maybeSingle();
 
   if (error || !data || !data.is_active) {

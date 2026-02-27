@@ -38,7 +38,7 @@ function createCache(): CacheClient {
     return new InMemoryFallback();
   }
   try {
-    const redis = new Redis({ url: env.REDIS_URL });
+    const redis = new Redis({ url: env.REDIS_URL } as unknown as ConstructorParameters<typeof Redis>[0]);
     return {
       async get<T>(key: string): Promise<T | null> {
         return redis.get<T>(key);
