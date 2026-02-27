@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 5 COMPLETE — ready for Phase 6 (Gems, Roles, and Social Graph)
+**Current focus:** Phase 6 (Gems, Roles, and Social Graph) — Plan 1 of 3 complete
 
 ## Current Position
 
-Phase: 5 of 8 (Empower Flow) — COMPLETE
-Plan: 2 of 2 in Phase 5 complete
-Status: 05-02 complete — empower service, 3 endpoints, integration tests
-Last activity: 2026-02-27 — Completed 05-02-PLAN.md (2 tasks, 4 files)
+Phase: 6 of 8 (Gems, Roles, and Social Graph) — In progress
+Plan: 1 of 3 in Phase 6 complete
+Status: 06-01 complete — all Phase 6 database schema migrations (5 migration files)
+Last activity: 2026-02-27 — Completed 06-01-PLAN.md (2 tasks, 5 files)
 
-Progress: [███████████░] 71% (12/17 plans complete)
+Progress: [████████████░] 76% (13/17 plans complete)
 
 ## Performance Metrics
 
@@ -32,10 +32,11 @@ Progress: [███████████░] 71% (12/17 plans complete)
 | 03-alpha-enrollment | 3/3 COMPLETE | ~60 min | ~20 min |
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
 | 05-empower-flow | 2/2 COMPLETE | ~8 min | ~4 min |
+| 06-gems-roles-social-graph | 1/3 | ~14 min | ~14 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-01 (~8 min), 04-02 (~18 min), 04-03 (~6 min), 05-01 (~4 min), 05-02 (~4 min)
-- Trend: stable, implementation plans are fast with solid patterns established
+- Last 5 plans: 04-03 (~6 min), 05-01 (~4 min), 05-02 (~4 min), 06-01 (~14 min)
+- Trend: schema-only plans are fast; 06-01 was 5 migration files, heavier than typical
 
 *Updated after each plan completion*
 
@@ -101,6 +102,13 @@ Recent decisions affecting current work:
 - [05-02]: PREFLIGHT_EXPIRED thrown as Error with .code property — allows catch block to discriminate by message OR .code without custom error class
 - [05-02]: DemoteSchema reason fully optional — cron-triggered demotion (no body) and admin-triggered (structured reason) both work through one schema
 - [05-02]: CALIBRATION_INCOMPLETE only checked when candidate_role is not null — avoids misleading error when ROLE_NOT_SET is already in failures
+- [06-01]: gem_type column on single ledger table (not separate tables per type) — simplest schema, advisory lock keyed on user_id covers all types
+- [06-01]: gem_balance_red/blue/yellow denormalized on connected_profiles — O(1) balance reads without ledger sum; RPCs maintain atomically
+- [06-01]: public.roles lookup table replaces role_type ENUM — new roles added by INSERT (no DDL); user_roles.role_id FK backfilled, role_type + ENUM dropped
+- [06-01]: Partial unique index on (user_id, role_id) WHERE revoked_at IS NULL — allows re-grant after revocation (new row) while preventing duplicate active grants
+- [06-01]: social_relationships unified table — one EXISTS join in friends RLS covers all peer contexts; idx_social_rel_accepted partial index is mandatory for O(log n) policy performance
+- [06-01]: friends RLS MUST include visibility = 'friends' predicate — EXISTS peer check alone would leak 'private' responses via OR policy combination
+- [06-01]: Declined peer requests re-sendable via DELETE+INSERT in create_peer_request RPC (clean audit trail, no UPDATE on peer rows)
 
 ### Pending Todos
 
@@ -123,6 +131,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-27T16:04:38Z
-Stopped at: Completed 05-02-PLAN.md — empower service, routes, integration tests
-Resume file: None — Phase 5 complete, begin Phase 6 (Gems, Roles, and Social Graph)
+Last session: 2026-02-27T19:22:00Z
+Stopped at: Completed 06-01-PLAN.md — all Phase 6 DB schema migrations (5 files)
+Resume file: None — continue Phase 6, Plan 2 (service layer: gemService, roleService, socialService)
