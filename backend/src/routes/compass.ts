@@ -7,13 +7,14 @@ import { promoteCompassImportDraft, getCompassCompleteness } from '../lib/compas
 import type { Request, Response } from 'express';
 
 /**
- * Compass read routes.
+ * Compass routes (read + write).
  *
  * Architecture rules enforced here:
- *   - supabaseAdmin is NEVER imported — architecture.test.ts bans it from routes/
+ *   - Service-role client is NOT used — architecture.test.ts bans it from routes/
  *   - Public reference data (topics, categories, politicians): pg pool only
  *   - Owner-read routes (answers, selected-topics): createUserClient (RLS enforced)
  *   - Server-side computations (progress): compassService via pg pool
+ *   - Write routes (POST /answers, PUT /selected-topics): pg pool with transactions
  *
  * Route ordering: specific paths before parameterized paths to prevent
  * Express routing conflicts (e.g., /politicians before /politicians/:id).
@@ -27,6 +28,17 @@ const router = Router();
 
 const batchAnswersSchema = z.object({
   ids: z.array(z.string().uuid()).min(1).max(100),
+});
+
+const postAnswerSchema = z.object({
+  topic_id: z.string().uuid(),
+  value: z.number().int().min(1).max(5),
+  write_in_text: z.string().max(500).optional(),
+  inverted: z.boolean().optional().default(false),
+});
+
+const putSelectedTopicsSchema = z.object({
+  topic_ids: z.array(z.string().uuid()).min(0).max(50),
 });
 
 const VALID_ROLE_SCOPES = ['city_council', 'state_legislature', 'us_congress', 'president'] as const;
@@ -418,6 +430,165 @@ router.get(
       res.status(200).json(rows[0]);
     } catch (err) {
       console.error('[GET /compass/politicians/:id/:topicId/context] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// POST /api/compass/answers
+// Auth: required
+// Upserts a single compass response and atomically appends to change_history.
+// Entire operation runs in a single pg BEGIN/COMMIT transaction.
+// change_history record is ALWAYS inserted — even first calibration (old_value=NULL)
+// and same-value recalibration. It is a full audit log.
+// Uses pg pool directly — compass_responses/change_history have no RLS write
+// policies; all writes go via pg pool or SECURITY DEFINER functions.
+// ---------------------------------------------------------------------------
+
+router.post('/answers', requireAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = postAnswerSchema.safeParse(req.body);
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0];
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: firstIssue?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  const { topic_id, value, write_in_text, inverted } = parsed.data;
+  const client = await pool.connect();
+
+  try {
+    await client.query('BEGIN');
+
+    // Step 1: Validate topic exists and is live before writing
+    const { rows: topicRows } = await client.query<{ id: string }>(
+      'SELECT id FROM inform.compass_topics WHERE id = $1 AND is_live = true',
+      [topic_id]
+    );
+    if (topicRows.length === 0) {
+      await client.query('ROLLBACK');
+      res.status(404).json({ code: 'TOPIC_NOT_FOUND', message: 'Topic not found or not live' });
+      return;
+    }
+
+    // Step 2: Read existing response BEFORE UPSERT to capture old_value for audit
+    const { rows: existing } = await client.query<{ value: number }>(
+      'SELECT value FROM inform.compass_responses WHERE user_id = $1 AND topic_id = $2',
+      [authReq.userId, topic_id]
+    );
+    const oldValue = existing[0]?.value ?? null;
+
+    // Step 3: UPSERT the response — updates value, write_in_text, inverted, updated_at
+    const { rows: upserted } = await client.query<{
+      topic_id: string;
+      value: number;
+      write_in_text: string | null;
+      inverted: boolean;
+      visibility: string;
+      created_at: string;
+      updated_at: string;
+    }>(
+      `INSERT INTO inform.compass_responses (user_id, topic_id, value, write_in_text, inverted, updated_at)
+       VALUES ($1, $2, $3, $4, $5, now())
+       ON CONFLICT (user_id, topic_id) DO UPDATE
+         SET value         = EXCLUDED.value,
+             write_in_text = EXCLUDED.write_in_text,
+             inverted      = EXCLUDED.inverted,
+             updated_at    = now()
+       RETURNING topic_id, value, write_in_text, inverted, visibility, created_at, updated_at`,
+      [authReq.userId, topic_id, value, write_in_text ?? null, inverted]
+    );
+
+    // Step 4: Append to change_history (ALWAYS — even first calibration and same-value re-calibration)
+    await client.query(
+      `INSERT INTO inform.compass_change_history (user_id, topic_id, old_value, new_value)
+       VALUES ($1, $2, $3, $4)`,
+      [authReq.userId, topic_id, oldValue, value]
+    );
+
+    await client.query('COMMIT');
+
+    res.status(200).json(upserted[0]);
+  } catch (err) {
+    await client.query('ROLLBACK');
+    console.error('[POST /compass/answers] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  } finally {
+    client.release();
+  }
+});
+
+// ---------------------------------------------------------------------------
+// PUT /api/compass/selected-topics
+// Auth: required
+// Saves the user's selected topic IDs after server-side validation.
+// Validates ALL submitted IDs exist and are live before storing.
+// Returns 403 NOT_CONNECTED if the user has no connected_profiles row.
+// Uses pg pool — single UPDATE, no transaction needed.
+// ---------------------------------------------------------------------------
+
+router.put(
+  '/selected-topics',
+  requireAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+
+    const parsed = putSelectedTopicsSchema.safeParse(req.body);
+    if (!parsed.success) {
+      const firstIssue = parsed.error.issues[0];
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: firstIssue?.message ?? 'Invalid request body',
+      });
+      return;
+    }
+
+    const { topic_ids } = parsed.data;
+
+    try {
+      // Validate all submitted topic IDs exist and are live
+      if (topic_ids.length > 0) {
+        const { rows: validTopics } = await pool.query<{ id: string }>(
+          'SELECT id FROM inform.compass_topics WHERE id = ANY($1::uuid[]) AND is_live = true',
+          [topic_ids]
+        );
+
+        const validIds = new Set(validTopics.map(t => t.id));
+        const invalidIds = topic_ids.filter(id => !validIds.has(id));
+
+        if (invalidIds.length > 0) {
+          res.status(422).json({
+            code: 'INVALID_TOPIC_IDS',
+            message: `The following topic IDs are invalid or not live: ${invalidIds.join(', ')}`,
+            invalid_ids: invalidIds,
+          });
+          return;
+        }
+      }
+
+      // Store validated IDs in connected_profiles.selected_topic_ids
+      const { rowCount } = await pool.query(
+        `UPDATE connect.connected_profiles
+            SET selected_topic_ids = $1, updated_at = now()
+          WHERE user_id = $2`,
+        [JSON.stringify(topic_ids), authReq.userId]
+      );
+
+      if (rowCount === 0) {
+        res
+          .status(403)
+          .json({ code: 'NOT_CONNECTED', message: 'Complete the Connect flow first' });
+        return;
+      }
+
+      res.status(200).json({ topic_ids });
+    } catch (err) {
+      console.error('[PUT /compass/selected-topics] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }
