@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 7 (Admin Tool and Calibration Cron) — In progress (1/3 plans done)
+**Current focus:** Phase 7 (Admin Tool and Calibration Cron) — In progress (2/3 plans done)
 
 ## Current Position
 
 Phase: 7 of 8 (Admin Tool and Calibration Cron) — In progress
-Plan: 1 of 3 in Phase 7 complete
-Status: 07-01 complete — admin backend API, requireAdmin middleware, adminService, 25 routes
-Last activity: 2026-02-27 — Completed 07-01-PLAN.md (3 tasks, 6 files)
+Plan: 2 of 3 in Phase 7 complete
+Status: 07-02 complete — calibration lapse cron job (node-cron, three-threshold, idempotent)
+Last activity: 2026-02-27 — Completed 07-02-PLAN.md (2 tasks, 4 files)
 
-Progress: [███████████████░] 94% (16/17 plans complete)
+Progress: [███████████████░] 94% (16.5/17.5 plans complete... 2/3 phase 7 done)
 
 ## Performance Metrics
 
@@ -33,7 +33,7 @@ Progress: [███████████████░] 94% (16/17 plans co
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
 | 05-empower-flow | 2/2 COMPLETE | ~8 min | ~4 min |
 | 06-gems-roles-social-graph | 3/3 COMPLETE | ~31 min | ~10 min |
-| 07-admin-tool-and-calibration-cron | 1/3 IN PROGRESS | ~7 min | ~7 min |
+| 07-admin-tool-and-calibration-cron | 2/3 IN PROGRESS | ~10 min | ~5 min |
 
 **Recent Trend:**
 - Last 5 plans: 05-01 (~4 min), 05-02 (~4 min), 06-01 (~14 min), 06-02 (~8 min), 06-03 (~9 min)
@@ -122,6 +122,10 @@ Recent decisions affecting current work:
 - [07-01]: Architecture test uses literal string match — admin.ts doc comments must not contain "supabaseAdmin" even in prohibition context
 - [07-01]: cronService.ts whitelisted in architecture test proactively — 07-02 can create without test update
 - [07-01]: getInviteTree returns React Flow-compatible flat arrays (nodes/edges) with position {x:0,y:0} — dagre layout applied client-side
+- [07-02]: Cron deduplication uses Sets built before notification loops — day-31 users excluded from day-30/25 paths; day-30 users excluded from day-25 path
+- [07-02]: Individual demotion try/catch — one user failure logs error and continues; job never aborts mid-run due to single bad user
+- [07-02]: finished_at NULL on error — error path writes error_message only; cron log can detect failed runs via finished_at IS NULL AND error_message IS NOT NULL
+- [07-02]: startCalibrationLapseCron() called inside NODE_ENV !== 'test' guard in index.ts — consistent with cron guard requirement
 
 ### Pending Todos
 
@@ -139,12 +143,12 @@ Recent decisions affecting current work:
 ### Blockers/Concerns
 
 - [Bash tool]: Bash tool was functional in this session — git commits executed successfully.
-- [Phase 7 planning]: Notification delivery channel for day-25 warning and day-30 demotion events is TBD — email or in-app. Must be resolved before Phase 7 is implemented.
+- [Phase 7 planning RESOLVED]: Notification delivery is in-app only (public.notifications table) — email deferred. Implemented in 07-02.
 - [Phase 7 reminder RESOLVED]: All deferred Phase 4 compass admin routes implemented in 07-01 (topics/stances/politicians CRUD at /api/admin/compass/*)
 - [Phase 7 reminder RESOLVED]: Phase 6 role admin routes implemented in 07-01 (POST /api/admin/roles/grant and /api/admin/roles/revoke)
 
 ## Session Continuity
 
-Last session: 2026-02-27T21:06:47Z
-Stopped at: Completed 07-01-PLAN.md — admin backend API (25 routes, requireAdmin, adminService, schema migration)
-Resume file: None — proceed to 07-02 (Calibration Cron)
+Last session: 2026-02-27T21:14:03Z
+Stopped at: Completed 07-02-PLAN.md — calibration lapse cron (node-cron, three-threshold, idempotent)
+Resume file: None — proceed to 07-03 (Admin React UI)
