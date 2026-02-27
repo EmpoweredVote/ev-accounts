@@ -22,12 +22,12 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 50 of 50 (Data Import Scripts — IN PROGRESS)
-Plan: 2 of 3 complete
-Status: Phase 50 Plan 02 complete — essentials.quotes table added; quoteimport package created; ./server import-quotes CLI subcommand wired into main.go; upserts quotes by (politician_id, topic_key, source_url)
-Last activity: 2026-02-27 — Completed Plan 02; Quote model 42ed06d, quoteimport package dd54b9c, CLI wire 14f227e; quote import ready to run
+Phase: 50 of 50 (Data Import Scripts — COMPLETE)
+Plan: 3 of 3 complete
+Status: Phase 50 COMPLETE — GET /essentials/quotes endpoint added; Read & Rank updated to fetch from API with mockData.ts fallback
+Last activity: 2026-02-27 — Completed Plan 03; quotes API 5c76e93 (EV-Backend), frontend API integration 7434e4e (EV-prototypes)
 
-Progress: [████████░░] phase 49 ALL GAPS CLOSED — 8/8 plans done
+Progress: [██████████] Phase 50 COMPLETE — 3/3 plans done
 
 ## Performance Metrics
 
@@ -73,6 +73,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - [Phase 49]: 49-08: Removed 2 rows with invalid topic_key 'taxes' (Newsom, Braun); final CSV: 61 rows, 11 politicians, all valid topic_keys and specific verifiable source URLs
 - **50-01:** CLI subcommand placed after all Init() calls in main.go so schema migrations run and db.DB is ready before import logic executes. Two-pass ambiguous name detection (count pass, then map build) catches full_name duplicates that map overwrite would silently miss.
 - **50-02:** Upsert dedup key for quotes is (politician_id, topic_key, source_url) — allows multiple quotes per topic for the same politician. No external_id fallback needed: all 11 politicians in quote_collection.csv have unique full_names.
+- **50-03:** TotalIssues in GetQuotes computed via DISTINCT (politician_id, topic_key) subquery — avoids overcounting when politician has multiple quotes per topic. QuoteResultCard required candidates prop (was calling mockCandidates.find() at module level). Module-level cachedData in api.ts sufficient for prototype session.
 
 ### Pending Todos
 
@@ -86,5 +87,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Completed 50-02-PLAN.md — quoteimport package (csv.go + import.go) created; essentials.quotes table added; import-quotes CLI subcommand wired into main.go; quote import CLI ready
+Stopped at: Completed 50-03-PLAN.md — GET /essentials/quotes endpoint added to EV-Backend; Read & Rank api.ts created; IssueHub/ResultsPhase/CandidateAlignmentPage updated to fetch from API with graceful fallback to mockData.ts; Phase 50 COMPLETE
 Resume file: None
