@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 6 (Gems, Roles, and Social Graph) — COMPLETE (3/3 plans done)
+**Current focus:** Phase 7 (Admin Tool and Calibration Cron) — In progress (1/3 plans done)
 
 ## Current Position
 
-Phase: 6 of 8 (Gems, Roles, and Social Graph) — COMPLETE
-Plan: 3 of 3 in Phase 6 complete
-Status: 06-03 complete — social graph service, 9 routes, CIVIC-04 role conflict enforcement
-Last activity: 2026-02-27 — Completed 06-03-PLAN.md (2 tasks, 4 files)
+Phase: 7 of 8 (Admin Tool and Calibration Cron) — In progress
+Plan: 1 of 3 in Phase 7 complete
+Status: 07-01 complete — admin backend API, requireAdmin middleware, adminService, 25 routes
+Last activity: 2026-02-27 — Completed 07-01-PLAN.md (3 tasks, 6 files)
 
-Progress: [██████████████░] 88% (15/17 plans complete)
+Progress: [███████████████░] 94% (16/17 plans complete)
 
 ## Performance Metrics
 
@@ -33,6 +33,7 @@ Progress: [██████████████░] 88% (15/17 plans compl
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
 | 05-empower-flow | 2/2 COMPLETE | ~8 min | ~4 min |
 | 06-gems-roles-social-graph | 3/3 COMPLETE | ~31 min | ~10 min |
+| 07-admin-tool-and-calibration-cron | 1/3 IN PROGRESS | ~7 min | ~7 min |
 
 **Recent Trend:**
 - Last 5 plans: 05-01 (~4 min), 05-02 (~4 min), 06-01 (~14 min), 06-02 (~8 min), 06-03 (~9 min)
@@ -117,6 +118,10 @@ Recent decisions affecting current work:
 - [06-03]: Blocker is always recorded as actor_id on blocked rows regardless of original relationship direction
 - [06-03]: follow uses ON CONFLICT DO NOTHING — idempotent, no error on double-follow
 - [06-03]: GET /followers/count/:user_id uses requireAuth only — follower count is public for Empowered profiles per CONTEXT.md
+- [07-01]: admin_audit_log column mismatch resolved: migration 003 used target_id/metadata; Phase 7 adds target_user_id/details via ALTER TABLE (old columns retained for backward compat)
+- [07-01]: Architecture test uses literal string match — admin.ts doc comments must not contain "supabaseAdmin" even in prohibition context
+- [07-01]: cronService.ts whitelisted in architecture test proactively — 07-02 can create without test update
+- [07-01]: getInviteTree returns React Flow-compatible flat arrays (nodes/edges) with position {x:0,y:0} — dagre layout applied client-side
 
 ### Pending Todos
 
@@ -135,11 +140,11 @@ Recent decisions affecting current work:
 
 - [Bash tool]: Bash tool was functional in this session — git commits executed successfully.
 - [Phase 7 planning]: Notification delivery channel for day-25 warning and day-30 demotion events is TBD — email or in-app. Must be resolved before Phase 7 is implemented.
-- [Phase 7 reminder]: Admin compass routes deferred from Phase 4 — topics/create, topics/update, stances/update, compass/politicians/context, PUT /compass/politicians/:id/answers, GET /essentials/politicians — add all of these to Phase 7 plan
-- [Phase 7 reminder]: Admin grant/revoke role routes deferred from Phase 6 — grantRole and revokeRole in roleService.ts are ready, need HTTP endpoints at /api/admin/roles/grant and /api/admin/roles/revoke
+- [Phase 7 reminder RESOLVED]: All deferred Phase 4 compass admin routes implemented in 07-01 (topics/stances/politicians CRUD at /api/admin/compass/*)
+- [Phase 7 reminder RESOLVED]: Phase 6 role admin routes implemented in 07-01 (POST /api/admin/roles/grant and /api/admin/roles/revoke)
 
 ## Session Continuity
 
-Last session: 2026-02-27T19:27:40Z
-Stopped at: Completed 06-03-PLAN.md — social graph service, routes, CIVIC-04 conflict enforcement
-Resume file: None — Phase 6 complete, proceed to Phase 7 (Admin Tool and Calibration Cron)
+Last session: 2026-02-27T21:06:47Z
+Stopped at: Completed 07-01-PLAN.md — admin backend API (25 routes, requireAdmin, adminService, schema migration)
+Resume file: None — proceed to 07-02 (Calibration Cron)
