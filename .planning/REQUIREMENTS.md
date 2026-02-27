@@ -57,16 +57,16 @@
 
 ### Gems & Roles (CIVIC)
 
-- [ ] **CIVIC-01**: Gem transactions are append-only in `gem_transactions` ledger; debit balance enforcement is atomic (check + debit in single transaction — balance cannot go negative)
-- [ ] **CIVIC-02**: Reserve cap is enforced at stipend time; excess gems above cap expire; no gem purchases, no premium tiers — permanently excluded
-- [ ] **CIVIC-03**: Roles are granted and revoked with soft revocation (`revoked_at` timestamp, NULL = active); tier eligibility enforced at grant time (e.g., Maven requires Empowered)
-- [ ] **CIVIC-04**: API enforces that a user cannot hold two conflicting roles simultaneously in the same feature context
+- [x] **CIVIC-01**: Gem transactions are append-only in `gem_transactions` ledger; debit balance enforcement is atomic (check + debit in single transaction — balance cannot go negative)
+- [x] **CIVIC-02**: Reserve cap is enforced at stipend time; excess gems above cap expire; no gem purchases, no premium tiers — permanently excluded [NOTE: reserve cap deferred per CONTEXT.md — credit_gems has no cap logic, waived for Alpha]
+- [x] **CIVIC-03**: Roles are granted and revoked with soft revocation (`revoked_at` timestamp, NULL = active); tier eligibility enforced at grant time (e.g., Maven requires Empowered)
+- [x] **CIVIC-04**: API enforces that a user cannot hold two conflicting roles simultaneously in the same feature context
 
 ### Social Graph (SOCL)
 
-- [ ] **SOCL-01**: Connected users can send, accept, decline, and block peer connection requests; blocking prevents future requests
-- [ ] **SOCL-02**: Any Connected user can follow any Empowered account (1-way, no approval required); can unfollow
-- [ ] **SOCL-03**: `visibility: 'friends'` on compass responses is enforced via accepted `peer_connections` join — not guessable, not bypassable at API layer
+- [x] **SOCL-01**: Connected users can send, accept, decline, and block peer connection requests; blocking prevents future requests
+- [x] **SOCL-02**: Any Connected user can follow any Empowered account (1-way, no approval required); can unfollow
+- [x] **SOCL-03**: `visibility: 'friends'` on compass responses is enforced via accepted `peer_connections` join — not guessable, not bypassable at API layer
 
 ### Admin Tool (ADMN)
 
@@ -166,13 +166,13 @@
 | EMPR-02 | Phase 5 — Empower Flow | Complete |
 | EMPR-03 | Phase 5 — Empower Flow | Complete |
 | EMPR-04 | Phase 5 — Empower Flow | Complete |
-| CIVIC-01 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| CIVIC-02 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| CIVIC-03 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| CIVIC-04 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| SOCL-01 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| SOCL-02 | Phase 6 — Gems, Roles, and Social Graph | Pending |
-| SOCL-03 | Phase 6 — Gems, Roles, and Social Graph | Pending |
+| CIVIC-01 | Phase 6 — Gems, Roles, and Social Graph | Complete |
+| CIVIC-02 | Phase 6 — Gems, Roles, and Social Graph | Complete (reserve cap deferred per CONTEXT.md) |
+| CIVIC-03 | Phase 6 — Gems, Roles, and Social Graph | Complete |
+| CIVIC-04 | Phase 6 — Gems, Roles, and Social Graph | Complete |
+| SOCL-01 | Phase 6 — Gems, Roles, and Social Graph | Complete |
+| SOCL-02 | Phase 6 — Gems, Roles, and Social Graph | Complete |
+| SOCL-03 | Phase 6 — Gems, Roles, and Social Graph | Complete |
 | ADMN-01 | Phase 7 — Admin Tool and Calibration Cron | Pending |
 | ADMN-02 | Phase 7 — Admin Tool and Calibration Cron | Pending |
 | ADMN-03 | Phase 7 — Admin Tool and Calibration Cron | Pending |

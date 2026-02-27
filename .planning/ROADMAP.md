@@ -17,7 +17,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
 - [x] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
 - [x] **Phase 5: Empower Flow** - Preflight checks, atomic empowerment, atomic demotion, slug generation
-- [ ] **Phase 6: Gems, Roles, and Social Graph** - Gem ledger, role system, peer connections, follows
+- [x] **Phase 6: Gems, Roles, and Social Graph** - Gem ledger, role system, peer connections, follows
 - [ ] **Phase 7: Admin Tool and Calibration Cron** - React admin UI, /api/admin/* routes, daily lapse enforcement scheduler
 - [ ] **Phase 8: Public Candidate Pages** - Unauthenticated /api/candidates/:slug with field projection enforcement
 
@@ -161,6 +161,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
 | 4. Compass Routes | 3/3 | Complete | 2026-02-26 |
 | 5. Empower Flow | 2/2 | Complete | 2026-02-27 |
-| 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
+| 6. Gems, Roles, and Social Graph | 3/3 | Complete | 2026-02-27 |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |
 | 8. Public Candidate Pages | 0/1 | Not started | - |
