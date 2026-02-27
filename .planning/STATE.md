@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 6 (Gems, Roles, and Social Graph) — Plan 1 of 3 complete
+**Current focus:** Phase 6 (Gems, Roles, and Social Graph) — COMPLETE (3/3 plans done)
 
 ## Current Position
 
-Phase: 6 of 8 (Gems, Roles, and Social Graph) — In progress
-Plan: 1 of 3 in Phase 6 complete
-Status: 06-01 complete — all Phase 6 database schema migrations (5 migration files)
-Last activity: 2026-02-27 — Completed 06-01-PLAN.md (2 tasks, 5 files)
+Phase: 6 of 8 (Gems, Roles, and Social Graph) — COMPLETE
+Plan: 3 of 3 in Phase 6 complete
+Status: 06-03 complete — social graph service, 9 routes, CIVIC-04 role conflict enforcement
+Last activity: 2026-02-27 — Completed 06-03-PLAN.md (2 tasks, 4 files)
 
-Progress: [████████████░] 76% (13/17 plans complete)
+Progress: [██████████████░] 88% (15/17 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 12
-- Average duration: ~16 min
-- Total execution time: ~178 min
+- Total plans completed: 15
+- Average duration: ~14 min
+- Total execution time: ~195 min
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: [████████████░] 76% (13/17 plans complete)
 | 03-alpha-enrollment | 3/3 COMPLETE | ~60 min | ~20 min |
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
 | 05-empower-flow | 2/2 COMPLETE | ~8 min | ~4 min |
-| 06-gems-roles-social-graph | 1/3 | ~14 min | ~14 min |
+| 06-gems-roles-social-graph | 3/3 COMPLETE | ~31 min | ~10 min |
 
 **Recent Trend:**
-- Last 5 plans: 04-03 (~6 min), 05-01 (~4 min), 05-02 (~4 min), 06-01 (~14 min)
-- Trend: schema-only plans are fast; 06-01 was 5 migration files, heavier than typical
+- Last 5 plans: 05-01 (~4 min), 05-02 (~4 min), 06-01 (~14 min), 06-02 (~8 min), 06-03 (~9 min)
+- Trend: service+route plans are ~8-10 min; schema plans are ~14 min
 
 *Updated after each plan completion*
 
@@ -109,6 +109,14 @@ Recent decisions affecting current work:
 - [06-01]: social_relationships unified table — one EXISTS join in friends RLS covers all peer contexts; idx_social_rel_accepted partial index is mandatory for O(log n) policy performance
 - [06-01]: friends RLS MUST include visibility = 'friends' predicate — EXISTS peer check alone would leak 'private' responses via OR policy combination
 - [06-01]: Declined peer requests re-sendable via DELETE+INSERT in create_peer_request RPC (clean audit trail, no UPDATE on peer rows)
+- [06-02]: debitGems parses RPC error for INSUFFICIENT_BALANCE string and re-throws with structured code — same RPC error parsing pattern used in socialService
+- [06-02]: grantRole NEVER reuses revoked rows — INSERT new row only; partial unique index enforces no duplicate active grants while allowing re-grant
+- [06-02]: ROLE_CONFLICT_GROUPS is empty Record<string, string> for Alpha — conflict check code path wired, no-op until groups are defined
+- [06-02]: Grant/revoke HTTP endpoints deferred to Phase 7 admin routes — service layer ready, not exposed in Phase 6
+- [06-03]: blockUser uses pool transaction client — multi-step operation (find existing → update OR insert → delete follows) requires atomicity
+- [06-03]: Blocker is always recorded as actor_id on blocked rows regardless of original relationship direction
+- [06-03]: follow uses ON CONFLICT DO NOTHING — idempotent, no error on double-follow
+- [06-03]: GET /followers/count/:user_id uses requireAuth only — follower count is public for Empowered profiles per CONTEXT.md
 
 ### Pending Todos
 
@@ -125,12 +133,13 @@ Recent decisions affecting current work:
 
 ### Blockers/Concerns
 
-- [Bash tool]: Bash tool was functional in this session — git commits executed successfully. Prior sessions had EINVAL issues; this session resolved normally.
+- [Bash tool]: Bash tool was functional in this session — git commits executed successfully.
 - [Phase 7 planning]: Notification delivery channel for day-25 warning and day-30 demotion events is TBD — email or in-app. Must be resolved before Phase 7 is implemented.
 - [Phase 7 reminder]: Admin compass routes deferred from Phase 4 — topics/create, topics/update, stances/update, compass/politicians/context, PUT /compass/politicians/:id/answers, GET /essentials/politicians — add all of these to Phase 7 plan
+- [Phase 7 reminder]: Admin grant/revoke role routes deferred from Phase 6 — grantRole and revokeRole in roleService.ts are ready, need HTTP endpoints at /api/admin/roles/grant and /api/admin/roles/revoke
 
 ## Session Continuity
 
-Last session: 2026-02-27T19:22:00Z
-Stopped at: Completed 06-01-PLAN.md — all Phase 6 DB schema migrations (5 files)
-Resume file: None — continue Phase 6, Plan 2 (service layer: gemService, roleService, socialService)
+Last session: 2026-02-27T19:27:40Z
+Stopped at: Completed 06-03-PLAN.md — social graph service, routes, CIVIC-04 conflict enforcement
+Resume file: None — Phase 6 complete, proceed to Phase 7 (Admin Tool and Calibration Cron)
