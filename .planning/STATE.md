@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 5 (Empower Flow) — in progress
+**Current focus:** Phase 5 (Empower Flow) — COMPLETE
 
 ## Current Position
 
-Phase: 5 of 8 (Empower Flow) — In progress
-Plan: 1 of 3 in Phase 5 complete
-Status: 05-01 complete — Phase 5 schema migration, architecture test, /account/me demotion state
-Last activity: 2026-02-27 — Completed 05-01-PLAN.md (2 tasks, 3 files)
+Phase: 5 of 8 (Empower Flow) — COMPLETE
+Plan: 2 of 2 in Phase 5 complete
+Status: 05-02 complete — empower service, 3 endpoints, integration tests
+Last activity: 2026-02-27 — Completed 05-02-PLAN.md (2 tasks, 4 files)
 
-Progress: [██████████] 65% (11/17 plans complete)
+Progress: [███████████░] 71% (12/17 plans complete)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 10
-- Average duration: ~18 min
-- Total execution time: ~174 min
+- Total plans completed: 12
+- Average duration: ~16 min
+- Total execution time: ~178 min
 
 **By Phase:**
 
@@ -31,11 +31,11 @@ Progress: [██████████] 65% (11/17 plans complete)
 | 02-auth-routes | 2/2 COMPLETE | ~45 min | ~22 min |
 | 03-alpha-enrollment | 3/3 COMPLETE | ~60 min | ~20 min |
 | 04-compass-routes | 3/3 COMPLETE | ~24 min | ~8 min |
-| 05-empower-flow | 1/3 in progress | ~4 min | ~4 min |
+| 05-empower-flow | 2/2 COMPLETE | ~8 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 03-03 (~25 min), 04-01 (~8 min), 04-02 (~18 min), 04-03 (~6 min), 05-01 (~4 min)
-- Trend: improving, schema-only plans are very fast (no runtime testing)
+- Last 5 plans: 04-01 (~8 min), 04-02 (~18 min), 04-03 (~6 min), 05-01 (~4 min), 05-02 (~4 min)
+- Trend: stable, implementation plans are fast with solid patterns established
 
 *Updated after each plan completion*
 
@@ -97,6 +97,10 @@ Recent decisions affecting current work:
 - [05-01]: empowerment_status omitted entirely (not null) from /account/me when no empowered_profiles row exists — callers check field presence
 - [05-01]: Re-empowerment clears demoted_at = NULL and demotion_reason = NULL on the row — record reflects current state, not history; consent_records is audit trail
 - [05-01]: consent_records table writes via service layer (pg pool) only — no INSERT/UPDATE/DELETE RLS policies; authenticated users read own records via SELECT policy
+- [05-02]: Preflight returns 200 for ineligible users (not 4xx) — preflight itself succeeded in reporting failures; callers distinguish 'eligible:false' from 'internal error'
+- [05-02]: PREFLIGHT_EXPIRED thrown as Error with .code property — allows catch block to discriminate by message OR .code without custom error class
+- [05-02]: DemoteSchema reason fully optional — cron-triggered demotion (no body) and admin-triggered (structured reason) both work through one schema
+- [05-02]: CALIBRATION_INCOMPLETE only checked when candidate_role is not null — avoids misleading error when ROLE_NOT_SET is already in failures
 
 ### Pending Todos
 
@@ -119,6 +123,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-27T15:56:12Z
-Stopped at: Completed 05-01-PLAN.md — Phase 5 schema migration, architecture test, /account/me demotion state
-Resume file: None — continue Phase 5 with 05-02-PLAN.md
+Last session: 2026-02-27T16:04:38Z
+Stopped at: Completed 05-02-PLAN.md — empower service, routes, integration tests
+Resume file: None — Phase 5 complete, begin Phase 6 (Gems, Roles, and Social Graph)
