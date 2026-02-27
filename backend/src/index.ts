@@ -13,6 +13,7 @@ import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import rolesRouter from './routes/roles.js';
 import socialRouter from './routes/social.js';
+import adminRouter from './routes/admin.js';
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/empower', empowerRouter);
 app.use('/api/gems', gemsRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/social', socialRouter);
+app.use('/api/admin', adminRouter);
 
 export { app }; // For testing
 
