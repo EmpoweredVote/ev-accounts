@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Foundation** - Complete Supabase schema, RLS policies, RPC functions, dual client pattern, JWT middleware, health check
 - [x] **Phase 2: Auth Routes and Account Core** - Sign up, login, logout, /api/account/me read and update
 - [x] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
-- [ ] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
+- [x] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
 - [ ] **Phase 5: Empower Flow** - Preflight checks, atomic empowerment, atomic demotion, slug generation
 - [ ] **Phase 6: Gems, Roles, and Social Graph** - Gem ledger, role system, peer connections, follows
 - [ ] **Phase 7: Admin Tool and Calibration Cron** - React admin UI, /api/admin/* routes, daily lapse enforcement scheduler
@@ -159,7 +159,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 1. Foundation | 2/2 | Complete | 2026-02-24 |
 | 2. Auth Routes and Account Core | 2/2 | Complete | 2026-02-25 |
 | 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
-| 4. Compass Routes | 0/3 | Not started | - |
+| 4. Compass Routes | 3/3 | Complete | 2026-02-26 |
 | 5. Empower Flow | 0/2 | Not started | - |
 | 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |

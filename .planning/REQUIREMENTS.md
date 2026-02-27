@@ -42,10 +42,10 @@
 
 ### Compass (COMP)
 
-- [ ] **COMP-01**: User can view all live compass topics with pre-written stances (5 per topic)
-- [ ] **COMP-02**: User can calibrate a topic — creates or updates `compass_responses`, appends to `compass_change_history`; `inverted` preference stored per topic
-- [ ] **COMP-03**: User can check their calibration completeness; result is role-filtered (city council candidate threshold differs from US Congress candidate threshold) and used by empowerment preflight
-- [ ] **COMP-04**: User can view their own compass responses including `inverted` preferences
+- [x] **COMP-01**: User can view all live compass topics with pre-written stances (5 per topic)
+- [x] **COMP-02**: User can calibrate a topic — creates or updates `compass_responses`, appends to `compass_change_history`; `inverted` preference stored per topic
+- [x] **COMP-03**: User can check their calibration completeness; result is role-filtered (city council candidate threshold differs from US Congress candidate threshold) and used by empowerment preflight
+- [x] **COMP-04**: User can view their own compass responses including `inverted` preferences
 - [ ] **COMP-05**: User can compare compass with another user — respects `visibility` field (`private` / `friends` / `public`); `friends` visibility enforced via `peer_connections` join; `tolerance_rating` never included in any compare response
 
 ### Empower Flow (EMPR)
@@ -157,11 +157,11 @@
 | INVT-03 | Phase 3 — Alpha Enrollment | Complete |
 | INVT-04 | Phase 3 — Alpha Enrollment | Complete |
 | INVT-05 | Phase 3 — Alpha Enrollment | Complete |
-| COMP-01 | Phase 4 — Compass Routes | Pending |
-| COMP-02 | Phase 4 — Compass Routes | Pending |
-| COMP-03 | Phase 4 — Compass Routes | Pending |
-| COMP-04 | Phase 4 — Compass Routes | Pending |
-| COMP-05 | Phase 4 — Compass Routes | Pending |
+| COMP-01 | Phase 4 — Compass Routes | Complete |
+| COMP-02 | Phase 4 — Compass Routes | Complete |
+| COMP-03 | Phase 4 — Compass Routes | Complete |
+| COMP-04 | Phase 4 — Compass Routes | Complete |
+| COMP-05 | Phase 4 — Compass Routes | Pending (user-to-user compare deferred to Phase 6) |
 | EMPR-01 | Phase 5 — Empower Flow | Pending |
 | EMPR-02 | Phase 5 — Empower Flow | Pending |
 | EMPR-03 | Phase 5 — Empower Flow | Pending |
@@ -194,4 +194,4 @@
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-25 after Phase 3 completion*
+*Last updated: 2026-02-26 after Phase 4 completion*
