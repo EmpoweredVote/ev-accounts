@@ -56,7 +56,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       .schema('connect')
       .from('connected_profiles')
       .select(
-        'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, created_at'
+        'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, completed_onboarding, created_at'
       )
       .eq('user_id', authReq.userId)
       .maybeSingle();
@@ -94,6 +94,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
         tolerance_rating: connected.tolerance_rating,
         xp: connected.xp,
         gem_balance: connected.gem_balance,
+        completed_onboarding: connected.completed_onboarding,
         created_at: connected.created_at,
       };
     }
@@ -235,7 +236,7 @@ router.patch(
         .schema('connect')
         .from('connected_profiles')
         .select(
-          'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, created_at'
+          'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, completed_onboarding, created_at'
         )
         .eq('user_id', authReq.userId)
         .maybeSingle();
@@ -268,6 +269,7 @@ router.patch(
           tolerance_rating: updatedConnected.tolerance_rating,
           xp: updatedConnected.xp,
           gem_balance: updatedConnected.gem_balance,
+          completed_onboarding: updatedConnected.completed_onboarding,
           created_at: updatedConnected.created_at,
         };
       }

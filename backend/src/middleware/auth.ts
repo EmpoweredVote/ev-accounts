@@ -66,3 +66,46 @@ export async function requireAuth(
     res.status(401).json({ error: 'Invalid or expired token' });
   }
 }
+
+/**
+ * Optional auth middleware — attaches user identity if a valid JWT is present,
+ * but does NOT reject the request if no token or an invalid token is provided.
+ * Used for routes that serve both authenticated and unauthenticated users
+ * (e.g., GET /api/compass/topics supports guest compass usage).
+ *
+ * Design note: optionalAuth does NOT perform a standing check. Standing checks
+ * are unnecessary for unauthenticated-compatible routes. If the user is
+ * authenticated but suspended, they can still view public reference data
+ * (topics, politicians). Standing enforcement only applies to routes that
+ * write or read personal data — those routes use requireAuth.
+ */
+export async function optionalAuth(
+  req: Request,
+  _res: Response,
+  next: NextFunction
+): Promise<void> {
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith('Bearer ')) {
+    next(); // No token — proceed as unauthenticated
+    return;
+  }
+
+  const token = authHeader.slice(7);
+
+  try {
+    const { payload } = await jwtVerify(token, JWKS, {
+      issuer: `${env.SUPABASE_URL}/auth/v1`,
+      audience: 'authenticated',
+    });
+
+    const userId = payload.sub;
+    if (userId) {
+      (req as AuthenticatedRequest).userId = userId;
+      (req as AuthenticatedRequest).accessToken = token;
+    }
+  } catch {
+    // Invalid token — proceed as unauthenticated (do NOT return 401)
+  }
+
+  next();
+}

@@ -3,6 +3,7 @@ import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
+import { pool } from '../lib/db.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -204,6 +205,61 @@ router.post(
     }
 
     res.status(200).json({ message: 'Logged out successfully' });
+  }
+);
+
+/**
+ * POST /api/auth/complete-onboarding
+ *
+ * Sets completed_onboarding = true on the user's connected_profiles row.
+ * Requires a Connected profile to exist (user must have completed the Connect flow).
+ * This is a one-way flag — once set to true, it cannot be unset via this endpoint.
+ *
+ * Returns 200 with { completed_onboarding: true } in both the success case
+ * and the already-completed case (idempotent).
+ * Returns 403 with NOT_CONNECTED if no connected_profiles row exists.
+ */
+router.post(
+  '/complete-onboarding',
+  requireAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const { userId } = req as AuthenticatedRequest;
+
+    try {
+      const { rowCount } = await pool.query(
+        `UPDATE connect.connected_profiles
+            SET completed_onboarding = true, updated_at = now()
+          WHERE user_id = $1 AND completed_onboarding = false`,
+        [userId]
+      );
+
+      if (rowCount === 0) {
+        // Either no connected_profiles row, or completed_onboarding is already true.
+        // Check which case it is to give the correct response.
+        const { rows } = await pool.query<{ completed_onboarding: boolean }>(
+          `SELECT completed_onboarding FROM connect.connected_profiles WHERE user_id = $1`,
+          [userId]
+        );
+
+        if (rows.length === 0) {
+          // No connected_profiles row — user has not completed the Connect flow.
+          res.status(403).json({
+            code: 'NOT_CONNECTED',
+            message: 'Complete the Connect flow first',
+          });
+          return;
+        }
+
+        // completed_onboarding is already true — idempotent success.
+        res.status(200).json({ completed_onboarding: true });
+        return;
+      }
+
+      res.status(200).json({ completed_onboarding: true });
+    } catch (err) {
+      console.error('[auth/complete-onboarding] Unexpected error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
   }
 );
 
