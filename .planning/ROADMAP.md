@@ -96,11 +96,11 @@ Plans:
   2. After a successful `POST /api/empower/confirm`, the user has an `empowered_profiles` record, all their compass responses have `visibility: 'public'`, and a `candidate_page_slug` exists — or none of those things exist (full rollback confirmed via simulated transaction failure)
   3. Two users with identical legal names who empower simultaneously each receive a unique slug; neither slug is a duplicate of an existing slug
   4. After demotion, the user's `empowered_profiles.is_active` is false and all their compass responses have `visibility: 'private'`; re-empowerment via the same preflight + confirm path is available after completing calibration
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Empower flow (preflight, confirm via execute_empowerment RPC, slug collision handling)
-- [ ] 05-02: Demotion flow (execute_demotion RPC, re-empowerment path)
+- [ ] 05-01-PLAN.md — Schema migration (candidate_role, demoted_at, consent_records, RPC updates), architecture test, GET /me demotion state
+- [ ] 05-02-PLAN.md — empowerService + empower routes (preflight, confirm, demote) + integration tests
 
 ### Phase 6: Gems, Roles, and Social Graph
 **Goal**: The civic economy (gem ledger), civic function assignment (role system), and social connections are fully operational — with the peer connection table enabling compass visibility enforcement from Phase 4
@@ -160,7 +160,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 2. Auth Routes and Account Core | 2/2 | Complete | 2026-02-25 |
 | 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
 | 4. Compass Routes | 3/3 | Complete | 2026-02-26 |
-| 5. Empower Flow | 0/2 | Not started | - |
+| 5. Empower Flow | 0/2 | Planned | - |
 | 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |
 | 8. Public Candidate Pages | 0/1 | Not started | - |
