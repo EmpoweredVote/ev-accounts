@@ -64,7 +64,7 @@ Plans:
   3. Anonymous compass calibration stored in localStorage is importable during Connect; topic version mismatches are flagged for user confirmation before saving; localStorage is cleared only after successful import
   4. An invite code cannot be claimed by two concurrent requests; self-invitation is blocked; a plus-addressed email variant of an existing address is treated as the same address
   5. When an invitee is sanctioned, the direct inviter's Tolerance Rating is adjusted; the adjustment does not propagate to the inviter's inviter
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
 - [x] 03-01-PLAN.md — Phase 3 schema migration: invite tables, notification events, view update, TR adjustment RPC
@@ -72,19 +72,20 @@ Plans:
 - [x] 03-03-PLAN.md — Connect flow routes + integration tests
 
 ### Phase 4: Compass Routes
-**Goal**: Users can calibrate their political compass, track changes over time, and compare stances with others — with visibility rules enforced at the API layer
+**Goal**: Users can calibrate their political compass, track changes over time, and compare stances with politicians — with visibility rules enforced at the API layer
 **Depends on**: Phase 3
 **Requirements**: COMP-01, COMP-02, COMP-03, COMP-04, COMP-05
 **Success Criteria** (what must be TRUE):
   1. A user can view all live compass topics with their 5 stances and calibrate a response; a second calibration on the same topic updates the response and appends a new record to `compass_change_history`
   2. `GET /api/compass/progress` returns a completeness score that reflects the correct threshold for the user's role (city council candidate vs. US Congress candidate thresholds differ)
-  3. `GET /api/compass/compare/:userId` returns stances only if the target user's `visibility` permits it — a user with `visibility: 'friends'` shares data only with accepted peer connections; the comparison response never includes `tolerance_rating`
-  4. A user's own `GET /api/compass` returns their `inverted` preferences per topic
-**Plans**: TBD
+  3. A user can compare their compass with a politician's stances; the comparison response never includes `tolerance_rating`
+  4. A user's own `GET /api/compass/answers` returns their `inverted` preferences per topic
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: Compass read routes (topic list, own responses, progress check with role filtering)
-- [ ] 04-02: Compass write routes (calibrate, compare with visibility enforcement)
+- [ ] 04-01-PLAN.md — Inform schema migration (9 tables), RLS + grants, RPC updates, auth extensions, optionalAuth middleware
+- [ ] 04-02-PLAN.md — Compass read routes + compassService (import promotion, completeness), politician endpoints
+- [ ] 04-03-PLAN.md — Compass write routes (calibrate with atomic UPSERT + change_history, selected topics) + integration tests
 
 ### Phase 5: Empower Flow
 **Goal**: Empowerment and demotion are atomic — they succeed completely or fail completely — and the preflight check catches every invalid state before a transaction is attempted
@@ -158,7 +159,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 1. Foundation | 2/2 | Complete | 2026-02-24 |
 | 2. Auth Routes and Account Core | 2/2 | Complete | 2026-02-25 |
 | 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
-| 4. Compass Routes | 0/2 | Not started | - |
+| 4. Compass Routes | 0/3 | Not started | - |
 | 5. Empower Flow | 0/2 | Not started | - |
 | 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |
