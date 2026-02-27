@@ -65,21 +65,32 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     const { data: empowered } = await db
       .schema('empower')
       .from('empowered_profiles')
-      .select('id, legal_name, is_active, candidate_page_slug, empowered_at')
+      .select('id, legal_name, is_active, candidate_page_slug, empowered_at, demoted_at')
       .eq('user_id', authReq.userId)
       .maybeSingle();
 
-    // 5. Determine tier from child record presence
-    const tier = empowered ? 'empowered' : connected ? 'connected' : 'inform';
+    // 5. Determine tier from child record presence.
+    // Demoted users have an empowered_profiles row with is_active = false —
+    // they fall through to 'connected' tier. empowerment_status provides
+    // the active/demoted distinction for the caller.
+    const tier = (empowered && empowered.is_active) ? 'empowered' : connected ? 'connected' : 'inform';
 
     // 6. Build response from explicit whitelist — NEVER spread DB rows.
     // This is the canonical privacy enforcement pattern for this codebase.
+    // empowerment_status: only included when an empowered_profiles row exists.
+    //   'empowered' = active Empowered candidate
+    //   'demoted'   = previously Empowered, now demoted back to Connected tier
+    const empowerment_status = empowered
+      ? (empowered.is_active ? 'empowered' : 'demoted')
+      : undefined;
+
     const meResponse: Record<string, unknown> = {
       id: user.id,
       email: authUser.email,
       display_name: user.display_name,
       avatar_url: user.avatar_url,
       tier,
+      ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
       created_at: user.created_at,
       updated_at: user.updated_at,
@@ -107,6 +118,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
         is_active: empowered.is_active,
         candidate_page_slug: empowered.candidate_page_slug,
         empowered_at: empowered.empowered_at,
+        demoted_at: empowered.demoted_at,
       };
     }
 
@@ -244,19 +256,26 @@ router.patch(
       const { data: updatedEmpowered } = await db
         .schema('empower')
         .from('empowered_profiles')
-        .select('id, legal_name, is_active, candidate_page_slug, empowered_at')
+        .select('id, legal_name, is_active, candidate_page_slug, empowered_at, demoted_at')
         .eq('user_id', authReq.userId)
         .maybeSingle();
 
-      const tier = updatedEmpowered ? 'empowered' : updatedConnected ? 'connected' : 'inform';
+      // Demoted users (is_active = false) fall through to 'connected' tier.
+      // empowerment_status provides the active/demoted distinction for the caller.
+      const tier = (updatedEmpowered && updatedEmpowered.is_active) ? 'empowered' : updatedConnected ? 'connected' : 'inform';
 
       // 6. Build response from explicit whitelist (same pattern as GET /me)
+      const updatedEmpowermentStatus = updatedEmpowered
+        ? (updatedEmpowered.is_active ? 'empowered' : 'demoted')
+        : undefined;
+
       const meResponse: Record<string, unknown> = {
         id: updatedUser.id,
         email: authUserData?.user?.email,
         display_name: updatedUser.display_name,
         avatar_url: updatedUser.avatar_url,
         tier,
+        ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',
         created_at: updatedUser.created_at,
         updated_at: updatedUser.updated_at,
@@ -280,6 +299,7 @@ router.patch(
           is_active: updatedEmpowered.is_active,
           candidate_page_slug: updatedEmpowered.candidate_page_slug,
           empowered_at: updatedEmpowered.empowered_at,
+          demoted_at: updatedEmpowered.demoted_at,
         };
       }
 
