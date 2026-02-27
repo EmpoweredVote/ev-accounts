@@ -22,10 +22,10 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 
 ## Current Position
 
-Phase: 49 of 50 (Quote Collection — ALL GAPS CLOSED)
-Plan: 8 of 8 complete
-Status: Phase 49 Plan 08 complete — Gap 2 (QUOTE-02 date) documented and resolved; 2 invalid topic_key rows removed; CSV finalized at 61 rows; VERIFICATION.md updated to gaps_resolved 5/5; Phase 49 FULLY CLOSED
-Last activity: 2026-02-26 — Completed Plan 08; CSV finalized at 61 rows; VERIFICATION.md status=gaps_resolved, score=5/5; Phase 49 complete; Phase 50 unblocked
+Phase: 50 of 50 (Data Import Scripts — IN PROGRESS)
+Plan: 1 of 3 complete
+Status: Phase 50 Plan 01 complete — stanceimport package created; ./server import-stances CLI subcommand wired into main.go; upserts compass.answers and compass.contexts with validation and dry-run support
+Last activity: 2026-02-27 — Completed Plan 01; stanceimport package bda2aa2+1ae7837; compass data import ready to run
 
 Progress: [████████░░] phase 49 ALL GAPS CLOSED — 8/8 plans done
 
@@ -71,6 +71,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - **49-07:** Removed 116 rows citing congress.gov member/bill/vote pages and bloomington.in.gov/mayor — general index pages that do not contain verbatim politician quotes. CSV cleaned from 179 to 63 rows. 12 politicians fully removed (Young, Banks, Houchin, Sherman, Aguilar, Gomez, Lieu, Kamlager-Dove, Sanchez, Waters, Barragan, Thomson); 11 politicians retained. All 10 source domains are specific verifiable press releases or news articles. Gap 1 from VERIFICATION.md closed — verbatim requirement now met for all 63 remaining rows.
 - [Phase 49]: 49-08: QUOTE-02 date requirement satisfied via dated source URLs — CONTEXT.md schema decision (no date column) intentional; 57/61 rows have year in URL path, remaining 4 have session year in bill_id or date in article metadata
 - [Phase 49]: 49-08: Removed 2 rows with invalid topic_key 'taxes' (Newsom, Braun); final CSV: 61 rows, 11 politicians, all valid topic_keys and specific verifiable source URLs
+- **50-01:** CLI subcommand placed after all Init() calls in main.go so schema migrations run and db.DB is ready before import logic executes. Two-pass ambiguous name detection (count pass, then map build) catches full_name duplicates that map overwrite would silently miss.
 
 ### Pending Todos
 
@@ -83,6 +84,6 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 
 ## Session Continuity
 
-Last session: 2026-02-26
-Stopped at: Completed 49-08-PLAN.md — Gap 2 (QUOTE-02 date) resolved via CONTEXT.md schema decision; 2 invalid topic_key rows removed; CSV finalized at 61 rows; VERIFICATION.md updated to gaps_resolved 5/5; Phase 49 FULLY CLOSED; Phase 50 (Read & Rank import) unblocked
+Last session: 2026-02-27
+Stopped at: Completed 50-01-PLAN.md — stanceimport package (csv.go + import.go) created; import-stances CLI subcommand wired into main.go; compass data import CLI ready
 Resume file: None
