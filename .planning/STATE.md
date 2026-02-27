@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 
 ## Current Position
 
-Phase: 4 of 8 (Compass Routes) — Not started
-Plan: 0 of TBD in Phase 4
-Status: Phase 3 verified — ready for Phase 4
-Last activity: 2026-02-25 — Phase 3 verified (23/23 must-haves, status: passed)
+Phase: 4 of 8 (Compass Routes) — In progress
+Plan: 1 of 3 in Phase 4
+Status: 04-01 complete — inform schema + RLS + RPC updates + auth extensions
+Last activity: 2026-02-26 — Completed 04-01-PLAN.md (2 tasks, 6 files)
 
-Progress: [███████░░░] 41% (7/17 plans complete — Phase 4 plans TBD)
+Progress: [████████░░] 47% (8/17 plans complete)
 
 ## Performance Metrics
 
@@ -79,9 +79,14 @@ Recent decisions affecting current work:
 - [03-03]: Compass import stores in verification_sessions.compass_import_draft only — actual write to inform.compass_responses deferred to Phase 4
 - [03-03]: location in PATCH /step body maps to region_draft in DB — friendlier API name while preserving internal schema name
 - [03-03]: CI-safe tests are only 401 checks + file-read architecture enforcement — Zod validation tests require auth (requireAuth fires before Zod) and are marked it.skip
+- [04-01]: optionalAuth does not perform standing check — suspended users can still view public reference data (topics, politicians); standing enforcement only on write/personal-data routes
+- [04-01]: compass_responses and compass_change_history have no INSERT/UPDATE/DELETE RLS policies — all writes via pg pool or SECURITY DEFINER
+- [04-01]: get_calibration_lapsed_users Phase 4 version uses EXISTS/NOT EXISTS — Phase 7 replaces with went_live_at 30-day window query
+- [04-01]: completed_onboarding: one-way flag set via dedicated endpoint, nested in connected_profile response (never at root level)
 
 ### Pending Todos
 
+- Run `supabase gen types --linked --lang typescript --schema public,connect,empower,inform > backend/src/types/database.types.ts` after applying Phase 4 migrations (inform schema now exists)
 - Run `cd C:/EV-Accounts/backend && npm install` to install dependencies
 - Run `cd C:/EV-Accounts/backend && npx tsc --noEmit` to verify TypeScript compilation
 - Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials
@@ -100,7 +105,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-25
-Stopped at: Phase 3 verified (23/23 must-haves passed) — Phase 4 ready
-Phase 3 complete and verified — ready for Phase 4 planning
-Resume file: None
+Last session: 2026-02-26
+Stopped at: Completed 04-01-PLAN.md — inform schema, RLS, RPC updates, optionalAuth
+Resume file: None — continue with 04-02-PLAN.md (compass read routes)
