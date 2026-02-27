@@ -208,3 +208,31 @@
 
 ---
 
+
+## v1.8 Compass Data & Politician Research (Shipped: 2026-02-27)
+
+**Phases completed:** 6 phases, 28 plans
+**Timeline:** 2 days (2026-02-26 — 2026-02-27)
+**Requirements:** 21/21 satisfied
+**Repos:** EV-Backend, EV-prototypes
+
+**Delivered:** Compass populated with real politician stance data and sourced quotes — 23 politicians across CA and IN researched on 21 compass topics, with import scripts and a quotes API endpoint feeding Read & Rank.
+
+**Key accomplishments:**
+1. Legacy cleanup — removed 2,584 lines of deprecated 50-topic seed code (internal/seeds/, topics.json, cmd/seed/main.go stub), leaving compass_csv_seeder.go as sole source of truth
+2. Stance research CSV — 455 sourced data rows across 23 politicians (CA/IN governors, lt. governors, US senators, 12 LA County House reps, Monroe County rep, 2 mayors) with integer 1-5 values on all 21 compass topics
+3. Source URL integrity — cleared 700+ hallucinated/fabricated URLs across 6 cleanup plans (AP year-suffix patterns, house.gov/senate.gov slug-only press releases), retaining only verified congress.gov, news, and government sources
+4. Quote collection — 61 verbatim sourced politician quotes for Read & Rank from 11 politicians, with strict verification removing 118 non-compliant rows citing generic index pages
+5. Data import CLI — Go subcommands (import-stances, import-quotes) with CSV parsing, fuzzy name matching, two-pass ambiguous name detection, and GORM upsert logic
+6. Quotes API endpoint — GET /essentials/quotes with LATERAL JOIN for office dedup; Read & Rank frontend updated with API client and graceful mockData.ts fallback
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- PHOTO-03 headshot coverage at 21.5% (carried from v1.7)
+- 12 politicians have no Read & Rank quotes (only verified verbatim quotes from specific sources retained)
+- BallotReady external_ids left blank for all 23 researched politicians — import uses full_name matching
+
+---
+

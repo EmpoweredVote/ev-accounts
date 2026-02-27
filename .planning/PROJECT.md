@@ -123,11 +123,18 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Building photo API endpoint (GET /essentials/cities/{geo_id}/building-photo) — v1.7
 - ✓ Config-driven pipeline_config.json for enrichment scripts — v1.7
 
-### Active — Milestone v1.8: Compass Data & Politician Research
+- ✓ Legacy 50-topic seed code and topics.json removed; compass_csv_seeder.go sole source of truth — v1.8
+- ✓ Stance research CSV with 455 sourced data rows across 23 politicians on 21 compass topics — v1.8
+- ✓ Source URL integrity: 700+ hallucinated URLs cleared, only verified congress.gov/news/government sources retained — v1.8
+- ✓ 61 verbatim sourced politician quotes for Read & Rank import — v1.8
+- ✓ Go CLI import subcommands (import-stances, import-quotes) with CSV parsing and upsert logic — v1.8
+- ✓ GET /essentials/quotes API endpoint with LATERAL JOIN; Read & Rank frontend API integration with mockData.ts fallback — v1.8
 
-- [ ] Sourced politician stance data for 20 active compass topics across target politicians (CA/IN governors, lt. governors, US senators, House reps, mayors)
-- [ ] Actual politician quotes on compass topics for Read & Rank
-- [ ] Legacy compass data cleanup (remove 50-topic/10-stance files, keep 21-topic/5-stance only)
+### Active
+
+(No active milestone — run `/gsd:new-milestone` to define v1.9)
+
+(No active milestone — run `/gsd:new-milestone` to define v1.9)
 
 ### Out of Scope
 
@@ -151,19 +158,21 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v1.7 with ~38K LOC across 4 repos + Python enrichment/import scripts:
+Shipped v1.8 with ~40K LOC across 4 repos + Python/CSV data pipeline:
 - **CompassV2** (React 19): ~12K LOC — compass quiz, Library, guided onboarding, calibration with write-in support, guest auth, help walkthrough
-- **EV-Backend** (Go 1.24): ~16K LOC — auth, compass, essentials (geofence-only + PostGIS, contacts API, building photo endpoint), treasury, staging modules
-- **EV-Backend/scripts** (Python): ~5K LOC — TIGER/ArcGIS importers, headshot scrapers (scrape_headshots.py, scrape_city_headshots.py), building photo fetcher, contact/term importers, coverage_report.py, shared utils with Supabase Storage upload
+- **EV-Backend** (Go 1.24): ~18K LOC — auth, compass, essentials (geofence-only + PostGIS, contacts API, building photo endpoint, quotes API), treasury, staging modules; CLI import subcommands (import-stances, import-quotes)
+- **EV-Backend/data** (CSV): stance_research.csv (455 rows, 23 politicians), quote_collection.csv (61 rows, 11 politicians)
+- **EV-Backend/scripts** (Python): ~5K LOC — TIGER/ArcGIS importers, headshot scrapers, building photo fetcher, contact/term importers, coverage_report.py, shared utils with Supabase Storage upload
 - **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile (contact section, subtitles, initials avatars), PoliticianCard (3-line layout)
 - **essentials** (React 19): ~3K LOC — address autocomplete, geofence results, building photos, local filter sidebar
+- **EV-prototypes/read-rank** (React 19): API client for quotes endpoint with mockData.ts fallback
 
 Tech stack: Go/Chi/GORM/PostgreSQL backend + React 19/Vite/Tailwind frontends + Supabase DB + PostGIS + Supabase Storage CDN.
-Politician data: cached database records + 791 gap-filled LA County politicians. 84 headshots + 11 building photos in Supabase Storage. 381 contact records. Google Maps Places API for address autocomplete.
+Politician data: cached database records + 791 gap-filled LA County politicians. 84 headshots + 11 building photos in Supabase Storage. 381 contact records. 455 sourced stance data rows + 61 verbatim quotes. Google Maps Places API for address autocomplete.
 Geofence coverage: Bloomington IN (6 council districts) + full LA County (federal, state, county, city, school board boundaries).
 ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 
-Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI; IMPORT-PIPELINE.md references `--source` flag not implemented; 5 district-election cities treated as at-large; city council headshot coverage at 21.5% (pipeline ready, needs manual curation).
+Known tech debt: dead `ballotready/` package preserved as historical reference; orphaned `checkCacheStatus` in essentials; deprecated `cmd/bulk-import` CLI; IMPORT-PIPELINE.md references `--source` flag not implemented; 5 district-election cities treated as at-large; city council headshot coverage at 21.5% (pipeline ready, needs manual curation); BallotReady external_ids blank for all 23 researched politicians (import uses full_name matching); 12 politicians have no Read & Rank quotes (only verified verbatim sources retained).
 
 ## Constraints
 
@@ -248,6 +257,15 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | BuildingImages CURATED_LOCAL hardcoded CDN URLs | Simpler than Go API endpoint for fixed 11 cities | ✓ Good — no architectural complexity for static data |
 | Contact section below profile photo (left column) | Icons identify contact type; narrow column optimized | ✓ Good — phone/globe/envelope SVG icons |
 | Coverage validation as standalone Python script | Reproducible, CI-integrable, no Go dependency | ✓ Good — exit code 0/1 for pass/fail gating |
+| Single CSV seeder pattern (compass_csv_seeder.go) | Delete deprecated 50-topic seeds, one source of truth | ✓ Good — 2,584 lines removed, clean build |
+| Integer 1-5 stance scale with sourced URLs | Consistent with compass topic definitions, verifiable | ✓ Good — 455 rows across 23 politicians, all sourced |
+| Omit topics where no documented position exists | No party-affiliation fallbacks; accuracy over coverage | ✓ Good — Kounalakis 10/21, Beckwith 13/21, Thomson 12/21 |
+| Clear hallucinated URLs rather than fabricate replacements | Source integrity over URL count | ✓ Good — 700+ fabricated URLs cleared across 6 cleanup plans |
+| congress.gov member page as verified fallback URL | Real, authoritative page when specific bill/vote unavailable | ✓ Good — consistent pattern across all federal officials |
+| Verbatim-only quote standard | Only press releases and news articles with direct quotes | ✓ Good — 118 non-compliant rows removed, 61 verified retained |
+| CLI subcommands (import-stances, import-quotes) in main.go | Runs after Init() so migrations complete first | ✓ Good — two-pass name detection catches ambiguous matches |
+| LATERAL JOIN for quotes API | Prevents office row multiplication in quote results | ✓ Good — single office per politician, clean response |
+| Module-level cache in api.ts | Avoid React Query/SWR for prototype session | ✓ Good — minimal complexity, graceful mockData.ts fallback |
 
 ---
-*Last updated: 2026-02-26 after v1.8 milestone started*
+*Last updated: 2026-02-27 after v1.8 milestone completed*

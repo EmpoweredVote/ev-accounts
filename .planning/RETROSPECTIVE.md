@@ -45,6 +45,48 @@
 
 ---
 
+## Milestone: v1.8 — Compass Data & Politician Research
+
+**Shipped:** 2026-02-27
+**Phases:** 6 | **Plans:** 28
+
+### What Was Built
+- Stance research CSV with 455 sourced data rows across 23 politicians (CA/IN governors, lt. governors, US senators, 12 LA County House reps, Monroe County rep, 2 mayors) on 21 compass topics
+- Quote collection CSV with 61 verbatim sourced politician quotes from 11 politicians for Read & Rank
+- Go CLI import subcommands (import-stances, import-quotes) with CSV parsing, fuzzy name matching, and upsert logic
+- GET /essentials/quotes API endpoint with LATERAL JOIN; Read & Rank frontend API client with mockData.ts fallback
+- Legacy cleanup: 2,584 lines of deprecated 50-topic seed code removed
+- Source URL integrity enforcement: 700+ hallucinated/fabricated URLs cleared across 6 cleanup plans
+
+### What Worked
+- **CSV-first research pipeline**: Defining the CSV schema in Phase 46 and appending incrementally through Phases 47-48 made validation cumulative — each plan's additions were checked against the growing dataset
+- **Strict URL verification as separate plans (47-07 through 47-11)**: Dedicating cleanup plans to URL audit after initial research caught systematic hallucination patterns (AP year-suffix, house.gov/senate.gov slug-only fabrications) that would have shipped as bad data
+- **Omit-rather-than-fabricate rule**: Not inventing positions for politicians with no documented record (Kounalakis 10/21, Beckwith 13/21, Thomson 12/21) maintained data integrity at the cost of coverage — the right tradeoff for a civic platform
+- **Verbatim-only quote standard with aggressive cleanup (Plans 49-07, 49-08)**: Removing 118 rows that cited generic index pages (congress.gov member pages, bill pages) ensured every surviving quote is truly attributable
+
+### What Was Inefficient
+- **Phase 47 plan explosion**: 12 plans for federal officials research (original 6 + 6 URL cleanup plans) — the hallucinated URL problem required nearly doubling the plan count; should have anticipated source quality issues from the start
+- **Phase 49 quote attrition**: Started with 179 quote rows, ended with 61 after two cleanup passes — verbatim verification removed 66% of collected quotes; future quote collection should verify extractability before committing rows
+- **Duplicate state context entries**: STATE.md accumulated both `**47-12:**` and `[Phase 47-federal-officials-research]: 47-12:` entries for the same decisions; context logging needs dedup discipline
+
+### Patterns Established
+- **Research CSV append-and-validate pattern**: New politicians appended to existing CSV; Python validation script checks all rows on every append (not just new ones)
+- **Hallucinated URL detection rules**: AP year-suffix pattern (apnews.com/article/[topic]-[year]), slug-only .gov press releases without hash/ID — applicable to any AI-generated content citing sources
+- **congress.gov member page as verified fallback**: When no specific bill/vote URL exists, the bioguide member page is a real, authoritative URL for any federal official
+- **CLI import-after-Init() pattern**: Placing subcommand dispatch after all Init() calls ensures schema migrations complete before import logic executes
+- **LATERAL JOIN for one-to-many API responses**: Prevents row multiplication when joining politicians to offices in quote queries
+
+### Key Lessons
+1. **AI-generated source URLs need systematic verification**: Even with explicit instructions to cite real sources, 700+ URLs were fabricated — treat all AI-generated URLs as unverified until confirmed
+2. **Verbatim quote collection requires extractable sources**: Generic index pages (congress.gov member pages) don't contain quotes; future research should identify press releases and news articles first, then extract quotes from them
+3. **Research milestones generate more plans than code milestones**: 28 plans for 6 phases (4.7 avg) vs v1.7's 15 plans for 6 phases (2.5 avg) — research requires more iterative validation cycles
+
+### Cost Observations
+- Model mix: ~60% sonnet (executors), ~40% opus (research planning, cleanup verification)
+- Notable: Phase 47 consumed 12 plans (43% of milestone total) due to URL cleanup — the most plan-intensive phase across all milestones
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -52,9 +94,11 @@
 | Milestone | Phases | Plans | Key Change |
 |-----------|--------|-------|------------|
 | v1.7 | 6 | 15 | First milestone with Python scraping pipeline; manual curation accepted as valid gap-closure strategy |
+| v1.8 | 6 | 28 | First research-heavy milestone; URL verification as separate plans; verbatim-only quote standard |
 
 ### Top Lessons (Verified Across Milestones)
 
-1. Schema-first phases prevent retroactive migrations (verified v1.6 pipeline infrastructure, v1.7 schema prep)
-2. Config-driven scripts with idempotent upserts enable safe re-runs (verified v1.6 scrapers, v1.7 headshot/building/contact importers)
-3. Coverage validation scripts with exit codes enable milestone gating (new in v1.7, pattern ready for future milestones)
+1. Schema-first phases prevent retroactive migrations (verified v1.6 pipeline infrastructure, v1.7 schema prep, v1.8 legacy cleanup before research)
+2. Config-driven scripts with idempotent upserts enable safe re-runs (verified v1.6 scrapers, v1.7 headshot/building/contact importers, v1.8 stance/quote import CLI)
+3. Coverage validation scripts with exit codes enable milestone gating (verified v1.7 coverage_report.py, v1.8 CSV validation)
+4. AI-generated source URLs require systematic verification — treat as unverified until confirmed (new in v1.8, 700+ fabricated URLs caught)
