@@ -55,6 +55,7 @@ describe('Architecture enforcement: dual-client constraint', () => {
       path.join(BACKEND_SRC, 'lib/empowerService.ts'),
       path.join(BACKEND_SRC, 'lib/gemService.ts'),
       path.join(BACKEND_SRC, 'lib/roleService.ts'),
+      path.join(BACKEND_SRC, 'lib/socialService.ts'),
       path.join(BACKEND_SRC, 'middleware/auth.ts'),
       path.join(BACKEND_SRC, 'middleware/tierGuards.ts'),
       path.join(BACKEND_SRC, 'middleware/requireVerified.ts'),
