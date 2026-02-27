@@ -37,7 +37,7 @@ Requirements for v1.8: Compass Data & Politician Research. Each maps to roadmap 
 ### Data Import
 
 - [x] **IMPORT-01**: Import script loads stance research CSV into compass.answers table with politician_id mapping
-- [ ] **IMPORT-02**: Import script loads quotes into a format usable by Read & Rank
+- [x] **IMPORT-02**: Import script loads quotes into a format usable by Read & Rank
 - [x] **IMPORT-03**: Import validates stance values are 1-5 and topic_keys match existing topics
 
 ## Future Requirements
@@ -87,7 +87,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CLEAN-03 | Phase 45 | Complete |
 | CLEAN-04 | Phase 45 | Complete |
 | IMPORT-01 | Phase 50 | Complete |
-| IMPORT-02 | Phase 50 | Pending |
+| IMPORT-02 | Phase 50 | Complete |
 | IMPORT-03 | Phase 50 | Complete |
 
 **Coverage:**
