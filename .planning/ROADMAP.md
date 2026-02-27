@@ -128,13 +128,13 @@ Plans:
   2. Being an authenticated user with a valid JWT is not sufficient to access any `/api/admin/*` route; only users present in `admin_users` can proceed
   3. An admin can create an invite code, view the full invite chain for any account, revoke an active code, and trace the invite tree — all through the React admin UI
   4. The daily 2am UTC cron job runs exactly once per calendar day even across server restarts or deploys; running it twice on the same day produces no additional demotions
-  5. An Empowered user who has not calibrated a new live topic for 25 days receives a warning event; at 30 days, `execute_demotion` is called and the user is notified of the specific topic(s) requiring calibration
-**Plans**: TBD
+  5. An Empowered user who has not calibrated a new live topic for 25 days receives a warning event; at 31 days (CONTEXT.md override), `execute_demotion` is called and the user is notified of the specific topic(s) requiring calibration
+**Plans**: 3 plans
 
 Plans:
-- [ ] 07-01: Admin API routes (/api/admin/* with requireAdmin middleware, audit logging on every action)
-- [ ] 07-02: Admin React UI (Vite app — invite management, account review, cohort enrollment, invite chain visualization)
-- [ ] 07-03: Calibration lapse cron (node-cron scheduler, idempotency table, day-25 warning event, day-30 demotion)
+- [ ] 07-01-PLAN.md — Backend admin infrastructure: schema migration (admin_users, notifications, calibration_lapse_runs, RPC replacement), requireAdmin middleware, adminService, all admin routes (accounts, invites, roles, compass admin, dashboard, cron-log)
+- [ ] 07-02-PLAN.md — Calibration lapse cron: cronService (three-threshold job logic), node-cron registration, day-25 warning, day-30 final warning, day-31 demotion, idempotency
+- [ ] 07-03-PLAN.md — Admin React UI: Vite app with dashboard, accounts (list + detail + actions), invites (list + tree visualization via React Flow), cron log, roles
 
 ### Phase 8: Public Candidate Pages
 **Goal**: Anyone on the internet can look up an Empowered candidate's public compass stances and legal name — with `tolerance_rating` enforced absent from every response, and inactive candidate pages returning a consistent, non-reassignable state
