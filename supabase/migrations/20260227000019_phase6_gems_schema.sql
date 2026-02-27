@@ -53,11 +53,15 @@ ALTER TABLE connect.connected_profiles
 -- =============================================================================
 -- Section 3: Update connected_profiles_public view to include per-type balances
 -- =============================================================================
--- CREATE OR REPLACE preserves the existing GRANT SELECT from migration 008.
+-- DROP + recreate is required because CREATE OR REPLACE cannot insert new columns
+-- in the middle of an existing column list (only append at end is allowed).
+-- Re-grant SELECT to authenticated after drop to restore the permission.
 -- Columns added: gem_balance_red, gem_balance_blue, gem_balance_yellow.
 -- tolerance_rating remains intentionally OMITTED — masked at the view layer.
 
-CREATE OR REPLACE VIEW connect.connected_profiles_public AS
+DROP VIEW IF EXISTS connect.connected_profiles_public;
+
+CREATE VIEW connect.connected_profiles_public AS
   SELECT
     id,
     user_id,
@@ -79,6 +83,8 @@ CREATE OR REPLACE VIEW connect.connected_profiles_public AS
     updated_at
   FROM connect.connected_profiles
   WHERE deleted_at IS NULL;
+
+GRANT SELECT ON connect.connected_profiles_public TO authenticated;
 
 
 -- =============================================================================
