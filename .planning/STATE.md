@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-24)
 ## Current Position
 
 Phase: 4 of 8 (Compass Routes) — In progress
-Plan: 1 of 3 in Phase 4
-Status: 04-01 complete — inform schema + RLS + RPC updates + auth extensions
-Last activity: 2026-02-26 — Completed 04-01-PLAN.md (2 tasks, 6 files)
+Plan: 2 of 3 in Phase 4
+Status: 04-02 complete — compass read routes, compassService, router mounted
+Last activity: 2026-02-27 — Completed 04-02-PLAN.md (2 tasks, 3 files)
 
-Progress: [████████░░] 47% (8/17 plans complete)
+Progress: [████████░░] 53% (9/17 plans complete)
 
 ## Performance Metrics
 
@@ -83,6 +83,10 @@ Recent decisions affecting current work:
 - [04-01]: compass_responses and compass_change_history have no INSERT/UPDATE/DELETE RLS policies — all writes via pg pool or SECURITY DEFINER
 - [04-01]: get_calibration_lapsed_users Phase 4 version uses EXISTS/NOT EXISTS — Phase 7 replaces with went_live_at 30-day window query
 - [04-01]: completed_onboarding: one-way flag set via dedicated endpoint, nested in connected_profile response (never at root level)
+- [04-02]: pg pool used for all optionalAuth reads (topics, categories, politicians) — public reference data, no RLS benefit from createUserClient
+- [04-02]: promoteCompassImportDraft is non-fatal — ROLLBACK on error, draft preserved for automatic retry on next GET /answers call
+- [04-02]: ON CONFLICT (user_id, topic_id) DO NOTHING in import promotion — manual calibrations take precedence over imported draft
+- [04-02]: getCompassCompleteness uses pool directly (not createUserClient) — server-side computation, not user-facing data read
 
 ### Pending Todos
 
@@ -105,6 +109,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-26
-Stopped at: Completed 04-01-PLAN.md — inform schema, RLS, RPC updates, optionalAuth
-Resume file: None — continue with 04-02-PLAN.md (compass read routes)
+Last session: 2026-02-27
+Stopped at: Completed 04-02-PLAN.md — compass read routes, compassService, router registration
+Resume file: None — continue with 04-03-PLAN.md (compass write routes)
