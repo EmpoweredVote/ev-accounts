@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-02-26)
 ## Current Position
 
 Phase: 50 of 50 (Data Import Scripts — IN PROGRESS)
-Plan: 1 of 3 complete
-Status: Phase 50 Plan 01 complete — stanceimport package created; ./server import-stances CLI subcommand wired into main.go; upserts compass.answers and compass.contexts with validation and dry-run support
-Last activity: 2026-02-27 — Completed Plan 01; stanceimport package bda2aa2+1ae7837; compass data import ready to run
+Plan: 2 of 3 complete
+Status: Phase 50 Plan 02 complete — essentials.quotes table added; quoteimport package created; ./server import-quotes CLI subcommand wired into main.go; upserts quotes by (politician_id, topic_key, source_url)
+Last activity: 2026-02-27 — Completed Plan 02; Quote model 42ed06d, quoteimport package dd54b9c, CLI wire 14f227e; quote import ready to run
 
 Progress: [████████░░] phase 49 ALL GAPS CLOSED — 8/8 plans done
 
@@ -72,6 +72,7 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 - [Phase 49]: 49-08: QUOTE-02 date requirement satisfied via dated source URLs — CONTEXT.md schema decision (no date column) intentional; 57/61 rows have year in URL path, remaining 4 have session year in bill_id or date in article metadata
 - [Phase 49]: 49-08: Removed 2 rows with invalid topic_key 'taxes' (Newsom, Braun); final CSV: 61 rows, 11 politicians, all valid topic_keys and specific verifiable source URLs
 - **50-01:** CLI subcommand placed after all Init() calls in main.go so schema migrations run and db.DB is ready before import logic executes. Two-pass ambiguous name detection (count pass, then map build) catches full_name duplicates that map overwrite would silently miss.
+- **50-02:** Upsert dedup key for quotes is (politician_id, topic_key, source_url) — allows multiple quotes per topic for the same politician. No external_id fallback needed: all 11 politicians in quote_collection.csv have unique full_names.
 
 ### Pending Todos
 
@@ -85,5 +86,5 @@ See `.planning/milestones/v1.7-ROADMAP.md` for full v1.7 decision history.
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Completed 50-01-PLAN.md — stanceimport package (csv.go + import.go) created; import-stances CLI subcommand wired into main.go; compass data import CLI ready
+Stopped at: Completed 50-02-PLAN.md — quoteimport package (csv.go + import.go) created; essentials.quotes table added; import-quotes CLI subcommand wired into main.go; quote import CLI ready
 Resume file: None
