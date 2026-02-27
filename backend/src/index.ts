@@ -14,6 +14,7 @@ import gemsRouter from './routes/gems.js';
 import rolesRouter from './routes/roles.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 
 const app = express();
 
@@ -47,4 +48,5 @@ if (env.NODE_ENV !== 'test') {
     console.info(`[server] listening on port ${port}`);
     console.info(`[server] environment: ${env.NODE_ENV}`);
   });
+  startCalibrationLapseCron();
 }
