@@ -50,10 +50,10 @@
 
 ### Empower Flow (EMPR)
 
-- [ ] **EMPR-01**: Preflight check validates in order: active Connected account with `verification_status: 'verified'`, full compass calibration (all live Top Priority topics for user's role), legal name provided, explicit consent recorded — returns specific failure reason if any check fails
-- [ ] **EMPR-02**: Empowerment executes as a single atomic Postgres transaction: creates `empowered_profiles` record, batches `compass_responses.visibility` to `'public'` for this user, generates `candidate_page_slug` — rolls back entirely on any failure; partial empowerment is never a valid state
-- [ ] **EMPR-03**: Demotion executes as a single atomic Postgres transaction: sets `empowered_profiles.is_active = false`, batches `compass_responses.visibility` to `'private'` — fully reversible
-- [ ] **EMPR-04**: Candidate page slug generated as `kebab-case(legal_name)`; collisions resolved by appending a random 4-character alphanumeric suffix (e.g., `john-smith-a3b4`); slug uniqueness enforced at DB level
+- [x] **EMPR-01**: Preflight check validates in order: active Connected account with `verification_status: 'verified'`, full compass calibration (all live Top Priority topics for user's role), legal name provided, explicit consent recorded — returns specific failure reason if any check fails
+- [x] **EMPR-02**: Empowerment executes as a single atomic Postgres transaction: creates `empowered_profiles` record, batches `compass_responses.visibility` to `'public'` for this user, generates `candidate_page_slug` — rolls back entirely on any failure; partial empowerment is never a valid state
+- [x] **EMPR-03**: Demotion executes as a single atomic Postgres transaction: sets `empowered_profiles.is_active = false`, batches `compass_responses.visibility` to `'private'` — fully reversible
+- [x] **EMPR-04**: Candidate page slug generated as `kebab-case(legal_name)`; collisions resolved by appending a random 4-character alphanumeric suffix (e.g., `john-smith-a3b4`); slug uniqueness enforced at DB level
 
 ### Gems & Roles (CIVIC)
 
@@ -162,10 +162,10 @@
 | COMP-03 | Phase 4 — Compass Routes | Complete |
 | COMP-04 | Phase 4 — Compass Routes | Complete |
 | COMP-05 | Phase 4 — Compass Routes | Pending (user-to-user compare deferred to Phase 6) |
-| EMPR-01 | Phase 5 — Empower Flow | Pending |
-| EMPR-02 | Phase 5 — Empower Flow | Pending |
-| EMPR-03 | Phase 5 — Empower Flow | Pending |
-| EMPR-04 | Phase 5 — Empower Flow | Pending |
+| EMPR-01 | Phase 5 — Empower Flow | Complete |
+| EMPR-02 | Phase 5 — Empower Flow | Complete |
+| EMPR-03 | Phase 5 — Empower Flow | Complete |
+| EMPR-04 | Phase 5 — Empower Flow | Complete |
 | CIVIC-01 | Phase 6 — Gems, Roles, and Social Graph | Pending |
 | CIVIC-02 | Phase 6 — Gems, Roles, and Social Graph | Pending |
 | CIVIC-03 | Phase 6 — Gems, Roles, and Social Graph | Pending |
@@ -194,4 +194,4 @@
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-26 after Phase 4 completion*
+*Last updated: 2026-02-27 after Phase 5 completion*

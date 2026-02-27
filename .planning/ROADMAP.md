@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Auth Routes and Account Core** - Sign up, login, logout, /api/account/me read and update
 - [x] **Phase 3: Alpha Enrollment** - Connect verification flow + invite system (the complete enrollment pipeline)
 - [x] **Phase 4: Compass Routes** - Topic calibration, change history, completeness check, compare endpoint
-- [ ] **Phase 5: Empower Flow** - Preflight checks, atomic empowerment, atomic demotion, slug generation
+- [x] **Phase 5: Empower Flow** - Preflight checks, atomic empowerment, atomic demotion, slug generation
 - [ ] **Phase 6: Gems, Roles, and Social Graph** - Gem ledger, role system, peer connections, follows
 - [ ] **Phase 7: Admin Tool and Calibration Cron** - React admin UI, /api/admin/* routes, daily lapse enforcement scheduler
 - [ ] **Phase 8: Public Candidate Pages** - Unauthenticated /api/candidates/:slug with field projection enforcement
@@ -99,8 +99,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Schema migration (candidate_role, demoted_at, consent_records, RPC updates), architecture test, GET /me demotion state
-- [ ] 05-02-PLAN.md — empowerService + empower routes (preflight, confirm, demote) + integration tests
+- [x] 05-01-PLAN.md — Schema migration (candidate_role, demoted_at, consent_records, RPC updates), architecture test, GET /me demotion state
+- [x] 05-02-PLAN.md — empowerService + empower routes (preflight, confirm, demote) + integration tests
 
 ### Phase 6: Gems, Roles, and Social Graph
 **Goal**: The civic economy (gem ledger), civic function assignment (role system), and social connections are fully operational — with the peer connection table enabling compass visibility enforcement from Phase 4
@@ -160,7 +160,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 2. Auth Routes and Account Core | 2/2 | Complete | 2026-02-25 |
 | 3. Alpha Enrollment | 3/3 | Complete | 2026-02-25 |
 | 4. Compass Routes | 3/3 | Complete | 2026-02-26 |
-| 5. Empower Flow | 0/2 | Planned | - |
+| 5. Empower Flow | 2/2 | Complete | 2026-02-27 |
 | 6. Gems, Roles, and Social Graph | 0/3 | Not started | - |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |
 | 8. Public Candidate Pages | 0/1 | Not started | - |
