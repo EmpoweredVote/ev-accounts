@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-02-28 after v1.0 milestone)
 Phase: All 8 phases complete — v1.0 SHIPPED
 Plan: N/A
 Status: Milestone complete — ready to plan v1.1
-Last activity: 2026-02-28 — v1.0 milestone archived and tagged
+Last activity: 2026-02-28 — Completed quick task 001: invite flow docs + Civic Trivia integration guide
 
 Progress: [████████████████████] 100% (v1.0 complete)
 
@@ -36,6 +36,12 @@ Full key decisions log in PROJECT.md. All v1.0 decisions marked with outcomes.
 - Architecture test flags on routes/auth.ts, compass.ts, connect.ts, social.ts — documented exception needed
 - COMP-05: User-to-user compass compare deferred (infrastructure in place)
 - CIVIC-02: Gem reserve cap deferred for Alpha
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 001 | Invite flow docs + Civic Trivia Championships integration guide | 2026-02-28 | ed76356 | [001-invite-flow-and-civic-trivia-integration](./quick/001-invite-flow-and-civic-trivia-integration/) |
 
 ## Session Continuity
 
