@@ -10,20 +10,21 @@
  * Invite operations are a legitimate exception because they require writes to
  * connect.invite_codes and connect.invite_chains — tables that have NO RLS
  * INSERT/UPDATE grants for authenticated users (by design). These writes must
- * go through the service layer using either the pg pool (for atomic transactions)
- * or supabaseAdmin (for non-transactional reads). That exception lives here in
- * src/lib/, not in src/routes/. Route files import these named functions and
- * never touch supabaseAdmin or the pool directly.
+ * go through the service layer using supabaseAdmin (for both transactional RPC
+ * and non-transactional reads). That exception lives here in src/lib/, not in
+ * src/routes/. Route files import these named functions and never touch
+ * supabaseAdmin directly.
  *
- * claimInviteCode uses pg pool + BEGIN/FOR UPDATE/COMMIT to ensure that two
- * concurrent claim requests for the same code cannot both succeed — the FOR
- * UPDATE row lock serializes them. supabaseAdmin is used only for the
- * non-transactional getMyInviteCodes read.
+ * claimInviteCode delegates to the claim_invite_code SECURITY DEFINER RPC
+ * which uses FOR UPDATE locking to ensure two concurrent claim requests for
+ * the same code cannot both succeed.
+ *
+ * createInviteCodes delegates to the create_invite_codes RPC which handles
+ * collision retry server-side.
  */
 
 import crypto from 'crypto';
-import { pool } from './db.js';
-import { supabaseAdmin } from './supabase.js';
+import { supabaseAdmin, adminRpc } from './supabase.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -77,53 +78,20 @@ export function generateInviteCode(): string {
 
 /**
  * Batch-create invite codes for a user.
- * Inserts `count` rows into connect.invite_codes via pg pool.
- * Includes retry logic: if a code collides on UNIQUE(code), regenerates
- * and retries up to 3 times per slot.
+ * Delegates to the create_invite_codes SECURITY DEFINER RPC which handles
+ * collision retry server-side (up to 3 attempts per slot).
  *
  * Returns the generated code strings.
  */
 export async function createInviteCodes(userId: string, count: number): Promise<string[]> {
-  const client = await pool.connect();
-  const generatedCodes: string[] = [];
+  const { data, error } = await adminRpc('create_invite_codes', {
+    p_user_id: userId,
+    p_count: count,
+  });
 
-  try {
-    for (let i = 0; i < count; i++) {
-      let inserted = false;
-      let attempts = 0;
+  if (error) throw new Error(error.message);
 
-      while (!inserted && attempts < 3) {
-        const code = generateInviteCode();
-        attempts++;
-
-        try {
-          await client.query(
-            `INSERT INTO connect.invite_codes (code, created_by, expires_at)
-             VALUES ($1, $2, now() + interval '30 days')`,
-            [code, userId],
-          );
-          generatedCodes.push(code);
-          inserted = true;
-        } catch (err: unknown) {
-          // PostgreSQL unique violation code: 23505
-          const pgErr = err as { code?: string };
-          if (pgErr.code === '23505' && attempts < 3) {
-            // Code collision — regenerate and retry
-            continue;
-          }
-          throw err;
-        }
-      }
-
-      if (!inserted) {
-        throw new Error(`Failed to insert invite code after 3 collision retries (slot ${i})`);
-      }
-    }
-  } finally {
-    client.release();
-  }
-
-  return generatedCodes;
+  return ((data ?? []) as string[]);
 }
 
 // ---------------------------------------------------------------------------
@@ -155,11 +123,11 @@ export async function getMyInviteCodes(userId: string): Promise<InviteCode[]> {
 // ---------------------------------------------------------------------------
 
 /**
- * Atomically claim an invite code using a pg transaction with FOR UPDATE locking.
+ * Atomically claim an invite code using the claim_invite_code SECURITY DEFINER RPC.
  *
- * The FOR UPDATE lock is intentionally blocking (not NOWAIT). If two concurrent
- * requests race to claim the same code, the second blocks until the first
- * commits, then reads is_claimed = true and returns CODE_ALREADY_CLAIMED.
+ * The RPC uses FOR UPDATE locking to serialize concurrent claims on the same code.
+ * If two concurrent requests race, the second blocks until the first commits,
+ * then reads is_claimed = true and returns CODE_ALREADY_CLAIMED.
  * This prevents double-claim without requiring application-level locking.
  *
  * Returns codeId on success — required by POST /api/connect/start (Plan 03)
@@ -169,79 +137,28 @@ export async function getMyInviteCodes(userId: string): Promise<InviteCode[]> {
  * invite_chain row — there is no inviter to track.
  */
 export async function claimInviteCode(code: string, claimantUserId: string): Promise<ClaimResult> {
-  const client = await pool.connect();
+  const { data, error } = await adminRpc('claim_invite_code', {
+    p_code: code,
+    p_claimant_user_id: claimantUserId,
+  });
 
-  try {
-    await client.query('BEGIN');
+  if (error) throw new Error(error.message);
 
-    // Lock the row for the duration of this transaction
-    const { rows } = await client.query<{
-      id: string;
-      created_by: string | null;
-      is_claimed: boolean;
-      expires_at: string | null;
-    }>(
-      `SELECT id, created_by, is_claimed, expires_at
-         FROM connect.invite_codes
-        WHERE code = $1
-        FOR UPDATE`,
-      [code],
-    );
+  const result = data as {
+    success: boolean;
+    error?: string;
+    inviter_id?: string | null;
+    code_id?: string;
+  };
 
-    if (rows.length === 0) {
-      await client.query('ROLLBACK');
-      return { success: false, error: 'INVALID_CODE' };
-    }
-
-    const row = rows[0]!;
-
-    if (row.is_claimed) {
-      await client.query('ROLLBACK');
-      return { success: false, error: 'CODE_ALREADY_CLAIMED' };
-    }
-
-    if (row.expires_at !== null && new Date(row.expires_at) < new Date()) {
-      await client.query('ROLLBACK');
-      return { success: false, error: 'CODE_EXPIRED' };
-    }
-
-    if (row.created_by !== null && row.created_by === claimantUserId) {
-      await client.query('ROLLBACK');
-      return { success: false, error: 'SELF_INVITE_BLOCKED' };
-    }
-
-    // Mark the code as claimed
-    await client.query(
-      `UPDATE connect.invite_codes
-          SET is_claimed  = true,
-              claimed_by  = $1,
-              claimed_at  = now(),
-              updated_at  = now()
-        WHERE id = $2`,
-      [claimantUserId, row.id],
-    );
-
-    // Record invite chain only when there is a real inviter (user-created code)
-    // Admin-created codes have created_by = NULL — invite_chains.inviter_id is NOT NULL
-    if (row.created_by !== null) {
-      await client.query(
-        `INSERT INTO connect.invite_chains (inviter_id, invitee_id, invite_code_id)
-         VALUES ($1, $2, $3)`,
-        [row.created_by, claimantUserId, row.id],
-      );
-    }
-
-    await client.query('COMMIT');
-
-    return {
-      success: true,
-      inviterId: row.created_by,
-      codeId: row.id,
-    };
-  } catch (err) {
-    await client.query('ROLLBACK');
-    throw err;
-  } finally {
-    client.release();
+  if (!result.success) {
+    const errorCode = result.error as 'INVALID_CODE' | 'CODE_ALREADY_CLAIMED' | 'CODE_EXPIRED' | 'SELF_INVITE_BLOCKED';
+    return { success: false, error: errorCode };
   }
+
+  return {
+    success: true,
+    inviterId: result.inviter_id ?? null,
+    codeId: result.code_id!,
+  };
 }
