@@ -3,16 +3,21 @@ import { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
 import { supabaseAdmin } from '../lib/supabase.js';
 
-// Supabase projects created after May 2025 use ES256 (asymmetric) by default.
-// This middleware uses JWKS-based verification which works for ES256 and RS256.
-// If the project uses HS256 (legacy symmetric), replace createRemoteJWKSet with:
-//   new TextEncoder().encode(env.SUPABASE_JWT_SECRET)
-// Check: Supabase Dashboard > Auth > JWT Configuration
+// Projects created before May 2025 use HS256 (symmetric key).
+// Projects created after May 2025 use ES256 (asymmetric, JWKS).
+// SUPABASE_JWT_SECRET is set → use symmetric HS256 verification.
+// Otherwise fall back to JWKS for ES256/RS256.
+const SECRET_KEY = env.SUPABASE_JWT_SECRET
+  ? new TextEncoder().encode(env.SUPABASE_JWT_SECRET)
+  : null;
+const JWKS = SECRET_KEY
+  ? null
+  : createRemoteJWKSet(new URL(`${env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`));
 
-// JWKS is fetched once and cached — no network call per request
-const JWKS = createRemoteJWKSet(
-  new URL(`${env.SUPABASE_URL}/auth/v1/.well-known/jwks.json`)
-);
+async function verifyJwt(token: string, options: Parameters<typeof jwtVerify>[2]) {
+  if (SECRET_KEY) return jwtVerify(token, SECRET_KEY, options);
+  return jwtVerify(token, JWKS!, options);
+}
 
 export interface AuthenticatedRequest extends Request {
   userId: string;
@@ -33,7 +38,7 @@ export async function requireAuth(
   const token = authHeader.slice(7);
 
   try {
-    const { payload } = await jwtVerify(token, JWKS, {
+    const { payload } = await verifyJwt(token, {
       issuer: `${env.SUPABASE_URL}/auth/v1`,
       audience: 'authenticated',
     });
@@ -93,7 +98,7 @@ export async function optionalAuth(
   const token = authHeader.slice(7);
 
   try {
-    const { payload } = await jwtVerify(token, JWKS, {
+    const { payload } = await verifyJwt(token, {
       issuer: `${env.SUPABASE_URL}/auth/v1`,
       audience: 'authenticated',
     });

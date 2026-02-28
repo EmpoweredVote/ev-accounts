@@ -9,6 +9,7 @@ const envSchema = z.object({
   DATABASE_URL: z.string().min(1),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
+  SUPABASE_JWT_SECRET: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
