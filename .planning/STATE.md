@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.8
-milestone_name: Compass Data & Politician Research
-status: shipped
+milestone: v1.9
+milestone_name: Compare UX & Search Fixes
+status: defining_requirements
 last_updated: "2026-02-27"
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 28
-  completed_plans: 28
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
@@ -18,12 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** Defining requirements for v1.9
 
 ## Current Position
 
-Milestone v1.8 shipped 2026-02-27.
-All 6 phases (45-50) complete, 28/28 plans done, 21/21 requirements satisfied.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-02-27 — Milestone v1.9 started
 
 ## Performance Metrics
 
@@ -37,7 +39,6 @@ All 6 phases (45-50) complete, 28/28 plans done, 21/21 requirements satisfied.
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
-See `.planning/milestones/v1.8-ROADMAP.md` for full v1.8 decision history.
 
 ### Pending Todos
 
@@ -45,10 +46,10 @@ See `.planning/milestones/v1.8-ROADMAP.md` for full v1.8 decision history.
 
 ### Blockers/Concerns
 
-None — milestone complete.
+None.
 
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: v1.8 milestone archived
+Stopped at: Defining v1.9 requirements
 Resume file: None

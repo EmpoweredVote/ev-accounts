@@ -132,9 +132,13 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active milestone — run `/gsd:new-milestone` to define v1.9)
+<!-- Current milestone: v1.9 Compare UX & Search Fixes -->
 
-(No active milestone — run `/gsd:new-milestone` to define v1.9)
+- [ ] Quick-switch politician dropdown on compare page (swap without leaving view)
+- [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
+- [ ] Level filters on compare page (federal/state/local)
+- [ ] Essentials search accuracy for larger areas (all reps in city-wide searches)
+- [ ] Essentials search-from-results bug fix (double-entry issue)
 
 ### Out of Scope
 
@@ -155,6 +159,8 @@ Users can explore political issues and discover their elected officials without 
 - City council headshot coverage beyond 21.5% — requires ~4-6 hours manual browser research per Plan 42-06; pipeline infrastructure ready
 - School board data enrichment — 402 members, low data availability, high anti-bot protections
 - Bio/education/experience for city council members — ~30% availability, high per-city effort
+- Multi-politician comparison (2-3 overlays at once) — deferred to v2.0
+- Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes) — deferred to v2.0
 
 ## Context
 
@@ -267,5 +273,16 @@ Known tech debt: dead `ballotready/` package preserved as historical reference; 
 | LATERAL JOIN for quotes API | Prevents office row multiplication in quote results | ✓ Good — single office per politician, clean response |
 | Module-level cache in api.ts | Avoid React Query/SWR for prototype session | ✓ Good — minimal complexity, graceful mockData.ts fallback |
 
+## Current Milestone: v1.9 Compare UX & Search Fixes
+
+**Goal:** Improve the compass compare experience with quick-switch politicians and "my reps" surfacing, and fix Essentials search accuracy for larger areas plus the search-from-results bug.
+
+**Target features:**
+- Quick-switch politician dropdown on compare page
+- "My reps" surfacing (connect Essentials address data to Compass compare)
+- Level filters (federal/state/local) on compare page
+- Search accuracy for city-wide/ZIP-wide queries (return all representatives)
+- Search-from-results double-entry bug fix
+
 ---
-*Last updated: 2026-02-27 after v1.8 milestone completed*
+*Last updated: 2026-02-27 after v1.9 milestone started*
