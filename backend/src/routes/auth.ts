@@ -3,7 +3,7 @@ import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
-import { pool } from '../lib/db.js';
+import { supabaseAdmin } from '../lib/supabase.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -226,22 +226,38 @@ router.post(
     const { userId } = req as AuthenticatedRequest;
 
     try {
-      const { rowCount } = await pool.query(
-        `UPDATE connect.connected_profiles
-            SET completed_onboarding = true, updated_at = now()
-          WHERE user_id = $1 AND completed_onboarding = false`,
-        [userId]
-      );
+      // Attempt to update — only updates rows where completed_onboarding is false
+      const { data: updatedRows, error: updateError } = await supabaseAdmin
+        .schema('connect')
+        .from('connected_profiles')
+        .update({ completed_onboarding: true, updated_at: new Date().toISOString() })
+        .eq('user_id', userId)
+        .eq('completed_onboarding', false)
+        .select('id');
 
-      if (rowCount === 0) {
+      if (updateError) {
+        console.error('[auth/complete-onboarding] Update error:', updateError);
+        res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+        return;
+      }
+
+      if (!updatedRows || updatedRows.length === 0) {
         // Either no connected_profiles row, or completed_onboarding is already true.
         // Check which case it is to give the correct response.
-        const { rows } = await pool.query<{ completed_onboarding: boolean }>(
-          `SELECT completed_onboarding FROM connect.connected_profiles WHERE user_id = $1`,
-          [userId]
-        );
+        const { data: profile, error: selectError } = await supabaseAdmin
+          .schema('connect')
+          .from('connected_profiles')
+          .select('completed_onboarding')
+          .eq('user_id', userId)
+          .maybeSingle();
 
-        if (rows.length === 0) {
+        if (selectError) {
+          console.error('[auth/complete-onboarding] Select error:', selectError);
+          res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+          return;
+        }
+
+        if (!profile) {
           // No connected_profiles row — user has not completed the Connect flow.
           res.status(403).json({
             code: 'NOT_CONNECTED',
