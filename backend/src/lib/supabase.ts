@@ -25,6 +25,22 @@ export const supabaseAdmin = createClient<Database>(
 );
 
 /**
+ * adminRpc — call a SECURITY DEFINER RPC function via supabaseAdmin.
+ *
+ * Used for functions registered in migrations that are not yet reflected in
+ * database.types.ts. Bypasses the strict RPC name union type while preserving
+ * the {data, error} return shape.
+ *
+ * Only use this for RPC calls — all .from() queries should use supabaseAdmin
+ * directly so that table-level types are enforced.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export async function adminRpc(fn: string, args?: Record<string, unknown>): Promise<{ data: any; error: any }> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (supabaseAdmin as any).rpc(fn, args);
+}
+
+/**
  * Per-request client — user JWT injected, RLS enforced.
  * Use in route handlers for all reads that feed API responses.
  */
