@@ -460,7 +460,8 @@ export async function getCronLog(
  * requireAdmin middleware handles the 403 for non-admins, so this always
  * returns { isAdmin: true } when called from within the admin router.
  */
-export async function getAdminMe(_userId: string): Promise<{ isAdmin: boolean }> {
+export async function getAdminMe(userId: string): Promise<{ isAdmin: boolean; id: string; email: string }> {
   // If we reach this function, requireAdmin middleware already confirmed admin status
-  return { isAdmin: true };
+  const { data } = await supabaseAdmin.auth.admin.getUserById(userId);
+  return { isAdmin: true, id: userId, email: data.user?.email ?? '' };
 }

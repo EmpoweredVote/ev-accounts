@@ -5,7 +5,7 @@ import { apiFetch } from '../../lib/api';
 interface Role {
   id: string;
   slug: string;
-  display_name: string;
+  name: string;
   granted_at: string;
 }
 
@@ -81,13 +81,13 @@ export function AccountDetailPage() {
     }
   }
 
-  async function handleRoleRevoke(roleId: string) {
+  async function handleRoleRevoke(roleSlug: string) {
     setActionError(null);
     setActionLoading(true);
     try {
       await apiFetch('/admin/roles/revoke', {
         method: 'POST',
-        body: JSON.stringify({ userId, roleId }),
+        body: JSON.stringify({ user_id: userId, role_slug: roleSlug }),
       });
       fetchAccount();
     } catch (err) {
@@ -175,14 +175,13 @@ export function AccountDetailPage() {
             {account.roles?.map((role) => (
               <div key={role.id} className="flex items-center justify-between">
                 <div>
-                  <span className="font-medium text-sm text-gray-900">{role.display_name}</span>
-                  <span className="text-xs text-gray-400 ml-2">({role.slug})</span>
+                  <span className="font-medium text-sm text-gray-900">{role.slug}</span>
                   <span className="text-xs text-gray-400 ml-2">
                     Granted {new Date(role.granted_at).toLocaleDateString()}
                   </span>
                 </div>
                 <button
-                  onClick={() => handleRoleRevoke(role.id)}
+                  onClick={() => handleRoleRevoke(role.slug)}
                   disabled={actionLoading}
                   className="text-xs text-red-600 hover:text-red-800 disabled:opacity-50"
                 >

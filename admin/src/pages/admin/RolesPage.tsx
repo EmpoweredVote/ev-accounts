@@ -4,7 +4,7 @@ import { apiFetch } from '../../lib/api';
 interface Role {
   id: string;
   slug: string;
-  display_name: string;
+  name: string;
   is_active: boolean;
 }
 
@@ -99,7 +99,7 @@ export function RolesPage() {
               {roles.map((role) => (
                 <tr key={role.id}>
                   <td className="py-2 font-mono text-gray-700">{role.slug}</td>
-                  <td className="py-2 text-gray-900">{role.display_name}</td>
+                  <td className="py-2 text-gray-900">{role.name}</td>
                   <td className="py-2">
                     <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${role.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
                       {role.is_active ? 'Active' : 'Inactive'}
@@ -144,7 +144,7 @@ export function RolesPage() {
               >
                 <option value="">Select a role...</option>
                 {activeRoles.map((r) => (
-                  <option key={r.id} value={r.slug}>{r.display_name}</option>
+                  <option key={r.id} value={r.slug}>{r.name}</option>
                 ))}
               </select>
             </div>
@@ -183,7 +183,7 @@ export function RolesPage() {
               >
                 <option value="">Select a role...</option>
                 {activeRoles.map((r) => (
-                  <option key={r.id} value={r.slug}>{r.display_name}</option>
+                  <option key={r.id} value={r.slug}>{r.name}</option>
                 ))}
               </select>
             </div>

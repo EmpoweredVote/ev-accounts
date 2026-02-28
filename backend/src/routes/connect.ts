@@ -490,7 +490,7 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
         .schema('inform')
         .from('compass_topics')
         .select('id,version')
-        .eq('is_active', true);
+        .eq('is_live', true);
 
       if (topicsError) throw topicsError;
 
