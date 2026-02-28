@@ -1,0 +1,63 @@
+# Requirements: Empowered Vote Platform
+
+**Defined:** 2026-02-27
+**Core Value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
+
+## v1.9 Requirements
+
+Requirements for v1.9 Compare UX & Search Fixes. Each maps to roadmap phases.
+
+### Compare
+
+- [ ] **COMP-01**: User can switch the compared politician via an inline dropdown without reopening the full-screen modal
+- [ ] **COMP-02**: User can filter the politician list by state
+- [ ] **COMP-03**: User can filter the politician list by level (Federal / State / Local)
+
+### Search
+
+- [ ] **SRCH-01**: Searching a city name returns all representatives whose districts overlap that city (not just the single point's geofences)
+- [ ] **SRCH-02**: Searching from the results page works correctly on the first attempt (no page refresh or double-entry required)
+
+## v2.0 Requirements
+
+Deferred to future release. Tracked but not in current roadmap.
+
+### Cross-App Integration
+
+- **XAPP-01**: User's Essentials address search surfaces "my reps" first in Compass compare picker (via local storage or shared session)
+- **XAPP-02**: Compass radar overlay displayed on Essentials politician profile pages (with guest localStorage support)
+- **XAPP-03**: Read & Rank quotes and agree/disagree status shown on Essentials politician profiles
+
+### Compare Enhancements
+
+- **COMP-04**: User can compare themselves against 2-3 politicians simultaneously on one radar chart
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Cross-app session sharing | Privacy concerns; deferred until apps are unified in v2.0 |
+| Multi-politician comparison overlays | UI complexity; deferred to v2.0 |
+| Compass overlay on Essentials profiles | Cross-app architecture needed; v2.0 |
+| Read & Rank integration on profiles | Requires cross-app architecture; v2.0 |
+
+## Traceability
+
+Which phases cover which requirements. Updated during roadmap creation.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| COMP-01 | — | Pending |
+| COMP-02 | — | Pending |
+| COMP-03 | — | Pending |
+| SRCH-01 | — | Pending |
+| SRCH-02 | — | Pending |
+
+**Coverage:**
+- v1.9 requirements: 5 total
+- Mapped to phases: 0
+- Unmapped: 5 ⚠️
+
+---
+*Requirements defined: 2026-02-27*
+*Last updated: 2026-02-27 after initial definition*
