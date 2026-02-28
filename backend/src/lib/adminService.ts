@@ -425,7 +425,7 @@ export async function getDashboardStats(): Promise<Record<string, unknown>> {
  */
 export async function getCronLog(
   params: CronLogParams
-): Promise<{ runs: unknown[]; total: number }> {
+): Promise<{ runs: unknown[]; total: number; page: number; pages: number }> {
   const { page = 1 } = params;
 
   const { data, error } = await adminRpc('admin_get_cron_log', {
@@ -434,11 +434,21 @@ export async function getCronLog(
 
   if (error) throw new Error(error.message);
 
-  const result = data as { runs: unknown[]; total: number };
-  return {
-    runs: result.runs ?? [],
-    total: result.total ?? 0,
-  };
+  const result = data as { runs: Array<Record<string, unknown>>; total: number };
+  const total = result.total ?? 0;
+  const pages = Math.max(1, Math.ceil(total / 25));
+
+  // Remap SQL column names to React component field names
+  const runs = (result.runs ?? []).map((run) => ({
+    ...run,
+    id: run.run_date, // run_date is PK — use as React key
+    warned_25d: run.users_warned_25,
+    warned_30d: run.users_warned_30,
+    demoted_count: run.users_demoted,
+    error: run.error_message ?? null,
+  }));
+
+  return { runs, total, page, pages };
 }
 
 // ---------------------------------------------------------------------------

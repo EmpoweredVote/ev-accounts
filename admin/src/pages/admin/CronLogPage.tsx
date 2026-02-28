@@ -76,7 +76,7 @@ export function CronLogPage() {
                   </td>
                 </tr>
               ))
-            ) : data?.runs.length === 0 ? (
+            ) : data?.runs?.length === 0 ? (
               <tr>
                 <td colSpan={7} className="px-4 py-8 text-center text-gray-400">
                   No cron runs recorded yet.
