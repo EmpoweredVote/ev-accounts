@@ -86,9 +86,9 @@
 
 ### Public Candidate Pages (CAND)
 
-- [ ] **CAND-01**: Public `GET /api/candidates/:slug` returns legal name, candidate page metadata, and public compass stances for active Empowered accounts — no authentication required
-- [ ] **CAND-02**: `tolerance_rating` never appears in any candidate page response — enforced at both RLS and serialization layers
-- [ ] **CAND-03**: Demoted (inactive) candidate pages return a consistent inactive state; slug is reserved and not reassigned
+- [x] **CAND-01**: Public `GET /api/candidates/:slug` returns legal name, candidate page metadata, and public compass stances for active Empowered accounts — no authentication required
+- [x] **CAND-02**: `tolerance_rating` never appears in any candidate page response — enforced at both RLS and serialization layers
+- [x] **CAND-03**: Demoted (inactive) candidate pages return a consistent inactive state; slug is reserved and not reassigned
 
 ## v2 Requirements
 
@@ -183,9 +183,9 @@
 | CRON-02 | Phase 7 — Admin Tool and Calibration Cron | Pending |
 | CRON-03 | Phase 7 — Admin Tool and Calibration Cron | Pending |
 | CRON-04 | Phase 7 — Admin Tool and Calibration Cron | Pending |
-| CAND-01 | Phase 8 — Public Candidate Pages | Pending |
-| CAND-02 | Phase 8 — Public Candidate Pages | Pending |
-| CAND-03 | Phase 8 — Public Candidate Pages | Pending |
+| CAND-01 | Phase 8 — Public Candidate Pages | Complete |
+| CAND-02 | Phase 8 — Public Candidate Pages | Complete |
+| CAND-03 | Phase 8 — Public Candidate Pages | Complete |
 
 **Coverage:**
 - v1 requirements: 52 total
@@ -194,4 +194,4 @@
 
 ---
 *Requirements defined: 2026-02-24*
-*Last updated: 2026-02-27 after Phase 5 completion*
+*Last updated: 2026-02-28 after Phase 8 completion (milestone v1.0 complete)*
