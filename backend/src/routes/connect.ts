@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { pool } from '../lib/db.js';
+import { supabaseAdmin, adminRpc } from '../lib/supabase.js';
 import { claimInviteCode } from '../lib/inviteService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import type { Request, Response } from 'express';
@@ -10,8 +10,9 @@ import type { Request, Response } from 'express';
  *
  * Step state machine: invite -> profile -> review -> complete
  *
- * All DB writes use the pg pool directly (never via Supabase JS client in this file).
- * This satisfies the architecture constraint enforced by architecture.test.ts.
+ * All DB writes use supabaseAdmin (HTTP/REST via PostgREST + RPC).
+ * Transactional operations (complete flow) are delegated to SECURITY DEFINER
+ * RPC functions.
  *
  * POST /start          — Claim invite code, create or resume verification_session
  * PATCH /step          — Update draft profile fields, advance step when complete
@@ -112,14 +113,18 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
     return;
   }
 
-  const client = await pool.connect();
   try {
     // 1. Check if user is already Connected
-    const { rows: connectedRows } = await client.query<{ id: string }>(
-      'SELECT id FROM connect.connected_profiles WHERE user_id = $1',
-      [userId]
-    );
-    if (connectedRows.length > 0) {
+    const { data: connectedProfile, error: cpError } = await supabaseAdmin
+      .schema('connect')
+      .from('connected_profiles')
+      .select('id')
+      .eq('user_id', userId)
+      .maybeSingle();
+
+    if (cpError) throw cpError;
+
+    if (connectedProfile) {
       res.status(409).json({
         code: 'ALREADY_CONNECTED',
         message: 'You already have a Connected profile',
@@ -128,22 +133,14 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
     }
 
     // 2. Check for an existing session
-    const { rows: sessionRows } = await client.query<{
-      id: string;
-      step_reached: string;
-      display_name_draft: string | null;
-      legal_name_draft: string | null;
-      region_draft: string | null;
-      home_address_draft: string | null;
-      invite_code_id: string | null;
-    }>(
-      `SELECT id, step_reached, display_name_draft, legal_name_draft, region_draft, home_address_draft, invite_code_id
-         FROM connect.verification_sessions
-        WHERE user_id = $1`,
-      [userId]
-    );
+    const { data: existingSession, error: sessionError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft,invite_code_id')
+      .eq('user_id', userId)
+      .maybeSingle();
 
-    const existingSession = sessionRows[0] ?? null;
+    if (sessionError) throw sessionError;
 
     // If session exists and has progressed beyond 'invite', resume
     if (existingSession && existingSession.step_reached !== 'invite') {
@@ -177,40 +174,36 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
     }
 
     // 4. UPSERT verification_session at step 'profile' with the claimed code ID
-    const { rows: upsertRows } = await client.query<{
-      id: string;
-      step_reached: string;
-      display_name_draft: string | null;
-      legal_name_draft: string | null;
-      region_draft: string | null;
-      home_address_draft: string | null;
-    }>(
-      `INSERT INTO connect.verification_sessions (user_id, step_reached, invite_code_id, updated_at)
-       VALUES ($1, 'profile', $2, now())
-       ON CONFLICT (user_id) DO UPDATE
-         SET step_reached    = 'profile',
-             invite_code_id  = $2,
-             updated_at      = now()
-       RETURNING id, step_reached, display_name_draft, legal_name_draft, region_draft, home_address_draft`,
-      [userId, claimResult.codeId]
-    );
+    const { data: upsertedSession, error: upsertError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .upsert(
+        {
+          user_id: userId,
+          step_reached: 'profile',
+          invite_code_id: claimResult.codeId,
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: 'user_id' }
+      )
+      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
+      .single();
 
-    const session = upsertRows[0]!;
+    if (upsertError) throw upsertError;
+
     res.status(200).json({
-      session_id: session.id,
-      step_reached: session.step_reached,
+      session_id: upsertedSession.id,
+      step_reached: upsertedSession.step_reached,
       drafts: {
-        display_name_draft: session.display_name_draft,
-        legal_name_draft: session.legal_name_draft,
-        region_draft: session.region_draft,
-        home_address_draft: session.home_address_draft,
+        display_name_draft: upsertedSession.display_name_draft,
+        legal_name_draft: upsertedSession.legal_name_draft,
+        region_draft: upsertedSession.region_draft,
+        home_address_draft: upsertedSession.home_address_draft,
       },
     });
   } catch (err) {
     console.error('[connect/start] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  } finally {
-    client.release();
   }
 });
 
@@ -244,29 +237,21 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
 
   const { step, display_name, legal_name, location, home_address } = parsed.data;
 
-  const client = await pool.connect();
   try {
     // 1. Fetch current session
-    const { rows: sessionRows } = await client.query<{
-      id: string;
-      step_reached: string;
-      display_name_draft: string | null;
-      legal_name_draft: string | null;
-      region_draft: string | null;
-      home_address_draft: string | null;
-    }>(
-      `SELECT id, step_reached, display_name_draft, legal_name_draft, region_draft, home_address_draft
-         FROM connect.verification_sessions
-        WHERE user_id = $1`,
-      [userId]
-    );
+    const { data: session, error: sessionError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
+      .eq('user_id', userId)
+      .maybeSingle();
 
-    if (sessionRows.length === 0) {
+    if (sessionError) throw sessionError;
+
+    if (!session) {
       res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
       return;
     }
-
-    const session = sessionRows[0]!;
 
     if (session.step_reached === 'complete') {
       res.status(409).json({
@@ -276,8 +261,7 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
       return;
     }
 
-    // 2. Build SET clauses — only update fields that were provided
-    // Compute merged values to determine if we can advance to 'review'
+    // 2. Compute merged values to determine if we can advance to 'review'
     const newDisplayName =
       display_name !== undefined ? display_name : session.display_name_draft;
     const newLegalName = legal_name !== undefined ? legal_name : session.legal_name_draft;
@@ -298,28 +282,24 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
 
     const newStepReached = step === 'review' && allRequiredPresent ? 'review' : 'profile';
 
-    // 3. Execute the UPDATE with explicit SET clauses
-    const { rows: updatedRows } = await client.query<{
-      id: string;
-      step_reached: string;
-      display_name_draft: string | null;
-      legal_name_draft: string | null;
-      region_draft: string | null;
-      home_address_draft: string | null;
-    }>(
-      `UPDATE connect.verification_sessions
-          SET display_name_draft = $1,
-              legal_name_draft   = $2,
-              region_draft       = $3,
-              home_address_draft = $4,
-              step_reached       = $5,
-              updated_at         = now()
-        WHERE user_id = $6
-        RETURNING id, step_reached, display_name_draft, legal_name_draft, region_draft, home_address_draft`,
-      [newDisplayName ?? null, newLegalName ?? null, newRegion ?? null, newHomeAddress ?? null, newStepReached, userId]
-    );
+    // 3. Execute the UPDATE
+    const { data: updated, error: updateError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .update({
+        display_name_draft: newDisplayName ?? null,
+        legal_name_draft: newLegalName ?? null,
+        region_draft: newRegion ?? null,
+        home_address_draft: newHomeAddress ?? null,
+        step_reached: newStepReached,
+        updated_at: new Date().toISOString(),
+      })
+      .eq('user_id', userId)
+      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
+      .single();
 
-    const updated = updatedRows[0]!;
+    if (updateError) throw updateError;
+
     res.status(200).json({
       session_id: updated.id,
       step_reached: updated.step_reached,
@@ -333,8 +313,6 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
   } catch (err) {
     console.error('[connect/step] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  } finally {
-    client.release();
   }
 });
 
@@ -345,130 +323,60 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
 /**
  * Finalize the Connect flow and atomically create a connected_profiles record.
  *
- * All operations run in a single pg transaction with a FOR UPDATE lock on the
- * verification_session row. This prevents concurrent complete attempts from
- * creating duplicate connected_profiles rows.
- *
- * Idempotency: if connected_profiles already exists for this user, returns 409
- * rather than erroring — the caller can treat the second attempt as a no-op.
+ * Delegates to the complete_connect_flow SECURITY DEFINER RPC which handles:
+ * - FOR UPDATE lock on verification_session
+ * - Validation of step and required fields
+ * - Idempotency check for existing connected_profiles
+ * - Atomic INSERT of connected_profiles
+ * - Advance session to 'complete'
+ * - Sync display_name to public.users
  *
  * Response intentionally omits tolerance_rating and legal_name — privacy
  * enforcement at the serialization layer (not just RLS).
  */
 router.post('/complete', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
-  const client = await pool.connect();
 
   try {
-    await client.query('BEGIN');
-
-    // 1. Lock the verification_session row for this transaction
-    const { rows: sessionRows } = await client.query<{
-      id: string;
-      step_reached: string;
-      display_name_draft: string | null;
-      legal_name_draft: string | null;
-      region_draft: string | null;
-      home_address_draft: string | null;
-    }>(
-      `SELECT id, step_reached, display_name_draft, legal_name_draft, region_draft, home_address_draft
-         FROM connect.verification_sessions
-        WHERE user_id = $1
-          FOR UPDATE`,
-      [userId]
-    );
-
-    if (sessionRows.length === 0) {
-      await client.query('ROLLBACK');
-      res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
-      return;
-    }
-
-    const session = sessionRows[0]!;
-
-    // 2. Validate that the session is in the 'review' step
-    if (session.step_reached !== 'review') {
-      await client.query('ROLLBACK');
-      res.status(400).json({
-        code: 'INCOMPLETE_SESSION',
-        message: 'Complete all required fields first',
-      });
-      return;
-    }
-
-    // 3. Validate all 4 required draft fields are present
-    if (
-      session.display_name_draft === null ||
-      session.legal_name_draft === null ||
-      session.region_draft === null ||
-      session.home_address_draft === null
-    ) {
-      await client.query('ROLLBACK');
-      res.status(400).json({
-        code: 'MISSING_REQUIRED_FIELDS',
-        message: 'All required fields must be completed',
-      });
-      return;
-    }
-
-    // 4. Idempotency check — prevent duplicate connected_profiles creation
-    const { rows: existingConnected } = await client.query<{ id: string }>(
-      'SELECT id FROM connect.connected_profiles WHERE user_id = $1',
-      [userId]
-    );
-    if (existingConnected.length > 0) {
-      await client.query('ROLLBACK');
-      res.status(409).json({
-        code: 'ALREADY_CONNECTED',
-        message: 'You already have a Connected profile',
-      });
-      return;
-    }
-
-    // 5. Create the connected_profiles record
-    await client.query(
-      `INSERT INTO connect.connected_profiles
-         (user_id, display_name, legal_name, home_address, account_standing, verification_status, tolerance_rating, verified_region)
-       VALUES ($1, $2, $3, $4, 'active', 'verified', 10.00, $5)`,
-      [
-        userId,
-        session.display_name_draft,
-        session.legal_name_draft,
-        session.home_address_draft,
-        session.region_draft,
-      ]
-    );
-
-    // 6. Advance verification_session to 'complete'
-    await client.query(
-      `UPDATE connect.verification_sessions
-          SET step_reached = 'complete', updated_at = now()
-        WHERE user_id = $1`,
-      [userId]
-    );
-
-    // 7. Sync display_name to public.users
-    await client.query(
-      `UPDATE public.users
-          SET display_name = $1, updated_at = now()
-        WHERE id = $2`,
-      [session.display_name_draft, userId]
-    );
-
-    await client.query('COMMIT');
-
-    // Response: whitelist only — tolerance_rating and legal_name intentionally omitted
-    res.status(201).json({
-      connected: true,
-      verification_status: 'verified',
-      tier: 'connected',
+    const { data, error } = await adminRpc('complete_connect_flow', {
+      p_user_id: userId,
     });
+
+    if (error) {
+      const msg = error.message;
+      if (msg === 'NO_SESSION') {
+        res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
+        return;
+      }
+      if (msg === 'INCOMPLETE_SESSION') {
+        res.status(400).json({
+          code: 'INCOMPLETE_SESSION',
+          message: 'Complete all required fields first',
+        });
+        return;
+      }
+      if (msg === 'MISSING_REQUIRED_FIELDS') {
+        res.status(400).json({
+          code: 'MISSING_REQUIRED_FIELDS',
+          message: 'All required fields must be completed',
+        });
+        return;
+      }
+      if (msg === 'ALREADY_CONNECTED') {
+        res.status(409).json({
+          code: 'ALREADY_CONNECTED',
+          message: 'You already have a Connected profile',
+        });
+        return;
+      }
+      throw new Error(msg);
+    }
+
+    const result = (data ?? {}) as { connected: boolean; verification_status: string; tier: string };
+    res.status(201).json(result);
   } catch (err) {
-    await client.query('ROLLBACK');
     console.error('[connect/complete] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  } finally {
-    client.release();
   }
 });
 
@@ -486,30 +394,37 @@ router.post('/complete', requireAuth, async (req: Request, res: Response): Promi
  */
 router.get('/status', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
-  const client = await pool.connect();
 
   try {
     // Check connected_profiles first
-    const { rows: connectedRows } = await client.query<{ verification_status: string }>(
-      'SELECT verification_status FROM connect.connected_profiles WHERE user_id = $1',
-      [userId]
-    );
+    const { data: connectedProfile, error: cpError } = await supabaseAdmin
+      .schema('connect')
+      .from('connected_profiles')
+      .select('verification_status')
+      .eq('user_id', userId)
+      .maybeSingle();
 
-    if (connectedRows.length > 0) {
-      res.status(200).json({ status: connectedRows[0]!.verification_status });
+    if (cpError) throw cpError;
+
+    if (connectedProfile) {
+      res.status(200).json({ status: connectedProfile.verification_status });
       return;
     }
 
     // Check for active verification_session
-    const { rows: sessionRows } = await client.query<{ step_reached: string }>(
-      'SELECT step_reached FROM connect.verification_sessions WHERE user_id = $1',
-      [userId]
-    );
+    const { data: session, error: sessionError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .select('step_reached')
+      .eq('user_id', userId)
+      .maybeSingle();
 
-    if (sessionRows.length > 0) {
+    if (sessionError) throw sessionError;
+
+    if (session) {
       res.status(200).json({
         status: 'in_progress',
-        step_reached: sessionRows[0]!.step_reached,
+        step_reached: session.step_reached,
       });
       return;
     }
@@ -518,8 +433,6 @@ router.get('/status', requireAuth, async (req: Request, res: Response): Promise<
   } catch (err) {
     console.error('[connect/status] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  } finally {
-    client.release();
   }
 });
 
@@ -554,28 +467,35 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
   }
 
   const { calibrations, confirmed } = parsed.data;
-  const client = await pool.connect();
 
   try {
     // 1. Require an active verification session
-    const { rows: sessionRows } = await client.query<{ id: string }>(
-      'SELECT id FROM connect.verification_sessions WHERE user_id = $1',
-      [userId]
-    );
+    const { data: session, error: sessionError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .select('id')
+      .eq('user_id', userId)
+      .maybeSingle();
 
-    if (sessionRows.length === 0) {
+    if (sessionError) throw sessionError;
+
+    if (!session) {
       res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
       return;
     }
 
     if (!confirmed) {
       // Phase 1: Validate topic versions against live server versions
-      const { rows: liveTopics } = await client.query<{ id: string; version: number }>(
-        'SELECT id, version FROM inform.compass_topics WHERE is_active = true'
-      );
+      const { data: liveTopics, error: topicsError } = await supabaseAdmin
+        .schema('inform')
+        .from('compass_topics')
+        .select('id,version')
+        .eq('is_active', true);
+
+      if (topicsError) throw topicsError;
 
       const liveVersionMap = new Map<string, number>();
-      for (const topic of liveTopics) {
+      for (const topic of liveTopics ?? []) {
         liveVersionMap.set(topic.id, topic.version);
       }
 
@@ -608,19 +528,21 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
     }
 
     // Phase 2: Save calibrations as draft in verification_sessions
-    await client.query(
-      `UPDATE connect.verification_sessions
-          SET compass_import_draft = $1, updated_at = now()
-        WHERE user_id = $2`,
-      [JSON.stringify(calibrations), userId]
-    );
+    const { error: updateError } = await supabaseAdmin
+      .schema('connect')
+      .from('verification_sessions')
+      .update({
+        compass_import_draft: JSON.stringify(calibrations),
+        updated_at: new Date().toISOString(),
+      })
+      .eq('user_id', userId);
+
+    if (updateError) throw updateError;
 
     res.status(200).json({ imported: true, count: calibrations.length });
   } catch (err) {
     console.error('[connect/compass-import] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  } finally {
-    client.release();
   }
 });
 
