@@ -14,6 +14,8 @@ import gemsRouter from './routes/gems.js';
 import rolesRouter from './routes/roles.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import candidatesRouter from './routes/candidates.js';
+import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 
 const app = express();
@@ -46,6 +48,8 @@ app.use('/api/gems', gemsRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/social', socialRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/candidates', candidatesRouter);
+app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 
 export { app }; // For testing
 
