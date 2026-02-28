@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import type { AuthenticatedRequest } from './auth.js';
-import { pool } from '../lib/db.js';
+import { supabaseAdmin } from '../lib/supabase.js';
 
 // Note: supabaseAdmin is used here intentionally — requireAdmin is trusted server-side
 // middleware, not a route handler. The architecture enforcement test scans only
@@ -20,13 +20,14 @@ export async function requireAdmin(
   next: NextFunction
 ): Promise<void> {
   const authReq = req as AuthenticatedRequest;
-  const { rows } = await pool.query<{ user_id: string }>(
-    'SELECT user_id FROM public.admin_users WHERE user_id = $1',
-    [authReq.userId]
-  );
+  const { data, error } = await supabaseAdmin
+    .from('admin_users')
+    .select('user_id')
+    .eq('user_id', authReq.userId)
+    .maybeSingle();
 
-  if (rows.length === 0) {
-    console.error('[requireAdmin] userId:', authReq.userId, '| not found in admin_users');
+  if (error || !data) {
+    console.error('[requireAdmin] userId:', authReq.userId, '| error:', error?.message ?? null, '| data:', data);
     res.status(403).json({ error: 'Admin access required' });
     return;
   }

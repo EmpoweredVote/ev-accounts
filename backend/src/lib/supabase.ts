@@ -9,8 +9,8 @@ import { env } from './env.js';
  * Permitted uses: middleware standing checks, tier guard queries (trusted server-side internal checks only).
  */
 export const supabaseAdmin = createClient<Database>(
-  env.SUPABASE_URL,
-  env.SUPABASE_SERVICE_ROLE_KEY,
+  env.SUPABASE_URL.trim(),
+  env.SUPABASE_SERVICE_ROLE_KEY.trim(),
   {
     auth: {
       autoRefreshToken: false,
