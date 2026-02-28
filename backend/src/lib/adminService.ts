@@ -81,7 +81,7 @@ export async function logAdminAction(
  */
 export async function listAccounts(
   params: AccountListParams
-): Promise<{ accounts: unknown[]; total: number }> {
+): Promise<{ accounts: unknown[]; total: number; page: number; pages: number }> {
   const { search, tier, standing, page = 1 } = params;
 
   const { data, error } = await adminRpc('admin_list_accounts', {
@@ -93,10 +93,12 @@ export async function listAccounts(
 
   if (error) throw new Error(error.message);
 
-  const result = data as { accounts: unknown[]; total: number };
+  const result = data as { accounts: unknown[]; total: number; page: number; pages: number };
   return {
     accounts: result.accounts ?? [],
     total: result.total ?? 0,
+    page: result.page ?? page,
+    pages: result.pages ?? 1,
   };
 }
 
