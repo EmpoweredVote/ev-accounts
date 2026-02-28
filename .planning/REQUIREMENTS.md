@@ -15,7 +15,7 @@ Requirements for v1.9 Compare UX & Search Fixes. Each maps to roadmap phases.
 
 ### Search
 
-- [ ] **SRCH-01**: Searching a city name returns all representatives whose districts overlap that city (not just the single point's geofences)
+- [ ] **SRCH-01**: Searching a city name or ZIP code returns all representatives whose districts overlap that area (not just the single geocoded point's geofences)
 - [ ] **SRCH-02**: Searching from the results page works correctly on the first attempt (no page refresh or double-entry required)
 
 ## v2.0 Requirements
@@ -47,17 +47,17 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COMP-01 | — | Pending |
-| COMP-02 | — | Pending |
-| COMP-03 | — | Pending |
-| SRCH-01 | — | Pending |
-| SRCH-02 | — | Pending |
+| COMP-01 | Phase 51 | Pending |
+| COMP-02 | Phase 52 | Pending |
+| COMP-03 | Phase 52 | Pending |
+| SRCH-01 | Phase 53 | Pending |
+| SRCH-02 | Phase 53 | Pending |
 
 **Coverage:**
 - v1.9 requirements: 5 total
-- Mapped to phases: 0
-- Unmapped: 5 ⚠️
+- Mapped to phases: 5
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-02-27*
-*Last updated: 2026-02-27 after initial definition*
+*Last updated: 2026-02-27 after roadmap creation (phases 51-53 assigned)*

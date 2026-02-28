@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: v1.9
 milestone_name: Compare UX & Search Fixes
-status: defining_requirements
+status: ready_to_plan
 last_updated: "2026-02-27"
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -18,14 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Defining requirements for v1.9
+**Current focus:** Phase 51 — Compare Inline Picker (v1.9)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-02-27 — Milestone v1.9 started
+Phase: 51 of 53 (Compare Inline Picker)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-02-27 — v1.9 roadmap created; phases 51-53 defined
+
+Progress: [████████████████████░░] 0% of v1.9 (0/3 phases complete this milestone)
 
 ## Performance Metrics
 
@@ -40,16 +42,23 @@ Last activity: 2026-02-27 — Milestone v1.9 started
 
 Decisions are logged in PROJECT.md Key Decisions table.
 
+Recent decisions affecting current work:
+- [v1.5]: Geofence-only search uses ST_Covers point-in-polygon; city-wide searches (SRCH-01) need ST_Intersects on city boundary polygon (G4110 MTFCC)
+- [v1.5]: Legacy Google Maps Autocomplete class in use — no migration needed for SRCH-02 fix
+- [v1.3]: Compare polygon bug fixed in ev-ui@0.1.21 — inline picker (COMP-01) adds to stable surface
+
 ### Pending Todos
 
-- **Future phase idea: Census ZCTA-to-Place ZIP mapping for city council politicians** — All 89 cities in city_sources.json have `place_geoid` and `ocd_id_base` that match 381 LOCAL/LOCAL_EXEC politicians. A script could batch-insert zip_politicians rows. Works for 72 at-large cities; districtd cities would over-show but better than nothing.
+- **Future phase idea: Census ZCTA-to-Place ZIP mapping for city council politicians** — All 89 cities in city_sources.json have `place_geoid` and `ocd_id_base` that match 381 LOCAL/LOCAL_EXEC politicians. A script could batch-insert zip_politicians rows. Works for 72 at-large cities; district cities would over-show but better than nothing.
 
 ### Blockers/Concerns
 
-None.
+- SRCH-01: Backend needs to detect city-level vs. point searches and switch ST_Covers to ST_Intersects with city boundary lookup (G4110 MTFCC). Logic is in EV-Backend/internal/essentials/handlers.go. Plan should investigate what Google Places returns for city queries (place_id type, geometry bounds) to determine detection approach.
+- COMP-02: State field may not be currently exposed on /compass/politicians endpoint. Verify response shape before planning.
+- SRCH-02: Race condition suspected with Google autocomplete re-initialization on results page. Root cause should be confirmed during planning before writing solution.
 
 ## Session Continuity
 
 Last session: 2026-02-27
-Stopped at: Defining v1.9 requirements
+Stopped at: Roadmap created for v1.9 (phases 51-53). No plans written yet.
 Resume file: None

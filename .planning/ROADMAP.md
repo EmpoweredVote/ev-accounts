@@ -11,6 +11,7 @@
 - ✅ **v1.6 LA County Full Coverage** — Phases 32-38 (shipped 2026-02-24)
 - ✅ **v1.7 LA County Data Enrichment** — Phases 39-44 (shipped 2026-02-26)
 - ✅ **v1.8 Compass Data & Politician Research** — Phases 45-50 (shipped 2026-02-27)
+- 🚧 **v1.9 Compare UX & Search Fixes** — Phases 51-53 (in progress)
 
 ## Phases
 
@@ -136,6 +137,45 @@ Full details: `.planning/milestones/v1.8-ROADMAP.md`
 
 </details>
 
+### 🚧 v1.9 Compare UX & Search Fixes (In Progress)
+
+**Milestone Goal:** Improve the compass compare experience with a quick-switch inline dropdown and politician list filters, and fix Essentials search accuracy for larger areas plus the search-from-results bug.
+
+## Phase Details
+
+### Phase 51: Compare Inline Picker
+**Goal**: Users can switch the compared politician directly on the compare page without reopening the full-screen modal
+**Depends on**: Nothing (first phase of milestone; existing compare feature is stable)
+**Requirements**: COMP-01
+**Success Criteria** (what must be TRUE):
+  1. User can open an inline dropdown on the compare page and see a searchable list of politicians
+  2. User can select a different politician from the dropdown and the radar chart updates immediately without a page transition
+  3. The existing full-screen CompareModal flow remains accessible for initial politician selection
+  4. The inline picker displays the currently compared politician's name as its default label
+**Plans**: TBD
+
+### Phase 52: Compare Politician List Filters
+**Goal**: Users can narrow the politician list in the compare picker by state and governance level
+**Depends on**: Phase 51
+**Requirements**: COMP-02, COMP-03
+**Success Criteria** (what must be TRUE):
+  1. User can select a state filter and the politician list shows only politicians from that state
+  2. User can select a level filter (Federal / State / Local) and the list shows only politicians at that level
+  3. User can combine state and level filters and both apply simultaneously
+  4. Clearing a filter restores the full unfiltered politician list
+**Plans**: TBD
+
+### Phase 53: Search Accuracy & Bug Fix
+**Goal**: Essentials search returns all relevant representatives for area-level queries (cities and ZIP codes) and works correctly on the first attempt from the results page
+**Depends on**: Nothing (independent of Compare phases; backend and frontend changes are isolated)
+**Requirements**: SRCH-01, SRCH-02
+**Success Criteria** (what must be TRUE):
+  1. Searching a city name (e.g., "Los Angeles, CA") returns officials from all districts that overlap the city, not just those covering the precise geocoded point
+  2. Searching a ZIP code returns officials from all districts that overlap that ZIP code area
+  3. Searching from the results page returns correct results on the first attempt without requiring a page refresh or second submission
+  4. Point-in-polygon searches (specific street address) continue to behave correctly and are not affected by the area detection change
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -190,5 +230,8 @@ Full details: `.planning/milestones/v1.8-ROADMAP.md`
 | 48. Mayors Research | v1.8 | 2/2 | Complete | 2026-02-26 |
 | 49. Quote Collection | v1.8 | 8/8 | Complete | 2026-02-26 |
 | 50. Data Import Scripts | v1.8 | 3/3 | Complete | 2026-02-27 |
+| 51. Compare Inline Picker | v1.9 | 0/TBD | Not started | - |
+| 52. Compare Politician List Filters | v1.9 | 0/TBD | Not started | - |
+| 53. Search Accuracy & Bug Fix | v1.9 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
