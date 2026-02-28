@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.9
 milestone_name: Compare UX & Search Fixes
 status: unknown
-last_updated: "2026-02-28T23:30:00.000Z"
+last_updated: "2026-02-28T23:20:50.460Z"
 progress:
-  total_phases: 2
+  total_phases: 3
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 6
+  completed_plans: 5
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 52 — Compare Politician List Filters (v1.9)
+**Current focus:** Phase 53 — Search Accuracy Bug Fix (v1.9)
 
 ## Current Position
 
-Phase: 52 of 53 (Compare Politician List Filters) — Complete
-Plan: 2 of 2 in current phase (52-01 and 52-02 complete)
-Status: Complete
-Last activity: 2026-02-28 - Completed quick task 1: Fix compare page showing 0s for missing stances and investigate Kerry Thomson Trans-Athletes stance
+Phase: 53 of 53 (Search Accuracy Bug Fix) — In Progress
+Plan: 1 of 2 complete in current phase (53-01 complete)
+Status: In Progress
+Last activity: 2026-02-28 - Completed 53-01: Area intersection search — SearchPoliticians now routes city/ZIP/county queries through ST_Intersects boundary overlap
 
-Progress: [████████████████████████] 100% of v1.9 (all plans complete)
+Progress: [█████████████████████████] 83% of v1.9 (5 of 6 plans complete)
 
 ## Performance Metrics
 
@@ -53,6 +53,8 @@ Recent decisions affecting current work:
 - [Phase 52]: JUDICIAL district type always mapped to Local in compass filters — chamber_name not available in /compass/politicians endpoint
 - [Phase 52]: levelCounts in useFilteredPoliticians reflect state-filtered totals so pills show contextually accurate counts
 - [52-02]: useFilteredPoliticians hook reused in CompareModal's internal PoliticianPicker with zero structural changes to CompareModal outer component
+- [Phase 53-01]: IsAreaQuery deny-list approach: point types (street_address, premise, subpremise, route) return false; all other result types treated as area — errs toward broader civic search results
+- [Phase 53-01]: ZIP queries no longer special-cased in SearchPoliticians — all queries geocode through area/point detection; GET /politicians/{zip} kept for backward compatibility
 
 ### Pending Todos
 
@@ -60,7 +62,7 @@ Recent decisions affecting current work:
 
 ### Blockers/Concerns
 
-- SRCH-01: Backend needs to detect city-level vs. point searches and switch ST_Covers to ST_Intersects with city boundary lookup (G4110 MTFCC). Logic is in EV-Backend/internal/essentials/handlers.go. Plan should investigate what Google Places returns for city queries (place_id type, geometry bounds) to determine detection approach.
+- SRCH-01: RESOLVED — Area intersection search implemented in 53-01. ST_Intersects boundary overlap now used for city/ZIP/county queries.
 - COMP-02: State field may not be currently exposed on /compass/politicians endpoint. Verify response shape before planning.
 - SRCH-02: Race condition suspected with Google autocomplete re-initialization on results page. Root cause should be confirmed during planning before writing solution.
 
@@ -73,5 +75,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed quick-fix 1 — Compare page 0-value stance fix and Kerry Thomson bad data removal.
+Stopped at: Completed 53-search-accuracy-bug-fix 53-01-PLAN.md — Area intersection search for city/ZIP/county queries
 Resume file: None
