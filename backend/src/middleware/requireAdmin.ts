@@ -20,6 +20,11 @@ export async function requireAdmin(
   next: NextFunction
 ): Promise<void> {
   const authReq = req as AuthenticatedRequest;
+
+  // Diagnostic: verify service role key works at all
+  const { error: authTestError } = await supabaseAdmin.auth.admin.getUserById(authReq.userId);
+  console.log('[requireAdmin] auth.admin test — error:', authTestError?.message ?? 'none');
+
   const { data, error } = await supabaseAdmin
     .from('admin_users')
     .select('user_id')
