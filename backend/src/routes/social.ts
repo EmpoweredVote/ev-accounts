@@ -13,7 +13,7 @@ import {
   getFollowing,
   getFollowerCount,
 } from '../lib/socialService.js';
-import { pool } from '../lib/db.js';
+import { supabaseAdmin } from '../lib/supabase.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -280,12 +280,21 @@ router.get(
     const userId = req.params.user_id as string;
 
     // Validate target is an Empowered account
-    const { rows: empRows } = await pool.query(
-      'SELECT id FROM empower.empowered_profiles WHERE user_id = $1 AND is_active = true',
-      [userId]
-    );
+    const { data: empProfile, error: empError } = await supabaseAdmin
+      .schema('empower')
+      .from('empowered_profiles')
+      .select('id')
+      .eq('user_id', userId)
+      .eq('is_active', true)
+      .maybeSingle();
 
-    if (empRows.length === 0) {
+    if (empError) {
+      console.error('[GET /social/followers/count/:user_id] error:', empError);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch follower count' });
+      return;
+    }
+
+    if (!empProfile) {
       res.status(404).json({ code: 'NOT_FOUND', message: 'Empowered profile not found' });
       return;
     }
