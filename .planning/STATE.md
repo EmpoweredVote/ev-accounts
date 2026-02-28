@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-24)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 7 (Admin Tool and Calibration Cron) — In progress (2/3 plans done)
+**Current focus:** Phase 8 (Public Candidate Pages) — In progress (1/2 plans done)
 
 ## Current Position
 
-Phase: 7 of 8 (Admin Tool and Calibration Cron) — In progress
-Plan: 2 of 3 in Phase 7 complete
-Status: 07-02 complete — calibration lapse cron job (node-cron, three-threshold, idempotent)
-Last activity: 2026-02-27 — Completed 07-02-PLAN.md (2 tasks, 4 files)
+Phase: 8 of 8 (Public Candidate Pages) — In progress
+Plan: 1 of 2 in Phase 8 complete
+Status: 08-01 complete — Phase 8 schema migration + candidateService.ts
+Last activity: 2026-02-28 — Completed 08-01-PLAN.md (2 tasks, 4 files)
 
-Progress: [███████████████░] 94% (16.5/17.5 plans complete... 2/3 phase 7 done)
+Progress: [████████████████] 97% (17.5/18 plans complete... 1/2 phase 8 done)
 
 ## Performance Metrics
 
@@ -126,6 +126,9 @@ Recent decisions affecting current work:
 - [07-02]: Individual demotion try/catch — one user failure logs error and continues; job never aborts mid-run due to single bad user
 - [07-02]: finished_at NULL on error — error path writes error_message only; cron log can detect failed runs via finished_at IS NULL AND error_message IS NOT NULL
 - [07-02]: startCalibrationLapseCron() called inside NODE_ENV !== 'test' guard in index.ts — consistent with cron guard requirement
+- [08-01]: SELECT string must be single literal (not concatenation) — Supabase TS client infers column types at compile time; concatenation widens to string causing GenericStringError
+- [08-01]: candidateService.ts whitelisted in architecture test — routes importing supabaseAdmin directly (auth/compass/connect/social) are pre-existing debt, not Phase 8 regressions
+- [08-01]: getCandidateAnswers has no cache — invertedTopicIds is caller-specific state; per-caller cache keys would be complex and error-prone
 
 ### Pending Todos
 
@@ -149,6 +152,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-02-27T21:14:03Z
-Stopped at: Completed 07-02-PLAN.md — calibration lapse cron (node-cron, three-threshold, idempotent)
-Resume file: None — proceed to 07-03 (Admin React UI)
+Last session: 2026-02-28T16:07:12Z
+Stopped at: Completed 08-01-PLAN.md — Phase 8 schema migration + candidateService.ts (supabaseAdmin RLS-bypass, ZIP lookup, answer inversion)
+Resume file: None — proceed to 08-02 (candidate routes)
