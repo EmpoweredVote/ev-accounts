@@ -20,8 +20,7 @@
  * awaits for multi-table writes.
  */
 
-import { supabaseAdmin } from './supabase.js';
-import { pool } from './db.js';
+import { supabaseAdmin, adminRpc } from './supabase.js';
 import { cache } from './cache.js';
 import { getCompassCompleteness } from './compassService.js';
 
@@ -133,136 +132,88 @@ export async function getReservedSlug(userId: string): Promise<string | null> {
  *
  * Both paths include demotion_context if the user has a previously inactive
  * empowered_profiles row.
+ *
+ * DB checks are delegated to run_empower_preflight RPC. Slug generation and
+ * caching remain in TypeScript (crypto.randomUUID is not available in PL/pgSQL).
  */
 export async function runPreflight(userId: string): Promise<PreflightResult> {
-  const client = await pool.connect();
-  try {
-    // 1. Fetch connected_profiles for this user
-    const { rows: connectedRows } = await client.query<{
-      id: string;
-      verification_status: string;
-      legal_name: string | null;
-      candidate_role: string | null;
-    }>(
-      'SELECT id, verification_status, legal_name, candidate_role FROM connect.connected_profiles WHERE user_id = $1',
-      [userId]
-    );
+  const { data, error } = await adminRpc('run_empower_preflight', {
+    p_user_id: userId,
+  });
 
-    if (connectedRows.length === 0) {
-      // requireConnected middleware should have caught this — defense in depth
+  if (error) {
+    if (error.message.includes('No connected profile')) {
       throw new Error('No connected profile found for user');
     }
+    throw new Error(error.message);
+  }
 
-    const connected = connectedRows[0]!;
-
-    // 2. Fetch existing empowered_profiles row (including demoted)
-    const { rows: empoweredRows } = await client.query<{
-      id: string;
+  const result = data as {
+    eligible: boolean;
+    failures?: PreflightFailure[];
+    connected_profile?: {
+      legal_name: string | null;
+      candidate_role: string | null;
+    };
+    empowered_profile?: {
       is_active: boolean;
       demoted_at: string | null;
       demotion_reason: unknown;
       candidate_page_slug: string | null;
-    }>(
-      'SELECT id, is_active, demoted_at, demotion_reason, candidate_page_slug FROM empower.empowered_profiles WHERE user_id = $1',
-      [userId]
-    );
-
-    const existingEmpowered = empoweredRows[0] ?? null;
-
-    // 3. Build demotion context if user has an inactive empowered_profiles row
-    const isDemoted = existingEmpowered !== null && !existingEmpowered.is_active;
-
-    const demotionContextBase = isDemoted
-      ? {
-          previously_demoted: true as const,
-          demoted_at: existingEmpowered!.demoted_at!,
-          demotion_reason: existingEmpowered!.demotion_reason,
-        }
-      : undefined;
-
-    // 4. Collect ALL failures — do NOT short-circuit on first failure
-    const failures: PreflightFailure[] = [];
-
-    if (connected.verification_status !== 'verified') {
-      failures.push({
-        code: 'NOT_VERIFIED',
-        message: 'Connected account must be verified',
-      });
-    }
-
-    if (connected.candidate_role === null) {
-      failures.push({
-        code: 'ROLE_NOT_SET',
-        message: 'Candidate role must be set before empowerment',
-      });
-    }
-
-    if (connected.legal_name === null) {
-      failures.push({
-        code: 'LEGAL_NAME_MISSING',
-        message: 'Legal name is required for empowerment',
-      });
-    }
-
-    // Only check compass completeness if we have a role to scope it to
-    let compassCompleteness: { required: number; answered: number; percent: number; complete: boolean } | null = null;
-
-    if (connected.candidate_role !== null) {
-      compassCompleteness = await getCompassCompleteness(userId, connected.candidate_role);
-      if (!compassCompleteness.complete) {
-        failures.push({
-          code: 'CALIBRATION_INCOMPLETE',
-          message: 'Compass calibration is not complete for your role',
-          threshold: compassCompleteness.required,
-          current: compassCompleteness.answered,
-        });
-      }
-    }
-
-    // 5. Return failures if any
-    if (failures.length > 0) {
-      return {
-        eligible: false,
-        failures,
-        ...(demotionContextBase ? { demotion_context: demotionContextBase } : {}),
-      };
-    }
-
-    // 6. Eligible — reserve slug and return summary
-    // For demoted users with an existing slug, preserve the original slug
-    let slugPreview: string;
-
-    if (isDemoted && existingEmpowered!.candidate_page_slug) {
-      // Re-empowerment: restore original slug
-      slugPreview = existingEmpowered!.candidate_page_slug;
-      await cache.set(`slug_reservation:${userId}`, slugPreview, 3600);
-    } else {
-      // Fresh empowerment: generate a new slug
-      slugPreview = await reserveSlug(userId, connected.legal_name!);
-    }
-
-    const successResult: PreflightSuccess = {
-      eligible: true,
-      summary: {
-        legal_name: connected.legal_name!,
-        compass_completeness: compassCompleteness!,
-        slug_preview: slugPreview,
-      },
+    } | null;
+    compass_completeness?: { required: number; answered: number; percent: number; complete: boolean };
+    demotion_context?: {
+      previously_demoted: true;
+      demoted_at: string;
+      demotion_reason: unknown;
     };
+    is_demoted?: boolean;
+  };
 
-    if (isDemoted && existingEmpowered!.candidate_page_slug) {
-      successResult.demotion_context = {
-        previously_demoted: true,
-        demoted_at: existingEmpowered!.demoted_at!,
-        demotion_reason: existingEmpowered!.demotion_reason,
-        original_slug: existingEmpowered!.candidate_page_slug,
-      };
-    }
-
-    return successResult;
-  } finally {
-    client.release();
+  if (!result.eligible) {
+    return {
+      eligible: false,
+      failures: result.failures ?? [],
+      ...(result.demotion_context ? { demotion_context: result.demotion_context } : {}),
+    };
   }
+
+  // Eligible — reserve slug and build summary
+  const connected = result.connected_profile!;
+  const empowered = result.empowered_profile ?? null;
+  const isDemoted = result.is_demoted ?? false;
+  const compassCompleteness = result.compass_completeness!;
+
+  let slugPreview: string;
+
+  if (isDemoted && empowered?.candidate_page_slug) {
+    // Re-empowerment: restore original slug
+    slugPreview = empowered.candidate_page_slug;
+    await cache.set(`slug_reservation:${userId}`, slugPreview, 3600);
+  } else {
+    // Fresh empowerment: generate a new slug
+    slugPreview = await reserveSlug(userId, connected.legal_name!);
+  }
+
+  const successResult: PreflightSuccess = {
+    eligible: true,
+    summary: {
+      legal_name: connected.legal_name!,
+      compass_completeness: compassCompleteness,
+      slug_preview: slugPreview,
+    },
+  };
+
+  if (isDemoted && empowered?.candidate_page_slug) {
+    successResult.demotion_context = {
+      previously_demoted: true,
+      demoted_at: empowered.demoted_at!,
+      demotion_reason: empowered.demotion_reason,
+      original_slug: empowered.candidate_page_slug,
+    };
+  }
+
+  return successResult;
 }
 
 // ---------------------------------------------------------------------------
@@ -270,7 +221,7 @@ export async function runPreflight(userId: string): Promise<PreflightResult> {
 // ---------------------------------------------------------------------------
 
 /**
- * Insert a consent record into empower.consent_records via the pg pool.
+ * Insert a consent record into empower.consent_records via supabaseAdmin.
  *
  * Written via service layer only — no INSERT/UPDATE/DELETE RLS policies
  * exist on consent_records (authenticated users can SELECT their own records).
@@ -280,11 +231,16 @@ export async function recordConsent(
   consentedItems: string[],
   ipAddress?: string
 ): Promise<void> {
-  await pool.query(
-    `INSERT INTO empower.consent_records (user_id, consented_items, ip_address)
-     VALUES ($1, $2, $3)`,
-    [userId, JSON.stringify(consentedItems), ipAddress ?? null]
-  );
+  const { error } = await supabaseAdmin
+    .schema('empower')
+    .from('consent_records')
+    .insert({
+      user_id: userId,
+      consented_items: consentedItems,
+      ip_address: ipAddress ?? null,
+    });
+
+  if (error) throw new Error(error.message);
 }
 
 // ---------------------------------------------------------------------------
@@ -294,9 +250,10 @@ export async function recordConsent(
 /**
  * Atomically empower the user by:
  * 1. Retrieving the cached reserved slug (throws PREFLIGHT_EXPIRED if missing)
- * 2. Calling the execute_empowerment Postgres RPC
- * 3. Recording the consent items
- * 4. Clearing the slug reservation from cache
+ * 2. Fetching connected_profiles for RPC parameters
+ * 3. Calling the execute_empowerment Postgres RPC
+ * 4. Recording the consent items
+ * 5. Clearing the slug reservation from cache
  *
  * The execute_empowerment RPC handles all DB writes atomically (empowered_profiles
  * upsert + compass visibility update). No chained JS awaits for multi-table writes.
@@ -314,19 +271,21 @@ export async function confirmEmpowerment(
   }
 
   // 2. Fetch connected_profiles for the RPC parameters
-  const { rows: connectedRows } = await pool.query<{
-    id: string;
-    legal_name: string | null;
-  }>(
-    'SELECT id, legal_name FROM connect.connected_profiles WHERE user_id = $1',
-    [userId]
-  );
+  const { data: connectedData, error: connectedError } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('id,legal_name')
+    .eq('user_id', userId)
+    .single();
 
-  if (connectedRows.length === 0) {
-    throw new Error('No connected profile found for user');
+  if (connectedError) {
+    if (connectedError.code === 'PGRST116') {
+      throw new Error('No connected profile found for user');
+    }
+    throw new Error(connectedError.message);
   }
 
-  const connectedProfile = connectedRows[0]!;
+  const connectedProfile = connectedData as { id: string; legal_name: string | null };
 
   // 3. Call the execute_empowerment RPC — atomically creates/updates empowered_profiles
   //    and sets compass visibility to public
