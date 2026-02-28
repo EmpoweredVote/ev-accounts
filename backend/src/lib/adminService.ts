@@ -157,7 +157,7 @@ export async function adminDemote(
  */
 export async function listInvites(
   params: InviteListParams
-): Promise<{ invites: unknown[]; total: number }> {
+): Promise<{ codes: unknown[]; total: number; page: number; pages: number }> {
   const { page = 1 } = params;
 
   const { data, error } = await adminRpc('admin_list_invites', {
@@ -166,11 +166,18 @@ export async function listInvites(
 
   if (error) throw new Error(error.message);
 
-  const result = data as { invites: unknown[]; total: number };
-  return {
-    invites: result.invites ?? [],
-    total: result.total ?? 0,
-  };
+  const result = data as { invites: Array<Record<string, unknown>>; total: number };
+  const total = result.total ?? 0;
+  const pages = Math.max(1, Math.ceil(total / 25));
+
+  // Rename display_name fields to match React component expectations
+  const codes = (result.invites ?? []).map((invite) => ({
+    ...invite,
+    created_by_name: invite.created_by_display_name,
+    claimed_by_name: invite.claimed_by_display_name,
+  }));
+
+  return { codes, total, page, pages };
 }
 
 /**

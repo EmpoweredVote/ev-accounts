@@ -112,7 +112,7 @@ export function InvitesPage() {
                   </td>
                 </tr>
               ))
-            ) : data?.codes.length === 0 ? (
+            ) : data?.codes?.length === 0 ? (
               <tr>
                 <td colSpan={6} className="px-4 py-8 text-center text-gray-400">
                   No invite codes found.
