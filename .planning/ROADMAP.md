@@ -144,10 +144,11 @@ Plans:
   1. `GET /api/candidates/:slug` returns the candidate's legal name, candidate page metadata, and public compass stances without requiring any authentication header
   2. No response from `GET /api/candidates/:slug` includes `tolerance_rating` — confirmed by integration test asserting the field is absent, not merely null, at both the RLS layer and the serialization layer
   3. A slug belonging to a demoted (inactive) Empowered account returns a consistent inactive state response; the slug cannot be claimed by a new user with the same legal name
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 08-01: Public candidate page route with field projection enforcement and inactive state handling
+- [ ] 08-01-PLAN.md — Schema migration (jurisdiction fields, photo_origin_url, ZIP index, UNIQUE constraint), candidateService.ts (service layer with supabaseAdmin), architecture test update
+- [ ] 08-02-PLAN.md — Candidate route files (slug profile, slug answers, ZIP lookup), index.ts mounts, integration tests (tolerance_rating absence, inactive state, ZIP validation)
 
 ## Progress
 
@@ -163,4 +164,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 5. Empower Flow | 2/2 | Complete | 2026-02-27 |
 | 6. Gems, Roles, and Social Graph | 3/3 | Complete | 2026-02-27 |
 | 7. Admin Tool and Calibration Cron | 0/3 | Not started | - |
-| 8. Public Candidate Pages | 0/1 | Not started | - |
+| 8. Public Candidate Pages | 0/2 | Not started | - |
