@@ -24,7 +24,7 @@ export function AdminLayout() {
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
-        <div className="px-6 py-4 bg-ev-red">
+        <div className="px-6 py-4 bg-ev-black">
           <img src="/logo.png" alt="Empowered Vote" className="h-8 w-auto mb-2" />
           <p className="text-xs text-white/70">Empowered Accounts Admin</p>
         </div>
