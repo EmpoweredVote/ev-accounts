@@ -230,7 +230,7 @@ Full details: `.planning/milestones/v1.8-ROADMAP.md`
 | 48. Mayors Research | v1.8 | 2/2 | Complete | 2026-02-26 |
 | 49. Quote Collection | v1.8 | 8/8 | Complete | 2026-02-26 |
 | 50. Data Import Scripts | v1.8 | 3/3 | Complete | 2026-02-27 |
-| 51. Compare Inline Picker | 2/2 | Complete   | 2026-02-28 | - |
+| 51. Compare Inline Picker | 2/2 | Complete    | 2026-02-28 | - |
 | 52. Compare Politician List Filters | v1.9 | 0/TBD | Not started | - |
 | 53. Search Accuracy & Bug Fix | v1.9 | 0/TBD | Not started | - |
 
