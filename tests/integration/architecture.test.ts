@@ -57,6 +57,7 @@ describe('Architecture enforcement: dual-client constraint', () => {
       path.join(BACKEND_SRC, 'lib/roleService.ts'),
       path.join(BACKEND_SRC, 'lib/socialService.ts'),
       path.join(BACKEND_SRC, 'lib/adminService.ts'),
+      path.join(BACKEND_SRC, 'lib/candidateService.ts'),
       path.join(BACKEND_SRC, 'lib/cronService.ts'),
       path.join(BACKEND_SRC, 'middleware/auth.ts'),
       path.join(BACKEND_SRC, 'middleware/tierGuards.ts'),

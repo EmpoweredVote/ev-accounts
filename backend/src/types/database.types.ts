@@ -463,43 +463,70 @@ export type Database = {
       empowered_profiles: {
         Row: {
           candidate_page_slug: string | null
+          chamber_name: string | null
+          chamber_name_formal: string | null
           connected_profile_id: string
           created_at: string
           deleted_at: string | null
           demoted_at: string | null
           demotion_reason: Json | null
+          district_id: string | null
+          district_type: string | null
           empowered_at: string
+          government_name: string | null
           id: string
           is_active: boolean
           legal_name: string
+          photo_origin_url: string | null
+          representing_city: string | null
+          representing_state: string | null
+          representing_zip: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
           candidate_page_slug?: string | null
+          chamber_name?: string | null
+          chamber_name_formal?: string | null
           connected_profile_id: string
           created_at?: string
           deleted_at?: string | null
           demoted_at?: string | null
           demotion_reason?: Json | null
+          district_id?: string | null
+          district_type?: string | null
           empowered_at?: string
+          government_name?: string | null
           id?: string
           is_active?: boolean
           legal_name: string
+          photo_origin_url?: string | null
+          representing_city?: string | null
+          representing_state?: string | null
+          representing_zip?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
           candidate_page_slug?: string | null
+          chamber_name?: string | null
+          chamber_name_formal?: string | null
           connected_profile_id?: string
           created_at?: string
           deleted_at?: string | null
           demoted_at?: string | null
           demotion_reason?: Json | null
+          district_id?: string | null
+          district_type?: string | null
           empowered_at?: string
+          government_name?: string | null
           id?: string
           is_active?: boolean
           legal_name?: string
+          photo_origin_url?: string | null
+          representing_city?: string | null
+          representing_state?: string | null
+          representing_zip?: string | null
           updated_at?: string
           user_id?: string
         }
