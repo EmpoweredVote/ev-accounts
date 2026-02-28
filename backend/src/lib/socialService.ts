@@ -20,8 +20,7 @@
  * - Unfollow is idempotent (no error if not following)
  */
 
-import { supabaseAdmin } from './supabase.js';
-import { pool } from './db.js';
+import { supabaseAdmin, adminRpc } from './supabase.js';
 
 // ---------------------------------------------------------------------------
 // sendPeerRequest
@@ -80,17 +79,19 @@ export async function sendPeerRequest(
  * to enforce this ownership check at the DB layer.
  */
 export async function acceptPeerRequest(requestId: string, userId: string): Promise<void> {
-  const result = await pool.query(
-    `UPDATE connect.social_relationships
-     SET status = 'accepted', updated_at = now()
-     WHERE id = $1
-       AND target_id = $2
-       AND connection_type = 'peer'
-       AND status = 'pending'`,
-    [requestId, userId]
-  );
+  const { data, error } = await supabaseAdmin
+    .schema('connect')
+    .from('social_relationships')
+    .update({ status: 'accepted', updated_at: new Date().toISOString() })
+    .eq('id', requestId)
+    .eq('target_id', userId)
+    .eq('connection_type', 'peer')
+    .eq('status', 'pending')
+    .select('id');
 
-  if (result.rowCount === 0) {
+  if (error) throw new Error(error.message);
+
+  if (!data || data.length === 0) {
     throw Object.assign(
       new Error('Request not found, not addressed to this user, or not pending'),
       { code: 'REQUEST_NOT_FOUND' }
@@ -110,17 +111,19 @@ export async function acceptPeerRequest(requestId: string, userId: string): Prom
  * row when the actor tries again.
  */
 export async function declinePeerRequest(requestId: string, userId: string): Promise<void> {
-  const result = await pool.query(
-    `UPDATE connect.social_relationships
-     SET status = 'declined', updated_at = now()
-     WHERE id = $1
-       AND target_id = $2
-       AND connection_type = 'peer'
-       AND status = 'pending'`,
-    [requestId, userId]
-  );
+  const { data, error } = await supabaseAdmin
+    .schema('connect')
+    .from('social_relationships')
+    .update({ status: 'declined', updated_at: new Date().toISOString() })
+    .eq('id', requestId)
+    .eq('target_id', userId)
+    .eq('connection_type', 'peer')
+    .eq('status', 'pending')
+    .select('id');
 
-  if (result.rowCount === 0) {
+  if (error) throw new Error(error.message);
+
+  if (!data || data.length === 0) {
     throw Object.assign(
       new Error('Request not found, not addressed to this user, or not pending'),
       { code: 'REQUEST_NOT_FOUND' }
@@ -135,58 +138,19 @@ export async function declinePeerRequest(requestId: string, userId: string): Pro
 /**
  * Block another user.
  *
- * If a peer relationship already exists (in either direction), it is updated
- * to blocked with the blocker always recorded as actor_id. If no relationship
- * exists, a new blocked row is inserted. Any follow relationships between the
- * two users (in either direction) are also removed.
+ * Delegates to the block_user SECURITY DEFINER RPC which:
+ * - If a peer relationship already exists (either direction), updates it to blocked
+ *   with the blocker always recorded as actor_id.
+ * - If no relationship exists, inserts a new blocked row.
+ * - Removes any follow relationships between the two users (either direction).
  */
 export async function blockUser(actorId: string, targetId: string): Promise<void> {
-  const client = await pool.connect();
-  try {
-    await client.query('BEGIN');
+  const { error } = await adminRpc('block_user', {
+    p_actor_id: actorId,
+    p_target_id: targetId,
+  });
 
-    // Check if any peer relationship exists between the two users (either direction)
-    const { rows: existingRows } = await client.query<{ id: string; status: string }>(
-      `SELECT id, status FROM connect.social_relationships
-       WHERE connection_type = 'peer'
-         AND ((actor_id = $1 AND target_id = $2) OR (actor_id = $2 AND target_id = $1))
-       LIMIT 1`,
-      [actorId, targetId]
-    );
-
-    if (existingRows.length > 0) {
-      // Update existing relationship — blocker becomes actor_id
-      await client.query(
-        `UPDATE connect.social_relationships
-         SET status = 'blocked', actor_id = $1, target_id = $2, updated_at = now()
-         WHERE id = $3 AND connection_type = 'peer'`,
-        [actorId, targetId, existingRows[0]!.id]
-      );
-    } else {
-      // Insert a new blocked row
-      await client.query(
-        `INSERT INTO connect.social_relationships (actor_id, target_id, connection_type, status)
-         VALUES ($1, $2, 'peer', 'blocked')
-         ON CONFLICT (actor_id, target_id, connection_type) DO UPDATE SET status = 'blocked', updated_at = now()`,
-        [actorId, targetId]
-      );
-    }
-
-    // Remove any follow relationships between the two users (either direction)
-    await client.query(
-      `DELETE FROM connect.social_relationships
-       WHERE connection_type = 'follow'
-         AND ((actor_id = $1 AND target_id = $2) OR (actor_id = $2 AND target_id = $1))`,
-      [actorId, targetId]
-    );
-
-    await client.query('COMMIT');
-  } catch (err) {
-    await client.query('ROLLBACK');
-    throw err;
-  } finally {
-    client.release();
-  }
+  if (error) throw new Error(error.message);
 }
 
 // ---------------------------------------------------------------------------
@@ -196,44 +160,29 @@ export async function blockUser(actorId: string, targetId: string): Promise<void
 /**
  * Follow an Empowered account.
  *
- * Validates:
- * 1. Target must be an active Empowered account (Connected users cannot be followed)
+ * Delegates to follow_user RPC which validates:
+ * 1. Target must be an active Empowered account
  * 2. No block exists between actor and target in either direction
  *
  * ON CONFLICT DO NOTHING makes follow idempotent — following twice is not an error.
  */
 export async function follow(actorId: string, targetId: string): Promise<void> {
-  // 1. Validate the target is an Empowered account
-  const { rows: empRows } = await pool.query(
-    'SELECT id FROM empower.empowered_profiles WHERE user_id = $1 AND is_active = true',
-    [targetId]
-  );
+  const { error } = await adminRpc('follow_user', {
+    p_actor_id: actorId,
+    p_target_id: targetId,
+  });
 
-  if (empRows.length === 0) {
-    throw Object.assign(new Error('Can only follow Empowered accounts'), {
-      code: 'NOT_EMPOWERED',
-    });
+  if (error) {
+    if (error.message === 'NOT_EMPOWERED') {
+      throw Object.assign(new Error('Can only follow Empowered accounts'), {
+        code: 'NOT_EMPOWERED',
+      });
+    }
+    if (error.message === 'BLOCKED') {
+      throw Object.assign(new Error('A block exists between these users'), { code: 'BLOCKED' });
+    }
+    throw new Error(error.message);
   }
-
-  // 2. Check for blocks in either direction
-  const { rows: blockRows } = await pool.query(
-    `SELECT 1 FROM connect.social_relationships
-     WHERE connection_type = 'peer' AND status = 'blocked'
-       AND ((actor_id = $1 AND target_id = $2) OR (actor_id = $2 AND target_id = $1))`,
-    [actorId, targetId]
-  );
-
-  if (blockRows.length > 0) {
-    throw Object.assign(new Error('A block exists between these users'), { code: 'BLOCKED' });
-  }
-
-  // 3. Insert follow row (idempotent)
-  await pool.query(
-    `INSERT INTO connect.social_relationships (actor_id, target_id, connection_type)
-     VALUES ($1, $2, 'follow')
-     ON CONFLICT (actor_id, target_id, connection_type) DO NOTHING`,
-    [actorId, targetId]
-  );
 }
 
 // ---------------------------------------------------------------------------
@@ -246,11 +195,15 @@ export async function follow(actorId: string, targetId: string): Promise<void> {
  * Idempotent — no error if the user is not currently following.
  */
 export async function unfollow(actorId: string, targetId: string): Promise<void> {
-  await pool.query(
-    `DELETE FROM connect.social_relationships
-     WHERE actor_id = $1 AND target_id = $2 AND connection_type = 'follow'`,
-    [actorId, targetId]
-  );
+  const { error } = await supabaseAdmin
+    .schema('connect')
+    .from('social_relationships')
+    .delete()
+    .eq('actor_id', actorId)
+    .eq('target_id', targetId)
+    .eq('connection_type', 'follow');
+
+  if (error) throw new Error(error.message);
 }
 
 // ---------------------------------------------------------------------------
@@ -262,6 +215,9 @@ export async function unfollow(actorId: string, targetId: string): Promise<void>
  *
  * Excludes blocked and declined rows. Includes direction (inbound/outbound)
  * for pending requests so the client can show appropriate UI.
+ *
+ * Delegates to get_connections RPC which handles the CASE expressions and JOIN
+ * with users_public.
  */
 export async function getConnections(userId: string): Promise<
   Array<{
@@ -273,24 +229,20 @@ export async function getConnections(userId: string): Promise<
     created_at: string;
   }>
 > {
-  const { rows } = await pool.query(
-    `SELECT
-       sr.id,
-       CASE WHEN sr.actor_id = $1 THEN sr.target_id ELSE sr.actor_id END AS peer_id,
-       up.display_name,
-       sr.status,
-       CASE WHEN sr.actor_id = $1 THEN 'outbound' ELSE 'inbound' END AS direction,
-       sr.created_at
-     FROM connect.social_relationships sr
-     JOIN public.users_public up
-       ON up.id = CASE WHEN sr.actor_id = $1 THEN sr.target_id ELSE sr.actor_id END
-     WHERE sr.connection_type = 'peer'
-       AND (sr.actor_id = $1 OR sr.target_id = $1)
-       AND sr.status IN ('pending', 'accepted')
-     ORDER BY sr.updated_at DESC`,
-    [userId]
-  );
-  return rows;
+  const { data, error } = await adminRpc('get_connections', {
+    p_user_id: userId,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return ((data ?? []) as Array<{
+    id: string;
+    peer_id: string;
+    display_name: string | null;
+    status: string;
+    direction: string;
+    created_at: string;
+  }>);
 }
 
 // ---------------------------------------------------------------------------
@@ -299,6 +251,8 @@ export async function getConnections(userId: string): Promise<
 
 /**
  * Return the list of Empowered accounts the user is following.
+ *
+ * Delegates to get_following RPC which handles the JOIN with users_public.
  */
 export async function getFollowing(userId: string): Promise<
   Array<{
@@ -308,15 +262,18 @@ export async function getFollowing(userId: string): Promise<
     created_at: string;
   }>
 > {
-  const { rows } = await pool.query(
-    `SELECT sr.id, sr.target_id, up.display_name, sr.created_at
-     FROM connect.social_relationships sr
-     JOIN public.users_public up ON up.id = sr.target_id
-     WHERE sr.actor_id = $1 AND sr.connection_type = 'follow'
-     ORDER BY sr.created_at DESC`,
-    [userId]
-  );
-  return rows;
+  const { data, error } = await adminRpc('get_following', {
+    p_user_id: userId,
+  });
+
+  if (error) throw new Error(error.message);
+
+  return ((data ?? []) as Array<{
+    id: string;
+    target_id: string;
+    display_name: string | null;
+    created_at: string;
+  }>);
 }
 
 // ---------------------------------------------------------------------------
@@ -330,11 +287,14 @@ export async function getFollowing(userId: string): Promise<
  * Empowered before calling this function.
  */
 export async function getFollowerCount(userId: string): Promise<number> {
-  const { rows } = await pool.query(
-    `SELECT COUNT(*)::int AS count
-     FROM connect.social_relationships
-     WHERE target_id = $1 AND connection_type = 'follow'`,
-    [userId]
-  );
-  return rows[0]?.count ?? 0;
+  const { count, error } = await supabaseAdmin
+    .schema('connect')
+    .from('social_relationships')
+    .select('*', { count: 'exact', head: true })
+    .eq('target_id', userId)
+    .eq('connection_type', 'follow');
+
+  if (error) throw new Error(error.message);
+
+  return count ?? 0;
 }
