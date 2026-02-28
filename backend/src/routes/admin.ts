@@ -87,6 +87,7 @@ router.get('/dashboard', async (_req, res) => {
     const stats = await getDashboardStats();
     res.json(stats);
   } catch (err) {
+    console.error('[admin/dashboard] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
