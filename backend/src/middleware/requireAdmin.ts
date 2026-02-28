@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import type { AuthenticatedRequest } from './auth.js';
 import { supabaseAdmin } from '../lib/supabase.js';
+import { env } from '../lib/env.js';
 
 // Note: supabaseAdmin is used here intentionally — requireAdmin is trusted server-side
 // middleware, not a route handler. The architecture enforcement test scans only
@@ -20,7 +21,9 @@ export async function requireAdmin(
   next: NextFunction
 ): Promise<void> {
   const authReq = req as AuthenticatedRequest;
+  console.log('[requireAdmin] url:', env.SUPABASE_URL, '| key prefix:', env.SUPABASE_SERVICE_ROLE_KEY.slice(0, 20));
   const { data, error } = await supabaseAdmin
+    .schema('public')
     .from('admin_users')
     .select('user_id')
     .eq('user_id', authReq.userId)
