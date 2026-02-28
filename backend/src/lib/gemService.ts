@@ -16,7 +16,6 @@
  */
 
 import { supabaseAdmin } from './supabase.js';
-import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -93,29 +92,34 @@ export async function debitGems(
 /**
  * Return the current gem balances for a user from connected_profiles.
  *
- * Uses pool (not supabaseAdmin) — server-side computation, same pattern as
- * compassService.ts getCompassCompleteness. The denormalized balance columns
- * are maintained atomically by the credit/debit RPCs.
+ * Uses supabaseAdmin for a simple non-transactional read. The denormalized
+ * balance columns are maintained atomically by the credit/debit RPCs.
  */
 export async function getBalance(
   userId: string
 ): Promise<{ red: number; blue: number; yellow: number }> {
-  const { rows } = await pool.query<{
+  const { data, error } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('gem_balance_red,gem_balance_blue,gem_balance_yellow')
+    .eq('user_id', userId)
+    .single();
+
+  if (error) {
+    if (error.code === 'PGRST116') {
+      throw Object.assign(new Error('No connected profile found for user'), {
+        code: 'PROFILE_NOT_FOUND',
+      });
+    }
+    throw new Error(error.message);
+  }
+
+  const row = data as {
     gem_balance_red: number;
     gem_balance_blue: number;
     gem_balance_yellow: number;
-  }>(
-    'SELECT gem_balance_red, gem_balance_blue, gem_balance_yellow FROM connect.connected_profiles WHERE user_id = $1',
-    [userId]
-  );
+  };
 
-  if (rows.length === 0) {
-    throw Object.assign(new Error('No connected profile found for user'), {
-      code: 'PROFILE_NOT_FOUND',
-    });
-  }
-
-  const row = rows[0]!;
   return {
     red: row.gem_balance_red,
     blue: row.gem_balance_blue,
@@ -139,34 +143,23 @@ export async function getTransactionHistory(
   const limit = Math.min(options?.limit ?? 50, 100);
   const offset = options?.offset ?? 0;
 
-  const params: unknown[] = [userId];
-  let whereClause = 'WHERE user_id = $1';
+  let query = supabaseAdmin
+    .schema('connect')
+    .from('gem_transactions')
+    .select(
+      'id,gem_type,amount,transaction_type,feature_context,reference_id,balance_after,created_at',
+      { count: 'exact' }
+    )
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .range(offset, offset + limit - 1);
 
   if (options?.gemType) {
-    params.push(options.gemType);
-    whereClause += ` AND gem_type = $${params.length}`;
+    query = query.eq('gem_type', options.gemType);
   }
 
-  // Main query
-  params.push(limit, offset);
-  const { rows: transactions } = await pool.query(
-    `SELECT id, gem_type, amount, transaction_type, feature_context, reference_id, balance_after, created_at
-     FROM connect.gem_transactions
-     ${whereClause}
-     ORDER BY created_at DESC
-     LIMIT $${params.length - 1} OFFSET $${params.length}`,
-    params
-  );
+  const { data, count, error } = await query;
+  if (error) throw new Error(error.message);
 
-  // Count query (reuse params without limit/offset)
-  const countParams = params.slice(0, params.length - 2);
-  const { rows: countRows } = await pool.query(
-    `SELECT COUNT(*)::int AS count FROM connect.gem_transactions ${whereClause}`,
-    countParams
-  );
-
-  return {
-    transactions,
-    total: countRows[0]?.count ?? 0,
-  };
+  return { transactions: data ?? [], total: count ?? 0 };
 }
