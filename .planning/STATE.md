@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.9
 milestone_name: Compare UX & Search Fixes
 status: unknown
-last_updated: "2026-02-28T23:20:50.460Z"
+last_updated: "2026-02-28T23:26:02.015Z"
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -55,6 +55,8 @@ Recent decisions affecting current work:
 - [52-02]: useFilteredPoliticians hook reused in CompareModal's internal PoliticianPicker with zero structural changes to CompareModal outer component
 - [Phase 53-01]: IsAreaQuery deny-list approach: point types (street_address, premise, subpremise, route) return false; all other result types treated as area — errs toward broader civic search results
 - [Phase 53-01]: ZIP queries no longer special-cased in SearchPoliticians — all queries geocode through area/point detection; GET /politicians/{zip} kept for backward compatibility
+- [Phase 53-02]: Single search path: removed ZIP vs address branching in usePoliticianData — all queries use searchPoliticians(query)
+- [Phase 53-02]: searchKey pattern: state counter incremented on each search forces hook re-fetch even for same query text, fixing same-location re-search bug
 
 ### Pending Todos
 
