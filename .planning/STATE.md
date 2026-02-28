@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.9
 milestone_name: Compare UX & Search Fixes
 status: unknown
-last_updated: "2026-02-28T15:44:22.705Z"
+last_updated: "2026-02-28T21:35:57.196Z"
 progress:
-  total_phases: 1
+  total_phases: 2
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 4
+  completed_plans: 3
 ---
 
 # Project State
@@ -18,16 +18,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-02-27)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 51 — Compare Inline Picker (v1.9)
+**Current focus:** Phase 52 — Compare Politician List Filters (v1.9)
 
 ## Current Position
 
-Phase: 51 of 53 (Compare Inline Picker) — COMPLETE
-Plan: 2 of 2 in current phase (51-02 complete)
+Phase: 52 of 53 (Compare Politician List Filters) — In Progress
+Plan: 1 of 2 in current phase (52-01 complete)
 Status: In progress
-Last activity: 2026-02-28 — 51-02: InlinePoliticianPicker wired into ComparePanel and Compass.jsx switching logic complete
+Last activity: 2026-02-28 — 52-01: useFilteredPoliticians hook + PoliticianFilters component + InlinePoliticianPicker integration complete
 
-Progress: [████████████████████░░] 33% of v1.9 (1/3 phases complete this milestone)
+Progress: [████████████████████░░] 50% of v1.9 (52-01 complete, 52-02 remaining)
 
 ## Performance Metrics
 
@@ -50,6 +50,8 @@ Recent decisions affecting current work:
 - [51-01]: InlinePoliticianPicker manages own open/close state locally — single instance renders at a time, no lift-up needed
 - [51-02]: handleSwitchPolitician does NOT clear compareAnswers — old radar polygon stays visible during fetch, react-spring morphs when new data arrives
 - [51-02]: dropdownValue (topic selection) preserved across politician switches — user sees new politician's stance on the same topic immediately
+- [Phase 52]: JUDICIAL district type always mapped to Local in compass filters — chamber_name not available in /compass/politicians endpoint
+- [Phase 52]: levelCounts in useFilteredPoliticians reflect state-filtered totals so pills show contextually accurate counts
 
 ### Pending Todos
 
@@ -64,5 +66,5 @@ Recent decisions affecting current work:
 ## Session Continuity
 
 Last session: 2026-02-28
-Stopped at: Completed 51-02-PLAN.md — InlinePoliticianPicker wired into ComparePanel with switching callbacks. Phase 51 complete.
+Stopped at: Completed 52-01-PLAN.md — filter infrastructure (useFilteredPoliticians hook + PoliticianFilters component) created and wired into InlinePoliticianPicker.
 Resume file: None

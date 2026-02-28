@@ -234,7 +234,7 @@ Plans:
 | 49. Quote Collection | v1.8 | 8/8 | Complete | 2026-02-26 |
 | 50. Data Import Scripts | v1.8 | 3/3 | Complete | 2026-02-27 |
 | 51. Compare Inline Picker | 2/2 | Complete    | 2026-02-28 | - |
-| 52. Compare Politician List Filters | v1.9 | 0/2 | Not started | - |
+| 52. Compare Politician List Filters | 1/2 | In Progress|  | - |
 | 53. Search Accuracy & Bug Fix | v1.9 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
