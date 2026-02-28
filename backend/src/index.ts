@@ -52,9 +52,16 @@ export { app }; // For testing
 const port = parseInt(env.PORT, 10);
 
 if (env.NODE_ENV !== 'test') {
-  app.listen(port, () => {
+  const server = app.listen(port, () => {
     console.info(`[server] listening on port ${port}`);
     console.info(`[server] environment: ${env.NODE_ENV}`);
   });
   startCalibrationLapseCron();
+
+  // Graceful shutdown — Render sends SIGTERM before replacing instances.
+  // Without this, the pg pool and cron job keep the event loop alive and
+  // Render marks deploys as "Timed Out" after the grace period.
+  process.once('SIGTERM', () => {
+    server.close(() => process.exit(0));
+  });
 }
