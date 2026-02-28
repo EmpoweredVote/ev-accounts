@@ -16,6 +16,11 @@ export const supabaseAdmin = createClient<Database>(
       autoRefreshToken: false,
       persistSession: false,
     },
+    global: {
+      headers: {
+        Authorization: `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY.trim()}`,
+      },
+    },
   }
 );
 
