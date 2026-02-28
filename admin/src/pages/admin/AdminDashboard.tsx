@@ -71,9 +71,9 @@ export function AdminDashboard() {
             </>
           ) : (
             <>
-              <StatCard label="Inform" value={stats?.users_by_tier.inform ?? 0} color="text-gray-600" />
-              <StatCard label="Connected" value={stats?.users_by_tier.connected ?? 0} color="text-blue-600" />
-              <StatCard label="Empowered" value={stats?.users_by_tier.empowered ?? 0} color="text-green-600" />
+              <StatCard label="Inform" value={stats?.users_by_tier?.inform ?? 0} color="text-gray-600" />
+              <StatCard label="Connected" value={stats?.users_by_tier?.connected ?? 0} color="text-blue-600" />
+              <StatCard label="Empowered" value={stats?.users_by_tier?.empowered ?? 0} color="text-green-600" />
             </>
           )}
         </div>
@@ -91,8 +91,8 @@ export function AdminDashboard() {
             </>
           ) : (
             <>
-              <StatCard label="Active" value={stats?.users_by_standing.active ?? 0} color="text-green-600" />
-              <StatCard label="Suspended" value={stats?.users_by_standing.suspended ?? 0} color="text-red-600" />
+              <StatCard label="Active" value={stats?.users_by_standing?.active ?? 0} color="text-green-600" />
+              <StatCard label="Suspended" value={stats?.users_by_standing?.suspended ?? 0} color="text-red-600" />
             </>
           )}
         </div>
@@ -111,9 +111,9 @@ export function AdminDashboard() {
             </>
           ) : (
             <>
-              <StatCard label="Total Codes" value={stats?.invite_activity.total_codes ?? 0} color="text-gray-900" />
-              <StatCard label="Claimed" value={stats?.invite_activity.claimed_codes ?? 0} color="text-blue-600" />
-              <StatCard label="Pending" value={stats?.invite_activity.pending_codes ?? 0} color="text-yellow-600" />
+              <StatCard label="Total Codes" value={stats?.invite_activity?.total_codes ?? 0} color="text-gray-900" />
+              <StatCard label="Claimed" value={stats?.invite_activity?.claimed_codes ?? 0} color="text-blue-600" />
+              <StatCard label="Pending" value={stats?.invite_activity?.pending_codes ?? 0} color="text-yellow-600" />
             </>
           )}
         </div>
