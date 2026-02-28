@@ -21,7 +21,12 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: env.NODE_ENV === 'development' ? '*' : [],
+    origin:
+      env.NODE_ENV === 'development'
+        ? '*'
+        : env.CORS_ORIGIN
+          ? env.CORS_ORIGIN.split(',').map((o) => o.trim())
+          : [],
   })
 );
 app.use(express.json());

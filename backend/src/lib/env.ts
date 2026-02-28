@@ -8,6 +8,7 @@ const envSchema = z.object({
   SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
   DATABASE_URL: z.string().min(1),
   REDIS_URL: z.string().optional(),
+  CORS_ORIGIN: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
