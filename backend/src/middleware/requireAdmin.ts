@@ -27,6 +27,7 @@ export async function requireAdmin(
     .maybeSingle();
 
   if (error || !data) {
+    console.error('[requireAdmin] userId:', authReq.userId, '| error:', error?.message ?? null, '| data:', data);
     res.status(403).json({ error: 'Admin access required' });
     return;
   }

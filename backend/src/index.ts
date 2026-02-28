@@ -18,6 +18,9 @@ import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 
 const app = express();
 
+// Trust Render's proxy so express-rate-limit can read X-Forwarded-For correctly
+app.set('trust proxy', 1);
+
 app.use(helmet());
 app.use(
   cors({
