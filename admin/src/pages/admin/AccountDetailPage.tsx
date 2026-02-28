@@ -159,7 +159,7 @@ export function AccountDetailPage() {
           <div className="flex">
             <span className="w-36 font-medium text-amber-700">Tolerance Rating:</span>
             <span className="text-amber-900">
-              {account.tolerance_rating !== null ? account.tolerance_rating.toFixed(2) : 'N/A'}
+              {account.tolerance_rating != null ? account.tolerance_rating.toFixed(2) : 'N/A'}
             </span>
           </div>
         </div>
@@ -168,11 +168,11 @@ export function AccountDetailPage() {
       {/* Roles */}
       <div className="bg-white rounded-lg shadow p-6 mb-4">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Roles</h2>
-        {account.roles.length === 0 ? (
+        {(account.roles?.length ?? 0) === 0 ? (
           <p className="text-sm text-gray-500">No roles assigned.</p>
         ) : (
           <div className="space-y-2">
-            {account.roles.map((role) => (
+            {account.roles?.map((role) => (
               <div key={role.id} className="flex items-center justify-between">
                 <div>
                   <span className="font-medium text-sm text-gray-900">{role.display_name}</span>
@@ -213,11 +213,11 @@ export function AccountDetailPage() {
           </div>
           <div>
             <span className="font-medium text-gray-600">Invited users: </span>
-            {account.invited_users.length === 0 ? (
+            {(account.invited_users?.length ?? 0) === 0 ? (
               <span className="text-gray-400">None</span>
             ) : (
               <span className="space-x-2">
-                {account.invited_users.map((u) => (
+                {account.invited_users?.map((u) => (
                   <Link
                     key={u.id}
                     to={`/admin/accounts/${u.id}`}
