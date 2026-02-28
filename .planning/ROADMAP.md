@@ -163,7 +163,10 @@ Full details: `.planning/milestones/v1.8-ROADMAP.md`
   2. User can select a level filter (Federal / State / Local) and the list shows only politicians at that level
   3. User can combine state and level filters and both apply simultaneously
   4. Clearing a filter restores the full unfiltered politician list
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 52-01-PLAN.md — Shared filter hook + PoliticianFilters component + wire into InlinePoliticianPicker
+- [ ] 52-02-PLAN.md — Wire filters into CompareModal + human verification
 
 ### Phase 53: Search Accuracy & Bug Fix
 **Goal**: Essentials search returns all relevant representatives for area-level queries (cities and ZIP codes) and works correctly on the first attempt from the results page
@@ -231,7 +234,7 @@ Full details: `.planning/milestones/v1.8-ROADMAP.md`
 | 49. Quote Collection | v1.8 | 8/8 | Complete | 2026-02-26 |
 | 50. Data Import Scripts | v1.8 | 3/3 | Complete | 2026-02-27 |
 | 51. Compare Inline Picker | 2/2 | Complete    | 2026-02-28 | - |
-| 52. Compare Politician List Filters | v1.9 | 0/TBD | Not started | - |
+| 52. Compare Politician List Filters | v1.9 | 0/2 | Not started | - |
 | 53. Search Accuracy & Bug Fix | v1.9 | 0/TBD | Not started | - |
 
 *Phase 42: Plan 06 (manual headshot curation sprint) deferred — pipeline infrastructure complete, data gap requires human research
