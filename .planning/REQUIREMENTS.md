@@ -9,7 +9,7 @@ Requirements for v1.9 Compare UX & Search Fixes. Each maps to roadmap phases.
 
 ### Compare
 
-- [ ] **COMP-01**: User can switch the compared politician via an inline dropdown without reopening the full-screen modal
+- [x] **COMP-01**: User can switch the compared politician via an inline dropdown without reopening the full-screen modal
 - [ ] **COMP-02**: User can filter the politician list by state
 - [ ] **COMP-03**: User can filter the politician list by level (Federal / State / Local)
 
@@ -47,7 +47,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COMP-01 | Phase 51 | Pending |
+| COMP-01 | Phase 51 | Complete |
 | COMP-02 | Phase 52 | Pending |
 | COMP-03 | Phase 52 | Pending |
 | SRCH-01 | Phase 53 | Pending |
