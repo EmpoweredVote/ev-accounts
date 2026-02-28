@@ -1,11 +1,9 @@
 import { Pool } from 'pg';
-import { setDefaultResultOrder } from 'dns';
 import { env } from './env.js';
 
 // Force IPv4 — Render free tier has no IPv6 routing to Supabase hosts.
-// setDefaultResultOrder affects all DNS lookups in this process.
+// --dns-result-order=ipv4first is set in the Node start command (package.json).
 // ssl: rejectUnauthorized false required for Supabase SSL cert chain.
-setDefaultResultOrder('ipv4first');
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const pool = new Pool({
