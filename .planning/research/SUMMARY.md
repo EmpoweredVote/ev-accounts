@@ -1,204 +1,201 @@
 # Project Research Summary
 
-**Project:** v1.7 LA County Data Enrichment
-**Domain:** Civic tech — offline Python scraping pipeline enriching ~389 LA County politician records with headshots, building photos, contact info, and term data
-**Researched:** 2026-02-24
-**Confidence:** HIGH
+**Project:** v2026.3 Legislative Profile Data
+**Domain:** Civic tech — legislative activity enrichment for existing politician profiles
+**Researched:** 2026-03-01
+**Confidence:** MEDIUM-HIGH (federal: HIGH; state: MEDIUM; local: LOW)
 
 ## Executive Summary
 
-v1.7 is a data enrichment milestone, not a new feature build. The existing system already has 791 LA County politician records in the database, all the schema columns that v1.7 needs to populate (photo_origin_url, valid_from, valid_to, bio_text, politician_images, politician_contacts, degrees, experiences), and a working Go API + React frontend that renders those fields automatically. The entire v1.7 effort lives in the Python scraping pipeline — roughly 4-6 new Python scripts that write enrichment data into existing tables. The read path (Go API + essentials app) requires only minor additions: one new endpoint for building photos, contacts added to the profile response, and a ContactSection in the ev-ui component library.
+This milestone adds legislative activity data — committees, voting records, sponsored legislation, and leadership positions — to existing politician profiles in the Empowered Vote platform. The domain is well-understood at the federal level: Congress.gov API v3, the unitedstates/congress-legislators YAML dataset, and LegiScan together provide comprehensive, free-tier coverage for all federal officials. The recommended approach is a hybrid write model — static data (committee assignments, leadership) loaded via import CLI, dynamic data (bills, votes) cached via lazy-fetch goroutine on first profile view — extending the platform's existing candidacy data pattern cleanly. All APIs required are free; no new paid infrastructure is needed.
 
-The recommended approach is to build the enrichment pipeline in dependency order: schema preparation first (adds only one new table, `building_photos`, and two new columns for photo licensing and term date precision), then run headshot scraping, building photo collection, contact enrichment, and term data enrichment as independent parallel-capable scripts, then land the small Go API changes, then the frontend additions. The 80% headshot coverage target is achievable — supervisors and LA City council have professional photos at predictable URLs (100% expected); the 369 remaining city council members require per-city scraping with ~68-80% combined coverage from city websites plus hardcoded fallbacks. Wikimedia Commons is the correct source for building photos (free, CC-licensed, permanent URLs); Google Places API must not be used.
+The central risk is that data availability, quality, and structure vary dramatically by government level. Federal data is rich and structured. State data (Indiana, California) is viable via LegiScan as primary source, with Open States as a verification layer. Local data is the weak point: Bloomington Common Council has no machine-readable vote data (PDF minutes only), and LA County Board of Supervisors Legistar provides legislative matters but not individual member vote attribution. The roadmap must scope local features to what is actually achievable — committee assignments via HTML scraping — and treat local voting records as deferred. Planning that assumes uniform coverage across federal/state/local will produce empty tables and misleading profile sections.
 
-The highest-risk decisions all require design choices before any code is written: (1) photo hosting — hotlinking government URLs will break silently within 2-4 years when city websites redesign; downloading and uploading to Supabase Storage during the pipeline run is the correct fix and must not be deferred again as it was in v1.6; (2) image licensing — California government works are not automatically public domain, so Wikimedia Commons must be checked before scraping city websites; (3) term date precision — storing year-only data as "YYYY-01-01" will display as "Jan YYYY" in the frontend, requiring a term_date_precision column and a frontend ev-ui update before any term dates are stored.
+A second critical risk is the Congress.gov API: it silently truncates results at 250 per request (no error, just missing data), was subject to a confirmed outage in January 2026, and requires separate API calls for each sub-resource, creating N+1 request patterns. The import client must implement exhaustive pagination, token bucket rate limiting (4,500 req/hr), and incremental update logic from the first version. Lazy-fetch is appropriate for bills and lower-volume data but not for federal voting records — a two-term senator has 8,000-12,000 roll calls, which would time out a profile page request. Federal votes must be pre-imported via CLI batch job before any profile-serving code is written.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The existing Python scraper stack requires only two changes: upgrade Playwright from 1.44.0 to 1.58.0 for better JS-rendered government site support, and add Pillow 12.1.1 for image validation before database insertion. Every other dependency (requests, BeautifulSoup, psycopg2-binary, rapidfuzz, pdfplumber) is already in requirements.txt and works as-is. The Go backend requires no new packages — a single GORM model addition handles the one new table. The React frontend requires no new npm packages — building photos go to `essentials/public/images/` as static assets via a code-only change to `buildingImages.js`.
+The existing Go + Python stack requires only minimal additions. Two new Go packages are needed: `github.com/goccy/go-yaml v1.18.0` for parsing congress-legislators YAML (the previously standard `gopkg.in/yaml.v3` is archived and must not be used) and `golang.org/x/time` (already transitively present) for rate limiting the Congress.gov client. On the Python side, one new package — `scraper-legistar` — handles LA County Board of Supervisors via the Legistar platform. No new npm packages are needed for the frontend; existing Tailwind CSS utilities and the ev-ui component pattern cover all new profile section UI.
+
+All legislative data lives in the existing `internal/essentials/` Go package, not a new module. New tables use the `essentials` PostgreSQL schema with a `legislative_` prefix, keeping schema boundaries clean without the overhead of a new Go package and schema. All external API costs are zero: Congress.gov (5,000 req/hr free), Open States (free tier, limits not enforced), LegiScan (30,000 req/month free), and both local sources (public, no auth required).
 
 **Core technologies:**
-- Python 3.13 + requests + BeautifulSoup: scraping pipeline runtime — already proven across all v1.6 scripts
-- psycopg2-binary 2.9.11: direct PostgreSQL writes — already in use; upsert pattern with ON CONFLICT established
-- Playwright 1.58.0 (upgrade from 1.44.0): JS-rendered government site fallback — already integrated via fetch_html_with_fallback(); upgrade adds Chromium 133 support
-- Pillow 12.1.1 (new): image validation before DB insert — replaces deprecated imghdr (removed in Python 3.13); validates minimum 80x80px, JPEG/PNG only
-- Wikimedia Commons API via plain requests: building photo acquisition — free, CC-licensed, no auth required; raw requests is simpler than any Wikimedia SDK
+- Congress.gov API v3 + `net/http` stdlib: federal bills, House roll call votes, committee data — official LoC source, free, 5K req/hr
+- unitedstates/congress-legislators YAML + `goccy/go-yaml v1.18.0`: federal committee membership, leadership roles — more complete than API, zero API budget, daily updates
+- LegiScan API (Python, `requests`): Indiana + California state bills, votes, committees — primary state source, 30K req/month free, consistent schema
+- Open States API v3 (Python, `requests`): state data verification layer — consistent schema but uneven quality and scraper outage risk
+- `scraper-legistar` (Python): LA County Board of Supervisors legislation via Legistar — purpose-built for Granicus' partial-JSON/HTML interface
+- `golang.org/x/time/rate`: token bucket rate limiter for Congress.gov client — enforce 4,500 req/hr ceiling during bulk imports
 
-**What NOT to add:** SPARQLWrapper (unmaintained since March 2022), pyWikiCommons (thin wrapper, no benefit), Google Places API (billing complexity, non-permanent URLs), asyncio/aiohttp (serial requests required for polite government site scraping), Scrapy (heavy framework overkill for 389 records), any new Go packages (existing GORM models and API patterns sufficient).
+**Critical avoid:** Do not use `gopkg.in/yaml.v3` (archived 2025), `pyopenstates` (data model conflicts), `sigs.k8s.io/yaml` (wraps archived package), ProPublica Congress API (shut down), GovTrack bulk data (deprecated), or any Go HTTP client library (stdlib `net/http` is sufficient and consistent with existing codebase).
 
 ### Expected Features
 
-The feature set is scoped and well-defined by the existing DB schema and data source inventory. Research confirms data availability is highest for high-profile officials (supervisors, LA City council) and degrades across 89 independent city websites, which sets realistic expectations for the 80% coverage target.
+The feature landscape is tiered by data availability, not by political level. Federal features are full-fidelity. State features are viable but require LegiScan as primary (not Open States). Local features are limited to committee assignments and legislation tracking only — individual vote attribution is not achievable from any structured source for this milestone.
 
 **Must have (table stakes):**
-- Headshots for all 5 LA County supervisors — professional photos at predictable bos.lacounty.gov URLs; 100% expected coverage
-- Headshots for all 15 LA City council members — lacity.gov council-district pages; 100% expected with hardcoded fallback
-- City hall building photo for LA City section — extensive Wikimedia Commons coverage; mechanism already exists from v1.1
-- Term dates for 5 county supervisors — lavote.gov scraper already captured year_elected and term_length; only a DB write script needed
-- Contact website URL for all 89 cities — derivable from existing city_sources.json url field; 100% coverage with no scraping required
-- Enrichment coverage report — SQL/Python confirming 80%+ headshot and contact targets met before milestone sign-off
+- Data model foundation (legislative_sessions, committees, committee_memberships, bills, bill_cosponsors, votes tables) — prerequisite for all other features; schema must be designed from data inventory, not from aspirational coverage
+- Committee assignments with roles (chair/vice-chair/ranking member/member) — expected by any civics-aware user; core accountability signal
+- Leadership positions (speaker, majority leader, whip, committee chair) — signals influence at a glance; data available via congress-legislators YAML
+- Sponsored legislation (current + previous session) — "what has this person tried to pass?"; highest user-value civic data
+- Voting record (roll calls only, current + previous session) — most-requested civic feature; federal and state only at this milestone
+- Frontend profile sections with graceful empty states — sections hidden when data unavailable (local officials), not shown as broken placeholders
 
 **Should have (competitive differentiators):**
-- Headshots for 369 remaining city council members — per-city scraping; 60-80% expected; no competitor covers this at city council level
-- City hall building photos for top 20 LA County cities — Wikidata SPARQL batch query; 40-60% estimated Wikidata coverage
-- Contact phone for 5 county supervisors — data already in lavote.gov output; DB write only
-- Bio text for supervisors and LA City council — available on official pages; 20 high-profile officials, low-medium effort
+- Plain-language bill summaries (federal CRS summaries only, ~30-40% bill coverage) — usability win for cryptic bill titles; graceful fallback to short title when unavailable
+- Significance filter on bills — default to bills that advanced past introduction; prevents profile from showing 200 stalled bills as the dominant content
+- Session filter UI — toggle current vs. prior session; pure frontend filter on already-fetched data
+- Committee chair/leadership badge — visual indicator distinguishing members from leaders; zero data cost once committee roles are captured
 
-**Defer to v1.7.x or later:**
-- City hall photos for remaining 69 cities — SVG fallback already handles gaps
-- Bio/education/experience for smaller city council members — ~30% availability, high per-city parsing effort
-- Photo re-hosting to Supabase Storage — NOTE: PITFALLS.md argues this must NOT be deferred (see Critical Pitfalls); the PROJECT.md "out of scope" designation conflicts with the hotlinking risk identified in research
-- Automated nightly enrichment re-run — manual re-runs sufficient for now; complex orchestration not justified
+**Defer to later milestone:**
+- Vote alignment / party-line percentage — computable from roll-call data, but requires complete roll-call coverage first; validate data stability before building derived metrics
+- Bill topic tags for state/local — Congress.gov subjects work well for federal; state varies; local has none
+- Notable / curated key votes — requires editorial workflow; high content labor; introduces bias risk
+- Historical voting records beyond 2 sessions — DB size concern; start narrow and expand based on demand
+- All LA City Council voting records — separate entity from LA County BOS, different Legistar instance, no structured vote API
+- Local voting records via PDF extraction — Bloomington minutes are PDFs with no individual attribution; high effort, low reliability
 
 ### Architecture Approach
 
-The architecture is a clean three-layer separation: offline Python pipeline writes into the database; existing Go API serves the data with minor additions; existing React frontend renders it with minor additions. One new database table (`essentials.building_photos`, keyed by Census place_geoid) is the only structural addition. The entire enrichment pipeline writes into existing columns on existing tables.
+The milestone uses a hybrid write model within the existing `internal/essentials/` package. Static data (committee assignments, leadership) is imported via new CLI subcommands that parse YAML or call APIs and upsert into the database — run once per session boundary, not request-triggered. Dynamic data (bills, votes) is fetched by background goroutines triggered on first profile view, extending the existing lazy-fetch pattern from candidacy data. The critical exception is federal voting records, which must be pre-imported via CLI batch job due to volume (8,000-12,000 votes per senator makes lazy-fetch impractical). The frontend makes parallel sub-resource requests after the main profile loads, each with independent loading state and conditional rendering.
 
 **Major components:**
-1. **Enrichment pipeline (new Python scripts)** — scrape_headshots.py, scrape_building_photos.py, enrich_contacts.py, enrich_term_data.py (and optional enrich_bio_edu_exp.py); all read from politician_sources.json and city_sources.json configs; all use seat-first dedup logic extracted to utils.py
-2. **Config layer (modified)** — politician_sources.json gains photo_selector and contact_fields per source; city_sources.json gains building_photo_url and building_photo_attribution per city
-3. **Database layer (existing tables + one new)** — enrichment data writes to photo_origin_url, valid_from, valid_to, bio_text on politicians; politician_images (DELETE+INSERT per scrape); politician_contacts (DELETE+INSERT where source='scraped'); building_photos is the only new table
-4. **Go API (minor additions)** — contacts added to GetPoliticianByID response (~15 lines); GetBuildingPhoto handler (~20 lines); one new route line
-5. **ev-ui component library (minor addition)** — ContactSection render block (~30 lines); requires version bump and publish to GitHub npm registry; essentials and CompassV2 must update their ev-ui version dependency
-
-**Key patterns to follow:**
-- Politician-ID-keyed upsert: always resolve politician_id via seat-first dedup before writing any enrichment data
-- DELETE + INSERT (not ON CONFLICT UPDATE) for child tables — same pattern as BallotReady upsert in handlers.go
-- Per-source commit (not global transaction) — one city failure does not roll back the other 88
-- Conditional UPDATE: only fill gaps, never overwrite existing non-empty data (prevents degrading BallotReady photos with lower-quality scraped photos)
-- time.sleep(random.uniform(1.5, 3.5)) between city requests — mandatory for rate limiting
+1. Congress.gov API client (`internal/essentials/legislation/congress.go`) — rate-limited (4,500 req/hr via token bucket), exhaustive pagination (250/page, `len(items) < limit` stop condition), incremental update via `fromDateTime`; feeds bill and vote upserts
+2. Import CLI subcommands (`import-committees`, `import-leadership`, `import-federal-votes`) — run at session boundaries; dependency-ordered (sessions → committees → bills → votes) to prevent FK violations; never triggered by HTTP requests
+3. Seven new GORM models in `essentials/models.go` — `LegislativeSession`, `LegislativeCommittee`, `LegislativeCommitteeMembership`, `LegislativeLeadershipRole`, `LegislativeBill`, `LegislativeBillCosponsor`, `LegislativeVote`; all in `essentials` schema with `legislative_` prefix
+4. ID bridge table (`legislative.politician_id_map`) — maps `bioguide`, `ocd_person`, `legiscan`, `legistar` IDs to `essentials.politicians.id`; must be populated before any data import to prevent orphaned records
+5. Five new API endpoints under `/essentials/politician/{id}/` — committees, leadership, bills, votes, plus a combined `legislative-summary` for frontend initial render (one request, returns recent 5 bills + 10 votes)
+6. `LegislativeActivity` section in `ev-ui/PoliticianProfile.jsx` — conditionally rendered per data availability; hides entirely for local officials with no data; parallel fetch calls in `Profile.jsx` with independent loading states
 
 ### Critical Pitfalls
 
-Eight pitfalls identified; three require schema design decisions before any pipeline code is written:
+1. **Over-engineering schema for jurisdictions that have no data** — designing the full 6-table schema from the Congress model before inventorying what Bloomington/LA County actually export leads to empty tables from day one and cascading FK migration complexity. Invert build order: data inventory first, schema second. Add tables only when data is confirmed available. Detection: after first import, any legislative table with 0 rows signals premature infrastructure.
 
-1. **Photo hotlinking breaks silently within 2-4 years** — Storing government website image URLs as the displayed photo source creates dependencies on 89 different city websites staying structurally stable. Government sites redesign frequently; hotlink blocking via Cloudflare policy can break all photos overnight with no monitoring alert. Prevention: download every scraped headshot at scrape time and upload to Supabase Storage "politician-photos" bucket; store the Supabase CDN URL in politician_images.photo_url; keep photo_origin_url as audit metadata only, never render it directly. This must be implemented in the first scraper — the v1.6 deferral in scrape_la_officials.py (lines 29-33) must be resolved before any v1.7 headshot scraping merges.
+2. **Congress.gov API pagination silently truncates at 250** — passing `limit=500` returns 250 with HTTP 200 and no error. The `total` field was removed from the API. Always use `len(items) < limit` as the stop condition. Implement exhaustive pagination in the first version of the client — do not add as a fixup after noticing missing data. Rate limit budget: a full session import of 535 members × multiple sub-resources takes 2-3 hours; plan for a background CLI job, not a one-time quick import.
 
-2. **California government photos are not automatically public domain** — Unlike federal works (17 U.S.C. § 105), CA state and local governments can assert copyright (Government Code § 6254.9). Professional headshots on city websites may be taken by contracted photographers with the copyright held by the city. Scraping and re-hosting at scale without license assessment creates legal exposure. Prevention: check Wikimedia Commons first for each official batch (60-70% coverage for prominent officials); check city media kits and press rooms second; only scrape city websites as last resort; add photo_license field to politician_images ("cc_by_sa", "press_use", "scraped_no_license"); never serve "scraped_no_license" in production until reviewed.
+3. **Legislator identity matching breaks without an ID bridge table** — each source uses different IDs (bioguide, OCD-ID, LegiScan people_id, Legistar PersonId, name-only for Bloomington). Building the `legislative.politician_id_map` bridge table before any import run is mandatory. Orphaned data — imported but unlinked to any politician — is the most insidious failure mode: it imports silently but never appears on profiles. After import, check: `SELECT COUNT(*) FROM legislative.committee_assignments WHERE politician_id IS NULL` — any non-zero count indicates an incomplete bridge.
 
-3. **Term date precision must be tracked before any dates are stored** — lavote.gov provides year_elected as a bare year string ("2024"). Storing this as "2024-01-01" causes the frontend's formatTermDate() to display "Jan 2024" when the official was elected in November — factually wrong. Prevention: add term_date_precision column ("year"/"month"/"day") before any term dates are inserted; update formatTermDate() in ev-ui to suppress month/day when precision is "year"; requires ev-ui version bump and publish before term data pipeline runs.
+4. **Lazy-fetch fails for federal voting records** — a two-term senator's 8,000-12,000 roll calls require 40-48 paginated API requests at 250/page, easily exceeding Render's 30-second request timeout. Federal votes must use CLI batch import, not request-triggered goroutines. Reserve lazy-fetch for lower-volume data: committee assignments (one call per member), leadership roles, and sponsored bills (reasonably bounded).
 
-4. **JS-rendered city pages fail silently with wrong Playwright threshold** — ~20-30% of CA city websites use React/Vue/CMS platforms (Granicus, CivicPlus, Municode) that render content client-side. The existing fetch_html_with_fallback() Playwright trigger uses a byte-count threshold (500 chars) that misses pages with full HTML shells but no rendered content. Prevention: replace byte-count threshold with name-pattern detection — require at least 2 matches of `r'\b[A-Z][a-z]+\s+[A-Z][a-z]+\b'` before accepting the requests result as valid.
-
-5. **Cloudflare blocks cause transient failures to be marked permanent** — Sequential requests to 89 city websites without rate limiting trigger bot detection; cities marked status:"failed" are skipped on reruns. Prevention: add random delay between city requests; distinguish "blocked" (429/403) from "failed" (scraper logic error) with separate status values and retry_after timestamps; accept SOS PDF names-only coverage for persistently blocked sites rather than attempting bypasses.
+5. **Local government vote data does not exist in machine-readable form** — Bloomington Common Council votes are in PDF meeting minutes with no individual member attribution. LA County Legistar API provides legislative matters but not member-level vote positions (manually test `webapi.legistar.com/v1/LACounty/VoteRecords` before building any integration). Scoping "local voting records" into the milestone without a feasibility check first wastes significant engineering time. Each local body requires a 2-4 hour manual data inspection before committing to a scraper.
 
 ## Implications for Roadmap
 
-The dependency chain is clear: schema and infrastructure decisions must be locked before any scraping begins. High-value targets (supervisors, LA City) validate the pipeline before mass city scraping. API and frontend changes are genuinely last because they depend on data existing in the database to be useful.
+Based on combined research, a 5-phase structure is recommended, organized around data availability confidence tiers and architectural dependencies.
 
-### Phase 1: Schema and Infrastructure Preparation
-**Rationale:** Three blocking dependencies must be resolved before any enrichment data is written: the Supabase Storage bucket must exist, the photo_license column must be in the schema, and term_date_precision must be in the schema. If these are missing when the first script runs, the entire pipeline produces data that requires a retroactive migration. These are small changes (one new table, two new columns, one Storage bucket) but they are hard blockers.
-**Delivers:** building_photos table created via Go AutoMigrate; photo_license column added to politician_images; term_date_precision column added to politicians; Supabase Storage "politician-photos" bucket created with public CDN access and service-role-only upload policy; seat-first dedup logic extracted from scrape_la_officials.py to utils.py; composite unique constraint on politician_contacts verified or added
-**Addresses:** Pitfalls 1, 2, 3, 6 — all require schema decisions before first inserts
-**Avoids:** The v1.6 deferral pattern for Supabase Storage; building pipeline code before the destination schema is finalized
+### Phase 1: Schema Foundation and ID Bridge
 
-### Phase 2: High-Value Headshots (Supervisors + LA City Council)
-**Rationale:** 20 officials (5 supervisors + 15 LA City) yield near-100% coverage with well-structured, non-Cloudflare source pages. These are the most-viewed profiles. Completing these first proves the full Supabase Storage upload flow and photo_license population before scaling to 89 cities. The fetch_html_with_fallback() name-pattern fix (Pitfall 4) must be in place before this phase — even though these pages are mostly static, the fix should be validated here on a small batch.
-**Delivers:** Headshots for 5 county supervisors (bos.lacounty.gov); headshots for 15 LA City council members (lacity.gov); Supabase Storage upload pipeline proven end-to-end; photo_license populated for each image; Wikimedia Commons checked first for each official before city website fallback; scrape_headshots.py script with rate limiting and per-source commit pattern
-**Addresses:** P1 features: headshots for high-profile officials; Pitfall 1 (Supabase Storage upload proven), Pitfall 2 (Wikimedia Commons first)
-**Avoids:** Pitfall 3 (rate limiting — small set, easy to validate behavior), Pitfall 5 (overwriting existing photos — conditional UPDATE in place)
+**Rationale:** Every other feature depends on the database schema and the identity mapping table. Building schema from the data inventory (not the aspirational full model) prevents empty table proliferation. The ID bridge table must precede any import — orphaned legislative data is unrecoverable without it.
+**Delivers:** 7 new GORM models + AutoMigrate in `essentials/setup.go`; `legislative.politician_id_map` bridge table populated for all current federal officials using congress-legislators YAML cross-referenced against `essentials.politicians.bioguide_id`; `leg_data_fetched_at` column added to politicians table; data inventory matrix documenting what each jurisdiction (federal, Indiana, California, Bloomington, LA County) actually exports at this milestone
+**Addresses:** Data model foundation (P0 feature from FEATURES.md)
+**Avoids:** Pitfall 1 (over-engineered schema), Pitfall 3 (orphaned legislative data from missing ID bridge), Pitfall 13 (FK violations from wrong import order)
 
-### Phase 3: Building Photos, Term Data, and Contact Enrichment
-**Rationale:** These three data types are independent of headshot scraping and can be developed in parallel with Phase 4. Term dates for supervisors and contact websites for 89 cities are near-zero-effort — lavote.gov data is already captured, city_sources.json URLs already exist. Building photos require Wikidata SPARQL research but no per-politician parsing complexity. Grouping them here keeps the scope focused: these all write into existing tables or the new building_photos table, and none require the complex per-city HTML parsing that Phase 4 requires.
-**Delivers:** building_photos table populated for LA City + top 20 LA County cities (Wikidata SPARQL query results); term dates for 5 supervisors written to valid_from/valid_to with term_date_precision="year"; contact website for 89 cities written from city_sources.json; contact phone for 5 supervisors written from lavote.gov output; enrich_contacts.py and enrich_term_data.py scripts with contact_synced_at timestamps; scrape_building_photos.py populating building_photos table
-**Addresses:** P1 features: term dates for supervisors, contact website for all cities; P2 features: building photos for top 20 cities; Pitfall 4 (contact info staleness — contact_synced_at implemented)
-**Avoids:** Pitfall 6 (term_date_precision — must be in Phase 1 schema before any date is stored here)
+### Phase 2: Federal Committee Assignments and Leadership
 
-### Phase 4: City Council Headshot Pipeline (89 Cities)
-**Rationale:** This is the highest-complexity, highest-risk phase — 369 officials across 89 different city websites with variable HTML structure, anti-bot protection, and JS rendering variability. Phase 2 must complete first to prove the Supabase Storage upload pipeline. The fetch_html_with_fallback() name-pattern fix must be live. A sampling audit of 10 cities (2 known-JS, 8 static) should be performed before writing the full pipeline to identify which cities need playwright fetch_method override in city_sources.json.
-**Delivers:** Headshots for 369 city council members; 60-80% combined coverage target; city_sources.json enriched with per-city photo_selector and fetch_method overrides; hardcoded photo_url fallbacks in city_sources.json for Cloudflare-protected cities; coverage validation script reporting verified HEAD request success rate (not just non-null DB rows); all images in Supabase Storage with photo_license populated
-**Addresses:** P1 feature: headshots for 89 cities; Pitfall 2 (JS-rendered pages — name-pattern fallback), Pitfall 3 (Cloudflare — rate limiting, blocked/failed status distinction)
-**Avoids:** Pitfall 5 (overwriting BallotReady photos — conditional UPDATE); Anti-pattern: duplicating dedup logic (imports from utils.py); Anti-pattern: global transaction (per-source commit)
+**Rationale:** Federal data has the highest confidence and the cleanest data source — congress-legislators YAML requires no API key, no rate limits, and is updated daily. This is the fastest path to visible value on profile pages. The CLI import pattern established here becomes the template for Phase 3. Committee chair and leadership badges are purely additive once the data is imported.
+**Delivers:** `import-committees` and `import-leadership` CLI subcommands; committee membership display on federal politician profiles with role badges (Chair, Ranking Member, Member); leadership position display (Speaker, Majority Leader, Whip, President Pro Tempore); `congress_number` on every assignment row with `UNIQUE(politician_id, committee_id, congress_number)` constraint for session boundary tracking
+**Uses:** `github.com/goccy/go-yaml v1.18.0`, congress-legislators YAML (zero API cost)
+**Implements:** Import CLI architecture component, committee + leadership API endpoint handlers
+**Avoids:** Pitfall 11 (session boundary discontinuities — congress_number on every row), Pitfall 9 (name matching — bioguide_id bridge lookup, not name fallback)
 
-### Phase 5: Go API Additions and Frontend Updates
-**Rationale:** The API and frontend changes are minor in scope but depend on enrichment data existing in the database to be meaningful on deploy. ContactSection should show actual contacts when it ships, not render an empty section. Building photo endpoint is only useful once building_photos table has rows. These changes can be drafted in parallel with Phases 2-4 but should be deployed after data is confirmed in the database.
-**Delivers:** contacts[] added to GetPoliticianByID response with Contacts []ContactOut field (omitempty); GetBuildingPhoto handler at GET /essentials/cities/{geo_id}/building-photo; ContactSection in ev-ui PoliticianProfile.jsx showing phone, email, office address with contact_synced_at "as of" display; Dashboard.jsx fetching and displaying building photo for resolved city geo_id; new ev-ui version published to GitHub npm registry; essentials and CompassV2 updated to new ev-ui version
-**Addresses:** Architecture additions: Go API contacts fetch, building photo endpoint, ev-ui ContactSection, Dashboard building photo fetch; UX pitfall: contact info freshness indicator visible to users
-**Avoids:** Pitfall 4 (contact staleness — "as of [date]" shown in ContactSection); Anti-pattern: fetching external images at request time (store URLs, let browser fetch)
+### Phase 3: Federal Bills and Voting Records (Batch Import)
 
-### Phase 6: Bio Enrichment and Coverage Validation
-**Rationale:** Bio text is the lowest-priority enrichment (lower availability, highest per-city parsing complexity) and should only run after all higher-priority enrichment is confirmed in production. Coverage validation is the official milestone gate — it must use HEAD request audits, not null-count SQL, to confirm actual display success.
-**Delivers:** Bio text for 5 supervisors (bos.lacounty.gov) and 15 LA City council members (lacity.gov); bio quality filter (100-2000 chars, no boilerplate strings, at least one sentence-ending punctuation); bio_source_url stored alongside bio_text; enrichment coverage report showing verified photo HEAD request success rate >= 80%; deduplication integrity check passes (zero duplicate officials in post-enrichment query)
-**Addresses:** P2 features: bio text for high-profile officials; Pitfall 7 (bio boilerplate — quality filter in place), Pitfall 8 (coverage metric inflation — HEAD request audit as canonical measure)
-**Avoids:** "Looks Done But Isn't" checklist: photo_url must point to Supabase CDN domain (not government domains), photo_license non-null for all scraped images, term_date_precision non-null for all term dates, contact_synced_at non-null for all contact records
+**Rationale:** Bills and votes are the highest user-value features but require the most careful API client implementation. Federal votes must be batch-imported — not lazy-fetched — due to volume. This phase establishes the rate-limited Congress.gov API client with exhaustive pagination, incremental update logic, and a significance filter from day one. The decision to use batch import over lazy-fetch must be made before any profile-serving code is written.
+**Delivers:** Congress.gov API client (`legislation/congress.go`) with token bucket (4,500 req/hr), exhaustive pagination (`len(items) < limit`), and `fromDateTime` incremental updates; `import-federal-votes` and `import-federal-bills` CLI subcommands; voting record and sponsored legislation sections on federal politician profiles; CRS plain-language summaries where available (graceful fallback to short title); significance filter defaulting to bills that advanced past introduction; `legislative-summary` endpoint for frontend initial render
+**Uses:** `golang.org/x/time/rate`, Congress.gov API v3
+**Implements:** Congress.gov API client, 5 new API endpoint handlers, `LegislativeActivity` section in ev-ui
+**Avoids:** Pitfall 2 (pagination truncation at 250), Pitfall 4 (lazy-fetch timeout on 8K+ votes), Pitfall 7 (bill status normalization — store raw_status + status_label; apply significance filter), Pitfall 8 (N+1 requests and rate limit exhaustion), Pitfall 12 (bill summary unavailability — fallback to short title)
+
+### Phase 4: State Data — Indiana and California
+
+**Rationale:** State data uses LegiScan as primary source (not Open States, which has uneven coverage and scraper outage risk). The import pattern is Python-based (existing scraper pipeline), writing directly to PostgreSQL via psycopg2. This phase extends the committee, bill, and vote display already built in Phases 2-3 to state politicians, reusing frontend components. OCD-IDs from Open States populate the bridge table for state legislators before any import.
+**Delivers:** LegiScan Python import scripts for Indiana and California (bills, votes, committee assignments); OCD-IDs populated in `politician_id_map` bridge table for state legislators; state politician profiles show legislative sections using the same frontend components built in Phase 3; Open States monitoring check (`last_bill_update` freshness) documented as recurring maintenance task
+**Uses:** LegiScan API (Python, 30K req/month free), Open States API v3 (bridge table population and verification)
+**Implements:** State data import pipeline
+**Avoids:** Pitfall 5 (Open States coverage gaps and scraper outage — LegiScan as primary, Open States as verification), Pitfall 9 (name-only matching for state legislators — OCD-IDs in bridge table)
+
+### Phase 5: Local Data — Committees and Legislation Only (Feasibility-Gated)
+
+**Rationale:** Local data is the most uncertain. Each body requires a feasibility check (2-4 hours manual inspection) before any scraper is built. This phase commits only to committee assignments (available via HTML scraping) and legislation/matter tracking (Legistar API for LA County). Individual vote attribution for local officials is explicitly out of scope — confirmed infeasible from any structured source.
+**Delivers:** HTML scrapers for Bloomington Common Council and LA County Board of Supervisors committee assignments; LA County Legistar Web API integration for matter/legislation tracking (not vote attribution); local politician profiles show committee sections; voting record section omitted or shows "not available for this jurisdiction" message; feasibility check documented for Bloomington OnBoard REST API and LA County Legistar VoteRecords endpoint
+**Uses:** `scraper-legistar` (verify last commit date before adopting), `requests` + BeautifulSoup for Bloomington HTML
+**Implements:** Local government data pipeline (scope-limited)
+**Avoids:** Pitfall 6 (local vote data does not exist — scope to committees and matter tracking only), Pitfall 10 (Legistar token requirement — validate with manual curl test before building)
 
 ### Phase Ordering Rationale
 
-- Schema and infrastructure must precede all pipeline phases because photo_license, term_date_precision, and the Supabase Storage bucket are needed from the first scraper run — adding them retroactively requires a migration and data backfill
-- High-value headshots before mass city scraping validates the full pipeline (Storage upload, photo_license, dedup) on a manageable 20-record batch before scaling to 369 records across 89 sites
-- Building photos, term data, and contacts are independent of headshot complexity and can be developed in parallel with Phase 4, but are grouped as Phase 3 because they share simpler, well-understood source patterns
-- Go API and frontend are genuinely last — they serve data that must already exist in the database to be useful on deploy; ContactSection with no contacts is noise
-- Bio enrichment is last because it is optional, has lowest source availability, and its quality filter must be right before production data is affected
+- Schema and ID bridge must come first — all 4 data phases depend on it; orphaned imports are unrecoverable without the bridge
+- Federal data before state before local — confidence decreases with each tier; establishing federal patterns first reduces risk in later phases
+- CLI batch import (committees, leadership) before lazy-fetch (bills, votes) — simpler pattern first; validates schema before adding goroutine complexity
+- Federal votes use batch import, not lazy-fetch — this architectural decision must precede writing any of `Profile.jsx` or the vote endpoint handler; changing it after is a significant rewrite
+- Local phase gated on feasibility checks — ensures no empty tables or misleading profile sections from aspirational features
 
 ### Research Flags
 
-Phases that may need targeted research before implementation:
-- **Phase 4 (City Council Headshots — per-city audit):** A 10-city sampling pass is required before building the full pipeline. Identify which cities use Granicus/CivicPlus/Municode (mark fetch_method:"playwright" in city_sources.json), which have Cloudflare protection, and which HTML structure is used for headshot placement. This is a pre-planning audit step, not a full research phase.
-- **Phase 1 (Supabase Storage Python upload):** The supabase-py Python client upload API has documented pitfalls: base64 encoding corrupts image files; content-type must be explicitly passed in file_options; bucket must be pre-created manually. Verify the exact upload pattern against current Supabase Python docs before writing the first upload function.
+Phases needing deeper research during planning:
+- **Phase 3 (Federal Bills/Votes):** Congress.gov API rate limit behavior under concurrent imports not empirically tested for this codebase — validate token bucket implementation with actual API calls before scheduling a full session import
+- **Phase 4 (State Data):** Open States scraper health monitoring approach needs a concrete implementation decision — polling `/states/` endpoint freshness vs. manual spot-check cadence; LegiScan person ID lookup pattern for state legislators not yet validated against actual IN/CA data
+- **Phase 5 (Local Data):** Bloomington OnBoard REST API endpoint documentation not confirmed — requires direct validation against `data.bloomington.in.gov` before any scraper design; LA County Legistar token requirement requires manual curl test (`webapi.legistar.com/v1/LACounty/VoteRecords`) before committing to integration approach; `scraper-legistar` last commit date must be checked before adoption
 
-Phases with standard, well-documented patterns (skip research phase):
-- **Phase 2 (Supervisor/LA City headshots):** bos.lacounty.gov and lacity.gov are public, well-structured; hardcoded fallback pattern already established; Wikimedia Commons search pattern documented in STACK.md
-- **Phase 3 (Building photos, term/contact data):** Wikimedia Commons API query pattern documented in STACK.md; lavote.gov data already captured in known format; city_sources.json URL field already populated
-- **Phase 5 (Go API + frontend):** All changes are additive with clear scope (15-30 lines each); ContactSection follows existing ev-ui component patterns; building photo endpoint follows existing handler structure
-- **Phase 6 (Bio + coverage validation):** Bio quality filter pattern and HEAD request audit code both fully documented in PITFALLS.md
+Phases with well-documented standard patterns (skip research-phase):
+- **Phase 1 (Schema):** GORM AutoMigrate pattern is established and well-understood in this codebase; congress-legislators YAML bioguide cross-reference is straightforward
+- **Phase 2 (Federal Committees/Leadership):** congress-legislators YAML structure is fully documented; `goccy/go-yaml` API is stable; import CLI subcommand pattern matches existing `import-stances`, `import-quotes` subcommands exactly
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Direct codebase inspection of all existing scripts and requirements.txt; Playwright 1.58.0 and Pillow 12.1.1 versions verified against PyPI; Wikimedia Commons API pattern confirmed via MediaWiki docs |
-| Features | HIGH | Existing DB schema directly inspected (models.go confirms all target columns exist); data sources verified (bos.lacounty.gov, lacity.gov, lavote.gov, SOS PDF URLs confirmed live); coverage estimates based on CA government website norms and lavote.gov scraper output structure |
-| Architecture | HIGH | All source files directly inspected; schema columns, handler structure (GetPoliticianByID steps 1-7), ev-ui component logic (getImageURL, getTermLine), and config file formats all verified against actual code in repository |
-| Pitfalls | HIGH (hotlinking, Cloudflare, JS pages) / MEDIUM (contact staleness, coverage metric, bio boilerplate) | Hotlinking behavior: verified against mySociety PopIt tracker + Pixsy. CA copyright: verified against EFF records + Wikipedia copyright status article. Cloudflare patterns: verified against City-Bureau/city-scrapers patterns + Scrapfly docs. Supabase Storage: verified against Supabase Python docs + community issue tracker. Contact staleness and coverage inflation: pattern reasoning from v1.6 codebase history |
+| Stack | HIGH | All APIs confirmed active with official documentation; library choices verified against official sources; `gopkg.in/yaml.v3` deprecation confirmed via multiple community sources |
+| Features | HIGH (federal), MEDIUM (state), LOW (local) | Federal feature-data alignment is strong and verified. State coverage confirmed via LegiScan docs + Open States community. Local vote data confirmed unavailable from any structured source via manual site inspection. |
+| Architecture | HIGH | Based on direct inspection of existing codebase patterns; lazy-fetch pattern already implemented for candidacy data in `handlers.go`; CLI import pattern established via existing `import-stances` subcommand |
+| Pitfalls | HIGH (Congress.gov mechanics), MEDIUM (state coverage gaps), LOW (local data specifics) | Congress.gov pitfalls verified against official GitHub changelog and LoC rate limit docs. State pitfalls from community discussion and official docs. Local pitfalls from website inspection, not programmatic testing. |
 
-**Overall confidence:** HIGH
+**Overall confidence:** MEDIUM-HIGH
 
 ### Gaps to Address
 
-- **Photo re-hosting scope decision:** PROJECT.md marks Supabase Storage re-hosting as "out of scope for v1.7." PITFALLS.md argues this must not be deferred because hotlinking at scale is a production reliability problem. This conflict requires an explicit decision before Phase 1 begins. Recommendation from research: implement Supabase Storage upload in v1.7 because deferring it again means scraping 389 government URLs that will require re-scraping when sites redesign.
-
-- **Composite unique constraint on politician_contacts:** STACK.md notes "The politician_contacts table currently lacks a composite unique constraint in the Go model definition — verify one exists or add it before running enrichment scripts." This must be checked in models.go and the database schema before Phase 3 contact upserts run.
-
-- **Wikimedia Commons actual coverage for 89 LA County cities:** Research estimates 40-60% coverage from Wikidata SPARQL. The actual query output (which cities have P18 images) is not known until the query runs. SVG fallback handles gaps, but Phase 3 building photo scope depends on actual results. Run the SPARQL query during Phase 1 planning to size Phase 3 correctly.
-
-- **External ID range for v1.7:** ARCHITECTURE.md notes "v1.6 = -200001 range, v1.7 should use -300001 range" for synthetic external IDs on scraped records. The exact range initialization must be set in utils.py before any v1.7 script assigns new external IDs.
-
-- **photo_license legal review workflow:** Research identifies the licensing risk but does not define the review process for "scraped_no_license" images. A decision is needed: either accept "scraped_no_license" images with a tag (serving them with a disclaimer) or gate production serving on a manual review pass per city batch. This determines whether Phase 4 headshots are immediately live in production or staged behind a review gate.
+- **Bloomington OnBoard REST API endpoints:** Not confirmed via programmatic testing. Validate `data.bloomington.in.gov` API before Phase 5 planning. Fallback: HTML scraping of council website — but individual vote data remains unavailable regardless of scraping approach.
+- **LA County Legistar token requirement:** Manually test `webapi.legistar.com/v1/LACounty/VoteRecords` with curl before Phase 5. If authentication required and token not available, matter-level data from Legistar Web API may be the practical ceiling.
+- **`scraper-legistar` maintenance status:** Verify last commit date on `opencivicdata/python-legistar-scraper` before adopting. If unmaintained, fall back to direct Legistar Web API calls (OData v3 URL conventions).
+- **Open States v3 rate limit enforcement:** Marked "TBD" in community discussions as of March 2026. For this milestone's data volume (2 states, ~200 legislators), it will not matter — but monitor when v3 moves to enforced limits.
+- **Congress.gov API reliability post-January 2026 outage:** The API restored after its outage, but Library of Congress budget risk under DOGE-era cuts remains cited in reporting. Import CLI must log failures and degrade gracefully — never block profile rendering on API availability.
+- **Significance filter thresholds for bill display:** After first federal import, validate what percentage of sponsored bills are "introduced" status only. Calibrate the default filter cutoff based on actual data distribution — a senator who sponsored 180 introduced-and-died bills plus 12 that passed should show 12 by default.
+- **Senate roll call votes source:** Congress.gov API v3 confirmed does NOT include Senate votes as of March 2026. For Senate voting records, LegiScan covers US Congress including Senate — verify coverage before committing to a source strategy.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- `EV-Backend/scripts/requirements.txt` — current pinned dependencies; scraper infrastructure baseline
-- `EV-Backend/scripts/scrape_la_officials.py` — seat-first dedup, upsert logic, photo_origin_url precedent, v1.6 Supabase Storage deferral TODO (lines 29-33)
-- `EV-Backend/scripts/scrape_city_councils.py` — fetch_html_with_fallback(), byte-count threshold limitation, per-city commit pattern, city_sources.json structure
-- `EV-Backend/scripts/city_sources.json` — 89 city configs, place_geoid values, council page URLs, 382 roster entries
-- `EV-Backend/scripts/politician_sources.json` — 3 existing source configs
-- `EV-Backend/internal/essentials/models.go` — PoliticianImage, PoliticianContact, Degree, Experience, Politician structs; all target columns confirmed present
-- `EV-Backend/internal/essentials/handlers.go` — GetPoliticianByID steps 1-7; OfficialOut struct; PoliticianProfileOut structure; contacts not yet in response
-- `ev-ui/src/PoliticianProfile.jsx` — getImageURL() (images[]/photo_origin_url fallback chain), getTermLine() (valid_from/valid_to), initials avatar fallback
-- `essentials/src/lib/buildingImages.js` — CURATED_LOCAL static asset pattern, getBuildingImages() function, SVG fallback
-- [Playwright Python PyPI](https://pypi.org/project/playwright/) — v1.58.0 current stable January 2026
-- [Pillow PyPI](https://pypi.org/project/pillow/) — v12.1.1 current stable February 2026
-- [Supabase Python Storage docs](https://supabase.com/docs/reference/python/storage-from-upload) — MIME type requirement, file_options format, upload pattern
-- [Wikimedia Commons API:Etiquette](https://www.mediawiki.org/wiki/API:Etiquette) — no auth needed for reads, User-Agent required
+- [Congress.gov API v3 — Library of Congress](https://www.loc.gov/apis/additional-apis/congress-dot-gov-api/) — endpoint coverage, rate limits
+- [Congress.gov API ChangeLog](https://github.com/LibraryOfCongress/api.congress.gov/blob/main/ChangeLog.md) — pagination behavior (250 max, `total` field removed), House roll call votes added May 2025
+- [Introducing House Roll Call Votes in the Congress.gov API](https://blogs.loc.gov/law/2025/05/introducing-house-roll-call-votes-in-the-congress-gov-api/) — confirmed out of beta
+- [Congress.gov API January 2026 outage](https://www.govtech.com/gov-experience/congress-govs-api-has-gone-dark-impacting-data-access) — outage event confirmed
+- [Library of Congress API rate limits](https://www.loc.gov/apis/json-and-yaml/working-within-limits/) — 5,000 req/hr, 100K deep paging limit
+- [unitedstates/congress-legislators — GitHub](https://github.com/unitedstates/congress-legislators) — YAML structure, bioguide/thomas/govtrack/fec IDs, daily update cadence
+- [goccy/go-yaml — GitHub](https://github.com/goccy/go-yaml) — v1.18.0 stable, actively maintained
+- [gopkg.in/yaml.v3 archived discussion](https://github.com/go-task/task/issues/2171) — archived/unmaintained status confirmed
+- [LegiScan API User Manual v1.91 (2025-03-17)](https://api.legiscan.com/dl/LegiScan_API_User_Manual.pdf) — 30K free queries/month, person ID system, Indiana + California coverage
+- [golang.org/x/time/rate — pkg.go.dev](https://pkg.go.dev/golang.org/x/time/rate) — stdlib extension, stable, already transitively in go.sum
 
 ### Secondary (MEDIUM confidence)
-- [Wikimedia Rate Limits](https://api.wikimedia.org/wiki/Rate_limits) — no hard limit on read requests; serial requests recommended
-- [Wikidata SPARQL service](https://query.wikidata.org/) — P18 (image), P31 (instance of city hall, Q16560), P131 (located in LA County, Q816459) query patterns
-- [California SOS Roster 2026](https://admin.cdn.sos.ca.gov/ca-roster/2026/complete-roster.pdf) — city-level contact data availability
-- mySociety PopIt issue #461 — hotlink blocking behavior from government websites returning 403
-- [City-Bureau/city-scrapers](https://github.com/City-Bureau/city-scrapers) — community patterns for JS-rendered government page handling
-- [Supabase community: PNG corruption on upload](https://github.com/orgs/supabase/discussions/26257) — base64 encoding pitfall with Python upload
-- `scrapers/lavote_scraper.py` — year_elected as bare year string; term_length output format; ~75 officials captured
+- [Open States API v3 Documentation](https://docs.openstates.org/api-v3/) — endpoint coverage for Indiana + California
+- [Open States rate limit discussion](https://github.com/openstates/issues/discussions/205) — v3 limits marked "TBD", not yet enforced
+- [Ballotpedia Open States Legislative Data Report Card](https://ballotpedia.org/Open_States%27_Legislative_Data_Report_Card) — per-state quality grades; California MySQL dump complexity
+- [opencivicdata/python-legistar-scraper — GitHub](https://github.com/opencivicdata/python-legistar-scraper) — LA County Legistar integration; verify last commit before adoption
+- [LA County Legistar portal](https://lacounty.legistar.com/) — confirmed Granicus platform
+- [Legistar Web API](https://webapi.legistar.com/) — OData v3 structure; matters endpoint; client-specific token requirements
+- [GovTrack.us](https://www.govtrack.us/start) — competitive feature patterns (ideology score, party-line %, committee display)
+- [VoteSmart](https://www.votesmart.org/) — six-domain profile structure reference
+- [Ballotpedia](https://ballotpedia.org/Main_Page) — committee, leadership, scorecard display patterns
+- [LegiScan product site](https://legiscan.com/legiscan) — state + federal bill/vote data model; pricing tiers
 
-### Tertiary (informational)
-- EFF: [California Legislature Drops Proposal to Copyright All Government Works](https://www.eff.org/deeplinks/2016/06/california-legislature-drops-proposal-copyright-all-government-works) — AB 2880 history; CA governments can assert copyright unlike federal
-- Wikipedia: [Copyright status of works by subnational governments of the United States](https://en.wikipedia.org/wiki/Copyright_status_of_works_by_subnational_governments_of_the_United_States) — state/local government copyright rules differ from 17 U.S.C. § 105
-- Scrapfly: [How to Bypass Cloudflare When Web Scraping](https://scrapfly.io/blog/posts/how-to-bypass-cloudflare-anti-scraping) — Cloudflare bot detection mechanisms; headless browser fingerprinting
-- [SPARQLWrapper PyPI](https://pypi.org/project/SPARQLWrapper/) — last release March 2022; confirming it must NOT be added as a dependency
+### Tertiary (LOW confidence — requires direct validation before Phase 5)
+- [City-of-Bloomington/OnBoard — GitHub](https://github.com/City-of-Bloomington/OnBoard) — system confirmed; REST API endpoints not documented in search results
+- [Bloomington Open Data](https://data.bloomington.in.gov/) — portal exists; legislative vote data availability not confirmed programmatically
+- [LA County BOS Records](https://bos.lacounty.gov/services/records-of-the-board/) — Statement of Proceedings confirmed; individual vote attribution in Legistar API not confirmed
+- [OCD-ID standard](https://medium.com/cicero-data/how-to-use-open-civic-data-identifiers-to-organize-political-data-c27755702509) — OCD-IDs designed as stable cross-source identifiers; used by Open States and existing geofence schema
 
 ---
-*Research completed: 2026-02-24*
+*Research completed: 2026-03-01*
 *Ready for roadmap: yes*
