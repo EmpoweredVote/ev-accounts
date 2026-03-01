@@ -236,3 +236,31 @@
 
 ---
 
+
+## v1.9 Compare UX & Search Fixes (Shipped: 2026-02-28)
+
+**Phases completed:** 3 phases, 6 plans
+**Timeline:** 2 days (2026-02-27 — 2026-02-28)
+**Requirements:** 5/5 satisfied
+**Repos:** CompassV2, EV-Backend, essentials
+
+**Delivered:** Compare page enhanced with inline politician switching and level/state filters, and Essentials search fixed to return all representatives for area-level queries with unified search path.
+
+**Key accomplishments:**
+1. Inline politician picker — searchable dropdown with keyboard nav replaces header on compare page, switch politicians without leaving view; react-spring morphs radar polygon smoothly during data fetch
+2. Politician list filters — level pills (Federal/State/Local) and state dropdown reused across both InlinePoliticianPicker and CompareModal via shared useFilteredPoliticians hook with zero code duplication
+3. Area-intersection search — ST_Intersects boundary overlap replaces point-only matching for city/ZIP/county queries, returning all representatives whose districts overlap the searched area
+4. Unified search path — removed ZIP vs address branching in frontend; all queries route through single POST search endpoint
+5. Re-search bug fix — searchKey counter pattern forces hook re-fetch even for identical query text, fixing double-entry issue on results page
+6. Area label display — results page shows "Showing representatives for {formattedAddress}" for area queries
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- PHOTO-03 headshot coverage at 21.5% (carried from v1.7)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+- fetchPoliticiansOnce and fetchPoliticiansProgressive deprecated but not deleted in essentials api.jsx
+
+---
+
