@@ -119,6 +119,22 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
+## Current Milestone: v2026.3 Legislative Profile Data
+
+**Goal:** Enrich politician profiles with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across all levels of government, focused on Monroe County IN and LA County CA.
+
+**Target features:**
+- Full data model foundation (jurisdictions, governing bodies, seats, legislative sessions, committees, legislation, votes)
+- Committee assignments with roles (member/chair/vice-chair) and leadership positions
+- Voting records with plain-language bill summaries (current + previous session)
+- Sponsored/cosponsored legislation with status and topic tags
+- Hybrid data fetching: import for static data (committees, leadership), lazy-fetch for dynamic data (votes, bills)
+- Federal data via Congress.gov API + unitedstates/congress-legislators
+- State data via Open States or LegiScan (Indiana + California)
+- Local data via scraping (Bloomington Common Council, LA County bodies)
+- Frontend profile sections displaying all new data
+
+### Deferred
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes)
 - [ ] Multi-politician comparison (2-3 overlays at once)
@@ -160,4 +176,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-02-28 after v1.9 milestone*
+*Last updated: 2026-03-01 after v2026.3 milestone start*
