@@ -266,7 +266,7 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 54. Schema Foundation | v2026.3 | 0/2 | Not started | - |
+| 54. Schema Foundation | 1/2 | In Progress|  | - |
 | 55. Federal Committees & Leadership | v2026.3 | 0/3 | Not started | - |
 | 56. Federal Bills, Votes & API Endpoints | v2026.3 | 0/4 | Not started | - |
 | 57. State Data Pipeline | v2026.3 | 0/2 | Not started | - |

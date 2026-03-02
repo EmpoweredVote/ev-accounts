@@ -9,14 +9,14 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 ### Schema & Infrastructure
 
-- [ ] **SCHEMA-01**: Database schema includes legislative sessions table with jurisdiction, name, date range, and is_current flag
-- [ ] **SCHEMA-02**: Database schema includes legislative committees table with external_id, name, type, chamber, parent committee support, and source tracking
-- [ ] **SCHEMA-03**: Database schema includes committee memberships join table linking politicians to committees with role (member/chair/vice-chair/ranking member) and session
-- [ ] **SCHEMA-04**: Database schema includes leadership roles table with politician, title, chamber, and date range
-- [ ] **SCHEMA-05**: Database schema includes legislative bills table with external_id, number, title, plain-language summary, status, sponsor, introduced date, subject tags, and source
-- [ ] **SCHEMA-06**: Database schema includes bill cosponsors join table linking politicians to bills
-- [ ] **SCHEMA-07**: Database schema includes legislative votes table with politician, bill (nullable), vote question, position (yea/nay/abstain/absent/not voting), date, result, and source
-- [ ] **SCHEMA-08**: Politician table extended with `leg_data_fetched_at` timestamp for lazy-fetch staleness gating
+- [x] **SCHEMA-01**: Database schema includes legislative sessions table with jurisdiction, name, date range, and is_current flag
+- [x] **SCHEMA-02**: Database schema includes legislative committees table with external_id, name, type, chamber, parent committee support, and source tracking
+- [x] **SCHEMA-03**: Database schema includes committee memberships join table linking politicians to committees with role (member/chair/vice-chair/ranking member) and session
+- [x] **SCHEMA-04**: Database schema includes leadership roles table with politician, title, chamber, and date range
+- [x] **SCHEMA-05**: Database schema includes legislative bills table with external_id, number, title, plain-language summary, status, sponsor, introduced date, subject tags, and source
+- [x] **SCHEMA-06**: Database schema includes bill cosponsors join table linking politicians to bills
+- [x] **SCHEMA-07**: Database schema includes legislative votes table with politician, bill (nullable), vote question, position (yea/nay/abstain/absent/not voting), date, result, and source
+- [x] **SCHEMA-08**: Politician table extended with `leg_data_fetched_at` timestamp for lazy-fetch staleness gating
 - [ ] **SCHEMA-09**: Full data model entities from data-model.md implemented: jurisdictions, governing bodies, seats, seat tenures, and data sources tables
 
 ### Federal Data Pipeline
@@ -96,14 +96,14 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHEMA-01 | Phase 54 | Pending |
-| SCHEMA-02 | Phase 54 | Pending |
-| SCHEMA-03 | Phase 54 | Pending |
-| SCHEMA-04 | Phase 54 | Pending |
-| SCHEMA-05 | Phase 54 | Pending |
-| SCHEMA-06 | Phase 54 | Pending |
-| SCHEMA-07 | Phase 54 | Pending |
-| SCHEMA-08 | Phase 54 | Pending |
+| SCHEMA-01 | Phase 54 | Complete |
+| SCHEMA-02 | Phase 54 | Complete |
+| SCHEMA-03 | Phase 54 | Complete |
+| SCHEMA-04 | Phase 54 | Complete |
+| SCHEMA-05 | Phase 54 | Complete |
+| SCHEMA-06 | Phase 54 | Complete |
+| SCHEMA-07 | Phase 54 | Complete |
+| SCHEMA-08 | Phase 54 | Complete |
 | SCHEMA-09 | Phase 54 | Pending |
 | FED-01 | Phase 55 | Pending |
 | FED-02 | Phase 55 | Pending |
