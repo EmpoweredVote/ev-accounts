@@ -31,9 +31,9 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 ### State Data Pipeline
 
-- [ ] **STATE-01**: Indiana state committee assignments, bills, and votes imported via LegiScan or IGA API (current + previous session)
+- [x] **STATE-01**: Indiana state committee assignments, bills, and votes imported via LegiScan or IGA API (current + previous session)
 - [ ] **STATE-02**: California state committee assignments, bills, and votes imported via LegiScan (current + previous session)
-- [ ] **STATE-03**: State legislators matched to existing politician records via external IDs or name matching with dedup
+- [x] **STATE-03**: State legislators matched to existing politician records via external IDs or name matching with dedup
 
 ### Local Data Pipeline
 
@@ -117,9 +117,9 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | API-03 | Phase 56 | Complete |
 | API-04 | Phase 56 | Complete |
 | API-05 | Phase 56 | Complete |
-| STATE-01 | Phase 57 | Pending |
+| STATE-01 | Phase 57 | Complete |
 | STATE-02 | Phase 57 | Pending |
-| STATE-03 | Phase 57 | Pending |
+| STATE-03 | Phase 57 | Complete |
 | LOCAL-01 | Phase 58 | Pending |
 | LOCAL-02 | Phase 58 | Pending |
 | LOCAL-03 | Phase 58 | Pending |

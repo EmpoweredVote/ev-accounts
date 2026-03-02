@@ -18,14 +18,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 56 — Federal Bills, Votes & API Endpoints (56-04 complete)
+**Current focus:** Phase 57 — State Data Pipeline (57-01 Task 1 complete; paused at Task 2 human-action checkpoint)
 
 ## Current Position
 
-Phase: 56 — Federal Bills, Votes & API Endpoints
-Plan: 04/04 complete
-Status: Phase 56 COMPLETE — all 4 plans done
-Last activity: 2026-03-02 — Completed 56-04 (bills, votes, legislative-summary API endpoints)
+Phase: 57 — State Data Pipeline
+Plan: 01/02 (Task 1 complete, paused at Task 2 checkpoint)
+Status: PAUSED — awaiting human-action: run Indiana import with credentials
+Last activity: 2026-03-02 — Completed 57-01 Task 1 (state legislative import script); paused at Task 2 (install deps + run Indiana import)
 
 ```
 Progress: [----------] 0/6 phases complete (5/16 plans complete)
@@ -70,6 +70,9 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 - **Cosponsored bill upsert excludes sponsor_id from DoUpdates:** The bill may already exist with correct primary sponsor from another member's sponsored-legislation list — overwriting with nil would corrupt attribution. (56-02)
 - **getMasterList is a MAP not array:** LegiScan getMasterList returns `{"masterlist": {"0": {session_metadata}, "1": {bill}, ...}}` — parse as `map[string]json.RawMessage`, skip key "0". Never attempt to Unmarshal as a slice. (56-03)
 - **Senator bridge via getSessionPeople name matching:** Single match only — 0 or 2+ matches are skipped. Avoids corrupting vote attribution with incorrect person linkages. Bridge rows use id_type='legiscan'. (56-03)
+- **State import uses inline vote fetch per bill:** import_votes_for_bill called inside import_bills loop — avoids double getBill calls. Each bill's vote stubs drive getRollCall for member-level votes. (57-01)
+- **State jurisdiction = lowercase full name:** "indiana" not "IN", "california" not "CA" — matches federal pattern in schema. (57-01)
+- **Committee memberships re-fetch getSessionPeople after bill pass:** committee_db_map only populated during bill import; membership upsert needs this map, so getSessionPeople is called once more per session. (57-01)
 
 ### Pending Todos
 
@@ -95,5 +98,5 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 56-03-PLAN.md — federal votes import CLI (ImportFederalVotes with House/Congress.gov and Senate/LegiScan workflows, senator bridge building)
-Resume: `/gsd:execute-phase 57` (Phase 56 complete — all 4 plans done)
+Stopped at: 57-01 Task 1 complete (state legislative import script created); paused at Task 2 checkpoint (human-action: install deps + run Indiana import with LEGISCAN_API_KEY + DATABASE_URL)
+Resume: After Task 2 human-action, resume 57-01 Task 2 continuation or proceed to 57-02
