@@ -17,7 +17,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 - [x] **SCHEMA-06**: Database schema includes bill cosponsors join table linking politicians to bills
 - [x] **SCHEMA-07**: Database schema includes legislative votes table with politician, bill (nullable), vote question, position (yea/nay/abstain/absent/not voting), date, result, and source
 - [x] **SCHEMA-08**: Politician table extended with `leg_data_fetched_at` timestamp for lazy-fetch staleness gating
-- [ ] **SCHEMA-09**: Full data model entities from data-model.md implemented: jurisdictions, governing bodies, seats, seat tenures, and data sources tables
+- [x] **SCHEMA-09**: Full data model entities from data-model.md implemented: jurisdictions, governing bodies, seats, seat tenures, and data sources tables
 
 ### Federal Data Pipeline
 
@@ -104,7 +104,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | SCHEMA-06 | Phase 54 | Complete |
 | SCHEMA-07 | Phase 54 | Complete |
 | SCHEMA-08 | Phase 54 | Complete |
-| SCHEMA-09 | Phase 54 | Pending |
+| SCHEMA-09 | Phase 54 | Complete |
 | FED-01 | Phase 55 | Pending |
 | FED-02 | Phase 55 | Pending |
 | FED-07 | Phase 55 | Pending |

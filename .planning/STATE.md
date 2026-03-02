@@ -8,7 +8,7 @@ progress:
   total_phases: 6
   completed_phases: 0
   total_plans: 16
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -18,17 +18,17 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 54 — Schema Foundation (ready to plan)
+**Current focus:** Phase 54 — Schema Foundation (COMPLETE — both plans done)
 
 ## Current Position
 
 Phase: 54 — Schema Foundation
-Plan: 01 complete, 02 next
-Status: In progress — 1/2 plans complete in Phase 54
-Last activity: 2026-03-02 — Completed 54-01 (schema foundation: 8 legislative tables + leg_data_fetched_at)
+Plan: Both complete (02/02)
+Status: Phase 54 complete — all plans done
+Last activity: 2026-03-02 — Completed 54-02 (backfill CLI + data inventory matrix)
 
 ```
-Progress: [----------] 0/6 phases complete (1/16 plans complete)
+Progress: [----------] 0/6 phases complete (2/16 plans complete)
 ```
 
 ## Performance Metrics
@@ -53,6 +53,8 @@ Progress: [----------] 0/6 phases complete (1/16 plans complete)
 - **Local scope = committees and legislation only.** No individual vote attribution for Bloomington or LA County BOS — confirmed infeasible from structured sources.
 - **All legislative data stays in `internal/essentials/` package** with `legislative_` prefix tables in the `essentials` schema. No new Go package or schema.
 - **Frontend implementation details TBD during phase planning.** User wants to discuss UI design more during plan-phase; requirements are set but component structure is open.
+- **Tiered matching for bioguide backfill:** Tier 1 exact ID, Tier 2 name+state (single match only), skip ambiguous — no medium-confidence bridge inserts to prevent bad data. (54-02)
+- **data-model.md confirmed no schema changes needed:** All 5 jurisdictions (Federal, Indiana, California, Bloomington IN, LA County CA) fit existing 8-table schema; empty tables are acceptable. (54-02)
 
 ### Pending Todos
 
@@ -78,5 +80,5 @@ Progress: [----------] 0/6 phases complete (1/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 54-01-PLAN.md — legislative schema foundation (8 tables + LegDataFetchedAt column)
-Resume: `/gsd:execute-phase 54` (next: 54-02)
+Stopped at: Completed 54-02-PLAN.md — backfill CLI (congress-legislators YAML matching) + data inventory matrix
+Resume: `/gsd:execute-phase 55` (Phase 54 complete — start Phase 55)

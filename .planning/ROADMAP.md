@@ -153,7 +153,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 
 **Milestone Goal:** Enrich politician profiles with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across all levels of government, focused on Monroe County IN and LA County CA.
 
-- [ ] **Phase 54: Schema Foundation** — Data model, ID bridge table, and data inventory before any import runs
+- [x] **Phase 54: Schema Foundation** — Data model, ID bridge table, and data inventory before any import runs (completed 2026-03-02)
 - [ ] **Phase 55: Federal Committees & Leadership** — Import committee assignments and leadership roles from congress-legislators YAML via CLI
 - [ ] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints
 - [ ] **Phase 57: State Data Pipeline** — Indiana and California bills, votes, and committee assignments via LegiScan Python scripts
@@ -266,7 +266,7 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 54. Schema Foundation | 1/2 | In Progress|  | - |
+| 54. Schema Foundation | 2/2 | Complete   | 2026-03-02 | - |
 | 55. Federal Committees & Leadership | v2026.3 | 0/3 | Not started | - |
 | 56. Federal Bills, Votes & API Endpoints | v2026.3 | 0/4 | Not started | - |
 | 57. State Data Pipeline | v2026.3 | 0/2 | Not started | - |
