@@ -5,9 +5,9 @@ milestone_name: Legislative Profile Data
 status: planning
 last_updated: "2026-03-01"
 progress:
-  total_phases: 0
+  total_phases: 6
   completed_phases: 0
-  total_plans: 0
+  total_plans: 16
   completed_plans: 0
 ---
 
@@ -18,14 +18,18 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Defining requirements for v2026.3
+**Current focus:** Phase 54 — Schema Foundation (ready to plan)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 54 — Schema Foundation
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-01 — Milestone v2026.3 started
+Status: Not started
+Last activity: 2026-03-01 — Roadmap created for v2026.3
+
+```
+Progress: [----------] 0/6 phases complete
+```
 
 ## Performance Metrics
 
@@ -37,20 +41,42 @@ Last activity: 2026-03-01 — Milestone v2026.3 started
 
 ## Accumulated Context
 
-### Decisions
+### Key Architectural Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
+- **Federal votes = batch import, not lazy-fetch.** A two-term senator has 8,000-12,000 roll calls. Lazy-fetch goroutines would time out Render's 30-second limit. CLI batch job mandatory before any profile-serving code written for votes.
+- **Schema from data inventory, not aspirational model.** Local bodies may have no machine-readable vote data. Build tables only after confirming data exists (Phase 58 feasibility check gates commit).
+- **ID bridge table before any import.** `legislative_politician_id_map` must be populated with bioguide, legiscan, legistar, and OCD-IDs before any import CLI runs. Orphaned imports are silent and unrecoverable.
+- **Congress.gov pagination stop condition.** Always use `len(items) < limit` — the API silently truncates at 250 and removed the `total` field. Never assume a round number means complete.
+- **YAML library.** Use `github.com/goccy/go-yaml v1.18.0` for congress-legislators YAML parsing. `gopkg.in/yaml.v3` is archived and must not be used.
+- **LegiScan as state primary.** Open States is verification layer only — uneven scraper quality and outage risk. LegiScan (30K req/month free) covers IN and CA.
+- **Senate votes via LegiScan.** Congress.gov API v3 does NOT include Senate roll calls as of March 2026. LegiScan covers US Congress including Senate.
+- **Local scope = committees and legislation only.** No individual vote attribution for Bloomington or LA County BOS — confirmed infeasible from structured sources.
+- **All legislative data stays in `internal/essentials/` package** with `legislative_` prefix tables in the `essentials` schema. No new Go package or schema.
+- **Frontend implementation details TBD during phase planning.** User wants to discuss UI design more during plan-phase; requirements are set but component structure is open.
 
 ### Pending Todos
 
 - **Future phase idea: Census ZCTA-to-Place ZIP mapping for city council politicians**
+- **PHOTO-03 headshot coverage at 21.5%** — headshot_research_manifest.csv exists for future manual sprint (carried from v1.7)
+- **12 politicians have no Read & Rank quotes** (carried from v1.8)
+- **Validate scraper-legistar maintenance status** before Phase 58 — check last commit date on `opencivicdata/python-legistar-scraper`
+
+### Tech Debt Carried Forward
+
+- Dead `ballotready/` package preserved for historical reference (from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (from v1.5)
+- 5 district-election cities treated as at-large (from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted in essentials `api.jsx` (from v1.9)
 
 ### Blockers/Concerns
 
-None.
+- **Congress.gov API reliability:** Confirmed outage January 2026. Import CLI must log failures and never block profile rendering. Validate token bucket implementation with real API calls before scheduling full session import.
+- **Bloomington OnBoard REST API:** Endpoints not confirmed. Requires direct validation against `data.bloomington.in.gov` before Phase 58 scraper design. Fallback: HTML scraping (but individual vote data unavailable regardless).
+- **LA County Legistar token requirement:** Manually test `webapi.legistar.com/v1/LACounty/VoteRecords` with curl before Phase 58. Token gating may limit to matter-level data only.
+- **Significance filter calibration:** After first federal bill import, check what percentage are "introduced" status only. Calibrate default filter cutoff from actual data distribution before building the UI filter.
 
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: v2026.3 milestone initialization — research phase
-Resume file: None
+Stopped at: Roadmap created — ready for Phase 54 planning
+Resume: `/gsd:plan-phase 54`
