@@ -23,7 +23,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 - [x] **FED-01**: Go CLI `import-committees` subcommand imports committee assignments from unitedstates/congress-legislators YAML, matching politicians via bioguide_id
 - [x] **FED-02**: Go CLI `import-leadership` subcommand imports leadership roles (Speaker, Majority/Minority Leader, Whip, etc.) from congress-legislators YAML
-- [ ] **FED-03**: Congress.gov API client with rate limiting (5K req/hr) and exhaustive pagination (250-item page cap handling)
+- [x] **FED-03**: Congress.gov API client with rate limiting (5K req/hr) and exhaustive pagination (250-item page cap handling)
 - [ ] **FED-04**: Sponsored and cosponsored legislation imported for federal politicians via Congress.gov API (current + previous Congress)
 - [ ] **FED-05**: Voting records batch-imported for federal politicians — House via Congress.gov API, Senate via LegiScan (current + previous Congress)
 - [ ] **FED-06**: CRS plain-language bill summaries fetched from Congress.gov and stored alongside bill records
@@ -108,7 +108,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | FED-01 | Phase 55 | Complete |
 | FED-02 | Phase 55 | Complete |
 | FED-07 | Phase 55 | Complete |
-| FED-03 | Phase 56 | Pending |
+| FED-03 | Phase 56 | Complete |
 | FED-04 | Phase 56 | Pending |
 | FED-05 | Phase 56 | Pending |
 | FED-06 | Phase 56 | Pending |

@@ -18,17 +18,17 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 55 — Federal Committees & Leadership (55-01 and 55-02 complete)
+**Current focus:** Phase 56 — Federal Bills, Votes & API Endpoints (56-04 complete)
 
 ## Current Position
 
-Phase: 55 — Federal Committees & Leadership
-Plan: 03/03 complete
-Status: Phase 55 COMPLETE — all 3 plans done
-Last activity: 2026-03-02 — Completed 55-03 (committee and leadership API endpoints)
+Phase: 56 — Federal Bills, Votes & API Endpoints
+Plan: 04/04 complete
+Status: Phase 56 COMPLETE — all 4 plans done
+Last activity: 2026-03-02 — Completed 56-04 (bills, votes, legislative-summary API endpoints)
 
 ```
-Progress: [----------] 0/6 phases complete (3/16 plans complete)
+Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ```
 
 ## Performance Metrics
@@ -61,6 +61,9 @@ Progress: [----------] 0/6 phases complete (3/16 plans complete)
 - **LegiScan monthly counter uses atomic rename:** Write to temp file then os.Rename() — survives process crashes mid-write. Counter persists to $HOME/.ev-backend/legiscan_counter.json. (55-02)
 - **Committee API endpoint uses raw SQL JOIN (not GORM chain):** Three-table join (memberships → committees LEFT JOIN parent) is cleaner as raw SQL. Pattern matches GetPoliticianEndorsements. (55-03)
 - **Both Phase 55 endpoints are public (no auth):** Consistent with Phase B candidacy endpoints. Committee and leadership data is publicly available information. (55-03)
+- **Congress.gov fetchPaginated stop condition is n < limit:** The API removed the total field; a page returning exactly 250 items does NOT guarantee there are more pages — only n < 250 is a reliable terminal signal. (56-01)
+- **GetBillSummary lowercases billType in URL path:** Congress.gov /bill/{congress}/{type}/{number}/summaries requires lowercase bill type ("hr" not "HR"). (56-01)
+- **Non-paginated CongressClient methods use limiter.Wait directly:** GetHouseVoteMemberVotes and GetBillSummary always fit in one response — they call limiter.Wait directly rather than going through fetchPaginated. (56-01)
 
 ### Pending Todos
 
@@ -85,6 +88,6 @@ Progress: [----------] 0/6 phases complete (3/16 plans complete)
 
 ## Session Continuity
 
-Last session: 2026-03-01
-Stopped at: Completed 55-03-PLAN.md — committee and leadership API endpoints (GetPoliticianCommittees + GetPoliticianLeadership handlers + route registrations)
-Resume: `/gsd:execute-phase 56` (Phase 55 complete — begin next phase)
+Last session: 2026-03-02
+Stopped at: Completed 56-01-PLAN.md — Congress.gov HTTP client (CongressClient with rate limiting, fetchPaginated, 5 typed methods, normalizer helpers)
+Resume: `/gsd:execute-phase 56` (56-01 complete — continue with 56-02 bills import CLI)
