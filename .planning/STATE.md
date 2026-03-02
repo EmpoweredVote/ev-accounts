@@ -66,6 +66,8 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 - **Non-paginated CongressClient methods use limiter.Wait directly:** GetHouseVoteMemberVotes and GetBillSummary always fit in one response — they call limiter.Wait directly rather than going through fetchPaginated. (56-01)
 - **Bills endpoint defaults to excluding "Introduced" status:** Significance filter reduces noise for frontend; ?all=true overrides. Calibrate after first real import. (56-04)
 - **fmt.Sprintf for conditional SQL filter injection:** GetPoliticianBills uses fmt.Sprintf to conditionally add the status_label filter — named @params conflicted with %s placeholder in same query. Positional ? args used throughout. (56-04)
+- **Post-upsert SELECT required for bill DB UUID:** GORM OnConflict Create does not reliably populate struct ID field for existing rows — follow-up SELECT by (external_id, jurisdiction) required after bill upsert for cosponsor linking. (56-02)
+- **Cosponsored bill upsert excludes sponsor_id from DoUpdates:** The bill may already exist with correct primary sponsor from another member's sponsored-legislation list — overwriting with nil would corrupt attribution. (56-02)
 
 ### Pending Todos
 
@@ -91,5 +93,5 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 56-04-PLAN.md — bills, votes, and legislative-summary API endpoints (GetPoliticianBills + GetPoliticianVotes + GetPoliticianLegislativeSummary handlers + route registrations)
-Resume: `/gsd:execute-phase 57` (Phase 56 complete — begin next phase)
+Stopped at: Completed 56-02-PLAN.md — federal bills import CLI (ImportFederalBills with sponsored/cosponsored upsert logic and CRS summary backfill)
+Resume: `/gsd:execute-phase 57` (Phase 56 complete — all 4 plans done)
