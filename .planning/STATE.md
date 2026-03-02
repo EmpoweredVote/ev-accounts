@@ -64,6 +64,8 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 - **Congress.gov fetchPaginated stop condition is n < limit:** The API removed the total field; a page returning exactly 250 items does NOT guarantee there are more pages — only n < 250 is a reliable terminal signal. (56-01)
 - **GetBillSummary lowercases billType in URL path:** Congress.gov /bill/{congress}/{type}/{number}/summaries requires lowercase bill type ("hr" not "HR"). (56-01)
 - **Non-paginated CongressClient methods use limiter.Wait directly:** GetHouseVoteMemberVotes and GetBillSummary always fit in one response — they call limiter.Wait directly rather than going through fetchPaginated. (56-01)
+- **Bills endpoint defaults to excluding "Introduced" status:** Significance filter reduces noise for frontend; ?all=true overrides. Calibrate after first real import. (56-04)
+- **fmt.Sprintf for conditional SQL filter injection:** GetPoliticianBills uses fmt.Sprintf to conditionally add the status_label filter — named @params conflicted with %s placeholder in same query. Positional ? args used throughout. (56-04)
 
 ### Pending Todos
 
@@ -89,5 +91,5 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 56-01-PLAN.md — Congress.gov HTTP client (CongressClient with rate limiting, fetchPaginated, 5 typed methods, normalizer helpers)
-Resume: `/gsd:execute-phase 56` (56-01 complete — continue with 56-02 bills import CLI)
+Stopped at: Completed 56-04-PLAN.md — bills, votes, and legislative-summary API endpoints (GetPoliticianBills + GetPoliticianVotes + GetPoliticianLegislativeSummary handlers + route registrations)
+Resume: `/gsd:execute-phase 57` (Phase 56 complete — begin next phase)

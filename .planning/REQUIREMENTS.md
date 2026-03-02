@@ -45,11 +45,11 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 ### Backend API
 
-- [ ] **API-01**: GET /politician/{id}/committees returns committee assignments with roles for any government level
-- [ ] **API-02**: GET /politician/{id}/leadership returns leadership positions with date ranges
-- [ ] **API-03**: GET /politician/{id}/bills returns sponsored and cosponsored legislation with status
-- [ ] **API-04**: GET /politician/{id}/votes returns voting record with bill info and position
-- [ ] **API-05**: GET /politician/{id}/legislative-summary returns bounded overview (top committees, recent votes, recent bills) for initial profile render
+- [x] **API-01**: GET /politician/{id}/committees returns committee assignments with roles for any government level
+- [x] **API-02**: GET /politician/{id}/leadership returns leadership positions with date ranges
+- [x] **API-03**: GET /politician/{id}/bills returns sponsored and cosponsored legislation with status
+- [x] **API-04**: GET /politician/{id}/votes returns voting record with bill info and position
+- [x] **API-05**: GET /politician/{id}/legislative-summary returns bounded overview (top committees, recent votes, recent bills) for initial profile render
 
 ### Frontend Profile Display
 
@@ -112,11 +112,11 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | FED-04 | Phase 56 | Pending |
 | FED-05 | Phase 56 | Pending |
 | FED-06 | Phase 56 | Pending |
-| API-01 | Phase 56 | Pending |
-| API-02 | Phase 56 | Pending |
-| API-03 | Phase 56 | Pending |
-| API-04 | Phase 56 | Pending |
-| API-05 | Phase 56 | Pending |
+| API-01 | Phase 56 | Complete |
+| API-02 | Phase 56 | Complete |
+| API-03 | Phase 56 | Complete |
+| API-04 | Phase 56 | Complete |
+| API-05 | Phase 56 | Complete |
 | STATE-01 | Phase 57 | Pending |
 | STATE-02 | Phase 57 | Pending |
 | STATE-03 | Phase 57 | Pending |
