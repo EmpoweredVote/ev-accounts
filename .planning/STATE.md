@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2026.3
 milestone_name: Legislative Profile Data
 status: unknown
-last_updated: "2026-03-01T22:20:00.000Z"
+last_updated: "2026-03-02T03:30:00.000Z"
 progress:
   total_phases: 4
   completed_phases: 4
   total_plans: 8
-  completed_plans: 10
+  completed_plans: 11
 ---
 
 # Project State
@@ -23,12 +23,12 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 55 — Federal Committees & Leadership
-Plan: 02/03 complete
-Status: Phase 55 in progress — plans 01 and 02 done
-Last activity: 2026-03-01 — Completed 55-02 (leadership import + LegiScan client)
+Plan: 03/03 complete
+Status: Phase 55 COMPLETE — all 3 plans done
+Last activity: 2026-03-02 — Completed 55-03 (committee and leadership API endpoints)
 
 ```
-Progress: [----------] 0/6 phases complete (2/16 plans complete)
+Progress: [----------] 0/6 phases complete (3/16 plans complete)
 ```
 
 ## Performance Metrics
@@ -59,6 +59,8 @@ Progress: [----------] 0/6 phases complete (2/16 plans complete)
 - **Membership upserts use clause.OnConflict** on (committee_id, politician_id, congress_number) with DoUpdates for role/is_current/session_id — direct create path is safe since bridge table lookup guarantees politician_id exists. (55-01)
 - **isCurrentLeadershipRole filter is critical:** YAML leadership_roles includes full history per member (e.g., Schumer as Minority Whip 2007-2009). Without end-date filter, ~40 rows imported instead of expected ~8. (55-02)
 - **LegiScan monthly counter uses atomic rename:** Write to temp file then os.Rename() — survives process crashes mid-write. Counter persists to $HOME/.ev-backend/legiscan_counter.json. (55-02)
+- **Committee API endpoint uses raw SQL JOIN (not GORM chain):** Three-table join (memberships → committees LEFT JOIN parent) is cleaner as raw SQL. Pattern matches GetPoliticianEndorsements. (55-03)
+- **Both Phase 55 endpoints are public (no auth):** Consistent with Phase B candidacy endpoints. Committee and leadership data is publicly available information. (55-03)
 
 ### Pending Todos
 
@@ -84,5 +86,5 @@ Progress: [----------] 0/6 phases complete (2/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Completed 55-02-PLAN.md — leadership role import (import_leadership.go + legiscan_client.go + main.go import-leadership subcommand)
-Resume: `/gsd:execute-phase 55` (Phase 55 in progress — plan 03 remaining)
+Stopped at: Completed 55-03-PLAN.md — committee and leadership API endpoints (GetPoliticianCommittees + GetPoliticianLeadership handlers + route registrations)
+Resume: `/gsd:execute-phase 56` (Phase 55 complete — begin next phase)

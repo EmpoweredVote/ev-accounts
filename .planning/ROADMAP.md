@@ -154,7 +154,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 **Milestone Goal:** Enrich politician profiles with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across all levels of government, focused on Monroe County IN and LA County CA.
 
 - [x] **Phase 54: Schema Foundation** — Data model, ID bridge table, and data inventory before any import runs (completed 2026-03-02)
-- [ ] **Phase 55: Federal Committees & Leadership** — Import committee assignments and leadership roles from congress-legislators YAML via CLI
+- [x] **Phase 55: Federal Committees & Leadership** — Import committee assignments and leadership roles from congress-legislators YAML via CLI (completed 2026-03-02)
 - [ ] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints
 - [ ] **Phase 57: State Data Pipeline** — Indiana and California bills, votes, and committee assignments via LegiScan Python scripts
 - [ ] **Phase 58: Local Data Pipeline** — Bloomington and LA County committee assignments and legislation (feasibility-gated; no vote attribution)
@@ -191,9 +191,9 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 55-01: congress-legislators YAML parser and import-committees CLI subcommand
-- [ ] 55-02: import-leadership CLI subcommand and LegiScan Go client
-- [ ] 55-03: Committee and leadership API endpoint handlers
+- [x] 55-01: congress-legislators YAML parser and import-committees CLI subcommand
+- [x] 55-02: import-leadership CLI subcommand and LegiScan Go client
+- [x] 55-03: Committee and leadership API endpoint handlers
 
 ### Phase 56: Federal Bills, Votes & API Endpoints
 **Goal**: Federal politicians' voting records and sponsored legislation are pre-imported via batch CLI and all 5 legislative API endpoints are live
