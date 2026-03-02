@@ -155,7 +155,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 
 - [x] **Phase 54: Schema Foundation** — Data model, ID bridge table, and data inventory before any import runs (completed 2026-03-02)
 - [x] **Phase 55: Federal Committees & Leadership** — Import committee assignments and leadership roles from congress-legislators YAML via CLI (completed 2026-03-02)
-- [ ] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints
+- [x] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints (completed 2026-03-02)
 - [ ] **Phase 57: State Data Pipeline** — Indiana and California bills, votes, and committee assignments via LegiScan Python scripts
 - [ ] **Phase 58: Local Data Pipeline** — Bloomington and LA County committee assignments and legislation (feasibility-gated; no vote attribution)
 - [ ] **Phase 59: Frontend Profile Sections** — Legislative activity display in politician profiles across all government levels
@@ -268,7 +268,7 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 54. Schema Foundation | 2/2 | Complete    | 2026-03-02 | - |
 | 55. Federal Committees & Leadership | 2/3 | Complete    | 2026-03-02 | - |
-| 56. Federal Bills, Votes & API Endpoints | 3/4 | In Progress|  | - |
+| 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete   | 2026-03-02 | - |
 | 57. State Data Pipeline | v2026.3 | 0/2 | Not started | - |
 | 58. Local Data Pipeline | v2026.3 | 0/3 | Not started | - |
 | 59. Frontend Profile Sections | v2026.3 | 0/2 | Not started | - |

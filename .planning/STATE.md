@@ -68,6 +68,8 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 - **fmt.Sprintf for conditional SQL filter injection:** GetPoliticianBills uses fmt.Sprintf to conditionally add the status_label filter — named @params conflicted with %s placeholder in same query. Positional ? args used throughout. (56-04)
 - **Post-upsert SELECT required for bill DB UUID:** GORM OnConflict Create does not reliably populate struct ID field for existing rows — follow-up SELECT by (external_id, jurisdiction) required after bill upsert for cosponsor linking. (56-02)
 - **Cosponsored bill upsert excludes sponsor_id from DoUpdates:** The bill may already exist with correct primary sponsor from another member's sponsored-legislation list — overwriting with nil would corrupt attribution. (56-02)
+- **getMasterList is a MAP not array:** LegiScan getMasterList returns `{"masterlist": {"0": {session_metadata}, "1": {bill}, ...}}` — parse as `map[string]json.RawMessage`, skip key "0". Never attempt to Unmarshal as a slice. (56-03)
+- **Senator bridge via getSessionPeople name matching:** Single match only — 0 or 2+ matches are skipped. Avoids corrupting vote attribution with incorrect person linkages. Bridge rows use id_type='legiscan'. (56-03)
 
 ### Pending Todos
 
@@ -93,5 +95,5 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-02
-Stopped at: Completed 56-02-PLAN.md — federal bills import CLI (ImportFederalBills with sponsored/cosponsored upsert logic and CRS summary backfill)
+Stopped at: Completed 56-03-PLAN.md — federal votes import CLI (ImportFederalVotes with House/Congress.gov and Senate/LegiScan workflows, senator bridge building)
 Resume: `/gsd:execute-phase 57` (Phase 56 complete — all 4 plans done)
