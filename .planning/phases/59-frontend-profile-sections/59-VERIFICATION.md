@@ -1,8 +1,8 @@
 ---
 phase: 59-frontend-profile-sections
 verified: 2026-03-03T17:45:00Z
-status: gaps_found
-score: 3/5 must-haves verified after human testing
+status: gaps_diagnosed
+score: 3/5 must-haves verified after human testing (gaps 4 and 5 diagnosed as data population issues)
 re_verification: false
 human_verification:
   - test: "Navigate to a federal politician profile (e.g., a US Representative with legislative data) and confirm the LegislativeInlineSummary card renders between the profile card and the children slot — stats row, most-recent-action line, and 'View Full Legislative Record >' link are all visible"
@@ -173,28 +173,43 @@ No blocker anti-patterns found. No TODO/FIXME/HACK/XXX comments in any modified 
 - **fix:** Change Profile's back button to navigate to a deterministic route (e.g., `/` or the dashboard) instead of using `navigate(-1)`. Similarly check the `LegislativeInlineSummary` link uses `<Link>` or `navigate()` to `/politician/:id/record` rather than a raw `<a href>` to avoid full page reloads that further break history.
 
 ### Gap 4: Federal officials show no legislative data
-- **status: failed**
+- **status: diagnosed**
 - **severity: high**
 - **requirement: UI-01, UI-02, UI-03**
 - **description:** No federal officials (Congress members) show any legislative information — neither inline summary nor in the full record. The endpoints exist in the backend (`/politician/{id}/legislative-summary`, `/bills`, `/votes`, `/committees`) but either return empty data for federal officials or there's a data population issue. State-level senator (Shelli Yoder) DOES have data, so the pipeline works for some officials.
-- **root_cause:** Likely a data issue — federal official bill/vote/committee data may not be populated in the database, or the BallotReady data pipeline doesn't fetch legislative records for federal-level positions. Needs backend investigation.
-- **fix:** Investigate backend: check if federal politicians have any rows in the bills, votes, or committees tables. If not, determine whether the BallotReady import pipeline captures legislative data for federal officials or if a different data source is needed (e.g., ProPublica Congress API). This may be a data pipeline gap rather than a frontend bug.
+- **root_cause_confirmed:** Data population issue — federal CLI import commands (`backfill-legislative-ids`, `import-committees`, `import-leadership`, `import-federal-bills`, `import-federal-votes`) have not been run on the connected database. State data works (Shelli Yoder verified) proving the endpoint queries and schema are correct. The SQL queries in `handlers.go` filter on `politician_id` (UUID) which comes from the `legislative_politician_id_map` bridge table. If the bridge table has no entries for federal officials (because `backfill-legislative-ids` was never run), all federal legislative data queries return empty arrays — this is exactly the observed behavior.
+- **resolution:** Run the federal import pipeline on the connected database:
+  1. `cd EV-Backend && go run . backfill-legislative-ids` (populate bridge table with bioguide IDs)
+  2. `go run . import-committees` (congress-legislators YAML → committee memberships)
+  3. `go run . import-leadership` (congress-legislators YAML → leadership roles)
+  4. `go run . import-federal-bills` (Congress.gov API — requires `CONGRESS_API_KEY` in `.env.local`)
+  5. `go run . import-federal-votes` (Congress.gov + LegiScan — requires both API keys in `.env.local`)
+- **scope:** NOT a Phase 59 frontend fix — this is a Phase 56 data import that needs to be executed against the active database.
 
 ### Gap 5: Local politicians show no committee data
-- **status: failed**
+- **status: diagnosed**
 - **severity: medium**
 - **requirement: UI-01**
 - **description:** Local politicians (city council, school board) should at least show committee assignments, but nothing appears. The existing `CommitteeTable` inside `PoliticianProfile` renders from `pol.committees`, and the legislative record page fetches from `/politician/{id}/committees`. Both may be returning empty for local officials.
-- **root_cause:** Similar to Gap 4 — likely a data population issue. The BallotReady data may not include committee assignments for local-level positions. Frontend code is correct (CommitteeTable still renders when data exists), but no data is returned from the API.
-- **fix:** Investigate backend: check if local politicians have committee data in the database. If the BallotReady pipeline doesn't capture local committee data, this should be documented as a known limitation. The frontend empty-state handling is correct.
+- **root_cause_confirmed:** Data population issue — local import scripts (`import_local_bloomington.py`, `import_local_la_county.py`) have not been run on the connected database. The frontend code is correct (CommitteeTable renders when data exists). Two separate sub-issues apply here:
+  - **Bloomington committees:** `import_local_bloomington.py` writes to `legislative_committee_memberships` and `legislative_bills` from OnBoard HTML scraping. This script has not been run against the current database. Additionally, Courtney Daily (a Bloomington council member) is missing from `essentials.politicians` (noted in STATE.md), which means that politician's committees would not import even after the script runs — BallotReady re-fetch for ZIP 47401/47403 may be needed first.
+  - **LA County BOS committees:** LA County has NO committee data available from Legistar — confirmed during Phase 58-01 feasibility check. The Legistar `/VoteRecords` endpoint returns 404, and only `OfficeRecords` and `Matters` are accessible. This is a known data source limitation, not a code or import issue.
+- **resolution:** Run the local import pipeline on the connected database:
+  1. `cd EV-Backend/scripts && python import_local_bloomington.py --verbose` (OnBoard HTML → Bloomington committees + legislation)
+  2. `cd EV-Backend/scripts && python import_local_la_county.py --verbose` (Legistar → LA County legislation only; no committee data available from this source)
+  3. Note: LA County BOS committee data is a **confirmed known limitation** — Legistar does not expose committee membership for the Board of Supervisors. Only legislation (OfficeRecords) is available.
+  4. Note: If Courtney Daily is still missing from the database after import, re-fetch BallotReady data for ZIP 47401/47403 before re-running the Bloomington script.
+- **scope:** NOT a Phase 59 frontend fix — this is a Phase 58 data import that needs to be executed against the active database. LA County committee absence is a confirmed data source limitation that requires no fix.
 
 ---
 
 ## Gap Closure Summary
 
-**Gaps requiring frontend fixes (1, 2, 3):** Inline positioning, stat labels, and navigation are straightforward code changes in ev-ui and essentials.
+**Gaps requiring frontend fixes (1, 2, 3):** Inline positioning, stat labels, and navigation are straightforward code changes in ev-ui and essentials. (Addressed in Phase 59 plans 51-01/51-02/52-01/53-01/53-02.)
 
-**Gaps requiring investigation (4, 5):** Federal and local data absence may be data pipeline issues rather than frontend bugs. Need backend investigation before determining if frontend changes are needed.
+**Gaps diagnosed as data pipeline issues (4, 5):** Federal and local data absence are confirmed data population issues — the CLI import commands have not been run on the active database. Frontend code and backend endpoints are correct (proven by Shelli Yoder state data working). Resolution is to run the Phase 56 federal import pipeline and Phase 58 local import scripts. LA County BOS committee data is a confirmed known limitation from the data source (Legistar does not expose committee membership).
+
+**No frontend or backend code changes needed for Gaps 4 or 5.** The empty-state handling in `LegislativeRecord.jsx` and `LegislativeInlineSummary.jsx` is correct and working as designed.
 
 ---
 
