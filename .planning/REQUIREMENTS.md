@@ -53,10 +53,10 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 ### Frontend Profile Display
 
-- [ ] **UI-01**: Committees & Leadership section on politician profile showing current committee assignments with roles and any leadership positions
-- [ ] **UI-02**: Voting Record section showing recent votes with bill title/summary, politician's position (yea/nay/etc), and overall outcome
-- [ ] **UI-03**: Sponsored Legislation section showing bills with number, title, status, and introduction date
-- [ ] **UI-04**: All legislative sections gracefully show empty states when data unavailable for a given government level
+- [x] **UI-01**: Committees & Leadership section on politician profile showing current committee assignments with roles and any leadership positions
+- [x] **UI-02**: Voting Record section showing recent votes with bill title/summary, politician's position (yea/nay/etc), and overall outcome
+- [x] **UI-03**: Sponsored Legislation section showing bills with number, title, status, and introduction date
+- [x] **UI-04**: All legislative sections gracefully show empty states when data unavailable for a given government level
 - [ ] **UI-05**: Session filter lets users toggle between current and previous session data
 
 ## Future Requirements
@@ -125,10 +125,10 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | LOCAL-03 | Phase 58 | Complete |
 | LOCAL-04 | Phase 58 | Complete |
 | LOCAL-05 | Phase 58 | Complete |
-| UI-01 | Phase 59 | Pending |
-| UI-02 | Phase 59 | Pending |
-| UI-03 | Phase 59 | Pending |
-| UI-04 | Phase 59 | Pending |
+| UI-01 | Phase 59 | Complete |
+| UI-02 | Phase 59 | Complete |
+| UI-03 | Phase 59 | Complete |
+| UI-04 | Phase 59 | Complete |
 | UI-05 | Phase 59 | Pending |
 
 **Coverage:**

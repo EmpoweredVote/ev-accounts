@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2026.3
 milestone_name: Legislative Profile Data
 status: unknown
-last_updated: "2026-03-03T02:16:41.249Z"
+last_updated: "2026-03-03T11:16:00.000Z"
 progress:
   total_phases: 8
   completed_phases: 7
   total_plans: 20
-  completed_plans: 19
+  completed_plans: 20
 ---
 
 # Project State
@@ -22,10 +22,10 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 
 ## Current Position
 
-Phase: 58 — Local Data Pipeline
-Plan: 01/03 complete
-Status: READY — 58-01 feasibility check done and approved; 58-02 and 58-03 authorized to proceed
-Last activity: 2026-03-03 — Completed 58-01 (feasibility script run, FEASIBILITY_LOCAL_DATA.md generated and user-approved)
+Phase: 59 — Frontend Profile Sections
+Plan: 01/02 complete
+Status: READY — 59-01 ev-ui components built and published; 59-02 essentials integration ready to execute
+Last activity: 2026-03-03 — Completed 59-01 (LegislativeInlineSummary + LegislativeRecord built, ev-ui@0.1.37 published)
 
 ```
 Progress: [----------] 0/6 phases complete (6/16 plans complete)
@@ -53,6 +53,9 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **Local scope = committees and legislation only.** No individual vote attribution for Bloomington or LA County BOS — confirmed infeasible from structured sources.
 - **All legislative data stays in `internal/essentials/` package** with `legislative_` prefix tables in the `essentials` schema. No new Go package or schema.
 - **Frontend implementation details TBD during phase planning.** User wants to discuss UI design more during plan-phase; requirements are set but component structure is open.
+- **LegislativeInlineSummary returns null for empty data:** Local politicians with no legislative data see the unchanged profile — guard is on both recent_bills and recent_votes being empty. (59-01)
+- **Year extraction uses slice(0,4) not new Date():** Avoids timezone bug where "2024" parsed as UTC midnight Jan 1 shows "Dec 2023" in US timezones. Pattern applies to all date-derived year dropdowns in ev-ui. (59-01)
+- **LegislativeRecord is a headless content component:** No routing, no Header, no data fetching — page wrapper in essentials handles those concerns. Keeps ev-ui components portable. (59-01)
 - **Tiered matching for bioguide backfill:** Tier 1 exact ID, Tier 2 name+state (single match only), skip ambiguous — no medium-confidence bridge inserts to prevent bad data. (54-02)
 - **data-model.md confirmed no schema changes needed:** All 5 jurisdictions (Federal, Indiana, California, Bloomington IN, LA County CA) fit existing 8-table schema; empty tables are acceptable. (54-02)
 - **Committee upserts use FirstOrCreate+Assign pattern** (not clause.OnConflict+Returning) to correctly handle GORM UUID PK generation — Returning clause doesn't populate struct fields when using OnConflict. (55-01)
@@ -104,5 +107,5 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Phase 59 context gathered
-Resume: /gsd:plan-phase 59
+Stopped at: Completed 59-01-PLAN.md — ev-ui@0.1.37 published with LegislativeInlineSummary and LegislativeRecord
+Resume: /gsd:execute-phase 59
