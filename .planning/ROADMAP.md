@@ -259,8 +259,10 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 59-01: LegislativeActivity component in ev-ui with conditional rendering and empty states
-- [ ] 59-02: Profile.jsx parallel fetch integration and session filter UI
+- [x] 59-01: LegislativeActivity component in ev-ui with conditional rendering and empty states
+- [x] 59-02: Profile.jsx parallel fetch integration and session filter UI
+- [ ] 59-03: Gap closure — fix inline summary positioning, stat labels, and back-button navigation
+- [ ] 59-04: Gap closure — diagnose federal and local data absence (data pipeline issue)
 
 ## Progress
 
@@ -271,4 +273,4 @@ Plans:
 | 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete    | 2026-03-02 | - |
 | 57. State Data Pipeline | 1/2 | In Progress|  | - |
 | 58. Local Data Pipeline | 3/3 | Complete    | 2026-03-03 | - |
-| 59. Frontend Profile Sections | 2/2 | Complete   | 2026-03-03 | - |
+| 59. Frontend Profile Sections | 2/4 | In Progress | | - |
