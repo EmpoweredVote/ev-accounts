@@ -37,7 +37,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 
 ### Local Data Pipeline
 
-- [ ] **LOCAL-01**: Feasibility check completed for Bloomington Common Council and LA County Board of Supervisors data availability before building scrapers
+- [x] **LOCAL-01**: Feasibility check completed for Bloomington Common Council and LA County Board of Supervisors data availability before building scrapers
 - [ ] **LOCAL-02**: Bloomington Common Council committee assignments imported (from city website or manual entry)
 - [ ] **LOCAL-03**: LA County Board of Supervisors committee assignments imported (from county website or Legistar)
 - [ ] **LOCAL-04**: Bloomington legislation metadata imported from city clerk database where available
@@ -120,7 +120,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | STATE-01 | Phase 57 | Complete |
 | STATE-02 | Phase 57 | Pending |
 | STATE-03 | Phase 57 | Complete |
-| LOCAL-01 | Phase 58 | Pending |
+| LOCAL-01 | Phase 58 | Complete |
 | LOCAL-02 | Phase 58 | Pending |
 | LOCAL-03 | Phase 58 | Pending |
 | LOCAL-04 | Phase 58 | Pending |

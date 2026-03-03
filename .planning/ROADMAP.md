@@ -270,5 +270,5 @@ Plans:
 | 55. Federal Committees & Leadership | 2/3 | Complete    | 2026-03-02 | - |
 | 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete    | 2026-03-02 | - |
 | 57. State Data Pipeline | 1/2 | In Progress|  | - |
-| 58. Local Data Pipeline | v2026.3 | 0/3 | Not started | - |
+| 58. Local Data Pipeline | 1/3 | In Progress|  | - |
 | 59. Frontend Profile Sections | v2026.3 | 0/2 | Not started | - |
