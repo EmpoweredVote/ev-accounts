@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 59 — Frontend Profile Sections
-Plan: 02/02 complete
-Status: COMPLETE — phase 59 fully done; essentials app wired to ev-ui legislative components
-Last activity: 2026-03-03 — Completed 59-02 (LegislativeRecordPage created, Profile.jsx wired, routes registered)
+Plan: 04/04 complete
+Status: COMPLETE — phase 59 fully done; all 4 plans executed (01 ev-ui components, 02 essentials wiring, 03 gap closure plans created, 04 gaps 4+5 diagnosed as data pipeline issues)
+Last activity: 2026-03-03 — Completed 59-04 (federal and local data gaps diagnosed as import CLI commands not run; no code changes needed)
 
 ```
 Progress: [----------] 0/6 phases complete (6/16 plans complete)
@@ -84,6 +84,7 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **Legislative fetch functions silently return empty defaults on error:** Profile page always renders even if legislative API is unavailable — guard pattern established in api.jsx. (59-02)
 - **bills and votes fetched with limit=200:** Supports year filter and show-all without extra API calls — ev-ui component caps display internally at 25 items. (59-02)
 - **Flat sibling route /politician/:id/record:** Profile.jsx has no Outlet; LegislativeRecordPage is a standalone page shell with its own Header and data fetching. (59-02)
+- **Gap 4 and Gap 5 confirmed as data pipeline issues, not code bugs:** Federal officials return empty legislative data because `backfill-legislative-ids` + import CLIs have not been run on the active database. Local politicians return no committee data because local import scripts have not been run. Shelli Yoder state data working confirms schema, endpoints, and queries are all correct. LA County BOS committee absence is a permanent Legistar limitation (endpoint does not exist). No Phase 59 code changes needed. (59-04)
 
 ### Pending Todos
 
@@ -110,5 +111,5 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 59-02-PLAN.md — essentials app wired to ev-ui legislative components; phase 59 complete
-Resume: /gsd:execute-phase [next phase]
+Stopped at: Completed 59-04-PLAN.md — gaps 4 and 5 diagnosed as data population issues; phase 59 fully complete
+Resume: /gsd:execute-phase [next phase] — gap closure plans (51/52/53) created in prior step; run these next or run federal import pipeline
