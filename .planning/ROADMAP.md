@@ -158,7 +158,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 - [x] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints (completed 2026-03-02)
 - [ ] **Phase 57: State Data Pipeline** — Indiana and California bills, votes, and committee assignments via LegiScan Python scripts
 - [x] **Phase 58: Local Data Pipeline** — Bloomington and LA County committee assignments and legislation (feasibility-gated; no vote attribution) (completed 2026-03-03)
-- [ ] **Phase 59: Frontend Profile Sections** — Legislative activity display in politician profiles across all government levels
+- [x] **Phase 59: Frontend Profile Sections** — Legislative activity display in politician profiles across all government levels (completed 2026-03-03)
 
 ## Phase Details
 
@@ -271,4 +271,4 @@ Plans:
 | 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete    | 2026-03-02 | - |
 | 57. State Data Pipeline | 1/2 | In Progress|  | - |
 | 58. Local Data Pipeline | 3/3 | Complete    | 2026-03-03 | - |
-| 59. Frontend Profile Sections | 1/2 | In Progress|  | - |
+| 59. Frontend Profile Sections | 2/2 | Complete   | 2026-03-03 | - |

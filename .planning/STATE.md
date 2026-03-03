@@ -23,9 +23,9 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 59 — Frontend Profile Sections
-Plan: 01/02 complete
-Status: READY — 59-01 ev-ui components built and published; 59-02 essentials integration ready to execute
-Last activity: 2026-03-03 — Completed 59-01 (LegislativeInlineSummary + LegislativeRecord built, ev-ui@0.1.37 published)
+Plan: 02/02 complete
+Status: COMPLETE — phase 59 fully done; essentials app wired to ev-ui legislative components
+Last activity: 2026-03-03 — Completed 59-02 (LegislativeRecordPage created, Profile.jsx wired, routes registered)
 
 ```
 Progress: [----------] 0/6 phases complete (6/16 plans complete)
@@ -81,6 +81,9 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **Bloomington sponsor extraction best-effort (~50% coverage):** Regex confirmed working on live pages (3/3 sampled). Import where sponsor text found; skip+log where absent. (58-01)
 - **Barger and Mitchell return AMBIG name matches:** ILIKE returns multiple DB rows for these supervisors. Plan 58-03 must use Legistar PersonId as primary bridge key — do not rely on name matching alone. (58-01)
 - **Courtney Daily missing from DB:** No record in essentials.politicians for this Bloomington council member. Investigate BallotReady cache freshness for ZIP 47401/47403 before 58-02 import. (58-01)
+- **Legislative fetch functions silently return empty defaults on error:** Profile page always renders even if legislative API is unavailable — guard pattern established in api.jsx. (59-02)
+- **bills and votes fetched with limit=200:** Supports year filter and show-all without extra API calls — ev-ui component caps display internally at 25 items. (59-02)
+- **Flat sibling route /politician/:id/record:** Profile.jsx has no Outlet; LegislativeRecordPage is a standalone page shell with its own Header and data fetching. (59-02)
 
 ### Pending Todos
 
@@ -107,5 +110,5 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-03
-Stopped at: Completed 59-01-PLAN.md — ev-ui@0.1.37 published with LegislativeInlineSummary and LegislativeRecord
-Resume: /gsd:execute-phase 59
+Stopped at: Completed 59-02-PLAN.md — essentials app wired to ev-ui legislative components; phase 59 complete
+Resume: /gsd:execute-phase [next phase]

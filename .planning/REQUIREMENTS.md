@@ -57,7 +57,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 - [x] **UI-02**: Voting Record section showing recent votes with bill title/summary, politician's position (yea/nay/etc), and overall outcome
 - [x] **UI-03**: Sponsored Legislation section showing bills with number, title, status, and introduction date
 - [x] **UI-04**: All legislative sections gracefully show empty states when data unavailable for a given government level
-- [ ] **UI-05**: Session filter lets users toggle between current and previous session data
+- [x] **UI-05**: Session filter lets users toggle between current and previous session data
 
 ## Future Requirements
 
@@ -129,7 +129,7 @@ Requirements for Legislative Profile Data milestone. Each maps to roadmap phases
 | UI-02 | Phase 59 | Complete |
 | UI-03 | Phase 59 | Complete |
 | UI-04 | Phase 59 | Complete |
-| UI-05 | Phase 59 | Pending |
+| UI-05 | Phase 59 | Complete |
 
 **Coverage:**
 - v2026.3 requirements: 34 total
