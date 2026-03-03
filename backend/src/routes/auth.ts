@@ -77,6 +77,15 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       return;
     }
 
+    // Supabase email send rate limit (free tier: ~3 confirmation emails/hour)
+    if (error.code === 'over_email_send_rate_limit') {
+      res.status(429).json({
+        code: 'RATE_LIMIT_EXCEEDED',
+        message: 'Too many requests, please try again later',
+      });
+      return;
+    }
+
     console.error('[auth/signup] Supabase error:', error.code, error.message);
     res.status(500).json({
       code: 'INTERNAL_ERROR',
