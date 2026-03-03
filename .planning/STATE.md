@@ -18,17 +18,17 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 57 — State Data Pipeline (57-01 Task 1 complete; paused at Task 2 human-action checkpoint)
+**Current focus:** Phase 58 — Local Data Pipeline (58-01 feasibility check complete; ready for 58-02 Bloomington import and 58-03 LA County import)
 
 ## Current Position
 
-Phase: 57 — State Data Pipeline
-Plan: 01/02 (Task 1 complete, paused at Task 2 checkpoint)
-Status: PAUSED — awaiting human-action: run Indiana import with credentials
-Last activity: 2026-03-02 — Completed 57-01 Task 1 (state legislative import script); paused at Task 2 (install deps + run Indiana import)
+Phase: 58 — Local Data Pipeline
+Plan: 01/03 complete
+Status: READY — 58-01 feasibility check done and approved; 58-02 and 58-03 authorized to proceed
+Last activity: 2026-03-03 — Completed 58-01 (feasibility script run, FEASIBILITY_LOCAL_DATA.md generated and user-approved)
 
 ```
-Progress: [----------] 0/6 phases complete (5/16 plans complete)
+Progress: [----------] 0/6 phases complete (6/16 plans complete)
 ```
 
 ## Performance Metrics
@@ -73,6 +73,11 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 - **State import uses inline vote fetch per bill:** import_votes_for_bill called inside import_bills loop — avoids double getBill calls. Each bill's vote stubs drive getRollCall for member-level votes. (57-01)
 - **State jurisdiction = lowercase full name:** "indiana" not "IN", "california" not "CA" — matches federal pattern in schema. (57-01)
 - **Committee memberships re-fetch getSessionPeople after bill pass:** committee_db_map only populated during bill import; membership upsert needs this map, so getSessionPeople is called once more per session. (57-01)
+- **Local scope confirmed = committees and legislation only:** Live probes confirm vote attribution infeasible — Legistar /VoteRecords returns 404, OnBoard has no vote data at all. (58-01)
+- **LA County plan 58-03 scoped to OfficeRecords only:** MatterRequester NULL for 98% of recent BOS matters; MoverName only populated pre-2010. No recent legislation attribution possible. (58-01)
+- **Bloomington sponsor extraction best-effort (~50% coverage):** Regex confirmed working on live pages (3/3 sampled). Import where sponsor text found; skip+log where absent. (58-01)
+- **Barger and Mitchell return AMBIG name matches:** ILIKE returns multiple DB rows for these supervisors. Plan 58-03 must use Legistar PersonId as primary bridge key — do not rely on name matching alone. (58-01)
+- **Courtney Daily missing from DB:** No record in essentials.politicians for this Bloomington council member. Investigate BallotReady cache freshness for ZIP 47401/47403 before 58-02 import. (58-01)
 
 ### Pending Todos
 
@@ -91,12 +96,13 @@ Progress: [----------] 0/6 phases complete (5/16 plans complete)
 ### Blockers/Concerns
 
 - **Congress.gov API reliability:** Confirmed outage January 2026. Import CLI must log failures and never block profile rendering. Validate token bucket implementation with real API calls before scheduling full session import.
-- **Bloomington OnBoard REST API:** Endpoints not confirmed. Requires direct validation against `data.bloomington.in.gov` before Phase 58 scraper design. Fallback: HTML scraping (but individual vote data unavailable regardless).
-- **LA County Legistar token requirement:** Manually test `webapi.legistar.com/v1/LACounty/VoteRecords` with curl before Phase 58. Token gating may limit to matter-level data only.
+- **Bloomington OnBoard REST API:** CONFIRMED — HTML scraping works. Committee pages accessible (IDs 1, 77, 81, 49), legislation listing accessible, sponsor regex extraction working. No REST API exists but HTML scraping is sufficient.
+- **LA County Legistar token requirement:** CONFIRMED RESOLVED — /VoteRecords returns 404 (no token gating issue, endpoint simply doesn't exist). OfficeRecords and Matters endpoints are open.
 - **Significance filter calibration:** After first federal bill import, check what percentage are "introduced" status only. Calibrate default filter cutoff from actual data distribution before building the UI filter.
+- **Courtney Daily missing from DB:** Bloomington council member not found in essentials.politicians. May require BallotReady re-fetch for ZIP 47401/47403. Document as known gap for 58-02.
 
 ## Session Continuity
 
-Last session: 2026-03-02
-Stopped at: Phase 58 context gathered
-Resume: /gsd:plan-phase 58 (feasibility-gated — plan 58-01 produces feasibility doc, user reviews before import plans)
+Last session: 2026-03-03
+Stopped at: Completed 58-01-PLAN.md (feasibility check approved, FEASIBILITY_LOCAL_DATA.md generated)
+Resume: /gsd:execute-phase 58 plan 02 (Bloomington import) or plan 03 (LA County import)
