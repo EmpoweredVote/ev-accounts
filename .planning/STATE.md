@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2026.3
 milestone_name: Legislative Profile Data
 status: unknown
-last_updated: "2026-03-02T15:50:32.242Z"
+last_updated: "2026-03-03T02:16:41.249Z"
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 15
-  completed_plans: 15
+  total_phases: 8
+  completed_phases: 7
+  total_plans: 20
+  completed_plans: 19
 ---
 
 # Project State
