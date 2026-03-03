@@ -84,6 +84,8 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **Legislative fetch functions silently return empty defaults on error:** Profile page always renders even if legislative API is unavailable — guard pattern established in api.jsx. (59-02)
 - **bills and votes fetched with limit=200:** Supports year filter and show-all without extra API calls — ev-ui component caps display internally at 25 items. (59-02)
 - **Flat sibling route /politician/:id/record:** Profile.jsx has no Outlet; LegislativeRecordPage is a standalone page shell with its own Header and data fetching. (59-02)
+- **onNavigateToRecord callback keeps ev-ui portable:** No react-router import in component library — SPA-specific navigation passed as callback prop; falls back to window.location.href for non-SPA contexts. (59-03)
+- **navigate('/') for Profile back button:** Deterministic dashboard route prevents Profile<->Record navigation loop; navigate(-1) was unsafe given bi-directional navigation between these pages. (59-03)
 - **Gap 4 and Gap 5 confirmed as data pipeline issues, not code bugs:** Federal officials return empty legislative data because `backfill-legislative-ids` + import CLIs have not been run on the active database. Local politicians return no committee data because local import scripts have not been run. Shelli Yoder state data working confirms schema, endpoints, and queries are all correct. LA County BOS committee absence is a permanent Legistar limitation (endpoint does not exist). No Phase 59 code changes needed. (59-04)
 
 ### Pending Todos
