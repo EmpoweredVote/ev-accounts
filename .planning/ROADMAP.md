@@ -239,12 +239,12 @@ Plans:
   3. LA County BOS committee assignments are imported from the county website or Legistar and linked to existing BOS politicians
   4. LA County BOS legislation/matter metadata is imported from Legistar where available (title, status, date introduced)
   5. Bloomington legislation metadata is imported from city clerk database where available; where not available, the reason is documented
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 58-01: Feasibility check and data inventory for both local bodies
-- [ ] 58-02: Bloomington committee assignments import
-- [ ] 58-03: LA County BOS committee assignments and Legistar legislation import
+- [ ] 58-01: Feasibility check script probing Legistar API + OnBoard HTML, politician name matching, feasibility report
+- [ ] 58-02: Bloomington Common Council committee assignments and legislation import via OnBoard HTML scraping
+- [ ] 58-03: LA County BOS committee assignments and legislation import via Legistar OData API
 
 ### Phase 59: Frontend Profile Sections
 **Goal**: Politician profiles display legislative activity — committees, leadership, voting records, and sponsored legislation — with graceful empty states when data is unavailable
