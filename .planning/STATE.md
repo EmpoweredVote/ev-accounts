@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone start)
 ## Current Position
 
 Phase: 9 of 11 (XP Schema & Core)
-Plan: 0 of 2 in current phase
-Status: Ready to plan
-Last activity: 2026-03-04 — v1.1 roadmap created (Phases 9–11)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-03-04 — Completed 09-01-PLAN.md (XP schema migration)
 
-Progress: ░░░░░░░░░░ 0% (v1.1 in progress — 0/5 plans complete)
+Progress: ██░░░░░░░░ 20% (v1.1 in progress — 1/5 plans complete)
 
 ## Performance Metrics
 
@@ -36,6 +36,11 @@ Full key decisions log in PROJECT.md. Recent decisions affecting v1.1:
 - `xp_in_level` and `xp_to_next_level` computed on read, not stored
 - Level thresholds: 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k per level thereafter
 
+From 09-01 execution:
+- Legacy `xp` column on `connected_profiles` left untouched — Phase 10 handles migration/removal
+- `total_xp` is BIGINT (not INT) to prevent overflow for power users
+- `anon` GRANT SELECT on `xp_transactions` with no RLS policy = empty set, not permission denied
+
 ### Pending Todos
 
 - Run `supabase gen types` after Phase 9 migrations land
@@ -47,6 +52,6 @@ None blocking Phase 9.
 
 ## Session Continuity
 
-Last session: 2026-03-04T00:00:00Z
-Stopped at: v1.1 roadmap created — ready to plan Phase 9
-Resume: `/gsd:plan-phase 9`
+Last session: 2026-03-04T22:53:00Z
+Stopped at: Completed 09-01-PLAN.md — XP schema migration created and committed
+Resume: `/gsd:execute-phase 09-02` (award_xp SECURITY DEFINER RPC)
