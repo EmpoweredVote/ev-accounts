@@ -88,6 +88,8 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **navigate('/') for Profile back button:** Deterministic dashboard route prevents Profile<->Record navigation loop; navigate(-1) was unsafe given bi-directional navigation between these pages. (59-03)
 - **Gap 4 and Gap 5 confirmed as data pipeline issues, not code bugs:** Federal officials return empty legislative data because `backfill-legislative-ids` + import CLIs have not been run on the active database. Local politicians return no committee data because local import scripts have not been run. Shelli Yoder state data working confirms schema, endpoints, and queries are all correct. LA County BOS committee absence is a permanent Legistar limitation (endpoint does not exist). No Phase 59 code changes needed. (59-04)
 - **LegiScan getSessionPeople does not provide per-legislator committee membership:** Returns committee_id=0 for all legislators; the ~34 CA entries with non-zero committee_id are committee metadata stubs (empty names), not legislator-committee links. State legislative_committee_memberships table is empty for IN and CA. /committees endpoint returns [] for state legislators. Committees table (from bill referrals) is populated correctly: 41 IN, 60 CA. (57-02)
+- **Open States committee matching uses two-pass strategy:** Name lookup first against existing 41 IN / 60 CA committees (from LegiScan bill referrals), then creates new rows with source='openstates' where unmatched — avoids duplicating existing data. Open States jurisdiction param uses state names ("Indiana", "California") not abbreviations. (57-03)
+- **Single-match-only guard for Open States politician name resolution:** 0 or 2+ name matches → log at DEBUG → skip. ILIKE first_name prefix handles middle initials. Bridge rows created with id_type='openstates' for OCD person IDs to speed future re-runs. congress_number=0 for all state legislators. (57-03)
 
 ### Pending Todos
 
@@ -114,5 +116,5 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 ## Session Continuity
 
 Last session: 2026-03-04
-Stopped at: Completed 57-02-PLAN.md — California and Indiana validated; committee gap (LegiScan limitation) documented; both states fully queryable via API
-Resume: /gsd:execute-phase [next phase] — gap closure plans (51/52/53) or federal import pipeline next
+Stopped at: 57-03-PLAN.md Task 2 checkpoint:human-action — import_state_committees.py created (Task 1 done, 0abc68f); awaiting OPENSTATES_API_KEY setup and manual import run for IN + CA
+Resume: After adding OPENSTATES_API_KEY to EV-Backend/.env.local and running `python import_state_committees.py --state IN --verbose` then `--state CA`, type "approved" to continue to SUMMARY finalization

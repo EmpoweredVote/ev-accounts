@@ -271,6 +271,6 @@ Plans:
 | 54. Schema Foundation | 2/2 | Complete    | 2026-03-02 | - |
 | 55. Federal Committees & Leadership | 2/3 | Complete    | 2026-03-02 | - |
 | 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete    | 2026-03-02 | - |
-| 57. State Data Pipeline | 2/2 | Complete   | 2026-03-04 | - |
+| 57. State Data Pipeline | 3/3 | Complete   | 2026-03-04 | - |
 | 58. Local Data Pipeline | 3/3 | Complete    | 2026-03-03 | - |
 | 59. Frontend Profile Sections | 4/4 | Complete    | 2026-03-03 | - |
