@@ -37,11 +37,11 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   2. Calling `award_xp` twice with the same idempotency key inserts exactly one ledger row — the second call is a silent no-op, not an error.
   3. A Connected user querying `xp_transactions` via Supabase RLS sees only their own rows; an unauthenticated query returns zero rows.
   4. Level progression follows the defined thresholds (2k × 3, 3k × 6, 4k × 20, 5k thereafter), and `xp_in_level` plus `xp_to_next_level` are computable from any `total_xp` value.
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 09-01: XP schema migration — `xp_transactions` table, `connected_profiles` columns, RLS policies
-- [ ] 09-02: `award_xp` RPC and level calculation SQL function
+- [ ] 09-01-PLAN.md — XP schema migration (xp_transactions table, connected_profiles columns, view update, RLS, grants)
+- [ ] 09-02-PLAN.md — calculate_level + award_xp RPC functions and SQL test file
 
 #### Phase 10: XP API
 
