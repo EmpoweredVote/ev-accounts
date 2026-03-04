@@ -1,7 +1,18 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { supabaseAdmin, adminRpc } from '../lib/supabase.js';
+import { adminRpc } from '../lib/supabase.js';
 import { claimInviteCode } from '../lib/inviteService.js';
+import {
+  hasConnectedProfile,
+  getConnectedProfileVerificationStatus,
+  getVerificationSession,
+  getVerificationSessionStep,
+  getVerificationSessionId,
+  upsertVerificationSession,
+  updateVerificationSession,
+  validateCompassVersions,
+  saveCompassImportDraft,
+} from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import type { Request, Response } from 'express';
 
@@ -10,9 +21,8 @@ import type { Request, Response } from 'express';
  *
  * Step state machine: invite -> profile -> review -> complete
  *
- * All DB writes use supabaseAdmin (HTTP/REST via PostgREST + RPC).
- * Transactional operations (complete flow) are delegated to SECURITY DEFINER
- * RPC functions.
+ * DB operations are delegated to connectService (createUserClient, RLS-enforced).
+ * Transactional operations (complete flow) are delegated to SECURITY DEFINER RPC.
  *
  * POST /start          — Claim invite code, create or resume verification_session
  * PATCH /step          — Update draft profile fields, advance step when complete
@@ -101,8 +111,6 @@ function sendClaimError(
  * ON CONFLICT (user_id) DO UPDATE resets the session cleanly.
  */
 router.post('/start', requireAuth, async (req: Request, res: Response): Promise<void> => {
-  const { userId } = req as AuthenticatedRequest;
-
   const parsed = startBodySchema.safeParse(req.body);
   if (!parsed.success) {
     const firstIssue = parsed.error.issues[0];
@@ -113,36 +121,17 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
     return;
   }
 
+  const { userId, accessToken } = req as AuthenticatedRequest;
+
   try {
     // 1. Check if user is already Connected
-    const { data: connectedProfile, error: cpError } = await supabaseAdmin
-      .schema('connect')
-      .from('connected_profiles')
-      .select('id')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (cpError) throw cpError;
-
-    if (connectedProfile) {
-      res.status(409).json({
-        code: 'ALREADY_CONNECTED',
-        message: 'You already have a Connected profile',
-      });
+    if (await hasConnectedProfile(accessToken, userId)) {
+      res.status(409).json({ code: 'ALREADY_CONNECTED', message: 'You already have a Connected profile' });
       return;
     }
 
-    // 2. Check for an existing session
-    const { data: existingSession, error: sessionError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft,invite_code_id')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (sessionError) throw sessionError;
-
-    // If session exists and has progressed beyond 'invite', resume
+    // 2. Check for an existing session — resume if beyond 'invite' step
+    const existingSession = await getVerificationSession(accessToken, userId);
     if (existingSession && existingSession.step_reached !== 'invite') {
       res.status(200).json({
         session_id: existingSession.id,
@@ -174,22 +163,7 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
     }
 
     // 4. UPSERT verification_session at step 'profile' with the claimed code ID
-    const { data: upsertedSession, error: upsertError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .upsert(
-        {
-          user_id: userId,
-          step_reached: 'profile',
-          invite_code_id: claimResult.codeId,
-          updated_at: new Date().toISOString(),
-        },
-        { onConflict: 'user_id' }
-      )
-      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
-      .single();
-
-    if (upsertError) throw upsertError;
+    const upsertedSession = await upsertVerificationSession(accessToken, userId, claimResult.codeId);
 
     res.status(200).json({
       session_id: upsertedSession.id,
@@ -223,7 +197,7 @@ router.post('/start', requireAuth, async (req: Request, res: Response): Promise<
  * This preserves the internal schema name while exposing a friendlier API name.
  */
 router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<void> => {
-  const { userId } = req as AuthenticatedRequest;
+  const { userId, accessToken } = req as AuthenticatedRequest;
 
   const parsed = stepBodySchema.safeParse(req.body);
   if (!parsed.success) {
@@ -239,14 +213,7 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
 
   try {
     // 1. Fetch current session
-    const { data: session, error: sessionError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (sessionError) throw sessionError;
+    const session = await getVerificationSession(accessToken, userId);
 
     if (!session) {
       res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
@@ -254,51 +221,29 @@ router.patch('/step', requireAuth, async (req: Request, res: Response): Promise<
     }
 
     if (session.step_reached === 'complete') {
-      res.status(409).json({
-        code: 'ALREADY_COMPLETE',
-        message: 'Your Connect flow is already complete',
-      });
+      res.status(409).json({ code: 'ALREADY_COMPLETE', message: 'Your Connect flow is already complete' });
       return;
     }
 
-    // 2. Compute merged values to determine if we can advance to 'review'
-    const newDisplayName =
-      display_name !== undefined ? display_name : session.display_name_draft;
+    // 2. Merge incoming values with current drafts
+    const newDisplayName = display_name !== undefined ? display_name : session.display_name_draft;
     const newLegalName = legal_name !== undefined ? legal_name : session.legal_name_draft;
     const newRegion = location !== undefined ? location : session.region_draft;
-    const newHomeAddress =
-      home_address !== undefined ? home_address : session.home_address_draft;
+    const newHomeAddress = home_address !== undefined ? home_address : session.home_address_draft;
 
-    // Determine new step_reached
     const allRequiredPresent =
-      newDisplayName !== null &&
-      newDisplayName !== undefined &&
-      newLegalName !== null &&
-      newLegalName !== undefined &&
-      newRegion !== null &&
-      newRegion !== undefined &&
-      newHomeAddress !== null &&
-      newHomeAddress !== undefined;
+      newDisplayName != null && newLegalName != null && newRegion != null && newHomeAddress != null;
 
     const newStepReached = step === 'review' && allRequiredPresent ? 'review' : 'profile';
 
     // 3. Execute the UPDATE
-    const { data: updated, error: updateError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .update({
-        display_name_draft: newDisplayName ?? null,
-        legal_name_draft: newLegalName ?? null,
-        region_draft: newRegion ?? null,
-        home_address_draft: newHomeAddress ?? null,
-        step_reached: newStepReached,
-        updated_at: new Date().toISOString(),
-      })
-      .eq('user_id', userId)
-      .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft')
-      .single();
-
-    if (updateError) throw updateError;
+    const updated = await updateVerificationSession(accessToken, userId, {
+      display_name_draft: newDisplayName ?? null,
+      legal_name_draft: newLegalName ?? null,
+      region_draft: newRegion ?? null,
+      home_address_draft: newHomeAddress ?? null,
+      step_reached: newStepReached,
+    });
 
     res.status(200).json({
       session_id: updated.id,
@@ -393,39 +338,18 @@ router.post('/complete', requireAuth, async (req: Request, res: Response): Promi
  * - { status: 'verified' | 'pending' | 'suspended' }           — connected_profiles exists
  */
 router.get('/status', requireAuth, async (req: Request, res: Response): Promise<void> => {
-  const { userId } = req as AuthenticatedRequest;
+  const { userId, accessToken } = req as AuthenticatedRequest;
 
   try {
-    // Check connected_profiles first
-    const { data: connectedProfile, error: cpError } = await supabaseAdmin
-      .schema('connect')
-      .from('connected_profiles')
-      .select('verification_status')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (cpError) throw cpError;
-
-    if (connectedProfile) {
-      res.status(200).json({ status: connectedProfile.verification_status });
+    const verificationStatus = await getConnectedProfileVerificationStatus(accessToken, userId);
+    if (verificationStatus !== null) {
+      res.status(200).json({ status: verificationStatus });
       return;
     }
 
-    // Check for active verification_session
-    const { data: session, error: sessionError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .select('step_reached')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (sessionError) throw sessionError;
-
-    if (session) {
-      res.status(200).json({
-        status: 'in_progress',
-        step_reached: session.step_reached,
-      });
+    const stepReached = await getVerificationSessionStep(accessToken, userId);
+    if (stepReached !== null) {
+      res.status(200).json({ status: 'in_progress', step_reached: stepReached });
       return;
     }
 
@@ -454,7 +378,7 @@ router.get('/status', requireAuth, async (req: Request, res: Response): Promise<
  *   (Compass Routes) — this plan stores the draft only.
  */
 router.post('/compass-import', requireAuth, async (req: Request, res: Response): Promise<void> => {
-  const { userId } = req as AuthenticatedRequest;
+  const { userId, accessToken } = req as AuthenticatedRequest;
 
   const parsed = compassImportBodySchema.safeParse(req.body);
   if (!parsed.success) {
@@ -470,75 +394,21 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
 
   try {
     // 1. Require an active verification session
-    const { data: session, error: sessionError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .select('id')
-      .eq('user_id', userId)
-      .maybeSingle();
-
-    if (sessionError) throw sessionError;
-
-    if (!session) {
+    const sessionId = await getVerificationSessionId(accessToken, userId);
+    if (!sessionId) {
       res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
       return;
     }
 
     if (!confirmed) {
       // Phase 1: Validate topic versions against live server versions
-      const { data: liveTopics, error: topicsError } = await supabaseAdmin
-        .schema('inform')
-        .from('compass_topics')
-        .select('id,version')
-        .eq('is_live', true);
-
-      if (topicsError) throw topicsError;
-
-      const liveVersionMap = new Map<string, number>();
-      for (const topic of liveTopics ?? []) {
-        liveVersionMap.set(topic.id, topic.version);
-      }
-
-      const valid: typeof calibrations = [];
-      const mismatched: Array<{
-        topic_id: string;
-        client_version: number;
-        server_version: number | null;
-      }> = [];
-
-      for (const cal of calibrations) {
-        const serverVersion = liveVersionMap.get(cal.topic_id) ?? null;
-        if (serverVersion === null || cal.topic_version !== serverVersion) {
-          mismatched.push({
-            topic_id: cal.topic_id,
-            client_version: cal.topic_version,
-            server_version: serverVersion,
-          });
-        } else {
-          valid.push(cal);
-        }
-      }
-
-      res.status(200).json({
-        valid,
-        mismatched,
-        ready_to_import: mismatched.length === 0,
-      });
+      const result = await validateCompassVersions(calibrations);
+      res.status(200).json(result);
       return;
     }
 
     // Phase 2: Save calibrations as draft in verification_sessions
-    const { error: updateError } = await supabaseAdmin
-      .schema('connect')
-      .from('verification_sessions')
-      .update({
-        compass_import_draft: JSON.stringify(calibrations),
-        updated_at: new Date().toISOString(),
-      })
-      .eq('user_id', userId);
-
-    if (updateError) throw updateError;
-
+    await saveCompassImportDraft(accessToken, userId, calibrations);
     res.status(200).json({ imported: true, count: calibrations.length });
   } catch (err) {
     console.error('[connect/compass-import] Unexpected error:', err);

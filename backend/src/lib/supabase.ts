@@ -41,6 +41,22 @@ export async function adminRpc(fn: string, args?: Record<string, unknown>): Prom
 }
 
 /**
+ * Anon client — uses the public anon key, RLS enforced.
+ * Use for reading public reference data (inform schema) that is accessible
+ * to any role (anon or authenticated). Never use for user-owned data.
+ */
+export const supabaseAnon = createClient<Database>(
+  env.SUPABASE_URL.trim(),
+  env.SUPABASE_ANON_KEY.trim(),
+  {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  }
+);
+
+/**
  * Per-request client — user JWT injected, RLS enforced.
  * Use in route handlers for all reads that feed API responses.
  */

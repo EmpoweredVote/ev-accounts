@@ -3,7 +3,7 @@ import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
-import { supabaseAdmin } from '../lib/supabase.js';
+import { completeOnboarding } from '../lib/enrollService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -82,6 +82,17 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       res.status(429).json({
         code: 'RATE_LIMIT_EXCEEDED',
         message: 'Too many requests, please try again later',
+      });
+      return;
+    }
+
+    // SMTP misconfiguration or delivery failure — surface as 503 so the client
+    // knows to retry later rather than treating it as a permanent failure.
+    if (error.code === 'unexpected_failure' && error.message?.includes('confirmation email')) {
+      console.error('[auth/signup] SMTP delivery failure — check SMTP configuration');
+      res.status(503).json({
+        code: 'EMAIL_DELIVERY_FAILED',
+        message: 'Unable to send confirmation email. Please try again later.',
       });
       return;
     }
@@ -235,48 +246,13 @@ router.post(
     const { userId } = req as AuthenticatedRequest;
 
     try {
-      // Attempt to update — only updates rows where completed_onboarding is false
-      const { data: updatedRows, error: updateError } = await supabaseAdmin
-        .schema('connect')
-        .from('connected_profiles')
-        .update({ completed_onboarding: true, updated_at: new Date().toISOString() })
-        .eq('user_id', userId)
-        .eq('completed_onboarding', false)
-        .select('id');
+      const result = await completeOnboarding(userId);
 
-      if (updateError) {
-        console.error('[auth/complete-onboarding] Update error:', updateError);
-        res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-        return;
-      }
-
-      if (!updatedRows || updatedRows.length === 0) {
-        // Either no connected_profiles row, or completed_onboarding is already true.
-        // Check which case it is to give the correct response.
-        const { data: profile, error: selectError } = await supabaseAdmin
-          .schema('connect')
-          .from('connected_profiles')
-          .select('completed_onboarding')
-          .eq('user_id', userId)
-          .maybeSingle();
-
-        if (selectError) {
-          console.error('[auth/complete-onboarding] Select error:', selectError);
-          res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-          return;
-        }
-
-        if (!profile) {
-          // No connected_profiles row — user has not completed the Connect flow.
-          res.status(403).json({
-            code: 'NOT_CONNECTED',
-            message: 'Complete the Connect flow first',
-          });
-          return;
-        }
-
-        // completed_onboarding is already true — idempotent success.
-        res.status(200).json({ completed_onboarding: true });
+      if (result === 'not_connected') {
+        res.status(403).json({
+          code: 'NOT_CONNECTED',
+          message: 'Complete the Connect flow first',
+        });
         return;
       }
 

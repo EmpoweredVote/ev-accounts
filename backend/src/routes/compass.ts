@@ -1,21 +1,31 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { supabaseAdmin, adminRpc } from '../lib/supabase.js';
+import { adminRpc } from '../lib/supabase.js';
 import { requireAuth, optionalAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { createUserClient } from '../lib/supabase.js';
-import { promoteCompassImportDraft, getCompassCompleteness } from '../lib/compassService.js';
+import {
+  promoteCompassImportDraft,
+  getCompassCompleteness,
+  getCompassTopics,
+  getCompassCategories,
+  getCompassPoliticians,
+  getPoliticianAnswers,
+  getPoliticianContext,
+  validateTopicIds,
+  saveSelectedTopics,
+} from '../lib/compassService.js';
 import type { Request, Response } from 'express';
 
 /**
  * Compass routes (read + write).
  *
  * Architecture rules enforced here:
- *   - Service-role client is NOT used directly — architecture.test.ts bans it from routes/
- *   - All supabaseAdmin usage goes through lib/ service functions
- *   - Public reference data (topics, categories, politicians): supabaseAdmin via direct query
+ *   - Service-role client is NOT used in this file — all DB access via compassService
+ *   - Public reference data (topics, categories, politicians): compassService (supabaseAnon)
  *   - Owner-read routes (answers, selected-topics): createUserClient (RLS enforced)
  *   - Server-side computations (progress): compassService via RPC
- *   - Write routes (POST /answers, PUT /selected-topics): supabaseAdmin RPC
+ *   - Write routes (POST /answers): adminRpc (SECURITY DEFINER RPC)
+ *   - Write routes (PUT /selected-topics): compassService (createUserClient)
  *
  * Route ordering: specific paths before parameterized paths to prevent
  * Express routing conflicts (e.g., /politicians before /politicians/:id).
@@ -50,73 +60,11 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // GET /api/compass/topics
 // Auth: optional — works unauthenticated
 // Returns all live topics with nested stances, categories, and role scopes.
-// Uses supabaseAdmin for all reads — public reference data, no RLS sensitivity.
 // ---------------------------------------------------------------------------
 
 router.get('/topics', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { data: topics, error: topicsError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_topics')
-      .select('id,title,short_title,question_text,is_live,version')
-      .eq('is_live', true)
-      .order('created_at', { ascending: true });
-
-    if (topicsError) throw topicsError;
-
-    if (!topics || topics.length === 0) {
-      res.status(200).json([]);
-      return;
-    }
-
-    const topicIds = topics.map(t => t.id);
-
-    // Fetch stances for all topics in one query
-    const { data: stances, error: stancesError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_stances')
-      .select('topic_id,id,value,text')
-      .in('topic_id', topicIds)
-      .order('value', { ascending: true });
-
-    if (stancesError) throw stancesError;
-
-    // Fetch categories for all topics in one query
-    const { data: topicCategories, error: catsError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_topic_categories')
-      .select('topic_id,compass_categories(id,title)')
-      .in('topic_id', topicIds);
-
-    if (catsError) throw catsError;
-
-    // Fetch role scopes for all topics in one query
-    const { data: topicRoles, error: rolesError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_topic_roles')
-      .select('topic_id,role_scope,is_required')
-      .in('topic_id', topicIds);
-
-    if (rolesError) throw rolesError;
-
-    // Assemble nested response
-    const result = topics.map(topic => ({
-      ...topic,
-      stances: (stances ?? [])
-        .filter(s => s.topic_id === topic.id)
-        .map(({ topic_id: _tid, ...s }) => s),
-      categories: (topicCategories ?? [])
-        .filter(c => c.topic_id === topic.id)
-        .map(c => {
-          const cat = c.compass_categories as { id: string; title: string } | null;
-          return cat ? { category_id: cat.id, title: cat.title } : null;
-        })
-        .filter(Boolean),
-      roles: (topicRoles ?? [])
-        .filter(r => r.topic_id === topic.id)
-        .map(({ topic_id: _tid, ...r }) => r),
-    }));
-
+    const result = await getCompassTopics();
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /compass/topics] error:', err);
@@ -128,45 +76,11 @@ router.get('/topics', optionalAuth, async (req: Request, res: Response): Promise
 // GET /api/compass/categories
 // Auth: optional — works unauthenticated
 // Returns all categories with their nested live topics.
-// Uses supabaseAdmin — public reference data.
 // ---------------------------------------------------------------------------
 
 router.get('/categories', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { data: categories, error: catError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_categories')
-      .select('id,title')
-      .order('title', { ascending: true });
-
-    if (catError) throw catError;
-
-    const { data: topicCats, error: topicCatError } = await supabaseAdmin
-      .schema('inform')
-      .from('compass_topic_categories')
-      .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live)')
-      .eq('compass_topics.is_live', true)
-      .order('compass_topics.title', { ascending: true });
-
-    if (topicCatError) throw topicCatError;
-
-    const result = (categories ?? []).map(cat => ({
-      ...cat,
-      topics: (topicCats ?? [])
-        .filter(tc => tc.category_id === cat.id)
-        .map(tc => {
-          const t = tc.compass_topics as { id: string; title: string; short_title: string | null; question_text: string; is_live: boolean } | null;
-          if (!t) return null;
-          return {
-            topic_id: t.id,
-            title: t.title,
-            short_title: t.short_title,
-            question_text: t.question_text,
-          };
-        })
-        .filter(Boolean),
-    }));
-
+    const result = await getCompassCategories();
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /compass/categories] error:', err);
@@ -329,22 +243,12 @@ router.get('/progress', requireAuth, async (req: Request, res: Response): Promis
 // GET /api/compass/politicians
 // Auth: optional — works unauthenticated
 // Returns all active politicians ordered by name.
-// Uses supabaseAdmin — public reference data.
 // ---------------------------------------------------------------------------
 
 router.get('/politicians', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { data, error } = await supabaseAdmin
-      .schema('inform')
-      .from('politicians')
-      .select('id,first_name,last_name,preferred_name,full_name,office_title,photo_origin_url,is_active')
-      .eq('is_active', true)
-      .order('last_name', { ascending: true })
-      .order('first_name', { ascending: true });
-
-    if (error) throw error;
-
-    res.status(200).json(data ?? []);
+    const data = await getCompassPoliticians();
+    res.status(200).json(data);
   } catch (err) {
     console.error('[GET /compass/politicians] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -356,7 +260,6 @@ router.get('/politicians', optionalAuth, async (req: Request, res: Response): Pr
 // Auth: optional — works unauthenticated
 // Returns a politician's stances on all topics they have answered.
 // Validates UUID format; returns empty array if politician has no answers.
-// Uses supabaseAdmin — public reference data.
 // ---------------------------------------------------------------------------
 
 router.get(
@@ -367,22 +270,12 @@ router.get(
       const politicianId = req.params.id as string;
 
       if (!UUID_REGEX.test(politicianId)) {
-        res
-          .status(422)
-          .json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
         return;
       }
 
-      const { data, error } = await supabaseAdmin
-        .schema('inform')
-        .from('politician_answers')
-        .select('topic_id,value')
-        .eq('politician_id', politicianId)
-        .order('topic_id', { ascending: true });
-
-      if (error) throw error;
-
-      res.status(200).json(data ?? []);
+      const data = await getPoliticianAnswers(politicianId);
+      res.status(200).json(data);
     } catch (err) {
       console.error('[GET /compass/politicians/:id/answers] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -395,7 +288,6 @@ router.get(
 // Auth: optional — works unauthenticated
 // Returns reasoning and sources for a politician's stance on a topic.
 // Returns 404 if no context record exists (context is optional, answers are not).
-// Uses supabaseAdmin — public reference data.
 // ---------------------------------------------------------------------------
 
 router.get(
@@ -411,21 +303,10 @@ router.get(
         return;
       }
 
-      const { data, error } = await supabaseAdmin
-        .schema('inform')
-        .from('politician_context')
-        .select('reasoning,sources')
-        .eq('politician_id', politicianId)
-        .eq('topic_id', topicId)
-        .maybeSingle();
-
-      if (error) throw error;
+      const data = await getPoliticianContext(politicianId, topicId);
 
       if (!data) {
-        res.status(404).json({
-          code: 'NOT_FOUND',
-          message: 'No context found for this politician and topic',
-        });
+        res.status(404).json({ code: 'NOT_FOUND', message: 'No context found for this politician and topic' });
         return;
       }
 
@@ -491,7 +372,6 @@ router.post('/answers', requireAuth, async (req: Request, res: Response): Promis
 // Saves the user's selected topic IDs after server-side validation.
 // Validates ALL submitted IDs exist and are live before storing.
 // Returns 403 NOT_CONNECTED if the user has no connected_profiles row.
-// Uses supabaseAdmin — single UPDATE.
 // ---------------------------------------------------------------------------
 
 router.put(
@@ -513,47 +393,19 @@ router.put(
     const { topic_ids } = parsed.data;
 
     try {
-      // Validate all submitted topic IDs exist and are live
-      if (topic_ids.length > 0) {
-        const { data: validTopics, error: validateError } = await supabaseAdmin
-          .schema('inform')
-          .from('compass_topics')
-          .select('id')
-          .in('id', topic_ids)
-          .eq('is_live', true);
-
-        if (validateError) throw validateError;
-
-        const validIds = new Set((validTopics ?? []).map(t => t.id));
-        const invalidIds = topic_ids.filter(id => !validIds.has(id));
-
-        if (invalidIds.length > 0) {
-          res.status(422).json({
-            code: 'INVALID_TOPIC_IDS',
-            message: `The following topic IDs are invalid or not live: ${invalidIds.join(', ')}`,
-            invalid_ids: invalidIds,
-          });
-          return;
-        }
+      const invalidIds = await validateTopicIds(topic_ids);
+      if (invalidIds.length > 0) {
+        res.status(422).json({
+          code: 'INVALID_TOPIC_IDS',
+          message: `The following topic IDs are invalid or not live: ${invalidIds.join(', ')}`,
+          invalid_ids: invalidIds,
+        });
+        return;
       }
 
-      // Store validated IDs in connected_profiles.selected_topic_ids
-      const { data: updatedRows, error: updateError } = await supabaseAdmin
-        .schema('connect')
-        .from('connected_profiles')
-        .update({
-          selected_topic_ids: JSON.stringify(topic_ids),
-          updated_at: new Date().toISOString(),
-        })
-        .eq('user_id', authReq.userId)
-        .select('id');
-
-      if (updateError) throw updateError;
-
-      if (!updatedRows || updatedRows.length === 0) {
-        res
-          .status(403)
-          .json({ code: 'NOT_CONNECTED', message: 'Complete the Connect flow first' });
+      const connected = await saveSelectedTopics(authReq.accessToken, authReq.userId, topic_ids);
+      if (!connected) {
+        res.status(403).json({ code: 'NOT_CONNECTED', message: 'Complete the Connect flow first' });
         return;
       }
 

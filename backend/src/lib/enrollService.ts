@@ -54,6 +54,51 @@ export function normalizeEmail(email: string): string {
  * Errors are logged but not re-thrown. TR adjustment failure must not
  * block the sanction operation that triggered this call.
  */
+// ---------------------------------------------------------------------------
+// completeOnboarding
+// ---------------------------------------------------------------------------
+
+/**
+ * Mark a user's onboarding as complete.
+ *
+ * Sets completed_onboarding = true on the user's connected_profiles row
+ * (only if it is currently false). Uses supabaseAdmin because
+ * completed_onboarding is not in the column-level UPDATE GRANT for the
+ * authenticated role — this write requires service role.
+ *
+ * Returns:
+ *   'ok'             — successfully set to true
+ *   'already_complete' — was already true (idempotent success)
+ *   'not_connected'  — no connected_profiles row exists
+ */
+export async function completeOnboarding(
+  userId: string
+): Promise<'ok' | 'already_complete' | 'not_connected'> {
+  const { data: updatedRows, error: updateError } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .update({ completed_onboarding: true, updated_at: new Date().toISOString() })
+    .eq('user_id', userId)
+    .eq('completed_onboarding', false)
+    .select('id');
+
+  if (updateError) throw updateError;
+
+  if (updatedRows && updatedRows.length > 0) return 'ok';
+
+  // Either already complete or not connected — check which
+  const { data: profile, error: selectError } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('completed_onboarding')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  if (selectError) throw selectError;
+  if (!profile) return 'not_connected';
+  return 'already_complete';
+}
+
 export async function adjustInviterToleranceRating(inviteeId: string): Promise<void> {
   const { error } = await supabaseAdmin
     .schema('connect')

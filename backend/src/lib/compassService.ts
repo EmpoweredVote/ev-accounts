@@ -1,4 +1,4 @@
-import { adminRpc } from './supabase.js';
+import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 
 /**
  * promoteCompassImportDraft
@@ -62,4 +62,198 @@ export async function getCompassCompleteness(
 
   const result = data as { required: number; answered: number; percent: number; complete: boolean };
   return result;
+}
+
+// ---------------------------------------------------------------------------
+// Public reference data reads — use supabaseAnon (inform tables: public-read RLS)
+// ---------------------------------------------------------------------------
+
+/**
+ * getCompassTopics
+ * Returns all live topics with nested stances, categories, and role scopes.
+ */
+export async function getCompassTopics() {
+  const { data: topics, error: topicsError } = await supabaseAnon
+    .schema('inform')
+    .from('compass_topics')
+    .select('id,title,short_title,question_text,is_live,version')
+    .eq('is_live', true)
+    .order('created_at', { ascending: true });
+
+  if (topicsError) throw topicsError;
+  if (!topics || topics.length === 0) return [];
+
+  const topicIds = topics.map(t => t.id);
+
+  const [stancesRes, catsRes, rolesRes] = await Promise.all([
+    supabaseAnon
+      .schema('inform')
+      .from('compass_stances')
+      .select('topic_id,id,value,text')
+      .in('topic_id', topicIds)
+      .order('value', { ascending: true }),
+    supabaseAnon
+      .schema('inform')
+      .from('compass_topic_categories')
+      .select('topic_id,compass_categories(id,title)')
+      .in('topic_id', topicIds),
+    supabaseAnon
+      .schema('inform')
+      .from('compass_topic_roles')
+      .select('topic_id,role_scope,is_required')
+      .in('topic_id', topicIds),
+  ]);
+
+  if (stancesRes.error) throw stancesRes.error;
+  if (catsRes.error) throw catsRes.error;
+  if (rolesRes.error) throw rolesRes.error;
+
+  return topics.map(topic => ({
+    ...topic,
+    stances: (stancesRes.data ?? [])
+      .filter(s => s.topic_id === topic.id)
+      .map(({ topic_id: _tid, ...s }) => s),
+    categories: (catsRes.data ?? [])
+      .filter(c => c.topic_id === topic.id)
+      .map(c => {
+        const cat = c.compass_categories as { id: string; title: string } | null;
+        return cat ? { category_id: cat.id, title: cat.title } : null;
+      })
+      .filter(Boolean),
+    roles: (rolesRes.data ?? [])
+      .filter(r => r.topic_id === topic.id)
+      .map(({ topic_id: _tid, ...r }) => r),
+  }));
+}
+
+/**
+ * getCompassCategories
+ * Returns all categories with nested live topics.
+ */
+export async function getCompassCategories() {
+  const [catRes, topicCatRes] = await Promise.all([
+    supabaseAnon
+      .schema('inform')
+      .from('compass_categories')
+      .select('id,title')
+      .order('title', { ascending: true }),
+    supabaseAnon
+      .schema('inform')
+      .from('compass_topic_categories')
+      .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live)')
+      .eq('compass_topics.is_live', true)
+      .order('compass_topics.title', { ascending: true }),
+  ]);
+
+  if (catRes.error) throw catRes.error;
+  if (topicCatRes.error) throw topicCatRes.error;
+
+  return (catRes.data ?? []).map(cat => ({
+    ...cat,
+    topics: (topicCatRes.data ?? [])
+      .filter(tc => tc.category_id === cat.id)
+      .map(tc => {
+        const t = tc.compass_topics as { id: string; title: string; short_title: string | null; question_text: string; is_live: boolean } | null;
+        if (!t) return null;
+        return { topic_id: t.id, title: t.title, short_title: t.short_title, question_text: t.question_text };
+      })
+      .filter(Boolean),
+  }));
+}
+
+/**
+ * getCompassPoliticians
+ * Returns all active politicians ordered by name.
+ */
+export async function getCompassPoliticians() {
+  const { data, error } = await supabaseAnon
+    .schema('inform')
+    .from('politicians')
+    .select('id,first_name,last_name,preferred_name,full_name,office_title,photo_origin_url,is_active')
+    .eq('is_active', true)
+    .order('last_name', { ascending: true })
+    .order('first_name', { ascending: true });
+
+  if (error) throw error;
+  return data ?? [];
+}
+
+/**
+ * getPoliticianAnswers
+ * Returns a politician's stances on all topics they have answered.
+ */
+export async function getPoliticianAnswers(politicianId: string) {
+  const { data, error } = await supabaseAnon
+    .schema('inform')
+    .from('politician_answers')
+    .select('topic_id,value')
+    .eq('politician_id', politicianId)
+    .order('topic_id', { ascending: true });
+
+  if (error) throw error;
+  return data ?? [];
+}
+
+/**
+ * getPoliticianContext
+ * Returns reasoning and sources for a politician's stance on a topic, or null if absent.
+ */
+export async function getPoliticianContext(politicianId: string, topicId: string) {
+  const { data, error } = await supabaseAnon
+    .schema('inform')
+    .from('politician_context')
+    .select('reasoning,sources')
+    .eq('politician_id', politicianId)
+    .eq('topic_id', topicId)
+    .maybeSingle();
+
+  if (error) throw error;
+  return data ?? null;
+}
+
+/**
+ * validateTopicIds
+ * Checks that all submitted topic IDs exist and are live.
+ * Returns the array of invalid IDs (empty array = all valid).
+ */
+export async function validateTopicIds(topicIds: string[]): Promise<string[]> {
+  if (topicIds.length === 0) return [];
+
+  const { data, error } = await supabaseAnon
+    .schema('inform')
+    .from('compass_topics')
+    .select('id')
+    .in('id', topicIds)
+    .eq('is_live', true);
+
+  if (error) throw error;
+
+  const validIds = new Set((data ?? []).map(t => t.id));
+  return topicIds.filter(id => !validIds.has(id));
+}
+
+/**
+ * saveSelectedTopics
+ * Saves validated topic IDs into connected_profiles.selected_topic_ids.
+ * Uses createUserClient — RLS enforces owner-only update.
+ * Returns false if the user has no connected_profiles row (NOT_CONNECTED).
+ */
+export async function saveSelectedTopics(
+  accessToken: string,
+  userId: string,
+  topicIds: string[]
+): Promise<boolean> {
+  const db = createUserClient(accessToken);
+  const { data: updatedRows, error } = await db
+    .schema('connect')
+    .from('connected_profiles')
+    .update({
+      selected_topic_ids: JSON.stringify(topicIds),
+      updated_at: new Date().toISOString(),
+    })
+    .eq('user_id', userId)
+    .select('id');
+
+  if (error) throw error;
+  return !!(updatedRows && updatedRows.length > 0);
 }

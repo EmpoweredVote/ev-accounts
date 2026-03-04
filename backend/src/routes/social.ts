@@ -13,7 +13,7 @@ import {
   getFollowing,
   getFollowerCount,
 } from '../lib/socialService.js';
-import { supabaseAdmin } from '../lib/supabase.js';
+import { supabaseAnon } from '../lib/supabase.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -280,7 +280,7 @@ router.get(
     const userId = req.params.user_id as string;
 
     // Validate target is an Empowered account
-    const { data: empProfile, error: empError } = await supabaseAdmin
+    const { data: empProfile, error: empError } = await supabaseAnon
       .schema('empower')
       .from('empowered_profiles')
       .select('id')

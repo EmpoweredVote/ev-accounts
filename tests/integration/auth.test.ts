@@ -5,6 +5,9 @@ import type { Express } from 'express';
 // Set up test environment before any imports that read process.env
 process.env['NODE_ENV'] = 'test';
 process.env['SUPABASE_URL'] = 'https://test.supabase.co';
+
+// Tests that require live Supabase are skipped when using the placeholder URL
+const hasRealSupabase = !process.env['SUPABASE_URL']?.includes('test.supabase.co');
 process.env['SUPABASE_ANON_KEY'] = 'test-anon-key';
 process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-service-role-key';
 process.env['DATABASE_URL'] = 'postgresql://postgres:password@localhost:5432/postgres';
@@ -99,11 +102,10 @@ describe('POST /api/auth/signup', () => {
   });
 
   // ---- Supabase-dependent tests ----
-  // NOTE: The tests below require a live Supabase connection.
-  // They will fail in environments without Supabase access (e.g., CI without secrets).
-  // This is expected. Run against a real Supabase project to verify full flow.
+  // Skipped when SUPABASE_URL is the placeholder test URL (CI without secrets).
+  // Set SUPABASE_URL to a real project URL to run these tests.
 
-  describe('(requires Supabase connectivity)', () => {
+  describe.skipIf(!hasRealSupabase)('(requires Supabase connectivity)', () => {
     it('returns 201 with { id, message } on valid signup', async () => {
       // Uses a unique email to avoid EMAIL_EXISTS conflicts across test runs.
       // Requires Supabase to be reachable and configured with email confirmation ON.
@@ -164,10 +166,9 @@ describe('POST /api/auth/login', () => {
   });
 
   // ---- Supabase-dependent tests ----
-  // NOTE: The tests below require a live Supabase connection.
-  // They will fail in environments without Supabase access.
+  // Skipped when SUPABASE_URL is the placeholder test URL.
 
-  describe('(requires Supabase connectivity)', () => {
+  describe.skipIf(!hasRealSupabase)('(requires Supabase connectivity)', () => {
     it('returns 401 with INVALID_CREDENTIALS for wrong credentials', async () => {
       // Requires Supabase reachable. Wrong email + wrong password should both
       // return INVALID_CREDENTIALS (OWASP enumeration protection — never distinguish).
