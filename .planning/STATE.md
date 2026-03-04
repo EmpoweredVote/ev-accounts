@@ -2,55 +2,51 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-02-28 after v1.0 milestone)
+See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.1 — XP & Progression
+**Current focus:** Phase 9 — XP Schema & Core (v1.1)
 
 ## Current Position
 
-Phase: Not started — defining requirements
-Plan: —
-Status: Defining requirements for v1.1
-Last activity: 2026-03-04 — Milestone v1.1 started
+Phase: 9 of 11 (XP Schema & Core)
+Plan: 0 of 2 in current phase
+Status: Ready to plan
+Last activity: 2026-03-04 — v1.1 roadmap created (Phases 9–11)
 
-Progress: ░░░░░░░░░░ 0% (v1.1 in progress)
+Progress: ░░░░░░░░░░ 0% (v1.1 in progress — 0/5 plans complete)
+
+## Performance Metrics
+
+**Velocity (v1.0 reference):**
+- Total plans completed: 18 (v1.0)
+- Total phases: 8 (v1.0)
+
+*v1.1 metrics will be tracked as plans complete.*
 
 ## Accumulated Context
 
 ### Decisions
 
-Full key decisions log in PROJECT.md. All v1.0 decisions marked with outcomes.
+Full key decisions log in PROJECT.md. Recent decisions affecting v1.1:
+
+- XP ledger mirrors gem ledger pattern: append-only, advisory lock, denormalized balance on `connected_profiles`
+- `award_xp` RPC is the single write path — no JS-chained awaits for XP writes
+- Idempotency enforced at DB layer via unique constraint on `idempotency_key`
+- `xp_in_level` and `xp_to_next_level` computed on read, not stored
+- Level thresholds: 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k per level thereafter
 
 ### Pending Todos
 
-- Run `supabase gen types --linked --lang typescript --schema public,connect,empower,inform > backend/src/types/database.types.ts` after applying migrations (inform schema + new public/connect tables added in hardening)
+- Run `supabase gen types` after Phase 9 migrations land
 - Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials
 
-### Open Blockers / Hardening (v1.1 targets)
+### Open Blockers
 
-- COMP-05: User-to-user compass compare deferred (infrastructure in place)
-- CIVIC-02: Gem reserve cap deferred for Alpha
-
-### Hardening Completed (2026-03-03)
-
-| Item | Resolution | Commits |
-|------|-----------|---------|
-| Supabase linter: `users_public` SECURITY DEFINER view | Restructured: new `users_public_data` table + `security_invoker = on` view + sync trigger | aa95ded |
-| Supabase linter: RLS disabled on `spatial_ref_sys` | Enabled RLS (PostGIS system table; deny-by-default for app roles) | f558f36 |
-| Architecture violations: `supabaseAdmin` in routes | Extracted to service files; new `connectService.ts` + `supabaseAnon` client; 7 new `compassService` functions | ea77aef |
-| Auth test failures (connectivity-dependent) | Wrapped with `describe.skipIf(!hasRealSupabase)` | ea77aef |
-| JWT logout TTL (~1h window) | Per-user `last_logout` timestamp in Redis/cache; `requireAuth` rejects tokens with `iat < last_logout` | 3dd8b61 |
-| TypeScript errors | None — `npx tsc --noEmit` clean | ea77aef |
-
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 001 | Invite flow docs + Civic Trivia Championships integration guide | 2026-02-28 | ed76356 | [001-invite-flow-and-civic-trivia-integration](./quick/001-invite-flow-and-civic-trivia-integration/) |
+None blocking Phase 9.
 
 ## Session Continuity
 
 Last session: 2026-03-04T00:00:00Z
-Stopped at: Milestone v1.1 XP & Progression — gathering requirements
-Resume: `/gsd:plan-phase [N]` after roadmap is created
+Stopped at: v1.1 roadmap created — ready to plan Phase 9
+Resume: `/gsd:plan-phase 9`
