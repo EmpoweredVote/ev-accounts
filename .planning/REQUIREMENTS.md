@@ -9,16 +9,16 @@
 
 ### XP Ledger
 
-- [ ] **XPLED-01**: `connect.xp_transactions` append-only table with columns: id, user_id, source (text), amount (int), metadata (jsonb), idempotency_key (text, unique), created_at
-- [ ] **XPLED-02**: `total_xp` column on `connect.connected_profiles`, updated atomically on each XP award
-- [ ] **XPLED-03**: `current_level` column on `connect.connected_profiles`, updated atomically on each XP award
-- [ ] **XPLED-04**: RLS on xp_transactions: authenticated user reads own rows, no user writes, admin reads all
-- [ ] **XPLED-05**: `award_xp` Postgres RPC: atomic INSERT to xp_transactions + UPDATE to connected_profiles (total_xp, current_level) in a single transaction
+- [x] **XPLED-01**: `connect.xp_transactions` append-only table with columns: id, user_id, source (text), amount (int), metadata (jsonb), idempotency_key (text, unique), created_at
+- [x] **XPLED-02**: `total_xp` column on `connect.connected_profiles`, updated atomically on each XP award
+- [x] **XPLED-03**: `current_level` column on `connect.connected_profiles`, updated atomically on each XP award
+- [x] **XPLED-04**: RLS on xp_transactions: authenticated user reads own rows, no user writes, admin reads all
+- [x] **XPLED-05**: `award_xp` Postgres RPC: atomic INSERT to xp_transactions + UPDATE to connected_profiles (total_xp, current_level) in a single transaction
 
 ### Level Calculation
 
-- [ ] **LEVEL-01**: SQL level calculation function using tiered thresholds — 2,000 XP × 3 levels, then 3,000 XP × 6 levels, then 4,000 XP × 20 levels, then 5,000 XP per level thereafter
-- [ ] **LEVEL-02**: `xp_in_level` and `xp_to_next_level` computed on read and returned in API responses (enables progress bar rendering in feature repos)
+- [x] **LEVEL-01**: SQL level calculation function using tiered thresholds — 2,000 XP × 3 levels, then 3,000 XP × 6 levels, then 4,000 XP × 20 levels, then 5,000 XP per level thereafter
+- [x] **LEVEL-02**: `xp_in_level` and `xp_to_next_level` computed on read and returned in API responses (enables progress bar rendering in feature repos)
 
 ### XP Award API
 
@@ -68,13 +68,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| XPLED-01 | Phase 9 | Pending |
-| XPLED-02 | Phase 9 | Pending |
-| XPLED-03 | Phase 9 | Pending |
-| XPLED-04 | Phase 9 | Pending |
-| XPLED-05 | Phase 9 | Pending |
-| LEVEL-01 | Phase 9 | Pending |
-| LEVEL-02 | Phase 9 | Pending |
+| XPLED-01 | Phase 9 | Complete |
+| XPLED-02 | Phase 9 | Complete |
+| XPLED-03 | Phase 9 | Complete |
+| XPLED-04 | Phase 9 | Complete |
+| XPLED-05 | Phase 9 | Complete |
+| LEVEL-01 | Phase 9 | Complete |
+| LEVEL-02 | Phase 9 | Complete |
 | XPAPI-01 | Phase 10 | Pending |
 | XPAPI-02 | Phase 10 | Pending |
 | XPAPI-03 | Phase 10 | Pending |

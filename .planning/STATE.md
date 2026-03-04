@@ -63,4 +63,4 @@ None blocking Phase 10.
 
 Last session: 2026-03-04T23:17:00Z
 Stopped at: Completed 09-02-PLAN.md — XP RPCs migration and test suite committed
-Resume: `/gsd:execute-phase 10-01` (XP API routes — Phase 10)
+Resume: `/gsd:plan-phase 10`

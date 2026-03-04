@@ -40,8 +40,8 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 **Plans:** 2 plans
 
 Plans:
-- [ ] 09-01-PLAN.md — XP schema migration (xp_transactions table, connected_profiles columns, view update, RLS, grants)
-- [ ] 09-02-PLAN.md — calculate_level + award_xp RPC functions and SQL test file
+- [x] 09-01-PLAN.md — XP schema migration (xp_transactions table, connected_profiles columns, view update, RLS, grants)
+- [x] 09-02-PLAN.md — calculate_level + award_xp RPC functions and SQL test file
 
 #### Phase 10: XP API
 
@@ -85,6 +85,6 @@ Plans:
 | 6. Gems, Roles, and Social Graph | v1.0 | 3/3 | Complete | 2026-02-27 |
 | 7. Admin Tool and Calibration Cron | v1.0 | 3/3 | Complete | 2026-02-27 |
 | 8. Public Candidate Pages | v1.0 | 2/2 | Complete | 2026-02-28 |
-| 9. XP Schema & Core | v1.1 | 0/2 | Not started | - |
+| 9. XP Schema & Core | v1.1 | 2/2 | Complete | 2026-03-04 |
 | 10. XP API | v1.1 | 0/2 | Not started | - |
 | 11. Admin Tool XP View | v1.1 | 0/1 | Not started | - |
