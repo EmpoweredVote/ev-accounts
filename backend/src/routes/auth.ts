@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
-import { signUpWithEmail, signInWithEmail, signOutUser } from '../lib/authService.js';
+import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import type { Request, Response } from 'express';
@@ -215,14 +215,18 @@ router.post(
   '/logout',
   requireAuth,
   async (req: Request, res: Response): Promise<void> => {
-    const { accessToken } = req as AuthenticatedRequest;
+    const { userId, accessToken, tokenExp } = req as AuthenticatedRequest;
 
     const { error } = await signOutUser(accessToken);
 
     if (error) {
-      // Log but do not block — client's token will expire naturally
+      // Log but do not block — revocation record below still covers the token
       console.error('[auth/logout] Supabase signOut error:', error.message);
     }
+
+    // Record logout time so requireAuth can reject this token immediately,
+    // even before its cryptographic expiry (~1h window closed).
+    await recordLogout(userId, tokenExp);
 
     res.status(200).json({ message: 'Logged out successfully' });
   }

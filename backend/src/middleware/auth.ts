@@ -2,6 +2,7 @@ import { jwtVerify, createRemoteJWKSet } from 'jose';
 import { Request, Response, NextFunction } from 'express';
 import { env } from '../lib/env.js';
 import { supabaseAdmin } from '../lib/supabase.js';
+import { isTokenRevoked } from '../lib/authService.js';
 
 // Projects created before May 2025 use HS256 (symmetric key).
 // Projects created after May 2025 use ES256 (asymmetric, JWKS).
@@ -22,6 +23,8 @@ async function verifyJwt(token: string, options: Parameters<typeof jwtVerify>[2]
 export interface AuthenticatedRequest extends Request {
   userId: string;
   accessToken: string;
+  tokenIat: number; // issued-at (Unix seconds) — used for logout revocation check
+  tokenExp: number; // expiry (Unix seconds) — used to set revocation TTL on logout
 }
 
 export async function requireAuth(
@@ -49,6 +52,16 @@ export async function requireAuth(
       return;
     }
 
+    const tokenIat = typeof payload.iat === 'number' ? payload.iat : 0;
+    const tokenExp = typeof payload.exp === 'number' ? payload.exp : 0;
+
+    // Revocation check — rejects tokens issued before the user's last logout.
+    // Closes the ~1h window where a signed-out JWT remains cryptographically valid.
+    if (await isTokenRevoked(userId, tokenIat)) {
+      res.status(401).json({ error: 'Token has been revoked' });
+      return;
+    }
+
     // Standing check — enforces suspension within JWT validity window.
     // Uses supabaseAdmin for a trusted server-side internal check (not user-facing data).
     const { data: profile } = await supabaseAdmin
@@ -66,6 +79,8 @@ export async function requireAuth(
 
     (req as AuthenticatedRequest).userId = userId;
     (req as AuthenticatedRequest).accessToken = token;
+    (req as AuthenticatedRequest).tokenIat = tokenIat;
+    (req as AuthenticatedRequest).tokenExp = tokenExp;
     next();
   } catch {
     res.status(401).json({ error: 'Invalid or expired token' });
