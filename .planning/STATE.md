@@ -87,6 +87,7 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 - **onNavigateToRecord callback keeps ev-ui portable:** No react-router import in component library — SPA-specific navigation passed as callback prop; falls back to window.location.href for non-SPA contexts. (59-03)
 - **navigate('/') for Profile back button:** Deterministic dashboard route prevents Profile<->Record navigation loop; navigate(-1) was unsafe given bi-directional navigation between these pages. (59-03)
 - **Gap 4 and Gap 5 confirmed as data pipeline issues, not code bugs:** Federal officials return empty legislative data because `backfill-legislative-ids` + import CLIs have not been run on the active database. Local politicians return no committee data because local import scripts have not been run. Shelli Yoder state data working confirms schema, endpoints, and queries are all correct. LA County BOS committee absence is a permanent Legistar limitation (endpoint does not exist). No Phase 59 code changes needed. (59-04)
+- **LegiScan getSessionPeople does not provide per-legislator committee membership:** Returns committee_id=0 for all legislators; the ~34 CA entries with non-zero committee_id are committee metadata stubs (empty names), not legislator-committee links. State legislative_committee_memberships table is empty for IN and CA. /committees endpoint returns [] for state legislators. Committees table (from bill referrals) is populated correctly: 41 IN, 60 CA. (57-02)
 
 ### Pending Todos
 
@@ -112,6 +113,6 @@ Progress: [----------] 0/6 phases complete (6/16 plans complete)
 
 ## Session Continuity
 
-Last session: 2026-03-03
-Stopped at: Completed 59-04-PLAN.md — gaps 4 and 5 diagnosed as data population issues; phase 59 fully complete
-Resume: /gsd:execute-phase [next phase] — gap closure plans (51/52/53) created in prior step; run these next or run federal import pipeline
+Last session: 2026-03-04
+Stopped at: Completed 57-02-PLAN.md — California and Indiana validated; committee gap (LegiScan limitation) documented; both states fully queryable via API
+Resume: /gsd:execute-phase [next phase] — gap closure plans (51/52/53) or federal import pipeline next
