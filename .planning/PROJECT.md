@@ -6,6 +6,17 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.0 shipped 2026-02-28.** Complete from schema through public API: auth, enrollment, compass, empowerment, social graph, admin tool, and public candidate pages.
 
+## Current Milestone: v1.1 — XP & Progression
+
+**Goal:** Add a unified XP and leveling system that aggregates participation across the platform — starting with CTC and Validation Quests — surfaced via API so any feature repo can read and award XP.
+
+**Target features:**
+- Append-only XP ledger on Connected+ accounts (mirrors gem ledger pattern)
+- Level calculation from cumulative XP with tiered thresholds (2k / 3k / 4k / 5k)
+- `POST /api/xp/award` for external feature repos to grant XP with source attribution
+- XP + level exposed on `GET /account/me` and a public `GET /api/xp/:userId` endpoint
+- Admin tool: XP ledger view in account detail page
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -30,15 +41,17 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ Admin tool (internal React app): invite management, account review, manual verification approvals, account standing, pilot cohort enrollment, invite chain visibility — v1.0
 - ✓ `GET /api/health` endpoint — v1.0
 
-### Active
+### Active (v1.1)
 
-(No active requirements — v1.0 ships all 52 v1 requirements. See v2 and hardening list below.)
+- [ ] Append-only XP ledger table with source attribution (ctc_game, ctc_perfect_bonus, validation_quest, extensible)
+- [ ] Level calculation RPC: tiered thresholds — 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k × all thereafter
+- [ ] `POST /api/xp/award` — feature repos call this to grant XP; idempotent with transaction key
+- [ ] XP + current level returned on `GET /account/me`
+- [ ] `GET /api/xp/:userId` — public XP profile (level + total XP, no full ledger)
+- [ ] Admin tool: XP ledger tab on account detail page (source, amount, timestamp per entry)
 
-### Hardening / v1.1 Targets
+### Still Deferred
 
-- [ ] JWT logout TTL: access token valid ~1h after signOut — security review required before production
-- [ ] Pre-existing TypeScript errors in cache.ts, inviteService.ts, auth.ts, tierGuards.ts, account.ts, social.ts — resolve before first real users
-- [ ] Pre-existing architecture test flags on routes/auth.ts, compass.ts, connect.ts, social.ts — intentional pattern, needs documented exception or refactor
 - [ ] COMP-05: User-to-user compass compare (infrastructure in place; politician compare only in v1)
 - [ ] CIVIC-02: Gem reserve cap (deferred for Alpha per CONTEXT.md)
 
@@ -106,4 +119,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | getAdminMe returns id + email (v1.0 gap fix) | Admin UI auth store needs user.id to be non-empty for future admin-scoped operations. | ✓ Good — non-crashing, LOW priority fix shipped before milestone close |
 
 ---
-*Last updated: 2026-02-28 after v1.0 milestone*
+*Last updated: 2026-03-04 after v1.1 milestone start*

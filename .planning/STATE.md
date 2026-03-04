@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-28 after v1.0 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Hardening complete — ready to plan v1.1
+**Current focus:** v1.1 — XP & Progression
 
 ## Current Position
 
-Phase: All 8 phases complete — v1.0 SHIPPED + post-release hardening done
-Plan: N/A
-Status: Clean — tests green, architecture enforced, security hardened
-Last activity: 2026-03-03 — Post-release hardening session
+Phase: Not started — defining requirements
+Plan: —
+Status: Defining requirements for v1.1
+Last activity: 2026-03-04 — Milestone v1.1 started
 
-Progress: [████████████████████] 100% (v1.0 complete)
+Progress: ░░░░░░░░░░ 0% (v1.1 in progress)
 
 ## Accumulated Context
 
@@ -51,6 +51,6 @@ Full key decisions log in PROJECT.md. All v1.0 decisions marked with outcomes.
 
 ## Session Continuity
 
-Last session: 2026-03-03T00:00:00Z
-Stopped at: Post-release hardening — all blockers resolved
-Resume: `/gsd:new-milestone` to start v1.1 planning
+Last session: 2026-03-04T00:00:00Z
+Stopped at: Milestone v1.1 XP & Progression — gathering requirements
+Resume: `/gsd:plan-phase [N]` after roadmap is created
