@@ -1,6 +1,6 @@
 ---
 created: 2026-03-03T20:37:04.646Z
-title: Add incremental import logic to federal bills and votes scripts
+title: Replace LegiScan API imports with bulk download approach
 area: tooling
 files:
   - EV-Backend/internal/essentials/import_federal_bills.go
@@ -9,18 +9,35 @@ files:
 
 ## Problem
 
-The `import-federal-bills` and `import-federal-votes` CLI commands re-fetch all data from Congress.gov and LegiScan APIs on every run. There is no incremental logic — no tracking of last-imported congress session, no skipping of bills/votes already in the database. This makes re-runs very slow since both scripts hit external rate-limited APIs for the full dataset each time.
+The `import-federal-bills` and `import-federal-votes` CLI commands fetch data one-at-a-time from Congress.gov and LegiScan APIs. This is extremely slow (hours for a full import) and burns through the LegiScan monthly budget (30,000 queries). A single run for Senate bills alone attempted 19,314 `getBill` API calls plus additional `getRollCall` calls per vote. The safety cutoff at 100 remaining budget prevents exhaustion but leaves data incomplete.
 
-Other import scripts (`import-committees`, `import-leadership`, `backfill-legislative-ids`) are fast because they parse local YAML files. The API-dependent scripts are the bottleneck.
+The current approach is fundamentally wrong for bulk historical data — live APIs are designed for incremental updates, not initial population.
 
 ## Solution
 
-Add incremental import logic:
+Replace the live API approach with bulk data sources that can be downloaded and parsed locally:
 
-1. **`import_federal_bills.go`**: Before fetching a bill from Congress.gov, check if it already exists in `essentials.legislative_bills` by bill number + congress. Skip if present (or only re-fetch if older than N days for updates). Track the last-imported congress session number.
+### Bills: GPO Bulk Data
+- **Source:** https://www.govinfo.gov/bulkdata/BILLSTATUS
+- **Format:** XML, organized by congress number (108-119)
+- **Update frequency:** Every 4 hours for current congress, daily for prior
+- **Includes:** Bill status, cosponsors, actions, committees, amendments
+- **No API key needed, no rate limits**
 
-2. **`import_federal_votes.go`**: Before fetching vote records from LegiScan, check if the vote already exists in `essentials.legislative_votes` by roll call number + session. Skip existing votes. Could also add a `--congress N` flag to only import a specific congress session.
+### Roll Call Votes: unitedstates/congress
+- **Source:** https://github.com/unitedstates/congress
+- **Tool:** Python CLI (`usc-run votes`) — downloads from Senate/House clerk websites
+- **Output:** Structured JSON with individual member votes
+- **No API key needed, no rate limits**
+- **Public domain (CC0)**
 
-3. Consider adding a `--force` flag to override incremental logic when a full re-import is needed.
+### Implementation approach:
+1. Add a download step that fetches GPO bulk XML and `unitedstates/congress` vote JSON to a local cache directory
+2. Rewrite `import_federal_bills.go` to parse local XML instead of calling Congress.gov API
+3. Rewrite `import_federal_votes.go` to parse local JSON instead of calling LegiScan API
+4. Keep upsert logic — just change the data source from API to local files
+5. Add `--download` flag to refresh the local cache, `--parse-only` to skip download
+6. LegiScan API key becomes optional (only needed if user prefers the old approach)
 
-4. The `import_state_indiana.py` and `import_local_bloomington.py` Python scripts could also benefit from similar logic but are lower priority since they're faster.
+### What's already imported:
+The paused import successfully upserted some House votes and partial Senate data. The bulk approach should upsert on top of this — no data loss.
