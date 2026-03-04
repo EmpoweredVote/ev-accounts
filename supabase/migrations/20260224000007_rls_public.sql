@@ -38,6 +38,10 @@ CREATE POLICY "users: owner select"
 -- Non-owning users must query this view to read another user's display_name/avatar.
 -- This view intentionally excludes ALL sensitive columns.
 -- Future phases that need a user's display name for social features MUST use this view.
+--
+-- NOTE: The initial view definition below is superseded by migration 026
+-- (20260303000026_fix_users_public_security_invoker.sql) which recreates the view
+-- with security_invoker = on backed by a dedicated public.users_public_data table.
 
 CREATE OR REPLACE VIEW public.users_public AS
   SELECT
@@ -51,6 +55,7 @@ CREATE OR REPLACE VIEW public.users_public AS
 -- Views run with owner (postgres) permissions, bypassing RLS on public.users.
 -- Column restriction (id, display_name, avatar_url only) and row restriction
 -- (deleted_at IS NULL) are enforced structurally by the view definition itself.
+-- This initial SECURITY DEFINER pattern is resolved by migration 026.
 GRANT SELECT ON public.users_public TO authenticated;
 
 -- -------------------------------------------------------------------------
