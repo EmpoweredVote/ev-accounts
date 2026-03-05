@@ -54,11 +54,11 @@ Plans:
   3. `GET /account/me` for a Connected user includes an `xp` object containing `total`, `level`, `xp_in_level`, and `xp_to_next_level`.
   4. `GET /api/xp/:userId` returns `{ level, total_xp }` to an unauthenticated caller without exposing the full transaction ledger.
   5. `GET /api/xp/me/history` for an authenticated Connected user returns the caller's ledger entries (source, amount, metadata, created_at); an unauthenticated request is rejected with 401.
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 10-01: `xpService.ts`, `POST /api/xp/award`, source enum validation, idempotency enforcement
-- [ ] 10-02: `GET /api/xp/:userId`, `GET /api/xp/me/history`, `GET /account/me` XP extension
+- [ ] 10-01-PLAN.md — xpService module, service-key middleware, POST /api/xp/award with source validation and idempotency
+- [ ] 10-02-PLAN.md — GET /api/xp/:userId, GET /api/xp/me/history, GET /account/me XP object extension, integration tests
 
 #### Phase 11: Admin Tool XP View
 
