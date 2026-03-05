@@ -52,7 +52,7 @@ Plans:
   1. A feature repo calling `POST /api/xp/award` with a valid `X-Service-Key` and a new idempotency key receives a 200 with the created transaction; repeating the same call returns 200 with the original transaction and no second ledger row.
   2. Calling `POST /api/xp/award` with an unrecognized source type is rejected with a 422 — the award is never written.
   3. `GET /account/me` for a Connected user includes an `xp` object containing `total`, `level`, `xp_in_level`, and `xp_to_next_level`.
-  4. `GET /api/xp/:userId` returns `{ level, total_xp }` to an unauthenticated caller without exposing the full transaction ledger.
+  4. `GET /api/xp/:userId` returns `{ level, total_xp, xp_in_level, xp_to_next_level }` to an unauthenticated caller without exposing the full transaction ledger.
   5. `GET /api/xp/me/history` for an authenticated Connected user returns the caller's ledger entries (source, amount, metadata, created_at); an unauthenticated request is rejected with 401.
 **Plans:** 2 plans
 
