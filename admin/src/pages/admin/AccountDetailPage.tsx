@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
 
@@ -15,6 +15,34 @@ interface CalibrationStatus {
   is_at_risk: boolean;
 }
 
+interface ConnectedProfile {
+  user_id: string;
+  account_standing: string;
+  verification_status: string;
+  legal_name: string | null;
+  tolerance_rating: number | null;
+  total_xp: number;
+  current_level: number;
+  gem_balance: number;
+  completed_onboarding: boolean;
+  created_at: string;
+}
+
+interface XpTransaction {
+  id: string;
+  source: string;
+  amount: number;
+  metadata: Record<string, unknown> | null;
+  created_at: string;
+}
+
+interface XpHistoryResponse {
+  transactions: XpTransaction[];
+  total: number;
+  page: number;
+  pages: number;
+}
+
 interface AccountDetail {
   id: string;
   display_name: string;
@@ -25,6 +53,8 @@ interface AccountDetail {
   // Admin-only fields
   legal_name: string | null;
   tolerance_rating: number | null;
+  // Connected profile (present for connected + empowered tiers)
+  connected_profile: ConnectedProfile | null;
   // Roles
   roles: Role[];
   // Invite chain
@@ -54,6 +84,13 @@ export function AccountDetailPage() {
   const [actionLoading, setActionLoading] = useState(false);
   const [showDemoteConfirm, setShowDemoteConfirm] = useState(false);
 
+  // XP History state
+  const [xpData, setXpData] = useState<XpHistoryResponse | null>(null);
+  const [xpError, setXpError] = useState<string | null>(null);
+  const [xpLoading, setXpLoading] = useState(false);
+  const [xpPage, setXpPage] = useState(1);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
   function fetchAccount() {
     setLoading(true);
     apiFetch<AccountDetail>(`/admin/accounts/${userId}`)
@@ -66,6 +103,17 @@ export function AccountDetailPage() {
     if (userId) fetchAccount();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
+
+  useEffect(() => {
+    if (!userId || !account?.connected_profile) return;
+    setXpLoading(true);
+    setXpError(null);
+    apiFetch<XpHistoryResponse>(`/admin/accounts/${userId}/xp-history?page=${xpPage}`)
+      .then(setXpData)
+      .catch((err) => setXpError(err.message))
+      .finally(() => setXpLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId, xpPage, account?.connected_profile]);
 
   async function handleAction(action: 'suspend' | 'unsuspend' | 'demote') {
     setActionError(null);
@@ -144,6 +192,13 @@ export function AccountDetailPage() {
         <p className="text-sm text-gray-500 mt-3">
           Joined {new Date(account.created_at).toLocaleDateString()}
         </p>
+        {account.connected_profile && (
+          <p className="text-sm text-gray-500 mt-1">
+            Level {account.connected_profile.current_level ?? 0}
+            {' \u00b7 '}
+            {(account.connected_profile.total_xp ?? 0).toLocaleString()} XP
+          </p>
+        )}
       </div>
 
       {/* Admin-only sensitive fields */}
@@ -266,6 +321,106 @@ export function AccountDetailPage() {
               </div>
             )}
           </div>
+        </div>
+      )}
+
+      {/* XP History (Connected + Empowered only) */}
+      {account.connected_profile && (
+        <div className="bg-white rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">XP History</h2>
+
+          {xpError && (
+            <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3">
+              Failed to load XP history.
+            </div>
+          )}
+
+          <div className="overflow-hidden rounded border border-gray-200">
+            <table className="w-full text-sm">
+              <thead className="bg-gray-50 border-b border-gray-200">
+                <tr>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500">Source</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500">Amount</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500">Timestamp</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500">Metadata</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {xpLoading ? (
+                  Array.from({ length: 5 }).map((_, i) => (
+                    <tr key={i} className="animate-pulse">
+                      <td colSpan={4} className="px-4 py-3">
+                        <div className="h-4 bg-gray-200 rounded w-full"></div>
+                      </td>
+                    </tr>
+                  ))
+                ) : !xpData || xpData.transactions.length === 0 ? (
+                  <tr>
+                    <td colSpan={4} className="px-4 py-8 text-center text-gray-400">
+                      No XP transactions found.
+                    </td>
+                  </tr>
+                ) : (
+                  xpData.transactions.map((tx) => (
+                    <React.Fragment key={tx.id}>
+                      <tr>
+                        <td className="px-4 py-3 text-gray-700">{tx.source}</td>
+                        <td className="px-4 py-3 text-gray-900 font-medium">+{tx.amount}</td>
+                        <td className="px-4 py-3 text-gray-500">
+                          {new Date(tx.created_at).toLocaleString()}
+                        </td>
+                        <td className="px-4 py-3">
+                          {tx.metadata && Object.keys(tx.metadata).length > 0 ? (
+                            <button
+                              onClick={() => setExpandedId(expandedId === tx.id ? null : tx.id)}
+                              className="text-xs text-blue-600 hover:text-blue-800"
+                            >
+                              {expandedId === tx.id ? 'Hide' : 'View'}
+                            </button>
+                          ) : (
+                            <span className="text-gray-300 text-xs">&mdash;</span>
+                          )}
+                        </td>
+                      </tr>
+                      {expandedId === tx.id && tx.metadata && (
+                        <tr className="bg-gray-50">
+                          <td colSpan={4} className="px-4 py-2">
+                            <pre className="text-xs text-gray-600 overflow-auto max-h-32 whitespace-pre-wrap">
+                              {JSON.stringify(tx.metadata, null, 2)}
+                            </pre>
+                          </td>
+                        </tr>
+                      )}
+                    </React.Fragment>
+                  ))
+                )}
+              </tbody>
+            </table>
+          </div>
+
+          {xpData && xpData.pages > 1 && (
+            <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+              <span>
+                Page {xpData.page} of {xpData.pages} ({xpData.total} total)
+              </span>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setXpPage((p) => Math.max(1, p - 1))}
+                  disabled={xpPage <= 1}
+                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={() => setXpPage((p) => Math.min(xpData.pages, p + 1))}
+                  disabled={xpPage >= xpData.pages}
+                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
