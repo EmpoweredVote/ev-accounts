@@ -251,7 +251,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 57. State Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-04 |
 | 58. Local Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-03 |
 | 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |
-| 60. Indiana & California Committee Import | 2/2 | Complete   | 2026-03-05 | - |
+| 60. Indiana & California Committee Import | 2/2 | Complete    | 2026-03-05 | - |
 | 61. State Data Verification & Gap-Fill | v2026.4 | 0/TBD | Not started | - |
 | 62. State Data Documentation & Accessibility | v2026.4 | 0/TBD | Not started | - |
 | 63. Headshot Research Sprint | 2/8 | In Progress|  | - |
