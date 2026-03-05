@@ -127,8 +127,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ LegislativeInlineSummary and LegislativeRecord components in ev-ui with session filtering — v2026.3
 - ✓ Graceful empty states for legislative sections when data unavailable — v2026.3
 
+## Current Milestone: v2026.4 State Data Completion & Image Coverage
+
+**Goal:** Complete state-level legislative data for Indiana and California, and achieve comprehensive headshot coverage for local officials.
+
+**Target features:**
+- Full audit and completion of state legislative data (committees, bills, votes) for IN and CA
+- IGA direct API integration for Indiana committee imports
+- California legislature committee import via appropriate API source
+- Comprehensive headshot coverage for ~300 local officials using existing manifest
+- Supabase CDN upload pipeline for manually sourced headshots
+
 ### Active
 
+- [ ] State legislative data audit and completion for IN and CA
+- [ ] Local official headshot coverage expansion (target 80%+)
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes)
 - [ ] Multi-politician comparison (2-3 overlays at once)
@@ -175,4 +188,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-05 after v2026.3 milestone*
+*Last updated: 2026-03-05 after milestone v2026.4 started*
