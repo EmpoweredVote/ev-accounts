@@ -9,8 +9,8 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 
 ### State Legislative Data
 
-- [ ] **STATE-01**: Indiana committee data imported via IGA direct API with current session memberships
-- [ ] **STATE-02**: California committee data imported via appropriate state legislature API
+- [x] **STATE-01**: Indiana committee data imported via IGA direct API with current session memberships
+- [x] **STATE-02**: California committee data imported via appropriate state legislature API
 - [ ] **STATE-03**: Indiana legislative data verified complete — bills, votes, and committee memberships cross-referenced against known legislators
 - [ ] **STATE-04**: California legislative data verified complete — bills, votes, and committee memberships cross-referenced against known legislators
 - [ ] **STATE-05**: Import scripts documented and repeatable for future sessions
@@ -53,8 +53,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| STATE-01 | Phase 60 | Pending |
-| STATE-02 | Phase 60 | Pending |
+| STATE-01 | Phase 60 | Complete |
+| STATE-02 | Phase 60 | Complete |
 | STATE-03 | Phase 61 | Pending |
 | STATE-04 | Phase 61 | Pending |
 | STATE-05 | Phase 62 | Pending |

@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
-status: planning
-stopped_at: Phase 63 context gathered
-last_updated: "2026-03-05T18:04:31.305Z"
-last_activity: 2026-03-05 — Roadmap created for v2026.4
+status: in-progress
+stopped_at: "Phase 60, Plan 01 complete"
+last_updated: "2026-03-05T18:33:00.000Z"
+last_activity: 2026-03-05 — Completed 60-01 committee import infrastructure
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 2
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 10
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 60 of 64 (Indiana & California Committee Import)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-03-05 — Roadmap created for v2026.4
+Plan: 01 complete, 02 next
+Status: In progress
+Last activity: 2026-03-05 — Completed 60-01 committee import infrastructure
 
-Progress: [░░░░░░░░░░] 0% (0/5 phases complete)
+Progress: [█░░░░░░░░░] 10% (1/2 plans complete in phase 60)
 
 ## Performance Metrics
 
@@ -45,8 +45,10 @@ Progress: [░░░░░░░░░░] 0% (0/5 phases complete)
 ### Key Context for Phase 60
 
 - Indiana committees: IGA direct API discovered at end of v2026.3 phase 57 — no auth required, no rate limits. Use this instead of Open States.
-- California committees: Open States had rate limit issues in v2026.3. Need to identify appropriate CA legislature API source during planning.
-- Existing Python import infrastructure lives in `scrapers/` directory — build on it.
+- California committees: leginfo.legislature.ca.gov has no REST/JSON API (JSF web app). Open States API v3 confirmed as CA data source. OPENSTATES_API_KEY required in EV-Backend/.env.local.
+- Existing Python import infrastructure lives in `EV-Backend/scripts/` directory.
+- import_state_committees.py: tracking via ~/.ev-backend/committee_import_tracker.json; Open States filter: classification=="committee" (standing committees only).
+- migrate_old_committees.py: ready to run --dry-run to confirm old tables are empty before Plan 02 import.
 
 ### Key Context for Phase 63
 
@@ -71,6 +73,6 @@ Progress: [░░░░░░░░░░] 0% (0/5 phases complete)
 
 ## Session Continuity
 
-Last session: 2026-03-05T18:04:31.303Z
-Stopped at: Phase 63 context gathered
-Resume: Run `/gsd:plan-phase 60`
+Last session: 2026-03-05T18:33:00.000Z
+Stopped at: Phase 60, Plan 01 complete
+Resume: Run `/gsd:execute-phase 60` (Plan 02 — run actual IN/CA committee imports)

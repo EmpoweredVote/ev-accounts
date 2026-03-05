@@ -197,7 +197,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   2. California committee memberships for the current session are visible on CA legislator profile pages in Essentials
   3. IGA direct API (no auth, no rate limits) is the data source for Indiana committee data
   4. The import scripts run to completion without errors against the live database
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 ### Phase 61: State Data Verification & Gap-Fill
 **Goal**: Indiana and California legislative data (bills, votes, committee memberships) is verified complete and cross-referenced against the known legislator roster
@@ -251,7 +251,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 57. State Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-04 |
 | 58. Local Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-03 |
 | 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |
-| 60. Indiana & California Committee Import | v2026.4 | 0/2 | Planning | - |
+| 60. Indiana & California Committee Import | 1/2 | In Progress|  | - |
 | 61. State Data Verification & Gap-Fill | v2026.4 | 0/TBD | Not started | - |
 | 62. State Data Documentation & Accessibility | v2026.4 | 0/TBD | Not started | - |
 | 63. Headshot Research Sprint | v2026.4 | 0/8 | Planning | - |
