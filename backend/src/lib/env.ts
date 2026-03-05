@@ -10,6 +10,12 @@ const envSchema = z.object({
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
   SUPABASE_JWT_SECRET: z.string().optional(),
+  // XP service keys — one per feature repo. Optional: undefined key = not in
+  // SERVICE_KEY_MAP = 401 on all requests from that repo. Kept optional so
+  // existing integration tests (health, auth, account) don't break at startup.
+  QUEST_SERVICE_KEY: z.string().optional(),
+  TRIVIA_SERVICE_KEY: z.string().optional(),
+  ADMIN_SERVICE_KEY: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
