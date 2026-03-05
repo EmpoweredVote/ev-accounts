@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and features an inline politician picker on the compare page with level/state filters across both picker surfaces. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (Supabase CDN), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and features an inline politician picker on the compare page with level/state filters across both picker surfaces. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (Supabase CDN), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
 
 ## Core Value
 
@@ -116,25 +116,19 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Area-intersection search — ST_Intersects boundary overlap for city/ZIP/county queries — v1.9
 - ✓ Unified search path — single POST endpoint, no ZIP vs address branching — v1.9
 - ✓ Re-search bug fix — searchKey counter forces hook re-fetch on results page — v1.9
+- ✓ 8-table legislative data model (sessions, committees, memberships, leadership, bills, cosponsors, votes, ID bridge) — v2026.3
+- ✓ Federal committee and leadership import from congress-legislators YAML — v2026.3
+- ✓ Congress.gov API client with rate limiting and exhaustive pagination — v2026.3
+- ✓ Federal bills and votes batch import (House via Congress.gov, Senate via LegiScan) — v2026.3
+- ✓ LegiScan API client with monthly budget tracking — v2026.3
+- ✓ State legislative import for Indiana and California (bills, votes, committees) via LegiScan + Open States — v2026.3
+- ✓ Local data pipeline for Bloomington (OnBoard scraping) and LA County (Legistar OData) — v2026.3
+- ✓ Five legislative API endpoints (committees, leadership, bills, votes, legislative-summary) — v2026.3
+- ✓ LegislativeInlineSummary and LegislativeRecord components in ev-ui with session filtering — v2026.3
+- ✓ Graceful empty states for legislative sections when data unavailable — v2026.3
 
 ### Active
 
-## Current Milestone: v2026.3 Legislative Profile Data
-
-**Goal:** Enrich politician profiles with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across all levels of government, focused on Monroe County IN and LA County CA.
-
-**Target features:**
-- Full data model foundation (jurisdictions, governing bodies, seats, legislative sessions, committees, legislation, votes)
-- Committee assignments with roles (member/chair/vice-chair) and leadership positions
-- Voting records with plain-language bill summaries (current + previous session)
-- Sponsored/cosponsored legislation with status and topic tags
-- Hybrid data fetching: import for static data (committees, leadership), lazy-fetch for dynamic data (votes, bills)
-- Federal data via Congress.gov API + unitedstates/congress-legislators
-- State data via Open States or LegiScan (Indiana + California)
-- Local data via scraping (Bloomington Common Council, LA County bodies)
-- Frontend profile sections displaying all new data
-
-### Deferred
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes)
 - [ ] Multi-politician comparison (2-3 overlays at once)
@@ -155,16 +149,21 @@ Users can explore political issues and discover their elected officials without 
 - City council headshot coverage beyond 21.5% — needs manual curation
 - School board data enrichment — low data availability
 - Bio/education/experience for city council members — high per-city effort
+- Real-time vote syncing — ops complexity too high; weekly batch sufficient
+- Full bill text display — link to Congress.gov/state sites instead
+- Interest group ratings / ideology scores / vote alignment % — antipartisan mission
+- AI-generated bill summaries — CRS federal summaries only for now
 
 ## Context
 
-Shipped v1.9 with ~41K LOC across 4 repos + Python/CSV data pipeline:
+Shipped v2026.3 with ~36K LOC across 4 repos + Python import scripts:
 - **CompassV2** (React 19): ~13K LOC — compass quiz, Library, guided onboarding, calibration, guest auth, inline politician picker with level/state filters
-- **EV-Backend** (Go 1.24): ~19K LOC — auth, compass, essentials (geofence-only + PostGIS with area-intersection search, contacts API, building photo endpoint, quotes API), treasury, staging; CLI import subcommands
-- **ev-ui** (React/tsup): ~3K LOC — RadarChartCore, PoliticianProfile, PoliticianCard
-- **essentials** (React 19): ~3K LOC — address autocomplete, unified search path, area labels, building photos
+- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass, essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
+- **ev-ui** (React/tsup): ~3.9K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord
+- **essentials** (React 19): ~3.1K LOC — address autocomplete, unified search path, area labels, building photos, legislative profile pages
+- **Python scripts**: ~16K LOC — state legislative import (LegiScan/Open States), local data pipelines (Bloomington/LA County)
 
-Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN.
+Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Python (psycopg2/requests/BeautifulSoup).
 ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 
 ## Constraints
@@ -176,4 +175,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-01 after v2026.3 milestone start*
+*Last updated: 2026-03-05 after v2026.3 milestone*

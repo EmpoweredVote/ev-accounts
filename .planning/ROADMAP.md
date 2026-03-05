@@ -12,7 +12,7 @@
 - ✅ **v1.7 LA County Data Enrichment** — Phases 39-44 (shipped 2026-02-26)
 - ✅ **v1.8 Compass Data & Politician Research** — Phases 45-50 (shipped 2026-02-27)
 - ✅ **v1.9 Compare UX & Search Fixes** — Phases 51-53 (shipped 2026-02-28)
-- 🚧 **v2026.3 Legislative Profile Data** — Phases 54-59 (in progress)
+- ✅ **v2026.3 Legislative Profile Data** — Phases 54-59 (shipped 2026-03-05)
 
 ## Phases
 
@@ -149,128 +149,27 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 
 </details>
 
-### 🚧 v2026.3 Legislative Profile Data (In Progress)
+<details>
+<summary>✅ v2026.3 Legislative Profile Data (Phases 54-59) — SHIPPED 2026-03-05</summary>
 
-**Milestone Goal:** Enrich politician profiles with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across all levels of government, focused on Monroe County IN and LA County CA.
+- [x] Phase 54: Schema Foundation (2/2 plans) — completed 2026-03-02
+- [x] Phase 55: Federal Committees & Leadership (3/3 plans) — completed 2026-03-02
+- [x] Phase 56: Federal Bills, Votes & API Endpoints (4/4 plans) — completed 2026-03-02
+- [x] Phase 57: State Data Pipeline (3/3 plans) — completed 2026-03-04
+- [x] Phase 58: Local Data Pipeline (3/3 plans) — completed 2026-03-03
+- [x] Phase 59: Frontend Profile Sections (4/4 plans) — completed 2026-03-03
 
-- [x] **Phase 54: Schema Foundation** — Data model, ID bridge table, and data inventory before any import runs (completed 2026-03-02)
-- [x] **Phase 55: Federal Committees & Leadership** — Import committee assignments and leadership roles from congress-legislators YAML via CLI (completed 2026-03-02)
-- [x] **Phase 56: Federal Bills, Votes & API Endpoints** — Batch-import bills and voting records via Congress.gov/LegiScan; wire all 5 legislative API endpoints (completed 2026-03-02)
-- [x] **Phase 57: State Data Pipeline** — Indiana and California bills, votes, and committee assignments via LegiScan Python scripts (completed 2026-03-04)
-- [x] **Phase 58: Local Data Pipeline** — Bloomington and LA County committee assignments and legislation (feasibility-gated; no vote attribution) (completed 2026-03-03)
-- [x] **Phase 59: Frontend Profile Sections** — Legislative activity display in politician profiles across all government levels (completed 2026-03-03)
+Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 
-## Phase Details
-
-### Phase 54: Schema Foundation
-**Goal**: The legislative data model is in place and every existing politician record can be linked to imported legislative data without orphaned rows
-**Depends on**: Nothing (first phase of milestone; builds on existing essentials schema)
-**Requirements**: SCHEMA-01, SCHEMA-02, SCHEMA-03, SCHEMA-04, SCHEMA-05, SCHEMA-06, SCHEMA-07, SCHEMA-08, SCHEMA-09
-**Success Criteria** (what must be TRUE):
-  1. All 7 new GORM models exist in `essentials/models.go` and AutoMigrate creates the tables in the `essentials` schema with `legislative_` prefix
-  2. A `legislative_politician_id_map` bridge table exists and is pre-populated with bioguide_id cross-references for all current federal officials in `essentials.politicians`
-  3. The `politicians` table has a `leg_data_fetched_at` timestamp column that AutoMigrate adds without data loss
-  4. A data inventory matrix document exists confirming what each jurisdiction (federal, Indiana, California, Bloomington, LA County) actually exports at this milestone — schema matches confirmed-available data, not aspirational coverage
-  5. Running `SELECT COUNT(*) FROM essentials.legislative_politician_id_map WHERE bioguide_id IS NOT NULL` returns the same count as federal politicians in `essentials.politicians`
-**Plans**: TBD
-
-Plans:
-- [ ] 54-01: GORM models and AutoMigrate
-- [ ] 54-02: ID bridge table population and data inventory
-
-### Phase 55: Federal Committees & Leadership
-**Goal**: Federal politicians' committee assignments and leadership positions are imported and accessible via API
-**Depends on**: Phase 54
-**Requirements**: FED-01, FED-02, FED-07
-**Success Criteria** (what must be TRUE):
-  1. Running `go run . import-committees` completes without error and populates `essentials.legislative_committee_memberships` with role data (chair/ranking member/member) for current Congress
-  2. Running `go run . import-leadership` completes without error and populates `essentials.legislative_leadership_roles` with positions (Speaker, Majority/Minority Leader, Whip, President Pro Tempore)
-  3. A LegiScan API client exists in Go (`internal/essentials/`) with rate limiting enforcing the 30K queries/month budget, used as the Senate vote source
-  4. `GET /essentials/politician/{id}/committees` returns a list of committee assignments with role and session for a known federal representative
-  5. `GET /essentials/politician/{id}/leadership` returns current leadership positions for politicians who hold them and an empty array for those who do not
-**Plans**: TBD
-
-Plans:
-- [x] 55-01: congress-legislators YAML parser and import-committees CLI subcommand
-- [x] 55-02: import-leadership CLI subcommand and LegiScan Go client
-- [x] 55-03: Committee and leadership API endpoint handlers
-
-### Phase 56: Federal Bills, Votes & API Endpoints
-**Goal**: Federal politicians' voting records and sponsored legislation are pre-imported via batch CLI and all 5 legislative API endpoints are live
-**Depends on**: Phase 55
-**Requirements**: FED-03, FED-04, FED-05, FED-06, API-01, API-02, API-03, API-04, API-05
-**Success Criteria** (what must be TRUE):
-  1. A Congress.gov API v3 client exists with token bucket rate limiting at 4,500 req/hr and exhaustive pagination using `len(items) < limit` as the stop condition (never `limit=500` assumption)
-  2. Running `go run . import-federal-bills` imports sponsored and cosponsored bills for current and previous Congress, with CRS plain-language summaries stored where available and short titles as fallback
-  3. Running `go run . import-federal-votes` imports House roll call votes via Congress.gov and Senate roll call votes via LegiScan for current and previous Congress without HTTP request timeouts
-  4. `GET /essentials/politician/{id}/bills` returns sponsored bills with significance filter defaulting to bills that advanced past introduction, with status and introduction date
-  5. `GET /essentials/politician/{id}/votes` returns voting record entries with bill title, position (yea/nay/not voting/absent), and outcome
-  6. `GET /essentials/politician/{id}/legislative-summary` returns a bounded overview (5 recent bills + 10 recent votes) in a single response suitable for profile initial render
-**Plans**: TBD
-
-Plans:
-- [ ] 56-01: Congress.gov API client with rate limiting and exhaustive pagination
-- [ ] 56-02: import-federal-bills CLI subcommand with CRS summary fetch
-- [ ] 56-03: import-federal-votes CLI subcommand (House via Congress.gov, Senate via LegiScan)
-- [ ] 56-04: Bills, votes, and legislative-summary API endpoint handlers
-
-### Phase 57: State Data Pipeline
-**Goal**: Indiana and California state legislators' committee assignments, bills, and votes are imported and served by the existing API endpoints
-**Depends on**: Phase 56
-**Requirements**: STATE-01, STATE-02, STATE-03
-**Success Criteria** (what must be TRUE):
-  1. LegiScan Python import scripts exist for Indiana and California that write committee assignments, bills, and votes directly to PostgreSQL for current and previous session
-  2. State legislators are matched to existing `essentials.politicians` records — `SELECT COUNT(*) FROM essentials.legislative_politician_id_map WHERE legiscan_id IS NOT NULL` returns non-zero counts for IN and CA legislators
-  3. `GET /essentials/politician/{id}/committees` returns committee data for a known Indiana state legislator (e.g., a Monroe County representative)
-  4. `GET /essentials/politician/{id}/votes` returns voting record entries for a known California state legislator
-**Plans**: TBD
-
-Plans:
-- [ ] 57-01: LegiScan Python client and Indiana import script
-- [ ] 57-02: California import script and state-legislator ID bridge population
-
-### Phase 58: Local Data Pipeline
-**Goal**: Bloomington Common Council and LA County Board of Supervisors committee assignments and legislation metadata are imported; feasibility of vote attribution is documented
-**Depends on**: Phase 54
-**Requirements**: LOCAL-01, LOCAL-02, LOCAL-03, LOCAL-04, LOCAL-05
-**Success Criteria** (what must be TRUE):
-  1. A written feasibility check document exists for both Bloomington Common Council and LA County BOS, including manual curl test results for the Legistar VoteRecords endpoint and Bloomington OnBoard REST API — confirming what data is and is not machine-readable
-  2. Bloomington Common Council committee assignments are imported (via HTML scraping or manual entry) and linked to existing politicians via name matching in the ID bridge table
-  3. LA County BOS committee assignments are imported from the county website or Legistar and linked to existing BOS politicians
-  4. LA County BOS legislation/matter metadata is imported from Legistar where available (title, status, date introduced)
-  5. Bloomington legislation metadata is imported from city clerk database where available; where not available, the reason is documented
-**Plans**: 3 plans
-
-Plans:
-- [ ] 58-01: Feasibility check script probing Legistar API + OnBoard HTML, politician name matching, feasibility report
-- [ ] 58-02: Bloomington Common Council committee assignments and legislation import via OnBoard HTML scraping
-- [ ] 58-03: LA County BOS committee assignments and legislation import via Legistar OData API
-
-### Phase 59: Frontend Profile Sections
-**Goal**: Politician profiles display legislative activity — committees, leadership, voting records, and sponsored legislation — with graceful empty states when data is unavailable
-**Depends on**: Phase 56 (API endpoints must exist; state and local data optional)
-**Requirements**: UI-01, UI-02, UI-03, UI-04, UI-05
-**Success Criteria** (what must be TRUE):
-  1. A federal politician profile page (e.g., a US Representative) shows a Committees & Leadership section listing current committee assignments with role badges and any leadership positions held
-  2. A federal politician profile page shows a Voting Record section with recent votes, each displaying bill title or summary, the politician's position (Yea/Nay/Not Voting), and the overall outcome
-  3. A federal politician profile page shows a Sponsored Legislation section with bill number, title, status, and introduction date, defaulting to bills that advanced past introduction
-  4. A local politician profile page (e.g., a Bloomington city council member) shows a Committees section if committee data exists, and all voting/bills sections are hidden or show a "not available for this jurisdiction" message — no broken placeholders
-  5. A session filter control lets users toggle between current and previous session data for bills and votes; selecting "Previous Session" updates the displayed data without a page reload
-**Plans**: TBD
-
-Plans:
-- [x] 59-01: LegislativeActivity component in ev-ui with conditional rendering and empty states
-- [x] 59-02: Profile.jsx parallel fetch integration and session filter UI
-- [ ] 59-03: Gap closure — fix inline summary positioning, stat labels, and back-button navigation
-- [ ] 59-04: Gap closure — diagnose federal and local data absence (data pipeline issue)
+</details>
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 54. Schema Foundation | 2/2 | Complete    | 2026-03-02 | - |
-| 55. Federal Committees & Leadership | 2/3 | Complete    | 2026-03-02 | - |
-| 56. Federal Bills, Votes & API Endpoints | 4/4 | Complete    | 2026-03-02 | - |
-| 57. State Data Pipeline | 3/3 | Complete   | 2026-03-04 | - |
-| 58. Local Data Pipeline | 3/3 | Complete    | 2026-03-03 | - |
-| 59. Frontend Profile Sections | 4/4 | Complete    | 2026-03-03 | - |
+| 54. Schema Foundation | v2026.3 | 2/2 | Complete | 2026-03-02 |
+| 55. Federal Committees & Leadership | v2026.3 | 3/3 | Complete | 2026-03-02 |
+| 56. Federal Bills, Votes & API Endpoints | v2026.3 | 4/4 | Complete | 2026-03-02 |
+| 57. State Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-04 |
+| 58. Local Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-03 |
+| 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |

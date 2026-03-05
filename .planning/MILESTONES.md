@@ -1,5 +1,39 @@
 # Milestones
 
+## v2026.3 Legislative Profile Data (Shipped: 2026-03-05)
+
+**Phases completed:** 6 phases, 19 plans
+**Timeline:** 4 days (2026-03-01 — 2026-03-04)
+**Requirements:** 34/34 satisfied
+**Repos:** EV-Backend, ev-ui, essentials
+
+**Delivered:** Politician profiles enriched with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across federal, state (Indiana + California), and local (Bloomington + LA County) government levels with session filtering and graceful empty states.
+
+**Key accomplishments:**
+1. Legislative data model — 8 new tables (sessions, committees, memberships, leadership roles, bills, cosponsors, votes, ID bridge) with AutoMigrate and bioguide/legiscan/openstates cross-reference bridge
+2. Federal import pipeline — Go CLI subcommands importing committees and leadership from congress-legislators YAML, bills and votes via Congress.gov API + LegiScan with rate limiting and exhaustive pagination
+3. State legislative pipeline — Python import scripts for Indiana (2,424 bills, 15,223 votes) and California (5,310 bills, 105,151 votes) via LegiScan Dataset API, plus IGA/Open States committee matching
+4. Local data pipeline — Bloomington Common Council (committees + legislation via OnBoard HTML scraping) and LA County BOS (legislation via Legistar OData); feasibility-gated with documented limitations
+5. Five legislative API endpoints — committees, leadership, bills, votes, and legislative-summary with session filtering, significance defaults, and bounded overview for profile render
+6. Frontend components — LegislativeInlineSummary and LegislativeRecord in ev-ui with session year filters, role badges, graceful empty states, and essentials profile integration
+
+**Known Gaps (from audit):**
+- Federal import CLIs not yet run on active database (bridge table empty — human action required)
+- LA County BOS committee memberships structurally unavailable from Legistar API (permanent limitation)
+- LA County legislation attribution <5% (Legistar data quality)
+- Topic tags placeholder in LegislativeInlineSummary (deferred feature)
+- leg_data_fetched_at column unused (future lazy-fetch optimization)
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted in essentials `api.jsx` (carried from v1.9)
+- PHOTO-03 headshot coverage at 21.5% (carried from v1.7)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+
+---
+
 ## v1.0 Quality & Consolidation (Shipped: 2026-02-18)
 
 **Phases completed:** 7 phases, 21 plans

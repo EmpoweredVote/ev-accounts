@@ -83,6 +83,46 @@
 
 ---
 
+## Milestone: v2026.3 — Legislative Profile Data
+
+**Shipped:** 2026-03-05
+**Phases:** 6 | **Plans:** 19
+
+### What Was Built
+- 8-table legislative data model with cross-reference bridge (bioguide, legiscan, openstates IDs)
+- Federal import pipeline: Go CLI for committees/leadership (YAML), bills/votes (Congress.gov + LegiScan)
+- State import pipeline: Python scripts for IN (2,424 bills, 15,223 votes) and CA (5,310 bills, 105,151 votes)
+- Local data pipeline: Bloomington (OnBoard scraping) and LA County (Legistar OData) with feasibility gating
+- 5 legislative API endpoints with session filtering and significance defaults
+- ev-ui components (LegislativeInlineSummary, LegislativeRecord) with profile integration
+
+### What Worked
+- Schema-first approach (Phase 54) before any import code — bridge table pattern prevented orphaned data
+- Feasibility check gating (Phase 58) — confirmed local vote attribution infeasible before building scrapers, saving wasted effort
+- Multi-language pipeline — Go CLI for federal (API client reuse), Python for state/local (faster iteration with psycopg2 direct inserts)
+- Single-match-only guard pattern across all name matching — prevented bad data from ambiguous matches
+
+### What Was Inefficient
+- LegiScan getSessionPeople committee_id=0 discovery required fallback to Open States (Phase 57-03 added mid-milestone)
+- Federal import CLIs built but not run on active database — gap discovered during Phase 59 frontend testing
+- LA County legislation attribution turned out to be <5% — Legistar data quality lower than expected
+
+### Patterns Established
+- Bridge table before any import — bioguide/legiscan/openstates cross-reference enables multi-source data merging
+- Feasibility check scripts before building scrapers — probes with live curl tests + name matching validation
+- Python for data pipelines, Go for API clients — play to each language's strengths
+- Atomic rename for persistent counters (LegiScan monthly budget tracker)
+- Raw SQL JOINs for 3+ table queries instead of GORM chains
+
+### Key Lessons
+1. Always validate API data structure with live probes before building parsers — LegiScan getMasterList is a map not array, getSessionPeople has no committee data
+2. Congress.gov pagination uses `len(items) < limit` as stop condition — never trust round numbers
+3. State committee data is not available from bill-focused APIs — needed separate committee-focused API (IGA/Open States)
+4. Local government data availability varies dramatically — feasibility-gate before committing to scrapers
+5. Frontend should test with real data early — empty states for untested data sources discovered late
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -92,12 +132,15 @@
 | v1.7 | 6 | 15 | First milestone with Python scraping pipeline; manual curation accepted |
 | v1.8 | 6 | 28 | First research-heavy milestone; URL verification as separate plans |
 | v1.9 | 3 | 6 | Smallest milestone yet — tight scope, 100% plan adherence |
+| v2026.3 | 6 | 19 | First multi-language pipeline milestone (Go + Python); feasibility gating pattern established |
 
 ### Top Lessons (Verified Across Milestones)
 
-1. Schema-first phases prevent retroactive migrations (v1.6, v1.7, v1.8)
-2. Config-driven scripts with idempotent upserts enable safe re-runs (v1.6, v1.7, v1.8)
+1. Schema-first phases prevent retroactive migrations (v1.6, v1.7, v1.8, v2026.3)
+2. Config-driven scripts with idempotent upserts enable safe re-runs (v1.6, v1.7, v1.8, v2026.3)
 3. Coverage validation scripts with exit codes enable milestone gating (v1.7, v1.8)
 4. AI-generated source URLs require systematic verification (v1.8)
 5. Shared hooks are the best React feature reuse boundary (v1.5, v1.9)
 6. Backend-first changes reduce frontend complexity (v1.3, v1.9)
+7. Feasibility check gating prevents wasted scraper development (v2026.3)
+8. Bridge table before any import prevents orphaned data across multi-source pipelines (v2026.3)
