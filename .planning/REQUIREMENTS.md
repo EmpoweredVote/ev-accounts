@@ -22,12 +22,12 @@
 
 ### XP Award API
 
-- [ ] **XPAPI-01**: `POST /api/xp/award` — server-to-server endpoint, validates `X-Service-Key` header against env secret, validates user_id (must be Connected+), source, and amount
-- [ ] **XPAPI-02**: Source types enforced as known enum: `ctc_game`, `ctc_perfect_bonus`, `validation_quest` (schema extensible for future sources)
-- [ ] **XPAPI-03**: Idempotency key required on every award — duplicate submissions with same key return 200 with the original transaction, no double-award
-- [ ] **XPAPI-04**: `GET /account/me` response includes `xp` object: `{ total, level, xp_in_level, xp_to_next_level }`
-- [ ] **XPAPI-05**: `GET /api/xp/:userId` — public unauthenticated endpoint returning `{ level, total_xp }` only (no full ledger)
-- [ ] **XPAPI-06**: `GET /api/xp/me/history` — authenticated, returns own XP ledger entries: source, amount, metadata, created_at
+- [x] **XPAPI-01**: `POST /api/xp/award` — server-to-server endpoint, validates `X-Service-Key` header against env secret, validates user_id (must be Connected+), source, and amount
+- [x] **XPAPI-02**: Source types enforced as known enum: `ctc_game`, `ctc_perfect_bonus`, `validation_quest` (schema extensible for future sources)
+- [x] **XPAPI-03**: Idempotency key required on every award — duplicate submissions with same key return 200 with the original transaction, no double-award
+- [x] **XPAPI-04**: `GET /account/me` response includes `xp` object: `{ total, level, xp_in_level, xp_to_next_level }`
+- [x] **XPAPI-05**: `GET /api/xp/:userId` — public unauthenticated endpoint returning `{ level, total_xp }` only (no full ledger)
+- [x] **XPAPI-06**: `GET /api/xp/me/history` — authenticated, returns own XP ledger entries: source, amount, metadata, created_at
 
 ### Admin Tool
 
@@ -75,12 +75,12 @@
 | XPLED-05 | Phase 9 | Complete |
 | LEVEL-01 | Phase 9 | Complete |
 | LEVEL-02 | Phase 9 | Complete |
-| XPAPI-01 | Phase 10 | Pending |
-| XPAPI-02 | Phase 10 | Pending |
-| XPAPI-03 | Phase 10 | Pending |
-| XPAPI-04 | Phase 10 | Pending |
-| XPAPI-05 | Phase 10 | Pending |
-| XPAPI-06 | Phase 10 | Pending |
+| XPAPI-01 | Phase 10 | Complete |
+| XPAPI-02 | Phase 10 | Complete |
+| XPAPI-03 | Phase 10 | Complete |
+| XPAPI-04 | Phase 10 | Complete |
+| XPAPI-05 | Phase 10 | Complete |
+| XPAPI-06 | Phase 10 | Complete |
 | XPADM-01 | Phase 11 | Pending |
 | XPADM-02 | Phase 11 | Pending |
 

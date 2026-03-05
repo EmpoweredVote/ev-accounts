@@ -57,8 +57,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 10-01-PLAN.md — xpService module, service-key middleware, POST /api/xp/award with source validation and idempotency
-- [ ] 10-02-PLAN.md — GET /api/xp/:userId, GET /api/xp/me/history, GET /account/me XP object extension, integration tests
+- [x] 10-01-PLAN.md — xpService module, service-key middleware, POST /api/xp/award with source validation and idempotency
+- [x] 10-02-PLAN.md — GET /api/xp/:userId, GET /api/xp/me/history, GET /account/me XP object extension, integration tests
 
 #### Phase 11: Admin Tool XP View
 
@@ -86,5 +86,5 @@ Plans:
 | 7. Admin Tool and Calibration Cron | v1.0 | 3/3 | Complete | 2026-02-27 |
 | 8. Public Candidate Pages | v1.0 | 2/2 | Complete | 2026-02-28 |
 | 9. XP Schema & Core | v1.1 | 2/2 | Complete | 2026-03-04 |
-| 10. XP API | v1.1 | 0/2 | Not started | - |
+| 10. XP API | v1.1 | 2/2 | Complete | 2026-03-05 |
 | 11. Admin Tool XP View | v1.1 | 0/1 | Not started | - |
