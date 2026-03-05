@@ -61,7 +61,7 @@ completed: 2026-03-05
 - **Duration:** ~75 min
 - **Started:** 2026-03-05T20:42:45Z
 - **Completed:** 2026-03-05T22:00:00Z
-- **Tasks:** 1 complete (Task 2 is checkpoint:human-verify awaiting approval)
+- **Tasks:** 2 complete (Task 1 auto + Task 2 checkpoint approved)
 - **Files modified:** 1
 
 ## Accomplishments
@@ -74,6 +74,7 @@ completed: 2026-03-05
 ## Task Commits
 
 1. **Task 1: Research headshots for Batch 3 cities** - `4ca8a47` (feat)
+2. **Task 2: Checkpoint — Spot-check research results** - approved by user 2026-03-05
 
 **Plan metadata:** (pending - final commit after checkpoint)
 

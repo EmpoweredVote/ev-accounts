@@ -177,6 +177,10 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   Plans:
   - [ ] 61-01-PLAN.md — Create validation script, run audit, gap-fill if needed, produce audit report
 - [ ] **Phase 62: State Data Documentation & Accessibility** - Document repeatable import scripts and confirm all state data surfaces through existing API endpoints
+  **Plans:** 2 plans
+  Plans:
+  - [ ] 62-01-PLAN.md — Extract session config to shared JSON, refactor imports, create API verification script
+  - [ ] 62-02-PLAN.md — Expand README with State Legislative Imports docs and new-session playbook
 - [ ] **Phase 63: Headshot Research Sprint** - Manually research and source headshots for all ~300 politicians in the research manifest
   Plans:
   - [ ] 63-01-PLAN.md — Update manifest generator with politician_id and research columns, regenerate manifest
@@ -221,7 +225,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   1. A developer following the import documentation can re-run the IN and CA committee import scripts for a new session without consulting source code
   2. The existing /essentials/committees, /essentials/bills, and /essentials/votes API endpoints return IN and CA data without any code changes
   3. Import scripts have clear usage instructions (arguments, environment variables, expected output)
-**Plans**: TBD
+**Plans**: 2 plans
 
 ### Phase 63: Headshot Research Sprint
 **Goal**: Headshots have been manually researched for all ~300 politicians in the research manifest, producing sourced image URLs for every findable photo
