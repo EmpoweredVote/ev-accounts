@@ -235,7 +235,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   1. Every politician in headshot_research_manifest.csv has been reviewed — either a source URL recorded or marked as not findable
   2. Politicians from Cloudflare/CivicPlus-blocked cities have been researched through manual browser navigation rather than automated scraping
   3. The research output is a structured file (CSV or similar) mapping politician IDs to sourced headshot URLs, ready for the upload pipeline
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 ### Phase 64: Headshot Upload & Coverage Validation
 **Goal**: All sourced headshots are live in Supabase Storage CDN, politician_images records are updated, and coverage validation confirms 80%+ of LA County local officials have headshots
@@ -260,6 +260,6 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |
 | 60. Indiana & California Committee Import | 2/2 | Complete    | 2026-03-05 | - |
 | 61. State Data Verification & Gap-Fill | 1/1 | Complete    | 2026-03-05 | - |
-| 62. State Data Documentation & Accessibility | 2/2 | Complete | 2026-03-05 | - |
+| 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
 | 63. Headshot Research Sprint | 4/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
