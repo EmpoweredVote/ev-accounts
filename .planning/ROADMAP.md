@@ -68,10 +68,10 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. The account header in the admin tool displays a Connected user's total XP and current level alongside existing account summary fields.
   2. Admin can navigate to an XP History tab on any Connected account detail page and see every ledger entry — source, amount, metadata, and timestamp — in reverse chronological order.
-**Plans:** TBD
+**Plans:** 1 plan
 
 Plans:
-- [ ] 11-01: Admin account detail XP summary header and XP History tab component
+- [ ] 11-01-PLAN.md — Backend XP history endpoint + admin UI XP summary header and XP History section
 
 ## Progress
 
