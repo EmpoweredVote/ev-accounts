@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: verifying
-stopped_at: Completed 61-01-PLAN.md
-last_updated: "2026-03-05T21:00:09.470Z"
+stopped_at: Completed 63-04-PLAN.md
+last_updated: "2026-03-05T21:37:36.118Z"
 last_activity: 2026-03-05 — Completed 61-01 state legislative data verification (IN 935 bills/6069 votes PASS, CA 4746 bills/92492 votes PASS)
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 11
-  completed_plans: 6
+  completed_plans: 7
   percent: 55
 ---
 
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 ## Current Position
 
-Phase: 61 of 64 (State Data Verification)
-Plan: 01 complete — phase complete
-Status: Phase 61 complete — IN/CA legislative data verified and audited
-Last activity: 2026-03-05 — Completed 61-01 state legislative data verification (IN 935 bills/6069 votes PASS, CA 4746 bills/92492 votes PASS)
+Phase: 63 of 64 (Headshot Research Sprint)
+Plan: 04 complete, ready for Plan 05
+Status: In progress — 63-04 complete (44/48 found, checkpoint awaiting approval), ready for Batch 4
+Last activity: 2026-03-05 — Completed 63-04 Batch 3 headshot research (12 cities, 44/48 found)
 
 Progress: [██████░░░░] 55% (7/11 plans complete across active phases)
 
@@ -70,6 +70,8 @@ Progress: [██████░░░░] 55% (7/11 plans complete across activ
 - headshot_research_manifest.csv: 304 rows, 12 columns, updated in 63-01 with politician_id and research tracking columns.
 - Batch 1 (63-02) complete: 66 rows researched, 60 found, 6 not_found, 0 pending.
 - Batch 2 (63-03) complete: 48 rows researched, 43 found, 5 not_found, 0 pending. Checkpoint approved 2026-03-05.
+- Batch 3 (63-04) complete: 48 rows researched, 44 found, 4 not_found, 0 pending. Checkpoint awaiting approval.
+- Cumulative: 162/304 researched (53.3%), 147 found (90.7% hit rate).
 - Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare/Akamai sites.
 - Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
 - Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
@@ -85,9 +87,15 @@ Progress: [██████░░░░] 55% (7/11 plans complete across activ
 - Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
 - Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
 - Current coverage: ~84/391 (21.5%). Target: 80%+.
-- Manifest: ~190 politicians still pending (non-Batch-1/2 cities).
+- Manifest: ~142 politicians still pending (non-Batch-1/2/3 cities).
 - 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
 - Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
+- Monrovia (monroviaca.gov): website has NO individual headshots — text bios only, all 4 members not_found.
+- South Gate (cityofsouthgate.org): entire site 403-blocked; used Wayback im_ URLs for all 4 members.
+- Vernon (cityofvernonca.gov): site 403-blocked; Wayback has HTML but ShowPublishedImage not archived; recorded original city URLs as found_url.
+- Lawndale photos: appear on /contact_information sub-page (CivicLive pattern), not main /city_council page.
+- La Verne correct council URL: /351/City-Council (manifest had stale /government/city_council/).
+- Temple City correct council URL: /116/City-Council (manifest had stale /government/city-council).
 
 ### Tech Debt Carried Forward
 
@@ -105,6 +113,6 @@ Progress: [██████░░░░] 55% (7/11 plans complete across activ
 
 ## Session Continuity
 
-Last session: 2026-03-05T20:53:35Z
-Stopped at: Completed 61-01-PLAN.md
-Resume: Phase 61 complete (1 plan). Next: run `/gsd:execute-phase 62` or `/gsd:execute-phase 63`.
+Last session: 2026-03-05T21:37:36.115Z
+Stopped at: Completed 63-04-PLAN.md
+Resume: After checkpoint approval, run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities).
