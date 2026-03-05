@@ -31,8 +31,8 @@
 
 ### Admin Tool
 
-- [ ] **XPADM-01**: XP summary displayed in account header view: total XP and current level
-- [ ] **XPADM-02**: XP History tab on account detail page — full ledger view (source, amount, metadata, timestamp per entry)
+- [x] **XPADM-01**: XP summary displayed in account header view: total XP and current level
+- [x] **XPADM-02**: XP History tab on account detail page — full ledger view (source, amount, metadata, timestamp per entry)
 
 ---
 
@@ -81,8 +81,8 @@
 | XPAPI-04 | Phase 10 | Complete |
 | XPAPI-05 | Phase 10 | Complete |
 | XPAPI-06 | Phase 10 | Complete |
-| XPADM-01 | Phase 11 | Pending |
-| XPADM-02 | Phase 11 | Pending |
+| XPADM-01 | Phase 11 | Complete |
+| XPADM-02 | Phase 11 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 15 total

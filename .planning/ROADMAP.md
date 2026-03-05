@@ -71,7 +71,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 11-01-PLAN.md — Backend XP history endpoint + admin UI XP summary header and XP History section
+- [x] 11-01-PLAN.md — Backend XP history endpoint + admin UI XP summary header and XP History section
 
 ## Progress
 
@@ -87,4 +87,4 @@ Plans:
 | 8. Public Candidate Pages | v1.0 | 2/2 | Complete | 2026-02-28 |
 | 9. XP Schema & Core | v1.1 | 2/2 | Complete | 2026-03-04 |
 | 10. XP API | v1.1 | 2/2 | Complete | 2026-03-05 |
-| 11. Admin Tool XP View | v1.1 | 0/1 | Not started | - |
+| 11. Admin Tool XP View | v1.1 | 1/1 | Complete | 2026-03-06 |
