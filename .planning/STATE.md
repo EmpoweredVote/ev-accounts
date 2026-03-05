@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: executing
-stopped_at: Completed 63-03-PLAN.md
-last_updated: "2026-03-05T20:38:27.786Z"
-last_activity: 2026-03-05 — Completed 63-03 Batch 2 headshot research (12 cities, 43/48 found)
+stopped_at: Completed 61-01-PLAN.md
+last_updated: "2026-03-05T20:55:36.928Z"
+last_activity: 2026-03-05 — Completed 61-01 state legislative data verification (IN 935 bills/6069 votes PASS, CA 4746 bills/92492 votes PASS)
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 11
-  completed_plans: 6
-  percent: 50
+  completed_plans: 7
+  percent: 55
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 ## Current Position
 
-Phase: 63 of 64 (Headshot Research Sprint)
-Plan: 03 complete, ready for Plan 04
-Status: In progress — 63-03 complete (43/48 found, checkpoint approved), ready for Batch 3
-Last activity: 2026-03-05 — Completed 63-03 Batch 2 headshot research (12 cities, 43/48 found), checkpoint approved
+Phase: 61 of 64 (State Data Verification)
+Plan: 01 complete — phase complete
+Status: Phase 61 complete — IN/CA legislative data verified and audited
+Last activity: 2026-03-05 — Completed 61-01 state legislative data verification (IN 935 bills/6069 votes PASS, CA 4746 bills/92492 votes PASS)
 
-Progress: [█████░░░░░] 50% (5/10 plans complete across active phases)
+Progress: [██████░░░░] 55% (7/11 plans complete across active phases)
 
 ## Performance Metrics
 
@@ -41,6 +41,19 @@ Progress: [█████░░░░░] 50% (5/10 plans complete across activ
 *Updated after each plan completion*
 
 ## Accumulated Context
+
+### Key Context for Phase 61 (COMPLETE)
+
+- Phase 61 complete: IN and CA state legislative data verified against live DB.
+- Indiana 2026 Regular Session: 935 bills, 6,069 votes, 17/18 legislators active, bridge coverage 94.4% PASS.
+- California 2025-2026 Session: 4,746 bills, 92,492 votes, 35/37 legislators active, bridge coverage 94.6% PASS.
+- validate_state_legislative.py exits 0 — both states pass all thresholds (80% bridge, ≤10% zero-activity).
+- Missing legiscan bridges: Robert Johnson (IN), Blanca Pachecco and Suzette Valladares (CA) — no legiscan bridge = zero activity, documented not fixed.
+- Unsponsored bills (83% IN, 71% CA) are expected: our roster is a geofence-filtered subset of the full legislature.
+- LegiScan getDatasetList does NOT include bill_count — confirmed via live API call. Sessions confirmed present by hash.
+- Table naming: legislative_bills, legislative_votes, legislative_bill_cosponsors (legislative_ prefix).
+- Session lookup: use is_current=true (no year_start column in legislative_sessions).
+- Audit report: .planning/phases/61-state-data-verification-gap-fill/61-STATE-LEGISLATIVE-AUDIT.md
 
 ### Key Context for Phase 60 (COMPLETE)
 
@@ -92,6 +105,6 @@ Progress: [█████░░░░░] 50% (5/10 plans complete across activ
 
 ## Session Continuity
 
-Last session: 2026-03-05T20:38:27.782Z
-Stopped at: Completed 63-03-PLAN.md
-Resume: After checkpoint approval, run `/gsd:execute-phase 63` (Plan 04 — Batch 3 cities, ~48 politicians)
+Last session: 2026-03-05T20:53:35Z
+Stopped at: Completed 61-01-PLAN.md
+Resume: Phase 61 complete (1 plan). Next: run `/gsd:execute-phase 62` or `/gsd:execute-phase 63`.

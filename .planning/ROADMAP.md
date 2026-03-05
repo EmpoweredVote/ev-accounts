@@ -172,7 +172,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   Plans:
   - [ ] 60-01-PLAN.md — Script preparation: CA API research, import tracking, old table migration
   - [ ] 60-02-PLAN.md — Execute imports for both states and validate coverage
-- [ ] **Phase 61: State Data Verification & Gap-Fill** - Audit and verify bills, votes, and committee memberships for IN and CA against known legislators
+- [x] **Phase 61: State Data Verification & Gap-Fill** - Audit and verify bills, votes, and committee memberships for IN and CA against known legislators (completed 2026-03-05)
   **Plans:** 1 plan
   Plans:
   - [ ] 61-01-PLAN.md — Create validation script, run audit, gap-fill if needed, produce audit report
@@ -231,7 +231,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   1. Every politician in headshot_research_manifest.csv has been reviewed — either a source URL recorded or marked as not findable
   2. Politicians from Cloudflare/CivicPlus-blocked cities have been researched through manual browser navigation rather than automated scraping
   3. The research output is a structured file (CSV or similar) mapping politician IDs to sourced headshot URLs, ready for the upload pipeline
-**Plans:** 3/8 plans executed
+**Plans:** 1/1 plans complete
 
 ### Phase 64: Headshot Upload & Coverage Validation
 **Goal**: All sourced headshots are live in Supabase Storage CDN, politician_images records are updated, and coverage validation confirms 80%+ of LA County local officials have headshots
@@ -255,7 +255,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 58. Local Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-03 |
 | 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |
 | 60. Indiana & California Committee Import | 2/2 | Complete    | 2026-03-05 | - |
-| 61. State Data Verification & Gap-Fill | v2026.4 | 0/1 | Not started | - |
+| 61. State Data Verification & Gap-Fill | 1/1 | Complete   | 2026-03-05 | - |
 | 62. State Data Documentation & Accessibility | v2026.4 | 0/TBD | Not started | - |
 | 63. Headshot Research Sprint | 3/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
