@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 10 in progress — XP API Routes (plan 1 of 2 complete)
+**Current focus:** Phase 10 complete — beginning Phase 11 (Candidate Pages v2 / remaining features)
 
 ## Current Position
 
-Phase: 10 of 11 (XP API Routes) — In progress
-Plan: 1 of 2 in phase 10 complete
-Status: In progress
-Last activity: 2026-03-05 — Completed 10-01-PLAN.md (XP award endpoint: service-key middleware, xpService, POST /api/xp/award)
+Phase: 10 of 11 (XP API Routes) — COMPLETE
+Plan: 2 of 2 in phase 10 complete
+Status: Phase 10 execution complete
+Last activity: 2026-03-05 — Completed 10-02-PLAN.md (XP read endpoints + structured xp in account/me)
 
-Progress: ████░░░░░░ 48% (v1.1 in progress — 3/5 plans complete)
+Progress: █████░░░░░ 60% (v1.1 in progress — 4/5 plans complete)
 
 ## Performance Metrics
 
@@ -23,8 +23,8 @@ Progress: ████░░░░░░ 48% (v1.1 in progress — 3/5 plans com
 - Total phases: 8 (v1.0)
 
 **v1.1 progress:**
-- Plans completed: 3 (09-01, 09-02, 10-01)
-- Plans remaining: 2 (10-02 + Phase 11)
+- Plans completed: 4 (09-01, 09-02, 10-01, 10-02)
+- Plans remaining: 1 (Phase 11)
 
 ## Accumulated Context
 
@@ -56,6 +56,13 @@ From 10-01 execution:
 - `XP_SOURCES` const array satisfies both `z.enum(XP_SOURCES)` and `typeof XP_SOURCES[number]` — single source of truth
 - `award_xp` RPC row fields `id` and `current_level` remapped to `transaction_id` and `level` in `AwardXpResult`
 
+From 10-02 execution:
+- Legacy `xp` column (in generated types) used for calculate_level input in account.ts — avoids any-escape in typed createUserClient queries
+- `(supabaseAdmin as any)` escape required for xp_transactions table and total_xp column in xpService.ts (Phase 9 additions not yet in database.types.ts)
+- `adminRpc` call in route handler is allowed for IMMUTABLE RPCs (calculate_level) — architecture test checks for string `supabaseAdmin` only
+- Route order enforced in xp.ts: GET /me/history registered before GET /:userId; test guards this permanently
+- account/me xp field is now `{ total, level, xp_in_level, xp_to_next_level }` — CompassV2 frontend breaking change (legacy integer removed)
+
 ### Pending Todos
 
 - Run `supabase gen types` after Phase 9 migrations land (still pending — do before Phase 10 routes consume types)
@@ -68,6 +75,6 @@ None blocking Phase 10.
 
 ## Session Continuity
 
-Last session: 2026-03-05T01:27:56Z
-Stopped at: Completed 10-01-PLAN.md — XP award endpoint committed (7cd4a47, a006c9e)
-Resume: Execute 10-02-PLAN.md
+Last session: 2026-03-05T17:45:00Z
+Stopped at: Completed 10-02-PLAN.md — XP read endpoints and structured xp on account/me (bea6566, a3c5dee)
+Resume: Execute Phase 11 plan
