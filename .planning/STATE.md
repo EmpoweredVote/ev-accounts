@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: executing
-stopped_at: Phase 61 context gathered
-last_updated: "2026-03-05T20:33:01.005Z"
-last_activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
+stopped_at: Phase 63, Plan 03 Task 1 complete - awaiting checkpoint human-verify approval
+last_updated: "2026-03-05T20:33:23.745Z"
+last_activity: 2026-03-05 — Completed 63-03 Batch 2 headshot research (12 cities, 43/48 found)
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 10
-  completed_plans: 4
+  completed_plans: 5
   percent: 40
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 63 of 64 (Headshot Research Sprint)
-Plan: 02 complete, 03 next
-Status: In progress — 63-02 complete (checkpoint approved), 03 ready
-Last activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
+Plan: 03 task 1 complete, awaiting checkpoint approval
+Status: In progress — 63-03 Task 1 complete (43/48 found), checkpoint:human-verify pending
+Last activity: 2026-03-05 — Completed 63-03 Batch 2 headshot research (12 cities, 43/48 found)
 
 Progress: [████░░░░░░] 40% (4/10 plans complete across active phases)
 
@@ -56,15 +56,23 @@ Progress: [████░░░░░░] 40% (4/10 plans complete across activ
 
 - headshot_research_manifest.csv: 304 rows, 12 columns, updated in 63-01 with politician_id and research tracking columns.
 - Batch 1 (63-02) complete: 66 rows researched, 60 found, 6 not_found, 0 pending.
-- Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare sites.
+- Batch 2 (63-03) Task 1 complete: 48 rows researched, 43 found, 5 not_found, 0 pending. Awaiting checkpoint approval.
+- Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare/Akamai sites.
 - Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
 - Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
 - CivicPlus sites (Pomona, Torrance, Hermosa Beach, Palos Verdes, Glendora) all 403 to bots — use Wayback Machine.
+- Akamai-blocked sites (Hawthorne, West Hollywood, Commerce, Rolling Hills Estates) — use Wayback Machine.
+- Rolling Hills Estates correct domain: rollinghillsestates.gov (manifest URL rolling-hills-estates.org is unresolvable).
+- San Marino: actual council page is /government/mayor___city_council_/index.php (manifest URL /government/elected-officials/city-council is placeholder).
+- Rolling Hills (equestrian city): website has NO headshots — roster table only, all 4 members not_found.
+- Haidar Awad (Hawthorne): new council member post-Dec 2025, no archived profile page, marked not_found.
+- Commerce correct domain: commerceca.gov (old ci.commerce.ca.us redirects to same Akamai-blocked site).
+- RPV: council pages discoverable via /sitemap.xml (navigation search failed).
 - Former council members (Santa Monica, Santa Fe Springs) marked not_found since they're no longer on official pages.
 - Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
 - Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
 - Current coverage: ~84/391 (21.5%). Target: 80%+.
-- Manifest: ~222 politicians still pending (non-Batch-1 cities).
+- Manifest: ~190 politicians still pending (non-Batch-1/2 cities).
 - 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
 - Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
 
@@ -84,6 +92,6 @@ Progress: [████░░░░░░] 40% (4/10 plans complete across activ
 
 ## Session Continuity
 
-Last session: 2026-03-05T20:33:01.002Z
-Stopped at: Phase 61 context gathered
-Resume: Run `/gsd:execute-phase 63` (Plan 03 — continue Playwright browser research, Batch 2 cities)
+Last session: 2026-03-05T20:33:23.743Z
+Stopped at: Phase 63, Plan 03 Task 1 complete - awaiting checkpoint human-verify approval
+Resume: After checkpoint approval, run `/gsd:execute-phase 63` (Plan 04 — Batch 3 cities, ~48 politicians)
