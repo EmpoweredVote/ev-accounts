@@ -1,7 +1,9 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { requireServiceKey, type ServiceKeyRequest } from '../middleware/serviceKeyAuth.js';
-import { awardXp, XP_SOURCES } from '../lib/xpService.js';
+import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
+import { requireConnected } from '../middleware/tierGuards.js';
+import { awardXp, getXpHistory, getPublicXpProfile, XP_SOURCES } from '../lib/xpService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -17,6 +19,12 @@ const AwardXpBodySchema = z.object({
   amount: z.number().int().positive(),
   idempotency_key: z.string().min(1).max(255),
   metadata: z.record(z.unknown()).optional(),
+});
+
+// Validation schema for GET /api/xp/me/history query params
+const HistoryQuerySchema = z.object({
+  limit: z.coerce.number().int().min(1).max(100).default(50),
+  offset: z.coerce.number().int().min(0).default(0),
 });
 
 // ---------------------------------------------------------------------------
@@ -82,6 +90,78 @@ router.post(
       }
       console.error('[POST /api/xp/award] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to award XP' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/xp/me/history
+// Auth: requireAuth + requireConnected
+//
+// Returns paginated XP transaction history for the authenticated user.
+// MUST be registered BEFORE GET /:userId to prevent Express from matching
+// the literal "me" as a :userId param.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/me/history',
+  requireAuth,
+  requireConnected,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+
+    const parsed = HistoryQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: parsed.error.issues[0]?.message ?? 'Invalid query parameters',
+      });
+      return;
+    }
+
+    const { limit, offset } = parsed.data;
+
+    try {
+      const result = await getXpHistory(authReq.userId, { limit, offset });
+      res.status(200).json({ ...result, limit, offset });
+    } catch (err) {
+      console.error('[GET /api/xp/me/history] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch XP history' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/xp/:userId
+// Auth: none (public endpoint)
+//
+// Returns public XP profile: level, total_xp, xp_in_level, xp_to_next_level.
+// Full ledger is NOT exposed. Returns 404 for non-Connected users.
+// MUST be registered AFTER GET /me/history (param route always last).
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/:userId',
+  async (req: Request, res: Response): Promise<void> => {
+    const userId = req.params['userId'] as string;
+
+    // Basic UUID validation
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!uuidRegex.test(userId)) {
+      res.status(400).json({ error: 'Invalid userId format' });
+      return;
+    }
+
+    try {
+      const profile = await getPublicXpProfile(userId);
+      if (!profile) {
+        res.status(404).json({ error: 'User not found or not Connected tier' });
+        return;
+      }
+      res.status(200).json(profile);
+    } catch (err) {
+      console.error('[GET /api/xp/:userId] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch XP profile' });
     }
   }
 );
