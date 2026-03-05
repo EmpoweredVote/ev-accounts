@@ -175,7 +175,7 @@ export async function getPublicXpProfile(
   if (!levelRow) throw new Error('calculate_level returned no rows');
 
   return {
-    level: levelRow.current_level,
+    level: levelRow.level,
     total_xp: profileRow.total_xp,
     xp_in_level: levelRow.xp_in_level,
     xp_to_next_level: levelRow.xp_to_next_level,

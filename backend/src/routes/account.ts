@@ -90,7 +90,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
       xpData = {
         total: totalXp,
-        level: levelRow?.current_level ?? 0,
+        level: levelRow?.level ?? 0,
         xp_in_level: levelRow?.xp_in_level ?? 0,
         xp_to_next_level: levelRow?.xp_to_next_level ?? 0,
       };
@@ -297,7 +297,7 @@ router.patch(
         const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
         xpData = {
           total: totalXp,
-          level: levelRow?.current_level ?? 0,
+          level: levelRow?.level ?? 0,
           xp_in_level: levelRow?.xp_in_level ?? 0,
           xp_to_next_level: levelRow?.xp_to_next_level ?? 0,
         };
