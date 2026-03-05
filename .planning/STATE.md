@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: executing
-stopped_at: Phase 63, Plan 01 complete
-last_updated: "2026-03-05T18:20:41.812Z"
-last_activity: 2026-03-05 — Completed 63-01 headshot manifest update
+stopped_at: Phase 63, Plan 02 complete - awaiting checkpoint human-verify
+last_updated: "2026-03-05T18:41:33.401Z"
+last_activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
 progress:
   total_phases: 5
   completed_phases: 0
   total_plans: 10
-  completed_plans: 2
-  percent: 20
+  completed_plans: 3
+  percent: 30
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 63 of 64 (Headshot Research Sprint)
-Plan: 01 complete, 02 next
-Status: In progress
-Last activity: 2026-03-05 — Completed 63-01 headshot manifest update (politician_id + research columns)
+Plan: 02 complete, 03 next
+Status: In progress — awaiting checkpoint:human-verify for 63-02
+Last activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
 
-Progress: [██░░░░░░░░] 20% (2/10 plans complete across active phases)
+Progress: [███░░░░░░░] 30% (3/10 plans complete across active phases)
 
 ## Performance Metrics
 
@@ -53,11 +53,16 @@ Progress: [██░░░░░░░░] 20% (2/10 plans complete across activ
 ### Key Context for Phase 63
 
 - headshot_research_manifest.csv: 304 rows, 12 columns, updated in 63-01 with politician_id and research tracking columns.
-- All rows have research_status=pending; plans 02-08 fill in found/not_found/blocked via Playwright browser research.
-- Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — manual browser research is the intended approach.
+- Batch 1 (63-02) complete: 66 rows researched, 60 found, 6 not_found, 0 pending.
+- Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare sites.
+- Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
+- Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
+- CivicPlus sites (Pomona, Torrance, Hermosa Beach, Palos Verdes, Glendora) all 403 to bots — use Wayback Machine.
+- Former council members (Santa Monica, Santa Fe Springs) marked not_found since they're no longer on official pages.
+- Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
 - Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
 - Current coverage: ~84/391 (21.5%). Target: 80%+.
-- Manifest: 289 politicians need new URL research, 15 have existing headshot_url overrides in city_sources.json.
+- Manifest: ~222 politicians still pending (non-Batch-1 cities).
 - 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
 - Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
 
@@ -77,6 +82,6 @@ Progress: [██░░░░░░░░] 20% (2/10 plans complete across activ
 
 ## Session Continuity
 
-Last session: 2026-03-05T18:20:41.809Z
-Stopped at: Phase 63, Plan 01 complete
-Resume: Run `/gsd:execute-phase 63` (Plan 02 — begin Playwright browser research for city headshots)
+Last session: 2026-03-05T18:41:33.399Z
+Stopped at: Phase 63, Plan 02 complete - awaiting checkpoint human-verify
+Resume: Run `/gsd:execute-phase 63` (Plan 03 — continue Playwright browser research, Batch 2 cities)
