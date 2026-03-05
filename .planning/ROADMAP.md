@@ -175,6 +175,15 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 - [ ] **Phase 61: State Data Verification & Gap-Fill** - Audit and verify bills, votes, and committee memberships for IN and CA against known legislators
 - [ ] **Phase 62: State Data Documentation & Accessibility** - Document repeatable import scripts and confirm all state data surfaces through existing API endpoints
 - [ ] **Phase 63: Headshot Research Sprint** - Manually research and source headshots for all ~300 politicians in the research manifest
+  Plans:
+  - [ ] 63-01-PLAN.md — Update manifest generator with politician_id and research columns, regenerate manifest
+  - [ ] 63-02-PLAN.md — Research Batch 1: 12 largest-gap cities (~66 politicians)
+  - [ ] 63-03-PLAN.md — Research Batch 2: 12 cities (~48 politicians)
+  - [ ] 63-04-PLAN.md — Research Batch 3: 12 cities (~48 politicians)
+  - [ ] 63-05-PLAN.md — Research Batch 4: 12 cities incl. 4 failed-status (~48 politicians)
+  - [ ] 63-06-PLAN.md — Research Batch 5: 12 cities incl. 4 failed-status (~44 politicians)
+  - [ ] 63-07-PLAN.md — Research Batch 6: 12 smaller cities (~32 politicians)
+  - [ ] 63-08-PLAN.md — Research Batch 7 + Burbank (blocked): final ~14+ politicians
 - [ ] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage
 
 ## Phase Details
@@ -219,7 +228,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   1. Every politician in headshot_research_manifest.csv has been reviewed — either a source URL recorded or marked as not findable
   2. Politicians from Cloudflare/CivicPlus-blocked cities have been researched through manual browser navigation rather than automated scraping
   3. The research output is a structured file (CSV or similar) mapping politician IDs to sourced headshot URLs, ready for the upload pipeline
-**Plans**: TBD
+**Plans:** 8 plans
 
 ### Phase 64: Headshot Upload & Coverage Validation
 **Goal**: All sourced headshots are live in Supabase Storage CDN, politician_images records are updated, and coverage validation confirms 80%+ of LA County local officials have headshots
@@ -245,5 +254,5 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 60. Indiana & California Committee Import | v2026.4 | 0/2 | Planning | - |
 | 61. State Data Verification & Gap-Fill | v2026.4 | 0/TBD | Not started | - |
 | 62. State Data Documentation & Accessibility | v2026.4 | 0/TBD | Not started | - |
-| 63. Headshot Research Sprint | v2026.4 | 0/TBD | Not started | - |
+| 63. Headshot Research Sprint | v2026.4 | 0/8 | Planning | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
