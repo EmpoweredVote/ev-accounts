@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 9 complete — beginning Phase 10 (XP API Routes)
+**Current focus:** Phase 10 in progress — XP API Routes (plan 1 of 2 complete)
 
 ## Current Position
 
-Phase: 9 of 11 (XP Schema & Core) — COMPLETE
-Plan: 2 of 2 in phase 9 complete
-Status: Phase 9 execution complete
-Last activity: 2026-03-04 — Completed 09-02-PLAN.md (XP RPCs and test suite)
+Phase: 10 of 11 (XP API Routes) — In progress
+Plan: 1 of 2 in phase 10 complete
+Status: In progress
+Last activity: 2026-03-05 — Completed 10-01-PLAN.md (XP award endpoint: service-key middleware, xpService, POST /api/xp/award)
 
-Progress: ███░░░░░░░ 40% (v1.1 in progress — 2/5 plans complete)
+Progress: ████░░░░░░ 48% (v1.1 in progress — 3/5 plans complete)
 
 ## Performance Metrics
 
@@ -23,8 +23,8 @@ Progress: ███░░░░░░░ 40% (v1.1 in progress — 2/5 plans com
 - Total phases: 8 (v1.0)
 
 **v1.1 progress:**
-- Plans completed: 2 (09-01, 09-02)
-- Plans remaining: 3 (Phase 10 + Phase 11)
+- Plans completed: 3 (09-01, 09-02, 10-01)
+- Plans remaining: 2 (10-02 + Phase 11)
 
 ## Accumulated Context
 
@@ -49,6 +49,13 @@ From 09-02 execution:
 - `award_xp` idempotency duplicate returns current profile state (not historical state at original award time)
 - `award_xp` uses `RETURNS TABLE` to mix xp_transactions fields, calculate_level output, and is_duplicate flag
 
+From 10-01 execution:
+- Service keys optional in Zod env schema: avoids breaking existing integration tests that don't set service key env vars
+- `SERVICE_KEY_MAP` built at module load time (not per-request): env vars static after process launch
+- Per-key source authorization returns 422 (not 403): valid key + unauthorized source = caller usage error
+- `XP_SOURCES` const array satisfies both `z.enum(XP_SOURCES)` and `typeof XP_SOURCES[number]` — single source of truth
+- `award_xp` RPC row fields `id` and `current_level` remapped to `transaction_id` and `level` in `AwardXpResult`
+
 ### Pending Todos
 
 - Run `supabase gen types` after Phase 9 migrations land (still pending — do before Phase 10 routes consume types)
@@ -61,6 +68,6 @@ None blocking Phase 10.
 
 ## Session Continuity
 
-Last session: 2026-03-04T23:17:00Z
-Stopped at: Completed 09-02-PLAN.md — XP RPCs migration and test suite committed
-Resume: `/gsd:plan-phase 10`
+Last session: 2026-03-05T01:27:56Z
+Stopped at: Completed 10-01-PLAN.md — XP award endpoint committed (7cd4a47, a006c9e)
+Resume: Execute 10-02-PLAN.md
