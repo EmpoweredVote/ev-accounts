@@ -2,72 +2,42 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone start)
+See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.1 milestone complete — all 11 phases shipped
+**Current focus:** Planning next milestone — run `/gsd:new-milestone`
 
 ## Current Position
 
-Phase: 11 of 11 (Admin Tool XP View) — COMPLETE
-Plan: 1 of 1 in phase 11 complete
-Status: All phases complete — v1.1 milestone done
-Last activity: 2026-03-06 — Completed 11-01-PLAN.md (admin XP history endpoint + AccountDetailPage XP summary and history section)
+Phase: 11 of 11 (all v1.1 phases complete)
+Plan: N/A
+Status: v1.1 milestone archived — ready for next milestone
+Last activity: 2026-03-04 — v1.1 milestone complete and archived
 
-Progress: ██████████ 100% (v1.1 complete — 5/5 plans complete)
+Progress: ██████████ 100% (v1.1 shipped — 5/5 plans complete)
 
 ## Performance Metrics
 
-**Velocity (v1.0 reference):**
-- Total plans completed: 18 (v1.0)
-- Total phases: 8 (v1.0)
+**v1.0 reference:**
+- Total plans: 18 plans, 8 phases, 4 days
 
-**v1.1 progress:**
-- Plans completed: 5 (09-01, 09-02, 10-01, 10-02, 11-01)
-- Plans remaining: 0 — milestone complete
+**v1.1 shipped:**
+- Plans: 5 (09-01, 09-02, 10-01, 10-02, 11-01)
+- Phases: 3 (Phase 9–11)
+- Timeline: 1 day (2026-03-04)
 
 ## Accumulated Context
 
 ### Decisions
 
-Full key decisions log in PROJECT.md. Recent decisions affecting v1.1:
-
-- XP ledger mirrors gem ledger pattern: append-only, advisory lock, denormalized balance on `connected_profiles`
-- `award_xp` RPC is the single write path — no JS-chained awaits for XP writes
-- Idempotency enforced at DB layer via unique constraint on `idempotency_key`
-- `xp_in_level` and `xp_to_next_level` computed on read, not stored
-- Level thresholds: 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k per level thereafter
-
-From 09-01 execution:
-- Legacy `xp` column on `connected_profiles` left untouched — Phase 10 handles migration/removal
-- `total_xp` is BIGINT (not INT) to prevent overflow for power users
-- `anon` GRANT SELECT on `xp_transactions` with no RLS policy = empty set, not permission denied
-
-From 09-02 execution:
-- `calculate_level` uses `LANGUAGE sql` (not plpgsql) — IMMUTABLE qualifier enables Postgres caching/inlining
-- `calculate_level` GRANT to anon — Phase 10 public XP endpoint needs it unauthenticated
-- `award_xp` idempotency duplicate returns current profile state (not historical state at original award time)
-- `award_xp` uses `RETURNS TABLE` to mix xp_transactions fields, calculate_level output, and is_duplicate flag
-
-From 10-01 execution:
-- Service keys optional in Zod env schema: avoids breaking existing integration tests that don't set service key env vars
-- `SERVICE_KEY_MAP` built at module load time (not per-request): env vars static after process launch
-- Per-key source authorization returns 422 (not 403): valid key + unauthorized source = caller usage error
-- `XP_SOURCES` const array satisfies both `z.enum(XP_SOURCES)` and `typeof XP_SOURCES[number]` — single source of truth
-- `award_xp` RPC row fields `id` and `current_level` remapped to `transaction_id` and `level` in `AwardXpResult`
-
-From 10-02 execution:
-- Legacy `xp` column (in generated types) used for calculate_level input in account.ts — avoids any-escape in typed createUserClient queries
-- `(supabaseAdmin as any)` escape required for xp_transactions table and total_xp column in xpService.ts (Phase 9 additions not yet in database.types.ts)
-- `adminRpc` call in route handler is allowed for IMMUTABLE RPCs (calculate_level) — architecture test checks for string `supabaseAdmin` only
-- Route order enforced in xp.ts: GET /me/history registered before GET /:userId; test guards this permanently
-- account/me xp field is now `{ total, level, xp_in_level, xp_to_next_level }` — CompassV2 frontend breaking change (legacy integer removed)
+Full key decisions log in PROJECT.md. v1.1 decisions committed to decisions table.
 
 ### Pending Todos
 
-- Run `supabase gen types` after Phase 9 migrations land (still pending — do before Phase 10 routes consume types)
-- Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials
+- Run `supabase gen types` after Phase 9 migrations land (blocked: Docker not installed on dev machine)
 - Run `tests/rls/xp_transactions.sql` against local Supabase when Docker available
+- Add integration test: valid service key + unauthorized source (SOURCE_NOT_PERMITTED path)
+- Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials for live Alpha
 
 ### Open Blockers
 
@@ -75,6 +45,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-06
-Stopped at: Completed 11-01-PLAN.md — admin XP history endpoint + AccountDetailPage XP summary and history section (ec1a7e1, c16001c)
-Resume: Run /gsd:audit-milestone to verify v1.1 before archiving
+Last session: 2026-03-04
+Stopped at: v1.1 milestone archived — MILESTONES.md, PROJECT.md, ROADMAP.md, STATE.md updated; milestones/v1.1-ROADMAP.md and v1.1-REQUIREMENTS.md created
+Resume: Run `/gsd:new-milestone` to define v1.2 requirements and roadmap

@@ -6,16 +6,7 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.0 shipped 2026-02-28.** Complete from schema through public API: auth, enrollment, compass, empowerment, social graph, admin tool, and public candidate pages.
 
-## Current Milestone: v1.1 — XP & Progression
-
-**Goal:** Add a unified XP and leveling system that aggregates participation across the platform — starting with CTC and Validation Quests — surfaced via API so any feature repo can read and award XP.
-
-**Target features:**
-- Append-only XP ledger on Connected+ accounts (mirrors gem ledger pattern)
-- Level calculation from cumulative XP with tiered thresholds (2k / 3k / 4k / 5k)
-- `POST /api/xp/award` for external feature repos to grant XP with source attribution
-- XP + level exposed on `GET /account/me` and a public `GET /api/xp/:userId` endpoint
-- Admin tool: XP ledger view in account detail page
+**v1.1 shipped 2026-03-04.** Unified XP ledger and leveling system: append-only ledger, atomic award RPC, tiered level calculation, public XP profile endpoint, and admin ledger view. Any feature repo can now award and read XP with idempotency guarantees.
 
 ## Core Value
 
@@ -41,14 +32,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ Admin tool (internal React app): invite management, account review, manual verification approvals, account standing, pilot cohort enrollment, invite chain visibility — v1.0
 - ✓ `GET /api/health` endpoint — v1.0
 
-### Active (v1.1)
+- ✓ Append-only XP ledger table with source attribution (ctc_game, ctc_perfect_bonus, validation_quest, extensible) — v1.1
+- ✓ Level calculation RPC: tiered thresholds — 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k × all thereafter — v1.1
+- ✓ `POST /api/xp/award` — feature repos call this to grant XP; idempotent with transaction key — v1.1
+- ✓ XP + current level returned on `GET /account/me` — v1.1
+- ✓ `GET /api/xp/:userId` — public XP profile (level + total XP, no full ledger) — v1.1
+- ✓ Admin tool: XP ledger tab on account detail page (source, amount, timestamp per entry) — v1.1
 
-- [ ] Append-only XP ledger table with source attribution (ctc_game, ctc_perfect_bonus, validation_quest, extensible)
-- [ ] Level calculation RPC: tiered thresholds — 2k XP × 3 levels, 3k × 6 levels, 4k × 20 levels, 5k × all thereafter
-- [ ] `POST /api/xp/award` — feature repos call this to grant XP; idempotent with transaction key
-- [ ] XP + current level returned on `GET /account/me`
-- [ ] `GET /api/xp/:userId` — public XP profile (level + total XP, no full ledger)
-- [ ] Admin tool: XP ledger tab on account detail page (source, amount, timestamp per entry)
+### Active
+
+(Define during next milestone planning — `/gsd:new-milestone`)
 
 ### Still Deferred
 
@@ -70,7 +63,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.0):** ~10,200 lines of TypeScript (8,487 backend + 1,711 admin React). 182 files. 8 phases, 18 plans, 4 days to ship. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4.
+**Current state (v1.1):** ~11,131 lines of TypeScript (9,265 backend + 1,866 admin React). 11 phases, 23 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4. XP ledger and leveling system live; awaiting supabase gen types refresh and live Alpha deployment.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -117,6 +110,12 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Gem balance denormalized on connected_profiles | O(1) balance reads without ledger sum query. RPCs maintain atomically with advisory lock. | ✓ Good — correct tradeoff for Alpha scale |
 | candidateService.ts uses supabaseAdmin (architecture test whitelist) | Public candidate pages need service-role select for cross-schema joins without user JWT. Explicit whitelist exception. | ✓ Good — documented, bounded exception |
 | getAdminMe returns id + email (v1.0 gap fix) | Admin UI auth store needs user.id to be non-empty for future admin-scoped operations. | ✓ Good — non-crashing, LOW priority fix shipped before milestone close |
+| XP ledger mirrors gem ledger: append-only, advisory lock, denormalized balance | Single write path (award_xp RPC) prevents double-award; O(1) balance reads on connected_profiles. | ✓ Good — consistent pattern across all ledgers in the system |
+| calculate_level as IMMUTABLE LANGUAGE sql function | Pure arithmetic with CTE pattern; IMMUTABLE enables Postgres caching/inlining. plpgsql not usable with IMMUTABLE. | ✓ Good — no duplicated tier arithmetic anywhere in application layer |
+| award_xp idempotency at DB layer (UNIQUE constraint + RPC pre-check) | Callers can safely retry on network failure without double-awarding; duplicate returns 200 with is_duplicate flag. | ✓ Good — no error responses on retry; calling services don't need retry guard logic |
+| Service-key auth: per-key permittedSources, 422 on scope mismatch | Valid key + wrong source is a caller usage error, not an auth failure. SERVICE_KEY_MAP built at module load (not per-request). | ✓ Good — 422 gives precise signal; startup evaluation avoids per-request secret lookup |
+| account/me xp field: object not integer (breaking change accepted) | Structured { total, level, xp_in_level, xp_to_next_level } enables frontend progress bar without extra call. Legacy integer removed. | ✓ Good — correct shape; CompassV2 frontend breaking change coordinated |
+| calculate_level column name bug: .current_level → .level (audit fix) | award_xp returns current_level; calculate_level returns level. Silent zero-level bug caught by milestone audit before ship. | ✓ Good — audit process proved its value; permanent test guard not feasible (IMMUTABLE fn) |
 
 ---
-*Last updated: 2026-03-04 after v1.1 milestone start*
+*Last updated: 2026-03-04 after v1.1 milestone*
