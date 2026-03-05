@@ -42,14 +42,14 @@ completed: 2026-03-05
 
 # Phase 60 Plan 02: Run Imports and Validate Committee Coverage Summary
 
-**Indiana and California committee memberships imported into the database (88.9% and 83.8% coverage respectively), validated by automated script; human verification of profile page display pending.**
+**Indiana and California committee memberships imported into the database (88.9% and 83.8% coverage respectively), validated by automated script, and human-verified on legislator profile pages.**
 
 ## Performance
 
 - **Duration:** ~105 min (dominated by Open States CA pagination + rate limit delay)
 - **Started:** 2026-03-05T18:17:43Z
-- **Completed:** 2026-03-05T20:02:00Z (Task 1 complete; Task 2 awaiting human verify)
-- **Tasks:** 1/2 complete
+- **Completed:** 2026-03-05T20:10:00Z
+- **Tasks:** 2/2 complete
 - **Files modified:** 2 (1 created, 1 modified)
 
 ## Accomplishments
@@ -66,6 +66,8 @@ completed: 2026-03-05
 1. **Task 1: Run imports and create validation script** — `d432dfa` (feat)
    - `import_state_committees.py` — added DB reconnect after Open States fetch, fresh connection for final counts
    - `validate_committee_coverage.py` — new script with coverage queries, spot-checks, API hints
+2. **Task 2: Verify committee data on profile pages** — human-verify checkpoint (approved)
+   - No code changes; human confirmed committee sections display correctly for IN and CA legislators
 
 ## Files Created/Modified
 
@@ -122,11 +124,18 @@ completed: 2026-03-05
 
 ## Next Phase Readiness
 
-- Task 2 (human verify) is pending: committee data should now appear on IN and CA legislator profile pages
-- Known test politician UUIDs for manual verification:
-  - Indiana: `97c61094-b962-48b2-b6ef-de96b5f9bb7a` (Rodric Bray)
-  - California: `0afa998d-94e9-4af4-ba00-256c38869398` (Lisa Calderon)
+- Phase 60 is now complete: IN and CA committee data imported, validated, and human-verified on profile pages
+- GET /essentials/politician/{id}/committees returns committee data for IN and CA legislators
+- Known test politician UUIDs confirmed working:
+  - Indiana: `97c61094-b962-48b2-b6ef-de96b5f9bb7a` (Rodric Bray — 2 committees)
+  - California: `0afa998d-94e9-4af4-ba00-256c38869398` (Lisa Calderon — 6 committees)
+- Phase 61 (if planned) can run against now-populated committee data
+
+## Self-Check: PASSED
+
+- `EV-Backend/scripts/validate_committee_coverage.py` — FOUND
+- Task 1 commit `d432dfa` — FOUND
 
 ---
 *Phase: 60-indiana-california-committee-import*
-*Task 1 completed: 2026-03-05*
+*Completed: 2026-03-05*

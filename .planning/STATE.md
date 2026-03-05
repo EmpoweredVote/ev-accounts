@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: executing
-stopped_at: Phase 60, Plan 02 Task 1 complete — awaiting human-verify checkpoint
-last_updated: "2026-03-05T20:06:12.960Z"
-last_activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
+stopped_at: Completed 60-02-PLAN.md — Phase 60 complete
+last_updated: "2026-03-05T20:17:48.388Z"
+last_activity: 2026-03-05 — Completed Phase 60 (IN/CA committee imports verified on profile pages)
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 10
-  completed_plans: 4
-  percent: 30
+  completed_plans: 5
+  percent: 40
 ---
 
 # Project State
@@ -30,7 +30,7 @@ Plan: 02 complete, 03 next
 Status: In progress — 63-02 complete (checkpoint approved), 03 ready
 Last activity: 2026-03-05 — Completed 63-02 Batch 1 headshot research (12 cities, 60/66 found)
 
-Progress: [███░░░░░░░] 30% (3/10 plans complete across active phases)
+Progress: [████░░░░░░] 40% (4/10 plans complete across active phases)
 
 ## Performance Metrics
 
@@ -42,13 +42,15 @@ Progress: [███░░░░░░░] 30% (3/10 plans complete across activ
 
 ## Accumulated Context
 
-### Key Context for Phase 60
+### Key Context for Phase 60 (COMPLETE)
 
-- Indiana committees: IGA direct API discovered at end of v2026.3 phase 57 — no auth required, no rate limits. Use this instead of Open States.
-- California committees: leginfo.legislature.ca.gov has no REST/JSON API (JSF web app). Open States API v3 confirmed as CA data source. OPENSTATES_API_KEY required in EV-Backend/.env.local.
-- Existing Python import infrastructure lives in `EV-Backend/scripts/` directory.
-- import_state_committees.py: tracking via ~/.ev-backend/committee_import_tracker.json; Open States filter: classification=="committee" (standing committees only).
-- migrate_old_committees.py: ready to run --dry-run to confirm old tables are empty before Plan 02 import.
+- Phase 60 complete: IN and CA committee memberships imported and human-verified on profile pages.
+- Indiana: 46 standing committees, 61 memberships, 16/18 legislators = 88.9% coverage (PASS)
+- California: 1,900 committees processed, 213 memberships, 31/37 legislators = 83.8% coverage (PASS)
+- validate_committee_coverage.py exits 0 — both states pass 80% threshold.
+- DB reconnect fix: import_state_committees.py reconnects after Open States API fetch (avoids Supabase idle connection timeout on ~15-min CA pagination).
+- Open States CA jurisdiction returns multi-state committees — 23,913 "no match" entries are expected, not errors.
+- committee_import_tracker.json at ~/.ev-backend/ tracks both IN and CA run metadata.
 
 ### Key Context for Phase 63
 
@@ -82,6 +84,6 @@ Progress: [███░░░░░░░] 30% (3/10 plans complete across activ
 
 ## Session Continuity
 
-Last session: 2026-03-05T20:06:12.958Z
-Stopped at: Phase 60, Plan 02 Task 1 complete — awaiting human-verify checkpoint
+Last session: 2026-03-05T20:17:48.386Z
+Stopped at: Completed 60-02-PLAN.md — Phase 60 complete
 Resume: Run `/gsd:execute-phase 63` (Plan 03 — continue Playwright browser research, Batch 2 cities)
