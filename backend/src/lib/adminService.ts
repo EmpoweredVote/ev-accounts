@@ -18,6 +18,7 @@
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { executeDemotion } from './empowerService.js';
 import { grantRole, revokeRole } from './roleService.js';
+import { getXpHistory } from './xpService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -449,6 +450,31 @@ export async function getCronLog(
   }));
 
   return { runs, total, page, pages };
+}
+
+// ---------------------------------------------------------------------------
+// XP history (admin read — delegates to xpService)
+// ---------------------------------------------------------------------------
+
+/**
+ * Return paginated XP transaction history for any user.
+ * Delegates to getXpHistory from xpService — mirrors how adminDemote delegates
+ * to executeDemotion from empowerService.
+ * XPADM-02
+ */
+export async function getAdminXpHistory(
+  userId: string,
+  page: number = 1
+): Promise<{ transactions: unknown[]; total: number; page: number; pages: number }> {
+  const limit = 25;
+  const offset = (page - 1) * limit;
+  const { transactions, total } = await getXpHistory(userId, { limit, offset });
+  return {
+    transactions,
+    total,
+    page,
+    pages: Math.max(1, Math.ceil(total / limit)),
+  };
 }
 
 // ---------------------------------------------------------------------------

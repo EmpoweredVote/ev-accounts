@@ -22,6 +22,7 @@ import {
   getAccountDetail,
   setAccountStanding,
   adminDemote,
+  getAdminXpHistory,
   listInvites,
   adminCreateInvite,
   revokeInvite,
@@ -197,6 +198,32 @@ router.post('/accounts/:userId/demote', async (req, res) => {
     await logAdminAction(actorId(req), 'demote_account', userId, { reason });
     res.json({ ok: true });
   } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+const XpHistoryQuerySchema = z.object({
+  page: z.coerce.number().int().min(1).default(1),
+});
+
+/**
+ * GET /api/admin/accounts/:userId/xp-history
+ * Paginated XP transaction history for a Connected user. Admin only.
+ * Returns 25 transactions per page in reverse chronological order.
+ * XPADM-02
+ */
+router.get('/accounts/:userId/xp-history', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const parsed = XpHistoryQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid query parameters', details: parsed.error.flatten() });
+      return;
+    }
+    const result = await getAdminXpHistory(userId, parsed.data.page);
+    res.json(result);
+  } catch (err) {
+    console.error('[admin/xp-history] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
