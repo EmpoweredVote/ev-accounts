@@ -13,6 +13,7 @@
 - ✅ **v1.8 Compass Data & Politician Research** — Phases 45-50 (shipped 2026-02-27)
 - ✅ **v1.9 Compare UX & Search Fixes** — Phases 51-53 (shipped 2026-02-28)
 - ✅ **v2026.3 Legislative Profile Data** — Phases 54-59 (shipped 2026-03-05)
+- 🚧 **v2026.4 State Data Completion & Image Coverage** — Phases 60-64 (in progress)
 
 ## Phases
 
@@ -163,6 +164,71 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 
 </details>
 
+### 🚧 v2026.4 State Data Completion & Image Coverage (In Progress)
+
+**Milestone Goal:** Complete state-level legislative data for Indiana and California (committee memberships, bill/vote verification) and achieve 80%+ headshot coverage for local officials using the existing research manifest and Supabase CDN pipeline.
+
+- [ ] **Phase 60: Indiana & California Committee Import** - Import current committee memberships via IGA direct API (IN) and CA legislature API (CA)
+- [ ] **Phase 61: State Data Verification & Gap-Fill** - Audit and verify bills, votes, and committee memberships for IN and CA against known legislators
+- [ ] **Phase 62: State Data Documentation & Accessibility** - Document repeatable import scripts and confirm all state data surfaces through existing API endpoints
+- [ ] **Phase 63: Headshot Research Sprint** - Manually research and source headshots for all ~300 politicians in the research manifest
+- [ ] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage
+
+## Phase Details
+
+### Phase 60: Indiana & California Committee Import
+**Goal**: Current committee memberships for Indiana and California legislators are in the database, sourced from authoritative APIs
+**Depends on**: Phase 59 (v2026.3 schema and existing state legislative import infrastructure)
+**Requirements**: STATE-01, STATE-02
+**Success Criteria** (what must be TRUE):
+  1. Indiana committee memberships for the current session are visible on IN legislator profile pages in Essentials
+  2. California committee memberships for the current session are visible on CA legislator profile pages in Essentials
+  3. IGA direct API (no auth, no rate limits) is the data source for Indiana committee data
+  4. The import scripts run to completion without errors against the live database
+**Plans**: TBD
+
+### Phase 61: State Data Verification & Gap-Fill
+**Goal**: Indiana and California legislative data (bills, votes, committee memberships) is verified complete and cross-referenced against the known legislator roster
+**Depends on**: Phase 60
+**Requirements**: STATE-03, STATE-04
+**Success Criteria** (what must be TRUE):
+  1. Every known IN state legislator who has committee assignments shows at least one committee on their profile
+  2. Every known CA state legislator who has committee assignments shows at least one committee on their profile
+  3. Bill and vote counts for IN and CA match expected session totals within an acceptable margin (no large unexplained gaps)
+  4. Any data gaps discovered during audit are documented with a root cause
+**Plans**: TBD
+
+### Phase 62: State Data Documentation & Accessibility
+**Goal**: State legislative import scripts are documented for repeatable future-session use, and all imported data is confirmed accessible via the existing API
+**Depends on**: Phase 61
+**Requirements**: STATE-05, STATE-06
+**Success Criteria** (what must be TRUE):
+  1. A developer following the import documentation can re-run the IN and CA committee import scripts for a new session without consulting source code
+  2. The existing /essentials/committees, /essentials/bills, and /essentials/votes API endpoints return IN and CA data without any code changes
+  3. Import scripts have clear usage instructions (arguments, environment variables, expected output)
+**Plans**: TBD
+
+### Phase 63: Headshot Research Sprint
+**Goal**: Headshots have been manually researched for all ~300 politicians in the research manifest, producing sourced image URLs for every findable photo
+**Depends on**: Nothing (independent of state data work)
+**Requirements**: PHOTO-01, PHOTO-02
+**Success Criteria** (what must be TRUE):
+  1. Every politician in headshot_research_manifest.csv has been reviewed — either a source URL recorded or marked as not findable
+  2. Politicians from Cloudflare/CivicPlus-blocked cities have been researched through manual browser navigation rather than automated scraping
+  3. The research output is a structured file (CSV or similar) mapping politician IDs to sourced headshot URLs, ready for the upload pipeline
+**Plans**: TBD
+
+### Phase 64: Headshot Upload & Coverage Validation
+**Goal**: All sourced headshots are live in Supabase Storage CDN, politician_images records are updated, and coverage validation confirms 80%+ of LA County local officials have headshots
+**Depends on**: Phase 63
+**Requirements**: PHOTO-03, PHOTO-04, PHOTO-05
+**Success Criteria** (what must be TRUE):
+  1. Every headshot sourced in Phase 63 is accessible via a Supabase CDN URL (no hotlinks to city websites)
+  2. politician_images rows exist in the database for all newly uploaded headshots
+  3. The coverage_report.py (or equivalent) reports 80%+ headshot coverage for LA County local officials
+  4. Politician profile pages in Essentials display the new headshots rather than initials avatars
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -173,3 +239,8 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 57. State Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-04 |
 | 58. Local Data Pipeline | v2026.3 | 3/3 | Complete | 2026-03-03 |
 | 59. Frontend Profile Sections | v2026.3 | 4/4 | Complete | 2026-03-03 |
+| 60. Indiana & California Committee Import | v2026.4 | 0/TBD | Not started | - |
+| 61. State Data Verification & Gap-Fill | v2026.4 | 0/TBD | Not started | - |
+| 62. State Data Documentation & Accessibility | v2026.4 | 0/TBD | Not started | - |
+| 63. Headshot Research Sprint | v2026.4 | 0/TBD | Not started | - |
+| 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
