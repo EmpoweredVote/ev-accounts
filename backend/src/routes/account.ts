@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected } from '../middleware/tierGuards.js';
-import { createUserClient } from '../lib/supabase.js';
+import { createUserClient, adminRpc } from '../lib/supabase.js';
 
 // All DB reads use createUserClient(req.accessToken) — RLS enforced.
 // Architecture rule: service role key must never be used in route handlers.
@@ -52,6 +52,8 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     }
 
     // 3. Check Connected tier (child record presence — never a status flag)
+    // NOTE: total_xp is the Phase 9 column; xp is the legacy column preserved through Phase 10.
+    // We select xp (still in generated types) and use it as the total for calculate_level.
     const { data: connected } = await db
       .schema('connect')
       .from('connected_profiles')
@@ -74,6 +76,25 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     // they fall through to 'connected' tier. empowerment_status provides
     // the active/demoted distinction for the caller.
     const tier = (empowered && empowered.is_active) ? 'empowered' : connected ? 'connected' : 'inform';
+
+    // 5a. Compute structured XP data for Connected users.
+    // Uses the legacy xp column (total) + calculate_level RPC for level breakdown.
+    // calculate_level is IMMUTABLE — safe to call via adminRpc.
+    let xpData: { total: number; level: number; xp_in_level: number; xp_to_next_level: number } | undefined;
+    if (connected) {
+      const totalXp = connected.xp ?? 0;
+      const { data: levelData } = await adminRpc('calculate_level', {
+        p_total_xp: totalXp,
+      });
+      // calculate_level RETURNS TABLE — data is always an array
+      const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
+      xpData = {
+        total: totalXp,
+        level: levelRow?.current_level ?? 0,
+        xp_in_level: levelRow?.xp_in_level ?? 0,
+        xp_to_next_level: levelRow?.xp_to_next_level ?? 0,
+      };
+    }
 
     // 6. Build response from explicit whitelist — NEVER spread DB rows.
     // This is the canonical privacy enforcement pattern for this codebase.
@@ -98,12 +119,14 @@ router.get('/me', requireAuth, async (req, res: Response) => {
 
     // Connected-tier fields: tolerance_rating is nested here (owner self-view only).
     // tolerance_rating is NEVER at root level — structural enforcement beyond RLS.
+    // xp is a structured object (total, level, xp_in_level, xp_to_next_level) replacing
+    // the legacy xp integer.
     if (connected) {
       meResponse.connected_profile = {
         display_name: connected.display_name,
         verification_status: connected.verification_status,
         tolerance_rating: connected.tolerance_rating,
-        xp: connected.xp,
+        xp: xpData,
         gem_balance: connected.gem_balance,
         completed_onboarding: connected.completed_onboarding,
         created_at: connected.created_at,
@@ -264,6 +287,22 @@ router.patch(
       // empowerment_status provides the active/demoted distinction for the caller.
       const tier = (updatedEmpowered && updatedEmpowered.is_active) ? 'empowered' : updatedConnected ? 'connected' : 'inform';
 
+      // Compute structured XP data for Connected users (same as GET /me)
+      let xpData: { total: number; level: number; xp_in_level: number; xp_to_next_level: number } | undefined;
+      if (updatedConnected) {
+        const totalXp = updatedConnected.xp ?? 0;
+        const { data: levelData } = await adminRpc('calculate_level', {
+          p_total_xp: totalXp,
+        });
+        const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
+        xpData = {
+          total: totalXp,
+          level: levelRow?.current_level ?? 0,
+          xp_in_level: levelRow?.xp_in_level ?? 0,
+          xp_to_next_level: levelRow?.xp_to_next_level ?? 0,
+        };
+      }
+
       // 6. Build response from explicit whitelist (same pattern as GET /me)
       const updatedEmpowermentStatus = updatedEmpowered
         ? (updatedEmpowered.is_active ? 'empowered' : 'demoted')
@@ -286,7 +325,7 @@ router.patch(
           display_name: updatedConnected.display_name,
           verification_status: updatedConnected.verification_status,
           tolerance_rating: updatedConnected.tolerance_rating,
-          xp: updatedConnected.xp,
+          xp: xpData,
           gem_balance: updatedConnected.gem_balance,
           completed_onboarding: updatedConnected.completed_onboarding,
           created_at: updatedConnected.created_at,
