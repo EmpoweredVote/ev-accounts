@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding and write-in stances in calibration, renders cleanly across devices, and features an inline politician picker on the compare page with level/state filters across both picker surfaces. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (Supabase CDN), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
 
 ## Core Value
 
@@ -126,22 +126,24 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Five legislative API endpoints (committees, leadership, bills, votes, legislative-summary) — v2026.3
 - ✓ LegislativeInlineSummary and LegislativeRecord components in ev-ui with session filtering — v2026.3
 - ✓ Graceful empty states for legislative sections when data unavailable — v2026.3
-
-## Current Milestone: v2026.4 State Data Completion & Image Coverage
-
-**Goal:** Complete state-level legislative data for Indiana and California, and achieve comprehensive headshot coverage for local officials.
-
-**Target features:**
-- Full audit and completion of state legislative data (committees, bills, votes) for IN and CA
-- IGA direct API integration for Indiana committee imports
-- California legislature committee import via appropriate API source
-- Comprehensive headshot coverage for ~300 local officials using existing manifest
-- Supabase CDN upload pipeline for manually sourced headshots
+- ✓ Indiana committee data imported via IGA direct API with current session memberships — v2026.4
+- ✓ California committee data imported via Open States API — v2026.4
+- ✓ Indiana and California legislative data verified complete (bills, votes, committees) — v2026.4
+- ✓ Import scripts documented and repeatable with state_legislative_config.json and new-session playbook — v2026.4
+- ✓ All state legislative data accessible through existing API endpoints — v2026.4
+- ✓ 304 politicians researched for headshot availability (100% coverage of manifest) — v2026.4
+- ✓ 180 headshots uploaded to Supabase Storage CDN, total 503 CDN records — v2026.4
+- ✓ CDN headshot health validation (100% URL health) — v2026.4
+- ✓ Compass page refresh persistence — calibration, quiz, resume-mode state survives F5 — v2026.4
+- ✓ Topics-loading race condition eliminated with branded spinner gate — v2026.4
+- ✓ Reusable CoachMark component with SVG mask spotlight overlay — v2026.4
+- ✓ Post-calibration guided tour (spoke inversion, compare, library) — v2026.4
+- ✓ Library and Compare deep-dive guided tours — v2026.4
+- ✓ Write-in awareness hint on first calibration question — v2026.4
+- ✓ Welcome screen simplified with static compass SVG — v2026.4
 
 ### Active
 
-- [ ] State legislative data audit and completion for IN and CA
-- [ ] Local official headshot coverage expansion (target 80%+)
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes)
 - [ ] Multi-politician comparison (2-3 overlays at once)
@@ -159,7 +161,7 @@ Users can explore political issues and discover their elected officials without 
 - TIGER shapefile expansion beyond Monroe County IN + LA County CA — pipeline reusable
 - PlaceAutocompleteElement migration — legacy Autocomplete class works
 - Per-ward council assignment for 5 district-election cities — at-large treatment acceptable
-- City council headshot coverage beyond 21.5% — needs manual curation
+- City council headshot coverage beyond 66.8% — remaining 33.2% blocked by Cloudflare/CivicPlus/unarchived sites
 - School board data enrichment — low data availability
 - Bio/education/experience for city council members — high per-city effort
 - Real-time vote syncing — ops complexity too high; weekly batch sufficient
@@ -169,12 +171,12 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3 with ~36K LOC across 4 repos + Python import scripts:
-- **CompassV2** (React 19): ~13K LOC — compass quiz, Library, guided onboarding, calibration, guest auth, inline politician picker with level/state filters
-- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass, essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
+Shipped v2026.4 with ~37K LOC across 4 repos + Python import scripts:
+- **CompassV2** (React 19): ~14K LOC — compass quiz, Library, guided onboarding with coach mark tours, calibration with localStorage persistence, guest auth, inline politician picker with level/state filters
+- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass, essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
 - **ev-ui** (React/tsup): ~3.9K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord
 - **essentials** (React 19): ~3.1K LOC — address autocomplete, unified search path, area labels, building photos, legislative profile pages
-- **Python scripts**: ~16K LOC — state legislative import (LegiScan/Open States), local data pipelines (Bloomington/LA County)
+- **Python scripts**: ~17K LOC — state legislative import (LegiScan/Open States/IGA), local data pipelines (Bloomington/LA County), headshot research/upload pipeline, coverage validation
 
 Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Python (psycopg2/requests/BeautifulSoup).
 ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
@@ -188,4 +190,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-05 after milestone v2026.4 started*
+*Last updated: 2026-03-06 after v2026.4 milestone*

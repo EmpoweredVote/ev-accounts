@@ -1,5 +1,34 @@
 # Milestones
 
+## v2026.4 State Data Completion & Image Coverage (Shipped: 2026-03-06)
+
+**Phases completed:** 7 phases, 21 plans
+**Timeline:** 2 days (2026-03-05 — 2026-03-06)
+**Requirements:** 23/23 satisfied
+**Repos:** EV-Backend, CompassV2, essentials
+
+**Delivered:** State legislative data completed for Indiana and California (committee memberships verified and documented), headshot coverage expanded from 21.5% to 66.8% (503 CDN records), Compass page refresh persistence fixed, and guided onboarding coach mark system added.
+
+**Key accomplishments:**
+1. Indiana committee import — IGA direct API integration importing 46 standing committees and 61 memberships with 88.9% legislator coverage; state_legislative_config.json as shared session config
+2. California committee import — Open States API importing 1,900 committees and 213 memberships with 83.8% legislator coverage; DB reconnect fix for Supabase idle timeout during 15-min CA pagination
+3. State data verification — Comprehensive audit confirming IN (935 bills, 6,069 votes, 94.4% bridge) and CA (4,746 bills, 92,492 votes, 94.6% bridge) with documented gaps and new-session playbook
+4. Headshot research sprint — 304/304 politicians manually researched (100% coverage), 246 found (80% hit rate) using HTTP scraping + Wayback Machine for Cloudflare/CivicPlus-blocked city sites
+5. Headshot CDN pipeline — 180 new headshots uploaded to Supabase Storage CDN via upload_manifest_headshots.py, total 503 CDN records, 100% URL health validation
+6. Compass page refresh fix — CalibrationOverlay, resume-mode, and quiz page state all persist across F5 via localStorage; topics-loading race condition eliminated with branded spinner gate
+7. Onboarding coach mark system — Reusable CoachMark component with SVG mask spotlight, post-calibration 3-step guided tour, Library 2-step tour, Compare deep-dive tour, write-in awareness hint, simplified welcome screen
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted in essentials `api.jsx` (carried from v1.9)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+- Topic tags placeholder div in LegislativeInlineSummary (carried from v2026.3)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+
+---
+
 ## v2026.3 Legislative Profile Data (Shipped: 2026-03-05)
 
 **Phases completed:** 6 phases, 19 plans

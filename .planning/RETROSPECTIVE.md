@@ -123,6 +123,47 @@
 
 ---
 
+## Milestone: v2026.4 — State Data Completion & Image Coverage
+
+**Shipped:** 2026-03-06
+**Phases:** 7 | **Plans:** 21
+
+### What Was Built
+- IN/CA committee imports via IGA direct API and Open States with automated coverage validation
+- State legislative data verification (audit scripts for bills, votes, committee membership coverage)
+- Documented new-session playbook with state_legislative_config.json as shared config
+- 304 politician headshot research (100% of manifest), 180 uploaded to Supabase CDN (503 total)
+- Compass page refresh persistence — calibration, quiz, and resume-mode survive F5
+- Coach mark hint system — reusable CoachMark component with SVG mask spotlight, 3 guided tours, contextual hints
+- Welcome screen simplified, write-in awareness hint added
+
+### What Worked
+- Two-track parallelism: state data (60-62) and headshot research (63) ran independently, maximizing throughput
+- Wayback Machine as systematic fallback for Cloudflare/CivicPlus-blocked government sites — 80% headshot hit rate
+- state_legislative_config.json pattern — single config file updates for new legislative sessions instead of editing multiple scripts
+- CoachMark component design — SVG mask spotlight + portal rendering enabled clean separation from host components
+- Quick bug fix phases (65-66) added mid-milestone without disrupting data work
+
+### What Was Inefficient
+- 8 headshot research plans (63-01 through 63-08) — high plan count for what is essentially repetitive batch work
+- 66 headshots failed upload due to same systematic 403 blocks discovered in research phase — could have been pre-filtered
+- Population coverage only 66.8% vs 80% target — CDN health (100%) used as pass gate instead
+
+### Patterns Established
+- Wayback Machine (`web.archive.org/web/*/`) as standard fallback for government sites with WAF protection
+- Research manifest CSV pattern with politician_id UUIDs enables direct upsert without fuzzy matching
+- localStorage persistence pattern for multi-step flows (calibration_progress, quiz_progress keys)
+- CoachMark with useCoachMark hook + storageKey pattern for persistent dismiss across sessions
+
+### Key Lessons
+1. Batch research plans should be consolidated — 8 plans of identical structure could have been 3-4 larger batches
+2. Upload pipeline should pre-filter known-blocked URLs from dry-run failures to avoid wasted upload attempts
+3. Coverage targets should distinguish health (URL accessibility) from population (has-photo-at-all) — different metrics for different gates
+4. Page refresh bugs compound — fixing one flow (calibration) often reveals the same pattern needed elsewhere (quiz, resume-mode)
+5. Coach mark tours need user testing — post-cal tour reduced from 4 to 3 steps after testing showed help button spotlight was awkward
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -133,6 +174,7 @@
 | v1.8 | 6 | 28 | First research-heavy milestone; URL verification as separate plans |
 | v1.9 | 3 | 6 | Smallest milestone yet — tight scope, 100% plan adherence |
 | v2026.3 | 6 | 19 | First multi-language pipeline milestone (Go + Python); feasibility gating pattern established |
+| v2026.4 | 7 | 21 | Mixed data + UX milestone; Wayback Machine fallback; coach mark pattern established |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -144,3 +186,6 @@
 6. Backend-first changes reduce frontend complexity (v1.3, v1.9)
 7. Feasibility check gating prevents wasted scraper development (v2026.3)
 8. Bridge table before any import prevents orphaned data across multi-source pipelines (v2026.3)
+9. Wayback Machine is a reliable fallback for WAF-blocked government sites (v2026.4)
+10. Research manifest with UUID primary keys enables direct DB upsert without fuzzy matching (v2026.4)
+11. localStorage persistence for multi-step flows prevents user frustration on page refresh (v2026.4)
