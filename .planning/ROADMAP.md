@@ -40,11 +40,11 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [x] Phase 12: Alpha Hardening (2/2 plans) — completed 2026-03-06
   - [x] 12-01-PLAN.md — Regenerate Supabase types and verify TypeScript compiles clean (HARD-01, HARD-02)
   - [x] 12-02-PLAN.md — JWT revocation test and test suite cleanup (HARD-03, HARD-04)
-- [ ] Phase 13: CompassV2 Backend Compatibility (4 plans)
-  - [ ] 13-01-PLAN.md — Migrations: inform schema repair, deleted_at, is_candidate, reset and import RPCs
-  - [ ] 13-02-PLAN.md — DELETE /compass/answers/me endpoint (COMP2-01)
-  - [ ] 13-03-PLAN.md — GET /essentials/politicians unauthenticated endpoint (COMP2-02)
-  - [ ] 13-04-PLAN.md — Expand POST /connect/compass-import with selected_topics (COMP2-03)
+- [x] Phase 13: CompassV2 Backend Compatibility (4/4 plans) — completed 2026-03-06
+  - [x] 13-01-PLAN.md — Migrations: inform schema repair, deleted_at, is_candidate, reset and import RPCs
+  - [x] 13-02-PLAN.md — DELETE /compass/answers/me endpoint (COMP2-01)
+  - [x] 13-03-PLAN.md — GET /essentials/politicians unauthenticated endpoint (COMP2-02)
+  - [x] 13-04-PLAN.md — Expand POST /connect/compass-import with selected_topics (COMP2-03)
 - [ ] Phase 14: Compass Admin Backend (0/? plans)
 - [ ] Phase 15: Compass Admin React UI (0/? plans)
 
@@ -64,7 +64,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 10. XP API | v1.1 | 2/2 | Complete | 2026-03-05 |
 | 11. Admin Tool XP View | v1.1 | 1/1 | Complete | 2026-03-06 |
 | 12. Alpha Hardening | v1.2 | 2/2 | Complete | 2026-03-06 |
-| 13. CompassV2 Backend Compatibility | v1.2 | 0/4 | Pending | — |
+| 13. CompassV2 Backend Compatibility | v1.2 | 4/4 | Complete | 2026-03-06 |
 | 14. Compass Admin Backend | v1.2 | 0/? | Pending | — |
 | 15. Compass Admin React UI | v1.2 | 0/? | Pending | — |
 

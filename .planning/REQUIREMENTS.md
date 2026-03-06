@@ -12,11 +12,11 @@
 Gaps discovered via CompassV2 bundle analysis (2026-03-05). All three are new
 endpoints or extensions; the compass core routes are already correct.
 
-- [ ] **COMP2-01**: User can clear all their compass answers and selected topics
+- [x] **COMP2-01**: User can clear all their compass answers and selected topics
   via `DELETE /api/compass/answers/me` ("Reset compass" action in CompassV2)
-- [ ] **COMP2-02**: Active politicians list is publicly accessible without
+- [x] **COMP2-02**: Active politicians list is publicly accessible without
   authentication via `GET /api/essentials/politicians` (for the compare widget)
-- [ ] **COMP2-03**: `POST /api/connect/compass-import` accepts an optional
+- [x] **COMP2-03**: `POST /api/connect/compass-import` accepts an optional
   `selected_topics` array alongside calibrations, storing pre-auth topic
   selections for import when the Connect flow completes
 

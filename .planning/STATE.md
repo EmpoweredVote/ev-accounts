@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 13 — CompassV2 Backend Compatibility
+**Current focus:** Phase 14 — Compass Admin Backend
 
 ## Current Position
 
-Phase: 13 — CompassV2 Backend Compatibility
-Plan: 13-02 (complete)
-Status: In progress — 2/4 plans complete in Phase 13
-Last activity: 2026-03-06 — Completed 13-02-PLAN.md (DELETE /api/compass/answers/me endpoint, resetCompassAnswers service, types update)
+Phase: 14 — Compass Admin Backend
+Plan: —
+Status: Phase 13 complete, ready to plan Phase 14
+Last activity: 2026-03-06 — Phase 13 CompassV2 Backend Compatibility executed and verified (6/6 criteria passed)
 
-Progress: ████░░░░░░ 50% (v1.2: 1/4 phases complete; Phase 13: 2/4 plans)
+Progress: ████░░░░░░ 50% (v1.2: 2/4 phases complete)
 
 ## Performance Metrics
 
@@ -27,9 +27,9 @@ Progress: ████░░░░░░ 50% (v1.2: 1/4 phases complete; Phase 1
 - Timeline: 1 day (2026-03-04)
 
 **v1.2 progress:**
-- Plans: 2 (12-01, 12-02)
-- Phases: 1 (Phase 12)
-- Timeline: 1 day (2026-03-06)
+- Plans: 6 (12-01, 12-02, 13-01, 13-02, 13-03, 13-04)
+- Phases: 2 (Phase 12–13)
+- Timeline: 1 day each (2026-03-06)
 
 ## Accumulated Context
 
@@ -43,8 +43,9 @@ None.
 
 ### Open Blockers
 
-- **inform namespace missing from live DB:** RESOLVED by migration 026. Run `backend/migrations/026_inform_schema_repair_and_candidates.sql` against live DB to clear this blocker.
 - **empowered_profiles missing columns:** representing_city, district_type, chamber_name etc. never migrated to live DB. Candidate ZIP discovery non-functional. Requires future migration.
+
+Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform namespace and is idempotent. Run migrations 026, 027, 028 against the live DB to activate all Phase 13 endpoints.
 
 ### Accumulated Decisions (Phase 12)
 
@@ -61,13 +62,16 @@ None.
 
 | Decision | Context |
 |----------|---------|
-| Soft-delete via deleted_at on compass_responses | Preserves response data for recovery and re-import; reset_compass_answers sets deleted_at = now(), import_compass_calibrations sets deleted_at = NULL on re-import |
+| Soft-delete via deleted_at on compass_responses | Preserves data for recovery; reset_compass_answers sets deleted_at = now(), import_compass_calibrations sets deleted_at = NULL on re-import |
 | Two-pass validation in import_compass_calibrations | Full validation loop before any writes — all-or-nothing atomicity guarantee |
 | SET search_path = '' on SECURITY DEFINER functions | Prevents search_path injection; all table references fully-qualified |
-| Conditional requireAdmin via Promise wrapper | DELETE /answers/me uses ?full=true admin flag; middleware invoked programmatically with res.headersSent guard rather than separate route |
+| Conditional requireAdmin via Promise wrapper | DELETE /answers/me ?full=true admin flag; middleware invoked programmatically with res.headersSent guard |
+| essentialsService.ts uses supabaseAnon exclusively | inform.politicians is public reference data; no service-role needed |
+| compass-import legacy path retains session guard | New direct-value path bypasses session for post-Connect users; stance_id-only path retains session requirement |
+| as-any cast removed from essentialsService.ts | database.types.ts updated by 13-02 before 13-03 ran; is_candidate properly typed |
 
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Completed 13-02-PLAN.md — DELETE /api/compass/answers/me endpoint implemented
-Resume: Execute 13-03-PLAN.md (essentials endpoints / politicians grouping)
+Stopped at: Phase 13 complete — all 6 success criteria verified, planning docs updated
+Resume: Run `/gsd:discuss-phase 14` or `/gsd:plan-phase 14` to begin Compass Admin Backend
