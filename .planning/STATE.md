@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 13 — CompassV2 Backend Compatibility
-Plan: 13-01 (complete)
-Status: In progress — 1/4 plans complete in Phase 13
-Last activity: 2026-03-06 — Completed 13-01-PLAN.md (schema migrations: inform repair, deleted_at, is_candidate, reset + import RPCs)
+Plan: 13-02 (complete)
+Status: In progress — 2/4 plans complete in Phase 13
+Last activity: 2026-03-06 — Completed 13-02-PLAN.md (DELETE /api/compass/answers/me endpoint, resetCompassAnswers service, types update)
 
-Progress: ██░░░░░░░░ 25% (v1.2: 1/4 phases complete; Phase 13: 1/4 plans)
+Progress: ████░░░░░░ 50% (v1.2: 1/4 phases complete; Phase 13: 2/4 plans)
 
 ## Performance Metrics
 
@@ -64,9 +64,10 @@ None.
 | Soft-delete via deleted_at on compass_responses | Preserves response data for recovery and re-import; reset_compass_answers sets deleted_at = now(), import_compass_calibrations sets deleted_at = NULL on re-import |
 | Two-pass validation in import_compass_calibrations | Full validation loop before any writes — all-or-nothing atomicity guarantee |
 | SET search_path = '' on SECURITY DEFINER functions | Prevents search_path injection; all table references fully-qualified |
+| Conditional requireAdmin via Promise wrapper | DELETE /answers/me uses ?full=true admin flag; middleware invoked programmatically with res.headersSent guard rather than separate route |
 
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Completed 13-01-PLAN.md — three schema migrations created and committed
-Resume: Execute 13-02-PLAN.md (auth/me + complete-onboarding endpoints)
+Stopped at: Completed 13-02-PLAN.md — DELETE /api/compass/answers/me endpoint implemented
+Resume: Execute 13-03-PLAN.md (essentials endpoints / politicians grouping)
