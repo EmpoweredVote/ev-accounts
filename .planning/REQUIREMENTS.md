@@ -109,37 +109,35 @@ These are changes needed in the CompassV2 private repo, not here.
 
 ## Traceability
 
-*Populated by roadmapper — see ROADMAP.md*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COMP2-01 | — | Pending |
-| COMP2-02 | — | Pending |
-| COMP2-03 | — | Pending |
-| HARD-01 | — | Pending |
-| HARD-02 | — | Pending |
-| HARD-03 | — | Pending |
-| HARD-04 | — | Pending |
-| CADM-01 | — | Pending |
-| CADM-02 | — | Pending |
-| CADM-03 | — | Pending |
-| CADM-04 | — | Pending |
-| CADM-05 | — | Pending |
-| CADM-06 | — | Pending |
-| CADM-07 | — | Pending |
-| CADM-08 | — | Pending |
-| CADM-09 | — | Pending |
-| CADM-10 | — | Pending |
-| CADM-11 | — | Pending |
-| CADM-12 | — | Pending |
-| CADM-13 | — | Pending |
+| HARD-01 | Phase 12 | Pending |
+| HARD-02 | Phase 12 | Pending |
+| HARD-03 | Phase 12 | Pending |
+| HARD-04 | Phase 12 | Pending |
+| COMP2-01 | Phase 13 | Pending |
+| COMP2-02 | Phase 13 | Pending |
+| COMP2-03 | Phase 13 | Pending |
+| CADM-01 | Phase 14 | Pending |
+| CADM-02 | Phase 14 | Pending |
+| CADM-03 | Phase 14 | Pending |
+| CADM-04 | Phase 14 | Pending |
+| CADM-05 | Phase 14 | Pending |
+| CADM-06 | Phase 14 | Pending |
+| CADM-07 | Phase 14 | Pending |
+| CADM-08 | Phase 15 | Pending |
+| CADM-09 | Phase 15 | Pending |
+| CADM-10 | Phase 15 | Pending |
+| CADM-11 | Phase 15 | Pending |
+| CADM-12 | Phase 15 | Pending |
+| CADM-13 | Phase 15 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 20 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 20 ⚠️
+- Mapped to phases: 20/20 ✓
+- Unmapped: 0
 
 ---
 
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 after initial definition*
+*Last updated: 2026-03-05 — traceability populated after roadmap creation*
