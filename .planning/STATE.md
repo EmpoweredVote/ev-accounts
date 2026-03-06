@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-04 after v1.1 milestone)
 
 ## Current Position
 
-Phase: 11 of 11 (all v1.1 phases complete)
-Plan: N/A
-Status: v1.1 milestone archived — ready for next milestone
-Last activity: 2026-03-04 — v1.1 milestone complete and archived
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements for v1.2
+Last activity: 2026-03-05 — Milestone v1.2 started
 
-Progress: ██████████ 100% (v1.1 shipped — 5/5 plans complete)
+Progress: ░░░░░░░░░░ 0% (v1.2 in progress)
 
 ## Performance Metrics
 
@@ -42,6 +42,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-04
-Stopped at: v1.1 milestone archived — MILESTONES.md, PROJECT.md, ROADMAP.md, STATE.md updated; milestones/v1.1-ROADMAP.md and v1.1-REQUIREMENTS.md created
-Resume: Run `/gsd:new-milestone` to define v1.2 requirements and roadmap
+Last session: 2026-03-05
+Stopped at: v1.2 milestone started — PROJECT.md and STATE.md updated; REQUIREMENTS.md and ROADMAP.md being created
+Resume: Run `/gsd:plan-phase 12` once ROADMAP.md is finalized

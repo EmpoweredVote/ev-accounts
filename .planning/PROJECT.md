@@ -8,6 +8,8 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.1 shipped 2026-03-04.** Unified XP ledger and leveling system: append-only ledger, atomic award RPC, tiered level calculation, public XP profile endpoint, and admin ledger view. Any feature repo can now award and read XP with idempotency guarantees.
 
+**v1.2 in progress.** CompassV2 integration + alpha hardening + compass admin UI.
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -41,7 +43,12 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 ### Active
 
-(Define during next milestone planning — `/gsd:new-milestone`)
+<!-- v1.2 requirements — see REQUIREMENTS.md for full list with IDs -->
+
+- [ ] CompassV2 backend compatibility: DELETE /api/compass/answers/me, GET /api/essentials/politicians, connect compass-import extended for selected_topics
+- [ ] Alpha hardening: regenerate types, resolve TS errors, verify JWT revocation, clean architecture tests
+- [ ] Compass admin backend: list all topics, create topics with stances, create/edit politicians, category management
+- [ ] Compass admin React UI: topics page, stances editing, politicians page with answers + context, categories page
 
 ### Still Deferred
 
@@ -118,4 +125,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | calculate_level column name bug: .current_level → .level (audit fix) | award_xp returns current_level; calculate_level returns level. Silent zero-level bug caught by milestone audit before ship. | ✓ Good — audit process proved its value; permanent test guard not feasible (IMMUTABLE fn) |
 
 ---
-*Last updated: 2026-03-04 after v1.1 milestone*
+*Last updated: 2026-03-05 after v1.2 milestone start*
