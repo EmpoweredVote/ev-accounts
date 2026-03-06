@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Completed 65-02-PLAN.md (Quiz persistence)
-last_updated: "2026-03-06T01:14:40.579Z"
+stopped_at: Completed 65-fix-compass-page-refresh-losing-onboarding-state-01-PLAN.md
+last_updated: "2026-03-06T01:15:38.793Z"
 last_activity: 2026-03-06 — 63-05 complete; 48 Batch 4 politicians researched, cumulative 210/304 (69.1%)
 progress:
   total_phases: 6
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 15
-  completed_plans: 11
+  completed_plans: 12
   percent: 77
 ---
 
@@ -30,7 +30,7 @@ Plan: 05 complete — 5 of 8 plans done in Phase 63
 Status: 63-05 Batch 4 complete (210/304 researched). Resume Phase 63 Plan 06 — Batch 5 cities.
 Last activity: 2026-03-06 — 63-05 complete; 48 Batch 4 politicians researched, cumulative 210/304 (69.1%)
 
-Progress: [████████░░] 77% (10/13 plans complete across active phases)
+Progress: [████████░░] 80% (12/15 plans complete across active phases)
 
 ## Performance Metrics
 
@@ -114,9 +114,20 @@ Progress: [████████░░] 77% (10/13 plans complete across acti
 - La Verne correct council URL: /351/City-Council (manifest had stale /government/city_council/).
 - Temple City correct council URL: /116/City-Council (manifest had stale /government/city-council).
 
+### Key Context for Phase 65 (COMPLETE)
+
+- Phase 65 complete: Compass page refresh losing onboarding state fixed.
+- CompassContext now exposes topicsLoaded, topicsError, retryLoadTopics.
+- Compass.jsx has a loading gate (after all hooks) showing EV coral spinner until topics load; error state with Retry on API failure.
+- CalibrationOverlay: localStorage check is now FIRST in getInitialState() so saved progress wins on refresh; resume-mode sessions now persist to calibration_progress key; init effect always waits for topics.length > 0.
+- Celebration screen edge case: useEffect in Compass.jsx clears calibration_progress if all pickedTopics already answered on mount (skip celebration, go straight to compass).
+- Commits: 657c4fc (feat: topicsLoaded gate), 05f6bc7 (fix: CalibrationOverlay persistence).
+- Requirements REFRESH-01, REFRESH-02, REFRESH-03 marked complete.
+
 ### Roadmap Evolution
 
 - Phase 65 added: Fix Compass page refresh losing onboarding state
+- Phase 65 complete: 2026-03-06
 
 ### Quick Tasks Completed
 
@@ -125,6 +136,7 @@ Progress: [████████░░] 77% (10/13 plans complete across acti
 | 2 | Move Compare button closer to compass chart | 2026-03-05 | `005c970` | [2-move-compare-button-closer-to-compass-ch](./quick/2-move-compare-button-closer-to-compass-ch/) |
 | 3 | Animate politician compass polygon on spoke inversion | 2026-03-06 | `288aa22` (ev-ui), `e561a74` (CompassV2) | [3-animate-politician-compass-spoke-inversi](./quick/3-animate-politician-compass-spoke-inversi/) |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P02 | 3 | 2 tasks | 3 files |
+| Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
 
 ### Tech Debt Carried Forward
 
@@ -142,6 +154,6 @@ Progress: [████████░░] 77% (10/13 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T01:14:40.576Z
-Stopped at: Completed 65-02-PLAN.md (Quiz persistence)
+Last session: 2026-03-06T01:15:38.791Z
+Stopped at: Completed 65-fix-compass-page-refresh-losing-onboarding-state-01-PLAN.md
 Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.

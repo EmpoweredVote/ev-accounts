@@ -26,9 +26,9 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 
 ### Compass Page Refresh Fix
 
-- [ ] **REFRESH-01**: Topics-loading race condition fixed — CalibrationOverlay does not initialize until topics are loaded from API
-- [ ] **REFRESH-02**: Calibration progress (pick step, answer step, question index) persists across page refresh for both standard and resume-mode flows
-- [ ] **REFRESH-03**: Compass page shows branded loading spinner while topics load, error state with retry on API failure
+- [x] **REFRESH-01**: Topics-loading race condition fixed — CalibrationOverlay does not initialize until topics are loaded from API
+- [x] **REFRESH-02**: Calibration progress (pick step, answer step, question index) persists across page refresh for both standard and resume-mode flows
+- [x] **REFRESH-03**: Compass page shows branded loading spinner while topics load, error state with retry on API failure
 - [x] **REFRESH-04**: Quiz page currentIndex and mode persist across page refresh via localStorage
 - [x] **REFRESH-05**: Clear Compass action clears all progress state including quiz progress and calibration progress
 - [x] **REFRESH-06**: Stale topic IDs in localStorage are silently filtered out; calibration re-triggers if selectedTopics drops below 3
@@ -73,9 +73,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PHOTO-03 | Phase 64 | Pending |
 | PHOTO-04 | Phase 64 | Pending |
 | PHOTO-05 | Phase 64 | Pending |
-| REFRESH-01 | Phase 65 | Pending |
-| REFRESH-02 | Phase 65 | Pending |
-| REFRESH-03 | Phase 65 | Pending |
+| REFRESH-01 | Phase 65 | Complete |
+| REFRESH-02 | Phase 65 | Complete |
+| REFRESH-03 | Phase 65 | Complete |
 | REFRESH-04 | Phase 65 | Complete |
 | REFRESH-05 | Phase 65 | Complete |
 | REFRESH-06 | Phase 65 | Complete |
