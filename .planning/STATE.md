@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Phase 66 context gathered
-last_updated: "2026-03-06T02:34:49.798Z"
+stopped_at: Completed 66-01-PLAN.md (CoachMark component + welcome screen simplification)
+last_updated: "2026-03-06T02:52:54.331Z"
 last_activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
 progress:
   total_phases: 7
   completed_phases: 4
-  total_plans: 15
-  completed_plans: 13
+  total_plans: 19
+  completed_plans: 14
   percent: 80
 ---
 
@@ -134,6 +134,15 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Commits: 657c4fc (feat: topicsLoaded gate), 05f6bc7 (fix: CalibrationOverlay persistence).
 - Requirements REFRESH-01, REFRESH-02, REFRESH-03 marked complete.
 
+### Key Context for Phase 66 (IN PROGRESS)
+
+- 66-01 complete: CoachMark.jsx created — portal overlay (z-60+), SVG mask spotlight cutout, auto-positioning tooltip, tour mode (Next/Skip All) + hint mode (Got it), Framer Motion fade+slide animations.
+- useCoachMark hook exported from CoachMark.jsx — localStorage-persisted dismiss with storageKey pattern (matches onboarding_spokeFlip pattern).
+- CalibrationOverlay welcome step simplified: calibration-demo.gif removed; inline SVG compass (ev-coral user polygon, ev-light-blue comparison polygon, ev-yellow dots); 4-bullet ul replaced with single p tag (~18 words).
+- Commits in CompassV2 repo: 5b89692 (CoachMark), 414ef75 (CalibrationOverlay welcome).
+- Requirements ONBOARD-01, ONBOARD-04 marked complete.
+- SVG mask chosen over CSS clip-path for spotlight — cleaner rounded hole without polygon math.
+
 ### Roadmap Evolution
 
 - Phase 65 added: Fix Compass page refresh losing onboarding state
@@ -149,6 +158,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P02 | 3 | 2 tasks | 3 files |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
 | Phase 63 P06 | 45 | 1 tasks | 1 files |
+| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P01 | 2 | 2 tasks | 2 files |
 
 ### Tech Debt Carried Forward
 
@@ -166,6 +176,6 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T02:34:49.794Z
-Stopped at: Phase 66 context gathered
+Last session: 2026-03-06T02:52:54.328Z
+Stopped at: Completed 66-01-PLAN.md (CoachMark component + welcome screen simplification)
 Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.
