@@ -8,7 +8,8 @@
  * Uses only createUserClient (RLS-enforced) and supabaseAnon (public reads).
  */
 
-import { createUserClient, supabaseAnon } from './supabase.js';
+import { createUserClient, supabaseAnon, adminRpc } from './supabase.js';
+import { saveSelectedTopics, validateTopicIds } from './compassService.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -218,6 +219,70 @@ export async function saveCompassImportDraft(
     .eq('user_id', userId);
 
   if (error) throw error;
+}
+
+// ---------------------------------------------------------------------------
+// Compass calibration direct import — uses adminRpc (SECURITY DEFINER)
+// ---------------------------------------------------------------------------
+
+export interface ImportCalibrationItem {
+  topic_id: string;
+  value: number;
+  write_in_text?: string;
+  inverted?: boolean;
+}
+
+/**
+ * importCompassCalibrations
+ * Atomically writes calibrations to inform.compass_responses via the
+ * import_compass_calibrations SECURITY DEFINER RPC (migration 028).
+ *
+ * If selected_topics is provided with 3–8 valid IDs, the RPC also sets
+ * completed_onboarding = true on the user's connected_profiles row, and
+ * saveSelectedTopics is called after the RPC succeeds.
+ */
+export async function importCompassCalibrations(params: {
+  userId: string;
+  accessToken: string;
+  calibrations: ImportCalibrationItem[];
+  selectedTopics?: string[];
+}): Promise<{ imported: number; onboarding_complete: boolean }> {
+  const shouldCompleteOnboarding =
+    Array.isArray(params.selectedTopics) &&
+    params.selectedTopics.length >= 3 &&
+    params.selectedTopics.length <= 8;
+
+  // Validate selected topic IDs if provided
+  if (params.selectedTopics && params.selectedTopics.length > 0) {
+    const invalidIds = await validateTopicIds(params.selectedTopics);
+    if (invalidIds.length > 0) {
+      throw Object.assign(new Error('INVALID_TOPIC_IDS'), {
+        code: 'INVALID_TOPIC_IDS',
+        invalid_ids: invalidIds,
+      });
+    }
+  }
+
+  // Call the import_compass_calibrations SECURITY DEFINER RPC
+  const { error } = await adminRpc('import_compass_calibrations', {
+    p_user_id: params.userId,
+    p_calibrations: JSON.stringify(params.calibrations),
+    p_set_onboarding_complete: shouldCompleteOnboarding,
+  });
+
+  if (error) {
+    if (error.message === 'INVALID_CALIBRATION') {
+      throw Object.assign(new Error('INVALID_CALIBRATION'), { code: 'INVALID_CALIBRATION' });
+    }
+    throw new Error(error.message);
+  }
+
+  // Save selected topics if provided and valid
+  if (params.selectedTopics && params.selectedTopics.length > 0) {
+    await saveSelectedTopics(params.accessToken, params.userId, params.selectedTopics);
+  }
+
+  return { imported: params.calibrations.length, onboarding_complete: shouldCompleteOnboarding };
 }
 
 // ---------------------------------------------------------------------------
