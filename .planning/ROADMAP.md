@@ -192,6 +192,10 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   - [ ] 63-07-PLAN.md — Research Batch 6: 12 smaller cities (~32 politicians)
   - [ ] 63-08-PLAN.md — Research Batch 7 + Burbank (blocked): final ~14+ politicians
 - [ ] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage
+  **Plans:** 2 plans
+  Plans:
+  - [ ] 64-01-PLAN.md — Create upload pipeline script and dry-run verification
+  - [ ] 64-02-PLAN.md — Execute real upload, coverage validation, and visual verification
 
 ## Phase Details
 
@@ -246,7 +250,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   2. politician_images rows exist in the database for all newly uploaded headshots
   3. The coverage_report.py (or equivalent) reports 80%+ headshot coverage for LA County local officials
   4. Politician profile pages in Essentials display the new headshots rather than initials avatars
-**Plans**: TBD
+**Plans**: 2 plans
 
 ### Phase 65: Fix Compass page refresh losing onboarding state
 **Goal**: Page refresh during any Compass onboarding flow (calibration, resume-mode, or quiz) seamlessly returns the user to their exact position with no flicker or state loss
@@ -298,6 +302,6 @@ Plans:
 | 61. State Data Verification & Gap-Fill | 1/1 | Complete    | 2026-03-05 | - |
 | 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
 | 63. Headshot Research Sprint | 8/8 | Complete    | 2026-03-06 | - |
-| 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
+| 64. Headshot Upload & Coverage Validation | v2026.4 | 0/2 | Not started | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
 | 66. Improve onboarding flow | 4/4 | Complete    | 2026-03-06 | - |
