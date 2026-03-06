@@ -233,6 +233,31 @@ export async function validateTopicIds(topicIds: string[]): Promise<string[]> {
 }
 
 /**
+ * resetCompassAnswers
+ *
+ * Soft-deletes all of a user's compass responses and clears their
+ * selected_topic_ids in a single atomic operation.
+ *
+ * Delegates to the reset_compass_answers SECURITY DEFINER RPC which handles
+ * the multi-table atomic update. Idempotent — safe to call when the user has
+ * no responses (RPC exits cleanly).
+ *
+ * When fullReset is true (admin-only flag), also sets completed_onboarding =
+ * false on connected_profiles, returning the user to pre-calibration state.
+ */
+export async function resetCompassAnswers(
+  userId: string,
+  fullReset: boolean = false
+): Promise<void> {
+  const { error } = await adminRpc('reset_compass_answers', {
+    p_user_id: userId,
+    p_full_reset: fullReset,
+  });
+
+  if (error) throw new Error(error.message);
+}
+
+/**
  * saveSelectedTopics
  * Saves validated topic IDs into connected_profiles.selected_topic_ids.
  * Uses createUserClient — RLS enforces owner-only update.
