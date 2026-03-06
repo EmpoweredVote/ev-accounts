@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 12 — Alpha Hardening
-Plan: —
-Status: Roadmap defined, ready to plan Phase 12
-Last activity: 2026-03-05 — v1.2 roadmap created (4 phases, 20 requirements)
+Plan: 02 of N (in progress)
+Status: In progress
+Last activity: 2026-03-06 — Completed 12-02-PLAN.md (test suite hardening)
 
-Progress: ░░░░░░░░░░ 0% (v1.2: 0/4 phases complete)
+Progress: ░░░░░░░░░░ ~10% (v1.2: Phase 12 in progress)
 
 ## Performance Metrics
 
@@ -34,14 +34,22 @@ Full key decisions log in PROJECT.md. v1.1 decisions committed to decisions tabl
 
 ### Pending Todos
 
-
+None.
 
 ### Open Blockers
 
 None.
 
+### Recent Decisions (12-02)
+
+| Decision | Context |
+|----------|---------|
+| HS256 test JWT pattern via SUPABASE_JWT_SECRET | Must set env var before dynamic import — auth.ts reads it at module eval time |
+| iat = now-1s in test JWT | isTokenRevoked uses strict less-than; same-second collision would break revocation test |
+| Skip stubs deleted, not converted to .todo | vitest 2.x counts .todo as skipped — both patterns inflate reported count |
+
 ## Session Continuity
 
-Last session: 2026-03-05
-Stopped at: v1.2 roadmap created — ROADMAP.md, STATE.md, REQUIREMENTS.md all updated
-Resume: Run `/gsd:plan-phase 12` to begin Alpha Hardening
+Last session: 2026-03-06
+Stopped at: Completed 12-02-PLAN.md — JWT revocation test + skip stub cleanup
+Resume file: None
