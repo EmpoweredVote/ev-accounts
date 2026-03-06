@@ -52,8 +52,8 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     }
 
     // 3. Check Connected tier (child record presence — never a status flag)
-    // NOTE: total_xp is the Phase 9 column; xp is the legacy column preserved through Phase 10.
-    // We select xp (still in generated types) and use it as the total for calculate_level.
+    // NOTE: Both xp (legacy Phase 6 column) and total_xp (Phase 9 column) exist in the schema.
+    // We use xp here as the XP total for calculate_level. Both columns are in database.types.ts.
     const { data: connected } = await db
       .schema('connect')
       .from('connected_profiles')

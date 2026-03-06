@@ -121,8 +121,7 @@ export async function getXpHistory(
   const limit = Math.min(options?.limit ?? 50, 100);
   const offset = options?.offset ?? 0;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data, count, error } = await (supabaseAdmin as any)
+  const { data, count, error } = await supabaseAdmin
     .schema('connect')
     .from('xp_transactions')
     .select('id, source, amount, metadata, created_at', { count: 'exact' })
@@ -130,8 +129,8 @@ export async function getXpHistory(
     .order('created_at', { ascending: false })
     .range(offset, offset + limit - 1);
 
-  if (error) throw new Error((error as { message: string }).message);
-  return { transactions: (data as unknown[]) ?? [], total: (count as number) ?? 0 };
+  if (error) throw new Error(error.message);
+  return { transactions: data ?? [], total: count ?? 0 };
 }
 
 // ---------------------------------------------------------------------------
@@ -149,24 +148,19 @@ export async function getPublicXpProfile(
   userId: string
 ): Promise<{ level: number; total_xp: number; xp_in_level: number; xp_to_next_level: number } | null> {
   // Read denormalized total_xp from connected_profiles.
-  // NOTE: total_xp is a Phase 9 column not yet reflected in database.types.ts.
-  // Using any escape until `supabase gen types` is re-run.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const { data: profile, error: profileError } = await (supabaseAdmin as any)
+  const { data: profile, error: profileError } = await supabaseAdmin
     .schema('connect')
     .from('connected_profiles')
     .select('total_xp')
     .eq('user_id', userId)
     .maybeSingle();
 
-  if (profileError) throw new Error((profileError as { message: string }).message);
+  if (profileError) throw new Error(profileError.message);
   if (!profile) return null; // user not found or not Connected
-
-  const profileRow = profile as { total_xp: number };
 
   // Compute level fields via calculate_level RPC (IMMUTABLE, cached by Postgres)
   const { data: levelData, error: levelError } = await adminRpc('calculate_level', {
-    p_total_xp: profileRow.total_xp,
+    p_total_xp: profile.total_xp,
   }, 'connect');
   if (levelError) throw new Error(levelError.message);
 
@@ -176,7 +170,7 @@ export async function getPublicXpProfile(
 
   return {
     level: levelRow.level,
-    total_xp: profileRow.total_xp,
+    total_xp: profile.total_xp,
     xp_in_level: levelRow.xp_in_level,
     xp_to_next_level: levelRow.xp_to_next_level,
   };

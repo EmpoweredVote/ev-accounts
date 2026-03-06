@@ -33,14 +33,8 @@ export interface CandidateProfile {
   active: boolean;
   demoted_at: string | null;
   empowered_at: string;
-  representing_city: string | null;
-  representing_state: string | null;
-  representing_zip: string | null;
-  district_type: string | null;
-  district_id: string | null;
-  government_name: string | null;
-  chamber_name: string | null;
-  chamber_name_formal: string | null;
+  // NOTE: representing_city, district columns, government_name, chamber_name are planned
+  // for a future empowered_profiles schema migration. Not yet in the live DB schema.
   images: Array<{ type: string; url: string | null }>;
   featured_stances: Array<{ topic_id: string; value: number; write_in_text?: string }>;
 }
@@ -49,11 +43,8 @@ export interface EssentialsCandidate {
   candidate_page_slug: string;
   first_name: string;
   last_name: string;
-  representing_city: string | null;
-  representing_state: string | null;
-  district_type: string | null;
-  government_name: string | null;
-  chamber_name: string | null;
+  // NOTE: representing_city, district_type, government_name, chamber_name are planned
+  // for a future empowered_profiles schema migration. Not yet in the live DB schema.
   images: Array<{ type: string; url: string | null }>;
 }
 
@@ -117,10 +108,12 @@ export async function getCandidateBySlug(slug: string): Promise<CandidateProfile
   if (cached !== null) return cached;
 
   // Fetch empowered_profiles row — explicit column list, NEVER *
+  // NOTE: representing_city, district columns, government_name, chamber_name are not
+  // yet in the live empowered_profiles schema — excluded until migration is applied.
   const { data, error } = await supabaseAdmin
     .schema('empower')
     .from('empowered_profiles')
-    .select('user_id, legal_name, candidate_page_slug, is_active, empowered_at, demoted_at, representing_city, representing_state, representing_zip, district_type, district_id, government_name, chamber_name, chamber_name_formal, photo_origin_url')
+    .select('user_id, legal_name, candidate_page_slug, is_active, empowered_at, demoted_at')
     .eq('candidate_page_slug', slug)
     .is('deleted_at', null)
     .maybeSingle();
@@ -177,17 +170,7 @@ export async function getCandidateBySlug(slug: string): Promise<CandidateProfile
     active: data.is_active as boolean,
     demoted_at: (data.demoted_at as string | null) ?? null,
     empowered_at: data.empowered_at as string,
-    representing_city: (data.representing_city as string | null) ?? null,
-    representing_state: (data.representing_state as string | null) ?? null,
-    representing_zip: (data.representing_zip as string | null) ?? null,
-    district_type: (data.district_type as string | null) ?? null,
-    district_id: (data.district_id as string | null) ?? null,
-    government_name: (data.government_name as string | null) ?? null,
-    chamber_name: (data.chamber_name as string | null) ?? null,
-    chamber_name_formal: (data.chamber_name_formal as string | null) ?? null,
-    images: data.photo_origin_url
-      ? [{ type: 'default', url: data.photo_origin_url as string }]
-      : [],
+    images: [],
     featured_stances: featuredStances,
   };
 
@@ -286,11 +269,13 @@ export async function getCandidatesByZip(zip: string): Promise<EssentialsCandida
   if (cached !== null) return cached;
 
   // Explicit column list — NEVER *
+  // NOTE: representing_zip, district columns, government_name, chamber_name are not
+  // yet in the live empowered_profiles schema — ZIP-based lookup not functional until
+  // migration is applied. Returns empty array in the interim.
   const { data, error } = await supabaseAdmin
     .schema('empower')
     .from('empowered_profiles')
-    .select('user_id, legal_name, candidate_page_slug, representing_city, representing_state, representing_zip, district_type, government_name, chamber_name, photo_origin_url')
-    .eq('representing_zip', zip)
+    .select('user_id, legal_name, candidate_page_slug')
     .eq('is_active', true)
     .is('deleted_at', null);
 
@@ -303,14 +288,7 @@ export async function getCandidatesByZip(zip: string): Promise<EssentialsCandida
       candidate_page_slug: row.candidate_page_slug as string,
       first_name: names.first_name,
       last_name: names.last_name,
-      representing_city: (row.representing_city as string | null) ?? null,
-      representing_state: (row.representing_state as string | null) ?? null,
-      district_type: (row.district_type as string | null) ?? null,
-      government_name: (row.government_name as string | null) ?? null,
-      chamber_name: (row.chamber_name as string | null) ?? null,
-      images: row.photo_origin_url
-        ? [{ type: 'default', url: row.photo_origin_url as string }]
-        : [],
+      images: [],
     };
   });
 
