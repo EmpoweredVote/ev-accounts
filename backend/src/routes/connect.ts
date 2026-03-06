@@ -12,8 +12,11 @@ import {
   updateVerificationSession,
   validateCompassVersions,
   saveCompassImportDraft,
+  importCompassCalibrations,
+  type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
+import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -54,11 +57,14 @@ const compassImportBodySchema = z.object({
     z.object({
       topic_id: z.string().uuid(),
       topic_version: z.number().int().positive(),
-      stance_id: z.string().uuid(),
+      stance_id: z.string().uuid().optional(),
+      value: z.number().int().min(1).max(5).optional(),
       inverted: z.boolean().optional().default(false),
     })
   ),
+  selected_topics: z.array(z.string().uuid()).min(0).max(8).optional(),
   confirmed: z.boolean().optional().default(false),
+  user_id: z.string().uuid().optional(),
 });
 
 // ---------------------------------------------------------------------------
@@ -372,10 +378,15 @@ router.get('/status', requireAuth, async (req: Request, res: Response): Promise<
  *   Returns { valid, mismatched, ready_to_import } so the client can prompt
  *   the user to re-take any mismatched topics before confirming.
  *
- * Phase 2 (confirmed: true) — Save:
- *   Store calibrations JSON in verification_sessions.compass_import_draft.
- *   The actual write to inform.compass_responses is deferred to Phase 4
- *   (Compass Routes) — this plan stores the draft only.
+ * Phase 2 (confirmed: true) — Write:
+ *   Direct import path: calibrations include numeric value fields.
+ *     Calls importCompassCalibrations RPC. Optionally commits selected_topics
+ *     and marks onboarding complete when 3–8 topic IDs are provided.
+ *   Legacy path: calibrations have stance_id only (no value field).
+ *     Requires active verification session. Saves draft for lazy promotion.
+ *
+ * Admin path: if user_id is provided in the body, requireAdmin is enforced
+ * and the import is performed on behalf of the specified user.
  */
 router.post('/compass-import', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const { userId, accessToken } = req as AuthenticatedRequest;
@@ -393,23 +404,80 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
   const { calibrations, confirmed } = parsed.data;
 
   try {
-    // 1. Require an active verification session
-    const sessionId = await getVerificationSessionId(accessToken, userId);
-    if (!sessionId) {
-      res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
-      return;
-    }
-
     if (!confirmed) {
       // Phase 1: Validate topic versions against live server versions
-      const result = await validateCompassVersions(calibrations);
+      // Only validate calibrations that have topic_version (legacy path)
+      const legacyCals = calibrations.filter(c => c.stance_id !== undefined) as CalibrationItem[];
+      const result = await validateCompassVersions(legacyCals);
       res.status(200).json(result);
       return;
     }
 
-    // Phase 2: Save calibrations as draft in verification_sessions
-    await saveCompassImportDraft(accessToken, userId, calibrations);
-    res.status(200).json({ imported: true, count: calibrations.length });
+    // Phase 2: confirmed = true
+    // Admin path: if user_id provided in body, check admin permission
+    if (parsed.data.user_id) {
+      await new Promise<void>((resolve, reject) => {
+        requireAdmin(req, res, (err?: unknown) => {
+          if (err) reject(err); else resolve();
+        });
+      }).catch(() => {});
+      if (res.headersSent) return;
+    }
+
+    const targetUserId = parsed.data.user_id ?? userId;
+    const calibrationsWithValue = calibrations.filter(c => c.value !== undefined);
+
+    if (calibrationsWithValue.length > 0) {
+      // New direct import path — calibrations include numeric values
+      const importItems = calibrationsWithValue.map(c => ({
+        topic_id: c.topic_id,
+        value: c.value!,
+        inverted: c.inverted ?? false,
+      }));
+
+      try {
+        const result = await importCompassCalibrations({
+          userId: targetUserId,
+          accessToken,
+          calibrations: importItems,
+          selectedTopics: parsed.data.selected_topics,
+        });
+        res.status(200).json({
+          imported: true,
+          count: result.imported,
+          onboarding_complete: result.onboarding_complete,
+        });
+      } catch (importErr: unknown) {
+        const e = importErr as { code?: string; message?: string; invalid_ids?: string[] };
+        if (e.code === 'INVALID_CALIBRATION') {
+          res.status(400).json({
+            code: 'INVALID_CALIBRATION',
+            message: 'One or more calibrations failed validation — nothing was saved',
+          });
+          return;
+        }
+        if (e.code === 'INVALID_TOPIC_IDS') {
+          res.status(422).json({
+            code: 'INVALID_TOPIC_IDS',
+            message: 'Invalid selected topic IDs',
+            invalid_ids: e.invalid_ids,
+          });
+          return;
+        }
+        throw importErr;
+      }
+    } else {
+      // Legacy path: save draft for lazy promotion
+      // Require an active verification session for legacy path
+      const sessionId = await getVerificationSessionId(accessToken, userId);
+      if (!sessionId) {
+        res.status(404).json({ code: 'NO_SESSION', message: 'No active verification session' });
+        return;
+      }
+      const legacyCals = calibrations as CalibrationItem[];
+      await saveCompassImportDraft(accessToken, userId, legacyCals);
+      res.status(200).json({ imported: true, count: calibrations.length });
+    }
   } catch (err) {
     console.error('[connect/compass-import] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
