@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Completed 65-fix-compass-page-refresh-losing-onboarding-state-01-PLAN.md
-last_updated: "2026-03-06T01:20:43.688Z"
+stopped_at: Completed 63-06-PLAN.md — Batch 5 headshot research (254/304 researched, 83%)
+last_updated: "2026-03-06T01:59:32.283Z"
 last_activity: 2026-03-06 — 63-05 complete; 48 Batch 4 politicians researched, cumulative 210/304 (69.1%)
 progress:
-  total_phases: 6
+  total_phases: 7
   completed_phases: 4
   total_plans: 15
-  completed_plans: 12
+  completed_plans: 13
   percent: 80
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 63 of 64 (Headshot Research Sprint)
-Plan: 05 complete — 5 of 8 plans done in Phase 63
-Status: 63-05 Batch 4 complete (210/304 researched). Resume Phase 63 Plan 06 — Batch 5 cities.
-Last activity: 2026-03-06 — 63-05 complete; 48 Batch 4 politicians researched, cumulative 210/304 (69.1%)
+Plan: 06 complete — 6 of 8 plans done in Phase 63
+Status: 63-06 Batch 5 complete (254/304 researched). Resume Phase 63 Plan 07 — Batch 6 cities.
+Last activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
 
 Progress: [████████░░] 80% (12/15 plans complete across active phases)
 
@@ -88,7 +88,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Walnut, Bell Gardens, Bradbury: no individual headshot photos on official city websites — all 4 members each marked not_found. Cities with roster-only table layouts.
 - Claremont, Paramount, South El Monte (failed-status): manual navigation succeeded — headshots found on individual profile sub-pages.
 - Signal Hill: 2/4 found; 2 newer members lack photos on city site.
-- Cumulative: 210/304 researched (69.1%), ~181 found (~86% hit rate).
+- Cumulative: 254/304 researched (83%), ~205 found (~81% hit rate).
 - Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare/Akamai sites.
 - Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
 - Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
@@ -104,7 +104,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
 - Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
 - Current coverage: target 80%+ of 391 politicians.
-- Manifest: 94 politicians still pending (non-Batch-1/2/3/4 cities).
+- Manifest: ~50 politicians still pending (non-Batch-1/2/3/4/5 cities).
 - 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
 - Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
 - Monrovia (monroviaca.gov): website has NO individual headshots — text bios only, all 4 members not_found.
@@ -113,6 +113,16 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Lawndale photos: appear on /contact_information sub-page (CivicLive pattern), not main /city_council page.
 - La Verne correct council URL: /351/City-Council (manifest had stale /government/city_council/).
 - Temple City correct council URL: /116/City-Council (manifest had stale /government/city-council).
+- Agoura Hills (FAILED): bus-directory/City Council/{Name}.jpg pattern (Revize CMS) — 4/4 found.
+- Westlake Village: CivicPlus mainSectionTS img scoping finds headshot in /NNN/Name individual pages.
+- Los Alamitos, Beverly Hills: fr-dib class with alt=name on main council page maps names to ImageRepository IDs.
+- Hawaiian Gardens: Wayback showpublishedimage per-member pages (2019-2023 era); first main-content image = headshot.
+- Whittier: Angular SPA + Cloudflare — fully blocked, no Wayback. Mark not_found.
+- Rosemead (FAILED): Revize CMS with JS-only content rendering — no static HTML or Wayback. Mark not_found.
+- La Habra Heights (FAILED): lahabraheights.com is parked domain (synergytech), not city website. Mark not_found.
+- Sierra Madre (FAILED): cityofsmca.com unresolvable, no Wayback. Mark not_found.
+- Lancaster: Cloudflare + no Wayback snapshots. Mark not_found.
+- South Pasadena Omari Ferguson: not in 2024 Wayback snapshot (different council era). Mark not_found.
 
 ### Key Context for Phase 65 (COMPLETE)
 
@@ -128,6 +138,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 
 - Phase 65 added: Fix Compass page refresh losing onboarding state
 - Phase 65 complete: 2026-03-06
+- Phase 66 added: Improve onboarding flow with guided hints and UX clarity
 
 ### Quick Tasks Completed
 
@@ -137,6 +148,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 | 3 | Animate politician compass polygon on spoke inversion | 2026-03-06 | `288aa22` (ev-ui), `e561a74` (CompassV2) | [3-animate-politician-compass-spoke-inversi](./quick/3-animate-politician-compass-spoke-inversi/) |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P02 | 3 | 2 tasks | 3 files |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
+| Phase 63 P06 | 45 | 1 tasks | 1 files |
 
 ### Tech Debt Carried Forward
 
@@ -154,6 +166,6 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T01:15:38.791Z
-Stopped at: Completed 65-fix-compass-page-refresh-losing-onboarding-state-01-PLAN.md
+Last session: 2026-03-06T01:59:32.280Z
+Stopped at: Completed 63-06-PLAN.md — Batch 5 headshot research (254/304 researched, 83%)
 Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.
