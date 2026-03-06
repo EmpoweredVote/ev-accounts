@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Completed 66-02-PLAN.md (post-calibration tour + write-in hint)
-last_updated: "2026-03-06T03:02:24.958Z"
+stopped_at: Completed 66-04-PLAN.md (onboarding flag cleanup + end-to-end verification)
+last_updated: "2026-03-06T03:24:02.933Z"
 last_activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
 progress:
   total_phases: 7
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 19
-  completed_plans: 16
-  percent: 80
+  completed_plans: 17
+  percent: 89
 ---
 
 # Project State
@@ -30,7 +30,7 @@ Plan: 06 complete — 6 of 8 plans done in Phase 63
 Status: 63-06 Batch 5 complete (254/304 researched). Resume Phase 63 Plan 07 — Batch 6 cities.
 Last activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
 
-Progress: [████████░░] 80% (12/15 plans complete across active phases)
+Progress: [█████████░] 89% (17/19 plans complete across active phases)
 
 ## Performance Metrics
 
@@ -134,7 +134,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Commits: 657c4fc (feat: topicsLoaded gate), 05f6bc7 (fix: CalibrationOverlay persistence).
 - Requirements REFRESH-01, REFRESH-02, REFRESH-03 marked complete.
 
-### Key Context for Phase 66 (IN PROGRESS)
+### Key Context for Phase 66 (COMPLETE)
 
 - 66-01 complete: CoachMark.jsx created — portal overlay (z-60+), SVG mask spotlight cutout, auto-positioning tooltip, tour mode (Next/Skip All) + hint mode (Got it), Framer Motion fade+slide animations.
 - useCoachMark hook exported from CoachMark.jsx — localStorage-persisted dismiss with storageKey pattern (matches onboarding_spokeFlip pattern).
@@ -151,6 +151,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Commits: 748ef45 (Library tour), 4b59914 (Compare tour).
 - Requirements ONBOARD-03, ONBOARD-06 marked complete.
 - Pattern: callback ref for first loop element; DOM query for child component internals without modifying ComparePanel.jsx.
+- 66-04 complete: All 5 onboarding flags confirmed in handleClearCompass (no code change needed). End-to-end user testing surfaced two issues — both fixed: (1) post-cal tour reduced from 4 to 3 steps (help button step removed — too subtle, awkward spotlight); (2) compare button spotlight fixed with callback ref prop instead of document.querySelector. Topic picker subtitle updated to "Pick the issues that matter most to you when you vote". Commits: 087a1a8 (subtitle), 6431e6b (tour fix). Phase 66 complete: all ONBOARD-01 through ONBOARD-06 requirements satisfied.
 
 ### Roadmap Evolution
 
@@ -170,6 +171,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P01 | 2 | 2 tasks | 2 files |
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P03 | 336 | 2 tasks | 3 files |
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P02 | 366 | 2 tasks | 3 files |
+| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P04 | 45 | 2 tasks | 3 files |
 
 ### Tech Debt Carried Forward
 
@@ -187,6 +189,6 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T03:02:24.954Z
-Stopped at: Completed 66-02-PLAN.md (post-calibration tour + write-in hint)
+Last session: 2026-03-06T03:24:02.929Z
+Stopped at: Completed 66-04-PLAN.md (onboarding flag cleanup + end-to-end verification)
 Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.
