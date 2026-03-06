@@ -276,7 +276,7 @@ Plans:
   4. Welcome screen uses a static image and concise text (no GIF, no 4 bullet points)
   5. Write-in awareness hint shows on the first calibration question only
   6. Library page coach marks orient users to adding topics and the full quiz path
-**Plans:** 1/4 plans executed
+**Plans:** 2/4 plans executed
 
 Plans:
 - [ ] 66-01-PLAN.md — Create reusable CoachMark component and simplify welcome screen
@@ -300,4 +300,4 @@ Plans:
 | 63. Headshot Research Sprint | 6/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
-| 66. Improve onboarding flow | 1/4 | In Progress|  | - |
+| 66. Improve onboarding flow | 2/4 | In Progress|  | - |

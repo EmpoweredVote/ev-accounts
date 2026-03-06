@@ -37,10 +37,10 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 
 - [x] **ONBOARD-01**: Reusable CoachMark component with full-page dim overlay and spotlight cutout, supporting both sequential tours and one-shot contextual hints
 - [ ] **ONBOARD-02**: Post-calibration 4-step guided tour on Compass page (spoke inversion, compare, library, help button)
-- [ ] **ONBOARD-03**: Compare deep-dive tour triggered on first compare interaction, including spoke inversion conceptual clarity
+- [x] **ONBOARD-03**: Compare deep-dive tour triggered on first compare interaction, including spoke inversion conceptual clarity
 - [x] **ONBOARD-04**: Welcome screen simplified with static hero image and 1-2 concise text lines (no GIF, no 4 bullet points)
 - [ ] **ONBOARD-05**: Write-in awareness hint on first calibration question, dismissed permanently after advancing
-- [ ] **ONBOARD-06**: Library page 2-step coach mark tour (topic add button, full calibration CTA) on first visit
+- [x] **ONBOARD-06**: Library page 2-step coach mark tour (topic add button, full calibration CTA) on first visit
 
 ## Future Requirements
 
@@ -90,10 +90,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REFRESH-06 | Phase 65 | Complete |
 | ONBOARD-01 | Phase 66 | Complete |
 | ONBOARD-02 | Phase 66 | Pending |
-| ONBOARD-03 | Phase 66 | Pending |
+| ONBOARD-03 | Phase 66 | Complete |
 | ONBOARD-04 | Phase 66 | Complete |
 | ONBOARD-05 | Phase 66 | Pending |
-| ONBOARD-06 | Phase 66 | Pending |
+| ONBOARD-06 | Phase 66 | Complete |
 
 **Coverage:**
 - v2026.4 requirements: 23 total

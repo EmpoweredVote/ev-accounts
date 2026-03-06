@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Completed 66-01-PLAN.md (CoachMark component + welcome screen simplification)
-last_updated: "2026-03-06T02:52:54.331Z"
+stopped_at: Completed 66-03-PLAN.md (Library tour + Compare deep-dive tour)
+last_updated: "2026-03-06T03:00:54.936Z"
 last_activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
 progress:
   total_phases: 7
   completed_phases: 4
   total_plans: 19
-  completed_plans: 14
+  completed_plans: 15
   percent: 80
 ---
 
@@ -142,6 +142,11 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 - Commits in CompassV2 repo: 5b89692 (CoachMark), 414ef75 (CalibrationOverlay welcome).
 - Requirements ONBOARD-01, ONBOARD-04 marked complete.
 - SVG mask chosen over CSS clip-path for spotlight — cleaner rounded hole without polygon math.
+- 66-02 complete (committed by prior session as 01f6700): SpokeHint removed; 4-step post-cal tour added to Compass.jsx (spokeRef/compareRef/backToLibRef/helpBtnRef); tour triggers on onComplete callback with 500ms delay; persists via onboarding_postCalTour.
+- 66-03 complete: Library.jsx 2-step tour (step 1: + button via callback ref, step 2: Full Calibration CTA); Compass.jsx Compare 4-step tour (politician picker DOM query, topic-dropdown id, chartContainerRef for overlay/spoke steps); persists via onboarding_libraryTour/onboarding_compareTour.
+- Commits: 748ef45 (Library tour), 4b59914 (Compare tour).
+- Requirements ONBOARD-03, ONBOARD-06 marked complete.
+- Pattern: callback ref for first loop element; DOM query for child component internals without modifying ComparePanel.jsx.
 
 ### Roadmap Evolution
 
@@ -159,6 +164,7 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
 | Phase 63 P06 | 45 | 1 tasks | 1 files |
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P01 | 2 | 2 tasks | 2 files |
+| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P03 | 336 | 2 tasks | 3 files |
 
 ### Tech Debt Carried Forward
 
@@ -176,6 +182,6 @@ Progress: [████████░░] 80% (12/15 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T02:52:54.328Z
-Stopped at: Completed 66-01-PLAN.md (CoachMark component + welcome screen simplification)
+Last session: 2026-03-06T03:00:54.933Z
+Stopped at: Completed 66-03-PLAN.md (Library tour + Compare deep-dive tour)
 Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.
