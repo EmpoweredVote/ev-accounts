@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
 status: completed
-stopped_at: Completed 66-04-PLAN.md (onboarding flag cleanup + end-to-end verification)
-last_updated: "2026-03-06T03:30:26.354Z"
-last_activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
+stopped_at: Completed 63-07-PLAN.md — Batch 6 headshot research (287/304 researched, 94%)
+last_updated: "2026-03-06T03:40:40.163Z"
+last_activity: 2026-03-06 — 63-07 complete; 33 Batch 6 politicians researched, cumulative 287/304 (94%)
 progress:
   total_phases: 7
   completed_phases: 5
   total_plans: 19
-  completed_plans: 17
+  completed_plans: 18
   percent: 89
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 ## Current Position
 
 Phase: 63 of 64 (Headshot Research Sprint)
-Plan: 06 complete — 6 of 8 plans done in Phase 63
-Status: 63-06 Batch 5 complete (254/304 researched). Resume Phase 63 Plan 07 — Batch 6 cities.
-Last activity: 2026-03-06 — 63-06 complete; 44 Batch 5 politicians researched, cumulative 254/304 (83%)
+Plan: 07 complete — 7 of 8 plans done in Phase 63
+Status: 63-07 Batch 6 complete (287/304 researched). Resume Phase 63 Plan 08 — Batch 7 final cities (17 remaining).
+Last activity: 2026-03-06 — 63-07 complete; 33 Batch 6 politicians researched, cumulative 287/304 (94%)
 
 Progress: [█████████░] 89% (17/19 plans complete across active phases)
 
@@ -88,7 +88,9 @@ Progress: [█████████░] 89% (17/19 plans complete across acti
 - Walnut, Bell Gardens, Bradbury: no individual headshot photos on official city websites — all 4 members each marked not_found. Cities with roster-only table layouts.
 - Claremont, Paramount, South El Monte (failed-status): manual navigation succeeded — headshots found on individual profile sub-pages.
 - Signal Hill: 2/4 found; 2 newer members lack photos on city site.
-- Cumulative: 254/304 researched (83%), ~205 found (~81% hit rate).
+- Batch 5 (63-06) complete: 44 rows researched, 33 found, 11 not_found, 0 pending. Checkpoint approved 2026-03-06.
+- Batch 6 (63-07) complete: 33 rows researched, 24 found, 9 not_found, 0 pending.
+- Cumulative: 287/304 researched (94%), ~229 found (~80% hit rate).
 - Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare/Akamai sites.
 - Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
 - Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
@@ -104,7 +106,7 @@ Progress: [█████████░] 89% (17/19 plans complete across acti
 - Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
 - Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
 - Current coverage: target 80%+ of 391 politicians.
-- Manifest: ~50 politicians still pending (non-Batch-1/2/3/4/5 cities).
+- Manifest: ~17 politicians still pending (non-Batch-1/2/3/4/5/6 cities) — Batch 7 is the final batch.
 - 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
 - Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
 - Monrovia (monroviaca.gov): website has NO individual headshots — text bios only, all 4 members not_found.
@@ -123,6 +125,13 @@ Progress: [█████████░] 89% (17/19 plans complete across acti
 - Sierra Madre (FAILED): cityofsmca.com unresolvable, no Wayback. Mark not_found.
 - Lancaster: Cloudflare + no Wayback snapshots. Mark not_found.
 - South Pasadena Omari Ferguson: not in 2024 Wayback snapshot (different council era). Mark not_found.
+- Batch 6 (63-07) new discoveries: Bell correct domain is cityofbell.gov (not cityofbell.org); San Fernando correct domain is sanfernando.gov; San Dimas correct domain is sandimasca.gov.
+- CivicPlus directory.aspx?EID pattern: individual member pages at /directory.aspx?EID={id} often have photos not shown on main council page.
+- George Dotson (Inglewood): former council member replaced by Gloria Gray in District 1 — marked not_found.
+- La Puente: lapuentehome.org returns corrupted binary content — all 3 members not_found.
+- Downey: downeyca.org Akamai-blocked, no Wayback CDX snapshots — both members not_found.
+- Carson: site completely unreachable (timeout), no Wayback archives — FAILED status confirmed, both members not_found.
+- Manhattan Beach: Wayback 20250211 snapshot served photos for all 3 members (VisionInternet showpublishedimage IDs: 24271, 44029, 44027).
 
 ### Key Context for Phase 65 (COMPLETE)
 
@@ -172,6 +181,7 @@ Progress: [█████████░] 89% (17/19 plans complete across acti
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P03 | 336 | 2 tasks | 3 files |
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P02 | 366 | 2 tasks | 3 files |
 | Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P04 | 45 | 2 tasks | 3 files |
+| Phase 63 P07 | 90 | 1 tasks | 1 files |
 
 ### Tech Debt Carried Forward
 
@@ -189,6 +199,6 @@ Progress: [█████████░] 89% (17/19 plans complete across acti
 
 ## Session Continuity
 
-Last session: 2026-03-06T03:24:02.929Z
-Stopped at: Completed 66-04-PLAN.md (onboarding flag cleanup + end-to-end verification)
-Resume: Run `/gsd:execute-phase 63` (Plan 05 — Batch 4 cities). Phase 62 is fully complete.
+Last session: 2026-03-06T03:40:40.160Z
+Stopped at: Completed 63-07-PLAN.md — Batch 6 headshot research (287/304 researched, 94%)
+Resume: Run `/gsd:execute-phase 63` (Plan 08 — Batch 7 final cities). 17 politicians remaining.
