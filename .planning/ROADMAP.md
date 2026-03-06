@@ -297,7 +297,7 @@ Plans:
 | 60. Indiana & California Committee Import | 2/2 | Complete    | 2026-03-05 | - |
 | 61. State Data Verification & Gap-Fill | 1/1 | Complete    | 2026-03-05 | - |
 | 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
-| 63. Headshot Research Sprint | 8/8 | Complete   | 2026-03-06 | - |
+| 63. Headshot Research Sprint | 8/8 | Complete    | 2026-03-06 | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
 | 66. Improve onboarding flow | 4/4 | Complete    | 2026-03-06 | - |
