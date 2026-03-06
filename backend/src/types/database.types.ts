@@ -711,6 +711,7 @@ export type Database = {
       compass_responses: {
         Row: {
           created_at: string
+          deleted_at: string | null
           inverted: boolean
           topic_id: string
           updated_at: string
@@ -721,6 +722,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          deleted_at?: string | null
           inverted?: boolean
           topic_id: string
           updated_at?: string
@@ -731,6 +733,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          deleted_at?: string | null
           inverted?: boolean
           topic_id?: string
           updated_at?: string
@@ -949,6 +952,7 @@ export type Database = {
           full_name: string | null
           id: string
           is_active: boolean
+          is_candidate: boolean
           last_name: string
           office_title: string | null
           photo_origin_url: string | null
@@ -960,6 +964,7 @@ export type Database = {
           full_name?: string | null
           id?: string
           is_active?: boolean
+          is_candidate?: boolean
           last_name: string
           office_title?: string | null
           photo_origin_url?: string | null
@@ -971,6 +976,7 @@ export type Database = {
           full_name?: string | null
           id?: string
           is_active?: boolean
+          is_candidate?: boolean
           last_name?: string
           office_title?: string | null
           photo_origin_url?: string | null
