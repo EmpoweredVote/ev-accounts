@@ -13,7 +13,7 @@
 - ✅ **v1.8 Compass Data & Politician Research** — Phases 45-50 (shipped 2026-02-27)
 - ✅ **v1.9 Compare UX & Search Fixes** — Phases 51-53 (shipped 2026-02-28)
 - ✅ **v2026.3 Legislative Profile Data** — Phases 54-59 (shipped 2026-03-05)
-- 🚧 **v2026.4 State Data Completion & Image Coverage** — Phases 60-64 (in progress)
+- ✅ **v2026.4 State Data Completion & Image Coverage** — Phases 60-64 (shipped 2026-03-06)
 
 ## Phases
 
@@ -192,10 +192,10 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   - [ ] 63-07-PLAN.md — Research Batch 6: 12 smaller cities (~32 politicians)
   - [ ] 63-08-PLAN.md — Research Batch 7 + Burbank (blocked): final ~14+ politicians
 - [x] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage (completed 2026-03-06)
-  **Plans:** 2 plans
+  **Plans:** 2/2 plans complete
   Plans:
-  - [ ] 64-01-PLAN.md — Create upload pipeline script and dry-run verification
-  - [ ] 64-02-PLAN.md — Execute real upload, coverage validation, and visual verification
+  - [x] 64-01-PLAN.md — Create upload pipeline script and dry-run verification
+  - [x] 64-02-PLAN.md — Execute real upload, coverage validation, and visual verification
 
 ## Phase Details
 
