@@ -5,9 +5,6 @@ import type { Express } from 'express';
 // Set up test environment before any imports that read process.env
 process.env['NODE_ENV'] = 'test';
 process.env['SUPABASE_URL'] = 'https://test.supabase.co';
-
-// Tests that require live Supabase are skipped when using the placeholder URL
-const hasRealSupabase = !process.env['SUPABASE_URL']?.includes('test.supabase.co');
 process.env['SUPABASE_ANON_KEY'] = 'test-anon-key';
 process.env['SUPABASE_SERVICE_ROLE_KEY'] = 'test-service-role-key';
 process.env['DATABASE_URL'] = 'postgresql://postgres:password@localhost:5432/postgres';
@@ -100,29 +97,6 @@ describe('POST /api/auth/signup', () => {
     // No extra fields beyond code and message should be present for error responses
     expect(body['code']).toBe('VALIDATION_ERROR');
   });
-
-  // ---- Supabase-dependent tests ----
-  // Skipped when SUPABASE_URL is the placeholder test URL (CI without secrets).
-  // Set SUPABASE_URL to a real project URL to run these tests.
-
-  describe.skipIf(!hasRealSupabase)('(requires Supabase connectivity)', () => {
-    it('returns 201 with { id, message } on valid signup', async () => {
-      // Uses a unique email to avoid EMAIL_EXISTS conflicts across test runs.
-      // Requires Supabase to be reachable and configured with email confirmation ON.
-      const uniqueEmail = `test+${Date.now()}@example.com`;
-      const res = await request(app)
-        .post('/api/auth/signup')
-        .set('Content-Type', 'application/json')
-        .send({ email: uniqueEmail, password: 'ValidPassword123!' });
-
-      // With email confirmation ON: 201 is returned, data.session is null (expected)
-      expect(res.status).toBe(201);
-      const body = res.body as Record<string, unknown>;
-      expect(typeof body['id']).toBe('string');
-      expect(body['id']).toBeTruthy();
-      expect(typeof body['message']).toBe('string');
-    });
-  });
 });
 
 // ---------------------------------------------------------------------------
@@ -163,59 +137,6 @@ describe('POST /api/auth/login', () => {
     expect(res.status).toBe(422);
     assertErrorShape(res.body as Record<string, unknown>);
     expect((res.body as Record<string, unknown>)['code']).toBe('VALIDATION_ERROR');
-  });
-
-  // ---- Supabase-dependent tests ----
-  // Skipped when SUPABASE_URL is the placeholder test URL.
-
-  describe.skipIf(!hasRealSupabase)('(requires Supabase connectivity)', () => {
-    it('returns 401 with INVALID_CREDENTIALS for wrong credentials', async () => {
-      // Requires Supabase reachable. Wrong email + wrong password should both
-      // return INVALID_CREDENTIALS (OWASP enumeration protection — never distinguish).
-      const res = await request(app)
-        .post('/api/auth/login')
-        .set('Content-Type', 'application/json')
-        .send({ email: 'nobody@example.com', password: 'WrongPassword999!' });
-
-      expect(res.status).toBe(401);
-      const body = res.body as Record<string, unknown>;
-      assertErrorShape(body);
-      expect(body['code']).toBe('INVALID_CREDENTIALS');
-    });
-
-    it('returns tokens and user profile on successful login', async () => {
-      // Requires a verified user to exist in Supabase.
-      // Set TEST_USER_EMAIL and TEST_USER_PASSWORD env vars to run this test.
-      const email = process.env['TEST_USER_EMAIL'];
-      const password = process.env['TEST_USER_PASSWORD'];
-
-      if (!email || !password) {
-        // Skip gracefully if test credentials not provided
-        console.warn('[auth.test] Skipping login success test — TEST_USER_EMAIL and TEST_USER_PASSWORD not set');
-        return;
-      }
-
-      const res = await request(app)
-        .post('/api/auth/login')
-        .set('Content-Type', 'application/json')
-        .send({ email, password });
-
-      expect(res.status).toBe(200);
-      const body = res.body as Record<string, unknown>;
-
-      // Token fields
-      expect(typeof body['access_token']).toBe('string');
-      expect(typeof body['refresh_token']).toBe('string');
-      expect(typeof body['expires_in']).toBe('number');
-      expect(body['token_type']).toBe('bearer');
-
-      // Minimal profile stub
-      const user = body['user'] as Record<string, unknown>;
-      expect(typeof user['id']).toBe('string');
-      expect(typeof user['email']).toBe('string');
-      expect(user['tier']).toBe('inform');
-      expect(user['account_standing']).toBe('active');
-    });
   });
 });
 

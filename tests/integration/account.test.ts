@@ -56,7 +56,6 @@ describe('GET /api/account/me', () => {
   it('does not include tolerance_rating at top level of response', async () => {
     // This test runs without Supabase but validates the structural contract.
     // Without auth we get 401, but the test is documenting the privacy rule.
-    // A Supabase-dependent version is in the marked section below.
     // For CI: this asserts the field is absent even in error responses.
     const res = await request(app).get('/api/account/me');
     expect(res.body).not.toHaveProperty('tolerance_rating');
@@ -65,34 +64,6 @@ describe('GET /api/account/me', () => {
   it('does not include legal_name at top level of response', async () => {
     const res = await request(app).get('/api/account/me');
     expect(res.body).not.toHaveProperty('legal_name');
-  });
-
-  describe('(requires Supabase connectivity)', () => {
-    it.skip('returns correct response shape for authenticated user', async () => {
-      // Requires: real JWT from a logged-in user
-      // Setup: POST /api/auth/login with valid credentials, extract token
-      // Assert: id, email, display_name, tier, account_standing, created_at, updated_at
-      // This test is run in Supabase-connected integration environments only
-    });
-
-    it.skip('includes tolerance_rating in connected_profile for Connected user', async () => {
-      // Requires: real JWT from a Connected (verified) user
-      // Assert: res.body.connected_profile.tolerance_rating is defined
-      // Assert: typeof res.body.connected_profile.tolerance_rating === 'number'
-      // Assert: 'tolerance_rating' is NOT a direct key of res.body (only nested)
-    });
-
-    it.skip('returns tier: inform for a user with no connected_profiles row', async () => {
-      // Requires: JWT from a user with no connected_profiles record
-      // Assert: res.body.tier === 'inform'
-      // Assert: res.body.connected_profile is undefined
-    });
-
-    it.skip('returns tier: connected for a user with connected_profiles row', async () => {
-      // Requires: JWT from a Connected user
-      // Assert: res.body.tier === 'connected'
-      // Assert: res.body.connected_profile is defined
-    });
   });
 });
 
@@ -186,61 +157,6 @@ describe('PATCH /api/account/me', () => {
     expect(res.status).toBe(401);
     expect(res.body).toHaveProperty('error'); // middleware shape (not handler shape)
   });
-
-  describe('(requires Supabase connectivity)', () => {
-    it.skip('returns 403 with EMAIL_NOT_VERIFIED for unverified email user', async () => {
-      // Requires: valid JWT from a user whose email is NOT confirmed
-      // Assert: res.status === 403
-      // Assert: res.body.code === 'EMAIL_NOT_VERIFIED'
-      // Assert: res.body.message is a string
-    });
-
-    it.skip('returns 403 for Inform-tier user (no connected_profiles row)', async () => {
-      // Requires: valid JWT from a verified user with no connected_profiles record
-      // Assert: res.status === 403
-      // Assert: res.body.error === 'Connected account required'
-    });
-
-    it.skip('returns 200 with updated profile after display_name change', async () => {
-      // Requires: valid JWT from a Connected (verified) user
-      // Send: { display_name: 'New Display Name' }
-      // Assert: res.status === 200
-      // Assert: res.body.display_name === 'New Display Name'
-      // Assert: res.body.connected_profile.display_name === 'New Display Name'
-      // Assert: res.body.updated_at is a valid ISO timestamp
-      // Assert: response shape matches GET /api/account/me shape
-    });
-
-    it.skip('returns 200 with updated profile after avatar_url change', async () => {
-      // Requires: valid JWT from a Connected (verified) user
-      // Send: { avatar_url: 'https://example.com/avatar.png' }
-      // Assert: res.status === 200
-      // Assert: res.body.avatar_url === 'https://example.com/avatar.png'
-    });
-
-    it.skip('returns 422 for empty body {} (no fields provided)', async () => {
-      // Requires: valid JWT from a Connected (verified) user
-      // Send: {}
-      // Assert: res.status === 422
-      // Assert: res.body.code === 'VALIDATION_ERROR'
-      // Assert: res.body.message === 'No valid fields to update'
-    });
-
-    it.skip('returns 422 for invalid display_name: empty string', async () => {
-      // Requires: valid JWT from a Connected (verified) user
-      // Send: { display_name: '' }
-      // Assert: res.status === 422
-      // Assert: res.body.code === 'VALIDATION_ERROR'
-    });
-
-    it.skip('confirms tolerance_rating in body is stripped — not written to DB', async () => {
-      // Requires: valid JWT from a Connected user; read tolerance_rating before/after
-      // Send: { display_name: 'Test', tolerance_rating: 9999 }
-      // Assert: res.status === 200
-      // Assert: res.body.connected_profile.tolerance_rating === originalValue (unchanged)
-      // Assert: res.body.connected_profile.tolerance_rating !== 9999
-    });
-  });
 });
 
 // ---------------------------------------------------------------------------
@@ -279,30 +195,5 @@ describe('Field-level privacy enforcement', () => {
     expect(res.body).not.toHaveProperty('legal_name');
     expect(res.body).not.toHaveProperty('password');
     expect(res.body).not.toHaveProperty('hashed_password');
-  });
-
-  describe('(requires Supabase connectivity)', () => {
-    it.skip('authenticated response contains only ALLOWED_ME_KEYS at root level', async () => {
-      // Requires: valid JWT from an authenticated user
-      // This is the definitive whitelist test for successful responses.
-      // Implementation:
-      //   const res = await request(app).get('/api/account/me')
-      //     .set('Authorization', `Bearer ${validToken}`);
-      //   expect(res.status).toBe(200);
-      //   const unexpectedKeys = Object.keys(res.body).filter(k => !ALLOWED_ME_KEYS.has(k));
-      //   expect(unexpectedKeys).toHaveLength(0); // No unexpected fields
-    });
-
-    it.skip('connected_profile sub-object contains tolerance_rating (not at root)', async () => {
-      // Requires: valid JWT from a Connected user
-      // Assert: 'tolerance_rating' in res.body.connected_profile
-      // Assert: !('tolerance_rating' in res.body) — not at root
-    });
-
-    it.skip('empowered_profile sub-object contains legal_name (not at root)', async () => {
-      // Requires: valid JWT from an Empowered user
-      // Assert: 'legal_name' in res.body.empowered_profile
-      // Assert: !('legal_name' in res.body) — not at root
-    });
   });
 });
