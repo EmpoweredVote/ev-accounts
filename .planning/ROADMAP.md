@@ -300,4 +300,4 @@ Plans:
 | 63. Headshot Research Sprint | 6/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
-| 66. Improve onboarding flow | 4/4 | Complete   | 2026-03-06 | - |
+| 66. Improve onboarding flow | 4/4 | Complete    | 2026-03-06 | - |
