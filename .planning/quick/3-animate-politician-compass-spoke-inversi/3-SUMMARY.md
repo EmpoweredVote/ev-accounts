@@ -46,7 +46,7 @@ completed: 2026-03-06
 - **Duration:** ~2 min
 - **Started:** 2026-03-06T00:26:08Z
 - **Completed:** 2026-03-06T00:27:54Z
-- **Tasks:** 2 of 3 complete (paused at checkpoint:human-verify)
+- **Tasks:** 3 of 3 complete
 - **Files modified:** 1 (RadarChartCore.jsx) + CompassV2 package.json/lock
 
 ## Accomplishments
@@ -60,7 +60,7 @@ completed: 2026-03-06
 
 1. **Task 1: Enable react-spring animation on compare polygon** - `288aa22` (feat, in ev-ui repo)
 2. **Task 2: Rebuild CompassV2 with updated ev-ui** - `e561a74` (feat, in CompassV2 repo)
-3. **Task 3: Human verify** - awaiting checkpoint approval
+3. **Task 3: Human verify** - approved by user
 
 ## Files Created/Modified
 
@@ -85,8 +85,9 @@ None - plan executed exactly as written.
 
 ## Next Phase Readiness
 
-- Awaiting human-verify checkpoint (Task 3): start CompassV2 dev server, navigate to Compass compare page, verify both polygons animate on spoke inversion
-- After checkpoint approval, Task 3 is complete and QUICK-3 is fully done
+- QUICK-3 is fully complete and verified
+- Both polygons now animate consistently on spoke inversion; animation is correct on new politician selection (immediate appearance, no fly-in)
+- ev-ui can be published as `0.1.40` when ready, then CompassV2's package.json restored to the registry reference
 
 ---
 *Phase: quick-3*
