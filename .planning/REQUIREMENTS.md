@@ -25,14 +25,14 @@ endpoints or extensions; the compass core routes are already correct.
 Tech debt carried since v1.1 close. Must be resolved before real users hit the
 system.
 
-- [ ] **HARD-01**: `database.types.ts` is regenerated via `supabase gen types
+- [x] **HARD-01**: `database.types.ts` is regenerated via `supabase gen types
   typescript` and committed — no stale generated type mismatches remain
-- [ ] **HARD-02**: TypeScript compiler reports zero errors in strict mode across
+- [x] **HARD-02**: TypeScript compiler reports zero errors in strict mode across
   the entire backend source tree
-- [ ] **HARD-03**: JWT token revocation via Redis blocklist is reviewed and
+- [x] **HARD-03**: JWT token revocation via Redis blocklist is reviewed and
   verified — a logged-out token is rejected on the next request, not just
   after expiry
-- [ ] **HARD-04**: Architecture test suite runs cleanly with no skipped tests or
+- [x] **HARD-04**: Architecture test suite runs cleanly with no skipped tests or
   TODO workarounds
 
 ### Compass Admin Backend
@@ -111,10 +111,10 @@ These are changes needed in the CompassV2 private repo, not here.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HARD-01 | Phase 12 | Pending |
-| HARD-02 | Phase 12 | Pending |
-| HARD-03 | Phase 12 | Pending |
-| HARD-04 | Phase 12 | Pending |
+| HARD-01 | Phase 12 | Complete |
+| HARD-02 | Phase 12 | Complete |
+| HARD-03 | Phase 12 | Complete |
+| HARD-04 | Phase 12 | Complete |
 | COMP2-01 | Phase 13 | Pending |
 | COMP2-02 | Phase 13 | Pending |
 | COMP2-03 | Phase 13 | Pending |
@@ -140,4 +140,4 @@ These are changes needed in the CompassV2 private repo, not here.
 ---
 
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 — traceability populated after roadmap creation*
+*Last updated: 2026-03-06 — HARD-01 through HARD-04 marked Complete after Phase 12 execution*

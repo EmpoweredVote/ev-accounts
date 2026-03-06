@@ -37,9 +37,9 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 ### v1.2 CompassV2 Integration & Alpha Hardening (Phases 12–15)
 
-- [ ] Phase 12: Alpha Hardening (2 plans)
-  - [ ] 12-01-PLAN.md — Regenerate Supabase types and verify TypeScript compiles clean (HARD-01, HARD-02)
-  - [ ] 12-02-PLAN.md — JWT revocation test and test suite cleanup (HARD-03, HARD-04)
+- [x] Phase 12: Alpha Hardening (2/2 plans) — completed 2026-03-06
+  - [x] 12-01-PLAN.md — Regenerate Supabase types and verify TypeScript compiles clean (HARD-01, HARD-02)
+  - [x] 12-02-PLAN.md — JWT revocation test and test suite cleanup (HARD-03, HARD-04)
 - [ ] Phase 13: CompassV2 Backend Compatibility (0/? plans)
 - [ ] Phase 14: Compass Admin Backend (0/? plans)
 - [ ] Phase 15: Compass Admin React UI (0/? plans)
@@ -59,7 +59,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 9. XP Schema & Core | v1.1 | 2/2 | Complete | 2026-03-04 |
 | 10. XP API | v1.1 | 2/2 | Complete | 2026-03-05 |
 | 11. Admin Tool XP View | v1.1 | 1/1 | Complete | 2026-03-06 |
-| 12. Alpha Hardening | v1.2 | 0/2 | Planned | — |
+| 12. Alpha Hardening | v1.2 | 2/2 | Complete | 2026-03-06 |
 | 13. CompassV2 Backend Compatibility | v1.2 | 0/? | Pending | — |
 | 14. Compass Admin Backend | v1.2 | 0/? | Pending | — |
 | 15. Compass Admin React UI | v1.2 | 0/? | Pending | — |
