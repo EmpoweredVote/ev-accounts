@@ -5,7 +5,7 @@ milestone_name: State Data Completion & Image Coverage
 status: verifying
 stopped_at: Completed 64-02-PLAN.md — Phase 64 complete. All 2 tasks done. 180 headshots on CDN, PHOTO-03/04/05 satisfied, human visual verification approved.
 last_updated: "2026-03-06T19:56:05.662Z"
-last_activity: 2026-03-06 — 64-02 complete; Task 2 human visual verification approved; v2026.4 milestone complete
+last_activity: 2026-03-06 — quick-4 complete; vacant position support added to offices (Office.IsVacant, LEFT JOIN queries, frontend dimmed cards)
 progress:
   total_phases: 7
   completed_phases: 7
@@ -196,6 +196,7 @@ Progress: [██████████] 100% (21/21 plans complete across act
 |---|-------------|------|--------|-----------|
 | 2 | Move Compare button closer to compass chart | 2026-03-05 | `005c970` | [2-move-compare-button-closer-to-compass-ch](./quick/2-move-compare-button-closer-to-compass-ch/) |
 | 3 | Animate politician compass polygon on spoke inversion | 2026-03-06 | `288aa22` (ev-ui), `e561a74` (CompassV2) | [3-animate-politician-compass-spoke-inversi](./quick/3-animate-politician-compass-spoke-inversi/) |
+| 4 | Add vacant position support for offices | 2026-03-06 | `3e49070`, `7cd4527` (EV-Backend), `3e2f8e3` (essentials) | [4-add-vacant-position-support-for-offices-](./quick/4-add-vacant-position-support-for-offices-/) |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P02 | 3 | 2 tasks | 3 files |
 | Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
 | Phase 63 P06 | 45 | 1 tasks | 1 files |
@@ -223,6 +224,6 @@ Progress: [██████████] 100% (21/21 plans complete across act
 
 ## Session Continuity
 
-Last session: 2026-03-06T19:38:45.779Z
-Stopped at: Completed 64-02-PLAN.md — Phase 64 complete. All 2 tasks done. 180 headshots on CDN, PHOTO-03/04/05 satisfied, human visual verification approved.
-Resume: No active work. All phases 60-66 complete. v2026.4 milestone fully shipped.
+Last session: 2026-03-06T21:07:40Z
+Stopped at: Completed quick-4 (vacant position support for offices). 3 tasks done. Backend Office model + query paths updated, frontend renders vacant cards, SQL script created.
+Resume: No active work. All phases 60-66 complete. v2026.4 milestone fully shipped. Quick task 4 complete.
