@@ -57,12 +57,7 @@ export async function getPoliticiansGrouped(
   includeCandidates: boolean
 ): Promise<PoliticianGroup[]> {
   // Build query — explicit column list, never *
-  // NOTE: is_candidate was added in migration 026. Until database.types.ts is
-  // regenerated after that migration runs against the live DB, we must cast the
-  // query to any to allow the column reference. The column IS present in the DB
-  // after migration 026 is applied.
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let query = (supabaseAnon as any)
+  let query = supabaseAnon
     .schema('inform')
     .from('politicians')
     .select('id, full_name, office_title, photo_origin_url, is_candidate')
