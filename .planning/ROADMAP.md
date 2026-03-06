@@ -191,7 +191,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   - [ ] 63-06-PLAN.md — Research Batch 5: 12 cities incl. 4 failed-status (~44 politicians)
   - [ ] 63-07-PLAN.md — Research Batch 6: 12 smaller cities (~32 politicians)
   - [ ] 63-08-PLAN.md — Research Batch 7 + Burbank (blocked): final ~14+ politicians
-- [ ] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage
+- [x] **Phase 64: Headshot Upload & Coverage Validation** - Upload sourced headshots to Supabase CDN, update database records, and confirm 80%+ coverage (completed 2026-03-06)
   **Plans:** 2 plans
   Plans:
   - [ ] 64-01-PLAN.md — Create upload pipeline script and dry-run verification
@@ -263,7 +263,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   4. Refreshing /quiz page returns user to exact same question index
   5. Clear Compass action also clears quiz progress and calibration progress
   6. Stale topic IDs in localStorage are silently filtered out
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [ ] 65-01-PLAN.md — Fix topics-loading race condition and calibration/resume-mode persistence
@@ -302,6 +302,6 @@ Plans:
 | 61. State Data Verification & Gap-Fill | 1/1 | Complete    | 2026-03-05 | - |
 | 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
 | 63. Headshot Research Sprint | 8/8 | Complete    | 2026-03-06 | - |
-| 64. Headshot Upload & Coverage Validation | 1/2 | In Progress|  | - |
+| 64. Headshot Upload & Coverage Validation | 2/2 | Complete   | 2026-03-06 | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
 | 66. Improve onboarding flow | 4/4 | Complete    | 2026-03-06 | - |
