@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2026.4
 milestone_name: State Data Completion & Image Coverage
-status: completed
-stopped_at: Completed 63-08-PLAN.md — Batch 7 + Burbank headshot research (304/304 researched, 80% found)
-last_updated: "2026-03-06T17:12:51.201Z"
-last_activity: 2026-03-06 — 63-08 complete; 17 Batch 7+Burbank politicians researched, phase 63 DONE 304/304 (100%)
+status: in_progress
+stopped_at: Completed 64-01-PLAN.md — upload_manifest_headshots.py created, dry-run confirms 175-180/246 downloads succeed
+last_updated: "2026-03-06T18:10:39.696Z"
+last_activity: 2026-03-06 — 64-01 complete; upload_manifest_headshots.py created (432 lines), dry-run run with 175-180 ok / 66-71 failed (CivicPlus 403 blocks)
 progress:
   total_phases: 7
   completed_phases: 6
-  total_plans: 19
-  completed_plans: 19
-  percent: 100
+  total_plans: 21
+  completed_plans: 20
+  percent: 95
 ---
 
 # Project State
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-05)
 
 ## Current Position
 
-Phase: 63 of 63+ (Headshot Research Sprint — COMPLETE)
-Plan: 08 complete — 8 of 8 plans done in Phase 63
-Status: Phase 63 COMPLETE — 304/304 researched (100%), 246 found (80%), 58 not_found, 0 pending. Ready for Phase 64 upload pipeline.
-Last activity: 2026-03-06 — 63-08 complete; 17 Batch 7+Burbank politicians researched, phase 63 DONE 304/304 (100%)
+Phase: 64 of 64+ (Headshot Upload & Coverage Validation — IN PROGRESS)
+Plan: 01 complete — 1 of 3 plans done in Phase 64
+Status: Phase 64 Plan 01 complete — upload_manifest_headshots.py created; dry-run confirms 175-180/246 URLs downloadable; 66-71 CivicPlus/government CDN 403 failures documented. Ready for Plan 02 real upload run.
+Last activity: 2026-03-06 — 64-01 complete; upload_manifest_headshots.py created (432 lines), dry-run run with 175-180 ok / 66-71 failed (CivicPlus 403 blocks)
 
 Progress: [██████████] 100% (19/19 plans complete across active phases)
 
@@ -77,6 +77,19 @@ Progress: [██████████] 100% (19/19 plans complete across act
 - DB reconnect fix: import_state_committees.py reconnects after Open States API fetch (avoids Supabase idle connection timeout on ~15-min CA pagination).
 - Open States CA jurisdiction returns multi-state committees — 23,913 "no match" entries are expected, not errors.
 - committee_import_tracker.json at ~/.ev-backend/ tracks both IN and CA run metadata.
+
+### Key Context for Phase 64 (IN PROGRESS)
+
+- 64-01 complete: upload_manifest_headshots.py created (432 lines) in EV-Backend/scripts/.
+- Script copies download_image, make_storage_path, upsert_politician_image, get_connection verbatim from scrape_city_headshots.py (not import — avoids Playwright dep).
+- Adds content_type_to_ext() and get_photo_license() as standalone helpers.
+- CLI: --manifest (default: headshot_research_manifest.csv), --dry-run flag.
+- Dry-run results: 175-180 ok, 66-71 failed (results vary per run due to Wayback Machine instability).
+- Failure breakdown: ~18 domains blocked, mostly CivicPlus/Akamai government CDNs (pomonaca.gov: 6, pvestates.org: 5, torranceca.gov: 5, hermosabeach.gov: 5, etc.) + 4-8 Wayback Machine transient timeouts.
+- Download failures are systematic 403 blocks — the browser research found images but direct requests can't replicate the browser session. download_image() already retries with Referer on 403; these persist.
+- Coverage math: ~84 pre-existing + ~175 new = ~259/391 = ~66% — below 80% PHOTO-05 threshold.
+- Plan 02 will proceed with real upload of the ~175-180 successful downloads. Plan 03 coverage validation will confirm PHOTO-05 status and determine if manual intervention is needed for the 66 failing URLs.
+- Commit 4dfac0a in EV-Backend repo.
 
 ### Key Context for Phase 63
 
@@ -206,6 +219,6 @@ Progress: [██████████] 100% (19/19 plans complete across act
 
 ## Session Continuity
 
-Last session: 2026-03-06T16:10:10.647Z
-Stopped at: Completed 63-08-PLAN.md — Batch 7 + Burbank headshot research (304/304 researched, 80% found)
-Resume: Run `/gsd:execute-phase 63` (Plan 08 — Batch 7 final cities). 17 politicians remaining.
+Last session: 2026-03-06T18:10:39.691Z
+Stopped at: Completed 64-01-PLAN.md — upload_manifest_headshots.py created, dry-run confirms 175-180/246 downloads succeed
+Resume: Run `/gsd:execute-phase 64` (Plan 02 — real upload run). upload_manifest_headshots.py ready; ~175-180 downloads will succeed.

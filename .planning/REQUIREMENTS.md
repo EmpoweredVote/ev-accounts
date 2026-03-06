@@ -20,8 +20,8 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 
 - [x] **PHOTO-01**: All ~300 politicians from headshot_research_manifest.csv researched for headshot availability
 - [x] **PHOTO-02**: Headshots sourced through manual browser research for cities blocked by Cloudflare/CivicPlus
-- [ ] **PHOTO-03**: All sourced headshots uploaded to Supabase Storage CDN
-- [ ] **PHOTO-04**: politician_images database records updated for all newly sourced headshots
+- [x] **PHOTO-03**: All sourced headshots uploaded to Supabase Storage CDN
+- [x] **PHOTO-04**: politician_images database records updated for all newly sourced headshots
 - [ ] **PHOTO-05**: Coverage validation report confirms 80%+ headshot coverage for LA County local officials
 
 ### Compass Page Refresh Fix
@@ -79,8 +79,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STATE-06 | Phase 62 | Complete |
 | PHOTO-01 | Phase 63 | Complete |
 | PHOTO-02 | Phase 63 | Complete |
-| PHOTO-03 | Phase 64 | Pending |
-| PHOTO-04 | Phase 64 | Pending |
+| PHOTO-03 | Phase 64 | Complete |
+| PHOTO-04 | Phase 64 | Complete |
 | PHOTO-05 | Phase 64 | Pending |
 | REFRESH-01 | Phase 65 | Complete |
 | REFRESH-02 | Phase 65 | Complete |
