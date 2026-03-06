@@ -242,7 +242,7 @@ BEGIN
       total_xp      = v_new_total_xp,
       current_level = v_level_info.level,
       updated_at    = now()
-    WHERE user_id = p_user_id;
+    WHERE connected_profiles.user_id = p_user_id;
 
   -- Step 8: Append immutable ledger row to xp_transactions
   INSERT INTO connect.xp_transactions (

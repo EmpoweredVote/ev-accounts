@@ -1,3 +1,4 @@
+Using workdir C:\EV-Accounts
 export type Json =
   | string
   | number
@@ -20,6 +21,7 @@ export type Database = {
           candidate_role: string | null
           completed_onboarding: boolean
           created_at: string
+          current_level: number
           deleted_at: string | null
           display_name: string
           gem_balance: number
@@ -32,6 +34,7 @@ export type Database = {
           legal_name: string | null
           selected_topic_ids: Json
           tolerance_rating: number | null
+          total_xp: number
           updated_at: string
           user_id: string
           veracity_rating: number | null
@@ -45,6 +48,7 @@ export type Database = {
           candidate_role?: string | null
           completed_onboarding?: boolean
           created_at?: string
+          current_level?: number
           deleted_at?: string | null
           display_name: string
           gem_balance?: number
@@ -57,6 +61,7 @@ export type Database = {
           legal_name?: string | null
           selected_topic_ids?: Json
           tolerance_rating?: number | null
+          total_xp?: number
           updated_at?: string
           user_id: string
           veracity_rating?: number | null
@@ -70,6 +75,7 @@ export type Database = {
           candidate_role?: string | null
           completed_onboarding?: boolean
           created_at?: string
+          current_level?: number
           deleted_at?: string | null
           display_name?: string
           gem_balance?: number
@@ -82,6 +88,7 @@ export type Database = {
           legal_name?: string | null
           selected_topic_ids?: Json
           tolerance_rating?: number | null
+          total_xp?: number
           updated_at?: string
           user_id?: string
           veracity_rating?: number | null
@@ -282,12 +289,43 @@ export type Database = {
           },
         ]
       }
+      xp_transactions: {
+        Row: {
+          amount: number
+          created_at: string
+          id: string
+          idempotency_key: string
+          metadata: Json | null
+          source: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: string
+          idempotency_key: string
+          metadata?: Json | null
+          source: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: string
+          idempotency_key?: string
+          metadata?: Json | null
+          source?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       connected_profiles_public: {
         Row: {
           account_standing: string | null
           created_at: string | null
+          current_level: number | null
           deleted_at: string | null
           display_name: string | null
           gem_balance: number | null
@@ -296,6 +334,7 @@ export type Database = {
           gem_balance_yellow: number | null
           gem_reserve_cap: number | null
           id: string | null
+          total_xp: number | null
           updated_at: string | null
           user_id: string | null
           veracity_rating: number | null
@@ -307,6 +346,7 @@ export type Database = {
         Insert: {
           account_standing?: string | null
           created_at?: string | null
+          current_level?: number | null
           deleted_at?: string | null
           display_name?: string | null
           gem_balance?: number | null
@@ -315,6 +355,7 @@ export type Database = {
           gem_balance_yellow?: number | null
           gem_reserve_cap?: number | null
           id?: string | null
+          total_xp?: number | null
           updated_at?: string | null
           user_id?: string | null
           veracity_rating?: number | null
@@ -326,6 +367,7 @@ export type Database = {
         Update: {
           account_standing?: string | null
           created_at?: string | null
+          current_level?: number | null
           deleted_at?: string | null
           display_name?: string | null
           gem_balance?: number | null
@@ -334,6 +376,7 @@ export type Database = {
           gem_balance_yellow?: number | null
           gem_reserve_cap?: number | null
           id?: string | null
+          total_xp?: number | null
           updated_at?: string | null
           user_id?: string | null
           veracity_rating?: number | null
@@ -349,6 +392,37 @@ export type Database = {
       adjust_inviter_tolerance_rating: {
         Args: { p_invitee_id: string }
         Returns: undefined
+      }
+      award_xp: {
+        Args: {
+          p_amount: number
+          p_idempotency_key: string
+          p_metadata?: Json
+          p_source: string
+          p_user_id: string
+        }
+        Returns: {
+          amount: number
+          created_at: string
+          current_level: number
+          id: string
+          idempotency_key: string
+          is_duplicate: boolean
+          metadata: Json
+          source: string
+          total_xp: number
+          user_id: string
+          xp_in_level: number
+          xp_to_next_level: number
+        }[]
+      }
+      calculate_level: {
+        Args: { p_total_xp: number }
+        Returns: {
+          level: number
+          xp_in_level: number
+          xp_to_next_level: number
+        }[]
       }
       create_peer_request: {
         Args: { p_actor_id: string; p_target_id: string }
@@ -463,70 +537,43 @@ export type Database = {
       empowered_profiles: {
         Row: {
           candidate_page_slug: string | null
-          chamber_name: string | null
-          chamber_name_formal: string | null
           connected_profile_id: string
           created_at: string
           deleted_at: string | null
           demoted_at: string | null
           demotion_reason: Json | null
-          district_id: string | null
-          district_type: string | null
           empowered_at: string
-          government_name: string | null
           id: string
           is_active: boolean
           legal_name: string
-          photo_origin_url: string | null
-          representing_city: string | null
-          representing_state: string | null
-          representing_zip: string | null
           updated_at: string
           user_id: string
         }
         Insert: {
           candidate_page_slug?: string | null
-          chamber_name?: string | null
-          chamber_name_formal?: string | null
           connected_profile_id: string
           created_at?: string
           deleted_at?: string | null
           demoted_at?: string | null
           demotion_reason?: Json | null
-          district_id?: string | null
-          district_type?: string | null
           empowered_at?: string
-          government_name?: string | null
           id?: string
           is_active?: boolean
           legal_name: string
-          photo_origin_url?: string | null
-          representing_city?: string | null
-          representing_state?: string | null
-          representing_zip?: string | null
           updated_at?: string
           user_id: string
         }
         Update: {
           candidate_page_slug?: string | null
-          chamber_name?: string | null
-          chamber_name_formal?: string | null
           connected_profile_id?: string
           created_at?: string
           deleted_at?: string | null
           demoted_at?: string | null
           demotion_reason?: Json | null
-          district_id?: string | null
-          district_type?: string | null
           empowered_at?: string
-          government_name?: string | null
           id?: string
           is_active?: boolean
           legal_name?: string
-          photo_origin_url?: string | null
-          representing_city?: string | null
-          representing_state?: string | null
-          representing_zip?: string | null
           updated_at?: string
           user_id?: string
         }
@@ -607,345 +654,6 @@ export type Database = {
       [_ in never]: never
     }
   }
-  inform: {
-    Tables: {
-      compass_categories: {
-        Row: {
-          created_at: string
-          id: string
-          title: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          title: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          title?: string
-        }
-        Relationships: []
-      }
-      compass_change_history: {
-        Row: {
-          created_at: string
-          id: string
-          new_value: number
-          old_value: number | null
-          topic_id: string
-          user_id: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          new_value: number
-          old_value?: number | null
-          topic_id: string
-          user_id: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          new_value?: number
-          old_value?: number | null
-          topic_id?: string
-          user_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "compass_change_history_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      compass_responses: {
-        Row: {
-          created_at: string
-          inverted: boolean
-          topic_id: string
-          updated_at: string
-          user_id: string
-          value: number
-          visibility: string
-          write_in_text: string | null
-        }
-        Insert: {
-          created_at?: string
-          inverted?: boolean
-          topic_id: string
-          updated_at?: string
-          user_id: string
-          value: number
-          visibility?: string
-          write_in_text?: string | null
-        }
-        Update: {
-          created_at?: string
-          inverted?: boolean
-          topic_id?: string
-          updated_at?: string
-          user_id?: string
-          value?: number
-          visibility?: string
-          write_in_text?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "compass_responses_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      compass_stances: {
-        Row: {
-          id: string
-          text: string
-          topic_id: string
-          value: number
-        }
-        Insert: {
-          id?: string
-          text: string
-          topic_id: string
-          value: number
-        }
-        Update: {
-          id?: string
-          text?: string
-          topic_id?: string
-          value?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "compass_stances_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      compass_topic_categories: {
-        Row: {
-          category_id: string
-          topic_id: string
-        }
-        Insert: {
-          category_id: string
-          topic_id: string
-        }
-        Update: {
-          category_id?: string
-          topic_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "compass_topic_categories_category_id_fkey"
-            columns: ["category_id"]
-            isOneToOne: false
-            referencedRelation: "compass_categories"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "compass_topic_categories_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      compass_topic_roles: {
-        Row: {
-          is_required: boolean
-          role_scope: string
-          topic_id: string
-        }
-        Insert: {
-          is_required?: boolean
-          role_scope: string
-          topic_id: string
-        }
-        Update: {
-          is_required?: boolean
-          role_scope?: string
-          topic_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "compass_topic_roles_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      compass_topics: {
-        Row: {
-          created_at: string
-          id: string
-          is_active: boolean | null
-          is_live: boolean
-          question_text: string
-          short_title: string | null
-          title: string
-          updated_at: string
-          version: number
-          went_live_at: string | null
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          is_active?: boolean | null
-          is_live?: boolean
-          question_text: string
-          short_title?: string | null
-          title: string
-          updated_at?: string
-          version?: number
-          went_live_at?: string | null
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          is_active?: boolean | null
-          is_live?: boolean
-          question_text?: string
-          short_title?: string | null
-          title?: string
-          updated_at?: string
-          version?: number
-          went_live_at?: string | null
-        }
-        Relationships: []
-      }
-      politician_answers: {
-        Row: {
-          politician_id: string
-          topic_id: string
-          value: number
-        }
-        Insert: {
-          politician_id: string
-          topic_id: string
-          value: number
-        }
-        Update: {
-          politician_id?: string
-          topic_id?: string
-          value?: number
-        }
-        Relationships: [
-          {
-            foreignKeyName: "politician_answers_politician_id_fkey"
-            columns: ["politician_id"]
-            isOneToOne: false
-            referencedRelation: "politicians"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "politician_answers_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      politician_context: {
-        Row: {
-          politician_id: string
-          reasoning: string
-          sources: string[]
-          topic_id: string
-        }
-        Insert: {
-          politician_id: string
-          reasoning: string
-          sources?: string[]
-          topic_id: string
-        }
-        Update: {
-          politician_id?: string
-          reasoning?: string
-          sources?: string[]
-          topic_id?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "politician_context_politician_id_fkey"
-            columns: ["politician_id"]
-            isOneToOne: false
-            referencedRelation: "politicians"
-            referencedColumns: ["id"]
-          },
-          {
-            foreignKeyName: "politician_context_topic_id_fkey"
-            columns: ["topic_id"]
-            isOneToOne: false
-            referencedRelation: "compass_topics"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      politicians: {
-        Row: {
-          created_at: string
-          first_name: string
-          full_name: string | null
-          id: string
-          is_active: boolean
-          last_name: string
-          office_title: string | null
-          photo_origin_url: string | null
-          preferred_name: string | null
-        }
-        Insert: {
-          created_at?: string
-          first_name: string
-          full_name?: string | null
-          id?: string
-          is_active?: boolean
-          last_name: string
-          office_title?: string | null
-          photo_origin_url?: string | null
-          preferred_name?: string | null
-        }
-        Update: {
-          created_at?: string
-          first_name?: string
-          full_name?: string | null
-          id?: string
-          is_active?: boolean
-          last_name?: string
-          office_title?: string | null
-          photo_origin_url?: string | null
-          preferred_name?: string | null
-        }
-        Relationships: []
-      }
-    }
-    Views: {
-      [_ in never]: never
-    }
-    Functions: {
-      [_ in never]: never
-    }
-    Enums: {
-      [_ in never]: never
-    }
-    CompositeTypes: {
-      [_ in never]: never
-    }
-  }
   public: {
     Tables: {
       admin_audit_log: {
@@ -1013,14 +721,17 @@ export type Database = {
       admin_users: {
         Row: {
           created_at: string
+          super_admin: boolean
           user_id: string
         }
         Insert: {
           created_at?: string
+          super_admin?: boolean
           user_id: string
         }
         Update: {
           created_at?: string
+          super_admin?: boolean
           user_id?: string
         }
         Relationships: [
@@ -1472,6 +1183,69 @@ export type Database = {
             }
             Returns: string
           }
+      admin_create_invite: {
+        Args: { p_created_by: string; p_recipient_email?: string }
+        Returns: Json
+      }
+      admin_get_account_detail: { Args: { p_user_id: string }; Returns: Json }
+      admin_get_cron_log: { Args: { p_page?: number }; Returns: Json }
+      admin_get_dashboard_stats: { Args: never; Returns: Json }
+      admin_get_invite_tree: {
+        Args: { p_root_user_id?: string }
+        Returns: Json
+      }
+      admin_list_accounts: {
+        Args: {
+          p_page?: number
+          p_search?: string
+          p_standing?: string
+          p_tier?: string
+        }
+        Returns: Json
+      }
+      admin_list_invites: { Args: { p_page?: number }; Returns: Json }
+      admin_list_politicians: { Args: never; Returns: Json }
+      admin_update_politician_answers: {
+        Args: { p_answers: Json; p_politician_id: string }
+        Returns: undefined
+      }
+      admin_update_topic: {
+        Args: {
+          p_is_live?: boolean
+          p_question_text?: string
+          p_short_title?: string
+          p_title?: string
+          p_topic_id: string
+        }
+        Returns: Json
+      }
+      block_user: {
+        Args: { p_actor_id: string; p_target_id: string }
+        Returns: undefined
+      }
+      claim_invite_code: {
+        Args: { p_claimant_user_id: string; p_code: string }
+        Returns: Json
+      }
+      complete_connect_flow: { Args: { p_user_id: string }; Returns: Json }
+      create_invite_codes: {
+        Args: { p_count: number; p_user_id: string }
+        Returns: string[]
+      }
+      cron_record_lapse_error: {
+        Args: { p_error: string; p_run_date: string }
+        Returns: undefined
+      }
+      cron_update_lapse_run: {
+        Args: {
+          p_demoted: number
+          p_run_date: string
+          p_warned_25: number
+          p_warned_30: number
+        }
+        Returns: undefined
+      }
+      cron_upsert_lapse_run: { Args: { p_run_date: string }; Returns: boolean }
       disablelongtransactions: { Args: never; Returns: string }
       dropgeometrycolumn:
         | {
@@ -1505,6 +1279,10 @@ export type Database = {
         | { Args: { table_name: string }; Returns: string }
       enablelongtransactions: { Args: never; Returns: string }
       equals: { Args: { geom1: unknown; geom2: unknown }; Returns: boolean }
+      follow_user: {
+        Args: { p_actor_id: string; p_target_id: string }
+        Returns: undefined
+      }
       geometry: { Args: { "": string }; Returns: unknown }
       geometry_above: {
         Args: { geom1: unknown; geom2: unknown }
@@ -1618,7 +1396,22 @@ export type Database = {
               user_id: string
             }[]
           }
+      get_compass_completeness: {
+        Args: { p_role_scope?: string; p_user_id: string }
+        Returns: Json
+      }
+      get_connections: { Args: { p_user_id: string }; Returns: Json }
+      get_following: { Args: { p_user_id: string }; Returns: Json }
+      get_user_roles: { Args: { p_user_id: string }; Returns: Json }
       gettransactionid: { Args: never; Returns: unknown }
+      grant_role: {
+        Args: { p_role_slug: string; p_user_id: string }
+        Returns: undefined
+      }
+      insert_notification: {
+        Args: { p_payload: Json; p_type: string; p_user_id: string }
+        Returns: undefined
+      }
       longtransactionsenabled: { Args: never; Returns: boolean }
       populate_geometry_columns:
         | { Args: { tbl_oid: unknown; use_typmod?: boolean }; Returns: number }
@@ -1660,6 +1453,15 @@ export type Database = {
       }
       postgis_version: { Args: never; Returns: string }
       postgis_wagyu_version: { Args: never; Returns: string }
+      promote_compass_import_draft: {
+        Args: { p_user_id: string }
+        Returns: undefined
+      }
+      revoke_role: {
+        Args: { p_role_slug: string; p_user_id: string }
+        Returns: undefined
+      }
+      run_empower_preflight: { Args: { p_user_id: string }; Returns: Json }
       soft_delete_user: { Args: { p_user_id: string }; Returns: undefined }
       st_3dclosestpoint: {
         Args: { geom1: unknown; geom2: unknown }
@@ -2253,6 +2055,16 @@ export type Database = {
         }
         Returns: string
       }
+      upsert_compass_answer: {
+        Args: {
+          p_inverted?: boolean
+          p_topic_id: string
+          p_user_id: string
+          p_value: number
+          p_write_in_text?: string
+        }
+        Returns: Json
+      }
       uuid_generate_v1: { Args: never; Returns: string }
       uuid_generate_v1mc: { Args: never; Returns: string }
       uuid_generate_v3: {
@@ -2409,9 +2221,6 @@ export const Constants = {
     Enums: {},
   },
   empower: {
-    Enums: {},
-  },
-  inform: {
     Enums: {},
   },
   public: {

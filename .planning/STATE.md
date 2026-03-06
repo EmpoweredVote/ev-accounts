@@ -34,10 +34,7 @@ Full key decisions log in PROJECT.md. v1.1 decisions committed to decisions tabl
 
 ### Pending Todos
 
-- Run `supabase gen types` after Phase 9 migrations land (blocked: Docker not installed on dev machine)
-- Run `tests/rls/xp_transactions.sql` against local Supabase when Docker available
-- Add integration test: valid service key + unauthorized source (SOURCE_NOT_PERMITTED path)
-- Copy `backend/.env.example` to `backend/.env` and fill with real Supabase credentials for live Alpha
+
 
 ### Open Blockers
 

@@ -135,6 +135,41 @@ describe('POST /api/xp/award', () => {
     expect(res.status).toBe(422);
     expect(res.body).toHaveProperty('code', 'VALIDATION_ERROR');
   });
+
+  it('returns 422 when a valid key attempts an unauthorized source (SOURCE_NOT_PERMITTED)', async () => {
+    // test-quest-key is authorized only for validation_quest_completion.
+    // Using it with civic_trivia_championship_score must be rejected at the
+    // source-authorization layer (after auth passes), not the schema layer.
+    const res = await request(app)
+      .post('/api/xp/award')
+      .set('Content-Type', 'application/json')
+      .set('X-Service-Key', 'test-quest-key')
+      .send({
+        user_id: '00000000-0000-0000-0000-000000000001',
+        source: 'civic_trivia_championship_score',
+        amount: 100,
+        idempotency_key: 'idem-key-007',
+      });
+    expect(res.status).toBe(422);
+    expect(res.body).toHaveProperty('code', 'SOURCE_NOT_PERMITTED');
+  });
+
+  it('returns 422 when trivia key attempts quest source (cross-key scope violation)', async () => {
+    // test-trivia-key is authorized only for civic_trivia_championship_score.
+    // Using it with validation_quest_completion must also be rejected.
+    const res = await request(app)
+      .post('/api/xp/award')
+      .set('Content-Type', 'application/json')
+      .set('X-Service-Key', 'test-trivia-key')
+      .send({
+        user_id: '00000000-0000-0000-0000-000000000001',
+        source: 'validation_quest_completion',
+        amount: 100,
+        idempotency_key: 'idem-key-008',
+      });
+    expect(res.status).toBe(422);
+    expect(res.body).toHaveProperty('code', 'SOURCE_NOT_PERMITTED');
+  });
 });
 
 // ---------------------------------------------------------------------------
