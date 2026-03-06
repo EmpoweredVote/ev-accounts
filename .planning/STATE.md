@@ -5,7 +5,7 @@ milestone_name: State Data Completion & Image Coverage
 status: completed
 stopped_at: quick-2 Task 1 complete — awaiting human-verify checkpoint (Task 2)
 last_updated: "2026-03-05T22:35:00.000Z"
-last_activity: 2026-03-05 — quick-2 Task 1 complete; Compare button repositioned in CompassV2/Compass.jsx (mt-1, pb-16, mobile max-height 280px offset)
+last_activity: 2026-03-05 — Completed quick task 2: Move Compare button closer to compass chart
 progress:
   total_phases: 5
   completed_phases: 3
@@ -109,6 +109,12 @@ Progress: [████████░░] 77% (10/13 plans complete across acti
 - Lawndale photos: appear on /contact_information sub-page (CivicLive pattern), not main /city_council page.
 - La Verne correct council URL: /351/City-Council (manifest had stale /government/city_council/).
 - Temple City correct council URL: /116/City-Council (manifest had stale /government/city-council).
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 2 | Move Compare button closer to compass chart | 2026-03-05 | `005c970` | [2-move-compare-button-closer-to-compass-ch](./quick/2-move-compare-button-closer-to-compass-ch/) |
 
 ### Tech Debt Carried Forward
 

@@ -47,36 +47,33 @@ completed: 2026-03-05
 
 ## Accomplishments
 - Reduced gap between radar chart and Compare button from 16px (mt-4) to 4px (mt-1)
-- Added pb-16 to main page container so the fixed-position SavePromptModal does not cover the Compare button or other bottom content
-- Tightened mobile Graph tab chart max-height offset by 40px so the Compare button fits within a typical mobile viewport without scrolling
+- Added pb-16 to main page container so the fixed-position SavePromptModal does not cover the Compare button
+- Removed `aspect-square` from both desktop and mobile chart containers — eliminated large dead space below the SVG polygon
+- Moved ActionButtons inside chart fragment for consistent centering with the radar chart
+- Reverted mobile chart max-height to `calc(100dvh-240px)` (earlier attempt had shrunk it)
+- Added Vite resolve alias to use local ev-ui source during development
+- Fixed RadarChartCore symmetric horizontal padding so chart center aligns with SVG center
 
 ## Task Commits
 
-1. **Task 1: Reposition Compare button and add save-banner padding** - `3895d94` (feat)
+1. **Task 1: Initial repositioning** - `3895d94` (CompassV2: mt, pb, mobile max-h)
+2. **Task 2: Centering and dead space fix** - `005c970` (CompassV2: remove aspect-square, Vite alias, ActionButtons placement)
+3. **Task 3: Symmetric viewBox padding** - `3c260bf` (ev-ui: RadarChartCore symmetric padding)
 
 ## Files Created/Modified
-- `CompassV2/src/pages/Compass.jsx` - Three targeted Tailwind class changes: mt-4->mt-1 on ActionButtons, added pb-16 to outer container, max-h calc offset 240->280px on mobile chart
+- `CompassV2/src/pages/Compass.jsx` - Layout fixes for button positioning and centering
+- `CompassV2/vite.config.js` - Local ev-ui alias for development
+- `ev-ui/src/RadarChartCore.jsx` - Symmetric horizontal padding in viewBox computation
 
 ## Decisions Made
-- Used pb-16 rather than a conditional padding approach — the save banner always appears for guests after 1.5s, so unconditional padding is simpler and more robust
-- Did not touch desktop chart container dimensions as planned — desktop has ample vertical space
+- Used pb-16 rather than a conditional padding approach — the save banner always appears for guests after 1.5s, so unconditional padding is simpler
+- Removed aspect-square instead of using negative margins — the SVG viewBox isn't square so the forced square ratio created wasted space
+- Fixed centering at the source (ev-ui RadarChartCore) using symmetric padding rather than CSS hacks in Compass.jsx
+- Used Vite alias to resolve local ev-ui during development until the package is republished
 
-## Deviations from Plan
-
-None - plan executed exactly as written.
-
-## Issues Encountered
-
-None.
-
-## User Setup Required
-
-None - no external service configuration required.
-
-## Next Phase Readiness
-- Task 2 is a human-verify checkpoint — user should open the Compass page on mobile and desktop to confirm the Compare button is visible below the chart and the save banner does not overlap it
-- After verification, this quick task is fully complete
-- Awaiting checkpoint approval before marking QUICK-2 done
+## Note
+- The ev-ui symmetric padding fix needs to be published (`npm run build && npm publish`) for production builds
+- The Vite alias in vite.config.js should be removed after ev-ui is published with the fix
 
 ---
 *Phase: quick-2*
