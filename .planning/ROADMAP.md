@@ -259,7 +259,7 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   4. Refreshing /quiz page returns user to exact same question index
   5. Clear Compass action also clears quiz progress and calibration progress
   6. Stale topic IDs in localStorage are silently filtered out
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
 - [ ] 65-01-PLAN.md — Fix topics-loading race condition and calibration/resume-mode persistence
@@ -280,4 +280,4 @@ Plans:
 | 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
 | 63. Headshot Research Sprint | 5/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
-| 65. Fix Compass page refresh | - | 0/2 | Not started | - |
+| 65. Fix Compass page refresh | 1/2 | In Progress|  | - |
