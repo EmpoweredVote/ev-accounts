@@ -24,6 +24,15 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 - [ ] **PHOTO-04**: politician_images database records updated for all newly sourced headshots
 - [ ] **PHOTO-05**: Coverage validation report confirms 80%+ headshot coverage for LA County local officials
 
+### Compass Page Refresh Fix
+
+- [ ] **REFRESH-01**: Topics-loading race condition fixed — CalibrationOverlay does not initialize until topics are loaded from API
+- [ ] **REFRESH-02**: Calibration progress (pick step, answer step, question index) persists across page refresh for both standard and resume-mode flows
+- [ ] **REFRESH-03**: Compass page shows branded loading spinner while topics load, error state with retry on API failure
+- [ ] **REFRESH-04**: Quiz page currentIndex and mode persist across page refresh via localStorage
+- [ ] **REFRESH-05**: Clear Compass action clears all progress state including quiz progress and calibration progress
+- [ ] **REFRESH-06**: Stale topic IDs in localStorage are silently filtered out; calibration re-triggers if selectedTopics drops below 3
+
 ## Future Requirements
 
 Deferred to future milestones. Tracked but not in current roadmap.
@@ -64,12 +73,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PHOTO-03 | Phase 64 | Pending |
 | PHOTO-04 | Phase 64 | Pending |
 | PHOTO-05 | Phase 64 | Pending |
+| REFRESH-01 | Phase 65 | Pending |
+| REFRESH-02 | Phase 65 | Pending |
+| REFRESH-03 | Phase 65 | Pending |
+| REFRESH-04 | Phase 65 | Pending |
+| REFRESH-05 | Phase 65 | Pending |
+| REFRESH-06 | Phase 65 | Pending |
 
 **Coverage:**
-- v2026.4 requirements: 11 total
-- Mapped to phases: 11
+- v2026.4 requirements: 17 total
+- Mapped to phases: 17
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-05 after roadmap creation*
+*Last updated: 2026-03-06 after Phase 65 planning*

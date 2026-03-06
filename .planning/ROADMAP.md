@@ -248,6 +248,23 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
   4. Politician profile pages in Essentials display the new headshots rather than initials avatars
 **Plans**: TBD
 
+### Phase 65: Fix Compass page refresh losing onboarding state
+**Goal**: Page refresh during any Compass onboarding flow (calibration, resume-mode, or quiz) seamlessly returns the user to their exact position with no flicker or state loss
+**Depends on**: Nothing (independent CompassV2 bug fix)
+**Requirements**: REFRESH-01, REFRESH-02, REFRESH-03, REFRESH-04, REFRESH-05, REFRESH-06
+**Success Criteria** (what must be TRUE):
+  1. Refreshing mid-calibration (pick or answer step) returns user to exact same step and question index
+  2. Refreshing mid-resume-mode returns user to same resume-mode question
+  3. No CalibrationOverlay flicker or wrong-state flash while topics load from API
+  4. Refreshing /quiz page returns user to exact same question index
+  5. Clear Compass action also clears quiz progress and calibration progress
+  6. Stale topic IDs in localStorage are silently filtered out
+**Plans:** 2 plans
+
+Plans:
+- [ ] 65-01-PLAN.md — Fix topics-loading race condition and calibration/resume-mode persistence
+- [ ] 65-02-PLAN.md — Add quiz page persistence, stale topic cleanup, and compass reset cleanup
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -263,3 +280,4 @@ Full details: `.planning/milestones/v2026.3-ROADMAP.md`
 | 62. State Data Documentation & Accessibility | 2/2 | Complete    | 2026-03-05 | - |
 | 63. Headshot Research Sprint | 5/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
+| 65. Fix Compass page refresh | - | 0/2 | Not started | - |
