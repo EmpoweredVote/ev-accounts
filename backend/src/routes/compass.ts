@@ -13,7 +13,9 @@ import {
   getPoliticianContext,
   validateTopicIds,
   saveSelectedTopics,
+  resetCompassAnswers,
 } from '../lib/compassService.js';
+import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -87,6 +89,45 @@ router.get('/categories', optionalAuth, async (req: Request, res: Response): Pro
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
+
+// ---------------------------------------------------------------------------
+// DELETE /api/compass/answers/me
+// Auth: required
+// Soft-deletes all of the user's compass responses and clears selected_topic_ids.
+// Idempotent — returns 200 even when the user has no responses.
+// Optional: ?full=true — admin-only flag that also resets completed_onboarding.
+// Delegates to reset_compass_answers SECURITY DEFINER RPC for atomicity.
+// ---------------------------------------------------------------------------
+
+router.delete(
+  '/answers/me',
+  requireAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+    const fullReset = req.query.full === 'true';
+
+    if (fullReset) {
+      // requireAdmin is async middleware — invoke it manually for conditional check
+      await new Promise<void>((resolve, reject) => {
+        requireAdmin(req, res, (err?: unknown) => {
+          if (err) reject(err); else resolve();
+        });
+      }).catch(() => {
+        // requireAdmin already sent the 403 response
+      });
+      // If requireAdmin sent a response, res.headersSent will be true
+      if (res.headersSent) return;
+    }
+
+    try {
+      await resetCompassAnswers(authReq.userId, fullReset);
+      res.status(200).json({ reset: true });
+    } catch (err) {
+      console.error('[DELETE /compass/answers/me] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/answers
