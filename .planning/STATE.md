@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 13 — CompassV2 Backend Compatibility
-Plan: —
-Status: Phase 12 complete, ready to plan Phase 13
-Last activity: 2026-03-06 — Phase 12 Alpha Hardening executed and verified (4/4 criteria passed)
+Plan: 13-01 (complete)
+Status: In progress — 1/4 plans complete in Phase 13
+Last activity: 2026-03-06 — Completed 13-01-PLAN.md (schema migrations: inform repair, deleted_at, is_candidate, reset + import RPCs)
 
-Progress: ██░░░░░░░░ 25% (v1.2: 1/4 phases complete)
+Progress: ██░░░░░░░░ 25% (v1.2: 1/4 phases complete; Phase 13: 1/4 plans)
 
 ## Performance Metrics
 
@@ -43,7 +43,7 @@ None.
 
 ### Open Blockers
 
-- **inform namespace missing from live DB:** Migration 015 ran without creating the inform schema namespace. All compass routes are non-functional in production. Requires repair migration: `CREATE SCHEMA IF NOT EXISTS inform;` + re-run of 015 tables. This is a prerequisite for Phase 13 (compass routes must work in production before CompassV2 integration can be verified).
+- **inform namespace missing from live DB:** RESOLVED by migration 026. Run `backend/migrations/026_inform_schema_repair_and_candidates.sql` against live DB to clear this blocker.
 - **empowered_profiles missing columns:** representing_city, district_type, chamber_name etc. never migrated to live DB. Candidate ZIP discovery non-functional. Requires future migration.
 
 ### Accumulated Decisions (Phase 12)
@@ -57,8 +57,16 @@ None.
 | iat = now-1s in test JWT | isTokenRevoked uses strict less-than; same-second collision would break revocation test |
 | Skip stubs deleted, not converted to .todo | vitest 2.x counts .todo as skipped — both patterns inflate reported count |
 
+### Accumulated Decisions (Phase 13)
+
+| Decision | Context |
+|----------|---------|
+| Soft-delete via deleted_at on compass_responses | Preserves response data for recovery and re-import; reset_compass_answers sets deleted_at = now(), import_compass_calibrations sets deleted_at = NULL on re-import |
+| Two-pass validation in import_compass_calibrations | Full validation loop before any writes — all-or-nothing atomicity guarantee |
+| SET search_path = '' on SECURITY DEFINER functions | Prevents search_path injection; all table references fully-qualified |
+
 ## Session Continuity
 
 Last session: 2026-03-06
-Stopped at: Phase 12 complete — all 4 success criteria verified, planning docs updated
-Resume: Run `/gsd:discuss-phase 13` or `/gsd:plan-phase 13` to begin CompassV2 Backend Compatibility
+Stopped at: Completed 13-01-PLAN.md — three schema migrations created and committed
+Resume: Execute 13-02-PLAN.md (auth/me + complete-onboarding endpoints)
