@@ -72,7 +72,7 @@ export async function awardXp(params: AwardXpParams): Promise<AwardXpResult> {
     p_amount: amount,
     p_idempotency_key: idempotencyKey,
     p_metadata: metadata ?? null,
-  });
+  }, 'connect');
 
   if (error) {
     if (error.message?.includes('no connected_profiles row')) {
@@ -167,7 +167,7 @@ export async function getPublicXpProfile(
   // Compute level fields via calculate_level RPC (IMMUTABLE, cached by Postgres)
   const { data: levelData, error: levelError } = await adminRpc('calculate_level', {
     p_total_xp: profileRow.total_xp,
-  });
+  }, 'connect');
   if (levelError) throw new Error(levelError.message);
 
   // calculate_level uses RETURNS TABLE — data is array

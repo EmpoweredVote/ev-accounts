@@ -35,9 +35,9 @@ export const supabaseAdmin = createClient<Database>(
  * directly so that table-level types are enforced.
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export async function adminRpc(fn: string, args?: Record<string, unknown>): Promise<{ data: any; error: any }> {
+export async function adminRpc(fn: string, args?: Record<string, unknown>, schema: string = 'public'): Promise<{ data: any; error: any }> {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  return (supabaseAdmin as any).rpc(fn, args);
+  return (supabaseAdmin as any).schema(schema).rpc(fn, args);
 }
 
 /**
