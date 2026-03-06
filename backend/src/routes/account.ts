@@ -85,7 +85,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       const totalXp = connected.xp ?? 0;
       const { data: levelData } = await adminRpc('calculate_level', {
         p_total_xp: totalXp,
-      });
+      }, 'connect');
       // calculate_level RETURNS TABLE — data is always an array
       const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
       xpData = {
@@ -293,7 +293,7 @@ router.patch(
         const totalXp = updatedConnected.xp ?? 0;
         const { data: levelData } = await adminRpc('calculate_level', {
           p_total_xp: totalXp,
-        });
+        }, 'connect');
         const levelRow = Array.isArray(levelData) ? levelData[0] : levelData;
         xpData = {
           total: totalXp,
