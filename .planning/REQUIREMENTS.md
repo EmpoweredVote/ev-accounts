@@ -33,6 +33,15 @@ Requirements for milestone v2026.4: State Data Completion & Image Coverage.
 - [x] **REFRESH-05**: Clear Compass action clears all progress state including quiz progress and calibration progress
 - [x] **REFRESH-06**: Stale topic IDs in localStorage are silently filtered out; calibration re-triggers if selectedTopics drops below 3
 
+### Onboarding Guided Hints & UX Clarity
+
+- [ ] **ONBOARD-01**: Reusable CoachMark component with full-page dim overlay and spotlight cutout, supporting both sequential tours and one-shot contextual hints
+- [ ] **ONBOARD-02**: Post-calibration 4-step guided tour on Compass page (spoke inversion, compare, library, help button)
+- [ ] **ONBOARD-03**: Compare deep-dive tour triggered on first compare interaction, including spoke inversion conceptual clarity
+- [ ] **ONBOARD-04**: Welcome screen simplified with static hero image and 1-2 concise text lines (no GIF, no 4 bullet points)
+- [ ] **ONBOARD-05**: Write-in awareness hint on first calibration question, dismissed permanently after advancing
+- [ ] **ONBOARD-06**: Library page 2-step coach mark tour (topic add button, full calibration CTA) on first visit
+
 ## Future Requirements
 
 Deferred to future milestones. Tracked but not in current roadmap.
@@ -79,12 +88,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 | REFRESH-04 | Phase 65 | Complete |
 | REFRESH-05 | Phase 65 | Complete |
 | REFRESH-06 | Phase 65 | Complete |
+| ONBOARD-01 | Phase 66 | Pending |
+| ONBOARD-02 | Phase 66 | Pending |
+| ONBOARD-03 | Phase 66 | Pending |
+| ONBOARD-04 | Phase 66 | Pending |
+| ONBOARD-05 | Phase 66 | Pending |
+| ONBOARD-06 | Phase 66 | Pending |
 
 **Coverage:**
-- v2026.4 requirements: 17 total
-- Mapped to phases: 17
+- v2026.4 requirements: 23 total
+- Mapped to phases: 23
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-06 after Phase 65 planning*
+*Last updated: 2026-03-06 after Phase 66 planning*

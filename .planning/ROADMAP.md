@@ -265,6 +265,25 @@ Plans:
 - [ ] 65-01-PLAN.md — Fix topics-loading race condition and calibration/resume-mode persistence
 - [ ] 65-02-PLAN.md — Add quiz page persistence, stale topic cleanup, and compass reset cleanup
 
+### Phase 66: Improve onboarding flow with guided hints and UX clarity
+**Goal**: Existing Compass features are discoverable and understandable for first-time users through a coach mark hint system, guided tours, welcome screen simplification, and contextual hints
+**Depends on**: Phase 65
+**Requirements**: ONBOARD-01, ONBOARD-02, ONBOARD-03, ONBOARD-04, ONBOARD-05, ONBOARD-06
+**Success Criteria** (what must be TRUE):
+  1. A reusable CoachMark component provides spotlight overlay hints across the app
+  2. Post-calibration guided tour walks users through spoke inversion, compare, library, and help
+  3. Compare deep-dive tour explains the comparison interface including spoke inversion conceptual clarity
+  4. Welcome screen uses a static image and concise text (no GIF, no 4 bullet points)
+  5. Write-in awareness hint shows on the first calibration question only
+  6. Library page coach marks orient users to adding topics and the full quiz path
+**Plans:** 4 plans
+
+Plans:
+- [ ] 66-01-PLAN.md — Create reusable CoachMark component and simplify welcome screen
+- [ ] 66-02-PLAN.md — Add post-calibration guided tour and write-in awareness hint
+- [ ] 66-03-PLAN.md — Add Library page coach marks and Compare deep-dive tour
+- [ ] 66-04-PLAN.md — Consolidate onboarding flag cleanup and verify end-to-end
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -281,13 +300,4 @@ Plans:
 | 63. Headshot Research Sprint | 6/8 | In Progress|  | - |
 | 64. Headshot Upload & Coverage Validation | v2026.4 | 0/TBD | Not started | - |
 | 65. Fix Compass page refresh | 2/2 | Complete    | 2026-03-06 | - |
-
-### Phase 66: Improve onboarding flow with guided hints and UX clarity
-
-**Goal:** [To be planned]
-**Requirements**: TBD
-**Depends on:** Phase 65
-**Plans:** 0 plans
-
-Plans:
-- [ ] TBD (run /gsd:plan-phase 66 to break down)
+| 66. Improve onboarding flow | 0/4 | Not started | - | - |
