@@ -2,23 +2,23 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
+See: .planning/PROJECT.md (updated 2026-03-07 after v1.2 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.2 milestone complete — ready for audit
+**Current focus:** Planning next milestone (v1.3)
 
 ## Current Position
 
-Phase: 16 — v1.2 Gap Closure
-Plan: 01 of 1
-Status: Phase complete — verified passed (5/5 must-haves) — v1.2 MILESTONE COMPLETE
-Last activity: 2026-03-07 — Completed 16-01-PLAN.md (v1.2 audit bug fixes: soft-delete filters, CategoriesPage shape, dead code, type annotations)
+Phase: Not started
+Plan: Not started
+Status: Ready to plan — v1.2 archived, next milestone to be defined
+Last activity: 2026-03-07 — v1.2 milestone complete (archived)
 
-Progress: ██████████ 100% (v1.2: all 5 phases complete; Phase 16 verified passed)
+Progress: — (v1.3 not yet planned)
 
 ## Performance Metrics
 
-**v1.0 reference:**
+**v1.0 shipped:**
 - Total plans: 18 plans, 8 phases, 4 days
 
 **v1.1 shipped:**
@@ -26,16 +26,16 @@ Progress: ██████████ 100% (v1.2: all 5 phases complete; Phas
 - Phases: 3 (Phase 9–11)
 - Timeline: 1 day (2026-03-04)
 
-**v1.2 progress:**
-- Plans: 9 (12-01, 12-02, 13-01, 13-02, 13-03, 13-04, 14-01, 14-02, 14-03)
-- Phases: 3 (Phase 12–14)
-- Timeline: 1 day each (2026-03-06)
+**v1.2 shipped:**
+- Plans: 15 (12-01 through 16-01)
+- Phases: 5 (Phase 12–16)
+- Timeline: 2 days (2026-03-06 → 2026-03-07)
 
 ## Accumulated Context
 
 ### Decisions
 
-Full key decisions log in PROJECT.md. v1.1 decisions committed to decisions table.
+Full key decisions log in PROJECT.md. v1.2 decisions committed to decisions table.
 
 ### Pending Todos
 
@@ -44,65 +44,12 @@ None.
 ### Open Blockers
 
 - **empowered_profiles missing columns:** representing_city, district_type, chamber_name etc. never migrated to live DB. Candidate ZIP discovery non-functional. Requires future migration.
-
-Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform namespace and is idempotent. Run migrations 026, 027, 028 against the live DB to activate all Phase 13 endpoints.
-
-### Accumulated Decisions (Phase 12)
-
-| Decision | Context |
-|----------|---------|
-| inform schema appended manually to generated types | inform namespace not created in live DB despite migration 015 recorded as applied; keeps all schema('inform') calls compiling |
-| candidateService columns stripped | representing_city, district_type, chamber_name etc. not in live empowered_profiles; old types had them hand-written ahead of migration |
-| getCandidatesByZip ZIP filter removed | representing_zip column missing from live DB; function returns all active candidates until migration adds it |
-| HS256 test JWT pattern via SUPABASE_JWT_SECRET | Must set env var before dynamic import — auth.ts reads it at module eval time |
-| iat = now-1s in test JWT | isTokenRevoked uses strict less-than; same-second collision would break revocation test |
-| Skip stubs deleted, not converted to .todo | vitest 2.x counts .todo as skipped — both patterns inflate reported count |
-
-### Accumulated Decisions (Phase 14)
-
-| Decision | Context |
-|----------|---------|
-| is_active excluded from compass_topics INSERT | GENERATED ALWAYS AS (is_live) STORED — inserting it causes Postgres error; must never appear in INSERT column list |
-| Two-pass design in admin_create_topic_with_stances | Full validation loop before any writes — matches migration 028 pattern; guarantees all-or-nothing atomicity |
-| admin_list_politicians is fresh on all DBs | Migration 025 did not contain this function; CREATE OR REPLACE is safe but there is no prior version to replace |
-| PUT → PATCH for /compass/topics/:id and /compass/stances/:id | Corrects REST semantics; Phase 15 must use PATCH for these routes |
-| GET /compass/politicians at /compass/ path | New canonical admin path; legacy /essentials/politicians retained for backward compat |
-
-### Accumulated Decisions (Phase 13)
-
-| Decision | Context |
-|----------|---------|
-| Soft-delete via deleted_at on compass_responses | Preserves data for recovery; reset_compass_answers sets deleted_at = now(), import_compass_calibrations sets deleted_at = NULL on re-import |
-| Two-pass validation in import_compass_calibrations | Full validation loop before any writes — all-or-nothing atomicity guarantee |
-| SET search_path = '' on SECURITY DEFINER functions | Prevents search_path injection; all table references fully-qualified |
-| Conditional requireAdmin via Promise wrapper | DELETE /answers/me ?full=true admin flag; middleware invoked programmatically with res.headersSent guard |
-| essentialsService.ts uses supabaseAnon exclusively | inform.politicians is public reference data; no service-role needed |
-| compass-import legacy path retains session guard | New direct-value path bypasses session for post-Connect users; stance_id-only path retains session requirement |
-| as-any cast removed from essentialsService.ts | database.types.ts updated by 13-02 before 13-03 ran; is_candidate properly typed |
-
-### Accumulated Decisions (Phase 16)
-
-| Decision | Context |
-|----------|---------|
-| .is('deleted_at', null) not .eq() for soft-delete guard | PostgREST generates IS NULL for .is(); .eq() does not correctly handle null comparisons |
-| adminCreateTopic deleted entirely | No callers; adminCreateTopicWithStances (Phase 14 RPC) is sole creation path |
-| /compass/categories returns plain array | apiFetch type param and property access updated in CategoriesPage; no { categories: [] } wrapper exists |
-
-### Accumulated Decisions (Phase 15)
-
-| Decision | Context |
-|----------|---------|
-| SaveButton state machine pattern | idle/saving/done/error with setTimeout auto-reset — reusable for any inline save in admin UI |
-| stanceEdits as Record<id, string> diff map | Only tracks changed values; minimizes PATCH calls to only modified stances |
-| GET stances returns array directly | /admin/compass/topics/:id/stances returns Stance[] not wrapped in a key |
-| Public /compass/categories used for category display | Admin route returns flat objects; public route returns nested topics[] — use public for UI display |
-| PUT /topics/:id/categories is replace-all | Documented in CategoryCard code comment; sending category_ids:[id] clears prior multi-category assignments |
-| RadioGroup value prop requires number|undefined not number|null | Headless UI v2 RadioGroup — use value ?? undefined when passing nullable number state |
-| PoliticiansPage two-call save in parallel | PUT /admin/compass/politicians/:id/answers + POST /:id/context run via Promise.all when relevant fields non-empty |
+- **Migrations 026–029 not applied to live DB:** Must be applied manually before CompassV2 + admin UI are functional against production.
+- **CompassV2 frontend API contract updates pending:** CV2-01 through CV2-05 (bearer tokens, /api/account/me, /api/admin/me) required in CompassV2 repo before Alpha onboarding.
 
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 16-01-PLAN.md — v1.2 audit bug fixes (soft-delete filters, CategoriesPage shape, dead code, type annotations)
+Stopped at: v1.2 milestone archived — ready to start v1.3 planning
 Resume file: None
-Resume: Phase 16 in progress. 16-01 complete. Five v1.2 audit bugs closed. Both tsc checks pass.
+Resume: Run /gsd:new-milestone to define v1.3 requirements and roadmap.

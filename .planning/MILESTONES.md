@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v1.2 CompassV2 Integration & Alpha Hardening (Shipped: 2026-03-07)
+
+**Delivered:** CompassV2 frontend compatibility, alpha hardening (clean types + JWT revocation + 90 clean tests), and a full compass admin backend + React UI — so the Inform pillar is fully seeded and manageable without touching the database, and real Alpha users can use CompassV2 against this backend.
+
+**Phases completed:** 12–16 (15 plans total)
+
+**Key accomplishments:**
+
+- Regenerated Supabase types and achieved strict TypeScript compilation (0 errors) across backend + admin source tree; 90 architecture tests pass with 0 skips or TODO workarounds; JWT revocation verified end-to-end (blocklisted token rejected on next request, not just at expiry)
+- CompassV2 reset flow: `DELETE /api/compass/answers/me` soft-deletes all responses via `reset_compass_answers` RPC; `GET /api/compass/answers` and batch read both filter deleted rows with `.is('deleted_at', null)` — full E2E verified in Phase 16 gap closure
+- `GET /api/essentials/politicians` accessible without authentication (uses `supabaseAnon`); `POST /api/connect/compass-import` extended to accept `selected_topics` array stored in `connected_profiles.selected_topic_ids`
+- Full compass admin backend: 12 new routes in `admin.ts`, 7 new service functions in `adminService.ts`, `admin_create_topic_with_stances` atomic Postgres RPC (two-pass validation, all-or-nothing), migration 029 with three admin RPCs; 102 total tests
+- Compass admin React UI: Topics page (list, create modal, live toggle, stance editor), Politicians page (list, create, detail with per-topic answers and context), Categories page (list, create, topic assignment) — all backed by new admin endpoints
+- Gap closure (Phase 16): `GET /admin/compass/topics/:id/stances` added to unblock stance editor; soft-delete filter corrected (`.is()` not `.eq()`); CategoriesPage response shape fixed; `adminCreateTopic` dead code removed; id types corrected to `string` (UUID)
+
+**Stats:**
+
+- 65 files modified (+11,179 / -208 lines)
+- ~13,334 lines of TypeScript (backend/src + admin/src)
+- 5 phases, 15 plans, 20 requirements
+- 2 days (2026-03-06 → 2026-03-07)
+
+**Git range:** Phase 12 start → `97f9c6f`
+
+**What's next:** v1.3 — live Alpha deployment runbook (migrations 026–029 apply), CompassV2 frontend API contract updates (CV2-01 through CV2-05), and Alpha user onboarding
+
+---
+
 ## v1.1 XP & Progression (Shipped: 2026-03-04)
 
 **Delivered:** A unified XP and leveling system — append-only ledger, atomic award RPC, tiered level calculation, public XP profile endpoint, and admin ledger view — so any feature repo can award XP with idempotency guarantees.
