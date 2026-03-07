@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { apiFetch } from '../../lib/api';
 
 interface Category {
-  id: number;
+  id: string;
   title: string;
   created_at: string;
 }
 
 interface Topic {
-  id: number;
+  id: string;
   title: string;
 }
 
@@ -111,11 +111,11 @@ export function CategoriesPage() {
 
   useEffect(() => {
     Promise.all([
-      apiFetch<{ categories: Array<Category & { topics: Topic[] }> }>('/compass/categories'),
+      apiFetch<Array<Category & { topics: Topic[] }>>('/compass/categories'),
       apiFetch<{ topics: Topic[] }>('/admin/compass/topics'),
     ])
       .then(([catData, topicData]) => {
-        setCategories(catData.categories);
+        setCategories(catData);
         setAllTopics(topicData.topics);
       })
       .catch((err: unknown) =>
@@ -125,10 +125,8 @@ export function CategoriesPage() {
   }, []);
 
   async function refreshCategories() {
-    const data = await apiFetch<{ categories: Array<Category & { topics: Topic[] }> }>(
-      '/compass/categories',
-    );
-    setCategories(data.categories);
+    const data = await apiFetch<Array<Category & { topics: Topic[] }>>('/compass/categories');
+    setCategories(data);
   }
 
   async function handleCreate(e: React.FormEvent) {

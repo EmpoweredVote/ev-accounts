@@ -257,34 +257,6 @@ export async function adminRevokeRole(userId: string, roleSlug: string): Promise
 // ---------------------------------------------------------------------------
 
 /**
- * Create a new compass topic.
- */
-export async function adminCreateTopic(data: {
-  title: string;
-  short_title?: string;
-  question_text: string;
-  is_live?: boolean;
-}): Promise<Record<string, unknown>> {
-  const { title, short_title, question_text, is_live = false } = data;
-
-  const { data: row, error } = await supabaseAdmin
-    .schema('inform')
-    .from('compass_topics')
-    .insert({
-      title,
-      short_title: short_title ?? null,
-      question_text,
-      is_live,
-      went_live_at: is_live ? new Date().toISOString() : null,
-    })
-    .select()
-    .single();
-
-  if (error) throw new Error(error.message);
-  return row as Record<string, unknown>;
-}
-
-/**
  * Update a compass topic.
  * CRITICAL: when is_live transitions to true, also set went_live_at = now().
  * Uses the admin_update_topic RPC which handles the COALESCE logic and
