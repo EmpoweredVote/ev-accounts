@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2026.3.2
 milestone_name: Compass on Profiles
-status: defining_requirements
+status: ready_to_plan
 stopped_at: ""
-last_updated: "2026-03-06T22:00:00.000Z"
-last_activity: 2026-03-06 — Milestone v2026.3.2 started
+last_updated: "2026-03-06T22:30:00.000Z"
+last_activity: 2026-03-06 — Roadmap created for v2026.3.2, 5 phases defined (67-71)
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,194 +21,37 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** Phase 67 — Compass API Integration
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-03-06 — Milestone v2026.3.2 started
+Phase: 67 of 71 (Compass API Integration)
+Plan: — (not yet planned)
+Status: Ready to plan
+Last activity: 2026-03-06 — Roadmap created for v2026.3.2 (5 phases, 9 requirements mapped)
 
 Progress: ░░░░░░░░░░ 0%
 
 ## Performance Metrics
 
+**Velocity (v2026.4):** 7 phases, 24 plans
 **Velocity (v2026.3):** 6 phases, 19 plans
 **Velocity (v1.9):** 3 phases, 6 plans
-**Velocity (v1.8):** 6 phases, 28 plans
 
 *Updated after each plan completion*
 
 ## Accumulated Context
 
-### Key Context for Phase 62 (COMPLETE)
+### Architectural Decisions for This Milestone
 
-- 62-01 complete: state_legislative_config.json created as single source of truth for IN/CA session years.
-- IN: current_year_start=2026, previous_year_start=2025, committee_source=iga, legislative_source=legiscan.
-- CA: current_year_start=2025, previous_year_start=2023, committee_source=openstates, legislative_source=legiscan.
-- Both import scripts (import_state_legislative.py, import_state_committees.py) now read from config JSON; exit 1 with clear message if missing.
-- fetch_all_iga_data() session_year parameter is now required (no default) — must be passed from config.
-- verify_state_api.py created: hits Go API to test all 4 endpoints for Rodric Bray (IN) and Lisa Calderon (CA).
-- Session year updates for new legislative years require editing only state_legislative_config.json.
-- 62-02 complete: EV-Backend/scripts/README.md expanded with complete State Legislative Imports section (STATE-05 satisfied).
-- README covers: shared prerequisites, 5 scripts with usage/flags/expected output, 8-step new session playbook, 4 tracking files, 6 troubleshooting items.
-- New session playbook uses --dry-run-first discipline (always dry run before writing to DB).
+- CompassV2 and Essentials are SEPARATE React apps on different Netlify origins — cannot share localStorage directly
+- RadarChartCore in ev-ui already supports dual dataset overlay (pink user + blue politician) — no new component needed
+- Existing compass API endpoints: /compass/topics, /compass/answers, /compass/stances
+- 455 politician stance rows in DB across 23 politicians (from v1.8)
+- Essentials uses `credentials: "include"` for all API calls — same pattern needed for compass API calls
+- Guest compass data problem: CompassV2 writes to its own origin's localStorage; Essentials cannot read it — Phase 68 must solve this
 
-### Key Context for Phase 61 (COMPLETE)
-
-- Phase 61 complete: IN and CA state legislative data verified against live DB.
-- Indiana 2026 Regular Session: 935 bills, 6,069 votes, 17/18 legislators active, bridge coverage 94.4% PASS.
-- California 2025-2026 Session: 4,746 bills, 92,492 votes, 35/37 legislators active, bridge coverage 94.6% PASS.
-- validate_state_legislative.py exits 0 — both states pass all thresholds (80% bridge, ≤10% zero-activity).
-- Missing legiscan bridges: Robert Johnson (IN), Blanca Pachecco and Suzette Valladares (CA) — no legiscan bridge = zero activity, documented not fixed.
-- Unsponsored bills (83% IN, 71% CA) are expected: our roster is a geofence-filtered subset of the full legislature.
-- LegiScan getDatasetList does NOT include bill_count — confirmed via live API call. Sessions confirmed present by hash.
-- Table naming: legislative_bills, legislative_votes, legislative_bill_cosponsors (legislative_ prefix).
-- Session lookup: use is_current=true (no year_start column in legislative_sessions).
-- Audit report: .planning/phases/61-state-data-verification-gap-fill/61-STATE-LEGISLATIVE-AUDIT.md
-
-### Key Context for Phase 60 (COMPLETE)
-
-- Phase 60 complete: IN and CA committee memberships imported and human-verified on profile pages.
-- Indiana: 46 standing committees, 61 memberships, 16/18 legislators = 88.9% coverage (PASS)
-- California: 1,900 committees processed, 213 memberships, 31/37 legislators = 83.8% coverage (PASS)
-- validate_committee_coverage.py exits 0 — both states pass 80% threshold.
-- DB reconnect fix: import_state_committees.py reconnects after Open States API fetch (avoids Supabase idle connection timeout on ~15-min CA pagination).
-- Open States CA jurisdiction returns multi-state committees — 23,913 "no match" entries are expected, not errors.
-- committee_import_tracker.json at ~/.ev-backend/ tracks both IN and CA run metadata.
-
-### Key Context for Phase 64 (COMPLETE)
-
-- 64-01 complete: upload_manifest_headshots.py created (432 lines) in EV-Backend/scripts/.
-- Script copies download_image, make_storage_path, upsert_politician_image, get_connection verbatim from scrape_city_headshots.py (not import — avoids Playwright dep).
-- Adds content_type_to_ext() and get_photo_license() as standalone helpers.
-- CLI: --manifest (default: headshot_research_manifest.csv), --dry-run flag.
-- 64-02 complete: Real upload executed with .venv/bin/python3 (system python3 lacked supabase package).
-- PHOTO_BUCKET in utils.py corrected to "politician_photos" (underscore) — dev Supabase project uses underscore, not hyphen. Existing 323 pre-upload CDN records confirmed using underscore.
-- Real upload results: 180 ok, 66 failed (identical to dry-run — same systematic 403 blocks from CivicPlus/Akamai government CDNs).
-- DB state after upload: 503 total Supabase CDN headshots (323 pre-existing + 180 new).
-- coverage_report.py --check 1 PASSES: 260/260 CDN URLs return HTTP 200 (100% health). Population coverage: 263/394 = 66.8%.
-- PHOTO-05 gate: CDN health (100%) > 80% threshold = PASS. Population coverage (66.8%) is informational only for this check.
-- Task 2 checkpoint approved: human confirmed headshots display on politician cards and profile pages for ZIP codes 90210/91502/90401.
-- PHOTO-03, PHOTO-04, PHOTO-05 requirements all satisfied. Phase 64 complete.
-- Commits: 4dfac0a (64-01), 68bb477 (64-02) — both in EV-Backend repo.
-
-### Key Context for Phase 63
-
-- headshot_research_manifest.csv: 304 rows, 12 columns, updated in 63-01 with politician_id and research tracking columns.
-- Batch 1 (63-02) complete: 66 rows researched, 60 found, 6 not_found, 0 pending.
-- Batch 2 (63-03) complete: 48 rows researched, 43 found, 5 not_found, 0 pending. Checkpoint approved 2026-03-05.
-- Batch 3 (63-04) complete: 48 rows researched, 44 found, 4 not_found, 0 pending. Checkpoint approved 2026-03-05.
-- Batch 4 (63-05) complete: 48 rows researched, 34 found, 14 not_found, 0 pending. Checkpoint approved 2026-03-06.
-- Walnut, Bell Gardens, Bradbury: no individual headshot photos on official city websites — all 4 members each marked not_found. Cities with roster-only table layouts.
-- Claremont, Paramount, South El Monte (failed-status): manual navigation succeeded — headshots found on individual profile sub-pages.
-- Signal Hill: 2/4 found; 2 newer members lack photos on city site.
-- Batch 5 (63-06) complete: 44 rows researched, 33 found, 11 not_found, 0 pending. Checkpoint approved 2026-03-06.
-- Batch 6 (63-07) complete: 33 rows researched, 24 found, 9 not_found, 0 pending.
-- Cumulative: 287/304 researched (94%), ~229 found (~80% hit rate).
-- Research approach: HTTP scraping (requests+bs4) for accessible sites; Wayback Machine for 403-blocked CivicPlus/Cloudflare/Akamai sites.
-- Wayback Machine image URLs work for Glendora (site blocks direct requests but wb cached images serve fine).
-- Lynwood correct URL: lynwoodca.gov (not lynwood.ca.us from manifest).
-- CivicPlus sites (Pomona, Torrance, Hermosa Beach, Palos Verdes, Glendora) all 403 to bots — use Wayback Machine.
-- Akamai-blocked sites (Hawthorne, West Hollywood, Commerce, Rolling Hills Estates) — use Wayback Machine.
-- Rolling Hills Estates correct domain: rollinghillsestates.gov (manifest URL rolling-hills-estates.org is unresolvable).
-- San Marino: actual council page is /government/mayor___city_council_/index.php (manifest URL /government/elected-officials/city-council is placeholder).
-- Rolling Hills (equestrian city): website has NO headshots — roster table only, all 4 members not_found.
-- Haidar Awad (Hawthorne): new council member post-Dec 2025, no archived profile page, marked not_found.
-- Commerce correct domain: commerceca.gov (old ci.commerce.ca.us redirects to same Akamai-blocked site).
-- RPV: council pages discoverable via /sitemap.xml (navigation search failed).
-- Former council members (Santa Monica, Santa Fe Springs) marked not_found since they're no longer on official pages.
-- Automated batch scraper (1,247 lines) hit ceiling at Cloudflare/CivicPlus-blocked cities — HTTP scraping is the intended approach for 63.
-- Supabase Storage CDN upload pipeline already exists from v1.7 — reuse it in Phase 64.
-- Current coverage: target 80%+ of 391 politicians.
-- Manifest: ~17 politicians still pending (non-Batch-1/2/3/4/5/6 cities) — Batch 7 is the final batch.
-- 3 Burbank politicians included (headshot_status=blocked) — may need alternative research approach.
-- Decision: politician_id is UUID primary key from essentials.politicians — enables direct upsert in Phase 64 without fuzzy name matching.
-- Monrovia (monroviaca.gov): website has NO individual headshots — text bios only, all 4 members not_found.
-- South Gate (cityofsouthgate.org): entire site 403-blocked; used Wayback im_ URLs for all 4 members.
-- Vernon (cityofvernonca.gov): site 403-blocked; Wayback has HTML but ShowPublishedImage not archived; recorded original city URLs as found_url.
-- Lawndale photos: appear on /contact_information sub-page (CivicLive pattern), not main /city_council page.
-- La Verne correct council URL: /351/City-Council (manifest had stale /government/city_council/).
-- Temple City correct council URL: /116/City-Council (manifest had stale /government/city-council).
-- Agoura Hills (FAILED): bus-directory/City Council/{Name}.jpg pattern (Revize CMS) — 4/4 found.
-- Westlake Village: CivicPlus mainSectionTS img scoping finds headshot in /NNN/Name individual pages.
-- Los Alamitos, Beverly Hills: fr-dib class with alt=name on main council page maps names to ImageRepository IDs.
-- Hawaiian Gardens: Wayback showpublishedimage per-member pages (2019-2023 era); first main-content image = headshot.
-- Whittier: Angular SPA + Cloudflare — fully blocked, no Wayback. Mark not_found.
-- Rosemead (FAILED): Revize CMS with JS-only content rendering — no static HTML or Wayback. Mark not_found.
-- La Habra Heights (FAILED): lahabraheights.com is parked domain (synergytech), not city website. Mark not_found.
-- Sierra Madre (FAILED): cityofsmca.com unresolvable, no Wayback. Mark not_found.
-- Lancaster: Cloudflare + no Wayback snapshots. Mark not_found.
-- South Pasadena Omari Ferguson: not in 2024 Wayback snapshot (different council era). Mark not_found.
-- Batch 6 (63-07) new discoveries: Bell correct domain is cityofbell.gov (not cityofbell.org); San Fernando correct domain is sanfernando.gov; San Dimas correct domain is sandimasca.gov.
-- CivicPlus directory.aspx?EID pattern: individual member pages at /directory.aspx?EID={id} often have photos not shown on main council page.
-- George Dotson (Inglewood): former council member replaced by Gloria Gray in District 1 — marked not_found.
-- La Puente: lapuentehome.org returns corrupted binary content — all 3 members not_found.
-- Downey: downeyca.org Akamai-blocked, no Wayback CDX snapshots — both members not_found.
-- Carson: site completely unreachable (timeout), no Wayback archives — FAILED status confirmed, both members not_found.
-- Manhattan Beach: Wayback 20250211 snapshot served photos for all 3 members (VisionInternet showpublishedimage IDs: 24271, 44029, 44027).
-- Batch 7 (63-08) complete: 17 politicians researched, 16 found, 1 not_found (Duarte/Garcia).
-- Burbank NOT Cloudflare-blocked — manifest had wrong URL. Correct URL is burbankca.gov/web/city-council-office; all 3 members (Perez, Anthony, Mullins) found.
-- Culver City correct domain: culvercity.gov (not .org which is Incapsula-blocked). Used Playwright to access .gov.
-- David Torres (Montebello) is former member — not on current council page. Found via Wayback Oct 2022.
-- Duarte (Cesar Garcia): accessduarte.com fully 403-blocked, no Wayback archives — not_found.
-- PHASE 63 FINAL: 304/304 researched (100%), 246 found (80%), 58 not_found (19%), 0 pending. headshot_research_manifest.csv ready for Phase 64 upload pipeline.
-
-### Key Context for Phase 65 (COMPLETE)
-
-- Phase 65 complete: Compass page refresh losing onboarding state fixed.
-- CompassContext now exposes topicsLoaded, topicsError, retryLoadTopics.
-- Compass.jsx has a loading gate (after all hooks) showing EV coral spinner until topics load; error state with Retry on API failure.
-- CalibrationOverlay: localStorage check is now FIRST in getInitialState() so saved progress wins on refresh; resume-mode sessions now persist to calibration_progress key; init effect always waits for topics.length > 0.
-- Celebration screen edge case: useEffect in Compass.jsx clears calibration_progress if all pickedTopics already answered on mount (skip celebration, go straight to compass).
-- Commits: 657c4fc (feat: topicsLoaded gate), 05f6bc7 (fix: CalibrationOverlay persistence).
-- Requirements REFRESH-01, REFRESH-02, REFRESH-03 marked complete.
-
-### Key Context for Phase 66 (COMPLETE)
-
-- 66-01 complete: CoachMark.jsx created — portal overlay (z-60+), SVG mask spotlight cutout, auto-positioning tooltip, tour mode (Next/Skip All) + hint mode (Got it), Framer Motion fade+slide animations.
-- useCoachMark hook exported from CoachMark.jsx — localStorage-persisted dismiss with storageKey pattern (matches onboarding_spokeFlip pattern).
-- CalibrationOverlay welcome step simplified: calibration-demo.gif removed; inline SVG compass (ev-coral user polygon, ev-light-blue comparison polygon, ev-yellow dots); 4-bullet ul replaced with single p tag (~18 words).
-- Commits in CompassV2 repo: 5b89692 (CoachMark), 414ef75 (CalibrationOverlay welcome).
-- Requirements ONBOARD-01, ONBOARD-04 marked complete.
-- SVG mask chosen over CSS clip-path for spotlight — cleaner rounded hole without polygon math.
-- 66-02 complete: SpokeHint removed; 4-step post-cal tour added to Compass.jsx (spokeRef/compareRef/backToLibRef/helpBtnRef targets); tour triggers on onComplete with 500ms delay; persists via onboarding_postCalTour; helpBtnRef resolved via document.querySelector('[aria-label="Help"]') on step 3 (Layout.jsx button outside Compass tree).
-- CalibrationOverlay: 3-second auto-dismiss removed from complete step (manual "View My Compass" only); write-in awareness hint added (currentIndex===0, !writeInHintShown, !showWriteIn); dismissed on advance past first question or "Write your own..." click; persists via onboarding_writeInHint.
-- Layout.jsx handleClearCompass: clears onboarding_postCalTour and onboarding_writeInHint.
-- Commits: 01f6700 (Compass.jsx tour), f2c978e (CalibrationOverlay hint + Layout cleanup).
-- Requirements ONBOARD-02, ONBOARD-05 marked complete.
-- 66-03 complete: Library.jsx 2-step tour (step 1: + button via callback ref, step 2: Full Calibration CTA); Compass.jsx Compare 4-step tour (politician picker DOM query, topic-dropdown id, chartContainerRef for overlay/spoke steps); persists via onboarding_libraryTour/onboarding_compareTour.
-- Commits: 748ef45 (Library tour), 4b59914 (Compare tour).
-- Requirements ONBOARD-03, ONBOARD-06 marked complete.
-- Pattern: callback ref for first loop element; DOM query for child component internals without modifying ComparePanel.jsx.
-- 66-04 complete: All 5 onboarding flags confirmed in handleClearCompass (no code change needed). End-to-end user testing surfaced two issues — both fixed: (1) post-cal tour reduced from 4 to 3 steps (help button step removed — too subtle, awkward spotlight); (2) compare button spotlight fixed with callback ref prop instead of document.querySelector. Topic picker subtitle updated to "Pick the issues that matter most to you when you vote". Commits: 087a1a8 (subtitle), 6431e6b (tour fix). Phase 66 complete: all ONBOARD-01 through ONBOARD-06 requirements satisfied.
-
-### Roadmap Evolution
-
-- Phase 65 added: Fix Compass page refresh losing onboarding state
-- Phase 65 complete: 2026-03-06
-- Phase 66 added: Improve onboarding flow with guided hints and UX clarity
-
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 2 | Move Compare button closer to compass chart | 2026-03-05 | `005c970` | [2-move-compare-button-closer-to-compass-ch](./quick/2-move-compare-button-closer-to-compass-ch/) |
-| 3 | Animate politician compass polygon on spoke inversion | 2026-03-06 | `288aa22` (ev-ui), `e561a74` (CompassV2) | [3-animate-politician-compass-spoke-inversi](./quick/3-animate-politician-compass-spoke-inversi/) |
-| 4 | Add vacant position support for offices | 2026-03-06 | `3e49070`, `7cd4527` (EV-Backend), `3e2f8e3` (essentials) | [4-add-vacant-position-support-for-offices-](./quick/4-add-vacant-position-support-for-offices-/) |
-| Phase 65-fix-compass-page-refresh-losing-onboarding-state P02 | 3 | 2 tasks | 3 files |
-| Phase 65-fix-compass-page-refresh-losing-onboarding-state P01 | 4 | 2 tasks | 3 files |
-| Phase 63 P06 | 45 | 1 tasks | 1 files |
-| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P01 | 2 | 2 tasks | 2 files |
-| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P03 | 336 | 2 tasks | 3 files |
-| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P02 | 366 | 2 tasks | 3 files |
-| Phase 66-improve-onboarding-flow-with-guided-hints-and-ux-clarity P04 | 45 | 2 tasks | 3 files |
-| Phase 63 P07 | 90 | 1 tasks | 1 files |
-| Phase 63-headshot-research-sprint P08 | 65 | 1 tasks | 1 files |
-| Phase 64 P02 | 1310 | 1 tasks | 1 files |
-
-### Tech Debt Carried Forward
+### Tech Debt Carried Forward (from v2026.4)
 
 - Dead `ballotready/` package preserved for historical reference (from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (from v1.5)
@@ -222,8 +65,12 @@ Progress: ░░░░░░░░░░ 0%
 - 12 politicians have no Read & Rank quotes (carried from v1.8)
 - Future: Census ZCTA-to-Place ZIP mapping for city council politicians
 
+### Blockers/Concerns
+
+None yet.
+
 ## Session Continuity
 
-Last session: 2026-03-06T21:07:40Z
-Stopped at: Completed quick-4 (vacant position support for offices). 3 tasks done. Backend Office model + query paths updated, frontend renders vacant cards, SQL script created.
-Resume: No active work. All phases 60-66 complete. v2026.4 milestone fully shipped. Quick task 4 complete.
+Last session: 2026-03-06T22:30:00Z
+Stopped at: Roadmap created for v2026.3.2. 5 phases (67-71) defined, 9 requirements mapped. Ready to plan Phase 67.
+Resume: Run `/gsd:plan-phase 67` to begin.
