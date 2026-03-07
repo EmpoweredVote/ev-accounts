@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 16 — v1.2 Gap Closure
-Plan: 01 of TBD
-Status: In progress — 16-01 complete
+Plan: 01 of 1
+Status: Phase complete — verified passed (5/5 must-haves) — v1.2 MILESTONE COMPLETE
 Last activity: 2026-03-07 — Completed 16-01-PLAN.md (v1.2 audit bug fixes: soft-delete filters, CategoriesPage shape, dead code, type annotations)
 
-Progress: ██████████ (Phase 16 started; 16-01 complete)
+Progress: ██████████ 100% (v1.2: all 5 phases complete; Phase 16 verified passed)
 
 ## Performance Metrics
 

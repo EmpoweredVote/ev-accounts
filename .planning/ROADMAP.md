@@ -4,7 +4,7 @@
 
 - ✅ **v1.0 MVP** — Phases 1–8 (shipped 2026-02-28)
 - ✅ **v1.1 XP & Progression** — Phases 9–11 (shipped 2026-03-04)
-- 🔄 **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–15 (in progress)
+- ✅ **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–16 (shipped 2026-03-07)
 
 ## Phases
 
@@ -55,8 +55,8 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   - [x] 15-03-PLAN.md — Politicians page: list, create, detail panel with answers and context (CADM-10, CADM-11, CADM-12)
   - [x] 15-04-PLAN.md — Categories page: list, create, topic assignment (CADM-13)
   - [x] 15-05-PLAN.md — GAP: GET /admin/compass/topics/:id/stances — missing backend endpoint blocks stance editor and politician RadioGroup
-- [ ] Phase 16: v1.2 Gap Closure (1/1 plans) — in progress
-  - [ ] 16-01-PLAN.md — Fix deleted_at filter on compass response reads + CategoriesPage response shape + tech debt cleanup
+- [x] Phase 16: v1.2 Gap Closure (1/1 plans) — completed 2026-03-07
+  - [x] 16-01-PLAN.md — Fix deleted_at filter on compass response reads + CategoriesPage response shape + tech debt cleanup
 
 ## Progress
 
@@ -77,7 +77,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 13. CompassV2 Backend Compatibility | v1.2 | 4/4 | Complete | 2026-03-06 |
 | 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
 | 15. Compass Admin React UI | v1.2 | 5/5 | Complete | 2026-03-07 |
-| 16. v1.2 Gap Closure | v1.2 | 0/1 | In Progress | — |
+| 16. v1.2 Gap Closure | v1.2 | 1/1 | Complete | 2026-03-07 |
 
 ---
 
