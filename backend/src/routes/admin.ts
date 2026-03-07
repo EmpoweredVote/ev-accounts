@@ -29,7 +29,6 @@ import {
   getInviteTree,
   adminGrantRole,
   adminRevokeRole,
-  adminCreateTopic,
   adminUpdateTopic,
   adminUpdateStance,
   adminUpdatePoliticianAnswers,
@@ -38,6 +37,13 @@ import {
   getDashboardStats,
   getCronLog,
   getAdminMe,
+  adminCreateTopicWithStances,
+  adminListTopics,
+  adminCreatePolitician,
+  adminUpdatePolitician,
+  adminListCategories,
+  adminCreateCategory,
+  adminAssignTopicCategories,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -400,13 +406,6 @@ router.post('/roles/revoke', async (req, res) => {
 // Compass admin (deferred from Phase 4)
 // ---------------------------------------------------------------------------
 
-const CreateTopicSchema = z.object({
-  title: z.string().min(1),
-  short_title: z.string().optional(),
-  question_text: z.string().min(1),
-  is_live: z.boolean().optional(),
-});
-
 const UpdateTopicSchema = z.object({
   title: z.string().min(1).optional(),
   short_title: z.string().optional(),
@@ -433,34 +432,93 @@ const PoliticianContextSchema = z.object({
   sources: z.array(z.string()).optional(),
 });
 
+const CreateTopicWithStancesSchema = z.object({
+  title: z.string().min(1),
+  question_text: z.string().min(1),
+  short_title: z.string().optional(),
+  is_live: z.boolean().optional(),
+  stances: z.array(z.object({
+    value: z.number().int().min(1).max(5),
+    text: z.string().min(1),
+  })).optional(),
+});
+
+const CreatePoliticianSchema = z.object({
+  first_name: z.string().min(1),
+  last_name: z.string().min(1),
+  preferred_name: z.string().optional(),
+  full_name: z.string().optional(),
+  office_title: z.string().optional(),
+  photo_origin_url: z.string().optional(),
+  is_candidate: z.boolean().optional(),
+});
+
+const UpdatePoliticianSchema = z.object({
+  first_name: z.string().min(1).optional(),
+  last_name: z.string().min(1).optional(),
+  preferred_name: z.string().optional(),
+  full_name: z.string().optional(),
+  office_title: z.string().optional(),
+  photo_origin_url: z.string().optional(),
+  is_active: z.boolean().optional(),
+  is_candidate: z.boolean().optional(),
+});
+
+const CreateCategorySchema = z.object({
+  title: z.string().min(1),
+});
+
+const AssignCategoriesSchema = z.object({
+  category_ids: z.array(z.string().uuid()),
+});
+
 /**
- * POST /api/admin/compass/topics
- * Create a new compass topic. Phase 4 deferred route.
+ * GET /api/admin/compass/topics
+ * List all compass topics (including non-live drafts). CADM-01.
  */
-router.post('/compass/topics', async (req, res) => {
+router.get('/compass/topics', async (_req, res) => {
   try {
-    const parsed = CreateTopicSchema.safeParse(req.body);
-    if (!parsed.success) {
-      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
-      return;
-    }
-    const topic = await adminCreateTopic(parsed.data);
-    await logAdminAction(actorId(req), 'create_compass_topic', null, {
-      topic_id: (topic as Record<string, unknown>).id,
-      title: parsed.data.title,
-    });
-    res.status(201).json(topic);
+    const topics = await adminListTopics();
+    res.json({ topics });
   } catch (err) {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
 
 /**
- * PUT /api/admin/compass/topics/:id
- * Update a compass topic. Phase 4 deferred route.
+ * POST /api/admin/compass/topics
+ * Create a compass topic with optional stances array (atomic). CADM-02.
+ */
+router.post('/compass/topics', async (req, res) => {
+  try {
+    const parsed = CreateTopicWithStancesSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    const result = await adminCreateTopicWithStances(parsed.data);
+    await logAdminAction(actorId(req), 'create_compass_topic', null, {
+      topic_id: ((result as Record<string, unknown>).topic as Record<string, unknown>).id,
+      title: parsed.data.title,
+      stance_count: (parsed.data.stances ?? []).length,
+    });
+    res.status(201).json(result);
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'VALIDATION_ERROR') {
+      res.status(400).json({ error: (err as Error).message });
+      return;
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * PATCH /api/admin/compass/topics/:id
+ * Update a compass topic. CADM-02 update path.
  * CRITICAL: when is_live transitions to true, went_live_at is set automatically.
  */
-router.put('/compass/topics/:id', async (req, res) => {
+router.patch('/compass/topics/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const parsed = UpdateTopicSchema.safeParse(req.body);
@@ -485,10 +543,10 @@ router.put('/compass/topics/:id', async (req, res) => {
 });
 
 /**
- * PUT /api/admin/compass/stances/:id
- * Update a compass stance. Phase 4 deferred route.
+ * PATCH /api/admin/compass/stances/:id
+ * Update a compass stance. CADM-09 backend requirement.
  */
-router.put('/compass/stances/:id', async (req, res) => {
+router.patch('/compass/stances/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const parsed = UpdateStanceSchema.safeParse(req.body);
@@ -510,6 +568,141 @@ router.put('/compass/stances/:id', async (req, res) => {
     const e = err as { code?: string };
     if (e.code === 'NOT_FOUND') {
       res.status(404).json({ error: 'Stance not found' });
+      return;
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/compass/categories
+ * List all compass categories. CADM-05.
+ */
+router.get('/compass/categories', async (_req, res) => {
+  try {
+    const categories = await adminListCategories();
+    res.json({ categories });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * POST /api/admin/compass/categories
+ * Create a new compass category. CADM-06.
+ */
+router.post('/compass/categories', async (req, res) => {
+  try {
+    const parsed = CreateCategorySchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    const category = await adminCreateCategory(parsed.data);
+    await logAdminAction(actorId(req), 'create_compass_category', null, {
+      category_id: (category as Record<string, unknown>).id,
+      title: parsed.data.title,
+    });
+    res.status(201).json(category);
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'DUPLICATE_TITLE') {
+      res.status(400).json({ error: 'Category title already exists' });
+      return;
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * PUT /api/admin/compass/topics/:id/categories
+ * Assign categories to a compass topic (replaces all). CADM-07.
+ */
+router.put('/compass/topics/:id/categories', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const parsed = AssignCategoriesSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    await adminAssignTopicCategories(id, parsed.data.category_ids);
+    await logAdminAction(actorId(req), 'assign_topic_categories', null, {
+      topic_id: id,
+      category_ids: parsed.data.category_ids,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'NOT_FOUND') {
+      res.status(404).json({ error: 'Topic not found' });
+      return;
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/compass/politicians
+ * List all politicians including inactive (admin view). CADM-03 list path.
+ */
+router.get('/compass/politicians', async (_req, res) => {
+  try {
+    const politicians = await adminListPoliticians();
+    res.json({ politicians });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * POST /api/admin/compass/politicians
+ * Create a new politician record. CADM-03.
+ */
+router.post('/compass/politicians', async (req, res) => {
+  try {
+    const parsed = CreatePoliticianSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    const politician = await adminCreatePolitician(parsed.data);
+    await logAdminAction(actorId(req), 'create_politician', null, {
+      politician_id: (politician as Record<string, unknown>).id,
+      full_name: parsed.data.full_name ?? `${parsed.data.first_name} ${parsed.data.last_name}`,
+    });
+    res.status(201).json(politician);
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * PATCH /api/admin/compass/politicians/:id
+ * Update a politician record. CADM-04.
+ */
+router.patch('/compass/politicians/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const parsed = UpdatePoliticianSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    if (Object.keys(parsed.data).length === 0) {
+      res.status(400).json({ error: 'No fields to update' });
+      return;
+    }
+    const politician = await adminUpdatePolitician(id, parsed.data);
+    await logAdminAction(actorId(req), 'update_politician', null, {
+      politician_id: id,
+      changes: parsed.data,
+    });
+    res.json(politician);
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'NOT_FOUND') {
+      res.status(404).json({ error: 'Politician not found' });
       return;
     }
     res.status(500).json({ error: 'Internal server error' });
