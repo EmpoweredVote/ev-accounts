@@ -89,10 +89,12 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | GET stances returns array directly | /admin/compass/topics/:id/stances returns Stance[] not wrapped in a key |
 | Public /compass/categories used for category display | Admin route returns flat objects; public route returns nested topics[] — use public for UI display |
 | PUT /topics/:id/categories is replace-all | Documented in CategoryCard code comment; sending category_ids:[id] clears prior multi-category assignments |
+| RadioGroup value prop requires number|undefined not number|null | Headless UI v2 RadioGroup — use value ?? undefined when passing nullable number state |
+| PoliticiansPage two-call save in parallel | PUT /admin/compass/politicians/:id/answers + POST /:id/context run via Promise.all when relevant fields non-empty |
 
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 15-04-PLAN.md — Categories page (list + create form + topic assignment)
+Stopped at: Completed 15-03-PLAN.md — Politicians page (full implementation: list + create modal + detail panel with compass answers)
 Resume file: None
-Resume: Phase 15 complete. All four compass admin UI plans done. Next: resolve PoliticiansPage TS error (number|null vs number|undefined), then ship admin UI or plan next milestone.
+Resume: Phase 15 complete. All four compass admin UI plans done (15-03 TS error resolved — RadioGroup null/undefined fix applied).
