@@ -8,6 +8,9 @@ const navItems = [
   { label: 'Invite Tree', to: '/admin/invites/tree' },
   { label: 'Cron Log', to: '/admin/cron-log' },
   { label: 'Roles', to: '/admin/roles' },
+  { label: 'Topics', to: '/admin/topics' },
+  { label: 'Politicians', to: '/admin/politicians' },
+  { label: 'Categories', to: '/admin/categories' },
 ];
 
 export function AdminLayout() {

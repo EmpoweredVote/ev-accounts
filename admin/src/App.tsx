@@ -9,6 +9,9 @@ import { InvitesPage } from './pages/admin/InvitesPage';
 import { InviteTreePage } from './pages/admin/InviteTreePage';
 import { CronLogPage } from './pages/admin/CronLogPage';
 import { RolesPage } from './pages/admin/RolesPage';
+import { TopicsPage } from './pages/admin/TopicsPage';
+import { PoliticiansPage } from './pages/admin/PoliticiansPage';
+import { CategoriesPage } from './pages/admin/CategoriesPage';
 import Login from './pages/Login';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
@@ -53,6 +56,9 @@ function App() {
           <Route path="invites/tree/:userId" element={<InviteTreePage />} />
           <Route path="cron-log" element={<CronLogPage />} />
           <Route path="roles" element={<RolesPage />} />
+          <Route path="topics" element={<TopicsPage />} />
+          <Route path="politicians" element={<PoliticiansPage />} />
+          <Route path="categories" element={<CategoriesPage />} />
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/admin" replace />} />
