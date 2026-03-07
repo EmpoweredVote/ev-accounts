@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 14 — Compass Admin Backend
-Plan: 01 complete
-Status: Wave 1 complete, ready for Wave 2 (adminService.ts)
-Last activity: 2026-03-07 — Completed 14-01-PLAN.md (migration 029 — three compass admin RPCs)
+Plan: 02 complete
+Status: Wave 2 complete, ready for Wave 3 (admin.ts routes + tests)
+Last activity: 2026-03-07 — Completed 14-02-PLAN.md (seven new compass admin service functions in adminService.ts)
 
 Progress: ████░░░░░░ 50% (v1.2: 2/4 phases complete; Phase 14 in progress)
 
@@ -81,5 +81,5 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 14-01-PLAN.md — migration 029 with three compass admin RPCs
+Stopped at: Completed 14-02-PLAN.md — seven new compass admin service functions in adminService.ts
 Resume file: None
