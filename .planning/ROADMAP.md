@@ -180,7 +180,7 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
 
 </details>
 
-### 🚧 v2026.3.2 Compass on Profiles (In Progress)
+### v2026.3.2 Compass on Profiles (In Progress)
 
 **Milestone Goal:** Show a compass comparison card on Essentials politician profiles — the user's calibrated compass overlaid with the politician's stances, plus a topic-by-topic breakdown with sources.
 
@@ -200,7 +200,12 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
   1. A logged-in user visiting an Essentials profile page receives their compass answers when the page calls the compass API
   2. An Essentials profile page can fetch all stance records for a given politician from the compass API
   3. CORS and credentials are correctly configured so essentials' Netlify origin can call api.empowered.vote with session cookies
-**Plans**: TBD
+**Plans**: 3 plans
+
+Plans:
+- [ ] 67-01-PLAN.md — Cookie domain fix + compass API fetch functions
+- [ ] 67-02-PLAN.md — CompassContext provider + auth indicator
+- [ ] 67-03-PLAN.md — Compass badge on cards + mini radar preview
 
 ### Phase 68: Guest Data Bridge
 **Goal**: Guest users who calibrated on CompassV2 can have their compass answers accessed from the Essentials app
@@ -249,7 +254,7 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 67. Compass API Integration | v2026.3.2 | 0/? | Not started | - |
+| 67. Compass API Integration | v2026.3.2 | 0/3 | Planned | - |
 | 68. Guest Data Bridge | v2026.3.2 | 0/? | Not started | - |
 | 69. Compass Card Shell | v2026.3.2 | 0/? | Not started | - |
 | 70. Radar Chart Integration | v2026.3.2 | 0/? | Not started | - |
