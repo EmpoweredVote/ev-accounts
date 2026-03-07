@@ -351,6 +351,23 @@ export async function adminUpdateStance(
 }
 
 /**
+ * List all stances for a topic. Used by GET /admin/compass/topics/:id/stances.
+ */
+export async function getTopicStances(
+  topicId: string
+): Promise<Record<string, unknown>[]> {
+  const { data, error } = await supabaseAdmin
+    .schema('inform')
+    .from('compass_stances')
+    .select('id, topic_id, value, text')
+    .eq('topic_id', topicId)
+    .order('value', { ascending: true });
+
+  if (error) throw new Error(error.message);
+  return (data ?? []) as Record<string, unknown>[];
+}
+
+/**
  * Upsert politician answers (bulk replace for a politician).
  */
 export async function adminUpdatePoliticianAnswers(
