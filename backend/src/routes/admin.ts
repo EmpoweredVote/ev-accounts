@@ -44,6 +44,7 @@ import {
   adminListCategories,
   adminCreateCategory,
   adminAssignTopicCategories,
+  getTopicStances,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -539,6 +540,19 @@ router.patch('/compass/topics/:id', async (req, res) => {
       return;
     }
     res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/compass/topics/:id/stances
+ * Returns all stances for a topic as a plain array. CADM-gap.
+ */
+router.get('/compass/topics/:id/stances', async (req, res) => {
+  try {
+    const stances = await getTopicStances(req.params.id);
+    res.json(stances);
+  } catch (err) {
+    res.status(500).json({ error: err instanceof Error ? err.message : 'Internal server error' });
   }
 });
 
