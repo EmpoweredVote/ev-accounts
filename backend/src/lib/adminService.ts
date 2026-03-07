@@ -402,6 +402,166 @@ export async function adminListPoliticians(): Promise<Record<string, unknown>[]>
   return (data as Record<string, unknown>[]) ?? [];
 }
 
+/**
+ * Create a new compass topic with optional stances atomically (two-pass RPC).
+ */
+export async function adminCreateTopicWithStances(data: {
+  title: string;
+  question_text: string;
+  short_title?: string;
+  is_live?: boolean;
+  stances?: Array<{ value: number; text: string }>;
+}): Promise<Record<string, unknown>> {
+  const { data: result, error } = await adminRpc('admin_create_topic_with_stances', {
+    p_title: data.title,
+    p_question_text: data.question_text,
+    p_short_title: data.short_title ?? null,
+    p_is_live: data.is_live ?? false,
+    p_stances: JSON.stringify(data.stances ?? []),
+  });
+
+  if (error) {
+    if (
+      error.message.startsWith('INVALID_STANCE_VALUE') ||
+      error.message.startsWith('INVALID_STANCE_TEXT')
+    ) {
+      throw Object.assign(new Error(error.message), { code: 'VALIDATION_ERROR' });
+    }
+    throw new Error(error.message);
+  }
+
+  return result as Record<string, unknown>;
+}
+
+/**
+ * List all compass topics (admin view, includes non-live drafts). Metadata only — no stances.
+ */
+export async function adminListTopics(): Promise<Record<string, unknown>[]> {
+  const { data: rows, error } = await supabaseAdmin
+    .schema('inform')
+    .from('compass_topics')
+    .select('id, title, short_title, is_live, created_at, updated_at')
+    .order('created_at', { ascending: false });
+
+  if (error) throw new Error(error.message);
+  return (rows ?? []) as Record<string, unknown>[];
+}
+
+/**
+ * Create a new politician record.
+ */
+export async function adminCreatePolitician(data: {
+  first_name: string;
+  last_name: string;
+  preferred_name?: string;
+  full_name?: string;
+  office_title?: string;
+  photo_origin_url?: string;
+  is_candidate?: boolean;
+}): Promise<Record<string, unknown>> {
+  const { data: row, error } = await supabaseAdmin
+    .schema('inform')
+    .from('politicians')
+    .insert({ ...data })
+    .select()
+    .single();
+
+  if (error) throw new Error(error.message);
+  return row as Record<string, unknown>;
+}
+
+/**
+ * Update an existing politician record.
+ */
+export async function adminUpdatePolitician(
+  politicianId: string,
+  data: Partial<{
+    first_name: string;
+    last_name: string;
+    preferred_name: string;
+    full_name: string;
+    office_title: string;
+    photo_origin_url: string;
+    is_active: boolean;
+    is_candidate: boolean;
+  }>
+): Promise<Record<string, unknown>> {
+  const { data: row, error } = await supabaseAdmin
+    .schema('inform')
+    .from('politicians')
+    .update(data)
+    .eq('id', politicianId)
+    .select()
+    .single();
+
+  if (error) {
+    if (error.code === 'PGRST116') {
+      throw Object.assign(new Error('Politician not found'), { code: 'NOT_FOUND' });
+    }
+    throw new Error(error.message);
+  }
+
+  return row as Record<string, unknown>;
+}
+
+/**
+ * List all compass categories ordered alphabetically.
+ */
+export async function adminListCategories(): Promise<Record<string, unknown>[]> {
+  const { data: rows, error } = await supabaseAdmin
+    .schema('inform')
+    .from('compass_categories')
+    .select('id, title, created_at')
+    .order('title', { ascending: true });
+
+  if (error) throw new Error(error.message);
+  return (rows ?? []) as Record<string, unknown>[];
+}
+
+/**
+ * Create a new compass category.
+ * Throws DUPLICATE_TITLE if the title already exists (unique constraint on title).
+ */
+export async function adminCreateCategory(data: {
+  title: string;
+}): Promise<Record<string, unknown>> {
+  const { data: row, error } = await supabaseAdmin
+    .schema('inform')
+    .from('compass_categories')
+    .insert({ title: data.title })
+    .select()
+    .single();
+
+  if (error) {
+    if (error.code === '23505') {
+      throw Object.assign(new Error('Category title already exists'), { code: 'DUPLICATE_TITLE' });
+    }
+    throw new Error(error.message);
+  }
+
+  return row as Record<string, unknown>;
+}
+
+/**
+ * Atomically replace all category assignments for a topic (DELETE + INSERT via RPC).
+ */
+export async function adminAssignTopicCategories(
+  topicId: string,
+  categoryIds: string[]
+): Promise<void> {
+  const { error } = await adminRpc('admin_assign_topic_categories', {
+    p_topic_id: topicId,
+    p_category_ids: JSON.stringify(categoryIds),
+  });
+
+  if (error) {
+    if (error.message === 'NOT_FOUND') {
+      throw Object.assign(new Error('Topic not found'), { code: 'NOT_FOUND' });
+    }
+    throw new Error(error.message);
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Dashboard
 // ---------------------------------------------------------------------------
