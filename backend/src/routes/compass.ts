@@ -148,7 +148,8 @@ router.get('/answers', requireAuth, async (req: Request, res: Response): Promise
     const { data, error } = await db
       .schema('inform')
       .from('compass_responses')
-      .select('topic_id, value, write_in_text, visibility, inverted, created_at, updated_at');
+      .select('topic_id, value, write_in_text, visibility, inverted, created_at, updated_at')
+      .is('deleted_at', null);
 
     if (error) {
       console.error('[GET /compass/answers] Supabase error:', error);
@@ -189,7 +190,8 @@ router.post('/answers/batch', requireAuth, async (req: Request, res: Response): 
       .schema('inform')
       .from('compass_responses')
       .select('topic_id, value, write_in_text')
-      .in('topic_id', parsed.data.ids);
+      .in('topic_id', parsed.data.ids)
+      .is('deleted_at', null);
 
     if (error) {
       console.error('[POST /compass/answers/batch] Supabase error:', error);
