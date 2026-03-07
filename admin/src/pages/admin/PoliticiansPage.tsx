@@ -18,20 +18,20 @@ interface Politician {
 }
 
 interface Topic {
-  id: number;
+  id: string;
   title: string;
   short_title: string | null;
 }
 
 interface Stance {
-  id: number;
-  topic_id: number;
+  id: string;
+  topic_id: string;
   value: number;
   text: string;
 }
 
 interface PoliticianAnswer {
-  topic_id: number;
+  topic_id: string;
   value: number;
 }
 
@@ -40,7 +40,7 @@ interface PoliticianAnswer {
 export function PoliticiansPage() {
   const [politicians, setPoliticians] = useState<Politician[]>([]);
   const [topics, setTopics] = useState<Topic[]>([]);
-  const [topicStances, setTopicStances] = useState<Record<number, Stance[]>>({});
+  const [topicStances, setTopicStances] = useState<Record<string, Stance[]>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
@@ -70,7 +70,7 @@ export function PoliticiansPage() {
 
   const selectedPolitician = politicians.find((p) => p.id === selectedId) ?? null;
 
-  function handleStancesNeeded(topicId: number) {
+  function handleStancesNeeded(topicId: string) {
     if (!topicStances[topicId]) {
       apiFetch<Stance[]>(`/admin/compass/topics/${topicId}/stances`)
         .then((data) => setTopicStances((prev) => ({ ...prev, [topicId]: data })))
@@ -494,7 +494,7 @@ interface TopicAnswerRowProps {
   stances: Stance[];
   existingAnswer: PoliticianAnswer | null;
   politicianId: string;
-  onStancesNeeded: (topicId: number) => void;
+  onStancesNeeded: (topicId: string) => void;
 }
 
 function TopicAnswerRow({
@@ -582,9 +582,9 @@ function PoliticianDetailPanel({
 }: {
   politician: Politician;
   topics: Topic[];
-  topicStances: Record<number, Stance[]>;
+  topicStances: Record<string, Stance[]>;
   onUpdate: () => void;
-  onStancesNeeded: (topicId: number) => void;
+  onStancesNeeded: (topicId: string) => void;
 }) {
   const [answers, setAnswers] = useState<PoliticianAnswer[]>([]);
   const [answersLoading, setAnswersLoading] = useState(false);

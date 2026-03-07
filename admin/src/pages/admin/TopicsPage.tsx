@@ -3,13 +3,13 @@ import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../../lib/api';
 
 interface Stance {
-  id: number;
+  id: string;
   value: number;
   text: string;
 }
 
 interface Topic {
-  id: number;
+  id: string;
   title: string;
   short_title: string | null;
   question_text: string;
@@ -56,7 +56,7 @@ export function TopicsPage() {
   const [topics, setTopics] = useState<Topic[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedId, setSelectedId] = useState<number | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
 
   async function refreshTopics() {
@@ -201,7 +201,7 @@ function TopicDetailPanel({
   onUpdate: () => void;
 }) {
   const [stances, setStances] = useState<Stance[]>([]);
-  const [stanceEdits, setStanceEdits] = useState<Record<number, string>>({});
+  const [stanceEdits, setStanceEdits] = useState<Record<string, string>>({});
   const [stancesLoading, setStancesLoading] = useState(false);
 
   useEffect(() => {
