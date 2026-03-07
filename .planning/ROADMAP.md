@@ -203,9 +203,9 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
 **Plans**: 3 plans
 
 Plans:
-- [ ] 67-01-PLAN.md — Cookie domain fix + compass API fetch functions
-- [ ] 67-02-PLAN.md — CompassContext provider + auth indicator
-- [ ] 67-03-PLAN.md — Compass badge on cards + mini radar preview
+- [x] 67-01-PLAN.md — Cookie domain fix + compass API fetch functions
+- [x] 67-02-PLAN.md — CompassContext provider + auth indicator
+- [x] 67-03-PLAN.md — Compass badge on cards + mini radar preview (with CTA mode, 8-spoke cap)
 
 ### Phase 68: Guest Data Bridge
 **Goal**: Guest users who calibrated on CompassV2 can have their compass answers accessed from the Essentials app
