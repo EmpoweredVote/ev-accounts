@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 14 — Compass Admin Backend
-Plan: —
-Status: Phase 13 complete, ready to plan Phase 14
-Last activity: 2026-03-06 — Phase 13 CompassV2 Backend Compatibility executed and verified (6/6 criteria passed)
+Plan: 01 complete
+Status: Wave 1 complete, ready for Wave 2 (adminService.ts)
+Last activity: 2026-03-07 — Completed 14-01-PLAN.md (migration 029 — three compass admin RPCs)
 
-Progress: ████░░░░░░ 50% (v1.2: 2/4 phases complete)
+Progress: ████░░░░░░ 50% (v1.2: 2/4 phases complete; Phase 14 in progress)
 
 ## Performance Metrics
 
@@ -58,6 +58,14 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | iat = now-1s in test JWT | isTokenRevoked uses strict less-than; same-second collision would break revocation test |
 | Skip stubs deleted, not converted to .todo | vitest 2.x counts .todo as skipped — both patterns inflate reported count |
 
+### Accumulated Decisions (Phase 14)
+
+| Decision | Context |
+|----------|---------|
+| is_active excluded from compass_topics INSERT | GENERATED ALWAYS AS (is_live) STORED — inserting it causes Postgres error; must never appear in INSERT column list |
+| Two-pass design in admin_create_topic_with_stances | Full validation loop before any writes — matches migration 028 pattern; guarantees all-or-nothing atomicity |
+| admin_list_politicians is fresh on all DBs | Migration 025 did not contain this function; CREATE OR REPLACE is safe but there is no prior version to replace |
+
 ### Accumulated Decisions (Phase 13)
 
 | Decision | Context |
@@ -72,6 +80,6 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 
 ## Session Continuity
 
-Last session: 2026-03-06
-Stopped at: Phase 13 complete — all 6 success criteria verified, planning docs updated
-Resume: Run `/gsd:discuss-phase 14` or `/gsd:plan-phase 14` to begin Compass Admin Backend
+Last session: 2026-03-07
+Stopped at: Completed 14-01-PLAN.md — migration 029 with three compass admin RPCs
+Resume file: None
