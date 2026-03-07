@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 15 — Compass Admin React UI
-Plan: 01 of 4
+Plan: 02 of 4
 Status: In progress
-Last activity: 2026-03-07 — Completed 15-01-PLAN.md (navigation scaffold: routes + sidebar + stub pages)
+Last activity: 2026-03-07 — Completed 15-02-PLAN.md (Topics page: list + toggle + detail panel + create modal)
 
-Progress: ██████░░░░ 75% (v1.2: 3/4 phases complete; Phase 15 plan 1/4 done)
+Progress: ██████░░░░ 75% (v1.2: 3/4 phases complete; Phase 15 plan 2/4 done)
 
 ## Performance Metrics
 
@@ -80,9 +80,17 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | compass-import legacy path retains session guard | New direct-value path bypasses session for post-Connect users; stance_id-only path retains session requirement |
 | as-any cast removed from essentialsService.ts | database.types.ts updated by 13-02 before 13-03 ran; is_candidate properly typed |
 
+### Accumulated Decisions (Phase 15 so far)
+
+| Decision | Context |
+|----------|---------|
+| SaveButton state machine pattern | idle/saving/done/error with setTimeout auto-reset — reusable for any inline save in admin UI |
+| stanceEdits as Record<id, string> diff map | Only tracks changed values; minimizes PATCH calls to only modified stances |
+| GET stances returns array directly | /admin/compass/topics/:id/stances returns Stance[] not wrapped in a key |
+
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 15-01-PLAN.md — navigation scaffold (routes, sidebar, 3 stub pages)
+Stopped at: Completed 15-02-PLAN.md — Topics page (list + toggle + panel + modal)
 Resume file: None
-Resume: Run `/gsd:execute-phase` for 15-02, 15-03, 15-04 (can run in parallel — all depend on 15-01 scaffold)
+Resume: Run `/gsd:execute-phase` for 15-03 (Politicians page) and 15-04 (checkpoint) — both depend on 15-01 scaffold, can reference 15-02 patterns
