@@ -49,7 +49,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   - [x] 14-01-PLAN.md — Migration 029: admin_create_topic_with_stances, admin_assign_topic_categories, admin_list_politicians RPCs
   - [x] 14-02-PLAN.md — adminService.ts: seven new service functions for compass admin operations
   - [x] 14-03-PLAN.md — admin.ts: all twelve compass routes wired + CI-safe 401 tests
-- [ ] Phase 15: Compass Admin React UI (4 plans)
+- [ ] Phase 15: Compass Admin React UI (0/4 plans)
   - [ ] 15-01-PLAN.md — Navigation scaffold: routes, sidebar links, three stub pages
   - [ ] 15-02-PLAN.md — Topics page: list, live toggle, create modal, stance editor panel (CADM-08, CADM-09)
   - [ ] 15-03-PLAN.md — Politicians page: list, create, detail panel with answers and context (CADM-10, CADM-11, CADM-12)
@@ -172,3 +172,4 @@ Plans:
 2. On the Topic detail view, an admin can update stance text for any of the 5 values inline and save — the updated text is returned by `GET /api/compass/topics` on next load.
 3. From the Politicians page, an admin can create a politician, then navigate to that politician's detail view and set compass answer values for multiple topics and write context (reasoning + sources) for at least one topic — all without a page reload or manual API call.
 4. From the Categories page, an admin can create a category and assign it to an existing topic — the topic subsequently appears under that category in `GET /api/compass/categories`.
+
