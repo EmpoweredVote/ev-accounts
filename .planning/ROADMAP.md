@@ -49,7 +49,11 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   - [x] 14-01-PLAN.md — Migration 029: admin_create_topic_with_stances, admin_assign_topic_categories, admin_list_politicians RPCs
   - [x] 14-02-PLAN.md — adminService.ts: seven new service functions for compass admin operations
   - [x] 14-03-PLAN.md — admin.ts: all twelve compass routes wired + CI-safe 401 tests
-- [ ] Phase 15: Compass Admin React UI (0/? plans)
+- [ ] Phase 15: Compass Admin React UI (4 plans)
+  - [ ] 15-01-PLAN.md — Navigation scaffold: routes, sidebar links, three stub pages
+  - [ ] 15-02-PLAN.md — Topics page: list, live toggle, create modal, stance editor panel (CADM-08, CADM-09)
+  - [ ] 15-03-PLAN.md — Politicians page: list, create, detail panel with answers and context (CADM-10, CADM-11, CADM-12)
+  - [ ] 15-04-PLAN.md — Categories page: list, create, topic assignment (CADM-13)
 
 ## Progress
 
@@ -69,7 +73,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 12. Alpha Hardening | v1.2 | 2/2 | Complete | 2026-03-06 |
 | 13. CompassV2 Backend Compatibility | v1.2 | 4/4 | Complete | 2026-03-06 |
 | 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
-| 15. Compass Admin React UI | v1.2 | 0/? | Pending | — |
+| 15. Compass Admin React UI | v1.2 | 0/4 | Pending | — |
 
 ---
 
@@ -153,6 +157,14 @@ Plans:
 **Dependencies:** Phase 14 (all backend routes exist)
 
 **Requirements:** CADM-08, CADM-09, CADM-10, CADM-11, CADM-12, CADM-13
+
+**Plans:** 4 plans
+
+Plans:
+- [ ] 15-01-PLAN.md — Navigation scaffold: routes, sidebar links, three stub pages
+- [ ] 15-02-PLAN.md — Topics page: list, live toggle, create modal, stance editor panel (CADM-08, CADM-09)
+- [ ] 15-03-PLAN.md — Politicians page: list, create, detail panel with answers and context (CADM-10, CADM-11, CADM-12)
+- [ ] 15-04-PLAN.md — Categories page: list, create, topic assignment (CADM-13)
 
 **Success Criteria:**
 
