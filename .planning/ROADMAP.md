@@ -45,10 +45,10 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   - [x] 13-02-PLAN.md — DELETE /compass/answers/me endpoint (COMP2-01)
   - [x] 13-03-PLAN.md — GET /essentials/politicians unauthenticated endpoint (COMP2-02)
   - [x] 13-04-PLAN.md — Expand POST /connect/compass-import with selected_topics (COMP2-03)
-- [ ] Phase 14: Compass Admin Backend (0/3 plans)
-  - [ ] 14-01-PLAN.md — Migration 029: admin_create_topic_with_stances, admin_assign_topic_categories, admin_list_politicians RPCs
-  - [ ] 14-02-PLAN.md — adminService.ts: seven new service functions for compass admin operations
-  - [ ] 14-03-PLAN.md — admin.ts: all twelve compass routes wired + CI-safe 401 tests
+- [x] Phase 14: Compass Admin Backend (3/3 plans) — completed 2026-03-06
+  - [x] 14-01-PLAN.md — Migration 029: admin_create_topic_with_stances, admin_assign_topic_categories, admin_list_politicians RPCs
+  - [x] 14-02-PLAN.md — adminService.ts: seven new service functions for compass admin operations
+  - [x] 14-03-PLAN.md — admin.ts: all twelve compass routes wired + CI-safe 401 tests
 - [ ] Phase 15: Compass Admin React UI (0/? plans)
 
 ## Progress
@@ -68,7 +68,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 11. Admin Tool XP View | v1.1 | 1/1 | Complete | 2026-03-06 |
 | 12. Alpha Hardening | v1.2 | 2/2 | Complete | 2026-03-06 |
 | 13. CompassV2 Backend Compatibility | v1.2 | 4/4 | Complete | 2026-03-06 |
-| 14. Compass Admin Backend | v1.2 | 0/3 | Pending | — |
+| 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
 | 15. Compass Admin React UI | v1.2 | 0/? | Pending | — |
 
 ---

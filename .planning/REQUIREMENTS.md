@@ -41,19 +41,19 @@ New admin API routes that the compass admin UI requires. The existing routes
 (create/update topic, update stance, politician answers/context) remain; these
 are the missing pieces.
 
-- [ ] **CADM-01**: Admin can list all compass topics including non-live drafts
+- [x] **CADM-01**: Admin can list all compass topics including non-live drafts
   via `GET /api/admin/compass/topics`
-- [ ] **CADM-02**: Topic creation via `POST /api/admin/compass/topics` accepts
+- [x] **CADM-02**: Topic creation via `POST /api/admin/compass/topics` accepts
   an optional `stances` array and creates all stances atomically with the topic
-- [ ] **CADM-03**: Admin can create a new politician record via
+- [x] **CADM-03**: Admin can create a new politician record via
   `POST /api/admin/compass/politicians`
-- [ ] **CADM-04**: Admin can edit a politician's profile (name, office title,
+- [x] **CADM-04**: Admin can edit a politician's profile (name, office title,
   photo URL, active status) via `PATCH /api/admin/compass/politicians/:id`
-- [ ] **CADM-05**: Admin can list all compass categories via
+- [x] **CADM-05**: Admin can list all compass categories via
   `GET /api/admin/compass/categories`
-- [ ] **CADM-06**: Admin can create a compass category via
+- [x] **CADM-06**: Admin can create a compass category via
   `POST /api/admin/compass/categories`
-- [ ] **CADM-07**: Admin can assign categories to a topic via
+- [x] **CADM-07**: Admin can assign categories to a topic via
   `PUT /api/admin/compass/topics/:id/categories`
 
 ### Compass Admin React UI
@@ -115,16 +115,16 @@ These are changes needed in the CompassV2 private repo, not here.
 | HARD-02 | Phase 12 | Complete |
 | HARD-03 | Phase 12 | Complete |
 | HARD-04 | Phase 12 | Complete |
-| COMP2-01 | Phase 13 | Pending |
-| COMP2-02 | Phase 13 | Pending |
-| COMP2-03 | Phase 13 | Pending |
-| CADM-01 | Phase 14 | Pending |
-| CADM-02 | Phase 14 | Pending |
-| CADM-03 | Phase 14 | Pending |
-| CADM-04 | Phase 14 | Pending |
-| CADM-05 | Phase 14 | Pending |
-| CADM-06 | Phase 14 | Pending |
-| CADM-07 | Phase 14 | Pending |
+| COMP2-01 | Phase 13 | Complete |
+| COMP2-02 | Phase 13 | Complete |
+| COMP2-03 | Phase 13 | Complete |
+| CADM-01 | Phase 14 | Complete |
+| CADM-02 | Phase 14 | Complete |
+| CADM-03 | Phase 14 | Complete |
+| CADM-04 | Phase 14 | Complete |
+| CADM-05 | Phase 14 | Complete |
+| CADM-06 | Phase 14 | Complete |
+| CADM-07 | Phase 14 | Complete |
 | CADM-08 | Phase 15 | Pending |
 | CADM-09 | Phase 15 | Pending |
 | CADM-10 | Phase 15 | Pending |
@@ -140,4 +140,4 @@ These are changes needed in the CompassV2 private repo, not here.
 ---
 
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-06 — HARD-01 through HARD-04 marked Complete after Phase 12 execution*
+*Last updated: 2026-03-06 — CADM-01 through CADM-07 marked Complete after Phase 14 execution; COMP2-01 through COMP2-03 corrected to Complete (Phase 13)*
