@@ -18,9 +18,9 @@ Requirements for Compass on Profiles milestone. Each maps to roadmap phases.
 
 ### Cross-App Data
 
-- [ ] **DATA-01**: Logged-in users' compass answers are accessible from the Essentials app
+- [x] **DATA-01**: Logged-in users' compass answers are accessible from the Essentials app
 - [ ] **DATA-02**: Guest users' compass answers are accessible from the Essentials app
-- [ ] **DATA-03**: Politician compass stances are fetchable from the Essentials profile page
+- [x] **DATA-03**: Politician compass stances are fetchable from the Essentials profile page
 
 ## Future Requirements
 
@@ -57,9 +57,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CARD-04 | Phase 71 | Pending |
 | CARD-05 | Phase 71 | Pending |
 | CARD-06 | Phase 71 | Pending |
-| DATA-01 | Phase 67 | Pending |
+| DATA-01 | Phase 67 | Complete |
 | DATA-02 | Phase 68 | Pending |
-| DATA-03 | Phase 67 | Pending |
+| DATA-03 | Phase 67 | Complete |
 
 **Coverage:**
 - v2026.3.2 requirements: 9 total
