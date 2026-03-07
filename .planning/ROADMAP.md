@@ -55,6 +55,8 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   - [x] 15-03-PLAN.md — Politicians page: list, create, detail panel with answers and context (CADM-10, CADM-11, CADM-12)
   - [x] 15-04-PLAN.md — Categories page: list, create, topic assignment (CADM-13)
   - [x] 15-05-PLAN.md — GAP: GET /admin/compass/topics/:id/stances — missing backend endpoint blocks stance editor and politician RadioGroup
+- [ ] Phase 16: v1.2 Gap Closure (1/1 plans) — in progress
+  - [ ] 16-01-PLAN.md — Fix deleted_at filter on compass response reads + CategoriesPage response shape + tech debt cleanup
 
 ## Progress
 
@@ -75,6 +77,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 13. CompassV2 Backend Compatibility | v1.2 | 4/4 | Complete | 2026-03-06 |
 | 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
 | 15. Compass Admin React UI | v1.2 | 5/5 | Complete | 2026-03-07 |
+| 16. v1.2 Gap Closure | v1.2 | 0/1 | In Progress | — |
 
 ---
 
@@ -174,4 +177,27 @@ Plans:
 2. On the Topic detail view, an admin can update stance text for any of the 5 values inline and save — the updated text is returned by `GET /api/compass/topics` on next load.
 3. From the Politicians page, an admin can create a politician, then navigate to that politician's detail view and set compass answer values for multiple topics and write context (reasoning + sources) for at least one topic — all without a page reload or manual API call.
 4. From the Categories page, an admin can create a category and assign it to an existing topic — the topic subsequently appears under that category in `GET /api/compass/categories`.
+
+---
+
+### Phase 16: v1.2 Gap Closure
+
+**Goal:** Close the two integration breaks identified by the v1.2 milestone audit — compass response reads that don't filter soft-deleted rows (blocking COMP2-01 E2E) and the CategoriesPage response shape mismatch (blocking CADM-13) — plus remove accumulated tech debt.
+
+**Dependencies:** Phase 15 (all prior phases complete)
+
+**Requirements:** COMP2-01 (partial → satisfied), CADM-13 (partial → satisfied)
+
+**Plans:** 1 plan
+
+Plans:
+- [ ] 16-01-PLAN.md — deleted_at filter on compass reads + CategoriesPage shape fix + tech debt (dead code + id type annotations)
+
+**Success Criteria:**
+
+1. `DELETE /api/compass/answers/me` followed immediately by `GET /api/compass/answers` returns an empty array `[]` — no soft-deleted rows appear.
+2. `GET /api/compass/answers/batch` (POST) also returns no soft-deleted rows.
+3. The Categories page in the admin UI renders the full list of categories on load — `catData` used directly as an array, no `.categories` property access.
+4. `adminCreateTopic()` (direct insert, superseded by RPC version) is removed from `adminService.ts`.
+5. `id` fields on local Topic/Stance/Category interfaces in all three admin pages are typed as `string` (UUID), not `number`.
 
