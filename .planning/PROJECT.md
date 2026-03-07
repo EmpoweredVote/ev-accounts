@@ -144,9 +144,26 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
+- [ ] Compass comparison card on Essentials politician profiles (user's compass + politician overlay)
+- [ ] Condensed topic-by-topic stance breakdown with sources on profile compass card
+- [ ] Guest compass data accessible in Essentials (cross-app localStorage or API bridge)
+
+### Future
+
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
-- [ ] Cross-app integration (compass overlay on Essentials profiles, Read & Rank quotes)
+- [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
+- [ ] Read & Rank quotes on Essentials profiles
+
+## Current Milestone: v2026.3.2 Compass on Profiles
+
+**Goal:** Show a compass comparison card on Essentials politician profiles — the user's calibrated compass with the politician's stances overlaid, plus a condensed topic-by-topic breakdown with sources.
+
+**Target features:**
+- Radar chart comparison card on politician profiles (left: dual-overlay chart, right: condensed topic list)
+- Works for guests (localStorage compass) and logged-in users (API)
+- Only appears for politicians with compass stances
+- Compact stance breakdown with brief summary and source links
 
 ### Out of Scope
 
@@ -190,4 +207,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-06 after v2026.4 milestone*
+*Last updated: 2026-03-06 after v2026.3.2 milestone start*
