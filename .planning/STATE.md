@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Phase 68 context gathered
-last_updated: "2026-03-07T19:39:54.628Z"
-last_activity: "2026-03-07 — 67-03 checkpoint approved: badge shrunk to 28px, CTA mode for no-answer users, 8-spoke cap on mini chart"
+status: in_progress
+stopped_at: Completed 68-01-PLAN.md
+last_updated: "2026-03-07T20:30:07Z"
+last_activity: "2026-03-07 — 68-01 complete: guest compass bridge (fragment > API > localStorage > empty), CTA with ?return= param"
 progress:
   total_phases: 5
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
   percent: 100
 ---
 
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 67 — Compass API Integration
+**Current focus:** Phase 68 — Guest Data Bridge
 
 ## Current Position
 
-Phase: 67 of 71 (Compass API Integration)
-Plan: 03 complete (3 of 3 plans done — checkpoint verified and approved)
-Status: Complete
-Last activity: 2026-03-07 — 67-03 checkpoint approved: badge shrunk to 28px, CTA mode for no-answer users, 8-spoke cap on mini chart
+Phase: 68 of 71 (Guest Data Bridge)
+Plan: 01 complete (1 of 2 plans done)
+Status: In Progress
+Last activity: 2026-03-07 — 68-01 complete: guest compass bridge (fragment > API > localStorage > empty), CTA with ?return= param
 
-Progress: [██████████] 100%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -62,6 +62,10 @@ Progress: [██████████] 100%
 - Compass badge button shrunk from 36px to 28px in ev-ui PoliticianCard (user-directed at checkpoint) — 67-03
 - CompassPreview CTA mode: greyed compass icon + Take the Quiz link when user has no compass answers — 67-03
 - RadarChartCore capped at 8 spokes max in CompassPreview to prevent label crowding in 180px mini chart — 67-03
+- URL fragment bridge format: #compass=BASE64({"a":{[short_title]:value},"s":[uuid,...]}) — cross-origin guest data transfer — 68-01
+- Fragment parsed synchronously BEFORE any async awaits in CompassContext loadAll() — ensures URL is clean before React renders and value captured — 68-01
+- CTA same-tab navigation with ?return= param (no target=_blank) — enables return banner flow in Plan 02 — 68-01
+- clearGuestCompass() on logged-in path — logged-in users always get API data, stale guest cache cleared on login — 68-01
 
 ### Tech Debt Carried Forward (from v2026.4)
 
@@ -83,6 +87,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T19:39:54.626Z
-Stopped at: Phase 68 context gathered
-Resume: Phase 67 complete. Next: Phase 68 (guest compass data cross-origin solution).
+Last session: 2026-03-07T20:30:07Z
+Stopped at: Completed 68-01-PLAN.md
+Resume: Phase 68 Plan 01 complete. Next: Phase 68 Plan 02 (CompassV2 encoder side — serializeForFragment + ?return= redirect handling).
