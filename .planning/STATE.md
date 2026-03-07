@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 
 ## Current Position
 
-Phase: 15 — Compass Admin React UI
-Plan: 05 of 5
-Status: Phase complete — verified passed (4/4 must-haves)
-Last activity: 2026-03-07 — Completed 15-05-PLAN.md (Gap closure: GET /compass/topics/:id/stances backend endpoint)
+Phase: 16 — v1.2 Gap Closure
+Plan: 01 of TBD
+Status: In progress — 16-01 complete
+Last activity: 2026-03-07 — Completed 16-01-PLAN.md (v1.2 audit bug fixes: soft-delete filters, CategoriesPage shape, dead code, type annotations)
 
-Progress: ██████████ 100% (v1.2: all 4 phases complete; Phase 15 verified passed)
+Progress: ██████████ (Phase 16 started; 16-01 complete)
 
 ## Performance Metrics
 
@@ -80,6 +80,14 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | compass-import legacy path retains session guard | New direct-value path bypasses session for post-Connect users; stance_id-only path retains session requirement |
 | as-any cast removed from essentialsService.ts | database.types.ts updated by 13-02 before 13-03 ran; is_candidate properly typed |
 
+### Accumulated Decisions (Phase 16)
+
+| Decision | Context |
+|----------|---------|
+| .is('deleted_at', null) not .eq() for soft-delete guard | PostgREST generates IS NULL for .is(); .eq() does not correctly handle null comparisons |
+| adminCreateTopic deleted entirely | No callers; adminCreateTopicWithStances (Phase 14 RPC) is sole creation path |
+| /compass/categories returns plain array | apiFetch type param and property access updated in CategoriesPage; no { categories: [] } wrapper exists |
+
 ### Accumulated Decisions (Phase 15)
 
 | Decision | Context |
@@ -95,6 +103,6 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 15-05-PLAN.md — Gap closure: GET /compass/topics/:id/stances endpoint
+Stopped at: Completed 16-01-PLAN.md — v1.2 audit bug fixes (soft-delete filters, CategoriesPage shape, dead code, type annotations)
 Resume file: None
-Resume: Phase 15 fully complete. All five plans done including gap closure. Compass admin UI functional end-to-end.
+Resume: Phase 16 in progress. 16-01 complete. Five v1.2 audit bugs closed. Both tsc checks pass.
