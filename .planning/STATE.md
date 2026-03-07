@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 15 — Compass Admin React UI
-Plan: 02 of 4
-Status: In progress
-Last activity: 2026-03-07 — Completed 15-02-PLAN.md (Topics page: list + toggle + detail panel + create modal)
+Plan: 04 of 4
+Status: Phase complete
+Last activity: 2026-03-07 — Completed 15-04-PLAN.md (Categories page: list + create form + topic assignment)
 
-Progress: ██████░░░░ 75% (v1.2: 3/4 phases complete; Phase 15 plan 2/4 done)
+Progress: ████████░░ 85% (v1.2: 4/4 phases complete; Phase 15 all plans done)
 
 ## Performance Metrics
 
@@ -80,17 +80,19 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | compass-import legacy path retains session guard | New direct-value path bypasses session for post-Connect users; stance_id-only path retains session requirement |
 | as-any cast removed from essentialsService.ts | database.types.ts updated by 13-02 before 13-03 ran; is_candidate properly typed |
 
-### Accumulated Decisions (Phase 15 so far)
+### Accumulated Decisions (Phase 15)
 
 | Decision | Context |
 |----------|---------|
 | SaveButton state machine pattern | idle/saving/done/error with setTimeout auto-reset — reusable for any inline save in admin UI |
 | stanceEdits as Record<id, string> diff map | Only tracks changed values; minimizes PATCH calls to only modified stances |
 | GET stances returns array directly | /admin/compass/topics/:id/stances returns Stance[] not wrapped in a key |
+| Public /compass/categories used for category display | Admin route returns flat objects; public route returns nested topics[] — use public for UI display |
+| PUT /topics/:id/categories is replace-all | Documented in CategoryCard code comment; sending category_ids:[id] clears prior multi-category assignments |
 
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 15-02-PLAN.md — Topics page (list + toggle + panel + modal)
+Stopped at: Completed 15-04-PLAN.md — Categories page (list + create form + topic assignment)
 Resume file: None
-Resume: Run `/gsd:execute-phase` for 15-03 (Politicians page) and 15-04 (checkpoint) — both depend on 15-01 scaffold, can reference 15-02 patterns
+Resume: Phase 15 complete. All four compass admin UI plans done. Next: resolve PoliticiansPage TS error (number|null vs number|undefined), then ship admin UI or plan next milestone.
