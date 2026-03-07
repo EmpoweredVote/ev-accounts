@@ -61,17 +61,17 @@ are the missing pieces.
 New pages in the admin React app. All backend routes they call already exist or
 will exist after the backend phase above.
 
-- [ ] **CADM-08**: Admin can view all compass topics (including drafts), create
+- [x] **CADM-08**: Admin can view all compass topics (including drafts), create
   new topics with stances, and toggle `is_live` status — Topics page in admin UI
-- [ ] **CADM-09**: Admin can edit stance text for each of a topic's 5 values
+- [x] **CADM-09**: Admin can edit stance text for each of a topic's 5 values
   inline on the topic detail view
-- [ ] **CADM-10**: Admin can view all politicians (including inactive), create
+- [x] **CADM-10**: Admin can view all politicians (including inactive), create
   new politicians, and edit politician profiles — Politicians page in admin UI
-- [ ] **CADM-11**: Admin can set or update a politician's answers (value 1–5)
+- [x] **CADM-11**: Admin can set or update a politician's answers (value 1–5)
   for each compass topic on the politician detail view
-- [ ] **CADM-12**: Admin can write or edit a politician's context (reasoning +
+- [x] **CADM-12**: Admin can write or edit a politician's context (reasoning +
   sources) for a specific topic on the politician detail view
-- [ ] **CADM-13**: Admin can view and create compass categories, and assign
+- [x] **CADM-13**: Admin can view and create compass categories, and assign
   categories to topics — Categories page in admin UI
 
 ---
@@ -125,12 +125,12 @@ These are changes needed in the CompassV2 private repo, not here.
 | CADM-05 | Phase 14 | Complete |
 | CADM-06 | Phase 14 | Complete |
 | CADM-07 | Phase 14 | Complete |
-| CADM-08 | Phase 15 | Pending |
-| CADM-09 | Phase 15 | Pending |
-| CADM-10 | Phase 15 | Pending |
-| CADM-11 | Phase 15 | Pending |
-| CADM-12 | Phase 15 | Pending |
-| CADM-13 | Phase 15 | Pending |
+| CADM-08 | Phase 15 | Complete |
+| CADM-09 | Phase 15 | Complete |
+| CADM-10 | Phase 15 | Complete |
+| CADM-11 | Phase 15 | Complete |
+| CADM-12 | Phase 15 | Complete |
+| CADM-13 | Phase 15 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 20 total
@@ -140,4 +140,4 @@ These are changes needed in the CompassV2 private repo, not here.
 ---
 
 *Requirements defined: 2026-03-05*
-*Last updated: 2026-03-06 — CADM-01 through CADM-07 marked Complete after Phase 14 execution; COMP2-01 through COMP2-03 corrected to Complete (Phase 13)*
+*Last updated: 2026-03-07 — CADM-08 through CADM-13 marked Complete after Phase 15 execution*

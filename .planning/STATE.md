@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 15 — Compass Admin React UI
+**Current focus:** v1.2 milestone complete — ready for audit
 
 ## Current Position
 
 Phase: 15 — Compass Admin React UI
 Plan: 05 of 5
-Status: Phase complete (gap closure)
+Status: Phase complete — verified passed (4/4 must-haves)
 Last activity: 2026-03-07 — Completed 15-05-PLAN.md (Gap closure: GET /compass/topics/:id/stances backend endpoint)
 
-Progress: ████████░░ 85% (v1.2: Phase 15 all plans done including gap closure)
+Progress: ██████████ 100% (v1.2: all 4 phases complete; Phase 15 verified passed)
 
 ## Performance Metrics
 
