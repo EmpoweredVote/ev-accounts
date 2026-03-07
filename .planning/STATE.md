@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in_progress
-stopped_at: Completed 68-01-PLAN.md
-last_updated: "2026-03-07T20:30:07Z"
-last_activity: "2026-03-07 — 68-01 complete: guest compass bridge (fragment > API > localStorage > empty), CTA with ?return= param"
+stopped_at: Completed 68-02-PLAN.md (human-verify checkpoint)
+last_updated: "2026-03-07T21:00:00Z"
+last_activity: "2026-03-07 — 68-02 complete (auto tasks): serializeCompassFragment encoder + ReturnBanner + ComparePanel outbound link, awaiting human verification"
 progress:
   total_phases: 5
   completed_phases: 1
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 68 of 71 (Guest Data Bridge)
-Plan: 01 complete (1 of 2 plans done)
-Status: In Progress
-Last activity: 2026-03-07 — 68-01 complete: guest compass bridge (fragment > API > localStorage > empty), CTA with ?return= param
+Plan: 02 auto tasks complete, awaiting human-verify checkpoint (2 of 2 plans in progress)
+Status: In Progress — checkpoint
+Last activity: 2026-03-07 — 68-02 auto tasks complete: serializeCompassFragment encoder + ReturnBanner + ComparePanel outbound link, awaiting human verification
 
 Progress: [████████░░] 80%
 
@@ -66,6 +66,10 @@ Progress: [████████░░] 80%
 - Fragment parsed synchronously BEFORE any async awaits in CompassContext loadAll() — ensures URL is clean before React renders and value captured — 68-01
 - CTA same-tab navigation with ?return= param (no target=_blank) — enables return banner flow in Plan 02 — 68-01
 - clearGuestCompass() on logged-in path — logged-in users always get API data, stale guest cache cleared on login — 68-01
+- ReturnBanner uses sessionStorage (SESSION_KEY) for URL persistence — survives React Router navigations and HelpGuard redirects within session — 68-02
+- ReturnBanner is fixed position (z-[60]) above CalibrationOverlay (z-50), with sibling spacer div to prevent content overlap — 68-02
+- serializeCompassFragment encodes {a, s, i} (answers, selectedTopics, invertedSpokes) — complete state for Essentials decoder — 68-02
+- ComparePanel Essentials link uses same-tab navigation — guest is navigating TO Essentials as destination — 68-02
 
 ### Tech Debt Carried Forward (from v2026.4)
 
@@ -87,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-07T20:30:07Z
-Stopped at: Completed 68-01-PLAN.md
-Resume: Phase 68 Plan 01 complete. Next: Phase 68 Plan 02 (CompassV2 encoder side — serializeForFragment + ?return= redirect handling).
+Last session: 2026-03-07T21:00:00Z
+Stopped at: 68-02 Task 3 checkpoint:human-verify
+Resume: Phase 68 Plan 02 auto tasks (1+2) complete. Task 3 is human-verify checkpoint — user must test the bidirectional flow manually. After verification, Phase 68 is complete.
