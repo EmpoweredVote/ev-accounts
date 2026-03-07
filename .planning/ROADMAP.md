@@ -215,7 +215,11 @@ Plans:
   1. A guest user who has calibrated on CompassV2 and navigates to an Essentials profile page sees their compass answers reflected in the comparison card
   2. A guest user who has not calibrated on CompassV2 sees an appropriate fallback state (no user overlay, or a prompt to calibrate)
   3. The bridge mechanism works without requiring a page reload or user action beyond navigation
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 68-01-PLAN.md — Essentials fragment parser + guest localStorage cache + CompassContext boot priority
+- [ ] 68-02-PLAN.md — CompassV2 serializer + return banner + compare page outbound link
 
 ### Phase 69: Compass Card Shell
 **Goal**: The CompassCard component exists on profile pages and correctly gates its display based on politician stance data availability
@@ -255,7 +259,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 67. Compass API Integration | 3/3 | Complete    | 2026-03-07 | - |
-| 68. Guest Data Bridge | v2026.3.2 | 0/? | Not started | - |
+| 68. Guest Data Bridge | v2026.3.2 | 0/2 | Not started | - |
 | 69. Compass Card Shell | v2026.3.2 | 0/? | Not started | - |
 | 70. Radar Chart Integration | v2026.3.2 | 0/? | Not started | - |
 | 71. Stance Breakdown Panel | v2026.3.2 | 0/? | Not started | - |
