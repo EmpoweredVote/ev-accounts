@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 14 — Compass Admin Backend
-Plan: 02 complete
-Status: Wave 2 complete, ready for Wave 3 (admin.ts routes + tests)
-Last activity: 2026-03-07 — Completed 14-02-PLAN.md (seven new compass admin service functions in adminService.ts)
+Plan: 03 complete
+Status: All 3 plans complete — ready for phase verification
+Last activity: 2026-03-07 — Completed 14-03-PLAN.md (all twelve compass admin routes wired + 401 tests)
 
 Progress: ████░░░░░░ 50% (v1.2: 2/4 phases complete; Phase 14 in progress)
 
@@ -65,6 +65,8 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 | is_active excluded from compass_topics INSERT | GENERATED ALWAYS AS (is_live) STORED — inserting it causes Postgres error; must never appear in INSERT column list |
 | Two-pass design in admin_create_topic_with_stances | Full validation loop before any writes — matches migration 028 pattern; guarantees all-or-nothing atomicity |
 | admin_list_politicians is fresh on all DBs | Migration 025 did not contain this function; CREATE OR REPLACE is safe but there is no prior version to replace |
+| PUT → PATCH for /compass/topics/:id and /compass/stances/:id | Corrects REST semantics; Phase 15 must use PATCH for these routes |
+| GET /compass/politicians at /compass/ path | New canonical admin path; legacy /essentials/politicians retained for backward compat |
 
 ### Accumulated Decisions (Phase 13)
 
@@ -81,5 +83,5 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 14-02-PLAN.md — seven new compass admin service functions in adminService.ts
+Stopped at: Completed 14-03-PLAN.md — all twelve compass admin routes wired in admin.ts + 12 CI-safe 401 tests
 Resume file: None
