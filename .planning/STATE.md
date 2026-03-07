@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-05 after v1.2 milestone start)
 ## Current Position
 
 Phase: 15 — Compass Admin React UI
-Plan: 04 of 4
-Status: Phase complete
-Last activity: 2026-03-07 — Completed 15-04-PLAN.md (Categories page: list + create form + topic assignment)
+Plan: 05 of 5
+Status: Phase complete (gap closure)
+Last activity: 2026-03-07 — Completed 15-05-PLAN.md (Gap closure: GET /compass/topics/:id/stances backend endpoint)
 
-Progress: ████████░░ 85% (v1.2: 4/4 phases complete; Phase 15 all plans done)
+Progress: ████████░░ 85% (v1.2: Phase 15 all plans done including gap closure)
 
 ## Performance Metrics
 
@@ -95,6 +95,6 @@ Note: The inform schema blocker is RESOLVED — migration 026 repairs the inform
 ## Session Continuity
 
 Last session: 2026-03-07
-Stopped at: Completed 15-03-PLAN.md — Politicians page (full implementation: list + create modal + detail panel with compass answers)
+Stopped at: Completed 15-05-PLAN.md — Gap closure: GET /compass/topics/:id/stances endpoint
 Resume file: None
-Resume: Phase 15 complete. All four compass admin UI plans done (15-03 TS error resolved — RadioGroup null/undefined fix applied).
+Resume: Phase 15 fully complete. All five plans done including gap closure. Compass admin UI functional end-to-end.
