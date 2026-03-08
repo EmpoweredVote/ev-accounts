@@ -256,7 +256,10 @@ Plans:
   2. Each row shows the politician's stance position label and a brief summary of their stance
   3. Each row includes at least one tappable source link that opens the original source in a new tab
   4. The panel is readable on both desktop and mobile viewport widths
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 71-01-PLAN.md — StanceAccordion with lazy context fetch, reasoning text, and source links
 
 ## Progress
 
@@ -268,4 +271,4 @@ Plans:
 | 68. Guest Data Bridge | 2/2 | Complete    | 2026-03-08 | - |
 | 69. Compass Card Shell | 1/1 | Complete    | 2026-03-08 | - |
 | 70. Radar Chart Integration | v2026.3.2 | Complete    | 2026-03-08 | 2026-03-08 |
-| 71. Stance Breakdown Panel | v2026.3.2 | 0/? | Not started | - |
+| 71. Stance Breakdown Panel | v2026.3.2 | 0/1 | Not started | - |
