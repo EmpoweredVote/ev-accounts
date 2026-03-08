@@ -232,7 +232,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 69-01-PLAN.md — CompassCard component with gating logic, skeleton layout, and CTA fallback
+- [x] 69-01-PLAN.md — CompassCard component with gating logic, skeleton layout, and CTA fallback
 
 ### Phase 70: Radar Chart Integration
 **Goal**: The compass card left side shows a dual-overlay radar chart with the user's compass and the politician's stances
@@ -242,7 +242,10 @@ Plans:
   1. A logged-in user with a calibrated compass sees their radar polygon (user color) and the politician's radar polygon (politician color) overlaid on the same chart
   2. A guest user with a calibrated compass sees both overlays correctly without login
   3. The radar chart renders using the shared RadarChartCore component from ev-ui with no visual regressions to its existing usage in CompassV2
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 70-01-PLAN.md — RadarChartCore dual-overlay with legend, intersection filtering, and responsive sizing
 
 ### Phase 71: Stance Breakdown Panel
 **Goal**: The compass card right side shows a scannable topic-by-topic stance breakdown with politician position, summary text, and source links
@@ -264,5 +267,5 @@ Plans:
 | 67. Compass API Integration | 3/3 | Complete    | 2026-03-07 | - |
 | 68. Guest Data Bridge | 2/2 | Complete    | 2026-03-08 | - |
 | 69. Compass Card Shell | 1/1 | Complete    | 2026-03-08 | - |
-| 70. Radar Chart Integration | v2026.3.2 | 0/? | Not started | - |
+| 70. Radar Chart Integration | v2026.3.2 | 0/1 | Not started | - |
 | 71. Stance Breakdown Panel | v2026.3.2 | 0/? | Not started | - |
