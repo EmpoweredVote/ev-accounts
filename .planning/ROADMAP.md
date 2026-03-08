@@ -188,7 +188,7 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
 - [x] **Phase 68: Guest Data Bridge** - Solve cross-origin guest compass data access from Essentials (completed 2026-03-07)
 - [x] **Phase 69: Compass Card Shell** - Build the CompassCard component with conditional rendering and stance-gating logic (completed 2026-03-08)
 - [x] **Phase 70: Radar Chart Integration** - Wire RadarChartCore dual-overlay into the card left side (completed 2026-03-08)
-- [ ] **Phase 71: Stance Breakdown Panel** - Build the right-side topic list with stance position, summary, and source links
+- [x] **Phase 71: Stance Breakdown Panel** - Build the right-side topic list with stance position, summary, and source links (completed 2026-03-08)
 
 ## Phase Details
 
@@ -271,4 +271,4 @@ Plans:
 | 68. Guest Data Bridge | 2/2 | Complete    | 2026-03-08 | - |
 | 69. Compass Card Shell | 1/1 | Complete    | 2026-03-08 | - |
 | 70. Radar Chart Integration | v2026.3.2 | Complete    | 2026-03-08 | 2026-03-08 |
-| 71. Stance Breakdown Panel | v2026.3.2 | 0/1 | Not started | - |
+| 71. Stance Breakdown Panel | 1/1 | Complete   | 2026-03-08 | - |
