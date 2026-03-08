@@ -186,7 +186,7 @@ Full details: `.planning/milestones/v2026.4-ROADMAP.md`
 
 - [x] **Phase 67: Compass API Integration** - Wire existing compass API endpoints into Essentials for logged-in users and politician stances (completed 2026-03-07)
 - [x] **Phase 68: Guest Data Bridge** - Solve cross-origin guest compass data access from Essentials (completed 2026-03-07)
-- [ ] **Phase 69: Compass Card Shell** - Build the CompassCard component with conditional rendering and stance-gating logic
+- [x] **Phase 69: Compass Card Shell** - Build the CompassCard component with conditional rendering and stance-gating logic (completed 2026-03-08)
 - [ ] **Phase 70: Radar Chart Integration** - Wire RadarChartCore dual-overlay into the card left side
 - [ ] **Phase 71: Stance Breakdown Panel** - Build the right-side topic list with stance position, summary, and source links
 
@@ -263,6 +263,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 67. Compass API Integration | 3/3 | Complete    | 2026-03-07 | - |
 | 68. Guest Data Bridge | 2/2 | Complete    | 2026-03-08 | - |
-| 69. Compass Card Shell | v2026.3.2 | 0/1 | Not started | - |
+| 69. Compass Card Shell | 1/1 | Complete   | 2026-03-08 | - |
 | 70. Radar Chart Integration | v2026.3.2 | 0/? | Not started | - |
 | 71. Stance Breakdown Panel | v2026.3.2 | 0/? | Not started | - |

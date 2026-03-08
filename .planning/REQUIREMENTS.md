@@ -9,8 +9,8 @@ Requirements for Compass on Profiles milestone. Each maps to roadmap phases.
 
 ### Compass Card
 
-- [ ] **CARD-01**: User can see a compass comparison card on a politician's Essentials profile page
-- [ ] **CARD-02**: Compass card only appears for politicians who have compass stances in the database
+- [x] **CARD-01**: User can see a compass comparison card on a politician's Essentials profile page
+- [x] **CARD-02**: Compass card only appears for politicians who have compass stances in the database
 - [ ] **CARD-03**: Compass card left side shows a radar chart with user's compass and politician's stances overlaid
 - [ ] **CARD-04**: Compass card right side shows a condensed topic-by-topic stance breakdown
 - [ ] **CARD-05**: Each topic row shows the politician's stance position with brief summary text
@@ -51,8 +51,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CARD-01 | Phase 69 | Pending |
-| CARD-02 | Phase 69 | Pending |
+| CARD-01 | Phase 69 | Complete |
+| CARD-02 | Phase 69 | Complete |
 | CARD-03 | Phase 70 | Pending |
 | CARD-04 | Phase 71 | Pending |
 | CARD-05 | Phase 71 | Pending |
