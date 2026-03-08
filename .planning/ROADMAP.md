@@ -272,3 +272,13 @@ Plans:
 | 69. Compass Card Shell | 1/1 | Complete    | 2026-03-08 | - |
 | 70. Radar Chart Integration | v2026.3.2 | Complete    | 2026-03-08 | 2026-03-08 |
 | 71. Stance Breakdown Panel | 1/1 | Complete    | 2026-03-08 | - |
+
+### Phase 72: Guest & full-topic stance visibility
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 71
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd:plan-phase 72 to break down)

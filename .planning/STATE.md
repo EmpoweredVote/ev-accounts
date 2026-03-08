@@ -80,6 +80,10 @@ Progress: [██████████] 100%
 - useRef Map for context caching — persists across renders without triggering re-renders — 71-01
 - Favicon default 16px (not 32px from CompassV2) for inline source link sizing — 71-01
 
+### Roadmap Evolution
+
+- Phase 72 added: Guest & full-topic stance visibility
+
 ### Tech Debt Carried Forward (from v2026.4)
 
 - Dead `ballotready/` package preserved for historical reference (from v1.5)
