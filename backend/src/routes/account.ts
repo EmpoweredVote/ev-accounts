@@ -52,13 +52,11 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     }
 
     // 3. Check Connected tier (child record presence — never a status flag)
-    // NOTE: Both xp (legacy Phase 6 column) and total_xp (Phase 9 column) exist in the schema.
-    // We use xp here as the XP total for calculate_level. Both columns are in database.types.ts.
     const { data: connected } = await db
       .schema('connect')
       .from('connected_profiles')
       .select(
-        'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, completed_onboarding, created_at'
+        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, created_at'
       )
       .eq('user_id', authReq.userId)
       .maybeSingle();
@@ -82,7 +80,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     // calculate_level is IMMUTABLE — safe to call via adminRpc.
     let xpData: { total: number; level: number; xp_in_level: number; xp_to_next_level: number } | undefined;
     if (connected) {
-      const totalXp = connected.xp ?? 0;
+      const totalXp = connected.total_xp ?? 0;
       const { data: levelData } = await adminRpc('calculate_level', {
         p_total_xp: totalXp,
       }, 'connect');
@@ -271,7 +269,7 @@ router.patch(
         .schema('connect')
         .from('connected_profiles')
         .select(
-          'id, display_name, account_standing, verification_status, tolerance_rating, xp, gem_balance, completed_onboarding, created_at'
+          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, created_at'
         )
         .eq('user_id', authReq.userId)
         .maybeSingle();
@@ -290,7 +288,7 @@ router.patch(
       // Compute structured XP data for Connected users (same as GET /me)
       let xpData: { total: number; level: number; xp_in_level: number; xp_to_next_level: number } | undefined;
       if (updatedConnected) {
-        const totalXp = updatedConnected.xp ?? 0;
+        const totalXp = updatedConnected.total_xp ?? 0;
         const { data: levelData } = await adminRpc('calculate_level', {
           p_total_xp: totalXp,
         }, 'connect');
