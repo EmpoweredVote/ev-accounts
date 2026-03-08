@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. Profiles also show a compass comparison card with dual-overlay radar chart (user vs. politician stances) and a topic-by-topic stance breakdown with source links, working for both logged-in and guest users via a cross-origin URL fragment bridge between CompassV2 and Essentials. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
 
 ## Core Value
 
@@ -141,12 +141,16 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Library and Compare deep-dive guided tours — v2026.4
 - ✓ Write-in awareness hint on first calibration question — v2026.4
 - ✓ Welcome screen simplified with static compass SVG — v2026.4
+- ✓ Compass comparison card on Essentials politician profiles (dual-overlay radar chart + stance breakdown) — v2026.3.2
+- ✓ Guest compass data bridge via URL fragment encoding (CompassV2 → Essentials cross-origin) — v2026.3.2
+- ✓ Politician compass stances fetchable from Essentials profile pages — v2026.3.2
+- ✓ CompassPreview mini radar popover on dashboard politician cards with CTA mode — v2026.3.2
+- ✓ StanceAccordion with lazy context fetching, reasoning text, and favicon source links — v2026.3.2
+- ✓ Cookie domain fix for cross-app session sharing (.empowered.vote) — v2026.3.2
 
 ### Active
 
-- [ ] Compass comparison card on Essentials politician profiles (user's compass + politician overlay)
-- [ ] Condensed topic-by-topic stance breakdown with sources on profile compass card
-- [ ] Guest compass data accessible in Essentials (cross-app localStorage or API bridge)
+(None — next milestone not yet defined)
 
 ### Future
 
@@ -155,15 +159,9 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Multi-politician comparison (2-3 overlays at once)
 - [ ] Read & Rank quotes on Essentials profiles
 
-## Current Milestone: v2026.3.2 Compass on Profiles
+## Current Milestone: Planning next milestone
 
-**Goal:** Show a compass comparison card on Essentials politician profiles — the user's calibrated compass with the politician's stances overlaid, plus a condensed topic-by-topic breakdown with sources.
-
-**Target features:**
-- Radar chart comparison card on politician profiles (left: dual-overlay chart, right: condensed topic list)
-- Works for guests (localStorage compass) and logged-in users (API)
-- Only appears for politicians with compass stances
-- Compact stance breakdown with brief summary and source links
+Run `/gsd:new-milestone` to define the next milestone.
 
 ### Out of Scope
 
@@ -188,11 +186,11 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.4 with ~37K LOC across 4 repos + Python import scripts:
-- **CompassV2** (React 19): ~14K LOC — compass quiz, Library, guided onboarding with coach mark tours, calibration with localStorage persistence, guest auth, inline politician picker with level/state filters
-- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass, essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
+Shipped v2026.3.2 with ~38K LOC across 4 repos + Python import scripts:
+- **CompassV2** (React 19): ~14.5K LOC — compass quiz, Library, guided onboarding with coach mark tours, calibration with localStorage persistence, guest auth, inline politician picker, return banner + compass fragment serializer for cross-origin bridge
+- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass (cookie domain fix for .empowered.vote), essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
 - **ev-ui** (React/tsup): ~3.9K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord
-- **essentials** (React 19): ~3.1K LOC — address autocomplete, unified search path, area labels, building photos, legislative profile pages
+- **essentials** (React 19): ~4K LOC — address autocomplete, unified search path, CompassContext provider, CompassCard (dual-overlay radar + StanceAccordion), CompassPreview popover, guest fragment bridge
 - **Python scripts**: ~17K LOC — state legislative import (LegiScan/Open States/IGA), local data pipelines (Bloomington/LA County), headshot research/upload pipeline, coverage validation
 
 Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Python (psycopg2/requests/BeautifulSoup).
@@ -207,4 +205,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-06 after v2026.3.2 milestone start*
+*Last updated: 2026-03-08 after v2026.3.2 milestone*

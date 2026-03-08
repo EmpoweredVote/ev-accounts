@@ -1,5 +1,33 @@
 # Milestones
 
+## v2026.3.2 Compass on Profiles (Shipped: 2026-03-08)
+
+**Phases completed:** 5 phases, 8 plans
+**Timeline:** 3 days (2026-03-06 — 2026-03-08)
+**Requirements:** 9/9 satisfied
+**Repos:** EV-Backend, essentials, ev-ui, CompassV2
+
+**Delivered:** Compass comparison card on Essentials politician profiles — user's calibrated compass overlaid with politician stances via dual-overlay radar chart, plus topic-by-topic stance breakdown with source links, working for both logged-in and guest users via cross-origin URL fragment bridge.
+
+**Key accomplishments:**
+1. Cross-app compass API integration — cookie domain fix for `.empowered.vote` session sharing, CompassContext provider in Essentials with concurrent auth/data fetching, CompassPreview mini radar popover on dashboard cards with CTA mode
+2. Guest compass data bridge — URL fragment encoding (`#compass=BASE64`) transfers CompassV2 localStorage state to Essentials cross-origin; boot priority: fragment > API > localStorage cache > CTA; ReturnBanner for round-trip navigation
+3. CompassCard shell — self-gating component returns null when politician lacks stances; skeleton layout with CTA fallback for uncalibrated users
+4. Radar chart dual-overlay — RadarChartCore from ev-ui with coral (user) + blue (politician) polygons, intersection-only topic filtering capped at 8 spokes, legend with position/name labels
+5. Stance breakdown accordion — StanceAccordion with lazy context fetching via useRef Map cache, CSS grid-template-rows animation, favicon-sized source links opening in new tabs
+6. Compass badge on dashboard — click-to-toggle mini radar preview on politician cards via createPortal popover, CTA mode for uncalibrated users with "Take the Quiz" link
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted in essentials `api.jsx` (carried from v1.9)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+- Topic tags placeholder div in LegislativeInlineSummary (carried from v2026.3)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+
+---
+
 ## v2026.4 State Data Completion & Image Coverage (Shipped: 2026-03-06)
 
 **Phases completed:** 7 phases, 21 plans

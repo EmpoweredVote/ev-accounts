@@ -164,6 +164,43 @@
 
 ---
 
+## Milestone: v2026.3.2 — Compass on Profiles
+
+**Shipped:** 2026-03-08
+**Phases:** 5 | **Plans:** 8
+
+### What Was Built
+- Cross-app compass API integration with cookie domain fix and CompassContext provider
+- Guest compass data bridge via URL fragment encoding (CompassV2 → Essentials cross-origin)
+- CompassCard on politician profiles: dual-overlay radar chart + stance breakdown accordion
+- CompassPreview mini radar popover on dashboard politician cards with CTA mode
+- StanceAccordion with lazy context fetching, CSS grid-template-rows animation, favicon source links
+
+### What Worked
+- Self-gating component pattern — CompassCard returns null internally when politician lacks stances, keeping parent clean
+- Boot priority chain (fragment > API > localStorage > CTA) — handles all user states elegantly with one code path
+- Fragment bridge solved cross-origin guest data without any backend changes — pure client-side solution
+- ev-ui RadarChartCore reuse — dual-overlay worked out-of-the-box, no new charting code needed
+- useRef Map for context caching — avoids React re-renders while persisting fetched data across accordion opens
+
+### What Was Inefficient
+- Phase 72 stub added to roadmap during milestone but never planned or executed — created confusion at milestone completion
+- Cookie domain fix could have been a single config change but required careful PORT-based branching for local dev compatibility
+
+### Patterns Established
+- URL fragment bridge for cross-origin data transfer between same-domain apps (BASE64 encoding, synchronous parsing before async)
+- Self-gating component pattern — child decides rendering, parent passes props unconditionally
+- CSS grid-template-rows (0fr/1fr) for smooth accordion animation without overflow hacks
+- ReturnBanner with sessionStorage for round-trip cross-app navigation persistence
+
+### Key Lessons
+1. Cross-origin data sharing between same-domain apps is solvable client-side — URL fragments + localStorage cache avoid backend complexity
+2. Don't add future phase stubs to roadmap during active milestone — creates tracking confusion
+3. Intersection-only filtering (both user AND politician must have answers) is the right default for comparison UX
+4. createPortal for popovers in scrollable panels prevents overflow:hidden clipping without CSS hacks
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -175,6 +212,7 @@
 | v1.9 | 3 | 6 | Smallest milestone yet — tight scope, 100% plan adherence |
 | v2026.3 | 6 | 19 | First multi-language pipeline milestone (Go + Python); feasibility gating pattern established |
 | v2026.4 | 7 | 21 | Mixed data + UX milestone; Wayback Machine fallback; coach mark pattern established |
+| v2026.3.2 | 5 | 8 | First cross-app integration milestone; URL fragment bridge pattern; self-gating components |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -189,3 +227,5 @@
 9. Wayback Machine is a reliable fallback for WAF-blocked government sites (v2026.4)
 10. Research manifest with UUID primary keys enables direct DB upsert without fuzzy matching (v2026.4)
 11. localStorage persistence for multi-step flows prevents user frustration on page refresh (v2026.4)
+12. Cross-origin data sharing between same-domain apps solvable client-side via URL fragments (v2026.3.2)
+13. Self-gating components keep parent code clean — child decides rendering based on data availability (v2026.3.2)
