@@ -134,6 +134,16 @@ None - no external service configuration required.
 - `politicianIdsWithStances` Set is available in CompassContext for profile page badge rendering in future phases
 - Phase 68 (guest compass data) is the logical next step — CompassV2 stores localStorage data on its origin; Essentials cannot read it cross-origin
 
+## Self-Check: PASSED
+
+- FOUND: `essentials/src/components/CompassPreview.jsx`
+- FOUND: `essentials/src/pages/Results.jsx`
+- FOUND: commit `050d31e` (Task 1)
+- FOUND: commit `a8f96ee` (Task 2)
+- FOUND: commit `07dd838` (checkpoint badge fix, in ev-ui repo)
+- FOUND: commit `985b4b3` (checkpoint CTA mode + 8-spoke cap)
+- FOUND: commit `d4215a7` (plan metadata)
+
 ---
 *Phase: 67-compass-api-integration*
 *Completed: 2026-03-07*
