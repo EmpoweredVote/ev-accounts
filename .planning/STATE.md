@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Phase 70 context gathered
-last_updated: "2026-03-08T02:59:38.893Z"
-last_activity: "2026-03-08 — Phase 69 Plan 01: CompassCard shell with gating, skeleton, and CTA"
+stopped_at: Completed 70-01-PLAN.md
+last_updated: "2026-03-08T03:35:00.000Z"
+last_activity: "2026-03-08 — Phase 70 Plan 01: RadarChartCore dual-overlay into CompassCard"
 progress:
   total_phases: 5
-  completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  completed_phases: 4
+  total_plans: 7
+  completed_plans: 7
   percent: 100
 ---
 
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 69 — Compass Card Shell
+**Current focus:** Phase 70 — Radar Chart Integration
 
 ## Current Position
 
-Phase: 69 of 71 (Compass Card Shell) — COMPLETE
+Phase: 70 of 71 (Radar Chart Integration) — COMPLETE
 Plan: 1 of 1 complete
-Status: Phase 69 complete
-Last activity: 2026-03-08 — Phase 69 Plan 01: CompassCard shell with gating, skeleton, and CTA
+Status: Phase 70 complete
+Last activity: 2026-03-08 — Phase 70 Plan 01: RadarChartCore dual-overlay into CompassCard
 
-Progress: [██████████] 100%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -72,6 +72,10 @@ Progress: [██████████] 100%
 - ComparePanel Essentials link uses same-tab navigation — guest is navigating TO Essentials as destination — 68-02
 - CompassCard self-gating pattern: component returns null internally when politician lacks stances — parent passes props, child decides rendering — 69-01
 - Fragment wrapper in Profile.jsx ternary to support PoliticianProfile + CompassCard as siblings — 69-01
+- RadarChartCore inline rendering in CompassCard (not popover like CompassPreview) with dual-overlay coral/blue polygons — 70-01
+- Chart sized at 400px with labelFontSize=18, padding=40 after user feedback (up from initial 300px/10px/45px) — 70-01
+- Legend left-aligned above chart with 15px font, coral dot "You" + blue dot "[Position] [LastName]" — 70-01
+- Intersection-only topic filtering (both user AND politician must have answers) capped at 8 spokes — 70-01
 
 ### Tech Debt Carried Forward (from v2026.4)
 
@@ -99,6 +103,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-08T02:59:38.890Z
-Stopped at: Phase 70 context gathered
-Resume: Phase 69 complete. CompassCard shell created with gating logic, skeleton layout, and CTA fallback. Integrated into Profile.jsx. Ready for Phase 70 (radar chart) and Phase 71 (stance breakdown).
+Last session: 2026-03-08T03:35:00.000Z
+Stopped at: Completed 70-01-PLAN.md
+Resume: Phase 70 complete. RadarChartCore dual-overlay wired into CompassCard with legend, intersection filtering, responsive sizing. Ready for Phase 71 (stance breakdown panel).
