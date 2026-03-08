@@ -263,6 +263,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 67. Compass API Integration | 3/3 | Complete    | 2026-03-07 | - |
 | 68. Guest Data Bridge | 2/2 | Complete    | 2026-03-08 | - |
-| 69. Compass Card Shell | 1/1 | Complete   | 2026-03-08 | - |
+| 69. Compass Card Shell | 1/1 | Complete    | 2026-03-08 | - |
 | 70. Radar Chart Integration | v2026.3.2 | 0/? | Not started | - |
 | 71. Stance Breakdown Panel | v2026.3.2 | 0/? | Not started | - |
