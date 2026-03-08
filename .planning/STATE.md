@@ -99,9 +99,10 @@ None yet.
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 5 | Candidate profile system with compass stances and show-candidates filter | 2026-03-08 | 2657f3d | [5-create-candidate-profile-system-with-com](./quick/5-create-candidate-profile-system-with-com/) |
+| 6 | Column-per-category contact info layout in PoliticianProfile | 2026-03-08 | 1b91b91 | [6-improve-contact-info-section-on-profile-](./quick/6-improve-contact-info-section-on-profile-/) |
 
 ## Session Continuity
 
-Last session: 2026-03-08T14:45:11Z
-Stopped at: Completed 71-01-PLAN.md
-Resume: Phase 71 complete. StanceAccordion with lazy context fetching wired into CompassCard right zone. CompassCard now complete: radar chart (left) + stance breakdown (right). All milestone phases complete.
+Last session: 2026-03-08T16:29:46Z
+Stopped at: Completed quick task 6
+Resume: Contact info section refactored to column-per-category layout. ev-ui 0.1.40 published.
