@@ -48,7 +48,14 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 ### Active
 
-<!-- v1.3 requirements — see REQUIREMENTS.md (created for next milestone) -->
+<!-- v1.3 requirements — see REQUIREMENTS.md -->
+
+- [ ] Live Alpha deployment — apply migrations 026–029 to production, deployment runbook
+- [ ] CompassV2 API contract (accounts side) — CV2-01 through CV2-05: bearer tokens, /api/account/me shape, signup email field, response shape, /api/admin/me
+- [ ] Location infrastructure — encrypted lat/lng on connected_profiles (pgcrypto via Supabase Vault), PostGIS Indiana district boundaries, /api/account/me/jurisdiction endpoint, location_consent flag on Connect
+- [ ] empowered_profiles politician schema — full field set (representing_city, representing_state, district_type, district_label, district_id, chamber_name, chamber_name_formal, government_name, office_title, is_vacant, is_candidate) designed as VQ consensus output target and Essentials consumption target
+- [ ] Multi-currency gem system — extend ledger with gem_type (yellow/blue/red), fix balance-always-0 bug, /api/gems/award endpoint with per-key source authorization, move CTC off direct RPC call
+- [ ] Central profile page — /api/account/profile/:userId (aggregated read API) + profile UI owned by accounts; feature repos call this instead of managing their own profile views
 
 ### Still Deferred
 
@@ -129,5 +136,17 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | .is('deleted_at', null) not .eq() for PostgREST null comparisons | PostgREST generates IS NULL for .is(); .eq(null) does not correctly produce IS NULL in generated SQL. | ✓ Good — Phase 16 gap closure; affects any future soft-delete query |
 | Two-pass validation in admin atomic RPCs | Full input validation loop before any writes — guarantees all-or-nothing atomicity without partial state. Established in admin_create_topic_with_stances (Phase 14). | ✓ Good — pattern to reuse for any future multi-row admin RPC |
 
+## Current Milestone: v1.3 Alpha Launch & Location Infrastructure
+
+**Goal:** Get Alpha live (migrations to production, CompassV2 contract), establish the location privacy infrastructure (encrypted lat/lng, PostGIS jurisdiction resolution), expand the gem system to three currencies, and centralize the profile page in accounts.
+
+**Target features:**
+- Live Alpha deployment runbook (migrations 026–029 to production)
+- CompassV2 API contract updates (CV2-01 through CV2-05, accounts side)
+- Location infrastructure: encrypted lat/lng on connected_profiles, PostGIS Indiana boundaries, /api/account/me/jurisdiction endpoint
+- empowered_profiles politician schema: full VQ-ready field set
+- Multi-currency gems: yellow/blue/red with /api/gems/award endpoint
+- Central profile page: API + UI owned by accounts
+
 ---
-*Last updated: 2026-03-07 after v1.2 milestone*
+*Last updated: 2026-03-09 after v1.3 milestone start*
