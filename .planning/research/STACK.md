@@ -1,630 +1,497 @@
-# Stack Research
+# Technology Stack: Location Infrastructure
 
-**Domain:** Tiered account system — Supabase + Express/TypeScript
-**Researched:** 2026-02-24
-**Confidence:** MEDIUM-HIGH (based on verified library documentation and patterns through knowledge cutoff; web search unavailable — verify pinned versions against npm before locking)
+**Project:** empowered-accounts
+**Dimension:** Location infrastructure additions (v1.3 milestone)
+**Researched:** 2026-03-09
+**Confidence:** HIGH (all three primary questions verified against Supabase official docs, PostGIS official docs, and confirmed Census Bureau URLs)
 
----
-
-## Recommended Stack
-
-### Core Technologies
-
-| Technology | Version | Purpose | Why Recommended |
-|------------|---------|---------|-----------------|
-| `@supabase/supabase-js` | ^2.45.x | Supabase client (DB, Auth, Storage queries) | Official client; v2 is stable, fully typed, has ergonomic `.from()` builder + Auth helpers. v1 is EOL. |
-| `@supabase/ssr` | ^0.5.x | Server-side Auth helpers (cookie/JWT handling) | Replaces deprecated `@supabase/auth-helpers-*` packages. The correct server-side companion to supabase-js v2. |
-| `express` | ^4.19.x | HTTP server framework | Mature, minimal, universal middleware ecosystem. Express 5 is in RC but not production-stable as of research date — stay on 4.x. |
-| `typescript` | ^5.5.x | Type system | Strict mode required per project constraints. 5.5+ has improved type narrowing and declaration emit. |
-| `@upstash/redis` | ^1.31.x | Redis client for Upstash | HTTP-based Redis client; works in serverless and long-lived processes alike. Native TypeScript types. Not `ioredis` — Upstash exposes HTTP, not TCP. |
-| `node` | 20.x LTS | Runtime | LTS; Render's default for new services. Node 22 is available but 20.x has broader ecosystem validation. |
-| `supabase` (CLI) | latest | Migration tooling, local dev | The official migration path. `supabase db push` deploys migrations. Never schema edit in Studio for production. |
-
-### Supporting Libraries
-
-| Library | Version | Purpose | When to Use |
-|---------|---------|---------|-------------|
-| `jsonwebtoken` | ^9.0.x | Decode/verify Supabase JWTs in Express middleware | Use when verifying Supabase-issued access tokens in Express without round-tripping to Supabase on every request. Use `getUser()` for important mutations. |
-| `jwks-rsa` | ^3.1.x | Fetch Supabase JWKS for JWT verification | Supabase issues RS256 JWTs; `jwks-rsa` caches the public key from the JWKS endpoint. Pair with `jsonwebtoken`. |
-| `zod` | ^3.23.x | Runtime schema validation + TypeScript inference | Validate all incoming request bodies. Generate inferred types from schemas — source of truth for request shape. |
-| `pg` | ^8.12.x | Raw PostgreSQL driver | For atomic transactions that span multiple tables. Use `pg` + `BEGIN/COMMIT` directly rather than the Supabase client for empowerment/demotion transactions. |
-| `node-cron` | ^3.0.x | In-process scheduled jobs | Calibration lapse enforcement. Render free tier has no separate cron service; `node-cron` runs inside the Express process. |
-| `winston` | ^3.13.x | Structured logging | Render's log drain accepts structured logs. Use JSON transport in production (`NODE_ENV=production`), pretty in dev. |
-| `helmet` | ^7.1.x | HTTP security headers | One-line default security posture. Always include in Express. |
-| `cors` | ^2.8.x | CORS middleware | Required for Framer (external origin) to hit this API. Allowlist origins explicitly. |
-| `express-rate-limit` | ^7.3.x | Rate limiting | Auth endpoints especially. Free-tier Redis store (`rate-limit-redis`) optional — in-memory is fine for pilot scale. |
-| `dotenv` | ^16.4.x | Environment variable loading | `dotenv/config` import at process entry point. Never use `dotenv.config()` inside modules. |
-| `concurrently` | ^8.2.x | Root workspace dev script | Runs backend + frontend dev servers together from root `package.json`. |
-| `tsx` | ^4.17.x | TypeScript execution for dev | Replaces `ts-node` for development. Faster, ESM-compatible, no config changes needed. |
-| `vite` | ^5.4.x | Admin frontend bundler | The declared stack. Pairs with React 18. |
-| `react` / `react-dom` | ^18.3.x | Admin frontend UI | React 18 with concurrent features. |
-
-### Development Tools
-
-| Tool | Purpose | Notes |
-|------|---------|-------|
-| `supabase` CLI | Migration authoring, local dev with `supabase start`, type generation | `supabase gen types typescript --linked` generates TypeScript types from live schema. Run after every migration. |
-| `eslint` + `@typescript-eslint/*` | Linting | Use `@typescript-eslint/recommended-type-checked` ruleset — stricter than base. Catches `any` leakage. |
-| `prettier` | Formatting | Single source of truth for formatting. Pair with `eslint-config-prettier` to avoid conflicts. |
-| `vitest` | Unit + integration testing | Faster than Jest for TypeScript projects; native ESM support. Use for middleware, service, and utility tests. |
-| `supertest` | HTTP integration testing | Test Express routes without starting a real server. Pair with vitest. |
-| UptimeRobot | Uptime monitoring | Pings `/api/health` every 5 minutes to prevent Render free-tier cold start on real traffic. Free plan sufficient. |
+This file covers only the additive stack decisions for location infrastructure. The base stack (Express 4.x, TypeScript strict, supabase-js v2, Upstash Redis, etc.) remains as documented in the 2026-02-24 version of this file and in `MEMORY.md`. Do not reread the base stack sections — they are not changed.
 
 ---
 
-## Installation
+## Question 1: Column Encryption — pgsodium vs pgcrypto vs Vault
 
-```bash
-# ---- Backend (backend/) ----
-npm install \
-  @supabase/supabase-js \
-  @supabase/ssr \
-  express \
-  @upstash/redis \
-  jsonwebtoken \
-  jwks-rsa \
-  zod \
-  pg \
-  node-cron \
-  winston \
-  helmet \
-  cors \
-  express-rate-limit \
-  dotenv
+### Decision: Vault (key storage) + pgcrypto (encryption functions)
 
-# Backend dev dependencies
-npm install -D \
-  typescript \
-  @types/express \
-  @types/node \
-  @types/jsonwebtoken \
-  @types/pg \
-  @types/cors \
-  @types/node-cron \
-  tsx \
-  vitest \
-  supertest \
-  @types/supertest \
-  eslint \
-  @typescript-eslint/eslint-plugin \
-  @typescript-eslint/parser \
-  prettier \
-  eslint-config-prettier
+**Do NOT use pgsodium.** Supabase's own documentation states: "We do not recommend using either [Server Key Management or Transparent Column Encryption] on the Supabase platform due to their high level of operational complexity and misconfiguration risk." The `pgsodium` extension "is expected to go through a deprecation cycle in the near future." Supabase removed pgsodium-based column encryption from the dashboard UI specifically because teams kept misconfiguring it.
 
-# ---- Frontend admin tool (frontend/) ----
-npm install \
-  @supabase/supabase-js \
-  react \
-  react-dom \
-  zod
+**Do NOT use pgsodium `SECURITY LABEL` transparent column encryption.** This is the feature being deprecated. It automatically creates triggers and decryption views on labeled columns. The operational risk (trigger ordering, RLS policy gaps, migration complications) outweighs the convenience. Supabase removed it from the UI.
 
-npm install -D \
-  vite \
-  @vitejs/plugin-react \
-  typescript \
-  @types/react \
-  @types/react-dom
+**Use Supabase Vault to store the encryption key as a named secret.** Vault's API is explicitly documented as stable through the pgsodium deprecation — "The Vault extension won't be impacted. Its internal implementation will shift away from pgsodium, but the interface and API will remain unchanged." Vault stores the key outside the database itself; only the encrypted data lives in the table.
 
-# ---- Supabase CLI (global or devDep) ----
-npm install -D supabase
-# or: npx supabase ...
-```
+**Use pgcrypto (`pgp_sym_encrypt_bytea` / `pgp_sym_decrypt_bytea`) for the actual encrypt/decrypt operations.** pgcrypto is a core Postgres extension, stable, not deprecated, and uses authenticated encryption (PGP format includes integrity checking). The `_bytea` variants are required when the plaintext is binary (lat/lng packed as `float8` bytes) — using `pgp_sym_decrypt` (text variant) on bytea data will produce garbled output.
 
----
-
-## Alternatives Considered
-
-| Category | Recommended | Alternative | Why Not |
-|----------|-------------|-------------|---------|
-| Auth helpers | `@supabase/ssr` | `@supabase/auth-helpers-nextjs`, `@supabase/auth-helpers-express` | The `auth-helpers-*` packages are officially deprecated. `@supabase/ssr` is the replacement. |
-| JWT verification | `jsonwebtoken` + `jwks-rsa` | Supabase `auth.getUser(token)` for every request | `getUser()` makes a network call to Supabase on every request — too slow for middleware. Use local JWT verification with JWKS for read-heavy middleware; reserve `getUser()` for auth-sensitive mutations. |
-| Atomic transactions | Raw `pg` client | Supabase JS client `.rpc()` with a stored procedure | Both work. Raw `pg` is more transparent and debuggable for the empowerment/demotion flow. Stored procedures are fine too — pick one and be consistent. `pg` is recommended here for clarity of the application-side transaction logic. |
-| Cron jobs | `node-cron` (in-process) | Render Cron Jobs (paid), external scheduler | Render Cron Jobs require a paid plan. In-process `node-cron` with UptimeRobot keepalive is sufficient for pilot. Migrate to Render Cron or a separate worker when the platform grows. |
-| Rate limiting | `express-rate-limit` (in-memory) | `rate-limit-redis` (Redis-backed) | In-memory is sufficient for a single Render instance. Add Redis store when horizontal scaling is needed. |
-| HTTP framework | Express 4.x | Fastify, Hono | Fastify is faster but requires plugins for everything Express has built-in. Hono is excellent for edge but adds complexity on Render. Express 4.x is the right choice for a straightforward REST API at pilot scale. Express 5 deferred — RC status at research time. |
-| ORM | None (raw `pg` + Supabase client) | Drizzle ORM, Prisma | Drizzle is tempting and TypeScript-first, but Supabase + raw `pg` already provides typed queries via generated types + `pg`. Prisma conflicts with Supabase's migration model (Prisma wants schema ownership; Supabase CLI owns it here). Avoid adding an ORM layer that fights the migration toolchain. |
-| Redis client | `@upstash/redis` | `ioredis` | Upstash exposes an HTTP REST API, not a TCP socket. `ioredis` requires TCP and will not work with Upstash in a serverless/managed context. `@upstash/redis` is the correct client for this setup. |
-| Validation | `zod` | `joi`, `yup`, `typebox` | Zod is the standard in TypeScript-first codebases. Static type inference from schemas avoids double-declaration. `typebox` is faster but more complex. `joi` has no TypeScript inference. |
-| TypeScript runner (dev) | `tsx` | `ts-node`, `ts-node-esm` | `tsx` is dramatically faster than `ts-node`, has no CommonJS/ESM config friction, and is the current community default. |
-
----
-
-## What NOT to Use
-
-| Avoid | Why | Use Instead |
-|-------|-----|-------------|
-| `@supabase/auth-helpers-*` | Officially deprecated by Supabase team. Will not receive updates. | `@supabase/ssr` |
-| Supabase client with service role key on the frontend | Service role key bypasses all RLS. Exposing it client-side destroys every RLS policy. Never. | Service role key stays in `backend/`. Frontend uses anon key only. |
-| Prisma | Prisma wants to own the schema and migration lifecycle. Supabase CLI owns it here. The two systems conflict. | Supabase CLI migrations + `supabase gen types` + raw `pg` for transactions |
-| `ioredis` with Upstash | Upstash does not expose a TCP Redis socket on the free tier — `ioredis` will fail to connect. | `@upstash/redis` (HTTP-based) |
-| Express 5.x | Still in release candidate as of research date. Middleware ecosystem not fully updated. | Express 4.19.x |
-| `any` type | Project constraint: TypeScript strict mode. `any` silently removes all type safety downstream. | Proper types or `unknown` + type guards |
-| Storing JWTs in localStorage on the admin frontend | XSS risk. Supabase Auth uses httpOnly cookies when using `@supabase/ssr`. | Let Supabase Auth manage session storage via its built-in session persistence |
-| Manual schema changes in Supabase Studio for production | Creates schema drift — the CLI migration history diverges from actual schema. Impossible to reproduce. | `supabase migration new` + `supabase db push` every time |
-| `process.env` without validation at startup | Crashes at runtime with unhelpful messages. | Validate all required env vars at startup with zod or a custom check function. Fail fast with a descriptive error. |
-
----
-
-## Supabase-Specific Patterns
-
-### 1. Server-Side Client Construction (Express)
-
-Create two Supabase clients — one with the service role key for admin operations, one per-request using the user's JWT for RLS-enforced queries.
-
-```typescript
-// src/lib/supabase.ts
-
-import { createClient } from '@supabase/supabase-js';
-import type { Database } from './database.types'; // generated by supabase gen types
-
-// Admin client — bypasses RLS. Used ONLY for trusted server operations.
-// Never returned to the client, never used for user-facing queries.
-export const supabaseAdmin = createClient<Database>(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-  {
-    auth: {
-      autoRefreshToken: false,
-      persistSession: false,
-    },
-  }
-);
-
-// Create a per-request client that injects the user's JWT so RLS applies.
-// Call this inside your auth middleware after verifying the JWT.
-export function createUserClient(accessToken: string) {
-  return createClient<Database>(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_ANON_KEY!,
-    {
-      global: {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      },
-      auth: {
-        autoRefreshToken: false,
-        persistSession: false,
-      },
-    }
-  );
-}
-```
-
-### 2. JWT Verification Middleware (Express)
-
-Do NOT call `supabase.auth.getUser()` on every request — it is a network round-trip. Instead, verify the JWT locally using the Supabase JWKS endpoint and cache the public key.
-
-```typescript
-// src/middleware/auth.ts
-
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import jwksClient from 'jwks-rsa';
-
-const client = jwksClient({
-  jwksUri: `${process.env.SUPABASE_URL}/auth/v1/keys`,
-  cache: true,
-  cacheMaxAge: 600_000, // 10 minutes
-});
-
-function getKey(header: jwt.JwtHeader, callback: jwt.SigningKeyCallback) {
-  client.getSigningKey(header.kid, (err, key) => {
-    if (err) return callback(err, undefined);
-    callback(null, key!.getPublicKey());
-  });
-}
-
-export interface AuthenticatedRequest extends Request {
-  userId: string;
-  userEmail: string | undefined;
-  accessToken: string;
-}
-
-export function requireAuth(
-  req: Request,
-  res: Response,
-  next: NextFunction
-): void {
-  const authHeader = req.headers.authorization;
-  if (!authHeader?.startsWith('Bearer ')) {
-    res.status(401).json({ error: 'Missing authorization header' });
-    return;
-  }
-
-  const token = authHeader.slice(7);
-
-  jwt.verify(token, getKey, { algorithms: ['RS256'] }, (err, decoded) => {
-    if (err) {
-      res.status(401).json({ error: 'Invalid or expired token' });
-      return;
-    }
-
-    const payload = decoded as jwt.JwtPayload;
-    (req as AuthenticatedRequest).userId = payload.sub!;
-    (req as AuthenticatedRequest).userEmail = payload.email as string | undefined;
-    (req as AuthenticatedRequest).accessToken = token;
-    next();
-  });
-}
-
-// Tier guards — check DB for child record existence
-// Call these AFTER requireAuth when a route needs a specific tier.
-```
-
-### 3. Tier Guard Pattern
-
-Tier is determined by the presence of a child record, not a flag. Express middleware should reflect this.
-
-```typescript
-// src/middleware/tierGuards.ts
-
-import { Response, NextFunction } from 'express';
-import { AuthenticatedRequest } from './auth';
-import { supabaseAdmin } from '../lib/supabase';
-
-export async function requireConnected(
-  req: AuthenticatedRequest,
-  res: Response,
-  next: NextFunction
-): Promise<void> {
-  const { data, error } = await supabaseAdmin
-    .from('connected_profiles')
-    .select('id, verification_status')
-    .eq('user_id', req.userId)
-    .maybeSingle();
-
-  if (error || !data) {
-    res.status(403).json({ error: 'Connected account required' });
-    return;
-  }
-
-  if (data.verification_status !== 'verified') {
-    res.status(403).json({ error: 'Verified Connected account required' });
-    return;
-  }
-
-  next();
-}
-
-export async function requireEmpowered(
-  req: AuthenticatedRequest,
-  res: Response,
-  next: NextFunction
-): Promise<void> {
-  const { data, error } = await supabaseAdmin
-    .from('empowered_profiles')
-    .select('id, is_active')
-    .eq('user_id', req.userId)
-    .maybeSingle();
-
-  if (error || !data || !data.is_active) {
-    res.status(403).json({ error: 'Active Empowered account required' });
-    return;
-  }
-
-  next();
-}
-```
-
-### 4. Atomic Transactions via Raw `pg`
-
-The empowerment and demotion flows require multi-table atomic transactions with full rollback on failure. Use raw `pg` directly — do not use the Supabase JS client for these operations, as it does not expose transaction control.
-
-```typescript
-// src/lib/db.ts
-
-import { Pool } from 'pg';
-
-export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // Supabase DB direct URL
-  max: 5, // conservative for free tier
-  idleTimeoutMillis: 30_000,
-  connectionTimeoutMillis: 5_000,
-});
-
-// src/services/empowermentService.ts
-
-import { pool } from '../lib/db';
-
-export async function executeEmpowerment(
-  userId: string,
-  legalName: string,
-  candidateSlug: string
-): Promise<void> {
-  const client = await pool.connect();
-  try {
-    await client.query('BEGIN');
-
-    await client.query(
-      `INSERT INTO empower.empowered_profiles (user_id, legal_name, candidate_page_slug, empowered_at)
-       SELECT cp.user_id, $2, $3, now()
-       FROM connect.connected_profiles cp
-       WHERE cp.user_id = $1 AND cp.verification_status = 'verified'`,
-      [userId, legalName, candidateSlug]
-    );
-
-    await client.query(
-      `UPDATE inform.compass_responses
-       SET visibility = 'public', updated_at = now()
-       WHERE user_id = $1`,
-      [userId]
-    );
-
-    await client.query('COMMIT');
-  } catch (err) {
-    await client.query('ROLLBACK');
-    throw err;
-  } finally {
-    client.release();
-  }
-}
-```
-
-**Important:** The Supabase database URL for direct `pg` connections uses port 5432 (direct) or 6543 (pooler). Use the **Session mode pooler** (port 5432 via Supabase's connection pooler, or the direct URL) for long-lived Express processes. Avoid Transaction mode pooler (port 6543) if you use prepared statements or multi-statement transactions, as it resets connection state between queries.
-
-### 5. RLS Policy Authoring Best Practices
-
-**Always enable RLS on every table.** A table without RLS enabled is open to all authenticated users with the service role — or fully open if no policies match.
+### The hybrid pattern: Vault key + pgcrypto functions
 
 ```sql
--- Pattern: always start with RLS enabled + deny-by-default
-ALTER TABLE connect.connected_profiles ENABLE ROW LEVEL SECURITY;
+-- Step 1: Store the encryption passphrase in Vault (run once, in a migration or manually)
+-- Returns a UUID — save this as COORDINATE_ENCRYPTION_KEY_ID env var or hard-reference by name
+SELECT vault.create_secret(
+  'your-strong-random-passphrase-here',
+  'coordinate_encryption_key',
+  'Symmetric key for lat/lng column encryption on connected_profiles'
+);
 
--- Self-read: users can read their own profile
-CREATE POLICY "connected_profiles: self read"
-  ON connect.connected_profiles
-  FOR SELECT
-  USING (auth.uid() = user_id);
+-- Step 2: Create a SECURITY DEFINER helper that exposes the decrypted key
+-- to privileged functions without exposing vault.decrypted_secrets broadly.
+-- SET search_path = '' is required per project convention.
+CREATE OR REPLACE FUNCTION connect.get_coordinate_key()
+RETURNS text
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+  SELECT decrypted_secret
+  FROM vault.decrypted_secrets
+  WHERE name = 'coordinate_encryption_key'
+  LIMIT 1;
+$$;
 
--- Public read for Empowered profiles (they are public by design)
--- but never expose tolerance_rating or legal identity of Connected users
-CREATE POLICY "empowered_profiles: public read active"
-  ON empower.empowered_profiles
-  FOR SELECT
-  USING (is_active = true);
+-- Revoke public access; only service role / other SECURITY DEFINER functions call this
+REVOKE ALL ON FUNCTION connect.get_coordinate_key() FROM PUBLIC;
 
--- Compass responses: visibility-gated reads
-CREATE POLICY "compass_responses: self read all"
-  ON inform.compass_responses
-  FOR SELECT
-  USING (auth.uid() = user_id);
+-- Step 3: Encrypt lat/lng on write
+-- Coordinates are packed as float8 (8 bytes each) → bytea, then PGP-encrypted
+-- Column type: bytea NOT NULL
+CREATE OR REPLACE FUNCTION connect.upsert_user_location(
+  p_user_id uuid,
+  p_lat double precision,
+  p_lng double precision
+)
+RETURNS void
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_key text;
+  v_enc_lat bytea;
+  v_enc_lng bytea;
+BEGIN
+  -- Retrieve key from Vault (never leaves this function as plaintext)
+  SELECT connect.get_coordinate_key() INTO v_key;
 
-CREATE POLICY "compass_responses: public read public responses"
-  ON inform.compass_responses
-  FOR SELECT
-  USING (
-    visibility = 'public'
-    AND auth.uid() != user_id
+  -- Pack float8 to bytea, then encrypt
+  -- extensions.pgp_sym_encrypt_bytea because pgcrypto installs in extensions schema
+  v_enc_lat := extensions.pgp_sym_encrypt_bytea(
+    ('x' || lpad(to_hex(('0'::bytea || p_lat::text::bytea)::text::bigint::bit(64)::text), 16, '0'))::bytea,
+    v_key
   );
+  -- NOTE: simpler approach — store as text of the float, encrypt as text:
+  -- extensions.pgp_sym_encrypt(p_lat::text, v_key) → bytea
+  -- Then decrypt with: extensions.pgp_sym_decrypt(enc_col, key)::double precision
+  -- This is cleaner and avoids binary float packing complexity.
 
-CREATE POLICY "compass_responses: friends read friends responses"
-  ON inform.compass_responses
-  FOR SELECT
-  USING (
-    visibility = 'friends'
-    AND EXISTS (
-      SELECT 1 FROM connect.peer_connections pc
-      WHERE pc.status = 'accepted'
-        AND (
-          (pc.requester_id = auth.uid() AND pc.addressee_id = user_id)
-          OR
-          (pc.addressee_id = auth.uid() AND pc.requester_id = user_id)
-        )
-    )
-  );
+  UPDATE connect.connected_profiles
+  SET
+    encrypted_lat = extensions.pgp_sym_encrypt(p_lat::text, v_key),
+    encrypted_lng = extensions.pgp_sym_encrypt(p_lng::text, v_key),
+    location_updated_at = now()
+  WHERE user_id = p_user_id;
+END;
+$$;
 
--- Service role bypasses RLS automatically — no policy needed for admin operations
+-- Step 4: Decrypt on read (inside resolve_user_jurisdiction)
+CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(p_user_id uuid)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_key text;
+  v_lat double precision;
+  v_lng double precision;
+  v_result jsonb;
+BEGIN
+  SELECT connect.get_coordinate_key() INTO v_key;
+
+  SELECT
+    extensions.pgp_sym_decrypt(encrypted_lat, v_key)::double precision,
+    extensions.pgp_sym_decrypt(encrypted_lng, v_key)::double precision
+  INTO v_lat, v_lng
+  FROM connect.connected_profiles
+  WHERE user_id = p_user_id;
+
+  -- ST_Contains point-in-polygon lookup (see Question 2)
+  SELECT jsonb_build_object(
+    'congressional_district', cd.district_number,
+    'state_senate_district',  su.district_number,
+    'state_house_district',   sl.district_number,
+    'county_fips',            co.county_fips,
+    'place_name',             pl.place_name
+  ) INTO v_result
+  FROM geo.congressional_districts  cd,
+       geo.state_senate_districts   su,
+       geo.state_house_districts    sl,
+       geo.counties                 co,
+       geo.places                   pl
+  WHERE ST_Contains(cd.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
+    AND ST_Contains(su.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
+    AND ST_Contains(sl.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
+    AND ST_Contains(co.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
+    AND ST_Contains(pl.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326));
+
+  RETURN v_result;
+END;
+$$;
 ```
 
-**Critical RLS rules for this project:**
-- `tolerance_rating` on `connected_profiles`: add a policy that only returns it when `auth.uid() = user_id`. Never return it in a join where the joining user is not the owner. Enforce at both RLS and application layer.
-- `legal_name` on `empowered_profiles`: readable on the row, but do NOT create any view or policy that exposes a Connected user's legal name. The legal name is only on `empowered_profiles`, so by the data model it only exists post-empowerment. The risk is in any admin panel accidentally joining and returning it.
-- Service role key queries bypass RLS entirely — every use of `supabaseAdmin` in application code is an RLS bypass and must be explicitly audited.
+### Critical schema note for pgcrypto in Supabase
 
-### 6. Upstash Redis with In-Memory Fallback
+Supabase installs pgcrypto in the `extensions` schema, not `public`. All pgcrypto function calls inside SQL functions with `SET search_path = ''` must be fully qualified:
 
-```typescript
-// src/lib/cache.ts
-
-import { Redis } from '@upstash/redis';
-
-interface CacheClient {
-  get<T>(key: string): Promise<T | null>;
-  set(key: string, value: unknown, ttlSeconds?: number): Promise<void>;
-  del(key: string): Promise<void>;
-}
-
-class InMemoryFallback implements CacheClient {
-  private store = new Map<string, { value: unknown; expiresAt: number | null }>();
-
-  async get<T>(key: string): Promise<T | null> {
-    const entry = this.store.get(key);
-    if (!entry) return null;
-    if (entry.expiresAt && Date.now() > entry.expiresAt) {
-      this.store.delete(key);
-      return null;
-    }
-    return entry.value as T;
-  }
-
-  async set(key: string, value: unknown, ttlSeconds?: number): Promise<void> {
-    this.store.set(key, {
-      value,
-      expiresAt: ttlSeconds ? Date.now() + ttlSeconds * 1000 : null,
-    });
-  }
-
-  async del(key: string): Promise<void> {
-    this.store.delete(key);
-  }
-}
-
-function createRedisClient(): CacheClient {
-  if (!process.env.REDIS_URL) {
-    console.warn('[cache] REDIS_URL not set — using in-memory fallback');
-    return new InMemoryFallback();
-  }
-
-  try {
-    const redis = new Redis({ url: process.env.REDIS_URL });
-    return {
-      async get<T>(key: string): Promise<T | null> {
-        return redis.get<T>(key);
-      },
-      async set(key: string, value: unknown, ttlSeconds?: number): Promise<void> {
-        if (ttlSeconds) {
-          await redis.set(key, value, { ex: ttlSeconds });
-        } else {
-          await redis.set(key, value);
-        }
-      },
-      async del(key: string): Promise<void> {
-        await redis.del(key);
-      },
-    };
-  } catch {
-    console.warn('[cache] Redis init failed — using in-memory fallback');
-    return new InMemoryFallback();
-  }
-}
-
-export const cache = createRedisClient();
+```sql
+extensions.pgp_sym_encrypt(plaintext, key)    -- returns bytea
+extensions.pgp_sym_decrypt(ciphertext, key)   -- returns text
 ```
 
-### 7. Supabase CLI Migration Workflow
+Because the project convention is `SET search_path = ''` on all SECURITY DEFINER functions, this full qualification is non-optional. A call to bare `pgp_sym_encrypt()` will fail with "function not found."
+
+### Column type
+
+```sql
+-- On connect.connected_profiles:
+ALTER TABLE connect.connected_profiles
+  ADD COLUMN encrypted_lat  bytea,
+  ADD COLUMN encrypted_lng  bytea,
+  ADD COLUMN location_updated_at timestamptz;
+```
+
+Both columns are `bytea`. The application and all RPC callers never see the raw float values. The only columns that exist in the table are the encrypted bytea blobs.
+
+### TypeScript handling of bytea columns
+
+Supabase JS returns `bytea` columns as `string` (base64-encoded) in the Row type generated by `supabase gen types`. This is correct — your TypeScript types will show `encrypted_lat: string | null`. Do not attempt to parse this value in application code. The RPC layer handles all decrypt operations; the application code only receives the output struct from `resolve_user_jurisdiction`, never the raw bytea.
+
+If you ever need to pass `bytea` values to an RPC from TypeScript (you should not for this design), encode them as a hex string prefixed with `\x`.
+
+### What NOT to use
+
+| Avoid | Why |
+|-------|-----|
+| `pgsodium` SECURITY LABEL transparent column encryption | Explicitly not recommended by Supabase for new projects. Pending deprecation. Removed from Studio UI. Do not use `ENCRYPT WITH KEY ID` syntax. |
+| `pgsodium.crypto_aead_det_encrypt()` directly | Same deprecation path as TCE. Do not call pgsodium functions directly in new code. |
+| `pgcrypto` raw `encrypt()` / `decrypt()` functions | Lower-level, no integrity checking. Official pgcrypto docs call these "discouraged." Use PGP functions instead. |
+| Storing the encryption key in the database | Defeats the purpose of encryption. The key lives in Vault (external to the database's encryption layer). Never store it in a column, a constant in a function body, or an environment variable that gets embedded in a migration. |
+
+---
+
+## Question 2: PostGIS — Enabling and Using ST_Contains
+
+### Enable PostGIS
+
+Via Supabase Dashboard: Database → Extensions → search "postgis" → Enable → create schema `geo` (or use `extensions`). Alternatively via migration:
+
+```sql
+CREATE SCHEMA IF NOT EXISTS geo;
+CREATE EXTENSION IF NOT EXISTS postgis SCHEMA extensions;
+```
+
+Supabase installs PostGIS in the `extensions` schema. Functions like `ST_Contains`, `ST_MakePoint`, `ST_SetSRID` are accessible as `extensions.ST_Contains(...)` or via search_path. In SECURITY DEFINER functions with `SET search_path = ''`, use full qualification:
+
+```sql
+extensions.ST_Contains(geom_polygon, extensions.ST_SetSRID(extensions.ST_MakePoint(lng, lat), 4326))
+```
+
+### geometry vs geography — Use geometry
+
+For Indiana-scoped data, use `geometry`, not `geography`.
+
+**Why not geography:** The `geography` type performs spheroidal (Haversine) calculations. This is accurate for spanning continents but adds significant CPU cost. Fewer PostGIS functions support `geography` directly. The PostGIS documentation explicitly states: "If your data is geographically compact (contained within a state, county or city), use the geometry type with a Cartesian projection."
+
+**Why geometry is fine here:** Indiana spans roughly 2.5° latitude and 2° longitude. At this scale, the error introduced by planar geometry is negligible for district lookup purposes (well under 100m). Correct district assignment at state boundaries does not require spheroidal math.
+
+**Trap to avoid:** `geometry(4326)` is NOT the same as `geography`. `geometry` with SRID 4326 stores lon/lat coordinates but performs Cartesian math. This is correct and intentional for our use case. Do not confuse the two.
+
+### SRID — Use 4326 (WGS84)
+
+Store all boundary geometries at SRID 4326. Reason: GPS coordinates from browsers and mobile devices are WGS84 by default. Storing boundaries and points in the same SRID means no runtime `ST_Transform` calls. User coordinates arrive as WGS84 floats; they are passed directly to `ST_MakePoint` and matched against WGS84 boundaries.
+
+**TIGER/Line ships in SRID 4269 (NAD83).** Convert to 4326 during import with ogr2ogr (see Question 3). The difference between 4269 and 4326 is sub-meter for CONUS, but using a consistent SRID prevents hard-to-debug query errors.
+
+### Boundary table schema
+
+```sql
+-- One table per district type in the geo schema.
+-- All use geometry(MultiPolygon, 4326) — TIGER/Line uses MultiPolygon for some districts.
+-- Using MultiPolygon for all tables avoids heterogeneous geometry errors.
+
+CREATE TABLE geo.congressional_districts (
+  id              serial PRIMARY KEY,
+  district_number text        NOT NULL,   -- e.g. '05' (Indiana 5th)
+  name            text,
+  geom            geometry(MultiPolygon, 4326) NOT NULL
+);
+
+CREATE TABLE geo.state_senate_districts (
+  id              serial PRIMARY KEY,
+  district_number text        NOT NULL,
+  geom            geometry(MultiPolygon, 4326) NOT NULL
+);
+
+CREATE TABLE geo.state_house_districts (
+  id              serial PRIMARY KEY,
+  district_number text        NOT NULL,
+  geom            geometry(MultiPolygon, 4326) NOT NULL
+);
+
+CREATE TABLE geo.counties (
+  id          serial PRIMARY KEY,
+  county_fips text NOT NULL,   -- e.g. '18105' (Monroe County, IN)
+  name        text NOT NULL,
+  geom        geometry(MultiPolygon, 4326) NOT NULL
+);
+
+CREATE TABLE geo.places (
+  id          serial PRIMARY KEY,
+  place_fips  text NOT NULL,   -- e.g. '1807000' (Bloomington city, IN)
+  place_name  text NOT NULL,
+  geom        geometry(MultiPolygon, 4326) NOT NULL
+);
+
+-- Spatial indexes are critical — ST_Contains uses them automatically
+CREATE INDEX ON geo.congressional_districts  USING GIST (geom);
+CREATE INDEX ON geo.state_senate_districts   USING GIST (geom);
+CREATE INDEX ON geo.state_house_districts    USING GIST (geom);
+CREATE INDEX ON geo.counties                 USING GIST (geom);
+CREATE INDEX ON geo.places                   USING GIST (geom);
+```
+
+### ST_Contains query pattern
+
+```sql
+-- Point-in-polygon: does the district boundary contain the user's location?
+-- ST_MakePoint(longitude, latitude) — note: longitude first, latitude second
+-- This matches the WGS84 (x=lon, y=lat) convention.
+
+SELECT district_number
+FROM geo.congressional_districts
+WHERE ST_Contains(
+  geom,
+  ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326)
+)
+LIMIT 1;
+```
+
+ST_Contains automatically uses the GIST spatial index — no additional index hint needed. From the PostGIS docs: "This function automatically includes a bounding box comparison that makes use of any spatial indexes that are available on the geometries."
+
+**Note on argument order:** `ST_Contains(A, B)` returns true if A contains B. The polygon (district boundary) is A; the point (user location) is B. `ST_Within(B, A)` is the converse and is equivalent. Either works; `ST_Contains(polygon, point)` is the conventional form when querying "which polygon contains this point."
+
+**Note on lon/lat order in ST_MakePoint:** PostGIS follows the mathematical (x, y) convention where x = longitude and y = latitude. This is the opposite of how humans usually say "lat, lng." Always pass `ST_MakePoint(longitude, latitude)`. The encrypted columns should be stored and named accordingly (`encrypted_lat` / `encrypted_lng`) and care taken to pass them in the correct order on decrypt.
+
+---
+
+## Question 3: Indiana TIGER/Line Data
+
+### Source: Census Bureau TIGER/Line 2024
+
+Base URL: `https://www2.census.gov/geo/tiger/TIGER2024/`
+
+The 2024 vintage is the most recent available. All legal boundaries are as of January 1, 2024. Files were published June 2025.
+
+### Indiana shapefiles (FIPS 18)
+
+All files are for Indiana only except the county file, which is national and must be filtered post-import.
+
+| District Type | Filename | URL | Size |
+|---------------|----------|-----|------|
+| Congressional districts (119th Congress) | `tl_2024_18_cd119.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_18_cd119.zip` | 447K |
+| State Senate (upper) | `tl_2024_18_sldu.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_18_sldu.zip` | 1.1M |
+| State House (lower) | `tl_2024_18_sldl.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_18_sldl.zip` | 1.6M |
+| Counties (national — filter to FIPS 18) | `tl_2024_us_county.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip` | 80M |
+| Incorporated places | `tl_2024_18_place.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_18_place.zip` | 2.3M |
+| Unified school districts | `tl_2024_18_unsd.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_18_unsd.zip` | 2.3M |
+
+**On school districts:** Indiana uses Unified School Districts (`UNSD`). The `SCSD` (secondary only) and `ELSD` (elementary only) directories do not have an Indiana file because Indiana uses unified districts. Use `UNSD` only.
+
+**On counties:** There is no state-scoped county file. The national file (`tl_2024_us_county.zip`) is 80MB. Import the full file and filter by `STATEFP = '18'` during import or immediately post-import.
+
+### SRID note
+
+TIGER/Line shapefiles ship with SRID **4269 (NAD83)**. This is documented in the TIGER/Line technical documentation. Convert to 4326 (WGS84) during import. For CONUS data at district scale the difference is sub-meter, but using a consistent SRID prevents query errors and avoids runtime `ST_Transform` calls.
+
+### Download and import commands
+
+The following commands assume:
+- `ogr2ogr` is installed (part of the GDAL toolkit: `brew install gdal` or `apt install gdal-bin`)
+- The Supabase database connection string is available as `$DATABASE_URL` (direct port 5432 URL, not the pooler)
+- All shapefiles have been downloaded and unzipped into a working directory
 
 ```bash
-# Initialize (once, in repo root)
-supabase init
+# ---- Download ----
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_18_cd119.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_18_sldu.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_18_sldl.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_18_place.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_18_unsd.zip
 
-# Link to your Supabase project
-supabase link --project-ref <your-project-ref>
+for f in tl_2024_18_cd119 tl_2024_18_sldu tl_2024_18_sldl tl_2024_us_county tl_2024_18_place tl_2024_18_unsd; do
+  unzip "${f}.zip" -d "${f}"
+done
 
-# Create a new migration
-supabase migration new create_connected_profiles
+# ---- Import: Congressional Districts ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_18_cd119/tl_2024_18_cd119.shp \
+  -nln "geo.congressional_districts" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -overwrite
 
-# Edit the generated file in supabase/migrations/
-# Then apply locally (requires Docker for local dev)
-supabase db push  # applies to linked remote project
+# ---- Import: State Senate (upper chamber) ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_18_sldu/tl_2024_18_sldu.shp \
+  -nln "geo.state_senate_districts" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -overwrite
 
-# Generate TypeScript types from the live schema
-supabase gen types typescript --linked > backend/src/lib/database.types.ts
+# ---- Import: State House (lower chamber) ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_18_sldl/tl_2024_18_sldl.shp \
+  -nln "geo.state_house_districts" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -overwrite
 
-# Never: supabase db reset in production
-# Never: schema edits in Studio on production project
+# ---- Import: Counties (national file — filter to Indiana STATEFP=18) ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_us_county/tl_2024_us_county.shp \
+  -nln "geo.counties" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -where "STATEFP = '18'" \
+  -overwrite
+
+# ---- Import: Incorporated Places ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_18_place/tl_2024_18_place.shp \
+  -nln "geo.places" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -overwrite
+
+# ---- Import: Unified School Districts ----
+ogr2ogr \
+  -f "PostgreSQL" \
+  PG:"$DATABASE_URL" \
+  tl_2024_18_unsd/tl_2024_18_unsd.shp \
+  -nln "geo.school_districts" \
+  -nlt MULTIPOLYGON \
+  -s_srs EPSG:4269 \
+  -t_srs EPSG:4326 \
+  -lco GEOMETRY_NAME=geom \
+  -overwrite
 ```
 
-**Migration file naming convention:** `supabase/migrations/<timestamp>_<descriptive_name>.sql`
+**Key ogr2ogr flags:**
 
-The `supabase/migrations/` directory is the source of truth for schema. Every schema change — including RLS policies — goes in a migration file. Never create RLS policies interactively in Studio unless you immediately capture them in a migration.
+| Flag | Purpose |
+|------|---------|
+| `-nln` | Target table name (schema-qualified) |
+| `-nlt MULTIPOLYGON` | Force geometry type to MultiPolygon — some TIGER files mix Polygon and MultiPolygon; forcing avoids type errors |
+| `-s_srs EPSG:4269` | Source SRID — TIGER/Line native (NAD83) |
+| `-t_srs EPSG:4326` | Target SRID — reproject to WGS84 on import |
+| `-lco GEOMETRY_NAME=geom` | Names the geometry column `geom` (matches table schema above) |
+| `-where "STATEFP = '18'"` | SQL filter for the national county file — import only Indiana rows |
+| `-overwrite` | Replace existing table data on re-run |
 
-### 8. Type Generation Integration
+**Note on shp2pgsql:** The alternative tool `shp2pgsql` (bundled with PostGIS client tools) also works but does not support `-where` filtering. For the national county file you would need to post-process with a DELETE or use ogr2ogr. ogr2ogr is recommended for consistency across all five shapefiles.
 
-Generate types after every migration that changes the schema. The generated file (`database.types.ts`) is the bridge between the Supabase schema and TypeScript.
+**Note on Supabase connection:** Use the direct database URL (not the connection pooler URL) for `ogr2ogr` imports. The direct URL uses port 5432. The connection pooler (port 6543, Transaction mode) may time out on large imports like the national county file.
 
-```typescript
-// Usage after generation:
-import type { Database } from './database.types';
+### Post-import verification
 
-// All table types are available:
-type ConnectedProfile = Database['public']['Tables']['connected_profiles']['Row'];
-type CompassResponse = Database['inform']['Tables']['compass_responses']['Row'];
-```
+```sql
+-- Confirm counts look right
+SELECT count(*) FROM geo.congressional_districts;  -- Indiana has 9 congressional districts
+SELECT count(*) FROM geo.state_senate_districts;   -- Indiana State Senate: 50 districts
+SELECT count(*) FROM geo.state_house_districts;    -- Indiana House of Representatives: 100 districts
+SELECT count(*) FROM geo.counties;                 -- Indiana: 92 counties
+SELECT count(*) FROM geo.places;                   -- Indiana: ~583 incorporated places
 
-Add `supabase gen types typescript --linked > src/lib/database.types.ts` to your CI/CD pipeline or as a pre-commit hook on migration files.
+-- Confirm Bloomington is present
+SELECT place_name, place_fips FROM geo.places WHERE place_name ILIKE '%bloomington%';
 
-### 9. In-Process Cron for Calibration Lapse Enforcement
+-- Confirm SRIDs were set correctly
+SELECT DISTINCT ST_SRID(geom) FROM geo.congressional_districts;  -- should return 4326
+SELECT DISTINCT ST_SRID(geom) FROM geo.counties;                  -- should return 4326
 
-```typescript
-// src/jobs/calibrationLapse.ts
-
-import cron from 'node-cron';
-import { supabaseAdmin } from '../lib/supabase';
-import { pool } from '../lib/db';
-
-// Runs daily at 2am UTC
-export function startCalibrationLapseJob(): void {
-  cron.schedule('0 2 * * *', async () => {
-    console.info('[cron] calibration-lapse check started');
-    try {
-      await enforceCalibrationLapse();
-    } catch (err) {
-      console.error('[cron] calibration-lapse check failed', err);
-      // Never throw — cron failure must not crash the server
-    }
-  });
-}
-
-async function enforceCalibrationLapse(): Promise<void> {
-  // Find Empowered users who have uncalibrated topics older than 30 days
-  // Execute atomic demotion for each
-  // Notify affected users (notification system TBD)
-}
-
-// src/server.ts (entry point)
-// startCalibrationLapseJob(); // Call at startup, after server is listening
-```
-
-**Render free tier note:** Render free services spin down after 15 minutes of inactivity. UptimeRobot pinging `/api/health` every 5 minutes prevents cold starts and keeps cron jobs alive. This is the documented mitigation for free-tier Render with in-process cron.
-
-### 10. Env Var Validation at Startup
-
-```typescript
-// src/lib/env.ts
-
-import { z } from 'zod';
-
-const envSchema = z.object({
-  NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
-  PORT: z.string().default('3000'),
-  SUPABASE_URL: z.string().url(),
-  SUPABASE_ANON_KEY: z.string().min(1),
-  SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-  DATABASE_URL: z.string().url(),
-  REDIS_URL: z.string().optional(), // Optional — falls back to in-memory
-});
-
-const parsed = envSchema.safeParse(process.env);
-
-if (!parsed.success) {
-  console.error('[startup] Missing or invalid environment variables:');
-  console.error(parsed.error.flatten().fieldErrors);
-  process.exit(1);
-}
-
-export const env = parsed.data;
+-- Smoke test: point-in-polygon for Bloomington city hall (~39.165, -86.526)
+SELECT district_number
+FROM geo.congressional_districts
+WHERE ST_Contains(geom, ST_SetSRID(ST_MakePoint(-86.526, 39.165), 4326));
+-- Should return '09' (Indiana's 9th congressional district)
 ```
 
 ---
 
-## Admin Tool Notes
+## Summary: New Extensions Required
 
-The internal admin tool (Vite + React in `frontend/`) connects to the same Supabase project using the anon key. Admin users authenticate via Supabase Auth (email/password or magic link). Admin-specific operations that require service role access are proxied through the Express backend — the React frontend never holds the service role key.
+| Extension | Schema | Purpose | Status in Supabase |
+|-----------|--------|---------|-------------------|
+| `pgcrypto` | `extensions` | `pgp_sym_encrypt` / `pgp_sym_decrypt` for coordinate columns | Available by default, enable if not already enabled |
+| `postgis` | `extensions` | Geometry storage and spatial functions | Must be explicitly enabled via Dashboard |
+| Supabase Vault | built-in | Stores encryption key for coordinate columns | Available by default on all Supabase projects |
 
-**Admin tool auth flow:**
-1. Admin logs in via Supabase Auth on the frontend (anon key)
-2. Frontend gets a JWT
-3. Frontend sends JWT in `Authorization: Bearer` header to Express
-4. Express middleware verifies JWT, checks if user has admin role via `public.user_roles`
-5. Express performs the admin operation with the service role client
+No new npm packages are required for location infrastructure. All work happens in SQL (migrations + SECURITY DEFINER RPCs). The TypeScript layer only calls `supabase.rpc('upsert_user_location', ...)` and `supabase.rpc('resolve_user_jurisdiction', ...)` and receives plain JSON back.
 
-This keeps the service role key on the server side at all times.
+---
+
+## Confidence Assessment
+
+| Area | Confidence | Source |
+|------|------------|--------|
+| pgsodium deprecation status | HIGH | Verified against Supabase official docs (https://supabase.com/docs/guides/database/extensions/pgsodium) — explicit "do not recommend" language |
+| Vault API stability | HIGH | Verified: "The Vault extension won't be impacted. Its internal implementation will shift away from pgsodium, but the interface and API will remain unchanged." |
+| vault.decrypted_secrets view pattern | HIGH | Verified against https://supabase.com/docs/guides/database/vault — official docs show this exact pattern |
+| pgcrypto in extensions schema (Supabase) | HIGH | Verified in GitHub discussion #627 — users confirmed pgcrypto installs in `extensions` schema in Supabase, must be fully qualified |
+| pgp_sym_encrypt/decrypt function signatures | HIGH | Verified against https://www.postgresql.org/docs/current/pgcrypto.html |
+| PostGIS SRID 4326 recommendation | HIGH | Verified against Supabase PostGIS docs + PostGIS workshop docs |
+| geometry vs geography recommendation | HIGH | Verified against PostGIS workshop docs — explicit "geographically compact → use geometry" guidance |
+| TIGER/Line SRID 4269 source | HIGH | Confirmed via ogr2ogr community sources and Census Bureau file metadata |
+| TIGER/Line file URLs | HIGH | All URLs verified by direct directory listing at www2.census.gov/geo/tiger/TIGER2024/ |
+| Indiana county file is national-only | HIGH | Confirmed by fetching the COUNTY/ directory — only tl_2024_us_county.zip exists, no state-scoped files |
+| Indiana has no SCSD file | HIGH | Confirmed by fetching SCSD/ directory — FIPS 18 not present; Indiana uses unified districts (UNSD) |
+| ogr2ogr flag syntax | MEDIUM | Syntax confirmed via multiple PostGIS loading guides; -nlt, -s_srs, -t_srs, -where, -lco flags are standard ogr2ogr; recommend dry-run with -progress flag before production import |
 
 ---
 
 ## Sources
 
-- Supabase JS v2 documentation (`@supabase/supabase-js`) — verified client API, `createClient` options, Auth helpers deprecation notice — MEDIUM (knowledge cutoff Aug 2025; confirm current version on npm)
-- `@supabase/ssr` package docs — server-side auth replacement for deprecated `auth-helpers-*` — MEDIUM
-- Supabase RLS documentation — policy syntax, `auth.uid()`, `USING`/`WITH CHECK` clauses — HIGH (SQL standards + Supabase docs consistent since 2023)
-- Express 4.x documentation — middleware patterns, route handlers — HIGH (stable API, no breaking changes since 4.0)
-- `@upstash/redis` documentation — HTTP-based client, `ex` TTL option — MEDIUM (verify current version on npm)
-- `jwks-rsa` + `jsonwebtoken` — RS256 JWT verification pattern — HIGH (standard pattern; Supabase uses RS256)
-- `node-cron` documentation — cron expression syntax, schedule API — HIGH
-- Supabase CLI documentation — `supabase migration new`, `supabase db push`, `supabase gen types` commands — HIGH
-- `pg` (node-postgres) documentation — `Pool`, `client.query`, `BEGIN`/`ROLLBACK` pattern — HIGH (stable since v8)
-- Render documentation — free tier cold start behavior, `process.env.PORT` requirement — MEDIUM
-- Zod v3 documentation — `z.object()`, `.safeParse()`, type inference — HIGH
-
-**Before finalizing package.json:** Run `npm info <package> version` for each pinned package to confirm the latest stable version. Knowledge cutoff is August 2025; patch releases accumulate.
+- [Supabase Vault Documentation](https://supabase.com/docs/guides/database/vault) — vault.create_secret(), vault.decrypted_secrets view, SECURITY DEFINER pattern
+- [pgsodium Pending Deprecation](https://supabase.com/docs/guides/database/extensions/pgsodium) — explicit "do not recommend" statement
+- [pgsodium/TCE not recommended discussion](https://github.com/orgs/supabase/discussions/27109) — community confirmation of deprecation
+- [Column encryption SQL-only now](https://github.com/orgs/supabase/discussions/18849) — dashboard removal and current SQL-only approach
+- [pgcrypto in extensions schema (Supabase)](https://github.com/orgs/supabase/discussions/627) — confirmed schema location
+- [PostgreSQL pgcrypto documentation](https://www.postgresql.org/docs/current/pgcrypto.html) — pgp_sym_encrypt_bytea / pgp_sym_decrypt_bytea function signatures
+- [Supabase PostGIS documentation](https://supabase.com/docs/guides/database/extensions/postgis) — enable steps, SRID 4326, geometry column creation
+- [PostGIS Workshop: Geography](http://postgis.net/workshops/postgis-intro/geography.html) — geometry vs geography guidance: "geographically compact → use geometry type"
+- [PostGIS ST_Contains documentation](https://postgis.net/docs/ST_Contains.html) — function signature, automatic spatial index usage
+- [Census Bureau TIGER/Line 2024 CD directory](https://www2.census.gov/geo/tiger/TIGER2024/CD/) — verified tl_2024_18_cd119.zip
+- [Census Bureau TIGER/Line 2024 SLDU directory](https://www2.census.gov/geo/tiger/TIGER2024/SLDU/) — verified tl_2024_18_sldu.zip
+- [Census Bureau TIGER/Line 2024 SLDL directory](https://www2.census.gov/geo/tiger/TIGER2024/SLDL/) — verified tl_2024_18_sldl.zip
+- [Census Bureau TIGER/Line 2024 COUNTY directory](https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/) — confirmed national-only file tl_2024_us_county.zip
+- [Census Bureau TIGER/Line 2024 PLACE directory](https://www2.census.gov/geo/tiger/TIGER2024/PLACE/) — verified tl_2024_18_place.zip
+- [Census Bureau TIGER/Line 2024 UNSD directory](https://www2.census.gov/geo/tiger/TIGER2024/UNSD/) — verified tl_2024_18_unsd.zip

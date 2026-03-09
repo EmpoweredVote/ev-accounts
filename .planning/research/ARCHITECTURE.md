@@ -1,898 +1,783 @@
-# Architecture Research
+# Architecture Patterns — Location Infrastructure Integration
 
-**Domain:** Tiered account system — Supabase + Express/TypeScript
-**Researched:** 2026-02-24
-**Confidence:** HIGH
-
----
-
-## Standard Architecture
-
-### System Overview
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                        CLIENT LAYER                             │
-│  ┌──────────────┐  ┌──────────────────────────────────────┐    │
-│  │  Admin Tool  │  │  Feature Repos (Framer/React clients) │    │
-│  │  (internal)  │  │  Essentials, Compass, Connect, Empower│    │
-│  └──────┬───────┘  └──────────────────┬───────────────────┘    │
-└─────────┼────────────────────────────┼─────────────────────────┘
-          │ HTTP /api/admin/*           │ HTTP /api/*
-          │                            │
-┌─────────┴────────────────────────────┴─────────────────────────┐
-│                     EXPRESS API LAYER                           │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │                 Auth Middleware                         │    │
-│  │   Supabase JWT validation → attach user + tier context  │    │
-│  └──────────────────────┬─────────────────────────────────┘    │
-│                         │                                       │
-│  ┌──────────┐  ┌────────┴────────┐  ┌──────────────────────┐   │
-│  │  /admin  │  │   /api/public   │  │   /api/auth          │   │
-│  │  Router  │  │   Routers       │  │   Router             │   │
-│  └──────┬───┘  └────────┬────────┘  └──────────┬───────────┘   │
-│         │               │                      │               │
-│  ┌──────┴───────────────┴──────────────────────┴───────────┐   │
-│  │              Service Layer                               │   │
-│  │  AuthService  AccountService  CompassService             │   │
-│  │  EmpowerService  ConnectionService  CronService          │   │
-│  └──────────────────────────┬──────────────────────────────┘   │
-│                             │                                   │
-│  ┌──────────────────────────┴──────────────────────────────┐   │
-│  │         Supabase Client (service role key)               │   │
-│  │              + Redis / In-memory cache                   │   │
-│  └──────────────────────────┬──────────────────────────────┘   │
-└─────────────────────────────┼───────────────────────────────────┘
-                              │ Postgres
-┌─────────────────────────────┴───────────────────────────────────┐
-│                      SUPABASE (Database + Auth)                 │
-│                                                                 │
-│  auth.users           (Supabase-managed)                       │
-│  public.users         (our extension of auth identity)         │
-│  public.user_roles    (multi-role junction table)              │
-│                                                                 │
-│  connect schema:      connected_profiles, peer_connections,    │
-│                       account_follows, gem_transactions,       │
-│                       verification_sessions                    │
-│                                                                 │
-│  empower schema:      empowered_profiles                       │
-│                                                                 │
-│  inform schema:       compass_topics, compass_stances,         │
-│                       compass_topic_roles, compass_responses,  │
-│                       compass_change_history                   │
-│                                                                 │
-│  RLS policies enforce tier access at the database level        │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### Component Responsibilities
-
-| Component | Responsibility | Implementation |
-|-----------|----------------|----------------|
-| Supabase Auth | JWT issuance, session management, password flows | Managed service — not custom |
-| RLS Policies | Primary tier-gate enforcement at DB level | SQL policies per table per schema |
-| Auth Middleware | JWT validation, tier context attachment to req object | Express middleware, service role client |
-| Tier Guards | Route-level tier enforcement (second layer) | Express middleware factories |
-| Service Layer | Business logic, transaction orchestration | TypeScript classes / modules |
-| Supabase Client | DB queries, RPC calls, transactions | `@supabase/supabase-js` with service role |
-| Redis Cache | Session tier info, rate-limit state | Upstash with in-memory fallback |
-| Cron Jobs | Calibration lapse checks, demotion enforcement | In-process node-cron at startup |
-| Admin Router | Internal management endpoints | Separate Express router, admin-only middleware |
+**Domain:** Encrypted location storage + PostGIS jurisdiction resolution in existing Supabase + Express app
+**Researched:** 2026-03-09
+**Confidence:** HIGH for integration patterns (verified against actual codebase); MEDIUM for geocoding service choice (verified against official sources); HIGH for RPC signatures (derived from established patterns in codebase)
 
 ---
 
-## Recommended Project Structure
+## Overview
 
-```
-backend/src/
-├── middleware/
-│   ├── auth.ts             # JWT validation, user + tier context on req
-│   ├── requireTier.ts      # Factory: requireTier('connected' | 'empowered')
-│   ├── requireAdmin.ts     # Admin tool access gate
-│   └── rateLimit.ts        # Redis-backed rate limiting with fallback
-│
-├── routes/
-│   ├── auth.ts             # /api/auth/* — signup, login, logout
-│   ├── account.ts          # /api/account/* — me, update
-│   ├── connect.ts          # /api/connect/* — start, status, complete, import-compass
-│   ├── compass.ts          # /api/compass/* — responses, progress, compare, topics
-│   ├── empower.ts          # /api/empower/* — preflight, confirm, demote
-│   ├── connections.ts      # /api/connections/* — peer requests, accept/decline/block
-│   ├── follows.ts          # /api/follows/* — follow/unfollow/list
-│   ├── candidates.ts       # /api/candidates/* — public candidate pages
-│   ├── health.ts           # /api/health
-│   └── admin/
-│       ├── index.ts        # Admin router mount — /api/admin/*
-│       ├── invites.ts      # Invite management
-│       ├── accounts.ts     # Account review, standing
-│       └── cohorts.ts      # Pilot cohort enrollment
-│
-├── services/
-│   ├── account.service.ts       # User profile composition, tier checks
-│   ├── auth.service.ts          # Auth flow helpers
-│   ├── connect.service.ts       # Verification session, connected_profile creation
-│   ├── compass.service.ts       # Compass queries, calibration completeness
-│   ├── empower.service.ts       # Atomic empowerment/demotion transactions
-│   ├── connection.service.ts    # Peer connections and follows
-│   ├── gem.service.ts           # Gem ledger writes
-│   └── cron/
-│       ├── index.ts             # Register all cron jobs at startup
-│       └── calibrationLapse.ts  # 30-day demotion enforcement
-│
-├── db/
-│   ├── client.ts           # Supabase service role client singleton
-│   └── transactions.ts     # PostgreSQL transaction helpers (rpc wrappers)
-│
-├── cache/
-│   └── redis.ts            # Redis client with in-memory fallback
-│
-├── types/
-│   ├── request.d.ts        # Extended Express Request with user + tier
-│   └── domain.ts           # Shared domain types (TierLevel, etc.)
-│
-└── index.ts                # App entry: mount routers, start cron, listen
-```
+This document covers the architectural integration of three new components into the existing empowered-accounts backend:
 
-```
-supabase/
-├── migrations/
-│   ├── 0001_create_schemas.sql
-│   ├── 0002_public_users.sql
-│   ├── 0003_connect_profiles.sql
-│   ├── 0004_empower_profiles.sql
-│   ├── 0005_inform_compass.sql
-│   ├── 0006_connections_follows.sql
-│   ├── 0007_roles_gems.sql
-│   ├── 0008_verification_sessions.sql
-│   ├── 0009_rls_public.sql
-│   ├── 0010_rls_connect.sql
-│   ├── 0011_rls_empower.sql
-│   └── 0012_rls_inform.sql
-└── config.toml
-```
+1. Encrypted lat/lng storage on `connect.connected_profiles` (pgcrypto via Vault key)
+2. PostGIS `inform.district_boundaries` table for jurisdiction resolution
+3. New RPCs and endpoints following established patterns
 
----
-
-## Architectural Patterns
-
-### Pattern 1: Additive Child Tables for Tier Detection
-
-**What:** Tier is determined solely by the presence or absence of a child row. No status flags, no enum columns on a wide user record. The rule: `connected_profiles` row exists = Connected tier. `empowered_profiles` row with `is_active = true` exists = Empowered tier.
-
-**When to use:** Always, for this system. Every tier check throughout the application is a join, not a column read.
-
-**Trade-offs:**
-- Eliminates invalid states (a flag can be set incorrectly; a row either exists or it does not)
-- Clean atomicity: empowerment = row insert, demotion = `is_active = false`
-- Slightly more expensive queries than reading one column, but negligible at pilot scale
-- Schema extensions per tier are naturally scoped
-
-**Example:**
-```typescript
-// types/domain.ts
-export type TierLevel = 'inform' | 'connected' | 'empowered';
-
-// services/account.service.ts
-async function detectTier(userId: string): Promise<TierLevel> {
-  const { data } = await supabase
-    .from('empowered_profiles')
-    .select('id, is_active')
-    .eq('user_id', userId)
-    .maybeSingle();
-
-  if (data?.is_active) return 'empowered';
-
-  const { data: connected } = await supabase
-    .from('connected_profiles')
-    .select('id')
-    .eq('user_id', userId)
-    .maybeSingle();
-
-  return connected ? 'connected' : 'inform';
-}
-```
-
----
-
-### Pattern 2: Layered Auth — RLS Primary, Middleware Secondary
-
-**What:** Two enforcing layers, neither optional. RLS policies at the Supabase level enforce data-layer access regardless of how the API is called. Express middleware enforces tier requirements before any route handler runs. The service role key bypasses RLS intentionally — use it only on the server, never client-exposed.
-
-**When to use:** All protected routes. The application layer check provides early response (returns 401/403 before hitting the DB). The RLS layer is the safety net if application logic has a bug.
-
-**Trade-offs:**
-- Defense in depth — a bug in one layer does not expose data
-- RLS policies must be maintained alongside schema changes
-- Service role queries are unrestricted; must be treated like raw SQL
-
-**Example:**
-```typescript
-// middleware/auth.ts
-export async function authenticate(req: Request, res: Response, next: NextFunction) {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  if (!token) return res.status(401).json({ error: 'No token provided' });
-
-  const { data: { user }, error } = await supabase.auth.getUser(token);
-  if (error || !user) return res.status(401).json({ error: 'Invalid token' });
-
-  const tier = await detectTier(user.id);
-  req.user = { id: user.id, tier };
-  next();
-}
-
-// middleware/requireTier.ts
-export function requireTier(minimumTier: TierLevel) {
-  const tierRank: Record<TierLevel, number> = {
-    inform: 0, connected: 1, empowered: 2
-  };
-  return (req: Request, res: Response, next: NextFunction) => {
-    if (!req.user) return res.status(401).json({ error: 'Not authenticated' });
-    if (tierRank[req.user.tier] < tierRank[minimumTier]) {
-      return res.status(403).json({ error: `Requires ${minimumTier} account` });
-    }
-    next();
-  };
-}
-
-// routes/empower.ts
-router.post('/confirm',
-  authenticate,
-  requireTier('connected'),
-  async (req, res) => { /* ... */ }
-);
-```
-
-**RLS example — connect schema:**
-```sql
--- Only the owning user can read their own connected_profile.
--- Other users get no rows.
-CREATE POLICY "connected_profiles: owner read"
-  ON connect.connected_profiles FOR SELECT
-  USING (user_id = auth.uid());
-
--- Empower reads require active empowered_profile
-CREATE POLICY "compass_responses: owner or public empowered read"
-  ON inform.compass_responses FOR SELECT
-  USING (
-    user_id = auth.uid()
-    OR visibility = 'public'
-    OR (
-      visibility = 'friends'
-      AND EXISTS (
-        SELECT 1 FROM connect.peer_connections pc
-        WHERE pc.status = 'accepted'
-          AND (
-            (pc.requester_id = auth.uid() AND pc.addressee_id = compass_responses.user_id)
-            OR (pc.addressee_id = auth.uid() AND pc.requester_id = compass_responses.user_id)
-          )
-      )
-    )
-  );
-
--- tolerance_rating is never exposed via RLS to anyone but the owner
--- Enforced by returning it only in internal server queries using service role,
--- never in the anon-key-accessible query path
-```
-
----
-
-### Pattern 3: Atomic Transactions via Postgres RPC Functions
-
-**What:** Multi-table operations that must succeed or roll back entirely are implemented as PostgreSQL functions called via Supabase RPC, not as sequential Express service calls. The function body runs in a transaction; any exception triggers a full rollback. This is the correct pattern for the empowerment and demotion flows.
-
-**When to use:** Any operation touching more than one table where partial completion is an invalid state. In this system: empowerment, demotion, and calibration-lapse demotion.
-
-**Trade-offs:**
-- True atomicity — guaranteed by Postgres, not by application-layer optimism
-- Logic lives in the database, which can feel opaque if not well-documented
-- SQL functions must be versioned through migrations like all other schema changes
-- Simpler than distributed sagas; appropriate for a monolithic Supabase project
-- Supabase RPC calls return errors cleanly — handle them as you would any query error
-
-**Migration — empowerment function:**
-```sql
--- supabase/migrations/0013_empower_transaction.sql
-
-CREATE OR REPLACE FUNCTION empower.execute_empowerment(
-  p_user_id        UUID,
-  p_legal_name     TEXT,
-  p_profile_id     UUID  -- connected_profiles.id
-)
-RETURNS empower.empowered_profiles
-LANGUAGE plpgsql
-SECURITY DEFINER
-AS $$
-DECLARE
-  v_slug TEXT;
-  v_result empower.empowered_profiles;
-BEGIN
-  -- Generate slug from legal name (simple version — extend as needed)
-  v_slug := lower(regexp_replace(p_legal_name, '[^a-zA-Z0-9]', '-', 'g'))
-             || '-' || substr(gen_random_uuid()::text, 1, 8);
-
-  -- Step 1: Insert empowered profile
-  INSERT INTO empower.empowered_profiles (
-    user_id, connected_profile_id, legal_name, candidate_page_slug
-  ) VALUES (
-    p_user_id, p_profile_id, p_legal_name, v_slug
-  )
-  RETURNING * INTO v_result;
-
-  -- Step 2: Batch all compass responses to public
-  UPDATE inform.compass_responses
-    SET visibility = 'public', updated_at = now()
-    WHERE user_id = p_user_id;
-
-  RETURN v_result;
-
-  -- Any exception here rolls back both operations
-EXCEPTION WHEN OTHERS THEN
-  RAISE;
-END;
-$$;
-```
-
-**Migration — demotion function:**
-```sql
--- supabase/migrations/0014_demote_transaction.sql
-
-CREATE OR REPLACE FUNCTION empower.execute_demotion(
-  p_user_id UUID
-)
-RETURNS VOID
-LANGUAGE plpgsql
-SECURITY DEFINER
-AS $$
-BEGIN
-  UPDATE empower.empowered_profiles
-    SET is_active = false, updated_at = now()
-    WHERE user_id = p_user_id AND is_active = true;
-
-  UPDATE inform.compass_responses
-    SET visibility = 'private', updated_at = now()
-    WHERE user_id = p_user_id;
-
-EXCEPTION WHEN OTHERS THEN
-  RAISE;
-END;
-$$;
-```
-
-**Express service call:**
-```typescript
-// services/empower.service.ts
-export async function executeEmpowerment(
-  userId: string,
-  legalName: string,
-  connectedProfileId: string
-): Promise<{ success: boolean; error?: string }> {
-  const { data, error } = await supabase.rpc('execute_empowerment', {
-    p_user_id: userId,
-    p_legal_name: legalName,
-    p_profile_id: connectedProfileId,
-  });
-
-  if (error) {
-    // Postgres rolled back — no partial state exists
-    console.error('Empowerment transaction failed:', error.message);
-    return { success: false, error: error.message };
-  }
-
-  return { success: true };
-}
-
-export async function executeDemotion(
-  userId: string
-): Promise<{ success: boolean; error?: string }> {
-  const { error } = await supabase.rpc('execute_demotion', {
-    p_user_id: userId,
-  });
-
-  if (error) {
-    return { success: false, error: error.message };
-  }
-
-  return { success: true };
-}
-```
-
----
-
-### Pattern 4: Admin vs. Public API Separation
-
-**What:** Admin endpoints live under `/api/admin/*` behind a separate middleware chain. Public API endpoints under `/api/*` are tier-gated by user tier. The two routers never share middleware — admin auth is validated differently (internal token or elevated Supabase role check), and admin routes have no RLS dependency since they use the service role exclusively.
-
-**When to use:** Any endpoint that must not be accessible to regular users. Invite management, account review, manual verification approval, cohort enrollment, invite chain visibility.
-
-**Trade-offs:**
-- Clear separation prevents accidental admin endpoint exposure
-- Admin tool can evolve independently without affecting public API
-- Both live in the same Express app and the same Supabase project — no separate deployment needed at pilot scale
-
-**Example:**
-```typescript
-// routes/admin/index.ts
-import { Router } from 'express';
-import { requireAdmin } from '../../middleware/requireAdmin';
-import invitesRouter from './invites';
-import accountsRouter from './accounts';
-import cohortsRouter from './cohorts';
-
-const adminRouter = Router();
-
-// All admin routes require admin check first
-adminRouter.use(requireAdmin);
-adminRouter.use('/invites', invitesRouter);
-adminRouter.use('/accounts', accountsRouter);
-adminRouter.use('/cohorts', cohortsRouter);
-
-export default adminRouter;
-
-// middleware/requireAdmin.ts
-export async function requireAdmin(req: Request, res: Response, next: NextFunction) {
-  const token = req.headers.authorization?.replace('Bearer ', '');
-  if (!token) return res.status(401).json({ error: 'No token' });
-
-  // Check admin flag in public.users or a separate admin_users table
-  const { data: { user }, error } = await supabase.auth.getUser(token);
-  if (error || !user) return res.status(401).json({ error: 'Invalid token' });
-
-  const { data: adminRecord } = await supabase
-    .from('admin_users')
-    .select('id')
-    .eq('user_id', user.id)
-    .maybeSingle();
-
-  if (!adminRecord) return res.status(403).json({ error: 'Admin access required' });
-
-  req.user = { id: user.id, tier: 'empowered', isAdmin: true };
-  next();
-}
-
-// index.ts (app mount)
-app.use('/api/admin', adminRouter);
-app.use('/api/auth', authRouter);
-app.use('/api/account', authenticate, accountRouter);
-app.use('/api/connect', authenticate, connectRouter);
-app.use('/api/compass', authenticate, compassRouter);
-app.use('/api/empower', authenticate, requireTier('connected'), empowerRouter);
-```
-
----
-
-### Pattern 5: Scheduled Job Pattern for Demotion Enforcement
-
-**What:** An in-process cron job (node-cron) runs at server startup. It queries all active Empowered Accounts with uncalibrated new topics past the 30-day window and calls `executeDemotion` for each. The job is idempotent — running it twice produces the same result. Notifications (25-day warning, demotion confirmation) are sent through a notification service, not in the same cron tick.
-
-**When to use:** Calibration lapse enforcement. Also the pattern for any periodic enforcement that must happen even if no user initiates an action.
-
-**Trade-offs:**
-- In-process cron is simple and avoids external job infrastructure at pilot scale
-- Not horizontally scalable without a distributed lock (not needed for pilot)
-- If the server restarts, in-flight cron window may be missed — acceptable at pilot scale; add Redis-based distributed lock if this becomes a concern
-- Cron failures must not crash the server — wrap in try/catch and log
-
-**Example:**
-```typescript
-// services/cron/calibrationLapse.ts
-import cron from 'node-cron';
-import { supabase } from '../../db/client';
-import { executeDemotion } from '../empower.service';
-
-export function startCalibrationLapseCron() {
-  // Runs daily at 2am UTC
-  cron.schedule('0 2 * * *', async () => {
-    console.log('[cron] calibrationLapse: starting run');
-    try {
-      await checkAndDemoteLapsedAccounts();
-    } catch (err) {
-      // Never crash the server
-      console.error('[cron] calibrationLapse: uncaught error', err);
-    }
-  });
-}
-
-async function checkAndDemoteLapsedAccounts() {
-  // Find Empowered Accounts with topics that went live > 30 days ago
-  // and have no compass_response for that topic
-  const { data: lapsed, error } = await supabase.rpc('get_calibration_lapsed_users');
-  if (error) throw error;
-
-  for (const { user_id } of lapsed ?? []) {
-    const result = await executeDemotion(user_id);
-    if (result.success) {
-      // Queue notification (separate service call)
-      await notifyDemotion(user_id);
-    } else {
-      console.error(`[cron] Failed to demote user ${user_id}:`, result.error);
-    }
-  }
-}
-
-// services/cron/index.ts
-import { startCalibrationLapseCron } from './calibrationLapse';
-
-export function startAllCronJobs() {
-  startCalibrationLapseCron();
-}
-
-// index.ts (server entry)
-import { startAllCronJobs } from './services/cron';
-startAllCronJobs();
-```
-
-**Supporting SQL function (migration):**
-```sql
--- supabase/migrations/0015_get_calibration_lapsed_users.sql
-
-CREATE OR REPLACE FUNCTION get_calibration_lapsed_users()
-RETURNS TABLE (user_id UUID)
-LANGUAGE sql
-SECURITY DEFINER
-AS $$
-  SELECT DISTINCT ep.user_id
-  FROM empower.empowered_profiles ep
-  WHERE ep.is_active = true
-    AND EXISTS (
-      SELECT 1
-      FROM inform.compass_topics ct
-      WHERE ct.status = 'live'
-        AND ct.created_at < now() - INTERVAL '30 days'
-        AND NOT EXISTS (
-          SELECT 1
-          FROM inform.compass_responses cr
-          WHERE cr.user_id = ep.user_id
-            AND cr.topic_id = ct.id
-        )
-    );
-$$;
-```
-
----
-
-### Pattern 6: Additive Migration Strategy
-
-**What:** Every schema change is an additive migration file. Migrations are numbered sequentially and never modified after merging. New columns always have defaults or are nullable. No destructive changes (DROP COLUMN) without a multi-step migration (add new → backfill → remove old). All migrations run via `supabase db push` — no manual production changes.
-
-**When to use:** Every schema change without exception.
-
-**Trade-offs:**
-- Guarantees reproducible schema across environments
-- Additive-only constraint limits refactoring speed, but prevents data loss
-- RLS policies are schema changes and must be in migrations
-- Column removals require explicit planning (3-step pattern)
-
-**Migration conventions for this project:**
-```
-0001_create_schemas.sql          -- CREATE SCHEMA public, connect, empower, inform
-0002_public_users.sql            -- public.users table
-0003_connect_profiles.sql        -- connect.connected_profiles
-0004_empower_profiles.sql        -- empower.empowered_profiles
-0005_inform_compass_topics.sql   -- inform.compass_topics, compass_stances, compass_topic_roles
-0006_inform_compass_responses.sql -- inform.compass_responses, compass_change_history
-0007_connections_follows.sql     -- connect.peer_connections, connect.account_follows
-0008_roles.sql                   -- public.role_type enum, public.user_roles
-0009_gems.sql                    -- connect.gem_transactions
-0010_verification_sessions.sql   -- connect.verification_sessions
-0011_invites.sql                 -- public.invite_codes (alpha enrollment)
-0012_rls_public.sql              -- RLS policies for public schema
-0013_rls_connect.sql             -- RLS policies for connect schema
-0014_rls_empower.sql             -- RLS policies for empower schema
-0015_rls_inform.sql              -- RLS policies for inform schema
-0016_empower_transaction.sql     -- execute_empowerment() RPC function
-0017_demote_transaction.sql      -- execute_demotion() RPC function
-0018_calibration_lapsed.sql      -- get_calibration_lapsed_users() RPC function
-```
-
-**Adding a column later (additive):**
-```sql
--- 0025_add_account_standing.sql
-ALTER TABLE connect.connected_profiles
-  ADD COLUMN account_standing TEXT NOT NULL DEFAULT 'active'
-  CHECK (account_standing IN ('active', 'suspended', 'quarantined'));
-```
+The rest of the system — SECURITY DEFINER RPC pattern, dual Supabase client, advisory locks, two-pass validation, `SET search_path = ''` — does not change.
 
 ---
 
 ## Data Flow
 
-### Empowerment Flow
-
 ```
-POST /api/empower/confirm
-    |
-    v
-authenticate middleware
-  - validates JWT, attaches req.user with tier
-    |
-    v
-requireTier('connected') middleware
-  - 403 if not at least Connected tier
-    |
-    v
-Route handler
-  - reads req.body: { legalName }
-    |
-    v
-empower.service: preflightCheck(userId)
-  - verifies connected_profile.verification_status = 'verified'
-  - verifies all live topics have compass_responses
-  - returns { ready: true } or { ready: false, missing: [...] }
-    |
-    v (if ready)
-empower.service: executeEmpowerment(userId, legalName, profileId)
-  - supabase.rpc('execute_empowerment', { ... })
-  - Postgres function runs:
-      BEGIN (implicit in function)
-        INSERT empowered_profiles
-        UPDATE compass_responses SET visibility = 'public'
-      COMMIT (on success) | ROLLBACK (on any exception)
-    |
-    v (on success)
-Route handler returns 200 with empowered profile data
-    |
-    v (on error — DB rolled back, no partial state)
-Route handler returns 500 with error message
-```
+User submits address string (e.g. "401 N Morton St, Bloomington IN 47404")
+         |
+         v
+POST /api/connect/set-location
+  - requireAuth + requireConnected middleware
+  - Zod validation of address string
+  - location_consent: true required in request body
+         |
+         v
+locationService.geocodeAddress(addressString)
+  - Calls Census Geocoder API (server-side, no user JWT involved)
+  - Returns { lat: float, lng: float } or null if not found
+  - Address string discarded after this step — never stored
+         |
+         v (on geocode success)
+adminRpc('connect.update_user_location', {
+  p_user_id: userId,
+  p_lat_plain: lat,
+  p_lng_plain: lng,
+  p_consent: true
+})
+         |
+         v  [inside SECURITY DEFINER RPC — Postgres]
+update_user_location RPC:
+  1. Reads vault key: SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key'
+  2. Encrypts: pgp_sym_encrypt(p_lat_plain::text, v_key) → bytea
+               pgp_sym_encrypt(p_lng_plain::text, v_key) → bytea
+  3. Writes to connect.connected_profiles:
+       lat = encrypted bytea
+       lng = encrypted bytea
+       location_consent = true
+       location_set_at = now()
+  4. Returns: { success: true }
+         |
+         v
+Response: 200 { location_set: true }
+(raw coordinates never leave the system)
 
-### Calibration Lapse Flow
+---
 
-```
-[Daily cron — 2am UTC]
-    |
-    v
-calibrationLapse.ts: checkAndDemoteLapsedAccounts()
-    |
-    v
-supabase.rpc('get_calibration_lapsed_users')
-  - Returns user_ids of active Empowered Accounts
-    with topics live > 30 days and no response filed
-    |
-    v (for each lapsed user)
-empower.service: executeDemotion(userId)
-  - supabase.rpc('execute_demotion', { p_user_id })
-  - Postgres function:
-      UPDATE empowered_profiles SET is_active = false
-      UPDATE compass_responses SET visibility = 'private'
-    |
-    v
-notifyDemotion(userId)
-  - [notification mechanism TBD — email, in-app]
-```
+GET /api/account/me/jurisdiction
+  - requireAuth + requireConnected middleware
+         |
+         v
+adminRpc('connect.resolve_user_jurisdiction', { p_user_id: userId })
+         |
+         v  [inside SECURITY DEFINER RPC — Postgres]
+resolve_user_jurisdiction RPC:
+  1. Reads connected_profiles: lat bytea, lng bytea, location_consent
+  2. If location_consent IS NULL or false → RAISE EXCEPTION 'NO_LOCATION_CONSENT'
+  3. If lat IS NULL → RAISE EXCEPTION 'NO_LOCATION_SET'
+  4. Reads vault key: SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key'
+  5. Decrypts: pgp_sym_decrypt(cp.lat, v_key)::float8 → v_lat
+               pgp_sym_decrypt(cp.lng, v_key)::float8 → v_lng
+  6. Constructs point: ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326)
+  7. Queries district_boundaries:
+       SELECT district_type, district_id, district_name, state_code
+       FROM inform.district_boundaries
+       WHERE ST_Contains(boundary::geometry, point::geometry)
+  8. Returns jsonb: { city, state, county, districts: [...] }
+         |
+         v
+Route handler serializes RPC result → 200 JSON
+(coordinates never appear in the response or logs)
 
-### Tier-Gated Request Flow
+---
 
-```
-Incoming request
-    |
-    v
-authenticate middleware
-  - Validates Supabase JWT
-  - Calls detectTier(userId) [may use Redis cache]
-  - Attaches req.user = { id, tier }
-    |
-    v
-requireTier(minimumTier) middleware
-  - Compares tier rank
-  - 403 if insufficient
-    |
-    v
-Route handler
-  - Business logic with req.user.id guaranteed to be authenticated
-  - Service calls use service role key (bypasses RLS intentionally)
-  - Service role queries apply field-level filtering for sensitive fields:
-      tolerance_rating: never included in response serialization
-      legal_name: only included for Empowered profile owner
-      verification_method: never included in any response
-    |
-    v
-Response
-```
-
-### Compass Visibility Flow
-
-```
-GET /api/compass/compare/:userId
-    |
-    v
-authenticate (req.user = caller)
-    |
-    v
-compass.service.getVisibleResponses(targetUserId, callerId)
-    |
-    v
-Strategy — determined by caller's relationship to target:
-  - Same user → return all (private + friends + public)
-  - Peer connection (accepted) → return friends + public
-  - No connection → return public only
-  - Empowered target → public stances always visible to all
-    |
-    v
-compass_responses query with visibility filter
-  + inverted flag applied in serialization layer (never ignored)
+Feature consumption (e.g. ZIP candidate discovery, Validation Quests):
+  GET /api/account/me/jurisdiction → { state_code, districts: [{ type, id, name }] }
+  Feature checks district membership locally — no coordinate access ever
 ```
 
 ---
 
-## Scaling Considerations
+## Geocoding Service Recommendation
 
-| Scale | Architecture Adjustments |
-|-------|--------------------------|
-| 0–500 users (Alpha pilot) | Current design as-is. In-process cron is fine. Redis optional. Single Supabase project. |
-| 500–10k users | Add Redis caching for detectTier() (hot path on every request). Monitor RLS policy execution plans. |
-| 10k–100k users | Evaluate moving cron to a dedicated Render job if in-process scheduling conflicts with web server memory. Consider read replicas for compass compare queries. |
-| 100k+ users | Schema-level read replica for inform (public reads). Separate Supabase project consideration. Distributed lock for cron jobs. |
+**Recommended: US Census Geocoder API**
 
-### Scaling Priorities
+**Rationale:**
 
-1. **First bottleneck:** `detectTier()` called on every authenticated request. Cache tier lookups in Redis keyed by `userId` with a short TTL (30–60 seconds). Invalidate on empowerment and demotion.
-2. **Second bottleneck:** Compass compare queries with visibility join logic. Add composite index on `(user_id, visibility)` on `compass_responses` and `(requester_id, addressee_id, status)` on `peer_connections`.
-3. **Third bottleneck:** Calibration lapse cron scanning all Empowered Accounts daily. Introduce a `calibration_lapse_candidates` materialized view refreshed when new topics go live, so the cron has a pre-filtered table to scan.
+| Criterion | Census Geocoder | Google Maps Geocoding | Mapbox Geocoding | Nominatim (public) |
+|-----------|----------------|----------------------|-----------------|-------------------|
+| Cost | Free, no key required | Pay-per-request ($5/1k) | Free tier (100k/mo) then paid | Free (rate limited) |
+| Privacy | US government service; privacy policy states retained data does not include PII | Sends address to Google; TOS restrictions on storing results | Sends address to Mapbox | OSM policy explicitly asks you NOT to submit personal data |
+| Indiana accuracy | HIGH — built from TIGER address database, which is the authoritative source for US addresses | HIGH | HIGH | MEDIUM — rural Indiana address coverage is incomplete in OSM |
+| TypeScript SDK | None needed — simple REST GET with `fetch` | `@googlemaps/google-maps-services-js` | `@mapbox/mapbox-sdk` | REST only |
+| Rate limits | No documented limit for reasonable use | 50 req/s (paid) | 600 req/min (free tier) | 1 req/s (hard limit on public instance) |
+| No API key | Yes | No (billing required) | No (token required) | Yes (public instance) |
+| Self-host option | No | No | No | Yes (major infra overhead) |
+
+**Why Census wins for this project:**
+
+1. **Privacy alignment**: The Census Bureau's privacy policy states retained data does not include personally identifiable information. For a civic platform collecting civic addresses, using a US government geocoding service operated under FOIA and federal privacy law is the strongest privacy posture available without self-hosting.
+
+2. **Indiana accuracy**: TIGER/Line is the source of truth for US addresses — it is literally what every other geocoder is built from. Indiana addresses are well-covered.
+
+3. **Cost**: Free with no API key. This project is an unfunded nonprofit; billing surprises are unacceptable.
+
+4. **No PII terms violations**: Google Maps TOS prohibits storing geocoded results in conjunction with personally identifiable information. Census has no such restriction.
+
+**Census Geocoder API call:**
+
+```
+GET https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
+  ?address=401+N+Morton+St%2C+Bloomington+IN+47404
+  &benchmark=Public_AR_Current
+  &format=json
+```
+
+Response path: `result.addressMatches[0].coordinates.{ x: lng, y: lat }`
+
+Returns 200 with empty `addressMatches` array if not found (not a 4xx). TypeScript service must handle the empty-array case and return null.
+
+**Confidence:** MEDIUM. Census Geocoder is a real service and the API format is verified against official documentation. Indiana accuracy claim is inferred from TIGER provenance — no independent test of rural Monroe County addresses performed.
 
 ---
 
-## Anti-Patterns
+## Encryption Architecture
 
-### Anti-Pattern 1: Status Flags for Tier
+### Why pgcrypto + Vault key (not pgsodium TCE)
 
-**What people do:** Add a `tier` enum column to `public.users`. Set it to `'inform'`, `'connected'`, or `'empowered'`.
+**pgsodium is pending deprecation.** Supabase explicitly states it does not recommend new usage of pgsodium. Transparent Column Encryption (TCE) via pgsodium carries "high operational complexity and misconfiguration risk" per Supabase documentation.
 
-**Why it's wrong:** A flag can be set to any value at any time, including invalid combinations (empowered without a connected_profile row). Application bugs can create impossible states. Rollback of a failed empowerment transaction must reset the flag manually — this is exactly the kind of step that gets missed.
+**The correct pattern for this project:**
 
-**Do this instead:** Tier is determined by row existence. Run a join. The database enforces the constraint structurally, not through a value check.
+1. Store the encryption passphrase in Supabase Vault (a named secret: `'location_encryption_key'`)
+2. In `SECURITY DEFINER` RPCs, read the decrypted secret from `vault.decrypted_secrets`
+3. Use `pgcrypto.pgp_sym_encrypt` / `pgp_sym_decrypt` with that passphrase
+4. Store encrypted values as `bytea` columns
 
----
+This pattern is:
+- Supported: pgcrypto is available in all Supabase projects
+- Stable: Vault's API surface (the `vault.decrypted_secrets` view) is explicitly stable through the pgsodium deprecation
+- Aligned with existing project patterns: SECURITY DEFINER + `SET search_path = ''`
+- Auditable: key lives in Vault dashboard, not in migrations
 
-### Anti-Pattern 2: Sequential DB Calls for Atomic Operations
+**Important: `SET search_path = ''` means pgcrypto functions must be qualified.**
 
-**What people do:** In the Express service layer, run `INSERT INTO empowered_profiles` then `UPDATE compass_responses SET visibility = 'public'` as two separate `await` calls.
+In the Supabase default configuration, pgcrypto lives in the `extensions` schema. With `SET search_path = ''`, all references must be fully qualified:
+- `extensions.pgp_sym_encrypt()`
+- `extensions.pgp_sym_decrypt()`
 
-**Why it's wrong:** If the process crashes, a network error occurs, or the second query fails after the first succeeds, the system is in a partial state: an empowered_profiles row exists but compass visibility is still private (or vice versa). This is an invalid state with no clean recovery path.
+This is the same constraint already applied to all post-v1.2 RPCs.
 
-**Do this instead:** Use a Postgres function called via Supabase RPC. The function runs in a single transaction. Any failure rolls back both operations. The application receives a clear error and knows no partial state was written.
+### TypeScript handling of bytea columns
 
----
+When supabase-js returns a `bytea` column, the value is a PostgreSQL hex-format string prefixed with `\x`, for example `\x7b2274797065223a...`. The `database.types.ts` generated type will show this column as `string`.
 
-### Anti-Pattern 3: Exposing Sensitive Fields via Query Star
+**Critical constraint:** The route handler and service code must never read the raw `lat` or `lng` bytea columns. Jurisdiction resolution is entirely in-database. The TypeScript layer only sees the jurisdiction JSON returned by the RPC.
 
-**What people do:** `SELECT * FROM connect.connected_profiles WHERE user_id = $1` and return the result directly in the API response.
-
-**Why it's wrong:** `tolerance_rating`, `verification_method`, and internal fields get returned to clients. RLS may allow the row read (the owner has read access) but not every field should be serialized to the response.
-
-**Do this instead:** Always project specific columns in queries. Create explicit response serialization functions that whitelist fields by context (own profile, public view, admin view). Never return `*` in a query that feeds an API response.
+In strict TypeScript, if a query ever needs to select `lat` or `lng` (it should not), annotate the type as `string` (the hex representation) and do not attempt to parse it in application code:
 
 ```typescript
-// Correct: field-level projection
-const { data } = await supabase
-  .from('connected_profiles')
-  .select('id, user_id, display_name, verification_status, xp, gem_balance, veracity_rating, created_at')
-  .eq('user_id', userId)
-  .maybeSingle();
-// tolerance_rating is NOT in the select — never returned to clients
+// The bytea type in generated types:
+// lat: string   ← hex-encoded, e.g. '\x...'
+// lng: string   ← hex-encoded, e.g. '\x...'
+
+// NEVER do this in route code — decryption is in-database only:
+// const lat = parseFloat(hexToFloat(connectedProfile.lat)); // WRONG
 ```
 
 ---
 
-### Anti-Pattern 4: Admin Routes on the Public Router
+## Exact RPC Signatures
 
-**What people do:** Add admin functionality as a flag check inside a public route handler: `if (user.isAdmin) { doAdminThing(); }`.
+### `connect.update_user_location`
 
-**Why it's wrong:** Admin logic mixed into public routes is easy to accidentally expose, hard to audit, and creates implicit coupling between public and admin behavior.
+```sql
+CREATE OR REPLACE FUNCTION connect.update_user_location(
+  p_user_id    UUID,
+  p_lat_plain  FLOAT8,
+  p_lng_plain  FLOAT8,
+  p_consent    BOOLEAN
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_key TEXT;
+BEGIN
+  -- Validate consent must be explicit true
+  IF p_consent IS NOT TRUE THEN
+    RAISE EXCEPTION 'CONSENT_REQUIRED';
+  END IF;
 
-**Do this instead:** Separate Express router at `/api/admin/*` with its own middleware chain. Admin middleware is entirely separate from the public `authenticate` + `requireTier` chain. Clear boundary, independently auditable.
+  -- Validate coordinate range
+  IF p_lat_plain < -90 OR p_lat_plain > 90 THEN
+    RAISE EXCEPTION 'INVALID_LAT';
+  END IF;
+  IF p_lng_plain < -180 OR p_lng_plain > 180 THEN
+    RAISE EXCEPTION 'INVALID_LNG';
+  END IF;
+
+  -- Read encryption key from Vault
+  SELECT decrypted_secret INTO v_key
+  FROM vault.decrypted_secrets
+  WHERE name = 'location_encryption_key';
+
+  IF v_key IS NULL THEN
+    RAISE EXCEPTION 'ENCRYPTION_KEY_NOT_FOUND';
+  END IF;
+
+  -- Encrypt and persist — address string is already discarded by caller
+  UPDATE connect.connected_profiles
+  SET
+    lat              = extensions.pgp_sym_encrypt(p_lat_plain::text, v_key),
+    lng              = extensions.pgp_sym_encrypt(p_lng_plain::text, v_key),
+    location_consent = true,
+    location_set_at  = now(),
+    updated_at       = now()
+  WHERE user_id = p_user_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'PROFILE_NOT_FOUND';
+  END IF;
+
+  RETURN jsonb_build_object('success', true);
+
+EXCEPTION WHEN OTHERS THEN
+  RAISE;
+END;
+$$;
+```
+
+**TypeScript call:**
+
+```typescript
+const { data, error } = await adminRpc('update_user_location', {
+  p_user_id: userId,
+  p_lat_plain: lat,      // number (float)
+  p_lng_plain: lng,      // number (float)
+  p_consent: true,
+}, 'connect');
+
+// error.message will be 'CONSENT_REQUIRED' | 'INVALID_LAT' | 'INVALID_LNG'
+// | 'ENCRYPTION_KEY_NOT_FOUND' | 'PROFILE_NOT_FOUND' on failure
+```
+
+Note: `adminRpc` already accepts a schema parameter (third argument). Pass `'connect'` since the function lives in the `connect` schema.
 
 ---
 
-### Anti-Pattern 5: Cron Job That Can Crash the Server
+### `connect.resolve_user_jurisdiction`
 
-**What people do:** Run the cron callback without try/catch. An unhandled exception from a DB query propagates up and crashes Node.
+```sql
+CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(
+  p_user_id UUID
+)
+RETURNS JSONB
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_cp     connect.connected_profiles;
+  v_key    TEXT;
+  v_lat    FLOAT8;
+  v_lng    FLOAT8;
+  v_point  geometry;
+  v_result JSONB;
+BEGIN
+  -- Fetch connected profile (FOR UPDATE not needed — read-only path)
+  SELECT * INTO v_cp
+  FROM connect.connected_profiles
+  WHERE user_id = p_user_id;
 
-**Why it's wrong:** A demotion job failure should produce a log entry, not take down the API server.
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'PROFILE_NOT_FOUND';
+  END IF;
 
-**Do this instead:** Every cron callback is wrapped in a top-level try/catch. Errors are logged with enough context to debug. The cron continues scheduling future runs regardless of whether the previous run threw.
+  IF v_cp.location_consent IS NOT TRUE THEN
+    RAISE EXCEPTION 'NO_LOCATION_CONSENT';
+  END IF;
+
+  IF v_cp.lat IS NULL THEN
+    RAISE EXCEPTION 'NO_LOCATION_SET';
+  END IF;
+
+  -- Read encryption key from Vault
+  SELECT decrypted_secret INTO v_key
+  FROM vault.decrypted_secrets
+  WHERE name = 'location_encryption_key';
+
+  IF v_key IS NULL THEN
+    RAISE EXCEPTION 'ENCRYPTION_KEY_NOT_FOUND';
+  END IF;
+
+  -- Decrypt coordinates (text → float8)
+  v_lat := extensions.pgp_sym_decrypt(v_cp.lat, v_key)::FLOAT8;
+  v_lng := extensions.pgp_sym_decrypt(v_cp.lng, v_key)::FLOAT8;
+
+  -- Construct WGS84 point (ST_MakePoint takes lng, lat — note order)
+  v_point := extensions.ST_SetSRID(
+    extensions.ST_MakePoint(v_lng, v_lat),
+    4326
+  );
+
+  -- Query district boundaries
+  SELECT jsonb_agg(
+    jsonb_build_object(
+      'district_type', db.district_type,
+      'district_id',   db.district_id,
+      'district_name', db.district_name,
+      'state_code',    db.state_code
+    )
+  )
+  INTO v_result
+  FROM inform.district_boundaries db
+  WHERE extensions.ST_Contains(
+    db.boundary::extensions.geometry,
+    v_point
+  );
+
+  RETURN jsonb_build_object(
+    'districts', COALESCE(v_result, '[]'::jsonb),
+    'state_code', (
+      SELECT state_code FROM inform.district_boundaries
+      WHERE extensions.ST_Contains(boundary::extensions.geometry, v_point)
+      LIMIT 1
+    )
+  );
+
+EXCEPTION WHEN OTHERS THEN
+  RAISE;
+END;
+$$;
+```
+
+**TypeScript call and return type:**
+
+```typescript
+// In locationService.ts
+export type JurisdictionDistrict = {
+  district_type: string;   // 'congressional' | 'state_house' | 'state_senate' | 'county'
+  district_id: string;
+  district_name: string;
+  state_code: string;
+};
+
+export type JurisdictionResult = {
+  state_code: string | null;
+  districts: JurisdictionDistrict[];
+};
+
+const { data, error } = await adminRpc('resolve_user_jurisdiction', {
+  p_user_id: userId,
+}, 'connect');
+
+// error.message codes:
+// 'PROFILE_NOT_FOUND' → 404
+// 'NO_LOCATION_CONSENT' → 403
+// 'NO_LOCATION_SET' → 404
+// 'ENCRYPTION_KEY_NOT_FOUND' → 500
+```
 
 ---
 
-## Integration Points
+## Schema Changes
 
-### External Services
+### `connect.connected_profiles` additions
 
-| Service | Integration Pattern | Notes |
-|---------|---------------------|-------|
-| Supabase Auth | JWT issued by Supabase; validated in Express via `supabase.auth.getUser(token)` | Use service role client for validation; anon key never server-side |
-| Supabase DB | `@supabase/supabase-js` with service role key; RPC for transactions | All queries server-side only |
-| Upstash Redis | `ioredis` or `@upstash/redis`; wrapped with in-memory Map fallback | Redis down must never crash the API |
-| UptimeRobot | Pings `GET /api/health` every 5 minutes | Prevents Render cold starts on free tier |
-| Notification service | TBD — email (Resend/SendGrid) or in-app; called from cron and route handlers | Decouple from transaction path — notify after commit |
+```sql
+ALTER TABLE connect.connected_profiles
+  ADD COLUMN IF NOT EXISTS lat              BYTEA,
+  ADD COLUMN IF NOT EXISTS lng              BYTEA,
+  ADD COLUMN IF NOT EXISTS location_consent BOOLEAN,
+  ADD COLUMN IF NOT EXISTS location_set_at  TIMESTAMPTZ;
+```
 
-### Internal Boundaries
+All four columns are nullable. Null `lat`/`lng` means location not yet set. Null `location_consent` is treated identically to `false` in the RPC (explicit `IS NOT TRUE` check covers both).
 
-| Boundary | Communication | Notes |
-|----------|---------------|-------|
-| Public API ↔ Admin Tool | Same Express app, separate routers | Admin tool is an internal React app calling `/api/admin/*` |
-| Express ↔ Supabase | Service role client, RPC for transactions | Never expose service role key to client |
-| Express ↔ Redis | Cache client singleton with fallback | Cache tier lookups and rate-limit state |
-| Cron ↔ Service layer | Direct TypeScript function calls | Cron calls the same `executeDemotion` used by the route handler |
-| Feature repos ↔ This API | HTTP REST calls to `/api/*` | Feature repos (Compass, Connect, etc.) are consumers; they hold no account logic |
+**These columns must never appear in any SELECT that feeds an API response.** They must be excluded from `connected_profiles_public` view and from any explicit column list in route queries.
 
 ---
 
-## Suggested Build Order
+### `inform.district_boundaries` table
 
-### What Must Exist Before What
+```sql
+CREATE TABLE IF NOT EXISTS inform.district_boundaries (
+  id             UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
+  district_type  TEXT        NOT NULL,  -- 'congressional' | 'state_house' | 'state_senate' | 'county'
+  district_id    TEXT        NOT NULL,  -- e.g. 'IN-09' or '60'
+  district_name  TEXT        NOT NULL,
+  state_code     TEXT        NOT NULL,  -- 'IN'
+  boundary       extensions.geography(MULTIPOLYGON, 4326) NOT NULL,
+  created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+-- Spatial index — required for ST_Contains performance
+CREATE INDEX IF NOT EXISTS idx_district_boundaries_boundary
+  ON inform.district_boundaries USING GIST (boundary);
+
+-- Lookup index
+CREATE INDEX IF NOT EXISTS idx_district_boundaries_type_state
+  ON inform.district_boundaries (district_type, state_code);
+```
+
+**SRID 4326** (WGS84) is required — this is the coordinate system used by GPS devices and the Census Geocoder API response. TIGER shapefiles must be reprojected to 4326 before loading.
+
+**MULTIPOLYGON** not POLYGON because district boundaries often contain non-contiguous areas (islands, separated precincts). Using MULTIPOLYGON handles both cases.
+
+**Boundary data source:** US Census Bureau TIGER/Line 2024 shapefiles.
+
+- Congressional districts (119th): https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2024&layergroup=Congressional+Districts+(119)
+- State legislative districts: available from the same interface by selecting the appropriate layer group
+- County boundaries: also available from TIGER/Line
+
+Load using `shp2pgsql` (part of PostGIS) or Python `geopandas` → `psycopg2` pipeline. This is a one-time data load for Indiana at pilot scale.
+
+---
+
+## Connect Flow Integration Point
+
+**Where:** `POST /api/connect/set-location` — a new endpoint, NOT an extension of `POST /api/connect/complete`.
+
+**Rationale for separate endpoint (not folding into `complete`):**
+
+1. `complete_connect_flow` is an atomic RPC that already has a locked schema and well-tested behavior. Adding location to it requires geocoding (a network call to Census API) inside what is currently a pure DB transaction. Network calls inside DB transactions are an anti-pattern — if Census API is slow or down, the entire connect flow would hang or fail.
+
+2. Location consent is a separate, deliberate user action (consent moment should be distinct from account creation).
+
+3. Location can be updated post-Connect (user moves). Making it part of `complete` would create an artificial "must geocode on day-1" requirement.
+
+**Endpoint:**
 
 ```
-1. Supabase schema + migrations (foundation — nothing else can be built without it)
-   └── Schema creation, public.users, connected_profiles, empowered_profiles
-   └── Compass tables (inform schema)
-   └── Connections, follows, roles, gems, verification sessions
-   └── Invite codes (alpha enrollment)
-   └── RLS policies (all schemas)
-   └── Transaction RPC functions (empowerment, demotion, calibration lapse query)
+POST /api/connect/set-location
+Authorization: Bearer <jwt>
 
-2. Supabase client + auth middleware (gateway — all routes depend on this)
-   └── db/client.ts — service role singleton
-   └── middleware/auth.ts — JWT validation + tier detection
-   └── cache/redis.ts — Redis with fallback
-   └── GET /api/health
+Request body:
+{
+  "address": "401 N Morton St, Bloomington IN 47404",
+  "consent": true
+}
 
-3. Auth routes (prerequisite for any user-facing flow)
-   └── POST /api/auth/signup
-   └── POST /api/auth/login
-   └── POST /api/auth/logout
-
-4. Account routes (required before tier-specific flows can be tested)
-   └── GET /api/account/me
-   └── PATCH /api/account/me
-
-5. Connect flow (required before Empower flow — Empowered requires Connected)
-   └── POST /api/connect/start
-   └── GET /api/connect/status
-   └── POST /api/connect/complete
-   └── POST /api/connect/import-compass
-
-6. Compass routes (required before Empower preflight can check calibration)
-   └── GET /api/compass/topics
-   └── PUT /api/compass/:topicId
-   └── GET /api/compass/progress
-   └── GET /api/compass (own responses)
-   └── GET /api/compass/compare/:userId
-
-7. Empower flow (requires Connect flow + Compass routes to be complete)
-   └── POST /api/empower/preflight
-   └── POST /api/empower/confirm
-   └── POST /api/empower/demote
-
-8. Social graph routes (can be built in parallel with Empower flow)
-   └── Connections (request, accept/decline/block, list)
-   └── Follows (follow, unfollow, list)
-
-9. Calibration lapse cron (requires Empower flow to be complete + demotion RPC)
-   └── services/cron/calibrationLapse.ts
-   └── services/cron/index.ts registered at startup
-
-10. Admin tool routes (can begin once account + connect + empower flows exist)
-    └── /api/admin/invites
-    └── /api/admin/accounts
-    └── /api/admin/cohorts
-
-11. Public candidate pages (last — requires Empower flow + real data)
-    └── GET /api/candidates/:slug
+Validation (Zod):
+{
+  address: z.string().min(5).max(500),
+  consent: z.literal(true)   // must be explicit true — not a toggle
+}
 ```
+
+**Middleware chain:**
+
+```typescript
+router.post('/set-location',
+  requireAuth,
+  requireConnected,   // Connected tier required — Inform users cannot set location
+  async (req, res) => { ... }
+);
+```
+
+**Flow in route handler:**
+
+```typescript
+1. Validate body (Zod)
+2. locationService.geocodeAddress(body.address)
+   - Returns { lat, lng } or null
+   - On null: 422 { code: 'ADDRESS_NOT_FOUND', message: '...' }
+3. adminRpc('update_user_location', { p_user_id, p_lat_plain, p_lng_plain, p_consent: true }, 'connect')
+   - On RPC error: map error codes to HTTP status
+4. 200 { location_set: true }
+```
+
+**Error mapping:**
+
+| RPC error code | HTTP status | User-facing meaning |
+|----------------|------------|-------------------|
+| `ADDRESS_NOT_FOUND` (geocoder null) | 422 | Address could not be geocoded |
+| `CONSENT_REQUIRED` | 422 | consent: true is required |
+| `INVALID_LAT` / `INVALID_LNG` | 422 | Geocoder returned out-of-range coordinates |
+| `PROFILE_NOT_FOUND` | 404 | Connected profile missing (unexpected) |
+| `ENCRYPTION_KEY_NOT_FOUND` | 500 | Vault key not configured — infrastructure issue |
+
+---
+
+## `GET /api/account/me/jurisdiction` Endpoint
+
+**Location:** New file `backend/src/routes/location.ts`, mounted at `/api/account/me/jurisdiction` in `index.ts` (not inside `account.ts` — location is its own domain, and the route path is slightly misleading; consider `/api/location/jurisdiction` as an alternative if the project prefers cleaner namespace).
+
+OR, add to `account.ts` router as:
+
+```typescript
+router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res) => { ... });
+```
+
+**Middleware:** `requireAuth` + `requireConnected`. The RPC itself enforces `location_consent` check and returns `NO_LOCATION_CONSENT` — the route handler maps that to 403.
+
+**Response shape:**
+
+```json
+{
+  "state_code": "IN",
+  "districts": [
+    { "district_type": "congressional", "district_id": "IN-09", "district_name": "Indiana 9th Congressional District", "state_code": "IN" },
+    { "district_type": "state_house",   "district_id": "61",    "district_name": "Indiana House District 61",           "state_code": "IN" },
+    { "district_type": "state_senate",  "district_id": "40",    "district_name": "Indiana Senate District 40",          "state_code": "IN" },
+    { "district_type": "county",        "district_id": "055",   "district_name": "Monroe County",                       "state_code": "IN" }
+  ]
+}
+```
+
+Coordinates never appear in this response or any log line. The RPC decrypts in-database and returns only the resolved identifiers.
+
+---
+
+## Vault Key Setup
+
+The Vault key is a one-time setup step — not a migration. It must be performed in the Supabase dashboard before the RPCs are deployed.
+
+**Step 1 — Supabase Dashboard:**
+
+```
+Supabase Dashboard → Database → Vault → Add Secret
+  Name: location_encryption_key
+  Value: [strong random passphrase, e.g. 64 hex chars from openssl rand -hex 32]
+```
+
+**Step 2 — Confirm key is accessible:**
+
+```sql
+-- Run in SQL Editor (as postgres role):
+SELECT name, created_at FROM vault.decrypted_secrets WHERE name = 'location_encryption_key';
+-- Should return 1 row
+```
+
+**Step 3 — Grant the SECURITY DEFINER functions can read vault:**
+
+The `vault.decrypted_secrets` view is accessible to the `postgres` role by default (which is what SECURITY DEFINER functions run as in Supabase). No additional grants are needed, but verify in local dev with:
+
+```sql
+SET ROLE postgres;
+SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key';
+```
+
+**Important:** Never put the passphrase in a migration file. The migration creates the RPC functions; the key lives in Vault only. The passphrase must also go into `.env` for local development testing with the env var name `LOCATION_ENCRYPTION_KEY` (used only by the local Vault setup script, not the application code — the application reads from Vault via the RPC).
+
+---
+
+## PostGIS Extension Setup
+
+PostGIS is not currently enabled in this project. It must be enabled before the `inform.district_boundaries` table can be created.
+
+**Enable via Supabase Dashboard:**
+
+```
+Database → Extensions → search "postgis" → Enable
+(create in the "extensions" schema — Supabase default)
+```
+
+**Verify in migration:**
+
+```sql
+-- In the migration that creates district_boundaries, add a guard:
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_extension WHERE extname = 'postgis'
+  ) THEN
+    RAISE EXCEPTION 'PostGIS extension must be enabled before this migration. Enable it in the Supabase Dashboard under Database → Extensions.';
+  END IF;
+END;
+$$;
+```
+
+**`SET search_path = ''` and PostGIS:**
+
+PostGIS functions live in the `extensions` schema. With `SET search_path = ''` on SECURITY DEFINER functions, all PostGIS calls must be qualified:
+- `extensions.ST_Contains()`
+- `extensions.ST_MakePoint()`
+- `extensions.ST_SetSRID()`
+- `extensions.geometry` (type cast)
+- `extensions.geography(MULTIPOLYGON, 4326)` (column type — in migration, not in function body)
+
+This is consistent with the pattern already established for all post-v1.2 RPCs.
+
+---
+
+## Build Order
+
+This ordering respects all dependencies between components.
+
+```
+1. Enable PostGIS extension (Supabase Dashboard)
+   └── Required before district_boundaries table can be created
+   └── Required before ST_Contains can be called in any function
+
+2. Create Vault encryption key (Supabase Dashboard)
+   └── Required before update_user_location or resolve_user_jurisdiction can run
+   └── Must exist in BOTH local dev Vault and production Vault
+
+3. Migration: ALTER connected_profiles (add lat, lng, location_consent, location_set_at)
+   └── Additive — safe to apply while system is running
+   └── All new columns are nullable; no default values needed
+   └── Update connected_profiles_public view to explicitly exclude new columns
+
+4. Migration: CREATE inform.district_boundaries table + spatial index
+   └── Requires PostGIS (Step 1)
+   └── Table is empty until Step 5 populates it
+
+5. Load boundary data into district_boundaries
+   └── One-time data load: Indiana TIGER/Line shapefiles
+       - Congressional districts (119th, 2024)
+       - State house districts (2024)
+       - State senate districts (2024)
+       - County boundaries
+   └── Use shp2pgsql pipeline or Python geopandas → psycopg2
+   └── All polygons must be in SRID 4326 before INSERT
+
+6. Migration: CREATE connect.update_user_location RPC
+   └── Requires connected_profiles columns (Step 3)
+   └── Requires Vault key to exist (Step 2)
+   └── Requires pgcrypto extension (available by default in Supabase)
+
+7. Migration: CREATE connect.resolve_user_jurisdiction RPC
+   └── Requires connected_profiles columns (Step 3)
+   └── Requires district_boundaries table (Step 4)
+   └── Requires Vault key (Step 2)
+   └── Requires PostGIS (Step 1)
+
+8. Backend: locationService.ts
+   └── geocodeAddress(address: string): Promise<{ lat: number; lng: number } | null>
+   └── Uses Census Geocoder API with fetch (no npm package needed)
+
+9. Backend: POST /api/connect/set-location route
+   └── Requires locationService (Step 8)
+   └── Requires update_user_location RPC (Step 6)
+   └── Add to connect.ts router
+
+10. Backend: GET /api/account/me/jurisdiction route
+    └── Requires resolve_user_jurisdiction RPC (Step 7)
+    └── Add to account.ts router (or new location.ts router)
+
+11. Integration test coverage
+    └── set-location: address geocodes → encrypted storage (verify bytea non-null, never raw coords)
+    └── jurisdiction: resolve returns correct district IDs for known Bloomington address
+    └── jurisdiction: 403 when location_consent is null/false
+    └── jurisdiction: 404 when location not set (consent true but lat null)
+    └── Architecture test: lat/lng bytea columns never appear in any route query SELECT list
+```
+
+---
+
+## Component Boundaries
+
+| Component | Responsibility | Does NOT own |
+|-----------|---------------|--------------|
+| `locationService.ts` | Census Geocoder API call; returns `{lat,lng}` or null | Encryption; storage; any DB access |
+| `connect.update_user_location` RPC | Validates range; reads Vault key; encrypts; writes to connected_profiles | Geocoding; address parsing |
+| `connect.resolve_user_jurisdiction` RPC | Decrypts; constructs PostGIS point; ST_Contains query; returns jurisdiction JSON | Returning coordinates; caching |
+| `GET /api/account/me/jurisdiction` | Auth/tier middleware; calls RPC; maps error codes; serializes result | Any knowledge of encryption or coordinates |
+| `POST /api/connect/set-location` | Validates address string; calls geocoder; calls RPC; consent enforcement | Any knowledge of encryption algorithm |
+| `inform.district_boundaries` | Stores boundary polygons for jurisdiction lookup | User location data; any user PII |
+
+---
+
+## Anti-Patterns to Avoid
+
+### Anti-Pattern 1: Geocoding Inside the DB Transaction
+
+**What:** Adding address geocoding to the `complete_connect_flow` RPC or any existing RPC.
+
+**Why wrong:** The Census Geocoder is an external HTTP call. External I/O inside a Postgres transaction holds locks and creates a hard dependency on third-party availability. If Census API is slow (measured in seconds), the transaction holds a row lock on `verification_sessions` for that duration.
+
+**Do instead:** Geocode in the Express service layer before calling the RPC. The RPC receives only the resolved float8 coordinates.
+
+---
+
+### Anti-Pattern 2: Returning Coordinates in Any API Response
+
+**What:** Adding `lat` or `lng` fields to `/api/account/me` or any other endpoint.
+
+**Why wrong:** The product decision (confirmed in STATE.md) is that raw coordinates never leave the accounts system. The jurisdiction endpoint is the only exit path. Exposing coordinates even to the owning user creates audit/privacy risk.
+
+**Do instead:** The route handler calls `resolve_user_jurisdiction` and returns only the jurisdiction struct. The `lat`/`lng` columns are excluded from all SELECT lists in route code.
+
+---
+
+### Anti-Pattern 3: Encrypting in the Express Layer
+
+**What:** Calling `pgp_sym_encrypt` equivalent via Node.js crypto, sending the result to Supabase as a hex string.
+
+**Why wrong:** The encryption key would need to be available in the Express process environment. This means it lives in environment variables accessible to all application code. The Vault pattern keeps the key inside the database, never accessible to the application tier.
+
+**Do instead:** Pass plaintext coordinates to the `SECURITY DEFINER` RPC. The RPC reads the Vault key and encrypts inside Postgres. The key never crosses the DB boundary.
+
+---
+
+### Anti-Pattern 4: Using `.is('location_consent', null)` for the Jurisdiction Gate
+
+**What:** Checking `location_consent IS NULL` to mean "no consent."
+
+**Why wrong:** This would allow a row with `location_consent = false` to slip through.
+
+**Do instead:** The RPC uses `IF v_cp.location_consent IS NOT TRUE` — this correctly handles NULL, false, and any unexpected value as "no consent." The route handler maps the resulting `NO_LOCATION_CONSENT` exception to 403.
+
+---
+
+### Anti-Pattern 5: ST_Contains With Mixed geometry/geography Types
+
+**What:** Calling `ST_Contains(boundary, point)` where `boundary` is `geography` and `point` is `geometry` (or vice versa) without explicit casting.
+
+**Why wrong:** PostGIS does not automatically coerce between `geometry` and `geography`. The query will either error or silently produce wrong results.
+
+**Do instead:** Explicitly cast both operands to the same type. The RPC above casts `boundary::extensions.geometry` and creates the point as `geometry` via `ST_SetSRID(ST_MakePoint(...), 4326)`. Consistent casting is required.
+
+---
+
+## Integration With Existing Patterns
+
+This section confirms how the new components align with the patterns already established in the codebase.
+
+| Existing pattern | How location components comply |
+|-----------------|-------------------------------|
+| SECURITY DEFINER + `SET search_path = ''` | Both RPCs use this. All table refs and function calls are fully qualified. |
+| Two-pass validation in atomic RPCs | `update_user_location` validates consent and coordinate range before reading the Vault key or writing any data. |
+| `adminRpc()` wrapper for RPC calls | Both RPCs are called via `adminRpc('function_name', args, 'connect')` — the schema parameter routes to `connect` schema. |
+| Service role never used for reads in routes | `resolve_user_jurisdiction` result is opaque JSON — no route code reads raw `connected_profiles` columns. |
+| Sensitive columns excluded from SELECT lists | `lat`, `lng` must be added to the exclusion list alongside `tolerance_rating`, `legal_name`. |
+| Additive migration strategy | All schema changes are additive (`ADD COLUMN IF NOT EXISTS`, new tables). |
+| `connected_profiles_public` view excludes PII | `lat`, `lng`, `location_consent`, `location_set_at` must be explicitly excluded from this view in the migration that adds them. |
+
+---
+
+## Open Questions
+
+1. **PostGIS in local dev:** Supabase local development via `supabase start` uses a Docker image that may not have PostGIS enabled by default. Verify `extensions.postgis` exists in local dev before writing the boundary migration. Run `supabase db reset` after enabling.
+
+2. **Vault in local dev:** The Vault extension is available in Supabase local dev but requires manual key setup. The development workflow needs a `seed.sql` or setup script that creates the `location_encryption_key` in the local Vault before tests run. This key value can be a fixed test passphrase in dev (not the production value).
+
+3. **Census Geocoder reliability:** The Census Geocoder has no SLA and is rate-limited informally. For Alpha (small cohort, rare location-setting events), this is acceptable. If the API is unavailable, `set-location` fails gracefully with 503. Plan to evaluate alternatives at scale.
+
+4. **Boundary data refresh cadence:** Indiana redistricting happened in 2022 for the current legislative session (effective 2023). The 2024 TIGER files reflect the current boundaries. Next redistricting is post-2030 census. Boundary data can be treated as static for the Alpha period.
+
+5. **MULTIPOLYGON vs POLYGON:** Most Indiana districts are single polygons, but a MULTIPOLYGON type handles edge cases (non-contiguous districts) without schema change. Verify TIGER data uses `MULTIPOLYGON` in the shapefile geometry type before writing the CREATE TABLE migration — if it is `POLYGON`, use that type and avoid unnecessary complexity.
 
 ---
 
 ## Sources
 
-- Supabase RLS documentation: https://supabase.com/docs/guides/auth/row-level-security
-- Supabase RPC / Postgres functions: https://supabase.com/docs/guides/database/functions
-- `node-cron` documentation: https://www.npmjs.com/package/node-cron
-- Express middleware composition patterns: https://expressjs.com/en/guide/using-middleware.html
-- Postgres transaction isolation: https://www.postgresql.org/docs/current/transaction-iso.html
-- Design context: `C:/EV-Accounts/empowered-accounts-design.md`
-- Platform primer: `C:/EV-Accounts/empowered-vote-primer.md`
-- Project requirements: `C:/EV-Accounts/.planning/PROJECT.md`
+- Supabase Vault documentation: https://supabase.com/docs/guides/database/vault
+- pgsodium deprecation notice: https://supabase.com/docs/guides/database/extensions/pgsodium
+- pgcrypto function signatures: https://www.postgresql.org/docs/current/pgcrypto.html
+- PostGIS in Supabase: https://supabase.com/docs/guides/database/extensions/postgis
+- Census Geocoder API: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
+- Census 2024 TIGER/Line shapefiles: https://www.census.gov/cgi-bin/geo/shapefiles/index.php
+- bytea return type in supabase-js: https://github.com/orgs/supabase/discussions/2441
+- Supabase Vault blog: https://supabase.com/blog/supabase-vault
+- Indiana redistricting data: https://thearp.org/state/indiana/
+- Nominatim usage policy (privacy): https://operations.osmfoundation.org/policies/nominatim/
+- Actual `complete_connect_flow` RPC: `C:/EV-Accounts/backend/migrations/025_rpc_pool_migration.sql` (lines 1286–1354)
+- Existing SECURITY DEFINER RPC pattern: `C:/EV-Accounts/supabase/migrations/20260224000010_rpc_functions.sql`
+- `adminRpc` wrapper: `C:/EV-Accounts/backend/src/lib/supabase.ts`
 
 ---
-*Architecture research for: tiered account system — Supabase + Express/TypeScript*
-*Researched: 2026-02-24*
+
+*Architecture research for: location infrastructure integration — Supabase Vault + pgcrypto + PostGIS*
+*Researched: 2026-03-09*

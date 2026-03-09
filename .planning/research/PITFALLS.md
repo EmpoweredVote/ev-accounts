@@ -2,7 +2,7 @@
 
 **Research type:** Project Research — Pitfalls dimension
 **Project:** empowered-accounts (Empowered Vote)
-**Date:** 2026-02-24
+**Date:** 2026-02-24 (original) / 2026-03-09 (extended: location infrastructure)
 **Researcher:** gsd-project-researcher agent
 
 ---
@@ -17,6 +17,8 @@ Each pitfall includes: what goes wrong, warning signs, prevention strategy, and 
 
 ## Pitfall Index
 
+**Original (v1.0–v1.2 context):**
+
 1. [RLS Policy Gaps — The anon key / service role boundary](#1-rls-policy-gaps--the-anon-key--service-role-boundary)
 2. [RLS on JOIN and View Queries — Indirect data exposure](#2-rls-on-join-and-view-queries--indirect-data-exposure)
 3. [Atomic Transactions in Supabase — Partial state writes](#3-atomic-transactions-in-supabase--partial-state-writes)
@@ -27,6 +29,24 @@ Each pitfall includes: what goes wrong, warning signs, prevention strategy, and 
 8. [Session and Token Edge Cases](#8-session-and-token-edge-cases)
 9. [Admin Tool Security Mistakes](#9-admin-tool-security-mistakes)
 10. [RLS Testing — Verifying your policies actually work](#10-rls-testing--verifying-your-policies-actually-work)
+
+**Location Infrastructure (v1.3 context):**
+
+11. [Vault Key Loss — Encrypted location data permanently unreadable](#11-vault-key-loss--encrypted-location-data-permanently-unreadable)
+12. [pgsodium Deprecation — Wrong encryption primitive at the start](#12-pgsodium-deprecation--wrong-encryption-primitive-at-the-start)
+13. [Raw pgcrypto Encrypt Functions — No integrity, no IV management](#13-raw-pgcrypto-encrypt-functions--no-integrity-no-iv-management)
+14. [Statement Logging Leaks Cleartext Coordinates Into Supabase Logs](#14-statement-logging-leaks-cleartext-coordinates-into-supabase-logs)
+15. [SRID 0 Geometry — ST_Contains silently returns false for all points](#15-srid-0-geometry--st_contains-silently-returns-false-for-all-points)
+16. [ST_Contains Boundary Exclusion — Points on district edges return false](#16-st_contains-boundary-exclusion--points-on-district-edges-return-false)
+17. [TIGER/Line SRID 4269 vs Input SRID 4326 — Boundary query uses wrong CRS](#17-tigerline-srid-4269-vs-input-srid-4326--boundary-query-uses-wrong-crs)
+18. [Stale TIGER/Line Boundaries After Indiana Redistricting](#18-stale-tigerline-boundaries-after-indiana-redistricting)
+19. [bytea Column Type Mangling via supabase-js](#19-bytea-column-type-mangling-via-supabase-js)
+20. [RLS on Encrypted Columns — Raw bytea still readable if RLS is wrong](#20-rls-on-encrypted-columns--raw-bytea-still-readable-if-rls-is-wrong)
+21. [Partial Location State During Connect Flow](#21-partial-location-state-during-connect-flow)
+22. [Location Consent Revocation — Downstream features hold stale jurisdiction](#22-location-consent-revocation--downstream-features-hold-stale-jurisdiction)
+23. [Geocoding Coordinates Outside Indiana Boundaries](#23-geocoding-coordinates-outside-indiana-boundaries)
+24. [ST_MakePoint Argument Order — Longitude before latitude](#24-st_makepoint-argument-order--longitude-before-latitude)
+25. [PostGIS Not Installed or Wrong Schema on Supabase](#25-postgis-not-installed-or-wrong-schema-on-supabase)
 
 ---
 
@@ -603,7 +623,726 @@ For each table containing sensitive data, verify:
 
 ---
 
+---
+
+# Location Infrastructure Pitfalls (v1.3)
+
+**Context:** These pitfalls apply specifically to the encrypted lat/lng storage + PostGIS jurisdiction resolution feature being built in v1.3. Architecture decisions already made: lat/lng stored as `bytea` (Vault-encrypted), all reads/writes via `SECURITY DEFINER` RPCs with `SET search_path = ''`, `resolve_user_jurisdiction` RPC decrypts → `ST_Contains` → returns jurisdiction struct, TIGER/Line Indiana boundaries in `inform.district_boundaries`.
+
+---
+
+## 11. Vault Key Loss — Encrypted location data permanently unreadable
+
+### What Goes Wrong
+
+Supabase Vault encrypts data using a root key stored in Supabase's backend systems, separate from the database. If the Vault key becomes inaccessible — Supabase project deletion, catastrophic infrastructure failure, or key management error — all data encrypted with that key becomes permanently unreadable. There is no cryptographic recovery path. No key means no decrypt, ever.
+
+Concretely for this feature: if `location_encrypted` bytea columns on `connected_profiles` use a Vault-managed key and that key is lost, every user's location is permanently gone. The rows still exist with ciphertext, but decryption is impossible.
+
+Supabase documentation explicitly notes that "Supabase generates and preserves your project's root key behind the scenes" but does not document what happens to user data if a project is deleted or the key is rotated incorrectly. This is the most catastrophic failure mode and the documentation gap is real.
+
+### Warning Signs
+
+- No documented procedure for what happens to encrypted data if the Supabase project is deleted
+- No separate backup of the key ID or any key metadata
+- Encrypted columns added to tables without a documented key recovery process
+- Location data encrypted with the same key as unrelated application secrets in the Vault (one key for everything = one failure point for everything)
+
+### Prevention Strategy
+
+**Use a dedicated Vault key for location data** — not the same key used for other application secrets. Isolation means a key management mistake in one domain doesn't affect another.
+
+```sql
+-- Create a named key specifically for location data
+SELECT vault.create_secret('location-encryption-key-v1', 'location_key');
+-- Store the returned key_id in application config as LOCATION_VAULT_KEY_ID
+```
+
+**Document the key ID in your `.env.example` and deployment runbook.** The key ID is not sensitive — only the key itself is secret and Supabase holds it. But you need the ID to reference the key in RPCs, and if you lose the ID you cannot construct the decryption call.
+
+**Design for key rotation before you need it.** The column schema should include a `key_version` field alongside `location_encrypted`:
+
+```sql
+ALTER TABLE connect.connected_profiles
+  ADD COLUMN location_encrypted BYTEA,
+  ADD COLUMN location_key_version INTEGER DEFAULT 1,
+  ADD COLUMN location_nonce BYTEA;
+```
+
+When Supabase rotates the underlying key or you introduce key v2, the `location_key_version` field tells the decrypt RPC which key to use. Re-encrypt rows incrementally (background job) rather than all at once.
+
+**Communicate the limitation to product.** Location data encrypted with Vault is "best effort durable" — if Supabase loses the key, the data is gone. If location history is required for legal compliance or data portability, a separate plaintext export capability (under strict access controls) may be required. This is a product decision, not just a technical one.
+
+**Phase:** Location schema phase, before any migration is written. Key naming, versioning column, and documented recovery procedure must exist before the first encrypted row is stored.
+
+---
+
+## 12. pgsodium Deprecation — Wrong encryption primitive at the start
+
+### What Goes Wrong
+
+Supabase explicitly states that pgsodium is "pending deprecation" and that they "do not recommend any new usage of pgsodium." Specifically, **Transparent Column Encryption (TCE)** and **Server Key Management** from pgsodium are flagged as having "high level of operational complexity and misconfiguration risk" and should not be used on the Supabase platform.
+
+If the location encryption implementation uses pgsodium's TCE approach (e.g., `SECURITY LABEL FOR pgsodium ON COLUMN ... IS '...'`), that code will need to be migrated away from pgsodium as Supabase deprecates it. This creates a future forced migration while live encrypted data exists — exactly the worst time to change encryption implementations.
+
+The Vault extension's API will remain stable through the pgsodium deprecation (Supabase will swap internals), so **Vault is the correct primitive to build on**, not raw pgsodium calls.
+
+### Warning Signs
+
+- Any migration or RPC using `SECURITY LABEL FOR pgsodium ON COLUMN`
+- Direct calls to `pgsodium.crypto_secretbox()` or `pgsodium.crypto_secretbox_open()` in encryption RPCs
+- Code that references `pgsodium.crypto_aead_det_encrypt()` or similar pgsodium-specific functions directly
+
+### Prevention Strategy
+
+**Build on Vault, not pgsodium directly.** The encrypt/decrypt RPC should use `vault.create_secret()` and reference secrets by key ID, not by calling pgsodium functions directly. Vault's API is the stable interface Supabase commits to maintaining.
+
+If the architecture requires storing encrypted `bytea` directly in a column (rather than in the Vault secrets table), use `pgcrypto`'s PGP functions (not raw encrypt) or implement at the application layer before the RPC is called — not via pgsodium TCE.
+
+**Phase:** Architecture decision point before writing the first encryption migration. Once an encryption mechanism is in place with live data, changing it requires a re-encryption migration, which is operationally complex.
+
+---
+
+## 13. Raw pgcrypto Encrypt Functions — No integrity, no IV management
+
+### What Goes Wrong
+
+PostgreSQL's `pgcrypto` extension provides raw encryption functions (`encrypt()`, `decrypt()`, `encrypt_iv()`, `decrypt_iv()`). The official PostgreSQL documentation explicitly warns against using them:
+
+> "The raw encryption functions have major problems: they use the user key directly as the cipher key, don't provide any integrity checking for encrypted data, and expect that users manage all encryption parameters themselves, even IV."
+
+For IV specifically: if `encrypt()` is called without the `_iv` variant, **the IV defaults to all zeros**. An all-zeros IV with the same key means the same plaintext always produces the same ciphertext — an attacker who obtains two ciphertexts can determine if two users have the same location without decrypting either. For a civic platform where location privacy is the entire point, this is a fundamental failure.
+
+Even with `encrypt_iv()`, if the developer generates the IV once and reuses it (e.g., storing a static nonce in a constant), the same vulnerability applies.
+
+**There is no integrity check** in raw pgcrypto encryption. An attacker who can write to the database can modify the ciphertext, and the decrypt call will silently succeed, returning garbage coordinates. The `resolve_user_jurisdiction` RPC would then run `ST_Contains` on invalid coordinates and potentially return a wrong jurisdiction — or crash silently.
+
+### Warning Signs
+
+- Any RPC using `pgcrypto.encrypt()` or `pgcrypto.decrypt()` (raw, not PGP)
+- A stored `nonce` column that never changes between rows — same IV for all users
+- No authentication tag or HMAC alongside the ciphertext to verify integrity before decrypt
+- `encrypt_iv()` called with a hardcoded or static IV value
+
+### Prevention Strategy
+
+**Use Vault's managed encryption instead of raw pgcrypto.** Vault uses authenticated encryption (AEAD) internally, which provides both confidentiality and integrity. You cannot "decrypt" tampered ciphertext without an error — the integrity check fails first.
+
+If a custom bytea encryption approach is required (because you need to store ciphertext directly in a column rather than the Vault secrets table), use **pgcrypto's PGP functions** (`pgp_sym_encrypt` / `pgp_sym_decrypt`) rather than raw `encrypt`/`decrypt`. PGP functions handle IV generation internally and include integrity verification.
+
+**Nonce/IV generation per-row, not per-schema:** If any nonce-based approach is used, generate a fresh nonce for every encrypt call using `gen_random_bytes(24)` and store it in a companion `location_nonce BYTEA` column. The nonce is not secret and can be stored in plaintext.
+
+```sql
+-- Correct pattern: fresh nonce per row, stored alongside ciphertext
+UPDATE connect.connected_profiles
+SET
+  location_encrypted = pgp_sym_encrypt(
+    lat_lng_json::text,
+    vault_key_value,
+    'cipher-algo=aes256'
+  ),
+  location_updated_at = NOW()
+WHERE user_id = p_user_id;
+```
+
+**Phase:** Encryption RPC implementation. Must be reviewed before the first migration creates the encrypted column.
+
+---
+
+## 14. Statement Logging Leaks Cleartext Coordinates Into Supabase Logs
+
+### What Goes Wrong
+
+Supabase logs SQL statement text by default. When an RPC that accepts plaintext coordinates (e.g., `store_user_location(p_lat FLOAT, p_lng FLOAT, ...)`) is called, the plaintext coordinate values appear in the Supabase statement log — even though the coordinates are encrypted in the database immediately afterward.
+
+The log entry looks like:
+```
+STATEMENT: SELECT store_user_location(39.165325, -86.526386, 'v1')
+```
+
+This means the exact coordinates of every user who stores their location are stored in plaintext in Supabase's logging infrastructure, defeating the entire purpose of encryption.
+
+Supabase explicitly warns about this in the context of Vault secrets: "When you insert secrets into the vault table with an INSERT statement, those statements get logged by default into the Supabase logs. Since this would mean your secrets are stored unencrypted in the logs, you should turn off statement logging."
+
+Note: Supabase does not support configuring `pgaudit.log_parameter` precisely because it would log secrets from encrypted columns — they've blocked that specific pgaudit configuration to prevent this problem. But the statement logging issue with RPC parameters remains.
+
+### Warning Signs
+
+- `store_user_location` or any equivalent RPC accepts lat/lng as float parameters (plaintext in call)
+- Supabase statement logging not explicitly reviewed before location feature ships
+- No documentation of what is logged and what is not in the deployment runbook
+
+### Prevention Strategy
+
+**Encrypt coordinates server-side before the RPC call, not inside the RPC.** If encryption happens in the Express layer (using the Vault API to encrypt a JSON string containing lat/lng before sending to the DB), then the RPC call's parameters contain only ciphertext — which is meaningless in logs.
+
+Alternatively: if encryption must happen inside the RPC, **pass the address string** (not raw coordinates) to the DB and have the RPC encrypt the result immediately without logging intermediate values. However, the address string is itself sensitive.
+
+**The cleanest approach for this architecture:** Geocode server-side in Express (address → lat/lng), call `vault.create_secret()` to encrypt the coordinate pair as a JSON string via the Vault HTTP API from the Express service, store only the vault secret ID in the database column (not the ciphertext directly). The secret ID is meaningless in logs.
+
+**Practical mitigation if direct bytea storage is required:** Disable statement logging for the location-related RPCs using `SET log_statement = 'none'` within the function body (requires superuser-equivalent permissions on Supabase, which may not be available — verify before planning on this approach).
+
+**Phase:** Location schema design, before any RPC interface is defined. The logging behavior affects how the RPC contract must be structured.
+
+---
+
+## 15. SRID 0 Geometry — ST_Contains silently returns false for all points
+
+### What Goes Wrong
+
+PostGIS's `ST_MakePoint(lng, lat)` constructs a geometry with **SRID 0** by default — meaning "undefined coordinate system." If TIGER/Line district boundaries are loaded with SRID 4269 or 4326, and the user's point is constructed without explicitly setting the SRID, PostGIS 3.x throws an error on mismatched SRIDs:
+
+```
+ERROR: Operation on mixed SRID geometries (Point, 0) != (Polygon, 4326)
+```
+
+Earlier behavior (pre-3.x) would silently return false. Either way the query produces wrong results: either an error that crashes the RPC, or a false return that tells every user they are in no district.
+
+The issue is subtle because the math is correct — the coordinates are right, just the metadata (SRID) is missing. Everything appears to work in development if boundaries were accidentally loaded as SRID 0 too (both sides unspecified, PostGIS compares 0 == 0 and proceeds with possibly wrong geometry).
+
+### Warning Signs
+
+- `ST_MakePoint(lng, lat)` used in the `resolve_user_jurisdiction` RPC without wrapping in `ST_SetSRID(..., 4326)`
+- `ST_GeomFromText('POINT(...)', 4326)` used inconsistently (sometimes with SRID arg, sometimes without)
+- TIGER/Line boundaries loaded via `shp2pgsql` without the `-s 4269` flag
+- No test that verifies a known Monroe County address returns the correct district from the loaded boundaries
+- `SELECT ST_SRID(geom) FROM inform.district_boundaries LIMIT 1` returns 0
+
+### Prevention Strategy
+
+**Always explicit SRID on point construction.** The `resolve_user_jurisdiction` RPC must construct the point as:
+
+```sql
+ST_SetSRID(ST_MakePoint(p_lng, p_lat), 4326)
+```
+
+Never `ST_MakePoint(p_lng, p_lat)` alone — that produces SRID 0.
+
+**Load TIGER/Line boundaries with explicit SRID.** When running `shp2pgsql`, always specify the source SRID:
+
+```bash
+shp2pgsql -s 4269 tl_2023_18_sldu.shp inform.district_boundaries | psql ...
+```
+
+TIGER/Line data is in NAD83 (SRID 4269). For Indiana, NAD83 and WGS84 (4326) are practically identical (sub-meter difference), so storing boundaries as 4326 is acceptable — but the import must use `-s 4269:4326` to reproject during import if you want to unify all geometry under one SRID.
+
+**Write a smoke test migration.** After loading Indiana boundaries, add a verification query to the deployment runbook:
+
+```sql
+-- Verify Monroe County courthouse is in Indiana District 61 (expected result)
+SELECT district_name
+FROM inform.district_boundaries
+WHERE ST_Contains(
+  geom,
+  ST_SetSRID(ST_MakePoint(-86.5264, 39.1653), 4326)
+);
+-- Should return at least one row
+```
+
+**Phase:** Boundary data loading migration and RPC implementation. Test before any user-facing endpoint is built on top of it.
+
+---
+
+## 16. ST_Contains Boundary Exclusion — Points on district edges return false
+
+### What Goes Wrong
+
+`ST_Contains` has a specific mathematical behavior with boundary points: **a polygon does not contain points on its own boundary**. The PostGIS documentation states: "polygons and lines do not contain lines and points lying fully in their boundary."
+
+For a civic platform, this means: a user whose geocoded address happens to fall exactly on a district boundary line (e.g., they live on a street that forms the border between two districts) will receive `false` from `ST_Contains` for both neighboring districts. `resolve_user_jurisdiction` returns null for a valid Indiana address.
+
+In practice this is rare — geocoded coordinates are rarely exact boundary vertices — but it is real, especially for addresses on major roads that form county or district boundaries, or when the geocoder snaps coordinates to a road centerline that coincides with a boundary.
+
+The correct alternative is `ST_Covers`, which uses the definition "no point of B lies outside A" and correctly returns true for boundary points.
+
+### Warning Signs
+
+- `resolve_user_jurisdiction` returns null for some valid Indiana addresses in testing
+- Testing only with addresses clearly in the interior of districts, not addresses on boundaries
+- No handling in the RPC for the case where `ST_Contains` returns zero matching districts for a valid coordinate
+
+### Prevention Strategy
+
+**Use `ST_Covers` instead of `ST_Contains` for point-in-polygon jurisdiction lookup:**
+
+```sql
+-- In resolve_user_jurisdiction RPC:
+SELECT district_type, district_name, district_id
+FROM inform.district_boundaries
+WHERE ST_Covers(geom, ST_SetSRID(ST_MakePoint(p_lng, p_lat), 4326));
+```
+
+`ST_Covers` is slightly more expensive than `ST_Contains` but the difference is negligible for the GIST spatial index-assisted queries this RPC will use.
+
+**Add graceful handling for no-match.** Even with `ST_Covers`, some edge cases return zero districts (unincorporated areas, boundary precision gaps between loaded shapefiles). The RPC should return a partial jurisdiction struct with `null` for unknown fields rather than throwing an error — and the Express handler should return a structured response indicating "location stored, jurisdiction resolution pending manual review" rather than a 500.
+
+**Phase:** RPC implementation. Simple one-word change from `ST_Contains` to `ST_Covers`. Establish as project standard now so it's not missed.
+
+---
+
+## 17. TIGER/Line SRID 4269 vs Input SRID 4326 — Boundary query uses wrong CRS
+
+### What Goes Wrong
+
+TIGER/Line shapefiles are published in **NAD83 (SRID 4269)**, not WGS84 (SRID 4326). If district boundaries are loaded into PostGIS with their native SRID 4269 and the incoming user point is constructed as SRID 4326, PostGIS 3.x raises an error on mismatched SRIDs. If somehow the comparison proceeds with mismatched CRS, coordinate system differences cause spatial queries to produce incorrect results.
+
+In Indiana specifically, the practical difference between NAD83 and WGS84 is sub-meter (roughly 1 meter at most) — small enough that for district-level jurisdiction resolution (districts are miles wide), the CRS difference does not affect correctness of results. But PostGIS still treats them as different SRIDs and will error unless handled.
+
+### Warning Signs
+
+- `SELECT ST_SRID(geom) FROM inform.district_boundaries LIMIT 1` returns 4269 while point construction uses 4326
+- `shp2pgsql` command used without `-s 4269:4326` (reproject on import) or an explicit `ST_Transform` call in the RPC
+- No documented SRID strategy in the boundary loading migration comments
+
+### Prevention Strategy
+
+**Establish a single SRID for all spatial data in this system: 4326.** Reproject at import time using `shp2pgsql`'s `-s from:to` syntax:
+
+```bash
+# Reproject from NAD83 to WGS84 during import
+shp2pgsql -s 4269:4326 tl_2023_18_sldu.shp inform.district_boundaries_sldu | psql ...
+```
+
+After import, verify:
+```sql
+SELECT ST_SRID(geom) FROM inform.district_boundaries LIMIT 1;
+-- Should return 4326
+```
+
+**Alternative:** Load with native SRID 4269 and use `ST_Transform` in the RPC to convert the input point:
+
+```sql
+-- In RPC: transform input point to match boundary SRID
+WHERE ST_Covers(
+  geom,
+  ST_Transform(ST_SetSRID(ST_MakePoint(p_lng, p_lat), 4326), 4269)
+)
+```
+
+This approach is correct but adds complexity. Reprojecting on import is simpler.
+
+**Phase:** Boundary data loading migration. Document the chosen SRID strategy in a comment in the migration file so future boundary updates follow the same approach.
+
+---
+
+## 18. Stale TIGER/Line Boundaries After Indiana Redistricting
+
+### What Goes Wrong
+
+Indiana redistricted in 2021 (effective 2022 election). TIGER/Line shapefiles are released annually by the Census Bureau, and the 2021 redistricting is reflected in 2022+ shapefiles. If older shapefiles (pre-2022) are used, some district boundaries will be wrong.
+
+More critically: Indiana attempted a mid-decade redistricting in late 2025. The state House approved new congressional maps (HB 1032) in October 2025; the state Senate rejected them in December 2025. The current maps remain the 2021-drawn districts. However, **future redistricting is possible**, and any loaded TIGER/Line boundaries will become stale if new maps are enacted.
+
+For a civic platform that tells users which district they're in, returning an incorrect district is a trust-destroying error — particularly for Empowered users who represent constituents.
+
+### Warning Signs
+
+- TIGER/Line shapefiles used without a year documented in the migration file name or comment
+- No `boundary_vintage` column on `inform.district_boundaries` to track which year's data is loaded
+- No documented process for updating boundaries when redistricting occurs
+- Using pre-2022 shapefiles (which reflect pre-redistricting Indiana districts)
+
+### Prevention Strategy
+
+**Document the vintage in the migration.** Name the migration explicitly: `030_load_indiana_boundaries_tiger2023.sql`. Add a comment at the top: `-- Source: TIGER/Line 2023, retrieved YYYY-MM-DD from census.gov/geo/maps-data/data/tiger-line.html`.
+
+**Add a `boundary_vintage` column to `inform.district_boundaries`:**
+
+```sql
+ALTER TABLE inform.district_boundaries ADD COLUMN boundary_vintage INTEGER NOT NULL DEFAULT 2023;
+```
+
+This allows querying which year's data is in use and simplifies partial updates.
+
+**Use 2023 or newer TIGER/Line files for the initial load.** As of this writing (March 2026), TIGER/Line 2023 data reflects the 2022 redistricting. 2024 shapefiles may also be available from the Census Bureau.
+
+**Plan for future boundary updates.** When redistricting occurs, the update path is: load new shapefiles into a staging table, validate against known test coordinates, swap the production table in a migration. Because boundaries are loaded data (not user-generated), this is a data migration, not a schema migration — it can be done without downtime.
+
+**Phase:** Boundary data loading migration. Vintage documentation is a 30-second addition with long-term operational value.
+
+---
+
+## 19. bytea Column Type Mangling via supabase-js
+
+### What Goes Wrong
+
+The Supabase JavaScript client does not automatically handle binary serialization for `bytea` columns. When you pass data intended for a `bytea` column:
+
+- A `Uint8Array` passed directly gets converted to its string representation (`[1,2,3]`), storing the ASCII codes of those characters — completely wrong
+- PostgreSQL returns bytea columns in hex format (`\xdeadbeef`), not as a Buffer or Uint8Array
+
+In the location infrastructure context: if any code path reads the `location_encrypted bytea` column via supabase-js rather than through an RPC, TypeScript will type the value as `string` (it receives `\x...` hex). If code then tries to pass that string directly back to a decrypt function expecting binary, the decrypt call receives wrong input and either crashes or returns garbage.
+
+The TypeScript generated types (`database.types.ts`) will type `bytea` columns as `string`, not `Buffer` — which is technically accurate (it's a hex string) but easy to misuse.
+
+### Warning Signs
+
+- Any code that reads `location_encrypted` directly via `.from('connected_profiles').select('location_encrypted')` rather than through the `resolve_user_jurisdiction` RPC
+- TypeScript showing `location_encrypted: string` in generated types and that value being passed without transformation to any decrypt call
+- Tests that write fake bytea data as a JavaScript string without hex encoding
+- `console.log(locationEncrypted)` showing `\x...` strings without explanation in code comments
+
+### Prevention Strategy
+
+**Enforce RPC-only access to encrypted columns.** The `location_encrypted` column should never be read directly via supabase-js. Add this as an architecture test analogous to the existing `supabaseAdmin` banned-from-routes test:
+
+```typescript
+// architecture test
+it('no direct reads of location_encrypted column', () => {
+  // grep source for .select() calls containing 'location_encrypted'
+  // all access must go through RPC
+});
+```
+
+**If bytea data must round-trip through the application layer** (e.g., for testing or migration utilities), use hex encoding explicitly:
+
+```typescript
+// Writing bytea to Supabase from Node.js
+const hexEncoded = '\\x' + Buffer.from(binaryData).toString('hex');
+await supabase.from('table').insert({ encrypted_col: hexEncoded });
+
+// Reading bytea from Supabase in Node.js
+const hexString: string = row.encrypted_col; // type: string, value: "\xdeadbeef"
+const buffer = Buffer.from(hexString.slice(2), 'hex');
+```
+
+**Phase:** Location RPC implementation. The architecture test should be written before the RPC, so the prohibition is established before any shortcut is tempting.
+
+---
+
+## 20. RLS on Encrypted Columns — Raw bytea still readable if RLS is wrong
+
+### What Goes Wrong
+
+Encrypting a column does not substitute for RLS. If the RLS policy on `connect.connected_profiles` allows any authenticated user to read all rows (e.g., `FOR SELECT USING (true)`), then any user can read every other user's `location_encrypted bytea` value. The data is encrypted, so they cannot decrypt it without the Vault key — but they can exfiltrate the ciphertext for offline attacks, and for sophisticated adversaries this is a meaningful attack surface.
+
+More subtly: PostgreSQL RLS evaluates conditions against column values, but for `bytea` columns there is nothing special about how the condition is applied. A policy like `USING (user_id = auth.uid())` works correctly — it filters rows by the `user_id` column (plaintext), not by the encrypted column. RLS works correctly with bytea; the risk is simply that RLS might be too permissive, not that it fails to evaluate.
+
+The second risk: the `decrypt` step in the `SECURITY DEFINER` RPC runs outside the caller's RLS context (that's the point of SECURITY DEFINER). If the RPC does not explicitly verify that the requesting user owns the record before decrypting, any authenticated user could call `resolve_user_jurisdiction(target_user_id)` and receive the jurisdiction result derived from another user's encrypted location.
+
+### Warning Signs
+
+- `connected_profiles` RLS policy is `FOR SELECT USING (true)` or otherwise non-restrictive
+- `resolve_user_jurisdiction` RPC does not include an ownership check (`WHERE user_id = auth.uid()`) before decrypting
+- SECURITY DEFINER RPCs that accept a `user_id` parameter without verifying `p_user_id = auth.uid()`
+- `SET search_path = ''` missing from the RPC (opens schema injection vector — established project standard from Phase 13)
+
+### Prevention Strategy
+
+**RLS on `connected_profiles` must use ownership restriction:**
+
+```sql
+CREATE POLICY "users can read own profile"
+ON connect.connected_profiles
+FOR SELECT
+USING (user_id = auth.uid());
+```
+
+This prevents direct column reads by non-owners regardless of encryption status.
+
+**Ownership check inside every SECURITY DEFINER location RPC:**
+
+```sql
+CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(p_user_id UUID)
+RETURNS jsonb
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_caller UUID := auth.uid();
+BEGIN
+  -- Verify caller owns this profile (or is service role with uid = null)
+  IF v_caller IS NOT NULL AND v_caller != p_user_id THEN
+    RAISE EXCEPTION 'permission_denied';
+  END IF;
+  -- ... decrypt and resolve
+END;
+$$;
+```
+
+**`SET search_path = ''` on all location RPCs** — already the established project standard from Phase 13. Non-negotiable.
+
+**Phase:** Location RPC implementation. The ownership check is a one-liner but must be present before any location RPC goes to production.
+
+---
+
+## 21. Partial Location State During Connect Flow
+
+### What Goes Wrong
+
+The location capture flow has multiple steps: user provides address → server geocodes address → server encrypts coordinates → server stores to database → server resolves jurisdiction and caches. If any step fails after a preceding step has succeeded, the user is left in a partial state:
+
+- **Geocoding fails** (network error, invalid address, ambiguous result): no coordinates, no stored location, clean — user should retry with a better address
+- **Geocoding succeeds, encryption/storage fails**: coordinates were derived but not stored — clean, can retry
+- **Storage succeeds, jurisdiction resolution fails**: location is stored and encrypted correctly, but the jurisdiction endpoint will fail or return null — the user has consented to location but gets no feature benefit
+- **Storage succeeds, `location_consent` flag not updated**: location is stored but the `GET /api/account/me/jurisdiction` endpoint checks `location_consent` and returns 403 — user is confused
+
+The worst partial state is: `location_encrypted` set, `location_consent = false`. The data exists but the flag says it doesn't. Or: `location_consent = true`, `location_encrypted = null`. The flag says data exists but nothing is there to decrypt.
+
+### Warning Signs
+
+- `location_consent` flag and `location_encrypted` column updated in separate non-atomic operations
+- No handling in the `GET /api/account/me/jurisdiction` route for the case where `location_consent = true` but `location_encrypted = null`
+- No error response distinction between "geocoding failed" (user should retry) vs "storage failed" (system error, retry automatically)
+- Geocoding and storage in separate try/catch blocks with different error handling paths
+
+### Prevention Strategy
+
+**Atomic update: consent flag + encrypted location in a single RPC:**
+
+```sql
+CREATE OR REPLACE FUNCTION connect.store_user_location(
+  p_user_id UUID,
+  p_location_encrypted BYTEA,
+  p_location_nonce BYTEA,
+  p_key_version INTEGER
+)
+RETURNS void
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE connect.connected_profiles
+  SET
+    location_encrypted = p_location_encrypted,
+    location_nonce = p_location_nonce,
+    location_key_version = p_key_version,
+    location_consent = true,
+    location_updated_at = NOW()
+  WHERE user_id = p_user_id;
+END;
+$$;
+```
+
+Both fields change in one statement — no partial state possible.
+
+**Geocoding must succeed before the RPC is called.** The Express handler structure:
+
+```
+1. Geocode address (external service call) → if fails, return 422 with specific error
+2. Encrypt coordinates (Vault call) → if fails, return 500, nothing stored
+3. Call store_user_location RPC → if fails, return 500, nothing stored
+4. Return success (consent + location now consistent)
+```
+
+Steps 1 and 2 fail cleanly (nothing in DB yet). Step 3 is the single write point. This ensures the DB is never in partial state.
+
+**`GET /api/account/me/jurisdiction` must handle all states gracefully:**
+
+| State | Response |
+|-------|----------|
+| `location_consent = false` | 403 or empty jurisdiction |
+| `location_consent = true`, `location_encrypted = null` | 500 with internal error (data inconsistency — log for investigation) |
+| `location_consent = true`, decrypt succeeds, no district found | 200 with `{ jurisdiction: null, reason: 'no_district_match' }` |
+| `location_consent = true`, decrypt + ST_Covers succeeds | 200 with full jurisdiction struct |
+
+**Phase:** Location Connect flow implementation. The atomic RPC structure must be designed before the Express handler is written.
+
+---
+
+## 22. Location Consent Revocation — Downstream features hold stale jurisdiction
+
+### What Goes Wrong
+
+A user revokes location consent after their jurisdiction has been resolved and used by downstream features. For example: a user's district was resolved as "Indiana House District 61," that fact was used to populate their profile, filter relevant Symposium content, or pre-fill a district field on an Empowered profile. If the user later revokes consent and deletes their location, those downstream usages hold a stale reference.
+
+The revocation path for `location_consent = false` needs to:
+1. Set `location_consent = false`
+2. Clear `location_encrypted` and `location_nonce`
+3. Handle what happens to data derived from that location in other tables
+
+For Empowered profiles specifically: `district_id`, `district_label`, and related fields on `empower.empowered_profiles` may have been populated from the resolved jurisdiction. These are the user's own public civic record — should they be cleared on location revocation? This is a product decision with platform integrity implications.
+
+The pitfall is not implementing consent revocation atomically, or not having a policy for what happens to derived data.
+
+### Warning Signs
+
+- No `DELETE /api/account/me/location` endpoint (no revocation path exists at all)
+- Location consent revocation clears `connected_profiles` columns but leaves `district_id` on `empowered_profiles` populated
+- No documented policy on derived data retention after consent revocation
+- Downstream features cache jurisdiction results independently without checking current consent state
+
+### Prevention Strategy
+
+**Implement revocation atomically via RPC:**
+
+```sql
+CREATE OR REPLACE FUNCTION connect.revoke_user_location(p_user_id UUID)
+RETURNS void
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE connect.connected_profiles
+  SET
+    location_encrypted = NULL,
+    location_nonce = NULL,
+    location_key_version = NULL,
+    location_consent = false,
+    location_updated_at = NOW()
+  WHERE user_id = p_user_id;
+END;
+$$;
+```
+
+**Define the derived data policy before implementing location storage.** Options:
+- **Strict:** Revocation clears all derived fields (district_id, district_label on empowered_profiles). User must re-provide location to re-populate.
+- **Retain-last:** Derived fields remain populated until the user explicitly clears them. Revocation only prevents future reads and updates.
+
+This is a product decision for the phase that designs the Empowered profile fields. Document the chosen policy in the migration comment for the `location_consent` column.
+
+**`GET /api/account/me/jurisdiction` must re-check consent on every request** — never cache the consent state across requests. Redis caching of jurisdiction results should include `location_consent` as part of the cache key invalidation condition.
+
+**Phase:** Location Connect flow implementation for the revocation endpoint. Derived data policy: Empowered profile schema phase.
+
+---
+
+## 23. Geocoding Coordinates Outside Indiana Boundaries
+
+### What Goes Wrong
+
+A user provides a valid address that geocodes correctly but resolves to coordinates outside Indiana — for example, a P.O. box in another state, a business address in a border city, or a malformed address that the geocoder interprets as a different location. The coordinates are valid and non-null, encryption succeeds, but `ST_Covers` finds no matching Indiana district boundary.
+
+More concerning: Indiana has border cities where the ZIP code spans state lines (e.g., areas near Cincinnati or Louisville). A user who genuinely lives near the Indiana border might provide a legitimate address that geocodes to the Kentucky side of the line.
+
+In these cases, `resolve_user_jurisdiction` returns null or an empty result — which is technically correct (no district found) but the user experience is confusing ("I live in Indiana, why can't you find my district?").
+
+### Warning Signs
+
+- No validation in the Express handler that geocoded coordinates fall within a rough Indiana bounding box before storing
+- `resolve_user_jurisdiction` RPC that returns empty result is treated as an error (500) rather than a valid no-match case
+- No user-facing message distinguishing "address not found" from "address found but outside Indiana coverage area"
+
+### Prevention Strategy
+
+**Pre-validate coordinates against Indiana's bounding box before encrypting and storing.** Indiana's approximate bounding box:
+
+```typescript
+const INDIANA_BOUNDS = {
+  minLat: 37.77,
+  maxLat: 41.78,
+  minLng: -88.10,
+  maxLng: -84.78
+};
+
+function isWithinIndianaBounds(lat: number, lng: number): boolean {
+  return lat >= INDIANA_BOUNDS.minLat && lat <= INDIANA_BOUNDS.maxLat
+    && lng >= INDIANA_BOUNDS.minLng && lng <= INDIANA_BOUNDS.maxLng;
+}
+```
+
+This is a loose check (bounding box, not actual state boundary), so it's not a substitute for `ST_Covers` — but it catches gross misgeocodes before they reach the DB.
+
+**Return a structured error from the jurisdiction endpoint, not null:**
+
+```typescript
+// Not: return null
+// Yes: return { jurisdiction: null, reason: 'coordinates_outside_coverage' }
+```
+
+**Phase:** Location Express handler implementation. The bounding box check is a 10-line addition before the encrypt/store call.
+
+---
+
+## 24. ST_MakePoint Argument Order — Longitude before latitude
+
+### What Goes Wrong
+
+`ST_MakePoint` takes arguments in `(X, Y)` order — and in geographic coordinates, **X is longitude, Y is latitude**. This is the opposite of the common human mental model ("lat/lng" where latitude is listed first).
+
+A developer writing the `resolve_user_jurisdiction` RPC who passes `(lat, lng)` instead of `(lng, lat)` creates a point in the wrong hemisphere. For Indiana coordinates (lat ~40°N, lng ~-86°E), swapping the arguments produces a point at approximately (40°E, -86°N) — in the Caspian Sea region. `ST_Covers` returns false for all districts, `resolve_user_jurisdiction` always returns null. No error is raised because the geometry is valid — just wrong.
+
+This is one of the most common GIS mistakes and is entirely silent.
+
+### Warning Signs
+
+- `ST_MakePoint(p_lat, p_lng)` anywhere in the RPC code (lat first = wrong)
+- A known-good Indiana coordinate (e.g., the Monroe County Courthouse at lat=39.165, lng=-86.527) returning no jurisdiction match
+- Variable names `lat` and `lng` used inconsistently with `ST_MakePoint` argument order in the same function
+
+### Prevention Strategy
+
+**Make the argument order unmissable in RPC parameter names and comments:**
+
+```sql
+-- p_lng is X (longitude, ~-86 for Indiana), p_lat is Y (latitude, ~40 for Indiana)
+-- ST_MakePoint takes (X=lng, Y=lat) — longitude FIRST
+CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(
+  p_user_id UUID,
+  p_lat FLOAT8,  -- Y coordinate, ~39-42 for Indiana
+  p_lng FLOAT8   -- X coordinate, ~-85 to -88 for Indiana
+)
+...
+  ST_SetSRID(ST_MakePoint(p_lng, p_lat), 4326)  -- lng first: X, then Y
+```
+
+**Write the smoke test with a known coordinate as part of boundary loading.** The Monroe County Courthouse (39.165325, -86.526386) is a reliable test point. If `resolve_user_jurisdiction(null, 39.165325, -86.526386)` returns no district, the argument order is wrong.
+
+**Phase:** RPC implementation. Write the test before the RPC goes to production.
+
+---
+
+## 25. PostGIS Not Installed or Wrong Schema on Supabase
+
+### What Goes Wrong
+
+PostGIS must be explicitly enabled on the Supabase project before any spatial queries or migrations run. If the extension is not enabled, every migration containing `geometry` column types or `ST_*` function calls will fail. Because Supabase migrations run sequentially, a failed spatial migration blocks all subsequent migrations.
+
+Additionally, as of PostGIS 2.3+, the extension is **not relocatable** — it cannot be moved from the schema it was installed in. On Supabase, PostGIS installs into the `extensions` schema by default. If a migration assumes PostGIS functions are in `public`, function calls will fail with "function not found" unless the function is schema-qualified or `extensions` is in the `search_path`.
+
+For SECURITY DEFINER functions with `SET search_path = ''` (the project standard), the `search_path` is empty — so any `ST_Contains()` call inside such an RPC must be fully qualified as `extensions.ST_Contains()` (or whatever schema PostGIS installed into on the project).
+
+### Warning Signs
+
+- Migrations using `geometry` type or `ST_*` functions failing with "type does not exist" or "function not found"
+- `ST_Contains()` called without schema prefix inside a `SECURITY DEFINER` function that has `SET search_path = ''`
+- No explicit PostGIS enable step in the deployment runbook
+- `SELECT extschema FROM pg_extension WHERE extname = 'postgis'` not run before writing any spatial query
+
+### Prevention Strategy
+
+**Enable PostGIS explicitly in the earliest spatial migration:**
+
+```sql
+CREATE EXTENSION IF NOT EXISTS postgis WITH SCHEMA extensions;
+```
+
+**Verify the installed schema before writing any RPC:**
+
+```sql
+SELECT extschema FROM pg_extension WHERE extname = 'postgis';
+-- Returns: extensions (typically)
+```
+
+**In all SECURITY DEFINER RPCs with `SET search_path = ''`, fully qualify PostGIS functions:**
+
+```sql
+-- Wrong (breaks with SET search_path = ''):
+WHERE ST_Covers(geom, ST_SetSRID(ST_MakePoint(p_lng, p_lat), 4326))
+
+-- Correct:
+WHERE extensions.ST_Covers(geom, extensions.ST_SetSRID(extensions.ST_MakePoint(p_lng, p_lat), 4326))
+```
+
+This aligns with the existing project standard (`SET search_path = ''` requires fully qualified table refs as of Phase 13).
+
+**Add PostGIS enable to the deployment runbook** as a manual pre-migration step for the live environment, with a verification query:
+
+```sql
+SELECT PostGIS_Version();
+-- If this errors, PostGIS is not enabled
+```
+
+**Phase:** First spatial migration. The schema-qualification requirement for `SET search_path = ''` RPCs must be established before any spatial RPC is written.
+
+---
+
 ## Summary Table
+
+**Original Pitfalls:**
 
 | Pitfall | Severity for EV | Phase to Address |
 |---|---|---|
@@ -617,6 +1356,26 @@ For each table containing sensitive data, verify:
 | Session/token edge cases | High — stale auth state, key exposure | Foundation |
 | Admin tool security | High — privilege escalation | Admin tools phase, audit log in Foundation |
 | RLS not tested | Critical — all RLS policies may be ineffective | Foundation + ongoing |
+
+**Location Infrastructure Pitfalls (v1.3):**
+
+| Pitfall | Severity for EV | Phase to Address |
+|---|---|---|
+| Vault key loss — data permanently unreadable | Critical — all user locations unrecoverable | Location schema (before first migration) |
+| pgsodium deprecation — wrong primitive | High — forced migration while live data exists | Architecture decision, before schema |
+| Raw pgcrypto — no integrity, bad IV defaults | Critical — silent ciphertext corruption, IV reuse | Encryption RPC implementation |
+| Statement logging leaks cleartext coordinates | High — defeats entire purpose of encryption | Location schema design, before RPC interface |
+| SRID 0 geometry — ST_Contains always false | High — all jurisdiction queries return null | Boundary loading + RPC implementation |
+| ST_Contains boundary exclusion | Low-Medium — rare edge case, wrong null result | RPC implementation (use ST_Covers instead) |
+| TIGER/Line SRID 4269 vs 4326 mismatch | Medium — PostGIS error or wrong CRS math | Boundary loading migration |
+| Stale TIGER/Line after redistricting | Medium — wrong district for some users | Boundary loading migration |
+| bytea type mangling via supabase-js | Medium — silent data corruption if used directly | RPC implementation + architecture test |
+| RLS too permissive on encrypted columns | High — ciphertext exfiltration + no ownership check in RPC | Location RPC implementation |
+| Partial location state during Connect flow | High — consent flag and encrypted data disagree | Location Connect flow implementation |
+| Location consent revocation — stale derived data | Medium — product decision gap | Location flow + Empowered profile schema |
+| Geocoding outside Indiana boundaries | Low — confusing UX, not a data integrity risk | Location Express handler |
+| ST_MakePoint argument order (lng first) | Critical — silent wrong-hemisphere coordinates | RPC implementation (write smoke test first) |
+| PostGIS not enabled / wrong schema | High — blocks all spatial migrations | First spatial migration + deployment runbook |
 
 ---
 
@@ -636,6 +1395,14 @@ These rules apply across all pitfalls and should be standing platform constraint
 
 6. **Tier decisions are always made from the database, never from JWT claims alone.**
 
+7. **All SECURITY DEFINER RPCs use `SET search_path = ''` with fully qualified table and function references** — including `extensions.ST_Covers()`, `extensions.ST_MakePoint()`, etc. for PostGIS functions.
+
+8. **`ST_Covers` not `ST_Contains` for all point-in-polygon jurisdiction queries.** Points on district boundaries must match.
+
+9. **`ST_MakePoint(lng, lat)` — longitude (X) first, always.** Comment this in every RPC that constructs a point.
+
+10. **`location_encrypted` column is never read directly via supabase-js.** All location access goes through RPCs.
+
 ---
 
-*Sources: Supabase documentation (RLS, Auth, pg_cron), PostgreSQL documentation (row security, transaction control, SECURITY DEFINER), common patterns from tiered auth system post-mortems, Render platform documentation (cold starts, cron scheduling), civic platform threat modeling considerations.*
+*Sources: Supabase documentation (RLS, Auth, Vault, pgsodium deprecation notice, pg_cron), PostgreSQL documentation (pgcrypto warnings, row security, SECURITY DEFINER), PostGIS documentation (ST_Contains, ST_Covers, ST_MakePoint, SRID handling, projection workshop), TIGER/Line technical documentation (coordinate system NAD83/SRID 4269), Indiana redistricting history (Ballotpedia, IGA), supabase-js bytea discussion #2441, Supabase encryption best practices discussion #9868.*
