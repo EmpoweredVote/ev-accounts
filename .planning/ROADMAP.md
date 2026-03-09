@@ -5,6 +5,7 @@
 - ✅ **v1.0 MVP** — Phases 1–8 (shipped 2026-02-28)
 - ✅ **v1.1 XP & Progression** — Phases 9–11 (shipped 2026-03-04)
 - ✅ **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–16 (shipped 2026-03-07)
+- 🚧 **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–23 (in progress)
 
 ## Phases
 
@@ -48,6 +49,126 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 </details>
 
+### 🚧 v1.3 Alpha Launch & Location Infrastructure (In Progress)
+
+**Milestone Goal:** Get Alpha live (migrations to production, CompassV2 contract), establish the location privacy infrastructure (encrypted lat/lng, PostGIS jurisdiction resolution), expand the empowered_profiles politician schema for VQ readiness, extend the gem system to three currencies, and centralize the profile page in accounts.
+
+#### Phase 17: Live Alpha Deployment
+**Goal:** The production Supabase instance is verified live with all v1.2 migrations applied, confirmed by a full smoke test suite.
+**Depends on:** Phases 1–16 (prior work)
+**Requirements:** DEPLOY-01, DEPLOY-02, DEPLOY-03
+**Success Criteria** (what must be TRUE):
+  1. Migrations 026–029 are applied to the production Supabase instance and all pre/post verification queries pass.
+  2. A deployment runbook exists with migration order, rollback steps, environment checklist, and PostGIS + pgcrypto enablement steps — sufficient for a cold-start re-deploy.
+  3. The production smoke test suite passes: health check returns 200, a test auth flow succeeds, compass endpoints return data, the admin UI loads without errors, and the essentials politicians endpoint returns results.
+  4. The production environment is demonstrably accessible to Alpha users — not just "migrations ran successfully in a dry run."
+**Plans:** TBD
+
+Plans:
+- [ ] 17-01: TBD
+
+---
+
+#### Phase 18: CompassV2 API Contract
+**Goal:** The accounts API fully satisfies the CompassV2 frontend contract so CompassV2 can authenticate and exchange data without workarounds.
+**Depends on:** Phase 17
+**Requirements:** CV2-01, CV2-02, CV2-03, CV2-04, CV2-05
+**Success Criteria** (what must be TRUE):
+  1. An authenticated request using `Authorization: Bearer <token>` (no cookie) succeeds on all authenticated routes — CompassV2 can use its existing token without session cookie setup.
+  2. `GET /api/account/me` returns `completed_onboarding: boolean` and the structured `xp` object `{ total, level, xp_in_level, xp_to_next_level }` — the fields CompassV2 reads are present in the documented shape.
+  3. `POST /api/auth/signup` accepts and stores the `email` field without error.
+  4. Compass answer response shapes from `/api/compass/answers` and the batch endpoint match the CompassV2 repo contract (verified against the contract document, not assumed).
+  5. `GET /api/admin/me` returns `{ id, email }` so the admin UI auth store has a non-empty user id.
+**Plans:** TBD
+
+Plans:
+- [ ] 18-01: TBD
+
+---
+
+#### Phase 19: Location Schema & RPCs
+**Goal:** Encrypted coordinates can be written and read via SECURITY DEFINER RPCs, and Indiana TIGER/Line district boundaries are loaded and queryable via PostGIS.
+**Depends on:** Phase 17 (production deployment context), Phase 18 (no blocker, but same milestone)
+**Requirements:** LOC-01, LOC-02, LOC-03, LOC-04, LOC-05
+**Success Criteria** (what must be TRUE):
+  1. Calling `connect.upsert_user_location` with a real lat/lng writes encrypted `bytea` values to `connected_profiles`; a subsequent direct DB inspection confirms the columns contain ciphertext, not plaintext floats.
+  2. Calling `connect.resolve_user_jurisdiction` for a known Bloomington, IN address returns the correct Indiana 9th congressional district identifier — confirming geometry, SRID, and `ST_Covers` logic are all correct.
+  3. `ST_Covers` queries against the loaded boundary tables return the correct Monroe County districts (state senate, state house, county, school district) for that same Bloomington address.
+  4. Raw coordinates never appear in the return value of `resolve_user_jurisdiction` — only the jurisdiction JSON struct is returned.
+  5. The TIGER/Line data load runbook step is documented (not a migration): ogr2ogr flags, Indiana FIPS filter, SRID reprojection 4269→4326, and post-load SRID verification query.
+
+**Note:** The TIGER/Line data load itself is a runbook step, not a migration. The migration creates the `inform.district_boundaries` table and schema; the runbook populates it.
+**Plans:** TBD
+
+Plans:
+- [ ] 19-01: TBD
+
+---
+
+#### Phase 20: Location Endpoints & Validation
+**Goal:** An authenticated user can set their address via the API and receive their jurisdiction back, with raw coordinates never appearing in any API response.
+**Depends on:** Phase 19
+**Requirements:** LOC-06, LOC-07, LOC-08, LOC-09
+**Success Criteria** (what must be TRUE):
+  1. `POST /api/connect/set-location` with a valid Monroe County address returns jurisdiction data and sets `location_consent = true` — the full flow from address string to jurisdiction works end-to-end.
+  2. `POST /api/connect/set-location` with a PO Box address (`PO Box`, `P.O. Box`, or `POB`, case-insensitive) returns a user-facing validation error before any geocoding call is made.
+  3. `GET /api/account/me/jurisdiction` returns 403 when `location_consent` is false or null; returns jurisdiction JSON when consent is true.
+  4. An architecture test asserts that `encrypted_lat`, `encrypted_lng`, and any plaintext float coordinate representation never appear in route SELECT lists or API response objects — confirmed to pass with 0 violations.
+  5. The full location flow (`set-location` → `jurisdiction`) can be exercised against the production environment without exposing plaintext coordinates at any layer (API response, server logs visible to application code, or returned RPC data).
+**Plans:** TBD
+
+Plans:
+- [ ] 20-01: TBD
+
+---
+
+#### Phase 21: empowered_profiles Politician Schema
+**Goal:** The `empower.empowered_profiles` table carries the full politician field set so Essentials and Validation Quests can consume representative data without schema gaps.
+**Depends on:** Phase 17
+**Requirements:** PROF-01, PROF-02, PROF-03
+**Success Criteria** (what must be TRUE):
+  1. `empower.empowered_profiles` contains all politician columns (`representing_city`, `representing_state`, `district_type`, `district_label`, `district_id`, `chamber_name`, `chamber_name_formal`, `government_name`, `office_title`, `is_vacant`, `is_candidate`) — the migration applies cleanly with no errors.
+  2. `GET /api/essentials/politicians` and `GET /api/essentials/candidates` return all new fields with names that exactly match what `usePoliticianData.js` in the Essentials repo reads — no field name mismatches.
+  3. `database.types.ts` reflects the updated schema and TypeScript strict compilation passes with 0 errors across backend and admin source.
+**Plans:** TBD
+
+Plans:
+- [ ] 21-01: TBD
+
+---
+
+#### Phase 22: Multi-Currency Gem System
+**Goal:** The gem ledger supports three currencies (yellow/blue/red), CTC awards yellow gems through the API instead of direct RPC, and balances appear correctly on `/api/account/me`.
+**Depends on:** Phase 17, Phase 18
+**Requirements:** GEM-01, GEM-02, GEM-03, GEM-04, GEM-05, GEM-06, GEM-07
+**Success Criteria** (what must be TRUE):
+  1. Calling `POST /api/gems/award` with a valid service key awards yellow gems and the response includes `{ gem_type: 'yellow', amount, new_balance, is_duplicate }` — CTC can migrate off the direct RPC call to this endpoint.
+  2. `GET /api/account/me` returns `gems: { yellow: number, blue: number, red: number }` — the structured object replaces the legacy integer `gem_balance` field.
+  3. An integration test awards yellow gems via `POST /api/gems/award` and asserts `yellow_gem_balance` increments correctly on the subsequent `GET /api/account/me` response — the balance-always-0 bug is confirmed fixed.
+  4. A service key configured for yellow gems only receives 422 if it attempts to award blue or red gems — per-key `permittedTypes` enforcement works.
+  5. The admin tool account detail page displays three separate gem balances (yellow / blue / red) replacing the previous single balance display.
+**Plans:** TBD
+
+Plans:
+- [ ] 22-01: TBD
+
+---
+
+#### Phase 23: Central Profile Page
+**Goal:** A single accounts-owned profile endpoint aggregates user data for any authenticated or public viewer, replacing per-feature profile views.
+**Depends on:** Phase 22 (for gem data shape), Phase 20 (for location_consent field)
+**Requirements:** PROFILE-01, PROFILE-02, PROFILE-03
+**Success Criteria** (what must be TRUE):
+  1. `GET /api/account/profile/:userId` returns `{ username, tier, level, total_xp, selected_topic_ids, empowered_profile? }` for any valid userId without authentication — the public profile shape is accessible and contains no sensitive fields (no gems, no tolerance_rating, no location).
+  2. `GET /api/account/profile/me` for an authenticated owner returns the public shape plus `{ gem_balances: { yellow, blue, red }, location_consent, email }` — the owner sees their full aggregated profile in one call.
+  3. The profile page UI in the admin React app displays the aggregated profile data using the new endpoint — any previous per-feature profile views in the admin tool are replaced.
+**Plans:** TBD
+
+Plans:
+- [ ] 23-01: TBD
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -68,4 +189,10 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
 | 15. Compass Admin React UI | v1.2 | 5/5 | Complete | 2026-03-07 |
 | 16. v1.2 Gap Closure | v1.2 | 1/1 | Complete | 2026-03-07 |
-
+| 17. Live Alpha Deployment | v1.3 | 0/? | Not started | - |
+| 18. CompassV2 API Contract | v1.3 | 0/? | Not started | - |
+| 19. Location Schema & RPCs | v1.3 | 0/? | Not started | - |
+| 20. Location Endpoints & Validation | v1.3 | 0/? | Not started | - |
+| 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |
+| 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
+| 23. Central Profile Page | v1.3 | 0/? | Not started | - |
