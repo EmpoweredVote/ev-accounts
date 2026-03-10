@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 18 of 23 (CompassV2 API Contract)
-Plan: — (not yet planned)
-Status: Ready to plan
-Last activity: 2026-03-10 — Phase 17 complete (3/3 plans, production verified — migrations applied, smoke test passing, admin UI live)
+Plan: 1 of 4 in phase
+Status: In progress
+Last activity: 2026-03-10 — Completed 18-01-PLAN.md (decimal compass values migration)
 
-Progress: [███░░░░░░░] ~21% (3 of ~14 v1.3 plans complete)
+Progress: [████░░░░░░] ~28% (4 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -47,6 +47,9 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Smoke test auth check: 401 is the only pass** — 500 = Supabase auth unreachable, 200 = catastrophic. Each status has distinct diagnostic meaning. (17-02)
 - **Admin UI check hardcoded as [SKIP]** — Programmatic JS error detection not feasible in a fetch-based script; kept visible in output for operator checklist. (17-02)
 - **Essentials politicians check validates migration 026** — Endpoint queries is_candidate column; 500 response during Alpha deploy = migration not applied. (17-02)
+- **NUMERIC(3,1) for compass values; bounds 0.5–5.5** — INT stances (1–5) coexist with write-in half-integer positions. Outer bounds allow placement just outside defined stance range. (18-01)
+- **migrate_guest_compass_state uses ON CONFLICT DO NOTHING** — never overwrites post-signup activity; per-row FK exception handler skips stale topic IDs rather than aborting. (18-01)
+- **upsert_compass_answer gains SET search_path = ''** — was absent from migration 025 version; brought in line with project SECURITY DEFINER conventions. (18-01)
 
 ### Open Blockers
 
@@ -60,5 +63,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Phase 17 complete — all 3 plans executed, production verified (migrations applied, smoke test passing, admin UI live at accounts.empowered.vote)
-Resume: Run `/gsd:discuss-phase 18` or `/gsd:plan-phase 18` to begin CompassV2 API Contract phase.
+Stopped at: Completed 18-01-PLAN.md — migration 030 created (decimal compass values, updated upsert RPC, guest migration RPC)
+Resume file: None
+Resume: Execute plan 18-02 (compass route updates) or 18-03 (guest migration endpoint).
