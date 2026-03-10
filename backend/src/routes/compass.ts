@@ -31,6 +31,14 @@ import type { Request, Response } from 'express';
  *
  * Route ordering: specific paths before parameterized paths to prevent
  * Express routing conflicts (e.g., /politicians before /politicians/:id).
+ *
+ * Anonymous compass mode (optionalAuth + short-circuit guards):
+ *   - GET /answers, POST /answers/batch, GET /selected-topics,
+ *     PUT /selected-topics, POST /answers all use optionalAuth.
+ *   - When !authReq.userId (unauthenticated), these routes return empty data
+ *     ([], { topic_ids: [] }, or null) immediately — no DB access.
+ *   - Authenticated calls are fully preserved (same path, same logic).
+ *   - DELETE /answers/me and GET /progress remain requireAuth (always protected).
  */
 
 const router = Router();
@@ -131,14 +139,15 @@ router.delete(
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/answers
-// Auth: required
+// Auth: optional — unauthenticated returns 200 []
 // Returns user's own compass responses including the inverted field.
 // Triggers lazy promotion of compass_import_draft on first call (non-fatal).
 // Uses createUserClient — RLS enforces owner-only access to compass_responses.
 // ---------------------------------------------------------------------------
 
-router.get('/answers', requireAuth, async (req: Request, res: Response): Promise<void> => {
+router.get('/answers', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json([]); return; }
 
   try {
     // Lazy promotion — non-fatal if it fails (draft preserved for retry)
@@ -166,14 +175,15 @@ router.get('/answers', requireAuth, async (req: Request, res: Response): Promise
 
 // ---------------------------------------------------------------------------
 // POST /api/compass/answers/batch
-// Auth: required
+// Auth: optional — unauthenticated returns 200 []
 // Returns answers for a specific list of topic IDs.
 // Body: { ids: string[] } — array of topic UUID strings (1-100 items).
 // Uses createUserClient — RLS enforces owner-only access.
 // ---------------------------------------------------------------------------
 
-router.post('/answers/batch', requireAuth, async (req: Request, res: Response): Promise<void> => {
+router.post('/answers/batch', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json([]); return; }
 
   const parsed = batchAnswersSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -208,7 +218,7 @@ router.post('/answers/batch', requireAuth, async (req: Request, res: Response): 
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/selected-topics
-// Auth: required
+// Auth: optional — unauthenticated returns 200 { topic_ids: [] }
 // Returns the user's saved topic IDs from connect.connected_profiles.
 // Uses createUserClient — RLS enforces owner-only access to connected_profiles.
 // Returns 403 NOT_CONNECTED if the user has not completed the Connect flow.
@@ -216,9 +226,10 @@ router.post('/answers/batch', requireAuth, async (req: Request, res: Response): 
 
 router.get(
   '/selected-topics',
-  requireAuth,
+  optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     const authReq = req as AuthenticatedRequest;
+    if (!authReq.userId) { res.status(200).json({ topic_ids: [] }); return; }
 
     try {
       const db = createUserClient(authReq.accessToken);
@@ -363,15 +374,16 @@ router.get(
 
 // ---------------------------------------------------------------------------
 // POST /api/compass/answers
-// Auth: required
+// Auth: optional — unauthenticated returns 200 null
 // Upserts a single compass response and atomically appends to change_history.
 // Entire operation runs in a SECURITY DEFINER RPC (upsert_compass_answer).
 // change_history record is ALWAYS inserted — even first calibration (old_value=NULL)
 // and same-value recalibration. It is a full audit log.
 // ---------------------------------------------------------------------------
 
-router.post('/answers', requireAuth, async (req: Request, res: Response): Promise<void> => {
+router.post('/answers', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const authReq = req as AuthenticatedRequest;
+  if (!authReq.userId) { res.status(200).json(null); return; }
 
   const parsed = postAnswerSchema.safeParse(req.body);
   if (!parsed.success) {
@@ -411,7 +423,7 @@ router.post('/answers', requireAuth, async (req: Request, res: Response): Promis
 
 // ---------------------------------------------------------------------------
 // PUT /api/compass/selected-topics
-// Auth: required
+// Auth: optional — unauthenticated returns 200 { topic_ids: [] }
 // Saves the user's selected topic IDs after server-side validation.
 // Validates ALL submitted IDs exist and are live before storing.
 // Returns 403 NOT_CONNECTED if the user has no connected_profiles row.
@@ -419,9 +431,10 @@ router.post('/answers', requireAuth, async (req: Request, res: Response): Promis
 
 router.put(
   '/selected-topics',
-  requireAuth,
+  optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     const authReq = req as AuthenticatedRequest;
+    if (!authReq.userId) { res.status(200).json({ topic_ids: [] }); return; }
 
     const parsed = putSelectedTopicsSchema.safeParse(req.body);
     if (!parsed.success) {
