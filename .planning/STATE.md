@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 17 of 23 (Live Alpha Deployment) — COMPLETE
-Plan: 2 of 2 in phase (17-01 and 17-02 complete)
-Status: Phase complete — ready for Phase 18
-Last activity: 2026-03-09 — Completed 17-02-PLAN.md (smoke test script)
+Phase: 18 of 23 (CompassV2 API Contract)
+Plan: — (not yet planned)
+Status: Ready to plan
+Last activity: 2026-03-10 — Phase 17 complete (3/3 plans, production verified — migrations applied, smoke test passing, admin UI live)
 
-Progress: [██░░░░░░░░] ~14% (2 of ~14 v1.3 plans complete)
+Progress: [███░░░░░░░] ~21% (3 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -50,7 +50,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 
 ### Open Blockers
 
-- **Migrations 026–029 not yet applied to live DB** — Tooling is ready (DEPLOY.md + applyMigrations.ts + smokeTest.ts). Run DEPLOY.md runbook to execute against production Supabase.
+- **PostgREST schema config requires DB-level override** — Supabase dashboard UI change was not picked up by PostgREST. Fixed via `ALTER ROLE authenticator SET pgrst.db_schemas TO '...'`. Document this in DEPLOY.md for future deploys.
 - **CompassV2 frontend CV2-01 through CV2-05** — Accounts side addressed in Phase 18; CompassV2 repo must implement its side separately.
 
 ### Pending Todos
@@ -59,6 +59,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-09
-Stopped at: Completed 17-02-PLAN.md — smoke test script (Phase 17 complete)
-Resume: Run `/gsd:execute-phase 18` to begin Phase 18 (CompassV2 API compatibility — CV2-01 through CV2-05).
+Last session: 2026-03-10
+Stopped at: Phase 17 complete — all 3 plans executed, production verified (migrations applied, smoke test passing, admin UI live at accounts.empowered.vote)
+Resume: Run `/gsd:discuss-phase 18` or `/gsd:plan-phase 18` to begin CompassV2 API Contract phase.

@@ -62,11 +62,12 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   2. A deployment runbook exists with migration order, rollback steps, environment checklist, and PostGIS + pgcrypto enablement steps — sufficient for a cold-start re-deploy.
   3. The production smoke test suite passes: health check returns 200, a test auth flow succeeds, compass endpoints return data, the admin UI loads without errors, and the essentials politicians endpoint returns results.
   4. The production environment is demonstrably accessible to Alpha users — not just "migrations ran successfully in a dry run."
-**Plans:** 2 plans
+**Plans:** 3 plans
 
 Plans:
-- [ ] 17-01-PLAN.md — Migration apply script (applyMigrations.ts) + deployment runbook (DEPLOY.md)
-- [ ] 17-02-PLAN.md — Smoke test suite (smokeTest.ts) with 5 endpoint checks
+- [x] 17-01-PLAN.md — Migration apply script (applyMigrations.ts) + deployment runbook (DEPLOY.md)
+- [x] 17-02-PLAN.md — Smoke test suite (smokeTest.ts) with 5 endpoint checks
+- [x] 17-03-PLAN.md — Production execution checkpoints (human-confirmed deploy)
 
 ---
 
@@ -190,7 +191,7 @@ Plans:
 | 14. Compass Admin Backend | v1.2 | 3/3 | Complete | 2026-03-06 |
 | 15. Compass Admin React UI | v1.2 | 5/5 | Complete | 2026-03-07 |
 | 16. v1.2 Gap Closure | v1.2 | 1/1 | Complete | 2026-03-07 |
-| 17. Live Alpha Deployment | v1.3 | 0/2 | Not started | - |
+| 17. Live Alpha Deployment | v1.3 | 3/3 | Complete | 2026-03-10 |
 | 18. CompassV2 API Contract | v1.3 | 0/? | Not started | - |
 | 19. Location Schema & RPCs | v1.3 | 0/? | Not started | - |
 | 20. Location Endpoints & Validation | v1.3 | 0/? | Not started | - |
