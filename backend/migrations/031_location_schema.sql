@@ -54,8 +54,21 @@ CREATE INDEX IF NOT EXISTS idx_district_boundaries_type
 -- No user should insert/update/delete boundaries (runbook step only).
 ALTER TABLE inform.district_boundaries ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY IF NOT EXISTS "district_boundaries_authenticated_read"
-  ON inform.district_boundaries
-  FOR SELECT
-  TO authenticated
-  USING (true);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_policies
+    WHERE schemaname = 'inform'
+      AND tablename  = 'district_boundaries'
+      AND policyname = 'district_boundaries_authenticated_read'
+  ) THEN
+    EXECUTE '
+      CREATE POLICY "district_boundaries_authenticated_read"
+        ON inform.district_boundaries
+        FOR SELECT
+        TO authenticated
+        USING (true)
+    ';
+  END IF;
+END;
+$$;

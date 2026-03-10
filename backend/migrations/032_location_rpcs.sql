@@ -100,7 +100,7 @@ DECLARE
   v_encrypted_lng bytea;
   v_lat           float8;
   v_lng           float8;
-  v_point         geometry;
+  v_point         public.geometry;
   v_result        jsonb;
 BEGIN
   -- Fetch key from Vault (SECURITY DEFINER allows vault schema access)
