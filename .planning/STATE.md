@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 18 of 23 (CompassV2 API Contract)
-Plan: 1 of 4 in phase
+Plan: 2 of ~5 in phase
 Status: In progress
-Last activity: 2026-03-10 — Completed 18-01-PLAN.md (decimal compass values migration)
+Last activity: 2026-03-10 — Completed 18-02-PLAN.md (anonymous compass mode + decimal value schema)
 
-Progress: [████░░░░░░] ~28% (4 of ~14 v1.3 plans complete)
+Progress: [████░░░░░░] ~29% (5 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -50,6 +50,8 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **NUMERIC(3,1) for compass values; bounds 0.5–5.5** — INT stances (1–5) coexist with write-in half-integer positions. Outer bounds allow placement just outside defined stance range. (18-01)
 - **migrate_guest_compass_state uses ON CONFLICT DO NOTHING** — never overwrites post-signup activity; per-row FK exception handler skips stale topic IDs rather than aborting. (18-01)
 - **upsert_compass_answer gains SET search_path = ''** — was absent from migration 025 version; brought in line with project SECURITY DEFINER conventions. (18-01)
+- **Anonymous compass mode: optionalAuth + short-circuit guard** — five answer routes return empty data ([], null, { topic_ids: [] }) for unauthenticated callers; guard placed before Zod parse so unauthenticated requests never hit validation. (18-02)
+- **PUT/GET /selected-topics unauthenticated: { topic_ids: [] } not NOT_CONNECTED** — NOT_CONNECTED is reserved for authenticated users without a connected_profiles row; unauthenticated users simply have no topics. (18-02)
 
 ### Open Blockers
 
@@ -63,6 +65,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Completed 18-01-PLAN.md — migration 030 created (decimal compass values, updated upsert RPC, guest migration RPC)
+Stopped at: Completed 18-02-PLAN.md — five compass answer routes converted to optionalAuth with anonymous short-circuit guards; postAnswerSchema decimal values
 Resume file: None
-Resume: Execute plan 18-02 (compass route updates) or 18-03 (guest migration endpoint).
+Resume: Execute plan 18-03 (guest migration endpoint) or next Phase 18 plan.
