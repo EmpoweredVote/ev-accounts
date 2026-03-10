@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 18 of 23 (CompassV2 API Contract)
-Plan: 03 of 4 in phase
-Status: In progress
-Last activity: 2026-03-10 — Completed 18-03-PLAN.md (completed_onboarding root promotion + guest_state signup migration)
+Plan: 04 of 4 in phase — Phase 18 complete
+Status: Phase complete
+Last activity: 2026-03-10 — Completed 18-04-PLAN.md (COMPASS_CONTRACT.md external API contract)
 
-Progress: [████░░░░░░] ~29% (6 of ~14 v1.3 plans complete)
+Progress: [████░░░░░░] ~36% (7 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **guest_state migration non-fatal: try/catch swallows errors** — signup always returns 201 on success regardless of migration outcome; errors logged for ops visibility. (18-03)
 - **signUpBodySchema separate from authBodySchema** — login keeps minimal schema; signup schema extension is isolated and does not affect login validation. (18-03)
 - **p_selected_topics null (not []) when absent** — RPC null guard skips UPDATE to selected_topics when no topics provided, avoiding overwrite of existing data. (18-03)
+- **COMPASS_CONTRACT.md in /docs/ directory** — external-facing API contract for CompassV2 developer; login response user.tier is always "inform" (stub), GET /account/me required for real tier; selected_topics migration is Connected-only, localStorage fallback documented. (18-04)
 
 ### Open Blockers
 
@@ -69,6 +70,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Completed 18-03-PLAN.md — completed_onboarding promoted to /me root; POST /signup accepts guest_state with atomic RPC migration
+Stopped at: Phase 18 complete — all 4 plans executed (anonymous compass mode, decimal values, /me root promotion + guest_state migration, COMPASS_CONTRACT.md)
 Resume file: None
-Resume: Execute plan 18-04 (final CV2 API compatibility tasks).
+Resume: Run `/gsd:plan-phase 19` to begin next phase.
