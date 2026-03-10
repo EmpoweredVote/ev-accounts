@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 18 of 23 (CompassV2 API Contract)
-Plan: 2 of ~5 in phase
+Plan: 03 of 4 in phase
 Status: In progress
-Last activity: 2026-03-10 — Completed 18-02-PLAN.md (anonymous compass mode + decimal value schema)
+Last activity: 2026-03-10 — Completed 18-03-PLAN.md (completed_onboarding root promotion + guest_state signup migration)
 
-Progress: [████░░░░░░] ~29% (5 of ~14 v1.3 plans complete)
+Progress: [████░░░░░░] ~29% (6 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -52,6 +52,10 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **upsert_compass_answer gains SET search_path = ''** — was absent from migration 025 version; brought in line with project SECURITY DEFINER conventions. (18-01)
 - **Anonymous compass mode: optionalAuth + short-circuit guard** — five answer routes return empty data ([], null, { topic_ids: [] }) for unauthenticated callers; guard placed before Zod parse so unauthenticated requests never hit validation. (18-02)
 - **PUT/GET /selected-topics unauthenticated: { topic_ids: [] } not NOT_CONNECTED** — NOT_CONNECTED is reserved for authenticated users without a connected_profiles row; unauthenticated users simply have no topics. (18-02)
+- **completed_onboarding at root AND in connected_profile** — additive promotion; both locations populated so no existing callers break. Inform-tier gets false at root. (18-03)
+- **guest_state migration non-fatal: try/catch swallows errors** — signup always returns 201 on success regardless of migration outcome; errors logged for ops visibility. (18-03)
+- **signUpBodySchema separate from authBodySchema** — login keeps minimal schema; signup schema extension is isolated and does not affect login validation. (18-03)
+- **p_selected_topics null (not []) when absent** — RPC null guard skips UPDATE to selected_topics when no topics provided, avoiding overwrite of existing data. (18-03)
 
 ### Open Blockers
 
@@ -65,6 +69,6 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Completed 18-02-PLAN.md — five compass answer routes converted to optionalAuth with anonymous short-circuit guards; postAnswerSchema decimal values
+Stopped at: Completed 18-03-PLAN.md — completed_onboarding promoted to /me root; POST /signup accepts guest_state with atomic RPC migration
 Resume file: None
-Resume: Execute plan 18-03 (guest migration endpoint) or next Phase 18 plan.
+Resume: Execute plan 18-04 (final CV2 API compatibility tasks).
