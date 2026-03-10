@@ -45,7 +45,7 @@ const batchAnswersSchema = z.object({
 
 const postAnswerSchema = z.object({
   topic_id: z.string().uuid(),
-  value: z.number().int().min(1).max(5),
+  value: z.number().multipleOf(0.5).min(0.5).max(5.5),
   write_in_text: z.string().max(500).optional(),
   inverted: z.boolean().optional().default(false),
 });
