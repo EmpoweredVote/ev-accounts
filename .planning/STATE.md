@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 18 — CompassV2 API Compatibility
+**Current focus:** Phase 19 — Location Schema & RPCs
 
 ## Current Position
 
-Phase: 18 of 23 (CompassV2 API Contract)
-Plan: 04 of 4 in phase — Phase 18 complete
-Status: Phase complete
-Last activity: 2026-03-10 — Completed 18-04-PLAN.md (COMPASS_CONTRACT.md external API contract)
+Phase: 19 of 23 (Location Schema & RPCs)
+Plan: — (not yet planned)
+Status: Ready to plan
+Last activity: 2026-03-10 — Phase 18 complete (4/4 plans, verified 5/5 — CompassV2 API contract fully satisfied)
 
-Progress: [████░░░░░░] ~36% (7 of ~14 v1.3 plans complete)
+Progress: [████░░░░░░] ~36% (7 of ~18 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -61,7 +61,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 ### Open Blockers
 
 - **PostgREST schema config requires DB-level override** — Supabase dashboard UI change was not picked up by PostgREST. Fixed via `ALTER ROLE authenticator SET pgrst.db_schemas TO '...'`. Document this in DEPLOY.md for future deploys.
-- **CompassV2 frontend CV2-01 through CV2-05** — Accounts side addressed in Phase 18; CompassV2 repo must implement its side separately.
+- **CompassV2 frontend CV2-01 through CV2-05** — Accounts side complete (Phase 18). CompassV2 repo must implement its side separately using COMPASS_CONTRACT.md as the integration spec.
 
 ### Pending Todos
 
@@ -70,6 +70,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Phase 18 complete — all 4 plans executed (anonymous compass mode, decimal values, /me root promotion + guest_state migration, COMPASS_CONTRACT.md)
-Resume file: None
-Resume: Run `/gsd:plan-phase 19` to begin next phase.
+Stopped at: Phase 18 complete — 4/4 plans executed, 5/5 success criteria verified. CV2-01 through CV2-05 complete on accounts side.
+Resume: Run `/gsd:discuss-phase 19` or `/gsd:plan-phase 19` to begin Location Schema & RPCs phase.

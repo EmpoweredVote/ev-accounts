@@ -84,10 +84,10 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 18-01-PLAN.md — Migration 030: NUMERIC(3,1) compass values + upsert_compass_answer update + migrate_guest_compass_state RPC
-- [ ] 18-02-PLAN.md — compass.ts: optionalAuth on 5 routes + decimal value Zod schema
-- [ ] 18-03-PLAN.md — account.ts: completed_onboarding at root; auth.ts: guest_state on signup
-- [ ] 18-04-PLAN.md — docs/COMPASS_CONTRACT.md: external-facing API contract for CompassV2
+- [x] 18-01-PLAN.md — Migration 030: NUMERIC(3,1) compass values + upsert_compass_answer update + migrate_guest_compass_state RPC
+- [x] 18-02-PLAN.md — compass.ts: optionalAuth on 5 routes + decimal value Zod schema
+- [x] 18-03-PLAN.md — account.ts: completed_onboarding at root; auth.ts: guest_state on signup
+- [x] 18-04-PLAN.md — docs/COMPASS_CONTRACT.md: external-facing API contract for CompassV2
 
 ---
 
@@ -195,7 +195,7 @@ Plans:
 | 15. Compass Admin React UI | v1.2 | 5/5 | Complete | 2026-03-07 |
 | 16. v1.2 Gap Closure | v1.2 | 1/1 | Complete | 2026-03-07 |
 | 17. Live Alpha Deployment | v1.3 | 3/3 | Complete | 2026-03-10 |
-| 18. CompassV2 API Contract | v1.3 | 0/4 | Not started | - |
+| 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
 | 19. Location Schema & RPCs | v1.3 | 0/? | Not started | - |
 | 20. Location Endpoints & Validation | v1.3 | 0/? | Not started | - |
 | 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |

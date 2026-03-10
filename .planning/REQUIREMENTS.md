@@ -13,11 +13,11 @@
 
 ### CV2 — CompassV2 API Contract (accounts side)
 
-- [ ] **CV2-01**: Accounts API accepts `Authorization: Bearer <token>` in addition to session cookie for all authenticated routes
-- [ ] **CV2-02**: `GET /api/account/me` returns full structured shape including `completed_onboarding: boolean` and structured `xp: { total, level, xp_in_level, xp_to_next_level }` object
-- [ ] **CV2-03**: `POST /api/auth/signup` accepts and stores `email` field
-- [ ] **CV2-04**: Compass answer response shape aligned with CompassV2 expectations (verify with CompassV2 repo contract)
-- [ ] **CV2-05**: `GET /api/admin/me` endpoint returns admin identity `{ id, email }` (replaces `/auth/admin-check` pattern)
+- [x] **CV2-01**: Accounts API accepts `Authorization: Bearer <token>` in addition to session cookie for all authenticated routes
+- [x] **CV2-02**: `GET /api/account/me` returns full structured shape including `completed_onboarding: boolean` and structured `xp: { total, level, xp_in_level, xp_to_next_level }` object
+- [x] **CV2-03**: `POST /api/auth/signup` accepts and stores `email` field
+- [x] **CV2-04**: Compass answer response shape aligned with CompassV2 expectations (verify with CompassV2 repo contract)
+- [x] **CV2-05**: `GET /api/admin/me` endpoint returns admin identity `{ id, email }` (replaces `/auth/admin-check` pattern)
 
 ### LOC — Location Infrastructure
 
@@ -93,11 +93,11 @@
 | DEPLOY-01 | Phase 17 | Pending |
 | DEPLOY-02 | Phase 17 | Pending |
 | DEPLOY-03 | Phase 17 | Pending |
-| CV2-01 | Phase 18 | Pending |
-| CV2-02 | Phase 18 | Pending |
-| CV2-03 | Phase 18 | Pending |
-| CV2-04 | Phase 18 | Pending |
-| CV2-05 | Phase 18 | Pending |
+| CV2-01 | Phase 18 | Complete |
+| CV2-02 | Phase 18 | Complete |
+| CV2-03 | Phase 18 | Complete |
+| CV2-04 | Phase 18 | Complete |
+| CV2-05 | Phase 18 | Complete |
 | LOC-01 | Phase 19 | Pending |
 | LOC-02 | Phase 19 | Pending |
 | LOC-03 | Phase 19 | Pending |
