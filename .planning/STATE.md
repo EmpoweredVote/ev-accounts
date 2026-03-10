@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 17 — Live Alpha Deployment
+**Current focus:** Phase 18 — CompassV2 API Compatibility
 
 ## Current Position
 
-Phase: 17 of 23 (Live Alpha Deployment)
-Plan: 1 of 2 in phase (17-01 complete)
-Status: In progress
-Last activity: 2026-03-09 — Completed 17-01-PLAN.md (migration apply script + deployment runbook)
+Phase: 17 of 23 (Live Alpha Deployment) — COMPLETE
+Plan: 2 of 2 in phase (17-01 and 17-02 complete)
+Status: Phase complete — ready for Phase 18
+Last activity: 2026-03-09 — Completed 17-02-PLAN.md (smoke test script)
 
-Progress: [█░░░░░░░░░] ~7% (1 of ~14 v1.3 plans complete)
+Progress: [██░░░░░░░░] ~14% (2 of ~14 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -44,10 +44,13 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Direct DB connection for migrations** — DATABASE_URL must use db.<ref>.supabase.co:5432 (direct), never the pooler (pooler.supabase.com:6543). Multi-statement SQL fails on pooler. (17-01)
 - **Idempotent migration script** — Pre-verify before apply (skip if already applied), post-verify after apply (exit 1 if failed). Safe to re-run. (17-01)
 - **PostGIS + pgcrypto enabled at Alpha deploy** — Both extensions documented in DEPLOY.md Step 1 even though Phase 19 needs them. Avoids second deploy window. (17-01)
+- **Smoke test auth check: 401 is the only pass** — 500 = Supabase auth unreachable, 200 = catastrophic. Each status has distinct diagnostic meaning. (17-02)
+- **Admin UI check hardcoded as [SKIP]** — Programmatic JS error detection not feasible in a fetch-based script; kept visible in output for operator checklist. (17-02)
+- **Essentials politicians check validates migration 026** — Endpoint queries is_candidate column; 500 response during Alpha deploy = migration not applied. (17-02)
 
 ### Open Blockers
 
-- **Migrations 026–029 not yet applied to live DB** — Tooling is ready (DEPLOY.md + applyMigrations.ts). Awaiting execution against production Supabase (Phase 17 plan 02 smoke tests).
+- **Migrations 026–029 not yet applied to live DB** — Tooling is ready (DEPLOY.md + applyMigrations.ts + smokeTest.ts). Run DEPLOY.md runbook to execute against production Supabase.
 - **CompassV2 frontend CV2-01 through CV2-05** — Accounts side addressed in Phase 18; CompassV2 repo must implement its side separately.
 
 ### Pending Todos
@@ -57,5 +60,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-09
-Stopped at: Completed 17-01-PLAN.md — migration apply script and deployment runbook
-Resume: Run `/gsd:execute-phase 17` with plan 17-02 to continue (smoke tests).
+Stopped at: Completed 17-02-PLAN.md — smoke test script (Phase 17 complete)
+Resume: Run `/gsd:execute-phase 18` to begin Phase 18 (CompassV2 API compatibility — CV2-01 through CV2-05).
