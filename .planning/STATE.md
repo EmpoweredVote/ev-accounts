@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 19 of 23 (Location Schema & RPCs)
-Plan: — (not yet planned)
-Status: Ready to plan
-Last activity: 2026-03-10 — Phase 18 complete (4/4 plans, verified 5/5 — CompassV2 API contract fully satisfied)
+Plan: 01 of 3 complete
+Status: In progress
+Last activity: 2026-03-10 — Completed 19-01-PLAN.md (location schema migrations — 4 SQL files)
 
-Progress: [████░░░░░░] ~36% (7 of ~18 v1.3 plans complete)
+Progress: [████░░░░░░] ~39% (8 of ~18 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -57,6 +57,8 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **signUpBodySchema separate from authBodySchema** — login keeps minimal schema; signup schema extension is isolated and does not affect login validation. (18-03)
 - **p_selected_topics null (not []) when absent** — RPC null guard skips UPDATE to selected_topics when no topics provided, avoiding overwrite of existing data. (18-03)
 - **COMPASS_CONTRACT.md in /docs/ directory** — external-facing API contract for CompassV2 developer; login response user.tier is always "inform" (stub), GET /account/me required for real tier; selected_topics migration is Connected-only, localStorage fallback documented. (18-04)
+- **Vault secret created in runbook, not migration** — embedding the location_encryption_key in a migration would permanently store it in migration history; created separately in RUNBOOK-TIGER-LOAD.md. (19-01)
+- **location_set_at column in migration 031** — written by upsert_user_location RPC; included proactively to avoid a follow-up migration even though not explicitly listed in LOC-01 requirements. (19-01)
 
 ### Open Blockers
 
@@ -70,5 +72,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-10
-Stopped at: Phase 18 complete — 4/4 plans executed, 5/5 success criteria verified. CV2-01 through CV2-05 complete on accounts side.
-Resume: Run `/gsd:discuss-phase 19` or `/gsd:plan-phase 19` to begin Location Schema & RPCs phase.
+Stopped at: Completed 19-01-PLAN.md — migration 031 (location schema) and 032 (location RPCs), both backend/ and supabase/ variants.
+Resume: Execute 19-02-PLAN.md (TIGER/Line runbook) or 19-03-PLAN.md (apply & verify migrations).
