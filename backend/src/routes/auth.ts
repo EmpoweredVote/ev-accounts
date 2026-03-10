@@ -4,6 +4,7 @@ import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
+import { adminRpc } from '../lib/supabase.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -24,11 +25,31 @@ const authLimiter = rateLimit({
 
 /**
  * Zod schema for auth request body.
- * Used for both signup and login — same fields, same validation.
+ * Used for login — email + password only.
  */
 const authBodySchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+});
+
+/**
+ * Zod schema for signup request body.
+ * Extends authBodySchema with an optional guest_state field for migrating
+ * anonymous compass usage into the newly-created account. When present,
+ * the migrate_guest_compass_state RPC is called after account creation.
+ * Migration failures are non-fatal — signup succeeds regardless.
+ */
+const signUpBodySchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+  guest_state: z.object({
+    answers: z.array(z.object({
+      topic_id: z.string().uuid(),
+      value: z.number().multipleOf(0.5).min(0.5).max(5.5),
+      write_in_text: z.string().max(500).optional(),
+    })).optional().default([]),
+    selected_topics: z.array(z.string().uuid()).optional().default([]),
+  }).optional(),
 });
 
 /**
@@ -42,7 +63,7 @@ const authBodySchema = z.object({
  * when a new auth user is created.
  */
 router.post('/signup', authLimiter, async (req: Request, res: Response): Promise<void> => {
-  const parsed = authBodySchema.safeParse(req.body);
+  const parsed = signUpBodySchema.safeParse(req.body);
   if (!parsed.success) {
     const firstIssue = parsed.error.issues[0];
     res.status(422).json({
@@ -52,7 +73,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
-  const { email, password } = parsed.data;
+  const { email, password, guest_state } = parsed.data;
   const { data, error } = await signUpWithEmail(email, password);
 
   if (error) {
@@ -114,6 +135,21 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       message: 'An unexpected error occurred',
     });
     return;
+  }
+
+  // Migrate guest compass state if provided.
+  // Non-fatal: migration errors are logged but never fail the signup response.
+  // p_selected_topics is null when absent/empty so the RPC's null guard skips the UPDATE.
+  if (guest_state) {
+    try {
+      await adminRpc('migrate_guest_compass_state', {
+        p_user_id: data.user.id,
+        p_answers: guest_state.answers ?? [],
+        p_selected_topics: guest_state.selected_topics?.length ? guest_state.selected_topics : null,
+      });
+    } catch (migrationErr) {
+      console.error('[auth/signup] Guest state migration failed:', migrationErr);
+    }
   }
 
   res.status(201).json({
