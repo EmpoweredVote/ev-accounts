@@ -109,6 +109,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       display_name: user.display_name,
       avatar_url: user.avatar_url,
       tier,
+      completed_onboarding: connected?.completed_onboarding ?? false,
       ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
       created_at: user.created_at,
@@ -119,6 +120,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     // tolerance_rating is NEVER at root level — structural enforcement beyond RLS.
     // xp is a structured object (total, level, xp_in_level, xp_to_next_level) replacing
     // the legacy xp integer.
+    // completed_onboarding is also present at root for CompassV2 compatibility.
     if (connected) {
       meResponse.connected_profile = {
         display_name: connected.display_name,
@@ -312,12 +314,14 @@ router.patch(
         display_name: updatedUser.display_name,
         avatar_url: updatedUser.avatar_url,
         tier,
+        completed_onboarding: updatedConnected?.completed_onboarding ?? false,
         ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',
         created_at: updatedUser.created_at,
         updated_at: updatedUser.updated_at,
       };
 
+      // completed_onboarding is also present at root for CompassV2 compatibility.
       if (updatedConnected) {
         meResponse.connected_profile = {
           display_name: updatedConnected.display_name,
