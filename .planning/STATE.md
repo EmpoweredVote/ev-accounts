@@ -1,32 +1,34 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: completed
-stopped_at: Completed 71-01-PLAN.md
-last_updated: "2026-03-08T16:11:32.201Z"
-last_activity: "2026-03-08 — Phase 71 Plan 01: Stance breakdown accordion in CompassCard"
+milestone: v2026.3.3
+milestone_name: Local Government Organization
+status: defining_requirements
+stopped_at: null
+last_updated: "2026-03-10"
+last_activity: "2026-03-10 — Milestone v2026.3.3 started"
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 8
-  completed_plans: 8
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-08)
+See: .planning/PROJECT.md (updated 2026-03-10)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v2026.3.3 Local Government Organization
 
 ## Current Position
 
-Milestone v2026.3.2 Compass on Profiles — SHIPPED 2026-03-08
-Next: Run `/gsd:new-milestone` to define next milestone
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-10 — Milestone v2026.3.3 started
 
 ## Performance Metrics
 

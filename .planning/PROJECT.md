@@ -150,7 +150,13 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(None — next milestone not yet defined)
+- [ ] Local government sections display specific body names (e.g., "Monroe County Council" instead of "County Council")
+- [ ] Each government body section links to its official website
+- [ ] County commissioners, county council, and county officials displayed as distinct sections
+- [ ] County council at-large vs district members distinguished in display
+- [ ] State-specific local government organization (Indiana county structure differs from other states)
+- [ ] City-level bodies use specific names and website links
+- [ ] Township-level bodies use specific names and website links
 
 ### Future
 
@@ -159,9 +165,16 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Multi-politician comparison (2-3 overlays at once)
 - [ ] Read & Rank quotes on Essentials profiles
 
-## Current Milestone: Planning next milestone
+## Current Milestone: v2026.3.3 Local Government Organization
 
-Run `/gsd:new-milestone` to define the next milestone.
+**Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures (starting with Indiana county commissioners, council, and officials)
+
+**Target features:**
+- Specific body names instead of generic categories (e.g., "Monroe County Council" not "County Council")
+- Official website links for each government body/section
+- State-specific local government structure support
+- Distinct sections for commissioners, council (at-large + district), and elected officials
+- Applied across county, city, and township levels
 
 ### Out of Scope
 
@@ -205,4 +218,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-08 after v2026.3.2 milestone*
+*Last updated: 2026-03-10 after v2026.3.3 milestone start*
