@@ -55,24 +55,24 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BODY-01 | — | Pending |
-| BODY-02 | — | Pending |
-| BODY-03 | — | Pending |
-| BODY-04 | — | Pending |
-| BODY-05 | — | Pending |
-| LINK-01 | — | Pending |
-| LINK-02 | — | Pending |
-| LINK-03 | — | Pending |
-| LINK-04 | — | Pending |
-| DATA-01 | — | Pending |
-| DATA-02 | — | Pending |
-| DATA-03 | — | Pending |
+| DATA-01 | Phase 72 | Pending |
+| LINK-02 | Phase 73 | Pending |
+| DATA-02 | Phase 73 | Pending |
+| DATA-03 | Phase 73 | Pending |
+| LINK-03 | Phase 74 | Pending |
+| LINK-04 | Phase 74 | Pending |
+| LINK-01 | Phase 75 | Pending |
+| BODY-01 | Phase 76 | Pending |
+| BODY-02 | Phase 76 | Pending |
+| BODY-03 | Phase 76 | Pending |
+| BODY-04 | Phase 76 | Pending |
+| BODY-05 | Phase 76 | Pending |
 
 **Coverage:**
 - v2026.3.3 requirements: 12 total
-- Mapped to phases: 0
-- Unmapped: 12 ⚠️
+- Mapped to phases: 12
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-10*
-*Last updated: 2026-03-10 after initial definition*
+*Last updated: 2026-03-10 after roadmap creation — all 12 requirements mapped to phases 72-76*

@@ -15,6 +15,7 @@
 - ✅ **v2026.3 Legislative Profile Data** — Phases 54-59 (shipped 2026-03-05)
 - ✅ **v2026.4 State Data Completion & Image Coverage** — Phases 60-66 (shipped 2026-03-06)
 - ✅ **v2026.3.2 Compass on Profiles** — Phases 67-71 (shipped 2026-03-08)
+- 🚧 **v2026.3.3 Local Government Organization** — Phases 72-76 (in progress)
 
 ## Phases
 
@@ -193,3 +194,82 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 
 </details>
 
+### 🚧 v2026.3.3 Local Government Organization (In Progress)
+
+**Milestone Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures starting with Indiana.
+
+- [ ] **Phase 72: DB Audit** - Verify actual chamber_name_formal values and classification gaps for Indiana officials
+- [ ] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.go, and extended OfficialOut fields
+- [ ] **Phase 74: Data Seeding** - Populate Monroe County and Bloomington body names and website URLs
+- [ ] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41
+- [ ] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings
+
+## Phase Details
+
+### Phase 72: DB Audit
+**Goal**: Confirm what is actually in the database before writing any classification or display code
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: DATA-01
+**Success Criteria** (what must be TRUE):
+  1. A confirmed list of distinct chamber_name and chamber_name_formal values exists for all Monroe County and Bloomington officials
+  2. It is known whether Monroe County Commissioners and Monroe County Council currently produce distinct group keys from classify.js, or require a data migration
+  3. The TIGER GEO_ID for Monroe County (18105) is verified present in geofences table
+  4. A regression test list of known politician-to-expected-group mappings is documented for use in Phase 73 verification
+**Plans**: TBD
+
+### Phase 73: Backend GovernmentBody Table
+**Goal**: The API delivers specific body name and website URL fields alongside every official in the search response
+**Depends on**: Phase 72
+**Requirements**: LINK-02, DATA-02, DATA-03
+**Success Criteria** (what must be TRUE):
+  1. The essentials.government_bodies table exists in Supabase with columns for state, geo_id, body_key, display_name, and website_url
+  2. The Go SearchPoliticians handler annotates each OfficialOut record with government_body_name and government_body_url via LEFT JOIN (both fields null-safe)
+  3. classify.go produces a body_key for every Indiana official that correctly routes Commissioners and Council to distinct keys
+  4. All three consumer structures in classify.js (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) are updated atomically when any new group key is added
+**Plans**: TBD
+
+### Phase 74: Data Seeding
+**Goal**: Monroe County and Bloomington officials have verified body display names and official website URLs in the database
+**Depends on**: Phase 73
+**Requirements**: LINK-03, LINK-04
+**Success Criteria** (what must be TRUE):
+  1. Rows exist in government_bodies for Monroe County Commissioners, Monroe County Council, and Monroe County elected officials with verified website URLs
+  2. A row exists in government_bodies for Bloomington Common Council with its verified website URL
+  3. The body_key values in seeded rows exactly match what classify.go produces for those officials (no silent JOIN misses)
+  4. A direct DB query confirms all seeded URLs are non-null and reachable government sites
+**Plans**: TBD
+
+### Phase 75: ev-ui CategorySection Update
+**Goal**: The CategorySection component can render an external website link in the section header
+**Depends on**: Phase 72 (can run parallel with Phases 73-74)
+**Requirements**: LINK-01
+**Success Criteria** (what must be TRUE):
+  1. ev-ui 0.1.41 is published to the GitHub npm registry with an optional websiteUrl prop on CategorySection
+  2. When websiteUrl is provided, an external-link SVG icon appears in the section header linking to that URL (target="_blank" rel="noopener noreferrer")
+  3. Existing CategorySection callers with no websiteUrl prop render identically to the current 0.1.40 behavior
+**Plans**: TBD
+
+### Phase 76: Frontend Results Integration
+**Goal**: Users see specific government body names and official website links in section headings for covered jurisdictions
+**Depends on**: Phase 73, Phase 74, Phase 75
+**Requirements**: BODY-01, BODY-02, BODY-03, BODY-04, BODY-05
+**Success Criteria** (what must be TRUE):
+  1. A Monroe County address shows "Monroe County Council" and "Monroe County Commissioners" as distinct section headings (not the generic "County Legislators")
+  2. A Bloomington address shows "Bloomington Common Council" as the section heading for city council
+  3. Township sections display the specific township name (e.g., "Perry Township Trustee") rather than a generic label
+  4. School board sections display the specific district name (e.g., "Monroe County Community School Corporation Board")
+  5. An LA County address continues to render section headings with graceful fallback to generic category names — no regression
+  6. Website link icons appear in section headers for Monroe County and Bloomington bodies, opening official sites in a new tab
+**Plans**: TBD
+
+## Progress
+
+**Execution Order:** 72 → 73 → 74 → 75 (parallel with 73-74) → 76
+
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 72. DB Audit | v2026.3.3 | 0/TBD | Not started | - |
+| 73. Backend GovernmentBody Table | v2026.3.3 | 0/TBD | Not started | - |
+| 74. Data Seeding | v2026.3.3 | 0/TBD | Not started | - |
+| 75. ev-ui CategorySection Update | v2026.3.3 | 0/TBD | Not started | - |
+| 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |

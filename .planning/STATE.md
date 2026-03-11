@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2026.3.3
 milestone_name: Local Government Organization
-status: defining_requirements
+status: ready_to_plan
 stopped_at: null
 last_updated: "2026-03-10"
-last_activity: "2026-03-10 — Milestone v2026.3.3 started"
+last_activity: "2026-03-10 — Roadmap created, 5 phases defined (72-76)"
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,64 +21,37 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-10)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v2026.3.3 Local Government Organization
+**Current focus:** v2026.3.3 Local Government Organization — Phase 72: DB Audit
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-03-10 — Milestone v2026.3.3 started
+Phase: 72 of 76 (DB Audit)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-03-10 — Roadmap created with 5 phases (72-76), 12/12 requirements mapped
+
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
+**Velocity (v2026.3.2):** 5 phases, 8 plans
 **Velocity (v2026.4):** 7 phases, 24 plans
 **Velocity (v2026.3):** 6 phases, 19 plans
-**Velocity (v1.9):** 3 phases, 6 plans
 
 *Updated after each plan completion*
 
 ## Accumulated Context
 
-### Architectural Decisions for This Milestone
+### Key Decisions for This Milestone
 
-- CompassV2 and Essentials are SEPARATE React apps on different Netlify origins — cannot share localStorage directly
-- RadarChartCore in ev-ui already supports dual dataset overlay (pink user + blue politician) — no new component needed
-- Existing compass API endpoints: /compass/topics, /compass/answers, /compass/stances
-- 455 politician stance rows in DB across 23 politicians (from v1.8)
-- Essentials uses `credentials: "include"` for all API calls — same pattern needed for compass API calls
-- Guest compass data problem: CompassV2 writes to its own origin's localStorage; Essentials cannot read it — Phase 68 must solve this
-- Cookie Domain branching: PORT env var (empty/5050 = local dev, no Domain; anything else = production, Domain ".empowered.vote") — 67-01
-- fetchUserAnswers/fetchSelectedTopics check res.status === 401 explicitly so unauthenticated Essentials users get [] silently — 67-01
-- Fixed-position overlay for AuthIndicator (top: 16px, right: 16px) since SiteHeader has no rightSlot prop — only profileMenu dropdown — 67-02
-- CompassProvider fetches auth check and public compass data concurrently; user-specific data gated on authRes.ok — 67-02
-- politicianIdsWithStances stored as Set for O(1) lookup — ready for profile page badge rendering — 67-02
-- CompassPreview uses createPortal(popover, document.body) + position:fixed — avoids overflow:hidden clipping in scrollable panels — 67-03
-- renderPoliticianCard moved inside Results component to access politicianIdsWithStances via closure — avoids prop drilling — 67-03
-- Click-to-toggle for compass badge (not hover) — PoliticianCard ev-ui doesn't expose onMouseEnter on its internal compass button — 67-03
-- data-pol-id attribute on card wrappers + querySelector to resolve badge button element ref after render — 67-03
-- Compass badge button shrunk from 36px to 28px in ev-ui PoliticianCard (user-directed at checkpoint) — 67-03
-- CompassPreview CTA mode: greyed compass icon + Take the Quiz link when user has no compass answers — 67-03
-- RadarChartCore capped at 8 spokes max in CompassPreview to prevent label crowding in 180px mini chart — 67-03
-- URL fragment bridge format: #compass=BASE64({"a":{[short_title]:value},"s":[uuid,...]}) — cross-origin guest data transfer — 68-01
-- Fragment parsed synchronously BEFORE any async awaits in CompassContext loadAll() — ensures URL is clean before React renders and value captured — 68-01
-- CTA same-tab navigation with ?return= param (no target=_blank) — enables return banner flow in Plan 02 — 68-01
-- clearGuestCompass() on logged-in path — logged-in users always get API data, stale guest cache cleared on login — 68-01
-- ReturnBanner uses sessionStorage (SESSION_KEY) for URL persistence — survives React Router navigations and HelpGuard redirects within session — 68-02
-- ReturnBanner is fixed position (z-[60]) above CalibrationOverlay (z-50), with sibling spacer div to prevent content overlap — 68-02
-- serializeCompassFragment encodes {a, s, i} (answers, selectedTopics, invertedSpokes) — complete state for Essentials decoder — 68-02
-- ComparePanel Essentials link uses same-tab navigation — guest is navigating TO Essentials as destination — 68-02
-- CompassCard self-gating pattern: component returns null internally when politician lacks stances — parent passes props, child decides rendering — 69-01
-- Fragment wrapper in Profile.jsx ternary to support PoliticianProfile + CompassCard as siblings — 69-01
-- RadarChartCore inline rendering in CompassCard (not popover like CompassPreview) with dual-overlay coral/blue polygons — 70-01
-- Chart sized at 400px with labelFontSize=18, padding=40 after user feedback (up from initial 300px/10px/45px) — 70-01
-- Legend left-aligned above chart with 15px font, coral dot "You" + blue dot "[Position] [LastName]" — 70-01
-- Intersection-only topic filtering (both user AND politician must have answers) capped at 8 spokes — 70-01
-- CSS grid-template-rows (0fr/1fr) for StanceAccordion height animation — smooth, no overflow issues — 71-01
-- useRef Map for context caching — persists across renders without triggering re-renders — 71-01
-- Favicon default 16px (not 32px from CompassV2) for inline source link sizing — 71-01
+- Phase 72 (DB audit) gates all classification code — must confirm chamber_name_formal values before writing any body_key logic
+- GovernmentBody table uses composite unique (state, geo_id, body_key) — upsert-safe, follows PositionDescription enrichment pattern
+- body_key derived by classify.go (Go mirror of classify.js) — ensures JOIN keys match frontend classification
+- Phase 75 (ev-ui) can run in parallel with Phases 73-74 — no backend dependency for the prop addition
+- Use government_body_name from API directly for section headers — never pass through qualifyLocalTitle() (causes double-prefix)
+- classify.js LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS must always update atomically in the same commit
 
-### Tech Debt Carried Forward (from v2026.4)
+### Tech Debt Carried Forward (from v2026.3.2)
 
 - Dead `ballotready/` package preserved for historical reference (from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (from v1.5)
@@ -94,7 +67,7 @@ Last activity: 2026-03-10 — Milestone v2026.3.3 started
 
 ### Blockers/Concerns
 
-None yet.
+- Phase 72 critical branch: if chamber_name_formal is unpopulated for Indiana chambers, Phase 73 becomes a data migration before a feature phase — plan for both outcomes
 
 ### Quick Tasks Completed
 
@@ -105,6 +78,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-08T16:29:46Z
-Stopped at: Completed quick task 6
-Resume: Contact info section refactored to column-per-category layout. ev-ui 0.1.40 published.
+Last session: 2026-03-10
+Stopped at: Roadmap created for v2026.3.3, ready to plan Phase 72
+Resume: Start with `/gsd:plan-phase 72`
