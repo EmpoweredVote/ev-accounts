@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 75-ev-ui-categorysection-update-01-PLAN.md
-last_updated: "2026-03-11T16:09:40.935Z"
-last_activity: 2026-03-11 — Phase 75-01 complete; ev-ui 0.1.41 published with websiteUrl prop on CategorySection; essentials Results.jsx wired to pass government_body_url to all three tier sections
+stopped_at: Completed 76-frontend-results-integration-01-PLAN.md
+last_updated: "2026-03-11T00:00:00.000Z"
+last_activity: 2026-03-11 — Phase 76-01 complete; splitByBodyName helper added to Results.jsx; backend SearchPoliticians endpoint fixed with government_bodies LEFT JOIN; all BODY-01 through BODY-05 requirements verified
 progress:
-  total_phases: 5
-  completed_phases: 4
-  total_plans: 5
-  completed_plans: 5
+  total_phases: 6
+  completed_phases: 6
+  total_plans: 6
+  completed_plans: 6
   percent: 100
 ---
 
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 75 of 76 (ev-ui CategorySection Update)
+Phase: 76 of 76 (Frontend Results Integration)
 Plan: 1 of 1 complete
-Status: Phase 75 complete
-Last activity: 2026-03-11 — Phase 75-01 complete; ev-ui 0.1.41 published with websiteUrl prop on CategorySection; essentials Results.jsx wired to pass government_body_url to all three tier sections
+Status: Phase 76 complete — all phases done
+Last activity: 2026-03-11 — Phase 76-01 complete; splitByBodyName helper added to Results.jsx; backend SearchPoliticians endpoint fixed with government_bodies LEFT JOIN; all BODY-01 through BODY-05 requirements verified
 
 Progress: [██████████] 100%
 
@@ -63,6 +63,9 @@ Progress: [██████████] 100%
 - **[74-01] FIPS '18' not ISO 'IN' for state column** — districts table stores FIPS codes; JOIN `gb.state = d.state` requires matching format
 - **[75-01] websiteUrl placed after infoTooltip in header flex row** — order: [titlePill] [infoButton?] [linkIcon?]; || undefined guard on polList[0]?.government_body_url prevents empty string broken icons
 - **[75-01] ev-ui 0.1.41 published to GitHub Package Registry** — CategorySection backward-compatible; callers without websiteUrl see zero visual change
+- **[76-01] splitByBodyName is a render-time helper, not in useMemo** — placed above Results component as standalone function; sub-groups polList alphabetically by government_body_name at JSX render time only
+- **[76-01] SearchPoliticians endpoint lacked government_bodies LEFT JOIN** — FindPoliticiansByGeoMatches had the join (Phase 73) but SearchPoliticians in geofence_lookup.go did not; fixed as Rule 3 deviation
+- **[76-01] government_body_name used directly as section title** — never routed through qualifyLocalTitle() to prevent double-prefix bug; unnamed politicians fall back to getDisplayName(category)
 
 ### Tech Debt Carried Forward (from v2026.3.2)
 
@@ -92,9 +95,10 @@ Progress: [██████████] 100%
 | Phase 73-backend-governmentbody-table P02 | 5 | 1 tasks | 1 files |
 | Phase 74-data-seeding P01 | 2 | 1 tasks | 1 files |
 | Phase 75-ev-ui-categorysection-update P01 | 3 | 2 tasks | 4 files |
+| Phase 76-frontend-results-integration P01 | ~45min | 2 tasks | 2 files |
 
 ## Session Continuity
 
-Last session: 2026-03-11T16:07:18.606Z
-Stopped at: Completed 75-ev-ui-categorysection-update-01-PLAN.md
-Resume: Start with `/gsd:execute-phase 74`
+Last session: 2026-03-11T00:00:00.000Z
+Stopped at: Completed 76-frontend-results-integration-01-PLAN.md
+Resume: All phases complete.

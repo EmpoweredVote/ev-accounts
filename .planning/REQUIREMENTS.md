@@ -9,11 +9,11 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Body Display
 
-- [ ] **BODY-01**: Section headings display specific body names (e.g., "Monroe County Council" instead of "County Council")
-- [ ] **BODY-02**: County Commissioners and County Council display as distinct sections for Indiana counties
-- [ ] **BODY-03**: Township sections display specific township names (e.g., "Perry Township Trustee")
-- [ ] **BODY-04**: City-level sections display specific city names (e.g., "Bloomington Common Council")
-- [ ] **BODY-05**: School Board sections display specific district names (e.g., "Monroe County Community School Corporation Board")
+- [x] **BODY-01**: Section headings display specific body names (e.g., "Monroe County Council" instead of "County Council")
+- [x] **BODY-02**: County Commissioners and County Council display as distinct sections for Indiana counties
+- [x] **BODY-03**: Township sections display specific township names (e.g., "Perry Township Trustee")
+- [x] **BODY-04**: City-level sections display specific city names (e.g., "Bloomington Common Council")
+- [x] **BODY-05**: School Board sections display specific district names (e.g., "Monroe County Community School Corporation Board")
 
 ### Website Links
 
@@ -62,11 +62,11 @@ Requirements for this milestone. Each maps to roadmap phases.
 | LINK-03 | Phase 74 | Complete |
 | LINK-04 | Phase 74 | Complete |
 | LINK-01 | Phase 75 | Complete |
-| BODY-01 | Phase 76 | Pending |
-| BODY-02 | Phase 76 | Pending |
-| BODY-03 | Phase 76 | Pending |
-| BODY-04 | Phase 76 | Pending |
-| BODY-05 | Phase 76 | Pending |
+| BODY-01 | Phase 76 | Complete |
+| BODY-02 | Phase 76 | Complete |
+| BODY-03 | Phase 76 | Complete |
+| BODY-04 | Phase 76 | Complete |
+| BODY-05 | Phase 76 | Complete |
 
 **Coverage:**
 - v2026.3.3 requirements: 12 total

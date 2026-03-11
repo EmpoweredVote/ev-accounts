@@ -202,7 +202,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 - [x] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.js commission fix, and extended OfficialOut fields (completed 2026-03-11)
 - [x] **Phase 74: Data Seeding** - Populate Monroe County and Bloomington body names and website URLs (completed 2026-03-11)
 - [x] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41 (completed 2026-03-11)
-- [ ] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings
+- [x] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings (completed 2026-03-11)
 
 ## Phase Details
 
@@ -267,7 +267,7 @@ Plans:
   4. School board sections display the specific district name (e.g., "Monroe County Community School Corporation Board")
   5. An LA County address continues to render section headings with graceful fallback to generic category names — no regression
   6. Website link icons appear in section headers for Monroe County and Bloomington bodies, opening official sites in a new tab
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 76-01-PLAN.md — Add splitByBodyName helper and wire body-specific section headings in all three tier blocks
 
@@ -281,4 +281,4 @@ Plans:
 | 73. Backend GovernmentBody Table | 2/2 | Complete    | 2026-03-11 | - |
 | 74. Data Seeding | 1/1 | Complete    | 2026-03-11 | - |
 | 75. ev-ui CategorySection Update | 1/1 | Complete    | 2026-03-11 | - |
-| 76. Frontend Results Integration | v2026.3.3 | 0/1 | Not started | - |
+| 76. Frontend Results Integration | 1/1 | Complete   | 2026-03-11 | - |
