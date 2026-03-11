@@ -228,7 +228,7 @@ Plans:
   2. The Go SearchPoliticians handler annotates each OfficialOut record with government_body_name and government_body_url via LEFT JOIN (both fields null-safe)
   3. classify.js routes "commission" title keywords to "County Legislators" group
   4. All three consumer structures in classify.js (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) contain "County Legislators" consistently
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
 - [ ] 73-01-PLAN.md — GovernmentBody model, chamber_name_formal migration, LEFT JOIN enrichment
 - [ ] 73-02-PLAN.md — classify.js commission keyword fix and consumer structure verification
@@ -274,7 +274,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 72. DB Audit | 1/1 | Complete    | 2026-03-11 | - |
-| 73. Backend GovernmentBody Table | v2026.3.3 | 0/2 | Not started | - |
+| 73. Backend GovernmentBody Table | 1/2 | In Progress|  | - |
 | 74. Data Seeding | v2026.3.3 | 0/TBD | Not started | - |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 0/TBD | Not started | - |
 | 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |

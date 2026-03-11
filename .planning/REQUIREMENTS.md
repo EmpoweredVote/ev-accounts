@@ -25,8 +25,8 @@ Requirements for this milestone. Each maps to roadmap phases.
 ### Data Foundation
 
 - [x] **DATA-01**: Database audit confirms current chamber_name_formal values for Monroe County/Bloomington officials
-- [ ] **DATA-02**: classify.js routes "commissioner" title keywords to distinct "County Commissioners" group
-- [ ] **DATA-03**: All consumer files updated together (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS)
+- [x] **DATA-02**: classify.js routes "commissioner" title keywords to distinct "County Commissioners" group
+- [x] **DATA-03**: All consumer files updated together (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS)
 
 ## Future Requirements
 
@@ -57,8 +57,8 @@ Requirements for this milestone. Each maps to roadmap phases.
 |-------------|-------|--------|
 | DATA-01 | Phase 72 | Complete |
 | LINK-02 | Phase 73 | Pending |
-| DATA-02 | Phase 73 | Pending |
-| DATA-03 | Phase 73 | Pending |
+| DATA-02 | Phase 73 | Complete |
+| DATA-03 | Phase 73 | Complete |
 | LINK-03 | Phase 74 | Pending |
 | LINK-04 | Phase 74 | Pending |
 | LINK-01 | Phase 75 | Pending |
