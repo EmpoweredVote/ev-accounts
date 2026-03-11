@@ -199,7 +199,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 **Milestone Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures starting with Indiana.
 
 - [x] **Phase 72: DB Audit** - Verify actual chamber_name_formal values and classification gaps for Indiana officials (completed 2026-03-11)
-- [ ] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.go, and extended OfficialOut fields
+- [ ] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.js commission fix, and extended OfficialOut fields
 - [ ] **Phase 74: Data Seeding** - Populate Monroe County and Bloomington body names and website URLs
 - [ ] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41
 - [ ] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings
@@ -217,7 +217,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
   4. A regression test list of known politician-to-expected-group mappings is documented for use in Phase 73 verification
 **Plans:** 1/1 plans complete
 Plans:
-- [ ] 72-01-PLAN.md — Run SQL audit queries and document findings with regression mapping
+- [x] 72-01-PLAN.md — Run SQL audit queries and document findings with regression mapping
 
 ### Phase 73: Backend GovernmentBody Table
 **Goal**: The API delivers specific body name and website URL fields alongside every official in the search response
@@ -226,9 +226,12 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. The essentials.government_bodies table exists in Supabase with columns for state, geo_id, body_key, display_name, and website_url
   2. The Go SearchPoliticians handler annotates each OfficialOut record with government_body_name and government_body_url via LEFT JOIN (both fields null-safe)
-  3. classify.go produces a body_key for every Indiana official that correctly routes Commissioners and Council to distinct keys
-  4. All three consumer structures in classify.js (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) are updated atomically when any new group key is added
-**Plans**: TBD
+  3. classify.js routes "commission" title keywords to "County Legislators" group
+  4. All three consumer structures in classify.js (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) contain "County Legislators" consistently
+**Plans:** 2 plans
+Plans:
+- [ ] 73-01-PLAN.md — GovernmentBody model, chamber_name_formal migration, LEFT JOIN enrichment
+- [ ] 73-02-PLAN.md — classify.js commission keyword fix and consumer structure verification
 
 ### Phase 74: Data Seeding
 **Goal**: Monroe County and Bloomington officials have verified body display names and official website URLs in the database
@@ -271,7 +274,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 72. DB Audit | 1/1 | Complete    | 2026-03-11 | - |
-| 73. Backend GovernmentBody Table | v2026.3.3 | 0/TBD | Not started | - |
+| 73. Backend GovernmentBody Table | v2026.3.3 | 0/2 | Not started | - |
 | 74. Data Seeding | v2026.3.3 | 0/TBD | Not started | - |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 0/TBD | Not started | - |
 | 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |
