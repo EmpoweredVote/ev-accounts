@@ -1,361 +1,209 @@
-# Stack Research — v2026.3 Legislative Profile Data
+# Stack Research — v2026.3.3 Local Government Organization
 
-**Domain:** Civic engagement platform — legislative activity data (committees, votes, bills, leadership) across federal, Indiana state, and LA County local government levels
-**Researched:** 2026-03-01
-**Confidence:** MEDIUM-HIGH (Congress.gov API reliability is a known risk factor; all other components HIGH)
+**Domain:** Local government organization display — specific body names, website links, state-specific structures
+**Researched:** 2026-03-10
+**Confidence:** HIGH
 
 ---
 
 ## Scope
 
-This document covers only *new or changed* stack decisions for v2026.3. The existing stack is retained as-is:
+This milestone is a **display and data-modeling** change, not an infrastructure or framework change. The existing validated stack (Go 1.24.3/Chi/GORM/PostgreSQL, React 19/Vite/Tailwind CSS 4, PostGIS, Supabase, ev-ui 0.1.40) is unchanged. Research covers only the new capabilities needed.
 
-- **Go 1.24.3 + Chi v5.2.1 + GORM v1.30.0 + PostgreSQL** — backend unchanged
-- **React 19 + Vite + Tailwind CSS 4** — frontends unchanged
-- **Python 3.13 scraper pipeline + psycopg2 + requests + BeautifulSoup** — reused, extended
-- **Supabase DB + Netlify frontends + Render backend** — infrastructure unchanged
-- **All existing essentials models** — `Politician`, `PoliticianImage`, `PoliticianContact`, `Degree`, `Experience`, etc.
-- **`meetings` schema** — has `Vote`/`VoteRecord` for transcript-extracted local votes; the new `legislative` schema is separate and purpose-built for structured bill/vote data from external sources
-
-v2026.3 adds five new capabilities to the existing stack:
-1. Congress.gov API v3 client (Go) — federal bills, votes, committees, leadership
-2. unitedstates/congress-legislators YAML parsing (Go) — federal committee membership from static repo
-3. Open States API v3 client (Python) — Indiana + California state legislative data
-4. LegiScan API client (Python, optional fallback) — state vote records when Open States gaps exist
-5. python-legistar-scraper (Python) — LA County Board of Supervisors and Bloomington Common Council
+**What this milestone needs:**
+1. A new database table to store specific body names and website URLs per governing body
+2. A JOIN extension in two existing SQL queries
+3. Two new fields on the existing `OfficialOut` response struct
+4. A `websiteUrl` prop on the existing `CategorySection` ev-ui component
+5. Admin CRUD endpoints for curating the new table (following existing pattern)
 
 ---
 
 ## Recommended Stack
 
-### Federal Legislative Data: Congress.gov API v3
+### Core Technologies
 
-**Decision:** Use Congress.gov API v3 directly with a hand-rolled Go HTTP client. No third-party wrapper library exists for Go.
+All existing. No new frameworks or languages.
 
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| Congress.gov API v3 | Current (free) | Bills, House roll call votes, committee assignments, member data | Official government source; 5,000 requests/hour; free API key via api.data.gov; added House roll call votes endpoint in May 2025 — now out of beta |
-| `net/http` stdlib | Go 1.24 | HTTP client for Congress.gov API calls | No Go wrapper exists; stdlib is sufficient for REST+JSON; existing codebase pattern for all external HTTP calls |
-| `encoding/json` stdlib | Go 1.24 | JSON decode Congress.gov responses | Already used throughout codebase |
-| `golang.org/x/time/rate` | v0.x (indirect via `golang.org/x/sync`) | Rate limit outbound Congress.gov requests | Token bucket rate limiter; prevents hitting 5K/hour ceiling during bulk imports; already in `go.sum` transitively |
-
-**Congress.gov API endpoint coverage for this milestone:**
-
-| Data | Endpoint | Notes |
-|------|----------|-------|
-| Bill list by member | `GET /v3/member/{bioguide_id}/sponsored-legislation` | Uses existing `bioguide_id` on `Politician` model |
-| Bill detail + summary | `GET /v3/bill/{congress}/{type}/{number}` with `summaries` | AI-generated summaries available since 119th Congress |
-| House roll call votes | `GET /v3/house-vote/{congress}/{session}/{rollCallNumber}` | 118th Congress (2023) onward; Senate votes NOT yet in API |
-| Committee list | `GET /v3/committee/{chamber}` | Returns current committees |
-| Committee assignments | Parse `committees-current.yaml` from unitedstates/congress-legislators | Faster and more complete than API for membership data |
-
-**Critical risk:** The Congress.gov API experienced an outage in early January 2026 and was restored. It remains under Library of Congress management and is subject to budget/infrastructure risk (DOGE cuts were mentioned in reporting but no confirmed funding loss). Always treat this API as potentially unavailable and design the import CLI to degrade gracefully — log failures, skip missing data, never block profile rendering.
-
-**Senate roll call votes:** Not yet available in Congress.gov API v3 as of March 2026. For Senate votes, use the `unitedstates/congress` scraper or LegiScan as a fallback (see below).
+| Technology | Current Version | Role in This Milestone |
+|------------|----------------|------------------------|
+| Go / GORM | 1.24.3 | Add `GovernmentBody` model; AutoMigrate; extend `OfficialOut`; LEFT JOIN in existing queries |
+| PostgreSQL / Supabase | existing | Store `essentials.government_bodies` table; no schema changes to existing tables |
+| React 19 | existing | Read `body_display_name`/`body_website_url` from API response; pass to `CategorySection` |
+| ev-ui | 0.1.40 | Add optional `websiteUrl` prop to `CategorySection`; publish 0.1.41 |
 
 ---
 
-### Federal Committee Membership: unitedstates/congress-legislators YAML
+### New Data Model: `essentials.government_bodies`
 
-**Decision:** Parse `committees-current.yaml` and `committee-membership-current.yaml` directly from the GitHub repo (raw download). Do NOT call the Congress.gov API for committee membership — the YAML is more complete and requires zero API budget.
+The core gap is that neither `essentials.chambers` nor `essentials.governments` has a `website_url` field or a "specific display name" concept:
 
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| `github.com/goccy/go-yaml` | `v1.18.0` | Parse `committees-current.yaml` and `committee-membership-current.yaml` | `gopkg.in/yaml.v3` is now archived/unmaintained (confirmed March 2025). `goccy/go-yaml` is the actively maintained replacement — passes 60+ additional YAML test cases vs go-yaml, team of active maintainers, v1.x stable |
+- `Chamber` has `name_formal` and `name` but no URL; it is Cicero-synced with an `external_id` — adding fields risks import conflicts
+- `Government` has `name`, `type`, `state`, `city` but no URL and no display name concept
+- Neither table has a clean per-region curation path
 
-**Do NOT use `gopkg.in/yaml.v3`.** It was archived. Use `github.com/goccy/go-yaml` instead.
+The right approach is a **new lookup table** keyed on `chamber_name_formal` (already present in `OfficialOut`). This is the exact same pattern as the existing `PositionDescription` table, which enriches positions by `normalized_position_name` without touching the import pipeline.
 
-**YAML download pattern for the import CLI:**
+**New Go model:**
 
 ```go
-// Download raw YAML from unitedstates/congress-legislators
-const committeesURL = "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/committees-current.yaml"
-const membershipURL  = "https://raw.githubusercontent.com/unitedstates/congress-legislators/main/committee-membership-current.yaml"
+// GovernmentBody stores curated display names and website URLs for specific governing bodies.
+// Keyed on chamber_name_formal (from essentials.chambers) to avoid touching Cicero-synced tables.
+// State-scoped to prevent key collisions across regions (e.g. two states both having "City Council").
+type GovernmentBody struct {
+    ID          uuid.UUID `json:"id" gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+    BodyKey     string    `json:"body_key" gorm:"uniqueIndex:idx_govbody_key;not null"` // matches chamber_name_formal
+    State       string    `json:"state" gorm:"uniqueIndex:idx_govbody_key;not null"`    // "IN", "CA", "" for national
+    DisplayName string    `json:"display_name"`   // e.g. "Monroe County Council"
+    WebsiteURL  string    `json:"website_url"`    // e.g. "https://monroecounty.gov/dept/council/"
+    Notes       string    `json:"notes,omitempty"` // Internal — not exposed in API
+}
 
-resp, err := http.Get(committeesURL)
-// decode with goccy/go-yaml into []CommitteeYAML struct
+func (GovernmentBody) TableName() string { return "essentials.government_bodies" }
 ```
 
-The YAML structure has these top-level fields per committee entry:
-- `thomas_id` — committee identifier (e.g., `SSFI`, `HSFA`)
-- `name`, `url`, `type` (`house`/`senate`/`joint`)
-- `subcommittees[]` — each with `thomas_id`, `name`
+Why `BodyKey = chamber_name_formal`: This field is already present in `OfficialOut` and populated in the JOIN queries. It is the lowest-friction lookup key — no UUID resolution required when seeding, and it survives Cicero re-imports because chamber names are stable.
 
-`committee-membership-current.yaml` is keyed by concatenated ID (`SSFI00` = Finance full committee, `SSFI01` = first subcommittee) with a list of legislator entries:
-- `bioguide` — matches existing `politicians.bioguide_id`
-- `name`, `party`, `rank`, `title` (chair/ranking member flags)
+Why `State` in the composite unique key: prevents collisions between e.g. Indiana's "Monroe County Council" and any other state that might have a body with the same formal name.
 
 ---
 
-### State Legislative Data: Open States API v3
+### API Change: Extend `OfficialOut`
 
-**Decision:** Use Open States API v3 (REST, JSON) for Indiana and California state legislative data. Access via Python scripts in the existing scraper pipeline, not from Go.
+Add two fields sourced from the new table:
 
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| Open States API v3 | Current (free tier) | Indiana + CA state bills, votes, committees, legislators | Only comprehensive state legislative API covering both IN and CA; free tier available; previously known as Plural Policy |
-| `requests` | `2.32.5` (existing) | HTTP calls to `v3.openstates.org` | Already pinned; no new library needed |
+```go
+type OfficialOut struct {
+    // ... all existing fields unchanged ...
+    BodyDisplayName string `json:"body_display_name,omitempty"` // e.g. "Monroe County Council"
+    BodyWebsiteURL  string `json:"body_website_url,omitempty"`  // e.g. "https://monroecounty.gov/dept/council/"
+}
+```
 
-**Base URL:** `https://v3.openstates.org/`
+These are populated via a LEFT JOIN added to the raw SQL in `fetchOfficialsFromDB` and `fetchOfficialsByGeofence` (the two paths that serve `OfficialOut`):
 
-**Key endpoints for this milestone:**
+```sql
+LEFT JOIN essentials.government_bodies gb
+    ON gb.body_key = c.name_formal
+   AND gb.state = d.state
+```
 
-| Data | Endpoint | Notes |
-|------|----------|-------|
-| Legislator lookup | `GET /people?jurisdiction=ocd-jurisdiction/country:us/state:in/government&name={name}` | Match by name to get Open States person ID |
-| Bills sponsored | `GET /bills?sponsor={person_id}&jurisdiction={ocd_id}` | Returns bills with status |
-| Vote records | `GET /votes?voter={person_id}&jurisdiction={ocd_id}` | Pagination required |
-| Committee memberships | `GET /committees?jurisdiction={ocd_id}` then member filter | Committee data restored for IN and CA |
+Then in the scan struct:
+```go
+BodyDisplayName string
+BodyWebsiteURL  string
+```
 
-**API key:** Free registration at `openstates.org`. Set via `OPENSTATES_API_KEY` environment variable. Rate limits are not yet enforced on v3 (confirmed from Open States community discussions) but stay polite — use serial requests with a 0.5s delay.
-
-**Confidence:** MEDIUM — rate limits for v3 were marked "TBD" in community discussions. Monitor for quota enforcement when it activates; for this milestone's data volume (2 states, ~200 legislators) it will not matter.
+This is one additional LEFT JOIN per query — zero measurable latency impact. No new endpoints needed.
 
 ---
 
-### State Legislative Data Fallback: LegiScan API
+### Frontend Change: Results.jsx (essentials app)
 
-**Decision:** Add LegiScan as a fallback for Senate roll call votes (not in Congress.gov API) and as a secondary source when Open States has gaps. Use Python, not Go.
+`Results.jsx` already groups politicians by `classifyCategory()` output and renders each group via `CategorySection`. With `body_display_name` and `body_website_url` available per politician:
 
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| LegiScan API v1.91 | Current (free public tier) | Senate roll call votes for US Congress; Indiana + CA state rollups | 30,000 free queries/month; all 50 states + Congress covered; documentation updated March 2025; well-structured JSON responses |
-| `requests` | `2.32.5` (existing) | HTTP calls to `api.legiscan.com` | Already pinned; no new library needed |
+**Section header strategy:** All politicians in the same chamber share the same `chamber_name_formal`, so `body_display_name` and `body_website_url` are identical across the group. Take the values from the first politician in each group. This requires no new state or hooks.
 
-**LegiScan free tier:** 30,000 queries/month. This milestone imports data for ~535 federal legislators + ~200 state legislators from 2 states. A single import run will consume ~5,000-10,000 queries (well within the free tier for periodic imports).
-
-**Key endpoints:**
-
-| Data | Endpoint | Notes |
-|------|----------|-------|
-| Session list | `?op=getSessionList&state=US` | Returns session IDs for Congress |
-| Person bills | `?op=getSponsoredBills&id={person_id}` | person_id from `getPerson` lookup |
-| Roll call detail | `?op=getRollCall&id={roll_call_id}` | Returns full member vote breakdown |
-| Bill detail | `?op=getBill&id={bill_id}` | Includes committees, text link, status |
-
-**Person lookup:** LegiScan uses its own integer person IDs. Match federal legislators by `bioguide_id` (LegiScan includes it in person records). For state legislators, match by full name + session.
-
-**Cost:** Free public key for ≤30K queries/month. No credit card required.
-
----
-
-### Local Legislative Data: python-legistar-scraper
-
-**Decision:** Use `python-legistar-scraper` (PyPI: `scraper-legistar`) for LA County Board of Supervisors. For Bloomington Common Council, use the City's OnBoard open data portal directly.
-
-| Technology | Version | Purpose | Why |
-|------------|---------|---------|-----|
-| `scraper-legistar` | Latest stable | LA County Board of Supervisors votes/legislation from `lacounty.legistar.com` | LA County uses Legistar (Granicus) for meeting management — confirmed at `lacounty.legistar.com`. The `opencivicdata/python-legistar-scraper` library handles Legistar's paginated HTML/JSON hybrid interface. Actively maintained by Open Civic Data project. |
-| `requests` | `2.32.5` (existing) | Bloomington OnBoard API | City of Bloomington runs open-source OnBoard system (GitHub: `City-of-Bloomington/OnBoard`) with REST endpoints for votes and legislation. Use `requests` directly — no scraping library needed. |
-
-**Bloomington Common Council:** The City of Bloomington runs a public OnBoard system. Fetch data via HTTP from their open data portal at `data.bloomington.in.gov`. Fall back to scraping council meeting minutes from `bloomington.in.gov/council/meetings/2025` if the structured API is insufficient.
-
-**LA County Board of Supervisors:** Uses Legistar at `lacounty.legistar.com`. The `scraper-legistar` library abstracts Legistar's unusual partial-JSON-partial-HTML interface. Install:
-```
-scraper-legistar==<latest>
-```
-
----
-
-### Go Packages: New Additions to `go.mod`
-
-Only two new Go packages are needed:
-
-```
-github.com/goccy/go-yaml v1.18.0     # YAML parsing for congress-legislators repo
-golang.org/x/time v0.x               # rate.Limiter for Congress.gov API client
-```
-
-`golang.org/x/time` is already transitively in `go.sum` via `golang.org/x/sync`. Promote it to a direct dependency.
-
-**No other new Go packages.** The Congress.gov API client is a hand-rolled struct with `net/http` + `encoding/json` — the existing pattern for all Go HTTP calls in this codebase. Do not add an HTTP client library (resty, got, etc.) — unnecessary for a single-API client.
-
----
-
-### Python Packages: New Additions to `requirements.txt`
-
-```
-scraper-legistar          # LA County Legistar scraping
-```
-
-Everything else (requests, BeautifulSoup, psycopg2-binary) is already in `requirements.txt` and covers Open States + LegiScan API calls.
-
-Do NOT add `pyopenstates` — the official Python client for Open States. It wraps v3 API with opinionated data models that will conflict with the project's direct psycopg2 write pattern. Raw `requests` calls to `v3.openstates.org` are simpler and already proven.
-
----
-
-### Frontend Components: React (No New npm Packages)
-
-**Decision:** Build voting record and legislation displays with existing Tailwind CSS 4 utility classes. No new component library needed.
-
-The project already has:
-- `ev-ui` component library with `PoliticianCard`, `PoliticianProfile`
-- Tailwind CSS 4 for all styling
-- Existing profile section pattern in `essentials` (education, experience, contacts)
-
-New profile sections to build (in `ev-ui` or inline in `essentials`):
-
-| Component | Pattern | Location |
-|-----------|---------|----------|
-| `CommitteeList` | Simple list with role badge (Member/Chair/Vice-Chair) | Inline in essentials `Profile.jsx` or ev-ui |
-| `VotingRecord` | Paginated table — bill name, date, vote (Yea/Nay/Abstain), result badge | Inline in essentials `Profile.jsx` |
-| `SponsoredLegislation` | Card list — bill number, title, status badge, topic tags | Inline in essentials `Profile.jsx` |
-| `LeadershipRoles` | Compact list — role title, body, since date | Inline in essentials `Profile.jsx` |
-
-**Styling pattern for vote indicators** (Yea/Nay/Abstain):
 ```jsx
-const voteColors = {
-  yea:     'bg-green-100 text-green-800',
-  nay:     'bg-red-100 text-red-800',
-  abstain: 'bg-gray-100 text-gray-600',
-  absent:  'bg-gray-50 text-gray-400',
-};
+// In Results.jsx, when rendering a group:
+orderedEntries(groups, LOCAL_ORDER).map(([category, polList]) => {
+  const firstPol = polList[0];
+  const sectionTitle = firstPol?.body_display_name || getDisplayName(category);
+  const sectionUrl = firstPol?.body_website_url || null;
+
+  return (
+    <CategorySection
+      key={category}
+      title={sectionTitle}
+      websiteUrl={sectionUrl}
+    >
+      {defaultSort(category, polList).map(renderPoliticianCard)}
+    </CategorySection>
+  );
+});
 ```
 
-This is consistent with ev-coral / ev-muted-blue brand palette using Tailwind's green/red semantic colors for civic context.
-
-**No new npm packages** for the frontend. Do not add:
-- A data table library (TanStack Table, etc.) — Tailwind table utility classes are sufficient for 10-20 vote rows
-- A charting library for vote breakdowns — a simple CSS bar or text summary is adequate
-- Any additional UI kit — the project's pattern is Tailwind utilities, not component library additions
+No changes needed to:
+- `classifyCategory()` in `classify.js` — classification stays district_type based
+- `LOCAL_ORDER`, `STATE_ORDER`, `FEDERAL_ORDER` — ordering unchanged
+- `getDisplayName()` — still used as fallback when `body_display_name` is absent
+- Any politician card component or profile page
 
 ---
 
-## Go Module Schema: New `internal/legislative/` Package
+### ev-ui Change: CategorySection websiteUrl prop
 
-The legislative data needs its own Go module following the existing pattern (`internal/<feature>/models.go`, `routes.go`, `handlers.go`, `setup.go`).
+Add an optional `websiteUrl` prop to the existing `CategorySection` component. When provided, render a small external-link icon after the title pill that opens in a new tab.
 
-**New schema:** `legislative` (new PostgreSQL schema, separate from `essentials` and `meetings`)
+```jsx
+// CategorySection.jsx — new prop, backward compatible
+export default function CategorySection({ title, infoTooltip, websiteUrl, children, style = {} }) {
+  // existing logic unchanged
+  // add beside titlePill:
+  {websiteUrl && (
+    <a
+      href={websiteUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Visit official ${title} website`}
+      style={styles.websiteLink}
+    >
+      {/* small external-link SVG icon */}
+    </a>
+  )}
+}
+```
 
-Core models needed:
+No breaking changes — `websiteUrl` is optional with `undefined` as default (no render effect). Existing callers of `CategorySection` without `websiteUrl` are unaffected.
+
+**Version bump:** ev-ui 0.1.40 → 0.1.41
+
+---
+
+### Admin Endpoints: Government Body CRUD
+
+The `government_bodies` table requires manual curation. Add CRUD endpoints following the exact pattern of the existing `position-descriptions` admin endpoints in `routes.go`:
 
 ```go
-// LegislativeSession — a congressional/state session (e.g., "119th Congress", "2025 Indiana Regular Session")
-type LegislativeSession struct {
-    ID           uuid.UUID `gorm:"type:uuid;primaryKey"`
-    Jurisdiction string    // "federal", "indiana", "california", "bloomington-in", "la-county-ca"
-    Name         string    // "119th Congress", "2025 IN Regular Session"
-    StartDate    time.Time
-    EndDate      *time.Time
-    ExternalID   string    // Congress number, Open States session ID, LegiScan session ID
-}
-func (LegislativeSession) TableName() string { return "legislative.sessions" }
-
-// GoverningBody — a legislative chamber or local body
-type GoverningBody struct {
-    ID           uuid.UUID `gorm:"type:uuid;primaryKey"`
-    Jurisdiction string
-    Name         string    // "U.S. Senate", "Indiana State Senate", "Bloomington Common Council"
-    Chamber      string    // "upper", "lower", "unicameral", "local"
-    ExternalID   string
-}
-func (GoverningBody) TableName() string { return "legislative.governing_bodies" }
-
-// Committee — a committee or subcommittee
-type Committee struct {
-    ID              uuid.UUID  `gorm:"type:uuid;primaryKey"`
-    GoverningBodyID uuid.UUID
-    ParentID        *uuid.UUID // for subcommittees
-    Name            string
-    ExternalID      string    // thomas_id, OCD committee ID, Legistar committee ID
-    IsCurrent       bool
-}
-func (Committee) TableName() string { return "legislative.committees" }
-
-// CommitteeMembership — politician on committee with role
-type CommitteeMembership struct {
-    ID           uuid.UUID `gorm:"type:uuid;primaryKey"`
-    CommitteeID  uuid.UUID
-    PoliticianID uuid.UUID // FK to essentials.politicians (app-level)
-    Role         string    // "member", "chair", "vice_chair", "ranking_member", "ex_officio"
-    SessionID    uuid.UUID
-    IsCurrent    bool
-}
-func (CommitteeMembership) TableName() string { return "legislative.committee_memberships" }
-
-// LeadershipPosition — speaker, majority leader, whip, etc.
-type LeadershipPosition struct {
-    ID           uuid.UUID `gorm:"type:uuid;primaryKey"`
-    PoliticianID uuid.UUID
-    BodyID       uuid.UUID
-    Title        string    // "Speaker", "Majority Leader", "President Pro Tempore"
-    StartDate    *time.Time
-    EndDate      *time.Time
-    SessionID    *uuid.UUID
-    IsCurrent    bool
-}
-func (LeadershipPosition) TableName() string { return "legislative.leadership_positions" }
-
-// Legislation — a bill, resolution, ordinance, or motion
-type Legislation struct {
-    ID            uuid.UUID `gorm:"type:uuid;primaryKey"`
-    SessionID     uuid.UUID
-    ExternalID    string    // bill number + session composite, LegiScan bill_id, Legistar matter_id
-    Number        string    // "HB 1044", "SB 123", "Ordinance 2026-15"
-    Title         string
-    Summary       string    `gorm:"type:text"`  // plain-language summary
-    Status        string    // "introduced", "committee", "floor", "passed", "failed", "signed", "vetoed"
-    IntroducedAt  *time.Time
-    PassedAt      *time.Time
-    SignedAt      *time.Time
-    TopicTags     pq.StringArray `gorm:"type:text[]"`
-    Url           string
-}
-func (Legislation) TableName() string { return "legislative.legislation" }
-
-// Sponsorship — politician sponsors/co-sponsors legislation
-type Sponsorship struct {
-    ID            uuid.UUID `gorm:"type:uuid;primaryKey"`
-    LegislationID uuid.UUID
-    PoliticianID  uuid.UUID
-    Type          string    // "primary", "cosponsor"
-}
-func (Sponsorship) TableName() string { return "legislative.sponsorships" }
-
-// RollCallVote — a recorded vote on legislation
-type RollCallVote struct {
-    ID            uuid.UUID `gorm:"type:uuid;primaryKey"`
-    LegislationID *uuid.UUID // nullable: some votes are procedural
-    SessionID     uuid.UUID
-    BodyID        uuid.UUID
-    ExternalID    string    // roll call number, Legistar vote ID
-    Date          time.Time
-    Question      string    // "Passage", "Amendment #3", "Cloture"
-    Result        string    // "passed", "failed", "tabled"
-    YeaCount      int
-    NayCount      int
-    AbstainCount  int
-    AbsentCount   int
-}
-func (RollCallVote) TableName() string { return "legislative.roll_call_votes" }
-
-// VoteCast — individual member's vote on a roll call
-type VoteCast struct {
-    ID             uuid.UUID `gorm:"type:uuid;primaryKey;uniqueIndex:idx_vote_cast"`
-    RollCallVoteID uuid.UUID `gorm:"uniqueIndex:idx_vote_cast"`
-    PoliticianID   uuid.UUID `gorm:"uniqueIndex:idx_vote_cast"`
-    Position       string    // "yea", "nay", "abstain", "absent", "not_voting", "present"
-}
-func (VoteCast) TableName() string { return "legislative.votes_cast" }
+// In SetupRoutes(), under the existing admin group:
+r.Get("/admin/government-bodies",       ListGovernmentBodies)
+r.Post("/admin/government-bodies",      UpsertGovernmentBody)   // upsert by body_key + state
+r.Delete("/admin/government-bodies/{id}", DeleteGovernmentBody)
 ```
 
-This schema is intentionally source-agnostic — Congress.gov, Open States, LegiScan, Legistar, and OnBoard all write into the same tables using the import CLI.
+These handlers follow the identical pattern as `ListPositionDescriptions`, `UpsertPositionDescription`, `DeletePositionDescription`. No new middleware, no new authentication logic.
 
 ---
 
-## Import CLI Pattern
+## Supporting Libraries
 
-The existing import CLI pattern (`go run . import-stances`, `go run . import-quotes`) extends cleanly. New subcommands:
+None new. Everything needed is already in the stack.
 
+| What | Why No New Library |
+|------|-------------------|
+| External link URL display | Native HTML `<a target="_blank" rel="noopener noreferrer">` |
+| External link icon | Inline SVG (3-4 lines) — no icon library needed |
+| State-specific body logic | Handled by DB lookup — no frontend branching code |
+| Data seeding | SQL INSERT or existing Go admin endpoint |
+
+---
+
+## Installation
+
+No new packages required.
+
+```bash
+# Go backend — no new go get needed
+cd EV-Backend
+go build -o server .   # After adding GovernmentBody model to models.go
+
+# ev-ui — no new npm installs; version bump only
+cd ev-ui
+npm run build
+# Update essentials to consume ^0.1.41
+
+# essentials React app — no new npm installs
 ```
-go run . import-federal-committees   # parse congress-legislators YAML → legislative.committees + committee_memberships
-go run . import-federal-votes        # Congress.gov API → legislative.roll_call_votes + votes_cast
-go run . import-federal-bills        # Congress.gov API → legislative.legislation + sponsorships
-go run . import-state-data           # Open States API (Python script) → legislative.*
-go run . import-local-data           # Legistar / OnBoard (Python script) → legislative.*
-```
-
-The Python scripts (Open States, LegiScan, Legistar) write directly to PostgreSQL via psycopg2 — same pattern as all existing scraper scripts. The Go CLI subcommands handle federal data.
 
 ---
 
@@ -363,128 +211,96 @@ The Python scripts (Open States, LegiScan, Legistar) write directly to PostgreSQ
 
 | Recommended | Alternative | Why Not |
 |-------------|-------------|---------|
-| Congress.gov API v3 (direct) | ProPublica Congress API | ProPublica shut down its Congress API — no longer available |
-| Congress.gov API v3 (direct) | GovTrack bulk data | GovTrack ended its bulk data and API service (confirmed deprecated) |
-| `goccy/go-yaml` v1.18.0 | `gopkg.in/yaml.v3` | `gopkg.in/yaml.v3` is archived/unmaintained as of 2025 |
-| `goccy/go-yaml` v1.18.0 | `sigs.k8s.io/yaml` | Wraps archived `gopkg.in/yaml.v3` — inherits same maintenance issues |
-| Open States API v3 + raw `requests` | `pyopenstates` | Official Python client wraps v3 but imposes data models that conflict with direct psycopg2 write pattern; no benefit over raw `requests` |
-| LegiScan (fallback only) | LegiScan as primary | Open States is more structured for committee data; LegiScan free tier is generous but LegiScan person IDs require separate lookup vs Open States OCD IDs which are standard |
-| `scraper-legistar` (PyPI) | Scraping Legistar HTML manually | `scraper-legistar` from opencivicdata is purpose-built for Legistar's unusual partial-JSON structure; reinventing it is wasted effort |
-| `net/http` stdlib | `github.com/go-resty/resty` | No third-party HTTP client needed for a single-API Go client; existing codebase uses stdlib throughout |
-| Tailwind CSS utilities (existing) | TanStack Table for vote lists | Vote lists have ≤20 rows in the initial scope; a full table library is overkill; existing ev-ui component pattern uses Tailwind |
+| New `essentials.government_bodies` table with string `body_key` | Add `website_url` + `display_name` to `essentials.chambers` | Chambers are Cicero-synced; adding fields risks import conflicts; upsert logic would need updating to preserve manually set values |
+| New `essentials.government_bodies` table | Add `website_url` to `essentials.governments` | Government table has no URL or display name concept; a single government can own multiple chambers (commissioners + council both under "Monroe County Government"); no clean per-body targeting |
+| LEFT JOIN in existing queries | New `/essentials/government-bodies` endpoint + frontend fetch | Extra network round-trip on every Results page load; adds error state handling; JOIN is simpler and zero-cost |
+| `body_key = chamber_name_formal` | `body_key = chamber_id UUID` | UUID key requires resolving chamber UUIDs when seeding (extra DB lookup); string key is human-readable and matches existing `OfficialOut` fields directly |
+| `websiteUrl` prop on `CategorySection` | New `CategorySectionWithLink` component | Avoids component proliferation; backward-compatible optional prop is cleaner; `infoTooltip` already established the pattern of optional extras on `CategorySection` |
+| Take `body_display_name` from `polList[0]` in Results.jsx | Group-level API shape `{ title, url, politicians[] }` | Group-level shape requires a new API endpoint or response restructuring; all politicians in a chamber already share the same `chamber_name_formal`, so `polList[0]` is deterministic and requires no API changes |
 
 ---
 
-## Installation
-
-### Go — add to go.mod
-
-```bash
-cd /Users/chrisandrews/Documents/GitHub/EV-Backend
-go get github.com/goccy/go-yaml@v1.18.0
-go get golang.org/x/time
-```
-
-### Python — add to requirements.txt
-
-```
-scraper-legistar          # Legistar scraping for LA County BOS + potential Bloomington
-```
-
-Full updated `requirements.txt`:
-```
-geopandas==1.1.2
-SQLAlchemy==2.0.46
-psycopg2-binary==2.9.11
-shapely==2.0.7
-requests==2.32.5
-beautifulsoup4==4.12.3
-rapidfuzz==3.12.1
-pdfplumber==0.11.4
-playwright==1.50.0
-supabase==2.28.0
-scraper-legistar          # NEW — Legistar scraping for LA County BOS
-```
-
-### Environment Variables (new)
-
-```
-CONGRESS_API_KEY=<from api.data.gov — free signup>
-OPENSTATES_API_KEY=<from openstates.org — free signup>
-LEGISCAN_API_KEY=<from legiscan.com — free signup>
-```
-
-Add to EV-Backend `.env.local` (never commit). Add to Render environment for production.
-
----
-
-## External API Summary
-
-| API | Auth | Rate Limit | Cost | Primary Use |
-|-----|------|------------|------|-------------|
-| Congress.gov API v3 | API key (api.data.gov) | 5,000 req/hour | Free | Federal bills, House votes, committees |
-| unitedstates/congress-legislators | None (public GitHub raw) | GitHub raw CDN limits | Free | Federal committee membership YAML |
-| Open States API v3 | API key (openstates.org) | Not enforced yet (v3 beta) | Free | Indiana + CA bills, votes, committees |
-| LegiScan API | API key (legiscan.com) | 30,000 req/month free | Free | Senate votes fallback; state rollup |
-| LA County Legistar | None (public) | Polite scraping | Free | LA County BOS votes/legislation |
-| Bloomington OnBoard | None (public) | Polite requests | Free | Bloomington Council votes |
-
-**Total new API cost: $0** — all free tiers sufficient for this scope.
-
----
-
-## What NOT to Add
+## What NOT to Use
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| `pyopenstates` PyPI package | Opinionated data models conflict with psycopg2 direct write pattern; v3 wrapper adds abstraction with no benefit | Raw `requests` to `v3.openstates.org` |
-| `gopkg.in/yaml.v3` | Archived, unmaintained as of 2025 | `github.com/goccy/go-yaml` v1.18.0 |
-| `sigs.k8s.io/yaml` | Wraps the archived `gopkg.in/yaml.v3`; inherits maintenance issues | `github.com/goccy/go-yaml` v1.18.0 |
-| ProPublica Congress API | Shut down — no longer available | Congress.gov API v3 |
-| GovTrack bulk data or API | Explicitly deprecated, service ended | Congress.gov API v3 + unitedstates/congress data |
-| Any Go HTTP client library (resty, got, heimdall) | One external API; stdlib `net/http` is sufficient and consistent with existing codebase | `net/http` + `encoding/json` |
-| TanStack Table or any React table library | Vote tables have ≤20 rows in initial scope; full table library is disproportionate; ev-ui already handles lists | Tailwind CSS table utilities in existing `Profile.jsx` pattern |
-| GraphQL client for Open States | Open States v2 GraphQL is deprecated and sunset December 2023; v3 is REST | Open States API v3 REST endpoints |
-| Storing Senate roll call votes from Congress.gov | Senate votes are NOT yet available in Congress.gov API v3 | LegiScan for Senate votes, or note as "data not yet available" |
-| `encoding/yaml` from stdlib | Go stdlib does not have a YAML package — only JSON/XML | `github.com/goccy/go-yaml` |
-| New npm packages for frontend | Existing Tailwind + ev-ui component pattern covers all new UI needs | Extend existing `Profile.jsx` sections |
+| Modifying `essentials.chambers` for `website_url` | Chamber table is Cicero-imported; field would be overwritten on next import unless import upsert logic is updated to preserve it | New `government_bodies` lookup table with manual curation |
+| Hardcoding body names/URLs in `classify.js` or `Results.jsx` | Brittle — breaks when expanding to new regions; not editable without code deployment | DB-backed lookup via LEFT JOIN |
+| Separate `/government-bodies` API fetch in frontend | Extra network round-trip per page load; adds loading/error state | Embed `body_display_name`/`body_website_url` in existing `OfficialOut` response |
+| Adding `websiteUrl` to `PoliticianCard` | The link is per-section (governing body), not per individual politician | Add to `CategorySection` title area only |
+| New npm package for external link icon | Inline SVG is 4 lines; importing an icon library for one glyph is disproportionate | Inline SVG `<path>` for external-link arrow icon |
 
 ---
 
-## Confidence Assessment
+## Stack Patterns by Variant
 
-| Area | Confidence | Basis |
-|------|------------|-------|
-| Congress.gov API v3 — endpoints exist | HIGH | Official LoC blog post May 2025 confirming House roll call votes; ChangeLog on GitHub |
-| Congress.gov API v3 — reliability | LOW | Experienced outage January 2026; Library of Congress budget at political risk; treat as unstable |
-| Senate votes in Congress.gov API | HIGH (not available) | API changelog confirms only House roll call votes added; Senate not yet included |
-| Open States API v3 — coverage | MEDIUM | Indiana + CA confirmed covered; rate limits "TBD" for v3; v2 GraphQL sunset December 2023 |
-| LegiScan — free tier 30K/month | HIGH | Explicitly documented in API manual (Revision 20250317 v1.91) |
-| `goccy/go-yaml` v1.18.0 | HIGH | Active release on GitHub, v1.x stable, Debian/Ubuntu packaged |
-| `gopkg.in/yaml.v3` archived | HIGH | Multiple community discussions confirming archived status 2025 |
-| `scraper-legistar` — LA County | MEDIUM | LA County confirmed on Legistar (`lacounty.legistar.com`); library maintained by Open Civic Data project; last commit activity to verify before starting |
-| Bloomington OnBoard REST API | MEDIUM | City of Bloomington GitHub confirms OnBoard system exists; specific endpoint documentation not found in search — validate before building integration |
+**Indiana county with distinct commissioners + council bodies:**
+- Two `GovernmentBody` rows: one for commissioners (`chamber_name_formal` of commissioner records), one for council (`chamber_name_formal` of council records)
+- `classifyCategory()` already creates distinct groups ("County Executives" vs "County Legislators") because these bodies have different titles
+- Each group renders with its own specific `body_display_name` and `body_website_url`
+- No frontend code changes needed for this structural distinction
+
+**Body with no DB entry yet (new regions, unsupported areas):**
+- LEFT JOIN returns NULL for `body_display_name` and `body_website_url`
+- Frontend fallback: `firstPol?.body_display_name || getDisplayName(category)` — existing generic names
+- `websiteUrl` is `null` — `CategorySection` renders without link icon
+- Zero visual regression for unsupported regions
+
+**Expanding to new states/regions:**
+- Insert rows into `essentials.government_bodies` via admin endpoint
+- No frontend code changes
+- No backend code changes
+- The JOIN picks them up automatically on next query
+
+**City council vs county council same page:**
+- Different `chamber_name_formal` values → different `body_key` rows → each section gets correct name/URL
+- Already deduped correctly by existing `byTier` logic in `Results.jsx`
+
+---
+
+## Version Compatibility
+
+| Package | Current | Target | Notes |
+|---------|---------|--------|-------|
+| ev-ui | 0.1.40 | 0.1.41 | Add optional `websiteUrl` to `CategorySection`; backward-compatible |
+| essentials (React app) | — | — | Consume ev-ui `^0.1.41`; update `Results.jsx` to pass new props |
+| EV-Backend | Go 1.24.3 | unchanged | Add `GovernmentBody` model; extend `OfficialOut`; extend JOIN in queries |
+| Supabase PostgreSQL | existing | unchanged | AutoMigrate creates `essentials.government_bodies`; no manual migration |
+
+---
+
+## Data Seeding Plan
+
+The `government_bodies` table is populated manually (not via import pipelines). For the Indiana v2026.3.3 launch:
+
+**Seeding method:** SQL INSERT during development, or via admin API endpoint after deploy.
+
+**Critical step before seeding:** Verify exact `chamber_name_formal` values from the DB for Monroe County and Bloomington records:
+
+```sql
+SELECT DISTINCT c.name_formal, g.name, d.state
+FROM essentials.chambers c
+JOIN essentials.governments g ON c.government_id = g.id
+JOIN essentials.offices o ON o.chamber_id = c.id
+JOIN essentials.districts d ON o.district_id = d.id
+WHERE d.state = 'IN'
+ORDER BY g.name, c.name_formal;
+```
+
+Use the exact `name_formal` strings from that query as `body_key` values. Do not guess the strings — a mismatch means the JOIN silently returns NULL.
 
 ---
 
 ## Sources
 
-- [Congress.gov API v3 — Official Library of Congress](https://www.loc.gov/apis/additional-apis/congress-dot-gov-api/) — HIGH confidence
-- [Congress.gov API ChangeLog](https://github.com/LibraryOfCongress/api.congress.gov/blob/main/ChangeLog.md) — HIGH confidence
-- [Introducing House Roll Call Votes in the Congress.gov API](https://blogs.loc.gov/law/2025/05/introducing-house-roll-call-votes-in-the-congress-gov-api/) — HIGH confidence
-- [Congress.gov API outage article](https://www.govtech.com/gov-experience/congress-govs-api-has-gone-dark-impacting-data-access) — HIGH confidence (January 2026 outage confirmed)
-- [unitedstates/congress-legislators — GitHub](https://github.com/unitedstates/congress-legislators) — HIGH confidence
-- [goccy/go-yaml — GitHub](https://github.com/goccy/go-yaml) — HIGH confidence; v1.18.0 confirmed stable
-- [gopkg.in/yaml.v3 archived discussion](https://github.com/go-task/task/issues/2171) — HIGH confidence
-- [Open States API v3 Documentation](https://docs.openstates.org/api-v3/) — MEDIUM confidence (rate limits TBD)
-- [Open States Rate Limit Discussion](https://github.com/openstates/issues/discussions/205) — MEDIUM confidence
-- [LegiScan API User Manual v1.91 (2025-03-17)](https://api.legiscan.com/dl/LegiScan_API_User_Manual.pdf) — HIGH confidence; 30K free queries confirmed
-- [opencivicdata/python-legistar-scraper — GitHub](https://github.com/opencivicdata/python-legistar-scraper) — MEDIUM confidence (verify last commit date before adoption)
-- [LA County Legistar portal](https://lacounty.legistar.com/) — HIGH confidence (confirmed by search results)
-- [City-of-Bloomington/OnBoard — GitHub](https://github.com/City-of-Bloomington/OnBoard) — MEDIUM confidence (REST API endpoints not confirmed in search; requires direct validation)
-- [golang.org/x/time/rate — pkg.go.dev](https://pkg.go.dev/golang.org/x/time/rate) — HIGH confidence (stdlib extension, stable)
+- `GovernmentBody` pattern modeled on existing `PositionDescription` — HIGH confidence (read directly from EV-Backend/internal/essentials/models.go)
+- `OfficialOut` struct and SQL query structure — HIGH confidence (read directly from EV-Backend/internal/essentials/handlers.go lines 162-214)
+- `CategorySection` component API — HIGH confidence (read directly from ev-ui/src/CategorySection.jsx)
+- ev-ui current version 0.1.40 — HIGH confidence (read from ev-ui/package.json)
+- essentials consumes `@chrisandrewsedu/ev-ui ^0.1.40` — HIGH confidence (read from essentials/package.json)
+- Indiana county dual-body structure (commissioners + council) — MEDIUM confidence ([NACo Indiana County Overview PDF](https://www.naco.org/sites/default/files/event_attachments/DRAFT_Indiana_012022.pdf), [Indiana County Commissioners Association](https://www.indianacountycommissioners.com/what-is-a-county-commissioner))
+- No `website_url` on `Chamber` or `Government` tables — HIGH confidence (read from models.go; confirmed absence)
 
 ---
-
-*Stack research for: v2026.3 Legislative Profile Data — Congress.gov API, Open States, LegiScan, Legistar, congress-legislators YAML*
-*Researched: 2026-03-01*
+*Stack research for: v2026.3.3 Local Government Organization — specific body names and website links*
+*Researched: 2026-03-10*
