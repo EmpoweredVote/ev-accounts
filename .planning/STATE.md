@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 73-backend-governmentbody-table-01-PLAN.md
-last_updated: "2026-03-11T14:53:03.209Z"
+stopped_at: Completed 74-data-seeding-01-PLAN.md
+last_updated: "2026-03-11T15:08:30.813Z"
 last_activity: 2026-03-11 — Phase 73-01 complete; GovernmentBody model + chamber_name_formal migration + LEFT JOIN enrichment in both fetch functions
 progress:
   total_phases: 5
-  completed_phases: 2
-  total_plans: 3
-  completed_plans: 3
+  completed_phases: 3
+  total_plans: 4
+  completed_plans: 4
   percent: 100
 ---
 
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 73 of 76 (Backend GovernmentBody Table)
+Phase: 74 of 76 (Data Seeding)
 Plan: 1 of 1 complete
-Status: Phase 73 complete
-Last activity: 2026-03-11 — Phase 73-01 complete; GovernmentBody model + chamber_name_formal migration + LEFT JOIN enrichment in both fetch functions
+Status: Phase 74 complete
+Last activity: 2026-03-11 — Phase 74-01 complete; 14 government_bodies rows seeded + 9 individual county office name_formal migrations for Monroe County and Bloomington officials
 
 Progress: [██████████] 100%
 
@@ -57,6 +57,10 @@ Progress: [██████████] 100%
 - **[73-01] GovernmentBody body_key = COALESCE(NULLIF(c.name_formal, ''), c.name, '')** — chamber name_formal takes precedence; after migration Indiana chambers use canonical names as join keys
 - **[73-01] chamber_name_formal migration scoped with LIKE prefix patterns** — 'Monroe County Council%' prevents false matches in other states
 - **[73-01] government_body_name/url use omitempty** — officials without matching government_bodies row return clean JSON, empty string suppressed
+- **[74-01] Individual county offices share body_key='Monroe County Government'** — name_formal UPDATE in setup.go groups Sheriff, Assessor, Auditor, Coroner, Treasurer, Recorder, Surveyor, Circuit Court Clerk, Prosecuting Attorney under one government_bodies row
+- **[74-01] ON CONFLICT DO NOTHING for government_bodies seed** — preserves manually-corrected URLs in production DB; DO UPDATE would overwrite on every server restart
+- **[74-01] geo_id fan-out required for multi-district bodies** — Monroe County Council needs 5 rows (at-large + 4 districts), Bloomington Common Council needs 7 rows (at-large + 6 districts); one row per distinct geo_id in districts table
+- **[74-01] FIPS '18' not ISO 'IN' for state column** — districts table stores FIPS codes; JOIN `gb.state = d.state` requires matching format
 
 ### Tech Debt Carried Forward (from v2026.3.2)
 
@@ -84,9 +88,10 @@ Progress: [██████████] 100%
 | 6 | Column-per-category contact info layout in PoliticianProfile | 2026-03-08 | 1b91b91 | [6-improve-contact-info-section-on-profile-](./quick/6-improve-contact-info-section-on-profile-/) |
 | Phase 72-db-audit P01 | 4 | 2 tasks | 1 files |
 | Phase 73-backend-governmentbody-table P02 | 5 | 1 tasks | 1 files |
+| Phase 74-data-seeding P01 | 2 | 1 tasks | 1 files |
 
 ## Session Continuity
 
-Last session: 2026-03-11T14:48:50Z
-Stopped at: Completed 73-backend-governmentbody-table-01-PLAN.md
+Last session: 2026-03-11T15:08:30.811Z
+Stopped at: Completed 74-data-seeding-01-PLAN.md
 Resume: Start with `/gsd:execute-phase 74`
