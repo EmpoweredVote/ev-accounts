@@ -4,8 +4,8 @@ milestone: v1.0
 milestone_name: milestone
 status: completed
 stopped_at: Completed 75-ev-ui-categorysection-update-01-PLAN.md
-last_updated: "2026-03-11T16:07:18.608Z"
-last_activity: 2026-03-11 — Phase 74-01 complete; 14 government_bodies rows seeded + 9 individual county office name_formal migrations for Monroe County and Bloomington officials
+last_updated: "2026-03-11T16:09:40.935Z"
+last_activity: 2026-03-11 — Phase 75-01 complete; ev-ui 0.1.41 published with websiteUrl prop on CategorySection; essentials Results.jsx wired to pass government_body_url to all three tier sections
 progress:
   total_phases: 5
   completed_phases: 4
