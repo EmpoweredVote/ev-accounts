@@ -267,7 +267,9 @@ Plans:
   4. School board sections display the specific district name (e.g., "Monroe County Community School Corporation Board")
   5. An LA County address continues to render section headings with graceful fallback to generic category names — no regression
   6. Website link icons appear in section headers for Monroe County and Bloomington bodies, opening official sites in a new tab
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 76-01-PLAN.md — Add splitByBodyName helper and wire body-specific section headings in all three tier blocks
 
 ## Progress
 
@@ -279,4 +281,4 @@ Plans:
 | 73. Backend GovernmentBody Table | 2/2 | Complete    | 2026-03-11 | - |
 | 74. Data Seeding | 1/1 | Complete    | 2026-03-11 | - |
 | 75. ev-ui CategorySection Update | 1/1 | Complete    | 2026-03-11 | - |
-| 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |
+| 76. Frontend Results Integration | v2026.3.3 | 0/1 | Not started | - |
