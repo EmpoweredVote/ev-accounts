@@ -17,7 +17,7 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Website Links
 
-- [ ] **LINK-01**: Each government body section displays a link to its official website
+- [x] **LINK-01**: Each government body section displays a link to its official website
 - [x] **LINK-02**: Website URLs stored in database with graceful absence when URL is null
 - [x] **LINK-03**: Monroe County bodies seeded with official website URLs (Commissioners, Council, elected officials)
 - [x] **LINK-04**: Bloomington bodies seeded with official website URLs (City Council)
@@ -61,7 +61,7 @@ Requirements for this milestone. Each maps to roadmap phases.
 | DATA-03 | Phase 73 | Complete |
 | LINK-03 | Phase 74 | Complete |
 | LINK-04 | Phase 74 | Complete |
-| LINK-01 | Phase 75 | Pending |
+| LINK-01 | Phase 75 | Complete |
 | BODY-01 | Phase 76 | Pending |
 | BODY-02 | Phase 76 | Pending |
 | BODY-03 | Phase 76 | Pending |

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: completed
-stopped_at: Completed 74-data-seeding-01-PLAN.md
-last_updated: "2026-03-11T15:36:16.633Z"
+stopped_at: Completed 75-ev-ui-categorysection-update-01-PLAN.md
+last_updated: "2026-03-11T16:07:18.608Z"
 last_activity: 2026-03-11 — Phase 74-01 complete; 14 government_bodies rows seeded + 9 individual county office name_formal migrations for Monroe County and Bloomington officials
 progress:
   total_phases: 5
-  completed_phases: 3
-  total_plans: 4
-  completed_plans: 4
+  completed_phases: 4
+  total_plans: 5
+  completed_plans: 5
   percent: 100
 ---
 
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 74 of 76 (Data Seeding)
+Phase: 75 of 76 (ev-ui CategorySection Update)
 Plan: 1 of 1 complete
-Status: Phase 74 complete
-Last activity: 2026-03-11 — Phase 74-01 complete; 14 government_bodies rows seeded + 9 individual county office name_formal migrations for Monroe County and Bloomington officials
+Status: Phase 75 complete
+Last activity: 2026-03-11 — Phase 75-01 complete; ev-ui 0.1.41 published with websiteUrl prop on CategorySection; essentials Results.jsx wired to pass government_body_url to all three tier sections
 
 Progress: [██████████] 100%
 
@@ -61,6 +61,8 @@ Progress: [██████████] 100%
 - **[74-01] ON CONFLICT DO NOTHING for government_bodies seed** — preserves manually-corrected URLs in production DB; DO UPDATE would overwrite on every server restart
 - **[74-01] geo_id fan-out required for multi-district bodies** — Monroe County Council needs 5 rows (at-large + 4 districts), Bloomington Common Council needs 7 rows (at-large + 6 districts); one row per distinct geo_id in districts table
 - **[74-01] FIPS '18' not ISO 'IN' for state column** — districts table stores FIPS codes; JOIN `gb.state = d.state` requires matching format
+- **[75-01] websiteUrl placed after infoTooltip in header flex row** — order: [titlePill] [infoButton?] [linkIcon?]; || undefined guard on polList[0]?.government_body_url prevents empty string broken icons
+- **[75-01] ev-ui 0.1.41 published to GitHub Package Registry** — CategorySection backward-compatible; callers without websiteUrl see zero visual change
 
 ### Tech Debt Carried Forward (from v2026.3.2)
 
@@ -89,9 +91,10 @@ Progress: [██████████] 100%
 | Phase 72-db-audit P01 | 4 | 2 tasks | 1 files |
 | Phase 73-backend-governmentbody-table P02 | 5 | 1 tasks | 1 files |
 | Phase 74-data-seeding P01 | 2 | 1 tasks | 1 files |
+| Phase 75-ev-ui-categorysection-update P01 | 3 | 2 tasks | 4 files |
 
 ## Session Continuity
 
-Last session: 2026-03-11T15:08:30.811Z
-Stopped at: Completed 74-data-seeding-01-PLAN.md
+Last session: 2026-03-11T16:07:18.606Z
+Stopped at: Completed 75-ev-ui-categorysection-update-01-PLAN.md
 Resume: Start with `/gsd:execute-phase 74`

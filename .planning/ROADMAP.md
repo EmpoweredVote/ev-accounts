@@ -201,7 +201,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 - [x] **Phase 72: DB Audit** - Verify actual chamber_name_formal values and classification gaps for Indiana officials (completed 2026-03-11)
 - [x] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.js commission fix, and extended OfficialOut fields (completed 2026-03-11)
 - [x] **Phase 74: Data Seeding** - Populate Monroe County and Bloomington body names and website URLs (completed 2026-03-11)
-- [ ] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41
+- [x] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41 (completed 2026-03-11)
 - [ ] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings
 
 ## Phase Details
@@ -252,7 +252,7 @@ Plans:
   1. ev-ui 0.1.41 is published to the GitHub npm registry with an optional websiteUrl prop on CategorySection
   2. When websiteUrl is provided, an external-link SVG icon appears in the section header linking to that URL (target="_blank" rel="noopener noreferrer")
   3. Existing CategorySection callers with no websiteUrl prop render identically to the current 0.1.40 behavior
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 - [ ] 75-01-PLAN.md — Add websiteUrl prop, publish 0.1.41, wire essentials Results.jsx
 
@@ -278,5 +278,5 @@ Plans:
 | 72. DB Audit | 1/1 | Complete    | 2026-03-11 | - |
 | 73. Backend GovernmentBody Table | 2/2 | Complete    | 2026-03-11 | - |
 | 74. Data Seeding | 1/1 | Complete    | 2026-03-11 | - |
-| 75. ev-ui CategorySection Update | v2026.3.3 | 0/1 | Not started | - |
+| 75. ev-ui CategorySection Update | 1/1 | Complete   | 2026-03-11 | - |
 | 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |
