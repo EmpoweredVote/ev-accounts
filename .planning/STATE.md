@@ -4,8 +4,8 @@ milestone: v1.0
 milestone_name: milestone
 status: completed
 stopped_at: Completed 73-backend-governmentbody-table-02-PLAN.md
-last_updated: "2026-03-11T14:48:01.057Z"
-last_activity: 2026-03-11 — Phase 72-01 DB Audit complete; Phase 73 confirmed as data migration phase
+last_updated: "2026-03-11T14:48:50Z"
+last_activity: 2026-03-11 — Phase 73-01 complete; GovernmentBody model + chamber_name_formal migration + LEFT JOIN enrichment in both fetch functions
 progress:
   total_phases: 5
   completed_phases: 1
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-10)
 
 ## Current Position
 
-Phase: 72 of 76 (DB Audit)
+Phase: 73 of 76 (Backend GovernmentBody Table)
 Plan: 1 of 1 complete
-Status: Phase 72 complete
-Last activity: 2026-03-11 — Phase 72-01 DB Audit complete; Phase 73 confirmed as data migration phase
+Status: Phase 73 complete
+Last activity: 2026-03-11 — Phase 73-01 complete; GovernmentBody model + chamber_name_formal migration + LEFT JOIN enrichment in both fetch functions
 
 Progress: [██████████] 100%
 
@@ -54,6 +54,9 @@ Progress: [██████████] 100%
 - **[72-01] Monroe County Commissioners misclassified as County Officials** — "commission" substring not matched by hasAny("commissioner"); Phase 73 must add "commission" to classify.js COUNTY branch keyword list
 - **[72-01] No collision between Commission and Council** — Council → County Legislators (via "council" match), Commission → County Officials (fallback); original collision concern was wrong about mechanism
 - **[72-01] Monroe County G4020 geofence present** — geo_id=18105, census_tiger_2024, imported 2026-02-11; no geofence import step needed in Phase 73
+- **[73-01] GovernmentBody body_key = COALESCE(NULLIF(c.name_formal, ''), c.name, '')** — chamber name_formal takes precedence; after migration Indiana chambers use canonical names as join keys
+- **[73-01] chamber_name_formal migration scoped with LIKE prefix patterns** — 'Monroe County Council%' prevents false matches in other states
+- **[73-01] government_body_name/url use omitempty** — officials without matching government_bodies row return clean JSON, empty string suppressed
 
 ### Tech Debt Carried Forward (from v2026.3.2)
 
@@ -84,6 +87,6 @@ Progress: [██████████] 100%
 
 ## Session Continuity
 
-Last session: 2026-03-11T14:48:01.054Z
-Stopped at: Completed 73-backend-governmentbody-table-02-PLAN.md
-Resume: Start with `/gsd:plan-phase 72`
+Last session: 2026-03-11T14:48:50Z
+Stopped at: Completed 73-backend-governmentbody-table-01-PLAN.md
+Resume: Start with `/gsd:execute-phase 74`

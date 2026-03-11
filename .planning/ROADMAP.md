@@ -199,7 +199,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 **Milestone Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures starting with Indiana.
 
 - [x] **Phase 72: DB Audit** - Verify actual chamber_name_formal values and classification gaps for Indiana officials (completed 2026-03-11)
-- [ ] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.js commission fix, and extended OfficialOut fields
+- [x] **Phase 73: Backend GovernmentBody Table** - Add government_bodies schema, classify.js commission fix, and extended OfficialOut fields (completed 2026-03-11)
 - [ ] **Phase 74: Data Seeding** - Populate Monroe County and Bloomington body names and website URLs
 - [ ] **Phase 75: ev-ui CategorySection Update** - Add websiteUrl prop and publish ev-ui 0.1.41
 - [ ] **Phase 76: Frontend Results Integration** - Wire specific body names and website links into Results.jsx section headings
@@ -228,7 +228,7 @@ Plans:
   2. The Go SearchPoliticians handler annotates each OfficialOut record with government_body_name and government_body_url via LEFT JOIN (both fields null-safe)
   3. classify.js routes "commission" title keywords to "County Legislators" group
   4. All three consumer structures in classify.js (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) contain "County Legislators" consistently
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [ ] 73-01-PLAN.md — GovernmentBody model, chamber_name_formal migration, LEFT JOIN enrichment
 - [ ] 73-02-PLAN.md — classify.js commission keyword fix and consumer structure verification
@@ -274,7 +274,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 72. DB Audit | 1/1 | Complete    | 2026-03-11 | - |
-| 73. Backend GovernmentBody Table | 1/2 | In Progress|  | - |
+| 73. Backend GovernmentBody Table | 2/2 | Complete   | 2026-03-11 | - |
 | 74. Data Seeding | v2026.3.3 | 0/TBD | Not started | - |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 0/TBD | Not started | - |
 | 76. Frontend Results Integration | v2026.3.3 | 0/TBD | Not started | - |
