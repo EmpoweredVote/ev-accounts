@@ -201,6 +201,49 @@
 
 ---
 
+## Milestone: v2026.3.3 — Local Government Organization
+
+**Shipped:** 2026-03-11
+**Phases:** 5 | **Plans:** 6
+
+### What Was Built
+- GovernmentBody table with composite unique index and LEFT JOIN enrichment in both fetch functions
+- classify.js commission keyword fix routing Monroe County Commissioners to County Legislators group
+- 14 government_bodies seed rows for Monroe County and Bloomington with official website URLs
+- ev-ui 0.1.41 with optional websiteUrl prop on CategorySection (external link icon in headers)
+- splitByBodyName helper in Results.jsx for body-specific section headings with generic fallback
+
+### What Worked
+- DB audit first (Phase 72) — confirmed chamber_name_formal was empty, commission misclassification, and geo_id presence before writing any code; prevented incorrect assumptions from driving design
+- Parallel execution of Phase 75 (ev-ui prop) alongside Phases 73-74 (backend) — independent work streams completed concurrently
+- Small, focused milestone (5 phases, 6 plans, 2 days) with zero scope creep
+- FIPS state code bug caught during Phase 74 execution and fixed immediately (commit b0a7f94) — Phase 76 Playwright tests confirmed the fix
+
+### What Was Inefficient
+- Phase 73 had to become a data migration phase (populating chamber_name_formal) before the feature phase — could have been anticipated if DB audit was part of milestone planning
+- SearchPoliticians endpoint in geofence_lookup.go lacked the government_bodies LEFT JOIN that FindPoliticiansByGeoMatches already had — caught as a deviation during Phase 76
+
+### Patterns Established
+- DB audit phase before data-dependent features — confirm actual data state before writing classification/display code
+- GovernmentBody enrichment follows PositionDescription pattern — composite unique index, COALESCE LEFT JOIN, omitempty JSON fields
+- splitByBodyName: render-time sub-grouping pattern for heterogeneous lists with named/unnamed fallback buckets
+- ON CONFLICT DO NOTHING for seed data — preserves manually-corrected production values on server restart
+- geo_id fan-out: multi-district bodies require one row per distinct geo_id for JOIN resolution
+
+### Key Lessons
+1. Always audit live data before building features on assumed data shapes — chamber_name_formal was completely empty
+2. classify.js consumer structures (LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, GROUP_SORT_OPTIONS) must update atomically — partial updates cause silent rendering bugs
+3. FIPS codes vs ISO abbreviations for state columns are a recurring data integration trap — document the format in schema comments
+4. When two fetch functions serve the same model, both need the same JOINs — grep for all consumers when adding enrichment
+5. government_body_name should be used directly as section title, never routed through qualifyLocalTitle() — prevents double-prefix bugs
+
+### Cost Observations
+- Model mix: ~80% sonnet, ~20% opus (research/planning)
+- Sessions: 5 (one per phase)
+- Notable: Smallest milestone to date in plan count (6) but high data-correctness rigor due to DB audit gating
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -213,6 +256,7 @@
 | v2026.3 | 6 | 19 | First multi-language pipeline milestone (Go + Python); feasibility gating pattern established |
 | v2026.4 | 7 | 21 | Mixed data + UX milestone; Wayback Machine fallback; coach mark pattern established |
 | v2026.3.2 | 5 | 8 | First cross-app integration milestone; URL fragment bridge pattern; self-gating components |
+| v2026.3.3 | 5 | 6 | DB audit gating pattern; government_bodies enrichment; smallest plan count milestone |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -229,3 +273,5 @@
 11. localStorage persistence for multi-step flows prevents user frustration on page refresh (v2026.4)
 12. Cross-origin data sharing between same-domain apps solvable client-side via URL fragments (v2026.3.2)
 13. Self-gating components keep parent code clean — child decides rendering based on data availability (v2026.3.2)
+14. DB audit phase before data-dependent features prevents incorrect assumptions from driving design (v2026.3.3)
+15. Atomic updates to consumer structures — partial updates to classification maps cause silent rendering bugs (v2026.3.3)

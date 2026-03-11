@@ -1,5 +1,34 @@
 # Milestones
 
+## v2026.3.3 Local Government Organization (Shipped: 2026-03-11)
+
+**Phases completed:** 5 phases, 6 plans
+**Timeline:** 2 days (2026-03-10 — 2026-03-11)
+**Requirements:** 12/12 satisfied
+**Repos:** EV-Backend, essentials, ev-ui
+
+**Delivered:** Local government sections in Essentials reorganized to display specific body names (e.g., "Monroe County Council" instead of "County Council") with official website links, powered by a new government_bodies table and frontend sub-grouping by body name.
+
+**Key accomplishments:**
+1. DB audit confirmed data gaps — chamber_name_formal empty for all Indiana officials; Monroe County Commissioners misclassified due to "commission" keyword miss; regression mapping documented for 27+ officials
+2. GovernmentBody table with LEFT JOIN enrichment — new essentials.government_bodies schema with composite unique index (state, geo_id, body_key), idempotent chamber_name_formal migration, OfficialOut annotated with body name/URL
+3. classify.js commission fix — "commission" keyword added to COUNTY branch routing Monroe County Commissioners to County Legislators; all three consumer structures updated atomically
+4. Monroe County & Bloomington data seeded — 14 government_bodies rows with official website URLs, geo_id fan-out for multi-district bodies, FIPS state code bug caught and fixed (commit b0a7f94)
+5. ev-ui 0.1.41 with websiteUrl prop — CategorySection renders external link icons in section headers, backward-compatible with existing callers
+6. splitByBodyName frontend integration — Results.jsx sub-groups politicians by government_body_name with distinct section headings per body; unnamed politicians fall back to generic category names; LA County unaffected
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted in essentials `api.jsx` (carried from v1.9)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+- Topic tags placeholder div in LegislativeInlineSummary (carried from v2026.3)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+- Nyquist validation incomplete for all 5 phases (draft VALIDATION.md files, non-blocking)
+
+---
+
 ## v2026.3.2 Compass on Profiles (Shipped: 2026-03-08)
 
 **Phases completed:** 5 phases, 8 plans

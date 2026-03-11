@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. Profiles also show a compass comparison card with dual-overlay radar chart (user vs. politician stances) and a topic-by-topic stance breakdown with source links, working for both logged-in and guest users via a cross-origin URL fragment bridge between CompassV2 and Essentials. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. Profiles also show a compass comparison card with dual-overlay radar chart (user vs. politician stances) and a topic-by-topic stance breakdown with source links, working for both logged-in and guest users via a cross-origin URL fragment bridge between CompassV2 and Essentials. Local government sections display specific body names (e.g., "Monroe County Council" instead of "County Council") with official website links, powered by a government_bodies table and splitByBodyName frontend sub-grouping. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
 
 ## Core Value
 
@@ -147,16 +147,18 @@ Users can explore political issues and discover their elected officials without 
 - ✓ CompassPreview mini radar popover on dashboard politician cards with CTA mode — v2026.3.2
 - ✓ StanceAccordion with lazy context fetching, reasoning text, and favicon source links — v2026.3.2
 - ✓ Cookie domain fix for cross-app session sharing (.empowered.vote) — v2026.3.2
+- ✓ Local government sections display specific body names (e.g., "Monroe County Council" instead of "County Council") — v2026.3.3
+- ✓ Each government body section links to its official website — v2026.3.3
+- ✓ County commissioners, county council, and county officials displayed as distinct sections — v2026.3.3
+- ✓ State-specific local government organization (Indiana county structure) — v2026.3.3
+- ✓ City-level bodies use specific names and website links — v2026.3.3
+- ✓ Township-level bodies use specific names and website links — v2026.3.3
 
 ### Active
 
-- [ ] Local government sections display specific body names (e.g., "Monroe County Council" instead of "County Council")
-- [ ] Each government body section links to its official website
-- [ ] County commissioners, county council, and county officials displayed as distinct sections
 - [ ] County council at-large vs district members distinguished in display
-- [ ] State-specific local government organization (Indiana county structure differs from other states)
-- [ ] City-level bodies use specific names and website links
-- [ ] Township-level bodies use specific names and website links
+- [ ] State-configurable body structure for California Board of Supervisors
+- [ ] LA County bodies seeded with official website URLs
 
 ### Future
 
@@ -165,16 +167,9 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Multi-politician comparison (2-3 overlays at once)
 - [ ] Read & Rank quotes on Essentials profiles
 
-## Current Milestone: v2026.3.3 Local Government Organization
+## Last Milestone: v2026.3.3 Local Government Organization (Shipped 2026-03-11)
 
-**Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures (starting with Indiana county commissioners, council, and officials)
-
-**Target features:**
-- Specific body names instead of generic categories (e.g., "Monroe County Council" not "County Council")
-- Official website links for each government body/section
-- State-specific local government structure support
-- Distinct sections for commissioners, council (at-large + district), and elected officials
-- Applied across county, city, and township levels
+**Delivered:** Local government sections in Essentials reorganized with specific body names and official website links. GovernmentBody table with LEFT JOIN enrichment, classify.js commission fix, ev-ui 0.1.41 websiteUrl prop, splitByBodyName frontend sub-grouping. 12/12 requirements satisfied.
 
 ### Out of Scope
 
@@ -199,11 +194,11 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.2 with ~38K LOC across 4 repos + Python import scripts:
+Shipped v2026.3.3 with ~38K LOC across 4 repos + Python import scripts:
 - **CompassV2** (React 19): ~14.5K LOC — compass quiz, Library, guided onboarding with coach mark tours, calibration with localStorage persistence, guest auth, inline politician picker, return banner + compass fragment serializer for cross-origin bridge
-- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass (cookie domain fix for .empowered.vote), essentials (geofence-only + PostGIS, legislative data model, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
-- **ev-ui** (React/tsup): ~3.9K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord
-- **essentials** (React 19): ~4K LOC — address autocomplete, unified search path, CompassContext provider, CompassCard (dual-overlay radar + StanceAccordion), CompassPreview popover, guest fragment bridge
+- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass (cookie domain fix for .empowered.vote), essentials (geofence-only + PostGIS, legislative data model, government_bodies table with LEFT JOIN enrichment, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
+- **ev-ui** (React/tsup): ~4K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord, CategorySection with websiteUrl prop (v0.1.41)
+- **essentials** (React 19): ~4.2K LOC — address autocomplete, unified search path, CompassContext provider, CompassCard (dual-overlay radar + StanceAccordion), CompassPreview popover, guest fragment bridge, splitByBodyName sub-grouping in Results.jsx
 - **Python scripts**: ~17K LOC — state legislative import (LegiScan/Open States/IGA), local data pipelines (Bloomington/LA County), headshot research/upload pipeline, coverage validation
 
 Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Python (psycopg2/requests/BeautifulSoup).
@@ -218,4 +213,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-10 after v2026.3.3 milestone start*
+*Last updated: 2026-03-11 after v2026.3.3 milestone*
