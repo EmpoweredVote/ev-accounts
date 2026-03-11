@@ -194,7 +194,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 
 </details>
 
-### 🚧 v2026.3.3 Local Government Organization (In Progress)
+### v2026.3.3 Local Government Organization (In Progress)
 
 **Milestone Goal:** Re-organize local government sections in Essentials to display specific body names with links to official websites, supporting state-specific structures starting with Indiana.
 
@@ -215,7 +215,9 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
   2. It is known whether Monroe County Commissioners and Monroe County Council currently produce distinct group keys from classify.js, or require a data migration
   3. The TIGER GEO_ID for Monroe County (18105) is verified present in geofences table
   4. A regression test list of known politician-to-expected-group mappings is documented for use in Phase 73 verification
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 72-01-PLAN.md — Run SQL audit queries and document findings with regression mapping
 
 ### Phase 73: Backend GovernmentBody Table
 **Goal**: The API delivers specific body name and website URL fields alongside every official in the search response
@@ -268,7 +270,7 @@ Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 72. DB Audit | v2026.3.3 | 0/TBD | Not started | - |
+| 72. DB Audit | v2026.3.3 | 0/1 | Not started | - |
 | 73. Backend GovernmentBody Table | v2026.3.3 | 0/TBD | Not started | - |
 | 74. Data Seeding | v2026.3.3 | 0/TBD | Not started | - |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 0/TBD | Not started | - |
