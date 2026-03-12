@@ -50,9 +50,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ESS-02 | Phase 84 | Pending |
 | ESS-03 | Phase 84 | Pending |
 | ESS-04 | Phase 84 | Pending |
-| RR-01 | Phase 84 | Pending |
-| RR-02 | Phase 84 | Pending |
-| RR-03 | Phase 84 | Pending |
+| RR-01 | Phase 85 | Pending |
+| RR-02 | Phase 85 | Pending |
+| RR-03 | Phase 85 | Pending |
 
 **Coverage:**
 - v2026.3.5 requirements: 8 total
@@ -61,4 +61,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-12*
-*Last updated: 2026-03-12 after initial definition*
+*Last updated: 2026-03-12 after roadmap creation (v2026.3.5)*

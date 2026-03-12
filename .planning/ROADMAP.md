@@ -17,6 +17,7 @@
 - ✅ **v2026.3.2 Compass on Profiles** — Phases 67-71 (shipped 2026-03-08)
 - ✅ **v2026.3.3 Local Government Organization** — Phases 72-76 (shipped 2026-03-11)
 - ✅ **v2026.3.4 Read & Rank Integration** — Phases 77-82 (shipped 2026-03-12)
+- 🚧 **v2026.3.5 Unified Navigation Header** — Phases 83-85 (in progress)
 
 ## Phases
 
@@ -222,13 +223,51 @@ Full details: `.planning/milestones/v2026.3.4-ROADMAP.md`
 
 </details>
 
+### v2026.3.5 Unified Navigation Header (In Progress)
+
+**Milestone Goal:** Add a consistent, auth-aware navigation header across all three EV apps so users see the same branded header everywhere and login state is visible without re-logging in.
+
+- [ ] **Phase 83: ev-ui SiteHeader URL Update** - Update defaultNavItems in SiteHeader to production .empowered.vote URLs and publish new ev-ui version
+- [ ] **Phase 84: Essentials Header Integration** - Wrap all Essentials routes in a Layout component using SiteHeader with full auth state (username/logout/sign-in)
+- [ ] **Phase 85: ReadRank Header Auth** - Wire profileMenu auth state into the existing ReadRank SiteHeader via useAuthState hook extension
+
+## Phase Details
+
+### Phase 83: ev-ui SiteHeader URL Update
+**Goal**: SiteHeader nav links point to production .empowered.vote URLs so all apps consuming ev-ui get correct cross-app navigation
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: NAV-01
+**Success Criteria** (what must be TRUE):
+  1. SiteHeader Features dropdown links navigate to compass.empowered.vote, essentials.empowered.vote, and readrank.empowered.vote
+  2. A new ev-ui version is published to the GitHub npm registry and installable by consumers
+  3. Clicking a nav link from any app opens the correct production app URL (not a Netlify prototype URL)
+**Plans**: TBD
+
+### Phase 84: Essentials Header Integration
+**Goal**: Every Essentials page displays SiteHeader with live auth state so users can see who they are logged in as and log out without leaving the app
+**Depends on**: Phase 83
+**Requirements**: ESS-01, ESS-02, ESS-03, ESS-04
+**Success Criteria** (what must be TRUE):
+  1. SiteHeader appears at the top of every Essentials page (Landing, Results, Profile, LegislativeRecord, CandidateProfile)
+  2. A logged-in user sees their username in the header with a working logout option
+  3. A logged-out user sees a "Sign in" link that navigates to compass.empowered.vote/login
+  4. After logging out from Essentials, the header switches to "Sign in" state and the floating AuthIndicator is gone
+**Plans**: TBD
+
+### Phase 85: ReadRank Header Auth
+**Goal**: ReadRank SiteHeader displays live auth state so users see their login status and can log out from within the app
+**Depends on**: Phase 83
+**Requirements**: RR-01, RR-02, RR-03
+**Success Criteria** (what must be TRUE):
+  1. A logged-in user sees their username in the ReadRank header with a working logout option
+  2. A logged-out user sees a "Sign in" link in the ReadRank header that navigates to compass.empowered.vote/login
+  3. After logging out from ReadRank, the session is cleared and the header switches to "Sign in" state
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 77. Standalone Extraction | v2026.3.4 | 2/2 | Complete | 2026-03-12 |
-| 78. Visual Refresh | v2026.3.4 | 3/3 | Complete | 2026-03-12 |
-| 79. Backend Verdict Endpoints | v2026.3.4 | 2/2 | Complete | 2026-03-12 |
-| 80. ev-ui Verdict Badge | v2026.3.4 | 1/1 | Complete | 2026-03-12 |
-| 81. Profile Integration | v2026.3.4 | 3/3 | Complete | 2026-03-12 |
-| 82. Logged-In Sync | v2026.3.4 | 2/2 | Complete | 2026-03-12 |
+| 83. ev-ui SiteHeader URL Update | v2026.3.5 | 0/TBD | Not started | - |
+| 84. Essentials Header Integration | v2026.3.5 | 0/TBD | Not started | - |
+| 85. ReadRank Header Auth | v2026.3.5 | 0/TBD | Not started | - |
