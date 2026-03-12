@@ -212,7 +212,7 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
 
 **Milestone Goal:** Extract Read & Rank into a standalone app at `readrank.empowered.vote` and integrate quote verdicts into Essentials politician profiles via URL fragment bridge for guests and server-side storage for logged-in users.
 
-- [ ] **Phase 77: Standalone Extraction** — Extract Read & Rank to new repo, deploy to Cloudflare Pages with zero behavior changes
+- [x] **Phase 77: Standalone Extraction** — Extract Read & Rank to new repo, deploy to Cloudflare Pages with zero behavior changes (completed 2026-03-12)
 - [ ] **Phase 78: Visual Refresh** — Apply EV brand design to Read & Rank hub, cards, and results
 - [ ] **Phase 79: Backend Verdict Endpoints** — New verdict table and API endpoints for server-side storage
 - [ ] **Phase 80: ev-ui Verdict Badge** — Publish ev-ui v0.1.42+ with verdict badge prop on StanceAccordion
@@ -312,7 +312,7 @@ Plans:
 | 74. Data Seeding | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
-| 77. Standalone Extraction | 1/2 | In Progress|  | - |
+| 77. Standalone Extraction | 2/2 | Complete   | 2026-03-12 | - |
 | 78. Visual Refresh | v2026.3.4 | 0/TBD | Not started | - |
 | 79. Backend Verdict Endpoints | v2026.3.4 | 0/TBD | Not started | - |
 | 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
