@@ -26,7 +26,7 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 - [x] **VERD-01**: `compass.quote_verdicts` table created with (user_id, quote_id) unique constraint
 - [x] **VERD-02**: POST /compass/verdicts endpoint for bulk upsert (authenticated)
 - [x] **VERD-03**: GET /compass/verdicts endpoint for current user's verdicts (authenticated)
-- [ ] **VERD-04**: GET /essentials/quotes filtered by politician_id (extends existing endpoint)
+- [x] **VERD-04**: GET /essentials/quotes filtered by politician_id (extends existing endpoint)
 - [ ] **VERD-05**: Guest verdict fragment encoding in URL when navigating to Essentials
 - [ ] **VERD-06**: Essentials reads and caches guest verdicts from URL fragment to localStorage
 
@@ -94,7 +94,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VERD-01 | Phase 79 | Complete |
 | VERD-02 | Phase 79 | Complete |
 | VERD-03 | Phase 79 | Complete |
-| VERD-04 | Phase 79 | Pending |
+| VERD-04 | Phase 79 | Complete |
 | PROF-03 | Phase 80 | Pending |
 | VERD-05 | Phase 81 | Pending |
 | VERD-06 | Phase 81 | Pending |

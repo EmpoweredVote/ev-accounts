@@ -214,7 +214,7 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
 
 - [x] **Phase 77: Standalone Extraction** — Extract Read & Rank to new repo, deploy to Cloudflare Pages with zero behavior changes (completed 2026-03-12)
 - [x] **Phase 78: Visual Refresh** — Apply EV brand design to Read & Rank hub, cards, and results (completed 2026-03-12)
-- [ ] **Phase 79: Backend Verdict Endpoints** — New verdict table and API endpoints for server-side storage
+- [x] **Phase 79: Backend Verdict Endpoints** — New verdict table and API endpoints for server-side storage (completed 2026-03-12)
 - [ ] **Phase 80: ev-ui Verdict Badge** — Publish ev-ui v0.1.42+ with verdict badge prop on StanceAccordion
 - [ ] **Phase 81: Profile Integration** — Wire verdicts into Essentials CompassCard and StanceAccordion for guest and logged-in paths
 - [ ] **Phase 82: Logged-In Sync** — Read & Rank POSTs verdicts to backend when authenticated; Essentials reads them as highest-priority source
@@ -317,7 +317,7 @@ Plans:
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 77. Standalone Extraction | 2/2 | Complete    | 2026-03-12 | - |
 | 78. Visual Refresh | 3/3 | Complete   | 2026-03-12 | - |
-| 79. Backend Verdict Endpoints | 1/2 | In Progress|  | - |
+| 79. Backend Verdict Endpoints | 2/2 | Complete   | 2026-03-12 | - |
 | 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
 | 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
 | 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |
