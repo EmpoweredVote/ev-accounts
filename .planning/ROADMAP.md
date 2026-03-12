@@ -241,7 +241,9 @@ Full details: `.planning/milestones/v2026.3.4-ROADMAP.md`
   1. SiteHeader Features dropdown links navigate to compass.empowered.vote, essentials.empowered.vote, and readrank.empowered.vote
   2. A new ev-ui version is published to the GitHub npm registry and installable by consumers
   3. Clicking a nav link from any app opens the correct production app URL (not a Netlify prototype URL)
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 83-01-PLAN.md — Update SiteHeader URLs to production .empowered.vote domains and publish ev-ui v0.1.49
 
 ### Phase 84: Essentials Header Integration
 **Goal**: Every Essentials page displays SiteHeader with live auth state so users can see who they are logged in as and log out without leaving the app
