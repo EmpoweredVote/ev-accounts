@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 79-backend-verdict-endpoints 79-02-PLAN.md
-last_updated: "2026-03-12T12:41:16.483Z"
+stopped_at: Completed 80-ev-ui-verdict-badge 80-01-PLAN.md
+last_updated: "2026-03-12T14:05:15.410Z"
 last_activity: 2026-03-11 — Roadmap created for v2026.3.4 (6 phases, 20/20 requirements mapped)
 progress:
   total_phases: 6
-  completed_phases: 3
-  total_plans: 7
-  completed_plans: 7
+  completed_phases: 4
+  total_plans: 8
+  completed_plans: 8
   percent: 0
 ---
 
@@ -62,6 +62,8 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 - [Phase 79]: QuoteVerdict composite unique index: identical uniqueIndex tag name on both UserID and QuoteID fields is the GORM composite unique constraint pattern
 - [Phase 79]: POST /compass/verdicts returns full user verdict set after commit for simpler frontend state replacement
 - [Phase 79-02]: Conditional WHERE clause built by string concatenation before db.DB.Raw() call — avoids GORM subquery complexity while keeping all existing query structure intact
+- [Phase 80-ev-ui]: StanceAccordion uses inline styles (not Tailwind) for verdict badge spans — no Tailwind dependency in ev-ui library
+- [Phase 80-ev-ui]: apiUrl prop with default 'https://api.empowered.vote' replaces VITE_API_URL in StanceAccordion — makes component usable in any consumer without build env dependency
 
 ### Pending Todos
 
@@ -84,6 +86,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T12:38:51.118Z
-Stopped at: Completed 79-backend-verdict-endpoints 79-02-PLAN.md
+Last session: 2026-03-12T14:05:08.854Z
+Stopped at: Completed 80-ev-ui-verdict-badge 80-01-PLAN.md
 Resume file: None
