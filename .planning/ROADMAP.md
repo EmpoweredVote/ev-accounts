@@ -230,10 +230,11 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
   2. Cloudflare Pages CI build passes including ev-ui package resolution via NPM_TOKEN
   3. API calls from `readrank.empowered.vote` to the backend succeed (CORS allows the new subdomain)
   4. Zustand state persists across page reloads under the new `ev_readrank` key with migration from old `readrank-storage` key
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 77-01: TBD
+- [ ] 77-01-PLAN.md — Copy source, fix config, commit EV-readrank repo
+- [ ] 77-02-PLAN.md — CORS update, Cloudflare Pages deployment, live verification
 
 ### Phase 78: Visual Refresh
 **Goal**: Read & Rank uses EV brand design language throughout — hub page, quote cards, and results phase match the visual quality of CompassV2 and Essentials
