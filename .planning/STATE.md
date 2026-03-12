@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-11)
 Phase: 77 of 82 (Standalone Extraction)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-03-12 — Completed quick task 8: Update Monroe County data (rename Commission, update Council, import geofences, upload photos)
+Last activity: 2026-03-12 — Completed quick task 10: Refactor contact info section (domain-only websites, social icons in websites column, narrower phone column, ev-ui v0.1.48)
 
 Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
@@ -86,6 +86,7 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 | 7 | Remove party mentions from EV-ReadRank results page | 2026-03-12 | bc10639 | [7-remove-party-mentions-from-ev-readrank-r](./quick/7-remove-party-mentions-from-ev-readrank-r/) |
 | 8 | Rename Commission, update Council 2025, import district geofences, upload photos | 2026-03-12 | 19131cb | [8-update-monroe-county-data-rename-commiss](./quick/8-update-monroe-county-data-rename-commiss/) |
 | 9 | Fix organization display names for Ellettsville, Richland Township, Richland-Bean Blossom | 2026-03-12 | 580b995 | [9-fix-organization-display-names-on-essent](./quick/9-fix-organization-display-names-on-essent/) |
+| 10 | Refactor contact info section: domain-only websites, social icons in websites column, narrower phone column | 2026-03-12 | 2a382ed | [10-refactor-contact-info-section-on-politic](./quick/10-refactor-contact-info-section-on-politic/) |
 
 ### Blockers/Concerns
 
@@ -104,6 +105,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T19:10:00.000Z
-Stopped at: Completed quick-9 (Ellettsville + Richland Township + Richland-Bean Blossom government body display names)
+Last session: 2026-03-12T23:45:00.000Z
+Stopped at: Completed quick-10 (contact section refactor — domain-only websites, social icons moved to websites column, ev-ui v0.1.48)
 Resume file: None
