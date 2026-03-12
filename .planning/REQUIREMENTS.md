@@ -17,7 +17,7 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 
 ### Visual Design
 
-- [ ] **DSGN-01**: Read & Rank hub/landing page styled with EV brand (ev-coral, ev-muted-blue, Manrope)
+- [x] **DSGN-01**: Read & Rank hub/landing page styled with EV brand (ev-coral, ev-muted-blue, Manrope)
 - [ ] **DSGN-02**: QuoteCard and swipe UI visually polished to match platform design language
 - [ ] **DSGN-03**: ResultsPhase layout refreshed with card-based design matching CompassV2/Essentials
 
@@ -88,7 +88,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | EXTR-03 | Phase 77 | Complete |
 | EXTR-04 | Phase 77 | Complete |
 | EXTR-05 | Phase 77 | Complete |
-| DSGN-01 | Phase 78 | Pending |
+| DSGN-01 | Phase 78 | Complete |
 | DSGN-02 | Phase 78 | Pending |
 | DSGN-03 | Phase 78 | Pending |
 | VERD-01 | Phase 79 | Pending |

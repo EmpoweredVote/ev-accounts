@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 78 context gathered
-last_updated: "2026-03-12T02:32:45.952Z"
+stopped_at: Completed 78-visual-refresh 78-01-PLAN.md
+last_updated: "2026-03-12T02:52:47.168Z"
 last_activity: 2026-03-11 — Roadmap created for v2026.3.4 (6 phases, 20/20 requirements mapped)
 progress:
   total_phases: 6
   completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 5
+  completed_plans: 3
   percent: 0
 ---
 
@@ -53,6 +53,8 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 - [Phase 77-01]: Keep src/types/ev-ui.d.ts manual shim — ev-ui 0.1.41 ships no .d.ts files
 - [Phase 77-01]: migrate function uses ReadRankState cast to avoid circular init reference in TypeScript
 - [Phase 77-02]: CF Pages preview builds (*.pages.dev) do not need CORS entries — only named subdomains (production and dev) require allowlist entries
+- [Phase 78-visual-refresh]: Phase 78-01: Tailwind v4 requires @theme block in CSS for utility generation — color tokens defined in tailwind.config.js alone won't generate utilities; added ev-teal/ev-dark-blue aliases to both locations
+- [Phase 78-visual-refresh]: Phase 78-01: ev-muted-blue (#00657c) established as primary EV accent for Read & Rank; ev-light-blue and ev-teal deprecated for accent use in IssueHub
 
 ### Pending Todos
 
@@ -75,6 +77,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T02:32:45.949Z
-Stopped at: Phase 78 context gathered
-Resume file: .planning/phases/78-visual-refresh/78-CONTEXT.md
+Last session: 2026-03-12T02:52:47.166Z
+Stopped at: Completed 78-visual-refresh 78-01-PLAN.md
+Resume file: None
