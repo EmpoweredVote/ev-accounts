@@ -83,32 +83,32 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EXTR-01 | — | Pending |
-| EXTR-02 | — | Pending |
-| EXTR-03 | — | Pending |
-| EXTR-04 | — | Pending |
-| EXTR-05 | — | Pending |
-| DSGN-01 | — | Pending |
-| DSGN-02 | — | Pending |
-| DSGN-03 | — | Pending |
-| VERD-01 | — | Pending |
-| VERD-02 | — | Pending |
-| VERD-03 | — | Pending |
-| VERD-04 | — | Pending |
-| VERD-05 | — | Pending |
-| VERD-06 | — | Pending |
-| PROF-01 | — | Pending |
-| PROF-02 | — | Pending |
-| PROF-03 | — | Pending |
-| PROF-04 | — | Pending |
-| SYNC-01 | — | Pending |
-| SYNC-02 | — | Pending |
+| EXTR-01 | Phase 77 | Pending |
+| EXTR-02 | Phase 77 | Pending |
+| EXTR-03 | Phase 77 | Pending |
+| EXTR-04 | Phase 77 | Pending |
+| EXTR-05 | Phase 77 | Pending |
+| DSGN-01 | Phase 78 | Pending |
+| DSGN-02 | Phase 78 | Pending |
+| DSGN-03 | Phase 78 | Pending |
+| VERD-01 | Phase 79 | Pending |
+| VERD-02 | Phase 79 | Pending |
+| VERD-03 | Phase 79 | Pending |
+| VERD-04 | Phase 79 | Pending |
+| PROF-03 | Phase 80 | Pending |
+| VERD-05 | Phase 81 | Pending |
+| VERD-06 | Phase 81 | Pending |
+| PROF-01 | Phase 81 | Pending |
+| PROF-02 | Phase 81 | Pending |
+| PROF-04 | Phase 81 | Pending |
+| SYNC-01 | Phase 82 | Pending |
+| SYNC-02 | Phase 82 | Pending |
 
 **Coverage:**
 - v2026.3.4 requirements: 20 total
-- Mapped to phases: 0
-- Unmapped: 20 ⚠️
+- Mapped to phases: 20
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-11*
-*Last updated: 2026-03-11 after initial definition*
+*Last updated: 2026-03-11 after roadmap creation*

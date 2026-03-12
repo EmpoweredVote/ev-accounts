@@ -16,6 +16,7 @@
 - ✅ **v2026.4 State Data Completion & Image Coverage** — Phases 60-66 (shipped 2026-03-06)
 - ✅ **v2026.3.2 Compass on Profiles** — Phases 67-71 (shipped 2026-03-08)
 - ✅ **v2026.3.3 Local Government Organization** — Phases 72-76 (shipped 2026-03-11)
+- 🚧 **v2026.3.4 Read & Rank Integration** — Phases 77-82 (in progress)
 
 ## Phases
 
@@ -207,6 +208,100 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
 
 </details>
 
+### 🚧 v2026.3.4 Read & Rank Integration (In Progress)
+
+**Milestone Goal:** Extract Read & Rank into a standalone app at `readrank.empowered.vote` and integrate quote verdicts into Essentials politician profiles via URL fragment bridge for guests and server-side storage for logged-in users.
+
+- [ ] **Phase 77: Standalone Extraction** — Extract Read & Rank to new repo, deploy to Cloudflare Pages with zero behavior changes
+- [ ] **Phase 78: Visual Refresh** — Apply EV brand design to Read & Rank hub, cards, and results
+- [ ] **Phase 79: Backend Verdict Endpoints** — New verdict table and API endpoints for server-side storage
+- [ ] **Phase 80: ev-ui Verdict Badge** — Publish ev-ui v0.1.42+ with verdict badge prop on StanceAccordion
+- [ ] **Phase 81: Profile Integration** — Wire verdicts into Essentials CompassCard and StanceAccordion for guest and logged-in paths
+- [ ] **Phase 82: Logged-In Sync** — Read & Rank POSTs verdicts to backend when authenticated; Essentials reads them as highest-priority source
+
+## Phase Details
+
+### Phase 77: Standalone Extraction
+**Goal**: Read & Rank is live at `readrank.empowered.vote` serving all existing routes identically to the prototype, with zero behavior changes
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: EXTR-01, EXTR-02, EXTR-03, EXTR-04, EXTR-05
+**Success Criteria** (what must be TRUE):
+  1. Visiting `readrank.empowered.vote` loads the Read & Rank app with all three routes working (`/`, `/candidate/:id/alignment`, `/animation-options`)
+  2. Cloudflare Pages CI build passes including ev-ui package resolution via NPM_TOKEN
+  3. API calls from `readrank.empowered.vote` to the backend succeed (CORS allows the new subdomain)
+  4. Zustand state persists across page reloads under the new `ev_readrank` key with migration from old `readrank-storage` key
+**Plans**: TBD
+
+Plans:
+- [ ] 77-01: TBD
+
+### Phase 78: Visual Refresh
+**Goal**: Read & Rank uses EV brand design language throughout — hub page, quote cards, and results phase match the visual quality of CompassV2 and Essentials
+**Depends on**: Phase 77
+**Requirements**: DSGN-01, DSGN-02, DSGN-03
+**Success Criteria** (what must be TRUE):
+  1. Hub/landing page uses ev-coral, ev-muted-blue, and Manrope font consistent with the platform
+  2. QuoteCard swipe UI is visually polished with EV design tokens; swipe and drag gestures function identically to before the redesign
+  3. ResultsPhase layout uses card-based design matching CompassV2/Essentials visual language
+**Plans**: TBD
+
+Plans:
+- [ ] 78-01: TBD
+
+### Phase 79: Backend Verdict Endpoints
+**Goal**: The backend stores and serves quote verdicts per user, providing the server-side foundation for logged-in cross-device verdict sharing
+**Depends on**: Nothing (can run in parallel with Phase 78)
+**Requirements**: VERD-01, VERD-02, VERD-03, VERD-04
+**Success Criteria** (what must be TRUE):
+  1. `compass.quote_verdicts` table exists with `(user_id, quote_id)` unique constraint enforcing one verdict per quote per user
+  2. Authenticated POST to `/compass/verdicts` bulk-upserts verdicts and returns the updated set
+  3. Authenticated GET to `/compass/verdicts` returns the current user's verdicts
+  4. GET to `/essentials/quotes?politician_id=X` returns only quotes for the specified politician
+**Plans**: TBD
+
+Plans:
+- [ ] 79-01: TBD
+
+### Phase 80: ev-ui Verdict Badge
+**Goal**: ev-ui publishes a new version with verdict badge support on StanceAccordion, enabling downstream consumption in Essentials
+**Depends on**: Nothing (can run in parallel with Phases 77-79)
+**Requirements**: PROF-03
+**Success Criteria** (what must be TRUE):
+  1. ev-ui v0.1.42+ is published to GitHub npm registry with `verdictsByTopic` prop on StanceAccordion
+  2. When a verdict is present for a topic, the badge (agree/disagree/other variants) renders inline in the topic row
+  3. Existing callers that pass no `verdictsByTopic` prop render identically to before the update
+**Plans**: TBD
+
+Plans:
+- [ ] 80-01: TBD
+
+### Phase 81: Profile Integration
+**Goal**: Essentials politician profiles display a user's Read & Rank verdicts inline under each topic, working for both guests (via URL fragment) and logged-in users (via localStorage cache seeded from fragment)
+**Depends on**: Phase 79, Phase 80
+**Requirements**: VERD-05, VERD-06, PROF-01, PROF-02, PROF-04
+**Success Criteria** (what must be TRUE):
+  1. After rating quotes on Read & Rank and clicking "View on Essentials," the politician profile page shows agree/disagree badges next to topics where the user expressed a verdict
+  2. Guest verdicts passed via URL fragment are cached to localStorage so badges persist across profile page navigations within the session
+  3. CompassContext in Essentials exposes a `verdicts` state field populated from URL fragment on first load and localStorage on subsequent loads
+  4. "View on Essentials" CTA in Read & Rank ResultsPhase and CandidateAlignmentPage links to the correct politician profile with the verdict fragment encoded
+**Plans**: TBD
+
+Plans:
+- [ ] 81-01: TBD
+
+### Phase 82: Logged-In Sync
+**Goal**: Logged-in users' verdicts are stored on the server so they appear on Essentials profiles without needing to navigate from Read & Rank each time
+**Depends on**: Phase 79, Phase 81
+**Requirements**: SYNC-01, SYNC-02
+**Success Criteria** (what must be TRUE):
+  1. When a logged-in user finishes rating quotes on Read & Rank, their verdicts are POSTed to the backend automatically
+  2. When a logged-in user opens an Essentials politician profile directly (not via CTA link), verdict badges still appear because Essentials fetches verdicts from the backend as the highest-priority source
+  3. Verdicts are consistent across devices for logged-in users — rating on one device and visiting the profile on another shows the same badges
+**Plans**: TBD
+
+Plans:
+- [ ] 82-01: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -216,3 +311,9 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
 | 74. Data Seeding | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
+| 77. Standalone Extraction | v2026.3.4 | 0/TBD | Not started | - |
+| 78. Visual Refresh | v2026.3.4 | 0/TBD | Not started | - |
+| 79. Backend Verdict Endpoints | v2026.3.4 | 0/TBD | Not started | - |
+| 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
+| 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
+| 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |
