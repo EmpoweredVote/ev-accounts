@@ -52,7 +52,7 @@ completed: 2026-03-12
 - **Duration:** ~3 min
 - **Started:** 2026-03-12T20:02:00Z
 - **Completed:** 2026-03-12T20:02:44Z
-- **Tasks:** 1 of 2 complete (Task 2 is checkpoint:human-verify)
+- **Tasks:** 2 of 2 complete
 - **Files modified:** 2
 
 ## Accomplishments
@@ -67,6 +67,7 @@ completed: 2026-03-12
 Each task was committed atomically:
 
 1. **Task 1: Add fetchUserVerdicts to compass.js and wire into CompassContext** - `8581912` (feat)
+2. **Task 2: Checkpoint — human smoke test approved** - human verified end-to-end
 
 **Plan metadata:** pending final docs commit
 
@@ -92,9 +93,9 @@ None - no external service configuration required.
 
 ## Next Phase Readiness
 
-- Awaiting human smoke test (Task 2 checkpoint:human-verify)
-- Both builds (EV-readrank and essentials) confirmed green
-- Once smoke test passes, Phase 82 is complete: SYNC-01 (EV-readrank POST on issue complete) + SYNC-02 (Essentials fetch on profile load) both delivered
+- Phase 82 is complete: SYNC-01 (EV-readrank POST on issue complete) + SYNC-02 (Essentials fetch on profile load) both delivered and human-verified
+- Logged-in users see verdict badges on direct Essentials politician profile visits with no URL fragment required
+- No blockers for downstream phases
 
 ---
 *Phase: 82-logged-in-sync*
