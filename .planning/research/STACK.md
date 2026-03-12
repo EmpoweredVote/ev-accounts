@@ -1,306 +1,322 @@
-# Stack Research — v2026.3.3 Local Government Organization
+# Stack Research
 
-**Domain:** Local government organization display — specific body names, website links, state-specific structures
-**Researched:** 2026-03-10
-**Confidence:** HIGH
-
----
-
-## Scope
-
-This milestone is a **display and data-modeling** change, not an infrastructure or framework change. The existing validated stack (Go 1.24.3/Chi/GORM/PostgreSQL, React 19/Vite/Tailwind CSS 4, PostGIS, Supabase, ev-ui 0.1.40) is unchanged. Research covers only the new capabilities needed.
-
-**What this milestone needs:**
-1. A new database table to store specific body names and website URLs per governing body
-2. A JOIN extension in two existing SQL queries
-3. Two new fields on the existing `OfficialOut` response struct
-4. A `websiteUrl` prop on the existing `CategorySection` ev-ui component
-5. Admin CRUD endpoints for curating the new table (following existing pattern)
+**Domain:** Read & Rank extraction + cross-app state sharing + verdict integration
+**Researched:** 2026-03-11
+**Confidence:** HIGH (all critical findings verified against source code and official specs)
 
 ---
 
-## Recommended Stack
+## Context: What Is and Is Not New
 
-### Core Technologies
-
-All existing. No new frameworks or languages.
-
-| Technology | Current Version | Role in This Milestone |
-|------------|----------------|------------------------|
-| Go / GORM | 1.24.3 | Add `GovernmentBody` model; AutoMigrate; extend `OfficialOut`; LEFT JOIN in existing queries |
-| PostgreSQL / Supabase | existing | Store `essentials.government_bodies` table; no schema changes to existing tables |
-| React 19 | existing | Read `body_display_name`/`body_website_url` from API response; pass to `CategorySection` |
-| ev-ui | 0.1.40 | Add optional `websiteUrl` prop to `CategorySection`; publish 0.1.41 |
+The existing stack (React 19, Vite 7, Tailwind CSS 4, Zustand 5, Framer Motion 12,
+@use-gesture/react 10, @dnd-kit) is already running in EV-prototypes/read-rank.
+This document covers only what changes for the standalone extraction and the new
+cross-app / verdict integration features.
 
 ---
 
-### New Data Model: `essentials.government_bodies`
+## Section 1: Standalone Repo Extraction (Read & Rank)
 
-The core gap is that neither `essentials.chambers` nor `essentials.governments` has a `website_url` field or a "specific display name" concept:
+### No New Stack Required
 
-- `Chamber` has `name_formal` and `name` but no URL; it is Cicero-synced with an `external_id` — adding fields risks import conflicts
-- `Government` has `name`, `type`, `state`, `city` but no URL and no display name concept
-- Neither table has a clean per-region curation path
+The read-rank sub-project inside EV-prototypes already has a complete, self-contained
+package.json with its own Vite config, TypeScript, and all runtime deps. Extraction to a
+standalone repo is a file-copy operation with two adjustments:
 
-The right approach is a **new lookup table** keyed on `chamber_name_formal` (already present in `OfficialOut`). This is the exact same pattern as the existing `PositionDescription` table, which enriches positions by `normalized_position_name` without touching the import pipeline.
+1. **ev-ui package reference** — currently `@chrisandrewsedu/ev-ui`, needs `.npmrc`
+   pointing at `npm.pkg.github.com` with `NPM_TOKEN` (same pattern as the other apps;
+   a root `.npmrc` with `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` is required for
+   Cloudflare Pages CI).
 
-**New Go model:**
+2. **Cloudflare Pages config** — a `wrangler.toml` at repo root with
+   `not_found_handling = "single-page-application"` under `[assets]`. No Workers runtime
+   needed; this is a static SPA deployment identical to how CompassV2 and Essentials are
+   already deployed.
 
-```go
-// GovernmentBody stores curated display names and website URLs for specific governing bodies.
-// Keyed on chamber_name_formal (from essentials.chambers) to avoid touching Cicero-synced tables.
-// State-scoped to prevent key collisions across regions (e.g. two states both having "City Council").
-type GovernmentBody struct {
-    ID          uuid.UUID `json:"id" gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-    BodyKey     string    `json:"body_key" gorm:"uniqueIndex:idx_govbody_key;not null"` // matches chamber_name_formal
-    State       string    `json:"state" gorm:"uniqueIndex:idx_govbody_key;not null"`    // "IN", "CA", "" for national
-    DisplayName string    `json:"display_name"`   // e.g. "Monroe County Council"
-    WebsiteURL  string    `json:"website_url"`    // e.g. "https://monroecounty.gov/dept/council/"
-    Notes       string    `json:"notes,omitempty"` // Internal — not exposed in API
-}
+### Cloudflare Pages wrangler.toml
 
-func (GovernmentBody) TableName() string { return "essentials.government_bodies" }
+```toml
+name = "readrank"
+compatibility_date = "2024-09-23"
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
 ```
 
-Why `BodyKey = chamber_name_formal`: This field is already present in `OfficialOut` and populated in the JOIN queries. It is the lowest-friction lookup key — no UUID resolution required when seeding, and it survives Cicero re-imports because chamber names are stable.
+Build command: `npm run build`
+Build output: `dist/`
+Environment variable: `VITE_API_URL` set in Cloudflare dashboard
+(value: `https://api.empowered.vote`)
 
-Why `State` in the composite unique key: prevents collisions between e.g. Indiana's "Monroe County Council" and any other state that might have a body with the same formal name.
-
----
-
-### API Change: Extend `OfficialOut`
-
-Add two fields sourced from the new table:
-
-```go
-type OfficialOut struct {
-    // ... all existing fields unchanged ...
-    BodyDisplayName string `json:"body_display_name,omitempty"` // e.g. "Monroe County Council"
-    BodyWebsiteURL  string `json:"body_website_url,omitempty"`  // e.g. "https://monroecounty.gov/dept/council/"
-}
-```
-
-These are populated via a LEFT JOIN added to the raw SQL in `fetchOfficialsFromDB` and `fetchOfficialsByGeofence` (the two paths that serve `OfficialOut`):
-
-```sql
-LEFT JOIN essentials.government_bodies gb
-    ON gb.body_key = c.name_formal
-   AND gb.state = d.state
-```
-
-Then in the scan struct:
-```go
-BodyDisplayName string
-BodyWebsiteURL  string
-```
-
-This is one additional LEFT JOIN per query — zero measurable latency impact. No new endpoints needed.
+**Confidence:** HIGH — official Cloudflare Pages docs confirm this pattern for Vite SPAs.
 
 ---
 
-### Frontend Change: Results.jsx (essentials app)
+## Section 2: Cross-App State Sharing — The Core Problem
 
-`Results.jsx` already groups politicians by `classifyCategory()` output and renders each group via `CategorySection`. With `body_display_name` and `body_website_url` available per politician:
+### localStorage Is Origin-Isolated (Browser Spec, Not a Bug)
 
-**Section header strategy:** All politicians in the same chamber share the same `chamber_name_formal`, so `body_display_name` and `body_website_url` are identical across the group. Take the values from the first politician in each group. This requires no new state or hooks.
+localStorage is strictly scoped to `scheme + host + port`. Two different subdomains —
+`readrank.empowered.vote` and `essentials.empowered.vote` — are different origins.
+They cannot access each other's localStorage directly. This is the same-origin policy
+as defined in the HTML Living Standard and enforced by every major browser.
 
-```jsx
-// In Results.jsx, when rendering a group:
-orderedEntries(groups, LOCAL_ORDER).map(([category, polList]) => {
-  const firstPol = polList[0];
-  const sectionTitle = firstPol?.body_display_name || getDisplayName(category);
-  const sectionUrl = firstPol?.body_website_url || null;
+Setting `document.domain` does NOT help for localStorage. MDN explicitly documents that
+document.domain changes do not affect storage APIs (localStorage, indexedDB,
+BroadcastChannel, SharedWorker).
 
-  return (
-    <CategorySection
-      key={category}
-      title={sectionTitle}
-      websiteUrl={sectionUrl}
-    >
-      {defaultSort(category, polList).map(renderPoliticianCard)}
-    </CategorySection>
-  );
-});
-```
+**Verified:** MDN Web APIs `Window.localStorage` and same-origin policy explainer.
+**Confidence:** HIGH.
 
-No changes needed to:
-- `classifyCategory()` in `classify.js` — classification stays district_type based
-- `LOCAL_ORDER`, `STATE_ORDER`, `FEDERAL_ORDER` — ordering unchanged
-- `getDisplayName()` — still used as fallback when `body_display_name` is absent
-- Any politician card component or profile page
+### The Right Solution: URL Fragment Handoff + Server-Side Storage
+
+This codebase already has a working cross-origin state bridge: the `#compass=BASE64(...)`
+URL fragment pattern in `essentials/src/lib/compass.js`. Read & Rank verdicts should
+use the same mechanism.
+
+**For guests:** When a Read & Rank user navigates to a politician profile in Essentials,
+encode the verdict payload into the URL as `#verdicts=BASE64(JSON)`. Essentials parses
+it on load, caches to localStorage under key `guestVerdicts`, and strips the hash.
+Essentials reads this key on profile pages. This requires zero new libraries.
+
+**For logged-in users:** POST verdicts to the backend on submission. Essentials fetches
+them via GET on profile load. The existing session cookie (already scoped to
+`.empowered.vote`) handles auth transparently across subdomains.
+
+**Option evaluated and rejected — Hidden Shared Iframe + postMessage:**
+A trusted `storage.empowered.vote` iframe communicating via postMessage. Rejected
+because: adds iframe load latency, Safari ITP blocks third-party storage access for
+same-site iframes, and the URL fragment bridge already proven in this codebase is
+simpler and has no browser-compatibility issues.
+
+**Option evaluated and rejected — BroadcastChannel:**
+Same-origin only. Different subdomains are isolated. Does not solve the problem.
+
+**Recommendation:** URL fragment handoff for guests (matches existing proven pattern).
+Server-side storage for logged-in users (matches existing compass answer pattern).
 
 ---
 
-### ev-ui Change: CategorySection websiteUrl prop
+## Section 3: Verdict Storage
 
-Add an optional `websiteUrl` prop to the existing `CategorySection` component. When provided, render a small external-link icon after the title pill that opens in a new tab.
+### Guest Verdicts — localStorage key `guestVerdicts`
 
-```jsx
-// CategorySection.jsx — new prop, backward compatible
-export default function CategorySection({ title, infoTooltip, websiteUrl, children, style = {} }) {
-  // existing logic unchanged
-  // add beside titlePill:
-  {websiteUrl && (
-    <a
-      href={websiteUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`Visit official ${title} website`}
-      style={styles.websiteLink}
-    >
-      {/* small external-link SVG icon */}
-    </a>
-  )}
+Read & Rank stores its session state in Zustand under key `readrank-storage`. For
+the cross-app handoff, a separate, lighter localStorage key is used so Essentials
+can read it without importing the Zustand store:
+
+```
+localStorage key: "guestVerdicts"
+Shape: {
+  [politician_id: string]: {
+    topicId: string,
+    quoteId: string,
+    verdict: "agree" | "disagree",
+    rank: number | null,
+    timestamp: number
+  }[]
 }
 ```
 
-No breaking changes — `websiteUrl` is optional with `undefined` as default (no render effect). Existing callers of `CategorySection` without `websiteUrl` are unaffected.
+Read & Rank writes to `guestVerdicts` after each verdict is finalized. Essentials reads
+it via a utility function `loadGuestVerdicts()` parallel to the existing
+`loadGuestCompass()` in `essentials/src/lib/compass.js`.
 
-**Version bump:** ev-ui 0.1.40 → 0.1.41
+For the URL fragment handoff, encode only the politician-specific verdicts (filtered by
+`politician_id`) into `#verdicts=BASE64(...)` so the URL payload stays small.
 
----
+### Logged-In Verdicts — New Backend Endpoint
 
-### Admin Endpoints: Government Body CRUD
+New table in `compass.` schema and three endpoints following the exact same pattern as
+`compass.answers` and `/compass/answers`:
 
-The `government_bodies` table requires manual curation. Add CRUD endpoints following the exact pattern of the existing `position-descriptions` admin endpoints in `routes.go`:
-
-```go
-// In SetupRoutes(), under the existing admin group:
-r.Get("/admin/government-bodies",       ListGovernmentBodies)
-r.Post("/admin/government-bodies",      UpsertGovernmentBody)   // upsert by body_key + state
-r.Delete("/admin/government-bodies/{id}", DeleteGovernmentBody)
+```
+POST   /compass/verdicts        — upsert a verdict (authenticated)
+GET    /compass/verdicts        — fetch all verdicts for session user (authenticated)
+DELETE /compass/verdicts/{id}   — remove a verdict (authenticated)
 ```
 
-These handlers follow the identical pattern as `ListPositionDescriptions`, `UpsertPositionDescription`, `DeletePositionDescription`. No new middleware, no new authentication logic.
+New GORM model (add to `internal/compass/models.go`):
+
+```go
+type QuoteVerdict struct {
+    ID        uuid.UUID  `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
+    UserID    uuid.UUID  `gorm:"type:uuid;uniqueIndex:idx_verdict_user_quote"`
+    QuoteID   uuid.UUID  `gorm:"type:uuid;uniqueIndex:idx_verdict_user_quote"`
+    Verdict   string     // "agree" | "disagree"
+    Rank      *int       // null = no explicit rank assigned
+    CreatedAt time.Time
+    UpdatedAt time.Time
+}
+func (QuoteVerdict) TableName() string { return "compass.quote_verdicts" }
+```
+
+No new Go libraries. Same Chi router + GORM + SessionMiddleware pattern as all
+existing handlers.
+
+### Retiring the URL Fragment Bridge for Compass Data
+
+The existing `#compass=BASE64(...)` bridge between CompassV2 and Essentials is replaced
+by shared `.empowered.vote` domain localStorage. Since both `compass.empowered.vote`
+and `essentials.empowered.vote` are separate origins, the replacement mechanism is:
+CompassV2 writes guest compass data to its own localStorage (already does this under
+`compassAnswers` / `selectedTopics` keys), and when Essentials needs this data, it either
+reads from the URL fragment (existing path) or the user logs in (server merges data).
+
+The fragment bridge does not need to be retired as an emergency change — it can be kept
+and the `guestCompass` localStorage key approach used for the new verdict flow. Retiring
+the fragment bridge is a separate concern flagged in PROJECT.md and can happen
+independently.
 
 ---
 
-## Supporting Libraries
+## Section 4: Visual Polish for Read & Rank
 
-None new. Everything needed is already in the stack.
+The existing dependency set is correct and complete. No new animation or UI libraries
+are needed.
 
-| What | Why No New Library |
-|------|-------------------|
-| External link URL display | Native HTML `<a target="_blank" rel="noopener noreferrer">` |
-| External link icon | Inline SVG (3-4 lines) — no icon library needed |
-| State-specific body logic | Handled by DB lookup — no frontend branching code |
-| Data seeding | SQL INSERT or existing Go admin endpoint |
+### Core Technologies (Already in Package)
+
+| Technology | Version in repo | Latest | Purpose | Action |
+|------------|----------------|--------|---------|--------|
+| framer-motion | ^12.23.26 | 12.35.2 | Card swipe animations, spring physics | Update to ^12.35.0 |
+| @use-gesture/react | ^10.3.1 | 10.3.1 | Touch/mouse drag detection | Keep as-is |
+| @dnd-kit/core | ^6.3.1 | 6.x | Ranking drag-and-drop base | Keep as-is |
+| @dnd-kit/sortable | ^10.0.0 | 10.x | Sortable ranking list | Keep as-is |
+| zustand | ^5.0.9 | 5.x | State + localStorage persist | Keep as-is |
+| react-icons | ^5.5.0 | 5.x | Icon set | Keep as-is |
+| tailwindcss | ^4.1.18 | 4.x | Utility styling | Keep as-is |
+| @tailwindcss/forms | ^0.5.10 | — | Form base styles (devDep) | Already present |
+| @tailwindcss/typography | ^0.5.19 | — | Quote card prose styles (devDep) | Already present |
+
+### Note on framer-motion Package Name
+
+The library was renamed from `framer-motion` to `motion` starting with v11 but both
+npm packages are still published and maintained at the same version (12.35.x as of
+March 2026). The codebase uses `framer-motion` — no migration needed.
+Import paths stay as `import { motion } from 'framer-motion'`.
+
+---
+
+## Section 5: Essentials Integration
+
+### What Essentials Needs (No New npm Dependencies)
+
+Essentials does not need Zustand. It reads `guestVerdicts` from localStorage directly,
+exactly as it reads `guestCompass` today via `loadGuestCompass()`.
+
+New utility functions to add to `essentials/src/lib/` (either extend `compass.js` or
+create a new `verdicts.js`):
+
+```js
+export const GUEST_VERDICTS_KEY = "guestVerdicts";
+
+export function loadGuestVerdicts() { /* read + parse GUEST_VERDICTS_KEY */ }
+export function saveGuestVerdicts(verdicts) { /* write GUEST_VERDICTS_KEY */ }
+export function parseVerdictFragment() { /* parse #verdicts=BASE64 from URL hash */ }
+export async function fetchUserVerdicts() { /* GET /compass/verdicts, 401 returns [] */ }
+```
+
+Priority chain in a `VerdictContext` (or added to `CompassContext`) mirrors the existing
+compass loading logic:
+
+1. Fragment in URL (`#verdicts=...`) — parse + cache to localStorage, strip hash
+2. Logged-in session — fetch from `/compass/verdicts` API
+3. Guest — read from `guestVerdicts` localStorage key
+
+### ev-ui Changes
+
+The `StanceAccordion` component (ev-ui, consumed by Essentials) is where verdict badges
+will render — showing agree/disagree/rank for quotes under each topic's stance list.
+Add a `verdicts` prop (array of verdict objects) to `StanceAccordion`, or a new
+`VerdictBadge` sibling component. Bump ev-ui to the next minor version
+(currently v0.1.41, so v0.1.42+).
+
+Both CompassV2 and Essentials will need their ev-ui references updated to pick up the
+new version.
+
+---
+
+## Recommended Stack (New Additions Only)
+
+| Item | Location | What | Why |
+|------|----------|------|-----|
+| `wrangler.toml` | ReadRank repo root | Cloudflare Pages SPA config | Required for `readrank.empowered.vote` deployment |
+| `.npmrc` | ReadRank repo root | `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` | Required for ev-ui in Cloudflare Pages CI |
+| `VITE_API_URL` env var | Cloudflare dashboard | `https://api.empowered.vote` | Connects standalone app to backend |
+| `compass.quote_verdicts` table | EV-Backend DB | GORM model + AutoMigrate | Stores logged-in user verdicts server-side |
+| `/compass/verdicts` endpoints | `internal/compass/` | POST/GET/DELETE handlers + routes | Server-side verdict CRUD |
+| `guestVerdicts` localStorage key | ReadRank + Essentials | Shared key name constant | Cross-app guest verdict handoff |
+| Verdict utility functions | Essentials `src/lib/` | load/save/fetch/parse verdicts | Mirror of existing compass utils |
+| ev-ui v0.1.42+ | ev-ui repo | `verdicts` prop on `StanceAccordion` | Verdict badge display in politician profiles |
+
+---
+
+## What NOT to Add
+
+| Avoid | Why | Use Instead |
+|-------|-----|-------------|
+| New state management library in Essentials | React Context + local state is sufficient; Zustand not needed for verdict read | Direct localStorage read via utility function |
+| New animation library in ReadRank | Framer Motion already covers all needed animations | Framer Motion ^12.35.0 |
+| Shared iframe / postMessage infrastructure | Overkill; URL fragment bridge is simpler and proven; Safari ITP is a real concern with iframe-based cross-site storage | URL fragment handoff |
+| Third-party sync service (Liveblocks, Pusher) | Nonprofit budget; overkill for a verdict list | Backend API endpoint |
+| New PostgreSQL schema (`readrank.`) | Verdicts are user-compass data; `compass.` is the correct semantic home, avoids cross-schema JOINs | Add to `compass.quote_verdicts` |
+| document.domain manipulation | MDN explicitly states it does NOT affect localStorage origin checks | URL fragment handoff |
+| BroadcastChannel for cross-app sync | Same-origin only; subdomains are different origins | URL fragment handoff |
 
 ---
 
 ## Installation
 
-No new packages required.
-
 ```bash
-# Go backend — no new go get needed
-cd EV-Backend
-go build -o server .   # After adding GovernmentBody model to models.go
-
-# ev-ui — no new npm installs; version bump only
-cd ev-ui
-npm run build
-# Update essentials to consume ^0.1.41
-
-# essentials React app — no new npm installs
+# In the new standalone ReadRank repo (copied from EV-prototypes/read-rank):
+npm install @chrisandrewsedu/ev-ui@latest
+npm install framer-motion@^12.35.0
+# No other new installs
 ```
 
----
+```bash
+# In essentials:
+npm install @chrisandrewsedu/ev-ui@latest
+# No other new installs — verdict utils are plain JS, no runtime deps
+```
 
-## Alternatives Considered
-
-| Recommended | Alternative | Why Not |
-|-------------|-------------|---------|
-| New `essentials.government_bodies` table with string `body_key` | Add `website_url` + `display_name` to `essentials.chambers` | Chambers are Cicero-synced; adding fields risks import conflicts; upsert logic would need updating to preserve manually set values |
-| New `essentials.government_bodies` table | Add `website_url` to `essentials.governments` | Government table has no URL or display name concept; a single government can own multiple chambers (commissioners + council both under "Monroe County Government"); no clean per-body targeting |
-| LEFT JOIN in existing queries | New `/essentials/government-bodies` endpoint + frontend fetch | Extra network round-trip on every Results page load; adds error state handling; JOIN is simpler and zero-cost |
-| `body_key = chamber_name_formal` | `body_key = chamber_id UUID` | UUID key requires resolving chamber UUIDs when seeding (extra DB lookup); string key is human-readable and matches existing `OfficialOut` fields directly |
-| `websiteUrl` prop on `CategorySection` | New `CategorySectionWithLink` component | Avoids component proliferation; backward-compatible optional prop is cleaner; `infoTooltip` already established the pattern of optional extras on `CategorySection` |
-| Take `body_display_name` from `polList[0]` in Results.jsx | Group-level API shape `{ title, url, politicians[] }` | Group-level shape requires a new API endpoint or response restructuring; all politicians in a chamber already share the same `chamber_name_formal`, so `polList[0]` is deterministic and requires no API changes |
-
----
-
-## What NOT to Use
-
-| Avoid | Why | Use Instead |
-|-------|-----|-------------|
-| Modifying `essentials.chambers` for `website_url` | Chamber table is Cicero-imported; field would be overwritten on next import unless import upsert logic is updated to preserve it | New `government_bodies` lookup table with manual curation |
-| Hardcoding body names/URLs in `classify.js` or `Results.jsx` | Brittle — breaks when expanding to new regions; not editable without code deployment | DB-backed lookup via LEFT JOIN |
-| Separate `/government-bodies` API fetch in frontend | Extra network round-trip per page load; adds loading/error state | Embed `body_display_name`/`body_website_url` in existing `OfficialOut` response |
-| Adding `websiteUrl` to `PoliticianCard` | The link is per-section (governing body), not per individual politician | Add to `CategorySection` title area only |
-| New npm package for external link icon | Inline SVG is 4 lines; importing an icon library for one glyph is disproportionate | Inline SVG `<path>` for external-link arrow icon |
-
----
-
-## Stack Patterns by Variant
-
-**Indiana county with distinct commissioners + council bodies:**
-- Two `GovernmentBody` rows: one for commissioners (`chamber_name_formal` of commissioner records), one for council (`chamber_name_formal` of council records)
-- `classifyCategory()` already creates distinct groups ("County Executives" vs "County Legislators") because these bodies have different titles
-- Each group renders with its own specific `body_display_name` and `body_website_url`
-- No frontend code changes needed for this structural distinction
-
-**Body with no DB entry yet (new regions, unsupported areas):**
-- LEFT JOIN returns NULL for `body_display_name` and `body_website_url`
-- Frontend fallback: `firstPol?.body_display_name || getDisplayName(category)` — existing generic names
-- `websiteUrl` is `null` — `CategorySection` renders without link icon
-- Zero visual regression for unsupported regions
-
-**Expanding to new states/regions:**
-- Insert rows into `essentials.government_bodies` via admin endpoint
-- No frontend code changes
-- No backend code changes
-- The JOIN picks them up automatically on next query
-
-**City council vs county council same page:**
-- Different `chamber_name_formal` values → different `body_key` rows → each section gets correct name/URL
-- Already deduped correctly by existing `byTier` logic in `Results.jsx`
+```bash
+# In ev-ui (for verdict badge component — no new runtime deps):
+# Bump package.json version to 0.1.42
+npm run build
+# Publish to GitHub npm registry
+```
 
 ---
 
 ## Version Compatibility
 
-| Package | Current | Target | Notes |
-|---------|---------|--------|-------|
-| ev-ui | 0.1.40 | 0.1.41 | Add optional `websiteUrl` to `CategorySection`; backward-compatible |
-| essentials (React app) | — | — | Consume ev-ui `^0.1.41`; update `Results.jsx` to pass new props |
-| EV-Backend | Go 1.24.3 | unchanged | Add `GovernmentBody` model; extend `OfficialOut`; extend JOIN in queries |
-| Supabase PostgreSQL | existing | unchanged | AutoMigrate creates `essentials.government_bodies`; no manual migration |
-
----
-
-## Data Seeding Plan
-
-The `government_bodies` table is populated manually (not via import pipelines). For the Indiana v2026.3.3 launch:
-
-**Seeding method:** SQL INSERT during development, or via admin API endpoint after deploy.
-
-**Critical step before seeding:** Verify exact `chamber_name_formal` values from the DB for Monroe County and Bloomington records:
-
-```sql
-SELECT DISTINCT c.name_formal, g.name, d.state
-FROM essentials.chambers c
-JOIN essentials.governments g ON c.government_id = g.id
-JOIN essentials.offices o ON o.chamber_id = c.id
-JOIN essentials.districts d ON o.district_id = d.id
-WHERE d.state = 'IN'
-ORDER BY g.name, c.name_formal;
-```
-
-Use the exact `name_formal` strings from that query as `body_key` values. Do not guess the strings — a mismatch means the JOIN silently returns NULL.
+| Package | Compatible With | Notes |
+|---------|-----------------|-------|
+| framer-motion ^12.x | React 19 | No breaking changes in v12; confirmed on npm changelog |
+| @use-gesture/react ^10.x | React 19 | No known issues with React 19 |
+| zustand ^5.x | React 19 | Officially supports React 19; persist middleware API unchanged |
+| @dnd-kit/core ^6.x | React 19 | Current in EV-prototypes; no issues reported |
+| tailwindcss ^4.x | Vite 7 | Already proven across all EV apps |
+| ev-ui (GitHub registry) | React 19 + Vite 7 | Essentials on ^0.1.41; update to ^0.1.42+ for verdict props |
 
 ---
 
 ## Sources
 
-- `GovernmentBody` pattern modeled on existing `PositionDescription` — HIGH confidence (read directly from EV-Backend/internal/essentials/models.go)
-- `OfficialOut` struct and SQL query structure — HIGH confidence (read directly from EV-Backend/internal/essentials/handlers.go lines 162-214)
-- `CategorySection` component API — HIGH confidence (read directly from ev-ui/src/CategorySection.jsx)
-- ev-ui current version 0.1.40 — HIGH confidence (read from ev-ui/package.json)
-- essentials consumes `@chrisandrewsedu/ev-ui ^0.1.40` — HIGH confidence (read from essentials/package.json)
-- Indiana county dual-body structure (commissioners + council) — MEDIUM confidence ([NACo Indiana County Overview PDF](https://www.naco.org/sites/default/files/event_attachments/DRAFT_Indiana_012022.pdf), [Indiana County Commissioners Association](https://www.indianacountycommissioners.com/what-is-a-county-commissioner))
-- No `website_url` on `Chamber` or `Government` tables — HIGH confidence (read from models.go; confirmed absence)
+- MDN Web API: `Window.localStorage` — origin isolation per scheme+host+port confirmed
+- MDN: Same-origin policy — document.domain does NOT affect storage APIs
+- npmjs.com: `framer-motion` — latest 12.35.2, published 2026-03-10 (verified)
+- Cloudflare Pages docs — `not_found_handling = "single-page-application"` in wrangler.toml
+- `/Users/chrisandrews/Documents/GitHub/EV-prototypes/read-rank/package.json` — current deps verified
+- `/Users/chrisandrews/Documents/GitHub/essentials/src/lib/compass.js` — URL fragment bridge pattern, `GUEST_COMPASS_KEY` convention
+- `/Users/chrisandrews/Documents/GitHub/essentials/src/contexts/CompassContext.jsx` — fragment > API > localStorage priority chain
+- `/Users/chrisandrews/Documents/GitHub/EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand persist key `readrank-storage` confirmed
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/routes.go` — existing `/quotes` GET endpoint confirmed
+- `/Users/chrisandrews/Documents/GitHub/essentials/package.json` — ev-ui ^0.1.41, no Zustand dep confirmed
 
 ---
-*Stack research for: v2026.3.3 Local Government Organization — specific body names and website links*
-*Researched: 2026-03-10*
+*Stack research for: v2026.3.4 Read & Rank Integration*
+*Researched: 2026-03-11*

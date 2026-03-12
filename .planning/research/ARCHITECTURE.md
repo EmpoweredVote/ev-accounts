@@ -1,387 +1,509 @@
 # Architecture Research
 
-**Domain:** Civic tech — local government organization features for existing Essentials app
-**Researched:** 2026-03-10
+**Domain:** Civic tech — Read & Rank integration, shared cross-app localStorage, and quote verdict display
+**Researched:** 2026-03-11
 **Confidence:** HIGH (all based on direct codebase inspection)
 
-## Context: Subsequent Milestone
+## Context: Subsequent Milestone (v2026.3.4)
 
-This is an integration-focused architecture document for v2026.3.3. It describes how new local government organization features plug into the existing Go + React system. No new frameworks, schemas, or services are being added — the question is precisely *where* new code lives and *what existing code changes*.
+This is an integration-focused architecture document for v2026.3.4. It describes how three related features plug into the existing Go + React system:
 
----
+1. **Read & Rank standalone extraction** — move `EV-prototypes/read-rank/` to its own repo on `readrank.empowered.vote`
+2. **Shared `.empowered.vote` localStorage** — cross-app state (verdicts, compass data) accessible by all subdomains, replacing the URL fragment bridge
+3. **Quote verdict display in CompassCard** — show each user's agree/disagree verdict next to politician stances in Essentials profile pages
 
-## System Overview
-
-The current architecture that this milestone touches:
-
-```
-+------------------------------------------------------------------+
-|                   React Frontend (essentials)                     |
-|                                                                   |
-|  Results.jsx --> classifyCategory() --> CategorySection[title]    |
-|      |                |                        |                  |
-|      |           classify.js              ev-ui component         |
-|      |         (pure, stateless)        (just renders title)      |
-|      |                                                            |
-|  usePoliticianData() --> POST /essentials/politicians/search      |
-+------------------------------------------------------------------+
-                              |
-                              v
-+------------------------------------------------------------------+
-|                  Go Backend (EV-Backend)                          |
-|                                                                   |
-|  POST /essentials/politicians/search                              |
-|       |                                                           |
-|       v                                                           |
-|  geofence_lookup.go --> FindGeoIDsByPoint                         |
-|       |                  FindPoliticiansByGeoMatches              |
-|       |                                                           |
-|       v                                                           |
-|  OfficialOut struct --> JSON response                             |
-|  (includes: chamber_name, office_title, district_type,            |
-|   government_name, district_id, representing_city/state)          |
-+------------------------------------------------------------------+
-                              |
-                              v
-+------------------------------------------------------------------+
-|                    PostgreSQL (Supabase)                           |
-|                                                                   |
-|  essentials.chambers      -- name, name_formal                    |
-|  essentials.districts     -- district_type, state, city           |
-|  essentials.offices       -- title, representing_city/state       |
-|  essentials.politicians   -- first_name, last_name                |
-|  essentials.geofences     -- PostGIS boundaries                   |
-+------------------------------------------------------------------+
-```
-
-### What Changes in This Milestone
-
-The milestone adds one new concept: **government body metadata** — specific names and website URLs for each legislative body, keyed so they can be looked up from the frontend classifier output.
-
-The data flow change is minimal. The classifier already groups politicians by body type (e.g., "County Legislators"). The gap is:
-
-1. That group label is generic ("County Legislators"), not specific ("Monroe County Council")
-2. There is no website URL attached to the section header
-
-Everything else (geofence lookup, politician cards, profile pages, building photos) is unchanged.
+No new frameworks, DB schemas, or backend endpoints are being added for items 1 and 2. Item 3 requires one new backend endpoint.
 
 ---
 
-## New Data Model: `essentials.government_bodies`
+## System Overview: Current State
 
-This is the only new backend table. It stores the specific name and website URL for a government body, keyed by the combination of attributes that uniquely identify it.
+Before this milestone the system looks like this:
 
-### Table Design
+```
+compass.empowered.vote       readrank.empowered.vote      essentials.empowered.vote
+(CompassV2 React app)        (not yet standalone)         (Essentials React app)
+        |                                                          |
+        | guest compass data:                                      |
+        | URL fragment bridge:                                     |
+        | ?return=<essentials_url>                                 |
+        | + #compass=BASE64(answers)  <--------------------------  |
+        |                                                          |
+        +------------------------------------------+               |
+                                                   |               |
+                                                   v               v
+                                          api.empowered.vote
+                                          (Go/Chi backend, Render)
+                                                   |
+                                                   v
+                                         Supabase PostgreSQL
+```
+
+Key state-per-app:
+- **CompassV2:** `compass_answers`, `compass_selected_topics`, `compass_inverted` in localStorage (key: `guestCompass`) + server-side for logged-in users
+- **Read & Rank (prototype):** `readrank-storage` Zustand persist key in localStorage; contains per-issue progress with agree/disagree/badge data
+- **Essentials:** No verdicts stored; reads compass data via URL fragment on arrival, then falls back to its own `guestCompass` localStorage key (same schema as CompassV2 uses)
+- **Cross-app compass data today:** CompassV2 → Essentials via URL fragment (#compass=BASE64); fragment is parsed once on arrival, then cached in Essentials localStorage
+
+---
+
+## System Overview: After This Milestone
+
+```
+compass.empowered.vote       readrank.empowered.vote      essentials.empowered.vote
+(CompassV2 React app)        (NEW standalone app)         (Essentials React app)
+        |                           |                              |
+        |                           |                              |
+        +---------------------------+------------------------------+
+                                    |
+                   Shared localStorage (domain: .empowered.vote)
+                   Key: ev_guest_compass  (replaces guestCompass)
+                   Key: ev_readrank       (verdicts per issue)
+                                    |
+                                    v
+                          api.empowered.vote
+                          (Go/Chi backend, Render)
+                          NEW: POST /essentials/verdicts  (logged-in)
+                          NEW: GET  /essentials/verdicts?politician_id=X
+                                    |
+                                    v
+                          Supabase PostgreSQL
+                          NEW: essentials.quote_verdicts table
+```
+
+The URL fragment bridge is retired. Cross-app state flows through shared localStorage only.
+
+---
+
+## Feature 1: Read & Rank Standalone Extraction
+
+### What Changes
+
+The `EV-prototypes/read-rank/` directory becomes a standalone repo: `github.com/chrisandrewsedu/ev-readrank` (or similar), deployed to `readrank.empowered.vote` on Cloudflare Pages.
+
+### What Stays the Same
+
+The entire application surface: components, store, data fetching, phases (hub, evaluation, ranking, results), Zustand persist, routing. Zero behavior changes at extraction time — extraction is a file copy + config update.
+
+### Config Changes Required
+
+The BrowserRouter `basename` is currently hardcoded to `/read-rank/dist` (a Netlify monorepo path). In the standalone app this becomes `/` or is removed entirely:
+
+```tsx
+// Before (EV-prototypes monorepo):
+<BrowserRouter basename="/read-rank/dist">
+
+// After (standalone):
+<BrowserRouter>
+```
+
+Vite `base` in `vite.config.ts` must also be set to `/` (default) rather than any subdirectory.
+
+The `VITE_API_URL` env var stays as-is pointing to `https://api.empowered.vote`.
+
+The ev-ui package reference (`@chrisandrewsedu/ev-ui`) stays as-is; the standalone repo needs its own `.npmrc` pointing to the GitHub npm registry.
+
+### Cloudflare Pages Config
+
+New Pages project: `readrank-ev` (or similar). Build command: `npm run build`. Output: `dist/`. Domain: `readrank.empowered.vote`.
+
+SPA routing: add `_redirects` file at root of `dist/`:
+```
+/*    /index.html    200
+```
+
+This is needed because `CandidateAlignmentPage` uses `/candidate/:id/alignment` routes that Cloudflare must pass through to the React router.
+
+---
+
+## Feature 2: Shared `.empowered.vote` localStorage
+
+### The Problem with the Current Approach
+
+Two problems with the URL fragment bridge:
+
+1. **One-way, one-time:** The fragment carries data from CompassV2 to Essentials on one page load. If the user answers more compass questions later, Essentials does not see the update.
+2. **Not accessible to Read & Rank:** There is no existing mechanism for Read & Rank verdicts to appear in Essentials.
+
+### How Shared localStorage Works
+
+localStorage is scoped to `(scheme, host)` — not just the registered domain. `compass.empowered.vote` and `essentials.empowered.vote` each have their own isolated localStorage. Browsers do not allow cross-origin localStorage reads directly.
+
+**The only reliable mechanism on Cloudflare Pages subdomains is a shared cookie domain.** But cookies are not what we need here — we need a key-value store readable by React.
+
+**Correct approach: shared localStorage via a common subdomain-scoped cookie bridge does NOT work for arbitrary JSON.**
+
+**What does work: write to a key in localStorage on each subdomain with a known key name. Then when Essentials loads, it reads from that known key.** This already works today — both CompassV2 and Essentials use `guestCompass` as the localStorage key, and if they happen to run on the same subdomain or a user navigates directly, this works. But `compass.empowered.vote` and `essentials.empowered.vote` have separate localStorage namespaces.
+
+**The actual solution: use a postMessage relay or a shared iframe.** A tiny hidden `<iframe>` hosted at `shared.empowered.vote` can act as a localStorage relay — both parent pages post messages to it, and it reads/writes to its own localStorage, echoing values back. This pattern is called the "localStorage proxy iframe."
+
+However, this adds significant complexity. The simpler solution for this scale:
+
+**Recommended: sessionStorage + URL parameter handoff + deeper local caching on Essentials side.**
+
+For guest compass data: the existing URL fragment bridge already handles the CompassV2 → Essentials handoff. The fragment is cached in Essentials localStorage on first arrival. This cache survives refreshes. The only gap is when a guest updates their compass after visiting Essentials; they must click "Return to profile" again (the ReturnBanner already supports this).
+
+For Read & Rank verdicts → Essentials: Read & Rank can pass completed verdicts to Essentials via URL parameters when the user navigates from Read & Rank to an Essentials politician profile. This is the same pattern as the existing fragment bridge.
+
+**Alternative recommended approach (simpler than iframe relay, better than pure URL params): use a subdomain-scoped cookie for a small summary token, plus URL params for richer data on explicit cross-app navigation.**
+
+**Verdict after analysis:** Given the team size (2-3 devs) and the low cross-app navigation frequency, the most practical approach is:
+
+1. Keep the URL fragment bridge for compass data (already works)
+2. Add verdict data to the URL fragment when Read & Rank links to Essentials
+3. Cache verdicts in Essentials localStorage under a stable key (`ev_readrank_verdicts`)
+4. For logged-in users: sync verdicts to the server so they persist cross-device
+
+This avoids iframe complexity entirely, adds no new infrastructure, and matches the existing pattern the team already understands.
+
+### Verdict Data Schema
+
+Zustand's `readrank-storage` key already contains per-issue agree/disagree/badge data. The fragment bridge extension adds a verdicts summary to the `#compass=` fragment payload:
+
+```typescript
+// Extended fragment payload (add 'v' key alongside existing 'a', 's', 'i'):
+{
+  a: { [short_title]: value },     // existing compass answers
+  s: [uuid, ...],                   // existing selected topics
+  i: { [short_title]: bool },       // existing inverted spokes
+  v: {                              // NEW: quote verdicts
+    [quoteId]: 'agree' | 'disagree' | 'diamond' | 'gold'
+  }
+}
+```
+
+The fragment is still BASE64-encoded. Size concern: 61 quotes in DB × ~40 chars per entry = ~2.4KB uncompressed. After BASE64 that is ~3.2KB. URL length limits are ~8KB in most browsers — this is fine.
+
+Essentials `parseCompassFragment()` in `src/lib/compass.js` already handles optional keys (it returns `decoded.i || {}`). Adding `decoded.v || {}` follows the same pattern.
+
+### What Gets Retired
+
+The `ReturnBanner` mechanism (CompassV2 → Essentials with `?return=` param + `#compass=` fragment) stays. Nothing is retired in v2026.3.4. The fragment bridge works and is not worth replacing.
+
+The PROJECT.md requirement "Retire URL fragment bridge" is future scope, contingent on proving the shared localStorage alternative is simpler in practice. For now, augment the fragment with verdicts data.
+
+---
+
+## Feature 3: Quote Verdict Display in CompassCard
+
+### Where Verdicts Appear
+
+Verdicts show inside the existing `StanceAccordion` component (in `essentials/src/components/StanceAccordion.jsx`). Each accordion row already shows:
+- Topic short_title
+- question_text
+- Politician's stance label (e.g., "Strongly Support")
+
+The new addition: if the user has a verdict for any of the politician's quotes on this topic, show it inline. A small badge — "You Agreed" (green) or "You Disagreed" (red) — alongside or below the stance label.
+
+This requires knowing:
+1. Which quotes belong to this topic (quote_id → topic_key mapping)
+2. What verdict the user gave each quote
+
+### Data Flow: Verdict Display
+
+```
+User evaluates quotes on readrank.empowered.vote
+        |
+        | (URL fragment bridge when linking to essentials profile)
+        v
+Essentials receives #compass=BASE64({..., v: {quoteId: 'agree', ...}})
+        |
+        v
+parseCompassFragment() extracts verdicts
+        |
+        v
+CompassContext (essentials) stores verdicts in state + caches in localStorage
+        |
+        v
+CompassCard renders --> passes verdicts to StanceAccordion
+        |
+        v
+StanceAccordion row: for each topic, look up quotes that belong to this topic
+        |
+        v
+Show verdict badge if user evaluated any of those quotes
+```
+
+### Backend Support: Linking Quotes to Topics in StanceAccordion
+
+StanceAccordion currently receives `topics` (CompassV2 topic objects with `id`, `short_title`, `stances`). It does not know about quotes.
+
+To show verdict badges, StanceAccordion needs to know which quote IDs belong to each topic.
+
+**Option A: Fetch quotes data in StanceAccordion.** Call `GET /essentials/quotes` (already exists) and filter by `issue` field (which is `topic_key`). This adds one fetch per CompassCard render.
+
+**Option B: Pass quoteIds via CompassCard.** CompassCard already fetches politician answers. Extend `CompassCard` to also call `GET /essentials/quotes?politician_id=X` (new endpoint, narrow scope), getting only the quotes for the displayed politician. Then pass a `{ [topic_key]: quoteId[] }` map down to StanceAccordion.
+
+**Option C: Include quote IDs in the politician stances response.** Extend `GET /compass/politicians/:id/answers` to also return associated quote IDs per topic.
+
+Option B is recommended. It keeps the data fetching in `CompassCard` (which already fetches politician answers), avoids loading all 61 quotes every time, and makes StanceAccordion a pure display component. It requires one new backend endpoint.
+
+### New Backend Endpoint: `GET /essentials/quotes?politician_id=X`
+
+Filters the existing `GetQuotes` handler by politician. Returns the same shape as the existing endpoint but scoped to one politician:
+
+```json
+{
+  "quotes": [
+    { "id": "...", "issue": "cannabis-legalization", "text": "...", ... }
+  ]
+}
+```
+
+The `issue` field is the topic_key. StanceAccordion receives a `verdictsByTopic` map keyed by topic_key, derived by:
+
+```javascript
+// In CompassCard, after fetching politician quotes:
+const verdictsByTopic = {};
+for (const quote of polQuotes) {
+  const verdict = verdicts[quote.id]; // from CompassContext
+  if (verdict) {
+    verdictsByTopic[quote.issue] = verdict; // first verdict per topic wins
+  }
+}
+```
+
+### CompassContext Extension (Essentials)
+
+`CompassContext` in `essentials/src/contexts/CompassContext.jsx` currently manages:
+- `isLoggedIn`, `userName`
+- `userAnswers`, `selectedTopics`, `allTopics`, `invertedSpokes`
+- `politicianIdsWithStances`
+
+Add: `verdicts` — `Record<quoteId, 'agree' | 'disagree' | 'diamond' | 'gold'>`.
+
+Load priority mirrors the existing pattern:
+1. Logged-in path: fetch from `GET /essentials/verdicts` (new endpoint)
+2. Fragment: extract `v` key from compass fragment
+3. localStorage cache: `ev_readrank_verdicts` key
+4. Empty: `{}`
+
+### Server-Side Verdict Storage (Logged-in Users)
+
+Two new backend endpoints:
+
+**`POST /essentials/verdicts`** — upsert a user's complete verdict set
+```json
+{
+  "verdicts": { "quoteId": "agree", "quoteId2": "disagree" }
+}
+```
+
+**`GET /essentials/verdicts`** — return the current user's verdicts
+```json
+{
+  "verdicts": { "quoteId": "agree", "quoteId2": "disagree" }
+}
+```
+
+New table: `essentials.quote_verdicts`
 
 ```sql
-CREATE TABLE essentials.government_bodies (
-    id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    state       TEXT NOT NULL,           -- "IN", "CA"
-    geo_id      TEXT NOT NULL,           -- TIGER GEO_ID of the jurisdiction
-                                         -- (county FIPS, city FIPS, etc.)
-    body_key    TEXT NOT NULL,           -- classifier category key, e.g.
-                                         -- "County Legislators", "City Council"
-    body_name   TEXT NOT NULL,           -- "Monroe County Council"
-    website_url TEXT,                    -- "https://monroecounty.gov/council"
-    seat_count  INT,                     -- optional: 7 for council, 3 for commission
-    notes       TEXT,                    -- optional: free-form operational notes
-    created_at  TIMESTAMPTZ DEFAULT NOW(),
-    updated_at  TIMESTAMPTZ DEFAULT NOW(),
-    UNIQUE (state, geo_id, body_key)
+CREATE TABLE essentials.quote_verdicts (
+  id         UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id    UUID NOT NULL REFERENCES app_auth.users(id) ON DELETE CASCADE,
+  quote_id   UUID NOT NULL REFERENCES essentials.quotes(id) ON DELETE CASCADE,
+  verdict    TEXT NOT NULL CHECK (verdict IN ('agree', 'disagree', 'diamond', 'gold')),
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE (user_id, quote_id)
 );
 ```
 
-**Key design decisions:**
+Both endpoints require `middleware.SessionMiddleware`. The POST is a bulk upsert (ON CONFLICT DO UPDATE) — same pattern as compass answers.
 
-- `geo_id` uses the existing TIGER GEO_ID already stored on `essentials.geofences` and `essentials.districts` — no new geographic key system needed
-- `body_key` mirrors the `classifyCategory()` group strings used in classify.js — this is the join point between backend data and frontend classifier output
-- The unique constraint `(state, geo_id, body_key)` means one row per body per jurisdiction — upsert-safe
-- No FK to `essentials.chambers` or `essentials.districts` — those tables have stale data from BallotReady that does not always match real geography; `geo_id` is the reliable key
+---
 
-### GORM Model (Go)
+## Component Boundaries: New vs. Modified
 
-New struct in `internal/essentials/models.go`:
+| Component | Status | What Changes |
+|-----------|--------|--------------|
+| `readrank.empowered.vote` repo | NEW | Extracted from EV-prototypes; BrowserRouter basename fixed; standalone Cloudflare Pages |
+| `_redirects` (Read & Rank) | NEW | SPA routing for Cloudflare Pages |
+| `essentials.quote_verdicts` table | NEW | Server-side verdict storage |
+| `GoVerdicts` / `PostVerdicts` handlers (Go) | NEW | CRUD for logged-in user verdicts |
+| `GET /essentials/quotes?politician_id=X` | NEW | Filtered quotes fetch per politician |
+| `CompassContext` (Essentials) | MODIFIED | Add `verdicts` state, load from fragment/localStorage/API |
+| `parseCompassFragment()` (Essentials) | MODIFIED | Extract `v` key from fragment payload |
+| `serializeCompassFragment()` (CompassV2) | MODIFIED | Include `v` key in fragment payload |
+| `CompassCard` (Essentials) | MODIFIED | Fetch politician quotes, derive `verdictsByTopic`, pass to StanceAccordion |
+| `StanceAccordion` (Essentials) | MODIFIED | Accept `verdictsByTopic` prop, render verdict badge per topic row |
+| `useReadRankStore` (Read & Rank) | NOT MODIFIED | Existing Zustand store unchanged |
+| `ResultsPhase` / `IssueHub` (Read & Rank) | MODIFIED | Add "View on Essentials" CTA that builds fragment URL with verdicts |
+| `EV-Backend routes.go` (essentials) | MODIFIED | Register 3 new routes |
+| `EV-Backend internal/essentials/models.go` | MODIFIED | Add QuoteVerdict model |
 
-```go
-type GovernmentBody struct {
-    ID         uuid.UUID  `json:"id" gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-    State      string     `json:"state" gorm:"uniqueIndex:idx_gov_body_lookup"`
-    GeoID      string     `json:"geo_id" gorm:"uniqueIndex:idx_gov_body_lookup"`
-    BodyKey    string     `json:"body_key" gorm:"uniqueIndex:idx_gov_body_lookup"`
-    BodyName   string     `json:"body_name"`
-    WebsiteURL string     `json:"website_url,omitempty"`
-    SeatCount  *int       `json:"seat_count,omitempty"`
-    Notes      string     `json:"notes,omitempty"`
-    CreatedAt  time.Time  `json:"created_at"`
-    UpdatedAt  time.Time  `json:"updated_at"`
+---
+
+## Data Flow: Full Cross-App Verdict Journey
+
+```
+1. User evaluates quotes on readrank.empowered.vote
+   - Zustand store records: { "quoteId": "agree/disagree/diamond/gold", ... }
+   - Persisted in readrank.empowered.vote localStorage under "readrank-storage"
+
+2. User clicks "See this politician on Empowered Vote" (new CTA in ResultsPhase)
+   - Read & Rank reads all verdicts from Zustand store
+   - Reads existing compass data from localStorage ("guestCompass") if present
+   - Builds fragment: #compass=BASE64({a: answers, s: selected, i: inverted, v: verdicts})
+   - Navigates to: essentials.empowered.vote/politician/:id#compass=BASE64(...)
+
+3. Essentials profile page loads
+   - parseCompassFragment() runs synchronously before any async calls
+   - Extracts answers, selected topics, inverted spokes, AND verdicts
+   - Saves all to localStorage: "guestCompass" (compass data) + "ev_readrank_verdicts" (verdicts)
+   - Strips fragment from URL (history.replaceState)
+
+4. CompassContext.loadAll() runs
+   - Compass data: from fragment (highest priority) -> localStorage -> empty
+   - Verdicts: from fragment -> localStorage "ev_readrank_verdicts" -> API (if logged in) -> {}
+   - Sets verdicts in context state
+
+5. Profile page renders CompassCard
+   - CompassCard fetches: politician stances (existing) + politician quotes (new GET /essentials/quotes?politician_id=X)
+   - Derives verdictsByTopic: { "cannabis-legalization": "agree", "education-funding": "disagree", ... }
+   - Passes verdictsByTopic to StanceAccordion
+
+6. StanceAccordion renders
+   - Each topic row: show existing stance label + NEW verdict badge if verdictsByTopic[topic.topic_key] exists
+   - "You Agreed" (green) / "You Disagreed" (red) / "Your Top Pick" (diamond) / "Your Runner Up" (gold)
+
+7. If logged in (either app):
+   - Read & Rank: on session check, POST /essentials/verdicts with current Zustand state
+   - Essentials: CompassContext loads verdicts from GET /essentials/verdicts instead of localStorage
+```
+
+---
+
+## Recommended Project Structure: Read & Rank Standalone
+
+The extracted repo mirrors the existing CompassV2/Essentials structure:
+
+```
+ev-readrank/               (new repo: github.com/chrisandrewsedu/ev-readrank)
+├── src/
+│   ├── components/        -- all existing EV-prototypes/read-rank/src/components/
+│   ├── hooks/             -- useDeviceType.ts
+│   ├── store/             -- useReadRankStore.ts (rename key: "readrank-storage" -> "ev_readrank")
+│   ├── data/              -- api.ts, mockData.ts
+│   ├── utils/             -- matchingAlgorithm.ts
+│   ├── types/             -- ev-ui.d.ts
+│   ├── App.tsx            -- BrowserRouter without basename
+│   └── main.tsx
+├── public/
+│   ├── EVLogo.svg
+│   └── _redirects         -- NEW: /* /index.html 200
+├── .npmrc                 -- GitHub npm registry token for ev-ui
+├── package.json
+└── vite.config.ts         -- base: "/"
+```
+
+Key rename: localStorage key `readrank-storage` → `ev_readrank` for consistency with the shared namespace pattern. This is a breaking change in persisted state — add a migration step in the Zustand store's `onRehydrateStorage` to read from old key if new key is absent.
+
+---
+
+## Architectural Patterns
+
+### Pattern 1: Fragment Bridge Augmentation
+
+**What:** Extend the existing `#compass=BASE64` fragment payload with a new `v` key for verdicts.
+**When to use:** Any time cross-origin state must be handed off on explicit user navigation.
+**Trade-offs:** Simple, no new infra, one-time transfer only (not live sync). Acceptable for this use case because the user is explicitly navigating between apps.
+
+**Example (serialization side in Read & Rank):**
+```typescript
+function buildEssentialsUrl(essentialsBaseUrl: string, politicianId: string): string {
+  const store = useReadRankStore.getState();
+  const allVerdicts: Record<string, string> = {};
+
+  Object.values(store.issueProgress).forEach(issue => {
+    issue.agreedQuotes.forEach(q => { allVerdicts[q.id] = 'agree'; });
+    issue.disagreedQuotes.forEach(q => { allVerdicts[q.id] = 'disagree'; });
+    if (issue.badgeAssignments.diamond) allVerdicts[issue.badgeAssignments.diamond] = 'diamond';
+    if (issue.badgeAssignments.gold) allVerdicts[issue.badgeAssignments.gold] = 'gold';
+  });
+
+  // Merge with existing compass data from localStorage
+  const guestCompass = JSON.parse(localStorage.getItem('guestCompass') || '{}');
+  const payload = { ...guestCompass, v: allVerdicts };
+  const fragment = '#compass=' + btoa(JSON.stringify(payload));
+  return `${essentialsBaseUrl}/politician/${politicianId}${fragment}`;
 }
-
-func (GovernmentBody) TableName() string {
-    return "essentials.government_bodies"
-}
 ```
 
----
+### Pattern 2: Context-Level Verdict Cache
 
-## Backend Integration Points
+**What:** Store verdicts at CompassContext level (not component level) so all components on a profile page see the same data without redundant fetches.
+**When to use:** Any cross-component shared state that is loaded once on page entry and referenced by multiple nested components.
+**Trade-offs:** Adds one more field to CompassContext, but CompassContext already manages 8 fields — incremental cost is low.
 
-### Modified: `OfficialOut` struct (handlers.go)
+### Pattern 3: Per-Politician Quote Fetch at CompassCard Level
 
-The search response struct needs two new optional fields. These are populated when the backend resolves a `government_bodies` row for the politician's jurisdiction.
-
-```go
-// Add to OfficialOut:
-GovernmentBodyName string `json:"government_body_name,omitempty"` // "Monroe County Council"
-GovernmentBodyURL  string `json:"government_body_url,omitempty"`  // "https://..."
-```
-
-These fields are optional. Politicians in jurisdictions without a `government_bodies` entry get empty strings, and the frontend falls back to the existing generic display — zero behavioral change for unsupported areas.
-
-### Modified: Search handler — batch join against `government_bodies`
-
-After fetching the politician list via geofence lookup, join against `essentials.government_bodies` to attach body name and URL. This must be a batch join (not N+1):
-
-1. Derive `(state, geo_id, body_key)` tuples from the result set
-2. Query `government_bodies` once for all matching tuples
-3. Build an in-memory map: `(geo_id, body_key) -> GovernmentBody`
-4. Annotate each `OfficialOut` from the map
-
-The `body_key` for the join is derived by running each politician's `district_type`, `chamber_name`, and `office_title` through the same classification logic as the frontend. This logic is a small set of switch cases — straightforward to replicate in Go.
-
-**Option A (recommended):** Implement a `classifyBodyKey(districtType, chamberName, officeTitle string) string` pure function in a new file `classify.go` within `internal/essentials/`. This mirrors classify.js and produces the body_key for the DB lookup.
-
-**Option B:** Store `body_key` directly on politician records. Fragile — requires data migration and keeps a computed value in the database.
-
-Option A is preferred: the classification function is small, the logic is already well-defined in classify.js, and keeping it in Go means the body lookup requires no extra frontend round-trip.
-
-### New endpoint: `GET /essentials/government-bodies` (optional, low priority)
-
-For admin/tooling use. The OfficialOut embedding is sufficient for the frontend and is the primary delivery mechanism this milestone.
-
----
-
-## Frontend Integration Points
-
-### No changes to `classify.js` core logic (most likely)
-
-Classification continues to produce group strings like "County Legislators", "City Council". The specific body name comes from the backend data, not frontend logic.
-
-**Possible exception:** If Monroe County commissioners and council members currently map to the same `classifyCategory()` group key (both becoming "County Legislators"), then `classify.js` needs a split to create distinct group keys. Whether this is needed depends on the actual `chamber_name` and `office_title` values in the database — must be verified before writing any code (see Build Order step 1).
-
-If a split is needed, the new group keys follow the same pattern as existing keys:
-
-```js
-// In the dt === "COUNTY" block:
-if (hasAny(chamber, ["county council"])) return { tier: "Local", group: "County Council" };
-if (hasAny(title, ["commissioner"])) return { tier: "Local", group: "County Commissioners" };
-```
-
-Then add those keys to `LOCAL_ORDER` and `CATEGORY_DISPLAY_NAMES`.
-
-### Modified: `Results.jsx` — section headers with specific names and links
-
-When rendering a group's politicians, derive the section title and URL from the OfficialOut data rather than only from `getDisplayName(category)`:
-
-```js
-// In the orderedEntries(...).map() loop (Local tier rendering):
-const bodyName = polList.find(p => p.government_body_name)?.government_body_name;
-const bodyURL  = polList.find(p => p.government_body_url)?.government_body_url;
-const sectionTitle = bodyName || getDisplayName(category);
-```
-
-The `bodyURL` is passed to `CategorySection` as a new optional `titleHref` prop.
-
-This change is purely additive. Jurisdictions without `government_bodies` data display identically to today because `bodyName` will be undefined and the fallback to `getDisplayName(category)` fires.
-
-### Modified: `ev-ui` — `CategorySection` component
-
-Add an optional `titleHref` prop. When present, the section title renders as an anchor tag linking to the government body website.
-
-```jsx
-function CategorySection({ title, titleHref, children }) {
-  const heading = titleHref
-    ? <a href={titleHref} target="_blank" rel="noopener noreferrer">{title}</a>
-    : <span>{title}</span>;
-  // ...
-}
-```
-
-This is the only ev-ui change this milestone. It requires a minor version bump and publish to the GitHub npm registry before the essentials frontend can consume it.
-
----
-
-## Data Flow: Before and After
-
-### Before (current)
-
-```
-Search response --> OfficialOut[] --> classifyCategory(pol)
-                                            |
-                                            v
-                               group = "County Legislators"
-                                            |
-                                            v
-                               getDisplayName("County Legislators")
-                               = "County Board"  <-- generic label
-                                            |
-                                            v
-                               CategorySection title="County Board"
-                               (no link)
-```
-
-### After (this milestone)
-
-```
-Search response --> OfficialOut[]
-(+ government_body_name, government_body_url)
-                          |
-                          v
-                   classifyCategory(pol)
-                          |
-                          v
-                   group = "County Legislators"
-                          |
-                          v
-                   polList.find(p => p.government_body_name)
-                          |
-              +-----------+----------------------------+
-              | found                                   | not found
-              v                                         v
-     "Monroe County Council"              getDisplayName("County Legislators")
-     + website URL                        = "County Board" (unchanged fallback)
-              |
-              v
-     CategorySection
-     title="Monroe County Council"
-     titleHref="https://monroecounty.gov/council"
-```
-
-The change is purely additive. Jurisdictions without `government_bodies` data display identically to today.
-
----
-
-## State-Specific Configuration: Indiana County Structure
-
-### The Problem
-
-Indiana counties have two distinct bodies that currently map to the same classifier group:
-
-- **County Commissioners** (3 elected, executive/administrative role)
-- **County Council** (7 members, budget/fiscal role — mix of at-large and district seats)
-
-The goal is to display them as distinct sections with distinct names and links.
-
-### Solution Path
-
-**Step 1 (data verification):** Query Monroe County politicians' `chamber_name` and `office_title` values to determine if commissioners and council members already produce distinct classifier outputs. If `chamber_name = "Monroe County Council"` for council members and `chamber_name = "Monroe County Board of Commissioners"` for commissioners, the existing string-matching in `classifyCategory()` may already route them to different groups via the chamber name checks. If both map to the same group key, the fix is a targeted addition to the `dt === "COUNTY"` block in classify.js (see Frontend Integration section above).
-
-**Step 2 (database rows):** Add two rows to `essentials.government_bodies` for Monroe County:
-
-```sql
--- geo_id = TIGER FIPS for Monroe County, IN = "18105"
-INSERT INTO essentials.government_bodies (state, geo_id, body_key, body_name, website_url, seat_count)
-VALUES
-  ('IN', '18105', 'County Commissioners', 'Monroe County Commissioners',
-   'https://monroecounty.gov/commissioners', 3),
-  ('IN', '18105', 'County Council', 'Monroe County Council',
-   'https://monroecounty.gov/council', 7);
-```
-
-**At-large vs. district seat distinction:** The existing dash-split pattern in `Results.jsx` already handles this:
-
-```js
-// "Monroe County Council - At Large" --> title: "Monroe County Council", subtitle: "At Large"
-// "Monroe County Council - District 4" --> title: "Monroe County Council", subtitle: "District 4"
-```
-
-If Monroe County office_title values follow this convention, no additional code is needed for the at-large/district distinction on cards. Verify actual `office_title` values in the database.
-
----
-
-## Component Responsibilities (Updated)
-
-| Component | Responsibility | Status |
-|-----------|---------------|--------|
-| `essentials.government_bodies` table | Body-specific names and URLs | NEW |
-| `GovernmentBody` GORM model | DB access layer | NEW in models.go |
-| `classify.go` (Go) | Server-side body_key derivation | NEW file |
-| `SearchPoliticians` handler | Batch join, annotate OfficialOut | MODIFIED |
-| `OfficialOut` struct | Add 2 optional response fields | MODIFIED |
-| `classify.js` | May need county council/commissioners split | MODIFIED (conditional) |
-| `Results.jsx` | Derive sectionTitle and sectionURL per group | MODIFIED |
-| `CategorySection` (ev-ui) | Optional titleHref prop | MODIFIED + version bump |
+**What:** Fetch `GET /essentials/quotes?politician_id=X` inside `CompassCard` rather than at page level or inside StanceAccordion.
+**When to use:** When data is only needed by one section of a page and has a clear natural owner (CompassCard already owns the "compare with this politician" concern).
+**Trade-offs:** Adds one more concurrent fetch to CompassCard's load sequence. Acceptable because the quotes fetch is small (one politician's quotes = at most ~5-10 rows in current data).
 
 ---
 
 ## Build Order (Dependency-Ordered)
 
-**Step 1 — Verify data first.** Query Monroe County politician records for actual `chamber_name` and `office_title` values. Determine whether commissioners and council members produce distinct classify group keys with current data. This finding gates whether classify.js needs changes and what body_key values to use for the government_bodies seed data.
+**Step 1 — Read & Rank standalone extraction.** Copy `EV-prototypes/read-rank/` to new repo. Fix BrowserRouter basename, Vite base, add `_redirects`. Deploy to `readrank.empowered.vote`. Verify all three routes work (`/`, `/candidate/:id/alignment`, `/animation-options`). No logic changes.
 
-**Step 2 — New DB table and GORM model.** Add `GovernmentBody` struct to `models.go`. Add to `setup.go` AutoMigrate call. Deploy backend to get the table created.
+**Step 2 — localStorage key rename (Read & Rank).** Rename Zustand persist key from `readrank-storage` to `ev_readrank`. Add migration in `onRehydrateStorage`. Deploy Read & Rank.
 
-**Step 3 — Seed Monroe County data.** Insert rows via SQL for Monroe County Commissioners and Monroe County Council. Confirm the geo_id (Monroe County IN FIPS = 18105). This is the data the rest of the feature depends on.
+**Step 3 — Backend: new DB table and verdict endpoints.** Add `QuoteVerdict` model to `EV-Backend/internal/essentials/models.go`. Register in `setup.go` AutoMigrate. Add `GetVerdicts` and `PostVerdicts` handlers. Add `GET /essentials/quotes?politician_id=X` filter to existing `GetQuotes`. Register routes. Deploy backend.
 
-**Step 4 — classify.go in Go.** Implement `classifyBodyKey()` pure function. Write a unit test against the district_type/chamber_name/office_title values observed in Step 1.
+**Step 4 — CompassContext extension (Essentials).** Add `verdicts` state field to CompassContext. Extend `parseCompassFragment()` to extract `v` key. Add `verdicts` load path (fragment → localStorage → API → {}). Add `verdicts` to context value.
 
-**Step 5 — SearchPoliticians handler changes.** Batch join against government_bodies post-geofence lookup. Annotate OfficialOut. Return new fields in search response.
+**Step 5 — Fragment serialization in Read & Rank.** Add "View on Essentials" CTA to `ResultsPhase` and `CandidateAlignmentPage`. Implement `buildEssentialsUrl()` that serializes verdicts into the fragment. Link opens Essentials politician profile with the full fragment.
 
-**Step 6 — classify.js changes (if needed).** If Step 1 showed both body types hit the same group key, add the split to classify.js. Update LOCAL_ORDER and CATEGORY_DISPLAY_NAMES.
+**Step 6 — CompassCard: fetch politician quotes and derive verdictsByTopic.** After existing `fetchPoliticianAnswers()` call, add `fetchPoliticianQuotes(politicianId)`. Derive `verdictsByTopic` map. Pass to StanceAccordion.
 
-**Step 7 — ev-ui CategorySection update.** Add `titleHref` prop. Publish new minor version to GitHub npm registry.
+**Step 7 — StanceAccordion: render verdict badges.** Accept `verdictsByTopic` prop. In each topic row, show verdict badge when `verdictsByTopic[topic.topic_key]` is present.
 
-**Step 8 — Results.jsx changes.** Add body name + URL derivation per group. Consume updated ev-ui version.
+**Step 8 — Logged-in sync (Read & Rank → backend).** On session check in Read & Rank (if/when auth is added), POST verdicts to `/essentials/verdicts`. Lower priority — guest flow is the primary path.
 
-**Step 9 — Seed additional jurisdictions.** Add rows for Bloomington city bodies and LA County bodies. Each body is one INSERT.
-
-Steps 2-4 can run in parallel. Step 5 depends on Step 4. Steps 7-8 can run in parallel with Steps 4-5. Step 9 can run anytime after Step 2.
+Steps 1-2 are fully independent of steps 3-7 and can run in parallel. Step 3 must complete before step 4 (logged-in verdict fetch). Steps 4 and 5 can run in parallel. Step 6 depends on step 3 (needs the new endpoint) and step 4 (needs verdicts in context). Step 7 depends on step 6.
 
 ---
 
 ## Scaling Considerations
 
-This feature is data-light. The `government_bodies` table will have at most a few thousand rows at statewide coverage (92 Indiana counties times ~4 bodies plus LA County cities times ~3 bodies).
+| Scale | Architecture Adjustments |
+|-------|--------------------------|
+| Current (61 quotes, ~23 politicians) | In-memory verdict map in CompassContext; no caching needed |
+| 500+ quotes, multi-region data | Consider caching quotes by politician_id in a Map; TTL 5 min |
+| Logged-in users with cross-device sync | Existing session cookie on .empowered.vote handles auth; verdict endpoint uses same session middleware as compass answers |
 
-| Scale | Approach |
-|-------|----------|
-| Current (Monroe County + LA County) | Direct GORM join in search handler; no caching needed |
-| Indiana statewide (92 counties) | Same approach; ~460 rows; no architectural change |
-| Multi-state expansion | Load government_bodies into a warm in-memory map at startup to skip the join entirely; premature for now |
+The verdict data volume is inherently bounded — users can only evaluate as many quotes as exist in the DB (currently 61). At 10,000 logged-in users the `quote_verdicts` table has at most 610,000 rows, which is trivially manageable in Postgres.
 
 ---
 
 ## Anti-Patterns
 
-### Anti-Pattern 1: Frontend-only text substitution
+### Anti-Pattern 1: iframe localStorage relay
 
-**What people do:** Add a hardcoded `BODY_NAME_OVERRIDES` map in classify.js or Results.jsx keyed by city/county name.
+**What people do:** Build a hidden `<iframe src="https://shared.empowered.vote/relay.html">` that proxies localStorage via postMessage.
+**Why it's wrong:** Adds a new subdomain and deployment, makes the data flow opaque, requires careful handling of async message passing in React, and is completely unnecessary when the URL fragment bridge already works reliably.
+**Do this instead:** Extend the existing fragment bridge with the verdicts payload. One-time handoff on explicit navigation is sufficient for this feature.
 
-**Why it's wrong:** Brittle as coverage expands; cannot carry website URLs; duplicates data that belongs in the database; impossible to maintain across 92 Indiana counties without a massive frontend config object.
+### Anti-Pattern 2: Storing verdicts in the compass fragment without a size check
 
-**Do this instead:** Store specific names and URLs in `essentials.government_bodies`, join server-side, embed in OfficialOut response.
+**What people do:** Serialize all Zustand `issueProgress` state into the fragment, which includes full quote text, timestamps, and legacy fields.
+**Why it's wrong:** `issueProgress` is ~10KB of JSON for a fully completed session. BASE64-encoded in a URL exceeds some browser/server limits.
+**Do this instead:** Serialize only the verdict summary (`{ [quoteId]: 'agree' | 'disagree' | 'diamond' | 'gold' }`), not the full progress tree. The quote text is not needed in Essentials — only the verdict status per quote ID.
 
-### Anti-Pattern 2: Separate endpoint per body type
+### Anti-Pattern 3: Fetching all quotes in StanceAccordion
 
-**What people do:** Add `GET /essentials/county-council/{geo_id}` and `GET /essentials/county-commissioners/{geo_id}` as separate endpoints.
+**What people do:** Call `GET /essentials/quotes` (all 61 quotes) inside StanceAccordion to find verdicts for displayed topics.
+**Why it's wrong:** Over-fetches; StanceAccordion is a pure display component and should not own data fetching; pulling all quotes when you need only 5 for one politician is wasteful.
+**Do this instead:** Fetch `GET /essentials/quotes?politician_id=X` in CompassCard (which already owns politician-scoped data fetching), derive the `verdictsByTopic` map, and pass it as a prop.
 
-**Why it's wrong:** Multiplies endpoints without benefit; frontend must make extra requests per section; the search response already has everything needed to annotate.
+### Anti-Pattern 4: Breaking the standalone extraction by changing app behavior
 
-**Do this instead:** Embed body name and URL in the existing search response OfficialOut fields. One request, no extra round trips.
-
-### Anti-Pattern 3: classify.js changes without verifying existing data
-
-**What people do:** Split commissioners from council members in classifyCategory(), then discover both have identical chamber_name values in the database, making the split impossible without a data migration.
-
-**Why it's wrong:** Code change is wasted if the underlying data does not support the distinction.
-
-**Do this instead:** Query actual Monroe County politician records first. Write the classify.js change to match what the data actually contains.
-
-### Anti-Pattern 4: ev-ui scope creep on CategorySection
-
-**What people do:** Use this milestone to redesign CategorySection with icons, collapsible sections, member counts, and other new features.
-
-**Why it's wrong:** Delays the milestone; ev-ui publish cycle is a real dependency that blocks frontend deployment; the section link is the only new user-visible change needed.
-
-**Do this instead:** Single minimal prop addition (titleHref). Ship the minimal ev-ui change. Defer visual redesign.
+**What people do:** "While extracting, also refactor the store, update the design, and add the verdict export all at once."
+**Why it's wrong:** Conflates extraction (structural, zero behavior change) with feature work (behavior change). Makes debugging harder. If the deployment breaks, you cannot tell if it is the structural change or the behavior change.
+**Do this instead:** Extract first, verify it works identically to the prototype, deploy, then layer in feature changes as separate commits.
 
 ---
 
@@ -389,24 +511,34 @@ This feature is data-light. The `government_bodies` table will have at most a fe
 
 | Boundary | Communication | Notes |
 |----------|---------------|-------|
-| SearchPoliticians handler -> government_bodies | Batch GORM query | Happens after geofence lookup, before JSON serialization |
-| OfficialOut -> Results.jsx | JSON fields government_body_name, government_body_url | Optional; empty string triggers fallback to generic label |
-| Results.jsx -> CategorySection | New titleHref prop | Requires ev-ui minor version bump and publish |
-| classify.js -> classify.go | Mirrored classification logic | Go version used server-side for body_key derivation; keep in sync |
-| government_bodies.geo_id -> geofences.geo_id | Shared TIGER GEO_ID | Same identifier already on geofences and districts tables |
+| Read & Rank → Essentials | URL fragment (#compass=BASE64 with `v` key) | Triggered by user clicking "View on Essentials" CTA |
+| Essentials CompassContext → StanceAccordion | React props via CompassCard (`verdictsByTopic`) | Context holds verdicts; CompassCard derives topic-keyed map |
+| CompassCard → backend | `GET /essentials/quotes?politician_id=X` | New endpoint, returns quote IDs and topic keys for one politician |
+| Logged-in users (either app) → backend | `POST /essentials/verdicts` | Bulk upsert; same session cookie as compass answers |
+| CompassContext (Essentials) → backend | `GET /essentials/verdicts` | Logged-in load path; replaces localStorage as source of truth |
+| `readrank.empowered.vote` localStorage | `ev_readrank` Zustand persist key | Renamed from `readrank-storage` during extraction |
+| `essentials.empowered.vote` localStorage | `ev_readrank_verdicts` key | Verdicts cache; written by parseCompassFragment on arrival |
 
 ---
 
 ## Sources
 
-- Direct inspection of `essentials/src/lib/classify.js` — full classification logic, existing group keys, LOCAL_ORDER, CATEGORY_DISPLAY_NAMES
-- Direct inspection of `essentials/src/pages/Results.jsx` — rendering pipeline, CategorySection usage, dash-split title pattern, qualifyLocalTitle function
-- Direct inspection of `EV-Backend/internal/essentials/models.go` — all existing GORM models, table naming conventions
-- Direct inspection of `EV-Backend/internal/essentials/routes.go` — existing endpoint surface, admin middleware pattern
-- Direct inspection of `EV-Backend/internal/essentials/geofence_lookup.go` — geo_id / MTFCC structure, district type mapping, OfficialOut composition
-- Direct inspection of `.planning/PROJECT.md` — milestone scope, active feature requirements, out-of-scope boundaries
+- Direct inspection of `EV-prototypes/read-rank/src/App.tsx` — BrowserRouter basename, route structure
+- Direct inspection of `EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand state shape, persist key name, per-issue agree/disagree/badge data
+- Direct inspection of `EV-prototypes/read-rank/src/data/api.ts` — `fetchQuotesData()` call to `GET /essentials/quotes`, fallback to mockData
+- Direct inspection of `EV-prototypes/read-rank/src/components/ResultsPhase.tsx` — result cards, "Back to Issues" navigation
+- Direct inspection of `EV-prototypes/read-rank/src/components/CandidateAlignmentPage.tsx` — per-issue badge breakdown, navigation from results
+- Direct inspection of `essentials/src/contexts/CompassContext.jsx` — load priority (fragment > API > localStorage > empty), fragment parse, `guestCompass` key
+- Direct inspection of `essentials/src/lib/compass.js` — `parseCompassFragment()`, `saveGuestCompass()`, fragment schema (`{a, s, i}`)
+- Direct inspection of `essentials/src/components/CompassCard.jsx` — dual fetch (politician answers + context), verdicts display points
+- Direct inspection of `essentials/src/components/StanceAccordion.jsx` — row structure, lazy context fetch, prop surface
+- Direct inspection of `essentials/src/pages/Profile.jsx` — CompassCard usage, data flow into profile
+- Direct inspection of `CompassV2/src/components/ReturnBanner.jsx` — fragment serialization via `serializeCompassFragment()`
+- Direct inspection of `EV-Backend/internal/essentials/handlers.go` — `GetQuotes` function, SQL, response shape (`quotes`, `candidates`, `issues`)
+- Direct inspection of `EV-Backend/internal/essentials/routes.go` — existing route surface, `/quotes` GET endpoint
+- Direct inspection of `.planning/PROJECT.md` — v2026.3.4 milestone scope, active requirements, out-of-scope boundaries
 
 ---
 
-*Architecture research for: v2026.3.3 Local Government Organization*
-*Researched: 2026-03-10*
+*Architecture research for: v2026.3.4 Read & Rank Integration*
+*Researched: 2026-03-11*

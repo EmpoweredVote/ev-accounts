@@ -1,185 +1,194 @@
 # Project Research Summary
 
-**Project:** v2026.3.3 — Local Government Organization
-**Domain:** Civic tech — government body display, state-specific structure, website links
-**Researched:** 2026-03-10
+**Project:** v2026.3.4 Read & Rank Integration
+**Domain:** Cross-app civic tech integration — standalone app extraction, cross-subdomain state sharing, quote verdict display
+**Researched:** 2026-03-11
 **Confidence:** HIGH
 
 ## Executive Summary
 
-This milestone is a targeted display and data-modeling improvement to the existing Essentials app. It does not introduce new frameworks, external services, or infrastructure. The core problem is that section headings in the Results page show generic labels ("County Legislators") instead of specific body names ("Monroe County Council"), and no official website links exist at the body level. Both gaps are solvable within the current stack through one new lookup table, two extended API fields, and minimal changes to `classify.js`, `Results.jsx`, and the ev-ui `CategorySection` component.
+This milestone integrates an existing prototype (Read & Rank, currently buried in EV-prototypes on Netlify) into the production Empowered Vote platform as a first-class app at `readrank.empowered.vote`. The extraction itself is low-risk — the source code is complete, the stack is identical to the other EV apps, and Cloudflare Pages deployment follows an established pattern. The technically interesting work is the cross-app state bridge: users evaluate politician quotes on Read & Rank and expect those verdicts to surface when they visit politician profiles on Essentials. Since `readrank.empowered.vote` and `essentials.empowered.vote` are different browser origins, direct localStorage sharing is impossible by browser spec.
 
-The recommended approach is to create a new `essentials.government_bodies` table keyed on a combination of TIGER GEO_ID, state, and classifier body key. This table is populated manually (not via any import pipeline), keeps the data out of Cicero-synced tables that risk overwrite, and allows per-body website URLs and display names to be added for new jurisdictions without code changes. The body metadata is embedded in the existing `OfficialOut` search response via a LEFT JOIN — no new frontend API calls are needed.
+The recommended approach is layered: use the existing URL fragment bridge pattern (already proven in production for compass data) to hand off verdicts at point-of-navigation for guest users, while server-side storage in a new `compass.quote_verdicts` table handles logged-in users reliably across devices. This avoids introducing a new iframe relay subdomain and its associated complexity. The verdict data then surfaces in Essentials via an extended CompassContext that feeds a new `verdictsByTopic` prop to the existing `StanceAccordion` component — minimal UI surgery for meaningful per-politician profile value.
 
-The primary risk is the Indiana dual-body county structure: Indiana counties have constitutionally distinct Commissioners (executive) and Council (fiscal) bodies that currently map to a single "County Legislators" section. Before any classification code is written, the actual `chamber_name` and `chamber_name_formal` values in the DB must be inspected. If those fields already differ between commissioners and council members, the frontend split is trivial. If they do not, a data correction precedes the feature work. All other features in this milestone are confirmed data-first, code-second.
+The top risks are infrastructure-level rather than product-level: forgetting to update CORS in the backend before deploying the new subdomain, missing the `.npmrc` in the extracted repo causing CI failures, and conflating the extraction commit with feature changes. All three are well-understood and easily avoided with a disciplined phase order: extract and deploy first with zero behavior changes, then layer in verdict integration, then add the logged-in server sync.
+
+---
 
 ## Key Findings
 
 ### Recommended Stack
 
-No new technologies are introduced. The existing stack handles everything: Go 1.24.3 / GORM / PostgreSQL for the new table and JOIN, React 19 / Vite / Tailwind CSS 4 for the frontend changes, and ev-ui for the `CategorySection` prop addition. The new `GovernmentBody` model follows the identical pattern as the existing `PositionDescription` enrichment table — a lookup keyed on stable string values, not FK-coupled to import-managed tables.
+The existing stack requires no new runtime dependencies. React 19, Vite 7, Tailwind CSS 4, Zustand 5, Framer Motion 12, @use-gesture/react, and @dnd-kit are already in place. The only new infrastructure is two deployment artifacts (a `wrangler.toml` with SPA routing config and an `.npmrc` for GitHub npm registry access), one backend table (`compass.quote_verdicts`), and three backend endpoints. ev-ui needs a minor version bump to v0.1.42+ to carry verdict badge props on `StanceAccordion`.
 
 **Core technologies:**
-- Go / GORM: Add `GovernmentBody` model; AutoMigrate creates table; extend `OfficialOut` with two optional fields populated via LEFT JOIN
-- PostgreSQL (Supabase): Store `essentials.government_bodies` with composite unique on `(state, geo_id, body_key)`; no changes to existing tables
-- React 19 / essentials app: Read `government_body_name` and `government_body_url` from API response; derive section titles per group in `Results.jsx`
-- ev-ui 0.1.40 → 0.1.41: Add optional `websiteUrl` (or `titleHref`) prop to `CategorySection`; backward compatible; existing callers unaffected
+- Cloudflare Pages + `wrangler.toml`: static SPA deployment — same pattern as CompassV2 and Essentials; `not_found_handling = "single-page-application"` handles React Router routes
+- `compass.quote_verdicts` table: server-side verdict storage keyed to `(user_id, quote_id)` — mirrors compass answers pattern exactly; Go GORM model with bulk upsert
+- URL fragment bridge (`#compass=BASE64`): extended with a new `v` key for verdicts — reuses proven production mechanism; adds ~3.2KB to encoded URL, well under 8KB browser limit
+- `guestVerdicts` localStorage key: written by Read & Rank, read by Essentials on profile load — mirrors `guestCompass` convention
+- ev-ui `verdicts` prop on `StanceAccordion`: verdict badge display in politician profiles — bump to `^0.1.42`
 
-**Version requirement:** ev-ui must publish 0.1.41 before the essentials frontend can consume the new prop. This is the only cross-repo dependency in the build order.
+**What NOT to add:** iframe postMessage relay (fragile, Safari ITP issues, unnecessary), BroadcastChannel (same-origin only — subdomains are different origins), third-party sync services, new PostgreSQL schema (verdicts belong in `compass.` alongside answers), `document.domain` manipulation (Chrome 115+ and Firefox 101+ fully deprecated this).
 
 ### Expected Features
 
-**Must have (table stakes):**
-- Specific body name in section headings — "Monroe County Council" instead of generic "County Legislators"; data already in API via `chamber_name_formal`, pure frontend change
-- Distinct sections for Commissioners vs. Council — Indiana's executive and fiscal county bodies are constitutionally separate; showing them merged is incorrect and misleads users
-- County Officials as a consistently distinct section — Sheriff, Assessor, Clerk, Treasurer, Recorder, Coroner, Surveyor are independently elected; classify.js fall-through paths currently misroute some of them
-- Official website link per body section — users need the body's site (for meetings, contacts, agendas), not individual politician contact pages
-- Township name specificity — covered automatically by the same heading-qualification logic; no extra work
+**Must have (P1 — table stakes for this milestone):**
+- Read & Rank standalone at `readrank.empowered.vote` — prerequisite for everything; without a clean URL there is no standalone product to integrate
+- Visual refresh to match EV brand (ev-coral, ev-muted-blue, Manrope) — the prototype palette signals an experiment; the standalone product must be demoable
+- Server-side verdict storage for logged-in users — reliable cross-app sharing via existing `.empowered.vote` session cookie; new `POST/GET /compass/verdicts` endpoints
+- "You agreed/disagreed" badge inline on StanceAccordion for logged-in users — direct profile value; the verdict is the insight
+- Guest verdict URL fragment bridge — guest continuity at point-of-navigation; mirrors existing compass bridge with `v` key added to fragment payload
 
-**Should have (competitive):**
-- At-large vs. district badge on council member cards — `district_label` already in `OfficialOut`; rendering change only; defer until sections are specific
-- Role description under section heading — one-sentence static copy per body type; low effort; ship after heading names are confirmed correct
-- State-configurable body config — Indiana-specific rules as named constants now; design interface so CA expansion is a config change, not a code change
+**Should have (P2 — add after validation):**
+- "Explore this topic on Read & Rank" deep-link from StanceAccordion with `?topic=` query param pre-selecting an issue
+- Persistent guest verdict storage via iframe relay if user testing surfaces frequent session loss
+- Retire URL fragment compass bridge once new mechanism is verified in production
 
 **Defer (v2+):**
-- Full state-configurable body structure (CA Board of Supervisors vs. Indiana commissioners + council split)
-- Meeting/agenda deep links per body
-- Automated body website discovery (unacceptably low accuracy for civic use)
-- Full organizational chart / hierarchy visualization
-- Expansion to all 92 Indiana counties (pipeline is repeatable; website data entry is the manual step per county)
+- Cross-device verdict sync for guests (requires account creation or device-linking)
+- Verdict history view ("all quotes I evaluated for this politician")
+- Progress indicator across all issues on Essentials profile
+
+**Anti-features to avoid explicitly:** Real-time cross-tab sync (zero practical value), aggregated verdict analytics (contradicts the platform's anti-partisan mission — keep verdicts private and personal), full politician profile inside Read & Rank (duplicates Essentials), automatic verdict migration from EV-prototypes origin (impossible — different origin, no cookie sharing, zero user overlap).
 
 ### Architecture Approach
 
-The change is an additive enrichment layer on the existing search response. A new `essentials.government_bodies` table provides per-body display name and URL, keyed by `(state, geo_id, body_key)`. The backend derives `body_key` via a new `classify.go` pure function that mirrors `classify.js` logic, then performs a single batch join after geofence lookup to annotate `OfficialOut` records. The frontend reads the two new optional fields per politician, derives the section title and URL from the first matching politician in each group, and passes them as a new prop to `CategorySection`. The entire change degrades gracefully: jurisdictions without `government_bodies` rows display identically to today.
+The integration is additive: the existing component boundaries in both apps are respected, new data flows through an extended CompassContext in Essentials, and the backend grows by one table and three endpoints that match established patterns. The verdict journey flows: Zustand store in Read & Rank serializes verdict decisions into the existing `#compass=` fragment payload as a new `v` key, Essentials `parseCompassFragment()` extracts it on profile load, CompassContext stores it alongside compass answers, CompassCard derives a `verdictsByTopic` map by fetching politician-scoped quotes from a new filtered endpoint, and StanceAccordion renders badges from that map.
 
 **Major components:**
-1. `essentials.government_bodies` table — stores specific body display names and website URLs; manually curated; keyed by TIGER GEO_ID + body_key; unique constraint `(state, geo_id, body_key)` makes it upsert-safe
-2. `classify.go` (new Go file) — pure function mirroring classify.js; produces body_key for the DB lookup; must stay in sync with classify.js; unit-testable
-3. `GovernmentBody` GORM model + modified `SearchPoliticians` handler — adds model, AutoMigrate, batch join post-geofence, and two optional fields on `OfficialOut`
-4. `Results.jsx` update — reads new fields per group, derives section title and URL from `polList.find(p => p.government_body_name)`, passes to `CategorySection`
-5. ev-ui `CategorySection` update — adds optional `websiteUrl` prop with inline external-link SVG icon; one optional prop; no sub-section concepts; minor version bump and publish
+1. `ev-readrank` (new standalone repo) — extracted from `EV-prototypes/read-rank/`; BrowserRouter basename fixed to `/`; Vite base `"/"`; `wrangler.toml` for SPA routing; Zustand persist key renamed with migration
+2. `compass.quote_verdicts` table + `/compass/verdicts` endpoints — server-side verdict CRUD; `(user_id, quote_id)` unique constraint; bulk upsert pattern matching compass answers; `QuoteVerdict` GORM model
+3. Extended `CompassContext` (Essentials) — adds `verdicts` state field with load priority: fragment → localStorage (`ev_readrank_verdicts`) → API → empty; mirrors existing compass load chain
+4. `CompassCard` + `StanceAccordion` (Essentials) — CompassCard fetches politician quotes via new `GET /essentials/quotes?politician_id=X`; derives `verdictsByTopic` map keyed by topic key; passes to StanceAccordion as new prop
+5. `buildEssentialsUrl()` (Read & Rank) — serializes Zustand verdict state into fragment for "View on Essentials" CTA in ResultsPhase and CandidateAlignmentPage; only serializes verdict summary (`{ [quoteId]: verdict enum }`), not full progress tree
 
 ### Critical Pitfalls
 
-1. **String-matching classification breaks silently** — `classify.js` uses `includes()` keyword matching. Adding state-specific rules without verifying actual DB strings causes silent politician misrouting (wrong section, no error, no visible failure). Prevention: audit DB for actual `chamber_name` and `chamber_name_formal` values first; add a classification regression test before touching classify.js.
+1. **localStorage is origin-isolated — subdomains cannot share it directly** — Commit to the URL fragment bridge + backend architecture before writing any sharing code. Never test cross-subdomain state on localhost (false positive — all localhost ports share an origin). `document.domain` is deprecated and does not affect storage APIs in any modern browser.
 
-2. **Indiana dual-body structure may not be distinguishable from current data** — Commissioners and Council may share the same `chamber_name_formal` in the DB, making a frontend split impossible without a data migration. Prevention: run `SELECT DISTINCT chamber_name, chamber_name_formal FROM essentials.chambers ... WHERE state = 'IN'` before writing any classification code.
+2. **Missing `.npmrc` in new repo breaks CI on first build** — Copy `.npmrc` from EV-prototypes and set `NPM_TOKEN` as a Cloudflare Pages environment variable during extraction, not as a follow-up. Local installs pass silently due to `~/.npmrc`, masking the problem until CI runs.
 
-3. **New group keys must be added to three separate structures simultaneously** — Adding a new `classifyCategory()` group key without updating `LOCAL_ORDER`, `CATEGORY_DISPLAY_NAMES`, and `GROUP_SORT_OPTIONS` causes sections to appear in wrong positions or display raw key strings. Prevention: treat these three as an atomic update; never add a group key in isolation.
+3. **CORS not updated for new subdomain** — Add `readrank.empowered.vote` to `internal/middleware/middleware.go` in the same phase as Cloudflare deployment. API calls fail silently at the network layer while the UI renders fine; the failure mode is invisible until DevTools inspection.
 
-4. **Website links require data collection that is chronically underestimated** — The schema change is trivial; finding and verifying official body URLs for Monroe County is the real work. Prevention: complete URL research before writing any frontend code; treat data population as a prerequisite that must finish before the schema migration is deployed.
+4. **Renaming Zustand persist key silently resets all existing user state** — Implement `onRehydrateStorage` migration from old `readrank-storage` key to `ev_readrank` in the same commit as the rename. Never defer key migration. Test by seeding old key in DevTools and loading new build.
 
-5. **`qualifyLocalTitle()` produces double-prefixed names when applied to section headers** — This existing function is designed for card titles ("County Council" → "Monroe County Council"), not section headers where `government_body_name` already contains the government prefix. Calling it on section headers produces "Monroe County Monroe County Council." Prevention: use `government_body_name` from the new API fields directly for section headers; keep `qualifyLocalTitle()` for card titles only.
+5. **ev-ui version divergence between extraction and production apps** — Read & Rank prototype pins `^0.1.6`; Essentials and CompassV2 are at `^0.1.41`. Update ev-ui to current version before extraction proceeds — peer dependency conflicts cause runtime errors with duplicate React instances.
+
+6. **Visual redesign breaking swipe gesture logic** — Document which DOM elements carry `bind()` props from `@use-gesture/react` before any CSS work. Avoid `transform` or `overflow: hidden` on gesture container parents; gesture boundaries are calculated from the bound element's bounding rect.
+
+---
 
 ## Implications for Roadmap
 
-Based on combined research, the build order is strictly data-first, then backend, then frontend. Dependencies between components make parallelism possible only in specific windows. A 6-phase structure is recommended.
+The dependency graph is clear and dictates phase order. Standalone extraction is the prerequisite for cross-app linking. Backend verdict endpoints are the prerequisite for the logged-in display path. The fragment bridge extension in Read & Rank depends on Essentials being able to receive and display verdicts. Three workstreams can run in parallel: (1) extraction + visual refresh, (2) backend verdict endpoints, (3) ev-ui update.
 
-### Phase 1: DB Audit and Data Verification
+### Phase 1: Standalone Extraction + Deployment
 
-**Rationale:** Every subsequent decision — whether classify.js needs changes, what body_key values to use, whether the Indiana dual-body split is a code change or a data migration — depends on what is actually in the DB. This is not optional groundwork; it gates Phase 2.
-**Delivers:** Confirmed list of Indiana chamber `name_formal` values; known classification gaps for Monroe County officials; verified TIGER GEO_ID for Monroe County (18105); regression test list of known politician-to-expected-group mappings; confirmed whether Commissioners and Council produce distinct group keys from current data.
-**Addresses:** Pitfalls 1, 2, and 5 (all three require knowing actual DB values before writing code).
-**Avoids:** Writing classifier logic that does not match DB data; discovering the Indiana body split requires a data migration after code is written.
+**Rationale:** Everything downstream depends on having `readrank.empowered.vote` live. This phase has zero behavior changes — it is a structural move, not a feature. Keeping it isolated makes debugging trivial and gives a known-good baseline before integration begins. Conflating extraction with feature changes (anti-pattern 4 from ARCHITECTURE.md) is the most common cause of untraceable regressions in extraction work.
+**Delivers:** `readrank.empowered.vote` serving the existing Read & Rank app; all three routes working (`/`, `/candidate/:id/alignment`, `/animation-options`); Cloudflare Pages CI passing.
+**Addresses:** Standalone app accessibility (P1 table stakes feature)
+**Must complete in this phase:** `.npmrc` added; `NPM_TOKEN` set in Cloudflare Pages env; `wrangler.toml` added with `not_found_handling = "single-page-application"`; BrowserRouter basename changed from `/read-rank/dist` to `/`; Vite base set to `"/"`; Zustand persist key renamed from `readrank-storage` to `ev_readrank` with `onRehydrateStorage` migration; ev-ui updated from `^0.1.6` to `^0.1.41`; `readrank.empowered.vote` added to CORS allowlist in `internal/middleware/middleware.go`.
 
-### Phase 2: Backend — GovernmentBody Table and OfficialOut Extension
+### Phase 2: Visual Refresh (Read & Rank)
 
-**Rationale:** The frontend cannot be built until the API delivers the new fields. The table must exist before data can be seeded. This phase establishes the new data layer.
-**Delivers:** `essentials.government_bodies` table live in Supabase via AutoMigrate; `GovernmentBody` GORM model in `models.go`; `classify.go` pure function with unit test against Phase 1 data; `OfficialOut` extended with `government_body_name` and `government_body_url`; batch join in `SearchPoliticians` handler; admin CRUD endpoints for curation.
-**Uses:** Go / GORM (no new packages); LEFT JOIN in existing raw SQL queries following established pattern.
-**Implements:** GovernmentBody model, classify.go, modified SearchPoliticians handler, admin endpoints.
-**Avoids:** Pitfall 4 (data layer complexity); Pitfall 2 (Indiana body distinction via body_key, not fragile title keywords).
+**Rationale:** Isolated to one repo with no cross-app dependencies. Can run in parallel with Phase 3. Must be a separate commit from Phase 1 — extraction first, verify it works identically to the prototype, then apply visual changes. This is the differentiator that makes the standalone product demoable.
+**Delivers:** `readrank.empowered.vote` with EV brand design — ev-coral, ev-muted-blue, Manrope font, card-based layout; hub page, QuoteCard styling, ResultsPhase layout updated to match CompassV2/Essentials visual language. Swipe mechanics, store, and API integration unchanged.
+**Addresses:** Visual refresh (P1 differentiator)
+**Avoids:** Gesture regression — document `bind()` element boundaries before redesign begins; test on iOS Safari and Android Chrome device emulation after each card component change.
 
-### Phase 3: Data Seeding — Monroe County and Bloomington Bodies
+### Phase 3: Backend — Verdict Storage Endpoints
 
-**Rationale:** Data seeding is the prerequisite for any visible frontend change. The schema exists after Phase 2; this phase populates it. Scoped strictly to covered jurisdictions — Monroe County IN and Bloomington IN.
-**Delivers:** Populated rows for Monroe County Commissioners, Monroe County Council, Bloomington City Council, and elected officials page URLs. Verified correct `body_key` values matching `classify.go` output from Phase 2. LA County body names verified as stretch goal (likely auto-correct via heading logic).
-**Addresses:** FEATURES.md official website link requirement; confirms that `body_key` strings in seed data exactly match `classify.go` output.
-**Avoids:** Pitfall 4 (URL research completed and verified before frontend work; no broken or empty links).
+**Rationale:** Server-side verdict storage unlocks the logged-in path without any client-side cross-subdomain hacks. Can run in parallel with Phase 2. Must complete before the logged-in path in Phase 4 can be wired end-to-end.
+**Delivers:** `compass.quote_verdicts` table (via AutoMigrate); `POST /compass/verdicts` (bulk upsert, authenticated); `GET /compass/verdicts` (authenticated); `GET /essentials/quotes?politician_id=X` (filtered, public — extends existing `GetQuotes` handler).
+**Uses:** Existing GORM + Chi + SessionMiddleware pattern; `QuoteVerdict` model added to `internal/compass/models.go`; routes registered in `internal/compass/routes.go`. No new Go libraries.
 
-### Phase 4: classify.js Updates (Conditional on Phase 1 Findings)
+### Phase 4: Verdict Integration in Essentials
 
-**Rationale:** Only needed if Phase 1 shows that Monroe County Commissioners and Council members map to the same group key in `classifyCategory()`. If they already produce distinct group keys from `chamber_name_formal`, this phase is a no-op and can be skipped entirely. Gate this work on Phase 1 output.
-**Delivers:** Distinct "County Commissioners" and "County Council" group keys (if needed); `LOCAL_ORDER`, `CATEGORY_DISPLAY_NAMES`, and `GROUP_SORT_OPTIONS` updated atomically in the same commit; County Officials fall-through paths audited and cleaned up.
-**Addresses:** FEATURES.md commissioners vs. council distinct sections; County Officials consistent routing.
-**Avoids:** Pitfall 3 (simultaneous atomic update of all three consumer structures); Pitfall 1 (regression test from Phase 1 run as verification before merge).
+**Rationale:** Depends on Phase 3 (backend API endpoints) and ev-ui `^0.1.42` (Phase 5, below). The fragment and localStorage paths can begin before Phase 3 lands, but the full logged-in path requires the backend. This is the primary user-facing value delivery.
+**Delivers:** Extended `CompassContext` with `verdicts` state field; `parseCompassFragment()` extracting `v` key; `loadGuestVerdicts()` / `saveGuestVerdicts()` / `parseVerdictFragment()` / `fetchUserVerdicts()` utilities in `essentials/src/lib/`; `CompassCard` calling `GET /essentials/quotes?politician_id=X` and deriving `verdictsByTopic` map; `StanceAccordion` rendering agree/disagree/diamond/gold badges via new `verdictsByTopic` prop; ev-ui updated to `^0.1.42`.
+**Addresses:** "You agreed/disagreed" badge on StanceAccordion (P1 feature); guest verdict URL fragment caching (P1 feature).
 
-### Phase 5: ev-ui CategorySection Update and Publish
+### Phase 5: ev-ui Verdict Badge Component
 
-**Rationale:** The `websiteUrl` prop addition is a cross-repo dependency. Must be published before the essentials frontend can consume it. This phase is independent of Phases 2-4 and can run in parallel with those phases.
-**Delivers:** ev-ui 0.1.41 published to GitHub npm registry; `CategorySection` renders an external-link SVG icon when `websiteUrl` is provided; inline SVG (no icon library import); existing callers unaffected.
-**Implements:** Minimal ev-ui change; one optional prop; minor version bump.
-**Avoids:** Pitfall 6 equivalent (minimal prop addition only; no sub-section redesign; no ev-ui scope creep; no `target="_self"` links).
+**Rationale:** Cross-repo dependency. Must be published before Phase 4 can consume the new prop. Fully independent of Phases 1-3 and can run in parallel with everything. Small, bounded change with no risk of regression in existing callers.
+**Delivers:** ev-ui v0.1.42 published to GitHub npm registry; `StanceAccordion` accepts `verdictsByTopic` prop (`Record<topicKey, verdict>`); renders agree (green) / disagree (red) / diamond / gold badge inline in topic row when verdict is present; backward compatible — existing callers with no prop pass unchanged.
 
-### Phase 6: Frontend — Results.jsx Section Titles and Links
+### Phase 6: Read & Rank — "View on Essentials" CTA and Fragment Serialization
 
-**Rationale:** Depends on ev-ui 0.1.41 (Phase 5) and backend fields (Phase 2). This is the user-facing delivery phase.
-**Delivers:** Section headings show specific body names for covered jurisdictions, generic fallback for all others; external website link rendered in section header when URL is present; at-large vs. district card subtitles verified working via existing `dashIdx` logic; cross-jurisdiction boundary test confirming graceful fallback when multiple counties appear.
-**Addresses:** All P1 features from FEATURES.md prioritization matrix.
-**Avoids:** Pitfall 5 (use `government_body_name` from API directly, never pass through `qualifyLocalTitle()`, for section headers); Pitfall 1 (classification verified in Phase 1 before this renders); UX pitfall of same-tab external links (`target="_blank" rel="noopener noreferrer"`).
+**Rationale:** Completes the cross-app verdict journey by adding the entry point. Depends on Phase 4 being deployed — Essentials must be able to receive and display verdicts before Read & Rank is linked there. Relatively small amount of work: one utility function and one CTA component addition.
+**Delivers:** `buildEssentialsUrl()` in Read & Rank serializing Zustand verdict state into `#compass=BASE64({..., v: verdicts})` fragment (verdict summary only — not full progress tree); "View on Essentials" CTA in ResultsPhase and CandidateAlignmentPage linking to `essentials.empowered.vote/politician/:slug`; `serializeCompassFragment()` in CompassV2 extended with `v` key for the return-banner path.
+**Addresses:** Cross-app verdict hand-off; closes the guest verdict loop end-to-end.
+
+### Phase 7: Logged-In Verdict Sync (Read & Rank → Backend)
+
+**Rationale:** Lower priority than the guest path — most civic-research users are not logged in for their first evaluation session. Delivers cross-device persistence for the subset of logged-in users. Depends on Phase 3 (backend endpoints) and Phase 6 (Read & Rank integration is wired). Small amount of backend-call code in Read & Rank's session check.
+**Delivers:** Read & Rank checks session cookie on load; if authenticated, POSTs current Zustand verdicts to `POST /compass/verdicts`; Essentials CompassContext loads verdicts from `GET /compass/verdicts` as highest-priority source for logged-in users (above fragment and localStorage).
+**Addresses:** Server-side verdict storage for logged-in users (P1 feature — crosses the completion line when the logged-in sync path is wired end-to-end from Read & Rank through backend to Essentials display).
 
 ### Phase Ordering Rationale
 
-- Phase 1 is mandatory before everything else. Both ARCHITECTURE.md and PITFALLS.md explicitly flag "verify actual DB values before writing code" as the make-or-break condition for this milestone.
-- Phase 2 before Phase 3: table must exist before data can be inserted.
-- Phase 4 is conditional: if Phase 1 shows commissioners and council already produce distinct keys, skip Phase 4 and merge any cleanup into Phase 2.
-- Phase 5 can run in parallel with Phases 2-4: ev-ui change has no dependency on backend or data work.
-- Phase 6 is last: requires ev-ui 0.1.41 (Phase 5) and populated backend data (Phases 2-3).
+- Phases 1 and 3 can run in parallel (different repos, different concerns — frontend extraction vs. backend endpoint additions).
+- Phase 2 can run in parallel with Phase 3 (visual work in Read & Rank is independent of backend).
+- Phase 5 (ev-ui) can run in parallel with all other phases; it is a prerequisite for Phase 4 but has no incoming dependencies.
+- Phase 4 has a soft dependency on Phase 3 for the logged-in path; the fragment and localStorage paths can be implemented independently.
+- Phase 6 depends on Phase 4 being deployed — Essentials must accept and display verdicts before Read & Rank links to it.
+- Phase 7 is intentionally last — it is an enhancement to the core flow, not launch-blocking for the integration.
 
 ### Research Flags
 
-Phases requiring caution during execution:
-- **Phase 1:** Not a code phase, but the most consequential one. If `chamber_name_formal` is unpopulated for Indiana chambers, this milestone becomes a data migration milestone before it becomes a display milestone. Plan for both branches.
-- **Phase 4:** Conditional and must not start until Phase 1 results are confirmed. If classify.js changes are needed, the regression test list from Phase 1 is mandatory verification before merge.
+Phases with well-documented patterns (standard — can skip `/gsd:research-phase`):
+- **Phase 1:** All config changes confirmed from direct codebase inspection; Cloudflare Pages deployment pattern is identical to existing EV apps.
+- **Phase 3:** `QuoteVerdict` model is a direct copy of the `CompassAnswer` model pattern; endpoint structure is confirmed from existing `internal/compass/` handlers. No novel patterns.
+- **Phase 5:** ev-ui minor version bump following the established publish pattern. One optional prop following existing precedents on `CategorySection`.
 
-Phases with standard, well-understood patterns:
-- **Phase 2:** Direct pattern match to existing `PositionDescription` table and admin CRUD endpoints. STACK.md documents the exact Go model code. No inference needed.
-- **Phase 3:** SQL INSERT via admin API endpoint or direct SQL. Well-understood data entry step.
-- **Phase 5:** ev-ui minor version bump following the established publish pattern used for every ev-ui release. One optional prop following the `infoTooltip` precedent already on `CategorySection`.
-- **Phase 6:** Pure frontend composition. Data arrives in the search response; rendering logic is additive with graceful fallbacks; no new state management.
+Phases that may benefit from brief design review before implementation:
+- **Phase 4:** The exact ev-ui `^0.1.42` badge component API (prop shape, verdict enum values, badge label text, color tokens) needs to be agreed between Phase 5 and Phase 4 before either begins implementation. A brief coordination step — not a full research phase.
+- **Phase 6:** The `buildEssentialsUrl()` URL fragment size should be verified against the current quote count before implementation to confirm the payload stays under the 8KB browser URL length limit (current estimate: ~3.2KB encoded — within budget, but worth confirming against actual quote IDs).
+
+---
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All findings from direct codebase inspection of models.go, handlers.go, classify.js, CategorySection.jsx, package.json files. No inference or third-party source needed — the codebase is the source of truth. |
-| Features | HIGH | Confirmed via Monroe County and Bloomington official government sites and Indiana state resources. Existing codebase fields verified present in API response. Industry standard (BallotReady, Google Civic API) confirmed the "specific name at display layer" approach. |
-| Architecture | HIGH | Based on direct inspection of all relevant source files. Build order and component responsibilities verified against actual code. ARCHITECTURE.md documents the exact before/after data flow. |
-| Pitfalls | HIGH | All six pitfalls derived from actual codebase patterns — classify.js keyword matching logic, LOCAL_ORDER coupling, qualifyLocalTitle double-prefix behavior. Verified from code, not inferred from general patterns. |
+| Stack | HIGH | All findings from direct source code inspection of actual repos; no speculation. Cloudflare Pages pattern confirmed from official docs. No new libraries required. |
+| Features | HIGH | Feature priorities derived from the existing codebase gaps and the explicit v2026.3.4 milestone scope in PROJECT.md. All referenced source files were directly inspected. |
+| Architecture | HIGH | Build order and component boundaries derived from direct codebase inspection of all modified files. Data flow diagrams in ARCHITECTURE.md verified against actual component code. |
+| Pitfalls | HIGH | Browser storage isolation verified via MDN spec. Zustand key pitfall verified from direct inspection of `useReadRankStore.ts`. CORS and `.npmrc` pitfalls verified from existing `middleware.go` and `netlify.toml` patterns. |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **Indiana `chamber_name_formal` population (Phase 1 critical):** The single unresolved unknown. Whether `chambers.name_formal` is populated for Monroe County Commissioners and Monroe County Council is not confirmed from research — it requires a direct DB query. If empty, the key question shifts from "how do we split them in classify.js?" to "how do we populate `name_formal` in the DB?" and a data correction precedes all feature work.
+- **ev-ui verdict badge component API design:** Research confirms that ev-ui needs a `verdicts` prop on `StanceAccordion` and that v0.1.42 is the target version, but the exact prop shape (how `verdictsByTopic` is typed, what badge variants are supported, what label text reads) needs coordination between Phase 4 and Phase 5 implementors before either begins. Not a research gap — a design coordination step.
 
-- **Exact body_key strings for government_bodies seeding:** The `body_key` values used in the seeding SQL must exactly match what `classify.go` produces for Indiana officials. Phase 1's DB audit produces the definitive list. Do not guess these strings — a mismatch causes the JOIN to silently return NULL and the feature to appear broken for Indiana officials.
+- **`?topic=` deep-link IssueHub implementation (P2):** The IssueHub component structure was inspected but the query param handling for the "Explore on Read & Rank" deep-link was not fully specced. This is explicitly P2 scope and can be addressed during that phase's planning.
 
-- **LA County body coverage:** Research scoped website link collection to Monroe County / Bloomington. LA County has hundreds of bodies and is not targeted for website links this milestone. Verify that the heading qualification change (using `government_body_name` from the new table where available) does not regress existing LA County rendering — section titles for LA County officials should fall back gracefully to `getDisplayName(category)`.
+- **Guest persistent verdict storage (iframe relay):** Explicitly deferred to v1.x+. The gap is intentional — the URL fragment bridge covers the guest MVP path. If user testing after launch reveals guests frequently lose verdicts between sessions, the iframe postMessage relay at a shared subdomain (`shared.empowered.vote`) is the documented path forward. Do not pre-build it.
+
+---
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- `EV-Backend/internal/essentials/models.go` — GORM model structure; Chamber, Government, and PositionDescription patterns that `GovernmentBody` follows
-- `EV-Backend/internal/essentials/handlers.go` — OfficialOut struct, SQL query patterns, LEFT JOIN structure, chamber_name_formal availability in response
-- `EV-Backend/internal/essentials/geofence_lookup.go` — geo_id / MTFCC structure, district type mapping, OfficialOut composition
-- `essentials/src/lib/classify.js` — full classification logic, LOCAL_ORDER, CATEGORY_DISPLAY_NAMES, group key strings, hasAny() matching behavior
-- `essentials/src/pages/Results.jsx` — rendering pipeline, qualifyLocalTitle() implementation, subtitle dashIdx pattern, CategorySection usage
-- `ev-ui/src/CategorySection.jsx` — existing component API; infoTooltip prop as established pattern for optional extras on this component
-- `ev-ui/package.json` — current version 0.1.40 confirmed
-- `essentials/package.json` — ev-ui consumer at ^0.1.40 confirmed
+- `EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand state shape, persist key `readrank-storage`, ev-ui `^0.1.6`, per-issue agree/disagree/badge data
+- `EV-prototypes/read-rank/src/data/api.ts` — `fetchQuotesData()` consuming `GET /essentials/quotes`
+- `essentials/src/contexts/CompassContext.jsx` — priority chain pattern (fragment > API > localStorage > empty), `guestCompass` key, fragment parse on mount
+- `essentials/src/lib/compass.js` — `parseCompassFragment()`, `saveGuestCompass()`, fragment schema `{a, s, i}`
+- `essentials/src/components/CompassCard.jsx` — dual fetch, StanceAccordion integration
+- `essentials/src/components/StanceAccordion.jsx` — row structure, prop surface
+- `CompassV2/src/components/ReturnBanner.jsx` — `serializeCompassFragment()` existing serialization pattern
+- `EV-Backend/internal/essentials/handlers.go` — `GetQuotes` handler, `QuoteOut` struct, SQL pattern
+- `EV-Backend/internal/essentials/routes.go` — existing route surface, `/quotes` GET endpoint
+- `EV-Backend/internal/compass/models.go` — existing model pattern for `compass.` schema (CompassAnswer as QuoteVerdict template)
+- Cloudflare Pages docs — `not_found_handling = "single-page-application"` in `wrangler.toml` confirmed
+- MDN Web API: `Window.localStorage` — origin isolation per scheme+host+port confirmed
+- MDN: Same-origin policy — `document.domain` does NOT affect storage APIs in modern browsers
 
 ### Secondary (MEDIUM confidence)
-- Monroe County official site (co.monroe.in.us) — commissioners and council structure; confirmed separate body pages and URLs
-- Bloomington City Council (bloomington.in.gov/council) — 9-member structure; 6 district + 3 at-large confirmed
-- Indiana DLGF — county commissioners statutory structure; constitutional basis for dual-body model
-- Indiana SBOA — township trustee and advisory board structure; single trustee + 3-member board model
-
-### Tertiary (reference only)
-- NACo Indiana County Overview PDF — dual-body county structure context; confirms the structure is statewide across all 92 Indiana counties
-- Google Civic Information API reference — industry standard for body name composition at the display layer (officeName + divisionName)
-- BallotReady `websiteUrl` per office — confirms industry standard of storing one canonical URL per government body
+- npmjs.com: `framer-motion` 12.35.2 — latest version as of 2026-03-10
+- Cloudflare Community — SPA routing 404 behavior and `_redirects` vs `wrangler.toml` placement distinction
 
 ---
-*Research completed: 2026-03-10*
+*Research completed: 2026-03-11*
 *Ready for roadmap: yes*

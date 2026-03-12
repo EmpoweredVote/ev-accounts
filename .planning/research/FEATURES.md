@@ -1,27 +1,27 @@
 # Feature Research
 
-**Domain:** Local government organization display — civic engagement / politician discovery app
-**Researched:** 2026-03-10
-**Confidence:** HIGH (existing codebase fully inspected; Indiana government structure verified via official state and county sources)
+**Domain:** Read & Rank Integration — quote verdict sharing, standalone app extraction, topic-level integration in politician profiles
+**Researched:** 2026-03-11
+**Confidence:** HIGH (existing codebase fully inspected; all state shapes, API responses, and localStorage patterns confirmed from source)
 
 ---
 
 ## Context: What Already Exists
 
-This is a subsequent milestone. The Essentials app already has:
+This is a subsequent milestone. The following are fully shipped and must not be changed unless explicitly in scope:
 
-- Full politician discovery pipeline with PostGIS geofence matching, 3-tier Federal/State/Local classification
-- `classify.js` with `LOCAL_ORDER` categories: Municipal Executives, City Council, Municipal Officials, Township Officials, County Executives, County Legislators, County Officials, School Board, Local Judiciary, Local Departments & Special Districts
-- `qualifyTitle()` in `PoliticianGrid.jsx` that prepends `government_name` to generic card titles (e.g., "City Council" on a card → "Bloomington City Council")
-- `government_name`, `chamber_name_formal`, `chamber_name`, `district_label`, `district_type` all in `OfficialOut` API response — no new backend fields needed for body name qualification
-- `ContactOut` with `website_url` on individual politician contacts, but no body-level website field
-- Section headings in the Results page currently use the raw classify category name (e.g., "County Legislators"), not the qualified body name
+- `EV-prototypes/read-rank/`: Complete swipe-based quote evaluation app — IssueHub, EvaluationPhase, RankingPhase, ResultsPhase, CandidateAlignmentPage. Zustand store (`useReadRankStore`) with `persist` middleware writing to `localStorage` key `readrank-storage`.
+- `GET /essentials/quotes`: Returns `{ quotes, candidates, issues }`. Read & Rank already consumes this.
+- `essentials/`: CompassCard + StanceAccordion on politician profiles. CompassContext with priority chain: logged-in API > URL fragment > `localStorage` guest compass key `guestCompass`.
+- URL fragment bridge: CompassV2 encodes compass data into `#compass=BASE64(...)` on navigation to Essentials. CompassContext reads and strips the fragment on mount, saves to `guestCompass` localStorage key for future visits.
+- Session cookie with `Domain: .empowered.vote` — shared across all `*.empowered.vote` subdomains (shipped in v2026.3.2).
 
 The gaps this milestone closes:
-1. Section headings say "County Council" not "Monroe County Council"
-2. Commissioners and council are grouped together as "County Legislators"
-3. No official website link shown at the body/section level
-4. No distinction between at-large and district council members in the display
+
+1. Read & Rank is only reachable via EV-prototypes Netlify deployment — no standalone URL, no fresh design
+2. Quote verdicts (agreed/disagreed/ranked) exist only in `readrank-storage` on whichever subdomain the user visited — inaccessible to Essentials
+3. Essentials politician profiles show compass stances but no quote-level verdicts per topic
+4. URL fragment bridge is a workaround: one-time, breaks on direct navigation, not real sharing
 
 ---
 
@@ -31,92 +31,100 @@ The gaps this milestone closes:
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| Specific body name in section heading | "County Council" is ambiguous — users expect to know which county's council this is, especially users at county boundaries | LOW | `government_name` + `chamber_name_formal` already in API response. `qualifyTitle()` already applies this logic to individual politician cards. Extend same logic to section/category headings. Zero backend changes needed. |
-| Distinct sections for commissioners vs. council | Indiana: Board of Commissioners = executive/administrative. County Council = fiscal/legislative. These are separate elected bodies with different roles. Grouping them as "County Legislators" obscures both. | LOW | Pure frontend change. Update `classify.js` to route title keyword "commissioner" → "County Commissioners" group and "council member" → "County Council" group within COUNTY district type. |
-| Elected county officials as their own section | Sheriff, Assessor, Clerk, Treasurer, Recorder, Coroner, Surveyor are independently elected officials with no council/commission role. Grouping them alongside legislators is misleading. | LOW | "County Officials" category already exists in `LOCAL_ORDER` and `classify.js` has this code path. Needs consistent enforcement — some fall-through paths currently land them in the wrong group. |
-| Township body name specificity | "Township Officials" is generic. Users in Perry Township expect "Perry Township Trustee" not a generic bucket. | LOW | Same heading-qualification fix as county; `government_name` already contains township name for records in the DB. |
-| Official website link per section | Users who want to attend a meeting or contact "the council" need the body's website, not individual member contact pages. Every comparable civic directory (Ballotpedia, BallotReady) links to the official body website. | MEDIUM | Requires one new DB field: `website_url` on the `chambers` table (or a minimal new lookup table). Manual data entry for the two covered jurisdictions (Monroe County IN + Bloomington IN). Render as a link icon or "Official website" link in the section heading row. |
+| Read & Rank accessible at a clean URL | A standalone civic tool needs its own home. `readrank.empowered.vote` sets expectations of a polished product. Any URL referencing "prototypes" signals an experiment, not a product. | MEDIUM | New GitHub repo + Cloudflare Pages deployment. Copy source from `EV-prototypes/read-rank`. Wire up `VITE_API_URL`. No changes to the actual swipe mechanics. Complexity is repo setup, not logic. |
+| Quote verdicts visible on Essentials politician profiles under each topic | Users who evaluate a quote on Read & Rank expect that evaluation to show up when they're researching that politician on Essentials. The verdict is the insight — "I agreed with what Sen. X said about climate" is directly profile-relevant. | MEDIUM | Requires: (1) shared localStorage key accessible from `essentials.empowered.vote`, (2) reading verdicts from that key in StanceAccordion or a new sub-component, (3) rendering the verdict badge/label inline under the topic in the accordion. The hard part is the key must be readable cross-subdomain. |
+| Cross-app localStorage sharing under `.empowered.vote` | Browsers enforce localStorage per origin (scheme + hostname + port). `readrank.empowered.vote` and `essentials.empowered.vote` have different hostnames — they cannot read each other's localStorage. This is a hard browser constraint. | MEDIUM | Standard pattern: use a shared key written to `sessionStorage`/`localStorage` under the root domain via an invisible iframe postMessage bridge OR write the shared verdict state to a key that both apps agree to read from a common location. The practical solution for this stack: a dedicated `localStorage` synchronization mechanism using a shared subdomain `storage.empowered.vote` as an iframe relay, OR move to a simpler approach — write verdicts to a backend endpoint and read them from any subdomain via the same session cookie that already works cross-subdomain. The session cookie already uses `Domain: .empowered.vote` so the logged-in path is straightforward. The guest path requires the iframe relay or an alternative. |
+| Guest verdict sharing (no login required) | Compass works guest-first. Read & Rank works guest-first. Verdicts must also work guest-first or users who skip login get a broken experience on profiles. | HIGH | This is the technically hardest requirement. Cross-subdomain localStorage requires a relay mechanism. An iframe-based postMessage relay hosted at a shared origin (`shared.empowered.vote` or similar) is the standard pattern. Complexity: implementing the relay, testing cross-origin postMessage, handling race conditions. Alternative: encode verdicts in a URL fragment when navigating from Read & Rank to Essentials (same pattern as the compass bridge) — simpler but only works at point-of-navigation, not on subsequent profile visits. |
+| Retire URL fragment bridge | The fragment bridge is a one-time one-way hand-off. Users visiting Essentials a second time from a bookmark get no compass data unless they came from CompassV2 again. Shared domain localStorage (or server storage) fixes this permanently. | LOW | Once the new sharing mechanism is live, remove the `parseCompassFragment` call from CompassContext and the fragment-encoding code from CompassV2. Remove the `guestCompass` localStorage key and replace with the new shared key. Sequence: new mechanism must be verified working before removing the old one. |
 
 ### Differentiators (Competitive Advantage)
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| At-large vs. district member badge | Indiana county councils: 4 district + 3 at-large. Bloomington city council: 6 district + 3 at-large. Surfacing "District 2" vs "At-Large" helps users understand which members are specifically accountable to their neighborhood vs. the jurisdiction at large. | LOW | `district_label` field already in `OfficialOut`. Requires only a frontend rendering change — add a badge or subtitle on council member cards. "At-Large" label when district is null or district_label contains "at-large". |
-| Role description under section heading | A one-sentence explanation of the body's function (e.g., "Executive and administrative authority for the county") gives context without requiring users to already know what commissioners do. | LOW | Entirely static copy, keyed by body type. Meaningful only after section headings are specific. Ship after heading names are correct. |
-| State-configurable body structure | California counties use Board of Supervisors (5 members, no separate council). Indiana uses the commissioners + council split. A config-driven structure (even a simple constant map) enables clean expansion to new states without code changes. | MEDIUM | Keep scope to Indiana in this milestone; implement as named Indiana-specific constants. Design the interface so adding a CA county config is a config change, not a code change. Defer full generalization to a future milestone. |
+| Visual refresh for standalone Read & Rank | The EV-prototypes version looks like a dev prototype — dark background, muted palette, inconsistent with Essentials/CompassV2 visual language. A polished standalone at `readrank.empowered.vote` using `ev-coral`, `ev-muted-blue`, Manrope font, and card-based design matches the platform brand and makes the tool demoable. | MEDIUM | Component-level visual changes only — swipe mechanics, store, and API integration stay identical. Focus: landing/hub page design, QuoteCard styling, ResultsPhase layout. The existing EvaluationPhase swipe mechanics are polished; the hub and results need the most work. |
+| Server-side verdict storage for logged-in users | Verdicts stored only in localStorage are lost when users clear storage or switch devices. Logged-in users expect their data to follow them, consistent with how compass answers sync to the backend. | HIGH | Requires: (1) new `essentials.quote_verdicts` table (politician_id, topic_key, quote_id, verdict: agreed/disagreed, rank, badge), (2) backend endpoints (upsert verdict, get verdicts for user), (3) Read & Rank writes to API when logged in, localStorage when guest, (4) CompassContext-style priority chain in verdict reading: API > localStorage > empty. Session cookie already works cross-subdomain for logged-in users so no additional auth work is needed. |
+| "You agreed/disagreed" inline badge on StanceAccordion rows | Each StanceAccordion row shows the politician's stance on a topic. Showing the user's own verdict from Read & Rank inline (a small "You agreed" green badge or "You disagreed" red badge next to the politician's stance label) provides immediate context without requiring a separate section or UI disruption. | LOW | Conditional rendering: if `verdicts[topic_key]` exists, render a badge. No layout change — badge appears alongside existing stance label. Depends on verdicts being accessible in Essentials context. |
+| "Explore this topic on Read & Rank" deep-link from StanceAccordion | When a StanceAccordion row is expanded, show a small CTA: "See what politicians said about [topic] →" linking to `readrank.empowered.vote?topic=[topic_key]`. Deep-link support requires Read & Rank to accept a `?topic=` query param and auto-enter the appropriate issue on load. | LOW | Two parts: (a) add `?topic=` query param handling to Read & Rank IssueHub to pre-select and immediately start an issue, (b) add the deep-link in StanceAccordion expanded content. No backend changes. |
 
 ### Anti-Features (Commonly Requested, Often Problematic)
 
 | Feature | Why Requested | Why Problematic | Alternative |
 |---------|---------------|-----------------|-------------|
-| Automated body website discovery | "Scrape or use Google to find official websites for all bodies" | Official government sites are inconsistently structured; automated discovery produces wrong URLs frequently and is hard to validate. Ongoing maintenance burden for a 2-3 person nonprofit team. | Manual data entry for covered jurisdictions (2 counties). Build an admin form or script. Verified data outperforms automated noise at this scale. |
-| Full meeting calendar / agenda embed | "Show upcoming meetings" is an obvious civic utility | Requires real-time scraping or integration with a per-jurisdiction calendar source. Maintenance is enormous and varies per city. | Link to the body's official meetings page. One URL, zero maintenance after initial data entry. |
-| Organizational chart / hierarchy visualization | "Show how commissioners, council, and officials relate" | High design complexity. Varies by state and county. Confusing for most users and not the right tool for discovery. | Section ordering (commissioners before council before officials) plus a brief role description implicitly communicates the hierarchy. |
-| At-large member seating by fake district | "Show which at-large members represent which areas" | At-large means no district. Creating artificial districts is misleading and inaccurate. | Label "At-Large" clearly with no district badge. Do not invent districts. |
-| Full elected official roster for all Indiana counties | "Show all 92 Indiana counties' bodies with specific names" | Geofence data only covers Monroe County currently. Showing specific names for bodies we have no politicians for creates an empty section problem. | Apply improvements only to covered jurisdictions. The heading qualification logic will apply automatically as new counties are added via the existing pipeline. |
+| Real-time cross-tab verdict sync | "If I rate a quote in one tab, the other tab should update" | Adds BroadcastChannel/SharedWorker complexity. Zero practical value — users don't have Read & Rank and Essentials open simultaneously in a workflow that requires live sync. | Let the profile page re-read localStorage on mount. Stale-on-same-visit is acceptable; fresh on next page load is sufficient. |
+| Verdict analytics / aggregated scores | "Show what percentage of users agreed with each politician" | Antipartisan mission of the platform. Aggregated verdicts become a popularity ranking, which is exactly what the platform is trying to replace with individual alignment. | Keep verdicts private and personal — "you agreed" not "60% of users agreed". |
+| Full candidate profile page inside Read & Rank | ResultsPhase currently has a "View Your Alignment" CTA that navigates to `/candidate/:id/alignment` (CandidateAlignmentPage). A full politician profile would duplicate what Essentials does and require maintaining two copies of profile data. | Maintenance burden. Data duplication. Different data access patterns (Read & Rank uses `candidateId` string, Essentials uses DB politician UUID). | CandidateAlignmentPage in Read & Rank shows verdict summary for one candidate. The CTA links to `essentials.empowered.vote/profile/:slug` for the full profile. No duplication. |
+| Automatic verdict migration from old `readrank-storage` key to new shared key | "Migrate existing user verdicts from the EV-prototypes deployment" | Users accessing EV-prototypes have zero overlap with `readrank.empowered.vote` — different origins, no cookie sharing. Migration is impossible without user action. | Accept that the standalone launch starts fresh. No migration needed. |
+| Verdict-weighted compass alignment score | "Use Read & Rank verdicts to adjust the radar chart" | Compass measures stance similarity on abstract policy positions. Quotes are specific statements with rhetoric that may not represent a politician's actual vote record. Mixing the two produces an unreliable hybrid. | Keep them separate. Compass shows stance overlap. Read & Rank shows quote-by-quote reactions. Present them side by side on profiles, not merged. |
 
 ---
 
 ## Feature Dependencies
 
 ```
-[Specific body names in section headings]
-    └──requires──> government_name populated for covered officials  [ALREADY MET]
-    └──requires──> chamber_name_formal populated for covered officials  [ALREADY MET]
-    └──note──> Pure frontend change to Results.jsx section header rendering
+[Shared .empowered.vote localStorage OR server-side verdicts]
+    └──required-by──> Guest verdict reading in Essentials
+    └──required-by──> "You agreed/disagreed" badge on StanceAccordion
+    └──required-by──> Retire URL fragment bridge (guest compass must use new shared storage)
 
-[Commissioners vs. council distinct sections]
-    └──requires──> classify.js updated to split COUNTY district type by title keyword
-    └──enhances──> Specific body names in section headings (each body now has its own section to label)
+[Read & Rank standalone repo at readrank.empowered.vote]
+    └──enables──> Clean URL for deep-links from StanceAccordion
+    └──enables──> Cloudflare Pages deployment (consistent with CompassV2 and Essentials)
+    └──independent-of──> Shared localStorage mechanism (can deploy standalone before sharing works)
 
-[County Officials as distinct section]
-    └──requires──> classify.js county official fall-through paths cleaned up
-    └──independent──> Can be done alongside commissioners/council split
+[Server-side verdict storage]
+    └──requires──> New DB table + backend endpoints
+    └──requires──> Read & Rank writes to API when logged in
+    └──enhances──> Shared localStorage (logged-in users don't need the iframe relay)
+    └──parallel-to──> Guest localStorage sharing (both must work; guest path is the harder one)
 
-[Official website link per section]
-    └──requires──> website_url field added to chambers table in DB
-    └──requires──> Manual data entry: Monroe County Commissioners, Monroe County Council, Bloomington City Council, Monroe County elected officials page
-    └──requires──> Frontend: render website_url as link in CategorySection header
-    └──requires──> Backend: include website_url in API response (OfficialOut.ChamberWebsiteURL or separate endpoint)
+["You agreed/disagreed" badge on StanceAccordion]
+    └──requires──> Verdicts accessible in Essentials (via shared localStorage or API)
+    └──requires──> Verdict data keyed by topic_key (matches Quote.issue field from API)
+    └──independent-of──> Visual refresh (badge works in both old and new design)
 
-[At-large vs. district badge]
-    └──requires──> district_label already in OfficialOut  [ALREADY MET]
-    └──requires──> Frontend render change: show district_label as badge/subtitle on council cards
-    └──depends-on──> Commissioners vs. council distinct sections (so badge appears in correct section)
+["Explore on Read & Rank" deep-link]
+    └──requires──> Read & Rank standalone at readrank.empowered.vote
+    └──requires──> ?topic= query param handling in Read & Rank IssueHub
+    └──independent-of──> Verdict sharing mechanism
+
+[Retire URL fragment bridge]
+    └──requires──> Shared localStorage or server storage working for guest compass data
+    └──requires──> Verification that new mechanism handles all guest paths
+    └──last-step──> Must be done AFTER new mechanism is confirmed working
 ```
 
 ### Dependency Notes
 
-- **Section heading qualification and classify.js fixes are fully independent from the website link feature.** They can ship in any order or together.
-- **Website links require the only new backend addition:** `website_url` on `chambers`. If chambers can have multiple URLs (e.g., main site and meeting page), a separate `chamber_links` table is cleaner — but a single `website_url` string is sufficient for MVP.
-- **At-large vs. district badge requires no data changes.** `district_label` is already in the API. This is a pure rendering addition.
-- **State-configurable structure** should be designed as a simple constant map (body type → body config) so Indiana rules are not hardcoded in `if (state === "IN")` branches. The map can be expanded to California later.
+- **Critical path:** Shared localStorage (or server-side for logged-in users) must ship before "You agreed/disagreed" badges can appear in Essentials. Everything else is independent.
+- **Standalone repo ships before sharing works:** The standalone deployment can launch with the same isolated `readrank-storage` localStorage behavior as today. Verdict sharing is a second step.
+- **Guest sharing is the hardest problem:** The iframe postMessage relay pattern is the browser-standard solution but adds ~1 day of implementation + testing. An alternative for the guest path: write verdicts to a shared key at a predictable origin using a relay page. A simpler but limited alternative: encode verdicts in the URL when navigating to Essentials (same as the existing compass bridge) — one-time hand-off only.
+- **Server-side storage unlocks logged-in cross-device sync:** The session cookie already works across all `*.empowered.vote` subdomains. For logged-in users, POST `/essentials/verdicts` from Read & Rank and GET `/essentials/verdicts` in Essentials is sufficient — no localStorage magic needed for this path.
 
 ---
 
 ## MVP Definition
 
-### Launch With (v2026.3.3)
+### Launch With (v2026.3.4)
 
-Scoped to currently covered jurisdictions: Monroe County / Bloomington, Indiana. LA County improvements apply automatically from the same heading-qualification fix.
+Minimum needed to validate the concept and deliver visible user value.
 
-- [ ] **Specific body name in section headings** — Apply `qualifyTitle()` logic to `CategorySection` headings in `Results.jsx`. "County Council" → "Monroe County Council". Zero backend changes. HIGH value, LOW effort.
-- [ ] **Distinct commissioners vs. council sections** — Update `classify.js` to route `COUNTY` district type officials with "commissioner" title to a new "County Commissioners" group (separate from "County Legislators" / "County Council"). Three-way split: commissioners, council, officials.
-- [ ] **County Officials consistently distinct** — Audit and fix `classify.js` code paths so sheriff, auditor, treasurer, assessor, recorder, coroner, surveyor all reliably land in "County Officials" and not in commissioners or council groups.
-- [ ] **Official website link per section** — Add `website_url` to `chambers` table. Enter URLs for Monroe County Board of Commissioners, Monroe County Council, Bloomington City Council (9 members, 6 district + 3 at-large), Monroe County elected officials page. Add `chamber_website_url` to `OfficialOut`. Render as "Official website" link in section heading. Gracefully absent when URL is null.
-- [ ] **Township body names via heading qualification** — Same heading-qualification fix already covers townships; Perry Township Trustee appears instead of "Township Officials" with no extra work.
+- [ ] **Read & Rank standalone repo and deployment** — New repo, Cloudflare Pages, `readrank.empowered.vote`. Same mechanics, polished visual design. No swipe/store changes. Required before any cross-app linking works.
+- [ ] **Server-side verdict storage for logged-in users** — `essentials.quote_verdicts` table. POST `/essentials/verdicts` (upsert). GET `/essentials/verdicts` (for current user). Read & Rank writes to API when session cookie present; localStorage when guest. This is the reliable path and directly reuses the existing session cookie infrastructure.
+- [ ] **"You agreed/disagreed" badge on StanceAccordion for logged-in users** — Read verdicts from `/essentials/verdicts` in Essentials CompassContext (or a parallel VerdictContext). Show agree/disagree badge inline in StanceAccordion rows where a verdict exists. Scoped to logged-in users initially.
+- [ ] **Guest verdict sharing via URL fragment** — When navigating from Read & Rank results to an Essentials profile, encode the current issue's verdicts in the URL (e.g., `#verdicts=BASE64(...)`). Essentials reads and caches in localStorage. Same pattern as the compass bridge — one-time hand-off, good enough for the guest MVP path. The `guestVerdicts` key mirrors `guestCompass`.
 
 ### Add After Validation (v1.x)
 
-- [ ] **At-large vs. district badge** — Surface `district_label` as a visible badge/subtitle on council member cards. Trigger: after heading names are specific enough that users start looking at individual member distinctions.
-- [ ] **Role description under section heading** — One-sentence static copy per body type explaining its function. Low effort once headings are specific. Trigger: user feedback indicating confusion about what commissioners vs. council do.
-- [ ] **LA County Board of Supervisors heading** — "Board of Supervisors" already comes from `chamber_name_formal`; heading qualification will produce "Los Angeles County Board of Supervisors" automatically. Verify this renders correctly post-heading-fix.
+- [ ] **Persistent guest verdict storage via shared subdomain relay** — Implement the iframe postMessage relay at `shared.empowered.vote` (or reuse a lightweight relay page) to write a shared verdict key accessible from both `readrank.empowered.vote` and `essentials.empowered.vote`. Trigger: user testing reveals that guests lose verdicts between sessions frequently enough to be a friction point.
+- [ ] **"Explore this topic on Read & Rank" deep-link from StanceAccordion** — `?topic=` query param handling in IssueHub. CTA link in StanceAccordion expanded content. Trigger: after standalone Read & Rank is live.
+- [ ] **Retire URL fragment compass bridge** — Replace with shared localStorage mechanism once proven. Trigger: new sharing mechanism confirmed reliable across browsers.
+- [ ] **Visual refresh completion** — Full landing page, onboarding micro-copy, empty state polish. Trigger: after standalone launch confirms the basic experience works.
 
 ### Future Consideration (v2+)
 
-- [ ] **State-configurable body config** — Full pluggable config map for different state models (California Board of Supervisors vs. Indiana commissioners + council). Needed when expanding to a third state.
-- [ ] **Meeting/agenda deep links** — Per-body meeting schedule URL in addition to general body website. Add after general website links are live and users ask for more depth.
-- [ ] **New county/state expansion** — Each new county requires geofence import, politician data, and body website data entry. The pipeline is repeatable. Website data entry is the new manual step.
+- [ ] **Cross-device verdict sync for guests** — Would require account creation or device-linking. Out of scope until there's clear demand.
+- [ ] **Verdict history view on profile pages** — "All quotes I evaluated for this politician." Requires enough users with verdict history to validate demand.
+- [ ] **Read & Rank progress across all issues shown on Essentials profile** — "You've evaluated 3 of 5 issues with this politician's quotes." Needs verdict data indexed by politician_id, which the server-side storage provides.
 
 ---
 
@@ -124,65 +132,76 @@ Scoped to currently covered jurisdictions: Monroe County / Bloomington, Indiana.
 
 | Feature | User Value | Implementation Cost | Priority |
 |---------|------------|---------------------|----------|
-| Specific body names in section headings | HIGH | LOW — frontend only, all data exists | P1 |
-| Commissioners vs. council split | HIGH | LOW — classify.js keyword change | P1 |
-| County Officials distinct section (cleanup) | MEDIUM | LOW — classify.js consistency fix | P1 |
-| Official website link per section | HIGH | MEDIUM — new DB field + data entry + frontend | P1 |
-| Township name via heading qualification | MEDIUM | LOW — covered by heading fix automatically | P1 |
-| At-large vs. district badge | MEDIUM | LOW — data exists, rendering change only | P2 |
-| Role description under heading | LOW | LOW — static copy | P2 |
-| State-configurable body config | HIGH (future expansion) | MEDIUM | P3 |
-| Meeting/agenda deep links | MEDIUM | LOW — additional URL field | P3 |
+| Standalone Read & Rank repo + Cloudflare Pages | HIGH — prerequisite for everything else | MEDIUM — repo setup + CF Pages config | P1 |
+| Visual refresh (standalone) | HIGH — demoable product | MEDIUM — frontend-only | P1 |
+| Server-side verdict storage (logged-in) | HIGH — reliable cross-app sharing | HIGH — new DB table + 2 endpoints + store changes | P1 |
+| "You agreed/disagreed" badge in StanceAccordion (logged-in) | HIGH — direct profile value | LOW — frontend rendering using existing accordion structure | P1 |
+| Guest verdict URL fragment bridge | MEDIUM — guest continuity at navigation time | LOW — mirrors existing compass bridge pattern | P1 |
+| "Explore on Read & Rank" deep-link | MEDIUM — drives engagement between apps | LOW — query param + one CTA link | P2 |
+| Persistent guest verdict storage (iframe relay) | MEDIUM — removes guest friction long-term | HIGH — cross-origin relay setup + testing | P2 |
+| Retire URL fragment compass bridge | LOW — cleanup | LOW — delete code after new mechanism verified | P2 |
+| Cross-device verdict sync for guests | LOW — edge case | HIGH — auth or device linking required | P3 |
+
+**Priority key:**
+- P1: Must have for launch
+- P2: Should have, add when possible
+- P3: Nice to have, future consideration
 
 ---
 
-## Competitor Feature Analysis
+## Cross-App State Sharing Patterns (Domain-Specific Research)
 
-| Feature | Ballotpedia | BallotReady | Google Civic Info API | Our Approach |
-|---------|-------------|-------------|----------------------|--------------|
-| Specific body names | Full official names on all body pages (e.g., "Monroe County Board of Commissioners") | Uses specific body names in office data | Returns `officeName` + `divisionName` separately; client must compose | Compose from `government_name` + `chamber_name_formal` in section heading — data already available |
-| Official body website link | Links to official government website on body pages | Includes `websiteUrl` on office records | Returns `urls` per official, not per body | Add `website_url` to `chambers` table; one canonical URL per body |
-| Commissioners vs. council distinction | Separate pages per body | Separate position entries per body type | Separate `offices` in response keyed by OCD-ID | Separate `classify.js` groups by COUNTY district type + title keyword |
-| At-large vs. district distinction | Noted on member profile pages | `district_name` field populated | `district` field on office | Surface existing `district_label` as a badge in the card |
-| State-specific body structure | Full wiki coverage per state | Normalized across states via position type | OCD-ID hierarchy reflects state structure | Start with Indiana-specific rules as named constants; generalize to config map for v2 |
+The core challenge — sharing state between `readrank.empowered.vote` and `essentials.empowered.vote` — is a well-understood browser constraint problem. These are the viable patterns for this stack:
 
-**Key observation:** BallotReady already stores `websiteUrl` per office. Google Civic Information API returns `officeName` (e.g., "County Council Member, District 2") per division, meaning the industry standard is to present fully qualified names at the display layer — exactly what this milestone does.
+### Pattern A: Server as Shared State (recommended for logged-in users)
+Store verdicts in the database. Read them via API from any subdomain using the existing session cookie (`Domain: .empowered.vote`). No localStorage engineering needed for this path. This is the right pattern for the logged-in case.
+
+**Confidence:** HIGH — session cookie already verified working cross-subdomain (v2026.3.2 fix).
+
+### Pattern B: URL Fragment Hand-off (recommended for guest MVP)
+When navigating cross-subdomain, encode state in `#fragment=BASE64(...)`. The destination app reads and strips the fragment on mount, then saves to its own localStorage. This is already proven by the existing compass bridge. One-time hand-off: data is available only after direct navigation, not on subsequent sessions.
+
+**Confidence:** HIGH — identical pattern already in production.
+
+### Pattern C: Shared Subdomain iframe Relay (for persistent guest sharing)
+A lightweight HTML page hosted at a shared origin (e.g., `shared.empowered.vote/storage.html`) acts as a localStorage broker. Both apps open it in a hidden iframe and use `postMessage` to read/write. This is the standard browser workaround for cross-subdomain localStorage.
+
+**Confidence:** MEDIUM — pattern is well-documented but adds setup complexity and an additional subdomain/deployment to manage. Race condition handling required.
+
+### Pattern D: BroadcastChannel / SharedWorker
+Works only for same-origin tabs. Does not solve cross-subdomain sharing. Not applicable here.
+
+**Confidence:** HIGH that this does NOT apply.
 
 ---
 
-## Indiana-Specific Structure Reference
+## localStorage Key Contract
 
-Verified via Monroe County official sites and Indiana state resources:
+For cross-app sharing to work, both apps must agree on key names and data format. Recommended:
 
-**County government (same structure across all 92 Indiana counties):**
-- **Board of Commissioners** — 3 members, elected countywide from geographic districts, executive/administrative authority, contract management, property maintenance. Website pattern: `co.[county].in.us/commissioners/` or `in.gov/counties/[county]/government/commissioners/`. Monroe County: `co.monroe.in.us/commissioners/`
-- **County Council** — 7 members (4 district-elected + 3 at-large), fiscal/legislative authority, sets annual budget, sets salaries, authorizes spending. Staggered 4-year terms. Website: `co.monroe.in.us/council/`
-- **Elected county officials** — Sheriff, Auditor, Treasurer, Recorder, Assessor, Coroner, Surveyor, Clerk of Courts. Each is independently elected; no role in commissioners or council.
+| Key | Owner | Format | Notes |
+|-----|-------|--------|-------|
+| `readrank-storage` | Read & Rank only | Zustand persist blob (existing) | Not shared; internal to Read & Rank |
+| `guestCompass` | Essentials only | `{ a: {short_title: value}, s: [topicId], i: {spoke: bool} }` | Existing; may retire when fragment bridge retires |
+| `ev-verdicts` | Shared (Read & Rank writes, Essentials reads) | `{ [topic_key]: { agreed: [quoteId], disagreed: [quoteId], badges: { diamond: quoteId, gold: quoteId } } }` | New; scoped to guest path; logged-in path uses API |
 
-**City government (Bloomington as primary):**
-- **Common Council** — 9 members: 6 district-elected + 3 at-large. Official display name: "Bloomington City Council" or "Bloomington Common Council". Website: `bloomington.in.gov/council`. Indiana Code requires redistricting every decade post-Census. Most recent: 2023 elections.
-
-**Township government (Monroe County has 11 townships):**
-- **Township Trustee** — 1 elected official, executive and poor relief functions.
-- **Township Advisory Board** — 3 elected members, fiscal/budget authority, approves contracts.
-- Display name pattern: "[Township Name] Township Trustee", "[Township Name] Township Advisory Board".
+The `ev-verdicts` key design is scoped by topic_key (matching the `Quote.issue` field from the API) to enable O(1) lookup when rendering StanceAccordion rows.
 
 ---
 
 ## Sources
 
-- Monroe County official site: https://www.co.monroe.in.us/
-- Monroe County Council: https://www.co.monroe.in.us/council/
-- Monroe County Board of Commissioners: https://www.co.monroe.in.us/commissioners/
-- Indiana DLGF County Commissioners: https://www.in.gov/dlgf/local-officials/county-commissioners/
-- Indiana townships (SBOA): https://www.in.gov/sboa/political-subdivisions/townships/
-- Indiana township trustee (Wikipedia): https://en.wikipedia.org/wiki/Indiana_township_trustee
-- Bloomington City Council: https://bloomington.in.gov/council
-- Google Civic Information API reference: https://developers.google.com/civic-information/docs/v2
-- Codebase: `essentials/src/lib/classify.js` — current category routing
-- Codebase: `essentials/src/components/PoliticianGrid.jsx` — `qualifyTitle()` implementation
-- Codebase: `EV-Backend/internal/essentials/handlers.go` — `OfficialOut` struct confirming `government_name`, `chamber_name_formal`, `district_label` already in API response
+- Codebase: `EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand store shape, `readrank-storage` key, IssueProgress structure, agreed/disagreed/badge state
+- Codebase: `EV-prototypes/read-rank/src/data/api.ts` — `fetchQuotesData()` consuming `GET /essentials/quotes`
+- Codebase: `essentials/src/contexts/CompassContext.jsx` — Priority chain pattern: API > fragment > localStorage; `guestCompass` key
+- Codebase: `essentials/src/lib/compass.js` — `parseCompassFragment`, `saveGuestCompass`, `loadGuestCompass`, `clearGuestCompass`
+- Codebase: `essentials/src/components/CompassCard.jsx` — Profile section structure, StanceAccordion integration
+- Codebase: `essentials/src/components/StanceAccordion.jsx` — Per-topic row structure, lazy context fetch, accordion expand/collapse
+- Codebase: `EV-Backend/internal/essentials/handlers.go` — `GetQuotes` handler, `QuoteOut` struct, `CandidateReadRankOut` struct
+- Codebase: `EV-Backend/internal/essentials/routes.go` — `GET /quotes` route confirmed
+- MDN Web Docs (cross-origin localStorage): https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage — iframe postMessage pattern for cross-origin storage relay
+- Browser storage spec: Same-origin policy for localStorage enforced by hostname — `readrank.empowered.vote` and `essentials.empowered.vote` are different origins despite same parent domain
 
 ---
-*Feature research for: v2026.3.3 Local Government Organization milestone*
-*Researched: 2026-03-10*
+*Feature research for: v2026.3.4 Read & Rank Integration milestone*
+*Researched: 2026-03-11*
