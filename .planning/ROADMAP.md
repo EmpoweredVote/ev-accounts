@@ -323,4 +323,4 @@ Plans:
 | 79. Backend Verdict Endpoints | 2/2 | Complete    | 2026-03-12 | - |
 | 80. ev-ui Verdict Badge | 1/1 | Complete    | 2026-03-12 | - |
 | 81. Profile Integration | 3/3 | Complete    | 2026-03-12 | - |
-| 82. Logged-In Sync | 2/2 | Complete   | 2026-03-12 | - |
+| 82. Logged-In Sync | 2/2 | Complete    | 2026-03-12 | - |
