@@ -39,8 +39,8 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 
 ### Cross-App Sync
 
-- [ ] **SYNC-01**: Read & Rank POSTs verdicts to backend when user is logged in
-- [ ] **SYNC-02**: Essentials fetches logged-in user's verdicts from backend as highest-priority source
+- [x] **SYNC-01**: Read & Rank POSTs verdicts to backend when user is logged in
+- [x] **SYNC-02**: Essentials fetches logged-in user's verdicts from backend as highest-priority source
 
 ## Future Requirements
 
@@ -101,8 +101,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PROF-01 | Phase 81 | Complete |
 | PROF-02 | Phase 81 | Complete |
 | PROF-04 | Phase 81 | Complete |
-| SYNC-01 | Phase 82 | Pending |
-| SYNC-02 | Phase 82 | Pending |
+| SYNC-01 | Phase 82 | Complete |
+| SYNC-02 | Phase 82 | Complete |
 
 **Coverage:**
 - v2026.3.4 requirements: 20 total

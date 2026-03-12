@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 81-03-PLAN.md
-last_updated: "2026-03-12T19:42:33.155Z"
+stopped_at: "Checkpoint: 82-02-PLAN.md Task 2 — awaiting human-verify smoke test"
+last_updated: "2026-03-12T20:03:31.583Z"
 last_activity: 2026-03-11 — Roadmap created for v2026.3.4 (6 phases, 20/20 requirements mapped)
 progress:
   total_phases: 6
-  completed_phases: 5
-  total_plans: 11
-  completed_plans: 11
+  completed_phases: 6
+  total_plans: 13
+  completed_plans: 13
   percent: 0
 ---
 
@@ -70,6 +70,10 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 - [Phase 81-02]: EV-readrank is a standalone git repo (separate from workspace root); commits go in EV-readrank/.git, not workspace root
 - [Phase 81-profile-integration]: Phase 81-03: parseCompassFragment returns non-null for verdict-only fragments — answers field is nullable
 - [Phase 81-profile-integration]: Phase 81-03: fragment.answers null check prevents convertGuestAnswersToApiFormat crash on verdict-only fragments
+- [Phase 82-logged-in-sync]: Phase 82-02: fetchUserVerdicts returns {} on error — matches CompassContext.verdicts state shape directly; called only inside authRes.ok guard
+- [Phase 82]: useAuthState uses local React state only — auth is server-authoritative, not persisted to Zustand/localStorage
+- [Phase 82]: hasSynced ref (not state) guards duplicate POSTs — avoids re-render cycle while still preventing wasteful requests
+- [Phase 82]: postVerdicts returns early on empty payload — no POST fired for users who skipped all quotes
 
 ### Pending Todos
 
@@ -92,6 +96,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T17:28:14.705Z
-Stopped at: Completed 81-03-PLAN.md
+Last session: 2026-03-12T20:03:31.580Z
+Stopped at: Checkpoint: 82-02-PLAN.md Task 2 — awaiting human-verify smoke test
 Resume file: None

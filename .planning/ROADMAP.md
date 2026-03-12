@@ -217,7 +217,7 @@ Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
 - [x] **Phase 79: Backend Verdict Endpoints** — New verdict table and API endpoints for server-side storage (completed 2026-03-12)
 - [x] **Phase 80: ev-ui Verdict Badge** — Publish ev-ui v0.1.42+ with verdict badge prop on StanceAccordion (completed 2026-03-12)
 - [x] **Phase 81: Profile Integration** — Wire verdicts into Essentials CompassCard and StanceAccordion for guest and logged-in paths (completed 2026-03-12)
-- [ ] **Phase 82: Logged-In Sync** — Read & Rank POSTs verdicts to backend when authenticated; Essentials reads them as highest-priority source
+- [x] **Phase 82: Logged-In Sync** — Read & Rank POSTs verdicts to backend when authenticated; Essentials reads them as highest-priority source (completed 2026-03-12)
 
 ## Phase Details
 
@@ -323,4 +323,4 @@ Plans:
 | 79. Backend Verdict Endpoints | 2/2 | Complete    | 2026-03-12 | - |
 | 80. ev-ui Verdict Badge | 1/1 | Complete    | 2026-03-12 | - |
 | 81. Profile Integration | 3/3 | Complete    | 2026-03-12 | - |
-| 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |
+| 82. Logged-In Sync | 2/2 | Complete   | 2026-03-12 | - |
