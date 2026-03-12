@@ -244,10 +244,12 @@ Plans:
   1. Hub/landing page uses ev-coral, ev-muted-blue, and Manrope font consistent with the platform
   2. QuoteCard swipe UI is visually polished with EV design tokens; swipe and drag gestures function identically to before the redesign
   3. ResultsPhase layout uses card-based design matching CompassV2/Essentials visual language
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 78-01: TBD
+- [ ] 78-01-PLAN.md — Token infrastructure (.ev-heading, .ev-button-primary CSS definitions) and IssueHub ev-muted-blue refresh
+- [ ] 78-02-PLAN.md — QuoteCard white redesign with muted-blue top border, amber/cyan swipe system, stack shadows
+- [ ] 78-03-PLAN.md — ResultsPhase ev-coral CTAs, amber/cyan verdict badges, ProgressHeader update + visual verification
 
 ### Phase 79: Backend Verdict Endpoints
 **Goal**: The backend stores and serves quote verdicts per user, providing the server-side foundation for logged-in cross-device verdict sharing
