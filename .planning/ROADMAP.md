@@ -247,9 +247,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 78-01-PLAN.md — Token infrastructure (.ev-heading, .ev-button-primary CSS definitions) and IssueHub ev-muted-blue refresh
-- [ ] 78-02-PLAN.md — QuoteCard white redesign with muted-blue top border, amber/cyan swipe system, stack shadows
-- [ ] 78-03-PLAN.md — ResultsPhase ev-coral CTAs, amber/cyan verdict badges, ProgressHeader update + visual verification
+- [x] 78-01-PLAN.md — Token infrastructure (.ev-heading, .ev-button-primary CSS definitions) and IssueHub ev-muted-blue refresh
+- [x] 78-02-PLAN.md — QuoteCard white redesign with muted-blue top border, amber/cyan swipe system, stack shadows
+- [x] 78-03-PLAN.md — ResultsPhase ev-coral CTAs, amber/cyan verdict badges, ProgressHeader update + visual verification
 
 ### Phase 79: Backend Verdict Endpoints
 **Goal**: The backend stores and serves quote verdicts per user, providing the server-side foundation for logged-in cross-device verdict sharing
