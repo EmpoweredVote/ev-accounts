@@ -1,5 +1,24 @@
 # Milestones
 
+## v2026.3.4 Read & Rank Integration (Shipped: 2026-03-12)
+
+**Phases completed:** 6 phases, 13 plans
+**Timeline:** 2 days (2026-03-11 — 2026-03-12)
+**Requirements:** 20/20 satisfied
+**Repos:** EV-readrank (new), EV-Backend, ev-ui, essentials
+
+**Delivered:** Read & Rank extracted to `readrank.empowered.vote` on Cloudflare Pages with EV brand redesign, backend verdict storage, and full verdict integration into Essentials politician profiles — guests via URL fragment, logged-in users via server-side sync.
+
+**Key accomplishments:**
+1. Read & Rank extracted from EV-prototypes monorepo to standalone `EmpoweredVote/read-rank` repo, deployed to `readrank.empowered.vote` on Cloudflare Pages with SPA routing, NPM_TOKEN CI auth, and Zustand persist key migration
+2. EV brand design applied throughout — white card pattern with ev-muted-blue top border, amber/cyan colorblind-safe swipe feedback, ev-coral CTAs, and Manrope typography matching CompassV2/Essentials
+3. `compass.quote_verdicts` backend table with bulk-upsert POST and GET endpoints (authenticated, session-protected); `GET /essentials/quotes?politician_id=X` filter added
+4. `StanceAccordion` migrated to ev-ui v0.1.43 with `verdictsByQuote` prop rendering per-quote verdict badges and lazy quote fetch cache (`quotesCache` useRef pattern)
+5. Verdict fragment bridge: Read & Rank encodes verdicts in URL fragment, Essentials parses and caches to localStorage — badges persist across profile navigations within the session
+6. Logged-in verdict sync: Read & Rank auto-POSTs verdicts on results phase completion; Essentials fetches from backend as highest-priority source enabling cross-device consistency
+
+---
+
 ## v2026.3.3 Local Government Organization (Shipped: 2026-03-11)
 
 **Phases completed:** 5 phases, 6 plans

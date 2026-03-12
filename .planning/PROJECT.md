@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and feature prototypes (Read & Rank, Treasury Tracker, Data Entry, Empowered Badges). The platform is run by a nonprofit with a 2-3 person dev team, currently deployed across Netlify, Supabase, and Render. The compass works without login (guest-first) with guided onboarding, coach mark tours (post-calibration, Library, Compare), write-in stances in calibration, and full localStorage persistence across page refreshes; it renders cleanly across devices and features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching — including ST_Intersects area-boundary search for city/ZIP queries — to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted, 66.8% population coverage), city hall building photographs, contact info sections, chamber/district subtitles, initials avatars, and contextual term dates on profile pages. Politician profiles display legislative activity — committee assignments with roles, leadership positions, voting records with session filtering, and sponsored legislation — sourced from Congress.gov, LegiScan, Open States, IGA (Indiana), and local data scraping across federal, state (IN + CA), and local (Bloomington + LA County) levels. Profiles also show a compass comparison card with dual-overlay radar chart (user vs. politician stances) and a topic-by-topic stance breakdown with source links, working for both logged-in and guest users via a cross-origin URL fragment bridge between CompassV2 and Essentials. Local government sections display specific body names (e.g., "Monroe County Council" instead of "County Council") with official website links, powered by a government_bodies table and splitByBodyName frontend sub-grouping. State legislative data is verified via automated audit scripts with a documented new-session playbook. A repeatable TIGER + ArcGIS import pipeline and config-driven enrichment scripts support expansion to additional regions.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook.
 
 ## Core Value
 
@@ -153,17 +153,22 @@ Users can explore political issues and discover their elected officials without 
 - ✓ State-specific local government organization (Indiana county structure) — v2026.3.3
 - ✓ City-level bodies use specific names and website links — v2026.3.3
 - ✓ Township-level bodies use specific names and website links — v2026.3.3
+- ✓ Read & Rank extracted to standalone repo at `readrank.empowered.vote` on Cloudflare Pages — v2026.3.4
+- ✓ EV brand design applied to Read & Rank (white card pattern, amber/cyan verdict badges, ev-muted-blue accents, Manrope) — v2026.3.4
+- ✓ `compass.quote_verdicts` table with bulk-upsert POST and GET endpoints (authenticated) — v2026.3.4
+- ✓ `GET /essentials/quotes?politician_id=X` filter for per-politician quote fetch — v2026.3.4
+- ✓ ev-ui v0.1.43 with `verdictsByQuote` prop on StanceAccordion, lazy quote fetch cache — v2026.3.4
+- ✓ Verdict fragment bridge: Read & Rank encodes verdicts in URL, Essentials parses and caches to localStorage — v2026.3.4
+- ✓ CompassContext `verdicts` state with priority chain (API > fragment > localStorage) — v2026.3.4
+- ✓ "View on Essentials" CTAs in Read & Rank ResultsPhase and CandidateAlignmentPage with verdict fragment — v2026.3.4
+- ✓ Read & Rank auto-POSTs verdicts to backend on results phase completion (logged-in users) — v2026.3.4
+- ✓ Essentials fetches logged-in user verdicts from backend as highest-priority source — v2026.3.4
 
 ### Active
 
-- [ ] Read & Rank extracted to standalone repo on Cloudflare Pages (`readrank.empowered.vote`)
-- [ ] Read & Rank visual refresh (same swipe/agree-disagree mechanics, polished design)
-- [ ] Quote verdicts integrated into Essentials politician profiles under topic drill-down
-- [ ] Shared `.empowered.vote` localStorage for cross-app state (verdicts, compass data)
-- [ ] Guest verdict sharing via shared domain localStorage (no login required)
-- [ ] Server-side verdict storage for logged-in users with cross-device sync
-- [ ] Retire URL fragment bridge (replaced by shared domain localStorage)
-- [ ] Hosting references updated from Netlify to Cloudflare Pages
+- [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
+- [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
+- [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
 
 ### Future
 
@@ -174,19 +179,9 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Current Milestone: v2026.3.4 Read & Rank Integration
+## Last Milestone: v2026.3.4 Read & Rank Integration (Shipped 2026-03-12)
 
-**Goal:** Extract Read & Rank into standalone app and integrate quote verdicts into Essentials politician profiles via shared `.empowered.vote` localStorage.
-
-**Target features:**
-- Read & Rank standalone repo with fresh design on `readrank.empowered.vote`
-- Quote verdicts visible under topics in CompassCard on Essentials profiles
-- Shared cross-app state via `.empowered.vote` localStorage (replaces URL fragment bridge)
-- Server-side verdict sync for logged-in users
-
-## Last Milestone: v2026.3.3 Local Government Organization (Shipped 2026-03-11)
-
-**Delivered:** Local government sections in Essentials reorganized with specific body names and official website links. GovernmentBody table with LEFT JOIN enrichment, classify.js commission fix, ev-ui 0.1.41 websiteUrl prop, splitByBodyName frontend sub-grouping. 12/12 requirements satisfied.
+**Delivered:** Read & Rank extracted to `readrank.empowered.vote` on Cloudflare Pages with EV brand redesign. Quote verdicts integrated into Essentials politician profiles — guests via URL fragment bridge, logged-in users via server-side `compass.quote_verdicts` storage with auto-sync. ev-ui v0.1.43 with per-quote verdict badges in StanceAccordion. 20/20 requirements satisfied.
 
 ### Out of Scope
 
@@ -211,15 +206,16 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.3 with ~38K LOC across 4 repos + Python import scripts:
-- **CompassV2** (React 19): ~14.5K LOC — compass quiz, Library, guided onboarding with coach mark tours, calibration with localStorage persistence, guest auth, inline politician picker, return banner + compass fragment serializer for cross-origin bridge
-- **EV-Backend** (Go 1.24): ~13K LOC essentials module — auth, compass (cookie domain fix for .empowered.vote), essentials (geofence-only + PostGIS, legislative data model, government_bodies table with LEFT JOIN enrichment, Congress.gov/LegiScan/IGA clients, 10 CLI import subcommands, 5 legislative API endpoints), treasury, staging
-- **ev-ui** (React/tsup): ~4K LOC — RadarChartCore, PoliticianProfile, PoliticianCard, LegislativeInlineSummary, LegislativeRecord, CategorySection with websiteUrl prop (v0.1.41)
-- **essentials** (React 19): ~4.2K LOC — address autocomplete, unified search path, CompassContext provider, CompassCard (dual-overlay radar + StanceAccordion), CompassPreview popover, guest fragment bridge, splitByBodyName sub-grouping in Results.jsx
-- **Python scripts**: ~17K LOC — state legislative import (LegiScan/Open States/IGA), local data pipelines (Bloomington/LA County), headshot research/upload pipeline, coverage validation
+Shipped v2026.3.4 across 5 repos + Python import scripts:
+- **EV-readrank** (React 19 + TypeScript): New standalone repo — Zustand state, Vite/Cloudflare Pages SPA config, `useAuthState` hook, `verdictSync` utility, verdict fragment builder, "View on Essentials" CTAs
+- **CompassV2** (React 19): ~14.5K LOC — compass quiz, Library, guided onboarding, inline politician picker, compass fragment serializer
+- **EV-Backend** (Go 1.24): ~13K LOC — added `compass.quote_verdicts` table, GET/POST `/compass/verdicts` endpoints, `politician_id` filter on GET `/essentials/quotes`
+- **ev-ui** (React/tsup): ~4K LOC — v0.1.43 with StanceAccordion `verdictsByQuote` prop, lazy quote fetch cache, inline verdict badge rendering (inline styles, no Tailwind coupling)
+- **essentials** (React 19): ~4.2K LOC — CompassContext extended with `verdicts` state (API > fragment > localStorage priority), `fetchUserVerdicts`, guest verdict localStorage helpers, `parseCompassFragment` extended for verdict-only fragments
+- **Python scripts**: ~17K LOC — unchanged from v2026.3.3
 
-Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Python (psycopg2/requests/BeautifulSoup).
-ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
+Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Cloudflare Pages + Python (psycopg2/requests/BeautifulSoup).
+ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and EV-readrank.
 
 ## Constraints
 
@@ -230,4 +226,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-11 after v2026.3.4 milestone start*
+*Last updated: 2026-03-12 after v2026.3.4 milestone*

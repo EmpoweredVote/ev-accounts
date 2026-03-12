@@ -244,6 +244,51 @@
 
 ---
 
+## Milestone: v2026.3.4 — Read & Rank Integration
+
+**Shipped:** 2026-03-12
+**Phases:** 6 | **Plans:** 13
+
+### What Was Built
+- Read & Rank extracted from EV-prototypes monorepo to standalone `readrank.empowered.vote` on Cloudflare Pages
+- EV brand design applied throughout (white card, amber/cyan verdict badges, ev-muted-blue accents)
+- Backend `compass.quote_verdicts` table with bulk-upsert POST/GET endpoints
+- ev-ui v0.1.43 with StanceAccordion `verdictsByQuote` prop and lazy quote fetch cache
+- Verdict fragment bridge for guests (URL encoding + localStorage cache) and server-side sync for logged-in users
+
+### What Worked
+- Parallel phase design (Phases 78, 79, 80 ran independently) maximized throughput on a cross-app milestone
+- URL fragment bridge pattern from v2026.3.2 reused as foundation — verdict encoding was an extension, not a rewrite
+- ev-ui inline styles (no Tailwind coupling) kept the library portable across all three consuming apps
+- `quotesCache useRef(null)` pattern — null vs empty array distinguishes unfetched from fetched-but-empty cleanly
+- Fire-and-forget verdict POST with `useRef(false)` sync guard — triggered exactly once per session
+
+### What Was Inefficient
+- Phase 77 plans split extraction (77-01) from deployment (77-02) — a single-repo migration with minor config changes could have been one plan
+- Some PLAN.md checkboxes left unchecked despite SUMMARY.md confirming completion — minor doc inconsistency
+
+### Patterns Established
+- Cloudflare Pages SPA routing: `public/_redirects` with `/* /index.html 200`
+- Local ev-ui dev alias: `fs.existsSync` check against `../ev-ui/dist` in vite.config.ts
+- Zustand persist versioning: `version + migrate passthrough` for storage key renames without data loss
+- `apiUrl` prop pattern: library components receive API base URL via prop (not `import.meta.env`)
+- Verdict priority chain: API > URL fragment > localStorage in CompassContext
+- `parseCompassFragment` null guard: `answers !== null` check prevents crash on verdict-only fragments
+
+### Key Lessons
+1. Cross-app integration works cleanest with clear ownership boundaries — Read & Rank encodes, Essentials decodes; no shared state infrastructure needed
+2. Inline styles in component libraries avoid Tailwind coupling — consumers provide the runtime; library provides the structure
+3. URL fragment bridge is sufficient for MVP guest cross-app state — shared domain localStorage adds complexity without clear user benefit at this scale
+4. Cloudflare auto-provisions DNS instantly for domains already on the account
+5. `useRef(false)` sync guard prevents double-POSTs on React strict mode double-invoke
+
+### Cost Observations
+- Model mix: ~75% sonnet, ~25% opus
+- Sessions: ~6 (one per phase + planning)
+- Notable: Multi-repo milestone (5 active repos) completed in 2 days via parallel phase design
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -257,6 +302,7 @@
 | v2026.4 | 7 | 21 | Mixed data + UX milestone; Wayback Machine fallback; coach mark pattern established |
 | v2026.3.2 | 5 | 8 | First cross-app integration milestone; URL fragment bridge pattern; self-gating components |
 | v2026.3.3 | 5 | 6 | DB audit gating pattern; government_bodies enrichment; smallest plan count milestone |
+| v2026.3.4 | 6 | 13 | First multi-repo cross-app milestone; parallel phase design; verdict fragment bridge pattern |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -275,3 +321,6 @@
 13. Self-gating components keep parent code clean — child decides rendering based on data availability (v2026.3.2)
 14. DB audit phase before data-dependent features prevents incorrect assumptions from driving design (v2026.3.3)
 15. Atomic updates to consumer structures — partial updates to classification maps cause silent rendering bugs (v2026.3.3)
+16. Cross-app feature integration works cleanest when each app owns its encoding boundary — no shared state infrastructure needed (v2026.3.4)
+17. Inline styles in component libraries avoid Tailwind coupling — consumers provide the runtime; library provides the structure (v2026.3.4)
+18. `useRef(false)` sync guard prevents double-POSTs in React strict mode double-invoke (v2026.3.4)
