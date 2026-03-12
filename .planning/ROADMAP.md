@@ -274,10 +274,10 @@ Plans:
   1. ev-ui v0.1.42+ is published to GitHub npm registry with `verdictsByTopic` prop on StanceAccordion
   2. When a verdict is present for a topic, the badge (agree/disagree/other variants) renders inline in the topic row
   3. Existing callers that pass no `verdictsByTopic` prop render identically to before the update
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 80-01: TBD
+- [ ] 80-01-PLAN.md — Migrate StanceAccordion to ev-ui with verdict badge, publish v0.1.42, update essentials caller
 
 ### Phase 81: Profile Integration
 **Goal**: Essentials politician profiles display a user's Read & Rank verdicts inline under each topic, working for both guests (via URL fragment) and logged-in users (via localStorage cache seeded from fragment)
@@ -318,6 +318,6 @@ Plans:
 | 77. Standalone Extraction | 2/2 | Complete    | 2026-03-12 | - |
 | 78. Visual Refresh | 3/3 | Complete   | 2026-03-12 | - |
 | 79. Backend Verdict Endpoints | 2/2 | Complete    | 2026-03-12 | - |
-| 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
+| 80. ev-ui Verdict Badge | v2026.3.4 | 0/1 | Not started | - |
 | 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
 | 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |
