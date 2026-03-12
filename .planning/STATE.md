@@ -84,6 +84,7 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 7 | Remove party mentions from EV-ReadRank results page | 2026-03-12 | bc10639 | [7-remove-party-mentions-from-ev-readrank-r](./quick/7-remove-party-mentions-from-ev-readrank-r/) |
+| 8 | Rename Monroe County Commission + update Council membership 2025 | 2026-03-12 | 8a63351 | [8-update-monroe-county-data-rename-commiss](./quick/8-update-monroe-county-data-rename-commiss/) |
 
 ### Blockers/Concerns
 
@@ -102,6 +103,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T22:30:00.000Z
-Stopped at: Completed quick-7 (remove party mentions from EV-ReadRank results UI)
+Last session: 2026-03-12T22:38:00.000Z
+Stopped at: quick-8 checkpoint (Task 3 — awaiting human verification of DB state + geofence/photo follow-up)
 Resume file: None
