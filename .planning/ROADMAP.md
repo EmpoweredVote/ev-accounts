@@ -321,5 +321,5 @@ Plans:
 | 78. Visual Refresh | 3/3 | Complete   | 2026-03-12 | - |
 | 79. Backend Verdict Endpoints | 2/2 | Complete    | 2026-03-12 | - |
 | 80. ev-ui Verdict Badge | 1/1 | Complete    | 2026-03-12 | - |
-| 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
+| 81. Profile Integration | 1/3 | In Progress|  | - |
 | 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |

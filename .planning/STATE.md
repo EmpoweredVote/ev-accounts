@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 81 context gathered
-last_updated: "2026-03-12T14:50:08.726Z"
+stopped_at: Completed 81-profile-integration-01-PLAN.md
+last_updated: "2026-03-12T17:17:40.089Z"
 last_activity: 2026-03-11 — Roadmap created for v2026.3.4 (6 phases, 20/20 requirements mapped)
 progress:
   total_phases: 6
   completed_phases: 4
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 9
   percent: 0
 ---
 
@@ -64,6 +64,8 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 - [Phase 79-02]: Conditional WHERE clause built by string concatenation before db.DB.Raw() call — avoids GORM subquery complexity while keeping all existing query structure intact
 - [Phase 80-ev-ui]: StanceAccordion uses inline styles (not Tailwind) for verdict badge spans — no Tailwind dependency in ev-ui library
 - [Phase 80-ev-ui]: apiUrl prop with default 'https://api.empowered.vote' replaces VITE_API_URL in StanceAccordion — makes component usable in any consumer without build env dependency
+- [Phase 81-profile-integration]: Phase 81-01: verdictsByTopic removed from collapsed-row render; verdictsByQuote prop added for per-topic quote cards with verdict badges in expanded rows
+- [Phase 81-profile-integration]: Phase 81-01: ev-ui quotesCache uses null sentinel (not []) to distinguish unfetched from fetched-but-empty; fetched once per politicianId mount
 
 ### Pending Todos
 
@@ -86,6 +88,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T14:50:08.722Z
-Stopped at: Phase 81 context gathered
-Resume file: .planning/phases/81-profile-integration/81-CONTEXT.md
+Last session: 2026-03-12T17:17:40.086Z
+Stopped at: Completed 81-profile-integration-01-PLAN.md
+Resume file: None

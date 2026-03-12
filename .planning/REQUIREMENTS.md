@@ -33,7 +33,7 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 ### Profile Integration
 
 - [ ] **PROF-01**: CompassContext extended with verdicts state field (priority: API > fragment > localStorage)
-- [ ] **PROF-02**: StanceAccordion displays agree/disagree verdict badges inline under each topic
+- [x] **PROF-02**: StanceAccordion displays agree/disagree verdict badges inline under each topic
 - [x] **PROF-03**: ev-ui updated to v0.1.42+ with verdict badge prop on StanceAccordion
 - [ ] **PROF-04**: "View on Essentials" CTA in Read & Rank results linking to politician profile with verdict fragment
 
@@ -99,7 +99,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VERD-05 | Phase 81 | Pending |
 | VERD-06 | Phase 81 | Pending |
 | PROF-01 | Phase 81 | Pending |
-| PROF-02 | Phase 81 | Pending |
+| PROF-02 | Phase 81 | Complete |
 | PROF-04 | Phase 81 | Pending |
 | SYNC-01 | Phase 82 | Pending |
 | SYNC-02 | Phase 82 | Pending |
