@@ -288,10 +288,12 @@ Plans:
   2. Guest verdicts passed via URL fragment are cached to localStorage so badges persist across profile page navigations within the session
   3. CompassContext in Essentials exposes a `verdicts` state field populated from URL fragment on first load and localStorage on subsequent loads
   4. "View on Essentials" CTA in Read & Rank ResultsPhase and CandidateAlignmentPage links to the correct politician profile with the verdict fragment encoded
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 81-01: TBD
+- [ ] 81-01-PLAN.md — ev-ui v0.1.43: verdictsByQuote prop and quote cards in expanded StanceAccordion row
+- [ ] 81-02-PLAN.md — EV-ReadRank: verdict fragment builder and View on Essentials CTAs
+- [ ] 81-03-PLAN.md — Essentials: fragment parsing, localStorage helpers, CompassContext verdicts, CompassCard wiring
 
 ### Phase 82: Logged-In Sync
 **Goal**: Logged-in users' verdicts are stored on the server so they appear on Essentials profiles without needing to navigate from Read & Rank each time
