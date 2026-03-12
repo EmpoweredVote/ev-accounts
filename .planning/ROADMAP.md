@@ -312,7 +312,7 @@ Plans:
 | 74. Data Seeding | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 75. ev-ui CategorySection Update | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
-| 77. Standalone Extraction | 2/2 | Complete   | 2026-03-12 | - |
+| 77. Standalone Extraction | 2/2 | Complete    | 2026-03-12 | - |
 | 78. Visual Refresh | v2026.3.4 | 0/TBD | Not started | - |
 | 79. Backend Verdict Endpoints | v2026.3.4 | 0/TBD | Not started | - |
 | 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
