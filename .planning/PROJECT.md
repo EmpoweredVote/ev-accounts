@@ -156,16 +156,33 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-- [ ] County council at-large vs district members distinguished in display
-- [ ] State-configurable body structure for California Board of Supervisors
-- [ ] LA County bodies seeded with official website URLs
+- [ ] Read & Rank extracted to standalone repo on Cloudflare Pages (`readrank.empowered.vote`)
+- [ ] Read & Rank visual refresh (same swipe/agree-disagree mechanics, polished design)
+- [ ] Quote verdicts integrated into Essentials politician profiles under topic drill-down
+- [ ] Shared `.empowered.vote` localStorage for cross-app state (verdicts, compass data)
+- [ ] Guest verdict sharing via shared domain localStorage (no login required)
+- [ ] Server-side verdict storage for logged-in users with cross-device sync
+- [ ] Retire URL fragment bridge (replaced by shared domain localStorage)
+- [ ] Hosting references updated from Netlify to Cloudflare Pages
 
 ### Future
 
+- [ ] County council at-large vs district members distinguished in display
+- [ ] State-configurable body structure for California Board of Supervisors
+- [ ] LA County bodies seeded with official website URLs
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
-- [ ] Read & Rank quotes on Essentials profiles
+
+## Current Milestone: v2026.3.4 Read & Rank Integration
+
+**Goal:** Extract Read & Rank into standalone app and integrate quote verdicts into Essentials politician profiles via shared `.empowered.vote` localStorage.
+
+**Target features:**
+- Read & Rank standalone repo with fresh design on `readrank.empowered.vote`
+- Quote verdicts visible under topics in CompassCard on Essentials profiles
+- Shared cross-app state via `.empowered.vote` localStorage (replaces URL fragment bridge)
+- Server-side verdict sync for logged-in users
 
 ## Last Milestone: v2026.3.3 Local Government Organization (Shipped 2026-03-11)
 
@@ -208,9 +225,9 @@ ev-ui published to GitHub npm registry, consumed by CompassV2 and essentials.
 
 - **Tech stack**: Existing Go backend + React frontends — no framework migrations
 - **Data source**: Cached politician data from database; Google Maps for geocoding
-- **Hosting**: Netlify (frontends), Supabase (DB), Render (backend)
+- **Hosting**: Cloudflare Pages (frontends), Supabase (DB), Render (backend)
 - **Budget**: Nonprofit — prefer free tiers; Google Maps free tier (28K requests/month)
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-11 after v2026.3.3 milestone*
+*Last updated: 2026-03-11 after v2026.3.4 milestone start*

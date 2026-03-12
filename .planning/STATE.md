@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: completed
-stopped_at: Completed 76-frontend-results-integration-01-PLAN.md
-last_updated: "2026-03-11T17:56:20.456Z"
-last_activity: 2026-03-11 — Phase 76-01 complete; splitByBodyName helper added to Results.jsx; backend SearchPoliticians endpoint fixed with government_bodies LEFT JOIN; all BODY-01 through BODY-05 requirements verified
+milestone: v2026.3.4
+milestone_name: Read & Rank Integration
+status: active
+stopped_at: null
+last_updated: "2026-03-11T20:00:00.000Z"
+last_activity: 2026-03-11 — Milestone v2026.3.4 started
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 6
-  completed_plans: 6
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -21,12 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-11)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** Defining requirements for v2026.3.4
 
 ## Current Position
 
-Milestone v2026.3.3 shipped 2026-03-11.
-No active milestone — use `/gsd:new-milestone` to start next.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-11 — Milestone v2026.3.4 started
 
 ## Performance Metrics
 
@@ -63,5 +65,5 @@ No active milestone — use `/gsd:new-milestone` to start next.
 ## Session Continuity
 
 Last session: 2026-03-11
-Stopped at: v2026.3.3 milestone completed
-Resume: `/gsd:new-milestone` for next milestone
+Stopped at: Milestone v2026.3.4 requirements definition
+Resume: Define requirements, then roadmap
