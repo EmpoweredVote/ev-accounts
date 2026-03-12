@@ -9,11 +9,11 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 
 ### App Extraction
 
-- [ ] **EXTR-01**: Read & Rank extracted to standalone GitHub repo (`ev-readrank` or similar)
+- [x] **EXTR-01**: Read & Rank extracted to standalone GitHub repo (`ev-readrank` or similar)
 - [ ] **EXTR-02**: Read & Rank deployed to `readrank.empowered.vote` on Cloudflare Pages with SPA routing
 - [ ] **EXTR-03**: Backend CORS allowlist updated to include `readrank.empowered.vote`
-- [ ] **EXTR-04**: ev-ui dependency updated from ^0.1.6 to current ^0.1.41
-- [ ] **EXTR-05**: Zustand persist key namespaced with migration from old key
+- [x] **EXTR-04**: ev-ui dependency updated from ^0.1.6 to current ^0.1.41
+- [x] **EXTR-05**: Zustand persist key namespaced with migration from old key
 
 ### Visual Design
 
@@ -83,11 +83,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| EXTR-01 | Phase 77 | Pending |
+| EXTR-01 | Phase 77 | Complete |
 | EXTR-02 | Phase 77 | Pending |
 | EXTR-03 | Phase 77 | Pending |
-| EXTR-04 | Phase 77 | Pending |
-| EXTR-05 | Phase 77 | Pending |
+| EXTR-04 | Phase 77 | Complete |
+| EXTR-05 | Phase 77 | Complete |
 | DSGN-01 | Phase 78 | Pending |
 | DSGN-02 | Phase 78 | Pending |
 | DSGN-03 | Phase 78 | Pending |
