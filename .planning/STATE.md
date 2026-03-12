@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 78-visual-refresh 78-01-PLAN.md
-last_updated: "2026-03-12T02:52:47.168Z"
+stopped_at: Completed 78-visual-refresh 78-02-PLAN.md
+last_updated: "2026-03-12T02:56:08.545Z"
 last_activity: 2026-03-11 — Roadmap created for v2026.3.4 (6 phases, 20/20 requirements mapped)
 progress:
   total_phases: 6
   completed_phases: 1
   total_plans: 5
-  completed_plans: 3
+  completed_plans: 4
   percent: 0
 ---
 
@@ -55,6 +55,8 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 - [Phase 77-02]: CF Pages preview builds (*.pages.dev) do not need CORS entries — only named subdomains (production and dev) require allowlist entries
 - [Phase 78-visual-refresh]: Phase 78-01: Tailwind v4 requires @theme block in CSS for utility generation — color tokens defined in tailwind.config.js alone won't generate utilities; added ev-teal/ev-dark-blue aliases to both locations
 - [Phase 78-visual-refresh]: Phase 78-01: ev-muted-blue (#00657c) established as primary EV accent for Read & Rank; ev-light-blue and ev-teal deprecated for accent use in IssueHub
+- [Phase 78-visual-refresh]: Phase 78-02: Amber (#b45309) / cyan (#0e7490) swipe pair established — semantically aligns with Gold/Diamond badge system in ResultsPhase
+- [Phase 78-visual-refresh]: Phase 78-02: Stack shadow applied via inline boxShadow in Framer Motion style prop — keeps animation values intact without CSS class conflicts
 
 ### Pending Todos
 
@@ -77,6 +79,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.4)
 
 ## Session Continuity
 
-Last session: 2026-03-12T02:52:47.166Z
-Stopped at: Completed 78-visual-refresh 78-01-PLAN.md
+Last session: 2026-03-12T02:56:01.784Z
+Stopped at: Completed 78-visual-refresh 78-02-PLAN.md
 Resume file: None

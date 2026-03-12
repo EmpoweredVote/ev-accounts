@@ -315,7 +315,7 @@ Plans:
 | 75. ev-ui CategorySection Update | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 77. Standalone Extraction | 2/2 | Complete    | 2026-03-12 | - |
-| 78. Visual Refresh | 1/3 | In Progress|  | - |
+| 78. Visual Refresh | 2/3 | In Progress|  | - |
 | 79. Backend Verdict Endpoints | v2026.3.4 | 0/TBD | Not started | - |
 | 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
 | 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
