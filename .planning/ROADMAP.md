@@ -260,10 +260,11 @@ Plans:
   2. Authenticated POST to `/compass/verdicts` bulk-upserts verdicts and returns the updated set
   3. Authenticated GET to `/compass/verdicts` returns the current user's verdicts
   4. GET to `/essentials/quotes?politician_id=X` returns only quotes for the specified politician
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 79-01: TBD
+- [ ] 79-01-PLAN.md — QuoteVerdict model, GET + POST /compass/verdicts handlers and routes
+- [ ] 79-02-PLAN.md — politician_id filter on GET /essentials/quotes
 
 ### Phase 80: ev-ui Verdict Badge
 **Goal**: ev-ui publishes a new version with verdict badge support on StanceAccordion, enabling downstream consumption in Essentials
@@ -316,7 +317,7 @@ Plans:
 | 76. Frontend Results Integration | v2026.3.3 | 1/1 | Complete | 2026-03-11 |
 | 77. Standalone Extraction | 2/2 | Complete    | 2026-03-12 | - |
 | 78. Visual Refresh | 3/3 | Complete   | 2026-03-12 | - |
-| 79. Backend Verdict Endpoints | v2026.3.4 | 0/TBD | Not started | - |
+| 79. Backend Verdict Endpoints | v2026.3.4 | 0/2 | Planning | - |
 | 80. ev-ui Verdict Badge | v2026.3.4 | 0/TBD | Not started | - |
 | 81. Profile Integration | v2026.3.4 | 0/TBD | Not started | - |
 | 82. Logged-In Sync | v2026.3.4 | 0/TBD | Not started | - |
