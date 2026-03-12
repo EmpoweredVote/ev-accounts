@@ -303,10 +303,11 @@ Plans:
   1. When a logged-in user finishes rating quotes on Read & Rank, their verdicts are POSTed to the backend automatically
   2. When a logged-in user opens an Essentials politician profile directly (not via CTA link), verdict badges still appear because Essentials fetches verdicts from the backend as the highest-priority source
   3. Verdicts are consistent across devices for logged-in users — rating on one device and visiting the profile on another shows the same badges
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 82-01: TBD
+- [ ] 82-01-PLAN.md — EV-readrank: useAuthState hook, verdictSync utility, PhaseContainer sync trigger
+- [ ] 82-02-PLAN.md — Essentials: fetchUserVerdicts in compass.js, wire into CompassContext authRes.ok block + human smoke test
 
 ## Progress
 
