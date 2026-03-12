@@ -27,7 +27,7 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 - [x] **VERD-02**: POST /compass/verdicts endpoint for bulk upsert (authenticated)
 - [x] **VERD-03**: GET /compass/verdicts endpoint for current user's verdicts (authenticated)
 - [x] **VERD-04**: GET /essentials/quotes filtered by politician_id (extends existing endpoint)
-- [ ] **VERD-05**: Guest verdict fragment encoding in URL when navigating to Essentials
+- [x] **VERD-05**: Guest verdict fragment encoding in URL when navigating to Essentials
 - [ ] **VERD-06**: Essentials reads and caches guest verdicts from URL fragment to localStorage
 
 ### Profile Integration
@@ -35,7 +35,7 @@ Requirements for Read & Rank Integration milestone. Each maps to roadmap phases.
 - [ ] **PROF-01**: CompassContext extended with verdicts state field (priority: API > fragment > localStorage)
 - [x] **PROF-02**: StanceAccordion displays agree/disagree verdict badges inline under each topic
 - [x] **PROF-03**: ev-ui updated to v0.1.42+ with verdict badge prop on StanceAccordion
-- [ ] **PROF-04**: "View on Essentials" CTA in Read & Rank results linking to politician profile with verdict fragment
+- [x] **PROF-04**: "View on Essentials" CTA in Read & Rank results linking to politician profile with verdict fragment
 
 ### Cross-App Sync
 
@@ -96,11 +96,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VERD-03 | Phase 79 | Complete |
 | VERD-04 | Phase 79 | Complete |
 | PROF-03 | Phase 80 | Complete |
-| VERD-05 | Phase 81 | Pending |
+| VERD-05 | Phase 81 | Complete |
 | VERD-06 | Phase 81 | Pending |
 | PROF-01 | Phase 81 | Pending |
 | PROF-02 | Phase 81 | Complete |
-| PROF-04 | Phase 81 | Pending |
+| PROF-04 | Phase 81 | Complete |
 | SYNC-01 | Phase 82 | Pending |
 | SYNC-02 | Phase 82 | Pending |
 
