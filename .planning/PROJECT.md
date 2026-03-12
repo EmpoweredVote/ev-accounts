@@ -166,11 +166,15 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
+- [ ] Unified SiteHeader (from ev-ui) on all three EV apps: Compass, Essentials, ReadRank
+- [ ] Auth state (username/logout or Sign in) visible in header across all apps
+- [ ] SiteHeader nav links updated to production .empowered.vote URLs
+
+### Future
+
 - [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
 - [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
 - [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
-
-### Future
 
 - [ ] County council at-large vs district members distinguished in display
 - [ ] State-configurable body structure for California Board of Supervisors
@@ -178,6 +182,16 @@ Users can explore political issues and discover their elected officials without 
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
+
+## Current Milestone: v2026.3.5 Unified Navigation Header
+
+**Goal:** Add a consistent, auth-aware navigation header across all three EV apps so users see the same branded header everywhere and login state is visible without re-logging in.
+
+**Target features:**
+- SiteHeader (ev-ui) integrated into Essentials with full auth state (username/logout/sign-in)
+- SiteHeader in ReadRank updated with profileMenu for auth state
+- SiteHeader nav links updated to production empowered.vote URLs
+- Floating AuthIndicator in Essentials replaced by proper header
 
 ## Last Milestone: v2026.3.4 Read & Rank Integration (Shipped 2026-03-12)
 
@@ -226,4 +240,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and E
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-12 after v2026.3.4 milestone*
+*Last updated: 2026-03-12 after v2026.3.5 milestone start*
