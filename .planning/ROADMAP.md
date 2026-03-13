@@ -267,7 +267,10 @@ Plans:
   1. A logged-in user sees their username in the ReadRank header with a working logout option
   2. A logged-out user sees a "Sign in" link in the ReadRank header that navigates to compass.empowered.vote/login
   3. After logging out from ReadRank, the session is cleared and the header switches to "Sign in" state
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 85-01-PLAN.md — Upgrade ev-ui to ^0.1.49, extend useAuthState with userName + logout, wire profileMenu into SiteHeader
+- [ ] 85-02-PLAN.md — Human verify: logged-in username, Sign out, and Sign in link states
 
 ## Progress
 
@@ -275,4 +278,4 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 83. ev-ui SiteHeader URL Update | 1/1 | Complete    | 2026-03-13 | - |
 | 84. Essentials Header Integration | 2/2 | Complete    | 2026-03-13 | - |
-| 85. ReadRank Header Auth | v2026.3.5 | 0/TBD | Not started | - |
+| 85. ReadRank Header Auth | v2026.3.5 | 0/2 | Not started | - |
