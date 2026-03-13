@@ -124,10 +124,12 @@ BEGIN
     RAISE EXCEPTION 'no location on file for user %', p_user_id;
   END IF;
 
-  -- Decrypt: bytea → text → float8.
+  -- Decrypt: bytea → UTF8 text → float8.
+  -- convert_from() required — bytea::text gives the hex representation (\x...) not the
+  -- original string. convert_from(bytea, 'UTF8') recovers the original text correctly.
   -- extensions. prefix required; pgcrypto installs into extensions schema in Supabase.
-  v_lat := extensions.pgp_sym_decrypt_bytea(v_encrypted_lat, v_key)::text::float8;
-  v_lng := extensions.pgp_sym_decrypt_bytea(v_encrypted_lng, v_key)::text::float8;
+  v_lat := convert_from(extensions.pgp_sym_decrypt_bytea(v_encrypted_lat, v_key), 'UTF8')::float8;
+  v_lng := convert_from(extensions.pgp_sym_decrypt_bytea(v_encrypted_lng, v_key), 'UTF8')::float8;
 
   -- Build geometry point: ST_MakePoint(longitude, latitude) — X=lng, Y=lat per PostGIS convention.
   -- LONGITUDE FIRST. SRID 4326 (WGS84) must match district_boundaries.geom SRID.
