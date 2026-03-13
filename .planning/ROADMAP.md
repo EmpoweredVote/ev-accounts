@@ -106,9 +106,9 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 19-01-PLAN.md — Migrations 031 + 032: connected_profiles columns, district_boundaries table, upsert_user_location + resolve_user_jurisdiction RPCs
-- [ ] 19-02-PLAN.md — docs/RUNBOOK-TIGER-LOAD.md: Vault secret, ogr2ogr commands, post-load verification
-- [ ] 19-03-PLAN.md — Apply migrations, execute runbook, smoke test (human checkpoint)
+- [x] 19-01-PLAN.md — Migrations 031 + 032: connected_profiles columns, district_boundaries table, upsert_user_location + resolve_user_jurisdiction RPCs
+- [x] 19-02-PLAN.md — docs/RUNBOOK-TIGER-LOAD.md: Vault secret, ogr2ogr commands, post-load verification
+- [x] 19-03-PLAN.md — Apply migrations, execute runbook, smoke test (human checkpoint)
 
 ---
 
@@ -198,7 +198,7 @@ Plans:
 | 16. v1.2 Gap Closure | v1.2 | 1/1 | Complete | 2026-03-07 |
 | 17. Live Alpha Deployment | v1.3 | 3/3 | Complete | 2026-03-10 |
 | 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
-| 19. Location Schema & RPCs | v1.3 | 0/3 | Not started | - |
+| 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
 | 20. Location Endpoints & Validation | v1.3 | 0/? | Not started | - |
 | 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |
 | 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
