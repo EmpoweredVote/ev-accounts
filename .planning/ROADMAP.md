@@ -229,7 +229,7 @@ Full details: `.planning/milestones/v2026.3.4-ROADMAP.md`
 
 - [x] **Phase 83: ev-ui SiteHeader URL Update** - Update defaultNavItems in SiteHeader to production .empowered.vote URLs and publish new ev-ui version (completed 2026-03-13)
 - [x] **Phase 84: Essentials Header Integration** - Wrap all Essentials routes in a Layout component using SiteHeader with full auth state (username/logout/sign-in) (completed 2026-03-13)
-- [ ] **Phase 85: ReadRank Header Auth** - Wire profileMenu auth state into the existing ReadRank SiteHeader via useAuthState hook extension
+- [x] **Phase 85: ReadRank Header Auth** - Wire profileMenu auth state into the existing ReadRank SiteHeader via useAuthState hook extension (completed 2026-03-13)
 
 ## Phase Details
 
@@ -278,4 +278,4 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 83. ev-ui SiteHeader URL Update | 1/1 | Complete    | 2026-03-13 | - |
 | 84. Essentials Header Integration | 2/2 | Complete    | 2026-03-13 | - |
-| 85. ReadRank Header Auth | 1/2 | In Progress|  | - |
+| 85. ReadRank Header Auth | 2/2 | Complete   | 2026-03-13 | - |
