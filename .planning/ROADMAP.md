@@ -278,4 +278,4 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 83. ev-ui SiteHeader URL Update | 1/1 | Complete    | 2026-03-13 | - |
 | 84. Essentials Header Integration | 2/2 | Complete    | 2026-03-13 | - |
-| 85. ReadRank Header Auth | 2/2 | Complete   | 2026-03-13 | - |
+| 85. ReadRank Header Auth | 2/2 | Complete    | 2026-03-13 | - |
