@@ -270,6 +270,6 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 83. ev-ui SiteHeader URL Update | 1/1 | Complete   | 2026-03-13 | - |
+| 83. ev-ui SiteHeader URL Update | 1/1 | Complete    | 2026-03-13 | - |
 | 84. Essentials Header Integration | v2026.3.5 | 0/TBD | Not started | - |
 | 85. ReadRank Header Auth | v2026.3.5 | 0/TBD | Not started | - |
