@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Checkpoint: 84-02 tasks 1-2 complete, awaiting human-verify on dev server"
-last_updated: "2026-03-13T00:25:30.912Z"
+stopped_at: Completed 84-02-PLAN.md — Phase 84 essentials header integration complete
+last_updated: "2026-03-13T00:52:22.621Z"
 last_activity: 2026-03-12 - Roadmap created; 3 phases mapped to 8 requirements (NAV-01, ESS-01 through ESS-04, RR-01 through RR-03)
 progress:
   total_phases: 3
@@ -54,6 +54,7 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 - [Phase 84-01]: Layout always passes profileMenu so profile button always appears; logged-out users see Sign In link to compass.empowered.vote/login
 - [Phase 84-01]: logout() resets userAnswers, selectedTopics, verdicts in addition to auth state
 - [Phase 84-02]: Layout uses named export (export function Layout), imported with { Layout } destructuring in all pages
+- [Phase 84-02]: returnTo query param passed to compass.empowered.vote/login so user lands back in Essentials after auth
 
 ### Pending Todos
 
@@ -75,6 +76,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
 ## Session Continuity
 
-Last session: 2026-03-13T00:25:23.786Z
-Stopped at: Checkpoint: 84-02 tasks 1-2 complete, awaiting human-verify on dev server
+Last session: 2026-03-13T00:52:22.619Z
+Stopped at: Completed 84-02-PLAN.md — Phase 84 essentials header integration complete
 Resume file: None

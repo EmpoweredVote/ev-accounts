@@ -30,10 +30,12 @@ key-files:
     - essentials/src/pages/Profile.jsx
     - essentials/src/pages/LegislativeRecord.jsx
     - essentials/src/pages/CandidateProfile.jsx
+    - CompassV2/src/pages/Login.jsx
 
 key-decisions:
   - "Layout uses named export (export function Layout), imported via { Layout } destructuring in all pages"
   - "Closing </Layout> tag placed after outer page div and before end of return, keeping min-h-screen div as Layout child"
+  - "returnTo query param passed to compass.empowered.vote/login so user lands back in Essentials after auth"
 
 patterns-established:
   - "Layout wrapping pattern: return (<Layout><div className='min-h-screen ...'>...</div></Layout>)"
@@ -53,8 +55,8 @@ completed: 2026-03-13
 - **Duration:** ~15 min
 - **Started:** 2026-03-13T00:25:00Z
 - **Completed:** 2026-03-13T00:40:00Z
-- **Tasks:** 2 of 3 (Task 3 is checkpoint:human-verify — awaiting user)
-- **Files modified:** 6
+- **Tasks:** 3 of 3 (checkpoint approved + 2 fixes applied during verification)
+- **Files modified:** 7
 
 ## Accomplishments
 - Removed AuthIndicator floating bubble from App.jsx (import + fixed div wrapper deleted)
@@ -62,6 +64,8 @@ completed: 2026-03-13
 - Removed Header imports and dead navItems/ctaButton config from Profile, LegislativeRecord, and CandidateProfile
 - Removed SiteHeader direct usage from Landing and Results
 - Build passes with 67 modules, 0 errors
+- Fixed cross-app login redirect: Essentials passes `returnTo` param so Compass redirects user back after auth
+- CompassV2 Login page updated to honor `returnTo` query param — user approved in checkpoint verification
 
 ## Task Commits
 
@@ -69,6 +73,8 @@ Each task was committed atomically:
 
 1. **Task 1: Remove AuthIndicator from App.jsx** - `4097dba` (feat)
 2. **Task 2: Wrap all pages in Layout** - `13da69c` (feat)
+3. **Task 3 checkpoint approved; fix: returnTo param for login redirect** - `0dc653d` (fix, essentials)
+4. **Fix: CompassV2 Login honors returnTo redirect** - `dd4e87e` (fix, CompassV2)
 
 ## Files Created/Modified
 - `essentials/src/App.jsx` - Removed AuthIndicator import and fixed-position div wrapper
@@ -77,6 +83,7 @@ Each task was committed atomically:
 - `essentials/src/pages/Profile.jsx` - Replaced Header + navItems/ctaButton with Layout wrapping
 - `essentials/src/pages/LegislativeRecord.jsx` - Replaced Header + navItems/ctaButton with Layout wrapping
 - `essentials/src/pages/CandidateProfile.jsx` - Replaced Header + navItems/ctaButton with Layout wrapping
+- `CompassV2/src/pages/Login.jsx` - Added returnTo query param support for cross-app redirect after login
 
 ## Decisions Made
 - Layout uses named export `export function Layout` (not default), so all pages import with `{ Layout }` destructuring
@@ -84,7 +91,22 @@ Each task was committed atomically:
 
 ## Deviations from Plan
 
-None — plan executed exactly as written. The only discovery was that Layout uses a named export rather than default (plan said `import Layout`, actual file uses `export function Layout`). Adjusted import syntax to `{ Layout }` which is correct.
+### Auto-fixed Issues
+
+**1. [Rule 1 - Bug] Fixed cross-app login redirect missing returnTo param**
+- **Found during:** Task 3 checkpoint (human-verify)
+- **Issue:** After clicking "Sign in" from Essentials, users would authenticate on Compass but land on the Compass home page — not back on the Essentials page they came from. Cross-app auth UX was broken.
+- **Fix:** Essentials passes `returnTo=<encoded-Essentials-URL>` to Compass login link; CompassV2 Login page updated to read `returnTo` from query params and redirect after successful auth.
+- **Files modified:** `essentials/src/components/Layout.jsx`, `CompassV2/src/pages/Login.jsx`
+- **Verification:** User confirmed during checkpoint verification — approved after fix
+- **Committed in:** `0dc653d` (essentials), `dd4e87e` (CompassV2)
+
+---
+
+**Total deviations:** 1 auto-fixed (1 bug found during human verification)
+**Impact on plan:** Fix was essential for correct cross-app auth UX. No scope creep.
+
+Note: Named export discovery (`import { Layout }` vs `import Layout`) was a minor adjustment, not a deviation — handled inline during Task 2.
 
 ## Issues Encountered
 - Minor: Layout component uses named export (`export function Layout`) not default export. Plan specified `import Layout from '../components/Layout'` but the actual file required `import { Layout } from '../components/Layout'`. Fixed automatically without impact.
@@ -93,8 +115,10 @@ None — plan executed exactly as written. The only discovery was that Layout us
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- All 5 pages wired to Layout and building successfully
-- Checkpoint awaiting: user must run `npm run dev` in essentials/ and visually verify SiteHeader appears on all pages, profile dropdown shows correct logged-in/logged-out state, and floating AuthIndicator bubble is gone
+- ESS-01 through ESS-04 requirements fully complete and user-verified
+- All 5 pages wired to Layout, building successfully, auth-aware header confirmed working
+- Phase 85 (ReadRank header integration) is now unblocked
+- AuthIndicator.jsx component file can be deleted in future cleanup (no longer imported anywhere)
 
 ---
 *Phase: 84-essentials-header-integration*
@@ -107,4 +131,6 @@ None - no external service configuration required.
 - essentials/src/pages/Profile.jsx: modified (Layout import added)
 - essentials/src/pages/LegislativeRecord.jsx: modified (Layout import added)
 - essentials/src/pages/CandidateProfile.jsx: modified (Layout import added)
-- Commits 4097dba and 13da69c confirmed in essentials git log
+- CompassV2/src/pages/Login.jsx: modified (returnTo redirect)
+- Commits 4097dba, 13da69c, 0dc653d (essentials) and dd4e87e (CompassV2) confirmed in git log
+- Checkpoint human-verify: approved by user
