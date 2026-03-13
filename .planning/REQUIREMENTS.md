@@ -18,9 +18,9 @@
 
 ### ReadRank Header
 
-- [ ] **RR-01**: Logged-in user sees their username in the ReadRank header with a logout option
-- [ ] **RR-02**: Logged-out user sees a "Sign in" link in the ReadRank header that navigates to Compass login
-- [ ] **RR-03**: User can log out from ReadRank — session is cleared
+- [x] **RR-01**: Logged-in user sees their username in the ReadRank header with a logout option
+- [x] **RR-02**: Logged-out user sees a "Sign in" link in the ReadRank header that navigates to Compass login
+- [x] **RR-03**: User can log out from ReadRank — session is cleared
 
 ## Future Requirements
 
@@ -50,9 +50,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ESS-02 | Phase 84 | Complete |
 | ESS-03 | Phase 84 | Complete |
 | ESS-04 | Phase 84 | Complete |
-| RR-01 | Phase 85 | Pending |
-| RR-02 | Phase 85 | Pending |
-| RR-03 | Phase 85 | Pending |
+| RR-01 | Phase 85 | Complete |
+| RR-02 | Phase 85 | Complete |
+| RR-03 | Phase 85 | Complete |
 
 **Coverage:**
 - v2026.3.5 requirements: 8 total
