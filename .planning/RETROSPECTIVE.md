@@ -289,6 +289,45 @@
 
 ---
 
+## Milestone: v2026.3.5 — Unified Navigation Header
+
+**Shipped:** 2026-03-13
+**Phases:** 3 | **Plans:** 5
+
+### What Was Built
+- ev-ui v0.1.49 with SiteHeader defaultNavItems updated to production .empowered.vote URLs
+- Essentials Layout.jsx wrapping all 5 pages with auth-aware SiteHeader (username/logout/sign-in)
+- ReadRank useAuthState hook extended with userName/logout, profileMenu wired into SiteHeader
+- Floating AuthIndicator removed from Essentials
+- returnTo redirect flow for cross-app login (Essentials/ReadRank → Compass login → return)
+
+### What Worked
+- Sequential dependency chain (83 → 84/85) executed cleanly — ev-ui published first, then both consumers in parallel
+- Existing auth infrastructure in Essentials (CompassContext isLoggedIn/userName) meant Phase 84 was mostly wiring, not new auth plumbing
+- profileMenu prop pattern from ev-ui SiteHeader handled both logged-in and logged-out states cleanly
+- Vite proxy discovered during Phase 85 human verification solved local dev cross-origin cookie issue
+
+### What Was Inefficient
+- ev-ui lacks .d.ts files — TypeScript consumers (ReadRank) need spread cast workaround, creating type safety gap
+- AuthIndicator.jsx left as orphaned dead code — should have been deleted in same PR
+
+### Patterns Established
+- Layout wrapper pattern for header integration — single Layout component wraps all pages, receives auth state from context
+- profileMenu undefined during loading prevents "Sign in" flash for logged-in users
+- Vite proxy for `/auth/*` routes in local dev — solves cross-origin cookie issues without CORS changes
+
+### Key Lessons
+1. Auth-aware headers are pure UI wiring when auth context already exists — this milestone was fast because the hard auth work was done in v2026.3.2
+2. Human verification catches real bugs — returnTo URL and cross-origin cookie issues found during Phase 85 manual testing
+3. TypeScript consumers of JS libraries need type stubs maintained alongside the library — deferred .d.ts generation creates ongoing friction
+
+### Cost Observations
+- Model mix: ~70% sonnet, ~30% opus
+- Sessions: 3 (one per phase)
+- Notable: Fastest milestone execution (1 day) — small scope with clear dependency chain
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -303,6 +342,7 @@
 | v2026.3.2 | 5 | 8 | First cross-app integration milestone; URL fragment bridge pattern; self-gating components |
 | v2026.3.3 | 5 | 6 | DB audit gating pattern; government_bodies enrichment; smallest plan count milestone |
 | v2026.3.4 | 6 | 13 | First multi-repo cross-app milestone; parallel phase design; verdict fragment bridge pattern |
+| v2026.3.5 | 3 | 5 | Fastest milestone (1 day); auth-aware header wiring across 3 apps; Layout wrapper pattern |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -324,3 +364,5 @@
 16. Cross-app feature integration works cleanest when each app owns its encoding boundary — no shared state infrastructure needed (v2026.3.4)
 17. Inline styles in component libraries avoid Tailwind coupling — consumers provide the runtime; library provides the structure (v2026.3.4)
 18. `useRef(false)` sync guard prevents double-POSTs in React strict mode double-invoke (v2026.3.4)
+19. Auth-aware headers are pure UI wiring when auth context already exists — no new backend needed (v2026.3.5)
+20. Human verification catches real integration bugs that automated tests miss — returnTo URLs, cross-origin cookies (v2026.3.5)

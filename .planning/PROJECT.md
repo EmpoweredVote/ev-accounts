@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook. All three apps share a unified SiteHeader (from ev-ui) with auth-aware profile menu showing login state and cross-app navigation via production .empowered.vote URLs.
 
 ## Core Value
 
@@ -163,39 +163,27 @@ Users can explore political issues and discover their elected officials without 
 - ✓ "View on Essentials" CTAs in Read & Rank ResultsPhase and CandidateAlignmentPage with verdict fragment — v2026.3.4
 - ✓ Read & Rank auto-POSTs verdicts to backend on results phase completion (logged-in users) — v2026.3.4
 - ✓ Essentials fetches logged-in user verdicts from backend as highest-priority source — v2026.3.4
+- ✓ SiteHeader nav links updated to production .empowered.vote URLs (ev-ui v0.1.49) — v2026.3.5
+- ✓ Auth-aware SiteHeader on every Essentials page (username/logout/sign-in) — v2026.3.5
+- ✓ Auth-aware SiteHeader in ReadRank (username/logout/sign-in via useAuthState hook) — v2026.3.5
+- ✓ Cross-app login redirect with returnTo query param (Essentials/ReadRank → Compass) — v2026.3.5
 
 ### Active
 
-- [ ] Unified SiteHeader (from ev-ui) on all three EV apps: Compass, Essentials, ReadRank
-- [ ] Auth state (username/logout or Sign in) visible in header across all apps
-- [ ] SiteHeader nav links updated to production .empowered.vote URLs
+(Next milestone requirements TBD — run `/gsd:new-milestone`)
 
 ### Future
 
 - [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
 - [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
 - [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
-
-- [ ] County council at-large vs district members distinguished in display
-- [ ] State-configurable body structure for California Board of Supervisors
-- [ ] LA County bodies seeded with official website URLs
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Current Milestone: v2026.3.5 Unified Navigation Header
+## Last Milestone: v2026.3.5 Unified Navigation Header (Shipped 2026-03-13)
 
-**Goal:** Add a consistent, auth-aware navigation header across all three EV apps so users see the same branded header everywhere and login state is visible without re-logging in.
-
-**Target features:**
-- SiteHeader (ev-ui) integrated into Essentials with full auth state (username/logout/sign-in)
-- SiteHeader in ReadRank updated with profileMenu for auth state
-- SiteHeader nav links updated to production empowered.vote URLs
-- Floating AuthIndicator in Essentials replaced by proper header
-
-## Last Milestone: v2026.3.4 Read & Rank Integration (Shipped 2026-03-12)
-
-**Delivered:** Read & Rank extracted to `readrank.empowered.vote` on Cloudflare Pages with EV brand redesign. Quote verdicts integrated into Essentials politician profiles — guests via URL fragment bridge, logged-in users via server-side `compass.quote_verdicts` storage with auto-sync. ev-ui v0.1.43 with per-quote verdict badges in StanceAccordion. 20/20 requirements satisfied.
+**Delivered:** Consistent auth-aware navigation header across all three EV apps — users see the same branded SiteHeader everywhere with live login state, powered by ev-ui v0.1.49 with production .empowered.vote URLs and cross-app returnTo redirect flow. 8/8 requirements satisfied.
 
 ### Out of Scope
 
@@ -220,13 +208,13 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.4 across 5 repos + Python import scripts:
-- **EV-readrank** (React 19 + TypeScript): New standalone repo — Zustand state, Vite/Cloudflare Pages SPA config, `useAuthState` hook, `verdictSync` utility, verdict fragment builder, "View on Essentials" CTAs
-- **CompassV2** (React 19): ~14.5K LOC — compass quiz, Library, guided onboarding, inline politician picker, compass fragment serializer
-- **EV-Backend** (Go 1.24): ~13K LOC — added `compass.quote_verdicts` table, GET/POST `/compass/verdicts` endpoints, `politician_id` filter on GET `/essentials/quotes`
-- **ev-ui** (React/tsup): ~4K LOC — v0.1.43 with StanceAccordion `verdictsByQuote` prop, lazy quote fetch cache, inline verdict badge rendering (inline styles, no Tailwind coupling)
-- **essentials** (React 19): ~4.2K LOC — CompassContext extended with `verdicts` state (API > fragment > localStorage priority), `fetchUserVerdicts`, guest verdict localStorage helpers, `parseCompassFragment` extended for verdict-only fragments
-- **Python scripts**: ~17K LOC — unchanged from v2026.3.3
+Shipped v2026.3.5 across 3 repos:
+- **ev-ui** (React/tsup): ~4K LOC — v0.1.49 with SiteHeader defaultNavItems updated to production .empowered.vote URLs, profileMenu prop support
+- **essentials** (React 19): ~4.3K LOC — Layout.jsx wrapping all 5 pages with auth-aware SiteHeader, CompassContext logout(), AuthIndicator removed
+- **EV-readrank** (React 19 + TypeScript): useAuthState hook extended with userName/logout(), profileMenu wired into SiteHeader, Vite proxy for local dev auth
+- **CompassV2** (React 19): ~14.5K LOC — unchanged this milestone
+- **EV-Backend** (Go 1.24): ~13K LOC — unchanged this milestone
+- **Python scripts**: ~17K LOC — unchanged
 
 Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Cloudflare Pages + Python (psycopg2/requests/BeautifulSoup).
 ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and EV-readrank.
@@ -240,4 +228,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and E
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-12 after v2026.3.5 milestone start*
+*Last updated: 2026-03-13 after v2026.3.5 milestone*

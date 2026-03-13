@@ -1,5 +1,34 @@
 # Milestones
 
+## v2026.3.5 Unified Navigation Header (Shipped: 2026-03-13)
+
+**Phases completed:** 3 phases, 5 plans
+**Timeline:** 1 day (2026-03-12 — 2026-03-13)
+**Requirements:** 8/8 satisfied
+**Repos:** ev-ui, essentials, EV-ReadRank
+
+**Delivered:** Consistent auth-aware navigation header across all three EV apps — users see the same branded SiteHeader everywhere with live login state (username/logout or Sign in link), powered by ev-ui v0.1.49 with production .empowered.vote URLs.
+
+**Key accomplishments:**
+1. ev-ui v0.1.49 published with SiteHeader defaultNavItems updated to production .empowered.vote URLs for Compass, Essentials, and ReadRank cross-app navigation
+2. Auth-aware Layout component in Essentials wrapping all 5 pages with SiteHeader — CompassContext logout() clears session and resets local state (answers, topics, verdicts)
+3. ReadRank useAuthState hook extended with userName and logout(), profileMenu wired into SiteHeader via spread cast for TypeScript compatibility
+4. Floating AuthIndicator removed from Essentials in favor of proper header auth state
+5. returnTo redirect flow for cross-app login — Sign in links pass returnTo query param to Compass login, users return to originating app after authentication
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted (carried from v1.9)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+- Topic tags placeholder div in LegislativeInlineSummary (carried from v2026.3)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+- ev-ui ships no .d.ts files — profileMenu prop uses spread cast in ReadRank (new)
+- Orphaned AuthIndicator.jsx in essentials (new)
+
+---
+
 ## v2026.3.4 Read & Rank Integration (Shipped: 2026-03-12)
 
 **Phases completed:** 6 phases, 13 plans
