@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 19 — Location Schema & RPCs
+**Current focus:** Phase 20 — Location Endpoints
 
 ## Current Position
 
-Phase: 19 of 23 (Location Schema & RPCs)
-Plan: 01 of 3 complete
-Status: In progress
-Last activity: 2026-03-10 — Completed 19-01-PLAN.md (location schema migrations — 4 SQL files)
+Phase: 20 of 23 (Location Endpoints)
+Plan: 0 of ? complete
+Status: Phase 19 complete — ready for Phase 20
+Last activity: 2026-03-12 — Completed 19-03-PLAN.md (apply & verify migrations 031/032, TIGER/Line loaded, all 5 success criteria confirmed)
 
-Progress: [████░░░░░░] ~39% (8 of ~18 v1.3 plans complete)
+Progress: [████░░░░░░] ~47% (10 of ~18 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -59,6 +59,12 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **COMPASS_CONTRACT.md in /docs/ directory** — external-facing API contract for CompassV2 developer; login response user.tier is always "inform" (stub), GET /account/me required for real tier; selected_topics migration is Connected-only, localStorage fallback documented. (18-04)
 - **Vault secret created in runbook, not migration** — embedding the location_encryption_key in a migration would permanently store it in migration history; created separately in RUNBOOK-TIGER-LOAD.md. (19-01)
 - **location_set_at column in migration 031** — written by upsert_user_location RPC; included proactively to avoid a follow-up migration even though not explicitly listed in LOC-01 requirements. (19-01)
+- **County ogr2ogr uses WHERE inside -sql, not standalone -where** — ogr2ogr treats -where and -sql as mutually exclusive; WHERE STATEFP='18' goes inside the -sql clause. Standalone -where with -sql silently loads all US counties or fails. (19-02)
+- **Runbook structure: Vault creation is Step 1, before data load** — RPCs raise exception at call time if secret missing; runbook ordering enforces the prerequisite explicitly. (19-02)
+- **convert_from(bytea, 'UTF8') not bytea::text for pgp_sym_decrypt_bytea output** — `bytea::text` produces hex repr (`\x33392e...`), not the original string. `convert_from()` decodes raw bytes to UTF-8 text correctly. Critical for resolve_user_jurisdiction float8 decode. (19-03)
+- **PostGIS types in public schema, functions in extensions schema** — `geometry` type must be `public.geometry` in DECLARE blocks with `SET search_path = ''`. ST_* functions use `extensions.` prefix as documented. (19-03)
+- **CREATE POLICY IF NOT EXISTS not supported in Supabase Postgres 17.4** — Use a DO block checking pg_policies instead. Affects any migration adding RLS policies with idempotency requirement. (19-03)
+- **Session-mode pooler (pooler.supabase.com:5432) supports multi-statement SQL** — The port 6543 transaction-mode pooler is the problematic one. Port 5432 session-mode is safe for these migrations. (19-03)
 
 ### Open Blockers
 
@@ -71,6 +77,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-10
-Stopped at: Completed 19-01-PLAN.md — migration 031 (location schema) and 032 (location RPCs), both backend/ and supabase/ variants.
-Resume: Execute 19-02-PLAN.md (TIGER/Line runbook) or 19-03-PLAN.md (apply & verify migrations).
+Last session: 2026-03-12
+Stopped at: Completed 19-03-PLAN.md — Phase 19 complete. Migrations applied, TIGER/Line loaded, smoke tests confirmed.
+Resume: Begin Phase 20 (Location Endpoints) — POST /account/location and GET /account/jurisdiction against the live RPC layer.
