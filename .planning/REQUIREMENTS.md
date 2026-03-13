@@ -12,9 +12,9 @@
 ### Essentials Header
 
 - [ ] **ESS-01**: User sees SiteHeader at the top of every Essentials page (Landing, Results, Profile, LegislativeRecord, CandidateProfile)
-- [ ] **ESS-02**: Logged-in user sees their username in the Essentials header with a logout option
-- [ ] **ESS-03**: Logged-out user sees a "Sign in" link in the Essentials header that navigates to Compass login
-- [ ] **ESS-04**: User can log out from Essentials — session is cleared and page resets to logged-out state
+- [x] **ESS-02**: Logged-in user sees their username in the Essentials header with a logout option
+- [x] **ESS-03**: Logged-out user sees a "Sign in" link in the Essentials header that navigates to Compass login
+- [x] **ESS-04**: User can log out from Essentials — session is cleared and page resets to logged-out state
 
 ### ReadRank Header
 
@@ -47,9 +47,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | NAV-01 | Phase 83 | Complete |
 | ESS-01 | Phase 84 | Pending |
-| ESS-02 | Phase 84 | Pending |
-| ESS-03 | Phase 84 | Pending |
-| ESS-04 | Phase 84 | Pending |
+| ESS-02 | Phase 84 | Complete |
+| ESS-03 | Phase 84 | Complete |
+| ESS-04 | Phase 84 | Complete |
 | RR-01 | Phase 85 | Pending |
 | RR-02 | Phase 85 | Pending |
 | RR-03 | Phase 85 | Pending |

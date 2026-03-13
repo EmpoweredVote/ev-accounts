@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 83-ev-ui-siteheader-url-update/83-01-PLAN.md
-last_updated: "2026-03-13T00:07:52.264Z"
+stopped_at: Completed 84-essentials-header-integration/84-01-PLAN.md
+last_updated: "2026-03-13T00:20:58.215Z"
 last_activity: 2026-03-12 - Roadmap created; 3 phases mapped to 8 requirements (NAV-01, ESS-01 through ESS-04, RR-01 through RR-03)
 progress:
   total_phases: 3
   completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
+  total_plans: 3
+  completed_plans: 2
   percent: 0
 ---
 
@@ -51,6 +51,8 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 - Logout in Essentials resets local app state; no redirect to Compass (each app stays on its own page)
 - [Phase 83-01]: Treasury Tracker and Empowered Badges hrefs left on Netlify — no standalone domain assigned yet
 - [Phase 83-01]: ev-ui is its own git repo; task commits go to the ev-ui sub-repo, not workspace root
+- [Phase 84-01]: Layout always passes profileMenu so profile button always appears; logged-out users see Sign In link to compass.empowered.vote/login
+- [Phase 84-01]: logout() resets userAnswers, selectedTopics, verdicts in addition to auth state
 
 ### Pending Todos
 
@@ -72,6 +74,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
 ## Session Continuity
 
-Last session: 2026-03-13T00:05:52.186Z
-Stopped at: Completed 83-ev-ui-siteheader-url-update/83-01-PLAN.md
+Last session: 2026-03-13T00:20:58.213Z
+Stopped at: Completed 84-essentials-header-integration/84-01-PLAN.md
 Resume file: None
