@@ -228,7 +228,7 @@ Full details: `.planning/milestones/v2026.3.4-ROADMAP.md`
 **Milestone Goal:** Add a consistent, auth-aware navigation header across all three EV apps so users see the same branded header everywhere and login state is visible without re-logging in.
 
 - [x] **Phase 83: ev-ui SiteHeader URL Update** - Update defaultNavItems in SiteHeader to production .empowered.vote URLs and publish new ev-ui version (completed 2026-03-13)
-- [ ] **Phase 84: Essentials Header Integration** - Wrap all Essentials routes in a Layout component using SiteHeader with full auth state (username/logout/sign-in)
+- [x] **Phase 84: Essentials Header Integration** - Wrap all Essentials routes in a Layout component using SiteHeader with full auth state (username/logout/sign-in) (completed 2026-03-13)
 - [ ] **Phase 85: ReadRank Header Auth** - Wire profileMenu auth state into the existing ReadRank SiteHeader via useAuthState hook extension
 
 ## Phase Details
@@ -274,5 +274,5 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 83. ev-ui SiteHeader URL Update | 1/1 | Complete    | 2026-03-13 | - |
-| 84. Essentials Header Integration | 1/2 | In Progress|  | - |
+| 84. Essentials Header Integration | 2/2 | Complete   | 2026-03-13 | - |
 | 85. ReadRank Header Auth | v2026.3.5 | 0/TBD | Not started | - |
