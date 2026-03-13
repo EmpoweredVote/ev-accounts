@@ -7,7 +7,7 @@
 
 ### Navigation (ev-ui SiteHeader)
 
-- [ ] **NAV-01**: User sees production `.empowered.vote` URLs for all three apps in the SiteHeader Features dropdown (compass, essentials, readrank)
+- [x] **NAV-01**: User sees production `.empowered.vote` URLs for all three apps in the SiteHeader Features dropdown (compass, essentials, readrank)
 
 ### Essentials Header
 
@@ -45,7 +45,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| NAV-01 | Phase 83 | Pending |
+| NAV-01 | Phase 83 | Complete |
 | ESS-01 | Phase 84 | Pending |
 | ESS-02 | Phase 84 | Pending |
 | ESS-03 | Phase 84 | Pending |
