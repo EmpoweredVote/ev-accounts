@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 Phase: 83 of 85 (ev-ui SiteHeader URL Update)
 Plan: —
 Status: Ready to plan Phase 83
-Last activity: 2026-03-12 - Roadmap created; 3 phases mapped to 8 requirements (NAV-01, ESS-01 through ESS-04, RR-01 through RR-03)
+Last activity: 2026-03-13 - Completed quick task 11: Fix Monroe County Council data: Liz Feitl at-large seat and missing district members
 
 Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
@@ -66,6 +66,12 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
 - Phase 83 must be published to GitHub npm registry before Phase 84/85 can consume updated SiteHeader URLs
 - Phase 84: Essentials CompassContext already has isLoggedIn and userName — no new auth plumbing needed, just wire to Layout
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 11 | Fix Monroe County Council data: Liz Feitl at-large seat and missing district members | 2026-03-13 | 75045fd | [11-fix-monroe-county-council-data-liz-feitl](./quick/11-fix-monroe-county-council-data-liz-feitl/) |
 
 ### Tech Debt Carried Forward
 
