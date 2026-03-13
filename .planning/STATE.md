@@ -5,7 +5,7 @@ milestone_name: milestone
 status: planning
 stopped_at: Completed 85-01-PLAN.md — Phase 85 ReadRank header auth integration complete
 last_updated: "2026-03-13T02:21:25.889Z"
-last_activity: "2026-03-13 - Completed quick task 11: Fix Monroe County Council data: Liz Feitl at-large seat and missing district members"
+last_activity: "2026-03-13 - Completed quick task 12: Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos"
 progress:
   total_phases: 3
   completed_phases: 3
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-12)
 Phase: 83 of 85 (ev-ui SiteHeader URL Update)
 Plan: —
 Status: Ready to plan Phase 83
-Last activity: 2026-03-13 - Completed quick task 11: Fix Monroe County Council data: Liz Feitl at-large seat and missing district members
+Last activity: 2026-03-13 - Completed quick task 12: Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos
 
 Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
@@ -72,6 +72,7 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 11 | Fix Monroe County Council data: Liz Feitl at-large seat and missing district members | 2026-03-13 | 75045fd | [11-fix-monroe-county-council-data-liz-feitl](./quick/11-fix-monroe-county-council-data-liz-feitl/) |
+| 12 | Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos; clean EV-prototypes | 2026-03-13 | aa5202c | [12-move-treasury-tracker-empowered-badges-a](./quick/12-move-treasury-tracker-empowered-badges-a/) |
 
 ### Tech Debt Carried Forward
 
@@ -84,6 +85,6 @@ Progress: [░░░░░░░░░░] 0% (milestone v2026.3.5)
 
 ## Session Continuity
 
-Last session: 2026-03-13T01:47:33.254Z
-Stopped at: Completed 85-01-PLAN.md — Phase 85 ReadRank header auth integration complete
+Last session: 2026-03-13T02:30:00.000Z
+Stopped at: Completed quick task 12 — awaiting human verification of standalone repos
 Resume file: None
