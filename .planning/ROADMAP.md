@@ -254,7 +254,10 @@ Plans:
   2. A logged-in user sees their username in the header with a working logout option
   3. A logged-out user sees a "Sign in" link that navigates to compass.empowered.vote/login
   4. After logging out from Essentials, the header switches to "Sign in" state and the floating AuthIndicator is gone
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 84-01-PLAN.md — Upgrade ev-ui, add logout to CompassContext, create auth-aware Layout component
+- [ ] 84-02-PLAN.md — Wire Layout into all 5 pages, remove floating AuthIndicator, human verify
 
 ### Phase 85: ReadRank Header Auth
 **Goal**: ReadRank SiteHeader displays live auth state so users see their login status and can log out from within the app
