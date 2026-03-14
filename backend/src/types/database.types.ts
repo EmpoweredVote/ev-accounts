@@ -31,6 +31,7 @@ export type Database = {
           home_address: string | null
           id: string
           legal_name: string | null
+          location_consent: boolean | null
           selected_topic_ids: Json
           tolerance_rating: number | null
           total_xp: number
@@ -58,6 +59,7 @@ export type Database = {
           home_address?: string | null
           id?: string
           legal_name?: string | null
+          location_consent?: boolean | null
           selected_topic_ids?: Json
           tolerance_rating?: number | null
           total_xp?: number
@@ -85,6 +87,7 @@ export type Database = {
           home_address?: string | null
           id?: string
           legal_name?: string | null
+          location_consent?: boolean | null
           selected_topic_ids?: Json
           tolerance_rating?: number | null
           total_xp?: number

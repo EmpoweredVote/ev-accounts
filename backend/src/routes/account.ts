@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected } from '../middleware/tierGuards.js';
-import { createUserClient, adminRpc } from '../lib/supabase.js';
+import { createUserClient, adminRpc, supabaseAdmin } from '../lib/supabase.js';
 
 // All DB reads use createUserClient(req.accessToken) — RLS enforced.
 // Architecture rule: service role key must never be used in route handlers.
@@ -56,7 +56,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       .schema('connect')
       .from('connected_profiles')
       .select(
-        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, created_at'
+        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, location_consent, created_at'
       )
       .eq('user_id', authReq.userId)
       .maybeSingle();
@@ -110,6 +110,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       avatar_url: user.avatar_url,
       tier,
       completed_onboarding: connected?.completed_onboarding ?? false,
+      location_consent: connected?.location_consent ?? false,
       ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
       created_at: user.created_at,
@@ -152,6 +153,62 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       code: 'INTERNAL_ERROR',
       message: 'An unexpected error occurred',
     });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/account/me/jurisdiction
+// Returns 403 if location_consent is false/null; returns jurisdiction JSON if true
+// ---------------------------------------------------------------------------
+
+router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { data: profile, error: profileError } = await supabaseAdmin
+      .schema('connect')
+      .from('connected_profiles')
+      .select('location_consent')
+      .eq('user_id', authReq.userId)
+      .maybeSingle();
+
+    if (profileError || !profile) {
+      res.status(403).json({ code: 'NOT_CONNECTED', error: 'Connected account required' });
+      return;
+    }
+
+    if (!profile.location_consent) {
+      res.status(403).json({
+        code: 'LOCATION_CONSENT_REQUIRED',
+        error: 'Location must be set before jurisdiction can be retrieved',
+      });
+      return;
+    }
+
+    const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
+      p_user_id: authReq.userId,
+    }, 'connect');
+
+    if (jurisdictionError) {
+      console.error('[GET /api/account/me/jurisdiction] resolve_user_jurisdiction error:', jurisdictionError.message);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+
+    const j = (jurisdictionData ?? {}) as Record<string, string | null>;
+
+    res.status(200).json({
+      jurisdiction: {
+        congressional_district: j.congressional ?? null,
+        state_senate_district: j.state_senate ?? null,
+        state_house_district: j.state_house ?? null,
+        county: j.county ?? null,
+        school_district: j.school_district ?? null,
+      },
+    });
+  } catch (err) {
+    console.error('[GET /api/account/me/jurisdiction] Unexpected error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
 
