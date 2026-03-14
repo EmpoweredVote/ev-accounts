@@ -60,6 +60,7 @@ Last activity: 2026-03-14 - Completed quick task 13: Standardize congressional d
 | 11 | Fix Monroe County Council data: Liz Feitl at-large seat and missing district members | 2026-03-13 | 75045fd | [11-fix-monroe-county-council-data-liz-feitl](./quick/11-fix-monroe-county-council-data-liz-feitl/) |
 | 12 | Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos; clean EV-prototypes | 2026-03-13 | aa5202c | [12-move-treasury-tracker-empowered-badges-a](./quick/12-move-treasury-tracker-empowered-badges-a/) |
 | 13 | Normalize congressional district labels: House "District N", Senate full state name only | 2026-03-14 | 33292c6 | [13-standardize-congressional-district-names](./quick/13-standardize-congressional-district-names/) |
+| 14 | Fix Monroe County Circuit Court judge names and relabel Seat N → Division N across districts, chambers, offices | 2026-03-14 | dd34707 | [14-fix-monroe-county-circuit-court-judge-na](./quick/14-fix-monroe-county-circuit-court-judge-na/) |
 
 ### Tech Debt Carried Forward
 
@@ -75,5 +76,5 @@ Last activity: 2026-03-14 - Completed quick task 13: Standardize congressional d
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed quick task 13 — congressional district label normalization
+Stopped at: Completed quick task 14 — Monroe County Circuit Court judge names and division labels
 Resume file: None
