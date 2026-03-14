@@ -57,7 +57,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       .schema('connect')
       .from('connected_profiles')
       .select(
-        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, location_consent, created_at'
+        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, created_at'
       )
       .eq('user_id', authReq.userId)
       .maybeSingle();
@@ -129,9 +129,18 @@ router.get('/me', requireAuth, async (req, res: Response) => {
         verification_status: connected.verification_status,
         tolerance_rating: connected.tolerance_rating,
         xp: xpData,
-        gem_balance: connected.gem_balance,
+        gems: {
+          yellow: connected.gem_balance_yellow ?? 0,
+          blue: connected.gem_balance_blue ?? 0,
+          red: connected.gem_balance_red ?? 0,
+        },
         completed_onboarding: connected.completed_onboarding,
         created_at: connected.created_at,
+      };
+      meResponse.gems = {
+        yellow: connected.gem_balance_yellow ?? 0,
+        blue: connected.gem_balance_blue ?? 0,
+        red: connected.gem_balance_red ?? 0,
       };
     }
 
@@ -319,7 +328,7 @@ router.patch(
         .schema('connect')
         .from('connected_profiles')
         .select(
-          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance, completed_onboarding, created_at'
+          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, created_at'
         )
         .eq('user_id', authReq.userId)
         .maybeSingle();
@@ -376,9 +385,18 @@ router.patch(
           verification_status: updatedConnected.verification_status,
           tolerance_rating: updatedConnected.tolerance_rating,
           xp: xpData,
-          gem_balance: updatedConnected.gem_balance,
+          gems: {
+            yellow: updatedConnected.gem_balance_yellow ?? 0,
+            blue: updatedConnected.gem_balance_blue ?? 0,
+            red: updatedConnected.gem_balance_red ?? 0,
+          },
           completed_onboarding: updatedConnected.completed_onboarding,
           created_at: updatedConnected.created_at,
+        };
+        meResponse.gems = {
+          yellow: updatedConnected.gem_balance_yellow ?? 0,
+          blue: updatedConnected.gem_balance_blue ?? 0,
+          red: updatedConnected.gem_balance_red ?? 0,
         };
       }
 
