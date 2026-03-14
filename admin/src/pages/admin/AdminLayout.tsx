@@ -4,6 +4,7 @@ import { useAuthStore } from '../../store/authStore';
 const navItems = [
   { label: 'Dashboard', to: '/admin', exact: true },
   { label: 'Accounts', to: '/admin/accounts' },
+  { label: 'Promotions', to: '/admin/promotions' },
   { label: 'Invites', to: '/admin/invites' },
   { label: 'Invite Tree', to: '/admin/invites/tree' },
   { label: 'Cron Log', to: '/admin/cron-log' },

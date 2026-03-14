@@ -12,6 +12,7 @@ import { RolesPage } from './pages/admin/RolesPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
+import { PromotionsPage } from './pages/admin/PromotionsPage';
 import Login from './pages/Login';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
@@ -51,6 +52,7 @@ function App() {
           <Route index element={<AdminDashboard />} />
           <Route path="accounts" element={<AccountsPage />} />
           <Route path="accounts/:userId" element={<AccountDetailPage />} />
+          <Route path="promotions" element={<PromotionsPage />} />
           <Route path="invites" element={<InvitesPage />} />
           <Route path="invites/tree" element={<InviteTreePage />} />
           <Route path="invites/tree/:userId" element={<InviteTreePage />} />
