@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 20 — Location Endpoints
+**Current focus:** Phase 21 — next phase TBD
 
 ## Current Position
 
-Phase: 20 of 23 (Location Endpoints)
-Plan: 3 of 4 complete
-Status: In progress — Plans 01, 02, 03 complete
-Last activity: 2026-03-13 — Completed 20-02-PLAN.md (POST /api/connect/set-location route handler)
+Phase: 20 of 23 (Location Endpoints) — COMPLETE
+Plan: 4 of 4 complete
+Status: Phase complete — all 4 plans done
+Last activity: 2026-03-13 — Completed 20-04-PLAN.md (coordinate leakage architecture test)
 
-Progress: [████░░░░░░] ~50% (11 of ~22 v1.3 plans complete)
+Progress: [████░░░░░░] ~55% (12 of ~22 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -73,6 +73,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **database.types.ts requires manual update when migrations add columns** — location_consent was missing from generated types after Phase 19 migration 031; manually added to Row/Insert/Update shapes. (20-03)
 - **isInCoverage() bounding box in connect.ts, not geocodingService** — keeps the geocoding service generic; coverage policy belongs in the route layer. (20-02)
 - **OUT_OF_COVERAGE returns 422 not 403** — address is syntactically valid but outside service area; 422 aligns with the other location validation error codes on this endpoint. (20-02)
+- **Architecture tests in tests/architecture/, not backend/tests/** — vitest.config.ts include pattern is `../tests/**` relative to `backend/`; resolves to project root tests/. Static analysis tests use fs.readdirSync + readFileSync; negative lookahead excludes TS type annotations from object-key patterns. (20-04)
 
 ### Open Blockers
 
@@ -86,5 +87,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 20-02-PLAN.md — POST /api/connect/set-location route with PO Box guard, bounding box coverage filter, geocoding, upsert_user_location + resolve_user_jurisdiction RPCs.
-Resume: 20-04-PLAN.md (end-to-end validation). Plans 01, 02, 03 all complete. Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
+Stopped at: Completed 20-04-PLAN.md — coordinate leakage architecture test. Phase 20 complete.
+Resume: Phase 21 — run /gsd:new-phase or continue v1.3 roadmap.
