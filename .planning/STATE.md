@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 21 — next phase TBD
+**Current focus:** Phase 21 — empowered_profiles Politician Schema
 
 ## Current Position
 
-Phase: 20 of 23 (Location Endpoints) — COMPLETE (gap closure 20-05 done)
+Phase: 20 of 23 (Location Endpoints) — VERIFIED COMPLETE
 Plan: 5 of 5 complete (4 original + 1 gap closure)
-Status: Phase complete — all plans done, 0 architecture violations
-Last activity: 2026-03-14 — Completed 20-05-PLAN.md (getLocationConsent helper, gap closure)
+Status: Phase verified — human verification passed 2026-03-14
+Last activity: 2026-03-14 — Phase 20 human verification passed (set-location end-to-end + DB encryption confirmed)
 
 Progress: [████░░░░░░] ~55% (12 of ~22 v1.3 plans complete)
 

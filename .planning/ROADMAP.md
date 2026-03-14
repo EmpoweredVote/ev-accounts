@@ -221,7 +221,7 @@ Plans:
 | 17. Live Alpha Deployment | v1.3 | 3/3 | Complete | 2026-03-10 |
 | 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
-| 20. Location Endpoints & Validation | v1.3 | 0/4 | Not started | - |
+| 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
 | 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |
 | 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
