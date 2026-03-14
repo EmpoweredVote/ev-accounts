@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 20 of 23 (Location Endpoints) — COMPLETE
-Plan: 4 of 4 complete
-Status: Phase complete — all 4 plans done
-Last activity: 2026-03-13 — Completed 20-04-PLAN.md (coordinate leakage architecture test)
+Phase: 20 of 23 (Location Endpoints) — COMPLETE (gap closure 20-05 done)
+Plan: 5 of 5 complete (4 original + 1 gap closure)
+Status: Phase complete — all plans done, 0 architecture violations
+Last activity: 2026-03-14 — Completed 20-05-PLAN.md (getLocationConsent helper, gap closure)
 
 Progress: [████░░░░░░] ~55% (12 of ~22 v1.3 plans complete)
 
@@ -74,6 +74,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **isInCoverage() bounding box in connect.ts, not geocodingService** — keeps the geocoding service generic; coverage policy belongs in the route layer. (20-02)
 - **OUT_OF_COVERAGE returns 422 not 403** — address is syntactically valid but outside service area; 422 aligns with the other location validation error codes on this endpoint. (20-02)
 - **Architecture tests in tests/architecture/, not backend/tests/** — vitest.config.ts include pattern is `../tests/**` relative to `backend/`; resolves to project root tests/. Static analysis tests use fs.readdirSync + readFileSync; negative lookahead excludes TS type annotations from object-key patterns. (20-04)
+- **Service helper pattern for service-role ops** — service-role (supabaseAdmin) operations belong in lib/*Service.ts helpers, never in routes/. Architecture test allowlist is the explicit registry of permitted files. getLocationConsent() is the model: route calls helper, helper owns the admin client. (20-05)
 
 ### Open Blockers
 
@@ -86,6 +87,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-13
-Stopped at: Completed 20-04-PLAN.md — coordinate leakage architecture test. Phase 20 complete.
+Last session: 2026-03-14
+Stopped at: Completed 20-05-PLAN.md — getLocationConsent gap closure. Phase 20 fully complete (0 architecture violations).
 Resume: Phase 21 — run /gsd:new-phase or continue v1.3 roadmap.
