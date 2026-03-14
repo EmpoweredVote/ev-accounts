@@ -294,6 +294,39 @@ export type Database = {
           },
         ]
       }
+      tier_promotion_log: {
+        Row: {
+          admin_email: string
+          admin_id: string
+          created_at: string
+          id: string
+          new_tier: string
+          note: string | null
+          previous_tier: string
+          target_user_id: string
+        }
+        Insert: {
+          admin_email: string
+          admin_id: string
+          created_at?: string
+          id?: string
+          new_tier: string
+          note?: string | null
+          previous_tier: string
+          target_user_id: string
+        }
+        Update: {
+          admin_email?: string
+          admin_id?: string
+          created_at?: string
+          id?: string
+          new_tier?: string
+          note?: string | null
+          previous_tier?: string
+          target_user_id?: string
+        }
+        Relationships: []
+      }
       xp_transactions: {
         Row: {
           amount: number
@@ -571,6 +604,7 @@ export type Database = {
           id: string
           is_active: boolean
           legal_name: string
+          politician_id: string | null
           updated_at: string
           user_id: string
         }
@@ -585,6 +619,7 @@ export type Database = {
           id?: string
           is_active?: boolean
           legal_name: string
+          politician_id?: string | null
           updated_at?: string
           user_id: string
         }
@@ -599,6 +634,7 @@ export type Database = {
           id?: string
           is_active?: boolean
           legal_name?: string
+          politician_id?: string | null
           updated_at?: string
           user_id?: string
         }

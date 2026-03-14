@@ -11,6 +11,7 @@ import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
+import profileRouter from './routes/profile.js';
 import xpRouter from './routes/xp.js';
 import rolesRouter from './routes/roles.js';
 import socialRouter from './routes/social.js';
@@ -41,6 +42,7 @@ app.use(express.json());
 // Routes
 app.use('/api/health', healthRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/account/profile', profileRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/invites', invitesRouter);
 app.use('/api/connect', connectRouter);
