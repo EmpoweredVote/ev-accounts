@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 20 of 23 (Location Endpoints)
-Plan: 0 of ? complete
-Status: Phase 19 complete — ready for Phase 20
-Last activity: 2026-03-12 — Completed 19-03-PLAN.md (apply & verify migrations 031/032, TIGER/Line loaded, all 5 success criteria confirmed)
+Plan: 1 of 4 complete
+Status: In progress — Plan 01 complete
+Last activity: 2026-03-13 — Completed 20-01-PLAN.md (geocoding service, env key, LA County runbook)
 
-Progress: [████░░░░░░] ~47% (10 of ~18 v1.3 plans complete)
+Progress: [████░░░░░░] ~50% (11 of ~22 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -65,6 +65,9 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **PostGIS types in public schema, functions in extensions schema** — `geometry` type must be `public.geometry` in DECLARE blocks with `SET search_path = ''`. ST_* functions use `extensions.` prefix as documented. (19-03)
 - **CREATE POLICY IF NOT EXISTS not supported in Supabase Postgres 17.4** — Use a DO block checking pg_policies instead. Affects any migration adding RLS policies with idempotency requirement. (19-03)
 - **Session-mode pooler (pooler.supabase.com:5432) supports multi-statement SQL** — The port 6543 transaction-mode pooler is the problematic one. Port 5432 session-mode is safe for these migrations. (19-03)
+- **geocodeAddress() privacy contract: coordinates never logged** — lat/lng returned as raw floats consumed by caller immediately; must only pass to upsert_user_location RPC, never log or return in API responses. (20-01)
+- **GOOGLE_MAPS_API_KEY required at startup** — Missing key causes process.exit(1); geocoding call with missing key would produce confusing GEOCODING_API_ERROR at runtime. (20-01)
+- **LA County: county boundary only for Alpha** — resolve_user_jurisdiction returns null for congressional/state_senate/state_house/school_district for CA addresses; county presence used to confirm in-coverage status. (20-01)
 
 ### Open Blockers
 
@@ -77,6 +80,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-12
-Stopped at: Completed 19-03-PLAN.md — Phase 19 complete. Migrations applied, TIGER/Line loaded, smoke tests confirmed.
-Resume: Begin Phase 20 (Location Endpoints) — POST /account/location and GET /account/jurisdiction against the live RPC layer.
+Last session: 2026-03-13
+Stopped at: Completed 20-01-PLAN.md — geocoding service, GOOGLE_MAPS_API_KEY env validation, LA County runbook section.
+Resume: Begin 20-02-PLAN.md (POST /account/location endpoint). geocodeAddress() and GeocodingError exported and ready. Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
