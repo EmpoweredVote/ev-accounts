@@ -108,6 +108,7 @@ export type Database = {
           created_at: string
           feature_context: string | null
           gem_type: string
+          idempotency_key: string | null
           id: string
           reference_id: string | null
           transaction_type: string
@@ -119,6 +120,7 @@ export type Database = {
           created_at?: string
           feature_context?: string | null
           gem_type: string
+          idempotency_key?: string | null
           id?: string
           reference_id?: string | null
           transaction_type: string
@@ -130,6 +132,7 @@ export type Database = {
           created_at?: string
           feature_context?: string | null
           gem_type?: string
+          idempotency_key?: string | null
           id?: string
           reference_id?: string | null
           transaction_type?: string
@@ -394,6 +397,26 @@ export type Database = {
       adjust_inviter_tolerance_rating: {
         Args: { p_invitee_id: string }
         Returns: undefined
+      }
+      award_gems: {
+        Args: {
+          p_user_id: string
+          p_gem_type: string
+          p_amount: number
+          p_idempotency_key: string
+          p_transaction_type?: string
+          p_source_ref?: string
+        }
+        Returns: {
+          id: string
+          user_id: string
+          gem_type: string
+          amount: number
+          idempotency_key: string
+          balance_after: number
+          created_at: string
+          is_duplicate: boolean
+        }[]
       }
       award_xp: {
         Args: {

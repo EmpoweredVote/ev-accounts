@@ -15,7 +15,7 @@
  * awaits for multi-table writes.
  */
 
-import { supabaseAdmin } from './supabase.js';
+import { supabaseAdmin, adminRpc } from './supabase.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -162,4 +162,71 @@ export async function getTransactionHistory(
   if (error) throw new Error(error.message);
 
   return { transactions: data ?? [], total: count ?? 0 };
+}
+
+// ---------------------------------------------------------------------------
+// awardGems
+// ---------------------------------------------------------------------------
+
+export interface AwardGemsParams {
+  userId: string;
+  gemType: GemType;
+  amount: number;
+  idempotencyKey: string;
+  transactionType?: string;
+  sourceRef?: string;
+}
+
+export interface AwardGemsResult {
+  gem_type: string;
+  amount: number;
+  new_balance: number;
+  is_duplicate: boolean;
+}
+
+/**
+ * Award gems to a user via the award_gems SECURITY DEFINER RPC.
+ *
+ * Idempotent: duplicate idempotency_key returns the original result with
+ * is_duplicate = true and no second ledger row.
+ *
+ * Called exclusively by POST /api/gems/award (external service endpoint).
+ * Internal/cron gem grants continue to use creditGems() → credit_gems RPC.
+ */
+export async function awardGems(params: AwardGemsParams): Promise<AwardGemsResult> {
+  const { data, error } = await adminRpc(
+    'award_gems',
+    {
+      p_user_id: params.userId,
+      p_gem_type: params.gemType,
+      p_amount: params.amount,
+      p_idempotency_key: params.idempotencyKey,
+      p_transaction_type: params.transactionType ?? 'service_award',
+      p_source_ref: params.sourceRef ?? null,
+    },
+    'connect'
+  );
+
+  if (error) {
+    if (error.message?.includes('no connected_profiles row')) {
+      throw Object.assign(new Error('User has no connected profile'), { code: 'NOT_CONNECTED' });
+    }
+    if (error.message?.includes('must be positive')) {
+      throw Object.assign(new Error('Gem award amount must be positive'), { code: 'INVALID_AMOUNT' });
+    }
+    throw new Error(error.message);
+  }
+
+  // award_gems RETURNS TABLE — data is an array; take the first row
+  const row = Array.isArray(data) ? data[0] : data;
+  if (!row) {
+    throw new Error('award_gems returned no rows');
+  }
+
+  return {
+    gem_type: row.gem_type as string,
+    amount: row.amount as number,
+    new_balance: row.balance_after as number,
+    is_duplicate: row.is_duplicate as boolean,
+  };
 }
