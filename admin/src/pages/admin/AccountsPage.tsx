@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
 
@@ -48,6 +48,11 @@ export function AccountsPage() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Dropdown state
+  const [showSearchDropdown, setShowSearchDropdown] = useState(false);
+  const [searchResults, setSearchResults] = useState<Account[]>([]);
+  const blurTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   const debouncedSearch = useDebounce(search, 300);
 
   const fetchAccounts = useCallback(() => {
@@ -74,19 +79,94 @@ export function AccountsPage() {
     setPage(1);
   }, [debouncedSearch, tier, standing]);
 
+  // Fetch dropdown results when debouncedSearch changes
+  useEffect(() => {
+    if (debouncedSearch.length < 2) {
+      setSearchResults([]);
+      setShowSearchDropdown(false);
+      return;
+    }
+
+    const params = new URLSearchParams();
+    params.set('search', debouncedSearch);
+    params.set('page', '1');
+
+    apiFetch<AccountsResponse>(`/admin/accounts?${params}`)
+      .then((res) => {
+        setSearchResults(res.accounts.slice(0, 8));
+        setShowSearchDropdown(true);
+      })
+      .catch(() => {
+        setSearchResults([]);
+      });
+  }, [debouncedSearch]);
+
+  function handleSearchFocus() {
+    if (blurTimerRef.current) {
+      clearTimeout(blurTimerRef.current);
+    }
+    if (debouncedSearch.length >= 2 && searchResults.length > 0) {
+      setShowSearchDropdown(true);
+    }
+  }
+
+  function handleSearchBlur() {
+    blurTimerRef.current = setTimeout(() => {
+      setShowSearchDropdown(false);
+    }, 150);
+  }
+
+  function handleDropdownClick(accountId: string) {
+    setShowSearchDropdown(false);
+    navigate(`/admin/accounts/${accountId}`);
+  }
+
   return (
     <div>
       <h1 className="text-2xl font-bold text-gray-900 mb-6">Accounts</h1>
 
       {/* Filters */}
       <div className="bg-white rounded-lg shadow p-4 mb-6 flex gap-4">
-        <input
-          type="text"
-          placeholder="Search by name or email..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        <div className="flex-1 relative">
+          <input
+            type="text"
+            placeholder="Search by name or email..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onFocus={handleSearchFocus}
+            onBlur={handleSearchBlur}
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          {showSearchDropdown && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
+              {searchResults.length === 0 ? (
+                <div className="px-4 py-3 text-sm text-gray-400">
+                  No users found for &ldquo;{debouncedSearch}&rdquo;
+                </div>
+              ) : (
+                searchResults.map((account) => (
+                  <div
+                    key={account.id}
+                    onMouseDown={() => handleDropdownClick(account.id)}
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-0"
+                  >
+                    <div>
+                      <span className="block text-sm font-medium text-gray-900">
+                        {account.display_name}
+                      </span>
+                      <span className="block text-xs text-gray-500">{account.email}</span>
+                    </div>
+                    <span
+                      className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[account.tier] ?? 'bg-gray-100 text-gray-700'}`}
+                    >
+                      {account.tier}
+                    </span>
+                  </div>
+                ))
+              )}
+            </div>
+          )}
+        </div>
         <select
           value={tier}
           onChange={(e) => setTier(e.target.value)}
