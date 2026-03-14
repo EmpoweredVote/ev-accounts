@@ -950,40 +950,67 @@ export type Database = {
       }
       politicians: {
         Row: {
+          chamber_name: string | null
+          chamber_name_formal: string | null
           created_at: string
+          district_id: string | null
+          district_label: string | null
+          district_type: string | null
           first_name: string
           full_name: string | null
+          government_name: string | null
           id: string
           is_active: boolean
           is_candidate: boolean
+          is_vacant: boolean
           last_name: string
           office_title: string | null
           photo_origin_url: string | null
           preferred_name: string | null
+          representing_city: string | null
+          representing_state: string | null
         }
         Insert: {
+          chamber_name?: string | null
+          chamber_name_formal?: string | null
           created_at?: string
+          district_id?: string | null
+          district_label?: string | null
+          district_type?: string | null
           first_name: string
           full_name?: string | null
+          government_name?: string | null
           id?: string
           is_active?: boolean
           is_candidate?: boolean
+          is_vacant?: boolean
           last_name: string
           office_title?: string | null
           photo_origin_url?: string | null
           preferred_name?: string | null
+          representing_city?: string | null
+          representing_state?: string | null
         }
         Update: {
+          chamber_name?: string | null
+          chamber_name_formal?: string | null
           created_at?: string
+          district_id?: string | null
+          district_label?: string | null
+          district_type?: string | null
           first_name?: string
           full_name?: string | null
+          government_name?: string | null
           id?: string
           is_active?: boolean
           is_candidate?: boolean
+          is_vacant?: boolean
           last_name?: string
           office_title?: string | null
           photo_origin_url?: string | null
           preferred_name?: string | null
+          representing_city?: string | null
+          representing_state?: string | null
         }
         Relationships: []
       }
