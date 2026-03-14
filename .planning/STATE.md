@@ -11,8 +11,8 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 Phase: 20 of 23 (Location Endpoints)
 Plan: 3 of 4 complete
-Status: In progress — Plans 01, 03 complete
-Last activity: 2026-03-13 — Completed 20-03-PLAN.md (jurisdiction endpoint, location_consent on GET /me)
+Status: In progress — Plans 01, 02, 03 complete
+Last activity: 2026-03-13 — Completed 20-02-PLAN.md (POST /api/connect/set-location route handler)
 
 Progress: [████░░░░░░] ~50% (11 of ~22 v1.3 plans complete)
 
@@ -71,6 +71,8 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Jurisdiction consent gate: supabaseAdmin for consent check** — GET /me/jurisdiction uses supabaseAdmin (not user client) for the location_consent check; consistent with tierGuards.ts trusted server-side pattern. (20-03)
 - **GET /me returns only location_consent boolean** — resolve_user_jurisdiction is never called from GET /me; jurisdiction data is only available via GET /me/jurisdiction. (20-03)
 - **database.types.ts requires manual update when migrations add columns** — location_consent was missing from generated types after Phase 19 migration 031; manually added to Row/Insert/Update shapes. (20-03)
+- **isInCoverage() bounding box in connect.ts, not geocodingService** — keeps the geocoding service generic; coverage policy belongs in the route layer. (20-02)
+- **OUT_OF_COVERAGE returns 422 not 403** — address is syntactically valid but outside service area; 422 aligns with the other location validation error codes on this endpoint. (20-02)
 
 ### Open Blockers
 
@@ -84,5 +86,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 20-03-PLAN.md — GET /me/jurisdiction route with consent gate; location_consent on GET /me.
-Resume: 20-02-PLAN.md (POST /account/location endpoint) if not yet complete; then 20-04-PLAN.md (validation). Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
+Stopped at: Completed 20-02-PLAN.md — POST /api/connect/set-location route with PO Box guard, bounding box coverage filter, geocoding, upsert_user_location + resolve_user_jurisdiction RPCs.
+Resume: 20-04-PLAN.md (end-to-end validation). Plans 01, 02, 03 all complete. Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
