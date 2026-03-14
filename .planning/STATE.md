@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 21 of 23 (Empowered Profiles Politician Schema)
-Plan: 1 of 2 complete
-Status: In progress
-Last activity: 2026-03-14 — Completed 21-01-PLAN.md (migration 033 + database.types.ts update)
+Plan: 2 of 2 complete
+Status: Phase complete
+Last activity: 2026-03-14 — Completed 21-02-PLAN.md (essentialsService update + seed script + runbook)
 
-Progress: [█████░░░░░] ~59% (13 of ~22 v1.3 plans complete)
+Progress: [██████░░░░] ~63% (14 of ~22 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -77,6 +77,9 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Service helper pattern for service-role ops** — service-role (supabaseAdmin) operations belong in lib/*Service.ts helpers, never in routes/. Architecture test allowlist is the explicit registry of permitted files. getLocationConsent() is the model: route calls helper, helper owns the admin client. (20-05)
 - **DROP FUNCTION before CREATE OR REPLACE when RETURNS TABLE changes** — Adding columns to a function's RETURNS TABLE requires DROP + CREATE; CREATE OR REPLACE alone raises "cannot change return type". Pattern used in migrations 029 (correction) and now 033. (21-01)
 - **is_vacant: boolean (not nullable) in Row type, boolean? in Insert/Update** — NOT NULL DEFAULT false in DB means Row is never null; Insert/Update optional because DB default handles omission. (21-01)
+- **Supabase select string must be a single literal for TypeScript inference** — concatenated strings (`'col1, ' + 'col2'`) break Supabase client type inference, producing GenericStringError. All columns must appear in one string literal. (21-02)
+- **is_vacant=false filter unconditional alongside is_active=true** — politician queries always apply both filters; vacant seats are always excluded from API responses. (21-02)
+- **Seed upsert conflict target is (first_name, last_name) for placeholder records** — no predetermined UUIDs in seed data; switch to (id) when updating with real officeholder records. (21-02)
 
 ### Open Blockers
 
@@ -90,5 +93,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 21-01-PLAN.md — migration 033 (inform.politicians 9 new columns) + database.types.ts update. TypeScript strict: 0 errors.
-Resume: Phase 21, Plan 02 — politician endpoints.
+Stopped at: Completed 21-02-PLAN.md — essentialsService updated with all 9 new fields + is_vacant filter; seed script + runbook created. Phase 21 complete.
+Resume: Phase 22 — Validation Quests integration (or next planned phase).
