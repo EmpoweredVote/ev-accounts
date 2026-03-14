@@ -17,6 +17,8 @@ import {
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
+import { requireConnected } from '../middleware/tierGuards.js';
+import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -50,6 +52,10 @@ const stepBodySchema = z.object({
   legal_name: z.string().min(1).max(200).optional(),
   location: z.string().min(1).max(200).optional(),
   home_address: z.string().min(1).max(500).optional(),
+});
+
+const setLocationBodySchema = z.object({
+  address: z.string().min(1).max(500),
 });
 
 const compassImportBodySchema = z.object({
@@ -480,6 +486,112 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
     }
   } catch (err) {
     console.error('[connect/compass-import] Unexpected error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Coverage check helper
+// Fast client-side pre-filter before PostGIS query.
+// Indiana and LA County bounding boxes (approximate).
+// ---------------------------------------------------------------------------
+
+function isInCoverage(lat: number, lng: number): boolean {
+  // Indiana
+  if (lat >= 37.77 && lat <= 41.76 && lng >= -88.10 && lng <= -84.78) return true;
+  // LA County, California
+  if (lat >= 33.70 && lat <= 34.82 && lng >= -118.95 && lng <= -117.65) return true;
+  return false;
+}
+
+// ---------------------------------------------------------------------------
+// POST /api/connect/set-location
+// ---------------------------------------------------------------------------
+
+router.post('/set-location', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
+  const { userId } = req as AuthenticatedRequest;
+
+  const parsed = setLocationBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0];
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: firstIssue?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  const { address } = parsed.data;
+
+  let lat: number;
+  let lng: number;
+
+  try {
+    const coords = await geocodeAddress(address);
+    lat = coords.lat;
+    lng = coords.lng;
+  } catch (err) {
+    if (err instanceof GeocodingError) {
+      if (err.code === 'PO_BOX_REJECTED') {
+        res.status(422).json({ code: 'PO_BOX_REJECTED', message: err.message });
+        return;
+      }
+      if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'LOW_CONFIDENCE') {
+        res.status(422).json({ code: 'ADDRESS_NOT_FOUND', message: err.message });
+        return;
+      }
+      console.error('[connect/set-location] Geocoding API error:', err.message);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+    throw err;
+  }
+
+  if (!isInCoverage(lat, lng)) {
+    res.status(422).json({
+      code: 'OUT_OF_COVERAGE',
+      message: "Your address is outside our current coverage area. We're expanding soon.",
+    });
+    return;
+  }
+
+  try {
+    const { error: upsertError } = await adminRpc('upsert_user_location', {
+      p_user_id: userId,
+      p_lat: lat,
+      p_lng: lng,
+    }, 'connect');
+
+    if (upsertError) {
+      console.error('[connect/set-location] upsert_user_location error:', upsertError.message);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+
+    const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
+      p_user_id: userId,
+    }, 'connect');
+
+    if (jurisdictionError) {
+      console.error('[connect/set-location] resolve_user_jurisdiction error:', jurisdictionError.message);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+
+    const j = (jurisdictionData ?? {}) as Record<string, string | null>;
+
+    res.status(200).json({
+      location_consent: true,
+      jurisdiction: {
+        congressional_district: j.congressional ?? null,
+        state_senate_district: j.state_senate ?? null,
+        state_house_district: j.state_house ?? null,
+        county: j.county ?? null,
+        school_district: j.school_district ?? null,
+      },
+    });
+  } catch (err) {
+    console.error('[connect/set-location] Unexpected error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
