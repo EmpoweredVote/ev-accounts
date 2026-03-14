@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 20 of 23 (Location Endpoints)
-Plan: 1 of 4 complete
-Status: In progress — Plan 01 complete
-Last activity: 2026-03-13 — Completed 20-01-PLAN.md (geocoding service, env key, LA County runbook)
+Plan: 3 of 4 complete
+Status: In progress — Plans 01, 03 complete
+Last activity: 2026-03-13 — Completed 20-03-PLAN.md (jurisdiction endpoint, location_consent on GET /me)
 
 Progress: [████░░░░░░] ~50% (11 of ~22 v1.3 plans complete)
 
@@ -68,6 +68,9 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **geocodeAddress() privacy contract: coordinates never logged** — lat/lng returned as raw floats consumed by caller immediately; must only pass to upsert_user_location RPC, never log or return in API responses. (20-01)
 - **GOOGLE_MAPS_API_KEY required at startup** — Missing key causes process.exit(1); geocoding call with missing key would produce confusing GEOCODING_API_ERROR at runtime. (20-01)
 - **LA County: county boundary only for Alpha** — resolve_user_jurisdiction returns null for congressional/state_senate/state_house/school_district for CA addresses; county presence used to confirm in-coverage status. (20-01)
+- **Jurisdiction consent gate: supabaseAdmin for consent check** — GET /me/jurisdiction uses supabaseAdmin (not user client) for the location_consent check; consistent with tierGuards.ts trusted server-side pattern. (20-03)
+- **GET /me returns only location_consent boolean** — resolve_user_jurisdiction is never called from GET /me; jurisdiction data is only available via GET /me/jurisdiction. (20-03)
+- **database.types.ts requires manual update when migrations add columns** — location_consent was missing from generated types after Phase 19 migration 031; manually added to Row/Insert/Update shapes. (20-03)
 
 ### Open Blockers
 
@@ -81,5 +84,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-13
-Stopped at: Completed 20-01-PLAN.md — geocoding service, GOOGLE_MAPS_API_KEY env validation, LA County runbook section.
-Resume: Begin 20-02-PLAN.md (POST /account/location endpoint). geocodeAddress() and GeocodingError exported and ready. Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
+Stopped at: Completed 20-03-PLAN.md — GET /me/jurisdiction route with consent gate; location_consent on GET /me.
+Resume: 20-02-PLAN.md (POST /account/location endpoint) if not yet complete; then 20-04-PLAN.md (validation). Operator must provision GOOGLE_MAPS_API_KEY before end-to-end test.
