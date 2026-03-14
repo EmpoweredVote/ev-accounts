@@ -122,28 +122,30 @@ Plans:
   3. `GET /api/account/me/jurisdiction` returns 403 when `location_consent` is false or null; returns jurisdiction JSON when consent is true.
   4. An architecture test asserts that `encrypted_lat`, `encrypted_lng`, and any plaintext float coordinate representation never appear in route SELECT lists or API response objects — confirmed to pass with 0 violations.
   5. The full location flow (`set-location` → `jurisdiction`) can be exercised against the production environment without exposing plaintext coordinates at any layer (API response, server logs visible to application code, or returned RPC data).
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
-- [ ] 20-01-PLAN.md — geocodingService.ts (PO Box + Google Maps + confidence filter) + env.ts GOOGLE_MAPS_API_KEY + RUNBOOK-TIGER-LOAD.md LA County section
-- [ ] 20-02-PLAN.md — connect.ts: POST /api/connect/set-location (geocode → coverage → upsert RPC → jurisdiction RPC)
-- [ ] 20-03-PLAN.md — account.ts: GET /api/account/me/jurisdiction + location_consent on GET /me
-- [ ] 20-04-PLAN.md — backend/tests/architecture/coordinateLeakage.test.ts: static analysis test, 0 violations required
+- [x] 20-01-PLAN.md — geocodingService.ts (PO Box + Google Maps + confidence filter) + env.ts GOOGLE_MAPS_API_KEY + RUNBOOK-TIGER-LOAD.md LA County section
+- [x] 20-02-PLAN.md — connect.ts: POST /api/connect/set-location (geocode -> coverage -> upsert RPC -> jurisdiction RPC)
+- [x] 20-03-PLAN.md — account.ts: GET /api/account/me/jurisdiction + location_consent on GET /me
+- [x] 20-04-PLAN.md — backend/tests/architecture/coordinateLeakage.test.ts: static analysis test, 0 violations required
+- [x] 20-05-PLAN.md — Gap closure: getLocationConsent helper extraction
 
 ---
 
 #### Phase 21: empowered_profiles Politician Schema
-**Goal:** The `empower.empowered_profiles` table carries the full politician field set so Essentials and Validation Quests can consume representative data without schema gaps.
+**Goal:** `inform.politicians` carries the full politician field set (district, jurisdiction, vacancy) so Essentials and Validation Quests can consume representative data without schema gaps.
 **Depends on:** Phase 17
 **Requirements:** PROF-01, PROF-02, PROF-03
 **Success Criteria** (what must be TRUE):
-  1. `empower.empowered_profiles` contains all politician columns (`representing_city`, `representing_state`, `district_type`, `district_label`, `district_id`, `chamber_name`, `chamber_name_formal`, `government_name`, `office_title`, `is_vacant`, `is_candidate`) — the migration applies cleanly with no errors.
-  2. `GET /api/essentials/politicians` and `GET /api/essentials/candidates` return all new fields with names that exactly match what `usePoliticianData.js` in the Essentials repo reads — no field name mismatches.
+  1. `inform.politicians` contains all politician columns — migration 033 applies cleanly.
+  2. `GET /api/essentials/politicians` returns all new fields with names that exactly match what `usePoliticianData.js` in the Essentials repo reads.
   3. `database.types.ts` reflects the updated schema and TypeScript strict compilation passes with 0 errors across backend and admin source.
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 21-01: TBD
+- [ ] 21-01-PLAN.md — Migration 033: 9 new columns on inform.politicians + admin_list_politicians RPC update + database.types.ts
+- [ ] 21-02-PLAN.md — essentialsService.ts endpoint update (new fields + is_vacant filter) + seed script + runbook
 
 ---
 
@@ -222,7 +224,7 @@ Plans:
 | 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
 | 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
-| 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |
+| 21. empowered_profiles Politician Schema | v1.3 | 0/2 | Not started | - |
 | 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
