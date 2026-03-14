@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 22 — Multi-Currency Gem System (complete)
+**Current focus:** Phase 23 — Central Profile Page + Admin Tier Promotion
 
 ## Current Position
 
-Phase: 22 of 24 (multi-currency-gem-system) — Phase complete
+Phase: 22 of 24 (Multi-Currency Gem System) — VERIFIED COMPLETE
 Plan: 2 of 2 complete
-Status: In progress
-Last activity: 2026-03-14 — Completed 22-02-PLAN.md (GET/PATCH /me gems object, admin gem display, gems integration test)
+Status: Phase verified — automated checks passed 2026-03-14
+Last activity: 2026-03-14 — Phase 22 verification passed (5/5 must-haves: award_gems RPC, POST /api/gems/award, gems object on /me, FORBIDDEN_GEM_TYPE enforcement, admin UI three-balance display)
 
 Progress: [███████░░░] ~70% (16 of ~24 v1.3 plans complete)
 
@@ -100,5 +100,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 22-02-PLAN.md — gems object on GET/PATCH /me, admin gem display, gems.test.ts integration test. Phase 22 complete.
-Resume: Phase 23 — run /gsd:new-phase or /gsd:execute-plan for next phase.
+Stopped at: Phase 22 verified complete — migration 034 (idempotency_key + award_gems RPC), POST /api/gems/award (Bearer service key auth, FORBIDDEN_GEM_TYPE enforcement), gems object on GET/PATCH /me, admin UI three-balance display, gems.test.ts integration test. GEM-01 through GEM-07 (minus GEM-07 — see note) marked Complete.
+Resume: Phase 23 — Central Profile Page + Admin Tier Promotion. Run /gsd:discuss-phase 23 or /gsd:plan-phase 23.

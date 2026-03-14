@@ -162,8 +162,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 22-01-PLAN.md — Migration 034 (idempotency_key + award_gems RPC) + gemServiceKeyAuth middleware + POST /api/gems/award endpoint
-- [ ] 22-02-PLAN.md — account.ts gems response migration + admin UI three-balance display + integration tests
+- [x] 22-01-PLAN.md — Migration 034 (idempotency_key + award_gems RPC) + gemServiceKeyAuth middleware + POST /api/gems/award endpoint
+- [x] 22-02-PLAN.md — account.ts gems response migration + admin UI three-balance display + integration tests
 
 ---
 
@@ -226,6 +226,6 @@ Plans:
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
 | 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
 | 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
-| 22. Multi-Currency Gem System | v1.3 | 0/2 | Not started | - |
+| 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |

@@ -113,10 +113,10 @@
 | GEM-01 | Phase 22 | Pending |
 | GEM-02 | Phase 22 | Pending |
 | GEM-03 | Phase 22 | Pending |
-| GEM-04 | Phase 22 | Pending |
-| GEM-05 | Phase 22 | Pending |
-| GEM-06 | Phase 22 | Pending |
-| GEM-07 | Phase 22 | Pending |
+| GEM-04 | Phase 22 | Complete |
+| GEM-05 | Phase 22 | Complete |
+| GEM-06 | Phase 22 | Complete |
+| GEM-07 | Phase 22 | Complete |
 | PROFILE-01 | Phase 23 | Pending |
 | PROFILE-02 | Phase 23 | Pending |
 | PROFILE-03 | Phase 23 | Pending |
