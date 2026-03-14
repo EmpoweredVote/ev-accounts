@@ -66,6 +66,53 @@ interface AccountDetail {
   calibration_status: CalibrationStatus | null;
 }
 
+// Profile endpoint shapes (GET /api/account/profile/:userId)
+interface CompassAnswer {
+  topic_id: string;
+  value: number;
+  write_in_text: string | null;
+  inverted: boolean;
+  updated_at: string;
+}
+
+interface EmpoweredProfile {
+  legal_name: string | null;
+  candidate_page_slug: string | null;
+  is_active: boolean;
+  empowered_at: string | null;
+  demoted_at: string | null;
+  [key: string]: unknown;
+}
+
+interface ProfileData {
+  username: string;
+  tier: string;
+  level: number | null;
+  total_xp: number | null;
+  selected_topic_ids?: string[];
+  compass_answers?: CompassAnswer[];
+  empowered_profile?: EmpoweredProfile;
+}
+
+// Promotion history shapes
+interface PromotionEntry {
+  id: string;
+  admin_id: string;
+  admin_email: string;
+  target_user_id: string;
+  previous_tier: string;
+  new_tier: string;
+  note: string | null;
+  created_at: string;
+}
+
+interface PromotionHistoryResponse {
+  entries: PromotionEntry[];
+  total: number;
+  page: number;
+  pages: number;
+}
+
 const TIER_BADGE: Record<string, string> = {
   inform: 'bg-gray-100 text-gray-700',
   connected: 'bg-blue-100 text-blue-700',
@@ -93,6 +140,21 @@ export function AccountDetailPage() {
   const [xpPage, setXpPage] = useState(1);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
+  // Profile data state (compass, empowered profile)
+  const [profileData, setProfileData] = useState<ProfileData | null>(null);
+
+  // Promotion history state
+  const [promotionData, setPromotionData] = useState<PromotionHistoryResponse | null>(null);
+  const [promotionHistoryError, setPromotionHistoryError] = useState<string | null>(null);
+  const [promotionHistoryLoading, setPromotionHistoryLoading] = useState(false);
+  const [promotionPage, setPromotionPage] = useState(1);
+
+  // Promotion flow state
+  const [showPromoteModal, setShowPromoteModal] = useState(false);
+  const [promoteNote, setPromoteNote] = useState('');
+  const [promotionLoading, setPromotionLoading] = useState(false);
+  const [promotionSuccess, setPromotionSuccess] = useState<string | null>(null);
+
   function fetchAccount() {
     setLoading(true);
     apiFetch<AccountDetail>(`/admin/accounts/${userId}`)
@@ -106,6 +168,19 @@ export function AccountDetailPage() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
 
+  // Fetch profile data (compass + empowered profile)
+  useEffect(() => {
+    if (!userId) return;
+    apiFetch<ProfileData>(`/account/profile/${userId}`)
+      .then(setProfileData)
+      .catch(() => {
+        // Non-fatal: profile data unavailable
+        setProfileData(null);
+      });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId]);
+
+  // Fetch XP history
   useEffect(() => {
     if (!userId || !account?.connected_profile) return;
     setXpLoading(true);
@@ -116,6 +191,18 @@ export function AccountDetailPage() {
       .finally(() => setXpLoading(false));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, xpPage, account?.connected_profile]);
+
+  // Fetch promotion history
+  useEffect(() => {
+    if (!userId) return;
+    setPromotionHistoryLoading(true);
+    setPromotionHistoryError(null);
+    apiFetch<PromotionHistoryResponse>(`/admin/accounts/${userId}/promotion-history?page=${promotionPage}`)
+      .then(setPromotionData)
+      .catch((err) => setPromotionHistoryError(err.message))
+      .finally(() => setPromotionHistoryLoading(false));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId, promotionPage]);
 
   async function handleAction(action: 'suspend' | 'unsuspend' | 'demote') {
     setActionError(null);
@@ -147,6 +234,39 @@ export function AccountDetailPage() {
     }
   }
 
+  async function handlePromote() {
+    setActionError(null);
+    setPromotionLoading(true);
+    try {
+      await apiFetch(`/admin/accounts/${userId}/promote`, {
+        method: 'POST',
+        body: JSON.stringify({ note: promoteNote || undefined }),
+      });
+      setShowPromoteModal(false);
+      setPromoteNote('');
+      setPromotionSuccess('Account successfully promoted to Connected tier.');
+      fetchAccount();
+      // Refresh promotion history
+      setPromotionPage(1);
+      apiFetch<PromotionHistoryResponse>(`/admin/accounts/${userId}/promotion-history?page=1`)
+        .then(setPromotionData)
+        .catch(() => {});
+      // Auto-clear success message after 5 seconds
+      setTimeout(() => setPromotionSuccess(null), 5000);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Promotion failed';
+      if (message.includes('409') || message.toLowerCase().includes('already')) {
+        setActionError('User is already Connected or Empowered.');
+      } else if (message.includes('404') || message.toLowerCase().includes('not found')) {
+        setActionError('User not found.');
+      } else {
+        setActionError(message);
+      }
+    } finally {
+      setPromotionLoading(false);
+    }
+  }
+
   if (loading) {
     return (
       <div className="animate-pulse space-y-4">
@@ -173,6 +293,13 @@ export function AccountDetailPage() {
       <Link to="/admin/accounts" className="text-sm text-blue-600 hover:text-blue-800 mb-4 inline-block">
         &larr; Back to Accounts
       </Link>
+
+      {/* Promotion success toast */}
+      {promotionSuccess && (
+        <div className="mb-4 bg-green-50 border border-green-200 rounded p-3 text-green-700 text-sm">
+          {promotionSuccess}
+        </div>
+      )}
 
       {/* Profile header */}
       <div className="bg-white rounded-lg shadow p-6 mb-4">
@@ -335,6 +462,101 @@ export function AccountDetailPage() {
         </div>
       )}
 
+      {/* Compass Section (Connected + Empowered only) */}
+      {profileData?.selected_topic_ids !== undefined && (
+        <div className="bg-white rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Compass</h2>
+          <p className="text-sm text-gray-600 mb-3">
+            <span className="font-medium">{profileData.selected_topic_ids.length}</span> selected topic{profileData.selected_topic_ids.length !== 1 ? 's' : ''}
+          </p>
+
+          {profileData.compass_answers ? (
+            profileData.compass_answers.length === 0 ? (
+              <p className="text-sm text-gray-400">No compass answers recorded.</p>
+            ) : (
+              <div className="overflow-hidden rounded border border-gray-200">
+                <table className="w-full text-sm">
+                  <thead className="bg-gray-50 border-b border-gray-200">
+                    <tr>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500">Topic ID</th>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500">Value</th>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500">Write-in Text</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-100">
+                    {profileData.compass_answers.map((answer) => (
+                      <tr key={answer.topic_id}>
+                        <td className="px-4 py-3 text-gray-500 font-mono text-xs">
+                          {answer.topic_id.slice(0, 8)}&hellip;
+                        </td>
+                        <td className="px-4 py-3 text-gray-900 font-medium">{answer.value}</td>
+                        <td className="px-4 py-3 text-gray-600">
+                          {answer.write_in_text ?? <span className="text-gray-300">&mdash;</span>}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )
+          ) : (
+            <p className="text-sm text-gray-400 italic">
+              Compass answers are private for Connected-tier users.
+            </p>
+          )}
+        </div>
+      )}
+
+      {/* Empowered Profile Section (Empowered only) */}
+      {profileData?.empowered_profile && (
+        <div className="bg-white rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">Empowered Profile</h2>
+          <div className="space-y-2 text-sm">
+            <div className="flex">
+              <span className="w-44 font-medium text-gray-600">Legal Name:</span>
+              <span className="text-gray-900">{profileData.empowered_profile.legal_name ?? 'Not set'}</span>
+            </div>
+            <div className="flex items-center">
+              <span className="w-44 font-medium text-gray-600">Candidate Page Slug:</span>
+              {profileData.empowered_profile.candidate_page_slug ? (
+                <a
+                  href={`/candidates/${profileData.empowered_profile.candidate_page_slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800"
+                >
+                  {profileData.empowered_profile.candidate_page_slug}
+                </a>
+              ) : (
+                <span className="text-gray-400">Not set</span>
+              )}
+            </div>
+            <div className="flex items-center">
+              <span className="w-44 font-medium text-gray-600">Status:</span>
+              <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${profileData.empowered_profile.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+                {profileData.empowered_profile.is_active ? 'Active' : 'Inactive'}
+              </span>
+            </div>
+            <div className="flex">
+              <span className="w-44 font-medium text-gray-600">Empowered At:</span>
+              <span className="text-gray-900">
+                {profileData.empowered_profile.empowered_at
+                  ? new Date(profileData.empowered_profile.empowered_at as string).toLocaleDateString()
+                  : 'Unknown'}
+              </span>
+            </div>
+            {profileData.empowered_profile.demoted_at && (
+              <div className="flex">
+                <span className="w-44 font-medium text-gray-600">Demoted At:</span>
+                <span className="text-red-600">
+                  {new Date(profileData.empowered_profile.demoted_at as string).toLocaleDateString()}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* XP History (Connected + Empowered only) */}
       {account.connected_profile && (
         <div className="bg-white rounded-lg shadow p-6 mb-4">
@@ -435,6 +657,94 @@ export function AccountDetailPage() {
         </div>
       )}
 
+      {/* Promotion History Section (always shown) */}
+      <div className="bg-white rounded-lg shadow p-6 mb-4">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Promotion History</h2>
+
+        {promotionHistoryError && (
+          <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3">
+            Failed to load promotion history.
+          </div>
+        )}
+
+        <div className="overflow-hidden rounded border border-gray-200">
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50 border-b border-gray-200">
+              <tr>
+                <th className="text-left px-4 py-3 font-medium text-gray-500">Date</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500">Admin</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500">Previous Tier</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500">New Tier</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500">Note</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              {promotionHistoryLoading ? (
+                Array.from({ length: 3 }).map((_, i) => (
+                  <tr key={i} className="animate-pulse">
+                    <td colSpan={5} className="px-4 py-3">
+                      <div className="h-4 bg-gray-200 rounded w-full"></div>
+                    </td>
+                  </tr>
+                ))
+              ) : !promotionData || promotionData.entries.length === 0 ? (
+                <tr>
+                  <td colSpan={5} className="px-4 py-8 text-center text-gray-400">
+                    No promotions recorded.
+                  </td>
+                </tr>
+              ) : (
+                promotionData.entries.map((entry) => (
+                  <tr key={entry.id}>
+                    <td className="px-4 py-3 text-gray-500">
+                      {new Date(entry.created_at).toLocaleDateString()}
+                    </td>
+                    <td className="px-4 py-3 text-gray-700">{entry.admin_email}</td>
+                    <td className="px-4 py-3">
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[entry.previous_tier] ?? 'bg-gray-100 text-gray-700'}`}>
+                        {entry.previous_tier}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[entry.new_tier] ?? 'bg-gray-100 text-gray-700'}`}>
+                        {entry.new_tier}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3 text-gray-600">
+                      {entry.note ?? <span className="text-gray-300">&mdash;</span>}
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+
+        {promotionData && promotionData.pages > 1 && (
+          <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+            <span>
+              Page {promotionData.page} of {promotionData.pages} ({promotionData.total} total)
+            </span>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setPromotionPage((p) => Math.max(1, p - 1))}
+                disabled={promotionPage <= 1}
+                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => setPromotionPage((p) => Math.min(promotionData.pages, p + 1))}
+                disabled={promotionPage >= promotionData.pages}
+                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              >
+                Next
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
       {/* Actions */}
       <div className="bg-white rounded-lg shadow p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Actions</h2>
@@ -461,6 +771,16 @@ export function AccountDetailPage() {
               className="px-4 py-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white text-sm font-medium rounded-md transition-colors"
             >
               Unsuspend Account
+            </button>
+          )}
+
+          {account.tier === 'inform' && (
+            <button
+              onClick={() => setShowPromoteModal(true)}
+              disabled={actionLoading}
+              className="px-4 py-2 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-50 text-white text-sm font-medium rounded-md transition-colors"
+            >
+              Promote to Connected
             </button>
           )}
 
@@ -494,6 +814,45 @@ export function AccountDetailPage() {
           )}
         </div>
       </div>
+
+      {/* Promote to Connected Modal */}
+      {showPromoteModal && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">Promote to Connected</h2>
+            <p className="text-sm text-gray-700 mb-4">
+              Promote <strong>{account.display_name}</strong> from Inform to Connected tier?
+            </p>
+            <textarea
+              value={promoteNote}
+              onChange={(e) => setPromoteNote(e.target.value)}
+              maxLength={500}
+              placeholder="Add a note (optional)"
+              rows={3}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent resize-none mb-4"
+            />
+            <div className="flex justify-end gap-3">
+              <button
+                onClick={() => {
+                  setShowPromoteModal(false);
+                  setPromoteNote('');
+                }}
+                disabled={promotionLoading}
+                className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-50 disabled:opacity-50 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handlePromote}
+                disabled={promotionLoading}
+                className="px-4 py-2 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-50 text-white text-sm font-medium rounded-md transition-colors"
+              >
+                {promotionLoading ? 'Promoting...' : 'Promote to Connected'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
