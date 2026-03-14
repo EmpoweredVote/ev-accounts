@@ -45,6 +45,10 @@ import {
   adminCreateCategory,
   adminAssignTopicCategories,
   getTopicStances,
+  promoteToConnected,
+  getPromotionHistory,
+  getGlobalPromotionLog,
+  getAdminEmailById,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -209,6 +213,62 @@ router.post('/accounts/:userId/demote', async (req, res) => {
   }
 });
 
+const PromoteSchema = z.object({
+  note: z.string().max(500).optional(),
+});
+
+const PromotionLogQuerySchema = z.object({
+  page: z.coerce.number().int().min(1).default(1),
+});
+
+/**
+ * POST /api/admin/accounts/:userId/promote
+ * Promote an Inform-tier user to Connected. Creates connected_profiles row and
+ * tier_promotion_log entry atomically via promote_to_connected RPC.
+ * Returns 409 if user is already Connected or Empowered.
+ * Returns 404 if user does not exist.
+ */
+router.post('/accounts/:userId/promote', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const parsed = PromoteSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+
+    const adminId = actorId(req);
+
+    // Resolve admin email server-side via supabaseAdmin.auth.admin.getUserById
+    // (delegated to adminService to avoid supabaseAdmin in routes — architecture rule).
+    const adminEmail = await getAdminEmailById(adminId);
+    if (!adminEmail) {
+      res.status(500).json({ error: 'Failed to resolve admin identity' });
+      return;
+    }
+
+    await promoteToConnected(adminId, adminEmail, userId, parsed.data.note);
+    await logAdminAction(actorId(req), 'promote_to_connected', userId, {
+      previous_tier: 'inform',
+      new_tier: 'connected',
+      note: parsed.data.note ?? null,
+    });
+
+    res.json({ ok: true });
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'NOT_FOUND') {
+      res.status(404).json({ error: 'User not found' });
+      return;
+    }
+    if (e.code === 'ALREADY_CONNECTED') {
+      res.status(409).json({ error: 'User is already Connected or Empowered' });
+      return;
+    }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
 const XpHistoryQuerySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
 });
@@ -231,6 +291,26 @@ router.get('/accounts/:userId/xp-history', async (req, res) => {
     res.json(result);
   } catch (err) {
     console.error('[admin/xp-history] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/accounts/:userId/promotion-history
+ * Paginated promotion log for a specific user (reverse chronological).
+ */
+router.get('/accounts/:userId/promotion-history', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const parsed = PromotionLogQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid query parameters', details: parsed.error.flatten() });
+      return;
+    }
+    const result = await getPromotionHistory(userId, parsed.data.page);
+    res.json(result);
+  } catch (err) {
+    console.error('[admin/promotion-history] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -788,6 +868,30 @@ router.get('/essentials/politicians', async (_req, res) => {
     const politicians = await adminListPoliticians();
     res.json({ politicians });
   } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Global promotion log
+// ---------------------------------------------------------------------------
+
+/**
+ * GET /api/admin/promotions
+ * Paginated global promotion log across all users and admins.
+ * Each entry includes target_display_name (batch-fetched, not a join).
+ */
+router.get('/promotions', async (req, res) => {
+  try {
+    const parsed = PromotionLogQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid query parameters', details: parsed.error.flatten() });
+      return;
+    }
+    const result = await getGlobalPromotionLog(parsed.data.page);
+    res.json(result);
+  } catch (err) {
+    console.error('[admin/promotions] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

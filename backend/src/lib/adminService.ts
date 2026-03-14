@@ -552,6 +552,154 @@ export async function adminAssignTopicCategories(
 }
 
 // ---------------------------------------------------------------------------
+// Admin email resolution
+// ---------------------------------------------------------------------------
+
+/**
+ * Resolve the email address for an admin user via supabaseAdmin.auth.admin.getUserById.
+ * This is the only permitted method for resolving admin email on the promote endpoint.
+ * Returns null if the user cannot be found or if email is absent.
+ *
+ * Called from the promote route to denormalize admin_email into the promotion log
+ * without requiring the caller to pass their own email (which would be spoofable).
+ */
+export async function getAdminEmailById(adminId: string): Promise<string | null> {
+  const { data, error } = await supabaseAdmin.auth.admin.getUserById(adminId);
+  if (error || !data.user) return null;
+  return data.user.email ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// Tier promotion
+// ---------------------------------------------------------------------------
+
+const PROMOTION_PAGE_SIZE = 25;
+
+/**
+ * Promote an Inform-tier user to Connected via the promote_to_connected RPC.
+ * The RPC is atomic: inserts connected_profiles and tier_promotion_log in one transaction.
+ * Throws with code 'NOT_FOUND' if target user does not exist.
+ * Throws with code 'ALREADY_CONNECTED' if target user already has a connected_profiles row.
+ */
+export async function promoteToConnected(
+  adminId: string,
+  adminEmail: string,
+  targetUserId: string,
+  note?: string
+): Promise<{ display_name: string }> {
+  const { data, error } = await adminRpc(
+    'promote_to_connected',
+    {
+      p_admin_id: adminId,
+      p_admin_email: adminEmail,
+      p_target_user_id: targetUserId,
+      p_note: note ?? null,
+    },
+    'connect'
+  );
+
+  if (error) {
+    if (error.message === 'USER_NOT_FOUND') {
+      throw Object.assign(new Error('User not found'), { code: 'NOT_FOUND' });
+    }
+    if (error.message === 'ALREADY_CONNECTED_OR_HIGHER') {
+      throw Object.assign(new Error('User is already Connected or Empowered'), {
+        code: 'ALREADY_CONNECTED',
+      });
+    }
+    throw new Error(error.message);
+  }
+
+  const result = data as { ok: boolean; display_name: string };
+  return { display_name: result.display_name };
+}
+
+/**
+ * Get paginated promotion history for a specific target user.
+ * Returns entries in reverse chronological order (newest first).
+ */
+export async function getPromotionHistory(
+  targetUserId: string,
+  page: number = 1
+): Promise<{ entries: unknown[]; total: number; page: number; pages: number }> {
+  const from = (page - 1) * PROMOTION_PAGE_SIZE;
+
+  const { data, error, count } = await supabaseAdmin
+    .schema('connect')
+    .from('tier_promotion_log')
+    .select('*', { count: 'exact' })
+    .eq('target_user_id', targetUserId)
+    .order('created_at', { ascending: false })
+    .range(from, from + PROMOTION_PAGE_SIZE - 1);
+
+  if (error) throw new Error(error.message);
+
+  const total = count ?? 0;
+  const pages = Math.max(1, Math.ceil(total / PROMOTION_PAGE_SIZE));
+
+  return {
+    entries: (data ?? []) as unknown[],
+    total,
+    page,
+    pages,
+  };
+}
+
+/**
+ * Get paginated global promotion log (all users, all admins).
+ * Returns entries in reverse chronological order with target user display_names
+ * batch-fetched and attached to each entry.
+ */
+export async function getGlobalPromotionLog(
+  page: number = 1
+): Promise<{ entries: unknown[]; total: number; page: number; pages: number }> {
+  const from = (page - 1) * PROMOTION_PAGE_SIZE;
+
+  const { data, error, count } = await supabaseAdmin
+    .schema('connect')
+    .from('tier_promotion_log')
+    .select('*', { count: 'exact' })
+    .order('created_at', { ascending: false })
+    .range(from, from + PROMOTION_PAGE_SIZE - 1);
+
+  if (error) throw new Error(error.message);
+
+  const rows = (data ?? []) as Array<Record<string, unknown>>;
+  const total = count ?? 0;
+  const pages = Math.max(1, Math.ceil(total / PROMOTION_PAGE_SIZE));
+
+  if (rows.length === 0) {
+    return { entries: [], total, page, pages };
+  }
+
+  // Batch-fetch target user display_names to avoid N+1 queries
+  const uniqueTargetIds = [...new Set(rows.map((r) => r.target_user_id as string))];
+
+  const { data: users, error: usersError } = await supabaseAdmin
+    .from('users')
+    .select('id, display_name')
+    .in('id', uniqueTargetIds);
+
+  if (usersError) {
+    console.error('[adminService] error fetching user display_names for promotion log:', usersError);
+  }
+
+  // Build id -> display_name lookup map
+  const displayNameMap: Record<string, string | null> = {};
+  for (const u of users ?? []) {
+    displayNameMap[u.id] = u.display_name;
+  }
+
+  // Attach target_display_name to each log entry
+  const entries = rows.map((row) => ({
+    ...row,
+    target_display_name: displayNameMap[row.target_user_id as string] ?? null,
+  }));
+
+  return { entries, total, page, pages };
+}
+
+// ---------------------------------------------------------------------------
 // Dashboard
 // ---------------------------------------------------------------------------
 
