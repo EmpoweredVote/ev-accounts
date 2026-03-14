@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 22 — Multi-Currency Gem System
+**Current focus:** Phase 22 — Multi-Currency Gem System (complete)
 
 ## Current Position
 
-Phase: 22 of 24 (multi-currency-gem-system) — In progress
-Plan: 1 of 2 complete
+Phase: 22 of 24 (multi-currency-gem-system) — Phase complete
+Plan: 2 of 2 complete
 Status: In progress
-Last activity: 2026-03-14 — Completed 22-01-PLAN.md (migration 034, award_gems RPC, POST /api/gems/award)
+Last activity: 2026-03-14 — Completed 22-02-PLAN.md (GET/PATCH /me gems object, admin gem display, gems integration test)
 
-Progress: [██████░░░░] ~65% (15 of ~24 v1.3 plans complete)
+Progress: [███████░░░] ~70% (16 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -84,6 +84,9 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **GEMS_SERVICE_KEYS optional at startup** — absent = empty map = all /award requests get 401; server starts cleanly without gem service integration configured. (22-01)
 - **p_transaction_type TEXT DEFAULT 'service_award' in award_gems** — gem_transactions.transaction_type is NOT NULL; DEFAULT makes parameter backward-compatible while keeping INSERT explicit. (22-01)
 - **Partial unique index on idempotency_key (WHERE NOT NULL)** — correct Postgres pattern for nullable dedup column; standard UNIQUE would not conflict on NULLs but partial index makes intent explicit. (22-01)
+- **gems at root AND in connected_profile** — additive; both populated so no callers break. CompassV2/CTC read root gems; admin detail view reads connected_profile. (22-02)
+- **ALLOWED_ME_KEYS expanded with completed_onboarding, location_consent, empowerment_status, gems** — already returned by endpoint but not in whitelist; added to prevent false negatives. (22-02)
+- **hasLiveDB gates on INTEGRATION_TEST_JWT not SUPABASE_URL** — SUPABASE_URL is always set to fake value in test env; INTEGRATION_TEST_JWT is the correct live-DB gate. (22-02)
 
 ### Open Blockers
 
@@ -97,5 +100,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 22-01-PLAN.md — migration 034 (idempotency_key + award_gems RPC), gemServiceKeyAuth.ts, POST /api/gems/award, TypeScript 0 errors.
-Resume: Phase 22 Plan 02 — run /gsd:execute-plan 22-02.
+Stopped at: Completed 22-02-PLAN.md — gems object on GET/PATCH /me, admin gem display, gems.test.ts integration test. Phase 22 complete.
+Resume: Phase 23 — run /gsd:new-phase or /gsd:execute-plan for next phase.
