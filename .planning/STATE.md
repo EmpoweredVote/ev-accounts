@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 22 of 24 (Multi-Currency Gem System) — VERIFIED COMPLETE
-Plan: 2 of 2 complete
-Status: Phase verified — automated checks passed 2026-03-14
-Last activity: 2026-03-14 — Phase 22 verification passed (5/5 must-haves: award_gems RPC, POST /api/gems/award, gems object on /me, FORBIDDEN_GEM_TYPE enforcement, admin UI three-balance display)
+Phase: 23 of 24 (Central Profile Page + Admin Tier Promotion) — In progress
+Plan: 1 of 3 complete
+Status: In progress
+Last activity: 2026-03-14 — Completed 23-01-PLAN.md (migration 035, profileService, profile routes, admin promote/promotion-log endpoints)
 
-Progress: [███████░░░] ~70% (16 of ~24 v1.3 plans complete)
+Progress: [████████░░] ~73% (17 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -87,6 +87,10 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **gems at root AND in connected_profile** — additive; both populated so no callers break. CompassV2/CTC read root gems; admin detail view reads connected_profile. (22-02)
 - **ALLOWED_ME_KEYS expanded with completed_onboarding, location_consent, empowerment_status, gems** — already returned by endpoint but not in whitelist; added to prevent false negatives. (22-02)
 - **hasLiveDB gates on INTEGRATION_TEST_JWT not SUPABASE_URL** — SUPABASE_URL is always set to fake value in test env; INTEGRATION_TEST_JWT is the correct live-DB gate. (22-02)
+- **politician_id FK on empowered_profiles is the ONLY join path to inform.politicians** — inform.politicians has no slug column; no join via candidates.ts. politician_id column added in migration 035. (23-01)
+- **getAdminEmailById in lib/adminService.ts, not in routes** — Architecture rule prohibits supabaseAdmin in routes/; wrapping getUserById in a lib helper satisfies both plan requirement and architecture test. (23-01)
+- **tier_promotion_log.admin_email denormalized at write time** — avoids auth schema join at read time; same pattern intent as admin_audit_log. (23-01)
+- **profileService.ts on supabaseAdmin allowlist** — public profile endpoint has no JWT so must use service role; added to architecture.test.ts allowlist alongside other lib/*Service.ts files. (23-01)
 
 ### Open Blockers
 
@@ -100,5 +104,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Phase 22 verified complete — migration 034 (idempotency_key + award_gems RPC), POST /api/gems/award (Bearer service key auth, FORBIDDEN_GEM_TYPE enforcement), gems object on GET/PATCH /me, admin UI three-balance display, gems.test.ts integration test. GEM-01 through GEM-07 (minus GEM-07 — see note) marked Complete.
-Resume: Phase 23 — Central Profile Page + Admin Tier Promotion. Run /gsd:discuss-phase 23 or /gsd:plan-phase 23.
+Stopped at: Completed 23-01-PLAN.md — migration 035 (tier_promotion_log, politician_id FK, promote_to_connected RPC), profileService.ts (public/owner profile aggregation), profile routes, admin promote + promotion-log endpoints.
+Resume: Phase 23 Plan 02 — admin UI profile page (consumes GET /api/account/profile/:userId and profile/me).
