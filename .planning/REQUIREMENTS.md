@@ -33,9 +33,9 @@
 
 ### PROF — empowered_profiles Politician Schema
 
-- [ ] **PROF-01**: Migration adds politician fields to `empower.empowered_profiles`: `representing_city`, `representing_state`, `district_type`, `district_label`, `district_id`, `chamber_name`, `chamber_name_formal`, `government_name`, `office_title`, `is_vacant boolean`, `is_candidate boolean` — schema designed as VQ consensus output target and Essentials consumption target
-- [ ] **PROF-02**: `GET /api/essentials/politicians` and `GET /api/essentials/candidates` updated to return all new fields; field names match Essentials `usePoliticianData.js` consumption exactly
-- [ ] **PROF-03**: Supabase types regenerated (`database.types.ts`); TypeScript strict compilation passes with 0 errors across backend + admin
+- [x] **PROF-01**: Migration adds politician fields to `empower.empowered_profiles`: `representing_city`, `representing_state`, `district_type`, `district_label`, `district_id`, `chamber_name`, `chamber_name_formal`, `government_name`, `office_title`, `is_vacant boolean`, `is_candidate boolean` — schema designed as VQ consensus output target and Essentials consumption target
+- [x] **PROF-02**: `GET /api/essentials/politicians` and `GET /api/essentials/candidates` updated to return all new fields; field names match Essentials `usePoliticianData.js` consumption exactly
+- [x] **PROF-03**: Supabase types regenerated (`database.types.ts`); TypeScript strict compilation passes with 0 errors across backend + admin
 
 ### GEM — Multi-Currency Gem System
 
@@ -107,9 +107,9 @@
 | LOC-07 | Phase 20 | Pending |
 | LOC-08 | Phase 20 | Pending |
 | LOC-09 | Phase 20 | Pending |
-| PROF-01 | Phase 21 | Pending |
-| PROF-02 | Phase 21 | Pending |
-| PROF-03 | Phase 21 | Pending |
+| PROF-01 | Phase 21 | Complete |
+| PROF-02 | Phase 21 | Complete |
+| PROF-03 | Phase 21 | Complete |
 | GEM-01 | Phase 22 | Pending |
 | GEM-02 | Phase 22 | Pending |
 | GEM-03 | Phase 22 | Pending |

@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 21 — empowered_profiles Politician Schema
+**Current focus:** Phase 22 — Multi-Currency Gem System
 
 ## Current Position
 
-Phase: 21 of 23 (Empowered Profiles Politician Schema)
+Phase: 21 of 24 (empowered_profiles Politician Schema) — VERIFIED COMPLETE
 Plan: 2 of 2 complete
-Status: Phase complete
-Last activity: 2026-03-14 — Completed 21-02-PLAN.md (essentialsService update + seed script + runbook)
+Status: Phase verified — automated checks passed 2026-03-14
+Last activity: 2026-03-14 — Phase 21 verification passed (migration 033, essentialsService fields, TypeScript 0 errors)
 
-Progress: [██████░░░░] ~63% (14 of ~22 v1.3 plans complete)
+Progress: [██████░░░░] ~63% (14 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -93,5 +93,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 21-02-PLAN.md — essentialsService updated with all 9 new fields + is_vacant filter; seed script + runbook created. Phase 21 complete.
-Resume: Phase 22 — Validation Quests integration (or next planned phase).
+Stopped at: Phase 21 verified complete — migration 033 (9 politician columns), essentialsService all fields + is_vacant filter, TypeScript 0 errors. PROF-01/02/03 marked Complete.
+Resume: Phase 22 — Multi-Currency Gem System. Run /gsd:discuss-phase 22 or /gsd:plan-phase 22.

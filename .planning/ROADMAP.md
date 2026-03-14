@@ -144,8 +144,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 21-01-PLAN.md — Migration 033: 9 new columns on inform.politicians + admin_list_politicians RPC update + database.types.ts
-- [ ] 21-02-PLAN.md — essentialsService.ts endpoint update (new fields + is_vacant filter) + seed script + runbook
+- [x] 21-01-PLAN.md — Migration 033: 9 new columns on inform.politicians + admin_list_politicians RPC update + database.types.ts
+- [x] 21-02-PLAN.md — essentialsService.ts endpoint update (new fields + is_vacant filter) + seed script + runbook
 
 ---
 
@@ -224,7 +224,7 @@ Plans:
 | 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
 | 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
-| 21. empowered_profiles Politician Schema | v1.3 | 0/2 | Not started | - |
+| 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
