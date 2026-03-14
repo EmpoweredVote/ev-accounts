@@ -50,6 +50,7 @@ describe('Architecture enforcement: dual-client constraint', () => {
     const allowedFiles = [
       path.join(BACKEND_SRC, 'lib/supabase.ts'),
       path.join(BACKEND_SRC, 'lib/authService.ts'),
+      path.join(BACKEND_SRC, 'lib/connectService.ts'),
       path.join(BACKEND_SRC, 'lib/inviteService.ts'),
       path.join(BACKEND_SRC, 'lib/enrollService.ts'),
       path.join(BACKEND_SRC, 'lib/empowerService.ts'),
