@@ -5,7 +5,7 @@
 - ✅ **v1.0 MVP** — Phases 1–8 (shipped 2026-02-28)
 - ✅ **v1.1 XP & Progression** — Phases 9–11 (shipped 2026-03-04)
 - ✅ **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–16 (shipped 2026-03-07)
-- 🚧 **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–23 (in progress)
+- 🚧 **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–24 (in progress)
 
 ## Phases
 
@@ -51,7 +51,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 ### 🚧 v1.3 Alpha Launch & Location Infrastructure (In Progress)
 
-**Milestone Goal:** Get Alpha live (migrations to production, CompassV2 contract), establish the location privacy infrastructure (encrypted lat/lng, PostGIS jurisdiction resolution), expand the empowered_profiles politician schema for VQ readiness, extend the gem system to three currencies, and centralize the profile page in accounts.
+**Milestone Goal:** Get Alpha live (migrations to production, CompassV2 contract), establish the location privacy infrastructure (encrypted lat/lng, PostGIS jurisdiction resolution), expand the empowered_profiles politician schema for VQ readiness, extend the gem system to three currencies, centralize the profile page in accounts with admin tier-promotion tooling, and transform accounts into the universal Connected Account portal with public signup flow.
 
 #### Phase 17: Live Alpha Deployment
 **Goal:** The production Supabase instance is verified live with all v1.2 migrations applied, confirmed by a full smoke test suite.
@@ -122,10 +122,13 @@ Plans:
   3. `GET /api/account/me/jurisdiction` returns 403 when `location_consent` is false or null; returns jurisdiction JSON when consent is true.
   4. An architecture test asserts that `encrypted_lat`, `encrypted_lng`, and any plaintext float coordinate representation never appear in route SELECT lists or API response objects — confirmed to pass with 0 violations.
   5. The full location flow (`set-location` → `jurisdiction`) can be exercised against the production environment without exposing plaintext coordinates at any layer (API response, server logs visible to application code, or returned RPC data).
-**Plans:** TBD
+**Plans:** 4 plans
 
 Plans:
-- [ ] 20-01: TBD
+- [ ] 20-01-PLAN.md — geocodingService.ts (PO Box + Google Maps + confidence filter) + env.ts GOOGLE_MAPS_API_KEY + RUNBOOK-TIGER-LOAD.md LA County section
+- [ ] 20-02-PLAN.md — connect.ts: POST /api/connect/set-location (geocode → coverage → upsert RPC → jurisdiction RPC)
+- [ ] 20-03-PLAN.md — account.ts: GET /api/account/me/jurisdiction + location_consent on GET /me
+- [ ] 20-04-PLAN.md — backend/tests/architecture/coordinateLeakage.test.ts: static analysis test, 0 violations required
 
 ---
 
@@ -161,18 +164,37 @@ Plans:
 
 ---
 
-#### Phase 23: Central Profile Page
-**Goal:** A single accounts-owned profile endpoint aggregates user data for any authenticated or public viewer, replacing per-feature profile views.
+#### Phase 23: Central Profile Page + Admin Tier Promotion
+**Goal:** A single accounts-owned profile endpoint aggregates user data for any authenticated or public viewer, replacing per-feature profile views; and admins can manually promote a user from Inform → Connected with a full audit trail.
 **Depends on:** Phase 22 (for gem data shape), Phase 20 (for location_consent field)
-**Requirements:** PROFILE-01, PROFILE-02, PROFILE-03
+**Requirements:** PROFILE-01, PROFILE-02, PROFILE-03, PROMO-01, PROMO-02, PROMO-03
 **Success Criteria** (what must be TRUE):
   1. `GET /api/account/profile/:userId` returns `{ username, tier, level, total_xp, selected_topic_ids, empowered_profile? }` for any valid userId without authentication — the public profile shape is accessible and contains no sensitive fields (no gems, no tolerance_rating, no location).
   2. `GET /api/account/profile/me` for an authenticated owner returns the public shape plus `{ gem_balances: { yellow, blue, red }, location_consent, email }` — the owner sees their full aggregated profile in one call.
   3. The profile page UI in the admin React app displays the aggregated profile data using the new endpoint — any previous per-feature profile views in the admin tool are replaced.
+  4. An admin can search for a user by email OR username in the admin tool, see their current tier, and promote them from Inform → Connected after an explicit confirmation step — no one-click promotes.
+  5. Every promotion writes a row to `connect.tier_promotion_log` with: `admin_id`, `target_user_id`, `previous_tier`, `new_tier`, `note` (optional), `created_at` — and the log is visible in the admin tool.
+  6. Attempting to promote a user who is already Connected or Empowered returns a user-facing error without writing a log row.
 **Plans:** TBD
 
 Plans:
 - [ ] 23-01: TBD
+
+---
+
+#### Phase 24: Public Auth Hub (Login Rebrand + Signup Flow)
+**Goal:** `accounts.empowered.vote` becomes the universal Connected Account portal — the login page is rebranded for civic participants, a `/signup` route creates Connected Accounts, post-login routing reflects the user's actual tier, and other apps can redirect here with a `?redirect=` param.
+**Depends on:** Phase 23 (profile infrastructure for post-login Connected dashboard)
+**Requirements:** HUB-01, HUB-02, HUB-03, HUB-04
+**Success Criteria** (what must be TRUE):
+  1. The login page at `accounts.empowered.vote/login` shows Connected Account-centric language ("Sign in to your Connected Account") with a visible "Don't have an account? Create one" link — no admin-first framing visible to non-admins on first load.
+  2. After login, users are routed by tier: first-time → onboarding; Connected → Connected dashboard; Empowered → Empowered view; Admin → admin panel. An admin account and a Connected account tested back-to-back land on different pages.
+  3. `accounts.empowered.vote/signup` completes a Connected Account creation (email + password + required profile fields) and redirects to onboarding — Validation Quests can link here and users land back after auth.
+  4. `?redirect=https://quests.empowered.vote/feed` on both `/login` and `/signup` routes the user to the provided URL after success — and a URL from an untrusted domain is ignored (redirects to default instead).
+**Plans:** TBD
+
+Plans:
+- [ ] 24-01: TBD
 
 ---
 
@@ -199,7 +221,8 @@ Plans:
 | 17. Live Alpha Deployment | v1.3 | 3/3 | Complete | 2026-03-10 |
 | 18. CompassV2 API Contract | v1.3 | 4/4 | Complete | 2026-03-10 |
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
-| 20. Location Endpoints & Validation | v1.3 | 0/? | Not started | - |
+| 20. Location Endpoints & Validation | v1.3 | 0/4 | Not started | - |
 | 21. empowered_profiles Politician Schema | v1.3 | 0/? | Not started | - |
 | 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
-| 23. Central Profile Page | v1.3 | 0/? | Not started | - |
+| 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
+| 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
