@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 ## Current Position
 
 Phase: 23 of 24 (Central Profile Page + Admin Tier Promotion) — In progress
-Plan: 1 of 3 complete
+Plan: 2 of 3 complete
 Status: In progress
-Last activity: 2026-03-14 — Completed 23-01-PLAN.md (migration 035, profileService, profile routes, admin promote/promotion-log endpoints)
+Last activity: 2026-03-14 — Completed 23-02-PLAN.md (AccountDetailPage compass, empowered profile, promotion modal, promotion history)
 
-Progress: [████████░░] ~73% (17 of ~24 v1.3 plans complete)
+Progress: [████████░░] ~75% (18 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -91,6 +91,8 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **getAdminEmailById in lib/adminService.ts, not in routes** — Architecture rule prohibits supabaseAdmin in routes/; wrapping getUserById in a lib helper satisfies both plan requirement and architecture test. (23-01)
 - **tier_promotion_log.admin_email denormalized at write time** — avoids auth schema join at read time; same pattern intent as admin_audit_log. (23-01)
 - **profileService.ts on supabaseAdmin allowlist** — public profile endpoint has no JWT so must use service role; added to architecture.test.ts allowlist alongside other lib/*Service.ts files. (23-01)
+- **Absent button (not disabled) for Inform-only promote action** — `{account.tier === 'inform' && <button>}` removes the element from DOM entirely for Connected/Empowered; no disabled prop needed. (23-02)
+- **Profile fetch for Compass data uses public endpoint** — GET /api/account/profile/:userId reused in admin UI; errors are non-fatal (profileData=null, sections hidden). (23-02)
 
 ### Open Blockers
 
@@ -104,5 +106,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 23-01-PLAN.md — migration 035 (tier_promotion_log, politician_id FK, promote_to_connected RPC), profileService.ts (public/owner profile aggregation), profile routes, admin promote + promotion-log endpoints.
-Resume: Phase 23 Plan 02 — admin UI profile page (consumes GET /api/account/profile/:userId and profile/me).
+Stopped at: Completed 23-02-PLAN.md — AccountDetailPage extended with compass section, empowered profile section, promotion history table, and Inform-only promote-to-connected modal.
+Resume: Phase 23 Plan 03 — global promotion log admin page (GET /api/admin/promotions).
