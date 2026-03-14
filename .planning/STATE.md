@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 23 — Central Profile Page + Admin Tier Promotion
+**Current focus:** Phase 24 — Public Auth Hub (Login Rebrand + Signup Flow)
 
 ## Current Position
 
-Phase: 23 of 24 (Central Profile Page + Admin Tier Promotion) — In progress
+Phase: 23 of 24 (Central Profile Page + Admin Tier Promotion) — VERIFIED COMPLETE
 Plan: 3 of 3 complete
-Status: Phase complete
-Last activity: 2026-03-14 — Completed 23-03-PLAN.md (search-as-you-type dropdown on AccountsPage, PromotionsPage global audit log, nav + route)
+Status: Phase verified — automated checks passed 2026-03-14 (6/6 must-haves)
+Last activity: 2026-03-14 — Phase 23 verification passed (6/6 must-haves: public profile endpoint, owner profile with gems/consent/email, admin profile UI with new endpoint, search+promote flow with confirmation modal, promotion log written and visible, 409 on already-promoted)
 
 Progress: [█████████░] ~79% (19 of ~24 v1.3 plans complete)
 
@@ -106,5 +106,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 23-03-PLAN.md — search-as-you-type dropdown on AccountsPage, PromotionsPage global audit log at /admin/promotions, AdminLayout nav item, App.tsx route registration.
-Resume: Phase 23 complete. Begin Phase 24 or next milestone planning.
+Stopped at: Phase 23 verified complete — migration 035 (tier_promotion_log + empowered_profiles.politician_id FK + promote_to_connected RPC), profileService.ts (public/owner profiles), /api/account/profile routes, admin promotion endpoints, AccountDetailPage extensions (compass/promotion/history sections), AccountsPage search-as-you-type dropdown, PromotionsPage global audit log. PROFILE-01 through PROFILE-03 marked Complete.
+Resume: Phase 24 — Public Auth Hub (Login Rebrand + Signup Flow). Run /gsd:discuss-phase 24 or /gsd:plan-phase 24.

@@ -49,9 +49,9 @@
 
 ### PROFILE — Central Profile Page
 
-- [ ] **PROFILE-01**: `GET /api/account/profile/:userId` — public endpoint returning `{ username, tier, level, total_xp, selected_topic_ids, empowered_profile? }` (no gems, no tolerance_rating, no location)
-- [ ] **PROFILE-02**: `GET /api/account/profile/me` — authenticated owner view adds `{ gem_balances: { yellow, blue, red }, location_consent, email }` to the public shape
-- [ ] **PROFILE-03**: Profile page UI in admin React app — displays aggregated profile data using the new endpoint; replaces any per-feature profile views in the admin tool
+- [x] **PROFILE-01**: `GET /api/account/profile/:userId` — public endpoint returning `{ username, tier, level, total_xp, selected_topic_ids, empowered_profile? }` (no gems, no tolerance_rating, no location)
+- [x] **PROFILE-02**: `GET /api/account/profile/me` — authenticated owner view adds `{ gem_balances: { yellow, blue, red }, location_consent, email }` to the public shape
+- [x] **PROFILE-03**: Profile page UI in admin React app — displays aggregated profile data using the new endpoint; replaces any per-feature profile views in the admin tool
 
 ## Future Requirements
 
@@ -117,9 +117,9 @@
 | GEM-05 | Phase 22 | Complete |
 | GEM-06 | Phase 22 | Complete |
 | GEM-07 | Phase 22 | Complete |
-| PROFILE-01 | Phase 23 | Pending |
-| PROFILE-02 | Phase 23 | Pending |
-| PROFILE-03 | Phase 23 | Pending |
+| PROFILE-01 | Phase 23 | Complete |
+| PROFILE-02 | Phase 23 | Complete |
+| PROFILE-03 | Phase 23 | Complete |
 
 **Coverage:**
 - v1.3 requirements: 29 total
