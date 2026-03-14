@@ -178,10 +178,12 @@ Plans:
   4. An admin can search for a user by email OR username in the admin tool, see their current tier, and promote them from Inform → Connected after an explicit confirmation step — no one-click promotes.
   5. Every promotion writes a row to `connect.tier_promotion_log` with: `admin_id`, `target_user_id`, `previous_tier`, `new_tier`, `note` (optional), `created_at` — and the log is visible in the admin tool.
   6. Attempting to promote a user who is already Connected or Empowered returns a user-facing error without writing a log row.
-**Plans:** TBD
+**Plans:** 3 plans
 
 Plans:
-- [ ] 23-01: TBD
+- [ ] 23-01-PLAN.md — Migration 035 (tier_promotion_log + promote_to_connected RPC) + profileService.ts + profile.ts routes + admin promote endpoint
+- [ ] 23-02-PLAN.md — Admin AccountDetailPage: compass/empowered/promotion sections + promotion modal
+- [ ] 23-03-PLAN.md — Admin search dropdown on AccountsPage + PromotionsPage + nav/route registration
 
 ---
 
@@ -227,5 +229,5 @@ Plans:
 | 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
 | 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
-| 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
+| 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/3 | Not started | - |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
