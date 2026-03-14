@@ -159,10 +159,11 @@ Plans:
   3. An integration test awards yellow gems via `POST /api/gems/award` and asserts `yellow_gem_balance` increments correctly on the subsequent `GET /api/account/me` response — the balance-always-0 bug is confirmed fixed.
   4. A service key configured for yellow gems only receives 422 if it attempts to award blue or red gems — per-key `permittedTypes` enforcement works.
   5. The admin tool account detail page displays three separate gem balances (yellow / blue / red) replacing the previous single balance display.
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 22-01: TBD
+- [ ] 22-01-PLAN.md — Migration 034 (idempotency_key + award_gems RPC) + gemServiceKeyAuth middleware + POST /api/gems/award endpoint
+- [ ] 22-02-PLAN.md — account.ts gems response migration + admin UI three-balance display + integration tests
 
 ---
 
@@ -225,6 +226,6 @@ Plans:
 | 19. Location Schema & RPCs | v1.3 | 3/3 | Complete | 2026-03-12 |
 | 20. Location Endpoints & Validation | v1.3 | 5/5 | Complete | 2026-03-14 |
 | 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
-| 22. Multi-Currency Gem System | v1.3 | 0/? | Not started | - |
+| 22. Multi-Currency Gem System | v1.3 | 0/2 | Not started | - |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 0/? | Not started | - |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
