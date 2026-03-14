@@ -3,7 +3,8 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected } from '../middleware/tierGuards.js';
-import { createUserClient, adminRpc, supabaseAdmin } from '../lib/supabase.js';
+import { createUserClient, adminRpc } from '../lib/supabase.js';
+import { getLocationConsent } from '../lib/connectService.js';
 
 // All DB reads use createUserClient(req.accessToken) — RLS enforced.
 // Architecture rule: service role key must never be used in route handlers.
@@ -165,19 +166,9 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
   const authReq = req as AuthenticatedRequest;
 
   try {
-    const { data: profile, error: profileError } = await supabaseAdmin
-      .schema('connect')
-      .from('connected_profiles')
-      .select('location_consent')
-      .eq('user_id', authReq.userId)
-      .maybeSingle();
+    const hasConsent = await getLocationConsent(authReq.userId);
 
-    if (profileError || !profile) {
-      res.status(403).json({ code: 'NOT_CONNECTED', error: 'Connected account required' });
-      return;
-    }
-
-    if (!profile.location_consent) {
+    if (!hasConsent) {
       res.status(403).json({
         code: 'LOCATION_CONSENT_REQUIRED',
         error: 'Location must be set before jurisdiction can be retrieved',
