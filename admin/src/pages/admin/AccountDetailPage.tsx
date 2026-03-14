@@ -23,7 +23,9 @@ interface ConnectedProfile {
   tolerance_rating: number | null;
   total_xp: number;
   current_level: number;
-  gem_balance: number;
+  gem_balance_yellow: number;
+  gem_balance_blue: number;
+  gem_balance_red: number;
   completed_onboarding: boolean;
   created_at: string;
 }
@@ -197,6 +199,15 @@ export function AccountDetailPage() {
             Level {account.connected_profile.current_level ?? 0}
             {' \u00b7 '}
             {(account.connected_profile.total_xp ?? 0).toLocaleString()} XP
+          </p>
+        )}
+        {account.connected_profile && (
+          <p className="text-sm text-gray-500 mt-1">
+            <span className="text-ev-yellow font-medium">Yellow: {account.connected_profile.gem_balance_yellow}</span>
+            {' \u00b7 '}
+            <span className="text-blue-500 font-medium">Blue: {account.connected_profile.gem_balance_blue}</span>
+            {' \u00b7 '}
+            <span className="text-ev-red font-medium">Red: {account.connected_profile.gem_balance_red}</span>
           </p>
         )}
       </div>
