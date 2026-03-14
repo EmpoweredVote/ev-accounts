@@ -330,3 +330,64 @@ Then rerun the ogr2ogr command for that district type with all flags present.
 ```
 
 **Fix — SRID mismatch:** Run Query 1. If result is 4269, follow Troubleshooting item 2 above.
+
+---
+
+## LA County Boundaries (California)
+
+Phase 20 adds LA County, California as a supported coverage area. Only the county boundary is loaded — state legislative and school district boundaries for California are out of scope for Alpha.
+
+### Prerequisites
+
+Same as Indiana: Migration 031 applied, GDAL installed, DATABASE_URL set to direct connection.
+
+The national county file (`tl_2024_us_county/`) is already present in the working directory — no additional download needed.
+
+### Load LA County boundary
+
+California FIPS state code: **06**
+LA County FIPS county code: **037** (GEOID: **06037**)
+
+```bash
+# LA County from the national county file (already downloaded)
+# Filter: STATEFP='06' AND COUNTYFP='037' — one row, LA County only
+ogr2ogr -f PostgreSQL \
+  "PG:$DATABASE_URL" \
+  -nln district_boundaries \
+  -lco SCHEMA=inform \
+  -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI \
+  -s_srs EPSG:4269 -t_srs EPSG:4326 \
+  -append -update \
+  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'county' AS district_type FROM tl_2024_us_county WHERE STATEFP='06' AND COUNTYFP='037'" \
+  tl_2024_us_county/tl_2024_us_county.shp
+```
+
+### Post-load verification
+
+```sql
+-- Confirm 1 row loaded for California county type with GEOID '06037'
+SELECT geoid, name, district_type
+FROM inform.district_boundaries
+WHERE district_type = 'county' AND geoid = '06037';
+-- Expected: 1 row — geoid: '06037', name: 'Los Angeles County', district_type: 'county'
+
+-- Smoke test: Culver City, CA coordinates (lat=34.0211, lng=-118.3965)
+SELECT geoid, name, district_type
+FROM inform.district_boundaries
+WHERE ST_Covers(
+  geom,
+  ST_SetSRID(ST_MakePoint(-118.3965, 34.0211), 4326)
+)
+AND district_type = 'county';
+-- Expected: 1 row — '06037', 'Los Angeles County', 'county'
+```
+
+### Coverage check integration
+
+The `resolve_user_jurisdiction` RPC returns `null` for `congressional`, `state_senate`, `state_house`, and `school_district` for LA County addresses — only `county` is populated. This is expected Alpha behavior. The HTTP layer uses the county result presence to confirm in-coverage status.
+
+### Troubleshooting
+
+- **0 rows loaded:** Verify both `STATEFP='06'` AND `COUNTYFP='037'` are inside the `-sql` string (not as standalone `-where` flags).
+- **SRID mismatch (4269):** Rerun with `-s_srs EPSG:4269 -t_srs EPSG:4326` flags present.
