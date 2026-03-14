@@ -8,7 +8,7 @@
  * Uses only createUserClient (RLS-enforced) and supabaseAnon (public reads).
  */
 
-import { createUserClient, supabaseAnon, adminRpc } from './supabase.js';
+import { createUserClient, supabaseAnon, adminRpc, supabaseAdmin } from './supabase.js';
 import { saveSelectedTopics, validateTopicIds } from './compassService.js';
 
 // ---------------------------------------------------------------------------
@@ -325,4 +325,30 @@ export async function validateCompassVersions(calibrations: CalibrationItem[]): 
   }
 
   return { valid, mismatched, ready_to_import: mismatched.length === 0 };
+}
+
+// ---------------------------------------------------------------------------
+// Location consent helper — uses supabaseAdmin (service role)
+// Route handlers must not import supabaseAdmin directly (architecture rule).
+// This helper is the single permitted access point for location_consent reads
+// from within the connected_profiles row via service role.
+// ---------------------------------------------------------------------------
+
+/**
+ * getLocationConsent
+ * Returns true if the user's connected_profiles row has location_consent = true.
+ * Returns false if the row is missing or location_consent is false/null.
+ * Uses supabaseAdmin (service role) — this is a trusted internal standing check,
+ * not a data read that feeds a user-facing API response.
+ */
+export async function getLocationConsent(userId: string): Promise<boolean> {
+  const { data, error } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('location_consent')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  if (error || !data) return false;
+  return data.location_consent === true;
 }
