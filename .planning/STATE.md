@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 21 of 24 (empowered_profiles Politician Schema) — VERIFIED COMPLETE
-Plan: 2 of 2 complete
-Status: Phase verified — automated checks passed 2026-03-14
-Last activity: 2026-03-14 — Phase 21 verification passed (migration 033, essentialsService fields, TypeScript 0 errors)
+Phase: 22 of 24 (multi-currency-gem-system) — In progress
+Plan: 1 of 2 complete
+Status: In progress
+Last activity: 2026-03-14 — Completed 22-01-PLAN.md (migration 034, award_gems RPC, POST /api/gems/award)
 
-Progress: [██████░░░░] ~63% (14 of ~24 v1.3 plans complete)
+Progress: [██████░░░░] ~65% (15 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -80,6 +80,10 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Supabase select string must be a single literal for TypeScript inference** — concatenated strings (`'col1, ' + 'col2'`) break Supabase client type inference, producing GenericStringError. All columns must appear in one string literal. (21-02)
 - **is_vacant=false filter unconditional alongside is_active=true** — politician queries always apply both filters; vacant seats are always excluded from API responses. (21-02)
 - **Seed upsert conflict target is (first_name, last_name) for placeholder records** — no predetermined UUIDs in seed data; switch to (id) when updating with real officeholder records. (21-02)
+- **Bearer Authorization header for gem service keys (not X-Service-Key)** — external services expect standard Bearer semantics; regular user JWTs naturally fail (not in key map) returning 401. (22-01)
+- **GEMS_SERVICE_KEYS optional at startup** — absent = empty map = all /award requests get 401; server starts cleanly without gem service integration configured. (22-01)
+- **p_transaction_type TEXT DEFAULT 'service_award' in award_gems** — gem_transactions.transaction_type is NOT NULL; DEFAULT makes parameter backward-compatible while keeping INSERT explicit. (22-01)
+- **Partial unique index on idempotency_key (WHERE NOT NULL)** — correct Postgres pattern for nullable dedup column; standard UNIQUE would not conflict on NULLs but partial index makes intent explicit. (22-01)
 
 ### Open Blockers
 
@@ -93,5 +97,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Phase 21 verified complete — migration 033 (9 politician columns), essentialsService all fields + is_vacant filter, TypeScript 0 errors. PROF-01/02/03 marked Complete.
-Resume: Phase 22 — Multi-Currency Gem System. Run /gsd:discuss-phase 22 or /gsd:plan-phase 22.
+Stopped at: Completed 22-01-PLAN.md — migration 034 (idempotency_key + award_gems RPC), gemServiceKeyAuth.ts, POST /api/gems/award, TypeScript 0 errors.
+Resume: Phase 22 Plan 02 — run /gsd:execute-plan 22-02.
