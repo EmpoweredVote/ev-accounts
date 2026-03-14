@@ -26,6 +26,16 @@ export interface PoliticianRecord {
   office_title: string | null;
   photo_origin_url: string | null;
   is_candidate: boolean;
+  // New fields from migration 033
+  representing_city: string | null;
+  representing_state: string | null;
+  district_type: string | null;
+  district_label: string | null;
+  district_id: string | null;
+  chamber_name: string | null;
+  chamber_name_formal: string | null;
+  government_name: string | null;
+  is_vacant: boolean;
 }
 
 export interface PoliticianGroup {
@@ -39,7 +49,11 @@ export interface PoliticianGroup {
 // ---------------------------------------------------------------------------
 
 /**
- * Fetch active politicians from inform.politicians and group by office_title.
+ * Fetch active, non-vacant politicians from inform.politicians and group by office_title.
+ *
+ * Filters applied:
+ *   - is_active = true  (exclude deactivated/removed records)
+ *   - is_vacant = false (exclude vacant seats — no elected officeholder)
  *
  * When includeCandidates is false:
  *   - Returns only rows where is_candidate = false (incumbents)
@@ -60,8 +74,9 @@ export async function getPoliticiansGrouped(
   let query = supabaseAnon
     .schema('inform')
     .from('politicians')
-    .select('id, full_name, office_title, photo_origin_url, is_candidate')
+    .select('id, full_name, office_title, photo_origin_url, is_candidate, representing_city, representing_state, district_type, district_label, district_id, chamber_name, chamber_name_formal, government_name, is_vacant')
     .eq('is_active', true)
+    .eq('is_vacant', false)
     .order('office_title', { ascending: true, nullsFirst: false })
     .order('full_name', { ascending: true });
 
@@ -80,6 +95,15 @@ export async function getPoliticiansGrouped(
     office_title: string | null;
     photo_origin_url: string | null;
     is_candidate: boolean;
+    representing_city: string | null;
+    representing_state: string | null;
+    district_type: string | null;
+    district_label: string | null;
+    district_id: string | null;
+    chamber_name: string | null;
+    chamber_name_formal: string | null;
+    government_name: string | null;
+    is_vacant: boolean;
   }> = data ?? [];
 
   // Group by office_title
@@ -93,6 +117,15 @@ export async function getPoliticiansGrouped(
       office_title: row.office_title,
       photo_origin_url: row.photo_origin_url,
       is_candidate: row.is_candidate,
+      representing_city: row.representing_city,
+      representing_state: row.representing_state,
+      district_type: row.district_type,
+      district_label: row.district_label,
+      district_id: row.district_id,
+      chamber_name: row.chamber_name,
+      chamber_name_formal: row.chamber_name_formal,
+      government_name: row.government_name,
+      is_vacant: row.is_vacant,
     };
 
     if (!groupMap.has(key)) {
