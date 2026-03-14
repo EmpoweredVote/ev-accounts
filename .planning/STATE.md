@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 20 of 23 (Location Endpoints) — VERIFIED COMPLETE
-Plan: 5 of 5 complete (4 original + 1 gap closure)
-Status: Phase verified — human verification passed 2026-03-14
-Last activity: 2026-03-14 — Phase 20 human verification passed (set-location end-to-end + DB encryption confirmed)
+Phase: 21 of 23 (Empowered Profiles Politician Schema)
+Plan: 1 of 2 complete
+Status: In progress
+Last activity: 2026-03-14 — Completed 21-01-PLAN.md (migration 033 + database.types.ts update)
 
-Progress: [████░░░░░░] ~55% (12 of ~22 v1.3 plans complete)
+Progress: [█████░░░░░] ~59% (13 of ~22 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -75,6 +75,8 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **OUT_OF_COVERAGE returns 422 not 403** — address is syntactically valid but outside service area; 422 aligns with the other location validation error codes on this endpoint. (20-02)
 - **Architecture tests in tests/architecture/, not backend/tests/** — vitest.config.ts include pattern is `../tests/**` relative to `backend/`; resolves to project root tests/. Static analysis tests use fs.readdirSync + readFileSync; negative lookahead excludes TS type annotations from object-key patterns. (20-04)
 - **Service helper pattern for service-role ops** — service-role (supabaseAdmin) operations belong in lib/*Service.ts helpers, never in routes/. Architecture test allowlist is the explicit registry of permitted files. getLocationConsent() is the model: route calls helper, helper owns the admin client. (20-05)
+- **DROP FUNCTION before CREATE OR REPLACE when RETURNS TABLE changes** — Adding columns to a function's RETURNS TABLE requires DROP + CREATE; CREATE OR REPLACE alone raises "cannot change return type". Pattern used in migrations 029 (correction) and now 033. (21-01)
+- **is_vacant: boolean (not nullable) in Row type, boolean? in Insert/Update** — NOT NULL DEFAULT false in DB means Row is never null; Insert/Update optional because DB default handles omission. (21-01)
 
 ### Open Blockers
 
@@ -88,5 +90,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 20-05-PLAN.md — getLocationConsent gap closure. Phase 20 fully complete (0 architecture violations).
-Resume: Phase 21 — run /gsd:new-phase or continue v1.3 roadmap.
+Stopped at: Completed 21-01-PLAN.md — migration 033 (inform.politicians 9 new columns) + database.types.ts update. TypeScript strict: 0 errors.
+Resume: Phase 21, Plan 02 — politician endpoints.
