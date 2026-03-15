@@ -42,9 +42,9 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 
 ### Chrome & Design
 
-- [ ] **CHRM-01**: ProgressHeader removed entirely
-- [ ] **CHRM-02**: AnimationOptionsPage and /animation-options route removed
-- [ ] **CHRM-03**: Reset functionality moved to account/profile menu (matching Compass pattern)
+- [x] **CHRM-01**: ProgressHeader removed entirely
+- [x] **CHRM-02**: AnimationOptionsPage and /animation-options route removed
+- [x] **CHRM-03**: Reset functionality moved to account/profile menu (matching Compass pattern)
 - [ ] **CHRM-04**: Visual redesign applied across all components (revert editorial WIP, design from scratch)
 
 ## Future Requirements
@@ -76,9 +76,9 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | FLOW-06 | Phase 86 | Complete |
-| CHRM-01 | Phase 86 | Pending |
-| CHRM-02 | Phase 86 | Pending |
-| CHRM-03 | Phase 86 | Pending |
+| CHRM-01 | Phase 86 | Complete |
+| CHRM-02 | Phase 86 | Complete |
+| CHRM-03 | Phase 86 | Complete |
 | FLOW-01 | Phase 87 | Pending |
 | FLOW-02 | Phase 87 | Pending |
 | FLOW-03 | Phase 87 | Pending |
