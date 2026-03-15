@@ -5,7 +5,8 @@
 This runbook covers everything needed to bring up Empowered Accounts in a production or staging environment:
 
 - Enabling required PostgreSQL extensions in Supabase
-- Applying backend migrations 026–029 to the production Supabase instance
+- Configuring PostgREST schema exposure for connect, empower, and inform schemas
+- Applying backend migrations 026–036 to the production Supabase instance
 - Verifying the deployment with post-apply queries
 - Deploying the backend API to Render and building the admin UI
 - Running smoke tests before opening Alpha access
@@ -42,6 +43,8 @@ Use this document for cold-starts, migration deploys, and rollback reference.
 | `QUEST_SERVICE_KEY` | Shared secret | Used by Validation Quests service to authenticate against accounts API |
 | `TRIVIA_SERVICE_KEY` | Shared secret | Used by CTC service to authenticate against accounts API |
 | `ADMIN_SERVICE_KEY` | Shared secret | Used by admin UI to authenticate admin-only endpoints |
+| `GOOGLE_MAPS_API_KEY` | Google Cloud Console | Required for geocoding (Phase 20). Server exits on startup if missing. |
+| `GEMS_SERVICE_KEYS` | Shared secrets | Comma-separated `name:key` pairs for gem award service auth. Optional — absent means all `/award` requests get 401. |
 
 ### Admin UI (Vite static build)
 
@@ -64,6 +67,23 @@ PostGIS is required for Phase 19 (location infrastructure — district boundary 
 
 ---
 
+## Step 1b: PostgREST Schema Configuration
+
+Supabase PostgREST must be configured to expose the connect, empower, and inform schemas.
+The dashboard UI setting is NOT sufficient — PostgREST does not pick it up reliably.
+Run this in Supabase Dashboard → SQL Editor:
+
+```sql
+ALTER ROLE authenticator SET pgrst.db_schemas TO 'public, connect, empower, inform';
+NOTIFY pgrst, 'reload config';
+```
+
+This is required for any RPC or table in the connect/empower/inform schemas to be callable
+via the Supabase JS client. Without it, calls to connect.award_gems, connect.promote_to_connected,
+etc. will return 404.
+
+---
+
 ## Step 2: Apply Migrations
 
 ### Important: Use direct connection only
@@ -79,10 +99,10 @@ Port 5432, `db.<ref>.supabase.co` subdomain. NOT the pooler (`pooler.supabase.co
 ### Apply order (strictly sequential)
 
 ```
-026 → 027 → 028 → 029
+026 → 027 → 028 → 029 → 030 → 031 → 032 → 033 → 034 → 035 → 036
 ```
 
-Do not skip or reorder. Migration 029 references `inform.politicians.is_candidate` which is added by 026.
+Do not skip or reorder. Later migrations depend on columns and functions created by earlier ones.
 
 ### Using the apply script (recommended)
 
@@ -109,6 +129,13 @@ psql "$DATABASE_URL" -f backend/migrations/026_inform_schema_repair_and_candidat
 psql "$DATABASE_URL" -f backend/migrations/027_rpc_reset_compass_answers.sql
 psql "$DATABASE_URL" -f backend/migrations/028_rpc_import_compass_calibrations.sql
 psql "$DATABASE_URL" -f backend/migrations/029_compass_admin_rpcs.sql
+psql "$DATABASE_URL" -f backend/migrations/030_decimal_compass_values.sql
+psql "$DATABASE_URL" -f backend/migrations/031_location_schema.sql
+psql "$DATABASE_URL" -f backend/migrations/032_location_rpcs.sql
+psql "$DATABASE_URL" -f backend/migrations/033_politician_schema.sql
+psql "$DATABASE_URL" -f backend/migrations/034_gem_idempotency.sql
+psql "$DATABASE_URL" -f backend/migrations/035_tier_promotion.sql
+psql "$DATABASE_URL" -f backend/migrations/036_signup_with_invite.sql
 ```
 
 ### Post-apply verification queries
@@ -139,9 +166,41 @@ SELECT proname FROM pg_proc WHERE proname = 'import_compass_calibrations';
 -- 029: admin_create_topic_with_stances RPC exists
 SELECT proname FROM pg_proc WHERE proname = 'admin_create_topic_with_stances';
 -- Expected: 1 row
+
+-- 030: migrate_guest_compass_state RPC exists
+SELECT proname FROM pg_proc WHERE proname = 'migrate_guest_compass_state';
+-- Expected: 1 row
+
+-- 031: encrypted_lat column on connected_profiles
+SELECT column_name FROM information_schema.columns
+WHERE table_schema = 'connect' AND table_name = 'connected_profiles'
+  AND column_name = 'encrypted_lat';
+-- Expected: 1 row
+
+-- 032: upsert_user_location RPC exists
+SELECT proname FROM pg_proc WHERE proname = 'upsert_user_location';
+-- Expected: 1 row
+
+-- 033: district_type column on politicians
+SELECT column_name FROM information_schema.columns
+WHERE table_schema = 'inform' AND table_name = 'politicians'
+  AND column_name = 'district_type';
+-- Expected: 1 row
+
+-- 034: award_gems RPC exists
+SELECT proname FROM pg_proc WHERE proname = 'award_gems';
+-- Expected: 1 row
+
+-- 035: promote_to_connected RPC exists
+SELECT proname FROM pg_proc WHERE proname = 'promote_to_connected';
+-- Expected: 1 row
+
+-- 036: signup_with_invite RPC exists
+SELECT proname FROM pg_proc WHERE proname = 'signup_with_invite';
+-- Expected: 1 row
 ```
 
-All five queries must return exactly 1 row before proceeding.
+All queries must return exactly 1 row before proceeding.
 
 ---
 
@@ -202,7 +261,7 @@ Commit the regenerated file:
 
 ```bash
 git add backend/src/types/database.types.ts
-git commit -m "chore: regenerate database types after migrations 026-029"
+git commit -m "chore: regenerate database types after migrations 026-036"
 ```
 
 Omitting this step leaves local type definitions out of sync with the production schema, which causes type errors in subsequent development.
@@ -245,15 +304,78 @@ DROP FUNCTION IF EXISTS public.admin_assign_topic_categories(INT, INT[]);
 DROP FUNCTION IF EXISTS public.admin_list_politicians(BOOLEAN, INT, INT);
 ```
 
-Roll back in reverse order: 029, then 028, then 027, then 026.
+### 030 rollback
+
+```sql
+DROP FUNCTION IF EXISTS inform.migrate_guest_compass_state(UUID, JSONB, INT[]);
+DROP FUNCTION IF EXISTS inform.upsert_compass_answer(UUID, INT, NUMERIC, TEXT, TEXT);
+-- Note: column type change (INT -> NUMERIC) is NOT easily reversible; leave columns as NUMERIC.
+```
+
+### 031 rollback
+
+```sql
+DROP TABLE IF EXISTS inform.district_boundaries;
+ALTER TABLE connect.connected_profiles DROP COLUMN IF EXISTS encrypted_lat;
+ALTER TABLE connect.connected_profiles DROP COLUMN IF EXISTS encrypted_lng;
+ALTER TABLE connect.connected_profiles DROP COLUMN IF EXISTS location_consent;
+ALTER TABLE connect.connected_profiles DROP COLUMN IF EXISTS location_set_at;
+```
+
+### 032 rollback
+
+```sql
+DROP FUNCTION IF EXISTS connect.upsert_user_location(UUID, FLOAT8, FLOAT8);
+DROP FUNCTION IF EXISTS connect.resolve_user_jurisdiction(UUID);
+```
+
+### 033 rollback
+
+```sql
+DROP FUNCTION IF EXISTS public.admin_list_politicians(BOOLEAN, INT, INT);
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS representing_city;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS representing_state;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS district_type;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS district_label;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS district_id;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS chamber_name;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS chamber_name_formal;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS government_name;
+ALTER TABLE inform.politicians DROP COLUMN IF EXISTS is_vacant;
+```
+
+### 034 rollback
+
+```sql
+DROP FUNCTION IF EXISTS connect.award_gems(UUID, TEXT, INTEGER, TEXT, TEXT, UUID);
+DROP INDEX IF EXISTS connect.idx_gem_transactions_idempotency_key;
+ALTER TABLE connect.gem_transactions DROP COLUMN IF EXISTS idempotency_key;
+```
+
+### 035 rollback
+
+```sql
+DROP FUNCTION IF EXISTS connect.promote_to_connected(UUID, TEXT, UUID, TEXT);
+ALTER TABLE empower.empowered_profiles DROP COLUMN IF EXISTS politician_id;
+DROP TABLE IF EXISTS connect.tier_promotion_log;
+```
+
+### 036 rollback
+
+```sql
+DROP FUNCTION IF EXISTS connect.signup_with_invite(UUID, TEXT, TEXT);
+DROP TABLE IF EXISTS public.access_requests;
+```
+
+Roll back in reverse order: 036, 035, 034, 033, 032, 031, 030, 029, 028, 027, 026.
 
 ---
 
 ## Common Pitfalls
 
-1. **Wrong migrations folder.** Do NOT apply files from `supabase/migrations/`. Only apply `backend/migrations/026`, `027`, `028`, `029`. The `supabase/migrations/` folder contains older schema baseline files that are already applied.
+1. **Wrong migrations folder.** Do NOT apply files from `supabase/migrations/`. Only apply `backend/migrations/026` through `036`. The `supabase/migrations/` folder contains older schema baseline files that are already applied.
 
-2. **Wrong apply order.** Always apply 026 → 027 → 028 → 029 in sequence. Migration 029 contains references to `inform.politicians.is_candidate` which is added by 026. Applying 029 before 026 will fail.
+2. **Wrong apply order.** Always apply 026 → 027 → ... → 036 in sequence. Later migrations reference columns and functions created by earlier ones.
 
 3. **Pooler URL instead of direct connection.** The pooler (`pooler.supabase.com`, port 6543) does not support multi-statement transactions. Migration files contain multiple DDL statements that must run in a single connection. Always use the direct URL (`db.<ref>.supabase.co`, port 5432).
 
@@ -262,3 +384,5 @@ Roll back in reverse order: 029, then 028, then 027, then 026.
 5. **Wrong script filename.** The migration script is `backend/scripts/applyMigrations.ts` (TypeScript, plural). There is no `applyMigration.js`. Use `npx tsx backend/scripts/applyMigrations.ts` or the `psql -f` fallback.
 
 6. **Forgetting to regenerate types.** After running migrations, always regenerate `backend/src/types/database.types.ts` and commit it. Missing this step causes type drift between local dev and production.
+
+7. **PostgREST schema config not applied.** Supabase dashboard UI changes to exposed schemas are not reliably picked up by PostgREST. Always run the `ALTER ROLE authenticator SET pgrst.db_schemas` command in Step 1b. Without it, calls to connect/empower/inform RPCs return 404.
