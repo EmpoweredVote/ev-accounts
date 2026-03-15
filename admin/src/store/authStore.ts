@@ -4,6 +4,8 @@ interface User {
   id: string;
   email: string;
   isAdmin: boolean;
+  tier: 'inform' | 'connected' | 'empowered';
+  completedOnboarding: boolean;
 }
 
 interface AuthState {

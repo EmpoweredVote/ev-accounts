@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
+import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -13,6 +14,14 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validRedirect = getValidRedirect();
+  const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
+
+  // Preserve ?redirect= when linking to /signup
+  const signupHref = validRedirect
+    ? `/signup?redirect=${encodeURIComponent(validRedirect)}`
+    : '/signup';
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -35,27 +44,31 @@ export default function Login() {
       const loginData = await loginRes.json();
       const token: string = loginData.access_token;
 
-      // Step 2: verify admin access
-      const meRes = await fetch(`${API_BASE}/admin/me`, {
+      // Step 2: get full user info (tier, onboarding, admin status)
+      const meRes = await fetch(`${API_BASE}/account/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      if (meRes.status === 403) {
-        throw new Error('Not authorized as admin. Contact an administrator.');
-      }
-
       if (!meRes.ok) {
-        throw new Error('Failed to verify admin status.');
+        throw new Error('Failed to load account information.');
       }
 
       const meData = await meRes.json();
+
       setAuth(token, {
-        id: meData.id || '',
-        email: meData.email || email,
-        isAdmin: true,
+        id: meData.id ?? '',
+        email: meData.email ?? email,
+        isAdmin: meData.is_admin ?? false,
+        tier: meData.tier ?? 'inform',
+        completedOnboarding: meData.completed_onboarding ?? false,
       });
 
-      navigate('/admin');
+      // Step 3: route
+      if (validRedirect) {
+        window.location.href = validRedirect;
+      } else {
+        navigate('/profile');
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
@@ -66,10 +79,23 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-          Empowered Accounts Admin
+        <div className="flex justify-center mb-6">
+          <img
+            src="/Empowered_Vote_Logo_2026.png"
+            alt="Empowered Vote"
+            className="h-12 object-contain"
+          />
+        </div>
+
+        <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Sign in to Empowered Vote
         </h1>
-        <p className="text-sm text-gray-500 text-center mb-6">Internal admin panel</p>
+
+        {appName && (
+          <div className="mb-4 p-3 bg-ev-teal/10 border border-ev-teal/20 rounded text-sm text-ev-teal text-center">
+            You'll be returned to {appName} after signing in
+          </div>
+        )}
 
         {error && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
@@ -88,8 +114,8 @@ export default function Login() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="admin@example.com"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+              placeholder="you@example.com"
             />
           </div>
 
@@ -103,18 +129,25 @@ export default function Login() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white font-medium rounded-md text-sm transition-colors"
+            className="w-full py-2 px-4 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-60 text-white font-medium rounded-md text-sm transition-colors"
           >
             {isSubmitting ? 'Signing in...' : 'Sign in'}
           </button>
         </form>
+
+        <p className="mt-4 text-center text-sm text-gray-500">
+          Don't have an account?{' '}
+          <Link to={signupHref} className="text-ev-teal hover:underline font-medium">
+            Create one
+          </Link>
+        </p>
       </div>
     </div>
   );
