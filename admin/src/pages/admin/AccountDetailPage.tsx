@@ -21,6 +21,8 @@ interface ConnectedProfile {
   verification_status: string;
   legal_name: string | null;
   tolerance_rating: number | null;
+  verification_rating: number;
+  vq_hold_until: string | null;
   total_xp: number;
   current_level: number;
   gem_balance_yellow: number;
@@ -155,6 +157,12 @@ export function AccountDetailPage() {
   const [promotionLoading, setPromotionLoading] = useState(false);
   const [promotionSuccess, setPromotionSuccess] = useState<string | null>(null);
 
+  // VR edit state
+  const [vrEditMode, setVrEditMode] = useState(false);
+  const [vrDraft, setVrDraft] = useState<{ rating: number; clearHold: boolean }>({ rating: 0, clearHold: false });
+  const [vrSaving, setVrSaving] = useState(false);
+  const [vrError, setVrError] = useState<string | null>(null);
+
   function fetchAccount() {
     setLoading(true);
     apiFetch<AccountDetail>(`/admin/accounts/${userId}`)
@@ -267,6 +275,36 @@ export function AccountDetailPage() {
     }
   }
 
+  async function handleVrSave() {
+    if (!account?.connected_profile) return;
+    const { rating, clearHold } = vrDraft;
+    if (rating < 0 || rating > 150) return; // disabled state guard
+
+    setVrSaving(true);
+    setVrError(null);
+    try {
+      const body: Record<string, unknown> = {};
+      if (rating !== account.connected_profile.verification_rating) body.verification_rating = rating;
+      if (clearHold) body.clear_hold = true;
+
+      if (Object.keys(body).length === 0) {
+        setVrEditMode(false);
+        return;
+      }
+
+      await apiFetch(`/admin/accounts/${userId}/verification-rating`, {
+        method: 'PATCH',
+        body: JSON.stringify(body),
+      });
+      setVrEditMode(false);
+      fetchAccount();
+    } catch (err) {
+      setVrError(err instanceof Error ? err.message : 'Save failed');
+    } finally {
+      setVrSaving(false);
+    }
+  }
+
   if (loading) {
     return (
       <div className="animate-pulse space-y-4">
@@ -355,6 +393,109 @@ export function AccountDetailPage() {
               {account.tolerance_rating != null ? account.tolerance_rating.toFixed(2) : 'N/A'}
             </span>
           </div>
+
+          {/* VR section — Connected and Empowered only */}
+          {account.connected_profile && (
+            <>
+              <div className="pt-2 border-t border-amber-200 mt-2" />
+
+              {/* Status badges (view and edit mode) */}
+              <div className="flex gap-2 flex-wrap mb-1">
+                {account.connected_profile.verification_rating >= 90 && (
+                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-ev-red/10 text-ev-red border border-ev-red/20">
+                    Red Gems unlocked
+                  </span>
+                )}
+                {account.connected_profile.vq_hold_until &&
+                  new Date(account.connected_profile.vq_hold_until) > new Date() && (
+                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-700 border border-orange-200">
+                      Hold active
+                    </span>
+                  )}
+              </div>
+
+              {!vrEditMode ? (
+                /* View mode */
+                <>
+                  <div className="flex items-center">
+                    <span className="w-36 font-medium text-amber-700">Verification Rating:</span>
+                    <span className="text-amber-900 mr-3">{account.connected_profile.verification_rating}</span>
+                    <button
+                      onClick={() => {
+                        setVrDraft({ rating: account.connected_profile!.verification_rating, clearHold: false });
+                        setVrEditMode(true);
+                        setVrError(null);
+                      }}
+                      className="text-xs text-blue-600 hover:text-blue-800"
+                    >
+                      Edit
+                    </button>
+                  </div>
+                  <div className="flex">
+                    <span className="w-36 font-medium text-amber-700">Hold Until:</span>
+                    <span className="text-amber-900">
+                      {account.connected_profile.vq_hold_until
+                        ? new Date(account.connected_profile.vq_hold_until).toLocaleDateString()
+                        : 'None'}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                /* Edit mode */
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="w-36 font-medium text-amber-700">Verification Rating:</span>
+                    <input
+                      type="number"
+                      min={0}
+                      max={150}
+                      value={vrDraft.rating}
+                      onChange={(e) => setVrDraft((d) => ({ ...d, rating: parseInt(e.target.value, 10) || 0 }))}
+                      className="w-24 px-2 py-1 border border-amber-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-amber-400"
+                    />
+                  </div>
+
+                  {(vrDraft.rating < 0 || vrDraft.rating > 150) && (
+                    <p className="text-red-600 text-xs mt-1">Must be between 0 and 150</p>
+                  )}
+
+                  {account.connected_profile.vq_hold_until &&
+                    new Date(account.connected_profile.vq_hold_until) > new Date() && (
+                      <div>
+                        {!vrDraft.clearHold ? (
+                          <button
+                            onClick={() => setVrDraft((d) => ({ ...d, clearHold: true }))}
+                            className="text-xs px-2 py-1 border border-orange-300 text-orange-700 rounded hover:bg-orange-50"
+                          >
+                            Clear hold
+                          </button>
+                        ) : (
+                          <span className="text-xs text-orange-700 italic">Hold will be cleared</span>
+                        )}
+                      </div>
+                    )}
+
+                  {vrError && <p className="text-red-600 text-xs mt-1">{vrError}</p>}
+
+                  <div className="flex gap-2 mt-2">
+                    <button
+                      onClick={handleVrSave}
+                      disabled={vrSaving || vrDraft.rating < 0 || vrDraft.rating > 150}
+                      className="px-3 py-1 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-50 text-white text-sm rounded"
+                    >
+                      {vrSaving ? 'Saving...' : 'Save'}
+                    </button>
+                    <button
+                      onClick={() => { setVrEditMode(false); setVrError(null); }}
+                      className="px-3 py-1 border border-amber-300 text-amber-700 text-sm rounded hover:bg-amber-100"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
 
