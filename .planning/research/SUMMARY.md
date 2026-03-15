@@ -1,194 +1,187 @@
 # Project Research Summary
 
-**Project:** v2026.3.4 Read & Rank Integration
-**Domain:** Cross-app civic tech integration — standalone app extraction, cross-subdomain state sharing, quote verdict display
-**Researched:** 2026-03-11
+**Project:** v2026.3.6 Read & Rank Redesign
+**Domain:** Swipe-card civic quote evaluation — unified evaluate+rank flow, practice onboarding, location-based filtering, coach marks, results polish, visual redesign
+**Researched:** 2026-03-14
 **Confidence:** HIGH
 
 ## Executive Summary
 
-This milestone integrates an existing prototype (Read & Rank, currently buried in EV-prototypes on Netlify) into the production Empowered Vote platform as a first-class app at `readrank.empowered.vote`. The extraction itself is low-risk — the source code is complete, the stack is identical to the other EV apps, and Cloudflare Pages deployment follows an established pattern. The technically interesting work is the cross-app state bridge: users evaluate politician quotes on Read & Rank and expect those verdicts to surface when they visit politician profiles on Essentials. Since `readrank.empowered.vote` and `essentials.empowered.vote` are different browser origins, direct localStorage sharing is impossible by browser spec.
+This milestone redesigns the Read & Rank experience by collapsing the current 4-phase linear flow (Hub → Evaluation → Ranking → Results) into a more fluid 3-phase model (Practice → Hub → Evaluate → Results) where badge assignment happens inline during evaluation rather than in a separate dedicated phase. All research was conducted against the live EV-readrank codebase and confirmed against running production systems, so confidence is uniformly HIGH with no guesswork involved. The app already has nearly every building block needed — the changes are primarily structural and compositional, not greenfield.
 
-The recommended approach is layered: use the existing URL fragment bridge pattern (already proven in production for compass data) to hand off verdicts at point-of-navigation for guest users, while server-side storage in a new `compass.quote_verdicts` table handles logged-in users reliably across devices. This avoids introducing a new iframe relay subdomain and its associated complexity. The verdict data then surfaces in Essentials via an extended CompassContext that feeds a new `verdictsByTopic` prop to the existing `StanceAccordion` component — minimal UI surgery for meaningful per-politician profile value.
+The recommended approach is to proceed strictly in dependency order: clean up dead code and reset the phase model first (store version bump, type changes, deletion of `RankingPhase` / `ProgressHeader` / `AnimationOptionsPage`), then build the unified `EvaluatePhase` with the new `InlineRankPanel` component, then layer in practice round and coach marks, then location filtering, and finally results polish and visual redesign. This order is not arbitrary — the practice round reuses `InlineRankPanel`, coach marks rely on the unified phase, and location filtering touches only `IssueHub` so it can be deferred until the core flow is stable. Only one new npm package is required (`@googlemaps/js-api-loader`); all other features reuse existing libraries.
 
-The top risks are infrastructure-level rather than product-level: forgetting to update CORS in the backend before deploying the new subdomain, missing the `.npmrc` in the extracted repo causing CI failures, and conflating the extraction commit with feature changes. All three are well-understood and easily avoided with a disciplined phase order: extract and deploy first with zero behavior changes, then layer in verdict integration, then add the logged-in server sync.
-
----
+The primary risks are all in state management: the Zustand persist store must be migrated from version 1 to version 2 with an explicit clean-reset migration before any other changes ship, practice round state must be structurally isolated from real verdict POST payloads, and the `postVerdicts` sync trigger must be made idempotent using a persisted store flag rather than a component ref. These are preventable with upfront design decisions and will cause rewrites if deferred.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The existing stack requires no new runtime dependencies. React 19, Vite 7, Tailwind CSS 4, Zustand 5, Framer Motion 12, @use-gesture/react, and @dnd-kit are already in place. The only new infrastructure is two deployment artifacts (a `wrangler.toml` with SPA routing config and an `.npmrc` for GitHub npm registry access), one backend table (`compass.quote_verdicts`), and three backend endpoints. ev-ui needs a minor version bump to v0.1.42+ to carry verdict badge props on `StanceAccordion`.
+The existing React 19 + TypeScript + Vite 7 + Tailwind CSS 4 + Framer Motion + dnd-kit + Zustand stack is unchanged and sufficient. No new animation libraries are needed; Framer Motion's `useAnimate`, `AnimatePresence`, and `useMotionValue` cover all planned animation requirements. The `CoachMark` component (230 lines, already battle-tested in CompassV2) should be copied directly into EV-readrank as a TypeScript port rather than published to ev-ui — the cross-repo coordination overhead is not justified for a single-consumer component in this milestone.
 
 **Core technologies:**
-- Cloudflare Pages + `wrangler.toml`: static SPA deployment — same pattern as CompassV2 and Essentials; `not_found_handling = "single-page-application"` handles React Router routes
-- `compass.quote_verdicts` table: server-side verdict storage keyed to `(user_id, quote_id)` — mirrors compass answers pattern exactly; Go GORM model with bulk upsert
-- URL fragment bridge (`#compass=BASE64`): extended with a new `v` key for verdicts — reuses proven production mechanism; adds ~3.2KB to encoded URL, well under 8KB browser limit
-- `guestVerdicts` localStorage key: written by Read & Rank, read by Essentials on profile load — mirrors `guestCompass` convention
-- ev-ui `verdicts` prop on `StanceAccordion`: verdict badge display in politician profiles — bump to `^0.1.42`
+- React 19 + TypeScript + Vite 7: existing foundation, unchanged
+- Framer Motion ^12.x: all animation (stagger reveals, phase transitions, card drag) — already installed; no new animation libraries needed
+- @dnd-kit/sortable ^10.x: drag-to-reorder in `InlineRankPanel` — already installed; dnd-kit reorder removed from `RankingPhase` context but unified into the new panel component
+- Zustand ^5 with persist middleware: app state — requires version 2 migration with explicit clean-reset migrate function
+- `@googlemaps/js-api-loader` ^2.0.2: the only new package; needed for location-based quote filtering in `AddressFilter`
 
-**What NOT to add:** iframe postMessage relay (fragile, Safari ITP issues, unnecessary), BroadcastChannel (same-origin only — subdomains are different origins), third-party sync services, new PostgreSQL schema (verdicts belong in `compass.` alongside answers), `document.domain` manipulation (Chrome 115+ and Firefox 101+ fully deprecated this).
+**What NOT to add:** New animation libraries, separate geocoding client, parallel geofence endpoints, third badge tiers, or a published CoachMark in ev-ui for this milestone. Each adds complexity without proportional value given existing infrastructure.
 
 ### Expected Features
 
-**Must have (P1 — table stakes for this milestone):**
-- Read & Rank standalone at `readrank.empowered.vote` — prerequisite for everything; without a clean URL there is no standalone product to integrate
-- Visual refresh to match EV brand (ev-coral, ev-muted-blue, Manrope) — the prototype palette signals an experiment; the standalone product must be demoable
-- Server-side verdict storage for logged-in users — reliable cross-app sharing via existing `.empowered.vote` session cookie; new `POST/GET /compass/verdicts` endpoints
-- "You agreed/disagreed" badge inline on StanceAccordion for logged-in users — direct profile value; the verdict is the insight
-- Guest verdict URL fragment bridge — guest continuity at point-of-navigation; mirrors existing compass bridge with `v` key added to fragment payload
+The v2026.3.4 baseline is fully working. This milestone overlays improvements that make the interaction more fluid and the onboarding more effective.
 
-**Should have (P2 — add after validation):**
-- "Explore this topic on Read & Rank" deep-link from StanceAccordion with `?topic=` query param pre-selecting an issue
-- Persistent guest verdict storage via iframe relay if user testing surfaces frequent session loss
-- Retire URL fragment compass bridge once new mechanism is verified in production
+**Must have (table stakes):**
+- Swipe to agree/disagree with visual feedback — must survive unification intact
+- Badge assignment without leaving the evaluation context — this is the core "unified flow" requirement
+- Progress indicator ("3 of 8") — already exists; preserve
+- Resume interrupted session via localStorage persist — already exists; preserve (migration must not break it)
+- Results page revealing candidate identity with source links — already exists; preserve
 
-**Defer (v2+):**
-- Cross-device verdict sync for guests (requires account creation or device-linking)
-- Verdict history view ("all quotes I evaluated for this politician")
-- Progress indicator across all issues on Essentials profile
+**Should have (differentiators):**
+- Practice round with pizza-topping quotes — teaches swipe mechanics before political content; `has_done_practice` flag prevents repeat
+- Coach marks on first real issue (2-3 steps) — one-time contextual guidance, permanently dismissed via store flag
+- Inline badge assignment in `InlineRankPanel` (desktop sidebar during evaluation + mobile post-evaluation compact screen) — replaces separate `RankingPhase`
+- Location-based quote filtering — Google Maps Places autocomplete + client-side filter against cached quotes; graceful fallback to all quotes
+- Dramatic staggered results reveal with hero interstitial — Framer Motion stagger tuning only
 
-**Anti-features to avoid explicitly:** Real-time cross-tab sync (zero practical value), aggregated verdict analytics (contradicts the platform's anti-partisan mission — keep verdicts private and personal), full politician profile inside Read & Rank (duplicates Essentials), automatic verdict migration from EV-prototypes origin (impossible — different origin, no cookie sharing, zero user overlap).
+**Defer to future milestone:**
+- Multi-issue summary / cross-issue alignment score — antipartisan risk; significant state complexity
+- "My reps" surfacing on Compass compare page — belongs in Essentials, not Read & Rank
+- Share results card / social sharing — image generation adds infra complexity
+- Backend `?politician_ids=uuid1,uuid2` multi-filter endpoint — client-side filter sufficient at current data scale (~61 quotes)
 
 ### Architecture Approach
 
-The integration is additive: the existing component boundaries in both apps are respected, new data flows through an extended CompassContext in Essentials, and the backend grows by one table and three endpoints that match established patterns. The verdict journey flows: Zustand store in Read & Rank serializes verdict decisions into the existing `#compass=` fragment payload as a new `v` key, Essentials `parseCompassFragment()` extracts it on profile load, CompassContext stores it alongside compass answers, CompassCard derives a `verdictsByTopic` map by fetching politician-scoped quotes from a new filtered endpoint, and StanceAccordion renders badges from that map.
+The central structural change is replacing the `'hub' | 'evaluation' | 'ranking' | 'results'` Phase union with `'practice' | 'hub' | 'evaluate' | 'results'`. This renames `EvaluationPhase` to `EvaluatePhase`, removes `RankingPhase` entirely, and introduces a new `InlineRankPanel` component that absorbs the ranking behavior previously split across `AgreedQuotesSidebar` (desktop) and `RankingPhase` (full-screen post-evaluation). Practice state is kept structurally separate from `issueProgress` to prevent contamination of verdict sync. Location filter state lives in the Zustand store (`locationContext`) and is applied client-side in `IssueHub.handleSelectIssue` at issue-selection time — no backend changes required.
 
 **Major components:**
-1. `ev-readrank` (new standalone repo) — extracted from `EV-prototypes/read-rank/`; BrowserRouter basename fixed to `/`; Vite base `"/"`; `wrangler.toml` for SPA routing; Zustand persist key renamed with migration
-2. `compass.quote_verdicts` table + `/compass/verdicts` endpoints — server-side verdict CRUD; `(user_id, quote_id)` unique constraint; bulk upsert pattern matching compass answers; `QuoteVerdict` GORM model
-3. Extended `CompassContext` (Essentials) — adds `verdicts` state field with load priority: fragment → localStorage (`ev_readrank_verdicts`) → API → empty; mirrors existing compass load chain
-4. `CompassCard` + `StanceAccordion` (Essentials) — CompassCard fetches politician quotes via new `GET /essentials/quotes?politician_id=X`; derives `verdictsByTopic` map keyed by topic key; passes to StanceAccordion as new prop
-5. `buildEssentialsUrl()` (Read & Rank) — serializes Zustand verdict state into fragment for "View on Essentials" CTA in ResultsPhase and CandidateAlignmentPage; only serializes verdict summary (`{ [quoteId]: verdict enum }`), not full progress tree
+1. `InlineRankPanel` (new) — unified ranking UI used in both practice and real modes; absorbs `AgreedQuotesSidebar` + `RankingPhase`; slides in when `agreedQuotes.length >= 2` during evaluation
+2. `EvaluatePhase` (major rewrite of `EvaluationPhase`) — integrates `InlineRankPanel`; hosts `FirstIssueCoachMarks` wrapper; transitions directly to `'results'` on completion
+3. `PracticeRound` (new) — fully self-contained; static pizza-topping data in `practiceData.ts`; writes only `practiceCompleted: boolean` to store; no `issueProgress` entry
+4. `AddressFilter` (new) — Google Maps Places autocomplete; calls `POST /essentials/politicians/search`; writes `locationContext` to store
+5. `FirstIssueCoachMarks` (new) — wraps `EvaluatePhase` on first real issue; TypeScript port of CompassV2 `CoachMark`; reactive to store state; gated on `quotesToEvaluate.length > 0`
+6. `useReadRankStore` v2 — adds `practiceCompleted`, `firstIssueCoachMarksSeen`, `locationContext` fields; store version bump to 2 with clean-reset migration
+
+**No backend changes required** for any planned feature. Existing `POST /essentials/politicians/search` and `GET /essentials/quotes?politician_id=X` cover all backend needs.
 
 ### Critical Pitfalls
 
-1. **localStorage is origin-isolated — subdomains cannot share it directly** — Commit to the URL fragment bridge + backend architecture before writing any sharing code. Never test cross-subdomain state on localhost (false positive — all localhost ports share an origin). `document.domain` is deprecated and does not affect storage APIs in any modern browser.
+1. **Zustand store version not bumped** — The existing no-op `migrate` function means old `phase: 'ranking'` state from v1 will silently survive into v2, causing the app to try to render the deleted `RankingPhase`. Bump `version` to `2` with a clean-reset migrate function (`return initialState`) as the absolute first commit. Test by injecting old v1 state into localStorage via DevTools.
 
-2. **Missing `.npmrc` in new repo breaks CI on first build** — Copy `.npmrc` from EV-prototypes and set `NPM_TOKEN` as a Cloudflare Pages environment variable during extraction, not as a follow-up. Local installs pass silently due to `~/.npmrc`, masking the problem until CI runs.
+2. **Practice verdicts leaked into `postVerdicts` POST** — If practice quotes land in `issueProgress` without isolation, they get included in the `POST /compass/verdicts` payload, either causing 400 errors (invalid quote IDs) or polluting Essentials politician profiles with pizza-topping text. Practice state must live entirely outside `issueProgress`, or every verdict sync path must filter by an `isPractice` flag.
 
-3. **CORS not updated for new subdomain** — Add `readrank.empowered.vote` to `internal/middleware/middleware.go` in the same phase as Cloudflare deployment. API calls fail silently at the network layer while the UI renders fine; the failure mode is invisible until DevTools inspection.
+3. **Unified flow breaks the `nextQuote` phase transition** — Currently `nextQuote()` auto-sets `phase: 'ranking'`. Removing `'ranking'` from the Phase union produces TypeScript build errors everywhere — use those errors as a guided cleanup checklist. Rewrite `nextQuote` to transition directly to `'results'`. Delete `RankingPhase.tsx` in the same commit as the type removal.
 
-4. **Renaming Zustand persist key silently resets all existing user state** — Implement `onRehydrateStorage` migration from old `readrank-storage` key to `ev_readrank` in the same commit as the rename. Never defer key migration. Test by seeding old key in DevTools and loading new build.
+4. **Location filter creates a zero-quotes dead end** — When a user's address resolves to politicians who have no quotes in `compass.quotes`, `quotesToEvaluate.length === 0`, and the evaluation phase shows an unexplained blank. Gate evaluation entry on `filteredQuotes.length >= 2`; fall back to unfiltered quotes with an inline soft message if the threshold is not met.
 
-5. **ev-ui version divergence between extraction and production apps** — Read & Rank prototype pins `^0.1.6`; Essentials and CompassV2 are at `^0.1.41`. Update ev-ui to current version before extraction proceeds — peer dependency conflicts cause runtime errors with duplicate React instances.
-
-6. **Visual redesign breaking swipe gesture logic** — Document which DOM elements carry `bind()` props from `@use-gesture/react` before any CSS work. Avoid `transform` or `overflow: hidden` on gesture container parents; gesture boundaries are calculated from the bound element's bounding rect.
-
----
+5. **`postVerdicts` fires multiple times due to component refs resetting** — The current `hasSynced` ref resets when `PhaseContainer` unmounts (e.g., navigation to `/candidate/:id/alignment`). Replace with a persisted store flag `verdictsSynced: boolean` so the guard survives remounts. Also prevents double-firing when `issueProgress` updates after entering results phase.
 
 ## Implications for Roadmap
 
-The dependency graph is clear and dictates phase order. Standalone extraction is the prerequisite for cross-app linking. Backend verdict endpoints are the prerequisite for the logged-in display path. The fragment bridge extension in Read & Rank depends on Essentials being able to receive and display verdicts. Three workstreams can run in parallel: (1) extraction + visual refresh, (2) backend verdict endpoints, (3) ev-ui update.
+Research firmly establishes that this milestone has hard sequential dependencies and a clear optimal build order. Deviation from this order creates rework. Six phases are recommended.
 
-### Phase 1: Standalone Extraction + Deployment
+### Phase 1: Chrome Cleanup + Store Migration
 
-**Rationale:** Everything downstream depends on having `readrank.empowered.vote` live. This phase has zero behavior changes — it is a structural move, not a feature. Keeping it isolated makes debugging trivial and gives a known-good baseline before integration begins. Conflating extraction with feature changes (anti-pattern 4 from ARCHITECTURE.md) is the most common cause of untraceable regressions in extraction work.
-**Delivers:** `readrank.empowered.vote` serving the existing Read & Rank app; all three routes working (`/`, `/candidate/:id/alignment`, `/animation-options`); Cloudflare Pages CI passing.
-**Addresses:** Standalone app accessibility (P1 table stakes feature)
-**Must complete in this phase:** `.npmrc` added; `NPM_TOKEN` set in Cloudflare Pages env; `wrangler.toml` added with `not_found_handling = "single-page-application"`; BrowserRouter basename changed from `/read-rank/dist` to `/`; Vite base set to `"/"`; Zustand persist key renamed from `readrank-storage` to `ev_readrank` with `onRehydrateStorage` migration; ev-ui updated from `^0.1.6` to `^0.1.41`; `readrank.empowered.vote` added to CORS allowlist in `internal/middleware/middleware.go`.
+**Rationale:** Every other phase builds on a clean phase model and a valid store migration. Doing this first means all subsequent phases work against correct types, and the TypeScript compiler becomes a guided checklist for every callsite that needs updating. This is the only phase with zero new user-facing behavior — treat it as foundation work.
+**Delivers:** Deleted `ProgressHeader`, `AnimationOptionsPage`, `CollectionPhase`, `AgreedQuotesSidebar`, `RankingPhase`. Updated `Phase` union type. Store bumped to v2 with clean-reset migrate. `PhaseContainer` updated. Legacy flat-state fields removed from `partialize`.
+**Addresses:** Chrome cleanup (anti-features), store foundation for all subsequent phases
+**Avoids:** Pitfall 1 (store version), Pitfall 3 (phase type orphan causing silent hub regression), Pitfall 12 (deleted component still imported in `App.tsx`)
 
-### Phase 2: Visual Refresh (Read & Rank)
+### Phase 2: Unified EvaluatePhase + InlineRankPanel
 
-**Rationale:** Isolated to one repo with no cross-app dependencies. Can run in parallel with Phase 3. Must be a separate commit from Phase 1 — extraction first, verify it works identically to the prototype, then apply visual changes. This is the differentiator that makes the standalone product demoable.
-**Delivers:** `readrank.empowered.vote` with EV brand design — ev-coral, ev-muted-blue, Manrope font, card-based layout; hub page, QuoteCard styling, ResultsPhase layout updated to match CompassV2/Essentials visual language. Swipe mechanics, store, and API integration unchanged.
-**Addresses:** Visual refresh (P1 differentiator)
-**Avoids:** Gesture regression — document `bind()` element boundaries before redesign begins; test on iOS Safari and Android Chrome device emulation after each card component change.
+**Rationale:** `InlineRankPanel` is the core deliverable of this milestone and is a dependency for the practice round (which reuses it in practice mode). Building the canonical unified interaction before practice ensures practice teaches the correct mechanic. This is the highest-value visible change — the primary "unified flow" milestone requirement.
+**Delivers:** New `EvaluatePhase` with `InlineRankPanel` sliding in at `agreedQuotes.length >= 2`. Badge assignment inline. `setPhase('results')` called directly from evaluate — no intermediate ranking screen. Desktop split-layout and mobile compact mode both handled.
+**Uses:** Framer Motion `AnimatePresence` + `layout` for slide-in; @dnd-kit/sortable for reorder in panel; existing `assignBadge` store action
+**Avoids:** Pitfall 7 (practice teaches wrong mechanic if unified flow not locked first), Pitfall 14 (dnd-kit / framer-motion gesture conflict — `InlineRankPanel` must be in a structurally separate DOM area from the swipe card stack)
 
-### Phase 3: Backend — Verdict Storage Endpoints
+### Phase 3: Practice Round
 
-**Rationale:** Server-side verdict storage unlocks the logged-in path without any client-side cross-subdomain hacks. Can run in parallel with Phase 2. Must complete before the logged-in path in Phase 4 can be wired end-to-end.
-**Delivers:** `compass.quote_verdicts` table (via AutoMigrate); `POST /compass/verdicts` (bulk upsert, authenticated); `GET /compass/verdicts` (authenticated); `GET /essentials/quotes?politician_id=X` (filtered, public — extends existing `GetQuotes` handler).
-**Uses:** Existing GORM + Chi + SessionMiddleware pattern; `QuoteVerdict` model added to `internal/compass/models.go`; routes registered in `internal/compass/routes.go`. No new Go libraries.
+**Rationale:** Depends on Phase 2 because `PracticeRound` reuses `InlineRankPanel` in practice mode. Must follow Phase 2 so the practice experience matches the real flow. Practice state isolation must be designed in from the start, not patched later.
+**Delivers:** `PracticeRound` component with static `practiceData.ts` pizza quotes. `practiceCompleted` store field. First-visit auto-redirect from `IssueHub`. `skipPractice()` atomic action that cleans up all partial practice state. Practice verdicts never reach backend or fragment encoder.
+**Avoids:** Pitfall 2 (practice verdicts leaked to POST), Pitfall 13 (skip path leaving partial state), Pitfall 7 (practice mechanic mismatch with real flow)
 
-### Phase 4: Verdict Integration in Essentials
+### Phase 4: Coach Marks
 
-**Rationale:** Depends on Phase 3 (backend API endpoints) and ev-ui `^0.1.42` (Phase 5, below). The fragment and localStorage paths can begin before Phase 3 lands, but the full logged-in path requires the backend. This is the primary user-facing value delivery.
-**Delivers:** Extended `CompassContext` with `verdicts` state field; `parseCompassFragment()` extracting `v` key; `loadGuestVerdicts()` / `saveGuestVerdicts()` / `parseVerdictFragment()` / `fetchUserVerdicts()` utilities in `essentials/src/lib/`; `CompassCard` calling `GET /essentials/quotes?politician_id=X` and deriving `verdictsByTopic` map; `StanceAccordion` rendering agree/disagree/diamond/gold badges via new `verdictsByTopic` prop; ev-ui updated to `^0.1.42`.
-**Addresses:** "You agreed/disagreed" badge on StanceAccordion (P1 feature); guest verdict URL fragment caching (P1 feature).
+**Rationale:** Depends on Phase 2 because coach marks spotlight `InlineRankPanel`, which must exist first. Should follow Phase 3 so coach marks reinforce what practice introduced rather than replace it. Must read CompassV2 `CoachMark.jsx` source before implementing to replicate the exact step data structure and spotlight targeting mechanism.
+**Delivers:** `FirstIssueCoachMarks` wrapper around `EvaluatePhase`. TypeScript port of `CoachMark.jsx` from CompassV2. `firstIssueCoachMarksSeen` store flag. 2-4 tour steps targeting swipe card and badge buttons. Permanent dismiss after first completion.
+**Avoids:** Pitfall 6 (coach marks firing before first card is in the DOM — gate on `quotesToEvaluate.length > 0` + `useLayoutEffect` + `requestAnimationFrame`)
 
-### Phase 5: ev-ui Verdict Badge Component
+### Phase 5: Location-Based Filtering
 
-**Rationale:** Cross-repo dependency. Must be published before Phase 4 can consume the new prop. Fully independent of Phases 1-3 and can run in parallel with everything. Small, bounded change with no risk of regression in existing callers.
-**Delivers:** ev-ui v0.1.42 published to GitHub npm registry; `StanceAccordion` accepts `verdictsByTopic` prop (`Record<topicKey, verdict>`); renders agree (green) / disagree (red) / diamond / gold badge inline in topic row when verdict is present; backward compatible — existing callers with no prop pass unchanged.
+**Rationale:** The most complex feature (three parts: address input UI, politician ID resolution, client-side filter with graceful fallback) touches only `IssueHub`, making it independent of Phases 2-4. Doing it after the core flow is stable means any bugs are clearly attributable to the location layer. Reuse Essentials' Google Maps Places initialization pattern exactly — do not invent a parallel geocoding approach.
+**Delivers:** `AddressFilter` component in `IssueHub`. `locationContext` store field. `handleSelectIssue` filter logic with `filteredQuotes.length >= 2` guard and unfiltered fallback. URL `?politician_id` auto-detect on mount for cross-app deep links from Essentials. `@googlemaps/js-api-loader` installed. `VITE_GOOGLE_MAPS_API_KEY` added to Cloudflare Pages env. Module-level `cachedData` replaced with keyed cache.
+**Uses:** `@googlemaps/js-api-loader` ^2.0.2 (only new npm package this milestone); `POST /essentials/politicians/search` (existing public backend endpoint, no backend changes)
+**Avoids:** Pitfall 4 (zero-quotes dead end), Pitfall 8 (parallel geocoding diverging from Essentials), Pitfall 11 (module-level cache not respecting location filter changes), Pitfall 5 (postVerdicts firing with location-modified issueProgress — address with persisted `verdictsSynced` flag)
 
-### Phase 6: Read & Rank — "View on Essentials" CTA and Fragment Serialization
+### Phase 6: Results Polish + Visual Redesign
 
-**Rationale:** Completes the cross-app verdict journey by adding the entry point. Depends on Phase 4 being deployed — Essentials must be able to receive and display verdicts before Read & Rank is linked there. Relatively small amount of work: one utility function and one CTA component addition.
-**Delivers:** `buildEssentialsUrl()` in Read & Rank serializing Zustand verdict state into `#compass=BASE64({..., v: verdicts})` fragment (verdict summary only — not full progress tree); "View on Essentials" CTA in ResultsPhase and CandidateAlignmentPage linking to `essentials.empowered.vote/politician/:slug`; `serializeCompassFragment()` in CompassV2 extended with `v` key for the return-banner path.
-**Addresses:** Cross-app verdict hand-off; closes the guest verdict loop end-to-end.
-
-### Phase 7: Logged-In Verdict Sync (Read & Rank → Backend)
-
-**Rationale:** Lower priority than the guest path — most civic-research users are not logged in for their first evaluation session. Delivers cross-device persistence for the subset of logged-in users. Depends on Phase 3 (backend endpoints) and Phase 6 (Read & Rank integration is wired). Small amount of backend-call code in Read & Rank's session check.
-**Delivers:** Read & Rank checks session cookie on load; if authenticated, POSTs current Zustand verdicts to `POST /compass/verdicts`; Essentials CompassContext loads verdicts from `GET /compass/verdicts` as highest-priority source for logged-in users (above fragment and localStorage).
-**Addresses:** Server-side verdict storage for logged-in users (P1 feature — crosses the completion line when the logged-in sync path is wired end-to-end from Read & Rank through backend to Essentials display).
+**Rationale:** Pure visual layer. Depends on stable phase model from Phase 1 but is independent of Phases 2-5. Can be partially parallelized with Phases 2-5 if capacity allows, or executed as a final pass to ensure it layers onto a stable component structure with no functional risk.
+**Delivers:** Hero reveal interstitial (Fraunces headline + `AnimatePresence` stage). Stagger animation with `staggerChildren: 0.07` on card list. 800ms artificial spinner removed (replaced with shimmer skeleton). Single "View on Essentials" CTA per result card. Visual redesign across all components within existing design system.
+**Avoids:** Pitfall 9 (dynamic Tailwind classes purged in production — use literal class strings only; run `npm run build` locally before every deploy), Pitfall 10 (AnimatePresence stuck on rapid transitions — stable `key` props, batch state updates in single `set()` call)
 
 ### Phase Ordering Rationale
 
-- Phases 1 and 3 can run in parallel (different repos, different concerns — frontend extraction vs. backend endpoint additions).
-- Phase 2 can run in parallel with Phase 3 (visual work in Read & Rank is independent of backend).
-- Phase 5 (ev-ui) can run in parallel with all other phases; it is a prerequisite for Phase 4 but has no incoming dependencies.
-- Phase 4 has a soft dependency on Phase 3 for the logged-in path; the fragment and localStorage paths can be implemented independently.
-- Phase 6 depends on Phase 4 being deployed — Essentials must accept and display verdicts before Read & Rank links to it.
-- Phase 7 is intentionally last — it is an enhancement to the core flow, not launch-blocking for the integration.
+- Phase 1 must be first: store migration gates everything; TypeScript type cleanup is the guided checklist for all subsequent work
+- Phase 2 must precede Phase 3: `InlineRankPanel` is a hard dependency of `PracticeRound` in practice mode; building canonical version first prevents rework
+- Phase 3 must precede Phase 4: coach marks are designed to reinforce the practice mechanic — both must exist for the onboarding arc to make sense
+- Phase 5 is isolated to `IssueHub` and can slot anywhere after Phase 1; doing it after Phases 2-4 means the core flow is stable before adding the filtering complexity layer
+- Phase 6 is the safest to defer or parallelize — pure visual changes with no functional dependencies on Phases 2-5
 
 ### Research Flags
 
-Phases with well-documented patterns (standard — can skip `/gsd:research-phase`):
-- **Phase 1:** All config changes confirmed from direct codebase inspection; Cloudflare Pages deployment pattern is identical to existing EV apps.
-- **Phase 3:** `QuoteVerdict` model is a direct copy of the `CompassAnswer` model pattern; endpoint structure is confirmed from existing `internal/compass/` handlers. No novel patterns.
-- **Phase 5:** ev-ui minor version bump following the established publish pattern. One optional prop following existing precedents on `CategorySection`.
+Phases needing specific pre-implementation source review:
 
-Phases that may benefit from brief design review before implementation:
-- **Phase 4:** The exact ev-ui `^0.1.42` badge component API (prop shape, verdict enum values, badge label text, color tokens) needs to be agreed between Phase 5 and Phase 4 before either begins implementation. A brief coordination step — not a full research phase.
-- **Phase 6:** The `buildEssentialsUrl()` URL fragment size should be verified against the current quote count before implementation to confirm the payload stays under the 8KB browser URL length limit (current estimate: ~3.2KB encoded — within budget, but worth confirming against actual quote IDs).
+- **Phase 4 (Coach Marks):** Must read `CompassV2/src/components/CoachMark.jsx` in full before implementing `FirstIssueCoachMarks`. The step data structure, spotlight target mechanism, and `useCoachMark` hook localStorage key pattern must be replicated exactly, not re-invented.
+- **Phase 5 (Location Filtering):** Must read `essentials/src/pages/Dashboard.jsx` for the exact Google Maps Places `Autocomplete` initialization pattern before implementing `AddressFilter`. The Essentials pattern is canonical — divergence causes geocoding inconsistencies between apps.
 
----
+Phases with standard well-documented patterns (can proceed without additional research):
+
+- **Phase 1 (Cleanup + Migration):** Zustand persist migration is straightforward; TypeScript errors guide all callsite cleanup. No unknowns.
+- **Phase 2 (InlineRankPanel):** Component boundaries and interaction model fully specified in ARCHITECTURE.md. All source components inspected. No unknowns.
+- **Phase 3 (Practice Round):** Static data + boolean store flag — zero external dependencies.
+- **Phase 6 (Visual Redesign):** Framer Motion stagger is well-documented; all patterns from existing codebase. Run `npm run build` locally before deploying to catch Tailwind purge issues.
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All findings from direct source code inspection of actual repos; no speculation. Cloudflare Pages pattern confirmed from official docs. No new libraries required. |
-| Features | HIGH | Feature priorities derived from the existing codebase gaps and the explicit v2026.3.4 milestone scope in PROJECT.md. All referenced source files were directly inspected. |
-| Architecture | HIGH | Build order and component boundaries derived from direct codebase inspection of all modified files. Data flow diagrams in ARCHITECTURE.md verified against actual component code. |
-| Pitfalls | HIGH | Browser storage isolation verified via MDN spec. Zustand key pitfall verified from direct inspection of `useReadRankStore.ts`. CORS and `.npmrc` pitfalls verified from existing `middleware.go` and `netlify.toml` patterns. |
+| Stack | HIGH | All findings from direct source inspection; only one new package needed; version compatibility verified against installed packages |
+| Features | HIGH | Existing codebase fully inspected; all feature recommendations grounded in what already exists and what v2026.3.4 shipped |
+| Architecture | HIGH | Component boundaries and data flow verified against live source; no assumptions about unread code; build order derived from direct dependency analysis |
+| Pitfalls | HIGH | Critical pitfalls 1-5 derived from direct code inspection of the specific files that contain the risk; Zustand and Framer Motion risks confirmed against official docs and open GitHub issues |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **ev-ui verdict badge component API design:** Research confirms that ev-ui needs a `verdicts` prop on `StanceAccordion` and that v0.1.42 is the target version, but the exact prop shape (how `verdictsByTopic` is typed, what badge variants are supported, what label text reads) needs coordination between Phase 4 and Phase 5 implementors before either begins. Not a research gap — a design coordination step.
-
-- **`?topic=` deep-link IssueHub implementation (P2):** The IssueHub component structure was inspected but the query param handling for the "Explore on Read & Rank" deep-link was not fully specced. This is explicitly P2 scope and can be addressed during that phase's planning.
-
-- **Guest persistent verdict storage (iframe relay):** Explicitly deferred to v1.x+. The gap is intentional — the URL fragment bridge covers the guest MVP path. If user testing after launch reveals guests frequently lose verdicts between sessions, the iframe postMessage relay at a shared subdomain (`shared.empowered.vote`) is the documented path forward. Do not pre-build it.
-
----
+- **CORS verification for location filtering:** Confirm that `POST /essentials/politicians/search` allows requests from `readrank.empowered.vote` on all `/essentials/*` routes (not just `/essentials/quotes`) in `EV-Backend/internal/middleware/middleware.go` before Phase 5 ships. This was noted as added in v2026.3.4 but the exact scope was flagged as unconfirmed.
+- **CoachMark ev-ui export status:** As of v0.1.50, `CoachMark` is NOT in the published ev-ui package. If ev-ui is updated between now and Phase 4, recheck before porting manually to avoid duplicating work.
+- **Google Maps API key budget:** The 28K requests/month free tier is shared across Essentials and will now include Read & Rank. Not a concern at current traffic but should be noted when `VITE_GOOGLE_MAPS_API_KEY` is added to Cloudflare Pages environment variables.
 
 ## Sources
 
-### Primary (HIGH confidence)
-- `EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand state shape, persist key `readrank-storage`, ev-ui `^0.1.6`, per-issue agree/disagree/badge data
-- `EV-prototypes/read-rank/src/data/api.ts` — `fetchQuotesData()` consuming `GET /essentials/quotes`
-- `essentials/src/contexts/CompassContext.jsx` — priority chain pattern (fragment > API > localStorage > empty), `guestCompass` key, fragment parse on mount
-- `essentials/src/lib/compass.js` — `parseCompassFragment()`, `saveGuestCompass()`, fragment schema `{a, s, i}`
-- `essentials/src/components/CompassCard.jsx` — dual fetch, StanceAccordion integration
-- `essentials/src/components/StanceAccordion.jsx` — row structure, prop surface
-- `CompassV2/src/components/ReturnBanner.jsx` — `serializeCompassFragment()` existing serialization pattern
-- `EV-Backend/internal/essentials/handlers.go` — `GetQuotes` handler, `QuoteOut` struct, SQL pattern
-- `EV-Backend/internal/essentials/routes.go` — existing route surface, `/quotes` GET endpoint
-- `EV-Backend/internal/compass/models.go` — existing model pattern for `compass.` schema (CompassAnswer as QuoteVerdict template)
-- Cloudflare Pages docs — `not_found_handling = "single-page-application"` in `wrangler.toml` confirmed
-- MDN Web API: `Window.localStorage` — origin isolation per scheme+host+port confirmed
-- MDN: Same-origin policy — `document.domain` does NOT affect storage APIs in modern browsers
+### Primary (HIGH confidence — direct codebase inspection)
 
-### Secondary (MEDIUM confidence)
-- npmjs.com: `framer-motion` 12.35.2 — latest version as of 2026-03-10
-- Cloudflare Community — SPA routing 404 behavior and `_redirects` vs `wrangler.toml` placement distinction
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/` — all source files (store, components, data layer, hooks); every component referenced in this summary was directly read
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/` — routes, handlers, geofence lookup; confirmed existing endpoint surface
+- `/Users/chrisandrews/Documents/GitHub/CompassV2/src/components/CoachMark.jsx` — component deps (react, react-dom, framer-motion only) and useCoachMark hook localStorage key pattern
+- `/Users/chrisandrews/Documents/GitHub/essentials/src/` — Google Maps Places init pattern, `@googlemaps/js-api-loader` usage confirmed
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/package.json` — confirmed CoachMark NOT exported as of v0.1.50
+
+### Secondary (MEDIUM confidence — official docs and open issues)
+
+- Zustand persist middleware docs — migration strategy, `partialize` behavior
+- Framer Motion GitHub issues #2554 and #2023 — AnimatePresence stuck on rapid transitions (both open as of 2025)
+- dnd-kit official docs — touch-action and gesture conflict guidance
+- Tailwind CSS docs — JIT class scanning, dynamic class purging behavior
+
+### Tertiary (LOW confidence — single community sources)
+
+- Duolingo onboarding UX references — practice round design rationale (corroborated by multiple secondary sources)
+- Coach marks UX best practices (NN/g, Plotline 2025) — tour step design guidance
 
 ---
-*Research completed: 2026-03-11*
+*Research completed: 2026-03-14*
 *Ready for roadmap: yes*

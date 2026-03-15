@@ -1,240 +1,167 @@
-# Stack Research
+# Technology Stack
 
-**Domain:** Read & Rank extraction + cross-app state sharing + verdict integration
-**Researched:** 2026-03-11
-**Confidence:** HIGH (all critical findings verified against source code and official specs)
+**Project:** v2026.3.6 Read & Rank Redesign
+**Researched:** 2026-03-14
+**Confidence:** HIGH (all findings from direct source code inspection of EV-readrank, CompassV2, essentials, and EV-Backend repos)
 
 ---
 
 ## Context: What Is and Is Not New
 
-The existing stack (React 19, Vite 7, Tailwind CSS 4, Zustand 5, Framer Motion 12,
-@use-gesture/react 10, @dnd-kit) is already running in EV-prototypes/read-rank.
-This document covers only what changes for the standalone extraction and the new
-cross-app / verdict integration features.
+The prior STACK.md (v2026.3.4) covers the standalone extraction, verdict storage backend, and fragment bridge. All of that is already shipped. This document covers **only what is new for v2026.3.6**: unified evaluate+rank flow, practice round, coach marks, location-based quote filtering, results polish, visual redesign, and chrome cleanup.
+
+**Existing stack that remains unchanged:**
+- React 19 + TypeScript + Vite 7 + Tailwind CSS 4
+- framer-motion ^12.23.26
+- @use-gesture/react ^10.3.1
+- @dnd-kit/core ^6.3.1 + @dnd-kit/sortable ^10.0.0 + @dnd-kit/utilities ^3.2.2
+- zustand ^5.0.9 with persist middleware
+- react-icons ^5.5.0
+- @chrisandrewsedu/ev-ui ^0.1.49 (SiteHeader, StanceAccordion, verdictsByQuote)
+- Zustand persist key `ev_readrank` (migrated from `readrank-storage` in v2026.3.4)
+- Go backend + PostGIS + `/essentials/quotes` + `/essentials/politicians/search` endpoints
 
 ---
 
-## Section 1: Standalone Repo Extraction (Read & Rank)
+## Section 1: Unified Evaluate+Rank Flow
 
-### No New Stack Required
+### No New Libraries Required
 
-The read-rank sub-project inside EV-prototypes already has a complete, self-contained
-package.json with its own Vite config, TypeScript, and all runtime deps. Extraction to a
-standalone repo is a file-copy operation with two adjustments:
+The current flow has three separate phase components: `EvaluationPhase`, `RankingPhase`, and `ResultsPhase`. The unified flow collapses evaluation and ranking into a single interaction — swipe to agree/disagree, then immediately drag-to-rank the agreed quotes in the same view rather than proceeding to a separate `RankingPhase`.
 
-1. **ev-ui package reference** — currently `@chrisandrewsedu/ev-ui`, needs `.npmrc`
-   pointing at `npm.pkg.github.com` with `NPM_TOKEN` (same pattern as the other apps;
-   a root `.npmrc` with `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` is required for
-   Cloudflare Pages CI).
+The existing `@dnd-kit/sortable` already handles drag-to-rank on the agreed quotes sidebar (`AgreedQuotesSidebar.tsx`). The `EvaluationPhase` already renders `AgreedQuotesSidebar` on desktop. The unified flow means:
 
-2. **Cloudflare Pages config** — a `wrangler.toml` at repo root with
-   `not_found_handling = "single-page-application"` under `[assets]`. No Workers runtime
-   needed; this is a static SPA deployment identical to how CompassV2 and Essentials are
-   already deployed.
+1. `RankingPhase` is removed as a standalone phase.
+2. The `'ranking'` value is removed from the `Phase` union type in `useReadRankStore.ts`.
+3. When all quotes are evaluated, `setPhase('results')` is called directly — no intermediate ranking screen.
+4. The sidebar remains visible during evaluation to show live agreed-quote ranking in real time.
 
-### Cloudflare Pages wrangler.toml
+The `@dnd-kit` packages already do this. The `reorderAgreedQuotes` action already exists in the store. No new dependencies.
 
-```toml
-name = "readrank"
-compatibility_date = "2024-09-23"
+**State machine change:** `Phase` type shrinks from `'hub' | 'evaluation' | 'ranking' | 'results'` to `'hub' | 'practice' | 'evaluation' | 'results'`. The `'practice'` phase is new (see Section 2).
 
-[assets]
-directory = "./dist"
-not_found_handling = "single-page-application"
-```
-
-Build command: `npm run build`
-Build output: `dist/`
-Environment variable: `VITE_API_URL` set in Cloudflare dashboard
-(value: `https://api.empowered.vote`)
-
-**Confidence:** HIGH — official Cloudflare Pages docs confirm this pattern for Vite SPAs.
+**Confidence:** HIGH — `AgreedQuotesSidebar.tsx`, `useReadRankStore.ts`, `EvaluationPhase.tsx`, and `RankingPhase.tsx` all inspected directly.
 
 ---
 
-## Section 2: Cross-App State Sharing — The Core Problem
+## Section 2: Practice Round (Pizza Toppings)
 
-### localStorage Is Origin-Isolated (Browser Spec, Not a Bug)
+### Static Local Data — No New Libraries
 
-localStorage is strictly scoped to `scheme + host + port`. Two different subdomains —
-`readrank.empowered.vote` and `essentials.empowered.vote` — are different origins.
-They cannot access each other's localStorage directly. This is the same-origin policy
-as defined in the HTML Living Standard and enforced by every major browser.
+The practice round shows 3-5 fun non-political quotes (e.g., pineapple on pizza) so users learn swipe mechanics before encountering real political content. This is pure UI state with static hardcoded data.
 
-Setting `document.domain` does NOT help for localStorage. MDN explicitly documents that
-document.domain changes do not affect storage APIs (localStorage, indexedDB,
-BroadcastChannel, SharedWorker).
+**Implementation:** A new `practiceData.ts` file in `src/data/` with hardcoded practice quotes. A new `PracticePhase` component (or `EvaluationPhase` reused with a `isPractice: boolean` prop). The store gains a `'practice'` phase value. On completing the practice round, `setPhase('evaluation')` transitions to real content.
 
-**Verified:** MDN Web APIs `Window.localStorage` and same-origin policy explainer.
-**Confidence:** HIGH.
+**No new npm packages.** Practice data is static — not fetched from the API. The same swipe mechanics, `QuoteCard`, and `AgreedQuotesSidebar` components render practice quotes with no changes to those components.
 
-### The Right Solution: URL Fragment Handoff + Server-Side Storage
+**localStorage consideration:** Practice progress should NOT persist across page loads. The Zustand `partialize` function already controls what persists; exclude `practicePhase` from the serialized state.
 
-This codebase already has a working cross-origin state bridge: the `#compass=BASE64(...)`
-URL fragment pattern in `essentials/src/lib/compass.js`. Read & Rank verdicts should
-use the same mechanism.
-
-**For guests:** When a Read & Rank user navigates to a politician profile in Essentials,
-encode the verdict payload into the URL as `#verdicts=BASE64(JSON)`. Essentials parses
-it on load, caches to localStorage under key `guestVerdicts`, and strips the hash.
-Essentials reads this key on profile pages. This requires zero new libraries.
-
-**For logged-in users:** POST verdicts to the backend on submission. Essentials fetches
-them via GET on profile load. The existing session cookie (already scoped to
-`.empowered.vote`) handles auth transparently across subdomains.
-
-**Option evaluated and rejected — Hidden Shared Iframe + postMessage:**
-A trusted `storage.empowered.vote` iframe communicating via postMessage. Rejected
-because: adds iframe load latency, Safari ITP blocks third-party storage access for
-same-site iframes, and the URL fragment bridge already proven in this codebase is
-simpler and has no browser-compatibility issues.
-
-**Option evaluated and rejected — BroadcastChannel:**
-Same-origin only. Different subdomains are isolated. Does not solve the problem.
-
-**Recommendation:** URL fragment handoff for guests (matches existing proven pattern).
-Server-side storage for logged-in users (matches existing compass answer pattern).
+**Confidence:** HIGH — all referenced components inspected directly. Static data pattern is trivially correct.
 
 ---
 
-## Section 3: Verdict Storage
+## Section 3: Coach Marks
 
-### Guest Verdicts — localStorage key `guestVerdicts`
+### Use CoachMark from CompassV2 — NOT From ev-ui
 
-Read & Rank stores its session state in Zustand under key `readrank-storage`. For
-the cross-app handoff, a separate, lighter localStorage key is used so Essentials
-can read it without importing the Zustand store:
+The `CoachMark` component and `useCoachMark` hook are in `CompassV2/src/components/CoachMark.jsx`. They are NOT published to ev-ui (confirmed by inspecting `ev-ui/package.json` and the installed `@chrisandrewsedu/ev-ui` dist — no `CoachMark` export). PROJECT.md v2026.4 says "Reusable CoachMark component with SVG mask spotlight overlay" was built, but it lives in CompassV2 only.
 
-```
-localStorage key: "guestVerdicts"
-Shape: {
-  [politician_id: string]: {
-    topicId: string,
-    quoteId: string,
-    verdict: "agree" | "disagree",
-    rank: number | null,
-    timestamp: number
-  }[]
-}
-```
+**Option A (recommended): Copy CoachMark into EV-readrank.** Copy `CompassV2/src/components/CoachMark.jsx` to `EV-readrank/src/components/CoachMark.tsx` (convert to TypeScript). The component has zero external dependencies beyond `react`, `react-dom` (createPortal), and `framer-motion` — all already in the EV-readrank package. This is a 230-line file.
 
-Read & Rank writes to `guestVerdicts` after each verdict is finalized. Essentials reads
-it via a utility function `loadGuestVerdicts()` parallel to the existing
-`loadGuestCompass()` in `essentials/src/lib/compass.js`.
+**Option B: Publish CoachMark to ev-ui as v0.1.51.** Adds a cross-repo coordination step — ev-ui must be built and published before EV-readrank can use it. Only worth the overhead if other apps (Essentials) also need coach marks in this milestone. They don't.
 
-For the URL fragment handoff, encode only the politician-specific verdicts (filtered by
-`politician_id`) into `#verdicts=BASE64(...)` so the URL payload stays small.
+**Recommendation:** Option A. Copy directly into EV-readrank. Single-repo, no publishing lag, TypeScript conversion is straightforward.
 
-### Logged-In Verdicts — New Backend Endpoint
+**Dependencies the copied component needs:**
+- `framer-motion` — already in package.json
+- `react-dom` (createPortal) — already a peer dep via `react-dom ^19.2.0`
 
-New table in `compass.` schema and three endpoints following the exact same pattern as
-`compass.answers` and `/compass/answers`:
+**useCoachMark hook behavior:** Persists dismiss state to `localStorage` under a per-coachmark key (e.g., `ev_rr_coach_first_issue`). Dismissed state is intentionally permanent — the coach mark never re-shows after first dismiss. This is the same behavior as in CompassV2.
 
-```
-POST   /compass/verdicts        — upsert a verdict (authenticated)
-GET    /compass/verdicts        — fetch all verdicts for session user (authenticated)
-DELETE /compass/verdicts/{id}   — remove a verdict (authenticated)
-```
+**No new npm packages required.**
 
-New GORM model (add to `internal/compass/models.go`):
-
-```go
-type QuoteVerdict struct {
-    ID        uuid.UUID  `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
-    UserID    uuid.UUID  `gorm:"type:uuid;uniqueIndex:idx_verdict_user_quote"`
-    QuoteID   uuid.UUID  `gorm:"type:uuid;uniqueIndex:idx_verdict_user_quote"`
-    Verdict   string     // "agree" | "disagree"
-    Rank      *int       // null = no explicit rank assigned
-    CreatedAt time.Time
-    UpdatedAt time.Time
-}
-func (QuoteVerdict) TableName() string { return "compass.quote_verdicts" }
-```
-
-No new Go libraries. Same Chi router + GORM + SessionMiddleware pattern as all
-existing handlers.
-
-### Retiring the URL Fragment Bridge for Compass Data
-
-The existing `#compass=BASE64(...)` bridge between CompassV2 and Essentials is replaced
-by shared `.empowered.vote` domain localStorage. Since both `compass.empowered.vote`
-and `essentials.empowered.vote` are separate origins, the replacement mechanism is:
-CompassV2 writes guest compass data to its own localStorage (already does this under
-`compassAnswers` / `selectedTopics` keys), and when Essentials needs this data, it either
-reads from the URL fragment (existing path) or the user logs in (server merges data).
-
-The fragment bridge does not need to be retired as an emergency change — it can be kept
-and the `guestCompass` localStorage key approach used for the new verdict flow. Retiring
-the fragment bridge is a separate concern flagged in PROJECT.md and can happen
-independently.
+**Confidence:** HIGH — `CoachMark.jsx` read directly, dependencies verified against `EV-readrank/package.json`.
 
 ---
 
-## Section 4: Visual Polish for Read & Rank
+## Section 4: Location-Based Quote Filtering
 
-The existing dependency set is correct and complete. No new animation or UI libraries
-are needed.
+### New Env Var + One New npm Dependency + New Backend Endpoint
 
-### Core Technologies (Already in Package)
+This is the only section that requires a new npm package. Location-based filtering means: user enters their address in Read & Rank, the app finds which politicians represent them (via PostGIS geofence matching), and then filters the displayed quotes to show only those politicians' quotes.
 
-| Technology | Version in repo | Latest | Purpose | Action |
-|------------|----------------|--------|---------|--------|
-| framer-motion | ^12.23.26 | 12.35.2 | Card swipe animations, spring physics | Update to ^12.35.0 |
-| @use-gesture/react | ^10.3.1 | 10.3.1 | Touch/mouse drag detection | Keep as-is |
-| @dnd-kit/core | ^6.3.1 | 6.x | Ranking drag-and-drop base | Keep as-is |
-| @dnd-kit/sortable | ^10.0.0 | 10.x | Sortable ranking list | Keep as-is |
-| zustand | ^5.0.9 | 5.x | State + localStorage persist | Keep as-is |
-| react-icons | ^5.5.0 | 5.x | Icon set | Keep as-is |
-| tailwindcss | ^4.1.18 | 4.x | Utility styling | Keep as-is |
-| @tailwindcss/forms | ^0.5.10 | — | Form base styles (devDep) | Already present |
-| @tailwindcss/typography | ^0.5.19 | — | Quote card prose styles (devDep) | Already present |
+**Frontend:**
 
-### Note on framer-motion Package Name
+The `@googlemaps/js-api-loader` package is already used in `essentials` (version `^2.0.2`), which loads the Google Places Autocomplete library. Read & Rank needs the same package.
 
-The library was renamed from `framer-motion` to `motion` starting with v11 but both
-npm packages are still published and maintained at the same version (12.35.x as of
-March 2026). The codebase uses `framer-motion` — no migration needed.
-Import paths stay as `import { motion } from 'framer-motion'`.
+```
+npm install @googlemaps/js-api-loader@^2.0.2
+```
+
+The `useGooglePlacesAutocomplete` hook from `essentials/src/hooks/useGooglePlacesAutocomplete.js` should be copied to `EV-readrank/src/hooks/useGooglePlacesAutocomplete.ts` (TypeScript port). It is a 70-line hook with no external runtime deps beyond the dynamically-loaded Google Maps script.
+
+**New env var:** `VITE_GOOGLE_MAPS_API_KEY` — same key already used by Essentials. Add to Cloudflare Pages environment variables for EV-readrank. The Google Maps free tier (28K requests/month, shared across apps) is the existing budget constraint.
+
+**Backend — new filtered endpoint:**
+
+`GET /essentials/quotes` already accepts `?politician_id=UUID` for per-politician filtering. Location-based filtering requires a different query shape: given a lat/lng (from the geocoding step after address selection), find all politician IDs whose geofence boundaries contain that point, then return quotes for those politicians only.
+
+There are two options:
+
+**Option A (recommended): New query parameter on existing `/essentials/quotes`.**
+Add `?address=ENCODED_ADDRESS` or `?lat=X&lng=Y` to `GetQuotes`. The handler geocodes the address (or uses the lat/lng directly), calls `FindGeoIDsByPoint` (already exists in `geofence_lookup.go`), fetches the politician IDs from those geofences, and filters the quotes SQL accordingly. This reuses all existing infrastructure with a minimal handler change.
+
+**Option B: Frontend calls `/essentials/politicians/search` first, then filters quotes client-side.**
+The `POST /essentials/politicians/search` endpoint already returns politicians for an address. Read & Rank could call this first to get a list of politician IDs, then filter the already-fetched `quotes` array client-side by `quote.candidateId`. No backend changes required. This approach works when the full quote set has already been fetched.
+
+**Recommendation:** Option B for MVP. The full quote set is already cached in `cachedData` in `src/data/api.ts`. Calling `POST /essentials/politicians/search` returns politician IDs; filtering `quotes` client-side by matching `quote.candidateId` against those IDs is O(n) and fast for the current quote count (~61 quotes). If the quote database grows substantially (>500), revisit with Option A.
+
+**Option B requires no backend changes and no new Go packages.** It does require the `POST /essentials/politicians/search` endpoint to be accessible from `readrank.empowered.vote` — verify CORS allows this subdomain (it was added in v2026.3.4; confirm it covers all `/essentials/*` routes, not just `/essentials/quotes`).
+
+**CSS for autocomplete dropdown:** Copy the `.pac-container` style override from `essentials/src/index.css` to `EV-readrank/src/index.css` so the Google Places dropdown matches the EV visual language (Manrope font).
+
+**Confidence:** HIGH for Option B — client-side filter against existing data confirmed feasible from direct inspection of `api.ts` (cached response shape) and `useReadRankStore.ts` (Quote interface includes `candidateId`). Option A confidence is MEDIUM — requires Go handler change not yet implemented; pattern is straightforward but untested.
 
 ---
 
-## Section 5: Essentials Integration
+## Section 5: Results Reveal Polish
 
-### What Essentials Needs (No New npm Dependencies)
+### Framer Motion Stagger — No New Libraries
 
-Essentials does not need Zustand. It reads `guestVerdicts` from localStorage directly,
-exactly as it reads `guestCompass` today via `loadGuestCompass()`.
+The dramatic reveal (quotes appearing one-by-one with animation, candidate identities hidden until reveal completes) is handled entirely with Framer Motion stagger sequences. The existing `ResultsPhase.tsx` already uses `initial={{ opacity: 0, y: 24 }}` with `transition={{ delay: index * 0.08 }}` stagger. The redesign enhances this with:
 
-New utility functions to add to `essentials/src/lib/` (either extend `compass.js` or
-create a new `verdicts.js`):
+- A `useAnimate` hook from Framer Motion (already imported via `framer-motion` package) for orchestrated multi-step reveals.
+- `AnimatePresence` from Framer Motion for mount/unmount transitions (already used in CompassV2).
+- Possibly `useMotionValue` + `animate` for a progress-bar reveal effect (already used in `EvaluationPhase.tsx`).
 
-```js
-export const GUEST_VERDICTS_KEY = "guestVerdicts";
+All of these are within the existing `framer-motion` import. No new animation library needed.
 
-export function loadGuestVerdicts() { /* read + parse GUEST_VERDICTS_KEY */ }
-export function saveGuestVerdicts(verdicts) { /* write GUEST_VERDICTS_KEY */ }
-export function parseVerdictFragment() { /* parse #verdicts=BASE64 from URL hash */ }
-export async function fetchUserVerdicts() { /* GET /compass/verdicts, 401 returns [] */ }
-```
+**Confidence:** HIGH — Framer Motion API confirmed from direct code inspection.
 
-Priority chain in a `VerdictContext` (or added to `CompassContext`) mirrors the existing
-compass loading logic:
+---
 
-1. Fragment in URL (`#verdicts=...`) — parse + cache to localStorage, strip hash
-2. Logged-in session — fetch from `/compass/verdicts` API
-3. Guest — read from `guestVerdicts` localStorage key
+## Section 6: Visual Redesign
 
-### ev-ui Changes
+### No New Libraries
 
-The `StanceAccordion` component (ev-ui, consumed by Essentials) is where verdict badges
-will render — showing agree/disagree/rank for quotes under each topic's stance list.
-Add a `verdicts` prop (array of verdict objects) to `StanceAccordion`, or a new
-`VerdictBadge` sibling component. Bump ev-ui to the next minor version
-(currently v0.1.41, so v0.1.42+).
+The visual redesign uses the existing design system:
+- **Colors:** `ev-coral` (#ff5740), `ev-muted-blue` (#00657c), `ev-light-blue` (#59b0c4), `ev-yellow` (#fed12e)
+- **Fonts:** Manrope (body), Fraunces (serif display) — already loaded in `index.css`
+- **Utility:** Tailwind CSS 4 (already installed)
 
-Both CompassV2 and Essentials will need their ev-ui references updated to pick up the
-new version.
+The `@tailwindcss/forms` and `@tailwindcss/typography` plugins are already in `devDependencies`.
+
+If the redesign introduces new custom CSS variables or keyframe animations, they go in `src/index.css` — same pattern as the current file.
+
+**No new npm packages.**
+
+---
+
+## Section 7: Chrome Cleanup
+
+### Deletions Only
+
+Remove `ProgressHeader` and `AnimationOptionsPage` components. Update `App.tsx` to remove the `/animation-options` route and the `<ProgressHeader />` render. These are pure deletions — no new dependencies.
 
 ---
 
@@ -242,14 +169,13 @@ new version.
 
 | Item | Location | What | Why |
 |------|----------|------|-----|
-| `wrangler.toml` | ReadRank repo root | Cloudflare Pages SPA config | Required for `readrank.empowered.vote` deployment |
-| `.npmrc` | ReadRank repo root | `//npm.pkg.github.com/:_authToken=${NPM_TOKEN}` | Required for ev-ui in Cloudflare Pages CI |
-| `VITE_API_URL` env var | Cloudflare dashboard | `https://api.empowered.vote` | Connects standalone app to backend |
-| `compass.quote_verdicts` table | EV-Backend DB | GORM model + AutoMigrate | Stores logged-in user verdicts server-side |
-| `/compass/verdicts` endpoints | `internal/compass/` | POST/GET/DELETE handlers + routes | Server-side verdict CRUD |
-| `guestVerdicts` localStorage key | ReadRank + Essentials | Shared key name constant | Cross-app guest verdict handoff |
-| Verdict utility functions | Essentials `src/lib/` | load/save/fetch/parse verdicts | Mirror of existing compass utils |
-| ev-ui v0.1.42+ | ev-ui repo | `verdicts` prop on `StanceAccordion` | Verdict badge display in politician profiles |
+| `@googlemaps/js-api-loader` ^2.0.2 | EV-readrank `dependencies` | Google Places Autocomplete | Location-based quote filtering — same package already in Essentials |
+| `VITE_GOOGLE_MAPS_API_KEY` env var | Cloudflare Pages EV-readrank dashboard | Google Maps API key | Required for Places Autocomplete; same key as Essentials |
+| `useGooglePlacesAutocomplete.ts` | `EV-readrank/src/hooks/` | Typed copy of Essentials hook | Address input for location filtering |
+| `.pac-container` CSS | `EV-readrank/src/index.css` | Places dropdown styling | Manrope font, EV card style |
+| `CoachMark.tsx` + `useCoachMark` | `EV-readrank/src/components/` | TypeScript port from CompassV2 | Practice round onboarding + first-issue coach marks |
+| `practiceData.ts` | `EV-readrank/src/data/` | Static pizza-topping quotes | Practice round — no API call needed |
+| `'practice'` in `Phase` union | `useReadRankStore.ts` | New phase state value | Practice round routing in `PhaseContainer` |
 
 ---
 
@@ -257,37 +183,29 @@ new version.
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| New state management library in Essentials | React Context + local state is sufficient; Zustand not needed for verdict read | Direct localStorage read via utility function |
-| New animation library in ReadRank | Framer Motion already covers all needed animations | Framer Motion ^12.35.0 |
-| Shared iframe / postMessage infrastructure | Overkill; URL fragment bridge is simpler and proven; Safari ITP is a real concern with iframe-based cross-site storage | URL fragment handoff |
-| Third-party sync service (Liveblocks, Pusher) | Nonprofit budget; overkill for a verdict list | Backend API endpoint |
-| New PostgreSQL schema (`readrank.`) | Verdicts are user-compass data; `compass.` is the correct semantic home, avoids cross-schema JOINs | Add to `compass.quote_verdicts` |
-| document.domain manipulation | MDN explicitly states it does NOT affect localStorage origin checks | URL fragment handoff |
-| BroadcastChannel for cross-app sync | Same-origin only; subdomains are different origins | URL fragment handoff |
+| New animation library (GSAP, anime.js, etc.) | Framer Motion already handles all required animations — stagger, spring, presence transitions | Framer Motion `useAnimate`, `AnimatePresence`, `useMotionValue` |
+| `@react-spring/web` for additional animations | Overkill; already using framer-motion throughout; mixing animation libraries creates maintenance debt | Framer Motion |
+| Publish CoachMark to ev-ui before this milestone | Cross-repo coordination delay; Essentials doesn't need it this milestone | Copy directly into EV-readrank |
+| `?lat=X&lng=Y` backend endpoint for quote filtering | Not needed for MVP; client-side filter against cached quote set is sufficient for current data size | Client-side filter using politician IDs from existing `/essentials/politicians/search` |
+| `react-spring` | ev-ui peer dep; not needed in EV-readrank directly | n/a |
+| New state management layer for location state | Zustand store already handles all app state | Extend existing `useReadRankStore` or use local component state for transient address input |
+| `@types/googlemaps` | The `@googlemaps/js-api-loader` package ships its own TypeScript types; no separate types package needed | Built-in types from `@googlemaps/js-api-loader` |
 
 ---
 
 ## Installation
 
 ```bash
-# In the new standalone ReadRank repo (copied from EV-prototypes/read-rank):
-npm install @chrisandrewsedu/ev-ui@latest
-npm install framer-motion@^12.35.0
-# No other new installs
+# In EV-readrank — only one new package:
+npm install @googlemaps/js-api-loader@^2.0.2
 ```
 
 ```bash
-# In essentials:
-npm install @chrisandrewsedu/ev-ui@latest
-# No other new installs — verdict utils are plain JS, no runtime deps
+# In Cloudflare Pages EV-readrank project — add environment variable:
+VITE_GOOGLE_MAPS_API_KEY=<same value as essentials project>
 ```
 
-```bash
-# In ev-ui (for verdict badge component — no new runtime deps):
-# Bump package.json version to 0.1.42
-npm run build
-# Publish to GitHub npm registry
-```
+No changes to EV-Backend package dependencies. No changes to ev-ui. No changes to Essentials or CompassV2.
 
 ---
 
@@ -295,28 +213,28 @@ npm run build
 
 | Package | Compatible With | Notes |
 |---------|-----------------|-------|
-| framer-motion ^12.x | React 19 | No breaking changes in v12; confirmed on npm changelog |
-| @use-gesture/react ^10.x | React 19 | No known issues with React 19 |
-| zustand ^5.x | React 19 | Officially supports React 19; persist middleware API unchanged |
-| @dnd-kit/core ^6.x | React 19 | Current in EV-prototypes; no issues reported |
-| tailwindcss ^4.x | Vite 7 | Already proven across all EV apps |
-| ev-ui (GitHub registry) | React 19 + Vite 7 | Essentials on ^0.1.41; update to ^0.1.42+ for verdict props |
+| `@googlemaps/js-api-loader` ^2.0.2 | React 19 + Vite 7 | Framework-agnostic loader; works with any JS app; already proven in Essentials |
+| `framer-motion` ^12.x | React 19 | `useAnimate` API added in v10.x; `AnimatePresence` stable; no breaking changes for planned usage |
+| `@dnd-kit/sortable` ^10.x | React 19 | `useSortable` and `DndContext` confirmed working in current EV-readrank build |
+| CoachMark (copied) | React 19 + framer-motion | Depends only on `react`, `react-dom`, `framer-motion` — all present |
 
 ---
 
 ## Sources
 
-- MDN Web API: `Window.localStorage` — origin isolation per scheme+host+port confirmed
-- MDN: Same-origin policy — document.domain does NOT affect storage APIs
-- npmjs.com: `framer-motion` — latest 12.35.2, published 2026-03-10 (verified)
-- Cloudflare Pages docs — `not_found_handling = "single-page-application"` in wrangler.toml
-- `/Users/chrisandrews/Documents/GitHub/EV-prototypes/read-rank/package.json` — current deps verified
-- `/Users/chrisandrews/Documents/GitHub/essentials/src/lib/compass.js` — URL fragment bridge pattern, `GUEST_COMPASS_KEY` convention
-- `/Users/chrisandrews/Documents/GitHub/essentials/src/contexts/CompassContext.jsx` — fragment > API > localStorage priority chain
-- `/Users/chrisandrews/Documents/GitHub/EV-prototypes/read-rank/src/store/useReadRankStore.ts` — Zustand persist key `readrank-storage` confirmed
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/routes.go` — existing `/quotes` GET endpoint confirmed
-- `/Users/chrisandrews/Documents/GitHub/essentials/package.json` — ev-ui ^0.1.41, no Zustand dep confirmed
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/package.json` — current dependencies confirmed
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/store/useReadRankStore.ts` — Phase type, IssueProgress shape, AgreedQuotesSidebar integration
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/EvaluationPhase.tsx` — AgreedQuotesSidebar already rendered on desktop; handleComplete already calls setRankedQuotes then setPhase
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/PhaseContainer.tsx` — phase routing, verdictSync on results
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/data/api.ts` — cachedData shape, fetchQuotesData, Quote.candidateId field
+- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/App.tsx` — ProgressHeader, AnimationOptionsPage usage confirmed (to delete)
+- `/Users/chrisandrews/Documents/GitHub/CompassV2/src/components/CoachMark.jsx` — 230 lines, deps: react, react-dom, framer-motion only; useCoachMark localStorage key pattern
+- `/Users/chrisandrews/Documents/GitHub/essentials/src/hooks/useGooglePlacesAutocomplete.js` — @googlemaps/js-api-loader usage, Places Autocomplete pattern
+- `/Users/chrisandrews/Documents/GitHub/essentials/package.json` — `@googlemaps/js-api-loader` ^2.0.2 confirmed
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/routes.go` — `/politicians/search` POST endpoint confirmed
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geofence_lookup.go` — `FindGeoIDsByPoint` function exists
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/package.json` — v0.1.50; CoachMark NOT exported (confirmed absent from exports)
 
 ---
-*Stack research for: v2026.3.4 Read & Rank Integration*
-*Researched: 2026-03-11*
+*Stack research for: v2026.3.6 Read & Rank Redesign*
+*Researched: 2026-03-14*
