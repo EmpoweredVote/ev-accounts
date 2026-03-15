@@ -75,31 +75,31 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FLOW-06 | Phase 1 | Pending |
-| CHRM-01 | Phase 1 | Pending |
-| CHRM-02 | Phase 1 | Pending |
-| CHRM-03 | Phase 1 | Pending |
-| FLOW-01 | Phase 2 | Pending |
-| FLOW-02 | Phase 2 | Pending |
-| FLOW-03 | Phase 2 | Pending |
-| FLOW-04 | Phase 2 | Pending |
-| FLOW-05 | Phase 2 | Pending |
-| ONBD-01 | Phase 3 | Pending |
-| ONBD-02 | Phase 3 | Pending |
-| ONBD-03 | Phase 3 | Pending |
-| ONBD-04 | Phase 3 | Pending |
-| ONBD-05 | Phase 4 | Pending |
-| ONBD-06 | Phase 4 | Pending |
-| LOC-01 | Phase 5 | Pending |
-| LOC-02 | Phase 5 | Pending |
-| LOC-03 | Phase 5 | Pending |
-| LOC-04 | Phase 5 | Pending |
-| LOC-05 | Phase 5 | Pending |
-| RSLT-01 | Phase 6 | Pending |
-| RSLT-02 | Phase 6 | Pending |
-| RSLT-03 | Phase 6 | Pending |
-| RSLT-04 | Phase 6 | Pending |
-| CHRM-04 | Phase 6 | Pending |
+| FLOW-06 | Phase 86 | Pending |
+| CHRM-01 | Phase 86 | Pending |
+| CHRM-02 | Phase 86 | Pending |
+| CHRM-03 | Phase 86 | Pending |
+| FLOW-01 | Phase 87 | Pending |
+| FLOW-02 | Phase 87 | Pending |
+| FLOW-03 | Phase 87 | Pending |
+| FLOW-04 | Phase 87 | Pending |
+| FLOW-05 | Phase 87 | Pending |
+| ONBD-01 | Phase 88 | Pending |
+| ONBD-02 | Phase 88 | Pending |
+| ONBD-03 | Phase 88 | Pending |
+| ONBD-04 | Phase 88 | Pending |
+| ONBD-05 | Phase 89 | Pending |
+| ONBD-06 | Phase 89 | Pending |
+| LOC-01 | Phase 90 | Pending |
+| LOC-02 | Phase 90 | Pending |
+| LOC-03 | Phase 90 | Pending |
+| LOC-04 | Phase 90 | Pending |
+| LOC-05 | Phase 90 | Pending |
+| RSLT-01 | Phase 91 | Pending |
+| RSLT-02 | Phase 91 | Pending |
+| RSLT-03 | Phase 91 | Pending |
+| RSLT-04 | Phase 91 | Pending |
+| CHRM-04 | Phase 91 | Pending |
 
 **Coverage:**
 - v2026.3.6 requirements: 25 total
@@ -108,4 +108,4 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 
 ---
 *Requirements defined: 2026-03-14*
-*Last updated: 2026-03-14 after initial definition*
+*Last updated: 2026-03-14 — traceability updated with phase numbers 86-91*

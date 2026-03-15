@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: planning
-stopped_at: Completed quick task 13 — congressional district label normalization
-last_updated: "2026-03-14T00:08:00Z"
-last_activity: "2026-03-14 - Completed quick task 13: Normalize congressional district labels in essentials.districts"
+milestone: v2026.3.6
+milestone_name: Read & Rank Redesign
+status: ready_to_plan
+stopped_at: Roadmap created for v2026.3.6 — Phase 86 ready to plan
+last_updated: "2026-03-14T00:00:00Z"
+last_activity: "2026-03-14 - Roadmap created for v2026.3.6 Read & Rank Redesign"
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 5
-  completed_plans: 5
+  total_phases: 6
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
   percent: 0
 ---
 
@@ -18,24 +18,25 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-13)
+See: .planning/PROJECT.md (updated 2026-03-14)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v2026.3.6 Read & Rank Redesign
+**Current focus:** Phase 86 — Chrome Cleanup + Store Migration
 
 ## Current Position
 
-Current milestone: v2026.3.6 Read & Rank Redesign
-Status: Defining requirements
-Last activity: 2026-03-14 — Milestone v2026.3.6 started
+Phase: 86 of 91 (Chrome Cleanup + Store Migration)
+Plan: 0 of TBD in current phase
+Status: Ready to plan
+Last activity: 2026-03-14 — Roadmap created for v2026.3.6 Read & Rank Redesign
+
+Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Performance Metrics
 
 **Velocity (v2026.3.5):** 3 phases, 5 plans, 1 day
 **Velocity (v2026.3.4):** 6 phases, 13 plans, 1 day
 **Velocity (v2026.3.3):** 5 phases, 6 plans, 2 days
-**Velocity (v2026.3.2):** 5 phases, 8 plans, 3 days
-**Velocity (v2026.4):** 7 phases, 24 plans, 2 days
 
 *Updated after each plan completion*
 
@@ -43,7 +44,10 @@ Last activity: 2026-03-14 — Milestone v2026.3.6 started
 
 ### Decisions
 
-(Cleared at milestone boundary — see milestones/v2026.3.5-ROADMAP.md for archived decisions)
+- [v2026.3.6]: Zustand store version must be bumped to v2 with clean-reset migrate as the very first commit — old `phase: 'ranking'` in localStorage will silently break the app
+- [v2026.3.6]: Practice state lives entirely outside `issueProgress` — no contamination of verdict POST payloads; skip action must be atomic
+- [v2026.3.6]: CoachMark TypeScript-ported from CompassV2 directly into EV-readrank this milestone — not published to ev-ui (single consumer, cross-repo overhead unjustified)
+- [v2026.3.6]: Location filtering is client-side only — `POST /essentials/politicians/search` + client filter; no backend changes required
 
 ### Pending Todos
 
@@ -51,7 +55,9 @@ Last activity: 2026-03-14 — Milestone v2026.3.6 started
 
 ### Blockers/Concerns
 
-(None)
+- [Phase 90]: Confirm `POST /essentials/politicians/search` CORS allows `readrank.empowered.vote` before Phase 90 ships
+- [Phase 90]: Add `VITE_GOOGLE_MAPS_API_KEY` to Cloudflare Pages env for EV-readrank before deploying location filter
+- [Phase 89]: Verify CoachMark is still absent from ev-ui exports before manual port — if published, skip the port
 
 ### Quick Tasks Completed
 
@@ -76,5 +82,5 @@ Last activity: 2026-03-14 — Milestone v2026.3.6 started
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed quick task 14 — Monroe County Circuit Court judge names and division labels
+Stopped at: Roadmap created — Phase 86 ready to plan
 Resume file: None
