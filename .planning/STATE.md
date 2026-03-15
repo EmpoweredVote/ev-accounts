@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Planning v1.4
+**Current focus:** v1.4 Profile Hub & Verification Engine
 
 ## Current Position
 
-Phase: v1.4 not yet planned
-Plan: Not started
-Status: Ready for /gsd:new-milestone
-Last activity: 2026-03-15 — v1.3 milestone complete (archived, tagged v1.3)
+Phase: Not started (defining roadmap)
+Plan: —
+Status: Requirements defined, roadmap pending
+Last activity: 2026-03-15 — v1.4 requirements defined (18 requirements across 4 categories)
 
 Progress: [v1.3 shipped] Planning v1.4
 
@@ -116,7 +116,7 @@ Full key decisions log in PROJECT.md. All v1.3 decisions archived in milestones/
 
 ### Pending Todos
 
-- **v1.4 milestone definition** — run `/gsd:new-milestone` to define requirements and roadmap
+- **v1.4 roadmap** — run `/gsd:new-milestone` roadmap phase to create phase breakdown
 - **Set-location UI** — users need a UI in accounts portal to submit their address (endpoint exists, no frontend)
 - **CTC + VQ integration verification** — confirm XP/gem flows work live once service keys are configured
 

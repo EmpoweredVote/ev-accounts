@@ -139,15 +139,15 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | .is('deleted_at', null) not .eq() for PostgREST null comparisons | PostgREST generates IS NULL for .is(); .eq(null) does not correctly produce IS NULL in generated SQL. | ✓ Good — Phase 16 gap closure; affects any future soft-delete query |
 | Two-pass validation in admin atomic RPCs | Full input validation loop before any writes — guarantees all-or-nothing atomicity without partial state. Established in admin_create_topic_with_stances (Phase 14). | ✓ Good — pattern to reuse for any future multi-row admin RPC |
 
-## Current Milestone: v1.4 (Planning)
+## Current Milestone: v1.4 Profile Hub & Verification Engine
 
-**Goal:** TBD — run `/gsd:new-milestone` to define v1.4 requirements and roadmap.
+**Goal:** Make the platform usable end-to-end for a real Alpha user — a useful profile page, live CTC/VQ integrations verified, and a Verification Rating system that rewards good civic participation.
 
-**Candidates:**
-- Compass data visible to users (politician comparison view end-to-end)
-- Set-location UI in accounts portal
-- CTC + VQ integration verification (hand off onboarding docs, verify live XP/gem flows)
-- Compass admin tooling (Phase 7 routes: topic/stance/politician management)
+**Target features:**
+- Profile Hub UI — tier/XP/gems/Verification Rating display, location form, feature hub linking to all 5 live Empowered Vote apps
+- Verification Rating system — `verification_rating` + `vq_hold_until`; +3 correct / -10 wrong; 90 unlocks Red Gem Quests; 0 triggers 30-day hold; admin override
+- VQ answer confirmation flow — `POST /api/vq/confirm-stance`; Red Gems to correct answerers; confirmed stance written to `inform.politician_answers`
+- CTC + VQ integration verification — service keys live, XP/gem/verification flows smoke-tested end-to-end
 
 ---
 *Last updated: 2026-03-15 after v1.3 milestone completion*
