@@ -233,7 +233,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 26-01-PLAN.md — migration 031/032 fixes + PATCH /me location_consent + types regen + REQUIREMENTS.md update
+- [ ] 26-01-PLAN.md — PATCH /me location_consent parity + gem_balance type cleanup + REQUIREMENTS.md traceability
 
 ---
 
