@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 24 of 24 (Public Auth Hub) — In progress
-Plan: 1 of 2 complete
-Status: In progress
-Last activity: 2026-03-14 — Completed 24-01-PLAN.md (migration 036 + signup with invite + request-access + is_admin)
+Phase: 24 of 24 (Public Auth Hub) — Phase complete
+Plan: 2 of 2 complete
+Status: Phase complete
+Last activity: 2026-03-14 — Completed 24-02-PLAN.md (login rebrand, signup flow, ProfilePage, routing rewire)
 
-Progress: [█████████░] ~83% (20 of ~24 v1.3 plans complete)
+Progress: [██████████] ~100% (22 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -97,6 +97,11 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **Unknown signup_with_invite RPC errors are non-fatal** — auth user was created; user can claim Connected profile via Connect flow later. (24-01)
 - **isUserAdmin fails closed** — returns false on DB error; a connectivity issue can never accidentally promote a user to admin. (24-01)
 - **insertAccessRequest and isUserAdmin in adminService.ts** — architecture test enforces no supabaseAdmin in routes/; service-helper pattern applied. (24-01)
+- **Post-login GET /account/me (not /admin/me) for session restore** — is_admin field on /account/me (24-01) makes it the single source of truth for tier routing; non-admin logins no longer fail with 403. (24-02)
+- **Default catch-all redirect changed from /admin to /login** — accounts.empowered.vote is now a public portal, not admin-only tool. (24-02)
+- **AdminGuard redirects non-admins to /profile instead of error page** — clean UX; users land somewhere useful. (24-02)
+- **getValidRedirect() silently returns null for untrusted domains** — no error thrown; validation is a security gate, not a user-facing error. (24-02)
+- **admin_token sessionStorage key preserved despite name** — stores JWT for any authenticated user; renaming would break existing admin sessions. (24-02)
 
 ### Open Blockers
 
@@ -110,5 +115,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Completed 24-01-PLAN.md — migration 036 (access_requests table + signup_with_invite RPC), auth.ts extended signup with invite logic + request-access endpoint, account.ts is_admin on /me, adminService.ts helpers (isUserAdmin, insertAccessRequest), database.types.ts updated.
-Resume: Phase 24 Plan 02 — frontend Auth Hub (login rebrand, signup form with invite flow, routing logic).
+Stopped at: Completed 24-02-PLAN.md — login rebrand (tier-neutral, civic branding), Signup.tsx with invite code + covenant callout + request-access modal, ProfilePage with tier badge and admin panel link, AuthGuard, App.tsx routing rewire. Phase 24 complete.
+Resume: None — v1.3 Phase 24 complete. Run /gsd:new-milestone for next milestone planning.

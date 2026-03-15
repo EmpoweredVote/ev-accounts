@@ -199,8 +199,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 24-01-PLAN.md — Migration 036 (signup_with_invite RPC + access_requests table) + backend route extensions (signup, request-access, is_admin on /me)
-- [ ] 24-02-PLAN.md — Frontend: Login rebrand + Signup page + ProfilePage + routing overhaul + authStore extension
+- [x] 24-01-PLAN.md — Migration 036 (signup_with_invite RPC + access_requests table) + backend route extensions (signup, request-access, is_admin on /me)
+- [x] 24-02-PLAN.md — Frontend: Login rebrand + Signup page + ProfilePage + routing overhaul + authStore extension
 
 ---
 
@@ -231,4 +231,4 @@ Plans:
 | 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 3/3 | Complete | 2026-03-14 |
-| 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/2 | Not started | - |
+| 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
