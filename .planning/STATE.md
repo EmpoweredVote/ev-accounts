@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 24 — Public Auth Hub (Login Rebrand + Signup Flow)
+**Current focus:** Phase 25 — Deployment Runbook Completion
 
 ## Current Position
 
-Phase: 24 of 24 (Public Auth Hub) — Phase complete
-Plan: 2 of 2 complete
+Phase: 25 of 25 (Deployment Runbook Completion) — Phase complete
+Plan: 1 of 1 complete
 Status: Phase complete
-Last activity: 2026-03-14 — Completed 24-02-PLAN.md (login rebrand, signup flow, ProfilePage, routing rewire)
+Last activity: 2026-03-15 — Completed 25-01-PLAN.md (migration files 034-036, applyMigrations.ts 026-036, DEPLOY.md full runbook)
 
-Progress: [██████████] ~100% (22 of ~24 v1.3 plans complete)
+Progress: [██████████] ~100% (23 of ~25 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -105,7 +105,7 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 
 ### Open Blockers
 
-- **PostgREST schema config requires DB-level override** — Supabase dashboard UI change was not picked up by PostgREST. Fixed via `ALTER ROLE authenticator SET pgrst.db_schemas TO '...'`. Document this in DEPLOY.md for future deploys.
+- **PostgREST schema config documented in DEPLOY.md Step 1b** — `ALTER ROLE authenticator SET pgrst.db_schemas TO '...'` is now a required step in the cold-start runbook. Must be executed before Alpha launch.
 - **CompassV2 frontend CV2-01 through CV2-05** — Accounts side complete (Phase 18). CompassV2 repo must implement its side separately using COMPASS_CONTRACT.md as the integration spec.
 
 ### Pending Todos
@@ -114,6 +114,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-14
-Stopped at: Completed 24-02-PLAN.md — login rebrand (tier-neutral, civic branding), Signup.tsx with invite code + covenant callout + request-access modal, ProfilePage with tier badge and admin panel link, AuthGuard, App.tsx routing rewire. Phase 24 complete.
-Resume: None — v1.3 Phase 24 complete. Run /gsd:new-milestone for next milestone planning.
+Last session: 2026-03-15
+Stopped at: Completed 25-01-PLAN.md — copied migrations 034-036 to backend/migrations/, extended applyMigrations.ts to cover 026-036, updated DEPLOY.md with full runbook (apply order, psql fallback, verification queries, rollback for 030-036, PostgREST Step 1b, new env vars). Phase 25 complete.
+Resume: None — v1.3 Phase 25 complete. DEPLOY.md is ready for Alpha launch. Run /gsd:new-milestone for next milestone planning.
