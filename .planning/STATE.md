@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.4 — Phase 28: VQ Confirmation Flow
+**Current focus:** v1.4 — Phase 29: Admin Controls & Integration Verification
 
 ## Current Position
 

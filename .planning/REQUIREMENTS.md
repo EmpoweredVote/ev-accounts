@@ -17,17 +17,17 @@
 - [x] **VR-01**: `connected_profiles` gains `verification_rating integer NOT NULL DEFAULT 60` and `vq_hold_until timestamptz`
 - [x] **VR-02**: `GET /api/account/me` returns `verification_rating` and `vq_hold_active: boolean` (derived from `vq_hold_until`)
 - [x] **VR-03**: Verification Rating of 90+ unlocks Red Gem Quests (returned as `red_gem_quests_unlocked: boolean` on `/me`)
-- [ ] **VR-04**: Verification Rating reaching 0 sets `vq_hold_until = now() + interval '30 days'`; user cannot participate in VQ during hold
+- [x] **VR-04**: Verification Rating reaching 0 sets `vq_hold_until = now() + interval '30 days'`; user cannot participate in VQ during hold
 - [ ] **VR-05**: Admin can manually adjust a user's `verification_rating` and clear `vq_hold_until` via admin tool
 
 ### VQ — VQ Answer Confirmation Flow
 
-- [ ] **VQ-01**: `POST /api/vq/confirm-stance` — service-key authenticated endpoint; accepts `{ politician_id, topic_id, confirmed_value, correct_user_ids[], incorrect_user_ids[], idempotency_key }`
-- [ ] **VQ-02**: Correct answerers receive Red Gems (`gem_type = 'red'`) via existing `credit_gems` RPC; amount configurable per VQ service key
-- [ ] **VQ-03**: Correct answerers' `verification_rating` incremented by 3 (max cap: 150)
-- [ ] **VQ-04**: Incorrect answerers' `verification_rating` decremented by 10; if rating reaches 0, `vq_hold_until` set to 30 days from now
-- [ ] **VQ-05**: Confirmed stance written to `inform.politician_answers` (upsert); stance becomes the authoritative value
-- [ ] **VQ-06**: `POST /api/vq/confirm-stance` is idempotent — re-sending same `idempotency_key` returns original result without re-awarding gems or re-adjusting ratings
+- [x] **VQ-01**: `POST /api/vq/confirm-stance` — service-key authenticated endpoint; accepts `{ politician_id, topic_id, confirmed_value, correct_user_ids[], incorrect_user_ids[], idempotency_key }`
+- [x] **VQ-02**: Correct answerers receive Red Gems (`gem_type = 'red'`) via existing `credit_gems` RPC; amount configurable per VQ service key
+- [x] **VQ-03**: Correct answerers' `verification_rating` incremented by 3 (max cap: 150)
+- [x] **VQ-04**: Incorrect answerers' `verification_rating` decremented by 10; if rating reaches 0, `vq_hold_until` set to 30 days from now
+- [x] **VQ-05**: Confirmed stance written to `inform.politician_answers` (upsert); stance becomes the authoritative value
+- [x] **VQ-06**: `POST /api/vq/confirm-stance` is idempotent — re-sending same `idempotency_key` returns original result without re-awarding gems or re-adjusting ratings
 
 ### INTEG — Integration Verification
 
@@ -72,14 +72,14 @@
 | VR-01 | Phase 27 | Complete |
 | VR-02 | Phase 27 | Complete |
 | VR-03 | Phase 27 | Complete |
-| VR-04 | Phase 27 | Pending |
+| VR-04 | Phase 28 | Complete |
 | VR-05 | Phase 29 | Pending |
-| VQ-01 | Phase 28 | Pending |
-| VQ-02 | Phase 28 | Pending |
-| VQ-03 | Phase 28 | Pending |
-| VQ-04 | Phase 28 | Pending |
-| VQ-05 | Phase 28 | Pending |
-| VQ-06 | Phase 28 | Pending |
+| VQ-01 | Phase 28 | Complete |
+| VQ-02 | Phase 28 | Complete |
+| VQ-03 | Phase 28 | Complete |
+| VQ-04 | Phase 28 | Complete |
+| VQ-05 | Phase 28 | Complete |
+| VQ-06 | Phase 28 | Complete |
 | INTEG-01 | Phase 29 | Pending |
 | INTEG-02 | Phase 29 | Pending |
 | INTEG-03 | Phase 29 | Pending |

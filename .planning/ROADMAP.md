@@ -101,8 +101,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 28-01-PLAN.md — Migration 038 (vq_confirmation_results table + confirm_vq_stance RPC) + route + service file + registration
-- [ ] 28-02-PLAN.md — Integration tests covering all 6 VQ requirements
+- [x] 28-01-PLAN.md — Migration 038 (vq_confirmation_results table + confirm_vq_stance RPC) + route + service file + registration
+- [x] 28-02-PLAN.md — Integration tests covering all 6 VQ requirements
 
 #### Phase 29: Admin Controls & Integration Verification
 
@@ -167,6 +167,6 @@ Plans:
 | 25. Deployment Runbook Completion | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 26. v1.3 Tech Debt Closure | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 27. Verification Rating Schema | v1.4 | 1/1 | Complete | 2026-03-15 |
-| 28. VQ Confirmation Flow | v1.4 | 0/2 | Not started | — |
+| 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 29. Admin Controls & Integration Verification | v1.4 | 0/— | Not started | — |
 | 30. Profile Hub UI | v1.4 | 0/— | Not started | — |
