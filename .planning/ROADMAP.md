@@ -242,7 +242,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 - [x] **Phase 86: Chrome Cleanup + Store Migration** - Remove dead chrome and migrate Zustand store to v2 (completed 2026-03-15)
 - [x] **Phase 87: Unified EvaluatePhase + InlineRankPanel** - Collapse evaluate+rank into one fluid interaction (completed 2026-03-15)
 - [x] **Phase 87.1: Head-to-Head Matchup Ranking** - Replace drag-to-rank with pairwise comparison flow (INSERTED) (completed 2026-03-15)
-- [ ] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes
+- [x] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes (completed 2026-03-15)
 - [ ] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice
 - [ ] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives
 - [ ] **Phase 91: Results Polish + Visual Redesign** - Dramatic reveal animation and full visual overhaul
@@ -305,7 +305,7 @@ Plans:
   2. The practice round demonstrates both swipe agree/disagree and the insert-into-list ranking mechanic
   3. Practice verdicts do not appear on any Essentials politician profile
   4. Skipping practice clears all partial practice state and takes the user directly to the hub
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [ ] 88-01-PLAN.md — Store v5 migration, practice data, practice actions, QuoteCard refactor
 - [ ] 88-02-PLAN.md — PracticeRound component, PracticeResultsScreen, PhaseContainer wiring
@@ -359,7 +359,7 @@ Plans:
 | 86. Chrome Cleanup + Store Migration | 2/2 | Complete    | 2026-03-15 | - |
 | 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete    | 2026-03-15 | - |
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
-| 88. Practice Round | 1/2 | In Progress|  | - |
+| 88. Practice Round | 2/2 | Complete   | 2026-03-15 | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |

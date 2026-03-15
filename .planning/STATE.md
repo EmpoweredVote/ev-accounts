@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 88-01-PLAN.md
-last_updated: "2026-03-15T20:12:09.192Z"
+stopped_at: "Completed 88-02-PLAN.md (checkpoint:human-verify Task 3 returned)"
+last_updated: "2026-03-15T20:17:57.335Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
   percent: 0
 ---
 
@@ -70,6 +70,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 88-practice-round]: Store v5 migration uses version > 0 check to set practiceCompleted: true for existing users, false for brand-new users
 - [Phase 88-practice-round]: PracticeProgress stored at top-level store (not inside issueProgress) to prevent practice data from polluting real issue verdict POST payloads
 - [Phase 88-practice-round]: QuoteCard onAgree/onDisagree use ?? fallback to store actions — backward-compatible, EvaluationPhase passes zero new props
+- [Phase 88-practice-round]: PracticeRound reads from practiceProgress directly (not getCurrentIssueProgress) — keeps practice isolated from real issue data
+- [Phase 88-practice-round]: Results sub-phase tracked via local showResults state (not store phase) — completePractice() sets phase to 'hub' directly, never to 'results'
+- [Phase 88-practice-round]: PhaseContainer auto-redirect calls startPractice() not setPhase('practice') — startPractice initializes practiceProgress; bare setPhase would leave it null
 
 ### Pending Todos
 
@@ -96,6 +99,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 87-unified-evaluatephase-inlinerankpanel P02 | 3 | 3 tasks | 5 files |
 | Phase 87.1-head-to-head-matchup-ranking P01 | 2 | 2 tasks | 2 files |
 | Phase 88-practice-round P01 | 3 | 2 tasks | 3 files |
+| Phase 88 P02 | 3 | 2 tasks | 3 files |
 
 ### Roadmap Evolution
 
@@ -115,6 +119,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T20:12:09.189Z
-Stopped at: Completed 88-01-PLAN.md
+Last session: 2026-03-15T20:17:57.333Z
+Stopped at: Completed 88-02-PLAN.md (checkpoint:human-verify Task 3 returned)
 Resume file: None
