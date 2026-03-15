@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Completed 88-02-PLAN.md (checkpoint:human-verify Task 3 returned)"
-last_updated: "2026-03-15T20:17:57.335Z"
+stopped_at: Completed 88-02-PLAN.md
+last_updated: "2026-03-15T20:35:32.949Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
@@ -73,6 +73,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 88-practice-round]: PracticeRound reads from practiceProgress directly (not getCurrentIssueProgress) — keeps practice isolated from real issue data
 - [Phase 88-practice-round]: Results sub-phase tracked via local showResults state (not store phase) — completePractice() sets phase to 'hub' directly, never to 'results'
 - [Phase 88-practice-round]: PhaseContainer auto-redirect calls startPractice() not setPhase('practice') — startPractice initializes practiceProgress; bare setPhase would leave it null
+- [Phase 88-practice-round]: Practice splash added (user-requested): leads with Read & Rank feature value prop before pizza practice warm-up
+- [Phase 88-practice-round]: Character emoji avatars added (user-requested): emoji + avatarColor in PRACTICE_CHARACTERS; disagreed cards desaturated
 
 ### Pending Todos
 
@@ -100,6 +102,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 87.1-head-to-head-matchup-ranking P01 | 2 | 2 tasks | 2 files |
 | Phase 88-practice-round P01 | 3 | 2 tasks | 3 files |
 | Phase 88 P02 | 3 | 2 tasks | 3 files |
+| Phase 88-practice-round P02 | 75 | 3 tasks | 4 files |
 
 ### Roadmap Evolution
 
@@ -119,6 +122,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T20:17:57.333Z
-Stopped at: Completed 88-02-PLAN.md (checkpoint:human-verify Task 3 returned)
+Last session: 2026-03-15T20:35:32.947Z
+Stopped at: Completed 88-02-PLAN.md
 Resume file: None
