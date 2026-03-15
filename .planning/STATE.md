@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 ## Current Position
 
-Phase: 28 of 30 (VQ Confirmation Flow)
-Plan: 2 of 2 in current phase
-Status: Phase complete
-Last activity: 2026-03-15 — Completed 28-02-PLAN.md
+Phase: 29 of 30 (Admin Controls & Integration Verification)
+Plan: 1 of 2 in current phase
+Status: In progress
+Last activity: 2026-03-15 — Completed 29-01-PLAN.md
 
-Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 28 complete ██
+Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 29 plan 1/2 complete ██░
 
 ## Performance Metrics
 
@@ -70,5 +70,5 @@ Recent decisions relevant to v1.4:
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 28-02-PLAN.md — VQ integration tests (vq.test.ts)
-Resume: Run `/gsd:plan-phase 29` to plan Phase 29 (VQ Integration Smoke Test)
+Stopped at: Completed 29-01-PLAN.md — Admin VR override controls (PATCH endpoint + AccountDetailPage edit UI)
+Resume: Execute 29-02-PLAN.md
