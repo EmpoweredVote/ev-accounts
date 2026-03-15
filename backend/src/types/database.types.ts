@@ -23,7 +23,6 @@ export type Database = {
           current_level: number
           deleted_at: string | null
           display_name: string
-          gem_balance: number
           gem_balance_blue: number
           gem_balance_red: number
           gem_balance_yellow: number
@@ -51,7 +50,6 @@ export type Database = {
           current_level?: number
           deleted_at?: string | null
           display_name: string
-          gem_balance?: number
           gem_balance_blue?: number
           gem_balance_red?: number
           gem_balance_yellow?: number
@@ -79,7 +77,6 @@ export type Database = {
           current_level?: number
           deleted_at?: string | null
           display_name?: string
-          gem_balance?: number
           gem_balance_blue?: number
           gem_balance_red?: number
           gem_balance_yellow?: number
@@ -366,7 +363,6 @@ export type Database = {
           current_level: number | null
           deleted_at: string | null
           display_name: string | null
-          gem_balance: number | null
           gem_balance_blue: number | null
           gem_balance_red: number | null
           gem_balance_yellow: number | null
@@ -387,7 +383,6 @@ export type Database = {
           current_level?: number | null
           deleted_at?: string | null
           display_name?: string | null
-          gem_balance?: number | null
           gem_balance_blue?: number | null
           gem_balance_red?: number | null
           gem_balance_yellow?: number | null
@@ -408,7 +403,6 @@ export type Database = {
           current_level?: number | null
           deleted_at?: string | null
           display_name?: string | null
-          gem_balance?: number | null
           gem_balance_blue?: number | null
           gem_balance_red?: number | null
           gem_balance_yellow?: number | null
