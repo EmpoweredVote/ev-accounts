@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AdminGuard } from './components/AdminGuard';
+import { AuthGuard } from './components/AuthGuard';
 import { AdminLayout } from './pages/admin/AdminLayout';
 import { AdminDashboard } from './pages/admin/AdminDashboard';
 import { AccountsPage } from './pages/admin/AccountsPage';
@@ -14,6 +15,8 @@ import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
 
@@ -24,9 +27,21 @@ function App() {
     const token = sessionStorage.getItem('admin_token');
     if (token) {
       useAuthStore.setState({ accessToken: token });
-      apiFetch<{ isAdmin: boolean }>('/admin/me')
-        .then(() => {
-          setAuth(token, { id: '', email: '', isAdmin: true });
+      apiFetch<{
+        id: string;
+        email: string;
+        is_admin: boolean;
+        tier: string;
+        completed_onboarding: boolean;
+      }>('/account/me')
+        .then((me) => {
+          setAuth(token, {
+            id: me.id ?? '',
+            email: me.email ?? '',
+            isAdmin: me.is_admin ?? false,
+            tier: (me.tier as 'inform' | 'connected' | 'empowered') ?? 'inform',
+            completedOnboarding: me.completed_onboarding ?? false,
+          });
         })
         .catch(() => {
           sessionStorage.removeItem('admin_token');
@@ -47,6 +62,14 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+
+      {/* Authenticated (any tier) */}
+      <Route element={<AuthGuard />}>
+        <Route path="/profile" element={<ProfilePage />} />
+      </Route>
+
+      {/* Admin only */}
       <Route element={<AdminGuard />}>
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<AdminDashboard />} />
@@ -63,7 +86,9 @@ function App() {
           <Route path="categories" element={<CategoriesPage />} />
         </Route>
       </Route>
-      <Route path="*" element={<Navigate to="/admin" replace />} />
+
+      {/* Default: send unauthenticated users to login */}
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 }
