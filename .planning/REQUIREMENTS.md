@@ -14,7 +14,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 - [ ] **FLOW-03**: Desktop shows live ranked list in sidebar during evaluation
 - [ ] **FLOW-04**: Mobile shows inline insert-into-list ranking between quotes after 2nd agree
 - [ ] **FLOW-05**: Rank order determines alignment weight (no diamond/gold badge system)
-- [ ] **FLOW-06**: Zustand store migrated to version 2 with clean-reset for returning users
+- [x] **FLOW-06**: Zustand store migrated to version 2 with clean-reset for returning users
 
 ### Onboarding
 
@@ -75,7 +75,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FLOW-06 | Phase 86 | Pending |
+| FLOW-06 | Phase 86 | Complete |
 | CHRM-01 | Phase 86 | Pending |
 | CHRM-02 | Phase 86 | Pending |
 | CHRM-03 | Phase 86 | Pending |

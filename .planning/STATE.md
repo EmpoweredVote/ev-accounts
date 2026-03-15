@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 86 context gathered
-last_updated: "2026-03-15T02:26:21.363Z"
+stopped_at: Completed 86-chrome-cleanup-store-migration-01-PLAN.md
+last_updated: "2026-03-15T02:41:54.028Z"
 last_activity: 2026-03-14 — Roadmap created for v2026.3.6 Read & Rank Redesign
 progress:
   total_phases: 6
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 2
+  completed_plans: 1
   percent: 0
 ---
 
@@ -48,6 +48,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [v2026.3.6]: Practice state lives entirely outside `issueProgress` — no contamination of verdict POST payloads; skip action must be atomic
 - [v2026.3.6]: CoachMark TypeScript-ported from CompassV2 directly into EV-readrank this milestone — not published to ev-ui (single consumer, cross-repo overhead unjustified)
 - [v2026.3.6]: Location filtering is client-side only — `POST /essentials/politicians/search` + client filter; no backend changes required
+- [Phase 86-chrome-cleanup-store-migration]: migrate() returns hardcoded initial state regardless of version — guarantees returning users with old localStorage land on hub cleanly
+- [Phase 86-chrome-cleanup-store-migration]: nextQuote caps index at quotesToEvaluate.length rather than auto-transitioning to 'ranking' — phase transitions delegated to EvaluationPhase.handleComplete
+- [Phase 86-chrome-cleanup-store-migration]: matchingAlgorithm uses rank-position scoring only: rank 1 = N pts, rank N = 1 pt, max = N*(N+1)/2 (no badge bonuses)
 
 ### Pending Todos
 
@@ -67,6 +70,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | 12 | Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos; clean EV-prototypes | 2026-03-13 | aa5202c | [12-move-treasury-tracker-empowered-badges-a](./quick/12-move-treasury-tracker-empowered-badges-a/) |
 | 13 | Normalize congressional district labels: House "District N", Senate full state name only | 2026-03-14 | 33292c6 | [13-standardize-congressional-district-names](./quick/13-standardize-congressional-district-names/) |
 | 14 | Fix Monroe County Circuit Court judge names and relabel Seat N → Division N across districts, chambers, offices | 2026-03-14 | dd34707 | [14-fix-monroe-county-circuit-court-judge-na](./quick/14-fix-monroe-county-circuit-court-judge-na/) |
+| Phase 86-chrome-cleanup-store-migration P01 | 2 | 2 tasks | 2 files |
 
 ### Tech Debt Carried Forward
 
@@ -81,6 +85,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T02:26:21.355Z
-Stopped at: Phase 86 context gathered
-Resume file: .planning/phases/86-chrome-cleanup-store-migration/86-CONTEXT.md
+Last session: 2026-03-15T02:41:54.026Z
+Stopped at: Completed 86-chrome-cleanup-store-migration-01-PLAN.md
+Resume file: None

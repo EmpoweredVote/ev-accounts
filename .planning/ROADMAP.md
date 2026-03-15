@@ -258,7 +258,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
   3. Reset is accessible only via the account/profile menu, matching the Compass pattern
   4. A returning user with old localStorage state (phase: 'ranking') lands on the hub without errors
   5. TypeScript builds cleanly with no references to deleted components or the old Phase union
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
 - [ ] 86-01-PLAN.md — Store v2 migration + rank-only scoring algorithm
 - [ ] 86-02-PLAN.md — Delete dead chrome, update consumers, wire profile menu reset
@@ -326,7 +326,7 @@ Plans:
 | 83. ev-ui SiteHeader URL Update | v2026.3.5 | 1/1 | Complete | 2026-03-13 |
 | 84. Essentials Header Integration | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 85. ReadRank Header Auth | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
-| 86. Chrome Cleanup + Store Migration | v2026.3.6 | 0/2 | Not started | - |
+| 86. Chrome Cleanup + Store Migration | 1/2 | In Progress|  | - |
 | 87. Unified EvaluatePhase + InlineRankPanel | v2026.3.6 | 0/TBD | Not started | - |
 | 88. Practice Round | v2026.3.6 | 0/TBD | Not started | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
