@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 87.1-01-PLAN.md
-last_updated: "2026-03-15T18:57:59.563Z"
+stopped_at: Completed 87.1-02-PLAN.md
+last_updated: "2026-03-15T19:19:27.788Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
   percent: 0
 ---
 
@@ -64,6 +64,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 87.1-head-to-head-matchup-ranking]: Store version bumped to 4 — returning users with v3 localStorage are wiped to hub cleanly
 - [Phase 87.1-head-to-head-matchup-ranking]: completedMatchupPairs stored as string[] not Set — Zustand/localStorage cannot serialize Set objects
 - [Phase 87.1-head-to-head-matchup-ranking]: activeMatchupPair set eagerly in agreeWithQuote — UI can begin showing matchup prompt immediately after 2nd agree
+- [Phase Phase 87.1-head-to-head-matchup-ranking]: MatchCard uses raw CSS transform for 3D tilt (not Framer Motion) — better performance for continuous mouse move tracking
+- [Phase Phase 87.1-head-to-head-matchup-ranking]: drag-rank gate (blur overlay + pending bottom sheet) removed entirely — matchup flow replaces the ranking UX
+- [Phase Phase 87.1-head-to-head-matchup-ranking]: Results button gated on activeMatchupPair === null to ensure all matchups complete before results are shown
 
 ### Pending Todos
 
@@ -108,6 +111,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T18:57:59.560Z
-Stopped at: Completed 87.1-01-PLAN.md
+Last session: 2026-03-15T19:19:18.804Z
+Stopped at: Completed 87.1-02-PLAN.md
 Resume file: None
