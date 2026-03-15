@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 ## Current Position
 
-Phase: 27 of 30 (Verification Rating Schema)
+Phase: 28 of 30 (VQ Confirmation Flow)
 Plan: 1 of 1 in current phase
 Status: Phase complete
-Last activity: 2026-03-15 — Completed 27-01-PLAN.md
+Last activity: 2026-03-15 — Completed 28-01-PLAN.md
 
-Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 27 complete ░░░
+Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 28 complete ░░
 
 ## Performance Metrics
 
@@ -51,6 +51,10 @@ Recent decisions relevant to v1.4:
 - **verification_rating default 60** — baseline unverified score; 90+ threshold unlocks Red Gem quests; Phase 28 adjusts on confirmed stances
 - **vq_hold_until excluded from public view** — internal enforcement state (same privacy pattern as tolerance_rating); owner self-view nested object only
 - **Server-side VR derived booleans** — vq_hold_active and red_gem_quests_unlocked computed on server before response; clients receive clean booleans
+- **Advisory locks in sorted UUID order** — combine correct + incorrect users, dedup, sort, lock all before any writes; prevents deadlocks in concurrent VQ calls (Phase 28)
+- **Per-user idempotency sub-key for gem_transactions** — p_idempotency_key || ':' || uid::text prevents double-crediting when user appears in multiple concurrent confirmation calls (Phase 28)
+- **Idempotency pre-check before lock acquisition** — cached result returned immediately before any advisory locks or writes; cheapest replay path (Phase 28)
+- **No nested SECURITY DEFINER calls** — gem INSERT + balance UPDATE done inline in confirm_vq_stance, not via credit_gems RPC; nested SECURITY DEFINER unreliable in Postgres (Phase 28)
 
 ### Open Blockers
 
@@ -65,5 +69,5 @@ Recent decisions relevant to v1.4:
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 27-01-PLAN.md — migration + /me API update for Verification Rating
-Resume: Run `/gsd:plan-phase 28` to plan Phase 28 (VQ Confirmation Flow)
+Stopped at: Completed 28-01-PLAN.md — VQ confirmation endpoint + migration 038
+Resume: Run `/gsd:plan-phase 29` to plan Phase 29 (VQ Integration Smoke Test)
