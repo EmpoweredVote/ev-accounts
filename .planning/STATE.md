@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Checkpoint: 87-02 Task 4 human-verify — awaiting visual verification of desktop + mobile ranking flows"
-last_updated: "2026-03-15T17:15:30.581Z"
+stopped_at: Completed 87.1-01-PLAN.md
+last_updated: "2026-03-15T18:57:59.563Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
-  total_phases: 6
+  total_phases: 7
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 6
+  completed_plans: 5
   percent: 0
 ---
 
@@ -61,6 +61,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: Mobile InlineRankPanel rendered as fixed bottom sheet with backdrop — ensures visibility regardless of viewport height
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: Desktop rank gate uses blur filter + pointer-events:none on next card + inline dismiss prompt when pendingRankQuoteId set and 2+ ranked
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: Quote text in ranking UI (sidebar cards, inline panel) uses Manrope normal — Fraunces italic reserved for decorative/display headings only
+- [Phase 87.1-head-to-head-matchup-ranking]: Store version bumped to 4 — returning users with v3 localStorage are wiped to hub cleanly
+- [Phase 87.1-head-to-head-matchup-ranking]: completedMatchupPairs stored as string[] not Set — Zustand/localStorage cannot serialize Set objects
+- [Phase 87.1-head-to-head-matchup-ranking]: activeMatchupPair set eagerly in agreeWithQuote — UI can begin showing matchup prompt immediately after 2nd agree
 
 ### Pending Todos
 
@@ -85,6 +88,12 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 86-chrome-cleanup-store-migration P02 | 4 | 2 tasks | 8 files |
 | Phase 87-unified-evaluatephase-inlinerankpanel P01 | 2 | 2 tasks | 8 files |
 | Phase 87-unified-evaluatephase-inlinerankpanel P02 | 3 | 3 tasks | 5 files |
+| Phase 87.1-head-to-head-matchup-ranking P01 | 2 | 2 tasks | 2 files |
+
+### Roadmap Evolution
+
+- Phase 87.1 inserted after Phase 87: Head-to-Head Matchup Ranking — replace drag-to-rank with pairwise comparison flow (URGENT)
+- Phase 90 scope expanded: fold real Compass topic data with 2+ quote filtering into location-based filtering phase
 
 ### Tech Debt Carried Forward
 
@@ -99,6 +108,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T03:58:28.060Z
-Stopped at: Checkpoint: 87-02 Task 4 human-verify — awaiting visual verification of desktop + mobile ranking flows
+Last session: 2026-03-15T18:57:59.560Z
+Stopped at: Completed 87.1-01-PLAN.md
 Resume file: None
