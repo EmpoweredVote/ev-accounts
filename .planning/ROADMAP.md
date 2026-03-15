@@ -233,7 +233,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 26-01-PLAN.md — PATCH /me location_consent parity + gem_balance type cleanup + REQUIREMENTS.md traceability
+- [x] 26-01-PLAN.md — PATCH /me location_consent parity + gem_balance type cleanup + REQUIREMENTS.md traceability
 
 ---
 
@@ -266,4 +266,4 @@ Plans:
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 3/3 | Complete | 2026-03-14 |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 25. Deployment Runbook Completion | v1.3 | 1/1 | Complete | 2026-03-15 |
-| 26. v1.3 Tech Debt Closure | v1.3 | 0/1 | Pending | — |
+| 26. v1.3 Tech Debt Closure | v1.3 | 1/1 | Complete | 2026-03-15 |
