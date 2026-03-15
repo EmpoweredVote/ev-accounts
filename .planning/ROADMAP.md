@@ -240,7 +240,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 **Milestone Goal:** Overhaul Read & Rank with unified evaluate+rank flow, practice round onboarding, location-based quote filtering, and polished visual design.
 
 - [x] **Phase 86: Chrome Cleanup + Store Migration** - Remove dead chrome and migrate Zustand store to v2 (completed 2026-03-15)
-- [ ] **Phase 87: Unified EvaluatePhase + InlineRankPanel** - Collapse evaluate+rank into one fluid interaction
+- [x] **Phase 87: Unified EvaluatePhase + InlineRankPanel** - Collapse evaluate+rank into one fluid interaction (completed 2026-03-15)
 - [ ] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes
 - [ ] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice
 - [ ] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives
@@ -342,7 +342,7 @@ Plans:
 | 84. Essentials Header Integration | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 85. ReadRank Header Auth | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 86. Chrome Cleanup + Store Migration | 2/2 | Complete    | 2026-03-15 | - |
-| 87. Unified EvaluatePhase + InlineRankPanel | 1/2 | In Progress|  | - |
+| 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete   | 2026-03-15 | - |
 | 88. Practice Round | v2026.3.6 | 0/TBD | Not started | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
