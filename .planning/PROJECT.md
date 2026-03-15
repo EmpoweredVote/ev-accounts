@@ -10,6 +10,8 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.2 shipped 2026-03-07.** CompassV2 backend compatibility, alpha hardening (clean types, JWT revocation, 90 clean tests), and full compass admin backend + React UI.
 
+**v1.3 shipped 2026-03-15.** Production Alpha live; encrypted location infrastructure (pgcrypto Vault + PostGIS); three-currency gem system; universal Connected Account signup portal; 21 compass topics + 30 politicians + 1,000+ stance records seeded to production.
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -46,16 +48,17 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ Compass admin backend: 12 routes for topic/stance/politician/category management, admin_create_topic_with_stances atomic RPC, migrations 026–029 — v1.2
 - ✓ Compass admin React UI: Topics, Politicians, Categories pages with full CRUD, stance editor, live toggle, and per-topic answers + context — v1.2
 
+- ✓ Live Alpha deployment — migrations 026–036 applied to production; idempotent `applyMigrations.ts`; six-step `DEPLOY.md` cold-start runbook; smoke test 4/4 pass — v1.3
+- ✓ CompassV2 API contract — Bearer token auth (JWKS) on all routes; NUMERIC(3,1) compass values; `completed_onboarding` + structured `xp` on GET /me; `docs/COMPASS_CONTRACT.md` — v1.3
+- ✓ Location infrastructure — encrypted lat/lng on `connected_profiles` (pgcrypto via Supabase Vault); PostGIS Indiana TIGER/Line boundaries; `upsert_user_location` + `resolve_user_jurisdiction` RPCs; zero-leakage architecture test; `POST /connect/set-location` + `GET /me/jurisdiction` — v1.3
+- ✓ empowered_profiles politician schema — 9 new columns on `inform.politicians`; full district/jurisdiction/vacancy field set; `GET /api/essentials/politicians` returns all new fields; 30 politicians + 588 stance values + 500 reasoning rows seeded — v1.3
+- ✓ Multi-currency gem system — yellow/blue/red ledger with `gem_type` enum; `POST /api/gems/award` with per-key `permittedTypes`; balance-always-0 bug fixed; CTC migration documented — v1.3
+- ✓ Central profile page — `GET /api/account/profile/:userId` (public) + `GET /api/account/profile/me` (owner); `Inform→Connected` promotion with audit log; admin search + PromotionsPage — v1.3
+- ✓ Public Auth Hub — `accounts.empowered.vote` rebranded as universal Connected Account portal; tier-based routing; `signup_with_invite` RPC; `?redirect=` with trusted-domain validation; CTC + VQ onboarding docs — v1.3
+
 ### Active
 
-<!-- v1.3 requirements — see REQUIREMENTS.md -->
-
-- [ ] Live Alpha deployment — apply migrations 026–029 to production, deployment runbook
-- [ ] CompassV2 API contract (accounts side) — CV2-01 through CV2-05: bearer tokens, /api/account/me shape, signup email field, response shape, /api/admin/me
-- [ ] Location infrastructure — encrypted lat/lng on connected_profiles (pgcrypto via Supabase Vault), PostGIS Indiana district boundaries, /api/account/me/jurisdiction endpoint, location_consent flag on Connect
-- [ ] empowered_profiles politician schema — full field set (representing_city, representing_state, district_type, district_label, district_id, chamber_name, chamber_name_formal, government_name, office_title, is_vacant, is_candidate) designed as VQ consensus output target and Essentials consumption target
-- [ ] Multi-currency gem system — extend ledger with gem_type (yellow/blue/red), fix balance-always-0 bug, /api/gems/award endpoint with per-key source authorization, move CTC off direct RPC call
-- [ ] Central profile page — /api/account/profile/:userId (aggregated read API) + profile UI owned by accounts; feature repos call this instead of managing their own profile views
+<!-- v1.4 requirements — see REQUIREMENTS.md (created by /gsd:new-milestone) -->
 
 ### Still Deferred
 
@@ -77,7 +80,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.2):** ~13,334 lines of TypeScript (backend/src + admin/src). 16 phases, 38 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4. Compass admin UI complete; migrations 026–029 pending apply to live DB; CompassV2 frontend API contract updates (CV2-01 through CV2-05) pending in CompassV2 repo.
+**Current state (v1.3):** ~16,010 lines of TypeScript (backend/src + admin/src). 26 phases, 64 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4. All migrations 026–036 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. CompassV2 backend API contract satisfied; CompassV2 frontend side pending in that repo. CTC and VQ integration onboarding docs delivered (`docs/ONBOARDING-CTC.md`, `docs/ONBOARDING-VQ.md`).
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -136,17 +139,15 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | .is('deleted_at', null) not .eq() for PostgREST null comparisons | PostgREST generates IS NULL for .is(); .eq(null) does not correctly produce IS NULL in generated SQL. | ✓ Good — Phase 16 gap closure; affects any future soft-delete query |
 | Two-pass validation in admin atomic RPCs | Full input validation loop before any writes — guarantees all-or-nothing atomicity without partial state. Established in admin_create_topic_with_stances (Phase 14). | ✓ Good — pattern to reuse for any future multi-row admin RPC |
 
-## Current Milestone: v1.3 Alpha Launch & Location Infrastructure
+## Current Milestone: v1.4 (Planning)
 
-**Goal:** Get Alpha live (migrations to production, CompassV2 contract), establish the location privacy infrastructure (encrypted lat/lng, PostGIS jurisdiction resolution), expand the gem system to three currencies, and centralize the profile page in accounts.
+**Goal:** TBD — run `/gsd:new-milestone` to define v1.4 requirements and roadmap.
 
-**Target features:**
-- Live Alpha deployment runbook (migrations 026–029 to production)
-- CompassV2 API contract updates (CV2-01 through CV2-05, accounts side)
-- Location infrastructure: encrypted lat/lng on connected_profiles, PostGIS Indiana boundaries, /api/account/me/jurisdiction endpoint
-- empowered_profiles politician schema: full VQ-ready field set
-- Multi-currency gems: yellow/blue/red with /api/gems/award endpoint
-- Central profile page: API + UI owned by accounts
+**Candidates:**
+- Compass data visible to users (politician comparison view end-to-end)
+- Set-location UI in accounts portal
+- CTC + VQ integration verification (hand off onboarding docs, verify live XP/gem flows)
+- Compass admin tooling (Phase 7 routes: topic/stance/politician management)
 
 ---
-*Last updated: 2026-03-09 after v1.3 milestone start*
+*Last updated: 2026-03-15 after v1.3 milestone completion*

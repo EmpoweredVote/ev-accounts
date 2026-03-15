@@ -2,19 +2,19 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
+See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 26 — v1.3 Tech Debt Closure
+**Current focus:** Planning v1.4
 
 ## Current Position
 
-Phase: 26 of 26 (v1.3 Tech Debt Closure) — Phase complete
-Plan: 1 of 1 complete
-Status: Phase complete
-Last activity: 2026-03-15 — Completed 26-01-PLAN.md (location_consent PATCH /me parity, gem_balance removal from types, REQUIREMENTS.md traceability update)
+Phase: v1.4 not yet planned
+Plan: Not started
+Status: Ready for /gsd:new-milestone
+Last activity: 2026-03-15 — v1.3 milestone complete (archived, tagged v1.3)
 
-Progress: [██████████] 100% (all v1.3 plans complete)
+Progress: [v1.3 shipped] Planning v1.4
 
 ## Performance Metrics
 
@@ -31,11 +31,17 @@ Progress: [██████████] 100% (all v1.3 plans complete)
 - Phases: 5 (Phase 12–16)
 - Timeline: 2 days (2026-03-06 → 2026-03-07)
 
+**v1.3 shipped:**
+- Plans: 26 (17-01 through 26-01)
+- Phases: 10 (Phase 17–26)
+- Timeline: 8 days (2026-03-08 → 2026-03-15)
+- 33/33 requirements satisfied
+
 ## Accumulated Context
 
 ### Key Decisions
 
-Full key decisions log in PROJECT.md. v1.3 architecture decisions:
+Full key decisions log in PROJECT.md. All v1.3 decisions archived in milestones/v1.3-ROADMAP.md.
 
 - **Location: encrypted lat/lng, not formatted address string** — Store only coordinates (pgcrypto via Supabase Vault). Address string discarded after geocoding. Coordinates never returned in any API response.
 - **PostGIS internal, Indiana-scoped for Alpha** — TIGER/Line Indiana boundaries loaded into Supabase PostGIS. No third-party geographic API. Expand by loading more boundary data when scaling.
@@ -105,15 +111,22 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 
 ### Open Blockers
 
-- **PostgREST schema config documented in DEPLOY.md Step 1b** — `ALTER ROLE authenticator SET pgrst.db_schemas TO '...'` is now a required step in the cold-start runbook. Must be executed before Alpha launch.
-- **CompassV2 frontend CV2-01 through CV2-05** — Accounts side complete (Phase 18). CompassV2 repo must implement its side separately using COMPASS_CONTRACT.md as the integration spec.
+- **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md` as the integration spec.
+- **CTC + VQ service key setup** — `docs/ONBOARDING-CTC.md` and `docs/ONBOARDING-VQ.md` delivered. Chris needs to set matching key values in both partner app Render environments and the accounts API env.
 
 ### Pending Todos
 
-None.
+- **v1.4 milestone definition** — run `/gsd:new-milestone` to define requirements and roadmap
+- **Set-location UI** — users need a UI in accounts portal to submit their address (endpoint exists, no frontend)
+- **CTC + VQ integration verification** — confirm XP/gem flows work live once service keys are configured
 
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 26-01-PLAN.md — PATCH /me location_consent parity, legacy gem_balance removed from database.types.ts, REQUIREMENTS.md traceability updated (GEM-01/02/03 Complete, HUB-01-04 added, count 29→33). Phase 26 complete.
-Resume: None — v1.3 complete. All phases done. Run /gsd:new-milestone for next milestone planning.
+Stopped at: v1.3 milestone complete — archived, tagged v1.3. Production data seeded (21 topics, 30 politicians, 588 stances, 500 reasoning rows). Partner onboarding docs written. REQUIREMENTS.md cleaned up. Placeholder politicians deleted.
+
+Resume: Run `/gsd:new-milestone` to define v1.4.
+  - Indiana politicians in dataset: Mike Braun, Todd Young, Erin Houchin, Jim Banks, Kerry Thomson
+  - LA politicians: Judy Chu, Karen Bass, Gavin Newsom, Adam Schiff, Alex Padilla, Brad Sherman, Ted Lieu, Sydney Kamlager-Dove, Derek Tran, Maxine Waters, and more
+
+Script should go in `scripts/seedData.ts`, use SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY from backend/.env, and be idempotent (skip already-inserted topics by checking existence first).

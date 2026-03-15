@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v1.3 Alpha Launch & Location Infrastructure (Shipped: 2026-03-15)
+
+**Delivered:** Production Alpha live with all migrations deployed; encrypted location infrastructure with PostGIS jurisdiction resolution; three-currency gem system; universal Connected Account signup portal; 21 compass topics, 30 politicians, and 1,000+ stance records seeded to production.
+
+**Phases completed:** 17–26 (26 plans total)
+
+**Key accomplishments:**
+
+- Live Alpha deployment: migrations 026–036 applied to production via SQL Editor; smoke test 4/4 pass; idempotent `applyMigrations.ts` + six-step `DEPLOY.md` cold-start runbook; Windows MINGW64 DNS workaround documented for future reference
+- Location privacy infrastructure: `encrypted_lat`/`encrypted_lng` (pgcrypto via Supabase Vault) on `connected_profiles`; Indiana TIGER/Line 2024 PostGIS boundaries (5 types); `upsert_user_location` + `resolve_user_jurisdiction` SECURITY DEFINER RPCs; architecture test enforcing zero coordinate leakage at 0 violations; `POST /connect/set-location` + `GET /me/jurisdiction` API
+- CompassV2 API contract: Bearer token auth on all routes (JWKS); NUMERIC(3,1) compass values with decimal support; `completed_onboarding` + structured `xp` object on `GET /me`; `docs/COMPASS_CONTRACT.md` external integration spec
+- Multi-currency gem system: yellow/blue/red ledger with idempotency; `POST /api/gems/award` with per-key `permittedTypes`; balance-always-0 bug confirmed fixed via integration test; CTC migration path off direct RPC documented
+- Central profile + admin tier promotion: public `GET /profile/:userId`; owner `GET /profile/me`; `Inform→Connected` promotion with `tier_promotion_log` audit trail; admin search-as-you-type, PromotionsPage, global history
+- Public Auth Hub + production data: `accounts.empowered.vote` rebranded as universal Connected Account portal; tier-based post-login routing; `signup_with_invite` RPC; `?redirect=` with trusted-domain validation; partner onboarding docs for CTC + VQ; 21 compass topics + 30 politicians + 588 stance values + 500 reasoning rows seeded via `scripts/seedData.ts`
+
+**Stats:**
+
+- 145 files changed (27,343 insertions, 2,051 deletions)
+- ~16,010 lines of TypeScript (backend/src + admin/src)
+- 10 phases, 26 plans, 33 requirements
+- 8 days (2026-03-08 → 2026-03-15)
+
+**Git range:** `fix(account): read total_xp` → `chore(v1.3): final cleanup`
+
+**What's next:** v1.4 — compass data visible to users, set-location UI in accounts portal, CTC + VQ integration verification, compass admin tooling
+
+---
+
 ## v1.2 CompassV2 Integration & Alpha Hardening (Shipped: 2026-03-07)
 
 **Delivered:** CompassV2 frontend compatibility, alpha hardening (clean types + JWT revocation + 90 clean tests), and a full compass admin backend + React UI — so the Inform pillar is fully seeded and manageable without touching the database, and real Alpha users can use CompassV2 against this backend.
