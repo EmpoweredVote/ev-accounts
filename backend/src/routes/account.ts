@@ -334,7 +334,7 @@ router.patch(
         .schema('connect')
         .from('connected_profiles')
         .select(
-          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, created_at'
+          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, created_at'
         )
         .eq('user_id', authReq.userId)
         .maybeSingle();
@@ -382,6 +382,7 @@ router.patch(
         tier,
         is_admin: isAdmin,
         completed_onboarding: updatedConnected?.completed_onboarding ?? false,
+        location_consent: updatedConnected?.location_consent ?? false,
         ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',
         created_at: updatedUser.created_at,
