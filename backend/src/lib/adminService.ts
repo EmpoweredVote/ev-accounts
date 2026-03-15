@@ -788,3 +788,40 @@ export async function getAdminMe(userId: string): Promise<{ isAdmin: boolean; id
   const { data } = await supabaseAdmin.auth.admin.getUserById(userId);
   return { isAdmin: true, id: userId, email: data.user?.email ?? '' };
 }
+
+/**
+ * Check if a user has admin flag. Used by GET /api/account/me to include
+ * is_admin in the response without requiring a separate API call.
+ * Simple PK lookup — negligible performance cost.
+ * Fails closed: returns false if the check itself errors.
+ */
+export async function isUserAdmin(userId: string): Promise<boolean> {
+  const { data, error } = await supabaseAdmin
+    .from('admin_users')
+    .select('user_id')
+    .eq('user_id', userId)
+    .maybeSingle();
+
+  if (error) {
+    console.error('[adminService] isUserAdmin error:', error.message);
+    return false; // Fail closed — not admin if check fails
+  }
+
+  return data !== null;
+}
+
+/**
+ * Insert an email into public.access_requests for admin review.
+ * Used by POST /api/auth/request-access.
+ * Architecture rule: supabaseAdmin must not be used in route files;
+ * this helper owns the service-role write.
+ */
+export async function insertAccessRequest(email: string): Promise<void> {
+  const { error } = await supabaseAdmin
+    .from('access_requests')
+    .insert({ email });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+}

@@ -552,6 +552,14 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      signup_with_invite: {
+        Args: {
+          p_user_id: string
+          p_legal_name: string
+          p_invite_code: string
+        }
+        Returns: Json
+      }
     }
     Enums: {
       [_ in never]: never
@@ -1089,6 +1097,24 @@ export type Database = {
   }
   public: {
     Tables: {
+      access_requests: {
+        Row: {
+          id: string
+          email: string
+          requested_at: string
+        }
+        Insert: {
+          id?: string
+          email: string
+          requested_at?: string
+        }
+        Update: {
+          id?: string
+          email?: string
+          requested_at?: string
+        }
+        Relationships: []
+      }
       admin_audit_log: {
         Row: {
           action: string

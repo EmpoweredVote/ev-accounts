@@ -5,6 +5,7 @@ import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { createUserClient, adminRpc } from '../lib/supabase.js';
 import { getLocationConsent } from '../lib/connectService.js';
+import { isUserAdmin } from '../lib/adminService.js';
 
 // All DB reads use createUserClient(req.accessToken) — RLS enforced.
 // Architecture rule: service role key must never be used in route handlers.
@@ -70,6 +71,10 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       .eq('user_id', authReq.userId)
       .maybeSingle();
 
+    // 4b. Check admin flag (PK lookup via service role — negligible cost).
+    // Fails closed: isUserAdmin returns false if the check errors.
+    const isAdmin = await isUserAdmin(authReq.userId);
+
     // 5. Determine tier from child record presence.
     // Demoted users have an empowered_profiles row with is_active = false —
     // they fall through to 'connected' tier. empowerment_status provides
@@ -110,6 +115,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       display_name: user.display_name,
       avatar_url: user.avatar_url,
       tier,
+      is_admin: isAdmin,
       completed_onboarding: connected?.completed_onboarding ?? false,
       location_consent: connected?.location_consent ?? false,
       ...(empowerment_status !== undefined && { empowerment_status }),
@@ -344,6 +350,9 @@ router.patch(
       // empowerment_status provides the active/demoted distinction for the caller.
       const tier = (updatedEmpowered && updatedEmpowered.is_active) ? 'empowered' : updatedConnected ? 'connected' : 'inform';
 
+      // Check admin flag (same as GET /me — fails closed on error).
+      const isAdmin = await isUserAdmin(authReq.userId);
+
       // Compute structured XP data for Connected users (same as GET /me)
       let xpData: { total: number; level: number; xp_in_level: number; xp_to_next_level: number } | undefined;
       if (updatedConnected) {
@@ -371,6 +380,7 @@ router.patch(
         display_name: updatedUser.display_name,
         avatar_url: updatedUser.avatar_url,
         tier,
+        is_admin: isAdmin,
         completed_onboarding: updatedConnected?.completed_onboarding ?? false,
         ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',

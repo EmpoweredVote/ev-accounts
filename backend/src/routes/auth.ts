@@ -5,6 +5,7 @@ import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import { adminRpc } from '../lib/supabase.js';
+import { insertAccessRequest } from '../lib/adminService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -34,14 +35,18 @@ const authBodySchema = z.object({
 
 /**
  * Zod schema for signup request body.
- * Extends authBodySchema with an optional guest_state field for migrating
- * anonymous compass usage into the newly-created account. When present,
- * the migrate_guest_compass_state RPC is called after account creation.
- * Migration failures are non-fatal — signup succeeds regardless.
+ * Extends authBodySchema with:
+ *   - optional guest_state: migrate anonymous compass usage into the new account.
+ *   - optional legal_name + invite_code (Phase 24): when both are provided,
+ *     the signup_with_invite RPC atomically creates a Connected profile.
+ *     invite_code without legal_name returns 422 (validated below).
+ * Migration and invite failures are handled independently — see handler below.
  */
 const signUpBodySchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+  legal_name: z.string().min(1).max(200).optional(),
+  invite_code: z.string().min(9).max(9).optional(),
   guest_state: z.object({
     answers: z.array(z.object({
       topic_id: z.string().uuid(),
@@ -73,7 +78,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
-  const { email, password, guest_state } = parsed.data;
+  const { email, password, guest_state, legal_name, invite_code } = parsed.data;
   const { data, error } = await signUpWithEmail(email, password);
 
   if (error) {
@@ -135,6 +140,62 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       message: 'An unexpected error occurred',
     });
     return;
+  }
+
+  // Phase 24: If invite_code provided without legal_name, return 422 immediately.
+  // Both fields are required together — invite_code alone cannot create a Connected profile.
+  if (invite_code && !legal_name) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: 'legal_name is required when invite_code is provided',
+    });
+    return;
+  }
+
+  // Phase 24: If both invite_code and legal_name are provided, create Connected profile atomically.
+  // Runs BEFORE guest_state migration — invite profile creation is the higher-priority operation.
+  // On RPC error: specific errors (INVALID_OR_CLAIMED_CODE, SELF_INVITE_BLOCKED) surface to client.
+  // Unknown RPC errors are logged but do not fail the response — auth user was already created.
+  if (invite_code && legal_name) {
+    try {
+      const { data: rpcResult, error: rpcError } = await adminRpc(
+        'signup_with_invite',
+        {
+          p_user_id: data.user.id,
+          p_legal_name: legal_name,
+          p_invite_code: invite_code,
+        },
+        'connect'
+      );
+
+      if (rpcError) {
+        console.error('[auth/signup] signup_with_invite RPC error:', rpcError.message);
+
+        if (rpcError.message.includes('INVALID_OR_CLAIMED_CODE')) {
+          res.status(422).json({
+            code: 'INVALID_INVITE_CODE',
+            message: 'Invalid or already claimed invite code',
+          });
+          return;
+        }
+        if (rpcError.message.includes('SELF_INVITE_BLOCKED')) {
+          res.status(422).json({
+            code: 'SELF_INVITE_BLOCKED',
+            message: 'Cannot use your own invite code',
+          });
+          return;
+        }
+        // Unknown RPC error — still return 201 since auth user was created.
+        // User can claim an invite through the Connect flow later.
+      } else {
+        // Log successful invite claim for ops visibility
+        const result = rpcResult as { ok: boolean; inviter_id: string | null } | null;
+        console.info('[auth/signup] Connected profile created via invite. inviter_id:', result?.inviter_id ?? 'admin-code');
+      }
+    } catch (err) {
+      console.error('[auth/signup] signup_with_invite unexpected error:', err);
+      // Non-fatal: auth user was created; Connected profile can be set up later.
+    }
   }
 
   // Migrate guest compass state if provided.
@@ -303,5 +364,38 @@ router.post(
     }
   }
 );
+
+/**
+ * POST /api/auth/request-access
+ *
+ * Captures email from users who don't have an invite code.
+ * Stores in public.access_requests for admin review.
+ * No authentication required — intentionally public.
+ *
+ * Architecture: insertAccessRequest helper in adminService.ts owns the
+ * service-role write (architecture test: no admin client in routes/).
+ */
+const requestAccessSchema = z.object({
+  email: z.string().email(),
+});
+
+router.post('/request-access', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = requestAccessSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: parsed.error.issues[0]?.message ?? 'Invalid email',
+    });
+    return;
+  }
+
+  try {
+    await insertAccessRequest(parsed.data.email);
+    res.status(201).json({ message: 'Access request submitted' });
+  } catch (err) {
+    console.error('[auth/request-access] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 export default router;
