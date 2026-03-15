@@ -14,9 +14,9 @@
 
 ### VR — Verification Rating
 
-- [ ] **VR-01**: `connected_profiles` gains `verification_rating integer NOT NULL DEFAULT 60` and `vq_hold_until timestamptz`
-- [ ] **VR-02**: `GET /api/account/me` returns `verification_rating` and `vq_hold_active: boolean` (derived from `vq_hold_until`)
-- [ ] **VR-03**: Verification Rating of 90+ unlocks Red Gem Quests (returned as `red_gem_quests_unlocked: boolean` on `/me`)
+- [x] **VR-01**: `connected_profiles` gains `verification_rating integer NOT NULL DEFAULT 60` and `vq_hold_until timestamptz`
+- [x] **VR-02**: `GET /api/account/me` returns `verification_rating` and `vq_hold_active: boolean` (derived from `vq_hold_until`)
+- [x] **VR-03**: Verification Rating of 90+ unlocks Red Gem Quests (returned as `red_gem_quests_unlocked: boolean` on `/me`)
 - [ ] **VR-04**: Verification Rating reaching 0 sets `vq_hold_until = now() + interval '30 days'`; user cannot participate in VQ during hold
 - [ ] **VR-05**: Admin can manually adjust a user's `verification_rating` and clear `vq_hold_until` via admin tool
 
@@ -69,9 +69,9 @@
 | PROFILE-02 | Phase 30 | Pending |
 | PROFILE-03 | Phase 30 | Pending |
 | PROFILE-04 | Phase 30 | Pending |
-| VR-01 | Phase 27 | Pending |
-| VR-02 | Phase 27 | Pending |
-| VR-03 | Phase 27 | Pending |
+| VR-01 | Phase 27 | Complete |
+| VR-02 | Phase 27 | Complete |
+| VR-03 | Phase 27 | Complete |
 | VR-04 | Phase 27 | Pending |
 | VR-05 | Phase 29 | Pending |
 | VQ-01 | Phase 28 | Pending |
