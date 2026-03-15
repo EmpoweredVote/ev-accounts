@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 88 context gathered
-last_updated: "2026-03-15T19:49:45.338Z"
+stopped_at: Completed 88-01-PLAN.md
+last_updated: "2026-03-15T20:12:09.192Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
   completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 8
+  completed_plans: 7
   percent: 0
 ---
 
@@ -67,6 +67,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase Phase 87.1-head-to-head-matchup-ranking]: MatchCard uses raw CSS transform for 3D tilt (not Framer Motion) — better performance for continuous mouse move tracking
 - [Phase Phase 87.1-head-to-head-matchup-ranking]: drag-rank gate (blur overlay + pending bottom sheet) removed entirely — matchup flow replaces the ranking UX
 - [Phase Phase 87.1-head-to-head-matchup-ranking]: Results button gated on activeMatchupPair === null to ensure all matchups complete before results are shown
+- [Phase 88-practice-round]: Store v5 migration uses version > 0 check to set practiceCompleted: true for existing users, false for brand-new users
+- [Phase 88-practice-round]: PracticeProgress stored at top-level store (not inside issueProgress) to prevent practice data from polluting real issue verdict POST payloads
+- [Phase 88-practice-round]: QuoteCard onAgree/onDisagree use ?? fallback to store actions — backward-compatible, EvaluationPhase passes zero new props
 
 ### Pending Todos
 
@@ -92,6 +95,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 87-unified-evaluatephase-inlinerankpanel P01 | 2 | 2 tasks | 8 files |
 | Phase 87-unified-evaluatephase-inlinerankpanel P02 | 3 | 3 tasks | 5 files |
 | Phase 87.1-head-to-head-matchup-ranking P01 | 2 | 2 tasks | 2 files |
+| Phase 88-practice-round P01 | 3 | 2 tasks | 3 files |
 
 ### Roadmap Evolution
 
@@ -111,6 +115,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T19:49:45.331Z
-Stopped at: Phase 88 context gathered
-Resume file: .planning/phases/88-practice-round/88-CONTEXT.md
+Last session: 2026-03-15T20:12:09.189Z
+Stopped at: Completed 88-01-PLAN.md
+Resume file: None
