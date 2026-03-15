@@ -273,7 +273,10 @@ Plans:
   3. On desktop, the ranked list is visible in a sidebar while the user continues evaluating quotes
   4. On mobile, a compact rank panel appears inline between quotes after the second agree
   5. Completing an issue transitions directly to results — there is no intermediate ranking screen
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
+- [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
 ### Phase 88: Practice Round
 **Goal**: First-time users complete a practice round with pizza-topping quotes before encountering political content
@@ -284,7 +287,10 @@ Plans:
   2. The practice round demonstrates both swipe agree/disagree and the insert-into-list ranking mechanic
   3. Practice verdicts do not appear on any Essentials politician profile
   4. Skipping practice clears all partial practice state and takes the user directly to the hub
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
+- [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
 ### Phase 89: Coach Marks
 **Goal**: First real issue is accompanied by a one-time coach mark tour that spotlights the swipe area and rank panel
@@ -294,7 +300,10 @@ Plans:
   1. On the first real issue, coach marks appear highlighting the swipe card area and the rank panel
   2. After dismissing the tour, it never appears again — even after page reload or returning later
   3. Users who have already completed a session do not see coach marks on subsequent visits
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
+- [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
 ### Phase 90: Location-Based Filtering
 **Goal**: Users can filter hub issues to only show quotes from their local representatives
@@ -306,7 +315,10 @@ Plans:
   3. Issues with fewer than 2 local-rep quotes are hidden rather than showing an empty evaluation
   4. A user arriving from Essentials with address context already applied sees the hub pre-filtered without re-entering their address
   5. Clearing the location filter restores the full unfiltered issue list
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
+- [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
 ### Phase 91: Results Polish + Visual Redesign
 **Goal**: Results page delivers a memorable reveal moment and all app components share a cohesive, polished visual design
@@ -317,7 +329,10 @@ Plans:
   2. Result cards show less information at a glance — one clear CTA per card rather than multiple competing actions
   3. "View on Essentials" is the primary action on each result card
   4. CandidateAlignmentPage is visually consistent with the new design — same typography, spacing, and color use
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
+- [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
 ## Progress
 
