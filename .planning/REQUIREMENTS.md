@@ -53,6 +53,13 @@
 - [x] **PROFILE-02**: `GET /api/account/profile/me` — authenticated owner view adds `{ gem_balances: { yellow, blue, red }, location_consent, email }` to the public shape
 - [x] **PROFILE-03**: Profile page UI in admin React app — displays aggregated profile data using the new endpoint; replaces any per-feature profile views in the admin tool
 
+### HUB — Public Auth Hub
+
+- [x] **HUB-01**: Login page at `accounts.empowered.vote/login` shows Connected Account-centric language with a visible signup link
+- [x] **HUB-02**: Post-login tier-based routing — first-time to onboarding, Connected to dashboard, Empowered to empowered view, Admin to admin panel
+- [x] **HUB-03**: `/signup` creates a Connected Account (email + password + profile fields) and redirects to onboarding
+- [x] **HUB-04**: `?redirect=` parameter on login and signup routes to provided URL after success; untrusted domains ignored
+
 ## Future Requirements
 
 ### Post-Alpha Location Expansion
@@ -110,9 +117,9 @@
 | PROF-01 | Phase 21 | Complete |
 | PROF-02 | Phase 21 | Complete |
 | PROF-03 | Phase 21 | Complete |
-| GEM-01 | Phase 22 | Pending |
-| GEM-02 | Phase 22 | Pending |
-| GEM-03 | Phase 22 | Pending |
+| GEM-01 | Phase 22 | Complete |
+| GEM-02 | Phase 22 | Complete |
+| GEM-03 | Phase 22 | Complete |
 | GEM-04 | Phase 22 | Complete |
 | GEM-05 | Phase 22 | Complete |
 | GEM-06 | Phase 22 | Complete |
@@ -120,12 +127,16 @@
 | PROFILE-01 | Phase 23 | Complete |
 | PROFILE-02 | Phase 23 | Complete |
 | PROFILE-03 | Phase 23 | Complete |
+| HUB-01 | Phase 24 | Complete |
+| HUB-02 | Phase 24 | Complete |
+| HUB-03 | Phase 24 | Complete |
+| HUB-04 | Phase 24 | Complete |
 
 **Coverage:**
-- v1.3 requirements: 29 total
-- Mapped to phases: 29
+- v1.3 requirements: 33 total
+- Mapped to phases: 33
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-09*
-*Last updated: 2026-03-09 after initial definition*
+*Last updated: 2026-03-15 after Phase 26 tech debt closure*
