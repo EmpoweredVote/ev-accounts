@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-13)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** v2026.3.6 Read & Rank Redesign
 
 ## Current Position
 
-Last milestone: v2026.3.5 Unified Navigation Header — shipped 2026-03-13
-Status: Between milestones
-Last activity: 2026-03-14 - Completed quick task 13: Standardize congressional district names to District # format
+Current milestone: v2026.3.6 Read & Rank Redesign
+Status: Defining requirements
+Last activity: 2026-03-14 — Milestone v2026.3.6 started
 
 ## Performance Metrics
 

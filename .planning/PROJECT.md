@@ -170,7 +170,7 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(Next milestone requirements TBD — run `/gsd:new-milestone`)
+(See REQUIREMENTS.md for v2026.3.6 Read & Rank Redesign)
 
 ### Future
 
@@ -180,6 +180,19 @@ Users can explore political issues and discover their elected officials without 
 - [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
+
+## Current Milestone: v2026.3.6 Read & Rank Redesign
+
+**Goal:** Overhaul Read & Rank with unified evaluate+rank flow, practice round onboarding, location-based quote filtering, and polished visual design.
+
+**Target features:**
+- Unified evaluate+rank flow (no separate ranking phase)
+- Practice round with fun non-political quotes (pizza toppings)
+- Coach marks on first real issue
+- Location-based quote filtering (address input + Essentials context)
+- Results page with dramatic reveal and cleaner cards
+- Visual redesign from scratch
+- Chrome cleanup (remove ProgressHeader, AnimationOptionsPage)
 
 ## Last Milestone: v2026.3.5 Unified Navigation Header (Shipped 2026-03-13)
 
@@ -228,4 +241,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and E
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-13 after v2026.3.5 milestone*
+*Last updated: 2026-03-14 after v2026.3.6 milestone start*
