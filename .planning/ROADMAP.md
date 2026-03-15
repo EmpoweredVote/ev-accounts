@@ -82,10 +82,10 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
   2. `GET /api/account/me` returns `verification_rating`, `vq_hold_active: boolean`, and `red_gem_quests_unlocked: boolean`
   3. A user with rating >= 90 gets `red_gem_quests_unlocked: true`; a user with `vq_hold_until` in the future gets `vq_hold_active: true`
   4. A user with rating at 0 and `vq_hold_until` set 30 days out cannot be confused with an unrestricted user — the API communicates hold state unambiguously
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 27-01: Migration + /me API update
+- [ ] 27-01-PLAN.md — Migration 037 (verification_rating + vq_hold_until columns) and /me API response update with derived booleans
 
 #### Phase 28: VQ Confirmation Flow
 
@@ -166,7 +166,7 @@ Plans:
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 25. Deployment Runbook Completion | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 26. v1.3 Tech Debt Closure | v1.3 | 1/1 | Complete | 2026-03-15 |
-| 27. Verification Rating Schema | v1.4 | 0/— | Not started | — |
+| 27. Verification Rating Schema | v1.4 | 0/1 | Planning complete | — |
 | 28. VQ Confirmation Flow | v1.4 | 0/— | Not started | — |
 | 29. Admin Controls & Integration Verification | v1.4 | 0/— | Not started | — |
 | 30. Profile Hub UI | v1.4 | 0/— | Not started | — |
