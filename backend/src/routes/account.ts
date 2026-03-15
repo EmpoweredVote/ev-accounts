@@ -58,7 +58,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       .schema('connect')
       .from('connected_profiles')
       .select(
-        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, created_at'
+        'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, verification_rating, vq_hold_until, created_at'
       )
       .eq('user_id', authReq.userId)
       .maybeSingle();
@@ -109,6 +109,13 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       ? (empowered.is_active ? 'empowered' : 'demoted')
       : undefined;
 
+    // Derived booleans for Verification Rating state.
+    // Inform-tier users (no connected profile) get safe defaults.
+    const vqHoldActive = connected?.vq_hold_until
+      ? new Date(connected.vq_hold_until) > new Date()
+      : false;
+    const redGemQuestsUnlocked = (connected?.verification_rating ?? 60) >= 90;
+
     const meResponse: Record<string, unknown> = {
       id: user.id,
       email: authUser.email,
@@ -118,6 +125,9 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       is_admin: isAdmin,
       completed_onboarding: connected?.completed_onboarding ?? false,
       location_consent: connected?.location_consent ?? false,
+      verification_rating: connected?.verification_rating ?? 60,
+      vq_hold_active: vqHoldActive,
+      red_gem_quests_unlocked: redGemQuestsUnlocked,
       ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
       created_at: user.created_at,
@@ -141,6 +151,9 @@ router.get('/me', requireAuth, async (req, res: Response) => {
           red: connected.gem_balance_red ?? 0,
         },
         completed_onboarding: connected.completed_onboarding,
+        verification_rating: connected.verification_rating,
+        vq_hold_active: vqHoldActive,
+        vq_hold_until: connected.vq_hold_until,
         created_at: connected.created_at,
       };
       meResponse.gems = {
@@ -334,7 +347,7 @@ router.patch(
         .schema('connect')
         .from('connected_profiles')
         .select(
-          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, created_at'
+          'id, display_name, account_standing, verification_status, tolerance_rating, total_xp, gem_balance_yellow, gem_balance_blue, gem_balance_red, completed_onboarding, location_consent, verification_rating, vq_hold_until, created_at'
         )
         .eq('user_id', authReq.userId)
         .maybeSingle();
@@ -374,6 +387,12 @@ router.patch(
         ? (updatedEmpowered.is_active ? 'empowered' : 'demoted')
         : undefined;
 
+      // Derived booleans for Verification Rating state (same as GET /me).
+      const updatedVqHoldActive = updatedConnected?.vq_hold_until
+        ? new Date(updatedConnected.vq_hold_until) > new Date()
+        : false;
+      const updatedRedGemQuestsUnlocked = (updatedConnected?.verification_rating ?? 60) >= 90;
+
       const meResponse: Record<string, unknown> = {
         id: updatedUser.id,
         email: authUserData?.user?.email,
@@ -383,6 +402,9 @@ router.patch(
         is_admin: isAdmin,
         completed_onboarding: updatedConnected?.completed_onboarding ?? false,
         location_consent: updatedConnected?.location_consent ?? false,
+        verification_rating: updatedConnected?.verification_rating ?? 60,
+        vq_hold_active: updatedVqHoldActive,
+        red_gem_quests_unlocked: updatedRedGemQuestsUnlocked,
         ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',
         created_at: updatedUser.created_at,
@@ -402,6 +424,9 @@ router.patch(
             red: updatedConnected.gem_balance_red ?? 0,
           },
           completed_onboarding: updatedConnected.completed_onboarding,
+          verification_rating: updatedConnected.verification_rating,
+          vq_hold_active: updatedVqHoldActive,
+          vq_hold_until: updatedConnected.vq_hold_until,
           created_at: updatedConnected.created_at,
         };
         meResponse.gems = {

@@ -38,8 +38,10 @@ export type Database = {
           user_id: string
           veracity_rating: number | null
           verification_method: string | null
+          verification_rating: number
           verification_status: string
           verified_region: string | null
+          vq_hold_until: string | null
           xp: number
         }
         Insert: {
@@ -65,8 +67,10 @@ export type Database = {
           user_id: string
           veracity_rating?: number | null
           verification_method?: string | null
+          verification_rating?: number
           verification_status?: string
           verified_region?: string | null
+          vq_hold_until?: string | null
           xp?: number
         }
         Update: {
@@ -92,8 +96,10 @@ export type Database = {
           user_id?: string
           veracity_rating?: number | null
           verification_method?: string | null
+          verification_rating?: number
           verification_status?: string
           verified_region?: string | null
+          vq_hold_until?: string | null
           xp?: number
         }
         Relationships: []
@@ -373,6 +379,7 @@ export type Database = {
           user_id: string | null
           veracity_rating: number | null
           verification_method: string | null
+          verification_rating: number | null
           verification_status: string | null
           verified_region: string | null
           xp: number | null
@@ -393,6 +400,7 @@ export type Database = {
           user_id?: string | null
           veracity_rating?: number | null
           verification_method?: string | null
+          verification_rating?: number | null
           verification_status?: string | null
           verified_region?: string | null
           xp?: number | null
@@ -413,6 +421,7 @@ export type Database = {
           user_id?: string | null
           veracity_rating?: number | null
           verification_method?: string | null
+          verification_rating?: number | null
           verification_status?: string | null
           verified_region?: string | null
           xp?: number | null
