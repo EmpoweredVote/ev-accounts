@@ -5,7 +5,7 @@ milestone_name: milestone
 status: planning
 stopped_at: Completed 86-chrome-cleanup-store-migration-02-PLAN.md
 last_updated: "2026-03-15T02:50:39.568Z"
-last_activity: 2026-03-14 — Roadmap created for v2026.3.6 Read & Rank Redesign
+last_activity: 2026-03-15 - Completed quick task 15: Update compass stance language
 progress:
   total_phases: 6
   completed_phases: 1
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-03-14)
 Phase: 86 of 91 (Chrome Cleanup + Store Migration)
 Plan: 0 of TBD in current phase
 Status: Ready to plan
-Last activity: 2026-03-14 — Roadmap created for v2026.3.6 Read & Rank Redesign
+Last activity: 2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics
 
 Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
@@ -72,6 +72,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | 12 | Extract treasury-tracker, empowered-badges, fallacy-finders to standalone GitHub repos; clean EV-prototypes | 2026-03-13 | aa5202c | [12-move-treasury-tracker-empowered-badges-a](./quick/12-move-treasury-tracker-empowered-badges-a/) |
 | 13 | Normalize congressional district labels: House "District N", Senate full state name only | 2026-03-14 | 33292c6 | [13-standardize-congressional-district-names](./quick/13-standardize-congressional-district-names/) |
 | 14 | Fix Monroe County Circuit Court judge names and relabel Seat N → Division N across districts, chambers, offices | 2026-03-14 | dd34707 | [14-fix-monroe-county-circuit-court-judge-na](./quick/14-fix-monroe-county-circuit-court-judge-na/) |
+| 15 | Update compass stance language — 21 changes across 10 topics | 2026-03-15 | c46c1ff | [15-update-compass-stance-language-based-on-](./quick/15-update-compass-stance-language-based-on-/) |
 | Phase 86-chrome-cleanup-store-migration P01 | 2 | 2 tasks | 2 files |
 | Phase 86-chrome-cleanup-store-migration P02 | 4 | 2 tasks | 8 files |
 
