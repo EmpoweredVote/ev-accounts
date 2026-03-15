@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 25 — Deployment Runbook Completion
+**Current focus:** Phase 26 — v1.3 Tech Debt Closure
 
 ## Current Position
 
-Phase: 25 of 25 (Deployment Runbook Completion) — Phase complete
+Phase: 26 of 26 (v1.3 Tech Debt Closure) — Phase complete
 Plan: 1 of 1 complete
 Status: Phase complete
-Last activity: 2026-03-15 — Completed 25-01-PLAN.md (migration files 034-036, applyMigrations.ts 026-036, DEPLOY.md full runbook)
+Last activity: 2026-03-15 — Completed 26-01-PLAN.md (location_consent PATCH /me parity, gem_balance removal from types, REQUIREMENTS.md traceability update)
 
-Progress: [██████████] ~100% (23 of ~25 v1.3 plans complete)
+Progress: [██████████] 100% (all v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -115,5 +115,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 25-01-PLAN.md — copied migrations 034-036 to backend/migrations/, extended applyMigrations.ts to cover 026-036, updated DEPLOY.md with full runbook (apply order, psql fallback, verification queries, rollback for 030-036, PostgREST Step 1b, new env vars). Phase 25 complete.
-Resume: None — v1.3 Phase 25 complete. DEPLOY.md is ready for Alpha launch. Run /gsd:new-milestone for next milestone planning.
+Stopped at: Completed 26-01-PLAN.md — PATCH /me location_consent parity, legacy gem_balance removed from database.types.ts, REQUIREMENTS.md traceability updated (GEM-01/02/03 Complete, HUB-01-04 added, count 29→33). Phase 26 complete.
+Resume: None — v1.3 complete. All phases done. Run /gsd:new-milestone for next milestone planning.
