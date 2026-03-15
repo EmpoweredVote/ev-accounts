@@ -359,7 +359,7 @@ Plans:
 | 86. Chrome Cleanup + Store Migration | 2/2 | Complete    | 2026-03-15 | - |
 | 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete    | 2026-03-15 | - |
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
-| 88. Practice Round | 2/2 | Complete   | 2026-03-15 | - |
+| 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |
