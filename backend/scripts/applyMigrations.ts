@@ -1,5 +1,5 @@
 /**
- * applyMigrations.ts — Applies migrations 026–029 to a Postgres database.
+ * applyMigrations.ts — Applies migrations 026–036 to a Postgres database.
  *
  * IMPORTANT: DATABASE_URL must be the DIRECT connection string, NOT the pooler URL.
  *   Direct:  postgresql://postgres.<ref>:<pwd>@db.<ref>.supabase.co:5432/postgres
@@ -33,6 +33,13 @@ const MIGRATIONS: Migration[] = [
   { file: '027_rpc_reset_compass_answers.sql',           label: '027' },
   { file: '028_rpc_import_compass_calibrations.sql',     label: '028' },
   { file: '029_compass_admin_rpcs.sql',                  label: '029' },
+  { file: '030_decimal_compass_values.sql',              label: '030' },
+  { file: '031_location_schema.sql',                     label: '031' },
+  { file: '032_location_rpcs.sql',                       label: '032' },
+  { file: '033_politician_schema.sql',                   label: '033' },
+  { file: '034_gem_idempotency.sql',                     label: '034' },
+  { file: '035_tier_promotion.sql',                      label: '035' },
+  { file: '036_signup_with_invite.sql',                  label: '036' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -46,6 +53,13 @@ const PRE_VERIFY_QUERIES: Record<string, string> = {
   '027': `SELECT proname FROM pg_proc WHERE proname='reset_compass_answers'`,
   '028': `SELECT proname FROM pg_proc WHERE proname='import_compass_calibrations'`,
   '029': `SELECT proname FROM pg_proc WHERE proname='admin_create_topic_with_stances'`,
+  '030': `SELECT proname FROM pg_proc WHERE proname='migrate_guest_compass_state'`,
+  '031': `SELECT column_name FROM information_schema.columns WHERE table_schema='connect' AND table_name='connected_profiles' AND column_name='encrypted_lat'`,
+  '032': `SELECT proname FROM pg_proc WHERE proname='upsert_user_location'`,
+  '033': `SELECT column_name FROM information_schema.columns WHERE table_schema='inform' AND table_name='politicians' AND column_name='district_type'`,
+  '034': `SELECT proname FROM pg_proc WHERE proname='award_gems'`,
+  '035': `SELECT proname FROM pg_proc WHERE proname='promote_to_connected'`,
+  '036': `SELECT proname FROM pg_proc WHERE proname='signup_with_invite'`,
 };
 
 const POST_VERIFY_QUERIES: Record<string, string> = {
@@ -53,6 +67,13 @@ const POST_VERIFY_QUERIES: Record<string, string> = {
   '027': `SELECT proname FROM pg_proc WHERE proname='reset_compass_answers'`,
   '028': `SELECT proname FROM pg_proc WHERE proname='import_compass_calibrations'`,
   '029': `SELECT proname FROM pg_proc WHERE proname='admin_create_topic_with_stances'`,
+  '030': `SELECT proname FROM pg_proc WHERE proname='migrate_guest_compass_state'`,
+  '031': `SELECT column_name FROM information_schema.columns WHERE table_schema='connect' AND table_name='connected_profiles' AND column_name='encrypted_lat'`,
+  '032': `SELECT proname FROM pg_proc WHERE proname='upsert_user_location'`,
+  '033': `SELECT column_name FROM information_schema.columns WHERE table_schema='inform' AND table_name='politicians' AND column_name='district_type'`,
+  '034': `SELECT proname FROM pg_proc WHERE proname='award_gems'`,
+  '035': `SELECT proname FROM pg_proc WHERE proname='promote_to_connected'`,
+  '036': `SELECT proname FROM pg_proc WHERE proname='signup_with_invite'`,
 };
 
 // ---------------------------------------------------------------------------
