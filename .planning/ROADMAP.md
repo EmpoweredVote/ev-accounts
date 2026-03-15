@@ -241,6 +241,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 
 - [x] **Phase 86: Chrome Cleanup + Store Migration** - Remove dead chrome and migrate Zustand store to v2 (completed 2026-03-15)
 - [x] **Phase 87: Unified EvaluatePhase + InlineRankPanel** - Collapse evaluate+rank into one fluid interaction (completed 2026-03-15)
+- [ ] **Phase 87.1: Head-to-Head Matchup Ranking** - Replace drag-to-rank with pairwise comparison flow (INSERTED)
 - [ ] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes
 - [ ] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice
 - [ ] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives
@@ -278,9 +279,26 @@ Plans:
 - [ ] 87-01-PLAN.md — Store merge: unify agreedQuotes + rankedQuotes into single list
 - [ ] 87-02-PLAN.md — Inline ranking UI: desktop sidebar, mobile panel, counter pill, confirmation
 
+### Phase 87.1: Head-to-Head Matchup Ranking (INSERTED)
+
+**Goal:** Replace drag-to-rank with pairwise head-to-head matchup comparison — ranking emerges from user choices rather than manual drag placement
+**Depends on:** Phase 87
+**Requirements**: H2H-01, H2H-02, H2H-03, H2H-04, H2H-05
+**Success Criteria** (what must be TRUE):
+  1. After agreeing with 2+ quotes, a head-to-head matchup replaces the swipe card
+  2. User picks a winner from two side-by-side cards; winner gets visual feedback, loser fades
+  3. Sidebar shows a wins-based leaderboard that reorders with animation when wins change
+  4. After all pending matchups complete, swipe mode resumes for remaining quotes
+  5. Rankings are derived from win counts — no manual drag-to-rank
+**Plans:** 2 plans
+
+Plans:
+- [ ] 87.1-01-PLAN.md — Store v4 migration + matchup algorithm utilities
+- [ ] 87.1-02-PLAN.md — MatchupPhase UI, leaderboard sidebar, EvaluationPhase mode branching
+
 ### Phase 88: Practice Round
 **Goal**: First-time users complete a practice round with pizza-topping quotes before encountering political content
-**Depends on**: Phase 87
+**Depends on**: Phase 87.1
 **Requirements**: ONBD-01, ONBD-02, ONBD-03, ONBD-04
 **Success Criteria** (what must be TRUE):
   1. A brand-new user lands on the practice round before the hub — pizza topping quotes are the first content they evaluate
@@ -343,6 +361,7 @@ Plans:
 | 85. ReadRank Header Auth | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 86. Chrome Cleanup + Store Migration | 2/2 | Complete    | 2026-03-15 | - |
 | 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete    | 2026-03-15 | - |
+| 87.1. Head-to-Head Matchup Ranking | v2026.3.6 | 0/2 | Planning complete | - |
 | 88. Practice Round | v2026.3.6 | 0/TBD | Not started | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
