@@ -330,6 +330,24 @@ export type Database = {
         }
         Relationships: []
       }
+      vq_confirmation_results: {
+        Row: {
+          idempotency_key: string
+          result_json: Json
+          created_at: string
+        }
+        Insert: {
+          idempotency_key: string
+          result_json: Json
+          created_at?: string
+        }
+        Update: {
+          idempotency_key?: string
+          result_json?: Json
+          created_at?: string
+        }
+        Relationships: []
+      }
       xp_transactions: {
         Row: {
           amount: number
@@ -554,6 +572,18 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      confirm_vq_stance: {
+        Args: {
+          p_politician_id: string
+          p_topic_id: string
+          p_confirmed_value: number
+          p_correct_users: string[]
+          p_incorrect_users: string[]
+          p_idempotency_key: string
+          p_gems_amount: number
+        }
+        Returns: Json
       }
       signup_with_invite: {
         Args: {
