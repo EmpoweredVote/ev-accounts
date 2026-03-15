@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-09 after v1.3 milestone start)
 
 ## Current Position
 
-Phase: 23 of 24 (Central Profile Page + Admin Tier Promotion) — VERIFIED COMPLETE
-Plan: 3 of 3 complete
-Status: Phase verified — automated checks passed 2026-03-14 (6/6 must-haves)
-Last activity: 2026-03-14 — Phase 23 verification passed (6/6 must-haves: public profile endpoint, owner profile with gems/consent/email, admin profile UI with new endpoint, search+promote flow with confirmation modal, promotion log written and visible, 409 on already-promoted)
+Phase: 24 of 24 (Public Auth Hub) — In progress
+Plan: 1 of 2 complete
+Status: In progress
+Last activity: 2026-03-14 — Completed 24-01-PLAN.md (migration 036 + signup with invite + request-access + is_admin)
 
-Progress: [█████████░] ~79% (19 of ~24 v1.3 plans complete)
+Progress: [█████████░] ~83% (20 of ~24 v1.3 plans complete)
 
 ## Performance Metrics
 
@@ -93,6 +93,10 @@ Full key decisions log in PROJECT.md. v1.3 architecture decisions:
 - **profileService.ts on supabaseAdmin allowlist** — public profile endpoint has no JWT so must use service role; added to architecture.test.ts allowlist alongside other lib/*Service.ts files. (23-01)
 - **Absent button (not disabled) for Inform-only promote action** — `{account.tier === 'inform' && <button>}` removes the element from DOM entirely for Connected/Empowered; no disabled prop needed. (23-02)
 - **Profile fetch for Compass data uses public endpoint** — GET /api/account/profile/:userId reused in admin UI; errors are non-fatal (profileData=null, sections hidden). (23-02)
+- **invite_code without legal_name returns 422 before auth user creation** — validation check placed before Supabase auth call; avoids creating orphaned auth users. (24-01)
+- **Unknown signup_with_invite RPC errors are non-fatal** — auth user was created; user can claim Connected profile via Connect flow later. (24-01)
+- **isUserAdmin fails closed** — returns false on DB error; a connectivity issue can never accidentally promote a user to admin. (24-01)
+- **insertAccessRequest and isUserAdmin in adminService.ts** — architecture test enforces no supabaseAdmin in routes/; service-helper pattern applied. (24-01)
 
 ### Open Blockers
 
@@ -106,5 +110,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-14
-Stopped at: Phase 23 verified complete — migration 035 (tier_promotion_log + empowered_profiles.politician_id FK + promote_to_connected RPC), profileService.ts (public/owner profiles), /api/account/profile routes, admin promotion endpoints, AccountDetailPage extensions (compass/promotion/history sections), AccountsPage search-as-you-type dropdown, PromotionsPage global audit log. PROFILE-01 through PROFILE-03 marked Complete.
-Resume: Phase 24 — Public Auth Hub (Login Rebrand + Signup Flow). Run /gsd:discuss-phase 24 or /gsd:plan-phase 24.
+Stopped at: Completed 24-01-PLAN.md — migration 036 (access_requests table + signup_with_invite RPC), auth.ts extended signup with invite logic + request-access endpoint, account.ts is_admin on /me, adminService.ts helpers (isUserAdmin, insertAccessRequest), database.types.ts updated.
+Resume: Phase 24 Plan 02 — frontend Auth Hub (login rebrand, signup form with invite flow, routing logic).
