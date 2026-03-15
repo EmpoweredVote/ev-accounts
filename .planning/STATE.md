@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 89 context gathered
-last_updated: "2026-03-15T22:31:33.068Z"
+stopped_at: Completed 89-coach-marks-01-PLAN.md
+last_updated: "2026-03-15T23:05:40.012Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
   completed_phases: 4
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 10
+  completed_plans: 9
   percent: 0
 ---
 
@@ -75,6 +75,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 88-practice-round]: PhaseContainer auto-redirect calls startPractice() not setPhase('practice') — startPractice initializes practiceProgress; bare setPhase would leave it null
 - [Phase 88-practice-round]: Practice splash added (user-requested): leads with Read & Rank feature value prop before pizza practice warm-up
 - [Phase 88-practice-round]: Character emoji avatars added (user-requested): emoji + avatarColor in PRACTICE_CHARACTERS; disagreed cards desaturated
+- [Phase 89-coach-marks]: useCoachMark hook intentionally NOT ported from CompassV2 — Zustand store handles persistence (locked decision from phase context)
+- [Phase 89-coach-marks]: CoachMark stays in EV-readrank/src/components/, not published to ev-ui — single consumer, cross-repo overhead unjustified
 
 ### Pending Todos
 
@@ -103,6 +105,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 88-practice-round P01 | 3 | 2 tasks | 3 files |
 | Phase 88 P02 | 3 | 2 tasks | 3 files |
 | Phase 88-practice-round P02 | 75 | 3 tasks | 4 files |
+| Phase 89-coach-marks P01 | 3 | 2 tasks | 2 files |
 
 ### Roadmap Evolution
 
@@ -122,6 +125,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T22:31:33.058Z
-Stopped at: Phase 89 context gathered
-Resume file: .planning/phases/89-coach-marks/89-CONTEXT.md
+Last session: 2026-03-15T23:05:40.009Z
+Stopped at: Completed 89-coach-marks-01-PLAN.md
+Resume file: None
