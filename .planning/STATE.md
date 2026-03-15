@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 ## Current Position
 
 Phase: 29 of 30 (Admin Controls & Integration Verification)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-03-15 — Completed 29-01-PLAN.md
+Plan: 2 of 2 in current phase
+Status: Phase complete
+Last activity: 2026-03-15 — Completed 29-02-PLAN.md
 
-Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 29 plan 1/2 complete ██░
+Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 29 complete ███
 
 ## Performance Metrics
 
@@ -70,5 +70,5 @@ Recent decisions relevant to v1.4:
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: Completed 29-01-PLAN.md — Admin VR override controls (PATCH endpoint + AccountDetailPage edit UI)
-Resume: Execute 29-02-PLAN.md
+Stopped at: Completed 29-02-PLAN.md — Integration smoke test runbook + VQ onboarding confirm-stance section
+Resume: Execute 30-01-PLAN.md (Phase 30: Profile Hub UI)
