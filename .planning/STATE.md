@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Checkpoint: 87-02 Task 4 human-verify — awaiting visual verification of desktop + mobile ranking flows"
-last_updated: "2026-03-15T03:58:28.063Z"
-last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
+stopped_at: "Completed 87-02: inline ranking UX — desktop rank gate, mobile bottom sheet, Manrope quote text, direct-to-results"
+last_updated: "2026-03-15T17:11:04.578Z"
+last_activity: "2026-03-15 - Completed phase 87 plan 02: inline ranking UX fixes after user feedback"
 progress:
   total_phases: 6
   completed_phases: 2
   total_plans: 4
   completed_plans: 4
-  percent: 0
+  percent: 100
 ---
 
 # Project State
@@ -56,8 +56,11 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: agreedQuotes field removed entirely — rankedQuotes is the single source of truth for agreed quotes with positional ranks
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: AgreedQuotesSidebar type-fixed in-place (reorderRankedQuotes + RankedQuote) for TypeScript build; rename to RankedQuotesSidebar deferred to Plan 02
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: AgreedQuotesSidebar filename kept, exports RankedListSidebar as primary + alias — minimizes import churn
-- [Phase 87-unified-evaluatephase-inlinerankpanel]: QuickConfirmation only shown when rankedQuotes.length >= 2 — 0 or 1 agrees skip confirmation and go directly to results
+- [Phase 87-unified-evaluatephase-inlinerankpanel]: QuickConfirmation removed entirely — handleComplete goes straight to setPhase('results'); live sidebar ranking makes confirmation redundant (per user feedback)
 - [Phase 87-unified-evaluatephase-inlinerankpanel]: showInlinePanel guards require 2+ ranked quotes to avoid double-panel on first agree
+- [Phase 87-unified-evaluatephase-inlinerankpanel]: Mobile InlineRankPanel rendered as fixed bottom sheet with backdrop — ensures visibility regardless of viewport height
+- [Phase 87-unified-evaluatephase-inlinerankpanel]: Desktop rank gate uses blur filter + pointer-events:none on next card + inline dismiss prompt when pendingRankQuoteId set and 2+ ranked
+- [Phase 87-unified-evaluatephase-inlinerankpanel]: Quote text in ranking UI (sidebar cards, inline panel) uses Manrope normal — Fraunces italic reserved for decorative/display headings only
 
 ### Pending Todos
 

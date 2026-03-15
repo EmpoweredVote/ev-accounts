@@ -10,11 +10,13 @@ requires:
     provides: unified rankedQuotes store with pendingRankQuoteId, insertAtRank, skipRankPrompt, dismissPending actions
 
 provides:
-  - RankedListSidebar (desktop): numbered ranks (#N), pulse animation on new arrivals, auto-scroll to bottom, drag-to-reorder
-  - InlineRankPanel (mobile): DndContext with pending quote highlight, drag-to-insertAtRank or reorder, Continue button
-  - QuickConfirmation: ranked list display with 80-char truncation, Looks Good / Reorder flow
-  - EvaluationPhase fully wired: inline panel after 2nd agree, counter pill, confirmation before results
-  - CSS classes: .inline-rank-panel, .rank-counter-pill, .quick-confirmation, .quick-confirmation-item
+  - RankedListSidebar (desktop): numbered ranks (#N), pulse animation on new arrivals, auto-scroll, Manrope quote text
+  - InlineRankPanel (mobile): DndContext with pending quote highlight, drag-to-insertAtRank or reorder, fixed bottom sheet on mobile
+  - Desktop rank gate: blur filter + "Where does this rank?" prompt + "Keep at #N" dismiss button when pendingRankQuoteId set
+  - Mobile bottom sheet: InlineRankPanel rendered as fixed position slide-up with backdrop instead of inline DOM
+  - Counter pill: always visible on mobile when ranked quotes exist, toggles full rank list review
+  - Direct evaluation-to-results flow (no QuickConfirmation step)
+  - CSS classes: .inline-rank-panel, .rank-counter-pill
 
 affects: [phase-88, phase-89, phase-90, results-phase, candidate-alignment]
 
@@ -22,16 +24,16 @@ affects: [phase-88, phase-89, phase-90, results-phase, candidate-alignment]
 tech-stack:
   added: []
   patterns:
-    - AnimatePresence wrapping InlineRankPanel for height-animated slide-in/out
-    - Framer Motion boxShadow keyframe array for pulse on new rank arrival
-    - pendingRankQuoteId drives conditional highlight in InlineRankPanel (isPending prop)
-    - Counter pill toggling showFullRankList to expand InlineRankPanel in review mode
-    - reorderMode re-opens InlineRankPanel from QuickConfirmation for ranking adjustment
+    - "Mobile bottom sheet: AnimatePresence + position:fixed + backdrop for InlineRankPanel visibility"
+    - "Desktop rank gate: blur filter + pointer-events:none on next card + inline dismiss action"
+    - "Manrope font in all quote cards (sidebar + inline panel) — informational over editorial"
+    - "pendingRankQuoteId drives conditional highlight in InlineRankPanel (isPending prop)"
+    - "Counter pill toggling showFullRankList to expand InlineRankPanel in review mode"
 
 key-files:
   created:
     - EV-readrank/src/components/InlineRankPanel.tsx
-    - EV-readrank/src/components/QuickConfirmation.tsx
+    - EV-readrank/src/components/QuickConfirmation.tsx (created but not used after task 4 feedback)
   modified:
     - EV-readrank/src/components/AgreedQuotesSidebar.tsx
     - EV-readrank/src/components/EvaluationPhase.tsx
@@ -39,75 +41,123 @@ key-files:
 
 key-decisions:
   - "AgreedQuotesSidebar filename kept, exports RankedListSidebar as primary + AgreedQuotesSidebar as alias — minimizes import churn"
-  - "QuickConfirmation only shown when rankedQuotes.length >= 2 — single agree or zero agrees go directly to results"
+  - "QuickConfirmation removed after user feedback — handleComplete goes straight to setPhase('results'); live sidebar ranking makes confirmation redundant"
+  - "Mobile InlineRankPanel as fixed bottom sheet with backdrop — ensures visibility on any viewport height"
+  - "Desktop rank gate uses blur filter + inline prompt — keeps user in split layout context, no modal interruption"
+  - "Quote text uses Manrope (informational) not Fraunces italic (editorial) across all ranking UI"
   - "showInlinePanel guards: mobile + pendingRankQuoteId + 2+ ranked + !showFullRankList — avoids double-panel on first agree"
-  - "reorderMode re-opens InlineRankPanel after Reorder click; onDismiss returns to showConfirmation true"
 
 patterns-established:
-  - "Pending quote highlighted with borderLeft + ecfeff background + 'Place me' label in InlineRankPanel"
-  - "AnimatePresence height 0->auto pattern for slide-in below swipe area"
+  - "Rank gate pattern: blur + pointer-events:none on blocked content + dismiss action exposed inline"
+  - "Bottom sheet pattern: AnimatePresence + fixed position + backdrop overlay for mobile panels"
   - "Counter pill: rank-counter-pill class, chevron rotates 180deg when list expanded"
 
 requirements-completed: [FLOW-02, FLOW-03, FLOW-04]
 
 # Metrics
-duration: 3min
+duration: 50min
 completed: 2026-03-15
 ---
 
 # Phase 87 Plan 02: Inline Ranking UI Summary
 
-**Desktop sidebar renamed to 'Your Ranking' with numbered ranks + pulse; mobile InlineRankPanel slides in after 2nd agree with drag-to-place; counter pill and QuickConfirmation confirmation flow wired end-to-end**
+**Desktop rank gate (blur + prompt), mobile bottom sheet for ranking panel, Manrope quote text throughout, and direct evaluation-to-results flow without confirmation step**
 
 ## Performance
 
-- **Duration:** 3 min
+- **Duration:** ~50 min (two agent sessions: initial build + user feedback fixes)
 - **Started:** 2026-03-15T03:54:32Z
-- **Completed:** 2026-03-15T03:57:21Z
-- **Tasks:** 3 auto-tasks completed (Task 4 is checkpoint:human-verify, awaiting verification)
+- **Completed:** 2026-03-15T04:45:00Z
+- **Tasks:** 4 (3 auto + 1 feedback iteration on human-verify checkpoint)
 - **Files modified:** 5
 
 ## Accomplishments
-- RankedListSidebar: numbered #N ranks, pulse animation via Framer Motion boxShadow keyframes on new arrivals, auto-scroll to bottom when count increases, reads rankedQuotes + pendingRankQuoteId from store
-- InlineRankPanel: mobile inline drag-to-rank panel with DndContext (touch+pointer+keyboard sensors), pending quote highlighted with teal border-left + "Place me" label, calls insertAtRank or reorderRankedQuotes on drag end
-- QuickConfirmation: Framer Motion entry animation, ordered list with #rank labels, 80-char truncation, Looks Good / Reorder buttons
-- EvaluationPhase fully wired: AnimatePresence slide-in for inline panel, nudge text on first skip, counter pill toggle, reorderMode loop back to confirmation
+
+- RankedListSidebar: numbered #N ranks, pulse animation via Framer Motion boxShadow keyframes on new arrivals, auto-scroll to bottom, Manrope quote text
+- InlineRankPanel: mobile drag-to-rank panel with DndContext, now rendered as a fixed bottom sheet with slide-up animation and backdrop on mobile
+- Desktop rank gate: blur filter on next card + inline "Where does this rank? / Keep at #N" prompt forces ranking engagement without modals
+- Counter pill: always visible on mobile when ranked quotes exist, expands to full rank list review
+- Removed QuickConfirmation entirely — evaluation goes directly to results; ranking is already visible throughout the session
 
 ## Task Commits
 
-Each task was committed atomically (in EV-readrank repo):
+Each task committed atomically (in EV-readrank repo):
 
 1. **Task 1: Evolve AgreedQuotesSidebar into RankedListSidebar** - `696504d` (feat)
 2. **Task 2: Create InlineRankPanel, QuickConfirmation, and CSS** - `face754` (feat)
 3. **Task 3: Wire EvaluationPhase** - `51eb5f4` (feat)
+4. **Task 4: Fix user feedback (font, rank gate, bottom sheet, no confirmation)** - `1408ccf` (fix)
 
 ## Files Created/Modified
-- `EV-readrank/src/components/AgreedQuotesSidebar.tsx` - Evolved to RankedListSidebar with numbered ranks, pulse, auto-scroll; alias export kept
-- `EV-readrank/src/components/InlineRankPanel.tsx` - NEW: Mobile inline drag-to-rank panel with DndContext
-- `EV-readrank/src/components/QuickConfirmation.tsx` - NEW: Post-evaluation confirmation with Looks Good / Reorder
-- `EV-readrank/src/components/EvaluationPhase.tsx` - Wired all new components; desktop sidebar + mobile inline panel + counter pill + confirmation flow
-- `EV-readrank/src/index.css` - Added .inline-rank-panel, .rank-counter-pill, .quick-confirmation, .quick-confirmation-item
+
+- `EV-readrank/src/components/AgreedQuotesSidebar.tsx` - RankedListSidebar with numbered ranks, pulse, auto-scroll, Manrope quote font
+- `EV-readrank/src/components/InlineRankPanel.tsx` - Mobile drag-to-rank panel, Manrope quote font
+- `EV-readrank/src/components/QuickConfirmation.tsx` - Created in task 2, preserved but not imported (removed per task 4 feedback)
+- `EV-readrank/src/components/EvaluationPhase.tsx` - Desktop rank gate, mobile bottom sheet, direct-to-results flow, dismissPending wired
+- `EV-readrank/src/index.css` - .inline-rank-panel, .rank-counter-pill, .quick-confirmation CSS classes
 
 ## Decisions Made
-- AgreedQuotesSidebar filename kept (exports RankedListSidebar as primary + alias) to minimize import churn
-- QuickConfirmation only shown when 2+ ranked quotes — 0 or 1 agrees go directly to results
-- showInlinePanel guards against double-panel on first agree (requires 2+ ranked quotes)
-- reorderMode re-opens InlineRankPanel after Reorder click, onDismiss returns to showConfirmation true
+
+- **QuickConfirmation removed:** User feedback: "I don't love the confirmation at the end." Sidebar shows live ranking throughout evaluation — a confirmation step at the end adds friction without value. handleComplete now calls setPhase('results') directly.
+- **Mobile bottom sheet:** User reported "I don't see anything when I agree with more than 1 quote on mobile." InlineRankPanel was in normal DOM flow below the swipe card and fell off-screen. Fixed by rendering as position:fixed bottom sheet with slide-up animation.
+- **Desktop rank gate:** User wanted to force ranking engagement on desktop. Implemented blur filter on next card + inline "Keep at #N" dismiss button instead of a modal to preserve the split layout feel.
+- **Manrope font:** User found Fraunces italic harder to read. All quote text in ranking UI switched to Manrope 400 normal for informational readability.
 
 ## Deviations from Plan
 
-None - plan executed exactly as written.
+### Post-checkpoint changes (user feedback)
+
+**1. [Rule 1 - Bug/UX] Mobile InlineRankPanel invisible below fold**
+- **Found during:** Task 4 (visual verification)
+- **Issue:** Panel rendered in DOM flow below swipe card — invisible on mobile viewports
+- **Fix:** Promoted to fixed bottom sheet with AnimatePresence slide-up and backdrop
+- **Files modified:** EV-readrank/src/components/EvaluationPhase.tsx
+- **Committed in:** 1408ccf
+
+**2. [Rule 1 - UX] Font too editorial for informational content**
+- **Found during:** Task 4 (visual verification)
+- **Fix:** Changed Fraunces italic to Manrope normal in AgreedQuotesSidebar and InlineRankPanel quote cards
+- **Files modified:** EV-readrank/src/components/AgreedQuotesSidebar.tsx, InlineRankPanel.tsx
+- **Committed in:** 1408ccf
+
+**3. [Rule 2 - UX] Desktop lacks ranking engagement nudge**
+- **Found during:** Task 4 (visual verification)
+- **Fix:** Added blur gate on next card + "Where does this rank?" prompt + "Keep at #N" dismiss
+- **Files modified:** EV-readrank/src/components/EvaluationPhase.tsx
+- **Committed in:** 1408ccf
+
+**4. [Rule 1 - UX] QuickConfirmation redundant**
+- **Found during:** Task 4 (visual verification)
+- **Fix:** Removed confirmation step, handleComplete goes directly to setPhase('results')
+- **Files modified:** EV-readrank/src/components/EvaluationPhase.tsx
+- **Committed in:** 1408ccf
+
+---
+
+**Total deviations:** 4 post-checkpoint feedback items (all UX improvements)
+**Impact on plan:** QuickConfirmation.tsx created per plan but unused. All other planned artifacts delivered. Confirmation removal simplifies flow per user preference.
 
 ## Issues Encountered
-- EV-readrank is its own git repository separate from the workspace root — commits made from within EV-readrank directory (not blocking, handled immediately)
+
+- EV-readrank is its own git repository separate from the workspace root — commits made from within EV-readrank directory
 
 ## User Setup Required
+
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- Awaiting Task 4 checkpoint:human-verify (visual verification of desktop + mobile ranking flows)
-- After verification: Phase 87 complete, Phase 88 ready to begin
-- Counter pill and inline panel behavior ready for user testing on mobile device emulation
+
+- Inline ranking UX fully complete including user-verified feedback fixes
+- Mobile bottom sheet ready for mobile device testing
+- Results phase (phase 88) ready to begin — setPhase('results') is the clean handoff
+- dismissPending correctly wired in desktop rank gate via "Keep at #N" button
+
+## Self-Check: PASSED
+
+- EV-readrank/src/components/EvaluationPhase.tsx — exists, rank gate and bottom sheet implemented
+- EV-readrank/src/components/AgreedQuotesSidebar.tsx — exists, Manrope font applied
+- EV-readrank/src/components/InlineRankPanel.tsx — exists, Manrope font applied
+- Commit 1408ccf — verified in EV-readrank git log
 
 ---
 *Phase: 87-unified-evaluatephase-inlinerankpanel*
