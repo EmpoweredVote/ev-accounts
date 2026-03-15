@@ -2,7 +2,7 @@
 
 **Audience:** Claude working in the `empowered-validation-quests` codebase
 **Accounts API:** `https://ev-accounts-api.onrender.com`
-**Last updated:** 2026-03-15 (v1.3 deployed)
+**Last updated:** 2026-03-16 (v1.4 — confirm-stance added)
 
 ---
 
@@ -19,6 +19,7 @@ What accounts owns that VQ uses:
 | User jurisdiction (district) | Accounts | `GET /api/account/me/jurisdiction` with Bearer token |
 | Account creation / signup | Accounts | `accounts.empowered.vote/signup?redirect=<vq-url>` |
 | Public profile | Accounts | `GET /api/account/profile/:userId` |
+| Stance confirmation | Accounts | `POST /api/vq/confirm-stance` with service key |
 
 ---
 
@@ -176,6 +177,182 @@ async function awardQuestXp(userId: string, submissionId: string, questId: strin
   return data; // { total_xp, level, is_duplicate }
 }
 ```
+
+---
+
+## Stance Confirmation
+
+When VQ resolves a question (determines the correct answer), call this endpoint to record the confirmed stance, award Red Gems to correct answerers, and adjust Verification Ratings for all participants.
+
+### Endpoint
+
+```
+POST /api/vq/confirm-stance
+Authorization: Bearer <VQ_SERVICE_KEY>
+Content-Type: application/json
+```
+
+### Authentication
+
+Same Bearer token + service key pattern as XP awards. Use the `VQ_SERVICE_KEY` value provided by Chris. This key must have `red` gem type permission in the accounts API (separate from `QUEST_SERVICE_KEY` which has `yellow` permission — confirm with Chris which key to use or whether a combined key is provided).
+
+### Complete Example
+
+```typescript
+interface ConfirmStanceResult {
+  politician_id: string;
+  topic_id: string;
+  confirmed_value: number;
+  correct_count: number;
+  incorrect_count: number;
+  users: Array<{
+    user_id: string;
+    result: 'correct' | 'incorrect';
+    gems_awarded: number;
+    rating_delta: number;
+    new_rating: number;
+  }>;
+  unresolved_users: string[];
+  replayed: boolean;
+}
+
+async function confirmStance(opts: {
+  politicianId: string;
+  topicId: string;
+  confirmedValue: number;
+  correctUserIds: string[];
+  incorrectUserIds: string[];
+  idempotencyKey: string;
+  gemsAmount?: number;
+}): Promise<ConfirmStanceResult> {
+  const res = await fetch(`${ACCOUNTS_API_URL}/api/vq/confirm-stance`, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${process.env.VQ_SERVICE_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      politician_id: opts.politicianId,
+      topic_id: opts.topicId,
+      confirmed_value: opts.confirmedValue,
+      correct_user_ids: opts.correctUserIds,
+      incorrect_user_ids: opts.incorrectUserIds,
+      idempotency_key: opts.idempotencyKey,
+      gems_amount: opts.gemsAmount ?? 1,
+    }),
+  });
+
+  if (!res.ok) throw new Error(`confirm-stance failed: ${res.status} ${await res.text()}`);
+  return res.json() as Promise<ConfirmStanceResult>;
+}
+
+// Usage — called once per resolution event
+const result = await confirmStance({
+  politicianId: resolution.politicianId,
+  topicId: resolution.topicId,
+  confirmedValue: resolution.correctValue,
+  correctUserIds: resolution.correctSubmitters,
+  incorrectUserIds: resolution.incorrectSubmitters,
+  idempotencyKey: `vq-resolution-${resolution.id}`,
+  gemsAmount: 1,
+});
+
+if (result.replayed) {
+  // idempotency_key was already used — original result returned, no changes made
+}
+```
+
+**idempotency_key guidance:** Derive from your internal resolution event ID, not per-user. Example: `vq-resolution-${resolutionId}`. All users in that resolution share the same key — the accounts API handles per-user deduplication internally.
+
+### Request Body
+
+| Field | Type | Required | Constraints | Notes |
+|-------|------|----------|-------------|-------|
+| `politician_id` | string (UUID) | Yes | Valid UUID | The politician this question is about |
+| `topic_id` | string (UUID) | Yes | Valid UUID | The compass topic (question) |
+| `confirmed_value` | number | Yes | Integer 1–5 | The correct answer value |
+| `correct_user_ids` | string[] | No | UUID array | Users who answered correctly; defaults to `[]` |
+| `incorrect_user_ids` | string[] | No | UUID array | Users who answered incorrectly; defaults to `[]` |
+| `idempotency_key` | string | Yes | max 255 chars | Unique per resolution event — reusing a key returns the original result |
+| `gems_amount` | number | No | Positive integer; default 1 | Red Gems awarded to each correct user |
+
+A user can appear in only one array. If a user appears in both, they are treated as correct.
+
+### Response (200)
+
+```json
+{
+  "politician_id": "uuid",
+  "topic_id": "uuid",
+  "confirmed_value": 3,
+  "correct_count": 2,
+  "incorrect_count": 1,
+  "users": [
+    { "user_id": "uuid-A", "result": "correct",   "gems_awarded": 1, "rating_delta":  3, "new_rating": 78 },
+    { "user_id": "uuid-B", "result": "correct",   "gems_awarded": 1, "rating_delta":  3, "new_rating": 93 },
+    { "user_id": "uuid-C", "result": "incorrect", "gems_awarded": 0, "rating_delta": -10, "new_rating": 50 }
+  ],
+  "unresolved_users": [],
+  "replayed": false
+}
+```
+
+`unresolved_users` contains UUIDs that were submitted but could not be processed (e.g., user no longer exists). These are informational — no error is thrown.
+
+`replayed: true` means the `idempotency_key` was already used. The original result is returned unchanged — no additional gems awarded, no ratings changed.
+
+### Side Effects
+
+**For each user in `correct_user_ids`:**
+- Awarded `gems_amount` Red Gems (default: 1)
+- `verification_rating` increases by **+3**, capped at **150**
+  - Example: rating 148 + 3 = **150** (not 151)
+  - Example: rating 60 + 3 = **63**
+
+**For each user in `incorrect_user_ids`:**
+- `verification_rating` decreases by **−10**, floored at **0**
+  - Example: rating 8 − 10 = **0** (not −2)
+  - Example: rating 60 − 10 = **50**
+- If rating reaches **0**, `vq_hold_until` is set to **now + 30 days**
+  - The user's `/api/account/me` response shows `vq_hold_active: true`
+  - They cannot participate in Red Gem quests until the hold expires
+
+**For the question itself:**
+- `inform.politician_answers` is upserted with `confirmed_value` as the authoritative stance record
+
+**On idempotent replay** (same `idempotency_key`):
+- No gems awarded, no rating changes, no DB writes
+- Original result returned with `replayed: true`
+
+### Edge Cases
+
+| Scenario | Before | After |
+|----------|--------|-------|
+| Correct user near cap | `verification_rating` 148 | `verification_rating` 150 (capped) |
+| Incorrect user near floor | `verification_rating` 8 | `verification_rating` 0, `vq_hold_until` set +30 days |
+| Incorrect user already at floor | `verification_rating` 0 | `verification_rating` 0, `vq_hold_until` reset to now+30 days |
+| User in both arrays | — | Treated as correct (deduped before processing) |
+| Empty both arrays | — | 200 with `correct_count: 0`, `incorrect_count: 0`, politician_answers upserted |
+
+### Error Responses
+
+| Status | Body | Cause |
+|--------|------|-------|
+| 401 | `{ "error": "UNAUTHORIZED" }` | Missing or invalid service key |
+| 422 | `{ "error": "VALIDATION_ERROR", "issues": [{ "field": "politician_id", "message": "Invalid uuid" }] }` | Zod validation failure — check required fields and UUID format |
+| 422 | `{ "error": "FORBIDDEN_GEM_TYPE", "permitted": ["yellow"] }` | Service key lacks `red` gem type permission — contact Chris to update accounts API env |
+| 422 | `{ "error": "INVALID_VALUE" }` | `confirmed_value` outside 1–5 |
+| 404 | `{ "error": "QUESTION_NOT_FOUND" }` | The `politician_id` / `topic_id` pair does not exist in the compass |
+
+All errors return `{ "error": string }` with an optional `issues` array for validation failures. On 5xx, retry with the same `idempotency_key` — safe to replay.
+
+**Idempotency conflict behavior:** If you send the same `idempotency_key` with a different payload, the original result for that key is returned (no conflict error is raised). Never reuse a key across different resolution events.
+
+### Environment Variables
+
+| Variable | Purpose | Value Source |
+|----------|---------|--------------|
+| `VQ_SERVICE_KEY` | Stance confirmation auth (must have `red` gem type) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
 
 ---
 
@@ -348,7 +525,7 @@ From `ACCOUNTS-COORDINATION.md` (2026-03-08):
 
 - User account creation, deletion, or password management
 - Tier promotion (admin tool handles this, or users go through the accounts signup/invite flow)
-- Gem awards (VQ does not currently award gems — if needed in future, request a gem key from Chris)
+- Direct gem balance writes — always go through `POST /api/vq/confirm-stance` for Red Gem awards; do not call gem endpoints directly
 - XP ledger reads (beyond `/api/account/me`)
 - Tolerance Rating (internal to accounts, never exposed externally)
 - Location storage or geocoding
