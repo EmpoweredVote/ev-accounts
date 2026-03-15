@@ -196,10 +196,11 @@ Plans:
   2. After login, users are routed by tier: first-time → onboarding; Connected → Connected dashboard; Empowered → Empowered view; Admin → admin panel. An admin account and a Connected account tested back-to-back land on different pages.
   3. `accounts.empowered.vote/signup` completes a Connected Account creation (email + password + required profile fields) and redirects to onboarding — Validation Quests can link here and users land back after auth.
   4. `?redirect=https://quests.empowered.vote/feed` on both `/login` and `/signup` routes the user to the provided URL after success — and a URL from an untrusted domain is ignored (redirects to default instead).
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 24-01: TBD
+- [ ] 24-01-PLAN.md — Migration 036 (signup_with_invite RPC + access_requests table) + backend route extensions (signup, request-access, is_admin on /me)
+- [ ] 24-02-PLAN.md — Frontend: Login rebrand + Signup page + ProfilePage + routing overhaul + authStore extension
 
 ---
 
@@ -230,4 +231,4 @@ Plans:
 | 21. empowered_profiles Politician Schema | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 3/3 | Complete | 2026-03-14 |
-| 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/? | Not started | - |
+| 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 0/2 | Not started | - |
