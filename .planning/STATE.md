@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 ## Current Position
 
 Phase: 27 of 30 (Verification Rating Schema)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-15 — v1.4 roadmap created (4 phases, 18 requirements mapped)
+Plan: 1 of 1 in current phase
+Status: Phase complete
+Last activity: 2026-03-15 — Completed 27-01-PLAN.md
 
-Progress: [v1.3 shipped ✅] Starting v1.4 — Phase 27
+Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 27 complete ░░░
 
 ## Performance Metrics
 
@@ -48,6 +48,9 @@ Recent decisions relevant to v1.4:
 - **Partial unique index on idempotency_key (WHERE NOT NULL)** — correct Postgres pattern for nullable dedup; established in Phase 22, apply to VQ confirm-stance
 - **SET search_path = '' on all SECURITY DEFINER functions** — fully-qualified table refs required; established Phase 13, mandatory for any new RPC
 - **Two-pass validation in admin atomic RPCs** — validate all inputs before any writes; established Phase 14, apply to confirm-stance bulk user processing
+- **verification_rating default 60** — baseline unverified score; 90+ threshold unlocks Red Gem quests; Phase 28 adjusts on confirmed stances
+- **vq_hold_until excluded from public view** — internal enforcement state (same privacy pattern as tolerance_rating); owner self-view nested object only
+- **Server-side VR derived booleans** — vq_hold_active and red_gem_quests_unlocked computed on server before response; clients receive clean booleans
 
 ### Open Blockers
 
@@ -62,5 +65,5 @@ Recent decisions relevant to v1.4:
 ## Session Continuity
 
 Last session: 2026-03-15
-Stopped at: v1.4 roadmap created — 4 phases (27–30), 18/18 requirements mapped, files written
-Resume: Run `/gsd:plan-phase 27` to plan Phase 27 (Verification Rating Schema — migration + /me API update)
+Stopped at: Completed 27-01-PLAN.md — migration + /me API update for Verification Rating
+Resume: Run `/gsd:plan-phase 28` to plan Phase 28 (VQ Confirmation Flow)
