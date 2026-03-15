@@ -9,11 +9,11 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 
 ### Flow Redesign
 
-- [ ] **FLOW-01**: User evaluates quotes and ranks inline in a single unified phase (no separate ranking screen)
+- [x] **FLOW-01**: User evaluates quotes and ranks inline in a single unified phase (no separate ranking screen)
 - [ ] **FLOW-02**: After agreeing with 2+ quotes, user is prompted to insert new agreed quote into ranked list via drag
 - [ ] **FLOW-03**: Desktop shows live ranked list in sidebar during evaluation
 - [ ] **FLOW-04**: Mobile shows inline insert-into-list ranking between quotes after 2nd agree
-- [ ] **FLOW-05**: Rank order determines alignment weight (no diamond/gold badge system)
+- [x] **FLOW-05**: Rank order determines alignment weight (no diamond/gold badge system)
 - [x] **FLOW-06**: Zustand store migrated to version 2 with clean-reset for returning users
 
 ### Onboarding
@@ -79,11 +79,11 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | CHRM-01 | Phase 86 | Complete |
 | CHRM-02 | Phase 86 | Complete |
 | CHRM-03 | Phase 86 | Complete |
-| FLOW-01 | Phase 87 | Pending |
+| FLOW-01 | Phase 87 | Complete |
 | FLOW-02 | Phase 87 | Pending |
 | FLOW-03 | Phase 87 | Pending |
 | FLOW-04 | Phase 87 | Pending |
-| FLOW-05 | Phase 87 | Pending |
+| FLOW-05 | Phase 87 | Complete |
 | ONBD-01 | Phase 88 | Pending |
 | ONBD-02 | Phase 88 | Pending |
 | ONBD-03 | Phase 88 | Pending |
