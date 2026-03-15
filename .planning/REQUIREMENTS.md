@@ -65,30 +65,30 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PROFILE-01 | TBD | Pending |
-| PROFILE-02 | TBD | Pending |
-| PROFILE-03 | TBD | Pending |
-| PROFILE-04 | TBD | Pending |
-| VR-01 | TBD | Pending |
-| VR-02 | TBD | Pending |
-| VR-03 | TBD | Pending |
-| VR-04 | TBD | Pending |
-| VR-05 | TBD | Pending |
-| VQ-01 | TBD | Pending |
-| VQ-02 | TBD | Pending |
-| VQ-03 | TBD | Pending |
-| VQ-04 | TBD | Pending |
-| VQ-05 | TBD | Pending |
-| VQ-06 | TBD | Pending |
-| INTEG-01 | TBD | Pending |
-| INTEG-02 | TBD | Pending |
-| INTEG-03 | TBD | Pending |
+| PROFILE-01 | Phase 30 | Pending |
+| PROFILE-02 | Phase 30 | Pending |
+| PROFILE-03 | Phase 30 | Pending |
+| PROFILE-04 | Phase 30 | Pending |
+| VR-01 | Phase 27 | Pending |
+| VR-02 | Phase 27 | Pending |
+| VR-03 | Phase 27 | Pending |
+| VR-04 | Phase 27 | Pending |
+| VR-05 | Phase 29 | Pending |
+| VQ-01 | Phase 28 | Pending |
+| VQ-02 | Phase 28 | Pending |
+| VQ-03 | Phase 28 | Pending |
+| VQ-04 | Phase 28 | Pending |
+| VQ-05 | Phase 28 | Pending |
+| VQ-06 | Phase 28 | Pending |
+| INTEG-01 | Phase 29 | Pending |
+| INTEG-02 | Phase 29 | Pending |
+| INTEG-03 | Phase 29 | Pending |
 
 **Coverage:**
 - v1.4 requirements: 18 total
-- Mapped to phases: 0 (roadmap pending)
-- Unmapped: 18 ⚠️
+- Mapped to phases: 18 ✓
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-15*
-*Last updated: 2026-03-15 after initial definition*
+*Last updated: 2026-03-15 — traceability table filled after roadmap creation*
