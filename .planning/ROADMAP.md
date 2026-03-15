@@ -342,7 +342,7 @@ Plans:
 | 84. Essentials Header Integration | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 85. ReadRank Header Auth | v2026.3.5 | 2/2 | Complete | 2026-03-13 |
 | 86. Chrome Cleanup + Store Migration | 2/2 | Complete    | 2026-03-15 | - |
-| 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete   | 2026-03-15 | - |
+| 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete    | 2026-03-15 | - |
 | 88. Practice Round | v2026.3.6 | 0/TBD | Not started | - |
 | 89. Coach Marks | v2026.3.6 | 0/TBD | Not started | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
