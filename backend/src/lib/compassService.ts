@@ -141,8 +141,7 @@ export async function getCompassCategories() {
       .schema('inform')
       .from('compass_topic_categories')
       .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live)')
-      .eq('compass_topics.is_live', true)
-      .order('compass_topics.title', { ascending: true }),
+      .eq('compass_topics.is_live', true),
   ]);
 
   if (catRes.error) throw catRes.error;
@@ -157,7 +156,8 @@ export async function getCompassCategories() {
         if (!t) return null;
         return { topic_id: t.id, title: t.title, short_title: t.short_title, question_text: t.question_text };
       })
-      .filter(Boolean),
+      .filter(Boolean)
+      .sort((a, b) => (a as { title: string }).title.localeCompare((b as { title: string }).title)),
   }));
 }
 
