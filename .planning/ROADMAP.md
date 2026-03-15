@@ -204,6 +204,39 @@ Plans:
 
 ---
 
+#### Phase 25: Deployment Runbook Completion
+**Goal:** `applyMigrations.ts` and `DEPLOY.md` cover the full migration set (030–036) so a cold-start re-deploy succeeds without manual intervention — satisfying the DEPLOY-02 success criterion.
+**Depends on:** Phase 24 (all migrations exist)
+**Requirements:** DEPLOY-02
+**Gap Closure:** Closes DEPLOY-02 gap from v1.3 audit — migrations 034/035/036 missing from `backend/migrations/`
+**Success Criteria** (what must be TRUE):
+  1. `backend/migrations/034_gem_idempotency.sql`, `035_tier_promotion.sql`, and `036_signup_with_invite.sql` exist and mirror their `supabase/migrations/` counterparts.
+  2. `DEPLOY.md` Step 2 references all migrations 026–036 (or documents `supabase db push` as the canonical deployment path for 030+), sufficient for a cold-start re-deploy without manual schema work.
+  3. Running `applyMigrations.ts` against a fresh database applies all migrations without error — gems award, tier promotion, and invite signup flows all succeed after the run.
+**Plans:** 1 plan
+
+Plans:
+- [ ] 25-01-PLAN.md — backend/migrations/034–036 + DEPLOY.md Step 2 update
+
+---
+
+#### Phase 26: v1.3 Tech Debt Closure
+**Goal:** All tech debt surfaced in the v1.3 audit is resolved — local dev `supabase db reset` works, PATCH `/me` is consistent with GET `/me`, generated types are clean, and REQUIREMENTS.md is accurate.
+**Depends on:** Phase 25
+**Requirements:** (docs + local dev parity — no new feature requirements)
+**Gap Closure:** Closes all tech debt items from v1.3 audit
+**Success Criteria** (what must be TRUE):
+  1. `supabase db reset` completes without error locally — migration 031 `CREATE POLICY IF NOT EXISTS` replaced with idempotent DO block; migration 032 bare `geometry` replaced with `public.geometry`.
+  2. `PATCH /api/account/me` response includes `location_consent` — PATCH and GET `/me` return the same field set.
+  3. `database.types.ts` no longer contains the legacy `gem_balance` column — `supabase gen types` output is clean.
+  4. `REQUIREMENTS.md` traceability table is accurate: GEM-01/02/03 marked complete, HUB-01 through HUB-04 added with Phase 24 and Complete status.
+**Plans:** 1 plan
+
+Plans:
+- [ ] 26-01-PLAN.md — migration 031/032 fixes + PATCH /me location_consent + types regen + REQUIREMENTS.md update
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -232,3 +265,5 @@ Plans:
 | 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 3/3 | Complete | 2026-03-14 |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
+| 25. Deployment Runbook Completion | v1.3 | 0/1 | Pending | — |
+| 26. v1.3 Tech Debt Closure | v1.3 | 0/1 | Pending | — |
