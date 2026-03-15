@@ -216,7 +216,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 25-01-PLAN.md — backend/migrations/034–036 + DEPLOY.md Step 2 update
+- [x] 25-01-PLAN.md — backend/migrations/034–036 + DEPLOY.md Step 2 update
 
 ---
 
@@ -265,5 +265,5 @@ Plans:
 | 22. Multi-Currency Gem System | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 23. Central Profile Page + Admin Tier Promotion | v1.3 | 3/3 | Complete | 2026-03-14 |
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
-| 25. Deployment Runbook Completion | v1.3 | 0/1 | Pending | — |
+| 25. Deployment Runbook Completion | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 26. v1.3 Tech Debt Closure | v1.3 | 0/1 | Pending | — |

@@ -8,7 +8,7 @@
 ### DEPLOY — Live Alpha Deployment
 
 - [ ] **DEPLOY-01**: Migrations 026–029 applied to production Supabase instance with pre/post verification queries
-- [ ] **DEPLOY-02**: Deployment runbook documented — migration order, rollback steps, environment checklist, PostGIS + pgcrypto enablement steps
+- [x] **DEPLOY-02**: Deployment runbook documented — migration order, rollback steps, environment checklist, PostGIS + pgcrypto enablement steps
 - [ ] **DEPLOY-03**: Production smoke test suite passes — health check, auth flow, compass endpoints, admin UI, essentials politicians endpoint
 
 ### CV2 — CompassV2 API Contract (accounts side)
