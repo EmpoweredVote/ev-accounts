@@ -7,9 +7,9 @@
 
 ### DEPLOY — Live Alpha Deployment
 
-- [ ] **DEPLOY-01**: Migrations 026–029 applied to production Supabase instance with pre/post verification queries
+- [x] **DEPLOY-01**: Migrations 026–029 applied to production Supabase instance with pre/post verification queries
 - [x] **DEPLOY-02**: Deployment runbook documented — migration order, rollback steps, environment checklist, PostGIS + pgcrypto enablement steps
-- [ ] **DEPLOY-03**: Production smoke test suite passes — health check, auth flow, compass endpoints, admin UI, essentials politicians endpoint
+- [x] **DEPLOY-03**: Production smoke test suite passes — health check, auth flow, compass endpoints, admin UI, essentials politicians endpoint
 
 ### CV2 — CompassV2 API Contract (accounts side)
 
@@ -21,15 +21,15 @@
 
 ### LOC — Location Infrastructure
 
-- [ ] **LOC-01**: `connect.connected_profiles` gains `encrypted_lat bytea`, `encrypted_lng bytea`, `location_consent boolean NOT NULL DEFAULT false`, `location_set_at timestamptz`; `public.users` view updated to exclude encrypted columns
-- [ ] **LOC-02**: Supabase Vault secret `location_encryption_key` created; pgcrypto extension enabled; all coordinate reads/writes exclusively via SECURITY DEFINER RPCs using `extensions.pgp_sym_encrypt_bytea` / `extensions.pgp_sym_decrypt_bytea`
-- [ ] **LOC-03**: `connect.upsert_user_location(user_id uuid, lat float8, lng float8)` RPC — encrypts via Vault key, writes to connected_profiles, sets `location_consent = true`, `location_set_at = now()`
-- [ ] **LOC-04**: `inform.district_boundaries` PostGIS table created with GIST index; six Indiana TIGER/Line 2024 shapefiles loaded as runbook step (congressional, state upper/lower, county, place, unified school district), reprojected 4269→4326
-- [ ] **LOC-05**: `connect.resolve_user_jurisdiction(user_id uuid)` RPC — decrypts coordinates, runs `extensions.ST_Covers` queries (not ST_Contains), uses `extensions.ST_MakePoint(lng, lat)` (longitude first), returns `{ city, state, county, congressional_district, state_upper, state_lower, school_district, geo_precision }` — never raw coordinates; `place` returns null for unincorporated addresses (not an error)
-- [ ] **LOC-06**: `GET /api/account/me/jurisdiction` — authenticated, returns 403 if `location_consent = false`, calls `resolve_user_jurisdiction`, returns jurisdiction JSON
-- [ ] **LOC-07**: `POST /api/connect/set-location` — new endpoint (separate from connect/complete), accepts `{ address: string }`, validates PO Box rejection (Zod), calls Census Geocoder API, calls `upsert_user_location` RPC; geocoding I/O is not inside any DB transaction
-- [ ] **LOC-08**: Architecture test asserts `encrypted_lat`, `encrypted_lng`, and any plaintext coordinate representation never appear in route SELECT lists or API responses
-- [ ] **LOC-09**: Input validation rejects PO Box addresses (`PO Box`, `P.O. Box`, `POB` case-insensitive) with user-facing error before geocoding
+- [x] **LOC-01**: `connect.connected_profiles` gains `encrypted_lat bytea`, `encrypted_lng bytea`, `location_consent boolean NOT NULL DEFAULT false`, `location_set_at timestamptz`; `public.users` view updated to exclude encrypted columns
+- [x] **LOC-02**: Supabase Vault secret `location_encryption_key` created; pgcrypto extension enabled; all coordinate reads/writes exclusively via SECURITY DEFINER RPCs using `extensions.pgp_sym_encrypt_bytea` / `extensions.pgp_sym_decrypt_bytea`
+- [x] **LOC-03**: `connect.upsert_user_location(user_id uuid, lat float8, lng float8)` RPC — encrypts via Vault key, writes to connected_profiles, sets `location_consent = true`, `location_set_at = now()`
+- [x] **LOC-04**: `inform.district_boundaries` PostGIS table created with GIST index; six Indiana TIGER/Line 2024 shapefiles loaded as runbook step (congressional, state upper/lower, county, place, unified school district), reprojected 4269→4326
+- [x] **LOC-05**: `connect.resolve_user_jurisdiction(user_id uuid)` RPC — decrypts coordinates, runs `extensions.ST_Covers` queries (not ST_Contains), uses `extensions.ST_MakePoint(lng, lat)` (longitude first), returns `{ city, state, county, congressional_district, state_upper, state_lower, school_district, geo_precision }` — never raw coordinates; `place` returns null for unincorporated addresses (not an error)
+- [x] **LOC-06**: `GET /api/account/me/jurisdiction` — authenticated, returns 403 if `location_consent = false`, calls `resolve_user_jurisdiction`, returns jurisdiction JSON
+- [x] **LOC-07**: `POST /api/connect/set-location` — new endpoint (separate from connect/complete), accepts `{ address: string }`, validates PO Box rejection (Zod), calls Census Geocoder API, calls `upsert_user_location` RPC; geocoding I/O is not inside any DB transaction
+- [x] **LOC-08**: Architecture test asserts `encrypted_lat`, `encrypted_lng`, and any plaintext coordinate representation never appear in route SELECT lists or API responses
+- [x] **LOC-09**: Input validation rejects PO Box addresses (`PO Box`, `P.O. Box`, `POB` case-insensitive) with user-facing error before geocoding
 
 ### PROF — empowered_profiles Politician Schema
 
@@ -39,13 +39,13 @@
 
 ### GEM — Multi-Currency Gem System
 
-- [ ] **GEM-01**: `connect.gem_transactions` gains `gem_type gem_type_enum NOT NULL` where `gem_type_enum = ('yellow', 'blue', 'red')`; existing rows backfilled to `'yellow'`
-- [ ] **GEM-02**: `connect.connected_profiles` gains `yellow_gem_balance integer NOT NULL DEFAULT 0`, `blue_gem_balance integer NOT NULL DEFAULT 0`, `red_gem_balance integer NOT NULL DEFAULT 0`; legacy `gem_balance` column removed after backfill
-- [ ] **GEM-03**: `credit_gems` RPC updated to accept `gem_type gem_type_enum` parameter; advisory lock covers all three balances atomically; existing CTC integration updated to pass `gem_type = 'yellow'`
-- [ ] **GEM-04**: `POST /api/gems/award` endpoint — service-key authenticated, per-key `permittedTypes` enforcement (keys declare which gem types they can award), idempotent with `idempotency_key`, returns `{ gem_type, amount, new_balance, is_duplicate }`
-- [ ] **GEM-05**: `GET /api/account/me` returns structured gem object `{ yellow: number, blue: number, red: number }` replacing legacy `gem_balance` integer
-- [ ] **GEM-06**: Gem balance-always-0 bug confirmed fixed — integration test awards yellow gems and asserts `yellow_gem_balance` increments correctly on `/api/account/me`
-- [ ] **GEM-07**: Admin tool account detail page displays three gem balances (yellow / blue / red) replacing single balance display
+- [x] **GEM-01**: `connect.gem_transactions` gains `gem_type gem_type_enum NOT NULL` where `gem_type_enum = ('yellow', 'blue', 'red')`; existing rows backfilled to `'yellow'`
+- [x] **GEM-02**: `connect.connected_profiles` gains `yellow_gem_balance integer NOT NULL DEFAULT 0`, `blue_gem_balance integer NOT NULL DEFAULT 0`, `red_gem_balance integer NOT NULL DEFAULT 0`; legacy `gem_balance` column removed after backfill
+- [x] **GEM-03**: `credit_gems` RPC updated to accept `gem_type gem_type_enum` parameter; advisory lock covers all three balances atomically; existing CTC integration updated to pass `gem_type = 'yellow'`
+- [x] **GEM-04**: `POST /api/gems/award` endpoint — service-key authenticated, per-key `permittedTypes` enforcement (keys declare which gem types they can award), idempotent with `idempotency_key`, returns `{ gem_type, amount, new_balance, is_duplicate }`
+- [x] **GEM-05**: `GET /api/account/me` returns structured gem object `{ yellow: number, blue: number, red: number }` replacing legacy `gem_balance` integer
+- [x] **GEM-06**: Gem balance-always-0 bug confirmed fixed — integration test awards yellow gems and asserts `yellow_gem_balance` increments correctly on `/api/account/me`
+- [x] **GEM-07**: Admin tool account detail page displays three gem balances (yellow / blue / red) replacing single balance display
 
 ### PROFILE — Central Profile Page
 
