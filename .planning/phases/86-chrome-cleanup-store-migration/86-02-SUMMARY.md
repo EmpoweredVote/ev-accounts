@@ -73,7 +73,7 @@ Each task was committed atomically:
 1. **Task 1: Delete dead components and clean App.tsx/PhaseContainer** - `471c97b` (feat)
 2. **Task 2: Migrate all consumers to getCurrentIssueProgress(), remove badge UI** - `7e1479e` (feat)
 
-**Plan metadata:** (docs commit follows)
+**Plan metadata:** `23b8350` (docs)
 
 ## Files Created/Modified
 - `EV-readrank/src/App.tsx` - No ProgressHeader render, no /animation-options route, handleClearReadRank added, profile menu updated
@@ -127,3 +127,12 @@ Each task was committed atomically:
 ---
 *Phase: 86-chrome-cleanup-store-migration*
 *Completed: 2026-03-15*
+
+## Self-Check: PASSED
+
+- FOUND: EV-readrank/src/App.tsx
+- FOUND: EV-readrank/src/components/EvaluationPhase.tsx
+- FOUND: .planning/phases/86-chrome-cleanup-store-migration/86-02-SUMMARY.md
+- CONFIRMED DELETED: EV-readrank/src/components/ProgressHeader.tsx
+- FOUND: commit 471c97b (feat: delete dead chrome components)
+- FOUND: commit 7e1479e (feat: migrate all consumers)
