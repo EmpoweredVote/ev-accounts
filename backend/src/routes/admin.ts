@@ -49,6 +49,7 @@ import {
   getPromotionHistory,
   getGlobalPromotionLog,
   getAdminEmailById,
+  updateVerificationRating,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -265,6 +266,40 @@ router.post('/accounts/:userId/promote', async (req, res) => {
       res.status(409).json({ error: 'User is already Connected or Empowered' });
       return;
     }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+const VerificationRatingSchema = z.object({
+  verification_rating: z.number().int().min(0).max(150).optional(),
+  clear_hold: z.boolean().optional(),
+}).refine(
+  (d) => d.verification_rating !== undefined || d.clear_hold === true,
+  { message: 'Must provide verification_rating or clear_hold: true' }
+);
+
+/**
+ * PATCH /api/admin/accounts/:userId/verification-rating
+ * Manually override a user's verification_rating and/or clear vq_hold_until.
+ * VR-05. Calls logAdminAction before returning 200.
+ */
+router.patch('/accounts/:userId/verification-rating', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const parsed = VerificationRatingSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
+      return;
+    }
+    await updateVerificationRating(userId, {
+      rating: parsed.data.verification_rating,
+      clearHold: parsed.data.clear_hold,
+    });
+    await logAdminAction(actorId(req), 'update_verification_rating', userId, {
+      changes: parsed.data,
+    });
+    res.json({ ok: true });
+  } catch (err) {
     res.status(500).json({ error: 'Internal server error' });
   }
 });

@@ -140,6 +140,28 @@ export async function setAccountStanding(
 }
 
 /**
+ * Manually override a user's verification_rating and/or clear vq_hold_until.
+ * VR-05 admin capability.
+ */
+export async function updateVerificationRating(
+  userId: string,
+  opts: { rating?: number; clearHold?: boolean }
+): Promise<void> {
+  const updates: Record<string, unknown> = {};
+  if (opts.rating !== undefined) updates.verification_rating = opts.rating;
+  if (opts.clearHold === true) updates.vq_hold_until = null;
+
+  if (Object.keys(updates).length === 0) return;
+
+  const { error } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .update(updates)
+    .eq('user_id', userId);
+  if (error) throw new Error(error.message);
+}
+
+/**
  * Demote an Empowered user by calling executeDemotion from empowerService.
  */
 export async function adminDemote(
