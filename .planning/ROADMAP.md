@@ -243,7 +243,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 - [x] **Phase 87: Unified EvaluatePhase + InlineRankPanel** - Collapse evaluate+rank into one fluid interaction (completed 2026-03-15)
 - [x] **Phase 87.1: Head-to-Head Matchup Ranking** - Replace drag-to-rank with pairwise comparison flow (INSERTED) (completed 2026-03-15)
 - [x] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes (completed 2026-03-15)
-- [ ] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice
+- [x] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice (completed 2026-03-15)
 - [ ] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives
 - [ ] **Phase 91: Results Polish + Visual Redesign** - Dramatic reveal animation and full visual overhaul
 
@@ -318,7 +318,7 @@ Plans:
   1. On the first real issue, coach marks appear highlighting the swipe card area and the rank panel
   2. After dismissing the tour, it never appears again — even after page reload or returning later
   3. Users who have already completed a session do not see coach marks on subsequent visits
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [ ] 89-01-PLAN.md — Store v6 migration + CoachMark TypeScript port from CompassV2
 - [ ] 89-02-PLAN.md — Wire 2-step tour into EvaluationPhase with forwardRef targets
@@ -361,6 +361,6 @@ Plans:
 | 87. Unified EvaluatePhase + InlineRankPanel | 2/2 | Complete    | 2026-03-15 | - |
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
 | 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
-| 89. Coach Marks | 1/2 | In Progress|  | - |
+| 89. Coach Marks | 2/2 | Complete   | 2026-03-15 | - |
 | 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |

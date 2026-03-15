@@ -22,7 +22,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 - [x] **ONBD-02**: Practice round teaches swipe agree/disagree and insert-into-list ranking mechanics
 - [x] **ONBD-03**: Practice round verdicts never reach backend or fragment encoder
 - [x] **ONBD-04**: User can skip practice round; skip cleans up all partial practice state
-- [ ] **ONBD-05**: Coach marks spotlight key UI elements on first real issue (swipe area, rank panel)
+- [x] **ONBD-05**: Coach marks spotlight key UI elements on first real issue (swipe area, rank panel)
 - [x] **ONBD-06**: Coach marks permanently dismissed after first completion via store flag
 
 ### Location Filtering
@@ -88,7 +88,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | ONBD-02 | Phase 88 | Complete |
 | ONBD-03 | Phase 88 | Complete |
 | ONBD-04 | Phase 88 | Complete |
-| ONBD-05 | Phase 89 | Pending |
+| ONBD-05 | Phase 89 | Complete |
 | ONBD-06 | Phase 89 | Complete |
 | LOC-01 | Phase 90 | Pending |
 | LOC-02 | Phase 90 | Pending |
