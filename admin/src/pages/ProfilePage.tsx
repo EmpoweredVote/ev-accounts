@@ -23,6 +23,45 @@ interface MeResponse {
   connected_profile?: MeConnectedProfile;
 }
 
+// TODO: Replace with actual production URLs
+const FEATURES = [
+  {
+    name: 'Choose the Correct',
+    abbr: 'CTC',
+    description: 'Test your knowledge of where politicians really stand on the issues.',
+    color: 'bg-ev-teal',
+    href: 'https://choose-the-correct.empoweredvote.com',
+  },
+  {
+    name: 'Validation Quests',
+    abbr: 'VQ',
+    description: 'Help verify politician stances and earn Red Gems for accuracy.',
+    color: 'bg-ev-red',
+    href: 'https://validation-quests.empoweredvote.com',
+  },
+  {
+    name: 'Essentials',
+    abbr: 'ESS',
+    description: 'See where your representatives stand on the issues that matter to you.',
+    color: 'bg-ev-yellow',
+    href: 'https://essentials.empoweredvote.com',
+  },
+  {
+    name: 'Read & Rank',
+    abbr: 'R&R',
+    description: 'Read real legislation and rank it — your opinion shapes the civic conversation.',
+    color: 'bg-ev-teal-light',
+    href: 'https://read-and-rank.empoweredvote.com',
+  },
+  {
+    name: 'Treasury Tracker',
+    abbr: 'TT',
+    description: 'Follow the money — see how public funds are allocated and spent.',
+    color: 'bg-gray-700',
+    href: 'https://treasury-tracker.empoweredvote.com',
+  },
+] as const;
+
 const TIER_LABELS: Record<string, string> = {
   inform: 'Inform',
   connected: 'Connected',
@@ -124,7 +163,7 @@ export default function ProfilePage() {
         </button>
       </nav>
 
-      <div className="max-w-lg mx-auto px-4 py-10">
+      <div className="max-w-2xl mx-auto px-4 py-10">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           {/* Avatar + email */}
           <div className="flex items-center gap-4 mb-6">
@@ -261,6 +300,36 @@ export default function ProfilePage() {
               Could not load profile details. Try refreshing.
             </p>
           )}
+        </div>
+
+        {/* Feature hub — visible to all tiers */}
+        <div className="mt-8" data-testid="feature-hub">
+          <h2 className="text-lg font-semibold text-gray-900 mb-1">
+            Empowered Vote Features
+          </h2>
+          <p className="text-sm text-gray-500 mb-4">
+            Explore freely. Connect to save your progress.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {FEATURES.map((feature) => (
+              <a
+                key={feature.abbr}
+                href={feature.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow block"
+              >
+                <div className="flex items-center gap-2">
+                  <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${feature.color}`} />
+                  <span className="text-sm font-semibold text-gray-900">{feature.name}</span>
+                </div>
+                <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">
+                  {feature.description}
+                </p>
+                <p className="text-xs text-ev-teal font-medium mt-2">Explore &rarr;</p>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </div>
