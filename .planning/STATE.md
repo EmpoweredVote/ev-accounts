@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 91-02-PLAN.md
-last_updated: "2026-03-16T03:57:24.170Z"
+stopped_at: "Phase 91 Plan 01 — stopped at checkpoint:human-verify (Task 2)"
+last_updated: "2026-03-16T03:58:36.127Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
   completed_phases: 6
   total_plans: 15
-  completed_plans: 13
+  completed_plans: 14
   percent: 0
 ---
 
@@ -88,6 +88,9 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase Phase 90-location-based-filtering]: Essentials Layout switches from SiteHeader to Header + defaultNavItems to enable custom navItems prop for dynamic Read & Rank href
 - [Phase 91-results-polish-visual-redesign]: Ease curve typed as const tuple [n,n,n,n] not number[] — framer-motion Easing type requires tuple, not plain array
 - [Phase 91-results-polish-visual-redesign]: End-of-evaluation layout returns before matchup and split layout blocks — most specific case first ordering
+- [Phase 91-results-polish-visual-redesign]: Reveal button uses AnimatePresence for exit animation — not conditional render without it
+- [Phase 91-results-polish-visual-redesign]: prefersReducedMotion gates MegaParticles render entirely (not just CSS suppression) — prevents particle animation overhead
+- [Phase 91-results-polish-visual-redesign]: View on Essentials CTA opacity animated via Framer Motion animate prop so layout is reserved pre-reveal (no content jump)
 
 ### Pending Todos
 
@@ -140,6 +143,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-16T03:57:24.168Z
-Stopped at: Completed 91-02-PLAN.md
+Last session: 2026-03-16T03:58:25.925Z
+Stopped at: Phase 91 Plan 01 — stopped at checkpoint:human-verify (Task 2)
 Resume file: None
