@@ -45,7 +45,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 - [x] **CHRM-01**: ProgressHeader removed entirely
 - [x] **CHRM-02**: AnimationOptionsPage and /animation-options route removed
 - [x] **CHRM-03**: Reset functionality moved to account/profile menu (matching Compass pattern)
-- [ ] **CHRM-04**: Visual redesign applied across all components (revert editorial WIP, design from scratch)
+- [x] **CHRM-04**: Visual redesign applied across all components (revert editorial WIP, design from scratch)
 
 ## Future Requirements
 
@@ -99,7 +99,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | RSLT-02 | Phase 91 | Pending |
 | RSLT-03 | Phase 91 | Pending |
 | RSLT-04 | Phase 91 | Pending |
-| CHRM-04 | Phase 91 | Pending |
+| CHRM-04 | Phase 91 | Complete |
 
 **Coverage:**
 - v2026.3.6 requirements: 25 total

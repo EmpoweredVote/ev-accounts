@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Phase 91 context gathered
-last_updated: "2026-03-16T03:31:40.219Z"
+stopped_at: Completed 91-02-PLAN.md
+last_updated: "2026-03-16T03:57:24.170Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
   completed_phases: 6
-  total_plans: 12
-  completed_plans: 12
+  total_plans: 15
+  completed_plans: 13
   percent: 0
 ---
 
@@ -86,6 +86,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 90-location-based-filtering]: noMatchWarning kept as local component state (not store) — ephemeral 3s UI feedback, no persistence needed
 - [Phase Phase 90-location-based-filtering]: EvaluationPhase uses effectiveQuotesToEvaluate (derived at render) — store mutation avoided so clearing filter restores full quote set
 - [Phase Phase 90-location-based-filtering]: Essentials Layout switches from SiteHeader to Header + defaultNavItems to enable custom navItems prop for dynamic Read & Rank href
+- [Phase 91-results-polish-visual-redesign]: Ease curve typed as const tuple [n,n,n,n] not number[] — framer-motion Easing type requires tuple, not plain array
+- [Phase 91-results-polish-visual-redesign]: End-of-evaluation layout returns before matchup and split layout blocks — most specific case first ordering
 
 ### Pending Todos
 
@@ -118,6 +120,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 89-coach-marks P02 | 3 | 2 tasks | 5 files |
 | Phase 90-location-based-filtering P01 | 26 | 2 tasks | 6 files |
 | Phase 90-location-based-filtering P02 | 3 | 2 tasks | 4 files |
+| Phase 91-results-polish-visual-redesign P02 | 12 | 2 tasks | 3 files |
 
 ### Roadmap Evolution
 
@@ -137,6 +140,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-16T03:31:40.210Z
-Stopped at: Phase 91 context gathered
-Resume file: .planning/phases/91-results-polish-visual-redesign/91-CONTEXT.md
+Last session: 2026-03-16T03:57:24.168Z
+Stopped at: Completed 91-02-PLAN.md
+Resume file: None

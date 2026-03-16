@@ -347,7 +347,7 @@ Plans:
   2. Result cards show less information at a glance — one clear CTA per card rather than multiple competing actions
   3. "View on Essentials" is the primary action on each result card
   4. CandidateAlignmentPage is visually consistent with the new design — same typography, spacing, and color use
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 Plans:
 - [ ] 91-01-PLAN.md — Results reveal state machine + card redesign
 - [ ] 91-02-PLAN.md — Matchup full-width layout, end-of-evaluation centered list, page transitions
@@ -366,4 +366,4 @@ Plans:
 | 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
 | 89. Coach Marks | 2/2 | Complete    | 2026-03-16 | - |
 | 90. Location-Based Filtering | 2/2 | Complete    | 2026-03-16 | - |
-| 91. Results Polish + Visual Redesign | v2026.3.6 | 0/3 | Not started | - |
+| 91. Results Polish + Visual Redesign | 1/3 | In Progress|  | - |
