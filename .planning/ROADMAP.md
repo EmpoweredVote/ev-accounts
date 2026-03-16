@@ -363,5 +363,5 @@ Plans:
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
 | 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
 | 89. Coach Marks | 2/2 | Complete    | 2026-03-16 | - |
-| 90. Location-Based Filtering | 2/2 | Complete   | 2026-03-16 | - |
+| 90. Location-Based Filtering | 2/2 | Complete    | 2026-03-16 | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |
