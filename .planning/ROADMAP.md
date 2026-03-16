@@ -333,9 +333,10 @@ Plans:
   3. Issues with fewer than 2 local-rep quotes are hidden rather than showing an empty evaluation
   4. A user arriving from Essentials with address context already applied sees the hub pre-filtered without re-entering their address
   5. Clearing the location filter restores the full unfiltered issue list
-**Plans**: TBD
+**Plans:** 2 plans
 Plans:
-- [ ] TBD
+- [ ] 90-01-PLAN.md — Store v7 migration, Google Places autocomplete hook, AddressFilterInput component
+- [ ] 90-02-PLAN.md — Wire IssueHub + EvaluationPhase filtering, App.tsx ?address= parsing, Essentials dynamic nav link
 
 ### Phase 91: Results Polish + Visual Redesign
 **Goal**: Results page delivers a memorable reveal moment and all app components share a cohesive, polished visual design
@@ -362,5 +363,5 @@ Plans:
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
 | 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
 | 89. Coach Marks | 2/2 | Complete    | 2026-03-16 | - |
-| 90. Location-Based Filtering | v2026.3.6 | 0/TBD | Not started | - |
+| 90. Location-Based Filtering | v2026.3.6 | 0/2 | Not started | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |
