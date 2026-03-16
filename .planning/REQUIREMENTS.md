@@ -38,7 +38,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 - [ ] **RSLT-01**: Results cards are visually cleaner with less information density per card
 - [ ] **RSLT-02**: "Who said it" reveal has a dramatic staggered animation moment
 - [ ] **RSLT-03**: "View on Essentials" is the primary CTA on result cards
-- [ ] **RSLT-04**: CandidateAlignmentPage stays in ReadRank with visual polish matching new design
+- [x] **RSLT-04**: CandidateAlignmentPage stays in ReadRank with visual polish matching new design
 
 ### Chrome & Design
 
@@ -98,7 +98,7 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | RSLT-01 | Phase 91 | Pending |
 | RSLT-02 | Phase 91 | Pending |
 | RSLT-03 | Phase 91 | Pending |
-| RSLT-04 | Phase 91 | Pending |
+| RSLT-04 | Phase 91 | Complete |
 | CHRM-04 | Phase 91 | Complete |
 
 **Coverage:**
