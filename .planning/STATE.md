@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Completed Phase 91 Plan 03 — stopped at checkpoint:human-verify (Task 3)"
-last_updated: "2026-03-16T15:26:12.928Z"
+stopped_at: Phase 91 complete — all 3 plans done, visual cohesion verified
+last_updated: "2026-03-16T16:42:16.642Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
@@ -93,6 +93,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 91-results-polish-visual-redesign]: View on Essentials CTA opacity animated via Framer Motion animate prop so layout is reserved pre-reveal (no content jump)
 - [Phase Phase 91-results-polish-visual-redesign]: Manrope 800 for h1-level display headings, 700 for h2/h3, 600 for sub-labels — consistent hierarchy replacing mixed Fraunces/Manrope pattern
 - [Phase Phase 91-results-polish-visual-redesign]: ev-quote-text changed from Fraunces italic to Manrope normal — quote cards use clean sans-serif treatment matching rest of design
+- [Phase Phase 91-results-polish-visual-redesign]: Hub decorative quote mark removed post-checkpoint; title/subtitle centered; progress bar inline with count; short titles extracted before colon
+- [Phase Phase 91-results-polish-visual-redesign]: Results cards redesigned post-checkpoint: muted-blue rank bar on left, politician row with rounded-rect photo + inline View on Essentials link, fallback initials, source link below quote; summary stats section removed
 
 ### Pending Todos
 
@@ -146,6 +148,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-16T15:26:12.926Z
-Stopped at: Completed Phase 91 Plan 03 — stopped at checkpoint:human-verify (Task 3)
+Last session: 2026-03-16T16:42:16.639Z
+Stopped at: Phase 91 complete — all 3 plans done, visual cohesion verified
 Resume file: None

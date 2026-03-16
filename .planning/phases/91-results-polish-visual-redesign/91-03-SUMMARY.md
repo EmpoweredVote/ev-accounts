@@ -34,12 +34,15 @@ key-files:
     - EV-readrank/src/components/PracticeResultsScreen.tsx
     - EV-readrank/src/components/CandidateAlignmentPage.tsx
     - EV-readrank/src/components/QuickConfirmation.tsx
+    - EV-readrank/src/components/ResultsPhase.tsx
 
 key-decisions:
   - "Manrope 800 for h1-level headings (Choose an Issue, candidate name, Read & Rank title, results heading)"
   - "Manrope 700 for h2/h3-level headings (issue titles, Issue-by-Issue Breakdown, character names)"
   - "ev-quote-text class changed from Fraunces italic to Manrope normal — quote cards no longer use serif font"
   - "ev-quote-card::before decorative open-quote mark updated to Manrope — renders cleanly as large character overlay"
+  - "Hub: decorative quote mark removed, title/subtitle centered, progress bar inline with count, short issue titles extracted before colon, tighter card padding"
+  - "Results: summary stats section removed, compact header, cards redesigned with muted-blue rank bar on left, politician photo as rounded-rect with inline View on Essentials link, fallback initials for missing photos"
 
 patterns-established:
   - "Typography hierarchy: Manrope 800 (display/hero) → 700 (section headers) → 600 (sub-labels) → 400 (body)"
@@ -53,15 +56,15 @@ completed: 2026-03-16
 
 # Phase 91 Plan 03: Results Polish — Fraunces Removal and Visual Cohesion
 
-**Manrope typography exclusively across all EV-readrank components — Fraunces font removed from CSS imports, theme variables, class definitions, and all inline styles in 6 component files**
+**Manrope typography exclusively across all EV-readrank components + compact Hub and Results layouts with redesigned cards, inline politician photos, and source links**
 
 ## Performance
 
-- **Duration:** ~12 min
+- **Duration:** ~12 min (automated tasks) + post-checkpoint UI polish
 - **Started:** 2026-03-16T04:08:11Z
-- **Completed:** 2026-03-16T04:20:00Z
-- **Tasks:** 2/2 complete (Task 3 is checkpoint:human-verify)
-- **Files modified:** 7
+- **Completed:** 2026-03-16T12:28:58Z
+- **Tasks:** 3/3 complete (checkpoint approved)
+- **Files modified:** 8
 
 ## Accomplishments
 - Removed Fraunces Google Fonts @import from index.css — browser no longer downloads the font
@@ -73,31 +76,40 @@ completed: 2026-03-16
 - All heading-level elements now use Manrope 800/700 weight for visual prominence
 - CandidateAlignmentPage candidate name, stat values, h2, and issue title h3 all use Manrope
 - TypeScript build passes clean (483 modules, no errors)
+- Hub: removed decorative quote mark, centered layout, inline progress bar with issue count, short titles extracted before colon, tighter card padding
+- Results: removed summary stats section, redesigned cards with muted-blue rank bar on left, politician row with rounded-rect photo and inline "View on Essentials" link, fallback initials for missing photos
+- Backend: fixed GetQuotes to join politician_images table for photo lookup
 
 ## Task Commits
 
 1. **Task 1: Remove Fraunces from CSS** - `5533c9b` (feat)
 2. **Task 2: Remove Fraunces from all component inline styles** - `046513d` (feat)
-
-Task 3 is a checkpoint:human-verify (visual inspection of running app).
+3. **Task 3: Visual cohesion checkpoint approved + post-checkpoint UI polish** - `98616ca` (feat)
 
 ## Files Created/Modified
 - `EV-readrank/src/index.css` - Removed Fraunces @import, variable, updated .ev-heading/.ev-quote-text/.ev-quote-card::before
-- `EV-readrank/src/components/IssueHub.tsx` - Decorative quote mark, h1, h3 issue titles → Manrope
+- `EV-readrank/src/components/IssueHub.tsx` - Decorative quote mark removed, h1 centered, h3 issue titles → Manrope, short title extraction, tighter card padding
 - `EV-readrank/src/components/EvaluationPhase.tsx` - "Done" text → Manrope 800
 - `EV-readrank/src/components/PracticeRound.tsx` - Splash h1, "Done" text → Manrope 800
 - `EV-readrank/src/components/PracticeResultsScreen.tsx` - Results h2, stat value, agreed/disagreed character name h3s → Manrope
 - `EV-readrank/src/components/CandidateAlignmentPage.tsx` - Candidate name h1, stat value, h2 "Issue-by-Issue Breakdown", issue title h3 → Manrope
 - `EV-readrank/src/components/QuickConfirmation.tsx` - Heading h3 → Manrope 800
+- `EV-readrank/src/components/ResultsPhase.tsx` - Compact header, redesigned cards with muted-blue rank bar, politician row with photo + inline CTA, fallback initials, source link below quote
 
 ## Decisions Made
 - Manrope 800 for all h1-level display headings — same weight as the redesigned ResultsPhase headings for consistency
 - Manrope 700 for h2/h3-level headings — lighter than display but still prominent
 - ev-quote-text changed to Manrope normal (not italic) — quote cards now use a clean sans-serif treatment matching the rest of the design
+- Hub decorative quote mark removed — visual inspection revealed it added noise without contributing to clarity
+- Results summary stats section removed — verdict counts duplicated info visible in the cards; removal tightens the layout
+- Results cards use muted-blue rank bar on left (not teal border) — distinguishes ranked results from regular quote cards
+- Politician photo as rounded-rect (not circle) with inline "View on Essentials" link — more compact than card-level CTAs
+- Short issue title extracted before colon in IssueHub — e.g. "Climate Change: what should..." → "Climate Change"
+- Backend GetQuotes joined politician_images table — photos were previously missing from quote result payloads
 
 ## Deviations from Plan
 
-None - plan executed exactly as written. All Fraunces references in the specified files were updated in one pass.
+None from planned tasks. Post-checkpoint UI polish (Hub and Results layout refinements + backend photo fix) was applied after visual verification by the orchestrator outside this plan's scope.
 
 ## Issues Encountered
 None - the EV-readrank directory is its own git repo (not a subdirectory tracked by the parent workspace git). Used `git` commands from within `/Users/chrisandrews/Documents/GitHub/EV-readrank` for all commits.
@@ -106,10 +118,10 @@ None - the EV-readrank directory is its own git repo (not a subdirectory tracked
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- All EV-readrank components use Manrope exclusively
-- Human visual verification (Task 3 checkpoint) can run dev server: `cd EV-readrank && npm run dev`
-- Check: Hub, Evaluation, Practice, Matchup, Results, and CandidateAlignment pages — all should show clean sans-serif Manrope headings
-- Verification command: `grep -r "Fraunces" EV-readrank/src/ --include="*.tsx" --include="*.css"` returns nothing
+- Phase 91 complete — all 3 plans done
+- EV-readrank is visually polished and ready for deployment review
+- Zero Fraunces references, consistent Manrope typography, compact layouts across Hub, Evaluation, Practice, Matchup, Results, and CandidateAlignment
+- Backend photo fix deployed — politician photos render in results cards
 
 ---
 *Phase: 91-results-polish-visual-redesign*
