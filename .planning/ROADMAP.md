@@ -130,11 +130,11 @@ Plans:
   2. User can enter their address in a form on the profile page; submitting calls `POST /connect/set-location` and confirms success
   3. Profile page shows a feature hub with cards for CTC, VQ, Essentials, Read & Rank, and Treasury Tracker — each with description and link
   4. Feature hub cards communicate "explore freely, connect to save" — the user understands which features are available without a Connected account
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 30-01: Profile stats + location form
-- [ ] 30-02: Feature hub cards
+- [ ] 30-01-PLAN.md — Profile stats from /account/me (tier, level, XP, gems, VR) + location address form
+- [ ] 30-02-PLAN.md — Feature hub cards (CTC, VQ, Essentials, Read & Rank, Treasury Tracker)
 
 ## Progress
 
@@ -169,4 +169,4 @@ Plans:
 | 27. Verification Rating Schema | v1.4 | 1/1 | Complete | 2026-03-15 |
 | 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 29. Admin Controls & Integration Verification | v1.4 | 0/2 | Not started | — |
-| 30. Profile Hub UI | v1.4 | 0/— | Not started | — |
+| 30. Profile Hub UI | v1.4 | 0/2 | Not started | — |
