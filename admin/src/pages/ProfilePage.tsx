@@ -26,7 +26,7 @@ interface MeResponse {
 // TODO: Replace with actual production URLs
 const FEATURES = [
   {
-    name: 'Choose the Correct',
+    name: 'Civic Trivia Championships',
     abbr: 'CTC',
     description: 'Test your knowledge of where politicians really stand on the issues.',
     color: 'bg-ev-teal',
