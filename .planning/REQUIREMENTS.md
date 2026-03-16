@@ -28,9 +28,9 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 ### Location Filtering
 
 - [x] **LOC-01**: Hub page has optional address input using Google Maps Places autocomplete
-- [ ] **LOC-02**: When address provided, only issues with quotes from user's representatives are shown
-- [ ] **LOC-03**: Issues with fewer than 2 quotes from local reps are hidden from hub
-- [ ] **LOC-04**: Cross-app context: if user arrives from Essentials with address context, auto-apply filter
+- [x] **LOC-02**: When address provided, only issues with quotes from user's representatives are shown
+- [x] **LOC-03**: Issues with fewer than 2 quotes from local reps are hidden from hub
+- [x] **LOC-04**: Cross-app context: if user arrives from Essentials with address context, auto-apply filter
 - [x] **LOC-05**: User can clear location filter to see all issues
 
 ### Results
@@ -91,9 +91,9 @@ Requirements for the Read & Rank redesign milestone. Each maps to roadmap phases
 | ONBD-05 | Phase 89 | Complete |
 | ONBD-06 | Phase 89 | Complete |
 | LOC-01 | Phase 90 | Complete |
-| LOC-02 | Phase 90 | Pending |
-| LOC-03 | Phase 90 | Pending |
-| LOC-04 | Phase 90 | Pending |
+| LOC-02 | Phase 90 | Complete |
+| LOC-03 | Phase 90 | Complete |
+| LOC-04 | Phase 90 | Complete |
 | LOC-05 | Phase 90 | Complete |
 | RSLT-01 | Phase 91 | Pending |
 | RSLT-02 | Phase 91 | Pending |

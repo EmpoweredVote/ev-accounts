@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: Completed 90-01-PLAN.md
-last_updated: "2026-03-16T01:31:45.186Z"
+stopped_at: "Completed 90-02-PLAN.md (checkpoint: awaiting human-verify Task 3)"
+last_updated: "2026-03-16T01:36:27.346Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 12
-  completed_plans: 11
+  completed_plans: 12
   percent: 0
 ---
 
@@ -84,6 +84,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 90-location-based-filtering]: window.google guard added to autocomplete cleanup in useGooglePlacesAutocomplete — prevents runtime error when Maps SDK unavailable during effect teardown
 - [Phase 90-location-based-filtering]: google.maps added to tsconfig.app.json types array in EV-readrank — required for TypeScript to resolve google.maps.places namespace from @types/google.maps
 - [Phase 90-location-based-filtering]: noMatchWarning kept as local component state (not store) — ephemeral 3s UI feedback, no persistence needed
+- [Phase Phase 90-location-based-filtering]: EvaluationPhase uses effectiveQuotesToEvaluate (derived at render) — store mutation avoided so clearing filter restores full quote set
+- [Phase Phase 90-location-based-filtering]: Essentials Layout switches from SiteHeader to Header + defaultNavItems to enable custom navItems prop for dynamic Read & Rank href
 
 ### Pending Todos
 
@@ -115,6 +117,7 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 | Phase 89-coach-marks P01 | 3 | 2 tasks | 2 files |
 | Phase 89-coach-marks P02 | 3 | 2 tasks | 5 files |
 | Phase 90-location-based-filtering P01 | 26 | 2 tasks | 6 files |
+| Phase 90-location-based-filtering P02 | 3 | 2 tasks | 4 files |
 
 ### Roadmap Evolution
 
@@ -134,6 +137,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-16T01:31:45.184Z
-Stopped at: Completed 90-01-PLAN.md
+Last session: 2026-03-16T01:36:27.339Z
+Stopped at: Completed 90-02-PLAN.md (checkpoint: awaiting human-verify Task 3)
 Resume file: None

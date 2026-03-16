@@ -244,7 +244,7 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 - [x] **Phase 87.1: Head-to-Head Matchup Ranking** - Replace drag-to-rank with pairwise comparison flow (INSERTED) (completed 2026-03-15)
 - [x] **Phase 88: Practice Round** - Teach swipe and ranking mechanics with pizza-topping quotes (completed 2026-03-15)
 - [x] **Phase 89: Coach Marks** - Spotlight key UI on first real issue after practice (completed 2026-03-15)
-- [ ] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives
+- [x] **Phase 90: Location-Based Filtering** - Filter hub quotes to user's local representatives (completed 2026-03-16)
 - [ ] **Phase 91: Results Polish + Visual Redesign** - Dramatic reveal animation and full visual overhaul
 
 ## Phase Details
@@ -333,7 +333,7 @@ Plans:
   3. Issues with fewer than 2 local-rep quotes are hidden rather than showing an empty evaluation
   4. A user arriving from Essentials with address context already applied sees the hub pre-filtered without re-entering their address
   5. Clearing the location filter restores the full unfiltered issue list
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [ ] 90-01-PLAN.md — Store v7 migration, Google Places autocomplete hook, AddressFilterInput component
 - [ ] 90-02-PLAN.md — Wire IssueHub + EvaluationPhase filtering, App.tsx ?address= parsing, Essentials dynamic nav link
@@ -363,5 +363,5 @@ Plans:
 | 87.1. Head-to-Head Matchup Ranking | 2/2 | Complete    | 2026-03-15 | - |
 | 88. Practice Round | 2/2 | Complete    | 2026-03-15 | - |
 | 89. Coach Marks | 2/2 | Complete    | 2026-03-16 | - |
-| 90. Location-Based Filtering | 1/2 | In Progress|  | - |
+| 90. Location-Based Filtering | 2/2 | Complete   | 2026-03-16 | - |
 | 91. Results Polish + Visual Redesign | v2026.3.6 | 0/TBD | Not started | - |
