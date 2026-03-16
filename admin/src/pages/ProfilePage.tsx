@@ -3,20 +3,24 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
 
-interface GemBalances {
-  yellow: number;
-  blue: number;
-  red: number;
+interface MeGems { yellow: number; blue: number; red: number; }
+interface MeXp { total: number; level: number; xp_in_level: number; xp_to_next_level: number; }
+interface MeConnectedProfile {
+  xp: MeXp;
+  gems: MeGems;
+  verification_rating: number;
+  vq_hold_active: boolean;
+  completed_onboarding: boolean;
 }
-
-interface OwnerProfile {
-  username: string;
-  tier: 'inform' | 'connected' | 'empowered';
-  level: number | null;
-  total_xp: number | null;
+interface MeResponse {
+  id: string;
   email: string;
-  gem_balances: GemBalances;
+  tier: 'inform' | 'connected' | 'empowered';
+  is_admin: boolean;
+  verification_rating: number;
   location_consent: boolean;
+  gems?: MeGems;
+  connected_profile?: MeConnectedProfile;
 }
 
 const TIER_LABELS: Record<string, string> = {
@@ -52,14 +56,26 @@ function GemPip({
 export default function ProfilePage() {
   const navigate = useNavigate();
   const { user, clearAuth } = useAuthStore();
-  const [profile, setProfile] = useState<OwnerProfile | null>(null);
+  const [profile, setProfile] = useState<MeResponse | null>(null);
   const [profileError, setProfileError] = useState(false);
 
+  const [address, setAddress] = useState('');
+  const [locationLoading, setLocationLoading] = useState(false);
+  const [locationSuccess, setLocationSuccess] = useState(false);
+  const [locationError, setLocationError] = useState<string | null>(null);
+
   useEffect(() => {
-    apiFetch<OwnerProfile>('/account/profile/me')
+    apiFetch<MeResponse>('/account/me')
       .then((data) => setProfile(data))
       .catch(() => setProfileError(true));
   }, []);
+
+  useEffect(() => {
+    if (locationSuccess) {
+      const timer = setTimeout(() => setLocationSuccess(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [locationSuccess]);
 
   async function handleSignOut() {
     try {
@@ -70,6 +86,25 @@ export default function ProfilePage() {
     clearAuth();
     sessionStorage.removeItem('admin_token');
     navigate('/login');
+  }
+
+  async function handleSetLocation(e: React.FormEvent) {
+    e.preventDefault();
+    setLocationLoading(true);
+    setLocationSuccess(false);
+    setLocationError(null);
+    try {
+      await apiFetch('/connect/set-location', {
+        method: 'POST',
+        body: JSON.stringify({ address: address.trim() }),
+      });
+      setLocationSuccess(true);
+      setAddress('');
+    } catch (err: any) {
+      setLocationError(err.message || 'Failed to set location');
+    } finally {
+      setLocationLoading(false);
+    }
   }
 
   const displayEmail = profile?.email ?? user?.email ?? '';
@@ -122,38 +157,100 @@ export default function ProfilePage() {
           {profile && !profileError && (
             <div className="space-y-4">
               {/* Level + XP — Connected and above */}
-              {profile.level != null && (
+              {profile.connected_profile != null && (
                 <div className="flex items-center gap-4">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-900">{profile.level}</p>
+                    <p className="text-2xl font-bold text-gray-900">
+                      {profile.connected_profile.xp.level}
+                    </p>
                     <p className="text-xs text-gray-500">Level</p>
                   </div>
-                  {profile.total_xp != null && (
-                    <div className="text-center">
-                      <p className="text-2xl font-bold text-gray-900">
-                        {profile.total_xp.toLocaleString()}
-                      </p>
-                      <p className="text-xs text-gray-500">XP</p>
-                    </div>
-                  )}
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-gray-900">
+                      {profile.connected_profile.xp.total.toLocaleString()}
+                    </p>
+                    <p className="text-xs text-gray-500">XP</p>
+                  </div>
                 </div>
               )}
 
               {/* Gems — Connected and above */}
-              {(profile.tier === 'connected' || profile.tier === 'empowered') && (
+              {profile.connected_profile != null && (
                 <div className="pt-3 border-t border-gray-100">
                   <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
                     Gems
                   </p>
                   <div className="flex gap-4">
                     <GemPip
-                      count={profile.gem_balances.yellow}
+                      count={profile.connected_profile.gems.yellow ?? 0}
                       color="bg-ev-yellow"
                       label="Yellow"
                     />
-                    <GemPip count={profile.gem_balances.blue} color="bg-blue-500" label="Blue" />
-                    <GemPip count={profile.gem_balances.red} color="bg-ev-red" label="Red" />
+                    <GemPip
+                      count={profile.connected_profile.gems.blue ?? 0}
+                      color="bg-blue-500"
+                      label="Blue"
+                    />
+                    <GemPip
+                      count={profile.connected_profile.gems.red ?? 0}
+                      color="bg-ev-red"
+                      label="Red"
+                    />
                   </div>
+                </div>
+              )}
+
+              {/* Verification Rating — Connected and above */}
+              {profile.connected_profile != null && (
+                <div className="pt-3 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                    Verification Rating
+                  </p>
+                  <div className="flex items-baseline gap-1.5">
+                    <p className="text-2xl font-bold text-gray-900">
+                      {profile.connected_profile.verification_rating}
+                    </p>
+                    <span className="text-sm text-gray-400">/ 150</span>
+                  </div>
+                  {profile.connected_profile.vq_hold_active && (
+                    <p className="text-xs text-ev-red mt-1">VQ hold active</p>
+                  )}
+                </div>
+              )}
+
+              {/* Location form — Connected and above */}
+              {profile.connected_profile != null && (
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                    Location
+                  </p>
+                  {profile.location_consent && (
+                    <p className="text-sm text-green-600 mb-2 flex items-center gap-1">
+                      <span>&#10003;</span> Location set
+                    </p>
+                  )}
+                  <form onSubmit={handleSetLocation} className="space-y-2">
+                    <input
+                      type="text"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      placeholder="Enter your address"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                    />
+                    <button
+                      type="submit"
+                      disabled={address.trim().length === 0 || locationLoading}
+                      className="bg-ev-teal text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-ev-teal/90 disabled:opacity-50"
+                    >
+                      {locationLoading ? 'Setting...' : 'Set Location'}
+                    </button>
+                  </form>
+                  {locationSuccess && (
+                    <p className="text-sm text-green-600 mt-2">Location updated successfully</p>
+                  )}
+                  {locationError && (
+                    <p className="text-sm text-ev-red mt-2">{locationError}</p>
+                  )}
                 </div>
               )}
             </div>
