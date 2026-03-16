@@ -93,3 +93,11 @@ The plan explicitly stated "TypeScript errors exist only in consumer files (not 
 ---
 *Phase: 86-chrome-cleanup-store-migration*
 *Completed: 2026-03-15*
+
+## Self-Check: PASSED
+
+- FOUND: EV-readrank/src/store/useReadRankStore.ts
+- FOUND: EV-readrank/src/utils/matchingAlgorithm.ts
+- FOUND: .planning/phases/86-chrome-cleanup-store-migration/86-01-SUMMARY.md
+- FOUND: commit 423c4eb (feat: store v2 migration)
+- FOUND: commit e64e61b (feat: rank-only scoring)

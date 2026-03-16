@@ -126,3 +126,11 @@ Before deploying to Cloudflare Pages:
 ---
 *Phase: 90-location-based-filtering*
 *Completed: 2026-03-16*
+
+## Self-Check: PASSED
+
+- FOUND: EV-readrank/src/hooks/useGooglePlacesAutocomplete.ts
+- FOUND: EV-readrank/src/components/AddressFilterInput.tsx
+- FOUND: .planning/phases/90-location-based-filtering/90-01-SUMMARY.md
+- FOUND: commit dd8846c (Task 1)
+- FOUND: commit d05bf1a (Task 2)

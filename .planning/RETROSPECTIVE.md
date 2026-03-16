@@ -328,6 +328,57 @@
 
 ---
 
+## Milestone: v2026.3.6 — Read & Rank Redesign
+
+**Shipped:** 2026-03-16
+**Phases:** 7 | **Plans:** 15
+
+### What Was Built
+- Unified evaluate+rank flow with head-to-head matchup comparisons replacing drag-to-rank
+- Pizza-topping practice round with emoji character avatars for first-time onboarding
+- 2-step coach mark spotlight tour on first real issue (swipe area + rank panel)
+- Google Maps Places location-based filtering with Essentials cross-app ?address= context
+- Results page redesign with MegaParticles, simplified cards, View on Essentials primary CTA
+- Full Fraunces removal + Manrope typography throughout + AnimatePresence page transitions
+- Chrome cleanup: 5 dead components deleted, Zustand store migrated through versions 2-7
+
+### What Worked
+- Zustand store versioning discipline — clean-reset migration at each store version bump (2→7) prevented localStorage corruption for returning users
+- Practice state isolation — practiceProgress at top-level store (not inside issueProgress) guaranteed zero contamination of real verdict POST payloads
+- Phase 87.1 urgent insertion mid-milestone worked seamlessly — head-to-head matchups replaced drag-to-rank without disrupting downstream phases
+- Human checkpoint verification caught real UX issues: hub quote mark removal, results card redesign, practice splash value prop — all addressed in-phase
+- Client-side location filtering avoided backend changes entirely — POST /essentials/politicians/search + client filter was sufficient at ~61 quote scale
+- prefers-reduced-motion handled at render level (not just CSS) — MegaParticles component not mounted at all when reduced motion preferred
+
+### What Was Inefficient
+- REQUIREMENTS.md checkboxes for RSLT-01/02/03 not updated despite being implemented — discovered during milestone completion
+- Zustand store version bumped 6 times across the milestone (v2→v7) — could consolidate if phases were planned as a single atomic migration
+- Phase 91 had 3 plans when 2 would have sufficed — Fraunces removal was a small cleanup that didn't warrant its own plan
+
+### Patterns Established
+- Head-to-head matchup pattern: pairwise comparison → win counts → derived ranking (no manual drag)
+- completedMatchupPairs as string[] not Set — Zustand/localStorage cannot serialize Set objects
+- Practice isolation pattern: practiceProgress at top-level store, practiceActions read from practiceProgress directly (not getCurrentIssueProgress)
+- effectiveQuotesToEvaluate derived at render time — store mutation avoided so clearing filter restores full quote set
+- MegaParticles inlined per-component with CSS custom props (--dx/--dy) for burst direction
+- CoachMark with allowSpotlightInteraction for interactive spotlights (user can swipe through the highlight)
+- AnimatePresence mode='wait' with key={phase} for clean phase-switch transitions
+
+### Key Lessons
+1. Urgent phase insertions (87.1) work well when dependencies are clean — matchup flow replaced drag-to-rank without ripple effects because store actions were additive, not destructive
+2. Human checkpoints are most valuable on visual redesign phases — AI-generated layouts need user judgment on information density and visual hierarchy
+3. Store version migrations should use hardcoded initial state (not transform) — guarantees clean slate regardless of source version
+4. Pairwise comparison is a superior ranking UX for <10 items — users make confident binary choices; explicit ranking is cognitively harder
+5. Client-side filtering is the right default when data scale is small — avoids backend coupling for what is essentially a view filter
+6. useCallback dependency arrays must include tour state — stale closures silently skip tour advancement on button press
+
+### Cost Observations
+- Model mix: ~70% sonnet, ~30% opus
+- Sessions: ~8 (planning + one per phase + completion)
+- Notable: 7 phases in 3 days — fastest per-phase velocity; urgent 87.1 insertion handled cleanly
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -343,6 +394,7 @@
 | v2026.3.3 | 5 | 6 | DB audit gating pattern; government_bodies enrichment; smallest plan count milestone |
 | v2026.3.4 | 6 | 13 | First multi-repo cross-app milestone; parallel phase design; verdict fragment bridge pattern |
 | v2026.3.5 | 3 | 5 | Fastest milestone (1 day); auth-aware header wiring across 3 apps; Layout wrapper pattern |
+| v2026.3.6 | 7 | 15 | Full UX redesign milestone; urgent phase insertion (87.1); pairwise matchup pattern; store versioning discipline |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -366,3 +418,7 @@
 18. `useRef(false)` sync guard prevents double-POSTs in React strict mode double-invoke (v2026.3.4)
 19. Auth-aware headers are pure UI wiring when auth context already exists — no new backend needed (v2026.3.5)
 20. Human verification catches real integration bugs that automated tests miss — returnTo URLs, cross-origin cookies (v2026.3.5)
+21. Pairwise comparison is superior to drag-to-rank for <10 items — binary choices are cognitively simpler (v2026.3.6)
+22. Urgent phase insertions work cleanly when store actions are additive, not destructive (v2026.3.6)
+23. Practice isolation pattern: separate store namespace prevents practice data from polluting real verdict payloads (v2026.3.6)
+24. Client-side filtering is the right default at small data scale — avoids backend coupling for view-level concerns (v2026.3.6)

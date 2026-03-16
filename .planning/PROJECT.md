@@ -168,9 +168,18 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Auth-aware SiteHeader in ReadRank (username/logout/sign-in via useAuthState hook) — v2026.3.5
 - ✓ Cross-app login redirect with returnTo query param (Essentials/ReadRank → Compass) — v2026.3.5
 
+- ✓ Unified evaluate+rank flow with head-to-head matchup ranking (no separate ranking screen, no drag-to-rank) — v2026.3.6
+- ✓ Practice round onboarding with pizza-topping quotes and emoji character avatars — v2026.3.6
+- ✓ Coach mark spotlight tour on first real issue (swipe area + rank panel) — v2026.3.6
+- ✓ Location-based filtering via Google Maps Places autocomplete with Essentials cross-app ?address= context — v2026.3.6
+- ✓ Results page redesign with particle effects, simplified cards, View on Essentials primary CTA — v2026.3.6
+- ✓ Fraunces removed, Manrope throughout, AnimatePresence page transitions, prefers-reduced-motion — v2026.3.6
+- ✓ Chrome cleanup: ProgressHeader, AnimationOptionsPage, BadgeIcons, RankingPhase, CollectionPhase deleted — v2026.3.6
+- ✓ Zustand store migrated through versions 2-7 with clean-reset for returning users — v2026.3.6
+
 ### Active
 
-(See REQUIREMENTS.md for v2026.3.6 Read & Rank Redesign)
+(No active milestone — use `/gsd:new-milestone` to start next)
 
 ### Future
 
@@ -181,22 +190,9 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Current Milestone: v2026.3.6 Read & Rank Redesign
+## Last Milestone: v2026.3.6 Read & Rank Redesign (Shipped 2026-03-16)
 
-**Goal:** Overhaul Read & Rank with unified evaluate+rank flow, practice round onboarding, location-based quote filtering, and polished visual design.
-
-**Target features:**
-- Unified evaluate+rank flow (no separate ranking phase)
-- Practice round with fun non-political quotes (pizza toppings)
-- Coach marks on first real issue
-- Location-based quote filtering (address input + Essentials context)
-- Results page with dramatic reveal and cleaner cards
-- Visual redesign from scratch
-- Chrome cleanup (remove ProgressHeader, AnimationOptionsPage)
-
-## Last Milestone: v2026.3.5 Unified Navigation Header (Shipped 2026-03-13)
-
-**Delivered:** Consistent auth-aware navigation header across all three EV apps — users see the same branded SiteHeader everywhere with live login state, powered by ev-ui v0.1.49 with production .empowered.vote URLs and cross-app returnTo redirect flow. 8/8 requirements satisfied.
+**Delivered:** Read & Rank overhauled with unified evaluate+rank flow, head-to-head matchup comparisons, pizza-topping practice round, coach mark tours, Google Maps location-based filtering with Essentials cross-app context, and full visual redesign with particle effects and Manrope typography. 25/25 requirements satisfied.
 
 ### Out of Scope
 
@@ -221,11 +217,11 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.5 across 3 repos:
-- **ev-ui** (React/tsup): ~4K LOC — v0.1.49 with SiteHeader defaultNavItems updated to production .empowered.vote URLs, profileMenu prop support
-- **essentials** (React 19): ~4.3K LOC — Layout.jsx wrapping all 5 pages with auth-aware SiteHeader, CompassContext logout(), AuthIndicator removed
-- **EV-readrank** (React 19 + TypeScript): useAuthState hook extended with userName/logout(), profileMenu wired into SiteHeader, Vite proxy for local dev auth
+Shipped v2026.3.6 across 2 repos:
+- **EV-readrank** (React 19 + TypeScript): ~5,990 LOC — complete UX redesign with head-to-head matchups, practice round, coach marks, location filtering, results polish, Zustand store v7
+- **essentials** (React 19): ~4.3K LOC — dynamic Read & Rank nav link with ?address= context passthrough
 - **CompassV2** (React 19): ~14.5K LOC — unchanged this milestone
+- **ev-ui** (React/tsup): ~4K LOC — unchanged this milestone
 - **EV-Backend** (Go 1.24): ~13K LOC — unchanged this milestone
 - **Python scripts**: ~17K LOC — unchanged
 
@@ -241,4 +237,4 @@ ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and E
 - **Team**: 2-3 devs
 
 ---
-*Last updated: 2026-03-14 after v2026.3.6 milestone start*
+*Last updated: 2026-03-16 after v2026.3.6 milestone*

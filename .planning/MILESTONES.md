@@ -1,5 +1,36 @@
 # Milestones
 
+## v2026.3.6 Read & Rank Redesign (Shipped: 2026-03-16)
+
+**Phases completed:** 7 phases, 15 plans
+**Timeline:** 3 days (2026-03-14 — 2026-03-16)
+**Requirements:** 25/25 satisfied
+**Repos:** EV-readrank, essentials
+
+**Delivered:** Read & Rank overhauled with unified evaluate+rank flow replacing the separate ranking screen, head-to-head matchup comparisons replacing drag-to-rank, pizza-topping practice round for new users, coach mark tours, Google Maps location-based filtering with Essentials cross-app context, and a full visual redesign with particle effects and Manrope typography.
+
+**Key accomplishments:**
+1. Unified evaluate+rank flow — quotes evaluated and ranked inline via head-to-head matchup comparisons; ranking emerges from pairwise winner picks with animated leaderboard sidebar, not manual drag-to-rank
+2. Practice round onboarding — first-time users warm up with pizza-topping quotes featuring emoji character avatars before encountering political content; practice state fully isolated from real issue verdicts
+3. Coach mark tour — 2-step spotlight overlay on first real issue highlights swipe area and rank panel; permanently dismissed via Zustand store flag after completion
+4. Location-based filtering — Google Maps Places autocomplete on hub page filters issues to user's local representatives (2+ quote threshold); Essentials cross-app context via ?address= query param auto-applies filter
+5. Results page redesign — simplified cards with muted-blue rank bar, MegaParticles entry effects, "See Who Said It" reveal button, View on Essentials as primary CTA with politician photo and inline link
+6. Full visual cohesion — Fraunces serif font removed entirely, Manrope sans-serif throughout with consistent heading weight hierarchy (800/700/600), AnimatePresence page transitions, prefers-reduced-motion support
+7. Chrome cleanup — ProgressHeader, AnimationOptionsPage, BadgeIcons, RankingPhase, CollectionPhase deleted; Zustand store migrated through versions 2-7 with clean-reset migration for returning users
+
+**Tech debt carried forward:**
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `fetchPoliticiansOnce` and `fetchPoliticiansProgressive` deprecated but not deleted (carried from v1.9)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+- Topic tags placeholder div in LegislativeInlineSummary (carried from v2026.3)
+- ev-ui ships no .d.ts files — profileMenu prop uses spread cast in ReadRank (carried from v2026.3.5)
+- Orphaned AuthIndicator.jsx in essentials (carried from v2026.3.5)
+- 12 politicians have no Read & Rank quotes (carried from v1.8)
+
+---
+
 ## v2026.3.5 Unified Navigation Header (Shipped: 2026-03-13)
 
 **Phases completed:** 3 phases, 5 plans
