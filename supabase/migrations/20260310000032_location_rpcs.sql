@@ -132,8 +132,9 @@ BEGIN
 
   -- Build geometry point: ST_MakePoint(longitude, latitude) — X=lng, Y=lat per PostGIS convention.
   -- LONGITUDE FIRST. SRID 4326 (WGS84) must match district_boundaries.geom SRID.
-  -- extensions. prefix required; PostGIS installs into extensions schema in Supabase.
-  v_point := extensions.ST_SetSRID(extensions.ST_MakePoint(v_lng, v_lat), 4326);
+  -- public. prefix: PostGIS installs into public schema on this Supabase instance.
+  -- (pgcrypto is in extensions schema, but PostGIS is in public.)
+  v_point := public.ST_SetSRID(public.ST_MakePoint(v_lng, v_lat), 4326);
 
   -- ST_Covers preferred over ST_Contains: handles boundary-coincident points correctly
   -- (ST_Contains excludes points exactly on the boundary line; ST_Covers includes them).
@@ -149,7 +150,7 @@ BEGIN
   )
   INTO v_result
   FROM inform.district_boundaries
-  WHERE extensions.ST_Covers(geom, v_point);
+  WHERE public.ST_Covers(geom, v_point);
 
   RETURN v_result;
 END;
