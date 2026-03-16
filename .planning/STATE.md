@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: planning
-stopped_at: "Completed 89-coach-marks-02-PLAN.md — checkpoint:human-verify pending"
-last_updated: "2026-03-15T23:11:12.045Z"
+stopped_at: Completed 89-coach-marks-02-PLAN.md — coach mark tour human-verified and complete
+last_updated: "2026-03-15T23:50:17.208Z"
 last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
 progress:
   total_phases: 7
@@ -79,6 +79,8 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 - [Phase 89-coach-marks]: CoachMark stays in EV-readrank/src/components/, not published to ev-ui — single consumer, cross-repo overhead unjustified
 - [Phase 89-coach-marks]: Tour state (tourStep) is local to EvaluationPhase not the store — ephemeral per-session, only coachMarksCompleted needs Zustand persistence
 - [Phase 89-coach-marks]: Step 1 uses allowSpotlightInteraction=true so users can swipe the card through the spotlight — proves the interaction works
+- [Phase 89-coach-marks]: swipeAreaRef wraps QuoteCard + ActionButtons div so step 1 spotlight covers the full interactive zone including agree/disagree buttons
+- [Phase 89-coach-marks]: tourStep included in handleButtonSwipe useCallback dependency array to prevent stale closure silently skipping tour advancement on button press
 
 ### Pending Todos
 
@@ -128,6 +130,6 @@ Progress: [░░░░░░░░░░] 0% (v2026.3.6 phases)
 
 ## Session Continuity
 
-Last session: 2026-03-15T23:11:12.043Z
-Stopped at: Completed 89-coach-marks-02-PLAN.md — checkpoint:human-verify pending
+Last session: 2026-03-15T23:50:13.826Z
+Stopped at: Completed 89-coach-marks-02-PLAN.md — coach mark tour human-verified and complete
 Resume file: None

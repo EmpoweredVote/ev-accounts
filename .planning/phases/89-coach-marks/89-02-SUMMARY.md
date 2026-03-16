@@ -44,6 +44,8 @@ key-decisions:
   - "Step 2 deferred until rankedQuotes.length >= 1 — guarantees sidebar has content before spotlighting it"
   - "handleCardAgree/handleCardDisagree wrap store actions to intercept tour step advancement from drag swipes; handleButtonSwipe also advances tour for keyboard/button path"
   - "Mobile step 2: auto-open InlineRankPanel via useEffect when tourStep===2 and rankedQuotes.length>=1"
+  - "swipeAreaRef wraps QuoteCard + ActionButtons (not just the card) — ensures agree/disagree buttons are inside the step 1 spotlight zone (checkpoint fix)"
+  - "tourStep included in handleButtonSwipe dependency array — stale closure would silently skip tour advancement when buttons are pressed (checkpoint fix)"
 
 patterns-established:
   - "forwardRef conversion: keep same component name, add displayName, ref on outermost element"
@@ -52,7 +54,7 @@ patterns-established:
 requirements-completed: [ONBD-05, ONBD-06]
 
 # Metrics
-duration: 3min
+duration: 45min
 completed: 2026-03-15
 ---
 
@@ -62,17 +64,18 @@ completed: 2026-03-15
 
 ## Performance
 
-- **Duration:** 3 min
-- **Started:** 2026-03-15T23:06:57Z
-- **Completed:** 2026-03-15T23:10:00Z
-- **Tasks:** 2 of 2 completed (Task 3 is human-verify checkpoint)
+- **Duration:** ~45 min
+- **Started:** 2026-03-15T22:30:00Z
+- **Completed:** 2026-03-15T23:15:00Z
+- **Tasks:** 3 of 3 completed (including human-verify checkpoint)
 - **Files modified:** 5
 
 ## Accomplishments
 - QuoteCard, RankedListSidebar, and InlineRankPanel all converted to React.forwardRef with displayName, exposing root DOM nodes for CoachMark spotlight targeting
 - 2-step tour wired into EvaluationPhase: step 1 appears after 500ms with interactive spotlight on swipe card; step 2 spotlights rank panel (sidebar desktop / InlineRankPanel mobile) after first agree
 - All dismissal paths (Got it, Skip All, Escape, Next) call completeCoachMarks() for permanent one-time-only behavior
-- Production build passes with zero TypeScript errors
+- Checkpoint fixes applied: step 1 spotlight expanded to include action buttons (swipeAreaRef), handleButtonSwipe stale closure fixed with tourStep in deps
+- Production build passes with zero TypeScript errors (480 modules)
 
 ## Task Commits
 
@@ -81,12 +84,13 @@ Each task was committed atomically:
 1. **Task 1: Add forwardRef to QuoteCard, RankedListSidebar, and InlineRankPanel** - `2a3c0ff` (feat)
 2. **Task 2: Wire 2-step coach mark tour into EvaluationPhase** - `1a13ecb` (feat)
 3. **Auto-fix: CoachMark JSX.Element return type** - `6ab8600` (fix)
+4. **Checkpoint fixes: expand spotlight + fix handleButtonSwipe deps** - `2d23af7` (fix)
 
 ## Files Created/Modified
 - `EV-readrank/src/components/QuoteCard.tsx` - Converted to React.forwardRef<HTMLDivElement, QuoteCardProps>; ref on motion.div root
 - `EV-readrank/src/components/AgreedQuotesSidebar.tsx` - Converted RankedListSidebar to React.forwardRef<HTMLDivElement>; ref on outer container div
 - `EV-readrank/src/components/InlineRankPanel.tsx` - Converted to React.forwardRef<HTMLDivElement, InlineRankPanelProps>; ref on outer div
-- `EV-readrank/src/components/EvaluationPhase.tsx` - Full tour orchestration: CoachMark import, store destructuring, tourStep state, 3 refs, 2 useEffects, 4 handlers, updated QuoteCard/Sidebar/InlineRankPanel JSX, coachMarkOverlay
+- `EV-readrank/src/components/EvaluationPhase.tsx` - Full tour orchestration: CoachMark import, store destructuring, tourStep state, swipeAreaRef wrapping card+buttons, 3 refs, 2 useEffects, 4 handlers, updated QuoteCard/Sidebar/InlineRankPanel JSX, coachMarkOverlay; checkpoint fixes: expanded spotlight + tourStep dep fix
 - `EV-readrank/src/components/CoachMark.tsx` - Auto-fix: Caret return type JSX.Element → React.ReactElement
 
 ## Decisions Made
@@ -94,6 +98,8 @@ Each task was committed atomically:
 - Step 1 uses allowSpotlightInteraction=true so users can actually swipe the card through the spotlight (proves the interaction)
 - Both drag swipes (handleCardAgree/handleCardDisagree) and button/keyboard swipes (handleButtonSwipe) advance the tour step to ensure consistent behavior regardless of input method
 - Mobile step 2 auto-opens InlineRankPanel via useEffect when tourStep transitions to 2
+- swipeAreaRef wraps QuoteCard + ActionButtons div so step 1 spotlight covers the full interactive zone (user-confirmed fix at checkpoint)
+- tourStep in handleButtonSwipe dependency array prevents stale closure silently skipping tour advancement (user-confirmed fix at checkpoint)
 
 ## Deviations from Plan
 
@@ -109,8 +115,24 @@ Each task was committed atomically:
 
 ---
 
-**Total deviations:** 1 auto-fixed (1 blocking build error)
-**Impact on plan:** Fix was necessary for production build to succeed. The issue was in Plan 01's CoachMark.tsx output — not introduced by Plan 02 changes.
+**2. [Checkpoint fix] Expanded step 1 spotlight to include action buttons**
+- **Found during:** Task 3 (human-verify checkpoint)
+- **Issue:** swipeAreaRef only targeted the QuoteCard element, leaving the agree/disagree buttons below it outside the spotlight zone
+- **Fix:** Moved swipeAreaRef to the wrapper div containing both QuoteCard and ActionButtons
+- **Files modified:** `EV-readrank/src/components/EvaluationPhase.tsx`
+- **Committed in:** `2d23af7`
+
+**3. [Checkpoint fix] Fixed handleButtonSwipe stale closure on tourStep**
+- **Found during:** Task 3 (human-verify checkpoint)
+- **Issue:** tourStep was missing from handleButtonSwipe's useCallback dependency array — stale closure captured null on first render, so button presses would not advance tour from step 1 to step 2
+- **Fix:** Added tourStep to dependency array for handleButtonSwipe
+- **Files modified:** `EV-readrank/src/components/EvaluationPhase.tsx`
+- **Committed in:** `2d23af7`
+
+---
+
+**Total deviations:** 3 (1 auto-fixed blocking build error, 2 checkpoint-confirmed UX fixes)
+**Impact on plan:** All fixes necessary for correct behavior. No scope creep.
 
 ## Issues Encountered
 - `npx tsc --noEmit` passed cleanly (isolated tsconfig), but `npm run build` (which uses `tsc -b`) caught the JSX.Element error in CoachMark.tsx — the `-b` flag uses a different tsconfig strictness. Fixed immediately per Rule 3.
@@ -119,9 +141,10 @@ Each task was committed atomically:
 None - no external service configuration required.
 
 ## Next Phase Readiness
-- Coach mark tour is fully wired and ready for human verification (Task 3 checkpoint)
-- After human verification, Phase 89 is complete
+- Coach mark tour is fully functional, human-verified, and permanently dismissible
+- Phase 89 is complete
 - Phase 90 (location filter) can begin without coach mark dependencies
+- Pre-Phase-90 reminder: confirm CORS on `POST /essentials/politicians/search` allows `readrank.empowered.vote` and add `VITE_GOOGLE_MAPS_API_KEY` to Cloudflare Pages env
 
 ---
 *Phase: 89-coach-marks*
