@@ -23,42 +23,48 @@ interface MeResponse {
   connected_profile?: MeConnectedProfile;
 }
 
-// TODO: Replace with actual production URLs
 const FEATURES = [
   {
     name: 'Civic Trivia Championships',
     abbr: 'CTC',
     description: 'Test your knowledge of where politicians really stand on the issues.',
     color: 'bg-ev-teal',
-    href: 'https://choose-the-correct.empoweredvote.com',
+    href: 'https://ctc.empowered.vote',
   },
   {
     name: 'Validation Quests',
     abbr: 'VQ',
     description: 'Help verify politician stances and earn Red Gems for accuracy.',
     color: 'bg-ev-red',
-    href: 'https://validation-quests.empoweredvote.com',
+    href: 'https://quests.empowered.vote',
   },
   {
     name: 'Essentials',
     abbr: 'ESS',
     description: 'See where your representatives stand on the issues that matter to you.',
     color: 'bg-ev-yellow',
-    href: 'https://essentials.empoweredvote.com',
+    href: 'https://essentials.empowered.vote',
   },
   {
     name: 'Read & Rank',
     abbr: 'R&R',
     description: 'Read real legislation and rank it — your opinion shapes the civic conversation.',
     color: 'bg-ev-teal-light',
-    href: 'https://read-and-rank.empoweredvote.com',
+    href: 'https://readrank.empowered.vote',
+  },
+  {
+    name: 'Empowered Compass',
+    abbr: 'EC',
+    description: 'See how your values align with politicians and candidates on the issues.',
+    color: 'bg-ev-yellow',
+    href: 'https://compass.empowered.vote',
   },
   {
     name: 'Treasury Tracker',
     abbr: 'TT',
     description: 'Follow the money — see how public funds are allocated and spent.',
     color: 'bg-gray-700',
-    href: 'https://treasury-tracker.empoweredvote.com',
+    href: 'https://treasurytracker.netlify.app/',
   },
 ] as const;
 
