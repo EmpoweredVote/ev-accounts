@@ -41,14 +41,14 @@ const FEATURES = [
   {
     name: 'Essentials',
     abbr: 'ESS',
-    description: 'See where your representatives stand on the issues that matter to you.',
+    description: 'Find out who represents you.',
     color: 'bg-ev-yellow',
     href: 'https://essentials.empowered.vote',
   },
   {
     name: 'Read & Rank',
     abbr: 'R&R',
-    description: 'Read real legislation and rank it — your opinion shapes the civic conversation.',
+    description: "It's like a blind taste test, where we put your opinion above either political party.",
     color: 'bg-ev-teal-light',
     href: 'https://readrank.empowered.vote',
   },
