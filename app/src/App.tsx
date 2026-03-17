@@ -1,8 +1,11 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AuthGuard } from './components/AuthGuard';
+import { OnboardingGuard } from './components/OnboardingGuard';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
+import OnboardingPage from './pages/onboarding/OnboardingPage';
+import UpdateLocationPage from './pages/settings/UpdateLocationPage';
 import { useAuthStore, getStoredToken, User } from './store/authStore';
 import { apiFetch } from './lib/api';
 
@@ -43,7 +46,6 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Keep stored token in sync if it changes (e.g. token refresh later)
   useEffect(() => {
     if (accessToken) {
       localStorage.setItem('ev_token', accessToken);
@@ -54,8 +56,18 @@ function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
 
+      {/* Authenticated */}
       <Route element={<AuthGuard />}>
-        <Route path="/" element={<DashboardPage />} />
+
+        {/* Onboarding — accessible to connected users regardless of onboarding state */}
+        <Route path="/onboarding" element={<OnboardingPage />} />
+
+        {/* Requires completed onboarding for connected/empowered users */}
+        <Route element={<OnboardingGuard />}>
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/settings/location" element={<UpdateLocationPage />} />
+        </Route>
+
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />
