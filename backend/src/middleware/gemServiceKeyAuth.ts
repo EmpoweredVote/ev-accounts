@@ -45,11 +45,10 @@ if (env.GEMS_SERVICE_KEYS) {
  * contains the list of gem types this key is authorized to award.
  */
 export function requireGemServiceKey(req: Request, res: Response, next: NextFunction): void {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader?.startsWith('Bearer ') ? authHeader.slice(7) : null;
+  const token = req.headers['x-service-key'] as string | undefined;
 
   if (!token || !GEM_SERVICE_KEY_MAP[token]) {
-    res.status(401).json({ error: 'Missing or invalid service key' });
+    res.status(401).json({ error: 'Missing or invalid X-Service-Key' });
     return;
   }
 
