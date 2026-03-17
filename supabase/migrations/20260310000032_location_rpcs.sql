@@ -142,11 +142,16 @@ BEGIN
   -- MAX(geoid) FILTER pattern aggregates all matching districts per type in a single scan.
   -- Raw coordinates (v_lat, v_lng) are never included in the return value.
   SELECT jsonb_build_object(
-    'congressional',   MAX(geoid) FILTER (WHERE district_type = 'congressional'),
-    'state_senate',    MAX(geoid) FILTER (WHERE district_type = 'state_senate'),
-    'state_house',     MAX(geoid) FILTER (WHERE district_type = 'state_house'),
-    'county',          MAX(geoid) FILTER (WHERE district_type = 'county'),
-    'school_district', MAX(geoid) FILTER (WHERE district_type = 'school_district')
+    'congressional',        MAX(geoid) FILTER (WHERE district_type = 'congressional'),
+    'congressional_name',   MAX(name)  FILTER (WHERE district_type = 'congressional'),
+    'state_senate',         MAX(geoid) FILTER (WHERE district_type = 'state_senate'),
+    'state_senate_name',    MAX(name)  FILTER (WHERE district_type = 'state_senate'),
+    'state_house',          MAX(geoid) FILTER (WHERE district_type = 'state_house'),
+    'state_house_name',     MAX(name)  FILTER (WHERE district_type = 'state_house'),
+    'county',               MAX(geoid) FILTER (WHERE district_type = 'county'),
+    'county_name',          MAX(name)  FILTER (WHERE district_type = 'county'),
+    'school_district',      MAX(geoid) FILTER (WHERE district_type = 'school_district'),
+    'school_district_name', MAX(name)  FILTER (WHERE district_type = 'school_district')
   )
   INTO v_result
   FROM inform.district_boundaries
