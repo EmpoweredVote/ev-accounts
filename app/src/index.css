@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Empowered Vote brand colors */
+  --color-ev-red: #FF5740;        /* Empower features */
+  --color-ev-teal: #00657C;       /* Connect (dark / primary) */
+  --color-ev-teal-light: #59B0C4; /* Connect (light mode / resonant votes) */
+  --color-ev-yellow: #FED12E;     /* Inform features and Gems */
+  --color-ev-black: #1c1c1c;
+}
