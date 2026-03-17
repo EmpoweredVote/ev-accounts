@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.4 — Phase 30: Profile Hub UI
+**Current focus:** v1.4 — Phase 29: Admin Controls & Integration Verification (not yet started)
 
 ## Current Position
 
-Phase: 30 of 30 (Profile Hub UI)
-Plan: 1 of 2 in current phase
-Status: In progress
-Last activity: 2026-03-16 — Completed 30-01-PLAN.md
+Phase: 30 of 30 (Profile Hub UI) — COMPLETE
+Plan: 2 of 2
+Status: Complete
+Last activity: 2026-03-16 — Completed 30-02-PLAN.md (feature hub, Civic Spaces, dark mode, gem/XP fixes)
 
-Progress: [v1.3 shipped ✅] v1.4 in progress — Phase 30 plan 1/2 ████
+Progress: [v1.3 shipped ✅] v1.4 in progress — Phases 27, 28, 30 complete; Phase 29 not started ████████░░
 
 ## Performance Metrics
 
@@ -64,11 +64,10 @@ Recent decisions relevant to v1.4:
 
 ### Pending Todos
 
-- **Phase 29**: Confirm CTC service key is set in Render env before running integration smoke test
-- **Phase 30 plan 02**: Remaining Profile Hub UI work (plan 1 complete — VR display + location form shipped)
+- **Phase 29**: Admin VR editor UI + smoke test runbook — not started
 
 ## Session Continuity
 
 Last session: 2026-03-16
-Stopped at: Completed 30-01-PLAN.md — ProfilePage /account/me switch + VR display + location form
-Resume: Execute 30-02-PLAN.md (Phase 30: Profile Hub UI, plan 2 of 2)
+Stopped at: Completed Phase 30 — feature hub, Civic Spaces, dark mode, gem/XP pipeline fixes
+Resume: Phase 29 — Admin Controls & Integration Verification

@@ -133,8 +133,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 30-01-PLAN.md — Profile stats from /account/me (tier, level, XP, gems, VR) + location address form
-- [ ] 30-02-PLAN.md — Feature hub cards (CTC, VQ, Essentials, Read & Rank, Treasury Tracker)
+- [x] 30-01-PLAN.md — Profile stats from /account/me (tier, level, XP, gems, VR) + location address form
+- [x] 30-02-PLAN.md — Feature hub cards (CTC, VQ, Essentials, Read & Rank, Treasury Tracker)
 
 ## Progress
 
@@ -169,4 +169,4 @@ Plans:
 | 27. Verification Rating Schema | v1.4 | 1/1 | Complete | 2026-03-15 |
 | 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 29. Admin Controls & Integration Verification | v1.4 | 0/2 | Not started | — |
-| 30. Profile Hub UI | v1.4 | 0/2 | Not started | — |
+| 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
