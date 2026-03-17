@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
+import { useTheme } from '../hooks/useTheme';
 
 interface MeGems { yellow: number; blue: number; red: number; }
 interface MeXp { total: number; level: number; xp_in_level: number; xp_to_next_level: number; }
@@ -36,10 +37,10 @@ interface Jurisdiction {
 }
 
 const SLICE_LABEL_COLOR: Record<string, string> = {
-  'Civic Space':  'bg-ev-teal/10 text-ev-teal',
-  'Local Slice':  'bg-ev-yellow/20 text-yellow-700',
-  'State Slice':  'bg-ev-teal-light/20 text-teal-700',
-  'Federal Slice':'bg-ev-red/10 text-ev-red',
+  'Civic Space':   'bg-ev-teal/10 text-ev-teal',
+  'Local Slice':   'bg-ev-yellow/20 text-yellow-700 dark:text-yellow-400',
+  'State Slice':   'bg-ev-teal-light/20 text-teal-700 dark:text-teal-400',
+  'Federal Slice': 'bg-ev-red/10 text-ev-red',
 };
 
 function buildSlices(j: Jurisdiction): { label: string; name: string }[] {
@@ -104,7 +105,7 @@ const TIER_LABELS: Record<string, string> = {
 };
 
 const TIER_BADGE_CLASS: Record<string, string> = {
-  inform: 'bg-gray-100 text-gray-700',
+  inform: 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300',
   connected: 'bg-ev-teal/10 text-ev-teal',
   empowered: 'bg-ev-red/10 text-ev-red',
 };
@@ -121,15 +122,40 @@ function GemPip({
   return (
     <div className="flex items-center gap-1.5">
       <span className={`inline-block w-3 h-3 rounded-full ${color}`} />
-      <span className="text-sm text-gray-700 font-medium">{count}</span>
-      <span className="text-xs text-gray-400">{label}</span>
+      <span className="text-sm text-gray-700 dark:text-gray-200 font-medium">{count}</span>
+      <span className="text-xs text-gray-400 dark:text-gray-500">{label}</span>
     </div>
+  );
+}
+
+function SunIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5"/>
+      <line x1="12" y1="1" x2="12" y2="3"/>
+      <line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/>
+      <line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
   );
 }
 
 export default function ProfilePage() {
   const navigate = useNavigate();
   const { user, clearAuth } = useAuthStore();
+  const { isDark, toggle } = useTheme();
   const [profile, setProfile] = useState<MeResponse | null>(null);
   const [profileError, setProfileError] = useState(false);
 
@@ -201,27 +227,36 @@ export default function ProfilePage() {
   const initials = displayEmail.slice(0, 2).toUpperCase();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
       {/* Nav bar */}
-      <nav className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
-        <span className="font-semibold text-gray-900">Empowered Vote</span>
-        <button
-          onClick={handleSignOut}
-          className="text-sm text-gray-500 hover:text-gray-800 transition-colors"
-        >
-          Sign out
-        </button>
+      <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-6 py-3 flex items-center justify-between transition-colors duration-200">
+        <span className="font-semibold text-gray-900 dark:text-white">Empowered Vote</span>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={toggle}
+            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            className="text-gray-400 dark:text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors p-1 rounded-md"
+          >
+            {isDark ? <SunIcon /> : <MoonIcon />}
+          </button>
+          <button
+            onClick={handleSignOut}
+            className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors"
+          >
+            Sign out
+          </button>
+        </div>
       </nav>
 
       <div className="max-w-2xl mx-auto px-4 py-10">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-6 transition-colors duration-200">
           {/* Avatar + email */}
           <div className="flex items-center gap-4 mb-6">
             <div className="w-14 h-14 rounded-full bg-ev-teal flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
               {initials}
             </div>
             <div className="min-w-0">
-              <p className="text-sm text-gray-500 truncate">{displayEmail}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 truncate">{displayEmail}</p>
               <span
                 className={`inline-block mt-1 px-2 py-0.5 rounded-full text-xs font-semibold ${TIER_BADGE_CLASS[displayTier]}`}
               >
@@ -249,24 +284,24 @@ export default function ProfilePage() {
               {profile.connected_profile != null && (
                 <div className="flex items-center gap-4">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-900">
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">
                       {profile.connected_profile.xp.level}
                     </p>
-                    <p className="text-xs text-gray-500">Level</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Level</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-gray-900">
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">
                       {profile.connected_profile.xp.total.toLocaleString()}
                     </p>
-                    <p className="text-xs text-gray-500">XP</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">XP</p>
                   </div>
                 </div>
               )}
 
               {/* Gems — Connected and above */}
               {profile.connected_profile != null && (
-                <div className="pt-3 border-t border-gray-100">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
+                  <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                     Gems
                   </p>
                   <div className="flex gap-4">
@@ -291,15 +326,15 @@ export default function ProfilePage() {
 
               {/* Verification Rating — Connected and above */}
               {profile.connected_profile != null && (
-                <div className="pt-3 border-t border-gray-100">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
+                  <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                     Verification Rating
                   </p>
                   <div className="flex items-baseline gap-1.5">
-                    <p className="text-2xl font-bold text-gray-900">
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">
                       {profile.connected_profile.verification_rating}
                     </p>
-                    <span className="text-sm text-gray-400">/ 150</span>
+                    <span className="text-sm text-gray-400 dark:text-gray-500">/ 150</span>
                   </div>
                   {profile.connected_profile.vq_hold_active && (
                     <p className="text-xs text-ev-red mt-1">VQ hold active</p>
@@ -309,15 +344,15 @@ export default function ProfilePage() {
 
               {/* Location + Civic Spaces — Connected and above */}
               {profile.connected_profile != null && (
-                <div className="pt-4 border-t border-gray-100 space-y-4">
+                <div className="pt-4 border-t border-gray-100 dark:border-gray-800 space-y-4">
                   {/* Address display */}
                   {submittedAddress && (
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
                         Address
                       </p>
                       <div className="flex items-center gap-2">
-                        <span className="text-sm text-gray-700 font-mono">
+                        <span className="text-sm text-gray-700 dark:text-gray-300 font-mono">
                           {addressVisible ? submittedAddress : '••••••••••••••••'}
                         </span>
                         <button
@@ -328,7 +363,7 @@ export default function ProfilePage() {
                           {addressVisible ? 'Hide' : 'Show'}
                         </button>
                       </div>
-                      <p className="text-xs text-gray-400 mt-0.5">
+                      <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">
                         Address not stored — only encrypted coordinates are saved.
                       </p>
                     </div>
@@ -337,7 +372,7 @@ export default function ProfilePage() {
                   {/* Civic Spaces */}
                   {jurisdiction && buildSlices(jurisdiction).length > 0 && (
                     <div>
-                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                      <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                         Your Civic Spaces
                       </p>
                       <div className="space-y-1.5">
@@ -346,7 +381,7 @@ export default function ProfilePage() {
                             <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${SLICE_LABEL_COLOR[slice.label]}`}>
                               {slice.label}
                             </span>
-                            <span className="text-sm text-gray-700">{slice.name}</span>
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{slice.name}</span>
                           </div>
                         ))}
                       </div>
@@ -355,7 +390,7 @@ export default function ProfilePage() {
 
                   {/* Location form */}
                   <div>
-                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                    <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-2">
                       {profile.location_consent ? 'Update Location' : 'Location'}
                     </p>
                     <form onSubmit={handleSetLocation} className="space-y-2">
@@ -364,7 +399,7 @@ export default function ProfilePage() {
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         placeholder="Enter your address"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                       />
                       <button
                         type="submit"
@@ -375,7 +410,7 @@ export default function ProfilePage() {
                       </button>
                     </form>
                     {locationSuccess && (
-                      <p className="text-sm text-green-600 mt-2">Location updated successfully</p>
+                      <p className="text-sm text-green-600 dark:text-green-400 mt-2">Location updated successfully</p>
                     )}
                     {locationError && (
                       <p className="text-sm text-ev-red mt-2">{locationError}</p>
@@ -387,7 +422,7 @@ export default function ProfilePage() {
           )}
 
           {profileError && (
-            <p className="text-sm text-gray-400 italic">
+            <p className="text-sm text-gray-400 dark:text-gray-500 italic">
               Could not load profile details. Try refreshing.
             </p>
           )}
@@ -395,10 +430,10 @@ export default function ProfilePage() {
 
         {/* Feature hub — visible to all tiers */}
         <div className="mt-8" data-testid="feature-hub">
-          <h2 className="text-lg font-semibold text-gray-900 mb-1">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
             Empowered Vote Features
           </h2>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
             Explore freely. Connect to save your progress.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -408,13 +443,13 @@ export default function ProfilePage() {
                 href={feature.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow block"
+                className="bg-white dark:bg-gray-900 rounded-lg shadow-sm border border-gray-200 dark:border-gray-800 p-4 hover:shadow-md dark:hover:border-gray-700 transition-all block"
               >
                 <div className="flex items-center gap-2">
                   <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${feature.color}`} />
-                  <span className="text-sm font-semibold text-gray-900">{feature.name}</span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{feature.name}</span>
                 </div>
-                <p className="text-xs text-gray-500 mt-1.5 leading-relaxed">
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed">
                   {feature.description}
                 </p>
                 <p className="text-xs text-ev-teal font-medium mt-2">Explore &rarr;</p>
