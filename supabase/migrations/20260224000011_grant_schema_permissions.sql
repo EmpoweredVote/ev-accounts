@@ -29,6 +29,7 @@ GRANT SELECT, INSERT, DELETE ON connect.account_follows TO authenticated;
 -- gem_transactions: authenticated can SELECT (RLS: owner-only)
 -- No INSERT for non-service-role: writes go through SECURITY DEFINER RPC functions
 GRANT SELECT ON connect.gem_transactions TO authenticated;
+GRANT SELECT ON connect.gem_transactions TO service_role;
 
 -- -------------------------------------------------------------------------
 -- empower schema

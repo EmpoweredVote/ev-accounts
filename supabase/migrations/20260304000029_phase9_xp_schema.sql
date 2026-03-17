@@ -142,6 +142,7 @@ CREATE POLICY "xp_transactions: owner read"
 
 GRANT SELECT ON connect.xp_transactions TO authenticated;
 GRANT SELECT ON connect.xp_transactions TO anon;
+GRANT SELECT ON connect.xp_transactions TO service_role;
 
 
 COMMIT;
