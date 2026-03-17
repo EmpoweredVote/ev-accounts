@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
-import { useAuthStore, User } from '../store/authStore';
+import { useAuthStore, type User } from '../store/authStore';
 
 interface LoginResponse {
-  token: string;
-  user: {
-    id: string;
-    email: string;
-    tier: 'inform' | 'connected' | 'empowered';
-    display_name: string | null;
-    completed_onboarding: boolean;
-    location_consent: boolean;
-  };
+  access_token: string;
+}
+
+interface MeResponse {
+  id: string;
+  email: string;
+  tier: 'inform' | 'connected' | 'empowered';
+  display_name: string | null;
+  completed_onboarding: boolean;
+  location_consent: boolean;
 }
 
 export default function LoginPage() {
@@ -28,19 +29,22 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      const res = await apiFetch<LoginResponse>('/auth/login', {
+      const { access_token } = await apiFetch<LoginResponse>('/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       });
+      // Temporarily set token so the next apiFetch picks it up
+      useAuthStore.setState({ accessToken: access_token });
+      const me = await apiFetch<MeResponse>('/account/me');
       const user: User = {
-        id: res.user.id,
-        email: res.user.email,
-        tier: res.user.tier,
-        displayName: res.user.display_name,
-        completedOnboarding: res.user.completed_onboarding,
-        locationConsent: res.user.location_consent,
+        id: me.id,
+        email: me.email,
+        tier: me.tier,
+        displayName: me.display_name,
+        completedOnboarding: me.completed_onboarding,
+        locationConsent: me.location_consent,
       };
-      setAuth(res.token, user);
+      setAuth(access_token, user);
       navigate('/');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Login failed');
