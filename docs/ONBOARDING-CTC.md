@@ -124,7 +124,7 @@ The `TRIVIA_SERVICE_KEY` is authorized for exactly one source: `'civic_trivia_ch
 async function awardGameXp(userId: string, gameId: string, score: number) {
   const xpAmount = Math.floor(score / 10); // your XP calculation
 
-  const res = await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
+  const res = await fetch(`${EMPOWERED_ACCOUNTS_API_URL}/api/xp/award`, {
     method: 'POST',
     headers: {
       'X-Service-Key': process.env.TRIVIA_SERVICE_KEY!,
@@ -172,7 +172,7 @@ await supabase.schema('connect').rpc('credit_gems', {
 
 **New pattern:**
 ```typescript
-await fetch(`${ACCOUNTS_URL}/api/gems/award`, {
+await fetch(`${EMPOWERED_ACCOUNTS_API_URL}/api/gems/award`, {
   method: 'POST',
   headers: {
     'X-Service-Key': process.env.TRIVIA_GEMS_KEY!,
@@ -346,7 +346,8 @@ Always include `idempotency_key` on award calls. 5xx responses are safe to retry
 
 | Variable | Purpose | Value Source |
 |----------|---------|--------------|
-| `ACCOUNTS_URL` | Base URL for accounts API | `https://ev-accounts-api.onrender.com` |
+| `EMPOWERED_ACCOUNTS_URL` | Base URL for user-scoped calls (`GET /api/account/me`, etc.) | `https://ev-accounts-api.onrender.com` |
+| `EMPOWERED_ACCOUNTS_API_URL` | Base URL for service-key award calls (XP, gems) | `https://ev-accounts-api.onrender.com` |
 | `TRIVIA_SERVICE_KEY` | XP award auth | Chris provides; must match accounts API env |
 | `TRIVIA_GEMS_KEY` | Gem award auth | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` |
 
