@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.4 — Phase 29: Admin Controls & Integration Verification (not yet started)
+**Current focus:** v1.4 — ALL PHASES COMPLETE (27–30)
 
 ## Current Position
 
-Phase: 30 of 30 (Profile Hub UI) — COMPLETE
+Phase: 29 of 30 (Admin Controls & Integration Verification) — COMPLETE
 Plan: 2 of 2
 Status: Complete
-Last activity: 2026-03-16 — Completed 30-02-PLAN.md (feature hub, Civic Spaces, dark mode, gem/XP fixes)
+Last activity: 2026-03-17 — Live integration smoke tests passed (CTC XP ✅, VQ confirm-stance ✅); v1.4 fully shipped
 
-Progress: [v1.3 shipped ✅] v1.4 in progress — Phases 27, 28, 30 complete; Phase 29 not started ████████░░
+Progress: [v1.3 shipped ✅] [v1.4 shipped ✅] All phases 27–30 complete ██████████
 
 ## Performance Metrics
 
@@ -59,15 +59,15 @@ Recent decisions relevant to v1.4:
 
 ### Open Blockers
 
-- **CTC + VQ service key setup** — Chris needs to set matching key values in both partner app Render environments and the accounts API env before INTEG-01/02 can be verified
+- ~~**CTC + VQ service key setup**~~ — RESOLVED 2026-03-17. Both INTEG-01 (CTC) and INTEG-02 (VQ) live smoke tests passed.
 - **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md`
 
 ### Pending Todos
 
-- **Phase 29**: Admin VR editor UI + smoke test runbook — not started
+- **v1.4 milestone closure** — run `/gsd:audit-milestone` then `/gsd:complete-milestone` to archive v1.4 and prepare for v1.5
 
 ## Session Continuity
 
-Last session: 2026-03-16
-Stopped at: Completed Phase 30 — feature hub, Civic Spaces, dark mode, gem/XP pipeline fixes
-Resume: Phase 29 — Admin Controls & Integration Verification
+Last session: 2026-03-17
+Stopped at: v1.4 fully complete — Phase 29 live smoke tests passed, tracking files synced after computer reset
+Resume: v1.4 milestone closure → `/gsd:audit-milestone` then `/gsd:complete-milestone`

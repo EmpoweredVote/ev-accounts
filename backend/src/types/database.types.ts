@@ -147,14 +147,14 @@ export type Database = {
         Row: {
           created_at: string
           id: string
-          invite_code_id: string
+          invite_code_id: string | null
           invitee_id: string
           inviter_id: string
         }
         Insert: {
           created_at?: string
           id?: string
-          invite_code_id: string
+          invite_code_id?: string | null
           invitee_id: string
           inviter_id: string
         }

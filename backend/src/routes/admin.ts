@@ -174,6 +174,7 @@ router.post('/accounts/:userId/suspend', async (req, res) => {
     await logAdminAction(actorId(req), 'suspend_account', userId);
     res.json({ ok: true });
   } catch (err) {
+    console.error('[admin/suspend] error for userId', req.params.userId, ':', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
@@ -189,6 +190,7 @@ router.post('/accounts/:userId/unsuspend', async (req, res) => {
     await logAdminAction(actorId(req), 'unsuspend_account', userId);
     res.json({ ok: true });
   } catch (err) {
+    console.error('[admin/unsuspend] error for userId', req.params.userId, ':', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

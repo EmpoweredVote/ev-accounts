@@ -117,8 +117,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 29-01-PLAN.md — Admin VR editor: PATCH endpoint + AccountDetailPage VR controls
-- [ ] 29-02-PLAN.md — Smoke test runbook (SMOKE-TEST-INTEG.md) + ONBOARDING-VQ.md confirm-stance section
+- [x] 29-01-PLAN.md — Admin VR editor: PATCH endpoint + AccountDetailPage VR controls
+- [x] 29-02-PLAN.md — Smoke test runbook (SMOKE-TEST-INTEG.md) + ONBOARDING-VQ.md confirm-stance section
 
 #### Phase 30: Profile Hub UI
 
@@ -168,5 +168,5 @@ Plans:
 | 26. v1.3 Tech Debt Closure | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 27. Verification Rating Schema | v1.4 | 1/1 | Complete | 2026-03-15 |
 | 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
-| 29. Admin Controls & Integration Verification | v1.4 | 0/2 | Not started | — |
+| 29. Admin Controls & Integration Verification | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
