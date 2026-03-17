@@ -124,7 +124,7 @@ The `TRIVIA_SERVICE_KEY` is authorized for exactly one source: `'civic_trivia_ch
 async function awardGameXp(userId: string, gameId: string, score: number) {
   const xpAmount = Math.floor(score / 10); // your XP calculation
 
-  const res = await fetch(`${EMPOWERED_ACCOUNTS_API_URL}/api/xp/award`, {
+  const res = await fetch(`${process.env.EMPOWERED_ACCOUNTS_API_URL}/api/xp/award`, {
     method: 'POST',
     headers: {
       'X-Service-Key': process.env.TRIVIA_SERVICE_KEY!,
@@ -172,7 +172,7 @@ await supabase.schema('connect').rpc('credit_gems', {
 
 **New pattern:**
 ```typescript
-await fetch(`${EMPOWERED_ACCOUNTS_API_URL}/api/gems/award`, {
+await fetch(`${process.env.EMPOWERED_ACCOUNTS_API_URL}/api/gems/award`, {
   method: 'POST',
   headers: {
     'X-Service-Key': process.env.TRIVIA_GEMS_KEY!,
