@@ -13,6 +13,7 @@ import {
   validateCompassVersions,
   saveCompassImportDraft,
   importCompassCalibrations,
+  getLocationConsent,
   type CalibrationItem,
 } from '../lib/connectService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
@@ -555,6 +556,9 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
     return;
   }
 
+  // Check before upsert — determines if this is the user's first-ever location set.
+  const hadPriorLocation = await getLocationConsent(userId);
+
   try {
     const { error: upsertError } = await adminRpc('upsert_user_location', {
       p_user_id: userId,
@@ -582,6 +586,7 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
 
     res.status(200).json({
       location_consent: true,
+      first_location: !hadPriorLocation,
       jurisdiction: {
         congressional_district: j.congressional ?? null,
         congressional_district_name: j.congressional_name ?? null,
