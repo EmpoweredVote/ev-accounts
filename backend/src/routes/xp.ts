@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { requireServiceKey, type ServiceKeyRequest } from '../middleware/serviceKeyAuth.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireConnected } from '../middleware/tierGuards.js';
-import { awardXp, getXpHistory, getPublicXpProfile, XP_SOURCES } from '../lib/xpService.js';
+import { awardXp, getXpHistory, getPublicXpProfile, getXpLeaderboard, getMyXpRank, XP_SOURCES, type LeaderboardWindow } from '../lib/xpService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -90,6 +90,74 @@ router.post(
       }
       console.error('[POST /api/xp/award] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to award XP' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/xp/leaderboard
+// Auth: none (public)
+//
+// Returns top 25 Connected users ranked by CTC XP.
+// ?window=alltime (default) — ranked by all-time CTC XP
+// ?window=week              — ranked by rolling 168-hour CTC XP
+// Only users who have earned civic_trivia_championship_score XP appear.
+// MUST be registered before GET /:userId to avoid param route shadowing.
+// ---------------------------------------------------------------------------
+
+const LeaderboardQuerySchema = z.object({
+  window: z.enum(['alltime', 'week']).default('alltime'),
+});
+
+router.get('/leaderboard', async (req: Request, res: Response): Promise<void> => {
+  const parsed = LeaderboardQuerySchema.safeParse(req.query);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'window must be alltime or week' });
+    return;
+  }
+
+  try {
+    const entries = await getXpLeaderboard(parsed.data.window as LeaderboardWindow);
+    res.status(200).json({ mode: parsed.data.window, leaderboard: entries });
+  } catch (err) {
+    console.error('[GET /api/xp/leaderboard] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch leaderboard' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/xp/leaderboard/me
+// Auth: requireAuth + requireConnected
+//
+// Returns the calling user's rank, XP totals, and XP gap to the player above.
+// Returns 404 if the user has never earned CTC XP (not yet ranked).
+// ?window=alltime (default) or ?window=week
+// MUST be registered before GET /:userId.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/leaderboard/me',
+  requireAuth,
+  requireConnected,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+
+    const parsed = LeaderboardQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'window must be alltime or week' });
+      return;
+    }
+
+    try {
+      const entry = await getMyXpRank(authReq.userId, parsed.data.window as LeaderboardWindow);
+      if (!entry) {
+        res.status(404).json({ code: 'NOT_RANKED', message: 'No CTC XP earned yet' });
+        return;
+      }
+      res.status(200).json({ mode: parsed.data.window, ...entry });
+    } catch (err) {
+      console.error('[GET /api/xp/leaderboard/me] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch rank' });
     }
   }
 );

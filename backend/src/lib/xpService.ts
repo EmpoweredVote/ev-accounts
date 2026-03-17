@@ -134,6 +134,84 @@ export async function getXpHistory(
 }
 
 // ---------------------------------------------------------------------------
+// getXpLeaderboard
+// ---------------------------------------------------------------------------
+
+export type LeaderboardWindow = 'alltime' | 'week';
+
+export interface LeaderboardEntry {
+  rank: number;
+  userId: string;
+  username: string;
+  level: number;
+  totalXp: number;
+  weeklyXp: number;
+}
+
+export interface MyRankEntry extends LeaderboardEntry {
+  xpToNextRank: number;
+}
+
+/**
+ * Fetch the top N CTC XP leaderboard entries.
+ * Only Connected users who have earned civic_trivia_championship_score XP appear.
+ * window='week' ranks by rolling 168-hour XP; 'alltime' ranks by total CTC XP.
+ */
+export async function getXpLeaderboard(
+  window: LeaderboardWindow = 'alltime',
+  limit = 25
+): Promise<LeaderboardEntry[]> {
+  const { data, error } = await adminRpc(
+    'get_xp_leaderboard',
+    { p_window: window, p_limit: limit },
+    'connect'
+  );
+
+  if (error) throw new Error(error.message);
+
+  const rows = Array.isArray(data) ? data : [];
+  return rows.map((row: Record<string, unknown>) => ({
+    rank:      Number(row['rank']),
+    userId:    row['user_id'] as string,
+    username:  row['username'] as string,
+    level:     Number(row['level']),
+    totalXp:   Number(row['total_xp']),
+    weeklyXp:  Number(row['weekly_xp']),
+  }));
+}
+
+/**
+ * Fetch the calling user's rank on the CTC leaderboard.
+ * Returns null if the user has never earned CTC XP (unranked).
+ */
+export async function getMyXpRank(
+  userId: string,
+  window: LeaderboardWindow = 'alltime'
+): Promise<MyRankEntry | null> {
+  const { data, error } = await adminRpc(
+    'get_my_xp_rank',
+    { p_user_id: userId, p_window: window },
+    'connect'
+  );
+
+  if (error) throw new Error(error.message);
+
+  const rows = Array.isArray(data) ? data : [];
+  if (rows.length === 0) return null;
+
+  const row = rows[0] as Record<string, unknown>;
+  return {
+    rank:           Number(row['rank']),
+    userId:         row['user_id'] as string,
+    username:       row['username'] as string,
+    level:          Number(row['level']),
+    totalXp:        Number(row['total_xp']),
+    weeklyXp:       Number(row['weekly_xp']),
+    xpToNextRank:   Number(row['xp_to_next_rank']),
+  };
+}
+
+// ---------------------------------------------------------------------------
 // getPublicXpProfile
 // ---------------------------------------------------------------------------
 
