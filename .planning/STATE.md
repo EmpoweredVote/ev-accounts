@@ -69,5 +69,5 @@ Recent decisions relevant to v1.4:
 ## Session Continuity
 
 Last session: 2026-03-17
-Stopped at: v1.4 fully complete — Phase 29 live smoke tests passed, tracking files synced after computer reset
+Stopped at: Quick task 002 complete — first_location flag + FRAMER-LOCATION-TRUST-FLOW.md shipped
 Resume: v1.4 milestone closure → `/gsd:audit-milestone` then `/gsd:complete-milestone`
