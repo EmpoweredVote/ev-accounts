@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
 Phase: 29 of 30 (Admin Controls & Integration Verification) — COMPLETE
 Plan: 2 of 2
 Status: Complete
-Last activity: 2026-03-17 — Live integration smoke tests passed (CTC XP ✅, VQ confirm-stance ✅); v1.4 fully shipped
+Last activity: 2026-03-17 — Quick task 002 complete: location trust flow + first_location flag + Framer contract doc
 
 Progress: [v1.3 shipped ✅] [v1.4 shipped ✅] All phases 27–30 complete ██████████
 
@@ -61,6 +61,12 @@ Recent decisions relevant to v1.4:
 
 - ~~**CTC + VQ service key setup**~~ — RESOLVED 2026-03-17. Both INTEG-01 (CTC) and INTEG-02 (VQ) live smoke tests passed.
 - **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md`
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 002 | Location trust flow: first_location flag + Framer contract doc | 2026-03-17 | 82ec0dd | [002-location-trust-flow-connected-celebrate](./quick/002-location-trust-flow-connected-celebrate/) |
 
 ### Pending Todos
 
