@@ -38,7 +38,10 @@ export default function Signup() {
     setIsSubmitting(true);
 
     try {
-      const normalizedCode = inviteCode.toUpperCase().trim();
+      let normalizedCode = inviteCode.toUpperCase().trim();
+      if (normalizedCode.length === 8 && !normalizedCode.includes('-')) {
+        normalizedCode = normalizedCode.slice(0, 4) + '-' + normalizedCode.slice(4);
+      }
 
       const res = await fetch(`${API_BASE}/auth/signup`, {
         method: 'POST',

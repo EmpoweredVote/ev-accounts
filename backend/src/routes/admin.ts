@@ -50,6 +50,7 @@ import {
   getGlobalPromotionLog,
   getAdminEmailById,
   updateVerificationRating,
+  deleteAccount,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -955,6 +956,37 @@ router.get('/cron-log', async (req, res) => {
     const result = await getCronLog({ page: parsed.data.page });
     res.json(result);
   } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Account deletion
+// ---------------------------------------------------------------------------
+
+/**
+ * DELETE /api/admin/accounts/:userId
+ * Hard-deletes a user from auth.users, which cascades to all child records.
+ * Cannot be used to delete your own account (returns 400).
+ * Returns 404 if user does not exist.
+ */
+router.delete('/accounts/:userId', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    await deleteAccount(actorId(req), userId);
+    await logAdminAction(actorId(req), 'delete_account', userId, {});
+    res.json({ ok: true });
+  } catch (err) {
+    const e = err as { code?: string };
+    if (e.code === 'SELF_DELETE') {
+      res.status(400).json({ error: 'Cannot delete your own account' });
+      return;
+    }
+    if (e.code === 'NOT_FOUND') {
+      res.status(404).json({ error: 'User not found' });
+      return;
+    }
+    console.error('[admin/delete-account] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

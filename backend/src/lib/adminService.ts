@@ -847,3 +847,36 @@ export async function insertAccessRequest(email: string): Promise<void> {
     throw new Error(error.message);
   }
 }
+
+// ---------------------------------------------------------------------------
+// Account deletion
+// ---------------------------------------------------------------------------
+
+/**
+ * Hard-delete a user account via Supabase auth admin API.
+ * Deleting from auth.users cascades to public.users, which cascades to all
+ * child records (connected_profiles, xp_transactions, etc.).
+ *
+ * Throws with code 'NOT_FOUND' if the user does not exist.
+ * Throws with code 'SELF_DELETE' if admin tries to delete their own account.
+ */
+export async function deleteAccount(
+  adminId: string,
+  targetUserId: string
+): Promise<void> {
+  if (targetUserId === adminId) {
+    throw Object.assign(new Error('Cannot delete your own account'), { code: 'SELF_DELETE' });
+  }
+
+  const { error } = await supabaseAdmin.auth.admin.deleteUser(targetUserId);
+
+  if (error) {
+    if (
+      error.message.toLowerCase().includes('not found') ||
+      error.message.toLowerCase().includes('user not found')
+    ) {
+      throw Object.assign(new Error('User not found'), { code: 'NOT_FOUND' });
+    }
+    throw new Error(error.message);
+  }
+}

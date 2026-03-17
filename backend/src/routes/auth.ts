@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { signUpWithEmail, signInWithEmail, signOutUser, recordLogout } from '../lib/authService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
-import { adminRpc } from '../lib/supabase.js';
+import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
 import type { Request, Response } from 'express';
 
@@ -79,6 +79,35 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   }
 
   const { email, password, guest_state, legal_name, invite_code } = parsed.data;
+
+  // Phase 24: Pre-validate invite code BEFORE creating the auth user.
+  // If the code is absent or invalid, bail out early — this prevents orphaned
+  // auth users that receive confirmation emails but have no connected_profiles.
+  // Note: we only check, not claim. The atomic claim happens in signup_with_invite.
+  // There is a small TOCTOU window between this check and the RPC claim, but
+  // concurrent claims on the same code during alpha are negligible.
+  if (invite_code && legal_name) {
+    const normalizedCode = invite_code.toUpperCase().trim();
+    const { data: codeRow } = await supabaseAdmin
+      .schema('connect')
+      .from('invite_codes')
+      .select('id, is_claimed, expires_at')
+      .eq('code', normalizedCode)
+      .maybeSingle();
+
+    if (
+      !codeRow ||
+      codeRow.is_claimed ||
+      (codeRow.expires_at && new Date(codeRow.expires_at) < new Date())
+    ) {
+      res.status(422).json({
+        code: 'INVALID_INVITE_CODE',
+        message: 'Invalid or already claimed invite code',
+      });
+      return;
+    }
+  }
+
   const { data, error } = await signUpWithEmail(email, password);
 
   if (error) {

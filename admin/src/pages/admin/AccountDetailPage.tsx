@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
 
 interface Role {
@@ -128,12 +128,15 @@ const STANDING_BADGE: Record<string, string> = {
 
 export function AccountDetailPage() {
   const { userId } = useParams<{ userId: string }>();
+  const navigate = useNavigate();
   const [account, setAccount] = useState<AccountDetail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [actionError, setActionError] = useState<string | null>(null);
   const [actionLoading, setActionLoading] = useState(false);
   const [showDemoteConfirm, setShowDemoteConfirm] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
 
   // XP History state
   const [xpData, setXpData] = useState<XpHistoryResponse | null>(null);
@@ -302,6 +305,20 @@ export function AccountDetailPage() {
       setVrError(err instanceof Error ? err.message : 'Save failed');
     } finally {
       setVrSaving(false);
+    }
+  }
+
+  async function handleDelete() {
+    setDeleteLoading(true);
+    setActionError(null);
+    try {
+      await apiFetch(`/admin/accounts/${userId}`, { method: 'DELETE' });
+      navigate('/admin/accounts');
+    } catch (err) {
+      setActionError(err instanceof Error ? err.message : 'Delete failed');
+      setShowDeleteConfirm(false);
+    } finally {
+      setDeleteLoading(false);
     }
   }
 
@@ -948,6 +965,36 @@ export function AccountDetailPage() {
               <button
                 onClick={() => setShowDemoteConfirm(false)}
                 className="px-3 py-1 border border-orange-300 text-orange-700 text-sm rounded hover:bg-orange-100"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+
+          {!showDeleteConfirm ? (
+            <button
+              onClick={() => setShowDeleteConfirm(true)}
+              disabled={actionLoading || deleteLoading}
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-900 disabled:opacity-50 text-white text-sm font-medium rounded-md transition-colors"
+            >
+              Delete Account
+            </button>
+          ) : (
+            <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded">
+              <span className="text-sm text-red-800">
+                Permanently delete <strong>{account.display_name}</strong>? This cannot be undone.
+              </span>
+              <button
+                onClick={handleDelete}
+                disabled={deleteLoading}
+                className="px-3 py-1 bg-red-700 hover:bg-red-800 text-white text-sm rounded disabled:opacity-50"
+              >
+                {deleteLoading ? 'Deleting...' : 'Delete'}
+              </button>
+              <button
+                onClick={() => setShowDeleteConfirm(false)}
+                disabled={deleteLoading}
+                className="px-3 py-1 border border-red-300 text-red-700 text-sm rounded hover:bg-red-100"
               >
                 Cancel
               </button>
