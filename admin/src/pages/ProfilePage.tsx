@@ -22,6 +22,35 @@ interface MeResponse {
   gems?: MeGems;
   connected_profile?: MeConnectedProfile;
 }
+interface Jurisdiction {
+  congressional_district: string | null;
+  congressional_district_name: string | null;
+  state_senate_district: string | null;
+  state_senate_district_name: string | null;
+  state_house_district: string | null;
+  state_house_district_name: string | null;
+  county: string | null;
+  county_name: string | null;
+  school_district: string | null;
+  school_district_name: string | null;
+}
+
+const SLICE_LABEL_COLOR: Record<string, string> = {
+  'Civic Space':  'bg-ev-teal/10 text-ev-teal',
+  'Local Slice':  'bg-ev-yellow/20 text-yellow-700',
+  'State Slice':  'bg-ev-teal-light/20 text-teal-700',
+  'Federal Slice':'bg-ev-red/10 text-ev-red',
+};
+
+function buildSlices(j: Jurisdiction): { label: string; name: string }[] {
+  const slices: { label: string; name: string }[] = [];
+  if (j.school_district_name) slices.push({ label: 'Civic Space',   name: j.school_district_name });
+  if (j.county_name)           slices.push({ label: 'Local Slice',   name: j.county_name });
+  const stateName = j.state_senate_district_name ?? j.state_house_district_name;
+  if (stateName)               slices.push({ label: 'State Slice',   name: stateName });
+  if (j.congressional_district_name) slices.push({ label: 'Federal Slice', name: j.congressional_district_name });
+  return slices;
+}
 
 const FEATURES = [
   {
@@ -105,13 +134,23 @@ export default function ProfilePage() {
   const [profileError, setProfileError] = useState(false);
 
   const [address, setAddress] = useState('');
+  const [submittedAddress, setSubmittedAddress] = useState<string | null>(null);
+  const [addressVisible, setAddressVisible] = useState(false);
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationSuccess, setLocationSuccess] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
+  const [jurisdiction, setJurisdiction] = useState<Jurisdiction | null>(null);
 
   useEffect(() => {
     apiFetch<MeResponse>('/account/me')
-      .then((data) => setProfile(data))
+      .then((data) => {
+        setProfile(data);
+        if (data.location_consent) {
+          apiFetch<{ jurisdiction: Jurisdiction }>('/account/me/jurisdiction')
+            .then((j) => setJurisdiction(j.jurisdiction))
+            .catch(() => {}); // non-fatal
+        }
+      })
       .catch(() => setProfileError(true));
   }, []);
 
@@ -138,11 +177,16 @@ export default function ProfilePage() {
     setLocationLoading(true);
     setLocationSuccess(false);
     setLocationError(null);
+    const trimmed = address.trim();
     try {
-      await apiFetch('/connect/set-location', {
+      const result = await apiFetch<{ jurisdiction: Jurisdiction }>('/connect/set-location', {
         method: 'POST',
-        body: JSON.stringify({ address: address.trim() }),
+        body: JSON.stringify({ address: trimmed }),
       });
+      setSubmittedAddress(trimmed);
+      setAddressVisible(false);
+      setJurisdiction(result.jurisdiction);
+      setProfile((prev) => prev ? { ...prev, location_consent: true } : prev);
       setLocationSuccess(true);
       setAddress('');
     } catch (err: any) {
@@ -263,39 +307,80 @@ export default function ProfilePage() {
                 </div>
               )}
 
-              {/* Location form — Connected and above */}
+              {/* Location + Civic Spaces — Connected and above */}
               {profile.connected_profile != null && (
-                <div className="pt-4 border-t border-gray-100">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                    Location
-                  </p>
-                  {profile.location_consent && (
-                    <p className="text-sm text-green-600 mb-2 flex items-center gap-1">
-                      <span>&#10003;</span> Location set
+                <div className="pt-4 border-t border-gray-100 space-y-4">
+                  {/* Address display */}
+                  {submittedAddress && (
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">
+                        Address
+                      </p>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-gray-700 font-mono">
+                          {addressVisible ? submittedAddress : '••••••••••••••••'}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setAddressVisible((v) => !v)}
+                          className="text-xs text-ev-teal hover:underline"
+                        >
+                          {addressVisible ? 'Hide' : 'Show'}
+                        </button>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        Address not stored — only encrypted coordinates are saved.
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Civic Spaces */}
+                  {jurisdiction && buildSlices(jurisdiction).length > 0 && (
+                    <div>
+                      <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                        Your Civic Spaces
+                      </p>
+                      <div className="space-y-1.5">
+                        {buildSlices(jurisdiction).map((slice) => (
+                          <div key={slice.label} className="flex items-center gap-2">
+                            <span className={`text-xs font-semibold px-2 py-0.5 rounded-full ${SLICE_LABEL_COLOR[slice.label]}`}>
+                              {slice.label}
+                            </span>
+                            <span className="text-sm text-gray-700">{slice.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Location form */}
+                  <div>
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                      {profile.location_consent ? 'Update Location' : 'Location'}
                     </p>
-                  )}
-                  <form onSubmit={handleSetLocation} className="space-y-2">
-                    <input
-                      type="text"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      placeholder="Enter your address"
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
-                    />
-                    <button
-                      type="submit"
-                      disabled={address.trim().length === 0 || locationLoading}
-                      className="bg-ev-teal text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-ev-teal/90 disabled:opacity-50"
-                    >
-                      {locationLoading ? 'Setting...' : 'Set Location'}
-                    </button>
-                  </form>
-                  {locationSuccess && (
-                    <p className="text-sm text-green-600 mt-2">Location updated successfully</p>
-                  )}
-                  {locationError && (
-                    <p className="text-sm text-ev-red mt-2">{locationError}</p>
-                  )}
+                    <form onSubmit={handleSetLocation} className="space-y-2">
+                      <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="Enter your address"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm"
+                      />
+                      <button
+                        type="submit"
+                        disabled={address.trim().length === 0 || locationLoading}
+                        className="bg-ev-teal text-white text-sm font-medium px-4 py-2 rounded-md hover:bg-ev-teal/90 disabled:opacity-50"
+                      >
+                        {locationLoading ? 'Setting...' : 'Set Location'}
+                      </button>
+                    </form>
+                    {locationSuccess && (
+                      <p className="text-sm text-green-600 mt-2">Location updated successfully</p>
+                    )}
+                    {locationError && (
+                      <p className="text-sm text-ev-red mt-2">{locationError}</p>
+                    )}
+                  </div>
                 </div>
               )}
             </div>

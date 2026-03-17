@@ -219,10 +219,15 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
     res.status(200).json({
       jurisdiction: {
         congressional_district: j.congressional ?? null,
+        congressional_district_name: j.congressional_name ?? null,
         state_senate_district: j.state_senate ?? null,
+        state_senate_district_name: j.state_senate_name ?? null,
         state_house_district: j.state_house ?? null,
+        state_house_district_name: j.state_house_name ?? null,
         county: j.county ?? null,
+        county_name: j.county_name ?? null,
         school_district: j.school_district ?? null,
+        school_district_name: j.school_district_name ?? null,
       },
     });
   } catch (err) {
