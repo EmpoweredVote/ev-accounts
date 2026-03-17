@@ -2,7 +2,7 @@
 
 **Audience:** Claude working in the `empowered-ctc` codebase
 **Accounts API:** `https://ev-accounts-api.onrender.com`
-**Last updated:** 2026-03-15 (v1.3 deployed)
+**Last updated:** 2026-03-16 (v1.4 — corrected headers and field names)
 
 ---
 
@@ -46,7 +46,7 @@ XP and gem awards are server-to-server calls using a shared secret. Do NOT expos
 const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award', {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.TRIVIA_SERVICE_KEY}`,
+    'X-Service-Key': process.env.TRIVIA_SERVICE_KEY!,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({ ... }),
@@ -56,7 +56,7 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award'
 const response = await fetch('https://ev-accounts-api.onrender.com/api/gems/award', {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.TRIVIA_GEMS_KEY}`,
+    'X-Service-Key': process.env.TRIVIA_GEMS_KEY!,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({ ... }),
@@ -73,7 +73,7 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/gems/awar
 
 ```
 POST /api/xp/award
-Authorization: Bearer <TRIVIA_SERVICE_KEY>
+X-Service-Key: <TRIVIA_SERVICE_KEY>
 Content-Type: application/json
 ```
 
@@ -81,11 +81,11 @@ Content-Type: application/json
 
 ```typescript
 {
-  userId: string;          // Supabase UUID of the user
-  source: string;          // must be 'civic_trivia_championship_score'
-  amount: number;          // positive integer
-  idempotencyKey: string;  // unique per award event — prevents double-award on retry
-  metadata?: object;       // optional — include game/session context for the ledger
+  user_id: string;          // Supabase UUID of the user
+  source: string;           // must be 'civic_trivia_championship_score'
+  amount: number;           // positive integer
+  idempotency_key: string;  // unique per award event — prevents double-award on retry
+  metadata?: object;        // optional — include game/session context for the ledger
 }
 ```
 
@@ -100,18 +100,18 @@ Content-Type: application/json
 }
 
 // 422 — source not permitted for this key
-{ error: 'SOURCE_NOT_PERMITTED' }
+{ error: 'SOURCE_NOT_PERMITTED', message: "This service key is not authorized to award source '...'" }
 
 // 401 — invalid or missing key
-{ error: 'UNAUTHORIZED' }
+{ error: 'Missing or invalid X-Service-Key' }
 ```
 
 ### Idempotency
 
-Always include a stable `idempotencyKey` derived from the game event. If a network failure causes you to retry, the same key returns `is_duplicate: true` rather than awarding XP twice.
+Always include a stable `idempotency_key` derived from the game event. If a network failure causes you to retry, the same key returns `is_duplicate: true` rather than awarding XP twice.
 
 ```typescript
-const idempotencyKey = `ctc-game-${gameId}-${userId}`;
+const idempotency_key = `ctc-game-${gameId}-${userId}`;
 ```
 
 ### Permitted Source
@@ -127,14 +127,14 @@ async function awardGameXp(userId: string, gameId: string, score: number) {
   const res = await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.TRIVIA_SERVICE_KEY}`,
+      'X-Service-Key': process.env.TRIVIA_SERVICE_KEY!,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      userId,
+      user_id: userId,
       source: 'civic_trivia_championship_score',
       amount: xpAmount,
-      idempotencyKey: `ctc-game-${gameId}-${userId}`,
+      idempotency_key: `ctc-game-${gameId}-${userId}`,
       metadata: { gameId, score },
     }),
   });
@@ -175,14 +175,14 @@ await supabase.schema('connect').rpc('credit_gems', {
 await fetch(`${ACCOUNTS_URL}/api/gems/award`, {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.TRIVIA_GEMS_KEY}`,
+    'X-Service-Key': process.env.TRIVIA_GEMS_KEY!,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    userId,
-    gemType: 'yellow',
+    user_id: userId,
+    gem_type: 'yellow',
     amount,
-    idempotencyKey: `ctc-gems-${gameId}-${userId}`,
+    idempotency_key: `ctc-gems-${gameId}-${userId}`,
   }),
 });
 ```
@@ -191,7 +191,7 @@ await fetch(`${ACCOUNTS_URL}/api/gems/award`, {
 
 ```
 POST /api/gems/award
-Authorization: Bearer <TRIVIA_GEMS_KEY>
+X-Service-Key: <TRIVIA_GEMS_KEY>
 Content-Type: application/json
 ```
 
@@ -199,10 +199,10 @@ Content-Type: application/json
 
 ```typescript
 {
-  userId: string;          // Supabase UUID of the user
-  gemType: 'yellow';       // CTC is authorized for yellow only
-  amount: number;          // positive integer
-  idempotencyKey: string;  // unique per award event
+  user_id: string;          // Supabase UUID of the user
+  gem_type: 'yellow';       // CTC is authorized for yellow only
+  amount: number;           // positive integer
+  idempotency_key: string;  // unique per award event
 }
 ```
 
@@ -338,7 +338,7 @@ After creating a Connected Account and confirming their email, users are redirec
 | 429 | Rate limited | Back off and retry with exponential delay |
 | 5xx | Server error | Log and retry with idempotency key — safe to retry |
 
-Always include `idempotencyKey` on award calls. 5xx responses are safe to retry because a duplicate key returns 200 with `is_duplicate: true` rather than double-awarding.
+Always include `idempotency_key` on award calls. 5xx responses are safe to retry because a duplicate key returns 200 with `is_duplicate: true` rather than double-awarding.
 
 ---
 
