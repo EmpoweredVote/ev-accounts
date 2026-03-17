@@ -2,7 +2,7 @@
 
 **Audience:** Claude working in the `empowered-validation-quests` codebase
 **Accounts API:** `https://ev-accounts-api.onrender.com`
-**Last updated:** 2026-03-16 (v1.4 — confirm-stance added)
+**Last updated:** 2026-03-16 (v1.4 — confirm-stance added, VR fields on /me)
 
 ---
 
@@ -39,22 +39,22 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/account/m
 
 The token comes from `supabase.auth.getSession()` → `session.access_token`. No conversion needed — it's a standard Supabase JWT that accounts verifies via JWKS.
 
-### Service-Key Requests (XP awards)
+### Service-Key Requests (XP awards, stance confirmation)
 
-XP awards are server-to-server. Use `QUEST_SERVICE_KEY` — never expose it to the client.
+Service-to-server calls use the `X-Service-Key` header — never the `Authorization` header, never expose the key to the client.
 
 ```typescript
 const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award', {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.QUEST_SERVICE_KEY}`,
+    'X-Service-Key': process.env.QUEST_SERVICE_KEY!,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({ ... }),
 });
 ```
 
-**Key setup:** Chris sets matching values in both VQ's Render environment (`QUEST_SERVICE_KEY`) and the accounts API environment. VQ doesn't register keys — just uses the value Chris provides.
+**Key setup:** Chris sets matching values in both VQ's Render environment (`QUEST_SERVICE_KEY`, `VQ_SERVICE_KEY`) and the accounts API environment. VQ doesn't register keys — just uses the values Chris provides.
 
 ---
 
@@ -81,14 +81,14 @@ await supabaseService
 await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
   method: 'POST',
   headers: {
-    'Authorization': `Bearer ${process.env.QUEST_SERVICE_KEY}`,
+    'X-Service-Key': process.env.QUEST_SERVICE_KEY!,
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    userId,
+    user_id: userId,
     source: 'validation_quest_completion',
     amount: xpAmount,
-    idempotencyKey: `vq-submit-${submissionId}`,
+    idempotency_key: `vq-submit-${submissionId}`,
     metadata: { questId, submissionId },
   }),
 });
@@ -104,7 +104,7 @@ await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
 
 ```
 POST /api/xp/award
-Authorization: Bearer <QUEST_SERVICE_KEY>
+X-Service-Key: <QUEST_SERVICE_KEY>
 Content-Type: application/json
 ```
 
@@ -112,11 +112,11 @@ Content-Type: application/json
 
 ```typescript
 {
-  userId: string;          // Supabase UUID of the user
-  source: string;          // must be 'validation_quest_completion'
-  amount: number;          // positive integer
-  idempotencyKey: string;  // unique per award event — prevents double-award on retry
-  metadata?: object;       // optional — include quest/submission context for the ledger
+  user_id: string;          // Supabase UUID of the user
+  source: string;           // must be 'validation_quest_completion'
+  amount: number;           // positive integer
+  idempotency_key: string;  // unique per award event — prevents double-award on retry
+  metadata?: object;        // optional — include quest/submission context for the ledger
 }
 ```
 
@@ -131,18 +131,18 @@ Content-Type: application/json
 }
 
 // 422 — source not permitted for this key
-{ error: 'SOURCE_NOT_PERMITTED' }
+{ error: 'SOURCE_NOT_PERMITTED', message: "This service key is not authorized to award source '...'" }
 
 // 401 — invalid or missing key
-{ error: 'UNAUTHORIZED' }
+{ error: 'Missing or invalid X-Service-Key' }
 ```
 
 ### Idempotency
 
-Always derive `idempotencyKey` from a stable event identifier. Safe to retry on 5xx — duplicate returns `is_duplicate: true`:
+Always derive `idempotency_key` from a stable event identifier. Safe to retry on 5xx — duplicate returns `is_duplicate: true`:
 
 ```typescript
-const idempotencyKey = `vq-submit-${submissionId}-${userId}`;
+const idempotency_key = `vq-submit-${submissionId}-${userId}`;
 ```
 
 ### Permitted Source
@@ -156,14 +156,14 @@ async function awardQuestXp(userId: string, submissionId: string, questId: strin
   const res = await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.QUEST_SERVICE_KEY}`,
+      'X-Service-Key': process.env.QUEST_SERVICE_KEY!,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      userId,
+      user_id: userId,
       source: 'validation_quest_completion',
       amount: 500,
-      idempotencyKey: `vq-submit-${submissionId}-${userId}`,
+      idempotency_key: `vq-submit-${submissionId}-${userId}`,
       metadata: { questId, submissionId },
     }),
   });
@@ -188,13 +188,13 @@ When VQ resolves a question (determines the correct answer), call this endpoint 
 
 ```
 POST /api/vq/confirm-stance
-Authorization: Bearer <VQ_SERVICE_KEY>
+X-Service-Key: <VQ_SERVICE_KEY>
 Content-Type: application/json
 ```
 
 ### Authentication
 
-Same Bearer token + service key pattern as XP awards. Use the `VQ_SERVICE_KEY` value provided by Chris. This key must have `red` gem type permission in the accounts API (separate from `QUEST_SERVICE_KEY` which has `yellow` permission — confirm with Chris which key to use or whether a combined key is provided).
+Same `X-Service-Key` header pattern as XP awards. Use the `VQ_SERVICE_KEY` value provided by Chris. This key must have `red` gem type permission in the accounts API `GEMS_SERVICE_KEYS` env var (separate from `QUEST_SERVICE_KEY` which handles XP and is a different key).
 
 ### Complete Example
 
@@ -213,7 +213,7 @@ interface ConfirmStanceResult {
     new_rating: number;
   }>;
   unresolved_users: string[];
-  replayed: boolean;
+  replayed?: boolean;  // present and true on idempotent replay; absent on first call
 }
 
 async function confirmStance(opts: {
@@ -228,7 +228,7 @@ async function confirmStance(opts: {
   const res = await fetch(`${ACCOUNTS_API_URL}/api/vq/confirm-stance`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${process.env.VQ_SERVICE_KEY}`,
+      'X-Service-Key': process.env.VQ_SERVICE_KEY!,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -292,14 +292,13 @@ A user can appear in only one array. If a user appears in both, they are treated
     { "user_id": "uuid-B", "result": "correct",   "gems_awarded": 1, "rating_delta":  3, "new_rating": 93 },
     { "user_id": "uuid-C", "result": "incorrect", "gems_awarded": 0, "rating_delta": -10, "new_rating": 50 }
   ],
-  "unresolved_users": [],
-  "replayed": false
+  "unresolved_users": []
 }
 ```
 
 `unresolved_users` contains UUIDs that were submitted but could not be processed (e.g., user no longer exists). These are informational — no error is thrown.
 
-`replayed: true` means the `idempotency_key` was already used. The original result is returned unchanged — no additional gems awarded, no ratings changed.
+`replayed: true` is present when the `idempotency_key` was already used. The original result is returned unchanged — no additional gems awarded, no ratings changed. The field is absent (not `false`) on the first call.
 
 ### Side Effects
 
@@ -338,7 +337,7 @@ A user can appear in only one array. If a user appears in both, they are treated
 
 | Status | Body | Cause |
 |--------|------|-------|
-| 401 | `{ "error": "UNAUTHORIZED" }` | Missing or invalid service key |
+| 401 | `{ "error": "Missing or invalid X-Service-Key" }` | Missing or invalid service key |
 | 422 | `{ "error": "VALIDATION_ERROR", "issues": [{ "field": "politician_id", "message": "Invalid uuid" }] }` | Zod validation failure — check required fields and UUID format |
 | 422 | `{ "error": "FORBIDDEN_GEM_TYPE", "permitted": ["yellow"] }` | Service key lacks `red` gem type permission — contact Chris to update accounts API env |
 | 422 | `{ "error": "INVALID_VALUE" }` | `confirmed_value` outside 1–5 |
@@ -382,6 +381,9 @@ Response shape (Connected user):
     red: number;
   } | null;
   location_consent: boolean;
+  verification_rating: number;      // 0–150; default 60
+  vq_hold_active: boolean;          // true if vq_hold_until is in the future
+  red_gem_quests_unlocked: boolean; // true when verification_rating >= 90
   // ... other fields
 }
 ```
@@ -495,7 +497,7 @@ From `ACCOUNTS-COORDINATION.md` (2026-03-08):
 
 **Item 2 — XP level formula:** Already returned in `GET /api/account/me` as `xp.level`, `xp.xp_in_level`, and `xp.xp_to_next_level`. Use these directly for the XPBar — no client-side calculation needed.
 
-**Item 3 — Veracity Rating integration:** Not yet designed on the accounts side. For Alpha, VQ should maintain its own `user_veracity_profiles` table (as currently built). When accounts is ready to aggregate veracity data platform-wide, a push model (VQ calls an accounts endpoint with an accuracy delta after each consensus finalization) is preferred — it keeps accounts as the aggregation source of truth. File a feature request when VQ is ready to integrate; include the `accuracy_rate`, `restriction_state`, and `review_required` fields as the proposed push payload.
+**Item 3 — Verification Rating integration:** Fully implemented. Accounts owns `verification_rating` on `connected_profiles`. VQ does not maintain its own rating table — all rating adjustments happen atomically inside `POST /api/vq/confirm-stance` (+3 correct, −10 incorrect, floor 0, cap 150). Accounts also handles hold enforcement (`vq_hold_until`) and surfaces `vq_hold_active` and `red_gem_quests_unlocked` on `GET /api/account/me`. VQ should read these fields to gate quest participation — no local rating state needed.
 
 ---
 
@@ -516,7 +518,8 @@ From `ACCOUNTS-COORDINATION.md` (2026-03-08):
 | Variable | Purpose | Value Source |
 |----------|---------|--------------|
 | `ACCOUNTS_URL` | Base URL for accounts API | `https://ev-accounts-api.onrender.com` |
-| `QUEST_SERVICE_KEY` | XP award auth | Chris provides; must match accounts API env |
+| `QUEST_SERVICE_KEY` | XP award auth (`X-Service-Key`) | Chris provides; must match accounts API env |
+| `VQ_SERVICE_KEY` | Stance confirmation auth (`X-Service-Key`, needs `red` gem permission) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
 | `ENABLE_XP_AWARDS` | Feature flag for XP award calls | Set to `true` — source key is confirmed |
 
 ---
