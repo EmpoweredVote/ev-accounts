@@ -11,12 +11,7 @@ SECURITY DEFINER
 SET search_path = ''
 AS $$
 BEGIN
-  UPDATE connect.invite_codes
-  SET
-    is_claimed = true,
-    claimed_at = now()
-  WHERE id = p_code_id
-    AND is_claimed = false;
+  DELETE FROM connect.invite_codes WHERE id = p_code_id;
 END;
 $$;
 
