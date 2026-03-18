@@ -40,15 +40,14 @@ function getLayoutedElements(nodes: Node[], edges: Edge[]) {
   };
 }
 
+interface RpcNode {
+  id: string;
+  data: { label: string; tier: string; account_standing: string | null };
+}
+interface RpcEdge { id: string; source: string; target: string }
 interface TreeData {
-  nodes: Array<{
-    id: string;
-    display_name: string;
-    email: string;
-    tier: string;
-    account_standing: string | null;
-  }>;
-  edges: Array<{ source: string; target: string }>;
+  nodes: RpcNode[];
+  edges: RpcEdge[];
 }
 
 export function InviteTree({ rootUserId }: { rootUserId?: string }) {
@@ -63,13 +62,13 @@ export function InviteTree({ rootUserId }: { rootUserId?: string }) {
     apiFetch<TreeData>(path).then((data) => {
       const rfNodes: Node[] = data.nodes.map((n) => ({
         id: n.id,
-        data: { label: `${n.display_name}\n${n.tier}` },
+        data: { label: `${n.data.label}\n${n.data.tier}` },
         position: { x: 0, y: 0 },
         style: {
-          background: TIER_COLORS[n.tier] || '#94a3b8',
+          background: TIER_COLORS[n.data.tier] || '#94a3b8',
           color: '#fff',
           border:
-            n.account_standing === 'suspended'
+            n.data.account_standing === 'suspended'
               ? '3px solid #ef4444'
               : '1px solid #e5e7eb',
           borderRadius: '8px',
@@ -120,7 +119,7 @@ export function InviteTree({ rootUserId }: { rootUserId?: string }) {
         <Controls />
         <MiniMap
           nodeColor={(node) => {
-            const tier = String(node.data?.label).split('\n')[1];
+            const tier = String(node.data?.label ?? '').split('\n')[1] ?? '';
             return TIER_COLORS[tier] || '#94a3b8';
           }}
         />

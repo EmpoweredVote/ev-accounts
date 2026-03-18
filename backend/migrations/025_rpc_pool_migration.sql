@@ -286,11 +286,12 @@ BEGIN
       ic.created_at,
       creator.display_name AS created_by_display_name,
       ic.created_by AS created_by_id,
-      claimer.display_name AS claimed_by_display_name,
+      COALESCE(claimer.display_name, cp.legal_name) AS claimed_by_display_name,
       ic.claimed_by AS claimed_by_id
     FROM connect.invite_codes ic
     LEFT JOIN public.users creator ON creator.id = ic.created_by
     LEFT JOIN public.users claimer ON claimer.id = ic.claimed_by
+    LEFT JOIN connect.connected_profiles cp ON cp.user_id = ic.claimed_by
     ORDER BY ic.created_at DESC
     LIMIT v_limit OFFSET v_offset
   ) t;
