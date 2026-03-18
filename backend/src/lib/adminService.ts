@@ -224,13 +224,7 @@ export async function adminCreateInvite(
  * Revoke an active invite code by marking it as claimed.
  */
 export async function revokeInvite(codeId: string): Promise<void> {
-  const { error } = await supabaseAdmin
-    .schema('connect')
-    .from('invite_codes')
-    .update({ is_claimed: true, claimed_at: new Date().toISOString() })
-    .eq('id', codeId)
-    .eq('is_claimed', false);
-
+  const { error } = await adminRpc('revoke_invite_code', { p_code_id: codeId });
   if (error) throw new Error(error.message);
 }
 
