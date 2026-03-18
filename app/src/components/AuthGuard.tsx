@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 
 export function AuthGuard() {
@@ -13,7 +13,15 @@ export function AuthGuard() {
   }
 
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    // Redirect to accounts auth hub with return URL
+    const returnUrl = encodeURIComponent(window.location.origin + window.location.pathname);
+    window.location.href = `https://accounts.empowered.vote/login?redirect=${returnUrl}`;
+    // Return spinner while redirect happens
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="w-6 h-6 border-2 border-ev-teal border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
   }
 
   return <Outlet />;
