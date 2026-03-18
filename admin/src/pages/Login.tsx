@@ -63,12 +63,9 @@ export default function Login() {
         completedOnboarding: meData.completed_onboarding ?? false,
       });
 
-      // Step 3: route
-      if (validRedirect) {
-        window.location.href = validRedirect;
-      } else {
-        window.location.href = 'https://profile.empowered.vote';
-      }
+      // Step 3: route — pass token via hash fragment so profile can auto-authenticate
+      const target = validRedirect || 'https://profile.empowered.vote';
+      window.location.href = `${target}#access_token=${token}`;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
