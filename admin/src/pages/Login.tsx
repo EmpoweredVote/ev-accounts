@@ -84,7 +84,6 @@ export default function Login() {
         <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
           empowered.vote
         </h1>
-        <p className="text-gray-500 text-sm">Admin</p>
       </div>
 
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
