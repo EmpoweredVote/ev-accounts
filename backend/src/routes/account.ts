@@ -101,6 +101,36 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       };
     }
 
+    // 5b. Resolve jurisdiction for Connected users who have location_consent.
+    // Graceful degradation: if the RPC fails, jurisdiction is null — do not fail /me.
+    let jurisdictionData: Record<string, unknown> | null = null;
+    if (connected?.location_consent) {
+      try {
+        const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
+          p_user_id: authReq.userId,
+        }, 'connect');
+        if (jError) {
+          console.error('[GET /api/account/me] resolve_user_jurisdiction error:', jError.message);
+        } else {
+          const j = (jData ?? {}) as Record<string, string | null>;
+          jurisdictionData = {
+            congressional_district: j.congressional ?? null,
+            congressional_district_name: j.congressional_name ?? null,
+            state_senate_district: j.state_senate ?? null,
+            state_senate_district_name: j.state_senate_name ?? null,
+            state_house_district: j.state_house ?? null,
+            state_house_district_name: j.state_house_name ?? null,
+            county: j.county ?? null,
+            county_name: j.county_name ?? null,
+            school_district: j.school_district ?? null,
+            school_district_name: j.school_district_name ?? null,
+          };
+        }
+      } catch (jErr) {
+        console.error('[GET /api/account/me] resolve_user_jurisdiction unexpected error:', jErr);
+      }
+    }
+
     // 6. Build response from explicit whitelist — NEVER spread DB rows.
     // This is the canonical privacy enforcement pattern for this codebase.
     // empowerment_status: only included when an empowered_profiles row exists.
@@ -131,6 +161,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       red_gem_quests_unlocked: redGemQuestsUnlocked,
       ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
+      jurisdiction: jurisdictionData,
       created_at: user.created_at,
       updated_at: user.updated_at,
     };
@@ -379,6 +410,36 @@ router.patch(
         };
       }
 
+      // Resolve jurisdiction for Connected users with location_consent (same as GET /me).
+      // Graceful degradation: if RPC fails, jurisdiction is null — do not fail /me.
+      let updatedJurisdictionData: Record<string, unknown> | null = null;
+      if (updatedConnected?.location_consent) {
+        try {
+          const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
+            p_user_id: authReq.userId,
+          }, 'connect');
+          if (jError) {
+            console.error('[PATCH /api/account/me] resolve_user_jurisdiction error:', jError.message);
+          } else {
+            const j = (jData ?? {}) as Record<string, string | null>;
+            updatedJurisdictionData = {
+              congressional_district: j.congressional ?? null,
+              congressional_district_name: j.congressional_name ?? null,
+              state_senate_district: j.state_senate ?? null,
+              state_senate_district_name: j.state_senate_name ?? null,
+              state_house_district: j.state_house ?? null,
+              state_house_district_name: j.state_house_name ?? null,
+              county: j.county ?? null,
+              county_name: j.county_name ?? null,
+              school_district: j.school_district ?? null,
+              school_district_name: j.school_district_name ?? null,
+            };
+          }
+        } catch (jErr) {
+          console.error('[PATCH /api/account/me] resolve_user_jurisdiction unexpected error:', jErr);
+        }
+      }
+
       // 6. Build response from explicit whitelist (same pattern as GET /me)
       const updatedEmpowermentStatus = updatedEmpowered
         ? (updatedEmpowered.is_active ? 'empowered' : 'demoted')
@@ -404,6 +465,7 @@ router.patch(
         red_gem_quests_unlocked: updatedRedGemQuestsUnlocked,
         ...(updatedEmpowermentStatus !== undefined && { empowerment_status: updatedEmpowermentStatus }),
         account_standing: updatedConnected?.account_standing ?? 'active',
+        jurisdiction: updatedJurisdictionData,
         created_at: updatedUser.created_at,
         updated_at: updatedUser.updated_at,
       };
