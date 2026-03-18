@@ -21,6 +21,7 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
 // sendPeerRequest
@@ -79,19 +80,14 @@ export async function sendPeerRequest(
  * to enforce this ownership check at the DB layer.
  */
 export async function acceptPeerRequest(requestId: string, userId: string): Promise<void> {
-  const { data, error } = await supabaseAdmin
-    .schema('connect')
-    .from('social_relationships')
-    .update({ status: 'accepted', updated_at: new Date().toISOString() })
-    .eq('id', requestId)
-    .eq('target_id', userId)
-    .eq('connection_type', 'peer')
-    .eq('status', 'pending')
-    .select('id');
-
-  if (error) throw new Error(error.message);
-
-  if (!data || data.length === 0) {
+  const { rows } = await pool.query<{ id: string }>(
+    `UPDATE connect.social_relationships
+     SET status = 'accepted', updated_at = now()
+     WHERE id = $1 AND target_id = $2 AND connection_type = 'peer' AND status = 'pending'
+     RETURNING id`,
+    [requestId, userId]
+  );
+  if (rows.length === 0) {
     throw Object.assign(
       new Error('Request not found, not addressed to this user, or not pending'),
       { code: 'REQUEST_NOT_FOUND' }
@@ -111,19 +107,14 @@ export async function acceptPeerRequest(requestId: string, userId: string): Prom
  * row when the actor tries again.
  */
 export async function declinePeerRequest(requestId: string, userId: string): Promise<void> {
-  const { data, error } = await supabaseAdmin
-    .schema('connect')
-    .from('social_relationships')
-    .update({ status: 'declined', updated_at: new Date().toISOString() })
-    .eq('id', requestId)
-    .eq('target_id', userId)
-    .eq('connection_type', 'peer')
-    .eq('status', 'pending')
-    .select('id');
-
-  if (error) throw new Error(error.message);
-
-  if (!data || data.length === 0) {
+  const { rows } = await pool.query<{ id: string }>(
+    `UPDATE connect.social_relationships
+     SET status = 'declined', updated_at = now()
+     WHERE id = $1 AND target_id = $2 AND connection_type = 'peer' AND status = 'pending'
+     RETURNING id`,
+    [requestId, userId]
+  );
+  if (rows.length === 0) {
     throw Object.assign(
       new Error('Request not found, not addressed to this user, or not pending'),
       { code: 'REQUEST_NOT_FOUND' }

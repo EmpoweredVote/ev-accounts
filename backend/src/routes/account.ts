@@ -4,6 +4,7 @@ import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { createUserClient, adminRpc } from '../lib/supabase.js';
+import { pool } from '../lib/db.js';
 import { getLocationConsent } from '../lib/connectService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 
@@ -314,25 +315,16 @@ router.patch(
       }
 
       // 4. Sync display_name to connected_profiles (non-fatal if it fails)
-      // Both tables store display_name independently; Phase 2 keeps them in sync.
-      // Future: Replace with an atomic RPC function when divergence is intentional.
       if (result.data.display_name !== undefined) {
-        const { error: connectedError } = await db
-          .schema('connect')
-          .from('connected_profiles')
-          .update({
-            display_name: result.data.display_name,
-            updated_at: now,
-          })
-          .eq('user_id', authReq.userId);
-
-        if (connectedError) {
-          console.error(
-            '[PATCH /api/account/me] connected_profiles update failed:',
-            connectedError
-          );
-          // Non-fatal: public.users was already updated. Log but continue.
-        }
+        await pool.query(
+          `UPDATE connect.connected_profiles
+           SET display_name = $2, updated_at = now()
+           WHERE user_id = $1`,
+          [authReq.userId, result.data.display_name]
+        ).catch((err: unknown) => {
+          console.error('[PATCH /api/account/me] connected_profiles sync failed:', err);
+          // Non-fatal: public.users was already updated.
+        });
       }
 
       // 5. Re-fetch updated records to build authoritative response

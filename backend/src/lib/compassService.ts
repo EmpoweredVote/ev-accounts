@@ -1,4 +1,5 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
+import { pool } from './db.js';
 
 /**
  * promoteCompassImportDraft
@@ -268,17 +269,12 @@ export async function saveSelectedTopics(
   userId: string,
   topicIds: string[]
 ): Promise<boolean> {
-  const db = createUserClient(accessToken);
-  const { data: updatedRows, error } = await db
-    .schema('connect')
-    .from('connected_profiles')
-    .update({
-      selected_topic_ids: JSON.stringify(topicIds),
-      updated_at: new Date().toISOString(),
-    })
-    .eq('user_id', userId)
-    .select('id');
-
-  if (error) throw error;
-  return !!(updatedRows && updatedRows.length > 0);
+  const { rows } = await pool.query<{ id: string }>(
+    `UPDATE connect.connected_profiles
+     SET selected_topic_ids = $2::jsonb, updated_at = now()
+     WHERE user_id = $1
+     RETURNING id`,
+    [userId, JSON.stringify(topicIds)]
+  );
+  return rows.length > 0;
 }

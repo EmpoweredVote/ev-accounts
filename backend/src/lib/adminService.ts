@@ -16,6 +16,7 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { pool } from './db.js';
 import { executeDemotion } from './empowerService.js';
 import { grantRole, revokeRole } from './roleService.js';
 import { getXpHistory } from './xpService.js';
@@ -130,13 +131,10 @@ export async function setAccountStanding(
   userId: string,
   standing: 'active' | 'suspended'
 ): Promise<void> {
-  const { error } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .update({ account_standing: standing })
-    .eq('user_id', userId);
-
-  if (error) throw new Error(error.message);
+  await pool.query(
+    `UPDATE connect.connected_profiles SET account_standing = $2 WHERE user_id = $1`,
+    [userId, standing]
+  );
 }
 
 /**
@@ -147,18 +145,23 @@ export async function updateVerificationRating(
   userId: string,
   opts: { rating?: number; clearHold?: boolean }
 ): Promise<void> {
-  const updates: Record<string, unknown> = {};
-  if (opts.rating !== undefined) updates.verification_rating = opts.rating;
-  if (opts.clearHold === true) updates.vq_hold_until = null;
+  const setClauses: string[] = [];
+  const params: unknown[] = [userId];
 
-  if (Object.keys(updates).length === 0) return;
+  if (opts.rating !== undefined) {
+    params.push(opts.rating);
+    setClauses.push(`verification_rating = $${params.length}`);
+  }
+  if (opts.clearHold === true) {
+    setClauses.push(`vq_hold_until = NULL`);
+  }
 
-  const { error } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .update(updates)
-    .eq('user_id', userId);
-  if (error) throw new Error(error.message);
+  if (setClauses.length === 0) return;
+
+  await pool.query(
+    `UPDATE connect.connected_profiles SET ${setClauses.join(', ')} WHERE user_id = $1`,
+    params
+  );
 }
 
 /**

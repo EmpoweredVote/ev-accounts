@@ -9,6 +9,7 @@
  */
 
 import { createUserClient, supabaseAnon, adminRpc, supabaseAdmin } from './supabase.js';
+import { pool } from './db.js';
 import { saveSelectedTopics, validateTopicIds } from './compassService.js';
 
 // ---------------------------------------------------------------------------
@@ -127,24 +128,19 @@ export async function upsertVerificationSession(
   userId: string,
   codeId: string
 ): Promise<VerificationSession> {
-  const db = createUserClient(accessToken);
-  const { data, error } = await db
-    .schema('connect')
-    .from('verification_sessions')
-    .upsert(
-      {
-        user_id: userId,
-        step_reached: 'profile',
-        invite_code_id: codeId,
-        updated_at: new Date().toISOString(),
-      },
-      { onConflict: 'user_id' }
-    )
-    .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft,invite_code_id')
-    .single();
-
-  if (error) throw error;
-  return data as VerificationSession;
+  const { rows } = await pool.query<VerificationSession>(
+    `INSERT INTO connect.verification_sessions
+       (user_id, step_reached, invite_code_id, updated_at)
+     VALUES ($1, 'profile', $2, now())
+     ON CONFLICT (user_id) DO UPDATE SET
+       step_reached = EXCLUDED.step_reached,
+       invite_code_id = EXCLUDED.invite_code_id,
+       updated_at = EXCLUDED.updated_at
+     RETURNING id, step_reached, display_name_draft, legal_name_draft,
+               region_draft, home_address_draft, invite_code_id`,
+    [userId, codeId]
+  );
+  return rows[0];
 }
 
 /**
@@ -162,20 +158,22 @@ export async function updateVerificationSession(
     step_reached: string;
   }
 ): Promise<VerificationSession> {
-  const db = createUserClient(accessToken);
-  const { data, error } = await db
-    .schema('connect')
-    .from('verification_sessions')
-    .update({
-      ...updates,
-      updated_at: new Date().toISOString(),
-    })
-    .eq('user_id', userId)
-    .select('id,step_reached,display_name_draft,legal_name_draft,region_draft,home_address_draft,invite_code_id')
-    .single();
-
-  if (error) throw error;
-  return data as VerificationSession;
+  const { rows } = await pool.query<VerificationSession>(
+    `UPDATE connect.verification_sessions SET
+       display_name_draft = $2,
+       legal_name_draft   = $3,
+       region_draft       = $4,
+       home_address_draft = $5,
+       step_reached       = $6,
+       updated_at         = now()
+     WHERE user_id = $1
+     RETURNING id, step_reached, display_name_draft, legal_name_draft,
+               region_draft, home_address_draft, invite_code_id`,
+    [userId, updates.display_name_draft, updates.legal_name_draft,
+     updates.region_draft, updates.home_address_draft, updates.step_reached]
+  );
+  if (rows.length === 0) throw new Error('Verification session not found');
+  return rows[0];
 }
 
 /**
@@ -208,17 +206,12 @@ export async function saveCompassImportDraft(
   userId: string,
   calibrations: CalibrationItem[]
 ): Promise<void> {
-  const db = createUserClient(accessToken);
-  const { error } = await db
-    .schema('connect')
-    .from('verification_sessions')
-    .update({
-      compass_import_draft: JSON.stringify(calibrations),
-      updated_at: new Date().toISOString(),
-    })
-    .eq('user_id', userId);
-
-  if (error) throw error;
+  await pool.query(
+    `UPDATE connect.verification_sessions
+     SET compass_import_draft = $2, updated_at = now()
+     WHERE user_id = $1`,
+    [userId, JSON.stringify(calibrations)]
+  );
 }
 
 // ---------------------------------------------------------------------------

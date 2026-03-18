@@ -21,6 +21,7 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { pool } from './db.js';
 import { cache } from './cache.js';
 import { getCompassCompleteness } from './compassService.js';
 
@@ -231,16 +232,11 @@ export async function recordConsent(
   consentedItems: string[],
   ipAddress?: string
 ): Promise<void> {
-  const { error } = await supabaseAdmin
-    .schema('empower')
-    .from('consent_records')
-    .insert({
-      user_id: userId,
-      consented_items: consentedItems,
-      ip_address: ipAddress ?? null,
-    });
-
-  if (error) throw new Error(error.message);
+  await pool.query(
+    `INSERT INTO empower.consent_records (user_id, consented_items, ip_address)
+     VALUES ($1, $2, $3)`,
+    [userId, consentedItems, ipAddress ?? null]
+  );
 }
 
 // ---------------------------------------------------------------------------
