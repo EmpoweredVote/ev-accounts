@@ -99,11 +99,18 @@ const GEM_IMAGES: Record<string, string> = {
   Red: '/Red_Gem.png',
 };
 
+const GEM_TOOLTIPS: Record<string, string> = {
+  Yellow: 'Yellow Gems are earned for learning civic facts.',
+  Blue: 'Blue Gems are used to vote your values.',
+  Red: 'Red Gems make an impact on our priorities.',
+};
+
 function GemBadge({ count, label }: { count: number; label: string }) {
   const src = GEM_IMAGES[label];
+  const tooltip = GEM_TOOLTIPS[label];
   return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="w-14 h-14 flex items-center justify-center drop-shadow-lg">
+    <div className="relative group flex flex-col items-center gap-2">
+      <div className="w-14 h-14 flex items-center justify-center drop-shadow-lg cursor-default">
         {src ? (
           <img src={src} alt={`${label} Gem`} className="w-full h-full object-contain" />
         ) : (
@@ -111,7 +118,12 @@ function GemBadge({ count, label }: { count: number; label: string }) {
         )}
       </div>
       <span className="text-sm font-semibold text-ev-black dark:text-white tabular-nums">{count.toLocaleString()}</span>
-      <span className="text-xs text-gray-400">{label}</span>
+      {tooltip && (
+        <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-44 px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg text-center leading-snug opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+          {tooltip}
+          <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900 dark:border-t-gray-700" />
+        </div>
+      )}
     </div>
   );
 }
