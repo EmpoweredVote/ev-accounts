@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { AuthGuard } from './components/AuthGuard';
 import { OnboardingGuard } from './components/OnboardingGuard';
 import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
 import DashboardPage from './pages/DashboardPage';
 import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
@@ -55,6 +56,7 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/signup" element={<SignupPage />} />
 
       {/* Authenticated */}
       <Route element={<AuthGuard />}>
