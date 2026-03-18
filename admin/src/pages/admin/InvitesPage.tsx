@@ -67,11 +67,11 @@ export function InvitesPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Invite Codes</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Invite Codes</h1>
         <div className="flex gap-3">
           <Link
             to="/admin/invites/tree"
-            className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-50 transition-colors"
+            className="px-4 py-2 border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-300 text-sm font-medium rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
           >
             View Full Tree
           </Link>
@@ -86,60 +86,60 @@ export function InvitesPage() {
       </div>
 
       {(error || actionError) && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
           {error || actionError}
         </div>
       )}
 
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 border-b border-gray-200">
+          <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             <tr>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Code</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Created By</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Claimed By</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Status</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Created</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Actions</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Code</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Created By</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Claimed By</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Status</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Created</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Actions</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
             {loading ? (
               Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i} className="animate-pulse">
                   <td colSpan={6} className="px-4 py-3">
-                    <div className="h-4 bg-gray-200 rounded w-full"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
                   </td>
                 </tr>
               ))
             ) : data?.codes?.length === 0 ? (
               <tr>
-                <td colSpan={6} className="px-4 py-8 text-center text-gray-400">
+                <td colSpan={6} className="px-4 py-8 text-center text-gray-400 dark:text-gray-500">
                   No invite codes found.
                 </td>
               </tr>
             ) : (
               data?.codes.map((code) => (
-                <tr key={code.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-mono text-gray-900">{code.code}</td>
+                <tr key={code.id} className="hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-mono text-gray-900 dark:text-white">{code.code}</td>
                   <td className="px-4 py-3">
                     <Link
                       to={`/admin/accounts/${code.created_by_id}`}
-                      className="text-blue-600 hover:text-blue-800"
+                      className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                     >
                       {code.created_by_name}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-gray-600">
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
                     {code.claimed_by_id ? (
                       <Link
                         to={`/admin/accounts/${code.claimed_by_id}`}
-                        className="text-blue-600 hover:text-blue-800"
+                        className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                       >
                         {code.claimed_by_name}
                       </Link>
                     ) : (
-                      <span className="text-gray-400">Unclaimed</span>
+                      <span className="text-gray-400 dark:text-gray-500">Unclaimed</span>
                     )}
                   </td>
                   <td className="px-4 py-3">
@@ -153,7 +153,7 @@ export function InvitesPage() {
                       {code.is_claimed ? 'Claimed' : 'Active'}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-gray-500">
+                  <td className="px-4 py-3 text-gray-500 dark:text-gray-400">
                     {new Date(code.created_at).toLocaleDateString()}
                   </td>
                   <td className="px-4 py-3">
@@ -174,7 +174,7 @@ export function InvitesPage() {
       </div>
 
       {data && data.pages > 1 && (
-        <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+        <div className="mt-4 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
           <span>
             Page {data.page} of {data.pages} ({data.total} total)
           </span>
@@ -182,14 +182,14 @@ export function InvitesPage() {
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1}
-              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
             >
               Previous
             </button>
             <button
               onClick={() => setPage((p) => Math.min(data.pages, p + 1))}
               disabled={page >= data.pages}
-              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
             >
               Next
             </button>

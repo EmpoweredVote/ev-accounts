@@ -123,10 +123,10 @@ export function AccountsPage() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Accounts</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Accounts</h1>
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow p-4 mb-6 flex gap-4">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-4 mb-6 flex gap-4">
         <div className="flex-1 relative">
           <input
             type="text"
@@ -135,12 +135,12 @@ export function AccountsPage() {
             onChange={(e) => setSearch(e.target.value)}
             onFocus={handleSearchFocus}
             onBlur={handleSearchBlur}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
           />
           {showSearchDropdown && (
-            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg z-10 max-h-64 overflow-y-auto">
               {searchResults.length === 0 ? (
-                <div className="px-4 py-3 text-sm text-gray-400">
+                <div className="px-4 py-3 text-sm text-gray-400 dark:text-gray-500">
                   No users found for &ldquo;{debouncedSearch}&rdquo;
                 </div>
               ) : (
@@ -148,13 +148,13 @@ export function AccountsPage() {
                   <div
                     key={account.id}
                     onMouseDown={() => handleDropdownClick(account.id)}
-                    className="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 cursor-pointer border-b border-gray-100 last:border-0"
+                    className="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer border-b border-gray-100 dark:border-gray-800 last:border-0"
                   >
                     <div>
-                      <span className="block text-sm font-medium text-gray-900">
+                      <span className="block text-sm font-medium text-gray-900 dark:text-white">
                         {account.display_name}
                       </span>
-                      <span className="block text-xs text-gray-500">{account.email}</span>
+                      <span className="block text-xs text-gray-500 dark:text-gray-400">{account.email}</span>
                     </div>
                     <span
                       className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[account.tier] ?? 'bg-gray-100 text-gray-700'}`}
@@ -170,7 +170,7 @@ export function AccountsPage() {
         <select
           value={tier}
           onChange={(e) => setTier(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
         >
           <option value="">All Tiers</option>
           <option value="inform">Inform</option>
@@ -180,7 +180,7 @@ export function AccountsPage() {
         <select
           value={standing}
           onChange={(e) => setStanding(e.target.value)}
-          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
         >
           <option value="">All Standings</option>
           <option value="active">Active</option>
@@ -189,35 +189,35 @@ export function AccountsPage() {
       </div>
 
       {error && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
           {error}
         </div>
       )}
 
       {/* Table */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-gray-50 border-b border-gray-200">
+          <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
             <tr>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Name</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Email</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Tier</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Standing</th>
-              <th className="text-left px-4 py-3 font-medium text-gray-500">Created</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Name</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Email</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Tier</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Standing</th>
+              <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Created</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-100">
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
             {loading ? (
               Array.from({ length: 5 }).map((_, i) => (
                 <tr key={i} className="animate-pulse">
                   <td colSpan={5} className="px-4 py-3">
-                    <div className="h-4 bg-gray-200 rounded w-full"></div>
+                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
                   </td>
                 </tr>
               ))
             ) : data?.accounts?.length === 0 ? (
               <tr>
-                <td colSpan={5} className="px-4 py-8 text-center text-gray-400">
+                <td colSpan={5} className="px-4 py-8 text-center text-gray-400 dark:text-gray-500">
                   No accounts found.
                 </td>
               </tr>
@@ -226,10 +226,10 @@ export function AccountsPage() {
                 <tr
                   key={account.id}
                   onClick={() => navigate(`/admin/accounts/${account.id}`)}
-                  className="hover:bg-gray-50 cursor-pointer transition-colors"
+                  className="hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer transition-colors"
                 >
-                  <td className="px-4 py-3 font-medium text-gray-900">{account.display_name}</td>
-                  <td className="px-4 py-3 text-gray-600">{account.email}</td>
+                  <td className="px-4 py-3 font-medium text-gray-900 dark:text-white">{account.display_name}</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400">{account.email}</td>
                   <td className="px-4 py-3">
                     <span className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[account.tier] ?? 'bg-gray-100 text-gray-700'}`}>
                       {account.tier}
@@ -240,7 +240,7 @@ export function AccountsPage() {
                       {account.account_standing}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-gray-500">
+                  <td className="px-4 py-3 text-gray-500 dark:text-gray-400">
                     {new Date(account.created_at).toLocaleDateString()}
                   </td>
                 </tr>
@@ -252,7 +252,7 @@ export function AccountsPage() {
 
       {/* Pagination */}
       {data && data.pages > 1 && (
-        <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+        <div className="mt-4 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
           <span>
             Page {data.page} of {data.pages} ({data.total} total)
           </span>
@@ -260,14 +260,14 @@ export function AccountsPage() {
             <button
               onClick={() => setPage((p) => Math.max(1, p - 1))}
               disabled={page <= 1}
-              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
             >
               Previous
             </button>
             <button
               onClick={() => setPage((p) => Math.min(data.pages, p + 1))}
               disabled={page >= data.pages}
-              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+              className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
             >
               Next
             </button>

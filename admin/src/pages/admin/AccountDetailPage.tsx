@@ -325,10 +325,10 @@ export function AccountDetailPage() {
   if (loading) {
     return (
       <div className="animate-pulse space-y-4">
-        <div className="h-8 bg-gray-200 rounded w-1/3"></div>
-        <div className="bg-white rounded-lg shadow p-6 space-y-3">
-          <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-          <div className="h-4 bg-gray-200 rounded w-1/3"></div>
+        <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 space-y-3">
+          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
         </div>
       </div>
     );
@@ -336,7 +336,7 @@ export function AccountDetailPage() {
 
   if (error || !account) {
     return (
-      <div className="p-4 bg-red-50 border border-red-200 rounded text-red-700">
+      <div className="p-4 bg-red-50 border border-red-200 rounded text-red-700 dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
         {error || 'Account not found'}
       </div>
     );
@@ -345,24 +345,24 @@ export function AccountDetailPage() {
   return (
     <div className="max-w-3xl">
       {/* Back link */}
-      <Link to="/admin/accounts" className="text-sm text-blue-600 hover:text-blue-800 mb-4 inline-block">
+      <Link to="/admin/accounts" className="text-sm text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80 mb-4 inline-block">
         &larr; Back to Accounts
       </Link>
 
       {/* Promotion success toast */}
       {promotionSuccess && (
-        <div className="mb-4 bg-green-50 border border-green-200 rounded p-3 text-green-700 text-sm">
+        <div className="mb-4 bg-green-50 border border-green-200 rounded p-3 text-green-700 text-sm dark:bg-green-950/40 dark:border-green-800/60 dark:text-green-400">
           {promotionSuccess}
         </div>
       )}
 
       {/* Profile header */}
-      <div className="bg-white rounded-lg shadow p-6 mb-4">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
         <div className="flex items-start justify-between">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{account.display_name}</h1>
-            <p className="text-gray-500 text-sm mt-1">{account.email}</p>
-            <p className="text-gray-400 text-xs mt-1">ID: {account.id}</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{account.display_name}</h1>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">{account.email}</p>
+            <p className="text-gray-400 dark:text-gray-500 text-xs mt-1">ID: {account.id}</p>
           </div>
           <div className="flex gap-2">
             <span className={`px-2 py-1 rounded-full text-xs font-medium capitalize ${TIER_BADGE[account.tier] ?? 'bg-gray-100 text-gray-700'}`}>
@@ -373,18 +373,18 @@ export function AccountDetailPage() {
             </span>
           </div>
         </div>
-        <p className="text-sm text-gray-500 mt-3">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">
           Joined {new Date(account.created_at).toLocaleDateString()}
         </p>
         {account.connected_profile && (
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             Level {account.connected_profile.current_level ?? 0}
             {' \u00b7 '}
             {(account.connected_profile.total_xp ?? 0).toLocaleString()} XP
           </p>
         )}
         {account.connected_profile && (
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             <span className="text-ev-yellow font-medium">Yellow: {account.connected_profile.gem_balance_yellow}</span>
             {' \u00b7 '}
             <span className="text-blue-500 font-medium">Blue: {account.connected_profile.gem_balance_blue}</span>
@@ -395,18 +395,18 @@ export function AccountDetailPage() {
       </div>
 
       {/* Admin-only sensitive fields */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-4">
-        <h2 className="text-sm font-semibold text-amber-800 uppercase tracking-wide mb-3">
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-6 mb-4 dark:bg-amber-950/20 dark:border-amber-800/40">
+        <h2 className="text-sm font-semibold text-amber-800 dark:text-amber-200 uppercase tracking-wide mb-3">
           Admin-Only Fields
         </h2>
         <div className="space-y-2 text-sm">
           <div className="flex">
-            <span className="w-36 font-medium text-amber-700">Legal Name:</span>
-            <span className="text-amber-900">{account.legal_name ?? 'Not set'}</span>
+            <span className="w-36 font-medium text-amber-700 dark:text-amber-400">Legal Name:</span>
+            <span className="text-amber-900 dark:text-amber-200">{account.legal_name ?? 'Not set'}</span>
           </div>
           <div className="flex">
-            <span className="w-36 font-medium text-amber-700">Tolerance Rating:</span>
-            <span className="text-amber-900">
+            <span className="w-36 font-medium text-amber-700 dark:text-amber-400">Tolerance Rating:</span>
+            <span className="text-amber-900 dark:text-amber-200">
               {account.tolerance_rating != null ? account.tolerance_rating.toFixed(2) : 'N/A'}
             </span>
           </div>
@@ -414,7 +414,7 @@ export function AccountDetailPage() {
           {/* VR section — Connected and Empowered only */}
           {account.connected_profile && (
             <>
-              <div className="pt-2 border-t border-amber-200 mt-2" />
+              <div className="pt-2 border-t border-amber-200 dark:border-amber-800/40 mt-2" />
 
               {/* Status badges (view and edit mode) */}
               <div className="flex gap-2 flex-wrap mb-1">
@@ -435,22 +435,22 @@ export function AccountDetailPage() {
                 /* View mode */
                 <>
                   <div className="flex items-center">
-                    <span className="w-36 font-medium text-amber-700">Verification Rating:</span>
-                    <span className="text-amber-900 mr-3">{account.connected_profile.verification_rating}</span>
+                    <span className="w-36 font-medium text-amber-700 dark:text-amber-400">Verification Rating:</span>
+                    <span className="text-amber-900 dark:text-amber-200 mr-3">{account.connected_profile.verification_rating}</span>
                     <button
                       onClick={() => {
                         setVrDraft({ rating: account.connected_profile!.verification_rating, clearHold: false });
                         setVrEditMode(true);
                         setVrError(null);
                       }}
-                      className="text-xs text-blue-600 hover:text-blue-800"
+                      className="text-xs text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                     >
                       Edit
                     </button>
                   </div>
                   <div className="flex">
-                    <span className="w-36 font-medium text-amber-700">Hold Until:</span>
-                    <span className="text-amber-900">
+                    <span className="w-36 font-medium text-amber-700 dark:text-amber-400">Hold Until:</span>
+                    <span className="text-amber-900 dark:text-amber-200">
                       {account.connected_profile.vq_hold_until
                         ? new Date(account.connected_profile.vq_hold_until).toLocaleDateString()
                         : 'None'}
@@ -461,14 +461,14 @@ export function AccountDetailPage() {
                 /* Edit mode */
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-36 font-medium text-amber-700">Verification Rating:</span>
+                    <span className="w-36 font-medium text-amber-700 dark:text-amber-400">Verification Rating:</span>
                     <input
                       type="number"
                       min={0}
                       max={150}
                       value={vrDraft.rating}
                       onChange={(e) => setVrDraft((d) => ({ ...d, rating: parseInt(e.target.value, 10) || 0 }))}
-                      className="w-24 px-2 py-1 border border-amber-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-amber-400"
+                      className="w-24 px-2 py-1 border border-amber-300 rounded text-sm focus:outline-none focus:ring-1 focus:ring-amber-400 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                     />
                   </div>
 
@@ -482,7 +482,7 @@ export function AccountDetailPage() {
                         {!vrDraft.clearHold ? (
                           <button
                             onClick={() => setVrDraft((d) => ({ ...d, clearHold: true }))}
-                            className="text-xs px-2 py-1 border border-orange-300 text-orange-700 rounded hover:bg-orange-50"
+                            className="text-xs px-2 py-1 border border-orange-300 text-orange-700 dark:text-orange-400 rounded hover:bg-orange-50"
                           >
                             Clear hold
                           </button>
@@ -504,7 +504,7 @@ export function AccountDetailPage() {
                     </button>
                     <button
                       onClick={() => { setVrEditMode(false); setVrError(null); }}
-                      className="px-3 py-1 border border-amber-300 text-amber-700 text-sm rounded hover:bg-amber-100"
+                      className="px-3 py-1 border border-amber-300 text-amber-700 dark:text-amber-400 text-sm rounded hover:bg-amber-100"
                     >
                       Cancel
                     </button>
@@ -517,17 +517,17 @@ export function AccountDetailPage() {
       </div>
 
       {/* Roles */}
-      <div className="bg-white rounded-lg shadow p-6 mb-4">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Roles</h2>
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Roles</h2>
         {(account.roles?.length ?? 0) === 0 ? (
-          <p className="text-sm text-gray-500">No roles assigned.</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">No roles assigned.</p>
         ) : (
           <div className="space-y-2">
             {account.roles?.map((role) => (
               <div key={role.id} className="flex items-center justify-between">
                 <div>
-                  <span className="font-medium text-sm text-gray-900">{role.slug}</span>
-                  <span className="text-xs text-gray-400 ml-2">
+                  <span className="font-medium text-sm text-gray-900 dark:text-white">{role.slug}</span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500 ml-2">
                     Granted {new Date(role.granted_at).toLocaleDateString()}
                   </span>
                 </div>
@@ -545,33 +545,33 @@ export function AccountDetailPage() {
       </div>
 
       {/* Invite chain */}
-      <div className="bg-white rounded-lg shadow p-6 mb-4">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Invite Chain</h2>
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Invite Chain</h2>
         <div className="space-y-3 text-sm">
           <div>
-            <span className="font-medium text-gray-600">Invited by: </span>
+            <span className="font-medium text-gray-600 dark:text-gray-400">Invited by: </span>
             {account.invited_by ? (
               <Link
                 to={`/admin/accounts/${account.invited_by.id}`}
-                className="text-blue-600 hover:text-blue-800"
+                className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
               >
                 {account.invited_by.display_name}
               </Link>
             ) : (
-              <span className="text-gray-400">Seed account</span>
+              <span className="text-gray-400 dark:text-gray-500">Seed account</span>
             )}
           </div>
           <div>
-            <span className="font-medium text-gray-600">Invited users: </span>
+            <span className="font-medium text-gray-600 dark:text-gray-400">Invited users: </span>
             {(account.invited_users?.length ?? 0) === 0 ? (
-              <span className="text-gray-400">None</span>
+              <span className="text-gray-400 dark:text-gray-500">None</span>
             ) : (
               <span className="space-x-2">
                 {account.invited_users?.map((u) => (
                   <Link
                     key={u.id}
                     to={`/admin/accounts/${u.id}`}
-                    className="text-blue-600 hover:text-blue-800"
+                    className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                   >
                     {u.display_name}
                   </Link>
@@ -582,7 +582,7 @@ export function AccountDetailPage() {
           <div>
             <Link
               to={`/admin/invites/tree/${account.id}`}
-              className="text-blue-600 hover:text-blue-800 text-sm"
+              className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80 text-sm"
             >
               View subtree &rarr;
             </Link>
@@ -592,19 +592,19 @@ export function AccountDetailPage() {
 
       {/* Calibration status (Empowered only) */}
       {account.calibration_status && (
-        <div className="bg-white rounded-lg shadow p-6 mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Calibration Status</h2>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Calibration Status</h2>
           <div className="space-y-2 text-sm">
             <div className="flex">
-              <span className="w-48 font-medium text-gray-600">Days since last calibration:</span>
-              <span className={account.calibration_status.is_at_risk ? 'text-red-600 font-semibold' : 'text-gray-900'}>
+              <span className="w-48 font-medium text-gray-600 dark:text-gray-400">Days since last calibration:</span>
+              <span className={account.calibration_status.is_at_risk ? 'text-red-600 font-semibold' : 'text-gray-900 dark:text-white'}>
                 {account.calibration_status.days_since_last_calibration ?? 'Never'}
               </span>
             </div>
             {account.calibration_status.overdue_topics.length > 0 && (
               <div>
-                <span className="font-medium text-gray-600">Overdue topics:</span>
-                <ul className="mt-1 ml-4 list-disc text-gray-700">
+                <span className="font-medium text-gray-600 dark:text-gray-400">Overdue topics:</span>
+                <ul className="mt-1 ml-4 list-disc text-gray-700 dark:text-gray-300">
                   {account.calibration_status.overdue_topics.map((t, i) => (
                     <li key={i}>{t}</li>
                   ))}
@@ -612,7 +612,7 @@ export function AccountDetailPage() {
               </div>
             )}
             {account.calibration_status.is_at_risk && (
-              <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded text-red-700 text-xs">
+              <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded text-red-700 text-xs dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
                 At risk of demotion
               </div>
             )}
@@ -622,33 +622,33 @@ export function AccountDetailPage() {
 
       {/* Compass Section (Connected + Empowered only) */}
       {profileData?.selected_topic_ids !== undefined && (
-        <div className="bg-white rounded-lg shadow p-6 mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Compass</h2>
-          <p className="text-sm text-gray-600 mb-3">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Compass</h2>
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
             <span className="font-medium">{profileData.selected_topic_ids.length}</span> selected topic{profileData.selected_topic_ids.length !== 1 ? 's' : ''}
           </p>
 
           {profileData.compass_answers ? (
             profileData.compass_answers.length === 0 ? (
-              <p className="text-sm text-gray-400">No compass answers recorded.</p>
+              <p className="text-sm text-gray-400 dark:text-gray-500">No compass answers recorded.</p>
             ) : (
-              <div className="overflow-hidden rounded border border-gray-200">
+              <div className="overflow-hidden rounded border border-gray-200 dark:border-gray-700">
                 <table className="w-full text-sm">
-                  <thead className="bg-gray-50 border-b border-gray-200">
+                  <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                     <tr>
-                      <th className="text-left px-4 py-3 font-medium text-gray-500">Topic ID</th>
-                      <th className="text-left px-4 py-3 font-medium text-gray-500">Value</th>
-                      <th className="text-left px-4 py-3 font-medium text-gray-500">Write-in Text</th>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Topic ID</th>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Value</th>
+                      <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Write-in Text</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
                     {profileData.compass_answers.map((answer) => (
                       <tr key={answer.topic_id}>
-                        <td className="px-4 py-3 text-gray-500 font-mono text-xs">
+                        <td className="px-4 py-3 text-gray-500 dark:text-gray-400 font-mono text-xs">
                           {answer.topic_id.slice(0, 8)}&hellip;
                         </td>
-                        <td className="px-4 py-3 text-gray-900 font-medium">{answer.value}</td>
-                        <td className="px-4 py-3 text-gray-600">
+                        <td className="px-4 py-3 text-gray-900 dark:text-white font-medium">{answer.value}</td>
+                        <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
                           {answer.write_in_text ?? <span className="text-gray-300">&mdash;</span>}
                         </td>
                       </tr>
@@ -658,7 +658,7 @@ export function AccountDetailPage() {
               </div>
             )
           ) : (
-            <p className="text-sm text-gray-400 italic">
+            <p className="text-sm text-gray-400 dark:text-gray-500 italic">
               Compass answers are private for Connected-tier users.
             </p>
           )}
@@ -667,37 +667,37 @@ export function AccountDetailPage() {
 
       {/* Empowered Profile Section (Empowered only) */}
       {profileData?.empowered_profile && (
-        <div className="bg-white rounded-lg shadow p-6 mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Empowered Profile</h2>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Empowered Profile</h2>
           <div className="space-y-2 text-sm">
             <div className="flex">
-              <span className="w-44 font-medium text-gray-600">Legal Name:</span>
-              <span className="text-gray-900">{profileData.empowered_profile.legal_name ?? 'Not set'}</span>
+              <span className="w-44 font-medium text-gray-600 dark:text-gray-400">Legal Name:</span>
+              <span className="text-gray-900 dark:text-white">{profileData.empowered_profile.legal_name ?? 'Not set'}</span>
             </div>
             <div className="flex items-center">
-              <span className="w-44 font-medium text-gray-600">Candidate Page Slug:</span>
+              <span className="w-44 font-medium text-gray-600 dark:text-gray-400">Candidate Page Slug:</span>
               {profileData.empowered_profile.candidate_page_slug ? (
                 <a
                   href={`/candidates/${profileData.empowered_profile.candidate_page_slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800"
+                  className="text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                 >
                   {profileData.empowered_profile.candidate_page_slug}
                 </a>
               ) : (
-                <span className="text-gray-400">Not set</span>
+                <span className="text-gray-400 dark:text-gray-500">Not set</span>
               )}
             </div>
             <div className="flex items-center">
-              <span className="w-44 font-medium text-gray-600">Status:</span>
+              <span className="w-44 font-medium text-gray-600 dark:text-gray-400">Status:</span>
               <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${profileData.empowered_profile.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
                 {profileData.empowered_profile.is_active ? 'Active' : 'Inactive'}
               </span>
             </div>
             <div className="flex">
-              <span className="w-44 font-medium text-gray-600">Empowered At:</span>
-              <span className="text-gray-900">
+              <span className="w-44 font-medium text-gray-600 dark:text-gray-400">Empowered At:</span>
+              <span className="text-gray-900 dark:text-white">
                 {profileData.empowered_profile.empowered_at
                   ? new Date(profileData.empowered_profile.empowered_at as string).toLocaleDateString()
                   : 'Unknown'}
@@ -705,7 +705,7 @@ export function AccountDetailPage() {
             </div>
             {profileData.empowered_profile.demoted_at && (
               <div className="flex">
-                <span className="w-44 font-medium text-gray-600">Demoted At:</span>
+                <span className="w-44 font-medium text-gray-600 dark:text-gray-400">Demoted At:</span>
                 <span className="text-red-600">
                   {new Date(profileData.empowered_profile.demoted_at as string).toLocaleDateString()}
                 </span>
@@ -717,37 +717,37 @@ export function AccountDetailPage() {
 
       {/* XP History (Connected + Empowered only) */}
       {account.connected_profile && (
-        <div className="bg-white rounded-lg shadow p-6 mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">XP History</h2>
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">XP History</h2>
 
           {xpError && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3">
+            <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3 dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
               Failed to load XP history.
             </div>
           )}
 
-          <div className="overflow-hidden rounded border border-gray-200">
+          <div className="overflow-hidden rounded border border-gray-200 dark:border-gray-700">
             <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b border-gray-200">
+              <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
                 <tr>
-                  <th className="text-left px-4 py-3 font-medium text-gray-500">Source</th>
-                  <th className="text-left px-4 py-3 font-medium text-gray-500">Amount</th>
-                  <th className="text-left px-4 py-3 font-medium text-gray-500">Timestamp</th>
-                  <th className="text-left px-4 py-3 font-medium text-gray-500">Metadata</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Source</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Amount</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Timestamp</th>
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Metadata</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
                 {xpLoading ? (
                   Array.from({ length: 5 }).map((_, i) => (
                     <tr key={i} className="animate-pulse">
                       <td colSpan={4} className="px-4 py-3">
-                        <div className="h-4 bg-gray-200 rounded w-full"></div>
+                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
                       </td>
                     </tr>
                   ))
                 ) : !xpData || xpData.transactions.length === 0 ? (
                   <tr>
-                    <td colSpan={4} className="px-4 py-8 text-center text-gray-400">
+                    <td colSpan={4} className="px-4 py-8 text-center text-gray-400 dark:text-gray-500">
                       No XP transactions found.
                     </td>
                   </tr>
@@ -755,16 +755,16 @@ export function AccountDetailPage() {
                   xpData.transactions.map((tx) => (
                     <React.Fragment key={tx.id}>
                       <tr>
-                        <td className="px-4 py-3 text-gray-700">{tx.source}</td>
-                        <td className="px-4 py-3 text-gray-900 font-medium">+{tx.amount}</td>
-                        <td className="px-4 py-3 text-gray-500">
+                        <td className="px-4 py-3 text-gray-700 dark:text-gray-300">{tx.source}</td>
+                        <td className="px-4 py-3 text-gray-900 dark:text-white font-medium">+{tx.amount}</td>
+                        <td className="px-4 py-3 text-gray-500 dark:text-gray-400">
                           {new Date(tx.created_at).toLocaleString()}
                         </td>
                         <td className="px-4 py-3">
                           {tx.metadata && Object.keys(tx.metadata).length > 0 ? (
                             <button
                               onClick={() => setExpandedId(expandedId === tx.id ? null : tx.id)}
-                              className="text-xs text-blue-600 hover:text-blue-800"
+                              className="text-xs text-blue-600 hover:text-blue-800 dark:text-ev-teal-light dark:hover:text-ev-teal-light/80"
                             >
                               {expandedId === tx.id ? 'Hide' : 'View'}
                             </button>
@@ -774,9 +774,9 @@ export function AccountDetailPage() {
                         </td>
                       </tr>
                       {expandedId === tx.id && tx.metadata && (
-                        <tr className="bg-gray-50">
+                        <tr className="bg-gray-50 dark:bg-gray-800">
                           <td colSpan={4} className="px-4 py-2">
-                            <pre className="text-xs text-gray-600 overflow-auto max-h-32 whitespace-pre-wrap">
+                            <pre className="text-xs text-gray-600 dark:text-gray-300 overflow-auto max-h-32 whitespace-pre-wrap">
                               {JSON.stringify(tx.metadata, null, 2)}
                             </pre>
                           </td>
@@ -790,7 +790,7 @@ export function AccountDetailPage() {
           </div>
 
           {xpData && xpData.pages > 1 && (
-            <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+            <div className="mt-4 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
               <span>
                 Page {xpData.page} of {xpData.pages} ({xpData.total} total)
               </span>
@@ -798,14 +798,14 @@ export function AccountDetailPage() {
                 <button
                   onClick={() => setXpPage((p) => Math.max(1, p - 1))}
                   disabled={xpPage <= 1}
-                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
                 >
                   Previous
                 </button>
                 <button
                   onClick={() => setXpPage((p) => Math.min(xpData.pages, p + 1))}
                   disabled={xpPage >= xpData.pages}
-                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                  className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
                 >
                   Next
                 </button>
@@ -816,48 +816,48 @@ export function AccountDetailPage() {
       )}
 
       {/* Promotion History Section (always shown) */}
-      <div className="bg-white rounded-lg shadow p-6 mb-4">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Promotion History</h2>
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Promotion History</h2>
 
         {promotionHistoryError && (
-          <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3">
+          <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm mb-3 dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
             Failed to load promotion history.
           </div>
         )}
 
-        <div className="overflow-hidden rounded border border-gray-200">
+        <div className="overflow-hidden rounded border border-gray-200 dark:border-gray-700">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
               <tr>
-                <th className="text-left px-4 py-3 font-medium text-gray-500">Date</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-500">Admin</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-500">Previous Tier</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-500">New Tier</th>
-                <th className="text-left px-4 py-3 font-medium text-gray-500">Note</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Date</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Admin</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Previous Tier</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">New Tier</th>
+                <th className="text-left px-4 py-3 font-medium text-gray-500 dark:text-gray-400">Note</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
               {promotionHistoryLoading ? (
                 Array.from({ length: 3 }).map((_, i) => (
                   <tr key={i} className="animate-pulse">
                     <td colSpan={5} className="px-4 py-3">
-                      <div className="h-4 bg-gray-200 rounded w-full"></div>
+                      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
                     </td>
                   </tr>
                 ))
               ) : !promotionData || promotionData.entries.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="px-4 py-8 text-center text-gray-400">
+                  <td colSpan={5} className="px-4 py-8 text-center text-gray-400 dark:text-gray-500">
                     No promotions recorded.
                   </td>
                 </tr>
               ) : (
                 promotionData.entries.map((entry) => (
                   <tr key={entry.id}>
-                    <td className="px-4 py-3 text-gray-500">
+                    <td className="px-4 py-3 text-gray-500 dark:text-gray-400">
                       {new Date(entry.created_at).toLocaleDateString()}
                     </td>
-                    <td className="px-4 py-3 text-gray-700">{entry.admin_email}</td>
+                    <td className="px-4 py-3 text-gray-700 dark:text-gray-300">{entry.admin_email}</td>
                     <td className="px-4 py-3">
                       <span className={`px-2 py-0.5 rounded-full text-xs font-medium capitalize ${TIER_BADGE[entry.previous_tier] ?? 'bg-gray-100 text-gray-700'}`}>
                         {entry.previous_tier}
@@ -868,8 +868,8 @@ export function AccountDetailPage() {
                         {entry.new_tier}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-gray-600">
-                      {entry.note ?? <span className="text-gray-300">&mdash;</span>}
+                    <td className="px-4 py-3 text-gray-600 dark:text-gray-400">
+                      {entry.note ?? <span className="text-gray-300 dark:text-gray-600">&mdash;</span>}
                     </td>
                   </tr>
                 ))
@@ -879,7 +879,7 @@ export function AccountDetailPage() {
         </div>
 
         {promotionData && promotionData.pages > 1 && (
-          <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
+          <div className="mt-4 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
             <span>
               Page {promotionData.page} of {promotionData.pages} ({promotionData.total} total)
             </span>
@@ -887,14 +887,14 @@ export function AccountDetailPage() {
               <button
                 onClick={() => setPromotionPage((p) => Math.max(1, p - 1))}
                 disabled={promotionPage <= 1}
-                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
               >
                 Previous
               </button>
               <button
                 onClick={() => setPromotionPage((p) => Math.min(promotionData.pages, p + 1))}
                 disabled={promotionPage >= promotionData.pages}
-                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50"
+                className="px-3 py-1 border border-gray-300 rounded disabled:opacity-50 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
               >
                 Next
               </button>
@@ -904,11 +904,11 @@ export function AccountDetailPage() {
       </div>
 
       {/* Actions */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Actions</h2>
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Actions</h2>
 
         {actionError && (
-          <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+          <div className="mb-3 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
             {actionError}
           </div>
         )}
@@ -953,8 +953,8 @@ export function AccountDetailPage() {
           )}
 
           {showDemoteConfirm && (
-            <div className="flex items-center gap-2 p-3 bg-orange-50 border border-orange-200 rounded">
-              <span className="text-sm text-orange-800">Confirm demotion?</span>
+            <div className="flex items-center gap-2 p-3 bg-orange-50 border border-orange-200 rounded dark:bg-orange-950/20 dark:border-orange-800/40">
+              <span className="text-sm text-orange-800 dark:text-orange-300">Confirm demotion?</span>
               <button
                 onClick={() => handleAction('demote')}
                 disabled={actionLoading}
@@ -964,7 +964,7 @@ export function AccountDetailPage() {
               </button>
               <button
                 onClick={() => setShowDemoteConfirm(false)}
-                className="px-3 py-1 border border-orange-300 text-orange-700 text-sm rounded hover:bg-orange-100"
+                className="px-3 py-1 border border-orange-300 text-orange-700 dark:text-orange-400 text-sm rounded hover:bg-orange-100"
               >
                 Cancel
               </button>
@@ -980,8 +980,8 @@ export function AccountDetailPage() {
               Delete Account
             </button>
           ) : (
-            <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded">
-              <span className="text-sm text-red-800">
+            <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded dark:bg-red-950/40 dark:border-red-800/60">
+              <span className="text-sm text-red-800 dark:text-red-400">
                 Permanently delete <strong>{account.display_name}</strong>? This cannot be undone.
               </span>
               <button
@@ -1006,9 +1006,9 @@ export function AccountDetailPage() {
       {/* Promote to Connected Modal */}
       {showPromoteModal && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
-            <h2 className="text-lg font-semibold text-gray-900 mb-3">Promote to Connected</h2>
-            <p className="text-sm text-gray-700 mb-4">
+          <div className="bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 max-w-md w-full mx-4">
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Promote to Connected</h2>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
               Promote <strong>{account.display_name}</strong> from Inform to Connected tier?
             </p>
             <textarea
@@ -1017,7 +1017,7 @@ export function AccountDetailPage() {
               maxLength={500}
               placeholder="Add a note (optional)"
               rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent resize-none mb-4"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent resize-none mb-4 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
             />
             <div className="flex justify-end gap-3">
               <button
@@ -1026,7 +1026,7 @@ export function AccountDetailPage() {
                   setPromoteNote('');
                 }}
                 disabled={promotionLoading}
-                className="px-4 py-2 border border-gray-300 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-50 disabled:opacity-50 transition-colors"
+                className="px-4 py-2 border border-gray-300 text-gray-700 dark:text-gray-300 dark:border-gray-600 text-sm font-medium rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 disabled:opacity-50 transition-colors"
               >
                 Cancel
               </button>

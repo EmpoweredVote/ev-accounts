@@ -20,8 +20,8 @@ interface DashboardStats {
 
 function StatCard({ label, value, color }: { label: string; value: number; color: string }) {
   return (
-    <div className="bg-white rounded-lg shadow p-6">
-      <p className="text-sm font-medium text-gray-500">{label}</p>
+    <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
+      <p className="text-sm font-medium text-gray-500 dark:text-gray-400">{label}</p>
       <p className={`text-3xl font-bold mt-1 ${color}`}>{value}</p>
     </div>
   );
@@ -29,9 +29,9 @@ function StatCard({ label, value, color }: { label: string; value: number; color
 
 function SkeletonCard() {
   return (
-    <div className="bg-white rounded-lg shadow p-6 animate-pulse">
-      <div className="h-4 bg-gray-200 rounded w-24 mb-3"></div>
-      <div className="h-8 bg-gray-200 rounded w-16"></div>
+    <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 animate-pulse">
+      <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-24 mb-3"></div>
+      <div className="h-8 bg-gray-200 dark:bg-gray-700 rounded w-16"></div>
     </div>
   );
 }
@@ -50,16 +50,16 @@ export function AdminDashboard() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Dashboard</h1>
 
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
           {error}
         </div>
       )}
 
       <div className="mb-6">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+        <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
           Users by Tier
         </h2>
         <div className="grid grid-cols-3 gap-4">
@@ -80,7 +80,7 @@ export function AdminDashboard() {
       </div>
 
       <div className="mb-6">
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+        <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
           Users by Standing
         </h2>
         <div className="grid grid-cols-3 gap-4">
@@ -99,7 +99,7 @@ export function AdminDashboard() {
       </div>
 
       <div>
-        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+        <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
           Invite Activity
         </h2>
         <div className="grid grid-cols-3 gap-4">

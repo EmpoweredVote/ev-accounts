@@ -116,8 +116,8 @@ export default function Signup() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md text-center">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md text-center">
           <div className="flex justify-center mb-6">
             <img
               src="/Empowered_Vote_Logo_2026.png"
@@ -125,12 +125,12 @@ export default function Signup() {
               className="h-12 object-contain"
             />
           </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Check your email</h2>
-          <p className="text-gray-600 text-sm">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Check your email</h2>
+          <p className="text-gray-600 dark:text-gray-400 text-sm">
             We sent a confirmation link to <strong>{email}</strong>. Click it to activate your
             account.
           </p>
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
             Already confirmed?{' '}
             <button
               onClick={() => navigate(loginHref)}
@@ -145,8 +145,8 @@ export default function Signup() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white rounded-lg shadow-md p-8 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-950">
+      <div className="bg-white dark:bg-gray-900 rounded-lg shadow-md p-8 w-full max-w-md">
         <div className="flex justify-center mb-6">
           <img
             src="/Empowered_Vote_Logo_2026.png"
@@ -155,7 +155,7 @@ export default function Signup() {
           />
         </div>
 
-        <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
           Create your Connected Account
         </h1>
 
@@ -168,21 +168,21 @@ export default function Signup() {
         {/* Covenant callout */}
         <div className="mb-5 p-4 bg-ev-teal-light/10 border border-ev-teal-light/30 rounded-md">
           <p className="text-sm font-semibold text-ev-teal mb-1">One Account, One Voice</p>
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
             This will be your only Empowered Vote account — one person, one voice. Your data is
             private by default.
           </p>
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
             {error}
           </div>
         )}
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Email
             </label>
             <input
@@ -191,13 +191,13 @@ export default function Signup() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="you@example.com"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Password
             </label>
             <input
@@ -207,13 +207,13 @@ export default function Signup() {
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="At least 8 characters"
             />
           </div>
 
           <div>
-            <label htmlFor="legalName" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="legalName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Your full legal name
             </label>
             <input
@@ -222,13 +222,13 @@ export default function Signup() {
               required
               value={legalName}
               onChange={(e) => setLegalName(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="First Last"
             />
           </div>
 
           <div>
-            <label htmlFor="inviteCode" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="inviteCode" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Invite code
             </label>
             <input
@@ -237,7 +237,7 @@ export default function Signup() {
               required
               value={inviteCode}
               onChange={(e) => setInviteCode(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent font-mono"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent font-mono dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="XXXX-XXXX"
             />
           </div>
@@ -252,7 +252,7 @@ export default function Signup() {
         </form>
 
         <div className="mt-4 space-y-2 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Don't have a code?{' '}
             <button
               type="button"
@@ -262,7 +262,7 @@ export default function Signup() {
               Request access
             </button>
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Already have an account?{' '}
             <Link to={loginHref} className="text-ev-teal hover:underline font-medium">
               Sign in
@@ -296,11 +296,11 @@ export default function Signup() {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="bg-white rounded-lg shadow-xl p-6 w-full max-w-sm">
-                <Dialog.Title className="text-lg font-bold text-gray-900 mb-2">
+              <Dialog.Panel className="bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 w-full max-w-sm">
+                <Dialog.Title className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                   Request Access
                 </Dialog.Title>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                   Don't have an invite code? Enter your email and we'll notify you when access
                   becomes available.
                 </p>
@@ -312,7 +312,7 @@ export default function Signup() {
                 ) : (
                   <form onSubmit={handleRequestAccess} className="space-y-3">
                     {requestError && (
-                      <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+                      <div className="p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
                         {requestError}
                       </div>
                     )}
@@ -321,14 +321,14 @@ export default function Signup() {
                       required
                       value={requestEmail}
                       onChange={(e) => setRequestEmail(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
                       placeholder="you@example.com"
                     />
                     <div className="flex gap-2">
                       <button
                         type="button"
                         onClick={() => setModalOpen(false)}
-                        className="flex-1 py-2 px-4 border border-gray-300 text-gray-700 font-medium rounded-md text-sm hover:bg-gray-50 transition-colors"
+                        className="flex-1 py-2 px-4 border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-300 font-medium rounded-md text-sm hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                       >
                         Cancel
                       </button>

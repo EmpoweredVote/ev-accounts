@@ -50,10 +50,10 @@ function CategoryCard({
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg p-4">
+    <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg p-4">
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-sm font-semibold text-gray-900">{category.title}</h3>
-        <span className="text-xs text-gray-400">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white">{category.title}</h3>
+        <span className="text-xs text-gray-400 dark:text-gray-500">
           {category.topics.length} topic{category.topics.length !== 1 ? 's' : ''}
         </span>
       </div>
@@ -78,7 +78,7 @@ function CategoryCard({
           <select
             value={selectedTopicId}
             onChange={(e) => setSelectedTopicId(e.target.value)}
-            className="flex-1 px-2 py-1.5 text-xs border border-gray-300 rounded-md bg-white"
+            className="flex-1 px-2 py-1.5 text-xs border border-gray-300 rounded-md bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white"
           >
             <option value="">Assign a topic...</option>
             {unassignedTopics.map((t) => (
@@ -151,7 +151,7 @@ export function CategoriesPage() {
   return (
     <div className="max-w-2xl">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Categories</h1>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Categories</h1>
       </div>
 
       {/* Inline create form */}
@@ -161,7 +161,7 @@ export function CategoriesPage() {
           value={newCategoryTitle}
           onChange={(e) => setNewCategoryTitle(e.target.value)}
           placeholder="New category title..."
-          className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-ev-yellow focus:border-ev-yellow"
+          className="flex-1 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-ev-yellow focus:border-ev-yellow dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
         />
         <button
           type="submit"
@@ -173,7 +173,7 @@ export function CategoriesPage() {
       </form>
 
       {createError && (
-        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm">
+        <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded text-red-700 text-sm dark:bg-red-950/40 dark:border-red-800/60 dark:text-red-400">
           {createError}
         </div>
       )}
@@ -187,11 +187,11 @@ export function CategoriesPage() {
       {loading ? (
         <div className="space-y-3">
           {Array.from({ length: 4 }).map((_, i) => (
-            <div key={i} className="animate-pulse h-16 bg-gray-100 rounded-lg" />
+            <div key={i} className="animate-pulse h-16 bg-gray-100 dark:bg-gray-800 rounded-lg" />
           ))}
         </div>
       ) : categories.length === 0 ? (
-        <p className="text-sm text-gray-400">No categories yet.</p>
+        <p className="text-sm text-gray-400 dark:text-gray-500">No categories yet.</p>
       ) : (
         <div className="space-y-4">
           {categories.map((category) => (

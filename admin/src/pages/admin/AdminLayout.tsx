@@ -25,9 +25,9 @@ export function AdminLayout() {
   }
 
   return (
-    <div className="flex h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50 dark:bg-gray-950">
       {/* Sidebar */}
-      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
+      <aside className="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 flex flex-col">
         <div className="px-6 py-4 bg-ev-black">
           <img src="/logo.png" alt="Empowered Vote" className="h-8 w-auto mb-2" />
           <p className="text-xs text-white/70">Empowered Accounts Admin</p>
@@ -42,8 +42,8 @@ export function AdminLayout() {
               className={({ isActive }) =>
                 `block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-red-50 text-ev-red'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-red-50 text-ev-red dark:bg-ev-red/10'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white'
                 }`
               }
             >
@@ -52,10 +52,10 @@ export function AdminLayout() {
           ))}
         </nav>
 
-        <div className="px-3 py-4 border-t border-gray-200">
+        <div className="px-3 py-4 border-t border-gray-200 dark:border-gray-700">
           <button
             onClick={handleLogout}
-            className="w-full px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 rounded-md text-left transition-colors"
+            className="w-full px-3 py-2 text-sm font-medium text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white rounded-md text-left transition-colors"
           >
             Sign out
           </button>
