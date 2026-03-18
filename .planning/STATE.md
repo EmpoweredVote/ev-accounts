@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 Phase: Not started
 Plan: Not started
 Status: Ready to plan v1.5
-Last activity: 2026-03-18 - Completed quick task 005: Fix double-login between accounts.empowered.vote and profile.empowered.vote
+Last activity: 2026-03-18 - Completed quick task 006: Configure /app for Render static site deploy (profile.empowered.vote)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅] All 30 phases shipped ██████████
 
@@ -67,6 +67,7 @@ v1.4 patterns established (apply going forward):
 | 003 | Expose jurisdiction fields on GET /api/account/me for VQ | 2026-03-18 | 6932815 | [003-expose-jurisdiction-location-fields-on-g](./quick/003-expose-jurisdiction-location-fields-on-g/) |
 | 004 | Implement POST /api/vq/adjust-vr endpoint for Yellow quest VR adjustment | 2026-03-18 | 6f78510 | [004-implement-post-api-vq-adjust-vr-endpoin](./quick/004-implement-post-api-vq-adjust-vr-endpoin/) |
 | 005 | Fix double-login: hash-fragment SSO loop between accounts and profile apps | 2026-03-18 | 7b6be4a | [005-fix-double-login-accounts-to-profile](./quick/005-fix-double-login-accounts-to-profile/) |
+| 006 | Configure /app for Render static site deploy (profile.empowered.vote) | 2026-03-18 | df0a9b7 | [006-configure-app-render-static-site-deploy](./quick/006-configure-app-render-static-site-deploy/) |
 
 ### Pending Todos
 
@@ -75,5 +76,5 @@ v1.4 patterns established (apply going forward):
 ## Session Continuity
 
 Last session: 2026-03-18
-Stopped at: Completed quick task 005: hash-fragment SSO loop accounts -> profile
+Stopped at: Completed quick task 006: render.yaml + app/.env.production for profile.empowered.vote deploy
 Resume: `/gsd:new-milestone` to define v1.5
