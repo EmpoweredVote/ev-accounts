@@ -93,13 +93,22 @@ const DISTRICT_LABELS: { key: keyof Jurisdiction; label: string }[] = [
   { key: 'school_district_name', label: 'School District' },
 ];
 
-function GemBadge({ count, color, label }: { count: number; color: string; label: string }) {
+const GEM_IMAGES: Record<string, string> = {
+  Yellow: '/Yellow_Gem.png',
+  Blue: '/Blue_Gem.png',
+  Red: '/Red_Gem.png',
+};
+
+function GemBadge({ count, label }: { count: number; label: string }) {
+  const src = GEM_IMAGES[label];
   return (
-    <div className="flex flex-col items-center gap-1">
-      <div className={`w-9 h-9 rounded-full ${color} flex items-center justify-center`}>
-        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
-        </svg>
+    <div className="flex flex-col items-center gap-2">
+      <div className="w-14 h-14 flex items-center justify-center drop-shadow-lg">
+        {src ? (
+          <img src={src} alt={`${label} Gem`} className="w-full h-full object-contain" />
+        ) : (
+          <div className="w-14 h-14 rounded-full bg-gray-700" />
+        )}
       </div>
       <span className="text-sm font-semibold text-ev-black dark:text-white tabular-nums">{count.toLocaleString()}</span>
       <span className="text-xs text-gray-400">{label}</span>
@@ -220,9 +229,9 @@ export default function DashboardPage() {
           <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Gems</p>
             <div className="flex justify-around">
-              <GemBadge count={cp.gems.yellow} color="bg-ev-yellow" label="Yellow" />
-              <GemBadge count={cp.gems.blue} color="bg-ev-teal" label="Blue" />
-              <GemBadge count={cp.gems.red} color="bg-ev-red" label="Red" />
+              <GemBadge count={cp.gems.yellow} label="Yellow" />
+              <GemBadge count={cp.gems.blue} label="Blue" />
+              <GemBadge count={cp.gems.red} label="Red" />
             </div>
           </div>
         )}
