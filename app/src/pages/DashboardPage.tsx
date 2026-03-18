@@ -161,33 +161,32 @@ export default function DashboardPage() {
       {/* Nav */}
       <header className="bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 sticky top-0 z-10">
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
-          <span className="font-bold text-ev-teal text-lg">profile.empowered.vote</span>
-          <button
-            onClick={clearAuth}
-            className="text-sm text-gray-400 hover:text-ev-red transition-colors"
-          >
-            Sign out
-          </button>
+          <span className="font-bold text-ev-teal-light text-lg">profile.empowered.vote</span>
+          <div className="flex items-center gap-3">
+            {me?.is_admin && (
+              <div className="relative group">
+                <a
+                  href="https://accounts.empowered.vote/admin"
+                  className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-ev-red/10 transition-colors"
+                >
+                  <img src="/Red_Admin.png" alt="Admin Hub" className="w-5 h-5 object-contain" />
+                </a>
+                <div className="absolute right-0 top-full mt-2 px-2.5 py-1 bg-gray-900 dark:bg-gray-700 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                  Admin Hub
+                </div>
+              </div>
+            )}
+            <button
+              onClick={clearAuth}
+              className="text-sm text-gray-400 hover:text-ev-red transition-colors"
+            >
+              Sign out
+            </button>
+          </div>
         </div>
       </header>
 
       <main className="max-w-lg mx-auto px-4 py-6 space-y-4">
-
-        {/* Admin Hub button */}
-        {me?.is_admin && (
-          <a
-            href="https://accounts.empowered.vote/admin"
-            className="flex items-center justify-between bg-ev-red/10 border border-ev-red/30 rounded-2xl p-4 group"
-          >
-            <div>
-              <p className="text-sm font-semibold text-ev-red">Admin Hub</p>
-              <p className="text-xs text-gray-500 mt-0.5">Manage users, invites, and platform settings.</p>
-            </div>
-            <svg className="w-4 h-4 text-ev-red group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </a>
-        )}
 
         {/* Identity card */}
         <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
