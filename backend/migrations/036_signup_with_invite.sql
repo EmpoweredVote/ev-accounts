@@ -89,7 +89,7 @@ BEGIN
     verification_status, verification_method, total_xp, completed_onboarding
   ) VALUES (
     p_user_id, p_legal_name, NULL, 'active',
-    'pending', 'invite', 0, false
+    'verified', 'invite', 0, false
   );
 
   -- 5. Record invite chain

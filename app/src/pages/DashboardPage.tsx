@@ -11,10 +11,8 @@ interface XP {
 }
 
 interface ConnectedProfile {
-  total_xp: number;
-  gem_balance_yellow: number;
-  gem_balance_blue: number;
-  gem_balance_red: number;
+  xp: XP;
+  gems: { yellow: number; blue: number; red: number };
   verification_rating: number;
   vq_hold_active: boolean;
 }
@@ -34,7 +32,6 @@ interface MeFull {
   display_name: string | null;
   completed_onboarding: boolean;
   location_consent: boolean;
-  xp: XP;
   verification_rating: number;
   vq_hold_active: boolean;
   red_gem_quests_unlocked: boolean;
@@ -120,7 +117,7 @@ export default function DashboardPage() {
   }, [me?.location_consent]);
 
   const cp = me?.connected_profile ?? null;
-  const xp = me?.xp;
+  const xp = cp?.xp ?? null;
   const xpPercent = xp && xp.xp_to_next_level > 0
     ? Math.round((xp.xp_in_level / xp.xp_to_next_level) * 100)
     : 0;
@@ -183,9 +180,9 @@ export default function DashboardPage() {
           <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Gems</p>
             <div className="flex justify-around">
-              <GemBadge count={cp.gem_balance_yellow} color="bg-ev-yellow" label="Yellow" />
-              <GemBadge count={cp.gem_balance_blue} color="bg-ev-teal" label="Blue" />
-              <GemBadge count={cp.gem_balance_red} color="bg-ev-red" label="Red" />
+              <GemBadge count={cp.gems.yellow} color="bg-ev-yellow" label="Yellow" />
+              <GemBadge count={cp.gems.blue} color="bg-ev-teal" label="Blue" />
+              <GemBadge count={cp.gems.red} color="bg-ev-red" label="Red" />
             </div>
           </div>
         )}
