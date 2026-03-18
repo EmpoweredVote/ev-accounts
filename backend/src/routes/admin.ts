@@ -453,6 +453,7 @@ router.delete('/invites/:codeId', async (req, res) => {
     });
     res.json({ ok: true });
   } catch (err) {
+    console.error('[admin/revoke-invite] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
