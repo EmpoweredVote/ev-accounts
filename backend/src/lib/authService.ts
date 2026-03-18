@@ -68,17 +68,12 @@ export async function isTokenRevoked(userId: string, tokenIat: number): Promise<
 /**
  * Sign up a new user with email and password.
  *
- * Uses the admin API with email_confirm: true to skip email confirmation.
- * This is appropriate for invite-only alpha where the invite code is the
- * identity gate. Returns { data: { user }, error } — no session is included;
- * callers should follow up with signInWithEmail to issue a token.
+ * When email confirmation is enabled (Supabase default), the returned
+ * data.session will be null — this is NOT an error. Route handlers must
+ * check data.user (not data.session) to determine success.
  */
 export async function signUpWithEmail(email: string, password: string) {
-  return supabaseAdmin.auth.admin.createUser({
-    email,
-    password,
-    email_confirm: true,
-  });
+  return supabaseAdmin.auth.signUp({ email, password });
 }
 
 /**

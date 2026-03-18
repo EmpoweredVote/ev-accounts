@@ -132,7 +132,26 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
       return;
     }
 
-    console.error('[auth/signup] admin.createUser error:', error.code, error.message);
+    // Supabase email send rate limit (free tier: ~3 confirmation emails/hour)
+    if (error.code === 'over_email_send_rate_limit') {
+      res.status(429).json({
+        code: 'RATE_LIMIT_EXCEEDED',
+        message: 'Too many requests, please try again later',
+      });
+      return;
+    }
+
+    // SMTP misconfiguration or delivery failure
+    if (error.code === 'unexpected_failure') {
+      console.error('[auth/signup] SMTP delivery failure:', error.message);
+      res.status(503).json({
+        code: 'EMAIL_DELIVERY_FAILED',
+        message: 'Unable to send confirmation email. Please try again later.',
+      });
+      return;
+    }
+
+    console.error('[auth/signup] Supabase error:', error.code, error.message);
     res.status(500).json({
       code: 'INTERNAL_ERROR',
       message: 'An unexpected error occurred',
@@ -140,6 +159,8 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
+  // data.user must exist for success. data.session may be null when email
+  // confirmation is enabled — that is expected and not an error.
   if (!data.user) {
     console.error('[auth/signup] No user returned and no error — unexpected Supabase response');
     res.status(500).json({
@@ -220,24 +241,9 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     }
   }
 
-  // Auto-sign-in: account is already confirmed (email_confirm: true above), so
-  // sign the user in immediately and return a session. This avoids the
-  // "check your email" step for invite-only alpha where the invite code is
-  // already the identity gate.
-  const { data: signInData, error: signInError } = await signInWithEmail(email, password);
-
-  if (signInError || !signInData.session) {
-    console.error('[auth/signup] Auto-login after createUser failed:', signInError?.message);
-    // Account was created — return 201 without session; user can sign in manually.
-    res.status(201).json({ id: data.user.id });
-    return;
-  }
-
   res.status(201).json({
     id: data.user.id,
-    access_token: signInData.session.access_token,
-    refresh_token: signInData.session.refresh_token,
-    expires_in: signInData.session.expires_in,
+    message: 'Check your email to confirm your account',
   });
 });
 
