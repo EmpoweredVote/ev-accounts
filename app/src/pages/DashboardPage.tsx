@@ -128,7 +128,7 @@ export default function DashboardPage() {
       {/* Nav */}
       <header className="bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 sticky top-0 z-10">
         <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
-          <span className="font-bold text-ev-teal text-lg">empowered.vote</span>
+          <span className="font-bold text-ev-teal text-lg">profile.empowered.vote</span>
           <button
             onClick={clearAuth}
             className="text-sm text-gray-400 hover:text-ev-red transition-colors"
