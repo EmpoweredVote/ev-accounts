@@ -21,6 +21,7 @@
  */
 
 import { supabaseAdmin } from './supabase.js';
+import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
 // normalizeEmail
@@ -74,28 +75,23 @@ export function normalizeEmail(email: string): string {
 export async function completeOnboarding(
   userId: string
 ): Promise<'ok' | 'already_complete' | 'not_connected'> {
-  const { data: updatedRows, error: updateError } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .update({ completed_onboarding: true, updated_at: new Date().toISOString() })
-    .eq('user_id', userId)
-    .eq('completed_onboarding', false)
-    .select('id');
+  const { rows: updated } = await pool.query<{ id: string }>(
+    `UPDATE connect.connected_profiles
+     SET completed_onboarding = true, updated_at = now()
+     WHERE user_id = $1 AND completed_onboarding = false
+     RETURNING id`,
+    [userId]
+  );
 
-  if (updateError) throw updateError;
-
-  if (updatedRows && updatedRows.length > 0) return 'ok';
+  if (updated.length > 0) return 'ok';
 
   // Either already complete or not connected — check which
-  const { data: profile, error: selectError } = await supabaseAdmin
-    .schema('connect')
-    .from('connected_profiles')
-    .select('completed_onboarding')
-    .eq('user_id', userId)
-    .maybeSingle();
+  const { rows } = await pool.query<{ completed_onboarding: boolean }>(
+    `SELECT completed_onboarding FROM connect.connected_profiles WHERE user_id = $1`,
+    [userId]
+  );
 
-  if (selectError) throw selectError;
-  if (!profile) return 'not_connected';
+  if (rows.length === 0) return 'not_connected';
   return 'already_complete';
 }
 
