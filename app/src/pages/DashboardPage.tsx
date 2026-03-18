@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
@@ -23,6 +23,13 @@ interface Jurisdiction {
   state_house_district_name: string | null;
   county_name: string | null;
   school_district_name: string | null;
+}
+
+interface ReferralState {
+  unlocked: boolean;
+  code: string | null;
+  inviteeJoined: boolean;
+  inviteeLevel: number | null;
 }
 
 interface MeFull {
@@ -104,6 +111,8 @@ export default function DashboardPage() {
   const { user, clearAuth } = useAuthStore();
   const [me, setMe] = useState<MeFull | null>(null);
   const [jurisdiction, setJurisdiction] = useState<Jurisdiction | null>(null);
+  const [referral, setReferral] = useState<ReferralState | null>(null);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -116,6 +125,20 @@ export default function DashboardPage() {
         .catch(() => {});
     }
   }, [me?.location_consent]);
+
+  useEffect(() => {
+    if (me?.connected_profile) {
+      apiFetch<ReferralState>('/referral').then(setReferral).catch(() => {});
+    }
+  }, [me?.connected_profile]);
+
+  const copyCode = useCallback(() => {
+    if (!referral?.code) return;
+    navigator.clipboard.writeText(referral.code).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  }, [referral?.code]);
 
   const cp = me?.connected_profile ?? null;
   const xp = cp?.xp ?? null;
@@ -227,6 +250,63 @@ export default function DashboardPage() {
             </div>
             {cp.vq_hold_active && (
               <p className="text-xs text-ev-red font-medium">VQ hold active — participation paused for 30 days.</p>
+            )}
+          </div>
+        )}
+
+        {/* Referral Code */}
+        {cp && referral && (
+          <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Invite a Friend</p>
+
+            {!referral.unlocked ? (
+              /* Locked state */
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                  </svg>
+                </div>
+                <div>
+                  <p className="text-sm font-medium text-ev-black dark:text-white">Reach level 2 to unlock</p>
+                  <p className="text-xs text-gray-400 mt-0.5">Keep earning XP to get your first referral code.</p>
+                </div>
+              </div>
+            ) : referral.inviteeJoined && (referral.inviteeLevel ?? 0) < 2 ? (
+              /* Code used — waiting for invitee to hit level 2 */
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-ev-teal-light animate-pulse" />
+                  <p className="text-sm font-medium text-ev-black dark:text-white">Friend joined!</p>
+                </div>
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  When they reach level 2, you'll get a fresh referral code to share with someone new.
+                </p>
+                <div className="flex items-center justify-between pt-1">
+                  <span className="text-xs text-gray-400">Their level</span>
+                  <span className="text-sm font-semibold text-ev-black dark:text-white tabular-nums">
+                    {referral.inviteeLevel ?? 1}
+                  </span>
+                </div>
+              </div>
+            ) : (
+              /* Code available — show and copy */
+              <div className="space-y-3">
+                <p className="text-xs text-gray-400 leading-relaxed">
+                  Share this code with one friend. You'll get a new one when they reach level 2.
+                </p>
+                <button
+                  onClick={copyCode}
+                  className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 group hover:border-ev-teal-light/50 transition-colors"
+                >
+                  <span className="font-mono text-lg font-bold tracking-widest text-ev-black dark:text-white">
+                    {referral.code}
+                  </span>
+                  <span className="text-xs font-medium text-ev-teal-light">
+                    {copied ? 'Copied!' : 'Copy'}
+                  </span>
+                </button>
+              </div>
             )}
           </div>
         )}

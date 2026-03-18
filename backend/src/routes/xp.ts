@@ -4,6 +4,7 @@ import { requireServiceKey, type ServiceKeyRequest } from '../middleware/service
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { awardXp, getXpHistory, getPublicXpProfile, getXpLeaderboard, getMyXpRank, XP_SOURCES, type LeaderboardWindow } from '../lib/xpService.js';
+import { unlockReferralCode, maybeRefreshReferralForInvitee } from '../lib/referralService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -78,6 +79,17 @@ router.post(
         metadata,
       });
       res.status(200).json(result);
+
+      // Fire referral side-effects after the response is sent.
+      // Both RPCs are idempotent — safe to call on every award for level-2+ users.
+      if (!result.is_duplicate && result.level >= 2) {
+        void unlockReferralCode(user_id).catch((err) =>
+          console.error('[xp/award] referral unlock failed:', err)
+        );
+        void maybeRefreshReferralForInvitee(user_id).catch((err) =>
+          console.error('[xp/award] referral refresh check failed:', err)
+        );
+      }
     } catch (err: unknown) {
       const error = err as Error & { code?: string };
       if (error.code === 'NOT_CONNECTED') {
