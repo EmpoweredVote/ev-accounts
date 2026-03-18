@@ -2,19 +2,19 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-15 after v1.3 milestone completion)
+See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.4 — ALL PHASES COMPLETE (27–30)
+**Current focus:** v1.5 — Planning next milestone
 
 ## Current Position
 
-Phase: 29 of 30 (Admin Controls & Integration Verification) — COMPLETE
-Plan: 2 of 2
-Status: Complete
-Last activity: 2026-03-17 — Quick task 002 complete: location trust flow + first_location flag + Framer contract doc
+Phase: Not started
+Plan: Not started
+Status: Ready to plan v1.5
+Last activity: 2026-03-17 — v1.4 milestone complete
 
-Progress: [v1.3 shipped ✅] [v1.4 shipped ✅] All phases 27–30 complete ██████████
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅] All 30 phases shipped ██████████
 
 ## Performance Metrics
 
@@ -37,43 +37,35 @@ Progress: [v1.3 shipped ✅] [v1.4 shipped ✅] All phases 27–30 complete █�
 - Timeline: 8 days (2026-03-08 → 2026-03-15)
 - 33/33 requirements satisfied
 
+**v1.4 shipped:**
+- Plans: 7 (27-01 through 30-02)
+- Phases: 4 (Phase 27–30)
+- Timeline: 2 days (2026-03-15 → 2026-03-17)
+- 18/18 requirements satisfied
+
 ## Accumulated Context
 
 ### Key Decisions
 
-Full key decisions log in PROJECT.md. All v1.3 decisions archived in milestones/v1.3-ROADMAP.md.
+Full key decisions log in PROJECT.md. All v1.4 decisions archived in milestones/v1.4-ROADMAP.md.
 
-Recent decisions relevant to v1.4:
-- **Bearer Authorization for service keys** — external services use standard Bearer semantics; pattern established in Phase 22, reused for VQ service key
-- **Partial unique index on idempotency_key (WHERE NOT NULL)** — correct Postgres pattern for nullable dedup; established in Phase 22, apply to VQ confirm-stance
-- **SET search_path = '' on all SECURITY DEFINER functions** — fully-qualified table refs required; established Phase 13, mandatory for any new RPC
-- **Two-pass validation in admin atomic RPCs** — validate all inputs before any writes; established Phase 14, apply to confirm-stance bulk user processing
-- **verification_rating default 60** — baseline unverified score; 90+ threshold unlocks Red Gem quests; Phase 28 adjusts on confirmed stances
-- **vq_hold_until excluded from public view** — internal enforcement state (same privacy pattern as tolerance_rating); owner self-view nested object only
-- **Server-side VR derived booleans** — vq_hold_active and red_gem_quests_unlocked computed on server before response; clients receive clean booleans
-- **Advisory locks in sorted UUID order** — combine correct + incorrect users, dedup, sort, lock all before any writes; prevents deadlocks in concurrent VQ calls (Phase 28)
-- **Per-user idempotency sub-key for gem_transactions** — p_idempotency_key || ':' || uid::text prevents double-crediting when user appears in multiple concurrent confirmation calls (Phase 28)
-- **Idempotency pre-check before lock acquisition** — cached result returned immediately before any advisory locks or writes; cheapest replay path (Phase 28)
-- **No nested SECURITY DEFINER calls** — gem INSERT + balance UPDATE done inline in confirm_vq_stance, not via credit_gems RPC; nested SECURITY DEFINER unreliable in Postgres (Phase 28)
-- **VQ live test fixtures via env vars** — INTEGRATION_TEST_POLITICIAN_ID + INTEGRATION_TEST_TOPIC_ID required; tests skipIf absent rather than creating inline data (Phase 28)
+v1.4 patterns established (apply going forward):
+- **No nested SECURITY DEFINER calls** — gem/XP writes must be done inline in RPCs, not via nested RPC calls
+- **Advisory locks: combined + sorted UUID order** — all affected users locked before any writes; prevents deadlocks
+- **Per-user idempotency sub-keys** — `main_key:uid` prevents double-writes in multi-user atomic RPCs
+- **Idempotency pre-check before locks** — check result cache before acquiring any advisory locks
+- **Server-side derived booleans** — compute `vq_hold_active`, `red_gem_quests_unlocked` on server; clients receive clean booleans
 
 ### Open Blockers
 
-- ~~**CTC + VQ service key setup**~~ — RESOLVED 2026-03-17. Both INTEG-01 (CTC) and INTEG-02 (VQ) live smoke tests passed.
 - **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md`
-
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 002 | Location trust flow: first_location flag + Framer contract doc | 2026-03-17 | 82ec0dd | [002-location-trust-flow-connected-celebrate](./quick/002-location-trust-flow-connected-celebrate/) |
 
 ### Pending Todos
 
-- **v1.4 milestone closure** — run `/gsd:audit-milestone` then `/gsd:complete-milestone` to archive v1.4 and prepare for v1.5
+- **v1.5 milestone planning** — run `/gsd:new-milestone` to define v1.5
 
 ## Session Continuity
 
 Last session: 2026-03-17
-Stopped at: Quick task 002 complete — first_location flag + FRAMER-LOCATION-TRUST-FLOW.md shipped
-Resume: v1.4 milestone closure → `/gsd:audit-milestone` then `/gsd:complete-milestone`
+Stopped at: v1.4 milestone archival complete
+Resume: `/gsd:new-milestone` to define v1.5

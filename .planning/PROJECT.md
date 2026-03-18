@@ -12,6 +12,8 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.3 shipped 2026-03-15.** Production Alpha live; encrypted location infrastructure (pgcrypto Vault + PostGIS); three-currency gem system; universal Connected Account signup portal; 21 compass topics + 30 politicians + 1,000+ stance records seeded to production.
 
+**v1.4 shipped 2026-03-17.** Full civic identity profile page for Alpha users; Verification Rating system (VQ accuracy tracking, Red Gem Quest gating, 30-day hold enforcement); atomic `POST /api/vq/confirm-stance` with deadlock-safe RPCs; CTC + VQ integrations live-tested end-to-end; Profile Hub UI with feature cards, Civic Spaces jurisdiction display, and dark mode.
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -56,9 +58,15 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ Central profile page — `GET /api/account/profile/:userId` (public) + `GET /api/account/profile/me` (owner); `Inform→Connected` promotion with audit log; admin search + PromotionsPage — v1.3
 - ✓ Public Auth Hub — `accounts.empowered.vote` rebranded as universal Connected Account portal; tier-based routing; `signup_with_invite` RPC; `?redirect=` with trusted-domain validation; CTC + VQ onboarding docs — v1.3
 
+- ✓ Verification Rating schema — `verification_rating` (INT default 60, max 150) + `vq_hold_until` on `connected_profiles`; `vq_hold_active` + `red_gem_quests_unlocked` derived booleans on `/me`; 90 threshold unlocks Red Gem Quests; rating 0 sets 30-day hold — v1.4
+- ✓ `POST /api/vq/confirm-stance` — atomic `confirm_vq_stance` SECURITY DEFINER RPC; advisory locks (sorted UUID, deadlock-safe); Red Gems to correct answerers; ±VR adjustments with cap/floor; confirmed stance upsert to `inform.politician_answers`; idempotent replay via `vq_confirmation_results` — v1.4
+- ✓ Admin VR override controls — `PATCH /api/admin/accounts/:userId/verification-rating` + AccountDetailPage inline editor; Zod cross-field validation; audit trail via `logAdminAction` — v1.4
+- ✓ CTC + VQ integrations live-tested 2026-03-17 — CTC: XP +100, is_duplicate:false, replay confirmed; VQ: VR +3, Red Gem awarded, replayed:true on replay — v1.4
+- ✓ Profile Hub UI — full civic identity page: tier/level/XP/gems/VR; location address form → `POST /connect/set-location`; 6 feature hub cards; Civic Spaces jurisdiction pills; dark mode toggle; accessible at `accounts.empowered.vote/profile` — v1.4
+
 ### Active
 
-<!-- v1.4 requirements — see REQUIREMENTS.md (created by /gsd:new-milestone) -->
+<!-- v1.5 requirements — define via /gsd:new-milestone -->
 
 ### Still Deferred
 
@@ -80,7 +88,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.3):** ~16,010 lines of TypeScript (backend/src + admin/src). 26 phases, 64 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4. All migrations 026–036 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. CompassV2 backend API contract satisfied; CompassV2 frontend side pending in that repo. CTC and VQ integration onboarding docs delivered (`docs/ONBOARDING-CTC.md`, `docs/ONBOARDING-VQ.md`).
+**Current state (v1.4):** ~17,081 lines of TypeScript (backend/src + admin/src). 30 phases, 71 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). All migrations 026–038 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. Verification Rating system live. CTC + VQ service keys configured; both integrations live-tested. CompassV2 backend API contract satisfied; CompassV2 frontend side pending in that repo.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -138,16 +146,12 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | is_active excluded from compass_topics INSERT | GENERATED ALWAYS AS (is_live) STORED — inserting it causes Postgres error. Must never appear in INSERT column list for compass_topics. | ✓ Good — caught during Phase 14; documented as project gotcha |
 | .is('deleted_at', null) not .eq() for PostgREST null comparisons | PostgREST generates IS NULL for .is(); .eq(null) does not correctly produce IS NULL in generated SQL. | ✓ Good — Phase 16 gap closure; affects any future soft-delete query |
 | Two-pass validation in admin atomic RPCs | Full input validation loop before any writes — guarantees all-or-nothing atomicity without partial state. Established in admin_create_topic_with_stances (Phase 14). | ✓ Good — pattern to reuse for any future multi-row admin RPC |
-
-## Current Milestone: v1.4 Profile Hub & Verification Engine
-
-**Goal:** Make the platform usable end-to-end for a real Alpha user — a useful profile page, live CTC/VQ integrations verified, and a Verification Rating system that rewards good civic participation.
-
-**Target features:**
-- Profile Hub UI — tier/XP/gems/Verification Rating display, location form, feature hub linking to all 5 live Empowered Vote apps
-- Verification Rating system — `verification_rating` + `vq_hold_until`; +3 correct / -10 wrong; 90 unlocks Red Gem Quests; 0 triggers 30-day hold; admin override
-- VQ answer confirmation flow — `POST /api/vq/confirm-stance`; Red Gems to correct answerers; confirmed stance written to `inform.politician_answers`
-- CTC + VQ integration verification — service keys live, XP/gem/verification flows smoke-tested end-to-end
+| verification_rating default 60 + 90 Red Gem threshold | Baseline "unverified" score; 90 threshold gives achievable unlock without rewarding luck. Floor 0 triggers 30-day hold. | ✓ Good — calibrated defaults; live-tested v1.4 |
+| No nested SECURITY DEFINER calls in confirm_vq_stance | Gem INSERT + balance UPDATE done inline rather than calling credit_gems RPC — nested SECURITY DEFINER unreliable in Postgres. | ✓ Good — established as project rule for all future atomic RPCs |
+| Advisory locks on combined user set in sorted UUID order | All users (correct + incorrect) locked before any writes; sorted order prevents deadlocks in concurrent calls. | ✓ Good — Phase 28; mandatory pattern for any future multi-user atomic RPC |
+| Per-user idempotency sub-key: main_key:uid | Prevents double-crediting when a user appears in multiple concurrent VQ confirmation calls sharing the same parent key. | ✓ Good — Phase 28; apply whenever a single idempotency key covers multiple rows |
+| Idempotency pre-check before lock acquisition | Cached replay result returned immediately before any advisory locks — cheapest possible path for duplicate calls. | ✓ Good — Phase 28; pattern to apply to all future idempotent RPCs |
+| Admin app dual-purpose (/admin/* + /profile, /login, /signup) | Profile Hub served from admin app for Alpha; Framer is production end-user frontend. Acceptable at pilot scale. | ⚠ Revisit — separate /profile to Framer or dedicated frontend for production |
 
 ---
-*Last updated: 2026-03-15 after v1.3 milestone completion*
+*Last updated: 2026-03-17 after v1.4 milestone completion*

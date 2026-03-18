@@ -1,5 +1,32 @@
 # Project Milestones: Empowered Accounts
 
+## v1.4 Profile Hub & Verification Engine (Shipped: 2026-03-17)
+
+**Delivered:** Full civic identity profile page for Alpha users — Verification Rating system with VQ integration, atomic VQ confirmation endpoint, CTC + VQ live smoke tests passed, and a Profile Hub UI showing tier/XP/gems/VR with feature hub cards.
+
+**Phases completed:** 27–30 (7 plans total)
+
+**Key accomplishments:**
+
+- Verification Rating schema — `verification_rating` (INT default 60, max 150) + `vq_hold_until` on `connected_profiles`; server-side derived booleans `vq_hold_active` and `red_gem_quests_unlocked` on `GET /me`; 90 threshold unlocks Red Gem quests; rating 0 sets 30-day hold
+- `POST /api/vq/confirm-stance` — atomic `confirm_vq_stance` SECURITY DEFINER RPC with deadlock-safe advisory locks (sorted UUID order), inline gem INSERT + balance UPDATE (no nested SECURITY DEFINER), ±VR adjustments with cap/floor, confirmed stance upsert to `inform.politician_answers`, and idempotent replay via `vq_confirmation_results` pre-check
+- Admin VR override controls — `PATCH /api/admin/accounts/:userId/verification-rating` + AccountDetailPage inline editor with draft state, 0–150 range validation, status badges, and hold-clear toggle
+- CTC + VQ integrations live smoke-tested on 2026-03-17 — CTC: total_xp 1996→2096, is_duplicate:false, replay confirmed; VQ: new_rating +3, gems_awarded:1, replayed:true on replay
+- Profile Hub UI — full civic identity page: tier badge, Level, total XP, yellow/blue/red gem balances, Verification Rating (X/150 + hold warning); location address form → `POST /connect/set-location`; 6 feature hub cards (CTC, VQ, Essentials, Read & Rank, Empowered Compass, Treasury Tracker); Civic Spaces jurisdiction pills; dark mode toggle
+
+**Stats:**
+
+- 19 files changed (backend/admin scope)
+- ~17,081 lines of TypeScript (backend/src + admin/src)
+- 4 phases, 7 plans, 18 requirements
+- 2 days (2026-03-15 → 2026-03-17)
+
+**Git range:** `fd496d9` (feat(27-01): add verification_rating migration) → `3a9d99f`
+
+**What's next:** v1.5 — CompassV2 frontend integration (Accounts side complete in v1.3; CompassV2 repo implements its side using `docs/COMPASS_CONTRACT.md`); Essentials overlay compass data endpoint; user-to-user compass compare (COMP-05)
+
+---
+
 ## v1.3 Alpha Launch & Location Infrastructure (Shipped: 2026-03-15)
 
 **Delivered:** Production Alpha live with all migrations deployed; encrypted location infrastructure with PostGIS jurisdiction resolution; three-currency gem system; universal Connected Account signup portal; 21 compass topics, 30 politicians, and 1,000+ stance records seeded to production.

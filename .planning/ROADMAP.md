@@ -6,7 +6,7 @@
 - ✅ **v1.1 XP & Progression** — Phases 9–11 (shipped 2026-03-04)
 - ✅ **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–16 (shipped 2026-03-07)
 - ✅ **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–26 (shipped 2026-03-15)
-- 🚧 **v1.4 Profile Hub & Verification Engine** — Phases 27–30 (in progress)
+- ✅ **v1.4 Profile Hub & Verification Engine** — Phases 27–30 (shipped 2026-03-17)
 
 ## Phases
 
@@ -68,73 +68,21 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.4 Profile Hub & Verification Engine (In Progress)
+<details>
+<summary>✅ v1.4 Profile Hub & Verification Engine (Phases 27–30) — SHIPPED 2026-03-17</summary>
 
-**Milestone Goal:** Make the platform usable end-to-end for a real Alpha user — a useful profile page, live CTC/VQ integrations verified, and a Verification Rating system that rewards good civic participation.
+- [x] Phase 27: Verification Rating Schema (1/1 plan) — completed 2026-03-15
+- [x] Phase 28: VQ Confirmation Flow (2/2 plans) — completed 2026-03-15
+- [x] Phase 29: Admin Controls & Integration Verification (2/2 plans) — completed 2026-03-15
+- [x] Phase 30: Profile Hub UI (2/2 plans) — completed 2026-03-16
 
-#### Phase 27: Verification Rating Schema
+Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
-**Goal**: Users have a Verification Rating that reflects their VQ accuracy, and the API exposes it with hold state and Red Gem unlock status.
-**Depends on**: Phase 26 (v1.3 complete)
-**Requirements**: VR-01, VR-02, VR-03, VR-04
-**Success Criteria** (what must be TRUE):
-  1. `connected_profiles` has `verification_rating` (integer, default 60) and `vq_hold_until` (timestamptz) columns in production
-  2. `GET /api/account/me` returns `verification_rating`, `vq_hold_active: boolean`, and `red_gem_quests_unlocked: boolean`
-  3. A user with rating >= 90 gets `red_gem_quests_unlocked: true`; a user with `vq_hold_until` in the future gets `vq_hold_active: true`
-  4. A user with rating at 0 and `vq_hold_until` set 30 days out cannot be confused with an unrestricted user — the API communicates hold state unambiguously
-**Plans**: 1 plan
+</details>
 
-Plans:
-- [x] 27-01-PLAN.md — Migration 037 (verification_rating + vq_hold_until columns) and /me API response update with derived booleans
+### 📋 v1.5 (Planned)
 
-#### Phase 28: VQ Confirmation Flow
-
-**Goal**: VQ can call a single authenticated endpoint to resolve a question — awarding Red Gems to correct answerers, adjusting Verification Ratings in both directions, writing the confirmed stance, and doing nothing on replay.
-**Depends on**: Phase 27 (VR schema and columns must exist)
-**Requirements**: VQ-01, VQ-02, VQ-03, VQ-04, VQ-05, VQ-06
-**Success Criteria** (what must be TRUE):
-  1. `POST /api/vq/confirm-stance` accepts a service-key-authenticated payload with correct/incorrect user ID lists and returns a confirmation result
-  2. Correct answerers each receive Red Gems; incorrect answerers do not
-  3. Correct answerers' `verification_rating` increases by 3 (max 150); incorrect answerers' decreases by 10; a rating that hits 0 sets `vq_hold_until` 30 days out
-  4. The confirmed stance value is written to `inform.politician_answers` as the authoritative record
-  5. Replaying the same `idempotency_key` returns the original result with no additional gem awards or rating changes
-**Plans**: 2 plans
-
-Plans:
-- [x] 28-01-PLAN.md — Migration 038 (vq_confirmation_results table + confirm_vq_stance RPC) + route + service file + registration
-- [x] 28-02-PLAN.md — Integration tests covering all 6 VQ requirements
-
-#### Phase 29: Admin Controls & Integration Verification
-
-**Goal**: Admins can override Verification Ratings in the tool, and CTC + VQ integrations are confirmed live end-to-end with documentation updated.
-**Depends on**: Phase 28 (VQ flow must exist to verify it)
-**Requirements**: VR-05, INTEG-01, INTEG-02, INTEG-03
-**Success Criteria** (what must be TRUE):
-  1. Admin can view and manually edit a user's `verification_rating` and clear `vq_hold_until` via the admin tool UI
-  2. A real CTC game event produces XP and yellow gem records on a live user account (visible in admin ledger view)
-  3. A test VQ confirmation event via `POST /api/vq/confirm-stance` produces Red Gem and rating changes on live user accounts
-  4. `docs/ONBOARDING-VQ.md` documents the `/vq/confirm-stance` endpoint contract for VQ developers
-**Plans**: 2 plans
-
-Plans:
-- [x] 29-01-PLAN.md — Admin VR editor: PATCH endpoint + AccountDetailPage VR controls
-- [x] 29-02-PLAN.md — Smoke test runbook (SMOKE-TEST-INTEG.md) + ONBOARDING-VQ.md confirm-stance section
-
-#### Phase 30: Profile Hub UI
-
-**Goal**: A Connected user visiting their profile page sees their full civic identity — tier, progression, Verification Rating, gem balances, location form, and a hub of all live Empowered Vote features.
-**Depends on**: Phase 27 (VR data on /me must be available before displaying it)
-**Requirements**: PROFILE-01, PROFILE-02, PROFILE-03, PROFILE-04
-**Success Criteria** (what must be TRUE):
-  1. Profile page displays tier, level, total XP, yellow/blue/red gem balances, and Verification Rating for the logged-in user
-  2. User can enter their address in a form on the profile page; submitting calls `POST /connect/set-location` and confirms success
-  3. Profile page shows a feature hub with cards for CTC, VQ, Essentials, Read & Rank, and Treasury Tracker — each with description and link
-  4. Feature hub cards communicate "explore freely, connect to save" — the user understands which features are available without a Connected account
-**Plans**: 2 plans
-
-Plans:
-- [x] 30-01-PLAN.md — Profile stats from /account/me (tier, level, XP, gems, VR) + location address form
-- [x] 30-02-PLAN.md — Feature hub cards (CTC, VQ, Essentials, Read & Rank, Treasury Tracker)
+<!-- Next milestone — define via /gsd:new-milestone -->
 
 ## Progress
 
@@ -166,7 +114,7 @@ Plans:
 | 24. Public Auth Hub (Login Rebrand + Signup Flow) | v1.3 | 2/2 | Complete | 2026-03-14 |
 | 25. Deployment Runbook Completion | v1.3 | 1/1 | Complete | 2026-03-15 |
 | 26. v1.3 Tech Debt Closure | v1.3 | 1/1 | Complete | 2026-03-15 |
-| 27. Verification Rating Schema | v1.4 | 1/1 | Complete | 2026-03-15 |
-| 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
-| 29. Admin Controls & Integration Verification | v1.4 | 2/2 | Complete | 2026-03-15 |
-| 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
+| 27. Verification Rating Schema | v1.4 | 1/1 | ✅ Complete | 2026-03-15 |
+| 28. VQ Confirmation Flow | v1.4 | 2/2 | ✅ Complete | 2026-03-15 |
+| 29. Admin Controls & Integration Verification | v1.4 | 2/2 | ✅ Complete | 2026-03-15 |
+| 30. Profile Hub UI | v1.4 | 2/2 | ✅ Complete | 2026-03-16 |
