@@ -36,22 +36,28 @@ interface Props {
 
 export function LocationStep({ isUpdate = false, onSuccess }: Props) {
   const [revealed, setRevealed] = useState(isUpdate); // skip reveal animation for update flow
-  const [address, setAddress] = useState('');
+  const [street, setStreet] = useState('');
+  const [city, setCity] = useState('');
+  const [state, setState] = useState('');
+  const [zip, setZip] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const isComplete = street.trim() && city.trim() && state.trim() && zip.trim();
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!address.trim()) {
-      setError('Please enter your address.');
+    if (!isComplete) {
+      setError('Please fill in all address fields.');
       return;
     }
     setError('');
     setLoading(true);
+    const address = `${street.trim()}, ${city.trim()}, ${state.trim()} ${zip.trim()}`;
     try {
       const result = await apiFetch<LocationResult>('/connect/set-location', {
         method: 'POST',
-        body: JSON.stringify({ address: address.trim() }),
+        body: JSON.stringify({ address }),
       });
       onSuccess(result);
     } catch (err) {
@@ -107,23 +113,69 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
 
         {/* Address input — revealed after context */}
         {revealed && (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3">
             <div>
               <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
-                Home address
+                Street address
               </label>
               <input
                 type="text"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                placeholder="123 Main St, Indianapolis, IN 46201"
+                value={street}
+                onChange={(e) => setStreet(e.target.value)}
+                placeholder="123 Main St"
                 autoFocus
+                autoComplete="address-line1"
                 className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
               />
-              {error && (
-                <p className="mt-2 text-sm text-ev-red leading-snug">{error}</p>
-              )}
             </div>
+
+            <div className="flex gap-2">
+              <div className="flex-1">
+                <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
+                  City
+                </label>
+                <input
+                  type="text"
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                  placeholder="Indianapolis"
+                  autoComplete="address-level2"
+                  className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
+                />
+              </div>
+              <div className="w-20">
+                <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
+                  State
+                </label>
+                <input
+                  type="text"
+                  value={state}
+                  onChange={(e) => setState(e.target.value.toUpperCase().slice(0, 2))}
+                  placeholder="IN"
+                  autoComplete="address-level1"
+                  className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base text-center"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
+                ZIP code
+              </label>
+              <input
+                type="text"
+                value={zip}
+                onChange={(e) => setZip(e.target.value.replace(/\D/g, '').slice(0, 5))}
+                placeholder="46201"
+                autoComplete="postal-code"
+                inputMode="numeric"
+                className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
+              />
+            </div>
+
+            {error && (
+              <p className="text-sm text-ev-red leading-snug">{error}</p>
+            )}
 
             <p className="text-xs text-gray-400 leading-relaxed">
               Your congressional representative votes on federal legislation that affects your
@@ -132,7 +184,7 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
 
             <button
               type="submit"
-              disabled={loading || !address.trim()}
+              disabled={loading || !isComplete}
               className="w-full bg-ev-teal text-white rounded-xl py-3.5 font-semibold text-base hover:bg-ev-teal/90 disabled:opacity-40 transition-colors"
             >
               {loading ? 'Finding your community…' : isUpdate ? 'Update location' : 'Find my representatives'}
