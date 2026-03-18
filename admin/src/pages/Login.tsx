@@ -67,7 +67,7 @@ export default function Login() {
       if (validRedirect) {
         window.location.href = validRedirect;
       } else {
-        navigate('/profile');
+        window.location.href = 'https://profile.empowered.vote';
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');

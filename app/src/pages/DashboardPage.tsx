@@ -32,6 +32,7 @@ interface MeFull {
   display_name: string | null;
   completed_onboarding: boolean;
   location_consent: boolean;
+  is_admin: boolean;
   verification_rating: number;
   vq_hold_active: boolean;
   red_gem_quests_unlocked: boolean;
@@ -139,6 +140,22 @@ export default function DashboardPage() {
       </header>
 
       <main className="max-w-lg mx-auto px-4 py-6 space-y-4">
+
+        {/* Admin Hub button */}
+        {me?.is_admin && (
+          <a
+            href="https://accounts.empowered.vote/admin"
+            className="flex items-center justify-between bg-ev-red/10 border border-ev-red/30 rounded-2xl p-4 group"
+          >
+            <div>
+              <p className="text-sm font-semibold text-ev-red">Admin Hub</p>
+              <p className="text-xs text-gray-500 mt-0.5">Manage users, invites, and platform settings.</p>
+            </div>
+            <svg className="w-4 h-4 text-ev-red group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+            </svg>
+          </a>
+        )}
 
         {/* Identity card */}
         <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
