@@ -12,7 +12,7 @@ See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 Phase: Not started
 Plan: Not started
 Status: Ready to plan v1.5
-Last activity: 2026-03-17 — v1.4 milestone complete
+Last activity: 2026-03-18 - Completed quick task 003: Expose jurisdiction fields on GET /api/account/me for VQ
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅] All 30 phases shipped ██████████
 
@@ -59,6 +59,12 @@ v1.4 patterns established (apply going forward):
 ### Open Blockers
 
 - **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md`
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 003 | Expose jurisdiction fields on GET /api/account/me for VQ | 2026-03-18 | 6932815 | [003-expose-jurisdiction-location-fields-on-g](./quick/003-expose-jurisdiction-location-fields-on-g/) |
 
 ### Pending Todos
 
