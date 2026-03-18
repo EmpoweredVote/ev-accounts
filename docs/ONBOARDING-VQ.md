@@ -2,7 +2,7 @@
 
 **Audience:** Claude working in the `empowered-validation-quests` codebase
 **Accounts API:** `https://ev-accounts-api.onrender.com`
-**Last updated:** 2026-03-16 (v1.4 — confirm-stance added, VR fields on /me)
+**Last updated:** 2026-03-18 (v1.5 — profile.empowered.vote canonical, referral codes, corrected /me shape)
 
 ---
 
@@ -10,14 +10,13 @@
 
 Empowered Accounts is the shared identity and permission layer for the platform. Validation Quests does not manage its own user accounts — every VQ user is an Empowered Accounts user identified by the same UUID from the shared Supabase project.
 
-What accounts owns that VQ uses:
-
 | Concern | Owned By | How VQ Accesses It |
 |---------|----------|--------------------|
 | User identity (UUID, email, tier) | Accounts | `GET /api/account/me` with Bearer token |
 | XP progression | Accounts | `POST /api/xp/award` with service key |
 | User jurisdiction (district) | Accounts | `GET /api/account/me/jurisdiction` with Bearer token |
-| Account creation / signup | Accounts | `accounts.empowered.vote/signup?redirect=<vq-url>` |
+| Account creation / signup | Accounts | `profile.empowered.vote/signup?redirect=<vq-url>` |
+| Login | Accounts | `profile.empowered.vote/login?redirect=<vq-url>` |
 | Public profile | Accounts | `GET /api/account/profile/:userId` |
 | Stance confirmation | Accounts | `POST /api/vq/confirm-stance` with service key |
 
@@ -56,11 +55,15 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award'
 
 **Key setup:** Chris sets matching values in both VQ's Render environment (`QUEST_SERVICE_KEY`, `VQ_SERVICE_KEY`) and the accounts API environment. VQ doesn't register keys — just uses the values Chris provides.
 
+**Two separate keys:**
+- `QUEST_SERVICE_KEY` — for `POST /api/xp/award` only
+- `VQ_SERVICE_KEY` — for `POST /api/vq/confirm-stance` only (requires `red` gem permission)
+
 ---
 
 ## Migration: Direct RPC → API Endpoint
 
-VQ previously called `connect.award_xp` via direct Supabase RPC:
+VQ previously called `connect.award_xp` via direct Supabase RPC. **Use the HTTP endpoint instead.** The RPC still exists but the API endpoint is the correct path — it handles auth, source validation, error responses, and now also triggers referral code side-effects.
 
 ```typescript
 // OLD — remove this
@@ -72,11 +75,7 @@ await supabaseService
     p_amount: xpAmount,
     p_idempotency_key: `vq-submit-${submissionId}`,
   });
-```
 
-**Use the HTTP endpoint instead.** The RPC still exists but the API endpoint is the correct path for service-to-service calls — it handles auth, source validation, and error responses uniformly.
-
-```typescript
 // NEW
 await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
   method: 'POST',
@@ -88,13 +87,11 @@ await fetch(`${ACCOUNTS_URL}/api/xp/award`, {
     user_id: userId,
     source: 'validation_quest_completion',
     amount: xpAmount,
-    idempotency_key: `vq-submit-${submissionId}`,
+    idempotency_key: `vq-submit-${submissionId}-${userId}`,
     metadata: { questId, submissionId },
   }),
 });
 ```
-
-**You can now enable XP awards.** The `validation_quest_completion` source is registered and authorized for `QUEST_SERVICE_KEY`. Set `ENABLE_XP_AWARDS=true` in VQ's Render environment when ready.
 
 ---
 
@@ -125,17 +122,31 @@ Content-Type: application/json
 ```typescript
 // 200 — awarded (or duplicate)
 {
-  total_xp: number;
-  level: number;
-  is_duplicate: boolean;  // true if idempotencyKey already used — no double-award
+  transaction_id: string;
+  user_id: string;
+  source: string;
+  amount: number;
+  created_at: string;
+  level: number;              // user's current level after this award
+  total_xp: number;           // user's total XP after this award
+  xp_in_level: number;        // XP progress within the current level
+  xp_to_next_level: number;   // XP remaining to reach the next level
+  is_duplicate: boolean;      // true if idempotency_key already used — no double-award
 }
 
 // 422 — source not permitted for this key
-{ error: 'SOURCE_NOT_PERMITTED', message: "This service key is not authorized to award source '...'" }
+{ "error": "SOURCE_NOT_PERMITTED", "message": "..." }
 
 // 401 — invalid or missing key
-{ error: 'Missing or invalid X-Service-Key' }
+{ "error": "Missing or invalid X-Service-Key" }
+
+// 404 — user has no Connected profile
+{ "error": "User not found or not Connected tier" }
 ```
+
+### Side Effect: Referral Code Unlock
+
+When a user reaches level 2 for the first time, the accounts API automatically generates a referral invite code for them (visible on their profile page at `profile.empowered.vote`). This happens as a fire-and-forget side effect after the XP award — it does not affect the response or timing. No action needed from VQ.
 
 ### Idempotency
 
@@ -144,10 +155,6 @@ Always derive `idempotency_key` from a stable event identifier. Safe to retry on
 ```typescript
 const idempotency_key = `vq-submit-${submissionId}-${userId}`;
 ```
-
-### Permitted Source
-
-`QUEST_SERVICE_KEY` is authorized for `'validation_quest_completion'` only. Any other source returns 422.
 
 ### Example
 
@@ -173,8 +180,8 @@ async function awardQuestXp(userId: string, submissionId: string, questId: strin
     return null;
   }
 
-  const data = await res.json();
-  return data; // { total_xp, level, is_duplicate }
+  return res.json();
+  // { transaction_id, level, total_xp, xp_in_level, xp_to_next_level, is_duplicate }
 }
 ```
 
@@ -192,77 +199,7 @@ X-Service-Key: <VQ_SERVICE_KEY>
 Content-Type: application/json
 ```
 
-### Authentication
-
-Same `X-Service-Key` header pattern as XP awards. Use the `VQ_SERVICE_KEY` value provided by Chris. This key must have `red` gem type permission in the accounts API `GEMS_SERVICE_KEYS` env var (separate from `QUEST_SERVICE_KEY` which handles XP and is a different key).
-
-### Complete Example
-
-```typescript
-interface ConfirmStanceResult {
-  politician_id: string;
-  topic_id: string;
-  confirmed_value: number;
-  correct_count: number;
-  incorrect_count: number;
-  users: Array<{
-    user_id: string;
-    result: 'correct' | 'incorrect';
-    gems_awarded: number;
-    rating_delta: number;
-    new_rating: number;
-  }>;
-  unresolved_users: string[];
-  replayed?: boolean;  // present and true on idempotent replay; absent on first call
-}
-
-async function confirmStance(opts: {
-  politicianId: string;
-  topicId: string;
-  confirmedValue: number;
-  correctUserIds: string[];
-  incorrectUserIds: string[];
-  idempotencyKey: string;
-  gemsAmount?: number;
-}): Promise<ConfirmStanceResult> {
-  const res = await fetch(`${ACCOUNTS_API_URL}/api/vq/confirm-stance`, {
-    method: 'POST',
-    headers: {
-      'X-Service-Key': process.env.VQ_SERVICE_KEY!,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      politician_id: opts.politicianId,
-      topic_id: opts.topicId,
-      confirmed_value: opts.confirmedValue,
-      correct_user_ids: opts.correctUserIds,
-      incorrect_user_ids: opts.incorrectUserIds,
-      idempotency_key: opts.idempotencyKey,
-      gems_amount: opts.gemsAmount ?? 1,
-    }),
-  });
-
-  if (!res.ok) throw new Error(`confirm-stance failed: ${res.status} ${await res.text()}`);
-  return res.json() as Promise<ConfirmStanceResult>;
-}
-
-// Usage — called once per resolution event
-const result = await confirmStance({
-  politicianId: resolution.politicianId,
-  topicId: resolution.topicId,
-  confirmedValue: resolution.correctValue,
-  correctUserIds: resolution.correctSubmitters,
-  incorrectUserIds: resolution.incorrectSubmitters,
-  idempotencyKey: `vq-resolution-${resolution.id}`,
-  gemsAmount: 1,
-});
-
-if (result.replayed) {
-  // idempotency_key was already used — original result returned, no changes made
-}
-```
-
-**idempotency_key guidance:** Derive from your internal resolution event ID, not per-user. Example: `vq-resolution-${resolutionId}`. All users in that resolution share the same key — the accounts API handles per-user deduplication internally.
+This key must have `red` gem type permission in the accounts API `GEMS_SERVICE_KEYS` env var (separate from `QUEST_SERVICE_KEY`).
 
 ### Request Body
 
@@ -280,6 +217,26 @@ A user can appear in only one array. If a user appears in both, they are treated
 
 ### Response (200)
 
+```typescript
+interface ConfirmStanceResult {
+  politician_id: string;
+  topic_id: string;
+  confirmed_value: number;
+  correct_count: number;
+  incorrect_count: number;
+  users: Array<{
+    user_id: string;
+    result: 'correct' | 'incorrect';
+    gems_awarded: number;
+    rating_delta: number;
+    new_rating: number;
+  }>;
+  unresolved_users: string[];  // UUIDs that couldn't be processed — informational only
+  replayed?: boolean;          // present and true on idempotent replay; absent on first call
+}
+```
+
+**Example response:**
 ```json
 {
   "politician_id": "uuid",
@@ -296,28 +253,19 @@ A user can appear in only one array. If a user appears in both, they are treated
 }
 ```
 
-`unresolved_users` contains UUIDs that were submitted but could not be processed (e.g., user no longer exists). These are informational — no error is thrown.
-
-`replayed: true` is present when the `idempotency_key` was already used. The original result is returned unchanged — no additional gems awarded, no ratings changed. The field is absent (not `false`) on the first call.
-
 ### Side Effects
 
 **For each user in `correct_user_ids`:**
 - Awarded `gems_amount` Red Gems (default: 1)
 - `verification_rating` increases by **+3**, capped at **150**
-  - Example: rating 148 + 3 = **150** (not 151)
-  - Example: rating 60 + 3 = **63**
 
 **For each user in `incorrect_user_ids`:**
 - `verification_rating` decreases by **−10**, floored at **0**
-  - Example: rating 8 − 10 = **0** (not −2)
-  - Example: rating 60 − 10 = **50**
 - If rating reaches **0**, `vq_hold_until` is set to **now + 30 days**
   - The user's `/api/account/me` response shows `vq_hold_active: true`
-  - They cannot participate in Red Gem quests until the hold expires
 
 **For the question itself:**
-- `inform.politician_answers` is upserted with `confirmed_value` as the authoritative stance record
+- `inform.politician_answers` is upserted with `confirmed_value` as the authoritative stance
 
 **On idempotent replay** (same `idempotency_key`):
 - No gems awarded, no rating changes, no DB writes
@@ -338,20 +286,63 @@ A user can appear in only one array. If a user appears in both, they are treated
 | Status | Body | Cause |
 |--------|------|-------|
 | 401 | `{ "error": "Missing or invalid X-Service-Key" }` | Missing or invalid service key |
-| 422 | `{ "error": "VALIDATION_ERROR", "issues": [{ "field": "politician_id", "message": "Invalid uuid" }] }` | Zod validation failure — check required fields and UUID format |
-| 422 | `{ "error": "FORBIDDEN_GEM_TYPE", "permitted": ["yellow"] }` | Service key lacks `red` gem type permission — contact Chris to update accounts API env |
-| 422 | `{ "error": "INVALID_VALUE" }` | `confirmed_value` outside 1–5 |
 | 404 | `{ "error": "QUESTION_NOT_FOUND" }` | The `politician_id` / `topic_id` pair does not exist in the compass |
+| 422 | `{ "error": "VALIDATION_ERROR", "issues": [...] }` | Zod validation failure — check required fields and UUID format |
+| 422 | `{ "error": "FORBIDDEN_GEM_TYPE", "permitted": ["yellow"] }` | Service key lacks `red` gem permission — contact Chris |
+| 422 | `{ "error": "INVALID_VALUE" }` | `confirmed_value` outside 1–5 |
 
-All errors return `{ "error": string }` with an optional `issues` array for validation failures. On 5xx, retry with the same `idempotency_key` — safe to replay.
+On 5xx, retry with the same `idempotency_key` — safe to replay.
 
-**Idempotency conflict behavior:** If you send the same `idempotency_key` with a different payload, the original result for that key is returned (no conflict error is raised). Never reuse a key across different resolution events.
+### Example
 
-### Environment Variables
+```typescript
+async function confirmStance(opts: {
+  politicianId: string;
+  topicId: string;
+  confirmedValue: number;
+  correctUserIds: string[];
+  incorrectUserIds: string[];
+  idempotencyKey: string;
+  gemsAmount?: number;
+}): Promise<ConfirmStanceResult> {
+  const res = await fetch(`${ACCOUNTS_URL}/api/vq/confirm-stance`, {
+    method: 'POST',
+    headers: {
+      'X-Service-Key': process.env.VQ_SERVICE_KEY!,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      politician_id: opts.politicianId,
+      topic_id: opts.topicId,
+      confirmed_value: opts.confirmedValue,
+      correct_user_ids: opts.correctUserIds,
+      incorrect_user_ids: opts.incorrectUserIds,
+      idempotency_key: opts.idempotencyKey,
+      gems_amount: opts.gemsAmount ?? 1,
+    }),
+  });
 
-| Variable | Purpose | Value Source |
-|----------|---------|--------------|
-| `VQ_SERVICE_KEY` | Stance confirmation auth (must have `red` gem type) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
+  if (!res.ok) throw new Error(`confirm-stance failed: ${res.status} ${await res.text()}`);
+  return res.json();
+}
+
+// Usage — called once per resolution event
+const result = await confirmStance({
+  politicianId: resolution.politicianId,
+  topicId: resolution.topicId,
+  confirmedValue: resolution.correctValue,
+  correctUserIds: resolution.correctSubmitters,
+  incorrectUserIds: resolution.incorrectSubmitters,
+  idempotencyKey: `vq-resolution-${resolution.id}`,
+  gemsAmount: 1,
+});
+
+if (result.replayed) {
+  // idempotency_key was already used — original result returned, no changes made
+}
+```
+
+**`idempotency_key` guidance:** Derive from your internal resolution event ID, not per-user. Example: `vq-resolution-${resolutionId}`. All users in that resolution share the same key — the accounts API handles per-user deduplication internally. Never reuse a key across different resolution events.
 
 ---
 
@@ -362,93 +353,126 @@ GET /api/account/me
 Authorization: Bearer <userJwt>
 ```
 
-Response shape (Connected user):
+**Response shape (Connected user):**
 
 ```typescript
 {
+  // — Identity —
   id: string;
+  email: string;
+  display_name: string | null;
   tier: 'inform' | 'connected' | 'empowered';
   completed_onboarding: boolean;
-  xp: {
-    total: number;
-    level: number;
-    xp_in_level: number;          // XP earned within current level
-    xp_to_next_level: number | null;  // null at max level
-  } | null;   // null for Inform-tier users (no connected_profiles)
+  location_consent: boolean;
+  is_admin: boolean;
+
+  // — VQ-relevant fields (root level, always present for Connected users) —
+  verification_rating: number;      // 0–150; default 60
+  vq_hold_active: boolean;          // true if vq_hold_until is in the future
+  red_gem_quests_unlocked: boolean; // true when verification_rating >= 90
+
+  // — Gems at root (shortcut for Connected users) —
   gems: {
     yellow: number;
     blue: number;
     red: number;
+  } | null;  // null for Inform-tier users
+
+  // — Full connected profile (null for Inform-tier users) —
+  connected_profile: {
+    xp: {
+      total: number;
+      level: number;
+      xp_in_level: number;
+      xp_to_next_level: number;
+    };
+    gems: { yellow: number; blue: number; red: number };
+    verification_rating: number;
+    vq_hold_active: boolean;
   } | null;
-  location_consent: boolean;
-  verification_rating: number;      // 0–150; default 60
-  vq_hold_active: boolean;          // true if vq_hold_until is in the future
-  red_gem_quests_unlocked: boolean; // true when verification_rating >= 90
-  // ... other fields
 }
 ```
 
-**XP level thresholds** (for display only — use `xp_in_level` / `xp_to_next_level` for progress bars):
+**XP is inside `connected_profile`, not at root.** Access it as:
+
+```typescript
+const xp = meData.connected_profile?.xp;
+const level = xp?.level ?? 0;
+const totalXp = xp?.total ?? 0;
+```
+
+**XP level thresholds** (for display — use `xp_in_level` / `xp_to_next_level` for progress bars):
 - Levels 1–3: 2,000 XP each
 - Levels 4–9: 3,000 XP each
 - Levels 10–29: 4,000 XP each
 - Levels 30+: 5,000 XP each
 
-**Inform-tier users** have `xp: null` and `gems: null`. These users have no `connected_profiles` row. Guard:
+**Inform-tier users** have `connected_profile: null` and `gems: null`. Guard:
 
 ```typescript
-const xpLevel = meData.xp?.level ?? 0;
-const totalXp = meData.xp?.total ?? 0;
+if (!meData.connected_profile) {
+  // Inform-tier user — prompt upgrade or show limited experience
+}
 ```
 
-**Tier gating:** If a quest requires Connected tier or above, check `meData.tier !== 'inform'` before allowing submission.
+**VQ participation gating:**
+
+```typescript
+if (meData.vq_hold_active) {
+  // Show hold message — user is on cooldown, cannot participate in Red Gem quests
+}
+if (!meData.red_gem_quests_unlocked) {
+  // verification_rating < 90 — user cannot participate in Red Gem quests yet
+  // Show their current rating: meData.verification_rating
+}
+```
 
 ---
 
 ## Jurisdiction (District Eligibility)
 
-For quests scoped to a specific district (e.g., "Monroe County only"), use the jurisdiction endpoint:
+For quests scoped to a specific district, use the jurisdiction endpoint:
 
 ```
 GET /api/account/me/jurisdiction
 Authorization: Bearer <userJwt>
 ```
 
-Response:
+**Response:**
 
 ```typescript
 {
-  congressional: string;    // e.g. "1809"
-  state_senate: string;
-  state_house: string;
-  county: string;
-  school_district: string;
+  jurisdiction: {
+    congressional_district_name: string | null;
+    state_senate_district_name: string | null;
+    state_house_district_name: string | null;
+    county_name: string | null;
+    school_district_name: string | null;
+  }
 }
 ```
 
-**403 if `location_consent = false`** — the user hasn't set their location yet. Handle this gracefully: prompt them to set their location at `accounts.empowered.vote` or via the set-location flow.
+**403 if `location_consent = false`** — the user hasn't set their location yet. Handle gracefully: prompt them to set their location at `profile.empowered.vote`.
 
 ```typescript
-const jurisdictionRes = await fetch(`${ACCOUNTS_URL}/api/account/me/jurisdiction`, {
+const res = await fetch(`${ACCOUNTS_URL}/api/account/me/jurisdiction`, {
   headers: { 'Authorization': `Bearer ${userJwt}` },
 });
 
-if (jurisdictionRes.status === 403) {
-  // User hasn't shared location — prompt them or show location-agnostic quests
+if (res.status === 403) {
   return { hasLocation: false };
 }
 
-const jurisdiction = await jurisdictionRes.json();
-// jurisdiction.county === '18105' → Monroe County, Indiana
+const { jurisdiction } = await res.json();
 ```
 
-Raw coordinates are never returned — only jurisdiction strings. Accounts handles all geocoding and encryption internally.
+Raw coordinates are never returned — only human-readable district names. Accounts handles all geocoding and encryption internally.
 
 ---
 
 ## Public Profile
 
-To display a user's public profile (e.g., leaderboard, contributor credit):
+To display a user's public profile (leaderboard, contributor credit):
 
 ```
 GET /api/account/profile/:userId
@@ -463,41 +487,28 @@ No authentication required. Returns:
   level: number;
   total_xp: number;
   selected_topic_ids: string[];
-  empowered_profile?: { ... };  // present for Empowered users
 }
 ```
 
-No gems, no tolerance_rating, no location data. Safe to display publicly.
+No gems, no verification_rating, no location data — safe to display publicly.
 
 ---
 
-## Account Creation
+## Account Creation & Login
 
-VQ should **not** implement its own signup flow. Direct users to:
-
-```
-https://accounts.empowered.vote/signup?redirect=https://quests.empowered.vote/feed
-```
-
-After creating a Connected Account and confirming their email, users are redirected back to VQ at the URL you provided. The `redirect` param only accepts `*.empowered.vote` domains.
-
-For the login flow:
+VQ should **not** implement its own signup or login flows. `profile.empowered.vote` is the canonical user-facing app. Direct users there with a `redirect` param:
 
 ```
-https://accounts.empowered.vote/login?redirect=https://quests.empowered.vote/feed
+# Signup
+https://profile.empowered.vote/signup?redirect=https://quests.empowered.vote/feed
+
+# Login
+https://profile.empowered.vote/login?redirect=https://quests.empowered.vote/feed
 ```
 
----
+After the user creates an account or signs in, they are redirected back to the URL provided. The `redirect` param only accepts `*.empowered.vote` domains.
 
-## Responding to the Coordination Doc Questions
-
-From `ACCOUNTS-COORDINATION.md` (2026-03-08):
-
-**Item 1 — `validation_quest_completion` source key:** Confirmed registered and authorized. Enable XP awards now (`ENABLE_XP_AWARDS=true`).
-
-**Item 2 — XP level formula:** Already returned in `GET /api/account/me` as `xp.level`, `xp.xp_in_level`, and `xp.xp_to_next_level`. Use these directly for the XPBar — no client-side calculation needed.
-
-**Item 3 — Verification Rating integration:** Fully implemented. Accounts owns `verification_rating` on `connected_profiles`. VQ does not maintain its own rating table — all rating adjustments happen atomically inside `POST /api/vq/confirm-stance` (+3 correct, −10 incorrect, floor 0, cap 150). Accounts also handles hold enforcement (`vq_hold_until`) and surfaces `vq_hold_active` and `red_gem_quests_unlocked` on `GET /api/account/me`. VQ should read these fields to gate quest participation — no local rating state needed.
+> **Note:** `accounts.empowered.vote` is the admin panel only and does not serve the end-user signup/onboarding flow. Always link to `profile.empowered.vote`.
 
 ---
 
@@ -505,11 +516,12 @@ From `ACCOUNTS-COORDINATION.md` (2026-03-08):
 
 | Status | Meaning | Action |
 |--------|---------|--------|
-| 401 | Invalid/missing token | Re-prompt login (user token) or check key config (service key) |
+| 401 | Invalid/missing token or service key | Re-prompt login (user token) or check key config (service key) |
 | 403 | Insufficient tier or consent not given | Show upgrade/setup prompt |
+| 404 | User not found or resource not found | Handle gracefully — do not retry |
 | 422 | Validation error | Fix the request — do not retry |
 | 429 | Rate limited | Exponential backoff |
-| 5xx | Server error | Retry with same `idempotencyKey` — safe, duplicate returns 200 |
+| 5xx | Server error | Retry with same `idempotency_key` — safe, duplicate returns 200 |
 
 ---
 
@@ -520,17 +532,17 @@ From `ACCOUNTS-COORDINATION.md` (2026-03-08):
 | `ACCOUNTS_URL` | Base URL for accounts API | `https://ev-accounts-api.onrender.com` |
 | `QUEST_SERVICE_KEY` | XP award auth (`X-Service-Key`) | Chris provides; must match accounts API env |
 | `VQ_SERVICE_KEY` | Stance confirmation auth (`X-Service-Key`, needs `red` gem permission) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
-| `ENABLE_XP_AWARDS` | Feature flag for XP award calls | Set to `true` — source key is confirmed |
 
 ---
 
 ## What VQ Does NOT Own
 
 - User account creation, deletion, or password management
-- Tier promotion (admin tool handles this, or users go through the accounts signup/invite flow)
-- Direct gem balance writes — always go through `POST /api/vq/confirm-stance` for Red Gem awards; do not call gem endpoints directly
-- XP ledger reads (beyond `/api/account/me`)
-- Tolerance Rating (internal to accounts, never exposed externally)
+- Tier promotion (admin panel handles this; users sign up via `profile.empowered.vote`)
+- Direct gem balance writes — always go through `POST /api/vq/confirm-stance` for Red Gem awards
+- XP ledger reads (beyond the fields returned by `/api/account/me`)
+- Tolerance Rating — internal to accounts, never exposed externally
 - Location storage or geocoding
+- Referral codes — generated automatically by accounts when a user hits level 2
 
 If VQ needs something from accounts that isn't in this doc, file a feature request against the `empowered-accounts` repo and tag it for Chris.
