@@ -60,7 +60,7 @@ const FEATURES = [
   {
     name: 'Validation Quests',
     description: 'Validate political stances and earn Red Gems.',
-    url: 'https://vq.empowered.vote',
+    url: 'https://quests.empowered.vote',
     dot: 'bg-ev-red',
   },
   {
