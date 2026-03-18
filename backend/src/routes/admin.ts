@@ -973,8 +973,8 @@ router.get('/cron-log', async (req, res) => {
 router.delete('/accounts/:userId', async (req, res) => {
   try {
     const { userId } = req.params;
-    await deleteAccount(actorId(req), userId);
     await logAdminAction(actorId(req), 'delete_account', userId, {});
+    await deleteAccount(actorId(req), userId);
     res.json({ ok: true });
   } catch (err) {
     const e = err as { code?: string };
