@@ -32,6 +32,74 @@ beforeAll(async () => {
 const hasLiveDB = !!process.env.INTEGRATION_TEST_JWT;
 
 // ---------------------------------------------------------------------------
+// POST /api/vq/adjust-vr — auth and validation (no DB required)
+//
+// Covers:
+//   Auth rejection and Zod validation for Yellow quest VR adjustment endpoint
+// ---------------------------------------------------------------------------
+describe('POST /api/vq/adjust-vr — auth rejection', () => {
+  it('returns 401 without X-Service-Key header', async () => {
+    const res = await request(app)
+      .post('/api/vq/adjust-vr')
+      .send({
+        user_id: crypto.randomUUID(),
+        delta: 5,
+        idempotency_key: crypto.randomUUID(),
+      });
+    expect(res.status).toBe(401);
+  });
+
+  it('returns 401 with invalid service key', async () => {
+    const res = await request(app)
+      .post('/api/vq/adjust-vr')
+      .set('X-Service-Key', 'bad-key')
+      .send({
+        user_id: crypto.randomUUID(),
+        delta: 5,
+        idempotency_key: crypto.randomUUID(),
+      });
+    expect(res.status).toBe(401);
+  });
+});
+
+describe('POST /api/vq/adjust-vr — input validation', () => {
+  it('returns 422 with VALIDATION_ERROR on empty body', async () => {
+    const res = await request(app)
+      .post('/api/vq/adjust-vr')
+      .set('X-Service-Key', TEST_VQ_KEY)
+      .send({});
+    expect(res.status).toBe(422);
+    expect(res.body.error).toBe('VALIDATION_ERROR');
+  });
+
+  it('returns 422 when delta exceeds max (999 > 100)', async () => {
+    const res = await request(app)
+      .post('/api/vq/adjust-vr')
+      .set('X-Service-Key', TEST_VQ_KEY)
+      .send({
+        user_id: crypto.randomUUID(),
+        delta: 999,
+        idempotency_key: crypto.randomUUID(),
+      });
+    expect(res.status).toBe(422);
+    expect(res.body.error).toBe('VALIDATION_ERROR');
+  });
+
+  it('returns 422 when user_id is not a valid UUID', async () => {
+    const res = await request(app)
+      .post('/api/vq/adjust-vr')
+      .set('X-Service-Key', TEST_VQ_KEY)
+      .send({
+        user_id: 'not-a-uuid',
+        delta: 5,
+        idempotency_key: crypto.randomUUID(),
+      });
+    expect(res.status).toBe(422);
+    expect(res.body.error).toBe('VALIDATION_ERROR');
+  });
+});
+
+// ---------------------------------------------------------------------------
 // POST /api/vq/confirm-stance — auth and validation (no DB required)
 //
 // Covers:
@@ -56,7 +124,7 @@ describe('POST /api/vq/confirm-stance — auth rejection', () => {
   it('returns 401 with invalid service key', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', 'Bearer totally-invalid-key-xyz')
+      .set('X-Service-Key', 'totally-invalid-key-xyz')
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -72,7 +140,7 @@ describe('POST /api/vq/confirm-stance — auth rejection', () => {
     // VQ confirm-stance requires 'red' permission — yellow-only key must be rejected
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_YELLOW_ONLY_KEY}`)
+      .set('X-Service-Key', TEST_YELLOW_ONLY_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -91,7 +159,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 with missing required fields (empty body)', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({});
     expect(res.status).toBe(422);
     expect(res.body.error).toBe('VALIDATION_ERROR');
@@ -100,7 +168,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when politician_id is not a valid UUID', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: 'not-a-uuid',
         topic_id: crypto.randomUUID(),
@@ -114,7 +182,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when topic_id is not a valid UUID', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: 'not-a-uuid',
@@ -128,7 +196,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when confirmed_value is 0 (below min of 1)', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -142,7 +210,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when confirmed_value is 6 (above max of 5)', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -156,7 +224,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when idempotency_key is missing', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -169,7 +237,7 @@ describe('POST /api/vq/confirm-stance — input validation', () => {
   it('returns 422 when correct_user_ids contains a non-UUID string', async () => {
     const res = await request(app)
       .post('/api/vq/confirm-stance')
-      .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+      .set('X-Service-Key', TEST_VQ_KEY)
       .send({
         politician_id: crypto.randomUUID(),
         topic_id: crypto.randomUUID(),
@@ -224,7 +292,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
     it('returns 404 QUESTION_NOT_FOUND when politician_id does not exist', async () => {
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: crypto.randomUUID(), // random — will not exist in DB
           topic_id: crypto.randomUUID(),      // random — will not exist in DB
@@ -249,7 +317,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -288,7 +356,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -323,7 +391,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -372,7 +440,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
         const key = `vq-test-floor-${crypto.randomUUID()}`;
         const res = await request(app)
           .post('/api/vq/confirm-stance')
-          .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+          .set('X-Service-Key', TEST_VQ_KEY)
           .send({
             politician_id: testPoliticianId,
             topic_id: testTopicId,
@@ -426,7 +494,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
       // First call — original
       const firstRes = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send(payload);
 
       expect(firstRes.status).toBe(200);
@@ -440,7 +508,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
       // Second call — replay with identical payload
       const secondRes = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send(payload);
 
       expect(secondRes.status).toBe(200);
@@ -469,7 +537,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -507,7 +575,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
       // First call: confirm stance with value 2
       const firstRes = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -526,7 +594,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const secondRes = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -567,7 +635,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -609,7 +677,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
       // Structural contract: confirm-stance response must always include these fields
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,
@@ -646,7 +714,7 @@ describe.skipIf(!hasLiveDB)('POST /api/vq/confirm-stance (live DB)', () => {
 
       const res = await request(app)
         .post('/api/vq/confirm-stance')
-        .set('Authorization', `Bearer ${TEST_VQ_KEY}`)
+        .set('X-Service-Key', TEST_VQ_KEY)
         .send({
           politician_id: testPoliticianId,
           topic_id: testTopicId,

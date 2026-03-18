@@ -36,10 +36,9 @@ if (env.GEMS_SERVICE_KEYS) {
 }
 
 /**
- * requireGemServiceKey — validate Bearer token against GEMS_SERVICE_KEYS map.
+ * requireGemServiceKey — validate X-Service-Key against GEMS_SERVICE_KEYS map.
  *
- * Returns 401 for missing or unrecognized token (uses Authorization: Bearer,
- * not X-Service-Key header — different auth model from requireServiceKey).
+ * Returns 401 for missing or unrecognized key.
  *
  * After this middleware, (req as GemServiceKeyRequest).permittedGemTypes
  * contains the list of gem types this key is authorized to award.

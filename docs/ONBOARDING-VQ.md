@@ -19,6 +19,7 @@ Empowered Accounts is the shared identity and permission layer for the platform.
 | Login | Accounts | `profile.empowered.vote/login?redirect=<vq-url>` |
 | Public profile | Accounts | `GET /api/account/profile/:userId` |
 | Stance confirmation | Accounts | `POST /api/vq/confirm-stance` with service key |
+| VR adjustment (Yellow quests) | Accounts | `POST /api/vq/adjust-vr` with service key |
 
 ---
 
@@ -57,7 +58,7 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award'
 
 **Two separate keys:**
 - `QUEST_SERVICE_KEY` — for `POST /api/xp/award` only
-- `VQ_SERVICE_KEY` — for `POST /api/vq/confirm-stance` only (requires `red` gem permission)
+- `VQ_SERVICE_KEY` — for `POST /api/vq/confirm-stance` and `POST /api/vq/adjust-vr` (confirm-stance requires `red` gem permission)
 
 ---
 
@@ -343,6 +344,60 @@ if (result.replayed) {
 ```
 
 **`idempotency_key` guidance:** Derive from your internal resolution event ID, not per-user. Example: `vq-resolution-${resolutionId}`. All users in that resolution share the same key — the accounts API handles per-user deduplication internally. Never reuse a key across different resolution events.
+
+---
+
+## Verification Rating Adjustment (Yellow Quests)
+
+For Yellow quest immediate grading, use this lighter endpoint to adjust a user's
+verification_rating without the full stance confirmation ceremony (no gems, no
+politician stance upsert).
+
+### Endpoint
+
+```
+POST /api/vq/adjust-vr
+X-Service-Key: <VQ_SERVICE_KEY>
+Content-Type: application/json
+```
+
+### Request Body
+
+| Field | Type | Required | Constraints | Notes |
+|-------|------|----------|-------------|-------|
+| `user_id` | string (UUID) | Yes | Valid UUID | The user whose VR is being adjusted |
+| `delta` | number | Yes | Integer -100 to 100 | Positive = correct, negative = incorrect |
+| `idempotency_key` | string | Yes | max 255 chars | Unique per grading event |
+| `reason` | string | No | max 255 chars | Context string (e.g., "yellow_quest_correct") |
+
+### Response (200)
+
+```typescript
+interface AdjustVrResult {
+  user_id: string;
+  old_rating: number;
+  new_rating: number;
+  delta_applied: number;  // actual delta after clamping (may differ from requested)
+  vq_hold_set: boolean;   // true if vq_hold_until was set because rating hit 0
+  replayed?: boolean;      // present and true on idempotent replay
+}
+```
+
+### Side Effects
+
+- VR clamped to [0, 100] (Yellow quest range, not the [0, 150] Red quest range)
+- If VR reaches 0, `vq_hold_until` is set to now + 30 days
+- On idempotent replay: no writes, original result returned with `replayed: true`
+
+### Error Responses
+
+| Status | Body | Cause |
+|--------|------|-------|
+| 401 | `{ "error": "Missing or invalid X-Service-Key" }` | Bad or missing key |
+| 404 | `{ "error": "USER_NOT_FOUND" }` | No connected_profile for this user_id |
+| 422 | `{ "error": "VALIDATION_ERROR", "issues": [...] }` | Zod validation failure |
+
+On 5xx, retry with the same `idempotency_key` — safe, duplicate returns 200.
 
 ---
 
