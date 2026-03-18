@@ -6,6 +6,7 @@ import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
+import { pool } from '../lib/db.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -88,12 +89,11 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   // concurrent claims on the same code during alpha are negligible.
   if (invite_code && legal_name) {
     const normalizedCode = invite_code.toUpperCase().trim();
-    const { data: codeRow } = await supabaseAdmin
-      .schema('connect')
-      .from('invite_codes')
-      .select('id, is_claimed, expires_at')
-      .eq('code', normalizedCode)
-      .maybeSingle();
+    const { rows } = await pool.query<{ is_claimed: boolean; expires_at: string | null }>(
+      `SELECT is_claimed, expires_at FROM connect.invite_codes WHERE code = $1`,
+      [normalizedCode]
+    );
+    const codeRow = rows[0];
 
     if (
       !codeRow ||
