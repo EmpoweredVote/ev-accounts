@@ -10,7 +10,7 @@
  *
  * adjustVerificationRating handles Yellow quest immediate grading:
  *   - Adjusts verification_rating by a delta (no gems, no politician stance)
- *   - Clamps VR to [0, 100] (Yellow quest range)
+ *   - Clamps VR to [0, 150] (matches DB CHECK constraint)
  *   - Sets vq_hold_until when VR hits 0
  *   - Idempotent via vq_confirmation_results table
  *
@@ -190,9 +190,9 @@ export async function adjustVerificationRating(
     const currentRating = profileResult.rows[0].verification_rating;
 
     // ------------------------------------------------------------------
-    // 3. Compute new rating (clamped to [0, 100] — Yellow quest range)
+    // 3. Compute new rating (clamped to [0, 150] — matches DB CHECK constraint)
     // ------------------------------------------------------------------
-    const newRating = Math.max(0, Math.min(100, currentRating + params.delta));
+    const newRating = Math.max(0, Math.min(150, currentRating + params.delta));
     const deltaApplied = newRating - currentRating;
     const vqHoldSet = newRating === 0;
 
