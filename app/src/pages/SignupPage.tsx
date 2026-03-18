@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
+import { useAuthStore } from '../store/authStore';
 
 const ERROR_MESSAGES: Record<string, string> = {
   INVALID_INVITE_CODE: 'That invite code is invalid or has already been used.',
@@ -10,6 +11,13 @@ const ERROR_MESSAGES: Record<string, string> = {
   EMAIL_DELIVERY_FAILED: 'Unable to send confirmation email right now. Please try again shortly.',
 };
 
+interface SignupResponse {
+  id: string;
+  access_token?: string;
+  refresh_token?: string;
+  expires_in?: number;
+}
+
 export default function SignupPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -18,14 +26,13 @@ export default function SignupPage() {
   const [inviteCode, setInviteCode] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [done, setDone] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError('');
     setLoading(true);
     try {
-      await apiFetch('/auth/signup', {
+      const result = await apiFetch<SignupResponse>('/auth/signup', {
         method: 'POST',
         body: JSON.stringify({
           email: email.trim(),
@@ -34,42 +41,19 @@ export default function SignupPage() {
           invite_code: inviteCode.trim().toUpperCase(),
         }),
       });
-      setDone(true);
+      if (result.access_token) {
+        localStorage.setItem('ev_token', result.access_token);
+        useAuthStore.setState({ accessToken: result.access_token });
+        navigate('/');
+      } else {
+        navigate('/login');
+      }
     } catch (err) {
       const code = err instanceof Error ? err.message : '';
       setError(ERROR_MESSAGES[code] ?? 'Something went wrong. Please try again.');
     } finally {
       setLoading(false);
     }
-  }
-
-  if (done) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-ev-black px-6">
-        <div className="max-w-sm w-full text-center space-y-6">
-          <div className="flex justify-center">
-            <div className="w-16 h-16 rounded-full bg-ev-teal/10 flex items-center justify-center">
-              <svg className="w-8 h-8 text-ev-teal" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-              </svg>
-            </div>
-          </div>
-          <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-ev-black dark:text-white">Check your email.</h1>
-            <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
-              We sent a confirmation link to <span className="font-medium text-ev-black dark:text-white">{email}</span>.
-              Click it to activate your account, then come back to sign in.
-            </p>
-          </div>
-          <button
-            onClick={() => navigate('/login')}
-            className="w-full bg-ev-teal text-white rounded-xl py-3 font-semibold hover:bg-ev-teal/90 transition-colors"
-          >
-            Go to sign in
-          </button>
-        </div>
-      </div>
-    );
   }
 
   return (

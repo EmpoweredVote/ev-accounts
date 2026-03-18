@@ -55,7 +55,14 @@ export default function Signup() {
       });
 
       if (res.status === 201) {
-        setSuccess(true);
+        const body = await res.json().catch(() => ({}));
+        if (body.access_token) {
+          sessionStorage.setItem('admin_token', body.access_token);
+          navigate(validRedirect ?? '/profile');
+        } else {
+          // Account created but auto-login unavailable — show manual sign-in prompt
+          setSuccess(true);
+        }
         return;
       }
 
