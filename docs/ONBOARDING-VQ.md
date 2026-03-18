@@ -14,7 +14,7 @@ Empowered Accounts is the shared identity and permission layer for the platform.
 |---------|----------|--------------------|
 | User identity (UUID, email, tier) | Accounts | `GET /api/account/me` with Bearer token |
 | XP progression | Accounts | `POST /api/xp/award` with service key |
-| User jurisdiction (district) | Accounts | `GET /api/account/me/jurisdiction` with Bearer token |
+| User jurisdiction (district) | Accounts | `jurisdiction` field on `GET /api/account/me` (or dedicated `/me/jurisdiction`) |
 | Account creation / signup | Accounts | `profile.empowered.vote/signup?redirect=<vq-url>` |
 | Login | Accounts | `profile.empowered.vote/login?redirect=<vq-url>` |
 | Public profile | Accounts | `GET /api/account/profile/:userId` |
@@ -378,6 +378,20 @@ Authorization: Bearer <userJwt>
     red: number;
   } | null;  // null for Inform-tier users
 
+  // — Jurisdiction (null if location_consent is false or Inform tier) —
+  jurisdiction: {
+    congressional_district: string | null;
+    congressional_district_name: string | null;
+    state_senate_district: string | null;
+    state_senate_district_name: string | null;
+    state_house_district: string | null;
+    state_house_district_name: string | null;
+    county: string | null;
+    county_name: string | null;
+    school_district: string | null;
+    school_district_name: string | null;
+  } | null;
+
   // — Full connected profile (null for Inform-tier users) —
   connected_profile: {
     xp: {
@@ -431,28 +445,49 @@ if (!meData.red_gem_quests_unlocked) {
 
 ## Jurisdiction (District Eligibility)
 
-For quests scoped to a specific district, use the jurisdiction endpoint:
+Jurisdiction data is embedded directly in the `GET /api/account/me` response — no separate call needed. The `jurisdiction` field is present at root level and is `null` when `location_consent` is false or the user is Inform tier.
+
+**Using jurisdiction from /me (preferred):**
+
+```typescript
+const meData = await fetch(`${ACCOUNTS_URL}/api/account/me`, {
+  headers: { 'Authorization': `Bearer ${userJwt}` },
+}).then(r => r.json());
+
+// District-scoped quests
+if (meData.jurisdiction) {
+  const userDistrict = meData.jurisdiction.congressional_district_name;
+  // Filter quests by district...
+} else {
+  // location_consent is false — prompt user to set location at profile.empowered.vote
+}
+```
+
+**Jurisdiction field shape (from /me):**
+
+```typescript
+jurisdiction: {
+  congressional_district: string | null;
+  congressional_district_name: string | null;
+  state_senate_district: string | null;
+  state_senate_district_name: string | null;
+  state_house_district: string | null;
+  state_house_district_name: string | null;
+  county: string | null;
+  county_name: string | null;
+  school_district: string | null;
+  school_district_name: string | null;
+} | null
+```
+
+**Dedicated endpoint (backward compatible, still available):**
+
+The dedicated `GET /api/account/me/jurisdiction` endpoint remains available for cases where you only need jurisdiction data (e.g., polling just for district changes without re-fetching the full profile). It returns a 403 when `location_consent` is false.
 
 ```
 GET /api/account/me/jurisdiction
 Authorization: Bearer <userJwt>
 ```
-
-**Response:**
-
-```typescript
-{
-  jurisdiction: {
-    congressional_district_name: string | null;
-    state_senate_district_name: string | null;
-    state_house_district_name: string | null;
-    county_name: string | null;
-    school_district_name: string | null;
-  }
-}
-```
-
-**403 if `location_consent = false`** — the user hasn't set their location yet. Handle gracefully: prompt them to set their location at `profile.empowered.vote`.
 
 ```typescript
 const res = await fetch(`${ACCOUNTS_URL}/api/account/me/jurisdiction`, {

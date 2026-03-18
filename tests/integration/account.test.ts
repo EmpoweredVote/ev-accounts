@@ -38,6 +38,7 @@ const ALLOWED_ME_KEYS = new Set([
   'red_gem_quests_unlocked',
   'empowerment_status',
   'gems',
+  'jurisdiction',
   'created_at',
   'updated_at',
   'connected_profile',
