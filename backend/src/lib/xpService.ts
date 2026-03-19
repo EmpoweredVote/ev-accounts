@@ -24,6 +24,7 @@ export const XP_SOURCES = [
   'validation_quest_completion',
   'civic_trivia_championship_score',
   'admin_gift',
+  'essentials-rep-lookup',
 ] as const;
 
 export type XpSource = typeof XP_SOURCES[number];

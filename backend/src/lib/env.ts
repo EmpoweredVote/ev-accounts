@@ -18,6 +18,7 @@ const envSchema = z.object({
   QUEST_SERVICE_KEY: z.string().optional(),
   TRIVIA_SERVICE_KEY: z.string().optional(),
   ADMIN_SERVICE_KEY: z.string().optional(),
+  ESSENTIALS_SERVICE_KEY: z.string().optional(),
   // Gem service keys — JSON map: { "key": ["yellow"] }. Optional: absent = no gem award endpoints active.
   GEMS_SERVICE_KEYS: z.string().optional(),
 });

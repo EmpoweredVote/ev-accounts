@@ -417,8 +417,8 @@ These endpoints are **service-to-service** — they use a shared service key, no
 
 Essentials needs two things provisioned by the Accounts team before using these endpoints:
 
-1. **XP source registered** — each service has a named `source` that must be pre-registered. Example: `"essentials-rep-lookup"`. Award calls with an unregistered source will be rejected.
-2. **Service key provisioned** — a dedicated `X-Service-Key` value for Essentials. This is separate from any key used by other services (CTC, etc.).
+1. **XP source registered** — `"essentials-rep-lookup"` is already registered in the Accounts backend. The `ESSENTIALS_SERVICE_KEY` env var slot exists; the Accounts team sets its value and shares it with you.
+2. **Gem service key provisioned** — gem keys are managed via the `GEMS_SERVICE_KEYS` JSON-map env var on the Accounts backend (e.g. `{"essentials-key-abc":["yellow"]}`). The Accounts team adds an entry for Essentials and shares the key value. There is no standalone `ESSENTIALS_GEMS_KEY` env var — the key is one entry in the shared map.
 
 These provisioning steps are operational, not a blocker for implementation. Build against the documented shapes now; get keys provisioned before the first real award call.
 
@@ -515,7 +515,7 @@ await fetch('https://accounts.empowered.vote/api/gems/award', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'X-Service-Key': process.env.ESSENTIALS_GEMS_KEY,
+    'X-Service-Key': process.env.ESSENTIALS_GEM_KEY,  // entry in GEMS_SERVICE_KEYS map; provisioned by Accounts team
   },
   body: JSON.stringify({
     user_id: userId,
