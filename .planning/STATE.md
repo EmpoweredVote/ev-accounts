@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.5 — Phase 31: Referral Dashboard Card
+**Current focus:** v1.5 — Phase 32: CompassV2 Integration Guide
 
 ## Current Position
 
-Phase: 31 of 33 (Referral Dashboard Card)
+Phase: 32 of 33 (CompassV2 Integration Guide)
 Plan: 1 of 1 in current phase
 Status: Phase complete
-Last activity: 2026-03-19 — Completed 31-01-PLAN.md (verification of referral card)
+Last activity: 2026-03-19 — Completed 32-01-PLAN.md (CompassV2 integration guide)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 🚧] 31/33 phases shipped █████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 🚧] 32/33 phases shipped █████████░
 
 ## Performance Metrics
 
@@ -44,7 +44,7 @@ v1.4 patterns established (apply going forward):
 
 ### Open Blockers
 
-- **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using the new `docs/COMPASSV2-INTEGRATION.md` (Phase 32 will produce this, replacing COMPASS_CONTRACT.md)
+- **CompassV2 frontend** — Integration guide complete (`docs/COMPASSV2-INTEGRATION.md`, Phase 32). CompassV2 repo must implement its side using that guide. No remaining blocker on accounts side.
 
 ### Quick Tasks Completed
 
@@ -62,5 +62,5 @@ None.
 ## Session Continuity
 
 Last session: 2026-03-19
-Stopped at: Completed 31-01-PLAN.md — Phase 31 referral dashboard card verification complete
-Resume: `/gsd:plan-phase 32` to start Phase 32 (CompassV2 Integration Doc)
+Stopped at: Completed 32-01-PLAN.md — Phase 32 CompassV2 integration guide complete
+Resume: `/gsd:plan-phase 33` to start Phase 33 (final v1.5 phase)
