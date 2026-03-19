@@ -1,497 +1,181 @@
-# Technology Stack: Location Infrastructure
+# Technology Stack: v1.6 Civic Identity and Roles
 
 **Project:** empowered-accounts
-**Dimension:** Location infrastructure additions (v1.3 milestone)
-**Researched:** 2026-03-09
-**Confidence:** HIGH (all three primary questions verified against Supabase official docs, PostGIS official docs, and confirmed Census Bureau URLs)
+**Dimension:** Additive stack decisions for v1.6 features
+**Researched:** 2026-03-19
+**Confidence:** HIGH (all claims grounded in direct codebase inspection; no new external libraries required)
 
-This file covers only the additive stack decisions for location infrastructure. The base stack (Express 4.x, TypeScript strict, supabase-js v2, Upstash Redis, etc.) remains as documented in the 2026-02-24 version of this file and in `MEMORY.md`. Do not reread the base stack sections — they are not changed.
-
----
-
-## Question 1: Column Encryption — pgsodium vs pgcrypto vs Vault
-
-### Decision: Vault (key storage) + pgcrypto (encryption functions)
-
-**Do NOT use pgsodium.** Supabase's own documentation states: "We do not recommend using either [Server Key Management or Transparent Column Encryption] on the Supabase platform due to their high level of operational complexity and misconfiguration risk." The `pgsodium` extension "is expected to go through a deprecation cycle in the near future." Supabase removed pgsodium-based column encryption from the dashboard UI specifically because teams kept misconfiguring it.
-
-**Do NOT use pgsodium `SECURITY LABEL` transparent column encryption.** This is the feature being deprecated. It automatically creates triggers and decryption views on labeled columns. The operational risk (trigger ordering, RLS policy gaps, migration complications) outweighs the convenience. Supabase removed it from the UI.
-
-**Use Supabase Vault to store the encryption key as a named secret.** Vault's API is explicitly documented as stable through the pgsodium deprecation — "The Vault extension won't be impacted. Its internal implementation will shift away from pgsodium, but the interface and API will remain unchanged." Vault stores the key outside the database itself; only the encrypted data lives in the table.
-
-**Use pgcrypto (`pgp_sym_encrypt_bytea` / `pgp_sym_decrypt_bytea`) for the actual encrypt/decrypt operations.** pgcrypto is a core Postgres extension, stable, not deprecated, and uses authenticated encryption (PGP format includes integrity checking). The `_bytea` variants are required when the plaintext is binary (lat/lng packed as `float8` bytes) — using `pgp_sym_decrypt` (text variant) on bytea data will produce garbled output.
-
-### The hybrid pattern: Vault key + pgcrypto functions
-
-```sql
--- Step 1: Store the encryption passphrase in Vault (run once, in a migration or manually)
--- Returns a UUID — save this as COORDINATE_ENCRYPTION_KEY_ID env var or hard-reference by name
-SELECT vault.create_secret(
-  'your-strong-random-passphrase-here',
-  'coordinate_encryption_key',
-  'Symmetric key for lat/lng column encryption on connected_profiles'
-);
-
--- Step 2: Create a SECURITY DEFINER helper that exposes the decrypted key
--- to privileged functions without exposing vault.decrypted_secrets broadly.
--- SET search_path = '' is required per project convention.
-CREATE OR REPLACE FUNCTION connect.get_coordinate_key()
-RETURNS text
-LANGUAGE sql
-SECURITY DEFINER
-SET search_path = ''
-AS $$
-  SELECT decrypted_secret
-  FROM vault.decrypted_secrets
-  WHERE name = 'coordinate_encryption_key'
-  LIMIT 1;
-$$;
-
--- Revoke public access; only service role / other SECURITY DEFINER functions call this
-REVOKE ALL ON FUNCTION connect.get_coordinate_key() FROM PUBLIC;
-
--- Step 3: Encrypt lat/lng on write
--- Coordinates are packed as float8 (8 bytes each) → bytea, then PGP-encrypted
--- Column type: bytea NOT NULL
-CREATE OR REPLACE FUNCTION connect.upsert_user_location(
-  p_user_id uuid,
-  p_lat double precision,
-  p_lng double precision
-)
-RETURNS void
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = ''
-AS $$
-DECLARE
-  v_key text;
-  v_enc_lat bytea;
-  v_enc_lng bytea;
-BEGIN
-  -- Retrieve key from Vault (never leaves this function as plaintext)
-  SELECT connect.get_coordinate_key() INTO v_key;
-
-  -- Pack float8 to bytea, then encrypt
-  -- extensions.pgp_sym_encrypt_bytea because pgcrypto installs in extensions schema
-  v_enc_lat := extensions.pgp_sym_encrypt_bytea(
-    ('x' || lpad(to_hex(('0'::bytea || p_lat::text::bytea)::text::bigint::bit(64)::text), 16, '0'))::bytea,
-    v_key
-  );
-  -- NOTE: simpler approach — store as text of the float, encrypt as text:
-  -- extensions.pgp_sym_encrypt(p_lat::text, v_key) → bytea
-  -- Then decrypt with: extensions.pgp_sym_decrypt(enc_col, key)::double precision
-  -- This is cleaner and avoids binary float packing complexity.
-
-  UPDATE connect.connected_profiles
-  SET
-    encrypted_lat = extensions.pgp_sym_encrypt(p_lat::text, v_key),
-    encrypted_lng = extensions.pgp_sym_encrypt(p_lng::text, v_key),
-    location_updated_at = now()
-  WHERE user_id = p_user_id;
-END;
-$$;
-
--- Step 4: Decrypt on read (inside resolve_user_jurisdiction)
-CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(p_user_id uuid)
-RETURNS jsonb
-LANGUAGE plpgsql
-SECURITY DEFINER
-SET search_path = ''
-AS $$
-DECLARE
-  v_key text;
-  v_lat double precision;
-  v_lng double precision;
-  v_result jsonb;
-BEGIN
-  SELECT connect.get_coordinate_key() INTO v_key;
-
-  SELECT
-    extensions.pgp_sym_decrypt(encrypted_lat, v_key)::double precision,
-    extensions.pgp_sym_decrypt(encrypted_lng, v_key)::double precision
-  INTO v_lat, v_lng
-  FROM connect.connected_profiles
-  WHERE user_id = p_user_id;
-
-  -- ST_Contains point-in-polygon lookup (see Question 2)
-  SELECT jsonb_build_object(
-    'congressional_district', cd.district_number,
-    'state_senate_district',  su.district_number,
-    'state_house_district',   sl.district_number,
-    'county_fips',            co.county_fips,
-    'place_name',             pl.place_name
-  ) INTO v_result
-  FROM geo.congressional_districts  cd,
-       geo.state_senate_districts   su,
-       geo.state_house_districts    sl,
-       geo.counties                 co,
-       geo.places                   pl
-  WHERE ST_Contains(cd.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
-    AND ST_Contains(su.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
-    AND ST_Contains(sl.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
-    AND ST_Contains(co.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326))
-    AND ST_Contains(pl.geom, ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326));
-
-  RETURN v_result;
-END;
-$$;
-```
-
-### Critical schema note for pgcrypto in Supabase
-
-Supabase installs pgcrypto in the `extensions` schema, not `public`. All pgcrypto function calls inside SQL functions with `SET search_path = ''` must be fully qualified:
-
-```sql
-extensions.pgp_sym_encrypt(plaintext, key)    -- returns bytea
-extensions.pgp_sym_decrypt(ciphertext, key)   -- returns text
-```
-
-Because the project convention is `SET search_path = ''` on all SECURITY DEFINER functions, this full qualification is non-optional. A call to bare `pgp_sym_encrypt()` will fail with "function not found."
-
-### Column type
-
-```sql
--- On connect.connected_profiles:
-ALTER TABLE connect.connected_profiles
-  ADD COLUMN encrypted_lat  bytea,
-  ADD COLUMN encrypted_lng  bytea,
-  ADD COLUMN location_updated_at timestamptz;
-```
-
-Both columns are `bytea`. The application and all RPC callers never see the raw float values. The only columns that exist in the table are the encrypted bytea blobs.
-
-### TypeScript handling of bytea columns
-
-Supabase JS returns `bytea` columns as `string` (base64-encoded) in the Row type generated by `supabase gen types`. This is correct — your TypeScript types will show `encrypted_lat: string | null`. Do not attempt to parse this value in application code. The RPC layer handles all decrypt operations; the application code only receives the output struct from `resolve_user_jurisdiction`, never the raw bytea.
-
-If you ever need to pass `bytea` values to an RPC from TypeScript (you should not for this design), encode them as a hex string prefixed with `\x`.
-
-### What NOT to use
-
-| Avoid | Why |
-|-------|-----|
-| `pgsodium` SECURITY LABEL transparent column encryption | Explicitly not recommended by Supabase for new projects. Pending deprecation. Removed from Studio UI. Do not use `ENCRYPT WITH KEY ID` syntax. |
-| `pgsodium.crypto_aead_det_encrypt()` directly | Same deprecation path as TCE. Do not call pgsodium functions directly in new code. |
-| `pgcrypto` raw `encrypt()` / `decrypt()` functions | Lower-level, no integrity checking. Official pgcrypto docs call these "discouraged." Use PGP functions instead. |
-| Storing the encryption key in the database | Defeats the purpose of encryption. The key lives in Vault (external to the database's encryption layer). Never store it in a column, a constant in a function body, or an environment variable that gets embedded in a migration. |
+This file covers only additive stack decisions for v1.6. The base stack (Express 4.x, TypeScript strict, supabase-js v2, pg raw driver, Upstash Redis, Vite + React + Tailwind v4) is unchanged and documented in MEMORY.md and prior STACK.md files. Do not restate the base stack.
 
 ---
 
-## Question 2: PostGIS — Enabling and Using ST_Contains
+## Feature 1: Scoped Roles System
 
-### Enable PostGIS
+### What needs to change
 
-Via Supabase Dashboard: Database → Extensions → search "postgis" → Enable → create schema `geo` (or use `extensions`). Alternatively via migration:
+The current `public.user_roles` table associates a user with a role (FK to `public.roles`) and records grant/revoke timestamps. It has no `feature` dimension and no `jurisdiction_geoid` column.
 
-```sql
-CREATE SCHEMA IF NOT EXISTS geo;
-CREATE EXTENSION IF NOT EXISTS postgis SCHEMA extensions;
-```
+The `public.roles` table records named roles (contributor, candidate, maven, etc.) but does not distinguish between "platform admin" roles and "feature-developer API access" roles. The v1.6 scoped roles system introduces a new dimension: roles granted specifically to allow a feature repo (CTC, Quest, Essentials, Compass) to act on behalf of a user within a geographic scope.
 
-Supabase installs PostGIS in the `extensions` schema. Functions like `ST_Contains`, `ST_MakePoint`, `ST_SetSRID` are accessible as `extensions.ST_Contains(...)` or via search_path. In SECURITY DEFINER functions with `SET search_path = ''`, use full qualification:
+### Decision: Extend `public.user_roles` in-place — do NOT create a separate table
 
-```sql
-extensions.ST_Contains(geom_polygon, extensions.ST_SetSRID(extensions.ST_MakePoint(lng, lat), 4326))
-```
+**Why:** Creating a `scoped_roles` table would duplicate the grant/revoke lifecycle machinery (partial unique index on active grants, soft-revocation pattern, conflict enforcement, `grant_role` / `revoke_role` / `get_user_roles` RPCs) that already works and is tested. The existing `public.user_roles` infrastructure is the right place for this. The new dimensions (`feature`, `jurisdiction_geoid`) are additive columns — nullable in the current schema upgrade sense, with `feature` defaulting to null for existing civic roles and `jurisdiction_geoid` defaulting to null meaning national scope.
 
-### geometry vs geography — Use geometry
+**How:** Add two columns to `public.user_roles`:
+- `feature TEXT` — nullable. When set, constrains the grant to a specific feature dimension (e.g., `'ctc'`, `'quest'`, `'essentials'`, `'compass'`, `'admin'`). Null = civic role, not feature-scoped.
+- `jurisdiction_geoid TEXT` — nullable. When null, the role has national scope. When set, the role is geo-restricted (e.g., `'18105'` for Monroe County, Indiana). Validated against known GEOID formats; not a FK (GEOIDs are TIGER/Line strings, not rows in this database).
 
-For Indiana-scoped data, use `geometry`, not `geography`.
+**The partial unique index must be updated:** The current index `idx_user_roles_active_unique` is `UNIQUE (user_id, role_id) WHERE revoked_at IS NULL`. After adding `feature` and `jurisdiction_geoid`, the uniqueness constraint must be `(user_id, role_id, COALESCE(feature, ''), COALESCE(jurisdiction_geoid, '')) WHERE revoked_at IS NULL` — a user can hold the same named role with different feature+jurisdiction combinations simultaneously (e.g., Essentials Dev for Monroe County AND Essentials Dev for Johnson County are two separate active grants).
 
-**Why not geography:** The `geography` type performs spheroidal (Haversine) calculations. This is accurate for spanning continents but adds significant CPU cost. Fewer PostGIS functions support `geography` directly. The PostGIS documentation explicitly states: "If your data is geographically compact (contained within a state, county or city), use the geometry type with a Cartesian projection."
+**Update `grant_role` and `get_user_roles` RPCs** to accept and return the new columns. The `requireAdmin` middleware check against `public.admin_users` is unchanged — it is separate from the roles system. The new `requireFeatureRole` middleware will query `user_roles` for a matching active grant with the caller's `feature` + optional `jurisdiction_geoid`.
 
-**Why geometry is fine here:** Indiana spans roughly 2.5° latitude and 2° longitude. At this scale, the error introduced by planar geometry is negligible for district lookup purposes (well under 100m). Correct district assignment at state boundaries does not require spheroidal math.
+### New middleware: `requireFeatureRole`
 
-**Trap to avoid:** `geometry(4326)` is NOT the same as `geography`. `geometry` with SRID 4326 stores lon/lat coordinates but performs Cartesian math. This is correct and intentional for our use case. Do not confuse the two.
+Located in `src/middleware/featureRoleGuard.ts`. Follows the pattern of existing `requireConnected` — queries `user_roles` via `supabaseAdmin` (middleware is excluded from the architecture test route-scan), checks for an active grant matching `(userId, feature, jurisdiction_geoid)`. Returns 403 if no match.
 
-### SRID — Use 4326 (WGS84)
+The middleware factory signature: `requireFeatureRole(feature: string, geoid?: string)` returns an Express middleware function. Routes that need feature-scoped auth use: `router.use(requireAuth, requireFeatureRole('ctc'))`.
 
-Store all boundary geometries at SRID 4326. Reason: GPS coordinates from browsers and mobile devices are WGS84 by default. Storing boundaries and points in the same SRID means no runtime `ST_Transform` calls. User coordinates arrive as WGS84 floats; they are passed directly to `ST_MakePoint` and matched against WGS84 boundaries.
+No new npm packages needed. The check is a SQL EXISTS query — identical pattern to `requireAdmin` and `requireConnected`.
 
-**TIGER/Line ships in SRID 4269 (NAD83).** Convert to 4326 during import with ogr2ogr (see Question 3). The difference between 4269 and 4326 is sub-meter for CONUS, but using a consistent SRID prevents hard-to-debug query errors.
+### No changes to `requireAdmin`
 
-### Boundary table schema
+`requireAdmin` checks `public.admin_users`. That table and check remain as-is. The scoped roles system is additive — it adds fine-grained feature access, it does not replace the coarse admin check for admin UI routes.
 
-```sql
--- One table per district type in the geo schema.
--- All use geometry(MultiPolygon, 4326) — TIGER/Line uses MultiPolygon for some districts.
--- Using MultiPolygon for all tables avoids heterogeneous geometry errors.
+### TypeScript changes
 
-CREATE TABLE geo.congressional_districts (
-  id              serial PRIMARY KEY,
-  district_number text        NOT NULL,   -- e.g. '05' (Indiana 5th)
-  name            text,
-  geom            geometry(MultiPolygon, 4326) NOT NULL
-);
+Add `feature: string | null` and `jurisdiction_geoid: string | null` to the role grant return types in `roleService.ts`. Update `getAllActiveRoles` to return these fields if present on `public.roles`. Add the new columns to `database.types.ts` after regenerating types from the migration (`supabase gen types`).
 
-CREATE TABLE geo.state_senate_districts (
-  id              serial PRIMARY KEY,
-  district_number text        NOT NULL,
-  geom            geometry(MultiPolygon, 4326) NOT NULL
-);
+### Stack impact: none (no new dependencies)
 
-CREATE TABLE geo.state_house_districts (
-  id              serial PRIMARY KEY,
-  district_number text        NOT NULL,
-  geom            geometry(MultiPolygon, 4326) NOT NULL
-);
-
-CREATE TABLE geo.counties (
-  id          serial PRIMARY KEY,
-  county_fips text NOT NULL,   -- e.g. '18105' (Monroe County, IN)
-  name        text NOT NULL,
-  geom        geometry(MultiPolygon, 4326) NOT NULL
-);
-
-CREATE TABLE geo.places (
-  id          serial PRIMARY KEY,
-  place_fips  text NOT NULL,   -- e.g. '1807000' (Bloomington city, IN)
-  place_name  text NOT NULL,
-  geom        geometry(MultiPolygon, 4326) NOT NULL
-);
-
--- Spatial indexes are critical — ST_Contains uses them automatically
-CREATE INDEX ON geo.congressional_districts  USING GIST (geom);
-CREATE INDEX ON geo.state_senate_districts   USING GIST (geom);
-CREATE INDEX ON geo.state_house_districts    USING GIST (geom);
-CREATE INDEX ON geo.counties                 USING GIST (geom);
-CREATE INDEX ON geo.places                   USING GIST (geom);
-```
-
-### ST_Contains query pattern
-
-```sql
--- Point-in-polygon: does the district boundary contain the user's location?
--- ST_MakePoint(longitude, latitude) — note: longitude first, latitude second
--- This matches the WGS84 (x=lon, y=lat) convention.
-
-SELECT district_number
-FROM geo.congressional_districts
-WHERE ST_Contains(
-  geom,
-  ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326)
-)
-LIMIT 1;
-```
-
-ST_Contains automatically uses the GIST spatial index — no additional index hint needed. From the PostGIS docs: "This function automatically includes a bounding box comparison that makes use of any spatial indexes that are available on the geometries."
-
-**Note on argument order:** `ST_Contains(A, B)` returns true if A contains B. The polygon (district boundary) is A; the point (user location) is B. `ST_Within(B, A)` is the converse and is equivalent. Either works; `ST_Contains(polygon, point)` is the conventional form when querying "which polygon contains this point."
-
-**Note on lon/lat order in ST_MakePoint:** PostGIS follows the mathematical (x, y) convention where x = longitude and y = latitude. This is the opposite of how humans usually say "lat, lng." Always pass `ST_MakePoint(longitude, latitude)`. The encrypted columns should be stored and named accordingly (`encrypted_lat` / `encrypted_lng`) and care taken to pass them in the correct order on decrypt.
+All changes are SQL migrations + TypeScript additions within the existing service/middleware pattern.
 
 ---
 
-## Question 3: Indiana TIGER/Line Data
+## Feature 2: Compass Compare API
 
-### Source: Census Bureau TIGER/Line 2024
+### What the endpoint needs to do
 
-Base URL: `https://www2.census.gov/geo/tiger/TIGER2024/`
+Given two user IDs (or one user ID + one politician ID), query `inform.compass_responses` for both subjects, find topics answered by both, and return per-topic comparison objects. The response shape is: `{ shared_topics: number, agreement: number, disagreement: number, topics: [{ topic_id, user_a_value, user_b_value, agrees: boolean }] }`.
 
-The 2024 vintage is the most recent available. All legal boundaries are as of January 1, 2024. Files were published June 2025.
+### Decision: SQL query in `compassService.ts` — no new RPC needed for read-only compare
 
-### Indiana shapefiles (FIPS 18)
+**Why no new SECURITY DEFINER RPC:** The compare operation is a pure read — two SELECTs and a JOIN in application code. It does not modify any data, so it has no need for atomic multi-table writes (the reason SECURITY DEFINER RPCs exist in this project). The existing `supabaseAdmin` is appropriate here: both users' answers are read server-side only, and the middleware layer enforces that only the requesting user can trigger their own compare.
 
-All files are for Indiana only except the county file, which is national and must be filtered post-import.
+**The query:** Fetch `inform.compass_responses` for user A filtered by `deleted_at IS NULL` (use `.is('deleted_at', null)` — project convention). Fetch the same for user B. In TypeScript, compute the intersection by topic_id and calculate agreement. This avoids a complex multi-user SQL query and runs fine at Alpha scale (21 live topics maximum per user, O(n) intersection in JS).
 
-| District Type | Filename | URL | Size |
-|---------------|----------|-----|------|
-| Congressional districts (119th Congress) | `tl_2024_18_cd119.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_18_cd119.zip` | 447K |
-| State Senate (upper) | `tl_2024_18_sldu.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_18_sldu.zip` | 1.1M |
-| State House (lower) | `tl_2024_18_sldl.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_18_sldl.zip` | 1.6M |
-| Counties (national — filter to FIPS 18) | `tl_2024_us_county.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip` | 80M |
-| Incorporated places | `tl_2024_18_place.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_18_place.zip` | 2.3M |
-| Unified school districts | `tl_2024_18_unsd.zip` | `https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_18_unsd.zip` | 2.3M |
+**Visibility enforcement:** User B's responses are only included if their visibility for that topic is `'public'` or if the requesting user is in user B's peer connections. At Alpha scale, the simple rule is: only compare on topics where B has `visibility = 'public'`, OR user A and user B are connected (check `connect.social_relationships`). This check uses the existing `supabaseAdmin` pattern for server-side reads.
 
-**On school districts:** Indiana uses Unified School Districts (`UNSD`). The `SCSD` (secondary only) and `ELSD` (elementary only) directories do not have an Indiana file because Indiana uses unified districts. Use `UNSD` only.
+**For politician compare:** Politician answers are in `inform.politician_answers` (no visibility column — all politician stances are public). This path already exists in `compassService.getPoliticianAnswers`. The compare endpoint reuses this function.
 
-**On counties:** There is no state-scoped county file. The national file (`tl_2024_us_county.zip`) is 80MB. Import the full file and filter by `STATEFP = '18'` during import or immediately post-import.
+### No new database extension or npm package needed
 
-### SRID note
+This is a TypeScript join of two existing query results. No special math library, no new SQL function. The "agreement" calculation is: `user_a_value === user_b_value` (or within a configurable tolerance for NUMERIC(3,1) values — 0.0 tolerance for exact match, project team to decide; start with exact match).
 
-TIGER/Line shapefiles ship with SRID **4269 (NAD83)**. This is documented in the TIGER/Line technical documentation. Convert to 4326 (WGS84) during import. For CONUS data at district scale the difference is sub-meter, but using a consistent SRID prevents query errors and avoids runtime `ST_Transform` calls.
+### Stack impact: none (no new dependencies)
 
-### Download and import commands
-
-The following commands assume:
-- `ogr2ogr` is installed (part of the GDAL toolkit: `brew install gdal` or `apt install gdal-bin`)
-- The Supabase database connection string is available as `$DATABASE_URL` (direct port 5432 URL, not the pooler)
-- All shapefiles have been downloaded and unzipped into a working directory
-
-```bash
-# ---- Download ----
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_18_cd119.zip
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_18_sldu.zip
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_18_sldl.zip
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/tl_2024_us_county.zip
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/PLACE/tl_2024_18_place.zip
-curl -O https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_18_unsd.zip
-
-for f in tl_2024_18_cd119 tl_2024_18_sldu tl_2024_18_sldl tl_2024_us_county tl_2024_18_place tl_2024_18_unsd; do
-  unzip "${f}.zip" -d "${f}"
-done
-
-# ---- Import: Congressional Districts ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_18_cd119/tl_2024_18_cd119.shp \
-  -nln "geo.congressional_districts" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -overwrite
-
-# ---- Import: State Senate (upper chamber) ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_18_sldu/tl_2024_18_sldu.shp \
-  -nln "geo.state_senate_districts" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -overwrite
-
-# ---- Import: State House (lower chamber) ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_18_sldl/tl_2024_18_sldl.shp \
-  -nln "geo.state_house_districts" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -overwrite
-
-# ---- Import: Counties (national file — filter to Indiana STATEFP=18) ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_us_county/tl_2024_us_county.shp \
-  -nln "geo.counties" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -where "STATEFP = '18'" \
-  -overwrite
-
-# ---- Import: Incorporated Places ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_18_place/tl_2024_18_place.shp \
-  -nln "geo.places" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -overwrite
-
-# ---- Import: Unified School Districts ----
-ogr2ogr \
-  -f "PostgreSQL" \
-  PG:"$DATABASE_URL" \
-  tl_2024_18_unsd/tl_2024_18_unsd.shp \
-  -nln "geo.school_districts" \
-  -nlt MULTIPOLYGON \
-  -s_srs EPSG:4269 \
-  -t_srs EPSG:4326 \
-  -lco GEOMETRY_NAME=geom \
-  -overwrite
-```
-
-**Key ogr2ogr flags:**
-
-| Flag | Purpose |
-|------|---------|
-| `-nln` | Target table name (schema-qualified) |
-| `-nlt MULTIPOLYGON` | Force geometry type to MultiPolygon — some TIGER files mix Polygon and MultiPolygon; forcing avoids type errors |
-| `-s_srs EPSG:4269` | Source SRID — TIGER/Line native (NAD83) |
-| `-t_srs EPSG:4326` | Target SRID — reproject to WGS84 on import |
-| `-lco GEOMETRY_NAME=geom` | Names the geometry column `geom` (matches table schema above) |
-| `-where "STATEFP = '18'"` | SQL filter for the national county file — import only Indiana rows |
-| `-overwrite` | Replace existing table data on re-run |
-
-**Note on shp2pgsql:** The alternative tool `shp2pgsql` (bundled with PostGIS client tools) also works but does not support `-where` filtering. For the national county file you would need to post-process with a DELETE or use ogr2ogr. ogr2ogr is recommended for consistency across all five shapefiles.
-
-**Note on Supabase connection:** Use the direct database URL (not the connection pooler URL) for `ogr2ogr` imports. The direct URL uses port 5432. The connection pooler (port 6543, Transaction mode) may time out on large imports like the national county file.
-
-### Post-import verification
-
-```sql
--- Confirm counts look right
-SELECT count(*) FROM geo.congressional_districts;  -- Indiana has 9 congressional districts
-SELECT count(*) FROM geo.state_senate_districts;   -- Indiana State Senate: 50 districts
-SELECT count(*) FROM geo.state_house_districts;    -- Indiana House of Representatives: 100 districts
-SELECT count(*) FROM geo.counties;                 -- Indiana: 92 counties
-SELECT count(*) FROM geo.places;                   -- Indiana: ~583 incorporated places
-
--- Confirm Bloomington is present
-SELECT place_name, place_fips FROM geo.places WHERE place_name ILIKE '%bloomington%';
-
--- Confirm SRIDs were set correctly
-SELECT DISTINCT ST_SRID(geom) FROM geo.congressional_districts;  -- should return 4326
-SELECT DISTINCT ST_SRID(geom) FROM geo.counties;                  -- should return 4326
-
--- Smoke test: point-in-polygon for Bloomington city hall (~39.165, -86.526)
-SELECT district_number
-FROM geo.congressional_districts
-WHERE ST_Contains(geom, ST_SetSRID(ST_MakePoint(-86.526, 39.165), 4326));
--- Should return '09' (Indiana's 9th congressional district)
-```
+Add `compareCompassAnswers(userAId, userBId, requestingUserId)` to `compassService.ts`. Add the endpoint to `compass.ts` route file.
 
 ---
 
-## Summary: New Extensions Required
+## Feature 3: VR Admin Dashboard
 
-| Extension | Schema | Purpose | Status in Supabase |
-|-----------|--------|---------|-------------------|
-| `pgcrypto` | `extensions` | `pgp_sym_encrypt` / `pgp_sym_decrypt` for coordinate columns | Available by default, enable if not already enabled |
-| `postgis` | `extensions` | Geometry storage and spatial functions | Must be explicitly enabled via Dashboard |
-| Supabase Vault | built-in | Stores encryption key for coordinate columns | Available by default on all Supabase projects |
+### What it needs to render
 
-No new npm packages are required for location infrastructure. All work happens in SQL (migrations + SECURITY DEFINER RPCs). The TypeScript layer only calls `supabase.rpc('upsert_user_location', ...)` and `supabase.rpc('resolve_user_jurisdiction', ...)` and receives plain JSON back.
+A React admin page showing:
+1. Histogram of verification_rating distribution across all connected users (buckets: 0–29, 30–59, 60–89, 90–119, 120–150)
+2. Count of users currently on VQ hold (`vq_hold_until > now()`)
+3. Outlier list: users with VR below 30 (at-risk) and users with VR above 120 (exceptionally high)
+
+### Decision: Server-side aggregation via `pool.query()` — no charting library in admin
+
+**Why pool.query():** The VR stats query joins `connect.connected_profiles` with a `CASE WHEN` bucketing expression. This is a `connect` schema write — wait, this is a read. However, the critical pattern established in v1.3 is: `supabaseAdmin.schema('connect').from()` works for reads but not writes. Reads from `connect.connected_profiles` via `supabaseAdmin.schema('connect')` do work. Use `supabaseAdmin` for the aggregate read.
+
+Actually — reassess. The dashboard needs a `GROUP BY` with computed bucket expressions or a multi-bucket COUNT. `supabaseAdmin.schema('connect').from('connected_profiles').select(...)` cannot express `CASE WHEN verification_rating < 30 THEN 'at_risk' ...` bucketing natively in PostgREST. Use `pool.query()` with a direct SQL aggregate for the histogram. This is the correct choice: `pool.query()` for any query that needs SQL features PostgREST cannot express.
+
+The query returns `{ bucket: string, count: number }[]` — small, stable, fast.
+
+**Why no charting library:** The admin app already renders stat cards (AdminDashboard) and tree visualizations (`@xyflow/react` for InviteTree). A histogram at Alpha scale (likely < 100 users) is just a series of bar divs with percentage widths driven by the count values. Tailwind v4 flex + width utilities are sufficient. Installing Recharts or Chart.js for a 5-bucket histogram on an internal admin tool with < 100 users is over-engineering.
+
+**If the team disagrees:** The only reasonable candidate would be `recharts` (MIT, React-native, no D3 peer dependency required separately). It is already in wide use across React admin tools. But it adds ~80KB to the admin bundle for a use case that divs can cover. Recommendation stands: no charting library for v1.6.
+
+### New admin service function: `getVrDashboardStats()`
+
+In `adminService.ts`. Returns:
+
+```typescript
+interface VrDashboardStats {
+  buckets: Array<{ label: string; min: number; max: number; count: number }>;
+  on_hold_count: number;
+  at_risk_users: Array<{ user_id: string; display_name: string; verification_rating: number }>;
+  high_vr_users: Array<{ user_id: string; display_name: string; verification_rating: number }>;
+}
+```
+
+The `at_risk_users` and `high_vr_users` lists are capped at 20 rows each — this is an admin diagnostic view, not a paginated list.
+
+### New admin route: `GET /api/admin/vr-dashboard`
+
+Follows existing admin route pattern: `requireAuth` + `requireAdmin` middleware applied via `router.use()`. Returns `VrDashboardStats`. No caching needed at Alpha scale; these are fast aggregate queries on a small table.
+
+### New admin React page: `VrDashboardPage.tsx`
+
+In `admin/src/pages/admin/`. Added to `AdminLayout.tsx` nav and `App.tsx` routes. Follows the `AdminDashboard.tsx` pattern: `apiFetch`, loading skeleton, stat cards. The histogram renders as a list of bar rows with Tailwind `bg-ev-red` fill proportional to each bucket's count as a percentage of the largest bucket.
+
+### Stack impact: none (no new dependencies)
+
+No new npm packages. Backend uses `pool.query()` (already installed). Admin uses Tailwind v4 (already installed). No charting library needed.
+
+---
+
+## Feature 4: Essentials XP Source Provisioning
+
+This is confirmed trivial — `serviceKeyAuth.ts` already has the `ESSENTIALS_SERVICE_KEY` block present (verified in codebase: line 22–24 of `serviceKeyAuth.ts` already adds `'essentials-rep-lookup'` to the key map when `env.ESSENTIALS_SERVICE_KEY` is set). The service key env var just needs to be provisioned in the Render environment and in `.env.example`. No code change required.
+
+---
+
+## No New npm Dependencies for v1.6
+
+This is the key finding. Every v1.6 feature is implementable within the existing stack:
+
+| Feature | Why no new dependency |
+|---------|----------------------|
+| Scoped roles | New SQL columns + TypeScript additions in existing service layer |
+| `requireFeatureRole` middleware | EXISTS query on `user_roles` — same pattern as `requireAdmin` |
+| Compass compare | JavaScript Set intersection of two existing query results |
+| VR histogram | `pool.query()` with GROUP BY + Tailwind div bars |
+| VR admin page | React + `apiFetch` — same pattern as `AdminDashboard.tsx` |
+| Essentials XP provisioning | Env var only, code already shipped |
+
+**Do not add:**
+- A permissions library (CASL, Casbin, etc.) — the `user_roles` table IS the permission store; an additional library layer would duplicate it and add a learning surface
+- A charting library (Recharts, Chart.js, Visx) — five static buckets rendered as proportional divs is not a chart library problem
+- A new RPC for compass compare — pure read, no atomicity needed, TypeScript join is correct
+- Any new Postgres extension — no new data types, spatial operations, or encryption needed
+
+---
+
+## Integration Points with Existing Patterns
+
+| Pattern | v1.6 Usage |
+|---------|------------|
+| `pool.query()` for non-public schema writes | `public.user_roles` migration alters a public schema table (PostgREST can handle); VR histogram uses `pool.query()` for GROUP BY |
+| `supabaseAdmin` banned from `src/routes/` | New `featureRoleGuard.ts` middleware follows same exception as `requireAdmin.ts` and `tierGuards.ts` |
+| SECURITY DEFINER RPC for multi-table atomic writes | Applies to: `grant_role` RPC update (add `p_feature` + `p_jurisdiction_geoid` params). Does NOT apply to compass compare (read-only). |
+| Two-pass validation in admin RPCs | Apply to updated `grant_role` RPC: validate feature value against known enum before inserting |
+| `logAdminAction()` before every mutation 200 | Required for any new admin route that mutates (VR dashboard is read-only; role grant/revoke already logs) |
+| `SET search_path = ''` on all SECURITY DEFINER functions | Required for updated `grant_role` + `revoke_role` RPCs |
+| Partial unique index on active grants | Must be updated in migration to include `feature` + `jurisdiction_geoid` dimensions |
 
 ---
 
 ## Confidence Assessment
 
-| Area | Confidence | Source |
-|------|------------|--------|
-| pgsodium deprecation status | HIGH | Verified against Supabase official docs (https://supabase.com/docs/guides/database/extensions/pgsodium) — explicit "do not recommend" language |
-| Vault API stability | HIGH | Verified: "The Vault extension won't be impacted. Its internal implementation will shift away from pgsodium, but the interface and API will remain unchanged." |
-| vault.decrypted_secrets view pattern | HIGH | Verified against https://supabase.com/docs/guides/database/vault — official docs show this exact pattern |
-| pgcrypto in extensions schema (Supabase) | HIGH | Verified in GitHub discussion #627 — users confirmed pgcrypto installs in `extensions` schema in Supabase, must be fully qualified |
-| pgp_sym_encrypt/decrypt function signatures | HIGH | Verified against https://www.postgresql.org/docs/current/pgcrypto.html |
-| PostGIS SRID 4326 recommendation | HIGH | Verified against Supabase PostGIS docs + PostGIS workshop docs |
-| geometry vs geography recommendation | HIGH | Verified against PostGIS workshop docs — explicit "geographically compact → use geometry" guidance |
-| TIGER/Line SRID 4269 source | HIGH | Confirmed via ogr2ogr community sources and Census Bureau file metadata |
-| TIGER/Line file URLs | HIGH | All URLs verified by direct directory listing at www2.census.gov/geo/tiger/TIGER2024/ |
-| Indiana county file is national-only | HIGH | Confirmed by fetching the COUNTY/ directory — only tl_2024_us_county.zip exists, no state-scoped files |
-| Indiana has no SCSD file | HIGH | Confirmed by fetching SCSD/ directory — FIPS 18 not present; Indiana uses unified districts (UNSD) |
-| ogr2ogr flag syntax | MEDIUM | Syntax confirmed via multiple PostGIS loading guides; -nlt, -s_srs, -t_srs, -where, -lco flags are standard ogr2ogr; recommend dry-run with -progress flag before production import |
-
----
-
-## Sources
-
-- [Supabase Vault Documentation](https://supabase.com/docs/guides/database/vault) — vault.create_secret(), vault.decrypted_secrets view, SECURITY DEFINER pattern
-- [pgsodium Pending Deprecation](https://supabase.com/docs/guides/database/extensions/pgsodium) — explicit "do not recommend" statement
-- [pgsodium/TCE not recommended discussion](https://github.com/orgs/supabase/discussions/27109) — community confirmation of deprecation
-- [Column encryption SQL-only now](https://github.com/orgs/supabase/discussions/18849) — dashboard removal and current SQL-only approach
-- [pgcrypto in extensions schema (Supabase)](https://github.com/orgs/supabase/discussions/627) — confirmed schema location
-- [PostgreSQL pgcrypto documentation](https://www.postgresql.org/docs/current/pgcrypto.html) — pgp_sym_encrypt_bytea / pgp_sym_decrypt_bytea function signatures
-- [Supabase PostGIS documentation](https://supabase.com/docs/guides/database/extensions/postgis) — enable steps, SRID 4326, geometry column creation
-- [PostGIS Workshop: Geography](http://postgis.net/workshops/postgis-intro/geography.html) — geometry vs geography guidance: "geographically compact → use geometry type"
-- [PostGIS ST_Contains documentation](https://postgis.net/docs/ST_Contains.html) — function signature, automatic spatial index usage
-- [Census Bureau TIGER/Line 2024 CD directory](https://www2.census.gov/geo/tiger/TIGER2024/CD/) — verified tl_2024_18_cd119.zip
-- [Census Bureau TIGER/Line 2024 SLDU directory](https://www2.census.gov/geo/tiger/TIGER2024/SLDU/) — verified tl_2024_18_sldu.zip
-- [Census Bureau TIGER/Line 2024 SLDL directory](https://www2.census.gov/geo/tiger/TIGER2024/SLDL/) — verified tl_2024_18_sldl.zip
-- [Census Bureau TIGER/Line 2024 COUNTY directory](https://www2.census.gov/geo/tiger/TIGER2024/COUNTY/) — confirmed national-only file tl_2024_us_county.zip
-- [Census Bureau TIGER/Line 2024 PLACE directory](https://www2.census.gov/geo/tiger/TIGER2024/PLACE/) — verified tl_2024_18_place.zip
-- [Census Bureau TIGER/Line 2024 UNSD directory](https://www2.census.gov/geo/tiger/TIGER2024/UNSD/) — verified tl_2024_18_unsd.zip
+| Area | Confidence | Basis |
+|------|------------|-------|
+| Scoped roles via column extension | HIGH | Direct inspection of migration 020 schema, roleService.ts, and existing partial index definition |
+| No new table needed for scoped roles | HIGH | Existing grant/revoke lifecycle machinery is reused; columns are additive |
+| Compass compare as TypeScript join | HIGH | inspect compass_responses query patterns in compassService.ts; Alpha scale (21 topics) makes JS join trivially fast |
+| VR histogram via pool.query() | HIGH | Established pattern for cross-schema aggregates; PostgREST cannot express CASE WHEN bucketing |
+| No charting library needed | HIGH | 5 buckets, < 100 users at Alpha; Tailwind proportional divs are sufficient |
+| Essentials XP already shipped | HIGH | serviceKeyAuth.ts lines 22-24 confirmed present in codebase |
+| No new npm packages | HIGH | Each feature maps to existing stack primitives |

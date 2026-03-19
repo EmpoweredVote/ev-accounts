@@ -1,783 +1,540 @@
-# Architecture Patterns — Location Infrastructure Integration
+# Architecture Patterns — v1.6 Civic Identity & Roles
 
-**Domain:** Encrypted location storage + PostGIS jurisdiction resolution in existing Supabase + Express app
-**Researched:** 2026-03-09
-**Confidence:** HIGH for integration patterns (verified against actual codebase); MEDIUM for geocoding service choice (verified against official sources); HIGH for RPC signatures (derived from established patterns in codebase)
-
----
-
-## Overview
-
-This document covers the architectural integration of three new components into the existing empowered-accounts backend:
-
-1. Encrypted lat/lng storage on `connect.connected_profiles` (pgcrypto via Vault key)
-2. PostGIS `inform.district_boundaries` table for jurisdiction resolution
-3. New RPCs and endpoints following established patterns
-
-The rest of the system — SECURITY DEFINER RPC pattern, dual Supabase client, advisory locks, two-pass validation, `SET search_path = ''` — does not change.
+**Domain:** Scoped roles, compass compare, VR admin dashboard integration into existing Express/Supabase/React app
+**Researched:** 2026-03-19
+**Confidence:** HIGH — all patterns derived from the actual codebase, not documentation or training data
 
 ---
 
-## Data Flow
+## Context: What Exists Today
+
+Before describing what must be built, here is the current state that every v1.6 component integrates against.
+
+### Current Roles Schema (public schema)
 
 ```
-User submits address string (e.g. "401 N Morton St, Bloomington IN 47404")
-         |
-         v
-POST /api/connect/set-location
-  - requireAuth + requireConnected middleware
-  - Zod validation of address string
-  - location_consent: true required in request body
-         |
-         v
-locationService.geocodeAddress(addressString)
-  - Calls Census Geocoder API (server-side, no user JWT involved)
-  - Returns { lat: float, lng: float } or null if not found
-  - Address string discarded after this step — never stored
-         |
-         v (on geocode success)
-adminRpc('connect.update_user_location', {
-  p_user_id: userId,
-  p_lat_plain: lat,
-  p_lng_plain: lng,
-  p_consent: true
-})
-         |
-         v  [inside SECURITY DEFINER RPC — Postgres]
-update_user_location RPC:
-  1. Reads vault key: SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key'
-  2. Encrypts: pgp_sym_encrypt(p_lat_plain::text, v_key) → bytea
-               pgp_sym_encrypt(p_lng_plain::text, v_key) → bytea
-  3. Writes to connect.connected_profiles:
-       lat = encrypted bytea
-       lng = encrypted bytea
-       location_consent = true
-       location_set_at = now()
-  4. Returns: { success: true }
-         |
-         v
-Response: 200 { location_set: true }
-(raw coordinates never leave the system)
+public.roles
+  id            UUID PK
+  name          TEXT UNIQUE
+  slug          TEXT UNIQUE
+  required_tier TEXT CHECK ('connected' | 'empowered')
+  description   TEXT
+  is_active     BOOLEAN DEFAULT true
+  created_at    TIMESTAMPTZ
 
----
-
-GET /api/account/me/jurisdiction
-  - requireAuth + requireConnected middleware
-         |
-         v
-adminRpc('connect.resolve_user_jurisdiction', { p_user_id: userId })
-         |
-         v  [inside SECURITY DEFINER RPC — Postgres]
-resolve_user_jurisdiction RPC:
-  1. Reads connected_profiles: lat bytea, lng bytea, location_consent
-  2. If location_consent IS NULL or false → RAISE EXCEPTION 'NO_LOCATION_CONSENT'
-  3. If lat IS NULL → RAISE EXCEPTION 'NO_LOCATION_SET'
-  4. Reads vault key: SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key'
-  5. Decrypts: pgp_sym_decrypt(cp.lat, v_key)::float8 → v_lat
-               pgp_sym_decrypt(cp.lng, v_key)::float8 → v_lng
-  6. Constructs point: ST_SetSRID(ST_MakePoint(v_lng, v_lat), 4326)
-  7. Queries district_boundaries:
-       SELECT district_type, district_id, district_name, state_code
-       FROM inform.district_boundaries
-       WHERE ST_Contains(boundary::geometry, point::geometry)
-  8. Returns jsonb: { city, state, county, districts: [...] }
-         |
-         v
-Route handler serializes RPC result → 200 JSON
-(coordinates never appear in the response or logs)
-
----
-
-Feature consumption (e.g. ZIP candidate discovery, Validation Quests):
-  GET /api/account/me/jurisdiction → { state_code, districts: [{ type, id, name }] }
-  Feature checks district membership locally — no coordinate access ever
+public.user_roles
+  id          UUID PK
+  user_id     UUID FK → public.users(id)
+  role_id     UUID FK → public.roles(id)
+  granted_by  UUID FK → public.users(id)
+  granted_at  TIMESTAMPTZ DEFAULT now()
+  revoked_at  TIMESTAMPTZ (null = active)
+  UNIQUE INDEX idx_user_roles_active_unique ON (user_id, role_id) WHERE revoked_at IS NULL
 ```
 
----
+Roles are in `public` schema (not `connect`). `user_roles` is soft-deleted via `revoked_at`. Re-grant creates a new row; old row is permanent audit history. No geography dimension exists today.
 
-## Geocoding Service Recommendation
+### Current Admin Check
 
-**Recommended: US Census Geocoder API**
+`public.admin_users` is a separate table (not a role). `requireAdmin` middleware checks this table via `supabaseAdmin`. It is entirely independent of `public.user_roles`. Admin users can hold `user_roles` AND be in `admin_users` — these are parallel, not hierarchical.
 
-**Rationale:**
+### Current RPCs for Roles
 
-| Criterion | Census Geocoder | Google Maps Geocoding | Mapbox Geocoding | Nominatim (public) |
-|-----------|----------------|----------------------|-----------------|-------------------|
-| Cost | Free, no key required | Pay-per-request ($5/1k) | Free tier (100k/mo) then paid | Free (rate limited) |
-| Privacy | US government service; privacy policy states retained data does not include PII | Sends address to Google; TOS restrictions on storing results | Sends address to Mapbox | OSM policy explicitly asks you NOT to submit personal data |
-| Indiana accuracy | HIGH — built from TIGER address database, which is the authoritative source for US addresses | HIGH | HIGH | MEDIUM — rural Indiana address coverage is incomplete in OSM |
-| TypeScript SDK | None needed — simple REST GET with `fetch` | `@googlemaps/google-maps-services-js` | `@mapbox/mapbox-sdk` | REST only |
-| Rate limits | No documented limit for reasonable use | 50 req/s (paid) | 600 req/min (free tier) | 1 req/s (hard limit on public instance) |
-| No API key | Yes | No (billing required) | No (token required) | Yes (public instance) |
-| Self-host option | No | No | No | Yes (major infra overhead) |
+Three `SECURITY DEFINER` RPCs exist in the public schema:
+- `grant_role(p_user_id, p_role_slug)` — enforces tier eligibility and conflict rules
+- `revoke_role(p_user_id, p_role_slug)` — soft-revokes via `revoked_at`
+- `get_user_roles(p_user_id)` — returns active grants
 
-**Why Census wins for this project:**
+All called via `adminRpc()` in `roleService.ts`.
 
-1. **Privacy alignment**: The Census Bureau's privacy policy states retained data does not include personally identifiable information. For a civic platform collecting civic addresses, using a US government geocoding service operated under FOIA and federal privacy law is the strongest privacy posture available without self-hosting.
+### Current Jurisdiction Fields
 
-2. **Indiana accuracy**: TIGER/Line is the source of truth for US addresses — it is literally what every other geocoder is built from. Indiana addresses are well-covered.
+Jurisdiction is resolved on-the-fly from encrypted coordinates via `connect.resolve_user_jurisdiction()` RPC. The five GEOIDs (congressional, state_senate, state_house, county, school_district) are **not stored as columns** on `connected_profiles` — they are computed from PostGIS at request time. The `GET /api/account/me` and `GET /api/connect/set-location` responses both call this RPC and embed the result in the response body.
 
-3. **Cost**: Free with no API key. This project is an unfunded nonprofit; billing surprises are unacceptable.
-
-4. **No PII terms violations**: Google Maps TOS prohibits storing geocoded results in conjunction with personally identifiable information. Census has no such restriction.
-
-**Census Geocoder API call:**
-
-```
-GET https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
-  ?address=401+N+Morton+St%2C+Bloomington+IN+47404
-  &benchmark=Public_AR_Current
-  &format=json
-```
-
-Response path: `result.addressMatches[0].coordinates.{ x: lng, y: lat }`
-
-Returns 200 with empty `addressMatches` array if not found (not a 4xx). TypeScript service must handle the empty-array case and return null.
-
-**Confidence:** MEDIUM. Census Geocoder is a real service and the API format is verified against official documentation. Indiana accuracy claim is inferred from TIGER provenance — no independent test of rural Monroe County addresses performed.
+There are no `congressional_geoid` columns or similar on `connected_profiles`. The GEOID lives only in `inform.district_boundaries.geoid`.
 
 ---
 
-## Encryption Architecture
+## Component 1: Scoped Roles (ROLES-01)
 
-### Why pgcrypto + Vault key (not pgsodium TCE)
+### What Changes
 
-**pgsodium is pending deprecation.** Supabase explicitly states it does not recommend new usage of pgsodium. Transparent Column Encryption (TCE) via pgsodium carries "high operational complexity and misconfiguration risk" per Supabase documentation.
+The existing flat role model has no feature dimension or geography dimension. ROLES-01 adds both. The approach is additive: extend the existing tables, do not replace them.
 
-**The correct pattern for this project:**
+### Schema Changes
 
-1. Store the encryption passphrase in Supabase Vault (a named secret: `'location_encryption_key'`)
-2. In `SECURITY DEFINER` RPCs, read the decrypted secret from `vault.decrypted_secrets`
-3. Use `pgcrypto.pgp_sym_encrypt` / `pgp_sym_decrypt` with that passphrase
-4. Store encrypted values as `bytea` columns
-
-This pattern is:
-- Supported: pgcrypto is available in all Supabase projects
-- Stable: Vault's API surface (the `vault.decrypted_secrets` view) is explicitly stable through the pgsodium deprecation
-- Aligned with existing project patterns: SECURITY DEFINER + `SET search_path = ''`
-- Auditable: key lives in Vault dashboard, not in migrations
-
-**Important: `SET search_path = ''` means pgcrypto functions must be qualified.**
-
-In the Supabase default configuration, pgcrypto lives in the `extensions` schema. With `SET search_path = ''`, all references must be fully qualified:
-- `extensions.pgp_sym_encrypt()`
-- `extensions.pgp_sym_decrypt()`
-
-This is the same constraint already applied to all post-v1.2 RPCs.
-
-### TypeScript handling of bytea columns
-
-When supabase-js returns a `bytea` column, the value is a PostgreSQL hex-format string prefixed with `\x`, for example `\x7b2274797065223a...`. The `database.types.ts` generated type will show this column as `string`.
-
-**Critical constraint:** The route handler and service code must never read the raw `lat` or `lng` bytea columns. Jurisdiction resolution is entirely in-database. The TypeScript layer only sees the jurisdiction JSON returned by the RPC.
-
-In strict TypeScript, if a query ever needs to select `lat` or `lng` (it should not), annotate the type as `string` (the hex representation) and do not attempt to parse it in application code:
-
-```typescript
-// The bytea type in generated types:
-// lat: string   ← hex-encoded, e.g. '\x...'
-// lng: string   ← hex-encoded, e.g. '\x...'
-
-// NEVER do this in route code — decryption is in-database only:
-// const lat = parseFloat(hexToFloat(connectedProfile.lat)); // WRONG
-```
-
----
-
-## Exact RPC Signatures
-
-### `connect.update_user_location`
+**Extend `public.roles` — add feature dimension:**
 
 ```sql
-CREATE OR REPLACE FUNCTION connect.update_user_location(
-  p_user_id    UUID,
-  p_lat_plain  FLOAT8,
-  p_lng_plain  FLOAT8,
-  p_consent    BOOLEAN
+ALTER TABLE public.roles
+  ADD COLUMN feature_scope TEXT CHECK (feature_scope IN (
+    'ctc_dev', 'quest_dev', 'essentials_dev', 'compass_dev', 'admin', 'general'
+  ));
+-- NULL = role has no feature scope (general civic roles like 'contributor', 'candidate')
+-- Non-NULL = role is scoped to a specific feature integration
+```
+
+**Extend `public.user_roles` — add geography dimension:**
+
+```sql
+ALTER TABLE public.user_roles
+  ADD COLUMN jurisdiction_geoid TEXT;
+  -- NULL = national/unrestricted grant
+  -- Set = geo-restricted (e.g., '1807' for Indiana's 7th congressional)
+  -- No FK to district_boundaries — GEOIDs are string identifiers, not row references
+```
+
+**Update the partial unique index to include jurisdiction:**
+
+```sql
+DROP INDEX IF EXISTS idx_user_roles_active_unique;
+CREATE UNIQUE INDEX idx_user_roles_active_unique
+  ON public.user_roles(user_id, role_id, COALESCE(jurisdiction_geoid, ''))
+  WHERE revoked_at IS NULL;
+-- COALESCE trick: allows NULL geoid to be part of uniqueness without NULLs
+-- never being equal. A user can have the same role both nationally (NULL geoid)
+-- and for a specific jurisdiction.
+```
+
+**Seed the five new feature-scoped roles:**
+
+```sql
+INSERT INTO public.roles (name, slug, required_tier, feature_scope, description, is_active) VALUES
+  ('CTC Developer',       'ctc_dev',       'connected', 'ctc_dev',       'Civic Trivia Championship service key holder', true),
+  ('Quest Developer',     'quest_dev',     'connected', 'quest_dev',     'Validation Quests service key holder',         true),
+  ('Essentials Developer','essentials_dev','connected', 'essentials_dev','Essentials service key holder',                true),
+  ('Compass Developer',   'compass_dev',   'connected', 'compass_dev',   'CompassV2 service key holder',                 true),
+  ('Platform Admin',      'platform_admin','connected', 'admin',         'Platform administration access',               true)
+ON CONFLICT (slug) DO NOTHING;
+```
+
+### RPC Changes
+
+The existing `grant_role` and `revoke_role` RPCs need a `p_jurisdiction_geoid` parameter added. The RPCs are `SECURITY DEFINER` with `SET search_path = ''`, following the established pattern.
+
+**Updated signature for `grant_role`:**
+
+```sql
+CREATE OR REPLACE FUNCTION public.grant_role(
+  p_user_id           uuid,
+  p_role_slug         text,
+  p_jurisdiction_geoid text DEFAULT NULL
 )
-RETURNS JSONB
+RETURNS void
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = ''
 AS $$
-DECLARE
-  v_key TEXT;
-BEGIN
-  -- Validate consent must be explicit true
-  IF p_consent IS NOT TRUE THEN
-    RAISE EXCEPTION 'CONSENT_REQUIRED';
-  END IF;
-
-  -- Validate coordinate range
-  IF p_lat_plain < -90 OR p_lat_plain > 90 THEN
-    RAISE EXCEPTION 'INVALID_LAT';
-  END IF;
-  IF p_lng_plain < -180 OR p_lng_plain > 180 THEN
-    RAISE EXCEPTION 'INVALID_LNG';
-  END IF;
-
-  -- Read encryption key from Vault
-  SELECT decrypted_secret INTO v_key
-  FROM vault.decrypted_secrets
-  WHERE name = 'location_encryption_key';
-
-  IF v_key IS NULL THEN
-    RAISE EXCEPTION 'ENCRYPTION_KEY_NOT_FOUND';
-  END IF;
-
-  -- Encrypt and persist — address string is already discarded by caller
-  UPDATE connect.connected_profiles
-  SET
-    lat              = extensions.pgp_sym_encrypt(p_lat_plain::text, v_key),
-    lng              = extensions.pgp_sym_encrypt(p_lng_plain::text, v_key),
-    location_consent = true,
-    location_set_at  = now(),
-    updated_at       = now()
-  WHERE user_id = p_user_id;
-
-  IF NOT FOUND THEN
-    RAISE EXCEPTION 'PROFILE_NOT_FOUND';
-  END IF;
-
-  RETURN jsonb_build_object('success', true);
-
-EXCEPTION WHEN OTHERS THEN
-  RAISE;
-END;
+-- Two-pass validation before any writes:
+-- 1. Role exists + is_active
+-- 2. User meets required_tier
+-- 3. No duplicate active grant for (user_id, role_id, jurisdiction_geoid)
+-- Then INSERT into public.user_roles with jurisdiction_geoid
 $$;
 ```
 
-**TypeScript call:**
-
-```typescript
-const { data, error } = await adminRpc('update_user_location', {
-  p_user_id: userId,
-  p_lat_plain: lat,      // number (float)
-  p_lng_plain: lng,      // number (float)
-  p_consent: true,
-}, 'connect');
-
-// error.message will be 'CONSENT_REQUIRED' | 'INVALID_LAT' | 'INVALID_LNG'
-// | 'ENCRYPTION_KEY_NOT_FOUND' | 'PROFILE_NOT_FOUND' on failure
-```
-
-Note: `adminRpc` already accepts a schema parameter (third argument). Pass `'connect'` since the function lives in the `connect` schema.
-
----
-
-### `connect.resolve_user_jurisdiction`
+**Updated signature for `revoke_role`:**
 
 ```sql
-CREATE OR REPLACE FUNCTION connect.resolve_user_jurisdiction(
-  p_user_id UUID
+CREATE OR REPLACE FUNCTION public.revoke_role(
+  p_user_id           uuid,
+  p_role_slug         text,
+  p_jurisdiction_geoid text DEFAULT NULL
 )
-RETURNS JSONB
+RETURNS void
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = ''
 AS $$
-DECLARE
-  v_cp     connect.connected_profiles;
-  v_key    TEXT;
-  v_lat    FLOAT8;
-  v_lng    FLOAT8;
-  v_point  geometry;
-  v_result JSONB;
-BEGIN
-  -- Fetch connected profile (FOR UPDATE not needed — read-only path)
-  SELECT * INTO v_cp
-  FROM connect.connected_profiles
-  WHERE user_id = p_user_id;
-
-  IF NOT FOUND THEN
-    RAISE EXCEPTION 'PROFILE_NOT_FOUND';
-  END IF;
-
-  IF v_cp.location_consent IS NOT TRUE THEN
-    RAISE EXCEPTION 'NO_LOCATION_CONSENT';
-  END IF;
-
-  IF v_cp.lat IS NULL THEN
-    RAISE EXCEPTION 'NO_LOCATION_SET';
-  END IF;
-
-  -- Read encryption key from Vault
-  SELECT decrypted_secret INTO v_key
-  FROM vault.decrypted_secrets
-  WHERE name = 'location_encryption_key';
-
-  IF v_key IS NULL THEN
-    RAISE EXCEPTION 'ENCRYPTION_KEY_NOT_FOUND';
-  END IF;
-
-  -- Decrypt coordinates (text → float8)
-  v_lat := extensions.pgp_sym_decrypt(v_cp.lat, v_key)::FLOAT8;
-  v_lng := extensions.pgp_sym_decrypt(v_cp.lng, v_key)::FLOAT8;
-
-  -- Construct WGS84 point (ST_MakePoint takes lng, lat — note order)
-  v_point := extensions.ST_SetSRID(
-    extensions.ST_MakePoint(v_lng, v_lat),
-    4326
-  );
-
-  -- Query district boundaries
-  SELECT jsonb_agg(
-    jsonb_build_object(
-      'district_type', db.district_type,
-      'district_id',   db.district_id,
-      'district_name', db.district_name,
-      'state_code',    db.state_code
-    )
-  )
-  INTO v_result
-  FROM inform.district_boundaries db
-  WHERE extensions.ST_Contains(
-    db.boundary::extensions.geometry,
-    v_point
-  );
-
-  RETURN jsonb_build_object(
-    'districts', COALESCE(v_result, '[]'::jsonb),
-    'state_code', (
-      SELECT state_code FROM inform.district_boundaries
-      WHERE extensions.ST_Contains(boundary::extensions.geometry, v_point)
-      LIMIT 1
-    )
-  );
-
-EXCEPTION WHEN OTHERS THEN
-  RAISE;
-END;
+-- Sets revoked_at = now() on the matching active row
+-- Matches on (user_id, role_id, jurisdiction_geoid IS NOT DISTINCT FROM p_jurisdiction_geoid)
 $$;
 ```
 
-**TypeScript call and return type:**
+`get_user_roles` returns `jurisdiction_geoid` in its result set — add to the output columns.
+
+### New Middleware: `requireRole`
+
+The new `requireRole` middleware replaces the pattern of `requireAdmin` for feature-gated routes. `requireAdmin` itself is NOT removed — it continues to gate the admin UI routes. `requireRole` is a separate, additive middleware.
 
 ```typescript
-// In locationService.ts
-export type JurisdictionDistrict = {
-  district_type: string;   // 'congressional' | 'state_house' | 'state_senate' | 'county'
-  district_id: string;
-  district_name: string;
-  state_code: string;
-};
+// src/middleware/requireRole.ts
 
-export type JurisdictionResult = {
-  state_code: string | null;
-  districts: JurisdictionDistrict[];
-};
-
-const { data, error } = await adminRpc('resolve_user_jurisdiction', {
-  p_user_id: userId,
-}, 'connect');
-
-// error.message codes:
-// 'PROFILE_NOT_FOUND' → 404
-// 'NO_LOCATION_CONSENT' → 403
-// 'NO_LOCATION_SET' → 404
-// 'ENCRYPTION_KEY_NOT_FOUND' → 500
-```
-
----
-
-## Schema Changes
-
-### `connect.connected_profiles` additions
-
-```sql
-ALTER TABLE connect.connected_profiles
-  ADD COLUMN IF NOT EXISTS lat              BYTEA,
-  ADD COLUMN IF NOT EXISTS lng              BYTEA,
-  ADD COLUMN IF NOT EXISTS location_consent BOOLEAN,
-  ADD COLUMN IF NOT EXISTS location_set_at  TIMESTAMPTZ;
-```
-
-All four columns are nullable. Null `lat`/`lng` means location not yet set. Null `location_consent` is treated identically to `false` in the RPC (explicit `IS NOT TRUE` check covers both).
-
-**These columns must never appear in any SELECT that feeds an API response.** They must be excluded from `connected_profiles_public` view and from any explicit column list in route queries.
-
----
-
-### `inform.district_boundaries` table
-
-```sql
-CREATE TABLE IF NOT EXISTS inform.district_boundaries (
-  id             UUID        PRIMARY KEY DEFAULT gen_random_uuid(),
-  district_type  TEXT        NOT NULL,  -- 'congressional' | 'state_house' | 'state_senate' | 'county'
-  district_id    TEXT        NOT NULL,  -- e.g. 'IN-09' or '60'
-  district_name  TEXT        NOT NULL,
-  state_code     TEXT        NOT NULL,  -- 'IN'
-  boundary       extensions.geography(MULTIPOLYGON, 4326) NOT NULL,
-  created_at     TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-
--- Spatial index — required for ST_Contains performance
-CREATE INDEX IF NOT EXISTS idx_district_boundaries_boundary
-  ON inform.district_boundaries USING GIST (boundary);
-
--- Lookup index
-CREATE INDEX IF NOT EXISTS idx_district_boundaries_type_state
-  ON inform.district_boundaries (district_type, state_code);
-```
-
-**SRID 4326** (WGS84) is required — this is the coordinate system used by GPS devices and the Census Geocoder API response. TIGER shapefiles must be reprojected to 4326 before loading.
-
-**MULTIPOLYGON** not POLYGON because district boundaries often contain non-contiguous areas (islands, separated precincts). Using MULTIPOLYGON handles both cases.
-
-**Boundary data source:** US Census Bureau TIGER/Line 2024 shapefiles.
-
-- Congressional districts (119th): https://www.census.gov/cgi-bin/geo/shapefiles/index.php?year=2024&layergroup=Congressional+Districts+(119)
-- State legislative districts: available from the same interface by selecting the appropriate layer group
-- County boundaries: also available from TIGER/Line
-
-Load using `shp2pgsql` (part of PostGIS) or Python `geopandas` → `psycopg2` pipeline. This is a one-time data load for Indiana at pilot scale.
-
----
-
-## Connect Flow Integration Point
-
-**Where:** `POST /api/connect/set-location` — a new endpoint, NOT an extension of `POST /api/connect/complete`.
-
-**Rationale for separate endpoint (not folding into `complete`):**
-
-1. `complete_connect_flow` is an atomic RPC that already has a locked schema and well-tested behavior. Adding location to it requires geocoding (a network call to Census API) inside what is currently a pure DB transaction. Network calls inside DB transactions are an anti-pattern — if Census API is slow or down, the entire connect flow would hang or fail.
-
-2. Location consent is a separate, deliberate user action (consent moment should be distinct from account creation).
-
-3. Location can be updated post-Connect (user moves). Making it part of `complete` would create an artificial "must geocode on day-1" requirement.
-
-**Endpoint:**
-
-```
-POST /api/connect/set-location
-Authorization: Bearer <jwt>
-
-Request body:
-{
-  "address": "401 N Morton St, Bloomington IN 47404",
-  "consent": true
-}
-
-Validation (Zod):
-{
-  address: z.string().min(5).max(500),
-  consent: z.literal(true)   // must be explicit true — not a toggle
+export function requireRole(featureScope: string, jurisdictionGeoid?: string) {
+  return async function(req: Request, res: Response, next: NextFunction): Promise<void> {
+    const authReq = req as AuthenticatedRequest;
+    // Call a new hasRole() function in roleService.ts
+    // which does a single pool.query() against public.user_roles + public.roles
+    // to check: active grant where roles.feature_scope = featureScope
+    // AND (jurisdiction_geoid IS NULL OR jurisdiction_geoid = jurisdictionGeoid)
+    // Returns 403 with { code: 'ROLE_REQUIRED', feature: featureScope } if not found
+    next();
+  };
 }
 ```
 
-**Middleware chain:**
+The check uses `pool.query()` (not `supabaseAdmin`) because `public.user_roles` is in the public schema but this is a privileged server-side check. The architecture test's allowlist will need `middleware/requireRole.ts` added if it references `supabaseAdmin`. Prefer `pool.query()` to avoid that concern entirely.
 
-```typescript
-router.post('/set-location',
-  requireAuth,
-  requireConnected,   // Connected tier required — Inform users cannot set location
-  async (req, res) => { ... }
-);
+### Service Layer Changes
+
+`roleService.ts` needs:
+1. `grantRole(userId, roleSlug, jurisdictionGeoid?)` — updated to pass optional param to RPC
+2. `revokeRole(userId, roleSlug, jurisdictionGeoid?)` — same
+3. `getUserRoles(userId)` — return type adds `jurisdiction_geoid: string | null`
+4. New `hasRole(userId, featureScope, jurisdictionGeoid?)` — for `requireRole` middleware
+
+### API Changes
+
+**Existing routes remain unchanged for backwards compatibility.**
+
+Admin role management endpoints at `POST /api/admin/roles/grant` and `POST /api/admin/roles/revoke` need the optional `jurisdiction_geoid` field added to their request body schema.
+
+**New read endpoint:**
+
+```
+GET /api/roles/me
 ```
 
-**Flow in route handler:**
+Already exists. Return type adds `jurisdiction_geoid: string | null` per grant. No breaking change — additive field.
 
-```typescript
-1. Validate body (Zod)
-2. locationService.geocodeAddress(body.address)
-   - Returns { lat, lng } or null
-   - On null: 422 { code: 'ADDRESS_NOT_FOUND', message: '...' }
-3. adminRpc('update_user_location', { p_user_id, p_lat_plain, p_lng_plain, p_consent: true }, 'connect')
-   - On RPC error: map error codes to HTTP status
-4. 200 { location_set: true }
-```
+### Backwards Compatibility
 
-**Error mapping:**
-
-| RPC error code | HTTP status | User-facing meaning |
-|----------------|------------|-------------------|
-| `ADDRESS_NOT_FOUND` (geocoder null) | 422 | Address could not be geocoded |
-| `CONSENT_REQUIRED` | 422 | consent: true is required |
-| `INVALID_LAT` / `INVALID_LNG` | 422 | Geocoder returned out-of-range coordinates |
-| `PROFILE_NOT_FOUND` | 404 | Connected profile missing (unexpected) |
-| `ENCRYPTION_KEY_NOT_FOUND` | 500 | Vault key not configured — infrastructure issue |
+- `public.admin_users` and `requireAdmin` are untouched. All existing admin routes keep working.
+- Existing `user_roles` rows have `jurisdiction_geoid = NULL` after migration — they remain valid national grants.
+- The `idx_user_roles_active_unique` index change is the only destructive migration step. It must DROP the old index and CREATE the new one in a single transaction.
+- `grant_role` and `revoke_role` RPCs use `DEFAULT NULL` for the new parameter — existing callers (`roleService.ts`) still compile without changes. Service layer is updated separately to pass the value when available.
 
 ---
 
-## `GET /api/account/me/jurisdiction` Endpoint
+## Component 2: Compass Compare (COMP-05)
 
-**Location:** New file `backend/src/routes/location.ts`, mounted at `/api/account/me/jurisdiction` in `index.ts` (not inside `account.ts` — location is its own domain, and the route path is slightly misleading; consider `/api/location/jurisdiction` as an alternative if the project prefers cleaner namespace).
+### What Exists
 
-OR, add to `account.ts` router as:
+`inform.compass_responses` stores `(user_id, topic_id, value, visibility, deleted_at)`. The `visibility` column controls whether a Connected user's answers are public or private. Empowered users always have public visibility (set atomically during empowerment).
 
-```typescript
-router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res) => { ... });
-```
+No compare query or endpoint exists today.
 
-**Middleware:** `requireAuth` + `requireConnected`. The RPC itself enforces `location_consent` check and returns `NO_LOCATION_CONSENT` — the route handler maps that to 403.
+### What Must Be Built
 
-**Response shape:**
+**No schema migrations required.** Compass compare is a read-only query against existing tables.
 
-```json
-{
-  "state_code": "IN",
-  "districts": [
-    { "district_type": "congressional", "district_id": "IN-09", "district_name": "Indiana 9th Congressional District", "state_code": "IN" },
-    { "district_type": "state_house",   "district_id": "61",    "district_name": "Indiana House District 61",           "state_code": "IN" },
-    { "district_type": "state_senate",  "district_id": "40",    "district_name": "Indiana Senate District 40",          "state_code": "IN" },
-    { "district_type": "county",        "district_id": "055",   "district_name": "Monroe County",                       "state_code": "IN" }
-  ]
-}
-```
+### Query Pattern
 
-Coordinates never appear in this response or any log line. The RPC decrypts in-database and returns only the resolved identifiers.
-
----
-
-## Vault Key Setup
-
-The Vault key is a one-time setup step — not a migration. It must be performed in the Supabase dashboard before the RPCs are deployed.
-
-**Step 1 — Supabase Dashboard:**
-
-```
-Supabase Dashboard → Database → Vault → Add Secret
-  Name: location_encryption_key
-  Value: [strong random passphrase, e.g. 64 hex chars from openssl rand -hex 32]
-```
-
-**Step 2 — Confirm key is accessible:**
+The compare query joins two users' responses on `topic_id`. The output must include only topics where BOTH users have a non-deleted response. Visibility rules apply: a user's answers are only included if `visibility = 'public'` (or the viewer IS the owner — the API caller can always see their own answers).
 
 ```sql
--- Run in SQL Editor (as postgres role):
-SELECT name, created_at FROM vault.decrypted_secrets WHERE name = 'location_encryption_key';
--- Should return 1 row
+-- Conceptual query — will live in a SECURITY DEFINER RPC for atomicity
+-- and to centralize visibility rule enforcement
+
+SELECT
+  ct.id          AS topic_id,
+  ct.title,
+  ct.short_title,
+  a.value        AS user_a_value,
+  b.value        AS user_b_value,
+  ABS(a.value - b.value) AS divergence
+FROM inform.compass_topics ct
+JOIN inform.compass_responses a
+  ON a.topic_id = ct.id
+  AND a.user_id = p_user_a_id
+  AND a.deleted_at IS NULL
+JOIN inform.compass_responses b
+  ON b.topic_id = ct.id
+  AND b.user_id = p_user_b_id
+  AND b.deleted_at IS NULL
+WHERE ct.is_live = true
+  -- Visibility enforcement for user B:
+  -- Either the requester IS user B (viewing own), OR user B's answer is public
+  AND (b.user_id = p_requester_id OR b.visibility = 'public')
+  -- Visibility enforcement for user A:
+  AND (a.user_id = p_requester_id OR a.visibility = 'public')
+ORDER BY ct.title;
 ```
 
-**Step 3 — Grant the SECURITY DEFINER functions can read vault:**
+The divergence field (absolute difference of values) enables CompassV2 and Essentials to render overlap visually without computing it client-side.
 
-The `vault.decrypted_secrets` view is accessible to the `postgres` role by default (which is what SECURITY DEFINER functions run as in Supabase). No additional grants are needed, but verify in local dev with:
+### New RPC Signature
 
 ```sql
-SET ROLE postgres;
-SELECT decrypted_secret FROM vault.decrypted_secrets WHERE name = 'location_encryption_key';
-```
-
-**Important:** Never put the passphrase in a migration file. The migration creates the RPC functions; the key lives in Vault only. The passphrase must also go into `.env` for local development testing with the env var name `LOCATION_ENCRYPTION_KEY` (used only by the local Vault setup script, not the application code — the application reads from Vault via the RPC).
-
----
-
-## PostGIS Extension Setup
-
-PostGIS is not currently enabled in this project. It must be enabled before the `inform.district_boundaries` table can be created.
-
-**Enable via Supabase Dashboard:**
-
-```
-Database → Extensions → search "postgis" → Enable
-(create in the "extensions" schema — Supabase default)
-```
-
-**Verify in migration:**
-
-```sql
--- In the migration that creates district_boundaries, add a guard:
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_extension WHERE extname = 'postgis'
-  ) THEN
-    RAISE EXCEPTION 'PostGIS extension must be enabled before this migration. Enable it in the Supabase Dashboard under Database → Extensions.';
-  END IF;
-END;
+CREATE OR REPLACE FUNCTION public.compare_compass_responses(
+  p_requester_id uuid,
+  p_user_a_id    uuid,
+  p_user_b_id    uuid   -- can equal p_requester_id; can be NULL for politician compare
+)
+RETURNS TABLE (
+  topic_id      uuid,
+  title         text,
+  short_title   text,
+  user_a_value  numeric,
+  user_b_value  numeric,
+  divergence    numeric
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+-- Two-pass validation: both users exist and have connected profiles (or politicians)
+-- Then the JOIN query above
 $$;
 ```
 
-**`SET search_path = ''` and PostGIS:**
+For user-to-politician compare, `p_user_b_id` is a politician UUID and the query joins `inform.politician_answers` instead of `inform.compass_responses`. A single RPC can handle both cases by checking whether `p_user_b_id` matches a row in `inform.politicians`.
 
-PostGIS functions live in the `extensions` schema. With `SET search_path = ''` on SECURITY DEFINER functions, all PostGIS calls must be qualified:
-- `extensions.ST_Contains()`
-- `extensions.ST_MakePoint()`
-- `extensions.ST_SetSRID()`
-- `extensions.geometry` (type cast)
-- `extensions.geography(MULTIPOLYGON, 4326)` (column type — in migration, not in function body)
+### New API Endpoint
 
-This is consistent with the pattern already established for all post-v1.2 RPCs.
+```
+GET /api/compass/compare/:userId
+```
+
+- Auth: `requireAuth` (viewing own vs another user)
+- `:userId` can be a user UUID or a politician UUID
+- The endpoint calls `compare_compass_responses(requester_id, requester_id, :userId)` — the requester is always user A
+- Returns: `{ shared_topics: CompareResult[], agreement_score: number }`
+
+**Response shape (CompassV2 and Essentials both consume this):**
+
+```typescript
+interface CompareResult {
+  topic_id: string;
+  title: string;
+  short_title: string;
+  my_value: number;     // requester's value
+  their_value: number;  // target user/politician value
+  divergence: number;   // abs(my_value - their_value); 0 = full agreement
+}
+
+interface CompareResponse {
+  shared_topics: CompareResult[];
+  agreement_score: number;  // percentage: topics with divergence <= 1.0 / total shared topics
+  total_shared: number;
+}
+```
+
+The `agreement_score` is computed server-side from the results — clients never compute this themselves.
+
+### Service Layer
+
+New `compareCompassResponses(requesterId, targetId)` function in `compassService.ts`. Calls the RPC via `adminRpc()`. Returns typed `CompareResponse`. No new service file needed — compass compare belongs in `compassService.ts`.
+
+### Visibility Edge Cases
+
+- If the target user has `visibility = 'private'` on all topics, `shared_topics` is `[]` and `agreement_score` is null (not 0 — 0 would imply complete disagreement).
+- If the target is a politician, visibility rules do not apply (politician answers are always public).
+- The requester can compare themselves to themselves: returns 100% agreement (self-compare is valid for debugging).
+
+---
+
+## Component 3: VR Admin Dashboard (VR-F01)
+
+### What Exists
+
+`connect.connected_profiles` has:
+- `verification_rating` INT DEFAULT 60 NOT NULL
+- `vq_hold_until` TIMESTAMPTZ (null = no hold active)
+
+No aggregate view or admin query exists. The existing `updateVerificationRating` in `adminService.ts` does per-user writes via `pool.query()`. No read-across-all-users query for VR exists.
+
+### What Must Be Built
+
+**No schema migrations required.** VR dashboard is purely a new read query + admin endpoint + React admin page.
+
+### Query Pattern
+
+The VR dashboard must paginate — returning all rows is not safe at scale. Two query surfaces are needed:
+
+**1. Distribution aggregate (no pagination needed — bounded result):**
+
+```sql
+-- Five VR buckets: 0-29, 30-59, 60-89, 90-119, 120-150
+SELECT
+  COUNT(*) FILTER (WHERE verification_rating BETWEEN 0   AND 29 ) AS bucket_0_29,
+  COUNT(*) FILTER (WHERE verification_rating BETWEEN 30  AND 59 ) AS bucket_30_59,
+  COUNT(*) FILTER (WHERE verification_rating BETWEEN 60  AND 89 ) AS bucket_60_89,
+  COUNT(*) FILTER (WHERE verification_rating BETWEEN 90  AND 119) AS bucket_90_119,
+  COUNT(*) FILTER (WHERE verification_rating BETWEEN 120 AND 150) AS bucket_120_150,
+  COUNT(*) FILTER (WHERE vq_hold_until > now())                   AS on_hold_count,
+  COUNT(*)                                                         AS total_connected
+FROM connect.connected_profiles;
+```
+
+**2. Paginated user list with VR data (for outlier review):**
+
+```sql
+SELECT
+  cp.user_id,
+  u.display_name,
+  cp.verification_rating,
+  cp.vq_hold_until,
+  (cp.vq_hold_until IS NOT NULL AND cp.vq_hold_until > now()) AS vq_hold_active
+FROM connect.connected_profiles cp
+JOIN public.users u ON u.id = cp.user_id
+ORDER BY cp.verification_rating ASC  -- or DESC, or by vq_hold_until
+LIMIT 25 OFFSET $page_offset;
+```
+
+Both queries touch the `connect` schema. Following the established pattern: **these must use `pool.query()`, not PostgREST**. PostgREST fails for `connect` schema writes; reads can be fragile for cross-schema joins. Use `pool.query()` for safety.
+
+### New Admin API Endpoints
+
+Two new endpoints added to `admin.ts` (which already has `router.use(requireAuth, requireAdmin)`):
+
+```
+GET /api/admin/vr-dashboard
+```
+
+Returns the distribution aggregate. No pagination needed — result is always 7 numbers.
+
+```
+GET /api/admin/vr-dashboard/users?sort=asc|desc|hold&page=1
+```
+
+Returns paginated user list sorted by VR (ascending = lowest first, for outlier review) or by hold status. Default sort is `asc` (shows lowest-VR users first).
+
+**Response shapes:**
+
+```typescript
+interface VRDashboardResponse {
+  distribution: {
+    bucket_0_29:   number;
+    bucket_30_59:  number;
+    bucket_60_89:  number;  // default / unverified bucket
+    bucket_90_119: number;  // red gem quest unlocked
+    bucket_120_150: number; // high trust
+  };
+  on_hold_count: number;
+  total_connected: number;
+}
+
+interface VRUserListResponse {
+  users: Array<{
+    user_id: string;
+    display_name: string;
+    verification_rating: number;
+    vq_hold_active: boolean;
+    vq_hold_until: string | null;  // ISO 8601
+  }>;
+  total: number;
+  page: number;
+  pages: number;
+}
+```
+
+### Service Layer
+
+New functions in `adminService.ts`:
+- `getVRDashboard()` — runs the aggregate query via `pool.query()`
+- `getVRUsers(params: { sort: 'asc' | 'desc' | 'hold'; page: number })` — paginated list via `pool.query()`
+
+No new service file. VR dashboard is an admin read operation; it belongs in `adminService.ts`.
+
+### Admin React UI
+
+New `VRDashboardPage.tsx` in `admin/src/`. Route: `/admin/vr-dashboard`. Two sections:
+1. Distribution bar chart or bucket summary (5 buckets + on-hold count)
+2. Paginated user table with VR value, hold status, and direct link to `AccountDetailPage` for per-user VR override
+
+Colors follow brand tokens: `ev-teal` for normal range, `ev-yellow` for 90+ (red gem unlocked), `ev-red` for on-hold.
+
+---
+
+## Component 4: Essentials XP Source Provisioning (ESSENTIALS-PROV)
+
+### What Changes
+
+`serviceKeyAuth.ts` already has the `ESSENTIALS_SERVICE_KEY` env var wired and maps it to `['essentials-rep-lookup']`. This was a pre-emptive addition. Verifying the file confirms the mapping is already present (confirmed by code read during research).
+
+**No code change needed in `serviceKeyAuth.ts` — it is already correct.**
+
+The remaining work is:
+1. Set `ESSENTIALS_SERVICE_KEY` in the Render environment with a real secret value
+2. Update `docs/ESSENTIALS-INTEGRATION.md` to document the correct env var name for `GEMS_SERVICE_KEYS`
+
+This is a 2-file change at most (env config + docs). No migration, no new middleware, no new routes.
 
 ---
 
 ## Build Order
 
-This ordering respects all dependencies between components.
+The four v1.6 components have the following dependency graph:
 
 ```
-1. Enable PostGIS extension (Supabase Dashboard)
-   └── Required before district_boundaries table can be created
-   └── Required before ST_Contains can be called in any function
-
-2. Create Vault encryption key (Supabase Dashboard)
-   └── Required before update_user_location or resolve_user_jurisdiction can run
-   └── Must exist in BOTH local dev Vault and production Vault
-
-3. Migration: ALTER connected_profiles (add lat, lng, location_consent, location_set_at)
-   └── Additive — safe to apply while system is running
-   └── All new columns are nullable; no default values needed
-   └── Update connected_profiles_public view to explicitly exclude new columns
-
-4. Migration: CREATE inform.district_boundaries table + spatial index
-   └── Requires PostGIS (Step 1)
-   └── Table is empty until Step 5 populates it
-
-5. Load boundary data into district_boundaries
-   └── One-time data load: Indiana TIGER/Line shapefiles
-       - Congressional districts (119th, 2024)
-       - State house districts (2024)
-       - State senate districts (2024)
-       - County boundaries
-   └── Use shp2pgsql pipeline or Python geopandas → psycopg2
-   └── All polygons must be in SRID 4326 before INSERT
-
-6. Migration: CREATE connect.update_user_location RPC
-   └── Requires connected_profiles columns (Step 3)
-   └── Requires Vault key to exist (Step 2)
-   └── Requires pgcrypto extension (available by default in Supabase)
-
-7. Migration: CREATE connect.resolve_user_jurisdiction RPC
-   └── Requires connected_profiles columns (Step 3)
-   └── Requires district_boundaries table (Step 4)
-   └── Requires Vault key (Step 2)
-   └── Requires PostGIS (Step 1)
-
-8. Backend: locationService.ts
-   └── geocodeAddress(address: string): Promise<{ lat: number; lng: number } | null>
-   └── Uses Census Geocoder API with fetch (no npm package needed)
-
-9. Backend: POST /api/connect/set-location route
-   └── Requires locationService (Step 8)
-   └── Requires update_user_location RPC (Step 6)
-   └── Add to connect.ts router
-
-10. Backend: GET /api/account/me/jurisdiction route
-    └── Requires resolve_user_jurisdiction RPC (Step 7)
-    └── Add to account.ts router (or new location.ts router)
-
-11. Integration test coverage
-    └── set-location: address geocodes → encrypted storage (verify bytea non-null, never raw coords)
-    └── jurisdiction: resolve returns correct district IDs for known Bloomington address
-    └── jurisdiction: 403 when location_consent is null/false
-    └── jurisdiction: 404 when location not set (consent true but lat null)
-    └── Architecture test: lat/lng bytea columns never appear in any route query SELECT list
+ESSENTIALS-PROV         — no dependencies, can ship standalone
+      |
+      v
+COMP-05                 — no schema dependencies; needs compassService.ts
+      |
+      v
+VR-F01                  — no schema dependencies; needs adminService.ts read queries
+      |
+      v
+ROLES-01                — schema migration required; impacts requireAdmin replacement pattern;
+                          must be last because it is the largest and most disruptive
 ```
 
----
+**Recommended phase order:**
 
-## Component Boundaries
-
-| Component | Responsibility | Does NOT own |
-|-----------|---------------|--------------|
-| `locationService.ts` | Census Geocoder API call; returns `{lat,lng}` or null | Encryption; storage; any DB access |
-| `connect.update_user_location` RPC | Validates range; reads Vault key; encrypts; writes to connected_profiles | Geocoding; address parsing |
-| `connect.resolve_user_jurisdiction` RPC | Decrypts; constructs PostGIS point; ST_Contains query; returns jurisdiction JSON | Returning coordinates; caching |
-| `GET /api/account/me/jurisdiction` | Auth/tier middleware; calls RPC; maps error codes; serializes result | Any knowledge of encryption or coordinates |
-| `POST /api/connect/set-location` | Validates address string; calls geocoder; calls RPC; consent enforcement | Any knowledge of encryption algorithm |
-| `inform.district_boundaries` | Stores boundary polygons for jurisdiction lookup | User location data; any user PII |
+1. **ESSENTIALS-PROV first** — 2-file change, closes a documented gap, unblocks Essentials team.
+2. **COMP-05 second** — read-only, no migrations, self-contained. Proves the compare RPC pattern before roles adds schema complexity.
+3. **VR-F01 third** — read-only queries, no migrations. Admin UI work is independent of roles.
+4. **ROLES-01 last** — requires schema migration, index change, RPC updates, new middleware. Highest blast radius. Built last so the other three features are not blocked on it.
 
 ---
 
-## Anti-Patterns to Avoid
+## Component Boundary Summary
 
-### Anti-Pattern 1: Geocoding Inside the DB Transaction
-
-**What:** Adding address geocoding to the `complete_connect_flow` RPC or any existing RPC.
-
-**Why wrong:** The Census Geocoder is an external HTTP call. External I/O inside a Postgres transaction holds locks and creates a hard dependency on third-party availability. If Census API is slow (measured in seconds), the transaction holds a row lock on `verification_sessions` for that duration.
-
-**Do instead:** Geocode in the Express service layer before calling the RPC. The RPC receives only the resolved float8 coordinates.
-
----
-
-### Anti-Pattern 2: Returning Coordinates in Any API Response
-
-**What:** Adding `lat` or `lng` fields to `/api/account/me` or any other endpoint.
-
-**Why wrong:** The product decision (confirmed in STATE.md) is that raw coordinates never leave the accounts system. The jurisdiction endpoint is the only exit path. Exposing coordinates even to the owning user creates audit/privacy risk.
-
-**Do instead:** The route handler calls `resolve_user_jurisdiction` and returns only the jurisdiction struct. The `lat`/`lng` columns are excluded from all SELECT lists in route code.
+| Component | New Files | Modified Files | New Migrations | New RPCs |
+|-----------|-----------|----------------|----------------|----------|
+| ESSENTIALS-PROV | 0 | 1 (docs only) | 0 | 0 |
+| COMP-05 | 0 | `compassService.ts`, `compass.ts` | 1 (RPC only) | 1 (`compare_compass_responses`) |
+| VR-F01 | `VRDashboardPage.tsx` | `adminService.ts`, `admin.ts` | 0 | 0 |
+| ROLES-01 | `requireRole.ts` | `roleService.ts`, `admin.ts`, `architecture.test.ts` | 2 (schema + RPCs) | 2 (updated `grant_role`, `revoke_role`) |
 
 ---
 
-### Anti-Pattern 3: Encrypting in the Express Layer
+## Patterns That Must Not Change
 
-**What:** Calling `pgp_sym_encrypt` equivalent via Node.js crypto, sending the result to Supabase as a hex string.
+These are the constraints every v1.6 implementation must follow, derived from the codebase and architecture tests:
 
-**Why wrong:** The encryption key would need to be available in the Express process environment. This means it lives in environment variables accessible to all application code. The Vault pattern keeps the key inside the database, never accessible to the application tier.
+1. **`pool.query()` for all non-public schema writes.** `connect.connected_profiles` VR reads should also use `pool.query()` for cross-schema JOIN safety.
 
-**Do instead:** Pass plaintext coordinates to the `SECURITY DEFINER` RPC. The RPC reads the Vault key and encrypts inside Postgres. The key never crosses the DB boundary.
+2. **`supabaseAdmin` banned from `src/routes/`.** Any new service function that references `supabaseAdmin` must live in `src/lib/`. Architecture test allowlist must be updated when a new lib file is added.
 
----
+3. **SECURITY DEFINER with `SET search_path = ''`.** All new RPCs must use fully qualified table references (`connect.connected_profiles`, not `connected_profiles`).
 
-### Anti-Pattern 4: Using `.is('location_consent', null)` for the Jurisdiction Gate
+4. **Two-pass validation in RPCs.** Validate all inputs before any writes. Applied to `grant_role` update and `compare_compass_responses`.
 
-**What:** Checking `location_consent IS NULL` to mean "no consent."
+5. **`requireAdmin` is NOT replaced.** It continues to guard all `/api/admin/*` routes. `requireRole` is additive for external-facing feature routes, not a replacement.
 
-**Why wrong:** This would allow a row with `location_consent = false` to slip through.
+6. **Soft-delete filter on compass reads.** Any query against `inform.compass_responses` must include `.is('deleted_at', null)` or `AND deleted_at IS NULL` in raw SQL. The compare query must enforce this.
 
-**Do instead:** The RPC uses `IF v_cp.location_consent IS NOT TRUE` — this correctly handles NULL, false, and any unexpected value as "no consent." The route handler maps the resulting `NO_LOCATION_CONSENT` exception to 403.
+7. **Advisory locks in sorted UUID order for any multi-user write.** Compass compare is read-only — advisory locks not needed. If ROLES-01 ever involves multi-user grants in a single RPC, sort UUIDs before locking.
 
----
-
-### Anti-Pattern 5: ST_Contains With Mixed geometry/geography Types
-
-**What:** Calling `ST_Contains(boundary, point)` where `boundary` is `geography` and `point` is `geometry` (or vice versa) without explicit casting.
-
-**Why wrong:** PostGIS does not automatically coerce between `geometry` and `geography`. The query will either error or silently produce wrong results.
-
-**Do instead:** Explicitly cast both operands to the same type. The RPC above casts `boundary::extensions.geometry` and creates the point as `geometry` via `ST_SetSRID(ST_MakePoint(...), 4326)`. Consistent casting is required.
+8. **Audit trail required for all admin mutations.** `logAdminAction()` must be called for VR dashboard user-list actions only if they trigger mutations (reads do not require logging). Role grant/revoke already calls `logAdminAction`.
 
 ---
 
-## Integration With Existing Patterns
+## Open Questions (Resolve Before Implementation)
 
-This section confirms how the new components align with the patterns already established in the codebase.
+1. **Compass compare — self-compare.** Should `GET /api/compass/compare/:userId` where `:userId` equals the requester's own ID return a 400, or silently return 100% agreement? CompassV2 and Essentials should be consulted before the endpoint is built.
 
-| Existing pattern | How location components comply |
-|-----------------|-------------------------------|
-| SECURITY DEFINER + `SET search_path = ''` | Both RPCs use this. All table refs and function calls are fully qualified. |
-| Two-pass validation in atomic RPCs | `update_user_location` validates consent and coordinate range before reading the Vault key or writing any data. |
-| `adminRpc()` wrapper for RPC calls | Both RPCs are called via `adminRpc('function_name', args, 'connect')` — the schema parameter routes to `connect` schema. |
-| Service role never used for reads in routes | `resolve_user_jurisdiction` result is opaque JSON — no route code reads raw `connected_profiles` columns. |
-| Sensitive columns excluded from SELECT lists | `lat`, `lng` must be added to the exclusion list alongside `tolerance_rating`, `legal_name`. |
-| Additive migration strategy | All schema changes are additive (`ADD COLUMN IF NOT EXISTS`, new tables). |
-| `connected_profiles_public` view excludes PII | `lat`, `lng`, `location_consent`, `location_set_at` must be explicitly excluded from this view in the migration that adds them. |
+2. **ROLES-01 — migration order for index change.** The `COALESCE` trick in the new unique index is not standard. Validate on a test migration that `COALESCE(jurisdiction_geoid, '')` produces the correct uniqueness behavior for `NULL` geoids before shipping.
 
----
+3. **VR-F01 — sort options.** The spec says "distribution, holds, outliers." Confirm with product whether the paginated list needs a third sort option for `hold` (sorts by `vq_hold_until DESC NULLS LAST`) before building the React UI.
 
-## Open Questions
-
-1. **PostGIS in local dev:** Supabase local development via `supabase start` uses a Docker image that may not have PostGIS enabled by default. Verify `extensions.postgis` exists in local dev before writing the boundary migration. Run `supabase db reset` after enabling.
-
-2. **Vault in local dev:** The Vault extension is available in Supabase local dev but requires manual key setup. The development workflow needs a `seed.sql` or setup script that creates the `location_encryption_key` in the local Vault before tests run. This key value can be a fixed test passphrase in dev (not the production value).
-
-3. **Census Geocoder reliability:** The Census Geocoder has no SLA and is rate-limited informally. For Alpha (small cohort, rare location-setting events), this is acceptable. If the API is unavailable, `set-location` fails gracefully with 503. Plan to evaluate alternatives at scale.
-
-4. **Boundary data refresh cadence:** Indiana redistricting happened in 2022 for the current legislative session (effective 2023). The 2024 TIGER files reflect the current boundaries. Next redistricting is post-2030 census. Boundary data can be treated as static for the Alpha period.
-
-5. **MULTIPOLYGON vs POLYGON:** Most Indiana districts are single polygons, but a MULTIPOLYGON type handles edge cases (non-contiguous districts) without schema change. Verify TIGER data uses `MULTIPOLYGON` in the shapefile geometry type before writing the CREATE TABLE migration — if it is `POLYGON`, use that type and avoid unnecessary complexity.
+4. **ROLES-01 — `requireRole` placement in existing routes.** Once `platform_admin` role exists, should `requireAdmin` middleware be deprecated in favor of `requireRole('admin')`? This is an architectural decision about the long-term path. For v1.6, keep both. Decide before v1.7.
 
 ---
 
 ## Sources
 
-- Supabase Vault documentation: https://supabase.com/docs/guides/database/vault
-- pgsodium deprecation notice: https://supabase.com/docs/guides/database/extensions/pgsodium
-- pgcrypto function signatures: https://www.postgresql.org/docs/current/pgcrypto.html
-- PostGIS in Supabase: https://supabase.com/docs/guides/database/extensions/postgis
-- Census Geocoder API: https://geocoding.geo.census.gov/geocoder/Geocoding_Services_API.html
-- Census 2024 TIGER/Line shapefiles: https://www.census.gov/cgi-bin/geo/shapefiles/index.php
-- bytea return type in supabase-js: https://github.com/orgs/supabase/discussions/2441
-- Supabase Vault blog: https://supabase.com/blog/supabase-vault
-- Indiana redistricting data: https://thearp.org/state/indiana/
-- Nominatim usage policy (privacy): https://operations.osmfoundation.org/policies/nominatim/
-- Actual `complete_connect_flow` RPC: `C:/EV-Accounts/backend/migrations/025_rpc_pool_migration.sql` (lines 1286–1354)
-- Existing SECURITY DEFINER RPC pattern: `C:/EV-Accounts/supabase/migrations/20260224000010_rpc_functions.sql`
-- `adminRpc` wrapper: `C:/EV-Accounts/backend/src/lib/supabase.ts`
-
----
-
-*Architecture research for: location infrastructure integration — Supabase Vault + pgcrypto + PostGIS*
-*Researched: 2026-03-09*
+All findings verified against actual codebase files:
+- `backend/src/middleware/requireAdmin.ts` — admin check pattern
+- `backend/src/middleware/serviceKeyAuth.ts` — service key pattern, ESSENTIALS_SERVICE_KEY confirmed present
+- `backend/src/lib/roleService.ts` — existing role RPC wrappers
+- `backend/src/lib/adminService.ts` — VR override pattern, pool.query() usage
+- `backend/src/routes/compass.ts` — compass endpoint patterns
+- `backend/src/types/database.types.ts` — existing RPC signatures
+- `supabase/migrations/20260227000020_phase6_roles_schema.sql` — roles table structure
+- `supabase/migrations/20260310000032_location_rpcs.sql` — SECURITY DEFINER + SET search_path pattern
+- `tests/integration/architecture.test.ts` — architecture enforcement rules
+- Confidence: HIGH for all components (all claims derived from live code)
