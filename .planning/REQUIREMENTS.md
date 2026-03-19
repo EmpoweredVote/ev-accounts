@@ -23,12 +23,12 @@
 
 ### Essentials Integration Guide
 
-- [ ] **EDOC-01**: Guide covers the "never ask address again" principle with concrete implementation pattern: check `jurisdiction` on `/api/account/me` → non-null means Connected, use it silently; null means anonymous/Inform, show local address input
-- [ ] **EDOC-02**: Guide documents the two-state UX pattern — anonymous/Inform (local address input, no persistence) vs Connected (jurisdiction from accounts, fully automatic)
-- [ ] **EDOC-03**: Guide covers optional auth flow for Inform Pillar features — how to detect if a user is Connected without requiring it, and how to surface a "connect your account" prompt for jurisdiction persistence
-- [ ] **EDOC-04**: Guide articulates the three-pillar platform philosophy with emphasis on Inform Pillar rules: accessible to everyone, no auth required, information flows one direction
-- [ ] **EDOC-05**: Guide specifies all jurisdiction field names and their canonical string formats (with examples from prod data)
-- [ ] **EDOC-06**: Guide covers the auth flow for when Essentials wants to offer Connected enhancements (XP, gem awards, persistence) as opt-in on top of the anonymous experience
+- [x] **EDOC-01**: Guide covers the "never ask address again" principle with concrete implementation pattern: check `jurisdiction` on `/api/account/me` → non-null means Connected, use it silently; null means anonymous/Inform, show local address input
+- [x] **EDOC-02**: Guide documents the two-state UX pattern — anonymous/Inform (local address input, no persistence) vs Connected (jurisdiction from accounts, fully automatic)
+- [x] **EDOC-03**: Guide covers optional auth flow for Inform Pillar features — how to detect if a user is Connected without requiring it, and how to surface a "connect your account" prompt for jurisdiction persistence
+- [x] **EDOC-04**: Guide articulates the three-pillar platform philosophy with emphasis on Inform Pillar rules: accessible to everyone, no auth required, information flows one direction
+- [x] **EDOC-05**: Guide specifies all jurisdiction field names and their canonical string formats (with examples from prod data)
+- [x] **EDOC-06**: Guide covers the auth flow for when Essentials wants to offer Connected enhancements (XP, gem awards, persistence) as opt-in on top of the anonymous experience
 
 ## Future Requirements
 
@@ -62,12 +62,12 @@
 | CDOC-04 | Phase 32 | Pending |
 | CDOC-05 | Phase 32 | Pending |
 | CDOC-06 | Phase 32 | Pending |
-| EDOC-01 | Phase 33 | Pending |
-| EDOC-02 | Phase 33 | Pending |
-| EDOC-03 | Phase 33 | Pending |
-| EDOC-04 | Phase 33 | Pending |
-| EDOC-05 | Phase 33 | Pending |
-| EDOC-06 | Phase 33 | Pending |
+| EDOC-01 | Phase 33 | Complete |
+| EDOC-02 | Phase 33 | Complete |
+| EDOC-03 | Phase 33 | Complete |
+| EDOC-04 | Phase 33 | Complete |
+| EDOC-05 | Phase 33 | Complete |
+| EDOC-06 | Phase 33 | Complete |
 
 **Coverage:**
 - v1.5 requirements: 16 total

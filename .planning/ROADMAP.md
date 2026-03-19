@@ -7,7 +7,7 @@
 - ✅ **v1.2 CompassV2 Integration & Alpha Hardening** — Phases 12–16 (shipped 2026-03-07)
 - ✅ **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–26 (shipped 2026-03-15)
 - ✅ **v1.4 Profile Hub & Verification Engine** — Phases 27–30 (shipped 2026-03-17)
-- 🚧 **v1.5 Partner Integration & Referrals** — Phases 31–33 (in progress)
+- ✅ **v1.5 Partner Integration & Referrals** — Phases 31–33 (shipped 2026-03-19)
 
 ## Phases
 
@@ -130,7 +130,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 33-01: Write docs/ESSENTIALS-INTEGRATION.md (new file)
+- [x] 33-01: Write docs/ESSENTIALS-INTEGRATION.md (new file)
 
 ## Progress
 
@@ -168,4 +168,4 @@ Plans:
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
-| 33. Essentials Integration Guide | v1.5 | 0/1 | Not started | - |
+| 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
