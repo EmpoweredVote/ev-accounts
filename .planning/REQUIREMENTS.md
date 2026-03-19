@@ -14,12 +14,12 @@
 
 ### CompassV2 Integration Guide
 
-- [ ] **CDOC-01**: Guide covers the full auth flow — how CompassV2 redirects to `accounts.empowered.vote` for login/signup and receives the token back via hash fragment
-- [ ] **CDOC-02**: Guide documents all compass API endpoints with request/response shapes and auth requirements
-- [ ] **CDOC-03**: Guide explains tier-based access — what anonymous/Inform vs Connected users can do in compass
-- [ ] **CDOC-04**: Guide covers jurisdiction usage — how CompassV2 reads the `jurisdiction` block from `/api/account/me` to personalize the experience without asking for an address
-- [ ] **CDOC-05**: Guide articulates the three-pillar platform philosophy (Inform / Connected / Empowered) so CompassV2 implements the correct degraded vs enhanced experience
-- [ ] **CDOC-06**: Guide replaces `docs/COMPASS_CONTRACT.md` as the canonical CompassV2 reference
+- [x] **CDOC-01**: Guide covers the full auth flow — how CompassV2 redirects to `accounts.empowered.vote` for login/signup and receives the token back via hash fragment
+- [x] **CDOC-02**: Guide documents all compass API endpoints with request/response shapes and auth requirements
+- [x] **CDOC-03**: Guide explains tier-based access — what anonymous/Inform vs Connected users can do in compass
+- [x] **CDOC-04**: Guide covers jurisdiction usage — how CompassV2 reads the `jurisdiction` block from `/api/account/me` to personalize the experience without asking for an address
+- [x] **CDOC-05**: Guide articulates the three-pillar platform philosophy (Inform / Connected / Empowered) so CompassV2 implements the correct degraded vs enhanced experience
+- [x] **CDOC-06**: Guide replaces `docs/COMPASS_CONTRACT.md` as the canonical CompassV2 reference
 
 ### Essentials Integration Guide
 

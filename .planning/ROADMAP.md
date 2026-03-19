@@ -114,7 +114,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 32-01: Write docs/COMPASSV2-INTEGRATION.md (ground-up rewrite of COMPASS_CONTRACT.md)
+- [x] 32-01: Write docs/COMPASSV2-INTEGRATION.md (ground-up rewrite of COMPASS_CONTRACT.md)
 
 #### Phase 33: Essentials Integration Guide
 
@@ -167,5 +167,5 @@ Plans:
 | 29. Admin Controls & Integration Verification | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
-| 32. CompassV2 Integration Guide | v1.5 | 0/1 | Not started | - |
+| 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 0/1 | Not started | - |
