@@ -70,12 +70,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 integration reference: Auth Hub redirect flow, 16 endpoints with TypeScript shapes, tier access rules, jurisdiction "never ask for address" (first-class Section 7), 8 inline anti-patterns; `COMPASS_CONTRACT.md` hard-deleted — v1.5
 - ✓ `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (inform / connected_with_jurisdiction / connected_no_jurisdiction), "Inform is the unconditional baseline" principle, opt-in XP/gem award endpoints, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples — v1.5
 
+### Active (v1.6)
+
+- [ ] ROLES-01: Scoped roles system — replace flat `is_admin` with feature × geography permission model; feature dimensions: CTC Dev, Quest Dev, Essentials Dev, Compass Dev, Admin; geographic dimension: optional `jurisdiction_geoid` (null = national, set = geo-restricted e.g. Monroe County)
+- [ ] VR-F01: VR admin dashboard — visualize Verification Rating distribution, users on hold, outliers across all accounts
+- [ ] COMP-05: User-to-user compass compare API — backend endpoint comparing two accounts' responses on shared topics; powers CompassV2 and Essentials (compass overlap as primary view for elected officials)
+- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — add `essentials-rep-lookup` to `serviceKeyAuth.ts` + `GEMS_SERVICE_KEYS` env var doc fix
+
 ### Still Deferred
 
-- [ ] COMP-05: User-to-user compass compare (infrastructure in place; politician compare only in v1)
 - [ ] CIVIC-02: Gem reserve cap (deferred for Alpha per CONTEXT.md)
-- [ ] ROLES-01: Scoped roles system — replace flat `is_admin` with feature-scoped permissions
-- [ ] VR-F01: VR admin dashboard — visualize Verification Rating data across users
 
 ### Out of Scope
 
@@ -163,5 +167,15 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
 | Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
 
+## Current Milestone: v1.6 Civic Identity & Roles
+
+**Goal:** Replace flat admin flag with feature-scoped + geo-scoped roles, expose compass comparison as a core API capability, and add admin visibility into the Verification Rating system.
+
+**Target features:**
+- Feature × geography scoped roles (CTC Dev, Quest Dev, Essentials Dev, Compass Dev + jurisdiction_geoid)
+- Compass compare API (user-to-user and user-to-politician overlap endpoint)
+- VR admin dashboard (distribution, holds, outliers)
+- Essentials XP source provisioning (quick fix)
+
 ---
-*Last updated: 2026-03-19 after v1.5 milestone completion*
+*Last updated: 2026-03-19 after v1.6 milestone started*

@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.5 milestone completion)
 
 ## Current Position
 
-Phase: Not started (v1.6 not yet planned)
-Plan: Not started
-Status: Ready to plan v1.6
-Last activity: 2026-03-19 — v1.5 milestone complete (Partner Integration & Referrals)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements for v1.6
+Last activity: 2026-03-19 — Milestone v1.6 started
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅] 33/33 phases shipped ██████████
 
@@ -58,4 +58,4 @@ None.
 
 Last session: 2026-03-19
 Stopped at: Quick task 007 complete (admin access requests panel + email notifications)
-Resume: Run `/gsd:new-milestone` to define v1.6
+Resume: Continue `/gsd:new-milestone` — research in progress for v1.6
