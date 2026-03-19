@@ -51,6 +51,7 @@ import {
   getAdminEmailById,
   updateVerificationRating,
   deleteAccount,
+  listAccessRequests,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -102,6 +103,24 @@ router.get('/dashboard', async (_req, res) => {
     res.json(stats);
   } catch (err) {
     console.error('[admin/dashboard] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Access requests
+// ---------------------------------------------------------------------------
+
+/**
+ * GET /api/admin/access-requests
+ * Returns all access requests sorted newest-first.
+ */
+router.get('/access-requests', async (_req, res) => {
+  try {
+    const requests = await listAccessRequests();
+    res.json({ requests });
+  } catch (err) {
+    console.error('[admin/access-requests] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

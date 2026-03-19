@@ -6,6 +6,7 @@ import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { completeOnboarding } from '../lib/enrollService.js';
 import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
+import { sendEmail } from '../lib/emailService.js';
 import { pool } from '../lib/db.js';
 import type { Request, Response } from 'express';
 
@@ -419,6 +420,20 @@ router.post('/request-access', authLimiter, async (req: Request, res: Response):
 
   try {
     await insertAccessRequest(parsed.data.email);
+
+    // Fire-and-forget admin notification — sendEmail never throws
+    const adminEmail = process.env.ADMIN_EMAIL;
+    if (adminEmail) {
+      sendEmail({
+        to: adminEmail,
+        subject: 'New Access Request — Empowered Vote',
+        html: `<p>Someone just requested access to Empowered Vote.</p>
+               <p><strong>Email:</strong> ${parsed.data.email}</p>
+               <p><strong>Time:</strong> ${new Date().toISOString()}</p>
+               <p>Review in the <a href="https://accounts.empowered.vote/admin/access-requests">admin panel</a>.</p>`,
+      });
+    }
+
     res.status(201).json({ message: 'Access request submitted' });
   } catch (err) {
     console.error('[auth/request-access] error:', err);

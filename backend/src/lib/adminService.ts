@@ -845,6 +845,18 @@ export async function insertAccessRequest(email: string): Promise<void> {
   }
 }
 
+export async function listAccessRequests(): Promise<
+  { id: string; email: string; requested_at: string }[]
+> {
+  const { data, error } = await supabaseAdmin
+    .from('access_requests')
+    .select('id, email, requested_at')
+    .order('requested_at', { ascending: false });
+
+  if (error) throw new Error(error.message);
+  return data ?? [];
+}
+
 // ---------------------------------------------------------------------------
 // Account deletion
 // ---------------------------------------------------------------------------
