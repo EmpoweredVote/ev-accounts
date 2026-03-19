@@ -1,5 +1,31 @@
 # Project Milestones: Empowered Accounts
 
+## v1.5 Partner Integration & Referrals (Shipped: 2026-03-19)
+
+**Delivered:** Referral dashboard card with locked/waiting/active states, plus two canonical partner integration guides (CompassV2 and Essentials) that fully document auth, jurisdiction, and the Inform-baseline / Connected-enhanced access pattern.
+
+**Phases completed:** 31–33 (3 plans total)
+
+**Key accomplishments:**
+
+- Referral dashboard card — locked (level < 2), waiting (invitee < level 2), and active (code + one-click copy) states; all three driven entirely by `GET /api/referral`; `requireConnected` middleware ensures Inform-tier users never trigger the fetch
+- `docs/COMPASSV2-INTEGRATION.md` — 745-line ground-up integration guide: Auth Hub redirect flow, 16 endpoints with TypeScript shapes, tier access rules (Inform/Connected/Empowered), jurisdiction "never ask for address" as a first-class section, 8 inline anti-pattern blockquotes; `COMPASS_CONTRACT.md` hard-deleted
+- `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (no token / 401 / 200 with/without jurisdiction), "Inform is the unconditional baseline" framing, opt-in XP/gem awards as Connected enhancement, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples
+- Integration guide format established as project standard: 10-section structure (quick ref → context → auth → reads → writes → profile → jurisdiction → migration → errors → checklist) with anti-patterns inline at point of relevance
+
+**Stats:**
+
+- 25 files changed (+4,624 / -760 lines across docs and planning)
+- ~16,856 lines of TypeScript (no net TS growth — v1.5 was documentation + verification)
+- 3 phases, 3 plans, 16 requirements
+- 1 day (2026-03-19)
+
+**Git range:** `bf63b22` → `fc3b008`
+
+**What's next:** v1.6 — run `/gsd:new-milestone` to define scope (candidates: scoped roles system, VR admin dashboard, user-to-user compass compare, Essentials XP source provisioning)
+
+---
+
 ## v1.4 Profile Hub & Verification Engine (Shipped: 2026-03-17)
 
 **Delivered:** Full civic identity profile page for Alpha users — Verification Rating system with VQ integration, atomic VQ confirmation endpoint, CTC + VQ live smoke tests passed, and a Profile Hub UI showing tier/XP/gems/VR with feature hub cards.

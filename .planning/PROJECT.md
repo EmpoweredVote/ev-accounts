@@ -14,6 +14,8 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.4 shipped 2026-03-17.** Full civic identity profile page for Alpha users; Verification Rating system (VQ accuracy tracking, Red Gem Quest gating, 30-day hold enforcement); atomic `POST /api/vq/confirm-stance` with deadlock-safe RPCs; CTC + VQ integrations live-tested end-to-end; Profile Hub UI with feature cards, Civic Spaces jurisdiction display, and dark mode.
 
+**v1.5 shipped 2026-03-19.** Referral dashboard card (locked/waiting/active states driven by `GET /api/referral`); `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 reference replacing COMPASS_CONTRACT.md; `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration guide covering Inform-baseline / Connected-enhanced pattern with jurisdiction detection, XP/gem opt-in, and TIGER/Line GEOID formats.
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -64,21 +66,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + VQ integrations live-tested 2026-03-17 — CTC: XP +100, is_duplicate:false, replay confirmed; VQ: VR +3, Red Gem awarded, replayed:true on replay — v1.4
 - ✓ Profile Hub UI — full civic identity page: tier/level/XP/gems/VR; location address form → `POST /connect/set-location`; 6 feature hub cards; Civic Spaces jurisdiction pills; dark mode toggle; accessible at `accounts.empowered.vote/profile` — v1.4
 
-## Current Milestone: v1.5 Partner Integration & Referrals
-
-**Goal:** Ship referral code UI on the profile dashboard and write comprehensive integration guides for CompassV2 and Essentials so partner features can connect to accounts cleanly — with jurisdiction flowing automatically to Connected users, never asking for their address again.
-
-**Target features:**
-- Referral code dashboard card (locked/unlocked/waiting states)
-- CompassV2 integration guide (ground-up rewrite of COMPASS_CONTRACT.md)
-- Essentials integration guide (new — covers the Inform-accessible / Connected-enhanced pattern)
-
-### Active
+- ✓ Referral dashboard card — locked (level < 2), waiting (invitee < level 2), active (code + one-click copy); all three states driven by `GET /api/referral`; `requireConnected` middleware gates Inform-tier users — v1.5
+- ✓ `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 integration reference: Auth Hub redirect flow, 16 endpoints with TypeScript shapes, tier access rules, jurisdiction "never ask for address" (first-class Section 7), 8 inline anti-patterns; `COMPASS_CONTRACT.md` hard-deleted — v1.5
+- ✓ `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (inform / connected_with_jurisdiction / connected_no_jurisdiction), "Inform is the unconditional baseline" principle, opt-in XP/gem award endpoints, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples — v1.5
 
 ### Still Deferred
 
 - [ ] COMP-05: User-to-user compass compare (infrastructure in place; politician compare only in v1)
 - [ ] CIVIC-02: Gem reserve cap (deferred for Alpha per CONTEXT.md)
+- [ ] ROLES-01: Scoped roles system — replace flat `is_admin` with feature-scoped permissions
+- [ ] VR-F01: VR admin dashboard — visualize Verification Rating data across users
 
 ### Out of Scope
 
@@ -95,7 +92,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.4):** ~17,081 lines of TypeScript (backend/src + admin/src). 30 phases, 71 plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). All migrations 026–038 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. Verification Rating system live. CTC + VQ service keys configured; both integrations live-tested. CompassV2 backend API contract satisfied; CompassV2 frontend side pending in that repo.
+**Current state (v1.5):** ~16,856 lines of TypeScript (backend/src + admin/src + app/src). 33 phases, 36 plans total (76 plans across all phases). Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). App: Vite + React (profile.empowered.vote). All migrations 026–038 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. Verification Rating system live. CTC + VQ service keys configured; both integrations live-tested. CompassV2 integration guide complete (`docs/COMPASSV2-INTEGRATION.md`); Essentials integration guide complete (`docs/ESSENTIALS-INTEGRATION.md`). Pre-production: Essentials XP source and service key need provisioning before first live award.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -159,6 +156,12 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Per-user idempotency sub-key: main_key:uid | Prevents double-crediting when a user appears in multiple concurrent VQ confirmation calls sharing the same parent key. | ✓ Good — Phase 28; apply whenever a single idempotency key covers multiple rows |
 | Idempotency pre-check before lock acquisition | Cached replay result returned immediately before any advisory locks — cheapest possible path for duplicate calls. | ✓ Good — Phase 28; pattern to apply to all future idempotent RPCs |
 | Admin app dual-purpose (/admin/* + /profile, /login, /signup) | Profile Hub served from admin app for Alpha; Framer is production end-user frontend. Acceptable at pilot scale. | ⚠ Revisit — separate /profile to Framer or dedicated frontend for production |
+| Integration guide format: 10-section structure | Quick ref → context → auth → reads → writes → profile → jurisdiction → migration → errors → checklist. Established with COMPASSV2-INTEGRATION.md and ESSENTIALS-INTEGRATION.md. | ✓ Good — consistent structure across both guides; easy for AI/devs to navigate |
+| Anti-patterns inline at point of relevance | 8 blockquotes in CompassV2 guide placed at exact endpoint/pattern where mistake would occur — not consolidated at bottom. | ✓ Good — prevents AI from making the mistake at the point of the relevant implementation decision |
+| COMPASS_CONTRACT.md hard-deleted (no symlink) | Described wrong auth pattern (direct POST /auth/login). Replacement is structurally different; any pointer would cause confusion. | ✓ Good — clean break; one canonical reference |
+| Inform is the unconditional baseline for partner features | Partner apps must be fully functional for anonymous users; Connected enhances, never gates. Established in ESSENTIALS-INTEGRATION.md. | ✓ Good — correct platform philosophy enforced at documentation layer |
+| Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
+| Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
 
 ---
-*Last updated: 2026-03-17 after v1.4 milestone completion*
+*Last updated: 2026-03-19 after v1.5 milestone completion*

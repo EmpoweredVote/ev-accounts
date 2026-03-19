@@ -2,50 +2,43 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
+See: .planning/PROJECT.md (updated 2026-03-19 after v1.5 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.5 complete — Phase 33: Essentials Integration Guide shipped
+**Current focus:** Planning next milestone — run `/gsd:new-milestone`
 
 ## Current Position
 
-Phase: 33 of 33 (Essentials Integration Guide)
-Plan: 1 of 1 in current phase
-Status: Phase complete — v1.5 milestone complete
-Last activity: 2026-03-19 — Completed 33-01-PLAN.md (Essentials integration guide)
+Phase: Not started (v1.6 not yet planned)
+Plan: Not started
+Status: Ready to plan v1.6
+Last activity: 2026-03-19 — v1.5 milestone complete (Partner Integration & Referrals)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅] 33/33 phases shipped ██████████
-
-## Performance Metrics
-
-**v1.4 shipped:**
-- Plans: 7 (27-01 through 30-02)
-- Phases: 4 (Phase 27–30)
-- Timeline: 2 days (2026-03-15 → 2026-03-17)
-- 18/18 requirements satisfied
-
-**v1.5 shipped:**
-- Plans: 3/3 complete
-- Phases: 3/3 complete (Phase 31 quick task, Phase 32, Phase 33)
-- Integration guides: CompassV2 (docs/COMPASSV2-INTEGRATION.md) + Essentials (docs/ESSENTIALS-INTEGRATION.md)
 
 ## Accumulated Context
 
 ### Key Decisions
 
-Full key decisions log in PROJECT.md. All v1.4 decisions archived in milestones/v1.4-ROADMAP.md.
+Full key decisions log in PROJECT.md. All v1.5 decisions archived in milestones/v1.5-ROADMAP.md.
 
-v1.4 patterns established (apply going forward):
-- **No nested SECURITY DEFINER calls** — gem/XP writes must be done inline in RPCs, not via nested RPC calls
-- **Advisory locks: combined + sorted UUID order** — all affected users locked before any writes; prevents deadlocks
-- **Per-user idempotency sub-keys** — `main_key:uid` prevents double-writes in multi-user atomic RPCs
-- **Idempotency pre-check before locks** — check result cache before acquiring any advisory locks
-- **Server-side derived booleans** — compute `vq_hold_active`, `red_gem_quests_unlocked` on server; clients receive clean booleans
+v1.5 patterns established (apply going forward):
+- **Integration guide format** — 10-section structure (quick ref → context → auth → reads → writes → profile → jurisdiction → migration → errors → checklist)
+- **Anti-patterns inline** — place at point of relevance (not consolidated at bottom); AI/dev encounters the warning at the exact decision point
+- **Inform is the unconditional baseline** — partner features must work for anonymous users; Connected enhances, never gates
+- **Never prompt for location consent in partner apps** — accounts app owns consent exclusively; others read jurisdiction if present
 
 ### Open Blockers
 
-- **CompassV2 frontend** — Integration guide complete (`docs/COMPASSV2-INTEGRATION.md`, Phase 32). CompassV2 repo must implement its side using that guide. No remaining blocker on accounts side.
-- **Essentials frontend** — Integration guide complete (`docs/ESSENTIALS-INTEGRATION.md`, Phase 33). Essentials team needs XP source registered and service key provisioned before first award call.
+- **Essentials provisioning** — `essentials-rep-lookup` XP source not yet in `serviceKeyAuth.ts`; `GEMS_SERVICE_KEYS` env var provisioning needed before first Essentials production award. Flagged in guide.
+- **CompassV2 frontend** — integration guide complete (`docs/COMPASSV2-INTEGRATION.md`). CompassV2 repo must implement its side. No remaining blocker on accounts side.
+
+### v1.6 Candidates
+
+- ROLES-01: Scoped roles system — replace flat `is_admin` with feature-scoped permissions (Dev access, community admin, compass curator)
+- VR-F01: VR admin dashboard — visualize Verification Rating data across users
+- COMP-05: User-to-user compass compare — infrastructure in place, politician compare only in v1
+- Essentials XP source provisioning + GEMS_SERVICE_KEYS documentation fix
 
 ### Quick Tasks Completed
 
@@ -62,6 +55,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-19T18:08:19Z
-Stopped at: Completed 33-01-PLAN.md — Phase 33 Essentials integration guide complete. v1.5 milestone complete.
-Resume: Run `/gsd:new-milestone` to plan v1.6
+Last session: 2026-03-19
+Stopped at: v1.5 milestone archived. All 3 phases (31–33) complete.
+Resume: Run `/gsd:new-milestone` to define v1.6

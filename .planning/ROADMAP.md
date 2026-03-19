@@ -81,56 +81,16 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 </details>
 
-### 🚧 v1.5 Partner Integration & Referrals (In Progress)
+<details>
+<summary>✅ v1.5 Partner Integration & Referrals (Phases 31–33) — SHIPPED 2026-03-19</summary>
 
-**Milestone Goal:** Ship referral code UI on the profile dashboard and write comprehensive integration guides for CompassV2 and Essentials so partner features can connect cleanly — with jurisdiction flowing automatically to Connected users, never asking for their address again.
+- [x] Phase 31: Referral Dashboard Card (1/1 plan) — completed 2026-03-19
+- [x] Phase 32: CompassV2 Integration Guide (1/1 plan) — completed 2026-03-19
+- [x] Phase 33: Essentials Integration Guide (1/1 plan) — completed 2026-03-19
 
-#### Phase 31: Referral Dashboard Card
+Full details: `.planning/milestones/v1.5-ROADMAP.md`
 
-**Goal:** Connected users can see and use their referral code from the profile dashboard, with accurate locked/waiting/active states driven by the existing backend.
-**Depends on:** Phase 30 (Profile Hub UI exists; `GET /api/referral` backend already shipped)
-**Requirements:** REF-01, REF-02, REF-03, REF-04
-**Success Criteria** (what must be TRUE):
-  1. A Connected user at level 2+ sees their referral code on the dashboard with a one-click copy button that writes the code to the clipboard
-  2. A Connected user at level < 2 sees a locked referral card explaining the level 2 requirement — no code is visible
-  3. A Connected user whose invitee has not yet reached level 2 sees a distinct "waiting" state on the referral card
-  4. The card state is determined entirely by `GET /api/referral` — refreshing the page produces the correct state without client-side guessing
-**Plans:** 1 plan
-
-Plans:
-- [x] 31-01: Referral card component with locked/waiting/active states
-
-#### Phase 32: CompassV2 Integration Guide
-
-**Goal:** The CompassV2 team has a single, authoritative reference document covering auth, API endpoints, tier access, jurisdiction, and platform philosophy — replacing the outdated COMPASS_CONTRACT.md.
-**Depends on:** Nothing (documentation, no code dependency)
-**Requirements:** CDOC-01, CDOC-02, CDOC-03, CDOC-04, CDOC-05, CDOC-06
-**Success Criteria** (what must be TRUE):
-  1. A developer reading the guide can implement the full auth redirect flow (login/signup at accounts.empowered.vote → token back via hash fragment) without reading source code
-  2. Every compass API endpoint is documented with its URL, auth requirement, request shape, and response shape
-  3. The guide explains what anonymous/Inform users can do vs. what Connected users unlock — the degraded vs. enhanced experience is unambiguous
-  4. The guide explains how to read `jurisdiction` from `/api/account/me` and use it to personalize compass content without prompting for an address
-  5. `docs/COMPASS_CONTRACT.md` is replaced by `docs/COMPASSV2-INTEGRATION.md` as the canonical reference
-**Plans:** 1 plan
-
-Plans:
-- [x] 32-01: Write docs/COMPASSV2-INTEGRATION.md (ground-up rewrite of COMPASS_CONTRACT.md)
-
-#### Phase 33: Essentials Integration Guide
-
-**Goal:** The Essentials team has a reference document covering the Inform Pillar access pattern, the "never ask address again" jurisdiction principle, and how to surface Connected enhancements as opt-in — enabling correct anonymous and authenticated experiences in one guide.
-**Depends on:** Nothing (documentation, no code dependency; can run parallel to Phase 32)
-**Requirements:** EDOC-01, EDOC-02, EDOC-03, EDOC-04, EDOC-05, EDOC-06
-**Success Criteria** (what must be TRUE):
-  1. A developer reading the guide knows exactly when to show a local address input (null jurisdiction) vs. use the Connected user's jurisdiction silently (non-null jurisdiction) — with a concrete code pattern
-  2. The guide defines both UX states — anonymous/Inform (local address, no persistence) and Connected (automatic jurisdiction) — and specifies the transition between them
-  3. The guide covers how to detect a Connected user without requiring auth, and how to surface a "connect your account" prompt for persistence
-  4. All jurisdiction field names and their canonical string formats are listed with real examples from production data
-  5. The guide specifies how Essentials can offer Connected enhancements (XP, gem awards, persistence) as opt-in on top of the anonymous experience
-**Plans:** 1 plan
-
-Plans:
-- [x] 33-01: Write docs/ESSENTIALS-INTEGRATION.md (new file)
+</details>
 
 ## Progress
 
