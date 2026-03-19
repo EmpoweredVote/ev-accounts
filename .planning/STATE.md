@@ -5,43 +5,29 @@
 See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.5 — Planning next milestone
+**Current focus:** v1.5 — Phase 31: Referral Dashboard Card
 
 ## Current Position
 
-Phase: Not started
-Plan: Not started
-Status: Ready to plan v1.5
-Last activity: 2026-03-18 - Completed quick task 006: Configure /app for Render static site deploy (profile.empowered.vote)
+Phase: 31 of 33 (Referral Dashboard Card)
+Plan: 0 of 1 in current phase
+Status: Ready to plan
+Last activity: 2026-03-19 — v1.5 roadmap created (Phases 31–33)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅] All 30 phases shipped ██████████
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 🚧] 30/33 phases shipped ████████░░
 
 ## Performance Metrics
-
-**v1.0 shipped:**
-- Total plans: 18 plans, 8 phases, 4 days
-
-**v1.1 shipped:**
-- Plans: 5 (09-01, 09-02, 10-01, 10-02, 11-01)
-- Phases: 3 (Phase 9–11)
-- Timeline: 1 day (2026-03-04)
-
-**v1.2 shipped:**
-- Plans: 15 (12-01 through 16-01)
-- Phases: 5 (Phase 12–16)
-- Timeline: 2 days (2026-03-06 → 2026-03-07)
-
-**v1.3 shipped:**
-- Plans: 26 (17-01 through 26-01)
-- Phases: 10 (Phase 17–26)
-- Timeline: 8 days (2026-03-08 → 2026-03-15)
-- 33/33 requirements satisfied
 
 **v1.4 shipped:**
 - Plans: 7 (27-01 through 30-02)
 - Phases: 4 (Phase 27–30)
 - Timeline: 2 days (2026-03-15 → 2026-03-17)
 - 18/18 requirements satisfied
+
+**v1.5 in progress:**
+- Plans: 0/3 complete
+- Phases: 0/3 complete
+- Requirements: 0/16 satisfied
 
 ## Accumulated Context
 
@@ -58,7 +44,7 @@ v1.4 patterns established (apply going forward):
 
 ### Open Blockers
 
-- **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using `docs/COMPASS_CONTRACT.md`
+- **CompassV2 frontend** — Accounts side complete (Phase 18). CompassV2 repo must implement its side using the new `docs/COMPASSV2-INTEGRATION.md` (Phase 32 will produce this, replacing COMPASS_CONTRACT.md)
 
 ### Quick Tasks Completed
 
@@ -71,10 +57,10 @@ v1.4 patterns established (apply going forward):
 
 ### Pending Todos
 
-- **v1.5 milestone planning** — run `/gsd:new-milestone` to define v1.5
+None.
 
 ## Session Continuity
 
-Last session: 2026-03-18
-Stopped at: Completed quick task 006: render.yaml + app/.env.production for profile.empowered.vote deploy
-Resume: `/gsd:new-milestone` to define v1.5
+Last session: 2026-03-19
+Stopped at: v1.5 roadmap created — 3 phases, 3 plans, 16 requirements mapped
+Resume: `/gsd:plan-phase 31` to start Referral Dashboard Card

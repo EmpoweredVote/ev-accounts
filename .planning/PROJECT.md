@@ -64,9 +64,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + VQ integrations live-tested 2026-03-17 — CTC: XP +100, is_duplicate:false, replay confirmed; VQ: VR +3, Red Gem awarded, replayed:true on replay — v1.4
 - ✓ Profile Hub UI — full civic identity page: tier/level/XP/gems/VR; location address form → `POST /connect/set-location`; 6 feature hub cards; Civic Spaces jurisdiction pills; dark mode toggle; accessible at `accounts.empowered.vote/profile` — v1.4
 
-### Active
+## Current Milestone: v1.5 Partner Integration & Referrals
 
-<!-- v1.5 requirements — define via /gsd:new-milestone -->
+**Goal:** Ship referral code UI on the profile dashboard and write comprehensive integration guides for CompassV2 and Essentials so partner features can connect to accounts cleanly — with jurisdiction flowing automatically to Connected users, never asking for their address again.
+
+**Target features:**
+- Referral code dashboard card (locked/unlocked/waiting states)
+- CompassV2 integration guide (ground-up rewrite of COMPASS_CONTRACT.md)
+- Essentials integration guide (new — covers the Inform-accessible / Connected-enhanced pattern)
+
+### Active
 
 ### Still Deferred
 
