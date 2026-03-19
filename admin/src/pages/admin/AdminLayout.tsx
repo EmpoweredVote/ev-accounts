@@ -7,6 +7,7 @@ const navItems = [
   { label: 'Promotions', to: '/admin/promotions' },
   { label: 'Invites', to: '/admin/invites' },
   { label: 'Invite Tree', to: '/admin/invites/tree' },
+  { label: 'Access Requests', to: '/admin/access-requests' },
   { label: 'Cron Log', to: '/admin/cron-log' },
   { label: 'Roles', to: '/admin/roles' },
   { label: 'Topics', to: '/admin/topics' },

@@ -8,6 +8,7 @@ import { AccountsPage } from './pages/admin/AccountsPage';
 import { AccountDetailPage } from './pages/admin/AccountDetailPage';
 import { InvitesPage } from './pages/admin/InvitesPage';
 import { InviteTreePage } from './pages/admin/InviteTreePage';
+import { AccessRequestsPage } from './pages/admin/AccessRequestsPage';
 import { CronLogPage } from './pages/admin/CronLogPage';
 import { RolesPage } from './pages/admin/RolesPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
@@ -79,6 +80,7 @@ function App() {
           <Route path="invites" element={<InvitesPage />} />
           <Route path="invites/tree" element={<InviteTreePage />} />
           <Route path="invites/tree/:userId" element={<InviteTreePage />} />
+          <Route path="access-requests" element={<AccessRequestsPage />} />
           <Route path="cron-log" element={<CronLogPage />} />
           <Route path="roles" element={<RolesPage />} />
           <Route path="topics" element={<TopicsPage />} />
