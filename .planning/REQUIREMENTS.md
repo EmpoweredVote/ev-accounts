@@ -7,10 +7,10 @@
 
 ### Referral UI
 
-- [ ] **REF-01**: Connected user at level ≥ 2 sees their referral code on the profile dashboard with a one-click copy button
-- [ ] **REF-02**: Connected user at level < 2 sees a locked referral card explaining the level 2 requirement
-- [ ] **REF-03**: Connected user whose invitee has not yet reached level 2 sees a "waiting" state on the referral card
-- [ ] **REF-04**: Referral card reflects the current state accurately on every profile load (backend `GET /api/referral` drives all three states)
+- [x] **REF-01**: Connected user at level ≥ 2 sees their referral code on the profile dashboard with a one-click copy button
+- [x] **REF-02**: Connected user at level < 2 sees a locked referral card explaining the level 2 requirement
+- [x] **REF-03**: Connected user whose invitee has not yet reached level 2 sees a "waiting" state on the referral card
+- [x] **REF-04**: Referral card reflects the current state accurately on every profile load (backend `GET /api/referral` drives all three states)
 
 ### CompassV2 Integration Guide
 
