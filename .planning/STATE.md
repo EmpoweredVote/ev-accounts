@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-17 after v1.4 milestone completion)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.5 — Phase 32: CompassV2 Integration Guide
+**Current focus:** v1.5 complete — Phase 33: Essentials Integration Guide shipped
 
 ## Current Position
 
-Phase: 32 of 33 (CompassV2 Integration Guide)
+Phase: 33 of 33 (Essentials Integration Guide)
 Plan: 1 of 1 in current phase
-Status: Phase complete
-Last activity: 2026-03-19 — Completed 32-01-PLAN.md (CompassV2 integration guide)
+Status: Phase complete — v1.5 milestone complete
+Last activity: 2026-03-19 — Completed 33-01-PLAN.md (Essentials integration guide)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 🚧] 32/33 phases shipped █████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅] 33/33 phases shipped ██████████
 
 ## Performance Metrics
 
@@ -24,10 +24,10 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 🚧] 32/33 ph
 - Timeline: 2 days (2026-03-15 → 2026-03-17)
 - 18/18 requirements satisfied
 
-**v1.5 in progress:**
-- Plans: 1/3 complete
-- Phases: 1/3 complete
-- Requirements: 4/16 satisfied (REF-01 through REF-04)
+**v1.5 shipped:**
+- Plans: 3/3 complete
+- Phases: 3/3 complete (Phase 31 quick task, Phase 32, Phase 33)
+- Integration guides: CompassV2 (docs/COMPASSV2-INTEGRATION.md) + Essentials (docs/ESSENTIALS-INTEGRATION.md)
 
 ## Accumulated Context
 
@@ -45,6 +45,7 @@ v1.4 patterns established (apply going forward):
 ### Open Blockers
 
 - **CompassV2 frontend** — Integration guide complete (`docs/COMPASSV2-INTEGRATION.md`, Phase 32). CompassV2 repo must implement its side using that guide. No remaining blocker on accounts side.
+- **Essentials frontend** — Integration guide complete (`docs/ESSENTIALS-INTEGRATION.md`, Phase 33). Essentials team needs XP source registered and service key provisioned before first award call.
 
 ### Quick Tasks Completed
 
@@ -61,6 +62,6 @@ None.
 
 ## Session Continuity
 
-Last session: 2026-03-19
-Stopped at: Completed 32-01-PLAN.md — Phase 32 CompassV2 integration guide complete
-Resume: `/gsd:plan-phase 33` to start Phase 33 (final v1.5 phase)
+Last session: 2026-03-19T18:08:19Z
+Stopped at: Completed 33-01-PLAN.md — Phase 33 Essentials integration guide complete. v1.5 milestone complete.
+Resume: Run `/gsd:new-milestone` to plan v1.6
