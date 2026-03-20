@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 35 — Politician Deduplication
-Plan: Not started
-Status: Phase 34 complete — ready to plan Phase 35
-Last activity: 2026-03-20 — Phase 34 complete (RLS + 68 policies across all 6 schemas; verified 5/5)
+Plan: 01 of 2 complete
+Status: In progress — plan 01 complete
+Last activity: 2026-03-20 — Completed 35-01-PLAN.md (bridge table + FK migration + RPC rebuilds; inform.politicians dropped)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 34/43 phases shipped ███████░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 34/43 phases shipped (35 in progress) ███████░░░
 
 ## Accumulated Context
 
@@ -74,6 +74,16 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 35 Plan 01 Key Findings (from 35-01)
+
+- **inform.politicians had 30 records, not 4** — research underestimated scope; 588 answers + 500 context rows fully migrated
+- **empower.empowered_profiles undocumented FK** — `empowered_profiles_politician_id_fkey` referenced inform.politicians; all NULL values; reassigned to essentials
+- **4 unmatched politicians identity-inserted into essentials** — Karen Bass, Nanette Barragan, Tony Cardenas, Gilbert Cisneros (preserve 82 answers + ~60 context rows)
+- **Alex Padilla has 3 duplicate records in essentials** — selected UUID `2717ff94` (has office_id set); duplicates remain in essentials (EV-Backend data quality issue)
+- **admin_list_politicians return shape changed** — removed inform-specific columns; now returns essentials-native fields (is_incumbent, party, party_short_name, slug, bio_text)
+- **scripts/seedPoliticians.ts needs update** — still targets inform.politicians, will error on next run
+- **FK drop ordering** — must drop FK constraints BEFORE UPDATE when reassigning to different parent table
+
 ### Phase 34 Complete (from 34-02)
 
 - **RLS now enabled on all 69 tables across 6 schemas** — 62 policies applied in plan 02, 6 policies in plan 03
@@ -85,5 +95,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 34-02-PLAN.md (RLS + policies for essentials/meetings/treasury/transparent_motivations/compass)
-Resume: Run `/gsd:plan-phase 35` to plan Politician Deduplication
+Stopped at: Completed 35-01-PLAN.md (bridge table + FK migration + RPC rebuilds; inform.politicians dropped)
+Resume: Run plan 35-02 (adminSetPoliticianContext PostgREST fix + seedPoliticians update)
