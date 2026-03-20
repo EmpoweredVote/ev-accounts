@@ -202,11 +202,11 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 38-01-PLAN.md — Schema investigation + Census Geocoder rewrite + env.ts update
-- [ ] 38-02-PLAN.md — Address-search endpoint + politicians list Go-parity rewrite
-- [ ] 38-03-PLAN.md — Politician detail endpoint (GET /politicians/:id)
-- [ ] 38-04-PLAN.md — Legislative subroutes (legislative, committees, bills, votes)
-- [ ] 38-05-PLAN.md — Entity routes (governments, chambers, districts) + index.ts registration
+- [x] 38-01-PLAN.md — Schema investigation + Census Geocoder rewrite + env.ts update
+- [x] 38-02-PLAN.md — Address-search endpoint + politicians list Go-parity rewrite
+- [x] 38-03-PLAN.md — Politician detail endpoint (GET /politicians/:id)
+- [x] 38-04-PLAN.md — Legislative subroutes (legislative, committees, bills, votes)
+- [x] 38-05-PLAN.md — Entity routes (governments, chambers, districts) + index.ts registration
 
 **Success Criteria:**
 
@@ -224,6 +224,13 @@ Plans:
 **Dependencies:** Phase 35 (unified politician IDs required for compare and batch politician answers)
 
 **Requirements:** CONS-12, CONS-13
+
+**Plans:** 3 plans
+
+Plans:
+- [ ] 39-01-PLAN.md — Database migration: value range, verdicts table, updated RPCs
+- [ ] 39-02-PLAN.md — Public routes: compare, verdicts, batch politician answers
+- [ ] 39-03-PLAN.md — Admin compass routes at Go-compatible /api/compass/* paths
 
 **Success Criteria:**
 
@@ -344,7 +351,7 @@ Plans:
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
-| 39. Compass Additions | v1.6 | 0/? | Pending | — |
+| 39. Compass Additions | v1.6 | 0/3 | Planned | — |
 | 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
 | 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
