@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 37: Express Ports Wave 2 — Staging
+**Current focus:** v1.6 Platform Consolidation — Phase 38: Express Ports Wave 3 — Essentials
 
 ## Current Position
 

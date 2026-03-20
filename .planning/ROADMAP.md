@@ -178,10 +178,10 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 37-01-PLAN.md — Migrations (staging_reviewer role + status defaults) + requireStagingReviewer middleware
-- [ ] 37-02-PLAN.md — Staging service: politician CRUD, review, lock, merge, auto-promotion
-- [ ] 37-03-PLAN.md — Staging service: stance + building photo CRUD, review, auto-promotion
-- [ ] 37-04-PLAN.md — Staging routes (18 handlers) + index.ts registration + smoke tests
+- [x] 37-01-PLAN.md — Migrations (staging_reviewer role + status defaults) + requireStagingReviewer middleware
+- [x] 37-02-PLAN.md — Staging service: politician CRUD, review, lock, merge, auto-promotion
+- [x] 37-03-PLAN.md — Staging service: stance + building photo CRUD, review, auto-promotion
+- [x] 37-04-PLAN.md — Staging routes (18 handlers) + index.ts registration + smoke tests
 
 **Success Criteria:**
 
@@ -333,7 +333,7 @@ Plans:
 | 34. Database Schema Migration | v1.6 | 3/3 | Complete | 2026-03-20 |
 | 35. Politician Deduplication | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 2/2 | Complete | 2026-03-20 |
-| 37. Express Ports Wave 2 — Staging | v1.6 | 0/4 | Planned | — |
+| 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 0/? | Pending | — |
 | 39. Compass Additions | v1.6 | 0/? | Pending | — |
 | 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
