@@ -249,6 +249,15 @@ Plans:
 
 **Requirements:** CONS-14, CONS-15, CONS-16, CONS-17
 
+**Plans:** 5 plans
+
+Plans:
+- [ ] 40-01-PLAN.md — Auth Hub redirect-after-login + re-auth banner
+- [ ] 40-02-PLAN.md — CompassV2 Bearer token migration (20+ files)
+- [ ] 40-03-PLAN.md — Essentials Bearer token migration + Sign In link
+- [ ] 40-04-PLAN.md — Read & Rank Bearer token migration + Treasury Tracker proxy update
+- [ ] 40-05-PLAN.md — Cutover runbook (three-party coordination)
+
 **Success Criteria:**
 
 1. CompassV2 completes a full user session (login → calibration → compare) using `Authorization: Bearer` headers against the ev-accounts API URL with no cookie dependency.
@@ -352,7 +361,7 @@ Plans:
 | 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
 | 39. Compass Additions | v1.6 | 3/3 | Complete | 2026-03-20 |
-| 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
+| 40. Frontend Auth Updates | v1.6 | 0/5 | Planned | — |
 | 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
