@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 34 — Database Schema Migration
-Plan: 03 of 03 complete (34-02 still pending — run `/gsd:execute-phase 34 02`)
-Status: In progress
-Last activity: 2026-03-20 — Completed 34-03-PLAN.md (staging RLS migration)
+Plan: 03 of 03 complete
+Status: Phase complete
+Last activity: 2026-03-20 — Completed 34-02-PLAN.md (RLS + 62 policies for 5 schemas)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 33/43 phases shipped ███████░░░
 
@@ -74,14 +74,16 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
-### Phase 34 Key Findings (from 34-03)
+### Phase 34 Complete (from 34-02)
 
-- **Staging RLS complete** — all 6 staging tables protected (authenticated-only), 0 anon grants confirmed
-- **Management API pattern** — Supabase management API (`/v1/projects/{ref}/database/query`) works for migrations when CLI pooler times out; use this pattern for remaining migrations
-- **Plan 02 pending** — 62 tables across essentials/meetings/treasury/transparent_motivations/compass still need RLS; migration files 44-48 exist but not yet applied
+- **RLS now enabled on all 69 tables across 6 schemas** — 62 policies applied in plan 02, 6 policies in plan 03
+- **Policy breakdown:** 51 public-read, 8 authenticated-read, 4 owner-read (compass) + 6 authenticated-read (staging)
+- **`supabase db query --linked --file`** — reliable migration method from local Windows environment (avoids pooler IPv4 timeout)
+- **compass.user_id TEXT cast pattern** — `user_id::uuid = (select auth.uid())` confirmed in production
+- **Phase 35 unblocked** — all RLS prerequisites complete; Politician Deduplication can proceed
 
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 34-03-PLAN.md (staging RLS — 6 tables, authenticated-only, verified)
-Resume: Run `/gsd:execute-phase 34 02` to apply public-read RLS to essentials/meetings/treasury/transparent_motivations/compass (62 tables)
+Stopped at: Completed 34-02-PLAN.md (RLS + policies for essentials/meetings/treasury/transparent_motivations/compass)
+Resume: Run `/gsd:execute-phase 35` to begin Politician Deduplication
