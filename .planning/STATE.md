@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 37 — Express Ports Wave 2 (Staging) — In progress
-Plan: 03 of 4 complete
-Status: In progress
-Last activity: 2026-03-20 — Completed 37-03-PLAN.md (Staging service — stance CRUD/review/lock + building photo CRUD/review)
+Phase: 37 — Express Ports Wave 2 (Staging) — Complete
+Plan: 4 of 4 complete
+Status: Phase 37 complete — ready for Phase 38
+Last activity: 2026-03-20 — Completed 37-04-PLAN.md (Staging routes — 19 handlers, CONS-10 fulfilled)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 in progress) █████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
 
 ## Accumulated Context
 
@@ -73,6 +73,15 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 37 Complete (37-01 through 37-04)
+
+- **CONS-10 fulfilled** — all staging routes (politicians, stances, building photos) operational in ev-accounts Express API
+- **19 route handlers** in `backend/src/routes/staging.ts` — 8 politicians, 7 stances, 4 photos
+- **Router-level blanket auth** — `router.use(requireAuth, requireStagingReviewer)` covers all routes
+- **Subpath route ordering** — /:id/review, /:id/lock, /:id/merge defined before /:id for all entity types
+- **No lock routes for photos** — `staging.building_photos` has no locked_by/locked_at columns
+- **Phase 38 (Express Ports Wave 3 — Essentials) unblocked**
 
 ### Phase 37 Plan 03 Complete (37-03)
 
@@ -146,5 +155,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 37 Plan 03 complete — staging service stance + building photo functions (3052b4b)
-Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plan 04
+Stopped at: Phase 37 complete — all 4 plans done, CONS-10 fulfilled (e81b119)
+Resume: Run `/gsd:execute-phase 38` to start Phase 38 (Express Ports Wave 3 — Essentials)
