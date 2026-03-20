@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 34 — Database Schema Migration
-Plan: 01 of 03 complete
+Plan: 03 of 03 complete (34-02 still pending — run `/gsd:execute-phase 34 02`)
 Status: In progress
-Last activity: 2026-03-20 — Completed 34-01-PLAN.md (schema inventory)
+Last activity: 2026-03-20 — Completed 34-03-PLAN.md (staging RLS migration)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 33/43 phases shipped ███████░░░
 
@@ -29,6 +29,7 @@ v1.6 constraints and decisions to carry forward:
 - **Two-pass validation in admin RPCs** — validate all inputs before any writes; established v1.2
 - **RLS is primary defense** — EV-Backend tables currently have no RLS; adding RLS is required for every migrated table before any endpoints go live
 - **Data import pipelines are out of scope** — Congress.gov, LegiScan, OpenStates are not ev-accounts' responsibility
+- **Supabase management API for migrations** — Use `POST https://api.supabase.com/v1/projects/{ref}/database/query` with access token from MCP config when CLI pooler times out; returns 201 on DDL success
 
 ### Open Blockers
 
@@ -73,8 +74,14 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 34 Key Findings (from 34-03)
+
+- **Staging RLS complete** — all 6 staging tables protected (authenticated-only), 0 anon grants confirmed
+- **Management API pattern** — Supabase management API (`/v1/projects/{ref}/database/query`) works for migrations when CLI pooler times out; use this pattern for remaining migrations
+- **Plan 02 pending** — 62 tables across essentials/meetings/treasury/transparent_motivations/compass still need RLS; migration files 44-48 exist but not yet applied
+
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 34-01-PLAN.md (schema inventory — 69 tables, 6 schemas enumerated)
-Resume: Run `/gsd:execute-phase 34 02` to execute public-read GRANTs + RLS migration
+Stopped at: Completed 34-03-PLAN.md (staging RLS — 6 tables, authenticated-only, verified)
+Resume: Run `/gsd:execute-phase 34 02` to apply public-read RLS to essentials/meetings/treasury/transparent_motivations/compass (62 tables)
