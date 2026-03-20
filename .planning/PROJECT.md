@@ -72,10 +72,22 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 ### Active (v1.6)
 
-- [ ] ROLES-01: Scoped roles system — replace flat `is_admin` with feature × geography permission model; feature dimensions: CTC Dev, Quest Dev, Essentials Dev, Compass Dev, Admin; geographic dimension: optional `jurisdiction_geoid` (null = national, set = geo-restricted e.g. Monroe County)
-- [ ] VR-F01: VR admin dashboard — visualize Verification Rating distribution, users on hold, outliers across all accounts
-- [ ] COMP-05: User-to-user compass compare API — backend endpoint comparing two accounts' responses on shared topics; powers CompassV2 and Essentials (compass overlap as primary view for elected officials)
-- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — add `essentials-rep-lookup` to `serviceKeyAuth.ts` + `GEMS_SERVICE_KEYS` env var doc fix
+- [ ] CONS-01: Database migration — create `essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia` schemas in ev-accounts; import 52 tables from EV-Backend with RLS on all migrated tables
+- [ ] CONS-02: Politician deduplication — build `public.politician_id_bridge` mapping table; migrate `inform.politicians` references to `essentials.politicians`; drop `inform.politicians`
+- [ ] CONS-03: Port Go endpoints to Express — Treasury (~5), Meetings (~8), Staging (~15), Essentials core (~25); data import pipelines out of scope
+- [ ] CONS-04: Compass additions — port ~11 missing endpoints (compare, verdicts, admin CRUD, batch answers); fix value range CHECK constraint 1–5 → 0.5–5.5
+- [ ] CONS-05: Frontend auth updates — CompassV2, Essentials, Read & Rank switch from cookie auth to Bearer tokens; update API URLs
+- [ ] CONS-06: VQ + Trivia database migration — import schemas; update DATABASE_URL on Render; add RLS; update politician foreign keys
+- [ ] CONS-07: Retire EV-Backend — verify zero traffic; scale to zero; archive Go repo
+- [ ] CONS-08: DNS cutover — `api.empowered.vote` → ev-accounts Express server; update CORS + frontend env vars
+- [ ] CONS-09: Updated integration doc for Chris Andrews' team — document all changes made to accommodate consolidation
+
+### Deferred to v1.7
+
+- [ ] ROLES-01: Scoped roles system — feature × geography permission model (CTC Dev, Quest Dev, Essentials Dev, Compass Dev + jurisdiction_geoid)
+- [ ] VR-F01: VR admin dashboard — visualize Verification Rating distribution, holds, outliers
+- [ ] COMP-05: User-to-user compass compare API — endpoint comparing two accounts' responses on shared topics
+- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — `essentials-rep-lookup` in `serviceKeyAuth.ts` + env doc fix
 
 ### Still Deferred
 
@@ -167,15 +179,19 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
 | Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
 
-## Current Milestone: v1.6 Civic Identity & Roles
+## Current Milestone: v1.6 Platform Consolidation
 
-**Goal:** Replace flat admin flag with feature-scoped + geo-scoped roles, expose compass comparison as a core API capability, and add admin visibility into the Verification Rating system.
+**Goal:** Merge all Empowered Vote backend services (EV-Backend Go server, Validation Quests DB, Civic Trivia DB) into ev-accounts as the single database, single API server, and single auth system. Produce updated integration docs for Chris Andrews' team.
 
 **Target features:**
-- Feature × geography scoped roles (CTC Dev, Quest Dev, Essentials Dev, Compass Dev + jurisdiction_geoid)
-- Compass compare API (user-to-user and user-to-politician overlap endpoint)
-- VR admin dashboard (distribution, holds, outliers)
-- Essentials XP source provisioning (quick fix)
+- Database migration: 52 tables from EV-Backend into ev-accounts (essentials, staging, treasury, meetings, validation_quests, trivia schemas) with RLS
+- Politician deduplication: unified `essentials.politicians` as single source of truth
+- Port all Go endpoints to Express (Treasury, Meetings, Staging, Essentials core, missing Compass endpoints)
+- Frontend auth updates: CompassV2, Essentials, Read & Rank switch to Bearer tokens
+- Retire EV-Backend Go server and DNS cutover
+- Updated integration doc for Chris Andrews' team
+
+**Out of scope for v1.6:** Data import pipelines (Congress.gov, LegiScan, OpenStates) — not our responsibility. Geocoding stays Census Geocoder (Chris Andrews investigating Google Maps separately).
 
 ---
 *Last updated: 2026-03-19 after v1.6 milestone started*

@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.5 milestone completion)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Not started (defining requirements for Platform Consolidation)
 Plan: —
-Status: Defining requirements for v1.6
-Last activity: 2026-03-19 — Milestone v1.6 started
+Status: Defining requirements for v1.6 Platform Consolidation
+Last activity: 2026-03-19 — v1.6 milestone pivoted to Platform Consolidation
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅] 33/33 phases shipped ██████████
 
