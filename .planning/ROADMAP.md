@@ -8,6 +8,7 @@
 - ✅ **v1.3 Alpha Launch & Location Infrastructure** — Phases 17–26 (shipped 2026-03-15)
 - ✅ **v1.4 Profile Hub & Verification Engine** — Phases 27–30 (shipped 2026-03-17)
 - ✅ **v1.5 Partner Integration & Referrals** — Phases 31–33 (shipped 2026-03-19)
+- 🔄 **v1.6 Platform Consolidation** — Phases 34–43 (in progress)
 
 ## Phases
 
@@ -92,6 +93,179 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 
 </details>
 
+### v1.6 Platform Consolidation (Phases 34–43)
+
+---
+
+#### Phase 34: Database Schema Migration
+
+**Goal:** The ev-accounts Supabase project contains all EV-Backend tables with RLS enforced and grants correctly scoped — no application code changes yet, just schema parity.
+
+**Dependencies:** None (pre-flight work; all subsequent phases depend on this)
+
+**Requirements:** CONS-01, CONS-02, CONS-03, CONS-04
+
+**Success Criteria:**
+
+1. All six schemas (`essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia`) exist in the ev-accounts Supabase project and are visible in the dashboard.
+2. Row counts in ev-accounts match row counts in EV-Backend for every imported table (52 tables verified).
+3. `SELECT * FROM pg_policies WHERE schemaname IN ('essentials','staging','treasury','meetings','validation_quests','trivia')` returns at least one policy per table — zero unprotected tables.
+4. Service role and anon role GRANT statements are applied; a request authenticated as anon cannot read rows that require auth on any migrated table.
+
+---
+
+#### Phase 35: Politician Deduplication
+
+**Goal:** `essentials.politicians` is the single source of truth for all politician records — compass answers, context, and VQ confirmation all reference the unified ID space with no data loss.
+
+**Dependencies:** Phase 34 (essentials schema must exist and be populated)
+
+**Requirements:** CONS-05, CONS-06, CONS-07
+
+**Success Criteria:**
+
+1. `public.politician_id_bridge` exists and contains one row per politician, mapping both the former `inform` ID and the `essentials` ID.
+2. `GET /api/compass/politicians/:id/answers` returns correct stances after the FK migration — results match the pre-migration baseline.
+3. `\dt inform.*` in psql returns no `politicians` table; all join paths through `inform.politician_answers` and `inform.politician_context` resolve against `essentials.politicians`.
+4. The VQ confirmation RPC (`confirm_vq_stance`) completes without FK violation errors when called with valid `essentials.politicians` IDs.
+
+---
+
+#### Phase 36: Express Ports Wave 1 — Treasury and Meetings
+
+**Goal:** Treasury and Meetings data is served by the ev-accounts Express API — the Go server is no longer the authoritative source for these routes.
+
+**Dependencies:** Phase 34 (schemas and data must be in ev-accounts)
+
+**Requirements:** CONS-08, CONS-09
+
+**Success Criteria:**
+
+1. All Treasury endpoints (~5 routes) return responses with the same shape as the Go equivalents when called against ev-accounts.
+2. All Meetings endpoints (~8 routes) return correct data for public reads; admin write routes reject requests without a valid admin JWT.
+3. A curl smoke test hitting each new route on the Render staging deployment returns HTTP 200 (or 201/204 where appropriate) with no 500 errors.
+4. No Treasury or Meetings route requires the Go server to be running — ev-accounts handles all requests end-to-end.
+
+---
+
+#### Phase 37: Express Ports Wave 2 — Staging
+
+**Goal:** The Staging review workflow runs entirely on ev-accounts — role-gated submission, review, and approval routes are operational and enforce the same access rules as the Go server.
+
+**Dependencies:** Phase 34 (staging schema must exist); Phase 36 (establishes endpoint port pattern)
+
+**Requirements:** CONS-10
+
+**Success Criteria:**
+
+1. All Staging endpoints (~15 routes) respond correctly; role-gated routes return 403 for requests without the required role claim.
+2. A complete submission-to-approval flow can be executed end-to-end via the ev-accounts API with no Go server involvement.
+3. The review workflow state machine (submit → review → approve/reject) transitions correctly and is reflected in database state after each step.
+
+---
+
+#### Phase 38: Express Ports Wave 3 — Essentials
+
+**Goal:** Essentials address-to-politician lookup and all supporting routes are served by ev-accounts — including PostGIS-backed jurisdiction resolution using Census Geocoder — matching the Go server's public contract.
+
+**Dependencies:** Phase 34 (essentials schema); Phase 35 (unified politician IDs); Phase 36/37 (endpoint port pattern established)
+
+**Requirements:** CONS-11
+
+**Success Criteria:**
+
+1. All Essentials core endpoints (~25 routes) respond with the same shape as Go equivalents.
+2. The address-to-politician lookup flow — Census Geocoder → PostGIS boundary match → politician list — returns correct results for a known Indiana address.
+3. Unauthenticated requests receive Inform-baseline responses; Connected users with jurisdiction receive enhanced responses — consistent with the ESSENTIALS-INTEGRATION.md contract.
+4. `GET /api/essentials/politicians` returns all fields including the 9 `empowered_profiles` politician schema columns added in v1.3.
+
+---
+
+#### Phase 39: Compass Additions
+
+**Goal:** The full compass feature set is complete — missing endpoints are implemented, the value range supports decimal stances, and CompassV2 can use every compass capability without hitting the Go server.
+
+**Dependencies:** Phase 35 (unified politician IDs required for compare and batch politician answers)
+
+**Requirements:** CONS-12, CONS-13
+
+**Success Criteria:**
+
+1. All missing compass endpoints are reachable: compare, verdicts, admin CRUD, and batch politician answers — each returns well-formed responses.
+2. A compass response with `value = 0.5` and a response with `value = 5.5` both insert successfully; values outside the new range are rejected by the CHECK constraint.
+3. Existing compass responses with integer values 1–5 remain valid after the constraint migration (no data loss).
+4. The CompassV2 integration guide checklist passes end-to-end with no Go server dependency remaining for compass routes.
+
+---
+
+#### Phase 40: Frontend Auth Updates
+
+**Goal:** All four frontend apps authenticate against ev-accounts using Bearer tokens and correct API URLs — cookie-based auth to the Go server is fully replaced.
+
+**Dependencies:** Phase 36, Phase 37, Phase 38, Phase 39 (all endpoint ports must be complete before frontends switch targets)
+
+**Requirements:** CONS-14, CONS-15, CONS-16, CONS-17
+
+**Success Criteria:**
+
+1. CompassV2 completes a full user session (login → calibration → compare) using `Authorization: Bearer` headers against the ev-accounts API URL with no cookie dependency.
+2. Essentials app completes a full Inform-to-Connected flow using Bearer token auth against ev-accounts.
+3. Read & Rank authenticates via Bearer token and all existing features function correctly.
+4. Treasury Tracker loads public treasury data from the ev-accounts API URL; no requests reach the Go server's API URL.
+
+---
+
+#### Phase 41: VQ and Trivia Migration
+
+**Goal:** Validation Quests and Civic Trivia databases are fully consolidated into ev-accounts — both apps point to the ev-accounts Supabase project and all FK references resolve against unified politician IDs.
+
+**Dependencies:** Phase 34 (schemas exist); Phase 35 (essentials.politicians as FK target)
+
+**Requirements:** CONS-18, CONS-19
+
+**Success Criteria:**
+
+1. `validation_quests` schema exists in ev-accounts with all imported tables; VQ's Render service `DATABASE_URL` points to ev-accounts and the VQ app connects successfully on startup.
+2. `trivia` schema exists in ev-accounts; trivia politician foreign keys resolve against `essentials.politicians` with no FK violation errors.
+3. A VQ confirmation flow (`POST /api/vq/confirm-stance`) completes successfully end-to-end after the migration with correct VR adjustments and gem awards.
+4. RLS is active on all `validation_quests` and `trivia` tables; a smoke test confirms unauthenticated requests cannot access user-specific rows.
+
+---
+
+#### Phase 42: Decommission and DNS Cutover
+
+**Goal:** EV-Backend is retired and `api.empowered.vote` resolves to the ev-accounts Express server — there is exactly one API for the entire Empowered Vote platform.
+
+**Dependencies:** Phase 36, Phase 37, Phase 38, Phase 39, Phase 40, Phase 41 (all endpoints ported; all frontends updated; VQ/Trivia migrated)
+
+**Requirements:** CONS-20, CONS-21, CONS-22
+
+**Success Criteria:**
+
+1. Go server request logs show zero traffic over a 24-hour monitoring window before cutover is initiated.
+2. EV-Backend is scaled to zero on Render and the Go repo is archived on GitHub; the Go server does not respond to HTTP requests.
+3. `api.empowered.vote` resolves to the ev-accounts server; `curl https://api.empowered.vote/api/health` returns `{"status":"ok"}` from the Express handler.
+4. CORS headers on ev-accounts allow all production frontend origins; frontend env vars across all four apps point to `api.empowered.vote` with no lingering Go server URLs.
+
+---
+
+#### Phase 43: Integration Documentation
+
+**Goal:** Chris Andrews' team has a single updated integration reference that accurately describes every API change made during the consolidation — auth model, unified politician IDs, new schemas, value range fix, and endpoint inventory.
+
+**Dependencies:** Phase 42 (documentation reflects final state — only written after all changes are shipped)
+
+**Requirements:** CONS-23
+
+**Success Criteria:**
+
+1. The integration doc covers all four fronts of change: auth model (Bearer token only), unified `essentials.politicians` ID format with bridge table note, compass value range (0.5–5.5), and new schema inventory (essentials, staging, treasury, meetings, validation_quests, trivia).
+2. Each new or changed endpoint is listed with its method, path, auth requirement, and example request/response shape.
+3. Anti-patterns from the migration are documented inline at the relevant section (e.g., "do not use the old Go server URL", "do not pass inform.politicians IDs — use essentials.politicians IDs").
+4. A human reading only this doc can update a partner integration from Go-server state to ev-accounts state without needing to read source code.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -129,3 +303,13 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
+| 34. Database Schema Migration | v1.6 | 0/? | Pending | — |
+| 35. Politician Deduplication | v1.6 | 0/? | Pending | — |
+| 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/? | Pending | — |
+| 37. Express Ports Wave 2 — Staging | v1.6 | 0/? | Pending | — |
+| 38. Express Ports Wave 3 — Essentials | v1.6 | 0/? | Pending | — |
+| 39. Compass Additions | v1.6 | 0/? | Pending | — |
+| 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
+| 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
+| 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
+| 43. Integration Documentation | v1.6 | 0/? | Pending | — |
