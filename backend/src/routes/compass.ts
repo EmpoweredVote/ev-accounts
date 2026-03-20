@@ -14,6 +14,9 @@ import {
   validateTopicIds,
   saveSelectedTopics,
   resetCompassAnswers,
+  compareWithPoliticians,
+  getUserVerdicts,
+  getBatchPoliticianAnswers,
 } from '../lib/compassService.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
@@ -60,6 +63,25 @@ const postAnswerSchema = z.object({
 
 const putSelectedTopicsSchema = z.object({
   topic_ids: z.array(z.string().uuid()).min(0).max(50),
+});
+
+const compareSchema = z.object({
+  politician_ids: z.array(z.string().uuid()).min(1).max(50),
+});
+
+const batchPoliticianAnswersSchema = z.object({
+  topic_ids: z.array(z.string().uuid()).min(1).max(100),
+});
+
+const postVerdictsSchema = z.object({
+  verdicts: z.array(
+    z.object({
+      quote_id: z.string().uuid(),
+      supported: z.boolean(),
+      rank: z.number().int().min(1).nullable(),
+      session_size: z.number().int().min(1),
+    })
+  ).min(1).max(200),
 });
 
 const VALID_ROLE_SCOPES = ['city_council', 'state_legislature', 'us_congress', 'president'] as const;
@@ -294,6 +316,105 @@ router.get('/progress', requireAuth, async (req: Request, res: Response): Promis
 });
 
 // ---------------------------------------------------------------------------
+// POST /api/compass/compare
+// Auth: required
+// Computes proximity-based alignment scores between the calling user and one
+// or more politicians. Only topics where BOTH user and politician have answers
+// are included. Body: { politician_ids: string[] } (1-50 UUIDs).
+// Returns: { politicians: CompareResult[] }
+// ---------------------------------------------------------------------------
+
+router.post('/compare', requireAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = compareSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  try {
+    const politicians = await compareWithPoliticians(authReq.userId, parsed.data.politician_ids);
+    res.status(200).json({ politicians });
+  } catch (err) {
+    console.error('[POST /compass/compare] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/verdicts
+// Auth: required
+// Returns the calling user's compass verdicts (Read & Rank judgments).
+// Optional query param: ?politician_id=<uuid> — filters to quotes by that politician.
+// ---------------------------------------------------------------------------
+
+router.get('/verdicts', requireAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+
+  let politicianId: string | undefined;
+  if (typeof req.query.politician_id === 'string') {
+    if (!UUID_REGEX.test(req.query.politician_id)) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: 'Invalid politician_id format',
+      });
+      return;
+    }
+    politicianId = req.query.politician_id;
+  }
+
+  try {
+    const verdicts = await getUserVerdicts(authReq.userId, politicianId);
+    res.status(200).json(verdicts);
+  } catch (err) {
+    console.error('[GET /compass/verdicts] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/compass/verdicts
+// Auth: required
+// Atomically upserts a batch of verdicts for the calling user.
+// Body: { verdicts: [{ quote_id, supported, rank, session_size }] } (1-200 items).
+// Delegates to the upsert_compass_verdicts SECURITY DEFINER RPC for atomicity.
+// Returns: { upserted: number }
+// ---------------------------------------------------------------------------
+
+router.post('/verdicts', requireAuth, async (req: Request, res: Response): Promise<void> => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = postVerdictsSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  try {
+    const { error } = await adminRpc('upsert_compass_verdicts', {
+      p_user_id: authReq.userId,
+      p_verdicts: JSON.stringify(parsed.data.verdicts),
+    });
+
+    if (error) {
+      throw new Error(error.message);
+    }
+
+    res.status(200).json({ upserted: parsed.data.verdicts.length });
+  } catch (err) {
+    console.error('[POST /compass/verdicts] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // GET /api/compass/politicians
 // Auth: optional — works unauthenticated
 // Returns all active politicians ordered by name.
@@ -308,6 +429,48 @@ router.get('/politicians', optionalAuth, async (req: Request, res: Response): Pr
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
+
+// ---------------------------------------------------------------------------
+// POST /api/compass/politicians/:id/answers/batch
+// Auth: optional — unauthenticated returns 200 []
+// Returns a politician's answers filtered to the supplied list of topic IDs.
+// Efficient for fetching only the topics the client cares about.
+// Body: { topic_ids: string[] } (1-100 UUIDs).
+// IMPORTANT: must be registered BEFORE /politicians/:id/answers to prevent
+// Express from capturing "batch" as the :id param segment.
+// ---------------------------------------------------------------------------
+
+router.post(
+  '/politicians/:id/answers/batch',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const authReq = req as AuthenticatedRequest;
+    if (!authReq.userId) { res.status(200).json([]); return; }
+
+    const politicianId = req.params.id as string;
+    if (!UUID_REGEX.test(politicianId)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+
+    const parsed = batchPoliticianAnswersSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+      });
+      return;
+    }
+
+    try {
+      const answers = await getBatchPoliticianAnswers(politicianId, parsed.data.topic_ids);
+      res.status(200).json(answers);
+    } catch (err) {
+      console.error('[POST /compass/politicians/:id/answers/batch] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/politicians/:id/answers
