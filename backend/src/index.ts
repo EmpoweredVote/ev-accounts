@@ -21,6 +21,7 @@ import adminRouter from './routes/admin.js';
 import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
+import treasuryRouter from './routes/treasury.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 
 const app = express();
@@ -60,6 +61,7 @@ app.use('/api/admin', adminRouter);
 app.use('/api/candidates', candidatesRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
+app.use('/api/treasury', treasuryRouter);
 
 export { app }; // For testing
 
