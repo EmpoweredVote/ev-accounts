@@ -502,6 +502,26 @@ export interface PoliticianDetail {
 }
 
 // ---------------------------------------------------------------------------
+// politicianExists
+// ---------------------------------------------------------------------------
+
+/**
+ * Lightweight existence check for a politician.
+ *
+ * Used by legislative subroutes to return 404 before issuing heavier queries.
+ * Returns true if an active politician with the given ID exists.
+ *
+ * Uses pool.query() — essentials schema is not PostgREST-exposed.
+ */
+export async function politicianExists(id: string): Promise<boolean> {
+  const { rows } = await pool.query(
+    'SELECT 1 FROM essentials.politicians WHERE id = $1 AND is_active = true',
+    [id]
+  );
+  return rows.length > 0;
+}
+
+// ---------------------------------------------------------------------------
 // getPoliticianById
 // ---------------------------------------------------------------------------
 
