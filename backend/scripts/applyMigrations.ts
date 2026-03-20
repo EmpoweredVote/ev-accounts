@@ -1,5 +1,5 @@
 /**
- * applyMigrations.ts — Applies migrations 026–036 to a Postgres database.
+ * applyMigrations.ts — Applies migrations 026–038 to a Postgres database.
  *
  * IMPORTANT: DATABASE_URL must be the DIRECT connection string, NOT the pooler URL.
  *   Direct:  postgresql://postgres.<ref>:<pwd>@db.<ref>.supabase.co:5432/postgres
@@ -40,6 +40,8 @@ const MIGRATIONS: Migration[] = [
   { file: '034_gem_idempotency.sql',                     label: '034' },
   { file: '035_tier_promotion.sql',                      label: '035' },
   { file: '036_signup_with_invite.sql',                  label: '036' },
+  { file: '037_revoke_invite_rpc.sql',                   label: '037' },
+  { file: '038_compass_additions.sql',                   label: '038' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -60,6 +62,8 @@ const PRE_VERIFY_QUERIES: Record<string, string> = {
   '034': `SELECT proname FROM pg_proc WHERE proname='award_gems'`,
   '035': `SELECT proname FROM pg_proc WHERE proname='promote_to_connected'`,
   '036': `SELECT proname FROM pg_proc WHERE proname='signup_with_invite'`,
+  '037': `SELECT proname FROM pg_proc WHERE proname='revoke_invite_code'`,
+  '038': `SELECT table_name FROM information_schema.tables WHERE table_schema='inform' AND table_name='compass_verdicts'`,
 };
 
 const POST_VERIFY_QUERIES: Record<string, string> = {
@@ -74,6 +78,8 @@ const POST_VERIFY_QUERIES: Record<string, string> = {
   '034': `SELECT proname FROM pg_proc WHERE proname='award_gems'`,
   '035': `SELECT proname FROM pg_proc WHERE proname='promote_to_connected'`,
   '036': `SELECT proname FROM pg_proc WHERE proname='signup_with_invite'`,
+  '037': `SELECT proname FROM pg_proc WHERE proname='revoke_invite_code'`,
+  '038': `SELECT table_name FROM information_schema.tables WHERE table_schema='inform' AND table_name='compass_verdicts'`,
 };
 
 // ---------------------------------------------------------------------------
