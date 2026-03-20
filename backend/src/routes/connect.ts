@@ -537,11 +537,15 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
         res.status(422).json({ code: 'PO_BOX_REJECTED', message: err.message });
         return;
       }
-      if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'LOW_CONFIDENCE') {
+      if (err.code === 'ADDRESS_NOT_FOUND') {
         res.status(422).json({ code: 'ADDRESS_NOT_FOUND', message: err.message });
         return;
       }
-      console.error('[connect/set-location] Geocoding API error:', err.message);
+      if (err.code === 'GEOCODER_UNAVAILABLE') {
+        res.status(503).json({ code: 'GEOCODER_UNAVAILABLE', message: 'Address lookup temporarily unavailable.' });
+        return;
+      }
+      console.error('[connect/set-location] Geocoding error:', err.message);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
       return;
     }

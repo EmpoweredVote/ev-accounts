@@ -10,8 +10,9 @@ const envSchema = z.object({
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
   SUPABASE_JWT_SECRET: z.string().optional(),
-  // Google Maps Geocoding API — server-side only; used by geocodingService.ts
-  GOOGLE_MAPS_API_KEY: z.string().min(1),
+  // Deprecated: replaced by Census Geocoder in Phase 38. Kept optional to avoid
+  // startup failures on environments that still have the key set.
+  GOOGLE_MAPS_API_KEY: z.string().optional(),
   // XP service keys — one per feature repo. Optional: undefined key = not in
   // SERVICE_KEY_MAP = 401 on all requests from that repo. Kept optional so
   // existing integration tests (health, auth, account) don't break at startup.

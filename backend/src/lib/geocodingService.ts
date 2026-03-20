@@ -1,14 +1,13 @@
-import { env } from './env.js';
+import { cache } from './cache.js';
 
 // ---------------------------------------------------------------------------
 // Error types
 // ---------------------------------------------------------------------------
 
 export type GeocodingErrorCode =
-  | 'PO_BOX_REJECTED'    // PO Box detected before any HTTP call
-  | 'ADDRESS_NOT_FOUND'  // Google returned zero results
-  | 'LOW_CONFIDENCE'     // location_type is GEOMETRIC_CENTER or APPROXIMATE
-  | 'GEOCODING_API_ERROR'; // HTTP error or unexpected Google response
+  | 'PO_BOX_REJECTED'     // PO Box detected before any HTTP call
+  | 'ADDRESS_NOT_FOUND'   // Census Geocoder returned zero address matches
+  | 'GEOCODER_UNAVAILABLE'; // Timeout, HTTP error, or unexpected Census response
 
 export class GeocodingError extends Error {
   constructor(public readonly code: GeocodingErrorCode, message: string) {
@@ -18,17 +17,32 @@ export class GeocodingError extends Error {
 }
 
 // ---------------------------------------------------------------------------
-// Internal types — Google Maps Geocoding API response shape
+// Internal types — US Census Geocoder API response shape
+// https://geocoding.geo.census.gov/geocoder/locations/onelineaddress
 // ---------------------------------------------------------------------------
 
-interface GoogleGeocodeResponse {
-  status: string;
-  results: Array<{
-    geometry: {
-      location: { lat: number; lng: number };
-      location_type: string;
+interface CensusGeocodeResponse {
+  result: {
+    input: {
+      address: { address: string };
+      benchmark: { benchmarkName: string };
     };
-  }>;
+    addressMatches: Array<{
+      matchedAddress: string;
+      coordinates: {
+        x: number;  // longitude
+        y: number;  // latitude
+      };
+      tigerLine: { tigerLineId: string; side: string };
+      addressComponents: {
+        zip: string;
+        streetName: string;
+        city: string;
+        state: string;
+        [key: string]: string;
+      };
+    }>;
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -41,7 +55,7 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 // ---------------------------------------------------------------------------
 // geocodeAddress
 //
-// Converts a residential address string to { lat, lng }.
+// Converts a US residential address string to { lat, lng }.
 //
 // Privacy contract:
 //   - lat/lng are raw floats consumed by the caller immediately.
@@ -49,6 +63,9 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 //     anywhere except via the upsert_user_location RPC call.
 //   - The address string is consumed here and discarded after this function
 //     returns — do not return or store it.
+//
+// Implementation: US Census Geocoder (free, no API key required)
+// Replaced Google Maps Geocoding API in Phase 38.
 // ---------------------------------------------------------------------------
 
 export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number }> {
@@ -60,45 +77,67 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
     );
   }
 
-  // 2. Call Google Maps Geocoding API
-  const url = new URL('https://maps.googleapis.com/maps/api/geocode/json');
-  url.searchParams.set('address', address);
-  url.searchParams.set('key', env.GOOGLE_MAPS_API_KEY);
+  // 2. Normalize address for cache key
+  const cacheKey = `geocode:v1:${address.toLowerCase().trim().replace(/\s+/g, ' ')}`;
 
-  const response = await fetch(url.toString());
-  if (!response.ok) {
-    throw new GeocodingError(
-      'GEOCODING_API_ERROR',
-      `Geocoding API returned HTTP ${response.status}`,
-    );
+  // 3. Redis cache check — return immediately on hit (24hr TTL)
+  const cached = await cache.get<{ lat: number; lng: number }>(cacheKey);
+  if (cached) {
+    return cached;
   }
 
-  const data = (await response.json()) as GoogleGeocodeResponse;
+  // 4. Build Census Geocoder URL
+  // Endpoint: /geocoder/locations/onelineaddress
+  // benchmark=Public_AR_Current = standard benchmark for current addresses
+  // Returns addressMatches[] — empty array means ADDRESS_NOT_FOUND
+  const url = new URL('https://geocoding.geo.census.gov/geocoder/locations/onelineaddress');
+  url.searchParams.set('address', address);
+  url.searchParams.set('benchmark', 'Public_AR_Current');
+  url.searchParams.set('format', 'json');
 
-  // 3. Zero results
-  if (data.status === 'ZERO_RESULTS' || data.results.length === 0) {
+  // 5. 5-second timeout via AbortController
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+
+  let response: Response;
+  try {
+    response = await fetch(url.toString(), { signal: controller.signal });
+  } catch (err: unknown) {
+    clearTimeout(timeout);
+    // AbortError = timeout; other errors = network failure
+    throw new GeocodingError('GEOCODER_UNAVAILABLE', 'Address lookup temporarily unavailable.');
+  }
+  clearTimeout(timeout);
+
+  // 6. Non-2xx response = geocoder error
+  if (!response.ok) {
+    throw new GeocodingError('GEOCODER_UNAVAILABLE', 'Address lookup temporarily unavailable.');
+  }
+
+  let data: CensusGeocodeResponse;
+  try {
+    data = (await response.json()) as CensusGeocodeResponse;
+  } catch {
+    throw new GeocodingError('GEOCODER_UNAVAILABLE', 'Address lookup temporarily unavailable.');
+  }
+
+  // 7. Empty addressMatches = no match for this address
+  const matches = data?.result?.addressMatches;
+  if (!matches || matches.length === 0) {
     throw new GeocodingError(
       'ADDRESS_NOT_FOUND',
       "We couldn't find that address. Please double-check and try again.",
     );
   }
 
-  // 4. Unexpected status (REQUEST_DENIED, INVALID_REQUEST, etc.)
-  if (data.status !== 'OK') {
-    throw new GeocodingError('GEOCODING_API_ERROR', `Geocoding API error: ${data.status}`);
-  }
+  // 8. Extract coordinates
+  // CRITICAL: Census uses x=longitude, y=latitude (opposite of common lat/lng convention)
+  // PostGIS ST_MakePoint also takes (longitude, latitude) = (x, y) — same order
+  const lng = matches[0].coordinates.x; // longitude
+  const lat = matches[0].coordinates.y; // latitude
 
-  const result = data.results[0];
+  // 9. Cache successful result for 24 hours (86400 seconds)
+  await cache.set(cacheKey, { lat, lng }, 86400);
 
-  // 5. Confidence filter: only ROOFTOP or RANGE_INTERPOLATED
-  const locationType = result.geometry.location_type;
-  if (locationType !== 'ROOFTOP' && locationType !== 'RANGE_INTERPOLATED') {
-    throw new GeocodingError(
-      'LOW_CONFIDENCE',
-      "We couldn't find that address. Please double-check and try again.",
-    );
-  }
-
-  const { lat, lng } = result.geometry.location;
   return { lat, lng };
 }
