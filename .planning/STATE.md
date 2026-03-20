@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 38 — Express Ports Wave 3 (Essentials) — Complete
-Plan: 5 of 5 complete
-Status: Phase complete — ready for Phase 39
-Last activity: 2026-03-20 — Completed 38-05-PLAN.md (Governments/chambers/districts entity routes; CONS-11 fulfilled)
+Phase: 39 — Compass Additions — In progress
+Plan: 1 of 3 complete
+Status: Plan 01 complete — migration DDL done
+Last activity: 2026-03-20 — Completed 39-01 (migration: NUMERIC(3,1), compass_verdicts, updated RPCs)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped (39 in progress) ██████████░
 
 ## Accumulated Context
 
@@ -73,6 +73,16 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 39 Plan 01 Complete (39-01)
+
+- **038_compass_additions.sql** — full DDL foundation for Phase 39: NUMERIC(3,1) on `politician_answers.value`, half-step CHECK on both `politician_answers` and `compass_responses`, `inform.compass_verdicts` table with RLS owner-read, updated `admin_update_politician_answers` (full-replacement), `upsert_compass_verdicts` RPC
+- **Half-step CHECK formula** — `(value * 2) = ROUND(value * 2) AND value >= 0.5 AND value <= 5.5` — applied to both `politician_answers.value` and `compass_responses.value`
+- **compass_verdicts PK** — `(user_id, quote_id)`; UPSERT on conflict; `rank` nullable (NULL when quote not supported); `session_size` stored for normalization at presentation layer
+- **admin_update_politician_answers** now full-replacement — `DELETE WHERE NOT IN payload` before upsert loop; uses `::numeric` cast (not `::int`)
+- **upsert_compass_verdicts** grants `service_role` only — server-side RPC, not direct client calls
+- **037 migration added to runner** — `037_revoke_invite_rpc.sql` was on disk but missing from applyMigrations.ts; added in this plan
+- **Plans 02 and 03 unblocked** — compare routes and verdict routes can proceed
 
 ### Phase 38 Complete — CONS-11 Fulfilled (38-05)
 
@@ -208,5 +218,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 38 complete — Plan 05 done — governments/chambers/districts entity routes (1c63542)
-Resume: Phase 39 — Compass Additions (CONS-12, CONS-13)
+Stopped at: Phase 39 Plan 01 complete — 038_compass_additions.sql + applyMigrations.ts update (798ceaa)
+Resume: Phase 39 Plan 02 — compare endpoint routes
