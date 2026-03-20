@@ -864,3 +864,160 @@ export async function unlockStance(id: string): Promise<void> {
     [id]
   );
 }
+
+// ---------------------------------------------------------------------------
+// Building photo types
+// ---------------------------------------------------------------------------
+
+export interface StagingPhoto {
+  id: string;
+  placeGeoid: string;
+  placeName: string;
+  state: string | null;
+  url: string;
+  sourceUrl: string | null;
+  license: string;
+  attribution: string;
+  status: string;
+  addedBy: string;
+  reviewedBy: string[];
+  lastReviewedAt: string | null;
+  reviewCount: number;
+  approvedAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface PhotoReviewLog {
+  id: string;
+  buildingPhotoId: string;
+  reviewerName: string;
+  action: string;
+  comment: string | null;
+  createdAt: string;
+}
+
+export interface CreatePhotoInput {
+  placeGeoid: string;
+  placeName: string;
+  state?: string | null;
+  url: string;
+  sourceUrl?: string | null;
+  license: string;
+  attribution: string;
+}
+
+function mapPhotoRow(row: any): StagingPhoto {
+  return {
+    id: row.id,
+    placeGeoid: row.place_geoid,
+    placeName: row.place_name,
+    state: row.state,
+    url: row.url,
+    sourceUrl: row.source_url,
+    license: row.license,
+    attribution: row.attribution,
+    status: row.status,
+    addedBy: row.added_by,
+    reviewedBy: row.reviewed_by ?? [],
+    lastReviewedAt: row.last_reviewed_at,
+    reviewCount: Number(row.review_count),
+    approvedAt: row.approved_at,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+export async function getPhotos(filters?: { status?: string }): Promise<StagingPhoto[]> {
+  if (filters?.status) {
+    const { rows } = await pool.query(
+      `SELECT * FROM staging.building_photos WHERE status = $1 ORDER BY created_at DESC`,
+      [filters.status]
+    );
+    return rows.map(mapPhotoRow);
+  }
+  const { rows } = await pool.query(`SELECT * FROM staging.building_photos ORDER BY created_at DESC`);
+  return rows.map(mapPhotoRow);
+}
+
+export async function getPhotoById(id: string): Promise<StagingPhoto | null> {
+  const { rows } = await pool.query(`SELECT * FROM staging.building_photos WHERE id = $1`, [id]);
+  return rows.length > 0 ? mapPhotoRow(rows[0]) : null;
+}
+
+export async function createPhoto(data: CreatePhotoInput, userId: string): Promise<StagingPhoto> {
+  const addedBy = await getDisplayName(userId);
+  const { rows } = await pool.query(
+    `INSERT INTO staging.building_photos
+       (place_geoid, place_name, state, url, source_url, license, attribution, added_by, status)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'pending')
+     RETURNING *`,
+    [
+      data.placeGeoid,
+      data.placeName,
+      data.state ?? null,
+      data.url,
+      data.sourceUrl ?? null,
+      data.license,
+      data.attribution,
+      addedBy,
+    ]
+  );
+  return mapPhotoRow(rows[0]);
+}
+
+export async function reviewPhoto(
+  id: string,
+  action: 'approve' | 'reject',
+  userId: string,
+  comment?: string
+): Promise<StagingPhoto> {
+  const record = await getPhotoById(id);
+  if (!record) {
+    const err = new Error(`Building photo not found: ${id}`) as any;
+    err.httpStatus = 404;
+    throw err;
+  }
+  assertPending(record.status);
+
+  const reviewerName = await getDisplayName(userId);
+  let updatedRow: any;
+
+  if (action === 'approve') {
+    await pool.query(
+      `INSERT INTO essentials.building_photos (place_geoid, url, source_url, license, attribution)
+       VALUES ($1, $2, $3, $4, $5)
+       ON CONFLICT (place_geoid) DO UPDATE SET
+         url = EXCLUDED.url,
+         source_url = EXCLUDED.source_url,
+         license = EXCLUDED.license,
+         attribution = EXCLUDED.attribution`,
+      [record.placeGeoid, record.url, record.sourceUrl, record.license, record.attribution]
+    );
+    const { rows } = await pool.query(
+      `UPDATE staging.building_photos
+       SET status = 'approved', approved_at = NOW(), review_count = review_count + 1,
+           last_reviewed_at = NOW(), updated_at = NOW()
+       WHERE id = $1 RETURNING *`,
+      [id]
+    );
+    updatedRow = rows[0];
+  } else {
+    const { rows } = await pool.query(
+      `UPDATE staging.building_photos
+       SET status = 'rejected', review_count = review_count + 1,
+           last_reviewed_at = NOW(), updated_at = NOW()
+       WHERE id = $1 RETURNING *`,
+      [id]
+    );
+    updatedRow = rows[0];
+  }
+
+  await pool.query(
+    `INSERT INTO staging.building_photo_review_logs (building_photo_id, reviewer_name, action, comment)
+     VALUES ($1, $2, $3, $4)`,
+    [id, reviewerName, action, comment ?? null]
+  );
+
+  return mapPhotoRow(updatedRow);
+}
