@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 38 — Express Ports Wave 3 (Essentials) — In progress
-Plan: 3 of 5 complete
+Plan: 4 of 5 complete
 Status: In progress
-Last activity: 2026-03-20 — Completed 38-03-PLAN.md (Politician detail endpoint GET /politicians/:id)
+Last activity: 2026-03-20 — Completed 38-04-PLAN.md (Legislative subroutes: GET /politicians/:id/legislative|committees|bills|votes)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
 
@@ -73,6 +73,18 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 38 Plan 04 Complete (38-04)
+
+- **GET /api/essentials/politicians/:id/legislative** — legislative sessions reachable via politician's sponsored/cosponsored bills and votes; returns bill_count + vote_count per session
+- **GET /api/essentials/politicians/:id/committees** — committee memberships via JOIN legislative_committee_memberships → legislative_committees
+- **GET /api/essentials/politicians/:id/bills** — bills where politician is sponsor OR cosponsor; paginated (?limit=N, default 50, max 100), ordered introduced_at DESC
+- **GET /api/essentials/politicians/:id/votes** — voting record with bill details; paginated, ordered vote_date DESC
+- **politicianExists()** — lightweight pool.query() existence check added to essentialsService; used by all subroutes before issuing heavier queries
+- **Subroute ordering critical** — /:id/legislative etc. placed BEFORE /:id in Express; /:id is last
+- **Response shape** — subroutes return `{ data: [], data_level }` (vs detail route `{ ...politician, data_level }`)
+- **essentialsLegislativeService.ts** — separate service file for large-table legislative queries; 4 exported async functions with TypeScript interfaces
+- **Phase 38 Plan 05 (final essentials plan) unblocked**
 
 ### Phase 38 Plan 03 Complete (38-03)
 
@@ -185,5 +197,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 38, Plan 03 complete — politician detail endpoint GET /politicians/:id (efe6af5)
-Resume: Phase 38 Plan 04 — legislative data routes
+Stopped at: Phase 38, Plan 04 complete — legislative subroutes GET /politicians/:id/legislative|committees|bills|votes (2d2c653)
+Resume: Phase 38 Plan 05 — final essentials plan
