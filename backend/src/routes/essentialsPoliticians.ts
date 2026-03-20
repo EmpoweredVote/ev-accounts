@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { optionalAuth } from '../middleware/auth.js';
-import { getPoliticiansFlatList } from '../lib/essentialsService.js';
+import { getPoliticiansFlatList, getPoliticianById } from '../lib/essentialsService.js';
 import type { Request, Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 
@@ -37,6 +37,41 @@ router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void>
     res.status(200).json(politicians.map((p) => ({ ...p, data_level })));
   } catch (err) {
     console.error('[GET /essentials/politicians] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id
+// Auth: optional — works unauthenticated (public data)
+// Returns full politician profile with nested contacts, images, degrees, experiences.
+// data_level: 'connected' if authenticated, 'inform' if not.
+// 404 if politician not found. 422 if ID is not a valid UUID.
+// ---------------------------------------------------------------------------
+
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+router.get('/:id', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+
+    const userId = (req as AuthenticatedRequest).userId;
+    const politician = await getPoliticianById(id);
+
+    if (politician === null) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
+      return;
+    }
+
+    const data_level = userId ? 'connected' : 'inform';
+    res.status(200).json({ ...politician, data_level });
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
