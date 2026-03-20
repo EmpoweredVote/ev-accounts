@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 38 — Express Ports Wave 3 (Essentials) — In progress
-Plan: 1 of 5 complete
+Plan: 2 of 5 complete
 Status: In progress
-Last activity: 2026-03-20 — Completed 38-01-PLAN.md (Schema investigation + Census Geocoder rewrite)
+Last activity: 2026-03-20 — Completed 38-02-PLAN.md (Address-search route + Go-parity politicians list)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
 
@@ -73,6 +73,16 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 38 Plan 02 Complete (38-02)
+
+- **GET /api/essentials/address-search** — Census Geocoder -> PostGIS ST_Covers -> politicians flat list with jurisdiction
+- **getPoliticiansFlatList** — Go-parity flat list joining politicians/offices/districts/chambers/governments; null strings coerced to ''
+- **getRepresentativesByAddress** — geocodes address, queries geofence_boundaries with ST_Covers, returns { politicians, jurisdiction }
+- **GeocodingError propagates from service** — route handler owns all HTTP translation (ADDRESS_NOT_FOUND=422, PO_BOX_REJECTED=422, GEOCODER_UNAVAILABLE=503)
+- **data_level tier signaling** — 'inform' (unauthenticated) or 'connected' (authenticated) on all essentials responses
+- **essentialsPoliticians.ts rewritten** — switched from grouped (party-grouped) to flat Go-parity shape (breaking change, intentional for Go parity)
+- **Phase 38 Plan 03 (politician detail routes) unblocked**
 
 ### Phase 38 Plan 01 Complete (38-01)
 
@@ -166,5 +176,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 38, Plan 01 complete — Census Geocoder rewrite + schema investigation (8668d3d)
-Resume: Phase 38 Plan 02 — address-search route (GET /essentials/address-search)
+Stopped at: Phase 38, Plan 02 complete — address-search route + Go-parity politicians list (3cef488)
+Resume: Phase 38 Plan 03 — politician detail routes
