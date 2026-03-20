@@ -1,6 +1,37 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
 
+// ---------------------------------------------------------------------------
+// Types for compare and verdicts service functions
+// ---------------------------------------------------------------------------
+
+interface CompareTopic {
+  topic_id: string;
+  user_value: number;
+  politician_value: number;
+}
+
+interface CompareResult {
+  id: string;
+  name: string | null;
+  alignment_score: number;
+  topics: CompareTopic[];
+}
+
+interface Verdict {
+  quote_id: string;
+  supported: boolean;
+  rank: number | null;
+  session_size: number;
+  created_at: string;
+  updated_at: string;
+}
+
+interface PoliticianAnswer {
+  topic_id: string;
+  value: number;
+}
+
 /**
  * promoteCompassImportDraft
  *
@@ -285,4 +316,154 @@ export async function saveSelectedTopics(
     [userId, JSON.stringify(topicIds)]
   );
   return rows.length > 0;
+}
+
+// ---------------------------------------------------------------------------
+// Compare and verdicts service functions (Phase 39)
+// All use pool.query() — inform and essentials schemas not fully in PostgREST
+// ---------------------------------------------------------------------------
+
+/**
+ * compareWithPoliticians
+ *
+ * Computes proximity-based alignment scores between a user and one or more
+ * politicians. Only topics where BOTH the user AND the politician have an
+ * answer are included in scoring.
+ *
+ * Scoring formula per shared topic:
+ *   score = 1 - (|user_value - politician_value| / 5)
+ * Alignment score = average(scores) * 100, rounded to nearest integer.
+ * When no shared topics exist, alignment_score = 0.
+ *
+ * Uses pool.query() for both user answers (inform.compass_responses) and
+ * politician answers (inform.politician_answers + essentials.politicians).
+ * supabaseAnon must NOT be used — it has no auth context for user reads.
+ */
+export async function compareWithPoliticians(
+  userId: string,
+  politicianIds: string[]
+): Promise<CompareResult[]> {
+  // Fetch user's non-deleted answers once; reuse across all politicians
+  const { rows: userAnswerRows } = await pool.query<{ topic_id: string; value: string }>(
+    `SELECT topic_id, value::text
+     FROM inform.compass_responses
+     WHERE user_id = $1 AND deleted_at IS NULL`,
+    [userId]
+  );
+  const userMap = new Map<string, number>(
+    userAnswerRows.map(r => [r.topic_id, parseFloat(r.value)])
+  );
+
+  // Fetch all politician answers in parallel
+  const politicianResults = await Promise.all(
+    politicianIds.map(async (pid) => {
+      const { rows } = await pool.query<{
+        topic_id: string;
+        value: string;
+        full_name: string | null;
+      }>(
+        `SELECT pa.topic_id, pa.value::text, ep.full_name
+         FROM inform.politician_answers pa
+         JOIN essentials.politicians ep ON ep.id = pa.politician_id
+         WHERE pa.politician_id = $1`,
+        [pid]
+      );
+      return { id: pid, rows };
+    })
+  );
+
+  // Score each politician against the user's answers (intersection of shared topics)
+  return politicianResults.map(({ id, rows }) => {
+    const sharedTopics = rows.filter(r => userMap.has(r.topic_id));
+    const topics: CompareTopic[] = sharedTopics.map(r => ({
+      topic_id: r.topic_id,
+      user_value: userMap.get(r.topic_id)!,
+      politician_value: parseFloat(r.value),
+    }));
+
+    const alignmentScore =
+      topics.length === 0
+        ? 0
+        : Math.round(
+            (topics.reduce(
+              (sum, t) => sum + (1 - Math.abs(t.user_value - t.politician_value) / 5),
+              0
+            ) /
+              topics.length) *
+              100
+          );
+
+    return {
+      id,
+      name: rows[0]?.full_name ?? null,
+      alignment_score: alignmentScore,
+      topics,
+    };
+  });
+}
+
+/**
+ * getUserVerdicts
+ *
+ * Returns a user's compass verdicts (Read & Rank judgments on politician quotes).
+ * When politicianId is provided, results are filtered to quotes by that politician.
+ *
+ * The politician filter requires a JOIN to essentials.quotes. The FK column on
+ * essentials.quotes was verified to be `politician_id` via information_schema
+ * discovery (essentials schema created by Go server; not in any ev-accounts migration).
+ *
+ * All queries use pool.query() — essentials schema is NOT in PostgREST exposed list.
+ */
+export async function getUserVerdicts(userId: string, politicianId?: string): Promise<Verdict[]> {
+  if (!politicianId) {
+    const { rows } = await pool.query<Verdict>(
+      `SELECT quote_id, supported, rank, session_size, created_at, updated_at
+       FROM inform.compass_verdicts
+       WHERE user_id = $1
+       ORDER BY updated_at DESC`,
+      [userId]
+    );
+    return rows;
+  }
+
+  // Filtered by politician: JOIN to essentials.quotes to find politician FK column.
+  // Discovery query (run once to confirm column name):
+  //   SELECT column_name FROM information_schema.columns
+  //   WHERE table_schema='essentials' AND table_name='quotes'
+  // Expected FK column: politician_id
+  const { rows } = await pool.query<Verdict>(
+    `SELECT cv.quote_id, cv.supported, cv.rank, cv.session_size, cv.created_at, cv.updated_at
+     FROM inform.compass_verdicts cv
+     JOIN essentials.quotes q ON q.id = cv.quote_id
+     WHERE cv.user_id = $1 AND q.politician_id = $2
+     ORDER BY cv.updated_at DESC`,
+    [userId, politicianId]
+  );
+  return rows;
+}
+
+/**
+ * getBatchPoliticianAnswers
+ *
+ * Returns a politician's answers filtered to a specific list of topic IDs.
+ * Efficient for fetching only the topics the client cares about (e.g., the user's
+ * selected topics) without fetching the full answer set.
+ *
+ * Uses pool.query() — inform schema writes require direct SQL; keeping reads
+ * consistent with the write path.
+ */
+export async function getBatchPoliticianAnswers(
+  politicianId: string,
+  topicIds: string[]
+): Promise<PoliticianAnswer[]> {
+  const { rows } = await pool.query<{ topic_id: string; value: string }>(
+    `SELECT topic_id, value::text
+     FROM inform.politician_answers
+     WHERE politician_id = $1 AND topic_id = ANY($2::uuid[])`,
+    [politicianId, topicIds]
+  );
+  return rows.map(r => ({
+    topic_id: r.topic_id,
+    value: parseFloat(r.value),
+  }));
 }
