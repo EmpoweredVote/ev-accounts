@@ -155,8 +155,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 36-01-PLAN.md — Treasury service layer and routes (5 public reads + 4 admin writes)
-- [ ] 36-02-PLAN.md — Meetings service layer and routes (5 public reads + 3 admin writes)
+- [x] 36-01-PLAN.md — Treasury service layer and routes (5 public reads + 4 admin writes)
+- [x] 36-02-PLAN.md — Meetings service layer and routes (5 public reads + 3 admin writes)
 
 **Success Criteria:**
 
@@ -324,7 +324,7 @@ Plans:
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 34. Database Schema Migration | v1.6 | 3/3 | Complete | 2026-03-20 |
 | 35. Politician Deduplication | v1.6 | 2/2 | Complete | 2026-03-20 |
-| 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/2 | Pending | — |
+| 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 0/? | Pending | — |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 0/? | Pending | — |
 | 39. Compass Additions | v1.6 | 0/? | Pending | — |
