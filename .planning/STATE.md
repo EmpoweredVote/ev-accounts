@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 36 — Express Ports Wave 1 (Treasury + Meetings) COMPLETE
-Plan: 02 of 2 complete
-Status: Phase 36 complete — Phase 37 (Staging) next
-Last activity: 2026-03-20 — Completed 36-02-PLAN.md (Meetings service + routes)
+Phase: 37 — Express Ports Wave 2 (Staging) — In progress
+Plan: 01 of 4 complete
+Status: In progress
+Last activity: 2026-03-20 — Completed 37-01-PLAN.md (Staging role + middleware)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 next) █████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 in progress) █████████░
 
 ## Accumulated Context
 
@@ -74,6 +74,17 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 37 Plan 01 Complete (37-01)
+
+- **staging_reviewer role seeded** in public.roles (connected tier, is_active=true)
+- **Status defaults normalized** to 'pending' on staging.politicians, staging.stances, staging.building_photos
+- **requireStagingReviewer middleware** created: admin fast path + staging_reviewer role check with revoked_at IS NULL guard
+- **pool.query() only** — no supabaseAdmin in middleware (pattern consistent with all Phase 37 code)
+- **Dual-path pattern established**: admin_users check first (no JOIN), then user_roles JOIN roles on slug
+- **No CHECK constraints** on status columns — legacy values (draft, needs_review) must remain valid; service layer enforces state machine
+- **tsc OOM issue** — Node v24 environment constraint; manual static analysis confirmed file correctness
+- **Phase 37 Plans 02–04 unblocked**
+
 ### Phase 36 Complete (plans 01 + 02)
 
 - **treasury schema served by ev-accounts Express** — CONS-08 fulfilled; Go server no longer needed for treasury data
@@ -114,5 +125,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 36 complete — meetings service + routes (9f8b6c9); all curl checks passed
-Resume: Run `/gsd:execute-phase 37` to execute Phase 37 (Express Ports Wave 2 — Staging)
+Stopped at: Phase 37 Plan 01 complete — staging role + requireStagingReviewer middleware (9c527ae)
+Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plans 02–04
