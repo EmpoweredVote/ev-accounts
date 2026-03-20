@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 37 — Express Ports Wave 2 (Staging) — Complete
-Plan: 4 of 4 complete
-Status: Phase 37 complete — ready for Phase 38
-Last activity: 2026-03-20 — Completed 37-04-PLAN.md (Staging routes — 19 handlers, CONS-10 fulfilled)
+Phase: 38 — Express Ports Wave 3 (Essentials) — In progress
+Plan: 1 of 5 complete
+Status: In progress
+Last activity: 2026-03-20 — Completed 38-01-PLAN.md (Schema investigation + Census Geocoder rewrite)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
 
@@ -73,6 +73,17 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 38 Plan 01 Complete (38-01)
+
+- **Census Geocoder replaces Google Maps** — `geocodingService.ts` rewritten; no API key needed; `coordinates.x`=lng, `coordinates.y`=lat
+- **GOOGLE_MAPS_API_KEY optional** — env.ts updated; server starts without it
+- **GEOCODER_UNAVAILABLE error code** — replaces LOW_CONFIDENCE + GEOCODING_API_ERROR; connect.ts set-location returns 503
+- **geofence_boundaries PostGIS column is `geometry`** — NOT `geom`; SQL must use `gb.geometry`
+- **Join path confirmed**: `geofence_boundaries.geo_id = districts.geo_id` → `districts.id = offices.district_id` → `offices.id = politicians.office_id`
+- **No FK constraints** — all joins by convention (text/uuid equality); 291 Indiana politicians reachable
+- **MTFCC codes**: G4110=congressional, G5420=state_senate, G5220=state_house, G4020=county, G6350=school_district
+- **Phase 38 Plan 02 (address-search route) unblocked**
 
 ### Phase 37 Complete (37-01 through 37-04)
 
@@ -155,5 +166,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 37 complete — all 4 plans done, CONS-10 fulfilled (e81b119)
-Resume: Run `/gsd:execute-phase 38` to start Phase 38 (Express Ports Wave 3 — Essentials)
+Stopped at: Phase 38, Plan 01 complete — Census Geocoder rewrite + schema investigation (8668d3d)
+Resume: Phase 38 Plan 02 — address-search route (GET /essentials/address-search)
