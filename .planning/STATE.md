@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 37 — Express Ports Wave 2 (Staging) — In progress
-Plan: 01 of 4 complete
+Plan: 02 of 4 complete
 Status: In progress
-Last activity: 2026-03-20 — Completed 37-01-PLAN.md (Staging role + middleware)
+Last activity: 2026-03-20 — Completed 37-02-PLAN.md (Staging service — politician CRUD, review, lock, merge)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 in progress) █████████░
 
@@ -74,6 +74,17 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 37 Plan 02 Complete (37-02)
+
+- **stagingService.ts created** with 8 exported politician service functions — all pool.query()
+- **Auto-promotion on approve** — `promoteToEssentials()` upserts to `essentials.politicians`; handles staging text external_id -> essentials bigint via Number() with NaN guard
+- **Atomic lock acquire** — `UPDATE ... WHERE locked_by IS NULL RETURNING id` pattern established
+- **State machine enforced** — `assertPending()` throws 422 for updatePolitician, reviewPolitician, mergePolitician on non-pending records
+- **getDisplayName() pattern** — reviewer_name and added_by always derived from `public.users`; never trusted from request body
+- **httpStatus error shape** — attach `.httpStatus` to Error before throw; route handler reads `err.httpStatus`
+- **lockPolitician stores userId (UUID) in locked_by** — not display_name, avoids stale name on rename
+- **Phase 37 Plans 03–04 unblocked**
+
 ### Phase 37 Plan 01 Complete (37-01)
 
 - **staging_reviewer role seeded** in public.roles (connected tier, is_active=true)
@@ -125,5 +136,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 37 Plan 01 complete — staging role + requireStagingReviewer middleware (9c527ae)
-Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plans 02–04
+Stopped at: Phase 37 Plan 02 complete — staging service politician CRUD + review workflow (617f860)
+Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plans 03–04
