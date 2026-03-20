@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 34: Database Schema Migration
+**Current focus:** v1.6 Platform Consolidation — Phase 35: Politician Deduplication
 
 ## Current Position
 
-Phase: 34 — Database Schema Migration
-Plan: 03 of 03 complete
-Status: Phase complete
-Last activity: 2026-03-20 — Completed 34-02-PLAN.md (RLS + 62 policies for 5 schemas)
+Phase: 35 — Politician Deduplication
+Plan: Not started
+Status: Phase 34 complete — ready to plan Phase 35
+Last activity: 2026-03-20 — Phase 34 complete (RLS + 68 policies across all 6 schemas; verified 5/5)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 33/43 phases shipped ███████░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 34/43 phases shipped ███████░░░
 
 ## Accumulated Context
 
@@ -86,4 +86,4 @@ v1.6 constraints and decisions to carry forward:
 
 Last session: 2026-03-20
 Stopped at: Completed 34-02-PLAN.md (RLS + policies for essentials/meetings/treasury/transparent_motivations/compass)
-Resume: Run `/gsd:execute-phase 35` to begin Politician Deduplication
+Resume: Run `/gsd:plan-phase 35` to plan Politician Deduplication
