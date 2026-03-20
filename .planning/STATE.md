@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 35: Politician Deduplication
+**Current focus:** v1.6 Platform Consolidation — Phase 36: Express Ports Wave 1 — Treasury and Meetings
 
 ## Current Position
 
@@ -23,7 +23,7 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
 
 v1.6 constraints and decisions to carry forward:
-- **pool.query() for all non-public schema writes** — established in v1.3; every write to essentials/staging/treasury/meetings/validation_quests/trivia must use pool.query(), not PostgREST
+- **pool.query() for all non-public schema reads AND writes** — essentials schema is NOT in PostgREST exposed schema list (`public, connect, empower, inform, graphql_public, validation_quests`); `supabaseAnon.schema('essentials')` fails at runtime; all essentials access must use pool.query() (Phase 35 confirmed)
 - **No nested SECURITY DEFINER calls** — gem/XP writes must be inline in atomic RPCs; established v1.4
 - **SET search_path = '' on all new SECURITY DEFINER functions** — established v1.2; fully qualified table refs required
 - **Two-pass validation in admin RPCs** — validate all inputs before any writes; established v1.2
@@ -103,5 +103,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 35-02-PLAN.md (application code migration; PostgREST fix; Phase 35 complete)
-Resume: Start Phase 36 (Express Ports Wave 1 — Treasury + Meetings)
+Stopped at: Phase 35 complete — profileService.ts gap fixed (d7af2a4); verification passed 4/4
+Resume: Run `/gsd:discuss-phase 36` or `/gsd:plan-phase 36` to begin Express Ports Wave 1

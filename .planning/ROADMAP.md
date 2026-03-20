@@ -132,8 +132,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 35-01-PLAN.md — Atomic migration: bridge table, FK reassignment, RPC rebuilds, DROP inform.politicians
-- [ ] 35-02-PLAN.md — Application code updates: schema switch to essentials + PostgREST fix
+- [x] 35-01-PLAN.md — Atomic migration: bridge table, FK reassignment, RPC rebuilds, DROP inform.politicians
+- [x] 35-02-PLAN.md — Application code updates: schema switch to essentials + PostgREST fix
 
 **Success Criteria:**
 
@@ -317,7 +317,7 @@ Plans:
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 34. Database Schema Migration | v1.6 | 3/3 | Complete | 2026-03-20 |
-| 35. Politician Deduplication | v1.6 | 0/2 | Planned | — |
+| 35. Politician Deduplication | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/? | Pending | — |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 0/? | Pending | — |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 0/? | Pending | — |
