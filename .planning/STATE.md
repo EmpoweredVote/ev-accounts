@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 39 — Compass Additions — In progress
-Plan: 2 of 3 complete
-Status: Plan 02 complete — compare, verdicts, and batch routes live
-Last activity: 2026-03-20 — Completed 39-02 (compare endpoint, verdicts CRUD, batch politician answers)
+Plan: 3 of 3 complete
+Status: Phase 39 complete — all plans done
+Last activity: 2026-03-20 — Completed 39-03 (compassAdmin.ts: 7 admin routes at /api/compass/* paths, dual-router mount, ADMN-05 audit)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped (39 in progress) ██████████░
 
@@ -73,6 +73,17 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 39 Plan 03 Complete (39-03) — Phase 39 DONE
+
+- **compassAdmin.ts** — new router with 7 admin-gated compass mutation routes at Go-compatible `/api/compass/*` paths (CompassV2 parity)
+- **Dual-router mount** — `compassAdminRouter` mounted AFTER `compassRouter` at `/api/compass`; Express falls through from public routes to admin mutations; no URL+method collisions
+- **Routes delivered:** POST /topics/create, PATCH /topics/update, DELETE /topics/delete/:id, PATCH /topics/categories/update, PATCH /stances/update, POST /politicians/context, PUT /politicians/:id/answers
+- **DELETE /topics/delete/:id guard** — `COUNT(*)` check on `inform.compass_responses`; 422 TOPIC_HAS_RESPONSES if any exist; explicit `compass_topic_categories` delete before topic
+- **PUT /politicians/:id/answers** — full replacement via `admin_update_politician_answers` RPC with `JSON.stringify` payload; `z.number().multipleOf(0.5).min(0.5).max(5.5)` validation
+- **ADMN-05 full coverage** — all 7 routes call `logAdminAction()` before returning success
+- **Route ordering** — POST /politicians/context registered before PUT /politicians/:id/answers (prevents :id capturing "context")
+- **Phase 39 complete** — CONS-12 and CONS-13 fulfilled
 
 ### Phase 39 Plan 02 Complete (39-02)
 
@@ -227,5 +238,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 39 Plan 02 complete — compass compare + verdicts + batch routes (21f7c9e)
-Resume: Phase 39 Plan 03 — admin compass routes at /api/compass/* paths
+Stopped at: Phase 39 Plan 03 complete — compassAdmin.ts 7 admin routes + dual-router mount (004c447)
+Resume: Phase 40 — Frontend Auth Updates (CONS-14–17)
