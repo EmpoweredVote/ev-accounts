@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 39 — Compass Additions — In progress
-Plan: 1 of 3 complete
-Status: Plan 01 complete — migration DDL done
-Last activity: 2026-03-20 — Completed 39-01 (migration: NUMERIC(3,1), compass_verdicts, updated RPCs)
+Plan: 2 of 3 complete
+Status: Plan 02 complete — compare, verdicts, and batch routes live
+Last activity: 2026-03-20 — Completed 39-02 (compare endpoint, verdicts CRUD, batch politician answers)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped (39 in progress) ██████████░
 
@@ -73,6 +73,15 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 39 Plan 02 Complete (39-02)
+
+- **POST /api/compass/compare** — proximity alignment scoring; fetches user answers once, politician answers in parallel; intersection of shared topics only; score = 1 - |u-p|/5 averaged * 100 Math.round
+- **GET /api/compass/verdicts** — returns user's Read & Rank verdicts; optional `?politician_id=` filter via JOIN to essentials.quotes on `q.politician_id` (column name assumed — verify at runtime)
+- **POST /api/compass/verdicts** — atomic batch upsert via `adminRpc('upsert_compass_verdicts', { p_verdicts: JSON.stringify(...) })`; returns `{ upserted: N }`
+- **POST /api/compass/politicians/:id/answers/batch** — filtered politician answers by topic_ids using `ANY($2::uuid[])`; registered BEFORE `GET /politicians/:id/answers` to prevent Express path capture
+- **essentials.quotes.politician_id** — FK column name assumed (Go server table, no ev-accounts migration); getUserVerdicts comment documents the discovery query; one line to fix if wrong
+- **Plans 02 and 03 parallel** — 03 (admin compass routes) still pending
 
 ### Phase 39 Plan 01 Complete (39-01)
 
@@ -218,5 +227,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 39 Plan 01 complete — 038_compass_additions.sql + applyMigrations.ts update (798ceaa)
-Resume: Phase 39 Plan 02 — compare endpoint routes
+Stopped at: Phase 39 Plan 02 complete — compass compare + verdicts + batch routes (21f7c9e)
+Resume: Phase 39 Plan 03 — admin compass routes at /api/compass/* paths
