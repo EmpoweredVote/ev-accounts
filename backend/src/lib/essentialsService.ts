@@ -21,6 +21,9 @@
  *   - getRepresentativesByAddress — Census Geocoder -> PostGIS geofence -> politicians
  *   - getPoliticiansFlatList — Go-parity flat list for /api/essentials/politicians
  *   - getPoliticianById — full profile with nested contacts, images, degrees, experiences
+ *   - getGovernmentById — government with nested chambers list
+ *   - getChamberById — chamber with parent government
+ *   - getDistrictById — district with politicians + chamber + government context
  *
  * DB schema notes (Phase 38 investigation):
  *   - governments: id, name, type, state, city — NO is_elected or election_frequency
@@ -677,5 +680,251 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     images,
     degrees,
     experiences,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// GovernmentDetail types + getGovernmentById
+// ---------------------------------------------------------------------------
+
+export interface ChamberSummary {
+  id: string;
+  name: string;
+  name_formal: string;
+  type: string;
+  election_frequency: string;
+}
+
+/**
+ * Government entity with nested list of its chambers.
+ *
+ * governments table: id, name, type, state, city (no is_elected, no election_frequency).
+ * election_frequency lives on chambers.
+ */
+export interface GovernmentDetail {
+  id: string;
+  name: string;
+  type: string;
+  state: string;
+  city: string;
+  chambers: ChamberSummary[];
+}
+
+/**
+ * Fetch a single government by ID with its associated chambers.
+ *
+ * Returns null when no government with the given ID exists.
+ * All null string fields coerced to '' for Go convention.
+ * Chambers array is [] when the government has no chambers.
+ *
+ * Uses pool.query() only — essentials schema is NOT in PostgREST exposed list.
+ */
+export async function getGovernmentById(id: string): Promise<GovernmentDetail | null> {
+  const [govResult, chambersResult] = await Promise.all([
+    pool.query(
+      `SELECT id, name, type, state, city
+       FROM essentials.governments
+       WHERE id = $1`,
+      [id]
+    ),
+    pool.query(
+      `SELECT id, name, name_formal, type, election_frequency
+       FROM essentials.chambers
+       WHERE government_id = $1
+       ORDER BY name`,
+      [id]
+    ),
+  ]);
+
+  if (govResult.rows.length === 0) {
+    return null;
+  }
+
+  const row = govResult.rows[0];
+
+  const chambers: ChamberSummary[] = chambersResult.rows.map((r) => ({
+    id: r.id as string,
+    name: r.name ?? '',
+    name_formal: r.name_formal ?? '',
+    type: r.type ?? '',
+    election_frequency: r.election_frequency ?? '',
+  }));
+
+  return {
+    id: row.id as string,
+    name: row.name ?? '',
+    type: row.type ?? '',
+    state: row.state ?? '',
+    city: row.city ?? '',
+    chambers,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// ChamberDetail types + getChamberById
+// ---------------------------------------------------------------------------
+
+export interface GovernmentSummary {
+  id: string;
+  name: string;
+  type: string;
+  state: string;
+  city: string;
+}
+
+/**
+ * Chamber entity with parent government context.
+ */
+export interface ChamberDetail {
+  id: string;
+  name: string;
+  name_formal: string;
+  type: string;
+  election_frequency: string;
+  government: GovernmentSummary;
+}
+
+/**
+ * Fetch a single chamber by ID with its parent government.
+ *
+ * Returns null when no chamber with the given ID exists.
+ * All null string fields coerced to '' for Go convention.
+ *
+ * Uses pool.query() only — essentials schema is NOT in PostgREST exposed list.
+ */
+export async function getChamberById(id: string): Promise<ChamberDetail | null> {
+  const { rows } = await pool.query(
+    `SELECT ch.id, ch.name, ch.name_formal, ch.type, ch.election_frequency,
+            g.id AS gov_id, g.name AS gov_name, g.type AS gov_type,
+            g.state AS gov_state, g.city AS gov_city
+     FROM essentials.chambers ch
+     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+     WHERE ch.id = $1`,
+    [id]
+  );
+
+  if (rows.length === 0) {
+    return null;
+  }
+
+  const row = rows[0];
+
+  return {
+    id: row.id as string,
+    name: row.name ?? '',
+    name_formal: row.name_formal ?? '',
+    type: row.type ?? '',
+    election_frequency: row.election_frequency ?? '',
+    government: {
+      id: row.gov_id ?? '',
+      name: row.gov_name ?? '',
+      type: row.gov_type ?? '',
+      state: row.gov_state ?? '',
+      city: row.gov_city ?? '',
+    },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// DistrictDetail types + getDistrictById
+// ---------------------------------------------------------------------------
+
+export interface DistrictPoliticianSummary {
+  id: string;
+  full_name: string;
+  party: string;
+  is_incumbent: boolean;
+  photo_origin_url: string;
+}
+
+/**
+ * District entity with active politicians, parent chamber, and government context.
+ */
+export interface DistrictDetail {
+  id: string;
+  external_id: string;
+  label: string;
+  district_type: string;
+  district_id: string;
+  state: string;
+  mtfcc: string;
+  geo_id: string;
+  politicians: DistrictPoliticianSummary[];
+  chamber: { id: string; name: string };
+  government: { id: string; name: string };
+}
+
+/**
+ * Fetch a single district by ID with its active politicians, chamber, and government.
+ *
+ * Returns null when no district with the given ID exists.
+ * All null string fields coerced to '' for Go convention.
+ * Politicians array is [] when no active politicians are assigned.
+ *
+ * Join path:
+ *   districts → offices (district_id) → politicians (office_id, is_active=true)
+ *   offices → chambers (chamber_id) → governments (government_id)
+ *
+ * Uses pool.query() only — essentials schema is NOT in PostgREST exposed list.
+ */
+export async function getDistrictById(id: string): Promise<DistrictDetail | null> {
+  // First fetch the district itself to verify it exists
+  const districtResult = await pool.query(
+    `SELECT d.id, d.external_id, d.label, d.district_type, d.geo_id AS district_id,
+            d.state, d.mtfcc, d.geo_id,
+            ch.id AS chamber_id, ch.name AS chamber_name,
+            g.id AS gov_id, g.name AS gov_name
+     FROM essentials.districts d
+     LEFT JOIN essentials.offices o ON o.district_id = d.id
+     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+     WHERE d.id = $1
+     LIMIT 1`,
+    [id]
+  );
+
+  if (districtResult.rows.length === 0) {
+    return null;
+  }
+
+  const dRow = districtResult.rows[0];
+
+  // Fetch active politicians for this district
+  const politiciansResult = await pool.query(
+    `SELECT p.id, p.full_name, p.party, p.is_incumbent, p.photo_origin_url
+     FROM essentials.offices o
+     JOIN essentials.politicians p ON p.office_id = o.id
+     WHERE o.district_id = $1
+       AND p.is_active = true
+     ORDER BY p.is_incumbent DESC, p.full_name`,
+    [id]
+  );
+
+  const politicians: DistrictPoliticianSummary[] = politiciansResult.rows.map((r) => ({
+    id: r.id as string,
+    full_name: r.full_name ?? '',
+    party: r.party ?? '',
+    is_incumbent: r.is_incumbent ?? false,
+    photo_origin_url: r.photo_origin_url ?? '',
+  }));
+
+  return {
+    id: dRow.id as string,
+    external_id: dRow.external_id ?? '',
+    label: dRow.label ?? '',
+    district_type: dRow.district_type ?? '',
+    district_id: dRow.district_id ?? '',
+    state: dRow.state ?? '',
+    mtfcc: dRow.mtfcc ?? '',
+    geo_id: dRow.geo_id ?? '',
+    politicians,
+    chamber: {
+      id: dRow.chamber_id ?? '',
+      name: dRow.chamber_name ?? '',
+    },
+    government: {
+      id: dRow.gov_id ?? '',
+      name: dRow.gov_name ?? '',
+    },
   };
 }
