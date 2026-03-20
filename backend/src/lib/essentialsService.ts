@@ -20,6 +20,16 @@
  * Phase 38 additions:
  *   - getRepresentativesByAddress — Census Geocoder -> PostGIS geofence -> politicians
  *   - getPoliticiansFlatList — Go-parity flat list for /api/essentials/politicians
+ *   - getPoliticianById — full profile with nested contacts, images, degrees, experiences
+ *
+ * DB schema notes (Phase 38 investigation):
+ *   - governments: id, name, type, state, city — NO is_elected or election_frequency
+ *   - chambers: election_frequency (text), NOT governments
+ *   - is_elected derived: NOT COALESCE(o.is_appointed_position, false)
+ *   - politician_contacts: politician_id FK, email, phone, fax, contact_type, website_url, source
+ *   - politician_images: politician_id FK, url, type, photo_license
+ *   - degrees: politician_id FK, degree, major, school, grad_year
+ *   - experiences: politician_id FK, title, organization, type, start, end
  */
 
 import { pool } from './db.js';
@@ -239,9 +249,11 @@ export async function getPoliticiansFlatList(
            p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.is_appointed_position,
            d.district_type, d.label AS district_label, d.geo_id AS district_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-           g.name AS government_name, g.is_elected, g.election_frequency
+           ch.election_frequency,
+           g.name AS government_name
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.id = p.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -278,7 +290,9 @@ export async function getPoliticiansFlatList(
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
-    is_elected: row.is_elected ?? false,
+    // is_elected derived: NOT appointed. governments table has no is_elected column.
+    is_elected: !row.is_appointed_position,
+    // election_frequency is on chambers, not governments.
     election_frequency: row.election_frequency ?? '',
     committees: null,
     bio_text: row.bio_text ?? null,
@@ -317,10 +331,12 @@ export async function getRepresentativesByAddress(
            p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            o.title AS office_title, o.representing_state, o.representing_city,
+           o.is_appointed_position,
            d.district_type, d.label AS district_label, d.geo_id AS district_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
-           g.name AS government_name, g.is_elected, g.election_frequency
+           ch.election_frequency,
+           g.name AS government_name
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
     JOIN essentials.offices o ON o.district_id = d.id
@@ -365,7 +381,9 @@ export async function getRepresentativesByAddress(
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
-    is_elected: row.is_elected ?? false,
+    // is_elected derived: NOT appointed. governments table has no is_elected column.
+    is_elected: !row.is_appointed_position,
+    // election_frequency is on chambers, not governments.
     election_frequency: row.election_frequency ?? '',
     committees: null,
     bio_text: row.bio_text ?? null,
@@ -381,4 +399,263 @@ export async function getRepresentativesByAddress(
   };
 
   return { politicians, jurisdiction };
+}
+
+// ---------------------------------------------------------------------------
+// PoliticianDetail types
+// ---------------------------------------------------------------------------
+
+export interface PoliticianContact {
+  id: string;
+  source: string;
+  email: string;
+  phone: string;
+  fax: string;
+  contact_type: string;
+  website_url: string;
+}
+
+export interface PoliticianImage {
+  id: string;
+  url: string;
+  type: string;
+  photo_license: string;
+}
+
+export interface PoliticianDegree {
+  id: string;
+  degree: string;
+  major: string;
+  school: string;
+  grad_year: number | null;
+}
+
+export interface PoliticianExperience {
+  id: string;
+  title: string;
+  organization: string;
+  type: string;
+  start: string;
+  end: string;
+}
+
+/**
+ * Full politician profile with all nested data from essentials schema.
+ *
+ * Extends PoliticianFlatRecord with nested arrays for contacts, images,
+ * degrees, and experiences. Nested arrays are [] (not null) when no data exists.
+ *
+ * office_id and government_id included for deep linking to related entities.
+ */
+export interface PoliticianDetail {
+  // Identity
+  id: string;
+  external_id: number | null;
+  first_name: string;
+  middle_initial: string;
+  last_name: string;
+  preferred_name: string;
+  name_suffix: string;
+  full_name: string;
+  party: string;
+  party_short_name: string;
+  // Contact / web
+  photo_origin_url: string;
+  web_form_url: string;
+  urls: string[] | null;
+  email_addresses: string[] | null;
+  // Biography
+  bio_text: string | null;
+  slug: string | null;
+  total_years_in_office: number | null;
+  // Status flags
+  is_incumbent: boolean;
+  is_appointed: boolean;
+  is_vacant: boolean;
+  is_active: boolean;
+  is_elected: boolean;
+  // Office details
+  office_id: string | null;
+  office_title: string;
+  representing_state: string;
+  representing_city: string;
+  office_seats: number | null;
+  is_appointed_position: boolean;
+  // District details
+  district_type: string;
+  district_label: string;
+  district_id: string;
+  district_state: string;
+  mtfcc: string;
+  // Chamber details
+  chamber_name: string;
+  chamber_name_formal: string;
+  election_frequency: string;
+  // Government details
+  government_id: string | null;
+  government_name: string;
+  // Nested arrays
+  contacts: PoliticianContact[];
+  images: PoliticianImage[];
+  degrees: PoliticianDegree[];
+  experiences: PoliticianExperience[];
+}
+
+// ---------------------------------------------------------------------------
+// getPoliticianById
+// ---------------------------------------------------------------------------
+
+/**
+ * Fetch a single politician's full profile with all nested tables.
+ *
+ * Base query: single politician joined to offices → districts → chambers → governments.
+ * Nested data: parallel queries for contacts, images, degrees, experiences.
+ *
+ * Returns null when no politician with the given ID exists.
+ * All null string fields coerced to '' for Go convention.
+ * Nested arrays are [] when no records exist (never null).
+ *
+ * Uses pool.query() only — essentials schema is NOT in PostgREST exposed list.
+ */
+export async function getPoliticianById(id: string): Promise<PoliticianDetail | null> {
+  // Base query: politician + office + district + chamber + government
+  const baseQuery = `
+    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+           p.preferred_name, p.name_suffix, p.party, p.party_short_name,
+           p.photo_origin_url, p.web_form_url,
+           p.urls, p.email_addresses, p.bio_text, p.slug,
+           p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
+           p.is_active, p.office_id,
+           o.title AS office_title, o.representing_state, o.representing_city,
+           o.is_appointed_position, o.seats AS office_seats,
+           d.district_type, d.label AS district_label, d.geo_id AS district_id,
+           d.mtfcc, d.state AS district_state,
+           ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+           ch.election_frequency,
+           g.name AS government_name, g.id AS government_id
+    FROM essentials.politicians p
+    LEFT JOIN essentials.offices o ON o.id = p.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    WHERE p.id = $1
+  `;
+
+  // Run base query + all nested queries in parallel
+  const [baseResult, contactsResult, imagesResult, degreesResult, experiencesResult] =
+    await Promise.all([
+      pool.query(baseQuery, [id]),
+      pool.query(
+        `SELECT id, source, email, phone, fax, contact_type, website_url
+         FROM essentials.politician_contacts
+         WHERE politician_id = $1`,
+        [id]
+      ),
+      pool.query(
+        `SELECT id, url, type, photo_license
+         FROM essentials.politician_images
+         WHERE politician_id = $1`,
+        [id]
+      ),
+      pool.query(
+        `SELECT id, degree, major, school, grad_year
+         FROM essentials.degrees
+         WHERE politician_id = $1`,
+        [id]
+      ),
+      pool.query(
+        `SELECT id, title, organization, type, start, "end"
+         FROM essentials.experiences
+         WHERE politician_id = $1`,
+        [id]
+      ),
+    ]);
+
+  // Politician not found
+  if (baseResult.rows.length === 0) {
+    return null;
+  }
+
+  const row = baseResult.rows[0];
+
+  const contacts: PoliticianContact[] = contactsResult.rows.map((r) => ({
+    id: r.id as string,
+    source: r.source ?? '',
+    email: r.email ?? '',
+    phone: r.phone ?? '',
+    fax: r.fax ?? '',
+    contact_type: r.contact_type ?? '',
+    website_url: r.website_url ?? '',
+  }));
+
+  const images: PoliticianImage[] = imagesResult.rows.map((r) => ({
+    id: r.id as string,
+    url: r.url ?? '',
+    type: r.type ?? '',
+    photo_license: r.photo_license ?? '',
+  }));
+
+  const degrees: PoliticianDegree[] = degreesResult.rows.map((r) => ({
+    id: r.id as string,
+    degree: r.degree ?? '',
+    major: r.major ?? '',
+    school: r.school ?? '',
+    grad_year: r.grad_year != null ? Number(r.grad_year) : null,
+  }));
+
+  const experiences: PoliticianExperience[] = experiencesResult.rows.map((r) => ({
+    id: r.id as string,
+    title: r.title ?? '',
+    organization: r.organization ?? '',
+    type: r.type ?? '',
+    start: r.start ?? '',
+    end: r.end ?? '',
+  }));
+
+  return {
+    id: row.id as string,
+    external_id: row.external_id != null ? Number(row.external_id) : null,
+    first_name: row.first_name ?? '',
+    middle_initial: row.middle_initial ?? '',
+    last_name: row.last_name ?? '',
+    preferred_name: row.preferred_name ?? '',
+    name_suffix: row.name_suffix ?? '',
+    full_name: row.full_name ?? '',
+    party: row.party ?? '',
+    party_short_name: row.party_short_name ?? '',
+    photo_origin_url: row.photo_origin_url ?? '',
+    web_form_url: row.web_form_url ?? '',
+    urls: row.urls ?? null,
+    email_addresses: row.email_addresses ?? null,
+    bio_text: row.bio_text ?? null,
+    slug: row.slug ?? null,
+    total_years_in_office: row.total_years_in_office != null ? Number(row.total_years_in_office) : null,
+    is_incumbent: row.is_incumbent ?? false,
+    is_appointed: row.is_appointed ?? false,
+    is_vacant: row.is_vacant ?? false,
+    is_active: row.is_active ?? false,
+    // is_elected derived: NOT appointed position. governments table has no is_elected column.
+    is_elected: !row.is_appointed_position,
+    office_id: row.office_id ?? null,
+    office_title: row.office_title ?? '',
+    representing_state: row.representing_state ?? '',
+    representing_city: row.representing_city ?? '',
+    office_seats: row.office_seats != null ? Number(row.office_seats) : null,
+    is_appointed_position: row.is_appointed_position ?? false,
+    district_type: row.district_type ?? '',
+    district_label: row.district_label ?? '',
+    district_id: row.district_id ?? '',
+    district_state: row.district_state ?? '',
+    mtfcc: row.mtfcc ?? '',
+    chamber_name: row.chamber_name ?? '',
+    chamber_name_formal: row.chamber_name_formal ?? '',
+    // election_frequency is on chambers, not governments.
+    election_frequency: row.election_frequency ?? '',
+    government_id: row.government_id ?? null,
+    government_name: row.government_name ?? '',
+    contacts,
+    images,
+    degrees,
+    experiences,
+  };
 }
