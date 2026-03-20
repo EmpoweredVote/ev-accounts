@@ -62,6 +62,19 @@ app.use('/api/roles', rolesRouter);
 app.use('/api/social', socialRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/candidates', candidatesRouter);
+// === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
+// GET /api/essentials/candidates/:zip
+// GET /api/essentials/politicians
+// GET /api/essentials/politicians/:id/legislative
+// GET /api/essentials/politicians/:id/committees
+// GET /api/essentials/politicians/:id/bills
+// GET /api/essentials/politicians/:id/votes
+// GET /api/essentials/politicians/:id
+// GET /api/essentials/address-search
+// GET /api/essentials/governments/:id
+// GET /api/essentials/chambers/:id
+// GET /api/essentials/districts/:id
+// NOTE: /candidates and /politicians mounts must come BEFORE /essentials to prevent path capture
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
