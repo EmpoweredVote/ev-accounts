@@ -75,8 +75,8 @@ Merge all Empowered Vote backend services into ev-accounts as the single databas
 | CONS-07 | Phase 35 | Complete |
 | CONS-08 | Phase 36 | Complete |
 | CONS-09 | Phase 36 | Complete |
-| CONS-10 | Phase 37 | Pending |
-| CONS-11 | Phase 38 | Pending |
+| CONS-10 | Phase 37 | Complete |
+| CONS-11 | Phase 38 | Complete |
 | CONS-12 | Phase 39 | Pending |
 | CONS-13 | Phase 39 | Pending |
 | CONS-14 | Phase 40 | Pending |

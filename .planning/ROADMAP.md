@@ -343,7 +343,7 @@ Plans:
 | 35. Politician Deduplication | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
-| 38. Express Ports Wave 3 — Essentials | v1.6 | 0/5 | Pending | — |
+| 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
 | 39. Compass Additions | v1.6 | 0/? | Pending | — |
 | 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
 | 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
