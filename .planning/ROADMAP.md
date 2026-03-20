@@ -105,6 +105,13 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 
 **Requirements:** CONS-01, CONS-02, CONS-03, CONS-04
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 34-01-PLAN.md — Pre-flight verification: enumerate tables, detect user_id columns, capture row counts
+- [ ] 34-02-PLAN.md — RLS migrations for 5 public-read schemas (essentials, meetings, treasury, transparent_motivations, compass)
+- [ ] 34-03-PLAN.md — RLS migration for staging (authenticated-only read) + comprehensive verification
+
 **Success Criteria:**
 
 1. All six schemas (`essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia`) exist in the ev-accounts Supabase project and are visible in the dashboard.
@@ -303,7 +310,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
-| 34. Database Schema Migration | v1.6 | 0/? | Pending | — |
+| 34. Database Schema Migration | v1.6 | 0/3 | Planned | — |
 | 35. Politician Deduplication | v1.6 | 0/? | Pending | — |
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/? | Pending | — |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 0/? | Pending | — |
