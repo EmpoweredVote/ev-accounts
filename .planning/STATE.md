@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 38: Express Ports Wave 3 — Essentials
+**Current focus:** v1.6 Platform Consolidation — Phase 39: Compass Additions
 
 ## Current Position
 
-Phase: 38 — Express Ports Wave 3 (Essentials) — In progress
-Plan: 4 of 5 complete
-Status: In progress
-Last activity: 2026-03-20 — Completed 38-04-PLAN.md (Legislative subroutes: GET /politicians/:id/legislative|committees|bills|votes)
+Phase: 38 — Express Ports Wave 3 (Essentials) — Complete
+Plan: 5 of 5 complete
+Status: Phase complete — ready for Phase 39
+Last activity: 2026-03-20 — Completed 38-05-PLAN.md (Governments/chambers/districts entity routes; CONS-11 fulfilled)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped ██████████░
 
 ## Accumulated Context
 
@@ -73,6 +73,17 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 38 Complete — CONS-11 Fulfilled (38-05)
+
+- **All 11 essentials routes operational** in ev-accounts Express API — no Go server dependency for any essentials data
+- **GET /api/essentials/governments/:id** — returns government (id, name, type, state, city) with nested chambers list
+- **GET /api/essentials/chambers/:id** — returns chamber with parent government context
+- **GET /api/essentials/districts/:id** — returns district with active politicians, parent chamber, and government
+- **Route inventory documented** in `backend/src/index.ts` comment block at essentials mount
+- **getDistrictById pattern** — two separate queries (base district + context, then politicians) to avoid Cartesian product; district query uses LIMIT 1
+- **getGovernmentById pattern** — Promise.all parallel queries for government and chambers
+- **CONS-11 fulfilled** — Phase 39 (Compass Additions) unblocked
 
 ### Phase 38 Plan 04 Complete (38-04)
 
@@ -197,5 +208,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 38, Plan 04 complete — legislative subroutes GET /politicians/:id/legislative|committees|bills|votes (2d2c653)
-Resume: Phase 38 Plan 05 — final essentials plan
+Stopped at: Phase 38 complete — Plan 05 done — governments/chambers/districts entity routes (1c63542)
+Resume: Phase 39 — Compass Additions (CONS-12, CONS-13)
