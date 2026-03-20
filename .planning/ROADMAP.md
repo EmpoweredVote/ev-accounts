@@ -152,9 +152,15 @@ Plans:
 
 **Requirements:** CONS-08, CONS-09
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 36-01-PLAN.md — Treasury service layer and routes (5 public reads + 4 admin writes)
+- [ ] 36-02-PLAN.md — Meetings service layer and routes (5 public reads + 3 admin writes)
+
 **Success Criteria:**
 
-1. All Treasury endpoints (~5 routes) return responses with the same shape as the Go equivalents when called against ev-accounts.
+1. All Treasury endpoints (~9 routes) return well-formed responses designed from the Supabase schema when called against ev-accounts (Supabase-first design, not Go parity).
 2. All Meetings endpoints (~8 routes) return correct data for public reads; admin write routes reject requests without a valid admin JWT.
 3. A curl smoke test hitting each new route on the Render staging deployment returns HTTP 200 (or 201/204 where appropriate) with no 500 errors.
 4. No Treasury or Meetings route requires the Go server to be running — ev-accounts handles all requests end-to-end.
@@ -318,7 +324,7 @@ Plans:
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 34. Database Schema Migration | v1.6 | 3/3 | Complete | 2026-03-20 |
 | 35. Politician Deduplication | v1.6 | 2/2 | Complete | 2026-03-20 |
-| 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/? | Pending | — |
+| 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 0/2 | Pending | — |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 0/? | Pending | — |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 0/? | Pending | — |
 | 39. Compass Additions | v1.6 | 0/? | Pending | — |
