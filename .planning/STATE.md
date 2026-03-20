@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 38 — Express Ports Wave 3 (Essentials) — In progress
-Plan: 2 of 5 complete
+Plan: 3 of 5 complete
 Status: In progress
-Last activity: 2026-03-20 — Completed 38-02-PLAN.md (Address-search route + Go-parity politicians list)
+Last activity: 2026-03-20 — Completed 38-03-PLAN.md (Politician detail endpoint GET /politicians/:id)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 37/43 phases shipped ██████████░
 
@@ -73,6 +73,15 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 38 Plan 03 Complete (38-03)
+
+- **GET /api/essentials/politicians/:id** — full profile with nested contacts, images, degrees, experiences via Promise.all parallel queries; 404 for missing, 422 for invalid UUID
+- **is_elected derived** — `governments` table has no `is_elected` column; derived as `NOT o.is_appointed_position` (offices table)
+- **election_frequency on chambers** — `governments` table only has id, name, type, state, city; `election_frequency` is on `chambers` table
+- **Bug fixed** — `getPoliticiansFlatList` and `getRepresentativesByAddress` were referencing non-existent `g.is_elected` and `g.election_frequency` (governments alias); fixed to `o.is_appointed_position` and `ch.election_frequency`
+- **"end" column quoting** — `experiences.end` is a SQL reserved keyword; must be `"end"` in SELECT
+- **Phase 38 Plan 04 (legislative routes) unblocked**
 
 ### Phase 38 Plan 02 Complete (38-02)
 
@@ -176,5 +185,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 38, Plan 02 complete — address-search route + Go-parity politicians list (3cef488)
-Resume: Phase 38 Plan 03 — politician detail routes
+Stopped at: Phase 38, Plan 03 complete — politician detail endpoint GET /politicians/:id (efe6af5)
+Resume: Phase 38 Plan 04 — legislative data routes
