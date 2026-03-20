@@ -594,3 +594,273 @@ export async function mergePolitician(
 
   return mapPoliticianRow(rows[0]);
 }
+
+// ---------------------------------------------------------------------------
+// Stance types
+// ---------------------------------------------------------------------------
+
+export interface StagingStance {
+  id: string;
+  contextKey: string;
+  politicianExternalId: string | null;
+  politicianName: string;
+  topicKey: string;
+  topicId: string | null;
+  value: number;
+  reasoning: string | null;
+  sources: string[];
+  status: string;
+  addedBy: string;
+  reviewedBy: string[];
+  lastReviewedAt: string | null;
+  reviewCount: number;
+  lockedBy: string | null;
+  lockedAt: string | null;
+  approvedToAnswerId: string | null;
+  approvedAt: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface StanceReviewLog {
+  id: string;
+  stanceId: string;
+  reviewerName: string;
+  action: string;
+  previousValue: number | null;
+  newValue: number | null;
+  comment: string | null;
+  createdAt: string;
+}
+
+export interface CreateStanceInput {
+  contextKey: string;
+  politicianExternalId?: string | null;
+  politicianName: string;
+  topicKey: string;
+  topicId?: string | null;
+  value: number;
+  reasoning?: string | null;
+  sources?: string[];
+}
+
+function mapStanceRow(row: any): StagingStance {
+  return {
+    id: row.id,
+    contextKey: row.context_key,
+    politicianExternalId: row.politician_external_id,
+    politicianName: row.politician_name,
+    topicKey: row.topic_key,
+    topicId: row.topic_id,
+    value: Number(row.value),
+    reasoning: row.reasoning,
+    sources: row.sources ?? [],
+    status: row.status,
+    addedBy: row.added_by,
+    reviewedBy: row.reviewed_by ?? [],
+    lastReviewedAt: row.last_reviewed_at,
+    reviewCount: Number(row.review_count),
+    lockedBy: row.locked_by,
+    lockedAt: row.locked_at,
+    approvedToAnswerId: row.approved_to_answer_id,
+    approvedAt: row.approved_at,
+    createdAt: row.created_at,
+    updatedAt: row.updated_at,
+  };
+}
+
+export async function getStances(filters?: { status?: string }): Promise<StagingStance[]> {
+  if (filters?.status) {
+    const { rows } = await pool.query(
+      `SELECT * FROM staging.stances WHERE status = $1 ORDER BY created_at DESC`,
+      [filters.status]
+    );
+    return rows.map(mapStanceRow);
+  }
+  const { rows } = await pool.query(`SELECT * FROM staging.stances ORDER BY created_at DESC`);
+  return rows.map(mapStanceRow);
+}
+
+export async function getStanceById(id: string): Promise<StagingStance | null> {
+  const { rows } = await pool.query(`SELECT * FROM staging.stances WHERE id = $1`, [id]);
+  return rows.length > 0 ? mapStanceRow(rows[0]) : null;
+}
+
+export async function createStance(data: CreateStanceInput, userId: string): Promise<StagingStance> {
+  const addedBy = await getDisplayName(userId);
+  const { rows } = await pool.query(
+    `INSERT INTO staging.stances
+       (context_key, politician_external_id, politician_name, topic_key, topic_id,
+        value, reasoning, sources, added_by, status)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'pending')
+     RETURNING *`,
+    [
+      data.contextKey,
+      data.politicianExternalId ?? null,
+      data.politicianName,
+      data.topicKey,
+      data.topicId ?? null,
+      data.value,
+      data.reasoning ?? null,
+      data.sources ?? null,
+      addedBy,
+    ]
+  );
+  return mapStanceRow(rows[0]);
+}
+
+export async function updateStance(id: string, data: Partial<CreateStanceInput>): Promise<StagingStance> {
+  const record = await getStanceById(id);
+  if (!record) {
+    const err = new Error(`Stance not found: ${id}`) as any;
+    err.httpStatus = 404;
+    throw err;
+  }
+  assertPending(record.status);
+
+  const columnMap: Record<string, string> = {
+    contextKey: 'context_key',
+    politicianExternalId: 'politician_external_id',
+    politicianName: 'politician_name',
+    topicKey: 'topic_key',
+    topicId: 'topic_id',
+    value: 'value',
+    reasoning: 'reasoning',
+    sources: 'sources',
+  };
+
+  const setClauses: string[] = [];
+  const values: any[] = [];
+
+  for (const [key, col] of Object.entries(columnMap)) {
+    const val = (data as any)[key];
+    if (val !== undefined) {
+      setClauses.push(`${col} = $${values.length + 1}`);
+      values.push(val);
+    }
+  }
+  setClauses.push(`updated_at = NOW()`);
+
+  if (setClauses.length === 1) return record;
+
+  values.push(id);
+  const { rows } = await pool.query(
+    `UPDATE staging.stances SET ${setClauses.join(', ')} WHERE id = $${values.length} RETURNING *`,
+    values
+  );
+  return mapStanceRow(rows[0]);
+}
+
+export async function reviewStance(
+  id: string,
+  action: 'approve' | 'reject',
+  userId: string,
+  comment?: string,
+  newValue?: number
+): Promise<StagingStance> {
+  const record = await getStanceById(id);
+  if (!record) {
+    const err = new Error(`Stance not found: ${id}`) as any;
+    err.httpStatus = 404;
+    throw err;
+  }
+  assertPending(record.status);
+
+  const reviewerName = await getDisplayName(userId);
+  const previousValue = record.value;
+
+  let updatedRow: any;
+
+  if (action === 'approve') {
+    if (!record.topicId) {
+      const err = new Error('Cannot approve stance: topic_id is required for promotion to politician_answers') as any;
+      err.httpStatus = 422;
+      throw err;
+    }
+
+    const extIdNum = record.politicianExternalId !== null ? Number(record.politicianExternalId) : NaN;
+    if (isNaN(extIdNum)) {
+      const err = new Error(`Cannot approve stance: politician not found in essentials (external_id: ${record.politicianExternalId})`) as any;
+      err.httpStatus = 422;
+      throw err;
+    }
+
+    const { rows: polRows } = await pool.query(
+      `SELECT id FROM essentials.politicians WHERE external_id = $1`,
+      [extIdNum]
+    );
+    if (polRows.length === 0) {
+      const err = new Error(`Cannot approve stance: politician not found in essentials (external_id: ${record.politicianExternalId})`) as any;
+      err.httpStatus = 422;
+      throw err;
+    }
+    const politicianId = polRows[0].id;
+    const approvalValue = newValue !== undefined ? newValue : record.value;
+
+    if (newValue !== undefined) {
+      await pool.query(
+        `UPDATE staging.stances SET value = $1 WHERE id = $2`,
+        [newValue, id]
+      );
+    }
+
+    await pool.query(
+      `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+       VALUES ($1, $2, $3)
+       ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
+      [politicianId, record.topicId, approvalValue]
+    );
+
+    const { rows } = await pool.query(
+      `UPDATE staging.stances
+       SET status = 'approved', approved_at = NOW(), review_count = review_count + 1,
+           last_reviewed_at = NOW(), updated_at = NOW()
+       WHERE id = $1 RETURNING *`,
+      [id]
+    );
+    updatedRow = rows[0];
+  } else {
+    const { rows } = await pool.query(
+      `UPDATE staging.stances
+       SET status = 'rejected', review_count = review_count + 1,
+           last_reviewed_at = NOW(), updated_at = NOW()
+       WHERE id = $1 RETURNING *`,
+      [id]
+    );
+    updatedRow = rows[0];
+  }
+
+  await pool.query(
+    `INSERT INTO staging.review_logs (stance_id, reviewer_name, action, previous_value, new_value, comment)
+     VALUES ($1, $2, $3, $4, $5, $6)`,
+    [id, reviewerName, action, previousValue, newValue ?? null, comment ?? null]
+  );
+
+  return mapStanceRow(updatedRow);
+}
+
+export async function lockStance(
+  id: string,
+  userId: string
+): Promise<{ locked: boolean; lockedBy?: string; lockedAt?: string }> {
+  const { rows } = await pool.query(
+    `UPDATE staging.stances SET locked_by = $1, locked_at = NOW()
+     WHERE id = $2 AND locked_by IS NULL RETURNING id`,
+    [userId, id]
+  );
+  if (rows.length > 0) return { locked: true };
+
+  const current = await getStanceById(id);
+  return {
+    locked: false,
+    lockedBy: current?.lockedBy ?? undefined,
+    lockedAt: current?.lockedAt ?? undefined,
+  };
+}
+
+export async function unlockStance(id: string): Promise<void> {
+  await pool.query(
+    `UPDATE staging.stances SET locked_by = NULL, locked_at = NULL WHERE id = $1`,
+    [id]
+  );
+}
