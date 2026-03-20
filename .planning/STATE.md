@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 35 — Politician Deduplication
-Plan: 02 of 2 complete — Phase 35 complete
-Status: Phase complete — ready for Phase 36
-Last activity: 2026-03-20 — Completed 35-02-PLAN.md (application code migration + PostgREST fix)
+Phase: 36 — Express Ports Wave 1 (Treasury + Meetings)
+Plan: 01 of 2 complete
+Status: In progress — Plan 01 complete, Plan 02 pending
+Last activity: 2026-03-20 — Completed 36-01-PLAN.md (Treasury service + routes)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 35/43 phases shipped ████████░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 35/43 phases shipped (36 in progress) ████████░░
 
 ## Accumulated Context
 
@@ -74,6 +74,14 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 36 In Progress (plan 01 complete)
+
+- **treasury schema served by ev-accounts Express** — CONS-08 fulfilled; Go server no longer needed for treasury data
+- **pool.query() confirmed for treasury** — treasury schema not in PostgREST exposed list; all 9 service functions use direct SQL
+- **Treasury currently 0 rows** — confirmed from Phase 34 baseline; reads return empty arrays (expected)
+- **req.params as string cast** — TypeScript strict typing requires explicit cast on Express route params
+- **Phase 36 Plan 02 (Meetings) unblocked**
+
 ### Phase 35 Complete (plans 01 + 02)
 
 - **essentials.politicians is sole source of truth** — inform.politicians dropped in plan 01; all application code migrated in plan 02
@@ -103,5 +111,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 35 complete — profileService.ts gap fixed (d7af2a4); verification passed 4/4
-Resume: Run `/gsd:discuss-phase 36` or `/gsd:plan-phase 36` to begin Express Ports Wave 1
+Stopped at: Phase 36 Plan 01 complete — treasury service + routes (4c30b78); curl verification passed
+Resume: Run `/gsd:execute-phase 36` to execute Plan 02 (Meetings routes)
