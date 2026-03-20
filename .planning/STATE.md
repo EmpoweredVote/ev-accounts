@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 35 — Politician Deduplication
-Plan: 01 of 2 complete
-Status: In progress — plan 01 complete
-Last activity: 2026-03-20 — Completed 35-01-PLAN.md (bridge table + FK migration + RPC rebuilds; inform.politicians dropped)
+Plan: 02 of 2 complete — Phase 35 complete
+Status: Phase complete — ready for Phase 36
+Last activity: 2026-03-20 — Completed 35-02-PLAN.md (application code migration + PostgREST fix)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 34/43 phases shipped (35 in progress) ███████░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 35/43 phases shipped ████████░░
 
 ## Accumulated Context
 
@@ -74,6 +74,14 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
+### Phase 35 Complete (plans 01 + 02)
+
+- **essentials.politicians is sole source of truth** — inform.politicians dropped in plan 01; all application code migrated in plan 02
+- **essentials schema not PostgREST-exposed** — `supabaseAnon.schema('essentials')` fails; all essentials reads/writes must use `pool.query()` directly
+- **PoliticianGroup response shape changed** — `GET /api/essentials/politicians` now returns `{ party, incumbent, candidates }` groups (was `{ office_title, incumbent, candidates }`)
+- **PostgREST anti-pattern eliminated** — `adminSetPoliticianContext` now uses `pool.query()` with direct SQL upsert
+- **Phase 36 (Express Ports Wave 1) unblocked** — ready to proceed
+
 ### Phase 35 Plan 01 Key Findings (from 35-01)
 
 - **inform.politicians had 30 records, not 4** — research underestimated scope; 588 answers + 500 context rows fully migrated
@@ -95,5 +103,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Completed 35-01-PLAN.md (bridge table + FK migration + RPC rebuilds; inform.politicians dropped)
-Resume: Run plan 35-02 (adminSetPoliticianContext PostgREST fix + seedPoliticians update)
+Stopped at: Completed 35-02-PLAN.md (application code migration; PostgREST fix; Phase 35 complete)
+Resume: Start Phase 36 (Express Ports Wave 1 — Treasury + Meetings)
