@@ -228,9 +228,9 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 39-01-PLAN.md — Database migration: value range, verdicts table, updated RPCs
-- [ ] 39-02-PLAN.md — Public routes: compare, verdicts, batch politician answers
-- [ ] 39-03-PLAN.md — Admin compass routes at Go-compatible /api/compass/* paths
+- [x] 39-01-PLAN.md — Database migration: value range, verdicts table, updated RPCs
+- [x] 39-02-PLAN.md — Public routes: compare, verdicts, batch politician answers
+- [x] 39-03-PLAN.md — Admin compass routes at Go-compatible /api/compass/* paths
 
 **Success Criteria:**
 
@@ -351,7 +351,7 @@ Plans:
 | 36. Express Ports Wave 1 — Treasury + Meetings | v1.6 | 2/2 | Complete | 2026-03-20 |
 | 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
-| 39. Compass Additions | v1.6 | 0/3 | Planned | — |
+| 39. Compass Additions | v1.6 | 3/3 | Complete | 2026-03-20 |
 | 40. Frontend Auth Updates | v1.6 | 0/? | Pending | — |
 | 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |

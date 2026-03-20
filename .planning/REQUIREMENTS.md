@@ -26,8 +26,8 @@ Merge all Empowered Vote backend services into ev-accounts as the single databas
 - [x] **CONS-09**: Meetings endpoints ported (~8 routes, public read + admin write)
 - [ ] **CONS-10**: Staging endpoints ported (~15 routes, review workflow, role-gated)
 - [ ] **CONS-11**: Essentials core endpoints ported (~25 routes incl. PostGIS address→politician lookup using Census Geocoder)
-- [ ] **CONS-12**: Missing Compass endpoints added (compare, verdicts, admin CRUD, batch politician answers)
-- [ ] **CONS-13**: Compass `value` CHECK constraint updated 1–5 → 0.5–5.5
+- [x] **CONS-12**: Missing Compass endpoints added (compare, verdicts, admin CRUD, batch politician answers)
+- [x] **CONS-13**: Compass `value` CHECK constraint updated 1–5 → 0.5–5.5
 
 ### Frontend Auth Updates
 
@@ -77,8 +77,8 @@ Merge all Empowered Vote backend services into ev-accounts as the single databas
 | CONS-09 | Phase 36 | Complete |
 | CONS-10 | Phase 37 | Complete |
 | CONS-11 | Phase 38 | Complete |
-| CONS-12 | Phase 39 | Pending |
-| CONS-13 | Phase 39 | Pending |
+| CONS-12 | Phase 39 | Complete |
+| CONS-13 | Phase 39 | Complete |
 | CONS-14 | Phase 40 | Pending |
 | CONS-15 | Phase 40 | Pending |
 | CONS-16 | Phase 40 | Pending |

@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 39: Compass Additions
+**Current focus:** v1.6 Platform Consolidation — Phase 40: Frontend Auth Updates
 
 ## Current Position
 
-Phase: 39 — Compass Additions — In progress
-Plan: 3 of 3 complete
-Status: Phase 39 complete — all plans done
-Last activity: 2026-03-20 — Completed 39-03 (compassAdmin.ts: 7 admin routes at /api/compass/* paths, dual-router mount, ADMN-05 audit)
+Phase: 40 — Frontend Auth Updates — Pending
+Plan: 0 of ? complete
+Status: Phase 39 complete — verified 19/19 — ready to plan Phase 40
+Last activity: 2026-03-20 — Completed Phase 39 (3 plans, 2 waves; CONS-12, CONS-13 fulfilled)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 38/43 phases shipped (39 in progress) ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 39/43 phases shipped ██████████░
 
 ## Accumulated Context
 
