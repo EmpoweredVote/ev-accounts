@@ -377,26 +377,25 @@ export async function adminUpdatePoliticianAnswers(
 
 /**
  * Upsert politician context (reasoning + sources for a politician/topic pair).
+ * Uses pool.query() — PostgREST cannot write to non-public schemas reliably.
+ * inform.politician_context stays in the inform schema (only inform.politicians
+ * was moved to essentials in Phase 35).
  */
 export async function adminSetPoliticianContext(
   politicianId: string,
   topicId: string,
   data: { reasoning: string; sources?: string[] }
 ): Promise<Record<string, unknown>> {
-  const { data: row, error } = await supabaseAdmin
-    .schema('inform')
-    .from('politician_context')
-    .upsert({
-      politician_id: politicianId,
-      topic_id: topicId,
-      reasoning: data.reasoning,
-      sources: data.sources ?? [],
-    })
-    .select()
-    .single();
-
-  if (error) throw new Error(error.message);
-  return row as Record<string, unknown>;
+  const { rows } = await pool.query<Record<string, unknown>>(
+    `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+     VALUES ($1, $2, $3, $4)
+     ON CONFLICT (politician_id, topic_id)
+     DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
+     RETURNING *`,
+    [politicianId, topicId, data.reasoning, data.sources ?? []]
+  );
+  if (rows.length === 0) throw new Error('Upsert failed');
+  return rows[0];
 }
 
 /**
@@ -457,29 +456,53 @@ export async function adminListTopics(): Promise<Record<string, unknown>[]> {
 
 /**
  * Create a new politician record.
+ * Writes to essentials.politicians via pool.query() — PostgREST cannot write
+ * to non-public schemas reliably.
+ * full_name in essentials is a regular column (not GENERATED) — caller may provide it.
  */
 export async function adminCreatePolitician(data: {
   first_name: string;
   last_name: string;
   preferred_name?: string;
   full_name?: string;
-  office_title?: string;
   photo_origin_url?: string;
-  is_candidate?: boolean;
+  party?: string;
+  party_short_name?: string;
+  slug?: string;
+  bio_text?: string;
+  is_incumbent?: boolean;
 }): Promise<Record<string, unknown>> {
-  const { data: row, error } = await supabaseAdmin
-    .schema('inform')
-    .from('politicians')
-    .insert({ ...data })
-    .select()
-    .single();
+  // Derive full_name from first/last if not provided
+  const fullName = data.full_name ?? `${data.first_name} ${data.last_name}`.trim();
 
-  if (error) throw new Error(error.message);
-  return row as Record<string, unknown>;
+  const { rows } = await pool.query<Record<string, unknown>>(
+    `INSERT INTO essentials.politicians
+       (first_name, last_name, preferred_name, full_name, photo_origin_url,
+        party, party_short_name, slug, bio_text, is_incumbent)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+     RETURNING *`,
+    [
+      data.first_name,
+      data.last_name,
+      data.preferred_name ?? null,
+      fullName,
+      data.photo_origin_url ?? null,
+      data.party ?? null,
+      data.party_short_name ?? null,
+      data.slug ?? null,
+      data.bio_text ?? null,
+      data.is_incumbent ?? true,
+    ]
+  );
+  if (rows.length === 0) throw new Error('Insert failed');
+  return rows[0];
 }
 
 /**
  * Update an existing politician record.
+ * Writes to essentials.politicians via pool.query() — PostgREST cannot write
+ * to non-public schemas reliably.
+ * Only essentials-native columns are accepted (inform-specific columns removed).
  */
 export async function adminUpdatePolitician(
   politicianId: string,
@@ -488,28 +511,40 @@ export async function adminUpdatePolitician(
     last_name: string;
     preferred_name: string;
     full_name: string;
-    office_title: string;
     photo_origin_url: string;
+    party: string;
+    party_short_name: string;
+    slug: string;
+    bio_text: string;
     is_active: boolean;
-    is_candidate: boolean;
+    is_incumbent: boolean;
+    is_vacant: boolean;
   }>
 ): Promise<Record<string, unknown>> {
-  const { data: row, error } = await supabaseAdmin
-    .schema('inform')
-    .from('politicians')
-    .update(data)
-    .eq('id', politicianId)
-    .select()
-    .single();
+  const setClauses: string[] = [];
+  const values: unknown[] = [];
+  let paramIndex = 1;
 
-  if (error) {
-    if (error.code === 'PGRST116') {
-      throw Object.assign(new Error('Politician not found'), { code: 'NOT_FOUND' });
+  for (const [key, val] of Object.entries(data)) {
+    if (val !== undefined) {
+      setClauses.push(`${key} = $${paramIndex}`);
+      values.push(val);
+      paramIndex++;
     }
-    throw new Error(error.message);
   }
 
-  return row as Record<string, unknown>;
+  if (setClauses.length === 0) throw new Error('No fields to update');
+
+  values.push(politicianId);
+  const { rows } = await pool.query<Record<string, unknown>>(
+    `UPDATE essentials.politicians SET ${setClauses.join(', ')} WHERE id = $${paramIndex} RETURNING *`,
+    values
+  );
+
+  if (rows.length === 0) {
+    throw Object.assign(new Error('Politician not found'), { code: 'NOT_FOUND' });
+  }
+  return rows[0];
 }
 
 /**
