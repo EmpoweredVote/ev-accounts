@@ -13,6 +13,7 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
 // Internal types
@@ -240,39 +241,36 @@ async function fetchInternalProfile(userId: string): Promise<InternalProfileData
     };
 
     // Fetch politician record if politician_id is set
+    // essentials schema is not PostgREST-exposed; must use pool.query() (Phase 35 pattern)
     if (empowered.politician_id != null) {
-      const { data: politician, error: politicianError } = await supabaseAdmin
-        .schema('inform')
-        .from('politicians')
-        .select('id, first_name, last_name, preferred_name, full_name, office_title, photo_origin_url, is_active, is_candidate, is_vacant, representing_city, representing_state, district_type, district_label, district_id, chamber_name, chamber_name_formal, government_name, created_at')
-        .eq('id', empowered.politician_id)
-        .maybeSingle();
+      const { rows: politicianRows } = await pool.query<Record<string, unknown>>(
+        `SELECT id, first_name, last_name, preferred_name, full_name, photo_origin_url,
+                is_active, is_incumbent, is_vacant, party, party_short_name, slug, bio_text
+         FROM essentials.politicians
+         WHERE id = $1`,
+        [empowered.politician_id]
+      ).catch((err: unknown) => {
+        console.error('[profileService] error fetching politician:', err);
+        return { rows: [] as Record<string, unknown>[] };
+      });
 
-      if (politicianError) {
-        console.error('[profileService] error fetching politician:', politicianError);
-      }
-
-      if (politician) {
+      if (politicianRows.length > 0) {
+        const politician = politicianRows[0];
         // Merge politician fields into empowered_profile block
         Object.assign(empoweredProfileBase, {
-          politician_id: politician.id,
-          politician_first_name: politician.first_name,
-          politician_last_name: politician.last_name,
-          politician_preferred_name: politician.preferred_name,
-          politician_full_name: politician.full_name,
-          office_title: politician.office_title,
-          photo_origin_url: politician.photo_origin_url,
-          politician_is_active: politician.is_active,
-          is_candidate: politician.is_candidate,
-          is_vacant: politician.is_vacant,
-          representing_city: politician.representing_city,
-          representing_state: politician.representing_state,
-          district_type: politician.district_type,
-          district_label: politician.district_label,
-          district_id: politician.district_id,
-          chamber_name: politician.chamber_name,
-          chamber_name_formal: politician.chamber_name_formal,
-          government_name: politician.government_name,
+          politician_id: politician['id'],
+          politician_first_name: politician['first_name'],
+          politician_last_name: politician['last_name'],
+          politician_preferred_name: politician['preferred_name'],
+          politician_full_name: politician['full_name'],
+          photo_origin_url: politician['photo_origin_url'],
+          politician_is_active: politician['is_active'],
+          is_incumbent: politician['is_incumbent'],
+          is_vacant: politician['is_vacant'],
+          party: politician['party'],
+          party_short_name: politician['party_short_name'],
+          slug: politician['slug'],
+          bio_text: politician['bio_text'],
         });
       }
     }
