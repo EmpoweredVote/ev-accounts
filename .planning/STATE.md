@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 34 — Database Schema Migration
-Plan: Not started
-Status: Roadmap defined; ready to plan Phase 34
-Last activity: 2026-03-19 — v1.6 roadmap created (10 phases, 23 requirements mapped)
+Plan: 01 of 03 complete
+Status: In progress
+Last activity: 2026-03-20 — Completed 34-01-PLAN.md (schema inventory)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 33/43 phases shipped ███████░░░
 
@@ -33,7 +33,15 @@ v1.6 constraints and decisions to carry forward:
 ### Open Blockers
 
 - **Essentials XP provisioning** — `essentials-rep-lookup` XP source not yet in `serviceKeyAuth.ts`; `GEMS_SERVICE_KEYS` env var provisioning needed before first Essentials production award. Deferred to v1.7.
-- **EV-Backend Go source access** — Phase 34 requires schema inspection of EV-Backend; confirm Go repo access and connection string before starting Phase 34.
+- **EV-Backend Go source access** — Phase 34 schema inspection completed via Supabase MCP (direct DB). Go repo access not required for Phase 34.
+
+### Phase 34 Key Findings (from 34-01)
+
+- **69 tables across 6 schemas** — all RLS off, zero existing grants/policies (clean slate)
+- **compass.user_id is text (UUID values)** — RLS policies must use `user_id::uuid = auth.uid()` cast
+- **54 public-read / 4 owner-read / 8 authenticated-read** — policy category assignments complete
+- **208,101 row baseline** — essentials dominates (206,587 rows); meetings and treasury are empty schemas
+- **transparent_motivations.source_audit_log** — authenticated-read despite having `changed_by_user_id uuid` (admin audit log, not owner-scoped)
 
 ### v1.6 Phase Structure
 
@@ -67,6 +75,6 @@ v1.6 constraints and decisions to carry forward:
 
 ## Session Continuity
 
-Last session: 2026-03-19
-Stopped at: v1.6 roadmap created — 10 phases, 23 requirements, ready to plan
-Resume: Run `/gsd:plan-phase 34` to begin Database Schema Migration planning
+Last session: 2026-03-20
+Stopped at: Completed 34-01-PLAN.md (schema inventory — 69 tables, 6 schemas enumerated)
+Resume: Run `/gsd:execute-phase 34 02` to execute public-read GRANTs + RLS migration
