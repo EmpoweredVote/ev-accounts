@@ -165,18 +165,26 @@ export async function getCompassCategories() {
 /**
  * getCompassPoliticians
  * Returns all active politicians ordered by name.
+ * Queries essentials.politicians (unified table after Phase 35 deduplication).
+ * Uses pool.query() — essentials schema is not exposed via PostgREST.
+ * Note: essentials.politicians does not have office_title; full_name is a regular column.
  */
 export async function getCompassPoliticians() {
-  const { data, error } = await supabaseAnon
-    .schema('inform')
-    .from('politicians')
-    .select('id,first_name,last_name,preferred_name,full_name,office_title,photo_origin_url,is_active')
-    .eq('is_active', true)
-    .order('last_name', { ascending: true })
-    .order('first_name', { ascending: true });
-
-  if (error) throw error;
-  return data ?? [];
+  const { rows } = await pool.query<{
+    id: string;
+    first_name: string | null;
+    last_name: string | null;
+    preferred_name: string | null;
+    full_name: string | null;
+    photo_origin_url: string | null;
+    is_active: boolean;
+  }>(
+    `SELECT id, first_name, last_name, preferred_name, full_name, photo_origin_url, is_active
+     FROM essentials.politicians
+     WHERE is_active = true
+     ORDER BY last_name ASC, first_name ASC`
+  );
+  return rows;
 }
 
 /**
