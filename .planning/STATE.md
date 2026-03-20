@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 37 — Express Ports Wave 2 (Staging) — In progress
-Plan: 02 of 4 complete
+Plan: 03 of 4 complete
 Status: In progress
-Last activity: 2026-03-20 — Completed 37-02-PLAN.md (Staging service — politician CRUD, review, lock, merge)
+Last activity: 2026-03-20 — Completed 37-03-PLAN.md (Staging service — stance CRUD/review/lock + building photo CRUD/review)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 in progress) █████████░
 
@@ -73,6 +73,16 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 37 Plan 03 Complete (37-03)
+
+- **stagingService.ts complete** with 19 exported functions — politicians (8), stances (7), photos (4)
+- **Stance approve guards**: topic_id null-check (422) + essentials.politicians lookup by Number(external_id) with NaN guard (422)
+- **Stance auto-promotion**: UPSERT to inform.politician_answers ON CONFLICT (politician_id, topic_id); newValue param lets reviewer correct value at review time
+- **Photo approve**: UPSERT to essentials.building_photos ON CONFLICT (place_geoid)
+- **No lock functions for photos**: building_photos schema has no locked_by/locked_at columns
+- **review_logs pattern**: stance review logs include previous_value/new_value; photo review logs have comment only
+- **Phase 37 Plan 04 (routes) unblocked**
 
 ### Phase 37 Plan 02 Complete (37-02)
 
@@ -136,5 +146,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 37 Plan 02 complete — staging service politician CRUD + review workflow (617f860)
-Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plans 03–04
+Stopped at: Phase 37 Plan 03 complete — staging service stance + building photo functions (3052b4b)
+Resume: Run `/gsd:execute-phase 37` to continue Phase 37 with plan 04
