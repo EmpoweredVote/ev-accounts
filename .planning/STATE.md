@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 36: Express Ports Wave 1 — Treasury and Meetings
+**Current focus:** v1.6 Platform Consolidation — Phase 37: Express Ports Wave 2 — Staging
 
 ## Current Position
 
-Phase: 36 — Express Ports Wave 1 (Treasury + Meetings)
-Plan: 01 of 2 complete
-Status: In progress — Plan 01 complete, Plan 02 pending
-Last activity: 2026-03-20 — Completed 36-01-PLAN.md (Treasury service + routes)
+Phase: 36 — Express Ports Wave 1 (Treasury + Meetings) COMPLETE
+Plan: 02 of 2 complete
+Status: Phase 36 complete — Phase 37 (Staging) next
+Last activity: 2026-03-20 — Completed 36-02-PLAN.md (Meetings service + routes)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 35/43 phases shipped (36 in progress) ████████░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 36/43 phases shipped (37 next) █████████░
 
 ## Accumulated Context
 
@@ -74,13 +74,16 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
 
-### Phase 36 In Progress (plan 01 complete)
+### Phase 36 Complete (plans 01 + 02)
 
 - **treasury schema served by ev-accounts Express** — CONS-08 fulfilled; Go server no longer needed for treasury data
-- **pool.query() confirmed for treasury** — treasury schema not in PostgREST exposed list; all 9 service functions use direct SQL
-- **Treasury currently 0 rows** — confirmed from Phase 34 baseline; reads return empty arrays (expected)
+- **meetings schema served by ev-accounts Express** — CONS-09 fulfilled; Go server no longer needed for meetings data
+- **pool.query() confirmed for both schemas** — treasury and meetings are NOT in PostgREST exposed list; all service functions use direct SQL
+- **Both schemas currently 0 rows** — confirmed from Phase 34 baseline; reads return empty arrays (expected)
 - **req.params as string cast** — TypeScript strict typing requires explicit cast on Express route params
-- **Phase 36 Plan 02 (Meetings) unblocked**
+- **Manual cascade delete pattern** — deleteMeeting() explicitly deletes child rows in dependency order (vote_records → votes → summary_sections → meeting_summaries → segments → speakers → meetings); safer than relying on unverified CASCADE constraints
+- **Subpath route ordering** — /:id/transcript, /:id/summary, /:id/votes defined before /:id to prevent Express routing conflicts
+- **Phase 37 (Express Ports Wave 2 — Staging) unblocked**
 
 ### Phase 35 Complete (plans 01 + 02)
 
@@ -111,5 +114,5 @@ v1.6 constraints and decisions to carry forward:
 ## Session Continuity
 
 Last session: 2026-03-20
-Stopped at: Phase 36 Plan 01 complete — treasury service + routes (4c30b78); curl verification passed
-Resume: Run `/gsd:execute-phase 36` to execute Plan 02 (Meetings routes)
+Stopped at: Phase 36 complete — meetings service + routes (9f8b6c9); all curl checks passed
+Resume: Run `/gsd:execute-phase 37` to execute Phase 37 (Express Ports Wave 2 — Staging)
