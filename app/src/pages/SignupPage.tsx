@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
 
@@ -10,6 +10,14 @@ const ERROR_MESSAGES: Record<string, string> = {
   EMAIL_DELIVERY_FAILED: 'Unable to send confirmation email right now. Please try again shortly.',
 };
 
+function getValidatedRedirectUrl(): string | null {
+  const raw = new URLSearchParams(window.location.search).get('redirect');
+  if (!raw) return null;
+  // Security: only allow https:// URLs to prevent open redirect attacks
+  if (!raw.startsWith('https://')) return null;
+  return raw;
+}
+
 export default function SignupPage() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -19,6 +27,9 @@ export default function SignupPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+
+  // Parse redirect URL once on mount — do NOT re-parse on every render
+  const redirectUrl = useMemo(() => getValidatedRedirectUrl(), []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -43,6 +54,14 @@ export default function SignupPage() {
     }
   }
 
+  function handleGoToSignIn() {
+    if (redirectUrl) {
+      navigate('/login?redirect=' + encodeURIComponent(redirectUrl));
+    } else {
+      navigate('/login');
+    }
+  }
+
   if (done) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-ev-black px-6">
@@ -62,7 +81,7 @@ export default function SignupPage() {
             </p>
           </div>
           <button
-            onClick={() => navigate('/login')}
+            onClick={handleGoToSignIn}
             className="w-full bg-ev-teal-light text-ev-black rounded-xl py-3 font-bold hover:bg-ev-teal-light/90 transition-colors"
           >
             Go to sign in
