@@ -256,7 +256,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 **Milestone Goal:** Expand Treasury Tracker from a single Bloomington-only app to a multi-jurisdiction platform covering Bloomington IN, Ellettsville IN, Monroe County IN, LA County CA, and LA City CA — with a frontend entity switcher and full EV visual refresh.
 
 - [x] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase (completed 2026-03-22)
-- [ ] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway
+- [x] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway (completed 2026-03-22)
 - [ ] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals
 - [ ] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions
 - [ ] **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography
@@ -289,7 +289,7 @@ Plans:
   3. The Indiana Gateway import script explicitly configures pipe-delimiter and UTF-8 re-encoding — no silent zero-amount rows due to misparse
 **Plans**: 1 plan
 Plans:
-- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
+- [x] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
 
 ### Phase 94: LA Data Import
 **Goal**: LA County and LA City budget data is imported from open data portals and browsable in the Treasury Tracker, with fiscal year correctly reflecting the July-June California cycle
@@ -339,7 +339,7 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
-| 93. Indiana Data Import | v2026.3.7 | 0/1 | Not started | - |
+| 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
 | 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
 | 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
