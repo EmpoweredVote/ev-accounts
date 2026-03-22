@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
 status: Phase complete — ready for verification
-stopped_at: Completed 92-02-PLAN.md
-last_updated: "2026-03-22T19:58:56.021Z"
+stopped_at: Completed 92-03-PLAN.md
+last_updated: "2026-03-22T21:57:56.829Z"
 progress:
   total_phases: 5
   completed_phases: 1
@@ -50,6 +50,7 @@ Plan: 3 of 3
 - [Phase 92]: API-only data loading: dataLoader.ts throws on failure, App.tsx catch sets setBudgetData(null), listCities renamed to listMunicipalities calling /treasury/municipalities
 - [Phase 92]: Idempotent budget import: existence checked by (municipality_id, fiscal_year, dataset_type) before insert
 - [Phase 92]: totalBudget resolution: totalBudget > totalCompensation > totalRevenue (salary files have both totalBudget and totalCompensation set to same value)
+- [Phase 92]: Loading guard fix: if (loading || !operatingBudgetData) was blocking error state — removed operatingBudgetData dependency and added null-setting in totals catch block
 
 ### Pending Todos
 
@@ -62,6 +63,6 @@ Plan: 3 of 3
 
 ## Session Continuity
 
-Last session: 2026-03-22T19:58:56.018Z
-Stopped at: Completed 92-02-PLAN.md
+Last session: 2026-03-22T21:57:56.826Z
+Stopped at: Completed 92-03-PLAN.md
 Resume file: None
