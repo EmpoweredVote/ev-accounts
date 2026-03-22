@@ -179,7 +179,17 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active milestone — use `/gsd:new-milestone` to start next)
+## Current Milestone: v2026.3.7 Treasury Tracker Expansion
+
+**Goal:** Redesign the Treasury Tracker with EV design tokens, migrate Bloomington data to Supabase, expand coverage to Ellettsville, Monroe County, and LA County/cities, and add a frontend entity switcher.
+
+**Target features:**
+- Full visual refresh of Treasury Tracker using ev-ui design tokens and current EV design patterns
+- Migrate Bloomington's static JSON budget data into the treasury backend (Supabase)
+- Research and import budget/expense data for Ellettsville, IN
+- Research and import budget/expense data for Monroe County, IN
+- Research and import budget/expense data for LA County government + major LA cities
+- Frontend entity switcher to navigate between cities and counties
 
 ### Future
 
@@ -236,5 +246,22 @@ ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and E
 - **Budget**: Nonprofit — prefer free tiers; Google Maps free tier (28K requests/month)
 - **Team**: 2-3 devs
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd:transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-03-16 after v2026.3.6 milestone*
+*Last updated: 2026-03-22 after v2026.3.7 milestone start*

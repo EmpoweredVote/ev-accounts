@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
+milestone: v2026.3.7
+milestone_name: Treasury Tracker Expansion
 status: planning
-stopped_at: Phase 91 complete — all 3 plans done, visual cohesion verified
-last_updated: "2026-03-16T18:00:50.638Z"
-last_activity: "2026-03-15 - Completed quick task 15: Update compass stance language — 21 changes across 10 topics"
+stopped_at: Defining requirements
+last_updated: "2026-03-22"
+last_activity: "2026-03-22 — Milestone v2026.3.7 started"
 progress:
-  total_phases: 7
-  completed_phases: 7
-  total_plans: 15
-  completed_plans: 15
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
   percent: 0
 ---
 
@@ -25,8 +25,10 @@ See: .planning/PROJECT.md (updated 2026-03-16)
 
 ## Current Position
 
-Milestone v2026.3.6 Read & Rank Redesign shipped 2026-03-16.
-Next: `/gsd:new-milestone` to start next milestone cycle.
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-22 — Milestone v2026.3.7 started
 
 ## Performance Metrics
 
