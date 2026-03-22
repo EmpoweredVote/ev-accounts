@@ -45,9 +45,9 @@ Declared values (multiples of 4 only):
 | Token | Value | Usage |
 |-------|-------|-------|
 | xs | 4px | Icon gaps, inline padding |
-| sm | 8px | Compact element spacing |
+| sm | 8px | Compact element spacing, button vertical padding |
 | md | 16px | Default element spacing |
-| lg | 24px | Section padding |
+| lg | 24px | Section padding, button horizontal padding |
 | xl | 32px | Layout gaps |
 | 2xl | 48px | Major section breaks |
 | 3xl | 64px | Page-level spacing |
@@ -63,13 +63,11 @@ Exceptions: Error state container uses `padding: 4rem` (64px) top/bottom — mat
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body | 16px | 400 | 1.6 |
-| Label | 14px | 500 | 1.4 |
 | Heading | 20px | 700 | 1.2 |
-| Display | 28px | 800 | 1.1 |
 
-**Source:** `treasury-tracker/src/index.css` body rule declares `line-height: 1.6` and `font-family: Manrope`. Heading and display sizes inferred from existing component patterns in `App.css`. Weights from Manrope variable font (300–800 loaded).
+**Source:** `treasury-tracker/src/index.css` body rule declares `line-height: 1.6` and `font-family: Manrope`. Heading size inferred from existing component patterns in `App.css`. Two weights only: regular (400) for body copy and button labels; bold (700) for headings.
 
-Phase 92 UI touch: the error state heading uses the Heading role (20px / weight 700 / line-height 1.2). The supporting message uses Body role (16px / weight 400 / line-height 1.6).
+Phase 92 UI touch: the error state heading uses the Heading role (20px / weight 700 / line-height 1.2). The supporting message and button label use Body role (16px / weight 400 / line-height 1.6).
 
 ---
 
@@ -83,6 +81,8 @@ Phase 92 UI touch: the error state heading uses the Heading role (20px / weight 
 | Destructive | #ff5740 (`--coral`) | Not used in this phase |
 
 Accent reserved for: retry button background only in this phase. All other interactive elements in this phase are backend-only and have no visible UI.
+
+**Primary focal point:** Error heading "Budget data unavailable" — 20px / weight 700 / color #1c1c1c. This is the only new text element a user will read before deciding to act.
 
 **Source:** `treasury-tracker/src/index.css` CSS custom properties. Color roles confirmed from `App.css` (`.header` uses `--white`, `.app` uses `--light-gray`). `--muted-blue` (#00657c) chosen for the retry button as the primary action color consistent with EV design conventions; it avoids `--coral` which is reserved for destructive/alert uses.
 
@@ -119,8 +119,8 @@ Heading:  "Budget data unavailable" — 20px / weight 700 / color #1c1c1c
 Body:     "The budget API could not be reached. Check your connection and try again."
           16px / weight 400 / color #6b7280 (--text-gray) / margin-top 8px
 Button:   "Retry" — onClick: () => window.location.reload()
-          background #00657c / color #ffffff / padding 12px 24px
-          border-radius 8px / font Manrope 14px weight 600
+          background #00657c / color #ffffff / padding 8px 24px
+          border-radius 8px / font Manrope 16px weight 400
           margin-top 16px
           hover: background #005467 (10% darker)
           focus: 2px solid outline at 2px offset, color #00657c
