@@ -251,7 +251,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 
 </details>
 
-### 🚧 v2026.3.7 Treasury Tracker Expansion (In Progress)
+### v2026.3.7 Treasury Tracker Expansion (In Progress)
 
 **Milestone Goal:** Expand Treasury Tracker from a single Bloomington-only app to a multi-jurisdiction platform covering Bloomington IN, Ellettsville IN, Monroe County IN, LA County CA, and LA City CA — with a frontend entity switcher and full EV visual refresh.
 
@@ -273,7 +273,11 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
   3. A budget record stores fiscal_year_start_month; California entities default to 7, Indiana entities default to 1
   4. All Bloomington operating, revenue, and salary data loads from the API — not from static JSON — and displays correctly in the UI
   5. The static JSON fallback in dataLoader.ts is guarded to Bloomington city only and cannot silently serve Bloomington data for other entity selections
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 92-01-PLAN.md — Schema migration: rename City to Municipality, add entity_type, fix budget three-column index
+- [ ] 92-02-PLAN.md — Import CLI: create import-budgets subcommand, import all Bloomington data
+- [ ] 92-03-PLAN.md — Frontend API-only: remove static fallback, add error state with retry
 
 ### Phase 93: Indiana Data Import
 **Goal**: Ellettsville and Monroe County operating budgets are in Supabase and browsable in the Treasury Tracker, validating the parameterized import pipeline on the Indiana Gateway format before LA data is attempted
@@ -286,7 +290,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 **Plans**: TBD
 
 ### Phase 94: LA Data Import
-**Goal**: LA County and LA City budget data is imported from open data portals and browsable in the Treasury Tracker, with fiscal year correctly reflecting the July–June California cycle
+**Goal**: LA County and LA City budget data is imported from open data portals and browsable in the Treasury Tracker, with fiscal year correctly reflecting the July-June California cycle
 **Depends on**: Phase 92
 **Requirements**: LA-01, LA-02, LA-03
 **Success Criteria** (what must be TRUE):
@@ -322,11 +326,11 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 92 → 93 → 94 → 95 → 96
+Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 0/TBD | Not started | - |
+| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 0/3 | Planning complete | - |
 | 93. Indiana Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
