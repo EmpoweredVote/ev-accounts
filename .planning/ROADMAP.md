@@ -287,7 +287,9 @@ Plans:
   1. Ellettsville operating budget data for available fiscal years is importable and loads in the tracker without errors
   2. Monroe County operating budget data loads with entity_type=county, displaying "Monroe County" as the entity name
   3. The Indiana Gateway import script explicitly configures pipe-delimiter and UTF-8 re-encoding — no silent zero-amount rows due to misparse
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
 
 ### Phase 94: LA Data Import
 **Goal**: LA County and LA City budget data is imported from open data portals and browsable in the Treasury Tracker, with fiscal year correctly reflecting the July-June California cycle
@@ -297,7 +299,9 @@ Plans:
   1. LA County department-level expenditure data is imported from data.lacounty.gov and visible in the tracker
   2. LA City operating appropriations data is imported from data.lacity.org and visible in the tracker
   3. All California entity budget records have fiscal_year_start_month set to 7, distinguishing them from Indiana entities in the data model
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
 
 ### Phase 95: Entity Switcher
 **Goal**: Users can navigate between all available jurisdictions in a single Treasury Tracker session — Bloomington, Ellettsville, Monroe County, LA County, and LA City — without reloading the page
@@ -308,7 +312,9 @@ Plans:
   2. The hero card, breadcrumbs, and dataset tabs reflect the selected entity — no hardcoded Bloomington content remains
   3. Switching from a city entity to a county entity shows the county label correctly (not "Monroe County, City")
   4. Switching entities triggers a fresh data load with the correct cache key — no stale cross-entity data can appear from a prior selection
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
 **UI hint**: yes
 
 ### Phase 96: Visual Refresh
@@ -320,7 +326,9 @@ Plans:
   2. All UI chrome — header, cards, tabs, buttons — uses EV design tokens (ev-coral, ev-muted-blue, ev-yellow)
   3. Chart segment fills use the dedicated data visualization palette; the 30-color perceptual distinctiveness is preserved — no EV brand token bleeds into chart fills
   4. Typography throughout is Manrope, matching CompassV2 and Essentials
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
 **UI hint**: yes
 
 ## Progress
@@ -331,7 +339,7 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
-| 93. Indiana Data Import | v2026.3.7 | 0/TBD | Not started | - |
+| 93. Indiana Data Import | v2026.3.7 | 0/1 | Not started | - |
 | 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
 | 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
