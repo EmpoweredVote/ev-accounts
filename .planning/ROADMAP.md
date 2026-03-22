@@ -330,7 +330,7 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete   | 2026-03-22 |
+| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
 | 93. Indiana Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
