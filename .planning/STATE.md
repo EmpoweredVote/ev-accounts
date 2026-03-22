@@ -9,10 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 40 — Frontend Auth Updates — Pending
-Plan: 0 of ? complete
-Status: Phase 39 complete — verified 19/19 — ready to plan Phase 40
-Last activity: 2026-03-20 — Completed Phase 39 (3 plans, 2 waves; CONS-12, CONS-13 fulfilled)
+Phase: 40 — Frontend Auth Updates — In Progress
+Plan: 1 of 5 complete
+Status: In progress — Plan 01 (Auth Hub redirect-after-login) complete
+Last activity: 2026-03-22 — Completed 40-01: redirect-after-login + re-auth banner + signup redirect pass-through
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 39/43 phases shipped ██████████░
 
@@ -73,6 +73,14 @@ v1.6 constraints and decisions to carry forward:
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+
+### Phase 40 Plan 01 Complete (40-01)
+
+- **LoginPage.tsx** — reads `?redirect=` param once via `useMemo`; after login redirects to `{redirectUrl}#access_token={token}` (hash fragment, not query param); falls back to `navigate('/')` when no redirect param; re-auth banner shows when param present
+- **SignupPage.tsx** — same `getValidatedRedirectUrl()` helper + `useMemo` pattern; `handleGoToSignIn()` passes redirect through to `/login?redirect={encodedUrl}` after email confirmation; no banner (new account context)
+- **Security** — `https://` prefix validation on both pages; invalid/missing prefix falls back to normal navigation
+- **Pattern match** — hash-fragment delivery matches existing `App.tsx` extraction (lines 27-37); no new pattern introduced
+- **CONS-14 partial** — Auth Hub login/signup redirect plumbing in place; calling apps (CompassV2, Essentials, Read & Rank) still need to implement the redirect-to-accounts flow (Plans 02–04)
 
 ### Phase 39 Plan 03 Complete (39-03) — Phase 39 DONE
 
@@ -237,6 +245,6 @@ v1.6 constraints and decisions to carry forward:
 
 ## Session Continuity
 
-Last session: 2026-03-20
-Stopped at: Phase 39 Plan 03 complete — compassAdmin.ts 7 admin routes + dual-router mount (004c447)
-Resume: Phase 40 — Frontend Auth Updates (CONS-14–17)
+Last session: 2026-03-22
+Stopped at: Phase 40 Plan 01 complete — LoginPage redirect-after-login + SignupPage redirect pass-through (0c2daec)
+Resume: Phase 40 Plan 02 — next plan in Frontend Auth Updates (CONS-14–17)
