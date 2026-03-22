@@ -1,0 +1,112 @@
+# Requirements: Treasury Tracker Expansion
+
+**Defined:** 2026-03-22
+**Core Value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
+
+## v2026.3.7 Requirements
+
+Requirements for Treasury Tracker Expansion milestone. Each maps to roadmap phases.
+
+### Schema & Backend
+
+- [ ] **SCHM-01**: Budget unique index includes dataset_type (three-column: city_id, fiscal_year, dataset_type)
+- [ ] **SCHM-02**: City model has entity_type field (city/county/township) with composite unique on (name, state, entity_type)
+- [ ] **SCHM-03**: Budget model has fiscal_year_start_month field (default 1, set to 7 for California entities)
+
+### Data Migration
+
+- [ ] **DATA-01**: Bloomington operating budget data migrated from static JSON to Supabase via treasury API
+- [ ] **DATA-02**: Bloomington revenue data migrated from static JSON to Supabase
+- [ ] **DATA-03**: Bloomington salary data migrated from static JSON to Supabase
+- [ ] **DATA-04**: Static JSON fallback in dataLoader.ts guarded to Bloomington city only
+
+### Indiana Expansion
+
+- [ ] **IND-01**: Ellettsville operating budget imported from Indiana Gateway (pipe-delimited format)
+- [ ] **IND-02**: Monroe County operating budget imported from Indiana Gateway
+- [ ] **IND-03**: Import script handles pipe-delimited format with explicit delimiter and encoding configuration
+
+### LA Data
+
+- [ ] **LA-01**: LA County expenditure data imported from data.lacounty.gov
+- [ ] **LA-02**: LA City appropriations data imported from data.lacity.org Socrata CSV
+- [ ] **LA-03**: Fiscal year start month set to 7 for all California entities
+
+### Entity Switcher
+
+- [ ] **UI-01**: User can switch between entities (cities/counties) via dropdown on treasury tracker
+- [ ] **UI-02**: Hero card, breadcrumbs, and dataset tabs update dynamically per selected entity
+- [ ] **UI-03**: Entity switcher groups entities by type (city vs county)
+- [ ] **UI-04**: dataLoader.ts cache key includes entity type to prevent cross-entity collisions
+
+### Visual Refresh
+
+- [ ] **VIS-01**: Tailwind CSS 4 installed in treasury-tracker with ev-ui tailwind-preset
+- [ ] **VIS-02**: ev-ui upgraded from ^0.1.6 to current version
+- [ ] **VIS-03**: UI chrome (header, cards, tabs, buttons) uses EV design tokens
+- [ ] **VIS-04**: Chart colors updated to use EV brand-aligned data visualization palette
+- [ ] **VIS-05**: Typography uses Manrope consistent with other EV apps
+
+## Future Requirements
+
+### Backend Migration
+
+- **PORT-01**: Treasury API routes ported from Go/Chi to Express/ev-accounts
+- **PORT-02**: Frontend API client updated to point at ev-accounts endpoints
+
+### Additional Data
+
+- **TXNS-01**: Transaction-level checkbook data for LA (requires separate transactions table + paginated API)
+- **COMP-01**: Side-by-side jurisdiction comparison layout
+- **TREND-01**: Year-over-year trend charts
+- **REV-01**: Revenue and salary data for LA entities
+- **SCHOOL-01**: School district budget data
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Transaction-level checkbook data | Millions of rows; requires separate table architecture + pagination — v2+ |
+| Side-by-side jurisdiction comparison | High UI complexity; OpenGov-level feature — v2+ |
+| SiteHeader integration | User deferred to future milestone |
+| Go → Express treasury port | User chose to keep Go for now; port in separate milestone |
+| School district budgets | User explicitly deferred |
+| PDF parsing for LA County adopted budget | Unreliable; use expenditure transactions from open data portal instead |
+
+## Traceability
+
+Which phases cover which requirements. Updated during roadmap creation.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| SCHM-01 | — | Pending |
+| SCHM-02 | — | Pending |
+| SCHM-03 | — | Pending |
+| DATA-01 | — | Pending |
+| DATA-02 | — | Pending |
+| DATA-03 | — | Pending |
+| DATA-04 | — | Pending |
+| IND-01 | — | Pending |
+| IND-02 | — | Pending |
+| IND-03 | — | Pending |
+| LA-01 | — | Pending |
+| LA-02 | — | Pending |
+| LA-03 | — | Pending |
+| UI-01 | — | Pending |
+| UI-02 | — | Pending |
+| UI-03 | — | Pending |
+| UI-04 | — | Pending |
+| VIS-01 | — | Pending |
+| VIS-02 | — | Pending |
+| VIS-03 | — | Pending |
+| VIS-04 | — | Pending |
+| VIS-05 | — | Pending |
+
+**Coverage:**
+- v2026.3.7 requirements: 22 total
+- Mapped to phases: 0
+- Unmapped: 22 ⚠️
+
+---
+*Requirements defined: 2026-03-22*
+*Last updated: 2026-03-22 after initial definition*
