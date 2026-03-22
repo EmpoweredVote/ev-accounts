@@ -1,9 +1,9 @@
 # Domain Pitfalls
 
-**Domain:** Swipe-card quote evaluation app — adding unified evaluate+rank flow, practice round onboarding, location-based filtering, and visual redesign to existing app
-**Researched:** 2026-03-14
-**Scope:** v2026.3.6 Read & Rank Redesign milestone
-**Overall confidence:** HIGH — all critical pitfalls derived from direct codebase inspection of `useReadRankStore.ts`, `PhaseContainer.tsx`, `EvaluationPhase.tsx`, `RankingPhase.tsx`, `ResultsPhase.tsx`, and `api.ts`, supplemented by Zustand/Framer Motion/dnd-kit official documentation and community issue trackers.
+**Domain:** Multi-jurisdiction budget data import, category normalization, design token refresh, and entity switcher added to existing Treasury Tracker app
+**Researched:** 2026-03-22
+**Scope:** v2026.3.7 Treasury Tracker Expansion milestone
+**Overall confidence:** HIGH — derived from direct codebase inspection of `treasury-tracker/src/`, `EV-Backend/internal/treasury/`, existing Bloomington CSV data files (27K operating rows, 282K checkbook rows, 304K payroll rows), the Indiana Gateway download portal, LA County/City open data portals, and Supabase import documentation.
 
 ---
 
@@ -13,286 +13,242 @@ Mistakes that cause rewrites or major issues.
 
 ---
 
-### Pitfall 1: Zustand Persist Version Not Bumped When Data Shape Changes
+### Pitfall 1: The Budget Schema Has No `dataset_type` on the Unique Index
 
-**What goes wrong:** The store's `version` is currently `1` in `useReadRankStore.ts`, and the `migrate` function is a no-op passthrough (`return persistedState as ReadRankState`). The redesign removes `badgeAssignments`, `BadgeType`, and the `'ranking'` phase, adds `practiceComplete` and location filter fields, and restructures `IssueProgress`. When existing users load the redesigned app, Zustand's `persist` middleware reads the stale localStorage shape and shallow-merges it with the new initialState. Old nested keys for `badgeAssignments.diamond` survive inside `issueProgress` entries. The app may silently operate on structurally invalid state rather than crashing.
+**What goes wrong:** The `treasury.budgets` table has a composite unique constraint `idx_budget_city_year` on `(city_id, fiscal_year)` only. `dataset_type` is NOT part of that unique index. This means inserting Bloomington's 2025 operating budget succeeds, but inserting the 2025 revenue budget for the same city/year returns a unique-constraint violation and aborts the import. The `ImportBudget` handler check (`WHERE city_id = ? AND fiscal_year = ? AND dataset_type = ?`) is correct, but the DB-level constraint does not enforce the three-column uniqueness — so concurrent imports or a partial rollback can leave duplicate rows that silently corrupt category trees.
 
-**Why it happens:** Zustand's default merge is a shallow `Object.assign` at the top level. Nested objects like `issueProgress[id]` are not deep-merged — the old shape of each `IssueProgress` entry (which includes `badgeAssignments` and `phase: 'ranking'`) replaces the new shape entirely. The current no-op migrate function (`return persistedState as ReadRankState`) means Zustand never transforms old data regardless of version.
+**Why it happens:** The existing data had only one dataset type (operating) when the schema was first created. The `dataset_type` column was added later as an application-level concern without updating the unique constraint.
 
-**Consequences:** Practice round skipped for returning users (`phase` from old state is `'evaluation'` or `'ranking'`, not `'hub'`). App tries to render deleted `RankingPhase` component if old `issueProgress[id].phase === 'ranking'`. TypeScript type errors at runtime if `badgeAssignments` is accessed on the new shape.
+**How to avoid:** Before running any imports, add `dataset_type` to the unique index:
+```sql
+DROP INDEX IF EXISTS treasury.idx_budget_city_year;
+CREATE UNIQUE INDEX idx_budget_city_year_dataset
+  ON treasury.budgets (city_id, fiscal_year, dataset_type);
+```
+Run this migration first, before importing Bloomington data or any additional jurisdictions.
 
-**Prevention:**
-- Bump `version` from `1` to `2` before any state shape changes ship.
-- Write an explicit migrate function: `(persistedState, version) => { if (version < 2) { return initialState; } return persistedState; }` — a clean reset is safer than attempting to map badge state to rank order.
-- Update `partialize` to exclude all legacy fields (`issueTitle`, `questionText`, `topicId`, `badgeAssignments`) from being written to storage going forward.
-- Test by manually setting `localStorage['ev_readrank']` to the old v1 shape in DevTools and loading the redesigned build. Verify it resets cleanly to `hub` phase and shows the practice round.
+**Warning signs:** `ImportBudget` returns 409 Conflict for the second dataset type for the same city/year. Or — worse — it succeeds but duplicate rows exist in the table.
 
-**Detection:** App loads into `evaluation` or `ranking` phase instead of `hub`. Practice round does not appear for a user who has old v1 state. TypeScript build errors about missing `badgeAssignments` property once the type is removed.
-
-**Phase:** Store refactor — version bump is the very first task, gating all other changes.
-
----
-
-### Pitfall 2: Practice Round State Leaking Into Real Verdict POST
-
-**What goes wrong:** Practice quotes (pizza toppings) are stored in `issueProgress` under a synthetic key like `'practice'`. When the user completes the real flow and `phase` reaches `'results'`, `PhaseContainer` fires `postVerdicts(issueProgress)`. The current `postVerdicts` utility iterates all entries in `issueProgress` without filtering. The practice entry — with fake quote IDs — is included in the POST payload to `POST /compass/verdicts`. The backend either rejects the entire batch (400 on invalid quote ID) or silently stores fake verdicts that later appear in the Essentials politician profile StanceAccordion.
-
-**Why it happens:** `PhaseContainer.tsx` passes the entire `issueProgress` map to `postVerdicts`. There is no field on `IssueProgress` that marks an entry as practice/non-canonical. The verdict sync fires once (guarded by `hasSynced` ref) but does not discriminate by issue type.
-
-**Consequences:** Real user verdicts may be lost if the backend rejects a batch containing invalid IDs. Pizza topping quote text appears in the Essentials politician profile view. The cross-app verdict fragment bridge encodes practice verdicts into the URL, corrupting the Essentials cache.
-
-**Prevention:**
-- Add `isPractice: boolean` to `IssueProgress` interface; set it `true` for the practice entry when created.
-- Filter practice entries in `postVerdicts`: `const realProgress = Object.fromEntries(Object.entries(issueProgress).filter(([_, v]) => !v.isPractice));`
-- Alternatively, store practice state in a completely separate, non-persisted store slice (or sessionStorage key) that is never passed to `postVerdicts`.
-- Clear the practice entry from `issueProgress` immediately when transitioning to the real IssueHub, before results are possible.
-- Add the same `isPractice` guard to the verdict fragment encoder in `verdictFragment.ts`.
-
-**Detection:** `POST /compass/verdicts` returns 400 with unrecognized quote ID. Network tab shows pizza topping quote IDs in the POST body. Essentials politician profiles show "pizza topping" text in the StanceAccordion under a politician's quotes.
-
-**Phase:** Practice round architecture design — must be built in before implementation, not patched after.
+**Phase to address:** Phase 1 (Bloomington data migration and backend schema fix) — before any other import work.
 
 ---
 
-### Pitfall 3: Unified Flow Breaks the `nextQuote` Phase Transition and `Phase` Type
+### Pitfall 2: Indiana Gateway Data Is Pipe-Delimited, Not Comma-Delimited
 
-**What goes wrong:** The current `nextQuote()` store action explicitly sets `phase: 'ranking'` when the card stack is exhausted. Removing the ranking phase without rewriting `nextQuote` leaves the store transitioning to a phase that no longer exists. If `'ranking'` is removed from the `Phase` union type, TypeScript flags every callsite — but there are also runtime switch statements in `PhaseContainer` (`case 'ranking': return <RankingPhase />`) that would silently hit the `default: return <IssueHub />` branch, teleporting the user back to the hub mid-flow.
+**What goes wrong:** Indiana Gateway bulk download files use `|` (pipe) as the delimiter, not comma. The existing Bloomington CSV pipeline was built against City of Bloomington's own exports (comma-delimited). Any import script that calls `csv.NewReader()` or Python's `csv.reader()` without setting the delimiter to `|` will silently misparse every row — all column values land in a single field, amounts are always zero, and categories are blank strings that produce a flat tree of empty nodes. This will not throw an error; the import will appear to succeed with wrong data.
 
-**Why it happens:** `Phase = 'hub' | 'evaluation' | 'ranking' | 'results'` is used in the store, PhaseContainer, `setPhase`, and `IssueProgress.phase`. The current `EvaluationPhase.handleComplete` already forks by device type (`isMouseDevice` skips ranking entirely and goes to results). Removing the fork while the type still includes `'ranking'` leaves dead code paths. Removing the type without updating every callsite causes compile-time and runtime errors simultaneously.
+**Why it happens:** Indiana Gateway's download page notes the pipe delimiter in small print. Developers building on top of the Bloomington CSV pipeline assume the same format applies to Monroe County and Ellettsville data from Gateway.
 
-**Consequences:** App silently returns to IssueHub when last card is swiped instead of advancing to results. Or TypeScript build fails entirely and nothing ships. Or the `RankingPhase` component is deleted but still referenced in `PhaseContainer`, crashing the build.
+**How to avoid:** Download a small sample from Gateway first. Inspect raw bytes before writing the parser. Set `delimiter='|'` explicitly in Python, or use Go's `csv.Reader{Comma: '|'}`. Also confirm encoding: Gateway files are often Windows-1252, not UTF-8 — characters in vendor names and fund descriptions will corrupt silently if not re-encoded.
 
-**Prevention:**
-- Remove `'ranking'` from the `Phase` union type first; use TypeScript errors to find every callsite (`PhaseContainer`, `setPhase`, `IssueProgress`, `nextQuote`, `handleComplete`).
-- Rewrite `nextQuote` to transition `evaluation → results` directly (or to an inline review state that does not require a separate phase key).
-- Delete `RankingPhase.tsx` and `BadgeIcons.tsx` in the same commit that removes the type entry — do not leave orphaned files.
-- The device-type branch in `EvaluationPhase.handleComplete` can be removed entirely once ranking is unified.
+**Warning signs:** After import, all category amounts are `$0` or all rows collapse into a single root category. Spot-check one row: if the `name` field contains pipe characters it was parsed as CSV.
 
-**Detection:** TypeScript errors on `phase === 'ranking'` after type removal. App returns to hub after last evaluation card. Blank screen where RankingPhase used to render.
-
-**Phase:** Store + type refactor — must precede all UI component work.
+**Phase to address:** Phase 2 (Monroe County and Ellettsville import) — write a format-detection step at the start of every new import pipeline.
 
 ---
 
-### Pitfall 4: Location Filter Creates a Zero-Quotes Dead End
+### Pitfall 3: LA County Budget Is PDF-First, Not Data-First
 
-**What goes wrong:** A user enters their address, the app filters quotes to only show politicians representing that address, but the PostGIS geofence query returns politicians who have no quotes in the `compass.quotes` table (or returns no politicians at all for addresses outside current geofence coverage). The evaluation phase starts with `quotesToEvaluate.length === 0`. The current `EvaluationPhase` renders the "Done" empty state immediately, showing `0 agreed · 0 disagreed` with a "See Your Results" button. The user sees a confusing blank results page with no explanation.
+**What goes wrong:** LA County's primary budget publication is a multi-volume PDF (the 2024-25 Final Budget Book and 2025-26 Recommended Budget are both large PDFs from `ceo.lacounty.gov`). There is no downloadable CSV or JSON for the county-level budget breakdown by department. Attempting to scrape the PDF will yield unreliable data: multi-column table layouts, footnotes mid-table, and merged cells that parsing libraries routinely misread. Spending hours on a PDF scraper produces data that looks correct but has category amounts off by 10-40% due to table-parsing errors.
 
-**Why it happens:** The `selectIssue` store action takes a `quotes` array directly. If the caller passes an empty array (because the location filter returned nothing), `createEmptyIssueProgress` initializes with no quotes. The evaluation phase has no guard preventing entry with zero quotes. The current `GET /essentials/quotes` endpoint has a `politician_id` filter but no location-scoped bulk filter that would indicate coverage status.
+**Why it happens:** LA County posts machine-readable data for expenditure transactions (via `data.lacounty.gov`) but not for the adopted budget document itself. Developers assume the county-level budget is available in the same format as the city-level data.
 
-**Consequences:** Users who enter an address in an unsupported area see an unexplained empty experience. They cannot recover without a page refresh, and the empty `issueProgress` entry is now persisted to localStorage.
+**How to avoid:** For LA County, use the `data.lacounty.gov` open data portal for actual expenditure data (what was spent), not the PDF for budgeted amounts. For LA City, use the LA City Controller's open expenditures portal (`lacity.spending.socrata.com`) and `data.lacity.org` — both have CSV/API access. Accept that LA County's official adopted budget figures will need to be manually transcribed from the PDF at the top level only (5-10 departments), with transaction-level detail coming from the expenditure dataset.
 
-**Prevention:**
-- Guard in IssueHub (or wherever the location filter decision is made): if `filteredQuotes.length < 2`, do not allow entry into evaluation. Show an inline message: "No quotes available for your area. [Show all quotes instead]."
-- The location-scoped backend endpoint should include a `total_quotes` count in its response so the frontend can gate entry before even calling `selectIssue`.
-- Gracefully degrade: if location filter yields fewer than the minimum threshold for an issue, offer the unfiltered quote set with a note ("Showing all quotes — no local candidates found").
-- Test with a known address that has politicians in the geofences table but none of those politicians have quotes in `compass.quotes` (this is the typical edge case for newly imported officials).
+**Warning signs:** Any import pipeline for LA County that relies on PDF parsing. Any script that calls `pdfminer`, `tabula`, or `camelot` against the LA County budget PDF.
 
-**Detection:** `quotesToEvaluate.length === 0` in evaluation phase. Results page shows all-zero stats with empty card list. QA test: enter a ZIP code for a county that has geofences but no associated politician quotes.
-
-**Phase:** Location filter feature — guard must be designed in from the start, not added as a post-ship patch.
+**Phase to address:** Phase 3 (LA County and LA City data research/import) — budget the data sourcing step as 2-3 days of investigation before writing any import code.
 
 ---
 
-### Pitfall 5: `postVerdicts` Fires Multiple Times Due to Dependency Array Including `issueProgress`
+### Pitfall 4: Fiscal Year Mismatch Breaks Year-Over-Year Comparisons
 
-**What goes wrong:** The current `PhaseContainer` effect fires `postVerdicts` when `phase === 'results'` and guards with a `hasSynced` ref. But the effect's dependency array includes `issueProgress`. If `issueProgress` changes after the `results` phase is reached — for example, because the location filter or practice round adds/modifies an entry while viewing results — the effect re-fires. The `hasSynced` ref resets if `PhaseContainer` unmounts and remounts (e.g., the user navigates to `/candidate/:id/alignment` and back). The result is duplicate POST requests.
+**What goes wrong:** Bloomington's fiscal year is January 1 – December 31 (calendar year). Monroe County and Ellettsville also use the Indiana standard calendar year. But LA County and LA City use July 1 – June 30 (the California standard). If the frontend stores only `fiscal_year: 2025` for all entities and the year selector shows "2025" for all of them, LA County's "2025" data actually covers July 2025–June 2026 while Bloomington's "2025" covers January–December 2025. The UI implies comparability that does not exist.
 
-**Why it happens:** `useEffect` re-runs whenever any value in its dependency array changes. Including `issueProgress` (a frequently-mutating object) in the deps of a side-effect that should fire exactly once is structurally fragile. Component refs reset on unmount.
+**Why it happens:** The `Budget` model stores only `fiscal_year: int`. There is no `fiscal_year_start` or `fiscal_year_type` field. The assumption that fiscal_year means calendar year was baked into the original Bloomington-only design.
 
-**Consequences:** Duplicate verdict POSTs. If the backend upserts on `(user_id, quote_id)`, duplicates are harmless but wasteful. If it inserts, duplicate rows are created.
+**How to avoid:** Add a `fiscal_year_type` or `fiscal_year_start_month` field to the `Budget` model (e.g., `fiscal_year_start_month: 1` for Indiana, `7` for California). Display the full fiscal period in the UI — "FY 2024-25 (Jul–Jun)" for LA vs. "2025 (Jan–Dec)" for Indiana. Do not show a single year selector that implies apples-to-apples comparison across jurisdictions without this context.
 
-**Prevention:**
-- Move the sync trigger to fire on the `results` phase transition only — not on re-renders of the same phase. Pattern: capture a `prevPhase` ref and fire only when `prevPhase !== 'results' && phase === 'results'`.
-- Use a persisted store flag (`verdictsSynced: boolean`) rather than a component ref. Check it before POSTing; set it immediately before the POST call (not after the Promise resolves, to prevent race conditions on re-render).
-- Filter practice entries before passing to `postVerdicts` (same guard as Pitfall 2).
+**Warning signs:** The year selector shows "2025" for every entity. A user can select Bloomington 2025 and LA County 2025 and the UI presents both as the same fiscal period.
 
-**Detection:** Network tab shows multiple POSTs to `/compass/verdicts` within the same results session. Backend logs show duplicate verdict inserts within seconds of each other.
-
-**Phase:** Verdict sync refactor — address in the same phase as practice round isolation.
+**Phase to address:** Phase 1 (schema migration) — add `fiscal_year_start_month` (smallint, default 1) to `treasury.budgets` before any California data is imported.
 
 ---
 
-## Moderate Pitfalls
+### Pitfall 5: Category Color Collision Between EV Brand Tokens and Data Visualization Palette
+
+**What goes wrong:** The Treasury Tracker uses a 30-color data visualization palette (blues, purples, greens, teals) defined in `index.css` and `budgetConfig.json`. The EV design token refresh will introduce `ev-coral` (#ff5740) and `ev-muted-blue` (#00657c) as dominant UI colors. If the design token migration naively replaces all `--data-navy-500` references with `--muted-blue`, the sunburst chart segments that used `--data-navy-500` will all render in the same muted blue — the color-coding that makes the visualization readable collapses into a single-hue blur.
+
+**Why it happens:** Design token systems are designed for UI chrome (buttons, headers, backgrounds). Data visualization palettes are orthogonal — they need perceptual distinctiveness across many adjacent segments, not brand consistency. Treating them as the same system breaks both.
+
+**How to avoid:** Preserve the 30-color data visualization palette in `index.css` as a completely separate namespace (e.g., `--data-*` variables). Apply EV design tokens only to UI chrome: the `SiteHeader`, background colors, typography, the entity switcher, buttons, and info cards. Never pipe EV brand tokens into `BudgetCategory.color` assignments. The `budgetConfig.json` color palette is correct for visualization; leave it alone.
+
+**Warning signs:** After the visual refresh, the sunburst/icicle chart shows fewer than 5 visible distinct colors for a budget with 15+ top-level categories. Or the chart legend becomes unreadable because adjacent segments share similar hues.
+
+**Phase to address:** Phase 4 (visual refresh) — write explicit component-scope rules: EV tokens apply to layout/chrome components; data palette applies to visualization components.
 
 ---
 
-### Pitfall 6: Coach Marks Fire Before First Card Is in the DOM
+### Pitfall 6: Checkbook Transaction Volume Overwhelms the API Response
 
-**What goes wrong:** The practice round completes and the user enters the first real issue. A coach mark is triggered by a flag like `hasSeenCoachMarks: false` in the store, firing on component mount. The coach mark needs to position a spotlight overlay on the first swipe card using `getBoundingClientRect()`. But `fetchQuotesData()` has not yet resolved — `quotesToEvaluate` is empty, the card is not rendered, and `getBoundingClientRect()` returns a zeroed rect. The spotlight appears in the wrong position or does not appear at all.
+**What goes wrong:** The Bloomington checkbook CSV has 282,458 rows. The current `ImportBudget` endpoint imports these as `BudgetLineItem` rows via the recursive `importCategories` function, which creates one `db.Create()` call per line item inside a single transaction. At 282K rows, this will time out on Render's free tier (30-second request timeout) and likely OOM the Go process. Even if it succeeds, the `GetBudgetCategories` endpoint does `Preload("LineItems")` — loading 282K line items as a nested JSON payload will make the frontend hang on every category drill-down.
 
-**Why it happens:** The existing CompassV2 `CoachMark` component (used in v2026.4) relies on a DOM element being present when it mounts. The evaluation phase shows a loading state while data fetches. Coach mark logic tied to component mount (`useEffect([], [])`) fires before the async data resolves.
+**Why it happens:** The import pipeline was designed for the operating budget's ~27K budget rows. The checkbook (transaction-level) dataset is 10x larger. The current architecture makes no distinction between these.
 
-**Prevention:**
-- Gate coach mark activation behind `quotesToEvaluate.length > 0` and a post-render timing pass. Use `useLayoutEffect` (not `useEffect`) with a `requestAnimationFrame` wrapper after the first card renders to ensure the DOM is ready.
-- Do not trigger coach marks in the effect that fires on initial mount; trigger them in the effect that fires when `currentQuote` transitions from `undefined` to a real quote object.
-- Test on a throttled (Slow 3G) connection in DevTools to simulate the async gap.
+**How to avoid:** Do not import checkbook transactions as `BudgetLineItem` rows. Checkbook transactions are a different access pattern — they need pagination, filtering, and aggregation. Two options: (1) store them in a separate `treasury.transactions` table with indexed columns (`city_id`, `fiscal_year`, `department`, `vendor`, `date`) and a paginated API endpoint; or (2) keep only the top-N vendors per category aggregated in `BudgetLineItem` and drop individual transaction rows. The existing `LinkedTransactionSummary` type in the frontend already models the aggregated pattern — follow that.
 
-**Phase:** Coach mark implementation phase.
+**Warning signs:** The `ImportBudget` request times out. The `GetBudgetCategories` response for a leaf category is larger than 1MB. The frontend freezes when clicking into a leaf category that has linked transactions.
 
----
-
-### Pitfall 7: Practice Round Teaches the Wrong Mechanic If Unified Flow Interaction Is Not Locked First
-
-**What goes wrong:** The practice round is designed and implemented to teach swipe-left/swipe-right. But the unified evaluate+rank flow may introduce a new inline reordering mechanic (drag-to-reorder within the card stack, or numbered priority tapping). If the practice round teaches the old mechanic and the real flow has a different one, users arrive at the real issue confused. The practice round becomes misinformation rather than onboarding.
-
-**Why it happens:** The practice round is built while the unified flow interaction model is still being designed. The two features are developed in parallel without a design dependency being enforced.
-
-**Prevention:**
-- Define the exact unified flow interaction model (what happens after agreeing — does a mini-rank sidebar appear? does position in the stack become the rank?) before writing a single line of practice round code.
-- Keep practice round content (pizza topping quotes and tutorial script) in a static config object separate from API data so it can be updated cheaply without a full rebuild.
-- Do not mark the practice round as "done" until it has been tested back-to-back with the final unified flow to confirm the mechanics match.
-
-**Phase:** Unified flow design must be locked before practice round implementation begins. Treat as a hard dependency.
+**Phase to address:** Phase 1 (schema design) — decide the transaction storage strategy before importing Bloomington data.
 
 ---
 
-### Pitfall 8: Address Input in Read & Rank Diverges from Essentials Geocoding Path
+### Pitfall 7: App.tsx Entity Switcher Is Hardcoded to `activeTab` City/State/Federal — Not Wired to Real Data
 
-**What goes wrong:** Essentials uses Google Maps Places autocomplete + a backend PostGIS `ST_Covers` query to match politicians to an address. If Read & Rank implements a parallel geocoding path (client-side `navigator.geolocation`, a different Google Maps API surface, or raw lat/lng passed to a new endpoint), the two apps may return different politician sets for the same address. A politician appears for a user in Essentials but their quotes do not appear in the Read & Rank location filter — confusing and undermining the integration story.
+**What goes wrong:** The current `App.tsx` has `NavigationTabs` with hardcoded `[{ id: 'city', label: 'City' }, { id: 'state', label: 'State' }, { id: 'federal', label: 'Federal' }]`. The `activeTab` state is set but never actually changes what data is loaded — the data fetching ignores `activeTab` entirely. When the entity switcher is added for Bloomington/Monroe County/Ellettsville/LA County/LA City, developers might wire it into this existing `activeTab` state by adding more tab values, but the underlying `loadBudgetData` still needs to map entity selection to a `cityName` parameter. If `activeTab` is used as the `cityName` directly, it will look up "state" or "bloomington-in" as a city name, fail the API lookup, fall back to static JSON, and silently display Bloomington data for every entity.
 
-**Why it happens:** Read & Rank is a standalone app. Without explicit coordination, new address input features tend to get built independently rather than reusing the existing backend search logic.
+**Why it happens:** The City/State/Federal tabs were placeholder UI from the original prototype that was never connected to real multi-entity data loading. The `dataLoader.ts` API path already supports `?city=` filtering but App.tsx doesn't pass it.
 
-**Prevention:**
-- Reuse the existing backend search path: Google Maps Places autocomplete (same legacy `Autocomplete` class as Essentials) → send `place_id` or validated lat/lng to a backend endpoint → backend runs the same ST_Covers geofence query and returns politician IDs.
-- Do not build a parallel geofence query in a new endpoint with different PostGIS parameters. Divergence will surface as coverage inconsistencies that are extremely hard to debug.
-- Confirm the Google Maps API key is configured in the Read & Rank Cloudflare Pages environment variables (`VITE_GOOGLE_MAPS_KEY`) before implementation begins.
-- The existing `GET /essentials/search` (or the POST equivalent) already returns politician IDs from the geofence. Calling this with the address and extracting the politician IDs is less work than building a new location endpoint.
+**How to avoid:** Replace `activeTab` with an `selectedEntity` state of type `{ id: string; name: string; state: string }`. On mount, populate the entity list from `listCities()` (the API endpoint already exists). The year selector and dataset tabs should filter data for the currently selected entity. Do not attempt to reuse the existing City/State/Federal tab semantics — they are structurally incompatible with per-entity switching.
 
-**Phase:** Location filter backend design — must be decided before frontend implementation begins.
+**Warning signs:** After adding the entity switcher, selecting "Monroe County" still shows Bloomington data. Or the year selector shows years that don't exist for the selected entity.
+
+**Phase to address:** Phase 5 (frontend entity switcher) — audit `App.tsx` data flow before building any new UI component for entity selection.
 
 ---
 
-### Pitfall 9: Visual Redesign Breaks Tailwind Class Purging in Production
+## Technical Debt Patterns
 
-**What goes wrong:** The redesign introduces new color tokens or conditionally-constructed class names (e.g., `\`bg-${variantColor}\``). Tailwind's JIT compiler scans source files at build time for literal class strings. Dynamically constructed classes are purged from the production CSS bundle. The redesign looks correct in dev (JIT hot-reloads include all classes seen at runtime) but key colors or spacing values disappear in the Cloudflare Pages production build.
+Shortcuts that seem reasonable but create long-term problems.
 
-**Why it happens:** The current codebase mixes Tailwind utility classes with inline `style={{ }}` props, using inline styles for all EV brand colors (ev-coral, ev-muted-blue, etc.) and Tailwind only for layout. If the redesign moves more dynamic styling into Tailwind class construction, purge issues will appear. This is a well-documented Tailwind pitfall.
-
-**Prevention:**
-- Use complete literal class strings: `bg-ev-coral` not `'bg-' + colorVar`.
-- For values that vary at runtime (brand colors, variant colors), continue using inline `style={{ }}` props as the existing codebase does.
-- After every non-trivial CSS change, run `npm run build` locally and verify the production output in `dist/` before pushing. Do not rely solely on dev server appearance.
-- Add a one-line check to the deployment checklist: "Verify colors and spacing in a production build (`npx serve dist`) before merging."
-
-**Phase:** Visual redesign phase. Post-build local verification before every deploy.
+| Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
+|----------|-------------------|----------------|-----------------|
+| Import all Bloomington CSV years at once in one script | Faster setup | One bad year corrupts the import; no per-year rollback | Never — import year-by-year with explicit verification step |
+| Use static JSON fallback for entities that have no API data yet | Unblocks frontend development | The fallback always returns Bloomington data regardless of selected entity; creates phantom "it works" behavior | Only acceptable as a named stub that renders an explicit "Data not yet available" state |
+| Assign EV brand color tokens to chart segment colors | Visual consistency | Destroys perceptual distinctiveness of multi-segment visualizations | Never for chart segment fills |
+| Skip `fiscal_year_start_month` field and document it in a README instead | Saves one migration | Any cross-jurisdiction comparison feature breaks silently; UX hides the mismatch | Never — schema is the source of truth |
+| Normalize LA County categories to match Bloomington's hierarchy | Enables UI reuse | LA County uses department-based budgeting; Bloomington uses function-based — forced mapping loses meaning | Never — preserve source hierarchy, add a `hierarchy_type` field |
 
 ---
 
-### Pitfall 10: AnimatePresence Gets Stuck on Rapid Phase Transitions
+## Integration Gotchas
 
-**What goes wrong:** The redesign introduces dramatic results-reveal animations and phase transitions (practice → hub → evaluation → results). If state changes fire in rapid succession — for example, practice completes, immediately pre-fetching real quotes triggers another state update, and the user clicks into an issue before the hub animation finishes — Framer Motion's `AnimatePresence` can get stuck and stop properly removing or adding elements. This is a documented open bug in the Framer Motion GitHub repository (issues #2023 and #2554, both still open as of 2025).
+Common mistakes when connecting to external services.
 
-**Why it happens:** `AnimatePresence` tracks children by `key`. When a parent component with an `AnimatePresence` boundary re-renders due to rapid state changes, exit animations can be interrupted mid-flight and the cleanup callback never fires, leaving ghost DOM elements or preventing new children from mounting.
-
-**Prevention:**
-- Assign stable, unique `key` props to every direct child of `AnimatePresence` — never use array index.
-- Do not trigger data fetches synchronously inside `onAnimationComplete` callbacks. Defer with `setTimeout(fn, 0)` or `useEffect` with deps.
-- Batch phase-change state updates: instead of calling `setPhase` then `setQuotes` in sequence, update both in a single `set()` call in the store to avoid intermediate render states.
-- Test rapid phase transitions deliberately (complete practice round → immediately click first real issue) with React DevTools Profiler enabled.
-
-**Phase:** Animation/results polish phase; also relevant to unified flow phase machine design.
-
----
-
-## Minor Pitfalls
+| Integration | Common Mistake | Correct Approach |
+|-------------|----------------|------------------|
+| Indiana Gateway CSV downloads | Assume comma delimiter; import breaks silently with all-zero amounts | Set `delimiter='|'`; re-encode from Windows-1252 to UTF-8 before parsing |
+| Indiana Gateway fiscal year field | `fiscal_year` in Gateway files encodes the year the budget was adopted, not the calendar year covered | Verify: Indiana local governments use calendar year; fiscal_year=2025 in Gateway = Jan–Dec 2025 |
+| LA County open data portal (`data.lacounty.gov`) | Assume the portal has adopted budget amounts by department | Portal has actual expenditure transactions; adopted budget figures are PDF-only at county level |
+| LA City Controller expenditures (`lacity.spending.socrata.com`) | Use the Socrata API without authentication — free tier has rate limits and 1000-row default page size | Use `$limit=50000&$offset=N` pagination; or download the full dataset CSV from the portal rather than using the API |
+| Supabase CSV import via dashboard | Upload 300K-row CSV through the dashboard UI (100MB limit) | Use `psql COPY` or `pgloader` for large files; the dashboard import will timeout or fail silently on large CSVs |
+| Go `ImportBudget` HTTP endpoint | POST 300K line items in a single request body | Use a file-based CLI import script (as done for essentials and staging modules) — HTTP timeouts at 30s on Render free tier |
 
 ---
 
-### Pitfall 11: Module-Level `cachedData` in `api.ts` Does Not Respect Location Filter
+## Performance Traps
 
-**What goes wrong:** `src/data/api.ts` uses a module-level variable `let cachedData: QuotesResponse | null = null` that persists for the browser tab's lifetime. Once any quotes fetch resolves, all subsequent calls return the same cached response — including the unfiltered full dataset. If the user enters a location, the cache returns the old unfiltered data. If the user clears their location after filtering, the cache returns the filtered data. The location filter appears broken.
+Patterns that work at small scale but fail as usage grows.
 
-**Prevention:**
-- Replace the module-level cache with a keyed cache: `const cache = new Map<string, QuotesResponse>()` where the key is the location parameter (or `'unfiltered'` for the default case).
-- Expose a `clearCache()` function that is called when the user changes or clears their location.
-- This is a small change that prevents a confusing UX defect.
-
-**Phase:** Location filter implementation phase.
-
----
-
-### Pitfall 12: Removing `ProgressHeader` and `AnimationOptionsPage` Without Cleaning Up Routes
-
-**What goes wrong:** `App.tsx` defines `<Route path="/animation-options" element={<AnimationOptionsPage />} />`. Deleting the component file without removing the import and route causes the TypeScript build to fail. Removing only the route but not the import also fails. If the route is cleaned up but users have the URL bookmarked, React Router's default behavior returns a blank page (no route matched, no redirect).
-
-**Prevention:**
-- Delete the component file, remove the import, and remove the route in a single atomic commit — the TypeScript build will enforce completeness.
-- Add a `<Navigate from="/animation-options" to="/" />` route for a clean user-facing redirect, even if the URL is unlikely to be bookmarked.
-- Remove `ProgressHeader` from `App.tsx` in the same commit.
-
-**Phase:** Chrome cleanup phase — do this first to unblock the redesign with a clean component tree.
+| Trap | Symptoms | Prevention | When It Breaks |
+|------|----------|------------|----------------|
+| `Preload("LineItems")` on all categories | Category tree API response becomes very large | Only preload line items at the leaf node level; use a separate endpoint for line item detail | Breaks at ~5,000 line items across a budget |
+| `GORM Preload("Subcategories")` recursively | N+1 queries building the category tree; 50+ DB calls per request | Use the existing flat-fetch + `buildCategoryTree` pattern in `handlers.go` | Breaks at depth >3 or >200 categories |
+| Loading all entities in `listCities()` on the entity switcher dropdown | Fine at 5 cities, slow as cities grow | Already paginated in API; ensure frontend doesn't re-fetch on every render | Breaks at >100 entities |
+| Storing raw checkbook transactions as `BudgetLineItem` rows | Imports succeed; leaf-node drill-down response is 5MB+ JSON | Use a separate `transactions` table with pagination | Breaks at >50K transactions per budget |
+| Rebuilding `processedBudget.json` in the browser from raw API data on every mount | Imperceptible at Bloomington scale | Cache the transformed tree in component state with `useMemo`; do not re-transform on every render | Breaks when category tree has >500 nodes |
 
 ---
 
-### Pitfall 13: Practice Round "Skip" Path Leaves Partial State in `issueProgress`
+## Security Mistakes
 
-**What goes wrong:** If the practice round has a Skip option (for returning users), pressing Skip while mid-practice (e.g., after swiping card 2 of 5) leaves `issueProgress['practice']` with `currentQuoteIndex: 2`, `agreedQuotes: [quote1]`. The `practiceComplete` flag is never set. On next visit, the practice round condition checks `!practiceComplete` — it is still false — and the practice round starts again from the beginning (not from where it was left), but now `issueProgress['practice']` has stale data that may cause confusing behavior.
+Domain-specific security issues beyond general web security.
 
-**Prevention:**
-- Skip must call a dedicated `skipPractice()` action that atomically: sets `practiceComplete: true`, deletes `issueProgress['practice']`, and transitions to `'hub'` phase — all in a single `set()` call.
-- Do not let Skip call `setPhase('hub')` alone. The partial practice entry must be cleaned up in the same action.
-- Add a `isPracticeComplete` selector used by the entry point guard to decide whether to show practice round or go directly to hub.
-
-**Phase:** Practice round implementation phase.
-
----
-
-### Pitfall 14: dnd-kit Touch Events Conflict with Framer Motion Swipe Gestures
-
-**What goes wrong:** If the unified flow places any drag-to-reorder interaction (dnd-kit) in the same viewport area as the swipe-card mechanic (Framer Motion drag), both libraries register `touchstart`/`pointermove` event listeners. dnd-kit's `TouchSensor` uses a 150ms activation delay to distinguish taps from drags. Framer Motion's `drag` prop starts on `pointerdown`. When both are active in the same DOM subtree, a deliberate swipe on a card can accidentally activate a drag-to-reorder, and vice versa.
-
-**Why it happens:** `touch-action: none` must be set on draggable elements for both libraries to function reliably on iOS Safari. When two draggable systems share a DOM ancestor, `pointerdown` events are consumed ambiguously.
-
-**Prevention:**
-- Keep swipe gesture (Framer Motion card stack) and drag-to-reorder (dnd-kit agreed-quote list) in visually and DOM-structurally separate areas — never on the same element or in the same scroll container.
-- If the unified flow shows ranked quotes in a sidebar or a panel below the swipe stack, gesture areas are naturally separated and this conflict does not arise.
-- For any drag handle element in the ranked list, apply `touch-action: none` only to the handle, not to the whole card.
-- Verify on actual touch devices (iOS Safari, Android Chrome) — this conflict does not manifest with a mouse.
-
-**Phase:** Unified flow interaction design — must be resolved before implementation. If design cannot separate the two gesture areas, choose one interaction model (not both) to avoid the conflict.
+| Mistake | Risk | Prevention |
+|---------|------|------------|
+| Exposing individual payroll records by name in the API | PII leak — Indiana's payroll CSV includes employee names (`name_last`, `name_first`) | Do not import `name_last`/`name_first` fields into `BudgetLineItem.description`; aggregate payroll by position title only, as the existing Bloomington salary pipeline does |
+| Committing Indiana Gateway or LA data CSVs to the repo | Raw data files can be large (>100MB) and may include PII in payroll | Add `data/*.csv`, `data/2024/`, `data/2025/` to `.gitignore` before starting import work; source data lives locally only |
+| Admin `ImportBudget` endpoint has no authentication middleware | Any actor who discovers the endpoint can inject arbitrary budget data | Confirm the endpoint is under `SessionMiddleware` in `routes.go` before opening it to production traffic |
 
 ---
 
-## Phase-Specific Warnings
+## UX Pitfalls
 
-| Phase Topic | Likely Pitfall | Mitigation |
-|-------------|---------------|------------|
-| Store refactor (remove badges, unify phases) | `version` not bumped → stale localStorage corrupts new state | Bump to `version: 2` with clean-reset migrate function as first commit |
-| Store refactor | Legacy flat fields (`issueTitle`, `questionText`, `topicId`) still persisted but unused | Remove from `partialize` in same commit |
-| Practice round architecture | Practice verdicts POSTed to backend as real data | `isPractice: true` flag on `IssueProgress`; filter in `postVerdicts` |
-| Practice round implementation | Skip path leaves partial state | Dedicated `skipPractice()` action; atomic cleanup |
-| Unified flow phase machine | `'ranking'` still in `Phase` union after `RankingPhase` deleted | Remove type first; let TypeScript errors guide cleanup |
-| Location filter feature | Zero-quotes dead end for unsupported addresses | Gate evaluation entry on `quotes.length >= 2`; unfiltered fallback |
-| Location filter backend | Parallel geocoding diverges from Essentials results | Reuse existing backend ST_Covers search; same Google Maps Places path |
-| Coach marks | Fires before first card renders | Gate on `quotesToEvaluate.length > 0`; use `useLayoutEffect` + rAF |
-| Results reveal animation | AnimatePresence stuck on rapid state transitions | Stable `key` props; batch state updates in single `set()` call |
-| Visual redesign | Dynamic Tailwind classes purged in production build | Use literal class strings; run `npm run build` locally before deploy |
-| Chrome cleanup | Deleted component still imported in `App.tsx` | Delete file, import, and route in single commit |
-| Quote data caching | Module-level cache ignores location filter changes | Keyed cache by filter params; `clearCache()` on location change |
-| Verdict sync | `postVerdicts` fires multiple times due to `issueProgress` in deps | Persist `verdictsSynced` flag in store; fire on phase transition, not re-render |
+Common user experience mistakes in this domain.
+
+| Pitfall | User Impact | Better Approach |
+|---------|-------------|-----------------|
+| Showing "City / State / Federal" tabs when only city-level data exists | User clicks "State" or "Federal", sees nothing or an error | Replace with a named entity dropdown/switcher that only shows entities with actual data; hide tabs for unavailable tiers |
+| Displaying a single year selector across all jurisdictions | User selects 2025 for all entities; LA County's 2025 covers a different period than Bloomington's | Show the full fiscal period label ("FY 2024-25" vs "Calendar 2025") next to the year value |
+| Comparing per-capita amounts across entities without surfacing population source | Monroe County population (148K) vs Bloomington (79K) — "per resident" figures are confusing if compared directly at county vs. city level | Display the population figure and source year prominently; note that county budgets cover the full county population including city residents |
+| Entity switcher that resets all filters on switch | User drills into "Parks & Recreation" in Bloomington, switches to Monroe County, sees the top level — loses context | Preserve dataset type (operating/revenue/salaries) across entity switches; reset only the navigation path |
+| Rendering the hero image and city context card with hardcoded Bloomington content when a different entity is selected | Misleads users looking at Monroe County or LA data | Each entity record needs its own `hero_image_url`, `description`, and context card copy — add these to the `treasury.cities` model |
+
+---
+
+## "Looks Done But Isn't" Checklist
+
+Things that appear complete but are missing critical pieces.
+
+- [ ] **Bloomington data migrated to Supabase:** Verify all 5 fiscal years (2021-2025) exist in `treasury.budgets`, each with all 3 dataset types (operating, revenue, salaries). Check row counts match the source CSVs — do not accept "the import ran" as verification.
+- [ ] **Entity switcher:** Verify selecting each entity makes a new API call with `?city=<entity>` and returns data for that entity specifically — not the static JSON fallback.
+- [ ] **Fiscal year type labeled in UI:** Verify that LA County/City entries display "FY 2024-25" and Indiana entries display "2024" — not just the raw integer from the DB.
+- [ ] **Visual refresh:** Verify the sunburst/icicle chart still renders 15+ distinct colors after the design token migration — not a monochromatic single-hue chart.
+- [ ] **Payroll data anonymized:** Verify that no employee names appear in the API response for salary data — only position titles.
+- [ ] **Category tree depth correct:** After importing a new jurisdiction, drill down to a leaf node and confirm the hierarchy matches the source data structure (e.g., LA County's `Department > Division > Object` is preserved, not flattened to Bloomington's `primary_function > priority > service > fund`).
+- [ ] **`dataset_type` in unique index:** Run `\d treasury.budgets` and confirm the unique constraint includes `(city_id, fiscal_year, dataset_type)` before marking Phase 1 complete.
+
+---
+
+## Recovery Strategies
+
+When pitfalls occur despite prevention, how to recover.
+
+| Pitfall | Recovery Cost | Recovery Steps |
+|---------|---------------|----------------|
+| Bad import: wrong amounts from pipe-delimiter parsing | MEDIUM | Run `DELETE FROM treasury.budget_line_items WHERE category_id IN (SELECT id FROM treasury.budget_categories WHERE budget_id = '<id>')`, then `DELETE FROM treasury.budget_categories WHERE budget_id = '<id>'`, then `DELETE FROM treasury.budgets WHERE id = '<id>'`. Re-run import with corrected parser. |
+| Checkbook transactions stored in BudgetLineItem (wrong table) | HIGH | Requires schema migration to add `treasury.transactions` table, data migration from line_items, API endpoint changes, and frontend changes. Avoid by deciding architecture in Phase 1. |
+| EV brand tokens applied to chart colors (visual collapse) | LOW | Revert the CSS-only changes to `BudgetVisualization.css` and restore `--data-*` variable references. No data changes needed. |
+| Missing `fiscal_year_start_month` after CA data imported | MEDIUM | Add column with `ALTER TABLE treasury.budgets ADD COLUMN fiscal_year_start_month smallint NOT NULL DEFAULT 1`. Update CA records: `UPDATE treasury.budgets SET fiscal_year_start_month = 7 WHERE city_id IN (SELECT id FROM treasury.cities WHERE state = 'CA')`. |
+| Payroll PII imported (employee names in DB) | HIGH | Delete affected line item rows, re-import with anonymization applied. If data was ever served through the API, notify as a data exposure event. |
+
+---
+
+## Pitfall-to-Phase Mapping
+
+How roadmap phases should address these pitfalls.
+
+| Pitfall | Prevention Phase | Verification |
+|---------|------------------|--------------|
+| Schema unique index missing `dataset_type` | Phase 1: Schema + Bloomington migration | `\d treasury.budgets` shows 3-column unique constraint |
+| Checkbook transaction volume architecture | Phase 1: Schema + Bloomington migration | Decision documented; checkbook imported via correct storage pattern |
+| Indiana Gateway pipe delimiter + encoding | Phase 2: Monroe County + Ellettsville import | Parser explicitly sets `delimiter='|'` and UTF-8 re-encoding; verified against manual row count |
+| Indiana fiscal year encoding ambiguity | Phase 2: Monroe County + Ellettsville import | `fiscal_year_start_month = 1` set for all IN entities; UI displays "2025 (Jan–Dec)" |
+| LA County PDF-first budget source | Phase 3: LA data research sprint | Decision logged: adopted budget figures from PDF (top-level only); transaction detail from `data.lacounty.gov` |
+| Fiscal year mismatch CA vs IN | Phase 1 (schema), Phase 3 (verification) | `fiscal_year_start_month = 7` for CA entities; UI shows "FY 2024-25" not "2025" |
+| Design token vs. visualization palette collision | Phase 4: Visual refresh | Post-refresh, sunburst chart renders 15+ distinct segment colors |
+| `activeTab` not wired to entity data loading | Phase 5: Frontend entity switcher | Selecting Monroe County via switcher shows Monroe County API response, confirmed in Network tab |
+| Hardcoded Bloomington hero content | Phase 5: Frontend entity switcher | Each entity shows its own name, description, and context card data |
+| Payroll PII exposure | Phase 1 (Bloomington migration) | API response for salary dataset contains no `name_last`/`name_first` values |
 
 ---
 
 ## Sources
 
-- Direct codebase inspection: `EV-readrank/src/store/useReadRankStore.ts` — `version: 1`, no-op migrate, `badgeAssignments`, `Phase` union, `nextQuote` auto-transition to `'ranking'` (HIGH confidence)
-- Direct codebase inspection: `EV-readrank/src/components/PhaseContainer.tsx` — `postVerdicts(issueProgress)` with `hasSynced` ref (HIGH confidence)
-- Direct codebase inspection: `EV-readrank/src/components/EvaluationPhase.tsx` — device-type branch, `handleComplete`, `setPhase('ranking')` path (HIGH confidence)
-- Direct codebase inspection: `EV-readrank/src/components/RankingPhase.tsx` — `badgeAssignments`, `assignBadge`, dnd-kit DndContext (HIGH confidence)
-- Direct codebase inspection: `EV-readrank/src/data/api.ts` — module-level `cachedData` variable (HIGH confidence)
-- [Zustand persist middleware docs](https://zustand.docs.pmnd.rs/reference/middlewares/persist) (HIGH confidence)
-- [Persist middleware keeping old function versions — GitHub Discussion #2556](https://github.com/pmndrs/zustand/discussions/2556) (MEDIUM confidence)
-- [How to migrate Zustand local storage store to a new version — DEV Community](https://dev.to/diballesteros/how-to-migrate-zustand-local-storage-store-to-a-new-version-njp) (MEDIUM confidence)
-- [Solving Zustand persisted store re-hydration merging — DEV Community](https://dev.to/atsyot/solving-zustand-persisted-store-re-hydtration-merging-state-issue-1abk) (MEDIUM confidence)
-- [AnimatePresence gets stuck when state changes quickly — Framer Motion Issue #2554](https://github.com/framer/motion/issues/2554) (HIGH confidence — open official issue)
-- [AnimatePresence doesn't update with latest state on fast change — Issue #2023](https://github.com/framer/motion/issues/2023) (HIGH confidence — open official issue)
-- [dnd-kit touch-action and gesture conflict documentation](https://docs.dndkit.com/api-documentation/draggable) (HIGH confidence — official docs)
-- [How not to design swipe actions — Medium/TygoDesign](https://medium.com/tygodesign/how-not-to-design-a-swipe-actions-b93a93018058) (LOW confidence — single community source)
-- [UX Onboarding Best Practices 2025 — UX Design Institute](https://www.uxdesigninstitute.com/blog/ux-onboarding-best-practices-guide/) (MEDIUM confidence — corroborated by multiple sources)
-- [Tailwind CSS in Large Projects: Best Practices & Pitfalls — Medium](https://medium.com/@vishalthakur2463/tailwind-css-in-large-projects-best-practices-pitfalls-bf745f72862b) (MEDIUM confidence — consistent with official Tailwind docs on content scanning)
-- [Laws of UX: Onboarding for Active Users (2024)](https://lawsofux.com/articles/2024/onboarding-for-active-users/) (MEDIUM confidence)
+- Direct inspection: `treasury-tracker/src/App.tsx`, `src/data/dataLoader.ts`, `src/types/budget.ts`, `src/index.css`, `budgetConfig.json`
+- Direct inspection: `EV-Backend/internal/treasury/models.go`, `handlers.go`, `routes.go`
+- Direct inspection: `treasury-tracker/data/operating_budget-all.csv` (27,804 rows), `checkbook-all.csv` (282,458 rows), `payroll-all.csv` (304,911 rows)
+- [Indiana Gateway Download Page](https://gateway.ifionline.org/public/download.aspx) — pipe delimiter documented; LOW confidence on exact column schema without direct download test
+- [Indiana Gateway — pipe-delimited format confirmation](https://www.bakertilly.com/insights/2025-indiana-gateway-budget-forms) — MEDIUM confidence
+- [LA County CEO Budget Page](https://ceo.lacounty.gov/budget/) — PDF-only for adopted budget document confirmed
+- [County of Los Angeles Open Data](https://data.lacounty.gov/) — transaction-level expenditure data available
+- [LA City Controller Open Expenditures](https://lacity.spending.socrata.com/) — CSV/API available for LA City
+- [LA City Open Budget](https://openbudget.lacity.org/) — visualization layer over the same data
+- [Supabase Import Data docs](https://supabase.com/docs/guides/database/import-data) — 100MB dashboard CSV limit confirmed; `pgloader` recommendation for large files
+- [Supabase row limit discussion](https://github.com/orgs/supabase/discussions/3765) — default 1000-row API limit; configurable to 1M
+- [How to Manage Breaking Changes in Design Tokens](https://designtokens.substack.com/p/how-to-manage-breaking-changes-in) — deprecation/migration pattern
+- [GFOA: Designing a Local Government Budget](https://www.gfoa.org/long-form/a-guide-to-designing-a-local-government-budget) — hierarchy standards (line items → divisions → departments)
 
 ---
-*Pitfalls research for: v2026.3.6 Read & Rank Redesign — unified evaluate+rank flow, practice round, location filtering, visual redesign*
-*Researched: 2026-03-14*
+*Pitfalls research for: multi-jurisdiction government budget data import and Treasury Tracker expansion*
+*Researched: 2026-03-22*

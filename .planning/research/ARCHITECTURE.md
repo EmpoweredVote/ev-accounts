@@ -1,639 +1,434 @@
-# Architecture Patterns
+# Architecture Research
 
-**Domain:** Read & Rank — Unified evaluate+rank flow, practice round, location-based quote filtering, coach marks, results polish, visual redesign (v2026.3.6)
-**Researched:** 2026-03-14
-**Confidence:** HIGH (all findings from direct source inspection of EV-readrank, EV-Backend, and PROJECT.md)
-
----
-
-## Current Architecture (Baseline — as of v2026.3.5)
-
-### Component Tree
-
-```
-App.tsx
-  BrowserRouter
-    Route "/"          → MainApp
-      SiteHeader (ev-ui)
-      ProgressHeader              ← target: DELETE
-      main > PhaseContainer
-        hub        → IssueHub
-        evaluation → EvaluationPhase
-          QuoteCard (framer-motion drag)
-          SwipeBackground
-          ActionButtons
-          AgreedQuotesSidebar     (desktop split layout; inline @dnd-kit reorder + badge assign)
-        ranking    → RankingPhase ← target: MERGE into EvaluationPhase
-          SortableQuoteCard (@dnd-kit)
-          BadgeIcons
-        results    → ResultsPhase
-    Route "/candidate/:id/alignment" → CandidateAlignmentPage
-    Route "/animation-options"       → AnimationOptionsPage ← target: DELETE
-```
-
-### Current Phase State Machine
-
-```typescript
-type Phase = 'hub' | 'evaluation' | 'ranking' | 'results'
-// IssueProgress.phase = 'evaluation' | 'ranking' | 'results'
-```
-
-### Current Data Flow
-
-```
-IssueHub
-  fetchQuotesData()  →  GET /essentials/quotes  (module-level cache; mock fallback)
-    → { quotes[], candidates[], issues[] }
-  handleSelectIssue(id)
-    → getQuotesForIssue(quotes, id) → shuffleArray → selectIssue(id, quotes, issueData)
-
-EvaluationPhase
-  agreeWithQuote / disagreeWithQuote
-  nextQuote() — when index >= quotes.length: setPhase('ranking')
-
-RankingPhase
-  @dnd-kit reorder agreedQuotes
-  assignBadge (diamond / gold per quoteId)
-  setRankedQuotes / setPhase('results')
-
-ResultsPhase
-  fetchQuotesData() (for candidates)
-  organizedQuotes: diamond → gold → agreed → disagreed
-  buildEssentialsProfileUrl() → encodes verdict fragment
-
-PhaseContainer (useEffect: phase==='results' && isLoggedIn)
-  postVerdicts() → POST /compass/verdicts
-```
-
-### Zustand Store Key Points
-
-- Persist key: `ev_readrank` (version 1)
-- Persists: `phase`, `currentIssueId`, `issueProgress` map, plus legacy flat fields
-- `IssueProgress` holds `quotesToEvaluate`, `currentQuoteIndex`, `agreedQuotes`, `disagreedQuotes`, `rankedQuotes`, `badgeAssignments`, `candidateMatches`, `completed`
-- Legacy flat-state fields (`agreedQuotes`, `rankedQuotes`, etc.) duplicated from current issue for backwards compat
-
-### Backend Surface (Relevant)
-
-- `GET /essentials/quotes` — all quotes + candidates + issues; public; module-level cached
-- `GET /essentials/quotes?politician_id=X` — filter by single politician UUID
-- `POST /compass/verdicts` — bulk upsert verdicts; auth required (session cookie)
-- `POST /essentials/politicians/search` — geocodes address via Google Maps, PostGIS ST_Covers/ST_Intersects, returns politicians by district hierarchy; **public, no auth**
+**Domain:** Treasury Tracker Expansion — Multi-jurisdiction budget visualization
+**Researched:** 2026-03-22
+**Confidence:** HIGH (based on direct codebase inspection of treasury-tracker, EV-Backend, and ev-ui)
 
 ---
 
-## Target Architecture (v2026.3.6)
-
-### Phase Model Change — The Core Structural Decision
-
-The biggest change is dropping `'ranking'` as a top-level phase and merging it inline into the evaluate interaction. `'practice'` is added for the onboarding round.
-
-```typescript
-// v2 phase type
-type Phase = 'practice' | 'hub' | 'evaluate' | 'results'
-
-// v2 IssueProgress.phase (ranking no longer a separate sub-phase)
-phase: 'evaluate' | 'results'
-```
-
-### New Component Tree
+## System Overview
 
 ```
-App.tsx
-  BrowserRouter
-    Route "/"  → MainApp
-      SiteHeader (ev-ui)
-      ← ProgressHeader removed
-      main > PhaseContainer
-        practice → PracticeRound              (NEW)
-          PracticeQuoteCard                   (NEW — simplified QuoteCard, no candidateId)
-          InlineRankPanel (practice mode)     (NEW — sortable, no badge assign)
-          PracticeCompleteScreen              (NEW — "Ready for the real thing?")
-        hub      → IssueHub                   (MODIFIED — AddressFilter + first-visit redirect)
-          AddressFilter                       (NEW — Google Maps Places autocomplete)
-        evaluate → EvaluatePhase              (REPLACES EvaluationPhase + RankingPhase)
-          QuoteCard                           (unchanged interface)
-          SwipeBackground                     (unchanged)
-          ActionButtons                       (unchanged)
-          InlineRankPanel (real mode)         (NEW — slides in at agreedQuotes.length >= 2)
-          FirstIssueCoachMarks                (NEW — wraps EvaluatePhase on first real issue)
-        results  → ResultsPhase               (MODIFIED — stagger reveal, simplified CTAs)
-    Route "/candidate/:id/alignment" → CandidateAlignmentPage (unchanged)
-    ← Route "/animation-options" removed
+┌──────────────────────────────────────────────────────────────┐
+│                   FRONTEND (Cloudflare Pages)                 │
+│         treasury-tracker/  React 19 + Vite + Tailwind        │
+├──────────────────────────────────────────────────────────────┤
+│  ┌──────────────┐  ┌───────────────┐  ┌──────────────────┐   │
+│  │ EntitySwitcher│  │ BudgetVisuali-│  │  DatasetTabs     │   │
+│  │   (NEW)       │  │  zation (D3)  │  │ (revenue/ops/    │   │
+│  └──────┬───────┘  └──────┬────────┘  │  salaries)       │   │
+│         │                 │           └──────────────────┘   │
+│  ┌──────▼─────────────────▼────────────────────────────────┐  │
+│  │              App.tsx — State Orchestrator                │  │
+│  │  selectedEntity + activeDataset + year + navigationPath  │  │
+│  └──────────────────────────┬───────────────────────────────┘  │
+│                             │                                  │
+│  ┌──────────────────────────▼───────────────────────────────┐  │
+│  │  dataLoader.ts — API-first, static JSON fallback         │  │
+│  │  cache: Map<"entityType:name-year-dataset", BudgetData>  │  │
+│  └──────────────────────────┬───────────────────────────────┘  │
+└─────────────────────────────┼──────────────────────────────────┘
+                              │ HTTPS REST
+┌─────────────────────────────▼──────────────────────────────────┐
+│               BACKEND (Render — api.empowered.vote)            │
+│              EV-Backend Go 1.24 + Chi router + GORM            │
+│                                                                │
+│  /treasury/*  routes.go (public GET + admin POST)              │
+│  ┌──────────────────┐  ┌───────────────┐  ┌────────────────┐  │
+│  │   handlers.go    │  │   models.go   │  │   setup.go     │  │
+│  │  CRUD + import   │  │  City/Budget/ │  │  AutoMigrate + │  │
+│  │  + tree builder  │  │  Category/    │  │  manual SQL    │  │
+│  └──────────────────┘  │  LineItem     │  └────────────────┘  │
+│                        └───────────────┘                      │
+└──────────────────────────────┬─────────────────────────────────┘
+                               │
+┌──────────────────────────────▼─────────────────────────────────┐
+│                  DATABASE (Supabase PostgreSQL)                 │
+│                        schema: treasury                        │
+│                                                                │
+│  treasury.cities → treasury.budgets → treasury.budget_         │
+│   (+ entity_type)    (city_id FK)      categories →           │
+│                                        treasury.budget_        │
+│                                        line_items              │
+└────────────────────────────────────────────────────────────────┘
 ```
+
+### Component Responsibilities
+
+| Component | Responsibility | Status for this Milestone |
+|-----------|---------------|--------------------------|
+| `App.tsx` | Top-level state: selected entity, dataset, year, nav path | MODIFY |
+| `dataLoader.ts` | Fetch from API with static JSON fallback; in-memory cache | MODIFY |
+| `EntitySwitcher.tsx` | Dropdown/pill to select city or county | NEW |
+| `DatasetTabs.tsx` | Switch between Money In / Money Out / People | UNCHANGED |
+| `YearSelector.tsx` | Fiscal year picker | UNCHANGED |
+| `BudgetVisualization.tsx` | D3 sunburst / icicle / tree rendering | UNCHANGED |
+| `CategoryList.tsx` | Drilldown list of budget categories | UNCHANGED |
+| `LineItemsTable.tsx` | Leaf-level line items display | UNCHANGED |
+| `SiteHeader` (ev-ui) | Shared header with auth-aware nav | UNCHANGED |
 
 ---
 
-## Unified EvaluatePhase — Interaction Model
+## Schema Changes Required
 
-The defining behavior of the unified flow:
+### Current Schema Constraint Issue
 
+The `treasury.cities` table has a simple `uniqueIndex` on `name`. This works for a single-entity system but breaks when "Monroe County" (county entity) needs to coexist with "Monroe City" if one were ever added. More importantly, the table conflates conceptually different entity types — the frontend needs to know whether to label the hero card "City Finances" or "County Finances."
+
+### Required: Add `entity_type` to `treasury.cities`
+
+```sql
+-- Step 1: Add column with default so existing rows don't break
+ALTER TABLE treasury.cities
+  ADD COLUMN entity_type TEXT NOT NULL DEFAULT 'city'
+  CHECK (entity_type IN ('city', 'county', 'township', 'special_district'));
+
+-- Step 2: Drop old single-field unique constraint
+ALTER TABLE treasury.cities
+  DROP CONSTRAINT IF EXISTS cities_name_key;
+
+-- Step 3: Replace with composite unique on (name, state, entity_type)
+ALTER TABLE treasury.cities
+  ADD CONSTRAINT cities_name_state_type_unique UNIQUE (name, state, entity_type);
 ```
-agreedQuotes.length = 0 or 1:
-  → full-width QuoteCard stack (same as current EvaluationPhase)
 
-agreedQuotes.length >= 2:
-  desktop: left column = QuoteCard | right column = InlineRankPanel slides in
-  mobile:  QuoteCard above | InlineRankPanel appears below (collapsed by default,
-           expands on tap, or is always visible if screen height allows)
+In `models.go`, update the `City` struct:
 
-all quotes evaluated (index >= quotes.length):
-  → InlineRankPanel expands to full width
-  → "See Your Results" CTA appears
-  → no separate "ranking" phase navigation
-```
+```go
+type City struct {
+    ID         uuid.UUID `gorm:"type:uuid;primaryKey;default:uuid_generate_v4()" json:"id"`
+    Name       string    `gorm:"not null" json:"name"`
+    State      string    `gorm:"not null" json:"state"`
+    EntityType string    `gorm:"not null;default:'city'" json:"entity_type"`
+    Population int       `json:"population"`
+    CreatedAt  time.Time `json:"created_at"`
+    UpdatedAt  time.Time `json:"updated_at"`
 
-The slide-in of InlineRankPanel uses `framer-motion` `AnimatePresence` + `motion.div` with `initial={{ opacity: 0, x: 40 }}` and `layout` on the parent container. The parent switches from a single-column to a two-column layout via a CSS class change; `layout` animation smooths the QuoteCard column narrowing.
-
-### InlineRankPanel
-
-InlineRankPanel is a new component that absorbs the functionality currently split between `AgreedQuotesSidebar` (desktop inline badge+reorder) and `RankingPhase` (full-screen post-evaluation badge+reorder). It is the single canonical ranking UI.
-
-```typescript
-interface InlineRankPanelProps {
-  mode: 'practice' | 'real';  // practice mode: no badge assign controls
-  agreedQuotes: Quote[];
-  badgeAssignments: BadgeAssignment;  // ignored in practice mode
-  onReorder: (quotes: Quote[]) => void;
-  onAssignBadge: (quoteId: string, badge: BadgeType) => void;  // noop in practice mode
-  isEvaluationComplete: boolean;  // when true: show full-width + "See Results" CTA
-  onComplete: () => void;
+    Budgets []Budget `gorm:"foreignKey:CityID" json:"budgets,omitempty"`
 }
 ```
 
-Internally: @dnd-kit `DndContext` + `SortableContext` + `useSortable` per card — same code as current `RankingPhase` SortableQuoteCard and `AgreedQuotesSidebar` SortableCompactQuoteCard, unified into one component.
+**Note on AutoMigrate:** GORM AutoMigrate will add the `entity_type` column automatically. However, it will NOT drop the old `cities_name_key` unique constraint or add the new composite constraint. Those two SQL statements must be placed in `setup.go` as explicit `db.DB.Exec()` calls that run before AutoMigrate.
+
+### Optional: Entity Metadata Fields
+
+For data-driven hero cards (city hall photo, official website link):
+
+```sql
+ALTER TABLE treasury.cities
+  ADD COLUMN website_url TEXT,
+  ADD COLUMN hero_image_url TEXT;
+```
+
+These are low-priority. For the initial milestone, hero images can remain hardcoded per entity in App.tsx and be migrated to DB fields in a follow-on.
 
 ---
 
-## Practice Round Architecture
+## Recommended Project Structure Changes
 
-### Data
-
-Practice quotes are fully static — no API call, no `candidateId`. Define in `src/data/practiceData.ts`:
-
-```typescript
-export interface PracticeQuote {
-  id: string;
-  text: string;  // pizza topping opinions
-}
-export const PRACTICE_QUOTES: PracticeQuote[] = [
-  { id: 'pq-1', text: '...' },
-  // 4-5 quotes total
-];
-```
-
-### State
-
-PracticeRound does NOT write to `issueProgress`. It only touches two store fields:
-
-```typescript
-practiceCompleted: boolean   // persisted; skip practice on return
-```
-
-On practice completion: `store.setPracticeCompleted()` then `store.setPhase('hub')`.
-
-### Navigation Logic
-
-```typescript
-// In IssueHub, before render:
-useEffect(() => {
-  if (!practiceCompleted) {
-    setPhase('practice');
-  }
-}, []);
-```
-
-`PhaseContainer` renders `<PracticeRound />` when `phase === 'practice'`. PracticeRound does not need `currentIssueId` — it is entirely self-contained.
-
-### PracticeRound UX Flow
+### Frontend (treasury-tracker/src/)
 
 ```
-PracticeRound renders 4-5 static pizza quotes
-  → user swipes/taps agree or disagree on each
-  → after 2nd agree: InlineRankPanel appears (practice mode — no badge assign)
-  → user drags to rank agreed quotes
-  → taps "I'm ready — show me real issues"
-    → setPracticeCompleted()
-    → setPhase('hub')
+src/
+├── components/
+│   ├── entity/                    (NEW folder)
+│   │   └── EntitySwitcher.tsx     (NEW — city/county picker dropdown)
+│   ├── datasets/
+│   │   └── DatasetTabs.tsx        (UNCHANGED)
+│   ├── BudgetVisualization.tsx    (UNCHANGED)
+│   ├── CategoryList.tsx           (UNCHANGED)
+│   ├── YearSelector.tsx           (UNCHANGED)
+│   └── ...all other components    (UNCHANGED)
+├── styles/
+│   └── tokens.ts                  (NEW — re-export ev-ui tokens for D3 usage)
+├── data/
+│   └── dataLoader.ts              (MODIFY — entity_type param, updated cache key)
+├── types/
+│   └── budget.ts                  (MODIFY — add entity_type to metadata interface)
+└── App.tsx                        (MODIFY — selectedEntity state, EntitySwitcher, dynamic hero)
+```
+
+### Backend (EV-Backend/internal/treasury/)
+
+```
+internal/treasury/
+├── models.go     (MODIFY — add EntityType field to City struct)
+├── setup.go      (MODIFY — manual constraint SQL + AutoMigrate)
+├── handlers.go   (MODIFY — entity_type in ImportBudget find-or-create; ListCities filter)
+├── routes.go     (UNCHANGED)
+└── fetcher.go    (UNCHANGED)
+```
+
+### Import Scripts (new)
+
+```
+scrapers/treasury/                     (NEW folder alongside existing scrapers/)
+├── import_utils.py                    (shared: auth, POST helper, data transformer)
+├── bloomington_migrate.py             (POST existing static JSON to API)
+├── ellettsville_import.py             (transform source data + POST)
+├── monroe_county_import.py            (transform source data + POST)
+├── la_county_import.py                (transform source data + POST)
+└── la_cities_import.py                (per LA city, likely loop over city list)
 ```
 
 ---
 
-## Location-Based Quote Filtering
+## Architectural Patterns
 
-### User Flow
+### Pattern 1: API-First with Static JSON Fallback (Existing — Keep)
 
-```
-IssueHub renders
-  └─ AddressFilter (Google Maps Places autocomplete widget)
-       user types address → Places autocomplete suggestion → onPlaceSelected(placeId, displayText)
-         → fetch POST /essentials/politicians/search { query: displayText }
-         → receive { politicians: [{ id, ... }] }
-         → extract politicianIds = politicians.map(p => p.id)
-         → store.setLocationContext({ address: displayText, placeId, politicianIds })
-         → IssueHub re-renders: show "Filtered to your area" indicator
+**What:** `dataLoader.ts` calls `GET /treasury/budgets?city=X&year=Y&dataset=Z` first, falls back to `./data/{type}-{year}.json` in the public directory, then falls back to hardcoded mock data in `budgetData.ts`.
 
-handleSelectIssue(issueId):
-  const rawQuotes = getQuotesForIssue(allQuotes, issueId)
-  const locationCtx = store.locationContext
-  const filtered = locationCtx
-    ? rawQuotes.filter(q => locationCtx.politicianIds.includes(q.candidateId ?? ''))
-    : rawQuotes
-  const quotesToUse = filtered.length >= 2 ? filtered : rawQuotes  // graceful fallback
-  selectIssue(issueId, shuffleArray(quotesToUse), issueData)
-```
+**Change needed for entity switcher:** The `loadBudgetData()` signature currently accepts `cityName: string`. Add `entityType: string` so the API call can include `?entity_type=county` for disambiguation. Update the cache key from `"${cityName}-${year}-${dataset}"` to `"${entityType}:${entityName}-${year}-${dataset}"` to prevent cache collisions.
 
-The filter logic lives in `IssueHub.handleSelectIssue`. No new store action needed — `locationContext` is read synchronously at click time.
+The static JSON fallback only applies to Bloomington (city), since no other entities have static JSON files. When an API call for Monroe County fails, the static fallback lookup for `./data/operating-2025.json` will succeed (it's Bloomington data) — this could confuse users. Best mitigation: check `entityType === 'city' && entityName === 'Bloomington'` before attempting static JSON fallback.
 
-### Backend Reuse
+**Trade-offs:** The fallback system is a safety net, not a migration path. Keep static JSON files in `public/data/` throughout this milestone.
 
-`POST /essentials/politicians/search` already geocodes via Google Maps and runs PostGIS. The response returns politician objects with UUID `id` fields. These match `quote.candidateId` exactly (same UUID). **No new backend endpoint required for location filtering.**
+### Pattern 2: POST /treasury/budgets/import for All Data Ingestion (Existing — Extend)
 
-### AddressFilter Component
+**What:** Admin-protected `POST /treasury/budgets/import` accepts a full JSON payload with nested categories and line items. Wraps insert in a transaction. Find-or-creates the city record on first import.
 
-```typescript
-interface AddressFilterProps {
-  onLocationSelected: (politicianIds: string[], displayText: string) => void;
-  onClear: () => void;
-  currentAddress: string | null;  // from store.locationContext?.address
-}
-```
+**Change needed:** The `ImportBudget` handler finds-or-creates city by `name + state` only. After adding `entity_type`, update the find-or-create query to include `entity_type`:
 
-Internally uses the Google Maps Places JavaScript API — same initialization pattern as `essentials/src/pages/Dashboard.jsx`. Read that file before implementing to replicate the exact `google.maps.places.Autocomplete` setup, `place_changed` event handler, and `getPlace()` call. Do not invent a new pattern.
-
-After `onPlaceSelected`: call `POST /essentials/politicians/search` directly (raw `fetch`, not through `api.ts`, as it is a different domain concern).
-
-### Essentials Context Auto-Detect (One-Way URL Param)
-
-When Essentials links to Read & Rank filtered to a specific politician, it can append `?politician_id=UUID`. On mount, `IssueHub` reads `window.location.search` for `politician_id`, calls `GET /essentials/quotes?politician_id=X`, and pre-populates with only that politician's quotes. No address input needed for this path.
-
-```typescript
-// In IssueHub useEffect on mount:
-const params = new URLSearchParams(window.location.search);
-const politicianId = params.get('politician_id');
-if (politicianId) {
-  // fetch quotes filtered to this politician
-  fetchFilteredQuotes(politicianId).then(data => {
-    setFilteredQuotes(data.quotes);
-    // clear param from URL to avoid stale state on reload
-    window.history.replaceState(null, '', window.location.pathname);
-  });
+```go
+// In handlers.go ImportBudget
+if err := tx.Where("name = ? AND state = ? AND entity_type = ?",
+    importRequest.CityName, importRequest.CityState, importRequest.EntityType).
+    First(&city).Error; err != nil {
+    city = City{
+        Name:       importRequest.CityName,
+        State:      importRequest.CityState,
+        EntityType: importRequest.EntityType,
+        Population: importRequest.Population,
+    }
+    // ...
 }
 ```
 
-This is frontend-only. No backend change required.
+The import request struct also needs `EntityType string` added.
 
----
+**All import scripts** should POST to this endpoint rather than using direct SQL. The handler handles recursive category insertion, transaction safety, and city upsert.
 
-## Coach Marks on First Real Issue
+### Pattern 3: EntitySwitcher as Controlled Stateless Component
 
-### Trigger Condition
+**What:** `EntitySwitcher` receives the entity list from `GET /treasury/cities` (via `listEntities()` in dataLoader.ts) and the currently selected entity, and calls back with the selected entity on change. App.tsx owns all state.
 
-```typescript
-// In PhaseContainer or EvaluatePhase:
-const isFirstRealIssue = Object.keys(issueProgress).length === 0;
-// or more precisely: no completed real issues yet
-```
+**Design:** A single dropdown pill. Group entities by `entity_type` in the option list (Cities section, Counties section). Label the active entity prominently. Style with EV design tokens: teal-600 (`#005366`) for active border, `--light-gray` background, Manrope font, rounded pill shape.
 
-### Component Design
+**When to place:** Top of page, above DatasetTabs. The hero card city name, image, and per-resident stats update when the entity changes.
 
-`FirstIssueCoachMarks` wraps the `EvaluatePhase` UI with a step-by-step coach mark overlay. It uses the ev-ui `CoachMark` component.
+**API surface:** `GET /treasury/cities` already exists and returns all cities. It needs to include `entity_type` in its response (the field will be present after the model change). No new endpoint needed.
 
-Before building, read the CompassV2 coach mark implementation to understand:
-- The step data structure
-- How `CoachMark` accepts a target ref/selector for the SVG mask spotlight
-- How step advancement works (user clicks "Next" or taps)
+### Pattern 4: Design Token Integration via ev-ui tokens.js
 
-Suggested tour steps:
-1. Spotlight QuoteCard area — "This is a real statement from a real politician"
-2. Spotlight agree/disagree buttons — "Swipe right to agree, left to disagree"
-3. Spotlight InlineRankPanel (deferred until it appears) — "Your agreed quotes collect here — drag to rank them"
-4. Spotlight badge icons (deferred until rank panel is populated) — "Award Diamond and Gold to your top picks"
+**What:** ev-ui v0.1.53 exports `tokens.js` from `@chrisandrewsedu/ev-ui/tokens`. The treasury tracker currently hardcodes hex colors inline in component files (e.g., `#585937` in DatasetTabs, `#00657c` in index.css).
 
-Steps 3–4 are deferred: the coach mark state machine waits until `agreedQuotes.length >= 2` before advancing to step 3, and until InlineRankPanel is rendered and stable. This requires the coach mark to be reactive to store state.
+**Gap to close:**
+- `treasury-tracker/src/index.css` defines CSS variables like `--muted-blue: #00657c` and `--coral: #ff5740`. These are close but not identical to ev-ui tokens (ev-ui teal is `#005366`, not `#00657c`).
+- D3 chart colors in BudgetVisualization and BudgetSunburst are hardcoded category hex strings from the source JSON.
+- DatasetTabs colors (`#585937`, `#00657c`, `#9d3c89`) are hardcoded inline.
 
-### Persistence
+**Recommended approach:**
 
-After the tour completes (or is dismissed), set `store.firstIssueCoachMarksSeen = true` (add this boolean to the store, persisted). Do not re-show on subsequent issues.
-
----
-
-## Results Phase Changes
-
-### What Changes
-
-The data model is unchanged. `organizedQuotes`, `fetchQuotesData()` for candidates, `buildEssentialsProfileUrl()`, and `postVerdicts` trigger in `PhaseContainer` all remain the same.
-
-Visual changes only:
-
-1. **Remove the 800ms spinner.** Replace with a staggered card reveal. The `fetchQuotesData()` call is already cached after the first issue — it resolves instantly on subsequent issues. Remove the artificial `setTimeout(() => setLoading(false), 800)` delay. If candidates aren't loaded yet (first visit), show a brief shimmer skeleton instead of a spinner.
-
-2. **Add a "hero reveal" interstitial.** Before cards animate in, show a full-width screen for ~1.2s:
-   ```
-   "Here's who said what"  (Fraunces, large)
-   [animated dots or subtle particle burst]
-   ```
-   Then transition to the card list. Implement with `AnimatePresence` and a `stage` state: `'reveal' | 'cards'`.
-
-3. **Simplified card CTAs.** Replace the current two-button row ("View Alignment" + "Essentials") with a single "View on Essentials" link per card. The CTA links to the Essentials politician profile with the verdict fragment. `CandidateAlignmentPage` stays in the codebase but is no longer surfaced in the primary results flow.
-
-4. **Stagger animation on card list.** Use `variants` with `staggerChildren` on the list container:
+1. Create `src/styles/tokens.ts` as a thin re-export:
    ```typescript
-   const containerVariants = { animate: { transition: { staggerChildren: 0.07 } } };
-   const cardVariants = { initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } };
+   export { dataVizPalette, colors, semanticTokens } from '@chrisandrewsedu/ev-ui/tokens';
    ```
 
----
+2. Replace DatasetTabs color definitions with ev-ui palette references. Map the three datasets to palette entries from `dataVizPalette`:
+   - Money In (revenue): Sage (`#5A9A6E`) or Olive palette shades from index.css
+   - Money Out (operating): Teal (`#00647A`) — matches ev-ui teal base
+   - People (salaries): Dusk (`#7C6B9E`) — replaces purple
 
-## Chrome Cleanup
+3. Update `index.css` CSS variable values to exactly match ev-ui token values (`--muted-blue` → `#005366`, not `#00657c`). The diff is small (1 hex digit) but alignment prevents subtle color inconsistency.
 
-| Item | Action |
-|------|--------|
-| `ProgressHeader` component | Delete file; remove from `App.tsx` |
-| Route `/animation-options` | Remove from `App.tsx` |
-| `AnimationOptionsPage` component | Delete file |
-| `CollectionPhase` component | Delete file (already not referenced in PhaseContainer) |
-| `AgreedQuotesSidebar` component | Delete file (replaced by InlineRankPanel) |
-| `RankingPhase` component | Delete file (merged into EvaluatePhase via InlineRankPanel) |
-| `PhaseNavigation` component | Audit — if only used by CollectionPhase/ProgressHeader, delete |
+4. For D3 category colors: keep them as JSON-driven hex strings in the budget data, but use `dataVizPalette` shades as the palette source when generating import data.
+
+**Do not** try to replace D3 inline hex colors with CSS variables — D3 requires resolved hex values at render time, not CSS variable strings.
 
 ---
 
-## Store Schema: v1 → v2
+## Data Flow
 
-```typescript
-// v1 Phase
-type Phase = 'hub' | 'evaluation' | 'ranking' | 'results'
-
-// v2 Phase
-type Phase = 'practice' | 'hub' | 'evaluate' | 'results'
-
-// v1 IssueProgress.phase
-phase: 'evaluation' | 'ranking' | 'results'
-
-// v2 IssueProgress.phase
-phase: 'evaluate' | 'results'
-
-// New v2 top-level store fields
-practiceCompleted: boolean         // default: false
-firstIssueCoachMarksSeen: boolean  // default: false
-locationContext: {
-  address: string;
-  placeId: string;
-  politicianIds: string[];
-} | null                           // default: null
-
-// Migration (Zustand version 1 → 2):
-phase 'evaluation' → 'evaluate'
-phase 'ranking'    → 'evaluate'
-phase 'hub', 'results' → unchanged
-issueProgress[x].phase 'evaluation' | 'ranking' → 'evaluate'
-issueProgress[x].phase 'results' → unchanged
-```
-
-Add `practiceCompleted`, `firstIssueCoachMarksSeen`, `locationContext` to `partialize`.
-
----
-
-## Component Boundaries: New vs Modified vs Deleted
-
-| Component | Status | Key Notes |
-|-----------|--------|-----------|
-| `PhaseContainer` | Modified | Add `practice` case; `evaluation` → `evaluate`; remove `ranking` |
-| `EvaluatePhase` (was `EvaluationPhase`) | Major rewrite | Integrates InlineRankPanel; adds coach mark slot |
-| `InlineRankPanel` | New | Core new component; absorbs AgreedQuotesSidebar + RankingPhase rank UI |
-| `PracticeRound` | New | Self-contained; static pizza data; no API; only writes `practiceCompleted` |
-| `PracticeQuoteCard` | New | Simplified QuoteCard variant; same framer-motion drag interface |
-| `AddressFilter` | New | Google Maps Places; calls `POST /politicians/search`; writes to store |
-| `FirstIssueCoachMarks` | New | Reads ev-ui CoachMark; wraps EvaluatePhase; reactive to store state |
-| `IssueHub` | Modified | First-visit practice redirect; AddressFilter; filter logic in handleSelectIssue |
-| `ResultsPhase` | Modified | Remove 800ms delay; hero reveal; stagger animation; single CTA per card |
-| `QuoteCard` | Unchanged | Same interface; reused in EvaluatePhase and PracticeRound |
-| `SwipeBackground` | Unchanged | |
-| `ActionButtons` | Unchanged | |
-| `BadgeIcons` | Unchanged | Reused in InlineRankPanel |
-| `CandidateAlignmentPage` | Unchanged | Route stays; no longer primary CTA in results |
-| `DevHelper` | Unchanged | |
-| `useReadRankStore` | Modified | New Phase type; new fields; store version 2 + migration |
-| `api.ts` | Unchanged | fetchQuotesData unchanged; location search uses raw fetch |
-| `verdictFragment.ts` | Unchanged | |
-| `verdictSync.ts` | Unchanged | |
-| `useAuthState.ts` | Unchanged | |
-| `matchingAlgorithm.ts` | Unchanged | |
-| `useDeviceType.ts` | Unchanged | |
-| `ProgressHeader` | Deleted | |
-| `AnimationOptionsPage` | Deleted | |
-| `CollectionPhase` | Deleted | Already unused |
-| `AgreedQuotesSidebar` | Deleted | Replaced by InlineRankPanel |
-| `RankingPhase` | Deleted | Replaced by InlineRankPanel inside EvaluatePhase |
-| `PhaseNavigation` | Likely deleted | Audit before deleting |
-| `SwipeInstructions` | Audit | May be superseded by coach marks |
-
----
-
-## Data Flow Diagrams
-
-### Location Filtering Flow
+### Current Data Flow (Single Entity — Bloomington)
 
 ```
-IssueHub mounts
-  ├─ reads ?politician_id from URL
-  │    → if present: fetch GET /essentials/quotes?politician_id=X
-  │    → setFilteredQuotes; clear URL param
-  │
-  └─ AddressFilter
-       user types address
-       Google Places autocomplete fires
-       fetch POST /essentials/politicians/search { query: address }
-       response.politicians → extract IDs
-       store.setLocationContext({ address, placeId, politicianIds })
-         → IssueHub re-renders with "Filtered to your area" indicator
-
-handleSelectIssue(issueId):
-  rawQuotes = getQuotesForIssue(allQuotes, issueId)
-  locationCtx = store.locationContext
-  filtered = locationCtx ? rawQuotes.filter(q => locationCtx.politicianIds.includes(q.candidateId)) : rawQuotes
-  quotesToUse = filtered.length >= 2 ? filtered : rawQuotes  // graceful fallback
-  selectIssue(issueId, shuffle(quotesToUse), issueData)
+Page Load
+    ↓
+App.tsx useEffect([selectedYear, activeDataset])
+    ↓
+loadDataset(type, year)  →  fetch ./data/{type}-{year}.json (static fallback)
+    ↓
+setBudgetData(data)
+    ↓
+BudgetVisualization + CategoryList render
 ```
 
-### Practice → Hub → Evaluate Flow
+### Target Data Flow (Multi-Entity, API-First)
 
 ```
-User first visits readrank.empowered.vote
-  store.practiceCompleted === false
-    → IssueHub useEffect: setPhase('practice')
-    → PhaseContainer renders PracticeRound
-      user swipes pizza quotes
-      user ranks agreed quotes
-      taps "I'm ready"
-        → store.setPracticeCompleted()
-        → setPhase('hub')
-    → PhaseContainer renders IssueHub
-      user selects real issue
-        → setPhase('evaluate') via selectIssue
-    → PhaseContainer renders EvaluatePhase
-      store.Object.keys(issueProgress).length === 0 → isFirstRealIssue = true
-        → FirstIssueCoachMarks wraps the UI
+Page Load
+    ↓
+listEntities()  →  GET /treasury/cities
+    ↓
+EntitySwitcher rendered with grouped entity list (Cities / Counties)
+User selects entity (default: Bloomington, city)
+    ↓
+App.tsx useEffect([selectedEntity, activeDataset, selectedYear])
+    ↓
+loadBudgetData(year, entityName, entityType, dataset)
+    ↓
+  1. Check in-memory cache: key = "city:Bloomington-2025-operating"
+  2. GET /treasury/budgets?city=Bloomington&year=2025&dataset=operating&entity_type=city
+  3. If budget found: GET /treasury/budgets/{id}/categories
+  4. Transform response → BudgetData shape
+  5. Cache and return
+  (Fallback only for Bloomington city: fetch ./data/operating-2025.json)
+    ↓
+setBudgetData(data)  →  BudgetVisualization + CategoryList render
+Hero card updates: entity name, population, per-resident stat
 ```
 
-### Verdict Sync (Unchanged)
+### Import Pipeline Data Flow
 
 ```
-PhaseContainer useEffect:
-  phase === 'results' && isLoggedIn && !hasSynced.current
-    → postVerdicts(issueProgress)  → POST /compass/verdicts
+Source document (PDF / Excel / CSV from city or county website)
+    ↓
+scrapers/treasury/{entity}_import.py
+  - Download / scrape raw data
+  - Transform to CategoryImport JSON structure (same shape as existing static JSON categories)
+  - Authenticate: POST /auth/login → set cookie
+  - POST /treasury/budgets/import  {city_name, city_state, entity_type, fiscal_year, dataset_type, categories}
+    ↓
+Go ImportBudget handler
+  BEGIN tx
+  → UPSERT treasury.cities (find-or-create by name + state + entity_type)
+  → INSERT treasury.budgets
+  → importCategories() recursive insert → treasury.budget_categories + treasury.budget_line_items
+  COMMIT
 ```
 
-This trigger condition still works correctly because the phase string `'results'` is unchanged.
+### Bloomington Migration Data Flow
+
+```
+for each file in public/data/{operating,revenue,salaries}-{2021..2025}.json:
+    load JSON
+    extract metadata (fiscalYear, datasetType, totalBudget, hierarchy, categories)
+    POST /treasury/budgets/import {
+        city_name: "Bloomington", city_state: "IN", entity_type: "city",
+        fiscal_year, dataset_type, total_budget, categories
+    }
+    verify 201 response
+```
+
+The existing `processedBudget.json` and transaction JSON files are supplementary — they can be kept as-is in `public/data/` and continue to serve the static fallback path.
 
 ---
 
-## Backend Changes for v2026.3.6
+## Integration Points: New vs Modified
 
-**No new backend endpoints required** for any of the core features:
-
-| Feature | Backend Needs |
-|---------|---------------|
-| Unified evaluate+rank | None — frontend only |
-| Practice round | None — static data |
-| Location filter | Reuse `POST /essentials/politicians/search` (existing, public) |
-| Coach marks | None — frontend only |
-| Results polish | None — frontend only |
-| Visual redesign | None — frontend only |
-
-Optional backend enhancement (not required for v1, worth doing if quote dataset grows): Add `?politician_ids=uuid1,uuid2` multi-filter to `GET /essentials/quotes` for server-side location filtering. At 61 current quotes, client-side filter is fine.
-
----
-
-## Build Order (Dependency-Ordered)
-
-### Phase 1: Chrome Cleanup + Phase Model Reset
-
-**What:** Delete `ProgressHeader`, `AnimationOptionsPage`, `CollectionPhase`. Update `Phase` type. Rename `EvaluationPhase` → `EvaluatePhase`. Add store version 2 migration (phase name remap). Update `PhaseContainer` switch statement.
-
-**Why first:** Everything else builds on the clean phase model. Doing cleanup first prevents migrating the same files twice. The migration must be tested before adding new state on top.
-
-**Risk note:** The store migration must not silently lose in-progress sessions. Write a test or manually verify: load page with `phase: 'evaluation'` in localStorage, confirm it becomes `'evaluate'` after migration and the session resumes correctly.
-
-**Delivers:** Clean codebase with no dead code; same user-facing behavior as before.
-
-### Phase 2: InlineRankPanel + Unified EvaluatePhase
-
-**What:** Build `InlineRankPanel`. Rewrite `EvaluationPhase` → `EvaluatePhase` to include `InlineRankPanel`. Delete `AgreedQuotesSidebar` and `RankingPhase`. Add `AnimatePresence` slide-in at `agreedQuotes.length >= 2`.
-
-**Depends on:** Phase 1 (clean phase model).
-
-**Why before practice:** Practice round reuses the same interaction pattern as EvaluatePhase. Build the canonical version first, then simplify for practice.
-
-**Delivers:** The core "unified flow" milestone requirement.
-
-### Phase 3: Practice Round
-
-**What:** `src/data/practiceData.ts`, `PracticeRound`, `PracticeQuoteCard`. Add `practiceCompleted` to store. Wire into `PhaseContainer` and `IssueHub` first-visit redirect.
-
-**Depends on:** Phase 2 (PracticeRound uses InlineRankPanel in practice mode).
-
-**Delivers:** Onboarding flow; users never land cold on the real issues.
-
-### Phase 4: Location Filtering
-
-**What:** `AddressFilter` component, `locationContext` store fields, filter logic in `IssueHub.handleSelectIssue`, URL `?politician_id` auto-detect on mount.
-
-**Depends on:** Phase 1 (clean store for new fields). Independent of Phases 2–3.
-
-**Why after eval/practice:** Location filter is an IssueHub-only concern. EvaluatePhase and ResultsPhase are unaffected.
-
-**Note on AddressFilter:** Read `essentials/src/pages/Dashboard.jsx` Google Maps initialization pattern before implementing. Do not invent a new init approach.
-
-**Delivers:** Location-aware quote filtering.
-
-### Phase 5: Coach Marks
-
-**What:** `FirstIssueCoachMarks` component wrapping `EvaluatePhase`. Add `firstIssueCoachMarksSeen` to store.
-
-**Depends on:** Phase 2 (coach marks highlight InlineRankPanel — must exist first). Must read ev-ui `CoachMark` component docs/source before building.
-
-**Delivers:** Guided first-issue experience.
-
-### Phase 6: Results Polish + Visual Redesign
-
-**What:** Remove 800ms spinner; add hero reveal interstitial; stagger animation on card list; single "View on Essentials" CTA per card. Visual redesign (colors, spacing, typography — within existing design system).
-
-**Depends on:** Phase 1 (clean phase model). Independent of Phases 2–5.
-
-**Why last:** Pure visual layer — safe to build in parallel with Phases 2–5 or after functional plumbing is stable.
-
-**Delivers:** Polished results reveal.
+| Item | New or Modified | Integration Notes |
+|------|----------------|-------------------|
+| `EntitySwitcher.tsx` | NEW | Calls `listEntities()` from dataLoader; controlled by App.tsx `selectedEntity` state |
+| `App.tsx` state | MODIFIED | Add `selectedEntity: {id, name, state, entityType}` replacing hardcoded "Bloomington" references |
+| `App.tsx` hero section | MODIFIED | Title, image, and context card driven by `selectedEntity` fields rather than hardcoded strings |
+| `App.tsx` breadcrumbs | MODIFIED | First breadcrumb label uses `selectedEntity.name` instead of static "City" |
+| `dataLoader.ts` `loadBudgetData()` | MODIFIED | Add `entityType` param; update cache key; pass `entity_type` to API query string |
+| `dataLoader.ts` `listEntities()` | MODIFIED | Rename from `listCities()`; return `entity_type` in result shape |
+| `budget.ts` `BudgetMetadata` | MODIFIED | Add `entityType?: string` field |
+| `src/styles/tokens.ts` | NEW | Re-export ev-ui tokens for use in component files and D3 config |
+| `DatasetTabs.tsx` colors | MODIFIED | Replace hardcoded hex with ev-ui `dataVizPalette` references |
+| `index.css` CSS variables | MODIFIED | Align `--muted-blue` and `--coral` values to exact ev-ui token values |
+| `treasury/models.go` `City` | MODIFIED | Add `EntityType string` field |
+| `treasury/setup.go` | MODIFIED | Add manual SQL to drop old constraint and add composite unique before AutoMigrate |
+| `treasury/handlers.go` `ImportBudget` | MODIFIED | Add `EntityType` to import request struct; include in find-or-create WHERE clause |
+| `treasury/handlers.go` `ListCities` | MODIFIED | Returns `entity_type` field automatically after model change; optionally add `?type=` filter |
+| `scrapers/treasury/` | NEW (folder) | 5 Python scripts + shared utils for data import pipeline |
 
 ---
 
-## Integration Points With Other Apps
+## Build Order Rationale
 
-| Concern | Direction | Mechanism | Change in v2026.3.6 |
-|---------|-----------|-----------|---------------------|
-| Verdicts to Essentials (guest) | Read & Rank → Essentials | URL fragment `#compass=base64` | Unchanged |
-| Verdicts to backend (logged-in) | Read & Rank → API | POST /compass/verdicts | Unchanged; `phase === 'results'` trigger still valid |
-| Essentials → Read & Rank pre-filter | Essentials → Read & Rank | `?politician_id=UUID` URL param | New; frontend-only |
-| Location search | Read & Rank → API | POST /essentials/politicians/search | Reuse existing; no backend change |
-| CoachMark component | ev-ui → Read & Rank | npm `@chrisandrewsedu/ev-ui` | New import; check current ev-ui version for CoachMark API |
-| SiteHeader | ev-ui → Read & Rank | Already in App.tsx | Unchanged |
-| Google Maps Places | Read & Rank → Browser API | Same CDN/loader pattern as Essentials | New usage; replicate Essentials init |
+The schema + backend work is the critical-path dependency. Everything downstream (frontend entity switcher, data import, design polish) unblocks after the backend changes are deployed.
 
----
+**Step 1 — Backend schema + model changes (blocks all frontend work)**
 
-## Anti-Patterns to Avoid
+Add `entity_type` to `City` model. Update `setup.go` with manual constraint SQL. Update `ImportBudget` handler. Deploy to Render. This is the only step with a deploy dependency — all other steps can run locally until final deploy.
 
-### Anti-Pattern 1: Making InlineRankPanel Only Appear After All Quotes Are Evaluated
+**Step 2 — Bloomington data migration (independent, run after step 1)**
 
-**What:** Waiting until `currentQuoteIndex >= quotesToEvaluate.length` before showing InlineRankPanel.
+Write `bloomington_migrate.py` to POST all existing static JSON files (5 years × 3 datasets = 15 requests) to the backend. Verify API responses match the static JSON shape. After migration, all Bloomington data is in Supabase and the API-first path returns real data.
 
-**Why bad:** This is the old two-phase flow with a delayed trigger — not "unified." The user still experiences a hard context switch.
+**Step 3 — Frontend entity switcher (depends on step 1 for entity_type field)**
 
-**Instead:** Show InlineRankPanel as soon as `agreedQuotes.length >= 2`, while the evaluation deck continues. User can rank and badge while evaluating remaining quotes. The list naturally grows as more quotes are agreed.
+Implement `EntitySwitcher.tsx`. Update `App.tsx` state (`selectedEntity`). Update `dataLoader.ts` cache key and API query. Update hero card to be data-driven. At this point the app works with multiple jurisdictions — but only Bloomington has data until step 4.
 
-### Anti-Pattern 2: Giving Practice Round an IssueProgress Entry
+**Step 4 — New jurisdiction imports (independent of step 3, depends on step 1)**
 
-**What:** Storing practice session data under an issueId (e.g., `"practice"`) in `issueProgress`.
+Each new jurisdiction requires its own research phase: find the source data file, understand its column structure, write the transform logic. Recommended order: Ellettsville (small, simple), Monroe County (county entity_type test), LA County, LA Cities (largest, most complex). Importable in any order since they are independent entities.
 
-**Why bad:** Pollutes the hub progress display (shows "1/4 completed" when only practice is done). Practice badge assignments would incorrectly appear in verdict sync.
+**Step 5 — Design token integration (fully independent)**
 
-**Instead:** Practice round is stateless except for `practiceCompleted: boolean`. No `issueProgress` entry. `selectIssue` is never called during practice.
-
-### Anti-Pattern 3: Prop-Drilling Location Filter Through Components
-
-**What:** Fetching politicians in `AddressFilter`, passing results up to `IssueHub` via callback, then passing down to `handleSelectIssue` via closure.
-
-**Why bad:** Creates timing issues (user selects issue before address search resolves). Creates prop-drilling through multiple layers.
-
-**Instead:** `AddressFilter` writes `locationContext` directly to the Zustand store. `IssueHub.handleSelectIssue` reads `store.locationContext` synchronously at click time. If address search hasn't resolved yet when the user taps an issue, `locationContext` is null and all quotes are used — graceful degradation.
-
-### Anti-Pattern 4: Breaking verdictSync on Phase Rename
-
-**What:** Renaming `'evaluation'` to `'evaluate'` but accidentally also renaming `'results'` or the comparison string in `PhaseContainer`'s useEffect.
-
-**Why bad:** `postVerdicts` silently stops triggering. No console error; verdicts just don't sync.
-
-**Prevention:** The `postVerdicts` trigger checks `phase === 'results'` — verify this string is unchanged after the migration. Add a comment in `PhaseContainer` flagging this dependency.
-
-### Anti-Pattern 5: Re-fetching Quote Data in AddressFilter
-
-**What:** AddressFilter calling `fetchQuotesData()` to get a fresh quote list after location is set.
-
-**Why bad:** The quote list from `fetchQuotesData()` is already cached at the module level in `api.ts`. Location filtering happens client-side against the cached quotes, not by re-fetching. A second fetch would clear the cache and add latency.
-
-**Instead:** Location filter is applied in `IssueHub.handleSelectIssue` against the already-cached `allQuotes` array. `AddressFilter` only fetches politician IDs (via `/politicians/search`), never quotes.
+Import ev-ui tokens in `src/styles/tokens.ts`. Update `DatasetTabs.tsx` color definitions. Align `index.css` CSS variable values. This is pure visual polish and has no dependencies on steps 1-4. Can be done first, last, or in parallel.
 
 ---
 
-## Scalability Considerations
+## Anti-Patterns
 
-| Concern | Now (~61 quotes, ~23 politicians) | Future (500+ quotes) |
-|---------|-----------------------------------|-----------------------|
-| Client-side location filter | Fine — in-memory, instantaneous | Add `?politician_ids=uuid1,uuid2` to GET /essentials/quotes for server-side pre-filter |
-| Practice data | 4-5 static quotes, no API | Always static; no scale concern |
-| `cachedData` in api.ts | Module-level variable, cleared on reload | Acceptable for SPA; add TTL if quote data updates frequently |
-| Store localStorage size | Small; per-issue progress fits easily | Add `partialize` trim for completed progress entries older than 30 days |
-| AddressFilter Google Maps requests | ~1 per user session (address autocomplete) | Within Google Maps free tier (28K/month) |
+### Anti-Pattern 1: Direct SQL Inserts from Import Scripts
+
+**What people do:** Use `psycopg2` to INSERT directly into Supabase from Python import scripts.
+
+**Why it's wrong:** Bypasses the `importCategories()` recursive tree builder in the Go handler, bypasses transaction safety, and bypasses the find-or-create city logic. Direct inserts are hard to replay and don't benefit from the existing validation logic in the handler.
+
+**Do this instead:** POST to `POST /treasury/budgets/import` from import scripts. The handler handles all complexity. The only extra cost is HTTP overhead — negligible for a one-time import.
+
+### Anti-Pattern 2: Creating a Separate `treasury.counties` Table
+
+**What people do:** Add a new `treasury.counties` table for county entities to avoid touching the existing `treasury.cities` table.
+
+**Why it's wrong:** Forces frontend and backend to maintain two separate data paths. The entity switcher would need to list from two separate endpoints. The Budget and BudgetCategory tables are entity-type-agnostic and work identically for cities and counties.
+
+**Do this instead:** Add `entity_type` column to `treasury.cities`. "Cities" in this context means "municipal entities." The table name is historical.
+
+### Anti-Pattern 3: Jurisdiction-Specific Branching in App.tsx
+
+**What people do:** Add `if (selectedEntity.name === 'Monroe County') { showCountyLayout() }` branching in App.tsx.
+
+**Why it's wrong:** Every new jurisdiction requires a code change. Brittle and doesn't scale.
+
+**Do this instead:** Drive display text and layout variations from `selectedEntity.entityType`. For hero images: derive from entity_type as a fallback (`city` → courthouse photo, `county` → courthouse or default), or drive from `entity.hero_image_url` once that field is added to the model.
+
+### Anti-Pattern 4: Deleting Static JSON After Migration
+
+**What people do:** Remove `public/data/*.json` after successfully migrating Bloomington to Supabase.
+
+**Why it's wrong:** The static JSON fallback is a safety net. If Render has a cold start or brief downtime, the treasury tracker degrades to Bloomington data rather than showing an error state. This is valuable for a nonprofit with no SLA on the backend.
+
+**Do this instead:** Keep the static JSON files indefinitely. The cache key change (`"city:Bloomington-..."`) ensures API-loaded data for other entities never gets confused with Bloomington static data.
+
+### Anti-Pattern 5: Using ev-ui CSS Variable Names as D3 Color Inputs
+
+**What people do:** Pass CSS variable references like `var(--muted-blue)` to D3 color scales or as `fill` attributes on SVG elements.
+
+**Why it's wrong:** D3 and SVG `fill` attributes require resolved hex values. CSS variable strings fail silently — the element renders with no fill or uses the browser default.
+
+**Do this instead:** Import from `@chrisandrewsedu/ev-ui/tokens` as JavaScript constants. Use the resolved hex values from `dataVizPalette` or `colors` directly in D3 color scale definitions.
+
+---
+
+## Scaling Considerations
+
+At the current scale (5-10 jurisdictions, hundreds of budget categories per jurisdiction), no architectural changes are needed.
+
+| Scale | Architecture Adjustments |
+|-------|--------------------------|
+| 5-10 jurisdictions | Current monolith + single API per entity is fine |
+| 50+ jurisdictions | Add search/filter to `GET /treasury/cities`; consider lazy-loading subcategories on drill-down instead of fetching full category tree upfront |
+| 500+ jurisdictions | Paginate entity list; separate treasury microservice; Redis cache for category trees |
+
+**First bottleneck:** `GET /treasury/budgets/{id}/categories` fetches the entire category tree in one query and builds it in Go memory. For LA County's budget (potentially 300-500 categories + thousands of line items), this single query could slow the initial page load. Mitigation for this milestone: ensure the query uses the existing `idx_category_tree` index. Longer-term: lazy-load line items only on leaf-node drill-down.
 
 ---
 
@@ -641,26 +436,19 @@ Optional backend enhancement (not required for v1, worth doing if quote dataset 
 
 All findings from direct source inspection (HIGH confidence):
 
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/store/useReadRankStore.ts` — full Zustand state shape, phase type, IssueProgress, persist config
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/PhaseContainer.tsx` — phase switch, postVerdicts trigger
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/EvaluationPhase.tsx` — split layout, drag, handleComplete, AgreedQuotesSidebar
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/RankingPhase.tsx` — @dnd-kit sortable, badge assign, SortableQuoteCard
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/AgreedQuotesSidebar.tsx` — inline reorder + badge in sidebar
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/IssueHub.tsx` — fetchQuotesData, handleSelectIssue, progress display
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/ResultsPhase.tsx` — organizedQuotes, 800ms spinner, card structure
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/QuoteCard.tsx` — framer-motion drag interface
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/ProgressHeader.tsx` — confirm it is delete-safe
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/CollectionPhase.tsx` — confirm already unused
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/data/api.ts` — fetchQuotesData, module-level cache, mock fallback
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/utils/verdictFragment.ts` — buildEssentialsProfileUrl, buildVerdictFragment
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/utils/verdictSync.ts` — postVerdicts, buildVerdictPayload
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/hooks/useAuthState.ts` — auth check pattern
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/App.tsx` — route structure, ProgressHeader import
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/routes.go` — GET /quotes, POST /politicians/search endpoints
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/handlers.go` — GetQuotes implementation (LATERAL JOIN, topic_key, candidate map), SearchPoliticians (PostGIS path)
-- `/Users/chrisandrews/Documents/GitHub/.planning/PROJECT.md` — v2026.3.6 milestone goals and constraints
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/models.go`
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/handlers.go`
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/routes.go`
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/setup.go`
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/App.tsx`
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/data/dataLoader.ts`
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/types/budget.ts`
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/components/datasets/DatasetTabs.tsx`
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/index.css`
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js` (v0.1.53)
+- `/Users/chrisandrews/Documents/GitHub/.planning/PROJECT.md` — v2026.3.7 milestone goals
 
 ---
 
-*Architecture research for: v2026.3.6 Read & Rank Redesign*
-*Researched: 2026-03-14*
+*Architecture research for: Treasury Tracker multi-jurisdiction expansion (v2026.3.7)*
+*Researched: 2026-03-22*

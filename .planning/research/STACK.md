@@ -1,211 +1,256 @@
-# Technology Stack
+# Stack Research
 
-**Project:** v2026.3.6 Read & Rank Redesign
-**Researched:** 2026-03-14
-**Confidence:** HIGH (all findings from direct source code inspection of EV-readrank, CompassV2, essentials, and EV-Backend repos)
+**Project:** v2026.3.7 Treasury Tracker Expansion
+**Domain:** Municipal budget data visualization — visual refresh + multi-entity data migration
+**Researched:** 2026-03-22
+**Confidence:** HIGH (all findings from direct source inspection + verified open data portals)
 
 ---
 
 ## Context: What Is and Is Not New
 
-The prior STACK.md (v2026.3.4) covers the standalone extraction, verdict storage backend, and fragment bridge. All of that is already shipped. This document covers **only what is new for v2026.3.6**: unified evaluate+rank flow, practice round, coach marks, location-based quote filtering, results polish, visual redesign, and chrome cleanup.
+The prior STACK.md (v2026.3.6) covers EV-readrank. This document covers **only what is new for v2026.3.7**: EV design token integration into treasury-tracker, Bloomington static JSON migration to Supabase, and budget data import for Ellettsville IN, Monroe County IN, LA County CA, and LA City CA.
 
-**Existing stack that remains unchanged:**
-- React 19 + TypeScript + Vite 7 + Tailwind CSS 4
-- framer-motion ^12.23.26
-- @use-gesture/react ^10.3.1
-- @dnd-kit/core ^6.3.1 + @dnd-kit/sortable ^10.0.0 + @dnd-kit/utilities ^3.2.2
-- zustand ^5.0.9 with persist middleware
-- react-icons ^5.5.0
-- @chrisandrewsedu/ev-ui ^0.1.49 (SiteHeader, StanceAccordion, verdictsByQuote)
-- Zustand persist key `ev_readrank` (migrated from `readrank-storage` in v2026.3.4)
-- Go backend + PostGIS + `/essentials/quotes` + `/essentials/politicians/search` endpoints
+**Existing stack that remains unchanged — do not re-research or reinstall:**
+- React 19 + TypeScript + Vite 7.2.4 (treasury-tracker)
+- D3.js ^7.9.0 + Recharts ^3.5.1 — chart rendering
+- lucide-react ^0.562.0 — icons
+- Go 1.24 + Chi + GORM — backend with existing treasury module
+- Supabase PostgreSQL — `treasury.cities`, `treasury.budgets`, `treasury.budget_categories`, `treasury.budget_line_items` tables already exist with `ImportBudget` endpoint at `POST /treasury/import`
+- `dataLoader.ts` already tries API first, falls back to static JSON — the abstraction is already in place
+- `@chrisandrewsedu/ev-ui` currently at ^0.1.6 in treasury-tracker (stale; current is 0.1.53)
 
 ---
 
-## Section 1: Unified Evaluate+Rank Flow
+## Section 1: EV Design Token Integration
 
-### No New Libraries Required
+### No New npm Packages — Upgrade ev-ui and Add Tailwind CSS 4
 
-The current flow has three separate phase components: `EvaluationPhase`, `RankingPhase`, and `ResultsPhase`. The unified flow collapses evaluation and ranking into a single interaction — swipe to agree/disagree, then immediately drag-to-rank the agreed quotes in the same view rather than proceeding to a separate `RankingPhase`.
+**The problem:** Treasury-tracker uses raw CSS custom properties in `src/index.css` that approximate the EV design system but are not connected to it. The property names use non-canonical aliases (`--muted-blue`, `--coral`, `--accent-yellow`) that don't match the ev-ui token names. Color values are also slightly stale (e.g., `--muted-blue: #00657c` vs ev-ui `evTeal: #00647A`). The `@chrisandrewsedu/ev-ui` in `package.json` is pinned at `^0.1.6` while current is `0.1.53` — the SiteHeader, tokens, and tailwind-preset have all changed significantly.
 
-The existing `@dnd-kit/sortable` already handles drag-to-rank on the agreed quotes sidebar (`AgreedQuotesSidebar.tsx`). The `EvaluationPhase` already renders `AgreedQuotesSidebar` on desktop. The unified flow means:
+**Step 1: Upgrade @chrisandrewsedu/ev-ui to current.**
+The treasury-tracker's `package.json` already lists `@chrisandrewsedu/ev-ui` as a dependency. The `^0.1.6` semver range technically accepts any 0.1.x but npm locks at time of install. Must explicitly upgrade to `^0.1.53`.
 
-1. `RankingPhase` is removed as a standalone phase.
-2. The `'ranking'` value is removed from the `Phase` union type in `useReadRankStore.ts`.
-3. When all quotes are evaluated, `setPhase('results')` is called directly — no intermediate ranking screen.
-4. The sidebar remains visible during evaluation to show live agreed-quote ranking in real time.
+**Step 2: Add Tailwind CSS 4 — the same way essentials and CompassV2 do it.**
+Treasury-tracker has NO Tailwind installed. Its `src/index.css` is pure vanilla CSS. The other EV apps use `@import "tailwindcss"` in their CSS entry point (Tailwind v4's CSS-first config), with EV tokens defined in `@theme {}` blocks or consumed via `@import "@chrisandrewsedu/ev-ui/tailwind-preset"`.
 
-The `@dnd-kit` packages already do this. The `reorderAgreedQuotes` action already exists in the store. No new dependencies.
+The ev-ui package exports a tailwind-preset at `@chrisandrewsedu/ev-ui/tailwind-preset` that exposes all EV color scales (`ev-coral-500`, `ev-teal-500`, etc.), Manrope font family, and spacing/radius tokens as Tailwind utilities. Treasury-tracker should use this to gain EV-native utility classes.
 
-**State machine change:** `Phase` type shrinks from `'hub' | 'evaluation' | 'ranking' | 'results'` to `'hub' | 'practice' | 'evaluation' | 'results'`. The `'practice'` phase is new (see Section 2).
+**Step 3: Replace hardcoded CSS vars with ev-ui tokens.**
+After Tailwind is installed, replace the manual `:root { --coral: ... }` block with references to the canonical ev-ui token exports. For inline style props that can't use Tailwind utilities, import `colors` from `@chrisandrewsedu/ev-ui/tokens` directly in TypeScript files.
 
-**Confidence:** HIGH — `AgreedQuotesSidebar.tsx`, `useReadRankStore.ts`, `EvaluationPhase.tsx`, and `RankingPhase.tsx` all inspected directly.
-
----
-
-## Section 2: Practice Round (Pizza Toppings)
-
-### Static Local Data — No New Libraries
-
-The practice round shows 3-5 fun non-political quotes (e.g., pineapple on pizza) so users learn swipe mechanics before encountering real political content. This is pure UI state with static hardcoded data.
-
-**Implementation:** A new `practiceData.ts` file in `src/data/` with hardcoded practice quotes. A new `PracticePhase` component (or `EvaluationPhase` reused with a `isPractice: boolean` prop). The store gains a `'practice'` phase value. On completing the practice round, `setPhase('evaluation')` transitions to real content.
-
-**No new npm packages.** Practice data is static — not fetched from the API. The same swipe mechanics, `QuoteCard`, and `AgreedQuotesSidebar` components render practice quotes with no changes to those components.
-
-**localStorage consideration:** Practice progress should NOT persist across page loads. The Zustand `partialize` function already controls what persists; exclude `practicePhase` from the serialized state.
-
-**Confidence:** HIGH — all referenced components inspected directly. Static data pattern is trivially correct.
-
----
-
-## Section 3: Coach Marks
-
-### Use CoachMark from CompassV2 — NOT From ev-ui
-
-The `CoachMark` component and `useCoachMark` hook are in `CompassV2/src/components/CoachMark.jsx`. They are NOT published to ev-ui (confirmed by inspecting `ev-ui/package.json` and the installed `@chrisandrewsedu/ev-ui` dist — no `CoachMark` export). PROJECT.md v2026.4 says "Reusable CoachMark component with SVG mask spotlight overlay" was built, but it lives in CompassV2 only.
-
-**Option A (recommended): Copy CoachMark into EV-readrank.** Copy `CompassV2/src/components/CoachMark.jsx` to `EV-readrank/src/components/CoachMark.tsx` (convert to TypeScript). The component has zero external dependencies beyond `react`, `react-dom` (createPortal), and `framer-motion` — all already in the EV-readrank package. This is a 230-line file.
-
-**Option B: Publish CoachMark to ev-ui as v0.1.51.** Adds a cross-repo coordination step — ev-ui must be built and published before EV-readrank can use it. Only worth the overhead if other apps (Essentials) also need coach marks in this milestone. They don't.
-
-**Recommendation:** Option A. Copy directly into EV-readrank. Single-repo, no publishing lag, TypeScript conversion is straightforward.
-
-**Dependencies the copied component needs:**
-- `framer-motion` — already in package.json
-- `react-dom` (createPortal) — already a peer dep via `react-dom ^19.2.0`
-
-**useCoachMark hook behavior:** Persists dismiss state to `localStorage` under a per-coachmark key (e.g., `ev_rr_coach_first_issue`). Dismissed state is intentionally permanent — the coach mark never re-shows after first dismiss. This is the same behavior as in CompassV2.
-
-**No new npm packages required.**
-
-**Confidence:** HIGH — `CoachMark.jsx` read directly, dependencies verified against `EV-readrank/package.json`.
-
----
-
-## Section 4: Location-Based Quote Filtering
-
-### New Env Var + One New npm Dependency + New Backend Endpoint
-
-This is the only section that requires a new npm package. Location-based filtering means: user enters their address in Read & Rank, the app finds which politicians represent them (via PostGIS geofence matching), and then filters the displayed quotes to show only those politicians' quotes.
-
-**Frontend:**
-
-The `@googlemaps/js-api-loader` package is already used in `essentials` (version `^2.0.2`), which loads the Google Places Autocomplete library. Read & Rank needs the same package.
-
+**Tailwind v4 install (CSS-first, no `tailwind.config.js` needed):**
+```bash
+npm install tailwindcss @tailwindcss/vite
 ```
-npm install @googlemaps/js-api-loader@^2.0.2
+Add the Vite plugin to `vite.config.ts`, replace the Google Fonts import pattern and `:root` block in `src/index.css` with:
+```css
+@import "tailwindcss";
+@import "@chrisandrewsedu/ev-ui/tailwind-preset";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 ```
 
-The `useGooglePlacesAutocomplete` hook from `essentials/src/hooks/useGooglePlacesAutocomplete.js` should be copied to `EV-readrank/src/hooks/useGooglePlacesAutocomplete.ts` (TypeScript port). It is a 70-line hook with no external runtime deps beyond the dynamically-loaded Google Maps script.
+This is exactly what essentials does (confirmed from `essentials/src/index.css` inspection).
 
-**New env var:** `VITE_GOOGLE_MAPS_API_KEY` — same key already used by Essentials. Add to Cloudflare Pages environment variables for EV-readrank. The Google Maps free tier (28K requests/month, shared across apps) is the existing budget constraint.
+**Chart color palette update:** The existing `budgetConfig.json` has a hardcoded `colorPalette` array of 30 hex values in non-EV blues/purples. Replace with `dataVizPalette` from `ev-ui/src/tokens.js`, which provides 10 EV-brand hues each with 5 shades. This is already published in the ev-ui tokens — import it as needed from the TypeScript components that assign chart segment colors.
 
-**Backend — new filtered endpoint:**
-
-`GET /essentials/quotes` already accepts `?politician_id=UUID` for per-politician filtering. Location-based filtering requires a different query shape: given a lat/lng (from the geocoding step after address selection), find all politician IDs whose geofence boundaries contain that point, then return quotes for those politicians only.
-
-There are two options:
-
-**Option A (recommended): New query parameter on existing `/essentials/quotes`.**
-Add `?address=ENCODED_ADDRESS` or `?lat=X&lng=Y` to `GetQuotes`. The handler geocodes the address (or uses the lat/lng directly), calls `FindGeoIDsByPoint` (already exists in `geofence_lookup.go`), fetches the politician IDs from those geofences, and filters the quotes SQL accordingly. This reuses all existing infrastructure with a minimal handler change.
-
-**Option B: Frontend calls `/essentials/politicians/search` first, then filters quotes client-side.**
-The `POST /essentials/politicians/search` endpoint already returns politicians for an address. Read & Rank could call this first to get a list of politician IDs, then filter the already-fetched `quotes` array client-side by `quote.candidateId`. No backend changes required. This approach works when the full quote set has already been fetched.
-
-**Recommendation:** Option B for MVP. The full quote set is already cached in `cachedData` in `src/data/api.ts`. Calling `POST /essentials/politicians/search` returns politician IDs; filtering `quotes` client-side by matching `quote.candidateId` against those IDs is O(n) and fast for the current quote count (~61 quotes). If the quote database grows substantially (>500), revisit with Option A.
-
-**Option B requires no backend changes and no new Go packages.** It does require the `POST /essentials/politicians/search` endpoint to be accessible from `readrank.empowered.vote` — verify CORS allows this subdomain (it was added in v2026.3.4; confirm it covers all `/essentials/*` routes, not just `/essentials/quotes`).
-
-**CSS for autocomplete dropdown:** Copy the `.pac-container` style override from `essentials/src/index.css` to `EV-readrank/src/index.css` so the Google Places dropdown matches the EV visual language (Manrope font).
-
-**Confidence:** HIGH for Option B — client-side filter against existing data confirmed feasible from direct inspection of `api.ts` (cached response shape) and `useReadRankStore.ts` (Quote interface includes `candidateId`). Option A confidence is MEDIUM — requires Go handler change not yet implemented; pattern is straightforward but untested.
+**Confidence:** HIGH — all files inspected directly. Tailwind v4 CSS-first install is the identical pattern used in essentials and CompassV2. ev-ui tailwind-preset confirmed exported at `"./tailwind-preset"` in ev-ui `package.json`.
 
 ---
 
-## Section 5: Results Reveal Polish
+## Section 2: Entity Switcher UI
 
-### Framer Motion Stagger — No New Libraries
+### No New npm Packages
 
-The dramatic reveal (quotes appearing one-by-one with animation, candidate identities hidden until reveal completes) is handled entirely with Framer Motion stagger sequences. The existing `ResultsPhase.tsx` already uses `initial={{ opacity: 0, y: 24 }}` with `transition={{ delay: index * 0.08 }}` stagger. The redesign enhances this with:
+The frontend needs a way to switch between cities/counties (Bloomington, Ellettsville, Monroe County, LA City, LA County). This is a dropdown or tab component, not a routing change.
 
-- A `useAnimate` hook from Framer Motion (already imported via `framer-motion` package) for orchestrated multi-step reveals.
-- `AnimatePresence` from Framer Motion for mount/unmount transitions (already used in CompassV2).
-- Possibly `useMotionValue` + `animate` for a progress-bar reveal effect (already used in `EvaluationPhase.tsx`).
+**Implementation:** The existing `NavigationTabs` component handles tab-style switching. The existing `dataLoader.ts` already accepts `cityName` and `year` parameters and caches by `${cityName}-${year}-${dataset}` key. Connecting the entity switcher to `dataLoader.ts` requires only:
+1. A new `selectedEntity` state in `App.tsx`
+2. Passing entity name to `loadBudgetData()` (already accepts `cityName` parameter)
+3. An entity picker component (tabs or dropdown)
 
-All of these are within the existing `framer-motion` import. No new animation library needed.
+Entity metadata (display name, state, population, hero image URL) should be a static config file (`src/data/entityConfig.ts`) — no backend call needed for the picker UI itself. The API already returns population and fiscal year from the budget response.
 
-**Confidence:** HIGH — Framer Motion API confirmed from direct code inspection.
+**No new npm packages.** lucide-react already provides chevron/selector icons.
 
----
-
-## Section 6: Visual Redesign
-
-### No New Libraries
-
-The visual redesign uses the existing design system:
-- **Colors:** `ev-coral` (#ff5740), `ev-muted-blue` (#00657c), `ev-light-blue` (#59b0c4), `ev-yellow` (#fed12e)
-- **Fonts:** Manrope (body), Fraunces (serif display) — already loaded in `index.css`
-- **Utility:** Tailwind CSS 4 (already installed)
-
-The `@tailwindcss/forms` and `@tailwindcss/typography` plugins are already in `devDependencies`.
-
-If the redesign introduces new custom CSS variables or keyframe animations, they go in `src/index.css` — same pattern as the current file.
-
-**No new npm packages.**
+**Confidence:** HIGH — `dataLoader.ts` and `App.tsx` inspected directly; `cityName` parameter already threaded through.
 
 ---
 
-## Section 7: Chrome Cleanup
+## Section 3: Bloomington Data Migration to Supabase
 
-### Deletions Only
+### No New npm Packages — Use Existing Import Endpoint
 
-Remove `ProgressHeader` and `AnimationOptionsPage` components. Update `App.tsx` to remove the `/animation-options` route and the `<ProgressHeader />` render. These are pure deletions — no new dependencies.
+The backend already has `POST /treasury/import` which accepts a full budget JSON payload (`CategoryImport` tree with line items). The Bloomington data already exists as processed JSON files in `treasury-tracker/data/` (raw CSVs) and `public/data/` (processed `budget-{year}.json` files output by the Node.js processing scripts).
 
----
+**Migration path:**
+1. Run the existing processing scripts (`npm run process-all`) to regenerate the JSON files for 2021–2025.
+2. Reshape the output to match the `ImportBudget` request body schema (add `city_name`, `city_state`, `population`, `fiscal_year`, `dataset_type` wrapper fields).
+3. POST to `https://api.empowered.vote/treasury/import` with admin credentials.
 
-## Recommended Stack (New Additions Only)
+The transformation from processed JSON to import format is a small Node.js script (~50 lines). No new Node packages needed — the processed JSON already has the right category/subcategory/lineItems hierarchy.
 
-| Item | Location | What | Why |
-|------|----------|------|-----|
-| `@googlemaps/js-api-loader` ^2.0.2 | EV-readrank `dependencies` | Google Places Autocomplete | Location-based quote filtering — same package already in Essentials |
-| `VITE_GOOGLE_MAPS_API_KEY` env var | Cloudflare Pages EV-readrank dashboard | Google Maps API key | Required for Places Autocomplete; same key as Essentials |
-| `useGooglePlacesAutocomplete.ts` | `EV-readrank/src/hooks/` | Typed copy of Essentials hook | Address input for location filtering |
-| `.pac-container` CSS | `EV-readrank/src/index.css` | Places dropdown styling | Manrope font, EV card style |
-| `CoachMark.tsx` + `useCoachMark` | `EV-readrank/src/components/` | TypeScript port from CompassV2 | Practice round onboarding + first-issue coach marks |
-| `practiceData.ts` | `EV-readrank/src/data/` | Static pizza-topping quotes | Practice round — no API call needed |
-| `'practice'` in `Phase` union | `useReadRankStore.ts` | New phase state value | Practice round routing in `PhaseContainer` |
+**The `dataLoader.ts` fallback chain handles the transition gracefully:** once Supabase has the data, the API path succeeds and the static JSON fallback is never reached. No frontend changes needed until the entity switcher is built.
+
+**Confidence:** HIGH — `handlers.go` `ImportBudget` function inspected in full; `dataLoader.ts` fallback chain confirmed; processed JSON structure confirmed matching `CategoryImport` schema.
 
 ---
 
-## What NOT to Add
+## Section 4: Budget Data Sourcing for New Entities
 
-| Avoid | Why | Use Instead |
-|-------|-----|-------------|
-| New animation library (GSAP, anime.js, etc.) | Framer Motion already handles all required animations — stagger, spring, presence transitions | Framer Motion `useAnimate`, `AnimatePresence`, `useMotionValue` |
-| `@react-spring/web` for additional animations | Overkill; already using framer-motion throughout; mixing animation libraries creates maintenance debt | Framer Motion |
-| Publish CoachMark to ev-ui before this milestone | Cross-repo coordination delay; Essentials doesn't need it this milestone | Copy directly into EV-readrank |
-| `?lat=X&lng=Y` backend endpoint for quote filtering | Not needed for MVP; client-side filter against cached quote set is sufficient for current data size | Client-side filter using politician IDs from existing `/essentials/politicians/search` |
-| `react-spring` | ev-ui peer dep; not needed in EV-readrank directly | n/a |
-| New state management layer for location state | Zustand store already handles all app state | Extend existing `useReadRankStore` or use local component state for transient address input |
-| `@types/googlemaps` | The `@googlemaps/js-api-loader` package ships its own TypeScript types; no separate types package needed | Built-in types from `@googlemaps/js-api-loader` |
+### Data Sources and Pipeline Approach
+
+#### 4a: Ellettsville, Indiana
+
+**Source:** Indiana Gateway for Government Units (`gateway.ifionline.org/public/download.aspx`)
+- Provides pipe-delimited (`|`) budget files for all Indiana local government units
+- Unit ID for Ellettsville: 2546 (confirmed from budgetnotices.in.gov search result)
+- 2025 budget: $7,981,903 total
+- Data format: pipe-delimited flat file (not hierarchical); requires aggregation similar to the existing Bloomington CSV processing pipeline
+
+**Parsing approach:** The existing `processBudget.js` script already handles CSV parsing with custom logic. Pipe-delimited files need a delimiter configuration change — the parser function already accepts delimiter as a config option. The Indiana Gateway file layout guide provides column documentation.
+
+**Confidence:** MEDIUM — Gateway download page confirmed (direct fetch); column structure for Ellettsville not yet downloaded and inspected. Bloomington's Socrata portal (`data.bloomington.in.gov`) uses the same DLGF-derived schema (Fiscal_Year, Priority, Service, Department, Program, Division, Fund, Approved_Amount, Primary_Function, Sub_Function columns), giving high confidence the Gateway files will be compatible with minor field mapping changes.
+
+#### 4b: Monroe County, Indiana
+
+**Source:** PDF budget documents from `monroecounty.gov/files/finance/`
+- 2024 Adopted Budget: `https://www.monroecounty.gov/files/finance/2024%20Adopted%20Budget.pdf`
+- 2025 Adopted Budget: `https://www.monroecounty.gov/files/finance/2025%20Adopted%20Budget.pdf`
+- Total 2025 budget: ~$103 million (confirmed from IDS News reporting)
+
+**No machine-readable open data portal found** for Monroe County IN. The Indiana Gateway provides downloadable files for Monroe County (unit lookup by county), but these cover the county government broadly — columns are the DLGF standard schema.
+
+**Parsing approach:** If the Indiana Gateway Monroe County download is available in pipe-delimited format, use the same pipeline adaptation as Ellettsville. If only PDFs are available, a Python PDF-to-CSV extraction script using `pdfplumber` or `camelot-py` is the path — both are already in scope for the project's Python scraping infrastructure (Python scripts confirmed at ~17K LOC per PROJECT.md).
+
+**Confidence:** MEDIUM — PDF availability confirmed; machine-readable format availability requires verification by downloading the Gateway file for Monroe County.
+
+#### 4c: LA City (City of Los Angeles)
+
+**Source:** LA Open Data Portal (Socrata) at `data.lacity.org`
+- Dataset: "Open Budget — Appropriations Fiscal Years 2010–2025" (dataset ID: `5242-pnmt`)
+- Direct CSV download: `https://data.lacity.org/api/views/5242-pnmt/rows.csv?accessType=DOWNLOAD`
+- Also: Open Expenditures at `lacity.spending.socrata.com` (checkbook-level transactions)
+- FY2024–25 budget: ~$13.9B general fund
+
+**Parsing approach:** Standard CSV download from Socrata. The column structure (department, fund, appropriation amount) maps naturally to the existing treasury category hierarchy. The `dataLoader.ts` / `processBudget.js` pipeline handles CSV. A config file analogous to `budgetConfig.json` maps LA City columns to the treasury hierarchy.
+
+**Confidence:** HIGH — Socrata CSV download URL format confirmed; dataset existence confirmed from multiple search results. Column structure needs inspection before final field mapping.
+
+#### 4d: LA County
+
+**Source:** LA County CEO Budget PDF (`ceo.lacounty.gov/budget/`) and LA County Open Data Portal (`data.lacounty.gov`)
+- FY2024–25 Final Budget Book PDF confirmed available
+- `data.lacounty.gov` portal uses Socrata — budget datasets exist but specific dataset IDs for machine-readable spending data require discovery
+
+**Parsing approach:** Same Socrata CSV download pattern as LA City if a spending dataset exists on `data.lacounty.gov`. If only PDF budget books are available (likely for high-level department summaries), Python `pdfplumber` extraction is the fallback — same infrastructure used for Monroe County fallback.
+
+**Confidence:** MEDIUM — Portal existence confirmed; specific downloadable spending dataset IDs not yet verified. LA County budget is $49.2B (FY2024–25), with structured departmental appropriations that should map to the treasury category model.
+
+---
+
+## Recommended Stack — New Additions Only
+
+### Core Technologies
+
+| Technology | Version | Purpose | Why Recommended |
+|------------|---------|---------|-----------------|
+| `tailwindcss` | ^4.x | Utility CSS framework for treasury-tracker | Same version as all other EV apps; CSS-first config requires no `tailwind.config.js`; needed to consume ev-ui tailwind-preset utilities |
+| `@tailwindcss/vite` | ^4.x | Vite plugin for Tailwind v4 | Required for Tailwind v4 in Vite projects; replaces PostCSS plugin approach used in v3 |
+
+### Supporting Libraries
+
+| Library | Version | Purpose | When to Use |
+|---------|---------|---------|-------------|
+| `@chrisandrewsedu/ev-ui` | ^0.1.53 | Design tokens, SiteHeader, tailwind-preset | Upgrade from stale ^0.1.6; needed for correct token values, current SiteHeader, and tailwind-preset export |
+| `papaparse` | ^5.5.3 | CSV/pipe-delimited parsing for import scripts | Use in the Node.js import pipeline scripts for Indiana Gateway (pipe-delimited) and Socrata CSV files; already used indirectly via manual CSV parsing in `processBudget.js` — this replaces the hand-rolled parser with a robust one |
+
+### Development Tools
+
+| Tool | Purpose | Notes |
+|------|---------|-------|
+| Indiana Gateway Download | Source for Ellettsville and Monroe County pipe-delimited budget files | `https://gateway.ifionline.org/public/download.aspx` — download by unit ID, pipe `|` delimiter, DLGF standard columns |
+| Bloomington Socrata | Source for Bloomington budget CSV updates | `https://data.bloomington.in.gov/dataset/Budgeted-Expenses-No-Blank-Fund/hej9-2d5y` — same 14-column schema as existing `operating-budget.csv` |
+| LA City Socrata | Source for LA City appropriations CSV | `https://data.lacity.org/api/views/5242-pnmt/rows.csv?accessType=DOWNLOAD` — FY2010–2025, department-level appropriations |
+| `pdfplumber` (Python) | PDF budget table extraction fallback | Use only if Monroe County or LA County lack machine-readable Socrata exports; already in project Python ecosystem |
 
 ---
 
 ## Installation
 
 ```bash
-# In EV-readrank — only one new package:
-npm install @googlemaps/js-api-loader@^2.0.2
+# In treasury-tracker — add Tailwind CSS 4
+npm install tailwindcss @tailwindcss/vite
+
+# Upgrade ev-ui to current
+npm install @chrisandrewsedu/ev-ui@^0.1.53
+
+# For import pipeline scripts (Node.js, run locally — not a frontend dep)
+npm install -D papaparse @types/papaparse
 ```
 
-```bash
-# In Cloudflare Pages EV-readrank project — add environment variable:
-VITE_GOOGLE_MAPS_API_KEY=<same value as essentials project>
+```typescript
+// vite.config.ts — add Tailwind plugin
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+  base: '/',
+})
 ```
 
-No changes to EV-Backend package dependencies. No changes to ev-ui. No changes to Essentials or CompassV2.
+```css
+/* src/index.css — replace current manual :root block with: */
+@import "tailwindcss";
+@import "@chrisandrewsedu/ev-ui/tailwind-preset";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+```
+
+---
+
+## Alternatives Considered
+
+| Recommended | Alternative | When to Use Alternative |
+|-------------|-------------|-------------------------|
+| Tailwind v4 CSS-first config | Tailwind v3 with `tailwind.config.js` | Only if the project were already on v3 and migration cost was prohibitive — not the case here; starting fresh |
+| ev-ui tailwind-preset import | Manually copy token values into CSS vars | Never — defeats the purpose of a shared design system; tokens will drift again within one milestone |
+| Indiana Gateway pipe-delimited download | DLGF PDF budget orders | PDF parsing is lossy and fragile; pipe-delimited data is structured and complete |
+| LA City Socrata CSV | LA City Open Budget site scraping | Socrata has a stable direct-download URL; scraping an interactive viz is brittle |
+| papaparse for import scripts | Extending the existing hand-rolled CSV parser in `processBudget.js` | The existing parser works for Bloomington's clean CSV but the Indiana Gateway pipe-delimited format with quoted strings and edge cases warrants a proven parser |
+
+---
+
+## What NOT to Use
+
+| Avoid | Why | Use Instead |
+|-------|-----|-------------|
+| Tailwind v3 + `postcss.config.js` approach | Every other EV app uses Tailwind v4 CSS-first; mixing versions creates confusion and blocks consuming `@tailwindcss/vite` | Tailwind v4 `@tailwindcss/vite` plugin |
+| Hardcoded hex values in component files | These drift from the design system after the first token update | `import { colors, dataVizPalette } from '@chrisandrewsedu/ev-ui/tokens'` or Tailwind utility classes |
+| New charting library (Victory, Nivo, Chart.js) | D3 + Recharts are already installed and used throughout treasury-tracker; adding a third charting library creates redundancy | Extend existing D3/Recharts usage for any new chart types needed by new entity dashboards |
+| `xlsx` / `SheetJS` for data parsing | Excel format not used by any of the target open data portals; all portals provide CSV or pipe-delimited text | `papaparse` for delimited text; `pdfplumber` (Python) for PDF fallback |
+| Zustand or React Query in treasury-tracker | Current state management via `useState` + `useEffect` + Map-based cache in `dataLoader.ts` is sufficient for the number of entities; adding a state library is over-engineering | Extend the existing `cache: Map<string, BudgetData>` in `dataLoader.ts` |
+| `@googlemaps/js-api-loader` | Treasury Tracker has no geolocation requirement; entity selection is manual dropdown | Static entity config in `src/data/entityConfig.ts` |
+
+---
+
+## Stack Patterns by Variant
+
+**For Indiana entities (Bloomington, Ellettsville):**
+- Use Bloomington Socrata portal (CSV, 14 standard DLGF columns) for Bloomington refresh
+- Use Indiana Gateway pipe-delimited download for Ellettsville; run through adapted `processBudget.js` with `delimiter: '|'` config
+- Import via existing `POST /treasury/import` endpoint
+
+**For Monroe County IN (no confirmed machine-readable source):**
+- Attempt Indiana Gateway download first (county-level data available)
+- Fall back to Python `pdfplumber` extraction from PDF if Gateway lacks department-level breakdown
+- Simpler category hierarchy acceptable (fewer depth levels) if PDF is the only source
+
+**For LA entities (LA City, LA County):**
+- LA City: direct Socrata CSV download, standard processing pipeline, department-level hierarchy
+- LA County: attempt `data.lacounty.gov` Socrata first; fall back to PDF extraction from CEO budget book
+- Both entities require a new `entityConfig` entry with population, hero image URL (Wikimedia Commons), and available fiscal years
 
 ---
 
@@ -213,28 +258,32 @@ No changes to EV-Backend package dependencies. No changes to ev-ui. No changes t
 
 | Package | Compatible With | Notes |
 |---------|-----------------|-------|
-| `@googlemaps/js-api-loader` ^2.0.2 | React 19 + Vite 7 | Framework-agnostic loader; works with any JS app; already proven in Essentials |
-| `framer-motion` ^12.x | React 19 | `useAnimate` API added in v10.x; `AnimatePresence` stable; no breaking changes for planned usage |
-| `@dnd-kit/sortable` ^10.x | React 19 | `useSortable` and `DndContext` confirmed working in current EV-readrank build |
-| CoachMark (copied) | React 19 + framer-motion | Depends only on `react`, `react-dom`, `framer-motion` — all present |
+| `tailwindcss` ^4.x | Vite 7.2.4 + `@tailwindcss/vite` | CSS-first config; NO `tailwind.config.js` needed; `@import "tailwindcss"` in CSS is the v4 activation |
+| `@chrisandrewsedu/ev-ui` ^0.1.53 | React 19 | `SiteHeader` peer deps: `react >=17`; `RadarChartCore` requires `@react-spring/web >=9` — NOT needed in treasury-tracker since it doesn't use RadarChartCore |
+| `@chrisandrewsedu/ev-ui/tailwind-preset` | Tailwind v4 (CSS import) or v3 (config preset) | ev-ui preset uses `theme.extend` pattern compatible with both; v4 CSS import is preferred for this project |
+| `papaparse` ^5.5.3 | Node.js (import pipeline scripts) | Browser-compatible too but only needed in Node.js processing scripts here |
 
 ---
 
 ## Sources
 
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/package.json` — current dependencies confirmed
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/store/useReadRankStore.ts` — Phase type, IssueProgress shape, AgreedQuotesSidebar integration
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/EvaluationPhase.tsx` — AgreedQuotesSidebar already rendered on desktop; handleComplete already calls setRankedQuotes then setPhase
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/components/PhaseContainer.tsx` — phase routing, verdictSync on results
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/data/api.ts` — cachedData shape, fetchQuotesData, Quote.candidateId field
-- `/Users/chrisandrews/Documents/GitHub/EV-readrank/src/App.tsx` — ProgressHeader, AnimationOptionsPage usage confirmed (to delete)
-- `/Users/chrisandrews/Documents/GitHub/CompassV2/src/components/CoachMark.jsx` — 230 lines, deps: react, react-dom, framer-motion only; useCoachMark localStorage key pattern
-- `/Users/chrisandrews/Documents/GitHub/essentials/src/hooks/useGooglePlacesAutocomplete.js` — @googlemaps/js-api-loader usage, Places Autocomplete pattern
-- `/Users/chrisandrews/Documents/GitHub/essentials/package.json` — `@googlemaps/js-api-loader` ^2.0.2 confirmed
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/routes.go` — `/politicians/search` POST endpoint confirmed
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/essentials/geofence_lookup.go` — `FindGeoIDsByPoint` function exists
-- `/Users/chrisandrews/Documents/GitHub/ev-ui/package.json` — v0.1.50; CoachMark NOT exported (confirmed absent from exports)
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/package.json` — current deps, ev-ui at ^0.1.6, NO Tailwind
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/index.css` — manual CSS vars, non-canonical EV color names
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/App.tsx` — dataLoader usage, entity tabs skeleton (NavigationTabs with City/State/Federal tabs present but non-functional)
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/data/dataLoader.ts` — `loadBudgetData(year, cityName, dataset)` API-first with static JSON fallback; `listCities()` endpoint already exists
+- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/budgetConfig.json` — column mappings confirmed match Bloomington Socrata dataset columns
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/handlers.go` — `ImportBudget` endpoint with `CategoryImport` / `LineItemImport` schema
+- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/models.go` — treasury schema: City, Budget, BudgetCategory, BudgetLineItem
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/package.json` — v0.1.53 current; exports `./tokens` and `./tailwind-preset`
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js` — `dataVizPalette` (10 hues × 5 shades), `colors`, `colorScales` confirmed
+- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tailwind-preset.js` — flattened color scales as `ev-{hue}-{step}` utilities confirmed
+- `/Users/chrisandrews/Documents/GitHub/essentials/src/index.css` — Tailwind v4 CSS-first `@import "tailwindcss"` pattern confirmed as the EV standard
+- `https://data.bloomington.in.gov/dataset/Budgeted-Expenses-No-Blank-Fund/hej9-2d5y` — 14-column schema confirmed (Fiscal_Year, Priority, Service, Department, Program, Division, Description, Item_Category, Fund, Approved_Amount, Actual_Amount, Recommended_Amount, Primary_Function, Sub_Function)
+- `https://gateway.ifionline.org/public/download.aspx` — pipe-delimited budget files for Indiana local governments including Ellettsville (unit 2546) and Monroe County confirmed available — HIGH confidence
+- `https://data.lacity.org/Administration-Finance/Open-Budget-Appropriations-Fiscal-Years-2010-2025/5242-pnmt` — LA City appropriations CSV download confirmed — HIGH confidence
+- `https://ceo.lacounty.gov/budget/` — LA County PDF budget books confirmed; machine-readable Socrata format requires verification — MEDIUM confidence
+- WebSearch: papaparse v5.5.3 confirmed as latest stable (2025-03)
 
 ---
-*Stack research for: v2026.3.6 Read & Rank Redesign*
-*Researched: 2026-03-14*
+*Stack research for: v2026.3.7 Treasury Tracker Expansion*
+*Researched: 2026-03-22*
