@@ -15,9 +15,9 @@ Requirements for Treasury Tracker Expansion milestone. Each maps to roadmap phas
 
 ### Data Migration
 
-- [ ] **DATA-01**: Bloomington operating budget data migrated from static JSON to Supabase via treasury API
-- [ ] **DATA-02**: Bloomington revenue data migrated from static JSON to Supabase
-- [ ] **DATA-03**: Bloomington salary data migrated from static JSON to Supabase
+- [x] **DATA-01**: Bloomington operating budget data migrated from static JSON to Supabase via treasury API
+- [x] **DATA-02**: Bloomington revenue data migrated from static JSON to Supabase
+- [x] **DATA-03**: Bloomington salary data migrated from static JSON to Supabase
 - [x] **DATA-04**: Static JSON fallback in dataLoader.ts guarded to Bloomington city only
 
 ### Indiana Expansion
@@ -82,9 +82,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SCHM-01 | Phase 92 | Complete |
 | SCHM-02 | Phase 92 | Complete |
 | SCHM-03 | Phase 92 | Complete |
-| DATA-01 | Phase 92 | Pending |
-| DATA-02 | Phase 92 | Pending |
-| DATA-03 | Phase 92 | Pending |
+| DATA-01 | Phase 92 | Complete |
+| DATA-02 | Phase 92 | Complete |
+| DATA-03 | Phase 92 | Complete |
 | DATA-04 | Phase 92 | Complete |
 | IND-01 | Phase 93 | Pending |
 | IND-02 | Phase 93 | Pending |
