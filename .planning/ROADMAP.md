@@ -19,6 +19,7 @@
 - ✅ **v2026.3.4 Read & Rank Integration** — Phases 77-82 (shipped 2026-03-12)
 - ✅ **v2026.3.5 Unified Navigation Header** — Phases 83-85 (shipped 2026-03-13)
 - ✅ **v2026.3.6 Read & Rank Redesign** — Phases 86-91 (shipped 2026-03-16)
+- 🚧 **v2026.3.7 Treasury Tracker Expansion** — Phases 92-96 (in progress)
 
 ## Phases
 
@@ -249,3 +250,84 @@ Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
 Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 
 </details>
+
+### 🚧 v2026.3.7 Treasury Tracker Expansion (In Progress)
+
+**Milestone Goal:** Expand Treasury Tracker from a single Bloomington-only app to a multi-jurisdiction platform covering Bloomington IN, Ellettsville IN, Monroe County IN, LA County CA, and LA City CA — with a frontend entity switcher and full EV visual refresh.
+
+- [ ] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase
+- [ ] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway
+- [ ] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals
+- [ ] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions
+- [ ] **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography
+
+## Phase Details
+
+### Phase 92: Schema Foundation & Bloomington Migration
+**Goal**: The treasury backend has correct schema constraints and all Bloomington budget data is live in Supabase — clearing the critical-path gate for all subsequent imports
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: SCHM-01, SCHM-02, SCHM-03, DATA-01, DATA-02, DATA-03, DATA-04
+**Success Criteria** (what must be TRUE):
+  1. The budget unique index covers three columns (city_id, fiscal_year, dataset_type) — a second import of the same city/year/type produces a conflict, not a duplicate row
+  2. A city record can be created with entity_type set to "city", "county", or "township" and the value is stored and returned by the API
+  3. A budget record stores fiscal_year_start_month; California entities default to 7, Indiana entities default to 1
+  4. All Bloomington operating, revenue, and salary data loads from the API — not from static JSON — and displays correctly in the UI
+  5. The static JSON fallback in dataLoader.ts is guarded to Bloomington city only and cannot silently serve Bloomington data for other entity selections
+**Plans**: TBD
+
+### Phase 93: Indiana Data Import
+**Goal**: Ellettsville and Monroe County operating budgets are in Supabase and browsable in the Treasury Tracker, validating the parameterized import pipeline on the Indiana Gateway format before LA data is attempted
+**Depends on**: Phase 92
+**Requirements**: IND-01, IND-02, IND-03
+**Success Criteria** (what must be TRUE):
+  1. Ellettsville operating budget data for available fiscal years is importable and loads in the tracker without errors
+  2. Monroe County operating budget data loads with entity_type=county, displaying "Monroe County" as the entity name
+  3. The Indiana Gateway import script explicitly configures pipe-delimiter and UTF-8 re-encoding — no silent zero-amount rows due to misparse
+**Plans**: TBD
+
+### Phase 94: LA Data Import
+**Goal**: LA County and LA City budget data is imported from open data portals and browsable in the Treasury Tracker, with fiscal year correctly reflecting the July–June California cycle
+**Depends on**: Phase 92
+**Requirements**: LA-01, LA-02, LA-03
+**Success Criteria** (what must be TRUE):
+  1. LA County department-level expenditure data is imported from data.lacounty.gov and visible in the tracker
+  2. LA City operating appropriations data is imported from data.lacity.org and visible in the tracker
+  3. All California entity budget records have fiscal_year_start_month set to 7, distinguishing them from Indiana entities in the data model
+**Plans**: TBD
+
+### Phase 95: Entity Switcher
+**Goal**: Users can navigate between all available jurisdictions in a single Treasury Tracker session — Bloomington, Ellettsville, Monroe County, LA County, and LA City — without reloading the page
+**Depends on**: Phase 92 (entity_type field), Phase 93 (Indiana entities in DB)
+**Requirements**: UI-01, UI-02, UI-03, UI-04
+**Success Criteria** (what must be TRUE):
+  1. A dropdown shows all available entities grouped by type (city vs. county); selecting one updates the entire page to show that entity's data
+  2. The hero card, breadcrumbs, and dataset tabs reflect the selected entity — no hardcoded Bloomington content remains
+  3. Switching from a city entity to a county entity shows the county label correctly (not "Monroe County, City")
+  4. Switching entities triggers a fresh data load with the correct cache key — no stale cross-entity data can appear from a prior selection
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 96: Visual Refresh
+**Goal**: Treasury Tracker uses the EV design system throughout — Manrope typography, ev-ui design tokens for UI chrome, and a brand-aligned data visualization palette for chart segment fills
+**Depends on**: Nothing (fully independent; sequenced last to minimize churn during data iteration)
+**Requirements**: VIS-01, VIS-02, VIS-03, VIS-04, VIS-05
+**Success Criteria** (what must be TRUE):
+  1. Tailwind CSS 4 and ev-ui tailwind-preset are installed; ev-ui is upgraded to current version (^0.1.53+)
+  2. All UI chrome — header, cards, tabs, buttons — uses EV design tokens (ev-coral, ev-muted-blue, ev-yellow)
+  3. Chart segment fills use the dedicated data visualization palette; the 30-color perceptual distinctiveness is preserved — no EV brand token bleeds into chart fills
+  4. Typography throughout is Manrope, matching CompassV2 and Essentials
+**Plans**: TBD
+**UI hint**: yes
+
+## Progress
+
+**Execution Order:**
+Phases execute in numeric order: 92 → 93 → 94 → 95 → 96
+
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 0/TBD | Not started | - |
+| 93. Indiana Data Import | v2026.3.7 | 0/TBD | Not started | - |
+| 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
+| 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
+| 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |

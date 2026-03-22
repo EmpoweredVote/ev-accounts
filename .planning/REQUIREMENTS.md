@@ -79,34 +79,34 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHM-01 | — | Pending |
-| SCHM-02 | — | Pending |
-| SCHM-03 | — | Pending |
-| DATA-01 | — | Pending |
-| DATA-02 | — | Pending |
-| DATA-03 | — | Pending |
-| DATA-04 | — | Pending |
-| IND-01 | — | Pending |
-| IND-02 | — | Pending |
-| IND-03 | — | Pending |
-| LA-01 | — | Pending |
-| LA-02 | — | Pending |
-| LA-03 | — | Pending |
-| UI-01 | — | Pending |
-| UI-02 | — | Pending |
-| UI-03 | — | Pending |
-| UI-04 | — | Pending |
-| VIS-01 | — | Pending |
-| VIS-02 | — | Pending |
-| VIS-03 | — | Pending |
-| VIS-04 | — | Pending |
-| VIS-05 | — | Pending |
+| SCHM-01 | Phase 92 | Pending |
+| SCHM-02 | Phase 92 | Pending |
+| SCHM-03 | Phase 92 | Pending |
+| DATA-01 | Phase 92 | Pending |
+| DATA-02 | Phase 92 | Pending |
+| DATA-03 | Phase 92 | Pending |
+| DATA-04 | Phase 92 | Pending |
+| IND-01 | Phase 93 | Pending |
+| IND-02 | Phase 93 | Pending |
+| IND-03 | Phase 93 | Pending |
+| LA-01 | Phase 94 | Pending |
+| LA-02 | Phase 94 | Pending |
+| LA-03 | Phase 94 | Pending |
+| UI-01 | Phase 95 | Pending |
+| UI-02 | Phase 95 | Pending |
+| UI-03 | Phase 95 | Pending |
+| UI-04 | Phase 95 | Pending |
+| VIS-01 | Phase 96 | Pending |
+| VIS-02 | Phase 96 | Pending |
+| VIS-03 | Phase 96 | Pending |
+| VIS-04 | Phase 96 | Pending |
+| VIS-05 | Phase 96 | Pending |
 
 **Coverage:**
 - v2026.3.7 requirements: 22 total
-- Mapped to phases: 0
-- Unmapped: 22 ⚠️
+- Mapped to phases: 22
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-22*
-*Last updated: 2026-03-22 after initial definition*
+*Last updated: 2026-03-22 after roadmap creation*
