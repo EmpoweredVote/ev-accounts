@@ -255,7 +255,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 
 **Milestone Goal:** Expand Treasury Tracker from a single Bloomington-only app to a multi-jurisdiction platform covering Bloomington IN, Ellettsville IN, Monroe County IN, LA County CA, and LA City CA — with a frontend entity switcher and full EV visual refresh.
 
-- [ ] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase
+- [x] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase (completed 2026-03-22)
 - [ ] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway
 - [ ] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals
 - [ ] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions
@@ -275,9 +275,9 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
   5. The static JSON fallback in dataLoader.ts is guarded to Bloomington city only and cannot silently serve Bloomington data for other entity selections
 **Plans**: 3 plans
 Plans:
-- [ ] 92-01-PLAN.md — Schema migration: rename City to Municipality, add entity_type, fix budget three-column index
-- [ ] 92-02-PLAN.md — Import CLI: create import-budgets subcommand, import all Bloomington data
-- [ ] 92-03-PLAN.md — Frontend API-only: remove static fallback, add error state with retry
+- [x] 92-01-PLAN.md — Schema migration: rename City to Municipality, add entity_type, fix budget three-column index
+- [x] 92-02-PLAN.md — Import CLI: create import-budgets subcommand, import all Bloomington data
+- [x] 92-03-PLAN.md — Frontend API-only: remove static fallback, add error state with retry
 
 ### Phase 93: Indiana Data Import
 **Goal**: Ellettsville and Monroe County operating budgets are in Supabase and browsable in the Treasury Tracker, validating the parameterized import pipeline on the Indiana Gateway format before LA data is attempted
@@ -330,7 +330,7 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 0/3 | Planning complete | - |
+| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete   | 2026-03-22 |
 | 93. Indiana Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |

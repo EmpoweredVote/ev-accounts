@@ -9,16 +9,16 @@ Requirements for Treasury Tracker Expansion milestone. Each maps to roadmap phas
 
 ### Schema & Backend
 
-- [ ] **SCHM-01**: Budget unique index includes dataset_type (three-column: city_id, fiscal_year, dataset_type)
-- [ ] **SCHM-02**: City model has entity_type field (city/county/township) with composite unique on (name, state, entity_type)
-- [ ] **SCHM-03**: Budget model has fiscal_year_start_month field (default 1, set to 7 for California entities)
+- [x] **SCHM-01**: Budget unique index includes dataset_type (three-column: city_id, fiscal_year, dataset_type)
+- [x] **SCHM-02**: City model has entity_type field (city/county/township) with composite unique on (name, state, entity_type)
+- [x] **SCHM-03**: Budget model has fiscal_year_start_month field (default 1, set to 7 for California entities)
 
 ### Data Migration
 
 - [ ] **DATA-01**: Bloomington operating budget data migrated from static JSON to Supabase via treasury API
 - [ ] **DATA-02**: Bloomington revenue data migrated from static JSON to Supabase
 - [ ] **DATA-03**: Bloomington salary data migrated from static JSON to Supabase
-- [ ] **DATA-04**: Static JSON fallback in dataLoader.ts guarded to Bloomington city only
+- [x] **DATA-04**: Static JSON fallback in dataLoader.ts guarded to Bloomington city only
 
 ### Indiana Expansion
 
@@ -79,13 +79,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SCHM-01 | Phase 92 | Pending |
-| SCHM-02 | Phase 92 | Pending |
-| SCHM-03 | Phase 92 | Pending |
+| SCHM-01 | Phase 92 | Complete |
+| SCHM-02 | Phase 92 | Complete |
+| SCHM-03 | Phase 92 | Complete |
 | DATA-01 | Phase 92 | Pending |
 | DATA-02 | Phase 92 | Pending |
 | DATA-03 | Phase 92 | Pending |
-| DATA-04 | Phase 92 | Pending |
+| DATA-04 | Phase 92 | Complete |
 | IND-01 | Phase 93 | Pending |
 | IND-02 | Phase 93 | Pending |
 | IND-03 | Phase 93 | Pending |

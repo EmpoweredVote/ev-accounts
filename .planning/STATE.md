@@ -2,16 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
-status: planning
-stopped_at: Phase 92 context gathered
-last_updated: "2026-03-22T19:09:42.348Z"
-last_activity: 2026-03-22 — Roadmap created for v2026.3.7 Treasury Tracker Expansion
+status: Phase complete — ready for verification
+stopped_at: Completed 92-02-PLAN.md
+last_updated: "2026-03-22T19:58:56.021Z"
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  completed_phases: 1
+  total_plans: 3
+  completed_plans: 3
 ---
 
 # Project State
@@ -21,16 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 92 — Schema Foundation & Bloomington Migration
+**Current focus:** Phase 92 — schema-foundation-bloomington-migration
 
 ## Current Position
 
-Phase: 92 of 96 (Schema Foundation & Bloomington Migration)
-Plan: 0 of TBD in current phase
-Status: Ready to plan
-Last activity: 2026-03-22 — Roadmap created for v2026.3.7 Treasury Tracker Expansion
-
-Progress: [░░░░░░░░░░] 0%
+Phase: 92 (schema-foundation-bloomington-migration) — EXECUTING
+Plan: 3 of 3
 
 ## Performance Metrics
 
@@ -50,6 +44,12 @@ Progress: [░░░░░░░░░░] 0%
 - Visual refresh: EV tokens apply to UI chrome only; chart segment fills use separate --data-* namespace to preserve 30-color perceptual distinctiveness
 - LA data source: Use data.lacounty.gov expenditure transactions — not CEO PDF (PDF parsing produces 10-40% amount errors from merged cells)
 - Checkbook transactions (282K rows) deferred to v2+; not imported this milestone
+- [Phase 92]: Backward compat: city_id query param in ListBudgets maps to municipality_id column so existing frontend calls keep working
+- [Phase 92]: Three-column index declared both in GORM struct tags and explicit CREATE UNIQUE INDEX in setup.go for safety
+- [Phase 92]: rename.sql provided as pre-deployment manual step — GORM AutoMigrate cannot rename tables/columns
+- [Phase 92]: API-only data loading: dataLoader.ts throws on failure, App.tsx catch sets setBudgetData(null), listCities renamed to listMunicipalities calling /treasury/municipalities
+- [Phase 92]: Idempotent budget import: existence checked by (municipality_id, fiscal_year, dataset_type) before insert
+- [Phase 92]: totalBudget resolution: totalBudget > totalCompensation > totalRevenue (salary files have both totalBudget and totalCompensation set to same value)
 
 ### Pending Todos
 
@@ -62,6 +62,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-03-22T19:09:42.345Z
-Stopped at: Phase 92 context gathered
-Resume file: .planning/phases/92-schema-foundation-bloomington-migration/92-CONTEXT.md
+Last session: 2026-03-22T19:58:56.018Z
+Stopped at: Completed 92-02-PLAN.md
+Resume file: None
