@@ -277,6 +277,14 @@ Plans:
 
 **Requirements:** CONS-18, CONS-19
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 41-01-PLAN.md — Pre-flight inspection: enumerate tables, row counts, FK gap analysis, Trivia connection model
+- [ ] 41-02-PLAN.md — pg_dump/restore both schemas + vq_service role creation + FK reconciliation
+- [ ] 41-03-PLAN.md — RLS migration for validation_quests and trivia tables
+- [ ] 41-04-PLAN.md — Cutover: update VQ DATABASE_URL, restart, end-to-end smoke test
+
 **Success Criteria:**
 
 1. `validation_quests` schema exists in ev-accounts with all imported tables; VQ's Render service `DATABASE_URL` points to ev-accounts and the VQ app connects successfully on startup.
@@ -363,7 +371,7 @@ Plans:
 | 37. Express Ports Wave 2 — Staging | v1.6 | 4/4 | Complete | 2026-03-20 |
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
 | 39. Compass Additions | v1.6 | 3/3 | Complete | 2026-03-20 |
-| 40. Frontend Auth Updates | v1.6 | 0/5 | Planned | — |
-| 41. VQ and Trivia Migration | v1.6 | 0/? | Pending | — |
+| 40. Frontend Auth Updates | v1.6 | 5/5 | Complete | 2026-03-23 |
+| 41. VQ and Trivia Migration | v1.6 | 0/4 | Planned | — |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
