@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
 status: Ready to plan
-stopped_at: Completed 94-02-PLAN.md
-last_updated: "2026-03-23T01:37:49.077Z"
+stopped_at: Phase 95 context gathered
+last_updated: "2026-03-23T01:53:18.180Z"
 progress:
   total_phases: 5
   completed_phases: 3
@@ -68,6 +68,6 @@ Plan: Not started
 
 ## Session Continuity
 
-Last session: 2026-03-23T00:50:18Z
-Stopped at: Completed 94-02-PLAN.md
-Resume file: .planning/phases/94-la-data-import/94-02-SUMMARY.md
+Last session: 2026-03-23T01:53:18.177Z
+Stopped at: Phase 95 context gathered
+Resume file: .planning/phases/95-entity-switcher/95-CONTEXT.md
