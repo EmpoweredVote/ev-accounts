@@ -32,18 +32,16 @@ router.get(
     try {
       // LEFT JOIN connect.connected_profiles to handle users who exist in
       // public.users but have not yet enrolled at Connected tier.
-      // CROSS JOIN LATERAL calls connect.calculate_level per row (IMMUTABLE —
-      // Postgres can inline/cache the result) to avoid N separate RPC calls.
+      // connected_profiles has no pseudonym column; current_level is stored directly.
       const result = await pool.query(
         `SELECT
-           u.id               AS user_id,
+           u.id                           AS user_id,
            u.display_name,
-           cp.pseudonym,
-           COALESCE(cp.total_xp, 0) AS total_xp,
-           COALESCE(lv.level, 1)    AS level
+           NULL::text                     AS pseudonym,
+           COALESCE(cp.total_xp, 0)      AS total_xp,
+           COALESCE(cp.current_level, 1) AS level
          FROM public.users u
          LEFT JOIN connect.connected_profiles cp ON cp.user_id = u.id
-         CROSS JOIN LATERAL connect.calculate_level(COALESCE(cp.total_xp, 0)) lv
          WHERE u.id = ANY($1::uuid[])`,
         [userIds]
       );
