@@ -5,16 +5,15 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 40: Frontend Auth Updates
+**Current focus:** v1.6 Platform Consolidation — Phase 41: VQ and Trivia Migration
 
 ## Current Position
 
-Phase: 40 — Frontend Auth Updates — In Progress
-Plan: 1 of 5 complete
-Status: In progress — Plan 01 (Auth Hub redirect-after-login) complete
-Last activity: 2026-03-22 — Completed 40-01: redirect-after-login + re-auth banner + signup redirect pass-through
+Phase: 40 — Frontend Auth Updates — Complete
+Phase: 41 — VQ and Trivia Migration — Not started
+Last activity: 2026-03-23 — Completed Phase 40: all 4 frontends migrated to Bearer token auth; cutover runbook delivered and acted on
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 39/43 phases shipped ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 40/43 phases shipped ██████████░
 
 ## Accumulated Context
 

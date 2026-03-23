@@ -252,11 +252,13 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 40-01-PLAN.md — Auth Hub redirect-after-login + re-auth banner
-- [ ] 40-02-PLAN.md — CompassV2 Bearer token migration (20+ files)
-- [ ] 40-03-PLAN.md — Essentials Bearer token migration + Sign In link
-- [ ] 40-04-PLAN.md — Read & Rank Bearer token migration + Treasury Tracker proxy update
-- [ ] 40-05-PLAN.md — Cutover runbook (three-party coordination)
+- [x] 40-01-PLAN.md — Auth Hub redirect-after-login + re-auth banner
+- [x] 40-02-PLAN.md — CompassV2 Bearer token migration (20+ files)
+- [x] 40-03-PLAN.md — Essentials Bearer token migration + Sign In link
+- [x] 40-04-PLAN.md — Read & Rank Bearer token migration + Treasury Tracker proxy update
+- [x] 40-05-PLAN.md — Cutover runbook (three-party coordination)
+
+**Status:** Complete — 2026-03-23
 
 **Success Criteria:**
 
