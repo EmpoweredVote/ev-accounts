@@ -34,7 +34,7 @@ Declared values (multiples of 4). Source: existing App.css and component CSS pat
 | Token | Value | Usage |
 |-------|-------|-------|
 | xs | 4px | Icon gaps, separator glyphs |
-| sm | 8px | Inline element spacing, badge gaps |
+| sm | 8px | Inline element spacing, badge gaps, entity option vertical padding |
 | md | 16px (1rem) | Button padding, dropdown item padding |
 | lg | 24px (1.5rem) | Header section padding, card padding |
 | xl | 32px (2rem) | Layout horizontal padding (header-content) |
@@ -47,16 +47,16 @@ Exceptions: Touch targets on the EntitySwitcher toggle button must be minimum 44
 
 ## Typography
 
-All sizes drawn from existing CSS classes in App.css and component stylesheets. No new type sizes introduced.
+All sizes drawn from existing CSS classes in App.css and component stylesheets, plus the group label pattern introduced by EntitySwitcher. Four sizes are declared for this phase.
 
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
-| Body | 16px (1rem) | 400 | 1.6 (from body rule in index.css) |
-| Label / tab label | 16px (1rem) | 600 | 1.3 (matches `.dataset-tab-label`) |
-| Caption / description | 13px (0.8125rem) | 400 | 1.3 (matches `.dataset-tab-description`) |
+| Group label | 11px (0.6875rem) | 700 | 1.2 (uppercase caps, not body content) |
+| Caption / description / option text | 14px (0.875rem) | 400 | 1.3 (replaces former 13px caption usage) |
+| Body / label / tab label | 16px (1rem) | 400 or 600 | 1.6 body / 1.3 label |
 | Heading / hero title | 20px (1.25rem) | 700 | 1.2 (matches existing hero h1 pattern) |
 
-Source: index.css body rule, App.css `.dataset-tab-label`, `.dataset-tab-description`. No new sizes may be introduced in this phase — this phase is behavior-only, not a visual refresh (that is Phase 96).
+Source: index.css body rule, App.css `.dataset-tab-label`, `.dataset-tab-description`. The 11px size is used exclusively for `.entity-group-label` uppercase headers. The 14px size is used for all caption-level and option-item text. No sizes outside this set of four may be introduced in this phase.
 
 ---
 
@@ -117,7 +117,7 @@ Replaces `NavigationTabs.tsx` in the header. Follows the exact dropdown pattern 
 - Not clickable
 
 **Entity options (`.entity-option`):**
-- Padding: 10px 16px
+- Padding: 8px 16px (sm md)
 - Font: 14px (0.875rem) weight 400
 - Color: `var(--black)`
 - Hover: background `var(--light-gray)`
@@ -166,6 +166,12 @@ Accepts dynamic `years` prop derived from selected entity's `available_datasets`
 ### Modified: Breadcrumb
 
 Entity name replaces hardcoded "City" string. No visual changes to the Breadcrumb component itself — only the `label` value of the breadcrumb item changes at call site in App.tsx.
+
+---
+
+## Primary Visual Anchor
+
+The `<h1>` hero title — rendered as "{Entity Name} Finances" — is the primary focal point of the modified page. It sits at the top of the content area, directly below the header, and confirms entity context for the user before any data is read. The tag structure (`<h1>`) is unchanged from the existing implementation; only the text content becomes dynamic.
 
 ---
 
