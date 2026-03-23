@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
-status: Ready to execute
-stopped_at: Completed 96-03-PLAN.md
-last_updated: "2026-03-23T15:30:02.521Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 96-02-PLAN.md
+last_updated: "2026-03-23T15:35:57.571Z"
 progress:
   total_phases: 5
   completed_phases: 4
@@ -62,6 +62,7 @@ Plan: 3 of 3
 - [Phase 96]: Define EV tokens inline in @theme block (not CSS @import of tailwind-preset.js) — JS file cannot be CSS-imported in Tailwind v4
 - [Phase 96]: Use @tailwindcss/vite plugin (not @tailwindcss/postcss) for treasury-tracker matching CompassV2 pattern
 - [Phase 96]: getCategoryColor returns CSS var() strings; SVG fill natively resolves them, so no getComputedStyle needed for D3 chart fills
+- [Phase 96]: DATA_VIZ_HUES from chartColors.ts used in CategoryList/BudgetBar/PerDollarBreakdown for index-based color — not category.color
 
 ### Pending Todos
 
@@ -74,6 +75,6 @@ Plan: 3 of 3
 
 ## Session Continuity
 
-Last session: 2026-03-23T15:30:02.518Z
-Stopped at: Completed 96-03-PLAN.md
+Last session: 2026-03-23T15:35:57.568Z
+Stopped at: Completed 96-02-PLAN.md
 Resume file: None
