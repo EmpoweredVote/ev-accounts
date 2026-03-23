@@ -9,6 +9,7 @@ import {
   getDistrictById,
 } from '../lib/essentialsService.js';
 import { GeocodingError } from '../lib/geocodingService.js';
+import { pool } from '../lib/db.js';
 
 /**
  * Essentials router — address-search and other top-level essentials routes.
@@ -64,6 +65,91 @@ router.get('/address-search', optionalAuth, async (req: Request, res: Response):
       }
     }
     console.error('[GET /essentials/address-search] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/quotes
+// Auth: none — public endpoint (Read & Rank uses plain fetch, no Bearer token)
+// Returns { quotes, candidates, issues } — the full dataset for the Read & Rank app.
+//
+// quotes[].issue = compass_topic UUID (not topic_key slug)
+// candidates[] = deduplicated active politicians who have quotes
+// issues[] = deduplicated compass topics that have quotes
+// ---------------------------------------------------------------------------
+
+router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const { rows } = await pool.query(`
+      SELECT
+        q.id                    AS quote_id,
+        q.quote_text,
+        q.politician_id,
+        q.source_url,
+        q.source_name,
+        p.full_name             AS politician_name,
+        p.party                 AS politician_party,
+        p.photo_origin_url      AS politician_photo,
+        o.title                 AS office_title,
+        ct.id                   AS topic_id,
+        ct.short_title          AS topic_title,
+        ct.question_text        AS topic_question
+      FROM essentials.quotes q
+      JOIN essentials.politicians p ON p.id = q.politician_id AND p.is_active = true
+      LEFT JOIN essentials.offices o ON o.id = p.office_id
+      LEFT JOIN inform.compass_topics ct
+        ON lower(replace(ct.short_title, ' ', '-')) = lower(q.topic_key)
+        OR lower(ct.short_title) = lower(q.topic_key)
+      ORDER BY p.full_name, q.topic_key
+    `);
+
+    // Build quotes array — only include quotes where the topic matched
+    const quotes = rows
+      .filter((r) => r.topic_id !== null)
+      .map((r) => ({
+        id: r.quote_id as string,
+        text: r.quote_text as string,
+        candidateId: r.politician_id as string,
+        issue: r.topic_id as string,
+        sourceUrl: r.source_url as string | null ?? undefined,
+        sourceName: r.source_name as string | null ?? undefined,
+      }));
+
+    // Deduplicate candidates (politicians who appear in at least one matched quote)
+    const candidateMap = new Map<string, object>();
+    for (const r of rows.filter((r) => r.topic_id !== null)) {
+      if (!candidateMap.has(r.politician_id as string)) {
+        candidateMap.set(r.politician_id as string, {
+          id: r.politician_id,
+          name: r.politician_name ?? '',
+          party: r.politician_party ?? '',
+          office: r.office_title ?? '',
+          photo: r.politician_photo ?? '',
+          alignmentPercent: 0,
+          issuesAligned: 0,
+          totalIssues: 0,
+        });
+      }
+    }
+    const candidates = Array.from(candidateMap.values());
+
+    // Deduplicate issues (topics that appear in at least one matched quote)
+    const issueMap = new Map<string, object>();
+    for (const r of rows.filter((r) => r.topic_id !== null)) {
+      if (!issueMap.has(r.topic_id as string)) {
+        issueMap.set(r.topic_id as string, {
+          id: r.topic_id,
+          title: r.topic_title ?? '',
+          question: r.topic_question ?? '',
+        });
+      }
+    }
+    const issues = Array.from(issueMap.values());
+
+    res.status(200).json({ quotes, candidates, issues });
+  } catch (err) {
+    console.error('[GET /essentials/quotes] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
