@@ -24,11 +24,14 @@ const envSchema = z.object({
   GEMS_SERVICE_KEYS: z.string().optional(),
 });
 
+process.stderr.write('[startup] env.ts: validating environment\n');
 const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success) {
-  console.error('[startup] Missing or invalid environment variables:');
-  console.error(JSON.stringify(parsed.error.flatten().fieldErrors, null, 2));
+  // Use synchronous write to guarantee output is flushed before process.exit
+  process.stderr.write('[startup] Missing or invalid environment variables:\n');
+  process.stderr.write(JSON.stringify(parsed.error.flatten().fieldErrors, null, 2) + '\n');
+  process.exitCode = 1;
   process.exit(1);
 }
 
