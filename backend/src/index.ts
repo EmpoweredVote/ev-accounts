@@ -1,4 +1,3 @@
-process.stdout.write('[startup] index.ts loading\n'); // Diagnostic: confirm process starts
 import 'dotenv/config'; // Must be first import
 import { env } from './lib/env.js'; // Validates env vars — exits if invalid
 import express from 'express';
