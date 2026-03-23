@@ -68,7 +68,7 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 // Replaced Google Maps Geocoding API in Phase 38.
 // ---------------------------------------------------------------------------
 
-export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number }> {
+export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number; matchedAddress: string }> {
   // 1. PO Box check — before any network call
   if (PO_BOX_PATTERN.test(address)) {
     throw new GeocodingError(
@@ -81,9 +81,9 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
   const cacheKey = `geocode:v1:${address.toLowerCase().trim().replace(/\s+/g, ' ')}`;
 
   // 3. Redis cache check — return immediately on hit (24hr TTL)
-  const cached = await cache.get<{ lat: number; lng: number }>(cacheKey);
+  const cached = await cache.get<{ lat: number; lng: number; matchedAddress?: string }>(cacheKey);
   if (cached) {
-    return cached;
+    return { lat: cached.lat, lng: cached.lng, matchedAddress: cached.matchedAddress ?? '' };
   }
 
   // 4. Build Census Geocoder URL
@@ -137,7 +137,7 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
   const lat = matches[0].coordinates.y; // latitude
 
   // 9. Cache successful result for 24 hours (86400 seconds)
-  await cache.set(cacheKey, { lat, lng }, 86400);
+  await cache.set(cacheKey, { lat, lng, matchedAddress: matches[0].matchedAddress }, 86400);
 
-  return { lat, lng };
+  return { lat, lng, matchedAddress: matches[0].matchedAddress };
 }

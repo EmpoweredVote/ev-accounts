@@ -73,7 +73,10 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
     }
 
     const result = await getRepresentativesByAddress(query.trim());
-    res.status(200).json(result);
+    const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
+    res.setHeader('X-Data-Status', dataStatus);
+    res.setHeader('X-Formatted-Address', result.matchedAddress);
+    res.status(200).json(result.politicians);
   } catch (err: unknown) {
     const code = (err as { code?: string }).code;
     if (code === 'ADDRESS_NOT_FOUND' || code === 'PO_BOX_REJECTED') {

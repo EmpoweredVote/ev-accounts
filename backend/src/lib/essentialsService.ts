@@ -91,6 +91,7 @@ export interface AddressSearchResult {
     district_label: string;
     mtfcc: string;
   } | null;
+  matchedAddress: string;
 }
 
 export interface PoliticianRecord {
@@ -325,7 +326,7 @@ export async function getRepresentativesByAddress(
   address: string
 ): Promise<AddressSearchResult> {
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
-  const { lat, lng } = await geocodeAddress(address);
+  const { lat, lng, matchedAddress } = await geocodeAddress(address);
 
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
@@ -357,7 +358,7 @@ export async function getRepresentativesByAddress(
   const { rows } = await pool.query(queryText, [lng, lat]);
 
   if (rows.length === 0) {
-    return { politicians: [], jurisdiction: null };
+    return { politicians: [], jurisdiction: null, matchedAddress };
   }
 
   const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
@@ -401,7 +402,7 @@ export async function getRepresentativesByAddress(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  return { politicians, jurisdiction };
+  return { politicians, jurisdiction, matchedAddress };
 }
 
 // ---------------------------------------------------------------------------
