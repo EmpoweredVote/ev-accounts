@@ -47,13 +47,13 @@ Exceptions: Touch targets on the EntitySwitcher toggle button must be minimum 44
 
 ## Typography
 
-All sizes drawn from existing CSS classes in App.css and component stylesheets, plus the group label pattern introduced by EntitySwitcher. Four sizes are declared for this phase.
+All sizes drawn from existing CSS classes in App.css and component stylesheets, plus the group label pattern introduced by EntitySwitcher. Four sizes are declared for this phase. Two weights only: 400 (all body, caption, option, and label text) and 700 (group labels, heading/hero title only).
 
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Group label | 11px (0.6875rem) | 700 | 1.2 (uppercase caps, not body content) |
 | Caption / description / option text | 14px (0.875rem) | 400 | 1.3 (replaces former 13px caption usage) |
-| Body / label / tab label | 16px (1rem) | 400 or 600 | 1.6 body / 1.3 label |
+| Body / label / tab label | 16px (1rem) | 400 | 1.6 body / 1.3 label |
 | Heading / hero title | 20px (1.25rem) | 700 | 1.2 (matches existing hero h1 pattern) |
 
 Source: index.css body rule, App.css `.dataset-tab-label`, `.dataset-tab-description`. The 11px size is used exclusively for `.entity-group-label` uppercase headers. The 14px size is used for all caption-level and option-item text. No sizes outside this set of four may be introduced in this phase.
@@ -95,7 +95,7 @@ Replaces `NavigationTabs.tsx` in the header. Follows the exact dropdown pattern 
 - Background: `var(--white)`
 - Border: 1px solid `var(--medium-gray)`
 - Border-radius: 0.5rem (8px)
-- Font: Manrope 16px weight 600
+- Font: Manrope 16px weight 400
 - Chevron: `<ChevronDown size={16} />` from lucide-react, rotates 180deg when open (0.2s transition, matching YearSelector)
 - Text format: "Name, ST" — e.g., "Bloomington, IN" (source: D-03)
 
@@ -121,7 +121,7 @@ Replaces `NavigationTabs.tsx` in the header. Follows the exact dropdown pattern 
 - Font: 14px (0.875rem) weight 400
 - Color: `var(--black)`
 - Hover: background `var(--light-gray)`
-- Selected: background `var(--light-gray)`, left border 3px solid `var(--muted-blue)`, font weight 600
+- Selected: background `var(--light-gray)`, left border 3px solid `var(--muted-blue)`, font weight 400
 - Width: 100%
 
 **Groups displayed:**
@@ -185,7 +185,7 @@ The `<h1>` hero title — rendered as "{Entity Name} Finances" — is the primar
 | EntitySwitcher button | Focus | 2px outline `var(--muted-blue)` (keyboard nav) |
 | Entity option | Default | Transparent bg |
 | Entity option | Hover | `var(--light-gray)` bg |
-| Entity option | Selected | `var(--light-gray)` bg, 3px left border `var(--muted-blue)`, weight 600 |
+| Entity option | Selected | `var(--light-gray)` bg, 3px left border `var(--muted-blue)`, weight 400 |
 | DatasetTab | Disabled | opacity 0.4, cursor not-allowed, pointer-events none |
 | Content area | Loading | Semi-transparent overlay + spinner |
 | Hero title | Loaded | "{Entity Name} Finances" — dynamic, no animation |
