@@ -327,8 +327,12 @@ Plans:
   2. All UI chrome — header, cards, tabs, buttons — uses EV design tokens (ev-coral, ev-muted-blue, ev-yellow)
   3. Chart segment fills use the dedicated data visualization palette; the 30-color perceptual distinctiveness is preserved — no EV brand token bleeds into chart fills
   4. Typography throughout is Manrope, matching CompassV2 and Essentials
-**Plans**: TBD
+**Plans**: 3 plans
 **UI hint**: yes
+Plans:
+- [ ] 96-01-PLAN.md — Tailwind CSS 4 infrastructure + navigation chrome redesign (header, EntitySwitcher, tabs, search, year, breadcrumb)
+- [ ] 96-02-PLAN.md — Data display component redesign (LineItemsTable, CategoryList, PerDollarBreakdown, etc.)
+- [ ] 96-03-PLAN.md — D3 chart color migration to ev-ui dataVizPalette
 
 ## Progress
 
@@ -341,4 +345,4 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 | 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
 | 94. LA Data Import | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
 | 95. Entity Switcher | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
-| 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
+| 96. Visual Refresh | v2026.3.7 | 0/3 | Not started | - |
