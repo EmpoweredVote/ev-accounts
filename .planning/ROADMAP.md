@@ -259,7 +259,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 - [x] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway (completed 2026-03-22)
 - [x] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals (completed 2026-03-23)
 - [x] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions (completed 2026-03-23)
-- [ ] **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography
+- 🚧 **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography (1/3 plans complete)
 
 ## Phase Details
 

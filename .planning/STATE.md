@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
-status: Ready to plan
-stopped_at: Phase 96 context gathered
-last_updated: "2026-03-23T14:34:09.986Z"
+status: In progress
+stopped_at: Completed 96-01-PLAN.md
+last_updated: "2026-03-23T19:58:00Z"
 progress:
   total_phases: 5
   completed_phases: 4
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 11
+  completed_plans: 9
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-22)
 ## Current Position
 
 Phase: 96
-Plan: Not started
+Plan: 02
 
 ## Performance Metrics
 
@@ -59,6 +59,8 @@ Plan: Not started
 - [Phase 95-entity-switcher]: Two-query approach for ListMunicipalities: fetch all municipalities, fetch all budget summaries separately, group in Go — avoids complex JOIN and handles empty datasets gracefully
 - [Phase 95-entity-switcher]: handleEntityChange computes effectiveYear before setSelectedEntity to prevent double-fetch (Pitfall 1 from RESEARCH.md)
 - [Phase 95-entity-switcher]: URL sync guarded with if (!selectedEntity) return to prevent overwriting incoming URL params before municipalities load (Pitfall 2 from RESEARCH.md)
+- [Phase 96-01]: Define EV tokens inline in @theme block (not CSS @import of tailwind-preset.js) — JS file cannot be CSS-imported in Tailwind v4
+- [Phase 96-01]: Use @tailwindcss/vite plugin (not @tailwindcss/postcss) for treasury-tracker matching CompassV2 pattern
 
 ### Pending Todos
 
@@ -71,6 +73,6 @@ Plan: Not started
 
 ## Session Continuity
 
-Last session: 2026-03-23T14:34:09.982Z
-Stopped at: Phase 96 context gathered
-Resume file: .planning/phases/96-visual-refresh/96-CONTEXT.md
+Last session: 2026-03-23T19:58:00Z
+Stopped at: Completed 96-01-PLAN.md
+Resume file: .planning/phases/96-visual-refresh/96-01-SUMMARY.md
