@@ -10,8 +10,8 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 40 — Frontend Auth Updates — Complete
-Phase: 41 — VQ and Trivia Migration — In progress (Plans 01–02 complete, Plans 03–04 ready)
-Last activity: 2026-03-23 — Completed Phase 41 Plan 02 (trivia_service role + leaderboard endpoint)
+Phase: 41 — VQ and Trivia Migration — In progress (Plans 01–03 complete, Plan 04 ready)
+Last activity: 2026-03-23 — Completed Phase 41 Plan 03 (RLS on all 22 vq + trivia tables)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 40/43 phases shipped ██████████░
 
@@ -268,8 +268,18 @@ validation_quests service-role-only (2): admin_override_log, ai_agent_credential
 trivia public-read (6): collection_questions, collection_topics, collections, election_races, questions, topics
 trivia owner-read (3): player_prefs, player_stats, question_flags
 
+## Phase 41 Plan 03 Complete (41-03)
+
+- **All 22 tables confirmed RLS-enabled** — 13 validation_quests + 9 trivia; all had rowsecurity=true from original schema migrations
+- **5 new policies added** — gem_reward_events + user_quest_assignments (owner SELECT), quest_contests (public read), consensus_records + verification_quests (anon SELECT — were authenticated-only)
+- **user_id columns: all uuid** — no cast needed; `(SELECT auth.uid()) = user_id` pattern used
+- **admin_override_log + ai_agent_credentials: 0 policies** — deny all non-BYPASSRLS confirmed
+- **trivia pre-existing DML policies retained** — INSERT/UPDATE on player_prefs, player_stats, question_flags; enables VQ/CTC Supabase JS client writes
+- **Policy counts: VQ=15, trivia=14** — higher than plan's 11/9 because original schema migrations included DML policies
+- **Plan 04 (cutover verification) unblocked** — has checkpoint; requires human action
+
 ## Session Continuity
 
 Last session: 2026-03-23
-Stopped at: Phase 41 Plan 02 complete (1fba3eb) — trivia_service role created, leaderboard endpoint live
-Resume: Phase 41 Plan 03 — RLS policies for validation_quests and trivia schemas
+Stopped at: Phase 41 Plan 03 complete (30cee63) — RLS enforced on all 22 vq + trivia tables
+Resume: Phase 41 Plan 04 — cutover verification (has checkpoint)
