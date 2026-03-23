@@ -10,8 +10,8 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 41 — VQ and Trivia Migration — Complete
-Phase: 42 — Decommission and DNS Cutover — Not started
-Last activity: 2026-03-24 — Completed Phase 41 (all 4 plans, verified 4/4)
+Phase: 42 — Decommission and DNS Cutover — Plan 01 complete (awaiting human cutover)
+Last activity: 2026-03-23 — Phase 42 Plan 01 complete (72b0970) — runbook written, stale URLs cleaned
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 41/43 phases shipped ██████████░
 
