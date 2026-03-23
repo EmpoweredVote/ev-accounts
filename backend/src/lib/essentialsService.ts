@@ -326,11 +326,11 @@ export async function getRepresentativesByAddress(
   address: string
 ): Promise<AddressSearchResult> {
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
-  const { lat, lng, matchedAddress } = await geocodeAddress(address);
+  const { lat, lng, matchedAddress, state } = await geocodeAddress(address);
 
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
-  const queryText = `
+  const districtQueryText = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
@@ -344,7 +344,7 @@ export async function getRepresentativesByAddress(
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON p.office_id = o.id
+    JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     WHERE public.ST_Covers(
@@ -354,8 +354,35 @@ export async function getRepresentativesByAddress(
     AND p.is_active = true
   `;
 
+  // Statewide politicians (NATIONAL_UPPER = US Senators, STATE_EXEC = Governor etc.)
+  // have no geofence boundaries — match by state abbreviation from Census geocoder.
+  const statewideQueryText = `
+    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+           p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+           p.urls, p.email_addresses, p.bio_text, p.slug,
+           o.title AS office_title, o.representing_state, o.representing_city,
+           o.is_appointed_position,
+           d.district_type, d.label AS district_label, d.geo_id AS district_id,
+           d.mtfcc,
+           ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+           ch.election_frequency,
+           g.name AS government_name
+    FROM essentials.districts d
+    JOIN essentials.offices o ON o.district_id = d.id
+    JOIN essentials.politicians p ON o.politician_id = p.id
+    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC')
+    AND d.state = $1
+    AND p.is_active = true
+  `;
+
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
-  const { rows } = await pool.query(queryText, [lng, lat]);
+  const [districtResult, statewideResult] = await Promise.all([
+    pool.query(districtQueryText, [lng, lat]),
+    state ? pool.query(statewideQueryText, [state]) : Promise.resolve({ rows: [] as unknown[] }),
+  ]);
+  const rows = [...districtResult.rows, ...(statewideResult.rows as typeof districtResult.rows)];
 
   if (rows.length === 0) {
     return { politicians: [], jurisdiction: null, matchedAddress };
@@ -894,7 +921,7 @@ export async function getDistrictById(id: string): Promise<DistrictDetail | null
   const politiciansResult = await pool.query(
     `SELECT p.id, p.full_name, p.party, p.is_incumbent, p.photo_origin_url
      FROM essentials.offices o
-     JOIN essentials.politicians p ON p.office_id = o.id
+     JOIN essentials.politicians p ON o.politician_id = p.id
      WHERE o.district_id = $1
        AND p.is_active = true
      ORDER BY p.is_incumbent DESC, p.full_name`,

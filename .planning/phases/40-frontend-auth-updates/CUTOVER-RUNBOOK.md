@@ -36,7 +36,7 @@ Simultaneous cutover — all 4 apps deploy at the same time. This is intentional
 
 | Party | Role |
 |-------|------|
-| **ED (Executive Director)** | Final go/no-go decision. Posts user communication. Has Render access for ev-accounts. |
+| **Chris Cantrell** | Final go/no-go decision. Posts user communication. Has Render access for ev-accounts. |
 | **Claude** | Executes technical steps (CORS update, PR creation, verification via logs). |
 | **Chris Andrews** | Has Netlify dashboard access for all 4 apps. Sets env vars in Netlify. Merges PRs. |
 
@@ -61,17 +61,20 @@ Simultaneous cutover — all 4 apps deploy at the same time. This is intentional
 
 Replace the placeholders below with the actual Netlify/custom URLs before cutover. Get these from Chris Andrews or the Netlify dashboard.
 
-```
-CORS_ORIGIN=https://compass.empowered.vote,https://YOUR-ESSENTIALS-NETLIFY-URL,https://YOUR-READ-RANK-NETLIFY-URL,https://YOUR-TREASURY-TRACKER-NETLIFY-URL
+
+
+``
 ```
 
 **Known production domains:**
-- CompassV2: `https://compass.empowered.vote` (custom domain — confirm with Chris)
-- Essentials: `[unknown — placeholder: YOUR-ESSENTIALS-NETLIFY-URL]`
-- Read & Rank: `[unknown — placeholder: YOUR-READ-RANK-NETLIFY-URL]`
-- Treasury Tracker: `[unknown — placeholder: YOUR-TREASURY-TRACKER-NETLIFY-URL]`
+- CompassV2: `https://compass.empowered.vote`
+- Essentials: `https://essentials.empowered.vote`
+- Read & Rank: `https://readrank.empowered.vote`
+- Treasury Tracker: `https://treasurytracker.empowered.vote`
 
 **Also include staging/preview URLs if doing staging verification first.** Netlify branch deploy and deploy preview URLs follow the pattern `https://deploy-preview-N--SITE-NAME.netlify.app`. Add these to CORS_ORIGIN during staging, then update again with just production domains before prod cutover (or keep both — extra origins are harmless).
+
+CORS_ORIGIN=https://ctc.empowered.vote,https://civic-trivia-frontend.onrender.com,https://accounts.empowered.vote,https://ev-accounts.onrender.com,https://validation-quests-frontend.onrender.com,https://quests.empowered.vote,https://app.empowered.vote,https://profile.empowered.vote,https://accounts.empowered.vote,https://essentials.empowered.vote,https://compass.empowered.vote,https://readrank.empowered.vote,https://treasurytracker.empowered.vote,https://ev-compass.netlify.app,https://api.empowered.vote
 
 **Format rules:**
 - Comma-separated, no trailing slashes

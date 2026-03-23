@@ -68,7 +68,7 @@ const PO_BOX_PATTERN = /\bP\.?O\.?\s*Box\b|\bPOB\b/i;
 // Replaced Google Maps Geocoding API in Phase 38.
 // ---------------------------------------------------------------------------
 
-export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number; matchedAddress: string }> {
+export async function geocodeAddress(address: string): Promise<{ lat: number; lng: number; matchedAddress: string; state: string }> {
   // 1. PO Box check — before any network call
   if (PO_BOX_PATTERN.test(address)) {
     throw new GeocodingError(
@@ -81,9 +81,9 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
   const cacheKey = `geocode:v1:${address.toLowerCase().trim().replace(/\s+/g, ' ')}`;
 
   // 3. Redis cache check — return immediately on hit (24hr TTL)
-  const cached = await cache.get<{ lat: number; lng: number; matchedAddress?: string }>(cacheKey);
+  const cached = await cache.get<{ lat: number; lng: number; matchedAddress?: string; state?: string }>(cacheKey);
   if (cached) {
-    return { lat: cached.lat, lng: cached.lng, matchedAddress: cached.matchedAddress ?? '' };
+    return { lat: cached.lat, lng: cached.lng, matchedAddress: cached.matchedAddress ?? '', state: cached.state ?? '' };
   }
 
   // 4. Build Census Geocoder URL
@@ -130,14 +130,15 @@ export async function geocodeAddress(address: string): Promise<{ lat: number; ln
     );
   }
 
-  // 8. Extract coordinates
+  // 8. Extract coordinates and state abbreviation
   // CRITICAL: Census uses x=longitude, y=latitude (opposite of common lat/lng convention)
   // PostGIS ST_MakePoint also takes (longitude, latitude) = (x, y) — same order
   const lng = matches[0].coordinates.x; // longitude
   const lat = matches[0].coordinates.y; // latitude
+  const state = matches[0].addressComponents.state ?? ''; // 2-letter abbreviation e.g. "IN"
 
   // 9. Cache successful result for 24 hours (86400 seconds)
-  await cache.set(cacheKey, { lat, lng, matchedAddress: matches[0].matchedAddress }, 86400);
+  await cache.set(cacheKey, { lat, lng, matchedAddress: matches[0].matchedAddress, state }, 86400);
 
-  return { lat, lng, matchedAddress: matches[0].matchedAddress };
+  return { lat, lng, matchedAddress: matches[0].matchedAddress, state };
 }
