@@ -258,7 +258,7 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 - [x] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase (completed 2026-03-22)
 - [x] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway (completed 2026-03-22)
 - [x] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals (completed 2026-03-23)
-- [ ] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions
+- [x] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions (completed 2026-03-23)
 - [ ] **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography
 
 ## Phase Details
@@ -340,5 +340,5 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 | 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
 | 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
 | 94. LA Data Import | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
-| 95. Entity Switcher | v2026.3.7 | 0/2 | Not started | - |
+| 95. Entity Switcher | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
