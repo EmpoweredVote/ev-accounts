@@ -37,15 +37,15 @@ Requirements for Treasury Tracker Expansion milestone. Each maps to roadmap phas
 - [ ] **UI-01**: User can switch between entities (cities/counties) via dropdown on treasury tracker
 - [ ] **UI-02**: Hero card, breadcrumbs, and dataset tabs update dynamically per selected entity
 - [ ] **UI-03**: Entity switcher groups entities by type (city vs county)
-- [ ] **UI-04**: dataLoader.ts cache key includes entity type to prevent cross-entity collisions
+- [x] **UI-04**: dataLoader.ts cache key includes entity type to prevent cross-entity collisions
 
 ### Visual Refresh
 
-- [ ] **VIS-01**: Tailwind CSS 4 installed in treasury-tracker with ev-ui tailwind-preset
-- [ ] **VIS-02**: ev-ui upgraded from ^0.1.6 to current version
-- [ ] **VIS-03**: UI chrome (header, cards, tabs, buttons) uses EV design tokens
+- [x] **VIS-01**: Tailwind CSS 4 installed in treasury-tracker with ev-ui tailwind-preset
+- [x] **VIS-02**: ev-ui upgraded from ^0.1.6 to current version
+- [x] **VIS-03**: UI chrome (header, cards, tabs, buttons) uses EV design tokens
 - [ ] **VIS-04**: Chart colors updated to use EV brand-aligned data visualization palette
-- [ ] **VIS-05**: Typography uses Manrope consistent with other EV apps
+- [x] **VIS-05**: Typography uses Manrope consistent with other EV apps
 
 ## Future Requirements
 
@@ -95,12 +95,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | UI-01 | Phase 95 | Pending |
 | UI-02 | Phase 95 | Pending |
 | UI-03 | Phase 95 | Pending |
-| UI-04 | Phase 95 | Pending |
-| VIS-01 | Phase 96 | Pending |
-| VIS-02 | Phase 96 | Pending |
-| VIS-03 | Phase 96 | Pending |
+| UI-04 | Phase 95 | Complete |
+| VIS-01 | Phase 96 | Complete |
+| VIS-02 | Phase 96 | Complete |
+| VIS-03 | Phase 96 | Complete |
 | VIS-04 | Phase 96 | Pending |
-| VIS-05 | Phase 96 | Pending |
+| VIS-05 | Phase 96 | Complete |
 
 **Coverage:**
 - v2026.3.7 requirements: 22 total
