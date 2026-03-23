@@ -10,8 +10,8 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 40 — Frontend Auth Updates — Complete
-Phase: 41 — VQ and Trivia Migration — Not started
-Last activity: 2026-03-23 — Completed Phase 40: all 4 frontends migrated to Bearer token auth; cutover runbook delivered and acted on
+Phase: 41 — VQ and Trivia Migration — In progress (Plan 01 complete, Plans 02–04 ready)
+Last activity: 2026-03-23 — Completed Phase 41 Plan 01 (pre-flight inspection + checkpoint); rewrote Plans 02–04 based on discoveries
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 40/43 phases shipped ██████████░
 
@@ -242,8 +242,26 @@ v1.6 constraints and decisions to carry forward:
 - **compass.user_id TEXT cast pattern** — `user_id::uuid = (select auth.uid())` confirmed in production
 - **Phase 35 unblocked** — all RLS prerequisites complete; Politician Deduplication can proceed
 
+## Phase 41 Plan 01 Key Findings
+
+- **Neither schema needs data migration** — validation_quests (225 rows) and trivia (6,837 rows) are already in ev-accounts (`kxsdzaojfaibhuzmclfq`)
+- **VQ uses Supabase JS client** — SUPABASE_URL confirmed as ev-accounts; no DATABASE_URL; no vq_service Postgres role needed; RLS is VQ's access control layer
+- **CTC uses DATABASE_URL → ev-accounts Postgres** — trivia_service Postgres role required; Plan 02 creates it
+- **Zero trivia politician FK gaps** — trivia stores candidates as JSONB in election_races.candidates; no FK to essentials.politicians; no reconciliation needed
+- **Zero triggers** in either schema; VQ has zero cross-schema FK constraints; trivia's only external FKs are public.users (already in ev-accounts)
+- **Leaderboard endpoint added to scope** — GET /api/trivia/leaderboard-profiles; returns pseudonym/total_xp/level per user_id; no avatars yet
+- **Plans 02–04 rewritten** at commit 6f51919 to reflect reality (no pg_dump, no vq_service, trivia_service + leaderboard instead)
+
+### Phase 41 RLS Category Assignments (22 tables)
+
+validation_quests owner-read (8): gem_reward_events, quest_assignments, user_notification_preferences, user_notifications, user_quest_assignments, user_veracity_profiles, veracity_event_logs, verification_submissions
+validation_quests public-read (3): consensus_records, quest_contests, verification_quests
+validation_quests service-role-only (2): admin_override_log, ai_agent_credentials
+trivia public-read (6): collection_questions, collection_topics, collections, election_races, questions, topics
+trivia owner-read (3): player_prefs, player_stats, question_flags
+
 ## Session Continuity
 
-Last session: 2026-03-22
-Stopped at: Phase 40 Plan 01 complete — LoginPage redirect-after-login + SignupPage redirect pass-through (0c2daec)
-Resume: Phase 40 Plan 02 — next plan in Frontend Auth Updates (CONS-14–17)
+Last session: 2026-03-23
+Stopped at: Phase 41 Plan 01 complete (6f51919) — checkpoint resolved, Plans 02–04 rewritten
+Resume: Phase 41 Plan 02 — trivia_service role + GET /api/trivia/leaderboard-profiles endpoint
