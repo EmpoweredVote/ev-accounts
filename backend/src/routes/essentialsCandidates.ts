@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { optionalAuth } from '../middleware/auth.js';
 import { getCandidatesByZip } from '../lib/candidateService.js';
+import { getRepresentativesByAddress } from '../lib/essentialsService.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -50,6 +51,40 @@ router.get('/:zip', optionalAuth, async (req: Request, res: Response): Promise<v
     res.status(200).json(candidates);
   } catch (err) {
     console.error('[GET /essentials/candidates/:zip] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/essentials/candidates/search
+// Auth: optional — works unauthenticated
+// Body: { query: string } — a full address string (not a ZIP code)
+// Geocodes the address via Census Geocoder, returns representatives for that location.
+// ZIP codes should use GET /:zip instead; this endpoint handles full address strings.
+// ---------------------------------------------------------------------------
+
+router.post('/search', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { query } = req.body as { query?: string };
+
+    if (!query || typeof query !== 'string' || !query.trim()) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'query is required' });
+      return;
+    }
+
+    const result = await getRepresentativesByAddress(query.trim());
+    res.status(200).json(result);
+  } catch (err: unknown) {
+    const code = (err as { code?: string }).code;
+    if (code === 'ADDRESS_NOT_FOUND' || code === 'PO_BOX_REJECTED') {
+      res.status(422).json({ code, message: (err as Error).message });
+      return;
+    }
+    if (code === 'GEOCODER_UNAVAILABLE') {
+      res.status(503).json({ code, message: (err as Error).message });
+      return;
+    }
+    console.error('[POST /essentials/candidates/search] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
