@@ -27,60 +27,60 @@ export interface TreasuryCity {
   id: string;
   name: string;
   state: string;
-  entityType: string | null;
+  entity_type: string | null;
   population: number | null;
-  heroImageUrl: string | null;
-  createdAt: string;
-  updatedAt: string;
+  hero_image_url: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface TreasuryBudget {
   id: string;
-  cityId: string;
-  fiscalYear: number;
-  datasetType: string;
-  totalBudget: number;
-  dataSource: string | null;
+  city_id: string;
+  fiscal_year: number;
+  dataset_type: string;
+  total_budget: number;
+  data_source: string | null;
   hierarchy: string[] | null;
-  generatedAt: string | null;
-  createdAt: string;
-  updatedAt: string;
+  generated_at: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface TreasuryBudgetCategory {
   id: string;
-  budgetId: string;
-  parentId: string | null;
+  budget_id: string;
+  parent_id: string | null;
   name: string;
   amount: number;
   percentage: number | null;
   color: string | null;
   description: string | null;
-  whyMatters: string | null;
-  historicalChange: number | null;
-  itemCount: number;
-  sortOrder: number;
+  why_matters: string | null;
+  historical_change: number | null;
+  item_count: number;
+  sort_order: number;
   depth: number;
-  linkKey: string | null;
+  link_key: string | null;
 }
 
 export interface TreasuryBudgetLineItem {
   id: string;
-  categoryId: string;
+  category_id: string;
   description: string;
-  approvedAmount: number | null;
-  actualAmount: number | null;
-  basePay: number | null;
+  approved_amount: number | null;
+  actual_amount: number | null;
+  base_pay: number | null;
   benefits: number | null;
   overtime: number | null;
   other: number | null;
-  startDate: string | null;
+  start_date: string | null;
   vendor: string | null;
   date: string | null;
-  paymentMethod: string | null;
-  invoiceNumber: string | null;
+  payment_method: string | null;
+  invoice_number: string | null;
   fund: string | null;
-  expenseCategory: string | null;
+  expense_category: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -156,66 +156,66 @@ function mapCity(row: CityRow): TreasuryCity {
     id: row.id,
     name: row.name,
     state: row.state,
-    entityType: row.entity_type,
+    entity_type: row.entity_type,
     population: row.population !== null ? Number(row.population) : null,
-    heroImageUrl: row.hero_image_url,
-    createdAt: row.created_at,
-    updatedAt: row.updated_at,
+    hero_image_url: row.hero_image_url,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
   };
 }
 
 function mapBudget(row: BudgetRow): TreasuryBudget {
   return {
     id: row.id,
-    cityId: row.city_id,
-    fiscalYear: Number(row.fiscal_year),
-    datasetType: row.dataset_type,
-    totalBudget: Number(row.total_budget),
-    dataSource: row.data_source,
+    city_id: row.city_id,
+    fiscal_year: Number(row.fiscal_year),
+    dataset_type: row.dataset_type,
+    total_budget: Number(row.total_budget),
+    data_source: row.data_source,
     hierarchy: row.hierarchy,
-    generatedAt: row.generated_at,
-    createdAt: row.created_at,
-    updatedAt: row.updated_at,
+    generated_at: row.generated_at,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
   };
 }
 
 function mapCategory(row: CategoryRow): TreasuryBudgetCategory {
   return {
     id: row.id,
-    budgetId: row.budget_id,
-    parentId: row.parent_id,
+    budget_id: row.budget_id,
+    parent_id: row.parent_id,
     name: row.name,
     amount: Number(row.amount),
     percentage: row.percentage !== null ? Number(row.percentage) : null,
     color: row.color,
     description: row.description,
-    whyMatters: row.why_matters,
-    historicalChange: row.historical_change !== null ? Number(row.historical_change) : null,
-    itemCount: row.item_count !== null ? Number(row.item_count) : 0,
-    sortOrder: row.sort_order !== null ? Number(row.sort_order) : 0,
+    why_matters: row.why_matters,
+    historical_change: row.historical_change !== null ? Number(row.historical_change) : null,
+    item_count: row.item_count !== null ? Number(row.item_count) : 0,
+    sort_order: row.sort_order !== null ? Number(row.sort_order) : 0,
     depth: row.depth !== null ? Number(row.depth) : 0,
-    linkKey: row.link_key,
+    link_key: row.link_key,
   };
 }
 
 function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
   return {
     id: row.id,
-    categoryId: row.category_id,
+    category_id: row.category_id,
     description: row.description,
-    approvedAmount: row.approved_amount !== null ? Number(row.approved_amount) : null,
-    actualAmount: row.actual_amount !== null ? Number(row.actual_amount) : null,
-    basePay: row.base_pay !== null ? Number(row.base_pay) : null,
+    approved_amount: row.approved_amount !== null ? Number(row.approved_amount) : null,
+    actual_amount: row.actual_amount !== null ? Number(row.actual_amount) : null,
+    base_pay: row.base_pay !== null ? Number(row.base_pay) : null,
     benefits: row.benefits !== null ? Number(row.benefits) : null,
     overtime: row.overtime !== null ? Number(row.overtime) : null,
     other: row.other !== null ? Number(row.other) : null,
-    startDate: row.start_date,
+    start_date: row.start_date,
     vendor: row.vendor,
     date: row.date,
-    paymentMethod: row.payment_method,
-    invoiceNumber: row.invoice_number,
+    payment_method: row.payment_method,
+    invoice_number: row.invoice_number,
     fund: row.fund,
-    expenseCategory: row.expense_category,
+    expense_category: row.expense_category,
   };
 }
 
