@@ -125,6 +125,31 @@ router.get('/budgets/:id', optionalAuth, async (req: Request, res: Response): Pr
   }
 });
 
+// GET /api/treasury/budgets/:id/categories
+router.get(
+  '/budgets/:id/categories',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+      return;
+    }
+
+    try {
+      const budget = await getBudgetById(id);
+      if (!budget) {
+        res.status(404).json({ code: 'NOT_FOUND', message: 'Budget not found' });
+        return;
+      }
+      res.status(200).json(budget.categories);
+    } catch (err) {
+      console.error('[GET /treasury/budgets/:id/categories] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
 // GET /api/treasury/budgets/:id/line-items
 router.get(
   '/budgets/:id/line-items',
