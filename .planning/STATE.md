@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
 status: Ready to execute
-stopped_at: Completed 96-01-PLAN.md
-last_updated: "2026-03-23T15:20:37.229Z"
+stopped_at: Completed 96-03-PLAN.md
+last_updated: "2026-03-23T15:30:02.521Z"
 progress:
   total_phases: 5
   completed_phases: 4
   total_plans: 11
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -24,7 +24,7 @@ See: .planning/PROJECT.md (updated 2026-03-22)
 ## Current Position
 
 Phase: 96 (visual-refresh) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 
 ## Performance Metrics
 
@@ -61,6 +61,7 @@ Plan: 2 of 3
 - [Phase 95-entity-switcher]: URL sync guarded with if (!selectedEntity) return to prevent overwriting incoming URL params before municipalities load (Pitfall 2 from RESEARCH.md)
 - [Phase 96]: Define EV tokens inline in @theme block (not CSS @import of tailwind-preset.js) — JS file cannot be CSS-imported in Tailwind v4
 - [Phase 96]: Use @tailwindcss/vite plugin (not @tailwindcss/postcss) for treasury-tracker matching CompassV2 pattern
+- [Phase 96]: getCategoryColor returns CSS var() strings; SVG fill natively resolves them, so no getComputedStyle needed for D3 chart fills
 
 ### Pending Todos
 
@@ -73,6 +74,6 @@ Plan: 2 of 3
 
 ## Session Continuity
 
-Last session: 2026-03-23T15:20:37.225Z
-Stopped at: Completed 96-01-PLAN.md
+Last session: 2026-03-23T15:30:02.518Z
+Stopped at: Completed 96-03-PLAN.md
 Resume file: None

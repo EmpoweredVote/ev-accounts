@@ -44,7 +44,7 @@ Requirements for Treasury Tracker Expansion milestone. Each maps to roadmap phas
 - [x] **VIS-01**: Tailwind CSS 4 installed in treasury-tracker with ev-ui tailwind-preset
 - [x] **VIS-02**: ev-ui upgraded from ^0.1.6 to current version
 - [x] **VIS-03**: UI chrome (header, cards, tabs, buttons) uses EV design tokens
-- [ ] **VIS-04**: Chart colors updated to use EV brand-aligned data visualization palette
+- [x] **VIS-04**: Chart colors updated to use EV brand-aligned data visualization palette
 - [x] **VIS-05**: Typography uses Manrope consistent with other EV apps
 
 ## Future Requirements
@@ -99,7 +99,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VIS-01 | Phase 96 | Complete |
 | VIS-02 | Phase 96 | Complete |
 | VIS-03 | Phase 96 | Complete |
-| VIS-04 | Phase 96 | Pending |
+| VIS-04 | Phase 96 | Complete |
 | VIS-05 | Phase 96 | Complete |
 
 **Coverage:**
