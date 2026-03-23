@@ -313,8 +313,10 @@ Plans:
   2. The hero card, breadcrumbs, and dataset tabs reflect the selected entity — no hardcoded Bloomington content remains
   3. Switching from a city entity to a county entity shows the county label correctly (not "Monroe County, City")
   4. Switching entities triggers a fresh data load with the correct cache key — no stale cross-entity data can appear from a prior selection
-**Plans**: TBD
-**UI hint**: yes
+**Plans**: 2 plans
+Plans:
+- [ ] 95-01-PLAN.md — Backend API extension (available_datasets, hero_image_url) + frontend types and cache key
+- [ ] 95-02-PLAN.md — EntitySwitcher component, App.tsx rewire, URL deep linking, spinner overlay
 
 ### Phase 96: Visual Refresh
 **Goal**: Treasury Tracker uses the EV design system throughout — Manrope typography, ev-ui design tokens for UI chrome, and a brand-aligned data visualization palette for chart segment fills
@@ -338,5 +340,5 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 | 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
 | 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
 | 94. LA Data Import | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
-| 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
+| 95. Entity Switcher | v2026.3.7 | 0/2 | Not started | - |
 | 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
