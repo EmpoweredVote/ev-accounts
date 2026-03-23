@@ -9,9 +9,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
+Phase: 40 — Frontend Auth Updates — CUTOVER LIVE (2026-03-23, all 4 apps deployed, monitoring window active)
 Phase: 41 — VQ and Trivia Migration — Complete
-Phase: 42 — Decommission and DNS Cutover — Plan 01 complete (awaiting human cutover)
-Last activity: 2026-03-23 — Phase 42 Plan 01 complete (72b0970) — runbook written, stale URLs cleaned
+Phase: 42 — Decommission and DNS Cutover — Plan 01 complete; waiting for Phase 40 zero-traffic signal
+Last activity: 2026-03-23 — Phase 40 cutover executed; all 4 frontends hitting ev-accounts-api.onrender.com; CORS verified for all origins
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 41/43 phases shipped ██████████░
 
@@ -71,7 +72,7 @@ v1.6 constraints and decisions to carry forward:
 ### Pending Todos
 
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
-- Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40) — needs to be a planned cutover, not a rolling change.
+- ~~Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40)~~ — DONE 2026-03-23
 
 ### Phase 40 Plan 01 Complete (40-01)
 
