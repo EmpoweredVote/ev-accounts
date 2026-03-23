@@ -299,9 +299,10 @@ Plans:
   1. LA County department-level expenditure data is imported from data.lacounty.gov and visible in the tracker
   2. LA City operating appropriations data is imported from data.lacity.org and visible in the tracker
   3. All California entity budget records have fiscal_year_start_month set to 7, distinguishing them from Indiana entities in the data model
-**Plans**: 1 plan
+**Plans**: 2 plans
 Plans:
-- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
+- [ ] 94-01-PLAN.md — Socrata + ArcGIS fetch strategies, tree builders, and unit tests
+- [ ] 94-02-PLAN.md — Config population, CLI wiring, ready to run imports
 
 ### Phase 95: Entity Switcher
 **Goal**: Users can navigate between all available jurisdictions in a single Treasury Tracker session — Bloomington, Ellettsville, Monroe County, LA County, and LA City — without reloading the page
@@ -312,9 +313,7 @@ Plans:
   2. The hero card, breadcrumbs, and dataset tabs reflect the selected entity — no hardcoded Bloomington content remains
   3. Switching from a city entity to a county entity shows the county label correctly (not "Monroe County, City")
   4. Switching entities triggers a fresh data load with the correct cache key — no stale cross-entity data can appear from a prior selection
-**Plans**: 1 plan
-Plans:
-- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
+**Plans**: TBD
 **UI hint**: yes
 
 ### Phase 96: Visual Refresh
@@ -326,9 +325,7 @@ Plans:
   2. All UI chrome — header, cards, tabs, buttons — uses EV design tokens (ev-coral, ev-muted-blue, ev-yellow)
   3. Chart segment fills use the dedicated data visualization palette; the 30-color perceptual distinctiveness is preserved — no EV brand token bleeds into chart fills
   4. Typography throughout is Manrope, matching CompassV2 and Essentials
-**Plans**: 1 plan
-Plans:
-- [ ] 93-01-PLAN.md — Config-driven Gateway fetch+parse pipeline for Ellettsville and Monroe County
+**Plans**: TBD
 **UI hint**: yes
 
 ## Progress
@@ -340,6 +337,6 @@ Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
 |-------|-----------|----------------|--------|-----------|
 | 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
 | 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
-| 94. LA Data Import | v2026.3.7 | 0/TBD | Not started | - |
+| 94. LA Data Import | v2026.3.7 | 0/2 | Not started | - |
 | 95. Entity Switcher | v2026.3.7 | 0/TBD | Not started | - |
 | 96. Visual Refresh | v2026.3.7 | 0/TBD | Not started | - |
