@@ -1,7 +1,7 @@
 # Validation Quests → Empowered Accounts Integration Guide
 
 **Audience:** Claude working in the `empowered-validation-quests` codebase
-**Accounts API:** `https://ev-accounts-api.onrender.com`
+**Accounts API:** `https://accounts.empowered.vote`
 **Last updated:** 2026-03-18 (v1.5 — profile.empowered.vote canonical, referral codes, corrected /me shape)
 
 ---
@@ -30,7 +30,7 @@ Empowered Accounts is the shared identity and permission layer for the platform.
 VQ receives a Supabase JWT when a user authenticates. Pass it as a Bearer token:
 
 ```typescript
-const response = await fetch('https://ev-accounts-api.onrender.com/api/account/me', {
+const response = await fetch('https://accounts.empowered.vote/api/account/me', {
   headers: {
     'Authorization': `Bearer ${supabaseAccessToken}`,
   },
@@ -44,7 +44,7 @@ The token comes from `supabase.auth.getSession()` → `session.access_token`. No
 Service-to-server calls use the `X-Service-Key` header — never the `Authorization` header, never expose the key to the client.
 
 ```typescript
-const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award', {
+const response = await fetch('https://accounts.empowered.vote/api/xp/award', {
   method: 'POST',
   headers: {
     'X-Service-Key': process.env.QUEST_SERVICE_KEY!,
@@ -619,7 +619,7 @@ After the user creates an account or signs in, they are redirected back to the U
 
 | Variable | Purpose | Value Source |
 |----------|---------|--------------|
-| `ACCOUNTS_URL` | Base URL for accounts API | `https://ev-accounts-api.onrender.com` |
+| `ACCOUNTS_URL` | Base URL for accounts API | `https://accounts.empowered.vote` |
 | `QUEST_SERVICE_KEY` | XP award auth (`X-Service-Key`) | Chris provides; must match accounts API env |
 | `VQ_SERVICE_KEY` | Stance confirmation auth (`X-Service-Key`, needs `red` gem permission) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
 

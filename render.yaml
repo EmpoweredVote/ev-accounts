@@ -6,7 +6,7 @@ services:
     staticPublishPath: ./app/dist
     envVars:
       - key: VITE_API_URL
-        value: https://ev-accounts-api.onrender.com
+        value: https://accounts.empowered.vote
       - key: NODE_VERSION
         value: "20"
     routes:

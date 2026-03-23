@@ -15,7 +15,7 @@
 
 **Requirements:**
 - Admin tool access at `https://accounts.empowered.vote/admin`
-- Production API URL: `https://ev-accounts-api.onrender.com`
+- Production API URL: `https://accounts.empowered.vote`
 - A test Connected user account (note their UUID — call it `<TEST_USER_UUID>` below)
 
 ---
@@ -35,7 +35,7 @@
 Replace `<TRIVIA_SERVICE_KEY>` with the actual key value and `<TEST_USER_UUID>` with your test user's UUID. Replace `<YYYY-MM-DD>` with today's date.
 
 ```bash
-curl -s -X POST https://ev-accounts-api.onrender.com/api/xp/award \
+curl -s -X POST https://accounts.empowered.vote/api/xp/award \
   -H "X-Service-Key: <TRIVIA_SERVICE_KEY>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -111,7 +111,7 @@ Note current values:
 Replace all placeholder values before running. `<YYYY-MM-DD>` = today's date.
 
 ```bash
-curl -s -X POST https://ev-accounts-api.onrender.com/api/vq/confirm-stance \
+curl -s -X POST https://accounts.empowered.vote/api/vq/confirm-stance \
   -H "X-Service-Key: <VQ_SERVICE_KEY>" \
   -H "Content-Type: application/json" \
   -d '{
@@ -164,7 +164,7 @@ Refresh the test user's detail page:
 Send the **exact same request** from Step 2 again — same `idempotency_key`, same payload.
 
 ```bash
-curl -s -X POST https://ev-accounts-api.onrender.com/api/vq/confirm-stance \
+curl -s -X POST https://accounts.empowered.vote/api/vq/confirm-stance \
   -H "X-Service-Key: <VQ_SERVICE_KEY>" \
   -H "Content-Type: application/json" \
   -d '{

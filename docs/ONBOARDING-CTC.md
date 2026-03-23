@@ -1,7 +1,7 @@
 # Civic Trivia Championships → Empowered Accounts Integration Guide
 
 **Audience:** Claude working in the `empowered-ctc` codebase
-**Accounts API:** `https://ev-accounts-api.onrender.com`
+**Accounts API:** `https://accounts.empowered.vote`
 **Last updated:** 2026-03-16 (v1.4 — corrected headers and field names)
 
 ---
@@ -28,7 +28,7 @@ What accounts owns that CTC uses:
 CTC receives a Supabase JWT when a user authenticates. Pass it as a Bearer token on any accounts API call:
 
 ```typescript
-const response = await fetch('https://ev-accounts-api.onrender.com/api/account/me', {
+const response = await fetch('https://accounts.empowered.vote/api/account/me', {
   headers: {
     'Authorization': `Bearer ${supabaseAccessToken}`,
   },
@@ -43,7 +43,7 @@ XP and gem awards are server-to-server calls using a shared secret. Do NOT expos
 
 ```typescript
 // XP award — use TRIVIA_SERVICE_KEY
-const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award', {
+const response = await fetch('https://accounts.empowered.vote/api/xp/award', {
   method: 'POST',
   headers: {
     'X-Service-Key': process.env.TRIVIA_SERVICE_KEY!,
@@ -53,7 +53,7 @@ const response = await fetch('https://ev-accounts-api.onrender.com/api/xp/award'
 });
 
 // Gem award — use a separate key from GEMS_SERVICE_KEYS
-const response = await fetch('https://ev-accounts-api.onrender.com/api/gems/award', {
+const response = await fetch('https://accounts.empowered.vote/api/gems/award', {
   method: 'POST',
   headers: {
     'X-Service-Key': process.env.TRIVIA_GEMS_KEY!,
@@ -346,8 +346,8 @@ Always include `idempotency_key` on award calls. 5xx responses are safe to retry
 
 | Variable | Purpose | Value Source |
 |----------|---------|--------------|
-| `EMPOWERED_ACCOUNTS_URL` | Base URL for user-scoped calls (`GET /api/account/me`, etc.) | `https://ev-accounts-api.onrender.com` |
-| `EMPOWERED_ACCOUNTS_API_URL` | Base URL for service-key award calls (XP, gems) | `https://ev-accounts-api.onrender.com` |
+| `EMPOWERED_ACCOUNTS_URL` | Base URL for user-scoped calls (`GET /api/account/me`, etc.) | `https://accounts.empowered.vote` |
+| `EMPOWERED_ACCOUNTS_API_URL` | Base URL for service-key award calls (XP, gems) | `https://accounts.empowered.vote` |
 | `TRIVIA_SERVICE_KEY` | XP award auth | Chris provides; must match accounts API env |
 | `TRIVIA_GEMS_KEY` | Gem award auth | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` |
 
