@@ -10,8 +10,8 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 ## Current Position
 
 Phase: 40 — Frontend Auth Updates — Complete
-Phase: 41 — VQ and Trivia Migration — In progress (Plan 01 complete, Plans 02–04 ready)
-Last activity: 2026-03-23 — Completed Phase 41 Plan 01 (pre-flight inspection + checkpoint); rewrote Plans 02–04 based on discoveries
+Phase: 41 — VQ and Trivia Migration — In progress (Plans 01–02 complete, Plans 03–04 ready)
+Last activity: 2026-03-23 — Completed Phase 41 Plan 02 (trivia_service role + leaderboard endpoint)
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 40/43 phases shipped ██████████░
 
@@ -242,6 +242,14 @@ v1.6 constraints and decisions to carry forward:
 - **compass.user_id TEXT cast pattern** — `user_id::uuid = (select auth.uid())` confirmed in production
 - **Phase 35 unblocked** — all RLS prerequisites complete; Politician Deduplication can proceed
 
+## Phase 41 Plan 02 Complete (41-02)
+
+- **trivia_service role created** — LOGIN, BYPASSRLS, search_path=trivia, full DML on trivia schema (existing + future via ALTER DEFAULT PRIVILEGES)
+- **Management API DDL pattern** — `supabase db query --linked` missing in CLI 2.75; pooler TCP times out from local Windows; use `curl POST https://api.supabase.com/v1/projects/{ref}/database/query` with access token from `.claude/settings.json`
+- **`level` is NOT a column on connected_profiles** — computed via `connect.calculate_level(p_total_xp)` RPC; leaderboard query uses `CROSS JOIN LATERAL` for single-query level computation across all requested users
+- **GET /api/trivia/leaderboard-profiles** — live at /api/trivia; requireServiceKey (TRIVIA_SERVICE_KEY); ?user_ids=uuid1,...; max 100; returns user_id/display_name/pseudonym/total_xp/level
+- **trivia_service connection string** — `postgresql://trivia_service:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres` — needed for Plan 04 (CTC Render DATABASE_URL update); store in password manager
+
 ## Phase 41 Plan 01 Key Findings
 
 - **Neither schema needs data migration** — validation_quests (225 rows) and trivia (6,837 rows) are already in ev-accounts (`kxsdzaojfaibhuzmclfq`)
@@ -263,5 +271,5 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 ## Session Continuity
 
 Last session: 2026-03-23
-Stopped at: Phase 41 Plan 01 complete (6f51919) — checkpoint resolved, Plans 02–04 rewritten
-Resume: Phase 41 Plan 02 — trivia_service role + GET /api/trivia/leaderboard-profiles endpoint
+Stopped at: Phase 41 Plan 02 complete (1fba3eb) — trivia_service role created, leaderboard endpoint live
+Resume: Phase 41 Plan 03 — RLS policies for validation_quests and trivia schemas
