@@ -39,7 +39,10 @@ key-decisions:
   - "Trivia candidates stored as JSONB in election_races.candidates — no FK to essentials.politicians"
   - "VQ is fully self-contained with no cross-schema FK constraints — no restore ordering constraint"
   - "All trivia external FKs reference public.users — this table exists in ev-accounts already"
-  - "Trivia connection model TBD — awaiting user confirmation (checkpoint:decision)"
+  - "Trivia connection model: trivia-direct-db — CTC has DATABASE_URL pointing to ev-accounts Postgres; trivia_service role required"
+  - "VQ connection model: Supabase JS client — SUPABASE_URL confirmed as kxsdzaojfaibhuzmclfq (ev-accounts); no DATABASE_URL; no vq_service role needed"
+  - "NEITHER schema needs data migration — both validation_quests and trivia are already in ev-accounts"
+  - "Leaderboard endpoint added to Phase 41 scope: GET /api/trivia/leaderboard-profiles — returns pseudonym/XP/level per user_id; no avatars (not yet stored)"
 
 patterns-established:
   - "Owner-read RLS pattern: tables with user_id column get policy allowing auth.uid() = user_id"
@@ -215,33 +218,27 @@ None — all queries executed cleanly.
 
 ---
 
-## CHECKPOINT: Decision Required
+## Checkpoint Decisions (Resolved)
 
-### Trivia Connection Model
+### Trivia Connection Model: `trivia-direct-db`
 
-**Background:**
-VQ's connection model is established — it uses `DATABASE_URL` pointing directly at the Supabase Postgres database (port 5432) for its own schema writes. After migration, VQ's `DATABASE_URL` will point at ev-accounts with a `vq_service` role.
+CTC (Civic Trivia Championship) has `DATABASE_URL` pointing at ev-accounts Postgres directly. Confirmed by user. Plan 02 creates `trivia_service` Postgres role. Plan 04 updates CTC's `DATABASE_URL` from (current, likely service_role) to `trivia_service` credentials.
 
-**The open question is Trivia's connection model:**
+### VQ Connection Model: Supabase JS Client (no DATABASE_URL)
 
-1. **Does Civic Trivia connect directly via `DATABASE_URL`?**
-   - If YES: Plan 02 must create a `trivia_service` Postgres role (same pattern as `vq_service`). Plan 04 must update Trivia's `DATABASE_URL` env var on Render.
-   - If NO (API-only): No `trivia_service` role needed. Trivia schema just needs RLS for ev-accounts service_role access. Plan 04 only needs to update an API key (if any).
+VQ has no `DATABASE_URL`. It uses `SUPABASE_URL` + `SUPABASE_ANON_KEY`. SUPABASE_URL confirmed by user as `https://kxsdzaojfaibhuzmclfq.supabase.co` — already pointing at ev-accounts. VQ is already connected to ev-accounts. No `vq_service` Postgres role needed. No data migration needed. Plan 04 verifies SUPABASE_ANON_KEY matches ev-accounts anon key.
 
-**Options:**
+### No Data Migration Needed
 
-| Option | Description | Plan Impact |
-|--------|-------------|-------------|
-| `trivia-direct-db` | Trivia connects via DATABASE_URL directly to Postgres | Plan 02 creates `trivia_service` role; Plan 04 updates DATABASE_URL on Render |
-| `trivia-api-only` | Trivia calls ev-accounts API only (no direct DB connection) | No trivia_service role; trivia schema RLS serves service_role only |
+Both schemas are already in ev-accounts:
+- `validation_quests`: 225 rows confirmed in `kxsdzaojfaibhuzmclfq`
+- `trivia`: 6,837 rows confirmed in `kxsdzaojfaibhuzmclfq`
 
-**My read:** Given that Trivia is a game app serving questions to players, it likely reads from the trivia schema directly (high-frequency reads benefit from direct DB connection vs HTTP round-trips). I'd guess `trivia-direct-db`, but this is architectural knowledge about Trivia's backend that only you have.
+Plans 02–04 revised accordingly. No pg_dump/restore. No vq_service role.
 
-### Resume Signal
+### Leaderboard Endpoint Added to Scope
 
-Tell me:
-1. Does Civic Trivia connect directly via DATABASE_URL? (yes = trivia-direct-db, no = trivia-api-only)
-2. Note: trivia politician FK reconciliation is NOT needed — the schema uses JSONB for candidate data, not politician UUIDs.
+CTC needs pseudonym, XP, level per player for its leaderboard. No avatars stored yet (colored circle placeholder). Plan 02 builds `GET /api/trivia/leaderboard-profiles` in ev-accounts Express, gated by `TRIVIA_SERVICE_KEY`. CTC calls this endpoint with player `user_id` list; ev-accounts JOINs `public.users` + `connect.connected_profiles`.
 
 ---
 *Phase: 41-vq-and-trivia-migration*
