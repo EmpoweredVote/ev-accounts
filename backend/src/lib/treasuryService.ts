@@ -27,7 +27,9 @@ export interface TreasuryCity {
   id: string;
   name: string;
   state: string;
+  entityType: string | null;
   population: number | null;
+  heroImageUrl: string | null;
   createdAt: string;
   updatedAt: string;
 }
@@ -89,7 +91,9 @@ interface CityRow {
   id: string;
   name: string;
   state: string;
+  entity_type: string | null;
   population: string | null; // bigint returned as string by pg driver
+  hero_image_url: string | null;
   created_at: string;
   updated_at: string;
 }
@@ -152,7 +156,9 @@ function mapCity(row: CityRow): TreasuryCity {
     id: row.id,
     name: row.name,
     state: row.state,
+    entityType: row.entity_type,
     population: row.population !== null ? Number(row.population) : null,
+    heroImageUrl: row.hero_image_url,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -222,8 +228,8 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
  */
 export async function getCities(): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT id, name, state, population, created_at, updated_at
-     FROM treasury.cities
+    `SELECT id, name, state, entity_type, population, hero_image_url, created_at, updated_at
+     FROM treasury.municipalities
      ORDER BY name`
   );
   return rows.map(mapCity);
@@ -234,8 +240,8 @@ export async function getCities(): Promise<TreasuryCity[]> {
  */
 export async function getCityById(id: string): Promise<TreasuryCity | null> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT id, name, state, population, created_at, updated_at
-     FROM treasury.cities
+    `SELECT id, name, state, entity_type, population, hero_image_url, created_at, updated_at
+     FROM treasury.municipalities
      WHERE id = $1`,
     [id]
   );
@@ -338,7 +344,7 @@ export async function createCity(data: {
   population?: number | null;
 }): Promise<TreasuryCity> {
   const { rows } = await pool.query<CityRow>(
-    `INSERT INTO treasury.cities (name, state, population)
+    `INSERT INTO treasury.municipalities (name, state, population)
      VALUES ($1, $2, $3)
      RETURNING id, name, state, population, created_at, updated_at`,
     [data.name, data.state, data.population ?? null]
