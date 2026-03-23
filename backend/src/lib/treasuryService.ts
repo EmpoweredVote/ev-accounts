@@ -23,6 +23,11 @@ import { pool } from './db.js';
 // Types
 // ---------------------------------------------------------------------------
 
+export interface TreasuryDataset {
+  fiscal_year: number;
+  dataset_type: string;
+}
+
 export interface TreasuryCity {
   id: string;
   name: string;
@@ -32,6 +37,7 @@ export interface TreasuryCity {
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
+  available_datasets: TreasuryDataset[];
 }
 
 export interface TreasuryBudget {
@@ -96,6 +102,8 @@ interface CityRow {
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
+  // Joined from budgets — aggregated as JSON array
+  available_datasets: Array<{ fiscal_year: string; dataset_type: string }> | null;
 }
 
 interface BudgetRow {
@@ -161,6 +169,10 @@ function mapCity(row: CityRow): TreasuryCity {
     hero_image_url: row.hero_image_url,
     created_at: row.created_at,
     updated_at: row.updated_at,
+    available_datasets: (row.available_datasets ?? []).map((d) => ({
+      fiscal_year: Number(d.fiscal_year),
+      dataset_type: d.dataset_type,
+    })),
   };
 }
 
@@ -228,9 +240,19 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
  */
 export async function getCities(): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT id, name, state, entity_type, population, hero_image_url, created_at, updated_at
-     FROM treasury.municipalities
-     ORDER BY name`
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+            m.created_at, m.updated_at,
+            COALESCE(
+              json_agg(
+                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type)
+                ORDER BY b.fiscal_year DESC
+              ) FILTER (WHERE b.id IS NOT NULL),
+              '[]'
+            ) AS available_datasets
+     FROM treasury.municipalities m
+     LEFT JOIN treasury.budgets b ON b.city_id = m.id
+     GROUP BY m.id
+     ORDER BY m.name`
   );
   return rows.map(mapCity);
 }
@@ -240,9 +262,19 @@ export async function getCities(): Promise<TreasuryCity[]> {
  */
 export async function getCityById(id: string): Promise<TreasuryCity | null> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT id, name, state, entity_type, population, hero_image_url, created_at, updated_at
-     FROM treasury.municipalities
-     WHERE id = $1`,
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+            m.created_at, m.updated_at,
+            COALESCE(
+              json_agg(
+                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type)
+                ORDER BY b.fiscal_year DESC
+              ) FILTER (WHERE b.id IS NOT NULL),
+              '[]'
+            ) AS available_datasets
+     FROM treasury.municipalities m
+     LEFT JOIN treasury.budgets b ON b.city_id = m.id
+     WHERE m.id = $1
+     GROUP BY m.id`,
     [id]
   );
   return rows.length > 0 ? mapCity(rows[0]) : null;
