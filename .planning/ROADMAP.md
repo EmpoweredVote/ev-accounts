@@ -302,6 +302,12 @@ Plans:
 
 **Requirements:** CONS-20, CONS-21, CONS-22
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 42-01-PLAN.md — URL cleanup and decommission runbook creation
+- [ ] 42-02-PLAN.md — Cutover execution (human-gated dashboard operations)
+
 **Success Criteria:**
 
 1. Go server request logs show zero traffic over a 24-hour monitoring window before cutover is initiated.
