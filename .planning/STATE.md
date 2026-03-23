@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2026.3.7
 milestone_name: Treasury Tracker Expansion
-status: Ready to plan
-stopped_at: Phase 95 context gathered
-last_updated: "2026-03-23T01:53:18.180Z"
+status: Ready to execute
+stopped_at: Paused at 95-02 Task 3 checkpoint (human-verify)
+last_updated: "2026-03-23T12:23:24.242Z"
 progress:
   total_phases: 5
-  completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  completed_phases: 4
+  total_plans: 8
+  completed_plans: 8
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-22)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 93 — indiana-data-import
+**Current focus:** Phase 95 — entity-switcher
 
 ## Current Position
 
-Phase: 95
-Plan: Not started
+Phase: 95 (entity-switcher) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -56,6 +56,9 @@ Plan: Not started
 - [Phase 94]: N-level categoryNode tree replaces hardcoded 2-level Gateway accumulator; shared by Socrata and ArcGIS builders for arbitrary hierarchy depth
 - [Phase 94]: FiscalYearStartMonth=7 for all California entities (LA City and LA County) per LA-03
 - [Phase 94]: fiscal_year_start_month=7 for LA City (Socrata) and LA County (ArcGIS); California fiscal year runs July-June
+- [Phase 95-entity-switcher]: Two-query approach for ListMunicipalities: fetch all municipalities, fetch all budget summaries separately, group in Go — avoids complex JOIN and handles empty datasets gracefully
+- [Phase 95-entity-switcher]: handleEntityChange computes effectiveYear before setSelectedEntity to prevent double-fetch (Pitfall 1 from RESEARCH.md)
+- [Phase 95-entity-switcher]: URL sync guarded with if (!selectedEntity) return to prevent overwriting incoming URL params before municipalities load (Pitfall 2 from RESEARCH.md)
 
 ### Pending Todos
 
@@ -68,6 +71,6 @@ Plan: Not started
 
 ## Session Continuity
 
-Last session: 2026-03-23T01:53:18.177Z
-Stopped at: Phase 95 context gathered
-Resume file: .planning/phases/95-entity-switcher/95-CONTEXT.md
+Last session: 2026-03-23T12:23:14.687Z
+Stopped at: Paused at 95-02 Task 3 checkpoint (human-verify)
+Resume file: None
