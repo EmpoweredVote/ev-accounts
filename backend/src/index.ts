@@ -26,6 +26,7 @@ import essentialsRouter from './routes/essentials.js';
 import treasuryRouter from './routes/treasury.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
+import triviaRouter from './routes/trivia.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 
 const app = express();
@@ -86,6 +87,7 @@ app.use('/api/essentials', essentialsRouter);
 app.use('/api/treasury', treasuryRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
+app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
 
 export { app }; // For testing
 
