@@ -301,7 +301,7 @@ Plans:
   3. All California entity budget records have fiscal_year_start_month set to 7, distinguishing them from Indiana entities in the data model
 **Plans**: 2 plans
 Plans:
-- [ ] 94-01-PLAN.md — Socrata + ArcGIS fetch strategies, tree builders, and unit tests
+- [x] 94-01-PLAN.md — Socrata + ArcGIS fetch strategies, tree builders, and unit tests
 - [ ] 94-02-PLAN.md — Config population, CLI wiring, ready to run imports
 
 ### Phase 95: Entity Switcher
