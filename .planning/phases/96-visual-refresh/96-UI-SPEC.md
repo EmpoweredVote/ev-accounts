@@ -120,7 +120,7 @@ Source: `ev-ui/src/tokens.js` `spacing` export. 4px base unit.
 
 Exceptions:
 - Touch targets (EntitySwitcher button, YearSelector): minimum 44px height
-- Table cells: 14px vertical padding (3.5 on Tailwind scale) for data density
+- Table cells: 12px vertical padding (py-3) for data density
 
 **Source:** CONTEXT.md D-06 — data density is a primary constraint; spacing should favor compactness over generous whitespace in table/list contexts.
 
@@ -130,19 +130,22 @@ Exceptions:
 
 Font: Manrope (Google Fonts). Source: `ev-ui/src/tokens.js` `textStyles` export.
 
+Declared sizes: **4** (12px, 14px, 16px, 30px). Declared weights: **2** (500 medium, 700 bold).
+
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
-| Body | 16px | 400 (regular) | 1.5 | CategoryList descriptions, card body text |
-| Label | 14px | 500 (medium) | 1.4 | Table cells, dataset tab labels, breadcrumb items, overline group labels |
-| Heading | 20px | 600 (semibold) | 1.35 | Section headings (CategoryDetail title, LineItemsTable header h3) |
+| Caption / Overline | 12px | 700 (bold) | 1.4 | Overline group labels in EntitySwitcher dropdown (UPPERCASE, tracking-wider); variance percentage in LineItemsTable (weight 500) |
+| Label | 14px | 500 (medium) | 1.4 | Table cells, dataset tab labels, breadcrumb items, monetary amounts in tables (tabular-nums) |
+| Body / Heading | 16px | 500 (medium) | 1.5 | Body text, section headings at weight 700 (CategoryDetail title, LineItemsTable header h3) |
 | Display | 30px | 700 (bold) | 1.25 | Hero budget total (entity hero card) |
 
-**Supplementary sizes (data density contexts only):**
-- 12px / weight 700 / 1.4 / letter-spacing 0.08em / UPPERCASE — overline group labels in EntitySwitcher dropdown
-- 12px / weight 400 / 1.4 — caption text, variance percentage in LineItemsTable
-- 15px / weight 500 / 1.5 / tabular-nums — monetary amounts in tables (preserves existing readability)
+**Notes:**
+- Section headings use the 16px Body/Heading size at weight 700 (bold). There is no separate 20px heading size.
+- Monetary amounts in tables use 14px Label at weight 500 with `tabular-nums` for columnar alignment.
+- Overline labels use 12px Caption at weight 700, UPPERCASE, `tracking-wider`.
+- Caption / variance text uses 12px at weight 500.
 
-**Source:** ev-ui tokens.js `textStyles` — restricted to 4 primary roles for design consistency. Data density exceptions noted per CONTEXT.md D-06.
+**Source:** ev-ui tokens.js `textStyles` — restricted to 4 declared sizes and 2 declared weights for design consistency. Data density constraints per CONTEXT.md D-06.
 
 ---
 
@@ -166,7 +169,7 @@ Source: `ev-ui/src/tokens.js` `colors`, `colorScales`, `semanticTokens`.
 - Link hover states
 
 **Secondary accent — ev-coral (#FF5740) reserved for:**
-- SearchBar clear button / search icon
+- SearchBar clear button (icon-only; must include `aria-label="Clear search"`) / search icon
 - Error/alert icons in error state banners
 - No other use in this phase
 
@@ -231,9 +234,9 @@ All 23 components in `treasury-tracker/src/components/` receive a full redesign 
 | Component | Source Section | Key Design Changes |
 |-----------|---------------|-------------------|
 | Header | `.header`, `.header-content` in App.css | White surface, `shadow-sm`, max-width 1400px container |
-| DatasetTabs (desktop) | `.dataset-tabs-*` | Active tab: ev-muted-blue underline + weight 600; inactive: gray-500 |
+| DatasetTabs (desktop) | `.dataset-tabs-*` | Active tab: ev-muted-blue underline + weight 700; inactive: gray-500 |
 | DatasetTabs (mobile dropdown) | `.dataset-dropdown-*` | Card-style, rounded-xl, EV border token |
-| SearchBar | App.css search styles | Ev-muted-blue focus ring, lucide Search icon in ev-muted-blue |
+| SearchBar | App.css search styles | Ev-muted-blue focus ring, lucide Search icon in ev-muted-blue; clear button is icon-only with `aria-label="Clear search"` |
 | YearSelector | App.css year styles | Pill-style buttons, active: ev-muted-blue bg + white text |
 | Breadcrumb | `Breadcrumb.tsx` | Gray-500 separators, ev-muted-blue for clickable crumbs |
 
@@ -253,25 +256,30 @@ The D3 CSS files ARE updated in this phase to swap old `--data-*` values to the 
 
 ### EntitySwitcher
 
-- Button: min-h-11 (44px), px-4, py-2, white bg, border border-ev-border-light, rounded-lg, font-manrope text-base font-normal
+- Button: min-h-11 (44px), px-4, py-2, white bg, border border-ev-border-light, rounded-lg, font-manrope text-base font-medium
 - Button hover: bg-gray-050
 - Button focus-visible: ring-2 ring-ev-muted-blue ring-offset-2
 - Dropdown: absolute, top-full + 4px gap, min-w-56, white bg, border border-ev-border-light, rounded-lg, shadow-lg, z-10, overflow-hidden
 - Group label: text-xs font-bold uppercase tracking-wider text-gray-500, px-4 py-2
-- Option: block w-full px-4 py-2 text-sm text-left, border-l-2 border-transparent, hover:bg-gray-050
+- Option: block w-full px-4 py-3 text-sm text-left, border-l-2 border-transparent, hover:bg-gray-050
 - Option selected: bg-gray-050, border-l-ev-muted-blue
 
 ### DatasetTabs (desktop)
 
 - Tab container: flex gap-0 border-b border-ev-border-light
 - Tab item: px-4 py-3, text-sm font-medium text-gray-500, border-b-2 border-transparent, transition-colors 200ms
-- Tab active: text-ev-muted-blue border-b-ev-muted-blue font-semibold
+- Tab active: text-ev-muted-blue border-b-ev-muted-blue font-bold
 - Tab hover: text-gray-700
+
+### SearchBar
+
+- Clear button: icon-only (lucide X icon), ev-coral color, `aria-label="Clear search"` required on the button element
 
 ### LineItemsTable
 
 - Table header icon: 40×40px, bg-ev-muted-blue, text-white, rounded-lg (replaces generic #3b82f6)
 - Total row amount: text-ev-muted-blue (replaces generic #3b82f6)
+- Table cell vertical padding: py-3 (12px) — data density default
 - Variance under-budget: text-ev-success (#22C55E → use #059669 for AA)
 - Variance over-budget: text-red-700 (#B91C1C — AA compliant on white)
 
@@ -306,6 +314,7 @@ This phase is a visual redesign — no new UI flows or data states are introduce
 | Loading state | "Loading budget data..." (spinner with sr-only text) |
 | Entity switcher placeholder | "Select jurisdiction" |
 | Year selector label | "{YYYY}–{YY}" (fiscal year formatted as "2024–25" for California Jul-Jun cycle; "2024" for Indiana Jan-Dec) |
+| SearchBar clear button | aria-label: "Clear search" |
 
 Destructive actions in this phase: none. This is a read-only visualization app with no destructive user flows.
 
@@ -335,6 +344,15 @@ No shadcn, no third-party component registries. ev-ui is a first-party package (
 | treasury-tracker/src/components/LineItemsTable.css | Data density patterns, variance color semantics |
 | essentials/src/index.css | Tailwind CSS 4 integration pattern |
 | User input | 0 (all decisions answered by upstream artifacts) |
+
+---
+
+## Revision Log
+
+| Date | Changes |
+|------|---------|
+| 2026-03-23 | Initial draft |
+| 2026-03-23 | Checker revision: (1) Typography collapsed to 4 sizes (12/14/16/30px) and 2 weights (500/700) — dropped 15px and 20px per Option A guidance. Section headings now use 16px/700. Monetary amounts now use 14px/500 tabular-nums. (2) Table cell vertical padding changed from 14px to 12px (py-3). (3) SearchBar clear button accessibility: added `aria-label="Clear search"` requirement to component spec and copywriting contract. |
 
 ---
 
