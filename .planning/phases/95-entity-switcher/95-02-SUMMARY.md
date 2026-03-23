@@ -55,8 +55,8 @@ completed: 2026-03-23
 
 - **Duration:** ~15 min
 - **Started:** 2026-03-23
-- **Completed:** 2026-03-23 (paused at checkpoint Task 3)
-- **Tasks:** 2 of 3 (Task 3 = human-verify checkpoint)
+- **Completed:** 2026-03-23
+- **Tasks:** 3 of 3 (Task 3 = human-verify checkpoint — approved)
 - **Files modified:** 5 (2 created, 1 deleted, 3 modified)
 
 ## Accomplishments
@@ -72,7 +72,8 @@ completed: 2026-03-23
 
 1. **Task 1: Create EntitySwitcher component with CSS** — `018a0f1` (feat)
 2. **Task 2: Rewire App.tsx** — `938a885` (feat)
-3. **Task 3: Visual verification** — PENDING (checkpoint)
+3. **Task 3: Visual verification** — approved by user
+4. **Post-verification fix** — `470de71` (fix: guard dataset totals loading)
 
 ## Files Created/Modified
 
@@ -124,6 +125,8 @@ completed: 2026-03-23
 ## Issues Encountered
 
 - Worktree was at commit `4ed8d00` (pre-Plan 01) while main was at `fa6ce50` (Plan 01 complete). Merged main into the worktree branch before starting — fast-forward merge, no conflicts.
+- Bloomington was not in the database — imported via `import-budgets --source=bloomington` CLI (15 budgets: operating/revenue/salaries x 2021-2025)
+- Revenue loading threw errors for entities without revenue data — fixed by guarding with available_datasets check (`470de71`)
 
 ## Known Stubs
 
@@ -131,9 +134,9 @@ None — EntitySwitcher renders live API data from listMunicipalities(). The her
 
 ## Next Phase Readiness
 
-- Awaiting human verification at Task 3 checkpoint
-- After verification: plan is complete and Phase 95 is done
+- Phase 95 complete — entity switching verified by user
 - TypeScript compiles clean
-- UI is ready to test with the Go backend running locally
+- Hero images pending (user will add later) — fallback image works
+- Population data is 0 for non-Bloomington entities (context card hidden when population=0)
 
 ## Self-Check: PASSED
