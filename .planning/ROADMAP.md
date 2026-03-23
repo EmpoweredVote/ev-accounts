@@ -280,10 +280,10 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 41-01-PLAN.md — Pre-flight inspection: enumerate tables, row counts, FK gap analysis, Trivia connection model
-- [ ] 41-02-PLAN.md — pg_dump/restore both schemas + vq_service role creation + FK reconciliation
-- [ ] 41-03-PLAN.md — RLS migration for validation_quests and trivia tables
-- [ ] 41-04-PLAN.md — Cutover: update VQ DATABASE_URL, restart, end-to-end smoke test
+- [x] 41-01-PLAN.md — Pre-flight inspection: enumerate tables, row counts, FK gap analysis, Trivia connection model
+- [x] 41-02-PLAN.md — trivia_service role creation + GET /api/trivia/leaderboard-profiles endpoint
+- [x] 41-03-PLAN.md — RLS migration for validation_quests and trivia tables
+- [x] 41-04-PLAN.md — Cutover: VQ anon key verified, CTC reconnected, smoke tests passed
 
 **Success Criteria:**
 
@@ -372,6 +372,6 @@ Plans:
 | 38. Express Ports Wave 3 — Essentials | v1.6 | 5/5 | Complete | 2026-03-20 |
 | 39. Compass Additions | v1.6 | 3/3 | Complete | 2026-03-20 |
 | 40. Frontend Auth Updates | v1.6 | 5/5 | Complete | 2026-03-23 |
-| 41. VQ and Trivia Migration | v1.6 | 0/4 | Planned | — |
+| 41. VQ and Trivia Migration | v1.6 | 4/4 | Complete | 2026-03-24 |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |

@@ -5,15 +5,15 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 41: VQ and Trivia Migration
+**Current focus:** v1.6 Platform Consolidation — Phase 42: Decommission and DNS Cutover
 
 ## Current Position
 
-Phase: 40 — Frontend Auth Updates — Complete
-Phase: 41 — VQ and Trivia Migration — In progress (Plans 01–03 complete, Plan 04 ready)
-Last activity: 2026-03-23 — Completed Phase 41 Plan 03 (RLS on all 22 vq + trivia tables)
+Phase: 41 — VQ and Trivia Migration — Complete
+Phase: 42 — Decommission and DNS Cutover — Not started
+Last activity: 2026-03-24 — Completed Phase 41 (all 4 plans, verified 4/4)
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 40/43 phases shipped ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄] 41/43 phases shipped ██████████░
 
 ## Accumulated Context
 
@@ -249,6 +249,20 @@ v1.6 constraints and decisions to carry forward:
 - **`level` is NOT a column on connected_profiles** — computed via `connect.calculate_level(p_total_xp)` RPC; leaderboard query uses `CROSS JOIN LATERAL` for single-query level computation across all requested users
 - **GET /api/trivia/leaderboard-profiles** — live at /api/trivia; requireServiceKey (TRIVIA_SERVICE_KEY); ?user_ids=uuid1,...; max 100; returns user_id/display_name/pseudonym/total_xp/level
 - **trivia_service connection string** — `postgresql://trivia_service:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres` — needed for Plan 04 (CTC Render DATABASE_URL update); store in password manager
+
+## Phase 41 Complete — CONS-18 and CONS-19 Fulfilled
+
+- **Both schemas already in ev-accounts** — no data migration needed; validation_quests (225 rows, 13 tables) and trivia (6,837 rows, 9 tables) confirmed present
+- **VQ** — Supabase JS client; SUPABASE_URL + SUPABASE_ANON_KEY both confirmed as ev-accounts; RLS is VQ's access control layer
+- **CTC** — connected to ev-accounts via postgres superuser (pooler); trivia_service scoped role exists but Supavisor registration pending (see blocker below)
+- **RLS** — all 22 tables have rowsecurity=true; 5 missing/misconfigured policies corrected; admin_override_log + ai_agent_credentials are deny-all
+- **GET /api/trivia/leaderboard-profiles** — live on ev-accounts, gated by TRIVIA_SERVICE_KEY, smoke-tested 200 ✓
+- **trivia has zero politician FK columns** — candidates stored as JSONB in election_races.candidates; no reconciliation against essentials.politicians needed
+- **Supavisor credential store** — raw SQL CREATE ROLE is invisible to Supavisor; must create via Supabase dashboard WITH password set for pooler connections to work with custom roles
+
+### Open Blocker (non-critical)
+
+- **trivia_service Supavisor registration** — CTC using postgres superuser temporarily; to fix: Supabase Dashboard → Database → Roles → trivia_service → Reset Password → ***REMOVED-SECRET***; then update CTC DATABASE_URL to `postgresql://trivia_service.kxsdzaojfaibhuzmclfq:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres`
 
 ## Phase 41 Plan 01 Key Findings
 
