@@ -54,9 +54,16 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
     const includeCandidates = req.query.include_candidates === 'true';
+    const q = typeof req.query.q === 'string' ? req.query.q : undefined;
+    const state = typeof req.query.state === 'string' ? req.query.state : undefined;
+    const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
+    const limit = !isNaN(rawLimit) && rawLimit > 0 ? Math.min(5000, rawLimit) : undefined;
+    const rawOffset = typeof req.query.offset === 'string' ? parseInt(req.query.offset, 10) : NaN;
+    const offset = !isNaN(rawOffset) && rawOffset >= 0 ? rawOffset : undefined;
+
     const userId = (req as AuthenticatedRequest).userId;
     const data_level = userId ? 'connected' : 'inform';
-    const politicians = await getPoliticiansFlatList(includeCandidates);
+    const politicians = await getPoliticiansFlatList(includeCandidates, { q, limit, offset, state });
     res.status(200).json(politicians.map((p) => ({ ...p, data_level })));
   } catch (err) {
     console.error('[GET /essentials/politicians] error:', err);
@@ -145,8 +152,9 @@ router.get('/:id/bills', optionalAuth, async (req: Request, res: Response): Prom
       return;
     }
     const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
-    const limit = isNaN(rawLimit) ? 50 : Math.min(100, Math.max(1, rawLimit));
-    const data = await getBillsByPolitician(id, limit);
+    const limit = isNaN(rawLimit) ? 50 : Math.min(250, Math.max(1, rawLimit));
+    const includeAll = req.query.all === 'true';
+    const data = await getBillsByPolitician(id, limit, includeAll);
     res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/bills] error:', err);

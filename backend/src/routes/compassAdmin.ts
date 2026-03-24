@@ -53,7 +53,7 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 const CreateTopicSchema = z.object({
   title: z.string().min(1),
   short_title: z.string().optional(),
-  question_text: z.string().min(1),
+  question_text: z.string().optional().default(''), // Optional — Go backend didn't require it
   level: z.array(z.string()).optional(),
   is_live: z.boolean().optional(),
   stances: z.array(z.object({
@@ -61,6 +61,8 @@ const CreateTopicSchema = z.object({
     text: z.string().min(1),
   })).optional(),
   category_ids: z.array(z.string().uuid()).optional(),
+  // Legacy: CompassV2 sends categories: [{ id: "uuid" }] instead of category_ids
+  categories: z.array(z.object({ id: z.string().uuid() })).optional(),
 });
 
 const UpdateTopicSchema = z.object({
@@ -150,14 +152,17 @@ router.post('/topics/create', async (req, res): Promise<void> => {
   }
 
   try {
-    const { category_ids, level, ...topicData } = parsed.data;
+    const { category_ids, categories, level, ...topicData } = parsed.data;
+
+    // Normalize: legacy format sends categories: [{id}], new format sends category_ids: [uuid]
+    const resolvedCategoryIds = category_ids ?? categories?.map((c) => c.id) ?? [];
 
     const result = await adminCreateTopicWithStances(topicData);
 
     // Assign categories if provided
-    if (category_ids && category_ids.length > 0) {
+    if (resolvedCategoryIds.length > 0) {
       const topicId = ((result as Record<string, unknown>).topic as Record<string, unknown>).id as string;
-      await adminAssignTopicCategories(topicId, category_ids);
+      await adminAssignTopicCategories(topicId, resolvedCategoryIds);
     }
 
     await logAdminAction(actorId(req), 'compass:topic:create', null, {

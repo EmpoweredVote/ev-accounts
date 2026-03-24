@@ -257,10 +257,14 @@ export async function getCommitteesByPolitician(
  */
 export async function getBillsByPolitician(
   politicianId: string,
-  limit = 50
+  limit = 50,
+  includeIntroduced = false
 ): Promise<Bill[]> {
-  // Clamp limit to 1-100 range
-  const clampedLimit = Math.min(100, Math.max(1, limit));
+  // Clamp limit to 1-250 range (Go backend allows up to 250)
+  const clampedLimit = Math.min(250, Math.max(1, limit));
+
+  // By default, exclude "Introduced" status bills (matches Go backend behavior)
+  const statusFilter = includeIntroduced ? '' : `AND COALESCE(b.status_label, '') != 'Introduced'`;
 
   const queryText = `
     SELECT
@@ -281,12 +285,13 @@ export async function getBillsByPolitician(
       (b.sponsor_id = $1) AS is_sponsor
     FROM essentials.legislative_bills b
     LEFT JOIN essentials.legislative_sessions s ON s.id = b.session_id
-    WHERE b.sponsor_id = $1
+    WHERE (b.sponsor_id = $1
        OR EXISTS (
          SELECT 1
          FROM essentials.legislative_bill_cosponsors lbc
          WHERE lbc.bill_id = b.id AND lbc.politician_id = $1
-       )
+       ))
+    ${statusFilter}
     ORDER BY b.introduced_at DESC NULLS LAST
     LIMIT $2
   `;

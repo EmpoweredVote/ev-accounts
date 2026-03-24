@@ -287,9 +287,37 @@ async function batchFetchImages(
  * includeCandidates=true:  returns all active politicians
  */
 export async function getPoliticiansFlatList(
-  includeCandidates?: boolean
+  includeCandidates?: boolean,
+  options?: { q?: string; limit?: number; offset?: number; state?: string }
 ): Promise<PoliticianFlatRecord[]> {
   const incumbentFilter = includeCandidates ? '' : 'AND p.is_incumbent = true';
+
+  const params: unknown[] = [];
+  let searchFilter = '';
+  let stateFilter = '';
+  let limitClause = '';
+  let offsetClause = '';
+
+  if (options?.q) {
+    params.push(`%${options.q}%`);
+    const idx = params.length;
+    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx})`;
+  }
+
+  if (options?.state) {
+    params.push(options.state);
+    stateFilter = `AND o.representing_state = $${params.length}`;
+  }
+
+  if (options?.limit) {
+    params.push(options.limit);
+    limitClause = `LIMIT $${params.length}`;
+  }
+
+  if (options?.offset) {
+    params.push(options.offset);
+    offsetClause = `OFFSET $${params.length}`;
+  }
 
   const queryText = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
@@ -308,10 +336,14 @@ export async function getPoliticiansFlatList(
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     WHERE p.is_active = true
     ${incumbentFilter}
+    ${searchFilter}
+    ${stateFilter}
     ORDER BY p.full_name
+    ${limitClause}
+    ${offsetClause}
   `;
 
-  const { rows } = await pool.query(queryText);
+  const { rows } = await pool.query(queryText, params.length > 0 ? params : undefined);
 
   const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
     id: row.id as string,
