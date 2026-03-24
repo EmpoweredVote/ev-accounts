@@ -347,7 +347,7 @@ Plans:
 
 **Requirements:** SSO-01, SSO-02, SSO-03
 
-**Plans:** ~2 plans
+**Plans:** 2 plans
 
 Plans:
 - [ ] 44-01-PLAN.md — Login cookie issuance: set httpOnly `ev_session` on `.empowered.vote` at login; `POST /api/auth/logout` clears cookie + revokes Supabase session
@@ -501,11 +501,6 @@ Plans:
 | 41. VQ and Trivia Migration | v1.6 | 4/4 | Complete | 2026-03-24 |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
-| 44. Accounts API SSO Infrastructure | v1.7 | 0/2 | Pending | — |
-| 45. Profile Hub + CTC Silent SSO | v1.7 | 0/2 | Pending | — |
-| 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
-| 47. Validation Quests Silent SSO | v1.7 | 0/2 | Pending | — |
-| 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
 | 44. Accounts API SSO Infrastructure | v1.7 | 0/2 | Pending | — |
 | 45. Profile Hub + CTC Silent SSO | v1.7 | 0/2 | Pending | — |
 | 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
