@@ -25,10 +25,12 @@ import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import treasuryRouter from './routes/treasury.js';
+import campaignFinanceRouter from './routes/campaignFinance.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
+import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 
 const app = express();
 
@@ -87,6 +89,7 @@ app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
 app.use('/api/treasury', treasuryRouter);
+app.use('/api/campaign-finance', campaignFinanceRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
@@ -96,16 +99,21 @@ export { app }; // For testing
 const port = parseInt(env.PORT, 10);
 
 if (env.NODE_ENV !== 'test') {
-  const server = app.listen(port, () => {
-    console.info(`[server] listening on port ${port}`);
-    console.info(`[server] environment: ${env.NODE_ENV}`);
-  });
-  startCalibrationLapseCron();
+  void (async () => {
+    // Startup checks — server does not start if any check fails.
+    await campaignFinanceInit();
 
-  // Graceful shutdown — Render sends SIGTERM before replacing instances.
-  // Without this, the pg pool and cron job keep the event loop alive and
-  // Render marks deploys as "Timed Out" after the grace period.
-  process.once('SIGTERM', () => {
-    server.close(() => process.exit(0));
-  });
+    const server = app.listen(port, () => {
+      console.info(`[server] listening on port ${port}`);
+      console.info(`[server] environment: ${env.NODE_ENV}`);
+    });
+    startCalibrationLapseCron();
+
+    // Graceful shutdown — Render sends SIGTERM before replacing instances.
+    // Without this, the pg pool and cron job keep the event loop alive and
+    // Render marks deploys as "Timed Out" after the grace period.
+    process.once('SIGTERM', () => {
+      server.close(() => process.exit(0));
+    });
+  })();
 }
