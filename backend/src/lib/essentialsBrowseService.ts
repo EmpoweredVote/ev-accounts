@@ -149,12 +149,18 @@ export async function getPoliticiansByArea(
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
-           g.name AS government_name
+           g.name AS government_name,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE d.geo_id = ANY($1)
     AND p.is_active = true
     ORDER BY p.id
@@ -183,12 +189,18 @@ export async function getPoliticiansByArea(
              d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
-             g.name AS government_name
+             g.name AS government_name,
+             COALESCE(gvb.display_name, '') AS government_body_name,
+             COALESCE(gvb.website_url, '') AS government_body_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.politicians p ON o.politician_id = p.id
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
       LEFT JOIN essentials.governments g ON g.id = ch.government_id
+      LEFT JOIN essentials.government_bodies gvb
+        ON gvb.state = d.state
+        AND gvb.geo_id = d.geo_id
+        AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
       WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC')
       AND (d.state = $1 OR d.district_type = 'NATIONAL_EXEC')
       AND p.is_active = true
@@ -233,6 +245,8 @@ export async function getPoliticiansByArea(
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
+    government_body_name: row.government_body_name ?? '',
+    government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
     election_frequency: row.election_frequency ?? '',
     committees: null,

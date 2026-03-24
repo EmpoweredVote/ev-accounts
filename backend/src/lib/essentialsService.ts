@@ -77,6 +77,8 @@ export interface PoliticianFlatRecord {
   chamber_name: string;
   chamber_name_formal: string;
   government_name: string;
+  government_body_name: string;
+  government_body_url: string;
   is_elected: boolean;
   election_frequency: string;
   committees: null;
@@ -330,12 +332,18 @@ export async function getPoliticiansFlatList(
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
-           g.name AS government_name
+           g.name AS government_name,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE p.is_active = true
     ${incumbentFilter}
     ${searchFilter}
@@ -372,6 +380,8 @@ export async function getPoliticiansFlatList(
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
+    government_body_name: row.government_body_name ?? '',
+    government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
     election_frequency: row.election_frequency ?? '',
     committees: null,
@@ -425,13 +435,19 @@ export async function getRepresentativesByAddress(
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
-           g.name AS government_name
+           g.name AS government_name,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
     JOIN essentials.offices o ON o.district_id = d.id
     LEFT JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE public.ST_Covers(
       gb.geometry,
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
@@ -455,12 +471,18 @@ export async function getRepresentativesByAddress(
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
-           g.name AS government_name
+           g.name AS government_name,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND p.is_active = true
@@ -503,9 +525,9 @@ export async function getRepresentativesByAddress(
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
-    // is_elected derived: NOT appointed. governments table has no is_elected column.
+    government_body_name: row.government_body_name ?? '',
+    government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
-    // election_frequency is on chambers, not governments.
     election_frequency: row.election_frequency ?? '',
     committees: null,
     bio_text: row.bio_text ?? null,
