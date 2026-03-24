@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO (Plan 01 complete)
+**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO (Plans 01–02 complete)
 
 ## Current Position
 
 **v1.7 in progress (2026-03-24)**
 
 Phase: 45-profile-hub-ctc-silent-sso — In progress
-Plan: 01 of N complete
-Status: Plan 01 complete; Plan 02 (CTC silent SSO) next
-Last activity: 2026-03-24 — Phase 45-01 complete; Profile Hub silent SSO + SSO-aware logout shipped
+Plan: 02 of 3 complete
+Status: Plan 02 complete; Plan 03 (CompassV2 silent SSO) next
+Last activity: 2026-03-24 — Phase 45-02 complete; CTC silent SSO (AuthInitializer + Header logout with shared cookie clearing)
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -57,6 +57,16 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 45 Plan 02 Complete — CTC Silent SSO (45-02)
+
+- **ssoSessionCheck in accountsApi.ts** — 3000ms AbortController timeout, single 5xx retry, `credentials: 'include'`, returns `{ access_token, refresh_token }` or null
+- **SSO check skipped when ev_refresh_token present** — existing CTC sessions are never disrupted
+- **Fall-through to exchangeRefreshToken after SSO success** — writes refresh_token to localStorage then reuses full tier/admin resolution pipeline
+- **150ms spinner delay pattern** — `setLoading(false)` immediately, re-enable after 150ms if SSO check still pending (same pattern as Profile Hub)
+- **Logout clears ev_session cookie** — `POST /api/auth/logout` with `credentials: 'include'`; user stays on current page (navigate removed)
+- **"You've been signed out" toast** — 3s fixed bottom-center; Header wrapped in Fragment for correct DOM placement
+- **Phase 45-02 commits** — 6cf179f (ssoSessionCheck + AuthInitializer), 762d9bd (Header logout upgrade)
 
 ### Phase 45 Plan 01 Complete — Profile Hub Silent SSO (45-01)
 
@@ -354,5 +364,5 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 ## Session Continuity
 
 Last session: 2026-03-24
-Stopped at: Phase 45 Plan 01 complete (871d36c) — Profile Hub silent SSO + SSO-aware logout
-Resume: Phase 45 Plan 02 — CTC silent SSO (same pattern as Plan 01)
+Stopped at: Phase 45 Plan 02 complete (762d9bd) — CTC silent SSO + shared cookie logout
+Resume: Phase 45 Plan 03 — CompassV2 silent SSO
