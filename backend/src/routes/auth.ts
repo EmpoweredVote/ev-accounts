@@ -8,9 +8,21 @@ import { adminRpc, supabaseAdmin } from '../lib/supabase.js';
 import { insertAccessRequest } from '../lib/adminService.js';
 import { sendEmail } from '../lib/emailService.js';
 import { pool } from '../lib/db.js';
-import type { Request, Response } from 'express';
+import type { Request, Response, NextFunction } from 'express';
+import { env } from '../lib/env.js';
 
 const router = Router();
+
+/** Shared cookie options — used for both set and clear to ensure domain/path match */
+function evSessionCookieOptions() {
+  return {
+    httpOnly: true,
+    secure: env.NODE_ENV === 'production',
+    sameSite: 'lax' as const,
+    domain: env.COOKIE_DOMAIN ? env.COOKIE_DOMAIN : undefined,
+    path: '/',
+  };
+}
 
 /**
  * Rate limiter for auth endpoints.
@@ -311,6 +323,12 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
     return;
   }
 
+  // SSO: set shared session cookie with refresh token
+  res.cookie('ev_session', data.session.refresh_token, {
+    ...evSessionCookieOptions(),
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in ms
+  });
+
   res.status(200).json({
     access_token: data.session.access_token,
     refresh_token: data.session.refresh_token,
@@ -339,6 +357,12 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
  */
 router.post(
   '/logout',
+  // SSO: clear session cookie unconditionally BEFORE auth check.
+  // If JWT is expired, requireAuth returns 401 but cookie is already cleared.
+  (req: Request, res: Response, next: NextFunction) => {
+    res.clearCookie('ev_session', evSessionCookieOptions());
+    next();
+  },
   requireAuth,
   async (req: Request, res: Response): Promise<void> => {
     const { userId, accessToken, tokenExp } = req as AuthenticatedRequest;
