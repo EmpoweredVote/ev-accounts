@@ -370,7 +370,7 @@ Plans:
 
 **Requirements:** SSO-04, SSO-05, SSO-06
 
-**Plans:** ~2 plans
+**Plans:** 2 plans
 
 Plans:
 - [ ] 45-01-PLAN.md — Profile Hub (`app/src`): silent session check in AuthInitializer before rendering unauthenticated state; wire existing auth store to accept tokens from session exchange
