@@ -97,8 +97,8 @@ export interface IngestionRun {
   errors: number;
   duration_ms: number;
   notes: string;
-  source_etag: string;
-  zip_downloaded_at: string | null;
+  source_e_tag: string;
+  z_ip_downloaded_at: string | null;
 }
 
 export interface UnresolvedContribution {
@@ -800,8 +800,8 @@ interface IngestionRunRow {
   errors: string;
   duration_ms: string;
   notes: string;
-  source_etag: string;
-  zip_downloaded_at: string | null;
+  source_e_tag: string;
+  z_ip_downloaded_at: string | null;
 }
 
 // Input types for sources CRUD
@@ -1031,7 +1031,7 @@ export async function getIngestionRuns(
     query = `SELECT id, adapter_name, politician_source_id, election_cycle,
                     started_at, completed_at, status, records_fetched, records_inserted,
                     records_skipped, records_unresolved, errors, duration_ms,
-                    notes, source_etag, zip_downloaded_at
+                    notes, source_e_tag, z_ip_downloaded_at
              FROM transparent_motivations.ingestion_runs
              WHERE adapter_name = $1
              ORDER BY started_at DESC
@@ -1041,7 +1041,7 @@ export async function getIngestionRuns(
     query = `SELECT id, adapter_name, politician_source_id, election_cycle,
                     started_at, completed_at, status, records_fetched, records_inserted,
                     records_skipped, records_unresolved, errors, duration_ms,
-                    notes, source_etag, zip_downloaded_at
+                    notes, source_e_tag, z_ip_downloaded_at
              FROM transparent_motivations.ingestion_runs
              ORDER BY started_at DESC
              LIMIT $1`;
@@ -1065,8 +1065,8 @@ export async function getIngestionRuns(
     errors: Number(r.errors),
     duration_ms: Number(r.duration_ms),
     notes: r.notes,
-    source_etag: r.source_etag,
-    zip_downloaded_at: r.zip_downloaded_at,
+    source_e_tag: r.source_e_tag,
+    z_ip_downloaded_at: r.z_ip_downloaded_at,
   }));
 }
 
@@ -1107,7 +1107,7 @@ export async function getMostRecentIngestionRun(adapterName: string): Promise<In
     `SELECT id, adapter_name, politician_source_id, election_cycle,
             started_at, completed_at, status, records_fetched, records_inserted,
             records_skipped, records_unresolved, errors, duration_ms,
-            notes, source_etag, zip_downloaded_at
+            notes, source_e_tag, z_ip_downloaded_at
      FROM transparent_motivations.ingestion_runs
      WHERE adapter_name = $1
      ORDER BY started_at DESC
@@ -1132,8 +1132,8 @@ export async function getMostRecentIngestionRun(adapterName: string): Promise<In
     errors: Number(r.errors),
     duration_ms: Number(r.duration_ms),
     notes: r.notes,
-    source_etag: r.source_etag,
-    zip_downloaded_at: r.zip_downloaded_at,
+    source_e_tag: r.source_e_tag,
+    z_ip_downloaded_at: r.z_ip_downloaded_at,
   };
 }
 
@@ -1152,7 +1152,7 @@ export async function getIngestionRunAfter(
     `SELECT id, adapter_name, politician_source_id, election_cycle,
             started_at, completed_at, status, records_fetched, records_inserted,
             records_skipped, records_unresolved, errors, duration_ms,
-            notes, source_etag, zip_downloaded_at
+            notes, source_e_tag, z_ip_downloaded_at
      FROM transparent_motivations.ingestion_runs
      WHERE politician_source_id = $1
        AND election_cycle = $2
@@ -1179,8 +1179,8 @@ export async function getIngestionRunAfter(
     errors: Number(r.errors),
     duration_ms: Number(r.duration_ms),
     notes: r.notes,
-    source_etag: r.source_etag,
-    zip_downloaded_at: r.zip_downloaded_at,
+    source_e_tag: r.source_e_tag,
+    z_ip_downloaded_at: r.z_ip_downloaded_at,
   };
 }
 

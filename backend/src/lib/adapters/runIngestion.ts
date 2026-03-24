@@ -109,8 +109,8 @@ export async function runIngestion(
          records_unresolved= $7,
          errors            = $8,
          notes             = $9,
-         source_etag       = $10,
-         zip_downloaded_at = $11
+         source_e_tag       = $10,
+         z_ip_downloaded_at = $11
        WHERE id = $12`,
       [
         completedAt.toISOString(),
