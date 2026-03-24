@@ -393,7 +393,7 @@ Plans:
 
 **Requirements:** SSO-07, SSO-08, SSO-11, SSO-12
 
-**Plans:** ~2 plans
+**Plans:** 2 plans
 
 Plans:
 - [ ] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
