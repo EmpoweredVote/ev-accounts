@@ -32,7 +32,9 @@ import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
+import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
+import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 
 const app = express();
 
@@ -117,6 +119,8 @@ if (env.NODE_ENV !== 'test') {
       console.info(`[server] environment: ${env.NODE_ENV}`);
     });
     startCalibrationLapseCron();
+    startCampaignFinanceCron();
+    startSqsWorker();
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.
     // Without this, the pg pool and cron job keep the event loop alive and
