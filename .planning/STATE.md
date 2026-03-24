@@ -9,10 +9,16 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 ## Current Position
 
-Phase: 40 — Frontend Auth Updates — CUTOVER LIVE (2026-03-23, all 4 apps deployed, monitoring window active)
-Phase: 41 — VQ and Trivia Migration — Complete
-Phase: 42 — Decommission and DNS Cutover — Plan 01 complete; waiting for Phase 40 zero-traffic signal
-Last activity: 2026-03-23 — Post-cutover bug fixes (see session hotfixes below)
+**v1.7 milestone started 2026-03-24**
+
+Phase: Not started (v1.7 requirements and roadmap defined; Phase 44 is next)
+Plan: —
+Status: Ready to plan Phase 44
+Last activity: 2026-03-24 — Milestone v1.7 Cross-App SSO initialized
+
+**v1.6 open work (phases 42–43 still pending):**
+- Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
+- Phase 43 — Integration Documentation — blocked on Phase 42 completion
 
 ### Session Hotfixes (2026-03-23, post-cutover)
 

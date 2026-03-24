@@ -179,19 +179,24 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
 | Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
 
-## Current Milestone: v1.6 Platform Consolidation
+## Current Milestone: v1.7 Cross-App SSO
 
-**Goal:** Merge all Empowered Vote backend services (EV-Backend Go server, Validation Quests DB, Civic Trivia DB) into ev-accounts as the single database, single API server, and single auth system. Produce updated integration docs for Chris Andrews' team.
+**Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
 **Target features:**
-- Database migration: 52 tables from EV-Backend into ev-accounts (essentials, staging, treasury, meetings, validation_quests, trivia schemas) with RLS
-- Politician deduplication: unified `essentials.politicians` as single source of truth
-- Port all Go endpoints to Express (Treasury, Meetings, Staging, Essentials core, missing Compass endpoints)
-- Frontend auth updates: CompassV2, Essentials, Read & Rank switch to Bearer tokens
-- Retire EV-Backend Go server and DNS cutover
-- Updated integration doc for Chris Andrews' team
+- Accounts API: cookie session infrastructure (`ev_session` httpOnly cookie on login, `GET /api/auth/session` silent exchange endpoint, global logout cookie clearing)
+- Profile Hub, CTC, Essentials, CompassV2: silent session check on load; logout clears shared cookie
+- Validation Quests: silent session check on load via `supabase.auth.setSession()`; logout clears shared cookie
+- Privacy disclosure: document `ev_session` cookie as strictly necessary in privacy policy
 
-**Out of scope for v1.6:** Data import pipelines (Congress.gov, LegiScan, OpenStates) — not our responsibility. Geocoding stays Census Geocoder (Chris Andrews investigating Google Maps separately).
+**Out of scope for v1.7:** Treasury Tracker (fully public data portal, no auth concept — SSO not applicable). Deferred v1.6 items (ROLES-01, VR-F01, COMP-05, ESSENTIALS-PROV) move to v1.8.
 
 ---
-*Last updated: 2026-03-19 after v1.6 milestone started*
+## Previous Milestone: v1.6 Platform Consolidation (Phases 34–43, in progress)
+
+**Goal:** Merge all Empowered Vote backend services into ev-accounts as the single database, single API server, and single auth system.
+
+**Status:** Phases 34–41 complete. Phases 42 (Decommission & DNS Cutover) and 43 (Integration Docs) pending.
+
+---
+*Last updated: 2026-03-24 after v1.7 milestone started*

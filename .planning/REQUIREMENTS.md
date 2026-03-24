@@ -1,100 +1,87 @@
-# Requirements: Empowered Accounts v1.6
+# Requirements: Empowered Accounts v1.7
 
-**Defined:** 2026-03-19
+**Defined:** 2026-03-24
 **Core Value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 
-## v1.6 Requirements — Platform Consolidation
+## v1.7 Requirements — Cross-App SSO
 
-Merge all Empowered Vote backend services into ev-accounts as the single database, single Express API, and single auth system.
+Log in once at any Empowered Vote app; remain authenticated across all apps for the session duration. All apps respect the Inform-baseline / Connected-enhanced pattern — SSO only surfaces a Connected experience if a session already exists; unauthenticated users always reach the public experience.
 
-### Database Migration
+### Accounts API
 
-- [ ] **CONS-01**: `essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia` schemas created in ev-accounts Supabase project
-- [ ] **CONS-02**: All 52 EV-Backend tables imported with data verified (row counts match source)
-- [ ] **CONS-03**: RLS enabled on every migrated table (Go backend currently has none)
-- [ ] **CONS-04**: GRANT permissions set per schema; Supabase auth service role and anon role correctly scoped
+- [ ] **SSO-01**: Login sets an httpOnly `ev_session` cookie on `.empowered.vote` domain containing the Supabase refresh token (Secure, SameSite=Lax)
+- [ ] **SSO-02**: `GET /api/auth/session` — CORS-enabled for `*.empowered.vote`; reads `ev_session` cookie, exchanges refresh token for fresh access + refresh pair, returns tokens to caller; fails fast (no cookie = unauthenticated, not an error)
+- [ ] **SSO-03**: `POST /api/auth/logout` clears the `ev_session` cookie in addition to existing Supabase session revocation; signing out of any app signs out everywhere
 
-### Politician Deduplication
+### Profile Hub (app.empowered.vote)
 
-- [ ] **CONS-05**: `public.politician_id_bridge` mapping table created (essentials ID ↔ inform ID)
-- [ ] **CONS-06**: `inform.politician_answers` and `inform.politician_context` migrated to reference `essentials.politicians` IDs
-- [ ] **CONS-07**: `inform.politicians` dropped; `essentials.politicians` is single source of truth
+- [ ] **SSO-04**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
 
-### Express Endpoint Ports
+### CTC (Civic Trivia Championships)
 
-- [x] **CONS-08**: Treasury endpoints ported (~5 routes, read-only public data)
-- [x] **CONS-09**: Meetings endpoints ported (~8 routes, public read + admin write)
-- [ ] **CONS-10**: Staging endpoints ported (~15 routes, review workflow, role-gated)
-- [ ] **CONS-11**: Essentials core endpoints ported (~25 routes incl. PostGIS address→politician lookup using Census Geocoder)
-- [x] **CONS-12**: Missing Compass endpoints added (compare, verdicts, admin CRUD, batch politician answers)
-- [x] **CONS-13**: Compass `value` CHECK constraint updated 1–5 → 0.5–5.5
+- [ ] **SSO-05**: On load, if no `ev_refresh_token` in localStorage, silently calls `GET /api/auth/session` before rendering as unauthenticated
+- [ ] **SSO-06**: Logout calls `POST /api/auth/logout` to clear the shared cookie
 
-### Frontend Auth Updates
+### Essentials
 
-- [ ] **CONS-14**: CompassV2 — `credentials: "include"` replaced with `Authorization: Bearer`; API URL updated
-- [ ] **CONS-15**: Essentials app — Bearer token auth; API URL updated
-- [ ] **CONS-16**: Read & Rank — Bearer token auth; API URL updated
-- [ ] **CONS-17**: Treasury Tracker — API URL updated (public data, no auth change needed)
+- [ ] **SSO-07**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
+- [ ] **SSO-08**: Logout calls `POST /api/auth/logout` to clear shared cookie
 
-### VQ + Trivia Consolidation
+### Validation Quests
 
-- [ ] **CONS-18**: `validation_quests` schema imported from VQ Supabase; DATABASE_URL updated on Render
-- [ ] **CONS-19**: `trivia` schema imported; politician foreign keys updated to `essentials.politicians`
+- [ ] **SSO-09**: On load, if Supabase has no active session, silently calls `GET /api/auth/session` and initializes session via `supabase.auth.setSession()` with returned tokens
+- [ ] **SSO-10**: Logout calls `POST /api/auth/logout` to clear shared cookie in addition to `supabase.auth.signOut()`
 
-### Decommission & DNS
+### CompassV2
 
-- [ ] **CONS-20**: Zero traffic verified on `api.empowered.vote` (Go server)
-- [ ] **CONS-21**: EV-Backend scaled to zero; repo archived
-- [ ] **CONS-22**: `api.empowered.vote` DNS cutover to ev-accounts Express server; CORS + frontend env vars updated
+- [ ] **SSO-11**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
+- [ ] **SSO-12**: Logout calls `POST /api/auth/logout` to clear shared cookie
 
-### Integration Documentation
+### Compliance
 
-- [ ] **CONS-23**: Updated integration doc for Chris Andrews' team — all ev-accounts changes documented (new endpoints, auth model, unified politician IDs, value range fix, new schema inventory)
+- [ ] **SSO-13**: Privacy policy (or in-app disclosure on accounts.empowered.vote) documents the `ev_session` cookie on `.empowered.vote` as strictly necessary for authentication — no opt-in consent banner required under GDPR/CCPA
+
+## Future Requirements (v1.8)
+
+### Civic Identity & Roles (deferred from v1.6)
+
+- **ROLES-01**: Scoped roles system — feature × geography permission model (CTC Dev, Quest Dev, Essentials Dev, Compass Dev + jurisdiction_geoid)
+- **VR-F01**: VR admin dashboard — visualize Verification Rating distribution, holds, outliers
+- **COMP-05**: User-to-user compass compare API
+- **ESSENTIALS-PROV**: Essentials XP source provisioning
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Data import pipelines (Congress.gov, LegiScan, OpenStates) | Not ev-accounts' responsibility; data strategy uses VQ crowdsourcing + Claude-assisted manual builds |
-| Google Maps geocoding | Chris Andrews investigating separately; Census Geocoder stays for now |
-| Scoped roles system (ROLES-01) | Deferred to v1.7 — better built on unified platform |
-| VR admin dashboard (VR-F01) | Deferred to v1.7 |
-| User-to-user compass compare (COMP-05) | Deferred to v1.7 — benefits from unified politician IDs |
-| Essentials XP provisioning (ESSENTIALS-PROV) | Deferred to v1.7 (env var only, no blocking risk) |
+| Treasury Tracker SSO | Fully public data portal with no auth concept — SSO not applicable |
+| Cookie consent banner | `ev_session` is strictly necessary for authentication — exempt from GDPR/CCPA opt-in |
+| Single sign-out from Supabase dashboard session | Out-of-band auth management not in scope |
+| SSO token caching in Redis | Alpha scale doesn't warrant it; stateless cookie exchange is sufficient |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CONS-01 | Phase 34 | Complete |
-| CONS-02 | Phase 34 | Complete |
-| CONS-03 | Phase 34 | Complete |
-| CONS-04 | Phase 34 | Complete |
-| CONS-05 | Phase 35 | Complete |
-| CONS-06 | Phase 35 | Complete |
-| CONS-07 | Phase 35 | Complete |
-| CONS-08 | Phase 36 | Complete |
-| CONS-09 | Phase 36 | Complete |
-| CONS-10 | Phase 37 | Complete |
-| CONS-11 | Phase 38 | Complete |
-| CONS-12 | Phase 39 | Complete |
-| CONS-13 | Phase 39 | Complete |
-| CONS-14 | Phase 40 | Pending |
-| CONS-15 | Phase 40 | Pending |
-| CONS-16 | Phase 40 | Pending |
-| CONS-17 | Phase 40 | Pending |
-| CONS-18 | Phase 41 | Pending |
-| CONS-19 | Phase 41 | Pending |
-| CONS-20 | Phase 42 | Pending |
-| CONS-21 | Phase 42 | Pending |
-| CONS-22 | Phase 42 | Pending |
-| CONS-23 | Phase 43 | Pending |
+| SSO-01 | Phase 44 | Pending |
+| SSO-02 | Phase 44 | Pending |
+| SSO-03 | Phase 44 | Pending |
+| SSO-04 | Phase 45 | Pending |
+| SSO-05 | Phase 45 | Pending |
+| SSO-06 | Phase 45 | Pending |
+| SSO-07 | Phase 46 | Pending |
+| SSO-08 | Phase 46 | Pending |
+| SSO-09 | Phase 47 | Pending |
+| SSO-10 | Phase 47 | Pending |
+| SSO-11 | Phase 46 | Pending |
+| SSO-12 | Phase 46 | Pending |
+| SSO-13 | Phase 48 | Pending |
 
 **Coverage:**
-- v1.6 requirements: 23 total
-- Mapped to phases: 23
+- v1.7 requirements: 13 total
+- Mapped to phases: 13
 - Unmapped: 0 ✓
 
 ---
-*Requirements defined: 2026-03-19*
-*Last updated: 2026-03-19 after roadmap creation (phases 34–43 assigned)*
+*Requirements defined: 2026-03-24*
+*Last updated: 2026-03-24 after initial definition*

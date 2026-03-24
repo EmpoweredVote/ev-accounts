@@ -9,6 +9,7 @@
 - ✅ **v1.4 Profile Hub & Verification Engine** — Phases 27–30 (shipped 2026-03-17)
 - ✅ **v1.5 Partner Integration & Referrals** — Phases 31–33 (shipped 2026-03-19)
 - 🔄 **v1.6 Platform Consolidation** — Phases 34–43 (in progress)
+- 📋 **v1.7 Cross-App SSO** — Phases 44–48 (planned)
 
 ## Phases
 
@@ -334,6 +335,125 @@ Plans:
 
 ---
 
+### v1.7 Cross-App SSO (Phases 44–48)
+
+---
+
+#### Phase 44: Accounts API SSO Infrastructure
+
+**Goal:** The ev-accounts API issues and reads the shared `ev_session` cookie — the foundation all other phases depend on. A user who logs in receives the cookie; any app can silently exchange it for fresh tokens; logout clears it everywhere.
+
+**Dependencies:** None (all other v1.7 phases depend on this phase)
+
+**Requirements:** SSO-01, SSO-02, SSO-03
+
+**Plans:** ~2 plans
+
+Plans:
+- [ ] 44-01-PLAN.md — Login cookie issuance: set httpOnly `ev_session` on `.empowered.vote` at login; `POST /api/auth/logout` clears cookie + revokes Supabase session
+- [ ] 44-02-PLAN.md — `GET /api/auth/session` endpoint: CORS config for `*.empowered.vote`, cookie read, Supabase token exchange, 401 fast-fail on missing cookie
+
+**Success Criteria:**
+
+1. After `POST /api/auth/login`, the response includes `Set-Cookie: ev_session=...; Domain=.empowered.vote; HttpOnly; Secure; SameSite=Lax` with the Supabase refresh token as the cookie value.
+2. `GET /api/auth/session` with a valid `ev_session` cookie returns `{ access_token, refresh_token }` (HTTP 200); without the cookie it returns HTTP 401 with no error body.
+3. `POST /api/auth/logout` clears the `ev_session` cookie (Set-Cookie with Max-Age=0) and revokes the Supabase session — a subsequent `GET /api/auth/session` call returns 401.
+4. `GET /api/auth/session` responds with correct CORS headers (`Access-Control-Allow-Origin: <requesting *.empowered.vote origin>`, `Access-Control-Allow-Credentials: true`) for requests from all EV app origins.
+
+---
+
+#### Phase 45: Profile Hub + CTC Silent SSO
+
+**Goal:** Profile Hub and CTC automatically inherit an active session on load — a user already logged in at accounts.empowered.vote arrives at either app already authenticated without a re-login prompt. Logout at either app clears the shared cookie.
+
+**Dependencies:** Phase 44 (session endpoint must exist before frontends can call it)
+
+**Requirements:** SSO-04, SSO-05, SSO-06
+
+**Plans:** ~2 plans
+
+Plans:
+- [ ] 45-01-PLAN.md — Profile Hub (`app/src`): silent session check in AuthInitializer before rendering unauthenticated state; wire existing auth store to accept tokens from session exchange
+- [ ] 45-02-PLAN.md — CTC (`C:\Project Test\frontend`): silent session check if no `ev_refresh_token` in localStorage; logout calls `POST /api/auth/logout` to clear shared cookie
+
+**Success Criteria:**
+
+1. A user authenticated at `accounts.empowered.vote` who navigates to `app.empowered.vote` (Profile Hub) in the same browser is shown their authenticated profile without a login prompt.
+2. A user authenticated at `accounts.empowered.vote` who opens CTC in the same browser starts a game session as their authenticated user without re-entering credentials.
+3. Logging out from CTC results in the `ev_session` cookie being cleared; a subsequent navigation to any EV app shows the unauthenticated (Inform-baseline) state.
+4. If no shared session exists (cookie absent or expired), both apps render their unauthenticated state silently — no error message, no redirect loop.
+
+---
+
+#### Phase 46: Essentials + CompassV2 Silent SSO
+
+**Goal:** Essentials and CompassV2 automatically inherit an active session on load using the same silent-check pattern — both apps degrade gracefully to Inform-baseline when no session exists.
+
+**Dependencies:** Phase 44 (session endpoint must exist)
+
+**Requirements:** SSO-07, SSO-08, SSO-11, SSO-12
+
+**Plans:** ~2 plans
+
+Plans:
+- [ ] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
+- [ ] 46-02-PLAN.md — CompassV2 (`C:\EV-CompassV2`): `git pull` first; silent session check in AuthInitializer / `publicFetch` flow; logout calls `POST /api/auth/logout`
+
+**Success Criteria:**
+
+1. A user authenticated at any EV app who navigates to Essentials receives Connected-enhanced responses (jurisdiction-aware politician list) without re-login.
+2. A user authenticated at any EV app who opens CompassV2 loads their existing compass answers and calibration state without re-login.
+3. Logging out from Essentials or CompassV2 clears the `ev_session` cookie; a subsequent navigation to any EV app shows the unauthenticated state.
+4. Both apps degrade gracefully to full Inform-baseline functionality when no session exists — no error banner, no broken UI state.
+
+---
+
+#### Phase 47: Validation Quests Silent SSO
+
+**Goal:** Validation Quests automatically inherits an active session using Supabase's native session API — a user already logged in elsewhere arrives at VQ with an active Supabase session initialized, without re-login.
+
+**Dependencies:** Phase 44 (session endpoint must exist); VQ uses Supabase JS client directly, so the handoff mechanism is `supabase.auth.setSession()` rather than localStorage
+
+**Requirements:** SSO-09, SSO-10
+
+**Plans:** ~2 plans
+
+Plans:
+- [ ] 47-01-PLAN.md — VQ (`C:\Validation Quests`): on load, if `supabase.auth.getSession()` returns null, silently call `GET /api/auth/session` and initialize via `supabase.auth.setSession({ access_token, refresh_token })`
+- [ ] 47-02-PLAN.md — VQ logout: call `POST /api/auth/logout` in addition to `supabase.auth.signOut()` to clear shared cookie; verify no double-signout errors
+
+**Success Criteria:**
+
+1. A user authenticated at any EV app who opens VQ has an active Supabase session (Supabase JS client reports `session !== null`) without re-entering credentials.
+2. VQ's Supabase-native auth flows (RLS-gated queries, quest assignment reads) work correctly after SSO session initialization via `setSession()`.
+3. Logging out from VQ clears the `ev_session` cookie; a subsequent visit to VQ or any other EV app shows the unauthenticated state.
+4. If VQ calls `GET /api/auth/session` and receives a 401 (no cookie), VQ renders its unauthenticated state silently — no exception thrown, no error surfaced to the user.
+
+---
+
+#### Phase 48: Compliance + End-to-End Verification
+
+**Goal:** The `ev_session` cookie is disclosed in the privacy policy as strictly necessary for authentication, and SSO works correctly end-to-end across all five apps in a real browser session.
+
+**Dependencies:** Phases 44–47 (all apps must implement SSO before cross-app smoke test is meaningful)
+
+**Requirements:** SSO-13
+
+**Plans:** ~2 plans
+
+Plans:
+- [ ] 48-01-PLAN.md — Privacy disclosure: add `ev_session` cookie documentation to privacy policy / cookie disclosure on `accounts.empowered.vote`; classify as strictly necessary (no consent banner required)
+- [ ] 48-02-PLAN.md — Cross-app smoke test: manual E2E verification — login at accounts, confirm session inheritance at all five apps, confirm single-logout clears session everywhere
+
+**Success Criteria:**
+
+1. The privacy policy or cookie disclosure page on `accounts.empowered.vote` names the `ev_session` cookie, describes its purpose (session continuity across EV apps), its domain (`.empowered.vote`), and classifies it as strictly necessary — no opt-in banner displayed.
+2. A single login at `accounts.empowered.vote` results in authenticated state at Profile Hub, CTC, Essentials, CompassV2, and Validation Quests without any additional login prompts.
+3. A single logout from any one app results in unauthenticated state at all apps — the `ev_session` cookie is absent and `GET /api/auth/session` returns 401.
+4. All five apps render their full Inform-baseline experience when no session is present — no broken pages, no error states, no redirect loops.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -381,3 +501,13 @@ Plans:
 | 41. VQ and Trivia Migration | v1.6 | 4/4 | Complete | 2026-03-24 |
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
+| 44. Accounts API SSO Infrastructure | v1.7 | 0/2 | Pending | — |
+| 45. Profile Hub + CTC Silent SSO | v1.7 | 0/2 | Pending | — |
+| 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
+| 47. Validation Quests Silent SSO | v1.7 | 0/2 | Pending | — |
+| 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
+| 44. Accounts API SSO Infrastructure | v1.7 | 0/2 | Pending | — |
+| 45. Profile Hub + CTC Silent SSO | v1.7 | 0/2 | Pending | — |
+| 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
+| 47. Validation Quests Silent SSO | v1.7 | 0/2 | Pending | — |
+| 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
