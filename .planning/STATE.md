@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.6 Platform Consolidation — Phase 42: Decommission and DNS Cutover
+**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO
 
 ## Current Position
 
-**v1.7 milestone started 2026-03-24**
+**v1.7 in progress (2026-03-24)**
 
-Phase: 44-accounts-api-sso-infrastructure (plan 2 of 2 complete — PHASE COMPLETE)
-Plan: 44-02 complete
-Status: Phase complete
-Last activity: 2026-03-24 — Completed 44-02-PLAN.md (cookie read-side of SSO — GET /session)
+Phase: 44-accounts-api-sso-infrastructure — COMPLETE ✓
+Plan: —
+Status: Ready to plan Phase 45
+Last activity: 2026-03-24 — Phase 44 complete; SSO cookie infrastructure (write + read side) verified 4/4
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server

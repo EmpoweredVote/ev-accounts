@@ -9,9 +9,9 @@ Log in once at any Empowered Vote app; remain authenticated across all apps for 
 
 ### Accounts API
 
-- [ ] **SSO-01**: Login sets an httpOnly `ev_session` cookie on `.empowered.vote` domain containing the Supabase refresh token (Secure, SameSite=Lax)
-- [ ] **SSO-02**: `GET /api/auth/session` — CORS-enabled for `*.empowered.vote`; reads `ev_session` cookie, exchanges refresh token for fresh access + refresh pair, returns tokens to caller; fails fast (no cookie = unauthenticated, not an error)
-- [ ] **SSO-03**: `POST /api/auth/logout` clears the `ev_session` cookie in addition to existing Supabase session revocation; signing out of any app signs out everywhere
+- [x] **SSO-01**: Login sets an httpOnly `ev_session` cookie on `.empowered.vote` domain containing the Supabase refresh token (Secure, SameSite=Lax)
+- [x] **SSO-02**: `GET /api/auth/session` — CORS-enabled for `*.empowered.vote`; reads `ev_session` cookie, exchanges refresh token for fresh access + refresh pair, returns tokens to caller; fails fast (no cookie = unauthenticated, not an error)
+- [x] **SSO-03**: `POST /api/auth/logout` clears the `ev_session` cookie in addition to existing Supabase session revocation; signing out of any app signs out everywhere
 
 ### Profile Hub (app.empowered.vote)
 
@@ -63,9 +63,9 @@ Log in once at any Empowered Vote app; remain authenticated across all apps for 
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SSO-01 | Phase 44 | Pending |
-| SSO-02 | Phase 44 | Pending |
-| SSO-03 | Phase 44 | Pending |
+| SSO-01 | Phase 44 | Complete |
+| SSO-02 | Phase 44 | Complete |
+| SSO-03 | Phase 44 | Complete |
 | SSO-04 | Phase 45 | Pending |
 | SSO-05 | Phase 45 | Pending |
 | SSO-06 | Phase 45 | Pending |
