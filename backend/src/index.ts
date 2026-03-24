@@ -26,6 +26,8 @@ import essentialsRouter from './routes/essentials.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
+import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
+import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
@@ -90,6 +92,13 @@ app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
 app.use('/api/treasury', treasuryRouter);
 app.use('/api/campaign-finance', campaignFinanceRouter);
+// Dual-router pattern for campaign finance: public reads on campaignFinanceRouter,
+// admin CRUD + ingest triggers on campaignFinanceAdminRouter (both at /api/campaign-finance).
+app.use('/api/campaign-finance', campaignFinanceAdminRouter);
+// Batch ingest trigger: registered directly on app — path is /admin/ingest/:adapter
+// (no /api/campaign-finance prefix). Auth via X-Admin-Token (not JWT).
+// Used by SQS workers, EventBridge, curl, and manual one-off triggers.
+app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
