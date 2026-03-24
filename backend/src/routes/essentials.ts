@@ -10,7 +10,6 @@ import {
 } from '../lib/essentialsService.js';
 import { pool } from '../lib/db.js';
 import { GeocodingError } from '../lib/geocodingService.js';
-import { pool } from '../lib/db.js';
 
 /**
  * Essentials router — address-search and other top-level essentials routes.

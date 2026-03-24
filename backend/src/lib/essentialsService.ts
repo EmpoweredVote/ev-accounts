@@ -533,6 +533,24 @@ export interface PoliticianDetail {
   images: PoliticianImage[];
   degrees: PoliticianDegree[];
   experiences: PoliticianExperience[];
+  addresses: Array<{
+    id: string;
+    politician_id: string;
+    address_1: string;
+    address_2: string;
+    address_3: string;
+    state: string;
+    postal_code: string;
+    phone_1: string;
+    phone_2: string;
+  }>;
+  identifiers: Array<{
+    id: string;
+    politician_id: string;
+    identifier_type: string;
+    identifier_value: string;
+  }>;
+  notes: string[];
 }
 
 // ---------------------------------------------------------------------------
