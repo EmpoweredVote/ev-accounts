@@ -502,7 +502,7 @@ export async function getRepresentativesByAddress(
 
   // Statewide politicians — includes President/VP, Senators, Governor, Supreme Court
   const statewideQueryText = `
-    SELECT DISTINCT ON (p.id)
+    SELECT DISTINCT ON (COALESCE(p.id, o.id))
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
@@ -523,7 +523,7 @@ export async function getRepresentativesByAddress(
            COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     LEFT JOIN essentials.government_bodies gvb
@@ -532,12 +532,12 @@ export async function getRepresentativesByAddress(
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
-    AND p.is_active = true
+    AND (p.is_active = true OR o.is_vacant = true)
     -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
     -- county FIPS geo_ids. Those are matched via geofence intersection.
     -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
     AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
-    ORDER BY p.id
+    ORDER BY COALESCE(p.id, o.id)
   `;
 
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
