@@ -416,11 +416,11 @@ Plans:
 
 **Requirements:** SSO-09, SSO-10
 
-**Plans:** ~2 plans
+**Plans:** 2 plans
 
 Plans:
-- [ ] 47-01-PLAN.md — VQ (`C:\Validation Quests`): on load, if `supabase.auth.getSession()` returns null, silently call `GET /api/auth/session` and initialize via `supabase.auth.setSession({ access_token, refresh_token })`
-- [ ] 47-02-PLAN.md — VQ logout: call `POST /api/auth/logout` in addition to `supabase.auth.signOut()` to clear shared cookie; verify no double-signout errors
+- [ ] 47-01-PLAN.md — SSO session check: add isAuthChecking state, initSso() with GET /api/auth/session + setSession(), PrivateRoute gate
+- [ ] 47-02-PLAN.md — Logout coordination: upgrade signOut() to POST /api/auth/logout before supabase.auth.signOut()
 
 **Success Criteria:**
 
