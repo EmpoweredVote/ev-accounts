@@ -82,6 +82,7 @@ export interface PoliticianFlatRecord {
   bio_text: string | null;
   slug: string | null;
   is_incumbent: boolean;
+  images: Array<{ id: string; url: string; type: string; photo_license: string }>;
 }
 
 export interface AddressSearchResult {
@@ -232,6 +233,46 @@ export async function getPoliticiansGrouped(
 }
 
 // ---------------------------------------------------------------------------
+// batchFetchImages — shared by flat list and search results
+// ---------------------------------------------------------------------------
+
+/**
+ * Batch-fetch politician images and attach to records.
+ * Matches Go server behavior of including images[] on every politician in list results.
+ */
+async function batchFetchImages(
+  politicians: Array<{ id: string; images?: Array<{ id: string; url: string; type: string; photo_license: string }> }>
+): Promise<void> {
+  if (politicians.length === 0) return;
+
+  const ids = politicians.map((p) => p.id);
+  const { rows } = await pool.query(
+    `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
+     FROM essentials.politician_images
+     WHERE politician_id = ANY($1)`,
+    [ids]
+  );
+
+  // Group images by politician_id
+  const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string }>>();
+  for (const row of rows) {
+    const pid = row.politician_id as string;
+    if (!imageMap.has(pid)) imageMap.set(pid, []);
+    imageMap.get(pid)!.push({
+      id: row.id as string,
+      url: row.url ?? '',
+      type: row.type ?? '',
+      photo_license: row.photo_license ?? '',
+    });
+  }
+
+  // Attach to each politician
+  for (const p of politicians) {
+    p.images = imageMap.get(p.id) ?? [];
+  }
+}
+
+// ---------------------------------------------------------------------------
 // getPoliticiansFlatList
 // ---------------------------------------------------------------------------
 
@@ -303,7 +344,11 @@ export async function getPoliticiansFlatList(
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
+    images: [],
   }));
+
+  await batchFetchImages(politicians);
+  return politicians;
 }
 
 // ---------------------------------------------------------------------------
@@ -422,7 +467,10 @@ export async function getRepresentativesByAddress(
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
+    images: [],
   }));
+
+  await batchFetchImages(politicians);
 
   const firstRow = rows[0];
   const jurisdiction = {
