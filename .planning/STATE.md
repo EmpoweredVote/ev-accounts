@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO
+**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO (Plan 01 complete)
 
 ## Current Position
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 44-accounts-api-sso-infrastructure — COMPLETE ✓
-Plan: —
-Status: Ready to plan Phase 45
-Last activity: 2026-03-24 — Phase 44 complete; SSO cookie infrastructure (write + read side) verified 4/4
+Phase: 45-profile-hub-ctc-silent-sso — In progress
+Plan: 01 of N complete
+Status: Plan 01 complete; Plan 02 (CTC silent SSO) next
+Last activity: 2026-03-24 — Phase 45-01 complete; Profile Hub silent SSO + SSO-aware logout shipped
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -57,6 +57,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 45 Plan 01 Complete — Profile Hub Silent SSO (45-01)
+
+- **Raw fetch with credentials: 'include' for SSO check** — `apiFetch` prepends `/api`; using it for `/api/auth/session` would double-prefix to `/api/api/auth/session`; use raw `fetch` with full path
+- **500ms delay before clearAuth on logout** — AuthGuard redirects immediately on `isAuthenticated = false`; toast needs brief window to be visible before redirect
+- **accessToken in logout Bearer header** — enables Supabase session revocation via requireAuth middleware, not just cookie clearing
+- **150ms spinner delay pattern** — `setLoading(false)` immediately, re-enable after 150ms timer if SSO check still pending; fast checks never show spinner
+- **Always clear local state on logout catch** — network errors must not block user from signing out
+- **Phase 45-01 commits** — 115a965 (App.tsx SSO check), 871d36c (DashboardPage logout + toast)
 
 ### Phase 44 Complete — SSO Infrastructure (44-01 + 44-02)
 
@@ -345,5 +354,5 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 ## Session Continuity
 
 Last session: 2026-03-24
-Stopped at: Phase 44 Plan 02 complete (fac2d91) — GET /session SSO cookie-read side
-Resume: Phase 45 — CompassV2 SSO frontend integration (first of three frontend SSO phases)
+Stopped at: Phase 45 Plan 01 complete (871d36c) — Profile Hub silent SSO + SSO-aware logout
+Resume: Phase 45 Plan 02 — CTC silent SSO (same pattern as Plan 01)
