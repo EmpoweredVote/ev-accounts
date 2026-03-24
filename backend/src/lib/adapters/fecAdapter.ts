@@ -19,6 +19,11 @@ import { pool } from '../db.js';
 import type { SourceAdapter, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
+// Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
+// At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
+// Override via MAX_RECORDS_PER_POLITICIAN env var.
+const MAX_RECORDS_PER_POLITICIAN = parseInt(process.env.MAX_RECORDS_PER_POLITICIAN ?? '2500', 10);
+
 // ---------------------------------------------------------------------------
 // FEC API response types
 // ---------------------------------------------------------------------------
@@ -100,6 +105,15 @@ async function fetchAllPages(
     }
 
     allRecords.push(...page.results);
+
+    // Per-politician record cap — prevents timeout on high-volume candidates
+    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) {
+      console.warn(
+        `[fecAdapter] Record cap reached for ${candidateId}: ${allRecords.length} records fetched, ` +
+        `${totalExpected} expected. Capping at ${MAX_RECORDS_PER_POLITICIAN}.`
+      );
+      break;
+    }
 
     // Stop when no more results or no next cursor
     // FEC page count has known overcount bug — keyset pagination is authoritative
