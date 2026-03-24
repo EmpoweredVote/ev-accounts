@@ -129,11 +129,12 @@ function GemBadge({ count, label }: { count: number; label: string }) {
 }
 
 export default function DashboardPage() {
-  const { user, clearAuth } = useAuthStore();
+  const { user, clearAuth, accessToken } = useAuthStore();
   const [me, setMe] = useState<MeFull | null>(null);
   const [jurisdiction, setJurisdiction] = useState<Jurisdiction | null>(null);
   const [referral, setReferral] = useState<ReferralState | null>(null);
   const [copied, setCopied] = useState(false);
+  const [showSignedOutToast, setShowSignedOutToast] = useState(false);
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -160,6 +161,23 @@ export default function DashboardPage() {
       setTimeout(() => setCopied(false), 2000);
     }).catch(() => {});
   }, [referral?.code]);
+
+  const handleLogout = async () => {
+    const url = `${import.meta.env.VITE_API_URL || ''}/api/auth/logout`;
+    try {
+      await fetch(url, {
+        method: 'POST',
+        credentials: 'include',
+        headers: accessToken ? { Authorization: `Bearer ${accessToken}` } : {},
+      });
+    } catch {
+      // Ignore — always clear local state
+    }
+    setShowSignedOutToast(true);
+    setTimeout(() => {
+      clearAuth();
+    }, 500);
+  };
 
   const cp = me?.connected_profile ?? null;
   const xp = cp?.xp ?? null;
@@ -189,7 +207,7 @@ export default function DashboardPage() {
               </div>
             )}
             <button
-              onClick={clearAuth}
+              onClick={handleLogout}
               className="text-sm text-gray-400 hover:text-ev-red transition-colors"
             >
               Sign out
@@ -391,6 +409,12 @@ export default function DashboardPage() {
         </div>
 
       </main>
+
+      {showSignedOutToast && (
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-gray-900 text-white text-sm font-medium px-5 py-3 rounded-xl shadow-lg">
+          You've been signed out
+        </div>
+      )}
     </div>
   );
 }
