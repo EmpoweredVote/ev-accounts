@@ -249,10 +249,10 @@ router.post('/answers/batch', optionalAuth, async (req: Request, res: Response):
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/selected-topics
-// Auth: optional — unauthenticated returns 200 { topic_ids: [] }
-// Returns the user's saved topic IDs from connect.connected_profiles.
+// Auth: optional — unauthenticated returns 200 []
+// Returns flat array of topic IDs (Go-parity response shape).
 // Uses createUserClient — RLS enforces owner-only access to connected_profiles.
-// Returns 403 NOT_CONNECTED if the user has not completed the Connect flow.
+// Returns empty array if user has not completed the Connect flow (no 403).
 // ---------------------------------------------------------------------------
 
 router.get(
@@ -260,7 +260,7 @@ router.get(
   optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     const authReq = req as AuthenticatedRequest;
-    if (!authReq.userId) { res.status(200).json({ topic_ids: [] }); return; }
+    if (!authReq.userId) { res.status(200).json([]); return; }
 
     try {
       const db = createUserClient(authReq.accessToken);
@@ -277,15 +277,13 @@ router.get(
         return;
       }
 
+      // No connected profile — return empty array (Go backend returns [] for no selections)
       if (!data) {
-        res.status(403).json({
-          code: 'NOT_CONNECTED',
-          message: 'Complete the Connect flow to use selected topics',
-        });
+        res.status(200).json([]);
         return;
       }
 
-      res.status(200).json({ topic_ids: data.selected_topic_ids ?? [] });
+      res.status(200).json(data.selected_topic_ids ?? []);
     } catch (err) {
       console.error('[GET /compass/selected-topics] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -620,10 +618,10 @@ router.post('/answers', optionalAuth, async (req: Request, res: Response): Promi
 
 // ---------------------------------------------------------------------------
 // PUT /api/compass/selected-topics
-// Auth: optional — unauthenticated returns 200 { topic_ids: [] }
+// Auth: optional — unauthenticated returns 200 []
 // Saves the user's selected topic IDs after server-side validation.
 // Validates ALL submitted IDs exist and are live before storing.
-// Returns 403 NOT_CONNECTED if the user has no connected_profiles row.
+// Returns flat array (Go-parity response shape).
 // ---------------------------------------------------------------------------
 
 router.put(
@@ -631,7 +629,7 @@ router.put(
   optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
     const authReq = req as AuthenticatedRequest;
-    if (!authReq.userId) { res.status(200).json({ topic_ids: [] }); return; }
+    if (!authReq.userId) { res.status(200).json([]); return; }
 
     const parsed = putSelectedTopicsSchema.safeParse(req.body);
     if (!parsed.success) {
@@ -658,11 +656,12 @@ router.put(
 
       const connected = await saveSelectedTopics(authReq.accessToken, authReq.userId, topic_ids);
       if (!connected) {
-        res.status(403).json({ code: 'NOT_CONNECTED', message: 'Complete the Connect flow first' });
+        // Go backend returns empty array, not 403
+        res.status(200).json([]);
         return;
       }
 
-      res.status(200).json({ topic_ids });
+      res.status(200).json(topic_ids);
     } catch (err) {
       console.error('[PUT /compass/selected-topics] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });

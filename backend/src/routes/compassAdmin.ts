@@ -72,22 +72,55 @@ const UpdateTopicSchema = z.object({
   level: z.array(z.string()).optional(),
 });
 
-const UpdateCategoriesSchema = z.object({
+// New format: { topic_id, category_ids: [...] } (full replacement)
+const UpdateCategoriesNewSchema = z.object({
   topic_id: z.string().uuid(),
   category_ids: z.array(z.string().uuid()),
 });
 
+// Legacy format: { topic_id, add: [...], remove: [...] } (Go backend)
+const UpdateCategoriesLegacySchema = z.object({
+  topic_id: z.string().uuid(),
+  add: z.array(z.string().uuid()).optional().default([]),
+  remove: z.array(z.string().uuid()).optional().default([]),
+});
+
+// Single stance update
 const UpdateStanceSchema = z.object({
   id: z.string().uuid(),
   text: z.string().min(1),
 });
 
-const PoliticianAnswersSchema = z.object({
+// Batch stance update (Go backend format): { topic_id, updated, added, removed }
+const UpdateStanceBatchSchema = z.object({
+  topic_id: z.string().uuid(),
+  updated: z.array(z.object({
+    id: z.string(),
+    text: z.string(),
+    value: z.number().int(),
+  })).optional().default([]),
+  added: z.array(z.object({
+    text: z.string(),
+    value: z.number().int(),
+  })).optional().default([]),
+  removed: z.array(z.object({
+    id: z.string(),
+  })).optional().default([]),
+});
+
+// New format: { answers: [{ topic_id, value }] }
+const PoliticianAnswersNewSchema = z.object({
   answers: z.array(z.object({
     topic_id: z.string().uuid(),
     value: z.number().multipleOf(0.5).min(0.5).max(5.5),
   })),
 });
+
+// Legacy format: flat array [{ topic_id, value }] (Go backend)
+const PoliticianAnswersLegacySchema = z.array(z.object({
+  topic_id: z.string().uuid(),
+  value: z.number(),
+}));
 
 const PoliticianContextSchema = z.object({
   politician_id: z.string().uuid(),
@@ -253,33 +286,68 @@ router.delete('/topics/delete/:id', async (req, res): Promise<void> => {
  * Body: { topic_id: string, category_ids: string[] }
  */
 router.patch('/topics/categories/update', async (req, res): Promise<void> => {
-  const parsed = UpdateCategoriesSchema.safeParse(req.body);
-  if (!parsed.success) {
-    res.status(422).json({
-      code: 'VALIDATION_ERROR',
-      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
-    });
-    return;
-  }
+  // Try new format: { topic_id, category_ids } (full replacement)
+  const newParsed = UpdateCategoriesNewSchema.safeParse(req.body);
+  // Try legacy format: { topic_id, add, remove } (Go backend)
+  const legacyParsed = UpdateCategoriesLegacySchema.safeParse(req.body);
 
-  try {
-    await adminAssignTopicCategories(parsed.data.topic_id, parsed.data.category_ids);
-
-    await logAdminAction(actorId(req), 'compass:topic:categories:update', null, {
-      topic_id: parsed.data.topic_id,
-      category_ids: parsed.data.category_ids,
-    });
-
-    res.status(200).json({ ok: true });
-  } catch (err) {
-    const e = err as { code?: string };
-    if (e.code === 'NOT_FOUND') {
-      res.status(404).json({ code: 'NOT_FOUND', message: 'Topic not found' });
+  if (newParsed.success) {
+    // Full replacement mode
+    try {
+      await adminAssignTopicCategories(newParsed.data.topic_id, newParsed.data.category_ids);
+      await logAdminAction(actorId(req), 'compass:topic:categories:update', null, {
+        topic_id: newParsed.data.topic_id,
+        category_ids: newParsed.data.category_ids,
+      });
+      res.status(200).json({ ok: true });
+      return;
+    } catch (err) {
+      const e = err as { code?: string };
+      if (e.code === 'NOT_FOUND') {
+        res.status(404).json({ code: 'NOT_FOUND', message: 'Topic not found' });
+        return;
+      }
+      console.error('[PATCH /compass/topics/categories/update] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
       return;
     }
-    console.error('[PATCH /compass/topics/categories/update] error:', err);
-    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
+
+  if (legacyParsed.success) {
+    // Add/remove mode (Go backend format)
+    const { topic_id, add, remove } = legacyParsed.data;
+    try {
+      // Remove categories
+      for (const catId of remove) {
+        await pool.query(
+          `DELETE FROM inform.compass_topic_categories WHERE topic_id = $1 AND category_id = $2`,
+          [topic_id, catId]
+        );
+      }
+      // Add categories
+      for (const catId of add) {
+        await pool.query(
+          `INSERT INTO inform.compass_topic_categories (topic_id, category_id)
+           VALUES ($1, $2) ON CONFLICT DO NOTHING`,
+          [topic_id, catId]
+        );
+      }
+      await logAdminAction(actorId(req), 'compass:topic:categories:update', null, {
+        topic_id, added: add, removed: remove,
+      });
+      res.status(200).json({ ok: true });
+      return;
+    } catch (err) {
+      console.error('[PATCH /compass/topics/categories/update] legacy error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+  }
+
+  res.status(422).json({
+    code: 'VALIDATION_ERROR',
+    message: 'Expected { topic_id, category_ids } or { topic_id, add, remove }',
+  });
 });
 
 // ---------------------------------------------------------------------------
@@ -293,11 +361,52 @@ router.patch('/topics/categories/update', async (req, res): Promise<void> => {
  * Body: { id: string, text: string }
  */
 router.patch('/stances/update', async (req, res): Promise<void> => {
+  // Try batch format first: { topic_id, updated, added, removed }
+  const batchParsed = UpdateStanceBatchSchema.safeParse(req.body);
+  if (batchParsed.success) {
+    try {
+      const { topic_id, updated, added, removed } = batchParsed.data;
+
+      // Update existing stances
+      for (const s of updated) {
+        await adminUpdateStance(s.id, { text: s.text });
+      }
+
+      // Add new stances
+      for (const s of added) {
+        await pool.query(
+          `INSERT INTO inform.compass_stances (topic_id, value, text) VALUES ($1, $2, $3)`,
+          [topic_id, s.value, s.text]
+        );
+      }
+
+      // Remove stances
+      for (const s of removed) {
+        await pool.query(`DELETE FROM inform.compass_stances WHERE id = $1`, [s.id]);
+      }
+
+      await logAdminAction(actorId(req), 'compass:stance:batch-update', null, {
+        topic_id,
+        updated_count: updated.length,
+        added_count: added.length,
+        removed_count: removed.length,
+      });
+
+      res.status(200).json({ ok: true });
+      return;
+    } catch (err) {
+      console.error('[PATCH /compass/stances/update] batch error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+  }
+
+  // Fall back to single stance format: { id, text }
   const parsed = UpdateStanceSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(422).json({
       code: 'VALIDATION_ERROR',
-      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+      message: 'Expected { topic_id, updated, added, removed } or { id, text }',
     });
     return;
   }
@@ -384,11 +493,21 @@ router.put('/politicians/:id/answers', async (req, res): Promise<void> => {
     return;
   }
 
-  const parsed = PoliticianAnswersSchema.safeParse(req.body);
-  if (!parsed.success) {
+  // Try new format: { answers: [...] }
+  const newParsed = PoliticianAnswersNewSchema.safeParse(req.body);
+  // Try legacy format: flat array [{ topic_id, value }]
+  const legacyParsed = PoliticianAnswersLegacySchema.safeParse(req.body);
+
+  const answers = newParsed.success
+    ? newParsed.data.answers
+    : legacyParsed.success
+      ? legacyParsed.data
+      : null;
+
+  if (!answers) {
     res.status(422).json({
       code: 'VALIDATION_ERROR',
-      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+      message: 'Expected { answers: [...] } or flat array [{ topic_id, value }]',
     });
     return;
   }
@@ -396,17 +515,17 @@ router.put('/politicians/:id/answers', async (req, res): Promise<void> => {
   try {
     const { data, error } = await adminRpc('admin_update_politician_answers', {
       p_politician_id: id,
-      p_answers: JSON.stringify(parsed.data.answers),
+      p_answers: JSON.stringify(answers),
     });
 
     if (error) throw new Error(error.message);
 
     await logAdminAction(actorId(req), 'compass:politician:answers:replace', null, {
       politician_id: id,
-      answer_count: parsed.data.answers.length,
+      answer_count: answers.length,
     });
 
-    res.status(200).json({ replaced: parsed.data.answers.length, data });
+    res.status(200).json({ replaced: answers.length, data });
   } catch (err) {
     console.error('[PUT /compass/politicians/:id/answers] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });

@@ -201,21 +201,41 @@ export async function getCompassCategories() {
  * Note: essentials.politicians does not have office_title; full_name is a regular column.
  */
 export async function getCompassPoliticians() {
-  const { rows } = await pool.query<{
-    id: string;
-    first_name: string | null;
-    last_name: string | null;
-    preferred_name: string | null;
-    full_name: string | null;
-    photo_origin_url: string | null;
-    is_active: boolean;
-  }>(
-    `SELECT id, first_name, last_name, preferred_name, full_name, photo_origin_url, is_active
-     FROM essentials.politicians
-     WHERE is_active = true
-     ORDER BY last_name ASC, first_name ASC`
+  const { rows } = await pool.query(
+    `SELECT DISTINCT ON (p.id)
+            p.id, p.first_name, p.last_name, p.preferred_name, p.full_name,
+            COALESCE(p.photo_custom_url, p.photo_origin_url, pi.url, '') AS photo_origin_url,
+            p.is_active,
+            COALESCE(o.title, '') AS office_title,
+            COALESCE(o.representing_state, '') AS representing_state,
+            COALESCE(o.representing_city, '') AS representing_city,
+            COALESCE(d.label, '') AS district_label,
+            COALESCE(d.district_type, '') AS district_type
+     FROM essentials.politicians p
+     LEFT JOIN essentials.offices o ON o.politician_id = p.id
+     LEFT JOIN essentials.districts d ON d.id = o.district_id
+     LEFT JOIN LATERAL (
+       SELECT url FROM essentials.politician_images
+       WHERE politician_id = p.id AND type = 'default' LIMIT 1
+     ) pi ON true
+     WHERE p.is_active = true
+     ORDER BY p.id, o.id DESC`
   );
-  return rows;
+
+  return rows.map((r) => ({
+    id: r.id as string,
+    first_name: r.first_name ?? null,
+    last_name: r.last_name ?? null,
+    preferred_name: r.preferred_name ?? null,
+    full_name: r.full_name ?? null,
+    photo_origin_url: r.photo_origin_url ?? '',
+    is_active: r.is_active ?? true,
+    office_title: r.office_title ?? '',
+    representing_state: r.representing_state ?? '',
+    representing_city: r.representing_city ?? '',
+    district_label: r.district_label ?? '',
+    district_type: r.district_type ?? '',
+  }));
 }
 
 /**
