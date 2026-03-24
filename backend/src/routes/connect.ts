@@ -492,20 +492,6 @@ router.post('/compass-import', requireAuth, async (req: Request, res: Response):
 });
 
 // ---------------------------------------------------------------------------
-// Coverage check helper
-// Fast client-side pre-filter before PostGIS query.
-// Indiana and LA County bounding boxes (approximate).
-// ---------------------------------------------------------------------------
-
-function isInCoverage(lat: number, lng: number): boolean {
-  // Indiana
-  if (lat >= 37.77 && lat <= 41.76 && lng >= -88.10 && lng <= -84.78) return true;
-  // LA County, California
-  if (lat >= 33.70 && lat <= 34.82 && lng >= -118.95 && lng <= -117.65) return true;
-  return false;
-}
-
-// ---------------------------------------------------------------------------
 // POST /api/connect/set-location
 // ---------------------------------------------------------------------------
 
@@ -552,14 +538,6 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
     throw err;
   }
 
-  if (!isInCoverage(lat, lng)) {
-    res.status(422).json({
-      code: 'OUT_OF_COVERAGE',
-      message: "Your address is outside our current coverage area. We're expanding soon.",
-    });
-    return;
-  }
-
   // Check before upsert — determines if this is the user's first-ever location set.
   const hadPriorLocation = await getLocationConsent(userId);
 
@@ -581,9 +559,8 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
     }, 'connect');
 
     if (jurisdictionError) {
-      console.error('[connect/set-location] resolve_user_jurisdiction error:', jurisdictionError.message);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-      return;
+      // Non-fatal: address is outside covered districts — return nulls and continue.
+      console.warn('[connect/set-location] resolve_user_jurisdiction returned no match:', jurisdictionError.message);
     }
 
     const j = (jurisdictionData ?? {}) as Record<string, string | null>;
