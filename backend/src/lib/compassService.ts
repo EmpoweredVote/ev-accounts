@@ -251,6 +251,7 @@ export async function getPoliticianAnswers(politicianId: string) {
     .from('politician_answers')
     .select('topic_id,value')
     .eq('politician_id', politicianId)
+    .neq('value', 0)
     .order('topic_id', { ascending: true });
 
   if (error) throw error;
@@ -482,7 +483,7 @@ export async function getBatchPoliticianAnswers(
   const { rows } = await pool.query<{ topic_id: string; value: string }>(
     `SELECT topic_id, value::text
      FROM inform.politician_answers
-     WHERE politician_id = $1 AND topic_id = ANY($2::uuid[])`,
+     WHERE politician_id = $1 AND topic_id = ANY($2::uuid[]) AND value <> 0`,
     [politicianId, topicIds]
   );
   return rows.map(r => ({

@@ -321,7 +321,9 @@ export async function getPoliticiansFlatList(
 
   const queryText = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+           p.preferred_name, p.name_suffix, p.party,
+           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
@@ -410,37 +412,44 @@ export async function getRepresentativesByAddress(
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
   const districtQueryText = `
-    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+    SELECT DISTINCT ON (COALESCE(p.id, o.id))
+           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+           p.preferred_name, p.name_suffix, p.party,
+           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
-           o.is_appointed_position,
+           o.is_appointed_position, o.is_vacant, o.vacant_since,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name
     FROM essentials.geofence_boundaries gb
-    JOIN essentials.districts d ON d.geo_id = gb.geo_id
+    JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
     JOIN essentials.offices o ON o.district_id = d.id
-    JOIN essentials.politicians p ON o.politician_id = p.id
+    LEFT JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     WHERE public.ST_Covers(
       gb.geometry,
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
     )
-    AND p.is_active = true
+    AND (p.is_active = true OR o.is_vacant = true)
+    AND COALESCE(p.is_incumbent, true) = true
+    ORDER BY COALESCE(p.id, o.id)
   `;
 
-  // Statewide politicians (NATIONAL_UPPER = US Senators, STATE_EXEC = Governor etc.)
-  // have no geofence boundaries — match by state abbreviation from Census geocoder.
+  // Statewide politicians — includes President/VP, Senators, Governor, Supreme Court
   const statewideQueryText = `
-    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+    SELECT DISTINCT ON (p.id)
+           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+           p.preferred_name, p.name_suffix, p.party,
+           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
-           o.is_appointed_position,
+           o.is_appointed_position, o.is_vacant, o.vacant_since,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
@@ -451,9 +460,10 @@ export async function getRepresentativesByAddress(
     JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
-    WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC')
-    AND d.state = $1
+    WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL')
+    AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND p.is_active = true
+    ORDER BY p.id
   `;
 
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
@@ -676,7 +686,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
   const baseQuery = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.party_short_name,
-           p.photo_origin_url, p.web_form_url,
+           COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
            p.is_active, p.office_id, p.notes,

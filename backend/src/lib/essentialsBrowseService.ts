@@ -142,7 +142,7 @@ export async function getPoliticiansByArea(
   const politicianQuery = `
     SELECT DISTINCT ON (p.id)
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-           p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+           p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
@@ -176,7 +176,7 @@ export async function getPoliticiansByArea(
     const statewideQuery = `
       SELECT DISTINCT ON (p.id)
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
-             p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
+             p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
              p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.is_appointed_position,
