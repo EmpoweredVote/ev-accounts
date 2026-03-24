@@ -457,7 +457,21 @@ export async function getRepresentativesByAddress(
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.geofence_boundaries gb
-    JOIN essentials.districts d ON d.geo_id = gb.geo_id AND d.mtfcc = gb.mtfcc
+    JOIN essentials.districts d ON d.geo_id = gb.geo_id
+      AND (
+        -- MTFCC-to-district_type mapping prevents cross-matching (e.g., SLDU vs SLDL)
+        (gb.mtfcc = 'G5210' AND d.district_type = 'STATE_UPPER')
+        OR (gb.mtfcc = 'G5220' AND d.district_type = 'STATE_LOWER')
+        OR (gb.mtfcc = 'G5200' AND d.district_type = 'NATIONAL_LOWER')
+        OR (gb.mtfcc = 'G4020' AND d.district_type IN ('COUNTY', 'JUDICIAL'))
+        OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
+        OR (gb.mtfcc IN ('G4110', 'G4120') AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
+        OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')
+        OR (gb.mtfcc LIKE 'X%' AND d.district_type IN ('LOCAL', 'COUNTY'))
+        -- Fallback: if MTFCC not in known set, match any district type for this geo_id
+        OR (gb.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420')
+            AND gb.mtfcc NOT LIKE 'X%')
+      )
     JOIN essentials.offices o ON o.district_id = d.id
     LEFT JOIN essentials.politicians p ON o.politician_id = p.id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
