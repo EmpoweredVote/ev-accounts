@@ -1079,7 +1079,7 @@ export async function getConfirmedFecSources(): Promise<PoliticianSource[]> {
     `SELECT id, essentials_politician_id, source_system, external_id,
             research_status, notes, created_at, updated_at
      FROM transparent_motivations.politician_sources
-     WHERE source_system = 'fec'
+     WHERE source_system IN ('fec', 'fec_house', 'fec_senate')
        AND research_status = 'confirmed'
      ORDER BY created_at ASC`,
     []
