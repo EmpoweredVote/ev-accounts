@@ -85,6 +85,11 @@ export interface PoliticianFlatRecord {
   bio_text: string | null;
   slug: string | null;
   is_incumbent: boolean;
+  term_start: string;
+  term_end: string;
+  term_date_precision: string;
+  appointment_date: string;
+  office_description: string;
   images: Array<{ id: string; url: string; type: string; photo_license: string }>;
 }
 
@@ -327,6 +332,10 @@ export async function getPoliticiansFlatList(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           COALESCE(p.valid_from, '') AS term_start,
+           COALESCE(p.valid_to, '') AS term_end,
+           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
@@ -388,6 +397,11 @@ export async function getPoliticiansFlatList(
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
+    term_start: row.term_start ?? '',
+    term_end: row.term_end ?? '',
+    term_date_precision: row.term_date_precision ?? '',
+    appointment_date: row.appointment_date ?? '',
+    office_description: row.office_description ?? '',
     images: [],
   }));
 
@@ -429,6 +443,10 @@ export async function getRepresentativesByAddress(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           COALESCE(p.valid_from, '') AS term_start,
+           COALESCE(p.valid_to, '') AS term_end,
+           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
@@ -465,6 +483,10 @@ export async function getRepresentativesByAddress(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           COALESCE(p.valid_from, '') AS term_start,
+           COALESCE(p.valid_to, '') AS term_end,
+           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
@@ -533,6 +555,11 @@ export async function getRepresentativesByAddress(
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
+    term_start: row.term_start ?? '',
+    term_end: row.term_end ?? '',
+    term_date_precision: row.term_date_precision ?? '',
+    appointment_date: row.appointment_date ?? '',
+    office_description: row.office_description ?? '',
     images: [],
   }));
 
@@ -622,9 +649,15 @@ export interface PoliticianDetail {
   is_vacant: boolean;
   is_active: boolean;
   is_elected: boolean;
+  // Term dates
+  term_start: string;
+  term_end: string;
+  term_date_precision: string;
+  appointment_date: string;
   // Office details
   office_id: string | null;
   office_title: string;
+  office_description: string;
   representing_state: string;
   representing_city: string;
   office_seats: number | null;
@@ -714,18 +747,35 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
            p.is_active, p.office_id, p.notes,
+           COALESCE(p.valid_from, '') AS term_start,
+           COALESCE(p.valid_to, '') AS term_end,
+           COALESCE(p.term_date_precision, '') AS term_date_precision,
+           COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.seats AS office_seats,
+           COALESCE(NULLIF(o.description, ''), pd_specific.description, pd_generic.description, '') AS office_description,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc, d.state AS district_state,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
-           g.name AS government_name, g.id AS government_id
+           g.name AS government_name, g.id AS government_id,
+           COALESCE(gvb.display_name, '') AS government_body_name,
+           COALESCE(gvb.website_url, '') AS government_body_url
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.position_descriptions pd_specific
+      ON pd_specific.normalized_position_name = COALESCE(NULLIF(o.normalized_position_name, ''), o.title)
+      AND pd_specific.district_type = d.district_type
+    LEFT JOIN essentials.position_descriptions pd_generic
+      ON pd_generic.normalized_position_name = COALESCE(NULLIF(o.normalized_position_name, ''), o.title)
+      AND pd_generic.district_type = ''
+    LEFT JOIN essentials.government_bodies gvb
+      ON gvb.state = d.state
+      AND gvb.geo_id = d.geo_id
+      AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
     WHERE p.id = $1
   `;
 
@@ -837,8 +887,13 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     is_active: row.is_active ?? false,
     // is_elected derived: NOT appointed position. governments table has no is_elected column.
     is_elected: !row.is_appointed_position,
+    term_start: row.term_start ?? '',
+    term_end: row.term_end ?? '',
+    term_date_precision: row.term_date_precision ?? '',
+    appointment_date: row.appointment_date ?? '',
     office_id: row.office_id ?? null,
     office_title: row.office_title ?? '',
+    office_description: row.office_description ?? '',
     representing_state: row.representing_state ?? '',
     representing_city: row.representing_city ?? '',
     office_seats: row.office_seats != null ? Number(row.office_seats) : null,
