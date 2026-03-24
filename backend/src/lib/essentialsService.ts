@@ -81,6 +81,7 @@ export interface PoliticianFlatRecord {
   committees: null;
   bio_text: string | null;
   slug: string | null;
+  is_incumbent: boolean;
 }
 
 export interface AddressSearchResult {
@@ -301,6 +302,7 @@ export async function getPoliticiansFlatList(
     committees: null,
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
+    is_incumbent: row.is_incumbent ?? false,
   }));
 }
 
@@ -333,7 +335,7 @@ export async function getRepresentativesByAddress(
   const districtQueryText = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
-           p.urls, p.email_addresses, p.bio_text, p.slug,
+           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
            d.district_type, d.label AS district_label, d.geo_id AS district_id,
@@ -359,7 +361,7 @@ export async function getRepresentativesByAddress(
   const statewideQueryText = `
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.photo_origin_url, p.web_form_url,
-           p.urls, p.email_addresses, p.bio_text, p.slug,
+           p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
            d.district_type, d.label AS district_label, d.geo_id AS district_id,
@@ -419,6 +421,7 @@ export async function getRepresentativesByAddress(
     committees: null,
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
+    is_incumbent: row.is_incumbent ?? false,
   }));
 
   const firstRow = rows[0];
