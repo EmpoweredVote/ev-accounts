@@ -346,6 +346,51 @@ router.post('/login', authLimiter, async (req: Request, res: Response): Promise<
 });
 
 /**
+ * GET /api/auth/session
+ *
+ * SSO silent session check. Reads the ev_session httpOnly cookie,
+ * exchanges the refresh token for fresh Supabase tokens, rotates the
+ * cookie with the new refresh token, and returns the token pair.
+ *
+ * No rate limiter -- apps call this on every page load. The endpoint
+ * does one Supabase refreshSession call and returns quickly.
+ *
+ * Returns 200 with { access_token, refresh_token } on success.
+ * Returns 401 with no body if cookie is missing or token is invalid.
+ */
+router.get('/session', async (req: Request, res: Response): Promise<void> => {
+  const refreshToken = req.cookies?.ev_session;
+  if (!refreshToken) {
+    res.status(401).end();
+    return;
+  }
+
+  const { data, error } = await supabaseAdmin.auth.refreshSession({
+    refresh_token: refreshToken,
+  });
+
+  if (error || !data.session) {
+    // Cookie present but token invalid/expired/revoked -- clear the stale cookie
+    res.clearCookie('ev_session', evSessionCookieOptions());
+    res.status(401).end();
+    return;
+  }
+
+  // CRITICAL: Supabase rotates refresh tokens on each use. The old token
+  // is immediately invalidated. We MUST write the new refresh_token back
+  // into the cookie or the next /session call will 401.
+  res.cookie('ev_session', data.session.refresh_token, {
+    ...evSessionCookieOptions(),
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days in ms
+  });
+
+  res.status(200).json({
+    access_token: data.session.access_token,
+    refresh_token: data.session.refresh_token,
+  });
+});
+
+/**
  * POST /api/auth/logout
  *
  * Invalidates the session server-side using scope 'global', revoking all
