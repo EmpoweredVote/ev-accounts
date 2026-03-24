@@ -73,7 +73,8 @@ const batchPoliticianAnswersSchema = z.object({
   topic_ids: z.array(z.string().uuid()).min(1).max(100),
 });
 
-const postVerdictsSchema = z.object({
+// New format: { verdicts: [{ quote_id, supported, rank, session_size }] }
+const postVerdictsNewSchema = z.object({
   verdicts: z.array(
     z.object({
       quote_id: z.string().uuid(),
@@ -83,6 +84,14 @@ const postVerdictsSchema = z.object({
     })
   ).min(1).max(200),
 });
+
+// Legacy format (Go backend / Read & Rank): [{ quote_id, verdict: "agreed"|"disagreed" }]
+const postVerdictsLegacySchema = z.array(
+  z.object({
+    quote_id: z.string().uuid(),
+    verdict: z.enum(['agreed', 'disagreed']),
+  })
+).min(1).max(200);
 
 const VALID_ROLE_SCOPES = ['city_council', 'state_legislature', 'us_congress', 'president'] as const;
 
@@ -388,30 +397,55 @@ router.get('/verdicts', requireAuth, async (req: Request, res: Response): Promis
 router.post('/verdicts', requireAuth, async (req: Request, res: Response): Promise<void> => {
   const authReq = req as AuthenticatedRequest;
 
-  const parsed = postVerdictsSchema.safeParse(req.body);
-  if (!parsed.success) {
-    res.status(422).json({
-      code: 'VALIDATION_ERROR',
-      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
-    });
-    return;
-  }
-
-  try {
-    const { error } = await adminRpc('upsert_compass_verdicts', {
-      p_user_id: authReq.userId,
-      p_verdicts: JSON.stringify(parsed.data.verdicts),
-    });
-
-    if (error) {
-      throw new Error(error.message);
+  // Try new format first: { verdicts: [{ quote_id, supported, rank, session_size }] }
+  const newParsed = postVerdictsNewSchema.safeParse(req.body);
+  if (newParsed.success) {
+    try {
+      const { error } = await adminRpc('upsert_compass_verdicts', {
+        p_user_id: authReq.userId,
+        p_verdicts: JSON.stringify(newParsed.data.verdicts),
+      });
+      if (error) throw new Error(error.message);
+      res.status(200).json({ upserted: newParsed.data.verdicts.length });
+      return;
+    } catch (err) {
+      console.error('[POST /compass/verdicts] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
     }
-
-    res.status(200).json({ upserted: parsed.data.verdicts.length });
-  } catch (err) {
-    console.error('[POST /compass/verdicts] error:', err);
-    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
+
+  // Try legacy format: [{ quote_id, verdict: "agreed"|"disagreed" }]
+  const legacyParsed = postVerdictsLegacySchema.safeParse(req.body);
+  if (legacyParsed.success) {
+    // Convert legacy format to RPC format
+    const verdicts = legacyParsed.data.map((v) => ({
+      quote_id: v.quote_id,
+      supported: v.verdict === 'agreed',
+      rank: null,
+      session_size: legacyParsed.data.length,
+    }));
+
+    try {
+      const { error } = await adminRpc('upsert_compass_verdicts', {
+        p_user_id: authReq.userId,
+        p_verdicts: JSON.stringify(verdicts),
+      });
+      if (error) throw new Error(error.message);
+      res.status(200).json({ upserted: verdicts.length });
+      return;
+    } catch (err) {
+      console.error('[POST /compass/verdicts] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+  }
+
+  // Neither format matched
+  res.status(422).json({
+    code: 'VALIDATION_ERROR',
+    message: 'Invalid request body. Expected { verdicts: [...] } or [{ quote_id, verdict }]',
+  });
 });
 
 // ---------------------------------------------------------------------------
