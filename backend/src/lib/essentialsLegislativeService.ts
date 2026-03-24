@@ -371,3 +371,63 @@ export async function getVotesByPolitician(
     session_id: row.session_id ?? null,
   }));
 }
+
+// ---------------------------------------------------------------------------
+// getLegislativeSummary
+// ---------------------------------------------------------------------------
+
+/**
+ * Fetch recent bills (5) and recent votes (10) for profile rendering.
+ * Matches Go server /politician/{id}/legislative-summary response shape.
+ */
+export async function getLegislativeSummary(
+  politicianId: string
+): Promise<{ recent_bills: Bill[]; recent_votes: Vote[] }> {
+  const [bills, votes] = await Promise.all([
+    getBillsByPolitician(politicianId, 5),
+    getVotesByPolitician(politicianId, 10),
+  ]);
+  return { recent_bills: bills, recent_votes: votes };
+}
+
+// ---------------------------------------------------------------------------
+// getLeadershipByPolitician
+// ---------------------------------------------------------------------------
+
+export interface LeadershipPosition {
+  title: string;
+  chamber: string;
+  is_current: boolean;
+  start_date: string | null;
+  end_date: string | null;
+}
+
+/**
+ * Fetch leadership positions for a politician.
+ * Matches Go server /politician/{id}/leadership response shape.
+ */
+export async function getLeadershipByPolitician(
+  politicianId: string
+): Promise<LeadershipPosition[]> {
+  const queryText = `
+    SELECT
+      COALESCE(title, '') AS title,
+      COALESCE(chamber, '') AS chamber,
+      COALESCE(is_current, false) AS is_current,
+      start_date,
+      end_date
+    FROM essentials.legislative_leadership_roles
+    WHERE politician_id = $1
+    ORDER BY is_current DESC, start_date DESC
+  `;
+
+  const { rows } = await pool.query(queryText, [politicianId]);
+
+  return rows.map((row) => ({
+    title: row.title ?? '',
+    chamber: row.chamber ?? '',
+    is_current: row.is_current ?? false,
+    start_date: row.start_date ? (row.start_date as Date).toISOString().split('T')[0] : null,
+    end_date: row.end_date ? (row.end_date as Date).toISOString().split('T')[0] : null,
+  }));
+}

@@ -8,6 +8,7 @@ import {
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
+import { pool } from '../lib/db.js';
 import { GeocodingError } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 
@@ -150,6 +151,47 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
     res.status(200).json({ quotes, candidates, issues });
   } catch (err) {
     console.error('[GET /essentials/quotes] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/cities/:geo_id/building-photo
+// Returns building photo for a city by Census GEOID.
+// Matches Go server /cities/{geo_id}/building-photo response shape.
+// ---------------------------------------------------------------------------
+
+router.get('/cities/:geo_id/building-photo', async (req: Request, res: Response): Promise<void> => {
+  const geoId = req.params.geo_id as string;
+  if (!geoId) {
+    res.status(400).json({ code: 'VALIDATION_ERROR', message: 'Missing geo_id parameter' });
+    return;
+  }
+
+  try {
+    const { rows } = await pool.query(
+      `SELECT place_geoid, url, license, attribution, source_url, fetched_at
+       FROM essentials.building_photos
+       WHERE place_geoid = $1`,
+      [geoId]
+    );
+
+    if (rows.length === 0) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'Building photo not found' });
+      return;
+    }
+
+    const r = rows[0];
+    res.status(200).json({
+      place_geoid: r.place_geoid ?? '',
+      url: r.url ?? '',
+      license: r.license ?? '',
+      attribution: r.attribution ?? '',
+      source_url: r.source_url ?? '',
+      fetched_at: r.fetched_at ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /essentials/cities/:geo_id/building-photo] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

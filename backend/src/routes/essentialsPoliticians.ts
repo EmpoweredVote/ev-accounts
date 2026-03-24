@@ -3,10 +3,17 @@ import { optionalAuth } from '../middleware/auth.js';
 import { getPoliticiansFlatList, getPoliticianById, politicianExists } from '../lib/essentialsService.js';
 import {
   getLegislativeByPolitician,
+  getLegislativeSummary,
   getCommitteesByPolitician,
   getBillsByPolitician,
   getVotesByPolitician,
+  getLeadershipByPolitician,
 } from '../lib/essentialsLegislativeService.js';
+import {
+  getEndorsementsByPolitician,
+  getElectionsByPolitician,
+  getJudicialRecord,
+} from '../lib/essentialsProfileService.js';
 import type { Request, Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 
@@ -103,15 +110,13 @@ router.get('/:id/committees', optionalAuth, async (req: Request, res: Response):
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
       return;
     }
-    const userId = (req as AuthenticatedRequest).userId;
     const exists = await politicianExists(id);
     if (!exists) {
       res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
       return;
     }
     const data = await getCommitteesByPolitician(id);
-    const data_level = userId ? 'connected' : 'inform';
-    res.status(200).json({ data, data_level });
+    res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/committees] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -134,7 +139,6 @@ router.get('/:id/bills', optionalAuth, async (req: Request, res: Response): Prom
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
       return;
     }
-    const userId = (req as AuthenticatedRequest).userId;
     const exists = await politicianExists(id);
     if (!exists) {
       res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
@@ -143,8 +147,7 @@ router.get('/:id/bills', optionalAuth, async (req: Request, res: Response): Prom
     const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
     const limit = isNaN(rawLimit) ? 50 : Math.min(100, Math.max(1, rawLimit));
     const data = await getBillsByPolitician(id, limit);
-    const data_level = userId ? 'connected' : 'inform';
-    res.status(200).json({ data, data_level });
+    res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/bills] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
@@ -167,7 +170,6 @@ router.get('/:id/votes', optionalAuth, async (req: Request, res: Response): Prom
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
       return;
     }
-    const userId = (req as AuthenticatedRequest).userId;
     const exists = await politicianExists(id);
     if (!exists) {
       res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
@@ -176,10 +178,116 @@ router.get('/:id/votes', optionalAuth, async (req: Request, res: Response): Prom
     const rawLimit = typeof req.query.limit === 'string' ? parseInt(req.query.limit, 10) : NaN;
     const limit = isNaN(rawLimit) ? 50 : Math.min(100, Math.max(1, rawLimit));
     const data = await getVotesByPolitician(id, limit);
-    const data_level = userId ? 'connected' : 'inform';
-    res.status(200).json({ data, data_level });
+    res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/votes] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/legislative-summary
+// Returns { recent_bills: [...5], recent_votes: [...10] } for profile rendering.
+// Matches Go server /politician/{id}/legislative-summary response shape.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/legislative-summary', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const exists = await politicianExists(id);
+    if (!exists) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
+      return;
+    }
+    const summary = await getLegislativeSummary(id);
+    res.status(200).json(summary);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/legislative-summary] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/endorsements
+// Returns endorsements with organization details. Matches Go server response.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/endorsements', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getEndorsementsByPolitician(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/endorsements] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/elections
+// Returns election history. Matches Go server response.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/elections', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getElectionsByPolitician(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/elections] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/leadership
+// Returns leadership positions. Matches Go server response.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/leadership', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getLeadershipByPolitician(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/leadership] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/judicial-record
+// Returns { judge_detail, evaluations, metrics, disciplinary_records }.
+// Matches Go server response shape.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/judicial-record', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getJudicialRecord(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/judicial-record] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

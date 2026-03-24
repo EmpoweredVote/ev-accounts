@@ -579,7 +579,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
-           p.is_active, p.office_id,
+           p.is_active, p.office_id, p.notes,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.seats AS office_seats,
            d.district_type, d.label AS district_label, d.geo_id AS district_id,
@@ -596,7 +596,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
   `;
 
   // Run base query + all nested queries in parallel
-  const [baseResult, contactsResult, imagesResult, degreesResult, experiencesResult] =
+  const [baseResult, contactsResult, imagesResult, degreesResult, experiencesResult, addressesResult, identifiersResult] =
     await Promise.all([
       pool.query(baseQuery, [id]),
       pool.query(
@@ -620,6 +620,19 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       pool.query(
         `SELECT id, title, organization, type, start, "end"
          FROM essentials.experiences
+         WHERE politician_id = $1`,
+        [id]
+      ),
+      pool.query(
+        `SELECT id, politician_id, address1 AS address_1, address2 AS address_2, address3 AS address_3,
+                state, postal_code, phone1 AS phone_1, phone2 AS phone_2
+         FROM essentials.addresses
+         WHERE politician_id = $1`,
+        [id]
+      ),
+      pool.query(
+        `SELECT id, politician_id, identifier_type, identifier_value
+         FROM essentials.identifiers
          WHERE politician_id = $1`,
         [id]
       ),
@@ -711,6 +724,24 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     images,
     degrees,
     experiences,
+    addresses: addressesResult.rows.map((r) => ({
+      id: r.id as string,
+      politician_id: r.politician_id as string,
+      address_1: r.address_1 ?? '',
+      address_2: r.address_2 ?? '',
+      address_3: r.address_3 ?? '',
+      state: r.state ?? '',
+      postal_code: r.postal_code ?? '',
+      phone_1: r.phone_1 ?? '',
+      phone_2: r.phone_2 ?? '',
+    })),
+    identifiers: identifiersResult.rows.map((r) => ({
+      id: r.id as string,
+      politician_id: r.politician_id as string,
+      identifier_type: r.identifier_type ?? '',
+      identifier_value: r.identifier_value ?? '',
+    })),
+    notes: row.notes ?? [],
   };
 }
 
