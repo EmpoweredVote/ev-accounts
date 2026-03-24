@@ -439,7 +439,7 @@ Plans:
 
 **Requirements:** SSO-13
 
-**Plans:** ~2 plans
+**Plans:** 2 plans
 
 Plans:
 - [ ] 48-01-PLAN.md — Privacy disclosure: add `ev_session` cookie documentation to privacy policy / cookie disclosure on `accounts.empowered.vote`; classify as strictly necessary (no consent banner required)
