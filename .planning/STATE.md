@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.7 Cross-App SSO — Phase 47: Validation Quests Silent SSO
+**Current focus:** v1.7 Cross-App SSO — Phase 48: Compliance + End-to-End Verification
 
 ## Current Position
 
 **v1.7 in progress (2026-03-24)**
 
 Phase: 47-validation-quests-silent-sso — COMPLETE ✓
-Plan: 02 of 02 — COMPLETE ✓
-Status: Phase 47 complete; VQ fully integrated into cross-app SSO lifecycle
-Last activity: 2026-03-24 — Phase 47 Plan 02 complete; VQ signOut POSTs /api/auth/logout to clear ev_session cookie before local Supabase signOut; logout propagates to all EV apps
+Plan: —
+Status: Ready to plan Phase 48
+Last activity: 2026-03-24 — Phase 47 complete; VQ inherits ev_session on load via initSso() + setSession(); isAuthChecking gates PrivateRoute; logout clears shared cookie via POST /api/auth/logout; goal verified 8/8
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
