@@ -533,6 +533,10 @@ export async function getRepresentativesByAddress(
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND p.is_active = true
+    -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
+    -- county FIPS geo_ids. Those are matched via geofence intersection.
+    -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
+    AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
     ORDER BY p.id
   `;
 
