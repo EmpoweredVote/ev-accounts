@@ -260,7 +260,7 @@ export async function getPoliticiansFlatList(
            ch.election_frequency,
            g.name AS government_name
     FROM essentials.politicians p
-    LEFT JOIN essentials.offices o ON o.id = p.office_id
+    LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
@@ -588,7 +588,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            ch.election_frequency,
            g.name AS government_name, g.id AS government_id
     FROM essentials.politicians p
-    LEFT JOIN essentials.offices o ON o.id = p.office_id
+    LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id

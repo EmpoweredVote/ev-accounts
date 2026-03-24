@@ -97,7 +97,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
         ct.question_text        AS topic_question
       FROM essentials.quotes q
       JOIN essentials.politicians p ON p.id = q.politician_id AND p.is_active = true
-      LEFT JOIN essentials.offices o ON o.id = p.office_id
+      LEFT JOIN essentials.offices o ON o.politician_id = p.id
       LEFT JOIN inform.compass_topics ct
         ON lower(replace(ct.short_title, ' ', '-')) = lower(q.topic_key)
         OR lower(ct.short_title) = lower(q.topic_key)
