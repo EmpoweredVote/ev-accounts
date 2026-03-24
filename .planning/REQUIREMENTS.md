@@ -24,8 +24,8 @@ Log in once at any Empowered Vote app; remain authenticated across all apps for 
 
 ### Essentials
 
-- [ ] **SSO-07**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
-- [ ] **SSO-08**: Logout calls `POST /api/auth/logout` to clear shared cookie
+- [x] **SSO-07**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
+- [x] **SSO-08**: Logout calls `POST /api/auth/logout` to clear shared cookie
 
 ### Validation Quests
 
@@ -34,8 +34,8 @@ Log in once at any Empowered Vote app; remain authenticated across all apps for 
 
 ### CompassV2
 
-- [ ] **SSO-11**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
-- [ ] **SSO-12**: Logout calls `POST /api/auth/logout` to clear shared cookie
+- [x] **SSO-11**: On load, if no local token exists, silently calls `GET /api/auth/session` before rendering as unauthenticated
+- [x] **SSO-12**: Logout calls `POST /api/auth/logout` to clear shared cookie
 
 ### Compliance
 
@@ -69,12 +69,12 @@ Log in once at any Empowered Vote app; remain authenticated across all apps for 
 | SSO-04 | Phase 45 | Pending |
 | SSO-05 | Phase 45 | Pending |
 | SSO-06 | Phase 45 | Pending |
-| SSO-07 | Phase 46 | Pending |
-| SSO-08 | Phase 46 | Pending |
+| SSO-07 | Phase 46 | Complete |
+| SSO-08 | Phase 46 | Complete |
 | SSO-09 | Phase 47 | Pending |
 | SSO-10 | Phase 47 | Pending |
-| SSO-11 | Phase 46 | Pending |
-| SSO-12 | Phase 46 | Pending |
+| SSO-11 | Phase 46 | Complete |
+| SSO-12 | Phase 46 | Complete |
 | SSO-13 | Phase 48 | Pending |
 
 **Coverage:**

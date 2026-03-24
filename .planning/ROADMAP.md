@@ -396,8 +396,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
-- [ ] 46-02-PLAN.md — CompassV2 (`C:\EV-CompassV2`): `git pull` first; silent session check in AuthInitializer / `publicFetch` flow; logout calls `POST /api/auth/logout`
+- [x] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
+- [x] 46-02-PLAN.md — CompassV2 (`C:\EV-CompassV2`): `git pull` first; silent session check in AuthInitializer / `publicFetch` flow; logout calls `POST /api/auth/logout`
 
 **Success Criteria:**
 
@@ -503,6 +503,6 @@ Plans:
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
 | 44. Accounts API SSO Infrastructure | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 45. Profile Hub + CTC Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
-| 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
+| 46. Essentials + CompassV2 Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 47. Validation Quests Silent SSO | v1.7 | 0/2 | Pending | — |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
