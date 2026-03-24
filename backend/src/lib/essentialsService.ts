@@ -90,6 +90,8 @@ export interface PoliticianFlatRecord {
   term_date_precision: string;
   appointment_date: string;
   office_description: string;
+  is_vacant: boolean;
+  vacant_since: string | null;
   images: Array<{ id: string; url: string; type: string; photo_license: string }>;
 }
 
@@ -337,7 +339,8 @@ export async function getPoliticiansFlatList(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
-           o.is_appointed_position,
+           o.is_appointed_position, o.is_vacant, o.vacant_since,
+           COALESCE(NULLIF(o.description, ''), pd_specific.description, pd_generic.description, '') AS office_description,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
@@ -349,6 +352,12 @@ export async function getPoliticiansFlatList(
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    LEFT JOIN essentials.position_descriptions pd_specific
+      ON pd_specific.normalized_position_name = COALESCE(NULLIF(o.normalized_position_name, ''), o.title)
+      AND pd_specific.district_type = d.district_type
+    LEFT JOIN essentials.position_descriptions pd_generic
+      ON pd_generic.normalized_position_name = COALESCE(NULLIF(o.normalized_position_name, ''), o.title)
+      AND pd_generic.district_type = ''
     LEFT JOIN essentials.government_bodies gvb
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
@@ -402,6 +411,8 @@ export async function getPoliticiansFlatList(
     term_date_precision: row.term_date_precision ?? '',
     appointment_date: row.appointment_date ?? '',
     office_description: row.office_description ?? '',
+    is_vacant: row.is_vacant ?? false,
+    vacant_since: row.vacant_since ?? null,
     images: [],
   }));
 
@@ -574,6 +585,8 @@ export async function getRepresentativesByAddress(
     term_date_precision: row.term_date_precision ?? '',
     appointment_date: row.appointment_date ?? '',
     office_description: row.office_description ?? '',
+    is_vacant: row.is_vacant ?? false,
+    vacant_since: row.vacant_since ?? null,
     images: [],
   }));
 

@@ -149,7 +149,7 @@ export async function getPoliticiansByArea(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
-           o.is_appointed_position,
+           o.is_appointed_position, o.is_vacant, o.vacant_since,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
@@ -193,7 +193,7 @@ export async function getPoliticiansByArea(
            COALESCE(p.term_date_precision, '') AS term_date_precision,
            COALESCE(p.appointment_date::text, '') AS appointment_date,
              o.title AS office_title, o.representing_state, o.representing_city,
-             o.is_appointed_position,
+             o.is_appointed_position, o.is_vacant, o.vacant_since,
              d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
@@ -266,6 +266,8 @@ export async function getPoliticiansByArea(
     term_date_precision: row.term_date_precision ?? '',
     appointment_date: row.appointment_date ?? '',
     office_description: '',
+    is_vacant: row.is_vacant ?? false,
+    vacant_since: row.vacant_since ?? null,
     images: [],
   }));
 
