@@ -519,7 +519,7 @@ export async function getRepresentativesByAddress(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
-    WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL')
+    WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND p.is_active = true
     ORDER BY p.id
