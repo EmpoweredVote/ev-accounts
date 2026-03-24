@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.7 milestone started 2026-03-24**
 
-Phase: 44-accounts-api-sso-infrastructure (plan 1 of 2 complete)
-Plan: 44-01 complete
-Status: In progress
-Last activity: 2026-03-24 — Completed 44-01-PLAN.md (cookie write-side of SSO)
+Phase: 44-accounts-api-sso-infrastructure (plan 2 of 2 complete — PHASE COMPLETE)
+Plan: 44-02 complete
+Status: Phase complete
+Last activity: 2026-03-24 — Completed 44-02-PLAN.md (cookie read-side of SSO — GET /session)
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -50,7 +50,7 @@ CompassV2 (main, all pushed directly — bypassed branch protection):
 - **trivia_service Supavisor registration** — CTC using postgres superuser temporarily (Phase 41 open blocker, non-critical)
 - **CompassV2 branch protection** — pushed directly to `main` three times today (bypassed rule). Chris Andrews should review and merge via PR going forward.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 🔄] 44-01 complete ██████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 🔄] Phase 44 complete ████████████
 
 ## Accumulated Context
 
@@ -58,7 +58,7 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
 
-### Phase 44 Plan 01 Complete (44-01)
+### Phase 44 Complete — SSO Infrastructure (44-01 + 44-02)
 
 - **ev_session cookie (httpOnly, refresh_token value)** — set on every successful POST /login; 30-day maxAge; domain from COOKIE_DOMAIN env var (.empowered.vote in prod, host-only in dev)
 - **evSessionCookieOptions() helper pattern** — shared between set and clear to prevent silent browser ignore when domain/path differ between Set-Cookie and clearCookie calls
@@ -66,6 +66,10 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 - **CORS upgraded** — credentials: true + origin function (exact-match in prod, allow-all in dev); wildcard origin removed (incompatible with credentials)
 - **COOKIE_DOMAIN env var** — must be set to `.empowered.vote` on Render production; empty string = host-only cookie (dev default)
 - **No cookie on signup** — data.session is null when email confirmation enabled; cookie issued on first login after confirmation
+- **GET /api/auth/session (no rate limiter, no requireAuth)** — reads ev_session cookie, calls supabaseAdmin.auth.refreshSession, rotates cookie with new token, returns { access_token, refresh_token }; 401 empty body on missing or invalid token; actively clears stale cookie on invalid token
+- **Mandatory token rotation on GET /session** — Supabase invalidates old refresh token immediately on use; writing rotated token back to cookie is a correctness requirement, not optional
+- **Stale cookie active clearing** — invalid/expired tokens trigger clearCookie before 401; prevents browsers from retrying dead tokens on every page load
+- **Phase 45-47 unblocked** — frontend SSO integration (CompassV2, Essentials, Profile Hub) can now call GET /session with credentials: 'include' on page load to silently inherit sessions
 
 v1.6 constraints and decisions to carry forward:
 - **pool.query() for all non-public schema reads AND writes** — essentials schema is NOT in PostgREST exposed schema list (`public, connect, empower, inform, graphql_public, validation_quests`); `supabaseAnon.schema('essentials')` fails at runtime; all essentials access must use pool.query() (Phase 35 confirmed)
@@ -341,5 +345,5 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 ## Session Continuity
 
 Last session: 2026-03-24
-Stopped at: Phase 44 Plan 01 complete (9aa42e3) — ev_session cookie write-side of SSO
-Resume: Phase 44 Plan 02 — cookie-reader (silent auth endpoint)
+Stopped at: Phase 44 Plan 02 complete (fac2d91) — GET /session SSO cookie-read side
+Resume: Phase 45 — CompassV2 SSO frontend integration (first of three frontend SSO phases)
