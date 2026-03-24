@@ -9,6 +9,7 @@ const envSchema = z.object({
   DATABASE_URL: z.string().min(1),
   REDIS_URL: z.string().optional(),
   CORS_ORIGIN: z.string().optional(),
+  COOKIE_DOMAIN: z.string().optional().default(''),
   SUPABASE_JWT_SECRET: z.string().optional(),
   // Deprecated: replaced by Census Geocoder in Phase 38. Kept optional to avoid
   // startup failures on environments that still have the key set.

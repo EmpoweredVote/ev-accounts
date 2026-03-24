@@ -3,6 +3,7 @@ import { env } from './lib/env.js'; // Validates env vars — exits if invalid
 import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import healthRouter from './routes/health.js';
 import authRouter from './routes/auth.js';
 import accountRouter from './routes/account.js';
@@ -42,14 +43,24 @@ const app = express();
 app.set('trust proxy', 1);
 
 app.use(helmet());
+app.use(cookieParser());
+
+const allowedOrigins = env.CORS_ORIGIN
+  ? env.CORS_ORIGIN.split(',').map((o) => o.trim())
+  : [];
+
 app.use(
   cors({
-    origin:
-      env.NODE_ENV === 'development'
-        ? '*'
-        : env.CORS_ORIGIN
-          ? env.CORS_ORIGIN.split(',').map((o) => o.trim())
-          : [],
+    origin: (origin, callback) => {
+      // Allow same-origin / server-to-server (no Origin header)
+      if (!origin) return callback(null, true);
+      // Dev: allow any origin (Vite proxy + cross-origin testing)
+      if (env.NODE_ENV === 'development') return callback(null, true);
+      // Prod: exact-match against CORS_ORIGIN list
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      callback(new Error(`CORS: origin ${origin} not allowed`));
+    },
+    credentials: true,
   })
 );
 app.use(express.json());
