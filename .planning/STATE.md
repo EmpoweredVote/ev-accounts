@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 47-validation-quests-silent-sso — IN PROGRESS
-Plan: 01 of ? — COMPLETE ✓
-Status: Plan 47-01 complete; ready for 47-02
-Last activity: 2026-03-24 — Phase 47 Plan 01 complete; VQ frontend inherits ev_session on load; isAuthChecking gate holds PrivateRoute; deep links preserved; TypeScript + Vite build clean
+Phase: 47-validation-quests-silent-sso — COMPLETE ✓
+Plan: 02 of 02 — COMPLETE ✓
+Status: Phase 47 complete; VQ fully integrated into cross-app SSO lifecycle
+Last activity: 2026-03-24 — Phase 47 Plan 02 complete; VQ signOut POSTs /api/auth/logout to clear ev_session cookie before local Supabase signOut; logout propagates to all EV apps
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
