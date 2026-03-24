@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 45-profile-hub-ctc-silent-sso — COMPLETE ✓
-Plan: —
-Status: Ready to plan Phase 46
-Last activity: 2026-03-24 — Phase 45 complete; Profile Hub + CTC both inherit ev_session on load; logout clears shared cookie; goal verified 9/9
+Phase: 46-essentials-compassv2-silent-sso — In progress
+Plan: 46-01 complete
+Status: In progress — 46-02 (CompassV2 silent SSO) remaining
+Last activity: 2026-03-24 — Completed 46-01-PLAN.md; Essentials silent SSO wired; publicFetch added; logout fixed
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -57,6 +57,14 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 46 Plan 01 Complete — Essentials Silent SSO (46-01)
+
+- **publicFetch in Essentials auth.js** — raw response, no 401 side effects, safe for SSO check and /account/me call; consistent pattern now across all EV apps
+- **SSO check in CompassContext loadAll** — fires at step 3 (before getToken/auth check) when no local token; `fetch('/api/auth/session', { credentials: 'include' })` with 2s AbortController timeout; silently falls through on failure
+- **publicFetch for /account/me** — 401 calls clearToken() and continues as guest; no redirect loop
+- **Logout fixed** — was `apiFetch('/auth/logout')` (no credentials, wrong prefix); now native `fetch('/api/auth/logout', { credentials: 'include' })` with Bearer token; local state always cleared
+- **Phase 46-01 commits** — 24bdee6 (auth.js publicFetch), c1303f4 (CompassContext SSO + logout)
 
 ### Phase 45 Complete — Profile Hub + CTC Silent SSO (9/9 verified)
 
