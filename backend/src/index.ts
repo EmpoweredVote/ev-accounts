@@ -23,6 +23,7 @@ import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
+import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import treasuryRouter from './routes/treasury.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
@@ -80,7 +81,8 @@ app.use('/api/candidates', candidatesRouter);
 // GET /api/essentials/governments/:id
 // GET /api/essentials/chambers/:id
 // GET /api/essentials/districts/:id
-// NOTE: /candidates and /politicians mounts must come BEFORE /essentials to prevent path capture
+// NOTE: /candidates, /politicians, /browse mounts must come BEFORE /essentials to prevent path capture
+app.use('/api/essentials/browse', essentialsBrowseRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
