@@ -1183,3 +1183,253 @@ export async function getIngestionRunAfter(
     zip_downloaded_at: r.zip_downloaded_at,
   };
 }
+
+// ---------------------------------------------------------------------------
+// Unresolved queue service functions — ported from unresolved_handlers.go
+// ---------------------------------------------------------------------------
+
+export interface UnresolvedAggregationEntry {
+  external_id: string;
+  adapter_name: string;
+  status: string;
+  contribution_count: number;
+  first_seen_at: string;
+  last_seen_at: string;
+  candidate_name: string;
+}
+
+/**
+ * getUnresolvedAggregation returns unresolved contributions grouped by
+ * (adapter_name, external_id), ordered by count descending.
+ *
+ * @param showStatus - 'active' (default) or 'dismissed'
+ * @param source - optional filter by adapter_name
+ */
+export async function getUnresolvedAggregation(
+  showStatus = 'active',
+  source?: string
+): Promise<UnresolvedAggregationEntry[]> {
+  const params: unknown[] = [showStatus];
+  let sourceFilter = '';
+  if (source) {
+    sourceFilter = ` AND adapter_name = $${params.length + 1}`;
+    params.push(source);
+  }
+
+  const result = await pool.query<{
+    external_id: string;
+    adapter_name: string;
+    status: string;
+    contribution_count: string; // bigint -> string
+    first_seen_at: string;
+    last_seen_at: string;
+    candidate_name: string | null;
+  }>(
+    `SELECT
+       external_id,
+       adapter_name,
+       status,
+       COUNT(*) AS contribution_count,
+       MIN(created_at) AS first_seen_at,
+       MAX(created_at) AS last_seen_at,
+       MAX(raw_row->>'CandidateName') AS candidate_name
+     FROM transparent_motivations.unresolved_contributions
+     WHERE status = $1${sourceFilter}
+     GROUP BY external_id, adapter_name, status
+     ORDER BY contribution_count DESC`,
+    params
+  );
+
+  return result.rows.map((r) => ({
+    external_id: r.external_id,
+    adapter_name: r.adapter_name,
+    status: r.status,
+    contribution_count: Number(r.contribution_count),
+    first_seen_at: r.first_seen_at,
+    last_seen_at: r.last_seen_at,
+    candidate_name: r.candidate_name ?? '',
+  }));
+}
+
+/**
+ * getUnresolvedByExternalId returns individual unresolved_contributions rows
+ * for a given (adapter_name, external_id) pair.
+ */
+export async function getUnresolvedByExternalId(
+  adapterName: string,
+  externalId: string
+): Promise<UnresolvedContribution[]> {
+  const result = await pool.query<{
+    id: string;
+    adapter_name: string;
+    ingestion_run_id: string;
+    raw_row: unknown;
+    row_number: string;
+    external_id: string;
+    status: string;
+    created_at: string;
+  }>(
+    `SELECT id, adapter_name, ingestion_run_id, raw_row, row_number,
+            external_id, status, created_at
+     FROM transparent_motivations.unresolved_contributions
+     WHERE adapter_name = $1 AND external_id = $2
+     ORDER BY row_number ASC`,
+    [adapterName, externalId]
+  );
+
+  return result.rows.map((r) => ({
+    id: Number(r.id),
+    adapter_name: r.adapter_name,
+    ingestion_run_id: Number(r.ingestion_run_id),
+    raw_row: r.raw_row as Record<string, unknown>,
+    row_number: Number(r.row_number),
+    external_id: r.external_id,
+    status: r.status,
+    created_at: r.created_at,
+  }));
+}
+
+/**
+ * findOrCreatePoliticianSource finds an existing politician_source by
+ * (essentials_politician_id, source_system), or creates a new confirmed one.
+ *
+ * Used by the unresolved queue resolve handler to create a permanent link
+ * between an unresolved externalId and a known politician.
+ */
+export async function findOrCreatePoliticianSource(
+  politicianId: string,
+  adapterName: string,
+  externalId: string
+): Promise<PoliticianSource> {
+  // Try to find existing source
+  const findResult = await pool.query<{
+    id: string;
+    essentials_politician_id: string;
+    source_system: string;
+    external_id: string;
+    research_status: string;
+    notes: string;
+    created_at: string;
+    updated_at: string;
+  }>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = $1 AND source_system = $2
+     LIMIT 1`,
+    [politicianId, adapterName]
+  );
+
+  if (findResult.rows.length > 0) {
+    return findResult.rows[0] as PoliticianSource;
+  }
+
+  // Create new confirmed source
+  const insertResult = await pool.query<{
+    id: string;
+    essentials_politician_id: string;
+    source_system: string;
+    external_id: string;
+    research_status: string;
+    notes: string;
+    created_at: string;
+    updated_at: string;
+  }>(
+    `INSERT INTO transparent_motivations.politician_sources
+       (essentials_politician_id, source_system, external_id, research_status, notes)
+     VALUES ($1, $2, $3, 'confirmed', '')
+     RETURNING id, essentials_politician_id, source_system, external_id,
+               research_status, notes, created_at, updated_at`,
+    [politicianId, adapterName, externalId]
+  );
+
+  return insertResult.rows[0] as PoliticianSource;
+}
+
+/**
+ * getUnresolvedRowsForBackfill fetches all active unresolved_contributions
+ * rows for a given (adapter_name, external_id) pair, returning raw_row as JSON.
+ */
+export async function getUnresolvedRowsForBackfill(
+  adapterName: string,
+  externalId: string
+): Promise<UnresolvedContribution[]> {
+  const result = await pool.query<{
+    id: string;
+    adapter_name: string;
+    ingestion_run_id: string;
+    raw_row: unknown;
+    row_number: string;
+    external_id: string;
+    status: string;
+    created_at: string;
+  }>(
+    `SELECT id, adapter_name, ingestion_run_id, raw_row, row_number,
+            external_id, status, created_at
+     FROM transparent_motivations.unresolved_contributions
+     WHERE adapter_name = $1 AND external_id = $2 AND status = 'active'`,
+    [adapterName, externalId]
+  );
+
+  return result.rows.map((r) => ({
+    id: Number(r.id),
+    adapter_name: r.adapter_name,
+    ingestion_run_id: Number(r.ingestion_run_id),
+    raw_row: r.raw_row as Record<string, unknown>,
+    row_number: Number(r.row_number),
+    external_id: r.external_id,
+    status: r.status,
+    created_at: r.created_at,
+  }));
+}
+
+/**
+ * markUnresolvedResolved marks all active rows for (adapter_name, external_id) as resolved.
+ * Returns the number of rows affected.
+ */
+export async function markUnresolvedResolved(
+  adapterName: string,
+  externalId: string
+): Promise<number> {
+  const result = await pool.query(
+    `UPDATE transparent_motivations.unresolved_contributions
+     SET status = 'resolved'
+     WHERE adapter_name = $1 AND external_id = $2 AND status = 'active'`,
+    [adapterName, externalId]
+  );
+  return result.rowCount ?? 0;
+}
+
+/**
+ * markUnresolvedDismissed marks all active rows for (adapter_name, external_id) as dismissed.
+ * Returns the number of rows affected.
+ */
+export async function markUnresolvedDismissed(
+  adapterName: string,
+  externalId: string
+): Promise<number> {
+  const result = await pool.query(
+    `UPDATE transparent_motivations.unresolved_contributions
+     SET status = 'dismissed'
+     WHERE adapter_name = $1 AND external_id = $2 AND status = 'active'`,
+    [adapterName, externalId]
+  );
+  return result.rowCount ?? 0;
+}
+
+/**
+ * markUnresolvedActive restores dismissed rows to active for (adapter_name, external_id).
+ * Returns the number of rows affected.
+ */
+export async function markUnresolvedActive(
+  adapterName: string,
+  externalId: string
+): Promise<number> {
+  const result = await pool.query(
+    `UPDATE transparent_motivations.unresolved_contributions
+     SET status = 'active'
+     WHERE adapter_name = $1 AND external_id = $2 AND status = 'dismissed'`,
+    [adapterName, externalId]
+  );
+  return result.rowCount ?? 0;
+}

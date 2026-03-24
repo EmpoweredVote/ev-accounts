@@ -42,9 +42,19 @@ import {
   getIngestionRunAfter,
   getConfirmedFecSources,
   getMostRecentIngestionRun,
+  getUnresolvedAggregation,
+  getUnresolvedByExternalId,
+  findOrCreatePoliticianSource,
+  getUnresolvedRowsForBackfill,
+  markUnresolvedResolved,
+  markUnresolvedDismissed,
+  markUnresolvedActive,
 } from '../lib/campaignFinanceService.js';
+import { pool } from '../lib/db.js';
 import { runIngestion } from '../lib/adapters/runIngestion.js';
 import { createFecAdapter } from '../lib/adapters/fecAdapter.js';
+import { normalizeRow } from '../lib/adapters/indianaAdapter.js';
+import { runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 
 const router = Router();
 
@@ -305,35 +315,68 @@ router.post(
 );
 
 // POST /api/campaign-finance/admin/ingest/cal-access
-// Cal-Access adapter not yet ported (Plan 07 work) — return 501.
+// Trigger Cal-Access ingest for all confirmed sources (JWT auth).
 router.post(
   '/admin/ingest/cal-access',
   requireAuth,
   requireAdmin,
-  (_req: Request, res: Response): void => {
-    res.status(501).json({ error: 'Cal-Access ingest not yet implemented in Express port' });
+  async (_req: Request, res: Response): Promise<void> => {
+    try {
+      await runAdapterForAll('cal_access');
+      const run = await getMostRecentIngestionRun('cal_access');
+      res.status(200).json({
+        status: 'ok',
+        adapter: 'cal-access',
+        ingestion_run_id: run?.id ?? null,
+      });
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      res.status(200).json({ status: 'failed', adapter: 'cal-access', error: errMsg });
+    }
   }
 );
 
 // POST /api/campaign-finance/admin/ingest/socrata
-// Socrata adapter not yet ported — return 501.
+// Trigger Socrata ingest for all confirmed sources (JWT auth).
 router.post(
   '/admin/ingest/socrata',
   requireAuth,
   requireAdmin,
-  (_req: Request, res: Response): void => {
-    res.status(501).json({ error: 'Socrata ingest not yet implemented in Express port' });
+  async (_req: Request, res: Response): Promise<void> => {
+    try {
+      await runAdapterForAll('la_socrata');
+      const run = await getMostRecentIngestionRun('la_socrata');
+      res.status(200).json({
+        status: 'ok',
+        adapter: 'socrata',
+        ingestion_run_id: run?.id ?? null,
+      });
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      res.status(200).json({ status: 'failed', adapter: 'socrata', error: errMsg });
+    }
   }
 );
 
 // POST /api/campaign-finance/admin/ingest/indiana
-// Indiana adapter not yet ported — return 501.
+// Trigger Indiana ingest for all confirmed sources (JWT auth).
 router.post(
   '/admin/ingest/indiana',
   requireAuth,
   requireAdmin,
-  (_req: Request, res: Response): void => {
-    res.status(501).json({ error: 'Indiana ingest not yet implemented in Express port' });
+  async (_req: Request, res: Response): Promise<void> => {
+    try {
+      await runAdapterForAll('indiana');
+      const run = await getMostRecentIngestionRun('indiana');
+      res.status(200).json({
+        status: 'ok',
+        adapter: 'indiana',
+        ingestion_run_id: run?.id ?? null,
+      });
+    } catch (err) {
+      const errMsg = err instanceof Error ? err.message : String(err);
+      res.status(200).json({ status: 'failed', adapter: 'indiana', error: errMsg });
+    }
   }
 );
 
@@ -438,6 +481,241 @@ router.get(
     } catch (err) {
       console.error('[GET /campaign-finance/admin/ingestion-runs] error:', err);
       res.status(500).json({ error: 'Failed to query ingestion runs' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// Unresolved queue admin endpoints — requireAuth + requireAdmin
+//
+// Ported from: EV-Backend/internal/campaign_finance/unresolved_handlers.go
+//
+// Route design: RESTful path params (intentional divergence from Go body params).
+//   GET  /admin/unresolved                                — aggregation
+//   GET  /admin/unresolved/:adapter/:externalId           — detail rows
+//   POST /admin/unresolved/:adapter/:externalId/resolve   — resolve + Indiana backfill
+//   POST /admin/unresolved/:adapter/:externalId/dismiss   — mark dismissed
+//   POST /admin/unresolved/:adapter/:externalId/restore   — restore to active
+// ---------------------------------------------------------------------------
+
+// GET /api/campaign-finance/admin/unresolved
+// Aggregated unresolved contributions grouped by (adapter_name, external_id).
+// Optional query params: ?show=active|dismissed, ?source=indiana
+router.get(
+  '/admin/unresolved',
+  requireAuth,
+  requireAdmin,
+  async (req: Request, res: Response): Promise<void> => {
+    const showStatus = (req.query.show as string | undefined) ?? 'active';
+    const source = req.query.source as string | undefined;
+
+    if (showStatus !== 'active' && showStatus !== 'dismissed' && showStatus !== 'resolved') {
+      res.status(422).json({ error: 'show must be active, dismissed, or resolved' });
+      return;
+    }
+
+    try {
+      const entries = await getUnresolvedAggregation(showStatus, source);
+      res.status(200).json(entries);
+    } catch (err) {
+      console.error('[GET /campaign-finance/admin/unresolved] error:', err);
+      res.status(500).json({ error: 'Failed to query unresolved contributions' });
+    }
+  }
+);
+
+// GET /api/campaign-finance/admin/unresolved/:adapter/:externalId
+// Individual rows for a given (adapter_name, external_id) pair.
+router.get(
+  '/admin/unresolved/:adapter/:externalId',
+  requireAuth,
+  requireAdmin,
+  async (req: Request, res: Response): Promise<void> => {
+    const adapterName = req.params.adapter as string;
+    const externalId = req.params.externalId as string;
+
+    try {
+      const rows = await getUnresolvedByExternalId(adapterName, externalId);
+      res.status(200).json(rows);
+    } catch (err) {
+      console.error('[GET /campaign-finance/admin/unresolved/:adapter/:externalId] error:', err);
+      res.status(500).json({ error: 'Failed to query unresolved rows' });
+    }
+  }
+);
+
+// POST /api/campaign-finance/admin/unresolved/:adapter/:externalId/resolve
+// Resolve unresolved contributions for a given external_id + backfill to contributions.
+// Body: { politician_id: uuid }
+// Only 'indiana' adapter is currently supported for backfill.
+const resolveUnresolvedSchema = z.object({
+  politician_id: z.string().uuid(),
+});
+
+router.post(
+  '/admin/unresolved/:adapter/:externalId/resolve',
+  requireAuth,
+  requireAdmin,
+  async (req: Request, res: Response): Promise<void> => {
+    const adapterName = req.params.adapter as string;
+    const externalId = req.params.externalId as string;
+
+    const parsed = resolveUnresolvedSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({ error: 'politician_id (UUID) is required' });
+      return;
+    }
+    const { politician_id } = parsed.data;
+
+    // Only Indiana backfill supported
+    if (adapterName !== 'indiana') {
+      res.status(400).json({ error: `backfill not supported for adapter: ${adapterName}` });
+      return;
+    }
+
+    if (!UUID_REGEX.test(politician_id)) {
+      res.status(422).json({ error: 'Invalid politician_id UUID' });
+      return;
+    }
+
+    try {
+      // Look up politician display name
+      const polResult = await pool.query<{ display_name: string }>(
+        `SELECT display_name FROM essentials.politicians WHERE id = $1`,
+        [politician_id]
+      );
+      const politicianName = polResult.rows[0]?.display_name ?? politician_id;
+
+      // Find or create PoliticianSource
+      const ps = await findOrCreatePoliticianSource(politician_id, adapterName, externalId);
+
+      // Fetch active unresolved rows
+      const unresolvedRows = await getUnresolvedRowsForBackfill(adapterName, externalId);
+
+      // Normalize each row and collect contributions to insert
+      type ContribInsert = {
+        politician_source_id: string;
+        amount: number;
+        contribution_date: string | null;
+        election_cycle: string;
+        confidence_level: string;
+        data_source: string;
+        source_transaction_id: string;
+        raw_record: string;
+      };
+
+      const contributions: ContribInsert[] = [];
+
+      for (const u of unresolvedRows) {
+        const rec = u.raw_row as Record<string, unknown>;
+        const contrib = normalizeRow(rec, ps);
+        if (contrib === null) continue;
+        contributions.push({
+          politician_source_id: contrib.politician_source_id,
+          amount: contrib.amount,
+          contribution_date: contrib.contribution_date
+            ? contrib.contribution_date.toISOString()
+            : null,
+          election_cycle: contrib.election_cycle,
+          confidence_level: contrib.confidence_level,
+          data_source: contrib.data_source,
+          source_transaction_id: contrib.source_transaction_id,
+          raw_record: JSON.stringify(contrib.raw_record),
+        });
+      }
+
+      // Upsert contributions ON CONFLICT DO NOTHING (backfill — idempotent)
+      let contributionsMoved = 0;
+      const batchSize = 100;
+      for (let i = 0; i < contributions.length; i += batchSize) {
+        const batch = contributions.slice(i, i + batchSize);
+        if (batch.length === 0) continue;
+
+        const params: unknown[] = [];
+        const valuePlaceholders: string[] = [];
+        const COLS_PER_ROW = 8;
+
+        for (let idx = 0; idx < batch.length; idx++) {
+          const c = batch[idx];
+          const base = idx * COLS_PER_ROW + 1;
+          valuePlaceholders.push(
+            `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb)`
+          );
+          params.push(
+            c.politician_source_id,
+            c.amount,
+            c.contribution_date,
+            c.election_cycle,
+            c.confidence_level,
+            c.data_source,
+            c.source_transaction_id,
+            c.raw_record
+          );
+        }
+
+        const result = await pool.query<{ id: string }>(
+          `INSERT INTO transparent_motivations.contributions
+             (politician_source_id, amount, contribution_date, election_cycle,
+              confidence_level, data_source, source_transaction_id, raw_record)
+           VALUES ${valuePlaceholders.join(', ')}
+           ON CONFLICT (data_source, source_transaction_id) DO NOTHING
+           RETURNING id`,
+          params
+        );
+        contributionsMoved += result.rows.length;
+      }
+
+      // Mark rows as resolved
+      await markUnresolvedResolved(adapterName, externalId);
+
+      res.status(200).json({
+        linked: true,
+        contributions_moved: contributionsMoved,
+        politician_name: politicianName,
+      });
+    } catch (err) {
+      console.error('[POST /campaign-finance/admin/unresolved/:adapter/:externalId/resolve] error:', err);
+      res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
+    }
+  }
+);
+
+// POST /api/campaign-finance/admin/unresolved/:adapter/:externalId/dismiss
+// Dismiss active unresolved contributions for a given (adapter, externalId) pair.
+router.post(
+  '/admin/unresolved/:adapter/:externalId/dismiss',
+  requireAuth,
+  requireAdmin,
+  async (req: Request, res: Response): Promise<void> => {
+    const adapterName = req.params.adapter as string;
+    const externalId = req.params.externalId as string;
+
+    try {
+      await markUnresolvedDismissed(adapterName, externalId);
+      res.status(200).json({ dismissed: true });
+    } catch (err) {
+      console.error('[POST /campaign-finance/admin/unresolved/.../dismiss] error:', err);
+      res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
+    }
+  }
+);
+
+// POST /api/campaign-finance/admin/unresolved/:adapter/:externalId/restore
+// Restore dismissed unresolved contributions back to active.
+router.post(
+  '/admin/unresolved/:adapter/:externalId/restore',
+  requireAuth,
+  requireAdmin,
+  async (req: Request, res: Response): Promise<void> => {
+    const adapterName = req.params.adapter as string;
+    const externalId = req.params.externalId as string;
+
+    try {
+      await markUnresolvedActive(adapterName, externalId);
+      res.status(200).json({ restored: true });
+    } catch (err) {
+      console.error('[POST /campaign-finance/admin/unresolved/.../restore] error:', err);
+      res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
     }
   }
 );
@@ -556,16 +834,16 @@ async function dispatchAdapter(name: string): Promise<void> {
     }
 
     case 'cal-access':
-      // Cal-Access adapter not yet ported in Express
-      throw new Error('cal-access ingestion not yet implemented in Express port');
+      await runAdapterForAll('cal_access');
+      break;
 
     case 'indiana':
-      // Indiana adapter not yet ported in Express
-      throw new Error('indiana ingestion not yet implemented in Express port');
+      await runAdapterForAll('indiana');
+      break;
 
     case 'socrata':
-      // Socrata adapter not yet ported in Express
-      throw new Error('socrata ingestion not yet implemented in Express port');
+      await runAdapterForAll('la_socrata');
+      break;
 
     default:
       throw new Error(`unknown adapter: ${name}`);
