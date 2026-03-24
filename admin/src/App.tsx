@@ -17,6 +17,7 @@ import { CategoriesPage } from './pages/admin/CategoriesPage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import PrivacyPage from './pages/PrivacyPage';
 import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
 import { apiFetch } from './lib/api';
@@ -64,6 +65,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
 
       {/* Authenticated (any tier) */}
       <Route element={<AuthGuard />}>
