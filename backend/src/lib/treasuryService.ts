@@ -42,7 +42,7 @@ export interface TreasuryCity {
 
 export interface TreasuryBudget {
   id: string;
-  city_id: string;
+  municipality_id: string;
   fiscal_year: number;
   dataset_type: string;
   total_budget: number;
@@ -108,7 +108,7 @@ interface CityRow {
 
 interface BudgetRow {
   id: string;
-  city_id: string;
+  municipality_id: string;
   fiscal_year: string; // bigint returned as string
   dataset_type: string;
   total_budget: string; // numeric returned as string
@@ -179,7 +179,7 @@ function mapCity(row: CityRow): TreasuryCity {
 function mapBudget(row: BudgetRow): TreasuryBudget {
   return {
     id: row.id,
-    city_id: row.city_id,
+    municipality_id: row.municipality_id,
     fiscal_year: Number(row.fiscal_year),
     dataset_type: row.dataset_type,
     total_budget: Number(row.total_budget),
@@ -250,7 +250,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
               '[]'
             ) AS available_datasets
      FROM treasury.municipalities m
-     LEFT JOIN treasury.budgets b ON b.city_id = m.id
+     LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      GROUP BY m.id
      ORDER BY m.name`
   );
@@ -272,7 +272,7 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
               '[]'
             ) AS available_datasets
      FROM treasury.municipalities m
-     LEFT JOIN treasury.budgets b ON b.city_id = m.id
+     LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      WHERE m.id = $1
      GROUP BY m.id`,
     [id]
@@ -289,10 +289,10 @@ export async function getBudgetsByCityId(
 ): Promise<TreasuryBudget[]> {
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
-      `SELECT id, city_id, fiscal_year, dataset_type, total_budget,
+      `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
               data_source, hierarchy, generated_at, created_at, updated_at
        FROM treasury.budgets
-       WHERE city_id = $1 AND fiscal_year = $2
+       WHERE municipality_id = $1 AND fiscal_year = $2
        ORDER BY fiscal_year DESC`,
       [cityId, fiscalYear]
     );
@@ -300,10 +300,10 @@ export async function getBudgetsByCityId(
   }
 
   const { rows } = await pool.query<BudgetRow>(
-    `SELECT id, city_id, fiscal_year, dataset_type, total_budget,
+    `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
             data_source, hierarchy, generated_at, created_at, updated_at
      FROM treasury.budgets
-     WHERE city_id = $1
+     WHERE municipality_id = $1
      ORDER BY fiscal_year DESC`,
     [cityId]
   );
@@ -318,7 +318,7 @@ export async function getBudgetById(
   id: string
 ): Promise<(TreasuryBudget & { categories: TreasuryBudgetCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
-    `SELECT id, city_id, fiscal_year, dataset_type, total_budget,
+    `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
             data_source, hierarchy, generated_at, created_at, updated_at
      FROM treasury.budgets
      WHERE id = $1`,
@@ -396,9 +396,9 @@ export async function createBudget(data: {
   hierarchy?: string[] | null;
 }): Promise<TreasuryBudget> {
   const { rows } = await pool.query<BudgetRow>(
-    `INSERT INTO treasury.budgets (city_id, fiscal_year, dataset_type, total_budget, data_source, hierarchy)
+    `INSERT INTO treasury.budgets (municipality_id, fiscal_year, dataset_type, total_budget, data_source, hierarchy)
      VALUES ($1, $2, $3, $4, $5, $6)
-     RETURNING id, city_id, fiscal_year, dataset_type, total_budget, data_source, hierarchy, generated_at, created_at, updated_at`,
+     RETURNING id, municipality_id, fiscal_year, dataset_type, total_budget, data_source, hierarchy, generated_at, created_at, updated_at`,
     [data.cityId, data.fiscalYear, data.datasetType, data.totalBudget, data.dataSource ?? null, data.hierarchy ?? null]
   );
   return mapBudget(rows[0]);
