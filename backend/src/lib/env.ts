@@ -22,6 +22,16 @@ const envSchema = z.object({
   ESSENTIALS_SERVICE_KEY: z.string().optional(),
   // Gem service keys — JSON map: { "key": ["yellow"] }. Optional: absent = no gem award endpoints active.
   GEMS_SERVICE_KEYS: z.string().optional(),
+  // Campaign finance adapter keys — all optional; absent = feature degraded but server still starts.
+  // FEC_API_KEY: register free at api.data.gov/signup/ for 1000 req/hr limit.
+  FEC_API_KEY: z.string().optional(),
+  // ADMIN_INGEST_TOKEN: pre-shared token for POST /admin/ingest/:adapter.
+  // If absent, admin ingest endpoint returns 401 on all requests.
+  ADMIN_INGEST_TOKEN: z.string().optional(),
+  // SQS_INGEST_QUEUE_URL: optional SQS queue URL for EventBridge-triggered ingestion.
+  SQS_INGEST_QUEUE_URL: z.string().optional(),
+  // SOCRATA_APP_TOKEN: optional app token for LA Socrata API requests.
+  SOCRATA_APP_TOKEN: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);

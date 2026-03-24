@@ -766,3 +766,420 @@ export async function campaignFinanceInit(): Promise<void> {
     throw err;
   }
 }
+
+// ---------------------------------------------------------------------------
+// Admin service functions — sources CRUD, audit log, ingestion runs
+// Ported from EV-Backend/internal/campaign_finance/handlers.go
+// ---------------------------------------------------------------------------
+
+// DB row types for admin queries
+
+interface SourceRow {
+  id: string;
+  essentials_politician_id: string;
+  source_system: string;
+  external_id: string;
+  research_status: string;
+  notes: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface IngestionRunRow {
+  id: string;
+  adapter_name: string;
+  politician_source_id: string | null;
+  election_cycle: string;
+  started_at: string;
+  completed_at: string | null;
+  status: string;
+  records_fetched: string;
+  records_inserted: string;
+  records_skipped: string;
+  records_unresolved: string;
+  errors: string;
+  duration_ms: string;
+  notes: string;
+  source_etag: string;
+  zip_downloaded_at: string | null;
+}
+
+// Input types for sources CRUD
+
+export interface CreateSourceInput {
+  essentials_politician_id: string;
+  source_system: string;
+  external_id?: string;
+  research_status?: string;
+  notes?: string;
+}
+
+export interface UpdateSourceInput {
+  essentials_politician_id?: string;
+  source_system?: string;
+  external_id?: string;
+  research_status?: string;
+  notes?: string;
+}
+
+/**
+ * getSourcesByPolitician returns all politician_sources rows for a given
+ * essentials_politician_id, ordered by created_at DESC.
+ */
+export async function getSourcesByPolitician(politicianId: string): Promise<PoliticianSource[]> {
+  const result = await pool.query<SourceRow>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = $1
+     ORDER BY created_at DESC`,
+    [politicianId]
+  );
+
+  return result.rows.map((r) => ({
+    id: r.id,
+    essentials_politician_id: r.essentials_politician_id,
+    source_system: r.source_system,
+    external_id: r.external_id,
+    research_status: r.research_status,
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  }));
+}
+
+/**
+ * createSource inserts a new row into politician_sources.
+ * Defaults research_status to 'needs_research' if not provided.
+ * Returns the created row.
+ */
+export async function createSource(data: CreateSourceInput): Promise<PoliticianSource> {
+  const researchStatus = data.research_status ?? 'needs_research';
+  const externalId = data.external_id ?? '';
+  const notes = data.notes ?? '';
+
+  const result = await pool.query<SourceRow>(
+    `INSERT INTO transparent_motivations.politician_sources
+       (essentials_politician_id, source_system, external_id, research_status, notes)
+     VALUES ($1, $2, $3, $4, $5)
+     RETURNING id, essentials_politician_id, source_system, external_id,
+               research_status, notes, created_at, updated_at`,
+    [data.essentials_politician_id, data.source_system, externalId, researchStatus, notes]
+  );
+
+  const r = result.rows[0];
+  return {
+    id: r.id,
+    essentials_politician_id: r.essentials_politician_id,
+    source_system: r.source_system,
+    external_id: r.external_id,
+    research_status: r.research_status,
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  };
+}
+
+/**
+ * getSourceById returns a single politician_sources row by ID.
+ * Returns null if not found.
+ */
+export async function getSourceById(id: string): Promise<PoliticianSource | null> {
+  const result = await pool.query<SourceRow>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE id = $1`,
+    [id]
+  );
+
+  if (result.rows.length === 0) return null;
+  const r = result.rows[0];
+  return {
+    id: r.id,
+    essentials_politician_id: r.essentials_politician_id,
+    source_system: r.source_system,
+    external_id: r.external_id,
+    research_status: r.research_status,
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  };
+}
+
+/**
+ * updateSource updates allowed fields on a politician_sources row.
+ * Only whitelisted fields are updated — prevents SQL injection via field names.
+ * Returns the updated row, or null if not found.
+ */
+export async function updateSource(
+  id: string,
+  data: UpdateSourceInput
+): Promise<PoliticianSource | null> {
+  // Build SET clause from explicit whitelist — NEVER interpolate field names from user input
+  const setClauses: string[] = [];
+  const params: unknown[] = [];
+  let paramIdx = 1;
+
+  if (data.essentials_politician_id !== undefined) {
+    setClauses.push(`essentials_politician_id = $${paramIdx++}`);
+    params.push(data.essentials_politician_id);
+  }
+  if (data.source_system !== undefined) {
+    setClauses.push(`source_system = $${paramIdx++}`);
+    params.push(data.source_system);
+  }
+  if (data.external_id !== undefined) {
+    setClauses.push(`external_id = $${paramIdx++}`);
+    params.push(data.external_id);
+  }
+  if (data.research_status !== undefined) {
+    setClauses.push(`research_status = $${paramIdx++}`);
+    params.push(data.research_status);
+  }
+  if (data.notes !== undefined) {
+    setClauses.push(`notes = $${paramIdx++}`);
+    params.push(data.notes);
+  }
+
+  if (setClauses.length === 0) {
+    // Nothing to update — return current row
+    return getSourceById(id);
+  }
+
+  // Always bump updated_at
+  setClauses.push(`updated_at = NOW()`);
+
+  params.push(id); // final param for WHERE id = $N
+
+  const result = await pool.query<SourceRow>(
+    `UPDATE transparent_motivations.politician_sources
+     SET ${setClauses.join(', ')}
+     WHERE id = $${paramIdx}
+     RETURNING id, essentials_politician_id, source_system, external_id,
+               research_status, notes, created_at, updated_at`,
+    params
+  );
+
+  if (result.rows.length === 0) return null;
+  const r = result.rows[0];
+  return {
+    id: r.id,
+    essentials_politician_id: r.essentials_politician_id,
+    source_system: r.source_system,
+    external_id: r.external_id,
+    research_status: r.research_status,
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  };
+}
+
+/**
+ * deleteSource removes a row from politician_sources by ID.
+ * Returns true if a row was deleted, false if not found.
+ */
+export async function deleteSource(id: string): Promise<boolean> {
+  const result = await pool.query(
+    `DELETE FROM transparent_motivations.politician_sources WHERE id = $1`,
+    [id]
+  );
+  return (result.rowCount ?? 0) > 0;
+}
+
+/**
+ * logSourceAudit inserts a row into source_audit_log.
+ * Records the before/after state of a politician_sources row for accountability.
+ * This is best-effort — errors are logged but do not fail the calling request.
+ *
+ * Ported from writeAuditLog() in handlers.go.
+ */
+export async function logSourceAudit(
+  sourceId: string,
+  userId: string,
+  username: string,
+  action: string,
+  oldValue: unknown,
+  newValue: unknown
+): Promise<void> {
+  const oldJson = oldValue !== null ? JSON.stringify(oldValue) : null;
+  const newJson = newValue !== null ? JSON.stringify(newValue) : null;
+
+  await pool.query(
+    `INSERT INTO transparent_motivations.source_audit_log
+       (politician_source_id, changed_by_user_id, changed_by_username, action, old_value, new_value, changed_at)
+     VALUES ($1, $2, $3, $4, $5::jsonb, $6::jsonb, NOW())`,
+    [sourceId, userId, username, action, oldJson, newJson]
+  );
+}
+
+/**
+ * getIngestionRuns returns recent ingestion_runs rows for the admin dashboard.
+ * Optionally filtered by adapter_name. Default limit 50.
+ */
+export async function getIngestionRuns(
+  adapterName?: string,
+  limit = 50
+): Promise<IngestionRun[]> {
+  // Clamp limit to a safe range
+  const safeLimit = Math.min(Math.max(limit, 1), 500);
+
+  let query: string;
+  let params: unknown[];
+
+  if (adapterName) {
+    query = `SELECT id, adapter_name, politician_source_id, election_cycle,
+                    started_at, completed_at, status, records_fetched, records_inserted,
+                    records_skipped, records_unresolved, errors, duration_ms,
+                    notes, source_etag, zip_downloaded_at
+             FROM transparent_motivations.ingestion_runs
+             WHERE adapter_name = $1
+             ORDER BY started_at DESC
+             LIMIT $2`;
+    params = [adapterName, safeLimit];
+  } else {
+    query = `SELECT id, adapter_name, politician_source_id, election_cycle,
+                    started_at, completed_at, status, records_fetched, records_inserted,
+                    records_skipped, records_unresolved, errors, duration_ms,
+                    notes, source_etag, zip_downloaded_at
+             FROM transparent_motivations.ingestion_runs
+             ORDER BY started_at DESC
+             LIMIT $1`;
+    params = [safeLimit];
+  }
+
+  const result = await pool.query<IngestionRunRow>(query, params);
+
+  return result.rows.map((r) => ({
+    id: Number(r.id),
+    adapter_name: r.adapter_name,
+    politician_source_id: r.politician_source_id,
+    election_cycle: r.election_cycle,
+    started_at: r.started_at,
+    completed_at: r.completed_at,
+    status: r.status,
+    records_fetched: Number(r.records_fetched),
+    records_inserted: Number(r.records_inserted),
+    records_skipped: Number(r.records_skipped),
+    records_unresolved: Number(r.records_unresolved),
+    errors: Number(r.errors),
+    duration_ms: Number(r.duration_ms),
+    notes: r.notes,
+    source_etag: r.source_etag,
+    zip_downloaded_at: r.zip_downloaded_at,
+  }));
+}
+
+/**
+ * getConfirmedFecSources returns all politician_sources rows with source_system='fec'
+ * and research_status='confirmed'. Used by the batch FEC ingest handler.
+ */
+export async function getConfirmedFecSources(): Promise<PoliticianSource[]> {
+  const result = await pool.query<SourceRow>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE source_system = 'fec'
+       AND research_status = 'confirmed'
+     ORDER BY created_at ASC`,
+    []
+  );
+
+  return result.rows.map((r) => ({
+    id: r.id,
+    essentials_politician_id: r.essentials_politician_id,
+    source_system: r.source_system,
+    external_id: r.external_id,
+    research_status: r.research_status,
+    notes: r.notes,
+    created_at: r.created_at,
+    updated_at: r.updated_at,
+  }));
+}
+
+/**
+ * getMostRecentIngestionRun returns the most recent ingestion_runs row for the
+ * given adapter_name (by started_at DESC). Returns null if none found.
+ * Used by the batch ingest handler to return the ingestion_run_id in the response.
+ */
+export async function getMostRecentIngestionRun(adapterName: string): Promise<IngestionRun | null> {
+  const result = await pool.query<IngestionRunRow>(
+    `SELECT id, adapter_name, politician_source_id, election_cycle,
+            started_at, completed_at, status, records_fetched, records_inserted,
+            records_skipped, records_unresolved, errors, duration_ms,
+            notes, source_etag, zip_downloaded_at
+     FROM transparent_motivations.ingestion_runs
+     WHERE adapter_name = $1
+     ORDER BY started_at DESC
+     LIMIT 1`,
+    [adapterName]
+  );
+
+  if (result.rows.length === 0) return null;
+  const r = result.rows[0];
+  return {
+    id: Number(r.id),
+    adapter_name: r.adapter_name,
+    politician_source_id: r.politician_source_id,
+    election_cycle: r.election_cycle,
+    started_at: r.started_at,
+    completed_at: r.completed_at,
+    status: r.status,
+    records_fetched: Number(r.records_fetched),
+    records_inserted: Number(r.records_inserted),
+    records_skipped: Number(r.records_skipped),
+    records_unresolved: Number(r.records_unresolved),
+    errors: Number(r.errors),
+    duration_ms: Number(r.duration_ms),
+    notes: r.notes,
+    source_etag: r.source_etag,
+    zip_downloaded_at: r.zip_downloaded_at,
+  };
+}
+
+/**
+ * getIngestionRunAfter returns the most recent ingestion_runs row for a
+ * given politician_source_id + election_cycle that started after startedAfter.
+ * Used by IngestFEC JWT route to retrieve the run ID after a synchronous ingest.
+ * Returns null if none found.
+ */
+export async function getIngestionRunAfter(
+  politicianSourceId: string,
+  cycle: string,
+  startedAfter: Date
+): Promise<IngestionRun | null> {
+  const result = await pool.query<IngestionRunRow>(
+    `SELECT id, adapter_name, politician_source_id, election_cycle,
+            started_at, completed_at, status, records_fetched, records_inserted,
+            records_skipped, records_unresolved, errors, duration_ms,
+            notes, source_etag, zip_downloaded_at
+     FROM transparent_motivations.ingestion_runs
+     WHERE politician_source_id = $1
+       AND election_cycle = $2
+       AND started_at >= $3
+     ORDER BY started_at DESC
+     LIMIT 1`,
+    [politicianSourceId, cycle, startedAfter.toISOString()]
+  );
+
+  if (result.rows.length === 0) return null;
+  const r = result.rows[0];
+  return {
+    id: Number(r.id),
+    adapter_name: r.adapter_name,
+    politician_source_id: r.politician_source_id,
+    election_cycle: r.election_cycle,
+    started_at: r.started_at,
+    completed_at: r.completed_at,
+    status: r.status,
+    records_fetched: Number(r.records_fetched),
+    records_inserted: Number(r.records_inserted),
+    records_skipped: Number(r.records_skipped),
+    records_unresolved: Number(r.records_unresolved),
+    errors: Number(r.errors),
+    duration_ms: Number(r.duration_ms),
+    notes: r.notes,
+    source_etag: r.source_etag,
+    zip_downloaded_at: r.zip_downloaded_at,
+  };
+}
