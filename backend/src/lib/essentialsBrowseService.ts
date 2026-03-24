@@ -146,7 +146,7 @@ export async function getPoliticiansByArea(
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
-           d.district_type, d.label AS district_label, d.geo_id AS district_id, d.mtfcc,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name
@@ -180,7 +180,7 @@ export async function getPoliticiansByArea(
              p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              o.title AS office_title, o.representing_state, o.representing_city,
              o.is_appointed_position,
-             d.district_type, d.label AS district_label, d.geo_id AS district_id, d.mtfcc,
+             d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
              g.name AS government_name
@@ -228,6 +228,7 @@ export async function getPoliticiansByArea(
     district_type: row.district_type ?? '',
     district_label: row.district_label ?? '',
     district_id: row.district_id ?? '',
+    geo_id: row.geo_id ?? '',
     mtfcc: row.mtfcc ?? '',
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',

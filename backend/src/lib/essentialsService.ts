@@ -72,6 +72,7 @@ export interface PoliticianFlatRecord {
   district_type: string;
   district_label: string;
   district_id: string;
+  geo_id: string;
   mtfcc: string;
   chamber_name: string;
   chamber_name_formal: string;
@@ -296,7 +297,7 @@ export async function getPoliticiansFlatList(
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
-           d.district_type, d.label AS district_label, d.geo_id AS district_id, d.mtfcc,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name
@@ -312,7 +313,7 @@ export async function getPoliticiansFlatList(
 
   const { rows } = await pool.query(queryText);
 
-  return rows.map((row) => ({
+  const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
     id: row.id as string,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name ?? '',
@@ -332,13 +333,12 @@ export async function getPoliticiansFlatList(
     district_type: row.district_type ?? '',
     district_label: row.district_label ?? '',
     district_id: row.district_id ?? '',
+    geo_id: row.geo_id ?? '',
     mtfcc: row.mtfcc ?? '',
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
     government_name: row.government_name ?? '',
-    // is_elected derived: NOT appointed. governments table has no is_elected column.
     is_elected: !row.is_appointed_position,
-    // election_frequency is on chambers, not governments.
     election_frequency: row.election_frequency ?? '',
     committees: null,
     bio_text: row.bio_text ?? null,
@@ -383,7 +383,7 @@ export async function getRepresentativesByAddress(
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
-           d.district_type, d.label AS district_label, d.geo_id AS district_id,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
@@ -409,7 +409,7 @@ export async function getRepresentativesByAddress(
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position,
-           d.district_type, d.label AS district_label, d.geo_id AS district_id,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
@@ -455,6 +455,7 @@ export async function getRepresentativesByAddress(
     district_type: row.district_type ?? '',
     district_label: row.district_label ?? '',
     district_id: row.district_id ?? '',
+    geo_id: row.geo_id ?? '',
     mtfcc: row.mtfcc ?? '',
     chamber_name: row.chamber_name ?? '',
     chamber_name_formal: row.chamber_name_formal ?? '',
@@ -567,6 +568,7 @@ export interface PoliticianDetail {
   district_type: string;
   district_label: string;
   district_id: string;
+  geo_id: string;
   district_state: string;
   mtfcc: string;
   // Chamber details
@@ -648,7 +650,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.is_active, p.office_id, p.notes,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.seats AS office_seats,
-           d.district_type, d.label AS district_label, d.geo_id AS district_id,
+           d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc, d.state AS district_state,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
@@ -778,6 +780,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     district_type: row.district_type ?? '',
     district_label: row.district_label ?? '',
     district_id: row.district_id ?? '',
+    geo_id: row.geo_id ?? '',
     district_state: row.district_state ?? '',
     mtfcc: row.mtfcc ?? '',
     chamber_name: row.chamber_name ?? '',
@@ -998,7 +1001,7 @@ export interface DistrictDetail {
 export async function getDistrictById(id: string): Promise<DistrictDetail | null> {
   // First fetch the district itself to verify it exists
   const districtResult = await pool.query(
-    `SELECT d.id, d.external_id, d.label, d.district_type, d.geo_id AS district_id,
+    `SELECT d.id, d.external_id, d.label, d.district_type, d.district_id, d.geo_id,
             d.state, d.mtfcc, d.geo_id,
             ch.id AS chamber_id, ch.name AS chamber_name,
             g.id AS gov_id, g.name AS gov_name
