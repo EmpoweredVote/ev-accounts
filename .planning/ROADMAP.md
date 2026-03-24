@@ -502,7 +502,7 @@ Plans:
 | 42. Decommission and DNS Cutover | v1.6 | 0/? | Pending | — |
 | 43. Integration Documentation | v1.6 | 0/? | Pending | — |
 | 44. Accounts API SSO Infrastructure | v1.7 | 2/2 | Complete | 2026-03-24 |
-| 45. Profile Hub + CTC Silent SSO | v1.7 | 0/2 | Pending | — |
+| 45. Profile Hub + CTC Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 46. Essentials + CompassV2 Silent SSO | v1.7 | 0/2 | Pending | — |
 | 47. Validation Quests Silent SSO | v1.7 | 0/2 | Pending | — |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |

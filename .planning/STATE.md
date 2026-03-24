@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.7 Cross-App SSO — Phase 45: Profile Hub + CTC Silent SSO (Plans 01–02 complete)
+**Current focus:** v1.7 Cross-App SSO — Phase 46: Essentials + CompassV2 Silent SSO
 
 ## Current Position
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 45-profile-hub-ctc-silent-sso — In progress
-Plan: 02 of 3 complete
-Status: Plan 02 complete; Plan 03 (CompassV2 silent SSO) next
-Last activity: 2026-03-24 — Phase 45-02 complete; CTC silent SSO (AuthInitializer + Header logout with shared cookie clearing)
+Phase: 45-profile-hub-ctc-silent-sso — COMPLETE ✓
+Plan: —
+Status: Ready to plan Phase 46
+Last activity: 2026-03-24 — Phase 45 complete; Profile Hub + CTC both inherit ev_session on load; logout clears shared cookie; goal verified 9/9
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -50,13 +50,22 @@ CompassV2 (main, all pushed directly — bypassed branch protection):
 - **trivia_service Supavisor registration** — CTC using postgres superuser temporarily (Phase 41 open blocker, non-critical)
 - **CompassV2 branch protection** — pushed directly to `main` three times today (bypassed rule). Chris Andrews should review and merge via PR going forward.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 🔄] Phase 44 complete ████████████
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 🔄] Phase 45 complete ████████████
 
 ## Accumulated Context
 
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 45 Complete — Profile Hub + CTC Silent SSO (9/9 verified)
+
+- **Profile Hub (App.tsx)** — three-branch mount useEffect: (1) hash fragment, (2) stored token, (3) silentSsoCheck with 150ms spinner delay; raw fetch to `/api/auth/session` with `credentials: 'include'`
+- **Profile Hub logout (DashboardPage.tsx)** — `POST /api/auth/logout` with `credentials: 'include'` + Bearer token; toast for 500ms before clearAuth fires
+- **CTC (AuthInitializer.tsx)** — ssoSessionCheck only when no ev_refresh_token in localStorage; writes refresh_token to localStorage then falls through to existing exchangeRefreshToken pipeline
+- **CTC logout (Header.tsx)** — raw fetch with `credentials: 'include'`; navigate('/login') removed; user stays on current page
+- **SSO check pattern for phases 46–47** — use accountsApi.ssoSessionCheck (already exported), 150ms spinner delay, fall-through to existing auth pipeline
+- **Phase 45 commits** — 115a965, 871d36c (Profile Hub), 6cf179f, 762d9bd (CTC)
 
 ### Phase 45 Plan 02 Complete — CTC Silent SSO (45-02)
 
