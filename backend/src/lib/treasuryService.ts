@@ -310,13 +310,43 @@ export async function getBudgetsByCityId(
   return rows.map(mapBudget);
 }
 
+// Nested category with subcategories and lineItems for the frontend (camelCase)
+export interface NestedCategory {
+  name: string;
+  amount: number;
+  percentage: number;
+  color: string;
+  description?: string;
+  whyMatters?: string;
+  historicalChange?: number | null;
+  items: number;
+  linkKey?: string;
+  subcategories?: NestedCategory[];
+  lineItems?: Array<{
+    description: string;
+    approvedAmount: number;
+    actualAmount: number;
+    basePay?: number | null;
+    benefits?: number | null;
+    overtime?: number | null;
+    other?: number | null;
+    startDate?: string | null;
+    vendor?: string | null;
+    date?: string | null;
+    paymentMethod?: string | null;
+    invoiceNumber?: string | null;
+    fund?: string | null;
+    expenseCategory?: string | null;
+  }>;
+}
+
 /**
- * Fetch a budget by UUID with its flat sorted categories.
+ * Fetch a budget by UUID with nested category tree + lineItems.
  * Returns null if not found.
  */
 export async function getBudgetById(
   id: string
-): Promise<(TreasuryBudget & { categories: TreasuryBudgetCategory[] }) | null> {
+): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
             data_source, hierarchy, generated_at, created_at, updated_at
@@ -329,6 +359,7 @@ export async function getBudgetById(
 
   const budget = mapBudget(budgetRows[0]);
 
+  // Fetch all categories
   const { rows: categoryRows } = await pool.query<CategoryRow>(
     `SELECT id, budget_id, parent_id, name, amount, percentage, color,
             description, why_matters, historical_change, item_count, sort_order, depth, link_key
@@ -338,9 +369,98 @@ export async function getBudgetById(
     [id]
   );
 
+  // Fetch all line items for this budget in one query
+  const { rows: lineItemRows } = await pool.query<LineItemRow>(
+    `SELECT id, category_id, description, approved_amount, actual_amount,
+            base_pay, benefits, overtime, other, start_date, vendor, date,
+            payment_method, invoice_number, fund, expense_category
+     FROM treasury.budget_line_items
+     WHERE category_id IN (
+       SELECT id FROM treasury.budget_categories WHERE budget_id = $1
+     )`,
+    [id]
+  );
+
+  // Group line items by category_id
+  const lineItemsByCategory = new Map<string, typeof lineItemRows>();
+  for (const li of lineItemRows) {
+    const arr = lineItemsByCategory.get(li.category_id) ?? [];
+    arr.push(li);
+    lineItemsByCategory.set(li.category_id, arr);
+  }
+
+  // Build nested tree
+  const nodeMap = new Map<string, NestedCategory & { _id: string; _parentId: string | null }>();
+  const childrenMap = new Map<string, string[]>();
+  const rootIds: string[] = [];
+
+  for (const row of categoryRows) {
+    const catLineItems = lineItemsByCategory.get(row.id);
+    const node = {
+      _id: row.id,
+      _parentId: row.parent_id,
+      name: row.name,
+      amount: Number(row.amount),
+      percentage: row.percentage !== null ? Number(row.percentage) : 0,
+      color: row.color ?? '',
+      description: row.description ?? undefined,
+      whyMatters: row.why_matters ?? undefined,
+      historicalChange: row.historical_change !== null ? Number(row.historical_change) : null,
+      items: row.item_count !== null ? Number(row.item_count) : 0,
+      linkKey: row.link_key ?? undefined,
+      subcategories: [] as NestedCategory[],
+      lineItems: catLineItems?.map(li => ({
+        description: li.description,
+        approvedAmount: li.approved_amount !== null ? Number(li.approved_amount) : 0,
+        actualAmount: li.actual_amount !== null ? Number(li.actual_amount) : 0,
+        basePay: li.base_pay !== null ? Number(li.base_pay) : null,
+        benefits: li.benefits !== null ? Number(li.benefits) : null,
+        overtime: li.overtime !== null ? Number(li.overtime) : null,
+        other: li.other !== null ? Number(li.other) : null,
+        startDate: li.start_date,
+        vendor: li.vendor,
+        date: li.date,
+        paymentMethod: li.payment_method,
+        invoiceNumber: li.invoice_number,
+        fund: li.fund,
+        expenseCategory: li.expense_category,
+      })),
+    };
+    nodeMap.set(row.id, node);
+
+    if (row.parent_id === null) {
+      rootIds.push(row.id);
+    } else {
+      const siblings = childrenMap.get(row.parent_id) ?? [];
+      siblings.push(row.id);
+      childrenMap.set(row.parent_id, siblings);
+    }
+  }
+
+  // Recursive tree builder
+  function buildTree(id: string): NestedCategory {
+    const node = nodeMap.get(id)!;
+    const childIds = childrenMap.get(id) ?? [];
+    const subcategories = childIds.map(buildTree);
+    const result: NestedCategory = {
+      name: node.name,
+      amount: node.amount,
+      percentage: node.percentage,
+      color: node.color,
+      items: node.items,
+    };
+    if (node.description) result.description = node.description;
+    if (node.whyMatters) result.whyMatters = node.whyMatters;
+    if (node.historicalChange !== null) result.historicalChange = node.historicalChange;
+    if (node.linkKey) result.linkKey = node.linkKey;
+    if (subcategories.length > 0) result.subcategories = subcategories;
+    if (node.lineItems && node.lineItems.length > 0) result.lineItems = node.lineItems;
+    return result;
+  }
+
   return {
     ...budget,
-    categories: categoryRows.map(mapCategory),
+    categories: rootIds.map(buildTree),
   };
 }
 
