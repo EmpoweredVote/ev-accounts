@@ -201,6 +201,8 @@ export async function getCompassCategories() {
  * Note: essentials.politicians does not have office_title; full_name is a regular column.
  */
 export async function getCompassPoliticians() {
+  // Only return politicians that have at least one compass answer
+  // (matches Go backend behavior — prevents every card from showing compass icon)
   const { rows } = await pool.query(
     `SELECT DISTINCT ON (p.id)
             p.id, p.first_name, p.last_name, p.preferred_name, p.full_name,
@@ -212,6 +214,7 @@ export async function getCompassPoliticians() {
             COALESCE(d.label, '') AS district_label,
             COALESCE(d.district_type, '') AS district_type
      FROM essentials.politicians p
+     JOIN inform.politician_answers pa ON pa.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.politician_id = p.id
      LEFT JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN LATERAL (
