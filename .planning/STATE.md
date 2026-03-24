@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 47-validation-quests-silent-sso — COMPLETE ✓
-Plan: —
-Status: Ready to plan Phase 48
-Last activity: 2026-03-24 — Phase 47 complete; VQ inherits ev_session on load via initSso() + setSession(); isAuthChecking gates PrivateRoute; logout clears shared cookie via POST /api/auth/logout; goal verified 8/8
+Phase: 48-compliance-e2e-verification — In progress
+Plan: 48-02 of 02 — paused at checkpoint (human-verify)
+Status: Awaiting user browser execution of SSO smoke test
+Last activity: 2026-03-24 — 48-02 Task 1 complete; docs/SSO-SMOKE-TEST.md created (SSO-01 session inheritance, SSO-02 single logout, SSO-03 graceful degradation); awaiting user to run tests and report results
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
