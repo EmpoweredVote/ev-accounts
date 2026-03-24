@@ -65,14 +65,14 @@ router.get('/:zip', optionalAuth, async (req: Request, res: Response): Promise<v
 
 router.post('/search', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { query } = req.body as { query?: string };
+    const { query, includeChallengers } = req.body as { query?: string; includeChallengers?: boolean };
 
     if (!query || typeof query !== 'string' || !query.trim()) {
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'query is required' });
       return;
     }
 
-    const result = await getRepresentativesByAddress(query.trim());
+    const result = await getRepresentativesByAddress(query.trim(), { includeChallengers: !!includeChallengers });
     const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
     res.setHeader('X-Formatted-Address', result.matchedAddress);

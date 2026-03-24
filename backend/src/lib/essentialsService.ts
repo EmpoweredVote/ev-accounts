@@ -404,7 +404,8 @@ export async function getPoliticiansFlatList(
  * Returns { politicians: [], jurisdiction: null } when no boundaries match.
  */
 export async function getRepresentativesByAddress(
-  address: string
+  address: string,
+  { includeChallengers = false }: { includeChallengers?: boolean } = {}
 ): Promise<AddressSearchResult> {
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
   const { lat, lng, matchedAddress, state } = await geocodeAddress(address);
@@ -436,7 +437,7 @@ export async function getRepresentativesByAddress(
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
     )
     AND (p.is_active = true OR o.is_vacant = true)
-    AND COALESCE(p.is_incumbent, true) = true
+    ${includeChallengers ? '' : 'AND COALESCE(p.is_incumbent, true) = true'}
     ORDER BY COALESCE(p.id, o.id)
   `;
 
