@@ -11,10 +11,10 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.7 in progress (2026-03-24)**
 
-Phase: 46-essentials-compassv2-silent-sso — COMPLETE ✓
-Plan: —
-Status: Ready to plan Phase 47
-Last activity: 2026-03-24 — Phase 46 complete; Essentials + CompassV2 both inherit ev_session on load; authChecking gates CompassV2 profile menu; logout clears shared cookie; goal verified 7/7
+Phase: 47-validation-quests-silent-sso — IN PROGRESS
+Plan: 01 of ? — COMPLETE ✓
+Status: Plan 47-01 complete; ready for 47-02
+Last activity: 2026-03-24 — Phase 47 Plan 01 complete; VQ frontend inherits ev_session on load; isAuthChecking gate holds PrivateRoute; deep links preserved; TypeScript + Vite build clean
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -57,6 +57,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 47 Plan 01 Complete — VQ Silent SSO (47-01)
+
+- **isAuthChecking initialized true** — cleared ONLY in `initSso()` finally block; never in `onAuthStateChange`; guarantees SSO check completes before any route decision
+- **initSso() fire-and-forget** — called with `void initSso()` inside useEffect; avoids dead-lock warning (consistent with existing onAuthStateChange pattern)
+- **3s AbortController timeout** — fetch to `/api/auth/session` aborts after 3s; `AbortError` silently swallowed; any other error logged
+- **PrivateRoute returns null** — not a spinner; preserves deep link URL so requested route renders directly after SSO resolves
+- **setSession() → onAuthStateChange SIGNED_IN** — no manual `fetchUserProfile()` after SSO; existing event handler covers it
+- **Phase 47-01 commits** — 746f191 (isAuthChecking type), 018fc48 (AuthContext SSO + PrivateRoute gate)
 
 ### Phase 46 Plan 02 Complete — CompassV2 Silent SSO (46-02)
 
