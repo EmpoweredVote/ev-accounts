@@ -12,9 +12,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 **v1.7 in progress (2026-03-24)**
 
 Phase: 48-compliance-e2e-verification — In progress
-Plan: 48-02 of 02 — paused at checkpoint (human-verify)
-Status: Awaiting user browser execution of SSO smoke test
-Last activity: 2026-03-24 — 48-02 Task 1 complete; docs/SSO-SMOKE-TEST.md created (SSO-01 session inheritance, SSO-02 single logout, SSO-03 graceful degradation); awaiting user to run tests and report results
+Plan: 48-01 of 02 — paused at checkpoint (human-verify)
+Status: Awaiting human verification of /privacy page and footer links
+Last activity: 2026-03-24 — 48-01 Tasks 1 & 2 complete; PrivacyPage.tsx created with 9-section policy + ev_session cookie table; /privacy route registered; Privacy Policy footer links added to Login and Signup; awaiting user to verify at accounts.empowered.vote/privacy
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
