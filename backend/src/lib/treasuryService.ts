@@ -514,62 +514,64 @@ export async function getLineItemsByBudgetId(
 }
 
 /**
- * Fetch linked transactions for all categories in a budget.
- * Returns a map of link_key → LinkedTransactionSummary.
- * Only includes the top 20 transactions per link_key; sets hasMore if more exist.
+ * Fetch linked transactions for a single category in a budget by link_key prefix.
+ * Uses prefix matching so "fire" matches "fire|main|general|supplies" etc.
+ * Returns a LinkedTransactionSummary with top vendors and a preview of transactions.
  */
-export async function getLinkedTransactionsByBudgetId(
-  budgetId: string
-): Promise<Map<string, LinkedTransactionSummary>> {
-  const PREVIEW_COUNT = 20;
+export async function getLinkedTransactions(
+  budgetId: string,
+  linkKey: string,
+  limit: number = 20
+): Promise<LinkedTransactionSummary | null> {
+  // Count + aggregate in one query using prefix match
+  const { rows: summaryRows } = await pool.query(
+    `SELECT
+       COUNT(*)::int AS transaction_count,
+       COALESCE(SUM(t.amount), 0) AS total_amount,
+       COUNT(DISTINCT t.vendor_id)::int AS vendor_count
+     FROM treasury.transactions t
+     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')`,
+    [budgetId, linkKey]
+  );
 
-  const { rows } = await pool.query<TransactionRow>(
-    `SELECT t.id, t.amount, t.description, t.payment_date, t.payment_method,
-            t.invoice_number, t.fund, t.expense_category, t.link_key,
+  const summary = summaryRows[0];
+  if (!summary || summary.transaction_count === 0) return null;
+
+  // Top 5 vendors by total amount
+  const { rows: vendorRows } = await pool.query(
+    `SELECT v.name, SUM(t.amount) AS amount, COUNT(*)::int AS count
+     FROM treasury.transactions t
+     JOIN treasury.vendors v ON v.id = t.vendor_id
+     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')
+     GROUP BY v.name
+     ORDER BY SUM(t.amount) DESC
+     LIMIT 5`,
+    [budgetId, linkKey]
+  );
+
+  // Preview transactions (most recent first)
+  const { rows: txRows } = await pool.query<TransactionRow>(
+    `SELECT t.amount, t.description, t.payment_date, t.payment_method,
+            t.invoice_number, t.fund, t.expense_category,
             v.name AS vendor_name
      FROM treasury.transactions t
      LEFT JOIN treasury.vendors v ON v.id = t.vendor_id
-     WHERE t.budget_id = $1
-     ORDER BY t.payment_date DESC`,
-    [budgetId]
+     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')
+     ORDER BY t.payment_date DESC
+     LIMIT $3`,
+    [budgetId, linkKey, limit]
   );
 
-  // Group by link_key and build summaries
-  const grouped = new Map<string, (TransactionRow & { link_key: string })[]>();
-  for (const row of rows) {
-    const key = (row as any).link_key as string | null;
-    if (!key) continue;
-    const arr = grouped.get(key) ?? [];
-    arr.push({ ...row, link_key: key });
-    grouped.set(key, arr);
-  }
-
-  const result = new Map<string, LinkedTransactionSummary>();
-
-  for (const [linkKey, txRows] of grouped) {
-    const vendorTotals = new Map<string, { name: string; amount: number; count: number }>();
-    let totalAmount = 0;
-    const vendorNames = new Set<string>();
-
-    for (const tx of txRows) {
-      const amount = Number(tx.amount) || 0;
-      totalAmount += amount;
-      const vendor = tx.vendor_name || 'Unknown';
-      vendorNames.add(vendor);
-
-      if (vendor !== 'Unknown') {
-        const existing = vendorTotals.get(vendor) ?? { name: vendor, amount: 0, count: 0 };
-        existing.amount += amount;
-        existing.count++;
-        vendorTotals.set(vendor, existing);
-      }
-    }
-
-    const topVendors = Array.from(vendorTotals.values())
-      .sort((a, b) => b.amount - a.amount)
-      .slice(0, 5);
-
-    const transactions = txRows.slice(0, PREVIEW_COUNT).map(tx => ({
+  return {
+    totalAmount: Number(summary.total_amount),
+    transactionCount: summary.transaction_count,
+    vendorCount: summary.vendor_count,
+    topVendors: vendorRows.map(r => ({
+      name: r.name,
+      amount: Number(r.amount),
+      count: r.count,
+    })),
+    transactions: txRows.map(tx => ({
       description: tx.description || 'No description',
       amount: Number(tx.amount) || 0,
       vendor: tx.vendor_name || 'Unknown',
@@ -578,19 +580,9 @@ export async function getLinkedTransactionsByBudgetId(
       invoiceNumber: tx.invoice_number,
       fund: tx.fund || '',
       expenseCategory: tx.expense_category || '',
-    }));
-
-    result.set(linkKey, {
-      totalAmount,
-      transactionCount: txRows.length,
-      vendorCount: vendorNames.size,
-      topVendors,
-      transactions,
-      hasMore: txRows.length > PREVIEW_COUNT,
-    });
-  }
-
-  return result;
+    })),
+    hasMore: summary.transaction_count > limit,
+  };
 }
 
 // ---------------------------------------------------------------------------

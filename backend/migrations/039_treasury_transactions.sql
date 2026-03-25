@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS treasury.transactions (
 );
 
 -- Primary query path: find transactions for a budget category via link_key
-CREATE INDEX idx_transaction_budget_link ON treasury.transactions(budget_id, link_key);
+-- text_pattern_ops enables efficient prefix/range scans for drill-down at any hierarchy level
+CREATE INDEX idx_transaction_budget_link ON treasury.transactions(budget_id, link_key text_pattern_ops);
 
 -- Support queries by vendor across a budget
 CREATE INDEX idx_transaction_vendor ON treasury.transactions(vendor_id);

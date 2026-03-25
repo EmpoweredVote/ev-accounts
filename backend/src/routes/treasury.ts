@@ -25,7 +25,7 @@ import {
   getBudgetsByCityId,
   getBudgetById,
   getLineItemsByBudgetId,
-  getLinkedTransactionsByBudgetId,
+  getLinkedTransactions,
   createCity,
   createBudget,
   createBudgetCategory,
@@ -172,8 +172,9 @@ router.get(
   }
 );
 
-// GET /api/treasury/budgets/:id/transactions
-// Returns linked transaction summaries keyed by link_key for all categories in the budget.
+// GET /api/treasury/budgets/:id/transactions?link_key=fire|main&limit=20
+// Returns a LinkedTransactionSummary for transactions matching the link_key prefix.
+// Prefix matching: link_key=fire matches fire|main|general|supplies etc.
 router.get(
   '/budgets/:id/transactions',
   optionalAuth,
@@ -184,14 +185,21 @@ router.get(
       return;
     }
 
+    const linkKey = req.query.link_key as string | undefined;
+    if (!linkKey) {
+      res.status(422).json({ code: 'MISSING_PARAM', message: 'link_key query parameter is required' });
+      return;
+    }
+
+    const limit = Math.min(parseInt(req.query.limit as string) || 20, 100);
+
     try {
-      const summaries = await getLinkedTransactionsByBudgetId(id);
-      // Convert Map to plain object for JSON serialization
-      const result: Record<string, any> = {};
-      for (const [key, value] of summaries) {
-        result[key] = value;
+      const summary = await getLinkedTransactions(id, linkKey, limit);
+      if (!summary) {
+        res.status(200).json(null);
+        return;
       }
-      res.status(200).json(result);
+      res.status(200).json(summary);
     } catch (err) {
       console.error('[GET /treasury/budgets/:id/transactions] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
