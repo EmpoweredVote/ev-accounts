@@ -232,6 +232,18 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
           // Non-aborting: continue to next source
         }
       }
+      // Update freshness timestamp so X-Data-Updated-At header has a value
+      try {
+        await pool.query(
+          `INSERT INTO transparent_motivations.data_source_metadata
+             (source_system, last_sync_at, last_sync_status)
+           VALUES ('fec', NOW(), 'ok')
+           ON CONFLICT (source_system) DO UPDATE
+             SET last_sync_at = NOW(), last_sync_status = 'ok', updated_at = NOW()`
+        );
+      } catch (err) {
+        console.warn('[campaignFinanceScheduler] fec: data_source_metadata update failed (non-fatal):', err);
+      }
       break;
     }
 
