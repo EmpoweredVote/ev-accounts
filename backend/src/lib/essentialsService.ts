@@ -817,7 +817,18 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       pool.query(
         `SELECT id, source, email, phone, fax, contact_type, website_url
          FROM essentials.politician_contacts
-         WHERE politician_id = $1`,
+         WHERE politician_id = $1
+         ORDER BY CASE contact_type
+           WHEN 'primary' THEN 0
+           WHEN 'office' THEN 1
+           WHEN 'office_website' THEN 2
+           WHEN 'district' THEN 3
+           WHEN 'central' THEN 4
+           WHEN 'city_website' THEN 5
+           WHEN 'campaign' THEN 6
+           WHEN 'personal' THEN 7
+           ELSE 8
+         END`,
         [id]
       ),
       pool.query(
