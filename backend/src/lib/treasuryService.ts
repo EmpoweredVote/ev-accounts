@@ -89,6 +89,24 @@ export interface TreasuryBudgetLineItem {
   expense_category: string | null;
 }
 
+export interface LinkedTransactionSummary {
+  totalAmount: number;
+  transactionCount: number;
+  vendorCount: number;
+  topVendors: Array<{ name: string; amount: number; count: number }>;
+  transactions: Array<{
+    description: string;
+    amount: number;
+    vendor: string;
+    date: string;
+    paymentMethod: string | null;
+    invoiceNumber: string | null;
+    fund: string;
+    expenseCategory: string;
+  }>;
+  hasMore: boolean;
+}
+
 // ---------------------------------------------------------------------------
 // Row type helpers (pg query result shapes)
 // ---------------------------------------------------------------------------
@@ -153,6 +171,18 @@ interface LineItemRow {
   invoice_number: string | null;
   fund: string | null;
   expense_category: string | null;
+}
+
+interface TransactionRow {
+  id: string;
+  amount: string; // numeric
+  description: string | null;
+  payment_date: string | null;
+  payment_method: string | null;
+  invoice_number: string | null;
+  fund: string | null;
+  expense_category: string | null;
+  vendor_name: string | null; // joined from vendors table
 }
 
 // ---------------------------------------------------------------------------
@@ -481,6 +511,86 @@ export async function getLineItemsByBudgetId(
     [budgetId]
   );
   return rows.map(mapLineItem);
+}
+
+/**
+ * Fetch linked transactions for all categories in a budget.
+ * Returns a map of link_key → LinkedTransactionSummary.
+ * Only includes the top 20 transactions per link_key; sets hasMore if more exist.
+ */
+export async function getLinkedTransactionsByBudgetId(
+  budgetId: string
+): Promise<Map<string, LinkedTransactionSummary>> {
+  const PREVIEW_COUNT = 20;
+
+  const { rows } = await pool.query<TransactionRow>(
+    `SELECT t.id, t.amount, t.description, t.payment_date, t.payment_method,
+            t.invoice_number, t.fund, t.expense_category, t.link_key,
+            v.name AS vendor_name
+     FROM treasury.transactions t
+     LEFT JOIN treasury.vendors v ON v.id = t.vendor_id
+     WHERE t.budget_id = $1
+     ORDER BY t.payment_date DESC`,
+    [budgetId]
+  );
+
+  // Group by link_key and build summaries
+  const grouped = new Map<string, (TransactionRow & { link_key: string })[]>();
+  for (const row of rows) {
+    const key = (row as any).link_key as string | null;
+    if (!key) continue;
+    const arr = grouped.get(key) ?? [];
+    arr.push({ ...row, link_key: key });
+    grouped.set(key, arr);
+  }
+
+  const result = new Map<string, LinkedTransactionSummary>();
+
+  for (const [linkKey, txRows] of grouped) {
+    const vendorTotals = new Map<string, { name: string; amount: number; count: number }>();
+    let totalAmount = 0;
+    const vendorNames = new Set<string>();
+
+    for (const tx of txRows) {
+      const amount = Number(tx.amount) || 0;
+      totalAmount += amount;
+      const vendor = tx.vendor_name || 'Unknown';
+      vendorNames.add(vendor);
+
+      if (vendor !== 'Unknown') {
+        const existing = vendorTotals.get(vendor) ?? { name: vendor, amount: 0, count: 0 };
+        existing.amount += amount;
+        existing.count++;
+        vendorTotals.set(vendor, existing);
+      }
+    }
+
+    const topVendors = Array.from(vendorTotals.values())
+      .sort((a, b) => b.amount - a.amount)
+      .slice(0, 5);
+
+    const transactions = txRows.slice(0, PREVIEW_COUNT).map(tx => ({
+      description: tx.description || 'No description',
+      amount: Number(tx.amount) || 0,
+      vendor: tx.vendor_name || 'Unknown',
+      date: tx.payment_date || '',
+      paymentMethod: tx.payment_method,
+      invoiceNumber: tx.invoice_number,
+      fund: tx.fund || '',
+      expenseCategory: tx.expense_category || '',
+    }));
+
+    result.set(linkKey, {
+      totalAmount,
+      transactionCount: txRows.length,
+      vendorCount: vendorNames.size,
+      topVendors,
+      transactions,
+      hasMore: txRows.length > PREVIEW_COUNT,
+    });
+  }
+
+  return result;
 }
 
 // ---------------------------------------------------------------------------

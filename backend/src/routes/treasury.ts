@@ -25,6 +25,7 @@ import {
   getBudgetsByCityId,
   getBudgetById,
   getLineItemsByBudgetId,
+  getLinkedTransactionsByBudgetId,
   createCity,
   createBudget,
   createBudgetCategory,
@@ -166,6 +167,33 @@ router.get(
       res.status(200).json(lineItems);
     } catch (err) {
       console.error('[GET /treasury/budgets/:id/line-items] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// GET /api/treasury/budgets/:id/transactions
+// Returns linked transaction summaries keyed by link_key for all categories in the budget.
+router.get(
+  '/budgets/:id/transactions',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+      return;
+    }
+
+    try {
+      const summaries = await getLinkedTransactionsByBudgetId(id);
+      // Convert Map to plain object for JSON serialization
+      const result: Record<string, any> = {};
+      for (const [key, value] of summaries) {
+        result[key] = value;
+      }
+      res.status(200).json(result);
+    } catch (err) {
+      console.error('[GET /treasury/budgets/:id/transactions] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }
