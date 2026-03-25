@@ -754,6 +754,11 @@ const adapterDBNames: Record<string, string> = {
  * Dispatches to the appropriate adapter's ingest-all function.
  * Returns three-shape response (ok/skipped/failed) — all HTTP 200.
  * Unknown adapter returns HTTP 400.
+ *
+ * For slow adapters (cal-access, indiana, socrata) that download large files,
+ * the handler responds immediately with { status: 'accepted' } and runs the
+ * dispatch in the background to avoid Render's HTTP request timeout (~30s).
+ * FEC is fast enough to run synchronously (no large file download).
  */
 export async function batchIngestHandler(req: Request, res: Response): Promise<void> {
   const adapterName = req.params.adapter as string;
@@ -761,6 +766,20 @@ export async function batchIngestHandler(req: Request, res: Response): Promise<v
   // Validate adapter name
   if (!Object.keys(adapterDBNames).includes(adapterName)) {
     res.status(400).json({ error: `unknown adapter: ${adapterName}` });
+    return;
+  }
+
+  // Slow adapters download large files (cal-access: ~1.5GB ZIP, indiana: ~100MB ZIP).
+  // Respond immediately to avoid Render's 30s HTTP timeout — run in background.
+  const slowAdapters = new Set(['cal-access', 'indiana', 'socrata']);
+  if (slowAdapters.has(adapterName)) {
+    res.status(200).json({ status: 'accepted', adapter: adapterName, message: 'ingest started in background' });
+    // Fire-and-forget: errors are logged server-side
+    dispatchAdapter(adapterName).catch((err) => {
+      console.error(
+        `[batchIngest/${adapterName}] background error: ${err instanceof Error ? err.message : String(err)}`
+      );
+    });
     return;
   }
 
