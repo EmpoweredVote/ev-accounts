@@ -114,12 +114,8 @@ function App() {
         }
       };
 
-      // Spinner delay: only show loading indicator if SSO check takes >150ms
-      setLoading(false);
-      const spinnerTimer = setTimeout(() => setLoading(true), 150);
-
+      // Keep isLoading=true until SSO check completes — prevents AuthGuard redirect race
       silentSsoCheck().then((result) => {
-        clearTimeout(spinnerTimer);
         if (result) {
           localStorage.setItem('ev_token', result.access_token);
           useAuthStore.setState({ accessToken: result.access_token });
