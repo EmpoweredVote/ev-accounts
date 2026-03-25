@@ -192,13 +192,17 @@ export function currentFecCycle(): string {
  * Cal-Access-specific: calls saveETag and checks zipWasSkipped.
  */
 export async function runAdapterForAll(adapterName: string): Promise<void> {
+  // FEC sources are stored as 'fec_house' / 'fec_senate' — both map to the FEC adapter.
+  const systemValues = adapterName === 'fec' ? ['fec_house', 'fec_senate'] : [adapterName];
+  const placeholder = systemValues.map((_, i) => `$${i + 1}`).join(', ');
+
   const sourcesResult = await pool.query<PoliticianSourceRow>(
     `SELECT id, essentials_politician_id, source_system, external_id,
             research_status, notes, created_at, updated_at
      FROM transparent_motivations.politician_sources
-     WHERE source_system = $1
+     WHERE source_system IN (${placeholder})
        AND research_status = 'confirmed'`,
-    [adapterName]
+    systemValues
   );
 
   const sources = sourcesResult.rows;
