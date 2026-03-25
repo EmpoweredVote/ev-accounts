@@ -45,22 +45,107 @@ interface FecScheduleAResponse {
   results: Record<string, unknown>[];
 }
 
+interface FecPrincipalCommittee {
+  committee_id: string;
+}
+
+interface FecCandidateSearchResponse {
+  results: Array<{
+    candidate_id: string;
+    principal_committees: FecPrincipalCommittee[];
+  }>;
+}
+
 // ---------------------------------------------------------------------------
 // FEC HTTP Client — ported from client.go
 // ---------------------------------------------------------------------------
 
 /**
- * fetchAllPages fetches all Schedule A contribution pages for the given candidate ID
- * and election cycle using FEC keyset pagination.
+ * resolveCommitteeIds looks up the principal committee IDs for a given FEC candidate ID.
+ * The FEC schedule_a endpoint filters by committee_id, not candidate_id.
+ * Returns an empty array (with a warning) if the candidate is not found.
+ */
+async function resolveCommitteeIds(candidateId: string, apiKey: string): Promise<string[]> {
+  const url = `https://api.open.fec.gov/v1/candidates/search/?api_key=${apiKey}&candidate_id=${candidateId}`;
+  const response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
+  if (!response.ok) {
+    throw new Error(`FEC candidate lookup failed: HTTP ${response.status} for ${candidateId}`);
+  }
+  const data = await response.json() as FecCandidateSearchResponse;
+  const committees = data.results.flatMap((c) => c.principal_committees.map((p) => p.committee_id));
+  if (committees.length === 0) {
+    console.warn(`[fecAdapter] No principal committees found for candidate ${candidateId}`);
+  }
+  return committees;
+}
+
+/**
+ * fetchAllPagesForCommittee fetches all Schedule A pages for a single committee_id.
+ * Uses keyset pagination — stops on null last_indexes, not page count (FEC overcount bug).
+ * Stops early if allRecords reaches the cap (passed in to enforce cross-committee limit).
+ */
+async function fetchAllPagesForCommittee(
+  committeeId: string,
+  cycle: string,
+  apiKey: string,
+  allRecords: Record<string, unknown>[]
+): Promise<number> {
+  const baseUrl = 'https://api.open.fec.gov/v1/schedules/schedule_a/';
+  let totalExpected = 0;
+  let firstPage = true;
+  let lastIndex = '';
+  let lastContributionReceiptDate = '';
+
+  for (;;) {
+    const params = new URLSearchParams({
+      api_key: apiKey,
+      committee_id: committeeId,
+      two_year_transaction_period: cycle,
+      per_page: '100',
+      sort: '-contribution_receipt_date',
+    });
+
+    if (!firstPage) {
+      params.set('last_index', lastIndex);
+      params.set('last_contribution_receipt_date', lastContributionReceiptDate);
+    }
+
+    const page = await fetchWithRetry(`${baseUrl}?${params.toString()}`);
+
+    if (firstPage) {
+      totalExpected = page.pagination.count;
+      firstPage = false;
+    }
+
+    allRecords.push(...page.results);
+
+    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) {
+      console.warn(
+        `[fecAdapter] Record cap reached at committee ${committeeId}: ${allRecords.length} records. ` +
+        `Capping at ${MAX_RECORDS_PER_POLITICIAN}.`
+      );
+      break;
+    }
+
+    if (page.results.length === 0 || page.pagination.last_indexes == null) {
+      break;
+    }
+
+    lastIndex = page.pagination.last_indexes.last_index;
+    lastContributionReceiptDate = page.pagination.last_indexes.last_contribution_receipt_date;
+
+    await sleep(4000);
+  }
+
+  return totalExpected;
+}
+
+/**
+ * fetchAllPages resolves a candidate ID to its principal committee IDs, then fetches
+ * all Schedule A contributions across those committees for the given election cycle.
  *
- * Uses native fetch() (Node 18+). No extra HTTP package required.
- * API key from FEC_API_KEY environment variable — logs warning if absent, does not crash.
- *
- * Keyset pagination: follows last_indexes from response, NOT page count.
- * FEC page count has a known overcount bug — keyset pagination is authoritative.
- * Stops on nil/missing last_indexes.
- *
- * 429 retry: exponential backoff starting at 1s, max 60s, up to 3 retries.
+ * FEC schedule_a does not filter by candidate_id — it requires committee_id.
+ * This function does the two-step lookup transparently.
  */
 async function fetchAllPages(
   candidateId: string,
@@ -71,61 +156,19 @@ async function fetchAllPages(
     console.warn('[fecAdapter] FEC_API_KEY environment variable is not set — fetches will fail');
   }
 
-  const baseUrl = 'https://api.open.fec.gov/v1/schedules/schedule_a/';
+  const committeeIds = await resolveCommitteeIds(candidateId, apiKey ?? '');
+  if (committeeIds.length === 0) {
+    return { records: [], totalExpected: 0 };
+  }
+
   const allRecords: Record<string, unknown>[] = [];
   let totalExpected = 0;
-  let firstPage = true;
 
-  // Keyset pagination state
-  let lastIndex = '';
-  let lastContributionReceiptDate = '';
-
-  for (;;) {
-    const params = new URLSearchParams({
-      api_key: apiKey ?? '',
-      candidate_id: candidateId,
-      two_year_transaction_period: cycle,
-      per_page: '100',
-      sort: 'contribution_receipt_date',
-    });
-
-    if (!firstPage) {
-      params.set('last_index', lastIndex);
-      params.set('last_contribution_receipt_date', lastContributionReceiptDate);
-    }
-
-    const requestUrl = `${baseUrl}?${params.toString()}`;
-
-    // Fetch with 429 retry + exponential backoff (start 1s, max 60s, 3 retries)
-    const page = await fetchWithRetry(requestUrl);
-
-    if (firstPage) {
-      totalExpected = page.pagination.count;
-      firstPage = false;
-    }
-
-    allRecords.push(...page.results);
-
-    // Per-politician record cap — prevents timeout on high-volume candidates
-    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) {
-      console.warn(
-        `[fecAdapter] Record cap reached for ${candidateId}: ${allRecords.length} records fetched, ` +
-        `${totalExpected} expected. Capping at ${MAX_RECORDS_PER_POLITICIAN}.`
-      );
-      break;
-    }
-
-    // Stop when no more results or no next cursor
-    // FEC page count has known overcount bug — keyset pagination is authoritative
-    if (page.results.length === 0 || page.pagination.last_indexes == null) {
-      break;
-    }
-
-    lastIndex = page.pagination.last_indexes.last_index;
-    lastContributionReceiptDate = page.pagination.last_indexes.last_contribution_receipt_date;
-
-    // Rate limiting: stay safely under 1000 req/hr limit (~4s between requests)
-    await sleep(4000);
+  for (const committeeId of committeeIds) {
+    if (allRecords.length >= MAX_RECORDS_PER_POLITICIAN) break;
+    console.log(`[fecAdapter] Fetching committee ${committeeId} for candidate ${candidateId} cycle ${cycle}`);
+    const count = await fetchAllPagesForCommittee(committeeId, cycle, apiKey ?? '', allRecords);
+    totalExpected += count;
   }
 
   return { records: allRecords, totalExpected };
