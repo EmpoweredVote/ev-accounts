@@ -140,7 +140,7 @@ async function fetchWithRetry(url: string, maxRetries = 3): Promise<FecScheduleA
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     const response = await fetch(url, {
-      signal: AbortSignal.timeout(30_000),
+      signal: AbortSignal.timeout(60_000),
     });
 
     if (response.status === 429) {
