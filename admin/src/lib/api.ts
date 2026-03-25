@@ -10,6 +10,7 @@ export async function apiFetch<T>(
 ): Promise<T> {
   const token = useAuthStore.getState().accessToken;
   const res = await fetch(`${API_BASE}${path}`, {
+    credentials: 'include',
     ...options,
     headers: {
       'Content-Type': 'application/json',
