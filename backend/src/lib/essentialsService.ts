@@ -81,7 +81,7 @@ export interface PoliticianFlatRecord {
   government_body_url: string;
   is_elected: boolean;
   election_frequency: string;
-  committees: null;
+  committees: Array<{ name: string; position: string; urls: string[] }>;
   bio_text: string | null;
   slug: string | null;
   is_incumbent: boolean;
@@ -283,6 +283,52 @@ async function batchFetchImages(
 }
 
 // ---------------------------------------------------------------------------
+// batchFetchCommittees — shared by flat list, search results, and browse
+// ---------------------------------------------------------------------------
+
+/**
+ * Batch-fetch committee memberships from legislative_committee_memberships +
+ * legislative_committees and attach to politician records.
+ *
+ * Maps to Go-parity shape: { name, position, urls } where:
+ *   name = committee name
+ *   position = membership role (Chair, Member, etc.)
+ *   urls = committee source URLs (empty array if none)
+ */
+async function batchFetchCommittees(
+  politicians: Array<{ id: string; committees?: Array<{ name: string; position: string; urls: string[] }> }>
+): Promise<void> {
+  if (politicians.length === 0) return;
+
+  const ids = politicians.map((p) => p.id);
+  const { rows } = await pool.query(
+    `SELECT m.politician_id,
+            COALESCE(c.name, '') AS name,
+            COALESCE(m.role, 'Member') AS position
+     FROM essentials.legislative_committee_memberships m
+     JOIN essentials.legislative_committees c ON c.id = m.committee_id
+     WHERE m.politician_id = ANY($1)
+     ORDER BY m.is_current DESC, c.name ASC`,
+    [ids]
+  );
+
+  const committeeMap = new Map<string, Array<{ name: string; position: string; urls: string[] }>>();
+  for (const row of rows) {
+    const pid = row.politician_id as string;
+    if (!committeeMap.has(pid)) committeeMap.set(pid, []);
+    committeeMap.get(pid)!.push({
+      name: row.name ?? '',
+      position: row.position ?? 'Member',
+      urls: [],
+    });
+  }
+
+  for (const p of politicians) {
+    p.committees = committeeMap.get(p.id) ?? [];
+  }
+}
+
+// ---------------------------------------------------------------------------
 // getPoliticiansFlatList
 // ---------------------------------------------------------------------------
 
@@ -402,7 +448,7 @@ export async function getPoliticiansFlatList(
     government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
     election_frequency: row.election_frequency ?? '',
-    committees: null,
+    committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
@@ -416,7 +462,7 @@ export async function getPoliticiansFlatList(
     images: [],
   }));
 
-  await batchFetchImages(politicians);
+  await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
   return politicians;
 }
 
@@ -580,7 +626,7 @@ export async function getRepresentativesByAddress(
     government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
     election_frequency: row.election_frequency ?? '',
-    committees: null,
+    committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
@@ -594,7 +640,7 @@ export async function getRepresentativesByAddress(
     images: [],
   }));
 
-  await batchFetchImages(politicians);
+  await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
 
   const firstRow = rows[0];
   const jurisdiction = {
@@ -708,6 +754,7 @@ export interface PoliticianDetail {
   government_id: string | null;
   government_name: string;
   // Nested arrays
+  committees: Array<{ name: string; position: string; urls: string[] }>;
   contacts: PoliticianContact[];
   images: PoliticianImage[];
   degrees: PoliticianDegree[];
@@ -811,7 +858,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
   `;
 
   // Run base query + all nested queries in parallel
-  const [baseResult, contactsResult, imagesResult, degreesResult, experiencesResult, addressesResult, identifiersResult] =
+  const [baseResult, contactsResult, imagesResult, degreesResult, experiencesResult, addressesResult, identifiersResult, committeesResult] =
     await Promise.all([
       pool.query(baseQuery, [id]),
       pool.query(
@@ -862,6 +909,15 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
          WHERE politician_id = $1`,
         [id]
       ),
+      pool.query(
+        `SELECT COALESCE(c.name, '') AS name,
+                COALESCE(m.role, 'Member') AS position
+         FROM essentials.legislative_committee_memberships m
+         JOIN essentials.legislative_committees c ON c.id = m.committee_id
+         WHERE m.politician_id = $1
+         ORDER BY m.is_current DESC, c.name ASC`,
+        [id]
+      ),
     ]);
 
   // Politician not found
@@ -870,6 +926,12 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
   }
 
   const row = baseResult.rows[0];
+
+  const committees = committeesResult.rows.map((r) => ({
+    name: r.name ?? '',
+    position: r.position ?? 'Member',
+    urls: [] as string[],
+  }));
 
   const contacts: PoliticianContact[] = contactsResult.rows.map((r) => ({
     id: r.id as string,
@@ -952,6 +1014,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     election_frequency: row.election_frequency ?? '',
     government_id: row.government_id ?? null,
     government_name: row.government_name ?? '',
+    committees,
     contacts,
     images,
     degrees,

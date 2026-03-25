@@ -257,7 +257,7 @@ export async function getPoliticiansByArea(
     government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
     election_frequency: row.election_frequency ?? '',
-    committees: null,
+    committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
     is_incumbent: row.is_incumbent ?? false,
@@ -271,14 +271,26 @@ export async function getPoliticiansByArea(
     images: [],
   }));
 
-  // Batch-fetch images
+  // Batch-fetch images and committees
   if (politicians.length > 0) {
     const ids = politicians.map((p) => p.id);
-    const { rows: imgRows } = await pool.query(
-      `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
-       FROM essentials.politician_images WHERE politician_id = ANY($1)`,
-      [ids]
-    );
+    const [{ rows: imgRows }, { rows: commRows }] = await Promise.all([
+      pool.query(
+        `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
+         FROM essentials.politician_images WHERE politician_id = ANY($1)`,
+        [ids]
+      ),
+      pool.query(
+        `SELECT m.politician_id,
+                COALESCE(c.name, '') AS name,
+                COALESCE(m.role, 'Member') AS position
+         FROM essentials.legislative_committee_memberships m
+         JOIN essentials.legislative_committees c ON c.id = m.committee_id
+         WHERE m.politician_id = ANY($1)
+         ORDER BY m.is_current DESC, c.name ASC`,
+        [ids]
+      ),
+    ]);
     const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string }>>();
     for (const r of imgRows) {
       const pid = r.politician_id as string;
@@ -290,8 +302,19 @@ export async function getPoliticiansByArea(
         photo_license: r.photo_license ?? '',
       });
     }
+    const committeeMap = new Map<string, Array<{ name: string; position: string; urls: string[] }>>();
+    for (const r of commRows) {
+      const pid = r.politician_id as string;
+      if (!committeeMap.has(pid)) committeeMap.set(pid, []);
+      committeeMap.get(pid)!.push({
+        name: r.name ?? '',
+        position: r.position ?? 'Member',
+        urls: [],
+      });
+    }
     for (const p of politicians) {
       p.images = imageMap.get(p.id) ?? [];
+      (p as { committees: Array<{ name: string; position: string; urls: string[] }> }).committees = committeeMap.get(p.id) ?? [];
     }
   }
 

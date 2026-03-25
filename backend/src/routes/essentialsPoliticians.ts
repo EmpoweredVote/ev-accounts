@@ -13,6 +13,7 @@ import {
   getEndorsementsByPolitician,
   getElectionsByPolitician,
   getJudicialRecord,
+  getStancesByPolitician,
 } from '../lib/essentialsProfileService.js';
 import type { Request, Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
@@ -275,6 +276,26 @@ router.get('/:id/leadership', optionalAuth, async (req: Request, res: Response):
     res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/leadership] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/stances
+// Returns policy stances from BallotReady data. Matches Go server response.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/stances', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getStancesByPolitician(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/stances] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

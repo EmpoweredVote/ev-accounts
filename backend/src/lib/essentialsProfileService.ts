@@ -247,3 +247,56 @@ export async function getJudicialRecord(
 
   return result;
 }
+
+// ---------------------------------------------------------------------------
+// Stances
+// ---------------------------------------------------------------------------
+
+export interface Stance {
+  statement: string;
+  reference_url: string;
+  election_date: string;
+  issue_name: string;
+  issue_key: string;
+  issue_expanded: string;
+  parent_issue_name: string;
+}
+
+/**
+ * Fetch policy stances for a politician from BallotReady data.
+ * Matches Go server /politician/{id}/stances response shape.
+ *
+ * Joins politician_stances → issues (with optional parent issue for sub-topics).
+ * Ordered by election_date DESC.
+ */
+export async function getStancesByPolitician(
+  politicianId: string
+): Promise<Stance[]> {
+  const queryText = `
+    SELECT
+      COALESCE(ps.statement, '') AS statement,
+      COALESCE(ps.reference_url, '') AS reference_url,
+      COALESCE(ps.election_date, '') AS election_date,
+      COALESCE(i.name, '') AS issue_name,
+      COALESCE(i.key, '') AS issue_key,
+      COALESCE(i.expanded_text, '') AS issue_expanded,
+      COALESCE(parent.name, '') AS parent_issue_name
+    FROM essentials.politician_stances ps
+    LEFT JOIN essentials.issues i ON i.id = ps.issue_id
+    LEFT JOIN essentials.issues parent ON parent.id = i.parent_id
+    WHERE ps.politician_id = $1
+    ORDER BY ps.election_date DESC
+  `;
+
+  const { rows } = await pool.query(queryText, [politicianId]);
+
+  return rows.map((row) => ({
+    statement: row.statement ?? '',
+    reference_url: row.reference_url ?? '',
+    election_date: row.election_date ?? '',
+    issue_name: row.issue_name ?? '',
+    issue_key: row.issue_key ?? '',
+    issue_expanded: row.issue_expanded ?? '',
+    parent_issue_name: row.parent_issue_name ?? '',
+  }));
+}
