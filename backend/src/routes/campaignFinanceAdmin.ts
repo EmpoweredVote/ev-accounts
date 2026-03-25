@@ -284,9 +284,9 @@ router.post(
         res.status(404).json({ error: 'politician_source not found' });
         return;
       }
-      if (ps.source_system !== 'fec' || ps.research_status !== 'confirmed') {
+      if (!ps.source_system.startsWith('fec') || ps.research_status !== 'confirmed') {
         res.status(400).json({
-          error: 'politician_source must be source_system=fec and research_status=confirmed',
+          error: 'politician_source must be source_system=fec/fec_house/fec_senate and research_status=confirmed',
         });
         return;
       }
