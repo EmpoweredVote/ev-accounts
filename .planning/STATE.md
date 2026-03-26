@@ -5,20 +5,31 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.7 Cross-App SSO — Phase 48: Compliance + End-to-End Verification
+**Current focus:** Ready for v1.8 planning — v1.7 Cross-App SSO complete
 
 ## Current Position
 
-**v1.7 in progress (2026-03-24)**
+**v1.8 in progress (2026-03-26)**
 
-Phase: 48-compliance-e2e-verification — In progress
-Plan: 48-01 of 02 — paused at checkpoint (human-verify)
-Status: Awaiting human verification of /privacy page and footer links
-Last activity: 2026-03-24 — 48-01 Tasks 1 & 2 complete; PrivacyPage.tsx created with 9-section policy + ev_session cookie table; /privacy route registered; Privacy Policy footer links added to Login and Signup; awaiting user to verify at accounts.empowered.vote/privacy
+Phase 49 (Stored Jurisdiction & Cross-App Location Profile) — in progress:
+- 49-01: Schema migration — 12 jurisdiction columns added to `connect.connected_profiles`; 8 users backfilled via `resolve_user_jurisdiction` RPC ✅
+- 49-02: Application layer — set-location writes + account/me reads from stored columns (pending)
+
+**v1.7 complete (2026-03-25)**
+
+Phase 48 (Compliance + E2E Verification) — complete. Both plans delivered:
+- 48-01: PrivacyPage.tsx live at accounts.empowered.vote/privacy — 9-section policy + ev_session cookie table; footer links on Login and Signup — user-verified ✅
+- 48-02: Cross-app SSO smoke test — all 5 apps verified ✅
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
 - Phase 43 — Integration Documentation — blocked on Phase 42 completion
+
+**Platform expansion (2026-03-25):**
+- 6 static sites created by Chris Andrews: essentials-frontend, compass-frontend, treasury-tracker-frontend, empowered-badges-frontend, read-rank-frontend, fallacy-finders-frontend
+- Custom domains: essentials.empowered.vote, compass.empowered.vote, treasurytracker.empowered.vote, badges.empowered.vote, readrank.empowered.vote, fallacyfinders.empowered.vote
+- CORS_ORIGIN on accounts backend updated to include all 6 domains
+- GET /api/essentials/representatives/me shipped (commit 17fdef6) — serves stored-jurisdiction politicians to Connected users without geocoding
 
 ### Session Hotfixes (2026-03-23, post-cutover)
 
@@ -50,13 +61,20 @@ CompassV2 (main, all pushed directly — bypassed branch protection):
 - **trivia_service Supavisor registration** — CTC using postgres superuser temporarily (Phase 41 open blocker, non-critical)
 - **CompassV2 branch protection** — pushed directly to `main` three times today (bypassed rule). Chris Andrews should review and merge via PR going forward.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 🔄] Phase 46 complete — all SSO targets done ████████████
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 🔄] Phase 49-01 complete ████████████████░
 
 ## Accumulated Context
 
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 49 Plan 01 Complete — Jurisdiction Schema Migration (49-01)
+
+- **Stored jurisdiction pattern** — 12 columns on `connect.connected_profiles`: 5 geo_id + 5 _name + jurisdiction_state + jurisdiction_city; written at set-location time, read at query time (no RPC on reads)
+- **Backfill gap: names and state/city** — `resolve_user_jurisdiction` returns geo IDs only; _name columns and state/city populated on next set-location call after 49-02 ships
+- **Migration applied via pool.query()** — `supabase db push` blocked by remote-only migration history mismatch; direct pg connection used (standard project pattern for non-public schema writes)
+- **Phase 49-01 commit** — 11f2b40 (migration file: 20260326000053_phase49_jurisdiction_columns.sql)
 
 ### Phase 47 Plan 01 Complete — VQ Silent SSO (47-01)
 
