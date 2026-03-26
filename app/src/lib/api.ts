@@ -11,6 +11,7 @@ export async function apiFetch<T>(
   const token = useAuthStore.getState().accessToken;
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,
+    credentials: 'include',
     headers: {
       'Content-Type': 'application/json',
       ...(token ? { Authorization: `Bearer ${token}` } : {}),
