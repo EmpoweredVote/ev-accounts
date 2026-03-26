@@ -98,7 +98,7 @@ export async function searchPoliticians(
         g.name                                                                 AS jurisdiction,
         d.label                                                                AS district,
         COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, '')) AS headshot_url,
-        word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(p.full_name))) AS sim,
+        extensions.word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(p.full_name))) AS sim,
         CASE
           WHEN d.district_type IN ('LOCAL', 'LOCAL_EXEC', 'COUNTY', 'SCHOOL')                              THEN 1
           WHEN d.district_type IN ('STATE_UPPER', 'STATE_LOWER', 'STATE_EXEC', 'JUDICIAL')                 THEN 2
@@ -116,7 +116,7 @@ export async function searchPoliticians(
       LEFT JOIN essentials.governments g
         ON  g.id = ch.government_id
       WHERE p.is_active = true
-        AND word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(p.full_name))) >= ${threshold}
+        AND extensions.word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(p.full_name))) >= ${threshold}
       ORDER BY p.id, o.is_vacant ASC NULLS LAST
     )
     SELECT uuid, name, office_title, jurisdiction, district, headshot_url, sim, jurisdiction_tier
