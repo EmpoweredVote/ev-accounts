@@ -101,33 +101,53 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       };
     }
 
-    // 5b. Resolve jurisdiction for Connected users who have location_consent.
-    // Graceful degradation: if the RPC fails, jurisdiction is null — do not fail /me.
+    // 5b. Read stored jurisdiction columns for Connected users who have location_consent.
+    // Graceful degradation: if the read fails, jurisdiction is null — do not fail /me.
     let jurisdictionData: Record<string, unknown> | null = null;
     if (connected?.location_consent) {
       try {
-        const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
-          p_user_id: authReq.userId,
-        }, 'connect');
-        if (jError) {
-          console.error('[GET /api/account/me] resolve_user_jurisdiction error:', jError.message);
-        } else {
-          const j = (jData ?? {}) as Record<string, string | null>;
+        const { rows } = await pool.query<{
+          congressional_geo_id: string | null;
+          congressional_district_name: string | null;
+          state_senate_geo_id: string | null;
+          state_senate_district_name: string | null;
+          state_house_geo_id: string | null;
+          state_house_district_name: string | null;
+          county_geo_id: string | null;
+          county_name: string | null;
+          school_district_geo_id: string | null;
+          school_district_name: string | null;
+          jurisdiction_state: string | null;
+          jurisdiction_city: string | null;
+        }>(
+          `SELECT congressional_geo_id, congressional_district_name,
+                  state_senate_geo_id, state_senate_district_name,
+                  state_house_geo_id, state_house_district_name,
+                  county_geo_id, county_name,
+                  school_district_geo_id, school_district_name,
+                  jurisdiction_state, jurisdiction_city
+           FROM connect.connected_profiles WHERE user_id = $1`,
+          [authReq.userId]
+        );
+        const j = rows[0];
+        if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
           jurisdictionData = {
-            congressional_district: j.congressional ?? null,
-            congressional_district_name: j.congressional_name ?? null,
-            state_senate_district: j.state_senate ?? null,
-            state_senate_district_name: j.state_senate_name ?? null,
-            state_house_district: j.state_house ?? null,
-            state_house_district_name: j.state_house_name ?? null,
-            county: j.county ?? null,
-            county_name: j.county_name ?? null,
-            school_district: j.school_district ?? null,
-            school_district_name: j.school_district_name ?? null,
+            congressional_district: j.congressional_geo_id,
+            congressional_district_name: j.congressional_district_name,
+            state_senate_district: j.state_senate_geo_id,
+            state_senate_district_name: j.state_senate_district_name,
+            state_house_district: j.state_house_geo_id,
+            state_house_district_name: j.state_house_district_name,
+            county: j.county_geo_id,
+            county_name: j.county_name,
+            school_district: j.school_district_geo_id,
+            school_district_name: j.school_district_name,
+            state: j.jurisdiction_state,
+            city: j.jurisdiction_city,
           };
         }
       } catch (jErr) {
-        console.error('[GET /api/account/me] resolve_user_jurisdiction unexpected error:', jErr);
+        console.error('[GET /api/account/me] jurisdiction read error:', jErr);
       }
     }
 
@@ -236,30 +256,46 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
       return;
     }
 
-    const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
-      p_user_id: authReq.userId,
-    }, 'connect');
-
-    if (jurisdictionError) {
-      console.error('[GET /api/account/me/jurisdiction] resolve_user_jurisdiction error:', jurisdictionError.message);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-      return;
-    }
-
-    const j = (jurisdictionData ?? {}) as Record<string, string | null>;
+    // Read stored jurisdiction columns instead of calling RPC
+    const { rows } = await pool.query<{
+      congressional_geo_id: string | null;
+      congressional_district_name: string | null;
+      state_senate_geo_id: string | null;
+      state_senate_district_name: string | null;
+      state_house_geo_id: string | null;
+      state_house_district_name: string | null;
+      county_geo_id: string | null;
+      county_name: string | null;
+      school_district_geo_id: string | null;
+      school_district_name: string | null;
+      jurisdiction_state: string | null;
+      jurisdiction_city: string | null;
+    }>(
+      `SELECT congressional_geo_id, congressional_district_name,
+              state_senate_geo_id, state_senate_district_name,
+              state_house_geo_id, state_house_district_name,
+              county_geo_id, county_name,
+              school_district_geo_id, school_district_name,
+              jurisdiction_state, jurisdiction_city
+       FROM connect.connected_profiles WHERE user_id = $1`,
+      [authReq.userId]
+    );
+    const j = rows[0];
 
     res.status(200).json({
       jurisdiction: {
-        congressional_district: j.congressional ?? null,
-        congressional_district_name: j.congressional_name ?? null,
-        state_senate_district: j.state_senate ?? null,
-        state_senate_district_name: j.state_senate_name ?? null,
-        state_house_district: j.state_house ?? null,
-        state_house_district_name: j.state_house_name ?? null,
-        county: j.county ?? null,
-        county_name: j.county_name ?? null,
-        school_district: j.school_district ?? null,
-        school_district_name: j.school_district_name ?? null,
+        congressional_district: j?.congressional_geo_id ?? null,
+        congressional_district_name: j?.congressional_district_name ?? null,
+        state_senate_district: j?.state_senate_geo_id ?? null,
+        state_senate_district_name: j?.state_senate_district_name ?? null,
+        state_house_district: j?.state_house_geo_id ?? null,
+        state_house_district_name: j?.state_house_district_name ?? null,
+        county: j?.county_geo_id ?? null,
+        county_name: j?.county_name ?? null,
+        school_district: j?.school_district_geo_id ?? null,
+        school_district_name: j?.school_district_name ?? null,
+        state: j?.jurisdiction_state ?? null,
+        city: j?.jurisdiction_city ?? null,
       },
     });
   } catch (err) {
@@ -410,33 +446,53 @@ router.patch(
         };
       }
 
-      // Resolve jurisdiction for Connected users with location_consent (same as GET /me).
-      // Graceful degradation: if RPC fails, jurisdiction is null — do not fail /me.
+      // Read stored jurisdiction columns for Connected users with location_consent (same as GET /me).
+      // Graceful degradation: if read fails, jurisdiction is null — do not fail /me.
       let updatedJurisdictionData: Record<string, unknown> | null = null;
       if (updatedConnected?.location_consent) {
         try {
-          const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
-            p_user_id: authReq.userId,
-          }, 'connect');
-          if (jError) {
-            console.error('[PATCH /api/account/me] resolve_user_jurisdiction error:', jError.message);
-          } else {
-            const j = (jData ?? {}) as Record<string, string | null>;
+          const { rows } = await pool.query<{
+            congressional_geo_id: string | null;
+            congressional_district_name: string | null;
+            state_senate_geo_id: string | null;
+            state_senate_district_name: string | null;
+            state_house_geo_id: string | null;
+            state_house_district_name: string | null;
+            county_geo_id: string | null;
+            county_name: string | null;
+            school_district_geo_id: string | null;
+            school_district_name: string | null;
+            jurisdiction_state: string | null;
+            jurisdiction_city: string | null;
+          }>(
+            `SELECT congressional_geo_id, congressional_district_name,
+                    state_senate_geo_id, state_senate_district_name,
+                    state_house_geo_id, state_house_district_name,
+                    county_geo_id, county_name,
+                    school_district_geo_id, school_district_name,
+                    jurisdiction_state, jurisdiction_city
+             FROM connect.connected_profiles WHERE user_id = $1`,
+            [authReq.userId]
+          );
+          const j = rows[0];
+          if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
             updatedJurisdictionData = {
-              congressional_district: j.congressional ?? null,
-              congressional_district_name: j.congressional_name ?? null,
-              state_senate_district: j.state_senate ?? null,
-              state_senate_district_name: j.state_senate_name ?? null,
-              state_house_district: j.state_house ?? null,
-              state_house_district_name: j.state_house_name ?? null,
-              county: j.county ?? null,
-              county_name: j.county_name ?? null,
-              school_district: j.school_district ?? null,
-              school_district_name: j.school_district_name ?? null,
+              congressional_district: j.congressional_geo_id,
+              congressional_district_name: j.congressional_district_name,
+              state_senate_district: j.state_senate_geo_id,
+              state_senate_district_name: j.state_senate_district_name,
+              state_house_district: j.state_house_geo_id,
+              state_house_district_name: j.state_house_district_name,
+              county: j.county_geo_id,
+              county_name: j.county_name,
+              school_district: j.school_district_geo_id,
+              school_district_name: j.school_district_name,
+              state: j.jurisdiction_state,
+              city: j.jurisdiction_city,
             };
           }
         } catch (jErr) {
-          console.error('[PATCH /api/account/me] resolve_user_jurisdiction unexpected error:', jErr);
+          console.error('[PATCH /api/account/me] jurisdiction read error:', jErr);
         }
       }
 

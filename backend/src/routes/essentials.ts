@@ -11,7 +11,6 @@ import {
   getDistrictById,
 } from '../lib/essentialsService.js';
 import { pool } from '../lib/db.js';
-import { adminRpc } from '../lib/supabase.js';
 import { GeocodingError } from '../lib/geocodingService.js';
 
 /**
@@ -325,21 +324,37 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
   ).catch(() => ({ rows: [] as { home_address: string | null }[] }));
   const homeAddress = profileRows[0]?.home_address ?? '';
 
-  // --- Path 1: encrypted coordinates saved — use fast jurisdiction lookup ---
+  // --- Path 1: stored jurisdiction GEO IDs — fast direct lookup ---
   try {
-    const { data, error } = await adminRpc('resolve_user_jurisdiction', { p_user_id: userId }, 'connect');
-    if (!error && data) {
-      const jurisdictionData = data as Record<string, string | null>;
+    const { rows } = await pool.query<{
+      congressional_geo_id: string | null;
+      state_senate_geo_id: string | null;
+      state_house_geo_id: string | null;
+      county_geo_id: string | null;
+      school_district_geo_id: string | null;
+      jurisdiction_state: string | null;
+      jurisdiction_city: string | null;
+    }>(
+      `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
+              county_geo_id, school_district_geo_id,
+              jurisdiction_state, jurisdiction_city
+       FROM connect.connected_profiles WHERE user_id = $1`,
+      [userId]
+    );
+    const j = rows[0];
+    if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
       const politicians = await getRepresentativesByJurisdiction({
-        congressional: jurisdictionData.congressional ?? null,
-        state_senate: jurisdictionData.state_senate ?? null,
-        state_house: jurisdictionData.state_house ?? null,
-        county: jurisdictionData.county ?? null,
-        school_district: jurisdictionData.school_district ?? null,
+        congressional: j.congressional_geo_id,
+        state_senate: j.state_senate_geo_id,
+        state_house: j.state_house_geo_id,
+        county: j.county_geo_id,
+        school_district: j.school_district_geo_id,
       });
       const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
+      const formattedAddress = [j.jurisdiction_city, j.jurisdiction_state]
+        .filter(Boolean).join(', ');
       res.setHeader('X-Data-Status', dataStatus);
-      res.setHeader('X-Formatted-Address', homeAddress);
+      res.setHeader('X-Formatted-Address', formattedAddress || homeAddress);
       res.status(200).json(politicians);
       return;
     }
