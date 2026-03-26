@@ -318,41 +318,53 @@ router.get('/districts/:id', optionalAuth, async (req: Request, res: Response): 
 router.get('/representatives/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
-  let jurisdictionData: Record<string, string | null>;
+  // Fetch the user's home_address unconditionally — needed for both paths below.
+  const { rows: profileRows } = await pool.query<{ home_address: string | null }>(
+    `SELECT home_address FROM connect.connected_profiles WHERE user_id = $1`,
+    [userId]
+  ).catch(() => ({ rows: [] as { home_address: string | null }[] }));
+  const homeAddress = profileRows[0]?.home_address ?? '';
+
+  // --- Path 1: encrypted coordinates saved — use fast jurisdiction lookup ---
   try {
     const { data, error } = await adminRpc('resolve_user_jurisdiction', { p_user_id: userId }, 'connect');
-    if (error || !data) {
-      // No location on file — user declined consent or never set location
-      res.status(204).end();
-      return;
-    }
-    jurisdictionData = data as Record<string, string | null>;
-  } catch {
-    res.status(204).end();
-    return;
-  }
-
-  try {
-    const [politicians, addressRows] = await Promise.all([
-      getRepresentativesByJurisdiction({
+    if (!error && data) {
+      const jurisdictionData = data as Record<string, string | null>;
+      const politicians = await getRepresentativesByJurisdiction({
         congressional: jurisdictionData.congressional ?? null,
         state_senate: jurisdictionData.state_senate ?? null,
         state_house: jurisdictionData.state_house ?? null,
         county: jurisdictionData.county ?? null,
         school_district: jurisdictionData.school_district ?? null,
-      }),
-      pool.query(
-        `SELECT home_address FROM connect.connected_profiles WHERE user_id = $1`,
-        [userId]
-      ).catch(() => ({ rows: [] as { home_address: string | null }[] })),
-    ]);
+      });
+      const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
+      res.setHeader('X-Data-Status', dataStatus);
+      res.setHeader('X-Formatted-Address', homeAddress);
+      res.status(200).json(politicians);
+      return;
+    }
+  } catch {
+    // fall through to address-based path
+  }
 
-    const homeAddress = (addressRows.rows[0]?.home_address) ?? '';
-    const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
+  // --- Path 2: no encrypted coordinates — geocode home_address directly ---
+  if (!homeAddress) {
+    res.status(204).end();
+    return;
+  }
+
+  try {
+    const result = await getRepresentativesByAddress(homeAddress);
+    const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
-    res.setHeader('X-Formatted-Address', homeAddress);
-    res.status(200).json(politicians);
+    res.setHeader('X-Formatted-Address', result.matchedAddress || homeAddress);
+    res.status(200).json(result.politicians);
   } catch (err) {
+    if (err instanceof GeocodingError) {
+      // Address saved but can't geocode — return 204 so frontend falls back gracefully
+      res.status(204).end();
+      return;
+    }
     console.error('[GET /essentials/representatives/me] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
