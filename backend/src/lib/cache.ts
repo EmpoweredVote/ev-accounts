@@ -33,12 +33,12 @@ class InMemoryFallback implements CacheClient {
 }
 
 function createCache(): CacheClient {
-  if (!env.REDIS_URL) {
-    console.warn('[cache] REDIS_URL not set — using in-memory fallback');
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+    console.warn('[cache] UPSTASH_REDIS_REST_URL/TOKEN not set — using in-memory fallback');
     return new InMemoryFallback();
   }
   try {
-    const redis = new Redis({ url: env.REDIS_URL } as unknown as ConstructorParameters<typeof Redis>[0]);
+    const redis = Redis.fromEnv();
     return {
       async get<T>(key: string): Promise<T | null> {
         return redis.get<T>(key);

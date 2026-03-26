@@ -64,15 +64,15 @@ function getRedisClient(): Redis | null {
   if (redisInitAttempted) return redisClient;
   redisInitAttempted = true;
 
-  if (!env.REDIS_URL) {
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
     console.warn(
-      '[campaignFinanceScheduler] REDIS_URL not set — using in-process lock fallback (single-instance only)'
+      '[campaignFinanceScheduler] UPSTASH_REDIS_REST_URL/TOKEN not set — using in-process lock fallback (single-instance only)'
     );
     return null;
   }
 
   try {
-    redisClient = new Redis({ url: env.REDIS_URL } as unknown as ConstructorParameters<typeof Redis>[0]);
+    redisClient = Redis.fromEnv();
     return redisClient;
   } catch (err) {
     console.warn(
