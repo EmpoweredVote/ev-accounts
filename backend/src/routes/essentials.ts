@@ -320,7 +320,7 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
   let jurisdictionData: Record<string, string | null>;
   try {
-    const { data, error } = await adminRpc('resolve_user_jurisdiction', { user_id: userId });
+    const { data, error } = await adminRpc('resolve_user_jurisdiction', { p_user_id: userId }, 'connect');
     if (error || !data) {
       // No location on file — user declined consent or never set location
       res.status(204).end();
@@ -333,16 +333,24 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
   }
 
   try {
-    const politicians = await getRepresentativesByJurisdiction({
-      congressional: jurisdictionData.congressional ?? null,
-      state_senate: jurisdictionData.state_senate ?? null,
-      state_house: jurisdictionData.state_house ?? null,
-      county: jurisdictionData.county ?? null,
-      school_district: jurisdictionData.school_district ?? null,
-    });
+    const [politicians, addressRows] = await Promise.all([
+      getRepresentativesByJurisdiction({
+        congressional: jurisdictionData.congressional ?? null,
+        state_senate: jurisdictionData.state_senate ?? null,
+        state_house: jurisdictionData.state_house ?? null,
+        county: jurisdictionData.county ?? null,
+        school_district: jurisdictionData.school_district ?? null,
+      }),
+      pool.query(
+        `SELECT home_address FROM connect.connected_profiles WHERE user_id = $1`,
+        [userId]
+      ).catch(() => ({ rows: [] as { home_address: string | null }[] })),
+    ]);
 
+    const homeAddress = (addressRows.rows[0]?.home_address) ?? '';
     const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
+    res.setHeader('X-Formatted-Address', homeAddress);
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[GET /essentials/representatives/me] error:', err);
