@@ -19,6 +19,7 @@ import {
   getContributions,
   validateConfidence,
 } from '../lib/campaignFinanceService.js';
+import { searchPoliticians } from '../lib/campaignFinanceSearchService.js';
 
 const router = Router();
 
@@ -30,6 +31,34 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 
 router.get('/health', (_req: Request, res: Response): void => {
   res.status(200).json({ status: 'ok', service: 'campaign-finance' });
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/campaign-finance/search?q=&limit=&offset=
+// Public politician name search — no auth required
+// ---------------------------------------------------------------------------
+
+router.get('/search', async (req: Request, res: Response): Promise<void> => {
+  const q = ((req.query.q as string) || '').trim();
+
+  if (q.length < 2) {
+    res.status(400).json({
+      code: 'QUERY_TOO_SHORT',
+      message: 'Search query must be at least 2 characters',
+    });
+    return;
+  }
+
+  const limit = Math.min(Math.max(parseInt(req.query.limit as string, 10) || 10, 1), 50);
+  const offset = Math.max(parseInt(req.query.offset as string, 10) || 0, 0);
+
+  try {
+    const result = await searchPoliticians(q, limit, offset);
+    res.status(200).json(result);
+  } catch (err) {
+    console.error('[GET /campaign-finance/search] error:', err);
+    res.status(500).json({ code: 'SEARCH_ERROR', message: 'Internal search error' });
+  }
 });
 
 // ---------------------------------------------------------------------------
