@@ -454,6 +454,33 @@ Plans:
 
 ---
 
+### v1.8 Location Identity (Phases 49–51)
+
+---
+
+#### Phase 49: Stored Jurisdiction & Cross-App Location Profile
+
+**Goal:** Connected users' district GEO IDs are stored on `connected_profiles` at set-location time and returned on `/api/account/me` — every app that already calls `/account/me` can read the user's jurisdiction without asking for their address again. `home_address` is not stored for Connected tier.
+
+**Dependencies:** None (builds on existing set-location flow and /account/me endpoint)
+
+**Plans:** 3 plans
+
+Plans:
+- [ ] 49-01-PLAN.md — Schema: add 5 GEO ID columns + state + city to connected_profiles; migrate existing users via resolve_user_jurisdiction backfill
+- [ ] 49-02-PLAN.md — Backend: update set-location to write GEO IDs; return jurisdiction object on /account/me; update /representatives/me to use stored GEO IDs directly
+- [ ] 49-03-PLAN.md — Frontend updates: Read & Rank reads jurisdiction.state; CTC extends AccountProfile type; Essentials uses prefilled jurisdiction on load
+
+**Success Criteria:**
+
+1. After `POST /connect/set-location`, `connected_profiles` has all 5 district GEO IDs populated; `home_address` is NOT written for Connected tier.
+2. `GET /api/account/me` returns a `jurisdiction` object with `congressional`, `state_senate`, `state_house`, `county`, `school_district`, `state`, and `city` fields for any Connected user with location on file.
+3. `GET /api/essentials/representatives/me` reads stored GEO IDs directly — no geocoding, no Census API call — and returns the correct politician list.
+4. Read & Rank and CTC each read `jurisdiction` from the `/account/me` response they already call — no new API endpoints required in either app.
+5. All existing Connected users have jurisdiction columns populated after backfill (verified via SQL).
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -506,3 +533,4 @@ Plans:
 | 46. Essentials + CompassV2 Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 47. Validation Quests Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
+| 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 0/3 | Pending | — |
