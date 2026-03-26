@@ -513,13 +513,15 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
 
   let lat: number;
   let lng: number;
-  let matchedAddress: string;
+  let state: string;
+  let city: string;
 
   try {
     const coords = await geocodeAddress(address);
     lat = coords.lat;
     lng = coords.lng;
-    matchedAddress = coords.matchedAddress;
+    state = coords.state;
+    city = coords.city;
   } catch (err) {
     if (err instanceof GeocodingError) {
       if (err.code === 'PO_BOX_REJECTED') {
@@ -557,12 +559,6 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       return;
     }
 
-    // Persist the human-readable matched address so /representatives/me can return it
-    pool.query(
-      `UPDATE connect.connected_profiles SET home_address = $2, updated_at = now() WHERE user_id = $1`,
-      [userId, matchedAddress]
-    ).catch((err: Error) => console.error('[connect/set-location] failed to save home_address:', err.message));
-
     const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
       p_user_id: userId,
     }, 'connect');
@@ -572,7 +568,46 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       console.warn('[connect/set-location] resolve_user_jurisdiction returned no match:', jurisdictionError.message);
     }
 
-    const j = (jurisdictionData ?? {}) as Record<string, string | null>;
+    // Write jurisdiction GEO IDs + names + state + city to connected_profiles
+    const jData = (jurisdictionData ?? {}) as Record<string, string | null>;
+    try {
+      await pool.query(
+        `UPDATE connect.connected_profiles
+         SET congressional_geo_id = $2,
+             congressional_district_name = $3,
+             state_senate_geo_id = $4,
+             state_senate_district_name = $5,
+             state_house_geo_id = $6,
+             state_house_district_name = $7,
+             county_geo_id = $8,
+             county_name = $9,
+             school_district_geo_id = $10,
+             school_district_name = $11,
+             jurisdiction_state = $12,
+             jurisdiction_city = $13,
+             updated_at = now()
+         WHERE user_id = $1`,
+        [
+          userId,
+          jData.congressional ?? null,
+          jData.congressional_name ?? null,
+          jData.state_senate ?? null,
+          jData.state_senate_name ?? null,
+          jData.state_house ?? null,
+          jData.state_house_name ?? null,
+          jData.county ?? null,
+          jData.county_name ?? null,
+          jData.school_district ?? null,
+          jData.school_district_name ?? null,
+          state,
+          city,
+        ]
+      );
+    } catch (e) {
+      console.error('[set-location] jurisdiction write error:', e);
+    }
+
+    const j = jData;
 
     res.status(200).json({
       location_consent: true,
@@ -588,6 +623,8 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
         county_name: j.county_name ?? null,
         school_district: j.school_district ?? null,
         school_district_name: j.school_district_name ?? null,
+        state: state,
+        city: city,
       },
     });
   } catch (err) {
