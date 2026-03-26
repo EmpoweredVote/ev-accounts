@@ -11,9 +11,9 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **v1.8 in progress (2026-03-26)**
 
-Phase 49 (Stored Jurisdiction & Cross-App Location Profile) — in progress:
+Phase 49 (Stored Jurisdiction & Cross-App Location Profile) — complete:
 - 49-01: Schema migration — 12 jurisdiction columns added to `connect.connected_profiles`; 8 users backfilled via `resolve_user_jurisdiction` RPC ✅
-- 49-02: Application layer — set-location writes + account/me reads from stored columns (pending)
+- 49-02: Application layer — set-location writes 12 columns + all 4 routes read from stored columns (no per-request RPC) ✅
 
 **v1.7 complete (2026-03-25)**
 
