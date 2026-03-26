@@ -533,4 +533,4 @@ Plans:
 | 46. Essentials + CompassV2 Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 47. Validation Quests Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
-| 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 0/3 | Pending | — |
+| 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 3/3 | Complete | 2026-03-26 |

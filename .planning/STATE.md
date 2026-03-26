@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Ready for v1.8 planning — v1.7 Cross-App SSO complete
+**Current focus:** v1.8 in progress — Phase 49 complete, Phase 50 next
 
 ## Current Position
 
