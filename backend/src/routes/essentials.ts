@@ -1,14 +1,17 @@
 import { Router } from 'express';
 import type { Request, Response } from 'express';
-import { optionalAuth } from '../middleware/auth.js';
+import { optionalAuth, requireAuth } from '../middleware/auth.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
+import { requireConnected } from '../middleware/tierGuards.js';
 import {
   getRepresentativesByAddress,
+  getRepresentativesByJurisdiction,
   getGovernmentById,
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
 import { pool } from '../lib/db.js';
+import { adminRpc } from '../lib/supabase.js';
 import { GeocodingError } from '../lib/geocodingService.js';
 
 /**
@@ -299,6 +302,50 @@ router.get('/districts/:id', optionalAuth, async (req: Request, res: Response): 
     res.status(200).json({ ...district, data_level });
   } catch (err) {
     console.error('[GET /essentials/districts/:id] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/representatives/me
+// Auth: required (Connected tier)
+// Returns politicians for the authenticated user's stored jurisdiction.
+// No geocoding — uses the GEOIDs from the user's saved location directly.
+// Returns 204 if the user has no location on file (consent not granted or
+// location never set). Returns 403 NOT_CONNECTED for Inform-tier users.
+// ---------------------------------------------------------------------------
+
+router.get('/representatives/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
+  const { userId } = req as AuthenticatedRequest;
+
+  let jurisdictionData: Record<string, string | null>;
+  try {
+    const { data, error } = await adminRpc('resolve_user_jurisdiction', { user_id: userId });
+    if (error || !data) {
+      // No location on file — user declined consent or never set location
+      res.status(204).end();
+      return;
+    }
+    jurisdictionData = data as Record<string, string | null>;
+  } catch {
+    res.status(204).end();
+    return;
+  }
+
+  try {
+    const politicians = await getRepresentativesByJurisdiction({
+      congressional: jurisdictionData.congressional ?? null,
+      state_senate: jurisdictionData.state_senate ?? null,
+      state_house: jurisdictionData.state_house ?? null,
+      county: jurisdictionData.county ?? null,
+      school_district: jurisdictionData.school_district ?? null,
+    });
+
+    const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
+    res.setHeader('X-Data-Status', dataStatus);
+    res.status(200).json(politicians);
+  } catch (err) {
+    console.error('[GET /essentials/representatives/me] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
