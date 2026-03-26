@@ -20,6 +20,7 @@ import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
+import { pool } from '../lib/db.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -512,11 +513,13 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
 
   let lat: number;
   let lng: number;
+  let matchedAddress: string;
 
   try {
     const coords = await geocodeAddress(address);
     lat = coords.lat;
     lng = coords.lng;
+    matchedAddress = coords.matchedAddress;
   } catch (err) {
     if (err instanceof GeocodingError) {
       if (err.code === 'PO_BOX_REJECTED') {
@@ -553,6 +556,12 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
       return;
     }
+
+    // Persist the human-readable matched address so /representatives/me can return it
+    pool.query(
+      `UPDATE connect.connected_profiles SET home_address = $2, updated_at = now() WHERE user_id = $1`,
+      [userId, matchedAddress]
+    ).catch((err: Error) => console.error('[connect/set-location] failed to save home_address:', err.message));
 
     const { data: jurisdictionData, error: jurisdictionError } = await adminRpc('resolve_user_jurisdiction', {
       p_user_id: userId,
