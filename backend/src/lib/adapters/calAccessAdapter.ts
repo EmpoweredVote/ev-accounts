@@ -24,6 +24,8 @@ import { pool } from '../db.js';
 import AdmZip from 'adm-zip';
 import { parse as csvParse } from 'csv-parse';
 import iconv from 'iconv-lite';
+import { createInflateRaw } from 'zlib';
+import { Readable, Transform } from 'stream';
 import type {
   SourceAdapter,
   ETagProvider,
@@ -41,11 +43,13 @@ import type { PoliticianSource } from '../campaignFinanceService.js';
 const CAL_ACCESS_ZIP_URL = 'https://campaignfinance.cdn.sos.ca.gov/dbwebexport.zip';
 const ETAG_METADATA_KEY = 'cal_access_zip_etag';
 const TOTAL_ROWS_METADATA_KEY = 'cal_access_last_total_rows';
-const RCPT_TSV_NAME = 'RCPT_CD.TSV';
+// Full path inside the Cal-Access ZIP archive (not just the filename).
+// The ZIP contains CalAccess/DATA/RCPT_CD.TSV — adm-zip.getEntry() requires the full path.
+const RCPT_TSV_NAME = 'CalAccess/DATA/RCPT_CD.TSV';
 
 // Required columns in RCPT_CD.TSV header — if any are absent, parsing aborts.
 const REQUIRED_COLUMNS = [
-  'CMTE_ID', 'AMOUNT', 'TRAN_DATE', 'FILING_ID',
+  'CMTE_ID', 'AMOUNT', 'RCPT_DATE', 'FILING_ID',
   'AMEND_ID', 'LINE_ITEM', 'REC_TYPE', 'FORM_TYPE',
 ];
 
@@ -215,6 +219,8 @@ interface ParseResult {
  *   - csv-parse may reuse buffers in streaming mode — copy field values immediately.
  *   - totalParsed counts ALL data rows (global CCDC cross-check).
  *   - Rows for non-target filers are silently skipped (not counted in skipped[]).
+ *   - RCPT_CD.TSV decompresses to ~4.2GB — stream-decompress to avoid V8 string limit.
+ *     Uses getCompressedData() + zlib.createInflateRaw() to avoid holding full file in RAM.
  */
 async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promise<ParseResult> {
   // Extract RCPT_CD.TSV from ZIP buffer using adm-zip
@@ -224,10 +230,30 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
     throw new Error(`calAccessAdapter: parseRCPT: ${RCPT_TSV_NAME} not found in ZIP`);
   }
 
-  // Get raw bytes and decode from Windows-1252 to UTF-8 string
-  const rawBytes = entry.getData();
-  const decoded = iconv.decode(rawBytes, 'win1252');
-  const decodedBuffer = Buffer.from(decoded, 'utf8');
+  // Get the raw compressed bytes (not decompressed) to avoid holding 4.2GB in RAM.
+  // stream-decompress with zlib.createInflateRaw(), transcode Windows-1252 → UTF-8 in chunks.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const compressedBytes: Buffer = (entry as any).getCompressedData();
+
+  // iconv-lite streaming decoder — converts Windows-1252 chunks to UTF-8 strings.
+  // We wrap it as a Transform stream that outputs UTF-8 Buffers.
+  const iconvDecoder = iconv.getDecoder('win1252');
+  const win1252ToUtf8 = new Transform({
+    transform(chunk: Buffer, _enc, cb) {
+      const str: string = iconvDecoder.write(chunk);
+      cb(null, Buffer.from(str, 'utf8'));
+    },
+    flush(cb) {
+      const str: string | undefined = iconvDecoder.end();
+      if (str) this.push(Buffer.from(str, 'utf8'));
+      cb();
+    },
+  });
+
+  // Chain: compressed bytes → inflate → win1252→utf8 → csv-parse
+  const source = Readable.from(compressedBytes);
+  const inflater = createInflateRaw();
+  source.pipe(inflater).pipe(win1252ToUtf8);
 
   return new Promise<ParseResult>((resolve, reject) => {
     const parsedRows: ParsedRow[] = [];
@@ -314,7 +340,7 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
         // IMMEDIATELY copy required fields from potentially-reused buffer
         const cmteID      = record[colIdx.get('CMTE_ID')!];
         const amountStr   = record[colIdx.get('AMOUNT')!];
-        const tranDateStr = record[colIdx.get('TRAN_DATE')!];
+        const tranDateStr = record[colIdx.get('RCPT_DATE')!];
         const filingID    = record[colIdx.get('FILING_ID')!];
         const amendIDStr  = record[colIdx.get('AMEND_ID')!];
         const lineItemStr = record[colIdx.get('LINE_ITEM')!];
@@ -345,9 +371,9 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
           continue;
         }
 
-        // Parse TRAN_DATE — format MM/DD/YYYY
+        // Parse RCPT_DATE — format MM/DD/YYYY
         if (!tranDateStr) {
-          skippedRows.push({ rowNum, errorType: 'missing_required_field', detail: 'TRAN_DATE' });
+          skippedRows.push({ rowNum, errorType: 'missing_required_field', detail: 'RCPT_DATE' });
           continue;
         }
 
@@ -364,7 +390,7 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
         }
 
         if (!tranDate || isNaN(tranDate.getTime())) {
-          skippedRows.push({ rowNum, errorType: 'invalid_date', detail: 'TRAN_DATE' });
+          skippedRows.push({ rowNum, errorType: 'invalid_date', detail: 'RCPT_DATE' });
           continue;
         }
 
@@ -393,9 +419,15 @@ async function parseRCPT(zipBuffer: Buffer, targetFilerIDs: Set<string>): Promis
       resolve({ rows: parsedRows, skipped: skippedRows, totalParsed });
     });
 
-    // Write the decoded buffer to the parser
-    parser.write(decodedBuffer);
-    parser.end();
+    // Pipe streaming decoder into csv-parse (replaces parser.write(decodedBuffer))
+    // Error propagation: inflate/transcode errors must reject the promise
+    inflater.on('error', (err: Error) => {
+      reject(new Error(`calAccessAdapter: parseRCPT: inflate error: ${err.message}`));
+    });
+    win1252ToUtf8.on('error', (err: Error) => {
+      reject(new Error(`calAccessAdapter: parseRCPT: transcode error: ${err.message}`));
+    });
+    win1252ToUtf8.pipe(parser);
   });
 }
 
@@ -581,7 +613,7 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
       CTRIB_EMP:   row.ctribEmp,
       CTRIB_OCC:   row.ctribOcc,
       AMOUNT:      row.amount,
-      TRAN_DATE:   row.tranDate,
+      RCPT_DATE:   row.tranDate,
       AMEND_ID:    row.amendID,
       LINE_ITEM:   row.lineItem,
     }));
@@ -609,7 +641,7 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
       const amendID   = rec['AMEND_ID']  as number ?? 0;
       const lineItem  = rec['LINE_ITEM'] as number ?? 0;
       const amount    = rec['AMOUNT']    as number ?? 0;
-      const tranDate  = rec['TRAN_DATE'] as Date | null ?? null;
+      const tranDate  = rec['RCPT_DATE'] as Date | null ?? null;
 
       // Build election cycle: round contribution year up to next even year
       let electionCycle = '';
