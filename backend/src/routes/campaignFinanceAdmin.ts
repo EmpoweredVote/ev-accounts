@@ -55,6 +55,7 @@ import { runIngestion } from '../lib/adapters/runIngestion.js';
 import { createFecAdapter } from '../lib/adapters/fecAdapter.js';
 import { normalizeRow } from '../lib/adapters/indianaAdapter.js';
 import { runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
+import { runFecAutoMatch } from '../lib/fecResearch.js';
 
 const router = Router();
 
@@ -715,6 +716,28 @@ router.post(
       res.status(200).json({ restored: true });
     } catch (err) {
       console.error('[POST /campaign-finance/admin/unresolved/.../restore] error:', err);
+      res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// FEC auto-match — requireAuth + requireAdmin
+// Searches FEC candidates API for all federal politicians without a confirmed
+// FEC source, scores matches, and inserts politician_source rows.
+// ---------------------------------------------------------------------------
+
+// POST /api/campaign-finance/admin/research/fec-match
+router.post(
+  '/admin/research/fec-match',
+  requireAuth,
+  requireAdmin,
+  async (_req: Request, res: Response): Promise<void> => {
+    try {
+      const summary = await runFecAutoMatch();
+      res.status(200).json(summary);
+    } catch (err) {
+      console.error('[POST /campaign-finance/admin/research/fec-match] error:', err);
       res.status(500).json({ error: err instanceof Error ? err.message : String(err) });
     }
   }
