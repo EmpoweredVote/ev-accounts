@@ -296,6 +296,22 @@ export async function runFecAutoMatch(): Promise<AutoMatchSummary> {
 
       result.candidates_found = candidates.length;
 
+      // Fallback: if full-name search returns nothing, retry with last name only.
+      // Handles nicknames (e.g. "Jim" stored in DB, "James" in FEC).
+      let fallbackUsed = false;
+      if (candidates.length === 0) {
+        const lastName = parseDbName(p.full_name).last;
+        if (lastName) {
+          await sleep(SLEEP_BETWEEN_SEARCHES_MS);
+          const fallback = await searchFecCandidates(lastName, p.representing_state, p.fec_office, apiKey);
+          if (fallback.length > 0) {
+            candidates.push(...fallback);
+            result.candidates_found = fallback.length;
+            fallbackUsed = true;
+          }
+        }
+      }
+
       if (candidates.length === 0) {
         result.notes = 'No FEC candidates found — may be newly elected or name mismatch';
       } else {
@@ -305,11 +321,16 @@ export async function runFecAutoMatch(): Promise<AutoMatchSummary> {
           .sort((a, b) => b.score - a.score);
 
         const best = scored[0]!;
-        result.confidence = best.score;
+        // Single result from last-name fallback: unambiguous match in correct state/office.
+        // Bump to 0.8 to trigger auto-confirm even without first-name confirmation.
+        const effectiveScore = (fallbackUsed && candidates.length === 1 && best.score >= 0.6)
+          ? 0.8
+          : best.score;
+        result.confidence = effectiveScore;
         result.selected_fec_id = best.candidate.candidate_id;
         result.selected_fec_name = best.candidate.name;
 
-        if (best.score >= 0.8) {
+        if (effectiveScore >= 0.8) {
           result.status = 'confirmed';
         } else {
           result.status = 'needs_research';
