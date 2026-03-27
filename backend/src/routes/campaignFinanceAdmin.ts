@@ -28,6 +28,7 @@
 import { Router } from 'express';
 import { requireAuth } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
+import { requireAdminToken } from '../middleware/adminTokenAuth.js';
 import type { Request, Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 import { z } from 'zod';
@@ -730,8 +731,7 @@ router.post(
 // POST /api/campaign-finance/admin/research/fec-match
 router.post(
   '/admin/research/fec-match',
-  requireAuth,
-  requireAdmin,
+  requireAdminToken,
   async (_req: Request, res: Response): Promise<void> => {
     try {
       const summary = await runFecAutoMatch();
