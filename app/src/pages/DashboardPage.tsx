@@ -62,25 +62,25 @@ const FEATURES = [
   {
     name: 'Civic Trivia',
     description: 'Test your civic knowledge and earn XP.',
-    url: 'https://ctc.empowered.vote',
+    baseUrl: 'https://ctc.empowered.vote',
     dot: 'bg-ev-yellow',
   },
   {
     name: 'Validation Quests',
     description: 'Validate political stances and earn Red Gems.',
-    url: 'https://quests.empowered.vote',
+    baseUrl: 'https://quests.empowered.vote',
     dot: 'bg-ev-red',
   },
   {
     name: 'Essentials',
     description: 'Explore your representatives\' positions.',
-    url: 'https://essentials.empowered.vote',
+    baseUrl: 'https://essentials.empowered.vote',
     dot: 'bg-ev-teal',
   },
   {
     name: 'Empowered Compass',
     description: 'Map your political values.',
-    url: 'https://compass.empowered.vote',
+    baseUrl: 'https://compass.empowered.vote',
     dot: 'bg-ev-teal-light',
   },
 ];
@@ -391,10 +391,14 @@ export default function DashboardPage() {
             Explore freely. Connect to save your progress.
           </p>
           <div className="grid grid-cols-2 gap-3">
-            {FEATURES.map((f) => (
+            {FEATURES.map((f) => {
+              const featureUrl = accessToken
+                ? `${f.baseUrl}#access_token=${accessToken}`
+                : f.baseUrl;
+              return (
               <a
                 key={f.name}
-                href={f.url}
+                href={featureUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-4 space-y-2 hover:border-ev-teal/40 transition-colors group"
@@ -404,7 +408,8 @@ export default function DashboardPage() {
                 <p className="text-xs text-gray-400 leading-snug">{f.description}</p>
                 <p className="text-xs text-ev-teal font-medium group-hover:underline">Explore →</p>
               </a>
-            ))}
+              );
+            })}
           </div>
         </div>
 
