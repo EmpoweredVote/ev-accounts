@@ -61,7 +61,7 @@ app.use(
       callback(new Error(`CORS: origin ${origin} not allowed`));
     },
     credentials: true,
-    exposedHeaders: ['X-Data-Updated-At'],
+    exposedHeaders: ['X-Data-Updated-At', 'X-Data-Status', 'X-Formatted-Address'],
   })
 );
 app.use(express.json());
