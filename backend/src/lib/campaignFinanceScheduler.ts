@@ -34,6 +34,8 @@ import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { pool } from './db.js';
 
+const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -219,7 +221,9 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
   switch (adapterName) {
     case 'fec': {
       const cycle = currentFecCycle();
-      for (const ps of sources) {
+      for (let i = 0; i < sources.length; i++) {
+        const ps = sources[i];
+        if (i > 0) await sleep(3000); // 3s between politicians — keeps FEC API under 1000 req/hr
         try {
           const adapter = createFecAdapter(cycle);
           await runIngestion(adapter, ps, cycle);

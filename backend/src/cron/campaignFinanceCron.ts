@@ -25,7 +25,7 @@ import { runFecScheduledJob } from '../lib/campaignFinanceScheduler.js';
  */
 export function startCampaignFinanceCron(): void {
   cron.schedule(
-    '*/15 * * * *',
+    '0 */6 * * *',
     async () => {
       try {
         await runFecScheduledJob();
@@ -38,5 +38,5 @@ export function startCampaignFinanceCron(): void {
       name: 'fec-ingest',
     }
   );
-  console.log('[cron] Campaign finance FEC ingest job registered (every 15 min UTC)');
+  console.log('[cron] Campaign finance FEC ingest job registered (every 6 hours UTC)');
 }
