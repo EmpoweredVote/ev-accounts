@@ -121,7 +121,9 @@ export { app }; // For testing
 
 const port = parseInt(env.PORT, 10);
 
-if (env.NODE_ENV !== 'test') {
+const isLambda = !!process.env.AWS_LAMBDA_FUNCTION_NAME;
+
+if (env.NODE_ENV !== 'test' && !isLambda) {
   void (async () => {
     // Startup checks — server does not start if any check fails.
     await campaignFinanceInit();

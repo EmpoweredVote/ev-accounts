@@ -26,6 +26,7 @@ import {
   getBudgetById,
   getLineItemsByBudgetId,
   getLinkedTransactions,
+  searchCategories,
   createCity,
   createBudget,
   createBudgetCategory,
@@ -206,6 +207,43 @@ router.get(
     }
   }
 );
+
+// GET /api/treasury/search?q=roads&city_id=uuid&year=2025&limit=20
+// Natural language search across enriched category names, descriptions, and tags.
+router.get('/search', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const q = req.query.q as string | undefined;
+  if (!q || q.trim().length < 2) {
+    res.status(422).json({ code: 'MISSING_PARAM', message: 'q (query) must be at least 2 characters' });
+    return;
+  }
+
+  const cityId = req.query.city_id as string | undefined;
+  if (cityId && !UUID_REGEX.test(cityId)) {
+    res.status(422).json({ code: 'INVALID_ID', message: 'city_id must be a valid UUID' });
+    return;
+  }
+
+  const fiscalYearRaw = req.query.year as string | undefined;
+  let fiscalYear: number | undefined;
+  if (fiscalYearRaw !== undefined) {
+    const parsed = Number(fiscalYearRaw);
+    if (!Number.isInteger(parsed) || parsed < 1900 || parsed > 2100) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid year' });
+      return;
+    }
+    fiscalYear = parsed;
+  }
+
+  const limit = Math.min(parseInt(req.query.limit as string) || 20, 50);
+
+  try {
+    const results = await searchCategories(q.trim(), cityId, fiscalYear, limit);
+    res.status(200).json(results);
+  } catch (err) {
+    console.error('[GET /treasury/search] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // Admin write routes (requireAuth + requireAdmin)

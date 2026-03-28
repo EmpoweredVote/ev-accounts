@@ -152,6 +152,15 @@ interface CategoryRow {
   sort_order: string | null; // bigint
   depth: string | null; // bigint
   link_key: string | null;
+  // Joined from category_enrichment (may be null if no enrichment found)
+  enrich_plain_name: string | null;
+  enrich_short_description: string | null;
+  enrich_description: string | null;
+  enrich_tags: string[] | null;
+  enrich_source: string | null;
+  enrich_source_label: string | null;
+  enrich_source_url: string | null;
+  enrich_confidence: string | null;
 }
 
 interface LineItemRow {
@@ -340,6 +349,18 @@ export async function getBudgetsByCityId(
   return rows.map(mapBudget);
 }
 
+// Enrichment: plain-language context for opaque fund/category names
+export interface CategoryEnrichment {
+  plainName: string;
+  shortDescription: string;
+  description: string;
+  tags: string[];
+  source: string;        // 'official' | 'hybrid' | 'ai'
+  sourceLabel: string | null;
+  sourceUrl: string | null;
+  confidence: string;    // 'high' | 'medium' | 'low'
+}
+
 // Nested category with subcategories and lineItems for the frontend (camelCase)
 export interface NestedCategory {
   name: string;
@@ -351,6 +372,7 @@ export interface NestedCategory {
   historicalChange?: number | null;
   items: number;
   linkKey?: string;
+  enrichment?: CategoryEnrichment | null;
   subcategories?: NestedCategory[];
   lineItems?: Array<{
     description: string;
@@ -389,13 +411,32 @@ export async function getBudgetById(
 
   const budget = mapBudget(budgetRows[0]);
 
-  // Fetch all categories
+  // Fetch all categories, LEFT JOIN enrichment (municipality-specific preferred over universal)
   const { rows: categoryRows } = await pool.query<CategoryRow>(
-    `SELECT id, budget_id, parent_id, name, amount, percentage, color,
-            description, why_matters, historical_change, item_count, sort_order, depth, link_key
-     FROM treasury.budget_categories
-     WHERE budget_id = $1
-     ORDER BY depth, sort_order`,
+    `SELECT bc.id, bc.budget_id, bc.parent_id, bc.name, bc.amount, bc.percentage, bc.color,
+            bc.description, bc.why_matters, bc.historical_change, bc.item_count, bc.sort_order,
+            bc.depth, bc.link_key,
+            -- Enrichment: prefer municipality-specific over universal (NULL municipality_id)
+            COALESCE(e_city.plain_name,     e_univ.plain_name)     AS enrich_plain_name,
+            COALESCE(e_city.short_description, e_univ.short_description) AS enrich_short_description,
+            COALESCE(e_city.description,    e_univ.description)    AS enrich_description,
+            COALESCE(e_city.tags,           e_univ.tags)           AS enrich_tags,
+            COALESCE(e_city.source,         e_univ.source)         AS enrich_source,
+            COALESCE(e_city.source_label,   e_univ.source_label)   AS enrich_source_label,
+            COALESCE(e_city.source_url,     e_univ.source_url)     AS enrich_source_url,
+            COALESCE(e_city.confidence,     e_univ.confidence)     AS enrich_confidence
+     FROM treasury.budget_categories bc
+     JOIN treasury.budgets b ON b.id = bc.budget_id
+     -- Municipality-specific enrichment
+     LEFT JOIN treasury.category_enrichment e_city
+       ON e_city.name_key = LOWER(TRIM(bc.name))
+      AND e_city.municipality_id = b.municipality_id
+     -- Universal enrichment (fallback)
+     LEFT JOIN treasury.category_enrichment e_univ
+       ON e_univ.name_key = LOWER(TRIM(bc.name))
+      AND e_univ.municipality_id IS NULL
+     WHERE bc.budget_id = $1
+     ORDER BY bc.depth, bc.sort_order`,
     [id]
   );
 
@@ -438,6 +479,16 @@ export async function getBudgetById(
       historicalChange: row.historical_change !== null ? Number(row.historical_change) : null,
       items: row.item_count !== null ? Number(row.item_count) : 0,
       linkKey: row.link_key ?? undefined,
+      enrichment: row.enrich_plain_name ? {
+        plainName: row.enrich_plain_name,
+        shortDescription: row.enrich_short_description ?? '',
+        description: row.enrich_description ?? '',
+        tags: row.enrich_tags ?? [],
+        source: row.enrich_source ?? 'ai',
+        sourceLabel: row.enrich_source_label,
+        sourceUrl: row.enrich_source_url,
+        confidence: row.enrich_confidence ?? 'medium',
+      } : null,
       subcategories: [] as NestedCategory[],
       lineItems: catLineItems?.map(li => ({
         description: li.description,
@@ -583,6 +634,130 @@ export async function getLinkedTransactions(
     })),
     hasMore: summary.transaction_count > limit,
   };
+}
+
+// ---------------------------------------------------------------------------
+// Search
+// ---------------------------------------------------------------------------
+
+export interface SearchResult {
+  categoryId: string;
+  budgetId: string;
+  categoryName: string;
+  plainName: string;
+  shortDescription: string;
+  amount: number;
+  percentage: number;
+  datasetType: string;
+  fiscalYear: number;
+  cityName: string;
+  cityState: string;
+  tags: string[];
+  source: string;
+  confidence: string;
+}
+
+/**
+ * Search budget categories by keyword across enriched names and descriptions.
+ * Optionally scoped to a specific city and/or fiscal year.
+ */
+export async function searchCategories(
+  query: string,
+  cityId?: string,
+  fiscalYear?: number,
+  limit: number = 20
+): Promise<SearchResult[]> {
+  const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length === 0) return [];
+
+  // Build a LIKE condition for each term against name_key, plain_name, description, tags
+  const conditions = terms.map(
+    (_, i) => `(
+      LOWER(bc.name) LIKE $${i + 1}
+      OR LOWER(COALESCE(e_city.plain_name, e_univ.plain_name, '')) LIKE $${i + 1}
+      OR LOWER(COALESCE(e_city.short_description, e_univ.short_description, '')) LIKE $${i + 1}
+      OR LOWER(COALESCE(e_city.description, e_univ.description, '')) LIKE $${i + 1}
+      OR EXISTS (
+        SELECT 1 FROM unnest(COALESCE(e_city.tags, e_univ.tags, '{}')) tag
+        WHERE LOWER(tag) LIKE $${i + 1}
+      )
+    )`
+  );
+  const likeParams = terms.map(t => `%${t}%`);
+
+  let paramOffset = terms.length;
+  const extraConditions: string[] = [];
+  const extraParams: (string | number)[] = [];
+
+  if (cityId) {
+    paramOffset++;
+    extraConditions.push(`m.id = $${paramOffset}`);
+    extraParams.push(cityId);
+  }
+  if (fiscalYear) {
+    paramOffset++;
+    extraConditions.push(`b.fiscal_year = $${paramOffset}`);
+    extraParams.push(fiscalYear);
+  }
+
+  paramOffset++;
+  const limitParam = `$${paramOffset}`;
+  extraParams.push(limit);
+
+  const whereClause = [
+    `bc.parent_id IS NULL`, // top-level categories only
+    ...conditions,
+    ...extraConditions,
+  ].join(' AND ');
+
+  const sql = `
+    SELECT
+      bc.id AS category_id,
+      bc.budget_id,
+      bc.name AS category_name,
+      COALESCE(e_city.plain_name, e_univ.plain_name, bc.name) AS plain_name,
+      COALESCE(e_city.short_description, e_univ.short_description, '') AS short_description,
+      bc.amount,
+      bc.percentage,
+      b.dataset_type,
+      b.fiscal_year,
+      m.name AS city_name,
+      m.state AS city_state,
+      COALESCE(e_city.tags, e_univ.tags, '{}') AS tags,
+      COALESCE(e_city.source, e_univ.source, 'unknown') AS source,
+      COALESCE(e_city.confidence, e_univ.confidence, 'low') AS confidence
+    FROM treasury.budget_categories bc
+    JOIN treasury.budgets b ON b.id = bc.budget_id
+    JOIN treasury.municipalities m ON m.id = b.municipality_id
+    LEFT JOIN treasury.category_enrichment e_city
+      ON e_city.name_key = LOWER(TRIM(bc.name))
+     AND e_city.municipality_id = m.id
+    LEFT JOIN treasury.category_enrichment e_univ
+      ON e_univ.name_key = LOWER(TRIM(bc.name))
+     AND e_univ.municipality_id IS NULL
+    WHERE ${whereClause}
+    ORDER BY bc.amount DESC
+    LIMIT ${limitParam}
+  `;
+
+  const { rows } = await pool.query(sql, [...likeParams, ...extraParams]);
+
+  return rows.map(r => ({
+    categoryId: r.category_id,
+    budgetId: r.budget_id,
+    categoryName: r.category_name,
+    plainName: r.plain_name,
+    shortDescription: r.short_description,
+    amount: Number(r.amount),
+    percentage: r.percentage !== null ? Number(r.percentage) : 0,
+    datasetType: r.dataset_type,
+    fiscalYear: Number(r.fiscal_year),
+    cityName: r.city_name,
+    cityState: r.city_state,
+    tags: r.tags ?? [],
+    source: r.source,
+    confidence: r.confidence,
+  }));
 }
 
 // ---------------------------------------------------------------------------
