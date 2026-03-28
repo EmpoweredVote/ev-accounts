@@ -534,6 +534,7 @@ export async function getBudgetById(
     if (node.whyMatters) result.whyMatters = node.whyMatters;
     if (node.historicalChange !== null) result.historicalChange = node.historicalChange;
     if (node.linkKey) result.linkKey = node.linkKey;
+    if (node.enrichment) result.enrichment = node.enrichment;
     if (subcategories.length > 0) result.subcategories = subcategories;
     if (node.lineItems && node.lineItems.length > 0) result.lineItems = node.lineItems;
     return result;
