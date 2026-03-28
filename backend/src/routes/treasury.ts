@@ -31,6 +31,7 @@ import {
   createBudget,
   createBudgetCategory,
   createBudgetLineItem,
+  getEnrichmentQueueStatus,
 } from '../lib/treasuryService.js';
 
 const router = Router();
@@ -244,6 +245,30 @@ router.get('/search', optionalAuth, async (req: Request, res: Response): Promise
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
+
+// ---------------------------------------------------------------------------
+// Admin read routes (requireAuth + requireAdmin)
+// ---------------------------------------------------------------------------
+
+// GET /api/treasury/enrichment-queue/status
+router.get(
+  '/enrichment-queue/status',
+  requireAuth,
+  requireAdmin,
+  async (_req: Request, res: Response): Promise<void> => {
+    try {
+      const status = await getEnrichmentQueueStatus();
+      // Compute next scheduled run: next 2am UTC
+      const now = new Date();
+      const next = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 2, 0, 0));
+      if (next <= now) next.setUTCDate(next.getUTCDate() + 1);
+      res.status(200).json({ ...status, next_scheduled: next.toISOString() });
+    } catch (err) {
+      console.error('[GET /treasury/enrichment-queue/status] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
 
 // ---------------------------------------------------------------------------
 // Admin write routes (requireAuth + requireAdmin)

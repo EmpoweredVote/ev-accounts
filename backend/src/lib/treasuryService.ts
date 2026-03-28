@@ -761,6 +761,45 @@ export async function searchCategories(
 }
 
 // ---------------------------------------------------------------------------
+// Enrichment queue
+// ---------------------------------------------------------------------------
+
+export interface EnrichmentQueueStatus {
+  pending: number;
+  processing: number;
+  done: number;
+  failed: number;
+  skipped: number;
+}
+
+/**
+ * Returns a count breakdown of the enrichment_queue by status.
+ */
+export async function getEnrichmentQueueStatus(): Promise<EnrichmentQueueStatus> {
+  const { rows } = await pool.query<{ status: string; count: string }>(
+    `SELECT status, COUNT(*)::int AS count
+     FROM treasury.enrichment_queue
+     GROUP BY status`
+  );
+
+  const counts: Record<string, number> = {
+    pending: 0,
+    processing: 0,
+    done: 0,
+    failed: 0,
+    skipped: 0,
+  };
+
+  for (const row of rows) {
+    if (row.status in counts) {
+      counts[row.status] = Number(row.count);
+    }
+  }
+
+  return counts as unknown as EnrichmentQueueStatus;
+}
+
+// ---------------------------------------------------------------------------
 // Admin write functions
 // ---------------------------------------------------------------------------
 
