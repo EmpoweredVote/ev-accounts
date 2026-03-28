@@ -427,14 +427,16 @@ export async function getBudgetById(
             COALESCE(e_city.confidence,     e_univ.confidence)     AS enrich_confidence
      FROM treasury.budget_categories bc
      JOIN treasury.budgets b ON b.id = bc.budget_id
-     -- Municipality-specific enrichment
+     -- Municipality-specific enrichment (top-level only to avoid name collisions)
      LEFT JOIN treasury.category_enrichment e_city
        ON e_city.name_key = LOWER(TRIM(bc.name))
       AND e_city.municipality_id = b.municipality_id
-     -- Universal enrichment (fallback)
+      AND bc.depth = 0
+     -- Universal enrichment fallback (top-level only)
      LEFT JOIN treasury.category_enrichment e_univ
        ON e_univ.name_key = LOWER(TRIM(bc.name))
       AND e_univ.municipality_id IS NULL
+      AND bc.depth = 0
      WHERE bc.budget_id = $1
      ORDER BY bc.depth, bc.sort_order`,
     [id]
@@ -575,15 +577,71 @@ export async function getLinkedTransactions(
   linkKey: string,
   limit: number = 20
 ): Promise<LinkedTransactionSummary | null> {
-  // Count + aggregate in one query using prefix match
+  // Match transactions using a 3-tier strategy:
+  // 1. Exact link_key prefix match (same data source format)
+  // 2. department_aliases table lookup (Gateway→Socrata name mapping)
+  // 3. No match → return null
+
+  // Resolve the municipality_id for alias lookups
+  const { rows: budgetRows } = await pool.query(
+    `SELECT municipality_id FROM treasury.budgets WHERE id = $1`, [budgetId]
+  );
+  const municipalityId = budgetRows[0]?.municipality_id;
+
+  // Extract the department segment from the category link_key.
+  // For pipe-delimited keys like "general|police department (town marshall)|personal services",
+  // the last segment is the most specific; the second segment is the department.
+  const segments = linkKey.split('|');
+  const deptSegment = segments.length >= 2 ? segments[1] : segments[0];
+
+  // Try to resolve via alias table first (most reliable for cross-source matching)
+  let txDeptName: string | null = null;
+  if (municipalityId) {
+    const { rows: aliasRows } = await pool.query(
+      `SELECT transaction_name FROM treasury.department_aliases
+       WHERE municipality_id = $1 AND budget_name = $2`,
+      [municipalityId, deptSegment]
+    );
+    if (aliasRows.length > 0) {
+      txDeptName = aliasRows[0].transaction_name;
+    }
+  }
+
+  // Build WHERE clause
+  let matchWhere: string;
+  let matchParams: (string | number)[];
+
+  if (txDeptName) {
+    // Alias-based match: match transactions where first segment = alias transaction_name
+    // and optionally filter deeper segments for more specific categories
+    if (segments.length > 2) {
+      // Deep category (e.g. fund|dept|class) — match dept + expense_category
+      // Use ILIKE substring match because Gateway classes like "Services and Charges"
+      // map to checkbook categories like "Other Services and Charges"
+      const classSegment = segments[segments.length - 1];
+      matchWhere = `t.budget_id = $1 AND SPLIT_PART(LOWER(t.link_key), '|', 1) = $2
+        AND LOWER(t.expense_category) ILIKE '%' || $3 || '%'`;
+      matchParams = [budgetId, txDeptName, classSegment];
+    } else {
+      // Department-level — match all transactions for this department
+      matchWhere = `t.budget_id = $1 AND SPLIT_PART(LOWER(t.link_key), '|', 1) = $2`;
+      matchParams = [budgetId, txDeptName];
+    }
+  } else {
+    // No alias — try exact prefix match (works when formats align)
+    matchWhere = `t.budget_id = $1 AND LOWER(t.link_key) >= $2 AND LOWER(t.link_key) < ($2 || '}')`;
+    matchParams = [budgetId, linkKey.toLowerCase()];
+  }
+
+  // Count + aggregate
   const { rows: summaryRows } = await pool.query(
     `SELECT
        COUNT(*)::int AS transaction_count,
        COALESCE(SUM(t.amount), 0) AS total_amount,
        COUNT(DISTINCT t.vendor_id)::int AS vendor_count
      FROM treasury.transactions t
-     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')`,
-    [budgetId, linkKey]
+     WHERE ${matchWhere}`,
+    matchParams
   );
 
   const summary = summaryRows[0];
@@ -594,11 +652,11 @@ export async function getLinkedTransactions(
     `SELECT v.name, SUM(t.amount) AS amount, COUNT(*)::int AS count
      FROM treasury.transactions t
      JOIN treasury.vendors v ON v.id = t.vendor_id
-     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')
+     WHERE ${matchWhere}
      GROUP BY v.name
      ORDER BY SUM(t.amount) DESC
      LIMIT 5`,
-    [budgetId, linkKey]
+    matchParams
   );
 
   // Preview transactions (most recent first)
@@ -608,10 +666,10 @@ export async function getLinkedTransactions(
             v.name AS vendor_name
      FROM treasury.transactions t
      LEFT JOIN treasury.vendors v ON v.id = t.vendor_id
-     WHERE t.budget_id = $1 AND t.link_key >= $2 AND t.link_key < ($2 || '}')
+     WHERE ${matchWhere}
      ORDER BY t.payment_date DESC
-     LIMIT $3`,
-    [budgetId, linkKey, limit]
+     LIMIT $${matchParams.length + 1}`,
+    [...matchParams, limit]
   );
 
   return {
