@@ -296,29 +296,51 @@ async function rerouteFKsForSpare(
   );
   result.idBridgeRerouted = bridgeR;
 
-  // politician_sources — unique constraint on (essentials_politician_id, source_system)
+  // politician_sources — unique constraint on (essentials_politician_id, source_system, external_id)
+  // Multi-committee support: check each spare source row individually.
+  // If canonical already has the same (source_system, external_id) pair → delete (true duplicate).
+  // If the pair is distinct (different committee) → reroute to canonical.
   await client.query('SAVEPOINT sp_sources');
   try {
-    const sourcesRes = await client.query(
-      `UPDATE transparent_motivations.politician_sources
-       SET essentials_politician_id = $1
-       WHERE essentials_politician_id = $2`,
-      [canonicalId, spareId]
+    const spareSourcesRes = await client.query(
+      `SELECT id, source_system, external_id
+       FROM transparent_motivations.politician_sources
+       WHERE essentials_politician_id = $1`,
+      [spareId]
     );
-    result.sourcesRerouted = sourcesRes.rowCount ?? 0;
     await client.query('RELEASE SAVEPOINT sp_sources');
+
+    let deletedCount = 0;
+    let reroutedCount = 0;
+
+    for (const src of spareSourcesRes.rows) {
+      const exists = await client.query(
+        `SELECT 1 FROM transparent_motivations.politician_sources
+         WHERE essentials_politician_id = $1 AND source_system = $2 AND external_id = $3`,
+        [canonicalId, src.source_system, src.external_id]
+      );
+      if ((exists.rowCount ?? 0) > 0) {
+        // True duplicate: canonical already has this (source_system, external_id) — delete spare's row
+        await client.query(
+          `DELETE FROM transparent_motivations.politician_sources WHERE id = $1`,
+          [src.id]
+        );
+        deletedCount++;
+      } else {
+        // Distinct committee: reroute spare's source row to canonical
+        await client.query(
+          `UPDATE transparent_motivations.politician_sources SET essentials_politician_id = $1 WHERE id = $2`,
+          [canonicalId, src.id]
+        );
+        reroutedCount++;
+      }
+    }
+
+    result.sourcesRerouted = reroutedCount;
+    result.sourcesDeleted = deletedCount;
   } catch (err: any) {
     await client.query('ROLLBACK TO SAVEPOINT sp_sources');
-    // unique constraint violation: canonical already has a row for this source_system
-    if (err.code === '23505') {
-      const deleteRes = await client.query(
-        `DELETE FROM transparent_motivations.politician_sources WHERE essentials_politician_id = $1`,
-        [spareId]
-      );
-      result.sourcesDeleted = deleteRes.rowCount ?? 0;
-    } else {
-      throw err;
-    }
+    throw err;
   }
 
   // Delete the spare politician

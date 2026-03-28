@@ -117,7 +117,7 @@ async function insertPoliticianSource(
     `INSERT INTO transparent_motivations.politician_sources
        (essentials_politician_id, source_system, external_id, research_status, notes)
      VALUES ($1, 'la_socrata', $2, 'needs_research', $3)
-     ON CONFLICT (essentials_politician_id, source_system) DO NOTHING`,
+     ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
     [politicianId, cmtId, notes]
   );
   return (result.rowCount ?? 0) > 0;

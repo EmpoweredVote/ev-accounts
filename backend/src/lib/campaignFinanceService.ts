@@ -1291,7 +1291,7 @@ export async function getUnresolvedByExternalId(
 
 /**
  * findOrCreatePoliticianSource finds an existing politician_source by
- * (essentials_politician_id, source_system), or creates a new confirmed one.
+ * (essentials_politician_id, source_system, external_id), or creates a new confirmed one.
  *
  * Used by the unresolved queue resolve handler to create a permanent link
  * between an unresolved externalId and a known politician.
@@ -1315,9 +1315,9 @@ export async function findOrCreatePoliticianSource(
     `SELECT id, essentials_politician_id, source_system, external_id,
             research_status, notes, created_at, updated_at
      FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1 AND source_system = $2
+     WHERE essentials_politician_id = $1 AND source_system = $2 AND external_id = $3
      LIMIT 1`,
-    [politicianId, adapterName]
+    [politicianId, adapterName, externalId]
   );
 
   if (findResult.rows.length > 0) {
