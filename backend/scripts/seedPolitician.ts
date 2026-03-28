@@ -4,6 +4,7 @@
  *
  * Usage:
  *   npx tsx scripts/seedPolitician.ts --name "Banks" --state IN [options]
+ *   npx tsx scripts/seedPolitician.ts --bulk politicians.csv [--dry-run] [--discover]
  *
  * Flags:
  *   --name    <string>   Candidate name to search (required unless --bulk)
@@ -11,7 +12,7 @@
  *   --office  <H|S|P>   Office type (optional; defaults to H+S combined)
  *   --dry-run            Print seed plan JSON, make no DB writes
  *   --discover           Print FEC candidates and exit (no DB path, no prompt)
- *   --bulk    <filepath> Bulk seeding mode — not yet implemented (Plan 02)
+ *   --bulk    <filepath> Bulk seeding mode — CSV or JSON file with name/state/office columns
  *
  * Required env vars:
  *   FEC_API_KEY     — FEC API key from api.data.gov
@@ -20,6 +21,8 @@
 
 import 'dotenv/config';
 import readline from 'readline';
+import fs from 'fs';
+import { parse } from 'csv-parse/sync';
 import { pool } from '../src/lib/db.js';
 import {
   searchFecCandidates,
@@ -157,6 +160,104 @@ async function isDuplicate(sourceSystem: string, externalId: string): Promise<bo
     [sourceSystem, externalId]
   );
   return (result.rowCount ?? 0) > 0;
+}
+
+// ---------------------------------------------------------------------------
+// Bulk mode types and helpers
+// ---------------------------------------------------------------------------
+
+interface BulkRow {
+  name: string;
+  state: string;
+  office?: string; // H, S, or P — optional
+}
+
+function loadBulkFile(filePath: string): BulkRow[] {
+  if (!fs.existsSync(filePath)) {
+    throw new Error(`File not found: ${filePath}`);
+  }
+
+  const content = fs.readFileSync(filePath, 'utf-8');
+  let rows: BulkRow[];
+
+  if (filePath.endsWith('.json')) {
+    const parsed = JSON.parse(content);
+    if (!Array.isArray(parsed)) {
+      throw new Error('JSON bulk file must be an array of objects.');
+    }
+    rows = parsed as BulkRow[];
+  } else {
+    // Default: CSV
+    rows = parse(content, {
+      columns: true,
+      skip_empty_lines: true,
+      trim: true,
+    }) as BulkRow[];
+  }
+
+  // Validate and filter rows
+  const valid: BulkRow[] = [];
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i]!;
+    if (!row.name || !row.state) {
+      console.warn(`[bulk] Row ${i + 1}: missing required field(s) name/state — skipping.`);
+      continue;
+    }
+    valid.push(row);
+  }
+
+  return valid;
+}
+
+async function runBulkMode(
+  filePath: string,
+  dryRun: boolean,
+  discoverOnly: boolean
+): Promise<void> {
+  const rows = loadBulkFile(filePath);
+  const total = rows.length;
+  console.log(`Loaded ${total} rows from ${filePath}`);
+
+  let processed = 0;
+  let errors = 0;
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i]!;
+    console.log(`\n--- [${i + 1}/${total}] Processing: ${row.name} (${row.state}) ---`);
+
+    // Validate office if provided
+    if (row.office && !['H', 'S', 'P'].includes(row.office.toUpperCase())) {
+      console.warn(`[bulk] Invalid office "${row.office}" for "${row.name}" — skipping.`);
+      errors++;
+      continue;
+    }
+
+    try {
+      await seedSinglePolitician(
+        row.name,
+        row.state.toUpperCase(),
+        row.office ? row.office.toUpperCase() : null,
+        dryRun,
+        discoverOnly,
+        true // bulkMode
+      );
+      processed++;
+    } catch (err) {
+      console.error(
+        `[bulk] Error for "${row.name}": ${err instanceof Error ? err.message : String(err)}`
+      );
+      errors++;
+    }
+
+    // Rate-limit delay between rows (skip after last row)
+    if (i < rows.length - 1) {
+      await sleep(1500);
+    }
+  }
+
+  console.log(
+    `\nBulk complete: ${processed} processed, ${errors} errors out of ${total} rows.`
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -326,12 +427,6 @@ async function seedSinglePolitician(
 async function main(): Promise<void> {
   const args = parseArgs();
 
-  // --bulk not yet implemented
-  if (args.bulk !== null) {
-    console.error('Bulk mode: see Plan 02 (not yet implemented).');
-    process.exit(1);
-  }
-
   // Env var validation
   if (!process.env.FEC_API_KEY) {
     console.error('ERROR: FEC_API_KEY is not set.');
@@ -342,16 +437,28 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
-  // Required arg validation
+  // --bulk mode
+  if (args.bulk !== null) {
+    try {
+      await runBulkMode(args.bulk, args.dryRun, args.discoverOnly);
+    } finally {
+      await pool.end();
+    }
+    return;
+  }
+
+  // Single-politician mode — --name and --state required
   if (!args.name) {
     console.error(
-      'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]'
+      'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]\n' +
+      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]'
     );
     process.exit(1);
   }
   if (!args.state) {
     console.error(
-      'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]'
+      'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]\n' +
+      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]'
     );
     process.exit(1);
   }
