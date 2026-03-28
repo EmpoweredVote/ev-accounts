@@ -36,13 +36,18 @@ interface UnmatchedPolitician {
   representing_state: string;
 }
 
-interface FecCandidate {
+export interface FecCandidate {
   candidate_id: string;
   name: string;
   office: string;
   state: string;
   party: string;
   bioguide_id: string | null;
+  office_full?: string;
+  party_full?: string;
+  district?: string;
+  election_years?: number[];
+  incumbent_challenge_full?: string;
 }
 
 export type MatchStatus = 'confirmed' | 'needs_research';
@@ -92,7 +97,7 @@ function stripAccents(s: string): string {
 }
 
 /** Normalize a name for comparison: lowercase, strip accents and punctuation. */
-function normalize(name: string): string {
+export function normalize(name: string): string {
   return stripAccents(name).replace(/[^a-z\s]/g, '').trim();
 }
 
@@ -100,7 +105,7 @@ function normalize(name: string): string {
  * Parse a FEC-format name "LAST, FIRST MIDDLE" into { first, last }.
  * FEC names are uppercase; we normalize after parsing.
  */
-function parseFecName(fecName: string): { first: string; last: string } {
+export function parseFecName(fecName: string): { first: string; last: string } {
   const commaIdx = fecName.indexOf(',');
   if (commaIdx === -1) {
     // No comma — treat entire name as last name
@@ -160,7 +165,7 @@ function scoreMatch(politician: UnmatchedPolitician, candidate: FecCandidate): n
 // FEC API search
 // ---------------------------------------------------------------------------
 
-async function searchFecCandidates(
+export async function searchFecCandidates(
   name: string,
   state: string,
   office: 'H' | 'S',
@@ -187,8 +192,13 @@ async function searchFecCandidates(
       candidate_id: string;
       name: string;
       office: string;
+      office_full?: string;
       state: string;
       party: string;
+      party_full?: string;
+      district?: string;
+      election_years?: number[];
+      incumbent_challenge_full?: string;
       bioguide_id?: string | null;
     }>;
   };
@@ -197,8 +207,13 @@ async function searchFecCandidates(
     candidate_id: r.candidate_id,
     name: r.name,
     office: r.office,
+    office_full: r.office_full,
     state: r.state,
     party: r.party,
+    party_full: r.party_full,
+    district: r.district,
+    election_years: r.election_years,
+    incumbent_challenge_full: r.incumbent_challenge_full,
     bioguide_id: r.bioguide_id ?? null,
   }));
 }
