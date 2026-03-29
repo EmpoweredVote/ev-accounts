@@ -427,11 +427,15 @@ export async function getBudgetById(
             COALESCE(e_city.confidence,     e_univ.confidence)     AS enrich_confidence
      FROM treasury.budget_categories bc
      JOIN treasury.budgets b ON b.id = bc.budget_id
-     -- Municipality-specific enrichment
+     LEFT JOIN treasury.budget_categories bc_parent ON bc_parent.id = bc.parent_id
+     -- Municipality-specific enrichment (composite key for subcategories: "parent|name")
      LEFT JOIN treasury.category_enrichment e_city
-       ON e_city.name_key = LOWER(TRIM(bc.name))
+       ON e_city.name_key = CASE
+            WHEN bc.parent_id IS NOT NULL THEN LOWER(TRIM(bc_parent.name)) || '|' || LOWER(TRIM(bc.name))
+            ELSE LOWER(TRIM(bc.name))
+          END
       AND e_city.municipality_id = b.municipality_id
-     -- Universal enrichment fallback
+     -- Universal enrichment fallback (simple name key only, for top-level)
      LEFT JOIN treasury.category_enrichment e_univ
        ON e_univ.name_key = LOWER(TRIM(bc.name))
       AND e_univ.municipality_id IS NULL
