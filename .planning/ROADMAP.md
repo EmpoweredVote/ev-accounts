@@ -430,7 +430,7 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
-| 98. Election Data Import | v2026.3.8 | 2/2 | Complete   | 2026-03-29 |
+| 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
