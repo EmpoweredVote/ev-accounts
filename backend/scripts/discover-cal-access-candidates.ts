@@ -180,6 +180,7 @@ function loadTsv<T extends object>(zipBuffer: Buffer, entryPath: string): T[] {
     delimiter: '\t',
     columns: true,
     relax_column_count: true,
+    quote: false,
     skip_empty_lines: true,
     trim: true,
   }) as T[];
