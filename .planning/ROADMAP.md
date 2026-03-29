@@ -361,7 +361,7 @@ Plans:
 **Plans**: 3 plans
 Plans:
 - [ ] 97-01-PLAN.md — Election schema migration (042, 043): three tables + faces_retention_vote + Indiana retention flagging
-- [ ] 97-02-PLAN.md — is_appointed data quality audit with findings report and backfill plan
+- [x] 97-02-PLAN.md — is_appointed data quality audit with findings report and backfill plan
 - [ ] 97-03-PLAN.md — Data source validation: sample Indiana SoS records + coverage gap documentation
 
 ### Phase 98: Election Data Import
@@ -426,7 +426,7 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 94. LA Data Import | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
-| 97. Schema Foundation & Data Audit | v2026.3.8 | 0/3 | Not started | - |
+| 97. Schema Foundation & Data Audit | v2026.3.8 | 1/3 | In Progress|  |
 | 98. Election Data Import | v2026.3.8 | 0/TBD | Not started | - |
 | 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |

@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2026.3.8
 milestone_name: Essentials Election Central
-status: planning
-stopped_at: Phase 97 context gathered
-last_updated: "2026-03-29T19:05:57.370Z"
-last_activity: 2026-03-29 — Roadmap created for v2026.3.8
+status: executing
+stopped_at: Completed 97-02-PLAN.md — is_appointed audit
+last_updated: "2026-03-29T20:24:29.586Z"
+last_activity: 2026-03-29
 progress:
   total_phases: 10
   completed_phases: 5
-  total_plans: 11
-  completed_plans: 11
+  total_plans: 14
+  completed_plans: 12
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 97 — Schema Foundation & Data Audit
+**Current focus:** Phase 97 — schema-foundation-data-audit
 
 ## Current Position
 
-Phase: 97 of 101 (Schema Foundation & Data Audit)
-Plan: —
-Status: Ready to plan
-Last activity: 2026-03-29 — Roadmap created for v2026.3.8
+Phase: 97 (schema-foundation-data-audit) — EXECUTING
+Plan: 2 of 3
+Status: Ready to execute
+Last activity: 2026-03-29
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -48,6 +48,8 @@ Progress: [░░░░░░░░░░] 0%
 - [Roadmap]: Candidates stored in essentials.race_candidates (separate table), NOT in essentials.politicians — prevents geofence searches from returning candidates mixed with officials
 - [Roadmap]: faces_retention_vote boolean added to essentials.politicians in Phase 97 to model Indiana retention judges before filter UI ships in Phase 100
 - [Roadmap]: Party affiliation excluded at the schema/ingestion layer with antipartisan rationale comments — never stored even if upstream APIs provide it
+- [Phase 97]: Phase 100 filter must check politician.is_appointed first (individual override), then fall back to offices.is_appointed_position — handles Courtney Daily interim-appointment-to-elected-seat edge case
+- [Phase 97]: Phase 100 filter is not blocked by is_appointed data quality: geofence join excludes campaign finance records, Bloomington demo data is well-classified, and Judge offices are the only P1 backfill item
 
 ### Pending Todos
 
@@ -61,6 +63,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-03-29T19:05:57.362Z
-Stopped at: Phase 97 context gathered
-Resume file: .planning/phases/97-schema-foundation-data-audit/97-CONTEXT.md
+Last session: 2026-03-29T20:24:29.583Z
+Stopped at: Completed 97-02-PLAN.md — is_appointed audit
+Resume file: None

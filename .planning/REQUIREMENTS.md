@@ -13,7 +13,7 @@ Requirements for Essentials Election Central milestone. Each maps to roadmap pha
 - [ ] **DATA-02**: Elections table created with election_date, election_type (primary/general/retention/special), and geographic scope
 - [ ] **DATA-03**: Races table created linking offices to elections with position-level granularity
 - [ ] **DATA-04**: Candidate-race linkage established connecting candidates to specific races with incumbent flag
-- [ ] **DATA-05**: is_appointed data audited and backfilled for all officials added post-BallotReady (v1.6+)
+- [x] **DATA-05**: is_appointed data audited and backfilled for all officials added post-BallotReady (v1.6+)
 - [ ] **DATA-06**: Candidate records populated in database for upcoming races in coverage areas
 
 ### Election Central Page
@@ -80,7 +80,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-02 | Phase 97 | Pending |
 | DATA-03 | Phase 97 | Pending |
 | DATA-04 | Phase 97 | Pending |
-| DATA-05 | Phase 97 | Pending |
+| DATA-05 | Phase 97 | Complete |
 | DATA-06 | Phase 98 | Pending |
 | ELEC-01 | Phase 99 | Pending |
 | ELEC-02 | Phase 99 | Pending |
