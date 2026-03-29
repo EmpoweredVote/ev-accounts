@@ -233,8 +233,19 @@ interface ParsedName {
   fullName: string;
 }
 
-function parseCandidateName(raw: string): ParsedName {
-  if (!raw || !raw.trim()) {
+function parseCandidateName(rawInput: string): ParsedName {
+  if (!rawInput || !rawInput.trim()) {
+    return { firstName: '', lastName: '(unknown)', fullName: '(unknown)' };
+  }
+
+  // Strip surrounding quotes that can appear in Indiana CSVs with relax_quotes parsing
+  // e.g. '"charles Meeks"' → 'charles Meeks'
+  let raw = rawInput.trim();
+  if ((raw.startsWith('"') && raw.endsWith('"')) || (raw.startsWith("'") && raw.endsWith("'"))) {
+    raw = raw.slice(1, -1).trim();
+  }
+
+  if (!raw) {
     return { firstName: '', lastName: '(unknown)', fullName: '(unknown)' };
   }
 
