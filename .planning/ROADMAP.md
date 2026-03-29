@@ -375,7 +375,7 @@ Plans:
   4. The import script explicitly excludes party affiliation fields at the ingestion layer, with antipartisan rationale comments in the script source
 **Plans**: 2 plans
 Plans:
-- [ ] 98-01-PLAN.md — Migration 044 (dedup constraints) + import CLI with Indiana SoS and LA County handlers
+- [x] 98-01-PLAN.md — Migration 044 (dedup constraints) + import CLI with Indiana SoS and LA County handlers
 - [ ] 98-02-PLAN.md — Election service + API endpoint, run imports, verify with test addresses
 
 ### Phase 99: Election Central Page
@@ -430,7 +430,7 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
-| 98. Election Data Import | v2026.3.8 | 0/2 | Not started | - |
+| 98. Election Data Import | v2026.3.8 | 1/2 | In Progress|  |
 | 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
