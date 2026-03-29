@@ -143,18 +143,27 @@ async function findExistingPoliticians(
   name: string,
   state: string
 ): Promise<EssentialsPolitician[]> {
-  // Extract last name for targeted search
-  const tokens = name.trim().split(/\s+/);
-  const lastName = tokens[tokens.length - 1] ?? name;
+  // FEC names are in "LAST, FIRST" format. Parse first and last name.
+  // parseFecName handles this correctly; fall back if no comma.
+  const parsed = parseFecName(name);
+  const lastName = parsed.last.trim() || name.trim();
+  const firstName = parsed.first.trim();
 
+  // representing_state lives in essentials.offices (joined), not on politicians directly.
+  // Match on both first and last name to avoid false positives from common last names.
+  // If we have a first name, require BOTH first and last name to match (ILIKE).
+  // This prevents linking e.g. federal candidate "James Davidson" to unrelated
+  // Indiana state politician "Michael Davidson".
   const result = await pool.query<EssentialsPolitician>(
-    `SELECT id, full_name, representing_state
-     FROM essentials.politicians
-     WHERE full_name ILIKE $1
-       AND representing_state = $2
-       AND is_active = true
+    `SELECT DISTINCT p.id, p.full_name, o.representing_state
+     FROM essentials.politicians p
+     JOIN essentials.offices o ON o.politician_id = p.id
+     WHERE p.full_name ILIKE $1
+       AND ($3 = '' OR p.full_name ILIKE $4)
+       AND o.representing_state = $2
+       AND p.is_active = true
      LIMIT 10`,
-    [`%${lastName}%`, state]
+    [`%${lastName}%`, state, firstName, `%${firstName}%`]
   );
 
   return result.rows;
@@ -167,6 +176,70 @@ async function isDuplicate(sourceSystem: string, externalId: string): Promise<bo
     [sourceSystem, externalId]
   );
   return (result.rowCount ?? 0) > 0;
+}
+
+// Chamber IDs for federal offices (pre-looked-up from essentials.chambers)
+const CHAMBER_US_HOUSE = 'c2facc31-7b13-428c-b7b9-32d0d3b95f76';
+const CHAMBER_US_SENATE = '7cbe07bc-84b8-433b-952b-540e7de18a92';
+
+/**
+ * Create a new essentials.politicians + essentials.offices row for a
+ * 2026 federal candidate who has no existing DB entry.
+ * Used in bulk mode when no match is found.
+ */
+async function createFederalPolitician(
+  fecCandidate: FecCandidate,
+  state: string,
+  officeCode: 'H' | 'S',
+  dryRun: boolean
+): Promise<EssentialsPolitician> {
+  const parsed = parseFecName(fecCandidate.name);
+  const firstName = parsed.first;
+  const lastName = parsed.last;
+  // Build display name as "First Last" (title-case)
+  const toTitleCase = (s: string) =>
+    s.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+  const fullName = [toTitleCase(firstName), toTitleCase(lastName)]
+    .filter(Boolean)
+    .join(' ');
+
+  const chamberIdForOffice = officeCode === 'S' ? CHAMBER_US_SENATE : CHAMBER_US_HOUSE;
+  const officeTitle = officeCode === 'S' ? 'U.S. Senator' : 'U.S. Representative';
+
+  if (dryRun) {
+    console.log(`[dry-run] Would CREATE politician: ${fullName} (${state}, ${officeTitle})`);
+    // Return a fake politician record for dry-run chaining
+    return {
+      id: '00000000-0000-0000-0000-000000000000',
+      full_name: fullName,
+      representing_state: state,
+    };
+  }
+
+  // Insert politician
+  const polResult = await pool.query<{ id: string }>(
+    `INSERT INTO essentials.politicians
+       (full_name, first_name, last_name, is_active, is_incumbent, source)
+     VALUES ($1, $2, $3, true, false, 'federal_2026_bulk_seed')
+     RETURNING id`,
+    [fullName, toTitleCase(firstName), toTitleCase(lastName)]
+  );
+  const politicianId = polResult.rows[0]!.id;
+
+  // Insert office
+  await pool.query(
+    `INSERT INTO essentials.offices
+       (politician_id, chamber_id, title, representing_state, is_vacant)
+     VALUES ($1, $2, $3, $4, false)`,
+    [politicianId, chamberIdForOffice, officeTitle, state]
+  );
+
+  console.log(`CREATED: ${fullName} (${state}, ${officeTitle}) -> id: ${politicianId}`);
+  return {
+    id: politicianId,
+    full_name: fullName,
+    representing_state: state,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -360,15 +433,19 @@ async function seedSinglePolitician(
   // Find matching essentials.politicians entry
   const politicians = await findExistingPoliticians(name, state);
 
-  if (politicians.length === 0) {
-    console.log(
-      'No matching politician found in essentials.politicians. Cannot seed without an existing politician entry. Exiting.'
-    );
-    return;
-  }
-
   let politician: EssentialsPolitician;
-  if (politicians.length === 1) {
+  if (politicians.length === 0) {
+    if (bulkMode && (selected.office === 'H' || selected.office === 'S')) {
+      // In bulk mode for federal candidates, create the politician if not found
+      console.log(`No existing politician found — creating new entry for ${name}`);
+      politician = await createFederalPolitician(selected, state, selected.office, dryRun);
+    } else {
+      console.log(
+        'No matching politician found in essentials.politicians. Cannot seed without an existing politician entry. Exiting.'
+      );
+      return;
+    }
+  } else if (politicians.length === 1) {
     politician = politicians[0]!;
     console.log(`Matched politician: ${politician.full_name} (id: ${politician.id})`);
   } else if (bulkMode) {
