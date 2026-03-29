@@ -435,8 +435,16 @@ async function seedSinglePolitician(
 
   let politician: EssentialsPolitician;
   if (politicians.length === 0) {
-    if (bulkMode && (selected.office === 'H' || selected.office === 'S')) {
-      // In bulk mode for federal candidates, create the politician if not found
+    if (selected.office === 'H' || selected.office === 'S') {
+      if (!bulkMode) {
+        const create = await prompt(
+          `No existing politician found for "${name}" in ${state}. Create new entry? [y/N]: `
+        );
+        if (create !== 'y') {
+          console.log('Aborted.');
+          return;
+        }
+      }
       console.log(`No existing politician found — creating new entry for ${name}`);
       politician = await createFederalPolitician(selected, state, selected.office, dryRun);
     } else {
