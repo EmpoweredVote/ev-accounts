@@ -333,61 +333,124 @@ Then rerun the ogr2ogr command for that district type with all flags present.
 
 ---
 
-## LA County Boundaries (California)
+## California Boundaries
 
-Phase 20 adds LA County, California as a supported coverage area. Only the county boundary is loaded — state legislative and school district boundaries for California are out of scope for Alpha.
+Phase 20 added LA County only. Phase 50 (2026-03-27) extended coverage to all 5 district types for the full state of California.
+
+California FIPS state code: **06**
 
 ### Prerequisites
 
-Same as Indiana: Migration 031 applied, GDAL installed, DATABASE_URL set to direct connection.
+Same as Indiana: Migration 031 applied, GDAL installed, `PROJ_LIB` set, DATABASE_URL set.
 
-The national county file (`tl_2024_us_county/`) is already present in the working directory — no additional download needed.
-
-### Load LA County boundary
-
-California FIPS state code: **06**
-LA County FIPS county code: **037** (GEOID: **06037**)
+**PROJ_LIB (Windows/GDAL installer):** Must be set or EPSG lookups fail with `Cannot find proj.db`.
 
 ```bash
-# LA County from the national county file (already downloaded)
-# Filter: STATEFP='06' AND COUNTYFP='037' — one row, LA County only
-ogr2ogr -f PostgreSQL \
-  "PG:$DATABASE_URL" \
-  -nln district_boundaries \
-  -lco SCHEMA=inform \
-  -lco GEOMETRY_NAME=geom \
-  -nlt PROMOTE_TO_MULTI \
-  -s_srs EPSG:4269 -t_srs EPSG:4326 \
-  -append -update \
-  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'county' AS district_type FROM tl_2024_us_county WHERE STATEFP='06' AND COUNTYFP='037'" \
-  tl_2024_us_county/tl_2024_us_county.shp
+export PROJ_LIB="/c/Program Files/GDAL/projlib"
 ```
 
-### Post-load verification
+**DATABASE_URL:** Use the key=value connection format — NOT `"PG:$DATABASE_URL"` with appended options. The URL format breaks when extra options (like `active_schema`) are appended, and the Supabase pooler may drop SSL connections. Use:
+
+```bash
+# Replace PASSWORD and PROJECT_REF with actual values
+# Region must match your Supabase project (us-west-1, us-east-1, etc.)
+PG_CONN="host=aws-0-us-west-1.pooler.supabase.com port=5432 dbname=postgres user=postgres.PROJECT_REF password=PASSWORD sslmode=require active_schema=inform"
+```
+
+The `active_schema=inform` option is required so ogr2ogr finds the existing `inform.district_boundaries` table instead of trying to create it in the `public` schema (which would fail).
+
+The national county file (`tl_2024_us_county/`) is already present in the working directory.
+
+### Step 1: Download CA TIGER files
+
+```bash
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_06_cd119.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_06_sldu.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_06_sldl.zip
+curl -O https://www2.census.gov/geo/tiger/TIGER2024/UNSD/tl_2024_06_unsd.zip
+
+unzip tl_2024_06_cd119.zip -d tl_2024_06_cd119/
+unzip tl_2024_06_sldu.zip  -d tl_2024_06_sldu/
+unzip tl_2024_06_sldl.zip  -d tl_2024_06_sldl/
+unzip tl_2024_06_unsd.zip  -d tl_2024_06_unsd/
+```
+
+### Step 2: Load all 5 district types
+
+```bash
+# 1. Congressional (52 districts)
+ogr2ogr -f PostgreSQL "PG:$PG_CONN" \
+  -nln district_boundaries -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI -s_srs EPSG:4269 -t_srs EPSG:4326 -append -update \
+  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'congressional' AS district_type FROM tl_2024_06_cd119" \
+  tl_2024_06_cd119/tl_2024_06_cd119.shp
+
+# 2. State Senate (40 districts)
+ogr2ogr -f PostgreSQL "PG:$PG_CONN" \
+  -nln district_boundaries -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI -s_srs EPSG:4269 -t_srs EPSG:4326 -append -update \
+  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'state_senate' AS district_type FROM tl_2024_06_sldu" \
+  tl_2024_06_sldu/tl_2024_06_sldu.shp
+
+# 3. State Assembly (80 districts)
+ogr2ogr -f PostgreSQL "PG:$PG_CONN" \
+  -nln district_boundaries -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI -s_srs EPSG:4269 -t_srs EPSG:4326 -append -update \
+  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'state_house' AS district_type FROM tl_2024_06_sldl" \
+  tl_2024_06_sldl/tl_2024_06_sldl.shp
+
+# 4. Counties (58 counties — from national file, filter to CA)
+ogr2ogr -f PostgreSQL "PG:$PG_CONN" \
+  -nln district_boundaries -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI -s_srs EPSG:4269 -t_srs EPSG:4326 -append -update \
+  -sql "SELECT GEOID AS geoid, NAMELSAD AS name, 'county' AS district_type FROM tl_2024_us_county WHERE STATEFP='06'" \
+  tl_2024_us_county/tl_2024_us_county.shp
+
+# 5. Unified School Districts (346 districts)
+# NOTE: UNSD uses NAME not NAMELSAD — field name differs from other TIGER files
+ogr2ogr -f PostgreSQL "PG:$PG_CONN" \
+  -nln district_boundaries -lco GEOMETRY_NAME=geom \
+  -nlt PROMOTE_TO_MULTI -s_srs EPSG:4269 -t_srs EPSG:4326 -append -update \
+  -sql "SELECT GEOID AS geoid, NAME AS name, 'school_district' AS district_type FROM tl_2024_06_unsd" \
+  tl_2024_06_unsd/tl_2024_06_unsd.shp
+```
+
+Each command prints `Warning 1: Layer creation options ignored since an existing layer is being appended to.` on success. Any other output is an error.
+
+### Step 3: Post-load verification
 
 ```sql
--- Confirm 1 row loaded for California county type with GEOID '06037'
-SELECT geoid, name, district_type
+-- Row counts by district type (CA only)
+SELECT district_type, COUNT(*)
 FROM inform.district_boundaries
-WHERE district_type = 'county' AND geoid = '06037';
--- Expected: 1 row — geoid: '06037', name: 'Los Angeles County', district_type: 'county'
+WHERE geoid LIKE '06%'
+GROUP BY district_type
+ORDER BY district_type;
+-- Expected:
+--   congressional   | 52
+--   county          | 58
+--   school_district | 346
+--   state_house     | 80
+--   state_senate    | 40
 
--- Smoke test: Culver City, CA coordinates (lat=34.0211, lng=-118.3965)
+-- Smoke test: Culver City, CA (lat=34.0211, lng=-118.3965)
 SELECT geoid, name, district_type
 FROM inform.district_boundaries
-WHERE ST_Covers(
-  geom,
-  ST_SetSRID(ST_MakePoint(-118.3965, 34.0211), 4326)
-)
-AND district_type = 'county';
--- Expected: 1 row — '06037', 'Los Angeles County', 'county'
+WHERE ST_Covers(geom, ST_SetSRID(ST_MakePoint(-118.3965, 34.0211), 4326))
+ORDER BY district_type;
+-- Expected: 5 rows
+--   congressional   | 0637  | Congressional District 37
+--   county          | 06037 | Los Angeles County
+--   school_district | 0610260 | Culver City Unified School District
+--   state_house     | 06055 | Assembly District 55
+--   state_senate    | 06028 | State Senate District 28
 ```
-
-### Coverage check integration
-
-The `resolve_user_jurisdiction` RPC returns `null` for `congressional`, `state_senate`, `state_house`, and `school_district` for LA County addresses — only `county` is populated. This is expected Alpha behavior. The HTTP layer uses the county result presence to confirm in-coverage status.
 
 ### Troubleshooting
 
-- **0 rows loaded:** Verify both `STATEFP='06'` AND `COUNTYFP='037'` are inside the `-sql` string (not as standalone `-where` flags).
+- **`ERROR: PROJ: proj_create_from_database: Cannot find proj.db`** — `PROJ_LIB` not set. Run `export PROJ_LIB="/c/Program Files/GDAL/projlib"` (adjust path to match your GDAL install location).
+- **`ERROR: Layer inform.district_boundaries already exists`** — missing `active_schema=inform` in the connection string, or using URL format instead of key=value format. Switch to `PG_CONN` key=value format with `active_schema=inform`.
+- **`FATAL: Tenant or user not found`** — wrong pooler region in the host. Check your Supabase project region in the dashboard and use the matching `aws-0-REGION.pooler.supabase.com` host.
+- **`SSL connection has been closed unexpectedly`** — extra options appended to a URL-format connection string. Use the key=value format instead.
+- **`Unrecognized field name NAMELSAD`** — UNSD shapefiles use `NAME` not `NAMELSAD`. Use `NAME AS name` in the `-sql` clause for school districts only.
 - **SRID mismatch (4269):** Rerun with `-s_srs EPSG:4269 -t_srs EPSG:4326` flags present.

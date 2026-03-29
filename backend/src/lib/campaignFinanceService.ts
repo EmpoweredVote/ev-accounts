@@ -146,6 +146,7 @@ export interface SummaryResponse {
   pac_total: number;
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
+  coverage_status?: string;
 }
 
 export interface ContributionResult {
@@ -422,6 +423,51 @@ export function validateConfidence(raw: string | undefined): string | null {
 const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ESTIMATED' };
 
 // ---------------------------------------------------------------------------
+// detectCoverageStatus — classify zero-state politicians by data availability
+// ---------------------------------------------------------------------------
+
+/**
+ * detectCoverageStatus classifies a politician with no confirmed contributions
+ * into one of three coverage statuses:
+ *   - 'data_pending'       — has source rows but no contributions ingested yet
+ *   - 'local_unavailable'  — local/county office; filings are paper/offline
+ *   - 'no_data'            — federal/state office with no sources on file
+ */
+async function detectCoverageStatus(politicianId: string): Promise<string> {
+  // Check if politician_sources rows exist (needs_research or otherwise)
+  const sourceCountResult = await pool.query<{ cnt: string }>(
+    `SELECT COUNT(*) AS cnt
+     FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = $1`,
+    [politicianId]
+  );
+  const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
+
+  if (sourceCount > 0) {
+    return 'data_pending';
+  }
+
+  // No source rows — check the politician's office district_type
+  const officeResult = await pool.query<{ district_type: string | null }>(
+    `SELECT d.district_type
+     FROM essentials.offices o
+     LEFT JOIN essentials.districts d ON d.id = o.district_id
+     WHERE o.politician_id = $1 AND o.is_vacant = false
+     LIMIT 1`,
+    [politicianId]
+  );
+
+  const districtType = officeResult.rows[0]?.district_type ?? null;
+  const localTypes = ['LOCAL', 'LOCAL_EXEC', 'COUNTY', 'SCHOOL'];
+
+  if (districtType && localTypes.includes(districtType)) {
+    return 'local_unavailable';
+  }
+
+  return 'no_data';
+}
+
+// ---------------------------------------------------------------------------
 // getSummary — ported from SummaryHandler in public_handlers.go
 // ---------------------------------------------------------------------------
 
@@ -453,6 +499,7 @@ export async function getSummary(
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
+    const coverageStatus = await detectCoverageStatus(politicianId);
     return {
       summary: {
         politician_id: politicianId,
@@ -467,6 +514,7 @@ export async function getSummary(
         pac_total: 0,
         sector_breakdown: [],
         top_donors: [],
+        coverage_status: coverageStatus,
       },
       updatedAt: null,
     };
@@ -573,12 +621,35 @@ export async function getSummary(
     };
   });
 
-  // Query last_sync_at for FEC freshness header
+  // Derive primary data_source from actual contributions (most common source for this politician/cycle)
+  const dataSourceResult = await pool.query<{ data_source: string }>(
+    `SELECT c.data_source
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+     WHERE ps.essentials_politician_id = $1
+       AND c.election_cycle = $2
+       AND ps.research_status = 'confirmed'
+     GROUP BY c.data_source
+     ORDER BY COUNT(*) DESC
+     LIMIT 1`,
+    [politicianId, effectiveCycle]
+  );
+  const primaryDataSource = dataSourceResult.rows[0]?.data_source ?? 'fec';
+
+  // Query last_sync_at for freshness header — use the actual data source
+  const sourceSystemMap: Record<string, string> = {
+    fec: 'fec',
+    indiana: 'indiana_zip_etag_2026',
+    cal_access: 'cal_access',
+    la_city: 'la_city',
+  };
+  const metaSourceSystem = sourceSystemMap[primaryDataSource] ?? primaryDataSource;
   const metaResult = await pool.query<MetaRow>(
     `SELECT last_sync_at
      FROM transparent_motivations.data_source_metadata
-     WHERE source_system = 'fec'
-     LIMIT 1`
+     WHERE source_system = $1
+     LIMIT 1`,
+    [metaSourceSystem]
   );
   const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
 
@@ -588,7 +659,7 @@ export async function getSummary(
     total_raised: Number(tRow?.total_raised ?? 0),
     contribution_count: Number(tRow?.contribution_count ?? 0),
     confidence_level: overallConfidence,
-    data_source: 'fec',
+    data_source: primaryDataSource,
     last_sync_at: lastSyncAt,
     available_cycles: availableCycles,
     individual_total: Number(tRow?.individual_total ?? 0),
@@ -1291,7 +1362,7 @@ export async function getUnresolvedByExternalId(
 
 /**
  * findOrCreatePoliticianSource finds an existing politician_source by
- * (essentials_politician_id, source_system), or creates a new confirmed one.
+ * (essentials_politician_id, source_system, external_id), or creates a new confirmed one.
  *
  * Used by the unresolved queue resolve handler to create a permanent link
  * between an unresolved externalId and a known politician.
@@ -1315,9 +1386,9 @@ export async function findOrCreatePoliticianSource(
     `SELECT id, essentials_politician_id, source_system, external_id,
             research_status, notes, created_at, updated_at
      FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1 AND source_system = $2
+     WHERE essentials_politician_id = $1 AND source_system = $2 AND external_id = $3
      LIMIT 1`,
-    [politicianId, adapterName]
+    [politicianId, adapterName, externalId]
   );
 
   if (findResult.rows.length > 0) {
