@@ -19,7 +19,8 @@
 - ✅ **v2026.3.4 Read & Rank Integration** — Phases 77-82 (shipped 2026-03-12)
 - ✅ **v2026.3.5 Unified Navigation Header** — Phases 83-85 (shipped 2026-03-13)
 - ✅ **v2026.3.6 Read & Rank Redesign** — Phases 86-91 (shipped 2026-03-16)
-- 🚧 **v2026.3.7 Treasury Tracker Expansion** — Phases 92-96 (in progress)
+- ✅ **v2026.3.7 Treasury Tracker Expansion** — Phases 92-96 (shipped 2026-03-23)
+- 🚧 **v2026.3.8 Essentials Election Central** — Phases 97-101 (in progress)
 
 ## Phases
 
@@ -251,15 +252,28 @@ Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
 
 </details>
 
-### v2026.3.7 Treasury Tracker Expansion (In Progress)
+<details>
+<summary>✅ v2026.3.7 Treasury Tracker Expansion (Phases 92-96) — SHIPPED 2026-03-23</summary>
 
-**Milestone Goal:** Expand Treasury Tracker from a single Bloomington-only app to a multi-jurisdiction platform covering Bloomington IN, Ellettsville IN, Monroe County IN, LA County CA, and LA City CA — with a frontend entity switcher and full EV visual refresh.
+- [x] Phase 92: Schema Foundation & Bloomington Migration (3/3 plans) — completed 2026-03-22
+- [x] Phase 93: Indiana Data Import (1/1 plans) — completed 2026-03-22
+- [x] Phase 94: LA Data Import (2/2 plans) — completed 2026-03-23
+- [x] Phase 95: Entity Switcher (2/2 plans) — completed 2026-03-23
+- [x] Phase 96: Visual Refresh (3/3 plans) — completed 2026-03-23
 
-- [x] **Phase 92: Schema Foundation & Bloomington Migration** - Fix critical schema gaps and migrate all Bloomington data to Supabase (completed 2026-03-22)
-- [x] **Phase 93: Indiana Data Import** - Import Ellettsville and Monroe County operating budgets from Indiana Gateway (completed 2026-03-22)
-- [x] **Phase 94: LA Data Import** - Import LA County and LA City budget data from open data portals (completed 2026-03-23)
-- [x] **Phase 95: Entity Switcher** - Frontend entity switcher so users can navigate between jurisdictions (completed 2026-03-23)
-- 🚧 **Phase 96: Visual Refresh** - Full EV design token rebrand including chart colors and Manrope typography (1/3 plans complete)
+Full details: `.planning/milestones/v2026.3.7-ROADMAP.md`
+
+</details>
+
+### v2026.3.8 Essentials Election Central (In Progress)
+
+**Milestone Goal:** Add an Election Central page to Essentials showing upcoming races grouped by organization and position, plus an elected/appointed filter on the main representatives page.
+
+- [ ] **Phase 97: Schema Foundation & Data Audit** - Election schema designed, data source confirmed, is_appointed audit completed
+- [ ] **Phase 98: Election Data Import** - Candidate records populated for upcoming races in Bloomington/Monroe County IN and LA County CA
+- [ ] **Phase 99: Election Central Page** - Fully functional Election Central page accessible from the same address search
+- [ ] **Phase 100: Elected/Appointed Filter** - Representatives page filter toggle ships with verified data
+- [ ] **Phase 101: Candidate Profiles** - Candidates link to full Essentials-style profile pages with compass and verdict data
 
 ## Phase Details
 
@@ -302,7 +316,7 @@ Plans:
 **Plans**: 2 plans
 Plans:
 - [x] 94-01-PLAN.md — Socrata + ArcGIS fetch strategies, tree builders, and unit tests
-- [ ] 94-02-PLAN.md — Config population, CLI wiring, ready to run imports
+- [x] 94-02-PLAN.md — Config population, CLI wiring, ready to run imports
 
 ### Phase 95: Entity Switcher
 **Goal**: Users can navigate between all available jurisdictions in a single Treasury Tracker session — Bloomington, Ellettsville, Monroe County, LA County, and LA City — without reloading the page
@@ -315,8 +329,8 @@ Plans:
   4. Switching entities triggers a fresh data load with the correct cache key — no stale cross-entity data can appear from a prior selection
 **Plans**: 2 plans
 Plans:
-- [ ] 95-01-PLAN.md — Backend API extension (available_datasets, hero_image_url) + frontend types and cache key
-- [ ] 95-02-PLAN.md — EntitySwitcher component, App.tsx rewire, URL deep linking, spinner overlay
+- [x] 95-01-PLAN.md — Backend API extension (available_datasets, hero_image_url) + frontend types and cache key
+- [x] 95-02-PLAN.md — EntitySwitcher component, App.tsx rewire, URL deep linking, spinner overlay
 
 ### Phase 96: Visual Refresh
 **Goal**: Treasury Tracker uses the EV design system throughout — Manrope typography, ev-ui design tokens for UI chrome, and a brand-aligned data visualization palette for chart segment fills
@@ -331,18 +345,85 @@ Plans:
 **UI hint**: yes
 Plans:
 - [x] 96-01-PLAN.md — Tailwind CSS 4 infrastructure + navigation chrome redesign (header, EntitySwitcher, tabs, search, year, breadcrumb)
-- [ ] 96-02-PLAN.md — Data display component redesign (LineItemsTable, CategoryList, PerDollarBreakdown, etc.)
-- [ ] 96-03-PLAN.md — D3 chart color migration to ev-ui dataVizPalette
+- [x] 96-02-PLAN.md — Data display component redesign (LineItemsTable, CategoryList, PerDollarBreakdown, etc.)
+- [x] 96-03-PLAN.md — D3 chart color migration to ev-ui dataVizPalette
+
+### Phase 97: Schema Foundation & Data Audit
+**Goal**: The election data source is confirmed, three new DB tables exist with correct structure, the is_appointed data quality is audited for all in-scope officials, and retention judges are modeled accurately — establishing the verified foundation every subsequent phase depends on
+**Depends on**: Phase 96 (milestone gate; election schema is independent of treasury work)
+**Requirements**: DATA-01, DATA-02, DATA-03, DATA-04, DATA-05
+**Success Criteria** (what must be TRUE):
+  1. Three new tables exist in the essentials schema — elections, races, and race_candidates — with verified FK constraints, indexes, and a candidates/officials separation that prevents geofence searches from returning candidate records
+  2. The data source decision is documented: CivicEngine API access status confirmed (or fallback to Google Civic API + manual staging) with known coverage gaps for Monroe County IN local races explicitly noted
+  3. The is_appointed audit query has run and findings are documented — officials with defaulted false values are identified and a backfill plan exists before the filter UI ships
+  4. A faces_retention_vote boolean column exists on essentials.politicians and Indiana appellate judges are correctly flagged, enabling dual-filter behavior in Phase 100
+  5. No party affiliation fields exist in any new table — antipartisan exclusion is enforced at the schema layer with rationale comments in migration files
+**Plans**: TBD
+
+### Phase 98: Election Data Import
+**Goal**: Candidate records for upcoming races in Bloomington/Monroe County IN and LA County CA are populated in the database via the confirmed import pipeline, with freshness fields and test addresses verified before any frontend work begins
+**Depends on**: Phase 97
+**Requirements**: DATA-06
+**Success Criteria** (what must be TRUE):
+  1. At least one upcoming election exists in the DB for Bloomington/Monroe County IN with races and candidates populated — a test address in Bloomington returns election results from the API
+  2. At least one upcoming election exists in the DB for LA County CA with races and candidates populated — a test address in LA County returns election results from the API
+  3. Every candidate record carries a candidate_status field (active/withdrawn/ballot_required) — no withdrawn candidates are returned by the search endpoint
+  4. The import script explicitly excludes party affiliation fields at the ingestion layer, with antipartisan rationale comments in the script source
+**Plans**: TBD
+
+### Phase 99: Election Central Page
+**Goal**: Users can navigate to a dedicated Election Central page from the same address search and see all upcoming races for their address, grouped by government body and position, with incumbents identified and election metadata displayed
+**Depends on**: Phase 98
+**Requirements**: ELEC-01, ELEC-02, ELEC-03, ELEC-04, ELEC-05, ELEC-06, ELEC-07
+**Success Criteria** (what must be TRUE):
+  1. A user entering a Bloomington IN or LA County CA address sees an Election Central page with upcoming races grouped first by government body (Federal > State > Local) then by specific position (e.g., "City Council District 3")
+  2. Each race card shows all candidates with name, photo (initials avatar fallback), and the position sought — no candidate in an active race is hidden
+  3. Incumbent candidates have a visible badge or indicator distinguishing them from challengers within the same race card
+  4. Each race shows the election date, election type label (Primary / General / Retention), and a days-until countdown when the election is fewer than 60 days away
+  5. A user on the results page can navigate to Election Central with the same address pre-filled — no re-entry of address required
+  6. A user searching an address with no upcoming election data sees a clear empty state that explains coverage limitations rather than a blank or broken page
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 100: Elected/Appointed Filter
+**Goal**: Users can filter the main representatives page by Elected, Appointed, or All, with retention judges appearing correctly under both the Elected and Appointed views — backed by verified is_appointed data
+**Depends on**: Phase 97 (is_appointed audit and faces_retention_vote schema from Phase 97 must be complete)
+**Requirements**: FILT-01, FILT-02, FILT-03
+**Success Criteria** (what must be TRUE):
+  1. A filter toggle with three options (All / Elected / Appointed) appears on the representatives page and defaults to All — existing user experience is unchanged when All is selected
+  2. Selecting Elected shows only officials where is_appointed is false or faces_retention_vote is true — no appointed officials appear in the Elected view
+  3. Selecting Appointed shows only officials where is_appointed is true — no elected officials appear in the Appointed view
+  4. Indiana appellate judges with faces_retention_vote=true appear in both the Elected and Appointed filter views simultaneously
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 101: Candidate Profiles
+**Goal**: Candidates on the Election Central page link to full Essentials-style profile pages, with compass comparison cards and Read & Rank verdict badges where data exists — incumbents reuse existing politician records, challengers render without triggering empty legislative API calls
+**Depends on**: Phase 99
+**Requirements**: PROF-01, PROF-02, PROF-03, PROF-04, PROF-05
+**Success Criteria** (what must be TRUE):
+  1. Clicking any candidate card on the Election Central page navigates to a profile page with the candidate's name, photo, bio (if available), and position sought
+  2. A candidate profile for an incumbent (matched to an essentials.politicians record) shows the compass comparison card with the user's calibrated radar overlay — same behavior as the current politician profile
+  3. A candidate profile for a challenger (no matched politician record) renders without triggering legislative API calls and without empty loading states for data that does not exist
+  4. Compass stances are imported for at least the major-race candidates in both coverage areas (Monroe County IN + LA County CA) and appear on their profiles
+  5. Read & Rank verdict badges appear on candidate profiles where sourced quotes have been imported via the existing quote pipeline
+**Plans**: TBD
+**UI hint**: yes
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 92 -> 93 -> 94 -> 95 -> 96
+Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete    | 2026-03-22 |
-| 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete    | 2026-03-22 |
-| 94. LA Data Import | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
-| 95. Entity Switcher | v2026.3.7 | 0/2 | Complete    | 2026-03-23 |
-| 96. Visual Refresh | v2026.3.7 | 1/3 | Complete    | 2026-03-23 |
+| 92. Schema Foundation & Bloomington Migration | v2026.3.7 | 3/3 | Complete | 2026-03-22 |
+| 93. Indiana Data Import | v2026.3.7 | 1/1 | Complete | 2026-03-22 |
+| 94. LA Data Import | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
+| 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
+| 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
+| 97. Schema Foundation & Data Audit | v2026.3.8 | 0/TBD | Not started | - |
+| 98. Election Data Import | v2026.3.8 | 0/TBD | Not started | - |
+| 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
+| 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
+| 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |

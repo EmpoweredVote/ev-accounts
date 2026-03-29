@@ -76,33 +76,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | — | Pending |
-| DATA-02 | — | Pending |
-| DATA-03 | — | Pending |
-| DATA-04 | — | Pending |
-| DATA-05 | — | Pending |
-| DATA-06 | — | Pending |
-| ELEC-01 | — | Pending |
-| ELEC-02 | — | Pending |
-| ELEC-03 | — | Pending |
-| ELEC-04 | — | Pending |
-| ELEC-05 | — | Pending |
-| ELEC-06 | — | Pending |
-| ELEC-07 | — | Pending |
-| PROF-01 | — | Pending |
-| PROF-02 | — | Pending |
-| PROF-03 | — | Pending |
-| PROF-04 | — | Pending |
-| PROF-05 | — | Pending |
-| FILT-01 | — | Pending |
-| FILT-02 | — | Pending |
-| FILT-03 | — | Pending |
+| DATA-01 | Phase 97 | Pending |
+| DATA-02 | Phase 97 | Pending |
+| DATA-03 | Phase 97 | Pending |
+| DATA-04 | Phase 97 | Pending |
+| DATA-05 | Phase 97 | Pending |
+| DATA-06 | Phase 98 | Pending |
+| ELEC-01 | Phase 99 | Pending |
+| ELEC-02 | Phase 99 | Pending |
+| ELEC-03 | Phase 99 | Pending |
+| ELEC-04 | Phase 99 | Pending |
+| ELEC-05 | Phase 99 | Pending |
+| ELEC-06 | Phase 99 | Pending |
+| ELEC-07 | Phase 99 | Pending |
+| FILT-01 | Phase 100 | Pending |
+| FILT-02 | Phase 100 | Pending |
+| FILT-03 | Phase 100 | Pending |
+| PROF-01 | Phase 101 | Pending |
+| PROF-02 | Phase 101 | Pending |
+| PROF-03 | Phase 101 | Pending |
+| PROF-04 | Phase 101 | Pending |
+| PROF-05 | Phase 101 | Pending |
 
 **Coverage:**
 - v2026.3.8 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21
+- Mapped to phases: 21
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-29*
-*Last updated: 2026-03-29 after initial definition*
+*Last updated: 2026-03-29 after roadmap creation*
