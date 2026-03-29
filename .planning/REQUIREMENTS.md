@@ -9,7 +9,7 @@ Requirements for Essentials Election Central milestone. Each maps to roadmap pha
 
 ### Data Infrastructure
 
-- [ ] **DATA-01**: Election data source researched and integrated for Bloomington/Monroe County IN + LA County CA
+- [x] **DATA-01**: Election data source researched and integrated for Bloomington/Monroe County IN + LA County CA
 - [ ] **DATA-02**: Elections table created with election_date, election_type (primary/general/retention/special), and geographic scope
 - [ ] **DATA-03**: Races table created linking offices to elections with position-level granularity
 - [ ] **DATA-04**: Candidate-race linkage established connecting candidates to specific races with incumbent flag
@@ -76,7 +76,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 97 | Pending |
+| DATA-01 | Phase 97 | Complete |
 | DATA-02 | Phase 97 | Pending |
 | DATA-03 | Phase 97 | Pending |
 | DATA-04 | Phase 97 | Pending |
