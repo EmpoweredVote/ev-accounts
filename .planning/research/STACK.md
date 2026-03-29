@@ -1,151 +1,83 @@
 # Stack Research
 
-**Project:** v2026.3.7 Treasury Tracker Expansion
-**Domain:** Municipal budget data visualization — visual refresh + multi-entity data migration
-**Researched:** 2026-03-22
-**Confidence:** HIGH (all findings from direct source inspection + verified open data portals)
+**Project:** v2026.3.8 Essentials Election Central
+**Domain:** Election/candidate data integration — Election Central page + elected/appointed filter
+**Researched:** 2026-03-29
+**Confidence:** MEDIUM — election APIs verified from official docs and community; state SOS machine-readable availability is LOW confidence for Indiana local races
 
 ---
 
 ## Context: What Is and Is Not New
 
-The prior STACK.md (v2026.3.6) covers EV-readrank. This document covers **only what is new for v2026.3.7**: EV design token integration into treasury-tracker, Bloomington static JSON migration to Supabase, and budget data import for Ellettsville IN, Monroe County IN, LA County CA, and LA City CA.
+This document covers **only what is new for v2026.3.8**. The prior STACK.md (v2026.3.7) covers Treasury Tracker.
 
-**Existing stack that remains unchanged — do not re-research or reinstall:**
-- React 19 + TypeScript + Vite 7.2.4 (treasury-tracker)
-- D3.js ^7.9.0 + Recharts ^3.5.1 — chart rendering
-- lucide-react ^0.562.0 — icons
-- Go 1.24 + Chi + GORM — backend with existing treasury module
-- Supabase PostgreSQL — `treasury.cities`, `treasury.budgets`, `treasury.budget_categories`, `treasury.budget_line_items` tables already exist with `ImportBudget` endpoint at `POST /treasury/import`
-- `dataLoader.ts` already tries API first, falls back to static JSON — the abstraction is already in place
-- `@chrisandrewsedu/ev-ui` currently at ^0.1.6 in treasury-tracker (stale; current is 0.1.53)
-
----
-
-## Section 1: EV Design Token Integration
-
-### No New npm Packages — Upgrade ev-ui and Add Tailwind CSS 4
-
-**The problem:** Treasury-tracker uses raw CSS custom properties in `src/index.css` that approximate the EV design system but are not connected to it. The property names use non-canonical aliases (`--muted-blue`, `--coral`, `--accent-yellow`) that don't match the ev-ui token names. Color values are also slightly stale (e.g., `--muted-blue: #00657c` vs ev-ui `evTeal: #00647A`). The `@chrisandrewsedu/ev-ui` in `package.json` is pinned at `^0.1.6` while current is `0.1.53` — the SiteHeader, tokens, and tailwind-preset have all changed significantly.
-
-**Step 1: Upgrade @chrisandrewsedu/ev-ui to current.**
-The treasury-tracker's `package.json` already lists `@chrisandrewsedu/ev-ui` as a dependency. The `^0.1.6` semver range technically accepts any 0.1.x but npm locks at time of install. Must explicitly upgrade to `^0.1.53`.
-
-**Step 2: Add Tailwind CSS 4 — the same way essentials and CompassV2 do it.**
-Treasury-tracker has NO Tailwind installed. Its `src/index.css` is pure vanilla CSS. The other EV apps use `@import "tailwindcss"` in their CSS entry point (Tailwind v4's CSS-first config), with EV tokens defined in `@theme {}` blocks or consumed via `@import "@chrisandrewsedu/ev-ui/tailwind-preset"`.
-
-The ev-ui package exports a tailwind-preset at `@chrisandrewsedu/ev-ui/tailwind-preset` that exposes all EV color scales (`ev-coral-500`, `ev-teal-500`, etc.), Manrope font family, and spacing/radius tokens as Tailwind utilities. Treasury-tracker should use this to gain EV-native utility classes.
-
-**Step 3: Replace hardcoded CSS vars with ev-ui tokens.**
-After Tailwind is installed, replace the manual `:root { --coral: ... }` block with references to the canonical ev-ui token exports. For inline style props that can't use Tailwind utilities, import `colors` from `@chrisandrewsedu/ev-ui/tokens` directly in TypeScript files.
-
-**Tailwind v4 install (CSS-first, no `tailwind.config.js` needed):**
-```bash
-npm install tailwindcss @tailwindcss/vite
-```
-Add the Vite plugin to `vite.config.ts`, replace the Google Fonts import pattern and `:root` block in `src/index.css` with:
-```css
-@import "tailwindcss";
-@import "@chrisandrewsedu/ev-ui/tailwind-preset";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
-```
-
-This is exactly what essentials does (confirmed from `essentials/src/index.css` inspection).
-
-**Chart color palette update:** The existing `budgetConfig.json` has a hardcoded `colorPalette` array of 30 hex values in non-EV blues/purples. Replace with `dataVizPalette` from `ev-ui/src/tokens.js`, which provides 10 EV-brand hues each with 5 shades. This is already published in the ev-ui tokens — import it as needed from the TypeScript components that assign chart segment colors.
-
-**Confidence:** HIGH — all files inspected directly. Tailwind v4 CSS-first install is the identical pattern used in essentials and CompassV2. ev-ui tailwind-preset confirmed exported at `"./tailwind-preset"` in ev-ui `package.json`.
+**Existing stack — do not re-research or reinstall:**
+- React 19 + Vite 7 + Tailwind CSS 4 + react-router-dom ^7.8.2 (essentials app)
+- Express 4 + TypeScript + Node.js 20 native `fetch()` (ev-accounts backend)
+- Supabase PostgreSQL + PostGIS (existing `essentials.*` schema)
+- `@chrisandrewsedu/ev-ui ^0.1.53` — PoliticianCard, PoliticianProfile reusable for candidates
+- Google Maps Places autocomplete (already wired for address input)
+- `essentials.election_records` table — already exists with election_name, election_date, position_name, result, party_name, is_primary, is_runoff, is_active columns
+- `is_appointed_position` on `essentials.offices` — `is_elected` already derived as `!row.is_appointed_position` in `essentialsService.ts`
+- `is_incumbent` — already in use across `essentialsService.ts`; not a stored column but included in existing queries
 
 ---
 
-## Section 2: Entity Switcher UI
+## Election Data APIs — Research Findings
 
-### No New npm Packages
+### Primary Recommendation: Google Civic Information API
 
-The frontend needs a way to switch between cities/counties (Bloomington, Ellettsville, Monroe County, LA City, LA County). This is a dropdown or tab component, not a routing change.
+**Status:** Active and free as of 2026-03. **The Representatives API was shut down April 30, 2025** — do not use it. The Elections API (`voterInfoQuery`) is still active.
 
-**Implementation:** The existing `NavigationTabs` component handles tab-style switching. The existing `dataLoader.ts` already accepts `cityName` and `year` parameters and caches by `${cityName}-${year}-${dataset}` key. Connecting the entity switcher to `dataLoader.ts` requires only:
-1. A new `selectedEntity` state in `App.tsx`
-2. Passing entity name to `loadBudgetData()` (already accepts `cityName` parameter)
-3. An entity picker component (tabs or dropdown)
+**Base URL:** `https://www.googleapis.com/civicinfo/v2`
 
-Entity metadata (display name, state, population, hero image URL) should be a static config file (`src/data/entityConfig.ts`) — no backend call needed for the picker UI itself. The API already returns population and fiscal year from the budget response.
+**Key endpoints:**
+- `GET /elections` — returns list of supported upcoming elections with `id`, `name`, `electionDay`
+- `GET /voterinfo?address=<addr>&electionId=<id>` — returns contests, candidates, polling info for a voter address
 
-**No new npm packages.** lucide-react already provides chevron/selector icons.
+**Contest data returned per call:**
+- `contests[]`: `office`, `level` (`country` / `administrativeArea1` / `administrativeArea2` / `locality`), `district.name`, `district.scope`, `type` (`General` / `Primary` / `Retention` / `Runoff` / `Referendum`)
+- `candidates[]` per contest: `name`, `party`, `candidatesUrl`, `photoUrl`, `phone`, `email`, `channels[]` (social media)
 
-**Confidence:** HIGH — `dataLoader.ts` and `App.tsx` inspected directly; `cityName` parameter already threaded through.
+**Authentication:** API key via query param `?key=<KEY>`. Free, register at Google Cloud Console.
 
----
+**Rate limit:** 25,000 requests/day, 2,500/100 seconds — sufficient for Election Central (one call per address per election, cached 24 hours).
 
-## Section 3: Bloomington Data Migration to Supabase
+**Coverage caveat:** Data published 2-4 weeks before election day via the Voting Information Project. Indiana primary (May 5, 2026) and general (Nov 2026) plus California primary (June 2, 2026) should be covered for state + federal races. Bloomington city council local races may not be covered — VIP data coverage depends on county cooperation with the project.
 
-### No New npm Packages — Use Existing Import Endpoint
+**New env var needed:** `GOOGLE_CIVIC_API_KEY` — add to ev-accounts `.env` and Render environment.
 
-The backend already has `POST /treasury/import` which accepts a full budget JSON payload (`CategoryImport` tree with line items). The Bloomington data already exists as processed JSON files in `treasury-tracker/data/` (raw CSVs) and `public/data/` (processed `budget-{year}.json` files output by the Node.js processing scripts).
+### Secondary Recommendation: FEC OpenAPI (Federal Only)
 
-**Migration path:**
-1. Run the existing processing scripts (`npm run process-all`) to regenerate the JSON files for 2021–2025.
-2. Reshape the output to match the `ImportBudget` request body schema (add `city_name`, `city_state`, `population`, `fiscal_year`, `dataset_type` wrapper fields).
-3. POST to `https://api.empowered.vote/treasury/import` with admin credentials.
+**Use for:** Federal candidate incumbency verification (House, Senate) — more authoritative than Google Civic for incumbency status.
 
-The transformation from processed JSON to import format is a small Node.js script (~50 lines). No new Node packages needed — the processed JSON already has the right category/subcategory/lineItems hierarchy.
+**Base URL:** `https://api.open.fec.gov/v1`
 
-**The `dataLoader.ts` fallback chain handles the transition gracefully:** once Supabase has the data, the API path succeeds and the static JSON fallback is never reached. No frontend changes needed until the entity switcher is built.
+**Key endpoint:** `GET /candidates/?state=IN&election_year=2026&office=H&api_key=<KEY>`
 
-**Confidence:** HIGH — `handlers.go` `ImportBudget` function inspected in full; `dataLoader.ts` fallback chain confirmed; processed JSON structure confirmed matching `CategoryImport` schema.
+**Authentication:** Free API key from https://api.data.gov/signup/
 
----
+**Rate limit:** 1,000 req/hour (free tier) — sufficient for batch incumbency verification.
 
-## Section 4: Budget Data Sourcing for New Entities
+**Coverage:** Federal candidates only. Not useful for state or local races.
 
-### Data Sources and Pipeline Approach
+**New env var needed:** `FEC_API_KEY`
 
-#### 4a: Ellettsville, Indiana
+### Not Recommended: Commercial APIs (Budget Constraint)
 
-**Source:** Indiana Gateway for Government Units (`gateway.ifionline.org/public/download.aspx`)
-- Provides pipe-delimited (`|`) budget files for all Indiana local government units
-- Unit ID for Ellettsville: 2546 (confirmed from budgetnotices.in.gov search result)
-- 2025 budget: $7,981,903 total
-- Data format: pipe-delimited flat file (not hierarchical); requires aggregation similar to the existing Bloomington CSV processing pipeline
+**BallotReady/CivicEngine GraphQL API** — Comprehensive US candidate data including Indiana and California local races. GraphQL schema well-suited to race/candidate queries. Pricing requires contact; likely $1,000–$5,000/year for nonprofits. Do not pursue unless the Google Civic API proves insufficient and budget is allocated.
 
-**Parsing approach:** The existing `processBudget.js` script already handles CSV parsing with custom logic. Pipe-delimited files need a delimiter configuration change — the parser function already accepts delimiter as a config option. The Indiana Gateway file layout guide provides column documentation.
+**Ballotpedia API** — Geographic point-based queries, incumbency data, biographies. Pricing not public; contact required. Same recommendation as BallotReady — defer unless budgeted.
 
-**Confidence:** MEDIUM — Gateway download page confirmed (direct fetch); column structure for Ellettsville not yet downloaded and inspected. Bloomington's Socrata portal (`data.bloomington.in.gov`) uses the same DLGF-derived schema (Fiscal_Year, Priority, Service, Department, Program, Division, Fund, Approved_Amount, Primary_Function, Sub_Function columns), giving high confidence the Gateway files will be compatible with minor field mapping changes.
+### Not Recommended: State SOS APIs
 
-#### 4b: Monroe County, Indiana
+**Indiana SOS** — No machine-readable API for candidate filings. Data available as PDFs and web pages only. The 2026 primary candidate list is accessible via indianacitizen.org as an interactive table, but has no stable CSV download endpoint. Bloomington/Monroe County local races require manual data entry.
 
-**Source:** PDF budget documents from `monroecounty.gov/files/finance/`
-- 2024 Adopted Budget: `https://www.monroecounty.gov/files/finance/2024%20Adopted%20Budget.pdf`
-- 2025 Adopted Budget: `https://www.monroecounty.gov/files/finance/2025%20Adopted%20Budget.pdf`
-- Total 2025 budget: ~$103 million (confirmed from IDS News reporting)
+**California SOS / CAL-ACCESS** — The Election Night Reporting API at `api.sos.ca.gov` covers only election night results, not pre-election candidate data. CAL-ACCESS covers statewide candidate filings (Form 501) only — not LA city council or county supervisor races. Not useful for upcoming race discovery.
 
-**No machine-readable open data portal found** for Monroe County IN. The Indiana Gateway provides downloadable files for Monroe County (unit lookup by county), but these cover the county government broadly — columns are the DLGF standard schema.
+**OpenElections** — Historical results only (post-election CSVs). Not useful for upcoming races.
 
-**Parsing approach:** If the Indiana Gateway Monroe County download is available in pipe-delimited format, use the same pipeline adaptation as Ellettsville. If only PDFs are available, a Python PDF-to-CSV extraction script using `pdfplumber` or `camelot-py` is the path — both are already in scope for the project's Python scraping infrastructure (Python scripts confirmed at ~17K LOC per PROJECT.md).
-
-**Confidence:** MEDIUM — PDF availability confirmed; machine-readable format availability requires verification by downloading the Gateway file for Monroe County.
-
-#### 4c: LA City (City of Los Angeles)
-
-**Source:** LA Open Data Portal (Socrata) at `data.lacity.org`
-- Dataset: "Open Budget — Appropriations Fiscal Years 2010–2025" (dataset ID: `5242-pnmt`)
-- Direct CSV download: `https://data.lacity.org/api/views/5242-pnmt/rows.csv?accessType=DOWNLOAD`
-- Also: Open Expenditures at `lacity.spending.socrata.com` (checkbook-level transactions)
-- FY2024–25 budget: ~$13.9B general fund
-
-**Parsing approach:** Standard CSV download from Socrata. The column structure (department, fund, appropriation amount) maps naturally to the existing treasury category hierarchy. The `dataLoader.ts` / `processBudget.js` pipeline handles CSV. A config file analogous to `budgetConfig.json` maps LA City columns to the treasury hierarchy.
-
-**Confidence:** HIGH — Socrata CSV download URL format confirmed; dataset existence confirmed from multiple search results. Column structure needs inspection before final field mapping.
-
-#### 4d: LA County
-
-**Source:** LA County CEO Budget PDF (`ceo.lacounty.gov/budget/`) and LA County Open Data Portal (`data.lacounty.gov`)
-- FY2024–25 Final Budget Book PDF confirmed available
-- `data.lacounty.gov` portal uses Socrata — budget datasets exist but specific dataset IDs for machine-readable spending data require discovery
-
-**Parsing approach:** Same Socrata CSV download pattern as LA City if a spending dataset exists on `data.lacounty.gov`. If only PDF budget books are available (likely for high-level department summaries), Python `pdfplumber` extraction is the fallback — same infrastructure used for Monroe County fallback.
-
-**Confidence:** MEDIUM — Portal existence confirmed; specific downloadable spending dataset IDs not yet verified. LA County budget is $49.2B (FY2024–25), with structured departmental appropriations that should map to the treasury category model.
+**Democracy Works Elections API** — Focused on voting logistics (polling places, registration deadlines), not candidate data. Pricing opaque.
 
 ---
 
@@ -155,70 +87,83 @@ The transformation from processed JSON to import format is a small Node.js scrip
 
 | Technology | Version | Purpose | Why Recommended |
 |------------|---------|---------|-----------------|
-| `tailwindcss` | ^4.x | Utility CSS framework for treasury-tracker | Same version as all other EV apps; CSS-first config requires no `tailwind.config.js`; needed to consume ev-ui tailwind-preset utilities |
-| `@tailwindcss/vite` | ^4.x | Vite plugin for Tailwind v4 | Required for Tailwind v4 in Vite projects; replaces PostCSS plugin approach used in v3 |
+| Google Civic Information API | v2 (current) | Primary source for election contest + candidate data | Free, 25K req/day, returns grouped contests by level and district, covers Indiana and California state/federal races, still active (only Representatives API was retired) |
+| FEC OpenAPI | v1 (current) | Federal candidate incumbency verification | Free, authoritative for federal incumbency, already fits pattern of external API clients in ev-accounts (same `fetch()` + AbortSignal pattern) |
 
 ### Supporting Libraries
 
-| Library | Version | Purpose | When to Use |
-|---------|---------|---------|-------------|
-| `@chrisandrewsedu/ev-ui` | ^0.1.53 | Design tokens, SiteHeader, tailwind-preset | Upgrade from stale ^0.1.6; needed for correct token values, current SiteHeader, and tailwind-preset export |
-| `papaparse` | ^5.5.3 | CSV/pipe-delimited parsing for import scripts | Use in the Node.js import pipeline scripts for Indiana Gateway (pipe-delimited) and Socrata CSV files; already used indirectly via manual CSV parsing in `processBudget.js` — this replaces the hand-rolled parser with a robust one |
+No new npm packages needed. The entire feature is implementable with the existing stack:
+
+| Existing Tool | Reused For |
+|---------------|------------|
+| Native `fetch()` (Node.js 20) | Backend HTTP calls to Google Civic API + FEC API — same pattern as `geocodingService.ts` and `indianaAdapter.ts` |
+| `cache.ts` (ev-accounts) | Cache election contest responses — 24h TTL per address per election |
+| `zod` (ev-accounts) | Validate Google Civic API response shape before DB write |
+| `react-router-dom ^7.8.2` | New `/elections` route in essentials app |
+| Tailwind CSS 4 | Election race cards, incumbent/challenger badge styling |
+| `@chrisandrewsedu/ev-ui ^0.1.53` | PoliticianCard for candidate display; may need minor badge variant extension |
+| Existing staging workflow | Manual data entry for Monroe County local races with no API coverage |
 
 ### Development Tools
 
 | Tool | Purpose | Notes |
 |------|---------|-------|
-| Indiana Gateway Download | Source for Ellettsville and Monroe County pipe-delimited budget files | `https://gateway.ifionline.org/public/download.aspx` — download by unit ID, pipe `|` delimiter, DLGF standard columns |
-| Bloomington Socrata | Source for Bloomington budget CSV updates | `https://data.bloomington.in.gov/dataset/Budgeted-Expenses-No-Blank-Fund/hej9-2d5y` — same 14-column schema as existing `operating-budget.csv` |
-| LA City Socrata | Source for LA City appropriations CSV | `https://data.lacity.org/api/views/5242-pnmt/rows.csv?accessType=DOWNLOAD` — FY2010–2025, department-level appropriations |
-| `pdfplumber` (Python) | PDF budget table extraction fallback | Use only if Monroe County or LA County lack machine-readable Socrata exports; already in project Python ecosystem |
+| Google Civic API `electionQuery` | Discover available election IDs before querying voter info | Run once to find `electionId` values for IN/CA primaries and generals |
+| Existing `backend/migrations/` | Schema extension for new elections table + race_id column | Follow established migration pattern (numbered SQL files) |
 
 ---
 
 ## Installation
 
 ```bash
-# In treasury-tracker — add Tailwind CSS 4
-npm install tailwindcss @tailwindcss/vite
+# No new packages — everything is already installed
 
-# Upgrade ev-ui to current
-npm install @chrisandrewsedu/ev-ui@^0.1.53
-
-# For import pipeline scripts (Node.js, run locally — not a frontend dep)
-npm install -D papaparse @types/papaparse
+# New env vars to add to ev-accounts .env:
+# GOOGLE_CIVIC_API_KEY=<from Google Cloud Console>
+# FEC_API_KEY=<from api.data.gov/signup>
 ```
 
-```typescript
-// vite.config.ts — add Tailwind plugin
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+---
 
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  base: '/',
-})
+## Schema Extensions (New Migration Needed)
+
+The existing `essentials.election_records` table is oriented around a politician's participation in a past election. Election Central needs to model **future races with multiple candidates**. Two additions are needed:
+
+**New table: `essentials.elections`**
+```sql
+CREATE TABLE essentials.elections (
+  id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  election_name   TEXT NOT NULL,
+  election_date   DATE NOT NULL,
+  state           CHAR(2) NOT NULL,
+  external_id     TEXT,          -- Google Civic electionId
+  is_active       BOOLEAN NOT NULL DEFAULT true,
+  created_at      TIMESTAMPTZ DEFAULT now()
+);
 ```
 
-```css
-/* src/index.css — replace current manual :root block with: */
-@import "tailwindcss";
-@import "@chrisandrewsedu/ev-ui/tailwind-preset";
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+**New columns on `essentials.election_records`:**
+```sql
+ALTER TABLE essentials.election_records
+  ADD COLUMN IF NOT EXISTS elections_id    UUID REFERENCES essentials.elections(id),
+  ADD COLUMN IF NOT EXISTS race_id         TEXT,    -- groups candidates in same race
+  ADD COLUMN IF NOT EXISTS is_incumbent    BOOLEAN DEFAULT false,
+  ADD COLUMN IF NOT EXISTS data_source     TEXT;    -- 'google_civic', 'fec', 'manual'
 ```
+
+This approach reuses the existing `election_records` table (which already has `politician_id`, `election_date`, `party_name`, `position_name`, `is_active`) and adds grouping + incumbency columns needed for Election Central.
 
 ---
 
 ## Alternatives Considered
 
 | Recommended | Alternative | When to Use Alternative |
-|-------------|-------------|-------------------------|
-| Tailwind v4 CSS-first config | Tailwind v3 with `tailwind.config.js` | Only if the project were already on v3 and migration cost was prohibitive — not the case here; starting fresh |
-| ev-ui tailwind-preset import | Manually copy token values into CSS vars | Never — defeats the purpose of a shared design system; tokens will drift again within one milestone |
-| Indiana Gateway pipe-delimited download | DLGF PDF budget orders | PDF parsing is lossy and fragile; pipe-delimited data is structured and complete |
-| LA City Socrata CSV | LA City Open Budget site scraping | Socrata has a stable direct-download URL; scraping an interactive viz is brittle |
-| papaparse for import scripts | Extending the existing hand-rolled CSV parser in `processBudget.js` | The existing parser works for Bloomington's clean CSV but the Indiana Gateway pipe-delimited format with quoted strings and edge cases warrants a proven parser |
+|-------------|-------------|------------------------|
+| Google Civic API (free) | BallotReady/CivicEngine GraphQL | If budget allows ~$1,000–5,000/year and comprehensive local race coverage (including Bloomington city council) is required without manual data entry |
+| Google Civic API (free) | Ballotpedia API | Same condition — budget allocated and richer candidate biography data needed |
+| Manual staging entry for IN local races | Scraping Indiana Citizen / SOS web pages | Web scraping is brittle; staging workflow already exists and is proven; local Bloomington races are manageable in volume |
+| Extend `essentials.election_records` | New `essentials.races` + `essentials.race_candidates` tables | A fully normalized race schema is cleaner long-term but overkill for MVP; extending election_records is faster and preserves existing data |
+| Native `fetch()` for API calls | `node-fetch` or `axios` | No reason to add a dep; Node.js 20 fetch is stable and already used throughout the backend |
 
 ---
 
@@ -226,64 +171,76 @@ export default defineConfig({
 
 | Avoid | Why | Use Instead |
 |-------|-----|-------------|
-| Tailwind v3 + `postcss.config.js` approach | Every other EV app uses Tailwind v4 CSS-first; mixing versions creates confusion and blocks consuming `@tailwindcss/vite` | Tailwind v4 `@tailwindcss/vite` plugin |
-| Hardcoded hex values in component files | These drift from the design system after the first token update | `import { colors, dataVizPalette } from '@chrisandrewsedu/ev-ui/tokens'` or Tailwind utility classes |
-| New charting library (Victory, Nivo, Chart.js) | D3 + Recharts are already installed and used throughout treasury-tracker; adding a third charting library creates redundancy | Extend existing D3/Recharts usage for any new chart types needed by new entity dashboards |
-| `xlsx` / `SheetJS` for data parsing | Excel format not used by any of the target open data portals; all portals provide CSV or pipe-delimited text | `papaparse` for delimited text; `pdfplumber` (Python) for PDF fallback |
-| Zustand or React Query in treasury-tracker | Current state management via `useState` + `useEffect` + Map-based cache in `dataLoader.ts` is sufficient for the number of entities; adding a state library is over-engineering | Extend the existing `cache: Map<string, BudgetData>` in `dataLoader.ts` |
-| `@googlemaps/js-api-loader` | Treasury Tracker has no geolocation requirement; entity selection is manual dropdown | Static entity config in `src/data/entityConfig.ts` |
+| Google Civic API Representatives API | Shut down April 30, 2025 — returns errors | Already replaced by PostGIS geofence flow in v1.5 |
+| `BALLOTREADY_API_KEY` | Decommissioned in v1.5 per PROJECT.md; all infrastructure removed | Google Civic API voterInfoQuery |
+| OpenElections | Historical results CSV only — no upcoming race data | Google Civic API |
+| California SOS `api.sos.ca.gov` | Election night results only, not pre-election candidate discovery; returned 403 on direct access | Google Civic API voterInfoQuery |
+| CAL-ACCESS for LA races | Statewide Form 501 filings only — LA city council and county supervisor candidates not included | Google Civic API with lat/lng for LA area |
+| Indiana SOS web scraping | No stable machine-readable format; brittle to layout changes | Manual staging entry for local races |
+| Democracy Works Elections API | Pricing opaque; focused on voter logistics not candidate data | Google Civic API for contests |
 
 ---
 
-## Stack Patterns by Variant
+## Stack Patterns for Election Central Implementation
 
-**For Indiana entities (Bloomington, Ellettsville):**
-- Use Bloomington Socrata portal (CSV, 14 standard DLGF columns) for Bloomington refresh
-- Use Indiana Gateway pipe-delimited download for Ellettsville; run through adapted `processBudget.js` with `delimiter: '|'` config
-- Import via existing `POST /treasury/import` endpoint
+**Fetching election contests (primary flow):**
+1. User enters address on Election Central page (same Google Maps autocomplete component as Results page)
+2. Backend geocodes via existing Census Geocoder (already in `geocodingService.ts`) to get lat/lng
+3. Backend calls `GET /civicinfo/v2/elections` to get active election IDs
+4. For each upcoming election, call `GET /civicinfo/v2/voterinfo?address=<addr>&electionId=<id>`
+5. Cache response 24 hours per `(address_hash, election_id)` key using existing `cache.ts`
+6. Merge Google Civic contest data with manually-entered DB races (DB wins on conflict — same pattern as politician data pipeline)
+7. Return grouped contest list via `GET /api/essentials/elections?lat=X&lng=Y`
 
-**For Monroe County IN (no confirmed machine-readable source):**
-- Attempt Indiana Gateway download first (county-level data available)
-- Fall back to Python `pdfplumber` extraction from PDF if Gateway lacks department-level breakdown
-- Simpler category hierarchy acceptable (fewer depth levels) if PDF is the only source
+**Elected/appointed filter toggle:**
+- `is_elected` is already derived in `essentialsService.ts` as `!row.is_appointed_position`
+- Frontend filter: add `filter` query param (`elected` / `appointed` / `all`) to existing `GET /api/essentials/search`
+- Backend: add `AND` clause using existing `is_appointed_position` field
+- Retention judges: query param `include_retention=true` or treat `partisan_type = 'retention'` as a special case shown under both filters
 
-**For LA entities (LA City, LA County):**
-- LA City: direct Socrata CSV download, standard processing pipeline, department-level hierarchy
-- LA County: attempt `data.lacounty.gov` Socrata first; fall back to PDF extraction from CEO budget book
-- Both entities require a new `entityConfig` entry with population, hero image URL (Wikimedia Commons), and available fiscal years
+**Race-by-race display grouping:**
+- Group by `level` hierarchy: Federal → State → Local (same tier system as Results page)
+- Within level, group by `district` or `office`
+- Within race: incumbent card first with "Incumbent" badge (ev-coral chip), then challenger cards in party-neutral order
+- Use existing `PoliticianCard` from ev-ui for candidate cards — extend with optional `badge` prop if not already present
+
+**Candidate profile pages:**
+- Reuse existing `Profile.jsx` + `PoliticianProfile` from ev-ui
+- Candidates that exist in `essentials.politicians` (marked `is_incumbent = false`) already render correctly
+- Non-incumbent challengers who are NOT in the essentials DB need a lightweight candidate record created via the staging workflow before they appear on profiles
 
 ---
 
 ## Version Compatibility
 
-| Package | Compatible With | Notes |
-|---------|-----------------|-------|
-| `tailwindcss` ^4.x | Vite 7.2.4 + `@tailwindcss/vite` | CSS-first config; NO `tailwind.config.js` needed; `@import "tailwindcss"` in CSS is the v4 activation |
-| `@chrisandrewsedu/ev-ui` ^0.1.53 | React 19 | `SiteHeader` peer deps: `react >=17`; `RadarChartCore` requires `@react-spring/web >=9` — NOT needed in treasury-tracker since it doesn't use RadarChartCore |
-| `@chrisandrewsedu/ev-ui/tailwind-preset` | Tailwind v4 (CSS import) or v3 (config preset) | ev-ui preset uses `theme.extend` pattern compatible with both; v4 CSS import is preferred for this project |
-| `papaparse` ^5.5.3 | Node.js (import pipeline scripts) | Browser-compatible too but only needed in Node.js processing scripts here |
+| Package | Version | Notes |
+|---------|---------|-------|
+| react-router-dom | ^7.8.2 | Already installed; add `/elections` route without changes |
+| Tailwind CSS | ^4.1.12 | Already installed; no config changes needed |
+| `@chrisandrewsedu/ev-ui` | ^0.1.53 | Already installed; `PoliticianCard` and `PoliticianProfile` reusable; may need `badge` prop for incumbent indicator |
+| Node.js fetch() | Node 20 built-in | No version change; `AbortSignal.timeout()` pattern already used in `geocodingService.ts` |
 
 ---
 
 ## Sources
 
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/package.json` — current deps, ev-ui at ^0.1.6, NO Tailwind
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/index.css` — manual CSS vars, non-canonical EV color names
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/App.tsx` — dataLoader usage, entity tabs skeleton (NavigationTabs with City/State/Federal tabs present but non-functional)
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/data/dataLoader.ts` — `loadBudgetData(year, cityName, dataset)` API-first with static JSON fallback; `listCities()` endpoint already exists
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/budgetConfig.json` — column mappings confirmed match Bloomington Socrata dataset columns
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/handlers.go` — `ImportBudget` endpoint with `CategoryImport` / `LineItemImport` schema
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/models.go` — treasury schema: City, Budget, BudgetCategory, BudgetLineItem
-- `/Users/chrisandrews/Documents/GitHub/ev-ui/package.json` — v0.1.53 current; exports `./tokens` and `./tailwind-preset`
-- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js` — `dataVizPalette` (10 hues × 5 shades), `colors`, `colorScales` confirmed
-- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tailwind-preset.js` — flattened color scales as `ev-{hue}-{step}` utilities confirmed
-- `/Users/chrisandrews/Documents/GitHub/essentials/src/index.css` — Tailwind v4 CSS-first `@import "tailwindcss"` pattern confirmed as the EV standard
-- `https://data.bloomington.in.gov/dataset/Budgeted-Expenses-No-Blank-Fund/hej9-2d5y` — 14-column schema confirmed (Fiscal_Year, Priority, Service, Department, Program, Division, Description, Item_Category, Fund, Approved_Amount, Actual_Amount, Recommended_Amount, Primary_Function, Sub_Function)
-- `https://gateway.ifionline.org/public/download.aspx` — pipe-delimited budget files for Indiana local governments including Ellettsville (unit 2546) and Monroe County confirmed available — HIGH confidence
-- `https://data.lacity.org/Administration-Finance/Open-Budget-Appropriations-Fiscal-Years-2010-2025/5242-pnmt` — LA City appropriations CSV download confirmed — HIGH confidence
-- `https://ceo.lacounty.gov/budget/` — LA County PDF budget books confirmed; machine-readable Socrata format requires verification — MEDIUM confidence
-- WebSearch: papaparse v5.5.3 confirmed as latest stable (2025-03)
+- [Google Civic Information API — Official Docs](https://developers.google.com/civic-information/docs/v2) — HIGH confidence; voterInfoQuery active as of 2025
+- [Google Civic API voterInfoQuery Fields](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery) — HIGH confidence; candidate fields confirmed: name, party, candidatesUrl, photoUrl, phone, email, channels
+- [Google Civic API Representatives API Turndown Notice](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — HIGH confidence; Representatives API shut down April 30, 2025; Elections API still active
+- [Google Civic API Rate Limits](https://groups.google.com/g/google-civicinfo-api/c/1H7WZ0lG594) — MEDIUM confidence (community forum); 25,000/day confirmed
+- [Voting Information Project Election Coverage](https://www.votinginfoproject.org/election-coverage) — MEDIUM confidence; data available 2-4 weeks before election; specific IN/CA state coverage not itemized on the page
+- [FEC OpenAPI Documentation](https://api.open.fec.gov/developers/) — HIGH confidence; free federal candidate API; API key via api.data.gov
+- [BallotReady/CivicEngine API](https://organizations.ballotready.org/ballotready-api) — MEDIUM confidence; GraphQL, comprehensive coverage, pricing requires contact
+- [Ballotpedia API Developer Portal](https://developer.ballotpedia.org/geographic-apis/elections_by_point) — MEDIUM confidence; geographic point queries return races + candidates; pricing requires contact
+- [California SOS Election Night API](https://api.sos.ca.gov/) — LOW confidence; returned 403; documented in CA SOS PDF guide as REST JSON/CSV for election night results only
+- [CAL-ACCESS California Candidate Filings](https://cal-access.sos.ca.gov/Campaign/Candidates/) — HIGH confidence; statewide only; final 2026 candidate list available March 26, 2026
+- [Indiana SOS Candidate Information](https://www.in.gov/sos/elections/candidate-information/) — HIGH confidence; confirmed no machine-readable API
+- [Monroe County Indiana Elections 2026 — Ballotpedia](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — MEDIUM confidence; confirms May 5, 2026 primary with county assessor, circuit court clerk, commissioner, council, prosecuting attorney, recorder, sheriff races
+- [2026 LA County Elections — Wikipedia](https://en.wikipedia.org/wiki/2026_Los_Angeles_County_elections) — MEDIUM confidence; confirms June 2, 2026 primary; 8 of 15 LA City Council seats up; 2 of 5 LA County Supervisor seats up
+- [ev-accounts `essentialsService.ts`](../ev-accounts/backend/src/lib/essentialsService.ts) — HIGH confidence; confirmed `is_incumbent`, `is_appointed_position`, `is_elected` derivation
+- [ev-accounts schema export](../ev-schema-export.sql) — HIGH confidence; confirmed `essentials.election_records` existing columns and `essentials.offices.is_appointed_position`
+- [essentials `package.json`](../essentials/package.json) — HIGH confidence; confirmed existing dependency list; no new packages needed
 
 ---
-*Stack research for: v2026.3.7 Treasury Tracker Expansion*
-*Researched: 2026-03-22*
+*Stack research for: v2026.3.8 Essentials Election Central*
+*Researched: 2026-03-29*

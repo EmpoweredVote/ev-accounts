@@ -1,454 +1,586 @@
 # Architecture Research
 
-**Domain:** Treasury Tracker Expansion — Multi-jurisdiction budget visualization
-**Researched:** 2026-03-22
-**Confidence:** HIGH (based on direct codebase inspection of treasury-tracker, EV-Backend, and ev-ui)
+**Domain:** Civic data platform — election/candidate feature integration into existing Essentials app
+**Researched:** 2026-03-29
+**Confidence:** HIGH — based on direct code inspection of ev-accounts, essentials, and CivicEngine API docs
 
 ---
 
 ## System Overview
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                   FRONTEND (Cloudflare Pages)                 │
-│         treasury-tracker/  React 19 + Vite + Tailwind        │
-├──────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌───────────────┐  ┌──────────────────┐   │
-│  │ EntitySwitcher│  │ BudgetVisuali-│  │  DatasetTabs     │   │
-│  │   (NEW)       │  │  zation (D3)  │  │ (revenue/ops/    │   │
-│  └──────┬───────┘  └──────┬────────┘  │  salaries)       │   │
-│         │                 │           └──────────────────┘   │
-│  ┌──────▼─────────────────▼────────────────────────────────┐  │
-│  │              App.tsx — State Orchestrator                │  │
-│  │  selectedEntity + activeDataset + year + navigationPath  │  │
-│  └──────────────────────────┬───────────────────────────────┘  │
-│                             │                                  │
-│  ┌──────────────────────────▼───────────────────────────────┐  │
-│  │  dataLoader.ts — API-first, static JSON fallback         │  │
-│  │  cache: Map<"entityType:name-year-dataset", BudgetData>  │  │
-│  └──────────────────────────┬───────────────────────────────┘  │
-└─────────────────────────────┼──────────────────────────────────┘
-                              │ HTTPS REST
-┌─────────────────────────────▼──────────────────────────────────┐
-│               BACKEND (Render — api.empowered.vote)            │
-│              EV-Backend Go 1.24 + Chi router + GORM            │
-│                                                                │
-│  /treasury/*  routes.go (public GET + admin POST)              │
-│  ┌──────────────────┐  ┌───────────────┐  ┌────────────────┐  │
-│  │   handlers.go    │  │   models.go   │  │   setup.go     │  │
-│  │  CRUD + import   │  │  City/Budget/ │  │  AutoMigrate + │  │
-│  │  + tree builder  │  │  Category/    │  │  manual SQL    │  │
-│  └──────────────────┘  │  LineItem     │  └────────────────┘  │
-│                        └───────────────┘                      │
-└──────────────────────────────┬─────────────────────────────────┘
-                               │
-┌──────────────────────────────▼─────────────────────────────────┐
-│                  DATABASE (Supabase PostgreSQL)                 │
-│                        schema: treasury                        │
-│                                                                │
-│  treasury.cities → treasury.budgets → treasury.budget_         │
-│   (+ entity_type)    (city_id FK)      categories →           │
-│                                        treasury.budget_        │
-│                                        line_items              │
-└────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────┐
+│                    essentials (Cloudflare Pages)                          │
+│                                                                           │
+│  /                    /results?q=<addr>    /elections?q=<addr>            │
+│  Landing              Results              ElectionCentral (NEW)          │
+│  (address entry)      (representatives)    (upcoming races)               │
+│                                                                           │
+│  /politician/:id      /candidate/:id                                      │
+│  Profile              CandidateProfile     <- reused as-is                │
+│                                                                           │
+│  State: ?q= URL param (shared across /results and /elections)            │
+│         sessionStorage ev:results (back-nav cache, Results only)         │
+│         sessionStorage ev:election-results (NEW, Election Central cache) │
+└────────────────────────────┬─────────────────────────────────────────────┘
+                             │ apiFetch (Bearer JWT, optional)
+                             │ all routes under /api/
+┌────────────────────────────▼─────────────────────────────────────────────┐
+│               ev-accounts (Express/TypeScript, Render)                    │
+│                                                                           │
+│  EXISTING routes:                      NEW routes:                        │
+│  POST /api/essentials/candidates/search  POST /api/elections/search       │
+│  GET  /api/essentials/politicians/:id    GET  /api/elections/:id/races    │
+│  GET  /api/essentials/politicians/:id/*                                   │
+│                                                                           │
+│  EXISTING services:                    NEW service:                       │
+│  essentialsService.ts                  electionService.ts                 │
+│  essentialsProfileService.ts                                              │
+│  geocodingService.ts (shared)                                             │
+│  cache.ts (shared)                                                        │
+└────────────────────────────┬─────────────────────────────────────────────┘
+                             │ pool.query() -- essentials schema not in PostgREST
+                             │ supabaseAnon -- public reads where RLS allows
+┌────────────────────────────▼─────────────────────────────────────────────┐
+│               Supabase PostgreSQL (PostGIS enabled)                       │
+│                                                                           │
+│  essentials schema (existing)          essentials schema (new tables)     │
+│  +-- politicians                       +-- elections                      │
+│  +-- offices                           +-- races                          │
+│  +-- districts                         +-- race_candidates                │
+│  +-- chambers                                                             │
+│  +-- geofences (PostGIS)                                                  │
+│  +-- election_records (per-politician                                     │
+│  |   historical record, from BallotReady)                                 │
+│  +-- politician_images, contacts, etc.                                    │
+└──────────────────────────────────────────────────────────────────────────┘
+                             │ nightly import script (Python or tsx)
+┌────────────────────────────▼─────────────────────────────────────────────┐
+│          CivicEngine GraphQL API (https://bpi.civicengine.com/graphql)   │
+│          Address -> elections -> races -> candidacies -> candidates       │
+│          Existing vendor relationship (BallotReady rebranded)            │
+└──────────────────────────────────────────────────────────────────────────┘
 ```
-
-### Component Responsibilities
-
-| Component | Responsibility | Status for this Milestone |
-|-----------|---------------|--------------------------|
-| `App.tsx` | Top-level state: selected entity, dataset, year, nav path | MODIFY |
-| `dataLoader.ts` | Fetch from API with static JSON fallback; in-memory cache | MODIFY |
-| `EntitySwitcher.tsx` | Dropdown/pill to select city or county | NEW |
-| `DatasetTabs.tsx` | Switch between Money In / Money Out / People | UNCHANGED |
-| `YearSelector.tsx` | Fiscal year picker | UNCHANGED |
-| `BudgetVisualization.tsx` | D3 sunburst / icicle / tree rendering | UNCHANGED |
-| `CategoryList.tsx` | Drilldown list of budget categories | UNCHANGED |
-| `LineItemsTable.tsx` | Leaf-level line items display | UNCHANGED |
-| `SiteHeader` (ev-ui) | Shared header with auth-aware nav | UNCHANGED |
 
 ---
 
-## Schema Changes Required
+## Component Responsibilities
 
-### Current Schema Constraint Issue
+| Component | Responsibility | Status |
+|-----------|----------------|--------|
+| `essentials/src/pages/ElectionCentral.jsx` | Address input, fetch races, render grouped by org/position | NEW |
+| `essentials/src/pages/Results.jsx` | Add elected/appointed filter toggle | MODIFIED |
+| `essentials/src/lib/classify.js` | Elected/appointed filter logic using existing `is_elected` field | MODIFIED |
+| `essentials/src/pages/CandidateProfile.jsx` | Full profile for election candidates | REUSED as-is |
+| `ev-accounts/src/routes/elections.ts` | `POST /api/elections/search`, `GET /api/elections/:id/races` | NEW |
+| `ev-accounts/src/lib/electionService.ts` | DB queries against new election tables | NEW |
+| `essentials.elections` (DB table) | Stores imported election events (date, name, type) | NEW |
+| `essentials.races` (DB table) | One row per position in an election, with geo_id+mtfcc for geofence lookup | NEW |
+| `essentials.race_candidates` (DB table) | One row per person running, links to politicians where matched | NEW |
+| Import script | Pulls CivicEngine `races` query by lat/lng, upserts to DB, runs nightly | NEW |
 
-The `treasury.cities` table has a simple `uniqueIndex` on `name`. This works for a single-entity system but breaks when "Monroe County" (county entity) needs to coexist with "Monroe City" if one were ever added. More importantly, the table conflates conceptually different entity types — the frontend needs to know whether to label the hero card "City Finances" or "County Finances."
+---
 
-### Required: Add `entity_type` to `treasury.cities`
+## Recommended Project Structure
 
-```sql
--- Step 1: Add column with default so existing rows don't break
-ALTER TABLE treasury.cities
-  ADD COLUMN entity_type TEXT NOT NULL DEFAULT 'city'
-  CHECK (entity_type IN ('city', 'county', 'township', 'special_district'));
+```
+ev-accounts/backend/src/
++-- routes/
+|   +-- elections.ts             # NEW - POST /search, GET /:id/races
+|   +-- essentialsCandidates.ts  # EXISTING - no change needed
++-- lib/
+|   +-- electionService.ts       # NEW - DB queries for elections/races/candidates
+|   +-- essentialsService.ts     # EXISTING - no change (filter is frontend-only)
+|   +-- geocodingService.ts      # EXISTING - shared, no change
++-- migrations/
+    +-- 042_elections_schema.sql # NEW - elections, races, race_candidates tables
 
--- Step 2: Drop old single-field unique constraint
-ALTER TABLE treasury.cities
-  DROP CONSTRAINT IF EXISTS cities_name_key;
-
--- Step 3: Replace with composite unique on (name, state, entity_type)
-ALTER TABLE treasury.cities
-  ADD CONSTRAINT cities_name_state_type_unique UNIQUE (name, state, entity_type);
+essentials/src/
++-- pages/
+|   +-- ElectionCentral.jsx      # NEW - Election Central page
+|   +-- Results.jsx              # MODIFIED - elected/appointed filter toggle
++-- components/
+|   +-- ElectionGroup.jsx        # NEW - renders one election with its races
+|   +-- RaceCard.jsx             # NEW - renders one race/position with candidates
++-- hooks/
+|   +-- useElectionData.js       # NEW - mirrors usePoliticianData pattern
++-- lib/
+|   +-- api.jsx                  # MODIFIED - add fetchElections()
+|   +-- classify.js              # MODIFIED - add filterByAppointmentStatus()
++-- App.jsx                      # MODIFIED - add /elections route
 ```
 
-In `models.go`, update the `City` struct:
+---
 
-```go
-type City struct {
-    ID         uuid.UUID `gorm:"type:uuid;primaryKey;default:uuid_generate_v4()" json:"id"`
-    Name       string    `gorm:"not null" json:"name"`
-    State      string    `gorm:"not null" json:"state"`
-    EntityType string    `gorm:"not null;default:'city'" json:"entity_type"`
-    Population int       `json:"population"`
-    CreatedAt  time.Time `json:"created_at"`
-    UpdatedAt  time.Time `json:"updated_at"`
+## Question 1: New Tables vs Extending Existing Tables
 
-    Budgets []Budget `gorm:"foreignKey:CityID" json:"budgets,omitempty"`
+### Recommendation: Three new tables in the essentials schema
+
+The existing `essentials.election_records` table is a per-politician historical win/loss record (from the now-decommissioned BallotReady import). It is structurally incompatible with Election Central because:
+- It is politician-keyed, not election-keyed
+- It has no concept of races grouping multiple candidates for the same seat
+- It carries historical results, not upcoming contested races
+
+**New tables needed:**
+
+```sql
+-- One row per election event
+CREATE TABLE essentials.elections (
+  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  external_id  TEXT UNIQUE,          -- CivicEngine election ID
+  name         TEXT NOT NULL,
+  election_day DATE NOT NULL,
+  state        TEXT,
+  is_primary   BOOLEAN NOT NULL DEFAULT FALSE,
+  is_runoff    BOOLEAN NOT NULL DEFAULT FALSE,
+  created_at   TIMESTAMPTZ DEFAULT now(),
+  updated_at   TIMESTAMPTZ DEFAULT now()
+);
+
+-- One row per position being contested in an election
+CREATE TABLE essentials.races (
+  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  external_id    TEXT UNIQUE,        -- CivicEngine race ID
+  election_id    UUID NOT NULL REFERENCES essentials.elections(id) ON DELETE CASCADE,
+  position_name  TEXT NOT NULL,
+  organization   TEXT NOT NULL,      -- for UI grouping ("City of Bloomington")
+  seats          INT NOT NULL DEFAULT 1,
+  is_partisan    BOOLEAN,
+  is_recall      BOOLEAN NOT NULL DEFAULT FALSE,
+  is_runoff      BOOLEAN NOT NULL DEFAULT FALSE,
+  is_unexpired   BOOLEAN NOT NULL DEFAULT FALSE,
+  geo_id         TEXT,               -- from CivicEngine position.geoId
+  mtfcc          TEXT,               -- from CivicEngine position.mtfcc
+  created_at     TIMESTAMPTZ DEFAULT now(),
+  updated_at     TIMESTAMPTZ DEFAULT now()
+);
+
+-- One row per candidate per race
+CREATE TABLE essentials.race_candidates (
+  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  race_id        UUID NOT NULL REFERENCES essentials.races(id) ON DELETE CASCADE,
+  politician_id  UUID REFERENCES essentials.politicians(id),  -- NULL if not in our DB
+  external_id    TEXT,               -- CivicEngine candidacy ID
+  first_name     TEXT NOT NULL,
+  last_name      TEXT NOT NULL,
+  is_incumbent   BOOLEAN NOT NULL DEFAULT FALSE,
+  is_certified   BOOLEAN NOT NULL DEFAULT TRUE,
+  withdrawn      BOOLEAN NOT NULL DEFAULT FALSE,
+  result         TEXT,               -- NULL until election is over
+  created_at     TIMESTAMPTZ DEFAULT now(),
+  updated_at     TIMESTAMPTZ DEFAULT now()
+);
+
+CREATE INDEX idx_races_election_id ON essentials.races(election_id);
+CREATE INDEX idx_races_geo_id_mtfcc ON essentials.races(geo_id, mtfcc);
+CREATE INDEX idx_race_candidates_race_id ON essentials.race_candidates(race_id);
+CREATE INDEX idx_race_candidates_politician_id ON essentials.race_candidates(politician_id);
+CREATE INDEX idx_elections_election_day ON essentials.elections(election_day);
+```
+
+**The is_appointed field situation:** `is_appointed_position` on `essentials.offices` is already populated and drives `is_elected` in the existing API response (`is_elected = NOT COALESCE(o.is_appointed_position, false)` — from essentialsService.ts line 449). The elected/appointed filter needs no new DB columns. Data quality of `is_appointed_position` should be validated before making it a prominent UI filter — some BallotReady-sourced values may be stale.
+
+---
+
+## Question 2: Address Context Sharing Between Results and Election Central
+
+### Recommendation: Shared ?q= URL param, separate page routes
+
+The existing Results page pattern:
+- Address comes in via `?q=<address>` URL param
+- User can also re-enter an address on the page
+- `sessionStorage ev:results` caches rendered data for back-navigation
+
+Election Central mirrors this exactly:
+
+```
+/results?q=123+Main+St+Bloomington+IN    <- existing representatives
+/elections?q=123+Main+St+Bloomington+IN  <- new election races
+```
+
+**Cross-page navigation:** When the user has a formattedAddress from a completed Results search, link to `/elections?q=${encodeURIComponent(formattedAddress)}`. The Election Central page initializes its address bar from the URL param, skips the geocoding step if the address is already validated, and fetches election data immediately.
+
+**SessionStorage:** Use `ev:election-results` (separate key from `ev:results`) for Election Central's back-nav cache.
+
+**Why a separate page, not a tab in Results:** The data model is fundamentally different — "who represents me today" vs "who is running for office." Civic platforms (Vote.org, Ballotpedia, Vote411) all present these as distinct entry points. Mixing them in one page creates UX confusion and significantly complicates the Results page which is already the most complex component in the codebase (~900 lines).
+
+---
+
+## Question 3: API Endpoint Design for Election Data
+
+### Recommendation: New route prefix /api/elections/
+
+Keep elections separate from `/api/essentials/` to maintain clear domain boundaries. The essentials routes handle current officeholders; elections handle upcoming contests.
+
+**Endpoints:**
+
+```
+POST /api/elections/search
+  Body:    { address: string }
+  Returns: ElectionSearchResult[]
+  Headers: X-Formatted-Address (backend-validated address)
+  Auth:    optionalAuth
+
+GET /api/elections/:electionId/races
+  Returns: Race[] with candidates for a specific election
+  Auth:    optionalAuth
+```
+
+**Response shape for POST /api/elections/search:**
+
+```typescript
+interface ElectionSearchResult {
+  election: {
+    id: string;
+    name: string;
+    election_day: string;       // "2027-05-06"
+    is_primary: boolean;
+  };
+  races: Array<{
+    id: string;
+    position_name: string;
+    organization: string;       // for UI grouping
+    seats: number;
+    is_partisan: boolean | null;
+    candidates: Array<{
+      id: string;
+      politician_id: string | null;  // link to full profile if in our DB
+      first_name: string;
+      last_name: string;
+      is_incumbent: boolean;
+      withdrawn: boolean;
+    }>;
+  }>;
 }
 ```
 
-**Note on AutoMigrate:** GORM AutoMigrate will add the `entity_type` column automatically. However, it will NOT drop the old `cities_name_key` unique constraint or add the new composite constraint. Those two SQL statements must be placed in `setup.go` as explicit `db.DB.Exec()` calls that run before AutoMigrate.
+**Implementation pattern:** Uses the same `geocodeAddress()` + PostGIS ST_Covers geofence lookup as `getRepresentativesByAddress()`. After getting matched geofence `geo_id+mtfcc` pairs, JOIN against `essentials.races` to find upcoming races in those geofences, then JOIN `elections` and `race_candidates`.
 
-### Optional: Entity Metadata Fields
+**Caching:** Use existing `cache.ts` with a 24-hour TTL keyed on a hash of the matched geofence IDs. Much longer than the 90-day officeholder cache is fine — election data only changes when the nightly import runs.
 
-For data-driven hero cards (city hall photo, official website link):
-
-```sql
-ALTER TABLE treasury.cities
-  ADD COLUMN website_url TEXT,
-  ADD COLUMN hero_image_url TEXT;
-```
-
-These are low-priority. For the initial milestone, hero images can remain hardcoded per entity in App.tsx and be migrated to DB fields in a follow-on.
+**Why not extend existing endpoints:** `POST /essentials/candidates/search` returns `PoliticianFlatRecord[]` — a flat array with a specific contract that the Results page depends on. Adding elections would require either a breaking change or an awkward response envelope. A new endpoint with its own response type is the correct separation.
 
 ---
 
-## Recommended Project Structure Changes
+## Question 4: Frontend Routing
 
-### Frontend (treasury-tracker/src/)
+### Recommendation: /elections as a peer route to /results in App.jsx
 
-```
-src/
-├── components/
-│   ├── entity/                    (NEW folder)
-│   │   └── EntitySwitcher.tsx     (NEW — city/county picker dropdown)
-│   ├── datasets/
-│   │   └── DatasetTabs.tsx        (UNCHANGED)
-│   ├── BudgetVisualization.tsx    (UNCHANGED)
-│   ├── CategoryList.tsx           (UNCHANGED)
-│   ├── YearSelector.tsx           (UNCHANGED)
-│   └── ...all other components    (UNCHANGED)
-├── styles/
-│   └── tokens.ts                  (NEW — re-export ev-ui tokens for D3 usage)
-├── data/
-│   └── dataLoader.ts              (MODIFY — entity_type param, updated cache key)
-├── types/
-│   └── budget.ts                  (MODIFY — add entity_type to metadata interface)
-└── App.tsx                        (MODIFY — selectedEntity state, EntitySwitcher, dynamic hero)
+```jsx
+// App.jsx - add this route
+<Route path="/elections" element={<ElectionCentral />} />
+// All existing routes unchanged
 ```
 
-### Backend (EV-Backend/internal/treasury/)
+**Navigation integration:** Add an "Elections" tab/link in the Results page header. When the user has an active address, the link carries `?q=` forward — same pattern as Read & Rank's `?address=` passthrough from v2026.3.6.
+
+**ElectionCentral page structure:**
 
 ```
-internal/treasury/
-├── models.go     (MODIFY — add EntityType field to City struct)
-├── setup.go      (MODIFY — manual constraint SQL + AutoMigrate)
-├── handlers.go   (MODIFY — entity_type in ImportBudget find-or-create; ListCities filter)
-├── routes.go     (UNCHANGED)
-└── fetcher.go    (UNCHANGED)
+ElectionCentral
++-- Address search bar (reuse useGooglePlacesAutocomplete hook from Results)
++-- useElectionData hook (mirrors usePoliticianData)
++-- Results grouped display:
+    +-- ElectionGroup (one per election, sorted by election_day ascending)
+    |   +-- Header: "May 6, 2027 - Bloomington City Primary"
+    |   +-- RaceCard[] grouped by organization then position
+    |       +-- Position title ("City Council - District 1")
+    |       +-- Organization badge ("City of Bloomington")
+    |       +-- Incumbent indicator
+    |       +-- Candidate list (linked to /politician/:id or /candidate/:id where matched)
+    +-- Empty state if no upcoming elections found for address
 ```
 
-### Import Scripts (new)
+**Elected/Appointed filter on Results:**
 
+The `is_elected` field is already in every `PoliticianFlatRecord` response. The filter is purely frontend — no API or service changes needed.
+
+```javascript
+// classify.js addition
+export function filterByAppointmentStatus(politicians, filter) {
+  if (filter === 'all') return politicians;
+  if (filter === 'elected') return politicians.filter(p => p.is_elected === true);
+  if (filter === 'appointed') return politicians.filter(p => p.is_elected === false);
+  return politicians;
+}
 ```
-scrapers/treasury/                     (NEW folder alongside existing scrapers/)
-├── import_utils.py                    (shared: auth, POST helper, data transformer)
-├── bloomington_migrate.py             (POST existing static JSON to API)
-├── ellettsville_import.py             (transform source data + POST)
-├── monroe_county_import.py            (transform source data + POST)
-├── la_county_import.py                (transform source data + POST)
-└── la_cities_import.py                (per LA city, likely loop over city list)
-```
+
+**Retention judges:** Retention judges have `is_appointed_position = false` in the current schema (they face voters on a retention ballot). `is_elected` = `NOT is_appointed_position` = `true`. They correctly appear under the Elected filter. If data quality issues exist, a fallback check against `essentials.judge_details.election_type = 'retention'` can override classification.
 
 ---
 
-## Architectural Patterns
+## Question 5: Data Import Pipeline for Election Data
 
-### Pattern 1: API-First with Static JSON Fallback (Existing — Keep)
+### Recommendation: CivicEngine GraphQL API, nightly import script
 
-**What:** `dataLoader.ts` calls `GET /treasury/budgets?city=X&year=Y&dataset=Z` first, falls back to `./data/{type}-{year}.json` in the public directory, then falls back to hardcoded mock data in `budgetData.ts`.
+**Why CivicEngine:** The workspace already has CivicEngine API documentation and the BallotReady data dictionary — this is an existing vendor relationship (BallotReady rebranded as CivicEngine). The `races` query accepts `location: { point: { latitude, longitude } }` and returns nested election, position (with geo_id/mtfcc), and candidacy data in a single request.
 
-**Change needed for entity switcher:** The `loadBudgetData()` signature currently accepts `cityName: string`. Add `entityType: string` so the API call can include `?entity_type=county` for disambiguation. Update the cache key from `"${cityName}-${year}-${dataset}"` to `"${entityType}:${entityName}-${year}-${dataset}"` to prevent cache collisions.
+**Import script approach** (Python or tsx, consistent with existing pipeline scripts):
 
-The static JSON fallback only applies to Bloomington (city), since no other entities have static JSON files. When an API call for Monroe County fails, the static fallback lookup for `./data/operating-2025.json` will succeed (it's Bloomington data) — this could confuse users. Best mitigation: check `entityType === 'city' && entityName === 'Bloomington'` before attempting static JSON fallback.
+1. Query CivicEngine `races` for Bloomington IN coordinates with `electionDay: { gte: today }`
+2. Query CivicEngine `races` for LA County coordinates with the same filter
+3. Upsert `essentials.elections`, `essentials.races`, `essentials.race_candidates` (ON CONFLICT external_id DO UPDATE)
+4. Best-effort name-match `race_candidates` to `essentials.politicians` by full name within same geo_id scope
+5. Invalidate election cache keys
+6. Run nightly via Render cron job or manual trigger
 
-**Trade-offs:** The fallback system is a safety net, not a migration path. Keep static JSON files in `public/data/` throughout this milestone.
+**CivicEngine query for import:**
 
-### Pattern 2: POST /treasury/budgets/import for All Data Ingestion (Existing — Extend)
-
-**What:** Admin-protected `POST /treasury/budgets/import` accepts a full JSON payload with nested categories and line items. Wraps insert in a transaction. Find-or-creates the city record on first import.
-
-**Change needed:** The `ImportBudget` handler finds-or-creates city by `name + state` only. After adding `entity_type`, update the find-or-create query to include `entity_type`:
-
-```go
-// In handlers.go ImportBudget
-if err := tx.Where("name = ? AND state = ? AND entity_type = ?",
-    importRequest.CityName, importRequest.CityState, importRequest.EntityType).
-    First(&city).Error; err != nil {
-    city = City{
-        Name:       importRequest.CityName,
-        State:      importRequest.CityState,
-        EntityType: importRequest.EntityType,
-        Population: importRequest.Population,
+```graphql
+query getUpcomingRaces($lat: Float!, $lng: Float!, $afterDate: ISO8601Date!) {
+  races(
+    filterBy: { electionDay: { gte: $afterDate } }
+    location: { point: { latitude: $lat, longitude: $lng } }
+    orderBy: { field: ELECTION_DAY, direction: ASC }
+  ) {
+    nodes {
+      id
+      databaseId
+      isPrimary
+      isRecall
+      isRunoff
+      isUnexpired
+      seats
+      election {
+        id
+        name
+        electionDay
+        state
+      }
+      position {
+        name
+        geoId
+        mtfcc
+        level
+        places { nodes { name } }
+      }
+      candidacies(includeUncertified: false) {
+        id
+        isCertified
+        withdrawn
+        result
+        candidate { id firstName lastName }
+      }
     }
-    // ...
+  }
 }
 ```
 
-The import request struct also needs `EntityType string` added.
-
-**All import scripts** should POST to this endpoint rather than using direct SQL. The handler handles recursive category insertion, transaction safety, and city upsert.
-
-### Pattern 3: EntitySwitcher as Controlled Stateless Component
-
-**What:** `EntitySwitcher` receives the entity list from `GET /treasury/cities` (via `listEntities()` in dataLoader.ts) and the currently selected entity, and calls back with the selected entity on change. App.tsx owns all state.
-
-**Design:** A single dropdown pill. Group entities by `entity_type` in the option list (Cities section, Counties section). Label the active entity prominently. Style with EV design tokens: teal-600 (`#005366`) for active border, `--light-gray` background, Manrope font, rounded pill shape.
-
-**When to place:** Top of page, above DatasetTabs. The hero card city name, image, and per-resident stats update when the entity changes.
-
-**API surface:** `GET /treasury/cities` already exists and returns all cities. It needs to include `entity_type` in its response (the field will be present after the model change). No new endpoint needed.
-
-### Pattern 4: Design Token Integration via ev-ui tokens.js
-
-**What:** ev-ui v0.1.53 exports `tokens.js` from `@chrisandrewsedu/ev-ui/tokens`. The treasury tracker currently hardcodes hex colors inline in component files (e.g., `#585937` in DatasetTabs, `#00657c` in index.css).
-
-**Gap to close:**
-- `treasury-tracker/src/index.css` defines CSS variables like `--muted-blue: #00657c` and `--coral: #ff5740`. These are close but not identical to ev-ui tokens (ev-ui teal is `#005366`, not `#00657c`).
-- D3 chart colors in BudgetVisualization and BudgetSunburst are hardcoded category hex strings from the source JSON.
-- DatasetTabs colors (`#585937`, `#00657c`, `#9d3c89`) are hardcoded inline.
-
-**Recommended approach:**
-
-1. Create `src/styles/tokens.ts` as a thin re-export:
-   ```typescript
-   export { dataVizPalette, colors, semanticTokens } from '@chrisandrewsedu/ev-ui/tokens';
-   ```
-
-2. Replace DatasetTabs color definitions with ev-ui palette references. Map the three datasets to palette entries from `dataVizPalette`:
-   - Money In (revenue): Sage (`#5A9A6E`) or Olive palette shades from index.css
-   - Money Out (operating): Teal (`#00647A`) — matches ev-ui teal base
-   - People (salaries): Dusk (`#7C6B9E`) — replaces purple
-
-3. Update `index.css` CSS variable values to exactly match ev-ui token values (`--muted-blue` → `#005366`, not `#00657c`). The diff is small (1 hex digit) but alignment prevents subtle color inconsistency.
-
-4. For D3 category colors: keep them as JSON-driven hex strings in the budget data, but use `dataVizPalette` shades as the palette source when generating import data.
-
-**Do not** try to replace D3 inline hex colors with CSS variables — D3 requires resolved hex values at render time, not CSS variable strings.
+**Geofence matching for user queries:** The `geo_id` + `mtfcc` columns on `essentials.races` (populated from `position.geoId` + `position.mtfcc` during import) enable the same PostGIS join used by `getRepresentativesByAddress()`. The election search endpoint geocodes the user's address, gets matched geofence IDs via ST_Covers, then JOINs `races` on `geo_id + mtfcc IN (matched values)`. No live CivicEngine calls per user request.
 
 ---
 
 ## Data Flow
 
-### Current Data Flow (Single Entity — Bloomington)
+### Election Central request flow
 
 ```
-Page Load
-    ↓
-App.tsx useEffect([selectedYear, activeDataset])
-    ↓
-loadDataset(type, year)  →  fetch ./data/{type}-{year}.json (static fallback)
-    ↓
-setBudgetData(data)
-    ↓
-BudgetVisualization + CategoryList render
+User enters address
+    |
+    v
+ElectionCentral -> useElectionData hook
+    |
+    v
+POST /api/elections/search  { address }
+    |
+    v
+electionService.searchElectionsByAddress(address)
+    |
+    +-- geocodingService.geocodeAddress(address)  [Census Geocoder - existing]
+    |
+    +-- getGeofencesByPoint(lat, lng)  [PostGIS ST_Covers - existing]
+    |
+    +-- SQL:
+    |   SELECT e.*, r.*, rc.*
+    |   FROM essentials.races r
+    |   JOIN essentials.elections e ON e.id = r.election_id
+    |   JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    |   WHERE (r.geo_id, r.mtfcc) IN (matched geofence pairs)
+    |     AND e.election_day >= today
+    |   ORDER BY e.election_day ASC, r.organization, r.position_name
+    |
+    v
+Return ElectionSearchResult[] with X-Formatted-Address header
+    |
+    v
+ElectionCentral renders: grouped by election date, then organization
 ```
 
-### Target Data Flow (Multi-Entity, API-First)
+### Elected/Appointed filter flow
 
 ```
-Page Load
-    ↓
-listEntities()  →  GET /treasury/cities
-    ↓
-EntitySwitcher rendered with grouped entity list (Cities / Counties)
-User selects entity (default: Bloomington, city)
-    ↓
-App.tsx useEffect([selectedEntity, activeDataset, selectedYear])
-    ↓
-loadBudgetData(year, entityName, entityType, dataset)
-    ↓
-  1. Check in-memory cache: key = "city:Bloomington-2025-operating"
-  2. GET /treasury/budgets?city=Bloomington&year=2025&dataset=operating&entity_type=city
-  3. If budget found: GET /treasury/budgets/{id}/categories
-  4. Transform response → BudgetData shape
-  5. Cache and return
-  (Fallback only for Bloomington city: fetch ./data/operating-2025.json)
-    ↓
-setBudgetData(data)  →  BudgetVisualization + CategoryList render
-Hero card updates: entity name, population, per-resident stat
+User toggles filter on Results page
+    |
+    v
+appointmentFilter state ('all' | 'elected' | 'appointed') in Results.jsx
+    |
+    v
+filteredPoliticians = filterByAppointmentStatus(politicians, appointmentFilter)
+    |
+    v
+classify() runs on filtered list -> sections re-render
+No network request - entirely client-side
 ```
 
-### Import Pipeline Data Flow
+### Import pipeline flow
 
 ```
-Source document (PDF / Excel / CSV from city or county website)
-    ↓
-scrapers/treasury/{entity}_import.py
-  - Download / scrape raw data
-  - Transform to CategoryImport JSON structure (same shape as existing static JSON categories)
-  - Authenticate: POST /auth/login → set cookie
-  - POST /treasury/budgets/import  {city_name, city_state, entity_type, fiscal_year, dataset_type, categories}
-    ↓
-Go ImportBudget handler
-  BEGIN tx
-  → UPSERT treasury.cities (find-or-create by name + state + entity_type)
-  → INSERT treasury.budgets
-  → importCategories() recursive insert → treasury.budget_categories + treasury.budget_line_items
-  COMMIT
+Nightly trigger (cron or manual)
+    |
+    v
+CivicEngine GraphQL: races(location: Bloomington IN lat/lng, electionDay: >= today)
+CivicEngine GraphQL: races(location: LA County lat/lng, electionDay: >= today)
+    |
+    v
+Upsert essentials.elections ON CONFLICT (external_id) DO UPDATE
+Upsert essentials.races ON CONFLICT (external_id) DO UPDATE
+Upsert essentials.race_candidates ON CONFLICT (external_id) DO UPDATE
+    |
+    v
+Best-effort name match: race_candidates -> essentials.politicians
+    |
+    v
+Invalidate cache keys: elections:geofences:*
 ```
-
-### Bloomington Migration Data Flow
-
-```
-for each file in public/data/{operating,revenue,salaries}-{2021..2025}.json:
-    load JSON
-    extract metadata (fiscalYear, datasetType, totalBudget, hierarchy, categories)
-    POST /treasury/budgets/import {
-        city_name: "Bloomington", city_state: "IN", entity_type: "city",
-        fiscal_year, dataset_type, total_budget, categories
-    }
-    verify 201 response
-```
-
-The existing `processedBudget.json` and transaction JSON files are supplementary — they can be kept as-is in `public/data/` and continue to serve the static fallback path.
 
 ---
 
-## Integration Points: New vs Modified
+## Integration Points
 
-| Item | New or Modified | Integration Notes |
-|------|----------------|-------------------|
-| `EntitySwitcher.tsx` | NEW | Calls `listEntities()` from dataLoader; controlled by App.tsx `selectedEntity` state |
-| `App.tsx` state | MODIFIED | Add `selectedEntity: {id, name, state, entityType}` replacing hardcoded "Bloomington" references |
-| `App.tsx` hero section | MODIFIED | Title, image, and context card driven by `selectedEntity` fields rather than hardcoded strings |
-| `App.tsx` breadcrumbs | MODIFIED | First breadcrumb label uses `selectedEntity.name` instead of static "City" |
-| `dataLoader.ts` `loadBudgetData()` | MODIFIED | Add `entityType` param; update cache key; pass `entity_type` to API query string |
-| `dataLoader.ts` `listEntities()` | MODIFIED | Rename from `listCities()`; return `entity_type` in result shape |
-| `budget.ts` `BudgetMetadata` | MODIFIED | Add `entityType?: string` field |
-| `src/styles/tokens.ts` | NEW | Re-export ev-ui tokens for use in component files and D3 config |
-| `DatasetTabs.tsx` colors | MODIFIED | Replace hardcoded hex with ev-ui `dataVizPalette` references |
-| `index.css` CSS variables | MODIFIED | Align `--muted-blue` and `--coral` values to exact ev-ui token values |
-| `treasury/models.go` `City` | MODIFIED | Add `EntityType string` field |
-| `treasury/setup.go` | MODIFIED | Add manual SQL to drop old constraint and add composite unique before AutoMigrate |
-| `treasury/handlers.go` `ImportBudget` | MODIFIED | Add `EntityType` to import request struct; include in find-or-create WHERE clause |
-| `treasury/handlers.go` `ListCities` | MODIFIED | Returns `entity_type` field automatically after model change; optionally add `?type=` filter |
-| `scrapers/treasury/` | NEW (folder) | 5 Python scripts + shared utils for data import pipeline |
+### New: ev-accounts/backend/src/routes/elections.ts
+
+Wire into `index.ts`:
+
+```typescript
+import electionsRouter from './routes/elections.js';
+app.use('/api/elections', electionsRouter);
+```
+
+Architecture rule: `routes/elections.ts` calls `electionService.ts` functions only. Direct `pool.query()` or `supabaseAdmin` calls in route files are banned by `architecture.test.ts`.
+
+### New: ev-accounts/backend/src/lib/electionService.ts
+
+Uses `pool.query()` directly (not supabaseAnon) because the essentials schema is not in the PostgREST exposed schema list — consistent with how `essentialsService.ts` and `essentialsProfileService.ts` work.
+
+Shares `geocodingService.geocodeAddress()` with `essentialsService.ts` — no duplication.
+
+### Modified: essentials/src/App.jsx
+
+Add `/elections` route. All existing routes (`/results`, `/politician/:id`, `/candidate/:id`) unchanged.
+
+### Modified: essentials/src/pages/Results.jsx
+
+Add filter toggle component. The `is_elected` field is already in the response. Filter state is local to Results — no changes to `usePoliticianData` hook or API calls.
+
+### Modified: essentials/src/lib/classify.js
+
+Add `filterByAppointmentStatus(politicians, filter)` function. No changes to existing `classifyCategory()` or `orderedEntries()` logic.
+
+### Modified: essentials/src/lib/api.jsx
+
+Add `fetchElections(address)` function that calls `POST /api/elections/search`.
+
+### Existing: essentials/src/pages/CandidateProfile.jsx
+
+No changes needed. Candidates with a `politician_id` match link to `/politician/:id`. For unmatched candidates (no politician_id), the simplest path is to link to the `/candidate/:id` page if a lightweight profile is needed, or display inline in the RaceCard without a link.
 
 ---
 
-## Build Order Rationale
+## Build Order (Dependencies Considered)
 
-The schema + backend work is the critical-path dependency. Everything downstream (frontend entity switcher, data import, design polish) unblocks after the backend changes are deployed.
+**Phase 1 — Database schema and import (unblocks everything)**
+1. Write and apply `042_elections_schema.sql`
+2. Write CivicEngine import script for Bloomington IN + LA County CA
+3. Verify data quality: elections, races, race_candidates rows present with correct geo_id/mtfcc
+4. Validate geo_id/mtfcc values match existing `essentials.geofences` table entries
 
-**Step 1 — Backend schema + model changes (blocks all frontend work)**
+**Phase 2 — Backend election search endpoint**
+5. Write `electionService.ts` with `searchElectionsByAddress()`
+6. Write `routes/elections.ts` with `POST /search`
+7. Wire into `index.ts`, add to 62-route manifest for architecture test
+8. Integration test with Bloomington address, verify response shape
 
-Add `entity_type` to `City` model. Update `setup.go` with manual constraint SQL. Update `ImportBudget` handler. Deploy to Render. This is the only step with a deploy dependency — all other steps can run locally until final deploy.
+**Phase 3 — Election Central frontend**
+9. Write `useElectionData.js` hook (mirror usePoliticianData)
+10. Add `fetchElections()` to `api.jsx`
+11. Write `ElectionGroup.jsx` and `RaceCard.jsx` components
+12. Write `ElectionCentral.jsx` page with address search
+13. Add `/elections` route to `App.jsx`
+14. Add Elections nav link in Results header with ?q= passthrough
 
-**Step 2 — Bloomington data migration (independent, run after step 1)**
+**Phase 4 — Elected/Appointed filter on Results**
+15. Add `filterByAppointmentStatus()` to `classify.js`
+16. Add filter toggle UI to `Results.jsx` (local state, no hook changes)
+17. Validate retention judge behavior with known test politicians
+18. Test with Bloomington + LA County addresses
 
-Write `bloomington_migrate.py` to POST all existing static JSON files (5 years × 3 datasets = 15 requests) to the backend. Verify API responses match the static JSON shape. After migration, all Bloomington data is in Supabase and the API-first path returns real data.
-
-**Step 3 — Frontend entity switcher (depends on step 1 for entity_type field)**
-
-Implement `EntitySwitcher.tsx`. Update `App.tsx` state (`selectedEntity`). Update `dataLoader.ts` cache key and API query. Update hero card to be data-driven. At this point the app works with multiple jurisdictions — but only Bloomington has data until step 4.
-
-**Step 4 — New jurisdiction imports (independent of step 3, depends on step 1)**
-
-Each new jurisdiction requires its own research phase: find the source data file, understand its column structure, write the transform logic. Recommended order: Ellettsville (small, simple), Monroe County (county entity_type test), LA County, LA Cities (largest, most complex). Importable in any order since they are independent entities.
-
-**Step 5 — Design token integration (fully independent)**
-
-Import ev-ui tokens in `src/styles/tokens.ts`. Update `DatasetTabs.tsx` color definitions. Align `index.css` CSS variable values. This is pure visual polish and has no dependencies on steps 1-4. Can be done first, last, or in parallel.
+**Phase 5 — Candidate profile links**
+19. Link candidates with `politician_id` to `/politician/:id`
+20. Decide on experience for unmatched candidates (inline display vs stub page)
 
 ---
 
 ## Anti-Patterns
 
-### Anti-Pattern 1: Direct SQL Inserts from Import Scripts
+### Anti-Pattern 1: Live CivicEngine proxying per user request
 
-**What people do:** Use `psycopg2` to INSERT directly into Supabase from Python import scripts.
+**What people do:** Forward each `/api/elections/search` call directly to CivicEngine GraphQL.
 
-**Why it's wrong:** Bypasses the `importCategories()` recursive tree builder in the Go handler, bypasses transaction safety, and bypasses the find-or-create city logic. Direct inserts are hard to replay and don't benefit from the existing validation logic in the handler.
+**Why it's wrong:** CivicEngine rate limits apply, adds 200-800ms latency per request, election data changes at most daily, and the auth token cannot be safely used in a per-request path under load.
 
-**Do this instead:** POST to `POST /treasury/budgets/import` from import scripts. The handler handles all complexity. The only extra cost is HTTP overhead — negligible for a one-time import.
+**Do this instead:** Nightly import into local DB. Serve from DB with 24h cache. Consistent with how Congress.gov, LegiScan, and OnBoard data are handled in this project.
 
-### Anti-Pattern 2: Creating a Separate `treasury.counties` Table
+### Anti-Pattern 2: Extending POST /essentials/candidates/search
 
-**What people do:** Add a new `treasury.counties` table for county entities to avoid touching the existing `treasury.cities` table.
+**What people do:** Add an `includeElections` query param and append election data to the existing endpoint response.
 
-**Why it's wrong:** Forces frontend and backend to maintain two separate data paths. The entity switcher would need to list from two separate endpoints. The Budget and BudgetCategory tables are entity-type-agnostic and work identically for cities and counties.
+**Why it's wrong:** That endpoint returns `PoliticianFlatRecord[]` — a flat array. Elections require a structurally different response (grouped by election, then race, then candidates). Changing the response shape would break Results page.
 
-**Do this instead:** Add `entity_type` column to `treasury.cities`. "Cities" in this context means "municipal entities." The table name is historical.
+**Do this instead:** New `POST /api/elections/search` endpoint with its own response type.
 
-### Anti-Pattern 3: Jurisdiction-Specific Branching in App.tsx
+### Anti-Pattern 3: Frontend-only filter via new API query param
 
-**What people do:** Add `if (selectedEntity.name === 'Monroe County') { showCountyLayout() }` branching in App.tsx.
+**What people do:** Add `?elected=true` to `POST /essentials/candidates/search` and filter at the DB level.
 
-**Why it's wrong:** Every new jurisdiction requires a code change. Brittle and doesn't scale.
+**Why it's wrong:** `is_elected` is already returned in every response. DB-level filtering saves negligible payload at this scale (50-200 records), requires changes to service interface, route, and hook, and adds a tested query branch. Frontend filtering in classify.js is simpler, zero-risk, and sufficient.
 
-**Do this instead:** Drive display text and layout variations from `selectedEntity.entityType`. For hero images: derive from entity_type as a fallback (`city` → courthouse photo, `county` → courthouse or default), or drive from `entity.hero_image_url` once that field is added to the model.
+**Do this instead:** `filterByAppointmentStatus()` in classify.js operating on the already-fetched array.
 
-### Anti-Pattern 4: Deleting Static JSON After Migration
+### Anti-Pattern 4: Repurposing election_records for upcoming races
 
-**What people do:** Remove `public/data/*.json` after successfully migrating Bloomington to Supabase.
+**What people do:** Add upcoming race rows to `essentials.election_records` since it has "election" in the name.
 
-**Why it's wrong:** The static JSON fallback is a safety net. If Render has a cold start or brief downtime, the treasury tracker degrades to Bloomington data rather than showing an error state. This is valuable for a nonprofit with no SLA on the backend.
+**Why it's wrong:** `election_records` is per-politician historical data (past wins/losses). It has no race grouping, no org grouping, no geofence linkage, and no concept of contested seats with multiple candidates.
 
-**Do this instead:** Keep the static JSON files indefinitely. The cache key change (`"city:Bloomington-..."`) ensures API-loaded data for other entities never gets confused with Bloomington static data.
-
-### Anti-Pattern 5: Using ev-ui CSS Variable Names as D3 Color Inputs
-
-**What people do:** Pass CSS variable references like `var(--muted-blue)` to D3 color scales or as `fill` attributes on SVG elements.
-
-**Why it's wrong:** D3 and SVG `fill` attributes require resolved hex values. CSS variable strings fail silently — the element renders with no fill or uses the browser default.
-
-**Do this instead:** Import from `@chrisandrewsedu/ev-ui/tokens` as JavaScript constants. Use the resolved hex values from `dataVizPalette` or `colors` directly in D3 color scale definitions.
+**Do this instead:** New `elections` + `races` + `race_candidates` tables as described above.
 
 ---
 
 ## Scaling Considerations
 
-At the current scale (5-10 jurisdictions, hundreds of budget categories per jurisdiction), no architectural changes are needed.
-
 | Scale | Architecture Adjustments |
 |-------|--------------------------|
-| 5-10 jurisdictions | Current monolith + single API per entity is fine |
-| 50+ jurisdictions | Add search/filter to `GET /treasury/cities`; consider lazy-loading subcategories on drill-down instead of fetching full category tree upfront |
-| 500+ jurisdictions | Paginate entity list; separate treasury microservice; Redis cache for category trees |
-
-**First bottleneck:** `GET /treasury/budgets/{id}/categories` fetches the entire category tree in one query and builds it in Go memory. For LA County's budget (potentially 300-500 categories + thousands of line items), this single query could slow the initial page load. Mitigation for this milestone: ensure the query uses the existing `idx_category_tree` index. Longer-term: lazy-load line items only on leaf-node drill-down.
+| Current (2 geographies, ~50-200 races) | Nightly import, 24h cache, single SQL JOIN — adequate |
+| 10 states, ~2000 races | Add compound index on (election_day, geo_id, mtfcc); still single query |
+| National, 50K+ races | Separate elections schema; paginate Election Central; consider pre-computed race lookup table by geofence |
 
 ---
 
 ## Sources
 
-All findings from direct source inspection (HIGH confidence):
-
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/models.go`
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/handlers.go`
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/routes.go`
-- `/Users/chrisandrews/Documents/GitHub/EV-Backend/internal/treasury/setup.go`
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/App.tsx`
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/data/dataLoader.ts`
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/types/budget.ts`
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/components/datasets/DatasetTabs.tsx`
-- `/Users/chrisandrews/Documents/GitHub/treasury-tracker/src/index.css`
-- `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js` (v0.1.53)
-- `/Users/chrisandrews/Documents/GitHub/.planning/PROJECT.md` — v2026.3.7 milestone goals
+- Direct code inspection: `ev-accounts/backend/src/lib/essentialsService.ts` — is_elected derivation (line 449), address search flow, geofence matching
+- Direct code inspection: `ev-accounts/backend/src/lib/essentialsProfileService.ts` — election_records table structure, stances query pattern
+- Direct code inspection: `ev-accounts/backend/src/routes/essentialsCandidates.ts` — POST /search endpoint pattern, optionalAuth usage
+- Direct code inspection: `ev-accounts/backend/src/lib/candidateService.ts` — service layer pattern, cache.ts usage
+- Direct code inspection: `essentials/src/pages/Results.jsx` — address flow (sessionStorage, ?q= param), showCandidates toggle pattern
+- Direct code inspection: `essentials/src/hooks/usePoliticianData.js` — hook pattern to mirror for useElectionData
+- Direct code inspection: `essentials/src/App.jsx` — routing structure
+- Direct code inspection: `essentials/src/lib/api.jsx` — API call patterns, apiFetch usage
+- Direct file inspection: `CivicEngine GraphQL API Documentation.md` — races/elections/candidacies schema, location filter, Relay pagination
+- Direct file inspection: `BallotReadyDataDictionary.csv` — is_appointed field semantics, candidacy_id concept
+- `.planning/PROJECT.md` — v2026.3.8 milestone requirements
 
 ---
 
-*Architecture research for: Treasury Tracker multi-jurisdiction expansion (v2026.3.7)*
-*Researched: 2026-03-22*
+*Architecture research for: Election Central integration into Essentials*
+*Researched: 2026-03-29*

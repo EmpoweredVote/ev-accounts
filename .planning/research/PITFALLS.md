@@ -1,9 +1,9 @@
 # Domain Pitfalls
 
-**Domain:** Multi-jurisdiction budget data import, category normalization, design token refresh, and entity switcher added to existing Treasury Tracker app
-**Researched:** 2026-03-22
-**Scope:** v2026.3.7 Treasury Tracker Expansion milestone
-**Overall confidence:** HIGH — derived from direct codebase inspection of `treasury-tracker/src/`, `EV-Backend/internal/treasury/`, existing Bloomington CSV data files (27K operating rows, 282K checkbook rows, 304K payroll rows), the Indiana Gateway download portal, LA County/City open data portals, and Supabase import documentation.
+**Domain:** Adding Election Central page and elected/appointed filter to existing Essentials civic platform
+**Researched:** 2026-03-29
+**Scope:** v2026.3.8 Essentials Election Central milestone
+**Overall confidence:** HIGH — derived from direct codebase inspection of `.planning/PROJECT.md`, `CLAUDE.md`, existing milestone history, and web research into election data freshness, judicial classification, civic API ecosystems, and antipartisan UX design.
 
 ---
 
@@ -13,107 +13,112 @@ Mistakes that cause rewrites or major issues.
 
 ---
 
-### Pitfall 1: The Budget Schema Has No `dataset_type` on the Unique Index
+### Pitfall 1: Stale `is_appointed` Flag on Officials Scraped After v1.5
 
-**What goes wrong:** The `treasury.budgets` table has a composite unique constraint `idx_budget_city_year` on `(city_id, fiscal_year)` only. `dataset_type` is NOT part of that unique index. This means inserting Bloomington's 2025 operating budget succeeds, but inserting the 2025 revenue budget for the same city/year returns a unique-constraint violation and aborts the import. The `ImportBudget` handler check (`WHERE city_id = ? AND fiscal_year = ? AND dataset_type = ?`) is correct, but the DB-level constraint does not enforce the three-column uniqueness — so concurrent imports or a partial rollback can leave duplicate rows that silently corrupt category trees.
+**What goes wrong:** BallotReady was the original authoritative source for `is_appointed` classifications, but it was decommissioned as of v1.5 (all cache warmers removed, API key deleted). All officials imported since v1.5 via the LA County ArcGIS gap-fill pipeline (791 officials, v1.6) and any subsequent scraping lack a verified `is_appointed` value. The field may be `NULL`, defaulted to `false`, or inherited from a stale cache row. Displaying an elected/appointed toggle filter against this data produces incorrect groupings — appointed commissioners appear as elected, appointed board members appear as elected, and the filter looks broken to anyone who knows the actual status of local officials.
 
-**Why it happens:** The existing data had only one dataset type (operating) when the schema was first created. The `dataset_type` column was added later as an application-level concern without updating the unique constraint.
+**Why it happens:** The v1.5 decommission removed the data pipeline that populated `is_appointed` without introducing a replacement. The v1.6 gap-fill imported officials to fill geographic coverage gaps, not to maintain classification metadata. It is easy to assume the column has valid data because it exists and has no NULLs if it was defaulted to `false`.
 
-**How to avoid:** Before running any imports, add `dataset_type` to the unique index:
-```sql
-DROP INDEX IF EXISTS treasury.idx_budget_city_year;
-CREATE UNIQUE INDEX idx_budget_city_year_dataset
-  ON treasury.budgets (city_id, fiscal_year, dataset_type);
-```
-Run this migration first, before importing Bloomington data or any additional jurisdictions.
+**How to avoid:** Before building any filter UI, run a data audit:
+1. Query `SELECT COUNT(*), is_appointed FROM essentials.politicians GROUP BY is_appointed` — if 97%+ are `false`, the data is likely defaulted, not researched.
+2. Cross-reference a sample of known-appointed officials (LA County supervisors, Monroe County commissioners) against their `is_appointed` value.
+3. Budget a manual classification pass for all officials in coverage scope (Bloomington/Monroe County IN + LA County CA) before building the filter toggle. This is a data task, not a code task, and it must precede Phase 1.
 
-**Warning signs:** `ImportBudget` returns 409 Conflict for the second dataset type for the same city/year. Or — worse — it succeeds but duplicate rows exist in the table.
+**Warning signs:** `is_appointed = false` for LA County supervisors (who are elected) is fine; `is_appointed = false` for LA County Arts Commission members (who are appointed) is a red flag. Any official with a role description containing "commission," "board," "authority," or "appointed" that shows `is_appointed = false` should be manually verified.
 
-**Phase to address:** Phase 1 (Bloomington data migration and backend schema fix) — before any other import work.
+**Phase to address:** Phase 1 (data audit and classification backfill) — must be resolved before the filter toggle is built. Do not build the UI against unverified classification data.
 
 ---
 
-### Pitfall 2: Indiana Gateway Data Is Pipe-Delimited, Not Comma-Delimited
+### Pitfall 2: Retention Judges Must Appear in BOTH Filter States
 
-**What goes wrong:** Indiana Gateway bulk download files use `|` (pipe) as the delimiter, not comma. The existing Bloomington CSV pipeline was built against City of Bloomington's own exports (comma-delimited). Any import script that calls `csv.NewReader()` or Python's `csv.reader()` without setting the delimiter to `|` will silently misparse every row — all column values land in a single field, amounts are always zero, and categories are blank strings that produce a flat tree of empty nodes. This will not throw an error; the import will appear to succeed with wrong data.
+**What goes wrong:** Judicial retention elections are a hybrid: judges are initially appointed (by the governor or a judicial nominating commission), then periodically face a public retention vote — a yes/no ballot question with no opponent. In Indiana, Supreme Court and Court of Appeals judges use this system. In California, appellate justices face retention elections after initial gubernatorial appointment. If the elected/appointed filter is implemented as a binary — `is_appointed ? show in Appointed : show in Elected` — retention judges appear in Appointed only and are invisible in the Elected filter. Users researching "who is on my ballot" will not find them under Elected because there is a retention race on the ballot.
 
-**Why it happens:** Indiana Gateway's download page notes the pipe delimiter in small print. Developers building on top of the Bloomington CSV pipeline assume the same format applies to Monroe County and Ellettsville data from Gateway.
+**Why it happens:** Binary boolean classification (`is_appointed: true/false`) cannot represent the hybrid status. Developers who model `is_appointed` as a simple flag make this mistake because the column encourages binary thinking.
 
-**How to avoid:** Download a small sample from Gateway first. Inspect raw bytes before writing the parser. Set `delimiter='|'` explicitly in Python, or use Go's `csv.Reader{Comma: '|'}`. Also confirm encoding: Gateway files are often Windows-1252, not UTF-8 — characters in vendor names and fund descriptions will corrupt silently if not re-encoded.
+**How to avoid:** The data model needs to distinguish `selection_method` from `faces_retention_vote`. Two approaches, in order of preference:
+- Add a `faces_retention_vote: boolean` column to `essentials.politicians` (separate from `is_appointed`). Retention judges get `is_appointed = true` AND `faces_retention_vote = true`. The filter logic: show in Appointed if `is_appointed = true`; show in Elected if `is_appointed = false` OR `faces_retention_vote = true`.
+- Alternatively, add `is_appointed_with_retention: boolean` as a third state alongside `is_appointed` and `is_elected`.
 
-**Warning signs:** After import, all category amounts are `$0` or all rows collapse into a single root category. Spot-check one row: if the `name` field contains pipe characters it was parsed as CSV.
+**Warning signs:** If a judge who appears on the Indiana retention ballot (Indiana Supreme Court, Court of Appeals) does not show up under the Elected filter, this pitfall has occurred. Cross-check by looking at the 2026 Monroe County ballot on Ballotpedia.
 
-**Phase to address:** Phase 2 (Monroe County and Ellettsville import) — write a format-detection step at the start of every new import pipeline.
-
----
-
-### Pitfall 3: LA County Budget Is PDF-First, Not Data-First
-
-**What goes wrong:** LA County's primary budget publication is a multi-volume PDF (the 2024-25 Final Budget Book and 2025-26 Recommended Budget are both large PDFs from `ceo.lacounty.gov`). There is no downloadable CSV or JSON for the county-level budget breakdown by department. Attempting to scrape the PDF will yield unreliable data: multi-column table layouts, footnotes mid-table, and merged cells that parsing libraries routinely misread. Spending hours on a PDF scraper produces data that looks correct but has category amounts off by 10-40% due to table-parsing errors.
-
-**Why it happens:** LA County posts machine-readable data for expenditure transactions (via `data.lacounty.gov`) but not for the adopted budget document itself. Developers assume the county-level budget is available in the same format as the city-level data.
-
-**How to avoid:** For LA County, use the `data.lacounty.gov` open data portal for actual expenditure data (what was spent), not the PDF for budgeted amounts. For LA City, use the LA City Controller's open expenditures portal (`lacity.spending.socrata.com`) and `data.lacity.org` — both have CSV/API access. Accept that LA County's official adopted budget figures will need to be manually transcribed from the PDF at the top level only (5-10 departments), with transaction-level detail coming from the expenditure dataset.
-
-**Warning signs:** Any import pipeline for LA County that relies on PDF parsing. Any script that calls `pdfminer`, `tabula`, or `camelot` against the LA County budget PDF.
-
-**Phase to address:** Phase 3 (LA County and LA City data research/import) — budget the data sourcing step as 2-3 days of investigation before writing any import code.
+**Phase to address:** Phase 1 (data model design) — the schema decision must be made before any classification data is entered. Retrofitting a boolean to a three-state system after data entry requires a migration and re-audit of all judicial records.
 
 ---
 
-### Pitfall 4: Fiscal Year Mismatch Breaks Year-Over-Year Comparisons
+### Pitfall 3: Election Data Has No Native Pipeline — Manual Entry Will Rot
 
-**What goes wrong:** Bloomington's fiscal year is January 1 – December 31 (calendar year). Monroe County and Ellettsville also use the Indiana standard calendar year. But LA County and LA City use July 1 – June 30 (the California standard). If the frontend stores only `fiscal_year: 2025` for all entities and the year selector shows "2025" for all of them, LA County's "2025" data actually covers July 2025–June 2026 while Bloomington's "2025" covers January–December 2025. The UI implies comparability that does not exist.
+**What goes wrong:** There is currently no election data pipeline. BallotReady was decommissioned. The platform has no mechanism to ingest candidate filings, election dates, or race definitions. If Election Central is built with manually-entered candidate records (inserted directly into the DB by hand), the data will become stale immediately after launch: candidates drop out, new candidates file, special elections are called, election dates change. Within 60 days of launch the page will display wrong candidates, wrong dates, and potentially candidates who have already won or lost.
 
-**Why it happens:** The `Budget` model stores only `fiscal_year: int`. There is no `fiscal_year_start` or `fiscal_year_type` field. The assumption that fiscal_year means calendar year was baked into the original Bloomington-only design.
+**Why it happens:** Manual data entry is the path of least resistance. It unblocks the frontend build quickly. The decay problem is invisible until it causes user-visible errors. Special elections in particular are called with minimal advance notice (Congress special elections are called within days).
 
-**How to avoid:** Add a `fiscal_year_type` or `fiscal_year_start_month` field to the `Budget` model (e.g., `fiscal_year_start_month: 1` for Indiana, `7` for California). Display the full fiscal period in the UI — "FY 2024-25 (Jul–Jun)" for LA vs. "2025 (Jan–Dec)" for Indiana. Do not show a single year selector that implies apples-to-apples comparison across jurisdictions without this context.
+**How to avoid:** Before writing a single candidate record by hand, decide on a data source strategy and build at least a partial refresh mechanism:
+- **Democracy Works Elections API** (data.democracy.works) — nonprofit-friendly, covers federal/state/local across all 50 states including Monroe County and LA County. Published data for 3,462 elections in 2025. Has a free-access tier for civic engagement orgs. This is the highest-confidence option for election dates and race definitions.
+- **Ballotpedia API** — comprehensive local candidate data (top 100 cities by population). LA is covered; Bloomington (population ~90K) may be in scope. Paid tier, but has a nonprofit contact channel (data@ballotpedia.org). Covers candidate names, incumbency, party, filing status.
+- **Manual entry with a structured refresh date** — if APIs are cost-prohibitive, build a `last_verified_at` timestamp on every candidate record and surface stale records (>30 days old) in the admin panel as a forcing function for re-verification.
 
-**Warning signs:** The year selector shows "2025" for every entity. A user can select Bloomington 2025 and LA County 2025 and the UI presents both as the same fiscal period.
+At minimum, implement a `last_verified_at` timestamp and a `candidate_status` enum (`filed`, `qualified`, `withdrawn`, `elected`, `defeated`) regardless of which data source is used. Never display a candidate whose status is `withdrawn`.
 
-**Phase to address:** Phase 1 (schema migration) — add `fiscal_year_start_month` (smallint, default 1) to `treasury.budgets` before any California data is imported.
+**Warning signs:** No `last_verified_at` or `candidate_status` field in the schema. Any schema that only records that a candidate filed but has no mechanism to record that they withdrew. Missing a withdrawal deadline column — in many jurisdictions a candidate who missed the withdrawal deadline remains on the ballot even if they publicly quit the race.
 
----
-
-### Pitfall 5: Category Color Collision Between EV Brand Tokens and Data Visualization Palette
-
-**What goes wrong:** The Treasury Tracker uses a 30-color data visualization palette (blues, purples, greens, teals) defined in `index.css` and `budgetConfig.json`. The EV design token refresh will introduce `ev-coral` (#ff5740) and `ev-muted-blue` (#00657c) as dominant UI colors. If the design token migration naively replaces all `--data-navy-500` references with `--muted-blue`, the sunburst chart segments that used `--data-navy-500` will all render in the same muted blue — the color-coding that makes the visualization readable collapses into a single-hue blur.
-
-**Why it happens:** Design token systems are designed for UI chrome (buttons, headers, backgrounds). Data visualization palettes are orthogonal — they need perceptual distinctiveness across many adjacent segments, not brand consistency. Treating them as the same system breaks both.
-
-**How to avoid:** Preserve the 30-color data visualization palette in `index.css` as a completely separate namespace (e.g., `--data-*` variables). Apply EV design tokens only to UI chrome: the `SiteHeader`, background colors, typography, the entity switcher, buttons, and info cards. Never pipe EV brand tokens into `BudgetCategory.color` assignments. The `budgetConfig.json` color palette is correct for visualization; leave it alone.
-
-**Warning signs:** After the visual refresh, the sunburst/icicle chart shows fewer than 5 visible distinct colors for a budget with 15+ top-level categories. Or the chart legend becomes unreadable because adjacent segments share similar hues.
-
-**Phase to address:** Phase 4 (visual refresh) — write explicit component-scope rules: EV tokens apply to layout/chrome components; data palette applies to visualization components.
+**Phase to address:** Phase 1 (data source research and schema design) — this is the foundational decision the entire milestone rests on. Do not build the Election Central page UI until the data source and refresh strategy is settled.
 
 ---
 
-### Pitfall 6: Checkbook Transaction Volume Overwhelms the API Response
+### Pitfall 4: Antipartisan Principle Violated by Incumbent Display Logic
 
-**What goes wrong:** The Bloomington checkbook CSV has 282,458 rows. The current `ImportBudget` endpoint imports these as `BudgetLineItem` rows via the recursive `importCategories` function, which creates one `db.Create()` call per line item inside a single transaction. At 282K rows, this will time out on Render's free tier (30-second request timeout) and likely OOM the Go process. Even if it succeeds, the `GetBudgetCategories` endpoint does `Preload("LineItems")` — loading 282K line items as a nested JSON payload will make the frontend hang on every category drill-down.
+**What goes wrong:** Incumbents in a race are, by definition, known politicians already in the Essentials database. It is tempting to link incumbent candidate cards directly to their existing profile page, displaying their party affiliation, compass alignment, and all available data. But the platform's antipartisan principle (documented in MEMORY.md: "Never show political parties or use partisan color associations") applies equally to candidates as to current officials. The violation is subtle — party affiliation is not explicitly displayed, but when an incumbent's full profile is surfaced inline in the Election Central race view, and the profile includes their legislative voting history on partisan bills or their compass alignment, the partisan inference is trivially available. More obviously: any candidate data sourced from Ballotpedia or Democracy Works includes party affiliation fields. If those fields are stored in the candidate schema, they will leak into API responses, and frontend developers will use them.
 
-**Why it happens:** The import pipeline was designed for the operating budget's ~27K budget rows. The checkbook (transaction-level) dataset is 10x larger. The current architecture makes no distinction between these.
+**Why it happens:** Party affiliation is the single most commonly available data point for candidates. Every data source includes it. Filtering it out requires intentional, ongoing effort. Incumbent-to-profile linking bypasses the filter because the official profile pages were never designed for an election context where party inference is problematic.
 
-**How to avoid:** Do not import checkbook transactions as `BudgetLineItem` rows. Checkbook transactions are a different access pattern — they need pagination, filtering, and aggregation. Two options: (1) store them in a separate `treasury.transactions` table with indexed columns (`city_id`, `fiscal_year`, `department`, `vendor`, `date`) and a paginated API endpoint; or (2) keep only the top-N vendors per category aggregated in `BudgetLineItem` and drop individual transaction rows. The existing `LinkedTransactionSummary` type in the frontend already models the aggregated pattern — follow that.
+**How to avoid:**
+1. Do not store `party_affiliation` in the candidates table. Explicitly exclude it when consuming data from Democracy Works, Ballotpedia, or any other source. Document this exclusion in the import scripts with a comment explaining the antipartisan rationale.
+2. When displaying an incumbent's Essentials profile card within an Election Central race, audit which data surfaces. Compass alignment comparison should be opt-in (same pattern as the Compare page), not displayed by default on the race listing.
+3. The Elected/Appointed filter toggle itself is not partisan — this is safe. But adding "party" as a secondary filter or sort option is explicitly prohibited.
 
-**Warning signs:** The `ImportBudget` request times out. The `GetBudgetCategories` response for a leaf category is larger than 1MB. The frontend freezes when clicking into a leaf category that has linked transactions.
+**Warning signs:** Any `party` or `party_affiliation` column in `essentials.candidates` or any JOIN query that surfaces `essentials.politicians.party` in election-related API responses (if such a column exists or is later added). Any filter or sort option that groups candidates by party.
 
-**Phase to address:** Phase 1 (schema design) — decide the transaction storage strategy before importing Bloomington data.
+**Phase to address:** Phase 2 (candidate data schema and import) — enforce the exclusion at the data ingestion layer, not in the frontend. Blocking party data from entering the DB is far easier than scrubbing it from API responses after the fact.
 
 ---
 
-### Pitfall 7: App.tsx Entity Switcher Is Hardcoded to `activeTab` City/State/Federal — Not Wired to Real Data
+### Pitfall 5: Candidates and Officials in the Same Schema Collision
 
-**What goes wrong:** The current `App.tsx` has `NavigationTabs` with hardcoded `[{ id: 'city', label: 'City' }, { id: 'state', label: 'State' }, { id: 'federal', label: 'Federal' }]`. The `activeTab` state is set but never actually changes what data is loaded — the data fetching ignores `activeTab` entirely. When the entity switcher is added for Bloomington/Monroe County/Ellettsville/LA County/LA City, developers might wire it into this existing `activeTab` state by adding more tab values, but the underlying `loadBudgetData` still needs to map entity selection to a `cityName` parameter. If `activeTab` is used as the `cityName` directly, it will look up "state" or "bloomington-in" as a city name, fail the API lookup, fall back to static JSON, and silently display Bloomington data for every entity.
+**What goes wrong:** The existing `essentials.politicians` table is designed for current officeholders: it has `total_years_in_office`, `election_frequency`, links to geofences/districts, and a profile page rendering pipeline. Candidates are not current officials. If candidates are inserted into the `politicians` table using a flag like `is_candidate: true`, the shared schema causes cascading problems:
+- The address-based search (`ST_Intersects` geofence matching) returns candidates mixed with current officials if they happen to be associated with a district geofence.
+- The legislative data pipeline (committees, bills, votes) will try to fetch data for candidates who have no legislative history.
+- Challenger candidates (non-incumbents) have no `bioguide_id`, no `slug`, no photos in CDN, and no geofence association — all the fields that assume an existing official.
+- Incumbent candidates ARE in the table already, so linking them is correct; but challenger candidates inserted here create orphaned records that pollute the officials dataset permanently.
 
-**Why it happens:** The City/State/Federal tabs were placeholder UI from the original prototype that was never connected to real multi-entity data loading. The `dataLoader.ts` API path already supports `?city=` filtering but App.tsx doesn't pass it.
+**Why it happens:** Sharing a table avoids a JOIN for incumbent display and seems to simplify the data model. The differences are invisible until the edge cases surface during testing.
 
-**How to avoid:** Replace `activeTab` with an `selectedEntity` state of type `{ id: string; name: string; state: string }`. On mount, populate the entity list from `listCities()` (the API endpoint already exists). The year selector and dataset tabs should filter data for the currently selected entity. Do not attempt to reuse the existing City/State/Federal tab semantics — they are structurally incompatible with per-entity switching.
+**How to avoid:** Create a separate `essentials.candidates` table that references `essentials.politicians` via `politician_id` (nullable — NULL for challengers) and `essentials.offices` via `office_id`. Separate concerns:
+- `essentials.elections` — one row per race (election date, jurisdiction, office, district)
+- `essentials.candidates` — one row per candidate-race pairing (politician_id nullable, name, is_incumbent, candidate_status, last_verified_at, filing_date, withdrawal_date)
+- Incumbent profile pages link back to the existing `politicians` record. Challenger profile pages render from `candidates` data only.
 
-**Warning signs:** After adding the entity switcher, selecting "Monroe County" still shows Bloomington data. Or the year selector shows years that don't exist for the selected entity.
+This schema prevents geofence queries from returning candidates, keeps the legislative pipeline isolated, and allows challenger records to be deleted after the election without corrupting the officials dataset.
 
-**Phase to address:** Phase 5 (frontend entity switcher) — audit `App.tsx` data flow before building any new UI component for entity selection.
+**Warning signs:** Any proposal to add `is_candidate`, `race_id`, or `election_date` columns to `essentials.politicians`. Any migration that adds candidate data to the existing politicians table.
+
+**Phase to address:** Phase 1 (schema design) — the separate table boundary must be established before any candidate data is imported.
+
+---
+
+### Pitfall 6: Election Central Shows Stale "Upcoming" Races After Election Day
+
+**What goes wrong:** The Election Central page is designed around showing "the next upcoming election." If the frontend filters races by `election_date > NOW()`, races disappear from the page the moment election day passes — which is correct. But if the filter is `election_date >= [hardcoded date]` or if `election_date` is stored as a date string without timezone, races in LA (Pacific time) may disappear 3 hours before they should for Indiana users, or persist 3 hours too long. More seriously: if the upcoming election filter has no refresh mechanism, the page goes blank after the election and there is nothing to show until the next election's data is entered.
+
+**Why it happens:** Election dates feel stable and far away when first entered. Post-election state management is deprioritized until the election is over and the page breaks.
+
+**How to avoid:**
+1. Store `election_date` as a UTC timestamp (not a date-only string) in the database. Election day in Indiana is Eastern Time; in California it is Pacific Time — the cutoff for "upcoming" is not midnight UTC.
+2. Implement an `election_status` enum: `upcoming`, `in_progress`, `results_pending`, `completed`. The frontend filter uses `election_status IN ('upcoming', 'in_progress')`.
+3. Design the empty state for Election Central explicitly: when no upcoming elections exist, show the most recently completed election with results (if available) rather than a blank page.
+
+**Warning signs:** `election_date` stored as `DATE` (not `TIMESTAMPTZ`). No `election_status` or equivalent field. No empty state design for Election Central when no upcoming elections are scheduled.
+
+**Phase to address:** Phase 2 (Election Central page and election data schema).
 
 ---
 
@@ -123,11 +128,12 @@ Shortcuts that seem reasonable but create long-term problems.
 
 | Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
 |----------|-------------------|----------------|-----------------|
-| Import all Bloomington CSV years at once in one script | Faster setup | One bad year corrupts the import; no per-year rollback | Never — import year-by-year with explicit verification step |
-| Use static JSON fallback for entities that have no API data yet | Unblocks frontend development | The fallback always returns Bloomington data regardless of selected entity; creates phantom "it works" behavior | Only acceptable as a named stub that renders an explicit "Data not yet available" state |
-| Assign EV brand color tokens to chart segment colors | Visual consistency | Destroys perceptual distinctiveness of multi-segment visualizations | Never for chart segment fills |
-| Skip `fiscal_year_start_month` field and document it in a README instead | Saves one migration | Any cross-jurisdiction comparison feature breaks silently; UX hides the mismatch | Never — schema is the source of truth |
-| Normalize LA County categories to match Bloomington's hierarchy | Enables UI reuse | LA County uses department-based budgeting; Bloomington uses function-based — forced mapping loses meaning | Never — preserve source hierarchy, add a `hierarchy_type` field |
+| Insert candidates into `essentials.politicians` with `is_candidate` flag | No new table, no JOIN needed for incumbents | Search queries return candidates mixed with officials; legislative pipeline runs on non-officials; challenger records pollute officials dataset post-election | Never — separate schema required |
+| Store `party_affiliation` in candidates table "just in case" | Easier to display data from upstream sources | Violates antipartisan principle; will leak into API responses; very difficult to remove after downstream code depends on it | Never — exclude at ingestion |
+| Manually enter all candidate data without a `last_verified_at` timestamp | Faster initial build | Data goes stale within weeks; no forcing function for re-verification; page misleads users about who is actually in a race | Never — timestamp is mandatory |
+| Binary `is_appointed` boolean for the filter | Simpler query | Cannot represent retention judges (appointed + faces election); requires schema migration to fix | Never for jurisdictions with retention elections (Indiana, California) |
+| Skip Democracy Works API integration and use Ballotpedia scraping instead | Avoids API cost | Ballotpedia terms of service prohibit scraping; ToS violation could result in IP block or legal exposure | Never — use API or manual entry |
+| Hardcode election dates as string literals in code | Simple, visible | Election dates change (moved by legislation, special election called); requires code deploy to fix | Never — always from database |
 
 ---
 
@@ -137,12 +143,13 @@ Common mistakes when connecting to external services.
 
 | Integration | Common Mistake | Correct Approach |
 |-------------|----------------|------------------|
-| Indiana Gateway CSV downloads | Assume comma delimiter; import breaks silently with all-zero amounts | Set `delimiter='|'`; re-encode from Windows-1252 to UTF-8 before parsing |
-| Indiana Gateway fiscal year field | `fiscal_year` in Gateway files encodes the year the budget was adopted, not the calendar year covered | Verify: Indiana local governments use calendar year; fiscal_year=2025 in Gateway = Jan–Dec 2025 |
-| LA County open data portal (`data.lacounty.gov`) | Assume the portal has adopted budget amounts by department | Portal has actual expenditure transactions; adopted budget figures are PDF-only at county level |
-| LA City Controller expenditures (`lacity.spending.socrata.com`) | Use the Socrata API without authentication — free tier has rate limits and 1000-row default page size | Use `$limit=50000&$offset=N` pagination; or download the full dataset CSV from the portal rather than using the API |
-| Supabase CSV import via dashboard | Upload 300K-row CSV through the dashboard UI (100MB limit) | Use `psql COPY` or `pgloader` for large files; the dashboard import will timeout or fail silently on large CSVs |
-| Go `ImportBudget` HTTP endpoint | POST 300K line items in a single request body | Use a file-based CLI import script (as done for essentials and staging modules) — HTTP timeouts at 30s on Render free tier |
+| Democracy Works Elections API | Assume free tier covers candidate-level data (names, incumbency, bio) | Free tier covers election dates and jurisdictions; full candidate data requires a paid plan or partnership agreement. Contact them as a nonprofit civic org for access terms. |
+| Ballotpedia API | Assume local races (Bloomington, Monroe County) are covered in standard tier | Coverage is top 100 cities + 475 school districts. Bloomington (~90K pop) may fall just outside; verify before signing up. Monroe County races may require manual entry regardless. |
+| Democracy Works Elections Calendar (free) | Use as the sole source of candidate names | Elections Calendar provides dates and jurisdiction data; it does NOT provide individual candidate filings. Candidate data needs a separate source. |
+| BallotReady (now CivicEngine) | Attempt to re-integrate as election data source | BallotReady was decommissioned from this platform in v1.5 for cost reasons. Their API has had major enhancements since (OCD-ID support, 2025 updates) but requires a paid organizational plan. Only re-evaluate if budget is available. |
+| Ballotpedia scraping | Scrape ballotpedia.org directly for candidate data | Ballotpedia ToS prohibits scraping. Use their API (paid) or contact data@ballotpedia.org for nonprofit data access. |
+| Open States API | Assume Open States covers municipal/local candidates | Open States covers state legislators only (bills, votes, committees). It has "limited support" for municipal governments and does NOT provide candidate election data for city/county races. |
+| Indiana Election Division | Expect structured API for candidate filings | Indiana does not expose a public API for candidate filings. The Monroe County Election Board website (`monroecountyvoters.us`) has a candidate portal but no machine-readable export. Manual verification required. |
 
 ---
 
@@ -152,11 +159,9 @@ Patterns that work at small scale but fail as usage grows.
 
 | Trap | Symptoms | Prevention | When It Breaks |
 |------|----------|------------|----------------|
-| `Preload("LineItems")` on all categories | Category tree API response becomes very large | Only preload line items at the leaf node level; use a separate endpoint for line item detail | Breaks at ~5,000 line items across a budget |
-| `GORM Preload("Subcategories")` recursively | N+1 queries building the category tree; 50+ DB calls per request | Use the existing flat-fetch + `buildCategoryTree` pattern in `handlers.go` | Breaks at depth >3 or >200 categories |
-| Loading all entities in `listCities()` on the entity switcher dropdown | Fine at 5 cities, slow as cities grow | Already paginated in API; ensure frontend doesn't re-fetch on every render | Breaks at >100 entities |
-| Storing raw checkbook transactions as `BudgetLineItem` rows | Imports succeed; leaf-node drill-down response is 5MB+ JSON | Use a separate `transactions` table with pagination | Breaks at >50K transactions per budget |
-| Rebuilding `processedBudget.json` in the browser from raw API data on every mount | Imperceptible at Bloomington scale | Cache the transformed tree in component state with `useMemo`; do not re-transform on every render | Breaks when category tree has >500 nodes |
+| Loading all races + all candidates in a single Election Central query | Fine for 2 upcoming elections; slow for full election history | Paginate: load only the next upcoming election by default; lazy-load historical elections | Breaks when 10+ elections with 50+ candidates each are stored |
+| Linking candidate profiles to full politician profile rendering pipeline | First incumbent profile load is fast; subsequent renders trigger legislative data fetch | Add `is_candidate_view` flag to profile context to skip legislative fetch for challenger candidates who have no legislative data | Breaks immediately for any challenger candidate |
+| Running `ST_Intersects` address match including candidates table | Address search returns candidates mixed with officials if candidates are improperly associated with geofences | Separate candidates from the geofence query entirely — candidates are discovered via Election Central, not via address search | Breaks as soon as any candidate record has a district association |
 
 ---
 
@@ -166,9 +171,9 @@ Domain-specific security issues beyond general web security.
 
 | Mistake | Risk | Prevention |
 |---------|------|------------|
-| Exposing individual payroll records by name in the API | PII leak — Indiana's payroll CSV includes employee names (`name_last`, `name_first`) | Do not import `name_last`/`name_first` fields into `BudgetLineItem.description`; aggregate payroll by position title only, as the existing Bloomington salary pipeline does |
-| Committing Indiana Gateway or LA data CSVs to the repo | Raw data files can be large (>100MB) and may include PII in payroll | Add `data/*.csv`, `data/2024/`, `data/2025/` to `.gitignore` before starting import work; source data lives locally only |
-| Admin `ImportBudget` endpoint has no authentication middleware | Any actor who discovers the endpoint can inject arbitrary budget data | Confirm the endpoint is under `SessionMiddleware` in `routes.go` before opening it to production traffic |
+| Exposing `party_affiliation` in any API response | Enables partisan inference in what is intentionally a nonpartisan platform; also violates the documented antipartisan principle | Audit all election-related API endpoints before launch to confirm no party field is returned in any response payload |
+| Displaying candidate home addresses | Candidates often provide home addresses on filing documents; including them in profile data is a safety risk | Do not store or display residential addresses for candidates — city/county of residence only |
+| Admin election data entry with no access control | Malicious actor could insert fake candidates or modify election dates | All election admin endpoints must be behind existing `requireAuth` + admin role check |
 
 ---
 
@@ -178,11 +183,11 @@ Common user experience mistakes in this domain.
 
 | Pitfall | User Impact | Better Approach |
 |---------|-------------|-----------------|
-| Showing "City / State / Federal" tabs when only city-level data exists | User clicks "State" or "Federal", sees nothing or an error | Replace with a named entity dropdown/switcher that only shows entities with actual data; hide tabs for unavailable tiers |
-| Displaying a single year selector across all jurisdictions | User selects 2025 for all entities; LA County's 2025 covers a different period than Bloomington's | Show the full fiscal period label ("FY 2024-25" vs "Calendar 2025") next to the year value |
-| Comparing per-capita amounts across entities without surfacing population source | Monroe County population (148K) vs Bloomington (79K) — "per resident" figures are confusing if compared directly at county vs. city level | Display the population figure and source year prominently; note that county budgets cover the full county population including city residents |
-| Entity switcher that resets all filters on switch | User drills into "Parks & Recreation" in Bloomington, switches to Monroe County, sees the top level — loses context | Preserve dataset type (operating/revenue/salaries) across entity switches; reset only the navigation path |
-| Rendering the hero image and city context card with hardcoded Bloomington content when a different entity is selected | Misleads users looking at Monroe County or LA data | Each entity record needs its own `hero_image_url`, `description`, and context card copy — add these to the `treasury.cities` model |
+| Showing the elected/appointed toggle when `is_appointed` data is unverified | Users trust the filter; appointed officials appear as elected; trust is lost when discrepancy is noticed | Audit and verify `is_appointed` for all in-scope officials before shipping the toggle |
+| Displaying "No upcoming elections" when an election exists but has no candidate data yet | User thinks the page is broken or coverage is missing | Show the election date and office list even if no candidates have been entered yet; indicate "Candidates will be listed as they file" |
+| Presenting challenger and incumbent candidate profiles identically | Users cannot tell who currently holds the seat | Always label incumbents explicitly ("Incumbent" badge on the card); challenger cards should not have the legislative history section (it would be empty and confusing) |
+| Linking Election Central only from the main nav (not from official profile pages) | Users who land on an official's profile have no path to see "is this person on the ballot?" | Add an "Upcoming election" callout on the official's profile page if they are a candidate in a registered race |
+| Using red/blue color coding for "Elected" vs "Appointed" filter pills | Red/blue has partisan connotation in US civic context | Use neutral EV design tokens: `ev-coral` and `ev-muted-blue` are acceptable only if they are not consistently mapped to the same "side" as election results displays |
 
 ---
 
@@ -190,13 +195,14 @@ Common user experience mistakes in this domain.
 
 Things that appear complete but are missing critical pieces.
 
-- [ ] **Bloomington data migrated to Supabase:** Verify all 5 fiscal years (2021-2025) exist in `treasury.budgets`, each with all 3 dataset types (operating, revenue, salaries). Check row counts match the source CSVs — do not accept "the import ran" as verification.
-- [ ] **Entity switcher:** Verify selecting each entity makes a new API call with `?city=<entity>` and returns data for that entity specifically — not the static JSON fallback.
-- [ ] **Fiscal year type labeled in UI:** Verify that LA County/City entries display "FY 2024-25" and Indiana entries display "2024" — not just the raw integer from the DB.
-- [ ] **Visual refresh:** Verify the sunburst/icicle chart still renders 15+ distinct colors after the design token migration — not a monochromatic single-hue chart.
-- [ ] **Payroll data anonymized:** Verify that no employee names appear in the API response for salary data — only position titles.
-- [ ] **Category tree depth correct:** After importing a new jurisdiction, drill down to a leaf node and confirm the hierarchy matches the source data structure (e.g., LA County's `Department > Division > Object` is preserved, not flattened to Bloomington's `primary_function > priority > service > fund`).
-- [ ] **`dataset_type` in unique index:** Run `\d treasury.budgets` and confirm the unique constraint includes `(city_id, fiscal_year, dataset_type)` before marking Phase 1 complete.
+- [ ] **Elected/Appointed filter:** Verify retention judges appear under BOTH filter states, not only Appointed. Test with actual Indiana appellate judges from the 2026 ballot.
+- [ ] **`is_appointed` data quality:** Run the audit query (`SELECT COUNT(*), is_appointed FROM essentials.politicians GROUP BY is_appointed`) and confirm the distribution is plausible before shipping the filter. All-false or all-true signals a defaulted field, not researched data.
+- [ ] **Candidate schema separation:** Confirm no `is_candidate` flag was added to `essentials.politicians`. Confirm `essentials.candidates` exists as a separate table with a nullable `politician_id` FK for incumbents.
+- [ ] **Antipartisan data exclusion:** Verify the candidates table schema has no `party`, `party_affiliation`, or `party_id` column. Check the import scripts for any field that is excluded with a comment explaining why.
+- [ ] **Election data freshness:** Verify every candidate record has `last_verified_at` and `candidate_status` fields. Verify no candidate with `candidate_status = 'withdrawn'` is visible in the UI.
+- [ ] **Post-election empty state:** After the next election passes, verify Election Central does not show a blank page — it should show the completed election results state or the "next upcoming election" state.
+- [ ] **Challenger profile pages:** Navigate to a challenger candidate's profile. Confirm the legislative history section is absent (not visible, not an empty loading state, not an error).
+- [ ] **UTC timestamp for election dates:** Confirm `election_date` is stored as `TIMESTAMPTZ`, not `DATE` or a string. Verify the "upcoming" filter uses server-side UTC comparison, not a client-side date string comparison.
 
 ---
 
@@ -206,11 +212,12 @@ When pitfalls occur despite prevention, how to recover.
 
 | Pitfall | Recovery Cost | Recovery Steps |
 |---------|---------------|----------------|
-| Bad import: wrong amounts from pipe-delimiter parsing | MEDIUM | Run `DELETE FROM treasury.budget_line_items WHERE category_id IN (SELECT id FROM treasury.budget_categories WHERE budget_id = '<id>')`, then `DELETE FROM treasury.budget_categories WHERE budget_id = '<id>'`, then `DELETE FROM treasury.budgets WHERE id = '<id>'`. Re-run import with corrected parser. |
-| Checkbook transactions stored in BudgetLineItem (wrong table) | HIGH | Requires schema migration to add `treasury.transactions` table, data migration from line_items, API endpoint changes, and frontend changes. Avoid by deciding architecture in Phase 1. |
-| EV brand tokens applied to chart colors (visual collapse) | LOW | Revert the CSS-only changes to `BudgetVisualization.css` and restore `--data-*` variable references. No data changes needed. |
-| Missing `fiscal_year_start_month` after CA data imported | MEDIUM | Add column with `ALTER TABLE treasury.budgets ADD COLUMN fiscal_year_start_month smallint NOT NULL DEFAULT 1`. Update CA records: `UPDATE treasury.budgets SET fiscal_year_start_month = 7 WHERE city_id IN (SELECT id FROM treasury.cities WHERE state = 'CA')`. |
-| Payroll PII imported (employee names in DB) | HIGH | Delete affected line item rows, re-import with anonymization applied. If data was ever served through the API, notify as a data exposure event. |
+| `is_appointed` data found to be defaulted (all false) after filter ships | HIGH | Suspend the filter toggle UI, audit all officials in coverage scope, manually classify, re-enable toggle. Budget 1-2 days of classification work for ~800 officials. |
+| Candidates accidentally inserted into `essentials.politicians` | HIGH | Requires: remove candidate-specific columns from politicians table via migration, create separate candidates table, migrate candidate rows, update all API endpoints and frontend references. Estimate 2-3 days of work. |
+| Party affiliation data found in candidates table after launch | MEDIUM | `ALTER TABLE essentials.candidates DROP COLUMN party_affiliation`, redeploy API, purge any cached API responses. Fast technically but requires security review if data was ever served. |
+| Retention judge appears under only Appointed (not Elected) | LOW | Add `faces_retention_vote` column (migration), update classification for retention judges, update filter query. 2-4 hours. |
+| Election Central goes blank after election day | LOW | Implement `election_status` enum update (either scheduled job or manual admin toggle), update frontend empty state. 4-8 hours. |
+| Stale candidate data (withdrawn candidate still showing) | MEDIUM | Requires a data verification pass and a process for ongoing maintenance. Technical fix is a `candidate_status` update + cache invalidation. Process fix is the harder part — must establish who owns ongoing data freshness. |
 
 ---
 
@@ -220,35 +227,38 @@ How roadmap phases should address these pitfalls.
 
 | Pitfall | Prevention Phase | Verification |
 |---------|------------------|--------------|
-| Schema unique index missing `dataset_type` | Phase 1: Schema + Bloomington migration | `\d treasury.budgets` shows 3-column unique constraint |
-| Checkbook transaction volume architecture | Phase 1: Schema + Bloomington migration | Decision documented; checkbook imported via correct storage pattern |
-| Indiana Gateway pipe delimiter + encoding | Phase 2: Monroe County + Ellettsville import | Parser explicitly sets `delimiter='|'` and UTF-8 re-encoding; verified against manual row count |
-| Indiana fiscal year encoding ambiguity | Phase 2: Monroe County + Ellettsville import | `fiscal_year_start_month = 1` set for all IN entities; UI displays "2025 (Jan–Dec)" |
-| LA County PDF-first budget source | Phase 3: LA data research sprint | Decision logged: adopted budget figures from PDF (top-level only); transaction detail from `data.lacounty.gov` |
-| Fiscal year mismatch CA vs IN | Phase 1 (schema), Phase 3 (verification) | `fiscal_year_start_month = 7` for CA entities; UI shows "FY 2024-25" not "2025" |
-| Design token vs. visualization palette collision | Phase 4: Visual refresh | Post-refresh, sunburst chart renders 15+ distinct segment colors |
-| `activeTab` not wired to entity data loading | Phase 5: Frontend entity switcher | Selecting Monroe County via switcher shows Monroe County API response, confirmed in Network tab |
-| Hardcoded Bloomington hero content | Phase 5: Frontend entity switcher | Each entity shows its own name, description, and context card data |
-| Payroll PII exposure | Phase 1 (Bloomington migration) | API response for salary dataset contains no `name_last`/`name_first` values |
+| Stale `is_appointed` data from scraping pipeline | Phase 1: Data audit and classification backfill | Audit query shows plausible appointed/elected distribution; sample of known-appointed officials verified |
+| Retention judges need dual filter appearance | Phase 1: Schema design | `faces_retention_vote` column exists; filter query includes `OR faces_retention_vote = true` in Elected result set |
+| No election data pipeline → data rot | Phase 1: Data source selection | Data source decision documented; `last_verified_at` and `candidate_status` in schema before any data entered |
+| Antipartisan principle violated by party storage | Phase 2: Candidate schema and import | `DESCRIBE essentials.candidates` shows no party column; import scripts have explicit exclusion comments |
+| Candidates mixed into officials schema | Phase 1: Schema design | Separate `essentials.candidates` and `essentials.elections` tables exist with correct FK structure |
+| Election Central blank after election day | Phase 2: Election page | `election_status` enum implemented; empty state designed and tested |
+| UTC timestamp missing from election dates | Phase 1: Schema design | `election_date` column is `TIMESTAMPTZ`; verified before any data entry |
+| Challenger profiles triggering legislative fetch | Phase 3: Candidate profile pages | Challenger profile page renders without legislative section; no API call to legislative endpoints on challenger load |
 
 ---
 
 ## Sources
 
-- Direct inspection: `treasury-tracker/src/App.tsx`, `src/data/dataLoader.ts`, `src/types/budget.ts`, `src/index.css`, `budgetConfig.json`
-- Direct inspection: `EV-Backend/internal/treasury/models.go`, `handlers.go`, `routes.go`
-- Direct inspection: `treasury-tracker/data/operating_budget-all.csv` (27,804 rows), `checkbook-all.csv` (282,458 rows), `payroll-all.csv` (304,911 rows)
-- [Indiana Gateway Download Page](https://gateway.ifionline.org/public/download.aspx) — pipe delimiter documented; LOW confidence on exact column schema without direct download test
-- [Indiana Gateway — pipe-delimited format confirmation](https://www.bakertilly.com/insights/2025-indiana-gateway-budget-forms) — MEDIUM confidence
-- [LA County CEO Budget Page](https://ceo.lacounty.gov/budget/) — PDF-only for adopted budget document confirmed
-- [County of Los Angeles Open Data](https://data.lacounty.gov/) — transaction-level expenditure data available
-- [LA City Controller Open Expenditures](https://lacity.spending.socrata.com/) — CSV/API available for LA City
-- [LA City Open Budget](https://openbudget.lacity.org/) — visualization layer over the same data
-- [Supabase Import Data docs](https://supabase.com/docs/guides/database/import-data) — 100MB dashboard CSV limit confirmed; `pgloader` recommendation for large files
-- [Supabase row limit discussion](https://github.com/orgs/supabase/discussions/3765) — default 1000-row API limit; configurable to 1M
-- [How to Manage Breaking Changes in Design Tokens](https://designtokens.substack.com/p/how-to-manage-breaking-changes-in) — deprecation/migration pattern
-- [GFOA: Designing a Local Government Budget](https://www.gfoa.org/long-form/a-guide-to-designing-a-local-government-budget) — hierarchy standards (line items → divisions → departments)
+- Direct inspection: `/Users/chrisandrews/Documents/GitHub/.planning/PROJECT.md` — v1.5 BallotReady decommission, v1.6 gap-fill pipeline, v2026.3.8 milestone target features
+- Direct inspection: `CLAUDE.md` — antipartisan principle, district types, essentials schema documentation
+- User memory (MEMORY.md): "NEVER show political parties or use partisan color associations" — antipartisan principle confirmed as absolute constraint
+- [Indiana Judicial Branch: Indiana's Judicial Retention System](https://www.in.gov/courts/about/retention/) — appellate judges appointed then face retention vote; confirmed hybrid classification
+- [Retention election — Ballotpedia](https://ballotpedia.org/Retention_election) — retention elections are not an initial selection method; combined with appointment; creates dual classification need
+- [Indiana Judicial Branch: 2026 Judicial Retention](https://www.in.gov/courts/selection/marion/2026-retention/) — 2026 retention elections confirmed active for Indiana appellate judges
+- [Monroe County, Indiana, elections, 2026 — Ballotpedia](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — Monroe County trial court judges compete in partisan elections (not retention); state appellate judges use retention system
+- [Democracy Works Elections API](https://data.democracy.works/ballot-info) — nonprofit-friendly, 3,462 elections in 2025, covers local races; free calendar access for civic orgs; candidate data requires partnership
+- [Democracy Works: We Powered Democracy in 2025](https://www.democracy.works/news/we-powered-democracy-in-2025) — nonprofit coverage and mission confirmed
+- [Ballotpedia: Buy Political Data](https://ballotpedia.org/Ballotpedia:Buy_Political_Data) — paid API; top 100 cities + 475 school districts; contact data@ballotpedia.org for nonprofit access
+- [Ballotpedia API documentation](https://developer.ballotpedia.org) — candidate fields include party affiliation; must be excluded at ingestion for antipartisan compliance
+- [Candidate withdrawal — Ballotpedia](https://ballotpedia.org/Candidate_withdrawal) — candidate withdrawal defined; withdrawal deadline critical (missed deadline = name stays on ballot)
+- [Open States API v3 Overview](https://docs.openstates.org/api-v3/) — confirmed state legislative data only; limited municipal support; no candidate election data for city/county races
+- [BallotReady for Organizations](https://organizations.ballotready.org) — API still active as of 2025 with OCD-ID enhancements; paid organizational plan required
+- [American local government elections database — Scientific Data](https://www.nature.com/articles/s41597-023-02792-x) — confirms persistent challenge of decentralized local election data; lack of centralized sources well-documented
+- [Notice of Turndown of the Representatives API — Google Groups](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — Google Civic Information API deprecating representative data; ecosystem shifting to BallotReady/Ballotpedia/Cicero
+- [Judicial Selection: A Glossary — Brennan Center](https://www.brennancenter.org/our-work/research-reports/judicial-selection-glossary-terms) — confirmed no single classification for states using combined appointment + retention selection
+- [Voter guides: Using color effectively — Center for Civic Design](https://civicdesign.org/voter-guides-using-color-effectively/) — color in civic election contexts carries partisan associations; use deliberately
 
 ---
-*Pitfalls research for: multi-jurisdiction government budget data import and Treasury Tracker expansion*
-*Researched: 2026-03-22*
+*Pitfalls research for: Election Central page and elected/appointed filter added to existing Essentials civic platform*
+*Researched: 2026-03-29*
