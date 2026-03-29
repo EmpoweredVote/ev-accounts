@@ -146,6 +146,7 @@ export interface SummaryResponse {
   pac_total: number;
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
+  coverage_status?: string;
 }
 
 export interface ContributionResult {
@@ -422,6 +423,51 @@ export function validateConfidence(raw: string | undefined): string | null {
 const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ESTIMATED' };
 
 // ---------------------------------------------------------------------------
+// detectCoverageStatus — classify zero-state politicians by data availability
+// ---------------------------------------------------------------------------
+
+/**
+ * detectCoverageStatus classifies a politician with no confirmed contributions
+ * into one of three coverage statuses:
+ *   - 'data_pending'       — has source rows but no contributions ingested yet
+ *   - 'local_unavailable'  — local/county office; filings are paper/offline
+ *   - 'no_data'            — federal/state office with no sources on file
+ */
+async function detectCoverageStatus(politicianId: string): Promise<string> {
+  // Check if politician_sources rows exist (needs_research or otherwise)
+  const sourceCountResult = await pool.query<{ cnt: string }>(
+    `SELECT COUNT(*) AS cnt
+     FROM transparent_motivations.politician_sources
+     WHERE essentials_politician_id = $1`,
+    [politicianId]
+  );
+  const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
+
+  if (sourceCount > 0) {
+    return 'data_pending';
+  }
+
+  // No source rows — check the politician's office district_type
+  const officeResult = await pool.query<{ district_type: string | null }>(
+    `SELECT d.district_type
+     FROM essentials.offices o
+     LEFT JOIN essentials.districts d ON d.id = o.district_id
+     WHERE o.politician_id = $1 AND o.is_vacant = false
+     LIMIT 1`,
+    [politicianId]
+  );
+
+  const districtType = officeResult.rows[0]?.district_type ?? null;
+  const localTypes = ['LOCAL', 'LOCAL_EXEC', 'COUNTY', 'SCHOOL'];
+
+  if (districtType && localTypes.includes(districtType)) {
+    return 'local_unavailable';
+  }
+
+  return 'no_data';
+}
+
+// ---------------------------------------------------------------------------
 // getSummary — ported from SummaryHandler in public_handlers.go
 // ---------------------------------------------------------------------------
 
@@ -453,6 +499,7 @@ export async function getSummary(
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
+    const coverageStatus = await detectCoverageStatus(politicianId);
     return {
       summary: {
         politician_id: politicianId,
@@ -467,6 +514,7 @@ export async function getSummary(
         pac_total: 0,
         sector_breakdown: [],
         top_donors: [],
+        coverage_status: coverageStatus,
       },
       updatedAt: null,
     };
