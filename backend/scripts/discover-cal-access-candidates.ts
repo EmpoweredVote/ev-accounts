@@ -492,9 +492,15 @@ async function main() {
           await client.query('BEGIN');
 
           for (const rec of batch) {
+            // Use SAVEPOINT per-row so a single row failure doesn't abort the whole batch.
+            // This matches the pattern from dedup-essentials-politicians.ts.
+            const sp = `sp_${rec.filerId.replace(/[^a-zA-Z0-9]/g, '_')}`;
+            await client.query(`SAVEPOINT ${sp}`);
             try {
               await processCandidate(client, rec, schema, hasSourceSystemExternalIdIndex, report, isDryRun);
+              await client.query(`RELEASE SAVEPOINT ${sp}`);
             } catch (err: any) {
+              await client.query(`ROLLBACK TO SAVEPOINT ${sp}`);
               console.error(`  ERROR processing FILER_ID ${rec.filerId}:`, err.message);
               report.counts.errors++;
             }
@@ -662,15 +668,16 @@ async function processCandidate(
     const politicianId = politicianRes.rows[0].id as string;
 
     // 3b: INSERT into essentials.offices
+    // district_id is a UUID FK — Cal-Access DISTRICT_CD is a numeric code (e.g. "25", "0")
+    // that does not map to UUID district records. Store null; district_cd goes in notes.
     const chamberId = findChamberId(rec.officeTitle, schema.caChambers);
     const officeTitle = rec.officeTitle;
-    const districtId = rec.districtCode || null;
 
     await client.query(
-      `INSERT INTO essentials.offices (politician_id, title, representing_state, chamber_id, district_id)
-       VALUES ($1, $2, 'CA', $3, $4)
+      `INSERT INTO essentials.offices (politician_id, title, representing_state, chamber_id)
+       VALUES ($1, $2, 'CA', $3)
        ON CONFLICT (politician_id) DO NOTHING`,
-      [politicianId, officeTitle, chamberId, districtId]
+      [politicianId, officeTitle, chamberId]
     );
 
     // 3c: INSERT into transparent_motivations.politician_sources
