@@ -395,25 +395,71 @@ async function upsertRace(
   race: RaceRecord,
   client: pg.PoolClient
 ): Promise<string> {
-  // ON CONFLICT on (election_id, position_name, primary_party) — constraint from migration 044
-  // For general races (primary_party IS NULL), the partial unique index handles dedup
-  const result = await client.query<{ id: string }>(
+  // Two-branch upsert to handle PostgreSQL NULL behavior in UNIQUE constraints:
+  //
+  // Branch A (primary_party NOT NULL): Use ON CONFLICT ON CONSTRAINT to match the
+  //   races_election_position_party_unique constraint from migration 044.
+  //
+  // Branch B (primary_party IS NULL): PostgreSQL treats NULLs as distinct in UNIQUE
+  //   constraints, so ON CONFLICT never fires for NULL. Use explicit SELECT-then-INSERT/UPDATE
+  //   pattern targeting the partial unique index (idx_races_election_position_no_party).
+  //   This is idempotent and race-safe within a serializable transaction.
+
+  if (race.primary_party !== null) {
+    // Branch A: named constraint ON CONFLICT works for non-null primary_party
+    const result = await client.query<{ id: string }>(
+      `INSERT INTO essentials.races
+         (election_id, office_id, position_name, primary_party, seats)
+       VALUES ($1, $2, $3, $4, $5)
+       ON CONFLICT ON CONSTRAINT races_election_position_party_unique DO UPDATE
+         SET office_id = COALESCE(EXCLUDED.office_id, essentials.races.office_id),
+             updated_at = now()
+       RETURNING id`,
+      [
+        electionId,
+        race.office_id ?? null,
+        race.position_name,
+        race.primary_party,
+        race.seats,
+      ]
+    );
+    return result.rows[0].id;
+  }
+
+  // Branch B: primary_party IS NULL — general/retention/special races
+  // SELECT first; if found, UPDATE; if not, INSERT. Targets the partial unique index.
+  const existing = await client.query<{ id: string }>(
+    `SELECT id FROM essentials.races
+     WHERE election_id = $1 AND position_name = $2 AND primary_party IS NULL`,
+    [electionId, race.position_name]
+  );
+
+  if (existing.rows.length > 0) {
+    // UPDATE existing row
+    await client.query(
+      `UPDATE essentials.races
+       SET office_id = COALESCE($1, office_id),
+           updated_at = now()
+       WHERE id = $2`,
+      [race.office_id ?? null, existing.rows[0].id]
+    );
+    return existing.rows[0].id;
+  }
+
+  // INSERT new row
+  const inserted = await client.query<{ id: string }>(
     `INSERT INTO essentials.races
        (election_id, office_id, position_name, primary_party, seats)
-     VALUES ($1, $2, $3, $4, $5)
-     ON CONFLICT (election_id, position_name, primary_party) DO UPDATE
-       SET office_id = COALESCE(EXCLUDED.office_id, essentials.races.office_id),
-           updated_at = now()
+     VALUES ($1, $2, $3, NULL, $4)
      RETURNING id`,
     [
       electionId,
       race.office_id ?? null,
       race.position_name,
-      race.primary_party,
       race.seats,
     ]
   );
-  return result.rows[0].id;
+  return inserted.rows[0].id;
 }
 
 async function upsertCandidate(
