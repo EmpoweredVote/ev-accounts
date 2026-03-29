@@ -158,8 +158,8 @@ async function findExistingPoliticians(
     `SELECT DISTINCT p.id, p.full_name, o.representing_state
      FROM essentials.politicians p
      JOIN essentials.offices o ON o.politician_id = p.id
-     WHERE p.full_name ILIKE $1
-       AND ($3 = '' OR p.full_name ILIKE $4)
+     WHERE public.f_unaccent(lower(p.full_name)) ILIKE public.f_unaccent(lower($1))
+       AND ($3 = '' OR public.f_unaccent(lower(p.full_name)) ILIKE public.f_unaccent(lower($4)))
        AND o.representing_state = $2
        AND p.is_active = true
      LIMIT 10`,
