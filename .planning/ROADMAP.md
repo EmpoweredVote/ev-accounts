@@ -269,7 +269,7 @@ Full details: `.planning/milestones/v2026.3.7-ROADMAP.md`
 
 **Milestone Goal:** Add an Election Central page to Essentials showing upcoming races grouped by organization and position, plus an elected/appointed filter on the main representatives page.
 
-- [ ] **Phase 97: Schema Foundation & Data Audit** - Election schema designed, data source confirmed, is_appointed audit completed
+- [x] **Phase 97: Schema Foundation & Data Audit** - Election schema designed, data source confirmed, is_appointed audit completed (completed 2026-03-29)
 - [ ] **Phase 98: Election Data Import** - Candidate records populated for upcoming races in Bloomington/Monroe County IN and LA County CA
 - [ ] **Phase 99: Election Central Page** - Fully functional Election Central page accessible from the same address search
 - [ ] **Phase 100: Elected/Appointed Filter** - Representatives page filter toggle ships with verified data
@@ -426,7 +426,7 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 94. LA Data Import | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
-| 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | In Progress|  |
+| 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
 | 98. Election Data Import | v2026.3.8 | 0/TBD | Not started | - |
 | 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
