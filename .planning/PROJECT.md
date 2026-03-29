@@ -179,17 +179,17 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-## Current Milestone: v2026.3.7 Treasury Tracker Expansion
+## Current Milestone: v2026.3.8 Essentials Election Central
 
-**Goal:** Redesign the Treasury Tracker with EV design tokens, migrate Bloomington data to Supabase, expand coverage to Ellettsville, Monroe County, and LA County/cities, and add a frontend entity switcher.
+**Goal:** Add an Election Central page to Essentials showing upcoming races grouped by organization and position, plus an elected/appointed filter on the main representatives page.
 
 **Target features:**
-- Full visual refresh of Treasury Tracker using ev-ui design tokens and current EV design patterns
-- Migrate Bloomington's static JSON budget data into the treasury backend (Supabase)
-- Research and import budget/expense data for Ellettsville, IN
-- Research and import budget/expense data for Monroe County, IN
-- Research and import budget/expense data for LA County government + major LA cities
-- Frontend entity switcher to navigate between cities and counties
+- Research and integrate election/candidate data source for Bloomington/Monroe County IN + LA County CA
+- Election Central page (same address search) showing the next upcoming election with all races grouped by org then by specific position
+- Candidates get full Essentials-style profile pages
+- Incumbent vs challenger differentiation within each race
+- Elected/Appointed filter toggle on main Essentials representatives page
+- Retention judges appear under both Elected and Appointed filters
 
 ### Future
 
@@ -200,7 +200,11 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Last Milestone: v2026.3.6 Read & Rank Redesign (Shipped 2026-03-16)
+## Last Milestone: v2026.3.7 Treasury Tracker Expansion (Shipped 2026-03-23)
+
+**Delivered:** Treasury Tracker redesigned with EV design tokens, Bloomington data migrated to Supabase, Ellettsville + Monroe County + LA County/City budget data imported, and frontend entity switcher added. 5 phases, 11 plans.
+
+## Previous Milestone: v2026.3.6 Read & Rank Redesign (Shipped 2026-03-16)
 
 **Delivered:** Read & Rank overhauled with unified evaluate+rank flow, head-to-head matchup comparisons, pizza-topping practice round, coach mark tours, Google Maps location-based filtering with Essentials cross-app context, and full visual redesign with particle effects and Manrope typography. 25/25 requirements satisfied.
 
@@ -264,4 +268,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-23 after Phase 96 (Visual Refresh) complete — Treasury Tracker fully rebranded with EV design system*
+*Last updated: 2026-03-29 after milestone v2026.3.8 started*

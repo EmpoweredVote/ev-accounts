@@ -1,36 +1,38 @@
 ---
 gsd_state_version: 1.0
-milestone: v2026.3.7
-milestone_name: Treasury Tracker Expansion
-status: Milestone complete
-stopped_at: Completed 96-02-PLAN.md
-last_updated: "2026-03-23T15:44:33.283Z"
+milestone: v2026.3.8
+milestone_name: Essentials Election Central
+status: Defining requirements
+stopped_at: null
+last_updated: "2026-03-29"
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 11
-  completed_plans: 11
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-22)
+See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 96 — visual-refresh
+**Current focus:** Defining requirements for v2026.3.8
 
 ## Current Position
 
-Phase: 96
-Plan: Not started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-29 — Milestone v2026.3.8 started
 
 ## Performance Metrics
 
+**Velocity (v2026.3.7):** 5 phases, 11 plans
 **Velocity (v2026.3.6):** 7 phases, 15 plans, 3 days
 **Velocity (v2026.3.5):** 3 phases, 5 plans, 1 day
-**Velocity (v2026.3.4):** 6 phases, 13 plans, 1 day
 
 *Updated after each plan completion*
 
@@ -38,31 +40,7 @@ Plan: Not started
 
 ### Decisions
 
-- Schema gate: Three-column unique index on treasury.budgets (city_id, fiscal_year, dataset_type) must deploy before any import — missing dataset_type causes silent duplicates or constraint violations
-- Schema gate: fiscal_year_start_month added to treasury.budgets before CA data; Indiana = 1 (Jan), California = 7 (Jul)
-- Go backend kept for this milestone; Express port deferred to separate future milestone
-- Visual refresh: EV tokens apply to UI chrome only; chart segment fills use separate --data-* namespace to preserve 30-color perceptual distinctiveness
-- LA data source: Use data.lacounty.gov expenditure transactions — not CEO PDF (PDF parsing produces 10-40% amount errors from merged cells)
-- Checkbook transactions (282K rows) deferred to v2+; not imported this milestone
-- [Phase 92]: Backward compat: city_id query param in ListBudgets maps to municipality_id column so existing frontend calls keep working
-- [Phase 92]: Three-column index declared both in GORM struct tags and explicit CREATE UNIQUE INDEX in setup.go for safety
-- [Phase 92]: rename.sql provided as pre-deployment manual step — GORM AutoMigrate cannot rename tables/columns
-- [Phase 92]: API-only data loading: dataLoader.ts throws on failure, App.tsx catch sets setBudgetData(null), listCities renamed to listMunicipalities calling /treasury/municipalities
-- [Phase 92]: Idempotent budget import: existence checked by (municipality_id, fiscal_year, dataset_type) before insert
-- [Phase 92]: totalBudget resolution: totalBudget > totalCompensation > totalRevenue (salary files have both totalBudget and totalCompensation set to same value)
-- [Phase 92]: Loading guard fix: if (loading || !operatingBudgetData) was blocking error state — removed operatingBudgetData dependency and added null-setting in totals catch block
-- [Phase 93]: POST-based Gateway fetch with configurable form params; HTML response triggers descriptive error
-- [Phase 93]: buildGatewayCategoryTree exposed as testable function independent of HTTP/DB for unit testing
-- [Phase 94]: N-level categoryNode tree replaces hardcoded 2-level Gateway accumulator; shared by Socrata and ArcGIS builders for arbitrary hierarchy depth
-- [Phase 94]: FiscalYearStartMonth=7 for all California entities (LA City and LA County) per LA-03
-- [Phase 94]: fiscal_year_start_month=7 for LA City (Socrata) and LA County (ArcGIS); California fiscal year runs July-June
-- [Phase 95-entity-switcher]: Two-query approach for ListMunicipalities: fetch all municipalities, fetch all budget summaries separately, group in Go — avoids complex JOIN and handles empty datasets gracefully
-- [Phase 95-entity-switcher]: handleEntityChange computes effectiveYear before setSelectedEntity to prevent double-fetch (Pitfall 1 from RESEARCH.md)
-- [Phase 95-entity-switcher]: URL sync guarded with if (!selectedEntity) return to prevent overwriting incoming URL params before municipalities load (Pitfall 2 from RESEARCH.md)
-- [Phase 96]: Define EV tokens inline in @theme block (not CSS @import of tailwind-preset.js) — JS file cannot be CSS-imported in Tailwind v4
-- [Phase 96]: Use @tailwindcss/vite plugin (not @tailwindcss/postcss) for treasury-tracker matching CompassV2 pattern
-- [Phase 96]: getCategoryColor returns CSS var() strings; SVG fill natively resolves them, so no getComputedStyle needed for D3 chart fills
-- [Phase 96]: DATA_VIZ_HUES from chartColors.ts used in CategoryList/BudgetBar/PerDollarBreakdown for index-based color — not category.color
+(None yet — new milestone)
 
 ### Pending Todos
 
@@ -70,11 +48,10 @@ Plan: Not started
 
 ### Blockers/Concerns
 
-- Phase 93 start: Download and inspect Indiana Gateway sample files for Ellettsville and Monroe County before writing transforms — column schema confirmed at medium confidence only
-- Phase 94 start: Verify data.lacounty.gov Socrata dataset IDs for department-level expenditures (30-minute investigation) before writing LA County import script
+(None yet)
 
 ## Session Continuity
 
-Last session: 2026-03-23T15:35:57.568Z
-Stopped at: Completed 96-02-PLAN.md
+Last session: 2026-03-29
+Stopped at: Milestone initialization
 Resume file: None
