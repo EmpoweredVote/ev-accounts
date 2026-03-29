@@ -5,14 +5,17 @@
  * Usage:
  *   npx tsx scripts/seedPolitician.ts --name "Banks" --state IN [options]
  *   npx tsx scripts/seedPolitician.ts --bulk politicians.csv [--dry-run] [--discover]
+ *   npx tsx scripts/seedPolitician.ts --indiana all [--dry-run]
+ *   npx tsx scripts/seedPolitician.ts --indiana "PIERCE" [--dry-run]
  *
  * Flags:
- *   --name    <string>   Candidate name to search (required unless --bulk)
- *   --state   <2-letter> Two-letter state code (required unless --bulk)
+ *   --name    <string>   Candidate name to search (required unless --bulk/--indiana)
+ *   --state   <2-letter> Two-letter state code (required unless --bulk/--indiana)
  *   --office  <H|S|P>   Office type (optional; defaults to H+S combined)
  *   --dry-run            Print seed plan JSON, make no DB writes
  *   --discover           Print FEC candidates and exit (no DB path, no prompt)
  *   --bulk    <filepath> Bulk seeding mode — CSV or JSON file with name/state/office columns
+ *   --indiana <filter>   Indiana confirmation mode — filter is "all" or a name/committee fragment
  *
  * Required env vars:
  *   FEC_API_KEY     — FEC API key from api.data.gov
@@ -48,6 +51,7 @@ interface CliArgs {
   dryRun: boolean;
   discoverOnly: boolean;
   bulk: string | null;
+  indiana: string | null;
 }
 
 function parseArgs(): CliArgs {
@@ -59,6 +63,7 @@ function parseArgs(): CliArgs {
     dryRun: false,
     discoverOnly: false,
     bulk: null,
+    indiana: null,
   };
 
   for (let i = 0; i < argv.length; i++) {
@@ -75,6 +80,8 @@ function parseArgs(): CliArgs {
       args.discoverOnly = true;
     } else if (arg === '--bulk' && argv[i + 1]) {
       args.bulk = argv[++i]!;
+    } else if (arg === '--indiana' && argv[i + 1]) {
+      args.indiana = argv[++i]!;
     }
   }
 
@@ -421,6 +428,147 @@ async function seedSinglePolitician(
 }
 
 // ---------------------------------------------------------------------------
+// Indiana confirmation mode
+// ---------------------------------------------------------------------------
+
+interface IndianaSourceRow {
+  source_id: string;
+  external_id: string;
+  notes: string | null;
+  full_name: string;
+  politician_id: string;
+  office_title: string | null;
+}
+
+async function promptRaw(question: string): Promise<string> {
+  return new Promise(resolve => {
+    const rl = readline.createInterface({
+      input: process.stdin,
+      output: process.stdout,
+    });
+    rl.question(question, answer => {
+      rl.close();
+      resolve(answer.trim());
+    });
+  });
+}
+
+async function runIndianaConfirmMode(filter: string, dryRun: boolean): Promise<void> {
+  // Query all needs_research Indiana sources with politician names and office titles
+  const result = await pool.query<IndianaSourceRow>(
+    `SELECT ps.id AS source_id, ps.external_id, ps.notes,
+            p.full_name, p.id AS politician_id,
+            o.title AS office_title
+     FROM transparent_motivations.politician_sources ps
+     JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
+     LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+     WHERE ps.source_system = 'indiana'
+       AND ps.research_status = 'needs_research'
+     ORDER BY p.full_name`
+  );
+
+  let rows = result.rows;
+
+  // Apply filter
+  if (filter !== 'all') {
+    const filterLower = filter.toLowerCase();
+    rows = rows.filter(
+      r =>
+        r.full_name.toLowerCase().includes(filterLower) ||
+        (r.notes ?? '').toLowerCase().includes(filterLower)
+    );
+  }
+
+  console.log(`\nFound ${rows.length} Indiana needs_research sources (filter: "${filter}")`);
+
+  if (rows.length === 0) {
+    console.log('No matching sources. Try a different filter or "all" to see all records.');
+    return;
+  }
+
+  let confirmed = 0;
+  let skipped = 0;
+
+  for (let i = 0; i < rows.length; i++) {
+    const row = rows[i]!;
+    const displayTitle = row.office_title ?? 'Indiana Elected Official';
+
+    console.log(`\n--- [${i + 1}/${rows.length}] ---`);
+    console.log(`Name:         ${row.full_name}`);
+    console.log(`Source ID:    ${row.source_id}`);
+    console.log(`External ID (FileNumber): ${row.external_id}`);
+    console.log(`Committee:    ${row.notes ?? '(none)'}`);
+    console.log(`Current office: ${displayTitle}`);
+
+    const answer = await promptRaw(
+      'Confirm this politician? (y/n/skip/quit) [or type an office title to confirm with that title]: '
+    );
+
+    const answerLower = answer.toLowerCase();
+
+    if (answerLower === 'quit' || answerLower === 'q') {
+      console.log('Stopping at user request.');
+      break;
+    }
+
+    if (answerLower === 'n' || answerLower === 'no' || answerLower === 'skip' || answerLower === '') {
+      console.log('Skipped.');
+      skipped++;
+      continue;
+    }
+
+    // Determine office title
+    let newTitle: string | null = null;
+
+    if (answerLower === 'y' || answerLower === 'yes') {
+      // Prompt separately for office title
+      const titleAnswer = await promptRaw(
+        'Office title [e.g. Indiana State Representative / Indiana State Senator / leave blank to keep current]: '
+      );
+      if (titleAnswer.trim().length > 0) {
+        newTitle = titleAnswer.trim();
+      }
+    } else {
+      // Treat non-empty answer as the office title itself
+      newTitle = answer.trim();
+    }
+
+    if (dryRun) {
+      console.log('[dry-run] Would UPDATE politician_sources SET research_status = \'confirmed\' WHERE id =', row.source_id);
+      if (newTitle && newTitle !== row.office_title) {
+        console.log('[dry-run] Would UPDATE essentials.offices SET title =', JSON.stringify(newTitle), 'WHERE politician_id =', row.politician_id, 'AND title = \'Indiana Elected Official\'');
+      }
+    } else {
+      // Update research_status to confirmed
+      await pool.query(
+        `UPDATE transparent_motivations.politician_sources
+         SET research_status = 'confirmed', updated_at = NOW()
+         WHERE id = $1`,
+        [row.source_id]
+      );
+
+      // Update office title if provided and different
+      if (newTitle && newTitle !== row.office_title) {
+        await pool.query(
+          `UPDATE essentials.offices
+           SET title = $1, updated_at = NOW()
+           WHERE politician_id = $2 AND title = 'Indiana Elected Official'`,
+          [newTitle, row.politician_id]
+        );
+        console.log(`Confirmed: ${row.full_name} (office title -> "${newTitle}")`);
+      } else {
+        console.log(`Confirmed: ${row.full_name}`);
+      }
+    }
+
+    confirmed++;
+  }
+
+  const total = confirmed + skipped;
+  console.log(`\nSummary: Confirmed=${confirmed}, Skipped=${skipped}, Total processed=${total}`);
+}
+
+// ---------------------------------------------------------------------------
 // Main
 // ---------------------------------------------------------------------------
 
@@ -437,6 +585,16 @@ async function main(): Promise<void> {
     process.exit(1);
   }
 
+  // --indiana mode
+  if (args.indiana !== null) {
+    try {
+      await runIndianaConfirmMode(args.indiana, args.dryRun);
+    } finally {
+      await pool.end();
+    }
+    return;
+  }
+
   // --bulk mode
   if (args.bulk !== null) {
     try {
@@ -451,14 +609,16 @@ async function main(): Promise<void> {
   if (!args.name) {
     console.error(
       'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]\n' +
-      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]'
+      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]\n' +
+      '       npx tsx scripts/seedPolitician.ts --indiana <filter|all> [--dry-run]'
     );
     process.exit(1);
   }
   if (!args.state) {
     console.error(
       'Usage: npx tsx scripts/seedPolitician.ts --name <name> --state <state> [--office H|S|P] [--dry-run] [--discover]\n' +
-      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]'
+      '       npx tsx scripts/seedPolitician.ts --bulk <filepath> [--dry-run] [--discover]\n' +
+      '       npx tsx scripts/seedPolitician.ts --indiana <filter|all> [--dry-run]'
     );
     process.exit(1);
   }
