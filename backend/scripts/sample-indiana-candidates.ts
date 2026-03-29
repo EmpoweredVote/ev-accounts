@@ -8,8 +8,10 @@
  * of the Phase 98 import pipeline before committing to the full build.
  *
  * ANTIPARTISAN NOTE: The Indiana SoS Excel file includes a "Political Party"
- * column. This script explicitly skips that column per D-04 (antipartisan policy).
- * Party affiliation is never stored in any Empowered Vote table.
+ * column. For primary elections, party is stored on the RACE (races.primary_party)
+ * since primaries are party-scoped events — voters in closed/semi-closed primary
+ * states need to know which primary a race belongs to. Party is NEVER stored on
+ * individual candidates.
  *
  * Run: cd ev-accounts/backend && npx tsx scripts/sample-indiana-candidates.ts
  */
@@ -31,6 +33,7 @@ interface ElectionRecord {
 
 interface RaceRecord {
   position_name: string;        // e.g. "Indiana State Senate District 40"
+  primary_party: string | null; // only for primary elections — NULL for general/retention/special
   seats: number;
 }
 
@@ -67,14 +70,14 @@ interface SampleRecord {
  * Source Excel uses ALL CAPS column names; normalize to match.
  *
  * Columns EXCLUDED:
- *   POLITICAL PARTY → EXCLUDED per antipartisan policy (D-04)
+ *   POLITICAL PARTY → races.primary_party (primary elections only, per closed-primary requirement)
  */
-const COLUMN_MAPPING: Record<string, string | 'EXCLUDED'> = {
+const COLUMN_MAPPING: Record<string, string> = {
   'OFFICE':           'races.position_name',
   'CANDIDATE NAME':   'race_candidates.full_name',
   'DISTRICT':         'races.position_name (suffix — combined with OFFICE)',
   'DATE FILED':       'race_candidates.source metadata (provenance only)',
-  'POLITICAL PARTY':  'EXCLUDED',   // Antipartisan policy (D-04)
+  'POLITICAL PARTY':  'races.primary_party (primary elections only — never on candidates)',
   // NOTE: No LAST NAME or INCUMBENT columns in this SoS file
   // last_name: extracted from CANDIDATE NAME (last word)
   // is_incumbent: not available in this source — defaults to false
@@ -115,6 +118,12 @@ function parseExcelRow(row: Record<string, unknown>, electionName: string, elect
   const office = String(row['OFFICE'] ?? row['Office'] ?? '').trim();
   const district = String(row['DISTRICT'] ?? row['District'] ?? '').trim();
 
+  // POLITICAL PARTY → races.primary_party (only for primary elections)
+  // In closed/semi-closed primary states, voters need to know which party's primary a race belongs to.
+  // Party lives on the RACE, never on the CANDIDATE.
+  const rawParty = String(row['POLITICAL PARTY'] ?? row['Political Party'] ?? '').trim();
+  const primaryParty = electionType === 'primary' && rawParty ? rawParty : null;
+
   // DISTRICT column contains the full district description (e.g. "United States Representative, Eighth District")
   // Use it as the full position name when available; otherwise combine Office + short district number
   let positionName: string;
@@ -141,7 +150,6 @@ function parseExcelRow(row: Record<string, unknown>, electionName: string, elect
   const isIncumbent = false;
 
   // DATE FILED: Source metadata only (provenance, not a direct schema column)
-  // "POLITICAL PARTY" column: EXPLICITLY SKIPPED per antipartisan policy (D-04)
 
   return {
     election: {
@@ -153,6 +161,7 @@ function parseExcelRow(row: Record<string, unknown>, electionName: string, elect
     },
     race: {
       position_name: positionName,
+      primary_party: primaryParty,
       seats: 1,
     },
     candidate: {
@@ -208,8 +217,7 @@ async function main() {
   console.log('Source Column         Schema Target');
   console.log('─────────────────────────────────────────────────────────────────────');
   for (const [source, target] of Object.entries(COLUMN_MAPPING)) {
-    const marker = target === 'EXCLUDED' ? '  *** EXCLUDED ***' : '';
-    console.log(`  ${source.padEnd(22)}→  ${target}${marker}`);
+    console.log(`  ${source.padEnd(22)}→  ${target}`);
   }
   console.log();
   console.log('  Note: No LAST NAME or INCUMBENT columns in the SoS file.');
@@ -368,15 +376,22 @@ async function main() {
     confirmations.push('election_type: all values in enum (primary | general | retention | special)');
   }
 
-  // Confirm no party data in output
-  const hasPartyData = records.some(r => {
-    const str = JSON.stringify(r);
-    return /party|partisan/i.test(str);
+  // Confirm party data is on race (primary_party), never on candidate
+  const hasCandidateParty = records.some(r => {
+    const candidateStr = JSON.stringify(r.candidate);
+    return /party|partisan/i.test(candidateStr);
   });
-  if (hasPartyData) {
-    issues.push('CRITICAL: party data found in output — antipartisan violation!');
+  if (hasCandidateParty) {
+    issues.push('CRITICAL: party data found on CANDIDATE record — must only be on race.primary_party!');
   } else {
-    confirmations.push('party_name: CONFIRMED absent from all output records (antipartisan policy enforced)');
+    confirmations.push('candidate records: CONFIRMED no party fields (antipartisan on candidates enforced)');
+  }
+
+  // For primary elections, confirm primary_party is populated on race
+  const primaryRecords = records.filter(r => r.election.election_type === 'primary');
+  const primaryWithParty = primaryRecords.filter(r => r.race.primary_party);
+  if (primaryRecords.length > 0) {
+    confirmations.push(`primary_party: ${primaryWithParty.length}/${primaryRecords.length} primary race records have party (on race, not candidate)`);
   }
 
   console.log('Confirmations:');
@@ -391,12 +406,11 @@ async function main() {
 
   // ── Excluded columns summary ────────────────────────────────────────────────
   console.log('\n─────────────────────────────────────────────────────────────────────');
-  console.log('## Excluded Columns\n');
-  const excluded = Object.entries(COLUMN_MAPPING).filter(([, v]) => v === 'EXCLUDED');
-  excluded.forEach(([col]) => {
-    console.log(`  ${col}: EXCLUDED — antipartisan policy (D-04)`);
-    console.log('  "Skipping party column per antipartisan policy (D-04)"');
-  });
+  console.log('## Party Handling\n');
+  console.log('  POLITICAL PARTY → races.primary_party (primary elections only)');
+  console.log('  Party lives on the RACE (structural container), never on the CANDIDATE.');
+  console.log('  For general/retention/special elections, primary_party is NULL.');
+  console.log('  Closed/semi-closed primary states require voters to know which primary they can vote in.');
 
   // ── Unmapped columns (for Phase 98 awareness) ───────────────────────────────
   console.log('\n─────────────────────────────────────────────────────────────────────');

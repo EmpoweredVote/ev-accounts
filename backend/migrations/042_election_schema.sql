@@ -14,12 +14,17 @@
 --   race_candidates — a person running in a specific race
 --
 -- ANTIPARTISAN RATIONALE:
--- NO party affiliation fields in any table. Empowered Vote derives political
+-- NO party affiliation on candidates. Empowered Vote derives political
 -- alignment from compass answers, legislative votes, and sourced quotes.
 -- Party labels are partisan signals that undermine voter independence.
--- Even if upstream data sources (SoS filings, county clerk data) include
--- party fields, they are explicitly excluded at ingestion. See PROJECT.md
--- Out of Scope section and REQUIREMENTS.md antipartisan principle.
+--
+-- EXCEPTION — PRIMARY ELECTIONS:
+-- Many states (including Indiana) have closed or semi-closed primaries where
+-- voters can only participate in one party's primary. For primary elections,
+-- the race itself is party-scoped (e.g., "Republican Primary — State Senate
+-- District 40"). The primary_party column on essentials.races captures this
+-- structural reality. It is NULL for general/retention/special elections.
+-- Party lives on the RACE (the structural container), never on the CANDIDATE.
 --
 -- All CREATE TABLE statements use IF NOT EXISTS for idempotency (safe to re-run).
 -- All CREATE INDEX statements use IF NOT EXISTS for idempotency.
@@ -67,6 +72,7 @@ CREATE TABLE IF NOT EXISTS essentials.races (
   office_id     uuid                                       -- nullable: some races may not yet have a corresponding offices record
                 REFERENCES essentials.offices(id),
   position_name text        NOT NULL,                      -- display name, e.g. "City Council District 3"
+  primary_party text,                                      -- only for primary elections (closed/semi-closed states); NULL for general/retention/special
   seats         int         NOT NULL DEFAULT 1,
   description   text,
   created_at    timestamptz NOT NULL DEFAULT now(),
@@ -83,9 +89,9 @@ CREATE TABLE IF NOT EXISTS essentials.races (
 --   legislative data, compass stances all flow through automatically)
 -- - Challengers: politician_id = NULL; carry their own name/photo fields (D-05)
 --
--- NO party_name, party_affiliation, or partisan fields. See antipartisan
--- rationale above. This exclusion is enforced at the schema layer — no column
--- exists to store it, preventing any accidental leakage from upstream sources.
+-- NO party fields on candidates. Party context for primaries lives on the
+-- RACE (races.primary_party), not on individual candidates. See antipartisan
+-- rationale above. This exclusion is enforced at the schema layer.
 -- =============================================================================
 
 CREATE TABLE IF NOT EXISTS essentials.race_candidates (
@@ -126,6 +132,11 @@ CREATE INDEX IF NOT EXISTS idx_races_election_id
 
 CREATE INDEX IF NOT EXISTS idx_races_office_id
   ON essentials.races(office_id);
+
+-- Partial index: only index rows where primary_party is set (primary elections)
+CREATE INDEX IF NOT EXISTS idx_races_primary_party
+  ON essentials.races(primary_party)
+  WHERE primary_party IS NOT NULL;
 
 CREATE INDEX IF NOT EXISTS idx_race_candidates_race_id
   ON essentials.race_candidates(race_id);
