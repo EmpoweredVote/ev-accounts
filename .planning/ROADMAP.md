@@ -356,9 +356,13 @@ Plans:
   1. Three new tables exist in the essentials schema — elections, races, and race_candidates — with verified FK constraints, indexes, and a candidates/officials separation that prevents geofence searches from returning candidate records
   2. The data source decision is documented: CivicEngine API access status confirmed (or fallback to Google Civic API + manual staging) with known coverage gaps for Monroe County IN local races explicitly noted
   3. The is_appointed audit query has run and findings are documented — officials with defaulted false values are identified and a backfill plan exists before the filter UI ships
-  4. A faces_retention_vote boolean column exists on essentials.politicians and Indiana appellate judges are correctly flagged, enabling dual-filter behavior in Phase 100
+  4. A faces_retention_vote boolean column exists on essentials.offices and Indiana appellate judges are correctly flagged, enabling dual-filter behavior in Phase 100
   5. No party affiliation fields exist in any new table — antipartisan exclusion is enforced at the schema layer with rationale comments in migration files
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 97-01-PLAN.md — Election schema migration (042, 043): three tables + faces_retention_vote + Indiana retention flagging
+- [ ] 97-02-PLAN.md — is_appointed data quality audit with findings report and backfill plan
+- [ ] 97-03-PLAN.md — Data source validation: sample Indiana SoS records + coverage gap documentation
 
 ### Phase 98: Election Data Import
 **Goal**: Candidate records for upcoming races in Bloomington/Monroe County IN and LA County CA are populated in the database via the confirmed import pipeline, with freshness fields and test addresses verified before any frontend work begins
@@ -422,7 +426,7 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 94. LA Data Import | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 95. Entity Switcher | v2026.3.7 | 2/2 | Complete | 2026-03-23 |
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
-| 97. Schema Foundation & Data Audit | v2026.3.8 | 0/TBD | Not started | - |
+| 97. Schema Foundation & Data Audit | v2026.3.8 | 0/3 | Not started | - |
 | 98. Election Data Import | v2026.3.8 | 0/TBD | Not started | - |
 | 99. Election Central Page | v2026.3.8 | 0/TBD | Not started | - |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
