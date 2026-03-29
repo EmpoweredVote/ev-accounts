@@ -621,12 +621,35 @@ export async function getSummary(
     };
   });
 
-  // Query last_sync_at for FEC freshness header
+  // Derive primary data_source from actual contributions (most common source for this politician/cycle)
+  const dataSourceResult = await pool.query<{ data_source: string }>(
+    `SELECT c.data_source
+     FROM transparent_motivations.contributions c
+     JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+     WHERE ps.essentials_politician_id = $1
+       AND c.election_cycle = $2
+       AND ps.research_status = 'confirmed'
+     GROUP BY c.data_source
+     ORDER BY COUNT(*) DESC
+     LIMIT 1`,
+    [politicianId, effectiveCycle]
+  );
+  const primaryDataSource = dataSourceResult.rows[0]?.data_source ?? 'fec';
+
+  // Query last_sync_at for freshness header — use the actual data source
+  const sourceSystemMap: Record<string, string> = {
+    fec: 'fec',
+    indiana: 'indiana_zip_etag_2026',
+    cal_access: 'cal_access',
+    la_city: 'la_city',
+  };
+  const metaSourceSystem = sourceSystemMap[primaryDataSource] ?? primaryDataSource;
   const metaResult = await pool.query<MetaRow>(
     `SELECT last_sync_at
      FROM transparent_motivations.data_source_metadata
-     WHERE source_system = 'fec'
-     LIMIT 1`
+     WHERE source_system = $1
+     LIMIT 1`,
+    [metaSourceSystem]
   );
   const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
 
@@ -636,7 +659,7 @@ export async function getSummary(
     total_raised: Number(tRow?.total_raised ?? 0),
     contribution_count: Number(tRow?.contribution_count ?? 0),
     confidence_level: overallConfidence,
-    data_source: 'fec',
+    data_source: primaryDataSource,
     last_sync_at: lastSyncAt,
     available_cycles: availableCycles,
     individual_total: Number(tRow?.individual_total ?? 0),
