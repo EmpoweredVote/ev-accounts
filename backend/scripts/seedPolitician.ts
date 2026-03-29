@@ -636,7 +636,7 @@ async function runIndianaConfirmMode(filter: string, dryRun: boolean): Promise<v
       if (newTitle && newTitle !== row.office_title) {
         await pool.query(
           `UPDATE essentials.offices
-           SET title = $1, updated_at = NOW()
+           SET title = $1
            WHERE politician_id = $2 AND title = 'Indiana Elected Official'`,
           [newTitle, row.politician_id]
         );

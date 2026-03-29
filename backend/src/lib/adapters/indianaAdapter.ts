@@ -328,17 +328,27 @@ function colGet(record: string[], colIdx: Record<string, number>, name: string):
  * Returns null on parse failure.
  */
 function parseIndianaDate(dateStr: string): Date | null {
-  // Expected format: MM/DD/YYYY
-  const parts = dateStr.split('/');
-  if (parts.length !== 3) return null;
-  const month = parseInt(parts[0], 10);
-  const day = parseInt(parts[1], 10);
-  const year = parseInt(parts[2], 10);
-  if (isNaN(month) || isNaN(day) || isNaN(year)) return null;
-  // Construct as UTC to avoid local timezone shifts
-  const d = new Date(Date.UTC(year, month - 1, day));
-  if (isNaN(d.getTime())) return null;
-  return d;
+  // Format 1: MM/DD/YYYY (older data)
+  const slashParts = dateStr.split('/');
+  if (slashParts.length === 3) {
+    const month = parseInt(slashParts[0], 10);
+    const day = parseInt(slashParts[1], 10);
+    const year = parseInt(slashParts[2], 10);
+    if (!isNaN(month) && !isNaN(day) && !isNaN(year)) {
+      const d = new Date(Date.UTC(year, month - 1, day));
+      if (!isNaN(d.getTime())) return d;
+    }
+  }
+  // Format 2: YYYY-MM-DD HH:MM:SS (2025+ data)
+  const isoMatch = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (isoMatch) {
+    const year = parseInt(isoMatch[1], 10);
+    const month = parseInt(isoMatch[2], 10);
+    const day = parseInt(isoMatch[3], 10);
+    const d = new Date(Date.UTC(year, month - 1, day));
+    if (!isNaN(d.getTime())) return d;
+  }
+  return null;
 }
 
 // ---------------------------------------------------------------------------
@@ -479,6 +489,14 @@ async function upsertBatch(
 ): Promise<{ batchInserted: number; batchSkipped: number }> {
   if (batch.length === 0) return { batchInserted: 0, batchSkipped: 0 };
 
+  // Deduplicate within batch — Indiana CSV can have repeated rows with same source_transaction_id
+  const seen = new Set<string>();
+  batch = batch.filter((c) => {
+    if (seen.has(c.source_transaction_id)) return false;
+    seen.add(c.source_transaction_id);
+    return true;
+  });
+
   const params: unknown[] = [];
   const valuePlaceholders: string[] = [];
   const COLS_PER_ROW = 8;
@@ -554,13 +572,13 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
     const batch = rows.slice(i, i + batchSize);
     const params: unknown[] = [];
     const valuePlaceholders: string[] = [];
-    const COLS_PER_ROW = 6;
+    const COLS_PER_ROW = 5;
 
     for (let idx = 0; idx < batch.length; idx++) {
       const row = batch[idx];
       const base = idx * COLS_PER_ROW + 1;
       valuePlaceholders.push(
-        `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}::jsonb)`
+        `($${base}, $${base + 1}, $${base + 2}::jsonb, $${base + 3}, $${base + 4})`
       );
 
       const rawObj = {
@@ -589,16 +607,14 @@ export async function writeUnresolved(rows: ParsedRow[], runId: number): Promise
         runId,
         JSON.stringify(rawObj),
         row.rowNumber,
-        row.fileNumber,
-        JSON.stringify(rawObj)
+        row.fileNumber
       );
     }
 
     const sql = `
       INSERT INTO transparent_motivations.unresolved_contributions
-        (adapter_name, ingestion_run_id, raw_row, row_number, external_id, fingerprint)
+        (adapter_name, ingestion_run_id, raw_row, row_number, external_id)
       VALUES ${valuePlaceholders.join(', ')}
-      ON CONFLICT (adapter_name, external_id, fingerprint) DO NOTHING
       RETURNING id
     `;
 
