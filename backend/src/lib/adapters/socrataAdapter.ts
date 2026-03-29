@@ -53,7 +53,7 @@ async function fetchAllPages(
 ): Promise<Record<string, unknown>[]> {
   let where = `cmt_id='${cmtId}'`;
   if (since !== null) {
-    const sinceStr = since.toISOString().replace('Z', '').slice(0, 23) + '.000';
+    const sinceStr = since.toISOString().replace('Z', '').slice(0, 19) + '.000';
     where += ` AND con_date>'${sinceStr}'`;
   }
 
@@ -288,6 +288,17 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
   if (contributions.length === 0) {
     return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
   }
+
+  // Deduplicate by source_transaction_id. Socrata data can have duplicate rows
+  // that produce the same composite key. PostgreSQL throws "ON CONFLICT DO UPDATE
+  // command cannot affect row a second time" when two rows in the same batch share
+  // a conflict key — dedup before batching to prevent this.
+  const seen = new Map<string, ContributionInsert>();
+  for (const c of contributions) {
+    seen.set(c.source_transaction_id, c);
+  }
+  const deduped = Array.from(seen.values());
+  contributions = deduped;
 
   let totalInserted = 0;
   let totalSkipped = 0;

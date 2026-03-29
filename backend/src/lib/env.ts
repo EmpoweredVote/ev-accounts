@@ -27,8 +27,7 @@ const envSchema = z.object({
   // FEC_API_KEY: register free at api.data.gov/signup/ for 1000 req/hr limit.
   FEC_API_KEY: z.string().optional(),
   // ADMIN_INGEST_TOKEN: pre-shared token for POST /admin/ingest/:adapter.
-  // If absent, admin ingest endpoint returns 401 on all requests.
-  ADMIN_INGEST_TOKEN: z.string().optional(),
+  ADMIN_INGEST_TOKEN: z.string(),
   // SQS_INGEST_QUEUE_URL: optional SQS queue URL for EventBridge-triggered ingestion.
   SQS_INGEST_QUEUE_URL: z.string().optional(),
   // SOCRATA_APP_TOKEN: optional app token for LA Socrata API requests.
