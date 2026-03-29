@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2026.3.8
 milestone_name: Essentials Election Central
 status: executing
-stopped_at: Completed 98-01-PLAN.md
-last_updated: "2026-03-29T22:34:27.503Z"
+stopped_at: Completed 98-02-PLAN.md
+last_updated: "2026-03-29T22:41:17Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 10
@@ -26,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 ## Current Position
 
 Phase: 98
-Plan: Not started
-Status: Ready to execute
+Plan: 02 (complete)
+Status: Executing
 Last activity: 2026-03-29
 
 Progress: [░░░░░░░░░░] 0%
@@ -53,6 +53,8 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 97-schema-foundation-data-audit]: Indiana SoS Excel actual columns differ from research: OFFICE, CANDIDATE NAME, POLITICAL PARTY, DISTRICT, DATE FILED (no Last Name or Incumbent) — is_incumbent must be determined by politician_id matching at Phase 98 import time
 - [Phase 98-election-data-import]: Indiana district filter requires both DISTRICT and OFFICE column check to exclude convention delegate races from other counties
 - [Phase 98-election-data-import]: State Senate District 40 absent from 2026 primary (staggered 4-year terms) — correct behavior, not a data gap
+- [Phase 98-02]: Two-part election query: Part A geofence-matched races (office_id linked), Part B statewide fallback (office_id IS NULL, matched by state code from geofence) — all current imported races use Part B since office_id not yet linked
+- [Phase 98-02]: upsertRace requires explicit SELECT-then-INSERT/UPDATE branch for NULL primary_party (PostgreSQL ON CONFLICT can't handle partial index NULLs-distinct behavior)
 
 ### Pending Todos
 
@@ -66,6 +68,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-03-29T22:34:27.501Z
-Stopped at: Completed 98-01-PLAN.md
+Last session: 2026-03-29T22:41:17Z
+Stopped at: Completed 98-02-PLAN.md
 Resume file: None
