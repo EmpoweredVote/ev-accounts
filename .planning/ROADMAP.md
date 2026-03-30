@@ -404,8 +404,11 @@ Plans:
   2. Selecting Elected shows only officials where is_appointed is false or faces_retention_vote is true — no appointed officials appear in the Elected view
   3. Selecting Appointed shows only officials where is_appointed is true — no elected officials appear in the Appointed view
   4. Indiana appellate judges with faces_retention_vote=true appear in both the Elected and Appointed filter views simultaneously
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
+Plans:
+- [ ] 100-01-PLAN.md — Backend: surface is_appointed and faces_retention_vote in PoliticianFlatRecord API response
+- [ ] 100-02-PLAN.md — Frontend: SegmentedControl component, filter state, useMemo chain, sessionStorage persistence
 
 ### Phase 101: Candidate Profiles
 **Goal**: Candidates on the Election Central page link to full Essentials-style profile pages, with compass comparison cards and Read & Rank verdict badges where data exists — incumbents reuse existing politician records, challengers render without triggering empty legislative API calls
@@ -435,5 +438,5 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
-| 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
+| 100. Elected/Appointed Filter | v2026.3.8 | 0/2 | Not started | - |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
