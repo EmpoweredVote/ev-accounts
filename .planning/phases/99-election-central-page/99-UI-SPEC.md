@@ -22,11 +22,22 @@ created: 2026-03-29
 | Preset | not applicable |
 | Component library | ev-ui (@chrisandrewsedu/ev-ui) — PoliticianCard, CategorySection, useMediaQuery |
 | Icon library | none (text labels only — no icon dependency added this phase) |
-| Font | Manrope, weights 400 / 600 / 700 — loaded via Google Fonts in index.css |
+| Font | Manrope, weights 400 / 600 — loaded via Google Fonts in index.css |
 
-Source: `essentials/src/index.css` (confirmed `@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700')`)
+Source: `essentials/src/index.css` (confirmed `@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700')`) — weight 700 is available in the import but not declared in the design contract. Only weights 400 and 600 are used.
 
 No shadcn in this project. Tab toggle, election headers, and candidate cards are all built with Tailwind utilities plus existing ev-ui components. No new design system installation required.
+
+---
+
+## Visual Hierarchy
+
+The Elections view has two levels of visual anchor:
+
+- **Primary focal point:** The candidate card grid. Cards are the densest information unit and the primary interactive element — the eye leads here first within any election section.
+- **Secondary anchors:** Election section headers (election name + date + countdown). These establish context and separating rhythm between multiple elections. They are visually subordinate to the card grid but serve as the structural skeleton of the page.
+
+Source: CONTEXT.md D-05, D-07, D-08; layout intent of CategorySection + PoliticianCard pattern.
 
 ---
 
@@ -146,7 +157,7 @@ The tab toggle sits at the top of the Results page, below the address search inp
 
 Each election rendered in the Elections view gets its own header block before its tier sections.
 
-**Layout:** Full-width block, background `#FFFFFF`, border-bottom `1px solid #E2EBEF`, padding `16px 24px` on desktop, `12px 16px` on mobile.
+**Layout:** Full-width block, background `#FFFFFF`, border-bottom `1px solid #E2EBEF`, padding `16px 24px` on desktop, `8px 16px` on mobile.
 
 **Text content:** `{election_name} · {formatted_date}[ · {N} days away]`
 
