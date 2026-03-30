@@ -351,10 +351,8 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
         school_district: j.school_district_geo_id,
       });
       const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
-      const formattedAddress = [j.jurisdiction_city, j.jurisdiction_state]
-        .filter(Boolean).join(', ');
       res.setHeader('X-Data-Status', dataStatus);
-      res.setHeader('X-Formatted-Address', formattedAddress || homeAddress);
+      res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
       res.status(200).json(politicians);
       return;
     }
