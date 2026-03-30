@@ -371,7 +371,7 @@ const FEC_LOCK_KEY = 'campaign-finance:fec-ingest';
  * Non-fatal: errors are logged but never re-thrown.
  * Always releases lock in finally block.
  *
- * Called by campaignFinanceCron.ts every 15 minutes.
+ * Called by campaignFinanceCron.ts every 6 hours.
  */
 export async function runFecScheduledJob(): Promise<void> {
   let lockAcquired = false;

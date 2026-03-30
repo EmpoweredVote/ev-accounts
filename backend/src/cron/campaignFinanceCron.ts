@@ -1,7 +1,7 @@
 /**
- * campaignFinanceCron — node-cron registration for the FEC 15-minute ingestion job.
+ * campaignFinanceCron — node-cron registration for the FEC 6-hour ingestion job.
  *
- * Registers a job that fires every 15 minutes (every-15-min cron) UTC and calls
+ * Registers a job that fires every 6 hours (`0 *\/6 * * *` cron) UTC and calls
  * runFecScheduledJob() from campaignFinanceScheduler.
  *
  * Redis distributed lock inside runFecScheduledJob() prevents concurrent
@@ -20,7 +20,7 @@ import { runFecScheduledJob } from '../lib/campaignFinanceScheduler.js';
 
 /**
  * startCampaignFinanceCron registers the FEC ingestion cron job.
- * Fires every 15 minutes UTC. Non-fatal — errors inside runFecScheduledJob
+ * Fires every 6 hours UTC. Non-fatal — errors inside runFecScheduledJob
  * are caught and logged there; this wrapper catches any unhandled rejection.
  */
 export function startCampaignFinanceCron(): void {
