@@ -80,6 +80,8 @@ export interface PoliticianFlatRecord {
   government_body_name: string;
   government_body_url: string;
   is_elected: boolean;
+  is_appointed: boolean;
+  faces_retention_vote: boolean;
   election_frequency: string;
   committees: Array<{ name: string; position: string; urls: string[] }>;
   bio_text: string | null;
@@ -386,6 +388,7 @@ export async function getPoliticiansFlatList(
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
+           p.is_appointed, o.faces_retention_vote,
            COALESCE(NULLIF(o.description, ''), pd_specific.description, pd_generic.description, '') AS office_description,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
@@ -447,6 +450,8 @@ export async function getPoliticiansFlatList(
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
+    is_appointed: row.is_appointed ?? false,
+    faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
     committees: [],
     bio_text: row.bio_text ?? null,
@@ -506,6 +511,7 @@ export async function getRepresentativesByAddress(
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
+           p.is_appointed, o.faces_retention_vote,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
@@ -560,6 +566,7 @@ export async function getRepresentativesByAddress(
            COALESCE(p.appointment_date::text, '') AS appointment_date,
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
+           p.is_appointed, o.faces_retention_vote,
            d.district_type, d.label AS district_label, d.district_id, d.geo_id,
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
@@ -625,6 +632,8 @@ export async function getRepresentativesByAddress(
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
     is_elected: !row.is_appointed_position,
+    is_appointed: row.is_appointed ?? false,
+    faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
     committees: [],
     bio_text: row.bio_text ?? null,
@@ -1349,6 +1358,7 @@ export async function getRepresentativesByJurisdiction(
     COALESCE(p.appointment_date::text, '') AS appointment_date,
     o.title AS office_title, o.representing_state, o.representing_city,
     o.is_appointed_position, o.is_vacant, o.vacant_since,
+    p.is_appointed, o.faces_retention_vote,
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
     g.name AS government_name,
@@ -1446,6 +1456,8 @@ export async function getRepresentativesByJurisdiction(
     government_body_name: (row.government_body_name as string) ?? '',
     government_body_url: (row.government_body_url as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
+    is_appointed: (row.is_appointed as boolean) ?? false,
+    faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
     election_frequency: (row.election_frequency as string) ?? '',
     committees: [],
     bio_text: (row.bio_text as string | null) ?? null,
