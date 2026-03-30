@@ -56,6 +56,50 @@ interface ElectionRow {
 }
 
 /**
+ * Infer district_type from position_name when office_id is not linked.
+ * Falls back to jurisdiction_level-based mapping.
+ */
+function inferDistrictType(positionName: string, jurisdictionLevel: string): string | null {
+  const p = positionName.toLowerCase();
+
+  // Federal
+  if (p.includes('united states representative') || p.includes('u.s. representative') || p.includes('u.s. house'))
+    return 'NATIONAL_LOWER';
+  if (p.includes('united states senator') || p.includes('u.s. senator') || p.includes('u.s. senate'))
+    return 'NATIONAL_UPPER';
+  if (p.includes('president'))
+    return 'NATIONAL_EXEC';
+
+  // State
+  if (p.includes('state representative') || p.includes('state house') || p.includes('state assembly'))
+    return 'STATE_LOWER';
+  if (p.includes('state senator') || p.includes('state senate'))
+    return 'STATE_UPPER';
+  if (p.includes('governor') || p.includes('lieutenant governor'))
+    return 'STATE_EXEC';
+
+  // Local
+  if (p.includes('mayor'))
+    return 'LOCAL_EXEC';
+  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor'))
+    return 'LOCAL';
+  if (p.includes('county'))
+    return 'COUNTY';
+  if (p.includes('school') || p.includes('education'))
+    return 'SCHOOL';
+  if (p.includes('judge') || p.includes('justice'))
+    return 'JUDICIAL';
+
+  // Fallback: jurisdiction_level
+  const levelMap: Record<string, string> = {
+    federal: 'NATIONAL_EXEC',
+    state: 'STATE_EXEC',
+    local: 'LOCAL_EXEC',
+  };
+  return levelMap[jurisdictionLevel] ?? null;
+}
+
+/**
  * Returns upcoming elections with races and candidates for a geographic coordinate.
  *
  * Uses two complementary queries:
@@ -87,7 +131,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       rc.full_name,
       rc.first_name,
       rc.last_name,
-      rc.photo_url,
+      COALESCE(rc.photo_url, pi.url) AS photo_url,
       rc.is_incumbent,
       rc.candidate_status,
       rc.politician_id,
@@ -95,6 +139,11 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     FROM essentials.elections e
     JOIN essentials.races r ON r.election_id = e.id
     JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = rc.politician_id AND type = 'default'
+      LIMIT 1
+    ) pi ON rc.politician_id IS NOT NULL
     JOIN essentials.offices o ON o.id = r.office_id
     JOIN essentials.districts d ON d.id = o.district_id
     JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
@@ -148,7 +197,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         rc.full_name,
         rc.first_name,
         rc.last_name,
-        rc.photo_url,
+        COALESCE(rc.photo_url, pi.url) AS photo_url,
         rc.is_incumbent,
         rc.candidate_status,
         rc.politician_id,
@@ -156,6 +205,11 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
       JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      LEFT JOIN LATERAL (
+        SELECT url FROM essentials.politician_images
+        WHERE politician_id = rc.politician_id AND type = 'default'
+        LIMIT 1
+      ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
         AND rc.candidate_status != 'withdrawn'
@@ -227,17 +281,12 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     racesMap.get(row.race_id)!.candidates.push(candidate);
   }
 
-  // Post-process: derive synthetic district_type for statewide races (office_id IS NULL)
-  // Maps jurisdiction_level to a district_type compatible with classifyCategory() on the frontend
-  const levelMap: Record<string, string> = {
-    federal: 'NATIONAL_EXEC',
-    state: 'STATE_EXEC',
-    local: 'LOCAL_EXEC',
-  };
+  // Post-process: derive synthetic district_type for races without office_id link.
+  // Infers from position_name first (more accurate), falls back to jurisdiction_level.
   for (const election of electionsMap.values()) {
     for (const race of election.races) {
       if (!race.district_type) {
-        race.district_type = levelMap[election.jurisdiction_level] ?? null;
+        race.district_type = inferDistrictType(race.position_name, election.jurisdiction_level);
       }
     }
   }
