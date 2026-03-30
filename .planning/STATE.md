@@ -6,7 +6,7 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 **Current focus:** v1.8 in progress — Phase 49 complete, Phase 50 next
-**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29)
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30)
 
 ## Current Position
 
@@ -70,6 +70,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Quick Task 010 Complete — BUG-01: CAL Access Quarantine + Cicero District Restore (010)
+
+- **CAL Access quarantine** — 76,332 `source = 'cal_access_discovery'` rows set `is_active = false`; filter on source column only (NOT `data_source IS NULL` — 1,302 legit politicians also have null data_source)
+- **District restoration** — 43 `essentials.districts` rows inserted using orphaned UUIDs already referenced by `offices.district_id`; all mapped to city FIPS geo_ids with confirmed G4110 geofence boundaries
+- **15 cities restored** — Burbank, Downey, El Monte, Glendale, Huntington Beach (new district), Inglewood, Lancaster, Long Beach, Norwalk, Palmdale, Pasadena, Pomona, Santa Clarita, Torrance, West Covina
+- **Quick task 010 commits** — b0eb18b (quarantine), 82146cf (district restore)
 
 ### Quick Task 009 Complete — Weekly District Staleness Cron (009)
 
