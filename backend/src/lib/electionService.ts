@@ -99,6 +99,51 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
   return levelMap[jurisdictionLevel] ?? null;
 }
 
+export interface CandidateDetail {
+  candidate_id: string;
+  full_name: string;
+  first_name: string | null;
+  last_name: string | null;
+  photo_url: string | null;
+  is_incumbent: boolean;
+  politician_id: string | null;
+  position_name: string;
+  election_date: string | null;
+  election_type: string | null;
+}
+
+/**
+ * Fetch a single race candidate by ID, joining race and election context.
+ * Returns null for withdrawn candidates or unknown IDs.
+ */
+export async function getCandidateById(candidateId: string): Promise<CandidateDetail | null> {
+  const queryText = `
+    SELECT
+      rc.id           AS candidate_id,
+      rc.full_name,
+      rc.first_name,
+      rc.last_name,
+      COALESCE(rc.photo_url, pi.url) AS photo_url,
+      rc.is_incumbent,
+      rc.politician_id,
+      r.position_name,
+      e.election_date::text AS election_date,
+      e.election_type
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = rc.politician_id AND type = 'default'
+      LIMIT 1
+    ) pi ON rc.politician_id IS NOT NULL
+    WHERE rc.id = $1
+      AND rc.candidate_status != 'withdrawn'
+  `;
+  const { rows } = await pool.query(queryText, [candidateId]);
+  return (rows[0] as CandidateDetail) ?? null;
+}
+
 /**
  * Returns upcoming elections with races and candidates for a geographic coordinate.
  *
