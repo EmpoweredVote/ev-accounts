@@ -18,12 +18,12 @@ Requirements for Essentials Election Central milestone. Each maps to roadmap pha
 
 ### Election Central Page
 
-- [ ] **ELEC-01**: User can view upcoming election races for their address on a dedicated Election Central page
+- [x] **ELEC-01**: User can view upcoming election races for their address on a dedicated Election Central page
 - [ ] **ELEC-02**: Races grouped by government body (Federal > State > Local) then by specific position (e.g., "City Council District 3")
 - [ ] **ELEC-03**: Each race section shows all candidates with name, photo, and position sought
 - [ ] **ELEC-04**: Incumbent candidates visually distinguished with badge/indicator
 - [ ] **ELEC-05**: Election date and type (Primary/General/Retention) displayed per race with days-until countdown when <60 days
-- [ ] **ELEC-06**: User navigates to Election Central from the same address search as the representatives page
+- [x] **ELEC-06**: User navigates to Election Central from the same address search as the representatives page
 - [ ] **ELEC-07**: Empty state shown clearly when no upcoming election data exists for the searched address
 
 ### Candidate Profiles
@@ -82,12 +82,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-04 | Phase 97 | Pending |
 | DATA-05 | Phase 97 | Complete |
 | DATA-06 | Phase 98 | Complete |
-| ELEC-01 | Phase 99 | Pending |
+| ELEC-01 | Phase 99 | Complete |
 | ELEC-02 | Phase 99 | Pending |
 | ELEC-03 | Phase 99 | Pending |
 | ELEC-04 | Phase 99 | Pending |
 | ELEC-05 | Phase 99 | Pending |
-| ELEC-06 | Phase 99 | Pending |
+| ELEC-06 | Phase 99 | Complete |
 | ELEC-07 | Phase 99 | Pending |
 | FILT-01 | Phase 100 | Pending |
 | FILT-02 | Phase 100 | Pending |

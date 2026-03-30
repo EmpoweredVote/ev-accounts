@@ -392,7 +392,7 @@ Plans:
 **Plans**: 2 plans
 **UI hint**: yes
 Plans:
-- [ ] 99-01-PLAN.md — Backend elections-by-address endpoint + district_type enrichment
+- [x] 99-01-PLAN.md — Backend elections-by-address endpoint + district_type enrichment
 - [ ] 99-02-PLAN.md — Frontend Elections tab with tier grouping, candidate cards, and empty state
 
 ### Phase 100: Elected/Appointed Filter
@@ -434,6 +434,6 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
-| 99. Election Central Page | v2026.3.8 | 0/2 | Not started | - |
+| 99. Election Central Page | v2026.3.8 | 1/2 | In Progress|  |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
