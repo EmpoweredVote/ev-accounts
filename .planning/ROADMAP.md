@@ -383,7 +383,7 @@ Plans:
 **Depends on**: Phase 98
 **Requirements**: ELEC-01, ELEC-02, ELEC-03, ELEC-04, ELEC-05, ELEC-06, ELEC-07
 **Success Criteria** (what must be TRUE):
-  1. A user entering a Bloomington IN or LA County CA address sees an Election Central page with upcoming races grouped first by government body (Federal > State > Local) then by specific position (e.g., "City Council District 3")
+  1. A user entering a Bloomington IN or LA County CA address sees an Election Central tab with upcoming races grouped first by government tier (Local > State > Federal) then by specific position (e.g., "State Representative, District 60")
   2. Each race card shows all candidates with name, photo (initials avatar fallback), and the position sought — no candidate in an active race is hidden
   3. Incumbent candidates have a visible badge or indicator distinguishing them from challengers within the same race card
   4. Each race shows the election date, election type label (Primary / General / Retention), and a days-until countdown when the election is fewer than 60 days away
@@ -434,6 +434,6 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 96. Visual Refresh | v2026.3.7 | 3/3 | Complete | 2026-03-23 |
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
-| 99. Election Central Page | v2026.3.8 | 2/2 | Complete   | 2026-03-30 |
+| 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
 | 100. Elected/Appointed Filter | v2026.3.8 | 0/TBD | Not started | - |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
