@@ -21,7 +21,7 @@ created: 2026-03-30
 | Preset | not applicable |
 | Component library | none (hand-rolled inline styles + Tailwind CSS 4) |
 | Icon library | Inline SVG (no external icon library) |
-| Font | Manrope (Google Fonts — 400, 500, 600, 700) |
+| Font | Manrope (Google Fonts — 400, 600) |
 
 Source: `essentials/src/index.css` — existing project convention confirmed.
 
@@ -56,11 +56,11 @@ Source: `essentials/src/index.css` + `LocalFilterSidebar.jsx` established patter
 | Body | 16px | 400 | 1.5 |
 | Label | 14px | 400 | 1.4 |
 | Label active | 14px | 600 | 1.4 |
-| Section heading | 14px | 500 | 1.4 |
+| Section heading | 14px | 600 | 1.4 |
 
 All text: `font-family: 'Manrope', sans-serif`.
 
-The segmented control uses 14px at weight 500 (inactive) and weight 600 (active) — matching the existing sidebar label convention.
+The segmented control uses 14px at weight 400 (inactive) and weight 600 (active) — matching the existing sidebar label convention.
 
 ---
 
@@ -97,7 +97,7 @@ The segmented control is the primary deliverable of this phase. Specify it preci
 - `border-radius: 9999px`
 - `background-color: #f0f8fa` (ev-bg-light)
 - `border: 1px solid #e2e8f0`
-- `padding: 3px`
+- `padding: 4px`
 - `display: inline-flex`
 - `width: 100%`
 
@@ -105,8 +105,8 @@ The segmented control is the primary deliverable of this phase. Specify it preci
 - `border-radius: 9999px`
 - `background-color: transparent`
 - `color: #4a5568` (gray-600)
-- `font-size: 14px`, `font-weight: 500`
-- `padding: 6px 0`
+- `font-size: 14px`, `font-weight: 400`
+- `padding: 8px 0`
 - `flex: 1`
 - `text-align: center`
 - `cursor: pointer`
