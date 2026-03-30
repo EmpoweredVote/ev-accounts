@@ -52,7 +52,7 @@ completed: 2026-03-30
 - **Duration:** 12 min
 - **Started:** 2026-03-30T15:46:00Z
 - **Completed:** 2026-03-30T15:58:14Z
-- **Tasks:** 1 of 2 complete (Task 2 is checkpoint:human-verify — awaiting user verification)
+- **Tasks:** 2 of 2 complete (Task 2 human-verify — approved)
 - **Files modified:** 3
 
 ## Accomplishments
@@ -67,8 +67,8 @@ completed: 2026-03-30
 ## Task Commits
 
 1. **Task 1: Create SegmentedControl component and wire filter into Results.jsx and LocalFilterSidebar** - `eb2cbc0` (feat)
-
-**Task 2:** Checkpoint — awaiting human verification (browser visual/functional check)
+2. **Task 2: Verify filter behavior in browser** — human-verify checkpoint approved
+3. **Post-UAT fix:** `1e2da95` — resolveIsAppointed fallback + filter-aware empty state
 
 ## Files Created/Modified
 
@@ -85,7 +85,9 @@ completed: 2026-03-30
 
 ## Deviations from Plan
 
-None — plan executed exactly as written.
+1. **resolveIsAppointed logic**: Plan specified `is_appointed !== undefined && !== null` check. During UAT, `is_appointed=false` (default) prevented `!is_elected` fallback. Fixed: only `is_appointed=true` is a real override; otherwise fall back to `!is_elected`.
+2. **Data backfill required**: `is_appointed_position` was `false` for all cabinet/agency/judicial offices. SQL backfill: 24 NATIONAL_EXEC + 572 JUDICIAL offices → `is_appointed_position=true`, 16 Indiana appellate offices → `faces_retention_vote=true`.
+3. **Empty state message**: Tier-level empty state was not filter-aware. Fixed to show "No {filter} officials found at the {tier} level." when type filter active.
 
 ## Issues Encountered
 
@@ -105,10 +107,9 @@ cd ev-accounts/backend && npm run dev
 
 ## Next Phase Readiness
 
-- Task 2 checkpoint verification required before marking plan complete
-- After verification: Phase 100 is fully complete — filter UI ships to production
+- Phase 100 fully complete — filter UI ready for production
 - No blockers identified
 
 ---
 *Phase: 100-elected-appointed-filter*
-*Completed: 2026-03-30 (partial — Task 2 checkpoint pending)*
+*Completed: 2026-03-30*
