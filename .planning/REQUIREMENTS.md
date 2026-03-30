@@ -36,8 +36,8 @@ Requirements for Essentials Election Central milestone. Each maps to roadmap pha
 
 ### Representatives Filter
 
-- [ ] **FILT-01**: User can filter the main representatives page by Elected, Appointed, or All
-- [ ] **FILT-02**: Retention judges (appointed with retention vote) appear under both Elected and Appointed filters
+- [x] **FILT-01**: User can filter the main representatives page by Elected, Appointed, or All
+- [x] **FILT-02**: Retention judges (appointed with retention vote) appear under both Elected and Appointed filters
 - [ ] **FILT-03**: Filter defaults to "All" preserving current behavior
 
 ## Future Requirements
@@ -89,8 +89,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ELEC-05 | Phase 99 | Complete |
 | ELEC-06 | Phase 99 | Complete |
 | ELEC-07 | Phase 99 | Complete |
-| FILT-01 | Phase 100 | Pending |
-| FILT-02 | Phase 100 | Pending |
+| FILT-01 | Phase 100 | Complete |
+| FILT-02 | Phase 100 | Complete |
 | FILT-03 | Phase 100 | Pending |
 | PROF-01 | Phase 101 | Pending |
 | PROF-02 | Phase 101 | Pending |

@@ -407,7 +407,7 @@ Plans:
 **Plans**: 2 plans
 **UI hint**: yes
 Plans:
-- [ ] 100-01-PLAN.md — Backend: surface is_appointed and faces_retention_vote in PoliticianFlatRecord API response
+- [x] 100-01-PLAN.md — Backend: surface is_appointed and faces_retention_vote in PoliticianFlatRecord API response
 - [ ] 100-02-PLAN.md — Frontend: SegmentedControl component, filter state, useMemo chain, sessionStorage persistence
 
 ### Phase 101: Candidate Profiles
@@ -438,5 +438,5 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 97. Schema Foundation & Data Audit | v2026.3.8 | 2/3 | Complete    | 2026-03-29 |
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
-| 100. Elected/Appointed Filter | v2026.3.8 | 0/2 | Not started | - |
+| 100. Elected/Appointed Filter | v2026.3.8 | 1/2 | In Progress|  |
 | 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
