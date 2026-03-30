@@ -6,7 +6,7 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 **Current focus:** v1.8 in progress — Phase 49 complete, Phase 50 next
-**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30)
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30)
 
 ## Current Position
 
@@ -70,6 +70,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Quick Task 011 Complete — BUG-03: City Officials in Representatives (011)
+
+- **Root cause** — After quick-008 populated pre-computed geo_ids, Path 2 (Census Geocoder fallback) stopped running; LOCAL/LOCAL_EXEC districts require live PostGIS polygon intersection (not stored columns) so they disappeared
+- **connect.resolve_user_local_officials RPC** — Migration 046; SECURITY DEFINER, SET search_path=''; decrypts stored lat/lng, returns TABLE(geo_id, district_type) for G4040/G4110/G4120/X% MTFCC codes; returns empty set on no location
+- **getLocalOfficialsByUserId()** — Added to essentialsService.ts; calls RPC then fetches full politician records for returned geo_ids; calls batchFetchImages + batchFetchCommittees
+- **Hybrid Path 1** — essentials.ts runs jurisdiction + local officials in parallel (Promise.all); merges results, deduplicating by politician ID
+- **Verified** — RPC returns 3 rows for test user (ocd council_district:2, ocd council_district:11 as LOCAL, 0644000 as LOCAL_EXEC for Karen Bass)
+- **Quick task 011 commits** — 6cf4e7c (RPC migration), 84d96f5 (service + route wiring)
 
 ### Quick Task 010 Complete — BUG-01: CAL Access Quarantine + Cicero District Restore (010)
 
