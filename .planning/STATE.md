@@ -6,6 +6,7 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 **Current focus:** v1.8 in progress — Phase 49 complete, Phase 50 next
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29)
 
 ## Current Position
 
@@ -69,6 +70,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Quick Task 009 Complete — Weekly District Staleness Cron (009)
+
+- **districts_last_verified_at column** — Added to `connect.connected_profiles` (TIMESTAMPTZ); always stamped per processed row
+- **runDistrictStalenessCheck()** — Queries all users with `encrypted_lat IS NOT NULL`, re-resolves via `resolve_user_jurisdiction` RPC; updates all 10 geo_id/name columns only when changed; timestamp-only update on no change (no column churn)
+- **Cron schedule** — `0 3 * * 0` (Sunday 03:00 UTC); registered alongside calibration-lapse and campaign-finance in index.ts
+- **Quick task 009 commits** — 061a9f4 (migration + service), 3fee345 (cron + wiring)
 
 ### Phase 49 Plan 01 Complete — Jurisdiction Schema Migration (49-01)
 
