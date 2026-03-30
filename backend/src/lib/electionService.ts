@@ -20,6 +20,7 @@ interface ElectionRace {
   position_name: string;
   primary_party: string | null;
   seats: number;
+  district_type: string | null;
   candidates: ElectionCandidate[];
 }
 
@@ -43,6 +44,7 @@ interface ElectionRow {
   position_name: string;
   primary_party: string | null;
   seats: number;
+  district_type: string | null;
   candidate_id: string;
   full_name: string;
   first_name: string | null;
@@ -88,7 +90,8 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       rc.photo_url,
       rc.is_incumbent,
       rc.candidate_status,
-      rc.politician_id
+      rc.politician_id,
+      d.district_type
     FROM essentials.elections e
     JOIN essentials.races r ON r.election_id = e.id
     JOIN essentials.race_candidates rc ON rc.race_id = r.id
@@ -148,7 +151,8 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         rc.photo_url,
         rc.is_incumbent,
         rc.candidate_status,
-        rc.politician_id
+        rc.politician_id,
+        NULL::text AS district_type
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
       JOIN essentials.race_candidates rc ON rc.race_id = r.id
@@ -203,6 +207,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         position_name: row.position_name,
         primary_party: row.primary_party,
         seats: row.seats,
+        district_type: row.district_type,
         candidates: [],
       };
       racesMap.set(row.race_id, race);
@@ -220,6 +225,21 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       politician_id: row.politician_id,
     };
     racesMap.get(row.race_id)!.candidates.push(candidate);
+  }
+
+  // Post-process: derive synthetic district_type for statewide races (office_id IS NULL)
+  // Maps jurisdiction_level to a district_type compatible with classifyCategory() on the frontend
+  const levelMap: Record<string, string> = {
+    federal: 'NATIONAL_EXEC',
+    state: 'STATE_EXEC',
+    local: 'LOCAL_EXEC',
+  };
+  for (const election of electionsMap.values()) {
+    for (const race of election.races) {
+      if (!race.district_type) {
+        race.district_type = levelMap[election.jurisdiction_level] ?? null;
+      }
+    }
   }
 
   // Return elections sorted by election_date ascending
