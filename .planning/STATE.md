@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 
 ## Current Position
 
-Phase: 99 (election-central-page) — EXECUTING
-Plan: 1 of 2
-Status: Executing Phase 99
+Phase: 99 (election-central-page) — ALL PLANS COMPLETE
+Plan: 2 of 2
+Status: Awaiting verification
 Last activity: 2026-03-30 -- Phase 99 execution started
 
 Progress: [░░░░░░░░░░] 0%
@@ -56,6 +56,10 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 98-02]: Two-part election query: Part A geofence-matched races (office_id linked), Part B statewide fallback (office_id IS NULL, matched by state code from geofence) — all current imported races use Part B since office_id not yet linked
 - [Phase 98-02]: upsertRace requires explicit SELECT-then-INSERT/UPDATE branch for NULL primary_party (PostgreSQL ON CONFLICT can't handle partial index NULLs-distinct behavior)
 - [Phase 99]: ADDRESS_NOT_FOUND and PO_BOX_REJECTED return 200 { elections: [] } for elections-by-address — consistent with 'no elections found' rather than a user error
+- [Phase 99]: Primary elections show party ballot labels — antipartisan exception because voters must choose a party ballot
+- [Phase 99]: Local candidate data deferred — Indiana SoS only covers state/federal; Monroe County Clerk data needed for local races
+- [Phase 99]: inferDistrictType parses position_name for accurate district_type when office_id not yet linked
+- [Phase 99]: ev:fromView sessionStorage pattern for tab-aware back navigation between Elections/Representatives
 
 ### Pending Todos
 
