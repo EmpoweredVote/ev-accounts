@@ -10,6 +10,7 @@ import {
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
+import { getElectionsByCoordinate } from '../lib/electionService.js';
 import { pool } from '../lib/db.js';
 import { GeocodingError } from '../lib/geocodingService.js';
 
@@ -23,6 +24,35 @@ import { GeocodingError } from '../lib/geocodingService.js';
  */
 
 const router = Router();
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/elections?lat=X&lng=Y
+// Auth: optional — public data (per D-13)
+// Returns upcoming elections with races and candidates for a coordinate.
+// Withdrawn candidates are excluded. Only future elections returned.
+//
+// Error codes:
+//   422 VALIDATION_ERROR  — missing or non-numeric lat/lng parameters
+//   500 INTERNAL_ERROR    — unexpected server error
+// ---------------------------------------------------------------------------
+
+router.get('/elections', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const lat = parseFloat(req.query.lat as string);
+  const lng = parseFloat(req.query.lng as string);
+
+  if (isNaN(lat) || isNaN(lng)) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'lat and lng query parameters are required (numeric)' });
+    return;
+  }
+
+  try {
+    const elections = await getElectionsByCoordinate(lat, lng);
+    res.json({ elections });
+  } catch (err) {
+    console.error('[elections] error:', (err as Error).message);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/address-search?address=...

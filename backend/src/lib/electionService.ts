@@ -1,0 +1,229 @@
+import { pool } from './db.js';
+
+// ANTIPARTISAN RATIONALE: party excluded from candidate records.
+// Party context for primary elections lives on the RACE (races.primary_party), never on candidates.
+// This enforces Empowered Vote's antipartisan mission at the query layer.
+
+interface ElectionCandidate {
+  candidate_id: string;
+  full_name: string;
+  first_name: string | null;
+  last_name: string | null;
+  photo_url: string | null;
+  is_incumbent: boolean;
+  candidate_status: string;
+  politician_id: string | null;
+}
+
+interface ElectionRace {
+  race_id: string;
+  position_name: string;
+  primary_party: string | null;
+  seats: number;
+  candidates: ElectionCandidate[];
+}
+
+interface ElectionResult {
+  election_id: string;
+  election_name: string;
+  election_date: string;
+  election_type: string;
+  jurisdiction_level: string;
+  races: ElectionRace[];
+}
+
+// Row type returned from SQL queries
+interface ElectionRow {
+  election_id: string;
+  election_name: string;
+  election_date: Date | string;
+  election_type: string;
+  jurisdiction_level: string;
+  race_id: string;
+  position_name: string;
+  primary_party: string | null;
+  seats: number;
+  candidate_id: string;
+  full_name: string;
+  first_name: string | null;
+  last_name: string | null;
+  photo_url: string | null;
+  is_incumbent: boolean;
+  candidate_status: string;
+  politician_id: string | null;
+}
+
+/**
+ * Returns upcoming elections with races and candidates for a geographic coordinate.
+ *
+ * Uses two complementary queries:
+ * - Part A: geofence-matched races (district-specific: US House, State House, etc.)
+ * - Part B: statewide/at-large races (Governor, US Senate, etc.) matched by state code
+ *
+ * CRITICAL: PostGIS convention — ST_MakePoint($1, $2) = (longitude, latitude)
+ * so $1 = lng, $2 = lat
+ *
+ * Withdrawn candidates are excluded from all results.
+ * Only future elections (election_date >= CURRENT_DATE) are returned.
+ */
+export async function getElectionsByCoordinate(lat: number, lng: number): Promise<ElectionResult[]> {
+  // Part A: Geofence-matched district-specific races
+  // Joins through: geofence_boundaries -> districts -> offices -> races -> elections
+  // $1 = lng (longitude), $2 = lat (latitude) per PostGIS convention
+  const geofenceQueryText = `
+    SELECT DISTINCT
+      e.id           AS election_id,
+      e.name         AS election_name,
+      e.election_date,
+      e.election_type,
+      e.jurisdiction_level,
+      r.id           AS race_id,
+      r.position_name,
+      r.primary_party,
+      r.seats,
+      rc.id          AS candidate_id,
+      rc.full_name,
+      rc.first_name,
+      rc.last_name,
+      rc.photo_url,
+      rc.is_incumbent,
+      rc.candidate_status,
+      rc.politician_id
+    FROM essentials.elections e
+    JOIN essentials.races r ON r.election_id = e.id
+    JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    JOIN essentials.offices o ON o.id = r.office_id
+    JOIN essentials.districts d ON d.id = o.district_id
+    JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
+    WHERE gb.geometry IS NOT NULL
+      AND public.ST_Covers(
+        gb.geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+      AND rc.candidate_status != 'withdrawn'
+      AND e.election_date >= CURRENT_DATE
+    ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+  `;
+
+  // Part B: State code lookup — determine state from any geofence-matched district
+  const stateQueryText = `
+    SELECT DISTINCT d.state
+    FROM essentials.geofence_boundaries gb
+    JOIN essentials.districts d ON d.geo_id = gb.geo_id
+    WHERE public.ST_Covers(
+      gb.geometry,
+      public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+    )
+    AND d.state IS NOT NULL
+    LIMIT 1
+  `;
+
+  // Execute Part A and state lookup in parallel
+  const [geofenceResult, stateResult] = await Promise.all([
+    pool.query<ElectionRow>(geofenceQueryText, [lng, lat]),
+    pool.query<{ state: string }>(stateQueryText, [lng, lat]),
+  ]);
+
+  const stateCode = stateResult.rows[0]?.state ?? null;
+
+  // Part B: Statewide/at-large races (office_id IS NULL) for the matched state
+  // These are races for positions like Governor, US Senator that span the whole state
+  let statewideRows: ElectionRow[] = [];
+  if (stateCode) {
+    const statewideQueryText = `
+      SELECT DISTINCT
+        e.id           AS election_id,
+        e.name         AS election_name,
+        e.election_date,
+        e.election_type,
+        e.jurisdiction_level,
+        r.id           AS race_id,
+        r.position_name,
+        r.primary_party,
+        r.seats,
+        rc.id          AS candidate_id,
+        rc.full_name,
+        rc.first_name,
+        rc.last_name,
+        rc.photo_url,
+        rc.is_incumbent,
+        rc.candidate_status,
+        rc.politician_id
+      FROM essentials.elections e
+      JOIN essentials.races r ON r.election_id = e.id
+      JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      WHERE r.office_id IS NULL
+        AND e.state = $1
+        AND rc.candidate_status != 'withdrawn'
+        AND e.election_date >= CURRENT_DATE
+      ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+    `;
+    const statewideResult = await pool.query<ElectionRow>(statewideQueryText, [stateCode]);
+    statewideRows = statewideResult.rows;
+  }
+
+  // Merge Part A + Part B, deduplicate by candidate_id
+  const allRows = [...geofenceResult.rows, ...statewideRows];
+  const seenCandidates = new Set<string>();
+  const dedupedRows = allRows.filter((row) => {
+    if (seenCandidates.has(row.candidate_id)) return false;
+    seenCandidates.add(row.candidate_id);
+    return true;
+  });
+
+  if (dedupedRows.length === 0) {
+    return [];
+  }
+
+  // Group: elections -> races -> candidates
+  const electionsMap = new Map<string, ElectionResult>();
+  const racesMap = new Map<string, ElectionRace>();
+
+  for (const row of dedupedRows) {
+    // Normalize election_date to ISO date string (YYYY-MM-DD)
+    const electionDate =
+      row.election_date instanceof Date
+        ? row.election_date.toISOString().split('T')[0]
+        : String(row.election_date).split('T')[0];
+
+    if (!electionsMap.has(row.election_id)) {
+      electionsMap.set(row.election_id, {
+        election_id: row.election_id,
+        election_name: row.election_name,
+        election_date: electionDate,
+        election_type: row.election_type,
+        jurisdiction_level: row.jurisdiction_level,
+        races: [],
+      });
+    }
+
+    if (!racesMap.has(row.race_id)) {
+      const race: ElectionRace = {
+        race_id: row.race_id,
+        position_name: row.position_name,
+        primary_party: row.primary_party,
+        seats: row.seats,
+        candidates: [],
+      };
+      racesMap.set(row.race_id, race);
+      electionsMap.get(row.election_id)!.races.push(race);
+    }
+
+    const candidate: ElectionCandidate = {
+      candidate_id: row.candidate_id,
+      full_name: row.full_name,
+      first_name: row.first_name,
+      last_name: row.last_name,
+      photo_url: row.photo_url,
+      is_incumbent: row.is_incumbent,
+      candidate_status: row.candidate_status,
+      politician_id: row.politician_id,
+    };
+    racesMap.get(row.race_id)!.candidates.push(candidate);
+  }
+
+  // Return elections sorted by election_date ascending
+  return Array.from(electionsMap.values()).sort((a, b) =>
+    a.election_date.localeCompare(b.election_date)
+  );
+}
