@@ -76,3 +76,40 @@ describe('GET /api/essentials/elections-by-address', () => {
     }
   });
 });
+
+// ---------------------------------------------------------------------------
+// CI-safe tests for GET /api/essentials/race-candidates/:id
+//
+// These tests verify route wiring and validation — no live database required.
+// ---------------------------------------------------------------------------
+
+describe('GET /api/essentials/race-candidates/:id', () => {
+  it('returns 422 for invalid UUID format', async () => {
+    const res = await request(app).get('/api/essentials/race-candidates/not-a-uuid');
+    expect(res.status).toBe(422);
+    expect(res.body).toMatchObject({ code: 'VALIDATION_ERROR' });
+  });
+
+  it('returns 422 for numeric ID (not UUID)', async () => {
+    const res = await request(app).get('/api/essentials/race-candidates/12345');
+    expect(res.status).toBe(422);
+    expect(res.body).toMatchObject({ code: 'VALIDATION_ERROR' });
+  });
+
+  it('returns 404 or 500 for valid UUID that does not exist (no live DB)', async () => {
+    const res = await request(app).get(
+      '/api/essentials/race-candidates/00000000-0000-0000-0000-000000000000'
+    );
+    // With no DB: 500 on connection error; with DB: 404 for non-existent
+    expect([404, 500]).toContain(res.status);
+  });
+
+  it('route is wired — does not return 404 from Express itself', async () => {
+    // Any valid-format UUID should NOT get Express's default 404 HTML response
+    const res = await request(app).get(
+      '/api/essentials/race-candidates/11111111-1111-1111-1111-111111111111'
+    );
+    // Should be 404 (our JSON) or 500 (DB), never Express's default HTML 404
+    expect(res.headers['content-type']).toMatch(/json/);
+  });
+});
