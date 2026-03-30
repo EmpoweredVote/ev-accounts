@@ -420,8 +420,11 @@ Plans:
   3. A candidate profile for a challenger (no matched politician record) renders without triggering legislative API calls and without empty loading states for data that does not exist
   4. Compass stances are imported for at least the major-race candidates in both coverage areas (Monroe County IN + LA County CA) and appear on their profiles
   5. Read & Rank verdict badges appear on candidate profiles where sourced quotes have been imported via the existing quote pipeline
-**Plans**: TBD
+**Plans**: 2 plans
 **UI hint**: yes
+Plans:
+- [ ] 101-01-PLAN.md — Backend: getCandidateById endpoint + integration tests
+- [ ] 101-02-PLAN.md — Frontend: unified CandidateProfile with incumbent/challenger branching, CompassCard wiring, routing fix
 
 ## Progress
 
@@ -439,4 +442,4 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
 | 100. Elected/Appointed Filter | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
-| 101. Candidate Profiles | v2026.3.8 | 0/TBD | Not started | - |
+| 101. Candidate Profiles | v2026.3.8 | 0/2 | Not started | - |
