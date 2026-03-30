@@ -28,7 +28,7 @@ Requirements for Essentials Election Central milestone. Each maps to roadmap pha
 
 ### Candidate Profiles
 
-- [ ] **PROF-01**: User can view a full profile page for any candidate (same treatment as current officials)
+- [x] **PROF-01**: User can view a full profile page for any candidate (same treatment as current officials)
 - [ ] **PROF-02**: Candidate profiles include compass comparison card with user's calibrated data
 - [ ] **PROF-03**: Candidate profiles include Read & Rank verdict badges from sourced quotes
 - [ ] **PROF-04**: Compass stances researched and imported for candidates in coverage areas
@@ -92,7 +92,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FILT-01 | Phase 100 | Complete |
 | FILT-02 | Phase 100 | Complete |
 | FILT-03 | Phase 100 | Pending |
-| PROF-01 | Phase 101 | Pending |
+| PROF-01 | Phase 101 | Complete |
 | PROF-02 | Phase 101 | Pending |
 | PROF-03 | Phase 101 | Pending |
 | PROF-04 | Phase 101 | Pending |

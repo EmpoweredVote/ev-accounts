@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.3.8
 milestone_name: Essentials Election Central
 status: executing
-stopped_at: Phase 101 context gathered
-last_updated: "2026-03-30T18:18:39.741Z"
+stopped_at: Completed 101-01-PLAN.md
+last_updated: "2026-03-30T20:39:06.395Z"
 last_activity: 2026-03-30
 progress:
   total_phases: 10
   completed_phases: 9
-  total_plans: 20
-  completed_plans: 20
+  total_plans: 22
+  completed_plans: 21
   percent: 50
 ---
 
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 100 — elected-appointed-filter
+**Current focus:** Phase 101 — candidate-profiles
 
 ## Current Position
 
 Phase: 101
-Plan: Not started
-Status: Wave 1 complete, executing Wave 2
+Plan: 01 complete, 02 remaining
+Status: Wave 2 in progress — 101-01 complete
 Last activity: 2026-03-30
 
-Progress: [█████░░░░░] 50%
+Progress: [██████████] 95%
 
 ## Performance Metrics
 
@@ -62,6 +62,8 @@ Progress: [█████░░░░░] 50%
 - [Phase 99]: ev:fromView sessionStorage pattern for tab-aware back navigation between Elections/Representatives
 - [Phase 100-01]: essentialsBrowseService.ts also implements PoliticianFlatRecord — auto-fixed to include is_appointed and faces_retention_vote alongside essentialsService.ts
 - [Phase 100]: resolveIsAppointed checks politician.is_appointed first (individual override), falls back to !is_elected — handles retention judge dual-appearance in both Elected and Appointed filter views
+- [Phase 101]: UUID_RE moved to top of essentials.ts (after router declaration) so all route handlers can reference it without forward-reference issue
+- [Phase 101]: CandidateDetail includes election_date and election_type for frontend context display without a second fetch
 
 ### Pending Todos
 
@@ -75,6 +77,6 @@ Progress: [█████░░░░░] 50%
 
 ## Session Continuity
 
-Last session: 2026-03-30T18:18:39.738Z
-Stopped at: Phase 101 context gathered
-Resume file: .planning/phases/101-candidate-profiles/101-CONTEXT.md
+Last session: 2026-03-30T20:39:06.392Z
+Stopped at: Completed 101-01-PLAN.md
+Resume file: None
