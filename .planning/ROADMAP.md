@@ -273,7 +273,7 @@ Full details: `.planning/milestones/v2026.3.7-ROADMAP.md`
 - [x] **Phase 98: Election Data Import** - Candidate records populated for upcoming races in Bloomington/Monroe County IN and LA County CA (completed 2026-03-29)
 - [x] **Phase 99: Election Central Page** - Fully functional Election Central page accessible from the same address search (completed 2026-03-30)
 - [x] **Phase 100: Elected/Appointed Filter** - Representatives page filter toggle ships with verified data (completed 2026-03-30)
-- [ ] **Phase 101: Candidate Profiles** - Candidates link to full Essentials-style profile pages with compass and verdict data
+- [x] **Phase 101: Candidate Profiles** - Candidates link to full Essentials-style profile pages with compass and verdict data (completed 2026-03-31)
 
 ## Phase Details
 
@@ -424,7 +424,7 @@ Plans:
 **UI hint**: yes
 Plans:
 - [x] 101-01-PLAN.md — Backend: getCandidateById endpoint + integration tests
-- [ ] 101-02-PLAN.md — Frontend: unified CandidateProfile with incumbent/challenger branching, CompassCard wiring, routing fix
+- [x] 101-02-PLAN.md — Frontend: unified CandidateProfile with incumbent/challenger branching, CompassCard wiring, routing fix
 
 ## Progress
 
@@ -442,4 +442,4 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
 | 100. Elected/Appointed Filter | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
-| 101. Candidate Profiles | v2026.3.8 | 1/2 | In Progress|  |
+| 101. Candidate Profiles | v2026.3.8 | 2/2 | Complete   | 2026-03-31 |
