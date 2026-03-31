@@ -25,6 +25,7 @@ import 'dotenv/config';
 import * as fs from 'fs';
 import * as path from 'path';
 import { Pool } from 'pg';
+import { parse as parseCsv } from 'csv-parse/sync';
 
 // ─── Env guard ────────────────────────────────────────────────────────────────
 
@@ -475,16 +476,133 @@ async function runMain(): Promise<void> {
   console.log(`\nCompleted in ${(durationMs / 1000).toFixed(1)}s`);
 }
 
+// ─── UUID validation helper ───────────────────────────────────────────────────
+
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+function isValidUuid(str: string): boolean {
+  return UUID_REGEX.test(str);
+}
+
 // ─── Ambiguous re-run mode (Plan 02) ─────────────────────────────────────────
 
-async function runAmbiguous(_filePath: string): Promise<void> {
-  // TODO (Plan 02): Implement ambiguous re-run mode.
-  // This will read operator decisions from the ambiguous CSV and apply them:
-  //   - decision = 'confirm' -> INSERT new confirmed source row for the specified politician_id
-  //   - decision = 'reject'  -> leave old needs_research row as-is (no action needed)
-  // Then trigger runAdapterForAll('cal_access') for newly confirmed sources.
-  console.error('[confirm-cal-access] ERROR: --ambiguous re-run mode is not yet implemented (Plan 02).');
-  process.exit(1);
+async function runAmbiguous(filePath: string): Promise<void> {
+  const startMs = Date.now();
+
+  console.log(`[confirm-cal-access] Ambiguous re-run mode: reading ${filePath}`);
+  const content = fs.readFileSync(filePath, 'utf8');
+
+  interface AmbigCsvRow {
+    filer_id: string;
+    committee_name: string;
+    politician_id: string;
+    politician_name: string;
+    office_title: string;
+    matched_count: string;
+    reason: string;
+    decision: string;
+  }
+
+  const csvRows = parseCsv(content, {
+    columns: true,
+    skip_empty_lines: true,
+    trim: true,
+  }) as AmbigCsvRow[];
+
+  console.log(`[confirm-cal-access] Parsed ${csvRows.length} rows from ambiguous CSV.`);
+
+  const counts = { confirmed: 0, rejected: 0, skipped: 0, errors: 0 };
+
+  for (const row of csvRows) {
+    const filerId    = row.filer_id?.trim();
+    const decision   = row.decision?.trim().toLowerCase();
+    const politicianId = row.politician_id?.trim();
+
+    // Skip blank decisions — operator hasn't reviewed yet
+    if (!decision) {
+      counts.skipped++;
+      continue;
+    }
+
+    if (decision !== 'confirm' && decision !== 'reject') {
+      counts.skipped++;
+      continue;
+    }
+
+    if (decision === 'reject') {
+      // Rejected: do not insert a new row, do not touch old PAC row. Log and skip.
+      console.log(`  [REJECT] filer_id=${filerId} (${row.committee_name?.substring(0, 50)}) — skipped, no DB action`);
+      counts.rejected++;
+      continue;
+    }
+
+    // decision === 'confirm': validate then INSERT
+    if (!politicianId) {
+      console.error(`  [ERROR] decision=confirm but politician_id is blank for filer_id=${filerId} — skipping`);
+      counts.errors++;
+      continue;
+    }
+
+    if (!isValidUuid(politicianId)) {
+      console.error(`  [ERROR] politician_id "${politicianId}" is not a valid UUID for filer_id=${filerId} — skipping`);
+      counts.errors++;
+      continue;
+    }
+
+    // INSERT new confirmed source row (politician_id is authoritative UUID — no name lookup needed)
+    const notes = JSON.stringify({
+      confirmed_by: 'confirm-cal-access.ts --ambiguous',
+      committee_name: row.committee_name ?? '',
+      politician_name: row.politician_name ?? '',
+    });
+
+    try {
+      const result = await pool.query(
+        `INSERT INTO transparent_motivations.politician_sources
+           (essentials_politician_id, source_system, external_id, research_status, notes)
+         VALUES ($1, 'cal_access', $2, 'confirmed', $3)
+         ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
+        [politicianId, filerId, notes]
+      );
+      const inserted = result.rowCount ?? 0;
+      if (inserted > 0) {
+        console.log(`  [CONFIRM] filer_id=${filerId} → politician_id=${politicianId} (${row.politician_name}) — inserted`);
+        counts.confirmed++;
+      } else {
+        console.log(`  [CONFIRM] filer_id=${filerId} → politician_id=${politicianId} — already exists (skipped duplicate)`);
+        counts.skipped++;
+      }
+    } catch (err) {
+      console.error(`  [ERROR] INSERT failed for filer_id=${filerId} politician_id=${politicianId}:`, (err as Error).message);
+      counts.errors++;
+    }
+  }
+
+  // Trigger ingest after all DB updates
+  console.log('\n[confirm-cal-access] Triggering cal_access ingest...');
+  try {
+    const { runAdapterForAll } = await import('../src/lib/campaignFinanceScheduler.js');
+    await runAdapterForAll('cal_access');
+    console.log('[confirm-cal-access] Ingest complete.');
+  } catch (importErr) {
+    console.warn(
+      '[confirm-cal-access] WARNING: Could not import runAdapterForAll from campaignFinanceScheduler.js.',
+      'Phase 8.1 Express port may not yet be complete.',
+      'Ingest must be triggered separately once Phase 8.1 is done.',
+      '\nError:', (importErr as Error).message
+    );
+  }
+
+  const durationMs = Date.now() - startMs;
+
+  console.log('\n=== AMBIGUOUS RE-RUN SUMMARY ===');
+  console.log(`Confirmed:  ${counts.confirmed}`);
+  console.log(`Rejected:   ${counts.rejected}`);
+  console.log(`Skipped:    ${counts.skipped}`);
+  if (counts.errors > 0) {
+    console.log(`Errors:     ${counts.errors}`);
+  }
+  console.log(`\nCompleted in ${(durationMs / 1000).toFixed(1)}s`);
 }
 
 // ─── Entry point ─────────────────────────────────────────────────────────────
