@@ -1,0 +1,489 @@
+/**
+ * confirm-cal-access.ts — match 76k+ Cal-Access needs_research source rows to real CA politicians.
+ *
+ * Usage:
+ *   npx tsx scripts/confirm-cal-access.ts                    # live run: INSERT confirmed rows + trigger ingest
+ *   npx tsx scripts/confirm-cal-access.ts --dry-run           # classify + write CSVs, no DB writes
+ *   npx tsx scripts/confirm-cal-access.ts --ambiguous <path>  # re-run: apply operator decisions from CSV (Plan 02)
+ *
+ * Classification logic:
+ *   AUTO-CONFIRM: exactly 1 CA politician's last name found as whole word in committee name
+ *                 AND at least 1 signal word present (FOR/COMMITTEE/CAMPAIGN/ELECT/OFFICEHOLDER/EXPLORATORY)
+ *   AMBIGUOUS:    multiple politicians match; OR last name matches but no signal word found
+ *   NO-MATCH:     no politician's last name found -> silently skip (not written to CSV)
+ *
+ * DB write strategy:
+ *   - INSERT new confirmed source rows linking Cal-Access filer IDs to real is_active=true CA politicians
+ *   - ON CONFLICT DO NOTHING (safe to re-run)
+ *   - Old PAC-linked needs_research rows are NEVER modified or deleted
+ *
+ * DO NOT trigger ingest via HTTP POST — Cloudflare blocks posts to accounts.empowered.vote.
+ * Use runAdapterForAll('cal_access') direct function call instead.
+ */
+
+import 'dotenv/config';
+import * as fs from 'fs';
+import * as path from 'path';
+import { Pool } from 'pg';
+
+// ─── Env guard ────────────────────────────────────────────────────────────────
+
+if (!process.env.DATABASE_URL) {
+  console.error('ERROR: DATABASE_URL is not set');
+  process.exit(1);
+}
+
+// ─── Arg parsing ─────────────────────────────────────────────────────────────
+
+const isDryRun = process.argv.includes('--dry-run');
+const ambiguousIdx = process.argv.indexOf('--ambiguous');
+const ambiguousFile = ambiguousIdx !== -1 ? process.argv[ambiguousIdx + 1] : null;
+
+if (ambiguousFile && !fs.existsSync(ambiguousFile)) {
+  console.error(`ERROR: --ambiguous file not found: ${ambiguousFile}`);
+  process.exit(1);
+}
+
+// ─── DB Pool ─────────────────────────────────────────────────────────────────
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+});
+
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+interface CaPolitician {
+  id: string;
+  full_name: string;
+  office_title: string | null;
+  normalized_last: string;
+}
+
+interface CalAccessSourceRow {
+  source_id: string;
+  external_id: string;   // Cal-Access filer ID
+  committee_name: string; // full_name from the PAC politician row (is_active=false)
+}
+
+type ClassifiedDecision = 'confirm' | 'ambiguous' | 'no-match';
+
+interface MatchedPolitician {
+  id: string;
+  full_name: string;
+  office_title: string | null;
+}
+
+interface ClassifiedRow {
+  source_id: string;
+  filer_id: string;
+  committee_name: string;
+  decision: ClassifiedDecision;
+  reason: string;
+  matched_count: number;
+  matches: MatchedPolitician[];
+}
+
+// ─── Helpers (copied verbatim from confirm-la-socrata.ts) ─────────────────────
+
+/**
+ * Normalize a string for matching: lowercase, remove accents.
+ */
+function normalize(str: string): string {
+  return str
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase();
+}
+
+/**
+ * Extract last name from a full name string (last space-delimited token).
+ */
+function extractLastName(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/);
+  return parts[parts.length - 1] ?? fullName;
+}
+
+// ─── Signal words ─────────────────────────────────────────────────────────────
+
+const SIGNAL_WORDS = ['FOR', 'COMMITTEE', 'CAMPAIGN', 'ELECT', 'OFFICEHOLDER', 'EXPLORATORY'];
+
+function hasSignalWord(committeeName: string): boolean {
+  const upper = committeeName.toUpperCase();
+  return SIGNAL_WORDS.some(word => upper.includes(word));
+}
+
+// ─── Timestamp helper ────────────────────────────────────────────────────────
+
+function nowTimestamp(): string {
+  return new Date().toISOString().replace(/:/g, '-').replace(/\..+/, '');
+}
+
+// ─── CSV helpers ─────────────────────────────────────────────────────────────
+
+function quoteCsv(val: string | null | undefined): string {
+  const s = val ?? '';
+  return `"${s.replace(/"/g, '""')}"`;
+}
+
+function csvRow(fields: (string | null | undefined)[]): string {
+  return fields.map(quoteCsv).join(',');
+}
+
+const CSV_HEADERS = ['filer_id', 'committee_name', 'politician_id', 'politician_name', 'office_title', 'matched_count', 'reason', 'decision'];
+
+// ─── DB queries ──────────────────────────────────────────────────────────────
+
+/**
+ * Fetch all is_active=true politicians with CA office connections.
+ * Deduplicated by politician ID (takes first office found).
+ */
+async function fetchCaPoliticians(): Promise<Map<string, CaPolitician>> {
+  const result = await pool.query<{ id: string; full_name: string; office_title: string | null }>(`
+    SELECT DISTINCT ON (p.id)
+      p.id,
+      p.full_name,
+      o.title AS office_title
+    FROM essentials.politicians p
+    JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    WHERE p.is_active = true
+      AND (o.representing_state = 'CA' OR d.state = 'CA')
+    ORDER BY p.id, p.full_name
+  `);
+
+  const map = new Map<string, CaPolitician>();
+  for (const row of result.rows) {
+    const lastName = extractLastName(row.full_name ?? '');
+    if (!lastName) {
+      console.warn(`[confirm-cal-access] WARNING: empty lastName for politician ${row.id} ("${row.full_name}") — skipping from matching`);
+      continue;
+    }
+    map.set(row.id, {
+      id: row.id,
+      full_name: row.full_name,
+      office_title: row.office_title,
+      normalized_last: normalize(lastName),
+    });
+  }
+  return map;
+}
+
+/**
+ * Fetch all Cal-Access needs_research source rows.
+ * committee_name comes from the PAC politician row (is_active=false).
+ */
+async function fetchCalAccessSourceRows(): Promise<CalAccessSourceRow[]> {
+  const result = await pool.query<CalAccessSourceRow>(`
+    SELECT
+      ps.id          AS source_id,
+      ps.external_id,
+      p.full_name    AS committee_name
+    FROM transparent_motivations.politician_sources ps
+    JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
+    WHERE ps.source_system = 'cal_access'
+      AND ps.research_status = 'needs_research'
+  `);
+  return result.rows;
+}
+
+/**
+ * INSERT a new confirmed source row linking a real CA politician to a Cal-Access filer ID.
+ * ON CONFLICT DO NOTHING — safe to re-run. Does NOT touch old PAC-linked rows.
+ */
+async function insertConfirmedSource(
+  politicianId: string,
+  filerId: string,
+  committeeName: string
+): Promise<void> {
+  const notes = JSON.stringify({
+    confirmed_by: 'confirm-cal-access.ts',
+    committee_name: committeeName,
+  });
+  await pool.query(
+    `INSERT INTO transparent_motivations.politician_sources
+       (essentials_politician_id, source_system, external_id, research_status, notes)
+     VALUES ($1, 'cal_access', $2, 'confirmed', $3)
+     ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
+    [politicianId, filerId, notes]
+  );
+}
+
+// ─── Classification ───────────────────────────────────────────────────────────
+
+function classifyRow(
+  sourceRow: CalAccessSourceRow,
+  caPoliticians: Map<string, CaPolitician>
+): ClassifiedRow {
+  const committeeName = sourceRow.committee_name ?? '';
+  const normalizedCmt = normalize(committeeName);
+
+  const matches: MatchedPolitician[] = [];
+
+  for (const politician of caPoliticians.values()) {
+    const { normalized_last } = politician;
+    if (!normalized_last) continue;
+
+    // Escape regex special chars in last name before building whole-word regex
+    const escaped = normalized_last.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const lastNameRegex = new RegExp('\\b' + escaped + '\\b', 'i');
+
+    if (lastNameRegex.test(normalizedCmt)) {
+      matches.push({
+        id: politician.id,
+        full_name: politician.full_name,
+        office_title: politician.office_title,
+      });
+    }
+  }
+
+  const matchCount = matches.length;
+
+  if (matchCount === 0) {
+    return {
+      source_id: sourceRow.source_id,
+      filer_id: sourceRow.external_id,
+      committee_name: committeeName,
+      decision: 'no-match',
+      reason: 'no CA politician last name found in committee name',
+      matched_count: 0,
+      matches: [],
+    };
+  }
+
+  const signalPresent = hasSignalWord(committeeName);
+
+  if (matchCount === 1 && signalPresent) {
+    return {
+      source_id: sourceRow.source_id,
+      filer_id: sourceRow.external_id,
+      committee_name: committeeName,
+      decision: 'confirm',
+      reason: `lastName "${extractLastName(matches[0].full_name)}" in committee name, signal word present`,
+      matched_count: 1,
+      matches,
+    };
+  }
+
+  if (matchCount > 1) {
+    return {
+      source_id: sourceRow.source_id,
+      filer_id: sourceRow.external_id,
+      committee_name: committeeName,
+      decision: 'ambiguous',
+      reason: `multiple CA politicians matched (${matchCount}): ${matches.map(m => extractLastName(m.full_name)).join(', ')}`,
+      matched_count: matchCount,
+      matches,
+    };
+  }
+
+  // matchCount === 1 but no signal word
+  return {
+    source_id: sourceRow.source_id,
+    filer_id: sourceRow.external_id,
+    committee_name: committeeName,
+    decision: 'ambiguous',
+    reason: `lastName "${extractLastName(matches[0].full_name)}" in committee name but no signal word found`,
+    matched_count: 1,
+    matches,
+  };
+}
+
+// ─── Main flow ────────────────────────────────────────────────────────────────
+
+async function runMain(): Promise<void> {
+  const startMs = Date.now();
+  const ts = nowTimestamp();
+
+  // Build output paths using process.argv[1] for Windows compat (not import.meta.url)
+  const scriptsDir = path.dirname(path.resolve(process.argv[1]));
+  const auditPath = path.join(scriptsDir, `cal-access-confirm-${ts}.csv`);
+  const ambigPath = path.join(scriptsDir, `cal-access-ambiguous-${ts}.csv`);
+
+  console.log('[confirm-cal-access] Mode: ' + (isDryRun ? 'DRY-RUN (no DB writes, no ingest)' : 'LIVE'));
+
+  // Step 1 — Fetch target politicians
+  console.log('[confirm-cal-access] Fetching is_active=true CA politicians...');
+  const caPoliticians = await fetchCaPoliticians();
+  console.log(`[confirm-cal-access] Found ${caPoliticians.size} unique CA politicians for matching.`);
+
+  // Step 2 — Fetch Cal-Access source rows
+  console.log('[confirm-cal-access] Fetching Cal-Access needs_research source rows...');
+  const sourceRows = await fetchCalAccessSourceRows();
+  console.log(`[confirm-cal-access] Found ${sourceRows.length} needs_research rows.`);
+
+  if (sourceRows.length === 0) {
+    console.log('[confirm-cal-access] Nothing to do.');
+    return;
+  }
+
+  // Open CSV write streams
+  const auditStream = fs.createWriteStream(auditPath, { encoding: 'utf8' });
+  const ambigStream = fs.createWriteStream(ambigPath, { encoding: 'utf8' });
+
+  auditStream.write(CSV_HEADERS.join(',') + '\n');
+  ambigStream.write(CSV_HEADERS.join(',') + '\n');
+
+  const counts = { confirmed: 0, ambiguous: 0, noMatch: 0, dbInserted: 0 };
+
+  // Step 3–5 — Classify and write CSVs (and optionally INSERT)
+  for (const sourceRow of sourceRows) {
+    const classified = classifyRow(sourceRow, caPoliticians);
+
+    if (classified.decision === 'no-match') {
+      counts.noMatch++;
+      // NO-MATCH rows are silently skipped — not written to any CSV
+      continue;
+    }
+
+    if (classified.decision === 'confirm') {
+      counts.confirmed++;
+      const politician = classified.matches[0];
+
+      // Write to audit CSV
+      const auditLine = csvRow([
+        classified.filer_id,
+        classified.committee_name,
+        politician.id,
+        politician.full_name,
+        politician.office_title,
+        String(classified.matched_count),
+        classified.reason,
+        'confirm',
+      ]) + '\n';
+      auditStream.write(auditLine);
+
+      // Step 4 — INSERT new confirmed source row (live mode only)
+      if (!isDryRun) {
+        const client = await pool.connect();
+        try {
+          await client.query('SAVEPOINT confirm_insert');
+          await insertConfirmedSource(politician.id, classified.filer_id, classified.committee_name);
+          await client.query('RELEASE SAVEPOINT confirm_insert');
+          counts.dbInserted++;
+        } catch (err) {
+          await client.query('ROLLBACK TO SAVEPOINT confirm_insert');
+          console.warn(`[confirm-cal-access] SAVEPOINT rollback for filer_id=${classified.filer_id}: ${(err as Error).message}`);
+        } finally {
+          client.release();
+        }
+      }
+    } else if (classified.decision === 'ambiguous') {
+      counts.ambiguous++;
+
+      if (classified.matched_count === 1) {
+        // Single-match ambiguous: pre-fill politician_id, blank decision
+        const politician = classified.matches[0];
+        const auditLine = csvRow([
+          classified.filer_id,
+          classified.committee_name,
+          politician.id,
+          politician.full_name,
+          politician.office_title,
+          String(classified.matched_count),
+          classified.reason,
+          '', // blank — operator fills in
+        ]) + '\n';
+        auditStream.write(auditLine);
+        ambigStream.write(auditLine);
+      } else {
+        // Multi-match ambiguous: write one row per candidate politician, politician_id blank
+        for (const politician of classified.matches) {
+          const auditLine = csvRow([
+            classified.filer_id,
+            classified.committee_name,
+            '', // blank — operator selects which UUID
+            politician.full_name,
+            politician.office_title,
+            String(classified.matched_count),
+            classified.reason,
+            '', // blank — operator fills in
+          ]) + '\n';
+          auditStream.write(auditLine);
+          ambigStream.write(auditLine);
+        }
+      }
+    }
+  }
+
+  // Await stream close before proceeding (Windows WriteStream flush)
+  await new Promise<void>((resolve, reject) => {
+    auditStream.end((err?: Error | null) => err ? reject(err) : resolve());
+  });
+  await new Promise<void>((resolve, reject) => {
+    ambigStream.end((err?: Error | null) => err ? reject(err) : resolve());
+  });
+
+  // Step 6 — Trigger ingest (live mode only)
+  if (!isDryRun) {
+    console.log('\n[confirm-cal-access] Triggering cal_access ingest...');
+    try {
+      const { runAdapterForAll } = await import('../src/lib/campaignFinanceScheduler.js');
+      await runAdapterForAll('cal_access');
+      console.log('[confirm-cal-access] Ingest complete.');
+    } catch (importErr) {
+      console.warn(
+        '[confirm-cal-access] WARNING: Could not import runAdapterForAll from campaignFinanceScheduler.js.',
+        'Phase 8.1 Express port may not yet be complete.',
+        'Ingest must be triggered separately once Phase 8.1 is done.',
+        '\nError:', (importErr as Error).message
+      );
+    }
+  }
+
+  const durationMs = Date.now() - startMs;
+
+  // Step 7 — Print summary
+  console.log('\n=== CONFIRMATION SUMMARY ===');
+  if (isDryRun) {
+    console.log('(DRY-RUN — no DB writes, no ingest triggered)');
+  }
+  console.log(`Total needs_research rows:    ${sourceRows.length}`);
+  console.log(`Auto-confirmed:               ${counts.confirmed}`);
+  console.log(`Ambiguous (human review):     ${counts.ambiguous}`);
+  console.log(`No-match (skipped):           ${counts.noMatch}`);
+  if (!isDryRun) {
+    console.log(`DB rows inserted:             ${counts.dbInserted}`);
+  }
+  console.log('');
+  console.log(`Audit log:     ${auditPath}`);
+  if (counts.ambiguous > 0) {
+    console.log(`Ambiguous CSV: ${ambigPath}`);
+  } else {
+    console.log('Ambiguous CSV: (empty — no ambiguous rows)');
+    try { fs.unlinkSync(ambigPath); } catch { /* ignore if already gone */ }
+  }
+  console.log(`\nCompleted in ${(durationMs / 1000).toFixed(1)}s`);
+}
+
+// ─── Ambiguous re-run mode (Plan 02) ─────────────────────────────────────────
+
+async function runAmbiguous(_filePath: string): Promise<void> {
+  // TODO (Plan 02): Implement ambiguous re-run mode.
+  // This will read operator decisions from the ambiguous CSV and apply them:
+  //   - decision = 'confirm' -> INSERT new confirmed source row for the specified politician_id
+  //   - decision = 'reject'  -> leave old needs_research row as-is (no action needed)
+  // Then trigger runAdapterForAll('cal_access') for newly confirmed sources.
+  console.error('[confirm-cal-access] ERROR: --ambiguous re-run mode is not yet implemented (Plan 02).');
+  process.exit(1);
+}
+
+// ─── Entry point ─────────────────────────────────────────────────────────────
+
+async function main(): Promise<void> {
+  try {
+    if (ambiguousFile) {
+      await runAmbiguous(ambiguousFile);
+    } else {
+      await runMain();
+    }
+    process.exit(0);
+  } finally {
+    await pool.end();
+  }
+}
+
+main().catch(err => {
+  console.error('[confirm-cal-access] Fatal error:', err);
+  process.exit(1);
+});
