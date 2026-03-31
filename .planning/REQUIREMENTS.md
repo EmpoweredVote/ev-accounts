@@ -93,10 +93,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | FILT-02 | Phase 100 | Complete |
 | FILT-03 | Phase 100 | Pending |
 | PROF-01 | Phase 101 | Complete |
-| PROF-02 | Phase 101 | Pending |
-| PROF-03 | Phase 101 | Pending |
-| PROF-04 | Phase 101 | Pending |
-| PROF-05 | Phase 101 | Pending |
+| PROF-02 | Phase 101 | Complete (UI wired, self-gating — data import deferred) |
+| PROF-03 | Phase 101 | Complete (UI wired, self-gating — data import deferred) |
+| PROF-04 | Deferred | Future milestone — data pipeline (compass stances for candidates) |
+| PROF-05 | Deferred | Future milestone — data pipeline (sourced quotes for candidates) |
 
 **Coverage:**
 - v2026.3.8 requirements: 21 total
@@ -105,4 +105,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-03-29*
-*Last updated: 2026-03-29 after roadmap creation*
+*Last updated: 2026-03-30 after Phase 101 completion — PROF-04/05 deferred to future milestone*

@@ -442,4 +442,4 @@ Phases execute in numeric order: 97 -> 98 -> 99 -> 100 -> 101
 | 98. Election Data Import | v2026.3.8 | 2/2 | Complete    | 2026-03-29 |
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
 | 100. Elected/Appointed Filter | v2026.3.8 | 2/2 | Complete    | 2026-03-30 |
-| 101. Candidate Profiles | v2026.3.8 | 2/2 | Complete   | 2026-03-31 |
+| 101. Candidate Profiles | v2026.3.8 | 2/2 | Complete    | 2026-03-31 |
