@@ -2,7 +2,7 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook. All three apps share a unified SiteHeader (from ev-ui) with auth-aware profile menu showing login state and cross-app navigation via production .empowered.vote URLs.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook. All three apps share a unified SiteHeader (from ev-ui) with auth-aware profile menu showing login state and cross-app navigation via production .empowered.vote URLs. Essentials includes an Election Central page showing upcoming races for a user's address grouped by government tier, with candidate profile pages featuring incumbent/challenger branching — incumbents reuse full politician profiles with CompassCard, challengers render minimal views. The representatives page has an elected/appointed filter with retention judge dual-appearance. Election data covers Indiana (SoS Excel) and LA County (HTML incumbent scraper) with antipartisan enforcement at the schema and ingestion layers.
 
 ## Core Value
 
@@ -167,7 +167,6 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Auth-aware SiteHeader on every Essentials page (username/logout/sign-in) — v2026.3.5
 - ✓ Auth-aware SiteHeader in ReadRank (username/logout/sign-in via useAuthState hook) — v2026.3.5
 - ✓ Cross-app login redirect with returnTo query param (Essentials/ReadRank → Compass) — v2026.3.5
-
 - ✓ Unified evaluate+rank flow with head-to-head matchup ranking (no separate ranking screen, no drag-to-rank) — v2026.3.6
 - ✓ Practice round onboarding with pizza-topping quotes and emoji character avatars — v2026.3.6
 - ✓ Coach mark spotlight tour on first real issue (swipe area + rank panel) — v2026.3.6
@@ -176,23 +175,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Fraunces removed, Manrope throughout, AnimatePresence page transitions, prefers-reduced-motion — v2026.3.6
 - ✓ Chrome cleanup: ProgressHeader, AnimationOptionsPage, BadgeIcons, RankingPhase, CollectionPhase deleted — v2026.3.6
 - ✓ Zustand store migrated through versions 2-7 with clean-reset for returning users — v2026.3.6
+- ✓ Election schema (elections, races, race_candidates) with antipartisan enforcement and faces_retention_vote — v2026.3.8
+- ✓ is_appointed data audit with backfill plan for all post-BallotReady officials — v2026.3.8
+- ✓ Election data imported for Indiana SoS + LA County (2 elections, 12 races, 18 candidates) — v2026.3.8
+- ✓ Election Central page with tier-grouped races, candidate cards, primary ballot labels, countdown — v2026.3.8
+- ✓ Elected/Appointed filter with retention judge dual-appearance on Representatives page — v2026.3.8
+- ✓ Candidate profile pages with incumbent/challenger branching and CompassCard wiring — v2026.3.8
 
 ### Active
 
-## Current Milestone: v2026.3.8 Essentials Election Central
-
-**Goal:** Add an Election Central page to Essentials showing upcoming races grouped by organization and position, plus an elected/appointed filter on the main representatives page.
-
-**Target features:**
-- Research and integrate election/candidate data source for Bloomington/Monroe County IN + LA County CA
-- Election Central page (same address search) showing the next upcoming election with all races grouped by org then by specific position
-- Candidates get full Essentials-style profile pages
-- Incumbent vs challenger differentiation within each race
-- Elected/Appointed filter toggle on main Essentials representatives page
-- Retention judges appear under both Elected and Appointed filters
+(No active milestone — planning next)
 
 ### Future
 
+- [ ] Compass stance data imports for candidates (PROF-04 — deferred from v2026.3.8)
+- [ ] Sourced quote imports for candidates (PROF-05 — deferred from v2026.3.8)
 - [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
 - [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
 - [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
@@ -200,13 +197,13 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Last Milestone: v2026.3.7 Treasury Tracker Expansion (Shipped 2026-03-23)
+## Last Milestone: v2026.3.8 Essentials Election Central (Shipped 2026-03-31)
+
+**Delivered:** Election Central page added to Essentials with tier-grouped races, candidate profile pages (incumbent/challenger branching), elected/appointed filter on representatives page. Election data imported for Indiana and LA County. 5 phases, 12 plans. 19/19 active requirements satisfied, 2 deferred (PROF-04/05).
+
+## Previous Milestone: v2026.3.7 Treasury Tracker Expansion (Shipped 2026-03-23)
 
 **Delivered:** Treasury Tracker redesigned with EV design tokens, Bloomington data migrated to Supabase, Ellettsville + Monroe County + LA County/City budget data imported, and frontend entity switcher added. 5 phases, 11 plans.
-
-## Previous Milestone: v2026.3.6 Read & Rank Redesign (Shipped 2026-03-16)
-
-**Delivered:** Read & Rank overhauled with unified evaluate+rank flow, head-to-head matchup comparisons, pizza-topping practice round, coach mark tours, Google Maps location-based filtering with Essentials cross-app context, and full visual redesign with particle effects and Manrope typography. 25/25 requirements satisfied.
 
 ### Out of Scope
 
@@ -231,15 +228,15 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.6 across 2 repos:
-- **EV-readrank** (React 19 + TypeScript): ~5,990 LOC — complete UX redesign with head-to-head matchups, practice round, coach marks, location filtering, results polish, Zustand store v7
-- **essentials** (React 19): ~4.3K LOC — dynamic Read & Rank nav link with ?address= context passthrough
+Shipped v2026.3.8 across 2 repos:
+- **ev-accounts** (Node.js/Express/TypeScript): election schema (migrations 042-044), electionService, candidateService, importElectionData CLI
+- **essentials** (React 19): Election Central tab, SegmentedControl filter, CandidateProfile page
 - **CompassV2** (React 19): ~14.5K LOC — unchanged this milestone
 - **ev-ui** (React/tsup): ~4K LOC — unchanged this milestone
-- **EV-Backend** (Go 1.24): ~13K LOC — unchanged this milestone
+- **EV-readrank** (React 19 + TypeScript): ~5,990 LOC — unchanged this milestone
 - **Python scripts**: ~17K LOC — unchanged
 
-Tech stack: Go/Chi/GORM/PostgreSQL + React 19/Vite/Tailwind + Supabase DB + PostGIS + Supabase Storage CDN + Cloudflare Pages + Python (psycopg2/requests/BeautifulSoup).
+Tech stack: Node.js 20/Express 4/TypeScript 5.6/Supabase PostgreSQL + React 19/Vite/Tailwind + PostGIS + Supabase Storage CDN + Cloudflare Pages.
 ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and EV-readrank.
 
 ## Constraints
@@ -268,4 +265,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 — Phase 98 complete (election data import — Indiana SoS + LA County imported, elections API endpoint live)*
+*Last updated: 2026-03-31 after v2026.3.8 milestone*

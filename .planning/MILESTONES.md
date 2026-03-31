@@ -1,5 +1,40 @@
 # Milestones
 
+## v2026.3.8 Essentials Election Central (Shipped: 2026-03-31)
+
+**Phases completed:** 5 phases (97-101), 12 plans
+**Timeline:** 3 days (2026-03-29 — 2026-03-31)
+**Requirements:** 19/19 active satisfied, 2 deferred (PROF-04, PROF-05)
+**Repos:** ev-accounts, essentials
+
+**Delivered:** Election Central page added to Essentials showing upcoming races grouped by government tier and position, with candidate profile pages (incumbent/challenger branching), elected/appointed filter on representatives page, and election data imported for Indiana and LA County.
+
+**Key accomplishments:**
+
+1. Election schema — three new tables (elections, races, race_candidates) with antipartisan enforcement at schema layer, faces_retention_vote for Indiana retention judges, and is_appointed data audit across all officials
+2. Election data import — Indiana SoS Excel parser + LA County HTML incumbent scraper with two-pass politician matching; 2 elections, 12 races, 18 active candidates imported via CLI
+3. Election Central page — Elections tab on Results page with tier-grouped races (Local > State > Federal), CategorySection grid cards, primary ballot labels, days-until countdown, and context-aware back navigation
+4. Elected/Appointed filter — teal segmented control (All/Elected/Appointed) with retention judge dual-appearance in both views, sessionStorage persistence, and 44px mobile touch targets
+5. Candidate profiles — unified profile page with incumbent/challenger branching; incumbents get full politician data + CompassCard, challengers get clean minimal view without triggering empty API calls
+
+**Known gaps (deferred):**
+
+- PROF-04: Compass stance data imports for candidates (architectural wiring complete, no data populated)
+- PROF-05: Sourced quote imports for candidates (architectural wiring complete, no data populated)
+
+**Tech debt carried forward:**
+
+- CandidateProfile.jsx formatElectionDateFull uses new Date(dateStr) without T12:00:00 timezone anchor — off-by-one-day in US timezones
+- Election query Part A (geofence-matched via office_id) inactive — all imported races have office_id=NULL; Part B statewide fallback is active path
+- 101-02-SUMMARY.md incorrectly claims PROF-04/PROF-05 as requirements-completed
+- Several REQUIREMENTS.md checkboxes not updated despite implementation being verified (DATA-02, DATA-03, DATA-04, FILT-03)
+- Dead `ballotready/` package preserved for historical reference (carried from v1.5)
+- Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
+- 5 district-election cities treated as at-large (carried from v1.6)
+- `leg_data_fetched_at` column unused (carried from v2026.3)
+
+---
+
 ## v2026.3.6 Read & Rank Redesign (Shipped: 2026-03-16)
 
 **Phases completed:** 7 phases, 15 plans
@@ -10,6 +45,7 @@
 **Delivered:** Read & Rank overhauled with unified evaluate+rank flow replacing the separate ranking screen, head-to-head matchup comparisons replacing drag-to-rank, pizza-topping practice round for new users, coach mark tours, Google Maps location-based filtering with Essentials cross-app context, and a full visual redesign with particle effects and Manrope typography.
 
 **Key accomplishments:**
+
 1. Unified evaluate+rank flow — quotes evaluated and ranked inline via head-to-head matchup comparisons; ranking emerges from pairwise winner picks with animated leaderboard sidebar, not manual drag-to-rank
 2. Practice round onboarding — first-time users warm up with pizza-topping quotes featuring emoji character avatars before encountering political content; practice state fully isolated from real issue verdicts
 3. Coach mark tour — 2-step spotlight overlay on first real issue highlights swipe area and rank panel; permanently dismissed via Zustand store flag after completion
@@ -19,6 +55,7 @@
 7. Chrome cleanup — ProgressHeader, AnimationOptionsPage, BadgeIcons, RankingPhase, CollectionPhase deleted; Zustand store migrated through versions 2-7 with clean-reset migration for returning users
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -41,6 +78,7 @@
 **Delivered:** Consistent auth-aware navigation header across all three EV apps — users see the same branded SiteHeader everywhere with live login state (username/logout or Sign in link), powered by ev-ui v0.1.49 with production .empowered.vote URLs.
 
 **Key accomplishments:**
+
 1. ev-ui v0.1.49 published with SiteHeader defaultNavItems updated to production .empowered.vote URLs for Compass, Essentials, and ReadRank cross-app navigation
 2. Auth-aware Layout component in Essentials wrapping all 5 pages with SiteHeader — CompassContext logout() clears session and resets local state (answers, topics, verdicts)
 3. ReadRank useAuthState hook extended with userName and logout(), profileMenu wired into SiteHeader via spread cast for TypeScript compatibility
@@ -48,6 +86,7 @@
 5. returnTo redirect flow for cross-app login — Sign in links pass returnTo query param to Compass login, users return to originating app after authentication
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -70,6 +109,7 @@
 **Delivered:** Read & Rank extracted to `readrank.empowered.vote` on Cloudflare Pages with EV brand redesign, backend verdict storage, and full verdict integration into Essentials politician profiles — guests via URL fragment, logged-in users via server-side sync.
 
 **Key accomplishments:**
+
 1. Read & Rank extracted from EV-prototypes monorepo to standalone `EmpoweredVote/read-rank` repo, deployed to `readrank.empowered.vote` on Cloudflare Pages with SPA routing, NPM_TOKEN CI auth, and Zustand persist key migration
 2. EV brand design applied throughout — white card pattern with ev-muted-blue top border, amber/cyan colorblind-safe swipe feedback, ev-coral CTAs, and Manrope typography matching CompassV2/Essentials
 3. `compass.quote_verdicts` backend table with bulk-upsert POST and GET endpoints (authenticated, session-protected); `GET /essentials/quotes?politician_id=X` filter added
@@ -89,6 +129,7 @@
 **Delivered:** Local government sections in Essentials reorganized to display specific body names (e.g., "Monroe County Council" instead of "County Council") with official website links, powered by a new government_bodies table and frontend sub-grouping by body name.
 
 **Key accomplishments:**
+
 1. DB audit confirmed data gaps — chamber_name_formal empty for all Indiana officials; Monroe County Commissioners misclassified due to "commission" keyword miss; regression mapping documented for 27+ officials
 2. GovernmentBody table with LEFT JOIN enrichment — new essentials.government_bodies schema with composite unique index (state, geo_id, body_key), idempotent chamber_name_formal migration, OfficialOut annotated with body name/URL
 3. classify.js commission fix — "commission" keyword added to COUNTY branch routing Monroe County Commissioners to County Legislators; all three consumer structures updated atomically
@@ -97,6 +138,7 @@
 6. splitByBodyName frontend integration — Results.jsx sub-groups politicians by government_body_name with distinct section headings per body; unnamed politicians fall back to generic category names; LA County unaffected
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -118,6 +160,7 @@
 **Delivered:** Compass comparison card on Essentials politician profiles — user's calibrated compass overlaid with politician stances via dual-overlay radar chart, plus topic-by-topic stance breakdown with source links, working for both logged-in and guest users via cross-origin URL fragment bridge.
 
 **Key accomplishments:**
+
 1. Cross-app compass API integration — cookie domain fix for `.empowered.vote` session sharing, CompassContext provider in Essentials with concurrent auth/data fetching, CompassPreview mini radar popover on dashboard cards with CTA mode
 2. Guest compass data bridge — URL fragment encoding (`#compass=BASE64`) transfers CompassV2 localStorage state to Essentials cross-origin; boot priority: fragment > API > localStorage cache > CTA; ReturnBanner for round-trip navigation
 3. CompassCard shell — self-gating component returns null when politician lacks stances; skeleton layout with CTA fallback for uncalibrated users
@@ -126,6 +169,7 @@
 6. Compass badge on dashboard — click-to-toggle mini radar preview on politician cards via createPortal popover, CTA mode for uncalibrated users with "Take the Quiz" link
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -146,6 +190,7 @@
 **Delivered:** State legislative data completed for Indiana and California (committee memberships verified and documented), headshot coverage expanded from 21.5% to 66.8% (503 CDN records), Compass page refresh persistence fixed, and guided onboarding coach mark system added.
 
 **Key accomplishments:**
+
 1. Indiana committee import — IGA direct API integration importing 46 standing committees and 61 memberships with 88.9% legislator coverage; state_legislative_config.json as shared session config
 2. California committee import — Open States API importing 1,900 committees and 213 memberships with 83.8% legislator coverage; DB reconnect fix for Supabase idle timeout during 15-min CA pagination
 3. State data verification — Comprehensive audit confirming IN (935 bills, 6,069 votes, 94.4% bridge) and CA (4,746 bills, 92,492 votes, 94.6% bridge) with documented gaps and new-session playbook
@@ -155,6 +200,7 @@
 7. Onboarding coach mark system — Reusable CoachMark component with SVG mask spotlight, post-calibration 3-step guided tour, Library 2-step tour, Compare deep-dive tour, write-in awareness hint, simplified welcome screen
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -175,6 +221,7 @@
 **Delivered:** Politician profiles enriched with legislative activity — committees, leadership roles, voting records, and sponsored legislation — across federal, state (Indiana + California), and local (Bloomington + LA County) government levels with session filtering and graceful empty states.
 
 **Key accomplishments:**
+
 1. Legislative data model — 8 new tables (sessions, committees, memberships, leadership roles, bills, cosponsors, votes, ID bridge) with AutoMigrate and bioguide/legiscan/openstates cross-reference bridge
 2. Federal import pipeline — Go CLI subcommands importing committees and leadership from congress-legislators YAML, bills and votes via Congress.gov API + LegiScan with rate limiting and exhaustive pagination
 3. State legislative pipeline — Python import scripts for Indiana (2,424 bills, 15,223 votes) and California (5,310 bills, 105,151 votes) via LegiScan Dataset API, plus IGA/Open States committee matching
@@ -183,6 +230,7 @@
 6. Frontend components — LegislativeInlineSummary and LegislativeRecord in ev-ui with session year filters, role badges, graceful empty states, and essentials profile integration
 
 **Known Gaps (from audit):**
+
 - Federal import CLIs not yet run on active database (bridge table empty — human action required)
 - LA County BOS committee memberships structurally unavailable from Legistar API (permanent limitation)
 - LA County legislation attribution <5% (Legistar data quality)
@@ -190,6 +238,7 @@
 - leg_data_fetched_at column unused (future lazy-fetch optimization)
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials `api.jsx` (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -209,6 +258,7 @@
 **Delivered:** Platform hardened for demo-ready quality — guest-first compass, visual polish, interactive library, candidate support, and full auth audit.
 
 **Key accomplishments:**
+
 1. Guest-first compass — users take the full quiz without logging in, with localStorage persistence and server-wins merge on registration
 2. Compass visual polish — chart fits viewport without scrolling, labels handle overflow gracefully, spoke visual artifacts removed
 3. Compass UX enhancements — question prompts on issue cards, seeded stance randomization, interactive Library drawer with write-in support, level badges
@@ -217,12 +267,12 @@
 6. Integration quality — 3 audit gaps closed (guest console noise, register navigation, buildGuestState race condition)
 
 **Tech debt carried forward:**
+
 - RadarChart.jsx: Large commented-out block (dead code)
 - ~~Building images: SVG placeholders~~ — resolved in v1.1 (real photographs added)
 - CompassV2 pins ev-ui ^0.1.16 (essentials pins ^0.1.17) — functional, not blocking
 
 ---
-
 
 ## v1.1 Essentials UX Polish (Shipped: 2026-02-19)
 
@@ -234,18 +284,19 @@
 **Delivered:** Essentials app polished for demo-ready UX — sticky sidebar layout, real building photographs, and contextual term dates on profile pages.
 
 **Key accomplishments:**
+
 1. Sticky sidebar layout — FilterSidebar stays fixed while representatives panel scrolls independently on desktop, with IntersectionObserver scoped to the scrolling container
 2. Real building photographs — 5 government building JPEGs from Wikimedia Commons replace SVG placeholders for Bloomington and LA locations
 3. Term dates relocated — removed from dashboard card clutter, now display contextually on politician profile pages with en-dash formatting
 4. ev-ui 0.1.19 — shared component library updated with term date helpers (formatTermDate/getTermLine)
 
 **Tech debt carried forward:**
+
 - RadarChart.jsx: Large commented-out block (dead code) — carried from v1.0
 - CompassV2 pins ev-ui ^0.1.16 (essentials now ^0.1.19) — functional, not blocking
 - BallotReady transform.go doesn't map SubAreaName to RepresentingCity — frontend workaround in Results.jsx
 
 ---
-
 
 ## v1.2 Compass Onboarding & UX (Shipped: 2026-02-20)
 
@@ -257,6 +308,7 @@
 **Delivered:** Compass quiz made intuitive for first-time users with guided card-by-card onboarding, topic selection enforcement, and a complete question framing overhaul.
 
 **Key accomplishments:**
+
 1. Guided onboarding flow — CalibrationOverlay on empty compass walks new users through topic selection card-by-card with live radar rendering
 2. Topic selection enforcement — 8-topic cap and 3-topic minimum enforced across all paths (Library, onboarding, quiz)
 3. Library UX improvements — default "All" filter, on-compass card indicators with add/remove toggle, X/8 counter badge
@@ -265,12 +317,12 @@
 6. Audit gap closure — fixed non-admin compass reset (403 bug), synced help_seen from DB completed_onboarding flag, removed unused imports
 
 **Tech debt carried forward:**
+
 - BallotReady transform.go doesn't map SubAreaName to RepresentingCity — frontend workaround in Results.jsx
 - Settings gear placement and spoke inversion persistence across views — cosmetic, deferred
 - QFRM-02 topic title rewrites are database-only (needs live server to verify display)
 
 ---
-
 
 ## v1.3 Compass Bug Fixes & Title Standardization (Shipped: 2026-02-22)
 
@@ -282,6 +334,7 @@
 **Delivered:** Compass topic naming standardized server-side, calibration flow fixed for all mixed-state edge cases, and double-overlay compare bug eliminated.
 
 **Key accomplishments:**
+
 1. Title standardization — all 21 compass topics use tension title format (Topic: Pole A — Pole B) as server-side canonical source of truth, with deprecated ShortName/StartPhrase columns dropped
 2. Unified topic display — parseTensionTitle helper renders consistent two-line layout across Library cards, calibration cards, compass spoke labels, quiz, and compare panel
 3. Calibration auto-routing — users with unanswered topics auto-enter calibration starting at first unanswered topic, with resume flow that skips pick step and exit gating until 3+ answered
@@ -290,12 +343,12 @@
 6. Anti-partisan design — pole order randomized per topic (10 right-first, 11 left-first) to prevent visual bias
 
 **Tech debt carried forward:**
+
 - compassimport/models.go and cmd/seed/compass_csv_seeder.go still reference dropped StartPhrase column — standalone CLI tools, would fail at runtime
 - Admin TopicEditor sends short_name in PATCH body (silently ignored) and initializes vestigial editedFields.short_name
 - BallotReady transform.go SubAreaName → RepresentingCity mapping fix — frontend workaround in Results.jsx (carried from v1.1)
 
 ---
-
 
 ## v1.4 Compass Polish & Tech Debt (Shipped: 2026-02-22)
 
@@ -307,6 +360,7 @@
 **Delivered:** Compass polished for demo-ready quality — guest flow fixed, radar labels readable, stale UI removed, question-text hierarchy unified, dead code cleaned up, and onboarding-to-calibration redirect working.
 
 **Key accomplishments:**
+
 1. Guest flow fix — BuildCompass uses localStorage answers for guests, gracefully handles 401 for logged-in users, no more infinite spinner
 2. Radar label fixes — dynamic horizontal padding, minimum font size, word wrap in ev-ui RadarChartCore, published as ev-ui@0.1.26
 3. UX cleanup — Edit Topics and Clear buttons removed, mobile stat card layout fixed, question-text-first hierarchy across all 4 compass views (Library, LibraryDrawer, Quiz, CalibrationOverlay)
@@ -315,10 +369,10 @@
 6. Compare page text fix — ComparePanel now uses question-text-first hierarchy matching all other views
 
 **Tech debt carried forward:**
+
 - BallotReady transform.go SubAreaName → RepresentingCity mapping fix — frontend workaround in Results.jsx (carried from v1.1)
 
 ---
-
 
 ## v1.5 Address Verification & BallotReady Independence (Shipped: 2026-02-23)
 
@@ -330,6 +384,7 @@
 **Delivered:** Platform made self-sufficient by removing BallotReady API dependency — address search uses Google Maps autocomplete with PostGIS geofence matching, plus Compass calibration layout polished and Essentials profiles enhanced with district data.
 
 **Key accomplishments:**
+
 1. BallotReady independence — address search uses PostGIS geofence-only matching; all cache warmers, provider infrastructure, and API keys fully removed from codebase and production environments
 2. Google Maps Places autocomplete — replaces ZIP code input as sole search method with address validation, formatted address display, and graceful degradation
 3. Federal/state cache fallback — addresses outside geofence coverage return federal and state officials from DB cache with clear coverage limitation messaging
@@ -338,6 +393,7 @@
 6. Bloomington district visibility — city council Districts 1-6 boundaries imported from ArcGIS into geofence_boundaries; X0001 MTFCC mapped to LOCAL district type
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (intentional — cannot compile, isolated)
 - Orphaned `checkCacheStatus` function in essentials `api.jsx` calls deleted `/cache-status/{zip}` route
 - Stale comment in handlers.go lines 1757-1758 mentions BallotReady (comment-only)
@@ -346,7 +402,6 @@
 - Deprecated `cmd/bulk-import/main.go` and `runBulkImport` placeholder in admin.go
 
 ---
-
 
 ## v1.6 LA County Full Coverage (Shipped: 2026-02-24)
 
@@ -358,6 +413,7 @@
 **Delivered:** Full LA County geofence coverage — any LA County address returns the complete representative hierarchy (federal, state, county, city, school board) with a repeatable import pipeline for future regional expansion.
 
 **Key accomplishments:**
+
 1. Complete 5-layer geofence hierarchy — 482 CA city boundaries (G4110), 51 LA County local district boundaries (X0001), plus federal/state/school boundaries from TIGER + ArcGIS sources
 2. 791 politicians gap-filled — 21 LA County officials (supervisors + city council + mayor), 368 city council members across 89 cities, 402 school board members across 79 districts
 3. Reusable import pipeline — config-driven scrapers with seat-first dedup, shared Python utils (utils.py + requirements.txt), hardcoded roster fallback for anti-bot-protected sites
@@ -365,17 +421,18 @@
 5. 545-line import runbook — step-by-step repeatable pipeline documentation for future county/region expansion
 
 **Known Gaps (from audit):**
+
 - MISS-01 (low): IMPORT-PIPELINE.md documents `--source` flag that import_arcgis_geofences.py doesn't implement — script always runs import_all()
 - FLOW-01 (low): Runbook selective import commands would silently fail — no argparse in script
 
 **Tech debt carried forward:**
+
 - Photo re-hosting to Supabase Storage deferred — photo_origin_url stores scraped URL
 - 5 district-election cities (Long Beach, Torrance, Pasadena, Inglewood, West Covina) treated as at-large — per-ward council assignment deferred
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials (carried from v1.5)
 
 ---
-
 
 ## v1.7 LA County Data Enrichment (Shipped: 2026-02-26)
 
@@ -387,6 +444,7 @@
 **Delivered:** LA County officials enriched with headshots, building photos, contact info, and term data via a reproducible scraping pipeline — 84 headshots in Supabase CDN, 11 city hall photos, 381 contact records, and coverage validation tooling.
 
 **Key accomplishments:**
+
 1. City council headshot pipeline — 1,247-line batch scraper with 5-strategy extraction cascade, Cloudflare detection, Supabase Storage CDN upload, and manual headshot_url override support; 84 headshots across 34 cities
 2. High-value headshots — All 20 LA County supervisors and LA City council members have CC-licensed headshots from Wikipedia Commons, re-hosted to Supabase Storage
 3. Building photos — 11 Wikimedia Commons city hall photos uploaded to Supabase CDN, served via buildingImages.js CURATED_LOCAL
@@ -395,10 +453,12 @@
 6. Coverage validation — Standalone coverage_report.py confirms 84/84 CDN URLs pass, 89/89 cities have contacts, 0 government hotlinks
 
 **Known Gaps:**
+
 - PHOTO-03: Headshot coverage at 84/391 (21.5%) vs 80% target — automated pipeline hit ceiling at ~55 Cloudflare/CivicPlus-blocked cities; Plan 42-06 (manual browser curation sprint, ~4-6 hours) deferred
 - Research manifest ready: `headshot_research_manifest.csv` (300 politicians, 82 cities) for future manual sprint
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -406,7 +466,6 @@
 - REQUIREMENTS.md had PHOTO-03 marked [x] despite 21.5% actual coverage
 
 ---
-
 
 ## v1.8 Compass Data & Politician Research (Shipped: 2026-02-27)
 
@@ -418,6 +477,7 @@
 **Delivered:** Compass populated with real politician stance data and sourced quotes — 23 politicians across CA and IN researched on 21 compass topics, with import scripts and a quotes API endpoint feeding Read & Rank.
 
 **Key accomplishments:**
+
 1. Legacy cleanup — removed 2,584 lines of deprecated 50-topic seed code (internal/seeds/, topics.json, cmd/seed/main.go stub), leaving compass_csv_seeder.go as sole source of truth
 2. Stance research CSV — 455 sourced data rows across 23 politicians (CA/IN governors, lt. governors, US senators, 12 LA County House reps, Monroe County rep, 2 mayors) with integer 1-5 values on all 21 compass topics
 3. Source URL integrity — cleared 700+ hallucinated/fabricated URLs across 6 cleanup plans (AP year-suffix patterns, house.gov/senate.gov slug-only press releases), retaining only verified congress.gov, news, and government sources
@@ -426,6 +486,7 @@
 6. Quotes API endpoint — GET /essentials/quotes with LATERAL JOIN for office dedup; Read & Rank frontend updated with API client and graceful mockData.ts fallback
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -434,7 +495,6 @@
 - BallotReady external_ids left blank for all 23 researched politicians — import uses full_name matching
 
 ---
-
 
 ## v1.9 Compare UX & Search Fixes (Shipped: 2026-02-28)
 
@@ -446,6 +506,7 @@
 **Delivered:** Compare page enhanced with inline politician switching and level/state filters, and Essentials search fixed to return all representatives for area-level queries with unified search path.
 
 **Key accomplishments:**
+
 1. Inline politician picker — searchable dropdown with keyboard nav replaces header on compare page, switch politicians without leaving view; react-spring morphs radar polygon smoothly during data fetch
 2. Politician list filters — level pills (Federal/State/Local) and state dropdown reused across both InlinePoliticianPicker and CompareModal via shared useFilteredPoliticians hook with zero code duplication
 3. Area-intersection search — ST_Intersects boundary overlap replaces point-only matching for city/ZIP/county queries, returning all representatives whose districts overlap the searched area
@@ -454,6 +515,7 @@
 6. Area label display — results page shows "Showing representatives for {formattedAddress}" for area queries
 
 **Tech debt carried forward:**
+
 - Dead `ballotready/` package preserved for historical reference (carried from v1.5)
 - Orphaned `checkCacheStatus` in essentials (carried from v1.5)
 - 5 district-election cities treated as at-large (carried from v1.6)
@@ -462,4 +524,3 @@
 - fetchPoliticiansOnce and fetchPoliticiansProgressive deprecated but not deleted in essentials api.jsx
 
 ---
-

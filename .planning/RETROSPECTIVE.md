@@ -379,6 +379,52 @@
 
 ---
 
+## Milestone: v2026.3.8 — Essentials Election Central
+
+**Shipped:** 2026-03-31
+**Phases:** 5 | **Plans:** 12
+
+### What Was Built
+- Election schema (elections, races, race_candidates) with antipartisan enforcement at schema layer
+- Election data import CLI for Indiana SoS Excel + LA County HTML incumbent scraper (2 elections, 12 races, 18 candidates)
+- Election Central page with tier-grouped races, candidate cards, primary ballot labels, days-until countdown
+- Elected/Appointed filter with retention judge dual-appearance in both views
+- Candidate profile pages with incumbent/challenger branching — incumbents get full CompassCard, challengers get clean minimal view
+
+### What Worked
+- Schema-first approach (Phase 97) with data audit before any import code — is_appointed audit revealed 97.6% NULL-classified offices were BallotReady campaign finance records, not real data gaps
+- Separate race_candidates table (not co-located with politicians) prevented geofence searches from returning candidates — clean architectural decision
+- Two-part election query (geofence-matched + statewide fallback) handled the reality that imported races lack office_id linkage
+- Self-gating CandidateProfile with incumbent/challenger branching — challengers skip legislative API calls entirely, no empty loading states
+- Primary ballot labels as antipartisan exception — pragmatic decision since voters must choose a party ballot
+
+### What Was Inefficient
+- REQUIREMENTS.md checkboxes drifted from actual status throughout the milestone (DATA-02/03/04, FILT-03 all implemented but unchecked)
+- 101-02-SUMMARY.md overclaimed PROF-04/PROF-05 as completed when they were deferred — summary frontmatter accuracy needs improvement
+- All imported races have office_id=NULL meaning geofence-precision matching (query Part A) is inactive — manual office linking needed for full precision
+- CandidateProfile.jsx formatElectionDateFull timezone bug (new Date without T12:00:00 anchor) shipped — minor but known
+
+### Patterns Established
+- race_candidates as separate table from politicians — prevents candidate/official mixing in geofence searches
+- Two-part election query: Part A (office_id linked, geofence-precision) + Part B (statewide fallback by state code)
+- inferDistrictType parsing position_name when office_id not yet linked — graceful degradation for unlinked data
+- ev:fromView sessionStorage pattern for tab-aware back navigation between Elections/Representatives views
+- SegmentedControl with resolveIsAppointed priority chain: politician.is_appointed > !is_elected — individual override beats position default
+
+### Key Lessons
+1. Data audit phases continue to pay off — 97.6% of "missing" is_appointed data turned out to be BallotReady campaign finance noise, not real gaps
+2. Antipartisan enforcement at schema + ingestion layers (not just UI) prevents data leakage from upstream APIs that include party affiliation
+3. Two-pass politician matching (exact name → fuzzy match with threshold) is the right pattern for election imports where canonical IDs don't exist
+4. Deferred data imports (PROF-04/05) are acceptable when architectural wiring is complete — self-gating components render correctly with empty data
+5. Indiana SoS Excel column names differ from documentation — always probe real files before building parsers
+
+### Cost Observations
+- Model mix: ~70% sonnet, ~30% opus (research/planning)
+- Sessions: ~6
+- Notable: 5 phases in 3 days — consistent with v2026.3.7 velocity
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -395,6 +441,8 @@
 | v2026.3.4 | 6 | 13 | First multi-repo cross-app milestone; parallel phase design; verdict fragment bridge pattern |
 | v2026.3.5 | 3 | 5 | Fastest milestone (1 day); auth-aware header wiring across 3 apps; Layout wrapper pattern |
 | v2026.3.6 | 7 | 15 | Full UX redesign milestone; urgent phase insertion (87.1); pairwise matchup pattern; store versioning discipline |
+| v2026.3.7 | 5 | 11 | Treasury multi-entity expansion; config-driven import pipeline; entity switcher; EV design system applied |
+| v2026.3.8 | 5 | 12 | Election Central + filter; race_candidates separation pattern; two-part election query; antipartisan schema enforcement |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -422,3 +470,7 @@
 22. Urgent phase insertions work cleanly when store actions are additive, not destructive (v2026.3.6)
 23. Practice isolation pattern: separate store namespace prevents practice data from polluting real verdict payloads (v2026.3.6)
 24. Client-side filtering is the right default at small data scale — avoids backend coupling for view-level concerns (v2026.3.6)
+25. Separate candidate table from officials prevents search contamination — architectural isolation at DB layer beats filter logic (v2026.3.8)
+26. Antipartisan enforcement at schema + ingestion layers prevents upstream data leakage — UI-only exclusion is insufficient (v2026.3.8)
+27. Two-pass politician matching (exact → fuzzy with threshold) is the right pattern when canonical cross-system IDs don't exist (v2026.3.8)
+28. Deferred data imports are acceptable when architectural wiring is complete — self-gating components handle empty data gracefully (v2026.3.8)
