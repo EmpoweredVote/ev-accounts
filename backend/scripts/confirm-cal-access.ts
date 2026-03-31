@@ -187,28 +187,6 @@ async function fetchCalAccessSourceRows(): Promise<CalAccessSourceRow[]> {
   return result.rows;
 }
 
-/**
- * INSERT a new confirmed source row linking a real CA politician to a Cal-Access filer ID.
- * ON CONFLICT DO NOTHING — safe to re-run. Does NOT touch old PAC-linked rows.
- */
-async function insertConfirmedSource(
-  politicianId: string,
-  filerId: string,
-  committeeName: string
-): Promise<void> {
-  const notes = JSON.stringify({
-    confirmed_by: 'confirm-cal-access.ts',
-    committee_name: committeeName,
-  });
-  await pool.query(
-    `INSERT INTO transparent_motivations.politician_sources
-       (essentials_politician_id, source_system, external_id, research_status, notes)
-     VALUES ($1, 'cal_access', $2, 'confirmed', $3)
-     ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
-    [politicianId, filerId, notes]
-  );
-}
-
 // ─── Classification ───────────────────────────────────────────────────────────
 
 function classifyRow(
@@ -326,7 +304,15 @@ async function runMain(): Promise<void> {
 
   const counts = { confirmed: 0, ambiguous: 0, noMatch: 0, dbInserted: 0 };
 
-  // Step 3–5 — Classify and write CSVs (and optionally INSERT)
+  // Collect confirmed rows for batch insert
+  interface ConfirmedInsertRow {
+    politicianId: string;
+    filerId: string;
+    committeeName: string;
+  }
+  const confirmedInserts: ConfirmedInsertRow[] = [];
+
+  // Step 3–5 — Classify and write CSVs
   for (const sourceRow of sourceRows) {
     const classified = classifyRow(sourceRow, caPoliticians);
 
@@ -353,20 +339,13 @@ async function runMain(): Promise<void> {
       ]) + '\n';
       auditStream.write(auditLine);
 
-      // Step 4 — INSERT new confirmed source row (live mode only)
+      // Collect for batch insert
       if (!isDryRun) {
-        const client = await pool.connect();
-        try {
-          await client.query('SAVEPOINT confirm_insert');
-          await insertConfirmedSource(politician.id, classified.filer_id, classified.committee_name);
-          await client.query('RELEASE SAVEPOINT confirm_insert');
-          counts.dbInserted++;
-        } catch (err) {
-          await client.query('ROLLBACK TO SAVEPOINT confirm_insert');
-          console.warn(`[confirm-cal-access] SAVEPOINT rollback for filer_id=${classified.filer_id}: ${(err as Error).message}`);
-        } finally {
-          client.release();
-        }
+        confirmedInserts.push({
+          politicianId: politician.id,
+          filerId: classified.filer_id,
+          committeeName: classified.committee_name,
+        });
       }
     } else if (classified.decision === 'ambiguous') {
       counts.ambiguous++;
@@ -413,6 +392,46 @@ async function runMain(): Promise<void> {
   await new Promise<void>((resolve, reject) => {
     ambigStream.end((err?: Error | null) => err ? reject(err) : resolve());
   });
+
+  // Step 4 — Batch INSERT all confirmed source rows (live mode only)
+  if (!isDryRun && confirmedInserts.length > 0) {
+    console.log(`\n[confirm-cal-access] Inserting ${confirmedInserts.length} confirmed source rows...`);
+    const BATCH_SIZE = 500;
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      for (let i = 0; i < confirmedInserts.length; i += BATCH_SIZE) {
+        const batch = confirmedInserts.slice(i, i + BATCH_SIZE);
+        const values: string[] = [];
+        const params: string[] = [];
+        let idx = 1;
+        for (const row of batch) {
+          const notes = JSON.stringify({
+            confirmed_by: 'confirm-cal-access.ts',
+            committee_name: row.committeeName,
+          });
+          values.push(`($${idx++}, 'cal_access', $${idx++}, 'confirmed', $${idx++})`);
+          params.push(row.politicianId, row.filerId, notes);
+        }
+        const sql = `
+          INSERT INTO transparent_motivations.politician_sources
+            (essentials_politician_id, source_system, external_id, research_status, notes)
+          VALUES ${values.join(', ')}
+          ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING
+        `;
+        const result = await client.query(sql, params);
+        counts.dbInserted += result.rowCount ?? 0;
+        console.log(`  Batch ${Math.floor(i / BATCH_SIZE) + 1}: inserted ${result.rowCount ?? 0} rows`);
+      }
+      await client.query('COMMIT');
+      console.log(`[confirm-cal-access] Batch insert complete. ${counts.dbInserted} new rows inserted.`);
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+  }
 
   // Step 6 — Trigger ingest (live mode only)
   if (!isDryRun) {
