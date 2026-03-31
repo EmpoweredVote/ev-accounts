@@ -6,6 +6,7 @@ import { requireConnected } from '../middleware/tierGuards.js';
 import {
   getRepresentativesByAddress,
   getRepresentativesByJurisdiction,
+  getLocalOfficialsByUserId,
   getGovernmentById,
   getChamberById,
   getDistrictById,
@@ -445,19 +446,26 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
     );
     const j = rows[0];
     if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
-      const politicians = await getRepresentativesByJurisdiction({
-        congressional: j.congressional_geo_id,
-        state_senate: j.state_senate_geo_id,
-        state_house: j.state_house_geo_id,
-        county: j.county_geo_id,
-        school_district: j.school_district_geo_id,
-      });
-      const dataStatus = politicians.length === 0 ? 'no-geofence-data' : 'fresh';
-      const formattedAddress = [j.jurisdiction_city, j.jurisdiction_state]
-        .filter(Boolean).join(', ');
+      const [politicians, localOfficials] = await Promise.all([
+        getRepresentativesByJurisdiction({
+          congressional: j.congressional_geo_id,
+          state_senate: j.state_senate_geo_id,
+          state_house: j.state_house_geo_id,
+          county: j.county_geo_id,
+          school_district: j.school_district_geo_id,
+        }),
+        getLocalOfficialsByUserId(userId),
+      ]);
+
+      // Merge local officials, deduplicating by politician ID
+      const seenIds = new Set(politicians.map((p) => p.id));
+      const uniqueLocals = localOfficials.filter((p) => !seenIds.has(p.id));
+      const merged = [...politicians, ...uniqueLocals];
+
+      const dataStatus = merged.length === 0 ? 'no-geofence-data' : 'fresh';
       res.setHeader('X-Data-Status', dataStatus);
-      res.setHeader('X-Formatted-Address', formattedAddress || homeAddress);
-      res.status(200).json(politicians);
+      res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+      res.status(200).json(merged);
       return;
     }
   } catch {

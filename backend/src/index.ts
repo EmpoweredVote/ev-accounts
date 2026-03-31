@@ -34,6 +34,7 @@ import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
+import { startDistrictStalenessCron } from './cron/districtStaleness.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 
@@ -134,6 +135,7 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
     });
     startCalibrationLapseCron();
     startCampaignFinanceCron();
+    startDistrictStalenessCron();
     startSqsWorker();
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.

@@ -6,6 +6,7 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
 **Current focus:** Phase 101 (Candidate Profiles) in progress — 101-01 complete, 101-02 at human-verify checkpoint
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
@@ -63,10 +64,12 @@ CompassV2 (main, all pushed directly — bypassed branch protection):
 - `VITE_API_URL` unset in `.env.production` so `apiFetch` uses Netlify proxy (`/api` relative) instead of hitting `accounts.empowered.vote` (admin static site) directly
 
 ### Known gaps after session 2
-- **CA geofence boundaries incomplete** — only LOCAL (20), STATE_UPPER (4), LOCAL_EXEC (1) boundaries loaded for CA; NATIONAL_LOWER, STATE_LOWER, COUNTY, SCHOOL missing → address search returns only 3 LA reps instead of full set. Fix: load CA TIGER files (cd119, sldl, sldu, county, unsd) via RUNBOOK-TIGER-LOAD.md
-- **`medicare` topic_key** in `essentials.quotes` doesn't match any compass topic (`short_title` = "Medicare/aid"); those quotes excluded from `/essentials/quotes` response
-- **trivia_service Supavisor registration** — CTC using postgres superuser temporarily (Phase 41 open blocker, non-critical)
 - **CompassV2 branch protection** — pushed directly to `main` three times today (bypassed rule). Chris Andrews should review and merge via PR going forward.
+
+### Resolved gaps (2026-03-30)
+- **CA geofence boundaries** — all 5 types fully loaded (52 congressional, 58 county, 346 school, 80 state_house, 40 state_senate). Completed during quick-012.
+- **`medicare` topic_key** — 2 rows in `essentials.quotes` updated from `'medicare'` → `'medicare/aid'` to match `inform.compass_topics.short_title`. Now included in `/essentials/quotes` response.
+- **trivia_service Supavisor** — `ALTER ROLE trivia_service WITH PASSWORD '***REMOVED-SECRET***'` executed. CTC DATABASE_URL: `postgresql://trivia_service.kxsdzaojfaibhuzmclfq:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres`. If pooler still rejects, reset via Dashboard → Database → Roles → trivia_service → Reset Password (same value).
 
 Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 🔄] Phase 49 complete ████████████████░
 
@@ -75,6 +78,29 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Quick Task 011 Complete — BUG-03: City Officials in Representatives (011)
+
+- **Root cause** — After quick-008 populated pre-computed geo_ids, Path 2 (Census Geocoder fallback) stopped running; LOCAL/LOCAL_EXEC districts require live PostGIS polygon intersection (not stored columns) so they disappeared
+- **connect.resolve_user_local_officials RPC** — Migration 046; SECURITY DEFINER, SET search_path=''; decrypts stored lat/lng, returns TABLE(geo_id, district_type) for G4040/G4110/G4120/X% MTFCC codes; returns empty set on no location
+- **getLocalOfficialsByUserId()** — Added to essentialsService.ts; calls RPC then fetches full politician records for returned geo_ids; calls batchFetchImages + batchFetchCommittees
+- **Hybrid Path 1** — essentials.ts runs jurisdiction + local officials in parallel (Promise.all); merges results, deduplicating by politician ID
+- **Verified** — RPC returns 3 rows for test user (ocd council_district:2, ocd council_district:11 as LOCAL, 0644000 as LOCAL_EXEC for Karen Bass)
+- **Quick task 011 commits** — 6cf4e7c (RPC migration), 84d96f5 (service + route wiring)
+
+### Quick Task 010 Complete — BUG-01: CAL Access Quarantine + Cicero District Restore (010)
+
+- **CAL Access quarantine** — 76,332 `source = 'cal_access_discovery'` rows set `is_active = false`; filter on source column only (NOT `data_source IS NULL` — 1,302 legit politicians also have null data_source)
+- **District restoration** — 43 `essentials.districts` rows inserted using orphaned UUIDs already referenced by `offices.district_id`; all mapped to city FIPS geo_ids with confirmed G4110 geofence boundaries
+- **15 cities restored** — Burbank, Downey, El Monte, Glendale, Huntington Beach (new district), Inglewood, Lancaster, Long Beach, Norwalk, Palmdale, Pasadena, Pomona, Santa Clarita, Torrance, West Covina
+- **Quick task 010 commits** — b0eb18b (quarantine), 82146cf (district restore)
+
+### Quick Task 009 Complete — Weekly District Staleness Cron (009)
+
+- **districts_last_verified_at column** — Added to `connect.connected_profiles` (TIMESTAMPTZ); always stamped per processed row
+- **runDistrictStalenessCheck()** — Queries all users with `encrypted_lat IS NOT NULL`, re-resolves via `resolve_user_jurisdiction` RPC; updates all 10 geo_id/name columns only when changed; timestamp-only update on no change (no column churn)
+- **Cron schedule** — `0 3 * * 0` (Sunday 03:00 UTC); registered alongside calibration-lapse and campaign-finance in index.ts
+- **Quick task 009 commits** — 061a9f4 (migration + service), 3fee345 (cron + wiring)
 
 ### Phase 49 Plan 01 Complete — Jurisdiction Schema Migration (49-01)
 
@@ -196,6 +222,12 @@ v1.6 constraints and decisions to carry forward:
 | 005 | Fix double-login: hash-fragment SSO loop between accounts and profile apps | 2026-03-18 | 7b6be4a | [005-fix-double-login-accounts-to-profile](./quick/005-fix-double-login-accounts-to-profile/) |
 | 006 | Configure /app for Render static site deploy (profile.empowered.vote) | 2026-03-18 | df0a9b7 | [006-configure-app-render-static-site-deploy](./quick/006-configure-app-render-static-site-deploy/) |
 | 007 | Admin access requests panel + Resend email notification on new submissions | 2026-03-19 | 4a2bb7a | [007-admin-access-requests-panel-and-notifications](./quick/007-admin-access-requests-panel-and-notifications/) |
+| 008 | Fix representatives/me to return precise results for Connected users | 2026-03-29 | 8dfa38e | [008-fix-representatives-me-to-return-precise](./quick/008-fix-representatives-me-to-return-precise/) |
+| 009 | Add weekly district staleness check cron for Connected users | 2026-03-29 | 10e5447 | [009-add-weekly-district-staleness-check-cron](./quick/009-add-weekly-district-staleness-check-cron/) |
+| 010 | Fix BUG-01: restore deleted district rows for 54 CA Cicero politicians + quarantine CAL Access committee records | 2026-03-30 | dd06d9f | [010-fix-bug-01-restore-cicero-districts-quarant](./quick/010-fix-bug-01-restore-cicero-districts-quarant/) |
+| 011 | Fix BUG-03: city/local officials missing from GET /essentials/representatives/me | 2026-03-30 | 64ccc0a | [011-fix-bug-03-city-officials-in-representatives](./quick/011-fix-bug-03-city-officials-in-representatives/) |
+| 012 | Fix CA NATIONAL_UPPER senators (Padilla + Schiff) missing from geofence search | 2026-03-30 | 1b95f0e | [012-fix-ca-national-upper-senators-padilla-geofence](./quick/012-fix-ca-national-upper-senators-padilla-geofence/) |
+| 013 | Phase 43 — Integration Documentation for Chris Andrews' team | 2026-03-30 | 85267c1 | [013-phase-43-integration-documentation-for-chri](./quick/013-phase-43-integration-documentation-for-chri/) |
 
 ### Pending Todos
 
