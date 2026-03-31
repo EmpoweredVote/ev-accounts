@@ -116,6 +116,7 @@ export async function searchPoliticians(
       LEFT JOIN essentials.governments g
         ON  g.id = ch.government_id
       WHERE p.is_active = true
+        AND public.f_unaccent(lower(p.full_name)) operator(extensions.%>) public.f_unaccent(lower($1))
         AND extensions.word_similarity(public.f_unaccent(lower($1)), public.f_unaccent(lower(p.full_name))) >= ${threshold}
       ORDER BY p.id, o.is_vacant ASC NULLS LAST
     )
