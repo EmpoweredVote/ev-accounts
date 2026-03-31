@@ -4,7 +4,8 @@
  * Usage:
  *   npx tsx scripts/confirm-cal-access.ts                    # live run: INSERT confirmed rows + trigger ingest
  *   npx tsx scripts/confirm-cal-access.ts --dry-run           # classify + write CSVs, no DB writes
- *   npx tsx scripts/confirm-cal-access.ts --ambiguous <path>  # re-run: apply operator decisions from CSV (Plan 02)
+ *   npx tsx scripts/confirm-cal-access.ts --report            # generate operator-friendly review CSV (one row per committee)
+ *   npx tsx scripts/confirm-cal-access.ts --ambiguous <path>  # re-run: apply operator decisions from CSV
  *
  * Classification logic:
  *   AUTO-CONFIRM: exactly 1 CA politician's last name found as whole word in committee name
@@ -37,6 +38,7 @@ if (!process.env.DATABASE_URL) {
 // ─── Arg parsing ─────────────────────────────────────────────────────────────
 
 const isDryRun = process.argv.includes('--dry-run');
+const isReport = process.argv.includes('--report');
 const ambiguousIdx = process.argv.indexOf('--ambiguous');
 const ambiguousFile = ambiguousIdx !== -1 ? process.argv[ambiguousIdx + 1] : null;
 
@@ -132,6 +134,18 @@ function csvRow(fields: (string | null | undefined)[]): string {
 }
 
 const CSV_HEADERS = ['filer_id', 'committee_name', 'politician_id', 'politician_name', 'office_title', 'matched_count', 'reason', 'decision'];
+
+// Report CSV — one row per committee, operator-friendly grouping
+// Compatible with --ambiguous re-run mode (reads filer_id, politician_id, decision)
+const REPORT_CSV_HEADERS = ['filer_id', 'committee_name', 'case_type', 'match_count', 'matches', 'politician_id', 'decision'];
+
+interface ReportRow {
+  filerId: string;
+  committeeName: string;
+  caseType: 'single_no_signal' | 'multi_match';
+  matchCount: number;
+  matches: MatchedPolitician[];
+}
 
 // ─── DB queries ──────────────────────────────────────────────────────────────
 
@@ -305,6 +319,9 @@ async function runMain(): Promise<void> {
 
   const counts = { confirmed: 0, ambiguous: 0, noMatch: 0, dbInserted: 0 };
 
+  // Collect ambiguous rows for --report mode
+  const reportRows: ReportRow[] = [];
+
   // Collect confirmed rows for batch insert
   interface ConfirmedInsertRow {
     politicianId: string;
@@ -351,6 +368,15 @@ async function runMain(): Promise<void> {
     } else if (classified.decision === 'ambiguous') {
       counts.ambiguous++;
 
+      // Collect for --report mode (one entry per committee regardless of match count)
+      reportRows.push({
+        filerId: classified.filer_id,
+        committeeName: classified.committee_name,
+        caseType: classified.matched_count === 1 ? 'single_no_signal' : 'multi_match',
+        matchCount: classified.matched_count,
+        matches: classified.matches,
+      });
+
       if (classified.matched_count === 1) {
         // Single-match ambiguous: pre-fill politician_id, blank decision
         const politician = classified.matches[0];
@@ -393,6 +419,50 @@ async function runMain(): Promise<void> {
   await new Promise<void>((resolve, reject) => {
     ambigStream.end((err?: Error | null) => err ? reject(err) : resolve());
   });
+
+  // Step 3b — Write report CSV if --report flag set
+  if (isReport && reportRows.length > 0) {
+    const reportPath = path.join(scriptsDir, `cal-access-report-${ts}.csv`);
+    const reportStream = fs.createWriteStream(reportPath, { encoding: 'utf8' });
+    reportStream.write(REPORT_CSV_HEADERS.join(',') + '\n');
+
+    // Sort: single_no_signal first (bulk pre-approved, easy to scan), then multi_match by match_count ascending
+    const sorted = [...reportRows].sort((a, b) => {
+      if (a.caseType !== b.caseType) return a.caseType === 'single_no_signal' ? -1 : 1;
+      return a.matchCount - b.matchCount;
+    });
+
+    for (const row of sorted) {
+      // matches column: "Full Name (Office Title) [uuid] | ..." — all options visible in one cell
+      const matchesStr = row.matches
+        .map(m => `${m.full_name}${m.office_title ? ' (' + m.office_title + ')' : ''} [${m.id}]`)
+        .join(' | ');
+
+      const politicianId = row.caseType === 'single_no_signal' ? row.matches[0].id : '';
+      const decision = row.caseType === 'single_no_signal' ? 'confirm' : '';
+
+      reportStream.write(csvRow([
+        row.filerId,
+        row.committeeName,
+        row.caseType,
+        String(row.matchCount),
+        matchesStr,
+        politicianId,
+        decision,
+      ]) + '\n');
+    }
+
+    await new Promise<void>((resolve, reject) => {
+      reportStream.end((err?: Error | null) => err ? reject(err) : resolve());
+    });
+
+    const singleCount = sorted.filter(r => r.caseType === 'single_no_signal').length;
+    const multiCount = sorted.filter(r => r.caseType === 'multi_match').length;
+    console.log(`\nReport CSV: ${reportPath}`);
+    console.log(`  ${singleCount} single_no_signal rows (pre-filled "confirm" — change to "reject" to exclude)`);
+    console.log(`  ${multiCount} multi_match rows (paste correct UUID into politician_id, type "confirm")`);
+    console.log(`\nTo apply decisions: npx tsx scripts/confirm-cal-access.ts --ambiguous ${reportPath}`);
+  }
 
   // Step 4 — Batch INSERT all confirmed source rows (live mode only)
   if (!isDryRun && confirmedInserts.length > 0) {
