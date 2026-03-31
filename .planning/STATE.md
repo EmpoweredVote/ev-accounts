@@ -79,7 +79,7 @@ Progress: [██████████] 95%
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 260330-uph | Remove NavSearch bar and Show Candidates toggle from essentials | 2026-03-31 | pending | [260330-uph-remove-navsearch-bar-and-show-candidates](./quick/260330-uph-remove-navsearch-bar-and-show-candidates/) |
+| 260330-uph | Remove NavSearch bar and Show Candidates toggle from essentials | 2026-03-31 | eaf8638 | [260330-uph-remove-navsearch-bar-and-show-candidates](./quick/260330-uph-remove-navsearch-bar-and-show-candidates/) |
 
 ## Session Continuity
 
