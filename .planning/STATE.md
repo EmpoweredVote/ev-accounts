@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.8 in progress — Phase 49 complete, Phase 50 next
+**Current focus:** Phase 101 (Candidate Profiles) in progress — 101-01 complete, 101-02 at human-verify checkpoint
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 101 in progress (2026-03-30)**
+
+Phase 101 (Candidate Profile System) — in progress:
+- 101-01: API endpoint — GET /api/essentials/race-candidates/:id with CandidateDetail + nullable politician_id ✅
+- 101-02: Frontend — fetchRaceCandidate, ElectionsView routing fix, CandidateProfile incumbent/challenger branching — paused at human-verify checkpoint (Tasks 1-2 committed, Task 3 pending) 🔄
 
 **v1.8 in progress (2026-03-26)**
 

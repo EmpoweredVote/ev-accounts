@@ -11,9 +11,9 @@ import {
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
-import { getElectionsByCoordinate } from '../lib/electionService.js';
+import { getElectionsByCoordinate, getCandidateById } from '../lib/electionService.js';
 import { pool } from '../lib/db.js';
-import { GeocodingError } from '../lib/geocodingService.js';
+import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 
 /**
  * Essentials router — address-search and other top-level essentials routes.
@@ -25,6 +25,41 @@ import { GeocodingError } from '../lib/geocodingService.js';
  */
 
 const router = Router();
+
+// UUID validation regex — shared by entity routes
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/race-candidates/:id
+// Auth: optional — public data (candidate profiles are public)
+// Returns a single race candidate's detail including linked politician_id.
+// Withdrawn candidates return 404.
+//
+// Error codes:
+//   422 VALIDATION_ERROR  — invalid UUID format
+//   404 NOT_FOUND         — candidate not found or withdrawn
+//   500 INTERNAL_ERROR    — unexpected server error
+// ---------------------------------------------------------------------------
+
+router.get('/race-candidates/:id', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const { id } = req.params as { id: string };
+  if (!UUID_RE.test(id)) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'id must be a valid UUID' });
+    return;
+  }
+
+  try {
+    const candidate = await getCandidateById(id);
+    if (!candidate) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'Candidate not found' });
+      return;
+    }
+    res.json(candidate);
+  } catch (err) {
+    console.error('[GET /essentials/race-candidates/:id] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch candidate data' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/elections?lat=X&lng=Y
@@ -51,6 +86,46 @@ router.get('/elections', optionalAuth, async (req: Request, res: Response): Prom
     res.json({ elections });
   } catch (err) {
     console.error('[elections] error:', (err as Error).message);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/elections-by-address?address=...
+// Auth: optional — public data (same as /elections)
+// Accepts a human-readable address, geocodes it internally, and returns
+// upcoming elections with races and candidates. Keeps raw lat/lng server-side.
+//
+// Error codes:
+//   422 VALIDATION_ERROR      — missing or empty address query parameter
+//   503 GEOCODER_UNAVAILABLE  — Census Geocoder timeout or outage
+//   500 INTERNAL_ERROR        — unexpected server error
+// Note: ADDRESS_NOT_FOUND and PO_BOX_REJECTED return 200 { elections: [] }
+// ---------------------------------------------------------------------------
+
+router.get('/elections-by-address', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const address = typeof req.query.address === 'string' ? req.query.address.trim() : null;
+  if (!address) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'address query parameter is required' });
+    return;
+  }
+
+  try {
+    const { lat, lng } = await geocodeAddress(address);
+    const elections = await getElectionsByCoordinate(lat, lng);
+    res.json({ elections });
+  } catch (err) {
+    if (err instanceof GeocodingError) {
+      if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'PO_BOX_REJECTED') {
+        res.json({ elections: [] });
+        return;
+      }
+      if (err.code === 'GEOCODER_UNAVAILABLE') {
+        res.status(503).json({ code: 'GEOCODER_UNAVAILABLE', message: 'Address lookup temporarily unavailable.' });
+        return;
+      }
+    }
+    console.error('[GET /essentials/elections-by-address] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
   }
 });
@@ -227,9 +302,6 @@ router.get('/cities/:geo_id/building-photo', async (req: Request, res: Response)
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
-
-// UUID validation regex — shared by entity routes
-const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/governments/:id
