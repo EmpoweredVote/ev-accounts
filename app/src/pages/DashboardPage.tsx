@@ -23,6 +23,8 @@ interface Jurisdiction {
   state_house_district_name: string | null;
   county_name: string | null;
   school_district_name: string | null;
+  state: string | null;
+  city: string | null;
 }
 
 interface ReferralState {
@@ -60,7 +62,19 @@ const TIER_COLOR: Record<string, string> = {
 
 const FEATURES = [
   {
-    name: 'Civic Trivia',
+    name: 'Essentials',
+    description: 'Explore your representatives\' positions.',
+    baseUrl: 'https://essentials.empowered.vote',
+    dot: 'bg-ev-yellow',
+  },
+  {
+    name: 'Empowered Compass',
+    description: 'Map your political values.',
+    baseUrl: 'https://compass.empowered.vote',
+    dot: 'bg-ev-yellow',
+  },
+  {
+    name: 'Civic Trivia Championships',
     description: 'Test your civic knowledge and earn XP.',
     baseUrl: 'https://ctc.empowered.vote',
     dot: 'bg-ev-yellow',
@@ -69,19 +83,25 @@ const FEATURES = [
     name: 'Validation Quests',
     description: 'Validate political stances and earn Red Gems.',
     baseUrl: 'https://quests.empowered.vote',
-    dot: 'bg-ev-red',
-  },
-  {
-    name: 'Essentials',
-    description: 'Explore your representatives\' positions.',
-    baseUrl: 'https://essentials.empowered.vote',
-    dot: 'bg-ev-teal',
-  },
-  {
-    name: 'Empowered Compass',
-    description: 'Map your political values.',
-    baseUrl: 'https://compass.empowered.vote',
     dot: 'bg-ev-teal-light',
+  },
+  {
+    name: 'Read & Rank',
+    description: 'Read civic content and rank what matters.',
+    baseUrl: 'https://readrank.empowered.vote',
+    dot: 'bg-ev-yellow',
+  },
+  {
+    name: 'Civic Spaces',
+    description: 'Engage with your local civic community.',
+    baseUrl: 'https://civicspaces.empowered.vote',
+    dot: 'bg-ev-teal-light',
+  },
+  {
+    name: 'Treasury Tracker',
+    description: 'Track government spending and financial accountability.',
+    baseUrl: 'https://treasurytracker.empowered.vote',
+    dot: 'bg-ev-yellow',
   },
 ];
 
@@ -349,10 +369,25 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Civic Spaces */}
+        {/* Connected Spaces */}
         {jurisdiction && (
           <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your Civic Spaces</p>
+            <div className="flex items-center justify-between">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your Connected Spaces</p>
+              <a
+                href="https://civicspaces.empowered.vote"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-ev-teal hover:underline"
+              >
+                Civic Spaces →
+              </a>
+            </div>
+            {(jurisdiction.city || jurisdiction.state) && (
+              <p className="text-sm font-semibold text-ev-black dark:text-white">
+                {[jurisdiction.city, jurisdiction.state].filter(Boolean).join(', ')}
+              </p>
+            )}
             <div className="-mx-5 px-5 divide-y divide-gray-100 dark:divide-gray-800">
               {DISTRICT_LABELS.filter((d) => jurisdiction[d.key]).map(({ key, label }) => (
                 <div key={key} className="flex items-center justify-between py-2.5 first:pt-0 last:pb-0">
