@@ -481,6 +481,28 @@ Plans:
 
 ---
 
+#### Phase 50: Precise Representatives for Pre-Phase-49 Users
+
+**Goal:** `GET /essentials/representatives/me` returns the correct district-specific politicians for all Connected users — including those who set their location before Phase 49 shipped and have `encrypted_lat`/`encrypted_lng` but null geo_id columns. A new Path 1.5 decrypts stored coordinates via the existing `resolve_user_jurisdiction` RPC when geo_ids are absent, then writes them back so subsequent requests are fast. A one-time backfill covers all existing users.
+
+**Dependencies:** Phase 49 (stored jurisdiction schema + `resolve_user_jurisdiction` RPC must exist)
+
+**Plans:** 2 plans
+
+Plans:
+- [ ] 50-01-PLAN.md — Add Path 1.5 to /representatives/me route
+- [ ] 50-02-PLAN.md — Backfill script for pre-Phase-49 users
+
+**Success Criteria:**
+
+1. `GET /essentials/representatives/me` for user `4e6dde8f-2bd0-4054-824f-4164744165ea` (Culver Blvd, LA) returns Karen Bass and Traci Park in the response body.
+2. `X-Formatted-Address` header returns a street-level or ZIP-level string, not just "LOS ANGELES, CA".
+3. After the first successful Path 1.5 call, the user's `connected_profiles` row has geo_ids populated (so future calls use Path 1 directly).
+4. All existing Connected users with `encrypted_lat` set but null `congressional_geo_id` have geo_ids populated after the backfill.
+5. Path ordering: geo_ids present → Path 1 (fast), encrypted coords + no geo_ids → Path 1.5 (decrypt+lookup+write), home_address only → Path 2 (geocode), no location → 204.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -534,3 +556,4 @@ Plans:
 | 47. Validation Quests Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
 | 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 3/3 | Complete | 2026-03-26 |
+| 50. Precise Representatives for Pre-Phase-49 Users | v1.8 | 0/? | Pending | — |
