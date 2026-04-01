@@ -5,14 +5,20 @@
 See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 101 (Candidate Profiles) in progress — 101-01 complete, 101-02 at human-verify checkpoint
+**Current focus:** Phase 50 (Precise Representatives for Pre-Phase-49 Users) — 50-01 complete, 50-02 complete
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
-**Phase 101 in progress (2026-03-30)**
+**Phase 50 in progress (2026-04-01)**
 
-Phase 101 (Candidate Profile System) — in progress:
+Phase 50 (Precise Representatives for Pre-Phase-49 Users) — executing:
+- 50-01: Path 1.5 in GET /essentials/representatives/me — complete ✅ (commit 493aba0)
+- 50-02: Backfill script for pre-Phase-49 users — pending
+
+**Phase 101 paused (2026-03-30)**
+
+Phase 101 (Candidate Profile System) — paused:
 - 101-01: API endpoint — GET /api/essentials/race-candidates/:id with CandidateDetail + nullable politician_id ✅
 - 101-02: Frontend — fetchRaceCandidate, ElectionsView routing fix, CandidateProfile incumbent/challenger branching — paused at human-verify checkpoint (Tasks 1-2 committed, Task 3 pending) 🔄
 
@@ -78,6 +84,14 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 50 Plan 01 Complete — Path 1.5 in /representatives/me (50-01)
+
+- **Path 1.5 lazy hydration** — detects `encrypted_lat IS NOT NULL` + `congressional_geo_id IS NULL`; calls `resolve_user_jurisdiction` RPC; serves correct representatives; writes back 10 geo_id/name columns async (fire-and-forget)
+- **Single pool.query for all profile fields** — merged home_address + geo_ids + has_coords into one SELECT; reduces round-trips per request
+- **All-null RPC falls through** — if `resolve_user_jurisdiction` returns all nulls (outside covered districts), falls through to Path 2 (home_address geocode) rather than 204
+- **adminRpc import path** — `../lib/supabase.js` (NOT `../lib/supabaseAdmin.js`)
+- **50-01 commit** — 493aba0
 
 ### Quick Task 011 Complete — BUG-03: City Officials in Representatives (011)
 
