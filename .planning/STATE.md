@@ -61,9 +61,10 @@ Progress: [██████████] 100%
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260330-uph | Remove NavSearch bar and Show Candidates toggle from essentials | 2026-03-31 | eaf8638 | [260330-uph-remove-navsearch-bar-and-show-candidates](./quick/260330-uph-remove-navsearch-bar-and-show-candidates/) |
+| 260401-q95 | Seed Monroe County 2026 primary election data (39 races, 69 candidates) | 2026-04-01 | 77d708c | [260401-q95-add-monroe-county-2026-primary-candidate](./quick/260401-q95-add-monroe-county-2026-primary-candidate/) |
 
 ## Session Continuity
 
-Last session: 2026-03-31
-Stopped at: Milestone v2026.3.8 archived
+Last session: 2026-04-01
+Stopped at: Completed 260401-q95 seed script (checkpoint pending: run against DB)
 Resume file: None
