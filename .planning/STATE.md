@@ -14,7 +14,7 @@ See: .planning/PROJECT.md (updated 2026-03-19 after v1.6 milestone started)
 
 Phase 50 (Precise Representatives for Pre-Phase-49 Users) — executing:
 - 50-01: Path 1.5 in GET /essentials/representatives/me — complete ✅ (commit 493aba0)
-- 50-02: Backfill script for pre-Phase-49 users — pending
+- 50-02: Backfill script for pre-Phase-49 users — complete ✅ (commit 132f9d9)
 
 **Phase 101 paused (2026-03-30)**
 
