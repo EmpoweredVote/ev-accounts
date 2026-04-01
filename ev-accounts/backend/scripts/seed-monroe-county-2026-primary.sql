@@ -8,7 +8,7 @@
 -- - Election: ON CONFLICT (name, election_date, state) DO UPDATE
 -- - Races: ON CONFLICT (election_id, position_name, primary_party) DO UPDATE
 -- - Candidates: INSERT ... WHERE NOT EXISTS (race_id, full_name)
--- - Withdrawn candidates: UPDATE after insert
+-- - Withdrawn candidates excluded (not inserted)
 --
 -- Usage: psql $DATABASE_URL -f scripts/seed-monroe-county-2026-primary.sql
 -- =============================================================================
@@ -158,7 +158,6 @@ FROM (
     AND r.position_name = 'Monroe County Council District 2' AND r.primary_party = 'Democratic'
 ) race,
 (VALUES
-  ('Joe Davis',           'Joe',       'Davis'),
   ('Kate Wiltz',          'Kate',      'Wiltz')
 ) AS v(full_name, first_name, last_name)
 WHERE NOT EXISTS (
@@ -492,8 +491,7 @@ FROM (
 ) race,
 (VALUES
   ('Levi Combs',           'Levi',     'Combs'),
-  ('Leon Gordon',          'Leon',     'Gordon'),
-  ('Eric S. Petry',        'Eric',     'Petry')
+  ('Leon Gordon',          'Leon',     'Gordon')
 ) AS v(full_name, first_name, last_name)
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
@@ -778,39 +776,6 @@ WHERE NOT EXISTS (
   SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
 );
 
--- =============================================================================
--- Step 4: Mark withdrawn candidates
--- These candidates filed but subsequently withdrew from their races.
--- =============================================================================
-
--- Joe Davis withdrew from Monroe County Council District 2 on 2/5/2026
-UPDATE essentials.race_candidates
-SET candidate_status = 'withdrawn', updated_at = now()
-WHERE full_name = 'Joe Davis'
-  AND race_id = (
-    SELECT r.id FROM essentials.races r
-    JOIN essentials.elections e ON r.election_id = e.id
-    WHERE e.name = '2026 Indiana Primary'
-      AND e.election_date = '2026-05-05'
-      AND e.state = 'IN'
-      AND r.position_name = 'Monroe County Council District 2'
-      AND r.primary_party = 'Democratic'
-  );
-
--- Eric S. Petry withdrew from Perry Township Trustee on 2/10/2026
-UPDATE essentials.race_candidates
-SET candidate_status = 'withdrawn', updated_at = now()
-WHERE full_name = 'Eric S. Petry'
-  AND race_id = (
-    SELECT r.id FROM essentials.races r
-    JOIN essentials.elections e ON r.election_id = e.id
-    WHERE e.name = '2026 Indiana Primary'
-      AND e.election_date = '2026-05-05'
-      AND e.state = 'IN'
-      AND r.position_name = 'Perry Township Trustee'
-      AND r.primary_party = 'Democratic'
-  );
-
 COMMIT;
 
 -- =============================================================================
@@ -829,8 +794,4 @@ COMMIT;
 --   WHERE e.name = '2026 Indiana Primary'
 --   GROUP BY r.position_name, r.primary_party
 --   ORDER BY r.position_name;
---
--- Withdrawn candidates:
---   SELECT full_name, candidate_status FROM essentials.race_candidates
---   WHERE candidate_status = 'withdrawn';
 -- =============================================================================
