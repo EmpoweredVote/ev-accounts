@@ -259,7 +259,7 @@ export default function DashboardPage() {
               <div className="flex items-center justify-between text-sm">
                 <span className="font-medium text-ev-black dark:text-white">Level {xp.level}</span>
                 <span className="text-gray-400 text-xs tabular-nums">
-                  {xp.xp_in_level.toLocaleString()} / {xp.xp_to_next_level.toLocaleString()} XP
+                  {xp.xp_in_level.toLocaleString()} / {(xp.xp_in_level + xp.xp_to_next_level).toLocaleString()} XP
                 </span>
               </div>
               <div className="h-2 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
