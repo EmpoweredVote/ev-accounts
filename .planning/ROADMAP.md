@@ -490,8 +490,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 50-01-PLAN.md — Add Path 1.5 to /representatives/me route
-- [ ] 50-02-PLAN.md — Backfill script for pre-Phase-49 users
+- [x] 50-01-PLAN.md — Add Path 1.5 to /representatives/me route
+- [x] 50-02-PLAN.md — Backfill script for pre-Phase-49 users
 
 **Success Criteria:**
 
@@ -556,4 +556,4 @@ Plans:
 | 47. Validation Quests Silent SSO | v1.7 | 2/2 | Complete | 2026-03-24 |
 | 48. Compliance + End-to-End Verification | v1.7 | 0/2 | Pending | — |
 | 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 3/3 | Complete | 2026-03-26 |
-| 50. Precise Representatives for Pre-Phase-49 Users | v1.8 | 0/? | Pending | — |
+| 50. Precise Representatives for Pre-Phase-49 Users | v1.8 | 2/2 | Complete | 2026-04-01 |
