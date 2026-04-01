@@ -13,6 +13,7 @@ import {
 } from '../lib/essentialsService.js';
 import { getElectionsByCoordinate, getCandidateById } from '../lib/electionService.js';
 import { pool } from '../lib/db.js';
+import { adminRpc } from '../lib/supabase.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 
 /**
@@ -420,32 +421,32 @@ router.get('/districts/:id', optionalAuth, async (req: Request, res: Response): 
 router.get('/representatives/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
   const { userId } = req as AuthenticatedRequest;
 
-  // Fetch the user's home_address unconditionally — needed for both paths below.
-  const { rows: profileRows } = await pool.query<{ home_address: string | null }>(
-    `SELECT home_address FROM connect.connected_profiles WHERE user_id = $1`,
+  // Single query: fetch all location fields + has_coords flag in one round-trip.
+  const { rows } = await pool.query<{
+    home_address: string | null;
+    congressional_geo_id: string | null;
+    state_senate_geo_id: string | null;
+    state_house_geo_id: string | null;
+    county_geo_id: string | null;
+    school_district_geo_id: string | null;
+    jurisdiction_state: string | null;
+    jurisdiction_city: string | null;
+    has_coords: boolean;
+  }>(
+    `SELECT home_address,
+             congressional_geo_id, state_senate_geo_id, state_house_geo_id,
+             county_geo_id, school_district_geo_id,
+             jurisdiction_state, jurisdiction_city,
+             (encrypted_lat IS NOT NULL) AS has_coords
+      FROM connect.connected_profiles WHERE user_id = $1`,
     [userId]
-  ).catch(() => ({ rows: [] as { home_address: string | null }[] }));
-  const homeAddress = profileRows[0]?.home_address ?? '';
+  ).catch(() => ({ rows: [] as any[] }));
+  const j = rows[0];
+  const homeAddress = j?.home_address ?? '';
 
   // --- Path 1: stored jurisdiction GEO IDs — fast direct lookup ---
-  try {
-    const { rows } = await pool.query<{
-      congressional_geo_id: string | null;
-      state_senate_geo_id: string | null;
-      state_house_geo_id: string | null;
-      county_geo_id: string | null;
-      school_district_geo_id: string | null;
-      jurisdiction_state: string | null;
-      jurisdiction_city: string | null;
-    }>(
-      `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
-              county_geo_id, school_district_geo_id,
-              jurisdiction_state, jurisdiction_city
-       FROM connect.connected_profiles WHERE user_id = $1`,
-      [userId]
-    );
-    const j = rows[0];
-    if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
+  if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
+    try {
       const [politicians, localOfficials] = await Promise.all([
         getRepresentativesByJurisdiction({
           congressional: j.congressional_geo_id,
@@ -467,9 +468,71 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
       res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
       res.status(200).json(merged);
       return;
+    } catch {
+      // fall through to Path 1.5 / Path 2
     }
-  } catch {
-    // fall through to address-based path
+  }
+
+  // --- Path 1.5: encrypted coords present but geo_ids not yet stored (pre-Phase-49 users) ---
+  if (j && j.has_coords && !j.congressional_geo_id && !j.state_senate_geo_id) {
+    try {
+      const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
+        p_user_id: userId,
+      }, 'connect');
+
+      if (!jError && jData) {
+        const jd = jData as Record<string, string | null>;
+
+        // Fire-and-forget write-back of 10 resolvable columns
+        void pool.query(
+          `UPDATE connect.connected_profiles
+           SET congressional_geo_id        = $2,
+               congressional_district_name = $3,
+               state_senate_geo_id         = $4,
+               state_senate_district_name  = $5,
+               state_house_geo_id          = $6,
+               state_house_district_name   = $7,
+               county_geo_id               = $8,
+               county_name                 = $9,
+               school_district_geo_id      = $10,
+               school_district_name        = $11,
+               updated_at                  = now()
+           WHERE user_id = $1`,
+          [userId, jd.congressional ?? null, jd.congressional_name ?? null,
+           jd.state_senate ?? null, jd.state_senate_name ?? null,
+           jd.state_house ?? null, jd.state_house_name ?? null,
+           jd.county ?? null, jd.county_name ?? null,
+           jd.school_district ?? null, jd.school_district_name ?? null]
+        ).catch((e: Error) => console.error('[representatives/me] Path 1.5 write-back error:', e.message));
+
+        // Only serve if at least one geo_id resolved — otherwise fall through to Path 2
+        if (jd.congressional || jd.state_senate) {
+          const [politicians, localOfficials] = await Promise.all([
+            getRepresentativesByJurisdiction({
+              congressional: jd.congressional,
+              state_senate: jd.state_senate,
+              state_house: jd.state_house,
+              county: jd.county,
+              school_district: jd.school_district,
+            }),
+            getLocalOfficialsByUserId(userId),
+          ]);
+
+          const seenIds = new Set(politicians.map((p) => p.id));
+          const uniqueLocals = localOfficials.filter((p) => !seenIds.has(p.id));
+          const merged = [...politicians, ...uniqueLocals];
+
+          const dataStatus = merged.length === 0 ? 'no-geofence-data' : 'fresh';
+          res.setHeader('X-Data-Status', dataStatus);
+          res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+          res.status(200).json(merged);
+          return;
+        }
+        // All-null from RPC (no boundary match) — fall through to Path 2
+      }
+    } catch {
+      // RPC error — fall through to Path 2
+    }
   }
 
   // --- Path 2: no encrypted coordinates — geocode home_address directly ---
