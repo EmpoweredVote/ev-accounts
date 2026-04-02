@@ -33,7 +33,7 @@ Phase 49 (Stored Jurisdiction & Cross-App Location Profile) — complete (all 3 
 
 Phase 48 (Compliance + E2E Verification) — complete. Both plans delivered:
 - 48-01: PrivacyPage.tsx live at accounts.empowered.vote/privacy — 9-section policy + ev_session cookie table; footer links on Login and Signup — user-verified ✅
-- 48-02: Cross-app SSO smoke test — all 5 apps verified ✅
+- 48-02: Cross-app SSO smoke test — smoke tested 2026-04-02; session inheritance ✅ logout sync ⚠️ (known gap: active in-memory sessions not cleared on logout; polling fix captured as todo)
 
 **v1.6 open work (phases 42–43 still pending):**
 - Phase 42 — Decommission and DNS Cutover — waiting for zero-traffic signal on Go server
@@ -248,7 +248,8 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - ~~Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40)~~ — DONE 2026-03-23
 - Add city council district to jurisdiction data (`city_council_geo_id` + `city_council_district_name` on `connected_profiles`, geo lookup, profile page) → `.planning/todos/pending/2026-04-01-add-city-council-district-to-jurisdiction.md`
-- Set up LA City Council District 11 2026 race + add Traci Park (incumbent) and Faizah Malik (challenger) to `race_candidates` → `.planning/todos/pending/2026-04-01-setup-la-cd11-2026-race-candidates.md`
+- ~~Set up LA City Council District 11 2026 race + add Traci Park (incumbent) and Faizah Malik (challenger) to `race_candidates`~~ — DONE 2026-04-01
+- Add session polling for cross-app logout sync (6 apps + Treasury Tracker when it joins) → `.planning/todos/pending/2026-04-02-session-polling-cross-app-logout-sync.md`
 
 ### Phase 40 Plan 01 Complete (40-01)
 
