@@ -248,6 +248,7 @@ v1.6 constraints and decisions to carry forward:
 - Confirm access to EV-Backend Go repo and production DB connection string before starting Phase 34.
 - ~~Coordinate with Chris Andrews on timing of frontend auth switches (Phase 40)~~ — DONE 2026-03-23
 - Add city council district to jurisdiction data (`city_council_geo_id` + `city_council_district_name` on `connected_profiles`, geo lookup, profile page) → `.planning/todos/pending/2026-04-01-add-city-council-district-to-jurisdiction.md`
+- Set up LA City Council District 11 2026 race + add Traci Park (incumbent) and Faizah Malik (challenger) to `race_candidates` → `.planning/todos/pending/2026-04-01-setup-la-cd11-2026-race-candidates.md`
 
 ### Phase 40 Plan 01 Complete (40-01)
 
