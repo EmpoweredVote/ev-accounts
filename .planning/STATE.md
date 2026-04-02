@@ -62,7 +62,7 @@ Progress: [██████████] 100%
 |---|-------------|------|--------|-----------|
 | 260330-uph | Remove NavSearch bar and Show Candidates toggle from essentials | 2026-03-31 | eaf8638 | [260330-uph-remove-navsearch-bar-and-show-candidates](./quick/260330-uph-remove-navsearch-bar-and-show-candidates/) |
 | 260401-q95 | Seed Monroe County 2026 primary election data (39 races, 69 candidates) | 2026-04-01 | 77d708c | [260401-q95-add-monroe-county-2026-primary-candidate](./quick/260401-q95-add-monroe-county-2026-primary-candidate/) |
-| 260401-tdf | Link election candidates with existing politician records for shared data | 2026-04-02 | pending | [260401-tdf-link-election-candidates-with-existing-p](./quick/260401-tdf-link-election-candidates-with-existing-p/) |
+| 260401-tdf | Link election candidates with existing politician records for shared data | 2026-04-02 | 0b8215f | [260401-tdf-link-election-candidates-with-existing-p](./quick/260401-tdf-link-election-candidates-with-existing-p/) |
 
 ## Session Continuity
 
