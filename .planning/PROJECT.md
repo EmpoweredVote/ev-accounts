@@ -70,24 +70,24 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 integration reference: Auth Hub redirect flow, 16 endpoints with TypeScript shapes, tier access rules, jurisdiction "never ask for address" (first-class Section 7), 8 inline anti-patterns; `COMPASS_CONTRACT.md` hard-deleted — v1.5
 - ✓ `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (inform / connected_with_jurisdiction / connected_no_jurisdiction), "Inform is the unconditional baseline" principle, opt-in XP/gem award endpoints, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples — v1.5
 
-### Active (v1.6)
+### Active (v1.9)
 
-- [ ] CONS-01: Database migration — create `essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia` schemas in ev-accounts; import 52 tables from EV-Backend with RLS on all migrated tables
-- [ ] CONS-02: Politician deduplication — build `public.politician_id_bridge` mapping table; migrate `inform.politicians` references to `essentials.politicians`; drop `inform.politicians`
-- [ ] CONS-03: Port Go endpoints to Express — Treasury (~5), Meetings (~8), Staging (~15), Essentials core (~25); data import pipelines out of scope
-- [ ] CONS-04: Compass additions — port ~11 missing endpoints (compare, verdicts, admin CRUD, batch answers); fix value range CHECK constraint 1–5 → 0.5–5.5
-- [ ] CONS-05: Frontend auth updates — CompassV2, Essentials, Read & Rank switch from cookie auth to Bearer tokens; update API URLs
-- [ ] CONS-06: VQ + Trivia database migration — import schemas; update DATABASE_URL on Render; add RLS; update politician foreign keys
-- [ ] CONS-07: Retire EV-Backend — verify zero traffic; scale to zero; archive Go repo
-- [ ] CONS-08: DNS cutover — `api.empowered.vote` → ev-accounts Express server; update CORS + frontend env vars
-- [ ] CONS-09: Updated integration doc for Chris Andrews' team — document all changes made to accommodate consolidation
+- [ ] ROLES-01: Role infrastructure — `feature_scope` column on `public.roles`; `jurisdiction_geoid` + `resource_id` columns on `public.user_roles`; updated partial unique index; `requireRole(featureScope, geoid?, resourceId?)` middleware; updated `grant_role`/`revoke_role` RPCs
+- [ ] ROLES-02: Role audit log — `public.role_audit_log` table (who, what action, feature_scope, jurisdiction_geoid, resource_id, timestamp, before/after snapshot); all role-gated writes append to log
+- [ ] ROLES-03: Admin grant/revoke UI — existing admin tool gains role assignment form (feature scope + jurisdiction + optional resource_id); per-user audit log tab in account detail
+- [ ] ROLES-04: Global audit dashboard — admin page filtering all role-holder actions by role type + jurisdiction + date range
+- [ ] ROLES-05: Compass Stance Editor — role-gated `PUT /api/compass/stances/:politicianId` scoped to `jurisdiction_geoid`; enforces editor cannot modify politicians outside their assigned jurisdiction
+- [ ] ROLES-06: Campaign Manager — resource-scoped to single `politician_id`; can only write stances for their assigned politician; cannot read or modify any other politician's data
+- [ ] ROLES-07: CTC Content Editor — role-gated trivia question create/edit endpoints scoped to `jurisdiction_geoid`; geo-filtered question sets
+- [ ] ROLES-08: Essentials Data Editor — role-gated politician bio/office update endpoints scoped to `jurisdiction_geoid`
+- [ ] ROLES-09: Volunteer (Civic Spaces) — role grants access to volunteer slice in Civic Spaces; SSO token carries volunteer role; Civic Spaces enforces gate
+- [ ] ROLES-10: Contributor portal — new React app for role-holders; role-type-aware views (different UI per feature_scope); scoped to user's assigned jurisdiction/resource; reads auth from shared `ev_session` SSO cookie
+- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — `ESSENTIALS_SERVICE_KEY` in Render env + `.env.example` update (zero code changes)
 
-### Deferred to v1.7
+### Deferred to v2.0
 
-- [ ] ROLES-01: Scoped roles system — feature × geography permission model (CTC Dev, Quest Dev, Essentials Dev, Compass Dev + jurisdiction_geoid)
 - [ ] VR-F01: VR admin dashboard — visualize Verification Rating distribution, holds, outliers
 - [ ] COMP-05: User-to-user compass compare API — endpoint comparing two accounts' responses on shared topics
-- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — `essentials-rep-lookup` in `serviceKeyAuth.ts` + env doc fix
 
 ### Still Deferred
 
@@ -179,24 +179,28 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
 | Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
 
-## Current Milestone: v1.7 Cross-App SSO
+## Current Milestone: v1.9 Roles
+
+**Goal:** Delegated authority — admins assign geo-scoped and resource-scoped roles to Connected/Empowered accounts, giving them limited contributor capabilities with a full audit trail. A new contributor portal serves as the role-holder workspace.
+
+**Target features:**
+- Role infrastructure: `feature_scope` + `jurisdiction_geoid` + `resource_id` on `public.user_roles`; `requireRole()` middleware; `role_audit_log` table; admin grant/revoke UI
+- Role types: Compass Stance Editor (jurisdiction-scoped), Campaign Manager (politician-scoped), CTC Content Editor (jurisdiction-scoped), Essentials Data Editor (jurisdiction-scoped), Volunteer (Civic Spaces-scoped)
+- Audit system: per-user action log in admin account detail + global audit dashboard filterable by role type + jurisdiction
+- Contributor portal: new React app (separate from admin tool) where role-holders perform scoped work
+- ESSENTIALS-PROV: `ESSENTIALS_SERVICE_KEY` env var in Render + `.env.example` update
+
+**Out of scope for v1.9:** VR-F01 (VR admin dashboard), COMP-05 (user-to-user compass compare) — deferred to v2.0.
+
+---
+## Previous Milestone: v1.8 Location Identity (Phases 49–50, complete 2026-04-01)
+
+**Goal:** Store district GEO IDs on `connected_profiles` so every app reads jurisdiction from `/account/me` without geocoding; Path 1.5 serves pre-Phase-49 users via stored coordinates.
+
+---
+## Previous Milestone: v1.7 Cross-App SSO (Phases 44–48, shipped 2026-03-25)
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-**Target features:**
-- Accounts API: cookie session infrastructure (`ev_session` httpOnly cookie on login, `GET /api/auth/session` silent exchange endpoint, global logout cookie clearing)
-- Profile Hub, CTC, Essentials, CompassV2: silent session check on load; logout clears shared cookie
-- Validation Quests: silent session check on load via `supabase.auth.setSession()`; logout clears shared cookie
-- Privacy disclosure: document `ev_session` cookie as strictly necessary in privacy policy
-
-**Out of scope for v1.7:** Treasury Tracker (fully public data portal, no auth concept — SSO not applicable). Deferred v1.6 items (ROLES-01, VR-F01, COMP-05, ESSENTIALS-PROV) move to v1.8.
-
 ---
-## Previous Milestone: v1.6 Platform Consolidation (Phases 34–43, in progress)
-
-**Goal:** Merge all Empowered Vote backend services into ev-accounts as the single database, single API server, and single auth system.
-
-**Status:** Phases 34–41 complete. Phases 42 (Decommission & DNS Cutover) and 43 (Integration Docs) pending.
-
----
-*Last updated: 2026-03-24 after v1.7 milestone started*
+*Last updated: 2026-04-02 after v1.9 Roles milestone started*
