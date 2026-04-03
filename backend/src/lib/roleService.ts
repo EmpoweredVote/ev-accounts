@@ -28,6 +28,7 @@ import { cache } from './cache.js';
 // ---------------------------------------------------------------------------
 
 export interface UserRoleGrant {
+  id: string;
   role_id: string;
   slug: string;
   name: string;
@@ -229,30 +230,14 @@ export async function revokeRole(
  */
 export async function getUserRoles(
   userId: string
-): Promise<Array<{
-  role_id: string;
-  slug: string;
-  name: string;
-  granted_at: string;
-  feature_scope: string;
-  jurisdiction_geoid: string | null;
-  resource_id: string | null;
-}>> {
+): Promise<UserRoleGrant[]> {
   const { data, error } = await adminRpc('get_user_roles', {
     p_user_id: userId,
   });
 
   if (error) throw new Error(error.message);
 
-  return ((data ?? []) as Array<{
-    role_id: string;
-    slug: string;
-    name: string;
-    granted_at: string;
-    feature_scope: string;
-    jurisdiction_geoid: string | null;
-    resource_id: string | null;
-  }>);
+  return ((data ?? []) as UserRoleGrant[]);
 }
 
 // ---------------------------------------------------------------------------
