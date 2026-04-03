@@ -450,6 +450,7 @@ async function processDataset(
           fc.sortOrder,
           fc.node.depth,
           fc.linkKey,
+          fc.node.actualAmount,
         ]);
 
         pathToDbId.set(fc.selfPath, catId);
@@ -471,7 +472,7 @@ async function processDataset(
 
         await client.query(
           `INSERT INTO treasury.budget_categories
-           (id, budget_id, parent_id, name, amount, percentage, color, description, why_matters, historical_change, item_count, sort_order, depth, link_key)
+           (id, budget_id, parent_id, name, amount, percentage, color, description, why_matters, historical_change, item_count, sort_order, depth, link_key, actual_amount)
            VALUES ${values.join(', ')}`,
           params,
         );
