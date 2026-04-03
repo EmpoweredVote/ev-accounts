@@ -547,6 +547,10 @@ Plans:
 4. Five role slugs are seeded in `public.roles`: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`.
 5. A single TypeScript constant in `backend/src/lib/roles.ts` exports the `FEATURE_SCOPES` array that generates both the Zod enum and the DB CHECK constraint — no three-way drift is possible.
 
+**Plans:** 1 plan
+
+Plans:
+- [ ] 52-01-PLAN.md — Role scope migration, audit log, RPC replacement, seed roles, TS constant
 ---
 
 #### Phase 53: Service Layer + requireRole Middleware
