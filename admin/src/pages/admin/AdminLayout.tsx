@@ -10,6 +10,7 @@ const navItems = [
   { label: 'Access Requests', to: '/admin/access-requests' },
   { label: 'Cron Log', to: '/admin/cron-log' },
   { label: 'Roles', to: '/admin/roles' },
+  { label: 'Role Audit', to: '/admin/role-audit' },
   { label: 'Topics', to: '/admin/topics' },
   { label: 'Politicians', to: '/admin/politicians' },
   { label: 'Categories', to: '/admin/categories' },

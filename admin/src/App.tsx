@@ -11,6 +11,7 @@ import { InviteTreePage } from './pages/admin/InviteTreePage';
 import { AccessRequestsPage } from './pages/admin/AccessRequestsPage';
 import { CronLogPage } from './pages/admin/CronLogPage';
 import { RolesPage } from './pages/admin/RolesPage';
+import { RoleAuditPage } from './pages/admin/RoleAuditPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
@@ -85,6 +86,7 @@ function App() {
           <Route path="access-requests" element={<AccessRequestsPage />} />
           <Route path="cron-log" element={<CronLogPage />} />
           <Route path="roles" element={<RolesPage />} />
+          <Route path="role-audit" element={<RoleAuditPage />} />
           <Route path="topics" element={<TopicsPage />} />
           <Route path="politicians" element={<PoliticiansPage />} />
           <Route path="categories" element={<CategoriesPage />} />
