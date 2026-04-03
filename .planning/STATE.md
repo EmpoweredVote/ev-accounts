@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 54 complete, ready for Phase 55 (requireRole enforcement on protected routes)
+**Current focus:** v1.9 Roles — Phase 55 Plan 01 complete, ready for Phase 55 Plan 02 (stance editor routes)
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 55 Plan 01 complete (2026-04-03)**
+
+Phase 55 Plan 01 (Compass Contributor Schema) — complete ✅:
+- 55-01: Migration 049 applied to production; `essentials.politicians.home_jurisdiction_geoid`, `inform.politician_answers.write_in_text`, `public.role_audit_log.role_grant_id` (sparse index) added; `get_user_roles` RPC extended with `ur.id`; `UserRoleGrant.id` added; `stanceService.ts` created with `getPoliticianJurisdiction`, `getMatchingGrant`, `getContributorPoliticians`, `writeStanceAuditLog` ✅
+- Key pattern: fail-open jurisdiction (NULL politician geoid = any stance editor can edit, console.warn logged); `role_grant_id` in audit log = `matchingGrant.id` (user_roles row UUID), NOT `role_id`
 
 **Phase 54 complete (2026-04-03)**
 
@@ -124,6 +130,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 55 Plan 01 Complete — Compass Contributor Schema (55-01)
+
+- **Fail-open jurisdiction** — politician with NULL `home_jurisdiction_geoid` is matchable by any `compass_stance_editor` grant (Alpha); logged as console.warn with TODO to tighten
+- **role_grant_id = user_roles.id** — audit entries store the grant ROW UUID (not the roles definition UUID); Plans 02+03 must use `matchingGrant.id`
+- **user_roles.id already existed** — production already had the UUID column; migration documents with comment, no ALTER needed
+- **55-01 commits** — a13cdb4 (migration 049), ec9f63e (UserRoleGrant + stanceService)
 
 ### Phase 54 Plan 02 Complete — Admin UI Grant/Revoke + Audit Dashboard (54-02)
 
