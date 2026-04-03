@@ -560,6 +560,38 @@ router.post('/roles/revoke', async (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
+// Role audit log
+// ---------------------------------------------------------------------------
+
+const AuditLogQuerySchema = z.object({
+  feature_scope: z.string().optional(),
+  jurisdiction_geoid: z.string().optional(),
+  from_date: z.string().optional(),
+  to_date: z.string().optional(),
+  page: z.coerce.number().int().min(1).default(1),
+  page_size: z.coerce.number().int().min(1).max(50).default(25),
+});
+
+/**
+ * GET /api/admin/role-audit-log
+ * Returns paginated, filterable entries from public.role_audit_log.
+ */
+router.get('/role-audit-log', async (req, res) => {
+  try {
+    const parsed = AuditLogQuerySchema.safeParse(req.query);
+    if (!parsed.success) {
+      res.status(400).json({ error: 'Invalid query parameters', details: parsed.error.flatten() });
+      return;
+    }
+    const result = await getRoleAuditLog(parsed.data);
+    res.json(result);
+  } catch (err) {
+    console.error('[admin/role-audit-log] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // Compass admin (deferred from Phase 4)
 // ---------------------------------------------------------------------------
 

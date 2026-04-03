@@ -18,7 +18,7 @@
 import { supabaseAdmin, adminRpc } from './supabase.js';
 import { pool } from './db.js';
 import { executeDemotion } from './empowerService.js';
-import { grantRole, revokeRole } from './roleService.js';
+import { grantRole, revokeRole, getUserRoles } from './roleService.js';
 import { getXpHistory } from './xpService.js';
 
 // ---------------------------------------------------------------------------
@@ -121,7 +121,19 @@ export async function getAccountDetail(userId: string): Promise<Record<string, u
     throw new Error(error.message);
   }
 
-  return (data ?? {}) as Record<string, unknown>;
+  const result = (data ?? {}) as Record<string, unknown>;
+
+  // Enrich roles with scope columns from getUserRoles (get_user_roles RPC returns
+  // feature_scope, jurisdiction_geoid, and resource_id which may be absent from
+  // the admin_get_account_detail RPC result).
+  try {
+    const enrichedRoles = await getUserRoles(userId);
+    result.roles = enrichedRoles;
+  } catch {
+    // Non-fatal: fall back to whatever admin_get_account_detail returned
+  }
+
+  return result;
 }
 
 /**
