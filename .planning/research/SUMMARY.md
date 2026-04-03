@@ -1,246 +1,238 @@
 # Project Research Summary
 
-**Project:** empowered-accounts
-**Domain:** Civic identity platform — permission system, compass analytics, admin tooling
-**Researched:** 2026-03-19
-**Confidence:** HIGH — all findings grounded in direct codebase inspection
+**Project:** ev-accounts — v1.9 Delegated Authority / Scoped Roles
+**Domain:** Civic platform contributor role system with geo-scoped authorization and audit trail
+**Researched:** 2026-04-02
+**Confidence:** HIGH — all findings from direct source inspection of this repository and Civic Spaces
+
+---
 
 ## Executive Summary
 
-v1.6 is a focused milestone with four features: scoped roles (ROLES-01), compass compare (COMP-05), VR admin dashboard (VR-F01), and Essentials XP provisioning (ESSENTIALS-PROV). The defining characteristic of this milestone is that it adds significant new capability without adding a single new npm package or external dependency. Every feature is implementable using the existing Express 4.x / TypeScript / Supabase / pg / Redis stack. ESSENTIALS-PROV is already coded — it requires only env var provisioning and a docs update.
+v1.9 adds a scoped role system on top of the existing flat `public.user_roles` table. The core work is schema evolution — adding three nullable columns (`feature_scope`, `jurisdiction_geoid`, `resource_id`) and creating three SQL functions (`grant_role`, `revoke_role`, `get_user_roles`) that do not yet exist in any migration. Everything downstream — middleware, endpoints, admin UI, contributor portal — follows patterns already proven in the codebase. Zero new backend runtime dependencies are required.
 
-The recommended build order is ESSENTIALS-PROV → COMP-05 → VR-F01 → ROLES-01. This is risk-ordered: the first three features are read-only with no schema migrations, while ROLES-01 requires schema migrations, RPC signature updates, a new partial unique index, and new middleware. Building ROLES-01 last ensures the other three features are never blocked on the highest-blast-radius change. All four features are architecturally independent and can be designed in parallel; only implementation should be sequenced.
+The recommended approach is strictly layered: schema first (gates everything), then the `requireRole` middleware and `checkRole` utility, then role-gated endpoints, then UI surfaces in parallel (admin UI updates and contributor portal). The Civic Spaces integration via `POST /api/roles/check` lands last and must not drive architecture decisions — it is a consumer of the role system, not a co-designer.
 
-The two critical pitfalls that must be locked in before any code is written: (1) the NULL geo-scope pattern for ROLES-01 — every permission check must use `(jurisdiction_geoid IS NULL OR jurisdiction_geoid = $x)`, never a bare equality — and (2) compass compare visibility enforcement — private answers must be filtered inside a SECURITY DEFINER RPC, never via the supabaseAdmin service role client which bypasses RLS entirely. Both pitfalls are silent data exposure risks that integration tests must permanently guard against.
+The primary risks are security, not technical. Campaign Manager requires two-layer enforcement (role presence + resource boundary check on every response). Audit completeness has no automatic enforcement mechanism — inline SECURITY DEFINER writes are the only reliable prevention. Feature scope strings currently have three definition points (DB CHECK, Zod enum, portal route guards) and will drift without a single-source-of-truth constant. These three risks must be addressed during the schema and service layer phases, not retrofitted later.
+
+---
 
 ## Key Findings
 
 ### Recommended Stack
 
-No new dependencies for v1.6. The existing stack handles all four features without addition. Scoped roles are SQL columns + TypeScript additions in the existing service layer. Compass compare is a TypeScript intersection of two existing query results plus one new SECURITY DEFINER RPC. The VR histogram is a `pool.query()` GROUP BY aggregate rendered as Tailwind proportional divs — no charting library needed at Alpha scale (< 100 users). Essentials XP provisioning is a Render env var.
+The existing stack handles all v1.9 requirements with no new runtime dependencies. `pg` (raw pool), `express`, `zod`, and `jose` cover every backend need. The contributor portal is a new Vite + React app scaffolded by copying `app/`, using the same `ev_token` localStorage key, the same `apiFetch` pattern from `app/src/lib/api.ts`, and the same Tailwind v4 `ev-*` theme tokens. No monorepo build tooling (`nx`, `turborepo`) is warranted at this scale.
 
-The one addition is not a library but a pattern: `requireRole(featureScope, geoid?)` middleware in `src/middleware/requireRole.ts`, following the exact same shape as the existing `requireAdmin.ts` and `tierGuards.ts` middleware — a `pool.query()` EXISTS check against `public.user_roles`.
+The one deliberate non-decision worth recording: roles must NOT be baked into JWT claims. Role grants live in `public.user_roles`. Fetching from `GET /api/roles/me` on session init is correct — revocations propagate immediately. JWT claim embedding would create up to a 1-hour revocation lag for high-trust actions like Campaign Manager.
 
-**Core technologies (all existing):**
-- `pool.query()` (pg raw driver) — all non-public schema writes and complex aggregates (VR histogram, VR user list)
-- SECURITY DEFINER RPCs — new `compare_compass_responses` for visibility enforcement; updated `grant_role` / `revoke_role` for geo-scope
-- Tailwind v4 — VR dashboard histogram bars as proportional divs, brand tokens `ev-teal` / `ev-yellow` / `ev-red`
-- Zod — feature scope string allowlist validation for ROLES-01 (already in use)
-
-**Do not add:**
-- Permissions library (CASL, Casbin) — `user_roles` table IS the permission store; a library layer duplicates it
-- Charting library (Recharts, Chart.js) — five static buckets at < 100 users is not a charting problem
-- New Postgres extension — no new data types, spatial operations, or encryption needed
-
-See STACK.md for full detail.
+**Core technologies:**
+- `pg` (pool.query): all non-public schema reads and writes — required for nullable `IS NOT DISTINCT FROM` comparisons that PostgREST cannot express
+- `zod`: input validation for new scope fields on grant/revoke endpoints — use a single exported constant as source of truth for both enum and DB CHECK
+- `@upstash/redis`: short-TTL (60–120 second) cache for role grant lookups — follow existing revocation-check pattern in `authService.ts`; TTL must not exceed 120s for Campaign Manager
+- Vite + React + Tailwind v4: contributor portal — copy `app/` exactly, dev port 5176, deploy as Render Static Site at `contributors.empowered.vote`
 
 ### Expected Features
 
+The role system has five role types. Two (CTC Content Editor, Volunteer) are integration patterns only — accounts provides the grant data, the consuming app enforces the restriction. Three (Compass Stance Editor, Campaign Manager, Essentials Data Editor) require new API surfaces in accounts.
+
 **Must have (table stakes):**
-- ROLES-01: `feature_scope` column on `public.roles` + `jurisdiction_geoid` column on `public.user_roles`
-- ROLES-01: Updated partial unique index using `COALESCE(jurisdiction_geoid, '')` so national + geo-restricted grants coexist
-- ROLES-01: Updated `grant_role` / `revoke_role` RPCs accepting `p_jurisdiction_geoid DEFAULT NULL` (backward-compatible)
-- ROLES-01: `requireRole(featureScope, geoid?)` middleware for external feature API access gates
-- ROLES-01: Five feature-scoped roles seeded: `ctc_dev`, `quest_dev`, `essentials_dev`, `compass_dev`, `platform_admin`
-- ROLES-01: Admin UI grant/revoke form updated to accept `feature_scope` + optional `jurisdiction_geoid`
-- COMP-05: `GET /api/compass/compare/:userId` — works for both user UUIDs and politician UUIDs; optional auth
-- COMP-05: `compare_compass_responses` SECURITY DEFINER RPC enforcing visibility at DB layer
-- COMP-05: Response shape includes `user_a_answered`, `user_b_answered`, `shared_count` for confidence context
-- VR-F01: `GET /api/admin/vr-dashboard` — distribution aggregate (7 numbers) via `pool.query()`
-- VR-F01: `GET /api/admin/vr-dashboard/users` — paginated user list with VR + hold status
-- VR-F01: `VRDashboardPage.tsx` — 5-bucket histogram + on-hold list + AccountDetailPage links
-- ESSENTIALS-PROV: `ESSENTIALS_SERVICE_KEY` in Render env + `.env.example` + ESSENTIALS-INTEGRATION.md corrected
+- Schema migration: `feature_scope`, `jurisdiction_geoid`, `resource_id` columns on `user_roles`, drop/replace `idx_user_roles_active_unique` — gates all other work
+- `grant_role`, `revoke_role`, `get_user_roles` SQL functions — pre-existing gap in roleService.ts; these RPCs are called but not defined in any migration
+- `requireRole(featureScope, geoid?, resourceId?)` middleware — the `IS NULL OR IS NOT DISTINCT FROM` pattern is required for nullable geo-scope; bare equality silently fails when geoid is NULL
+- `POST /api/roles/check` endpoint — Civic Spaces calls this; uses the same `checkRole()` utility as the middleware, not a second SQL query
+- Five new role slugs seeded in `public.roles`: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`
+- `role_audit_log` table with `actor_id` + `target_user_id` columns (two-actor pattern) — single `user_id` column would make "all changes to user X" queries require JSON scanning instead of indexed lookup
+- Admin grant form: conditional fields by role slug (Campaign Manager hides jurisdiction, shows politician picker; others show jurisdiction picker)
+- Admin revoke: must target scoped row by ID — a user may hold the same role slug for two jurisdictions simultaneously
+- Per-user Roles tab in admin account detail
+- `GET /api/contributor/me` — returns active scoped grants; used by portal home screen, CTC, and Civic Spaces
+- Contributor portal (new React app, `contributor/` at repo root)
+- ESSENTIALS-PROV: add `ESSENTIALS_SERVICE_KEY` to Render + `.env.example` (zero code, independent)
 
-**Should have (differentiators):**
-- COMP-05: `?topic_ids=` filter to scope compare to user's selected topics
-- COMP-05: `unanswered_by_requester` bucket enabling "answer these topics" CTA in Essentials
-- COMP-05: `agreement_score` percentage computed server-side
-- VR-F01: `hold_days_remaining` integer derived server-side (not raw TIMESTAMPTZ exposed)
-- VR-F01: VR = 0 users flagged visually separate from "below threshold"
-- ROLES-01: Admin-implies-all runtime check in `hasRole()` logic (not stored as inheritance rows)
-- ROLES-01: `GET /api/roles/me` response extended with `feature_scope` + `jurisdiction_geoid` per grant
+**Should have (v1.9 value-adds):**
+- Global audit dashboard in admin — filters `admin_audit_log` by `details->>'feature_scope'`; reads from existing log data, low implementation risk
+- Notification to contributor on role grant/revoke — use existing Supabase email; low complexity
+- Contributor-facing audit trail ("Your recent edits") — filter `admin_audit_log` by `actor_id`; low complexity
+- `cache_until` field on `GET /api/roles/me` response — prevents Civic Spaces volunteer lockout during API cold starts
+- `Cache-Control: private, no-store` on `/api/roles/me` — one-line addition, prevents authorization cache poisoning
 
-**Defer to post-v1.6:**
-- VR trend history (requires VR audit log table not currently tracked)
-- Multi-way compass compare (3+ users)
-- Bulk VR adjustment from dashboard
-- Role permission caching in Redis
-- VR source attribution (CTC vs VQ breakdown)
-- Wildcard geo-scope ("all counties in state")
-- UI for creating new feature scopes
+**Defer to v2+:**
+- Multi-jurisdiction grant in a single row (one grant per jurisdiction for v1.9)
+- Grant expiry date (`valid_through` field)
+- Campaign Manager read-only landscape view
+- Contributor self-service grant requests
+- Revision history on politician answers (old values in audit log)
+- JWT claim embedding for high-frequency role reads
 
-See FEATURES.md for full detail.
+**Anti-features — do not build:**
+- Trivia CRUD API routes in accounts (CTC owns the trivia schema; CTC enforces its own check using accounts role grant data)
+- Campaign Manager "landscape view" showing all politicians' stances (even read-only violates the resource boundary model)
+- Single mega-endpoint mixing feature scopes
+- `feature_scope` as freeform text with no validation constraint
 
 ### Architecture Approach
 
-v1.6 is additive at every layer. The existing `public.user_roles` + `public.roles` tables are extended in-place with two new columns. No new tables are created. The compass compare is a new SECURITY DEFINER RPC against existing tables with no schema changes to those tables. The VR dashboard is new read queries against existing columns. ESSENTIALS-PROV is zero code changes.
+The build follows a strict dependency chain: schema migration (one transaction, all DDL) → service layer + middleware in parallel → API endpoints → admin UI and contributor portal in parallel → Civic Spaces integration. The schema migration is the single gate; nothing else can be coded until it is merged. Within that constraint, (service layer, middleware) and (admin UI, contributor portal) are parallelizable pairs.
+
+The critical architectural pattern is the NULL-scope `IS NULL OR IS NOT DISTINCT FROM` query idiom, which appears identically in two places with opposite semantics: the `requireRole` middleware EXISTS check (NULL means "unrestricted — covers any request") and the `grant_role` duplicate-check (`IS NOT DISTINCT FROM` means "exact match — are these two grants identical"). The migration author must not conflate them.
 
 **Major components:**
-1. ROLES-01 schema migration — `ALTER TABLE public.roles ADD feature_scope TEXT CHECK (...)`, `ALTER TABLE public.user_roles ADD jurisdiction_geoid TEXT`, `DROP/CREATE` unique index, five seed inserts, updated `grant_role` / `revoke_role` RPC signatures
-2. `requireRole.ts` middleware — factory `requireRole(featureScope, geoid?)` returning Express middleware; `pool.query()` EXISTS check; no supabaseAdmin needed
-3. `compare_compass_responses` RPC — SECURITY DEFINER, `SET search_path = ''`, enforces `deleted_at IS NULL` + three-tier visibility (owner / peer / public) + peer connection check via `connect.social_relationships`
-4. VR dashboard backend — two `pool.query()` functions in `adminService.ts` + two new routes in `admin.ts`
-5. `VRDashboardPage.tsx` — React admin page; proportional div histogram + paginated hold list + AccountDetailPage links
-
-**Patterns that must not change:**
-- `pool.query()` for all non-public schema writes AND for complex aggregates PostgREST cannot express (CASE WHEN bucketing, cross-schema JOINs)
-- `supabaseAdmin` banned from `src/routes/` — new service functions go in `src/lib/`
-- SECURITY DEFINER + `SET search_path = ''` on all new RPCs; fully qualified table references required
-- Two-pass validation in RPCs: validate all inputs before any writes
-- `requireAdmin` is NOT replaced — it continues to gate `/api/admin/*`; `requireRole` is additive for external feature API routes only
-- Soft-delete filter `AND deleted_at IS NULL` required on every `inform.compass_responses` query
-
-See ARCHITECTURE.md for full SQL signatures and component boundary table.
+1. Schema migration (one transaction) — adds scope columns, replaces unique index, creates 3 RPCs + `role_audit_log` table with 4 indexes; the atomic foundation for everything else
+2. `roleService.ts` + `roleAuditService.ts` — updated grantRole/revokeRole/getUserRoles signatures; new `checkRole()` utility (shared by middleware and `/api/roles/check`); `logRoleAction()` called inside grantRole/revokeRole so audit fires regardless of call origin
+3. `requireRole` middleware (`src/middleware/requireRole.ts`) — `pool.query()` with IS NULL OR IS NOT DISTINCT FROM pattern; calls `checkRole()`, never inlines SQL; mounted after `requireAuth`
+4. Role-gated API endpoints (compass contributor, essentials contributor, `GET /api/contributor/me`, `POST /api/roles/check`) — Campaign Manager routes enforce two-layer auth: middleware for role presence + handler for resource_id boundary check
+5. Admin UI additions (existing admin tool) — updated grant/revoke forms with conditional scope fields, per-user Roles tab, global audit dashboard; admin route handlers still call `logAdminAction()` alongside `logRoleAction()` in the service (double logging is intentional: different query patterns)
+6. Contributor portal (`contributor/` Vite app) — new React app copied from `app/`; `AuthGuard` + `RoleGuard` guard chain; `DashboardPage` routes to role-type views; portal is informational for CTC and Volunteer roles (links out to those apps)
+7. Civic Spaces integration — `POST /api/roles/check` endpoint; Civic Spaces backend calls it before privileged volunteer writes and caches the response using `cache_until` TTL
 
 ### Critical Pitfalls
 
-1. **NULL geo-scope dropped by naive WHERE clause (ROLES-01)** — `NULL = '18057'` evaluates to NULL (falsy), silently dropping all global grants. Every permission check must use `(jurisdiction_geoid IS NULL OR jurisdiction_geoid = $x)`. Write a test asserting a NULL-geoid grant passes when any real geoid is presented.
+1. **Campaign Manager sees opponent data (Pitfall 13)** — Two-layer enforcement is mandatory. Layer 1: `requireRole('compass_stance_editor')` checks role presence. Layer 2: handler or RPC loads the user's grant row and cross-references `resource_id` (Campaign Manager) or `jurisdiction_geoid` (Stance Editor) against the requested politician's home jurisdiction. Any route with `requireRole` that uses a path-parameter ID without a second DB lookup is a security gap. Establish the politician-to-jurisdiction schema join during the schema phase — before any routes are written.
 
-2. **Compass compare leaking private responses via supabaseAdmin (COMP-05)** — `supabaseAdmin` bypasses RLS, returning ALL compass answers including `visibility='private'`. The compare endpoint must use a SECURITY DEFINER RPC that applies three-tier visibility inside the DB function. Write a privacy-leakage test before any implementation.
+2. **Audit log has silent gaps (Pitfall 14)** — Inline the audit write inside the SECURITY DEFINER RPC so grant/revoke and its log entry are one atomic transaction. This cannot be omitted by a route author because it never goes through the route layer. If inline RPC writes are not feasible for a given operation, add an architecture test asserting that route files touching `user_roles` writes reference the audit utility.
 
-3. **is_admin / admin_users drift from scoped role system (ROLES-01)** — `public.admin_users` + `requireAdmin` gate the internal admin panel; ROLES-01 adds developer feature roles for cross-app API access. These must never compete. Define the boundary before schema work: `admin_users` = admin panel gate; ROLES-01 = external feature API gate.
+3. **CORS blocks contributor portal session (Pitfall 15)** — Add `https://contributors.empowered.vote` to `CORS_ORIGIN` on Render as a deploy checklist item before the portal goes live. Same-site sibling subdomains do send `SameSite=Lax` cookies, but only when `Access-Control-Allow-Origin` is the exact origin (not `*`) and `Access-Control-Allow-Credentials: true` is set. The CORS config already sets `credentials: true`; the missing piece will be the origin allowlist.
 
-4. **VR dashboard aggregate silently truncated at Supabase row limit (VR-F01)** — Fetching raw `connected_profiles` rows and counting in JS hits PostgREST's 1,000-row ceiling. Build the distribution aggregate as a `pool.query()` GROUP BY returning bucket counts directly, not raw rows.
+4. **Campaign Manager double-grant conflict (Pitfall 16)** — `ROLE_CONFLICT_GROUPS` in `roleService.ts` is empty. Whether holding Campaign Manager for two opposing candidates is a prohibited conflict or a permitted consultant arrangement must be decided before the `grant_role` RPC is written. The admin grant UI must show existing grants for the target user before the form is submitted.
 
-5. **Soft-delete filter omitted from compare RPC (COMP-05)** — A new RPC written from scratch will not automatically inherit the `deleted_at IS NULL` filter. Add `AND deleted_at IS NULL` to the RPC SQL and document it in the migration comment explicitly.
+5. **feature_scope string drift (Pitfall 17)** — Three definition points now exist: DB CHECK constraint, Zod enum, portal route guards. Create one TypeScript constant array in `backend/src/lib/roles.ts` that generates both the Zod enum and the SQL CHECK string. Add a schema snapshot test asserting DB CHECK matches the TypeScript constant.
 
-See PITFALLS.md for all 12 pitfalls with detection strategies and phase-specific warnings.
+---
 
 ## Implications for Roadmap
 
-Based on research, the four features divide cleanly into four phases ordered by risk and blast radius.
+The research suggests eight phases in strict dependency order, with two parallelizable pairs.
 
-### Phase 1: ESSENTIALS-PROV — Essentials XP Provisioning
+### Phase 1: ESSENTIALS-PROV (env var only)
 
-**Rationale:** Zero code changes. `serviceKeyAuth.ts` already has `ESSENTIALS_SERVICE_KEY` wired at lines 22–24. This closes a documented gap from v1.5, unblocks the Essentials team immediately, and has no failure modes.
+**Rationale:** Independent of all other v1.9 work. Zero code, zero risk. Can be done before the schema migration is reviewed and merged.
+**Delivers:** `ESSENTIALS_SERVICE_KEY` added to Render + `.env.example`. Closes a v1.8 loose end.
+**Avoids:** Nothing blocked by this. Do it first to get it off the list.
 
-**Delivers:** `ESSENTIALS_SERVICE_KEY` set in Render environment, `.env.example` updated, `ESSENTIALS-INTEGRATION.md` corrected on `GEMS_SERVICE_KEYS` env var name.
+### Phase 2: Schema + RPC Migration
 
-**Addresses:** ESSENTIALS-PROV feature
+**Rationale:** Hard gate for all downstream phases. The pre-existing gap — `grant_role`, `revoke_role`, `get_user_roles` RPCs called in `roleService.ts` but absent from all 54 migrations — must be closed here or the existing role endpoint errors at runtime.
+**Delivers:** Three new columns on `user_roles`, scope-aware unique index (replaces `idx_user_roles_active_unique`), three SECURITY DEFINER functions, `role_audit_log` table with four indexes, five new role slugs seeded in `public.roles`.
+**Addresses:** Schema table stakes; pre-existing RPC gap
+**Avoids:** Pitfall 16 (define Campaign Manager conflict rules before writing grant_role); Pitfall 20 (two-actor columns on audit table — decide at DDL time, not retrofit); Pitfall 17 (single-source TypeScript constant for feature_scope must exist before migration is written)
+**Research flag:** Standard patterns. Full SQL specified in ARCHITECTURE.md. No additional research needed.
 
-**Avoids:** N/A — no pitfalls for this phase.
+### Phase 3: Service Layer + requireRole Middleware
 
-**Research flag:** Skip — config + docs only.
+**Rationale:** Service layer (`checkRole()`) and middleware are parallelizable but middleware depends on `checkRole()` being defined — agree on its signature before splitting work. Both must complete before any endpoints are written.
+**Delivers:** Updated `roleService.ts` signatures with scope params; `checkRole()` utility (single SQL, two consumers); `roleAuditService.ts` with `logRoleAction()`; `requireRole` middleware in `src/middleware/`.
+**Uses:** `pool.query()` with `IS NULL OR IS NOT DISTINCT FROM`; `@upstash/redis` cache at 60–120s TTL (key `roles:uid:{userId}`, invalidate on grant/revoke)
+**Avoids:** Pitfall 13 (resource boundary enforcement built into `checkRole()` signature upfront); Pitfall 19 (update architecture test `allowedFiles` in the same PR as any new service file)
 
----
+### Phase 4: Compass Stance Editor + Campaign Manager Endpoints
 
-### Phase 2: COMP-05 — Compass Compare API
+**Rationale:** These share the same route structure. Compass Stance Editor is the jurisdiction-scoped case. Campaign Manager is the security-critical resource-scoped case. Build together so two-layer enforcement is established as the canonical pattern, not the exception.
+**Delivers:** `GET/PUT /api/contributor/compass/politicians/:id/answers`; `POST /api/contributor/compass/politicians/:id/context`; `GET /api/contributor/compass/politicians` (Stance Editor only — Campaign Manager gets no list endpoint); `GET /api/contributor/me` (portal home, CTC, and Civic Spaces all depend on this).
+**Addresses:** Campaign Manager resource_id enforcement; Compass Stance Editor jurisdiction enforcement
+**Avoids:** Pitfall 13 (integration test required: two politicians, different jurisdictions, single-jurisdiction grant, assert 403 for out-of-scope politician)
 
-**Rationale:** Read-only, no schema migrations, self-contained. Proves the SECURITY DEFINER RPC pattern for visibility enforcement before ROLES-01 adds schema complexity. Primary unblock for Essentials app's politician compare view.
+### Phase 5: Essentials Data Editor Endpoint
 
-**Delivers:** `GET /api/compass/compare/:userId` endpoint (user UUID or politician UUID), `compare_compass_responses` SECURITY DEFINER RPC, response with `shared_topics`, `agreement_score`, `total_shared`, `user_a_answered`, `user_b_answered`.
+**Rationale:** Separated from Phase 4 because the Essentials PATCH has a distinct allowed-fields constraint — `district_type`, `district_id`, `is_active`, `is_candidate`, `is_vacant` cannot be changed by contributors. Isolating this reduces the risk of accidentally exposing admin-only fields.
+**Delivers:** `GET /api/contributor/essentials/politicians`; `PATCH /api/contributor/essentials/politicians/:id` (restricted field subset); `PUT /api/contributor/essentials/politicians/:id/contacts`; `fields_changed` key list (not values) in audit log details.
+**Addresses:** Essentials Data Editor role; field-level boundary enforcement
 
-**Avoids:**
-- Pitfall 2 (private response leak) — SECURITY DEFINER RPC enforces visibility at DB layer
-- Pitfall 5 (ambiguous overlap) — response shape includes per-user answer counts
-- Pitfall 8 (deleted_at omission) — enforced in RPC SQL, documented in migration comment
+### Phase 6: Admin UI (Grant/Revoke + Per-User Audit + Global Dashboard)
 
-**Open questions to resolve before planning:**
-- Self-compare behavior: 400 or 100% agreement?
-- Agreement threshold: exact match (divergence = 0) or near-match (divergence ≤ 0.5)? Start with exact.
-- Unauthenticated access: return politician answers only with empty requester bucket, or require auth?
+**Rationale:** Admin tooling depends on backend endpoints being in place. Parallelizable with Phase 7 (contributor portal) once Phase 5 is complete.
+**Delivers:** Updated grant/revoke forms with conditional scope fields; per-user Roles tab in account detail; global audit dashboard at `/admin/role-audit`; updated admin routes `POST /api/admin/accounts/:userId/roles/grant|revoke`; `GET /api/admin/accounts/:userId/role-audit` (paginated); `GET /api/admin/role-audit` (filterable).
+**Avoids:** Pitfall 16 (admin UI must show existing grants for target user before form submission)
+**Research flag:** Standard patterns — follows existing admin component patterns in `admin/src/`.
 
-**Research flag:** Skip deeper research. Patterns well-established in this codebase.
+### Phase 7: Contributor Portal
 
----
+**Rationale:** Parallelizable with Phase 6 after Phase 5's backend is complete. New Vite app that does not modify any existing code. Blocking dependency is `GET /api/contributor/me` (Phase 4) and the contributor endpoints (Phases 4–5).
+**Delivers:** `contributor/` Vite app; Auth flow (ev_token / SSO fallback / hash fragment); `AuthGuard` + `RoleGuard` guard chain; `DashboardPage` routing to role-type views; role-specific pages (CompassEditorPage, CampaignManagerPage, EssentialsEditorPage, CTC tile, Volunteer tile).
+**Uses:** React 18 + Vite 5 + Tailwind v4 copied from `app/`; dev port 5176; deploy as Render Static Site at `contributors.empowered.vote`
+**Avoids:** Pitfall 15 (CORS_ORIGIN must include `https://contributors.empowered.vote` — deploy checklist item); Pitfall 21 (document local dev cookie domain setup in `.env.example`)
 
-### Phase 3: VR-F01 — VR Admin Dashboard
+### Phase 8: Civic Spaces Integration
 
-**Rationale:** Read-only queries against existing columns, no migrations. Admin UI work is independent of ROLES-01. Delivers admin visibility before the milestone's largest change lands.
-
-**Delivers:** `GET /api/admin/vr-dashboard` (distribution aggregate), `GET /api/admin/vr-dashboard/users` (paginated list with sort), `VRDashboardPage.tsx` with 5-bucket histogram + on-hold list + AccountDetailPage links.
-
-**Avoids:**
-- Pitfall 7 (silent row limit truncation) — aggregate computed via `pool.query()` GROUP BY, never raw row scan
-- Pitfall 10 (raw vq_hold_until exposure) — API returns `vq_hold_active: boolean` + `hold_expires_at` date string, not raw TIMESTAMPTZ
-
-**Open questions to resolve before planning:**
-- Sort options: confirm whether paginated user list needs a `hold` sort (by `vq_hold_until DESC NULLS LAST`) or just `asc`/`desc` on VR value
-- VR = 0 panel: separate UI section or bottom of the asc-sorted list?
-
-**Research flag:** Skip deeper research. Standard admin dashboard pattern well-documented in this codebase.
-
----
-
-### Phase 4: ROLES-01 — Scoped Roles System
-
-**Rationale:** Largest blast radius of the milestone. Requires: two `ALTER TABLE` migrations, `DROP/CREATE` on the partial unique index, updated RPC signatures, five role seed rows, new `requireRole.ts` middleware, service layer additions, updated admin UI forms, and `GET /api/roles/me` response shape update. Built last so the other three phases are never blocked. Must be fully designed before any implementation begins.
-
-**Delivers:** Feature-scoped + geo-scoped role grants on `public.user_roles`, `requireRole(featureScope, geoid?)` middleware, five seeded developer roles, admin UI for granting/revoking scoped roles, `GET /api/roles/me` returning scope dimensions.
-
-**Avoids:**
-- Pitfall 1 (NULL geo-scope) — mandatory two-part clause documented in migration comments and tested
-- Pitfall 3 (admin_users drift) — boundary defined explicitly before schema work: two parallel systems, not competing
-- Pitfall 4 (non-public schema write failure) — `jurisdiction_geoid` added to `public.user_roles`, keeping roles data in public schema where PostgREST works
-- Pitfall 6 (residential vs. role-grant geoid confusion) — migration comment documents: `jurisdiction_geoid` on grant row = scope of authority, not user's residential location
-- Pitfall 9 (concurrent grant race) — evaluate whether any programmatic grant path exists; add advisory lock if so
-- Pitfall 11 (feature scope string not validated) — single constant array drives both Zod enum and DB CHECK constraint
-
-**Open questions to resolve before planning:**
-- Does the admin grant UI need a GEOID typeahead from `inform.district_boundaries`, or free-text with server-side validation? Free-text is simpler for v1.6.
-- Should `requireAdmin` eventually be deprecated in favor of `requireRole('admin')`? Decision for v1.7 — both coexist in v1.6.
-- Validate that `COALESCE(jurisdiction_geoid, '')` in the unique index produces correct uniqueness for NULL geoids. Run against a test migration before plan is finalized.
-
-**Research flag:** This phase warrants careful design review before planning. The index change and RPC signature update have subtle correctness requirements. The plan doc should include the exact SQL for the new index and both RPC signatures before implementation begins. Consider a `/gsd:research-phase` call if the COALESCE uniqueness behavior is uncertain.
-
----
+**Rationale:** Last because it depends on `POST /api/roles/check` being live and requires cross-team coordination with Civic Spaces. Must not block any other phase.
+**Delivers:** `POST /api/roles/check` endpoint (calls `checkRole()`, returns `{ has_role: boolean }`); Civic Spaces backend integration; smoke test (grant volunteer → write succeeds; revoke → blocked within cache TTL).
+**Addresses:** Volunteer role; cross-service role enforcement
+**Avoids:** Pitfall 18 (`cache_until` field on roles API response so Civic Spaces uses last-known-state during API unavailability); Pitfall 22 (`Cache-Control: private, no-store` on `/api/roles/me`)
+**Research flag:** Requires coordination with Civic Spaces team. The `get_mod_queue` RPC needs a `p_slice_geoid` filter parameter for jurisdiction-scoped Volunteer grants — flag this as a Civic Spaces implementation detail to confirm before scheduling Phase 8.
 
 ### Phase Ordering Rationale
 
-- Risk ordering: each phase increases blast radius. ESSENTIALS-PROV cannot break anything; ROLES-01 touches schema, RPCs, middleware, and admin UI.
-- No cross-phase dependencies: all four features are architecturally independent. The order is pure risk sequencing.
-- Admin panel stability: VR-F01 (Phase 3) delivers admin value before ROLES-01 (Phase 4) introduces schema migration risk.
-- Pattern validation: COMP-05 (Phase 2) proves the SECURITY DEFINER RPC pattern with a read-only feature before ROLES-01 uses the same pattern for writes.
+- Phase 2 is the hard gate because the SQL functions `roleService.ts` already calls do not exist in any migration — the existing role endpoint is broken at runtime until this migration is applied.
+- Phases 4 and 5 are kept separate to isolate the campaign-data security boundary (two-layer auth) from the essentials field-whitelist boundary. Mixing them increases reviewer risk.
+- Phases 6 and 7 are parallelizable after Phase 5 because they touch separate directories (`admin/` vs. `contributor/`) with no shared code.
+- Phase 8 is last because Civic Spaces integration cannot be smoke-tested until the CORS configuration and `POST /api/roles/check` are both live in production.
 
 ### Research Flags
 
-Phases that may need deeper research during planning:
-- **Phase 4 (ROLES-01):** The `COALESCE(jurisdiction_geoid, '')` trick in the partial unique index is non-standard. Validate on a test migration that NULL geoids produce correct uniqueness before the plan is finalized. Also confirm `IS NOT DISTINCT FROM` vs `COALESCE` behavior for the `revoke_role` match condition.
+Phases needing closer attention during implementation:
+- **Phase 2 (Schema):** Campaign Manager conflict rules must be decided before writing `grant_role`. `ROLE_CONFLICT_GROUPS` is empty — this is a product decision (consultant model vs. conflict-of-interest prohibition) that belongs in Phase 2 requirements, not the implementation.
+- **Phase 4 (Campaign Manager):** Two-layer enforcement integration test is a phase completion gate, not an optional add-on. The test (two politicians, different jurisdictions, single grant, assert 403 for out-of-scope politician) is the only reliable signal the resource boundary works.
+- **Phase 8 (Civic Spaces):** Requires cross-team coordination. Confirm Civic Spaces team capacity before scheduling.
 
-Phases with standard patterns (skip research-phase):
-- **Phase 1 (ESSENTIALS-PROV):** Config + docs only.
-- **Phase 2 (COMP-05):** Read-only RPC following established `compassService.ts` patterns.
-- **Phase 3 (VR-F01):** `pool.query()` aggregate + React admin page following established `AdminDashboard.tsx` pattern.
+Phases with standard patterns (research-phase not needed):
+- **Phase 3:** SQL and TypeScript signatures fully specified in ARCHITECTURE.md.
+- **Phase 6:** Follows existing admin component patterns.
+- **Phase 7:** Copy-from-`app/` is fully documented in STACK.md.
+
+---
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All findings from direct codebase inspection. No external library decisions required. ESSENTIALS-PROV code presence confirmed at exact file lines. |
-| Features | HIGH | Feature boundaries derived from live schema and code. Deferred items are clearly non-blocking at Alpha scale (< 100 users). |
-| Architecture | HIGH | All component boundaries, query patterns, and file locations verified against actual codebase. SQL signatures exact, not approximate. |
-| Pitfalls | HIGH | Critical pitfalls derived from live code patterns and documented production rules (MEMORY.md). External sources used for secondary validation only. |
+| Stack | HIGH | All findings from direct code inspection; no external sources needed |
+| Features | HIGH | Role boundaries defined from actual table structures, existing routes, CTC and Civic Spaces source |
+| Architecture | HIGH | SQL DDL, TypeScript signatures, and middleware pattern fully specified from codebase inspection |
+| Pitfalls | HIGH (security), MEDIUM (operational) | Campaign Manager auth gap and audit completeness verified from source; Civic Spaces lockout risk is architectural inference, not a directly observed failure |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **Self-compare behavior (COMP-05):** Resolve before the phase plan is written. The endpoint must be designed with a clear answer for `:userId == requester`. Recommend returning 100% agreement with a `is_self_compare: true` flag rather than a 400.
-- **Agreement threshold (COMP-05):** Default to exact match (divergence = 0) in v1.6. Document the decision in the phase plan. Relax to ±0.5 in a later milestone based on user feedback.
-- **GEOID picker in admin UI (ROLES-01):** Free-text with server-side validation is simpler. A typeahead from `inform.district_boundaries` is more operator-friendly but requires a new admin query. Decide before Phase 4 UI design begins.
-- **VR user list sort options (VR-F01):** Confirm `hold` as a third sort option with product before Phase 3 UI is specced.
-- **COALESCE uniqueness in partial index (ROLES-01):** Test against a local migration before the plan is finalized. This is the one technically uncertain implementation detail in the milestone.
+- **Campaign Manager conflict rules:** `ROLE_CONFLICT_GROUPS` is empty. Whether one user holding Campaign Manager for two opposing candidates is permitted (consultant model) or prohibited (conflict of interest) is unresolved. Decide before Phase 2 begins — this affects whether the `grant_role` RPC emits a warning or a hard error on the second grant.
+
+- **Contributor portal subdomain:** Research documents `contributors.empowered.vote` as the target. Confirm before DNS is configured. STACK.md notes the portal could alternatively live as a route inside `/app` — confirm the subdomain decision before Phase 7 begins.
+
+- **`get_mod_queue` filter in Civic Spaces:** Jurisdiction-scoped Volunteer grants require a `p_slice_geoid` filter parameter on Civic Spaces's `get_mod_queue` RPC. This is a Civic Spaces implementation detail, not an accounts change, but it gates the full Volunteer scoping feature. Flag to Civic Spaces team during Phase 8 planning.
+
+- **Audit log retention policy:** `role_audit_log` is append-only with no retention policy. Define a retention window (90-day TTL or archive to cold storage) in the Phase 2 migration before the table goes live.
+
+---
 
 ## Sources
 
-### Primary (HIGH confidence)
+### Primary — Direct source inspection (HIGH confidence)
 
-- Direct codebase inspection — `backend/src/middleware/requireAdmin.ts`, `tierGuards.ts`, `serviceKeyAuth.ts`
-- Direct codebase inspection — `backend/src/lib/roleService.ts`, `adminService.ts`, `compassService.ts`
-- Direct codebase inspection — `backend/src/routes/compass.ts`, `admin.ts`
-- Direct codebase inspection — `supabase/migrations/20260227000020_phase6_roles_schema.sql` (roles table structure)
-- Direct codebase inspection — `supabase/migrations/20260227000022_phase6_rls_and_grants.sql` (visibility policy CRITICAL comment, line 130)
-- Direct codebase inspection — `supabase/migrations/20260315000037_phase27_verification_rating.sql` (vq_hold_until privacy pattern)
-- Direct codebase inspection — `supabase/migrations/20260315000038_phase28_vq_confirm_stance.sql` (advisory lock pattern)
-- Direct codebase inspection — `tests/integration/architecture.test.ts` (architecture enforcement rules)
-- `MEMORY.md` — Critical Production Pattern: `pool.query()` for all non-public schema writes
+- `C:/EV-Accounts/supabase/migrations/20260227000020_phase6_roles_schema.sql` — confirmed current `user_roles` DDL has no scope columns and no grant/revoke/get SQL functions
+- `C:/EV-Accounts/backend/src/lib/roleService.ts` — confirmed RPC calls exist but SQL functions are absent; `ROLE_CONFLICT_GROUPS` is empty
+- `C:/EV-Accounts/backend/src/middleware/requireAdmin.ts` — middleware guard pattern (pool.query or supabaseAdmin → 403 or next())
+- `C:/EV-Accounts/backend/src/middleware/tierGuards.ts` — tier guard pattern
+- `C:/EV-Accounts/backend/src/middleware/auth.ts` — AuthenticatedRequest type
+- `C:/EV-Accounts/backend/src/routes/admin.ts` — logAdminAction pattern; existing grant/revoke endpoints
+- `C:/EV-Accounts/backend/src/routes/roles.ts` — existing `/api/roles/me` (flat list, no scope fields, no Cache-Control)
+- `C:/EV-Accounts/backend/src/index.ts` — CORS config (credentials: true, exact-match origin from CORS_ORIGIN)
+- `C:/EV-Accounts/backend/src/routes/auth.ts` — `evSessionCookieOptions()`: SameSite=Lax, Secure, COOKIE_DOMAIN
+- `C:/EV-Accounts/backend/src/lib/env.ts` — COOKIE_DOMAIN optional, CORS_ORIGIN comma-separated list
+- `C:/EV-Accounts/app/src/App.tsx` — SSO init pattern, ev_token, hash fragment fallback
+- `C:/EV-Accounts/app/src/store/authStore.ts` — Zustand auth state, ev_token key, User type
+- `C:/EV-Accounts/app/src/lib/api.ts` — apiFetch pattern (VITE_API_URL, credentials: include)
+- `C:/EV-Accounts/tests/integration/architecture.test.ts` — hardcoded allowedFiles list (lines 50–69)
+- `C:/Civic Spaces/src/lib/supabase.ts` — cs_token localStorage key, third-party auth against Civic Spaces Supabase project
+- `C:/Civic Spaces/src/hooks/useAuth.ts` — Civic Spaces SSO flow calls accounts-api.empowered.vote session endpoint
+- `C:/EV-Accounts/supabase/migrations/20260323000051_phase41_trivia_service_role.sql` — CTC owns trivia schema via `trivia_service` Postgres role
+- `C:/Civic Spaces/CIVIC-SPACES-ONBOARDING.md` — Volunteer integration pattern confirmed
+- `C:/Civic Spaces/src/components/ModeratorQueue.tsx` — mod queue UI confirmed built
 
-### Secondary (MEDIUM confidence)
+### Secondary — Web standards (HIGH confidence)
 
-- [Common Postgres RLS Footguns](https://www.bytebase.com/blog/postgres-row-level-security-footguns/) — OR-policy combination behavior (validates Pitfall 2)
-- [Supabase PostgREST Aggregate Functions](https://supabase.com/blog/postgrest-aggregate-functions) — row limit behavior (validates Pitfall 7)
-- [10 RBAC Best Practices 2025](https://www.osohq.com/learn/rbac-best-practices) — scoped vs global roles design patterns (validates Pitfall 6)
+- MDN SameSite cookie spec — sibling subdomains are same-site; `SameSite=Lax` cookies sent on same-site cross-origin fetch with `credentials: include`
+- WHATWG Fetch spec — `credentials: include` requires explicit `Access-Control-Allow-Origin` (not wildcard) and `Access-Control-Allow-Credentials: true`
 
 ---
-*Research completed: 2026-03-19*
+
+*Research completed: 2026-04-02*
 *Ready for roadmap: yes*
