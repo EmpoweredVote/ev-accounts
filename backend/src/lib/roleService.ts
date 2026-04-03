@@ -21,6 +21,122 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { cache } from './cache.js';
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+
+export interface UserRoleGrant {
+  role_id: string;
+  slug: string;
+  name: string;
+  granted_at: string;
+  feature_scope: string;
+  jurisdiction_geoid: string | null;
+  resource_id: string | null;
+}
+
+export interface CheckRoleScope {
+  geoid?: string;
+  resourceId?: string;
+}
+
+// ---------------------------------------------------------------------------
+// checkRole
+// ---------------------------------------------------------------------------
+
+/**
+ * Pure function — checks whether any of the provided grants match the given
+ * role slug and optional scope constraints.
+ *
+ * NULL-safe scope semantics:
+ * - A grant with `jurisdiction_geoid = null` is unrestricted — it passes any
+ *   geoid check. Only a non-null grant geoid that differs from the requested
+ *   geoid causes a skip.
+ * - The same logic applies to `resource_id`.
+ *
+ * If `roleSlug` is an array, OR logic is applied: returns true if ANY slug
+ * matches.
+ */
+export function checkRole(
+  grants: UserRoleGrant[],
+  roleSlug: string | string[],
+  scope?: CheckRoleScope
+): boolean {
+  const slugs = Array.isArray(roleSlug) ? roleSlug : [roleSlug];
+
+  for (const grant of grants) {
+    if (!slugs.includes(grant.slug)) continue;
+
+    // NULL-safe geoid check: skip only if grant has a non-null geoid that
+    // does not match the requested geoid.
+    if (scope?.geoid !== undefined) {
+      if (grant.jurisdiction_geoid !== null && grant.jurisdiction_geoid !== scope.geoid) {
+        continue;
+      }
+    }
+
+    // NULL-safe resourceId check: skip only if grant has a non-null resource_id
+    // that does not match the requested resourceId.
+    if (scope?.resourceId !== undefined) {
+      if (grant.resource_id !== null && grant.resource_id !== scope.resourceId) {
+        continue;
+      }
+    }
+
+    return true;
+  }
+
+  return false;
+}
+
+// ---------------------------------------------------------------------------
+// getCachedUserRoles
+// ---------------------------------------------------------------------------
+
+/**
+ * Return active role grants for a user, served from Redis cache when available.
+ *
+ * Cache key: `roles:uid:{userId}` with 90s TTL.
+ * Redis is an optimization — all cache errors fall through to DB.
+ */
+export async function getCachedUserRoles(userId: string): Promise<UserRoleGrant[]> {
+  const key = `roles:uid:${userId}`;
+
+  try {
+    const cached = await cache.get<UserRoleGrant[]>(key);
+    if (cached !== null) return cached;
+  } catch (err) {
+    console.error('[roleService] cache error (get):', err);
+  }
+
+  const grants = await getUserRoles(userId);
+
+  try {
+    await cache.set(key, grants, 90);
+  } catch (err) {
+    console.error('[roleService] cache error (set):', err);
+  }
+
+  return grants;
+}
+
+// ---------------------------------------------------------------------------
+// invalidateRoleCache
+// ---------------------------------------------------------------------------
+
+/**
+ * Remove the cached role grants for a user. Call after grant or revoke.
+ * Safe to call even if Redis is unavailable — errors are swallowed.
+ */
+export async function invalidateRoleCache(userId: string): Promise<void> {
+  try {
+    await cache.del(`roles:uid:${userId}`);
+  } catch (err) {
+    console.error('[roleService] cache error (del):', err);
+  }
+}
 
 // ---------------------------------------------------------------------------
 // grantRole
