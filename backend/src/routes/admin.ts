@@ -16,6 +16,7 @@ import { z } from 'zod';
 import { requireAuth } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
+import { invalidateRoleCache } from '../lib/roleService.js';
 import {
   logAdminAction,
   listAccounts,
@@ -499,6 +500,7 @@ router.post('/roles/grant', async (req, res) => {
     }
     const { user_id, role_slug } = parsed.data;
     await adminGrantRole(user_id, role_slug);
+    await invalidateRoleCache(user_id);
     await logAdminAction(actorId(req), 'grant_role', user_id, {
       role_slug,
     });
@@ -532,6 +534,7 @@ router.post('/roles/revoke', async (req, res) => {
     }
     const { user_id, role_slug } = parsed.data;
     await adminRevokeRole(user_id, role_slug);
+    await invalidateRoleCache(user_id);
     await logAdminAction(actorId(req), 'revoke_role', user_id, {
       role_slug,
     });
