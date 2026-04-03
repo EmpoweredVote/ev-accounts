@@ -34,7 +34,7 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 
 ### Essentials Provisioning
 
-- [ ] **ESSENTIALS-01**: `ESSENTIALS_SERVICE_KEY` env var set in Render for ev-accounts; `.env.example` updated with the key name; `ESSENTIALS-INTEGRATION.md` corrected on env var name (no code changes)
+- [x] **ESSENTIALS-01**: `ESSENTIALS_SERVICE_KEY` env var set in Render for ev-accounts; `.env.example` updated with the key name; `ESSENTIALS-INTEGRATION.md` corrected on env var name (no code changes)
 
 ## Future Requirements (v2.0)
 
@@ -62,7 +62,7 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ESSENTIALS-01 | Phase 51 | Pending |
+| ESSENTIALS-01 | Phase 51 | Complete |
 | ROLE-01 | Phase 52 | Pending |
 | ROLE-02 | Phase 52 | Pending |
 | ROLE-03 | Phase 53 | Pending |
