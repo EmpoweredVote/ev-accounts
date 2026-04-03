@@ -616,6 +616,13 @@ Plans:
 4. A `campaign_manager` calling `PUT /api/compass/stances/:politicianId` where `politicianId` does not match their `resource_id` grant receives 403 — resource boundary enforced at the handler layer, not just middleware.
 5. An integration test confirms two politicians in different jurisdictions, one `compass_stance_editor` grant scoped to jurisdiction A: write to politician A succeeds (200), write to politician B returns 403.
 
+
+**Plans:** 3 plans
+
+Plans:
+- [ ] 55-01-PLAN.md — schema migration (home_jurisdiction_geoid, write_in_text, role_grant_id)
+- [ ] 55-02-PLAN.md — stance write routes (single + bulk PUT with jurisdiction enforcement)
+- [ ] 55-03-PLAN.md — contributor politicians list endpoint (GET filtered by role scope)
 ---
 
 #### Phase 56: Essentials Data Editor Endpoint
