@@ -11,9 +11,9 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 
 - [ ] **ROLE-01**: Schema migration — add `feature_scope` (TEXT NOT NULL), `jurisdiction_geoid` (TEXT nullable), `resource_id` (TEXT nullable) to `public.user_roles`; drop and replace `idx_user_roles_active_unique` with all-columns-inclusive index; create `grant_role`, `revoke_role`, `get_user_roles` SECURITY DEFINER RPCs (missing from all 54 current migrations); seed five role types: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`
 - [ ] **ROLE-02**: `public.role_audit_log` table — columns: `id` (UUID), `actor_id` (UUID FK users), `feature_scope` (TEXT), `jurisdiction_geoid` (TEXT nullable), `resource_id` (TEXT nullable), `action` (TEXT), `target_type` (TEXT), `target_id` (TEXT), `fields_changed` (TEXT[]), `snapshot_after` (JSONB), `created_at` (TIMESTAMPTZ); indexes on `actor_id`, `feature_scope`, `created_at`
-- [ ] **ROLE-03**: `requireRole(featureScope, opts?)` Express middleware — `pool.query()` EXISTS check for role presence with NULL-safe jurisdiction check (`IS NULL OR IS NOT DISTINCT FROM`); second-layer `resource_id` boundary check for `campaign_manager` role; 403 on any check failure
-- [ ] **ROLE-04**: `GET /api/contributor/me` — returns authenticated user's active role grants (array of `{ feature_scope, jurisdiction_geoid, resource_id }`); used by contributor portal on load and by CTC/Civic Spaces for self-provisioning
-- [ ] **ROLE-05**: `POST /api/roles/check` — body `{ feature_scope, jurisdiction_geoid?, resource_id? }`; returns `{ permitted: boolean }`; CORS-enabled for `*.empowered.vote` and Civic Spaces origin; used by Civic Spaces to verify volunteer gate
+- [x] **ROLE-03**: `requireRole(featureScope, opts?)` Express middleware — `pool.query()` EXISTS check for role presence with NULL-safe jurisdiction check (`IS NULL OR IS NOT DISTINCT FROM`); second-layer `resource_id` boundary check for `campaign_manager` role; 403 on any check failure
+- [x] **ROLE-04**: `GET /api/contributor/me` — returns authenticated user's active role grants (array of `{ feature_scope, jurisdiction_geoid, resource_id }`); used by contributor portal on load and by CTC/Civic Spaces for self-provisioning
+- [x] **ROLE-05**: `POST /api/roles/check` — body `{ feature_scope, jurisdiction_geoid?, resource_id? }`; returns `{ permitted: boolean }`; CORS-enabled for `*.empowered.vote` and Civic Spaces origin; used by Civic Spaces to verify volunteer gate
 - [ ] **ROLE-06**: Admin grant/revoke UI — role assignment form in existing admin tool: feature scope dropdown, jurisdiction text field, resource_id politician picker (required for `campaign_manager`); per-user Roles tab showing all active grants with individual revoke buttons and grant timestamps
 - [ ] **ROLE-07**: Global audit dashboard — admin page listing all role-holder audit log entries; filterable by `feature_scope`, `jurisdiction_geoid`, date range; each entry links to actor's account detail page
 
@@ -65,9 +65,9 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 | ESSENTIALS-01 | Phase 51 | Complete |
 | ROLE-01 | Phase 52 | Complete |
 | ROLE-02 | Phase 52 | Complete |
-| ROLE-03 | Phase 53 | Pending |
-| ROLE-04 | Phase 53 | Pending |
-| ROLE-05 | Phase 53 | Pending |
+| ROLE-03 | Phase 53 | Complete |
+| ROLE-04 | Phase 53 | Complete |
+| ROLE-05 | Phase 53 | Complete |
 | ROLE-06 | Phase 54 | Pending |
 | ROLE-07 | Phase 54 | Pending |
 | ROLE-08 | Phase 55 | Pending |

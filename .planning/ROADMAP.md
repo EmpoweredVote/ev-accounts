@@ -573,8 +573,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 53-01-PLAN.md — roleService cached lookups + checkRole utility + requireRole middleware + unit tests
-- [ ] 53-02-PLAN.md — GET /api/contributor/me + POST /api/roles/check + admin cache invalidation wiring
+- [x] 53-01-PLAN.md — roleService cached lookups + checkRole utility + requireRole middleware + unit tests
+- [x] 53-02-PLAN.md — GET /api/contributor/me + POST /api/roles/check + admin cache invalidation wiring
 ---
 
 #### Phase 54: Admin UI — Grant/Revoke + Audit Dashboard
