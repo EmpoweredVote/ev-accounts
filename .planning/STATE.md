@@ -5,10 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Not started (defining requirements)
+**Current focus:** v1.9 Roles — Phase 51 ready to plan
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**v1.9 Roles roadmap created (2026-04-02)**
+
+Roadmap complete — 8 phases (51–58), 17 requirements mapped, all phases have success criteria. Phase 51 (Essentials XP Source Provisioning) is ready to plan next.
 
 **Phase 50 complete (2026-04-01)**
 
@@ -77,7 +81,7 @@ CompassV2 (main, all pushed directly — bypassed branch protection):
 - **`medicare` topic_key** — 2 rows in `essentials.quotes` updated from `'medicare'` → `'medicare/aid'` to match `inform.compass_topics.short_title`. Now included in `/essentials/quotes` response.
 - **trivia_service Supavisor** — `ALTER ROLE trivia_service WITH PASSWORD '***REMOVED-SECRET***'` executed. CTC DATABASE_URL: `postgresql://trivia_service.kxsdzaojfaibhuzmclfq:***REMOVED-SECRET***@aws-0-us-west-1.pooler.supabase.com:5432/postgres`. If pooler still rejects, reset via Dashboard → Database → Roles → trivia_service → Reset Password (same value).
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 🔄] Phase 49 complete ████████████████░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 📋] Phase 50 complete ████████████████░
 
 ## Accumulated Context
 
@@ -472,6 +476,6 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 
 ## Session Continuity
 
-Last session: 2026-03-24
-Stopped at: Phase 45 Plan 02 complete (762d9bd) — CTC silent SSO + shared cookie logout
-Resume: Phase 45 Plan 03 — CompassV2 silent SSO
+Last session: 2026-04-02
+Stopped at: v1.9 Roles roadmap created (Phases 51-58)
+Resume: /gsd:plan-phase 51 — Essentials XP Source Provisioning
