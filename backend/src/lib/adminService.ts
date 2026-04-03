@@ -260,15 +260,135 @@ export async function getInviteTree(rootUserId?: string): Promise<{
 /**
  * Grant a role to a user (admin action — delegates to roleService.grantRole).
  */
-export async function adminGrantRole(userId: string, roleSlug: string): Promise<void> {
-  await grantRole(userId, roleSlug);
+export async function adminGrantRole(
+  userId: string,
+  roleSlug: string,
+  featureScope?: string,
+  jurisdictionGeoid?: string | null,
+  resourceId?: string | null
+): Promise<void> {
+  await grantRole(userId, roleSlug, featureScope, jurisdictionGeoid, resourceId);
 }
 
 /**
  * Revoke a role from a user (admin action — delegates to roleService.revokeRole).
  */
-export async function adminRevokeRole(userId: string, roleSlug: string): Promise<void> {
-  await revokeRole(userId, roleSlug);
+export async function adminRevokeRole(
+  userId: string,
+  roleSlug: string,
+  featureScope?: string,
+  jurisdictionGeoid?: string | null,
+  resourceId?: string | null
+): Promise<void> {
+  await revokeRole(userId, roleSlug, featureScope, jurisdictionGeoid, resourceId);
+}
+
+/**
+ * Write an entry to public.role_audit_log after a grant or revoke action.
+ *
+ * Called from admin.ts after adminGrantRole/adminRevokeRole succeeds.
+ * Uses pool.query (direct postgres) — public schema write.
+ */
+export async function writeRoleAuditLog(
+  actorId: string,
+  targetUserId: string,
+  action: 'granted' | 'revoked',
+  roleSlug: string,
+  featureScope: string,
+  jurisdictionGeoid: string | null,
+  resourceId: string | null
+): Promise<void> {
+  await pool.query(
+    `INSERT INTO public.role_audit_log
+       (actor_id, target_user_id, action, feature_scope, jurisdiction_geoid, resource_id, snapshot_after)
+     VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+    [
+      actorId,
+      targetUserId,
+      action,
+      featureScope,
+      jurisdictionGeoid,
+      resourceId,
+      JSON.stringify({ role_slug: roleSlug }),
+    ]
+  );
+}
+
+/**
+ * Read paginated, filterable entries from public.role_audit_log.
+ */
+export async function getRoleAuditLog(filters: {
+  feature_scope?: string;
+  jurisdiction_geoid?: string;
+  from_date?: string;
+  to_date?: string;
+  page: number;
+  page_size: number;
+}): Promise<{ entries: unknown[]; total: number; page: number; page_size: number }> {
+  const { feature_scope, jurisdiction_geoid, from_date, to_date, page, page_size } = filters;
+
+  const conditions: string[] = [];
+  const params: unknown[] = [];
+
+  if (feature_scope) {
+    params.push(feature_scope);
+    conditions.push(`ral.feature_scope = $${params.length}`);
+  }
+  if (jurisdiction_geoid) {
+    params.push(jurisdiction_geoid);
+    conditions.push(`ral.jurisdiction_geoid = $${params.length}`);
+  }
+  if (from_date) {
+    params.push(from_date);
+    conditions.push(`ral.created_at >= $${params.length}`);
+  }
+  if (to_date) {
+    params.push(to_date);
+    conditions.push(`ral.created_at <= $${params.length}`);
+  }
+
+  const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+
+  const countResult = await pool.query<{ total: string }>(
+    `SELECT COUNT(*) AS total FROM public.role_audit_log ral ${whereClause}`,
+    params
+  );
+  const total = parseInt(countResult.rows[0]?.total ?? '0', 10);
+
+  const offset = (page - 1) * page_size;
+  params.push(page_size);
+  const limitParam = params.length;
+  params.push(offset);
+  const offsetParam = params.length;
+
+  const dataResult = await pool.query(
+    `SELECT
+       ral.id,
+       ral.actor_id,
+       ral.target_user_id,
+       ral.action,
+       ral.feature_scope,
+       ral.jurisdiction_geoid,
+       ral.resource_id,
+       ral.created_at,
+       ral.snapshot_after,
+       actor_u.display_name  AS actor_display_name,
+       target_u.display_name AS target_display_name
+     FROM public.role_audit_log ral
+     JOIN public.users actor_u  ON actor_u.id  = ral.actor_id
+     JOIN public.users target_u ON target_u.id = ral.target_user_id
+     ${whereClause}
+     ORDER BY ral.created_at DESC
+     LIMIT $${limitParam} OFFSET $${offsetParam}`,
+    params
+  );
+
+  return {
+    entries: dataResult.rows,
+    total,
+    page,
+    page_size,
+  };
 }
 
 // ---------------------------------------------------------------------------

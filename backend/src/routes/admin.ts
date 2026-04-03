@@ -53,6 +53,8 @@ import {
   updateVerificationRating,
   deleteAccount,
   listAccessRequests,
+  writeRoleAuditLog,
+  getRoleAuditLog,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -485,6 +487,9 @@ router.delete('/invites/:codeId', async (req, res) => {
 const RoleActionSchema = z.object({
   user_id: z.string().uuid(),
   role_slug: z.string().min(1),
+  feature_scope: z.string().optional(),
+  jurisdiction_geoid: z.string().nullable().optional(),
+  resource_id: z.string().nullable().optional(),
 });
 
 /**
@@ -498,11 +503,16 @@ router.post('/roles/grant', async (req, res) => {
       res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
       return;
     }
-    const { user_id, role_slug } = parsed.data;
-    await adminGrantRole(user_id, role_slug);
+    const { user_id, role_slug, feature_scope, jurisdiction_geoid, resource_id } = parsed.data;
+    const resolvedScope = feature_scope ?? 'platform';
+    await adminGrantRole(user_id, role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
     await invalidateRoleCache(user_id);
+    await writeRoleAuditLog(actorId(req), user_id, 'granted', role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
     await logAdminAction(actorId(req), 'grant_role', user_id, {
       role_slug,
+      feature_scope: resolvedScope,
+      jurisdiction_geoid: jurisdiction_geoid ?? null,
+      resource_id: resource_id ?? null,
     });
     res.json({ ok: true });
   } catch (err) {
@@ -532,11 +542,16 @@ router.post('/roles/revoke', async (req, res) => {
       res.status(400).json({ error: 'Invalid request body', details: parsed.error.flatten() });
       return;
     }
-    const { user_id, role_slug } = parsed.data;
-    await adminRevokeRole(user_id, role_slug);
+    const { user_id, role_slug, feature_scope, jurisdiction_geoid, resource_id } = parsed.data;
+    const resolvedScope = feature_scope ?? 'platform';
+    await adminRevokeRole(user_id, role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
     await invalidateRoleCache(user_id);
+    await writeRoleAuditLog(actorId(req), user_id, 'revoked', role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
     await logAdminAction(actorId(req), 'revoke_role', user_id, {
       role_slug,
+      feature_scope: resolvedScope,
+      jurisdiction_geoid: jurisdiction_geoid ?? null,
+      resource_id: resource_id ?? null,
     });
     res.json({ ok: true });
   } catch (err) {

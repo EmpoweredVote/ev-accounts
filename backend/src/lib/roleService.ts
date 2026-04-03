@@ -150,11 +150,23 @@ export async function invalidateRoleCache(userId: string): Promise<void> {
  * 2. User meets the required tier
  * 3. No conflicting active roles (CIVIC-04 — empty for Alpha)
  * 4. Role not already actively granted
+ *
+ * Optional scope params narrow the grant to a specific feature area,
+ * jurisdiction geoid, or resource id. Defaults to platform-wide.
  */
-export async function grantRole(userId: string, roleSlug: string): Promise<void> {
+export async function grantRole(
+  userId: string,
+  roleSlug: string,
+  featureScope?: string,
+  jurisdictionGeoid?: string | null,
+  resourceId?: string | null
+): Promise<void> {
   const { error } = await adminRpc('grant_role', {
     p_user_id: userId,
     p_role_slug: roleSlug,
+    p_feature_scope: featureScope ?? 'platform',
+    p_jurisdiction_geoid: jurisdictionGeoid ?? null,
+    p_resource_id: resourceId ?? null,
   });
 
   if (error) {
@@ -186,11 +198,23 @@ export async function grantRole(userId: string, roleSlug: string): Promise<void>
  * Soft-revoke a role by setting revoked_at on the active grant row.
  *
  * Idempotent — no error if no matching active grant.
+ *
+ * Scope params must match the original grant exactly (IS NOT DISTINCT FROM
+ * semantics in the revoke_role RPC — NULL matches NULL).
  */
-export async function revokeRole(userId: string, roleSlug: string): Promise<void> {
+export async function revokeRole(
+  userId: string,
+  roleSlug: string,
+  featureScope?: string,
+  jurisdictionGeoid?: string | null,
+  resourceId?: string | null
+): Promise<void> {
   const { error } = await adminRpc('revoke_role', {
     p_user_id: userId,
     p_role_slug: roleSlug,
+    p_feature_scope: featureScope ?? 'platform',
+    p_jurisdiction_geoid: jurisdictionGeoid ?? null,
+    p_resource_id: resourceId ?? null,
   });
 
   if (error) throw new Error(error.message);
