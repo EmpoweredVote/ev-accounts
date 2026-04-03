@@ -524,6 +524,11 @@ Plans:
 3. `docs/ESSENTIALS-INTEGRATION.md` is updated to reference the correct env var name where it documents XP award setup.
 4. A curl call to `POST /api/xp/award` using the provisioned key with `source: "essentials"` returns HTTP 200 with `is_duplicate: false` — confirming the key is accepted and scoped correctly.
 
+**Plans:** 1 plan
+
+Plans:
+- [ ] 51-01-PLAN.md — Provision ESSENTIALS_SERVICE_KEY and update documentation
+
 ---
 
 #### Phase 52: Role Schema + RPC Migration
