@@ -184,7 +184,20 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
-(No active milestone — planning next)
+## Current Milestone: v2026.4.1 Essentials Visual Polish & Election Improvements
+
+**Goal:** Improve visual clarity and information hierarchy of representatives and election pages, fix data issues, and add location-aware browsing.
+
+**Target features:**
+- Visual redesign of election + representatives pages (reduce information overload, improve tier readability)
+- Tier-level hue differentiation (local vs state vs federal, city vs township vs county)
+- Small subtle icons replacing badges (on ballot, compass available, branch type) with hover details
+- Icon set research fitting EV design system
+- Remove "incumbent" marker from candidate cards
+- Fix Ruben Marte name mismatch to link candidate to politician profile
+- Headshot cropping audit and fix
+- Main page: explicit coverage messaging (Monroe County IN / LA County CA) with prominent location buttons
+- Lightweight compass-first card prototype (real reps, explore removing photos from results)
 
 ### Future
 
@@ -201,9 +214,10 @@ Users can explore political issues and discover their elected officials without 
 
 **Delivered:** Election Central page added to Essentials with tier-grouped races, candidate profile pages (incumbent/challenger branching), elected/appointed filter on representatives page. Election data imported for Indiana and LA County. 5 phases, 12 plans. 19/19 active requirements satisfied, 2 deferred (PROF-04/05).
 
-## Previous Milestone: v2026.3.7 Treasury Tracker Expansion (Shipped 2026-03-23)
+## Previous Milestones
 
-**Delivered:** Treasury Tracker redesigned with EV design tokens, Bloomington data migrated to Supabase, Ellettsville + Monroe County + LA County/City budget data imported, and frontend entity switcher added. 5 phases, 11 plans.
+- **v2026.3.7 Treasury Tracker Expansion** (Shipped 2026-03-23) — 5 phases, 11 plans
+- **v2026.3.6 Read & Rank Redesign** (Shipped 2026-03-16) — 7 phases, 15 plans
 
 ### Out of Scope
 
@@ -265,4 +279,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after v2026.3.8 milestone*
+*Last updated: 2026-04-03 after v2026.4.1 milestone start*
