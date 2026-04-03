@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 55 Plan 02 complete, ready for Phase 55 Plan 03 (campaign manager GET endpoints)
+**Current focus:** v1.9 Roles — Phase 55 complete (all 3 plans done). Ready for Phase 56.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 55 Plan 03 complete (2026-04-03)**
+
+Phase 55 Plan 03 (Contributor GET Politicians endpoint) — complete ✅:
+- 55-03: `GET /api/compass/contributors/politicians`; `requireAuth` + `requireRole` middleware; grants filtered to compass contributor slugs in handler; `getContributorPoliticians` returns jurisdiction-scoped (stance_editor) or resource-scoped (campaign_manager) list; empty array = valid 200; route registered before parameterized PUT routes; build + tsc --noEmit pass clean ✅
+- Key pattern: handler filters grants to ['compass_stance_editor','campaign_manager'] before passing to service; service deduplicates across overlapping grants
 
 **Phase 55 Plan 02 complete (2026-04-03)**
 
