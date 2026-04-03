@@ -34,6 +34,7 @@ import { getCachedUserRoles } from '../lib/roleService.js';
 import {
   getPoliticianJurisdiction,
   getMatchingGrant,
+  getContributorPoliticians,
   writeStanceAuditLog,
 } from '../lib/stanceService.js';
 import { pool } from '../lib/db.js';
@@ -73,6 +74,34 @@ const bulkStanceSchema = z.object({
     .min(1)
     .max(100),
 });
+
+// ---------------------------------------------------------------------------
+// GET /contributors/politicians — list politicians the caller can edit
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/contributors/politicians',
+  requireAuth,
+  requireRole(['compass_stance_editor', 'campaign_manager']),
+  async (req: Request, res: Response): Promise<void> => {
+    const actorId = (req as AuthenticatedRequest).userId;
+
+    // 1. Get all grants for this user
+    const grants = await getCachedUserRoles(actorId);
+
+    // 2. Filter to only compass contributor roles
+    const contributorGrants = grants.filter((g) =>
+      ['compass_stance_editor', 'campaign_manager'].includes(g.slug)
+    );
+
+    // 3. Fetch politicians the caller is authorized to edit.
+    //    getContributorPoliticians handles deduplication and empty grant lists.
+    const politicians = await getContributorPoliticians(contributorGrants);
+
+    // 4. Return flat array (empty array is a valid 200 response)
+    res.status(200).json(politicians);
+  }
+);
 
 // ---------------------------------------------------------------------------
 // PUT /stances/:politicianId/:topicId — single stance write
