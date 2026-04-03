@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
+import { RolesTab } from '../../components/RolesTab';
+import type { Role } from '../../components/RolesTab';
 
-interface Role {
-  id: string;
-  slug: string;
-  name: string;
-  granted_at: string;
-}
+// Role interface imported from RolesTab component
 
 interface CalibrationStatus {
   days_since_last_calibration: number | null;
@@ -226,22 +223,6 @@ export function AccountDetailPage() {
     } finally {
       setActionLoading(false);
       setShowDemoteConfirm(false);
-    }
-  }
-
-  async function handleRoleRevoke(roleSlug: string) {
-    setActionError(null);
-    setActionLoading(true);
-    try {
-      await apiFetch('/admin/roles/revoke', {
-        method: 'POST',
-        body: JSON.stringify({ user_id: userId, role_slug: roleSlug }),
-      });
-      fetchAccount();
-    } catch (err) {
-      setActionError(err instanceof Error ? err.message : 'Revoke failed');
-    } finally {
-      setActionLoading(false);
     }
   }
 
@@ -517,32 +498,12 @@ export function AccountDetailPage() {
       </div>
 
       {/* Roles */}
-      <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Roles</h2>
-        {(account.roles?.length ?? 0) === 0 ? (
-          <p className="text-sm text-gray-500 dark:text-gray-400">No roles assigned.</p>
-        ) : (
-          <div className="space-y-2">
-            {account.roles?.map((role) => (
-              <div key={role.id} className="flex items-center justify-between">
-                <div>
-                  <span className="font-medium text-sm text-gray-900 dark:text-white">{role.slug}</span>
-                  <span className="text-xs text-gray-400 dark:text-gray-500 ml-2">
-                    Granted {new Date(role.granted_at).toLocaleDateString()}
-                  </span>
-                </div>
-                <button
-                  onClick={() => handleRoleRevoke(role.slug)}
-                  disabled={actionLoading}
-                  className="text-xs text-red-600 hover:text-red-800 disabled:opacity-50"
-                >
-                  Revoke
-                </button>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      <RolesTab
+        userId={userId!}
+        displayName={account.display_name}
+        roles={(account.roles ?? []) as Role[]}
+        onRefresh={fetchAccount}
+      />
 
       {/* Invite chain */}
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
