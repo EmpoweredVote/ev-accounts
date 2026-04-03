@@ -550,7 +550,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 52-01-PLAN.md — Role scope migration, audit log, RPC replacement, seed roles, TS constant
+- [x] 52-01-PLAN.md — Role scope migration, audit log, RPC replacement, seed roles, TS constant ✓ 2026-04-02
 ---
 
 #### Phase 53: Service Layer + requireRole Middleware
