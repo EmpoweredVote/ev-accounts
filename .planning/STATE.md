@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 51 complete, Phase 52 ready to plan
+**Current focus:** v1.9 Roles — Phase 52 Plan 01 complete, Phase 53 next
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 52 Plan 01 complete (2026-04-02)**
+
+Phase 52 Plan 01 (Role Schema + RPC Migration) — complete ✅:
+- 52-01: Migration 047 applied to production; scope columns on user_roles; role_audit_log table; grant_role/revoke_role/get_user_roles RPCs upgraded with scope support and SET search_path=; 5 role slugs seeded; FEATURE_SCOPES constant created; getUserRoles return type updated ✅
+- Key pattern: DROP old 2-param function overloads explicitly — CREATE OR REPLACE cannot change param signature in Postgres
 
 **Phase 51 Plan 01 complete (2026-04-02)**
 
