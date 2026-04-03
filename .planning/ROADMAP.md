@@ -593,6 +593,11 @@ Plans:
 4. The global audit dashboard at `/admin/role-audit` lists all `role_audit_log` entries filterable by `feature_scope`, `jurisdiction_geoid`, and date range; each entry links to the actor's account detail page.
 5. Revoking a role via the Roles tab removes the `user_roles` row, appends a revoke entry to `role_audit_log`, and invalidates the Redis cache for that user within the cache TTL.
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 54-01-PLAN.md — backend gaps: scope params on grant/revoke, role_audit_log writes, audit log read endpoint
+- [ ] 54-02-PLAN.md — frontend: RolesTab + GrantRoleModal + RoleAuditPage
 ---
 
 #### Phase 55: Compass Stance Editor + Campaign Manager Endpoints
