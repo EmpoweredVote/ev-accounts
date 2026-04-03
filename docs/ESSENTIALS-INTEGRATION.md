@@ -422,6 +422,33 @@ Essentials needs two things provisioned by the Accounts team before using these 
 
 These provisioning steps are operational, not a blocker for implementation. Build against the documented shapes now; get keys provisioned before the first real award call.
 
+### XP Service Key
+
+The Essentials backend uses `ESSENTIALS_SERVICE_KEY` to authorize XP awards via `POST /api/xp/award`.
+
+| Item | Value |
+|------|-------|
+| Accounts env var | `ESSENTIALS_SERVICE_KEY` |
+| Essentials env var | `ESSENTIALS_SERVICE_KEY` (same name, value provided by Accounts team) |
+| Authorized XP source | `"essentials-rep-lookup"` |
+| Header | `X-Service-Key: {key value}` |
+
+**Setup steps:**
+1. Accounts team provisions the key in Render (`ev-accounts-api` service environment).
+2. Accounts team shares the key value with the Essentials team via secure channel.
+3. Essentials team sets `ESSENTIALS_SERVICE_KEY` in their own deployment environment.
+4. Use in award calls: `'X-Service-Key': process.env.ESSENTIALS_SERVICE_KEY`
+5. Source string in request body: `"essentials-rep-lookup"` — use exactly this string.
+
+**Verify the key works:**
+```bash
+curl -s -X POST https://accounts.empowered.vote/api/xp/award \
+  -H "Content-Type: application/json" \
+  -H "X-Service-Key: $ESSENTIALS_SERVICE_KEY" \
+  -d '{"user_id":"<connected-user-uuid>","source":"essentials-rep-lookup","amount":10,"idempotency_key":"essentials:key-test:<unique>"}'
+```
+Expected: HTTP 200 with `"is_duplicate": false` on first call.
+
 ### POST /api/xp/award
 
 Awards XP to a Connected user.
@@ -651,4 +678,4 @@ Use this checklist to verify full integration compliance. Each item maps to an E
 ---
 
 *Empowered Accounts API — Essentials Integration Guide*
-*Last updated: 2026-03-19*
+*Last updated: 2026-04-02*
