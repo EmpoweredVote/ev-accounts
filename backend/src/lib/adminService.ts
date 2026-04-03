@@ -327,6 +327,16 @@ export async function writeRoleAuditLog(
 }
 
 /**
+ * List all active roles available to grant.
+ */
+export async function listRoles(): Promise<{ id: string; slug: string; name: string; required_tier: string; description: string | null; is_active: boolean }[]> {
+  const result = await pool.query<{ id: string; slug: string; name: string; required_tier: string; description: string | null; is_active: boolean }>(
+    `SELECT id, slug, name, required_tier, description, is_active FROM public.roles WHERE is_active = true ORDER BY name ASC`
+  );
+  return result.rows;
+}
+
+/**
  * Read paginated, filterable entries from public.role_audit_log.
  */
 export async function getRoleAuditLog(filters: {

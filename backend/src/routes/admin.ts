@@ -55,6 +55,7 @@ import {
   listAccessRequests,
   writeRoleAuditLog,
   getRoleAuditLog,
+  listRoles,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -490,6 +491,19 @@ const RoleActionSchema = z.object({
   feature_scope: z.string().optional(),
   jurisdiction_geoid: z.string().nullable().optional(),
   resource_id: z.string().nullable().optional(),
+});
+
+/**
+ * GET /api/admin/roles
+ * List all active roles available to grant.
+ */
+router.get('/roles', async (_req, res) => {
+  try {
+    const roles = await listRoles();
+    res.json({ roles });
+  } catch (err) {
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 /**
