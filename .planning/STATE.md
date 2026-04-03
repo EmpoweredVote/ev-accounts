@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 53 Plan 01 complete, Phase 53 Plan 02 next
+**Current focus:** v1.9 Roles — Phase 53 complete (both plans), next phase TBD
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 53 Plan 02 complete (2026-04-03)**
+
+Phase 53 Plan 02 (Wire Endpoints + Cache Invalidation) — complete ✅:
+- 53-02: GET /api/contributor/me (bare array of active grants); POST /api/roles/check (feature_scope + scope → { permitted: boolean }); invalidateRoleCache wired after adminGrantRole/adminRevokeRole; contributorRouter mounted at /api/contributor ✅
+- Key pattern: POST /roles/check body field "feature_scope" IS the role slug; cache invalidation placed after RPC success, before logAdminAction
 
 **Phase 53 Plan 01 complete (2026-04-03)**
 
@@ -105,6 +111,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 53 Plan 02 Complete — Wire Endpoints + Cache Invalidation (53-02)
+
+- **GET /contributor/me returns bare array** — no `{ roles: [...] }` wrapper; matches CTC and Civic Spaces consumer contract
+- **POST /roles/check feature_scope = role slug** — body field named `feature_scope` IS the role slug per CONTEXT.md
+- **Cache invalidation ordering** — `invalidateRoleCache` placed after RPC success, before `logAdminAction`; safe because invalidateRoleCache is internally try/catch-safe (never throws)
+- **53-02 commits** — 487939d (endpoints), e99aada (invalidation + mount)
 
 ### Phase 51 Plan 01 Complete — Essentials XP Source Provisioning (51-01)
 
