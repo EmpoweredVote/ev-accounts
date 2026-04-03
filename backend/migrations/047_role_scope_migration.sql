@@ -74,6 +74,11 @@ CREATE INDEX IF NOT EXISTS idx_role_audit_log_created_at
 -- ---------------------------------------------------------------------------
 -- Section 4: Replace grant_role RPC (scope-aware, SET search_path = '')
 -- ---------------------------------------------------------------------------
+-- NOTE: DROP old 2-param overloads first. CREATE OR REPLACE cannot change
+-- a function's parameter signature — it creates a new overload instead.
+-- IF EXISTS guards make this idempotent on fresh databases.
+DROP FUNCTION IF EXISTS public.grant_role(uuid, text);
+DROP FUNCTION IF EXISTS public.revoke_role(uuid, text);
 
 CREATE OR REPLACE FUNCTION public.grant_role(
   p_user_id         uuid,
