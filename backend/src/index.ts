@@ -11,6 +11,7 @@ import invitesRouter from './routes/invites.js';
 import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import compassAdminRouter from './routes/compassAdmin.js';
+import compassContributorRouter from './routes/compassContributor.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import vqRouter from './routes/vq.js';
@@ -75,6 +76,7 @@ app.use('/api/account/profile', profileRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/invites', invitesRouter);
 app.use('/api/connect', connectRouter);
+app.use('/api/compass', compassContributorRouter);
 app.use('/api/compass', compassRouter);
 // Dual-router pattern: compassAdminRouter shares the /api/compass prefix with compassRouter.
 // Express tries compassRouter first (public routes); admin-only mutations fall through to here.
