@@ -569,6 +569,12 @@ Plans:
 4. `requireRole('campaign_manager', { resourceId: politicianId })` returns 403 when the requesting user's `resource_id` grant does not match the path parameter — two-layer enforcement confirmed by integration test with two politicians and a single-politician grant.
 5. Role grant lookups use a short-TTL Redis cache (`roles:uid:{userId}` key, 60–120s TTL); cache is invalidated on grant or revoke.
 
+
+**Plans:** 2 plans
+
+Plans:
+- [ ] 53-01-PLAN.md — roleService cached lookups + checkRole utility + requireRole middleware + unit tests
+- [ ] 53-02-PLAN.md — GET /api/contributor/me + POST /api/roles/check + admin cache invalidation wiring
 ---
 
 #### Phase 54: Admin UI — Grant/Revoke + Audit Dashboard
