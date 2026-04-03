@@ -10,9 +10,14 @@ See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started
 
 ## Current Position
 
+**Phase 51 Plan 01 complete (2026-04-02)**
+
+Phase 51 Plan 01 (Essentials XP Source Provisioning) — complete ✅:
+- 51-01: ESSENTIALS_SERVICE_KEY provisioned in Render; .env.example + ESSENTIALS-INTEGRATION.md updated; POST /api/xp/award smoke-tested HTTP 200 with source "essentials-rep-lookup" ✅
+
 **v1.9 Roles roadmap created (2026-04-02)**
 
-Roadmap complete — 8 phases (51–58), 17 requirements mapped, all phases have success criteria. Phase 51 (Essentials XP Source Provisioning) is ready to plan next.
+Roadmap complete — 8 phases (51–58), 17 requirements mapped, all phases have success criteria.
 
 **Phase 50 complete (2026-04-01)**
 
@@ -88,6 +93,12 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 51 Plan 01 Complete — Essentials XP Source Provisioning (51-01)
+
+- **ESSENTIALS_SERVICE_KEY authorized source** — `"essentials-rep-lookup"` is the source string bound to the Essentials service key for XP awards
+- **Smoke-tested live** — POST /api/xp/award returned HTTP 200 after Render provisioning and redeploy
+- **51-01 commit** — 1b76857 (code), plan metadata in this session
 
 ### Phase 50 Plan 01 Complete — Path 1.5 in /representatives/me (50-01)
 
