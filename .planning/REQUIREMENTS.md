@@ -14,8 +14,8 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 - [x] **ROLE-03**: `requireRole(featureScope, opts?)` Express middleware — `pool.query()` EXISTS check for role presence with NULL-safe jurisdiction check (`IS NULL OR IS NOT DISTINCT FROM`); second-layer `resource_id` boundary check for `campaign_manager` role; 403 on any check failure
 - [x] **ROLE-04**: `GET /api/contributor/me` — returns authenticated user's active role grants (array of `{ feature_scope, jurisdiction_geoid, resource_id }`); used by contributor portal on load and by CTC/Civic Spaces for self-provisioning
 - [x] **ROLE-05**: `POST /api/roles/check` — body `{ feature_scope, jurisdiction_geoid?, resource_id? }`; returns `{ permitted: boolean }`; CORS-enabled for `*.empowered.vote` and Civic Spaces origin; used by Civic Spaces to verify volunteer gate
-- [ ] **ROLE-06**: Admin grant/revoke UI — role assignment form in existing admin tool: feature scope dropdown, jurisdiction text field, resource_id politician picker (required for `campaign_manager`); per-user Roles tab showing all active grants with individual revoke buttons and grant timestamps
-- [ ] **ROLE-07**: Global audit dashboard — admin page listing all role-holder audit log entries; filterable by `feature_scope`, `jurisdiction_geoid`, date range; each entry links to actor's account detail page
+- [x] **ROLE-06**: Admin grant/revoke UI — role assignment form in existing admin tool: feature scope dropdown, jurisdiction text field, resource_id politician picker (required for `campaign_manager`); per-user Roles tab showing all active grants with individual revoke buttons and grant timestamps
+- [x] **ROLE-07**: Global audit dashboard — admin page listing all role-holder audit log entries; filterable by `feature_scope`, `jurisdiction_geoid`, date range; each entry links to actor's account detail page
 
 ### Role-Gated Endpoints
 
@@ -68,8 +68,8 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 | ROLE-03 | Phase 53 | Complete |
 | ROLE-04 | Phase 53 | Complete |
 | ROLE-05 | Phase 53 | Complete |
-| ROLE-06 | Phase 54 | Pending |
-| ROLE-07 | Phase 54 | Pending |
+| ROLE-06 | Phase 54 | Complete |
+| ROLE-07 | Phase 54 | Complete |
 | ROLE-08 | Phase 55 | Pending |
 | ROLE-09 | Phase 55 | Pending |
 | ROLE-10 | Phase 56 | Pending |

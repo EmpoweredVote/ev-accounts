@@ -596,8 +596,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 54-01-PLAN.md — backend gaps: scope params on grant/revoke, role_audit_log writes, audit log read endpoint
-- [ ] 54-02-PLAN.md — frontend: RolesTab + GrantRoleModal + RoleAuditPage
+- [x] 54-01-PLAN.md — backend gaps: scope params on grant/revoke, role_audit_log writes, audit log read endpoint
+- [x] 54-02-PLAN.md — frontend: RolesTab + GrantRoleModal + RoleAuditPage
 ---
 
 #### Phase 55: Compass Stance Editor + Campaign Manager Endpoints
