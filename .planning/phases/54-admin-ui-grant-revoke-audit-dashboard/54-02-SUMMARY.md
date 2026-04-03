@@ -61,8 +61,8 @@ completed: 2026-04-03
 - **Duration:** 4 min
 - **Started:** 2026-04-03T16:54:55Z
 - **Completed:** 2026-04-03T16:59:13Z
-- **Tasks:** 2 (checkpoint pending human verify)
-- **Files modified:** 6
+- **Tasks:** 2 (human-verify checkpoint passed 2026-04-03)
+- **Files modified:** 8 (6 planned + 2 hotfix)
 
 ## Accomplishments
 - RolesTab shows scope per grant (Jurisdiction/Resource/Platform-wide) with Grant Role button and headlessui revoke confirmation dialog
@@ -74,6 +74,9 @@ completed: 2026-04-03
 
 1. **Task 1: RolesTab + GrantRoleModal + revoke confirmation** - `65c2a61` (feat)
 2. **Task 2: RoleAuditPage + route wiring** - `fbc3e18` (feat)
+3. **Hotfix: GET /admin/roles endpoint for grant modal dropdown** - `701b0d9` (feat)
+
+**Plan metadata:** (docs commit from this session)
 
 ## Files Created/Modified
 - `admin/src/components/RolesTab.tsx` - Roles table with scope columns, revoke dialog, grant button
@@ -82,6 +85,8 @@ completed: 2026-04-03
 - `admin/src/pages/admin/AccountDetailPage.tsx` - Replaced inline roles section with RolesTab; removed handleRoleRevoke
 - `admin/src/App.tsx` - Added /admin/role-audit route and RoleAuditPage import
 - `admin/src/pages/admin/AdminLayout.tsx` - Added "Role Audit" nav link
+- `backend/src/lib/adminService.ts` - Added getRoles() (hotfix)
+- `backend/src/routes/admin.ts` - Added GET /admin/roles endpoint (hotfix)
 
 ## Decisions Made
 - Backend audit filter is `feature_scope` not `role_slug` — adapted plan's "role dropdown" to scope dropdown (platform/jurisdiction/resource). Role slug is shown per row from `snapshot_after.role_slug`.
@@ -101,8 +106,18 @@ completed: 2026-04-03
 
 ---
 
-**Total deviations:** 1 auto-fixed (1 backend alignment)
-**Impact on plan:** Necessary alignment with existing backend schema. Audit filter is still useful and correct.
+**2. [Rule 3 - Blocking] Added GET /admin/roles endpoint for GrantRoleModal dropdown**
+- **Found during:** Task 1 (GrantRoleModal implementation)
+- **Issue:** GrantRoleModal needed a live role list to populate the dropdown; no endpoint existed
+- **Fix:** Added `getRoles()` to adminService.ts and GET /admin/roles route in admin.ts
+- **Files modified:** backend/src/lib/adminService.ts, backend/src/routes/admin.ts
+- **Verification:** Grant modal opens with populated role dropdown; campaign_manager shows politician picker
+- **Committed in:** 701b0d9 (standalone hotfix commit)
+
+---
+
+**Total deviations:** 2 auto-fixed (1 backend alignment, 1 blocking hotfix)
+**Impact on plan:** Both fixes necessary for correct operation. No scope creep.
 
 ## Issues Encountered
 None.
@@ -112,8 +127,8 @@ None - no external service configuration required.
 
 ## Next Phase Readiness
 - ROLE-06 and ROLE-07 complete: admin can grant/revoke scoped roles and view full audit trail
-- Checkpoint pending: human verification of grant modal, revoke confirmation, and audit dashboard
-- After checkpoint approval: Phase 54 plan 02 fully complete
+- Human verification passed: grant modal works with conditional politician picker, revoke confirmation works, audit dashboard loads at /admin/role-audit
+- Phase 54 fully complete — ready for Phase 55 (requireRole enforcement on protected routes)
 
 ---
 *Phase: 54-admin-ui-grant-revoke-audit-dashboard*

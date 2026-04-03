@@ -5,15 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 54 Plan 02 auto tasks complete, paused at human-verify checkpoint
+**Current focus:** v1.9 Roles — Phase 54 complete, ready for Phase 55 (requireRole enforcement on protected routes)
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
-**Phase 54 Plan 02 auto tasks complete, paused at checkpoint (2026-04-03)**
+**Phase 54 complete (2026-04-03)**
 
-Phase 54 Plan 02 (Admin UI Grant/Revoke + Audit Dashboard) — auto tasks complete, awaiting human-verify ⏸:
-- 54-02: RolesTab (scope columns, grant button, revoke dialog); GrantRoleModal (role dropdown, conditional politician picker for campaign_manager, jurisdiction field); RoleAuditPage (filterable, paginated, color-coded badges); route + sidebar nav ✅
+Phase 54 Plan 02 (Admin UI Grant/Revoke + Audit Dashboard) — complete ✅:
+- 54-02: RolesTab (scope columns, grant button, revoke dialog); GrantRoleModal (role dropdown, conditional politician picker for campaign_manager, jurisdiction field); RoleAuditPage (filterable, paginated, color-coded badges); route + sidebar nav; human-verify passed ✅
+- Hotfix: GET /admin/roles endpoint added (701b0d9) — GrantRoleModal dropdown needed live role list
 - Key pattern: audit filter uses feature_scope (platform/jurisdiction/resource) not role slug; role slug shown per row from snapshot_after.role_slug
 
 **Phase 54 Plan 01 complete (2026-04-03)**
@@ -123,6 +124,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### Phase 54 Plan 02 Complete — Admin UI Grant/Revoke + Audit Dashboard (54-02)
+
+- **Audit filter uses feature_scope not role slug** — backend AuditLogQuerySchema only accepts feature_scope; role slug shown per row from snapshot_after.role_slug JSONB field
+- **GET /admin/roles hotfix** — GrantRoleModal dropdown required live role list; endpoint added to adminService + admin router (701b0d9)
+- **campaign_manager conditional UI** — politician picker shown only for campaign_manager role (resource-scoped); all others use jurisdiction text field; feature_scope derived server-side
+- **54-02 commits** — 65c2a61 (RolesTab+GrantRoleModal), fbc3e18 (RoleAuditPage+routes), 701b0d9 (hotfix)
 
 ### Phase 53 Plan 02 Complete — Wire Endpoints + Cache Invalidation (53-02)
 
