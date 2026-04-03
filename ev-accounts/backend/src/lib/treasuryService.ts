@@ -47,6 +47,7 @@ export interface TreasuryBudget {
   dataset_type: string;
   total_budget: number;
   data_source: string | null;
+  data_source_info: { displayName: string; url: string } | null;
   hierarchy: string[] | null;
   generated_at: string | null;
   created_at: string;
@@ -131,6 +132,8 @@ interface BudgetRow {
   dataset_type: string;
   total_budget: string; // numeric returned as string
   data_source: string | null;
+  ds_display_name: string | null;
+  ds_url: string | null;
   hierarchy: string[] | null;
   generated_at: string | null;
   created_at: string;
@@ -224,6 +227,10 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     dataset_type: row.dataset_type,
     total_budget: Number(row.total_budget),
     data_source: row.data_source,
+    data_source_info: row.ds_display_name ? {
+      displayName: row.ds_display_name,
+      url: row.ds_url!,
+    } : null,
     hierarchy: row.hierarchy,
     generated_at: row.generated_at,
     created_at: row.created_at,
@@ -329,22 +336,26 @@ export async function getBudgetsByCityId(
 ): Promise<TreasuryBudget[]> {
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
-      `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
-              data_source, hierarchy, generated_at, created_at, updated_at
-       FROM treasury.budgets
-       WHERE municipality_id = $1 AND fiscal_year = $2
-       ORDER BY fiscal_year DESC`,
+      `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+              b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+              b.hierarchy, b.generated_at, b.created_at, b.updated_at
+       FROM treasury.budgets b
+       LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+       WHERE b.municipality_id = $1 AND b.fiscal_year = $2
+       ORDER BY b.fiscal_year DESC`,
       [cityId, fiscalYear]
     );
     return rows.map(mapBudget);
   }
 
   const { rows } = await pool.query<BudgetRow>(
-    `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
-            data_source, hierarchy, generated_at, created_at, updated_at
-     FROM treasury.budgets
-     WHERE municipality_id = $1
-     ORDER BY fiscal_year DESC`,
+    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+            b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            b.hierarchy, b.generated_at, b.created_at, b.updated_at
+     FROM treasury.budgets b
+     LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+     WHERE b.municipality_id = $1
+     ORDER BY b.fiscal_year DESC`,
     [cityId]
   );
   return rows.map(mapBudget);
@@ -402,10 +413,12 @@ export async function getBudgetById(
   id: string
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
-    `SELECT id, municipality_id, fiscal_year, dataset_type, total_budget,
-            data_source, hierarchy, generated_at, created_at, updated_at
-     FROM treasury.budgets
-     WHERE id = $1`,
+    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+            b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            b.hierarchy, b.generated_at, b.created_at, b.updated_at
+     FROM treasury.budgets b
+     LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+     WHERE b.id = $1`,
     [id]
   );
 
