@@ -40,7 +40,7 @@ patterns-established:
   - "Pattern: VARIANT_CONFIG lookup object controls all variant-specific dimensions in one place, exported for consumer access"
   - "Pattern: Radar in shape-only mode — padding=0 + labelOffset=0 + overflow:hidden container clips labels outside viewBox"
 
-requirements-completed: [PROTO-02]
+requirements_completed: [PROTO-02]
 
 # Metrics
 duration: 5min

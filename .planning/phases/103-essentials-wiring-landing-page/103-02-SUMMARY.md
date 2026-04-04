@@ -24,6 +24,7 @@ metrics:
   tasks_completed: 1
   tasks_total: 1
   files_changed: 1
+requirements_completed: [NAV-01, NAV-02]
 ---
 
 # Phase 103 Plan 02: Landing Page Coverage Cards Summary

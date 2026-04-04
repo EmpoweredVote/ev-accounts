@@ -36,7 +36,7 @@ patterns-established:
   - "MOCK_TOPICS export: shared topic list between mock data and card component"
   - "CSS override pattern for IconOverlay: .compass-card-icons > div { position: static }"
 
-requirements-completed: [PROTO-01, PROTO-02]
+requirements_completed: [PROTO-01, PROTO-02]
 
 duration: 45min
 completed: 2026-04-04

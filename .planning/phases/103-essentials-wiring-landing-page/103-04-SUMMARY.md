@@ -34,7 +34,7 @@ key-decisions:
 patterns-established:
   - "Pattern: Headshot audit script — dotenv + pg Pool + LEFT JOIN + batched fetch + CSV to stdout"
 
-requirements-completed: [DATA-04]
+requirements_completed: [DATA-04]
 
 # Metrics
 duration: 2min

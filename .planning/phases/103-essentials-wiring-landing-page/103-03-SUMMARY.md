@@ -25,7 +25,7 @@ metrics:
   tasks_completed: 1
   tasks_total: 1
   files_changed: 1
-requirements: [VIS-02, VIS-04]
+requirements_completed: [VIS-02, VIS-04]
 ---
 
 # Phase 103 Plan 03: Election Page Position Grouping Summary
