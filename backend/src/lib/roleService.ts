@@ -115,7 +115,8 @@ export async function getCachedUserRoles(userId: string): Promise<UserRoleGrant[
   const grants = await getUserRoles(userId);
 
   try {
-    await cache.set(key, grants, 90);
+    const ttl = parseInt(process.env['ROLE_CACHE_TTL_SECONDS'] ?? '90', 10);
+    await cache.set(key, grants, ttl);
   } catch (err) {
     console.error('[roleService] cache error (set):', err);
   }
