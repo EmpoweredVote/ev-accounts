@@ -186,7 +186,7 @@ export async function getCompassCategories() {
       .map(tc => {
         const t = tc.compass_topics as { id: string; title: string; short_title: string | null; question_text: string; is_live: boolean } | null;
         if (!t) return null;
-        return { topic_id: t.id, title: t.title, short_title: t.short_title, question_text: t.question_text };
+        return { id: t.id, title: t.title, short_title: t.short_title, question_text: t.question_text };
       })
       .filter(Boolean)
       .sort((a, b) => (a as { title: string }).title.localeCompare((b as { title: string }).title)),
