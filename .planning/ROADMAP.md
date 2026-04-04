@@ -287,7 +287,7 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
 - [x] **Phase 103: Essentials Wiring + Landing Page** - Tier hue differentiation, icon metadata on cards with tooltips, election page clarity, landing page coverage messaging (completed 2026-04-04)
 - [x] **Phase 104: Compass-First Card Prototype** - Local /prototype route with compass-first layout using hardcoded mock data (completed 2026-04-04)
 - [x] **Phase 105: Seed SQL Fix & Doc Cleanup** - Fix DATA-02 seed typo, backfill SUMMARY frontmatter gaps (completed 2026-04-04)
-- [ ] **Phase 106: Tier Background Hues & Branch Icons** - Section background colors per tier, distinct branch icons
+- [x] **Phase 106: Tier Background Hues & Branch Icons** - Section background colors per tier, distinct branch icons (completed 2026-04-04)
 
 ## Phase Details
 
@@ -360,10 +360,10 @@ Plans:
   1. Federal, State, and Local sections have distinct background colors (not just label colors) — cards sit on top of the tinted background
   2. Executive, Legislative, and Judicial branches each have a unique icon on politician cards — no hover required to distinguish branch type
   3. Existing tooltip behavior preserved for additional metadata detail
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 106-01-PLAN.md — ev-ui tierColors 3-way bg distinction + BranchIcon branch prop, publish v0.1.56
-- [ ] 106-02-PLAN.md — Essentials tier background bands + branch prop wiring + visual verification
+- [x] 106-02-PLAN.md — Essentials tier background bands + branch prop wiring + visual verification
 **UI hint**: yes
 
 ## Progress
@@ -379,4 +379,4 @@ Plans:
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
 | 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 1/1 | Complete    | 2026-04-04 |
-| 106. Tier Background Hues & Branch Icons | v2026.4.1 | 1/2 | In Progress|  |
+| 106. Tier Background Hues & Branch Icons | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
