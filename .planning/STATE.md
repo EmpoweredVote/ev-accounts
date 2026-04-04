@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 55 complete and verified ✅ (5/5 truths, 4 plans). Ready for Phase 56.
+**Current focus:** v1.9 Roles — Phase 56 Plan 01 complete. Ready for Phase 56 Plan 02 (getEditorMatchingGrant test coverage).
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 56 Plan 01 complete (2026-04-04)**
+
+Phase 56 Plan 01 (Essentials Data Editor Endpoint) — complete ✅:
+- 56-01: PATCH /api/essentials/politicians/:id for essentials_data_editor; getEditorMatchingGrant (fail-CLOSED on NULL politician geoid); writeEssentialsAuditLog (bio_edit, actor=target pattern); RESTRICTED_FIELDS 422 check before zod; no-op detection skips audit log; dynamic SET clause; dual-router mount essentialsEditorRouter before essentialsPoliticiansRouter ✅
+- Key pattern: fail-CLOSED for essentials_data_editor (NULL politician geoid -> 403) vs fail-open for compass_stance_editor; API->DB field mapping: bio->bio_text, photo_origin_url->photo_custom_url; separate writeEssentialsAuditLog function (arbitrary field diffs vs topic value changes)
 
 **Phase 55 Plan 04 complete (2026-04-03)**
 
