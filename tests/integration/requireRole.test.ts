@@ -19,6 +19,7 @@ function grant(
   resourceId: string | null = null
 ): UserRoleGrant {
   return {
+    id: 'test-grant-id',
     role_id: 'r1',
     slug,
     name: slug,
