@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 56 Plan 01 complete. Ready for Phase 56 Plan 02 (getEditorMatchingGrant test coverage).
+**Current focus:** v1.9 Roles — Phase 56 complete (both plans done). No next phase planned yet.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 56 Plan 02 complete (2026-04-03)**
+
+Phase 56 Plan 02 (getEditorMatchingGrant Test Coverage) — complete ✅:
+- 56-02: 10-test unit suite for getEditorMatchingGrant; fail-closed on NULL politician geoid (Test 6 — key behavioral difference from compass_stance_editor); global access when grant jurisdiction is null (Tests 5, 7); slug filtering prevents cross-role grant matching (Tests 2, 9); two-jurisdiction isolation (Test 10); all 10 tests pass ✅
+- Key pattern: fail-CLOSED for essentials_data_editor is the hard security boundary — NULL politician geoid returns null always (no console.warn, no fail-open like compass_stance_editor); global grant (null jurisdiction) overrides even when politician geoid is also null
 
 **Phase 56 Plan 01 complete (2026-04-04)**
 
