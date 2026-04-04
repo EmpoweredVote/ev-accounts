@@ -336,7 +336,7 @@ Plans:
 **Plans:** 2/2 plans complete
 Plans:
 - [x] 104-01-PLAN.md — Mock compass data + CompassFirstCard component (3 variants)
-- [ ] 104-02-PLAN.md — Prototype page assembly + route registration
+- [x] 104-02-PLAN.md — Prototype page assembly + route registration
 **UI hint**: yes
 
 ### Phase 105: Seed SQL Fix & Doc Cleanup
@@ -347,7 +347,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. seed-monroe-county-2026-primary.sql line 276 no longer has trailing apostrophe on Ruben Marte values
   2. Plans 103-01, 103-02, 103-03, 104-01, 104-02 have `requirements_completed` in SUMMARY frontmatter
-Plans: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 105-01-PLAN.md — Verify seed SQL fix + backfill SUMMARY frontmatter
 
 ### Phase 106: Tier Background Hues & Branch Icons
 **Goal**: Section backgrounds use tier-specific hues so the page visually shifts as you scroll Federal → State → Local, and branch type is conveyed with distinct icons instead of a single generic one
@@ -373,5 +375,5 @@ Plans: TBD
 | 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 2/2 | Complete    | 2026-04-04 |
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
-| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 0/0 | Pending | — |
+| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 0/1 | Pending | — |
 | 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/0 | Pending | — |
