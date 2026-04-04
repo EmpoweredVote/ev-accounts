@@ -660,8 +660,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 57-01-PLAN.md — Integration tests for CTC + Civic Spaces endpoints (TTL env var + 9 HTTP tests)
-- [ ] 57-02-PLAN.md — Smoke script + integration guide Contributor Roles section
+- [x] 57-01-PLAN.md — Integration tests for CTC + Civic Spaces endpoints (TTL env var + 9 HTTP tests)
+- [x] 57-02-PLAN.md — Smoke script + integration guide Contributor Roles section
 
 **Success Criteria:**
 

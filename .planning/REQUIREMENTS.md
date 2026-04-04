@@ -73,8 +73,8 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 | ROLE-08 | Phase 55 | Complete |
 | ROLE-09 | Phase 55 | Complete |
 | ROLE-10 | Phase 56 | Complete |
-| ROLE-11 | Phase 57 | Pending |
-| ROLE-12 | Phase 57 | Pending |
+| ROLE-11 | Phase 57 | Complete |
+| ROLE-12 | Phase 57 | Complete |
 | ROLE-13 | Phase 58 | Pending |
 | ROLE-14 | Phase 58 | Pending |
 | ROLE-15 | Phase 58 | Pending |
