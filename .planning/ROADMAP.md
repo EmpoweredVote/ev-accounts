@@ -620,10 +620,10 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 55-01-PLAN.md — schema migration (home_jurisdiction_geoid, write_in_text, role_grant_id)
-- [ ] 55-02-PLAN.md — stance write routes (single + bulk PUT with jurisdiction enforcement)
-- [ ] 55-03-PLAN.md — contributor politicians list endpoint (GET filtered by role scope)
-- [ ] 55-04-PLAN.md — gap closure: getMatchingGrant integration tests + grant() helper fix
+- [x] 55-01-PLAN.md — schema migration (home_jurisdiction_geoid, write_in_text, role_grant_id)
+- [x] 55-02-PLAN.md — stance write routes (single + bulk PUT with jurisdiction enforcement)
+- [x] 55-03-PLAN.md — contributor politicians list endpoint (GET filtered by role scope)
+- [x] 55-04-PLAN.md — gap closure: getMatchingGrant integration tests + grant() helper fix
 ---
 
 #### Phase 56: Essentials Data Editor Endpoint
