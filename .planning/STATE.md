@@ -5,19 +5,18 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 57 complete ✅ (2 plans). CTC + Civic Spaces contributor roles integration shipped.
+**Current focus:** v1.9 Roles — Phase 57 Plan 01 complete ✅. CTC + Civic Spaces integration tests + ROLE_CACHE_TTL_SECONDS shipped. Plan 02 next.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
-**Phase 57 Plan 02 complete (2026-04-04)**
+**Phase 57 Plan 01 complete (2026-04-03)**
 
-Phase 57 Plan 02 (Smoke Script + Integration Guide) — complete ✅:
-- 57-02: smoke-phase57.ts with sequential checks for GET /api/contributor/me and POST /api/roles/check; grant/check/revoke/expire lifecycle gated on SMOKE_ADMIN_TOKEN with [SKIP] fallback; docs/INTEGRATION-GUIDE-v2.md section 8.26 Contributor Roles documenting both endpoints, NULL-scope semantics, cache behavior (90s window via ROLE_CACHE_TTL_SECONDS), CTC and Civic Spaces integration patterns ✅
+Phase 57 Plan 01 (CTC + Civic Spaces Integration Tests) — complete ✅ (see 57-01-SUMMARY.md):
+- 57-01: ROLE_CACHE_TTL_SECONDS env var in roleService.ts (default 90s); 10-test HTTP integration suite for GET /api/contributor/me + POST /api/roles/check; ctc_content_editor/volunteer jurisdiction match/mismatch/null-scope/no-grant all verified; cache lifecycle test proves post-revocation state reflection ✅
+- Key pattern: cache pre-population (cache.set) preferred over vi.mock for roleService tests — vi.mock is hoisted by vitest before process.env assignments, causing env validation failure
 
-**Phase 57 Plan 01 complete (2026-04-04)**
-
-Phase 57 Plan 01 (Contributor Roles Routes) — complete ✅ (see 57-01-SUMMARY.md)
+**Phase 57 Plan 02 — planned but not yet executed**
 
 **Phase 56 Plan 02 complete (2026-04-03)**
 
