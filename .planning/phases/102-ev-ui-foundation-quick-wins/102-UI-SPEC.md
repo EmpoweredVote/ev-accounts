@@ -56,9 +56,11 @@ All text styles reference `tokens.js → textStyles`. Phase 102 adds no new typo
 | Role | Size | Weight | Line Height | Token reference |
 |------|------|--------|-------------|-----------------|
 | Body | 16px | 400 (regular) | 1.5 | `textStyles.body` |
-| Label / metadata | 14px | 500 (medium) | 1.4 | `textStyles.label` |
+| Label / metadata | 14px | 400 (regular) | 1.4 | `textStyles.label` |
 | Card heading | 18px | 600 (semibold) | 1.4 | `textStyles.h4` |
 | Section heading | 20px | 600 (semibold) | 1.35 | `textStyles.h3` |
+
+**Weight scale:** Exactly 2 weights — 400 (regular) for Body and Label, 600 (semibold) for Card heading and Section heading. The 14px size of Label already differentiates it from 16px Body — no additional weight step is needed.
 
 **Phase-specific note:** Icons exported in this phase (`BallotIcon`, `CompassIcon`, `BranchIcon`) are purely graphical — they carry no text. Tooltip/label display of icons is Phase 103 scope per D-03. The icons render at 16px default, matching the `label` line-height row to align inline with text when used in Phase 103.
 
