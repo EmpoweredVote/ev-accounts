@@ -1,6 +1,6 @@
 /**
- * compassContributor — stance write endpoints for compass_stance_editor and
- * campaign_manager roles.
+ * compassContributor — stance write endpoints for compass_stance_editor,
+ * campaign_manager, and essentials_data_editor roles.
  *
  * WHY THIS FILE EXISTS:
  * Contributors (campaign managers and regional stance editors) need a way to
@@ -82,7 +82,7 @@ const bulkStanceSchema = z.object({
 router.get(
   '/contributors/politicians',
   requireAuth,
-  requireRole(['compass_stance_editor', 'campaign_manager']),
+  requireRole(['compass_stance_editor', 'campaign_manager', 'essentials_data_editor']),
   async (req: Request, res: Response): Promise<void> => {
     const actorId = (req as AuthenticatedRequest).userId;
 
@@ -91,7 +91,7 @@ router.get(
 
     // 2. Filter to only compass contributor roles
     const contributorGrants = grants.filter((g) =>
-      ['compass_stance_editor', 'campaign_manager'].includes(g.slug)
+      ['compass_stance_editor', 'campaign_manager', 'essentials_data_editor'].includes(g.slug)
     );
 
     // 3. Fetch politicians the caller is authorized to edit.
