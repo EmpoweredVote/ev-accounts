@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-03)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 104 — compass-first-card-prototype
+**Current focus:** Phase 105 — seed-sql-fix-doc-cleanup
 
 ## Current Position
 
-Phase: 104
-Plan: Not started
-Status: All plans complete — awaiting verification
-Last activity: 2026-04-04
+Phase: 105 (seed-sql-fix-doc-cleanup) — EXECUTING
+Plan: 1 of 1
+Status: Executing Phase 105
+Last activity: 2026-04-04 -- Phase 105 execution started
 
 Progress: [░░░░░░░░░░] 0%
 
