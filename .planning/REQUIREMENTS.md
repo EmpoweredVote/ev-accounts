@@ -71,8 +71,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DATA-02 | Phase 102, 105 | Complete |
 | DATA-03 | Phase 102 | Complete |
 | VIS-03 | Phase 102 | Complete |
-| VIS-01 | Phase 103, 106 | Pending |
-| VIS-02 | Phase 103, 106 | Pending |
+| VIS-01 | Phase 103, 106 | Complete |
+| VIS-02 | Phase 103, 106 | Complete |
 | VIS-04 | Phase 103 | Complete |
 | VIS-05 | Phase 103 | Complete |
 | DATA-04 | Phase 103 | Complete |
