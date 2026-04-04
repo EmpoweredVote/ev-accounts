@@ -115,6 +115,14 @@ Plans:
 - [x] 34-02-PLAN.md — RLS migrations for 5 public-read schemas (essentials, meetings, treasury, transparent_motivations, compass)
 - [x] 34-03-PLAN.md — RLS migration for staging (authenticated-only read) + comprehensive verification
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 58-01-PLAN.md � Backend micro-tasks (granted_at + essentials_data_editor politician list)
+- [ ] 58-02-PLAN.md � Dashboard shell, routes, tab navigation, grant cards
+- [ ] 58-03-PLAN.md � Compass Editor + Campaign Manager (Candidate Coordinator) pages
+- [ ] 58-04-PLAN.md � Essentials Editor page + end-to-end verification
+
 **Success Criteria:**
 
 1. All six schemas (`essentials`, `staging`, `treasury`, `meetings`, `validation_quests`, `trivia`) exist in the ev-accounts Supabase project and are visible in the dashboard.
@@ -674,11 +682,20 @@ Plans:
 
 #### Phase 58: Contributor Portal
 
-**Goal:** Role-holders have a dedicated workspace at `contributors.empowered.vote` where they land on a dashboard showing their active role grants and can navigate to the appropriate editing UI for their role type — with the platform enforcing that no user sees data outside their assigned scope.
+**Goal:** Role-holders have a dedicated Contributor tab inside the Profile Hub (profiles.empowered.vote) where they see their active role grants on a dashboard and can navigate to scoped editing UIs for each role type -- Compass Editor, Candidate Coordinator, and Essentials Editor.
 
 **Dependencies:** Phase 53 (`GET /api/contributor/me`), Phase 55 (compass contributor endpoints), Phase 56 (essentials contributor endpoint)
 
 **Requirements:** ROLE-13, ROLE-14, ROLE-15, ROLE-16
+
+
+**Plans:** 4 plans
+
+Plans:
+- [ ] 58-01-PLAN.md -- Backend micro-tasks (granted_at + essentials_data_editor politician list)
+- [ ] 58-02-PLAN.md -- Dashboard shell, routes, tab navigation, grant cards
+- [ ] 58-03-PLAN.md -- Compass Editor + Campaign Manager (Candidate Coordinator) pages
+- [ ] 58-04-PLAN.md -- Essentials Editor page + end-to-end verification
 
 **Success Criteria:**
 
@@ -751,4 +768,4 @@ Plans:
 | 55. Compass Stance Editor + Campaign Manager Endpoints | v1.9 | 0/? | Pending | — |
 | 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-03 |
 | 57. CTC + Civic Spaces Integration | v1.9 | 0/2 | Planned | — |
-| 58. Contributor Portal | v1.9 | 0/? | Pending | — |
+| 58. Contributor Portal | v1.9 | 0/4 | Planned | — |
