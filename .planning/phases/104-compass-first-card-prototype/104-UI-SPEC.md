@@ -22,7 +22,7 @@ created: 2026-04-04
 | Preset | not applicable |
 | Component library | ev-ui (@chrisandrewsedu/ev-ui) — RadarChartCore, CategorySection, icons.js, tokens.js |
 | Icon library | ev-ui/src/icons.js — inline SVG (BallotIcon, CompassIcon, BranchIcon). No external icon dep. |
-| Font | Manrope (Google Fonts) — weights 400, 500, 600, 700 |
+| Font | Manrope (Google Fonts) — weights 400, 600 |
 
 Source: CLAUDE.md (Design System section), ev-ui/src/tokens.js, essentials/src/index.css
 
@@ -36,13 +36,15 @@ Declared values (must be multiples of 4):
 |-------|-------|-------|
 | xs | 4px | Icon gaps, icon-to-label spacing, inline tight padding |
 | sm | 8px | Intra-card element spacing (name-to-title, icon row gaps) |
-| md | 16px | Card internal padding, grid gap between cards |
+| sm+ | 12px | Variant B compact card padding only — explicit exception for mid-density feel |
+| md | 16px | Card internal padding (Variants A and C), grid gap between cards |
 | lg | 24px | Section padding within page, gap between CategorySection groups |
 | xl | 32px | Page horizontal padding on desktop |
 | 2xl | 48px | Major section breaks (banner to first tier section) |
 | 3xl | 64px | Page-level top/bottom padding |
 
 Exceptions:
+- `sm+` (12px): Used only for Variant B card padding. Provides density differentiation vs Variant A/C (16px). This is the sole non-standard token and is documented here as its only approved use.
 - Variant toggle (SegmentedControl): 4px internal pill padding (matches existing SegmentedControl.jsx pattern)
 - Placeholder radar SVG stroke: 1.5px — not a spacing value, visual only
 - Touch targets for card click: minimum 44px height per WCAG 2.5.5 (applies to Variant C horizontal card name/title area)
@@ -56,16 +58,17 @@ Source: ev-ui/src/tokens.js spacing scale, CONTEXT.md D-09 (consistent card sizi
 | Role | Size | Weight | Line Height | Usage |
 |------|------|--------|-------------|-------|
 | Body | 16px | 400 | 1.5 | Prototype banner body text |
-| Label | 14px | 500 | 1.4 | Politician office title, icon labels, variant toggle options |
+| Label | 14px | 600 | 1.4 | Politician office title, icon labels, variant toggle options |
 | Heading | 18px | 600 | 1.4 | Politician name on card |
 | Display | 14px | 400 | 1.5 | Placeholder "No compass data" sub-label if needed |
 
 Font: Manrope, sans-serif (already loaded in essentials/src/index.css)
 
 Notes:
-- Only 2 weights used in this phase: 400 (regular) and 600 (semibold). Weight 500 used for labels only (existing SegmentedControl pattern).
+- Exactly 2 weights used in this phase: 400 (regular) and 600 (semibold). No weight 500.
+- Labels (office title, icon labels, toggle options) use 600 — consistent with SegmentedControl active state and heading weight. Visual weight at 14px/600 is lighter than 18px/600 heading in practice.
 - Politician name capped at 18px/semibold — radar chart is the visual anchor, name is secondary identification.
-- Office title uses 14px/regular with line-clamp-2 at min-height to prevent card height variance.
+- Office title uses 14px/600 with line-clamp-2 at min-height to prevent card height variance.
 
 Source: ev-ui/src/tokens.js textStyles, CONTEXT.md D-01 (radar dominant, name/title below), existing PoliticianCard.jsx pattern
 
@@ -136,7 +139,7 @@ All variants use the same data and state model. The variant prop controls layout
 - Card border-radius: 12px (borderRadius.xl from tokens.js)
 - Card shadow: `0 4px 6px -1px rgba(0,0,0,0.1)` (shadows.md)
 - Name font: 18px/600/line-height 1.4
-- Title font: 14px/400/line-height 1.5, line-clamp-2, min-height 2.5rem
+- Title font: 14px/600/line-height 1.5, line-clamp-2, min-height 2.5rem
 - Icon row: 8px gap, positioned below title, 8px margin-top
 
 ### Variant B — Compact / Dense
@@ -144,12 +147,12 @@ All variants use the same data and state model. The variant prop controls layout
 - Card width: ~33% column on desktop (3-column grid), 50% on mobile (2-column), 100% on smallest mobile
 - Radar size: 150px × 150px
 - Layout: vertical stack — radar → name → title → icon row
-- Card padding: 12px all sides
+- Card padding: 12px all sides (sm+ token — declared exception for mid-density feel)
 - Card border-radius: 10px (borderRadius.lg from tokens.js)
 - Card shadow: `0 1px 2px 0 rgba(0,0,0,0.05)` (shadows.sm)
 - Name font: 16px/600/line-height 1.4
 - Title font: 12px/400/line-height 1.4, line-clamp-1
-- Icon row: 6px gap, below title, 6px margin-top
+- Icon row: 8px gap, below title, 8px margin-top
 
 ### Variant C — Wide Horizontal
 
@@ -160,7 +163,7 @@ All variants use the same data and state model. The variant prop controls layout
 - Card border-radius: 12px (borderRadius.xl)
 - Card shadow: `0 4px 6px -1px rgba(0,0,0,0.1)` (shadows.md)
 - Right-side name font: 18px/600/line-height 1.4
-- Right-side title font: 14px/400/line-height 1.5, line-clamp-2
+- Right-side title font: 14px/600/line-height 1.5, line-clamp-2
 - Icon row: 8px gap, below title, 8px margin-top
 - Horizontal gap between radar and right content: 16px
 
@@ -190,7 +193,7 @@ Positioned at the top of the page, below SiteHeader, above variant toggle.
 
 - Background: #E4F3F6 (teal-100)
 - Border-bottom: 1px solid #C0E8F2 (teal-200)
-- Padding: 12px 32px (vertical 12px, horizontal matches page padding)
+- Padding: 12px 32px (vertical 12px sm+ token, horizontal matches page padding)
 - Copy (exact — see Copywriting Contract): banner heading + body text
 
 ---
