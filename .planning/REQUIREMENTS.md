@@ -11,14 +11,14 @@ Requirements for Essentials Visual Polish & Election Improvements milestone.
 
 - [ ] **DATA-01**: Incumbent marker removed from all candidate cards on election page
 - [ ] **DATA-02**: Ruben Marte candidate record linked to politician profile (fix accent mark mismatch)
-- [ ] **DATA-03**: Headshot images display with face-centered cropping via CSS object-position
+- [x] **DATA-03**: Headshot images display with face-centered cropping via CSS object-position
 - [ ] **DATA-04**: Headshot audit script scans all CDN images and flags badly cropped photos
 
 ### Visual Design
 
 - [ ] **VIS-01**: Election and representatives pages use tier-level visual differentiation (hue, background pattern, or combination) for Federal/State/Local and sub-tiers
 - [ ] **VIS-02**: Politician cards display small subtle icons for metadata (on ballot, compass available, branch type) replacing large badges
-- [ ] **VIS-03**: Icon set evaluated and selected to fit EV design system (subtle, readable, secondary)
+- [x] **VIS-03**: Icon set evaluated and selected to fit EV design system (subtle, readable, secondary)
 - [ ] **VIS-04**: Election page information hierarchy improved — race/position structure clearer, party ballot groupings less visually noisy
 - [ ] **VIS-05**: Icons provide additional detail on hover (desktop) and tap (mobile) — accessible per WCAG
 
@@ -69,8 +69,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | DATA-01 | Phase 102 | Pending |
 | DATA-02 | Phase 102 | Pending |
-| DATA-03 | Phase 102 | Pending |
-| VIS-03 | Phase 102 | Pending |
+| DATA-03 | Phase 102 | Complete |
+| VIS-03 | Phase 102 | Complete |
 | VIS-01 | Phase 103 | Pending |
 | VIS-02 | Phase 103 | Pending |
 | VIS-04 | Phase 103 | Pending |

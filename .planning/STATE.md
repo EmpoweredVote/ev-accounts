@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
 status: planning
-stopped_at: Phase 102 context gathered
-last_updated: "2026-04-04T00:42:58.589Z"
+stopped_at: Completed 102-01-PLAN.md
+last_updated: "2026-04-04T01:37:03.677Z"
 last_activity: 2026-04-03 — Roadmap created (Phases 102-104), 13/13 requirements mapped
 progress:
   total_phases: 3
   completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  total_plans: 2
+  completed_plans: 1
   percent: 0
 ---
 
@@ -49,6 +49,9 @@ Progress: [░░░░░░░░░░] 0%
 - ev-ui props: all new props (tier, icons[], imageFocalPoint) must be optional with null-safe fallbacks
 - Incumbent badge removal scope: ElectionsView.jsx badge prop only — CandidateProfile is_incumbent routing logic untouched
 - Compass-first card: stays local to essentials as prototype, never promoted to ev-ui until layout confirmed
+- [Phase 102]: Icons are inline SVG in ev-ui — no external icon library (tsup splitting:false blast radius)
+- [Phase 102]: tierColors.local.text uses teal-600 (#005366), NOT teal-200 — contrast compliance
+- [Phase 102]: imageFocalPoint defaults to 'center 20%' to favor face region in headshots
 
 ### Pending Todos
 
@@ -64,6 +67,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-04-04T00:42:58.586Z
-Stopped at: Phase 102 context gathered
-Resume file: .planning/phases/102-ev-ui-foundation-quick-wins/102-CONTEXT.md
+Last session: 2026-04-04T01:37:03.674Z
+Stopped at: Completed 102-01-PLAN.md
+Resume file: None
