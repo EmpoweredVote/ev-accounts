@@ -726,6 +726,57 @@ All admin routes require Auth + admin flag. Every mutation logs to `admin_audit_
 |--------|------|-------------|
 | `GET` | `/api/admin/cron-log` | Recent cron job execution log. |
 
+### 8.26 Contributor Roles (`/api/contributor`, `/api/roles/check`)
+
+These endpoints allow external systems (CTC, Civic Spaces) to determine whether a user holds a specific role grant without Accounts writing to external systems. External apps call these endpoints and enforce their own permission gates based on the response — Accounts does not push role state outward.
+
+| Method | Path | Auth | Body | Description |
+|--------|------|------|------|-------------|
+| `GET` | `/api/contributor/me` | Auth | — | Caller's active role grants as a bare array. Each item: `{ role_slug, feature_scope, jurisdiction_geoid, resource_id }`. |
+| `POST` | `/api/roles/check` | Auth | `{ feature_scope, jurisdiction_geoid?, resource_id? }` | Check if the caller holds a matching grant. Returns `{ permitted: boolean }`. |
+
+**`GET /api/contributor/me` — response example:**
+```json
+[
+  {
+    "role_slug": "ctc_content_editor",
+    "feature_scope": "platform",
+    "jurisdiction_geoid": "06037",
+    "resource_id": null
+  }
+]
+```
+
+**`POST /api/roles/check` — request/response example:**
+```json
+// Request
+{ "feature_scope": "volunteer", "jurisdiction_geoid": "18105" }
+
+// Response
+{ "permitted": true }
+```
+
+**NULL-scope grants:** A grant with `jurisdiction_geoid: null` is unrestricted — `POST /api/roles/check` returns `{ permitted: true }` regardless of the `jurisdiction_geoid` in the request body. This is by design: an unrestricted volunteer can operate in any jurisdiction.
+
+> **Cache behavior:** Results from `POST /api/roles/check` are cached server-side. After a role grant is revoked, the check endpoint may still return `{ permitted: true }` for up to 90 seconds (configurable via `ROLE_CACHE_TTL_SECONDS`). Design your integration to tolerate this window — do not treat role checks as real-time.
+
+**Integration pattern — CTC example:**
+```
+1. User opens CTC content editor
+2. CTC calls GET /api/contributor/me (with user's JWT)
+3. CTC scans array for role_slug === 'ctc_content_editor'
+4. If found and jurisdiction_geoid matches → allow editing
+5. If not found → show "no editor access" message
+```
+
+**Integration pattern — Civic Spaces example:**
+```
+1. User attempts privileged write in Civic Spaces
+2. Civic Spaces calls POST /api/roles/check with { feature_scope: "volunteer", jurisdiction_geoid: "<user's jurisdiction>" }
+3. If permitted: true → allow the write
+4. If permitted: false → reject with 403
+```
+
 ---
 
 ## 9. Anti-Patterns
