@@ -617,12 +617,13 @@ Plans:
 5. An integration test confirms two politicians in different jurisdictions, one `compass_stance_editor` grant scoped to jurisdiction A: write to politician A succeeds (200), write to politician B returns 403.
 
 
-**Plans:** 3 plans
+**Plans:** 4 plans
 
 Plans:
 - [ ] 55-01-PLAN.md — schema migration (home_jurisdiction_geoid, write_in_text, role_grant_id)
 - [ ] 55-02-PLAN.md — stance write routes (single + bulk PUT with jurisdiction enforcement)
 - [ ] 55-03-PLAN.md — contributor politicians list endpoint (GET filtered by role scope)
+- [ ] 55-04-PLAN.md — gap closure: getMatchingGrant integration tests + grant() helper fix
 ---
 
 #### Phase 56: Essentials Data Editor Endpoint
