@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
-status: defining_requirements
-stopped_at: Defining requirements
+status: ready_to_plan
+stopped_at: Roadmap created, Phase 102 ready to plan
 last_updated: "2026-04-03"
-last_activity: 2026-04-03 - Milestone v2026.4.1 started
+last_activity: 2026-04-03 - Roadmap created for v2026.4.1 (Phases 102-104)
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,14 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-03)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Defining requirements for v2026.4.1
+**Current focus:** Phase 102 — ev-ui Foundation + Quick Wins
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-04-03 — Milestone v2026.4.1 started
+Phase: 102 of 104 (ev-ui Foundation + Quick Wins)
+Plan: — (ready to plan)
+Status: Ready to plan
+Last activity: 2026-04-03 — Roadmap created (Phases 102-104), 13/13 requirements mapped
+
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -42,24 +44,26 @@ Last activity: 2026-04-03 — Milestone v2026.4.1 started
 
 ### Decisions
 
-(New milestone — no decisions yet)
+- Tier hue differentiation: teal-scale shade variation only (Federal=teal-700, State=teal-500, Local=teal-200 or yellow) — partisan color associations avoided
+- Icon dependencies: lucide-react + @floating-ui/react go in essentials only, not ev-ui (tsup splitting:false blast radius)
+- ev-ui props: all new props (tier, icons[], imageFocalPoint) must be optional with null-safe fallbacks
+- Incumbent badge removal scope: ElectionsView.jsx badge prop only — CandidateProfile is_incumbent routing logic untouched
+- Compass-first card: stays local to essentials as prototype, never promoted to ev-ui until layout confirmed
 
 ### Pending Todos
 
+- Query `SELECT COUNT(DISTINCT politician_id) FROM compass.stances` before Phase 104 to validate compass-first null rate
+- Retrieve geo_id values for Monroe County IN and LA County CA location shortcut buttons before Phase 103
 - 12 politicians have no Read & Rank quotes (carried from v1.8)
-- PROF-04: Compass stance data imports for candidates (deferred from v2026.3.8)
-- PROF-05: Sourced quote imports for candidates (deferred from v2026.3.8)
+- PROF-04: Compass stance data imports for candidates (deferred to future milestone)
+- PROF-05: Sourced quote imports for candidates (deferred to future milestone)
 
 ### Blockers/Concerns
 
 (None)
 
-### Quick Tasks Completed
-
-(None this milestone)
-
 ## Session Continuity
 
 Last session: 2026-04-03
-Stopped at: Milestone v2026.4.1 started, defining requirements
+Stopped at: Roadmap written, ready for /gsd:plan-phase 102
 Resume file: None

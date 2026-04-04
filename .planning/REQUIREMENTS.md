@@ -67,25 +67,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | — | Pending |
-| DATA-02 | — | Pending |
-| DATA-03 | — | Pending |
-| DATA-04 | — | Pending |
-| VIS-01 | — | Pending |
-| VIS-02 | — | Pending |
-| VIS-03 | — | Pending |
-| VIS-04 | — | Pending |
-| VIS-05 | — | Pending |
-| NAV-01 | — | Pending |
-| NAV-02 | — | Pending |
-| PROTO-01 | — | Pending |
-| PROTO-02 | — | Pending |
+| DATA-01 | Phase 102 | Pending |
+| DATA-02 | Phase 102 | Pending |
+| DATA-03 | Phase 102 | Pending |
+| VIS-03 | Phase 102 | Pending |
+| VIS-01 | Phase 103 | Pending |
+| VIS-02 | Phase 103 | Pending |
+| VIS-04 | Phase 103 | Pending |
+| VIS-05 | Phase 103 | Pending |
+| DATA-04 | Phase 103 | Pending |
+| NAV-01 | Phase 103 | Pending |
+| NAV-02 | Phase 103 | Pending |
+| PROTO-01 | Phase 104 | Pending |
+| PROTO-02 | Phase 104 | Pending |
 
 **Coverage:**
 - v2026.4.1 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-03*
-*Last updated: 2026-04-03 after initial definition*
+*Last updated: 2026-04-03 after roadmap creation*

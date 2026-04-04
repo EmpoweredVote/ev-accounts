@@ -21,6 +21,7 @@
 - ✅ **v2026.3.6 Read & Rank Redesign** — Phases 86-91 (shipped 2026-03-16)
 - ✅ **v2026.3.7 Treasury Tracker Expansion** — Phases 92-96 (shipped 2026-03-23)
 - ✅ **v2026.3.8 Essentials Election Central** — Phases 97-101 (shipped 2026-03-31)
+- 🚧 **v2026.4.1 Essentials Visual Polish & Election Improvements** — Phases 102-104 (in progress)
 
 ## Phases
 
@@ -278,6 +279,53 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
 
 </details>
 
+### 🚧 v2026.4.1 Essentials Visual Polish & Election Improvements (In Progress)
+
+**Milestone Goal:** Improve visual clarity and information hierarchy of representatives and election pages, fix data issues, and deliver a compass-first card prototype.
+
+- [ ] **Phase 102: ev-ui Foundation + Quick Wins** - Icon system research, headshot crop fix, data fixes (incumbent badge, Ruben Marte), ev-ui publish
+- [ ] **Phase 103: Essentials Wiring + Landing Page** - Tier hue differentiation, icon metadata on cards with tooltips, election page clarity, landing page coverage messaging
+- [ ] **Phase 104: Compass-First Card Prototype** - Local /prototype route with compass-first layout using hardcoded mock data
+
+## Phase Details
+
+### Phase 102: ev-ui Foundation + Quick Wins
+**Goal**: ev-ui is published with the icon system and headshot crop fix, and two known data issues are resolved
+**Depends on**: Phase 101 (previous milestone)
+**Requirements**: VIS-03, DATA-01, DATA-02, DATA-03
+**Success Criteria** (what must be TRUE):
+  1. Candidate cards on the election page no longer display an "Incumbent" badge
+  2. Ruben Marte's candidate record links to his politician profile (accent mark corrected)
+  3. Headshots on politician cards default to face-centered cropping (top-biased object-position)
+  4. ev-ui is published (v0.1.55) with tierColors token, icons.js SVG exports, optional tier prop on CategorySection, and optional icons/imageFocalPoint props on PoliticianCard
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 103: Essentials Wiring + Landing Page
+**Goal**: Users see tier-differentiated sections, icon metadata on cards, a clearer election page, and explicit coverage messaging on the landing page
+**Depends on**: Phase 102
+**Requirements**: VIS-01, VIS-02, VIS-04, VIS-05, DATA-04, NAV-01, NAV-02
+**Success Criteria** (what must be TRUE):
+  1. Federal, State, and Local sections are visually distinct (different hues within the teal palette) on the representatives page
+  2. Politician cards display small icons for ballot status, compass availability, and branch type — icons have visible labels and accessible hover/tap tooltips
+  3. The election page is less visually noisy — race position structure is clearer and party ballot groupings are less prominent
+  4. The landing page shows "Monroe County, IN" and "Los Angeles County, CA" coverage areas explicitly
+  5. The landing page has two location shortcut buttons that navigate directly to pre-loaded representative results for each covered area
+  6. A headshot audit script runs against CDN URLs and outputs a CSV of flagged politician IDs for manual review
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 104: Compass-First Card Prototype
+**Goal**: A standalone /prototype route demonstrates the compass-first card layout using real representative data with hardcoded mock compass stances
+**Depends on**: Phase 103
+**Requirements**: PROTO-01, PROTO-02
+**Success Criteria** (what must be TRUE):
+  1. Navigating to /prototype in essentials shows politician cards where the compass radar chart is the visual anchor rather than the headshot
+  2. The prototype uses hardcoded mock compass data so the layout renders fully without requiring politicians to have real stance data
+  3. The prototype route is feature-flagged and not linked from main navigation (accessible only by direct URL)
+**Plans**: TBD
+**UI hint**: yes
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -287,3 +335,6 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
 | 99. Election Central Page | v2026.3.8 | 2/2 | Complete | 2026-03-30 |
 | 100. Elected/Appointed Filter | v2026.3.8 | 2/2 | Complete | 2026-03-30 |
 | 101. Candidate Profiles | v2026.3.8 | 2/2 | Complete | 2026-03-31 |
+| 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 0/TBD | Not started | - |
+| 103. Essentials Wiring + Landing Page | v2026.4.1 | 0/TBD | Not started | - |
+| 104. Compass-First Card Prototype | v2026.4.1 | 0/TBD | Not started | - |
