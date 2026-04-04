@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
 status: verifying
-stopped_at: Completed 104-compass-first-card-prototype 104-01-PLAN.md
-last_updated: "2026-04-04T16:11:52.426Z"
+stopped_at: Completed 105-seed-sql-fix-doc-cleanup 105-01-PLAN.md
+last_updated: "2026-04-04T16:55:28.848Z"
 last_activity: 2026-04-04
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 8
-  completed_plans: 8
+  total_phases: 5
+  completed_phases: 4
+  total_plans: 9
+  completed_plans: 9
   percent: 0
 ---
 
@@ -63,6 +63,8 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 104-compass-first-card-prototype]: Mock user compass (coral overlay) added for dual-overlay without login
 - [Phase 104-compass-first-card-prototype]: IconOverlay CSS override to position:static in compass cards (absolute is for photo overlays)
 - [Phase 104-compass-first-card-prototype]: Variant C (Horizontal) uses 250px radar, 2-col responsive grid
+- [Phase 105-01]: Seed SQL line 276 was already clean — verification only, no file change needed
+- [Phase 105-01]: 103-03 had 'requirements:' key (wrong), 103-04/104-01/02 had hyphen-separated key — both fixed to canonical requirements_completed underscore
 
 ### Pending Todos
 
@@ -78,6 +80,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-04-04T15:05:23.741Z
-Stopped at: Completed 104-compass-first-card-prototype 104-01-PLAN.md
+Last session: 2026-04-04T16:55:28.845Z
+Stopped at: Completed 105-seed-sql-fix-doc-cleanup 105-01-PLAN.md
 Resume file: None

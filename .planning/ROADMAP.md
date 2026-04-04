@@ -286,7 +286,7 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
 - [x] **Phase 102: ev-ui Foundation + Quick Wins** - Icon system research, headshot crop fix, data fixes (incumbent badge, Ruben Marte), ev-ui publish (completed 2026-04-04)
 - [x] **Phase 103: Essentials Wiring + Landing Page** - Tier hue differentiation, icon metadata on cards with tooltips, election page clarity, landing page coverage messaging (completed 2026-04-04)
 - [x] **Phase 104: Compass-First Card Prototype** - Local /prototype route with compass-first layout using hardcoded mock data (completed 2026-04-04)
-- [ ] **Phase 105: Seed SQL Fix & Doc Cleanup** - Fix DATA-02 seed typo, backfill SUMMARY frontmatter gaps
+- [x] **Phase 105: Seed SQL Fix & Doc Cleanup** - Fix DATA-02 seed typo, backfill SUMMARY frontmatter gaps (completed 2026-04-04)
 - [ ] **Phase 106: Tier Background Hues & Branch Icons** - Section background colors per tier, distinct branch icons
 
 ## Phase Details
@@ -347,9 +347,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. seed-monroe-county-2026-primary.sql line 276 no longer has trailing apostrophe on Ruben Marte values
   2. Plans 103-01, 103-02, 103-03, 104-01, 104-02 have `requirements_completed` in SUMMARY frontmatter
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
-- [ ] 105-01-PLAN.md — Verify seed SQL fix + backfill SUMMARY frontmatter
+- [x] 105-01-PLAN.md — Verify seed SQL fix + backfill SUMMARY frontmatter
 
 ### Phase 106: Tier Background Hues & Branch Icons
 **Goal**: Section backgrounds use tier-specific hues so the page visually shifts as you scroll Federal → State → Local, and branch type is conveyed with distinct icons instead of a single generic one
@@ -375,5 +375,5 @@ Plans: TBD
 | 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 2/2 | Complete    | 2026-04-04 |
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
-| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 0/1 | Pending | — |
+| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 1/1 | Complete   | 2026-04-04 |
 | 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/0 | Pending | — |
