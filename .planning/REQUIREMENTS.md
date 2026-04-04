@@ -24,8 +24,8 @@ Requirements for Essentials Visual Polish & Election Improvements milestone.
 
 ### Landing & Navigation
 
-- [ ] **NAV-01**: Landing page explicitly displays coverage areas (Monroe County, IN and Los Angeles County, CA)
-- [ ] **NAV-02**: Landing page has prominent location shortcut buttons that navigate to pre-loaded representative results
+- [x] **NAV-01**: Landing page explicitly displays coverage areas (Monroe County, IN and Los Angeles County, CA)
+- [x] **NAV-02**: Landing page has prominent location shortcut buttons that navigate to pre-loaded representative results
 
 ### Prototype
 
@@ -76,8 +76,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VIS-04 | Phase 103 | Pending |
 | VIS-05 | Phase 103 | Pending |
 | DATA-04 | Phase 103 | Pending |
-| NAV-01 | Phase 103 | Pending |
-| NAV-02 | Phase 103 | Pending |
+| NAV-01 | Phase 103 | Complete |
+| NAV-02 | Phase 103 | Complete |
 | PROTO-01 | Phase 104 | Pending |
 | PROTO-02 | Phase 104 | Pending |
 
