@@ -273,9 +273,9 @@ Source: CONTEXT.md D-02/D-03/D-08, RESEARCH.md Pattern 4
     left: 4px;
     width: 80px;
     display: flex;
-    gap: 3px;
+    gap: 4px;
     align-items: center;
-    padding: 2px 4px;
+    padding: 4px;
     background: rgba(255,255,255,0.82);
     border-radius: 4px;
     z-index: 1;
