@@ -16,6 +16,13 @@ Phase 58 Plan 04 (Essentials Editor) — Task 1 complete, checkpoint pending ✅
 - 58-04: EssentialsEditorPage (282 lines): jurisdiction-scoped politician grid + inline field editor (bio, preferred_name, photo_origin_url); partial PATCH with correct field names (bio not bio_text); toast feedback; TypeScript clean + build passes ✅
 - Key decisions: empty-field skip (no blanking), 403/422 error discrimination, jurisdiction badge from first politician's geoid
 
+**Phase 58 Plan 03 complete (2026-04-04)**
+
+Phase 58 Plan 03 (Compass Editor + Candidate Coordinator) — complete ✅:
+- 58-03: CompassEditorPage (351 lines) — jurisdiction-scoped politician list, inline stance editor with all live topics, stance values 1-5, bulk PUT save, toast feedback, jurisdiction scope badge ✅
+- 58-03: CampaignManagerPage (343 lines) — single-politician list view, identical stance editor, scope badge shows politician name + office, header always "Candidate Coordinator" ✅
+- Key patterns: two-view state (list/editor), parallel fetch topics+answers on politician select, changedStances map tracks only mutations, wave isolation (no shared StanceEditor component — Plans 03+04 parallel), build clean ✅
+
 **Phase 58 Plan 02 complete (2026-04-04)**
 
 Phase 58 Plan 02 (Contributor Portal Frontend Shell) — complete ✅:
