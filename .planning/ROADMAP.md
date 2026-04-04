@@ -320,7 +320,7 @@ Plans:
 - [x] 103-01-PLAN.md — Tier hues + icon overlay component + Results.jsx wiring
 - [x] 103-02-PLAN.md — Landing page coverage cards + location shortcuts
 - [ ] 103-03-PLAN.md — Election page restructure (position grouping, party sub-labels)
-- [ ] 103-04-PLAN.md — Headshot audit script
+- [x] 103-04-PLAN.md — Headshot audit script
 **UI hint**: yes
 
 ### Phase 104: Compass-First Card Prototype
