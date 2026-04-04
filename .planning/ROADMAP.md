@@ -657,6 +657,12 @@ Plans:
 
 **Requirements:** ROLE-11, ROLE-12
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 57-01-PLAN.md — Integration tests for CTC + Civic Spaces endpoints (TTL env var + 9 HTTP tests)
+- [ ] 57-02-PLAN.md — Smoke script + integration guide Contributor Roles section
+
 **Success Criteria:**
 
 1. `GET /api/contributor/me` for a user with a `ctc_content_editor` grant returns that grant in the array with its `jurisdiction_geoid`; CTC can read this field to enforce its own content-edit gate without any new accounts endpoints.
@@ -743,6 +749,6 @@ Plans:
 | 53. Service Layer + requireRole Middleware | v1.9 | 0/? | Pending | — |
 | 54. Admin UI — Grant/Revoke + Audit Dashboard | v1.9 | 0/? | Pending | — |
 | 55. Compass Stance Editor + Campaign Manager Endpoints | v1.9 | 0/? | Pending | — |
-| 56. Essentials Data Editor Endpoint | v1.9 | 0/? | Pending | — |
-| 57. CTC + Civic Spaces Integration | v1.9 | 0/? | Pending | — |
+| 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-03 |
+| 57. CTC + Civic Spaces Integration | v1.9 | 0/2 | Planned | — |
 | 58. Contributor Portal | v1.9 | 0/? | Pending | — |
