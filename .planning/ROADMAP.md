@@ -375,5 +375,5 @@ Plans: TBD
 | 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 2/2 | Complete    | 2026-04-04 |
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
-| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 1/1 | Complete   | 2026-04-04 |
+| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 1/1 | Complete    | 2026-04-04 |
 | 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/0 | Pending | — |
