@@ -5,10 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 55 complete (all 3 plans done). Ready for Phase 56.
+**Current focus:** v1.9 Roles — Phase 55 fully complete (all 4 plans done, including test coverage). Ready for Phase 56.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
+
+**Phase 55 Plan 04 complete (2026-04-03)**
+
+Phase 55 Plan 04 (getMatchingGrant Test Coverage) — complete ✅:
+- 55-04: 10-test unit suite for getMatchingGrant; two-jurisdiction scenario (criterion 5) tested — same grant, pol-A matches (geoid 18105), pol-B rejected (geoid 06037); campaign_manager resource_id gating tested; requireRole.test.ts grant() helper updated with id field; all 22 tests pass ✅
+- Key pattern: pure function tests need no mocking — construct UserRoleGrant inputs directly; run vitest from backend/ dir (vitest installed in backend/node_modules with include: ['../tests/**/*.test.ts'])
 
 **Phase 55 Plan 03 complete (2026-04-03)**
 
