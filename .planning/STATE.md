@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
 status: planning
-stopped_at: Phase 104 context gathered
-last_updated: "2026-04-04T14:14:21.802Z"
+stopped_at: Completed 104-compass-first-card-prototype 104-01-PLAN.md
+last_updated: "2026-04-04T15:05:23.745Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 3
   completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  total_plans: 8
+  completed_plans: 7
   percent: 0
 ---
 
@@ -58,6 +58,8 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 103]: Pure Buffer PNG/JPEG header parsing avoids native sharp dep in headshot audit script
 - [Phase 103]: Party sub-labels use text-sm text-gray-500 in ElectionsView — antipartisan, no party-affiliated colors
 - [Phase 103]: seededShuffle runs per party ballot (per race), not on merged position group
+- [Phase 104-compass-first-card-prototype]: Mock data covers all 20 active topics (not just 8) so dual overlay works with any user topic selection
+- [Phase 104-compass-first-card-prototype]: VARIANT_CONFIG lookup object exported from CompassFirstCard for consumer grid layout access
 
 ### Pending Todos
 
@@ -73,6 +75,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-04-04T14:14:21.799Z
-Stopped at: Phase 104 context gathered
-Resume file: .planning/phases/104-compass-first-card-prototype/104-CONTEXT.md
+Last session: 2026-04-04T15:05:23.741Z
+Stopped at: Completed 104-compass-first-card-prototype 104-01-PLAN.md
+Resume file: None

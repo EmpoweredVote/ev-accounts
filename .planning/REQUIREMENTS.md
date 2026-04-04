@@ -30,7 +30,7 @@ Requirements for Essentials Visual Polish & Election Improvements milestone.
 ### Prototype
 
 - [ ] **PROTO-01**: Standalone /prototype route showing compass-first politician cards with real representative data
-- [ ] **PROTO-02**: Prototype uses hardcoded mock compass data to demonstrate full vision without database changes
+- [x] **PROTO-02**: Prototype uses hardcoded mock compass data to demonstrate full vision without database changes
 
 ## Future Requirements
 
@@ -79,7 +79,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 103 | Complete |
 | NAV-02 | Phase 103 | Complete |
 | PROTO-01 | Phase 104 | Pending |
-| PROTO-02 | Phase 104 | Pending |
+| PROTO-02 | Phase 104 | Complete |
 
 **Coverage:**
 - v2026.4.1 requirements: 13 total
