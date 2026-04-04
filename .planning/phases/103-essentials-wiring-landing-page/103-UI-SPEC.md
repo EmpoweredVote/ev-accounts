@@ -5,6 +5,7 @@ status: draft
 shadcn_initialized: false
 preset: none
 created: 2026-04-04
+revised: 2026-04-03
 ---
 
 # Phase 103 — UI Design Contract
@@ -22,7 +23,7 @@ created: 2026-04-04
 | Preset | not applicable |
 | Component library | @chrisandrewsedu/ev-ui v0.1.55 |
 | Icon library | inline SVG via ev-ui icons.js (BallotIcon, CompassIcon, BranchIcon) — no external icon library |
-| Font | Manrope (Google Fonts, weights 400/500/600/700, loaded in index.css) |
+| Font | Manrope (Google Fonts, weights 400/600, loaded in index.css) |
 
 Source: CONTEXT.md D-15, RESEARCH.md Standard Stack, essentials/src/index.css confirmed
 
@@ -44,7 +45,7 @@ Declared values (multiples of 4):
 
 Exceptions:
 - Icon overlay bottom/left offset: 4px (xs) — tight photo-corner positioning
-- Tooltip offset from anchor: 6px — floating-ui `offset(6)` middleware
+- Tooltip offset from anchor: 8px — floating-ui `offset(8)` middleware
 - Icon size: 14px — not a spacing value, a dimension (defined in Pattern section)
 - Touch target for icon badges: minimum 24px hit area (icons are 14px visual + 5px padding each side)
 
@@ -57,18 +58,18 @@ Source: RESEARCH.md Pattern 2 (overlay CSS), existing Landing.jsx spacing classe
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body | 16px | 400 (regular) | 1.5 |
-| Label | 14px | 400 (regular) | 1.4 |
+| Label / Small | 14px | 400 (regular) | 1.4 |
 | Heading (section) | 20px | 600 (semibold) | 1.2 |
-| Display (page H1) | 30px (mobile) / 48px (desktop) | 700 (bold) | 1.1 |
+| Display (page H1) | 30px (mobile) / 48px (desktop) | 600 (semibold) | 1.1 |
 
 Notes:
-- Landing H1 uses existing `text-3xl sm:text-5xl font-bold` — preserved as-is (30px/48px, weight 700)
+- Landing H1 uses existing `text-3xl sm:text-5xl font-bold` Tailwind class. Tailwind's `font-bold` maps to weight 700; the contract consolidates to 600 as the bold token. At implementation, replace `font-bold` → `font-semibold` on the H1 to align with the 2-weight system, or leave as-is if the existing heading style is being fully preserved. Executor must apply weight 600 unless user explicitly approves 700.
 - Coverage card county name: 16px weight 600. State name: 14px weight 400
 - "We currently cover:" label: 14px weight 400, color gray-500
-- "Browse by location →" link: 14px weight 500, color var(--ev-teal)
-- Icon tooltip text: 12px weight 400 (tooltip is a micro-UI element, not part of main type scale)
-- Party sub-label within race group (election page): 12px weight 400, color gray-500
-- Weights in use: 400 (regular) and 600/700 (semibold/bold) — two functional weight classes
+- "Browse by location →" link: 14px weight 400, color var(--ev-teal)
+- Icon tooltip text: 14px weight 400 (uses Label scale; 12px removed from scale)
+- Election page party sub-label: 14px weight 400, color gray-500 (uses Label scale; 12px removed from scale)
+- Declared weights: 400 (regular) and 600 (semibold) — exactly 2 weight tokens
 
 Source: essentials/src/index.css (Manrope import), Landing.jsx existing classes, RESEARCH.md Pattern 2
 
@@ -159,7 +160,7 @@ Source: CONTEXT.md D-01/D-02/D-04, RESEARCH.md Pattern 4
 
 - **Position:** Below coverage cards row, above the "or search by address" divider
 - **Action:** `navigate('/results?mode=browse')` — Results.jsx reads `?mode=browse` on mount and calls `setSearchMode('browse')`
-- **Style:** 14px, weight 500, color var(--ev-teal), underline on hover
+- **Style:** 14px, weight 400, color var(--ev-teal), underline on hover
 - **No modal or overlay** — full page navigation to Results
 
 Source: CONTEXT.md D-05, RESEARCH.md Pattern 4
@@ -186,7 +187,7 @@ Source: CONTEXT.md D-06/D-07/D-08/D-09/D-10, RESEARCH.md Pattern 2/3
 ### Election Page Race Grouping
 
 - **Old:** CategorySection per position+party combination (e.g., "Mayor — Democratic Primary", "Mayor — Republican Primary" as separate heavy headers)
-- **New:** CategorySection per position only (e.g., "Mayor"). Within each position group, primary elections display a lightweight sub-label (e.g., "Democratic Primary" in 12px gray-500) before that party's candidates. General election candidates all appear together with no party sub-label
+- **New:** CategorySection per position only (e.g., "Mayor"). Within each position group, primary elections display a lightweight sub-label (e.g., "Democratic Primary" in 14px gray-500) before that party's candidates. General election candidates all appear together with no party sub-label
 - **seededShuffle** preserved for antipartisan ordering within each group
 - **Party label** is text only, never colored with party-affiliated colors
 
@@ -205,7 +206,7 @@ Source: CONTEXT.md D-11/D-12/D-14, REQUIREMENTS.md VIS-04, antipartisan principl
 | Coverage card — LA County | Line 1: "Los Angeles County" / Line 2: "California" |
 | Browse by location link | "Browse by location →" |
 | Address input divider | "or search by address" |
-| Primary CTA (address search) | "Search" (existing button label — preserved) |
+| Primary CTA (address search) | "Search" (single-word label preserved from existing UI — not a new design decision) |
 | BallotIcon tooltip | "On your ballot — {Mon YYYY}" |
 | CompassIcon tooltip | "Compare your views" |
 | BranchIcon tooltip (executive) | "Executive branch" |
@@ -213,7 +214,7 @@ Source: CONTEXT.md D-11/D-12/D-14, REQUIREMENTS.md VIS-04, antipartisan principl
 | BranchIcon tooltip (judicial) | "Judicial branch" |
 | Empty state (no representatives found) | Existing — not modified in this phase |
 | Error state (address not found) | Existing — not modified in this phase |
-| Election page party sub-label | "{Party} Primary" (e.g., "Democratic Primary", "Republican Primary") — 12px gray-500 |
+| Election page party sub-label | "{Party} Primary" (e.g., "Democratic Primary", "Republican Primary") — 14px gray-500 |
 | Destructive confirmation | Not applicable — no destructive actions in this phase |
 
 Source: CONTEXT.md D-02/D-03/D-08, RESEARCH.md Pattern 4
@@ -223,6 +224,8 @@ Source: CONTEXT.md D-02/D-03/D-08, RESEARCH.md Pattern 4
 ## Layout Contracts
 
 ### Landing Page Structure (after changes)
+
+**Focal point:** The two coverage cards are the primary visual entry point. They sit at the top of the interactive content area, above the address input, directing the user's eye before they reach the search form.
 
 ```
 <main> container mx-auto px-4 sm:px-6 py-16
@@ -258,6 +261,8 @@ Source: CONTEXT.md D-02/D-03/D-08, RESEARCH.md Pattern 4
 ```
 
 ### Icon Overlay Structure (on PoliticianCard)
+
+**Focal point:** The icon strip is positioned at the bottom-left of the photo area so it does not compete with the politician's face (headshot crop anchored to `center 20%` keeps the face at the top of the photo frame).
 
 ```
 <div style="position: relative">
@@ -350,6 +355,18 @@ No third-party shadcn registries declared. Registry vetting gate not applicable.
 | Color tokens (--ev-teal, --ev-bg-light) | essentials/src/index.css |
 | No shadcn | essentials has no components.json |
 | Antipartisan party label rule | REQUIREMENTS.md Out of Scope, CLAUDE.md MEMORY.md |
+
+---
+
+## Revision Notes
+
+**Revision 2026-04-03 — fixes from gsd-ui-checker:**
+
+- Typography: removed 12px from declared scale. Tooltip text and party sub-label remapped to 14px (Label role). Scale is now exactly 4 sizes: 14, 16, 20, 30/48.
+- Typography: consolidated weights from 4 (400/500/600/700) to 2 (400/600). "Browse by location →" link remapped from weight 500 → 400. H1 remapped from weight 700 → 600 (executor should replace `font-bold` with `font-semibold`).
+- Spacing: tooltip offset corrected from 6px → 8px (`offset(8)` in @floating-ui/react).
+- Copywriting: added note that "Search" CTA is preserved from existing UI.
+- Layout: added explicit focal point declarations to Landing Page Structure and Icon Overlay Structure sections.
 
 ---
 
