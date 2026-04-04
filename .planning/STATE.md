@@ -10,6 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started
 
 ## Current Position
 
+**Phase 58 Plan 04 complete (2026-04-04) — awaiting checkpoint verification**
+
+Phase 58 Plan 04 (Essentials Editor) — Task 1 complete, checkpoint pending ✅:
+- 58-04: EssentialsEditorPage (282 lines): jurisdiction-scoped politician grid + inline field editor (bio, preferred_name, photo_origin_url); partial PATCH with correct field names (bio not bio_text); toast feedback; TypeScript clean + build passes ✅
+- Key decisions: empty-field skip (no blanking), 403/422 error discrimination, jurisdiction badge from first politician's geoid
+
 **Phase 58 Plan 02 complete (2026-04-04)**
 
 Phase 58 Plan 02 (Contributor Portal Frontend Shell) — complete ✅:
