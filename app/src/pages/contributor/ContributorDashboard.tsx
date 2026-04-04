@@ -108,15 +108,15 @@ export default function ContributorDashboard() {
             <div className="flex items-start gap-3 p-3 rounded-xl bg-ev-yellow/5 border border-ev-yellow/20">
               <div className="w-1.5 h-1.5 rounded-full bg-ev-yellow mt-2 flex-shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-ev-black dark:text-white">Compass Editors</p>
-                <p className="text-xs text-gray-500 mt-0.5">Record and verify politician stances on compass topics.</p>
+                <p className="text-sm font-semibold text-ev-black dark:text-white">Essentials Editors</p>
+                <p className="text-xs text-gray-500 mt-0.5">Maintain accurate candidate profiles and biographical information.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-3 rounded-xl bg-ev-teal/5 border border-ev-teal/20">
               <div className="w-1.5 h-1.5 rounded-full bg-ev-teal mt-2 flex-shrink-0" />
               <div>
-                <p className="text-sm font-semibold text-ev-black dark:text-white">Essentials Editors</p>
-                <p className="text-xs text-gray-500 mt-0.5">Maintain accurate candidate profiles and biographical information.</p>
+                <p className="text-sm font-semibold text-ev-black dark:text-white">Compass Editors</p>
+                <p className="text-xs text-gray-500 mt-0.5">Record and verify politician stances on compass topics.</p>
               </div>
             </div>
             <div className="flex items-start gap-3 p-3 rounded-xl bg-ev-red/5 border border-ev-red/20">
