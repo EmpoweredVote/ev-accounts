@@ -10,7 +10,13 @@ See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started
 
 ## Current Position
 
-**Phase 57 Plan 02 complete (2026-04-04)**
+**Phase 58 Plan 02 complete (2026-04-04)**
+
+Phase 58 Plan 02 (Contributor Portal Frontend Shell) — complete ✅:
+- 58-02: ContributorLayout (back nav header + Outlet); ContributorDashboard (grant card dashboard; locked/aspirational empty state; active grants with role name/scope/date/granter/CTA); three editor stubs (Compass, Campaign Manager, Essentials); App.tsx routes registered under OnboardingGuard; DashboardPage tab bar (Profile active / Contributor link); build clean ✅
+- Key patterns: ROLE_DISPLAY_NAMES constant (campaign_manager -> "Candidate Coordinator"); role-keyed accent/badge/CTA style maps; locked state uses aspirational role descriptions not "no roles" message; tab bar always visible without grant fetch
+
+**Phase 58 Plan 01 complete (2026-04-04)**
 
 Phase 57 Plan 02 (Smoke Script + Integration Guide) — complete ✅:
 - 57-02: smoke-phase57.ts (324 lines) with 3 static checks + lifecycle gated on SMOKE_ADMIN_TOKEN; section 8.26 Contributor Roles in INTEGRATION-GUIDE-v2.md with endpoint table, NULL-scope semantics, cache behavior note for external devs ✅
