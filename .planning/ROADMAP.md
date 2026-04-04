@@ -286,6 +286,8 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
 - [x] **Phase 102: ev-ui Foundation + Quick Wins** - Icon system research, headshot crop fix, data fixes (incumbent badge, Ruben Marte), ev-ui publish (completed 2026-04-04)
 - [x] **Phase 103: Essentials Wiring + Landing Page** - Tier hue differentiation, icon metadata on cards with tooltips, election page clarity, landing page coverage messaging (completed 2026-04-04)
 - [x] **Phase 104: Compass-First Card Prototype** - Local /prototype route with compass-first layout using hardcoded mock data (completed 2026-04-04)
+- [ ] **Phase 105: Seed SQL Fix & Doc Cleanup** - Fix DATA-02 seed typo, backfill SUMMARY frontmatter gaps
+- [ ] **Phase 106: Tier Background Hues & Branch Icons** - Section background colors per tier, distinct branch icons
 
 ## Phase Details
 
@@ -337,6 +339,28 @@ Plans:
 - [ ] 104-02-PLAN.md — Prototype page assembly + route registration
 **UI hint**: yes
 
+### Phase 105: Seed SQL Fix & Doc Cleanup
+**Goal**: Close the one partial requirement (DATA-02) and backfill missing SUMMARY frontmatter
+**Depends on**: Phase 104
+**Requirements**: DATA-02
+**Gap Closure:** Closes gaps from audit
+**Success Criteria** (what must be TRUE):
+  1. seed-monroe-county-2026-primary.sql line 276 no longer has trailing apostrophe on Ruben Marte values
+  2. Plans 103-01, 103-02, 103-03, 104-01, 104-02 have `requirements_completed` in SUMMARY frontmatter
+Plans: TBD
+
+### Phase 106: Tier Background Hues & Branch Icons
+**Goal**: Section backgrounds use tier-specific hues so the page visually shifts as you scroll Federal → State → Local, and branch type is conveyed with distinct icons instead of a single generic one
+**Depends on**: Phase 105
+**Requirements**: VIS-01, VIS-02
+**Gap Closure:** Closes gaps from audit
+**Success Criteria** (what must be TRUE):
+  1. Federal, State, and Local sections have distinct background colors (not just label colors) — cards sit on top of the tinted background
+  2. Executive, Legislative, and Judicial branches each have a unique icon on politician cards — no hover required to distinguish branch type
+  3. Existing tooltip behavior preserved for additional metadata detail
+Plans: TBD
+**UI hint**: yes
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -349,3 +373,5 @@ Plans:
 | 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 2/2 | Complete    | 2026-04-04 |
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
+| 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 0/0 | Pending | — |
+| 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/0 | Pending | — |
