@@ -12,7 +12,7 @@ Requirements for Essentials Visual Polish & Election Improvements milestone.
 - [x] **DATA-01**: Incumbent marker removed from all candidate cards on election page
 - [x] **DATA-02**: Ruben Marte candidate record linked to politician profile (fix accent mark mismatch)
 - [x] **DATA-03**: Headshot images display with face-centered cropping via CSS object-position
-- [ ] **DATA-04**: Headshot audit script scans all CDN images and flags badly cropped photos
+- [x] **DATA-04**: Headshot audit script scans all CDN images and flags badly cropped photos
 
 ### Visual Design
 
@@ -75,7 +75,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VIS-02 | Phase 103 | Pending |
 | VIS-04 | Phase 103 | Pending |
 | VIS-05 | Phase 103 | Pending |
-| DATA-04 | Phase 103 | Pending |
+| DATA-04 | Phase 103 | Complete |
 | NAV-01 | Phase 103 | Pending |
 | NAV-02 | Phase 103 | Pending |
 | PROTO-01 | Phase 104 | Pending |
