@@ -298,10 +298,10 @@ Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
   2. Ruben Marte's candidate record links to his politician profile (accent mark corrected)
   3. Headshots on politician cards default to face-centered cropping (top-biased object-position)
   4. ev-ui is published (v0.1.55) with tierColors token, icons.js SVG exports, optional tier prop on CategorySection, and optional icons/imageFocalPoint props on PoliticianCard
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans executed
 Plans:
 - [x] 102-01-PLAN.md — ev-ui icons, tierColors, headshot crop fix, publish v0.1.55
-- [ ] 102-02-PLAN.md — Incumbent badge removal, Ruben Marte data fix
+- [x] 102-02-PLAN.md — Incumbent badge removal, Ruben Marte data fix
 **UI hint**: yes
 
 ### Phase 103: Essentials Wiring + Landing Page
