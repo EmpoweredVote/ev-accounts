@@ -57,6 +57,17 @@ export interface StanceAuditParams {
   writeInTextChanged: boolean;
 }
 
+export interface EssentialsAuditParams {
+  actorId: string;
+  roleGrantId: string;
+  featureScope: string;
+  jurisdictionGeoid: string | null;
+  resourceId: string | null;
+  politicianId: string;
+  fieldsChanged: string[];           // e.g. ['bio', 'preferred_name']
+  changes: Record<string, { old: unknown; new: unknown }>;
+}
+
 // ---------------------------------------------------------------------------
 // getPoliticianJurisdiction
 // ---------------------------------------------------------------------------
@@ -325,6 +336,94 @@ export async function writeStanceAuditLog(
       topicId,
       fieldsChanged,
       JSON.stringify(snapshotAfter),
+      roleGrantId,
+    ]
+  );
+}
+
+// ---------------------------------------------------------------------------
+// getEditorMatchingGrant
+// ---------------------------------------------------------------------------
+
+/**
+ * Pure function — find the first essentials_data_editor grant that authorizes
+ * editing the given politician.
+ *
+ * JURISDICTION SEMANTICS (fail-CLOSED — intentionally different from getMatchingGrant):
+ * - grant.jurisdiction_geoid === null → unrestricted, return grant (global access)
+ * - politicianGeoid === null → fail-CLOSED (cannot authorize if politician has no
+ *   assigned jurisdiction). No console.warn — this is a hard security boundary.
+ * - grant.jurisdiction_geoid === politicianGeoid → exact match, return grant
+ * - Otherwise continue to next grant.
+ *
+ * Returns null if no grant matches.
+ */
+export function getEditorMatchingGrant(
+  grants: UserRoleGrant[],
+  politicianGeoid: string | null
+): UserRoleGrant | null {
+  for (const grant of grants) {
+    if (grant.slug !== 'essentials_data_editor') continue;
+
+    // Unrestricted grant — covers all jurisdictions
+    if (grant.jurisdiction_geoid === null) return grant;
+
+    // Politician has no home jurisdiction — fail-CLOSED (unlike compass_stance_editor fail-open)
+    if (politicianGeoid === null) continue;
+
+    // Exact jurisdiction match
+    if (grant.jurisdiction_geoid === politicianGeoid) return grant;
+  }
+
+  return null;
+}
+
+// ---------------------------------------------------------------------------
+// writeEssentialsAuditLog
+// ---------------------------------------------------------------------------
+
+/**
+ * Insert a bio_edit audit log entry inside an open transaction.
+ *
+ * Intentionally separate from writeStanceAuditLog — the audit shape differs:
+ * arbitrary bio field diffs vs topic value changes.
+ *
+ * action = 'bio_edit', target_type = 'politician'
+ * actor_id = target_user_id = actorId (editor is the actor, no separate target user)
+ * snapshot_after = JSON of changes map: { field: { old, new }, ... }
+ * role_grant_id = the user_roles.id UUID of the matching grant row
+ *
+ * Caller is responsible for BEGIN/COMMIT — this function only inserts.
+ */
+export async function writeEssentialsAuditLog(
+  client: PoolClient,
+  params: EssentialsAuditParams
+): Promise<void> {
+  const {
+    actorId,
+    roleGrantId,
+    featureScope,
+    jurisdictionGeoid,
+    resourceId,
+    politicianId,
+    fieldsChanged,
+    changes,
+  } = params;
+
+  await client.query(
+    `INSERT INTO public.role_audit_log
+       (actor_id, target_user_id, feature_scope, jurisdiction_geoid, resource_id,
+        action, target_type, target_id, fields_changed, snapshot_after, role_grant_id)
+     VALUES ($1, $2, $3, $4, $5, 'bio_edit', 'politician', $6, $7, $8, $9)`,
+    [
+      actorId,
+      actorId,          // target_user_id = actorId (editor is the actor)
+      featureScope,
+      jurisdictionGeoid,
+      resourceId,
+      politicianId,
+      fieldsChanged,
+      JSON.stringify(changes),
       roleGrantId,
     ]
   );
