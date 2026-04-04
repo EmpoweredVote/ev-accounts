@@ -641,6 +641,12 @@ Plans:
 3. An `essentials_data_editor` with `jurisdiction_geoid = "18105"` calling `PATCH /api/essentials/politicians/:id` for a politician in jurisdiction `"06037"` receives 403.
 4. A request without a valid `essentials_data_editor` role returns 403 regardless of the request body.
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 56-01-PLAN.md — PATCH endpoint + getEditorMatchingGrant + writeEssentialsAuditLog
+- [ ] 56-02-PLAN.md — getEditorMatchingGrant unit test suite
+
 ---
 
 #### Phase 57: CTC + Civic Spaces Integration
