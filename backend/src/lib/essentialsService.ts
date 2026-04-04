@@ -94,7 +94,7 @@ export interface PoliticianFlatRecord {
   office_description: string;
   is_vacant: boolean;
   vacant_since: string | null;
-  images: Array<{ id: string; url: string; type: string; photo_license: string }>;
+  images: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>;
 }
 
 export interface AddressSearchResult {
@@ -253,20 +253,20 @@ export async function getPoliticiansGrouped(
  * Matches Go server behavior of including images[] on every politician in list results.
  */
 async function batchFetchImages(
-  politicians: Array<{ id: string; images?: Array<{ id: string; url: string; type: string; photo_license: string }> }>
+  politicians: Array<{ id: string; images?: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }> }>
 ): Promise<void> {
   if (politicians.length === 0) return;
 
   const ids = politicians.map((p) => p.id);
   const { rows } = await pool.query(
-    `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
+    `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point
      FROM essentials.politician_images
      WHERE politician_id = ANY($1)`,
     [ids]
   );
 
   // Group images by politician_id
-  const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string }>>();
+  const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>>();
   for (const row of rows) {
     const pid = row.politician_id as string;
     if (!imageMap.has(pid)) imageMap.set(pid, []);
@@ -275,6 +275,7 @@ async function batchFetchImages(
       url: row.url ?? '',
       type: row.type ?? '',
       photo_license: row.photo_license ?? '',
+      focal_point: (row.focal_point as string) ?? null,
     });
   }
 
@@ -681,6 +682,7 @@ export interface PoliticianImage {
   url: string;
   type: string;
   photo_license: string;
+  focal_point: string | null;
 }
 
 export interface PoliticianDegree {
@@ -888,7 +890,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
         [id]
       ),
       pool.query(
-        `SELECT id, url, type, photo_license
+        `SELECT id, url, type, photo_license, focal_point
          FROM essentials.politician_images
          WHERE politician_id = $1`,
         [id]
@@ -957,6 +959,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     url: r.url ?? '',
     type: r.type ?? '',
     photo_license: r.photo_license ?? '',
+    focal_point: (r.focal_point as string) ?? null,
   }));
 
   const degrees: PoliticianDegree[] = degreesResult.rows.map((r) => ({

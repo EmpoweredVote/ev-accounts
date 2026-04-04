@@ -280,7 +280,7 @@ export async function getPoliticiansByArea(
     const ids = politicians.map((p) => p.id);
     const [{ rows: imgRows }, { rows: commRows }] = await Promise.all([
       pool.query(
-        `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
+        `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point
          FROM essentials.politician_images WHERE politician_id = ANY($1)`,
         [ids]
       ),
@@ -295,7 +295,7 @@ export async function getPoliticiansByArea(
         [ids]
       ),
     ]);
-    const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string }>>();
+    const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>>();
     for (const r of imgRows) {
       const pid = r.politician_id as string;
       if (!imageMap.has(pid)) imageMap.set(pid, []);
@@ -304,6 +304,7 @@ export async function getPoliticiansByArea(
         url: r.url ?? '',
         type: r.type ?? '',
         photo_license: r.photo_license ?? '',
+        focal_point: (r.focal_point as string) ?? null,
       });
     }
     const committeeMap = new Map<string, Array<{ name: string; position: string; urls: string[] }>>();
