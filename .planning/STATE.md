@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
 status: executing
-stopped_at: Completed 104-compass-first-card-prototype 104-01-PLAN.md
-last_updated: "2026-04-04T15:05:23.745Z"
+stopped_at: Completed 104-compass-first-card-prototype 104-02-PLAN.md
+last_updated: "2026-04-04T16:10:00.000Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 3
   completed_phases: 2
   total_plans: 8
-  completed_plans: 7
+  completed_plans: 8
   percent: 0
 ---
 
@@ -26,9 +26,9 @@ See: .planning/PROJECT.md (updated 2026-04-03)
 ## Current Position
 
 Phase: 104 (compass-first-card-prototype) — EXECUTING
-Plan: 1 of 2
-Status: Executing Phase 104
-Last activity: 2026-04-04 -- Phase 104 execution started
+Plan: 2 of 2
+Status: All plans complete — awaiting verification
+Last activity: 2026-04-04 -- Phase 104 plans complete
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -58,8 +58,11 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 103]: Pure Buffer PNG/JPEG header parsing avoids native sharp dep in headshot audit script
 - [Phase 103]: Party sub-labels use text-sm text-gray-500 in ElectionsView — antipartisan, no party-affiliated colors
 - [Phase 103]: seededShuffle runs per party ballot (per race), not on merged position group
-- [Phase 104-compass-first-card-prototype]: Mock data covers all 20 active topics (not just 8) so dual overlay works with any user topic selection
+- [Phase 104-compass-first-card-prototype]: Mock data limited to 8 topics (compass max spokes) — 20 spokes was unreadable
 - [Phase 104-compass-first-card-prototype]: VARIANT_CONFIG lookup object exported from CompassFirstCard for consumer grid layout access
+- [Phase 104-compass-first-card-prototype]: Mock user compass (coral overlay) added for dual-overlay without login
+- [Phase 104-compass-first-card-prototype]: IconOverlay CSS override to position:static in compass cards (absolute is for photo overlays)
+- [Phase 104-compass-first-card-prototype]: Variant C (Horizontal) uses 250px radar, 2-col responsive grid
 
 ### Pending Todos
 
