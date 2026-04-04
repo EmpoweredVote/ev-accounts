@@ -1,248 +1,202 @@
-# Feature Research
+# Feature Landscape
 
-**Domain:** Civic tech — Election Central page + elected/appointed filter for Essentials app
-**Researched:** 2026-03-29
-**Confidence:** MEDIUM (domain patterns well-understood from competitor analysis; some UX guidance indirect)
+**Domain:** Civic tech — Visual polish, icon metadata, tier color differentiation, compass-first cards, location browsing
+**Researched:** 2026-04-02
+**Confidence:** MEDIUM-HIGH (existing codebase fully inspected; domain UX patterns drawn from USWDS, NN/G, and civic tech analysis; icon library confirmed via Lucide docs)
 
 ---
 
 ## Context: What Already Exists
 
-This is a subsequent milestone on the existing Essentials app. The following are already shipped and NOT in scope:
+This is milestone v2026.4.1. The following are already shipped and not in scope:
 
-- Address search via Google Maps Places + PostGIS geofence matching
-- Politicians grouped Federal/State/Local with government_body names and official website links
-- Full profile pages with legislative data, compass comparison cards, Read & Rank verdict badges
-- `essentials.politicians` schema with `is_incumbent`, `is_appointed`, `is_candidate` booleans
-- `essentials.offices` with `is_appointed_position`, `is_vacant`, `is_elected` (derived as NOT is_appointed_position)
-- Government body names, district types including JUDICIAL, and official URLs
-- Initials avatar fallback for missing photos
-- Candidate toggle (show/hide challengers) already exists on the representatives page
+- `PoliticianCard` (ev-ui) with horizontal/vertical variants, compass button, badge prop, initials avatar fallback
+- `CategorySection` (ev-ui) with title pill, info tooltip, and external website link
+- `CompassPreview` popover (essentials) — mini radar chart on hover/click with CTA mode
+- `ElectionsView` — Election Central with tier-grouped races, countdown, candidate cards
+- `SegmentedControl` — Elected/Appointed filter
+- `LocationBrowser` — cascading State → Area Type → Area dropdowns feeding into the results page
+- `Landing` page — single address input field with Google Maps Places autocomplete
+- `Results` page — sticky sidebar, scroll-spy building swap, full tier grouping via `classify.js`
+- `getSeatBallotStatus()` — ballot window detection based on `term_end` / `precision`
+- `ballotStatus.js` — already computes whether a seat is on the ballot within the next year
+- Lucide-style custom SVG compass icon (inline in ev-ui `PoliticianCard`)
 
-The **new features** for v2026.3.8 are:
-1. Election Central page — upcoming races grouped by org/position, with election dates and candidate cards
-2. Elected/Appointed filter toggle on the main Essentials representatives page
-3. Retention judges appearing under both Elected and Appointed filters
+The **new features** for v2026.4.1 are:
+1. Icon-based metadata display (on ballot, compass available, branch type) replacing full-text badges
+2. Tier-level hue/color differentiation (federal vs state vs local; city vs township vs county within local)
+3. Compass-first card prototype — explore replacing photos with a mini radar on representative cards
+4. Location-aware landing page — prominent pre-set location buttons (Monroe County IN, LA County CA)
+5. Headshot crop validation and audit tooling (batch review/flag, not user-facing)
+6. Remove "incumbent" marker from candidate cards on Election Central
+7. Fix Ruben Marte name mismatch to link candidate to politician profile
 
 ---
 
-## Feature Landscape
+## Table Stakes
 
-### Table Stakes (Users Expect These)
-
-Features users assume exist on any election-oriented civic page. Missing these = product feels incomplete or untrustworthy.
+Features users expect on a civic representative listing page. Missing these makes the product feel incomplete.
 
 | Feature | Why Expected | Complexity | Notes |
 |---------|--------------|------------|-------|
-| Races grouped by government body then position | Ballot-style organization is universal. Voters recognize this hierarchy from official voter guides (VOTE411, Ballotpedia, lavote.gov, sample ballots). Flat lists feel overwhelming. | MEDIUM | Group by organization first (e.g. "Monroe County"), then by specific seat (e.g. "County Clerk"). Mirrors official sample ballot layout and matches how Essentials already organizes the representatives page. |
-| Incumbent badge on candidate cards | Users need to identify who currently holds the seat. Universal convention — every voter guide from VOTE411 to Ballotpedia marks incumbents. | LOW | `is_incumbent` column already exists. Add a small badge/pill. Per Center for Civic Design guidance, candidate names should be visually equal — the badge should be informational, not an endorsement. |
-| Election date displayed per race | Users arrive asking "when is this?" before "who is running?" | LOW | Show the date alongside the race header. For jurisdictions with primary and general (Monroe County 2026: May primary; LA County 2026: June primary + November general), show the next upcoming date and label it "Primary" or "General." |
-| Candidate name, photo, and position sought | Minimum viable candidate card. Photo adds trust. | LOW | Position title must appear on the card. Use initials avatar fallback (already in ev-ui) when photo is unavailable — common for challengers. |
-| Incumbent vs. challenger differentiation within a race | Users need to see the full field for each seat. If only one name shows and it's unlabeled, users don't know if a race is contested. | MEDIUM | Show all candidates under their shared position/seat heading. Incumbent labeled. Challengers unlabeled or labeled "Challenger." Vacant seats get explicit "Open Seat" race header. |
-| Elected vs. appointed filter on representatives page | Users trust and relate to elected officials differently from appointed ones. This is an expected distinction in civic directories. | LOW | Toggle or segmented control. `is_appointed_position` already in schema derived as `is_elected`. Default to showing all (current behavior), add "Elected" / "Appointed" / "All" options. |
-| "No upcoming races found" empty state | If no election data exists for an address, the page must say so clearly. Empty content with no explanation destroys trust. | LOW | Clear message: "No upcoming races found for this address." Add a note about data coverage limitations (Bloomington/Monroe County IN and LA County CA only). |
+| Visual distinction between government tiers | Users cannot assess relevance of an official without knowing whether they represent the city, state, or nation. All major civic directories (Ballotpedia, VOTE411, govtrack.us) use visual grouping by tier. | LOW | Tier labels already exist; work is adding a consistent hue or left-border accent per tier to reinforce scanability. |
+| Icons for metadata cues | Dense text badges (e.g., "ON BALLOT", "COMPASS AVAILABLE") increase cognitive load on already-information-heavy listing pages. USWDS icon-list pattern establishes icon + text as the accessible standard for metadata. | MEDIUM | Icons must pair with accessible text (tooltip or sr-only label). Lucide React already in the ecosystem (lucide-dev confirms `landmark`, `vote`, `gavel`, `map-pin`, `compass` icons exist). |
+| Clear coverage messaging on landing | Users in unsupported areas currently see no data and no explanation. "No results" without coverage context destroys trust. NN/G progressive disclosure research: show the most relevant information first, explain limits immediately. | LOW | Landing page currently has only an address input field. Add two explicit location buttons (Bloomington/Monroe County IN, LA County CA) and coverage footnote. |
+| Accessible hover/tooltip for icon metadata | Color or icon alone cannot be the sole conveyor of meaning (WCAG 1.4.1). Supplementing icons with hover tooltips satisfies both accessibility and progressive disclosure. | LOW | Tooltip on icon hover: "This representative is on the ballot in the next 12 months." Pattern already exists in `CategorySection`'s info tooltip button. |
 
-### Differentiators (Competitive Advantage)
+## Differentiators
 
-Features that set Empowered Vote's election page apart from generic voter guide lookups.
+Features that go beyond what civic directories provide, fitting EV's mission of reducing information overload.
 
 | Feature | Value Proposition | Complexity | Notes |
 |---------|-------------------|------------|-------|
-| Candidates link to full Essentials-style profile pages | VOTE411 and Ballotpedia only show basic bio + Q&A responses. EV shows legislative record, compass comparison card, Read & Rank verdict badges. Gives voters real depth on candidates. | MEDIUM | Reuses existing PoliticianProfile component entirely. Requires candidates to exist as `essentials.politicians` records with `is_candidate = true`. The effort is data population, not new frontend code. |
-| Compass comparison card on candidate profiles | No civic voter guide offers interactive policy alignment visualization for candidates. Users can see how challengers align with their own positions. | LOW | Already built — just needs candidates in the politicians table with compass stances imported. |
-| Read & Rank verdict badges on candidate profiles | No civic voter guide offers per-quote evaluation with user verdicts. Shows candidates' actual words, not just stated positions. | LOW | Already built in StanceAccordion — needs quotes imported for candidates via existing import pipeline. |
-| Retention judges appear under both Elected and Appointed filters | Retention elections are hybrid: judge was initially appointed, now faces a public yes/no vote. Most civic apps categorize incorrectly. Getting this right builds trust with informed users. | MEDIUM | District type `JUDICIAL` with `is_appointed_position = true` but also `is_candidate = true` (retention race upcoming). Filter logic: show in both Elected and Appointed tabs. Add "Retention Election" label on the race card to explain the hybrid nature to voters unfamiliar with the system. |
-| Primary vs. general election distinction per race | Monroe County 2026 has May primary AND November general. LA County 2026 has June primary + November runoff option. Users need to know which stage they are seeing. | LOW | Store `election_type` (primary/general/retention/runoff) alongside `election_date` in the races/elections data. Display as a pill or subtitle label. |
-| Days-until countdown near election date | Adds appropriate urgency and helps users plan. Simple but effective engagement driver for civic participation. | LOW | Calculate from `election_date`. Show "X days away" when under 60 days. Show full date when farther out. Plain text — not an animated timer (would feel gimmicky and undermine trust). |
+| Compass-first card variant | No civic voter guide shows a policy-alignment radar chart inline on the listing page. Replaces or de-emphasizes headshots, which convey no policy signal, with a mini radar of the politician's positions. Creates immediate policy context before a user clicks through. | HIGH | Depends on: (1) politician having compass stances (503 CDN records covers photos but stance data is sparser), (2) user having a compass (guest users without compass get the "Take the Quiz" CTA mode). `CompassPreview` already implements both paths. The risk is high null-data rate — most local officials lack stances. Needs fallback card for no-data case. |
+| Tier hue system with within-local sub-hues | Federal/State/Local differentiation is standard; going further to distinguish city vs township vs county within the Local tier is not offered anywhere. Reduces the visual blur when a user sees 30+ local officials. | MEDIUM | Three hue families: Federal (existing ev-muted-blue `#00657c` family), State (amber/warm tones), Local (split: city=green, township=purple, county=rust). Must remain accessible — color cannot be the only differentiator. Pair with tier label text. |
+| Ballot-window icon on card (not just badge) | The existing "ON BALLOT" amber badge uses full-text in a corner position that competes with the headshot. An icon with tooltip reduces visual noise while preserving the signal. Users who need depth can hover; scanners see an unobtrusive icon. | LOW | `getSeatBallotStatus()` already returns `{ onBallot: true }`. Replace the amber badge with a Lucide `vote` icon (16px) with tooltip "Running in upcoming election." |
+| Branch-type icon on card | No civic directory offers a branch-type icon (legislative/executive/judicial) on the listing card. Helps users mentally organize what their representatives do. | LOW | Three icons: `landmark` (legislative chambers), `crown` or `shield` (executive), `gavel` (judicial). Derive branch from `district_type`: `*_UPPER`/`*_LOWER` = legislative, `*_EXEC` = executive, `JUDICIAL` = judicial. Add as a 16px icon in the card metadata row with tooltip. |
+| Prominent location shortcut buttons on landing | Users who don't know their exact address (or don't want to type it) hit friction immediately. Adding "Browse Monroe County, IN" and "Browse Los Angeles County, CA" buttons makes coverage obvious and lets users start exploring without typing. | LOW | `LocationBrowser` component already exists with the API endpoints; landing page just needs quick-access buttons that pre-fill the browse state. Not a new API call — just a UI shortcut wiring existing LocationBrowser to specific known geo_ids. |
+| Headshot crop audit script | 503 CDN-hosted headshots have inconsistent framing — some are distant full-body shots, some cut off the top of the head, some show off-center subjects. An audit script that flags problematic crops saves manual review time for data volunteers. | MEDIUM (tooling, not user-facing) | Script approach: fetch each image URL, run heuristic checks (aspect ratio sanity, face detection via browser `face-detection` API or a lightweight npm package like `node-face-recognition`), output a CSV of flagged politician_ids + image URLs for manual review. No Supabase image transformation face detection — confirmed not available natively. |
 
-### Anti-Features (Commonly Requested, Often Problematic)
+## Anti-Features
 
-| Anti-Feature | Why Requested | Why Problematic | Alternative |
-|--------------|---------------|-----------------|-------------|
-| Party affiliation display | Users expect to know which party a candidate belongs to on most voter guides | Violates the antipartisan mission documented in project memory. Partisan labels push voters toward confirmation bias rather than policy evaluation — the opposite of EV's purpose. | Show policy positions via compass comparison, legislative votes, and Read & Rank quotes. Let voters derive alignment from evidence. |
-| Polling place / "how to vote" logistics | Users naturally want this on any election page | Requires real-time county-level data integration; operational scope is voter research, not logistics. Creates maintenance burden for data EV doesn't own. | Add a prominent external link to the county registrar: "Find your polling place" pointing to lavote.gov or co.monroe.in.us. |
-| Real-time election results | Users ask about results night-of | Requires live data feeds, significant operational complexity, and the data is freely and authoritatively available from official county sources. Not core mission. | Link to county election board results page. A static link is sufficient. |
-| Endorsement lists | Candidates highlight endorsements; users are familiar with the pattern | Endorsements from advocacy groups, unions, and political figures are partisan signals by nature. Creates a maintenance burden and conflicts with the antipartisan mission. | Show factual legislative record (votes, activity) and sourced quotes instead. |
-| Animated countdown timer (seconds/milliseconds) | Visually engaging; some civic sites use it | Creates a "spectacle" feel that undermines the serious, trustworthy tone. Adds visual noise without information value. | Show "X days until [election date]" in plain text near the race header. |
-| Candidate self-submitted Q&A responses | VOTE411-style questionnaire where candidates fill in issue answers | High coordination overhead for a small nonprofit with no current candidate relationship infrastructure. Responses are often boilerplate and not factually verifiable. Risk of candidates gaming responses. | Use sourced verbatim quotes (already in Read & Rank pipeline) with verified attribution and source links. |
-| Ballot measures / referendums | Part of the ballot; users expect to see them | Different data model, different UX pattern, no existing infrastructure. Referendums are measures, not candidates — require entirely separate sourcing and display approach. | Acknowledge as out of scope. Add a note on Election Central linking to the official county registrar ballot for measures. |
+Features to explicitly NOT build in this milestone.
+
+| Anti-Feature | Why Avoid | What to Do Instead |
+|--------------|-----------|-------------------|
+| Full tier color redesign of `CategorySection` titles | Changing the `CategorySection` component in ev-ui will affect all consumers (essentials, CompassV2). Scope creep risk is high. | Add tier hue as a prop or wrapper class in the essentials `Results.jsx` render, not inside ev-ui. |
+| Party color coding | Directly violates the antipartisan mission. Party colors (red=Republican, blue=Democrat) are the most well-known partisan visual signals in the US. | Use tier hues (federal/state/local) and branch icons instead. |
+| Automatic face-centered crop via Supabase Storage | Supabase Storage image transformations confirmed (as of 2025) to NOT support face detection/smart crop. Only cover/contain/fill modes available. | Flag problem headshots in audit script; re-crop and re-upload manually. |
+| Animated tier badges or icon transitions | Motion on metadata icons distracts from content; adds complexity for negligible UX gain; can trigger `prefers-reduced-motion` violations. | Static icons with CSS hover state only. |
+| Replace photos entirely on all cards | Too risky as a default — headshots provide identity recognition especially for well-known politicians (senators, governors). Photos remain for all politicians with good headshots. | Introduce compass-first card as an optional view toggle or only for politicians with no usable headshot. |
+| Expanding CompassPreview into a full sidebar panel | Current popover model is already feature-complete. Expanding it into a persistent sidebar panel increases complexity and conflicts with the sticky sidebar already present in Results. | Keep CompassPreview as a popover. Full compass card is available on the profile page. |
+| New icon library (Heroicons, Phosphor, etc.) | The project has no icon dependency currently — adding a large icon library for 3-4 icons is overshooting the need. Lucide React (~1KB per icon, tree-shakable) is appropriate if installing an external library; inline SVGs are fine for 2-3 icons. | Use Lucide React (already popular in Tailwind/Vite ecosystems) or inline SVG. Evaluate whether `lucide-react` should be a formal dependency of ev-ui vs essentials. |
+| "Accessibility score" or "responsiveness score" labels per politician | Civic design research (NN/G, Center for Civic Design) consistently warns against aggregate scoring of elected officials — introduces editorial judgment into what should be factual presentation. | Show raw data: votes, stances, quotes. Let users form their own assessments. |
 
 ---
 
 ## Feature Dependencies
 
 ```
-Election Central Page
-    └──requires──> Election/race data source decision (races, candidates, dates per address)
-                       └──requires──> Candidate records in essentials.politicians (is_candidate = true)
-                                          └──requires──> Geofence-to-race mapping (which races apply to this address)
-                                          └──requires──> essentials.races or similar table with election_date, election_type, office_id
+Icon-based metadata on PoliticianCard
+    └──requires──> Lucide icons or inline SVG (low effort — no external dependency currently)
+    └──requires──> getSeatBallotStatus() result passed to card (already computed in Results.jsx)
+    └──requires──> district_type passed to card (already in politician data)
+    └──uses──> tooltip pattern already in CategorySection (copy pattern, don't share component)
 
-Candidate Profile Pages (full depth)
-    └──requires──> Candidate in essentials.politicians (is_candidate = true)
-    └──reuses──> Existing PoliticianProfile component — no new frontend code
-    └──enhances──> Compass stances (requires candidate answers in compass tables)
-    └──enhances──> Read & Rank quotes (requires quotes imported for this candidate)
+Tier hue differentiation
+    └──requires──> tier classification (already done by classify.js — returns { tier, group })
+    └──requires──> CSS design token additions (Federal/State/Local hue variables)
+    └──should NOT require──> ev-ui PoliticianCard changes (apply hue as wrapper in Results.jsx)
 
-Elected/Appointed Filter Toggle
-    └──requires──> is_appointed_position on essentials.offices (ALREADY EXISTS)
-    └──requires──> Frontend toggle UI on Essentials representatives page
-    └──edge-case──> Retention judges: is_appointed_position=true AND is_candidate=true → show in BOTH tabs
+Compass-first card
+    └──requires──> CompassPreview popover (ALREADY BUILT)
+    └──requires──> politician compass stances (sparse for local officials — fallback required)
+    └──requires──> user compass data (guest/no-compass path already handled by CompassPreview CTA mode)
+    └──risk──> High null rate for local officials makes this a limited-reach feature without more stance data
+    └──suggests──> Only activate compass-first view for politicians with confirmed stance data
 
-Incumbent Badge on Candidate Card
-    └──requires──> is_incumbent on essentials.politicians (ALREADY EXISTS)
+Location buttons on Landing
+    └──requires──> LocationBrowser component (ALREADY BUILT)
+    └──requires──> known geo_id + mtfcc values for Monroe County IN and LA County CA
+    └──does NOT require──> any new API endpoints (browse/by-area already handles it)
 
-Race grouping by org then position
-    └──requires──> government_bodies table with correct org names (ALREADY EXISTS from v2026.3.3)
-    └──requires──> races or elections table linking positions to election_date and election_type
+Headshot audit tooling
+    └──requires──> Supabase storage URL list (already in essentials.politician_images table)
+    └──requires──> Node.js script with image fetch + face-detection heuristics
+    └──does NOT require──> any frontend changes
+    └──outputs──> CSV of flagged records for manual review + re-upload
 
-Primary vs. General label
-    └──requires──> election_type field stored per race (NEW — not in current schema)
+Remove "incumbent" from candidate cards (Election Central)
+    └──requires──> Remove badge={pol.is_incumbent ? 'Incumbent' : undefined} from ElectionsView
+    └──rationale──> Incumbent labels on the election page imply incumbency advantage; EV's antipartisan
+                    mission requires equal visual treatment of all candidates on the ballot
 
-Days-until countdown
-    └──requires──> election_date stored per race (NEW — not in current schema)
+Fix Ruben Marte link
+    └──requires──> Data investigation: find matching politician_id in essentials.politicians
+    └──requires──> Update candidate record to link to correct politician_id
+    └──is NOT a code change──> data fix only
 ```
 
-### Dependency Notes
+---
 
-- **Election data source is the highest-risk dependency for the entire milestone.** BallotReady/CivicEngine API is the most complete national source (races, candidates, dates at all levels) but requires a paid contract with no confirmed free nonprofit tier. Google Civic Information API is free but has known gaps in local race coverage. Manual data entry via the existing staging tool is the lowest-risk approach for the two target jurisdictions (Monroe County IN has ~25 races in 2026; LA County has ~40 county-level races) — small enough to manage manually. Source decision should be made in Phase 1 before any schema work.
-- **Candidate profiles reuse all existing infrastructure.** Once a candidate exists in `essentials.politicians` with `is_candidate = true`, the entire profile pipeline (photos, contacts, legislative data, compass card, Read & Rank) works without modification. The cost is data population, not new code.
-- **Retention judges are the only "both-filters" edge case.** All other `is_appointed_position = true` officials (cabinet secretaries, agency heads, appointed commissioners) are purely appointed. Only JUDICIAL district types with an upcoming retention race need dual-filter treatment. Indiana uses merit selection (retention elections) for Court of Appeals and Supreme Court. California uses the same for Supreme Court and Courts of Appeal. Monroe County 2026 Circuit Court judges run in contested elections — those are `is_appointed_position = false` and "Elected" filter only.
+## MVP Recommendation
+
+### Build in this milestone
+
+1. **Icon metadata row on PoliticianCard** — ballot-window icon (`vote`), compass-available icon (existing custom SVG), branch icon (`landmark`/`gavel`/crown). Three icons max, all with tooltips. Wire into `Results.jsx` using already-computed `getSeatBallotStatus()` and `district_type`. (Complexity: LOW)
+
+2. **Tier hue differentiation** — Left-border accent or section header background tint per tier (Federal/State/Local). Within Local, add sub-tiers via group classification already returned by `classify.js`. Apply in `Results.jsx` wrappers, not in ev-ui. (Complexity: LOW-MEDIUM)
+
+3. **Location buttons on Landing page** — Add "Browse Monroe County, IN" and "Browse Los Angeles County, CA" as pill buttons that bypass the address input and call the existing `LocationBrowser` browse flow. Add a one-line coverage note: "Currently covering Monroe County, IN and Los Angeles County, CA." (Complexity: LOW)
+
+4. **Remove "incumbent" marker from Election Central candidate cards** — One-line change in `ElectionsView.jsx`. (Complexity: LOW)
+
+5. **Fix Ruben Marte link** — Data investigation + SQL update. (Complexity: LOW — data fix)
+
+6. **Headshot audit script** — Node.js script, output CSV. Run once; not user-facing. (Complexity: MEDIUM — tooling)
+
+### Defer
+
+- **Compass-first card** — HIGH effort, HIGH null-data risk. Defer until stance data coverage for local officials improves. Can be prototyped as an opt-in toggle.
+- **Re-cropping flagged headshots** — Depends on audit output. Manual effort; schedule for after audit script runs.
+- **Full ev-ui PoliticianCard redesign** — Any changes to ev-ui require a version bump and coordinated updates across essentials, CompassV2, ReadRank. Keep ev-ui stable; do visual polish in essentials-local wrappers first.
 
 ---
 
-## MVP Definition
+## Complexity Notes on Icon Library Decision
 
-### Launch With (v1 — this milestone)
+Lucide React is the recommended choice if adding an external icon dependency:
 
-- [ ] Elected/Appointed filter toggle on main Essentials representatives page — schema already supports it; low frontend effort; high user value
-- [ ] Election Central page accessible from Essentials navigation with the same address input
-- [ ] Races grouped by government body (org) then by specific position within that body
-- [ ] Incumbent designation badge on candidate cards
-- [ ] Election date displayed per race with primary/general label
-- [ ] Open seat / vacancy label when no incumbent exists for the seat
-- [ ] Candidates link to full profile pages using existing PoliticianProfile component
-- [ ] Retention judges appear under both Elected and Appointed filter tabs with "Retention Election" label
-- [ ] "No upcoming races found for this address" empty state with coverage note
-- [ ] Coverage scoped to Monroe County IN and LA County CA only
+- `lucide-react` v0.474+ — tree-shakable, ~1KB per icon imported, TypeScript-first, MIT license
+- Relevant icons confirmed available: `landmark` (government building/legislative), `gavel` (judicial), `vote` (ballot), `map-pin` (location), `map-pin-house`, `building` (executive offices)
+- No `compass` icon exists in Lucide for the EV compass metaphor — the custom SVG radar chart icon in ev-ui should remain custom
+- Installation: `npm install lucide-react` in `essentials/`; do NOT add to ev-ui until there's a clear case for multiple consumers needing the same icon
 
-### Add After Validation (v1.x)
+Alternative: inline SVG for 3-4 icons avoids a new dependency entirely. Acceptable given small icon count for this milestone.
 
-- [ ] Days-until countdown near election date — add once election dates are verified accurate and the page is live; low effort
-- [ ] Read & Rank quotes for candidates — StanceAccordion already supports it; add as quote data is researched and imported via existing pipeline
-- [ ] Compass stances for candidates — add when candidate stance data is researched; requires admin data entry
-
-### Future Consideration (v2+)
-
-- [ ] Ballot measures / referendums — requires separate data model and UX; different scope from candidate races
-- [ ] Multi-jurisdiction election calendar (beyond two supported jurisdictions) — requires scalable data sourcing
-- [ ] "Remind me before the election" feature — requires email/SMS infrastructure not currently in place
-- [ ] External link to county registrar polling place lookup — low effort, can add when copy and links are ready
+**Recommendation:** Use inline SVG for the 3 branch-type icons and ballot icon in this milestone. Add `lucide-react` as a formal essentials dependency only if icon usage grows to 6+ in a future milestone.
 
 ---
 
-## Feature Prioritization Matrix
+## Information Density Patterns from Research
 
-| Feature | User Value | Implementation Cost | Priority |
-|---------|------------|---------------------|----------|
-| Elected/Appointed filter toggle | HIGH | LOW (schema exists) | P1 |
-| Races grouped by org then position | HIGH | MEDIUM | P1 |
-| Incumbent badge on candidate card | HIGH | LOW (flag exists) | P1 |
-| Election date + primary/general label | HIGH | LOW | P1 |
-| Candidate cards linking to profile pages | HIGH | LOW (reuse existing) | P1 |
-| Election data source + schema | HIGH | HIGH (data sourcing is the blocker) | P1 — must resolve first |
-| Retention judges in both filter tabs | MEDIUM | MEDIUM (logic + label) | P1 — correctness requirement |
-| Open seat / vacancy label | MEDIUM | LOW | P1 |
-| "No upcoming races" empty state | MEDIUM | LOW | P1 |
-| Days-until countdown | LOW-MEDIUM | LOW | P2 |
-| Read & Rank quotes for candidates | HIGH | MEDIUM (data entry) | P2 |
-| Compass stances for candidates | HIGH | HIGH (research + import) | P2 |
+### What civic apps get wrong (confirmed from USWDS docs, NN/G, GOV.UK case study)
 
-**Priority key:**
-- P1: Must have for launch
-- P2: Should have, add when possible
-- P3: Nice to have, future consideration
+- **Text badges compete with headshots.** When text badges appear over or near a headshot image, visual complexity spikes. The GOV.UK bank holiday redesign case study shows that presenting the most relevant signal (next date/event) as the primary element and deprioritizing less-needed info reduces cognitive load measurably.
+- **Tier labels buried in category headers are missed.** Users scan card content, not section headers. Inline tier signals on each card (icon, border, hue) outperform section-header-only labeling.
+- **Full-text status labels ("ON BALLOT", "COMPASS AVAILABLE") are verbose.** An icon with tooltip is standard accessible practice (USWDS icon-list component: `aria-hidden="true"` on icon, meaning conveyed by adjacent text or tooltip). The icon alone communicates to sighted users; the tooltip satisfies accessibility.
 
----
+### Tier hue design constraint
 
-## Competitor Feature Analysis
+WCAG 1.4.1 requires that color not be the sole means of conveying information. The tier hue system must pair color with at least one other visual differentiator (text label, icon, or border weight). The existing `CategorySection` title pill already provides the text label — the hue is additive, not substitutive.
 
-| Feature | VOTE411 (League of Women Voters) | Ballotpedia | Our Approach |
-|---------|----------------------------------|-------------|--------------|
-| Race grouping | By ballot section (federal/state/local/judicial), address-filtered | By election date then race type, state-organized | By government body (org) then position — matches Essentials' existing representatives hierarchy for cognitive consistency |
-| Incumbent display | "(Incumbent)" inline with candidate name | Incumbent labeled in race entry | "Incumbent" badge/pill on politician card, visually equal to other candidates |
-| Candidate depth | Candidate Q&A responses from questionnaire, website link | Bio, campaign website, news links, endorsements | Full profile with legislative record, compass comparison card, Read & Rank verdicts — uniquely deeper |
-| Elected vs. appointed filter | Not offered | Not offered (separate encyclopedia pages) | Toggle on main representatives page — differentiating |
-| Retention judges | Shown in judicial section, labeled "Retention" | Shown in judicial elections section | Appear in BOTH Elected and Appointed filter tabs with "Retention Election" label — more accurate than single-category |
-| Party display | Yes — required for ballot | Yes | No — antipartisan mission; policy evidence instead |
-| Election date | Shown per race | Shown per race | Shown per race; primary vs. general explicitly labeled; days-until added when election is approaching |
-| Polling place / voting logistics | Yes — full voter services | External link | External link to county registrar only — out of scope for this milestone |
-| Ballot measures | Yes | Yes | Out of scope for v1 — link to official ballot |
-
----
-
-## Key Research Findings by Question
-
-### 1. Race grouping conventions in civic tech
-
-Standard pattern across all major civic voter guides (confirmed via Ballotpedia, lavote.gov, Monroe County 2026, LA County 2026, VOTE411): races are organized by **government type** (county, city, school board, judicial), then by **specific office within that body**. Within a body, ordering follows institutional importance (executive/chair roles before member seats; county-wide before district-specific). Voters recognize this hierarchy because it mirrors the physical sample ballot layout.
-
-For Essentials specifically: since the existing representatives page already uses "government body" as the organizing unit (e.g., "Monroe County Council," "Bloomington City Council"), Election Central should mirror that exact structure. This creates cognitive consistency for users switching between the two pages — the same organizations they see in Representatives also appear in Election Central, just filtered to contested seats.
-
-LA County 2026 example grouping (from Ballotpedia): County elections (Sheriff, Assessor, Board of Supervisors) → City elections by city → School board elections → Judicial elections.
-Monroe County 2026 example grouping (from Ballotpedia): County elections (Assessor, Clerk, Commissioner, Sheriff, Council) → Township elections → Judicial elections.
-
-### 2. Incumbent designation conventions
-
-"Incumbent" is the universal label used across every civic voter guide examined. Implementation note from Center for Civic Design field guide: candidate names should be presented with equal visual weight — the incumbent indicator should be a small secondary badge, not larger text or a prominent header treatment that could imply endorsement. When a seat is vacant (`is_vacant = true`), display "Open Seat" on the race header instead of showing an empty incumbent slot.
-
-### 3. Elected vs. appointed filter and the retention judge edge case
-
-The elected/appointed distinction is straightforward for most officials: `is_appointed_position` on `essentials.offices` already correctly captures this.
-
-The genuine edge case is retention judges. Indiana uses merit selection (Missouri Plan) for appellate and supreme court judges: governor appoints initially, then voters face a yes/no retention vote after the initial term. California uses the same system for Supreme Court and Courts of Appeal. At the trial court level (Monroe County Circuit Court judgeships), judges run in contested elections — those are "Elected," not appointed.
-
-Implementation rule for the filter:
-- `district_type = 'JUDICIAL'` AND `is_appointed_position = false` → Elected (contested election) → "Elected" tab only
-- `district_type = 'JUDICIAL'` AND `is_appointed_position = true` AND `is_candidate = true` → Retention election → BOTH "Elected" and "Appointed" tabs, with "Retention Election" label
-- `district_type = 'JUDICIAL'` AND `is_appointed_position = true` AND `is_candidate = false` → Appointed (no current election) → "Appointed" tab only
-
-All non-judicial appointed officials (cabinet secretaries, agency heads, appointed commissioners) stay in "Appointed" only — no dual-filter needed.
-
-### 4. Election date display
-
-Users want a single clear answer to "when do I vote?" Show the **next upcoming** date prominently near the page header or race group header. For jurisdictions with a primary followed by a general, show the primary date first (it is sooner) and label it "Primary Election." After the primary passes, the display automatically shifts to the general date. A days-until countdown adds urgency when the election is close (under 30-60 days); for distant elections the full date is sufficient.
-
-Monroe County 2026 dates: May 5, 2026 Primary. November general date TBD for those races advancing.
-LA County 2026 dates: June 2, 2026 Primary. November 3, 2026 General.
-
-### 5. User expectations from election information pages
-
-Based on patterns from Center for Civic Design (2025), VOTE411, Ballotpedia, and Wisconsin's MyVote platform:
-
-- Users scan rather than read — race names and candidate names must be large, clear, and scannable; do not bury important information in dense paragraphs
-- Users want their specific ballot, not every race in the county — address-based filtering to relevant races is table stakes (EV's existing model already does this correctly)
-- Users trust the platform when it shows the official election date and links to the registrar for logistics (polling places, registration deadlines)
-- Empty states must explain themselves — blank sections without context destroy trust faster than missing data does; "no races found" with a reason is better than silence
-- Party identification is expected by most voters on partisan sites, but EV's antipartisan stance is a deliberate differentiator — policy alignment tools (compass, Read & Rank) substitute for party labels
+Accessible hue selection: use EV design tokens as anchors:
+- Federal: `ev-muted-blue` (#00657c) — already the primary brand color; use as-is for federal tier
+- State: amber/gold family (near `ev-yellow` #fed12e) — warm tone distinguishes from teal
+- Local: split within-local by sub-group; green family for city/municipal, neutral/gray for township, rust/orange for county
 
 ---
 
 ## Sources
 
-- [Ballotpedia: Monroe County, Indiana, elections, 2026](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — Race grouping patterns, confirmed judicial election types (HIGH confidence)
-- [Ballotpedia: Los Angeles County, California, elections, 2026](https://ballotpedia.org/Los_Angeles_County,_California,_elections,_2026) — LA race structure, Board of Supervisors + Sheriff + judicial (HIGH confidence)
-- [Ballotpedia: Judicial selection in the states](https://ballotpedia.org/Judicial_selection_in_the_states) — Retention election systems by state; Indiana and California both use merit selection for appellate courts (HIGH confidence)
-- [VOTE411 Voter Guide](https://www.vote411.org) — Grouping and display conventions observed; address-filtering confirmed (MEDIUM confidence — interface observed, no direct design doc available)
-- [Center for Civic Design: Designing Election Websites (2025)](https://civicdesign.org/wp-content/uploads/2025/03/Designing-Election-Websites-2.pdf) — User scanning behavior, plain language, avoiding visual decoration (MEDIUM confidence — referenced via search result, PDF binary)
-- [CivicEngine / BallotReady developer docs](https://developers.civicengine.com/) — Data source option; coverage confirmed as comprehensive; pricing requires direct contact, no confirmed free nonprofit tier (MEDIUM confidence)
-- [LA County Registrar: Upcoming Elections](https://www.lavote.gov/home/voting-elections/current-elections/upcoming-elections) — Official election dates confirmed (HIGH confidence)
-- [2026 Greater Bloomington Chamber: Election candidates](https://www.chamberbloomington.org/2026-election-candidates.html) — Monroe County races confirmed for 2026 (HIGH confidence)
-- [Uchicago Center for Effective Government: Elected vs. Appointed Judges](https://effectivegov.uchicago.edu/primers/elected-vs-appointed-judges) — Retention election mechanics and hybrid nature confirmed (HIGH confidence)
-- Codebase: `ev-accounts/backend/src/lib/essentialsService.ts` — Confirmed existing schema flags (`is_appointed_position`, `is_incumbent`, `is_candidate`, `is_elected` derived field, `district_type`) (HIGH confidence)
-- Codebase: `ev-accounts/backend/migrations/033_politician_schema.sql` — Column availability confirmed (HIGH confidence)
+- Codebase: `essentials/src/components/PoliticianCard.jsx` — current badge pattern (text, absolute position) (HIGH confidence)
+- Codebase: `ev-ui/src/PoliticianCard.jsx` — full ev-ui card implementation, badge/compassButton props (HIGH confidence)
+- Codebase: `essentials/src/lib/classify.js` — full tier/group classification already available (HIGH confidence)
+- Codebase: `essentials/src/utils/ballotStatus.js` — ballot window computation already available (HIGH confidence)
+- Codebase: `essentials/src/components/LocationBrowser.jsx` — browse API already wired (HIGH confidence)
+- Codebase: `essentials/src/pages/Landing.jsx` — current landing page is address-only, no location buttons (HIGH confidence)
+- Codebase: `essentials/src/components/CompassPreview.jsx` — CompassPreview CTA mode and radar chart mode both implemented (HIGH confidence)
+- [Lucide — landmark icon](https://lucide.dev/icons/landmark) — tagged as government, institution, capitol (HIGH confidence — confirmed exists)
+- [Lucide — vote icon](https://lucide.dev/icons/vote) — tagged as ballot, political (HIGH confidence — confirmed exists)
+- [Lucide — gavel icon](https://lucide.dev/icons/gavel) — tagged as justice, law, court (HIGH confidence — confirmed exists)
+- [Lucide React npm](https://www.npmjs.com/package/lucide-react) — tree-shakable, 30M+ weekly downloads, actively maintained (HIGH confidence)
+- [USWDS Icon List component](https://designsystem.digital.gov/components/icon-list/) — icon + adjacent text as accessible metadata pattern, `aria-hidden` on decorative icons (MEDIUM confidence — confirmed via search, not fetched directly)
+- [WCAG 1.4.1 Use of Color](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html) — color must be supplemented by other visual distinction (HIGH confidence)
+- [NN/G: Progressive Disclosure](https://www.nngroup.com/articles/progressive-disclosure/) — tooltip-on-icon as progressive disclosure for secondary metadata (HIGH confidence)
+- [Supabase Storage Image Transformations](https://supabase.com/docs/guides/storage/serving/image-transformations) — confirmed: no face detection / smart crop; cover/contain/fill only (HIGH confidence)
+- [GOV.UK bank holiday redesign case study](https://civicdesign.org/) — progressive disclosure and information hierarchy in government UI (MEDIUM confidence — referenced via civic design search; not fetched directly)
 
 ---
 
-*Feature research for: v2026.3.8 Essentials Election Central + elected/appointed filter*
-*Researched: 2026-03-29*
+*Feature research for: v2026.4.1 Essentials Visual Polish & Election Improvements*
+*Researched: 2026-04-02*

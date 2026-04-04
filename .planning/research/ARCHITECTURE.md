@@ -1,586 +1,368 @@
-# Architecture Research
+# Architecture Patterns
 
-**Domain:** Civic data platform — election/candidate feature integration into existing Essentials app
-**Researched:** 2026-03-29
-**Confidence:** HIGH — based on direct code inspection of ev-accounts, essentials, and CivicEngine API docs
-
----
-
-## System Overview
-
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                    essentials (Cloudflare Pages)                          │
-│                                                                           │
-│  /                    /results?q=<addr>    /elections?q=<addr>            │
-│  Landing              Results              ElectionCentral (NEW)          │
-│  (address entry)      (representatives)    (upcoming races)               │
-│                                                                           │
-│  /politician/:id      /candidate/:id                                      │
-│  Profile              CandidateProfile     <- reused as-is                │
-│                                                                           │
-│  State: ?q= URL param (shared across /results and /elections)            │
-│         sessionStorage ev:results (back-nav cache, Results only)         │
-│         sessionStorage ev:election-results (NEW, Election Central cache) │
-└────────────────────────────┬─────────────────────────────────────────────┘
-                             │ apiFetch (Bearer JWT, optional)
-                             │ all routes under /api/
-┌────────────────────────────▼─────────────────────────────────────────────┐
-│               ev-accounts (Express/TypeScript, Render)                    │
-│                                                                           │
-│  EXISTING routes:                      NEW routes:                        │
-│  POST /api/essentials/candidates/search  POST /api/elections/search       │
-│  GET  /api/essentials/politicians/:id    GET  /api/elections/:id/races    │
-│  GET  /api/essentials/politicians/:id/*                                   │
-│                                                                           │
-│  EXISTING services:                    NEW service:                       │
-│  essentialsService.ts                  electionService.ts                 │
-│  essentialsProfileService.ts                                              │
-│  geocodingService.ts (shared)                                             │
-│  cache.ts (shared)                                                        │
-└────────────────────────────┬─────────────────────────────────────────────┘
-                             │ pool.query() -- essentials schema not in PostgREST
-                             │ supabaseAnon -- public reads where RLS allows
-┌────────────────────────────▼─────────────────────────────────────────────┐
-│               Supabase PostgreSQL (PostGIS enabled)                       │
-│                                                                           │
-│  essentials schema (existing)          essentials schema (new tables)     │
-│  +-- politicians                       +-- elections                      │
-│  +-- offices                           +-- races                          │
-│  +-- districts                         +-- race_candidates                │
-│  +-- chambers                                                             │
-│  +-- geofences (PostGIS)                                                  │
-│  +-- election_records (per-politician                                     │
-│  |   historical record, from BallotReady)                                 │
-│  +-- politician_images, contacts, etc.                                    │
-└──────────────────────────────────────────────────────────────────────────┘
-                             │ nightly import script (Python or tsx)
-┌────────────────────────────▼─────────────────────────────────────────────┐
-│          CivicEngine GraphQL API (https://bpi.civicengine.com/graphql)   │
-│          Address -> elections -> races -> candidacies -> candidates       │
-│          Existing vendor relationship (BallotReady rebranded)            │
-└──────────────────────────────────────────────────────────────────────────┘
-```
+**Domain:** Visual polish — icon system, tier hues, compass-first cards, headshot validation
+**Researched:** 2026-04-02
+**Milestone:** v2026.4.1 Essentials Visual Polish & Election Improvements
+**Overall confidence:** HIGH — all findings from direct source inspection
 
 ---
 
-## Component Responsibilities
+## Current Component Map
 
-| Component | Responsibility | Status |
-|-----------|----------------|--------|
-| `essentials/src/pages/ElectionCentral.jsx` | Address input, fetch races, render grouped by org/position | NEW |
-| `essentials/src/pages/Results.jsx` | Add elected/appointed filter toggle | MODIFIED |
-| `essentials/src/lib/classify.js` | Elected/appointed filter logic using existing `is_elected` field | MODIFIED |
-| `essentials/src/pages/CandidateProfile.jsx` | Full profile for election candidates | REUSED as-is |
-| `ev-accounts/src/routes/elections.ts` | `POST /api/elections/search`, `GET /api/elections/:id/races` | NEW |
-| `ev-accounts/src/lib/electionService.ts` | DB queries against new election tables | NEW |
-| `essentials.elections` (DB table) | Stores imported election events (date, name, type) | NEW |
-| `essentials.races` (DB table) | One row per position in an election, with geo_id+mtfcc for geofence lookup | NEW |
-| `essentials.race_candidates` (DB table) | One row per person running, links to politicians where matched | NEW |
-| Import script | Pulls CivicEngine `races` query by lat/lng, upserts to DB, runs nightly | NEW |
+### ev-ui (shared library, v0.1.54)
 
----
+| Component | File | What it does |
+|-----------|------|-------------|
+| `PoliticianCard` | `PoliticianCard.jsx` | Horizontal/vertical card with image, name, title, subtitle, badge pill, compass button. Inline SVG compass icon. All styles via `tokens.js` inline objects (not Tailwind classes). |
+| `CategorySection` | `CategorySection.jsx` | Section wrapper with title pill, info tooltip, external website link. Styles via `tokens.js`. Grid layout with `auto-fill minmax(250px)`. |
+| `PoliticianProfile` | `PoliticianProfile.jsx` | Full politician profile view. Contains its own `buildTitleAndSubtitle()` — duplicates logic from Results.jsx. |
+| `tokens.js` | `tokens.js` | Single source of truth: brand colors, full color scales (050-950 per hue), pillar themes (inform/connect/empower), semantic tokens, data viz palette, spacing, typography, shadows, motion. |
+| `tailwind-preset.js` | `tailwind-preset.js` | Tailwind theme config consuming tokens. Flattens color scales to `ev-coral-500`, `ev-teal-300`, etc. |
 
-## Recommended Project Structure
+### essentials (app, React 19 + Tailwind CSS 4)
 
-```
-ev-accounts/backend/src/
-+-- routes/
-|   +-- elections.ts             # NEW - POST /search, GET /:id/races
-|   +-- essentialsCandidates.ts  # EXISTING - no change needed
-+-- lib/
-|   +-- electionService.ts       # NEW - DB queries for elections/races/candidates
-|   +-- essentialsService.ts     # EXISTING - no change (filter is frontend-only)
-|   +-- geocodingService.ts      # EXISTING - shared, no change
-+-- migrations/
-    +-- 042_elections_schema.sql # NEW - elections, races, race_candidates tables
-
-essentials/src/
-+-- pages/
-|   +-- ElectionCentral.jsx      # NEW - Election Central page
-|   +-- Results.jsx              # MODIFIED - elected/appointed filter toggle
-+-- components/
-|   +-- ElectionGroup.jsx        # NEW - renders one election with its races
-|   +-- RaceCard.jsx             # NEW - renders one race/position with candidates
-+-- hooks/
-|   +-- useElectionData.js       # NEW - mirrors usePoliticianData pattern
-+-- lib/
-|   +-- api.jsx                  # MODIFIED - add fetchElections()
-|   +-- classify.js              # MODIFIED - add filterByAppointmentStatus()
-+-- App.jsx                      # MODIFIED - add /elections route
-```
+| File | Role |
+|------|------|
+| `src/pages/Results.jsx` | Main page: address search, two-panel layout, representatives + elections tabs. Contains its own title/subtitle/qualification logic that partially duplicates `PoliticianProfile.jsx`. |
+| `src/pages/Landing.jsx` | Single address input box with Search button. No location shortcuts or coverage messaging. |
+| `src/lib/classify.js` | `classifyCategory(pol)` returns `{ tier: "Federal"|"State"|"Local", group: string }`. Exports ordered group arrays (`FEDERAL_ORDER`, `STATE_ORDER`, `LOCAL_ORDER`) and a display name map. |
+| `src/components/ElectionsView.jsx` | Elections tab renderer. Uses `CategorySection` + `PoliticianCard` from ev-ui. Has its own simpler `getTier()` that maps `district_type` prefix to Federal/State/Local. |
+| `src/components/PoliticianCard.jsx` | Separate, older vertical-layout card used in PoliticianGrid. Different visual and props from ev-ui's `PoliticianCard`. No tier color logic. |
+| `src/components/CompassPreview.jsx` | Popover showing mini radar chart triggered from compass button. |
+| `src/components/LocationBrowser.jsx` | Browse-by-location dropdown used in Results.jsx for non-address searches. |
 
 ---
 
-## Question 1: New Tables vs Extending Existing Tables
+## Integration Points by Feature
 
-### Recommendation: Three new tables in the essentials schema
+### 1. Icon System
 
-The existing `essentials.election_records` table is a per-politician historical win/loss record (from the now-decommissioned BallotReady import). It is structurally incompatible with Election Central because:
-- It is politician-keyed, not election-keyed
-- It has no concept of races grouping multiple candidates for the same seat
-- It carries historical results, not upcoming contested races
+**Where icons currently appear:**
+- `PoliticianCard` (ev-ui) — one hard-coded inline SVG (compass/radar icon inside the teal compass button). The `badge` prop renders a coral text pill (e.g., "On Ballot", "Candidate", "Vacant").
+- `CategorySection` (ev-ui) — no icon slots exist.
+- `ElectionsView.jsx` (essentials) — tier separator rows show plain text ("Federal", "State", "Local") with a horizontal rule.
 
-**New tables needed:**
+**Proposed icon slots and ownership:**
 
-```sql
--- One row per election event
-CREATE TABLE essentials.elections (
-  id           UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  external_id  TEXT UNIQUE,          -- CivicEngine election ID
-  name         TEXT NOT NULL,
-  election_day DATE NOT NULL,
-  state        TEXT,
-  is_primary   BOOLEAN NOT NULL DEFAULT FALSE,
-  is_runoff    BOOLEAN NOT NULL DEFAULT FALSE,
-  created_at   TIMESTAMPTZ DEFAULT now(),
-  updated_at   TIMESTAMPTZ DEFAULT now()
-);
+| Surface | Icon type | Where it lives | Integration point |
+|---------|-----------|---------------|------------------|
+| PoliticianCard | "On Ballot", "Compass Available", branch type | ev-ui | Add `icons?: string[]` prop alongside existing `badge`. Render as 16px SVG glyphs with tooltip on hover. |
+| CategorySection title | Branch indicator (legislative/executive/judicial) | ev-ui | Add optional `icon?: React.ReactNode` prop rendered left of the title pill. |
+| ElectionsView tier headers | Federal/State/Local tier icon | essentials | Keep local — `getTier()` is essentials-only; add icon beside the tier label. |
 
--- One row per position being contested in an election
-CREATE TABLE essentials.races (
-  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  external_id    TEXT UNIQUE,        -- CivicEngine race ID
-  election_id    UUID NOT NULL REFERENCES essentials.elections(id) ON DELETE CASCADE,
-  position_name  TEXT NOT NULL,
-  organization   TEXT NOT NULL,      -- for UI grouping ("City of Bloomington")
-  seats          INT NOT NULL DEFAULT 1,
-  is_partisan    BOOLEAN,
-  is_recall      BOOLEAN NOT NULL DEFAULT FALSE,
-  is_runoff      BOOLEAN NOT NULL DEFAULT FALSE,
-  is_unexpired   BOOLEAN NOT NULL DEFAULT FALSE,
-  geo_id         TEXT,               -- from CivicEngine position.geoId
-  mtfcc          TEXT,               -- from CivicEngine position.mtfcc
-  created_at     TIMESTAMPTZ DEFAULT now(),
-  updated_at     TIMESTAMPTZ DEFAULT now()
-);
+**New file: `ev-ui/src/icons.js`**
 
--- One row per candidate per race
-CREATE TABLE essentials.race_candidates (
-  id             UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  race_id        UUID NOT NULL REFERENCES essentials.races(id) ON DELETE CASCADE,
-  politician_id  UUID REFERENCES essentials.politicians(id),  -- NULL if not in our DB
-  external_id    TEXT,               -- CivicEngine candidacy ID
-  first_name     TEXT NOT NULL,
-  last_name      TEXT NOT NULL,
-  is_incumbent   BOOLEAN NOT NULL DEFAULT FALSE,
-  is_certified   BOOLEAN NOT NULL DEFAULT TRUE,
-  withdrawn      BOOLEAN NOT NULL DEFAULT FALSE,
-  result         TEXT,               -- NULL until election is over
-  created_at     TIMESTAMPTZ DEFAULT now(),
-  updated_at     TIMESTAMPTZ DEFAULT now()
-);
+Export named SVG function components (e.g., `BallotIcon`, `CompassIcon`, `LegislativeIcon`, `ExecutiveIcon`, `JudicialIcon`). Pattern matches the existing inline `CompassIcon` inside PoliticianCard — simple 24x24 paths, `currentColor`, no external dependency.
 
-CREATE INDEX idx_races_election_id ON essentials.races(election_id);
-CREATE INDEX idx_races_geo_id_mtfcc ON essentials.races(geo_id, mtfcc);
-CREATE INDEX idx_race_candidates_race_id ON essentials.race_candidates(race_id);
-CREATE INDEX idx_race_candidates_politician_id ON essentials.race_candidates(politician_id);
-CREATE INDEX idx_elections_election_day ON essentials.elections(election_day);
-```
+**Signal sources in Results.jsx (already available):**
+- `politicianIdsWithStances.has(pol.id)` → "Compass Available" icon
+- `getSeatBallotStatus(pol.term_end, pol.term_date_precision)` → "On Ballot" icon (currently renders as text badge)
+- `pol.district_type` → branch type (NATIONAL_EXEC/STATE_EXEC/LOCAL_EXEC = Executive; NATIONAL_UPPER/LOWER/STATE_UPPER/LOWER/LOCAL = Legislative; JUDICIAL = Judicial)
 
-**The is_appointed field situation:** `is_appointed_position` on `essentials.offices` is already populated and drives `is_elected` in the existing API response (`is_elected = NOT COALESCE(o.is_appointed_position, false)` — from essentialsService.ts line 449). The elected/appointed filter needs no new DB columns. Data quality of `is_appointed_position` should be validated before making it a prominent UI filter — some BallotReady-sourced values may be stale.
+**Backward compatibility:** The `badge` prop stays. `icons[]` is additive. Existing callsites that pass only `badge="On Ballot"` continue working unchanged.
 
 ---
 
-## Question 2: Address Context Sharing Between Results and Election Central
+### 2. Tier Hue Differentiation
 
-### Recommendation: Shared ?q= URL param, separate page routes
+**Current state:** No tier hue logic anywhere. `classifyCategory()` returns tier strings used only for filtering/ordering. `CategorySection` title pill has uniform `colors.bgWhite` background and `colors.borderMedium` border — no color variation.
 
-The existing Results page pattern:
-- Address comes in via `?q=<address>` URL param
-- User can also re-enter an address on the page
-- `sessionStorage ev:results` caches rendered data for back-navigation
+**Where tier hue logic belongs — `tokens.js`:**
 
-Election Central mirrors this exactly:
+`tokens.js` already has `colorScales` (full per-hue scales) and a `pillars` map (inform/connect/empower). Add a new `tierColors` export alongside `pillars`:
 
+```js
+// tokens.js addition
+export const tierColors = {
+  Federal: {
+    accent: colorScales.teal['500'],       // #00657C
+    light:  colorScales.teal['050'],       // #F5F9FA
+    border: colorScales.teal['200'],       // #C0E8F2
+    text:   colorScales.teal['700'],       // #003E4D — AA-safe
+  },
+  State: {
+    accent: colorScales.skyblue['500'],    // #59B0C4
+    light:  colorScales.skyblue['050'],    // #F6F8F8
+    border: colorScales.skyblue['200'],    // #CDE0E5
+    text:   colorScales.skyblue['700'],    // #327E8F — AA-safe
+  },
+  Local: {
+    accent: colorScales.yellow['600'],     // #FAC400
+    light:  colorScales.yellow['050'],     // #FAF9F5
+    border: colorScales.yellow['200'],     // #F1E7C0
+    text:   colorScales.yellow['900'],     // #7B640E — AA-safe
+  },
+};
 ```
-/results?q=123+Main+St+Bloomington+IN    <- existing representatives
-/elections?q=123+Main+St+Bloomington+IN  <- new election races
-```
 
-**Cross-page navigation:** When the user has a formattedAddress from a completed Results search, link to `/elections?q=${encodeURIComponent(formattedAddress)}`. The Election Central page initializes its address bar from the URL param, skips the geocoding step if the address is already validated, and fetches election data immediately.
+**Propagation to CategorySection:**
 
-**SessionStorage:** Use `ev:election-results` (separate key from `ev:results`) for Election Central's back-nav cache.
+Add an optional `tier?: 'Federal' | 'State' | 'Local'` prop. When present, apply `tierColors[tier].light` as titlePill background and `tierColors[tier].border` as titlePill border. When absent, use existing neutral defaults — backward compatible.
 
-**Why a separate page, not a tab in Results:** The data model is fundamentally different — "who represents me today" vs "who is running for office." Civic platforms (Vote.org, Ballotpedia, Vote411) all present these as distinct entry points. Mixing them in one page creates UX confusion and significantly complicates the Results page which is already the most complex component in the codebase (~900 lines).
+**Where `tier` comes from:**
+
+`classify.js` `classifyCategory()` already produces `{ tier, group }`. In Results.jsx, the render loop maps groups to `CategorySection` calls. The `tier` is already in scope at the call site; it just needs to be passed down.
+
+**Why not Tailwind classes:** All `PoliticianCard` and `CategorySection` styles are inline objects resolved from `tokens.js` (not Tailwind classes). Dynamic Tailwind class strings (e.g., `bg-ev-teal-050`) are not safe with Tailwind 4's static analyzer. The inline-from-tokens pattern is correct and consistent.
 
 ---
 
-## Question 3: API Endpoint Design for Election Data
+### 3. Compass-First Card
 
-### Recommendation: New route prefix /api/elections/
+**Current situation:** `PoliticianCard` (ev-ui) is photo-first. The compass button is a small teal circle in the far right. The compass is a secondary affordance even when stances are available.
 
-Keep elections separate from `/api/essentials/` to maintain clear domain boundaries. The essentials routes handle current officeholders; elections handle upcoming contests.
+**Component decision — new local component in essentials:**
 
-**Endpoints:**
+| Option | Verdict |
+|--------|---------|
+| New `CompassFirstCard` in essentials | Prototype here first. Fast, zero library publish cycle, can be iterated without affecting CompassV2 or EV-readrank. |
+| Variant prop on ev-ui `PoliticianCard` | Risks making an already complex component (horizontal + vertical + 3 badge states) harder to maintain before the design is confirmed. |
+| New component directly in ev-ui | Premature. ev-ui is published to npm; API churn during prototyping requires version bumps and consumer updates. |
 
-```
-POST /api/elections/search
-  Body:    { address: string }
-  Returns: ElectionSearchResult[]
-  Headers: X-Formatted-Address (backend-validated address)
-  Auth:    optionalAuth
+**Recommended:** Build `CompassFirstCard.jsx` in `essentials/src/components/`. Promote to ev-ui in a follow-up milestone once the layout is confirmed. This follows the precedent of `CompassPreview.jsx` (still local to essentials).
 
-GET /api/elections/:electionId/races
-  Returns: Race[] with candidates for a specific election
-  Auth:    optionalAuth
-```
+**Data flow for compass-first card:**
 
-**Response shape for POST /api/elections/search:**
+All signals are already available in Results.jsx:
+- `politicianIdsWithStances.has(pol.id)` — whether compass data exists
+- `onCompassClick` handler — opens `CompassPreview` popover
+- `getImageUrl(pol)` — optional (photo becomes secondary or omitted)
+- `pol.first_name`, `pol.last_name`, `cardTitle`, `subtitle` — identity text
 
-```typescript
-interface ElectionSearchResult {
-  election: {
-    id: string;
-    name: string;
-    election_day: string;       // "2027-05-06"
-    is_primary: boolean;
-  };
-  races: Array<{
-    id: string;
-    position_name: string;
-    organization: string;       // for UI grouping
-    seats: number;
-    is_partisan: boolean | null;
-    candidates: Array<{
-      id: string;
-      politician_id: string | null;  // link to full profile if in our DB
-      first_name: string;
-      last_name: string;
-      is_incumbent: boolean;
-      withdrawn: boolean;
-    }>;
-  }>;
-}
-```
+The compass-first card uses the radar mini-preview as the primary visual block (replacing the photo slot), with the politician name and title below. When no stances exist, falls back to the standard photo layout.
 
-**Implementation pattern:** Uses the same `geocodeAddress()` + PostGIS ST_Covers geofence lookup as `getRepresentativesByAddress()`. After getting matched geofence `geo_id+mtfcc` pairs, JOIN against `essentials.races` to find upcoming races in those geofences, then JOIN `elections` and `race_candidates`.
-
-**Caching:** Use existing `cache.ts` with a 24-hour TTL keyed on a hash of the matched geofence IDs. Much longer than the 90-day officeholder cache is fine — election data only changes when the nightly import runs.
-
-**Why not extend existing endpoints:** `POST /essentials/candidates/search` returns `PoliticianFlatRecord[]` — a flat array with a specific contract that the Results page depends on. Adding elections would require either a breaking change or an awkward response envelope. A new endpoint with its own response type is the correct separation.
+**Feature flag approach:** Add a toggle button in the ResultsHeader area (similar to the existing "Search by Address / Browse by Location" mode toggle). Store in local state (`useState`) — no persistence needed for prototype phase.
 
 ---
 
-## Question 4: Frontend Routing
+### 4. Headshot Crop Validation
 
-### Recommendation: /elections as a peer route to /results in App.jsx
+**Current handling:** `PoliticianCard` (ev-ui) uses `objectFit: 'cover'` on an 80px-wide × 96px-tall container (horizontal variant). No crop validation exists. An `onError` handler falls back to initials. There is no aspect-ratio checking or focal point control.
+
+**The problem:** 503 CDN-hosted headshots vary in crop quality — landscape photos, portrait shots with excessive headroom, low-resolution thumbnails all render poorly at 80×96 with center-crop.
+
+**Recommended two-phase approach:**
+
+Phase A — Immediate improvement with no data changes:
+
+Add an `imageFocalPoint?: { x: number, y: number }` prop to `PoliticianCard` (ev-ui). Apply as `objectPosition: '${x*100}% ${y*100}%'` on the `<img>` element. Default the prop to `{ x: 0.5, y: 0.15 }` — top-weighted center. Politicians' faces appear in the upper portion of most headshot photos; this default improves rendering across all 503 images without any per-image data.
+
+Phase B — Audit script (one-time, runs against Supabase):
+
+Write a Node.js script that fetches each CDN URL from `essentials.politician_images`, downloads the image via `sharp`, checks aspect ratio and minimum dimension, and flags outliers. Output: a markdown report identifying images needing re-crop or replacement. No automated changes — human reviews and re-uploads as needed.
+
+**Validation approach comparison:**
+
+| Approach | Complexity | When | Notes |
+|----------|-----------|------|-------|
+| Default top-weighted `objectPosition` | Low | Immediate | Improves most headshots; no data changes |
+| One-time audit script + manual fixes | Medium | One-time | Catches true outliers; doesn't scale with 503 images |
+| Runtime face detection (browser ML) | High | Per render | Overkill; adds large bundle |
+| Build-time automated crop correction | High | CI | Requires server-side image processing infrastructure |
+
+---
+
+### 5. Landing Page Location Buttons
+
+**Current state:** `Landing.jsx` is 74 lines — a centered heading, subtitle, and single address input. No coverage area messaging, no location shortcuts.
+
+**Recommended implementation:** Hardcoded coverage area buttons added below the search input. Two buttons for the two supported areas (Monroe County IN / LA County CA). Each calls `handleSearch()` with a representative address that will resolve to the correct geofence set.
+
+No new components needed. No API changes. The `LocationBrowser` component (used in Results.jsx browse mode) is not appropriate for the landing page — it is a dropdown for browsing all bodies, not a "quick start" affordance.
+
+**Simple implementation:**
 
 ```jsx
-// App.jsx - add this route
-<Route path="/elections" element={<ElectionCentral />} />
-// All existing routes unchanged
+// Below the search input in Landing.jsx
+<div className="flex gap-3 justify-center mt-4">
+  <button onClick={() => navigate('/results?q=Bloomington%2C%20IN')}>
+    Monroe County, IN
+  </button>
+  <button onClick={() => navigate('/results?q=Los%20Angeles%2C%20CA')}>
+    Los Angeles County, CA
+  </button>
+</div>
 ```
 
-**Navigation integration:** Add an "Elections" tab/link in the Results page header. When the user has an active address, the link carries `?q=` forward — same pattern as Read & Rank's `?address=` passthrough from v2026.3.6.
-
-**ElectionCentral page structure:**
-
-```
-ElectionCentral
-+-- Address search bar (reuse useGooglePlacesAutocomplete hook from Results)
-+-- useElectionData hook (mirrors usePoliticianData)
-+-- Results grouped display:
-    +-- ElectionGroup (one per election, sorted by election_day ascending)
-    |   +-- Header: "May 6, 2027 - Bloomington City Primary"
-    |   +-- RaceCard[] grouped by organization then position
-    |       +-- Position title ("City Council - District 1")
-    |       +-- Organization badge ("City of Bloomington")
-    |       +-- Incumbent indicator
-    |       +-- Candidate list (linked to /politician/:id or /candidate/:id where matched)
-    +-- Empty state if no upcoming elections found for address
-```
-
-**Elected/Appointed filter on Results:**
-
-The `is_elected` field is already in every `PoliticianFlatRecord` response. The filter is purely frontend — no API or service changes needed.
-
-```javascript
-// classify.js addition
-export function filterByAppointmentStatus(politicians, filter) {
-  if (filter === 'all') return politicians;
-  if (filter === 'elected') return politicians.filter(p => p.is_elected === true);
-  if (filter === 'appointed') return politicians.filter(p => p.is_elected === false);
-  return politicians;
-}
-```
-
-**Retention judges:** Retention judges have `is_appointed_position = false` in the current schema (they face voters on a retention ballot). `is_elected` = `NOT is_appointed_position` = `true`. They correctly appear under the Elected filter. If data quality issues exist, a fallback check against `essentials.judge_details.election_type = 'retention'` can override classification.
+Pair with a short coverage disclaimer: "Currently covering Monroe County, IN and Los Angeles County, CA."
 
 ---
 
-## Question 5: Data Import Pipeline for Election Data
+## Component Boundaries (Revised for v2026.4.1)
 
-### Recommendation: CivicEngine GraphQL API, nightly import script
-
-**Why CivicEngine:** The workspace already has CivicEngine API documentation and the BallotReady data dictionary — this is an existing vendor relationship (BallotReady rebranded as CivicEngine). The `races` query accepts `location: { point: { latitude, longitude } }` and returns nested election, position (with geo_id/mtfcc), and candidacy data in a single request.
-
-**Import script approach** (Python or tsx, consistent with existing pipeline scripts):
-
-1. Query CivicEngine `races` for Bloomington IN coordinates with `electionDay: { gte: today }`
-2. Query CivicEngine `races` for LA County coordinates with the same filter
-3. Upsert `essentials.elections`, `essentials.races`, `essentials.race_candidates` (ON CONFLICT external_id DO UPDATE)
-4. Best-effort name-match `race_candidates` to `essentials.politicians` by full name within same geo_id scope
-5. Invalidate election cache keys
-6. Run nightly via Render cron job or manual trigger
-
-**CivicEngine query for import:**
-
-```graphql
-query getUpcomingRaces($lat: Float!, $lng: Float!, $afterDate: ISO8601Date!) {
-  races(
-    filterBy: { electionDay: { gte: $afterDate } }
-    location: { point: { latitude: $lat, longitude: $lng } }
-    orderBy: { field: ELECTION_DAY, direction: ASC }
-  ) {
-    nodes {
-      id
-      databaseId
-      isPrimary
-      isRecall
-      isRunoff
-      isUnexpired
-      seats
-      election {
-        id
-        name
-        electionDay
-        state
-      }
-      position {
-        name
-        geoId
-        mtfcc
-        level
-        places { nodes { name } }
-      }
-      candidacies(includeUncertified: false) {
-        id
-        isCertified
-        withdrawn
-        result
-        candidate { id firstName lastName }
-      }
-    }
-  }
-}
 ```
+ev-ui (npm library)
+├── tokens.js         MODIFY: add tierColors export
+├── icons.js          NEW: named SVG icon exports (BallotIcon, CompassIcon, etc.)
+├── PoliticianCard    MODIFY: add icons[] prop, imageFocalPoint prop
+├── CategorySection   MODIFY: add optional tier prop for hue
+└── (unchanged: PoliticianProfile, RadarChartCore, SiteHeader, StanceAccordion, ...)
 
-**Geofence matching for user queries:** The `geo_id` + `mtfcc` columns on `essentials.races` (populated from `position.geoId` + `position.mtfcc` during import) enable the same PostGIS join used by `getRepresentativesByAddress()`. The election search endpoint geocodes the user's address, gets matched geofence IDs via ST_Covers, then JOINs `races` on `geo_id + mtfcc IN (matched values)`. No live CivicEngine calls per user request.
+essentials (app)
+├── pages/Landing.jsx            MODIFY: add location buttons + coverage text
+├── pages/Results.jsx            MODIFY: pass tier to CategorySection; pass icons to PoliticianCard
+├── components/CompassFirstCard  NEW: compass-first layout prototype (local, not ev-ui yet)
+├── components/ElectionsView     MODIFY: add tier icons to separator rows; remove incumbent subtitle
+└── (unchanged: CompassPreview, LocationBrowser, SegmentedControl, ...)
+```
 
 ---
 
 ## Data Flow
 
-### Election Central request flow
+### Icon signal resolution (Results.jsx → PoliticianCard)
 
 ```
-User enters address
-    |
-    v
-ElectionCentral -> useElectionData hook
-    |
-    v
-POST /api/elections/search  { address }
-    |
-    v
-electionService.searchElectionsByAddress(address)
-    |
-    +-- geocodingService.geocodeAddress(address)  [Census Geocoder - existing]
-    |
-    +-- getGeofencesByPoint(lat, lng)  [PostGIS ST_Covers - existing]
-    |
-    +-- SQL:
-    |   SELECT e.*, r.*, rc.*
-    |   FROM essentials.races r
-    |   JOIN essentials.elections e ON e.id = r.election_id
-    |   JOIN essentials.race_candidates rc ON rc.race_id = r.id
-    |   WHERE (r.geo_id, r.mtfcc) IN (matched geofence pairs)
-    |     AND e.election_day >= today
-    |   ORDER BY e.election_day ASC, r.organization, r.position_name
-    |
-    v
-Return ElectionSearchResult[] with X-Formatted-Address header
-    |
-    v
-ElectionCentral renders: grouped by election date, then organization
+For each pol in renderPoliticianCard():
+
+  icons = []
+
+  politicianIdsWithStances.has(pol.id)
+    → true: icons.push('compass')
+
+  getSeatBallotStatus(pol.term_end, pol.term_date_precision)
+    → truthy: icons.push('ballot')  [replaces badge="On Ballot"]
+
+  pol.district_type ends with _EXEC
+    → icons.push('executive')
+  pol.district_type contains UPPER or LOWER
+    → icons.push('legislative')
+  pol.district_type === 'JUDICIAL'
+    → icons.push('judicial')
+
+  <PoliticianCard icons={icons} ... />
 ```
 
-### Elected/Appointed filter flow
+### Tier color flow
 
 ```
-User toggles filter on Results page
-    |
-    v
-appointmentFilter state ('all' | 'elected' | 'appointed') in Results.jsx
-    |
-    v
-filteredPoliticians = filterByAppointmentStatus(politicians, appointmentFilter)
-    |
-    v
-classify() runs on filtered list -> sections re-render
-No network request - entirely client-side
+classify.js
+  classifyCategory(pol) → { tier: "Federal"|"State"|"Local", group: string }
+
+Results.jsx
+  for each (tier, groups) in displayedPoliticians:
+    <CategorySection tier={tier} ... />   // passes tier down
+
+CategorySection
+  import { tierColors } from './tokens'
+  const hue = tierColors[tier]            // resolved from tokens.js
+  titlePill style: { background: hue?.light, borderColor: hue?.border }
+  (if no tier prop → existing neutral defaults unchanged)
 ```
 
-### Import pipeline flow
+### Compass-first card data flow
 
 ```
-Nightly trigger (cron or manual)
-    |
-    v
-CivicEngine GraphQL: races(location: Bloomington IN lat/lng, electionDay: >= today)
-CivicEngine GraphQL: races(location: LA County lat/lng, electionDay: >= today)
-    |
-    v
-Upsert essentials.elections ON CONFLICT (external_id) DO UPDATE
-Upsert essentials.races ON CONFLICT (external_id) DO UPDATE
-Upsert essentials.race_candidates ON CONFLICT (external_id) DO UPDATE
-    |
-    v
-Best-effort name match: race_candidates -> essentials.politicians
-    |
-    v
-Invalidate cache keys: elections:geofences:*
+Results.jsx state:
+  [compassMode, setCompassMode] = useState(false)   // toggle
+
+  if (compassMode && politicianIdsWithStances.has(pol.id)):
+    render <CompassFirstCard pol={pol} onCompassClick={...} onClick={...} />
+  else:
+    render <PoliticianCard ... />   // unchanged path
 ```
 
 ---
 
-## Integration Points
+## Anti-Patterns to Avoid
 
-### New: ev-accounts/backend/src/routes/elections.ts
+### Anti-Pattern 1: Dynamic Tailwind class interpolation for tier hues
 
-Wire into `index.ts`:
+**What:** `` className={`bg-ev-${tier.toLowerCase()}-050`} ``
 
-```typescript
-import electionsRouter from './routes/elections.js';
-app.use('/api/elections', electionsRouter);
-```
+**Why bad:** Tailwind 4 uses static analysis to build the CSS output. Dynamic string construction means the class is never included in the output. The element will have no background.
 
-Architecture rule: `routes/elections.ts` calls `electionService.ts` functions only. Direct `pool.query()` or `supabaseAdmin` calls in route files are banned by `architecture.test.ts`.
-
-### New: ev-accounts/backend/src/lib/electionService.ts
-
-Uses `pool.query()` directly (not supabaseAnon) because the essentials schema is not in the PostgREST exposed schema list — consistent with how `essentialsService.ts` and `essentialsProfileService.ts` work.
-
-Shares `geocodingService.geocodeAddress()` with `essentialsService.ts` — no duplication.
-
-### Modified: essentials/src/App.jsx
-
-Add `/elections` route. All existing routes (`/results`, `/politician/:id`, `/candidate/:id`) unchanged.
-
-### Modified: essentials/src/pages/Results.jsx
-
-Add filter toggle component. The `is_elected` field is already in the response. Filter state is local to Results — no changes to `usePoliticianData` hook or API calls.
-
-### Modified: essentials/src/lib/classify.js
-
-Add `filterByAppointmentStatus(politicians, filter)` function. No changes to existing `classifyCategory()` or `orderedEntries()` logic.
-
-### Modified: essentials/src/lib/api.jsx
-
-Add `fetchElections(address)` function that calls `POST /api/elections/search`.
-
-### Existing: essentials/src/pages/CandidateProfile.jsx
-
-No changes needed. Candidates with a `politician_id` match link to `/politician/:id`. For unmatched candidates (no politician_id), the simplest path is to link to the `/candidate/:id` page if a lightweight profile is needed, or display inline in the RaceCard without a link.
+**Instead:** Inline styles with `tierColors[tier].light` from tokens.js, or a pre-enumerated static lookup object mapping tier strings to full Tailwind class strings.
 
 ---
 
-## Build Order (Dependencies Considered)
+### Anti-Pattern 2: Adding an icon library dependency to ev-ui
 
-**Phase 1 — Database schema and import (unblocks everything)**
-1. Write and apply `042_elections_schema.sql`
-2. Write CivicEngine import script for Bloomington IN + LA County CA
-3. Verify data quality: elections, races, race_candidates rows present with correct geo_id/mtfcc
-4. Validate geo_id/mtfcc values match existing `essentials.geofences` table entries
+**What:** Installing Heroicons, Lucide, Phosphor, etc. in ev-ui.
 
-**Phase 2 — Backend election search endpoint**
-5. Write `electionService.ts` with `searchElectionsByAddress()`
-6. Write `routes/elections.ts` with `POST /search`
-7. Wire into `index.ts`, add to 62-route manifest for architecture test
-8. Integration test with Bloomington address, verify response shape
+**Why bad:** ev-ui has zero icon dependencies today. Adding one increases the bundle size for all three consumers (CompassV2, essentials, EV-readrank). Heroicons adds ~15KB min+gz for the full set.
 
-**Phase 3 — Election Central frontend**
-9. Write `useElectionData.js` hook (mirror usePoliticianData)
-10. Add `fetchElections()` to `api.jsx`
-11. Write `ElectionGroup.jsx` and `RaceCard.jsx` components
-12. Write `ElectionCentral.jsx` page with address search
-13. Add `/elections` route to `App.jsx`
-14. Add Elections nav link in Results header with ?q= passthrough
-
-**Phase 4 — Elected/Appointed filter on Results**
-15. Add `filterByAppointmentStatus()` to `classify.js`
-16. Add filter toggle UI to `Results.jsx` (local state, no hook changes)
-17. Validate retention judge behavior with known test politicians
-18. Test with Bloomington + LA County addresses
-
-**Phase 5 — Candidate profile links**
-19. Link candidates with `politician_id` to `/politician/:id`
-20. Decide on experience for unmatched candidates (inline display vs stub page)
+**Instead:** Inline SVG components exported from `ev-ui/src/icons.js`. The compass button in PoliticianCard is already an inline SVG — this is the established pattern in the codebase.
 
 ---
 
-## Anti-Patterns
+### Anti-Pattern 3: Runtime image crop detection in the browser
 
-### Anti-Pattern 1: Live CivicEngine proxying per user request
+**What:** Face-detection API, canvas pixel analysis, or ML model to validate headshots at render time.
 
-**What people do:** Forward each `/api/elections/search` call directly to CivicEngine GraphQL.
+**Why bad:** Adds significant JS weight, delays rendering, fires on every image load, and adds latency for a problem that is better solved once at import time.
 
-**Why it's wrong:** CivicEngine rate limits apply, adds 200-800ms latency per request, election data changes at most daily, and the auth token cannot be safely used in a per-request path under load.
-
-**Do this instead:** Nightly import into local DB. Serve from DB with 24h cache. Consistent with how Congress.gov, LegiScan, and OnBoard data are handled in this project.
-
-### Anti-Pattern 2: Extending POST /essentials/candidates/search
-
-**What people do:** Add an `includeElections` query param and append election data to the existing endpoint response.
-
-**Why it's wrong:** That endpoint returns `PoliticianFlatRecord[]` — a flat array. Elections require a structurally different response (grouped by election, then race, then candidates). Changing the response shape would break Results page.
-
-**Do this instead:** New `POST /api/elections/search` endpoint with its own response type.
-
-### Anti-Pattern 3: Frontend-only filter via new API query param
-
-**What people do:** Add `?elected=true` to `POST /essentials/candidates/search` and filter at the DB level.
-
-**Why it's wrong:** `is_elected` is already returned in every response. DB-level filtering saves negligible payload at this scale (50-200 records), requires changes to service interface, route, and hook, and adds a tested query branch. Frontend filtering in classify.js is simpler, zero-risk, and sufficient.
-
-**Do this instead:** `filterByAppointmentStatus()` in classify.js operating on the already-fetched array.
-
-### Anti-Pattern 4: Repurposing election_records for upcoming races
-
-**What people do:** Add upcoming race rows to `essentials.election_records` since it has "election" in the name.
-
-**Why it's wrong:** `election_records` is per-politician historical data (past wins/losses). It has no race grouping, no org grouping, no geofence linkage, and no concept of contested seats with multiple candidates.
-
-**Do this instead:** New `elections` + `races` + `race_candidates` tables as described above.
+**Instead:** Default top-weighted `objectPosition: '50% 15%'` on PoliticianCard images (catches 80% of cases), plus a one-time offline audit script for the remaining outliers.
 
 ---
 
-## Scaling Considerations
+### Anti-Pattern 4: Promoting CompassFirstCard to ev-ui during prototype
 
-| Scale | Architecture Adjustments |
-|-------|--------------------------|
-| Current (2 geographies, ~50-200 races) | Nightly import, 24h cache, single SQL JOIN — adequate |
-| 10 states, ~2000 races | Add compound index on (election_day, geo_id, mtfcc); still single query |
-| National, 50K+ races | Separate elections schema; paginate Election Central; consider pre-computed race lookup table by geofence |
+**What:** Adding the compass-first card layout to ev-ui while its API is still being iterated.
+
+**Why bad:** ev-ui publishes to GitHub Packages npm registry. Breaking or changing a component's prop interface requires bumping the version and running `npm update @chrisandrewsedu/ev-ui` in all three consuming apps. Prototype churn is expensive to propagate.
+
+**Instead:** Keep CompassFirstCard in essentials until the design is confirmed across at least one full release cycle. Then promote to ev-ui with a stable prop API.
+
+---
+
+### Anti-Pattern 5: Hardcoded tier colors in components (not tokens.js)
+
+**What:** Writing `backgroundColor: '#F5F9FA'` directly in CategorySection for Federal.
+
+**Why bad:** Color values must stay in tokens.js — that is the single source of truth synced to Penpot. Direct hex values in components break the design system and cannot be updated centrally.
+
+**Instead:** Always reference `tierColors[tier].light` (or equivalent) from `tokens.js`.
+
+---
+
+## Build Order (Dependency-Ordered)
+
+| Step | Work | Location | Dependency |
+|------|------|----------|-----------|
+| 1 | Add `tierColors` to `tokens.js` | ev-ui | Nothing — first |
+| 2 | Create `icons.js` with SVG exports | ev-ui | Nothing — parallel with step 1 |
+| 3 | Add `tier` prop to `CategorySection` | ev-ui | Step 1 |
+| 4 | Add `icons[]` prop to `PoliticianCard` | ev-ui | Step 2 |
+| 5 | Add `imageFocalPoint` prop to `PoliticianCard` | ev-ui | Independent; batch with step 4 |
+| 6 | Publish ev-ui v0.1.55 | npm | Steps 1-5 complete |
+| 7 | Update essentials to ev-ui v0.1.55 | essentials | Step 6 |
+| 8 | Wire `tier` into CategorySection calls in Results.jsx | essentials | Step 7 |
+| 9 | Wire `icons[]` into PoliticianCard calls in Results.jsx + ElectionsView.jsx | essentials | Step 7 |
+| 10 | Add location buttons + coverage text to Landing.jsx | essentials | Independent; no ev-ui dep |
+| 11 | Remove incumbent subtitle from ElectionsView | essentials | Independent |
+| 12 | Run headshot audit script | scripts | Independent; batch with steps 10-11 |
+| 13 | Build `CompassFirstCard.jsx` prototype | essentials | Steps 7-9 (card patterns finalized) |
+
+Steps 1+2 and 3+4+5 can be done in parallel. Steps 10, 11, and 12 are independent of each other.
+
+---
+
+## Scalability Considerations
+
+| Concern | Now | After v2026.4.1 |
+|---------|-----|----------------|
+| Icon bundle size | 0 (1 inline SVG) | ~2-4KB (handful of inline SVGs in icons.js) |
+| Tier color tokens | None | 12 color values in tokens.js |
+| ev-ui consumers affected | 3 | 3 — new props are optional, no breaking changes |
+| Headshot validation overhead | None | Zero runtime cost (objectPosition is CSS-only) |
+| CompassFirstCard maintenance | N/A | Local to essentials; no cross-app impact until promoted |
 
 ---
 
 ## Sources
 
-- Direct code inspection: `ev-accounts/backend/src/lib/essentialsService.ts` — is_elected derivation (line 449), address search flow, geofence matching
-- Direct code inspection: `ev-accounts/backend/src/lib/essentialsProfileService.ts` — election_records table structure, stances query pattern
-- Direct code inspection: `ev-accounts/backend/src/routes/essentialsCandidates.ts` — POST /search endpoint pattern, optionalAuth usage
-- Direct code inspection: `ev-accounts/backend/src/lib/candidateService.ts` — service layer pattern, cache.ts usage
-- Direct code inspection: `essentials/src/pages/Results.jsx` — address flow (sessionStorage, ?q= param), showCandidates toggle pattern
-- Direct code inspection: `essentials/src/hooks/usePoliticianData.js` — hook pattern to mirror for useElectionData
-- Direct code inspection: `essentials/src/App.jsx` — routing structure
-- Direct code inspection: `essentials/src/lib/api.jsx` — API call patterns, apiFetch usage
-- Direct file inspection: `CivicEngine GraphQL API Documentation.md` — races/elections/candidacies schema, location filter, Relay pagination
-- Direct file inspection: `BallotReadyDataDictionary.csv` — is_appointed field semantics, candidacy_id concept
-- `.planning/PROJECT.md` — v2026.3.8 milestone requirements
+All findings from direct code inspection — no external verification required for integration questions.
 
----
-
-*Architecture research for: Election Central integration into Essentials*
-*Researched: 2026-03-29*
+- `ev-ui/src/PoliticianCard.jsx` — prop interface, styling approach, existing inline SVG pattern
+- `ev-ui/src/CategorySection.jsx` — prop interface, styling approach
+- `ev-ui/src/tokens.js` — colorScales, colors, pillars, semantic tokens, spacing
+- `ev-ui/src/tailwind-preset.js` — how tokens map to Tailwind class names
+- `ev-ui/src/index.js` / `index.jsx` — exported public API
+- `ev-ui/package.json` — current version: 0.1.54
+- `essentials/src/pages/Results.jsx` — renderPoliticianCard(), classify flow, compass integration, tier loop
+- `essentials/src/pages/Landing.jsx` — current state (74 lines, single input)
+- `essentials/src/lib/classify.js` — classifyCategory(), tier/group taxonomy
+- `essentials/src/components/ElectionsView.jsx` — getTier(), tier separator rendering
+- `essentials/src/components/PoliticianCard.jsx` — legacy vertical card (separate from ev-ui)
+- `.planning/PROJECT.md` — v2026.4.1 target features

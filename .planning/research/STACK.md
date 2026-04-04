@@ -1,246 +1,295 @@
-# Stack Research
+# Technology Stack
 
-**Project:** v2026.3.8 Essentials Election Central
-**Domain:** Election/candidate data integration — Election Central page + elected/appointed filter
-**Researched:** 2026-03-29
-**Confidence:** MEDIUM — election APIs verified from official docs and community; state SOS machine-readable availability is LOW confidence for Indiana local races
+**Project:** v2026.4.1 Essentials Visual Polish & Election Improvements
+**Researched:** 2026-04-02
+**Overall confidence:** HIGH for icon/tooltip libraries (npm-verified); MEDIUM for CSS-only tooltip approach; HIGH for CSS object-position headshot fix; HIGH for Tailwind CSS 4 tier theming
 
 ---
 
 ## Context: What Is and Is Not New
 
-This document covers **only what is new for v2026.3.8**. The prior STACK.md (v2026.3.7) covers Treasury Tracker.
+This document covers **only what is new for v2026.4.1**. Prior STACK.md covers v2026.3.8 (Election Central).
 
-**Existing stack — do not re-research or reinstall:**
-- React 19 + Vite 7 + Tailwind CSS 4 + react-router-dom ^7.8.2 (essentials app)
-- Express 4 + TypeScript + Node.js 20 native `fetch()` (ev-accounts backend)
-- Supabase PostgreSQL + PostGIS (existing `essentials.*` schema)
-- `@chrisandrewsedu/ev-ui ^0.1.53` — PoliticianCard, PoliticianProfile reusable for candidates
-- Google Maps Places autocomplete (already wired for address input)
-- `essentials.election_records` table — already exists with election_name, election_date, position_name, result, party_name, is_primary, is_runoff, is_active columns
-- `is_appointed_position` on `essentials.offices` — `is_elected` already derived as `!row.is_appointed_position` in `essentialsService.ts`
-- `is_incumbent` — already in use across `essentialsService.ts`; not a stored column but included in existing queries
+**Existing stack — do not re-research:**
+- React 19 + Vite 7 + Tailwind CSS 4 (`tailwindcss ^4.1.12`) + react-router-dom `^7.8.2`
+- `@chrisandrewsedu/ev-ui ^0.1.53` (PoliticianCard, PoliticianProfile, RadarChartCore, SiteHeader, CategorySection)
+- `@react-spring/web ^10.0.2` — animation
+- Supabase PostgreSQL + PostGIS
+- Google Maps Places autocomplete (wired)
+- `recharts ^3.8.0` (already in package.json)
+- Cloudflare Pages
 
----
-
-## Election Data APIs — Research Findings
-
-### Primary Recommendation: Google Civic Information API
-
-**Status:** Active and free as of 2026-03. **The Representatives API was shut down April 30, 2025** — do not use it. The Elections API (`voterInfoQuery`) is still active.
-
-**Base URL:** `https://www.googleapis.com/civicinfo/v2`
-
-**Key endpoints:**
-- `GET /elections` — returns list of supported upcoming elections with `id`, `name`, `electionDay`
-- `GET /voterinfo?address=<addr>&electionId=<id>` — returns contests, candidates, polling info for a voter address
-
-**Contest data returned per call:**
-- `contests[]`: `office`, `level` (`country` / `administrativeArea1` / `administrativeArea2` / `locality`), `district.name`, `district.scope`, `type` (`General` / `Primary` / `Retention` / `Runoff` / `Referendum`)
-- `candidates[]` per contest: `name`, `party`, `candidatesUrl`, `photoUrl`, `phone`, `email`, `channels[]` (social media)
-
-**Authentication:** API key via query param `?key=<KEY>`. Free, register at Google Cloud Console.
-
-**Rate limit:** 25,000 requests/day, 2,500/100 seconds — sufficient for Election Central (one call per address per election, cached 24 hours).
-
-**Coverage caveat:** Data published 2-4 weeks before election day via the Voting Information Project. Indiana primary (May 5, 2026) and general (Nov 2026) plus California primary (June 2, 2026) should be covered for state + federal races. Bloomington city council local races may not be covered — VIP data coverage depends on county cooperation with the project.
-
-**New env var needed:** `GOOGLE_CIVIC_API_KEY` — add to ev-accounts `.env` and Render environment.
-
-### Secondary Recommendation: FEC OpenAPI (Federal Only)
-
-**Use for:** Federal candidate incumbency verification (House, Senate) — more authoritative than Google Civic for incumbency status.
-
-**Base URL:** `https://api.open.fec.gov/v1`
-
-**Key endpoint:** `GET /candidates/?state=IN&election_year=2026&office=H&api_key=<KEY>`
-
-**Authentication:** Free API key from https://api.data.gov/signup/
-
-**Rate limit:** 1,000 req/hour (free tier) — sufficient for batch incumbency verification.
-
-**Coverage:** Federal candidates only. Not useful for state or local races.
-
-**New env var needed:** `FEC_API_KEY`
-
-### Not Recommended: Commercial APIs (Budget Constraint)
-
-**BallotReady/CivicEngine GraphQL API** — Comprehensive US candidate data including Indiana and California local races. GraphQL schema well-suited to race/candidate queries. Pricing requires contact; likely $1,000–$5,000/year for nonprofits. Do not pursue unless the Google Civic API proves insufficient and budget is allocated.
-
-**Ballotpedia API** — Geographic point-based queries, incumbency data, biographies. Pricing not public; contact required. Same recommendation as BallotReady — defer unless budgeted.
-
-### Not Recommended: State SOS APIs
-
-**Indiana SOS** — No machine-readable API for candidate filings. Data available as PDFs and web pages only. The 2026 primary candidate list is accessible via indianacitizen.org as an interactive table, but has no stable CSV download endpoint. Bloomington/Monroe County local races require manual data entry.
-
-**California SOS / CAL-ACCESS** — The Election Night Reporting API at `api.sos.ca.gov` covers only election night results, not pre-election candidate data. CAL-ACCESS covers statewide candidate filings (Form 501) only — not LA city council or county supervisor races. Not useful for upcoming race discovery.
-
-**OpenElections** — Historical results only (post-election CSVs). Not useful for upcoming races.
-
-**Democracy Works Elections API** — Focused on voting logistics (polling places, registration deadlines), not candidate data. Pricing opaque.
+**New capabilities needed:**
+1. Icon system — subtle, readable icons for secondary metadata (branch type, on-ballot, compass availability)
+2. Tooltip/popover — hover detail disclosure on icons
+3. Headshot crop fix — face centering without JS library overhead
+4. Tier hue differentiation — Federal/State/Local + sub-tier visual hierarchy
+5. Compass-first card prototype — no photos, data-forward layout
 
 ---
 
 ## Recommended Stack — New Additions Only
 
-### Core Technologies
+### New npm Dependencies
 
-| Technology | Version | Purpose | Why Recommended |
-|------------|---------|---------|-----------------|
-| Google Civic Information API | v2 (current) | Primary source for election contest + candidate data | Free, 25K req/day, returns grouped contests by level and district, covers Indiana and California state/federal races, still active (only Representatives API was retired) |
-| FEC OpenAPI | v1 (current) | Federal candidate incumbency verification | Free, authoritative for federal incumbency, already fits pattern of external API clients in ev-accounts (same `fetch()` + AbortSignal pattern) |
+| Package | Version | Purpose | Why |
+|---------|---------|---------|-----|
+| `lucide-react` | `^0.471.0` (latest: `1.7.0`) | Icon system for badge replacement | 1,500+ icons on a consistent 24px grid; tree-shakeable (one import = one icon, nothing else ships); React 19 peer dep explicitly listed (`^16.5.1 \|\| ^17.0.0 \|\| ^18.0.0 \|\| ^19.0.0`); 29.4M weekly downloads; maintained by community fork of Feather |
+| `@floating-ui/react` | `^0.27.19` | Tooltip/popover positioning for icon hover details | ~3kB for positioning core; handles viewport collision detection, flip/shift middleware; accessible ARIA patterns built-in; peer dep `react >= 17.0.0` (React 19 compatible); no pre-built styles — compose with Tailwind |
 
-### Supporting Libraries
+**Total new bundle impact:** `lucide-react` per-icon ~1–2kB after tree-shaking; `@floating-ui/react` ~3kB positioning core + ~4kB React interaction hooks = ~7kB gzipped total for tooltip primitives. Acceptable for Cloudflare Pages CDN.
 
-No new npm packages needed. The entire feature is implementable with the existing stack:
+### No Additional Dependencies Needed
 
-| Existing Tool | Reused For |
-|---------------|------------|
-| Native `fetch()` (Node.js 20) | Backend HTTP calls to Google Civic API + FEC API — same pattern as `geocodingService.ts` and `indianaAdapter.ts` |
-| `cache.ts` (ev-accounts) | Cache election contest responses — 24h TTL per address per election |
-| `zod` (ev-accounts) | Validate Google Civic API response shape before DB write |
-| `react-router-dom ^7.8.2` | New `/elections` route in essentials app |
-| Tailwind CSS 4 | Election race cards, incumbent/challenger badge styling |
-| `@chrisandrewsedu/ev-ui ^0.1.53` | PoliticianCard for candidate display; may need minor badge variant extension |
-| Existing staging workflow | Manual data entry for Monroe County local races with no API coverage |
+The following features are implemented **without new packages** using existing tools:
 
-### Development Tools
+| Feature | Approach | Uses |
+|---------|----------|------|
+| Tier hue differentiation | Tailwind CSS 4 `@theme` CSS custom properties + `data-tier` attribute selectors | Existing Tailwind CSS 4 |
+| Headshot crop fix | CSS `object-fit: cover` + `object-position: center top` on `<img>` | Native CSS |
+| Compass-first card prototype | New JSX layout in essentials app — reuse RadarChartCore from ev-ui | Existing ev-ui + React Spring |
 
-| Tool | Purpose | Notes |
-|------|---------|-------|
-| Google Civic API `electionQuery` | Discover available election IDs before querying voter info | Run once to find `electionId` values for IN/CA primaries and generals |
-| Existing `backend/migrations/` | Schema extension for new elections table + race_id column | Follow established migration pattern (numbered SQL files) |
+---
+
+## Library Details
+
+### lucide-react
+
+**Version confirmed via npm registry:** `1.7.0` (published ~1 day ago as of research date)
+**React 19 peer dependency:** `"react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0"` — confirmed compatible
+
+**Usage pattern:**
+```jsx
+// Named imports — tree-shaken by Vite. Only these icons ship in bundle.
+import { Building2, Scale, Landmark, Vote, Compass } from 'lucide-react'
+
+// Usage with size + stroke-width for EV design system feel
+<Landmark size={14} strokeWidth={1.5} className="text-ev-muted-blue" />
+```
+
+**Recommended icons for EV use cases:**
+- `Landmark` — federal/legislative branch
+- `Building2` — local/municipal  
+- `Scale` — judicial
+- `Vote` — on-ballot indicator
+- `Compass` — compass data available
+- `MapPin` — location/district
+- `Calendar` — election date
+- `ChevronRight` / `ChevronDown` — expand/collapse
+
+**Why not Heroicons:** Only 292 icons; missing several civic domain icons. Package is designed for Tailwind but the icon selection is too narrow for the range of metadata badges needed.
+
+**Why not Phosphor Icons:** `@phosphor-icons/react` has 16–18x bundle overhead vs lucide-react due to multi-weight component abstraction. At ~100K weekly downloads vs lucide's 29.4M, ecosystem momentum is lower.
+
+### @floating-ui/react
+
+**Version confirmed via npm registry:** `0.27.19` (published ~1 month ago)
+**React peer dependency:** `"react": ">=17.0.0"` — React 19 compatible
+
+**What it provides:** Positioning primitives (`useFloating`, `useHover`, `useFocus`, `useDismiss`, `useRole`, `FloatingPortal`) — NOT pre-built components. You compose with Tailwind classes.
+
+**Usage pattern for icon tooltip:**
+```jsx
+import {
+  useFloating, useHover, useFocus, useDismiss,
+  useRole, useInteractions, FloatingPortal, offset, flip, shift
+} from '@floating-ui/react'
+
+function IconTooltip({ icon: Icon, label, detail }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const { refs, floatingStyles, context } = useFloating({
+    open: isOpen,
+    onOpenChange: setIsOpen,
+    middleware: [offset(6), flip(), shift()],
+    placement: 'top',
+  })
+  const hover = useHover(context, { move: false })
+  const focus = useFocus(context)
+  const dismiss = useDismiss(context)
+  const role = useRole(context, { role: 'tooltip' })
+  const { getReferenceProps, getFloatingProps } = useInteractions([hover, focus, dismiss, role])
+
+  return (
+    <>
+      <span ref={refs.setReference} {...getReferenceProps()}>
+        <Icon size={14} strokeWidth={1.5} className="text-ev-muted-blue/70 hover:text-ev-muted-blue transition-colors" />
+      </span>
+      {isOpen && (
+        <FloatingPortal>
+          <div
+            ref={refs.setFloating}
+            style={floatingStyles}
+            {...getFloatingProps()}
+            className="z-50 max-w-[200px] rounded-md bg-gray-900 px-2.5 py-1.5 text-xs text-white shadow-lg"
+          >
+            {detail}
+          </div>
+        </FloatingPortal>
+      )}
+    </>
+  )
+}
+```
+
+**Why not CSS-only tooltips:** CSS `:hover` + `group-hover:` approaches work for simple labels but break at viewport edges (no collision detection), cannot be keyboard-focused accessibly without JS, and lack proper ARIA `tooltip` role. For a civic platform aimed at broad accessibility, floating-ui's ARIA implementation is the right trade-off.
+
+**Why not Headless UI Popover:** Headless UI's `Popover` is click-triggered by default; hover-on-icon requires workaround hacks (`Discussion #425` in headlessui repo). Floating-ui is purpose-built for hover tooltips.
+
+**Why not react-tooltip:** Heavier (~20kB); less composable with Tailwind; floating-ui gives same functionality at ~7kB total with more control.
+
+---
+
+## CSS Techniques — No New Libraries
+
+### Tier Hue Differentiation (Tailwind CSS 4 `@theme`)
+
+Tailwind CSS 4 uses CSS-first configuration via `@theme` directive. Design tokens defined in `@theme` become CSS custom properties available at runtime.
+
+**Approach: semantic color tokens per tier:**
+```css
+/* In essentials/src/index.css — add to @theme block */
+@theme {
+  /* Existing EV colors */
+  --color-ev-coral: #ff5740;
+  --color-ev-muted-blue: #00657c;
+  --color-ev-light-blue: #59b0c4;
+  --color-ev-yellow: #fed12e;
+
+  /* New tier accent colors — variations of existing palette */
+  --color-tier-federal: oklch(39% 0.12 230);    /* deep teal — authority */
+  --color-tier-state: oklch(52% 0.10 200);      /* mid teal — intermediate */
+  --color-tier-local: oklch(62% 0.09 170);      /* lighter teal-green — municipal */
+  --color-tier-county: oklch(55% 0.08 160);     /* county distinction */
+}
+```
+
+**Usage with `data-tier` attributes:**
+```jsx
+// CategorySection or card wrapper
+<div data-tier="federal" className="border-l-2 border-[--color-tier-federal]">
+```
+
+```css
+/* In index.css — scoped tier accent for section headers */
+[data-tier="federal"] .tier-accent { color: var(--color-tier-federal); }
+[data-tier="state"]   .tier-accent { color: var(--color-tier-state); }
+[data-tier="local"]   .tier-accent { color: var(--color-tier-local); }
+[data-tier="county"]  .tier-accent { color: var(--color-tier-county); }
+```
+
+**Why OKLCH:** Tailwind CSS 4 uses OKLCH natively for perceptually even color steps. Colors defined in OKLCH maintain consistent perceived brightness across the tier spectrum, ensuring the hue shift reads as a hierarchy rather than arbitrary color change. Use the same lightness/chroma channel, vary only hue.
+
+**Why not hue-rotate filter:** `hue-rotate()` shifts ALL colors of an element including text and borders simultaneously. For cards that may contain photos, this creates unpredictable results. Per-token semantic colors give precise control.
+
+### Headshot Face Centering (CSS Only)
+
+**Problem:** Politicians' faces are cropped at mid-chest in many headshots. The `<img>` element uses `object-fit: cover` but defaults to `object-position: center center`, centering the torso instead of the face.
+
+**Fix — no JS library needed:**
+```jsx
+// In PoliticianCard / avatar img element
+<img
+  src={headshot_url}
+  alt={name}
+  className="w-full h-full object-cover object-top"
+  // object-position: top = aligns image top edge to container top
+  // Face is almost always in the top 40% of a standard headshot photo
+/>
+```
+
+**When `object-top` is insufficient:** For photos where the face is off-center laterally, use inline style:
+```jsx
+<img
+  style={{ objectPosition: 'center 15%' }}
+  className="w-full h-full object-cover"
+/>
+```
+
+**Why not react-image-crop (`v11.0.10`):** react-image-crop is a cropping *tool* for user interaction (drag-to-crop with handles). It is not a display fix — it's for building an admin upload flow where a human crops the image. For the headshot audit use case (fixing display of pre-uploaded CDN images), CSS `object-position` is the correct and zero-cost solution. react-image-crop would only be appropriate if building a headshot upload interface in the staging admin.
+
+**Why not Browser Face Detection API:** The Shape Detection API (`FaceDetector`) has limited browser support (~70% as of 2026) and is behind experimental flags in Firefox. Unreliable for production. `object-position: top` with a 1:1 square crop container captures the face in 90%+ of standard portrait headshots.
+
+### Compass-First Card Prototype
+
+No new libraries. The prototype uses:
+- `RadarChartCore` from `@chrisandrewsedu/ev-ui` (already installed)
+- Tailwind CSS 4 grid utilities for compact layout
+- `@react-spring/web` for card entry animation (already installed)
+- Text hierarchy using Tailwind `text-xs`/`text-sm`/`text-base` + `font-semibold`
+
+The prototype explores **removing `<img>` entirely** and leading with:
+1. Politician name + title (large)
+2. Mini `RadarChartCore` (compact, 80–100px, non-interactive)
+3. 2–3 top stance topics as text chips
+4. Contact/profile link
+
+This is a layout experiment, not a library decision. No new deps required.
 
 ---
 
 ## Installation
 
 ```bash
-# No new packages — everything is already installed
-
-# New env vars to add to ev-accounts .env:
-# GOOGLE_CIVIC_API_KEY=<from Google Cloud Console>
-# FEC_API_KEY=<from api.data.gov/signup>
+cd essentials
+npm install lucide-react @floating-ui/react
 ```
 
----
-
-## Schema Extensions (New Migration Needed)
-
-The existing `essentials.election_records` table is oriented around a politician's participation in a past election. Election Central needs to model **future races with multiple candidates**. Two additions are needed:
-
-**New table: `essentials.elections`**
-```sql
-CREATE TABLE essentials.elections (
-  id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  election_name   TEXT NOT NULL,
-  election_date   DATE NOT NULL,
-  state           CHAR(2) NOT NULL,
-  external_id     TEXT,          -- Google Civic electionId
-  is_active       BOOLEAN NOT NULL DEFAULT true,
-  created_at      TIMESTAMPTZ DEFAULT now()
-);
-```
-
-**New columns on `essentials.election_records`:**
-```sql
-ALTER TABLE essentials.election_records
-  ADD COLUMN IF NOT EXISTS elections_id    UUID REFERENCES essentials.elections(id),
-  ADD COLUMN IF NOT EXISTS race_id         TEXT,    -- groups candidates in same race
-  ADD COLUMN IF NOT EXISTS is_incumbent    BOOLEAN DEFAULT false,
-  ADD COLUMN IF NOT EXISTS data_source     TEXT;    -- 'google_civic', 'fec', 'manual'
-```
-
-This approach reuses the existing `election_records` table (which already has `politician_id`, `election_date`, `party_name`, `position_name`, `is_active`) and adds grouping + incumbency columns needed for Election Central.
+**ev-ui update:** No ev-ui version bump needed for these features. Icons and tooltips are implemented directly in the essentials app, not in the shared library (they are too specific to the visual polish milestone).
 
 ---
 
 ## Alternatives Considered
 
-| Recommended | Alternative | When to Use Alternative |
-|-------------|-------------|------------------------|
-| Google Civic API (free) | BallotReady/CivicEngine GraphQL | If budget allows ~$1,000–5,000/year and comprehensive local race coverage (including Bloomington city council) is required without manual data entry |
-| Google Civic API (free) | Ballotpedia API | Same condition — budget allocated and richer candidate biography data needed |
-| Manual staging entry for IN local races | Scraping Indiana Citizen / SOS web pages | Web scraping is brittle; staging workflow already exists and is proven; local Bloomington races are manageable in volume |
-| Extend `essentials.election_records` | New `essentials.races` + `essentials.race_candidates` tables | A fully normalized race schema is cleaner long-term but overkill for MVP; extending election_records is faster and preserves existing data |
-| Native `fetch()` for API calls | `node-fetch` or `axios` | No reason to add a dep; Node.js 20 fetch is stable and already used throughout the backend |
+| Category | Recommended | Alternative | Why Not |
+|----------|-------------|-------------|---------|
+| Icons | `lucide-react` | `@heroicons/react` | Only 292 icons — insufficient coverage for civic metadata categories (judicial, compass, ballot) |
+| Icons | `lucide-react` | `@phosphor-icons/react` | 16–18x bundle overhead from multi-weight abstraction; 0.1M vs 29.4M weekly downloads |
+| Icons | `lucide-react` | `react-icons` (mega bundle) | react-icons does NOT tree-shake by default — imports entire icon families; known bundle bloat |
+| Tooltips | `@floating-ui/react` | CSS `group-hover:` | No collision detection; not keyboard-accessible; no proper ARIA tooltip role |
+| Tooltips | `@floating-ui/react` | `react-tooltip` | ~20kB vs ~7kB; less composable with Tailwind; floating-ui is the underlying engine react-tooltip itself uses |
+| Tooltips | `@floating-ui/react` | Headless UI `Popover` | Headless UI Popover is click-activated by default; hover requires hacks; not the right primitive |
+| Headshots | CSS `object-position: top` | `react-image-crop` | react-image-crop is an upload/editing tool, not a display fix |
+| Headshots | CSS `object-position: top` | Browser Face Detection API | ~70% browser support; experimental in Firefox; not reliable for production |
+| Tier colors | Tailwind CSS 4 `@theme` tokens | `hue-rotate()` filter | hue-rotate shifts ALL colors including photos unpredictably; semantic tokens give precise control |
 
 ---
 
-## What NOT to Use
+## What NOT to Add
 
-| Avoid | Why | Use Instead |
-|-------|-----|-------------|
-| Google Civic API Representatives API | Shut down April 30, 2025 — returns errors | Already replaced by PostGIS geofence flow in v1.5 |
-| `BALLOTREADY_API_KEY` | Decommissioned in v1.5 per PROJECT.md; all infrastructure removed | Google Civic API voterInfoQuery |
-| OpenElections | Historical results CSV only — no upcoming race data | Google Civic API |
-| California SOS `api.sos.ca.gov` | Election night results only, not pre-election candidate discovery; returned 403 on direct access | Google Civic API voterInfoQuery |
-| CAL-ACCESS for LA races | Statewide Form 501 filings only — LA city council and county supervisor candidates not included | Google Civic API with lat/lng for LA area |
-| Indiana SOS web scraping | No stable machine-readable format; brittle to layout changes | Manual staging entry for local races |
-| Democracy Works Elections API | Pricing opaque; focused on voter logistics not candidate data | Google Civic API for contests |
-
----
-
-## Stack Patterns for Election Central Implementation
-
-**Fetching election contests (primary flow):**
-1. User enters address on Election Central page (same Google Maps autocomplete component as Results page)
-2. Backend geocodes via existing Census Geocoder (already in `geocodingService.ts`) to get lat/lng
-3. Backend calls `GET /civicinfo/v2/elections` to get active election IDs
-4. For each upcoming election, call `GET /civicinfo/v2/voterinfo?address=<addr>&electionId=<id>`
-5. Cache response 24 hours per `(address_hash, election_id)` key using existing `cache.ts`
-6. Merge Google Civic contest data with manually-entered DB races (DB wins on conflict — same pattern as politician data pipeline)
-7. Return grouped contest list via `GET /api/essentials/elections?lat=X&lng=Y`
-
-**Elected/appointed filter toggle:**
-- `is_elected` is already derived in `essentialsService.ts` as `!row.is_appointed_position`
-- Frontend filter: add `filter` query param (`elected` / `appointed` / `all`) to existing `GET /api/essentials/search`
-- Backend: add `AND` clause using existing `is_appointed_position` field
-- Retention judges: query param `include_retention=true` or treat `partisan_type = 'retention'` as a special case shown under both filters
-
-**Race-by-race display grouping:**
-- Group by `level` hierarchy: Federal → State → Local (same tier system as Results page)
-- Within level, group by `district` or `office`
-- Within race: incumbent card first with "Incumbent" badge (ev-coral chip), then challenger cards in party-neutral order
-- Use existing `PoliticianCard` from ev-ui for candidate cards — extend with optional `badge` prop if not already present
-
-**Candidate profile pages:**
-- Reuse existing `Profile.jsx` + `PoliticianProfile` from ev-ui
-- Candidates that exist in `essentials.politicians` (marked `is_incumbent = false`) already render correctly
-- Non-incumbent challengers who are NOT in the essentials DB need a lightweight candidate record created via the staging workflow before they appear on profiles
+| Avoid | Why |
+|-------|-----|
+| `react-icons` | Does not tree-shake correctly — ships entire icon families; adds 100KB+ to bundle |
+| `tippy.js` / `@tippyjs/react` | Heavy (~12kB); floating-ui is the modern replacement and is already more widely adopted |
+| `react-tooltip` | Built on floating-ui internally; adding the wrapper adds weight without benefit when you control the tooltip component |
+| `framer-motion` | Already have `@react-spring/web`; two animation libraries creates bundle bloat and API confusion |
+| Any cropping library | The headshot problem is a display-side CSS fix, not a data problem. Fix `object-position` at the img element level |
+| `clsx` or `classnames` | Tailwind CSS 4 does not need a class merger — `cn()` utility is a one-liner if needed: `const cn = (...c) => c.filter(Boolean).join(' ')` |
 
 ---
 
 ## Version Compatibility
 
-| Package | Version | Notes |
-|---------|---------|-------|
-| react-router-dom | ^7.8.2 | Already installed; add `/elections` route without changes |
-| Tailwind CSS | ^4.1.12 | Already installed; no config changes needed |
-| `@chrisandrewsedu/ev-ui` | ^0.1.53 | Already installed; `PoliticianCard` and `PoliticianProfile` reusable; may need `badge` prop for incumbent indicator |
-| Node.js fetch() | Node 20 built-in | No version change; `AbortSignal.timeout()` pattern already used in `geocodingService.ts` |
+| Package | Version | React 19 | Notes |
+|---------|---------|-----------|-------|
+| `lucide-react` | `1.7.0` | YES — explicit `^19.0.0` peer dep | Named imports tree-shaken by Vite |
+| `@floating-ui/react` | `0.27.19` | YES — `>=17.0.0` peer dep | Does not use deprecated React APIs |
+| Tailwind CSS | `^4.1.12` | N/A — CSS only | `@theme` directive is v4 feature; already installed |
 
 ---
 
 ## Sources
 
-- [Google Civic Information API — Official Docs](https://developers.google.com/civic-information/docs/v2) — HIGH confidence; voterInfoQuery active as of 2025
-- [Google Civic API voterInfoQuery Fields](https://developers.google.com/civic-information/docs/v2/elections/voterInfoQuery) — HIGH confidence; candidate fields confirmed: name, party, candidatesUrl, photoUrl, phone, email, channels
-- [Google Civic API Representatives API Turndown Notice](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — HIGH confidence; Representatives API shut down April 30, 2025; Elections API still active
-- [Google Civic API Rate Limits](https://groups.google.com/g/google-civicinfo-api/c/1H7WZ0lG594) — MEDIUM confidence (community forum); 25,000/day confirmed
-- [Voting Information Project Election Coverage](https://www.votinginfoproject.org/election-coverage) — MEDIUM confidence; data available 2-4 weeks before election; specific IN/CA state coverage not itemized on the page
-- [FEC OpenAPI Documentation](https://api.open.fec.gov/developers/) — HIGH confidence; free federal candidate API; API key via api.data.gov
-- [BallotReady/CivicEngine API](https://organizations.ballotready.org/ballotready-api) — MEDIUM confidence; GraphQL, comprehensive coverage, pricing requires contact
-- [Ballotpedia API Developer Portal](https://developer.ballotpedia.org/geographic-apis/elections_by_point) — MEDIUM confidence; geographic point queries return races + candidates; pricing requires contact
-- [California SOS Election Night API](https://api.sos.ca.gov/) — LOW confidence; returned 403; documented in CA SOS PDF guide as REST JSON/CSV for election night results only
-- [CAL-ACCESS California Candidate Filings](https://cal-access.sos.ca.gov/Campaign/Candidates/) — HIGH confidence; statewide only; final 2026 candidate list available March 26, 2026
-- [Indiana SOS Candidate Information](https://www.in.gov/sos/elections/candidate-information/) — HIGH confidence; confirmed no machine-readable API
-- [Monroe County Indiana Elections 2026 — Ballotpedia](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — MEDIUM confidence; confirms May 5, 2026 primary with county assessor, circuit court clerk, commissioner, council, prosecuting attorney, recorder, sheriff races
-- [2026 LA County Elections — Wikipedia](https://en.wikipedia.org/wiki/2026_Los_Angeles_County_elections) — MEDIUM confidence; confirms June 2, 2026 primary; 8 of 15 LA City Council seats up; 2 of 5 LA County Supervisor seats up
-- [ev-accounts `essentialsService.ts`](../ev-accounts/backend/src/lib/essentialsService.ts) — HIGH confidence; confirmed `is_incumbent`, `is_appointed_position`, `is_elected` derivation
-- [ev-accounts schema export](../ev-schema-export.sql) — HIGH confidence; confirmed `essentials.election_records` existing columns and `essentials.offices.is_appointed_position`
-- [essentials `package.json`](../essentials/package.json) — HIGH confidence; confirmed existing dependency list; no new packages needed
+- [lucide-react npm registry](https://www.npmjs.com/package/lucide-react) — HIGH confidence; version 1.7.0, peer deps `^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0` confirmed via `npm view`
+- [@floating-ui/react npm registry](https://www.npmjs.com/package/@floating-ui/react) — HIGH confidence; version 0.27.19, peer deps `>=17.0.0` confirmed via `npm view`
+- [React Icon Libraries Bundle Size Benchmark — Medium/nkcroft](https://medium.nkcroft.com/the-hidden-bundle-cost-of-react-icons-why-lucide-wins-in-2026-1ddb74c1a86c) — MEDIUM confidence; 2026 benchmark; lucide Δ/source ratio ~1x vs phosphor 16–18x
+- [Floating UI React Docs](https://floating-ui.com/docs/react) — HIGH confidence; official docs; `useHover`, `useFocus`, `useRole` patterns confirmed
+- [Tailwind CSS v4 Theme Variables Docs](https://tailwindcss.com/docs/theme) — HIGH confidence; official docs; `@theme` directive generates CSS custom properties
+- [Tailwind CSS filter hue-rotate docs](https://tailwindcss.com/docs/filter-hue-rotate) — HIGH confidence; official docs; confirmed hue-rotate applies to all element colors
+- [Design Tokens That Scale in 2026 (Tailwind v4) — Mavik Labs](https://www.maviklabs.com/blog/design-tokens-tailwind-v4-2026) — MEDIUM confidence; practical OKLCH token pattern confirmed
+- [Smart cropping with native browser Face Detection — IODigital](https://techhub.iodigital.com/articles/native-face-detection-cropping) — MEDIUM confidence; confirms CSS object-position + Face Detection API approach; Face Detection API browser support limitations noted
+- [react-image-crop npm registry](https://www.npmjs.com/package/react-image-crop) — HIGH confidence; v11.0.10; described as "responsive image cropping tool" — confirms it is an editing tool, not display fix
+- [essentials/package.json](../essentials/package.json) — HIGH confidence; current dep list verified; no icon or tooltip libraries present
 
 ---
-*Stack research for: v2026.3.8 Essentials Election Central*
-*Researched: 2026-03-29*
+*Stack research for: v2026.4.1 Essentials Visual Polish & Election Improvements*
+*Researched: 2026-04-02*

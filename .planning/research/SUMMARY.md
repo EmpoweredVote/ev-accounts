@@ -1,220 +1,173 @@
 # Project Research Summary
 
-**Project:** v2026.3.8 Essentials Election Central
-**Domain:** Civic tech — Election Central page + elected/appointed filter for the Essentials app
-**Researched:** 2026-03-29
-**Confidence:** MEDIUM (data sourcing has LOW-confidence gaps; architecture and pitfalls are HIGH)
+**Project:** v2026.4.1 Essentials Visual Polish & Election Improvements
+**Domain:** Visual polish — icon system, tier hue differentiation, compass-first card prototype, headshot fixes, election page cleanup
+**Researched:** 2026-04-02
+**Confidence:** HIGH — all findings from direct codebase inspection and verified npm registry data
 
 ## Executive Summary
 
-This milestone adds two features to the existing Essentials app: an Election Central page showing upcoming races grouped by government body, and an elected/appointed filter toggle on the existing representatives page. Both features build directly on established infrastructure — PostGIS geofence matching, the existing `essentials.*` schema, and the PoliticianProfile/PoliticianCard components in ev-ui. No new npm packages are needed. The entire stack extension is two new API keys (Google Civic API + FEC OpenAPI), two new service files, and three new database tables.
+This milestone is a focused visual polish pass on the `essentials` app and its shared `ev-ui` component library. The feature set is well-scoped and low-risk individually, but the shared library dependency chain (ev-ui feeds essentials, CompassV2, and EV-readrank) means every ev-ui change has a multi-app blast radius. Experts build this type of design system polish by treating the shared library as a stable contract: new props are always optional with safe fallbacks, visual variants live in the consuming app until confirmed, and the library is published consciously rather than incrementally. All findings here come from direct code inspection of the current codebase, not external documentation.
 
-The highest-risk decision is not architectural — it is data sourcing. BallotReady was decommissioned in v1.5, and no replacement pipeline was established. Election Central is data-driven: if candidate data is stale, incorrect, or absent, the page misleads users and destroys trust faster than having no page at all. The recommended path is to use the CivicEngine GraphQL API (the renamed BallotReady — an existing vendor relationship) via a nightly import script for the two target jurisdictions (Monroe County IN and LA County CA), supplemented by manual staging entry for any gaps in local race coverage. This requires confirming API access before any schema work begins.
+The recommended approach is a dependency-ordered build: ev-ui token and prop additions first (tierColors in tokens.js, icons.js SVG exports, optional tier/icons props on CategorySection and PoliticianCard), followed by a single ev-ui publish (v0.1.55), then wiring changes in essentials. The compass-first card is the exception — it stays local to essentials as a prototype, never touching ev-ui until the layout is confirmed across a full release cycle. Landing page improvements and the incumbent badge removal are independent of the ev-ui release cycle and can be batched with Phase 1 to clear quick wins early.
 
-The elected/appointed filter is deceptively simple — `is_appointed_position` already exists in the schema — but carries a hidden data quality risk. Officials imported since v1.5 via the ArcGIS gap-fill pipeline may have `is_appointed` defaulted to `false` rather than properly classified. Displaying the filter against unverified data produces incorrect groupings that are immediately noticeable to civic-informed users. A data audit must precede the filter UI build. Retention judges (appellate-level Indiana and California judges who face a public yes/no retention vote) also require special handling: they are both appointed and subject to election and must appear in both filter states simultaneously.
-
----
+The primary risk in this milestone is inadvertent partisan color association in the tier hue system. The EV platform has a hard antipartisan principle, and federal/state/local tier differentiation using common US political color vocabulary (red/blue) would undermine user trust even if unintentional. The safe resolution is using shade variation within the existing teal brand palette only. A secondary risk is the ev-ui breaking change cascade — any prop addition must be optional with a null-safe fallback, verified rendering without the prop before publishing. A third risk is the hover-only tooltip pattern being inaccessible on mobile: tooltips must supplement labels, not replace them.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The existing stack handles all new requirements without modification or new dependencies. The backend (Express 4, TypeScript, Node.js 20, native `fetch()`) already has the geocoding, PostGIS, caching, and Zod validation infrastructure needed for the new election search endpoint. The frontend (React 19, Vite 7, Tailwind CSS 4, react-router-dom ^7.8.2) needs only a new `/elections` route and two new components (`ElectionGroup`, `RaceCard`).
+Two new npm dependencies are justified for this milestone: `lucide-react` (v1.7.0) for icons and `@floating-ui/react` (v0.27.19) for tooltip positioning. Both are React 19 compatible (explicit peer dep declarations confirmed via npm registry), and the combined bundle impact is approximately 7–9kB gzipped. However, these belong in `essentials` only, not in `ev-ui`. The shared library already uses inline SVG components for its compass icon, and adding an icon library to ev-ui would impose bundle overhead on all three consumer apps without opt-out. The ev-ui `tsup.config.js` uses `splitting: false` — all components bundle together, so any dependency added to ev-ui ships to every consumer.
 
-**Core technologies — new additions only:**
+All other new capabilities require no new packages. Tier colors use JavaScript inline styles from `tokens.js` (the existing ev-ui design token system — not Tailwind classes, which cannot override ev-ui inline styles). The headshot crop issue is a one-line CSS `object-position: top` fix applied to the `<img>` element in PoliticianCard. The compass-first card prototype reuses `RadarChartCore` already available from ev-ui.
 
-- **Google Civic Information API v2:** Primary upstream source for contest and candidate data per address — free, 25K req/day, covers Indiana and California state/federal races. The Representatives API was shut down April 30, 2025; the Elections/voterInfoQuery API is still active. New env var: `GOOGLE_CIVIC_API_KEY`.
-- **FEC OpenAPI v1:** Federal candidate incumbency verification — free, authoritative for House and Senate incumbency. New env var: `FEC_API_KEY`.
-- **CivicEngine GraphQL API:** Recommended for nightly import of race and candidacy data for Bloomington IN and LA County CA. This is the renamed BallotReady (existing vendor relationship). Requires confirming API access before relying on it as the import source.
-- **Native `fetch()` + existing `cache.ts`:** Reused for all external API calls and 24h response caching — same pattern as `geocodingService.ts`.
-- **Three new DB tables:** `essentials.elections`, `essentials.races`, `essentials.race_candidates` — fully specified in ARCHITECTURE.md with indexes and FK structure.
-
-**What NOT to use:** Google Civic Representatives API (shut down April 30, 2025), BallotReady (`BALLOTREADY_API_KEY` already decommissioned in v1.5), California SOS API (election-night results only), Indiana SOS (no machine-readable API), OpenElections (historical results only), Ballotpedia scraping (ToS violation).
+**Core technologies (new additions only):**
+- `lucide-react` v1.7.0 in essentials: icon system — 29.4M weekly downloads, tree-shakeable via Vite, React 19 explicit peer dep confirmed
+- `@floating-ui/react` v0.27.19 in essentials: tooltip positioning primitives — ~7kB gzipped, accessible ARIA patterns built-in, handles mobile viewport collision
+- `tokens.js` (ev-ui): add `tierColors` export alongside existing `pillars` — teal-scale shade variation, single source of truth synced to Penpot
+- `ev-ui/src/icons.js` (NEW FILE): inline SVG React components (`BallotIcon`, `LegislativeIcon`, `ExecutiveIcon`, `JudicialIcon`) — follows existing inline compass SVG pattern, zero new library dependency in ev-ui
 
 ### Expected Features
 
+The milestone has a clear MVP tier that is LOW-to-MEDIUM complexity and a deferred tier that carries HIGH complexity and data dependency risk.
+
 **Must have (table stakes):**
+- Visual tier distinction (Federal/State/Local hue differentiation) — users cannot assess representative relevance without knowing which level of government they represent; all major civic directories use tier grouping
+- Icon metadata row on politician cards (ballot status, compass available, branch type) — replaces verbose text badges; reduces cognitive load on information-heavy listing pages
+- Accessible hover tooltips on icons — WCAG 1.4.1 requires non-color cues; tooltips satisfy progressive disclosure while icons handle scannable users
+- Location shortcut buttons on Landing page — current landing shows no explanation for why no results appear in unsupported areas; "No results" without coverage context destroys trust
 
-- Races grouped by government body then position — universal voter guide convention; mirrors existing Representatives hierarchy for cognitive consistency
-- Incumbent badge on candidate cards — `is_incumbent` already exists; a small pill/chip is sufficient
-- Election date per race with primary/general label — users arrive asking "when?" before "who?"
-- Candidate name, photo, and position sought — minimum viable candidate card; initials avatar fallback already in ev-ui for missing photos
-- Contested race display showing all candidates under one seat heading — users must see the full field per seat
-- Elected vs. appointed filter toggle on the representatives page — `is_appointed_position` already in schema; data quality audit required first
-- "No upcoming races found" empty state with coverage note — absent explanations destroy trust
+**Should have (differentiators for this milestone):**
+- Within-Local sub-tier hue differentiation (city vs county vs township) — not offered by any competing civic directory; reduces visual blur when 30+ local officials appear on screen
+- Branch-type icon (legislative/executive/judicial) derived from `district_type` — helps users mentally organize what their representatives do; unique to EV
+- Headshot crop default fix (`object-position: top` on PoliticianCard `<img>`) — improves approximately 90% of the 503 CDN headshots with zero data migration
 
-**Should have (differentiators):**
+**Defer:**
+- Compass-first card as a default view — HIGH null-data risk; most local officials lack compass stance data; keep as opt-in toggle prototype only, activated only for politicians with confirmed stances
+- Full ev-ui PoliticianCard redesign — too broad for this milestone; scope changes to optional prop additions only
+- Headshot re-uploads — CSS fix first; re-upload only after the audit script identifies truly broken source images that CSS cannot salvage
 
-- Candidate links to full Essentials-style profile pages — legislative record, Compass card, Read & Rank verdicts; deeper than any competing voter guide
-- Primary vs. general distinction per race — Monroe County has May primary + November general; LA County has June primary + November general
-- Retention judges appearing in BOTH Elected and Appointed filter tabs with "Retention Election" label — more accurate than any single-category treatment
-- Open seat / vacancy label when no incumbent exists
-
-**Defer (v1.x and v2+):**
-
-- Days-until countdown — low effort; add after election dates are verified accurate
-- Read & Rank quotes for candidates — requires data research and import via existing pipeline
-- Compass stances for candidates — requires admin data entry
-- Ballot measures / referendums — different data model and UX; separate scope
-- Multi-jurisdiction expansion beyond two supported jurisdictions
-
-**Anti-features (never add):**
-
-- Party affiliation display — absolute violation of the antipartisan mission documented in MEMORY.md
-- Polling place / voting logistics — scope mismatch; link to county registrar instead
-- Real-time election results — link to official county source
-- Endorsement lists — partisan signals by definition; violates antipartisan mission
-- Animated countdown timers — gimmicky; undermines serious/trustworthy tone; plain "X days away" text only
+**Out of scope (anti-features):**
+- Party color coding — hard violation of the documented antipartisan principle
+- Automatic face-centered crop via Supabase Storage — Supabase Storage does not support face detection; cover/contain/fill only
+- Expanding CompassPreview into a persistent sidebar panel — conflicts with the existing sticky sidebar in Results
+- Animated tier badge transitions — distracts from content; `prefers-reduced-motion` violation risk
 
 ### Architecture Approach
 
-Election Central integrates as a peer route to `/results` in the Essentials app, sharing the same `?q=` address URL parameter pattern and Google Maps autocomplete input. A new backend service (`electionService.ts`) handles election search via the same geocode → PostGIS geofence match → DB join pipeline already used by `essentialsService.ts`. All election data is pre-imported nightly from CivicEngine into three new tables (`elections`, `races`, `race_candidates`) keyed to geofences via `geo_id + mtfcc` — no live API proxying per user request. The elected/appointed filter on the representatives page is entirely client-side: `is_elected` is already in every `PoliticianFlatRecord` response.
+The build is organized around a clean dependency boundary: ev-ui receives additive prop changes only (optional props with null-safe fallbacks), essentials consumes those changes after a deliberate version publish, and the compass-first card prototype stays entirely local to essentials. The critical architectural constraint is that ev-ui components use JavaScript inline style objects from `tokens.js`, not Tailwind utility classes. Tailwind classes applied from outside the component cannot override inline styles without `!important`. Tier color injection requires either an explicit named prop (preferred) or the `style` prop pass-through that `CategorySection` already exposes. Dynamic Tailwind class string construction (e.g., `` `bg-ev-${tier}-050` ``) must never be used — Tailwind CSS 4's static analyzer will not include dynamically constructed class names in the output bundle.
 
 **Major components:**
-
-1. **`essentials/src/pages/ElectionCentral.jsx`** — New page: address input, fetch races via `useElectionData` hook, render grouped by election then organization
-2. **`ev-accounts/src/lib/electionService.ts`** — New service: `searchElectionsByAddress()` using geocode + PostGIS join against `essentials.races`
-3. **`ev-accounts/src/routes/elections.ts`** — New routes: `POST /api/elections/search` and `GET /api/elections/:id/races`
-4. **`essentials.elections / races / race_candidates` (DB)** — Three new tables; `races` linked to existing geofences via `geo_id + mtfcc` for address-based lookup
-5. **CivicEngine nightly import script** — Pulls upcoming races for Bloomington IN + LA County CA coordinates; upserts to DB; best-effort name-match to `essentials.politicians`
-6. **`essentials/src/lib/classify.js` (modified)** — Add `filterByAppointmentStatus()` for purely client-side elected/appointed filtering
+1. `ev-ui/src/tokens.js` — add `tierColors` export; teal-scale shade variation (Federal=teal-700, State=teal-500, Local=yellow-600 or teal-200); single source of truth
+2. `ev-ui/src/icons.js` (NEW) — inline SVG exports following existing PoliticianCard compass icon pattern; zero new ev-ui dependencies
+3. `ev-ui/src/CategorySection.jsx` — add optional `tier` prop; apply `tierColors[tier]` to title pill background/border when present; neutral defaults when absent
+4. `ev-ui/src/PoliticianCard.jsx` — add optional `icons[]` prop and `imageFocalPoint` prop; `icons[]` renders alongside/replacing text badge for on-ballot signal
+5. `essentials/src/pages/Results.jsx` — wire `tier` into CategorySection calls; wire `icons[]` from existing computed signals (getSeatBallotStatus, politicianIdsWithStances, district_type)
+6. `essentials/src/pages/Landing.jsx` — add location shortcut buttons + coverage disclaimer (no API changes; 74-line file, minimal scope)
+7. `essentials/src/components/CompassFirstCard.jsx` (NEW, local prototype) — compass-first layout using RadarChartCore; feature-flagged toggle in Results; stays local until design is confirmed
+8. `essentials/src/components/ElectionsView.jsx` — remove incumbent badge (visual only, scope limited to badge prop removal); add tier icons to separator rows
 
 ### Critical Pitfalls
 
-1. **Stale `is_appointed` data from post-v1.5 scraping** — Run `SELECT COUNT(*), is_appointed FROM essentials.politicians GROUP BY is_appointed` before building any filter UI. If 97%+ show `false`, the data is defaulted, not researched. Budget a manual classification pass for all in-scope officials before the toggle ships. This is a data task, not a code task.
+1. **ev-ui change breaks all three consumer apps simultaneously** — All new ev-ui props must be optional with safe fallbacks. Never make a new prop required at existing call sites. Verify the component renders correctly without any new props before running `npm publish`. Test in essentials dev first. Emergency rollback (re-publish previous version + redeploy 3 Cloudflare Pages apps) is slow — prevention is essential.
 
-2. **Retention judges must appear in BOTH filter states** — Binary `is_appointed` cannot model this hybrid status. Add `faces_retention_vote boolean` to `essentials.politicians` in Phase 1. Filter logic: show in Appointed if `is_appointed = true`; show in Elected if `is_appointed = false` OR `faces_retention_vote = true`. If this schema decision is deferred, it requires a migration and re-audit of all judicial records to fix.
+2. **Tier hue system inadvertently introduces partisan color associations** — Use teal lightness/shade variation only (teal-700 for Federal, teal-500 for State, yellow/teal-200 for Local). Never use red or blue, which carry embedded US political party associations. Lock the palette before implementation — do not design colors during code writing. Run the antipartisan color check before finalizing.
 
-3. **No election data pipeline means data rot** — Manual candidate entry without `last_verified_at` and `candidate_status` becomes stale within weeks. Candidates drop out, special elections are called. Establish the data source strategy and embed freshness fields in the schema before any data is entered. Never display a candidate whose `candidate_status = 'withdrawn'`.
+3. **`buildTitleAndSubtitle()` logic drift between ev-ui and essentials** — This function is duplicated in `ev-ui/src/PoliticianProfile.jsx` and `essentials/src/pages/Results.jsx`. The CLAUDE.md explicitly documents this. Any touch to title/subtitle display logic must update both files in the same commit. Do not touch this function at all during this milestone unless fixing a documented bug — even icon placement near titles can create pressure to refactor the title logic.
 
-4. **Candidates and officials must not share the `essentials.politicians` table** — Adding an `is_candidate` flag to `essentials.politicians` causes geofence searches to return candidates mixed with officials, runs the legislative pipeline on non-officials, and pollutes the officials dataset with challenger records post-election. `essentials.race_candidates` must be a separate table with a nullable FK to `politicians` for incumbents only.
+4. **Hover-only icon tooltips are inaccessible on mobile** — Tooltips must provide detail, not the primary label. Every icon must be paired with a visible text label or `aria-label` in the default no-interaction state. WCAG 1.4.13 requires hover content to be dismissible, hoverable, and persistent — but the right fix is ensuring the icon meaning does not require hover at all. Mobile users (likely majority of civic app users) cannot hover. Test on real iPhone with Safari before shipping.
 
-5. **Party affiliation must be excluded at the ingestion layer, not the frontend** — Every external data source (Democracy Works, Ballotpedia, CivicEngine) includes party fields. If stored in the DB they will leak into API responses. Document the exclusion with antipartisan rationale comments in every import script. Audit all election API endpoints before launch.
-
----
+5. **Removing "incumbent" marker must not touch `is_incumbent` branching in CandidateProfile** — The scope is: remove the `badge="Incumbent"` prop from the PoliticianCard call in ElectionsView.jsx only. The `is_incumbent` flag in CandidateProfile.jsx controls whether the full legislator profile or minimal challenger view renders — this branching logic must not be touched. Add a code comment to the branching point: `// badge display removed in v2026.4.1 but this routing logic stays`.
 
 ## Implications for Roadmap
 
-Based on combined research, suggested phase structure with strict dependency ordering:
+Based on research, the ev-ui publish is the critical path. Everything that touches ev-ui must complete before essentials wiring can proceed. Independent tasks (Landing page buttons, incumbent badge removal, Ruben Marte data fix) have no ev-ui dependency and can be batched early. The compass-first card prototype is last because it depends on Phase 2 card patterns being stable, and its high null-data rate risk makes early deployment inadvisable.
 
-### Phase 1: Data Audit, Schema Design, and Import Pipeline
+### Phase 1: ev-ui Foundation + Quick Wins
+**Rationale:** All tier-color and icon wiring in essentials depends on ev-ui publishing new props. This is the critical path and must be completed before any essentials wiring can proceed. Quick independent wins (incumbent badge removal, Ruben Marte data fix) are batched here to clear known issues while the library work proceeds. Palette must be locked before any token code is written.
+**Delivers:** ev-ui v0.1.55 with `tierColors` in tokens.js, `icons.js` SVG exports, optional `tier` prop on CategorySection, optional `icons[]` and `imageFocalPoint` props on PoliticianCard. Incumbent badge removed from ElectionsView. Ruben Marte politician_id data fix applied.
+**Addresses:** Icon metadata system (table stakes), tier hue foundation (table stakes), headshot crop default improvement (differentiator)
+**Avoids:** Breaking consumer apps (optional props, null-safe fallbacks, verified without props before publish); partisan color associations (teal scale locked before implementation begins)
 
-**Rationale:** Every subsequent phase depends on this. The schema design must enforce the candidates/officials separation. The `is_appointed` data audit must occur before the filter UI is built. The data source decision (CivicEngine vs. Google Civic vs. manual) determines what the import script looks like. Building UI before the data layer is settled guarantees rework.
+### Phase 2: essentials Wiring + Landing Page
+**Rationale:** Depends on ev-ui v0.1.55 being installed in essentials. Once the library is updated, Results.jsx can wire `tier` into CategorySection and `icons[]` into PoliticianCard using signals already computed (ballotStatus, politicianIdsWithStances, district_type). Landing page improvements are independent of ev-ui and run in parallel within this phase.
+**Delivers:** Tier hue visible across all Federal/State/Local sections in Results. Icon metadata row (ballot, compass, branch type) on politician cards with accessible tooltips. Location shortcut buttons on Landing.jsx with coverage disclaimer text.
+**Uses:** tierColors from tokens.js (via ev-ui prop); lucide-react + @floating-ui/react in essentials for icon tooltips
+**Implements:** Icon signal resolution data flow (Results.jsx → PoliticianCard icons prop), tier color flow (classify.js → Results.jsx → CategorySection tier prop → tierColors)
+**Avoids:** Dynamic Tailwind class interpolation for tier hues; Tailwind override of ev-ui inline styles; hover-only tooltip patterns (pair icons with visible labels)
 
-**Delivers:** Three new DB tables (`elections`, `races`, `race_candidates`) with correct FK structure and indexes; `faces_retention_vote` boolean on `essentials.politicians`; CivicEngine import script with Bloomington IN + LA County CA coordinates; verified seed data for test addresses; `is_appointed` audit findings and any required backfill; data source decision documented.
-
-**Addresses:** All data-dependent table stakes features (race grouping, incumbent badge, election dates, candidate cards)
-
-**Avoids:** Pitfall 1 (stale `is_appointed`), Pitfall 2 (retention judges schema), Pitfall 3 (no pipeline → data rot), Pitfall 4 (schema collision), Pitfall 5 (party affiliation storage), and election dates stored as `DATE` instead of `TIMESTAMPTZ`
-
-### Phase 2: Backend Election Search Endpoint
-
-**Rationale:** With verified data in the DB, the backend endpoint is straightforward and follows the identical pattern to `essentialsService.ts`. Build and integration-test before any frontend work so the response contract is stable.
-
-**Delivers:** `POST /api/elections/search` returning `ElectionSearchResult[]` grouped by election and race; `GET /api/elections/:id/races`; wired into `index.ts`; integration tests with Bloomington and LA County test addresses.
-
-**Uses:** Existing `geocodingService.ts`, `cache.ts` (24h TTL), `pool.query()` pattern, `optionalAuth` middleware
-
-**Implements:** `electionService.ts` + `routes/elections.ts` components
-
-### Phase 3: Election Central Frontend Page
-
-**Rationale:** Backend API is stable before frontend work begins. The page mirrors the structure of `Results.jsx` but is simpler (no progressive loading, no showCandidates toggle). New components are small and well-scoped.
-
-**Delivers:** `/elections` route in `App.jsx`; `ElectionCentral.jsx` page with address search; `ElectionGroup.jsx` and `RaceCard.jsx` components; `useElectionData.js` hook; `fetchElections()` in `api.jsx`; "Elections" nav link from Results page carrying `?q=` forward; empty state for no upcoming elections; `ev:election-results` sessionStorage cache key (separate from `ev:results`).
-
-**Addresses:** All table stakes UI features — race grouping, incumbent badges, election dates, primary/general labels, open seat labeling, coverage note, "no races found" empty state
-
-### Phase 4: Elected/Appointed Filter on Representatives Page
-
-**Rationale:** Entirely client-side; depends only on `is_appointed` data quality verified in Phase 1. Kept as its own phase so it can be shipped or held independently if the data audit reveals quality issues requiring extended remediation.
-
-**Delivers:** `filterByAppointmentStatus()` in `classify.js`; filter toggle UI in `Results.jsx`; retention judge dual-filter behavior tested against known Indiana appellate judges; validated with Bloomington and LA County addresses.
-
-**Avoids:** Pitfall 1 (showing filter against bad data) and Pitfall 2 (retention judges invisible in the Elected tab)
-
-### Phase 5: Candidate Profile Links
-
-**Rationale:** Final integration step. Incumbents already have politician records — linking is trivial. The decision for unmatched challengers (inline display vs. stub page vs. no link) is a product decision that benefits from seeing the live data first.
-
-**Delivers:** Incumbent candidate cards linking to `/politician/:id`; product decision documented for unmatched challengers; challenger profile pages render without legislative history section (no empty loading states, no API calls to legislative endpoints for challengers).
-
-**Avoids:** Performance trap of triggering the legislative data fetch for challenger candidates who have no legislative history
+### Phase 3: Compass-First Card Prototype + Headshot Audit
+**Rationale:** Deferred until Phase 2 is complete and the icon/tier card patterns are finalized. CompassFirstCard.jsx can reuse the icon and tier patterns established in Phase 2. The headshot audit script is independent tooling with no user-facing changes and can run at any point.
+**Delivers:** `CompassFirstCard.jsx` local prototype in essentials with feature-flagged toggle in Results (activated only when `politicianIdsWithStances.has(pol.id)` is true). Node.js audit script querying `essentials.politician_images`, downloading images via `sharp`, and outputting a CSV of flagged politician IDs and URLs for manual review.
+**Avoids:** Promoting CompassFirstCard to ev-ui during prototype (keep local until layout confirmed across one full release cycle); re-uploading all 503 headshots unnecessarily (CSS objectPosition fix in Phase 1 handles ~90%; audit identifies only true outliers that CSS cannot salvage)
 
 ### Phase Ordering Rationale
 
-- Data before UI: Every UI phase depends on verified data and a stable API contract. Phases 1 and 2 are strict prerequisites for Phases 3-5.
-- Filter after data audit: The elected/appointed filter (Phase 4) is intentionally placed after the data audit (Phase 1) to prevent shipping with defaulted classification data.
-- Candidate links last: Linking candidates to profiles requires knowing which candidates have matched politician records — determined by the import script output from Phase 1.
-- Separate route prefix: `POST /api/elections/search` is a new route prefix from `/api/essentials/` to maintain clear domain boundaries and avoid breaking the existing `PoliticianFlatRecord[]` response contract that Results.jsx depends on.
+- ev-ui must publish before essentials wiring: ev-ui inline styles cannot be overridden from outside the component. New props must exist in the published library before consuming apps can use them.
+- Icon and tooltip approach must be locked in Phase 1 before Phase 2 tooltip implementation: changing icon system mid-wiring doubles rework. Decide inline SVG vs. lucide-react, number of icons, and mobile label strategy before writing any icon code.
+- Compass-first card is last: it depends on Phase 2 card patterns being stable; its high null-data rate risk makes early deployment low-value without broader stance data coverage for local officials.
+- Quick wins batched in Phase 1: incumbent badge removal and Ruben Marte fix are low-risk and independent. Batching them early prevents simple tasks from perpetually deferring to "later."
 
 ### Research Flags
 
-Phases likely needing deeper research during planning:
+Phases with well-documented patterns (skip additional research):
+- **Phase 1 — ev-ui token/prop additions:** Established codebase patterns (tokens.js, inline SVG, optional props). No external unknowns.
+- **Phase 2 — Landing page buttons:** 74-line file, no API changes, navigate() call with pre-built URL. No research needed.
+- **Phase 2 — Incumbent badge removal:** One-line ElectionsView prop change. Pitfall is documented and scoped.
+- **Phase 3 — Headshot audit script:** `sharp` is well-documented for Node.js image processing. Supabase Storage URL pattern is already established in the codebase.
 
-- **Phase 1 (Import Pipeline):** CivicEngine API access status must be confirmed before import script development begins. The vendor relationship from the BallotReady era may require a new contract. If CivicEngine is unavailable or cost-prohibitive, the fallback (Google Civic API + manual staging) has known local race coverage gaps for Monroe County that must be documented and budgeted before development starts.
-- **Phase 1 (Data Audit):** The actual distribution of `is_appointed` values across ~800+ in-scope officials is unknown until the audit query runs. Could range from "all correct" to "all defaulted to false." If poor, a manual classification pass for all Bloomington/Monroe County IN and LA County CA officials is required before Phase 4 can proceed — budget 1-2 days.
-
-Phases with standard patterns (skip research-phase):
-
-- **Phase 2 (Backend endpoint):** Follows the exact same geocode → PostGIS → JOIN pattern established in `essentialsService.ts`. Internal, well-documented pattern. No external unknowns.
-- **Phase 3 (Frontend page):** Mirrors `Results.jsx` structure with `useElectionData` hook following `usePoliticianData`. New components are small and well-scoped. No novel architecture decisions.
-- **Phase 5 (Candidate links):** Straightforward nullable FK lookup; existing `PoliticianProfile` component is reused without modification for incumbents.
-
----
+Phases that benefit from validation before or during implementation:
+- **Phase 2 — Icon tooltip accessibility on mobile:** The @floating-ui/react hover+focus interaction pattern is documented in STACK.md with a working code sample, but mobile touch behavior (tap-to-open tooltip, dismiss on outside tap) should be validated on a real iPhone with Safari early in Phase 2, not at the end. This is a QA step, not additional research.
+- **Phase 3 — Compass-first card null rate:** Before building the prototype, run `SELECT COUNT(DISTINCT politician_id) FROM compass.stances` vs `SELECT COUNT(*) FROM essentials.politicians` to determine the real null rate. If coverage is below 20% for local officials (the primary audience), the toggle may not be worth the prototype effort in this milestone.
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | MEDIUM-HIGH | Existing stack is HIGH confidence (direct code inspection). New APIs (Google Civic, FEC, CivicEngine) are MEDIUM — officially documented and active, but Monroe County IN local race coverage under Google Civic is unconfirmed; CivicEngine access requires contract verification. |
-| Features | MEDIUM | Domain conventions (race grouping, incumbent display, election dates) confirmed from Ballotpedia, VOTE411, Center for Civic Design. Antipartisan constraints confirmed from MEMORY.md. Retention judge edge case confirmed from Indiana Judicial Branch docs and Ballotpedia. |
-| Architecture | HIGH | Based on direct code inspection of ev-accounts and essentials. Patterns are internal with no external unknowns. Schema design fully specified. Build order dependencies explicit. |
-| Pitfalls | HIGH | Derived from direct codebase inspection (v1.5 BallotReady decommission, v1.6 gap-fill pipeline), confirmed via Indiana Judicial Branch and Ballotpedia for retention elections, and Democracy Works / Ballotpedia coverage research. |
+| Stack | HIGH | All package versions confirmed via npm view; React 19 peer deps explicitly verified; CSS techniques confirmed from official Tailwind CSS 4 docs and codebase patterns |
+| Features | HIGH | All existing functionality verified by direct code inspection of ev-ui and essentials source; new feature complexity assessments grounded in actual file sizes and current prop interfaces |
+| Architecture | HIGH | All findings from direct source inspection; build order derived from real dependency graph in the code (tsup splitting:false, inline style specificity, classify.js tier taxonomy) |
+| Pitfalls | HIGH | Most pitfalls documented from actual codebase patterns (inline style specificity, tsup splitting:false, duplicate buildTitleAndSubtitle, CandidateProfile is_incumbent branching); WCAG citations verified from W3C |
 
-**Overall confidence:** MEDIUM
+**Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **CivicEngine API access:** Architecture research recommends CivicEngine as the nightly import source (existing vendor relationship). STACK.md recommends Google Civic API (free, no contract). These recommendations diverge. Resolve in Phase 1 by confirming CivicEngine access status before writing any import script. If neither is viable, manual staging entry is the fallback for both jurisdictions.
-- **Google Civic local race coverage for Monroe County:** VIP data coverage for Indiana depends on county cooperation with the Voting Information Project. Monroe County's participation is unconfirmed. If Google Civic does not cover Bloomington city council races, manual staging entry becomes mandatory for local races — budget accordingly in Phase 1 scope.
-- **`is_appointed` data quality for post-v1.5 officials:** Unknown until the audit query runs. Treat as a blocker for Phase 4 until audited. If data quality is poor, Phase 4 cannot ship until remediation is complete.
-- **Ballotpedia coverage of Bloomington (pop. ~90K):** If Ballotpedia is considered as a fallback candidate data source, coverage of Bloomington must be verified before any contract discussion — their standard API covers top 100 cities and Bloomington may not qualify.
-- **Candidate withdrawal deadline edge case:** In some jurisdictions, a candidate who publicly withdraws past the filing deadline remains on the ballot. The `candidate_status` enum should include a `ballot_required` state to handle this accurately and avoid hiding a candidate who must legally appear on the ballot.
-
----
+- **Compass-first card null rate:** Unknown what percentage of `essentials.politicians` have compass stance data. Query `SELECT COUNT(DISTINCT politician_id) FROM compass.stances` before committing to Phase 3 scope. If local official coverage is below 20%, the prototype is low-value and should remain deferred until stance data improves.
+- **Exact geo_id values for location shortcut buttons:** Landing page shortcut buttons need the correct `geo_id` + `mtfcc` values for Monroe County IN and LA County CA to pre-fill the LocationBrowser correctly, or a representative address string that will resolve via the existing geocoding pipeline. Retrieve from the database before Phase 2 implementation.
+- **Final tier color palette decision:** PITFALLS research recommends teal-scale shade variation only (Federal=teal-700, State=teal-500, Local=teal-200). FEATURES research suggests yellow for Local. These conflict slightly. This decision must be made and locked before Phase 1 token work begins — PITFALLS guidance (partisan color risk) should take precedence: default to teal-scale only.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-
-- Direct codebase: `ev-accounts/backend/src/lib/essentialsService.ts` — confirmed `is_elected`, `is_appointed_position`, `is_incumbent` derivations and address search flow
-- Direct codebase: `ev-accounts/backend/migrations/033_politician_schema.sql` — column availability confirmed
-- Direct codebase: `essentials/src/pages/Results.jsx`, `App.jsx`, `lib/classify.js`, `lib/api.jsx` — routing and data flow patterns confirmed
-- Direct codebase: `CivicEngine GraphQL API Documentation.md` + `BallotReadyDataDictionary.csv` — GraphQL schema and candidacy fields confirmed
-- [Google Civic Information API docs](https://developers.google.com/civic-information/docs/v2) — voterInfoQuery fields confirmed active
-- [Google Civic Representatives API turndown notice](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — Elections API still active; Representatives API shut down April 30, 2025
-- [FEC OpenAPI docs](https://api.open.fec.gov/developers/) — free federal candidate API confirmed
-- [Indiana Judicial Branch: Retention System](https://www.in.gov/courts/about/retention/) — appellate judges appointed then face retention vote; hybrid classification confirmed
-- [Ballotpedia: Monroe County IN elections 2026](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — race structure and judicial election types confirmed
-- [Ballotpedia: LA County elections 2026](https://ballotpedia.org/Los_Angeles_County,_California,_elections,_2026) — race structure confirmed
-- [LA County Registrar: Upcoming Elections](https://www.lavote.gov/home/voting-elections/current-elections/upcoming-elections) — June 2 primary, November 3 general confirmed
+- `ev-ui/src/tokens.js` — colorScales, colors, pillars, semantic tokens, full teal and skyblue scales
+- `ev-ui/src/PoliticianCard.jsx` — prop interface, inline style object pattern, existing compass SVG component (lines 168-205)
+- `ev-ui/src/CategorySection.jsx` — prop interface, tooltip pattern (onMouseEnter/onMouseLeave), style prop pass-through
+- `ev-ui/src/tsup.config.js` — `splitting: false` confirmed; all components bundle together
+- `ev-ui/package.json` — current version: 0.1.54; no sideEffects declaration
+- `essentials/src/pages/Results.jsx` — full renderPoliticianCard() flow, politicianIdsWithStances Set, classify.js integration, getSeatBallotStatus usage
+- `essentials/src/pages/Landing.jsx` — confirmed 74 lines, single address input, no location shortcuts
+- `essentials/src/lib/classify.js` — classifyCategory() tier/group taxonomy, FEDERAL_ORDER, STATE_ORDER, LOCAL_ORDER exports
+- `essentials/src/components/ElectionsView.jsx` — getTier(), incumbent badge prop, tier separator rendering
+- `essentials/src/components/PoliticianCard.jsx` — legacy vertical card (separate from ev-ui, used in PoliticianGrid)
+- lucide-react npm registry: v1.7.0, peer deps `^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0` confirmed via npm view
+- @floating-ui/react npm registry: v0.27.19, peer deps `>=17.0.0` confirmed via npm view
+- Tailwind CSS v4 Theme Variables docs — `@theme` directive generates CSS custom properties; OKLCH color support
+- WCAG 1.4.1 Use of Color (W3C) — color cannot be sole visual differentiator
+- WCAG 1.4.13 Content on Hover or Focus (W3C) — hover content must be dismissible, hoverable, persistent
+- Supabase Storage image transformations docs — confirmed no face detection; cover/contain/fill only
 
 ### Secondary (MEDIUM confidence)
-
-- [Google Civic API rate limits](https://groups.google.com/g/google-civicinfo-api/c/1H7WZ0lG594) — 25,000/day (community forum, not official docs)
-- [Voting Information Project coverage](https://www.votinginfoproject.org/election-coverage) — Indiana local race coverage for Monroe County not itemized
-- [Center for Civic Design: Designing Election Websites (2025)](https://civicdesign.org/wp-content/uploads/2025/03/Designing-Election-Websites-2.pdf) — UX scanning behavior, plain language conventions
-- [Democracy Works Elections API](https://data.democracy.works/ballot-info) — nonprofit-friendly, free calendar tier; candidate data requires partnership agreement
-- [Ballotpedia: Buy Political Data](https://ballotpedia.org/Ballotpedia:Buy_Political_Data) — top 100 cities coverage; Bloomington inclusion unconfirmed
-- [CivicEngine developer docs](https://developers.civicengine.com/) — comprehensive coverage confirmed; pricing requires direct contact
+- React Icon Libraries Bundle Size Benchmark (Medium/nkcroft, 2026) — lucide delta/source ratio ~1x vs phosphor 16-18x; confirmed lucide tree-shaking superiority
+- Design Tokens That Scale in 2026 (Mavik Labs) — OKLCH token pattern for perceptually even tier hue steps
+- Smart cropping with native browser Face Detection (IODigital) — confirms CSS object-position + Face Detection API limitations; ~70% browser support for Face Detection API
+- USWDS Icon List component — icon + adjacent text as accessible metadata pattern; `aria-hidden` on decorative icons
+- tsup tree-shaking guide (dorshinar.me) — `splitting: false` behavior confirmed; sideEffects: false requirement for consumer tree-shaking
+- Floating UI React docs — useHover, useFocus, useRole, FloatingPortal patterns confirmed
 
 ### Tertiary (LOW confidence)
-
-- [California SOS Election Night API](https://api.sos.ca.gov/) — returned 403 on direct access; election-night results only; not suitable for pre-election candidate discovery
-- [Indiana SOS candidate information](https://www.in.gov/sos/elections/candidate-information/) — confirmed no machine-readable API; PDF and web pages only
+- None — all findings in this summary are supported by primary or secondary sources
 
 ---
-
-*Research completed: 2026-03-29*
+*Research completed: 2026-04-02*
 *Ready for roadmap: yes*

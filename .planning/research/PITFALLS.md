@@ -1,264 +1,267 @@
 # Domain Pitfalls
 
-**Domain:** Adding Election Central page and elected/appointed filter to existing Essentials civic platform
-**Researched:** 2026-03-29
-**Scope:** v2026.3.8 Essentials Election Central milestone
-**Overall confidence:** HIGH — derived from direct codebase inspection of `.planning/PROJECT.md`, `CLAUDE.md`, existing milestone history, and web research into election data freshness, judicial classification, civic API ecosystems, and antipartisan UX design.
+**Domain:** Visual polish, icon systems, and tier hue differentiation on existing multi-app civic engagement platform
+**Researched:** 2026-04-02
+**Scope:** v2026.4.1 — icon system, tier colors, compass-first card, headshot fixes, election page polish
 
 ---
 
 ## Critical Pitfalls
 
-Mistakes that cause rewrites or major issues.
+Mistakes that require rewrites, break multiple apps simultaneously, or violate the antipartisan principle.
 
 ---
 
-### Pitfall 1: Stale `is_appointed` Flag on Officials Scraped After v1.5
+### Pitfall 1: ev-ui Change Breaks All Three Consumer Apps Simultaneously
 
-**What goes wrong:** BallotReady was the original authoritative source for `is_appointed` classifications, but it was decommissioned as of v1.5 (all cache warmers removed, API key deleted). All officials imported since v1.5 via the LA County ArcGIS gap-fill pipeline (791 officials, v1.6) and any subsequent scraping lack a verified `is_appointed` value. The field may be `NULL`, defaulted to `false`, or inherited from a stale cache row. Displaying an elected/appointed toggle filter against this data produces incorrect groupings — appointed commissioners appear as elected, appointed board members appear as elected, and the filter looks broken to anyone who knows the actual status of local officials.
+**What goes wrong:** A change to `PoliticianCard`, `CategorySection`, or any shared component in ev-ui — even visually "safe" changes like adding a new prop or changing default styling — gets published and immediately breaks the visual contract in CompassV2, essentials, and EV-readrank. The apps do not pin to a specific minor version; they pull the latest published version when rebuilt. Cloudflare Pages rebuilds happen on every push to `main` per app.
 
-**Why it happens:** The v1.5 decommission removed the data pipeline that populated `is_appointed` without introducing a replacement. The v1.6 gap-fill imported officials to fill geographic coverage gaps, not to maintain classification metadata. It is easy to assume the column has valid data because it exists and has no NULLs if it was defaulted to `false`.
+**Why it happens:** ev-ui uses a single entry point (`src/index.js`) that barrel-exports everything. The tsup build configuration (`splitting: false`) bundles all components into one `index.js`/`index.mjs` — no per-component chunking. There is no tree-shaking at the library level. A changed internal layout in `PoliticianCard` ships alongside every other component. If the new `PoliticianCard` expects a `tierColor` prop that wasn't there before and existing call sites don't pass it, the card silently falls back to whatever the default is — which may render incorrectly across all pages that use it.
 
-**How to avoid:** Before building any filter UI, run a data audit:
-1. Query `SELECT COUNT(*), is_appointed FROM essentials.politicians GROUP BY is_appointed` — if 97%+ are `false`, the data is likely defaulted, not researched.
-2. Cross-reference a sample of known-appointed officials (LA County supervisors, Monroe County commissioners) against their `is_appointed` value.
-3. Budget a manual classification pass for all officials in coverage scope (Bloomington/Monroe County IN + LA County CA) before building the filter toggle. This is a data task, not a code task, and it must precede Phase 1.
+**Consequences:** Three apps broken at once. Rollback requires re-publishing the previous ev-ui version AND redeploying all three apps. Emergency fix path is slow: bump ev-ui version → rebuild → publish to GitHub npm → `npm update` in each consumer → push → wait for Cloudflare Pages build × 3.
 
-**Warning signs:** `is_appointed = false` for LA County supervisors (who are elected) is fine; `is_appointed = false` for LA County Arts Commission members (who are appointed) is a red flag. Any official with a role description containing "commission," "board," "authority," or "appointed" that shows `is_appointed = false` should be manually verified.
+**Prevention:**
+- Treat `PoliticianCard` changes as a minor-version bump minimum, not a patch. If the visual contract changes in any way, bump minor.
+- Add the new tier-color prop as **optional with a safe fallback** (no tier color = current behavior). Never make a new prop required if existing call sites won't pass it.
+- Before publishing, manually verify the component renders correctly without the new prop (the null/fallback state).
+- Test in essentials dev before publishing — it is the primary consumer.
 
-**Phase to address:** Phase 1 (data audit and classification backfill) — must be resolved before the filter toggle is built. Do not build the UI against unverified classification data.
+**Detection:** Check that `essentials/src/components/ElectionsView.jsx` and `essentials/src/pages/Results.jsx` still render correctly without passing any new props. These two files call `PoliticianCard` the most.
 
----
-
-### Pitfall 2: Retention Judges Must Appear in BOTH Filter States
-
-**What goes wrong:** Judicial retention elections are a hybrid: judges are initially appointed (by the governor or a judicial nominating commission), then periodically face a public retention vote — a yes/no ballot question with no opponent. In Indiana, Supreme Court and Court of Appeals judges use this system. In California, appellate justices face retention elections after initial gubernatorial appointment. If the elected/appointed filter is implemented as a binary — `is_appointed ? show in Appointed : show in Elected` — retention judges appear in Appointed only and are invisible in the Elected filter. Users researching "who is on my ballot" will not find them under Elected because there is a retention race on the ballot.
-
-**Why it happens:** Binary boolean classification (`is_appointed: true/false`) cannot represent the hybrid status. Developers who model `is_appointed` as a simple flag make this mistake because the column encourages binary thinking.
-
-**How to avoid:** The data model needs to distinguish `selection_method` from `faces_retention_vote`. Two approaches, in order of preference:
-- Add a `faces_retention_vote: boolean` column to `essentials.politicians` (separate from `is_appointed`). Retention judges get `is_appointed = true` AND `faces_retention_vote = true`. The filter logic: show in Appointed if `is_appointed = true`; show in Elected if `is_appointed = false` OR `faces_retention_vote = true`.
-- Alternatively, add `is_appointed_with_retention: boolean` as a third state alongside `is_appointed` and `is_elected`.
-
-**Warning signs:** If a judge who appears on the Indiana retention ballot (Indiana Supreme Court, Court of Appeals) does not show up under the Elected filter, this pitfall has occurred. Cross-check by looking at the 2026 Monroe County ballot on Ballotpedia.
-
-**Phase to address:** Phase 1 (data model design) — the schema decision must be made before any classification data is entered. Retrofitting a boolean to a three-state system after data entry requires a migration and re-audit of all judicial records.
+**Phase:** Must be addressed in Phase 1 (icon system research and PoliticianCard changes) before any ev-ui publish.
 
 ---
 
-### Pitfall 3: Election Data Has No Native Pipeline — Manual Entry Will Rot
+### Pitfall 2: Tier Hue Differentiation Introduces Partisan Color Associations
 
-**What goes wrong:** There is currently no election data pipeline. BallotReady was decommissioned. The platform has no mechanism to ingest candidate filings, election dates, or race definitions. If Election Central is built with manually-entered candidate records (inserted directly into the DB by hand), the data will become stale immediately after launch: candidates drop out, new candidates file, special elections are called, election dates change. Within 60 days of launch the page will display wrong candidates, wrong dates, and potentially candidates who have already won or lost.
+**What goes wrong:** Using common political color associations — red/blue for party affiliations — even accidentally through tier hues, violates the antipartisan principle baked into the schema (antipartisan enforcement at schema and ingestion layers) and design system. The platform explicitly excludes party affiliation from all data display. If "state" tier gets blue and "federal" tier gets red, or if any hue system maps to recognizable political parties, it undermines user trust and the platform's core value.
 
-**Why it happens:** Manual data entry is the path of least resistance. It unblocks the frontend build quickly. The decay problem is invisible until it causes user-visible errors. Special elections in particular are called with minimal advance notice (Congress special elections are called within days).
+**Why it happens:** The natural instinct when designing government-level differentiation is to reach for the US political color vocabulary (red = Republican = conservative, blue = Democrat = liberal). This is so deeply embedded in US civic visual culture that it happens unintentionally — a designer picks "government blue" for federal, "state red" for state-level, and the result reads as partisan even without intent.
 
-**How to avoid:** Before writing a single candidate record by hand, decide on a data source strategy and build at least a partial refresh mechanism:
-- **Democracy Works Elections API** (data.democracy.works) — nonprofit-friendly, covers federal/state/local across all 50 states including Monroe County and LA County. Published data for 3,462 elections in 2025. Has a free-access tier for civic engagement orgs. This is the highest-confidence option for election dates and race definitions.
-- **Ballotpedia API** — comprehensive local candidate data (top 100 cities by population). LA is covered; Bloomington (population ~90K) may be in scope. Paid tier, but has a nonprofit contact channel (data@ballotpedia.org). Covers candidate names, incumbency, party, filing status.
-- **Manual entry with a structured refresh date** — if APIs are cost-prohibitive, build a `last_verified_at` timestamp on every candidate record and surface stale records (>30 days old) in the admin panel as a forcing function for re-verification.
+**Consequences:** Perceived bias by users. Loss of trust. Contradicts the documented antipartisan principle. May require full visual redesign of tier system post-launch.
 
-At minimum, implement a `last_verified_at` timestamp and a `candidate_status` enum (`filed`, `qualified`, `withdrawn`, `elected`, `defeated`) regardless of which data source is used. Never display a candidate whose status is `withdrawn`.
+**Prevention:**
+- Use the existing EV brand palette only: teal scale for civic/government, coral for action/elections, yellow for inform, skyblue for secondary differentiation. These are brand colors without partisan connotations.
+- The `tokens.js` `colorScales` provides a full teal scale (050–950) and skyblue scale — use **lightness/shade variation within a single non-partisan hue** for tier differentiation rather than distinct hues per tier.
+- A safe pattern: federal = teal-700 (darkest, most authoritative), state = teal-500 (mid-brand), local = teal-200 (lightest, most approachable). All teal, no partisan reads.
+- Run any tier-color proposal past the antipartisan filter: "Could this hue be read as favoring one political party?" If yes, reject it.
 
-**Warning signs:** No `last_verified_at` or `candidate_status` field in the schema. Any schema that only records that a candidate filed but has no mechanism to record that they withdrew. Missing a withdrawal deadline column — in many jurisdictions a candidate who missed the withdrawal deadline remains on the ballot even if they publicly quit the race.
+**Detection:** Show the color palette to someone unfamiliar with the project. If they associate the hues with political parties, redesign before shipping.
 
-**Phase to address:** Phase 1 (data source research and schema design) — this is the foundational decision the entire milestone rests on. Do not build the Election Central page UI until the data source and refresh strategy is settled.
-
----
-
-### Pitfall 4: Antipartisan Principle Violated by Incumbent Display Logic
-
-**What goes wrong:** Incumbents in a race are, by definition, known politicians already in the Essentials database. It is tempting to link incumbent candidate cards directly to their existing profile page, displaying their party affiliation, compass alignment, and all available data. But the platform's antipartisan principle (documented in MEMORY.md: "Never show political parties or use partisan color associations") applies equally to candidates as to current officials. The violation is subtle — party affiliation is not explicitly displayed, but when an incumbent's full profile is surfaced inline in the Election Central race view, and the profile includes their legislative voting history on partisan bills or their compass alignment, the partisan inference is trivially available. More obviously: any candidate data sourced from Ballotpedia or Democracy Works includes party affiliation fields. If those fields are stored in the candidate schema, they will leak into API responses, and frontend developers will use them.
-
-**Why it happens:** Party affiliation is the single most commonly available data point for candidates. Every data source includes it. Filtering it out requires intentional, ongoing effort. Incumbent-to-profile linking bypasses the filter because the official profile pages were never designed for an election context where party inference is problematic.
-
-**How to avoid:**
-1. Do not store `party_affiliation` in the candidates table. Explicitly exclude it when consuming data from Democracy Works, Ballotpedia, or any other source. Document this exclusion in the import scripts with a comment explaining the antipartisan rationale.
-2. When displaying an incumbent's Essentials profile card within an Election Central race, audit which data surfaces. Compass alignment comparison should be opt-in (same pattern as the Compare page), not displayed by default on the race listing.
-3. The Elected/Appointed filter toggle itself is not partisan — this is safe. But adding "party" as a secondary filter or sort option is explicitly prohibited.
-
-**Warning signs:** Any `party` or `party_affiliation` column in `essentials.candidates` or any JOIN query that surfaces `essentials.politicians.party` in election-related API responses (if such a column exists or is later added). Any filter or sort option that groups candidates by party.
-
-**Phase to address:** Phase 2 (candidate data schema and import) — enforce the exclusion at the data ingestion layer, not in the frontend. Blocking party data from entering the DB is far easier than scrubbing it from API responses after the fact.
+**Phase:** Phase 1 (tier hue design decisions). Lock the palette before implementing — do not design it during implementation.
 
 ---
 
-### Pitfall 5: Candidates and Officials in the Same Schema Collision
+### Pitfall 3: buildTitleAndSubtitle() Logic Diverges Between ev-ui and essentials
 
-**What goes wrong:** The existing `essentials.politicians` table is designed for current officeholders: it has `total_years_in_office`, `election_frequency`, links to geofences/districts, and a profile page rendering pipeline. Candidates are not current officials. If candidates are inserted into the `politicians` table using a flag like `is_candidate: true`, the shared schema causes cascading problems:
-- The address-based search (`ST_Intersects` geofence matching) returns candidates mixed with current officials if they happen to be associated with a district geofence.
-- The legislative data pipeline (committees, bills, votes) will try to fetch data for candidates who have no legislative history.
-- Challenger candidates (non-incumbents) have no `bioguide_id`, no `slug`, no photos in CDN, and no geofence association — all the fields that assume an existing official.
-- Incumbent candidates ARE in the table already, so linking them is correct; but challenger candidates inserted here create orphaned records that pollute the officials dataset permanently.
+**What goes wrong:** `buildTitleAndSubtitle()` exists in two places: `ev-ui/src/PoliticianProfile.jsx` and `essentials/src/pages/Results.jsx`. The essentials version is more sophisticated — it includes `qualifyLocalTitle()`, `simplifyForBody()`, and `splitByBodyName()` which handle local government specifics. A visual redesign that touches how titles/subtitles are displayed on cards may motivate updating one version and not the other, causing permanent divergence.
 
-**Why it happens:** Sharing a table avoids a JOIN for incumbent display and seems to simplify the data model. The differences are invisible until the edge cases surface during testing.
+**Why it happens:** The CLAUDE.md documents this explicitly: "changes to district/title display must be applied in both places." But during fast visual iteration — especially when adding icons next to titles or changing subtitle styling — it is easy to modify the component you are looking at and forget the duplicate.
 
-**How to avoid:** Create a separate `essentials.candidates` table that references `essentials.politicians` via `politician_id` (nullable — NULL for challengers) and `essentials.offices` via `office_id`. Separate concerns:
-- `essentials.elections` — one row per race (election date, jurisdiction, office, district)
-- `essentials.candidates` — one row per candidate-race pairing (politician_id nullable, name, is_incumbent, candidate_status, last_verified_at, filing_date, withdrawal_date)
-- Incumbent profile pages link back to the existing `politicians` record. Challenger profile pages render from `candidates` data only.
+**Consequences:** Representatives page and profile pages display different title formats for the same politician. Local government titles that needed `qualifyLocalTitle()` stop being qualified correctly on whichever version gets missed.
 
-This schema prevents geofence queries from returning candidates, keeps the legislative pipeline isolated, and allows challenger records to be deleted after the election without corrupting the officials dataset.
+**Prevention:**
+- Do not touch `buildTitleAndSubtitle()` logic during this milestone unless fixing a documented bug.
+- If a display change requires modifying title formatting, update both files in the same commit and include a comment referencing the other file.
+- Any icon added next to the title should use absolute/overlay positioning rather than reflowing the title text — avoid layout changes that force title logic changes.
 
-**Warning signs:** Any proposal to add `is_candidate`, `race_id`, or `election_date` columns to `essentials.politicians`. Any migration that adds candidate data to the existing politicians table.
+**Detection:** Compare the subtitle of a local government politician (e.g., "Ellettsville Town Council") between the representatives list card and the profile page header. They should match. If they diverge, the functions have drifted.
 
-**Phase to address:** Phase 1 (schema design) — the separate table boundary must be established before any candidate data is imported.
+**Phase:** Applies across all phases. Flag this as a mandatory dual-edit check whenever title display code is touched.
 
 ---
 
-### Pitfall 6: Election Central Shows Stale "Upcoming" Races After Election Day
+## Moderate Pitfalls
 
-**What goes wrong:** The Election Central page is designed around showing "the next upcoming election." If the frontend filters races by `election_date > NOW()`, races disappear from the page the moment election day passes — which is correct. But if the filter is `election_date >= [hardcoded date]` or if `election_date` is stored as a date string without timezone, races in LA (Pacific time) may disappear 3 hours before they should for Indiana users, or persist 3 hours too long. More seriously: if the upcoming election filter has no refresh mechanism, the page goes blank after the election and there is nothing to show until the next election's data is entered.
-
-**Why it happens:** Election dates feel stable and far away when first entered. Post-election state management is deprioritized until the election is over and the page breaks.
-
-**How to avoid:**
-1. Store `election_date` as a UTC timestamp (not a date-only string) in the database. Election day in Indiana is Eastern Time; in California it is Pacific Time — the cutoff for "upcoming" is not midnight UTC.
-2. Implement an `election_status` enum: `upcoming`, `in_progress`, `results_pending`, `completed`. The frontend filter uses `election_status IN ('upcoming', 'in_progress')`.
-3. Design the empty state for Election Central explicitly: when no upcoming elections exist, show the most recently completed election with results (if available) rather than a blank page.
-
-**Warning signs:** `election_date` stored as `DATE` (not `TIMESTAMPTZ`). No `election_status` or equivalent field. No empty state design for Election Central when no upcoming elections are scheduled.
-
-**Phase to address:** Phase 2 (Election Central page and election data schema).
+Mistakes that require rework of a specific feature but do not cascade to all apps.
 
 ---
 
-## Technical Debt Patterns
+### Pitfall 4: Icon System Bloats ev-ui Bundle for All Consumers
 
-Shortcuts that seem reasonable but create long-term problems.
+**What goes wrong:** Adding a third-party icon library (react-icons, lucide-react, etc.) as a dependency to ev-ui, then importing icons throughout multiple components, adds the entire icon library to every consumer's bundle — even if that consumer only uses one or two icons. With `splitting: false` in tsup.config.js, ev-ui builds as a single bundle. A 200KB icon library becomes 200KB added to every page of every app.
 
-| Shortcut | Immediate Benefit | Long-term Cost | When Acceptable |
-|----------|-------------------|----------------|-----------------|
-| Insert candidates into `essentials.politicians` with `is_candidate` flag | No new table, no JOIN needed for incumbents | Search queries return candidates mixed with officials; legislative pipeline runs on non-officials; challenger records pollute officials dataset post-election | Never — separate schema required |
-| Store `party_affiliation` in candidates table "just in case" | Easier to display data from upstream sources | Violates antipartisan principle; will leak into API responses; very difficult to remove after downstream code depends on it | Never — exclude at ingestion |
-| Manually enter all candidate data without a `last_verified_at` timestamp | Faster initial build | Data goes stale within weeks; no forcing function for re-verification; page misleads users about who is actually in a race | Never — timestamp is mandatory |
-| Binary `is_appointed` boolean for the filter | Simpler query | Cannot represent retention judges (appointed + faces election); requires schema migration to fix | Never for jurisdictions with retention elections (Indiana, California) |
-| Skip Democracy Works API integration and use Ballotpedia scraping instead | Avoids API cost | Ballotpedia terms of service prohibit scraping; ToS violation could result in IP block or legal exposure | Never — use API or manual entry |
-| Hardcode election dates as string literals in code | Simple, visible | Election dates change (moved by legislation, special election called); requires code deploy to fix | Never — always from database |
+**Why it happens:** ev-ui's tsup config has `splitting: false` — all components bundle together without per-component chunking. Named imports from a barrel export do not tree-shake at the library level; tree-shaking happens in the consuming app's bundler (Vite), but only if the library ships proper ESM with `sideEffects: false` in package.json. ev-ui's current package.json does not declare `sideEffects: false`.
 
----
+**Consequences:** Cloudflare Pages bundle size grows for CompassV2, essentials, and EV-readrank. Core Web Vitals degradation. Unnecessary load time added for pages that do not use icons at all.
 
-## Integration Gotchas
+**Prevention:**
+- Preferred approach: inline SVG icons as React components directly in `PoliticianCard.jsx` and `CategorySection.jsx`. The existing compass icon in `PoliticianCard.jsx` (lines 168-205) already uses this pattern and works well. Add 3-5 more inline SVGs the same way.
+- If a library is required for scale, use Lucide React with individual named imports (`import { Building2 } from 'lucide-react'`), which tree-shakes correctly in Vite consumers. Measure bundle impact before committing.
+- Never do `import * as Icons from 'lucide-react'` or add a library to ev-ui's `dependencies` that ships as CJS-only.
+- Add `"sideEffects": false` to ev-ui's package.json whenever adding new icons to enable consumer tree-shaking.
 
-Common mistakes when connecting to external services.
+**Detection:** Run `npm run build` in essentials and check the Vite bundle output for large icon library chunks. Icon library chunks should not appear as large standalone artifacts separate from the component code.
 
-| Integration | Common Mistake | Correct Approach |
-|-------------|----------------|------------------|
-| Democracy Works Elections API | Assume free tier covers candidate-level data (names, incumbency, bio) | Free tier covers election dates and jurisdictions; full candidate data requires a paid plan or partnership agreement. Contact them as a nonprofit civic org for access terms. |
-| Ballotpedia API | Assume local races (Bloomington, Monroe County) are covered in standard tier | Coverage is top 100 cities + 475 school districts. Bloomington (~90K pop) may fall just outside; verify before signing up. Monroe County races may require manual entry regardless. |
-| Democracy Works Elections Calendar (free) | Use as the sole source of candidate names | Elections Calendar provides dates and jurisdiction data; it does NOT provide individual candidate filings. Candidate data needs a separate source. |
-| BallotReady (now CivicEngine) | Attempt to re-integrate as election data source | BallotReady was decommissioned from this platform in v1.5 for cost reasons. Their API has had major enhancements since (OCD-ID support, 2025 updates) but requires a paid organizational plan. Only re-evaluate if budget is available. |
-| Ballotpedia scraping | Scrape ballotpedia.org directly for candidate data | Ballotpedia ToS prohibits scraping. Use their API (paid) or contact data@ballotpedia.org for nonprofit data access. |
-| Open States API | Assume Open States covers municipal/local candidates | Open States covers state legislators only (bills, votes, committees). It has "limited support" for municipal governments and does NOT provide candidate election data for city/county races. |
-| Indiana Election Division | Expect structured API for candidate filings | Indiana does not expose a public API for candidate filings. The Monroe County Election Board website (`monroecountyvoters.us`) has a candidate portal but no machine-readable export. Manual verification required. |
+**Phase:** Phase 1 (icon system selection). Decide the approach before writing any icon code.
 
 ---
 
-## Performance Traps
+### Pitfall 5: Tier Color Uses Color as the Sole Visual Differentiator (WCAG 1.4.1 Failure)
 
-Patterns that work at small scale but fail as usage grows.
+**What goes wrong:** Using subtle hue tinting (e.g., a faint background wash on the card header or colored border-left) to differentiate federal/state/local tiers without a secondary non-color cue. Color cannot be the **only** visual signal that conveys meaning. If tier is communicated only through background tint, colorblind users cannot distinguish tiers.
 
-| Trap | Symptoms | Prevention | When It Breaks |
-|------|----------|------------|----------------|
-| Loading all races + all candidates in a single Election Central query | Fine for 2 upcoming elections; slow for full election history | Paginate: load only the next upcoming election by default; lazy-load historical elections | Breaks when 10+ elections with 50+ candidates each are stored |
-| Linking candidate profiles to full politician profile rendering pipeline | First incumbent profile load is fast; subsequent renders trigger legislative data fetch | Add `is_candidate_view` flag to profile context to skip legislative fetch for challenger candidates who have no legislative data | Breaks immediately for any challenger candidate |
-| Running `ST_Intersects` address match including candidates table | Address search returns candidates mixed with officials if candidates are improperly associated with geofences | Separate candidates from the geofence query entirely — candidates are discovered via Election Central, not via address search | Breaks as soon as any candidate record has a district association |
+**Why it happens:** Designers reach for color as an elegant tier differentiator. The `tokens.js` file includes WCAG contrast notes warning that coral (3.14:1), light blue (2.49:1), and yellow (1.46:1) fail on white for body text. A faint background tint is even lower contrast than the brand colors at full opacity. The W3C explicitly states: if a non-color cue only appears on hover, it is still a failure.
 
----
+**Consequences:** WCAG 1.4.1 (Use of Color) violation. Civic users who are colorblind cannot distinguish government tiers.
 
-## Security Mistakes
+**Prevention:**
+- Every tier indicator must have a second non-color differentiator: a text label ("Federal," "State," "Local") or a distinct icon shape, in addition to any color tint.
+- Never rely on border-left color or background tint alone. Pair color with shape or text.
+- Use the accessible text alternatives from `tokens.js` when any tier text must be readable: teal (`#00657C` at 6.66:1) is the only brand color that passes AA on white without a darkened variant.
+- Test with browser devtools grayscale filter — the tiers must still be visually distinct in grayscale.
 
-Domain-specific security issues beyond general web security.
+**Detection:** Apply `filter: grayscale(100%)` via browser devtools to the representatives page. All tier sections must still be distinguishable without color.
 
-| Mistake | Risk | Prevention |
-|---------|------|------------|
-| Exposing `party_affiliation` in any API response | Enables partisan inference in what is intentionally a nonpartisan platform; also violates the documented antipartisan principle | Audit all election-related API endpoints before launch to confirm no party field is returned in any response payload |
-| Displaying candidate home addresses | Candidates often provide home addresses on filing documents; including them in profile data is a safety risk | Do not store or display residential addresses for candidates — city/county of residence only |
-| Admin election data entry with no access control | Malicious actor could insert fake candidates or modify election dates | All election admin endpoints must be behind existing `requireAuth` + admin role check |
+**Phase:** Phase 2 (tier hue implementation). Verify accessibility before publishing ev-ui changes.
 
 ---
 
-## UX Pitfalls
+### Pitfall 6: Hover-Only Icon Tooltips Are Inaccessible on Touch Devices
 
-Common user experience mistakes in this domain.
+**What goes wrong:** The plan calls for "small subtle icons replacing badges (on ballot, compass available, branch type) with hover details." If the hover tooltip is the only way to understand what an icon means, mobile users (who cannot hover) and keyboard users get an incomplete experience. `CategorySection.jsx` already has a tooltip implemented via `onMouseEnter`/`onMouseLeave` — this pattern works on desktop but provides no feedback on mobile.
 
-| Pitfall | User Impact | Better Approach |
-|---------|-------------|-----------------|
-| Showing the elected/appointed toggle when `is_appointed` data is unverified | Users trust the filter; appointed officials appear as elected; trust is lost when discrepancy is noticed | Audit and verify `is_appointed` for all in-scope officials before shipping the toggle |
-| Displaying "No upcoming elections" when an election exists but has no candidate data yet | User thinks the page is broken or coverage is missing | Show the election date and office list even if no candidates have been entered yet; indicate "Candidates will be listed as they file" |
-| Presenting challenger and incumbent candidate profiles identically | Users cannot tell who currently holds the seat | Always label incumbents explicitly ("Incumbent" badge on the card); challenger cards should not have the legislative history section (it would be empty and confusing) |
-| Linking Election Central only from the main nav (not from official profile pages) | Users who land on an official's profile have no path to see "is this person on the ballot?" | Add an "Upcoming election" callout on the official's profile page if they are a candidate in a registered race |
-| Using red/blue color coding for "Elected" vs "Appointed" filter pills | Red/blue has partisan connotation in US civic context | Use neutral EV design tokens: `ev-coral` and `ev-muted-blue` are acceptable only if they are not consistently mapped to the same "side" as election results displays |
+**Why it happens:** Hover-first UI patterns are designed on desktop and assumed acceptable for "subtle" indicators. The design goal of "small subtle icons" implies the text label is secondary — but on mobile the icon text is the only meaning available, so it must be accessible without hover.
 
----
+**Consequences:** Mobile users (likely the majority of civic voters checking their reps on a phone) see icons with no explanation. WCAG 1.4.13 requires hover-triggered content to be dismissible, hoverable, and persistent — but the right fix is ensuring meaning does not require hover at all.
 
-## "Looks Done But Isn't" Checklist
+**Prevention:**
+- Icons must be self-evident or paired with a visible label below/beside them in the default state.
+- For truly icon-only indicators, add `aria-label` and visually-hidden text so screen readers announce the meaning.
+- Tooltips should supplement detail ("On ballot: May 6, 2026 Primary") not provide the primary label. The label must be visible without interaction.
+- The existing `CategorySection.jsx` tooltip already handles `onFocus`/`onBlur` for keyboard — use it as the baseline pattern.
 
-Things that appear complete but are missing critical pieces.
+**Detection:** Test on a real iPhone with Safari. All icon meanings should be clear without tapping or hovering.
 
-- [ ] **Elected/Appointed filter:** Verify retention judges appear under BOTH filter states, not only Appointed. Test with actual Indiana appellate judges from the 2026 ballot.
-- [ ] **`is_appointed` data quality:** Run the audit query (`SELECT COUNT(*), is_appointed FROM essentials.politicians GROUP BY is_appointed`) and confirm the distribution is plausible before shipping the filter. All-false or all-true signals a defaulted field, not researched data.
-- [ ] **Candidate schema separation:** Confirm no `is_candidate` flag was added to `essentials.politicians`. Confirm `essentials.candidates` exists as a separate table with a nullable `politician_id` FK for incumbents.
-- [ ] **Antipartisan data exclusion:** Verify the candidates table schema has no `party`, `party_affiliation`, or `party_id` column. Check the import scripts for any field that is excluded with a comment explaining why.
-- [ ] **Election data freshness:** Verify every candidate record has `last_verified_at` and `candidate_status` fields. Verify no candidate with `candidate_status = 'withdrawn'` is visible in the UI.
-- [ ] **Post-election empty state:** After the next election passes, verify Election Central does not show a blank page — it should show the completed election results state or the "next upcoming election" state.
-- [ ] **Challenger profile pages:** Navigate to a challenger candidate's profile. Confirm the legislative history section is absent (not visible, not an empty loading state, not an error).
-- [ ] **UTC timestamp for election dates:** Confirm `election_date` is stored as `TIMESTAMPTZ`, not `DATE` or a string. Verify the "upcoming" filter uses server-side UTC comparison, not a client-side date string comparison.
+**Phase:** Phase 2 (icon implementation). Design the icon+label pairing before coding, not after.
 
 ---
 
-## Recovery Strategies
+### Pitfall 7: Removing "Incumbent" Marker Without Accidentally Removing is_incumbent Branching Logic
 
-When pitfalls occur despite prevention, how to recover.
+**What goes wrong:** The milestone calls for removing the "incumbent" marker from candidate cards. The incumbent/challenger branching in `CandidateProfile.jsx` uses the `is_incumbent` flag to decide whether to render the full politician profile (with CompassCard, legislative data, etc.) or the minimal challenger view. Removing the visual badge does not remove this branching — but if a developer misunderstands the scope and removes the `is_incumbent` prop pass-through as part of the "remove incumbent marker" task, the entire CandidateProfile page breaks.
 
-| Pitfall | Recovery Cost | Recovery Steps |
-|---------|---------------|----------------|
-| `is_appointed` data found to be defaulted (all false) after filter ships | HIGH | Suspend the filter toggle UI, audit all officials in coverage scope, manually classify, re-enable toggle. Budget 1-2 days of classification work for ~800 officials. |
-| Candidates accidentally inserted into `essentials.politicians` | HIGH | Requires: remove candidate-specific columns from politicians table via migration, create separate candidates table, migrate candidate rows, update all API endpoints and frontend references. Estimate 2-3 days of work. |
-| Party affiliation data found in candidates table after launch | MEDIUM | `ALTER TABLE essentials.candidates DROP COLUMN party_affiliation`, redeploy API, purge any cached API responses. Fast technically but requires security review if data was ever served. |
-| Retention judge appears under only Appointed (not Elected) | LOW | Add `faces_retention_vote` column (migration), update classification for retention judges, update filter query. 2-4 hours. |
-| Election Central goes blank after election day | LOW | Implement `election_status` enum update (either scheduled job or manual admin toggle), update frontend empty state. 4-8 hours. |
-| Stale candidate data (withdrawn candidate still showing) | MEDIUM | Requires a data verification pass and a process for ongoing maintenance. Technical fix is a `candidate_status` update + cache invalidation. Process fix is the harder part — must establish who owns ongoing data freshness. |
+**Why it happens:** "Remove the incumbent marker" sounds like a simple badge deletion. The word "marker" is ambiguous — it could mean the badge, the prop, or the branching logic. Without explicit scope boundaries, a developer touching `PoliticianCard.jsx` might remove the `badge` prop from the call site in `ElectionsView.jsx` (correct), then continue and remove `is_incumbent` from `CandidateProfile.jsx` routing (incorrect).
+
+**Consequences:** All challenger candidate profiles render with the full legislator template (404 on legislative data fetches, empty CompassCard, broken layout), or all incumbent profiles render as minimal challenger views, hiding their full data.
+
+**Prevention:**
+- Explicitly scope the task: "Remove the 'INCUMBENT' badge text from the PoliticianCard `badge` prop passed in ElectionsView.jsx. Do NOT touch CandidateProfile.jsx is_incumbent branching logic."
+- Add a comment to `CandidateProfile.jsx` at the `is_incumbent` branch: `// is_incumbent drives full/minimal profile routing — badge display removed in v2026.4.1 but this logic stays`.
+
+**Detection:** After removing the badge, verify that navigating to an incumbent candidate profile still shows the full legislator profile with CompassCard and legislative sections.
+
+**Phase:** Phase 1 (election page changes). Scope this task explicitly before implementation.
 
 ---
 
-## Pitfall-to-Phase Mapping
+### Pitfall 8: Compass-First Card Prototype Mutates the Shared PoliticianCard Contract
 
-How roadmap phases should address these pitfalls.
+**What goes wrong:** The "compass-first card prototype (real reps, explore removing photos from results)" implies a significant visual departure from `PoliticianCard`. If the prototype is built by directly modifying `PoliticianCard` in ev-ui rather than creating a new component, it changes the shared component for all pages. The existing `PoliticianCard` with a headshot photo is used on elections, representatives, candidate profiles, and compass compare pages.
 
-| Pitfall | Prevention Phase | Verification |
-|---------|------------------|--------------|
-| Stale `is_appointed` data from scraping pipeline | Phase 1: Data audit and classification backfill | Audit query shows plausible appointed/elected distribution; sample of known-appointed officials verified |
-| Retention judges need dual filter appearance | Phase 1: Schema design | `faces_retention_vote` column exists; filter query includes `OR faces_retention_vote = true` in Elected result set |
-| No election data pipeline → data rot | Phase 1: Data source selection | Data source decision documented; `last_verified_at` and `candidate_status` in schema before any data entered |
-| Antipartisan principle violated by party storage | Phase 2: Candidate schema and import | `DESCRIBE essentials.candidates` shows no party column; import scripts have explicit exclusion comments |
-| Candidates mixed into officials schema | Phase 1: Schema design | Separate `essentials.candidates` and `essentials.elections` tables exist with correct FK structure |
-| Election Central blank after election day | Phase 2: Election page | `election_status` enum implemented; empty state designed and tested |
-| UTC timestamp missing from election dates | Phase 1: Schema design | `election_date` column is `TIMESTAMPTZ`; verified before any data entry |
-| Challenger profiles triggering legislative fetch | Phase 3: Candidate profile pages | Challenger profile page renders without legislative section; no API call to legislative endpoints on challenger load |
+**Why it happens:** The path of least resistance is to add a `compassFirst` variant to `PoliticianCard` (it already has `horizontal | vertical` variants). But "explore removing photos" means the new variant has fundamentally different layout assumptions that are hard to express cleanly as a third variant without significant conditional complexity in the component.
+
+**Consequences:** A prototype that becomes hard to undo. ev-ui complexity increases. The existing photo variant may visually regress if the shared style object is modified to accommodate the new variant's different sizing assumptions.
+
+**Prevention:**
+- Build the compass-first card as a **new component** in essentials: `CompassFirstCard.jsx` (local component, not in ev-ui). Treat it as a throw-away prototype.
+- Only migrate it to ev-ui if the prototype is validated and intended to replace `PoliticianCard` in production.
+- Do not add a third variant to `PoliticianCard` until the design is finalized and the prototype decision is made.
+
+**Detection:** After implementing the prototype, verify that `ElectionsView.jsx` and all existing `PoliticianCard` usage still renders identically to before.
+
+**Phase:** Phase 3 (compass-first prototype). Start as a local component, not an ev-ui change.
+
+---
+
+## Minor Pitfalls
+
+Mistakes that cause visual glitches or minor rework but do not break functionality.
+
+---
+
+### Pitfall 9: Headshot Cropping Fix Applied to CDN Images Instead of CSS object-position
+
+**What goes wrong:** The headshot cropping audit may reveal that some headshots look bad because the source is portrait-oriented with space above the head, or a wide landscape image. The impulse is to re-download and re-upload all affected CDN images with a different crop. This creates unnecessary data migration work and risks losing original images.
+
+**Why it happens:** Cropping feels like an image-editing task, not a CSS task.
+
+**Prevention:**
+- Use CSS first: `object-fit: cover; object-position: top center` on the `<img>` element covers ~90% of bad headshot crops with one line.
+- `PoliticianCard.jsx` already uses `objectFit: 'cover'` with no `objectPosition` set — adding `objectPosition: 'top'` to `styles.image` is a one-line change.
+- Only re-upload images if the source image itself is fundamentally broken (corrupted, wrong person, or so poorly framed that CSS cannot salvage it).
+
+**Detection:** After adding `object-position: top`, scan known bad-crop politicians. If faces are still cut off, those specific images may need `object-position: center 20%` or re-upload.
+
+**Phase:** Phase 2 (headshot audit). CSS fix first, image re-upload as last resort.
+
+---
+
+### Pitfall 10: Tailwind Classes in essentials Cannot Override ev-ui Inline Styles
+
+**What goes wrong:** essentials uses Tailwind CSS 4; ev-ui components use JavaScript inline style objects referencing `tokens.js`. When building tier hue differentiation, a developer writes Tailwind classes on a container wrapping an ev-ui component, expecting to style the tier indicator — but ev-ui's inline styles have the highest CSS specificity and silently win over Tailwind utility classes on the same element.
+
+**Why it happens:** ev-ui `CategorySection` and `PoliticianCard` apply styles via JavaScript style objects, which become inline `style=""` attributes in the DOM. Inline styles cannot be overridden by external class-based styles without `!important`. You cannot override ev-ui component internal styles with Tailwind classes from essentials.
+
+**Consequences:** Tier color tinting appears to have no effect, or requires `!important` hacks that create long-term maintenance debt.
+
+**Prevention:**
+- Use the `style` prop that `CategorySection` already accepts: `<CategorySection style={{ borderLeftColor: tierColor }}>`. This merges correctly with the component's internal styles.
+- If a tier-color prop is needed in `PoliticianCard`, add it as an explicit named prop (e.g., `tierAccent`) that the component internally applies — do not rely on consumers wrapping with Tailwind classes.
+- Never use `!important` to override ev-ui component internals.
+
+**Detection:** Open DevTools and inspect the element. If a style appears in the `style=""` attribute it is from ev-ui inline styles and cannot be overridden by Tailwind from outside the component.
+
+**Phase:** Applies across all phases where tier color is added to ev-ui components.
+
+---
+
+### Pitfall 11: New Icons Added to ev-ui Without Recording Them in the Design System
+
+**What goes wrong:** New icons added to ev-ui for this milestone (on-ballot indicator, compass-available indicator, branch-type indicator) are implemented as inline SVG React components but never documented in the Penpot design system. Future design work does not know these icons exist in the codebase, leading to inconsistent icon choices in future milestones.
+
+**Why it happens:** The dev-to-design sync is optional and easily skipped under time pressure. The `sync-penpot` script exists (`npm run sync-penpot`) but only syncs tokens, not icon components.
+
+**Prevention:**
+- After finalizing new icons, add a comment block in the component file naming each icon and its intended usage context.
+- If inline SVGs stay in `PoliticianCard.jsx`, note: `// Icon: CompassAvailableIcon — shown when onCompassClick prop is present`.
+- Add icon names and usage to the next Penpot design system update.
+
+**Detection:** After shipping, confirm a designer starting fresh can identify all icon assets used across the platform without reading source code.
+
+**Phase:** Phase 1 wrap-up, before publishing ev-ui changes.
+
+---
+
+## Phase-Specific Warnings
+
+| Phase Topic | Likely Pitfall | Mitigation |
+|-------------|---------------|------------|
+| Icon system selection | Bundle bloat from icon library added to ev-ui | Use inline SVG components (follow existing PoliticianCard compass icon pattern) — 4-5 icons do not need a library |
+| Tier hue design | Inadvertent partisan color associations | Use teal lightness scale only; run antipartisan color check before implementation |
+| PoliticianCard tier-color prop | Breaking all three consumer apps | Add as optional prop with safe null/undefined fallback; test without prop first |
+| Removing "incumbent" badge | Accidentally removing is_incumbent branching in CandidateProfile | Scope task to badge text removal only; add code comment to CandidateProfile branching |
+| Compass-first card prototype | Mutating shared PoliticianCard contract | Build as local CompassFirstCard.jsx in essentials, not as ev-ui variant |
+| Headshot cropping audit | Re-uploading 503 images unnecessarily | CSS object-position fix first; re-upload only for fundamentally broken source images |
+| Icon tooltips | Hover-only meaning inaccessible on mobile | Pair every icon with visible text label or aria-label; tooltip provides detail, not the primary label |
+| buildTitleAndSubtitle() | Logic drift between ev-ui and essentials copies | Dual-edit policy: any touch to title logic updates both files in same commit |
+| ev-ui publish | Consumers pulling latest, breaking builds | Bump version consciously; verify optional-prop fallback renders safely before publish |
+| Tier color contrast | Faint tints failing WCAG 1.4.1 | Verify with grayscale filter; always pair color with shape or text label |
+| Tailwind + inline style conflict | Consumer Tailwind classes silently losing to ev-ui inline styles | Use ev-ui's `style` prop pass-through or add explicit named props; never rely on external class overrides |
 
 ---
 
 ## Sources
 
-- Direct inspection: `/Users/chrisandrews/Documents/GitHub/.planning/PROJECT.md` — v1.5 BallotReady decommission, v1.6 gap-fill pipeline, v2026.3.8 milestone target features
-- Direct inspection: `CLAUDE.md` — antipartisan principle, district types, essentials schema documentation
-- User memory (MEMORY.md): "NEVER show political parties or use partisan color associations" — antipartisan principle confirmed as absolute constraint
-- [Indiana Judicial Branch: Indiana's Judicial Retention System](https://www.in.gov/courts/about/retention/) — appellate judges appointed then face retention vote; confirmed hybrid classification
-- [Retention election — Ballotpedia](https://ballotpedia.org/Retention_election) — retention elections are not an initial selection method; combined with appointment; creates dual classification need
-- [Indiana Judicial Branch: 2026 Judicial Retention](https://www.in.gov/courts/selection/marion/2026-retention/) — 2026 retention elections confirmed active for Indiana appellate judges
-- [Monroe County, Indiana, elections, 2026 — Ballotpedia](https://ballotpedia.org/Monroe_County,_Indiana,_elections,_2026) — Monroe County trial court judges compete in partisan elections (not retention); state appellate judges use retention system
-- [Democracy Works Elections API](https://data.democracy.works/ballot-info) — nonprofit-friendly, 3,462 elections in 2025, covers local races; free calendar access for civic orgs; candidate data requires partnership
-- [Democracy Works: We Powered Democracy in 2025](https://www.democracy.works/news/we-powered-democracy-in-2025) — nonprofit coverage and mission confirmed
-- [Ballotpedia: Buy Political Data](https://ballotpedia.org/Ballotpedia:Buy_Political_Data) — paid API; top 100 cities + 475 school districts; contact data@ballotpedia.org for nonprofit access
-- [Ballotpedia API documentation](https://developer.ballotpedia.org) — candidate fields include party affiliation; must be excluded at ingestion for antipartisan compliance
-- [Candidate withdrawal — Ballotpedia](https://ballotpedia.org/Candidate_withdrawal) — candidate withdrawal defined; withdrawal deadline critical (missed deadline = name stays on ballot)
-- [Open States API v3 Overview](https://docs.openstates.org/api-v3/) — confirmed state legislative data only; limited municipal support; no candidate election data for city/county races
-- [BallotReady for Organizations](https://organizations.ballotready.org) — API still active as of 2025 with OCD-ID enhancements; paid organizational plan required
-- [American local government elections database — Scientific Data](https://www.nature.com/articles/s41597-023-02792-x) — confirms persistent challenge of decentralized local election data; lack of centralized sources well-documented
-- [Notice of Turndown of the Representatives API — Google Groups](https://groups.google.com/g/google-civicinfo-api/c/9fwFn-dhktA) — Google Civic Information API deprecating representative data; ecosystem shifting to BallotReady/Ballotpedia/Cicero
-- [Judicial Selection: A Glossary — Brennan Center](https://www.brennancenter.org/our-work/research-reports/judicial-selection-glossary-terms) — confirmed no single classification for states using combined appointment + retention selection
-- [Voter guides: Using color effectively — Center for Civic Design](https://civicdesign.org/voter-guides-using-color-effectively/) — color in civic election contexts carries partisan associations; use deliberately
-
----
-*Pitfalls research for: Election Central page and elected/appointed filter added to existing Essentials civic platform*
-*Researched: 2026-03-29*
+- WCAG 1.4.1 Use of Color: [W3C Understanding SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
+- WCAG 1.4.13 Content on Hover or Focus: [W3C](https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html)
+- Color-only failure, hover cue still fails: [W3C F73](https://www.w3.org/TR/WCAG20-TECHS/F73.html)
+- Icon tooltip accessibility: [Accessibly Blog](https://accessiblyapp.com/blog/tooltip-accessibility/)
+- tsup tree-shaking guide: [dorshinar.me](https://dorshinar.me/posts/treeshaking-with-tsup)
+- Lucide React bundle benchmarks: [CodeToDeploy/Medium](https://medium.com/codetodeploy/the-hidden-bundle-cost-of-react-icons-why-lucide-wins-in-2026-1ddb74c1a86c)
+- Component library versioning pitfalls: [Antler Digital](https://antler.digital/blog/best-practices-for-component-versioning-in-react)
+- USWDS color design for civic apps: [USWDS Color Overview](https://designsystem.digital.gov/design-tokens/color/overview/)
+- ev-ui tokens: `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js`
+- ev-ui PoliticianCard: `/Users/chrisandrews/Documents/GitHub/ev-ui/src/PoliticianCard.jsx`
+- ev-ui tsup config: `/Users/chrisandrews/Documents/GitHub/ev-ui/tsup.config.js`
+- Antipartisan principle: project MEMORY.md (feedback_antipartisan.md)
