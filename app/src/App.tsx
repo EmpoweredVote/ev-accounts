@@ -9,6 +9,11 @@ import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
 import { useAuthStore, getStoredToken, User } from './store/authStore';
 import { apiFetch } from './lib/api';
+import ContributorLayout from './pages/contributor/ContributorLayout';
+import ContributorDashboard from './pages/contributor/ContributorDashboard';
+import CompassEditorPage from './pages/contributor/CompassEditorPage';
+import CampaignManagerPage from './pages/contributor/CampaignManagerPage';
+import EssentialsEditorPage from './pages/contributor/EssentialsEditorPage';
 
 interface MeResponse {
   id: string;
@@ -163,6 +168,12 @@ function App() {
         <Route element={<OnboardingGuard />}>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/settings/location" element={<UpdateLocationPage />} />
+          <Route path="/contributor" element={<ContributorLayout />}>
+            <Route index element={<ContributorDashboard />} />
+            <Route path="compass-editor" element={<CompassEditorPage />} />
+            <Route path="campaign-manager" element={<CampaignManagerPage />} />
+            <Route path="essentials-editor" element={<EssentialsEditorPage />} />
+          </Route>
         </Route>
 
       </Route>

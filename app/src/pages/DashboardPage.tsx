@@ -238,6 +238,12 @@ export default function DashboardPage() {
 
       <main className="max-w-lg mx-auto px-4 py-6 space-y-4">
 
+        {/* Tab bar */}
+        <nav className="flex gap-6 border-b border-gray-200 dark:border-gray-800 mb-6">
+          <span className="pb-2 border-b-2 border-ev-teal text-ev-teal font-medium text-sm">Profile</span>
+          <Link to="/contributor" className="pb-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm">Contributor</Link>
+        </nav>
+
         {/* Identity card */}
         <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
           <div className="flex items-start justify-between">
