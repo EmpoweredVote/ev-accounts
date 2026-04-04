@@ -360,7 +360,10 @@ Plans:
   1. Federal, State, and Local sections have distinct background colors (not just label colors) — cards sit on top of the tinted background
   2. Executive, Legislative, and Judicial branches each have a unique icon on politician cards — no hover required to distinguish branch type
   3. Existing tooltip behavior preserved for additional metadata detail
-Plans: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 106-01-PLAN.md — ev-ui tierColors 3-way bg distinction + BranchIcon branch prop, publish v0.1.56
+- [ ] 106-02-PLAN.md — Essentials tier background bands + branch prop wiring + visual verification
 **UI hint**: yes
 
 ## Progress
@@ -376,4 +379,4 @@ Plans: TBD
 | 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 1/2 | Complete    | 2026-04-04 |
 | 105. Seed SQL Fix & Doc Cleanup | v2026.4.1 | 1/1 | Complete    | 2026-04-04 |
-| 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/0 | Pending | — |
+| 106. Tier Background Hues & Branch Icons | v2026.4.1 | 0/2 | Planned | — |
