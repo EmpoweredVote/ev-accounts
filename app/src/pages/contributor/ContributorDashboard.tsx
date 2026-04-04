@@ -128,16 +128,6 @@ export default function ContributorDashboard() {
             </div>
           </div>
 
-          <p className="text-sm text-gray-500 leading-relaxed pt-1">
-            Interested in contributing?{' '}
-            <a
-              href="mailto:team@empowered.vote?subject=Contributor%20Role%20Interest"
-              className="text-ev-teal font-medium hover:underline"
-            >
-              Reach out to the Empowered Vote team
-            </a>{' '}
-            to get started.
-          </p>
         </div>
       ) : (
         /* Active grants */
