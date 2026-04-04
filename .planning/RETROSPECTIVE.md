@@ -425,6 +425,52 @@
 
 ---
 
+## Milestone: v2026.4.1 — Essentials Visual Polish & Election Improvements
+
+**Shipped:** 2026-04-04
+**Phases:** 5 | **Plans:** 11
+
+### What Was Built
+- ev-ui icon system (BallotIcon/CompassIcon/BranchIcon SVGs) with tierColors teal-scale token and face-centered imageFocalPoint
+- Icon overlay component with @floating-ui/react tooltips on politician cards (ballot status, compass availability, branch type)
+- Landing page with coverage area cards (Monroe County IN, LA County CA) and shortcut navigation buttons
+- Election page restructured with position-first grouping and antipartisan party sub-labels
+- Compass-first card prototype at /prototype with 3 layout variants (A/B/C) and mock dual-overlay radar
+- Headshot audit TypeScript CLI scanning 645 CDN images with CSV output
+- Edge-to-edge tier background bands (Federal=#FFFFFF, State=#F7FBFC, Local=#EDF6F8) with branch-specific icons
+- Incumbent badge removal and Ruben Marte data fix (migration 049)
+- Phase 105-106 gap closure: SUMMARY frontmatter backfill, seed SQL verification, tier hue + branch icon implementation
+
+### What Worked
+- Single-day milestone execution (all 5 phases on 2026-04-04) — tight scope with clear dependencies
+- Inline SVG in ev-ui avoided external icon library dependency (tsup splitting:false blast radius)
+- Milestone audit before completion caught DATA-02 partial requirement and frontmatter gaps — Phase 105/106 closed them cleanly
+- IconOverlay with @floating-ui/react hooks (useHover, useFocus, useDismiss) provided accessible tooltips without custom positioning code
+- COVERAGE_AREAS constant pattern for landing page — addresses hardcoded for covered areas only
+- Phase 106 user feedback during checkpoint reversed tier color direction (federal=white, local=most-tinted) — interactive verification caught wrong assumption
+
+### What Was Inefficient
+- Original audit status was "tech_debt" with 12 items — many were human visual checks that couldn't be closed programmatically
+- Phase 103 plan count (4 plans) could have been 3 — headshot audit script was small enough to bundle with another plan
+- tierColors evolved through multiple ev-ui version bumps (0.1.55 → 0.1.60) due to iterative visual tuning during Phase 106
+
+### Patterns Established
+- tierColors token in ev-ui with bg/text/accent per tier — consumers import and apply via inline styles
+- BranchIcon switch/case pattern — branch prop selects SVG path, default returns landmark fallback
+- IconWithTooltip pattern — extraProps spread onto IconComponent, tooltip text derived from branch name
+- Edge-to-edge tier bands: negative margin + padding (`-mx-4 md:-mx-8 px-4 md:px-8`) for full-bleed backgrounds
+- Gap closure phases (105/106) as explicit roadmap entries — audit findings become planned work, not ad-hoc fixes
+- VARIANT_CONFIG lookup object exported from CompassFirstCard for consumer grid layout access
+
+### Key Lessons
+1. Gap closure phases after audit formalize tech debt into tracked work — prevents drift between "known issues" and "actually fixed"
+2. Inline SVG icons in a bundled library (tsup splitting:false) are safer than importing icon libraries that may tree-shake differently per consumer
+3. Tier color direction matters — users expect "more important = whiter/cleaner" (federal=white), not "more local = lighter" — always checkpoint visual hierarchy assumptions
+4. Compass-first card prototype with mock data validates layout without requiring real stance data — unblocks UX evaluation from data availability
+5. Single-day milestones work when prior milestones established stable patterns — icon overlay, tier colors, and ComponentCard all built on v2026.3.8 foundations
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -443,6 +489,7 @@
 | v2026.3.6 | 7 | 15 | Full UX redesign milestone; urgent phase insertion (87.1); pairwise matchup pattern; store versioning discipline |
 | v2026.3.7 | 5 | 11 | Treasury multi-entity expansion; config-driven import pipeline; entity switcher; EV design system applied |
 | v2026.3.8 | 5 | 12 | Election Central + filter; race_candidates separation pattern; two-part election query; antipartisan schema enforcement |
+| v2026.4.1 | 5 | 11 | Visual polish milestone; inline SVG icon system; tierColors token; gap closure phases from audit; single-day execution |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -474,3 +521,6 @@
 26. Antipartisan enforcement at schema + ingestion layers prevents upstream data leakage — UI-only exclusion is insufficient (v2026.3.8)
 27. Two-pass politician matching (exact → fuzzy with threshold) is the right pattern when canonical cross-system IDs don't exist (v2026.3.8)
 28. Deferred data imports are acceptable when architectural wiring is complete — self-gating components handle empty data gracefully (v2026.3.8)
+29. Gap closure phases formalize audit findings into tracked work — prevents drift between known issues and actual fixes (v2026.4.1)
+30. Inline SVG in bundled libraries is safer than icon library imports — tree-shaking varies per consumer with splitting:false (v2026.4.1)
+31. Visual hierarchy assumptions need user checkpoints — "more important = whiter" is not always intuitive (v2026.4.1)

@@ -1,5 +1,22 @@
 # Milestones
 
+## v2026.4.1 Essentials Visual Polish & Election Improvements (Shipped: 2026-04-04)
+
+**Phases completed:** 5 phases, 11 plans, 17 tasks
+
+**Key accomplishments:**
+
+- BallotIcon/CompassIcon/BranchIcon SVG icons, tierColors teal-scale token, CategorySection tier prop, and face-centered imageFocalPoint published as ev-ui v0.1.55
+- Incumbent badge removed from election candidate cards and Ruben Marte candidate record corrected (name fixed, politician profile linked) in live database via idempotent migration
+- `essentials/src/utils/branchType.js`
+- TypeScript CLI audit script scanning 645 CDN headshots across 78K politicians, flagging broken URLs, bad dimensions, file size outliers, and missing headshots as CSV
+- Static mock compass stances for 108 Bloomington politicians (4 distinct radar profiles) and CompassFirstCard with A/B/C variants, dual overlay support, and dashed-polygon placeholder state
+- /prototype route with compass-first cards, 3 layout variants, tier grouping, mock dual overlay, and visually verified card layouts
+- ev-ui v0.1.56 with 3-way tier background distinction (#E4F3F6/#F5F9FA/#FFFFFF) and branch-specific BranchIcon (executive/legislative/judicial SVGs)
+- Edge-to-edge tier background bands (Local=#EDF6F8, State=#F7FBFC, Federal=#FFFFFF) with branch-specific icons and white floating category headers
+
+---
+
 ## v2026.3.8 Essentials Election Central (Shipped: 2026-03-31)
 
 **Phases completed:** 5 phases (97-101), 12 plans

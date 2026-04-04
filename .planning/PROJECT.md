@@ -186,23 +186,15 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Landing page coverage areas (Monroe County IN, LA County CA) with shortcut navigation — v2026.4.1
 - ✓ Election page restructured: position-first grouping with party sub-labels — v2026.4.1
 - ✓ Headshot audit script with 4 checks (missing, broken, size, dimensions) and CSV output — v2026.4.1
+- ✓ Incumbent badge removed from election candidate cards — v2026.4.1
+- ✓ Ruben Marte candidate record linked to politician profile — v2026.4.1
+- ✓ Face-centered headshot cropping via imageFocalPoint — v2026.4.1
+- ✓ ev-ui icon system (BallotIcon/CompassIcon/BranchIcon) with tierColors token — v2026.4.1
+- ✓ Compass-first card prototype at /prototype with 3 layout variants — v2026.4.1
+- ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
+- ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
 
 ### Active
-
-## Current Milestone: v2026.4.1 Essentials Visual Polish & Election Improvements
-
-**Goal:** Improve visual clarity and information hierarchy of representatives and election pages, fix data issues, and add location-aware browsing.
-
-**Target features:**
-- Visual redesign of election + representatives pages (reduce information overload, improve tier readability)
-- Tier-level hue differentiation (local vs state vs federal, city vs township vs county)
-- Small subtle icons replacing badges (on ballot, compass available, branch type) with hover details
-- Icon set research fitting EV design system
-- Remove "incumbent" marker from candidate cards
-- Fix Ruben Marte name mismatch to link candidate to politician profile
-- Headshot cropping audit and fix
-- Main page: explicit coverage messaging (Monroe County IN / LA County CA) with prominent location buttons
-- Lightweight compass-first card prototype (real reps, explore removing photos from results)
 
 ### Future
 
@@ -215,12 +207,13 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Last Milestone: v2026.3.8 Essentials Election Central (Shipped 2026-03-31)
+## Last Milestone: v2026.4.1 Essentials Visual Polish & Election Improvements (Shipped 2026-04-04)
 
-**Delivered:** Election Central page added to Essentials with tier-grouped races, candidate profile pages (incumbent/challenger branching), elected/appointed filter on representatives page. Election data imported for Indiana and LA County. 5 phases, 12 plans. 19/19 active requirements satisfied, 2 deferred (PROF-04/05).
+**Delivered:** Visual polish across Essentials — tier background bands, branch-specific icons, icon overlay badges with tooltips, landing page with coverage areas and shortcut navigation, election page restructured with position-first grouping, compass-first card prototype, headshot audit CLI. 5 phases, 11 plans, 13/13 requirements satisfied.
 
 ## Previous Milestones
 
+- **v2026.3.8 Essentials Election Central** (Shipped 2026-03-31) — 5 phases, 12 plans
 - **v2026.3.7 Treasury Tracker Expansion** (Shipped 2026-03-23) — 5 phases, 11 plans
 - **v2026.3.6 Read & Rank Redesign** (Shipped 2026-03-16) — 7 phases, 15 plans
 
@@ -247,13 +240,12 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.3.8 across 2 repos:
-- **ev-accounts** (Node.js/Express/TypeScript): election schema (migrations 042-044), electionService, candidateService, importElectionData CLI
-- **essentials** (React 19): Election Central tab, SegmentedControl filter, CandidateProfile page
+Shipped v2026.4.1 across 3 repos:
+- **ev-ui** (React/tsup): v0.1.60 — icon system (BallotIcon/CompassIcon/BranchIcon), tierColors token, CategorySection tier prop, imageFocalPoint
+- **essentials** (React 19): tier background bands, IconOverlay, landing page coverage cards, election position grouping, compass-first /prototype route, headshot audit CLI
+- **ev-accounts** (Node.js/Express/TypeScript): migration 049 (Ruben Marte fix), seed SQL verified
 - **CompassV2** (React 19): ~14.5K LOC — unchanged this milestone
-- **ev-ui** (React/tsup): ~4K LOC — unchanged this milestone
 - **EV-readrank** (React 19 + TypeScript): ~5,990 LOC — unchanged this milestone
-- **Python scripts**: ~17K LOC — unchanged
 
 Tech stack: Node.js 20/Express 4/TypeScript 5.6/Supabase PostgreSQL + React 19/Vite/Tailwind + PostGIS + Supabase Storage CDN + Cloudflare Pages.
 ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and EV-readrank.
@@ -284,4 +276,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after Phase 106 complete — tier background bands and branch icons on essentials representatives page*
+*Last updated: 2026-04-04 after v2026.4.1 milestone*
