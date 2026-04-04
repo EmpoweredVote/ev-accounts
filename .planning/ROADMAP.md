@@ -344,5 +344,5 @@ Plans:
 | 100. Elected/Appointed Filter | v2026.3.8 | 2/2 | Complete | 2026-03-30 |
 | 101. Candidate Profiles | v2026.3.8 | 2/2 | Complete | 2026-03-31 |
 | 102. ev-ui Foundation + Quick Wins | v2026.4.1 | 2/2 | Complete    | 2026-04-04 |
-| 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete   | 2026-04-04 |
+| 103. Essentials Wiring + Landing Page | v2026.4.1 | 4/4 | Complete    | 2026-04-04 |
 | 104. Compass-First Card Prototype | v2026.4.1 | 0/TBD | Not started | - |
