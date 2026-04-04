@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.1
 milestone_name: Essentials Visual Polish & Election Improvements
 status: planning
-stopped_at: Completed Wave 1 (103-01, 103-02, 103-04)
-last_updated: "2026-04-04T03:06:00.000Z"
+stopped_at: Completed 103-03-PLAN.md
+last_updated: "2026-04-04T03:08:48.726Z"
 last_activity: 2026-04-04
 progress:
   total_phases: 3
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 6
-  completed_plans: 3
+  completed_plans: 6
   percent: 0
 ---
 
@@ -56,6 +56,8 @@ Progress: [░░░░░░░░░░] 0%
 - [Phase 103]: Icon overlay positioned bottom-right per PLAN acceptance criteria (right: 4px) — PLAN takes precedence over UI-SPEC left-side note
 - [Phase 103]: Coverage cards use COVERAGE_AREAS constant with Monroe County IN (100 W Kirkwood Ave) and LA County CA (500 W Temple St) addresses
 - [Phase 103]: Pure Buffer PNG/JPEG header parsing avoids native sharp dep in headshot audit script
+- [Phase 103]: Party sub-labels use text-sm text-gray-500 in ElectionsView — antipartisan, no party-affiliated colors
+- [Phase 103]: seededShuffle runs per party ballot (per race), not on merged position group
 
 ### Pending Todos
 
@@ -71,6 +73,6 @@ Progress: [░░░░░░░░░░] 0%
 
 ## Session Continuity
 
-Last session: 2026-04-04T03:06:00.000Z
-Stopped at: Completed Wave 1 (103-01, 103-02, 103-04)
+Last session: 2026-04-04T03:08:48.723Z
+Stopped at: Completed 103-03-PLAN.md
 Resume file: None

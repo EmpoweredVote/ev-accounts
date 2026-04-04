@@ -19,7 +19,7 @@ Requirements for Essentials Visual Polish & Election Improvements milestone.
 - [x] **VIS-01**: Election and representatives pages use tier-level visual differentiation (hue, background pattern, or combination) for Federal/State/Local and sub-tiers
 - [x] **VIS-02**: Politician cards display small subtle icons for metadata (on ballot, compass available, branch type) replacing large badges
 - [x] **VIS-03**: Icon set evaluated and selected to fit EV design system (subtle, readable, secondary)
-- [ ] **VIS-04**: Election page information hierarchy improved — race/position structure clearer, party ballot groupings less visually noisy
+- [x] **VIS-04**: Election page information hierarchy improved — race/position structure clearer, party ballot groupings less visually noisy
 - [x] **VIS-05**: Icons provide additional detail on hover (desktop) and tap (mobile) — accessible per WCAG
 
 ### Landing & Navigation
@@ -73,7 +73,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | VIS-03 | Phase 102 | Complete |
 | VIS-01 | Phase 103 | Complete |
 | VIS-02 | Phase 103 | Complete |
-| VIS-04 | Phase 103 | Pending |
+| VIS-04 | Phase 103 | Complete |
 | VIS-05 | Phase 103 | Complete |
 | DATA-04 | Phase 103 | Complete |
 | NAV-01 | Phase 103 | Complete |
