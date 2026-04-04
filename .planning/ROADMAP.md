@@ -644,8 +644,8 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
-- [ ] 56-01-PLAN.md — PATCH endpoint + getEditorMatchingGrant + writeEssentialsAuditLog
-- [ ] 56-02-PLAN.md — getEditorMatchingGrant unit test suite
+- [x] 56-01-PLAN.md — PATCH endpoint + getEditorMatchingGrant + writeEssentialsAuditLog
+- [x] 56-02-PLAN.md — getEditorMatchingGrant unit test suite
 
 ---
 

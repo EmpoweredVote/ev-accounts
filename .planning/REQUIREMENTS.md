@@ -21,7 +21,7 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 
 - [ ] **ROLE-08**: `PUT /api/compass/stances/:politicianId` — requires `compass_stance_editor` role with `jurisdiction_geoid` matching politician's jurisdiction; accepts `{ topic_id, value, reasoning? }`; appends write to `role_audit_log` with `fields_changed` key list
 - [ ] **ROLE-09**: Campaign Manager stance writes — same route surface as ROLE-08 but gated by `campaign_manager` role + `resource_id === politicianId`; `GET /api/compass/politicians` for Campaign Manager returns only their assigned politician (single-element array); no route permits reading opponent politician data
-- [ ] **ROLE-10**: `PATCH /api/essentials/politicians/:id` — requires `essentials_data_editor` role with matching `jurisdiction_geoid`; restricted field whitelist: `bio`, `office_title`, `photo_origin_url`, `preferred_name`; all writes appended to `role_audit_log`
+- [x] **ROLE-10**: `PATCH /api/essentials/politicians/:id` — requires `essentials_data_editor` role with matching `jurisdiction_geoid`; restricted field whitelist: `bio`, `office_title`, `photo_origin_url`, `preferred_name`; all writes appended to `role_audit_log`
 - [ ] **ROLE-11**: CTC Content Editor integration — `GET /api/contributor/me` exposes `ctc_content_editor` grant with `jurisdiction_geoid`; CTC reads this and enforces content-edit gate in its own system; accounts provides no additional CTC-specific API endpoints
 - [ ] **ROLE-12**: Volunteer / Civic Spaces integration — `POST /api/roles/check` serves as the gate endpoint Civic Spaces calls to verify volunteer access; accounts does not write directly to `civic_spaces.moderators` (Civic Spaces provisions itself from the check response)
 
@@ -72,7 +72,7 @@ Admins assign geo-scoped and resource-scoped roles to Connected/Empowered accoun
 | ROLE-07 | Phase 54 | Complete |
 | ROLE-08 | Phase 55 | Complete |
 | ROLE-09 | Phase 55 | Complete |
-| ROLE-10 | Phase 56 | Pending |
+| ROLE-10 | Phase 56 | Complete |
 | ROLE-11 | Phase 57 | Pending |
 | ROLE-12 | Phase 57 | Pending |
 | ROLE-13 | Phase 58 | Pending |
