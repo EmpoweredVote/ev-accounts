@@ -181,6 +181,11 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Election Central page with tier-grouped races, candidate cards, primary ballot labels, countdown — v2026.3.8
 - ✓ Elected/Appointed filter with retention judge dual-appearance on Representatives page — v2026.3.8
 - ✓ Candidate profile pages with incumbent/challenger branching and CompassCard wiring — v2026.3.8
+- ✓ Tier-level hue differentiation (Federal/State/Local) on representatives and election pages — v2026.4.1
+- ✓ Icon overlay badges (ballot, branch type) with accessible floating-ui tooltips — v2026.4.1
+- ✓ Landing page coverage areas (Monroe County IN, LA County CA) with shortcut navigation — v2026.4.1
+- ✓ Election page restructured: position-first grouping with party sub-labels — v2026.4.1
+- ✓ Headshot audit script with 4 checks (missing, broken, size, dimensions) and CSV output — v2026.4.1
 
 ### Active
 
