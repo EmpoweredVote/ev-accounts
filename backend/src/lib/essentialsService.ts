@@ -40,17 +40,17 @@ import { geocodeAddress, GeocodingError } from './geocodingService.js';
 
 /**
  * LATERAL subquery that fetches the next upcoming primary and general election
- * dates for a given office. Used by all politician list queries.
- * Expects `o.id` to be the offices table alias in the outer query.
+ * dates by state. Matches the politician's state (from districts table) to
+ * elections in that state. Falls back to office_id match if available.
+ * Expects `d.state` (districts alias) in the outer query.
  */
 const UPCOMING_ELECTIONS_LATERAL = `
   LEFT JOIN LATERAL (
     SELECT
       MIN(CASE WHEN e.election_type = 'primary' THEN e.election_date END)::text AS next_primary_date,
       MIN(CASE WHEN e.election_type = 'general' THEN e.election_date END)::text AS next_general_date
-    FROM essentials.races r2
-    JOIN essentials.elections e ON e.id = r2.election_id
-    WHERE r2.office_id = o.id
+    FROM essentials.elections e
+    WHERE e.state = d.state
       AND e.election_date >= CURRENT_DATE
   ) upcoming ON true
 `;
