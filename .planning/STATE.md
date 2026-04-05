@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Milestone v2026.4.1 shipped
-stopped_at: Completed quick task 260404-vqs
-last_updated: "2026-04-04T00:00:00Z"
-last_activity: 2026-04-04
+stopped_at: Completed quick task 260405-ez5
+last_updated: "2026-04-05T00:00:00Z"
+last_activity: 2026-04-05
 progress:
   total_phases: 5
   completed_phases: 5
@@ -67,9 +67,10 @@ Progress: [██████████] 100%
 | 260404-vqs | Remove duplicate large compass icon from politician cards; small icon in overlay strip now clickable | 2026-04-04 | 5a4a94f, 1af2d9b | [260404-vqs-remove-duplicate-large-compass-icon-from](./quick/260404-vqs-remove-duplicate-large-compass-icon-from/) |
 | 260404-w7r | Move icon overlay from bottom-right to left-aligned below text on politician cards | 2026-04-05 | ed12358, f3b1e02 | [260404-w7r-move-icon-overlay-from-bottom-right-to-l](./quick/260404-w7r-move-icon-overlay-from-bottom-right-to-l/) |
 | 260405-doq | Fix ballot icon showing for all politicians — filter by actual race/candidate participation | 2026-04-05 | 6db60d7 | [260405-doq-fix-on-the-ballot-icon-showing-for-all-p](./quick/260405-doq-fix-on-the-ballot-icon-showing-for-all-p/) |
+| 260405-ez5 | Fix politician card height inconsistency — all cards in a grid row now match the tallest card | 2026-04-05 | ev-ui@b1b0c58,c96b22c; essentials@7b6a2bd,c60c265 | [260405-ez5-fix-politician-card-height-inconsistency](./quick/260405-ez5-fix-politician-card-height-inconsistency/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-05 - Completed quick task 260405-doq: Fix ballot icon showing for all politicians
-Stopped at: Completed quick task 260405-doq
+Last activity: 2026-04-05 - Completed quick task 260405-ez5: Fix politician card height inconsistency
+Stopped at: Completed quick task 260405-ez5
 Resume file: None
