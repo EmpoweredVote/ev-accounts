@@ -272,6 +272,8 @@ export async function getPoliticiansByArea(
     office_description: '',
     is_vacant: row.is_vacant ?? false,
     vacant_since: row.vacant_since ?? null,
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
     images: [],
   }));
 

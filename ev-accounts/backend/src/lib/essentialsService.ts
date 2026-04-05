@@ -38,7 +38,28 @@
 import { pool } from './db.js';
 import { geocodeAddress, GeocodingError } from './geocodingService.js';
 
-// Re-export GeocodingError so callers can import from one place if needed
+/**
+ * LATERAL subquery that fetches the next upcoming primary and general election
+ * dates for a politician who is actually on an upcoming ballot.
+ *
+ * Matches via:
+ *   1. Office match — a race exists for the politician's office (r.office_id = o.id)
+ *   2. Candidate match — the politician is explicitly listed as an active candidate
+ *
+ * Expects `p` (politicians) and `o` (offices) aliases in the outer query.
+ */
+const UPCOMING_ELECTIONS_LATERAL = `
+  LEFT JOIN LATERAL (
+    SELECT
+      MIN(CASE WHEN e.election_type = 'primary' THEN e.election_date END)::text AS next_primary_date,
+      MIN(CASE WHEN e.election_type = 'general' THEN e.election_date END)::text AS next_general_date
+    FROM essentials.elections e
+    JOIN essentials.races r ON r.election_id = e.id
+    LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id = p.id
+    WHERE e.election_date >= CURRENT_DATE
+      AND (r.office_id = o.id OR (rc.politician_id IS NOT NULL AND rc.candidate_status = 'active'))
+  ) upcoming ON true
+`;
 export { GeocodingError };
 
 // ---------------------------------------------------------------------------
@@ -94,6 +115,8 @@ export interface PoliticianFlatRecord {
   office_description: string;
   is_vacant: boolean;
   vacant_since: string | null;
+  next_primary_date: string;
+  next_general_date: string;
   images: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>;
 }
 
@@ -396,7 +419,8 @@ export async function getPoliticiansFlatList(
            ch.election_frequency,
            g.name AS government_name,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -412,6 +436,7 @@ export async function getPoliticiansFlatList(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
     WHERE p.is_active = true
     ${incumbentFilter}
     ${searchFilter}
@@ -465,6 +490,8 @@ export async function getPoliticiansFlatList(
     office_description: row.office_description ?? '',
     is_vacant: row.is_vacant ?? false,
     vacant_since: row.vacant_since ?? null,
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
     images: [],
   }));
 
@@ -519,7 +546,8 @@ export async function getRepresentativesByAddress(
            ch.election_frequency,
            g.name AS government_name,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
       AND (
@@ -544,6 +572,7 @@ export async function getRepresentativesByAddress(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
     WHERE public.ST_Covers(
       gb.geometry,
       public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
@@ -574,7 +603,8 @@ export async function getRepresentativesByAddress(
            ch.election_frequency,
            g.name AS government_name,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     LEFT JOIN essentials.politicians p ON o.politician_id = p.id
@@ -584,6 +614,7 @@ export async function getRepresentativesByAddress(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND (p.is_active = true OR o.is_vacant = true)
@@ -647,6 +678,8 @@ export async function getRepresentativesByAddress(
     office_description: row.office_description ?? '',
     is_vacant: row.is_vacant ?? false,
     vacant_since: row.vacant_since ?? null,
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
     images: [],
   }));
 
@@ -788,6 +821,8 @@ export interface PoliticianDetail {
     identifier_value: string;
   }>;
   notes: string[];
+  next_primary_date: string;
+  next_general_date: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -849,7 +884,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            ch.election_frequency,
            g.name AS government_name, g.id AS government_id,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
@@ -865,6 +901,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
     WHERE p.id = $1
   `;
 
@@ -1049,6 +1086,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
       identifier_value: r.identifier_value ?? '',
     })),
     notes: row.notes ?? [],
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
   };
 }
 
@@ -1366,7 +1405,8 @@ export async function getRepresentativesByJurisdiction(
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
     g.name AS government_name,
     COALESCE(gvb.display_name, '') AS government_body_name,
-    COALESCE(gvb.website_url, '') AS government_body_url
+    COALESCE(gvb.website_url, '') AS government_body_url,
+    upcoming.next_primary_date, upcoming.next_general_date
   `;
 
   const JOINS = `
@@ -1378,6 +1418,7 @@ export async function getRepresentativesByJurisdiction(
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
   `;
 
   const districtQueryText = `
@@ -1473,6 +1514,8 @@ export async function getRepresentativesByJurisdiction(
     office_description: '',
     is_vacant: (row.is_vacant as boolean) ?? false,
     vacant_since: (row.vacant_since as string | null) ?? null,
+    next_primary_date: (row.next_primary_date as string) ?? '',
+    next_general_date: (row.next_general_date as string) ?? '',
     images: [],
   }));
 
@@ -1524,7 +1567,8 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
     g.name AS government_name,
     COALESCE(gvb.display_name, '') AS government_body_name,
-    COALESCE(gvb.website_url, '') AS government_body_url
+    COALESCE(gvb.website_url, '') AS government_body_url,
+    upcoming.next_primary_date, upcoming.next_general_date
   `;
 
   const JOINS = `
@@ -1536,6 +1580,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
       ON gvb.state = d.state
       AND gvb.geo_id = d.geo_id
       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+    ${UPCOMING_ELECTIONS_LATERAL}
   `;
 
   const queryText = `
@@ -1593,6 +1638,8 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     office_description: '',
     is_vacant: (row.is_vacant as boolean) ?? false,
     vacant_since: (row.vacant_since as string | null) ?? null,
+    next_primary_date: (row.next_primary_date as string) ?? '',
+    next_general_date: (row.next_general_date as string) ?? '',
     images: [],
   }));
 
