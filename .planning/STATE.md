@@ -66,9 +66,10 @@ Progress: [██████████] 100%
 | 260404-t49 | Ballot tooltip shows real primary/general election dates from DB instead of heuristic term-end computation | 2026-04-05 | 6a2cf90, 4345bff | [260404-t49-ballot-tooltip-show-primary-date-until-p](./quick/260404-t49-ballot-tooltip-show-primary-date-until-p/) |
 | 260404-vqs | Remove duplicate large compass icon from politician cards; small icon in overlay strip now clickable | 2026-04-04 | 5a4a94f, 1af2d9b | [260404-vqs-remove-duplicate-large-compass-icon-from](./quick/260404-vqs-remove-duplicate-large-compass-icon-from/) |
 | 260404-w7r | Move icon overlay from bottom-right to left-aligned below text on politician cards | 2026-04-05 | ed12358, f3b1e02 | [260404-w7r-move-icon-overlay-from-bottom-right-to-l](./quick/260404-w7r-move-icon-overlay-from-bottom-right-to-l/) |
+| 260405-doq | Fix ballot icon showing for all politicians — filter by actual race/candidate participation | 2026-04-05 | 6db60d7 | [260405-doq-fix-on-the-ballot-icon-showing-for-all-p](./quick/260405-doq-fix-on-the-ballot-icon-showing-for-all-p/) |
 
 ## Session Continuity
 
-Last session: 2026-04-05T03:11:42Z
-Stopped at: Completed quick task 260404-w7r
+Last activity: 2026-04-05 - Completed quick task 260405-doq: Fix ballot icon showing for all politicians
+Stopped at: Completed quick task 260405-doq
 Resume file: None
