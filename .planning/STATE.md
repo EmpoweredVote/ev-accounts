@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 Phase: —
 Plan: —
 Status: Milestone v2026.4.1 shipped
-Last activity: 2026-04-04 - Completed quick task 260404-p5t: Fix Dorothy Granger headshot cropping issue
+Last activity: 2026-04-05 - Completed quick task 260404-sla: Fix ballot icon tooltip to show next election date
 
 Progress: [██████████] 100%
 
@@ -62,6 +62,7 @@ Progress: [██████████] 100%
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
 | 260404-p5t | Fix Dorothy Granger headshot cropping issue | 2026-04-04 | 5cb51e0 | [260404-p5t-fix-dorothy-granger-headshot-cropping-is](./quick/260404-p5t-fix-dorothy-granger-headshot-cropping-is/) |
+| 260404-sla | Fix ballot icon tooltip to show next election date instead of term end, and clarify position is on ballot not person | 2026-04-05 | cd34a70 | [260404-sla-fix-ballot-icon-tooltip-to-show-next-ele](./quick/260404-sla-fix-ballot-icon-tooltip-to-show-next-ele/) |
 
 ## Session Continuity
 
