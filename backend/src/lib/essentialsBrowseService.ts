@@ -155,8 +155,10 @@ export async function getPoliticiansByArea(
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
@@ -200,8 +202,10 @@ export async function getPoliticiansByArea(
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
              g.name AS government_name,
+             g.type AS government_type,
              COALESCE(gvb.display_name, '') AS government_body_name,
-             COALESCE(gvb.website_url, '') AS government_body_url
+             COALESCE(gvb.website_url, '') AS government_body_url,
+             COALESCE(ch.website_url, '') AS chamber_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.politicians p ON o.politician_id = p.id
@@ -257,6 +261,8 @@ export async function getPoliticiansByArea(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
