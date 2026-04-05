@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Milestone v2026.4.1 shipped
-stopped_at: Completed quick task 260404-p5t
-last_updated: "2026-04-04T22:17:49.126Z"
-last_activity: 2026-04-04
+stopped_at: Completed quick task 260404-t49
+last_updated: "2026-04-05T01:07:25Z"
+last_activity: 2026-04-05
 progress:
   total_phases: 5
   completed_phases: 5
@@ -28,7 +28,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 Phase: —
 Plan: —
 Status: Milestone v2026.4.1 shipped
-Last activity: 2026-04-05 - Completed quick task 260404-sla: Fix ballot icon tooltip to show next election date
+Last activity: 2026-04-05 - Completed quick task 260404-t49: Ballot tooltip shows real primary/general election dates from DB
 
 Progress: [██████████] 100%
 
@@ -63,9 +63,10 @@ Progress: [██████████] 100%
 |---|-------------|------|--------|-----------|
 | 260404-p5t | Fix Dorothy Granger headshot cropping issue | 2026-04-04 | 5cb51e0 | [260404-p5t-fix-dorothy-granger-headshot-cropping-is](./quick/260404-p5t-fix-dorothy-granger-headshot-cropping-is/) |
 | 260404-sla | Fix ballot icon tooltip to show next election date instead of term end, and clarify position is on ballot not person | 2026-04-05 | cd34a70 | [260404-sla-fix-ballot-icon-tooltip-to-show-next-ele](./quick/260404-sla-fix-ballot-icon-tooltip-to-show-next-ele/) |
+| 260404-t49 | Ballot tooltip shows real primary/general election dates from DB instead of heuristic term-end computation | 2026-04-05 | 6a2cf90, 4345bff | [260404-t49-ballot-tooltip-show-primary-date-until-p](./quick/260404-t49-ballot-tooltip-show-primary-date-until-p/) |
 
 ## Session Continuity
 
-Last session: 2026-04-04T22:17:49.123Z
-Stopped at: Completed quick task 260404-p5t
+Last session: 2026-04-05T01:07:25Z
+Stopped at: Completed quick task 260404-t49
 Resume file: None
