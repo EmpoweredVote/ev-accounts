@@ -36,7 +36,7 @@ export function RolesPage() {
     try {
       await apiFetch('/admin/roles/grant', {
         method: 'POST',
-        body: JSON.stringify({ userId: grantUserId, roleSlug: grantRoleSlug }),
+        body: JSON.stringify({ user_id: grantUserId, role_slug: grantRoleSlug }),
       });
       setActionSuccess(`Role "${grantRoleSlug}" granted to ${grantUserId}`);
       setGrantUserId('');
@@ -56,7 +56,7 @@ export function RolesPage() {
     try {
       await apiFetch('/admin/roles/revoke', {
         method: 'POST',
-        body: JSON.stringify({ userId: revokeUserId, roleSlug: revokeRoleSlug }),
+        body: JSON.stringify({ user_id: revokeUserId, role_slug: revokeRoleSlug }),
       });
       setActionSuccess(`Role "${revokeRoleSlug}" revoked from ${revokeUserId}`);
       setRevokeUserId('');
