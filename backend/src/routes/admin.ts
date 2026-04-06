@@ -56,6 +56,7 @@ import {
   writeRoleAuditLog,
   getRoleAuditLog,
   listRoles,
+  getAccountJurisdictions,
 } from '../lib/adminService.js';
 
 const router = Router();
@@ -183,6 +184,22 @@ router.get('/accounts/:userId', async (req, res) => {
       res.status(404).json({ error: 'User not found' });
       return;
     }
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/accounts/:userId/jurisdictions
+ * Returns jurisdiction geoids from the user's connected_profile.
+ * Used by GrantRoleModal to show clickable geoid hints.
+ */
+router.get('/accounts/:userId/jurisdictions', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const jurisdictions = await getAccountJurisdictions(userId);
+    res.json(jurisdictions ?? {});
+  } catch (err) {
+    console.error('[admin/jurisdictions] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

@@ -30,6 +30,17 @@ interface PoliticiansResponse {
   politicians: Politician[];
 }
 
+interface JurisdictionHints {
+  county_geo_id: string | null;
+  county_name: string | null;
+  congressional_geo_id: string | null;
+  congressional_district_name: string | null;
+  state_senate_geo_id: string | null;
+  state_senate_district_name: string | null;
+  state_house_geo_id: string | null;
+  state_house_district_name: string | null;
+}
+
 // ── GrantRoleModal ─────────────────────────────────────────────────────────────
 
 interface GrantRoleModalProps {
@@ -42,6 +53,7 @@ interface GrantRoleModalProps {
 export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleModalProps) {
   const [availableRoles, setAvailableRoles] = useState<AvailableRole[]>([]);
   const [politicians, setPoliticians] = useState<Politician[]>([]);
+  const [jurisdictions, setJurisdictions] = useState<JurisdictionHints | null>(null);
   const [rolesLoading, setRolesLoading] = useState(false);
   const [politiciansLoading, setPoliticiansLoading] = useState(false);
 
@@ -61,24 +73,64 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
     return 'platform';
   }
 
-  // Load available roles when modal opens
+  // Build jurisdiction hint chips from the user's stored geoids
+  const jurisdictionChips: { label: string; geoid: string }[] = [];
+  if (jurisdictions) {
+    if (jurisdictions.county_geo_id) {
+      jurisdictionChips.push({
+        label: jurisdictions.county_name ? `County: ${jurisdictions.county_name}` : 'County',
+        geoid: jurisdictions.county_geo_id,
+      });
+    }
+    if (jurisdictions.congressional_geo_id) {
+      jurisdictionChips.push({
+        label: jurisdictions.congressional_district_name
+          ? `Congress: ${jurisdictions.congressional_district_name}`
+          : 'Congressional',
+        geoid: jurisdictions.congressional_geo_id,
+      });
+    }
+    if (jurisdictions.state_senate_geo_id) {
+      jurisdictionChips.push({
+        label: jurisdictions.state_senate_district_name
+          ? `State Senate: ${jurisdictions.state_senate_district_name}`
+          : 'State Senate',
+        geoid: jurisdictions.state_senate_geo_id,
+      });
+    }
+    if (jurisdictions.state_house_geo_id) {
+      jurisdictionChips.push({
+        label: jurisdictions.state_house_district_name
+          ? `State House: ${jurisdictions.state_house_district_name}`
+          : 'State House',
+        geoid: jurisdictions.state_house_geo_id,
+      });
+    }
+  }
+
+  // Load available roles and jurisdiction hints when modal opens
   useEffect(() => {
     if (!open) return;
     setSelectedSlug('');
     setJurisdictionGeoid('');
     setResourceId('');
     setError(null);
+    setJurisdictions(null);
 
     setRolesLoading(true);
     apiFetch<AvailableRolesResponse>('/admin/roles')
       .then((data) => {
-        // Filter to active roles only (if is_active field present)
         const active = data.roles.filter((r) => r.is_active !== false);
         setAvailableRoles(active);
       })
       .catch((err) => setError(err instanceof Error ? err.message : 'Failed to load roles'))
       .finally(() => setRolesLoading(false));
-  }, [open]);
+
+    // Fetch jurisdiction hints — non-fatal if user has no connected profile
+    apiFetch<JurisdictionHints>(`/admin/accounts/${userId}/jurisdictions`)
+      .then((data) => setJurisdictions(data))
+      .catch(() => { /* non-fatal */ });
+  }, [open, userId]);
 
   // Load politicians when campaign_manager is selected
   useEffect(() => {
@@ -112,7 +164,6 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
           resource_id: (isCampaignManager && resourceId) ? resourceId : null,
         }),
       });
-      // Brief success indication then close
       setTimeout(() => {
         onGranted();
       }, 1500);
@@ -126,7 +177,7 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
     <Dialog open={open} onClose={() => { if (!granting) onClose(); }} className="relative z-50">
       <div className="fixed inset-0 bg-black/40" aria-hidden="true" />
       <div className="fixed inset-0 flex items-center justify-center p-4">
-        <DialogPanel className="w-full max-w-md bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6">
+        <DialogPanel className="w-full max-w-md bg-white dark:bg-gray-900 rounded-lg shadow-xl p-6 overflow-y-auto max-h-[90vh]">
           <DialogTitle className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
             Grant Role
           </DialogTitle>
@@ -203,10 +254,33 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
                   type="text"
                   value={jurisdictionGeoid}
                   onChange={(e) => setJurisdictionGeoid(e.target.value)}
-                  placeholder="e.g., 06037 (optional)"
+                  placeholder="e.g., 06037 — leave blank for platform-wide"
                   className="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
-                <p className="mt-1 text-xs text-gray-400 dark:text-gray-500">
+                {/* Jurisdiction hint chips from user's stored geoids */}
+                {jurisdictionChips.length > 0 && (
+                  <div className="mt-2">
+                    <p className="text-xs text-gray-400 dark:text-gray-500 mb-1.5">User's jurisdictions — click to fill:</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {jurisdictionChips.map((chip) => (
+                        <button
+                          key={chip.geoid}
+                          type="button"
+                          onClick={() => setJurisdictionGeoid(chip.geoid)}
+                          className={`px-2 py-1 rounded text-xs border transition-colors ${
+                            jurisdictionGeoid === chip.geoid
+                              ? 'bg-blue-600 border-blue-600 text-white'
+                              : 'bg-gray-50 border-gray-300 text-gray-700 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700'
+                          }`}
+                        >
+                          {chip.label}
+                          <span className="ml-1 font-mono opacity-60">{chip.geoid}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <p className="mt-1.5 text-xs text-gray-400 dark:text-gray-500">
                   Leave blank for platform-wide access.
                 </p>
               </div>

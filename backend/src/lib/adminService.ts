@@ -137,6 +137,38 @@ export async function getAccountDetail(userId: string): Promise<Record<string, u
 }
 
 /**
+ * Get jurisdiction geoids for a user from their connected_profile.
+ * Used by the admin GrantRoleModal to surface clickable geoid hints.
+ */
+export async function getAccountJurisdictions(userId: string): Promise<{
+  county_geo_id: string | null;
+  county_name: string | null;
+  congressional_geo_id: string | null;
+  congressional_district_name: string | null;
+  state_senate_geo_id: string | null;
+  state_senate_district_name: string | null;
+  state_house_geo_id: string | null;
+  state_house_district_name: string | null;
+} | null> {
+  const result = await pool.query<{
+    county_geo_id: string | null;
+    county_name: string | null;
+    congressional_geo_id: string | null;
+    congressional_district_name: string | null;
+    state_senate_geo_id: string | null;
+    state_senate_district_name: string | null;
+    state_house_geo_id: string | null;
+    state_house_district_name: string | null;
+  }>(
+    `SELECT county_geo_id, county_name, congressional_geo_id, congressional_district_name,
+            state_senate_geo_id, state_senate_district_name, state_house_geo_id, state_house_district_name
+     FROM connect.connected_profiles WHERE user_id = $1`,
+    [userId]
+  );
+  return result.rows[0] ?? null;
+}
+
+/**
  * Set account standing (suspend or unsuspend a Connected account).
  */
 export async function setAccountStanding(
