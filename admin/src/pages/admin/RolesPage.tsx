@@ -38,7 +38,11 @@ export function RolesPage() {
         method: 'POST',
         body: JSON.stringify({ user_id: grantUserId, role_slug: grantRoleSlug }),
       });
-      setActionSuccess(`Role "${grantRoleSlug}" granted to ${grantUserId}`);
+      const roleName = activeRoles.find((r) => r.slug === grantRoleSlug)?.name ?? grantRoleSlug;
+      const displayName = await apiFetch<{ display_name?: string }>(`/admin/accounts/${grantUserId}`)
+        .then((d) => d.display_name ?? grantUserId)
+        .catch(() => grantUserId);
+      setActionSuccess(`Role "${roleName}" granted to ${displayName}`);
       setGrantUserId('');
       setGrantRoleSlug('');
     } catch (err) {
@@ -58,7 +62,11 @@ export function RolesPage() {
         method: 'POST',
         body: JSON.stringify({ user_id: revokeUserId, role_slug: revokeRoleSlug }),
       });
-      setActionSuccess(`Role "${revokeRoleSlug}" revoked from ${revokeUserId}`);
+      const roleName = activeRoles.find((r) => r.slug === revokeRoleSlug)?.name ?? revokeRoleSlug;
+      const displayName = await apiFetch<{ display_name?: string }>(`/admin/accounts/${revokeUserId}`)
+        .then((d) => d.display_name ?? revokeUserId)
+        .catch(() => revokeUserId);
+      setActionSuccess(`Role "${roleName}" revoked from ${displayName}`);
       setRevokeUserId('');
       setRevokeRoleSlug('');
     } catch (err) {
