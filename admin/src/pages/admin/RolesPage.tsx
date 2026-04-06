@@ -15,6 +15,7 @@ export function RolesPage() {
 
   const [grantUserId, setGrantUserId] = useState('');
   const [grantRoleSlug, setGrantRoleSlug] = useState('');
+  const [grantJurisdiction, setGrantJurisdiction] = useState('');
   const [revokeUserId, setRevokeUserId] = useState('');
   const [revokeRoleSlug, setRevokeRoleSlug] = useState('');
   const [actionError, setActionError] = useState<string | null>(null);
@@ -34,9 +35,17 @@ export function RolesPage() {
     setActionSuccess(null);
     setActionLoading(true);
     try {
+      const isCampaignManager = grantRoleSlug === 'campaign_manager';
+      const jurisdictionGeoid = (!isCampaignManager && grantJurisdiction.trim()) ? grantJurisdiction.trim() : null;
+      const featureScope = jurisdictionGeoid ? 'jurisdiction' : 'platform';
       await apiFetch('/admin/roles/grant', {
         method: 'POST',
-        body: JSON.stringify({ user_id: grantUserId, role_slug: grantRoleSlug }),
+        body: JSON.stringify({
+          user_id: grantUserId,
+          role_slug: grantRoleSlug,
+          feature_scope: featureScope,
+          jurisdiction_geoid: jurisdictionGeoid,
+        }),
       });
       const roleName = activeRoles.find((r) => r.slug === grantRoleSlug)?.name ?? grantRoleSlug;
       const displayName = await apiFetch<{ display_name?: string }>(`/admin/accounts/${grantUserId}`)
@@ -45,6 +54,7 @@ export function RolesPage() {
       setActionSuccess(`Role "${roleName}" granted to ${displayName}`);
       setGrantUserId('');
       setGrantRoleSlug('');
+      setGrantJurisdiction('');
     } catch (err) {
       setActionError(err instanceof Error ? err.message : 'Grant failed');
     } finally {
@@ -146,7 +156,7 @@ export function RolesPage() {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Role</label>
               <select
                 value={grantRoleSlug}
-                onChange={(e) => setGrantRoleSlug(e.target.value)}
+                onChange={(e) => { setGrantRoleSlug(e.target.value); setGrantJurisdiction(''); }}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white"
               >
@@ -156,6 +166,20 @@ export function RolesPage() {
                 ))}
               </select>
             </div>
+            {grantRoleSlug && grantRoleSlug !== 'campaign_manager' && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Jurisdiction <span className="font-normal text-gray-400">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  value={grantJurisdiction}
+                  onChange={(e) => setGrantJurisdiction(e.target.value)}
+                  placeholder="e.g., 06037 — leave blank for platform-wide"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
+                />
+              </div>
+            )}
             <button
               type="submit"
               disabled={actionLoading}
