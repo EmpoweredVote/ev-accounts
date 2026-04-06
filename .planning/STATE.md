@@ -10,7 +10,14 @@ See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started
 
 ## Current Position
 
-**Phase 58 Plan 04 complete (2026-04-04) — awaiting checkpoint verification**
+**Phase 58 Plan 05 complete (2026-04-06) — gap closure, ready for UAT re-run**
+
+Phase 58 Plan 05 (Gap Closure — Jurisdiction Scoped Queries) — complete ✅:
+- 58-05: `getDistrictGeoidForPolitician` added to stanceService.ts (offices→districts JOIN); `getPoliticianJurisdiction` delegates to it (backward compat); `getContributorPoliticians` scoped branch uses district JOIN instead of home_jurisdiction_geoid; `essentials_data_editor` grants now handled (were silently ignored); `essentialsEditor.ts` PATCH uses new helper (no false 403s)
+- Smoke test: district-join scoped query returns 57 politicians; helper returns correct geo_id
+- Key decision: never filter on home_jurisdiction_geoid (NULL on all 2577 rows) — always JOIN through offices→districts
+
+**Phase 58 Plan 04 complete (2026-04-04) — checkpoint verified**
 
 Phase 58 Plan 04 (Essentials Editor) — Task 1 complete, checkpoint pending ✅:
 - 58-04: EssentialsEditorPage (282 lines): jurisdiction-scoped politician grid + inline field editor (bio, preferred_name, photo_origin_url); partial PATCH with correct field names (bio not bio_text); toast feedback; TypeScript clean + build passes ✅
