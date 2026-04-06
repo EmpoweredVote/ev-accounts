@@ -680,7 +680,7 @@ Plans:
 
 ---
 
-#### Phase 58: Contributor Portal
+#### Phase 58: Contributor Portal ✅ (2026-04-06)
 
 **Goal:** Role-holders have a dedicated Contributor tab inside the Profile Hub (profiles.empowered.vote) where they see their active role grants on a dashboard and can navigate to scoped editing UIs for each role type -- Compass Editor, Candidate Coordinator, and Essentials Editor.
 
@@ -692,11 +692,11 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 58-01-PLAN.md -- Backend micro-tasks (granted_at + essentials_data_editor politician list)
-- [ ] 58-02-PLAN.md -- Dashboard shell, routes, tab navigation, grant cards
-- [ ] 58-03-PLAN.md -- Compass Editor + Campaign Manager (Candidate Coordinator) pages
-- [ ] 58-04-PLAN.md -- Essentials Editor page + end-to-end verification
-- [ ] 58-05-PLAN.md -- Gap closure: fix jurisdiction-scoped politician queries (district-join)
+- [x] 58-01-PLAN.md -- Backend micro-tasks (granted_at + essentials_data_editor politician list)
+- [x] 58-02-PLAN.md -- Dashboard shell, routes, tab navigation, grant cards
+- [x] 58-03-PLAN.md -- Compass Editor + Campaign Manager (Candidate Coordinator) pages
+- [x] 58-04-PLAN.md -- Essentials Editor page + end-to-end verification
+- [x] 58-05-PLAN.md -- Gap closure: fix jurisdiction-scoped politician queries (district-join)
 
 **Success Criteria:**
 
