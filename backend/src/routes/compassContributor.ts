@@ -104,148 +104,9 @@ router.get(
 );
 
 // ---------------------------------------------------------------------------
-// PUT /stances/:politicianId/:topicId — single stance write
-// ---------------------------------------------------------------------------
-
-router.put(
-  '/stances/:politicianId/:topicId',
-  requireAuth,
-  requireRole(['compass_stance_editor', 'campaign_manager']),
-  async (req: Request, res: Response): Promise<void> => {
-    const politicianId = req.params['politicianId'] as string;
-    const topicId = req.params['topicId'] as string;
-    const actorId = (req as AuthenticatedRequest).userId;
-
-    // 1. Validate path params are UUIDs
-    if (!isUUID(politicianId) || !isUUID(topicId)) {
-      res.status(422).json({
-        code: 'VALIDATION_ERROR',
-        message: 'politicianId and topicId must be valid UUIDs',
-      });
-      return;
-    }
-
-    // 2. Parse and validate body
-    const parsed = singleStanceSchema.safeParse(req.body);
-    if (!parsed.success) {
-      res.status(422).json({
-        code: 'VALIDATION_ERROR',
-        message: parsed.error.issues.map((i) => i.message).join('; '),
-      });
-      return;
-    }
-    const { value, write_in_text } = parsed.data;
-
-    // 3. Get user's grants
-    const grants = await getCachedUserRoles(actorId);
-
-    // 4. Check politician existence (also retrieves jurisdiction for grant matching).
-    // getPoliticianJurisdiction returns null for both "politician not found" and "no geoid
-    // assigned" — so we need a separate existence check first.
-    const existsResult = await pool.query<{ id: string }>(
-      `SELECT id FROM essentials.politicians WHERE id = $1 LIMIT 1`,
-      [politicianId]
-    );
-    if (existsResult.rows.length === 0) {
-      res.status(404).json({
-        code: 'NOT_FOUND',
-        message: 'Politician not found',
-      });
-      return;
-    }
-
-    // Jurisdiction lookup: null = no geoid assigned → fail-open (console.warn in service)
-    const resolvedGeoid = await getPoliticianJurisdiction(politicianId);
-
-    // 5. Find matching grant
-    const matchingGrant = getMatchingGrant(grants, politicianId, resolvedGeoid);
-    if (!matchingGrant) {
-      res.status(403).json({
-        code: 'FORBIDDEN',
-        message: 'You do not have permission to edit stances for this politician',
-      });
-      return;
-    }
-
-    // 6. Begin transaction
-    const client = await pool.connect();
-    try {
-      await client.query('BEGIN');
-
-      // a. Fetch current value (for audit log diff)
-      const prevResult = await client.query<{
-        value: number;
-        write_in_text: string | null;
-      }>(
-        `SELECT value, write_in_text
-         FROM inform.politician_answers
-         WHERE politician_id = $1 AND topic_id = $2`,
-        [politicianId, topicId]
-      );
-      const prev = prevResult.rows[0] ?? null;
-
-      // b. Verify topic exists and is live
-      const topicResult = await client.query<{ id: string }>(
-        `SELECT id FROM inform.compass_topics WHERE id = $1 AND is_live = true`,
-        [topicId]
-      );
-      if (topicResult.rows.length === 0) {
-        await client.query('ROLLBACK');
-        res.status(404).json({
-          code: 'NOT_FOUND',
-          message: 'Topic not found or not live',
-        });
-        return;
-      }
-
-      // c. Upsert stance
-      await client.query(
-        `INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text)
-         VALUES ($1, $2, $3, $4)
-         ON CONFLICT (politician_id, topic_id)
-         DO UPDATE SET value = EXCLUDED.value, write_in_text = EXCLUDED.write_in_text`,
-        [politicianId, topicId, value, write_in_text ?? null]
-      );
-
-      // d. Write audit log (inside transaction)
-      await writeStanceAuditLog(client, {
-        actorId,
-        targetUserId: actorId,
-        roleGrantId: matchingGrant.id,
-        featureScope: matchingGrant.feature_scope,
-        jurisdictionGeoid: matchingGrant.jurisdiction_geoid,
-        resourceId: matchingGrant.resource_id,
-        topicId,
-        oldValue: prev?.value ?? null,
-        newValue: value,
-        writeInTextChanged:
-          (prev?.write_in_text ?? null) !== (write_in_text ?? null),
-      });
-
-      // e. Commit
-      await client.query('COMMIT');
-
-      res.status(200).json({
-        politician_id: politicianId,
-        topic_id: topicId,
-        value,
-        write_in_text: write_in_text ?? null,
-      });
-    } catch (err) {
-      await client.query('ROLLBACK');
-      console.error('[compassContributor] single stance write error:', err);
-      res.status(500).json({
-        code: 'INTERNAL_ERROR',
-        message: 'An unexpected error occurred',
-      });
-    } finally {
-      client.release();
-    }
-  }
-);
-
-// ---------------------------------------------------------------------------
 // PUT /stances/:politicianId/bulk — batch stance write (all-or-nothing)
+// MUST be registered before /stances/:politicianId/:topicId — otherwise
+// Express captures "bulk" as :topicId and this route is never reached.
 // ---------------------------------------------------------------------------
 
 router.put(
@@ -387,6 +248,148 @@ router.put(
     } catch (err) {
       await client.query('ROLLBACK');
       console.error('[compassContributor] bulk stance write error:', err);
+      res.status(500).json({
+        code: 'INTERNAL_ERROR',
+        message: 'An unexpected error occurred',
+      });
+    } finally {
+      client.release();
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// PUT /stances/:politicianId/:topicId — single stance write
+// Registered AFTER the bulk route so "bulk" isn't captured as :topicId.
+// ---------------------------------------------------------------------------
+
+router.put(
+  '/stances/:politicianId/:topicId',
+  requireAuth,
+  requireRole(['compass_stance_editor', 'campaign_manager']),
+  async (req: Request, res: Response): Promise<void> => {
+    const politicianId = req.params['politicianId'] as string;
+    const topicId = req.params['topicId'] as string;
+    const actorId = (req as AuthenticatedRequest).userId;
+
+    // 1. Validate path params are UUIDs
+    if (!isUUID(politicianId) || !isUUID(topicId)) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: 'politicianId and topicId must be valid UUIDs',
+      });
+      return;
+    }
+
+    // 2. Parse and validate body
+    const parsed = singleStanceSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: parsed.error.issues.map((i) => i.message).join('; '),
+      });
+      return;
+    }
+    const { value, write_in_text } = parsed.data;
+
+    // 3. Get user's grants
+    const grants = await getCachedUserRoles(actorId);
+
+    // 4. Check politician existence (also retrieves jurisdiction for grant matching).
+    // getPoliticianJurisdiction returns null for both "politician not found" and "no geoid
+    // assigned" — so we need a separate existence check first.
+    const existsResult = await pool.query<{ id: string }>(
+      `SELECT id FROM essentials.politicians WHERE id = $1 LIMIT 1`,
+      [politicianId]
+    );
+    if (existsResult.rows.length === 0) {
+      res.status(404).json({
+        code: 'NOT_FOUND',
+        message: 'Politician not found',
+      });
+      return;
+    }
+
+    // Jurisdiction lookup: null = no geoid assigned → fail-open (console.warn in service)
+    const resolvedGeoid = await getPoliticianJurisdiction(politicianId);
+
+    // 5. Find matching grant
+    const matchingGrant = getMatchingGrant(grants, politicianId, resolvedGeoid);
+    if (!matchingGrant) {
+      res.status(403).json({
+        code: 'FORBIDDEN',
+        message: 'You do not have permission to edit stances for this politician',
+      });
+      return;
+    }
+
+    // 6. Begin transaction
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+
+      // a. Fetch current value (for audit log diff)
+      const prevResult = await client.query<{
+        value: number;
+        write_in_text: string | null;
+      }>(
+        `SELECT value, write_in_text
+         FROM inform.politician_answers
+         WHERE politician_id = $1 AND topic_id = $2`,
+        [politicianId, topicId]
+      );
+      const prev = prevResult.rows[0] ?? null;
+
+      // b. Verify topic exists and is live
+      const topicResult = await client.query<{ id: string }>(
+        `SELECT id FROM inform.compass_topics WHERE id = $1 AND is_live = true`,
+        [topicId]
+      );
+      if (topicResult.rows.length === 0) {
+        await client.query('ROLLBACK');
+        res.status(404).json({
+          code: 'NOT_FOUND',
+          message: 'Topic not found or not live',
+        });
+        return;
+      }
+
+      // c. Upsert stance
+      await client.query(
+        `INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text)
+         VALUES ($1, $2, $3, $4)
+         ON CONFLICT (politician_id, topic_id)
+         DO UPDATE SET value = EXCLUDED.value, write_in_text = EXCLUDED.write_in_text`,
+        [politicianId, topicId, value, write_in_text ?? null]
+      );
+
+      // d. Write audit log (inside transaction)
+      await writeStanceAuditLog(client, {
+        actorId,
+        targetUserId: actorId,
+        roleGrantId: matchingGrant.id,
+        featureScope: matchingGrant.feature_scope,
+        jurisdictionGeoid: matchingGrant.jurisdiction_geoid,
+        resourceId: matchingGrant.resource_id,
+        topicId,
+        oldValue: prev?.value ?? null,
+        newValue: value,
+        writeInTextChanged:
+          (prev?.write_in_text ?? null) !== (write_in_text ?? null),
+      });
+
+      // e. Commit
+      await client.query('COMMIT');
+
+      res.status(200).json({
+        politician_id: politicianId,
+        topic_id: topicId,
+        value,
+        write_in_text: write_in_text ?? null,
+      });
+    } catch (err) {
+      await client.query('ROLLBACK');
+      console.error('[compassContributor] single stance write error:', err);
       res.status(500).json({
         code: 'INTERNAL_ERROR',
         message: 'An unexpected error occurred',

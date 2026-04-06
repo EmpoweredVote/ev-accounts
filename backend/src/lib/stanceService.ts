@@ -178,7 +178,7 @@ export async function getContributorPoliticians(
       }>(
         `SELECT p.id, p.first_name, p.last_name, p.full_name,
                 COALESCE(o.title, '') AS office_title,
-                COALESCE(p.photo_custom_url, p.photo_origin_url, pi.url, '') AS photo_url,
+                COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
                 p.home_jurisdiction_geoid
          FROM essentials.politicians p
          LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -215,7 +215,7 @@ export async function getContributorPoliticians(
           `SELECT DISTINCT ON (p.id)
                   p.id, p.first_name, p.last_name, p.full_name,
                   COALESCE(o.title, '') AS office_title,
-                  COALESCE(p.photo_custom_url, p.photo_origin_url, pi.url, '') AS photo_url,
+                  COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
                   p.home_jurisdiction_geoid
            FROM essentials.politicians p
            LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -247,7 +247,7 @@ export async function getContributorPoliticians(
           `SELECT DISTINCT ON (p.id)
                   p.id, p.first_name, p.last_name, p.full_name,
                   COALESCE(o.title, '') AS office_title,
-                  COALESCE(p.photo_custom_url, p.photo_origin_url, pi.url, '') AS photo_url,
+                  COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
                   p.home_jurisdiction_geoid
            FROM essentials.politicians p
            LEFT JOIN essentials.offices o ON o.politician_id = p.id
