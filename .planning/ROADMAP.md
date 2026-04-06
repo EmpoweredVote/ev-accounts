@@ -689,13 +689,14 @@ Plans:
 **Requirements:** ROLE-13, ROLE-14, ROLE-15, ROLE-16
 
 
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
 - [ ] 58-01-PLAN.md -- Backend micro-tasks (granted_at + essentials_data_editor politician list)
 - [ ] 58-02-PLAN.md -- Dashboard shell, routes, tab navigation, grant cards
 - [ ] 58-03-PLAN.md -- Compass Editor + Campaign Manager (Candidate Coordinator) pages
 - [ ] 58-04-PLAN.md -- Essentials Editor page + end-to-end verification
+- [ ] 58-05-PLAN.md -- Gap closure: fix jurisdiction-scoped politician queries (district-join)
 
 **Success Criteria:**
 
