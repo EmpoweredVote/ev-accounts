@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { apiFetch } from '../lib/api';
 
@@ -41,6 +41,127 @@ interface JurisdictionHints {
   state_house_district_name: string | null;
 }
 
+function politicianLabel(p: Politician): string {
+  const name = p.full_name ?? [p.preferred_name ?? p.first_name, p.last_name].filter(Boolean).join(' ');
+  return p.office_title ? `${name} — ${p.office_title}` : name;
+}
+
+// ── PoliticianSearch ───────────────────────────────────────────────────────────
+
+interface PoliticianSearchProps {
+  politicians: Politician[];
+  loading: boolean;
+  value: Politician | null;
+  onChange: (p: Politician | null) => void;
+}
+
+function PoliticianSearch({ politicians, loading, value, onChange }: PoliticianSearchProps) {
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Close on outside click
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  const matches = query.trim().length < 2
+    ? []
+    : politicians
+        .filter(p => {
+          const q = query.toLowerCase();
+          const label = politicianLabel(p).toLowerCase();
+          const last = (p.last_name ?? '').toLowerCase();
+          const first = (p.first_name ?? '').toLowerCase();
+          return label.includes(q) || last.startsWith(q) || first.startsWith(q);
+        })
+        .slice(0, 10);
+
+  function select(p: Politician) {
+    onChange(p);
+    setQuery('');
+    setOpen(false);
+  }
+
+  function clear() {
+    onChange(null);
+    setQuery('');
+    setOpen(false);
+  }
+
+  if (loading) {
+    return <div className="h-9 bg-gray-100 dark:bg-gray-800 rounded animate-pulse" />;
+  }
+
+  if (value) {
+    return (
+      <div className="flex items-center gap-2 px-3 py-2 border border-blue-400 dark:border-blue-600 rounded bg-blue-50 dark:bg-blue-950/30">
+        <span className="flex-1 text-sm text-gray-900 dark:text-white truncate">
+          {politicianLabel(value)}
+        </span>
+        <button
+          type="button"
+          onClick={clear}
+          className="flex-shrink-0 text-gray-400 hover:text-red-500 transition-colors"
+          title="Clear selection"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div ref={containerRef} className="relative">
+      <input
+        type="text"
+        value={query}
+        onChange={(e) => { setQuery(e.target.value); setOpen(true); }}
+        onFocus={() => { if (query.trim().length >= 2) setOpen(true); }}
+        placeholder="Type a name to search…"
+        className="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        autoComplete="off"
+      />
+      {open && matches.length > 0 && (
+        <ul className="absolute z-50 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg max-h-60 overflow-y-auto">
+          {matches.map(p => (
+            <li key={p.id}>
+              <button
+                type="button"
+                onMouseDown={() => select(p)}
+                className="w-full text-left px-3 py-2 text-sm hover:bg-blue-50 dark:hover:bg-blue-950/30 text-gray-900 dark:text-white"
+              >
+                <span className="font-medium">
+                  {p.full_name ?? `${p.preferred_name ?? p.first_name} ${p.last_name}`}
+                </span>
+                {p.office_title && (
+                  <span className="ml-1 text-gray-400 text-xs">— {p.office_title}</span>
+                )}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {open && query.trim().length >= 2 && matches.length === 0 && (
+        <div className="absolute z-50 mt-1 w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-lg px-3 py-2 text-sm text-gray-400">
+          No politicians found
+        </div>
+      )}
+      {query.trim().length < 2 && query.length > 0 && (
+        <p className="mt-1 text-xs text-gray-400">Type at least 2 characters to search</p>
+      )}
+    </div>
+  );
+}
+
 // ── GrantRoleModal ─────────────────────────────────────────────────────────────
 
 interface GrantRoleModalProps {
@@ -59,12 +180,13 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
 
   const [selectedSlug, setSelectedSlug] = useState('');
   const [jurisdictionGeoid, setJurisdictionGeoid] = useState('');
-  const [resourceId, setResourceId] = useState('');
+  const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
 
   const [granting, setGranting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const isCampaignManager = selectedSlug === 'campaign_manager';
+  const resourceId = selectedPolitician?.id ?? '';
 
   // Derived feature_scope
   function deriveFeatureScope(): string {
@@ -113,7 +235,7 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
     if (!open) return;
     setSelectedSlug('');
     setJurisdictionGeoid('');
-    setResourceId('');
+    setSelectedPolitician(null);
     setError(null);
     setJurisdictions(null);
 
@@ -132,10 +254,10 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
       .catch(() => { /* non-fatal */ });
   }, [open, userId]);
 
-  // Load politicians when campaign_manager is selected
+  // Load politicians when campaign_manager is selected (once per modal open)
   useEffect(() => {
     if (!open || !isCampaignManager) return;
-    if (politicians.length > 0) return; // already loaded
+    if (politicians.length > 0) return;
 
     setPoliticiansLoading(true);
     apiFetch<PoliticiansResponse>('/admin/compass/politicians')
@@ -202,7 +324,7 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
                   onChange={(e) => {
                     setSelectedSlug(e.target.value);
                     setJurisdictionGeoid('');
-                    setResourceId('');
+                    setSelectedPolitician(null);
                     setError(null);
                   }}
                   className="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -218,29 +340,18 @@ export function GrantRoleModal({ open, onClose, userId, onGranted }: GrantRoleMo
               )}
             </div>
 
-            {/* Conditional: Politician picker (campaign_manager) */}
+            {/* Conditional: Politician search (campaign_manager) */}
             {selectedSlug && isCampaignManager && (
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Politician
                 </label>
-                {politiciansLoading ? (
-                  <div className="h-9 bg-gray-100 dark:bg-gray-800 rounded animate-pulse" />
-                ) : (
-                  <select
-                    value={resourceId}
-                    onChange={(e) => setResourceId(e.target.value)}
-                    className="w-full border border-gray-300 dark:border-gray-600 rounded px-3 py-2 text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  >
-                    <option value="">Platform-wide (no specific politician)</option>
-                    {politicians.map((p) => (
-                      <option key={p.id} value={p.id}>
-                        {p.full_name ?? `${p.preferred_name ?? p.first_name} ${p.last_name}`}
-                        {p.office_title ? ` — ${p.office_title}` : ''}
-                      </option>
-                    ))}
-                  </select>
-                )}
+                <PoliticianSearch
+                  politicians={politicians}
+                  loading={politiciansLoading}
+                  value={selectedPolitician}
+                  onChange={setSelectedPolitician}
+                />
               </div>
             )}
 
