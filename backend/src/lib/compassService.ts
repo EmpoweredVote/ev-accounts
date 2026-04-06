@@ -276,6 +276,24 @@ export async function getPoliticianContext(politicianId: string, topicId: string
 }
 
 /**
+ * getPoliticianContextAll
+ * Returns all context rows for a politician (topic_id → { sources, reasoning }).
+ * Used by contributor editors to pre-populate source URL fields.
+ */
+export async function getPoliticianContextAll(
+  politicianId: string
+): Promise<{ topic_id: string; reasoning: string; sources: string[] }[]> {
+  const { data, error } = await supabaseAnon
+    .schema('inform')
+    .from('politician_context')
+    .select('topic_id,reasoning,sources')
+    .eq('politician_id', politicianId);
+
+  if (error) throw error;
+  return (data ?? []) as { topic_id: string; reasoning: string; sources: string[] }[];
+}
+
+/**
  * validateTopicIds
  * Checks that all submitted topic IDs exist and are live.
  * Returns the array of invalid IDs (empty array = all valid).

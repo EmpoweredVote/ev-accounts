@@ -27,6 +27,11 @@ interface PoliticianAnswer {
   write_in_text: string | null;
 }
 
+interface PoliticianContext {
+  topic_id: string;
+  sources: string[];
+}
+
 export default function CampaignManagerPage() {
   const [politicians, setPoliticians] = useState<ContributorPolitician[]>([]);
   const [loadingList, setLoadingList] = useState(true);
@@ -35,11 +40,12 @@ export default function CampaignManagerPage() {
   const [selectedPolitician, setSelectedPolitician] = useState<ContributorPolitician | null>(null);
   const [topics, setTopics] = useState<CompassTopic[]>([]);
   const [existingAnswers, setExistingAnswers] = useState<PoliticianAnswer[]>([]);
+  const [existingContext, setExistingContext] = useState<PoliticianContext[]>([]);
   const [loadingEditor, setLoadingEditor] = useState(false);
   const [editorError, setEditorError] = useState<string | null>(null);
 
-  // Map of topic_id -> selected value (only tracks changes)
-  const [changedStances, setChangedStances] = useState<Record<string, number>>({});
+  const [changedStances, setChangedStances] = useState<Record<string, number | null>>({});
+  const [changedSources, setChangedSources] = useState<Record<string, string>>({});
   const [saving, setSaving] = useState(false);
 
   const [showToast, setShowToast] = useState(false);
@@ -63,18 +69,22 @@ export default function CampaignManagerPage() {
   async function openEditor(politician: ContributorPolitician) {
     setSelectedPolitician(politician);
     setChangedStances({});
+    setChangedSources({});
     setEditorError(null);
     setLoadingEditor(true);
     setTopics([]);
     setExistingAnswers([]);
+    setExistingContext([]);
 
     try {
-      const [topicsData, answersData] = await Promise.all([
+      const [topicsData, answersData, contextData] = await Promise.all([
         apiFetch<CompassTopic[]>('/compass/topics'),
         apiFetch<PoliticianAnswer[]>(`/compass/politicians/${politician.id}/answers`),
+        apiFetch<PoliticianContext[]>(`/compass/politicians/${politician.id}/context`),
       ]);
       setTopics(topicsData.filter(t => t.is_live));
       setExistingAnswers(answersData);
+      setExistingContext(contextData);
     } catch {
       setEditorError('Failed to load topics or stances. Please try again.');
     } finally {
@@ -92,40 +102,102 @@ export default function CampaignManagerPage() {
     return getExistingValue(topicId);
   }
 
+  function getExistingSource(topicId: string): string {
+    const ctx = existingContext.find(c => c.topic_id === topicId);
+    return ctx?.sources?.[0] ?? '';
+  }
+
+  function getDisplaySource(topicId: string): string {
+    if (changedSources[topicId] !== undefined) return changedSources[topicId];
+    return getExistingSource(topicId);
+  }
+
   function handleStanceSelect(topicId: string, value: number) {
-    setChangedStances(prev => ({ ...prev, [topicId]: value }));
+    const current = getDisplayValue(topicId);
+    if (current === value) {
+      if (getExistingValue(topicId) !== null) {
+        setChangedStances(prev => ({ ...prev, [topicId]: null }));
+      } else {
+        setChangedStances(prev => { const next = { ...prev }; delete next[topicId]; return next; });
+      }
+    } else {
+      setChangedStances(prev => ({ ...prev, [topicId]: value }));
+    }
+  }
+
+  function handleStanceReset(topicId: string) {
+    if (getExistingValue(topicId) !== null) {
+      setChangedStances(prev => ({ ...prev, [topicId]: null }));
+    } else {
+      setChangedStances(prev => { const next = { ...prev }; delete next[topicId]; return next; });
+    }
+  }
+
+  function handleSourceChange(topicId: string, url: string) {
+    setChangedSources(prev => ({ ...prev, [topicId]: url }));
   }
 
   async function handleSave() {
     if (!selectedPolitician) return;
-    const stances = Object.entries(changedStances).map(([topic_id, value]) => ({ topic_id, value }));
-    if (stances.length === 0) {
+
+    const stances = Object.entries(changedStances)
+      .filter(([, v]) => v !== null)
+      .map(([topic_id, value]) => ({ topic_id, value: value as number }));
+    const clear_topic_ids = Object.entries(changedStances)
+      .filter(([, v]) => v === null)
+      .map(([topic_id]) => topic_id);
+    const sourcesToSave = Object.entries(changedSources)
+      .filter(([topic_id, url]) => url !== getExistingSource(topic_id))
+      .map(([topic_id, source_url]) => ({ topic_id, source_url }));
+
+    if (stances.length === 0 && clear_topic_ids.length === 0 && sourcesToSave.length === 0) {
       showToastMessage('No changes to save.');
       return;
     }
     setSaving(true);
     try {
-      await apiFetch(`/compass/stances/${selectedPolitician.id}/bulk`, {
-        method: 'PUT',
-        body: JSON.stringify({ stances }),
-      });
+      const saves: Promise<unknown>[] = [];
+
+      if (stances.length > 0 || clear_topic_ids.length > 0) {
+        saves.push(apiFetch(`/compass/stances/${selectedPolitician.id}/bulk`, {
+          method: 'PUT',
+          body: JSON.stringify({ stances, clear_topic_ids }),
+        }));
+      }
+      if (sourcesToSave.length > 0) {
+        saves.push(apiFetch(`/compass/contributors/${selectedPolitician.id}/sources`, {
+          method: 'PUT',
+          body: JSON.stringify({ sources: sourcesToSave }),
+        }));
+      }
+
+      await Promise.all(saves);
       setChangedStances({});
-      // Update existingAnswers to reflect saved values
+      setChangedSources({});
+
       setExistingAnswers(prev => {
-        const updated = [...prev];
+        let updated = [...prev];
         stances.forEach(({ topic_id, value }) => {
           const idx = updated.findIndex(a => a.topic_id === topic_id);
-          if (idx >= 0) {
-            updated[idx] = { ...updated[idx], value };
-          } else {
-            updated.push({ topic_id, value, write_in_text: null });
-          }
+          if (idx >= 0) updated[idx] = { ...updated[idx], value };
+          else updated.push({ topic_id, value, write_in_text: null });
+        });
+        return updated.filter(a => !clear_topic_ids.includes(a.topic_id));
+      });
+      setExistingContext(prev => {
+        const updated = [...prev];
+        sourcesToSave.forEach(({ topic_id, source_url }) => {
+          const idx = updated.findIndex(c => c.topic_id === topic_id);
+          const sources = source_url.trim() ? [source_url.trim()] : [];
+          if (idx >= 0) updated[idx] = { ...updated[idx], sources };
+          else updated.push({ topic_id, sources });
         });
         return updated;
       });
-      showToastMessage('Stances saved successfully');
+
+      showToastMessage('Saved successfully');
     } catch {
-      showToastMessage('Failed to save stances. Please try again.', true);
+      showToastMessage('Failed to save. Please try again.', true);
     } finally {
       setSaving(false);
     }
@@ -277,9 +349,22 @@ export default function CampaignManagerPage() {
                       key={topic.id}
                       className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3"
                     >
-                      <div>
-                        <p className="text-sm font-bold text-ev-black dark:text-white">{topic.title}</p>
-                        <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.question_text}</p>
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-bold text-ev-black dark:text-white">{topic.title}</p>
+                          <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.question_text}</p>
+                        </div>
+                        {currentValue !== null && (
+                          <button
+                            onClick={() => handleStanceReset(topic.id)}
+                            title="Clear this stance"
+                            className="flex-shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors"
+                          >
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        )}
                       </div>
                       {/* Stance selector */}
                       <div className="flex flex-wrap gap-2">
@@ -305,6 +390,35 @@ export default function CampaignManagerPage() {
                             );
                           })}
                       </div>
+
+                      {/* Source URL */}
+                      <div className="pt-1 border-t border-gray-100 dark:border-gray-800">
+                        <label className="block text-[10px] font-semibold text-gray-400 uppercase tracking-wider mb-1">
+                          Source URL
+                        </label>
+                        <div className="flex items-center gap-2">
+                          <input
+                            type="url"
+                            value={getDisplaySource(topic.id)}
+                            onChange={e => handleSourceChange(topic.id, e.target.value)}
+                            placeholder="https://example.com/article"
+                            className="flex-1 text-xs px-2.5 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-transparent text-gray-700 dark:text-gray-300 placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:border-ev-red/60"
+                          />
+                          {getDisplaySource(topic.id) && (
+                            <a
+                              href={getDisplaySource(topic.id)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-shrink-0 text-gray-400 hover:text-ev-red transition-colors"
+                              title="Open source"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                              </svg>
+                            </a>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   );
                 })}
@@ -314,10 +428,10 @@ export default function CampaignManagerPage() {
               <div className="mt-6 pb-6">
                 <button
                   onClick={handleSave}
-                  disabled={saving || Object.keys(changedStances).length === 0}
+                  disabled={saving || (Object.keys(changedStances).length === 0 && Object.keys(changedSources).length === 0)}
                   className="w-full py-3 bg-ev-red text-white text-sm font-bold rounded-xl hover:bg-ev-red/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {saving ? 'Saving…' : `Save All${Object.keys(changedStances).length > 0 ? ` (${Object.keys(changedStances).length} change${Object.keys(changedStances).length === 1 ? '' : 's'})` : ''}`}
+                  {saving ? 'Saving…' : 'Save All'}
                 </button>
               </div>
             </>

@@ -436,4 +436,80 @@ router.put(
   }
 );
 
+// ---------------------------------------------------------------------------
+// PUT /compass/contributors/:politicianId/sources — save source URLs per topic
+// Contributors only write sources; reasoning stays admin-controlled.
+// ---------------------------------------------------------------------------
+
+const sourcesSchema = z.object({
+  sources: z
+    .array(
+      z.object({
+        topic_id: z.string().uuid(),
+        source_url: z.string().max(2048),
+      })
+    )
+    .min(1)
+    .max(100),
+});
+
+router.put(
+  '/contributors/:politicianId/sources',
+  requireAuth,
+  requireRole(['compass_stance_editor', 'campaign_manager']),
+  async (req: Request, res: Response): Promise<void> => {
+    const politicianId = req.params['politicianId'] as string;
+    const actorId = (req as AuthenticatedRequest).userId;
+
+    if (!isUUID(politicianId)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'politicianId must be a valid UUID' });
+      return;
+    }
+
+    const parsed = sourcesSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: parsed.error.issues.map((i) => i.message).join('; '),
+      });
+      return;
+    }
+
+    const grants = await getCachedUserRoles(actorId);
+
+    const existsResult = await pool.query<{ id: string }>(
+      `SELECT id FROM essentials.politicians WHERE id = $1 LIMIT 1`,
+      [politicianId]
+    );
+    if (existsResult.rows.length === 0) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'Politician not found' });
+      return;
+    }
+
+    const politicianGeoid = await getPoliticianJurisdiction(politicianId);
+    const matchingGrant = getMatchingGrant(grants, politicianId, politicianGeoid);
+    if (!matchingGrant) {
+      res.status(403).json({ code: 'FORBIDDEN', message: 'You do not have permission to edit this politician' });
+      return;
+    }
+
+    try {
+      for (const { topic_id, source_url } of parsed.data.sources) {
+        const sources = source_url.trim() ? [source_url.trim()] : [];
+        await pool.query(
+          `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+           VALUES ($1, $2, '', $3)
+           ON CONFLICT (politician_id, topic_id)
+           DO UPDATE SET sources = EXCLUDED.sources`,
+          [politicianId, topic_id, sources]
+        );
+      }
+      res.status(200).json({ updated: parsed.data.sources.length });
+    } catch (err) {
+      console.error('[compassContributor] source write error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
 export default router;

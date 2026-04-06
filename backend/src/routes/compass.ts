@@ -11,6 +11,7 @@ import {
   getCompassPoliticians,
   getPoliticianAnswers,
   getPoliticianContext,
+  getPoliticianContextAll,
   validateTopicIds,
   saveSelectedTopics,
   resetCompassAnswers,
@@ -527,6 +528,33 @@ router.get(
       res.status(200).json(data);
     } catch (err) {
       console.error('[GET /compass/politicians/:id/answers] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/politicians/:id/context
+// Auth: optional — works unauthenticated
+// Returns all context rows for a politician (all topics in one call).
+// Used by contributor editors to pre-populate source URL fields.
+// MUST be registered before /politicians/:id/:topicId/context.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/politicians/:id/context',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const politicianId = req.params.id as string;
+      if (!UUID_REGEX.test(politicianId)) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID' });
+        return;
+      }
+      const data = await getPoliticianContextAll(politicianId);
+      res.status(200).json(data);
+    } catch (err) {
+      console.error('[GET /compass/politicians/:id/context] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }

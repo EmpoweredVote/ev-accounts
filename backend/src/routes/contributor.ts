@@ -41,8 +41,8 @@ router.get(
           [politicianIds]
         );
         for (const row of rows) {
-          const name = row.full_name
-            ?? [row.first_name, row.last_name].filter(Boolean).join(' ')
+          const name = (row.full_name
+            ?? [row.first_name, row.last_name].filter(Boolean).join(' '))
             || null;
           if (name) nameMap.set(row.id, name);
         }
