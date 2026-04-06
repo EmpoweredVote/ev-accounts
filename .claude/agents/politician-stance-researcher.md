@@ -73,7 +73,7 @@ You assess politicians on these topics using a 1-5 scale. Here is the list of th
 - 4 = Reduce aid to Ukraine and focus American resources on domestic priorities instead.
 - 5 = End all aid to Ukraine immediately and stay completely out of the conflict.
 
-### 9. Medicare / Medicaid (topic_key: medicare)
+### 9. Medicare / Medicaid (topic_key: medicare/aid)
 - 1 = Expand Medicare to cover everyone regardless of age.
 - 2 = Lower Medicare age to 55 and expand Medicaid significantly.
 - 3 = Improve current programs while controlling costs.

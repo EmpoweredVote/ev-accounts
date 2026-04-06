@@ -1,0 +1,30 @@
+{
+  "topic_key": "school-vouchers",
+  "title": "School Vouchers & Public Education Funding",
+  "short_title": "School Vouchers",
+  "question_text": "The government should fund K-12 education by...",
+  "levels": ["state"],
+  "stances": [
+    { "value": 1, "text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions" },
+    { "value": 2, "text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options" },
+    { "value": 3, "text": "Funding public schools at current levels while allowing means-tested voucher programs with accountability requirements for participating private schools" },
+    { "value": 4, "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child, while maintaining baseline public school funding" },
+    { "value": 5, "text": "Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family" }
+  ],
+  "discovery": {
+    "jurisdiction": "Indiana House District 61 (Bloomington)",
+    "level": "state",
+    "policy_lever": "State legislature controls voucher eligibility, K-12 funding formula, and per-pupil allocation",
+    "closest_existing_topic": null,
+    "sources": [
+      "https://www.chalkbeat.org/indiana/2025/04/24/vouchers-for-all-start-in-2026-budget-year/",
+      "https://www.wfyi.org/news/articles/indiana-k-12-education-budget-2026-2027-universal-school-vouchers",
+      "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum"
+    ]
+  },
+  "quality_checks": {
+    "double_barrel": "pass",
+    "spectrum_coherence": "pass",
+    "level_agnostic": "pass"
+  }
+}

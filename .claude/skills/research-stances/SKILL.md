@@ -52,7 +52,7 @@ Fetch the current live topics to validate any `--topics` filter:
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT id, title, short_title, question_text
+  SELECT id, title, short_title, topic_key, question_text
   FROM inform.compass_topics
   WHERE is_live = true
   ORDER BY created_at
@@ -88,7 +88,17 @@ Research the political stances of [POLITICIAN_NAME] ([OFFICE/TITLE if known]).
 Only research these topics: [TOPIC_LIST]
 
 [If --topics was NOT specified:]
-Research all 21 policy topics.
+Research all current policy topics.
+
+IMPORTANT — Use these exact topic_key values from the database (fetched in STEP 0):
+[Paste the topic_key values from the Topic Resolution query, e.g.:]
+healthcare, abortion, tariffs, taxes, same-sex-marriage, religious-freedom, trans-athletes,
+ukraine-support, medicare/aid, fossil-fuels, voting-rights, deportation, social-security,
+ai-regulation, climate-change, civil-rights, housing, campaign-finance, immigration,
+misinformation, redistricting, school-vouchers, data-centers, homelessness, childcare
+
+The topic_key in your CSV output MUST exactly match one of these values.
+Do NOT invent your own topic_key slugs.
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 

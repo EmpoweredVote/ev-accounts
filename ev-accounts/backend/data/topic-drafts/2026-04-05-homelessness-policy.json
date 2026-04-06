@@ -1,0 +1,30 @@
+{
+  "topic_key": "homelessness-policy",
+  "title": "Criminalization of Homelessness",
+  "short_title": "Homelessness",
+  "question_text": "The government should address people sleeping or camping in public spaces by...",
+  "levels": ["federal", "state", "local"],
+  "stances": [
+    { "value": 1, "text": "Protecting the right to sleep in public spaces and redirecting enforcement budgets toward permanent supportive housing and mental health services" },
+    { "value": 2, "text": "Decriminalizing public sleeping while investing in shelter capacity, outreach workers, and voluntary service connections" },
+    { "value": 3, "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system" },
+    { "value": 4, "text": "Prohibiting encampments on public property with graduated warnings and penalties, while requiring jurisdictions to maintain basic shelter options" },
+    { "value": 5, "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order, relying on existing social services for those who seek help" }
+  ],
+  "discovery": {
+    "jurisdiction": "Indiana House District 61 (Bloomington)",
+    "level": "state",
+    "policy_lever": "State legislature passed SB 285 criminalizing public sleeping (effective July 2026); repeal or amendment requires state action; local governments control shelter funding",
+    "closest_existing_topic": "housing",
+    "sources": [
+      "https://indianacapitalchronicle.com/2026/02/27/indiana-senate-concurs-with-houses-public-camping-ban-edits-sends-bill-to-governors-desk/",
+      "https://www.idsnews.com/article/2026/04/sea-285-law-banning-public-sleeping-looms-in-bloomington",
+      "https://www.wave3.com/2026/03/09/it-doesnt-make-sense-indiana-lawmakers-ban-sleeping-public-spaces/"
+    ]
+  },
+  "quality_checks": {
+    "double_barrel": "pass",
+    "spectrum_coherence": "pass",
+    "level_agnostic": "pass"
+  }
+}

@@ -126,7 +126,7 @@ Create:
 - `title`: descriptive title (e.g., "Short-Term Rental Regulation")
 - `short_title`: abbreviated form (e.g., "Short-Term Rentals")
 - `question_text`: framed as an open-ended question (NOT yes/no). Examples: "How should government regulate short-term rental properties like Airbnb?", "What role should vouchers and school choice play in the public education system?", "What legal framework should govern abortion access?" — never use statement stems like "The government should..."
-- `topic_key`: kebab-case identifier (e.g., `short-term-rentals`)
+- `topic_key`: **MUST equal `lower(replace(short_title, ' ', '-'))`** — e.g., short_title "Short-Term Rentals" → topic_key `short-term-rentals`. This is critical: `essentials.quotes` joins on `topic_key`, so any mismatch silently hides quotes from ReadRank.
 - `levels`: which jurisdiction levels this applies to — array from `["federal", "state", "local"]`
 
 ### 3b. Draft 5 stances
@@ -267,8 +267,14 @@ const { rows: [created] } = await pool.query(\`
   ) as result
 \`, [topic.title, topic.question_text, topic.short_title, JSON.stringify(topic.stances)]);
 
-const topicId = created.result;
+const topicId = created.result.topic.id;
 console.log('Created topic:', topicId);
+
+// Set topic_key explicitly (trigger auto-derives from short_title if blank,
+// but we set it explicitly to match what quotes use)
+await pool.query(\\\`
+  UPDATE inform.compass_topics SET topic_key = \\\$1 WHERE id = \\\$2
+\\\`, [topic.topic_key, topicId]);
 
 // Insert compass_topic_roles for each level
 const levelMap = {

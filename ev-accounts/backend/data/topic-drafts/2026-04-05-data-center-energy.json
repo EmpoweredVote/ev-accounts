@@ -1,0 +1,31 @@
+{
+  "topic_key": "data-center-energy",
+  "title": "Data Center Development & Energy Costs",
+  "short_title": "Data Centers",
+  "question_text": "The government should manage the growth of large-scale data centers by...",
+  "levels": ["state", "local"],
+  "stances": [
+    { "value": 1, "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers" },
+    { "value": 2, "text": "Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers" },
+    { "value": 3, "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval" },
+    { "value": 4, "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts" },
+    { "value": 5, "text": "Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents" }
+  ],
+  "discovery": {
+    "jurisdiction": "Indiana House District 61 (Bloomington)",
+    "level": "state",
+    "policy_lever": "State legislature sets utility regulation, data center incentive packages, and siting authority; local governments control zoning",
+    "closest_existing_topic": null,
+    "sources": [
+      "https://www.citact.org/ai-data-centers",
+      "https://mirrorindy.org/indianapolis-data-centers-raise-electric-bills-aes-duke/",
+      "https://www.wfyi.org/wfyi-news/2026-03-02/data-center-legislation-indiana-general-assembly-2026",
+      "https://indianacapitalchronicle.com/2026/03/26/that-1-incentive-to-encourage-data-center-approvals-final-deal-watered-it-down/"
+    ]
+  },
+  "quality_checks": {
+    "double_barrel": "pass",
+    "spectrum_coherence": "pass",
+    "level_agnostic": "pass"
+  }
+}

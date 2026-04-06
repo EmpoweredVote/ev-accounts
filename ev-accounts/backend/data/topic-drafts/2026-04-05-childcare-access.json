@@ -1,0 +1,29 @@
+{
+  "topic_key": "childcare-access",
+  "title": "Childcare Affordability & Access",
+  "short_title": "Childcare",
+  "question_text": "The government should address the cost and availability of childcare by...",
+  "levels": ["federal", "state", "local"],
+  "stances": [
+    { "value": 1, "text": "Establishing publicly funded universal childcare so that all families have access regardless of income" },
+    { "value": 2, "text": "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families" },
+    { "value": 3, "text": "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants" },
+    { "value": 4, "text": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families" },
+    { "value": 5, "text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers" }
+  ],
+  "discovery": {
+    "jurisdiction": "Indiana House District 61 (Bloomington)",
+    "level": "state",
+    "policy_lever": "State legislature controls childcare subsidy funding, provider licensing, and grant programs; federal block grants flow through state",
+    "closest_existing_topic": null,
+    "sources": [
+      "https://www.idsnews.com/article/2026/03/bloomington-indiana-district-state-candidates-democratic-primary-lilliana-young-matt-pierce",
+      "https://www.ibrc.indiana.edu/ibr/2025/outlook/bloomington.html"
+    ]
+  },
+  "quality_checks": {
+    "double_barrel": "pass",
+    "spectrum_coherence": "pass",
+    "level_agnostic": "pass"
+  }
+}
