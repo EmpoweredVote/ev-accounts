@@ -38,8 +38,8 @@ export default function CompassEditorPage() {
   const [loadingEditor, setLoadingEditor] = useState(false);
   const [editorError, setEditorError] = useState<string | null>(null);
 
-  // Map of topic_id -> selected value (only tracks changes)
-  const [changedStances, setChangedStances] = useState<Record<string, number>>({});
+  // Map of topic_id -> selected value (null = cleared, only tracks changes from existing state)
+  const [changedStances, setChangedStances] = useState<Record<string, number | null>>({});
   const [saving, setSaving] = useState(false);
 
   const [showToast, setShowToast] = useState(false);
@@ -93,13 +93,51 @@ export default function CompassEditorPage() {
   }
 
   function handleStanceSelect(topicId: string, value: number) {
-    setChangedStances(prev => ({ ...prev, [topicId]: value }));
+    // Toggle off if clicking the currently displayed value
+    const current = getDisplayValue(topicId);
+    if (current === value) {
+      // Only mark as a change if there was a pre-existing answer to clear
+      if (getExistingValue(topicId) !== null) {
+        setChangedStances(prev => ({ ...prev, [topicId]: null }));
+      } else {
+        // Was a new selection with no prior answer — just remove from changes
+        setChangedStances(prev => {
+          const next = { ...prev };
+          delete next[topicId];
+          return next;
+        });
+      }
+    } else {
+      setChangedStances(prev => ({ ...prev, [topicId]: value }));
+    }
+  }
+
+  function handleStanceReset(topicId: string) {
+    if (getExistingValue(topicId) !== null) {
+      // There's a saved answer — mark it for deletion
+      setChangedStances(prev => ({ ...prev, [topicId]: null }));
+    } else {
+      // No saved answer, just unsaved selection — remove from changes
+      setChangedStances(prev => {
+        const next = { ...prev };
+        delete next[topicId];
+        return next;
+      });
+    }
   }
 
   async function handleSave() {
     if (!selectedPolitician) return;
-    const stances = Object.entries(changedStances).map(([topic_id, value]) => ({ topic_id, value }));
-    if (stances.length === 0) {
+
+    const stances = Object.entries(changedStances)
+      .filter(([, v]) => v !== null)
+      .map(([topic_id, value]) => ({ topic_id, value: value as number }));
+
+    const clear_topic_ids = Object.entries(changedStances)
+      .filter(([, v]) => v === null)
+      .map(([topic_id]) => topic_id);
+
+    if (stances.length === 0 && clear_topic_ids.length === 0) {
       showToastMessage('No changes to save.');
       return;
     }
@@ -107,12 +145,12 @@ export default function CompassEditorPage() {
     try {
       await apiFetch(`/compass/stances/${selectedPolitician.id}/bulk`, {
         method: 'PUT',
-        body: JSON.stringify({ stances }),
+        body: JSON.stringify({ stances, clear_topic_ids }),
       });
       setChangedStances({});
       // Update existingAnswers to reflect saved values
       setExistingAnswers(prev => {
-        const updated = [...prev];
+        let updated = [...prev];
         stances.forEach(({ topic_id, value }) => {
           const idx = updated.findIndex(a => a.topic_id === topic_id);
           if (idx >= 0) {
@@ -121,6 +159,8 @@ export default function CompassEditorPage() {
             updated.push({ topic_id, value, write_in_text: null });
           }
         });
+        // Remove cleared answers
+        updated = updated.filter(a => !clear_topic_ids.includes(a.topic_id));
         return updated;
       });
       showToastMessage('Stances saved successfully');
@@ -285,9 +325,22 @@ export default function CompassEditorPage() {
                       key={topic.id}
                       className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3"
                     >
-                      <div>
-                        <p className="text-sm font-bold text-ev-black dark:text-white">{topic.title}</p>
-                        <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.question_text}</p>
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-bold text-ev-black dark:text-white">{topic.title}</p>
+                          <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.question_text}</p>
+                        </div>
+                        {currentValue !== null && (
+                          <button
+                            onClick={() => handleStanceReset(topic.id)}
+                            title="Clear this stance"
+                            className="flex-shrink-0 mt-0.5 w-5 h-5 flex items-center justify-center rounded-full text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors"
+                          >
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                          </button>
+                        )}
                       </div>
                       {/* Stance selector */}
                       <div className="flex flex-wrap gap-2">

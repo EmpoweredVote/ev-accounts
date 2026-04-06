@@ -71,9 +71,13 @@ const bulkStanceSchema = z.object({
         write_in_text: z.string().max(500).optional(),
       })
     )
-    .min(1)
-    .max(100),
-});
+    .max(100)
+    .default([]),
+  clear_topic_ids: z.array(z.string().uuid()).max(100).default([]),
+}).refine(
+  (d) => d.stances.length > 0 || d.clear_topic_ids.length > 0,
+  { message: 'Must provide at least one stance update or clear' }
+);
 
 // ---------------------------------------------------------------------------
 // GET /contributors/politicians — list politicians the caller can edit
@@ -135,7 +139,7 @@ router.put(
       });
       return;
     }
-    const { stances } = parsed.data;
+    const { stances, clear_topic_ids } = parsed.data;
 
     // 3. Get user's grants
     const grants = await getCachedUserRoles(actorId);
@@ -167,29 +171,35 @@ router.put(
     }
 
     const topicIds = stances.map((s) => s.topic_id);
+    // Deduplicate clear_topic_ids and exclude any that are also being upserted
+    const topicIdSet = new Set(topicIds);
+    const clearIds = [...new Set(clear_topic_ids)].filter((id) => !topicIdSet.has(id));
 
     // 7. Begin transaction
     const client = await pool.connect();
     try {
       await client.query('BEGIN');
 
-      // a. Verify ALL topic_ids exist and are live in one query
-      const topicCheckResult = await client.query<{ id: string }>(
-        `SELECT id FROM inform.compass_topics WHERE id = ANY($1) AND is_live = true`,
-        [topicIds]
-      );
-      const validTopicIds = new Set(topicCheckResult.rows.map((r) => r.id));
-      const invalidTopicIds = topicIds.filter((id) => !validTopicIds.has(id));
-      if (invalidTopicIds.length > 0) {
-        await client.query('ROLLBACK');
-        res.status(422).json({
-          code: 'VALIDATION_ERROR',
-          message: `Invalid or non-live topic IDs: ${invalidTopicIds.join(', ')}`,
-        });
-        return;
+      // a. Verify ALL upsert topic_ids exist and are live
+      if (topicIds.length > 0) {
+        const topicCheckResult = await client.query<{ id: string }>(
+          `SELECT id FROM inform.compass_topics WHERE id = ANY($1) AND is_live = true`,
+          [topicIds]
+        );
+        const validTopicIds = new Set(topicCheckResult.rows.map((r) => r.id));
+        const invalidTopicIds = topicIds.filter((id) => !validTopicIds.has(id));
+        if (invalidTopicIds.length > 0) {
+          await client.query('ROLLBACK');
+          res.status(422).json({
+            code: 'VALIDATION_ERROR',
+            message: `Invalid or non-live topic IDs: ${invalidTopicIds.join(', ')}`,
+          });
+          return;
+        }
       }
 
-      // b. Fetch ALL current values for diff computation
+      // b. Fetch current values for all affected topics (upserts + clears)
+      const allTopicIds = [...topicIds, ...clearIds];
       const prevResult = await client.query<{
         topic_id: string;
         value: number;
@@ -198,7 +208,7 @@ router.put(
         `SELECT topic_id, value, write_in_text
          FROM inform.politician_answers
          WHERE politician_id = $1 AND topic_id = ANY($2)`,
-        [politicianId, topicIds]
+        [politicianId, allTopicIds]
       );
       const prevMap = new Map(prevResult.rows.map((r) => [r.topic_id, r]));
 
@@ -210,10 +220,8 @@ router.put(
         const writeInTextUnchanged =
           (prev?.write_in_text ?? null) === (stance.write_in_text ?? null);
 
-        // Skip if nothing changed
         if (valueUnchanged && writeInTextUnchanged) continue;
 
-        // Upsert
         await client.query(
           `INSERT INTO inform.politician_answers (politician_id, topic_id, value, write_in_text)
            VALUES ($1, $2, $3, $4)
@@ -222,7 +230,6 @@ router.put(
           [politicianId, stance.topic_id, stance.value, stance.write_in_text ?? null]
         );
 
-        // Audit log entry for this topic
         await writeStanceAuditLog(client, {
           actorId,
           targetUserId: actorId,
@@ -239,11 +246,40 @@ router.put(
         written++;
       }
 
+      // d. Delete cleared stances and audit each
+      let cleared = 0;
+      for (const topicId of clearIds) {
+        const prev = prevMap.get(topicId) ?? null;
+        if (!prev) continue; // Nothing to clear
+
+        await client.query(
+          `DELETE FROM inform.politician_answers
+           WHERE politician_id = $1 AND topic_id = $2`,
+          [politicianId, topicId]
+        );
+
+        await writeStanceAuditLog(client, {
+          actorId,
+          targetUserId: actorId,
+          roleGrantId: matchingGrant.id,
+          featureScope: matchingGrant.feature_scope,
+          jurisdictionGeoid: matchingGrant.jurisdiction_geoid,
+          resourceId: matchingGrant.resource_id,
+          topicId,
+          oldValue: prev.value,
+          newValue: null,
+          writeInTextChanged: prev.write_in_text !== null,
+        });
+
+        cleared++;
+      }
+
       await client.query('COMMIT');
 
       res.status(200).json({
         politician_id: politicianId,
         updated: written,
+        cleared,
       });
     } catch (err) {
       await client.query('ROLLBACK');

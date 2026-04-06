@@ -53,7 +53,7 @@ export interface StanceAuditParams {
   resourceId: string | null;
   topicId: string;
   oldValue: number | null;
-  newValue: number;
+  newValue: number | null;
   writeInTextChanged: boolean;
 }
 
