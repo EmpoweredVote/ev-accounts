@@ -207,9 +207,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
       FROM essentials.quotes q
       JOIN essentials.politicians p ON p.id = q.politician_id AND p.is_active = true
       LEFT JOIN essentials.offices o ON o.politician_id = p.id
-      LEFT JOIN inform.compass_topics ct
-        ON lower(replace(ct.short_title, ' ', '-')) = lower(q.topic_key)
-        OR lower(ct.short_title) = lower(q.topic_key)
+      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
       ORDER BY p.full_name, q.topic_key
     `);
 
