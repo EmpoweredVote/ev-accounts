@@ -519,7 +519,7 @@ router.post('/roles/grant', async (req, res) => {
     }
     const { user_id, role_slug, feature_scope, jurisdiction_geoid, resource_id } = parsed.data;
     const resolvedScope = feature_scope ?? 'platform';
-    await adminGrantRole(user_id, role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
+    await adminGrantRole(user_id, role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null, actorId(req));
     await invalidateRoleCache(user_id);
     await writeRoleAuditLog(actorId(req), user_id, 'granted', role_slug, resolvedScope, jurisdiction_geoid ?? null, resource_id ?? null);
     await logAdminAction(actorId(req), 'grant_role', user_id, {

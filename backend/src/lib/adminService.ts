@@ -277,9 +277,10 @@ export async function adminGrantRole(
   roleSlug: string,
   featureScope?: string,
   jurisdictionGeoid?: string | null,
-  resourceId?: string | null
+  resourceId?: string | null,
+  grantedById?: string | null
 ): Promise<void> {
-  await grantRole(userId, roleSlug, featureScope, jurisdictionGeoid, resourceId);
+  await grantRole(userId, roleSlug, featureScope, jurisdictionGeoid, resourceId, grantedById);
 }
 
 /**

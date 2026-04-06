@@ -36,6 +36,7 @@ export interface UserRoleGrant {
   feature_scope: string;
   jurisdiction_geoid: string | null;
   resource_id: string | null;
+  granted_by_display_name: string | null;
 }
 
 export interface CheckRoleScope {
@@ -161,7 +162,8 @@ export async function grantRole(
   roleSlug: string,
   featureScope?: string,
   jurisdictionGeoid?: string | null,
-  resourceId?: string | null
+  resourceId?: string | null,
+  grantedById?: string | null
 ): Promise<void> {
   const { error } = await adminRpc('grant_role', {
     p_user_id: userId,
@@ -169,6 +171,7 @@ export async function grantRole(
     p_feature_scope: featureScope ?? 'platform',
     p_jurisdiction_geoid: jurisdictionGeoid ?? null,
     p_resource_id: resourceId ?? null,
+    p_granted_by_id: grantedById ?? null,
   });
 
   if (error) {

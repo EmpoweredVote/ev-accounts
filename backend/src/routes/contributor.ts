@@ -30,6 +30,7 @@ router.get(
         jurisdiction_geoid: g.jurisdiction_geoid,
         resource_id: g.resource_id,
         granted_at: g.granted_at,
+        granted_by_display_name: g.granted_by_display_name ?? null,
       }));
       res.status(200).json(mapped);
     } catch (err) {

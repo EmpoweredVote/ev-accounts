@@ -8,6 +8,7 @@ interface ContributorGrant {
   jurisdiction_geoid: string | null;
   resource_id: string | null;
   granted_at: string;
+  granted_by_display_name: string | null;
 }
 
 const ROLE_DISPLAY_NAMES: Record<string, string> = {
@@ -185,7 +186,7 @@ export default function ContributorDashboard() {
                   </div>
                   <div className="col-span-2 space-y-0.5">
                     <p className="text-xs text-gray-400 uppercase tracking-wider font-medium">Granted by</p>
-                    <p className="text-sm font-semibold text-ev-black dark:text-white">Empowered Vote</p>
+                    <p className="text-sm font-semibold text-ev-black dark:text-white">{grant.granted_by_display_name ?? 'Empowered Vote'}</p>
                   </div>
                 </div>
 
