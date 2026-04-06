@@ -68,7 +68,7 @@ export function RolesPage() {
     }
   }
 
-  const activeRoles = roles.filter((r) => r.is_active);
+  const activeRoles = roles; // /api/roles already returns only active roles server-side
 
   return (
     <div>
