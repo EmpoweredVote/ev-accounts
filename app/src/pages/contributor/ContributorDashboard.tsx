@@ -7,6 +7,7 @@ interface ContributorGrant {
   feature_scope: string;
   jurisdiction_geoid: string | null;
   resource_id: string | null;
+  resource_display_name: string | null;
   granted_at: string;
   granted_by_display_name: string | null;
 }
@@ -48,7 +49,7 @@ const ROLE_CTA_STYLE: Record<string, string> = {
 };
 
 function getScopeLabel(grant: ContributorGrant): string {
-  if (grant.resource_id) return 'Single Politician';
+  if (grant.resource_id) return grant.resource_display_name ?? 'Single Politician';
   if (grant.jurisdiction_geoid) return grant.jurisdiction_geoid;
   if (grant.feature_scope === 'platform') return 'Unrestricted';
   return grant.feature_scope;
