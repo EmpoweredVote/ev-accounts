@@ -732,16 +732,19 @@ These endpoints allow external systems (CTC, Civic Spaces) to determine whether 
 
 | Method | Path | Auth | Body | Description |
 |--------|------|------|------|-------------|
-| `GET` | `/api/contributor/me` | Auth | — | Caller's active role grants as a bare array. Each item: `{ role_slug, feature_scope, jurisdiction_geoid, resource_id }`. |
+| `GET` | `/api/contributor/me` | Auth | — | Caller's active role grants filtered to contributor portal roles only (`compass_stance_editor`, `campaign_manager`, `essentials_data_editor`). Each item: `{ role_slug, feature_scope, jurisdiction_geoid, resource_id }`. |
+| `GET` | `/api/roles/me` | Auth | — | Caller's **all** active role grants, unfiltered. Use this if you need `ctc_content_editor` or `volunteer` grants. |
 | `POST` | `/api/roles/check` | Auth | `{ feature_scope, jurisdiction_geoid?, resource_id? }` | Check if the caller holds a matching grant. Returns `{ permitted: boolean }`. |
 
-**`GET /api/contributor/me` — response example:**
+> **Important:** `GET /api/contributor/me` filters to the three contributor portal role types only. It will **not** return `ctc_content_editor` or `volunteer` grants. CTC and Civic Spaces must use `GET /api/roles/me` (unfiltered) or `POST /api/roles/check` (boolean gate) instead.
+
+**`GET /api/contributor/me` — response example (portal roles only):**
 ```json
 [
   {
-    "role_slug": "ctc_content_editor",
-    "feature_scope": "platform",
-    "jurisdiction_geoid": "06037",
+    "role_slug": "compass_stance_editor",
+    "feature_scope": "compass",
+    "jurisdiction_geoid": "18105",
     "resource_id": null
   }
 ]
@@ -763,11 +766,13 @@ These endpoints allow external systems (CTC, Civic Spaces) to determine whether 
 **Integration pattern — CTC example:**
 ```
 1. User opens CTC content editor
-2. CTC calls GET /api/contributor/me (with user's JWT)
-3. CTC scans array for role_slug === 'ctc_content_editor'
-4. If found and jurisdiction_geoid matches → allow editing
-5. If not found → show "no editor access" message
+2. CTC calls POST /api/roles/check { feature_scope: "ctc_content_editor", jurisdiction_geoid: "<user's geoid>" }
+   — OR — GET /api/roles/me and scan for role_slug === 'ctc_content_editor'
+3. If permitted: true (or grant found) → allow editing for that jurisdiction
+4. If not permitted → show "no editor access" message
 ```
+
+> **Do not use `GET /api/contributor/me` for CTC.** That endpoint filters to contributor portal roles only and will never return a `ctc_content_editor` grant.
 
 **Integration pattern — Civic Spaces example:**
 ```
