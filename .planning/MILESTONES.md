@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v1.9 Roles (Shipped: 2026-04-06)
+
+**Delivered:** Delegated authority system — geo-scoped and resource-scoped roles, a full audit trail, role-gated contributor endpoints for compass stances / campaign management / essentials editing, and a contributor portal at `app.empowered.vote/contributor`.
+
+**Phases completed:** 51–58 (19 plans total)
+
+**Key accomplishments:**
+
+- Role infrastructure: `feature_scope` + `jurisdiction_geoid` + `resource_id` columns on `public.user_roles`; `grant_role`/`revoke_role`/`get_user_roles` SECURITY DEFINER RPCs; 5 role types seeded; `public.role_audit_log` with full audit field set
+- `requireRole()` middleware with NULL-safe jurisdiction check, Redis-backed caching, and `checkRole()` pure function tested across all NULL-scope and scope-match combinations
+- Admin UI: grant/revoke modal with role-type dropdown, user typeahead, jurisdiction chips from stored districts; global role audit dashboard filterable by scope/jurisdiction/date
+- Role-gated endpoints: `PUT /api/compass/stances/:politicianId` (compass_stance_editor + campaign_manager), `PATCH /api/essentials/politicians/:id` (essentials_data_editor), `GET /api/contributor/me`, `POST /api/roles/check`
+- Jurisdiction scoping via live `offices→districts JOIN` — never filter on `home_jurisdiction_geoid` (NULL on all 2,577 `essentials.politicians` rows)
+- Contributor portal (Phase 58): dashboard with role grant cards, Compass Editor (jurisdiction-scoped politician list + inline stance editor), Candidate Coordinator (single-politician stance editor), Essentials Editor (field-level bio editor with dirty state tracking)
+
+**Stats:**
+
+- 119 files changed, 18,316 insertions, 150 deletions
+- ~62,000 lines of TypeScript (project-wide)
+- 8 phases, 19 plans, 17/17 requirements
+- 4 days (2026-04-02 → 2026-04-06)
+
+**Git range:** `7eb7e29` → `2355754`
+
+**What's next:** v2.0 — run `/gsd:new-milestone` to define scope
+
+---
+
 ## v1.5 Partner Integration & Referrals (Shipped: 2026-03-19)
 
 **Delivered:** Referral dashboard card with locked/waiting/active states, plus two canonical partner integration guides (CompassV2 and Essentials) that fully document auth, jurisdiction, and the Inform-baseline / Connected-enhanced access pattern.

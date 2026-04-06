@@ -1,181 +1,201 @@
-# Technology Stack: v1.6 Civic Identity and Roles
+# Technology Stack — v1.9 Roles Milestone
 
-**Project:** empowered-accounts
-**Dimension:** Additive stack decisions for v1.6 features
-**Researched:** 2026-03-19
-**Confidence:** HIGH (all claims grounded in direct codebase inspection; no new external libraries required)
-
-This file covers only additive stack decisions for v1.6. The base stack (Express 4.x, TypeScript strict, supabase-js v2, pg raw driver, Upstash Redis, Vite + React + Tailwind v4) is unchanged and documented in MEMORY.md and prior STACK.md files. Do not restate the base stack.
+**Project:** ev-accounts
+**Milestone:** v1.9 — Delegated Authority / Scoped Roles
+**Researched:** 2026-04-02
+**Overall confidence:** HIGH — all conclusions drawn from reading actual project code, not from external sources
 
 ---
 
-## Feature 1: Scoped Roles System
+## Summary Verdict
 
-### What needs to change
-
-The current `public.user_roles` table associates a user with a role (FK to `public.roles`) and records grant/revoke timestamps. It has no `feature` dimension and no `jurisdiction_geoid` column.
-
-The `public.roles` table records named roles (contributor, candidate, maven, etc.) but does not distinguish between "platform admin" roles and "feature-developer API access" roles. The v1.6 scoped roles system introduces a new dimension: roles granted specifically to allow a feature repo (CTC, Quest, Essentials, Compass) to act on behalf of a user within a geographic scope.
-
-### Decision: Extend `public.user_roles` in-place — do NOT create a separate table
-
-**Why:** Creating a `scoped_roles` table would duplicate the grant/revoke lifecycle machinery (partial unique index on active grants, soft-revocation pattern, conflict enforcement, `grant_role` / `revoke_role` / `get_user_roles` RPCs) that already works and is tested. The existing `public.user_roles` infrastructure is the right place for this. The new dimensions (`feature`, `jurisdiction_geoid`) are additive columns — nullable in the current schema upgrade sense, with `feature` defaulting to null for existing civic roles and `jurisdiction_geoid` defaulting to null meaning national scope.
-
-**How:** Add two columns to `public.user_roles`:
-- `feature TEXT` — nullable. When set, constrains the grant to a specific feature dimension (e.g., `'ctc'`, `'quest'`, `'essentials'`, `'compass'`, `'admin'`). Null = civic role, not feature-scoped.
-- `jurisdiction_geoid TEXT` — nullable. When null, the role has national scope. When set, the role is geo-restricted (e.g., `'18105'` for Monroe County, Indiana). Validated against known GEOID formats; not a FK (GEOIDs are TIGER/Line strings, not rows in this database).
-
-**The partial unique index must be updated:** The current index `idx_user_roles_active_unique` is `UNIQUE (user_id, role_id) WHERE revoked_at IS NULL`. After adding `feature` and `jurisdiction_geoid`, the uniqueness constraint must be `(user_id, role_id, COALESCE(feature, ''), COALESCE(jurisdiction_geoid, '')) WHERE revoked_at IS NULL` — a user can hold the same named role with different feature+jurisdiction combinations simultaneously (e.g., Essentials Dev for Monroe County AND Essentials Dev for Johnson County are two separate active grants).
-
-**Update `grant_role` and `get_user_roles` RPCs** to accept and return the new columns. The `requireAdmin` middleware check against `public.admin_users` is unchanged — it is separate from the roles system. The new `requireFeatureRole` middleware will query `user_roles` for a matching active grant with the caller's `feature` + optional `jurisdiction_geoid`.
-
-### New middleware: `requireFeatureRole`
-
-Located in `src/middleware/featureRoleGuard.ts`. Follows the pattern of existing `requireConnected` — queries `user_roles` via `supabaseAdmin` (middleware is excluded from the architecture test route-scan), checks for an active grant matching `(userId, feature, jurisdiction_geoid)`. Returns 403 if no match.
-
-The middleware factory signature: `requireFeatureRole(feature: string, geoid?: string)` returns an Express middleware function. Routes that need feature-scoped auth use: `router.use(requireAuth, requireFeatureRole('ctc'))`.
-
-No new npm packages needed. The check is a SQL EXISTS query — identical pattern to `requireAdmin` and `requireConnected`.
-
-### No changes to `requireAdmin`
-
-`requireAdmin` checks `public.admin_users`. That table and check remain as-is. The scoped roles system is additive — it adds fine-grained feature access, it does not replace the coarse admin check for admin UI routes.
-
-### TypeScript changes
-
-Add `feature: string | null` and `jurisdiction_geoid: string | null` to the role grant return types in `roleService.ts`. Update `getAllActiveRoles` to return these fields if present on `public.roles`. Add the new columns to `database.types.ts` after regenerating types from the migration (`supabase gen types`).
-
-### Stack impact: none (no new dependencies)
-
-All changes are SQL migrations + TypeScript additions within the existing service/middleware pattern.
+The existing stack handles all three v1.9 requirements with zero new runtime dependencies. One new Vite + React app is needed (the contributor portal), but it is a copy of `app/` with no new packages. The backend needs no new npm packages — `pg`, `express`, `zod`, and `jose` cover everything.
 
 ---
 
-## Feature 2: Compass Compare API
+## Existing Stack (validated, do not re-research)
 
-### What the endpoint needs to do
-
-Given two user IDs (or one user ID + one politician ID), query `inform.compass_responses` for both subjects, find topics answered by both, and return per-topic comparison objects. The response shape is: `{ shared_topics: number, agreement: number, disagreement: number, topics: [{ topic_id, user_a_value, user_b_value, agrees: boolean }] }`.
-
-### Decision: SQL query in `compassService.ts` — no new RPC needed for read-only compare
-
-**Why no new SECURITY DEFINER RPC:** The compare operation is a pure read — two SELECTs and a JOIN in application code. It does not modify any data, so it has no need for atomic multi-table writes (the reason SECURITY DEFINER RPCs exist in this project). The existing `supabaseAdmin` is appropriate here: both users' answers are read server-side only, and the middleware layer enforces that only the requesting user can trigger their own compare.
-
-**The query:** Fetch `inform.compass_responses` for user A filtered by `deleted_at IS NULL` (use `.is('deleted_at', null)` — project convention). Fetch the same for user B. In TypeScript, compute the intersection by topic_id and calculate agreement. This avoids a complex multi-user SQL query and runs fine at Alpha scale (21 live topics maximum per user, O(n) intersection in JS).
-
-**Visibility enforcement:** User B's responses are only included if their visibility for that topic is `'public'` or if the requesting user is in user B's peer connections. At Alpha scale, the simple rule is: only compare on topics where B has `visibility = 'public'`, OR user A and user B are connected (check `connect.social_relationships`). This check uses the existing `supabaseAdmin` pattern for server-side reads.
-
-**For politician compare:** Politician answers are in `inform.politician_answers` (no visibility column — all politician stances are public). This path already exists in `compassService.getPoliticianAnswers`. The compare endpoint reuses this function.
-
-### No new database extension or npm package needed
-
-This is a TypeScript join of two existing query results. No special math library, no new SQL function. The "agreement" calculation is: `user_a_value === user_b_value` (or within a configurable tolerance for NUMERIC(3,1) values — 0.0 tolerance for exact match, project team to decide; start with exact match).
-
-### Stack impact: none (no new dependencies)
-
-Add `compareCompassAnswers(userAId, userBId, requestingUserId)` to `compassService.ts`. Add the endpoint to `compass.ts` route file.
+| Layer | Technology | Version (package.json) |
+|-------|-----------|----------------------|
+| Runtime | Node.js / Express | 4.21.x |
+| Language | TypeScript strict | 5.6.x |
+| Database driver | `pg` (raw pool) | 8.13.x |
+| Auth verification | `jose` (JWKS / ES256) | 5.9.x |
+| Input validation | `zod` | 3.23.x |
+| Rate limiting | `express-rate-limit` | 7.4.x |
+| Logging | `winston` | 3.17.x |
+| Frontend (app) | React 18 + Vite 5 + Tailwind v4 | as in app/package.json |
+| Frontend (admin) | React 18 + Vite 5 + Tailwind v4 | as in admin/package.json |
+| State (FE) | Zustand | 5.0.x |
+| Routing (FE) | react-router-dom | 6.21.x |
+| UI primitives | @headlessui/react | 2.2.x |
+| Supabase client | @supabase/supabase-js + @supabase/ssr | 2.45.x / 0.5.x |
+| Cache | @upstash/redis (HTTP) | 1.34.x |
 
 ---
 
-## Feature 3: VR Admin Dashboard
+## What Each New Capability Needs
 
-### What it needs to render
+### 1. Contributor Portal (new Vite + React app)
 
-A React admin page showing:
-1. Histogram of verification_rating distribution across all connected users (buckets: 0–29, 30–59, 60–89, 90–119, 120–150)
-2. Count of users currently on VQ hold (`vq_hold_until > now()`)
-3. Outlier list: users with VR below 30 (at-risk) and users with VR above 120 (exceptionally high)
+**Verdict: Copy `app/` as template. No new packages.**
 
-### Decision: Server-side aggregation via `pool.query()` — no charting library in admin
+The contributor portal reads auth from the shared `ev_session` cookie using the same pattern already implemented in `app/src/App.tsx`: call `GET /api/auth/session`, store the access token in Zustand, attach as `Authorization: Bearer` on every subsequent `apiFetch` call. This pattern is fully proven and requires no changes to the backend or the cookie infrastructure.
 
-**Why pool.query():** The VR stats query joins `connect.connected_profiles` with a `CASE WHEN` bucketing expression. This is a `connect` schema write — wait, this is a read. However, the critical pattern established in v1.3 is: `supabaseAdmin.schema('connect').from()` works for reads but not writes. Reads from `connect.connected_profiles` via `supabaseAdmin.schema('connect')` do work. Use `supabaseAdmin` for the aggregate read.
+**Setup:**
+- Create `contributor/` directory at repo root, parallel to `app/` and `admin/`
+- Copy `app/package.json`, rename to `empowered-accounts-contributor`
+- Copy `app/vite.config.ts`, change dev port to 5176
+- Copy `app/src/lib/api.ts` and `app/src/store/authStore.ts` — both are generic and reusable without modification as a starting point
+- Tailwind v4 setup is identical to `app/`: `@tailwindcss/vite` plugin in vite.config, `@import "tailwindcss"` in index.css, same `ev-*` CSS custom properties for brand colors
 
-Actually — reassess. The dashboard needs a `GROUP BY` with computed bucket expressions or a multi-bucket COUNT. `supabaseAdmin.schema('connect').from('connected_profiles').select(...)` cannot express `CASE WHEN verification_rating < 30 THEN 'at_risk' ...` bucketing natively in PostgREST. Use `pool.query()` with a direct SQL aggregate for the histogram. This is the correct choice: `pool.query()` for any query that needs SQL features PostgREST cannot express.
+**What authStore.ts needs extended for the contributor portal:**
+The existing `User` interface carries tier and basic profile fields. The contributor portal's authStore needs one additional field: `roles` — an array of the user's active role grants, each with `slug`, `feature_scope`, `jurisdiction_geoid`, and `resource_id`. Fetch from `GET /api/roles/me` immediately after `GET /account/me` during session init. This is a store extension, not a new library.
 
-The query returns `{ bucket: string, count: number }[]` — small, stable, fast.
+**Role-aware routing pattern:**
+Use react-router-dom `<Routes>` with a `RoleGuard` component (analogous to `AuthGuard` in `app/src/components/`) that checks `useAuthStore().roles` for the required `feature_scope`. Each role-type view lives at its own route (`/compass-editor`, `/ctc-editor`, `/campaign-manager`, etc.). No additional library needed — this is a conditional render pattern using existing tools.
 
-**Why no charting library:** The admin app already renders stat cards (AdminDashboard) and tree visualizations (`@xyflow/react` for InviteTree). A histogram at Alpha scale (likely < 100 users) is just a series of bar divs with percentage widths driven by the count values. Tailwind v4 flex + width utilities are sufficient. Installing Recharts or Chart.js for a 5-bucket histogram on an internal admin tool with < 100 users is over-engineering.
+---
 
-**If the team disagrees:** The only reasonable candidate would be `recharts` (MIT, React-native, no D3 peer dependency required separately). It is already in wide use across React admin tools. But it adds ~80KB to the admin bundle for a use case that divs can cover. Recommendation stands: no charting library for v1.6.
+### 2. Resource-Scoped Permission Middleware (backend)
 
-### New admin service function: `getVrDashboardStats()`
+**Verdict: No new packages. Extend the existing middleware pattern.**
 
-In `adminService.ts`. Returns:
+The existing middleware chain is `requireAuth → [role check] → route handler`. The new middleware slot is `requireRole(featureScope, options?)`, following the exact shape of `requireAdmin.ts` and `tierGuards.ts`.
 
-```typescript
-interface VrDashboardStats {
-  buckets: Array<{ label: string; min: number; max: number; count: number }>;
-  on_hold_count: number;
-  at_risk_users: Array<{ user_id: string; display_name: string; verification_rating: number }>;
-  high_vr_users: Array<{ user_id: string; display_name: string; verification_rating: number }>;
-}
+Implementation queries `public.user_roles` (joined to `public.roles` for the slug/feature_scope lookup) via `pool.query()`. The middleware checks for an active (non-revoked) grant matching `feature_scope`, and optionally validates `jurisdiction_geoid` and `resource_id` against route params.
+
+**Why `pool.query()` not supabaseAdmin:** The new `user_roles` columns (`feature_scope`, `jurisdiction_geoid`, `resource_id`) need to be read together with the role slug in a single JOIN. `pool.query()` is the established pattern for multi-column reads requiring joins and is required for any non-public schema access. It also means the middleware is consistent with how roleService already works internally.
+
+**Middleware signature (conceptual):**
+```
+requireRole(featureScope: string, opts?: {
+  jurisdictionParam?: string;   // req.params key to match against jurisdiction_geoid
+  resourceParam?: string;       // req.params key to match against resource_id
+})
 ```
 
-The `at_risk_users` and `high_vr_users` lists are capped at 20 rows each — this is an admin diagnostic view, not a paginated list.
+When `jurisdictionParam` is provided, the middleware checks that the user's grant covers the jurisdiction in the request param. When `resourceParam` is provided, it checks `resource_id` matches (e.g., ensuring a Campaign Manager only edits their assigned politician). Mismatch returns 403. This is the same pattern as the existing guards: either call `next()` or return 403.
 
-### New admin route: `GET /api/admin/vr-dashboard`
-
-Follows existing admin route pattern: `requireAuth` + `requireAdmin` middleware applied via `router.use()`. Returns `VrDashboardStats`. No caching needed at Alpha scale; these are fast aggregate queries on a small table.
-
-### New admin React page: `VrDashboardPage.tsx`
-
-In `admin/src/pages/admin/`. Added to `AdminLayout.tsx` nav and `App.tsx` routes. Follows the `AdminDashboard.tsx` pattern: `apiFetch`, loading skeleton, stat cards. The histogram renders as a list of bar rows with Tailwind `bg-ev-red` fill proportional to each bucket's count as a percentage of the largest bucket.
-
-### Stack impact: none (no new dependencies)
-
-No new npm packages. Backend uses `pool.query()` (already installed). Admin uses Tailwind v4 (already installed). No charting library needed.
+**Caching:** Role grants change infrequently. Cache the grant lookup in Upstash Redis with a short TTL (60–120 seconds) using the existing `@upstash/redis` client and the in-memory fallback already in place. Key pattern: `roles:uid:{userId}`. Invalidate on grant/revoke. This follows the existing revocation-check cache pattern in `authService.ts`. Keep TTL short — role revocations for high-trust actions (Campaign Manager) should take effect promptly, not after 15 minutes.
 
 ---
 
-## Feature 4: Essentials XP Source Provisioning
+### 3. Append-Only Audit Log
 
-This is confirmed trivial — `serviceKeyAuth.ts` already has the `ESSENTIALS_SERVICE_KEY` block present (verified in codebase: line 22–24 of `serviceKeyAuth.ts` already adds `'essentials-rep-lookup'` to the key map when `env.ESSENTIALS_SERVICE_KEY` is set). The service key env var just needs to be provisioned in the Render environment and in `.env.example`. No code change required.
+**Verdict: Postgres table with JSONB before/after columns. Insert via `pool.query()`. No new packages.**
+
+**Table design recommendation:**
+
+```sql
+CREATE TABLE public.role_audit_log (
+  id                BIGSERIAL    PRIMARY KEY,
+  occurred_at       TIMESTAMPTZ  NOT NULL DEFAULT NOW(),
+  actor_user_id     UUID         NOT NULL REFERENCES auth.users(id),
+  target_type       TEXT         NOT NULL,  -- e.g. 'politician', 'compass_topic'
+  target_id         TEXT         NOT NULL,  -- resource identifier
+  action            TEXT         NOT NULL,  -- e.g. 'update_stance', 'edit_bio'
+  role_slug         TEXT         NOT NULL,
+  jurisdiction_geoid TEXT,
+  before_snapshot   JSONB,
+  after_snapshot    JSONB
+);
+```
+
+NULL `before_snapshot` = create operation. NULL `after_snapshot` = delete operation. Both present = update.
+
+**Why JSONB, not text diff:**
+- JSONB is queryable: admins can filter by `before_snapshot->>'field_name'` or compare specific fields
+- Text diffs (unified diff format) are human-readable but not queryable and require a diff library
+- The domain involves structured records (politician stances, topic answers, bio fields): JSONB captures full record state, which is what auditors need to reconstruct history
+- Snapshots are constructed server-side as plain JS objects, JSON-stringified, and passed to `pool.query()` — no library needed
+
+**Append-only enforcement (two layers):**
+1. RLS policy: allow INSERT for service role, deny UPDATE and DELETE for all roles
+2. Application layer: no route or service ever issues DELETE or UPDATE on this table
+
+The combination is belt-and-suspenders. Document the intent explicitly in the migration file.
+
+**Write helper pattern:** A shared `backend/src/lib/auditLog.ts` module with a `recordAudit(...)` function that does a `pool.query()` INSERT. Called by role-gated route handlers AFTER the primary write succeeds — this ensures the audit record reflects what actually changed, not what was attempted. If the audit INSERT fails, log the error via `winston` but do not roll back the primary write (audit failure should not block content operations; the primary write has already succeeded atomically).
+
+**Indexes:**
+- `CREATE INDEX ON public.role_audit_log (actor_user_id, occurred_at DESC)` — "activity by user" admin query
+- `CREATE INDEX ON public.role_audit_log (target_type, target_id, occurred_at DESC)` — "history of this resource" query
 
 ---
 
-## No New npm Dependencies for v1.6
+## Schema Changes Required in `public.user_roles`
 
-This is the key finding. Every v1.6 feature is implementable within the existing stack:
+These are migrations, not new packages. The existing `grant_role` and `revoke_role` SECURITY DEFINER RPCs need updated signatures to accept the new columns. The `get_user_roles` RPC must return them so the contributor portal's authStore can populate the roles array.
 
-| Feature | Why no new dependency |
-|---------|----------------------|
-| Scoped roles | New SQL columns + TypeScript additions in existing service layer |
-| `requireFeatureRole` middleware | EXISTS query on `user_roles` — same pattern as `requireAdmin` |
-| Compass compare | JavaScript Set intersection of two existing query results |
-| VR histogram | `pool.query()` with GROUP BY + Tailwind div bars |
-| VR admin page | React + `apiFetch` — same pattern as `AdminDashboard.tsx` |
-| Essentials XP provisioning | Env var only, code already shipped |
-
-**Do not add:**
-- A permissions library (CASL, Casbin, etc.) — the `user_roles` table IS the permission store; an additional library layer would duplicate it and add a learning surface
-- A charting library (Recharts, Chart.js, Visx) — five static buckets rendered as proportional divs is not a chart library problem
-- A new RPC for compass compare — pure read, no atomicity needed, TypeScript join is correct
-- Any new Postgres extension — no new data types, spatial operations, or encryption needed
+```sql
+ALTER TABLE public.user_roles
+  ADD COLUMN feature_scope       TEXT,
+  ADD COLUMN jurisdiction_geoid  TEXT,
+  ADD COLUMN resource_id         TEXT;
+```
 
 ---
 
-## Integration Points with Existing Patterns
+## What NOT to Add
 
-| Pattern | v1.6 Usage |
-|---------|------------|
-| `pool.query()` for non-public schema writes | `public.user_roles` migration alters a public schema table (PostgREST can handle); VR histogram uses `pool.query()` for GROUP BY |
-| `supabaseAdmin` banned from `src/routes/` | New `featureRoleGuard.ts` middleware follows same exception as `requireAdmin.ts` and `tierGuards.ts` |
-| SECURITY DEFINER RPC for multi-table atomic writes | Applies to: `grant_role` RPC update (add `p_feature` + `p_jurisdiction_geoid` params). Does NOT apply to compass compare (read-only). |
-| Two-pass validation in admin RPCs | Apply to updated `grant_role` RPC: validate feature value against known enum before inserting |
-| `logAdminAction()` before every mutation 200 | Required for any new admin route that mutates (VR dashboard is read-only; role grant/revoke already logs) |
-| `SET search_path = ''` on all SECURITY DEFINER functions | Required for updated `grant_role` + `revoke_role` RPCs |
-| Partial unique index on active grants | Must be updated in migration to include `feature` + `jurisdiction_geoid` dimensions |
+| Candidate | Decision | Reason |
+|-----------|----------|--------|
+| `casl` (authorization library) | DO NOT ADD | Adds an abstraction layer over a simple check already expressed clearly as middleware. The existing guard pattern is sufficient and consistent with how the rest of the codebase works. |
+| `diff` / `jest-diff` / `deep-diff` | DO NOT ADD | JSONB snapshots are superior to text diffs for this domain. No diff library needed. |
+| `nx` or `turborepo` | DO NOT ADD | Three Vite apps as sibling directories is the established pattern. A monorepo build tool adds overhead with no current benefit for v1.9. |
+| `@tanstack/react-query` | DO NOT ADD | Zustand + `apiFetch` covers all data fetching in the existing apps. Introducing a query cache library creates inconsistency across the three apps with no clear gain. |
+| Roles baked into Supabase JWT claims | DO NOT DO | Role grants live in `public.user_roles`, not in the JWT. Fetching on session init (one extra API call) is correct — role changes take effect without requiring a new JWT. Baking roles into JWT claims means revocations don't propagate until the token expires (~1 hour). |
+| Redis role cache with TTL > 120s | CAUTION | High-trust role actions (Campaign Manager editing politician records) need prompt revocation propagation. Keep TTL at 60–120 seconds maximum. |
 
 ---
 
-## Confidence Assessment
+## Contributor Portal: Directory Structure
 
-| Area | Confidence | Basis |
-|------|------------|-------|
-| Scoped roles via column extension | HIGH | Direct inspection of migration 020 schema, roleService.ts, and existing partial index definition |
-| No new table needed for scoped roles | HIGH | Existing grant/revoke lifecycle machinery is reused; columns are additive |
-| Compass compare as TypeScript join | HIGH | inspect compass_responses query patterns in compassService.ts; Alpha scale (21 topics) makes JS join trivially fast |
-| VR histogram via pool.query() | HIGH | Established pattern for cross-schema aggregates; PostgREST cannot express CASE WHEN bucketing |
-| No charting library needed | HIGH | 5 buckets, < 100 users at Alpha; Tailwind proportional divs are sufficient |
-| Essentials XP already shipped | HIGH | serviceKeyAuth.ts lines 22-24 confirmed present in codebase |
-| No new npm packages | HIGH | Each feature maps to existing stack primitives |
+Mirror `app/` exactly:
+
+```
+contributor/
+  package.json          (name: empowered-accounts-contributor)
+  tsconfig.json         (copy from app/)
+  vite.config.ts        (copy from app/, dev port 5176)
+  index.html
+  src/
+    main.tsx
+    App.tsx             (SSO init + role-aware routing)
+    index.css           (Tailwind v4 @import "tailwindcss" + ev-* theme vars)
+    lib/
+      api.ts            (copy from app/src/lib/api.ts — identical)
+    store/
+      authStore.ts      (extend: add roles[] to User type)
+    components/
+      AuthGuard.tsx     (copy from app/ — identical)
+      RoleGuard.tsx     (new: checks roles[].feature_scope)
+    pages/
+      (one page per feature_scope: CompassEditorPage, CtcEditorPage, CampaignManagerPage, etc.)
+```
+
+---
+
+## Render Deployment
+
+The contributor portal is a static Vite build, same deployment pattern as `app/` and `admin/`. Add a new Render Static Site pointing to `contributor/dist/`. Set `VITE_API_URL=https://api.empowered.vote`. The `ev_session` cookie domain is `.empowered.vote`, which already covers `contributors.empowered.vote` — no cookie configuration changes needed on the backend.
+
+---
+
+## Sources
+
+All findings based on direct code inspection of this repository:
+
+- `backend/src/middleware/requireAdmin.ts` — guard pattern
+- `backend/src/middleware/tierGuards.ts` — guard pattern
+- `backend/src/middleware/auth.ts` — JWT verification, AuthenticatedRequest type
+- `backend/src/lib/roleService.ts` — existing role service pattern
+- `backend/src/routes/roles.ts` — existing roles routes
+- `app/src/App.tsx` — SSO init pattern, ev_session cookie exchange
+- `app/src/store/authStore.ts` — Zustand auth state pattern
+- `app/src/lib/api.ts` — apiFetch pattern
+- `app/vite.config.ts` — Vite setup
+- `app/package.json` — app dependencies
+- `admin/package.json` — admin dependencies
+- `backend/package.json` — backend dependencies

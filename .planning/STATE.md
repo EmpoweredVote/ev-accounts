@@ -2,17 +2,19 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-02 after v1.9 Roles milestone started)
+See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 Roles — Phase 58 complete ✅ (8/8 verified, 2026-04-06). Ready for Phase 59.
+**Current focus:** v1.9 complete — run `/gsd:new-milestone` to start v2.0 planning.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
-**Phase 58 complete (2026-04-06) — 8/8 verified ✅**
+**v1.9 Roles — SHIPPED 2026-04-06 ✅**
 
-Contributor portal fully delivered: dashboard (role-filtered to 3 contributor roles), Compass Editor, Candidate Coordinator, Essentials Editor. Jurisdiction scoping via district-join. Source URL per stance. Dashboard role filter applied at API boundary.
+8 phases, 19 plans, 17/17 requirements. All complete. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
+
+Ready to plan next milestone — run `/gsd:new-milestone`.
 
 **Phase 58 Plan 05 complete (2026-04-06) — gap closure applied**
 

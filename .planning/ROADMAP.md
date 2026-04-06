@@ -11,7 +11,7 @@
 - 🔄 **v1.6 Platform Consolidation** — Phases 34–43 (in progress)
 - ✅ **v1.7 Cross-App SSO** — Phases 44–48 (shipped 2026-04-02)
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
-- 📋 **v1.9 Roles** — Phases 51–58 (planned)
+- ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
 
 ## Phases
 
@@ -513,198 +513,21 @@ Plans:
 
 ---
 
-### v1.9 Roles (Phases 51–58)
-
----
-
-#### Phase 51: Essentials XP Source Provisioning
-
-**Goal:** The Essentials service can award XP through the accounts API — `ESSENTIALS_SERVICE_KEY` is configured in Render and documented in `.env.example` with no code changes required.
-
-**Dependencies:** None (independent of all other v1.9 phases; closes a v1.8 loose end)
-
-**Requirements:** ESSENTIALS-01
-
-**Success Criteria:**
-
-1. `ESSENTIALS_SERVICE_KEY` is set as an environment variable in the Render dashboard for `ev-accounts-api`.
-2. `.env.example` in the repo root lists `ESSENTIALS_SERVICE_KEY=` with a comment describing its purpose and the permitted XP source it authorizes.
-3. `docs/ESSENTIALS-INTEGRATION.md` is updated to reference the correct env var name where it documents XP award setup.
-4. A curl call to `POST /api/xp/award` using the provisioned key with `source: "essentials"` returns HTTP 200 with `is_duplicate: false` — confirming the key is accepted and scoped correctly.
-
-**Plans:** 1 plan
-
-Plans:
-- [x] 51-01-PLAN.md — Provision ESSENTIALS_SERVICE_KEY and update documentation ✓ 2026-04-02
-
----
-
-#### Phase 52: Role Schema + RPC Migration
-
-**Goal:** `public.user_roles` carries full scope context and the three SQL functions that `roleService.ts` already calls (`grant_role`, `revoke_role`, `get_user_roles`) exist in the database — closing a pre-existing gap that causes a runtime error on any role operation today.
-
-**Dependencies:** None (hard gate; all other v1.9 phases depend on this)
-
-**Requirements:** ROLE-01, ROLE-02
-
-**Success Criteria:**
-
-1. `public.user_roles` has three new columns: `feature_scope TEXT NOT NULL`, `jurisdiction_geoid TEXT`, and `resource_id TEXT`; the old `idx_user_roles_active_unique` index is replaced with a scope-inclusive partial unique index.
-2. `public.role_audit_log` table exists with all specified columns including `actor_id`, `target_user_id`, `feature_scope`, `jurisdiction_geoid`, `resource_id`, `action`, `snapshot_after` (JSONB), and `created_at`; indexes on `actor_id`, `target_user_id`, `feature_scope`, and `created_at` are present.
-3. `grant_role`, `revoke_role`, and `get_user_roles` SECURITY DEFINER functions exist in the database with `SET search_path = ''`; calling `SELECT grant_role(...)` with valid arguments completes without error.
-4. Five role slugs are seeded in `public.roles`: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`.
-5. A single TypeScript constant in `backend/src/lib/roles.ts` exports the `FEATURE_SCOPES` array that generates both the Zod enum and the DB CHECK constraint — no three-way drift is possible.
-
-**Plans:** 1 plan
-
-Plans:
-- [x] 52-01-PLAN.md — Role scope migration, audit log, RPC replacement, seed roles, TS constant ✓ 2026-04-02
----
-
-#### Phase 53: Service Layer + requireRole Middleware
-
-**Goal:** Every route that needs role-gating can import `requireRole()` and get a correct, NULL-safe authorization check — the middleware and the `checkRole()` utility it delegates to are the single implementation of role enforcement in the codebase.
-
-**Dependencies:** Phase 52 (schema and RPCs must exist before service layer can be written)
-
-**Requirements:** ROLE-03, ROLE-04, ROLE-05
-
-**Success Criteria:**
-
-1. `GET /api/contributor/me` returns the authenticated user's active role grants as an array of `{ feature_scope, jurisdiction_geoid, resource_id }` objects; an unauthenticated request returns 401.
-2. `POST /api/roles/check` with body `{ feature_scope: "volunteer", jurisdiction_geoid: "18105" }` returns `{ permitted: true }` for a user holding that grant and `{ permitted: false }` for a user without it — no 500 errors, no auth bypass.
-3. `requireRole('compass_stance_editor', { geoid: '18105' })` mounted on a test route returns 403 for a user with no role, 403 for a user with the role but a different jurisdiction, and 200 for a user with an exact or NULL-scope match — verified by integration test.
-4. `requireRole('campaign_manager', { resourceId: politicianId })` returns 403 when the requesting user's `resource_id` grant does not match the path parameter — two-layer enforcement confirmed by integration test with two politicians and a single-politician grant.
-5. Role grant lookups use a short-TTL Redis cache (`roles:uid:{userId}` key, 60–120s TTL); cache is invalidated on grant or revoke.
-
-
-**Plans:** 2 plans
-
-Plans:
-- [x] 53-01-PLAN.md — roleService cached lookups + checkRole utility + requireRole middleware + unit tests
-- [x] 53-02-PLAN.md — GET /api/contributor/me + POST /api/roles/check + admin cache invalidation wiring
----
-
-#### Phase 54: Admin UI — Grant/Revoke + Audit Dashboard
-
-**Goal:** Admins can assign and remove scoped roles from within the existing admin tool, and can review all role-holder actions through a filterable global audit dashboard.
-
-**Dependencies:** Phase 52 (schema), Phase 53 (service layer and contributor/me endpoint must exist for the grant form to call)
-
-**Requirements:** ROLE-06, ROLE-07
-
-**Success Criteria:**
-
-1. The account detail page in the admin tool has a Roles tab showing all active role grants for the user — each row displays `feature_scope`, `jurisdiction_geoid` or `resource_id`, and grant timestamp, with an individual Revoke button.
-2. Granting a `compass_stance_editor` role via the admin form inserts a row in `public.user_roles` and a corresponding row in `public.role_audit_log`; the Roles tab updates immediately after grant.
-3. The Campaign Manager grant form conditionally hides the jurisdiction field and shows a politician picker for `resource_id`; all other role types show a jurisdiction text field and hide the politician picker.
-4. The global audit dashboard at `/admin/role-audit` lists all `role_audit_log` entries filterable by `feature_scope`, `jurisdiction_geoid`, and date range; each entry links to the actor's account detail page.
-5. Revoking a role via the Roles tab removes the `user_roles` row, appends a revoke entry to `role_audit_log`, and invalidates the Redis cache for that user within the cache TTL.
-
-**Plans:** 2 plans
-
-Plans:
-- [x] 54-01-PLAN.md — backend gaps: scope params on grant/revoke, role_audit_log writes, audit log read endpoint
-- [x] 54-02-PLAN.md — frontend: RolesTab + GrantRoleModal + RoleAuditPage
----
-
-#### Phase 55: Compass Stance Editor + Campaign Manager Endpoints
-
-**Goal:** Role-holding contributors can write politician stances through the API with jurisdiction and resource boundaries enforced at every layer — a Compass Stance Editor cannot modify politicians outside their assigned jurisdiction, and a Campaign Manager cannot read or write any politician other than their assigned one.
-
-**Dependencies:** Phase 52 (schema), Phase 53 (requireRole middleware)
-
-**Requirements:** ROLE-08, ROLE-09
-
-**Success Criteria:**
-
-1. `PUT /api/compass/stances/:politicianId` with a valid `compass_stance_editor` JWT writes the stance and appends to `role_audit_log` with `fields_changed` populated; a request from a user with no role returns 403.
-2. A `compass_stance_editor` with `jurisdiction_geoid = "18105"` calling `PUT /api/compass/stances/:politicianId` for a politician whose home jurisdiction is `"06037"` receives 403 — cross-jurisdiction write is blocked.
-3. `GET /api/compass/politicians` for a `campaign_manager` returns exactly one politician (their assigned one); the endpoint does not return a list of all politicians regardless of query parameters.
-4. A `campaign_manager` calling `PUT /api/compass/stances/:politicianId` where `politicianId` does not match their `resource_id` grant receives 403 — resource boundary enforced at the handler layer, not just middleware.
-5. An integration test confirms two politicians in different jurisdictions, one `compass_stance_editor` grant scoped to jurisdiction A: write to politician A succeeds (200), write to politician B returns 403.
-
-
-**Plans:** 4 plans
-
-Plans:
-- [x] 55-01-PLAN.md — schema migration (home_jurisdiction_geoid, write_in_text, role_grant_id)
-- [x] 55-02-PLAN.md — stance write routes (single + bulk PUT with jurisdiction enforcement)
-- [x] 55-03-PLAN.md — contributor politicians list endpoint (GET filtered by role scope)
-- [x] 55-04-PLAN.md — gap closure: getMatchingGrant integration tests + grant() helper fix
----
-
-#### Phase 56: Essentials Data Editor Endpoint
-
-**Goal:** Role-holding Essentials Data Editors can update politician bio fields for politicians in their assigned jurisdiction through a restricted endpoint that cannot be used to change structural fields like district assignments or active status.
-
-**Dependencies:** Phase 52 (schema), Phase 53 (requireRole middleware)
-
-**Requirements:** ROLE-10
-
-**Success Criteria:**
-
-1. `PATCH /api/essentials/politicians/:id` with an `essentials_data_editor` JWT and a valid jurisdiction match updates any combination of `bio`, `office_title`, `photo_origin_url`, and `preferred_name` — and appends to `role_audit_log` with the list of changed field keys.
-2. A `PATCH` request body that includes `district_type`, `district_id`, `is_active`, `is_candidate`, or `is_vacant` returns 422 — the restricted field whitelist is enforced before any database write.
-3. An `essentials_data_editor` with `jurisdiction_geoid = "18105"` calling `PATCH /api/essentials/politicians/:id` for a politician in jurisdiction `"06037"` receives 403.
-4. A request without a valid `essentials_data_editor` role returns 403 regardless of the request body.
-
-**Plans:** 2 plans
-
-Plans:
-- [x] 56-01-PLAN.md — PATCH endpoint + getEditorMatchingGrant + writeEssentialsAuditLog
-- [x] 56-02-PLAN.md — getEditorMatchingGrant unit test suite
-
----
-
-#### Phase 57: CTC + Civic Spaces Integration
-
-**Goal:** CTC can read a user's `ctc_content_editor` grant from the accounts API and enforce its own content gate, and Civic Spaces can verify a user's `volunteer` grant via a single API call before allowing privileged writes — without accounts writing directly to either external system.
-
-**Dependencies:** Phase 52 (schema), Phase 53 (`GET /api/contributor/me` and `POST /api/roles/check` must be live)
-
-**Requirements:** ROLE-11, ROLE-12
-
-**Plans:** 2 plans
-
-Plans:
-- [x] 57-01-PLAN.md — Integration tests for CTC + Civic Spaces endpoints (TTL env var + 9 HTTP tests)
-- [x] 57-02-PLAN.md — Smoke script + integration guide Contributor Roles section
-
-**Success Criteria:**
-
-1. `GET /api/contributor/me` for a user with a `ctc_content_editor` grant returns that grant in the array with its `jurisdiction_geoid`; CTC can read this field to enforce its own content-edit gate without any new accounts endpoints.
-2. `POST /api/roles/check` with `{ feature_scope: "volunteer", jurisdiction_geoid: "18105" }` returns `{ permitted: true }` for a user holding that exact grant and `{ permitted: false }` for a user whose grant is for a different jurisdiction — confirming Civic Spaces can use this endpoint as its gate.
-3. `POST /api/roles/check` returns `{ permitted: true }` for a user with a NULL-scope `volunteer` grant (unrestricted volunteer) regardless of the `jurisdiction_geoid` in the request body.
-4. A smoke test confirms: grant volunteer role → `POST /api/roles/check` returns permitted; revoke role → after cache TTL expires, `POST /api/roles/check` returns not permitted.
-
----
-
-#### Phase 58: Contributor Portal ✅ (2026-04-06)
-
-**Goal:** Role-holders have a dedicated Contributor tab inside the Profile Hub (profiles.empowered.vote) where they see their active role grants on a dashboard and can navigate to scoped editing UIs for each role type -- Compass Editor, Candidate Coordinator, and Essentials Editor.
-
-**Dependencies:** Phase 53 (`GET /api/contributor/me`), Phase 55 (compass contributor endpoints), Phase 56 (essentials contributor endpoint)
-
-**Requirements:** ROLE-13, ROLE-14, ROLE-15, ROLE-16
-
-
-**Plans:** 5 plans
-
-Plans:
-- [x] 58-01-PLAN.md -- Backend micro-tasks (granted_at + essentials_data_editor politician list)
-- [x] 58-02-PLAN.md -- Dashboard shell, routes, tab navigation, grant cards
-- [x] 58-03-PLAN.md -- Compass Editor + Campaign Manager (Candidate Coordinator) pages
-- [x] 58-04-PLAN.md -- Essentials Editor page + end-to-end verification
-- [x] 58-05-PLAN.md -- Gap closure: fix jurisdiction-scoped politician queries (district-join)
-
-**Success Criteria:**
-
-1. A user navigating to `contributors.empowered.vote` without an active session is redirected to the Auth Hub login page; after login, they land on a dashboard listing their active role grants with navigation links to each role-type view.
-2. A `compass_stance_editor` clicking through to the Compass Editor view sees a list of politicians in their assigned jurisdiction with current stances — politicians outside their jurisdiction do not appear in the list.
-3. A `campaign_manager` clicking through to the Campaign Manager view sees exactly one politician card (their assigned one) with a stance editor for all topics — no list page, no path to other politicians' data.
-4. An `essentials_data_editor` clicking through to the Essentials Editor view sees politician cards for their jurisdiction with bio/office fields editable; saving a field submits via `PATCH /api/essentials/politicians/:id` and shows a confirmation toast.
-5. `https://contributors.empowered.vote` is added to `CORS_ORIGIN` on Render before the portal is accessible — the portal loads without CORS errors and the `ev_session` SSO cookie is accepted.
+<details>
+<summary>✅ v1.9 Roles (Phases 51–58) — SHIPPED 2026-04-06</summary>
+
+- [x] Phase 51: Essentials XP Source Provisioning (1/1 plans) — completed 2026-04-02
+- [x] Phase 52: Role Schema + RPC Migration (1/1 plans) — completed 2026-04-02
+- [x] Phase 53: Service Layer + requireRole Middleware (2/2 plans) — completed 2026-04-03
+- [x] Phase 54: Admin UI — Grant/Revoke + Audit Dashboard (2/2 plans) — completed 2026-04-03
+- [x] Phase 55: Compass Stance Editor + Campaign Manager Endpoints (4/4 plans) — completed 2026-04-03
+- [x] Phase 56: Essentials Data Editor Endpoint (2/2 plans) — completed 2026-04-04
+- [x] Phase 57: CTC + Civic Spaces Integration (2/2 plans) — completed 2026-04-04
+- [x] Phase 58: Contributor Portal (5/5 plans) — completed 2026-04-06
+
+Full details: `.planning/milestones/v1.9-ROADMAP.md`
+
+</details>
 
 ---
 
@@ -762,11 +585,11 @@ Plans:
 | 48. Compliance + End-to-End Verification | v1.7 | 2/2 | Complete | 2026-04-02 |
 | 49. Stored Jurisdiction & Cross-App Location Profile | v1.8 | 3/3 | Complete | 2026-03-26 |
 | 50. Precise Representatives for Pre-Phase-49 Users | v1.8 | 2/2 | Complete | 2026-04-01 |
-| 51. Essentials XP Source Provisioning | v1.9 | 0/? | Pending | — |
-| 52. Role Schema + RPC Migration | v1.9 | 0/? | Pending | — |
-| 53. Service Layer + requireRole Middleware | v1.9 | 0/? | Pending | — |
-| 54. Admin UI — Grant/Revoke + Audit Dashboard | v1.9 | 0/? | Pending | — |
-| 55. Compass Stance Editor + Campaign Manager Endpoints | v1.9 | 0/? | Pending | — |
-| 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-03 |
-| 57. CTC + Civic Spaces Integration | v1.9 | 0/2 | Planned | — |
-| 58. Contributor Portal | v1.9 | 0/4 | Planned | — |
+| 51. Essentials XP Source Provisioning | v1.9 | 1/1 | Complete | 2026-04-02 |
+| 52. Role Schema + RPC Migration | v1.9 | 1/1 | Complete | 2026-04-02 |
+| 53. Service Layer + requireRole Middleware | v1.9 | 2/2 | Complete | 2026-04-03 |
+| 54. Admin UI — Grant/Revoke + Audit Dashboard | v1.9 | 2/2 | Complete | 2026-04-03 |
+| 55. Compass Stance Editor + Campaign Manager Endpoints | v1.9 | 4/4 | Complete | 2026-04-03 |
+| 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-04 |
+| 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
+| 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |

@@ -16,6 +16,8 @@ The foundational account infrastructure for Empowered Vote. A three-tier system 
 
 **v1.5 shipped 2026-03-19.** Referral dashboard card (locked/waiting/active states driven by `GET /api/referral`); `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 reference replacing COMPASS_CONTRACT.md; `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration guide covering Inform-baseline / Connected-enhanced pattern with jurisdiction detection, XP/gem opt-in, and TIGER/Line GEOID formats.
 
+**v1.9 shipped 2026-04-06.** Delegated authority system: geo-scoped and resource-scoped roles (`compass_stance_editor`, `campaign_manager`, `essentials_data_editor`, `ctc_content_editor`, `volunteer`); `requireRole()` middleware with NULL-safe jurisdiction check and Redis caching; full admin grant/revoke UI with typeahead and audit dashboard; role-gated contributor endpoints with jurisdiction enforcement via live `offices→districts` JOIN; contributor portal at `app.empowered.vote/contributor`; `POST /api/roles/check` gate endpoint for Civic Spaces integration.
+
 ## Core Value
 
 Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
@@ -70,19 +72,18 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ `docs/COMPASSV2-INTEGRATION.md` — 745-line canonical CompassV2 integration reference: Auth Hub redirect flow, 16 endpoints with TypeScript shapes, tier access rules, jurisdiction "never ask for address" (first-class Section 7), 8 inline anti-patterns; `COMPASS_CONTRACT.md` hard-deleted — v1.5
 - ✓ `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (inform / connected_with_jurisdiction / connected_no_jurisdiction), "Inform is the unconditional baseline" principle, opt-in XP/gem award endpoints, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples — v1.5
 
-### Active (v1.9)
+- ✓ `ESSENTIALS_SERVICE_KEY` provisioned in Render + `.env.example` updated; `POST /api/xp/award` smoke-tested HTTP 200 with `"essentials-rep-lookup"` source — v1.9
+- ✓ Role infrastructure: `feature_scope` + `jurisdiction_geoid` + `resource_id` on `public.user_roles`; `grant_role`/`revoke_role`/`get_user_roles` SECURITY DEFINER RPCs; `public.role_audit_log` table; 5 role types seeded — v1.9
+- ✓ `requireRole()` middleware factory with NULL-safe jurisdiction check (`IS NULL OR IS NOT DISTINCT FROM`) and Redis-backed caching; `checkRole()` pure function tested across all scope combinations; `GET /api/contributor/me` + `POST /api/roles/check` endpoints — v1.9
+- ✓ Admin grant/revoke UI — role assignment form with user typeahead, jurisdiction chips from stored districts, politician picker for campaign_manager; global audit dashboard filterable by feature_scope/jurisdiction/date — v1.9
+- ✓ `PUT /api/compass/stances/:politicianId` — compass_stance_editor and campaign_manager gated; jurisdiction-scoped via live `offices→districts` JOIN; appends to `role_audit_log` — v1.9
+- ✓ `PATCH /api/essentials/politicians/:id` — essentials_data_editor gated; restricted field whitelist (bio, office_title, photo_origin_url, preferred_name); fail-CLOSED on NULL politician geoid — v1.9
+- ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
+- ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
-- [ ] ROLES-01: Role infrastructure — `feature_scope` column on `public.roles`; `jurisdiction_geoid` + `resource_id` columns on `public.user_roles`; updated partial unique index; `requireRole(featureScope, geoid?, resourceId?)` middleware; updated `grant_role`/`revoke_role` RPCs
-- [ ] ROLES-02: Role audit log — `public.role_audit_log` table (who, what action, feature_scope, jurisdiction_geoid, resource_id, timestamp, before/after snapshot); all role-gated writes append to log
-- [ ] ROLES-03: Admin grant/revoke UI — existing admin tool gains role assignment form (feature scope + jurisdiction + optional resource_id); per-user audit log tab in account detail
-- [ ] ROLES-04: Global audit dashboard — admin page filtering all role-holder actions by role type + jurisdiction + date range
-- [ ] ROLES-05: Compass Stance Editor — role-gated `PUT /api/compass/stances/:politicianId` scoped to `jurisdiction_geoid`; enforces editor cannot modify politicians outside their assigned jurisdiction
-- [ ] ROLES-06: Campaign Manager — resource-scoped to single `politician_id`; can only write stances for their assigned politician; cannot read or modify any other politician's data
-- [ ] ROLES-07: CTC Content Editor — role-gated trivia question create/edit endpoints scoped to `jurisdiction_geoid`; geo-filtered question sets
-- [ ] ROLES-08: Essentials Data Editor — role-gated politician bio/office update endpoints scoped to `jurisdiction_geoid`
-- [ ] ROLES-09: Volunteer (Civic Spaces) — role grants access to volunteer slice in Civic Spaces; SSO token carries volunteer role; Civic Spaces enforces gate
-- [ ] ROLES-10: Contributor portal — new React app for role-holders; role-type-aware views (different UI per feature_scope); scoped to user's assigned jurisdiction/resource; reads auth from shared `ev_session` SSO cookie
-- [ ] ESSENTIALS-PROV: Essentials XP source provisioning — `ESSENTIALS_SERVICE_KEY` in Render env + `.env.example` update (zero code changes)
+### Active (v2.0)
+
+*(No active requirements defined yet — run `/gsd:new-milestone` to define v2.0 scope)*
 
 ### Deferred to v2.0
 
@@ -108,7 +109,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.5):** ~16,856 lines of TypeScript (backend/src + admin/src + app/src). 33 phases, 36 plans total (76 plans across all phases). Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). App: Vite + React (profile.empowered.vote). All migrations 026–038 in production. 21 live compass topics, 30 politicians, 588 stance values, 500 reasoning rows. Verification Rating system live. CTC + VQ service keys configured; both integrations live-tested. CompassV2 integration guide complete (`docs/COMPASSV2-INTEGRATION.md`); Essentials integration guide complete (`docs/ESSENTIALS-INTEGRATION.md`). Pre-production: Essentials XP source and service key need provisioning before first live award.
+**Current state (v1.9):** ~62,000 lines of TypeScript (project-wide). 58 phases, 77+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). All migrations 026–058 in production. 21 live compass topics, 2,577 politicians, full role system live. `requireRole()` middleware with Redis caching. Five role types: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`. ESSENTIALS_SERVICE_KEY provisioned. v1.6 phases 42–43 (Decommission + DNS) remain open planning items.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -178,19 +179,16 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Inform is the unconditional baseline for partner features | Partner apps must be fully functional for anonymous users; Connected enhances, never gates. Established in ESSENTIALS-INTEGRATION.md. | ✓ Good — correct platform philosophy enforced at documentation layer |
 | Never prompt for location consent in partner apps | Accounts app owns location consent exclusively. Essentials/CompassV2 read jurisdiction if present; show address input if null. | ✓ Good — single consent owner prevents double-prompting |
 | Numeric TIGER/Line GEOIDs as canonical format | `"1807"` for Indiana's 7th congressional district, not state-abbreviation notation. Documented with production examples. | ✓ Good — eliminates format ambiguity for Essentials/partner implementors |
+| NULL-safe role jurisdiction check: `IS NULL OR IS NOT DISTINCT FROM` | NULL-scope grants match any jurisdiction (global). IS NOT DISTINCT FROM handles NULL equality; standard `=` fails for NULLs. | ✓ Good — single `checkRole()` function handles all NULL-scope and scope-match cases; v1.9 |
+| District-join for jurisdiction lookup, never `home_jurisdiction_geoid` | `home_jurisdiction_geoid` is NULL on all 2,577 essentials.politicians rows. Always JOIN through `essentials.offices → essentials.districts` to get geo_id. | ✓ Good — Phase 58-05 fixed all scoped queries; `getDistrictGeoidForPolitician` is canonical helper; v1.9 |
+| fail-open for compass_stance_editor, fail-CLOSED for essentials_data_editor | Compass has console.warn + null return when politician geoid is missing (Alpha acceptable). Essentials returns 403 always on NULL geoid — bio edits are higher-stakes. Different security profiles for different risk levels. | ✓ Good — intentional asymmetry documented; backport to compass is v2.0 tech debt; v1.9 |
+| Contributor portal embedded in app/ (not standalone Vite app) | Alpha has app/ already running; separate contributors.empowered.vote would require new Render service, DNS, and CI. Acceptable for pilot scale. | ⚠ Revisit — standalone domain (contributors.empowered.vote) if portal grows beyond Alpha; v1.9 |
+| GET /api/contributor/me filters to 3 contributor roles only | Portal only serves compass_stance_editor, campaign_manager, essentials_data_editor. CTC (ctc_content_editor) and Civic Spaces (volunteer) use GET /api/roles/me or POST /api/roles/check. Prevents portal from becoming a catch-all. | ✓ Good — clean separation; integration guide documents correct endpoints per consumer; v1.9 |
 
-## Current Milestone: v1.9 Roles
+---
+## Previous Milestone: v1.9 Roles (Phases 51–58, shipped 2026-04-06)
 
-**Goal:** Delegated authority — admins assign geo-scoped and resource-scoped roles to Connected/Empowered accounts, giving them limited contributor capabilities with a full audit trail. A new contributor portal serves as the role-holder workspace.
-
-**Target features:**
-- Role infrastructure: `feature_scope` + `jurisdiction_geoid` + `resource_id` on `public.user_roles`; `requireRole()` middleware; `role_audit_log` table; admin grant/revoke UI
-- Role types: Compass Stance Editor (jurisdiction-scoped), Campaign Manager (politician-scoped), CTC Content Editor (jurisdiction-scoped), Essentials Data Editor (jurisdiction-scoped), Volunteer (Civic Spaces-scoped)
-- Audit system: per-user action log in admin account detail + global audit dashboard filterable by role type + jurisdiction
-- Contributor portal: new React app (separate from admin tool) where role-holders perform scoped work
-- ESSENTIALS-PROV: `ESSENTIALS_SERVICE_KEY` env var in Render + `.env.example` update
-
-**Out of scope for v1.9:** VR-F01 (VR admin dashboard), COMP-05 (user-to-user compass compare) — deferred to v2.0.
+**Goal:** Delegated authority system — geo-scoped and resource-scoped roles, full audit trail, role-gated contributor endpoints, and contributor portal at `app.empowered.vote/contributor`.
 
 ---
 ## Previous Milestone: v1.8 Location Identity (Phases 49–50, complete 2026-04-01)
@@ -203,4 +201,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
 ---
-*Last updated: 2026-04-02 after v1.9 Roles milestone started*
+*Last updated: 2026-04-06 after v1.9 milestone*

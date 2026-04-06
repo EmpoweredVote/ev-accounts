@@ -41,9 +41,11 @@ Build a Contributor Portal for role-holders inside the existing `/app` (profiles
 - **Campaign Manager view**: Shows a single-item politician list (consistent layout with other editors), user clicks through to the stance editor — does NOT land directly on the editor
 - **Save feedback**: Toast notification on successful save
 
-### Role Display Names (UNRESOLVED — must decide before implementation)
-- **Decision needed**: The backend role key `campaign_manager` conflicts with a real-world job title. All role display names in the UI should use Empowered-specific terminology rather than generic titles.
-- **Action**: Agree on display names for all three role types before implementation begins — do not hardcode "Campaign Manager" in the UI
+### Role Display Names (RESOLVED)
+- `compass_stance_editor` → **"Compass Editor"**
+- `campaign_manager` → **"Candidate Coordinator"**
+- `essentials_data_editor` → **"Essentials Editor"**
+- Do NOT use "Campaign Manager" anywhere in the UI — always "Candidate Coordinator"
 
 ### Claude's Discretion
 - Toast design (duration, position, style) — follow existing patterns in `/app`
