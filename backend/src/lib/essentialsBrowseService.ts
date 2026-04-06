@@ -155,8 +155,10 @@ export async function getPoliticiansByArea(
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
@@ -200,8 +202,10 @@ export async function getPoliticiansByArea(
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
              g.name AS government_name,
+             g.type AS government_type,
              COALESCE(gvb.display_name, '') AS government_body_name,
-             COALESCE(gvb.website_url, '') AS government_body_url
+             COALESCE(gvb.website_url, '') AS government_body_url,
+             COALESCE(ch.website_url, '') AS chamber_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.politicians p ON o.politician_id = p.id
@@ -257,6 +261,8 @@ export async function getPoliticiansByArea(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
@@ -272,6 +278,8 @@ export async function getPoliticiansByArea(
     office_description: '',
     is_vacant: row.is_vacant ?? false,
     vacant_since: row.vacant_since ?? null,
+    next_primary_date: row.next_primary_date ?? '',
+    next_general_date: row.next_general_date ?? '',
     images: [],
   }));
 
@@ -280,7 +288,7 @@ export async function getPoliticiansByArea(
     const ids = politicians.map((p) => p.id);
     const [{ rows: imgRows }, { rows: commRows }] = await Promise.all([
       pool.query(
-        `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license
+        `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point
          FROM essentials.politician_images WHERE politician_id = ANY($1)`,
         [ids]
       ),
@@ -295,7 +303,7 @@ export async function getPoliticiansByArea(
         [ids]
       ),
     ]);
-    const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string }>>();
+    const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>>();
     for (const r of imgRows) {
       const pid = r.politician_id as string;
       if (!imageMap.has(pid)) imageMap.set(pid, []);
@@ -304,6 +312,7 @@ export async function getPoliticiansByArea(
         url: r.url ?? '',
         type: r.type ?? '',
         photo_license: r.photo_license ?? '',
+        focal_point: (r.focal_point as string) ?? null,
       });
     }
     const committeeMap = new Map<string, Array<{ name: string; position: string; urls: string[] }>>();

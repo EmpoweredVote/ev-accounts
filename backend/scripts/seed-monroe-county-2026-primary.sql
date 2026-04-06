@@ -273,7 +273,7 @@ FROM (
     AND r.position_name = 'Monroe County Sheriff' AND r.primary_party = 'Democratic'
 ) race,
 (VALUES
-  ('Ruben Marte''',       'Ruben',     'Marte''')
+  ('Ruben Marte',         'Ruben',     'Marte')
 ) AS v(full_name, first_name, last_name)
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
