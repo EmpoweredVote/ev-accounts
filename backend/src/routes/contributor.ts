@@ -48,7 +48,8 @@ router.get(
         }
       }
 
-      const mapped = grants.map((g) => ({
+      const CONTRIBUTOR_ROLES = new Set(['compass_stance_editor', 'campaign_manager', 'essentials_data_editor']);
+      const mapped = grants.filter((g) => CONTRIBUTOR_ROLES.has(g.slug)).map((g) => ({
         role_slug: g.slug,
         feature_scope: g.feature_scope,
         jurisdiction_geoid: g.jurisdiction_geoid,
