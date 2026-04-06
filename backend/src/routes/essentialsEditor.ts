@@ -32,6 +32,7 @@ import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireRole } from '../middleware/requireRole.js';
 import { getCachedUserRoles } from '../lib/roleService.js';
 import {
+  getDistrictGeoidForPolitician,
   getEditorMatchingGrant,
   writeEssentialsAuditLog,
 } from '../lib/stanceService.js';
@@ -86,7 +87,6 @@ const patchPoliticianSchema = z
 
 interface PoliticianExistenceRow {
   id: string;
-  home_jurisdiction_geoid: string | null;
 }
 
 interface PoliticianCurrentRow {
@@ -153,9 +153,10 @@ router.patch(
     // 4. Get grants for this user
     const grants = await getCachedUserRoles(actorId);
 
-    // 5. Fetch politician existence + jurisdiction
+    // 5. Fetch politician existence, then resolve district geo_id via offices→districts join
+    //    (home_jurisdiction_geoid is unbackfilled on all rows — never use it for authorization)
     const existsResult = await pool.query<PoliticianExistenceRow>(
-      `SELECT id, home_jurisdiction_geoid
+      `SELECT id
        FROM essentials.politicians
        WHERE id = $1
        LIMIT 1`,
@@ -168,7 +169,7 @@ router.patch(
       });
       return;
     }
-    const politicianGeoid = existsResult.rows[0]!.home_jurisdiction_geoid;
+    const politicianGeoid = await getDistrictGeoidForPolitician(politicianId);
 
     // 6. Find matching grant — fail-CLOSED (403 if null)
     const matchingGrant = getEditorMatchingGrant(grants, politicianGeoid);

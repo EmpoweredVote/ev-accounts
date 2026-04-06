@@ -69,27 +69,50 @@ export interface EssentialsAuditParams {
 }
 
 // ---------------------------------------------------------------------------
-// getPoliticianJurisdiction
+// getDistrictGeoidForPolitician
 // ---------------------------------------------------------------------------
 
 /**
- * Return the home_jurisdiction_geoid for a politician, or null if not set.
+ * Return the geo_id of the district a politician holds office in, or null
+ * if no office/district record is found.
  *
- * Queries essentials.politicians — the canonical politician table post-Phase 35.
+ * Uses the offices→districts join instead of reading home_jurisdiction_geoid
+ * directly from essentials.politicians, which is NULL on all rows (never
+ * backfilled). This is the canonical jurisdiction lookup for authorization.
  */
-export async function getPoliticianJurisdiction(
+export async function getDistrictGeoidForPolitician(
   politicianId: string
 ): Promise<string | null> {
-  const { rows } = await pool.query<{ home_jurisdiction_geoid: string | null }>(
-    `SELECT home_jurisdiction_geoid
-     FROM essentials.politicians
-     WHERE id = $1
+  const { rows } = await pool.query<{ geo_id: string }>(
+    `SELECT d.geo_id
+     FROM essentials.politicians p
+     JOIN essentials.offices o ON o.politician_id = p.id
+     JOIN essentials.districts d ON d.id = o.district_id
+     WHERE p.id = $1
      LIMIT 1`,
     [politicianId]
   );
 
   if (rows.length === 0) return null;
-  return rows[0].home_jurisdiction_geoid ?? null;
+  return rows[0].geo_id ?? null;
+}
+
+// ---------------------------------------------------------------------------
+// getPoliticianJurisdiction (thin wrapper — preserved for backward compat)
+// ---------------------------------------------------------------------------
+
+/**
+ * Thin wrapper around getDistrictGeoidForPolitician.
+ *
+ * Existing callers in compassContributor.ts use this name. Delegates to the
+ * new district-join helper so all jurisdiction lookups are consistent.
+ *
+ * @deprecated Prefer getDistrictGeoidForPolitician for new callers.
+ */
+export async function getPoliticianJurisdiction(
+  politicianId: string
+): Promise<string | null> {
+  return getDistrictGeoidForPolitician(politicianId);
 }
 
 // ---------------------------------------------------------------------------
@@ -150,7 +173,9 @@ export function getMatchingGrant(
  * campaign_manager grants: single politician matching grant.resource_id
  * compass_stance_editor grants:
  *   - null jurisdiction_geoid → ALL active politicians (unrestricted editor)
- *   - non-null jurisdiction_geoid → politicians WHERE home_jurisdiction_geoid = geoid
+ *   - non-null jurisdiction_geoid → politicians whose office district matches geo_id
+ *     (via offices→districts join; NOT home_jurisdiction_geoid which is unbackfilled)
+ * essentials_data_editor grants: same jurisdiction logic as compass_stance_editor
  *
  * Uses pool.query() against essentials.politicians (same pattern as
  * getCompassPoliticians in compassService.ts). Deduplicates by politician ID
@@ -162,20 +187,59 @@ export async function getContributorPoliticians(
   const seen = new Set<string>();
   const result: ContributorPolitician[] = [];
 
+  // ---------------------------------------------------------------------------
+  // Shared query strings (reused by compass_stance_editor and essentials_data_editor)
+  // ---------------------------------------------------------------------------
+
+  // Returns ALL active politicians — used when jurisdiction_geoid is null (unrestricted)
+  const UNRESTRICTED_SQL = `
+    SELECT DISTINCT ON (p.id)
+           p.id, p.first_name, p.last_name, p.full_name,
+           COALESCE(o.title, '') AS office_title,
+           COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
+           p.home_jurisdiction_geoid
+    FROM essentials.politicians p
+    LEFT JOIN essentials.offices o ON o.politician_id = p.id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = p.id AND type = 'default' LIMIT 1
+    ) pi ON true
+    WHERE p.is_active = true
+    ORDER BY p.id`;
+
+  // Returns politicians whose office district geo_id matches $1 — district-join scoped query
+  const SCOPED_SQL = `
+    SELECT DISTINCT ON (p.id)
+           p.id, p.first_name, p.last_name, p.full_name,
+           COALESCE(o.title, '') AS office_title,
+           COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
+           p.home_jurisdiction_geoid
+    FROM essentials.politicians p
+    JOIN essentials.offices o ON o.politician_id = p.id
+    JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = p.id AND type = 'default' LIMIT 1
+    ) pi ON true
+    WHERE p.is_active = true AND d.geo_id = $1
+    ORDER BY p.id`;
+
+  type PoliticianRow = {
+    id: string;
+    first_name: string | null;
+    last_name: string | null;
+    full_name: string | null;
+    office_title: string;
+    photo_url: string;
+    home_jurisdiction_geoid: string | null;
+  };
+
   for (const grant of grants) {
     if (grant.slug === 'campaign_manager') {
       if (!grant.resource_id) continue;
       if (seen.has(grant.resource_id)) continue;
 
-      const { rows } = await pool.query<{
-        id: string;
-        first_name: string | null;
-        last_name: string | null;
-        full_name: string | null;
-        office_title: string;
-        photo_url: string;
-        home_jurisdiction_geoid: string | null;
-      }>(
+      const { rows } = await pool.query<PoliticianRow>(
         `SELECT p.id, p.first_name, p.last_name, p.full_name,
                 COALESCE(o.title, '') AS office_title,
                 COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
@@ -200,32 +264,13 @@ export async function getContributorPoliticians(
       continue;
     }
 
-    if (grant.slug === 'compass_stance_editor') {
+    if (
+      grant.slug === 'compass_stance_editor' ||
+      grant.slug === 'essentials_data_editor'
+    ) {
       if (grant.jurisdiction_geoid === null) {
         // Unrestricted — return ALL active politicians
-        const { rows } = await pool.query<{
-          id: string;
-          first_name: string | null;
-          last_name: string | null;
-          full_name: string | null;
-          office_title: string;
-          photo_url: string;
-          home_jurisdiction_geoid: string | null;
-        }>(
-          `SELECT DISTINCT ON (p.id)
-                  p.id, p.first_name, p.last_name, p.full_name,
-                  COALESCE(o.title, '') AS office_title,
-                  COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
-                  p.home_jurisdiction_geoid
-           FROM essentials.politicians p
-           LEFT JOIN essentials.offices o ON o.politician_id = p.id
-           LEFT JOIN LATERAL (
-             SELECT url FROM essentials.politician_images
-             WHERE politician_id = p.id AND type = 'default' LIMIT 1
-           ) pi ON true
-           WHERE p.is_active = true
-           ORDER BY p.id`
-        );
+        const { rows } = await pool.query<PoliticianRow>(UNRESTRICTED_SQL);
 
         for (const row of rows) {
           if (!seen.has(row.id)) {
@@ -234,29 +279,9 @@ export async function getContributorPoliticians(
           }
         }
       } else {
-        // Scoped to jurisdiction
-        const { rows } = await pool.query<{
-          id: string;
-          first_name: string | null;
-          last_name: string | null;
-          full_name: string | null;
-          office_title: string;
-          photo_url: string;
-          home_jurisdiction_geoid: string | null;
-        }>(
-          `SELECT DISTINCT ON (p.id)
-                  p.id, p.first_name, p.last_name, p.full_name,
-                  COALESCE(o.title, '') AS office_title,
-                  COALESCE(p.photo_custom_url, CASE WHEN p.photo_origin_url LIKE 'http%' THEN p.photo_origin_url END, pi.url, '') AS photo_url,
-                  p.home_jurisdiction_geoid
-           FROM essentials.politicians p
-           LEFT JOIN essentials.offices o ON o.politician_id = p.id
-           LEFT JOIN LATERAL (
-             SELECT url FROM essentials.politician_images
-             WHERE politician_id = p.id AND type = 'default' LIMIT 1
-           ) pi ON true
-           WHERE p.is_active = true AND p.home_jurisdiction_geoid = $1
-           ORDER BY p.id`,
+        // Scoped to district — join through offices→districts instead of home_jurisdiction_geoid
+        const { rows } = await pool.query<PoliticianRow>(
+          SCOPED_SQL,
           [grant.jurisdiction_geoid]
         );
 
@@ -267,6 +292,7 @@ export async function getContributorPoliticians(
           }
         }
       }
+      continue;
     }
   }
 
