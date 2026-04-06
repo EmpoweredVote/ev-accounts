@@ -24,7 +24,7 @@ If `$ARGUMENTS` is empty, ask the user:
 If the input looks like a legislative body (e.g., "Bloomington City Council", "California State Senate"), resolve it to individual politicians by querying the database:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
   SELECT p.id, p.full_name, o.title, c.name as chamber_name
@@ -49,10 +49,10 @@ If no results, tell the user and ask them to provide specific names instead.
 Fetch the current live topics to validate any `--topics` filter:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT id, title, short_title
+  SELECT id, title, short_title, question_text
   FROM inform.compass_topics
   WHERE is_live = true
   ORDER BY created_at
@@ -156,7 +156,7 @@ For each approved row, push to the database in two steps:
 Look up `politician_id` and `topic_id`:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
   SELECT p.id as politician_id, p.full_name,
@@ -180,7 +180,7 @@ If a politician name doesn't match any row in `essentials.politicians`, report i
 For each matched row, call the admin service functions via a script:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 
 const stances = JSON.parse(process.argv[2]);

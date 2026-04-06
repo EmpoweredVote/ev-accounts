@@ -33,7 +33,7 @@ If `$ARGUMENTS` is empty, ask:
 Before discovery or authoring, fetch the current compass topics so you can deduplicate:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
   SELECT t.id, t.title, t.short_title,
@@ -54,7 +54,7 @@ Store these in memory for deduplication in later steps.
 Also fetch existing categories:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query('SELECT id, title FROM inform.compass_categories ORDER BY title');
 console.log(JSON.stringify(rows, null, 2));
@@ -125,7 +125,7 @@ For each selected issue (or the `--issue` provided directly):
 Create:
 - `title`: descriptive title (e.g., "Short-Term Rental Regulation")
 - `short_title`: abbreviated form (e.g., "Short-Term Rentals")
-- `question_text`: framed as "The government should..." (e.g., "The government should regulate short-term rental properties like Airbnb by...")
+- `question_text`: framed as an open-ended question (NOT yes/no). Examples: "How should government regulate short-term rental properties like Airbnb?", "What role should vouchers and school choice play in the public education system?", "What legal framework should govern abortion access?" — never use statement stems like "The government should..."
 - `topic_key`: kebab-case identifier (e.g., `short-term-rentals`)
 - `levels`: which jurisdiction levels this applies to — array from `["federal", "state", "local"]`
 
@@ -223,7 +223,7 @@ Write the approved topic to `ev-accounts/backend/data/topic-drafts/YYYY-MM-DD-<t
   "topic_key": "<topic-key>",
   "title": "<title>",
   "short_title": "<short_title>",
-  "question_text": "<question_text>",
+  "question_text": "<open-ended question, e.g. 'How should government regulate short-term rental properties?'>",
   "levels": ["state", "local"],
   "stances": [
     { "value": 1, "text": "..." },
@@ -255,7 +255,7 @@ Ask the user:
 If yes, create the topic via database:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 
 const topic = JSON.parse(process.argv[2]);
@@ -301,7 +301,7 @@ Based on the topic content and the existing categories loaded in STEP 1, suggest
 If assigning:
 
 ```bash
-cd ev-accounts/backend && npx tsx -e "
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 await pool.query(\`
   INSERT INTO inform.compass_topic_categories (topic_id, category_id)
