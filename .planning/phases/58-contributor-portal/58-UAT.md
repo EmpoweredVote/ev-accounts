@@ -1,5 +1,5 @@
 ---
-status: testing
+status: complete
 phase: 58-contributor-portal
 source: 58-01-SUMMARY.md, 58-02-SUMMARY.md, 58-03-SUMMARY.md, 58-04-SUMMARY.md
 started: 2026-04-05T00:00:00Z
@@ -8,12 +8,7 @@ updated: 2026-04-05T00:00:00Z
 
 ## Current Test
 
-number: 6
-name: Compass Editor: Politician List with Scope Badge
-expected: |
-  The Compass Editor page loads a list of politicians scoped to the user's jurisdiction. A scope
-  badge is visible in the header (e.g. "Showing: [geoid]"). If loading, a spinner shows.
-awaiting: user response
+[testing complete]
 
 ## Tests
 
@@ -45,27 +40,30 @@ severity: blocker
 
 ### 7. Compass Editor: Stance Editing and Save
 expected: Clicking a politician in the Compass Editor loads all live compass topics with the politician's current stances shown as selected buttons (values 1–5). Clicking a different value marks it selected. The Save button is disabled until at least one stance is changed. Clicking Save submits only the changed stances and shows a success toast.
-result: [pending]
+result: pass
 
 ### 8. Candidate Coordinator: Single Politician and Stance Editor
 expected: The Candidate Coordinator (campaign_manager) page shows a single politician as a list card. The scope badge in the header shows the politician's name and office title. Clicking the politician opens the identical stance editor. Header always reads "Candidate Coordinator" — never "Campaign Manager".
-result: [pending]
+result: pass
 
 ### 9. Essentials Editor: Politician Grid
 expected: The Essentials Editor loads a grid of politicians scoped to the editor's jurisdiction, showing photo (or placeholder), full name, and office title. A jurisdiction scope badge is visible in the header.
-result: [pending]
+result: issue
+reported: "Set up essentials_data_editor grant with Los Angeles geoid — Essentials Editor showed no politicians found for your jurisdiction"
+severity: blocker
 
 ### 10. Essentials Editor: Field Editor and Partial Save
 expected: Clicking a politician in the Essentials Editor opens an inline field editor with three fields: Bio (textarea), Preferred Name (input), and Photo URL (input). Leaving a field empty and saving does NOT blank the existing value — only non-empty fields are sent. A success toast appears on save.
-result: [pending]
+result: skipped
+reason: Blocked by Test 9 — no politicians load due to home_jurisdiction_geoid being NULL
 
 ## Summary
 
 total: 10
-passed: 5
-issues: 1
-pending: 4
-skipped: 0
+passed: 7
+issues: 2
+pending: 0
+skipped: 1
 
 ## Gaps
 
@@ -81,6 +79,19 @@ skipped: 0
   missing:
     - "Populate home_jurisdiction_geoid on essentials.politicians from offices→districts join"
     - "Resolve geo_id format mismatch between district codes and user county_geo_id"
+
+- truth: "Essentials Editor scoped to a jurisdiction geoid shows politicians in that jurisdiction"
+  status: failed
+  reason: "User reported: set up essentials_data_editor with Los Angeles geoid — no politicians found"
+  severity: blocker
+  test: 9
+  root_cause: "essentials.politicians.home_jurisdiction_geoid is NULL on all rows — same root cause as Test 6. getContributorPoliticians WHERE home_jurisdiction_geoid = $1 always returns 0 rows."
+  artifacts:
+    - path: "backend/src/lib/stanceService.ts"
+      issue: "getContributorPoliticians scoped branch filters on home_jurisdiction_geoid which is always NULL"
+  missing:
+    - "Populate home_jurisdiction_geoid on essentials.politicians from offices→districts join"
+    - "Resolve geo_id format mismatch between district codes and user county_geo_id (5-digit FIPS)"
 
 - truth: "Compass Editor allows contributors to add a source URL alongside each stance they record"
   status: failed
