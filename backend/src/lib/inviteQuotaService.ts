@@ -18,13 +18,18 @@ interface GenerateResult {
 }
 
 interface InviteeEntry {
-  invitee_id: string;
-  display_name: string;
-  account_standing: string;
-  current_level: number;
-  graduated: boolean;
+  status: 'claimed' | 'pending';
+  code: string;
+  label: string | null;
+  invitee_id: string | null;
+  display_name: string | null;
+  account_standing: string | null;
+  current_level: number | null;
+  graduated: boolean | null;
   slot_locked_until: string | null;
   claimed_at: string | null;
+  xp_in_level: number | null;
+  xp_to_next_level: number | null;
 }
 
 interface MyInviteesResponse {
@@ -48,10 +53,10 @@ interface InviteOverride {
  * Call the generate_invite_code_if_allowed RPC to produce a quota-aware invite code.
  * Returns ok=false with error='CAP_REACHED' when user is at their limit.
  */
-export async function generateInviteCodeIfAllowed(userId: string): Promise<GenerateResult> {
+export async function generateInviteCodeIfAllowed(userId: string, label: string | null = null): Promise<GenerateResult> {
   const { rows } = await pool.query(
-    'SELECT ok, code, error, active_count, cap FROM connect.generate_invite_code_if_allowed($1)',
-    [userId],
+    'SELECT ok, code, error, active_count, cap FROM connect.generate_invite_code_if_allowed($1, $2)',
+    [userId, label],
   );
   const row = rows[0];
   return {
@@ -106,13 +111,18 @@ export async function getMyInvitees(userId: string): Promise<MyInviteesResponse>
     invitees: rows.map(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (r: any): InviteeEntry => ({
-        invitee_id: r.invitee_id,
-        display_name: r.display_name,
-        account_standing: r.account_standing,
-        current_level: r.current_level,
-        graduated: r.graduated,
+        status: r.status,
+        code: r.code,
+        label: r.label ?? null,
+        invitee_id: r.invitee_id ?? null,
+        display_name: r.display_name ?? null,
+        account_standing: r.account_standing ?? null,
+        current_level: r.current_level ?? null,
+        graduated: r.graduated ?? null,
         slot_locked_until: r.slot_locked_until ?? null,
         claimed_at: r.claimed_at ?? null,
+        xp_in_level: r.xp_in_level ?? null,
+        xp_to_next_level: r.xp_to_next_level ?? null,
       }),
     ),
   };

@@ -35,13 +35,18 @@ interface ReferralState {
 }
 
 interface InviteeEntry {
-  invitee_id: string;
-  display_name: string;
-  account_standing: 'active' | 'suspended';
-  current_level: number;
-  graduated: boolean;
+  status: 'claimed' | 'pending';
+  code: string;
+  label: string | null;
+  invitee_id: string | null;
+  display_name: string | null;
+  account_standing: 'active' | 'suspended' | null;
+  current_level: number | null;
+  graduated: boolean | null;
   slot_locked_until: string | null;
   claimed_at: string | null;
+  xp_in_level: number | null;
+  xp_to_next_level: number | null;
 }
 
 interface InviteesData {
@@ -175,6 +180,8 @@ export default function DashboardPage() {
   const [generatingCode, setGeneratingCode] = useState(false);
   const [newCode, setNewCode] = useState<string | null>(null);
   const [newCodeCopied, setNewCodeCopied] = useState(false);
+  const [labelInput, setLabelInput] = useState('');
+  const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [showSignedOutToast, setShowSignedOutToast] = useState(false);
   const [activeTab, setActiveTab] = useState<'profile' | 'referrals'>('profile');
 
@@ -209,9 +216,12 @@ export default function DashboardPage() {
     setGeneratingCode(true);
     setNewCode(null);
     try {
-      const result = await apiFetch<{ code: string; active_count: number; cap: number }>('/invites/generate', { method: 'POST' });
+      const result = await apiFetch<{ code: string; active_count: number; cap: number }>(
+        '/invites/generate',
+        { method: 'POST', body: JSON.stringify({ label: labelInput.trim() || null }) },
+      );
       setNewCode(result.code);
-      // Refresh invitees data
+      setLabelInput('');
       const updated = await apiFetch<InviteesData>('/invites/my-invitees');
       setInviteesData(updated);
     } catch {
@@ -219,7 +229,7 @@ export default function DashboardPage() {
     } finally {
       setGeneratingCode(false);
     }
-  }, []);
+  }, [labelInput]);
 
   const copyNewCode = useCallback(() => {
     if (!newCode) return;
@@ -228,6 +238,13 @@ export default function DashboardPage() {
       setTimeout(() => setNewCodeCopied(false), 2000);
     }).catch(() => {});
   }, [newCode]);
+
+  const copyPendingCode = useCallback((code: string) => {
+    navigator.clipboard.writeText(code).then(() => {
+      setCopiedCode(code);
+      setTimeout(() => setCopiedCode(null), 2000);
+    }).catch(() => {});
+  }, []);
 
   const handleLogout = async () => {
     const url = `${import.meta.env.VITE_API_URL || ''}/api/auth/logout`;
@@ -414,8 +431,17 @@ export default function DashboardPage() {
                 </div>
               </div>
             ) : inviteesData.can_generate ? (
-              /* Under cap — show generate button */
-              <div className="space-y-3">
+              /* Under cap — label input + generate button */
+              <div className="space-y-2">
+                <input
+                  type="text"
+                  value={labelInput}
+                  onChange={e => setLabelInput(e.target.value)}
+                  onKeyDown={e => { if (e.key === 'Enter' && !generatingCode) handleGenerate(); }}
+                  placeholder="Who is this for? (optional)"
+                  maxLength={50}
+                  className="w-full px-3 py-2 text-sm border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal/30 focus:border-ev-teal transition-colors"
+                />
                 <button
                   onClick={handleGenerate}
                   disabled={generatingCode}
@@ -423,20 +449,6 @@ export default function DashboardPage() {
                 >
                   {generatingCode ? 'Generating\u2026' : 'Generate Invite Code'}
                 </button>
-
-                {newCode && (
-                  <button
-                    onClick={copyNewCode}
-                    className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 group hover:border-ev-teal-light/50 transition-colors"
-                  >
-                    <span className="font-mono text-lg font-bold tracking-widest text-ev-black dark:text-white">
-                      {newCode}
-                    </span>
-                    <span className="text-xs font-medium text-ev-teal-light">
-                      {newCodeCopied ? 'Copied!' : 'Copy'}
-                    </span>
-                  </button>
-                )}
               </div>
             ) : (
               /* At capacity */
@@ -445,44 +457,101 @@ export default function DashboardPage() {
               </p>
             )}
 
-            {/* Invitee list */}
-            {inviteesData.invitees.length > 0 && (
-              <div className="space-y-0 -mx-5 px-5 pt-1 border-t border-gray-100 dark:border-gray-800">
+            {/* Newly generated code — shown regardless of capacity state */}
+            {newCode && (
+              <button
+                onClick={copyNewCode}
+                className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors"
+              >
+                <span className="font-mono text-lg font-bold tracking-widest text-ev-black dark:text-white">
+                  {newCode}
+                </span>
+                <span className="text-xs font-medium text-ev-teal-light">
+                  {newCodeCopied ? 'Copied!' : 'Copy'}
+                </span>
+              </button>
+            )}
+
+            {/* Pending codes */}
+            {inviteesData.invitees.some(i => i.status === 'pending') && (
+              <div className="-mx-5 px-5 pt-1 border-t border-gray-100 dark:border-gray-800">
+                <p className="text-xs font-medium text-gray-400 mt-3 mb-2">Pending Codes</p>
+                <div className="space-y-2 py-1">
+                  {inviteesData.invitees.filter(i => i.status === 'pending').map((entry) => (
+                    <div key={entry.code}>
+                      {entry.label && (
+                        <p className="text-xs text-gray-400 mb-1 px-1">{entry.label}</p>
+                      )}
+                      <button
+                        onClick={() => copyPendingCode(entry.code)}
+                        className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors"
+                      >
+                        <span className="font-mono text-base font-bold tracking-widest text-ev-black dark:text-white">
+                          {entry.code}
+                        </span>
+                        <span className="text-xs font-medium text-ev-teal-light">
+                          {copiedCode === entry.code ? 'Copied!' : 'Copy'}
+                        </span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Claimed invitees */}
+            {inviteesData.invitees.some(i => i.status === 'claimed') && (
+              <div className="-mx-5 px-5 pt-1 border-t border-gray-100 dark:border-gray-800">
                 <p className="text-xs font-medium text-gray-400 mt-3 mb-2">Your Invitees</p>
                 <div className="divide-y divide-gray-100 dark:divide-gray-800">
-                  {inviteesData.invitees.map((invitee) => {
+                  {inviteesData.invitees.filter(i => i.status === 'claimed').map((invitee) => {
                     const isLocked = invitee.slot_locked_until && new Date(invitee.slot_locked_until) > new Date();
+                    const xpTotal = (invitee.xp_in_level ?? 0) + (invitee.xp_to_next_level ?? 0);
+                    const xpPct = xpTotal > 0 ? Math.round(((invitee.xp_in_level ?? 0) / xpTotal) * 100) : 0;
                     return (
-                      <div key={invitee.invitee_id} className="py-2.5 flex items-center justify-between gap-2">
-                        <div className="min-w-0 flex-1">
-                          <p className={`text-sm font-medium truncate ${invitee.graduated ? 'text-gray-400' : 'text-ev-black dark:text-white'}`}>
-                            {invitee.display_name ?? 'Anonymous'}
-                          </p>
-                          {!invitee.graduated && (
-                            <p className="text-xs text-gray-400 mt-0.5">Level {invitee.current_level} / 2</p>
-                          )}
+                      <div key={invitee.invitee_id} className="py-2.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="min-w-0 flex-1">
+                            <p className={`text-sm font-medium truncate ${invitee.graduated ? 'text-gray-400' : 'text-ev-black dark:text-white'}`}>
+                              {invitee.display_name ?? invitee.label ?? '\u2014'}
+                            </p>
+                          </div>
+                          <div className="flex items-center gap-2 flex-shrink-0">
+                            {invitee.graduated ? (
+                              <span className="text-xs font-medium text-ev-teal bg-ev-teal/10 px-2 py-0.5 rounded-full">
+                                Graduated ✓
+                              </span>
+                            ) : invitee.account_standing === 'suspended' ? (
+                              <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
+                                Suspended
+                              </span>
+                            ) : (
+                              <span className="flex items-center gap-1 text-xs text-gray-500">
+                                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                                Active
+                              </span>
+                            )}
+                            {isLocked && (
+                              <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
+                                Slot locked
+                              </span>
+                            )}
+                          </div>
                         </div>
-                        <div className="flex items-center gap-2 flex-shrink-0">
-                          {invitee.graduated ? (
-                            <span className="text-xs font-medium text-ev-teal bg-ev-teal/10 px-2 py-0.5 rounded-full">
-                              Graduated ✓
-                            </span>
-                          ) : invitee.account_standing === 'suspended' ? (
-                            <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
-                              Suspended
-                            </span>
-                          ) : (
-                            <span className="flex items-center gap-1 text-xs text-gray-500">
-                              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                              Active
-                            </span>
-                          )}
-                          {isLocked && (
-                            <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
-                              Slot locked
-                            </span>
-                          )}
-                        </div>
+                        {!invitee.graduated && invitee.xp_in_level !== null && invitee.xp_to_next_level !== null && (
+                          <div className="mt-1.5 space-y-1">
+                            <div className="flex items-center justify-between text-xs text-gray-400">
+                              <span>Lv {invitee.current_level}</span>
+                              <span className="tabular-nums">{invitee.xp_in_level.toLocaleString()} / {xpTotal.toLocaleString()} XP</span>
+                            </div>
+                            <div className="h-1.5 rounded-full bg-gray-100 dark:bg-gray-800 overflow-hidden">
+                              <div
+                                className="h-full rounded-full bg-ev-teal-light transition-all duration-700"
+                                style={{ width: `${xpPct}%` }}
+                              />
+                            </div>
+                          </div>
+                        )}
                       </div>
                     );
                   })}

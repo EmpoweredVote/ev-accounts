@@ -227,7 +227,8 @@ router.post(
   async (req: Request, res: Response): Promise<void> => {
     const { userId } = req as AuthenticatedRequest;
     try {
-      const result = await generateInviteCodeIfAllowed(userId);
+      const { label } = req.body as { label?: string };
+      const result = await generateInviteCodeIfAllowed(userId, label?.trim() || null);
       if (!result.ok) {
         const status = result.error === 'NOT_CONNECTED' ? 403 : 409;
         res
