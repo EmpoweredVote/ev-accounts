@@ -585,6 +585,8 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
              school_district_name = $11,
              jurisdiction_state = $12,
              jurisdiction_city = $13,
+             city_council_geo_id = $14,
+             city_council_district_name = $15,
              updated_at = now()
          WHERE user_id = $1`,
         [
@@ -601,6 +603,8 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
           jData.school_district_name ?? null,
           state,
           city,
+          jData.city_council ?? null,
+          jData.city_council_name ?? null,
         ]
       );
     } catch (e) {
@@ -625,6 +629,8 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
         school_district_name: j.school_district_name ?? null,
         state: state,
         city: city,
+        city_council_district: j.city_council ?? null,
+        city_council_district_name: j.city_council_name ?? null,
       },
     });
   } catch (err) {

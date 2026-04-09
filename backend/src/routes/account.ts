@@ -119,13 +119,16 @@ router.get('/me', requireAuth, async (req, res: Response) => {
           school_district_name: string | null;
           jurisdiction_state: string | null;
           jurisdiction_city: string | null;
+          city_council_geo_id: string | null;
+          city_council_district_name: string | null;
         }>(
           `SELECT congressional_geo_id, congressional_district_name,
                   state_senate_geo_id, state_senate_district_name,
                   state_house_geo_id, state_house_district_name,
                   county_geo_id, county_name,
                   school_district_geo_id, school_district_name,
-                  jurisdiction_state, jurisdiction_city
+                  jurisdiction_state, jurisdiction_city,
+                  city_council_geo_id, city_council_district_name
            FROM connect.connected_profiles WHERE user_id = $1`,
           [authReq.userId]
         );
@@ -144,6 +147,8 @@ router.get('/me', requireAuth, async (req, res: Response) => {
             school_district_name: j.school_district_name,
             state: j.jurisdiction_state,
             city: j.jurisdiction_city,
+            city_council_district: j.city_council_geo_id,
+            city_council_district_name: j.city_council_district_name,
           };
         }
       } catch (jErr) {
@@ -270,13 +275,16 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
       school_district_name: string | null;
       jurisdiction_state: string | null;
       jurisdiction_city: string | null;
+      city_council_geo_id: string | null;
+      city_council_district_name: string | null;
     }>(
       `SELECT congressional_geo_id, congressional_district_name,
               state_senate_geo_id, state_senate_district_name,
               state_house_geo_id, state_house_district_name,
               county_geo_id, county_name,
               school_district_geo_id, school_district_name,
-              jurisdiction_state, jurisdiction_city
+              jurisdiction_state, jurisdiction_city,
+              city_council_geo_id, city_council_district_name
        FROM connect.connected_profiles WHERE user_id = $1`,
       [authReq.userId]
     );
@@ -296,6 +304,8 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
         school_district_name: j?.school_district_name ?? null,
         state: j?.jurisdiction_state ?? null,
         city: j?.jurisdiction_city ?? null,
+        city_council_district: j?.city_council_geo_id ?? null,
+        city_council_district_name: j?.city_council_district_name ?? null,
       },
     });
   } catch (err) {
@@ -464,13 +474,16 @@ router.patch(
             school_district_name: string | null;
             jurisdiction_state: string | null;
             jurisdiction_city: string | null;
+            city_council_geo_id: string | null;
+            city_council_district_name: string | null;
           }>(
             `SELECT congressional_geo_id, congressional_district_name,
                     state_senate_geo_id, state_senate_district_name,
                     state_house_geo_id, state_house_district_name,
                     county_geo_id, county_name,
                     school_district_geo_id, school_district_name,
-                    jurisdiction_state, jurisdiction_city
+                    jurisdiction_state, jurisdiction_city,
+                    city_council_geo_id, city_council_district_name
              FROM connect.connected_profiles WHERE user_id = $1`,
             [authReq.userId]
           );
@@ -489,6 +502,8 @@ router.patch(
               school_district_name: j.school_district_name,
               state: j.jurisdiction_state,
               city: j.jurisdiction_city,
+              city_council_district: j.city_council_geo_id,
+              city_council_district_name: j.city_council_district_name,
             };
           }
         } catch (jErr) {
