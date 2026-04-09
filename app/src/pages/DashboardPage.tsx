@@ -23,6 +23,7 @@ interface Jurisdiction {
   state_house_district_name: string | null;
   county_name: string | null;
   school_district_name: string | null;
+  city_council_district_name: string | null;
   state: string | null;
   city: string | null;
 }
@@ -128,6 +129,7 @@ const FEATURES = [
 ];
 
 const DISTRICT_LABELS: { key: keyof Jurisdiction; label: string }[] = [
+  { key: 'city_council_district_name', label: 'City Council' },
   { key: 'congressional_district_name', label: 'U.S. Congress' },
   { key: 'state_senate_district_name', label: 'State Senate' },
   { key: 'state_house_district_name', label: 'State House' },
