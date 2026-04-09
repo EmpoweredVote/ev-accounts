@@ -10,6 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 ## Current Position
 
+**Phase 59 Plan 03 complete (2026-04-09)**
+
+Phase 59 Plan 03 (App Dashboard Referrals UI) — complete ✅:
+- 59-03: DashboardPage.tsx — replaced old 3-state referral card with quota-aware Referrals section; InviteeEntry + InviteesData interfaces; handleGenerate (POST /invites/generate + auto-refresh); copyNewCode; invitee list with graduated/suspended/active/slot-locked badges; Vite build clean ✅
+- Key decisions: kept ReferralState + referral state for backward compat alongside new inviteesData; cap>=2147483647 renders "Unlimited"
+
 **Phase 59 Plan 02 complete (2026-04-09)**
 
 Phase 59 Plan 02 (Backend Service and Routes) — complete ✅:
