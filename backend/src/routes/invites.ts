@@ -2,6 +2,7 @@ import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import { z } from 'zod';
 import { createInviteCodes, getMyInviteCodes, claimInviteCode } from '../lib/inviteService.js';
+import { generateInviteCodeIfAllowed, getMyInvitees } from '../lib/inviteQuotaService.js';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireConnected } from '../middleware/tierGuards.js';
 import type { Request, Response } from 'express';
@@ -202,6 +203,72 @@ router.get(
     }));
 
     res.status(200).json(safeResponse);
+  },
+);
+
+// ---------------------------------------------------------------------------
+// POST /api/invites/generate — quota-aware code generation (Phase 59)
+// ---------------------------------------------------------------------------
+
+/**
+ * Connected user generates an invite code against their level-based quota.
+ *
+ * Unlike /send (which checks unclaimed pending codes), /generate uses the
+ * connect.generate_invite_code_if_allowed RPC which enforces the active-invitee
+ * cap (Level 1 = 3, Level 2 = 5, etc.) and respects invite_cap_override.
+ *
+ * Returns 409 with code=CAP_REACHED when the user is at their cap.
+ */
+router.post(
+  '/generate',
+  requireAuth,
+  requireConnected,
+  inviteSendLimiter,
+  async (req: Request, res: Response): Promise<void> => {
+    const { userId } = req as AuthenticatedRequest;
+    try {
+      const result = await generateInviteCodeIfAllowed(userId);
+      if (!result.ok) {
+        const status = result.error === 'NOT_CONNECTED' ? 403 : 409;
+        res
+          .status(status)
+          .json({ code: result.error, active_count: result.active_count, cap: result.cap });
+        return;
+      }
+      res.status(201).json({ code: result.code, active_count: result.active_count, cap: result.cap });
+    } catch (err) {
+      console.error('[invites/generate] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  },
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/invites/my-invitees — invitee list with quota summary (Phase 59)
+// ---------------------------------------------------------------------------
+
+/**
+ * Connected user retrieves their invitees with quota context.
+ *
+ * Response includes:
+ *   - active_count: number of active (non-locked) invitees consuming quota
+ *   - cap: effective cap for the user (level cap or override, whichever is larger)
+ *   - can_generate: whether the user may generate another code right now
+ *   - invitees[]: per-invitee standing, level, graduated flag, lock status
+ */
+router.get(
+  '/my-invitees',
+  requireAuth,
+  requireConnected,
+  async (req: Request, res: Response): Promise<void> => {
+    const { userId } = req as AuthenticatedRequest;
+    try {
+      const data = await getMyInvitees(userId);
+      res.json(data);
+    } catch (err) {
+      console.error('[invites/my-invitees] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
   },
 );
 
