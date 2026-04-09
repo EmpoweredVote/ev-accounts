@@ -176,6 +176,7 @@ export default function DashboardPage() {
   const [newCode, setNewCode] = useState<string | null>(null);
   const [newCodeCopied, setNewCodeCopied] = useState(false);
   const [showSignedOutToast, setShowSignedOutToast] = useState(false);
+  const [activeTab, setActiveTab] = useState<'profile' | 'referrals'>('profile');
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -286,9 +287,25 @@ export default function DashboardPage() {
 
         {/* Tab bar */}
         <nav className="flex gap-6 border-b border-gray-200 dark:border-gray-800 mb-6">
-          <span className="pb-2 border-b-2 border-ev-teal text-ev-teal font-medium text-sm">Profile</span>
+          <button
+            onClick={() => setActiveTab('profile')}
+            className={`pb-2 border-b-2 font-medium text-sm transition-colors ${activeTab === 'profile' ? 'border-ev-teal text-ev-teal' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+          >
+            Profile
+          </button>
+          {cp && (
+            <button
+              onClick={() => setActiveTab('referrals')}
+              className={`pb-2 border-b-2 font-medium text-sm transition-colors ${activeTab === 'referrals' ? 'border-ev-teal text-ev-teal' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            >
+              Referrals
+            </button>
+          )}
           <Link to="/contributor" className="pb-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm">Contributor</Link>
         </nav>
+
+        {/* Profile tab content */}
+        {activeTab === 'profile' && <>
 
         {/* Identity card */}
         <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
@@ -309,7 +326,7 @@ export default function DashboardPage() {
           {xp && (
             <div className="space-y-1.5">
               <div className="flex items-center justify-between text-sm">
-                <span className="font-medium text-ev-black dark:text-white">Level {xp.level}</span>
+                <span className="font-medium text-ev-black dark:text-white">Level {Math.max(1, xp.level)}</span>
                 <span className="text-gray-400 text-xs tabular-nums">
                   {xp.xp_in_level.toLocaleString()} / {(xp.xp_in_level + xp.xp_to_next_level).toLocaleString()} XP
                 </span>
@@ -364,8 +381,10 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Referrals */}
-        {cp && inviteesData && (
+        </> /* end profile tab */}
+
+        {/* Referrals tab content */}
+        {activeTab === 'referrals' && cp && inviteesData && (
           <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Invite Friends</p>
 
@@ -473,8 +492,8 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Connected Spaces */}
-        {jurisdiction && (
+        {/* Connected Spaces — profile tab only */}
+        {activeTab === 'profile' && jurisdiction && (
           <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3">
             <div className="flex items-center justify-between">
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Your Connected Spaces</p>
@@ -508,8 +527,8 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* CTA to add location if not set */}
-        {me && !me.location_consent && (
+        {/* CTA to add location if not set — profile tab only */}
+        {activeTab === 'profile' && me && !me.location_consent && (
           <Link
             to="/settings/location"
             className="flex items-center justify-between bg-ev-teal/5 border border-ev-teal/20 rounded-2xl p-4 group"
@@ -524,8 +543,8 @@ export default function DashboardPage() {
           </Link>
         )}
 
-        {/* Feature hub */}
-        <div className="space-y-2 pb-8">
+        {/* Feature hub — profile tab only */}
+        {activeTab === 'profile' && <div className="space-y-2 pb-8">
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-1">
             Explore freely. Connect to save your progress.
           </p>
@@ -550,7 +569,7 @@ export default function DashboardPage() {
               );
             })}
           </div>
-        </div>
+        </div>}
 
       </main>
 
