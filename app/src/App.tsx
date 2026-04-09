@@ -153,6 +153,29 @@ function App() {
     }
   }, [accessToken]);
 
+  // Cross-app logout sync — detect ev_session cookie cleared by another app
+  useEffect(() => {
+    if (!accessToken) return;
+
+    const API_URL = import.meta.env.VITE_API_URL || '';
+    const SESSION_URL = `${API_URL}/api/auth/session`;
+
+    const poll = async () => {
+      if (document.visibilityState !== 'visible') return;
+      try {
+        const res = await fetch(SESSION_URL, { credentials: 'include' });
+        if (res.status === 401) {
+          clearAuth();
+        }
+      } catch {
+        // Network error — don't log out (transient failure)
+      }
+    };
+
+    const id = setInterval(poll, 60_000);
+    return () => clearInterval(id);
+  }, [accessToken, clearAuth]);
+
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
