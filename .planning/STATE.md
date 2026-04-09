@@ -5,8 +5,8 @@
 See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Phase 59 (Referral Code System) complete 2026-04-08. Ready for next phase or milestone planning.
-**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
+**Current focus:** Phase 59 + referral tab improvements fully live (2026-04-08). DATABASE_URL switched to Supavisor pooler — all pool.query() routes healthy. Ready for v2.0 milestone planning.
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29); 014-add-city-council-district-to-jurisdiction complete (2026-04-09)
 
 ## Current Position
 
@@ -655,6 +655,6 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 
 ## Session Continuity
 
-Last session: 2026-04-09T03:01:36Z
-Stopped at: Completed 59-02-PLAN.md (Backend Service and Routes)
+Last session: 2026-04-08T00:00:00Z
+Stopped at: Referral tab improvements live. Fixed deploy crash (campaignFinanceInit non-fatal) + pg-pool timeouts (DATABASE_URL → Supavisor pooler). Checkpoint cleared.
 Resume file: None
