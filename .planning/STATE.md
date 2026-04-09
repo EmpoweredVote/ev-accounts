@@ -10,6 +10,14 @@ See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 ## Current Position
 
+**Phase 59 Plan 04 complete (2026-04-09) — Phase 59 COMPLETE**
+
+Phase 59 Plan 04 (Admin UI — Invite Override Pages) — complete ✅:
+- 59-04: InviteOverridesPage.tsx (new) — table of all users with active invite cap overrides; formatCap/formatOverride helpers; links to account detail ✅
+- 59-04: AccountDetailPage.tsx — invite_cap_override added to ConnectedProfile interface; getInviteCapForLevel() utility; handleSaveInviteCap() POSTing to /admin/accounts/:userId/invite-cap-override; Invite Cap Override card rendered before Actions section ✅
+- 59-04: App.tsx + AdminLayout.tsx — route and nav item registered ✅
+- All 4 plans in Phase 59 complete. Referral Code System fully shipped.
+
 **Phase 59 Plan 03 complete (2026-04-09)**
 
 Phase 59 Plan 03 (App Dashboard Referrals UI) — complete ✅:
