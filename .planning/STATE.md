@@ -10,6 +10,14 @@ See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 ## Current Position
 
+**Phase 59 Plan 02 complete (2026-04-09)**
+
+Phase 59 Plan 02 (Backend Service and Routes) — complete ✅:
+- 59-02: inviteQuotaService.ts with generateInviteCodeIfAllowed, getMyInvitees, sanctionInvitee, clearSlotLock, setInviteCapOverride, getInviteOverrides; POST /api/invites/generate (CAP_REACHED at quota limit); GET /api/invites/my-invitees (active_count, cap, can_generate, invitees[]); POST /api/admin/accounts/:userId/invite-cap-override with audit log; GET /api/admin/invite-overrides; suspend/unsuspend routes extended with non-blocking sanction/slot-unlock ✅
+- Key decisions: non-blocking side-effects for sanction/slot-unlock (inner try/catch — account state change cannot be rolled back by quota accounting failure); getMyInvitees fallback cap query for zero-invitee users; InviteCapSchema union(-1 | int>=1 | null)
+
+**Phase 59 Plan 01 complete (2026-04-09) — schema + RPCs**
+
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 
 8 phases, 19 plans, 17/17 requirements. All complete. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -625,6 +633,6 @@ trivia owner-read (3): player_prefs, player_stats, question_flags
 
 ## Session Continuity
 
-Last session: 2026-04-02
-Stopped at: v1.9 Roles roadmap created (Phases 51-58)
-Resume: /gsd:plan-phase 51 — Essentials XP Source Provisioning
+Last session: 2026-04-09T03:01:36Z
+Stopped at: Completed 59-02-PLAN.md (Backend Service and Routes)
+Resume file: None
