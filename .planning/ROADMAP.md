@@ -529,6 +529,27 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 
 </details>
 
+#### Phase 59: Referral Code System
+
+**Goal:** Level-gated invite quota system with social accountability — users earn invite capacity as they level up, admins can override per-user caps, and inviters bear partial accountability for invitee misconduct via Tolerance Rating adjustment and slot locking.
+
+**Dependencies:** Existing invite_codes + invite_chains + invite claim flow (Phase 3); XP leveling (Phase 9); Tolerance Rating (Phase 3)
+
+**Plans:** 4 plans
+
+Plans:
+- [ ] 59-01-PLAN.md — Database migration: schema columns + quota RPCs (generate_invite_code_if_allowed, get_my_invitees, sanction_invitee)
+- [ ] 59-02-PLAN.md — Backend service layer + API routes (quota-aware /generate, /my-invitees, admin overrides, sanction integration)
+- [ ] 59-03-PLAN.md — App UI: expanded Referrals section on DashboardPage (quota display, code generation, invitee list)
+- [ ] 59-04-PLAN.md — Admin UI: invite cap override on AccountDetailPage + InviteOverridesPage list view
+
+**Success Criteria:**
+
+1. A level-3 user can generate invite codes up to their active invitee cap (3); a level-1 user cannot generate any (cap 0).
+2. When an invitee is suspended, the inviter's slot is locked for 60 days (or until reinstatement), TR is adjusted, and the inviter receives an in-app notification.
+3. Admins can set per-user invite cap overrides (including unlimited) from the AccountDetailPage and see all active overrides on a dedicated list page.
+4. The DashboardPage Referrals section shows quota (active/cap), a generate button, new code display with copy, and a compact invitee list with standing/level/graduation/lock status.
+
 ---
 
 ## Progress
@@ -593,3 +614,4 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 | 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
+| 59. Referral Code System | — | 0/4 | Planning | — |
