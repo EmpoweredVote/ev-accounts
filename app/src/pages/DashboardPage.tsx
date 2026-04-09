@@ -34,6 +34,23 @@ interface ReferralState {
   inviteeLevel: number | null;
 }
 
+interface InviteeEntry {
+  invitee_id: string;
+  display_name: string;
+  account_standing: 'active' | 'suspended';
+  current_level: number;
+  graduated: boolean;
+  slot_locked_until: string | null;
+  claimed_at: string | null;
+}
+
+interface InviteesData {
+  active_count: number;
+  cap: number;
+  can_generate: boolean;
+  invitees: InviteeEntry[];
+}
+
 interface MeFull {
   id: string;
   email: string;
@@ -154,6 +171,10 @@ export default function DashboardPage() {
   const [jurisdiction, setJurisdiction] = useState<Jurisdiction | null>(null);
   const [referral, setReferral] = useState<ReferralState | null>(null);
   const [copied, setCopied] = useState(false);
+  const [inviteesData, setInviteesData] = useState<InviteesData | null>(null);
+  const [generatingCode, setGeneratingCode] = useState(false);
+  const [newCode, setNewCode] = useState<string | null>(null);
+  const [newCodeCopied, setNewCodeCopied] = useState(false);
   const [showSignedOutToast, setShowSignedOutToast] = useState(false);
 
   useEffect(() => {
@@ -171,6 +192,7 @@ export default function DashboardPage() {
   useEffect(() => {
     if (me?.connected_profile) {
       apiFetch<ReferralState>('/referral').then(setReferral).catch(() => {});
+      apiFetch<InviteesData>('/invites/my-invitees').then(setInviteesData).catch(() => {});
     }
   }, [me?.connected_profile]);
 
@@ -181,6 +203,30 @@ export default function DashboardPage() {
       setTimeout(() => setCopied(false), 2000);
     }).catch(() => {});
   }, [referral?.code]);
+
+  const handleGenerate = useCallback(async () => {
+    setGeneratingCode(true);
+    setNewCode(null);
+    try {
+      const result = await apiFetch<{ code: string; active_count: number; cap: number }>('/invites/generate', { method: 'POST' });
+      setNewCode(result.code);
+      // Refresh invitees data
+      const updated = await apiFetch<InviteesData>('/invites/my-invitees');
+      setInviteesData(updated);
+    } catch {
+      // Error handled — CAP_REACHED or rate limit
+    } finally {
+      setGeneratingCode(false);
+    }
+  }, []);
+
+  const copyNewCode = useCallback(() => {
+    if (!newCode) return;
+    navigator.clipboard.writeText(newCode).then(() => {
+      setNewCodeCopied(true);
+      setTimeout(() => setNewCodeCopied(false), 2000);
+    }).catch(() => {});
+  }, [newCode]);
 
   const handleLogout = async () => {
     const url = `${import.meta.env.VITE_API_URL || ''}/api/auth/logout`;
@@ -318,13 +364,25 @@ export default function DashboardPage() {
           </div>
         )}
 
-        {/* Referral Code */}
-        {cp && referral && (
-          <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-3">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Invite a Friend</p>
+        {/* Referrals */}
+        {cp && inviteesData && (
+          <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-5 space-y-4">
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Invite Friends</p>
 
-            {!referral.unlocked ? (
-              /* Locked state */
+            {/* Quota summary */}
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="text-2xl font-bold text-ev-black dark:text-white tabular-nums">
+                  {inviteesData.active_count}
+                </span>
+                <span className="text-gray-400 text-sm ml-1">
+                  / {inviteesData.cap >= 2147483647 ? 'Unlimited' : inviteesData.cap} active invitees
+                </span>
+              </div>
+            </div>
+
+            {inviteesData.cap === 0 ? (
+              /* Level-1 locked state */
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0">
                   <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -332,44 +390,84 @@ export default function DashboardPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-ev-black dark:text-white">Reach level 2 to unlock</p>
-                  <p className="text-xs text-gray-400 mt-0.5">Keep earning XP to get your first referral code.</p>
+                  <p className="text-sm font-medium text-ev-black dark:text-white">Reach level 2 to start inviting</p>
+                  <p className="text-xs text-gray-400 mt-0.5">Keep earning XP to unlock your first invite slot.</p>
                 </div>
               </div>
-            ) : referral.inviteeJoined && (referral.inviteeLevel ?? 0) < 2 ? (
-              /* Code used — waiting for invitee to hit level 2 */
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-ev-teal-light animate-pulse" />
-                  <p className="text-sm font-medium text-ev-black dark:text-white">Friend joined!</p>
-                </div>
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  When they reach level 2, you'll get a fresh referral code to share with someone new.
-                </p>
-                <div className="flex items-center justify-between pt-1">
-                  <span className="text-xs text-gray-400">Their level</span>
-                  <span className="text-sm font-semibold text-ev-black dark:text-white tabular-nums">
-                    {referral.inviteeLevel ?? 1}
-                  </span>
-                </div>
+            ) : inviteesData.can_generate ? (
+              /* Under cap — show generate button */
+              <div className="space-y-3">
+                <button
+                  onClick={handleGenerate}
+                  disabled={generatingCode}
+                  className="w-full py-2.5 px-4 bg-ev-teal text-white rounded-xl text-sm font-semibold hover:bg-ev-teal/90 transition-colors disabled:opacity-50"
+                >
+                  {generatingCode ? 'Generating\u2026' : 'Generate Invite Code'}
+                </button>
+
+                {newCode && (
+                  <button
+                    onClick={copyNewCode}
+                    className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 group hover:border-ev-teal-light/50 transition-colors"
+                  >
+                    <span className="font-mono text-lg font-bold tracking-widest text-ev-black dark:text-white">
+                      {newCode}
+                    </span>
+                    <span className="text-xs font-medium text-ev-teal-light">
+                      {newCodeCopied ? 'Copied!' : 'Copy'}
+                    </span>
+                  </button>
+                )}
               </div>
             ) : (
-              /* Code available — show and copy */
-              <div className="space-y-3">
-                <p className="text-xs text-gray-400 leading-relaxed">
-                  Share this code with one friend. You'll get a new one when they reach level 2.
-                </p>
-                <button
-                  onClick={copyCode}
-                  className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 group hover:border-ev-teal-light/50 transition-colors"
-                >
-                  <span className="font-mono text-lg font-bold tracking-widest text-ev-black dark:text-white">
-                    {referral.code}
-                  </span>
-                  <span className="text-xs font-medium text-ev-teal-light">
-                    {copied ? 'Copied!' : 'Copy'}
-                  </span>
-                </button>
+              /* At capacity */
+              <p className="text-xs text-gray-500 leading-relaxed">
+                All invite slots filled. Level up to earn more, or wait for an invitee to reach level 2.
+              </p>
+            )}
+
+            {/* Invitee list */}
+            {inviteesData.invitees.length > 0 && (
+              <div className="space-y-0 -mx-5 px-5 pt-1 border-t border-gray-100 dark:border-gray-800">
+                <p className="text-xs font-medium text-gray-400 mt-3 mb-2">Your Invitees</p>
+                <div className="divide-y divide-gray-100 dark:divide-gray-800">
+                  {inviteesData.invitees.map((invitee) => {
+                    const isLocked = invitee.slot_locked_until && new Date(invitee.slot_locked_until) > new Date();
+                    return (
+                      <div key={invitee.invitee_id} className="py-2.5 flex items-center justify-between gap-2">
+                        <div className="min-w-0 flex-1">
+                          <p className={`text-sm font-medium truncate ${invitee.graduated ? 'text-gray-400' : 'text-ev-black dark:text-white'}`}>
+                            {invitee.display_name ?? 'Anonymous'}
+                          </p>
+                          {!invitee.graduated && (
+                            <p className="text-xs text-gray-400 mt-0.5">Level {invitee.current_level} / 2</p>
+                          )}
+                        </div>
+                        <div className="flex items-center gap-2 flex-shrink-0">
+                          {invitee.graduated ? (
+                            <span className="text-xs font-medium text-ev-teal bg-ev-teal/10 px-2 py-0.5 rounded-full">
+                              Graduated ✓
+                            </span>
+                          ) : invitee.account_standing === 'suspended' ? (
+                            <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
+                              Suspended
+                            </span>
+                          ) : (
+                            <span className="flex items-center gap-1 text-xs text-gray-500">
+                              <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                              Active
+                            </span>
+                          )}
+                          {isLocked && (
+                            <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">
+                              Slot locked
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </div>
