@@ -27,6 +27,7 @@ interface ConnectedProfile {
   gem_balance_red: number;
   completed_onboarding: boolean;
   created_at: string;
+  invite_cap_override: number | null;
 }
 
 interface XpTransaction {
@@ -123,6 +124,14 @@ const STANDING_BADGE: Record<string, string> = {
   suspended: 'bg-red-100 text-red-700',
 };
 
+function getInviteCapForLevel(level: number): number {
+  if (level <= 1) return 0;
+  if (level <= 5) return 3;
+  if (level <= 10) return 5;
+  if (level <= 20) return 10;
+  return 15;
+}
+
 export function AccountDetailPage() {
   const { userId } = useParams<{ userId: string }>();
   const navigate = useNavigate();
@@ -162,6 +171,11 @@ export function AccountDetailPage() {
   const [vrDraft, setVrDraft] = useState<{ rating: number; clearHold: boolean }>({ rating: 0, clearHold: false });
   const [vrSaving, setVrSaving] = useState(false);
   const [vrError, setVrError] = useState<string | null>(null);
+
+  // Invite cap override state
+  const [inviteCapOverride, setInviteCapOverride] = useState<string>('');
+  const [inviteCapSaving, setInviteCapSaving] = useState(false);
+  const [inviteCapMsg, setInviteCapMsg] = useState<string | null>(null);
 
   function fetchAccount() {
     setLoading(true);
@@ -302,6 +316,32 @@ export function AccountDetailPage() {
       setDeleteLoading(false);
     }
   }
+
+  // Initialize invite cap override state when account loads
+  useEffect(() => {
+    if (account?.connected_profile) {
+      setInviteCapOverride(account.connected_profile.invite_cap_override?.toString() ?? '');
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [account?.connected_profile?.invite_cap_override]);
+
+  const handleSaveInviteCap = async () => {
+    if (!userId) return;
+    setInviteCapSaving(true);
+    setInviteCapMsg(null);
+    try {
+      const cap = inviteCapOverride === '' ? null : parseInt(inviteCapOverride, 10);
+      await apiFetch(`/admin/accounts/${userId}/invite-cap-override`, {
+        method: 'POST',
+        body: JSON.stringify({ cap }),
+      });
+      setInviteCapMsg('Override saved');
+    } catch {
+      setInviteCapMsg('Failed to save override');
+    } finally {
+      setInviteCapSaving(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -863,6 +903,51 @@ export function AccountDetailPage() {
           </div>
         )}
       </div>
+
+      {/* Invite Cap Override */}
+      {account.connected_profile && (
+        <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-4">
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Invite Cap Override</h2>
+          <div className="space-y-3">
+            <div>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+                Level {account.connected_profile.current_level} &rarr; base cap {getInviteCapForLevel(account.connected_profile.current_level)}
+                {account.connected_profile.invite_cap_override != null && (
+                  <span className="ml-2 text-ev-red font-medium">
+                    Override: {account.connected_profile.invite_cap_override === -1 ? 'Unlimited' : account.connected_profile.invite_cap_override}
+                  </span>
+                )}
+              </p>
+            </div>
+            <div className="flex gap-3 items-end">
+              <div className="flex-1">
+                <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Override value (blank = default, -1 = unlimited, or positive integer)
+                </label>
+                <input
+                  type="text"
+                  value={inviteCapOverride}
+                  onChange={(e) => setInviteCapOverride(e.target.value)}
+                  placeholder="blank = level default"
+                  className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400"
+                />
+              </div>
+              <button
+                onClick={handleSaveInviteCap}
+                disabled={inviteCapSaving}
+                className="px-4 py-2 bg-ev-teal hover:bg-ev-teal/90 disabled:opacity-50 text-white text-sm font-medium rounded-md transition-colors"
+              >
+                {inviteCapSaving ? 'Saving\u2026' : 'Save'}
+              </button>
+            </div>
+            {inviteCapMsg && (
+              <p className={`text-xs font-medium ${inviteCapMsg.includes('Failed') ? 'text-ev-red' : 'text-ev-teal'}`}>
+                {inviteCapMsg}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Actions */}
       <div className="bg-white dark:bg-gray-900 rounded-lg shadow p-6">
