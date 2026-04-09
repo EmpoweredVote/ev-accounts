@@ -5,12 +5,20 @@
 See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** v1.9 complete — run `/gsd:new-milestone` to start v2.0 planning.
+**Current focus:** Phase 59 (Referral Code System) complete 2026-04-08. Ready for next phase or milestone planning.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29)
 
 ## Current Position
 
-**Phase 59 Plan 04 complete (2026-04-09) — Phase 59 COMPLETE**
+**Phase 59 complete (2026-04-08) — verified 17/17 ✅**
+
+Phase 59 (Referral Code System) — all 4 plans complete, goal verified:
+- 59-01: Migration — invite_cap_override + slot_locked_until columns; generate_invite_code_if_allowed (advisory lock), get_my_invitees (computed quota), sanction_invitee (TR + lock + notify) RPCs ✅
+- 59-02: inviteQuotaService.ts (6 functions, all pool.query); POST /api/invites/generate + GET /api/invites/my-invitees; admin override endpoints; suspend/unsuspend wired with sanction/clearSlotLock ✅
+- 59-03: DashboardPage Referrals section — quota display, generate button, copy code, invitee list with all status badges ✅
+- 59-04: InviteOverridesPage + AccountDetailPage override field + route + nav ✅
+
+**Phase 59 Plan 04 complete (2026-04-08)**
 
 Phase 59 Plan 04 (Admin UI — Invite Override Pages) — complete ✅:
 - 59-04: InviteOverridesPage.tsx (new) — table of all users with active invite cap overrides; formatCap/formatOverride helpers; links to account detail ✅

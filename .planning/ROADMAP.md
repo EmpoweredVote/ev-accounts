@@ -529,7 +529,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 
 </details>
 
-#### Phase 59: Referral Code System
+#### Phase 59: Referral Code System ✅ COMPLETE (2026-04-08)
 
 **Goal:** Level-gated invite quota system with social accountability — users earn invite capacity as they level up, admins can override per-user caps, and inviters bear partial accountability for invitee misconduct via Tolerance Rating adjustment and slot locking.
 
@@ -538,10 +538,10 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
-- [ ] 59-01-PLAN.md — Database migration: schema columns + quota RPCs (generate_invite_code_if_allowed, get_my_invitees, sanction_invitee)
-- [ ] 59-02-PLAN.md — Backend service layer + API routes (quota-aware /generate, /my-invitees, admin overrides, sanction integration)
-- [ ] 59-03-PLAN.md — App UI: expanded Referrals section on DashboardPage (quota display, code generation, invitee list)
-- [ ] 59-04-PLAN.md — Admin UI: invite cap override on AccountDetailPage + InviteOverridesPage list view
+- [x] 59-01-PLAN.md — Database migration: schema columns + quota RPCs (generate_invite_code_if_allowed, get_my_invitees, sanction_invitee)
+- [x] 59-02-PLAN.md — Backend service layer + API routes (quota-aware /generate, /my-invitees, admin overrides, sanction integration)
+- [x] 59-03-PLAN.md — App UI: expanded Referrals section on DashboardPage (quota display, code generation, invitee list)
+- [x] 59-04-PLAN.md — Admin UI: invite cap override on AccountDetailPage + InviteOverridesPage list view
 
 **Success Criteria:**
 
