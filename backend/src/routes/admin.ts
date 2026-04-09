@@ -18,6 +18,12 @@ import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
 import { invalidateRoleCache } from '../lib/roleService.js';
 import {
+  sanctionInvitee,
+  clearSlotLock,
+  setInviteCapOverride,
+  getInviteOverrides,
+} from '../lib/inviteQuotaService.js';
+import {
   logAdminAction,
   listAccounts,
   getAccountDetail,
@@ -145,6 +151,10 @@ const DemoteSchema = z.object({
   reason: z.record(z.unknown()).optional(),
 });
 
+const InviteCapSchema = z.object({
+  cap: z.union([z.literal(-1), z.number().int().min(1), z.null()]),
+});
+
 /**
  * GET /api/admin/accounts
  * List accounts with optional search + filter by tier and standing. Paginated.
@@ -213,6 +223,13 @@ router.post('/accounts/:userId/suspend', async (req, res) => {
     const { userId } = req.params;
     await setAccountStanding(userId, 'suspended');
     await logAdminAction(actorId(req), 'suspend_account', userId);
+    // Phase 59: Lock inviter's slot + adjust TR + notify (non-blocking)
+    try {
+      await sanctionInvitee(userId);
+    } catch (err) {
+      console.error('[admin/suspend] sanction_invitee failed for', userId, ':', err);
+      // Non-blocking: suspension succeeded, accountability is best-effort
+    }
     res.json({ ok: true });
   } catch (err) {
     console.error('[admin/suspend] error for userId', req.params.userId, ':', err);
@@ -229,9 +246,61 @@ router.post('/accounts/:userId/unsuspend', async (req, res) => {
     const { userId } = req.params;
     await setAccountStanding(userId, 'active');
     await logAdminAction(actorId(req), 'unsuspend_account', userId);
+    // Phase 59: Free inviter's locked slot on reinstatement (non-blocking)
+    try {
+      await clearSlotLock(userId);
+    } catch (err) {
+      console.error('[admin/unsuspend] clearSlotLock failed for', userId, ':', err);
+      // Non-blocking: unsuspension succeeded, slot unlock is best-effort
+    }
     res.json({ ok: true });
   } catch (err) {
     console.error('[admin/unsuspend] error for userId', req.params.userId, ':', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Invite cap overrides (Phase 59)
+// ---------------------------------------------------------------------------
+
+/**
+ * POST /api/admin/accounts/:userId/invite-cap-override
+ * Set (or clear) an explicit invite quota override for a user.
+ *   cap = -1       → unlimited
+ *   cap = N (≥1)   → explicit cap (used if larger than level cap)
+ *   cap = null     → remove override, revert to level-based cap
+ * Logs to admin_audit_log.
+ */
+router.post('/accounts/:userId/invite-cap-override', async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const parsed = InviteCapSchema.safeParse(req.body);
+    if (!parsed.success) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: parsed.error.issues[0]?.message });
+      return;
+    }
+    await setInviteCapOverride(userId, parsed.data.cap);
+    await logAdminAction(actorId(req), 'set_invite_cap_override', userId, {
+      cap: parsed.data.cap,
+    });
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[admin/invite-cap-override] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/invite-overrides
+ * List all users with an active invite_cap_override, including effective_cap.
+ */
+router.get('/invite-overrides', async (_req, res) => {
+  try {
+    const overrides = await getInviteOverrides();
+    res.json(overrides);
+  } catch (err) {
+    console.error('[admin/invite-overrides] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });
