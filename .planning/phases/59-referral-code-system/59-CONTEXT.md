@@ -15,9 +15,9 @@ Level-gated invite quota system with social accountability. Users earn the abili
 
 ### Quota schedule
 - **Level 1:** 0 invite codes — earn it before vouching for anyone
-- **Levels 2–5:** 1 code earned per level, max 3 active invitees at any time
-- **Levels 6–10:** 2 codes earned per level, max 5 active invitees
-- **Levels 11–20:** 5 codes earned per level, max 10 active invitees
+- **Levels 2-5:** 1 code earned per level, max 3 active invitees at any time
+- **Levels 6-10:** 2 codes earned per level, max 5 active invitees
+- **Levels 11-20:** 5 codes earned per level, max 10 active invitees
 - **Levels 21+:** max 15 active invitees
 - "Active invitee" = someone you invited who has not yet reached level 2
 - **Codes are minted on demand** — no banking of code tokens. Your level determines your active invitee cap. You can generate a new invite code any time your active invitee count is below your cap.
@@ -63,7 +63,7 @@ Level-gated invite quota system with social accountability. Users earn the abili
 <deferred>
 ## Deferred Ideas
 
-- None — discussion stayed within phase scope
+- **TR penalty severity scaling** — deferred until sanctioning system exposes a severity field/category on sanction records. Phase 59 uses flat -0.25 TR penalty for all sanctions. When severity is available, scale TR delta accordingly (e.g., minor = -0.10, moderate = -0.25, severe = -0.50).
 
 </deferred>
 
