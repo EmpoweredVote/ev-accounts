@@ -16,6 +16,7 @@ import { TopicsPage } from './pages/admin/TopicsPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
+import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import PrivacyPage from './pages/PrivacyPage';
@@ -83,6 +84,7 @@ function App() {
           <Route path="invites" element={<InvitesPage />} />
           <Route path="invites/tree" element={<InviteTreePage />} />
           <Route path="invites/tree/:userId" element={<InviteTreePage />} />
+          <Route path="invite-overrides" element={<InviteOverridesPage />} />
           <Route path="access-requests" element={<AccessRequestsPage />} />
           <Route path="cron-log" element={<CronLogPage />} />
           <Route path="roles" element={<RolesPage />} />
