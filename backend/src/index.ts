@@ -133,8 +133,13 @@ const isLambda = !!process.env.AWS_LAMBDA_FUNCTION_NAME;
 
 if (env.NODE_ENV !== 'test' && !isLambda) {
   void (async () => {
-    // Startup checks — server does not start if any check fails.
-    await campaignFinanceInit();
+    // Non-fatal startup check — pg-pool can timeout intermittently at deploy time.
+    // A timeout here must not prevent the server from starting.
+    try {
+      await campaignFinanceInit();
+    } catch (e) {
+      console.warn('[startup] campaign-finance schema unreachable — continuing anyway:', e);
+    }
 
     const server = app.listen(port, () => {
       console.info(`[server] listening on port ${port}`);
