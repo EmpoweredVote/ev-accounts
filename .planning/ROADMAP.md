@@ -67,7 +67,10 @@
   1. A meeting tagged with `--body bloomington-common-council` persists that slug to pipeline metadata and reads it back on every subsequent stage invocation without re-specifying the flag.
   2. Launching a meeting with a body slug that has no cached roster fails fast with a clear error message telling the operator to run `refresh_roster.py`.
   3. Stage 4 identification uses the body-specific roster for `correct_speaker_name`, pattern matching, and the LLM prompt — no code path falls back to the legacy global roster when a body_slug is present.
-**Plans**: TBD
+**Plans**: 3 plans
+- [ ] 109-01-PLAN.md — Extend PipelineState with body_slug + --body/--force-retag argparse + batch propagation + Wave 0 test scaffold
+- [ ] 109-02-PLAN.md — ensure_body_roster_cached pre-Stage-1 guard with slug validation + D-08 error
+- [ ] 109-03-PLAN.md — Stage 4 load_roster(body_slug=...) wiring at run_local.py:568
 
 ### Phase 110: Profile schema v3 + re-enrollment
 **Goal**: Voice profiles are keyed by essentials `politician_slug` when they correspond to a known politician, coexisting with local-slug profiles for non-roster speakers, and existing v2 profiles can be promoted via re-enrollment.
