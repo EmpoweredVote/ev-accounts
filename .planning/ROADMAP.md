@@ -46,7 +46,8 @@
   3. With the network disabled, the client fails with a clear error but never crashes or corrupts an existing cached roster.
   4. `roster.load_roster()` returns a per-body roster when a slug is provided, and falls back to the legacy `council_roster.json` when no slug is set (existing meetings keep working).
   5. Reusing a cached roster older than 30 days emits a non-blocking staleness warning on stdout/log.
-**Plans**: TBD
+**Plans**: 1 plan
+- [ ] 108-01-PLAN.md — Roster HTTP client, alias generator, refresh_roster CLI, load_roster slug path + staleness
 
 ### Phase 109: Per-meeting body tagging
 **Goal**: Every meeting run declares which governing body it belongs to, and that slug flows through the pipeline so identification consumes the right roster.
