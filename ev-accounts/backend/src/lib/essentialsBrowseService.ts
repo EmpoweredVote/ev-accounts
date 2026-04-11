@@ -154,9 +154,12 @@ export async function getPoliticiansByArea(
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
+           ch.policy_engagement_level,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
-           COALESCE(gvb.website_url, '') AS government_body_url
+           COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
     JOIN essentials.politicians p ON o.politician_id = p.id
@@ -199,9 +202,12 @@ export async function getPoliticiansByArea(
              d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
              ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
              ch.election_frequency,
+             ch.policy_engagement_level,
              g.name AS government_name,
+             g.type AS government_type,
              COALESCE(gvb.display_name, '') AS government_body_name,
-             COALESCE(gvb.website_url, '') AS government_body_url
+             COALESCE(gvb.website_url, '') AS government_body_url,
+             COALESCE(ch.website_url, '') AS chamber_url
       FROM essentials.districts d
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.politicians p ON o.politician_id = p.id
@@ -257,10 +263,13 @@ export async function getPoliticiansByArea(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
