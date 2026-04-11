@@ -221,7 +221,7 @@ npm run build
 
 - **Domain:** GoDaddy (empowered.vote), managed via AWS Route 53
 - **Frontends:** Render (all apps above auto-deploy on merge to main)
-- **Backend:** Render (ev-accounts Express server at accounts.empowered.vote)
+- **Backend:** Render (ev-accounts Express server at api.empowered.vote; accounts.empowered.vote serves the admin SPA)
 - **Database:** Supabase PostgreSQL with PostGIS
   - **Production:** "E.V Backend" (project ID: `kxsdzaojfaibhuzmclfq`)
   - **Dev/Isolated:** "EV-Backend-Dev" (project ID: `mzuppdqbibqjedmesbmp`)
@@ -255,7 +255,7 @@ npm run build
 - **essentials:** Local component state
 
 ### API Endpoints
-All frontends connect to `https://accounts.empowered.vote` (ev-accounts):
+All frontends connect to `https://api.empowered.vote` (ev-accounts Express backend; `accounts.empowered.vote` is the admin SPA, not the API):
 - `/api/auth/*` - Authentication (signup, login, logout, onboarding)
 - `/api/compass/*` - Topics, answers, stances, politician comparisons
 - `/api/essentials/*` - Politician data by address (geofence matching)
