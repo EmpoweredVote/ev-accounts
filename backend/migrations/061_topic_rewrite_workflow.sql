@@ -423,4 +423,101 @@ BEGIN
 END;
 $$;
 
+-- ---------------------------------------------------------------------------
+-- Section 10: admin_publish_topic_rewrite
+-- ---------------------------------------------------------------------------
+-- Atomic publish. Copies approved stance proposals to politician_answers and
+-- politician_context under the NEW topic_id, flips is_live on new and old
+-- topic rows, marks the rewrite as published. Append-only: no DELETE on old
+-- politician_answers/politician_context rows — they stay referencing the old
+-- (now is_live=false) topic version for audit.
+--
+-- Rejected proposals do NOT get their values copied forward.
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_publish_topic_rewrite(
+  p_rewrite_id UUID,
+  p_actor_id   UUID
+)
+RETURNS JSONB  -- { approved_copied: int, rejected_skipped: int }
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_rewrite           inform.topic_rewrites%ROWTYPE;
+  v_approved_count    INT;
+  v_rejected_count    INT;
+BEGIN
+  SELECT * INTO v_rewrite FROM inform.topic_rewrites WHERE id = p_rewrite_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'NOT_FOUND: rewrite % does not exist', p_rewrite_id;
+  END IF;
+
+  IF v_rewrite.state <> 'publish_ready' THEN
+    RAISE EXCEPTION 'INVALID_TRANSITION: rewrite % must be in publish_ready (is %)',
+      p_rewrite_id, v_rewrite.state;
+  END IF;
+
+  INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+  SELECT p.politician_id, v_rewrite.new_topic_id, round(p.proposed_value)::int
+  FROM inform.topic_rewrite_stance_proposals p
+  WHERE p.rewrite_id = p_rewrite_id AND p.status = 'approved'
+  ON CONFLICT (politician_id, topic_id) DO UPDATE
+    SET value = EXCLUDED.value;
+
+  GET DIAGNOSTICS v_approved_count = ROW_COUNT;
+
+  INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+  SELECT p.politician_id, v_rewrite.new_topic_id,
+         COALESCE(p.proposed_reasoning, ''),
+         COALESCE(p.proposed_sources, '{}')
+  FROM inform.topic_rewrite_stance_proposals p
+  WHERE p.rewrite_id = p_rewrite_id AND p.status = 'approved'
+  ON CONFLICT (politician_id, topic_id) DO UPDATE
+    SET reasoning = EXCLUDED.reasoning,
+        sources   = EXCLUDED.sources;
+
+  SELECT count(*) INTO v_rejected_count
+  FROM inform.topic_rewrite_stance_proposals
+  WHERE rewrite_id = p_rewrite_id AND status = 'rejected';
+
+  -- Atomic swap: flip old off first to avoid violating the partial unique
+  -- index on (topic_key) WHERE is_live = true.
+  UPDATE inform.compass_topics
+  SET is_live = false
+  WHERE id = v_rewrite.old_topic_id;
+
+  UPDATE inform.compass_topics
+  SET is_live = true,
+      went_live_at = now()
+  WHERE id = v_rewrite.new_topic_id;
+
+  UPDATE inform.topic_rewrites
+  SET state = 'published',
+      published_by = p_actor_id,
+      published_at = now()
+  WHERE id = p_rewrite_id;
+
+  RETURN jsonb_build_object(
+    'approved_copied',  v_approved_count,
+    'rejected_skipped', v_rejected_count
+  );
+END;
+$$;
+
+-- ---------------------------------------------------------------------------
+-- Section 11: Grants
+-- ---------------------------------------------------------------------------
+
+GRANT EXECUTE ON FUNCTION inform.admin_create_topic_rewrite(TEXT, UUID, TEXT, TEXT, TEXT, JSONB, TEXT) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_submit_rewrite_for_framing_review(UUID) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_approve_rewrite_framing(UUID, UUID) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_upsert_stance_proposal(UUID, UUID, NUMERIC, TEXT, TEXT[]) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_approve_stance_proposal(UUID, UUID, UUID, TEXT) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_reject_stance_proposal(UUID, UUID, UUID, TEXT) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_mark_rewrite_publish_ready(UUID) TO service_role;
+GRANT EXECUTE ON FUNCTION inform.admin_publish_topic_rewrite(UUID, UUID) TO service_role;
+
 COMMIT;
