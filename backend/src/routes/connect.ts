@@ -58,6 +58,7 @@ const stepBodySchema = z.object({
 
 const setLocationBodySchema = z.object({
   address: z.string().min(1).max(500),
+  force: z.boolean().optional().default(false),
 });
 
 const compassImportBodySchema = z.object({
@@ -509,7 +510,30 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
     return;
   }
 
-  const { address } = parsed.data;
+  const { address, force } = parsed.data;
+
+  // Guard: require explicit force:true to overwrite existing coordinates.
+  // Prevents silent location corruption from automated clients (e.g. search auto-save).
+  if (!force) {
+    try {
+      const { rows } = await pool.query<{ has_coords: boolean }>(
+        `SELECT (encrypted_lat IS NOT NULL) AS has_coords
+         FROM connect.connected_profiles WHERE user_id = $1`,
+        [userId]
+      );
+      if (rows[0]?.has_coords) {
+        res.status(409).json({
+          code: 'LOCATION_ALREADY_SET',
+          message: 'Location is already set. Pass force:true to overwrite.',
+        });
+        return;
+      }
+    } catch (err) {
+      console.error('[connect/set-location] coords check error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+  }
 
   let lat: number;
   let lng: number;
