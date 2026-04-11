@@ -932,11 +932,13 @@ You can also hit the live API:
 curl -s "https://api.empowered.vote/api/essentials/politicians/4d20abb8-b05a-444c-883d-03eb4b43d166" | node -e "
 const data = JSON.parse(require('fs').readFileSync(0, 'utf8'));
 console.log('policy_engagement_level:', data.policy_engagement_level);
-console.log('is_judicial:', data.is_judicial);
+console.log('district_type:', data.district_type);
 "
 ```
 
-Expected: `policy_engagement_level: none` for Nicole Bolden (city clerk).
+Expected: `policy_engagement_level: none` for Nicole Bolden (city clerk). `district_type: LOCAL` or similar.
+
+**Note:** `pol.is_judicial` is NOT on the API response (ev-ui's PoliticianProfile reads it but it may only be set for some politicians). Use `pol.district_type === 'JUDICIAL' || pol.district_type === 'NATIONAL_JUDICIAL'` to detect judges — that field IS reliably set on every politician response. Verified against Bradley (circuit court judge, `district_type: JUDICIAL`).
 
 - [ ] **Step 3: Import `useCompass` in Profile.jsx if not already**
 
@@ -990,8 +992,12 @@ Replace with:
     );
   }
 
-  // Contested judges without stance research — honest placeholder
-  if (pol.is_judicial && engagement === 'full' && !hasStances) {
+  // Contested judges without stance research — honest placeholder.
+  // Use district_type (reliably set by backend) instead of is_judicial
+  // (which is not on the API response per pre-execution verification).
+  const isJudge =
+    pol.district_type === 'JUDICIAL' || pol.district_type === 'NATIONAL_JUDICIAL';
+  if (isJudge && engagement === 'full' && !hasStances) {
     return (
       <section className="mt-8">
         <h2 className="text-2xl font-bold mb-4" style={{ fontFamily: "'Manrope', sans-serif" }}>
