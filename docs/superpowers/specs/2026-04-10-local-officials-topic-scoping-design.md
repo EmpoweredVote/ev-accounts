@@ -64,25 +64,48 @@ Each piece is scoped to one or two files and can be built incrementally. The dat
 
 ### Topic tier flags
 
-`inform.compass_topic_roles` already exists with columns `topic_id`, `role_scope`, `is_required` — currently empty. Two options for using it:
+`inform.compass_topic_roles` already exists with columns `topic_id`, `role_scope`, `is_required`. It is empty in the data, but the application code is already wired to consume it: `compassService.getCompassTopics()` queries this table and attaches a `roles` array to every topic in its response, and `compassService.getCompassCompleteness()` accepts a `roleScope` parameter. The scaffolding exists but is unused.
 
-**Option A (repurpose):** Redefine the semantics. Add a unique constraint on `topic_id`, treat `role_scope` as an enum (`federal` / `state` / `local`), and use multiple rows per topic to indicate multi-tier applicability. `is_required` becomes unused.
-
-**Option B (drop and replace with booleans on `compass_topics`):** Add three columns directly: `applies_federal`, `applies_state`, `applies_local` (all boolean, default true for backward compatibility with existing topics). Drop `compass_topic_roles`. Simpler to query, no join required at render time.
-
-**Recommendation: Option B.** The bool columns model matches how the data is actually consumed (read per-topic, three flags known at once) and avoids a second table for a field that's essentially a bitmask. Drop the unused table in the same migration.
+**Approach: repurpose the existing table.** Adopt `compass_topic_roles` as the canonical home for tier flags, with each topic getting one row per applicable tier. A topic that applies at all three levels gets three rows; a federal-only topic gets one row.
 
 Migration:
 ```sql
-ALTER TABLE inform.compass_topics
-  ADD COLUMN applies_federal BOOLEAN NOT NULL DEFAULT TRUE,
-  ADD COLUMN applies_state BOOLEAN NOT NULL DEFAULT TRUE,
-  ADD COLUMN applies_local BOOLEAN NOT NULL DEFAULT TRUE;
+-- Constrain role_scope to the three tier values
+ALTER TABLE inform.compass_topic_roles
+  ADD CONSTRAINT chk_role_scope_tier
+  CHECK (role_scope IN ('federal', 'state', 'local'));
 
-DROP TABLE IF EXISTS inform.compass_topic_roles;
+-- Prevent duplicate (topic, tier) pairs
+ALTER TABLE inform.compass_topic_roles
+  ADD CONSTRAINT uq_compass_topic_roles_topic_scope
+  UNIQUE (topic_id, role_scope);
 ```
 
-Defaults to all-true so existing topics behave as they do today. Audit pass after migration sets realistic values per topic (see "Audit of existing topics" below).
+**`is_required` is preserved but unused.** The column stays in place to avoid breaking the existing SELECT in `compassService`. It carries no semantic meaning under this design. Backfill scripts do not populate it. A future spec may repurpose it (e.g., "primary tier for this topic") or drop it.
+
+**API shape at the boundary.** Consumers (CompassV2 topic picker, essentials coverage callout) need a clean `{ applies_federal, applies_state, applies_local }` shape per topic, not an array of raw rows. The service layer normalizes the rows into three booleans at the API boundary:
+
+```typescript
+// In compassService.getCompassTopics() response shape, per topic:
+{
+  id, title, short_title, question_text, is_live, version,
+  applies_federal: boolean,   // derived from rows where role_scope='federal'
+  applies_state: boolean,
+  applies_local: boolean,
+  // Existing fields preserved for backward compat:
+  roles: [...],               // raw rows, unchanged
+  stances: [...],
+  categories: [...],
+}
+```
+
+**Default for unpopulated topics.** Any topic with no rows in `compass_topic_roles` is treated as `applies_federal=true, applies_state=true, applies_local=true` (all tiers) at the API layer. This keeps existing topics working identically until the backfill runs, and lets newly-created topics default to "applies everywhere" unless they're explicitly scoped.
+
+The audit pass (see "Audit of existing topics" below) backfills one row per (topic, tier) pair based on the audit table.
+
+### Why this deviates from the originally recommended approach
+
+An earlier draft of this spec recommended dropping `compass_topic_roles` and adding `applies_federal/state/local` bool columns directly to `compass_topics`. That recommendation was made without fully inspecting the service layer and would have broken `getCompassTopics` at runtime. The current approach (repurpose) preserves the existing scaffolding, adds no new tables, and produces the same API shape at the boundary.
 
 ### Topic office scope
 
