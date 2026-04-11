@@ -11,7 +11,7 @@
 
 ## Phases
 
-- [ ] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch
+- [x] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch (completed 2026-04-11)
 - [ ] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally
 - [ ] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4
 - [ ] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters
@@ -31,7 +31,10 @@
   3. Slug derivation is deterministic — the same body resolves to the same kebab-case URL on every call — and the same slug input always returns the same roster.
   4. Vacant seats, inactive politicians, and any party affiliation are absent from the response; unknown slugs return 404 JSON and invalid queries return 400 JSON.
   5. Bloomington Common Council roster responds in under 500ms under typical production load.
-**Plans**: TBD
+**Plans**: 3 plans
+- [x] 107-01-PLAN.md — Migration 059: chambers.slug generated column + join indexes
+- [x] 107-02-PLAN.md — essentialsBodiesService + essentialsBodies route + antipartisan grep
+- [x] 107-03-PLAN.md — Vitest integration suite with DB-optional pattern and <500ms perf assertion
 
 ### Phase 108: CouncilScribe roster client + CLI
 **Goal**: CouncilScribe can fetch and cache any body's roster locally with auto-generated aliases, with graceful offline behavior and staleness warnings.
@@ -84,7 +87,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 107. Essentials body roster endpoint | 0/? | Not started | - |
+| 107. Essentials body roster endpoint | 3/3 | Complete   | 2026-04-11 |
 | 108. CouncilScribe roster client + CLI | 0/? | Not started | - |
 | 109. Per-meeting body tagging | 0/? | Not started | - |
 | 110. Profile schema v3 + re-enrollment | 0/? | Not started | - |
