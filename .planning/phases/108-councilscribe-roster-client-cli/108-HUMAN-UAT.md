@@ -13,8 +13,12 @@ updated: 2026-04-11
 ## Tests
 
 ### 1. Live endpoint smoke test
-expected: `python refresh_roster.py --body bloomington-common-council` writes `~/CouncilScribe/config/rosters/bloomington-common-council.json` containing aliases for Piedmont-Smith and Asare, fetched against production `accounts.empowered.vote`.
-result: blocked — production `/api/essentials/bodies/:slug/roster` returns HTTP 200 `text/html` (admin SPA catch-all). Phase 107's `backend/src/routes/essentialsBodies.ts` is present in the local ev-accounts tree but **untracked in git** (not committed, not deployed). Upstream deployment required before this test can run.
+expected: `python refresh_roster.py --body bloomington-common-council` writes `~/CouncilScribe/config/rosters/bloomington-common-council.json` containing aliases for Piedmont-Smith and Asare, fetched against production.
+result: PASSED (2026-04-11). `EV_ACCOUNTS_URL=https://api.empowered.vote python refresh_roster.py --body bloomington-common-council` returned "Wrote .../bloomington-common-council.json (9 members)". Cache contains all 9 sitting Bloomington Common Council members. Both targets verified:
+  - **Isabel Piedmont-Smith** — aliases include `['Isabel Piedmont-Smith', 'Isabel Piedmont Smith', 'Piedmont-Smith', 'Piedmont Smith', ...]` (D-02 hyphen-space expansion confirmed on live data).
+  - **Isak Asare** — aliases include `['Isak Asare', 'Asare', ...]`.
+  - Cache shape: `body_key='Bloomington Common Council'`, `body_slug='bloomington-common-council'`, ISO `fetched_at`, `politicians[]` with `politician_slug`/`full_name`/`title`/`district_label`/`aliases`. Confirms CSROSTER-01, CSROSTER-02.
+note: endpoint lives at `api.empowered.vote`, not `accounts.empowered.vote` as CLAUDE.md claims — CLAUDE.md hosting note is stale.
 
 ### 2. Offline byte-identity test (airplane mode)
 expected: With an existing cache present, disable network and re-run `refresh_roster.py --body bloomington-common-council` — CLI exits non-zero with clear stderr error AND cache file sha256 is byte-identical before/after.
@@ -27,19 +31,17 @@ result: PASSED (2026-04-11). Backdated cache to `2026-02-01` (69 days), ran `loa
 ## Summary
 
 total: 3
-passed: 1
+passed: 2
 issues: 0
 pending: 1
 skipped: 0
-blocked: 1
+blocked: 0
 
 ## Gaps
 
-### G1 — Phase 107 endpoint not deployed (upstream blocker)
-severity: blocking for Test 1 only (not a Phase 108 defect)
-symptom: `/api/essentials/bodies/bloomington-common-council/roster` on production returns `text/html` (admin SPA) instead of JSON.
-cause: `ev-accounts/backend/src/routes/essentialsBodies.ts` and related service file are untracked in the ev-accounts git repo. Phase 107's backend work was not committed or deployed.
-fix location: ev-accounts repo, not CouncilScribe. Commit Phase 107 changes and redeploy accounts.empowered.vote, then re-run Test 1.
+### G1 — Phase 107 deployment (RESOLVED 2026-04-11)
+severity: resolved
+resolution: Phase 107 ev-accounts backend (migration 060 + essentialsBodies route/service/test + index.ts wiring) committed as `a162c5e` on ev-accounts `master`, rebased on 10 upstream commits, pushed to origin, auto-deployed by Render. Migration 060 applied to prod Supabase (`kxsdzaojfaibhuzmclfq`) via MCP — verified `essentials.chambers.slug` populated with `bloomington-common-council`. Test 1 re-run successfully against `api.empowered.vote`.
 
 ### G2 — Minor client robustness (non-blocking, outside Phase 108 must_haves)
 severity: advisory
