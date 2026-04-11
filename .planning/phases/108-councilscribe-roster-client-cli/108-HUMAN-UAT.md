@@ -43,8 +43,6 @@ blocked: 0
 severity: resolved
 resolution: Phase 107 ev-accounts backend (migration 060 + essentialsBodies route/service/test + index.ts wiring) committed as `a162c5e` on ev-accounts `master`, rebased on 10 upstream commits, pushed to origin, auto-deployed by Render. Migration 060 applied to prod Supabase (`kxsdzaojfaibhuzmclfq`) via MCP — verified `essentials.chambers.slug` populated with `bloomington-common-council`. Test 1 re-run successfully against `api.empowered.vote`.
 
-### G2 — Minor client robustness (non-blocking, outside Phase 108 must_haves)
-severity: advisory
-symptom: When the endpoint returns HTTP 200 with non-JSON (e.g., HTML from a catch-all), `fetch_body_roster` lets `requests.exceptions.JSONDecodeError` escape instead of wrapping it in `EssentialsClientError`.
-scope: Not in Phase 108's acceptance truths (the offline/error spec targets network-layer failures). File as a follow-up hardening task if desired.
-fix location: `CouncilScribe/src/essentials_client.py::fetch_body_roster` — catch `RequestsJSONDecodeError` (and/or validate `Content-Type`) and raise `EssentialsClientError`.
+### G2 — Minor client robustness (RESOLVED 2026-04-11 in Phase 108.1)
+severity: resolved
+resolution: Phase 108.1 shipped `2a60f2b` in CouncilScribe repo. `fetch_body_roster` now wraps `resp.json()` in `try/except ValueError as exc` (catches `JSONDecodeError` via inheritance, matching existing 404/422 pattern) and raises `EssentialsClientError(f"Non-JSON response from {url}: {resp.text[:200]}", status=resp.status_code) from exc`. New regression test `test_fetch_body_roster_non_json_200_wrapped` pins the behavior. Full suite: 49/49 green. Phase 108.1 verification: 5/5 must-haves passed.
