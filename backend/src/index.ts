@@ -28,6 +28,7 @@ import essentialsEditorRouter from './routes/essentialsEditor.js';
 import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
+import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
@@ -107,6 +108,7 @@ app.use('/api/candidates', candidatesRouter);
 // GET /api/essentials/districts/:id
 // NOTE: /candidates, /politicians, /browse mounts must come BEFORE /essentials to prevent path capture
 app.use('/api/essentials/browse', essentialsBrowseRouter);
+app.use('/api/essentials/bodies', essentialsBodiesRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 // Dual-router pattern: PATCH (essentialsEditorRouter) before GET (essentialsPoliticiansRouter)
 app.use('/api/essentials/politicians', essentialsEditorRouter);
