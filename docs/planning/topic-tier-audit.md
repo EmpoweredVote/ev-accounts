@@ -48,7 +48,7 @@ Chris reviews this document and approves before the backfill script runs. Do not
 ## Summary
 
 - 26 topics
-- 19 apply at all three tiers
+- 18 apply at all three tiers
 - 3 apply at federal + state (abortion, ai-regulation, redistricting)
 - 1 applies at state + local only (jail-capacity)
 - 4 federal-only (tariffs, ukraine-support, medicare/aid, social-security)
