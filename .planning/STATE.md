@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v2026.4.2
 milestone_name: CouncilScribe Speaker Identification via Essentials
-status: Defining requirements
-stopped_at: Milestone v2026.4.2 started
+status: Roadmap complete — ready to plan Phase 107
+stopped_at: Roadmap written for v2026.4.2
 last_updated: "2026-04-10T00:00:00Z"
 last_activity: 2026-04-10
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -25,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-04-10)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 107 — Essentials body roster endpoint (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-04-10 — Milestone v2026.4.2 started
+Status: Roadmap complete, ready to plan Phase 107
+Last activity: 2026-04-10 — Roadmap written for v2026.4.2 (5 phases, 22/22 requirements mapped)
 
 Progress: [          ] 0%
 
@@ -45,7 +45,10 @@ Progress: [          ] 0%
 
 ### Decisions
 
-(Cleared — see .planning/milestones/v2026.4.1-ROADMAP.md for milestone decisions)
+- Reuse existing `essentials.chambers.name_formal` + `government_bodies.body_key` as the canonical body identifier; no new `essentials.bodies` table or `chambers.slug` column. Slug is computed from `name_formal` in the API layer.
+- CouncilScribe talks to essentials via the public `/api/essentials/bodies` endpoint, not direct Supabase SQL — cleaner separation and Colab compatibility.
+- Profile schema bump v2→v3 uses the same auto-discard-on-mismatch pattern as v1→v2 (no migration script).
+- Roster-keyed (`essentials:<politician_slug>`) and local-keyed profiles coexist in the same DB so public commenters are preserved.
 
 ### Pending Todos
 
@@ -71,6 +74,6 @@ Progress: [          ] 0%
 
 ## Session Continuity
 
-Last activity: 2026-04-05 - Completed quick task 260405-ez5: Fix politician card height inconsistency
-Stopped at: Completed quick task 260405-ez5
-Resume file: None
+Last activity: 2026-04-10 — Wrote ROADMAP.md for milestone v2026.4.2 (5 phases, 22/22 requirements mapped)
+Stopped at: Roadmap complete, ready to plan Phase 107
+Resume file: .planning/ROADMAP.md

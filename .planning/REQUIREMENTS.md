@@ -87,4 +87,29 @@ This milestone is done when **all of the following are true**, verified end-to-e
 
 ## Traceability
 
-*(Filled in by roadmap phase — maps each REQ-ID to exactly one phase.)*
+Maps each REQ-ID to exactly one phase. All 22 requirements covered.
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| ESSBODY-01 | Phase 107 | Pending |
+| ESSBODY-02 | Phase 107 | Pending |
+| ESSBODY-03 | Phase 107 | Pending |
+| ESSBODY-04 | Phase 107 | Pending |
+| ESSBODY-05 | Phase 107 | Pending |
+| CSROSTER-01 | Phase 108 | Pending |
+| CSROSTER-02 | Phase 108 | Pending |
+| CSROSTER-03 | Phase 108 | Pending |
+| CSROSTER-04 | Phase 108 | Pending |
+| CSROSTER-05 | Phase 108 | Pending |
+| CSMEETING-01 | Phase 109 | Pending |
+| CSMEETING-02 | Phase 109 | Pending |
+| CSMEETING-03 | Phase 109 | Pending |
+| CSPROFILE-01 | Phase 110 | Pending |
+| CSPROFILE-02 | Phase 110 | Pending |
+| CSPROFILE-03 | Phase 110 | Pending |
+| CSPROFILE-04 | Phase 110 | Pending |
+| CSPROFILE-05 | Phase 110 | Pending |
+| CSIDENT-01 | Phase 111 | Pending |
+| CSIDENT-02 | Phase 111 | Pending |
+| CSIDENT-03 | Phase 111 | Pending |
+| CSIDENT-04 | Phase 111 | Pending |
