@@ -100,6 +100,8 @@ export interface PoliticianFlatRecord {
   government_name: string;
   government_body_name: string;
   government_body_url: string;
+  chamber_url: string;
+  government_type: string;
   is_elected: boolean;
   is_appointed: boolean;
   faces_retention_vote: boolean;
@@ -418,8 +420,10 @@ export async function getPoliticiansFlatList(
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -475,6 +479,8 @@ export async function getPoliticiansFlatList(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
@@ -545,8 +551,10 @@ export async function getRepresentativesByAddress(
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
@@ -602,8 +610,10 @@ export async function getRepresentativesByAddress(
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
@@ -663,6 +673,8 @@ export async function getRepresentativesByAddress(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
@@ -797,6 +809,8 @@ export interface PoliticianDetail {
   // Government details
   government_id: string | null;
   government_name: string;
+  chamber_url: string;
+  government_type: string;
   // Nested arrays
   committees: Array<{ name: string; position: string; urls: string[] }>;
   contacts: PoliticianContact[];
@@ -883,8 +897,10 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
            g.name AS government_name, g.id AS government_id,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -1063,6 +1079,8 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     election_frequency: row.election_frequency ?? '',
     government_id: row.government_id ?? null,
     government_name: row.government_name ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     committees,
     contacts,
     images,
@@ -1404,8 +1422,10 @@ export async function getRepresentativesByJurisdiction(
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
     g.name AS government_name,
+    g.type AS government_type,
     COALESCE(gvb.display_name, '') AS government_body_name,
     COALESCE(gvb.website_url, '') AS government_body_url,
+    COALESCE(ch.website_url, '') AS chamber_url,
     upcoming.next_primary_date, upcoming.next_general_date
   `;
 
@@ -1499,6 +1519,8 @@ export async function getRepresentativesByJurisdiction(
     government_name: (row.government_name as string) ?? '',
     government_body_name: (row.government_body_name as string) ?? '',
     government_body_url: (row.government_body_url as string) ?? '',
+    chamber_url: (row.chamber_url as string) ?? '',
+    government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
@@ -1566,8 +1588,10 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
     g.name AS government_name,
+    g.type AS government_type,
     COALESCE(gvb.display_name, '') AS government_body_name,
     COALESCE(gvb.website_url, '') AS government_body_url,
+    COALESCE(ch.website_url, '') AS chamber_url,
     upcoming.next_primary_date, upcoming.next_general_date
   `;
 
@@ -1623,6 +1647,8 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     government_name: (row.government_name as string) ?? '',
     government_body_name: (row.government_body_name as string) ?? '',
     government_body_url: (row.government_body_url as string) ?? '',
+    chamber_url: (row.chamber_url as string) ?? '',
+    government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
