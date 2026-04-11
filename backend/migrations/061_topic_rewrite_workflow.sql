@@ -280,4 +280,147 @@ BEGIN
 END;
 $$;
 
+-- ---------------------------------------------------------------------------
+-- Section 7: admin_upsert_stance_proposal
+-- ---------------------------------------------------------------------------
+-- Writes proposed_value / proposed_reasoning / proposed_sources. Does NOT
+-- change status — that requires explicit approve. Only valid while 'pending'.
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_upsert_stance_proposal(
+  p_rewrite_id   UUID,
+  p_politician_id UUID,
+  p_proposed_value NUMERIC,
+  p_proposed_reasoning TEXT,
+  p_proposed_sources TEXT[]
+)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE inform.topic_rewrite_stance_proposals
+  SET proposed_value     = p_proposed_value,
+      proposed_reasoning = p_proposed_reasoning,
+      proposed_sources   = COALESCE(p_proposed_sources, '{}'),
+      updated_at         = now()
+  WHERE rewrite_id = p_rewrite_id
+    AND politician_id = p_politician_id
+    AND status = 'pending';
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'NOT_FOUND_OR_LOCKED: proposal (%, %) is missing or already decided',
+      p_rewrite_id, p_politician_id;
+  END IF;
+END;
+$$;
+
+-- ---------------------------------------------------------------------------
+-- Section 8: admin_approve_stance_proposal / admin_reject_stance_proposal
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_approve_stance_proposal(
+  p_rewrite_id    UUID,
+  p_politician_id UUID,
+  p_actor_id      UUID,
+  p_reviewer_notes TEXT DEFAULT NULL
+)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE inform.topic_rewrite_stance_proposals
+  SET status         = 'approved',
+      reviewed_by    = p_actor_id,
+      reviewed_at    = now(),
+      reviewer_notes = p_reviewer_notes,
+      updated_at     = now()
+  WHERE rewrite_id = p_rewrite_id
+    AND politician_id = p_politician_id
+    AND status = 'pending'
+    AND proposed_value IS NOT NULL;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'INVALID: proposal (%, %) missing, already decided, or has no proposed_value',
+      p_rewrite_id, p_politician_id;
+  END IF;
+END;
+$$;
+
+CREATE OR REPLACE FUNCTION inform.admin_reject_stance_proposal(
+  p_rewrite_id    UUID,
+  p_politician_id UUID,
+  p_actor_id      UUID,
+  p_reviewer_notes TEXT DEFAULT NULL
+)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE inform.topic_rewrite_stance_proposals
+  SET status         = 'rejected',
+      reviewed_by    = p_actor_id,
+      reviewed_at    = now(),
+      reviewer_notes = p_reviewer_notes,
+      updated_at     = now()
+  WHERE rewrite_id = p_rewrite_id
+    AND politician_id = p_politician_id
+    AND status = 'pending';
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'INVALID: proposal (%, %) missing or already decided',
+      p_rewrite_id, p_politician_id;
+  END IF;
+END;
+$$;
+
+-- ---------------------------------------------------------------------------
+-- Section 9: admin_mark_rewrite_publish_ready
+-- ---------------------------------------------------------------------------
+-- State transition: re_evaluation_queue -> publish_ready.
+-- Only allowed when every proposal has status IN ('approved','rejected').
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_mark_rewrite_publish_ready(
+  p_rewrite_id UUID
+)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_pending_count INT;
+  v_state         inform.topic_rewrite_state;
+BEGIN
+  SELECT state INTO v_state FROM inform.topic_rewrites WHERE id = p_rewrite_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'NOT_FOUND: rewrite % does not exist', p_rewrite_id;
+  END IF;
+
+  IF v_state <> 're_evaluation_queue' THEN
+    RAISE EXCEPTION 'INVALID_TRANSITION: rewrite % must be in re_evaluation_queue (is %)',
+      p_rewrite_id, v_state;
+  END IF;
+
+  SELECT count(*) INTO v_pending_count
+  FROM inform.topic_rewrite_stance_proposals
+  WHERE rewrite_id = p_rewrite_id AND status = 'pending';
+
+  IF v_pending_count > 0 THEN
+    RAISE EXCEPTION 'PROPOSALS_PENDING: % proposals still need review', v_pending_count;
+  END IF;
+
+  UPDATE inform.topic_rewrites
+  SET state = 'publish_ready'
+  WHERE id = p_rewrite_id;
+END;
+$$;
+
 COMMIT;
