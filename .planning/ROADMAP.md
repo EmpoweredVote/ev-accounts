@@ -12,7 +12,7 @@
 ## Phases
 
 - [x] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch (completed 2026-04-11)
-- [ ] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally
+- [x] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally (completed 2026-04-11)
 - [ ] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4
 - [ ] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters
 - [ ] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end
@@ -47,7 +47,7 @@
   4. `roster.load_roster()` returns a per-body roster when a slug is provided, and falls back to the legacy `council_roster.json` when no slug is set (existing meetings keep working).
   5. Reusing a cached roster older than 30 days emits a non-blocking staleness warning on stdout/log.
 **Plans**: 1 plan
-- [ ] 108-01-PLAN.md — Roster HTTP client, alias generator, refresh_roster CLI, load_roster slug path + staleness
+- [x] 108-01-PLAN.md — Roster HTTP client, alias generator, refresh_roster CLI, load_roster slug path + staleness
 
 ### Phase 109: Per-meeting body tagging
 **Goal**: Every meeting run declares which governing body it belongs to, and that slug flows through the pipeline so identification consumes the right roster.
@@ -89,7 +89,7 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 107. Essentials body roster endpoint | 3/3 | Complete   | 2026-04-11 |
-| 108. CouncilScribe roster client + CLI | 0/? | Not started | - |
+| 108. CouncilScribe roster client + CLI | 1/1 | Complete    | 2026-04-11 |
 | 109. Per-meeting body tagging | 0/? | Not started | - |
 | 110. Profile schema v3 + re-enrollment | 0/? | Not started | - |
 | 111. Live roster drives identification | 0/? | Not started | - |
