@@ -1,36 +1,36 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: Milestone v2026.4.1 shipped
-stopped_at: Completed quick task 260405-ez5
-last_updated: "2026-04-05T00:00:00Z"
-last_activity: 2026-04-05
+milestone: v2026.4.2
+milestone_name: CouncilScribe Speaker Identification via Essentials
+status: Defining requirements
+stopped_at: Milestone v2026.4.2 started
+last_updated: "2026-04-10T00:00:00Z"
+last_activity: 2026-04-10
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 11
-  completed_plans: 11
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-04)
+See: .planning/PROJECT.md (updated 2026-04-10)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** Milestone v2026.4.2 — CouncilScribe speaker identification via essentials integration
 
 ## Current Position
 
-Phase: —
+Phase: Not started (defining requirements)
 Plan: —
-Status: Milestone v2026.4.1 shipped
-Last activity: 2026-04-05 - Completed quick task 260404-w7r: Move icon overlay from bottom-right to left-aligned below text on politician cards
+Status: Defining requirements
+Last activity: 2026-04-10 — Milestone v2026.4.2 started
 
-Progress: [██████████] 100%
+Progress: [          ] 0%
 
 ## Performance Metrics
 

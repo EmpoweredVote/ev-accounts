@@ -194,6 +194,23 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
 - ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
 
+## Current Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials
+
+**Goal:** Make CouncilScribe voice profiles first-class references to Empowered Vote politicians so same-person auto-match works reliably across meetings and rosters stay in sync with the essentials source of truth.
+
+**Target features:**
+- New `/api/essentials/bodies` endpoints in ev-accounts (list bodies, fetch roster by body slug) — public, no auth
+- CouncilScribe essentials HTTP client + `refresh_roster.py` CLI (per-body cached roster JSON)
+- Per-meeting `body_slug` tagging so Stage 4 identify uses the correct governing body's roster
+- Voice profile schema v3 — profiles keyed by essentials `politician_slug`, portable across chambers
+- Profile migration path — resolve existing v2 profile names against fetched rosters, promote matches
+- Pattern matcher + LLM prompt driven by live roster instead of hand-edited JSON
+
+**Foundation (already landed in this session, pre-milestone):**
+- CouncilScribe embedding model swapped from `pyannote/embedding` (512-dim) to `pyannote/wespeaker-voxceleb-resnet34-LM` (256-dim); cross-meeting separation improved from +0.746 to +0.795, same-pair ≥0.85 match rate improved from 7/11 → 10/11.
+- Profile DB schema v1 → v2 with auto-discard on mismatch. 26 profiles re-enrolled from 2026-02-04 and 2026-02-18 meetings via new `reenroll_profiles.py`.
+- Transcription (WhisperX) experiment reverted after A/B — net wash on quality, marginal losses in overlap-heavy regions. Faster-whisper per-slice kept as status quo.
+
 ### Active
 
 ### Future
@@ -276,4 +293,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after v2026.4.1 milestone*
+*Last updated: 2026-04-10 — milestone v2026.4.2 started*
