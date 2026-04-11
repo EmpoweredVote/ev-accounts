@@ -114,4 +114,170 @@ CREATE TABLE IF NOT EXISTS inform.topic_rewrite_stance_proposals (
 CREATE INDEX IF NOT EXISTS idx_stance_proposals_status
   ON inform.topic_rewrite_stance_proposals (rewrite_id, status);
 
+-- ---------------------------------------------------------------------------
+-- Section 4: admin_create_topic_rewrite
+-- ---------------------------------------------------------------------------
+-- Takes a topic_key plus the proposed new framing. Creates a new row in
+-- compass_topics with version = old_version + 1, is_live = false, and an
+-- accompanying topic_rewrites row in state 'draft'. Also copies the stance
+-- scale into compass_stances so the new version is independently editable.
+-- Returns the new rewrite_id.
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_create_topic_rewrite(
+  p_topic_key      TEXT,
+  p_actor_id       UUID,
+  p_new_title      TEXT,
+  p_new_short_title TEXT,
+  p_new_question_text TEXT,
+  p_new_stances    JSONB,  -- array of {value: int, text: text}
+  p_notes          TEXT DEFAULT NULL
+)
+RETURNS UUID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_old_topic    inform.compass_topics%ROWTYPE;
+  v_new_topic_id UUID;
+  v_rewrite_id   UUID;
+  v_stance       JSONB;
+BEGIN
+  -- Find the current live version
+  SELECT * INTO v_old_topic
+  FROM inform.compass_topics
+  WHERE topic_key = p_topic_key AND is_live = true;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'NO_LIVE_TOPIC: topic_key % has no live version', p_topic_key;
+  END IF;
+
+  -- Guard: disallow if there is already an open rewrite for this topic_key
+  IF EXISTS (
+    SELECT 1 FROM inform.topic_rewrites
+    WHERE topic_key = p_topic_key
+      AND state NOT IN ('published', 'cancelled')
+  ) THEN
+    RAISE EXCEPTION 'OPEN_REWRITE_EXISTS: an open rewrite already exists for %', p_topic_key;
+  END IF;
+
+  -- Insert the new topic version (is_live=false, version bumped)
+  INSERT INTO inform.compass_topics (
+    topic_key, title, short_title, question_text,
+    is_live, version, went_live_at
+  ) VALUES (
+    p_topic_key, p_new_title, p_new_short_title, p_new_question_text,
+    false, v_old_topic.version + 1, NULL
+  )
+  RETURNING id INTO v_new_topic_id;
+
+  -- Copy the proposed stance scale into compass_stances for the new topic id
+  FOR v_stance IN SELECT * FROM jsonb_array_elements(p_new_stances)
+  LOOP
+    INSERT INTO inform.compass_stances (topic_id, value, text)
+    VALUES (
+      v_new_topic_id,
+      (v_stance->>'value')::int,
+      v_stance->>'text'
+    );
+  END LOOP;
+
+  -- Create the rewrite row in 'draft' state
+  INSERT INTO inform.topic_rewrites (
+    topic_key, old_topic_id, new_topic_id, state, created_by, notes
+  ) VALUES (
+    p_topic_key, v_old_topic.id, v_new_topic_id, 'draft', p_actor_id, p_notes
+  )
+  RETURNING id INTO v_rewrite_id;
+
+  RETURN v_rewrite_id;
+END;
+$$;
+
+-- ---------------------------------------------------------------------------
+-- Section 5: admin_submit_rewrite_for_framing_review
+-- ---------------------------------------------------------------------------
+-- State transition: draft → pending_framing_review.
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_submit_rewrite_for_framing_review(
+  p_rewrite_id UUID
+)
+RETURNS VOID
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+BEGIN
+  UPDATE inform.topic_rewrites
+  SET state = 'pending_framing_review'
+  WHERE id = p_rewrite_id AND state = 'draft';
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'INVALID_TRANSITION: rewrite % is not in draft state', p_rewrite_id;
+  END IF;
+END;
+$$;
+
+-- ---------------------------------------------------------------------------
+-- Section 6: admin_approve_rewrite_framing
+-- ---------------------------------------------------------------------------
+-- State transition: pending_framing_review → re_evaluation_queue.
+-- Seeds topic_rewrite_stance_proposals with one row per politician that has
+-- an existing politician_answers row on the OLD topic. Copies old
+-- value/reasoning/sources and leaves proposed_* NULL.
+-- ---------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION inform.admin_approve_rewrite_framing(
+  p_rewrite_id UUID,
+  p_actor_id   UUID
+)
+RETURNS INT  -- number of stance proposals seeded
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = ''
+AS $$
+DECLARE
+  v_rewrite       inform.topic_rewrites%ROWTYPE;
+  v_seeded_count  INT;
+BEGIN
+  SELECT * INTO v_rewrite FROM inform.topic_rewrites WHERE id = p_rewrite_id;
+
+  IF NOT FOUND THEN
+    RAISE EXCEPTION 'NOT_FOUND: rewrite % does not exist', p_rewrite_id;
+  END IF;
+
+  IF v_rewrite.state <> 'pending_framing_review' THEN
+    RAISE EXCEPTION 'INVALID_TRANSITION: rewrite % must be in pending_framing_review (is %)',
+      p_rewrite_id, v_rewrite.state;
+  END IF;
+
+  INSERT INTO inform.topic_rewrite_stance_proposals (
+    rewrite_id, politician_id, old_value, old_reasoning, old_sources
+  )
+  SELECT
+    p_rewrite_id,
+    pa.politician_id,
+    pa.value,
+    COALESCE(pc.reasoning, ''),
+    COALESCE(pc.sources, '{}')
+  FROM inform.politician_answers pa
+  LEFT JOIN inform.politician_context pc
+    ON pc.politician_id = pa.politician_id
+   AND pc.topic_id = pa.topic_id
+  WHERE pa.topic_id = v_rewrite.old_topic_id;
+
+  GET DIAGNOSTICS v_seeded_count = ROW_COUNT;
+
+  UPDATE inform.topic_rewrites
+  SET state = 're_evaluation_queue',
+      framing_approved_by = p_actor_id,
+      framing_approved_at = now()
+  WHERE id = p_rewrite_id;
+
+  RETURN v_seeded_count;
+END;
+$$;
+
 COMMIT;
