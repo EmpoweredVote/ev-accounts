@@ -49,6 +49,16 @@
 **Plans**: 1 plan
 - [x] 108-01-PLAN.md — Roster HTTP client, alias generator, refresh_roster CLI, load_roster slug path + staleness
 
+### Phase 108.1: Essentials client — wrap non-JSON 200 responses
+**Goal**: `fetch_body_roster` returns a clean `EssentialsClientError` (instead of raw `JSONDecodeError`) when the server returns HTTP 200 with non-JSON content, so CLI and callers get a consistent error envelope.
+**Depends on**: Phase 108
+**Requirements**: CSROSTER-03 (hardening)
+**Success Criteria** (what must be TRUE):
+  1. When the upstream endpoint returns HTTP 200 with `Content-Type: text/html` (or any non-JSON), `refresh_roster.py` exits non-zero with a clear `Essentials client error: ...` message on stderr, and an existing cache file is byte-identical before and after.
+  2. `fetch_body_roster` never lets a raw `requests.exceptions.JSONDecodeError` escape — all parse failures are wrapped in `EssentialsClientError`.
+  3. A unit test patches `requests.get` to return HTTP 200 `text/html` and asserts `EssentialsClientError` is raised with a message containing the body's first 200 chars for debuggability.
+**Plans**: 0 plans (run `/gsd-plan-phase 108.1` to create)
+
 ### Phase 109: Per-meeting body tagging
 **Goal**: Every meeting run declares which governing body it belongs to, and that slug flows through the pipeline so identification consumes the right roster.
 **Depends on**: Phase 108
