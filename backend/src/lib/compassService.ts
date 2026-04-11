@@ -108,7 +108,7 @@ export async function getCompassTopics() {
   const { data: topics, error: topicsError } = await supabaseAnon
     .schema('inform')
     .from('compass_topics')
-    .select('id,title,short_title,question_text,is_live,version')
+    .select('id,title,short_title,question_text,is_live,version,office_scope')
     .eq('is_live', true)
     .order('created_at', { ascending: true });
 
@@ -140,22 +140,40 @@ export async function getCompassTopics() {
   if (catsRes.error) throw catsRes.error;
   if (rolesRes.error) throw rolesRes.error;
 
-  return topics.map(topic => ({
-    ...topic,
-    stances: (stancesRes.data ?? [])
-      .filter(s => s.topic_id === topic.id)
-      .map(({ topic_id: _tid, ...s }) => s),
-    categories: (catsRes.data ?? [])
-      .filter(c => c.topic_id === topic.id)
-      .map(c => {
-        const cat = c.compass_categories as { id: string; title: string } | null;
-        return cat ? { category_id: cat.id, title: cat.title } : null;
-      })
-      .filter(Boolean),
-    roles: (rolesRes.data ?? [])
-      .filter(r => r.topic_id === topic.id)
-      .map(({ topic_id: _tid, ...r }) => r),
-  }));
+  return topics.map(topic => {
+    const topicRoles = (rolesRes.data ?? []).filter(r => r.topic_id === topic.id);
+
+    // Normalize tier rows into three booleans at the API boundary.
+    // A topic with no rows defaults to all three tiers = true (cross-cutting).
+    const hasAnyRoleRows = topicRoles.length > 0;
+    const applies_federal = hasAnyRoleRows
+      ? topicRoles.some(r => r.role_scope === 'federal')
+      : true;
+    const applies_state = hasAnyRoleRows
+      ? topicRoles.some(r => r.role_scope === 'state')
+      : true;
+    const applies_local = hasAnyRoleRows
+      ? topicRoles.some(r => r.role_scope === 'local')
+      : true;
+
+    return {
+      ...topic,
+      applies_federal,
+      applies_state,
+      applies_local,
+      stances: (stancesRes.data ?? [])
+        .filter(s => s.topic_id === topic.id)
+        .map(({ topic_id: _tid, ...s }) => s),
+      categories: (catsRes.data ?? [])
+        .filter(c => c.topic_id === topic.id)
+        .map(c => {
+          const cat = c.compass_categories as { id: string; title: string } | null;
+          return cat ? { category_id: cat.id, title: cat.title } : null;
+        })
+        .filter(Boolean),
+      roles: topicRoles.map(({ topic_id: _tid, ...r }) => r),
+    };
+  });
 }
 
 /**

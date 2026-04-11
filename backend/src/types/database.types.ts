@@ -946,6 +946,7 @@ export type Database = {
           id: string
           is_active: boolean | null
           is_live: boolean
+          office_scope: string | null
           question_text: string
           short_title: string | null
           title: string
@@ -958,6 +959,7 @@ export type Database = {
           id?: string
           is_active?: boolean | null
           is_live?: boolean
+          office_scope?: string | null
           question_text: string
           short_title?: string | null
           title: string
@@ -970,6 +972,7 @@ export type Database = {
           id?: string
           is_active?: boolean | null
           is_live?: boolean
+          office_scope?: string | null
           question_text?: string
           short_title?: string | null
           title?: string
