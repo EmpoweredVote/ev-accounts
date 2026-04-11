@@ -178,10 +178,13 @@ export async function getCompassTopics() {
 
 /**
  * getCompassCategories
- * Returns all categories with nested live topics.
+ * Returns all categories with nested live topics. Each nested topic carries
+ * the same tier flag fields (applies_federal/state/local + office_scope) as
+ * getCompassTopics, so consumers can render tier badges without needing a
+ * second flat-topics lookup.
  */
 export async function getCompassCategories() {
-  const [catRes, topicCatRes] = await Promise.all([
+  const [catRes, topicCatRes, rolesRes] = await Promise.all([
     supabaseAnon
       .schema('inform')
       .from('compass_categories')
@@ -190,21 +193,62 @@ export async function getCompassCategories() {
     supabaseAnon
       .schema('inform')
       .from('compass_topic_categories')
-      .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live)')
+      .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live,office_scope)')
       .eq('compass_topics.is_live', true),
+    supabaseAnon
+      .schema('inform')
+      .from('compass_topic_roles')
+      .select('topic_id,role_scope'),
   ]);
 
   if (catRes.error) throw catRes.error;
   if (topicCatRes.error) throw topicCatRes.error;
+  if (rolesRes.error) throw rolesRes.error;
+
+  // Build a per-topic tier map so we can attach booleans without an extra join.
+  // A topic with no rows defaults to all three tiers = true (cross-cutting),
+  // matching the fallback behavior in getCompassTopics.
+  const rolesByTopicId = new Map<string, Set<string>>();
+  for (const r of rolesRes.data ?? []) {
+    const set = rolesByTopicId.get(r.topic_id) ?? new Set<string>();
+    set.add(r.role_scope);
+    rolesByTopicId.set(r.topic_id, set);
+  }
+
+  const tierFlagsFor = (topicId: string) => {
+    const scopes = rolesByTopicId.get(topicId);
+    if (!scopes || scopes.size === 0) {
+      return { applies_federal: true, applies_state: true, applies_local: true };
+    }
+    return {
+      applies_federal: scopes.has('federal'),
+      applies_state:   scopes.has('state'),
+      applies_local:   scopes.has('local'),
+    };
+  };
 
   return (catRes.data ?? []).map(cat => ({
     ...cat,
     topics: (topicCatRes.data ?? [])
       .filter(tc => tc.category_id === cat.id)
       .map(tc => {
-        const t = tc.compass_topics as { id: string; title: string; short_title: string | null; question_text: string; is_live: boolean } | null;
+        const t = tc.compass_topics as {
+          id: string;
+          title: string;
+          short_title: string | null;
+          question_text: string;
+          is_live: boolean;
+          office_scope: string[] | null;
+        } | null;
         if (!t) return null;
-        return { id: t.id, title: t.title, short_title: t.short_title, question_text: t.question_text };
+        return {
+          id: t.id,
+          title: t.title,
+          short_title: t.short_title,
+          question_text: t.question_text,
+          office_scope: t.office_scope,
+          ...tierFlagsFor(t.id),
+        };
       })
       .filter(Boolean)
       .sort((a, b) => (a as { title: string }).title.localeCompare((b as { title: string }).title)),
