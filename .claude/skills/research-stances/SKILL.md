@@ -237,3 +237,243 @@ After DB push:
 - If the CSV file can't be written, fall back to showing results in conversation and offer to retry the file write
 - If DB push fails for a specific row, report the error, skip that row, and continue with the rest
 - Never lose data — the CSV is the source of truth; DB push is additive
+
+---
+
+# REWRITE RE-EVALUATION MODE (`--rewrite-id`)
+
+When `$ARGUMENTS` includes `--rewrite-id <uuid>`, the skill runs in a
+different mode that feeds the Plan D topic rewrite workflow
+(`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`)
+instead of pushing directly to live data.
+
+In this mode, the skill:
+
+1. Skips the normal politician-name input — the politician list
+   comes from `topic_rewrite_stance_proposals` rows already seeded
+   for the rewrite.
+2. Fetches BOTH the old and new topic framing and passes them to
+   the agent so each politician gets re-scored under the new scale.
+3. Pushes proposed values to `admin_upsert_stance_proposal` instead
+   of direct inserts on `politician_context`.
+4. Auto-approves each proposal via `admin_approve_stance_proposal`
+   (the workflow's human gate is intentionally bypassed by
+   auto-approval — the audit trail in `topic_rewrites` provides
+   rollback safety).
+5. Skips the STEP 3 approval summary prompt (nothing to approve —
+   everything auto-approves).
+
+## STEP 0 (rewrite mode) — Parse and fetch rewrite detail
+
+Parse `$ARGUMENTS` for `--rewrite-id <uuid>`. If present, switch to
+rewrite mode and IGNORE the politician-name and `--topics` args.
+
+Fetch the rewrite detail including old and new framing, plus the
+pending proposals queue:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const rewriteId = process.argv[2];
+const { rows: detail } = await pool.query(\`
+  SELECT r.*,
+         ot.title AS old_title, ot.question_text AS old_question_text, ot.version AS old_version,
+         nt.title AS new_title, nt.question_text AS new_question_text, nt.version AS new_version
+  FROM inform.topic_rewrites r
+  JOIN inform.compass_topics ot ON ot.id = r.old_topic_id
+  JOIN inform.compass_topics nt ON nt.id = r.new_topic_id
+  WHERE r.id = \$1
+\`, [rewriteId]);
+const { rows: oldStances } = await pool.query(
+  'SELECT value, text FROM inform.compass_stances WHERE topic_id=\$1 ORDER BY value',
+  [detail[0].old_topic_id]
+);
+const { rows: newStances } = await pool.query(
+  'SELECT value, text FROM inform.compass_stances WHERE topic_id=\$1 ORDER BY value',
+  [detail[0].new_topic_id]
+);
+const { rows: proposals } = await pool.query(\`
+  SELECT p.politician_id, p.old_value, p.old_reasoning, p.old_sources, p.status,
+         pol.full_name, o.title AS office_title, c.name AS chamber_name
+  FROM inform.topic_rewrite_stance_proposals p
+  JOIN essentials.politicians pol ON pol.id = p.politician_id
+  LEFT JOIN essentials.offices o ON o.politician_id = pol.id AND o.is_current = true
+  LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
+  WHERE p.rewrite_id = \$1 AND p.status = 'pending'
+  ORDER BY pol.full_name
+\`, [rewriteId]);
+console.log(JSON.stringify({ rewrite: detail[0], oldStances, newStances, proposals }, null, 2));
+await pool.end();
+" -- "REWRITE_ID_HERE"
+```
+
+Confirm with the user before dispatching agents:
+- Topic being rewritten (`topic_key` and old→new version)
+- New framing (title, question_text, 5 stance texts)
+- Old framing for context
+- Count of politicians to re-evaluate (= count of pending proposals)
+- Estimated scope ("~30 politicians × 1 topic = 30 re-evaluations")
+
+## STEP 1 (rewrite mode) — Dispatch re-evaluation agents
+
+For each politician with a pending proposal (batch size 3–5 per
+agent to keep context manageable), dispatch a
+`politician-stance-researcher` agent.
+
+**Dispatch prompt template for re-evaluation:**
+
+```
+You are running in REWRITE RE-EVALUATION MODE.
+
+A compass topic has been rewritten with new framing. You need to
+re-score each listed politician's stance under the new scale. Their
+old stance under the old scale is provided as context — use it to
+understand their position, then map that position onto the new scale.
+
+## Topic key
+[TOPIC_KEY, e.g. ai-regulation]
+
+## OLD framing (what the politician was originally scored against)
+Question: [old_question_text]
+Stance scale:
+  1 = [old_stance_1]
+  2 = [old_stance_2]
+  3 = [old_stance_3]
+  4 = [old_stance_4]
+  5 = [old_stance_5]
+
+## NEW framing (what you're scoring against now)
+Question: [new_question_text]
+Stance scale:
+  1 = [new_stance_1]
+  2 = [new_stance_2]
+  3 = [new_stance_3]
+  4 = [new_stance_4]
+  5 = [new_stance_5]
+
+## Politicians to re-evaluate
+
+For each politician below, you have their prior stance, prior
+reasoning, and prior sources. Your task is to produce a NEW value,
+NEW reasoning, and NEW sources under the new scale.
+
+[For each politician in the batch, include:]
+### [full_name] ([office_title], [chamber_name])
+- Prior value under old scale: [old_value]
+- Prior reasoning: [old_reasoning]
+- Prior sources: [old_sources joined]
+
+## Instructions
+
+- Prefer mapping the prior evidence onto the new scale — that's the
+  fastest path when the new framing is a generalization or
+  reframing of the old one.
+- Only do fresh research if the new framing asks about something the
+  old research didn't cover (e.g., new framing includes a dimension
+  the old scale ignored). Note in reasoning when you added evidence.
+- Your new reasoning MUST explicitly reference the new scale. Write
+  as if explaining to someone looking at the new question/stances
+  for the first time. Do not reference the old scale.
+- If a politician's position genuinely spans two new stances, pick
+  the better match and note the ambiguity in reasoning.
+- If you cannot score a politician under the new framing with
+  available evidence, output value=null and note in reasoning why.
+  Do NOT guess.
+
+## Output format
+
+For each politician, produce one CSV row:
+
+full_name,politician_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3
+
+Write to --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-rewrite-[TOPIC_KEY].csv
+
+Important: The politician_id column is new in this mode — include
+the UUID from the batch input for each row.
+```
+
+## STEP 2 (rewrite mode) — Collect results (same as normal mode)
+
+Same as STEP 2 in normal mode, just with politician_id column.
+
+## STEP 3 (rewrite mode) — SKIPPED
+
+No approval prompt. In rewrite mode, the workflow auto-approves
+every proposal. The audit trail lives in the `topic_rewrites` table
+and every change is reversible (old topic row stays with
+is_live=false for easy rollback).
+
+## STEP 4 (rewrite mode) — Push proposals + auto-approve
+
+For each re-evaluated row, call TWO RPCs in sequence:
+
+### 4a. Upsert the proposal
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const rewriteId = process.argv[2];
+const stances = JSON.parse(process.argv[3]);
+for (const s of stances) {
+  if (s.value === null || s.value === undefined) {
+    console.log('SKIP ' + s.full_name + ': no value (insufficient evidence)');
+    continue;
+  }
+  const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
+  // Upsert via the RPC (SECURITY DEFINER handles schema access)
+  await pool.query(\`
+    SELECT inform.admin_upsert_stance_proposal(\$1::uuid, \$2::uuid, \$3::numeric, \$4::text, \$5::text[])
+  \`, [rewriteId, s.politician_id, s.value, s.reasoning, sources]);
+  console.log('UPSERT ' + s.full_name + ' value=' + s.value);
+}
+await pool.end();
+" -- "REWRITE_ID" '[JSON_ARRAY]'
+```
+
+### 4b. Auto-approve each proposal
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const rewriteId = process.argv[2];
+const actorId = process.argv[3];  // user id running the rewrite
+const politicianIds = JSON.parse(process.argv[4]);
+for (const pid of politicianIds) {
+  try {
+    await pool.query(\`
+      SELECT inform.admin_approve_stance_proposal(\$1::uuid, \$2::uuid, \$3::uuid, \$4::text)
+    \`, [rewriteId, pid, actorId, 'auto-approved by research-stances rewrite mode']);
+    console.log('APPROVE ' + pid);
+  } catch (e) {
+    console.log('SKIP ' + pid + ': ' + e.message);
+  }
+}
+await pool.end();
+" -- "REWRITE_ID" "ACTOR_USER_ID" '[JSON_POLITICIAN_IDS]'
+```
+
+Note on `actorId`: this is a Supabase user id needed by the RPC for
+audit logging. The orchestrator (not the skill) supplies it — use
+the same id that created the rewrite.
+
+### 4c. Report results
+
+```
+## Rewrite re-evaluation complete: [topic_key]
+
+- Rewrite ID: [uuid]
+- Politicians re-evaluated: [N]
+- Proposals approved: [N]
+- Skipped (insufficient evidence): [list]
+
+The rewrite is now ready for publish_ready + publish. The
+orchestrator will run `admin_mark_rewrite_publish_ready` and
+`admin_publish_topic_rewrite` to complete the workflow.
+```
+
+The skill stops here in rewrite mode. The orchestrating
+conversation (not the skill itself) is responsible for calling
+`admin_mark_rewrite_publish_ready` + `admin_publish_topic_rewrite`
+afterward — that way the human/AI running the rewrite can inspect
+the proposals table between auto-approval and publish if desired,
+even though the normal path is to publish immediately.
