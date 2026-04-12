@@ -1,0 +1,33 @@
+URL: https://sblv3.ballotpedia.org/address
+TITLE: Ballotpedia's Sample Ballot Lookup Tool
+
+--- BODY ---
+BALLOTPEDIA
+
+Sample Ballot Lookup Tool
+
+English
+
+Español
+
+Enter the address where you are registered to vote
+2700 E Covenanter Dr, Bloomington, IN, 47401, USA
+Email address
+
+(optional)
+
+View my ballot
+
+This Sample Ballot Lookup Tool is to help you research the content of your ballot and make informed decisions. You cannot cast a vote with this tool. © 2026 Ballotpedia, Inc. All rights reserved.
+
+This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+
+--- INPUTS/BUTTONS ---
+INPUT id= name=address type=text placeholder="Address" class="input" text=""
+INPUT id= name=email type=text placeholder="Email" class="input" text=""
+BUTTON id= name= type=submit placeholder="" class="submit-button" text="View my ballot"
+TEXTAREA id=g-recaptcha-response-100000 name=g-recaptcha-response type=textarea placeholder="" class="g-recaptcha-response" text=""
+
+--- LINKS ---
+Privacy Policy  →  https://policies.google.com/privacy
+Terms of Service  →  https://policies.google.com/terms

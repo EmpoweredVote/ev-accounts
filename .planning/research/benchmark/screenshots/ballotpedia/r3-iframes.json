@@ -1,0 +1,44 @@
+[
+  {
+    "src": "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LdtdxgUAAAAAPd0NqIuHMYS_GQReTlIbayVJ_qn&co=aHR0cHM6Ly9iYWxsb3RwZWRpYS5vcmc6NDQz&hl=en&v=kUYUkUlSyqkjTSMaN2w3RaOh&size=normal&anchor-ms=20000&execute-ms=30000&cb=vpi3nvcjor3q",
+    "id": "",
+    "name": "a-xkun5o8m1kh2",
+    "title": "reCAPTCHA",
+    "parent": "DIV#"
+  },
+  {
+    "src": "",
+    "id": "",
+    "name": "",
+    "title": "",
+    "parent": "DIV#recaptcha-service"
+  },
+  {
+    "src": "https://www.google.com/recaptcha/api2/bframe?hl=en&v=kUYUkUlSyqkjTSMaN2w3RaOh&k=6LdtdxgUAAAAAPd0NqIuHMYS_GQReTlIbayVJ_qn&bft=0dAFcWeA4IJAECy3pfffsrbBqhzju9f5-RZAVkzjyYav3roQZmvqMQyYZ0B8-kOBSfZBLyr8ZG2US3bX6N2L7FaRIZ1Pf6iAU35A",
+    "id": "",
+    "name": "c-xkun5o8m1kh2",
+    "title": "recaptcha challenge expires in two minutes",
+    "parent": "DIV#"
+  },
+  {
+    "src": "https://js.driftt.com/core/chat?d=1&region=US&driftEnableLog=false&pageLoadStartTime=1776037535892",
+    "id": "",
+    "name": "",
+    "title": "Drift Widget Chat Window",
+    "parent": "DIV#drift-frame-chat"
+  },
+  {
+    "src": "https://js.driftt.com/core?d=1&embedId=bxgcu9rra88y&eId=bxgcu9rra88y&region=US&forceShow=false&skipCampaigns=false&sessionId=269f2ca8-2b15-4514-9beb-aa424be1743d&sessionStarted=1776037537.244&campaignRefreshToken=07f22a74-117a-44d8-8aa6-c280a0f692e4&hideController=false&pageLoadStartTime=1776037535892&mode=CHAT&driftEnableLog=false&secureIframe=false&u=https%3A%2F%2Fballotpedia.org%2FBallotpedia%2527s_Sample_Ballot_Lookup_Tool",
+    "id": "",
+    "name": "",
+    "title": "Drift Widget Chat Controller",
+    "parent": "DIV#drift-frame-controller"
+  },
+  {
+    "src": "https://js.driftt.com/core/emailCapture?isXSScreenSize=false",
+    "id": "",
+    "name": "",
+    "title": "Drift Widget Chat Email Capture",
+    "parent": "DIV#drift-frame-emailCapture"
+  }
+]
