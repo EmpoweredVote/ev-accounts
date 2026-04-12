@@ -196,7 +196,7 @@ Users can explore political issues and discover their elected officials without 
 
 ## Current Milestone: v2026.4.3 Indiana Primary Election Readiness Audit
 
-**Goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (~May 6, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
+**Goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (May 5, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
 
 **Target features:**
 - Competitive benchmarking — feature checklist + live Monroe County spot-checks on BallotReady, VoteSmart, Vote411, Ballotpedia

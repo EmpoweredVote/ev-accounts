@@ -1,6 +1,6 @@
 # Roadmap — v2026.4.3 Indiana Primary Election Readiness Audit
 
-**Milestone goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (~May 6, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
+**Milestone goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (May 5, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
 
 **Granularity:** standard
 **Total phases:** 4 (Phase 112 — Phase 115)
