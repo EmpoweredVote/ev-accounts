@@ -2,9 +2,9 @@
 phase: 109-per-meeting-body-tagging
 fixed_at: 2026-04-11T00:00:00Z
 review_path: .planning/phases/109-per-meeting-body-tagging/109-REVIEW.md
-iteration: 1
-findings_in_scope: 2
-fixed: 2
+iteration: 2
+findings_in_scope: 7
+fixed: 7
 skipped: 0
 status: all_fixed
 ---
@@ -13,15 +13,12 @@ status: all_fixed
 
 **Fixed at:** 2026-04-11
 **Source review:** .planning/phases/109-per-meeting-body-tagging/109-REVIEW.md
-**Iteration:** 1
+**Iteration:** 2
 
 **Summary:**
-- Findings in scope (High + Medium): 2
-- Fixed: 2
+- Findings in scope: 7
+- Fixed: 7 (2 previously in iteration 1, 5 new in iteration 2)
 - Skipped: 0
-
-Low (L-01, L-02) and Info (IN-01..IN-03) findings are out of scope for
-this fix pass (fix_scope=critical_warning) and were not addressed.
 
 ## Fixed Issues
 
@@ -29,53 +26,77 @@ this fix pass (fix_scope=critical_warning) and were not addressed.
 
 **Files modified:** `CouncilScribe/src/checkpoint.py`, `CouncilScribe/tests/test_body_tagging.py`
 **Commit:** d5b9f5e (in CouncilScribe repo)
-**Status:** fixed: requires human verification
+**Status:** fixed: requires human verification (previously fixed in iteration 1)
 
 **Applied fix:** Extended `PipelineState.rewind_for_retag()` to delete all
-three stale Stage 4+ artifacts instead of just `pre_identifications.json`:
-
-1. `pre_identifications.json` (already deleted — D-11)
-2. `llm_partial_results.json` (NEW — Stage 4 LLM resume cache)
-3. `transcript_named.json` (NEW — Stage 4 output with old-roster names)
-
-The cleanup list is a local tuple inside the method; future Stage 4+
-artifacts must be added here. As a concurrent improvement, the method
-now persists state atomically via `self.save()` after the unlinks
-(see M-01), so rewind is a single call.
-
-Also updated `test_force_retag_rewinds_and_clears` to:
-- Seed all three stale files in the test fixture
-- Assert all three are removed after `_resolve_body_slug(..., force_retag=True)`
-
-**Human verification requested:** The fix changes filesystem cleanup
-behavior that is not directly validated by the existing passing tests
-outside the updated unit test. Please run the full test suite
-(`cd CouncilScribe && pytest tests/test_body_tagging.py -v`) and
-confirm `test_force_retag_rewinds_and_clears` passes with the new
-assertions, plus a manual `--force-retag` dry run on a real tagged
-meeting to confirm Stage 4 re-runs cleanly against the new roster.
+three stale Stage 4+ artifacts (`pre_identifications.json`,
+`llm_partial_results.json`, `transcript_named.json`). Method now calls
+`self.save()` atomically after unlinks. Test updated to assert all three
+files are removed.
 
 ### M-01: `rewind_for_retag()` is non-atomic across state file + pre_identifications.json
 
-**Files modified:** `CouncilScribe/src/checkpoint.py` (included in d5b9f5e), `CouncilScribe/run_local.py`
-**Commit:** a95ccad (in CouncilScribe repo, run_local.py change); d5b9f5e included the in-method `self.save()`
+**Files modified:** `CouncilScribe/src/checkpoint.py`, `CouncilScribe/run_local.py`
+**Commit:** a95ccad + d5b9f5e (in CouncilScribe repo)
+**Status:** fixed (previously fixed in iteration 1)
+
+**Applied fix:** `rewind_for_retag()` now calls `self.save()` internally.
+Docstring updated. Caller in `run_local.py` no longer calls `state.save()`
+after `rewind_for_retag()`.
+
+### L-01: Dead defensive branch in resolve block
+
+**Files modified:** `CouncilScribe/run_local.py`
+**Commit:** a861c6c (in CouncilScribe repo)
 **Status:** fixed
 
-**Applied fix:**
-1. `PipelineState.rewind_for_retag()` now calls `self.save()` at the end,
-   after unlinking stale Stage 4+ artifacts. Deletion-before-save ordering
-   means a crash between the two still leaves `pipeline_state.json`
-   reflecting the old stage, so a resume regenerates missing artifacts
-   rather than trusting a stale state file.
-2. Docstring updated to drop the "Caller must ... then call save()"
-   language and document the new atomic-ish contract.
-3. `run_local.py` force-retag branch no longer calls `state.save()`
-   explicitly (previously lines 300-302); the rewind method handles it.
+**Applied fix:** Replaced the unreachable `pass` in the
+`elif not cli_body and persisted_body and force_retag` branch with
+`raise AssertionError(...)` so future refactors that remove D-12 argparse
+enforcement fail loudly instead of silently doing nothing.
 
-This consolidates the rewind into one operation, eliminates the window
-where `pre_identifications.json` was gone but `pipeline_state.json`
-still claimed EXPORTED, and prevents future callers from forgetting
-the save contract.
+### L-02: `--force-retag` against untagged meeting silently degrades
+
+**Files modified:** `CouncilScribe/run_local.py`
+**Commit:** a82451e (in CouncilScribe repo)
+**Status:** fixed
+
+**Applied fix:** Added a diagnostic `stderr` log line when `--force-retag`
+is used on a meeting with no persisted `body_slug`, informing the operator
+that it behaves as a first-run persist (no rewind needed).
+
+### IN-01: `_BODY_SLUG_RE` has no length cap
+
+**Files modified:** `CouncilScribe/run_local.py`
+**Commit:** 9dd6ccb (in CouncilScribe repo)
+**Status:** fixed
+
+**Applied fix:** Tightened regex from `^[a-z0-9][a-z0-9_-]*$` to
+`^[a-z0-9][a-z0-9_-]{0,63}$` (1-64 chars total). Updated the error
+message to show the new constraint. Prevents pathologically long slugs
+from reaching filesystem operations.
+
+### IN-02: Lazy `from src import config` inside guard
+
+**Files modified:** `CouncilScribe/run_local.py`
+**Commit:** 2002e9a (in CouncilScribe repo)
+**Status:** fixed
+
+**Applied fix:** Moved `from src import config` to module level (after
+`.env.local` loading, which sets `CS_DATA_DIR` before `src.config`
+reads it at import time). Removed the redundant lazy import inside
+`ensure_body_roster_cached`. `src.config` is lightweight with no
+circular import risk.
+
+### IN-03: Force-retag log goes to stderr but `Body:` info goes to stdout
+
+**Files modified:** `CouncilScribe/run_local.py`
+**Commit:** 767b0e4 (in CouncilScribe repo)
+**Status:** fixed
+
+**Applied fix:** Changed `print(f"Body: {effective_body_slug}")` to route
+to `stderr` via `file=sys.stderr`, matching the force-retag diagnostic
+line. All body-tagging diagnostics now consistently use stderr.
 
 ## Skipped Issues
 
@@ -85,4 +106,4 @@ None.
 
 _Fixed: 2026-04-11_
 _Fixer: Claude (gsd-code-fixer)_
-_Iteration: 1_
+_Iteration: 2_
