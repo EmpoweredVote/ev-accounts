@@ -194,22 +194,18 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
 - ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
 
-## Current Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials
+## Current Milestone: v2026.4.3 Indiana Primary Election Readiness Audit
 
-**Goal:** Make CouncilScribe voice profiles first-class references to Empowered Vote politicians so same-person auto-match works reliably across meetings and rosters stay in sync with the essentials source of truth.
+**Goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (~May 6, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
 
 **Target features:**
-- New `/api/essentials/bodies` endpoints in ev-accounts (list bodies, fetch roster by body slug) — public, no auth
-- CouncilScribe essentials HTTP client + `refresh_roster.py` CLI (per-body cached roster JSON)
-- Per-meeting `body_slug` tagging so Stage 4 identify uses the correct governing body's roster
-- Voice profile schema v3 — profiles keyed by essentials `politician_slug`, portable across chambers
-- Profile migration path — resolve existing v2 profile names against fetched rosters, promote matches
-- Pattern matcher + LLM prompt driven by live roster instead of hand-edited JSON
-
-**Foundation (already landed in this session, pre-milestone):**
-- CouncilScribe embedding model swapped from `pyannote/embedding` (512-dim) to `pyannote/wespeaker-voxceleb-resnet34-LM` (256-dim); cross-meeting separation improved from +0.746 to +0.795, same-pair ≥0.85 match rate improved from 7/11 → 10/11.
-- Profile DB schema v1 → v2 with auto-discard on mismatch. 26 profiles re-enrolled from 2026-02-04 and 2026-02-18 meetings via new `reenroll_profiles.py`.
-- Transcription (WhisperX) experiment reverted after A/B — net wash on quality, marginal losses in overlap-heavy regions. Faster-whisper per-slice kept as status quo.
+- Competitive benchmarking — feature checklist + live Monroe County spot-checks on BallotReady, VoteSmart, Vote411, Ballotpedia
+- Data completeness audit — all races (township, school board, judges, county, state, federal), candidate coverage, stance data, quotes for Read & Rank
+- Essentials UX gap analysis — what does a voter actually experience searching a Monroe County address today?
+- Compass/Read-Rank value assessment — enough stance data and quotes for Monroe County candidates to be useful?
+- Treasury relevance check — is budget data useful in an election context?
+- Tiered gap report — "before primary" (high-impact, shippable in ~2 weeks) vs "future" improvements
+- Execution backlog — prioritized phases for filling critical gaps
 
 ### Active
 
@@ -224,12 +220,13 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Last Milestone: v2026.4.1 Essentials Visual Polish & Election Improvements (Shipped 2026-04-04)
+## Last Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials (Shipped 2026-04-12)
 
-**Delivered:** Visual polish across Essentials — tier background bands, branch-specific icons, icon overlay badges with tooltips, landing page with coverage areas and shortcut navigation, election page restructured with position-first grouping, compass-first card prototype, headshot audit CLI. 5 phases, 11 plans, 13/13 requirements satisfied.
+**Delivered:** CouncilScribe voice profiles keyed to essentials politicians via live roster API — body roster endpoints, roster client + CLI, per-meeting body tagging, profile schema v3, roster-driven identification. 6 phases, 11 plans, 22/22 requirements satisfied.
 
 ## Previous Milestones
 
+- **v2026.4.1 Essentials Visual Polish & Election Improvements** (Shipped 2026-04-04) — 5 phases, 11 plans
 - **v2026.3.8 Essentials Election Central** (Shipped 2026-03-31) — 5 phases, 12 plans
 - **v2026.3.7 Treasury Tracker Expansion** (Shipped 2026-03-23) — 5 phases, 11 plans
 - **v2026.3.6 Read & Rank Redesign** (Shipped 2026-03-16) — 7 phases, 15 plans
@@ -293,4 +290,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-10 — milestone v2026.4.2 started*
+*Last updated: 2026-04-11 — milestone v2026.4.3 started*
