@@ -11,7 +11,7 @@
 
 ## Phases
 
-- [ ] **Phase 112: Data Completeness Audit** — DB audit script + full Monroe County May 5 ballot baseline built from authoritative sources
+- [x] **Phase 112: Data Completeness Audit** — DB audit script + full Monroe County May 5 ballot baseline built from authoritative sources (completed 2026-04-12)
 - [ ] **Phase 113: Competitive Benchmarking** — Live Monroe County spot-checks on BallotReady, Vote411, VoteSmart, Ballotpedia with feature comparison matrix
 - [ ] **Phase 114: UX Walkthrough** — Voter journey documented for Essentials, Compass, Read & Rank, and Treasury with gaps logged
 - [ ] **Phase 115: Gap Report Synthesis** — Tiered gap report (Tier 1 before primary / Tier 2 future) with execution backlog for follow-on milestone
@@ -31,11 +31,11 @@
   4. The report includes headshot coverage per candidate: CDN photo vs local file vs no photo.
   5. A full ballot baseline document exists in `.planning/research/` sourced from Indiana SoS + Monroe County Clerk + local press, listing every race and expected candidate count for May 5.
   6. A Bloomington address (e.g., 200 W Kirkwood Ave) resolves correctly through the geofence stack and the returned races match the baseline.
-**Plans:** 3 plans
+**Plans:** 3/3 plans complete
 Plans:
-- [ ] 112-01-PLAN.md — Ballot baseline document + race and candidate audit scripts
-- [ ] 112-02-PLAN.md — Stance, quote, headshot, and profile completeness audit scripts
-- [ ] 112-03-PLAN.md — Geofence smoke test + assembler for unified audit report
+- [x] 112-01-PLAN.md — Ballot baseline document + race and candidate audit scripts
+- [x] 112-02-PLAN.md — Stance, quote, headshot, and profile completeness audit scripts
+- [x] 112-03-PLAN.md — Geofence smoke test + assembler for unified audit report
 
 ### Phase 113: Competitive Benchmarking
 **Goal**: EV's Monroe County coverage is benchmarked against all four major voter guide competitors using a live Bloomington address, producing a feature comparison matrix.
@@ -79,7 +79,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 112. Data Completeness Audit | 0/3 | Planned | - |
+| 112. Data Completeness Audit | 3/3 | Complete   | 2026-04-12 |
 | 113. Competitive Benchmarking | 0/? | Not started | - |
 | 114. UX Walkthrough | 0/? | Not started | - |
 | 115. Gap Report Synthesis | 0/? | Not started | - |
@@ -115,3 +115,19 @@ Plans:
 | GAP-03 | 115 |
 
 No orphaned requirements. No duplicates.
+
+## Backlog
+
+### Phase 999.1: Speaker identification for all meeting participants (BACKLOG)
+
+**Goal:** Extend CouncilScribe identification to properly handle non-council speakers — recurring staff (clerk, attorney, department heads), invited presenters, and public commenters — without losing Phase 111's phantom rejection. Target design: add `chamber_attendees` (or `is_staff` flag on offices), a `recurring_commenters` table with classification, a `speaker_type` taxonomy on `SpeakerMapping`, pattern-aware L2 gating, and L3 phantom defense.
+
+**Origin:** Regression discovered during Phase 111 verification run on 2026-02-25 Bloomington meeting — L2 roster gate blocked legitimate non-council names (e.g. City Clerk); LLM still hallucinated "Piafra" at L3 with no defense.
+
+**Requirements:** TBD
+**Plans:** 0 plans (likely 3–4 phase epic when promoted)
+
+See: [.planning/phases/999.1-speaker-identification-all-meeting-participants/999.1-CONTEXT.md](./phases/999.1-speaker-identification-all-meeting-participants/999.1-CONTEXT.md) for full design notes.
+
+Plans:
+- [ ] TBD (promote with /gsd-review-backlog when ready)
