@@ -13,7 +13,7 @@
 
 - [x] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch (completed 2026-04-11)
 - [x] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally (completed 2026-04-11)
-- [ ] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4
+- [x] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4 (completed 2026-04-11)
 - [ ] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters
 - [ ] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end
 
@@ -68,9 +68,9 @@
   2. Launching a meeting with a body slug that has no cached roster fails fast with a clear error message telling the operator to run `refresh_roster.py`.
   3. Stage 4 identification uses the body-specific roster for `correct_speaker_name`, pattern matching, and the LLM prompt — no code path falls back to the legacy global roster when a body_slug is present.
 **Plans**: 3 plans
-- [ ] 109-01-PLAN.md — Extend PipelineState with body_slug + --body/--force-retag argparse + batch propagation + Wave 0 test scaffold
-- [ ] 109-02-PLAN.md — ensure_body_roster_cached pre-Stage-1 guard with slug validation + D-08 error
-- [ ] 109-03-PLAN.md — Stage 4 load_roster(body_slug=...) wiring at run_local.py:568
+- [x] 109-01-PLAN.md — Extend PipelineState with body_slug + --body/--force-retag argparse + batch propagation + Wave 0 test scaffold
+- [x] 109-02-PLAN.md — ensure_body_roster_cached pre-Stage-1 guard with slug validation + D-08 error
+- [x] 109-03-PLAN.md — Stage 4 load_roster(body_slug=...) wiring at run_local.py:568
 
 ### Phase 110: Profile schema v3 + re-enrollment
 **Goal**: Voice profiles are keyed by essentials `politician_slug` when they correspond to a known politician, coexisting with local-slug profiles for non-roster speakers, and existing v2 profiles can be promoted via re-enrollment.
@@ -82,7 +82,9 @@
   3. Public commenters and other non-roster speakers enroll under locally-generated slugs in the same DB and are never accidentally promoted to politician keys.
   4. A politician-slug-keyed profile accumulates embeddings across multiple meetings — re-enrolling against a second meeting with the same speaker adds to the existing profile rather than creating a duplicate.
   5. `StoredProfile` records carry `politician_slug` and `politician_id` fields (nullable for local profiles), round-tripping through save/load.
-**Plans**: TBD
+**Plans**: 2 plans
+- [ ] 110-01-PLAN.md — Schema v3 bump (StoredProfile + RosterMember identity fields), resolve_enrollment_key helper, enrollment path wiring, 11 unit tests
+- [ ] 110-02-PLAN.md — reenroll_profiles.py body-slug-aware re-enrollment with roster passthrough, 3 additional tests
 
 ### Phase 111: Live roster drives identification
 **Goal**: Speaker identification on a real Bloomington Common Council meeting returns only roster-backed names, with `politician_slug` carried end-to-end into `transcript_named.json`, and phantom names disappear.
@@ -103,8 +105,8 @@
 |-------|----------------|--------|-----------|
 | 107. Essentials body roster endpoint | 3/3 | Complete   | 2026-04-11 |
 | 108. CouncilScribe roster client + CLI | 1/1 | Complete    | 2026-04-11 |
-| 109. Per-meeting body tagging | 0/? | Not started | - |
-| 110. Profile schema v3 + re-enrollment | 0/? | Not started | - |
+| 109. Per-meeting body tagging | 3/3 | Complete   | 2026-04-11 |
+| 110. Profile schema v3 + re-enrollment | 0/2 | Not started | - |
 | 111. Live roster drives identification | 0/? | Not started | - |
 
 ---
