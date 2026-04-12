@@ -121,6 +121,18 @@ The account that actually has no coordinates (`has_coords: false`, `location_con
 
 One of your other test accounts (`peter@empowered.vote`) shows `city_council_geo_id = county:los_angeles/council_district:2`. That is **not a bug**. His address is in unincorporated LA County territory (CD-43, Inglewood area) where the LA County Supervisor District 2 is the correct local representative. There is no city council district for that location. The backfill ran correctly and left it as-is.
 
-### Summary
+### Summary — updated
 
-No action needed on the Accounts side. The route is wired up, coordinates are saving, and `representatives/me` is working. Verify the session token's `sub` claim matches the account you expect and the 204 issue should resolve itself.
+The 204 was a real bug on our end, now fixed. See below.
+
+---
+
+## Root cause and fix — 2026-04-12
+
+**`GET /api/essentials/representatives/me` was returning 204 for all Connected users.**
+
+Migration `060_drop_home_address.sql` dropped the `home_address` column from `connect.connected_profiles` as a privacy fix. The `representatives/me` route was still trying to `SELECT home_address` in its opening query. Postgres threw a column-not-found error, which was silently swallowed by a `.catch(() => ({ rows: [] }))` guard, leaving the user row as `undefined`. Both Path 1 and Path 1.5 were skipped, and every Connected user hit the 204 fallback — regardless of whether they had stored coordinates.
+
+Fixed in commit `004af39` — `home_address` removed from the SELECT, and Path 2 (geocode-from-home_address fallback) removed since it depended on the dropped column.
+
+**The endpoint is working correctly now.** Chris's account returns 200 with his representatives. No changes needed on the Essentials side.
