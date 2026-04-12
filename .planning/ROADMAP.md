@@ -14,7 +14,7 @@
 - [x] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch (completed 2026-04-11)
 - [x] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally (completed 2026-04-11)
 - [x] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4 (completed 2026-04-11)
-- [ ] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters
+- [x] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters (completed 2026-04-12)
 - [ ] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end
 
 ---
@@ -83,8 +83,8 @@
   4. A politician-slug-keyed profile accumulates embeddings across multiple meetings — re-enrolling against a second meeting with the same speaker adds to the existing profile rather than creating a duplicate.
   5. `StoredProfile` records carry `politician_slug` and `politician_id` fields (nullable for local profiles), round-tripping through save/load.
 **Plans**: 2 plans
-- [ ] 110-01-PLAN.md — Schema v3 bump (StoredProfile + RosterMember identity fields), resolve_enrollment_key helper, enrollment path wiring, 11 unit tests
-- [ ] 110-02-PLAN.md — reenroll_profiles.py body-slug-aware re-enrollment with roster passthrough, 3 additional tests
+- [x] 110-01-PLAN.md — Schema v3 bump (StoredProfile + RosterMember identity fields), resolve_enrollment_key helper, enrollment path wiring, 11 unit tests
+- [x] 110-02-PLAN.md — reenroll_profiles.py body-slug-aware re-enrollment with roster passthrough, 3 additional tests
 
 ### Phase 111: Live roster drives identification
 **Goal**: Speaker identification on a real Bloomington Common Council meeting returns only roster-backed names, with `politician_slug` carried end-to-end into `transcript_named.json`, and phantom names disappear.
@@ -106,7 +106,7 @@
 | 107. Essentials body roster endpoint | 3/3 | Complete   | 2026-04-11 |
 | 108. CouncilScribe roster client + CLI | 1/1 | Complete    | 2026-04-11 |
 | 109. Per-meeting body tagging | 3/3 | Complete   | 2026-04-11 |
-| 110. Profile schema v3 + re-enrollment | 0/2 | Not started | - |
+| 110. Profile schema v3 + re-enrollment | 2/2 | Complete    | 2026-04-12 |
 | 111. Live roster drives identification | 0/? | Not started | - |
 
 ---
