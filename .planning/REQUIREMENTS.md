@@ -45,10 +45,10 @@
 
 ### CSIDENT — Live roster drives identification
 
-- [ ] **CSIDENT-01**: `correct_speaker_name` uses the live (fetched) roster's politician names and aliases — phantoms like "Councilmember Piafra" disappear from identification output because they're never in the live roster.
-- [ ] **CSIDENT-02**: The Layer 2 pattern matcher rejects name matches whose surname doesn't fuzzy-match any active roster member (above a configurable threshold), suppressing false positives from Whisper hallucinations on uncommon words.
-- [ ] **CSIDENT-03**: The Layer 3 LLM prompt (`llm_identify_speakers`) receives the live roster as context (including district labels for disambiguation), replacing the hand-coded global roster hint.
-- [ ] **CSIDENT-04**: When a speaker is confidently matched to a politician (any layer), the resulting `SpeakerMapping` records `politician_slug` alongside `speaker_name` — downstream `transcript_named.json` output carries essentials linkage end-to-end.
+- [x] **CSIDENT-01**: `correct_speaker_name` uses the live (fetched) roster's politician names and aliases — phantoms like "Councilmember Piafra" disappear from identification output because they're never in the live roster.
+- [x] **CSIDENT-02**: The Layer 2 pattern matcher rejects name matches whose surname doesn't fuzzy-match any active roster member (above a configurable threshold), suppressing false positives from Whisper hallucinations on uncommon words.
+- [x] **CSIDENT-03**: The Layer 3 LLM prompt (`llm_identify_speakers`) receives the live roster as context (including district labels for disambiguation), replacing the hand-coded global roster hint.
+- [x] **CSIDENT-04**: When a speaker is confidently matched to a politician (any layer), the resulting `SpeakerMapping` records `politician_slug` alongside `speaker_name` — downstream `transcript_named.json` output carries essentials linkage end-to-end.
 
 ---
 
@@ -109,7 +109,7 @@ Maps each REQ-ID to exactly one phase. All 22 requirements covered.
 | CSPROFILE-03 | Phase 110 | Pending |
 | CSPROFILE-04 | Phase 110 | Pending |
 | CSPROFILE-05 | Phase 110 | Pending |
-| CSIDENT-01 | Phase 111 | Pending |
-| CSIDENT-02 | Phase 111 | Pending |
-| CSIDENT-03 | Phase 111 | Pending |
-| CSIDENT-04 | Phase 111 | Pending |
+| CSIDENT-01 | Phase 111 | Complete |
+| CSIDENT-02 | Phase 111 | Complete |
+| CSIDENT-03 | Phase 111 | Complete |
+| CSIDENT-04 | Phase 111 | Complete |

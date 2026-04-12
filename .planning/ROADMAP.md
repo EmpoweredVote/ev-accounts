@@ -15,7 +15,7 @@
 - [x] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally (completed 2026-04-11)
 - [x] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4 (completed 2026-04-11)
 - [x] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters (completed 2026-04-12)
-- [ ] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end
+- [x] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end (completed 2026-04-12)
 
 ---
 
@@ -96,7 +96,7 @@
   3. The Layer 3 LLM prompt observably includes the live roster (names + district labels for disambiguation) instead of a hand-coded global hint.
   4. When a speaker is confidently matched, the `SpeakerMapping` and downstream `transcript_named.json` record both `speaker_name` and the essentials `politician_slug`.
 **Plans**: 1 plan
-- [ ] 111-01-PLAN.md — TDD: wire live roster into identification layers (SpeakerMapping identity, roster_names_for_prompt district labels, pattern matcher surname rejection, correct_mappings identity population)
+- [x] 111-01-PLAN.md — TDD: wire live roster into identification layers (SpeakerMapping identity, roster_names_for_prompt district labels, pattern matcher surname rejection, correct_mappings identity population)
 
 ---
 
@@ -108,7 +108,7 @@
 | 108. CouncilScribe roster client + CLI | 1/1 | Complete    | 2026-04-11 |
 | 109. Per-meeting body tagging | 3/3 | Complete   | 2026-04-11 |
 | 110. Profile schema v3 + re-enrollment | 2/2 | Complete    | 2026-04-12 |
-| 111. Live roster drives identification | 0/1 | Planning complete | - |
+| 111. Live roster drives identification | 1/1 | Complete   | 2026-04-12 |
 
 ---
 
