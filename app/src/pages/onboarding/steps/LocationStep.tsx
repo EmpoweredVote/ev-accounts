@@ -57,7 +57,7 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
     try {
       const result = await apiFetch<LocationResult>('/connect/set-location', {
         method: 'POST',
-        body: JSON.stringify({ address }),
+        body: JSON.stringify({ address, ...(isUpdate && { force: true }) }),
       });
       onSuccess(result);
     } catch (err) {
