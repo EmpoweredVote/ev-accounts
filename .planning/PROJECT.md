@@ -209,6 +209,8 @@ Users can explore political issues and discover their elected officials without 
 
 ### Active
 
+- [x] Phase 112 data completeness audit — baseline established (46 races, 81 candidates, unified AUDIT-REPORT-112.md; 5/51 stances, 4/51 quotes, 19/81 headshots, 0/51 bios)
+
 ### Future
 
 - [ ] Compass stance data imports for candidates (PROF-04 — deferred from v2026.3.8)
