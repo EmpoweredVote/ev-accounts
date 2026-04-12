@@ -70,6 +70,30 @@ Let us know if anything is unclear.
 
 ---
 
+## Note for Civil Civics — pseudonym enforcement — 2026-04-12
+
+**Pseudonym enforcement lives entirely in the Accounts layer. No frontend filtering needed.**
+
+### What the API returns per tier
+
+The public profile endpoint (`GET /api/account/profile/:userId`) returns a `username` field. Here is how it resolves:
+
+| Tier | `username` resolves to | Source |
+|------|----------------------|--------|
+| Inform | `display_name` | `public.users` |
+| Connected | `display_name` | `connect.connected_profiles` |
+| Empowered | `candidate_page_slug` | `empower.empowered_profiles` |
+
+**For Connected users** (the typical Civic Spaces participant): `legal_name` is stored on `connect.connected_profiles` and is never selected in any non-admin route. Every public endpoint returns only `display_name`.
+
+**For Empowered users**: `legal_name` appears inside the `empowered_profile` block — but only because Empowered users explicitly consented to `legal_name_public: true` during the empowerment flow. They are running as public candidates/officials. Their real name is intentionally public.
+
+### What Civic Spaces should do
+
+Display `username` from the profile response unconditionally. It is always the name the user has chosen for public consumption — pseudonym for Connected users, public candidate name for Empowered users. No conditional logic or filtering required on the frontend.
+
+---
+
 ## Follow-up from Essentials team — 2026-04-12
 
 ### What we built
