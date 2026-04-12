@@ -114,7 +114,7 @@ language anywhere.
 
 ## 4. immigration
 
-**Priority:** #4
+**Priority:** #4 (must ship in the same session as deportation #5)
 
 | Field | Proposed |
 |---|---|
@@ -122,40 +122,91 @@ language anywhere.
 | short_title | Immigration |
 | question_text | How welcoming or restrictive should government be toward immigrants? |
 
-1. Welcome immigrants — create more legal ways to come here, protect undocumented residents from deportation, and let them use public services
-2. Support legal immigration, don't help federal agents with deportations, and let most residents use public services regardless of status
-3. Follow current immigration laws as they are, without making them easier or harder
-4. Increase enforcement, help federal agents deport undocumented people, and limit public services to legal residents
-5. Stop most immigration, aggressively deport undocumented people, and block public services for anyone without legal status
+1. Make it easier for immigrants to come here legally, and let all immigrants — including undocumented residents — fully use public services
+2. Keep legal immigration open and let most residents use public services regardless of legal status
+3. Keep immigration levels and rules about where they are now
+4. Make it harder to immigrate legally and limit public services to people with legal status
+5. Stop most legal immigration and block public services for anyone without legal status
+
+**Scope of this topic:** admission (legal pathways) plus treatment
+(services access for immigrants already present). **Not** about
+enforcement priorities — those live in the deportation topic below,
+and the two were deliberately split so voters can take independent
+positions on each axis.
 
 **Changes from current live version:**
-- Title adds "and Treatment of Immigrants" to capture the
-  already-present dimension (sanctuary policies, services, ICE
-  cooperation) alongside admission policy.
-- Stance 1 drops "open borders" (federal-only concept) for
-  "welcome immigrants" which any level can act on.
-- Stance 5 drops "stop all immigration" as the anchor — still a strong
-  restriction stance but now meaningful for a city council voting on
-  ICE cooperation.
-- Stances 2–4 all pivot from pure admission-policy language to mixed
-  admission + enforcement + services language, which is how the
-  question actually plays out at state and local levels.
-
-**Overlap with deportation topic — flagged for review this session:**
-Chris wants to revisit the deportation topic later in this session
-before committing to the immigration rewrite. The two topics are
-related but ask different sub-questions (immigration = welcoming
-posture overall; deportation = enforcement priorities: who gets
-deported first, based on criminal history vs. recency vs. family
-ties). Current plan: keep deportation with a stance-1 tweak only (no
-full rewrite), but revisit that decision before executing this
-rewrite. See "Follow-ups" section below.
+- Title adds "and Treatment of Immigrants" to capture the services /
+  treatment dimension alongside admission policy.
+- Question drops "How open or restrictive should immigration policy
+  be" for "How welcoming or restrictive should government be toward
+  immigrants" — shifts focus from policy-as-instrument to the
+  underlying posture.
+- Stance 1 drops "open borders completely" (federal-only concept) for
+  "make it easier to come here legally + services for all".
+- Stance 5 replaces "stop all immigration and remove people here
+  illegally" with a stance focused purely on admission + services
+  (enforcement is now in the deportation topic).
+- All enforcement / deportation / ICE-cooperation language removed —
+  lives in the deportation rewrite below.
 
 ---
 
-## 5. healthcare
+## 5. deportation
 
-**Priority:** #5 (save for last — highest political stakes)
+**Priority:** #5 (must ship in the same session as immigration #4)
+
+| Field | Proposed |
+|---|---|
+| title | Deportation Priorities |
+| short_title | Deportation |
+| question_text | Who should be deported, and how aggressively? |
+
+1. Stop deportations entirely and protect undocumented residents from removal
+2. Only deport people convicted of serious violent crimes
+3. Focus deportation on recent arrivals while leaving long-term residents in place
+4. Deport everyone without legal status, starting with those who have criminal records
+5. Move quickly to deport all undocumented people regardless of how long they've lived here or family ties
+
+**Scope of this topic:** enforcement priorities *given that an
+enforcement regime exists*. It asks: of the deportations that will
+happen, who gets prioritized, and with what aggression? Meaningful at
+federal (ICE priorities), state (state AG enforcement), and local
+(sheriff cooperation with ICE detainers, 287(g) agreements).
+
+**Why the split from immigration works:** a voter can take these
+positions independently. "Welcome immigrants broadly (immigration
+stance 1–2) AND only deport serious violent criminals (deportation
+stance 2)" is a real centrist-Democrat position. So is "restrict
+legal immigration (immigration stance 4) AND don't aggressively
+deport long-term residents with families (deportation stance 3)" —
+a position held by some conservatives with immigrant constituents.
+
+**Changes from current live version:**
+- Originally planned as an in-place stance-1 tweak only. Upgraded to
+  full rewrite after recognizing the axis overlap with the immigration
+  rewrite — the two topics needed coordinated scope separation.
+- Title changes from "Deportation of Immigrants" to "Deportation
+  Priorities" — signals the topic is about who gets deported first,
+  not whether deportation happens at all.
+- Question becomes "Who should be deported, and how aggressively?" —
+  clearly scoped to priorities, not to the broader welcoming-
+  restrictive posture that immigration now owns.
+- Stance 1 drops "citizenship pathways" (federal-only) for "protect
+  from removal" (tier-neutral — a sanctuary city can do this).
+- Stance 3 drops "apply for legal status" (federal-only) for "leaving
+  long-term residents in place".
+- All stances now work at every level where deportation enforcement
+  happens (federal agents, state AGs, local sheriffs).
+
+**Tier flags:** F, S, L — unchanged from current state. The audit
+already correctly identified deportation as cross-tier; the rewrite
+makes the stance language match what the tier flags already said.
+
+---
+
+## 6. healthcare
+
+**Priority:** #6 (save for last — highest political stakes)
 
 | Field | Proposed |
 |---|---|
@@ -186,18 +237,17 @@ rewrite. See "Follow-ups" section below.
 
 ## Follow-ups
 
-1. **Deportation topic review** — Chris flagged this for revisit
-   during this session. Currently planned as in-place stance-1 tweak
-   only (replace "citizenship pathways" with tier-portable language),
-   keeping deportation as a distinct F+S topic about enforcement
-   priorities. But after seeing the immigration rewrite, Chris wants
-   to think again about whether these two topics should be merged,
-   restructured, or one of them retired. Review before kicking off
-   the immigration rewrite.
+1. **`topic_key` stays stable across versions** — none of these
+   rewrites change `topic_key`, only `title` and other framing
+   fields. Plan D's `topic_key` is the stable join key across
+   versions.
 
-2. **Retitle to `topic_key: 'housing'` stays stable** — the rewrite
-   doesn't change `topic_key`, only `title`. Plan D's `topic_key` is
-   the stable join key across versions.
+2. **Immigration + deportation must ship in the same session.** The
+   rewrites are coordinated — immigration strips enforcement
+   language, deportation picks it up. Executing them separately
+   would briefly create a gap in the compass (either overlapping
+   topics or a missing enforcement axis). Both through framing gate
+   + re-eval + publish in one sitting.
 
 3. **First Plan D workflow run** — once these drafts are approved,
    ai-regulation is the first rewrite to go through the admin UI.
@@ -207,22 +257,16 @@ rewrite. See "Follow-ups" section below.
 
 ## Workflow cost per rewrite (existing-stance counts)
 
-Each rewrite's re-evaluation queue size:
+| # | Topic | Existing stances | Rough effort |
+|---|---|---|---|
+| 1 | ai-regulation | 29 | ~2 hours with research-stances skill |
+| 2 | housing | 45 | ~3 hours |
+| 3 | taxes | 42 | ~3 hours |
+| 4 | immigration | 52 | ~4 hours |
+| 5 | deportation | 52 | ~4 hours |
+| 6 | healthcare | 43 | ~3 hours |
+|   | **Total**   | **263** | **~19 hours** |
 
-| Topic | Existing stances to re-evaluate | Rough effort |
-|---|---|---|
-| ai-regulation | 29 | ~2 hours with research-stances skill |
-| taxes | 42 | ~3 hours |
-| healthcare | 43 | ~3 hours |
-| housing | 45 | ~3 hours |
-| immigration | 52 | ~4 hours |
-
-**Total re-evaluation effort across all 5 rewrites: ~15 hours** of
-researcher-assisted stance re-scoring, spread across however many
-sessions Chris wants. This is sequential work — each re-scored stance
-needs to be written under the new framing, and the research-stances
-skill runs per-politician.
-
-**Suggested pacing:** do one rewrite per session. Don't try to batch.
-The whole point of Plan D's review gates is that each rewrite gets
-real attention.
+**Suggested pacing:** one rewrite per session, EXCEPT immigration +
+deportation must ship together (so one double-length session for
+those two). That's 5 total sessions across the queue.

@@ -29,12 +29,19 @@ For each topic, answer:
 | Keep as-is | 16 | abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, fossil-fuels, homelessness, jail-capacity, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, voting-rights, trans-athletes |
 | Federal-only, keep | 3 | social-security, tariffs, ukraine-support |
 | Federal + state, keep | 1 | medicare/aid |
-| Tweak (stance-text only) | 1 | deportation |
-| **Rewrite queue** | **5** | **ai-regulation, housing, taxes, immigration, healthcare** |
+| **Rewrite queue** | **6** | **ai-regulation, housing, taxes, immigration, deportation, healthcare** |
 
-Housing was originally classified "keep" but on stance-text review it
-has federal-scale language in 3/5 stances plus scope bleed with the
-dedicated homelessness topic — promoted to rewrite. See details below.
+Two late additions to the rewrite queue:
+- **Housing** was originally classified "keep" but on stance-text
+  review it has federal-scale language in 3/5 stances plus scope
+  bleed with the dedicated homelessness topic.
+- **Deportation** was originally classified "tweak" (in-place stance-1
+  edit) but during the immigration rewrite drafting it became clear
+  the two topics had axis overlap. Resolution: split cleanly —
+  immigration owns admission + treatment of immigrants already
+  present; deportation owns enforcement priorities given an
+  enforcement regime exists. Immigration and deportation must ship
+  together in a single session because they're coordinated.
 
 ---
 
@@ -49,7 +56,7 @@ dedicated homelessness topic — promoted to rewrite. See details below.
 | civil-rights | principle | keep | ✓ | ✓ | ✓ |   | |
 | climate-change | principle | keep | ✓ | ✓ | ✓ |   | "Nation's" language in one stance, but survivable |
 | data-centers | principle | keep | ✓ | ✓ | ✓ |   | Local zoning is the biggest lever — correctly tier-flagged for local |
-| deportation | federal-leaning | tweak | ✓ | ✓ | ✓ |   | Stance 1 says "citizenship pathways" (federal). Tweak text to "stop all cooperation with federal deportation enforcement" so it works for sheriffs/city councils. No re-evaluation gate needed — principle is unchanged. |
+| deportation | federal-leaning | **rewrite** | ✓ | ✓ | ✓ |   | Originally tweak-only; upgraded to rewrite after immigration drafting revealed axis overlap. New scope: enforcement priorities only (who gets deported first, with what aggression). Must ship with immigration rewrite in same session. |
 | fossil-fuels | principle | keep | ✓ | ✓ | ✓ |   | "Nation's energy future" in question_text is soft-federal but survivable |
 | healthcare | **program** | **rewrite** | ✓ | ✓ | ✓ |   | Stance 1 = single-payer, stance 2 = public option. These are federal-only levers. Reframe around principle of government's role in guaranteeing access. |
 | homelessness | principle | keep | ✓ | ✓ | ✓ |   | Grants Pass decision makes this cross-tier |
@@ -73,9 +80,11 @@ dedicated homelessness topic — promoted to rewrite. See details below.
 
 ## The rewrite queue (priority order)
 
-These 5 topics need to run through the Plan D workflow. Ordered by
+These 6 topics need to run through the Plan D workflow. Ordered by
 **political sensitivity** (lowest first, so the workflow gets shaken out
-on low-stakes rewrites before high-stakes ones):
+on low-stakes rewrites before high-stakes ones). Immigration (#4) and
+deportation (#5) must ship together in a single session because their
+axis scoping is coordinated (see drafts file).
 
 ### 1. ai-regulation (lowest stakes, small number of stances to re-evaluate)
 
@@ -121,19 +130,37 @@ levies — not income tax brackets.
 or around progressive-vs-regressive burden distribution. Both work at every
 level.
 
-### 4. immigration (high political salience, but local hook is clear)
+### 4. immigration (high political salience, local hook is clear)
 
 **Problem:** Current stances are federal border/quota language. No local or
 state lever fits.
 
-**Rewrite direction:** Reframe around welcoming-vs-restrictive posture toward
-newcomers. Federal: quotas and border policy. State: driver's licenses,
-in-state tuition, occupational licensing for undocumented residents. Local:
-sanctuary policies, ICE cooperation, municipal ID programs, language access.
-Same underlying principle ("how should this jurisdiction treat immigrants
-within its authority") maps to all three.
+**Rewrite direction:** Reframe around admission policy (legal pathways) and
+treatment of immigrants already present (services, protections). Strip all
+enforcement / deportation language — that moves to the deportation topic
+(#5 below) after this rewrite. Must ship in the same session as the
+deportation rewrite.
 
-### 5. healthcare (highest salience, most contested reframe)
+### 5. deportation (paired with immigration, coordinated axis split)
+
+**Problem:** Originally planned as in-place stance-1 tweak only. But
+during immigration rewrite drafting, the axis overlap became clear: both
+topics were asking about enforcement cooperation, welcoming posture, and
+service access simultaneously. Upgraded to a full rewrite and coordinated
+with immigration.
+
+**Rewrite direction:** Scope the topic purely to enforcement priorities —
+"who should be deported, and how aggressively?" — given that enforcement
+happens. Immigration owns admission + treatment; deportation owns
+enforcement priorities. The two axes are independent: a voter can support
+broad welcoming AND prioritizing violent-criminal deportations, or
+restrict legal immigration AND oppose aggressive long-term-resident
+deportation. Stance 1 drops "citizenship pathways" (federal-only); stance
+3 drops "apply for legal status" (federal-only). Works at federal (ICE
+priorities), state (state AG enforcement), and local (sheriff ICE
+cooperation, 287(g) agreements).
+
+### 6. healthcare (highest salience, most contested reframe)
 
 **Problem:** Current stances are entirely about federal insurance
 architecture (single-payer, public option, ACA). Local officials have real
@@ -158,11 +185,12 @@ failure mode — healthcare is where voters form the strongest priors.
 All 8 calls (original 7 plus housing) walked with Chris on 2026-04-11.
 Decisions below; the table above has been updated to match.
 
-1. **deportation — tweak, not rewrite.** Only stance 1 has federal-only
-   language ("citizenship pathways"). The other four are already
-   principle-level about enforcement aggressiveness. Edit stance 1 in place
-   via the existing `TopicAdminPanel` admin UI; no re-evaluation gate
-   needed because the underlying principle isn't moving.
+1. **deportation — full rewrite (upgraded from tweak).** Initial
+   decision was in-place stance-1 edit only. During immigration rewrite
+   drafting, the axis overlap became clear: both topics were mixing
+   welcoming posture with enforcement priorities. Resolution: split
+   cleanly — immigration owns admission + treatment, deportation owns
+   enforcement priorities. Both topics ship together in one session.
 
 2. **ai-regulation — F+S, drop Local.** Facial-recognition bans and
    school AI policies exist but aren't primary compass issues for a mayor
@@ -205,14 +233,13 @@ Decisions below; the table above has been updated to match.
    live topics already matched the audit's decisions. The only delta
    was the abortion `local` flag added via migration 063.
 
-2. **Handle the deportation tweak** — not through Plan D workflow, just
-   direct stance text edits via the existing admin UI (`TopicAdminPanel`).
-
-3. **Run the 5 rewrites through the Plan D workflow, one at a time, in
-   the order above** (ai-regulation → housing → taxes → immigration →
-   healthcare). Each takes: draft new framing → framing gate → seed
-   proposals → research + paste proposed stances per affected politician
-   → approve/reject gate → publish. Healthcare goes last.
+2. **Run the 6 rewrites through the Plan D workflow.** Sequence:
+   ai-regulation → housing → taxes → (immigration + deportation
+   together) → healthcare. That's 5 sessions total (the immigration +
+   deportation pair counts as one double-length session). Each session:
+   draft new framing → framing gate → seed proposals → research + paste
+   proposed stances per affected politician → approve/reject gate →
+   publish. Total ~263 stances to re-score across all 6 rewrites.
 
 4. **Re-audit in ~6 months** — once you have real voter behavior data
    on the rewritten topics, revisit whether the new framings actually
