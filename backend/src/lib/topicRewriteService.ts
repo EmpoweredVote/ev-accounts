@@ -196,7 +196,7 @@ export async function getRewriteDetail(rewriteId: string): Promise<unknown> {
   const { rows: proposals } = await pool.query(
     `SELECT p.*, pol.full_name AS politician_name
      FROM inform.topic_rewrite_stance_proposals p
-     JOIN inform.politicians pol ON pol.id = p.politician_id
+     JOIN essentials.politicians pol ON pol.id = p.politician_id
      WHERE p.rewrite_id = $1
      ORDER BY pol.full_name`,
     [rewriteId],
