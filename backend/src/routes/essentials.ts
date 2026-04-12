@@ -12,9 +12,9 @@ import {
   getDistrictById,
 } from '../lib/essentialsService.js';
 import { getElectionsByCoordinate, getCandidateById } from '../lib/electionService.js';
+import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
-import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 
 /**
  * Essentials router — address-search and other top-level essentials routes.
@@ -421,7 +421,6 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
   // Single query: fetch all location fields + has_coords flag in one round-trip.
   const { rows } = await pool.query<{
-    home_address: string | null;
     congressional_geo_id: string | null;
     state_senate_geo_id: string | null;
     state_house_geo_id: string | null;
@@ -431,8 +430,7 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
     jurisdiction_city: string | null;
     has_coords: boolean;
   }>(
-    `SELECT home_address,
-             congressional_geo_id, state_senate_geo_id, state_house_geo_id,
+    `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
              county_geo_id, school_district_geo_id,
              jurisdiction_state, jurisdiction_city,
              (encrypted_lat IS NOT NULL) AS has_coords
@@ -440,7 +438,6 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
     [userId]
   ).catch(() => ({ rows: [] as any[] }));
   const j = rows[0];
-  const homeAddress = j?.home_address ?? '';
 
   // --- Path 1: stored jurisdiction GEO IDs — fast direct lookup ---
   if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
@@ -463,11 +460,11 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
       const dataStatus = merged.length === 0 ? 'no-geofence-data' : 'fresh';
       res.setHeader('X-Data-Status', dataStatus);
-      res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+      res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
       res.status(200).json(merged);
       return;
     } catch {
-      // fall through to Path 1.5 / Path 2
+      // fall through to Path 1.5
     }
   }
 
@@ -522,38 +519,19 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
           const dataStatus = merged.length === 0 ? 'no-geofence-data' : 'fresh';
           res.setHeader('X-Data-Status', dataStatus);
-          res.setHeader('X-Formatted-Address', homeAddress || [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+          res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
           res.status(200).json(merged);
           return;
         }
-        // All-null from RPC (no boundary match) — fall through to Path 2
+        // All-null from RPC (no boundary match) — fall through to 204
       }
     } catch {
-      // RPC error — fall through to Path 2
+      // RPC error — fall through to 204
     }
   }
 
-  // --- Path 2: no encrypted coordinates — geocode home_address directly ---
-  if (!homeAddress) {
-    res.status(204).end();
-    return;
-  }
-
-  try {
-    const result = await getRepresentativesByAddress(homeAddress);
-    const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
-    res.setHeader('X-Data-Status', dataStatus);
-    res.setHeader('X-Formatted-Address', result.matchedAddress || homeAddress);
-    res.status(200).json(result.politicians);
-  } catch (err) {
-    if (err instanceof GeocodingError) {
-      // Address saved but can't geocode — return 204 so frontend falls back gracefully
-      res.status(204).end();
-      return;
-    }
-    console.error('[GET /essentials/representatives/me] error:', err);
-    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-  }
+  // No usable location data — coordinates not yet set or jurisdiction unresolvable
+  res.status(204).end();
 });
 
 export default router;
