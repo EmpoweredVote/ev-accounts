@@ -31,7 +31,11 @@
   4. The report includes headshot coverage per candidate: CDN photo vs local file vs no photo.
   5. A full ballot baseline document exists in `.planning/research/` sourced from Indiana SoS + Monroe County Clerk + local press, listing every race and expected candidate count for May 5.
   6. A Bloomington address (e.g., 200 W Kirkwood Ave) resolves correctly through the geofence stack and the returned races match the baseline.
-**Plans**: TBD
+**Plans:** 3 plans
+Plans:
+- [ ] 112-01-PLAN.md — Ballot baseline document + race and candidate audit scripts
+- [ ] 112-02-PLAN.md — Stance, quote, headshot, and profile completeness audit scripts
+- [ ] 112-03-PLAN.md — Geofence smoke test + assembler for unified audit report
 
 ### Phase 113: Competitive Benchmarking
 **Goal**: EV's Monroe County coverage is benchmarked against all four major voter guide competitors using a live Bloomington address, producing a feature comparison matrix.
@@ -75,7 +79,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 112. Data Completeness Audit | 0/? | Not started | - |
+| 112. Data Completeness Audit | 0/3 | Planned | - |
 | 113. Competitive Benchmarking | 0/? | Not started | - |
 | 114. UX Walkthrough | 0/? | Not started | - |
 | 115. Gap Report Synthesis | 0/? | Not started | - |
