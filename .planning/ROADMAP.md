@@ -48,7 +48,15 @@ Plans:
   4. A live spot-check on Ballotpedia with the same address is documented: race and candidate coverage.
   5. A feature comparison matrix covering at least 15 dimensions (race coverage, candidate fields, stance data, quote/Q&A, photo, bio, legislative record, compass, geofence precision, antipartisan, etc.) places EV against all four competitors, with honest scoring.
   6. Per-competitor race and candidate counts for Monroe County are directly compared against the Phase 112 baseline in the matrix.
-**Plans**: TBD
+**Plans:** 7 plans
+Plans:
+- [ ] 113-01-PLAN.md — Methodology + MATRIX/CSV scaffolding (addresses, rubric, 10 core dimensions, antipartisan omissions)
+- [ ] 113-02-PLAN.md — BallotReady live spot-check + evidence file + screenshots
+- [ ] 113-03-PLAN.md — Vote411 live spot-check + evidence file + screenshots
+- [ ] 113-04-PLAN.md — VoteSmart live spot-check + evidence file + screenshots
+- [ ] 113-05-PLAN.md — Ballotpedia live spot-check + evidence file + screenshots
+- [ ] 113-06-PLAN.md — EV self spot-check applying same methodology (no privilege)
+- [ ] 113-07-PLAN.md — Matrix assembly: score cells, race/candidate count table vs baseline, derived extras
 **UI hint**: no
 
 ### Phase 114: UX Walkthrough
