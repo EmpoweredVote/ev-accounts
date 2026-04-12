@@ -71,9 +71,10 @@ Progress: [          ] 0%
 | 260404-w7r | Move icon overlay from bottom-right to left-aligned below text on politician cards | 2026-04-05 | ed12358, f3b1e02 | [260404-w7r-move-icon-overlay-from-bottom-right-to-l](./quick/260404-w7r-move-icon-overlay-from-bottom-right-to-l/) |
 | 260405-doq | Fix ballot icon showing for all politicians — filter by actual race/candidate participation | 2026-04-05 | 6db60d7 | [260405-doq-fix-on-the-ballot-icon-showing-for-all-p](./quick/260405-doq-fix-on-the-ballot-icon-showing-for-all-p/) |
 | 260405-ez5 | Fix politician card height inconsistency — all cards in a grid row now match the tallest card | 2026-04-05 | ev-ui@b1b0c58,c96b22c; essentials@7b6a2bd,c60c265 | [260405-ez5-fix-politician-card-height-inconsistency](./quick/260405-ez5-fix-politician-card-height-inconsistency/) |
+| 260411-s03 | Essentials UI fixes: normalize card icon colors, remove compass coverage callouts, stop truncating names, fix county commissioner/council branch icons | 2026-04-12 | essentials@5277c2e,222b610,27da248,c45740d | [260411-s03-essentials-ui-fixes-icon-colors-remove-c](./quick/260411-s03-essentials-ui-fixes-icon-colors-remove-c/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-10 — Wrote ROADMAP.md for milestone v2026.4.2 (5 phases, 22/22 requirements mapped)
+Last activity: 2026-04-12 — Completed quick task 260411-s03: essentials UI fixes
 Stopped at: Phase 109 context gathered
 Resume file: .planning/phases/109-per-meeting-body-tagging/109-CONTEXT.md
