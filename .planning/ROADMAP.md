@@ -1,102 +1,73 @@
-# Roadmap — v2026.4.2 CouncilScribe Speaker Identification via Essentials
+# Roadmap — v2026.4.3 Indiana Primary Election Readiness Audit
 
-**Milestone goal:** Make CouncilScribe voice profiles first-class references to Empowered Vote politicians so same-person auto-match works reliably across meetings and rosters stay in sync with the essentials source of truth.
+**Milestone goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (~May 6, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
 
 **Granularity:** standard
-**Total phases:** 5 (Phase 107 — Phase 111)
-**Requirements covered:** 22/22
-**Repos affected:** `ev-accounts`, `CouncilScribe`
+**Total phases:** 4 (Phase 112 — Phase 115)
+**Requirements covered:** 21/21
+**Repos affected:** `ev-accounts` (read-only audit script), `.planning/` (markdown outputs only)
 
 ---
 
 ## Phases
 
-- [x] **Phase 107: Essentials body roster endpoint** — Public ev-accounts API surfaces body search and roster fetch (completed 2026-04-11)
-- [x] **Phase 108: CouncilScribe roster client + CLI** — HTTP client and `refresh_roster.py` cache per-body rosters locally (completed 2026-04-11)
-- [x] **Phase 109: Per-meeting body tagging** — Meetings record a `body_slug` and pipeline plumbs it through Stage 4 (completed 2026-04-11)
-- [x] **Phase 110: Profile schema v3 + re-enrollment** — Voice profiles keyed by `politician_slug`, v2 profiles auto-discarded, re-enrollment resolves names against rosters (completed 2026-04-12)
-- [x] **Phase 111: Live roster drives identification** — Pattern matcher and LLM prompt consume the fetched roster; `politician_slug` carried end-to-end (completed 2026-04-12)
+- [ ] **Phase 112: Data Completeness Audit** — DB audit script + full Monroe County May 5 ballot baseline built from authoritative sources
+- [ ] **Phase 113: Competitive Benchmarking** — Live Monroe County spot-checks on BallotReady, Vote411, VoteSmart, Ballotpedia with feature comparison matrix
+- [ ] **Phase 114: UX Walkthrough** — Voter journey documented for Essentials, Compass, Read & Rank, and Treasury with gaps logged
+- [ ] **Phase 115: Gap Report Synthesis** — Tiered gap report (Tier 1 before primary / Tier 2 future) with execution backlog for follow-on milestone
 
 ---
 
 ## Phase Details
 
-### Phase 107: Essentials body roster endpoint
-**Goal**: Operators can fetch a governing body's current active roster from a public ev-accounts endpoint by a stable slug computed from `chambers.name_formal`.
-**Depends on**: Nothing (foundation — existing `essentials.chambers` / `offices` / `politicians` tables are sufficient)
-**Requirements**: ESSBODY-01, ESSBODY-02, ESSBODY-03, ESSBODY-04, ESSBODY-05
+### Phase 112: Data Completeness Audit
+**Goal**: The actual gap between what is in the DB and what is on the May 5 Monroe County ballot is measured and documented, with a verified full ballot baseline from authoritative external sources.
+**Depends on**: Nothing (foundation — read-only queries against existing DB; no external services required)
+**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03, AUDIT-04, AUDIT-05, AUDIT-06, AUDIT-07, AUDIT-08
 **Success Criteria** (what must be TRUE):
-  1. `GET /api/essentials/bodies?q=bloomington` returns deduplicated bodies matching by `name_formal` substring with member counts, no auth required.
-  2. `GET /api/essentials/bodies/bloomington-common-council/roster` returns the 9 current active members with `politician_slug`, `politician_id`, `full_name`, `preferred_name`, `title`, `chamber_name`, `district_label`, and `photo_url`.
-  3. Slug derivation is deterministic — the same body resolves to the same kebab-case URL on every call — and the same slug input always returns the same roster.
-  4. Vacant seats, inactive politicians, and any party affiliation are absent from the response; unknown slugs return 404 JSON and invalid queries return 400 JSON.
-  5. Bloomington Common Council roster responds in under 500ms under typical production load.
-**Plans**: 3 plans
-- [x] 107-01-PLAN.md — Migration 059: chambers.slug generated column + join indexes
-- [x] 107-02-PLAN.md — essentialsBodiesService + essentialsBodies route + antipartisan grep
-- [x] 107-03-PLAN.md — Vitest integration suite with DB-optional pattern and <500ms perf assertion
+  1. Running the audit script outputs a structured report showing race count in DB vs confirmed May 5 ballot total, with named missing races listed.
+  2. Each race in the report has a candidate coverage line — how many candidates are linked, how many are unlinked stubs, and how many are expected.
+  3. The report includes stance and quote coverage per candidate: how many have any compass stances, how many have any Read & Rank quotes.
+  4. The report includes headshot coverage per candidate: CDN photo vs local file vs no photo.
+  5. A full ballot baseline document exists in `.planning/research/` sourced from Indiana SoS + Monroe County Clerk + local press, listing every race and expected candidate count for May 5.
+  6. A Bloomington address (e.g., 200 W Kirkwood Ave) resolves correctly through the geofence stack and the returned races match the baseline.
+**Plans**: TBD
 
-### Phase 108: CouncilScribe roster client + CLI
-**Goal**: CouncilScribe can fetch and cache any body's roster locally with auto-generated aliases, with graceful offline behavior and staleness warnings.
-**Depends on**: Phase 107
-**Requirements**: CSROSTER-01, CSROSTER-02, CSROSTER-03, CSROSTER-04, CSROSTER-05
+### Phase 113: Competitive Benchmarking
+**Goal**: EV's Monroe County coverage is benchmarked against all four major voter guide competitors using a live Bloomington address, producing a feature comparison matrix.
+**Depends on**: Phase 112 (full ballot baseline must exist to compare race coverage accurately)
+**Requirements**: BENCH-01, BENCH-02, BENCH-03, BENCH-04, BENCH-05, BENCH-06
 **Success Criteria** (what must be TRUE):
-  1. Running `refresh_roster.py --body bloomington-common-council` writes `~/CouncilScribe/config/rosters/bloomington-common-council.json` containing `body_key`, `body_slug`, `fetched_at`, and `politicians[]` with slug, full name, aliases, title, and district label.
-  2. Each politician in the cached roster has an alias list covering full name, surname, first+last, preferred+last, and "Title LastName" variants, deduplicated.
-  3. With the network disabled, the client fails with a clear error but never crashes or corrupts an existing cached roster.
-  4. `roster.load_roster()` returns a per-body roster when a slug is provided, and falls back to the legacy `council_roster.json` when no slug is set (existing meetings keep working).
-  5. Reusing a cached roster older than 30 days emits a non-blocking staleness warning on stdout/log.
-**Plans**: 1 plan
-- [x] 108-01-PLAN.md — Roster HTTP client, alias generator, refresh_roster CLI, load_roster slug path + staleness
+  1. A live spot-check on BallotReady with a Monroe County address is documented: races shown, candidate data depth (fields present), stance/Q&A availability.
+  2. A live spot-check on Vote411 with the same address is documented: races shown, Q&A coverage, and candidate profile depth.
+  3. A live spot-check on VoteSmart with the same address is documented: candidate coverage and data fields.
+  4. A live spot-check on Ballotpedia with the same address is documented: race and candidate coverage.
+  5. A feature comparison matrix covering at least 15 dimensions (race coverage, candidate fields, stance data, quote/Q&A, photo, bio, legislative record, compass, geofence precision, antipartisan, etc.) places EV against all four competitors, with honest scoring.
+  6. Per-competitor race and candidate counts for Monroe County are directly compared against the Phase 112 baseline in the matrix.
+**Plans**: TBD
+**UI hint**: no
 
-### Phase 108.1: Essentials client — wrap non-JSON 200 responses
-**Goal**: `fetch_body_roster` returns a clean `EssentialsClientError` (instead of raw `JSONDecodeError`) when the server returns HTTP 200 with non-JSON content, so CLI and callers get a consistent error envelope.
-**Depends on**: Phase 108
-**Requirements**: CSROSTER-03 (hardening)
+### Phase 114: UX Walkthrough
+**Goal**: A voter's first-time experience through each EV app for Monroe County IN is documented with specific friction points and gaps identified.
+**Depends on**: Phase 112 (full ballot baseline and audit data must be available to assess data gaps during walkthrough)
+**Requirements**: UX-01, UX-02, UX-03, UX-04
 **Success Criteria** (what must be TRUE):
-  1. When the upstream endpoint returns HTTP 200 with `Content-Type: text/html` (or any non-JSON), `refresh_roster.py` exits non-zero with a clear `Essentials client error: ...` message on stderr, and an existing cache file is byte-identical before and after.
-  2. `fetch_body_roster` never lets a raw `requests.exceptions.JSONDecodeError` escape — all parse failures are wrapped in `EssentialsClientError`.
-  3. A unit test patches `requests.get` to return HTTP 200 `text/html` and asserts `EssentialsClientError` is raised with a message containing the body's first 200 chars for debuggability.
-**Plans**: 0 plans (run `/gsd-plan-phase 108.1` to create)
+  1. The Essentials voter journey is documented: searching a Monroe County address, reviewing each screen (results, election central, representative cards, candidate profiles), with every gap, missing piece, or confusing moment logged.
+  2. The Compass voter journey is documented: evaluating whether a Monroe County voter can meaningfully use the compass for candidates in contested races, with stance data availability assessed per race.
+  3. The Read & Rank voter journey is documented: whether enough sourced quotes exist for Monroe County primary candidates for the tool to be useful, and whether candidate filtering works for the county.
+  4. The Treasury relevance assessment is documented: whether Monroe County budget data is present, surfaced, and contextually useful to a voter visiting in an election context.
+**Plans**: TBD
+**UI hint**: no
 
-### Phase 109: Per-meeting body tagging
-**Goal**: Every meeting run declares which governing body it belongs to, and that slug flows through the pipeline so identification consumes the right roster.
-**Depends on**: Phase 108
-**Requirements**: CSMEETING-01, CSMEETING-02, CSMEETING-03
+### Phase 115: Gap Report Synthesis
+**Goal**: Findings from the data audit, competitive benchmarking, and UX walkthrough are synthesized into an actionable tiered gap report with a prioritized execution backlog.
+**Depends on**: Phase 112, Phase 113, Phase 114 (all three audit tracks must complete before synthesizing)
+**Requirements**: GAP-01, GAP-02, GAP-03
 **Success Criteria** (what must be TRUE):
-  1. A meeting tagged with `--body bloomington-common-council` persists that slug to pipeline metadata and reads it back on every subsequent stage invocation without re-specifying the flag.
-  2. Launching a meeting with a body slug that has no cached roster fails fast with a clear error message telling the operator to run `refresh_roster.py`.
-  3. Stage 4 identification uses the body-specific roster for `correct_speaker_name`, pattern matching, and the LLM prompt — no code path falls back to the legacy global roster when a body_slug is present.
-**Plans**: 3 plans
-- [x] 109-01-PLAN.md — Extend PipelineState with body_slug + --body/--force-retag argparse + batch propagation + Wave 0 test scaffold
-- [x] 109-02-PLAN.md — ensure_body_roster_cached pre-Stage-1 guard with slug validation + D-08 error
-- [x] 109-03-PLAN.md — Stage 4 load_roster(body_slug=...) wiring at run_local.py:568
-
-### Phase 110: Profile schema v3 + re-enrollment
-**Goal**: Voice profiles are keyed by essentials `politician_slug` when they correspond to a known politician, coexisting with local-slug profiles for non-roster speakers, and existing v2 profiles can be promoted via re-enrollment.
-**Depends on**: Phase 109
-**Requirements**: CSPROFILE-01, CSPROFILE-02, CSPROFILE-03, CSPROFILE-04, CSPROFILE-05
-**Success Criteria** (what must be TRUE):
-  1. Opening a v2 profile DB with the v3 code auto-discards incompatible entries (same pattern as v1→v2) and rebuilds cleanly on next enroll.
-  2. Re-running `reenroll_profiles.py` against a Bloomington Common Council meeting produces at least one profile keyed `essentials:<politician_slug>` (e.g. `essentials:isabel-piedmont-smith`) populated from the cached roster.
-  3. Public commenters and other non-roster speakers enroll under locally-generated slugs in the same DB and are never accidentally promoted to politician keys.
-  4. A politician-slug-keyed profile accumulates embeddings across multiple meetings — re-enrolling against a second meeting with the same speaker adds to the existing profile rather than creating a duplicate.
-  5. `StoredProfile` records carry `politician_slug` and `politician_id` fields (nullable for local profiles), round-tripping through save/load.
-**Plans**: 2 plans
-- [x] 110-01-PLAN.md — Schema v3 bump (StoredProfile + RosterMember identity fields), resolve_enrollment_key helper, enrollment path wiring, 11 unit tests
-- [x] 110-02-PLAN.md — reenroll_profiles.py body-slug-aware re-enrollment with roster passthrough, 3 additional tests
-
-### Phase 111: Live roster drives identification
-**Goal**: Speaker identification on a real Bloomington Common Council meeting returns only roster-backed names, with `politician_slug` carried end-to-end into `transcript_named.json`, and phantom names disappear.
-**Depends on**: Phase 110
-**Requirements**: CSIDENT-01, CSIDENT-02, CSIDENT-03, CSIDENT-04
-**Success Criteria** (what must be TRUE):
-  1. On a previously-processed Bloomington Common Council meeting, identified speaker names all appear in the fetched roster — zero references to "Councilmember Piafra" or any other phantom not present in the live roster.
-  2. Whisper hallucinations on uncommon surnames are rejected by the Layer 2 pattern matcher when they fail a fuzzy match against active roster members above the configured threshold.
-  3. The Layer 3 LLM prompt observably includes the live roster (names + district labels for disambiguation) instead of a hand-coded global hint.
-  4. When a speaker is confidently matched, the `SpeakerMapping` and downstream `transcript_named.json` record both `speaker_name` and the essentials `politician_slug`.
-**Plans**: 1 plan
-- [x] 111-01-PLAN.md — TDD: wire live roster into identification layers (SpeakerMapping identity, roster_names_for_prompt district labels, pattern matcher surname rejection, correct_mappings identity population)
+  1. A gap report document exists in `.planning/` classifying every identified gap as Tier 1 (must ship before primary, ~May 6) or Tier 2 (future improvement).
+  2. The gap report contains an explicit "intentional omissions" section documenting antipartisan choices (no party labels, no endorsements, no interest group ratings) to distinguish them from data gaps.
+  3. An execution backlog exists as a prioritized list of phases for a follow-on milestone (v2026.4.4), sequencing Tier 1 gaps in the order they should be tackled with rough effort signals.
+**Plans**: TBD
 
 ---
 
@@ -104,41 +75,39 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 107. Essentials body roster endpoint | 3/3 | Complete   | 2026-04-11 |
-| 108. CouncilScribe roster client + CLI | 1/1 | Complete    | 2026-04-11 |
-| 109. Per-meeting body tagging | 3/3 | Complete   | 2026-04-11 |
-| 110. Profile schema v3 + re-enrollment | 2/2 | Complete    | 2026-04-12 |
-| 111. Live roster drives identification | 1/1 | Complete   | 2026-04-12 |
+| 112. Data Completeness Audit | 0/? | Not started | - |
+| 113. Competitive Benchmarking | 0/? | Not started | - |
+| 114. UX Walkthrough | 0/? | Not started | - |
+| 115. Gap Report Synthesis | 0/? | Not started | - |
 
 ---
 
 ## Coverage
 
-**Requirements mapped:** 22/22
+**Requirements mapped:** 21/21
 
 | REQ-ID | Phase |
 |--------|-------|
-| ESSBODY-01 | 107 |
-| ESSBODY-02 | 107 |
-| ESSBODY-03 | 107 |
-| ESSBODY-04 | 107 |
-| ESSBODY-05 | 107 |
-| CSROSTER-01 | 108 |
-| CSROSTER-02 | 108 |
-| CSROSTER-03 | 108 |
-| CSROSTER-04 | 108 |
-| CSROSTER-05 | 108 |
-| CSMEETING-01 | 109 |
-| CSMEETING-02 | 109 |
-| CSMEETING-03 | 109 |
-| CSPROFILE-01 | 110 |
-| CSPROFILE-02 | 110 |
-| CSPROFILE-03 | 110 |
-| CSPROFILE-04 | 110 |
-| CSPROFILE-05 | 110 |
-| CSIDENT-01 | 111 |
-| CSIDENT-02 | 111 |
-| CSIDENT-03 | 111 |
-| CSIDENT-04 | 111 |
+| AUDIT-01 | 112 |
+| AUDIT-02 | 112 |
+| AUDIT-03 | 112 |
+| AUDIT-04 | 112 |
+| AUDIT-05 | 112 |
+| AUDIT-06 | 112 |
+| AUDIT-07 | 112 |
+| AUDIT-08 | 112 |
+| BENCH-01 | 113 |
+| BENCH-02 | 113 |
+| BENCH-03 | 113 |
+| BENCH-04 | 113 |
+| BENCH-05 | 113 |
+| BENCH-06 | 113 |
+| UX-01 | 114 |
+| UX-02 | 114 |
+| UX-03 | 114 |
+| UX-04 | 114 |
+| GAP-01 | 115 |
+| GAP-02 | 115 |
+| GAP-03 | 115 |
 
 No orphaned requirements. No duplicates.

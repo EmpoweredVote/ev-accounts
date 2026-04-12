@@ -86,33 +86,33 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUDIT-01 | — | Pending |
-| AUDIT-02 | — | Pending |
-| AUDIT-03 | — | Pending |
-| AUDIT-04 | — | Pending |
-| AUDIT-05 | — | Pending |
-| AUDIT-06 | — | Pending |
-| AUDIT-07 | — | Pending |
-| AUDIT-08 | — | Pending |
-| BENCH-01 | — | Pending |
-| BENCH-02 | — | Pending |
-| BENCH-03 | — | Pending |
-| BENCH-04 | — | Pending |
-| BENCH-05 | — | Pending |
-| BENCH-06 | — | Pending |
-| UX-01 | — | Pending |
-| UX-02 | — | Pending |
-| UX-03 | — | Pending |
-| UX-04 | — | Pending |
-| GAP-01 | — | Pending |
-| GAP-02 | — | Pending |
-| GAP-03 | — | Pending |
+| AUDIT-01 | Phase 112 | Pending |
+| AUDIT-02 | Phase 112 | Pending |
+| AUDIT-03 | Phase 112 | Pending |
+| AUDIT-04 | Phase 112 | Pending |
+| AUDIT-05 | Phase 112 | Pending |
+| AUDIT-06 | Phase 112 | Pending |
+| AUDIT-07 | Phase 112 | Pending |
+| AUDIT-08 | Phase 112 | Pending |
+| BENCH-01 | Phase 113 | Pending |
+| BENCH-02 | Phase 113 | Pending |
+| BENCH-03 | Phase 113 | Pending |
+| BENCH-04 | Phase 113 | Pending |
+| BENCH-05 | Phase 113 | Pending |
+| BENCH-06 | Phase 113 | Pending |
+| UX-01 | Phase 114 | Pending |
+| UX-02 | Phase 114 | Pending |
+| UX-03 | Phase 114 | Pending |
+| UX-04 | Phase 114 | Pending |
+| GAP-01 | Phase 115 | Pending |
+| GAP-02 | Phase 115 | Pending |
+| GAP-03 | Phase 115 | Pending |
 
 **Coverage:**
 - v1 requirements: 21 total
-- Mapped to phases: 0
-- Unmapped: 21
+- Mapped to phases: 21
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-11*
-*Last updated: 2026-04-11 after initial definition*
+*Last updated: 2026-04-11 — traceability populated after roadmap creation*
