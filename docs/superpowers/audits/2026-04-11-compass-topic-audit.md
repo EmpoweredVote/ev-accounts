@@ -200,10 +200,10 @@ Decisions below; the table above has been updated to match.
 
 ## Next actions after this audit lands
 
-1. **Backfill tier flags** — once you approve the table above, a one-time
-   script pass writes the F/S/L flags into `inform.compass_topic_roles`
-   using the values from this doc. This is the input Plan A was waiting
-   for (migration 059 created the table + constraints but left it empty).
+1. ~~**Backfill tier flags**~~ — **done 2026-04-11.** The table was
+   already populated (presumably during earlier Plan A work), and 25/26
+   live topics already matched the audit's decisions. The only delta
+   was the abortion `local` flag added via migration 063.
 
 2. **Handle the deportation tweak** — not through Plan D workflow, just
    direct stance text edits via the existing admin UI (`TopicAdminPanel`).
