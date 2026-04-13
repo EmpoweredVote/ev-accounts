@@ -554,12 +554,14 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
     county_geo_id: string | null;
     school_district_geo_id: string | null;
     city_council_geo_id: string | null;
+    municipality_geo_id: string | null;
     jurisdiction_state: string | null;
     jurisdiction_city: string | null;
     has_coords: boolean;
   }>(
     `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
              county_geo_id, school_district_geo_id, city_council_geo_id,
+             municipality_geo_id,
              jurisdiction_state, jurisdiction_city,
              (encrypted_lat IS NOT NULL) AS has_coords
       FROM connect.connected_profiles WHERE user_id = $1`,
@@ -572,7 +574,8 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
     try {
       const elections = await getElectionsByGeoIds(
         [j.congressional_geo_id, j.state_senate_geo_id, j.state_house_geo_id,
-         j.county_geo_id, j.school_district_geo_id, j.city_council_geo_id],
+         j.county_geo_id, j.school_district_geo_id, j.city_council_geo_id,
+         j.municipality_geo_id],
         j.jurisdiction_state
       );
       res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
@@ -606,19 +609,22 @@ router.get('/elections/me', requireAuth, requireConnected, async (req: Request, 
                county_name                 = $9,
                school_district_geo_id      = $10,
                school_district_name        = $11,
+               municipality_geo_id         = $12,
                updated_at                  = now()
            WHERE user_id = $1`,
           [userId, jd.congressional ?? null, jd.congressional_name ?? null,
            jd.state_senate ?? null, jd.state_senate_name ?? null,
            jd.state_house ?? null, jd.state_house_name ?? null,
            jd.county ?? null, jd.county_name ?? null,
-           jd.school_district ?? null, jd.school_district_name ?? null]
+           jd.school_district ?? null, jd.school_district_name ?? null,
+           jd.municipality ?? null]
         ).catch((e: Error) => console.error('[elections/me] Path 1.5 write-back error:', e.message));
 
         if (jd.congressional || jd.state_senate || jd.county) {
           const elections = await getElectionsByGeoIds(
             [jd.congressional, jd.state_senate, jd.state_house,
-             jd.county, jd.school_district, jd.city_council],
+             jd.county, jd.school_district, jd.city_council,
+             jd.municipality],
             j.jurisdiction_state
           );
           res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));

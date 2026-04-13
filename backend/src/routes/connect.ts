@@ -611,6 +611,7 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
              jurisdiction_city = $13,
              city_council_geo_id = $14,
              city_council_district_name = $15,
+             municipality_geo_id = $16,
              updated_at = now()
          WHERE user_id = $1`,
         [
@@ -629,6 +630,7 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
           city,
           jData.city_council ?? null,
           jData.city_council_name ?? null,
+          jData.municipality ?? null,
         ]
       );
     } catch (e) {
