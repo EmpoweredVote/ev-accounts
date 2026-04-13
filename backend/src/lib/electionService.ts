@@ -77,6 +77,18 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
     return 'STATE_UPPER';
   if (p.includes('governor') || p.includes('lieutenant governor'))
     return 'STATE_EXEC';
+  // State constitutional officers — must precede LOCAL catch-all, which also matches
+  // 'treasurer', 'commissioner', 'clerk', 'auditor', 'assessor', etc.
+  if (p.includes('attorney general') ||
+      p.includes('secretary of state') ||
+      p.includes('state treasurer') ||
+      p.includes('state controller') ||
+      p.includes('state comptroller') ||
+      p.includes('state auditor') ||
+      p.includes('insurance commissioner') ||
+      p.includes('superintendent of public instruction') ||
+      p.includes('superintendent of schools'))
+    return 'STATE_EXEC';
 
   // Local
   if (p.includes('mayor'))
