@@ -116,3 +116,53 @@ _Populated by Plan 114-07 aggregation. Left empty here._
 - **baseline_ref:** `County-Wide Races` rows — Monroe County Prosecuting Attorney (Benjamin T. Arrington, Erika Oliphant), Monroe County Assessor (Bob Nyquist, Judith A. Sharp), Monroe County Clerk (Tanner Dale Branham, Joe Davis, Tree Martin Lucas, Julie M. Hays)
 - **notes:** DB gap already audited — see `AUDIT-REPORT-112.md §AUDIT-03 Stance Coverage` rows where Arrington, Nyquist, Joe Davis, Branham, Hays all appear with blank politician_id and `status=stub` (unlinked — no underlying politician record). The voter-facing consequence is that the **contested Monroe County Prosecutor primary** and the **3-way contested Monroe County Clerk primary** are unchooseable from inside the app — one side of each race has zero content. Severity=blocker because the tool fails its UX-01 goal (helping a voter decide) precisely where it matters most.
 
+
+<!-- ========================================================================= -->
+<!-- Plan 114-03: Compass (UX-02) — full calibration → Build → results → compare -->
+<!-- ========================================================================= -->
+
+### G-114-011 — Compare picker defaults to all-states, no location-aware prioritization
+- **app:** compass
+- **screen:** Results (Compare picker open) — https://compass.empowered.vote/results
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/compass/06-compare-picker.png — "State" dropdown defaults to unfiltered (California + Indiana mixed); first result is Julia Brownley (CA-26), an irrelevant California rep
+- **baseline_ref:** n/a
+- **notes:** A Monroe County voter clicking Compare sees 52 politicians intermixing CA and IN officials with no location awareness. They must manually change the "State" dropdown to "Indiana" to find anyone relevant. No autocomplete or geo-default is applied. Distinct from G-114-012 (which is about the absence of primary challengers even after filtering); this gap is about the entry experience before any filtering.
+
+### G-114-012 — Primary challengers absent from Compass compare picker — contested May 5 races undecidable
+- **app:** compass
+- **screen:** Results (Compare picker → Indiana filter) — https://compass.empowered.vote/results
+- **severity:** blocker
+- **type:** data
+- **evidence:** screenshots/compass/07-indiana-picker-filtered.png — Indiana filter shows 9 sitting officials; zero primary challengers (Graham/Meyer/Peck/Roark for IN-9 D primary; Arrington/Oliphant for Prosecutor; Branham/Davis/Lucas/Hays for Clerk absent)
+- **baseline_ref:** `Federal Races` rows — U.S. Representative IN-9 (Houchin R + Graham/Meyer/Peck/Roark D challengers); `County-Wide Races` rows — Monroe County Prosecuting Attorney, Assessor, Clerk candidates
+- **notes:** Compass can compare a voter against Erin Houchin (incumbent) but not against the 4 D candidates actually contesting the May 5 IN-9 primary. Root cause: no stance data exists for the challengers (they are either DB stubs per AUDIT-REPORT-112.md §AUDIT-03 or simply have no data entered). Consequence: the compare feature is voter-useful for exactly 1 of 8 May 5 ballot races (IN HD-61 Pierce vs Young). Severity=blocker because the most contested federal race on this voter's primary ballot is completely dark inside the app.
+
+### G-114-013 — 4-step onboarding tooltip fires on first comparison and blocks the radar view
+- **app:** compass
+- **screen:** Results (comparison active) — https://compass.empowered.vote/results
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/compass/08-compare-pierce-overlay.png — fixed-overlay tooltip "1 of 4: Search for any politician to compare..." renders over the dual-radar, blocking interaction until advanced through all 4 steps or "Skip All" clicked
+- **baseline_ref:** n/a
+- **notes:** A voter who just completed a 33-question calibration and navigated the picker must click through (or skip) a 4-step tutorial before they can interact with the comparison they came for. The tooltip content is useful (antipartisan explanation, stance interpretation guidance) but the timing and fixed-overlay delivery interrupt the payoff moment. Consider surface-level inline hints rather than a blocking tour.
+
+### G-114-014 — Matt Pierce headshot missing in Compass compare panel despite headshot existing in Essentials
+- **app:** compass
+- **screen:** Results (compare panel) — https://compass.empowered.vote/results
+- **severity:** confusing
+- **type:** feature
+- **evidence:** screenshots/compass/09-compare-clean.png — Matt Pierce shows grey silhouette avatar in compare panel; screenshots/essentials/05-pierce-profile.png — Pierce has a headshot on Essentials profile
+- **baseline_ref:** n/a
+- **notes:** The two apps appear to source headshots independently. Compass compare panel renders a placeholder for Pierce (and visibly for Jim Banks, David G Henry in the picker) even when Essentials shows a headshot for the same politician. Requires investigation into whether Compass pulls from the same `essentials.politician_images` table or a separate source. Cross-app data inconsistency.
+
+### G-114-015 — Religious Freedom question appears to repeat in the 33-question calibration
+- **app:** compass
+- **screen:** Quiz — https://compass.empowered.vote/quiz?mode=full
+- **severity:** minor
+- **type:** content
+- **evidence:** Auto-advance JS loop observation — Religious Freedom appeared at approximately Q4 and Q20; question text appeared identical or near-identical on both occurrences
+- **baseline_ref:** n/a
+- **notes:** Observed during rapid JS auto-advance; not screenshot-verified (questions cycled too fast). May represent two legitimately distinct Religious Freedom sub-questions (e.g., employment vs. public accommodations), or may be a content duplication bug. Requires a human re-run of the quiz reading each question carefully to confirm. Flagged as minor until verified.
+
