@@ -186,7 +186,6 @@ export async function getElectionsByGeoIds(
       JOIN essentials.races r ON r.election_id = e.id
       LEFT JOIN essentials.race_candidates rc
         ON rc.race_id = r.id
-        AND rc.candidate_status != 'withdrawn'
       LEFT JOIN LATERAL (
         SELECT url FROM essentials.politician_images
         WHERE politician_id = rc.politician_id AND type = 'default'
@@ -228,7 +227,6 @@ export async function getElectionsByGeoIds(
       JOIN essentials.races r ON r.election_id = e.id
       LEFT JOIN essentials.race_candidates rc
         ON rc.race_id = r.id
-        AND rc.candidate_status != 'withdrawn'
       LEFT JOIN LATERAL (
         SELECT url FROM essentials.politician_images
         WHERE politician_id = rc.politician_id AND type = 'default'
@@ -356,7 +354,6 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     JOIN essentials.races r ON r.election_id = e.id
     LEFT JOIN essentials.race_candidates rc
       ON rc.race_id = r.id
-      AND rc.candidate_status != 'withdrawn'
     LEFT JOIN LATERAL (
       SELECT url FROM essentials.politician_images
       WHERE politician_id = rc.politician_id AND type = 'default'
@@ -425,7 +422,6 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       JOIN essentials.races r ON r.election_id = e.id
       LEFT JOIN essentials.race_candidates rc
         ON rc.race_id = r.id
-        AND rc.candidate_status != 'withdrawn'
       LEFT JOIN LATERAL (
         SELECT url FROM essentials.politician_images
         WHERE politician_id = rc.politician_id AND type = 'default'

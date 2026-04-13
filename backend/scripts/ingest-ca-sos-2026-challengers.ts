@@ -170,7 +170,7 @@ const CHALLENGERS: ChallengerEntry[] = [
   c('CA Governor', 'Katie',     'Porter'),
   c('CA Governor', 'Rick',      'Caruso'),
   c('CA Governor', 'Tom',       'Steyer'),
-  c('CA Governor', 'Eric',      'Swalwell'),
+  // c('CA Governor', 'Eric', 'Swalwell'),  // withdrawn 2026-04-11 — set candidate_status='withdrawn' directly in DB
   c('CA Governor', 'Tony',      'Thurmond'),
   c('CA Governor', 'Antonio',   'Villaraigosa'),
   c('CA Governor', 'Betty',     'Yee'),
