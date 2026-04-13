@@ -63,6 +63,29 @@ describe('GET /api/essentials/elections-by-address', () => {
     }
   });
 
+  it('every race has a candidates array (may be empty for 0-candidate races)', async () => {
+    const res = await request(app).get(
+      '/api/essentials/elections-by-address?address=' +
+      encodeURIComponent('401 N Morton St, Bloomington, IN 47404')
+    );
+    // Route must be wired — not a 404
+    expect([200, 503, 500]).toContain(res.status);
+    if (res.status === 200 && res.body.elections?.length > 0) {
+      for (const election of res.body.elections) {
+        for (const race of election.races) {
+          expect(race).toHaveProperty('candidates');
+          expect(Array.isArray(race.candidates)).toBe(true);
+          // Each candidate (if present) must have required fields
+          for (const candidate of race.candidates) {
+            expect(candidate).toHaveProperty('candidate_id');
+            expect(candidate).toHaveProperty('full_name');
+            expect(typeof candidate.is_incumbent).toBe('boolean');
+          }
+        }
+      }
+    }
+  });
+
   it('returns empty elections or graceful error for non-geocodable address', async () => {
     const res = await request(app).get(
       '/api/essentials/elections-by-address?address=' +
