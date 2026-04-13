@@ -45,13 +45,13 @@ interface ElectionRow {
   primary_party: string | null;
   seats: number;
   district_type: string | null;
-  candidate_id: string;
-  full_name: string;
+  candidate_id: string | null;
+  full_name: string | null;
   first_name: string | null;
   last_name: string | null;
   photo_url: string | null;
-  is_incumbent: boolean;
-  candidate_status: string;
+  is_incumbent: boolean | null;
+  candidate_status: string | null;
   politician_id: string | null;
 }
 
@@ -183,7 +183,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       d.district_type
     FROM essentials.elections e
     JOIN essentials.races r ON r.election_id = e.id
-    JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    LEFT JOIN essentials.race_candidates rc
+      ON rc.race_id = r.id
+      AND rc.candidate_status != 'withdrawn'
     LEFT JOIN LATERAL (
       SELECT url FROM essentials.politician_images
       WHERE politician_id = rc.politician_id AND type = 'default'
@@ -197,7 +199,6 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         gb.geometry,
         public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
       )
-      AND rc.candidate_status != 'withdrawn'
       AND e.election_date >= CURRENT_DATE
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
   `;
@@ -249,7 +250,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         NULL::text AS district_type
       FROM essentials.elections e
       JOIN essentials.races r ON r.election_id = e.id
-      JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      LEFT JOIN essentials.race_candidates rc
+        ON rc.race_id = r.id
+        AND rc.candidate_status != 'withdrawn'
       LEFT JOIN LATERAL (
         SELECT url FROM essentials.politician_images
         WHERE politician_id = rc.politician_id AND type = 'default'
@@ -257,7 +260,6 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND rc.candidate_status != 'withdrawn'
         AND e.election_date >= CURRENT_DATE
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
@@ -269,8 +271,10 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
   const allRows = [...geofenceResult.rows, ...statewideRows];
   const seenCandidates = new Set<string>();
   const dedupedRows = allRows.filter((row) => {
-    if (seenCandidates.has(row.candidate_id)) return false;
-    seenCandidates.add(row.candidate_id);
+    if (row.candidate_id !== null) {
+      if (seenCandidates.has(row.candidate_id)) return false;
+      seenCandidates.add(row.candidate_id);
+    }
     return true;
   });
 
@@ -313,17 +317,19 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       electionsMap.get(row.election_id)!.races.push(race);
     }
 
-    const candidate: ElectionCandidate = {
-      candidate_id: row.candidate_id,
-      full_name: row.full_name,
-      first_name: row.first_name,
-      last_name: row.last_name,
-      photo_url: row.photo_url,
-      is_incumbent: row.is_incumbent,
-      candidate_status: row.candidate_status,
-      politician_id: row.politician_id,
-    };
-    racesMap.get(row.race_id)!.candidates.push(candidate);
+    if (row.candidate_id !== null) {
+      const candidate: ElectionCandidate = {
+        candidate_id: row.candidate_id,
+        full_name: row.full_name!,
+        first_name: row.first_name,
+        last_name: row.last_name,
+        photo_url: row.photo_url,
+        is_incumbent: row.is_incumbent!,
+        candidate_status: row.candidate_status!,
+        politician_id: row.politician_id,
+      };
+      racesMap.get(row.race_id)!.candidates.push(candidate);
+    }
   }
 
   // Post-process: derive synthetic district_type for races without office_id link.
