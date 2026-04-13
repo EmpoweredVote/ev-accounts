@@ -1,5 +1,5 @@
 /**
- * ingest-ca-sos-2026-challengers.ts — CA SoS 2026 Primary challenger ingestion
+ * ingest-ca-sos-2026-challengers.ts — CA 2026 Primary challenger ingestion
  *
  * Usage:
  *   npx tsx scripts/ingest-ca-sos-2026-challengers.ts             # dry-run (default)
@@ -10,15 +10,18 @@
  *
  * What it does:
  *   1. Looks up the '2026 LA County Primary' election record.
- *   2. For each race in CHALLENGER_DATA, finds the matching race by position_name.
+ *   2. For each race in CHALLENGERS, finds the matching race by position_name.
  *   3. Inserts challengers as race_candidates with is_incumbent=false.
- *   4. Idempotent — ON CONFLICT (external_id) WHERE external_id IS NOT NULL DO UPDATE
- *      (preserves politician_id linkage set by a human operator).
+ *   4. Idempotent — skips by name collision within the same race.
  *
- * Data sources:
- *   CA Secretary of State candidate search — https://www.sos.ca.gov/elections/upcoming-elections/
- *   June 3, 2026 Statewide Direct Primary. Candidates verified as filed/qualified as of 2026-04-13.
- *   Calmatters CA Governor candidate list — published 2026-03-06.
+ * DATA PROVENANCE — READ BEFORE ADDING CANDIDATES:
+ *   Only add candidates to this script from a citable, human-verified source.
+ *   Do NOT add candidates based on inference, prior election history, or speculation.
+ *   Each section below must reference its source URL/publication and date.
+ *
+ *   All other races (Lt. Gov, AG, SoS, Treasurer, Controller, Insurance, Supt.,
+ *   Assembly D54, Senate D26, CD-34, Sheriff, Assessor, LAUSD) currently have
+ *   incumbents only. Add challengers to those races when a verified source is available.
  *
  * CA is a "top-2 jungle primary" state:
  *   - ALL candidates appear on one primary ballot regardless of party
@@ -26,24 +29,6 @@
  *
  * ANTIPARTISAN POLICY: No party column is stored on race_candidates.
  *   Party affiliation is excluded per EV design (see importElectionData.ts header).
- *
- * Scope:
- *   This script covers challengers for races already seeded in the DB:
- *   - CA statewide races (Governor, Lt. Gov, AG, SoS, Treasurer, Controller, Insurance, Supt.)
- *   - Legislative/Congressional: CA Assembly D54, CA Senate D26, U.S. Rep D34
- *   - County/Local: LA County Sheriff, LA County Assessor
- *   - LAUSD Board: District 2, 4, 6
- *
- * Incumbents already seeded (is_incumbent=true, politician_id linked):
- *   Isaac G. Bryan (Assembly D54), Jimmy Gomez (CD-34), Robert Luna (Sheriff),
- *   Scott Schmerelson (LAUSD D2), Nick Melvoin (LAUSD D4), Kelly Gonez (LAUSD D6),
- *   Eleni Kounalakis (Lt. Gov), Rob Bonta (AG), Shirley N. Weber (SoS),
- *   Fiona Ma (Treasurer), Malia M. Cohen (Controller), Ricardo Lara (Insurance),
- *   Tony Thurmond (Supt.)
- *
- * Open seats (no incumbent — all candidates are challengers):
- *   CA Governor (Newsom term-limited), CA State Senate D26 (Ben Allen term-limited),
- *   LA County Assessor (Jeff Prang open status pending verification)
  */
 
 import 'dotenv/config';
@@ -93,31 +78,25 @@ interface ChallengerEntry {
   full_name: string;
   first_name: string;
   last_name: string;
-  /**
-   * Stable external ID for idempotency. Format: ca-sos-2026-{normalized-name}
-   * Uses full name (not SoS filing number) since SoS doesn't expose a machine-readable ID.
-   */
+  /** Source tag stored in race_candidates.source — should match the data's origin */
+  source: string;
+  /** Stable external ID for idempotency. Format: {source}-{normalized-name} */
   external_id: string;
 }
 
-// ---------------------------------------------------------------------------
-// Challenger data — sourced from CA SoS candidate search (2026-04-13)
-// https://www.sos.ca.gov/elections/upcoming-elections/
-// All entries verified as filed/qualified for the June 3, 2026 Statewide Primary.
-// ---------------------------------------------------------------------------
-
-function makeExternalId(fullName: string): string {
+function makeExternalId(source: string, fullName: string): string {
   const normalized = fullName
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
-  return `ca-sos-2026-${normalized}`;
+  return `${source}-${normalized}`;
 }
 
 /**
  * Build a ChallengerEntry with auto-derived external_id.
  */
 function c(
+  source: string,
   race_position_name: string,
   first_name: string,
   last_name: string,
@@ -129,135 +108,43 @@ function c(
     full_name,
     first_name,
     last_name,
-    external_id: makeExternalId(full_name),
+    source,
+    external_id: makeExternalId(source, full_name),
   };
 }
 
 /**
- * Challenger data organized by race.
+ * Verified challenger data.
  *
- * NOTE ON GOVERNOR: All gubernatorial candidates are challengers (Newsom term-limited).
- *   Tony Thurmond is listed here as a CHALLENGER for Governor even though he is seeded
- *   as incumbent Supt. — his politician_id may be linkable later via name match.
- *   Eleni Kounalakis is seeded as incumbent Lt. Gov but is ALSO running for Governor
- *   as a challenger — included here separately.
- *
- * NOTE ON INCUMBENTS RUNNING FOR HIGHER OFFICE:
- *   Incumbents already in race_candidates with is_incumbent=true are NOT re-added here.
- *   Where an incumbent runs in a DIFFERENT race, they appear here as a challenger.
- *
- * Sources:
- *   - CA SoS Qualified Candidates list (sos.ca.gov, April 2026)
- *   - Ballotpedia 2026 California gubernatorial election page
- *   - KQED / LAist reporting on filed candidates
+ * Each section must cite its source. Do not add candidates from inference or
+ * prior election history — only from a citable human-verified source.
  */
 const CHALLENGERS: ChallengerEntry[] = [
   // =========================================================================
-  // CA GOVERNOR — open seat (all are challengers; Newsom term-limited)
-  // Source: Calmatters 2026-03-06 + CA SoS filings 2026-04-13
+  // CA GOVERNOR — open seat (Newsom term-limited; all candidates are challengers)
+  // Source: Calmatters — https://calmatters.org/politics/2026/03/california-governor-candidates/
+  // Published: 2026-03-06. Verified against DB: 2026-04-13.
+  // Note: Eric Swalwell withdrew 2026-04-11 — already in DB as candidate_status='withdrawn'.
+  //       This script will skip him on re-run (name collision check).
   // =========================================================================
-  c('CA Governor', 'Xavier',    'Becerra'),
-  c('CA Governor', 'Chad',      'Bianco'),
-  c('CA Governor', 'Brian',     'Dahle'),
-  c('CA Governor', 'Delaine',   'Eastin'),
-  c('CA Governor', 'Eric',      'Early'),
-  c('CA Governor', 'James',     'Gallagher'),
-  c('CA Governor', 'Steve',     'Garvey'),
-  c('CA Governor', 'Steve',     'Hilton'),
-  c('CA Governor', 'Kevin',     'Kiley'),
-  c('CA Governor', 'Eleni',     'Kounalakis'),
-  c('CA Governor', 'Matt',      'Mahan'),
-  c('CA Governor', 'Katie',     'Porter'),
-  c('CA Governor', 'Rick',      'Caruso'),
-  c('CA Governor', 'Tom',       'Steyer'),
-  // c('CA Governor', 'Eric', 'Swalwell'),  // withdrawn 2026-04-11 — set candidate_status='withdrawn' directly in DB
-  c('CA Governor', 'Tony',      'Thurmond'),
-  c('CA Governor', 'Antonio',   'Villaraigosa'),
-  c('CA Governor', 'Betty',     'Yee'),
-  // =========================================================================
-  // CA LIEUTENANT GOVERNOR — Eleni Kounalakis is incumbent (already seeded)
-  // =========================================================================
-  c('CA Lieutenant Governor', 'David', 'Crane'),
-  c('CA Lieutenant Governor', 'Jacqui', 'Irwin'),
-  c('CA Lieutenant Governor', 'Bill', 'Dodd'),
-  // =========================================================================
-  // CA ATTORNEY GENERAL — Rob Bonta is incumbent (already seeded)
-  // =========================================================================
-  c('CA Attorney General', 'Nathan', 'Hochman'),
-  c('CA Attorney General', 'Eric', 'Early'),
-  c('CA Attorney General', 'James', 'Lacy'),
-  // =========================================================================
-  // CA SECRETARY OF STATE — Shirley N. Weber is incumbent (already seeded)
-  // =========================================================================
-  c('CA Secretary of State', 'Mitch', 'Clague'),
-  c('CA Secretary of State', 'Rachel', 'Doughty'),
-  // =========================================================================
-  // CA STATE TREASURER — Fiona Ma is incumbent (already seeded)
-  // =========================================================================
-  c('CA State Treasurer', 'Vivek', 'Viswanathan'),
-  c('CA State Treasurer', 'Jack', 'Guerrero'),
-  // =========================================================================
-  // CA STATE CONTROLLER — Malia M. Cohen is incumbent (already seeded)
-  // =========================================================================
-  c('CA State Controller', 'Steve', 'Glazer'),
-  c('CA State Controller', 'Lanhee', 'Chen'),
-  c('CA State Controller', 'Yvonne', 'Yiu'),
-  // =========================================================================
-  // CA INSURANCE COMMISSIONER — Ricardo Lara is incumbent (already seeded)
-  // =========================================================================
-  c('CA Insurance Commissioner', 'Marc', 'Levine'),
-  c('CA Insurance Commissioner', 'Noel', 'Frame'),
-  // =========================================================================
-  // CA SUPERINTENDENT OF PUBLIC INSTRUCTION — Tony Thurmond is incumbent (already seeded)
-  // He is running for Governor; this seat has challengers.
-  // =========================================================================
-  c('CA Superintendent of Public Instruction', 'Alberto', 'Carvalho'),
-  c('CA Superintendent of Public Instruction', 'Marshall', 'Tuck'),
-  c('CA Superintendent of Public Instruction', 'Lance', 'Christensen'),
-  c('CA Superintendent of Public Instruction', 'Maria', 'Echaveste'),
-  // =========================================================================
-  // CA STATE ASSEMBLY DISTRICT 54 — Isaac G. Bryan is incumbent (already seeded)
-  // =========================================================================
-  c('CA State Assembly District 54', 'Corey', 'Jackson'),
-  c('CA State Assembly District 54', 'Sade', 'Prince'),
-  // =========================================================================
-  // CA STATE SENATE DISTRICT 26 — open seat (Ben Allen term-limited)
-  // =========================================================================
-  c('CA State Senate District 26', 'Ben', 'Allen'),      // running for different office, may file here
-  c('CA State Senate District 26', 'Maria', 'Durazo'),   // potential; verify against SoS
-  c('CA State Senate District 26', 'Tracey', 'Park'),
-  c('CA State Senate District 26', 'Lindsey', 'Horvath'),
-  // =========================================================================
-  // U.S. REPRESENTATIVE DISTRICT 34 — Jimmy Gomez is incumbent (already seeded)
-  // =========================================================================
-  c('U.S. Representative District 34', 'David', 'Kim'),
-  c('U.S. Representative District 34', 'Kenneth', 'Mejia'),
-  // =========================================================================
-  // LA COUNTY SHERIFF — Robert Luna is incumbent (already seeded)
-  // =========================================================================
-  c('LA County Sheriff', 'Eric', 'Strong'),
-  c('LA County Sheriff', 'George', 'Hofstetter'),
-  c('LA County Sheriff', 'Britta', 'Steinbrenner'),
-  // =========================================================================
-  // LA COUNTY ASSESSOR — open seat / Jeff Prang status to be verified
-  // =========================================================================
-  c('LA County Assessor', 'Jeff', 'Prang'),        // incumbent if running for re-election
-  c('LA County Assessor', 'Arlene', 'Barrera'),
-  // =========================================================================
-  // LAUSD BOARD OF EDUCATION DISTRICT 2 — Scott Schmerelson is incumbent (already seeded)
-  // =========================================================================
-  c('LAUSD Board of Education District 2', 'Mariela', 'Viramontes'),
-  c('LAUSD Board of Education District 2', 'Graciela', 'Ortiz'),
-  // =========================================================================
-  // LAUSD BOARD OF EDUCATION DISTRICT 4 — Nick Melvoin is incumbent (already seeded)
-  // =========================================================================
-  c('LAUSD Board of Education District 4', 'Minh', 'Tran'),
-  c('LAUSD Board of Education District 4', 'Patricia', 'Castellanos'),
-  // =========================================================================
-  // LAUSD BOARD OF EDUCATION DISTRICT 6 — Kelly Gonez is incumbent (already seeded)
-  // =========================================================================
-  c('LAUSD Board of Education District 6', 'Cecily', 'Myart-Cruz'),
-  c('LAUSD Board of Education District 6', 'Maria', 'Brenes'),
+  c('calmatters-2026', 'CA Governor', 'Xavier',   'Becerra'),
+  c('calmatters-2026', 'CA Governor', 'Chad',     'Bianco'),
+  c('calmatters-2026', 'CA Governor', 'Steve',    'Hilton'),
+  c('calmatters-2026', 'CA Governor', 'Matt',     'Mahan'),
+  c('calmatters-2026', 'CA Governor', 'Katie',    'Porter'),
+  c('calmatters-2026', 'CA Governor', 'Tom',      'Steyer'),
+  c('calmatters-2026', 'CA Governor', 'Tony',     'Thurmond'),
+  c('calmatters-2026', 'CA Governor', 'Antonio',  'Villaraigosa'),
+  c('calmatters-2026', 'CA Governor', 'Betty',    'Yee'),
+
+  // ---------------------------------------------------------------------------
+  // TODO — add challengers for remaining races once a verified source is available:
+  //   CA Lieutenant Governor, CA Attorney General, CA Secretary of State,
+  //   CA State Treasurer, CA State Controller, CA Insurance Commissioner,
+  //   CA Superintendent of Public Instruction, CA State Assembly District 54,
+  //   CA State Senate District 26, U.S. Representative District 34,
+  //   LA County Sheriff, LA County Assessor, LAUSD Board D2/D4/D6
+  // ---------------------------------------------------------------------------
 ];
 
 // ---------------------------------------------------------------------------
@@ -339,8 +226,8 @@ async function upsertChallenger(
        (race_id, full_name, first_name, last_name,
         is_incumbent, candidate_status, source, external_id,
         last_verified_at, politician_id)
-     VALUES ($1, $2, $3, $4, false, 'active', 'ca_sos_2026', $5, now(), NULL)`,
-    [raceId, entry.full_name, entry.first_name, entry.last_name, entry.external_id]
+     VALUES ($1, $2, $3, $4, false, 'active', $5, $6, now(), NULL)`,
+    [raceId, entry.full_name, entry.first_name, entry.last_name, entry.source, entry.external_id]
   );
   return { action: 'inserted', external_id: entry.external_id };
 }
