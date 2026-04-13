@@ -15,9 +15,10 @@
  *   4. Idempotent — ON CONFLICT (external_id) WHERE external_id IS NOT NULL DO UPDATE
  *      (preserves politician_id linkage set by a human operator).
  *
- * Data source:
+ * Data sources:
  *   CA Secretary of State candidate search — https://www.sos.ca.gov/elections/upcoming-elections/
  *   June 3, 2026 Statewide Direct Primary. Candidates verified as filed/qualified as of 2026-04-13.
+ *   Calmatters CA Governor candidate list — published 2026-03-06.
  *
  * CA is a "top-2 jungle primary" state:
  *   - ALL candidates appear on one primary ballot regardless of party
@@ -152,19 +153,27 @@ function c(
  */
 const CHALLENGERS: ChallengerEntry[] = [
   // =========================================================================
-  // CA GOVERNOR — open seat (all are challengers)
+  // CA GOVERNOR — open seat (all are challengers; Newsom term-limited)
+  // Source: Calmatters 2026-03-06 + CA SoS filings 2026-04-13
   // =========================================================================
-  c('CA Governor', 'Tony', 'Thurmond'),
-  c('CA Governor', 'Eleni', 'Kounalakis'),
-  c('CA Governor', 'Steve', 'Garvey'),
-  c('CA Governor', 'Rick', 'Caruso'),
-  c('CA Governor', 'Antonio', 'Villaraigosa'),
-  c('CA Governor', 'Brian', 'Dahle'),
-  c('CA Governor', 'Kevin', 'Kiley'),
-  c('CA Governor', 'Delaine', 'Eastin'),
-  c('CA Governor', 'Eric', 'Early'),
-  c('CA Governor', 'James', 'Gallagher'),
-  c('CA Governor', 'Meuser', 'Daniel', 'Daniel Meuser'),  // Note: filed but verify
+  c('CA Governor', 'Xavier',    'Becerra'),
+  c('CA Governor', 'Chad',      'Bianco'),
+  c('CA Governor', 'Brian',     'Dahle'),
+  c('CA Governor', 'Delaine',   'Eastin'),
+  c('CA Governor', 'Eric',      'Early'),
+  c('CA Governor', 'James',     'Gallagher'),
+  c('CA Governor', 'Steve',     'Garvey'),
+  c('CA Governor', 'Steve',     'Hilton'),
+  c('CA Governor', 'Kevin',     'Kiley'),
+  c('CA Governor', 'Eleni',     'Kounalakis'),
+  c('CA Governor', 'Matt',      'Mahan'),
+  c('CA Governor', 'Katie',     'Porter'),
+  c('CA Governor', 'Rick',      'Caruso'),
+  c('CA Governor', 'Tom',       'Steyer'),
+  c('CA Governor', 'Eric',      'Swalwell'),
+  c('CA Governor', 'Tony',      'Thurmond'),
+  c('CA Governor', 'Antonio',   'Villaraigosa'),
+  c('CA Governor', 'Betty',     'Yee'),
   // =========================================================================
   // CA LIEUTENANT GOVERNOR — Eleni Kounalakis is incumbent (already seeded)
   // =========================================================================
