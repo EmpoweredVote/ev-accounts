@@ -1,0 +1,51 @@
+URL: https://essentials.empowered.vote/
+TITLE: Empowered Essentials
+
+=== INNER TEXT ===
+About Us
+Features
+Volunteer
+FAQ
+Donate
+Find Your Representatives
+
+Enter your address to see who represents you
+
+We currently cover:
+
+Monroe County
+Indiana
+Los Angeles County
+California
+Browse by location →
+or search by address
+Search
+
+=== LINKS ===
+[] -> https://essentials.empowered.vote/
+[About Us] -> https://empowered.vote/about
+[Features] -> https://essentials.empowered.vote/#
+[Volunteer] -> https://empowered.vote/volunteer
+[FAQ] -> https://empowered.vote/faq
+[Donate] -> https://empowered.vote/donate
+[About Us] -> https://empowered.vote/about
+[Political Compass] -> https://compass.empowered.vote/
+[Find Representatives] -> https://essentials.empowered.vote/
+[Read & Rank] -> https://readrank.empowered.vote/
+[Treasury Tracker] -> https://ev-prototypes.netlify.app/treasury-tracker/dist
+[Empowered Badges] -> https://ev-prototypes.netlify.app/empowered-badges/dist
+[Volunteer] -> https://empowered.vote/volunteer
+[FAQ] -> https://empowered.vote/faq
+[Donate] -> https://empowered.vote/donate
+
+=== INPUTS ===
+BUTTON type=submit name= id= placeholder= text=""
+BUTTON type=submit name= id= placeholder= text=""
+BUTTON type=submit name= id= placeholder= text="Sign in"
+BUTTON type=submit name= id= placeholder= text="Monroe County
+Indiana"
+BUTTON type=submit name= id= placeholder= text="Los Angeles County
+California"
+BUTTON type=submit name= id= placeholder= text="Browse by location →"
+INPUT type=text name= id= placeholder=Enter your full street address text="200 W Kirkwood Ave, Bloomington, IN 47404"
+BUTTON type=submit name= id= placeholder= text="Search"
