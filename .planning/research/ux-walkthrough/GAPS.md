@@ -166,3 +166,53 @@ _Populated by Plan 114-07 aggregation. Left empty here._
 - **baseline_ref:** n/a
 - **notes:** Observed during rapid JS auto-advance; not screenshot-verified (questions cycled too fast). May represent two legitimately distinct Religious Freedom sub-questions (e.g., employment vs. public accommodations), or may be a content duplication bug. Requires a human re-run of the quiz reading each question carefully to confirm. Flagged as minor until verified.
 
+
+<!-- ========================================================================= -->
+<!-- Plan 114-04: Read & Rank (UX-03) — https://readrank.empowered.vote/       -->
+<!-- ========================================================================= -->
+
+### G-114-016 — Both location filter mechanisms are non-functional
+- **app:** read-rank
+- **screen:** Topic list — https://readrank.empowered.vote/
+- **severity:** blocker
+- **type:** feature
+- **evidence:** screenshots/read-rank/03-address-filter-no-change.png — address "200 W Kirkwood Ave, Bloomington, IN 47404" typed + Enter; topic list identical before and after. Browse Location dropdown (snap _snap-04-browse-location.md) contains only a "State" placeholder option — no actual states listed.
+- **baseline_ref:** n/a
+- **notes:** The voter has two mechanisms to filter quotes to their local candidates: (1) address text entry with Enter submit, and (2) "Browse Location" state dropdown. Both fail. The address filter accepts input but fires no geocode request and changes nothing. The Browse Location dropdown has a single inert "State" option. Without working filters, a Monroe County voter must complete all 26 topics (~100+ individual quote interactions) to discover which of their candidates are in the pool. Severity=blocker because the primary voter-facing navigation aid for a location-aware tool is broken end-to-end.
+
+### G-114-017 — No candidate-level navigation — topic-centric structure buries local candidates across 26 mixed topics
+- **app:** read-rank
+- **screen:** Topic list — https://readrank.empowered.vote/
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/read-rank/02-topic-list.png — all 26 topics shown; no "Candidates in your area" or "Filter by candidate" path visible anywhere in the UI
+- **baseline_ref:** n/a
+- **notes:** Even if the location filter worked, Read & Rank's organization is by topic (Deportation, Tariffs, Abortion…), not by candidate. A voter wanting to evaluate Matt Pierce specifically cannot say "show me only Pierce quotes." They discover Pierce in some topic reveals after completing the evaluation. Two of three Voting Rights quotes were California politicians (Kounalakis, Newsom); the one Monroe candidate (David Henry) was indistinguishable from the California quotes during evaluation. For a voter with limited time before May 5, the topic-centric model requires 2–3 hours of full topic completion to surface all local candidates.
+
+### G-114-018 — IN-9 D primary challengers and contested county-race candidates have zero Read & Rank quotes
+- **app:** read-rank
+- **screen:** Topic list / any topic — https://readrank.empowered.vote/
+- **severity:** blocker
+- **type:** data
+- **evidence:** Voting Rights reveal (screenshots/read-rank/06-reveal-who-said-it.png) — no Graham, Meyer, Peck, or Roark appear in the 3-quote reveal; cross-referenced with AUDIT-REPORT-112.md confirming IN-9 challengers and county candidates are stubs with no politician records
+- **baseline_ref:** `Federal Races` row — U.S. Representative IN-9 (D challengers: Graham, Meyer, Peck, Roark); `County-Wide Races` rows — Monroe County Prosecuting Attorney (Arrington, Oliphant), Monroe County Assessor (Nyquist, Sharp), Monroe County Clerk (Branham, Davis, Lucas, Hays)
+- **notes:** The four IN-9 D primary challengers and the candidates in the County Prosecutor, Assessor, and Clerk primaries all lack politician records in the DB (stubs per AUDIT-REPORT-112.md §AUDIT-03). Without a politician record, no sourced quote can be linked to them in Read & Rank. The consequence for a voter using Read & Rank to decide the most contested races on the May 5 Monroe County primary ballot: zero quotes available for any of those candidates. Same root cause as G-114-012 (Compass compare) and G-114-010 (Essentials stubs) — all three apps fail at the same races.
+
+### G-114-019 — "Your verdicts appear on candidate profiles in Essentials" has no link or CTA
+- **app:** read-rank
+- **screen:** Topic list (post-topic-completion) — https://readrank.empowered.vote/
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** Accessibility snapshot _snap-11-see-who-final.md line 818 — `paragraph: Your verdicts appear on candidate profiles in Essentials.` — plain text, no hyperlink, no "Go to Essentials" button
+- **baseline_ref:** n/a
+- **notes:** After completing topics the voter is told their verdicts appear in Essentials, but there is no link to go there. The per-politician "View on Essentials" links in the "See Who Said It" reveal DO work (with `#compass=` fragment passthrough), but the topic list page's cross-app copy is a dead end. A voter who completes a topic and wants to see how their verdicts affect a politician's profile has no navigation path from this text.
+
+### G-114-020 — App page title is "readrank-prototype" — prototype label visible in browser tab in production
+- **app:** read-rank
+- **screen:** All pages — https://readrank.empowered.vote/
+- **severity:** minor
+- **type:** content
+- **evidence:** `<title>readrank-prototype</title>` — browser tab shows "readrank-prototype" on all pages
+- **baseline_ref:** n/a
+- **notes:** Minor polish gap. The page title leaks the "prototype" development label to voters, potentially eroding trust in a production app. Does not affect function.
+
