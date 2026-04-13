@@ -7,9 +7,10 @@
 -- for any user whose municipality_geo_id = '0644000'.
 --
 -- Offices seeded:
---   LA City Attorney   — contested; Hydee Feldstein Soto (incumbent) vs. Marissa Roy
---   LA City Controller — race record only; candidates TBD
---   LA City Clerk      — race record only; candidates TBD
+--   LA City Attorney   — Hydee Feldstein Soto (incumbent) vs. Marissa Roy
+--   LA City Controller — Kenneth Mejia (incumbent) vs. Zach Sokoloff
+--
+-- NOTE: LA City Clerk is NOT on the June 2, 2026 ballot — seat not up this cycle.
 --
 -- ANTIPARTISAN NOTE: California uses a top-2 (jungle) primary — all candidates
 -- run together regardless of party. primary_party = NULL for all CA races.
@@ -134,13 +135,7 @@ JOIN essentials.offices o ON o.district_id = (SELECT id FROM essentials.district
 WHERE e.name = '2026 LA County Primary' AND e.state = 'CA'
 ON CONFLICT (election_id, position_name) WHERE primary_party IS NULL DO NOTHING;
 
--- Step 4c: LA City Clerk race
-INSERT INTO essentials.races (election_id, office_id, position_name, primary_party, seats, description)
-SELECT e.id, o.id, 'LA City Clerk', NULL, 1, 'Los Angeles City Clerk — citywide elected office, 4-year term. On ballot for all LA city residents.'
-FROM essentials.elections e
-JOIN essentials.offices o ON o.district_id = (SELECT id FROM essentials.districts WHERE geo_id = '0644000') AND o.title = 'City Clerk'
-WHERE e.name = '2026 LA County Primary' AND e.state = 'CA'
-ON CONFLICT (election_id, position_name) WHERE primary_party IS NULL DO NOTHING;
+-- LA City Clerk is NOT on the June 2, 2026 ballot — seat not up this cycle. No race record needed.
 
 -- =============================================================================
 -- Step 5: Seed verified candidates for LA City Attorney
@@ -235,9 +230,23 @@ WHERE e.name = '2026 LA County Primary'
     WHERE rc.race_id = r.id AND lower(rc.full_name) = lower('Marissa Roy')
   );
 
--- Candidates TBD — verify against lavote.gov candidate filing list before adding:
---   LA City Controller candidates
---   LA City Clerk candidates
+-- Seed Kenneth Mejia (incumbent Controller)
+INSERT INTO essentials.race_candidates (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
+SELECT r.id, p.id, p.full_name, p.first_name, p.last_name, true, 'active', 'cityclerk_lacity_org_2026'
+FROM essentials.races r
+JOIN essentials.elections e ON e.id = r.election_id
+JOIN essentials.politicians p ON lower(p.full_name) = 'kenneth mejia'
+WHERE e.name = '2026 LA County Primary' AND r.position_name = 'LA City Controller'
+  AND NOT EXISTS (SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = r.id AND lower(rc.full_name) = 'kenneth mejia');
+
+-- Seed Zach Sokoloff (challenger)
+INSERT INTO essentials.race_candidates (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
+SELECT r.id, p.id, p.full_name, p.first_name, p.last_name, false, 'active', 'cityclerk_lacity_org_2026'
+FROM essentials.races r
+JOIN essentials.elections e ON e.id = r.election_id
+JOIN essentials.politicians p ON lower(p.full_name) = 'zach sokoloff'
+WHERE e.name = '2026 LA County Primary' AND r.position_name = 'LA City Controller'
+  AND NOT EXISTS (SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = r.id AND lower(rc.full_name) = 'zach sokoloff');
 
 -- =============================================================================
 -- Step 6: Verification query
