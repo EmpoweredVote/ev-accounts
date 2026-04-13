@@ -5,8 +5,8 @@
 See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Quick-017 (CA SoS full challenger load) shipped 2026-04-13. 124 additional challengers inserted, 5 incumbents corrected to withdrawn. Full competitive field for 2026 LA County Primary. Ready for v2.0 milestone planning.
-**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29); 014-add-city-council-district-to-jurisdiction complete (2026-04-09); 015-session-polling-cross-app-logout-sync complete (2026-04-09); 016-ca-sos-challenger-ingestion complete (2026-04-13); 017-import-verified-2026-la-county-primary-c complete (2026-04-13)
+**Current focus:** Quick-018 (municipality_geo_id + LA citywide races) shipped 2026-04-13. LA residents will see City Attorney, Controller, Clerk races on Elections page once migrations applied. Ready for v2.0 milestone planning.
+**Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29); 014-add-city-council-district-to-jurisdiction complete (2026-04-09); 015-session-polling-cross-app-logout-sync complete (2026-04-09); 016-ca-sos-challenger-ingestion complete (2026-04-13); 017-import-verified-2026-la-county-primary-c complete (2026-04-13); 018-add-municipality-geo-id-support-so-la-ci complete (2026-04-13)
 
 ## Current Position
 
