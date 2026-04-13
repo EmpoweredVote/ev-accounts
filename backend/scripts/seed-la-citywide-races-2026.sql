@@ -88,27 +88,27 @@ BEGIN
   WHERE geo_id = '0644000';
 
   -- City Attorney
-  INSERT INTO essentials.offices (district_id, office_title, level)
-  SELECT v_la_district_id, 'City Attorney', 'local'
+  INSERT INTO essentials.offices (district_id, title)
+  SELECT v_la_district_id, 'City Attorney'
   WHERE NOT EXISTS (
     SELECT 1 FROM essentials.offices
-    WHERE district_id = v_la_district_id AND office_title = 'City Attorney'
+    WHERE district_id = v_la_district_id AND title = 'City Attorney'
   );
 
   -- City Controller
-  INSERT INTO essentials.offices (district_id, office_title, level)
-  SELECT v_la_district_id, 'City Controller', 'local'
+  INSERT INTO essentials.offices (district_id, title)
+  SELECT v_la_district_id, 'City Controller'
   WHERE NOT EXISTS (
     SELECT 1 FROM essentials.offices
-    WHERE district_id = v_la_district_id AND office_title = 'City Controller'
+    WHERE district_id = v_la_district_id AND title = 'City Controller'
   );
 
   -- City Clerk
-  INSERT INTO essentials.offices (district_id, office_title, level)
-  SELECT v_la_district_id, 'City Clerk', 'local'
+  INSERT INTO essentials.offices (district_id, title)
+  SELECT v_la_district_id, 'City Clerk'
   WHERE NOT EXISTS (
     SELECT 1 FROM essentials.offices
-    WHERE district_id = v_la_district_id AND office_title = 'City Clerk'
+    WHERE district_id = v_la_district_id AND title = 'City Clerk'
   );
 
   RAISE NOTICE 'Step 3 complete: citywide offices ensured for LA district %', v_la_district_id;
@@ -118,35 +118,28 @@ END $$;
 -- Step 4: Create race records for the 3 citywide offices
 -- =============================================================================
 
-WITH election AS (
-  SELECT id FROM essentials.elections
-  WHERE name = '2026 LA County Primary' AND state = 'CA'
-),
-la_district AS (
-  SELECT id FROM essentials.districts WHERE geo_id = '0644000'
-)
+-- Step 4a: LA City Attorney race
 INSERT INTO essentials.races (election_id, office_id, position_name, primary_party, seats, description)
-SELECT
-  e.id,
-  o.id,
-  v.position_name,
-  NULL,
-  1,
-  v.description
-FROM election e
-CROSS JOIN la_district ld
-JOIN essentials.offices o ON o.district_id = ld.id AND o.office_title = v.office_title
-CROSS JOIN (VALUES
-  ('City Attorney',
-   'LA City Attorney',
-   'Los Angeles City Attorney — citywide elected office, 4-year term. On ballot for all LA city residents.'),
-  ('City Controller',
-   'LA City Controller',
-   'Los Angeles City Controller — citywide elected office, 4-year term. On ballot for all LA city residents.'),
-  ('City Clerk',
-   'LA City Clerk',
-   'Los Angeles City Clerk — citywide elected office, 4-year term. On ballot for all LA city residents.')
-) AS v(office_title, position_name, description)
+SELECT e.id, o.id, 'LA City Attorney', NULL, 1, 'Los Angeles City Attorney — citywide elected office, 4-year term. On ballot for all LA city residents.'
+FROM essentials.elections e
+JOIN essentials.offices o ON o.district_id = (SELECT id FROM essentials.districts WHERE geo_id = '0644000') AND o.title = 'City Attorney'
+WHERE e.name = '2026 LA County Primary' AND e.state = 'CA'
+ON CONFLICT (election_id, position_name) WHERE primary_party IS NULL DO NOTHING;
+
+-- Step 4b: LA City Controller race
+INSERT INTO essentials.races (election_id, office_id, position_name, primary_party, seats, description)
+SELECT e.id, o.id, 'LA City Controller', NULL, 1, 'Los Angeles City Controller — citywide elected office, 4-year term. On ballot for all LA city residents.'
+FROM essentials.elections e
+JOIN essentials.offices o ON o.district_id = (SELECT id FROM essentials.districts WHERE geo_id = '0644000') AND o.title = 'City Controller'
+WHERE e.name = '2026 LA County Primary' AND e.state = 'CA'
+ON CONFLICT (election_id, position_name) WHERE primary_party IS NULL DO NOTHING;
+
+-- Step 4c: LA City Clerk race
+INSERT INTO essentials.races (election_id, office_id, position_name, primary_party, seats, description)
+SELECT e.id, o.id, 'LA City Clerk', NULL, 1, 'Los Angeles City Clerk — citywide elected office, 4-year term. On ballot for all LA city residents.'
+FROM essentials.elections e
+JOIN essentials.offices o ON o.district_id = (SELECT id FROM essentials.districts WHERE geo_id = '0644000') AND o.title = 'City Clerk'
+WHERE e.name = '2026 LA County Primary' AND e.state = 'CA'
 ON CONFLICT (election_id, position_name) WHERE primary_party IS NULL DO NOTHING;
 
 -- =============================================================================
