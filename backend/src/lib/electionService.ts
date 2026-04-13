@@ -193,7 +193,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     ) pi ON rc.politician_id IS NOT NULL
     JOIN essentials.offices o ON o.id = r.office_id
     JOIN essentials.districts d ON d.id = o.district_id
-    JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
+    JOIN essentials.geofence_boundaries gb
+      ON gb.geo_id = d.geo_id
+      AND (d.mtfcc IS NULL OR d.mtfcc = '' OR gb.mtfcc = d.mtfcc)
     WHERE gb.geometry IS NOT NULL
       AND public.ST_Covers(
         gb.geometry,

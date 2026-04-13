@@ -27,7 +27,6 @@ export type Database = {
           gem_balance_red: number
           gem_balance_yellow: number
           gem_reserve_cap: number
-          home_address: string | null
           id: string
           legal_name: string | null
           location_consent: boolean | null
@@ -56,7 +55,6 @@ export type Database = {
           gem_balance_red?: number
           gem_balance_yellow?: number
           gem_reserve_cap?: number
-          home_address?: string | null
           id?: string
           legal_name?: string | null
           location_consent?: boolean | null
@@ -85,7 +83,6 @@ export type Database = {
           gem_balance_red?: number
           gem_balance_yellow?: number
           gem_reserve_cap?: number
-          home_address?: string | null
           id?: string
           legal_name?: string | null
           location_consent?: boolean | null
