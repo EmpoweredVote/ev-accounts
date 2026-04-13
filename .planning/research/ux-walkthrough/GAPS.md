@@ -21,3 +21,98 @@ _Populated by Plan 114-07 aggregation. Left empty here._
 - **baseline_ref:** <row in BALLOT-BASELINE-2026-05-05.md — REQUIRED if type=data, else "n/a">
 - **notes:** <optional severity-call rationale>
 -->
+
+<!-- ========================================================================= -->
+<!-- Plan 114-02: Essentials (UX-01) — 200 W Kirkwood Ave, Bloomington, IN      -->
+<!-- ========================================================================= -->
+
+### G-114-001 — Address field has no autocomplete dropdown during typing
+- **app:** essentials
+- **screen:** Landing — https://essentials.empowered.vote/
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/essentials/02-address-typed.png
+- **baseline_ref:** n/a
+- **notes:** Voter types `200 W Kirkwood Ave, Bloomington, IN 47404` and gets no live confirmation the address is recognized before clicking Search. No Places autocomplete firing. Not a blocker (backend geocoder accepts the string), but the voter has no confidence check that they typed something the system understands.
+
+### G-114-002 — Address rendered in ALL CAPS in results header regardless of input case
+- **app:** essentials
+- **screen:** Results — https://essentials.empowered.vote/results?q=200+W+Kirkwood+Ave%2C+Bloomington%2C+IN+47404
+- **severity:** minor
+- **type:** content
+- **evidence:** screenshots/essentials/03-results-all.png — "Showing representatives for 200 W KIRKWOOD AVE, BLOOMINGTON, IN, 47404"
+- **baseline_ref:** n/a
+- **notes:** Voter entered mixed case; app echoes back uppercase. Jarring polish issue, no data or flow impact.
+
+### G-114-003 — Default Representatives tab hides primary challengers
+- **app:** essentials
+- **screen:** Results (Representatives tab, default) — https://essentials.empowered.vote/results?q=200+W+Kirkwood+Ave%2C+Bloomington%2C+IN+47404
+- **severity:** blocker
+- **type:** ux-friction
+- **evidence:** screenshots/essentials/03-results-all.png — Federal tier shows only Erin Houchin, no Graham/Meyer/Peck/Roark challengers; State tier shows only Matt Pierce, no Lilliana Young
+- **baseline_ref:** n/a
+- **notes:** The data IS present (Elections tab shows all 5 IN-9 candidates and Young correctly — see G-114-005). The blocker is navigational: a first-time April-2026 voter lands on Representatives, sees only incumbents, and has no signal that challengers exist on a different tab. For a pre-primary voter, this is the wrong default.
+
+### G-114-004 — Same candidate surfaces under different offices on Representatives vs Elections tabs
+- **app:** essentials
+- **screen:** Results (Representatives tab and Elections tab) — https://essentials.empowered.vote/results?q=200+W+Kirkwood+Ave%2C+Bloomington%2C+IN+47404
+- **severity:** confusing
+- **type:** content
+- **evidence:** screenshots/essentials/03-results-all.png (Representatives: Deckard/Henry under `Council At Large`) + screenshots/essentials/04-elections-tab.png (Elections: Deckard/Henry under `Monroe County Commissioner District 1`)
+- **baseline_ref:** n/a
+- **notes:** Both representations are correct (current seat vs sought seat), but the voter sees no linkage between the two listings. Add "(running for Commissioner District 1 — see Elections tab)" on the Representatives side.
+
+### G-114-005 — `Representatives` is the wrong default tab in the month before a primary
+- **app:** essentials
+- **screen:** Results — https://essentials.empowered.vote/results?q=200+W+Kirkwood+Ave%2C+Bloomington%2C+IN+47404
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/essentials/03-results-all.png (default Representatives view) + screenshots/essentials/04-elections-tab.png (Elections view with full ballot)
+- **baseline_ref:** n/a
+- **notes:** The Elections tab is 100% accurate against `BALLOT-BASELINE-2026-05-05.md` for Bloomington Township. The problem is it isn't the default. For a voter in April preparing to vote on May 5, Elections should lead. Related to but distinct from G-114-003: G-114-003 is about the hidden challengers; this is about the default-view policy.
+
+### G-114-006 — Profile page header shows wrong election date "May 4, 2026"
+- **app:** essentials
+- **screen:** Candidate profile — https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa (also confirmed on /cb131cec-4fb4-4619-a2f0-7cdea745a2e9 and /a9f49b8d-086d-493f-8c34-a240c427200a)
+- **severity:** blocker
+- **type:** content
+- **evidence:** screenshots/essentials/05-pierce-profile.png, screenshots/essentials/06-young-profile.png, screenshots/essentials/07-arrington-empty-profile.png — all three profiles render "Election: May 4, 2026"
+- **baseline_ref:** n/a
+- **notes:** The Indiana primary is **May 5, 2026** per `BALLOT-BASELINE-2026-05-05.md` and per the results-page `on your ballot — Primary: May 5, 2026` badges (which are correct). The off-by-one is in the candidate profile template string (confirmed across 3 different profiles → app-wide). Severity=blocker because voters trust date labels and could arrive at the polls on the wrong day.
+
+### G-114-007 — Matt Pierce profile has no personal biography paragraph
+- **app:** essentials
+- **screen:** Candidate profile — https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa
+- **severity:** confusing
+- **type:** data
+- **evidence:** screenshots/essentials/05-pierce-profile.png — body paragraph describes what a state rep does generically, no Pierce-specific bio
+- **baseline_ref:** `State Legislative Races` row — Indiana State Representative, District 61 (Matt Pierce, Lilliana Young)
+- **notes:** DB gap already audited — see `AUDIT-REPORT-112.md §AUDIT-06 Profile Completeness` row for Matt Pierce (`Complete=N`). This is the voter-facing confirmation of that known DB gap — the voter gets civics info about the office but zero biographical context about the person asking for their vote.
+
+### G-114-008 — Matt Pierce profile has no visible Read & Rank section despite 10 quotes in DB
+- **app:** essentials
+- **screen:** Candidate profile — https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa
+- **severity:** confusing
+- **type:** feature
+- **evidence:** screenshots/essentials/05-pierce-profile.png — profile renders Compass section and Committee/Voting sections, but no Read & Rank / Quotes heading anywhere
+- **baseline_ref:** n/a
+- **notes:** `ev-ui/src/PoliticianProfile.jsx` is documented to render Read & Rank verdict badges "under StanceAccordion" per CLAUDE.md. `AUDIT-REPORT-112.md §AUDIT-04` row for Matt Pierce shows **10 quotes linked** in DB, so the data exists. Either the surface isn't being rendered for Pierce or it renders empty and was not visible in the screenshot. Requires code-side check during Phase 115 tiering.
+
+### G-114-009 — Lilliana Young has no headshot — initials placeholder only
+- **app:** essentials
+- **screen:** Candidate profile — https://essentials.empowered.vote/candidate/cb131cec-4fb4-4619-a2f0-7cdea745a2e9
+- **severity:** confusing
+- **type:** data
+- **evidence:** screenshots/essentials/06-young-profile.png — "LY" initials square where headshot should be
+- **baseline_ref:** `State Legislative Races` row — Indiana State Representative, District 61 (Matt Pierce, Lilliana Young)
+- **notes:** DB gap already audited — see `AUDIT-REPORT-112.md §AUDIT-05 Headshot Coverage` row for Lilliana Young (`photo_source=none`). Voter-facing effect: in a head-to-head contested D primary, Pierce has a face and Young doesn't, which biases the visual comparison. She does have 57.7% Compass stance coverage and 6 Read & Rank quotes per AUDIT-112, so the rest of her profile has substance — only the photo is missing.
+
+### G-114-010 — 4 of the May 5 primary candidates at this address are DB stubs with empty profile pages
+- **app:** essentials
+- **screen:** Candidate profile (multiple) — Arrington /candidate/a9f49b8d-086d-493f-8c34-a240c427200a, Nyquist (not exercised), Joe Davis (not exercised), Tanner Dale Branham (not exercised), Julie M. Hays (not exercised)
+- **severity:** blocker
+- **type:** data
+- **evidence:** screenshots/essentials/07-arrington-empty-profile.png — Benjamin T. Arrington profile is literally a single name card: header, office label, wrong election date, and nothing else
+- **baseline_ref:** `County-Wide Races` rows — Monroe County Prosecuting Attorney (Benjamin T. Arrington, Erika Oliphant), Monroe County Assessor (Bob Nyquist, Judith A. Sharp), Monroe County Clerk (Tanner Dale Branham, Joe Davis, Tree Martin Lucas, Julie M. Hays)
+- **notes:** DB gap already audited — see `AUDIT-REPORT-112.md §AUDIT-03 Stance Coverage` rows where Arrington, Nyquist, Joe Davis, Branham, Hays all appear with blank politician_id and `status=stub` (unlinked — no underlying politician record). The voter-facing consequence is that the **contested Monroe County Prosecutor primary** and the **3-way contested Monroe County Clerk primary** are unchooseable from inside the app — one side of each race has zero content. Severity=blocker because the tool fails its UX-01 goal (helping a voter decide) precisely where it matters most.
+
