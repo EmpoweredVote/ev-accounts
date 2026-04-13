@@ -11,7 +11,7 @@ import {
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
-import { getElectionsByCoordinate, getCandidateById } from '../lib/electionService.js';
+import { getElectionsByCoordinate, getElectionsByGeoIds, getCandidateById } from '../lib/electionService.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
@@ -531,6 +531,106 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
   }
 
   // No usable location data — coordinates not yet set or jurisdiction unresolvable
+  res.status(204).end();
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/elections/me
+// Auth: required (Connected tier)
+// Returns upcoming elections for the authenticated user's stored location.
+// Uses stored geo_ids for a direct district match — no geocoding, no coord
+// decryption. Mirrors the fast path of representatives/me.
+// Returns 204 if the user has no location on file.
+// X-Formatted-Address: city-level label (jurisdiction_city + jurisdiction_state)
+// ---------------------------------------------------------------------------
+
+router.get('/elections/me', requireAuth, requireConnected, async (req: Request, res: Response): Promise<void> => {
+  const { userId } = req as AuthenticatedRequest;
+
+  const { rows } = await pool.query<{
+    congressional_geo_id: string | null;
+    state_senate_geo_id: string | null;
+    state_house_geo_id: string | null;
+    county_geo_id: string | null;
+    school_district_geo_id: string | null;
+    city_council_geo_id: string | null;
+    jurisdiction_state: string | null;
+    jurisdiction_city: string | null;
+    has_coords: boolean;
+  }>(
+    `SELECT congressional_geo_id, state_senate_geo_id, state_house_geo_id,
+             county_geo_id, school_district_geo_id, city_council_geo_id,
+             jurisdiction_state, jurisdiction_city,
+             (encrypted_lat IS NOT NULL) AS has_coords
+      FROM connect.connected_profiles WHERE user_id = $1`,
+    [userId]
+  ).catch(() => ({ rows: [] as any[] }));
+  const j = rows[0];
+
+  // Path 1: stored geo_ids present — direct district match
+  if (j && (j.congressional_geo_id || j.state_senate_geo_id || j.county_geo_id)) {
+    try {
+      const elections = await getElectionsByGeoIds(
+        [j.congressional_geo_id, j.state_senate_geo_id, j.state_house_geo_id,
+         j.county_geo_id, j.school_district_geo_id, j.city_council_geo_id],
+        j.jurisdiction_state
+      );
+      res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+      res.status(200).json({ elections });
+      return;
+    } catch {
+      // fall through to Path 1.5
+    }
+  }
+
+  // Path 1.5: encrypted coords present but geo_ids not yet stored (pre-Phase-49 users)
+  if (j && j.has_coords && !j.congressional_geo_id && !j.state_senate_geo_id && !j.county_geo_id) {
+    try {
+      const { data: jData, error: jError } = await adminRpc('resolve_user_jurisdiction', {
+        p_user_id: userId,
+      }, 'connect');
+
+      if (!jError && jData) {
+        const jd = jData as Record<string, string | null>;
+
+        // Fire-and-forget write-back of resolvable columns
+        void pool.query(
+          `UPDATE connect.connected_profiles
+           SET congressional_geo_id        = $2,
+               congressional_district_name = $3,
+               state_senate_geo_id         = $4,
+               state_senate_district_name  = $5,
+               state_house_geo_id          = $6,
+               state_house_district_name   = $7,
+               county_geo_id               = $8,
+               county_name                 = $9,
+               school_district_geo_id      = $10,
+               school_district_name        = $11,
+               updated_at                  = now()
+           WHERE user_id = $1`,
+          [userId, jd.congressional ?? null, jd.congressional_name ?? null,
+           jd.state_senate ?? null, jd.state_senate_name ?? null,
+           jd.state_house ?? null, jd.state_house_name ?? null,
+           jd.county ?? null, jd.county_name ?? null,
+           jd.school_district ?? null, jd.school_district_name ?? null]
+        ).catch((e: Error) => console.error('[elections/me] Path 1.5 write-back error:', e.message));
+
+        if (jd.congressional || jd.state_senate || jd.county) {
+          const elections = await getElectionsByGeoIds(
+            [jd.congressional, jd.state_senate, jd.state_house,
+             jd.county, jd.school_district, jd.city_council],
+            j.jurisdiction_state
+          );
+          res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
+          res.status(200).json({ elections });
+          return;
+        }
+      }
+    } catch {
+      // fall through to 204
+    }
+  }
+
   res.status(204).end();
 });
 

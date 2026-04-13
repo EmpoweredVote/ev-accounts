@@ -145,6 +145,177 @@ export async function getCandidateById(candidateId: string): Promise<CandidateDe
 }
 
 /**
+ * Returns upcoming elections with races and candidates for a set of stored district GEO IDs.
+ *
+ * Used by GET /essentials/elections/me — avoids coordinate decryption by querying
+ * directly against the stored geo_ids on connected_profiles.
+ *
+ * - District races: matched by d.geo_id = ANY(geoIds)
+ * - Statewide races (office_id IS NULL): matched by e.state = state
+ */
+export async function getElectionsByGeoIds(
+  geoIds: (string | null | undefined)[],
+  state: string | null | undefined
+): Promise<ElectionResult[]> {
+  const activeGeoIds = geoIds.filter((g): g is string => !!g);
+
+  let districtRows: ElectionRow[] = [];
+
+  if (activeGeoIds.length > 0) {
+    const districtQueryText = `
+      SELECT DISTINCT
+        e.id           AS election_id,
+        e.name         AS election_name,
+        e.election_date,
+        e.election_type,
+        e.jurisdiction_level,
+        r.id           AS race_id,
+        r.position_name,
+        r.primary_party,
+        r.seats,
+        rc.id          AS candidate_id,
+        rc.full_name,
+        rc.first_name,
+        rc.last_name,
+        COALESCE(rc.photo_url, pi.url) AS photo_url,
+        rc.is_incumbent,
+        rc.candidate_status,
+        rc.politician_id,
+        d.district_type
+      FROM essentials.elections e
+      JOIN essentials.races r ON r.election_id = e.id
+      LEFT JOIN essentials.race_candidates rc
+        ON rc.race_id = r.id
+        AND rc.candidate_status != 'withdrawn'
+      LEFT JOIN LATERAL (
+        SELECT url FROM essentials.politician_images
+        WHERE politician_id = rc.politician_id AND type = 'default'
+        LIMIT 1
+      ) pi ON rc.politician_id IS NOT NULL
+      JOIN essentials.offices o ON o.id = r.office_id
+      JOIN essentials.districts d ON d.id = o.district_id
+      WHERE d.geo_id = ANY($1::text[])
+        AND e.election_date >= CURRENT_DATE
+      ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+    `;
+    const result = await pool.query<ElectionRow>(districtQueryText, [activeGeoIds]);
+    districtRows = result.rows;
+  }
+
+  let statewideRows: ElectionRow[] = [];
+  if (state) {
+    const statewideQueryText = `
+      SELECT DISTINCT
+        e.id           AS election_id,
+        e.name         AS election_name,
+        e.election_date,
+        e.election_type,
+        e.jurisdiction_level,
+        r.id           AS race_id,
+        r.position_name,
+        r.primary_party,
+        r.seats,
+        rc.id          AS candidate_id,
+        rc.full_name,
+        rc.first_name,
+        rc.last_name,
+        COALESCE(rc.photo_url, pi.url) AS photo_url,
+        rc.is_incumbent,
+        rc.candidate_status,
+        rc.politician_id,
+        NULL::text AS district_type
+      FROM essentials.elections e
+      JOIN essentials.races r ON r.election_id = e.id
+      LEFT JOIN essentials.race_candidates rc
+        ON rc.race_id = r.id
+        AND rc.candidate_status != 'withdrawn'
+      LEFT JOIN LATERAL (
+        SELECT url FROM essentials.politician_images
+        WHERE politician_id = rc.politician_id AND type = 'default'
+        LIMIT 1
+      ) pi ON rc.politician_id IS NOT NULL
+      WHERE r.office_id IS NULL
+        AND e.state = $1
+        AND e.election_date >= CURRENT_DATE
+      ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+    `;
+    const result = await pool.query<ElectionRow>(statewideQueryText, [state]);
+    statewideRows = result.rows;
+  }
+
+  const allRows = [...districtRows, ...statewideRows];
+  const seenCandidates = new Set<string>();
+  const dedupedRows = allRows.filter((row) => {
+    if (row.candidate_id !== null) {
+      if (seenCandidates.has(row.candidate_id)) return false;
+      seenCandidates.add(row.candidate_id);
+    }
+    return true;
+  });
+
+  if (dedupedRows.length === 0) return [];
+
+  const electionsMap = new Map<string, ElectionResult>();
+  const racesMap = new Map<string, ElectionRace>();
+
+  for (const row of dedupedRows) {
+    const electionDate =
+      row.election_date instanceof Date
+        ? row.election_date.toISOString().split('T')[0]
+        : String(row.election_date).split('T')[0];
+
+    if (!electionsMap.has(row.election_id)) {
+      electionsMap.set(row.election_id, {
+        election_id: row.election_id,
+        election_name: row.election_name,
+        election_date: electionDate,
+        election_type: row.election_type,
+        jurisdiction_level: row.jurisdiction_level,
+        races: [],
+      });
+    }
+
+    if (!racesMap.has(row.race_id)) {
+      const race: ElectionRace = {
+        race_id: row.race_id,
+        position_name: row.position_name,
+        primary_party: row.primary_party,
+        seats: row.seats,
+        district_type: row.district_type,
+        candidates: [],
+      };
+      racesMap.set(row.race_id, race);
+      electionsMap.get(row.election_id)!.races.push(race);
+    }
+
+    if (row.candidate_id !== null) {
+      racesMap.get(row.race_id)!.candidates.push({
+        candidate_id: row.candidate_id,
+        full_name: row.full_name!,
+        first_name: row.first_name,
+        last_name: row.last_name,
+        photo_url: row.photo_url,
+        is_incumbent: row.is_incumbent!,
+        candidate_status: row.candidate_status!,
+        politician_id: row.politician_id,
+      });
+    }
+  }
+
+  for (const election of electionsMap.values()) {
+    for (const race of election.races) {
+      if (!race.district_type) {
+        race.district_type = inferDistrictType(race.position_name, election.jurisdiction_level);
+      }
+    }
+  }
+
+  return Array.from(electionsMap.values()).sort((a, b) =>
+    a.election_date.localeCompare(b.election_date)
+  );
+}
+
+/**
  * Returns upcoming elections with races and candidates for a geographic coordinate.
  *
  * Uses two complementary queries:
