@@ -267,3 +267,62 @@ _Populated by Plan 114-07 aggregation. Left empty here._
 - **baseline_ref:** n/a
 - **notes:** The sunburst toggle provides an interesting visual but is not independently readable without interaction. The bar chart view (default) is strictly more informative for a voter wanting to understand where money goes. Minor because the bar view is the default and sunburst is a secondary visualization.
 
+
+<!-- ========================================================================= -->
+<!-- Plan 114-06: Cross-App Integration Pass (D-09)                            -->
+<!-- ========================================================================= -->
+
+### G-114-026 — SiteHeader "Treasury Tracker" and "Empowered Badges" nav links point to retired Netlify prototype URL
+- **app:** cross-app
+- **screen:** SiteHeader (all apps) — https://essentials.empowered.vote/, https://compass.empowered.vote/, https://readrank.empowered.vote/, https://treasurytracker.empowered.vote/
+- **severity:** blocker
+- **type:** feature
+- **evidence:** screenshots/cross-app/00-essentials-landing-baseline.png — "Treasury Tracker" href resolves to `https://ev-prototypes.netlify.app/treasury-tracker/dist`; "Empowered Badges" href resolves to `https://ev-prototypes.netlify.app/empowered-badges/dist`
+- **baseline_ref:** n/a
+- **notes:** The production SiteHeader nav wires "Treasury Tracker" to the old EV-prototypes Netlify URL instead of `https://treasurytracker.empowered.vote/`. A voter clicking this link from any app is routed to the stale prototype. Same bug for "Empowered Badges." Severity=blocker because the cross-app nav is the voter's primary mechanism to discover all four apps, and two of the four links are broken.
+
+### G-114-027 — No auth state relay between apps — logged-in session lost on cross-app navigation
+- **app:** cross-app
+- **screen:** SiteHeader (all apps) — guest state confirmed on Essentials, Read & Rank, Treasury Tracker
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/cross-app/02-siteheader-essentials-to-readrank.png — "Sign in" link visible in Read & Rank SiteHeader despite navigating from Essentials; screenshots/cross-app/03-siteheader-essentials-to-treasury.png — "Sign In" link visible in Treasury SiteHeader
+- **baseline_ref:** n/a
+- **notes:** Each app maintains independent auth state — there is no shared session relay between Essentials, Compass, Read & Rank, and Treasury Tracker. A voter who logs in to one app is not recognized as logged in when they navigate to another via the SiteHeader. For the pre-May-5 voter context (primarily guest), this is not a blocker; but it is confusing to see "Sign in" after already authenticating, and it breaks the perception of a unified platform.
+
+### G-114-028 — Profile CompassCard always shows "Calibrate your compass" prompt — no result displayed for already-calibrated visitors
+- **app:** cross-app
+- **screen:** Politician profile CompassCard — https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/cross-app/04-profile-compasscard.png — "Calibrate your compass to see how you align with Matt Pierce" with "Calibrate your compass" button; the profile body text shows "Calibrate your compass" CTA regardless of visitor state
+- **baseline_ref:** n/a
+- **notes:** The CompassCard in the Essentials politician profile does not check for an existing calibration result in the visitor's localStorage or account. A voter who has already completed the Compass quiz and navigated to Pierce's profile sees the same "Calibrate" CTA as a voter who has never used Compass. The return URL on the CTA link is correct (`?return=https://essentials.empowered.vote/candidate/7e768cda-...`), so the forward trip works — but the CompassCard never renders a comparison result even for returning calibrated visitors. This means the most valuable cross-app touchpoint (seeing how you align with a candidate on their profile page) only works as a one-way trip to Compass rather than an inline result. Severity=confusing because the voter who has done the work already gets no reward at the profile level.
+
+### G-114-029 — Read & Rank verdict badges absent from politician profile despite 10 sourced quotes in DB
+- **app:** cross-app
+- **screen:** Politician profile — https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa
+- **severity:** blocker
+- **type:** feature
+- **evidence:** screenshots/cross-app/05-profile-stanceaccordion-readrank-badges.png and screenshots/cross-app/13-pierce-profile-bottom-scroll.png — full-page scroll of Pierce profile shows no Read & Rank section, no StanceAccordion, no verdict badges anywhere; "Read & Rank" text found only in SiteHeader nav link
+- **baseline_ref:** n/a
+- **notes:** AUDIT-REPORT-112.md §AUDIT-04 confirms 10 sourced quotes are linked to Matt Pierce in the DB. The CLAUDE.md workspace docs describe "Read & Rank verdict badges under StanceAccordion" as an implemented feature in `ev-ui/src/PoliticianProfile.jsx`. The voter-side production walk confirms this section is not rendered on the live Essentials profile page. Whether the component is disabled, behind a feature flag, or broken in production is unknown from the walkthrough alone. Severity=blocker because a voter who completed Read & Rank quote evaluations for Pierce gets no visible payoff on the Essentials profile — the cross-app loop is broken at the profile side.
+
+### G-114-030 — Compass compare panel has no "View profile in Essentials" link — picker is a dead end for candidate exploration
+- **app:** cross-app
+- **screen:** Compass results (compare picker) — https://compass.empowered.vote/results
+- **severity:** confusing
+- **type:** feature
+- **evidence:** screenshots/cross-app/06-compass-picker-to-candidate.png — Compass results page in unauthenticated uncalibrated state shows only "Get Started" / "Skip for now" onboarding prompt; screenshots/cross-app/06-compass-results-before-picker.png — zero Essentials deep-links found on the results page
+- **baseline_ref:** n/a
+- **notes:** When a voter discovers a candidate via the Compass picker and wants to learn more about them (their biography, legislative record, contact info), there is no path from the Compass compare panel back to that candidate's Essentials profile. The picker adds a politician to the radar overlay but does not provide any "View full profile" link or CTA. A voter who discovers Matt Pierce in Compass must manually navigate to Essentials and re-search to find the profile. Severity=confusing because the voter CAN complete the cross-app journey manually, but the lack of a deep-link creates unnecessary friction and severs the natural follow-up action.
+
+### G-114-031 — No contextual Essentials → Treasury hand-off link in results or profile flow
+- **app:** cross-app
+- **screen:** Essentials results + profile — https://essentials.empowered.vote/results?q=200+W+Kirkwood+Ave%2C+Bloomington%2C+IN+47404 and https://essentials.empowered.vote/candidate/7e768cda-38f3-4511-ad7c-c8e877c5abfa
+- **severity:** confusing
+- **type:** feature
+- **evidence:** screenshots/cross-app/07-essentials-to-treasury-handoff.png — no Treasury Tracker link on the Essentials results page other than the SiteHeader nav link (which itself points to the wrong URL per G-114-026); no Treasury link on the Pierce politician profile
+- **baseline_ref:** n/a
+- **notes:** Treasury Tracker has Bloomington and Monroe County budget data ($224.7M and $345.1M respectively — see 114-05 walk). Essentials shows politicians who control those budgets (city council, county commissioners). Yet there is no in-flow prompt connecting the two — a voter learning about their city councillors has no nudge to explore what budget those councillors oversee. A contextual "Explore Bloomington's $224.7M budget → Treasury Tracker" link in the local tier of Essentials results, or in a city council member's profile, would complete the civic loop. Its absence means the two most civic-context-rich apps in the suite never cross-reference each other.
+
