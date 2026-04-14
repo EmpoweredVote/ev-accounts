@@ -115,3 +115,13 @@ None — no external service configuration required. Research artifacts only.
 ---
 *Phase: 114-ux-walkthrough*
 *Completed: 2026-04-13*
+
+## Self-Check: PASSED
+
+- FOUND: `.planning/research/ux-walkthrough/cross-app.md`
+- FOUND: `.planning/research/ux-walkthrough/GAPS.md` (31 entries, G-114-001..031)
+- FOUND: `.planning/phases/114-ux-walkthrough/114-06-SUMMARY.md`
+- FOUND: `screenshots/cross-app/` — 17 PNGs (≥6 required)
+- FOUND: commit `f4360c5` (Task 1 screenshots)
+- FOUND: commit `1d983b7` (Task 2 cross-app.md + GAPS.md)
+- FOUND: commit `2d0c632` (plan SUMMARY.md)
