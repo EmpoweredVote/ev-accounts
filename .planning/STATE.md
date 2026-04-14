@@ -1,45 +1,45 @@
 ---
 gsd_state_version: 1.0
-milestone: v2026.4.3
-milestone_name: milestone
-status: complete
-stopped_at: Phase 115 complete — GAP-REPORT.md and BACKLOG.md authored
-last_updated: "2026-04-14T02:00:00.000Z"
-last_activity: 2026-04-14 -- Phase 115 complete (2/2 plans, GAP-REPORT.md + BACKLOG.md produced)
+milestone: v2026.4.4
+milestone_name: Indiana Primary Fix Wave
+status: in_progress
+stopped_at: Defining requirements
+last_updated: "2026-04-14T00:00:00.000Z"
+last_activity: 2026-04-14 — Milestone v2026.4.4 started
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 19
-  completed_plans: 19
-  percent: 100
+  total_phases: 11
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-11)
+See: .planning/PROJECT.md (updated 2026-04-14)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 115 — gap-report-synthesis
+**Current focus:** Defining requirements for v2026.4.4
 
 ## Current Position
 
-Phase: 115 (gap-report-synthesis) — COMPLETE (2/2 plans)
-Next: Phase 116 (v2026.4.4 — see BACKLOG.md)
-Status: Milestone v2026.4.3 complete — all 5 phases done
-Last activity: 2026-04-14 -- Phase 115 complete (2/2 plans — GAP-REPORT.md + BACKLOG.md, milestone v2026.4.3 done)
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-04-14 — Milestone v2026.4.4 started
 
 ```
-[████████████████████] 100% (5/5 phases in milestone — audit phases done)
+[░░░░░░░░░░░░░░░░░░░░] 0% (0/11 phases)
 ```
 
 ## Performance Metrics
 
+**Velocity (v2026.4.3):** 5 phases, 19 plans, 3 days
 **Velocity (v2026.4.2):** 6 phases, 11 plans, 2 days
 **Velocity (v2026.4.1):** 5 phases, 11 plans, 1 day
 **Velocity (v2026.3.8):** 5 phases, 12 plans, 3 days
-**Velocity (v2026.3.7):** 5 phases, 11 plans
 **Velocity (v2026.3.6):** 7 phases, 15 plans, 3 days
 
 *Updated after each plan completion*
@@ -48,17 +48,16 @@ Last activity: 2026-04-14 -- Phase 115 complete (2/2 plans — GAP-REPORT.md + B
 
 ### Decisions
 
-- **Audit-only scope:** This milestone produces no deployable code. All output is markdown documents and a read-only audit script. Execution of gap fixes deferred to v2026.4.4.
-- **4 phases, not 3:** Research suggested 3 phases but included Tier 1 execution scope that is out of scope here. Splitting competitive benchmarking (Phase 113) from data audit (Phase 112) reflects the distinct work streams and dependency structure.
-- **Phase 113 depends on 112:** Competitor spot-checks should be run after the full ballot baseline exists so race coverage can be compared accurately against a confirmed denominator.
-- **Phase 115 terminal dependency:** Gap report synthesis waits for all three audit tracks (112, 113, 114) to complete before any prioritization happens — prevents premature conclusions.
-- **Indiana SB 177 boundary:** School board races for May 5 are explicitly out of scope — filing opens May 19, these are November races only.
+- **Tier 1 deadline:** Phases 116–121 must ship by May 1, 2026 (4 days before May 5 Indiana primary).
+- **Phase 117 feasibility gate:** Data sourcing for ~30 stub candidates must be evaluated BEFORE code work. If sourcing slips past April 25, scope down to highest-impact 5–10 candidates only.
+- **Tier 2 in roadmap:** Phases 122–126 are in the roadmap but explicitly post-primary. Do not let them block Tier 1.
+- **Source:** All 11 phases derived from BACKLOG.md (Phase 115 output) — gaps documented in GAP-REPORT.md.
 
 ### Pending Todos
 
 - 12 politicians have no Read & Rank quotes (carried from v1.8)
-- PROF-04: Compass stance data imports for candidates (deferred to future milestone)
-- PROF-05: Sourced quote imports for candidates (deferred to future milestone)
+- PROF-04: Compass stance data imports for candidates (deferred)
+- PROF-05: Sourced quote imports for candidates (deferred)
 
 ### Blockers/Concerns
 
@@ -72,6 +71,5 @@ Last activity: 2026-04-14 -- Phase 115 complete (2/2 plans — GAP-REPORT.md + B
 
 ## Session Continuity
 
-Last activity: 2026-04-14 — Phase 115 complete. GAP-REPORT.md (587 lines, 31 UX gaps + 9 audit findings + 4 patterns) and BACKLOG.md (11 phases, 116–126, for v2026.4.4 Indiana Primary Fix Wave) authored. Milestone v2026.4.3 complete.
-Stopped at: Phase 115 complete — all 2 plans done
-Resume file: .planning/phases/115-gap-report-synthesis/115-02-SUMMARY.md
+Last activity: 2026-04-14 — Milestone v2026.4.4 started. Requirements and roadmap being defined from BACKLOG.md.
+Stopped at: Requirements definition in progress

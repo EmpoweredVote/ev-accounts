@@ -194,22 +194,35 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
 - ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
 
-## Current Milestone: v2026.4.3 Indiana Primary Election Readiness Audit
+## Current Milestone: v2026.4.4 Indiana Primary Fix Wave
 
-**Goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (May 5, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
+**Goal:** Ship Tier 1 gap fixes before the May 5 Indiana primary — correct wrong data, repair broken features, and import minimum viable candidate data for Monroe County voters.
 
 **Target features:**
-- Competitive benchmarking — feature checklist + live Monroe County spot-checks on BallotReady, VoteSmart, Vote411, Ballotpedia
-- Data completeness audit — all races (township, school board, judges, county, state, federal), candidate coverage, stance data, quotes for Read & Rank
-- Essentials UX gap analysis — what does a voter actually experience searching a Monroe County address today?
-- Compass/Read-Rank value assessment — enough stance data and quotes for Monroe County candidates to be useful?
-- Treasury relevance check — is budget data useful in an election context?
-- Tiered gap report — "before primary" (high-impact, shippable in ~2 weeks) vs "future" improvements
-- Execution backlog — prioritized phases for filling critical gaps
+
+Tier 1 (ship by May 1, 2026):
+- Phase 116 — Quick correctness fixes (wrong election date, broken nav links, wrong default tab)
+- Phase 117 — Candidate stub resolution + data import (~30 stub candidates for contested Monroe County races)
+- Phase 118 — Read & Rank verdict badge display fix (quotes in DB not rendering on profiles)
+- Phase 119 — Read & Rank location filter repair (both filter mechanisms broken)
+- Phase 120 — Contested-race bio + photo authoring (~5–10 candidates)
+- Phase 121 — County Council D1→D4 geofence repair (Kirkwood Bloomington resolves wrong district)
+
+Tier 2 (post-primary):
+- Phase 122 — Cross-app loop polish (Compass→ReadRank→Essentials integration gaps)
+- Phase 123 — Photo coverage expansion (62 remaining candidates)
+- Phase 124 — App-wide bio authoring (~45 candidates)
+- Phase 125 — Tier 2 UX polish bundle (21 minor gaps)
+- Phase 126 — Geofence hardening (rural addresses + 11 missing township geofences)
 
 ### Active
 
-- [x] Phase 112 data completeness audit — baseline established (46 races, 81 candidates, unified AUDIT-REPORT-112.md; 5/51 stances, 4/51 quotes, 19/81 headshots, 0/51 bios)
+- [ ] Phase 116 — Quick correctness fixes
+- [ ] Phase 117 — Candidate stub resolution + data import (CRITICAL: data-sourcing feasibility check first)
+- [ ] Phase 118 — Read & Rank verdict badge fix
+- [ ] Phase 119 — Read & Rank location filter repair
+- [ ] Phase 120 — Contested-race bio + photo authoring
+- [ ] Phase 121 — County Council geofence repair
 
 ### Future
 
@@ -222,7 +235,11 @@ Users can explore political issues and discover their elected officials without 
 - [ ] Politician self-calibrated compass with toggle view on profiles
 - [ ] Multi-politician comparison (2-3 overlays at once)
 
-## Last Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials (Shipped 2026-04-12)
+## Last Milestone: v2026.4.3 Indiana Primary Election Readiness Audit (Shipped 2026-04-14)
+
+**Delivered:** Full voter experience audit for Monroe County IN — competitive benchmarking vs BallotReady/VoteSmart/Vote411/Ballotpedia, data completeness audit (46 races, 81 candidates), UX gap analysis, and tiered gap report + execution backlog. 5 phases, 19 plans.
+
+## Previous Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials (Shipped 2026-04-12)
 
 **Delivered:** CouncilScribe voice profiles keyed to essentials politicians via live roster API — body roster endpoints, roster client + CLI, per-meeting body tagging, profile schema v3, roster-driven identification. 6 phases, 11 plans, 22/22 requirements satisfied.
 
@@ -292,4 +309,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-11 — milestone v2026.4.3 started*
+*Last updated: 2026-04-14 — milestone v2026.4.4 started*
