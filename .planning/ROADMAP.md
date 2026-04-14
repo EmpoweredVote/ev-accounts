@@ -12,7 +12,7 @@
 ## Phases
 
 - [x] **Phase 112: Data Completeness Audit** — DB audit script + full Monroe County May 5 ballot baseline built from authoritative sources (completed 2026-04-12)
-- [ ] **Phase 113: Competitive Benchmarking** — Live Monroe County spot-checks on BallotReady, Vote411, VoteSmart, Ballotpedia with feature comparison matrix
+- [x] **Phase 113: Competitive Benchmarking** — Live Monroe County spot-checks on BallotReady, Vote411, VoteSmart, Ballotpedia with feature comparison matrix (completed 2026-04-13)
 - [ ] **Phase 114: UX Walkthrough** — Voter journey documented for Essentials, Compass, Read & Rank, and Treasury with gaps logged
 - [ ] **Phase 115: Gap Report Synthesis** — Tiered gap report (Tier 1 before primary / Tier 2 future) with execution backlog for follow-on milestone
 
@@ -48,15 +48,15 @@ Plans:
   4. A live spot-check on Ballotpedia with the same address is documented: race and candidate coverage.
   5. A feature comparison matrix covering at least 15 dimensions (race coverage, candidate fields, stance data, quote/Q&A, photo, bio, legislative record, compass, geofence precision, antipartisan, etc.) places EV against all four competitors, with honest scoring.
   6. Per-competitor race and candidate counts for Monroe County are directly compared against the Phase 112 baseline in the matrix.
-**Plans:** 7 plans
+**Plans:** 7/7 plans complete
 Plans:
-- [ ] 113-01-PLAN.md — Methodology + MATRIX/CSV scaffolding (addresses, rubric, 10 core dimensions, antipartisan omissions)
-- [ ] 113-02-PLAN.md — BallotReady live spot-check + evidence file + screenshots
-- [ ] 113-03-PLAN.md — Vote411 live spot-check + evidence file + screenshots
-- [ ] 113-04-PLAN.md — VoteSmart live spot-check + evidence file + screenshots
-- [ ] 113-05-PLAN.md — Ballotpedia live spot-check + evidence file + screenshots
-- [ ] 113-06-PLAN.md — EV self spot-check applying same methodology (no privilege)
-- [ ] 113-07-PLAN.md — Matrix assembly: score cells, race/candidate count table vs baseline, derived extras
+- [x] 113-01-PLAN.md — Methodology + MATRIX/CSV scaffolding (addresses, rubric, 10 core dimensions, antipartisan omissions)
+- [x] 113-02-PLAN.md — BallotReady live spot-check + evidence file + screenshots
+- [x] 113-03-PLAN.md — Vote411 live spot-check + evidence file + screenshots
+- [x] 113-04-PLAN.md — VoteSmart live spot-check + evidence file + screenshots
+- [x] 113-05-PLAN.md — Ballotpedia live spot-check + evidence file + screenshots
+- [x] 113-06-PLAN.md — EV self spot-check applying same methodology (no privilege)
+- [x] 113-07-PLAN.md — Matrix assembly: score cells, race/candidate count table vs baseline, derived extras
 **UI hint**: no
 
 ### Phase 114: UX Walkthrough
@@ -68,7 +68,15 @@ Plans:
   2. The Compass voter journey is documented: evaluating whether a Monroe County voter can meaningfully use the compass for candidates in contested races, with stance data availability assessed per race.
   3. The Read & Rank voter journey is documented: whether enough sourced quotes exist for Monroe County primary candidates for the tool to be useful, and whether candidate filtering works for the county.
   4. The Treasury relevance assessment is documented: whether Monroe County budget data is present, surfaced, and contextually useful to a voter visiting in an election context.
-**Plans**: TBD
+**Plans:** 7 plans
+Plans:
+- [ ] 114-01-PLAN.md — METHODOLOGY.md + output skeletons (GAPS.md, gaps.csv, screenshots/)
+- [ ] 114-02-PLAN.md — Essentials walkthrough (UX-01)
+- [ ] 114-03-PLAN.md — Compass walkthrough (UX-02)
+- [ ] 114-04-PLAN.md — Read & Rank walkthrough (UX-03)
+- [ ] 114-05-PLAN.md — Treasury relevance-check + conditional walkthrough (UX-04)
+- [ ] 114-06-PLAN.md — Cross-app integration pass (D-09)
+- [ ] 114-07-PLAN.md — Aggregation + gaps.csv synthesis + invariant validation
 **UI hint**: no
 
 ### Phase 115: Gap Report Synthesis
@@ -79,7 +87,10 @@ Plans:
   1. A gap report document exists in `.planning/` classifying every identified gap as Tier 1 (must ship before primary, ~May 6) or Tier 2 (future improvement).
   2. The gap report contains an explicit "intentional omissions" section documenting antipartisan choices (no party labels, no endorsements, no interest group ratings) to distinguish them from data gaps.
   3. An execution backlog exists as a prioritized list of phases for a follow-on milestone (v2026.4.4), sequencing Tier 1 gaps in the order they should be tackled with rough effort signals.
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 115-01-PLAN.md — Author GAP-REPORT.md (tiered gap report + intentional omissions, closes GAP-01 + GAP-02)
+- [ ] 115-02-PLAN.md — Author BACKLOG.md (ROADMAP-ready execution backlog for v2026.4.4, closes GAP-03)
 
 ---
 
@@ -88,9 +99,9 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 112. Data Completeness Audit | 3/3 | Complete    | 2026-04-12 |
-| 113. Competitive Benchmarking | 0/? | Not started | - |
-| 114. UX Walkthrough | 0/? | Not started | - |
-| 115. Gap Report Synthesis | 0/? | Not started | - |
+| 113. Competitive Benchmarking | 7/7 | Complete   | 2026-04-13 |
+| 114. UX Walkthrough | 0/7 | Planned | - |
+| 115. Gap Report Synthesis | 0/2 | Planned | - |
 
 ---
 
