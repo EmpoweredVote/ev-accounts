@@ -6,7 +6,39 @@
 **Note:** IDs are `G-114-NNN` zero-padded and MUST be monotonic across the whole phase (not per-app). Antipartisan omissions (party labels, endorsements, interest-group ratings) are intentional per METHODOLOGY.md §8 and MUST NOT appear here.
 
 ## Summary Counts
-_Populated by Plan 114-07 aggregation. Left empty here._
+
+**Total gaps:** 31
+
+### By App
+| App | Count |
+|-----|-------|
+| essentials | 10 |
+| compass | 5 |
+| read-rank | 5 |
+| treasury | 5 |
+| cross-app | 6 |
+
+### By Severity
+| Severity | Count |
+|----------|-------|
+| blocker | 8 |
+| confusing | 17 |
+| minor | 6 |
+
+### By Type
+| Type | Count |
+|------|-------|
+| data | 7 |
+| feature | 8 |
+| content | 5 |
+| ux-friction | 11 |
+
+### By Severity × Type (cross-tab)
+| | data | feature | content | ux-friction |
+|---|------|---------|---------|-------------|
+| blocker | 3 | 3 | 1 | 1 |
+| confusing | 2 | 5 | 1 | 9 |
+| minor | 2 | 0 | 3 | 1 |
 
 ## Gaps
 
