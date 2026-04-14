@@ -3,9 +3,9 @@ gsd_state_version: 1.0
 milestone: v2026.4.4
 milestone_name: Indiana Primary Fix Wave
 status: in_progress
-stopped_at: Defining requirements
+stopped_at: Roadmap defined — ready for Phase 116
 last_updated: "2026-04-14T00:00:00.000Z"
-last_activity: 2026-04-14 — Milestone v2026.4.4 started
+last_activity: 2026-04-14 — Roadmap created for v2026.4.4 (11 phases, 25 requirements)
 progress:
   total_phases: 11
   completed_phases: 0
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-14)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Defining requirements for v2026.4.4
+**Current focus:** Phase 116 — Quick Correctness Fixes (Tier 1, start here)
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: Phase 116 — Quick Correctness Fixes (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-04-14 — Milestone v2026.4.4 started
+Status: Roadmap defined, ready to execute
+Last activity: 2026-04-14 — Roadmap created. 11 phases (116–126), 25 requirements mapped.
 
 ```
 [░░░░░░░░░░░░░░░░░░░░] 0% (0/11 phases)
@@ -52,6 +52,7 @@ Last activity: 2026-04-14 — Milestone v2026.4.4 started
 - **Phase 117 feasibility gate:** Data sourcing for ~30 stub candidates must be evaluated BEFORE code work. If sourcing slips past April 25, scope down to highest-impact 5–10 candidates only.
 - **Tier 2 in roadmap:** Phases 122–126 are in the roadmap but explicitly post-primary. Do not let them block Tier 1.
 - **Source:** All 11 phases derived from BACKLOG.md (Phase 115 output) — gaps documented in GAP-REPORT.md.
+- **Sequencing note:** Start Phase 117 first (data-sourcing lead time), run Phase 116 in parallel. Phases 118–121 can follow independently.
 
 ### Pending Todos
 
@@ -71,5 +72,5 @@ Last activity: 2026-04-14 — Milestone v2026.4.4 started
 
 ## Session Continuity
 
-Last activity: 2026-04-14 — Milestone v2026.4.4 started. Requirements and roadmap being defined from BACKLOG.md.
-Stopped at: Requirements definition in progress
+Last activity: 2026-04-14 — Roadmap created for v2026.4.4. 11 phases (116–126), 25/25 requirements mapped.
+Stopped at: Ready to execute Phase 116 (Quick Correctness Fixes). Run `/gsd-plan-phase 116` to begin.

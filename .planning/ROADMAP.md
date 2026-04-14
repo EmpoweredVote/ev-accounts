@@ -1,96 +1,139 @@
-# Roadmap — v2026.4.3 Indiana Primary Election Readiness Audit
+# Roadmap — v2026.4.4 Indiana Primary Fix Wave
 
-**Milestone goal:** Audit the full voter experience for Monroe County IN ahead of the Indiana primary (May 5, 2026), benchmark against BallotReady/VoteSmart/Vote411/Ballotpedia, and produce a tiered gap list (ship-before-primary vs future) across data, functionality, and UX.
+**Milestone goal:** Ship Tier 1 gap fixes before the May 5 Indiana primary — correct wrong data, repair broken features, and import minimum viable candidate data for Monroe County voters.
 
 **Granularity:** standard
-**Total phases:** 4 (Phase 112 — Phase 115)
-**Requirements covered:** 21/21
-**Repos affected:** `ev-accounts` (read-only audit script), `.planning/` (markdown outputs only)
+**Total phases:** 11 (Phase 116 — Phase 126)
+**Requirements covered:** 25/25
+**Tier 1 deadline:** May 1, 2026 (4 days before May 5 Indiana primary)
+**Repos affected:** `essentials`, `ev-accounts`, `ev-ui`, `read-rank`
 
 ---
 
 ## Phases
 
-- [x] **Phase 112: Data Completeness Audit** — DB audit script + full Monroe County May 5 ballot baseline built from authoritative sources (completed 2026-04-12)
-- [x] **Phase 113: Competitive Benchmarking** — Live Monroe County spot-checks on BallotReady, Vote411, VoteSmart, Ballotpedia with feature comparison matrix (completed 2026-04-13)
-- [ ] **Phase 114: UX Walkthrough** — Voter journey documented for Essentials, Compass, Read & Rank, and Treasury with gaps logged
-- [ ] **Phase 115: Gap Report Synthesis** — Tiered gap report (Tier 1 before primary / Tier 2 future) with execution backlog for follow-on milestone
+- [ ] **Phase 116: Quick Correctness Fixes** — Correct wrong election date, broken nav links, and wrong default Representatives tab
+- [ ] **Phase 117: Candidate Stub Resolution + Data Import** — Create politician records and import minimum viable data for ~30 stub Monroe County candidates
+- [ ] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production
+- [ ] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken)
+- [ ] **Phase 120: Contested-Race Bio + Photo Authoring** — Author bios and source headshots for ~5–10 contested-race candidates
+- [ ] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district
+- [ ] **Phase 122: Cross-App Loop Polish** — Repair remaining Compass→Read & Rank→Essentials integration gaps
+- [ ] **Phase 123: Photo Coverage Expansion** — Extend headshot pipeline to fill remaining 62-candidate photo gap
+- [ ] **Phase 124: App-Wide Bio Authoring** — Author bios for ~45 remaining linked candidates
+- [ ] **Phase 125: Tier 2 UX Polish Bundle** — Address 21 Tier 2 minor/confusing UX gaps
+- [ ] **Phase 126: Geofence Hardening** — Repair rural address geocoding failures and import 11 missing township geofences
 
 ---
 
 ## Phase Details
 
-### Phase 112: Data Completeness Audit
-**Goal**: The actual gap between what is in the DB and what is on the May 5 Monroe County ballot is measured and documented, with a verified full ballot baseline from authoritative external sources.
-**Depends on**: Nothing (foundation — read-only queries against existing DB; no external services required)
-**Requirements**: AUDIT-01, AUDIT-02, AUDIT-03, AUDIT-04, AUDIT-05, AUDIT-06, AUDIT-07, AUDIT-08
+### Phase 116: Quick Correctness Fixes
+**Goal**: A Monroe County voter visiting for the first time sees the correct election date, functional navigation, and can find all candidates in their representative view.
+**Depends on**: Nothing
+**Requirements**: CORR-01, CORR-02, CORR-03
 **Success Criteria** (what must be TRUE):
-  1. Running the audit script outputs a structured report showing race count in DB vs confirmed May 5 ballot total, with named missing races listed.
-  2. Each race in the report has a candidate coverage line — how many candidates are linked, how many are unlinked stubs, and how many are expected.
-  3. The report includes stance and quote coverage per candidate: how many have any compass stances, how many have any Read & Rank quotes.
-  4. The report includes headshot coverage per candidate: CDN photo vs local file vs no photo.
-  5. A full ballot baseline document exists in `.planning/research/` sourced from Indiana SoS + Monroe County Clerk + local press, listing every race and expected candidate count for May 5.
-  6. A Bloomington address (e.g., 200 W Kirkwood Ave) resolves correctly through the geofence stack and the returned races match the baseline.
-**Plans:** 3/3 plans complete
-Plans:
-- [x] 112-01-PLAN.md — Ballot baseline document + race and candidate audit scripts
-- [x] 112-02-PLAN.md — Stance, quote, headshot, and profile completeness audit scripts
-- [x] 112-03-PLAN.md — Geofence smoke test + assembler for unified audit report
+  1. Election Central page displays May 5, 2026 as the election date (not a wrong date).
+  2. All SiteHeader navigation links resolve to live empowered.vote pages — no 404s when clicking between apps.
+  3. The Representatives page defaults to a tab that shows all elected officials including challengers.
+**Plans**: TBD
 
-### Phase 113: Competitive Benchmarking
-**Goal**: EV's Monroe County coverage is benchmarked against all four major voter guide competitors using a live Bloomington address, producing a feature comparison matrix.
-**Depends on**: Phase 112 (full ballot baseline must exist to compare race coverage accurately)
-**Requirements**: BENCH-01, BENCH-02, BENCH-03, BENCH-04, BENCH-05, BENCH-06
+### Phase 117: Candidate Stub Resolution + Data Import
+**Goal**: Contested Monroe County races have real candidate records — stub profiles are replaced with minimum viable data (name, office, photo, 1-line bio), making Essentials profiles usable and the Compass picker functional for those candidates.
+**Depends on**: Nothing (start in parallel with Phase 116 due to data-sourcing lead time)
+**Requirements**: CAND-01, CAND-02, CAND-03, CAND-04, CAND-05
 **Success Criteria** (what must be TRUE):
-  1. A live spot-check on BallotReady with a Monroe County address is documented: races shown, candidate data depth (fields present), stance/Q&A availability.
-  2. A live spot-check on Vote411 with the same address is documented: races shown, Q&A coverage, and candidate profile depth.
-  3. A live spot-check on VoteSmart with the same address is documented: candidate coverage and data fields.
-  4. A live spot-check on Ballotpedia with the same address is documented: race and candidate coverage.
-  5. A feature comparison matrix covering at least 15 dimensions (race coverage, candidate fields, stance data, quote/Q&A, photo, bio, legislative record, compass, geofence precision, antipartisan, etc.) places EV against all four competitors, with honest scoring.
-  6. Per-competitor race and candidate counts for Monroe County are directly compared against the Phase 112 baseline in the matrix.
-**Plans:** 7/7 plans complete
-Plans:
-- [x] 113-01-PLAN.md — Methodology + MATRIX/CSV scaffolding (addresses, rubric, 10 core dimensions, antipartisan omissions)
-- [x] 113-02-PLAN.md — BallotReady live spot-check + evidence file + screenshots
-- [x] 113-03-PLAN.md — Vote411 live spot-check + evidence file + screenshots
-- [x] 113-04-PLAN.md — VoteSmart live spot-check + evidence file + screenshots
-- [x] 113-05-PLAN.md — Ballotpedia live spot-check + evidence file + screenshots
-- [x] 113-06-PLAN.md — EV self spot-check applying same methodology (no privilege)
-- [x] 113-07-PLAN.md — Matrix assembly: score cells, race/candidate count table vs baseline, derived extras
-**UI hint**: no
+  1. A feasibility evaluation document exists confirming which ~30 stub candidates have sourced public record data available, before any code work begins.
+  2. Politician records exist in the DB for stub candidates in contested Monroe County races, with at minimum name and office title.
+  3. Each resolved candidate has a minimum viable profile: photo (or placeholder), 1-line bio, and correct office title.
+  4. Resolved candidate profile pages in Essentials load without errors and display the imported data.
+  5. Resolved candidates appear in the Compass politician picker and can be selected for comparison.
+**Plans**: TBD
+**UI hint**: yes
 
-### Phase 114: UX Walkthrough
-**Goal**: A voter's first-time experience through each EV app for Monroe County IN is documented with specific friction points and gaps identified.
-**Depends on**: Phase 112 (full ballot baseline and audit data must be available to assess data gaps during walkthrough)
-**Requirements**: UX-01, UX-02, UX-03, UX-04
+### Phase 118: Read & Rank Verdict Badge Fix
+**Goal**: Verdict badges from Read & Rank sessions appear correctly on politician profile pages in production — the 10 Pierce quotes in the DB render as verdict badges in the StanceAccordion.
+**Depends on**: Nothing
+**Requirements**: RR-01, RR-02
 **Success Criteria** (what must be TRUE):
-  1. The Essentials voter journey is documented: searching a Monroe County address, reviewing each screen (results, election central, representative cards, candidate profiles), with every gap, missing piece, or confusing moment logged.
-  2. The Compass voter journey is documented: evaluating whether a Monroe County voter can meaningfully use the compass for candidates in contested races, with stance data availability assessed per race.
-  3. The Read & Rank voter journey is documented: whether enough sourced quotes exist for Monroe County primary candidates for the tool to be useful, and whether candidate filtering works for the county.
-  4. The Treasury relevance assessment is documented: whether Monroe County budget data is present, surfaced, and contextually useful to a voter visiting in an election context.
-**Plans:** 7 plans
-Plans:
-- [ ] 114-01-PLAN.md — METHODOLOGY.md + output skeletons (GAPS.md, gaps.csv, screenshots/)
-- [ ] 114-02-PLAN.md — Essentials walkthrough (UX-01)
-- [ ] 114-03-PLAN.md — Compass walkthrough (UX-02)
-- [ ] 114-04-PLAN.md — Read & Rank walkthrough (UX-03)
-- [ ] 114-05-PLAN.md — Treasury relevance-check + conditional walkthrough (UX-04)
-- [ ] 114-06-PLAN.md — Cross-app integration pass (D-09)
-- [ ] 114-07-PLAN.md — Aggregation + gaps.csv synthesis + invariant validation
-**UI hint**: no
+  1. Verdict badges render on politician profile pages in production for politicians with existing DB quotes.
+  2. A root cause document identifies exactly which layer caused the regression (CSS, prop wiring, ev-ui version mismatch, or feature flag).
+**Plans**: TBD
+**UI hint**: yes
 
-### Phase 115: Gap Report Synthesis
-**Goal**: Findings from the data audit, competitive benchmarking, and UX walkthrough are synthesized into an actionable tiered gap report with a prioritized execution backlog.
-**Depends on**: Phase 112, Phase 113, Phase 114 (all three audit tracks must complete before synthesizing)
-**Requirements**: GAP-01, GAP-02, GAP-03
+### Phase 119: Read & Rank Location Filter Repair
+**Goal**: A voter entering a Monroe County address in Read & Rank sees only quotes from their local candidates — both the geocoding and filter logic work end-to-end.
+**Depends on**: Nothing
+**Requirements**: RR-03, RR-04
 **Success Criteria** (what must be TRUE):
-  1. A gap report document exists in `.planning/` classifying every identified gap as Tier 1 (must ship before primary, ~May 6) or Tier 2 (future improvement).
-  2. The gap report contains an explicit "intentional omissions" section documenting antipartisan choices (no party labels, no endorsements, no interest group ratings) to distinguish them from data gaps.
-  3. An execution backlog exists as a prioritized list of phases for a follow-on milestone (v2026.4.4), sequencing Tier 1 gaps in the order they should be tackled with rough effort signals.
-**Plans:** 2 plans
-Plans:
-- [ ] 115-01-PLAN.md — Author GAP-REPORT.md (tiered gap report + intentional omissions, closes GAP-01 + GAP-02)
-- [ ] 115-02-PLAN.md — Author BACKLOG.md (ROADMAP-ready execution backlog for v2026.4.4, closes GAP-03)
+  1. Entering a Monroe County address in the Read & Rank location filter scopes the displayed quote list to Monroe County candidates only.
+  2. Both filter mechanisms (geocoding wiring and filter predicate logic) are functional and verified against a Monroe County test address.
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 120: Contested-Race Bio + Photo Authoring
+**Goal**: The small set of candidates in contested Monroe County May 5 races (D-61 IN House, IN-9 US House, contested county offices) have authored bios and sourced headshots — the highest-visibility profiles are complete before primary day.
+**Depends on**: Nothing
+**Requirements**: CONT-01, CONT-02
+**Success Criteria** (what must be TRUE):
+  1. Bios are authored and live in the DB for all candidates in contested Monroe County May 5 races (approximately 5–10 candidates).
+  2. Headshots are sourced, uploaded to Supabase CDN, and rendering on profile pages for all contested-race candidates who lacked photos (including Todd Young).
+**Plans**: TBD
+
+### Phase 121: County Council D1→D4 Geofence Repair
+**Goal**: A voter at a Kirkwood Ave Bloomington address is returned the correct Monroe County Council district — the D1→D4 binding bug is fixed and verified.
+**Depends on**: Nothing
+**Requirements**: GEO-01, GEO-02
+**Success Criteria** (what must be TRUE):
+  1. The Kirkwood Ave Bloomington test address resolves to the correct Monroe County Council district (D4, not D1) in the API response.
+  2. The fix is validated using the same Kirkwood test address documented in MATRIX.md Dim 1 and the geofence smoke test script.
+**Plans**: TBD
+
+### Phase 122: Cross-App Loop Polish
+**Goal**: The full Compass → Read & Rank → Essentials voter loop works without integration gaps — CompassCard state relays correctly, Compass links to Essentials profiles, and the Essentials→Treasury handoff is functional.
+**Depends on**: Phase 118 (verdict badge fix must land first — same component surface)
+**Requirements**: INTG-01, INTG-02, INTG-03
+**Success Criteria** (what must be TRUE):
+  1. CompassCard state relay works across app boundaries — data passed from Compass renders correctly on Essentials profile cards.
+  2. The Compass compare page includes working links to Essentials politician profile pages for each politician in the picker.
+  3. The Essentials→Treasury handoff is functional — relevant budget data is accessible from the Essentials context where documented (G-114-030, G-114-031).
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 123: Photo Coverage Expansion
+**Goal**: The 62-candidate photo gap (non-contested-race linked candidates) is addressed by extending the headshot scraping/sourcing pipeline.
+**Depends on**: Phase 120 (contested-race photos delivered first)
+**Requirements**: PHOTO-01
+**Success Criteria** (what must be TRUE):
+  1. The headshot scraping/sourcing pipeline is extended to cover non-contested-race linked candidates, reducing the unphoted candidate count from 62 toward zero.
+**Plans**: TBD
+
+### Phase 124: App-Wide Bio Authoring
+**Goal**: Bios for the remaining ~45 linked candidates not covered by Phase 120 are authored and live, closing the platform-wide 0/51 bio gap that drives EV's lowest competitive matrix score.
+**Depends on**: Phase 120 (contested-race batch authored first, methodology established)
+**Requirements**: BIO-01, BIO-02
+**Success Criteria** (what must be TRUE):
+  1. Bios are authored and persisted in the DB for approximately 45 linked candidates not covered by Phase 120.
+  2. A bio authoring methodology document exists in `.planning/` covering sourcing approach, tone, length, and antipartisan constraints — repeatable for future imports.
+**Plans**: TBD
+
+### Phase 125: Tier 2 UX Polish Bundle
+**Goal**: The 21 Tier 2 G-114 minor/confusing UX gaps are addressed, improving platform polish without blocking any voter-critical flows.
+**Depends on**: Nothing
+**Requirements**: UX-01
+**Success Criteria** (what must be TRUE):
+  1. All 17 identified G-114 Tier 2 UX gaps (G-114-001/002/004/005/008/011/013/014/015/017/019/020/021/022/023/024/025) are resolved and verified in production.
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 126: Geofence Hardening
+**Goal**: Rural Monroe County addresses resolve correctly through the geofence stack, and 11 missing township geofences are imported for precinct-level precision.
+**Depends on**: Phase 121 (County Council D1 fix must land first)
+**Requirements**: INFRA-01, INFRA-02
+**Success Criteria** (what must be TRUE):
+  1. Rural address geocoding failures (e.g., Mt Tabor Rd) are diagnosed, root-caused, and repaired — the address resolves to the correct representatives.
+  2. All 11 missing Monroe County township geofences are imported into the geofences table and validated against test addresses in each township.
+**Plans**: TBD
 
 ---
 
@@ -98,55 +141,50 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 112. Data Completeness Audit | 3/3 | Complete    | 2026-04-12 |
-| 113. Competitive Benchmarking | 7/7 | Complete   | 2026-04-13 |
-| 114. UX Walkthrough | 0/7 | Planned | - |
-| 115. Gap Report Synthesis | 0/2 | Planned | - |
+| 116. Quick Correctness Fixes | 0/? | Not started | - |
+| 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
+| 118. Read & Rank Verdict Badge Fix | 0/? | Not started | - |
+| 119. Read & Rank Location Filter Repair | 0/? | Not started | - |
+| 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
+| 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
+| 122. Cross-App Loop Polish | 0/? | Not started | - |
+| 123. Photo Coverage Expansion | 0/? | Not started | - |
+| 124. App-Wide Bio Authoring | 0/? | Not started | - |
+| 125. Tier 2 UX Polish Bundle | 0/? | Not started | - |
+| 126. Geofence Hardening | 0/? | Not started | - |
 
 ---
 
 ## Coverage
 
-**Requirements mapped:** 21/21
+**Requirements mapped:** 25/25
 
 | REQ-ID | Phase |
 |--------|-------|
-| AUDIT-01 | 112 |
-| AUDIT-02 | 112 |
-| AUDIT-03 | 112 |
-| AUDIT-04 | 112 |
-| AUDIT-05 | 112 |
-| AUDIT-06 | 112 |
-| AUDIT-07 | 112 |
-| AUDIT-08 | 112 |
-| BENCH-01 | 113 |
-| BENCH-02 | 113 |
-| BENCH-03 | 113 |
-| BENCH-04 | 113 |
-| BENCH-05 | 113 |
-| BENCH-06 | 113 |
-| UX-01 | 114 |
-| UX-02 | 114 |
-| UX-03 | 114 |
-| UX-04 | 114 |
-| GAP-01 | 115 |
-| GAP-02 | 115 |
-| GAP-03 | 115 |
+| CORR-01 | 116 |
+| CORR-02 | 116 |
+| CORR-03 | 116 |
+| CAND-01 | 117 |
+| CAND-02 | 117 |
+| CAND-03 | 117 |
+| CAND-04 | 117 |
+| CAND-05 | 117 |
+| RR-01 | 118 |
+| RR-02 | 118 |
+| RR-03 | 119 |
+| RR-04 | 119 |
+| CONT-01 | 120 |
+| CONT-02 | 120 |
+| GEO-01 | 121 |
+| GEO-02 | 121 |
+| INTG-01 | 122 |
+| INTG-02 | 122 |
+| INTG-03 | 122 |
+| PHOTO-01 | 123 |
+| BIO-01 | 124 |
+| BIO-02 | 124 |
+| UX-01 | 125 |
+| INFRA-01 | 126 |
+| INFRA-02 | 126 |
 
 No orphaned requirements. No duplicates.
-
-## Backlog
-
-### Phase 999.1: Speaker identification for all meeting participants (BACKLOG)
-
-**Goal:** Extend CouncilScribe identification to properly handle non-council speakers — recurring staff (clerk, attorney, department heads), invited presenters, and public commenters — without losing Phase 111's phantom rejection. Target design: add `chamber_attendees` (or `is_staff` flag on offices), a `recurring_commenters` table with classification, a `speaker_type` taxonomy on `SpeakerMapping`, pattern-aware L2 gating, and L3 phantom defense.
-
-**Origin:** Regression discovered during Phase 111 verification run on 2026-02-25 Bloomington meeting — L2 roster gate blocked legitimate non-council names (e.g. City Clerk); LLM still hallucinated "Piafra" at L3 with no defense.
-
-**Requirements:** TBD
-**Plans:** 0 plans (likely 3–4 phase epic when promoted)
-
-See: [.planning/phases/999.1-speaker-identification-all-meeting-participants/999.1-CONTEXT.md](./phases/999.1-speaker-identification-all-meeting-participants/999.1-CONTEXT.md) for full design notes.
-
-Plans:
-- [ ] TBD (promote with /gsd-review-backlog when ready)
