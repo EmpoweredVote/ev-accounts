@@ -1,118 +1,98 @@
-# Requirements: Empowered Vote — v2026.4.3 Indiana Primary Election Readiness Audit
+# Requirements: Empowered Vote — v2026.4.4 Indiana Primary Fix Wave
 
-**Defined:** 2026-04-11
+**Defined:** 2026-04-14
+**Target:** May 1, 2026 (4 days before May 5 Indiana primary) for Tier 1
 **Core Value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
 
 ## v1 Requirements
 
-Requirements for this milestone. Each maps to roadmap phases.
+### Tier 1 — Correctness Fixes (Phase 116)
 
-### Data Audit
+- [ ] **CORR-01**: Voter sees the correct May 5, 2026 election date on the Election Central page (not wrong date)
+- [ ] **CORR-02**: All SiteHeader navigation links resolve to live empowered.vote pages without 404s (ships via ev-ui auto-bump pipeline)
+- [ ] **CORR-03**: Representatives page defaults to a tab that shows all elected officials including challengers (not a tab that hides them)
 
-- [ ] **AUDIT-01**: Audit script reports race coverage — count of DB races vs full Monroe County May 5 ballot
-- [ ] **AUDIT-02**: Audit script reports candidate coverage — linked vs unlinked candidates per race
-- [ ] **AUDIT-03**: Audit script reports stance data completeness — candidates with/without compass stances
-- [ ] **AUDIT-04**: Audit script reports quote coverage — candidates with/without Read & Rank quotes
-- [ ] **AUDIT-05**: Audit script reports headshot coverage — CDN photo vs local photo vs no photo per candidate
-- [ ] **AUDIT-06**: Audit script reports profile completeness — bio, contacts, education, experience for linked politicians
-- [ ] **AUDIT-07**: Full ballot baseline built from Indiana SoS + Monroe County Clerk + local press sources
-- [ ] **AUDIT-08**: Geofence resolution test confirms a Bloomington address resolves to expected districts and races
+### Tier 1 — Candidate Stub Resolution (Phase 117)
 
-### Competitive Benchmarking
+- [ ] **CAND-01**: Feasibility evaluation completed — public record availability assessed for ~30 stub Monroe County candidates before any code work begins
+- [ ] **CAND-02**: Politician records created for stub candidates in contested Monroe County races (minimum: name, office)
+- [ ] **CAND-03**: Minimum viable data imported for each resolved candidate — photo, 1-line bio, office title
+- [ ] **CAND-04**: Resolved candidates appear in Essentials profiles (not empty/broken stub pages)
+- [ ] **CAND-05**: Resolved candidates appear in Compass politician picker for comparison
 
-- [ ] **BENCH-01**: Live spot-check completed on BallotReady with a Monroe County address — races shown, candidate data depth documented
-- [ ] **BENCH-02**: Live spot-check completed on Vote411 with same address — races, Q&A coverage documented
-- [ ] **BENCH-03**: Live spot-check completed on VoteSmart with same address — candidate coverage documented
-- [ ] **BENCH-04**: Live spot-check completed on Ballotpedia with same address — race/candidate coverage documented
-- [ ] **BENCH-05**: Feature comparison matrix produced — EV vs 4 competitors across ~15 dimensions
-- [ ] **BENCH-06**: Coverage depth comparison — per-competitor race count, candidate data fields, stance/quote availability for Monroe County
+### Tier 1 — Read & Rank Verdict Badges (Phase 118)
 
-### UX Gap Analysis
+- [ ] **RR-01**: Verdict badges render correctly on politician profile pages in production (existing DB quotes visible)
+- [ ] **RR-02**: Root cause of verdict badge regression documented (CSS, prop wiring, ev-ui version, or feature flag)
 
-- [ ] **UX-01**: Voter journey documented for Essentials — search Monroe County address, review each screen, log gaps
-- [ ] **UX-02**: Voter journey documented for Compass — evaluate experience for a Monroe County voter, stance data availability
-- [ ] **UX-03**: Voter journey documented for Read & Rank — quote availability, candidate filtering for Monroe County
-- [ ] **UX-04**: Treasury relevance assessment — is budget data useful in election context for Monroe County?
+### Tier 1 — Read & Rank Location Filter (Phase 119)
 
-### Gap Report
+- [ ] **RR-03**: Monroe County location filter in Read & Rank successfully scopes quote list to Monroe County candidates
+- [ ] **RR-04**: Both filter mechanisms (geocoding + filter logic) functional and tested against a Monroe County address
 
-- [ ] **GAP-01**: Tiered gap report produced with Tier 1 (before primary) vs Tier 2 (future) classification
-- [ ] **GAP-02**: Gap report separates data gaps, feature gaps, and intentional omissions (antipartisan)
-- [ ] **GAP-03**: Execution backlog produced — prioritized phases for filling Tier 1 gaps in a follow-on milestone
+### Tier 1 — Contested-Race Content (Phase 120)
 
-## Future Requirements
+- [ ] **CONT-01**: Bios authored for ~5–10 candidates in contested Monroe County May 5 races (D-61 IN House, IN-9 US House, contested county offices)
+- [ ] **CONT-02**: Headshots sourced and uploaded for contested-race candidates lacking photos (includes Todd Young)
 
-Deferred to follow-on milestone (v2026.4.4 or later), pending gap report findings.
+### Tier 1 — Geofence Repair (Phase 121)
 
-### Data Import (Tier 1 — before primary)
+- [ ] **GEO-01**: Kirkwood Ave Bloomington address resolves to the correct Monroe County Council district (not D1 when D4 expected)
+- [ ] **GEO-02**: Geofence fix validated against the Kirkwood test address from MATRIX.md Dim 1
 
-- **IMPORT-01**: All missing May 5 Monroe County races imported (county, township, judicial, federal, state)
-- **IMPORT-02**: All known candidates imported with minimum data (name, office, race)
-- **IMPORT-03**: Compass stances for top contested races (US House D-9, IN House D-61)
-- **IMPORT-04**: Sourced quotes for contested federal/state candidates
+---
 
-### UX Fixes (Tier 1 — before primary)
+### Tier 2 — Cross-App Loop Polish (Phase 122)
 
-- **UXFIX-01**: Office descriptions ("What does this office do?") for ~20 office types
-- **UXFIX-02**: Indiana party primary explainer copy on Election Central
-- **UXFIX-03**: Completeness caveat with official ballot link on Election Central
+- [ ] **INTG-01**: CompassCard state relay works correctly across app boundaries (G-114-027)
+- [ ] **INTG-02**: Compass compare page links to Essentials politician profiles (G-114-028)
+- [ ] **INTG-03**: Essentials→Treasury handoff functional (G-114-030, G-114-031)
 
-### Infrastructure (Tier 2 — future)
+### Tier 2 — Photo Coverage Expansion (Phase 123)
 
-- **INFRA-01**: Township geofence import for Monroe County's 11 townships
-- **INFRA-02**: Side-by-side candidate comparison UI (post-data-import)
-- **INFRA-03**: Save/print ballot feature
+- [ ] **PHOTO-01**: Headshot scraping/sourcing pipeline extended to fill remaining 62-candidate photo gap (non-contested-race candidates)
+
+### Tier 2 — App-Wide Bio Authoring (Phase 124)
+
+- [ ] **BIO-01**: Bios authored for ~45 remaining linked candidates not covered by Phase 120
+- [ ] **BIO-02**: Bio authoring methodology documented for repeatability
+
+### Tier 2 — UX Polish Bundle (Phase 125)
+
+- [ ] **UX-01**: 21 Tier 2 G-114 minor/confusing UX gaps addressed (G-114-001/002/004/005/008/011/013/014/015/017/019/020/021/022/023/024/025)
+
+### Tier 2 — Geofence Hardening (Phase 126)
+
+- [ ] **INFRA-01**: Rural address geocoding failures (e.g., Mt Tabor Rd) diagnosed and repaired
+- [ ] **INFRA-02**: 11 missing Monroe County township geofences imported for precinct-level precision
+
+---
+
+## Future Requirements (deferred)
+
+- Candidate-response Q&A product (Vote411/VoteSmart parity) — new product surface, v2026.5.x
+- Withdrawn candidate tracking (Ballotpedia parity) — new data category, v2026.5.x
+- PROF-04: Compass stance data imports for candidates (carried from v2026.3.8)
+- PROF-05: Sourced quote imports for candidates (carried from v2026.3.8)
 
 ## Out of Scope
 
-Explicitly excluded. Documented to prevent scope creep.
-
-| Feature | Reason |
-|---------|--------|
-| Party affiliation display | Antipartisan by design — intentional omission |
-| Interest group ratings | Embeds partisan framing |
-| AI-generated candidate summaries | Hallucination risk for local candidates |
-| Endorsement tracking | Heavily partisan signal for local races |
-| MCCSC school board races for May 5 | Filing opens May 19 — November races only (Indiana SB 177) |
-| Statewide Indiana race coverage | Focus on Monroe County specifically |
-| Stance research for township candidates | Insufficient public record; defer to post-primary |
-| Budget-to-official linking | High complexity, future milestone |
-| Precinct-level ballot personalization | Requires precinct geofences not yet imported |
-| Execution of any gap fixes | This milestone is audit-only; execution is follow-on |
+- School board races for May 5 — SB 177 filing opens May 19, these are November races only
+- LA County gap fixes — this milestone is Monroe County IN primary focused
+- New product features not in BACKLOG.md — Tier 1 deadline prevents new surface area
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| AUDIT-01 | Phase 112 | Pending |
-| AUDIT-02 | Phase 112 | Pending |
-| AUDIT-03 | Phase 112 | Pending |
-| AUDIT-04 | Phase 112 | Pending |
-| AUDIT-05 | Phase 112 | Pending |
-| AUDIT-06 | Phase 112 | Pending |
-| AUDIT-07 | Phase 112 | Pending |
-| AUDIT-08 | Phase 112 | Pending |
-| BENCH-01 | Phase 113 | Pending |
-| BENCH-02 | Phase 113 | Pending |
-| BENCH-03 | Phase 113 | Pending |
-| BENCH-04 | Phase 113 | Pending |
-| BENCH-05 | Phase 113 | Pending |
-| BENCH-06 | Phase 113 | Pending |
-| UX-01 | Phase 114 | Pending |
-| UX-02 | Phase 114 | Pending |
-| UX-03 | Phase 114 | Pending |
-| UX-04 | Phase 114 | Pending |
-| GAP-01 | Phase 115 | Pending |
-| GAP-02 | Phase 115 | Pending |
-| GAP-03 | Phase 115 | Pending |
-
-**Coverage:**
-- v1 requirements: 21 total
-- Mapped to phases: 21
-- Unmapped: 0
-
----
-*Requirements defined: 2026-04-11*
-*Last updated: 2026-04-11 — traceability populated after roadmap creation*
+| REQ-ID | Phase |
+|--------|-------|
+| CORR-01, CORR-02, CORR-03 | 116 |
+| CAND-01 – CAND-05 | 117 |
+| RR-01, RR-02 | 118 |
+| RR-03, RR-04 | 119 |
+| CONT-01, CONT-02 | 120 |
+| GEO-01, GEO-02 | 121 |
+| INTG-01 – INTG-03 | 122 |
+| PHOTO-01 | 123 |
+| BIO-01, BIO-02 | 124 |
+| UX-01 | 125 |
+| INFRA-01, INFRA-02 | 126 |
