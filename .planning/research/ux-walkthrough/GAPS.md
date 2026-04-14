@@ -216,3 +216,54 @@ _Populated by Plan 114-07 aggregation. Left empty here._
 - **baseline_ref:** n/a
 - **notes:** Minor polish gap. The page title leaks the "prototype" development label to voters, potentially eroding trust in a production app. Does not affect function.
 
+
+<!-- ========================================================================= -->
+<!-- Plan 114-05: Treasury (UX-04) — https://treasurytracker.empowered.vote/   -->
+<!-- Relevance check: PRESENT — Bloomington $224.7M (FY2026) + Monroe Co $345.1M (FY2025) -->
+<!-- ========================================================================= -->
+
+### G-114-021 — Landing page has no geo-personalization — Indiana municipalities buried in California-heavy list
+- **app:** treasury
+- **screen:** Landing — https://treasurytracker.empowered.vote/
+- **severity:** confusing
+- **type:** ux-friction
+- **evidence:** screenshots/treasury/01-landing-full.png — initial community grid shows California cities (Agoura Hills, Alhambra, Arcadia…) above the fold; Bloomington IN and Monroe County IN are only discoverable by scrolling or knowing to look
+- **baseline_ref:** n/a
+- **notes:** The landing page callout says "explore Bloomington to see the feature in action" but does not geo-detect the visitor or prioritize Indiana results. A Monroe County voter has no affordance telling them their municipality is available until they scroll a long alphabetically-mixed list. Severity=confusing because the voter CAN find their city, but the default view gives zero signal that Indiana data exists.
+
+### G-114-022 — Budget-vs-actual comparison data absent from both Bloomington and Monroe County budget pages
+- **app:** treasury
+- **screen:** Budget overview + category drill-down — https://treasurytracker.empowered.vote/ (Bloomington and Monroe County)
+- **severity:** confusing
+- **type:** feature
+- **evidence:** screenshots/treasury/03-bloomington-budget-overview.png — "Money In" card is blank; screenshots/treasury/04-category-drilldown.png — category pages show only approved/budgeted amounts, no actuals column or comparison toggle
+- **baseline_ref:** n/a
+- **notes:** The CLAUDE.md app description documents budget-vs-actual comparison as a core Treasury feature ("actual_amount stored on line items for budget-vs-actual comparison"). Neither the Bloomington nor Monroe County budget pages surface a budget-vs-actual view in production. The voter sees only the approved budget figure with no ability to check whether spending matched the plan. The "Money In" (revenue) card also appears blank on the Bloomington overview. Whether data is missing from DB or the UI toggle is broken requires code-side investigation during Phase 115 tiering.
+
+### G-114-023 — Monroe County budget shows FY 2025 while Bloomington shows FY 2026 — inconsistent fiscal year coverage
+- **app:** treasury
+- **screen:** Monroe County budget overview — https://treasurytracker.empowered.vote/ (Monroe County)
+- **severity:** minor
+- **type:** data
+- **evidence:** screenshots/treasury/07-monroe-county-budget.png — Monroe County overview header reads "In 2025, Monroe County's budgeted $345 million"; screenshots/treasury/03-bloomington-budget-overview.png — Bloomington overview reads "In 2026, Bloomington's budgeted $225 million"
+- **baseline_ref:** n/a
+- **notes:** Both municipalities are in the same county context yet the most recent available data year differs by one fiscal year. Monroe County shows 2025 while Bloomington shows 2026. A voter comparing City of Bloomington vs Monroe County spending is comparing different fiscal years without any warning. Minor because the data is labeled by year and the difference is one year, but the lack of a "latest available year" notice on Monroe County is a content gap.
+
+### G-114-024 — Bloomington year selector skips 2025 — gap year in historical budget continuity
+- **app:** treasury
+- **screen:** Bloomington budget overview — https://treasurytracker.empowered.vote/ (Bloomington, year dropdown)
+- **severity:** minor
+- **type:** data
+- **evidence:** screenshots/treasury/09-year-selector-open.png — Bloomington year dropdown shows: 2026, 2024, 2023, 2022, 2021, 2020 — 2025 is absent
+- **baseline_ref:** n/a
+- **notes:** The historical year selector for Bloomington skips 2025 entirely. A voter wanting year-over-year trend analysis would see a two-year jump from 2024 to 2026 with no explanation. Root cause is likely a missing import for FY2025 Bloomington data. Minor severity because year-over-year comparison is a secondary use case for a first-time voter using the tool before May 5.
+
+### G-114-025 — Sunburst chart labels unreadable without hover — static view shows unlabeled color segments
+- **app:** treasury
+- **screen:** Bloomington budget overview (sunburst view) — https://treasurytracker.empowered.vote/ (Bloomington, sunburst toggle)
+- **severity:** minor
+- **type:** ux-friction
+- **evidence:** screenshots/treasury/10-sunburst-view.png — radial partition chart visible with colored segments; no visible category labels on the segments themselves; only hover/tooltip state would reveal segment names
+- **baseline_ref:** n/a
+- **notes:** The sunburst toggle provides an interesting visual but is not independently readable without interaction. The bar chart view (default) is strictly more informative for a voter wanting to understand where money goes. Minor because the bar view is the default and sunburst is a secondary visualization.
+
