@@ -16,7 +16,7 @@
  */
 
 import cron from 'node-cron';
-import { runFecScheduledJob } from '../lib/campaignFinanceScheduler.js';
+import { runFecScheduledJob, runAdapterForAll } from '../lib/campaignFinanceScheduler.js';
 
 /**
  * startCampaignFinanceCron registers the FEC ingestion cron job.
@@ -39,4 +39,20 @@ export function startCampaignFinanceCron(): void {
     }
   );
   console.log('[cron] Campaign finance FEC ingest job registered (every 6 hours UTC)');
+
+  cron.schedule(
+    '0 3 1 * *',
+    async () => {
+      try {
+        await runAdapterForAll('la_county_netfile');
+      } catch (err) {
+        console.error('[cron] Unhandled error in Netfile ingest job:', err);
+      }
+    },
+    {
+      timezone: 'UTC',
+      name: 'netfile-ingest',
+    }
+  );
+  console.log('[cron] Campaign finance Netfile ingest job registered (monthly, 1st at 03:00 UTC)');
 }

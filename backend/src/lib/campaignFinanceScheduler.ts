@@ -32,6 +32,7 @@ import { createCalAccessAdapter } from './adapters/calAccessAdapter.js';
 import { createIndianaAdapter } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
+import { createNetfileAdapter } from './adapters/netfileAdapter.js';
 import { pool } from './db.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
@@ -353,6 +354,23 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
       break;
     }
 
+    case 'la_county_netfile': {
+      const year = new Date().getFullYear();
+      const adapter = createNetfileAdapter(year);
+      for (const ps of sources) {
+        try {
+          await runIngestion(adapter, ps, String(year));
+          console.log(`[campaignFinanceScheduler] la_county_netfile: source=${ps.id} year=${year} done`);
+        } catch (err) {
+          console.error(
+            `[campaignFinanceScheduler] la_county_netfile: source=${ps.id} error:`,
+            err instanceof Error ? err.message : String(err)
+          );
+        }
+      }
+      break;
+    }
+
     default:
       throw new Error(`[campaignFinanceScheduler] unknown adapter: ${adapterName}`);
   }
@@ -413,7 +431,7 @@ interface SqsIngestMessage {
 }
 
 /** Valid adapter names accepted in SQS messages */
-const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata']);
+const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata', 'la_county_netfile']);
 
 /**
  * startSqsWorker launches a background long-poll loop that reads from the
