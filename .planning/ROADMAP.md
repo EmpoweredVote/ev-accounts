@@ -66,7 +66,10 @@
 **Success Criteria** (what must be TRUE):
   1. Verdict badges render on politician profile pages in production for politicians with existing DB quotes.
   2. A root cause document identifies exactly which layer caused the regression (CSS, prop wiring, ev-ui version mismatch, or feature flag).
-**Plans**: TBD
+**Plans**: 3 plans
+  - [ ] 118-01-PLAN.md — Hypothesis-first diagnosis (H1–H5) on both Pierce URLs × both auth paths; produce 118-DIAGNOSIS.md with root cause layer
+  - [ ] 118-02-PLAN.md — Apply minimal fix in the layer declared by diagnosis (checkpoint-gated); auto-bump pipeline if ev-ui; RR-02 root cause note in fix PR description
+  - [ ] 118-03-PLAN.md — Production verification 2×2 matrix on essentials.empowered.vote + cross-consumer smoke + user sign-off (D-16)
 **UI hint**: yes
 
 ### Phase 119: Read & Rank Location Filter Repair
