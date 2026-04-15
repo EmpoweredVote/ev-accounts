@@ -15,7 +15,7 @@ export function AuthGuard() {
   if (!isAuthenticated) {
     // Redirect to accounts auth hub with return URL
     const returnUrl = encodeURIComponent(window.location.origin + window.location.pathname);
-    window.location.href = `https://accounts.empowered.vote/login?redirect=${returnUrl}`;
+    window.location.href = `https://login.empowered.vote/login?redirect=${returnUrl}`;
     // Return spinner while redirect happens
     return (
       <div className="min-h-screen flex items-center justify-center">

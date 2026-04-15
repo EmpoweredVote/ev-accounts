@@ -282,7 +282,7 @@ export default function DashboardPage() {
             {me?.is_admin && (
               <div className="relative group">
                 <a
-                  href="https://accounts.empowered.vote/admin"
+                  href="https://login.empowered.vote/admin"
                   className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-ev-red/10 transition-colors"
                 >
                   <img src="/Red_Admin.png" alt="Admin Hub" className="w-5 h-5 object-contain" />

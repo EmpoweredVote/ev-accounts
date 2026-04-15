@@ -21,7 +21,7 @@ export default function PrivacyPage() {
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">Effective date: March 24, 2026</p>
           <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
             Empowered Vote operates civic engagement tools including Empowered Accounts
-            (accounts.empowered.vote), CompassV2, Essentials, Validation Quests, and related
+            (login.empowered.vote), CompassV2, Essentials, Validation Quests, and related
             applications. This policy explains what data we collect, how we use it, and your rights
             as a user.
           </p>
