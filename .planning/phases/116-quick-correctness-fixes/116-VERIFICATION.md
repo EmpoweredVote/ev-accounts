@@ -40,4 +40,11 @@ All three independent filters default to the most inclusive option, so a fresh a
 
 CORR-02 is the only real code change in Phase 116: SiteHeader nav cleanup via ev-ui patch release. This section records post-deploy verification on `essentials.empowered.vote` per D-14.
 
-- [ ] Pending post-deploy verification on essentials.empowered.vote (D-14)
+- [x] **Verified 2026-04-14 on https://essentials.empowered.vote**
+  - **ev-ui version shipped:** `@empoweredvote/ev-ui@0.4.1` (commit `cb078ad`, tag `v0.4.1`, source edit `e7fff1a`)
+  - **Pipeline:** `publish.yml` published v0.4.1 to public npm via OIDC; `repository_dispatch` fanned out to all 4 consumers (CompassV2, essentials, read-rank, civic-spaces); auto-bump PRs auto-merged after `build-check.yml` gates passed; Render redeployed each consumer.
+  - **Live bundle inspection:** Fetched `https://essentials.empowered.vote/assets/index-HNbP8zih.js` and grepped for nav strings.
+    - **Present (expected):** `compass.empowered.vote`, `essentials.empowered.vote`, `readrank.empowered.vote`, `treasurytracker.empowered.vote`, `badges.empowered.vote`, `empowered.vote/donate`
+    - **Present labels:** `Features`, `Political Compass`, `Find Representatives`, `Read & Rank`, `Treasury Tracker`, `Empowered Badges`, `Donate`
+    - **Absent (expected):** `About Us`, `Volunteer`, `FAQ`, `ev-prototypes.netlify.app` — none found in the production bundle.
+  - **Result:** All 5 Features dropdown items + Donate CTA resolve to the correct Render subdomains; the 3 deleted nav items (About Us, Volunteer, FAQ) are gone from the live build. CORR-02 closed green.
