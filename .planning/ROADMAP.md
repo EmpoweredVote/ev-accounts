@@ -12,7 +12,7 @@
 
 ## Phases
 
-- [ ] **Phase 116: Quick Correctness Fixes** — Correct wrong election date, broken nav links, and wrong default Representatives tab
+- [x] **Phase 116: Quick Correctness Fixes** — Correct wrong election date, broken nav links, and wrong default Representatives tab (completed 2026-04-15)
 - [ ] **Phase 117: Candidate Stub Resolution + Data Import** — Create politician records and import minimum viable data for ~30 stub Monroe County candidates
 - [ ] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production
 - [ ] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken)
@@ -36,7 +36,8 @@
   1. Election Central page displays May 5, 2026 as the election date (not a wrong date).
   2. All SiteHeader navigation links resolve to live empowered.vote pages — no 404s when clicking between apps.
   3. The Representatives page defaults to a tab that shows all elected officials including challengers.
-**Plans**: TBD
+**Plans**: 1 plan
+  - [x] 116-01-PLAN.md — Edit ev-ui SiteHeader (delete 3 nav items, update 2 Features URLs), ship via auto-bump, close CORR-01/CORR-03 misflags
 
 ### Phase 117: Candidate Stub Resolution + Data Import
 **Goal**: Contested Monroe County races have real candidate records — stub profiles are replaced with minimum viable data (name, office, photo, 1-line bio), making Essentials profiles usable and the Compass picker functional for those candidates.
@@ -141,7 +142,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 116. Quick Correctness Fixes | 0/? | Not started | - |
+| 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
 | 118. Read & Rank Verdict Badge Fix | 0/? | Not started | - |
 | 119. Read & Rank Location Filter Repair | 0/? | Not started | - |

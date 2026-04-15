@@ -8,9 +8,9 @@
 
 ### Tier 1 — Correctness Fixes (Phase 116)
 
-- [ ] **CORR-01**: Voter sees the correct May 5, 2026 election date on the Election Central page (not wrong date)
-- [ ] **CORR-02**: All SiteHeader navigation links resolve to live empowered.vote pages without 404s (ships via ev-ui auto-bump pipeline)
-- [ ] **CORR-03**: Representatives page defaults to a tab that shows all elected officials including challengers (not a tab that hides them)
+- [x] **CORR-01**: Voter sees the correct May 5, 2026 election date on the Election Central page (not wrong date)
+- [x] **CORR-02**: All SiteHeader navigation links resolve to live empowered.vote pages without 404s (ships via ev-ui auto-bump pipeline)
+- [x] **CORR-03**: Representatives page defaults to a tab that shows all elected officials including challengers (not a tab that hides them)
 
 ### Tier 1 — Candidate Stub Resolution (Phase 117)
 
