@@ -49,7 +49,14 @@
   3. Each resolved candidate has a minimum viable profile: photo (or placeholder), 1-line bio, and correct office title.
   4. Resolved candidate profile pages in Essentials load without errors and display the imported data.
   5. Resolved candidates appear in the Compass politician picker and can be selected for comparison.
-**Plans**: TBD
+**Plans**: 7 plans
+  - [ ] 117-01-PLAN.md — Feasibility evaluation: source public records for every stub, tiered doc + CSV sidecar, April 25 go/no-go
+  - [ ] 117-02-PLAN.md — Migration 068: add is_candidate + bio_source_url columns, backfill is_candidate from race_candidates
+  - [ ] 117-03-PLAN.md — essentialsService address-resolver filter (is_candidate=true excluded from tier-grouped results)
+  - [ ] 117-04-PLAN.md — compassService LEFT JOIN fix (CAND-05 strategy: Option A)
+  - [ ] 117-05-PLAN.md — uploadCandidatePhoto TS helper (Supabase Storage port)
+  - [ ] 117-06-PLAN.md — Import script + bio code-review gate + production run
+  - [ ] 117-07-PLAN.md — Wave 0 verification SQL + shell smoke tests + human pre-May-1 smoke checklist
 **UI hint**: yes
 
 ### Phase 118: Read & Rank Verdict Badge Fix

@@ -384,25 +384,32 @@ This is an internal data phase; no external state-of-the-art applies. Noted for 
 
 **Planner + discuss-phase:** A5 is the one to flag before execution. A6 is self-resolving (the feasibility doc IS the verification).
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Compass picker filter — is `LEFT JOIN politician_answers` an acceptable change?**
+> All 4 open questions were resolved by the Phase 117 plan set (117-01-PLAN.md through 117-07-PLAN.md). Each carries a RESOLVED marker below pointing to the plan that implements the answer.
+
+1. **Compass picker filter — is `LEFT JOIN politician_answers` an acceptable change?** **(RESOLVED — Plan 04)**
    - What we know: Current query uses `INNER JOIN`; comment says "matches Go backend behavior — prevents every card from showing compass icon" (compassService.ts L267).
    - What's unclear: Whether the Compass frontend has been updated since to handle zero-answer rows, or whether the UI will show a broken "compass icon but no data" state.
    - Recommendation: Planner checks `CompassV2` frontend for how zero-answer picker rows render. If they render cleanly as "no stance data" then `LEFT JOIN` is safe. If not, descope CAND-05 to "structural readiness."
+   - **RESOLVED:** Plan 04 adopts Option A (LEFT JOIN) as a single-line change in `getCompassPoliticians` (compassService.ts L279). The frontend-safety risk is mitigated by a BLOCKING human checkpoint in Plan 04 Task 1 that verifies the CompassV2 picker renders zero-answer rows cleanly BEFORE the backend change is committed. See 117-04-PLAN.md §objective "CAND-05 Strategy Decision: Option A — LEFT JOIN."
 
-2. **`bio_source_url` column vs `politician_sources` join table.**
+2. **`bio_source_url` column vs `politician_sources` join table.** **(RESOLVED — Plan 02)**
    - What we know: A `transparent_motivations.politician_sources` table already exists (see `seedPolitician.ts::isDuplicate`). It stores FEC/Indiana discovery sources, not human-authored bio citations.
    - What's unclear: Whether reusing that table for bio citations is semantic overload.
    - Recommendation: Add `bio_source_url TEXT` directly on `essentials.politicians` as part of migration 068. Trivial to add, single-source-per-bio (D-07), and keeps `politician_sources` focused on discovery provenance.
+   - **RESOLVED:** Plan 02 adds `bio_source_url TEXT` directly on `essentials.politicians` via migration 068 (guarded by `ADD COLUMN IF NOT EXISTS`). The `transparent_motivations.politician_sources` table remains dedicated to discovery provenance, not human-authored bio citations. See 117-02-PLAN.md.
 
-3. **Does the feasibility doc need a structured CSV sidecar for the import script to consume?**
+3. **Does the feasibility doc need a structured CSV sidecar for the import script to consume?** **(RESOLVED — Plan 01)**
    - Recommendation: Yes. Planner should specify that `117-FEASIBILITY.md` is the human-readable artifact and `117-FEASIBILITY-data.csv` (or `.json`) is the machine-readable input for `import-monroe-stub-candidates.ts`. Keeps Claude's sourcing work double-duty: doc + data file.
+   - **RESOLVED:** Plan 01 produces both `117-FEASIBILITY.md` (human-readable go/no-go artifact) AND `117-FEASIBILITY-data.csv` (machine-readable sidecar with header `race_candidate_id,full_name,first_name,last_name,office_title,chamber_id,district_id,photo_source_url,bio_text,bio_source_url,tier`). Plan 06 Task 1 consumes the CSV via `csv-parse/sync`. See 117-01-PLAN.md and 117-06-PLAN.md §interfaces.
 
-4. **Contested-race scaffolding gap.**
+4. **Contested-race scaffolding gap.** **(RESOLVED — Plan 06 Task 1 pre-flight)**
    - What we know: The `race_candidates` table has stubs, meaning races exist. But chambers/districts/offices may or may not exist for each.
    - What's unclear: Whether `seed-monroe-county-2026-primary.sql` already created all the office scaffolding the import needs.
    - Recommendation: Pre-flight check in the import script. Planner adds a task for it.
+   - **RESOLVED:** Plan 06 Task 1 implements a per-row pre-flight scaffolding check (Pitfall #6): if `chamber_id` or `district_id` is literal `MISSING` in the CSV or null in the DB lookup, the row fails LOUDLY with `[error] scaffold missing` and is tracked in the scaffold-error count. The rest of the run continues. See 117-06-PLAN.md Task 1 step "Pre-flight scaffolding check (Pitfall #6)."
+
 
 ## Environment Availability
 
