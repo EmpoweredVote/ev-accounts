@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Quick-018 (municipality_geo_id + LA citywide races) shipped 2026-04-13. LA residents will see City Attorney, Controller, Clerk races on Elections page once migrations applied. Ready for v2.0 milestone planning.
+**Current focus:** Quick-019 (rename accounts.empowered.vote → login.empowered.vote) shipped 2026-04-15. Infra steps (DNS, Render, Supabase, CORS) must be completed before deploying — see INFRA-CHECKLIST.md. Ready for v2.0 milestone planning.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29); 014-add-city-council-district-to-jurisdiction complete (2026-04-09); 015-session-polling-cross-app-logout-sync complete (2026-04-09); 016-ca-sos-challenger-ingestion complete (2026-04-13); 017-import-verified-2026-la-county-primary-c complete (2026-04-13); 018-add-municipality-geo-id-support-so-la-ci complete (2026-04-13)
 
 ## Current Position
@@ -428,6 +428,9 @@ v1.6 constraints and decisions to carry forward:
 | 014 | Add City Council district to jurisdiction data (connected_profiles + DashboardPage) | 2026-04-09 | c88eee1 | [014-add-city-council-district-to-jurisdicti](./quick/014-add-city-council-district-to-jurisdicti/) |
 | 015 | Session polling for cross-app logout sync | 2026-04-09 | 091fb16 | [015-session-polling-cross-app-logout-sync](./quick/015-session-polling-cross-app-logout-sync/) |
 | 016 | CA SoS 2026 challenger ingestion — 49 challengers across 16 LA County Primary races | 2026-04-13 | cfc2f40 | [016-ca-sos-challenger-ingestion](./quick/016-ca-sos-challenger-ingestion/) |
+| 017 | Import verified 2026 LA County primary candidates | 2026-04-13 | — | [017-import-verified-2026-la-county-primary-c](./quick/017-import-verified-2026-la-county-primary-c/) |
+| 018 | Add municipality_geo_id support so LA City races display for LA residents | 2026-04-13 | — | [018-add-municipality-geo-id-support-so-la-ci](./quick/018-add-municipality-geo-id-support-so-la-ci/) |
+| 019 | Rename accounts.empowered.vote → login.empowered.vote in runtime code | 2026-04-15 | ac151ef | [019-rename-accounts-to-login-empowered-vote](./quick/019-rename-accounts-to-login-empowered-vote/) |
 
 ### Pending Todos
 
