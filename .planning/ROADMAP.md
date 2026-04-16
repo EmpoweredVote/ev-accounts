@@ -93,7 +93,7 @@
   2. Headshots are sourced, uploaded to Supabase CDN, and rendering on profile pages for all contested-race candidates who lacked photos (including Todd Young).
 **Plans**: 3 plans
   - [x] 120-01-PLAN.md — Candidate scoping audit + ev-ui bio_text render patch + bio methodology doc
-  - [ ] 120-02-PLAN.md — Content research + REVIEW-DATA.md compilation + user review checkpoint
+  - [x] 120-02-PLAN.md — Content research + REVIEW-DATA.md compilation + user review checkpoint
   - [ ] 120-03-PLAN.md — Import script creation + production execution + profile verification checkpoint
 
 ### Phase 121: County Council D1→D4 Geofence Repair
@@ -161,7 +161,7 @@
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
 | 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
 | 119. Read & Rank Location Filter Repair | 2/2 | Complete    | 2026-04-16 |
-| 120. Contested-Race Bio + Photo Authoring | 1/3 | In Progress|  |
+| 120. Contested-Race Bio + Photo Authoring | 2/3 | In Progress|  |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
 | 122. Cross-App Loop Polish | 0/? | Not started | - |
 | 123. Photo Coverage Expansion | 0/? | Not started | - |
