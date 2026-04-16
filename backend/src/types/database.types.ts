@@ -947,6 +947,7 @@ export type Database = {
           question_text: string
           short_title: string | null
           title: string
+          topic_key: string
           updated_at: string
           version: number
           went_live_at: string | null
@@ -960,6 +961,7 @@ export type Database = {
           question_text: string
           short_title?: string | null
           title: string
+          topic_key: string
           updated_at?: string
           version?: number
           went_live_at?: string | null
@@ -973,6 +975,7 @@ export type Database = {
           question_text?: string
           short_title?: string | null
           title?: string
+          topic_key?: string
           updated_at?: string
           version?: number
           went_live_at?: string | null

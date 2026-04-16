@@ -202,6 +202,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
         p.photo_origin_url      AS politician_photo,
         o.title                 AS office_title,
         ct.id                   AS topic_id,
+        ct.topic_key            AS topic_key,
         ct.short_title          AS topic_title,
         ct.question_text        AS topic_question
       FROM essentials.quotes q
@@ -218,7 +219,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
         id: r.quote_id as string,
         text: r.quote_text as string,
         candidateId: r.politician_id as string,
-        issue: r.topic_id as string,
+        issue: r.topic_key as string,
         sourceUrl: r.source_url as string | null ?? undefined,
         sourceName: r.source_name as string | null ?? undefined,
       }));
@@ -242,11 +243,13 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
     const candidates = Array.from(candidateMap.values());
 
     // Deduplicate issues (topics that appear in at least one matched quote)
+    // Key by topic_key (slug) to match quotes[].issue
     const issueMap = new Map<string, object>();
     for (const r of rows.filter((r) => r.topic_id !== null)) {
-      if (!issueMap.has(r.topic_id as string)) {
-        issueMap.set(r.topic_id as string, {
-          id: r.topic_id,
+      const key = r.topic_key as string;
+      if (key && !issueMap.has(key)) {
+        issueMap.set(key, {
+          id: key,
           title: r.topic_title ?? '',
           question: r.topic_question ?? '',
         });

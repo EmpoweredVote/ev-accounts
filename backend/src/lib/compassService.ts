@@ -108,7 +108,7 @@ export async function getCompassTopics() {
   const { data: topics, error: topicsError } = await supabaseAnon
     .schema('inform')
     .from('compass_topics')
-    .select('id,title,short_title,question_text,is_live,version,office_scope')
+    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope')
     .eq('is_live', true)
     .order('created_at', { ascending: true });
 
@@ -193,7 +193,7 @@ export async function getCompassCategories() {
     supabaseAnon
       .schema('inform')
       .from('compass_topic_categories')
-      .select('category_id,compass_topics!inner(id,title,short_title,question_text,is_live,office_scope)')
+      .select('category_id,compass_topics!inner(id,topic_key,title,short_title,question_text,is_live,office_scope)')
       .eq('compass_topics.is_live', true),
     supabaseAnon
       .schema('inform')
@@ -234,6 +234,7 @@ export async function getCompassCategories() {
       .map(tc => {
         const t = tc.compass_topics as {
           id: string;
+          topic_key: string;
           title: string;
           short_title: string | null;
           question_text: string;
@@ -243,6 +244,7 @@ export async function getCompassCategories() {
         if (!t) return null;
         return {
           id: t.id,
+          topic_key: t.topic_key,
           title: t.title,
           short_title: t.short_title,
           question_text: t.question_text,
