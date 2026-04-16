@@ -18,6 +18,7 @@
 import { pool } from '../db.js';
 import type { SourceAdapter, FetchResult, NormalizeResult, UpsertResult, ContributionInsert } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
 
 // Per-politician record cap — prevents timeout on high-volume candidates (e.g. CA House members).
 // At 100 records/page + 4s sleep, 2500 records ≈ 25 pages ≈ 100s — well under Redis lock TTL.
@@ -306,6 +307,9 @@ function normalizeRecord(
     data_source: 'fec',
     source_transaction_id: sourceTransactionId,
     raw_record: record,
+    donor_name_normalized: normalizeDonorName(
+      typeof record['contributor_name'] === 'string' ? record['contributor_name'] as string : null
+    ),
   };
 }
 
@@ -366,16 +370,17 @@ async function upsertBatch(
 
   // Build multi-row parameterized VALUES clause
   // Each row: (politician_source_id, amount, contribution_date, election_cycle,
-  //            confidence_level, data_source, source_transaction_id, raw_record)
+  //            confidence_level, data_source, source_transaction_id, raw_record,
+  //            donor_name_normalized)
   const params: unknown[] = [];
   const valuePlaceholders: string[] = [];
-  const COLS_PER_ROW = 8;
+  const COLS_PER_ROW = 9;
 
   for (let idx = 0; idx < batch.length; idx++) {
     const c = batch[idx];
     const base = idx * COLS_PER_ROW + 1;
     valuePlaceholders.push(
-      `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb)`
+      `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb, $${base + 8})`
     );
     params.push(
       c.politician_source_id,
@@ -385,17 +390,21 @@ async function upsertBatch(
       c.confidence_level,
       c.data_source,
       c.source_transaction_id,
-      JSON.stringify(c.raw_record)
+      JSON.stringify(c.raw_record),
+      c.donor_name_normalized
     );
   }
 
   const sql = `
     INSERT INTO transparent_motivations.contributions
       (politician_source_id, amount, contribution_date, election_cycle,
-       confidence_level, data_source, source_transaction_id, raw_record)
+       confidence_level, data_source, source_transaction_id, raw_record,
+       donor_name_normalized)
     VALUES ${valuePlaceholders.join(', ')}
     ON CONFLICT (data_source, source_transaction_id)
-    DO UPDATE SET updated_at = NOW()
+    DO UPDATE SET
+      updated_at = NOW(),
+      donor_name_normalized = EXCLUDED.donor_name_normalized
     RETURNING (xmax = 0) AS is_insert
   `;
 

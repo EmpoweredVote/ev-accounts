@@ -25,6 +25,7 @@
  */
 
 import * as XLSX from 'xlsx';
+import AdmZip from 'adm-zip';
 import { pool } from '../db.js';
 import type {
   SourceAdapter,
@@ -34,6 +35,7 @@ import type {
   ContributionInsert,
 } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -137,13 +139,16 @@ async function downloadNetfileExcel(year: number): Promise<Buffer> {
   }
 
   // Step 2: POST to trigger Excel download
+  // NOTE (2026-04-15): Netfile changed the year select field name from
+  // 'ctl00$phBody$ddlYear' to 'ctl00$phBody$DateSelect'. The response is
+  // now a ZIP containing the XLSX, not a raw XLSX. Handled below.
   const formBody = new URLSearchParams({
     __EVENTTARGET: 'ctl00$phBody$GetExcelAmend',
     __EVENTARGUMENT: '',
     __VIEWSTATE: viewState,
     __VIEWSTATEGENERATOR: viewStateGenerator,
     __EVENTVALIDATION: eventValidation,
-    'ctl00$phBody$ddlYear': String(year),
+    'ctl00$phBody$DateSelect': String(year),
   });
 
   const postHeaders: Record<string, string> = {
@@ -175,14 +180,45 @@ async function downloadNetfileExcel(year: number): Promise<Buffer> {
   const contentType = postResp.headers.get('content-type') ?? '';
   if (contentType.includes('text/html')) {
     throw new Error(
-      `[netfileAdapter] POST returned HTML instead of Excel (year=${year}). ` +
+      `[netfileAdapter] POST returned HTML instead of file (year=${year}). ` +
         'Possible causes: year not available, site changed, VIEWSTATE extraction failed. ' +
         `Content-Type: ${contentType}`
     );
   }
 
   const arrayBuffer = await postResp.arrayBuffer();
-  return Buffer.from(arrayBuffer);
+  const rawBuffer = Buffer.from(arrayBuffer);
+
+  console.log(
+    `[netfileAdapter] Downloaded year=${year} (${(rawBuffer.length / 1024 / 1024).toFixed(1)} MB, ` +
+      `content-type=${contentType})`
+  );
+
+  // Netfile now returns a ZIP containing the XLSX (as of 2026-04-15).
+  // Detect by ZIP magic bytes PK\x03\x04 (0x50 0x4B).
+  if (contentType.includes('zip') || (rawBuffer[0] === 0x50 && rawBuffer[1] === 0x4b)) {
+    console.log(`[netfileAdapter] Extracting XLSX from ZIP (year=${year})...`);
+    const zip = new AdmZip(rawBuffer);
+    const entries = zip.getEntries();
+    const xlsxEntry = entries.find(
+      (e) => e.entryName.toLowerCase().endsWith('.xlsx') && !e.isDirectory
+    );
+    if (!xlsxEntry) {
+      throw new Error(
+        `[netfileAdapter] ZIP for year=${year} contains no .xlsx entry. ` +
+          `Entries: ${entries.map((e) => e.entryName).join(', ')}`
+      );
+    }
+    const xlsxBuffer = xlsxEntry.getData();
+    console.log(
+      `[netfileAdapter] Extracted "${xlsxEntry.entryName}" ` +
+        `(${(xlsxBuffer.length / 1024 / 1024).toFixed(1)} MB) from ZIP`
+    );
+    return xlsxBuffer;
+  }
+
+  // Legacy: raw XLSX buffer
+  return rawBuffer;
 }
 
 // ---------------------------------------------------------------------------
@@ -294,6 +330,10 @@ function normalizeRows(
     // source_transaction_id: Filer_ID|Tran_ID
     const sourceTransactionId = `${filerId}|${tranId}`;
 
+    const tranNamL = String(row['Tran_NamL'] ?? '');
+    const tranNamF = String(row['Tran_NamF'] ?? '');
+    const rawDonorName = `${tranNamL} ${tranNamF}`.trim();
+
     contributions.push({
       politician_source_id: ps.id,
       donor_id: null,
@@ -305,6 +345,7 @@ function normalizeRows(
       data_source: 'la_county_netfile',
       source_transaction_id: sourceTransactionId,
       raw_record: row,
+      donor_name_normalized: normalizeDonorName(rawDonorName || null),
     });
   }
 
@@ -345,8 +386,8 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
 
     try {
       const valuePlaceholders2 = batch.map((_, rowIdx) => {
-        const base = rowIdx * 10;
-        return `($${base + 1},$${base + 2},$${base + 3},$${base + 4},$${base + 5},$${base + 6},$${base + 7},$${base + 8},$${base + 9},$${base + 10})`;
+        const base = rowIdx * 11;
+        return `($${base + 1},$${base + 2},$${base + 3},$${base + 4},$${base + 5},$${base + 6},$${base + 7},$${base + 8},$${base + 9},$${base + 10},$${base + 11})`;
       });
 
       const params2: unknown[] = [];
@@ -361,17 +402,21 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
           c.confidence_level,
           c.data_source,
           c.source_transaction_id,
-          JSON.stringify(c.raw_record)
+          JSON.stringify(c.raw_record),
+          c.donor_name_normalized
         );
       }
 
       const sql = `
         INSERT INTO transparent_motivations.contributions
           (politician_source_id, donor_id, committee_id, amount, contribution_date,
-           election_cycle, confidence_level, data_source, source_transaction_id, raw_record)
+           election_cycle, confidence_level, data_source, source_transaction_id, raw_record,
+           donor_name_normalized)
         VALUES ${valuePlaceholders2.join(',')}
         ON CONFLICT (data_source, source_transaction_id)
-          DO UPDATE SET updated_at = NOW()
+          DO UPDATE SET
+            updated_at = NOW(),
+            donor_name_normalized = EXCLUDED.donor_name_normalized
         RETURNING (xmax = 0) AS inserted`;
 
       const result = await pool.query<{ inserted: boolean }>(sql, params2);

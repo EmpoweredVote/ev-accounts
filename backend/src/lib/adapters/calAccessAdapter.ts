@@ -35,6 +35,7 @@ import type {
   ContributionInsert,
 } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -473,13 +474,13 @@ async function upsertBatch(
 
   const params: unknown[] = [];
   const valuePlaceholders: string[] = [];
-  const COLS_PER_ROW = 8;
+  const COLS_PER_ROW = 9;
 
   for (let idx = 0; idx < batch.length; idx++) {
     const c = batch[idx];
     const base = idx * COLS_PER_ROW + 1;
     valuePlaceholders.push(
-      `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb)`
+      `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb, $${base + 8})`
     );
     params.push(
       c.politician_source_id,
@@ -489,17 +490,21 @@ async function upsertBatch(
       c.confidence_level,
       c.data_source,
       c.source_transaction_id,
-      JSON.stringify(c.raw_record)
+      JSON.stringify(c.raw_record),
+      c.donor_name_normalized
     );
   }
 
   const sql = `
     INSERT INTO transparent_motivations.contributions
       (politician_source_id, amount, contribution_date, election_cycle,
-       confidence_level, data_source, source_transaction_id, raw_record)
+       confidence_level, data_source, source_transaction_id, raw_record,
+       donor_name_normalized)
     VALUES ${valuePlaceholders.join(', ')}
     ON CONFLICT (data_source, source_transaction_id)
-    DO UPDATE SET updated_at = NOW()
+    DO UPDATE SET
+      updated_at = NOW(),
+      donor_name_normalized = EXCLUDED.donor_name_normalized
     RETURNING (xmax = 0) AS is_insert
   `;
 
@@ -653,6 +658,10 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
       // source_transaction_id: FILING_ID_AMEND_ID_LINE_ITEM
       const sourceTransactionId = `${filingID}_${amendID}_${lineItem}`;
 
+      const ctribNameL = (rec['CTRIB_NAML'] as string | undefined) ?? '';
+      const ctribNameF = (rec['CTRIB_NAMF'] as string | undefined) ?? '';
+      const rawDonorName = `${ctribNameL} ${ctribNameF}`.trim();
+
       contributions.push({
         politician_source_id: ps.id,
         donor_id:    null,
@@ -664,6 +673,7 @@ class CalAccessAdapter implements SourceAdapter, ETagProvider {
         data_source: 'cal_access',
         source_transaction_id: sourceTransactionId,
         raw_record: rec,
+        donor_name_normalized: normalizeDonorName(rawDonorName || null),
       });
     }
 
