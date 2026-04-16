@@ -27,7 +27,6 @@ export type Database = {
           gem_balance_red: number
           gem_balance_yellow: number
           gem_reserve_cap: number
-          home_address: string | null
           id: string
           legal_name: string | null
           location_consent: boolean | null
@@ -56,7 +55,6 @@ export type Database = {
           gem_balance_red?: number
           gem_balance_yellow?: number
           gem_reserve_cap?: number
-          home_address?: string | null
           id?: string
           legal_name?: string | null
           location_consent?: boolean | null
@@ -85,7 +83,6 @@ export type Database = {
           gem_balance_red?: number
           gem_balance_yellow?: number
           gem_reserve_cap?: number
-          home_address?: string | null
           id?: string
           legal_name?: string | null
           location_consent?: boolean | null
@@ -950,6 +947,7 @@ export type Database = {
           question_text: string
           short_title: string | null
           title: string
+          topic_key: string
           updated_at: string
           version: number
           went_live_at: string | null
@@ -963,6 +961,7 @@ export type Database = {
           question_text: string
           short_title?: string | null
           title: string
+          topic_key: string
           updated_at?: string
           version?: number
           went_live_at?: string | null
@@ -976,6 +975,7 @@ export type Database = {
           question_text?: string
           short_title?: string | null
           title?: string
+          topic_key?: string
           updated_at?: string
           version?: number
           went_live_at?: string | null
