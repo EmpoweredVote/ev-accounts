@@ -18,6 +18,7 @@
 
 import 'dotenv/config';
 import * as XLSX from 'xlsx';
+import AdmZip from 'adm-zip';
 
 // ---------------------------------------------------------------------------
 // CLI argument parsing
@@ -151,13 +152,16 @@ async function downloadNetfileExcel(year: number): Promise<Buffer | null> {
     console.warn(`[netfile] WARNING: __VIEWSTATE not found for year=${year} — postback may fail`);
   }
 
+  // NOTE (2026-04-15): Netfile changed the year select field from
+  // 'ctl00$phBody$ddlYear' to 'ctl00$phBody$DateSelect'. The response is
+  // now a ZIP file containing the XLSX (not a raw XLSX). Update both here.
   const formBody = new URLSearchParams({
     __EVENTTARGET: 'ctl00$phBody$GetExcelAmend',
     __EVENTARGUMENT: '',
     __VIEWSTATE: viewState,
     __VIEWSTATEGENERATOR: viewStateGenerator,
     __EVENTVALIDATION: eventValidation,
-    'ctl00$phBody$ddlYear': String(year),
+    'ctl00$phBody$DateSelect': String(year),
   });
 
   const postHeaders: Record<string, string> = {
@@ -189,7 +193,7 @@ async function downloadNetfileExcel(year: number): Promise<Buffer | null> {
   const contentType = postResp.headers.get('content-type') ?? '';
   if (contentType.includes('text/html')) {
     console.error(
-      `[netfile] ERROR: POST returned HTML instead of Excel for year=${year}. ` +
+      `[netfile] ERROR: POST returned HTML instead of file for year=${year}. ` +
         `Content-Type: ${contentType}. ` +
         'Possible causes: year not available in Netfile, VIEWSTATE extraction failed, site changed.'
     );
@@ -197,9 +201,37 @@ async function downloadNetfileExcel(year: number): Promise<Buffer | null> {
   }
 
   const arrayBuffer = await postResp.arrayBuffer();
-  const buffer = Buffer.from(arrayBuffer);
-  console.log(`[netfile] Downloaded year=${year} Excel (${(buffer.length / 1024).toFixed(0)} KB)`);
-  return buffer;
+  const rawBuffer = Buffer.from(arrayBuffer);
+  console.log(
+    `[netfile] Downloaded year=${year} (${(rawBuffer.length / 1024 / 1024).toFixed(1)} MB, ` +
+      `content-type=${contentType})`
+  );
+
+  // Netfile now returns a ZIP file containing the XLSX (as of 2026-04-15).
+  // Detect by content-type or magic bytes (PK\x03\x04 = ZIP signature).
+  if (contentType.includes('zip') || rawBuffer[0] === 0x50 && rawBuffer[1] === 0x4b) {
+    console.log(`[netfile] Extracting XLSX from ZIP for year=${year}...`);
+    const zip = new AdmZip(rawBuffer);
+    const entries = zip.getEntries();
+    const xlsxEntry = entries.find(
+      (e) => e.entryName.toLowerCase().endsWith('.xlsx') && !e.isDirectory
+    );
+    if (!xlsxEntry) {
+      console.error(
+        `[netfile] ERROR: ZIP for year=${year} contains no .xlsx entry. ` +
+          `Entries: ${entries.map((e) => e.entryName).join(', ')}`
+      );
+      return null;
+    }
+    const xlsxBuffer = xlsxEntry.getData();
+    console.log(
+      `[netfile] Extracted "${xlsxEntry.entryName}" (${(xlsxBuffer.length / 1024 / 1024).toFixed(1)} MB) from ZIP`
+    );
+    return xlsxBuffer;
+  }
+
+  // Already a raw XLSX buffer (legacy behavior)
+  return rawBuffer;
 }
 
 // ---------------------------------------------------------------------------
