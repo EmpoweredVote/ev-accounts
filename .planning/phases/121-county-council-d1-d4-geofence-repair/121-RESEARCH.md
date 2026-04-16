@@ -607,7 +607,7 @@ const url = 'https://gis.co.monroe.in.us/server/rest/services/MoCo_Council_Distr
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Does the `electionService.ts` `districts → geofence` MTFCC join need an update?**
    - What we know: The join is `gb.mtfcc = d.mtfcc`, and line 574 in `essentialsService.ts`
