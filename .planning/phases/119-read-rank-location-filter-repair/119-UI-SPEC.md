@@ -63,15 +63,17 @@ Source: default 8-point scale; confirmed by existing component measurements in `
 | Role | Size | Weight | Line Height |
 |------|------|--------|-------------|
 | Body | 15px (0.9375rem) | 400 regular | 1.5 |
-| Label | 13px (0.8125rem) | 500 medium | 1.5 |
-| Heading | 24px (1.5rem) | 800 extrabold | 1.2 |
+| Label | 13px (0.8125rem) | 400 regular | 1.5 |
+| Heading | 24px (1.5rem) | 700 bold | 1.2 |
 | Display | 15px (0.9375rem) | 700 bold | 1.4 |
 
-Font: Manrope at all weights (200–800) — `@import` in `index.css`.
+Weights: **400 (regular)** for body and label; **700 (bold)** for headings, display, and zero-state heading. No other weights are used.
 
-Source: `IssueHub.tsx` inline styles (heading 1.5rem/800, body 0.9375rem/400); `index.css` `.ev-quote-text` (line-height 1.6 for quotes only).
+Font: Manrope (Google Fonts) — `@import` in `index.css`.
 
-Zero-state empty message uses: Label role (13px, weight 500, color `#64748b` warm-slate).
+Source: `IssueHub.tsx` inline styles (heading 1.5rem; body 0.9375rem/400); `index.css` `.ev-quote-text` (line-height 1.6 for quotes only). Weights consolidated from original codebase mix to 2-weight contract.
+
+Zero-state empty message uses: Heading copy at 15px, weight 700, color `#1a1a2e` ink; body copy at 13px, weight 400, color `#64748b` warm-slate.
 
 ---
 
@@ -84,7 +86,7 @@ Zero-state empty message uses: Label role (13px, weight 500, color `#64748b` war
 | Accent (10%) | `#00657c` ev-muted-blue | Active filter pill, progress bar fill, browse CTA button, focus ring, left-border accent on issue cards, spinner track |
 | Destructive | `#e64a34` ev-coral-dark | Error/warning text (address no-match warning, browse error) |
 
-Accent reserved for: active mode toggle pill, issue card border-left when in-progress or completed, filter chip background fill (`#e8f4f6`), `Filter` CTA button background, spinner `borderTopColor`, progress bar segments.
+Accent reserved for: active mode toggle pill, issue card border-left when in-progress or completed, filter chip background fill (`#e8f4f6`), `Apply Filter` CTA button background, spinner `borderTopColor`, progress bar segments.
 
 Secondary semantic — in-progress accent: `#ff5740` ev-coral for issue card left-border when evaluation is `in-progress` (existing behavior, not changed).
 
@@ -103,7 +105,7 @@ Container: `max-w-2xl mx-auto`, `text-center`, `py-12`
 
 Heading:
 - Copy: "No issues with local quotes for this area"
-- Font: Manrope, 15px, weight 600, color `#1a1a2e` ink
+- Font: Manrope, 15px, weight 700, color `#1a1a2e` ink
 - Margin bottom: 8px
 
 Body:
@@ -114,7 +116,7 @@ Body:
 
 Clear filter button:
 - Copy: "Clear location filter"
-- Style: `.ev-button-secondary` class (border `1.5px solid #00657c`, color `#00657c`, background transparent, border-radius `0.5rem`, padding `0.625rem 1.5rem`)
+- Style: `.ev-button-secondary` class (border `1.5px solid #00657c`, color `#00657c`, background transparent, border-radius `0.5rem`, padding `0.5rem 1.5rem`)
 - On click: calls `clearLocationFilter()` from Zustand store
 - No confirmation required (non-destructive action — user can re-apply at any time)
 
@@ -127,11 +129,11 @@ Motion wrapper: `framer-motion` `<motion.div>` with `initial={{ opacity: 0, y: 8
 | Element | Copy |
 |---------|------|
 | Address input placeholder | "Filter by address..." |
-| Browse mode CTA | "Filter" |
+| Browse mode CTA | "Apply Filter" |
 | Address no-match warning | "No representatives found with quotes for this address." |
 | Browse no-results warning | "No representatives found for this area." |
 | Browse no-quotes warning | "No representatives found with quotes for this area." |
-| Browse generic error | "Something went wrong. Please try again." |
+| Browse generic error | "Could not load results. Check your connection and try again, or browse by state." |
 | Zero-state heading | "No issues with local quotes for this area" |
 | Zero-state body | "We don't have quotes from your representatives for any issues yet." |
 | Zero-state CTA | "Clear location filter" |
@@ -139,7 +141,7 @@ Motion wrapper: `framer-motion` `<motion.div>` with `initial={{ opacity: 0, y: 8
 | Loading spinner label | "Loading issues..." |
 
 Source: existing copy from `AddressFilterInput.tsx` lines 100, 113, 120. Zero-state copy
-is new — authored per D-06 (CONTEXT.md).
+is new — authored per D-06 (CONTEXT.md). Browse generic error updated to include a solution path (connection check + alternative action).
 
 Destructive actions in this phase: none. Clear filter is non-destructive (reversible by re-entering address).
 
@@ -162,8 +164,8 @@ Destructive actions in this phase: none. Clear filter is non-destructive (revers
 1. State dropdown loads on mount from `/api/essentials/browse/states`
 2. State selected → Area Type dropdown appears (loaded from `/api/essentials/browse/states/:state/areas`)
 3. Area Type selected → Area Name dropdown appears (filtered client-side)
-4. Area selected → "Filter" button appears
-5. "Filter" clicked → `handleBrowse()` POSTs to `/api/essentials/browse/by-area`
+4. Area selected → "Apply Filter" button appears
+5. "Apply Filter" clicked → `handleBrowse()` POSTs to `/api/essentials/browse/by-area`
 6. Button shows "Loading..." and `opacity: 0.5` during request
 7. On success: filter chip replaces entire input section
 8. On failure: inline error text in `#e64a34`
@@ -172,8 +174,8 @@ Destructive actions in this phase: none. Clear filter is non-destructive (revers
 
 - Location pin SVG icon (stroke `#00657c`) + truncated address (max 40 chars + ellipsis) + `&times;` dismiss
 - Chip background: `#e8f4f6`
-- Text: 14px, weight 500, color `#1a1a2e`
-- Dismiss button: `color #64748b` → `#1a1a2e` on hover
+- Text: 14px, weight 400, color `#1a1a2e`
+- Dismiss button: `aria-label="Remove location filter"`, `color #64748b` → `#1a1a2e` on hover
 
 ### Issue Count Subtitle (active filter)
 
