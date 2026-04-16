@@ -212,7 +212,7 @@ async function processCandidate(
     if (needsBio) {
       await client.query(
         `UPDATE essentials.politicians
-         SET bio_text = $1, updated_at = now()
+         SET bio_text = $1
          WHERE id = $2`,
         [candidate.bio_text, candidate.politician_id],
       );
@@ -221,7 +221,7 @@ async function processCandidate(
     if (needsSlug) {
       await client.query(
         `UPDATE essentials.politicians
-         SET slug = $1, updated_at = now()
+         SET slug = $1
          WHERE id = $2`,
         [candidate.slug, candidate.politician_id],
       );
@@ -274,7 +274,7 @@ async function processCandidate(
       // Fallback render path -- photo_custom_url (Pitfall 2)
       await client.query(
         `UPDATE essentials.politicians
-         SET photo_custom_url = $1, updated_at = now()
+         SET photo_custom_url = $1
          WHERE id = $2`,
         [publicUrl, candidate.politician_id],
       );
