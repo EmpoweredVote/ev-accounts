@@ -14,7 +14,7 @@
 
 - [x] **Phase 116: Quick Correctness Fixes** — Correct wrong election date, broken nav links, and wrong default Representatives tab (completed 2026-04-15)
 - [ ] **Phase 117: Candidate Stub Resolution + Data Import** — Create politician records and import minimum viable data for ~30 stub Monroe County candidates
-- [ ] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production
+- [x] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production (completed 2026-04-16)
 - [ ] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken)
 - [ ] **Phase 120: Contested-Race Bio + Photo Authoring** — Author bios and source headshots for ~5–10 contested-race candidates
 - [ ] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district
@@ -69,7 +69,7 @@
 **Plans**: 3 plans
   - [x] 118-01-PLAN.md — Hypothesis-first diagnosis (H1–H5) on both Pierce URLs × both auth paths; produce 118-DIAGNOSIS.md with root cause layer
   - [x] 118-02-PLAN.md — Apply minimal fix in the layer declared by diagnosis (checkpoint-gated); auto-bump pipeline if ev-ui; RR-02 root cause note in fix PR description
-  - [ ] 118-03-PLAN.md — Production verification 2×2 matrix on essentials.empowered.vote + cross-consumer smoke + user sign-off (D-16)
+  - [x] 118-03-PLAN.md — Production verification 2×2 matrix on essentials.empowered.vote + cross-consumer smoke + user sign-off (D-16)
 **UI hint**: yes
 
 ### Phase 119: Read & Rank Location Filter Repair
@@ -156,7 +156,7 @@
 |-------|----------------|--------|-----------|
 | 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
-| 118. Read & Rank Verdict Badge Fix | 2/3 | In Progress|  |
+| 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
 | 119. Read & Rank Location Filter Repair | 0/2 | Not started | - |
 | 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
