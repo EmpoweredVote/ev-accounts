@@ -1,5 +1,5 @@
 ---
-status: human_needed
+status: passed
 phase: 118-read-rank-verdict-badge-fix
 verified: 2026-04-15
 ---
@@ -56,4 +56,4 @@ Per D-16, user must personally visit the Pierce profile URL and confirm verdict 
 3. If you have existing verdicts (from Read & Rank), badges should appear on quotes
 4. If no verdicts exist yet: go to Read & Rank, evaluate Pierce quotes on any topic, then return to the profile — badges should appear via the fragment or localStorage path
 
-**User sign-off:** [pending]
+**User sign-off:** Signed off — 2026-04-15. User confirmed verdict badges and quotes render on Pierce profile after all three fixes deployed (ev-accounts e71984d, essentials f444780, ev-ui v0.4.2).
