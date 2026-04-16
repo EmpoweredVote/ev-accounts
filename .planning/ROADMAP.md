@@ -68,7 +68,7 @@
   2. A root cause document identifies exactly which layer caused the regression (CSS, prop wiring, ev-ui version mismatch, or feature flag).
 **Plans**: 3 plans
   - [x] 118-01-PLAN.md — Hypothesis-first diagnosis (H1–H5) on both Pierce URLs × both auth paths; produce 118-DIAGNOSIS.md with root cause layer
-  - [ ] 118-02-PLAN.md — Apply minimal fix in the layer declared by diagnosis (checkpoint-gated); auto-bump pipeline if ev-ui; RR-02 root cause note in fix PR description
+  - [x] 118-02-PLAN.md — Apply minimal fix in the layer declared by diagnosis (checkpoint-gated); auto-bump pipeline if ev-ui; RR-02 root cause note in fix PR description
   - [ ] 118-03-PLAN.md — Production verification 2×2 matrix on essentials.empowered.vote + cross-consumer smoke + user sign-off (D-16)
 **UI hint**: yes
 
@@ -79,7 +79,9 @@
 **Success Criteria** (what must be TRUE):
   1. Entering a Monroe County address in the Read & Rank location filter scopes the displayed quote list to Monroe County candidates only.
   2. Both filter mechanisms (geocoding wiring and filter predicate logic) are functional and verified against a Monroe County test address.
-**Plans**: TBD
+**Plans**: 2 plans
+  - [ ] 119-01-PLAN.md — End-to-end diagnosis: DB data audit, API/CORS smoke tests, frontend predicate inspection; produce 119-DIAGNOSIS.md
+  - [ ] 119-02-PLAN.md — Apply diagnosed fixes + zero-state empty message (D-06) + production verification checkpoint
 **UI hint**: yes
 
 ### Phase 120: Contested-Race Bio + Photo Authoring
@@ -154,8 +156,8 @@
 |-------|----------------|--------|-----------|
 | 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
-| 118. Read & Rank Verdict Badge Fix | 1/3 | In Progress|  |
-| 119. Read & Rank Location Filter Repair | 0/? | Not started | - |
+| 118. Read & Rank Verdict Badge Fix | 2/3 | In Progress|  |
+| 119. Read & Rank Location Filter Repair | 0/2 | Not started | - |
 | 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
 | 122. Cross-App Loop Polish | 0/? | Not started | - |
