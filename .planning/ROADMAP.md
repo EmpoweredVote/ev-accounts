@@ -67,7 +67,7 @@
   1. Verdict badges render on politician profile pages in production for politicians with existing DB quotes.
   2. A root cause document identifies exactly which layer caused the regression (CSS, prop wiring, ev-ui version mismatch, or feature flag).
 **Plans**: 3 plans
-  - [ ] 118-01-PLAN.md — Hypothesis-first diagnosis (H1–H5) on both Pierce URLs × both auth paths; produce 118-DIAGNOSIS.md with root cause layer
+  - [x] 118-01-PLAN.md — Hypothesis-first diagnosis (H1–H5) on both Pierce URLs × both auth paths; produce 118-DIAGNOSIS.md with root cause layer
   - [ ] 118-02-PLAN.md — Apply minimal fix in the layer declared by diagnosis (checkpoint-gated); auto-bump pipeline if ev-ui; RR-02 root cause note in fix PR description
   - [ ] 118-03-PLAN.md — Production verification 2×2 matrix on essentials.empowered.vote + cross-consumer smoke + user sign-off (D-16)
 **UI hint**: yes
@@ -154,7 +154,7 @@
 |-------|----------------|--------|-----------|
 | 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
-| 118. Read & Rank Verdict Badge Fix | 0/? | Not started | - |
+| 118. Read & Rank Verdict Badge Fix | 1/3 | In Progress|  |
 | 119. Read & Rank Location Filter Repair | 0/? | Not started | - |
 | 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
