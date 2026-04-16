@@ -157,7 +157,7 @@
 | 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
 | 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
-| 119. Read & Rank Location Filter Repair | 2/2 | Complete   | 2026-04-16 |
+| 119. Read & Rank Location Filter Repair | 2/2 | Complete    | 2026-04-16 |
 | 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
 | 122. Cross-App Loop Polish | 0/? | Not started | - |
