@@ -194,6 +194,14 @@ FAIL — No CSS regression. Badges are not hidden; they simply never mount becau
 
 ---
 
+**Bug C — StanceAccordion fetch paths missing /api prefix (discovered during verification)**
+
+- **Root cause file:** `ev-ui/src/StanceAccordion.jsx` lines 88, 115
+- **Description:** StanceAccordion fetched `${apiUrl}/essentials/quotes` and `${apiUrl}/compass/politicians/.../context`, but `apiUrl` is `VITE_API_URL` (e.g. `https://accounts-api.empowered.vote`) without `/api`. Both requests returned 404 in production, so no quotes or reasoning ever loaded.
+- **Fix:** Added `/api/` to both fetch paths. — FIXED in ev-ui v0.4.2 (commit 5c74b74)
+
+---
+
 ## Priority and Impact
 
 Both bugs must be fixed for verdict badges to render:
