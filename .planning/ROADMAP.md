@@ -15,7 +15,7 @@
 - [x] **Phase 116: Quick Correctness Fixes** — Correct wrong election date, broken nav links, and wrong default Representatives tab (completed 2026-04-15)
 - [ ] **Phase 117: Candidate Stub Resolution + Data Import** — Create politician records and import minimum viable data for ~30 stub Monroe County candidates
 - [x] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production (completed 2026-04-16)
-- [ ] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken)
+- [x] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken) (completed 2026-04-16)
 - [ ] **Phase 120: Contested-Race Bio + Photo Authoring** — Author bios and source headshots for ~5–10 contested-race candidates
 - [ ] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district
 - [ ] **Phase 122: Cross-App Loop Polish** — Repair remaining Compass→Read & Rank→Essentials integration gaps
@@ -80,8 +80,8 @@
   1. Entering a Monroe County address in the Read & Rank location filter scopes the displayed quote list to Monroe County candidates only.
   2. Both filter mechanisms (geocoding wiring and filter predicate logic) are functional and verified against a Monroe County test address.
 **Plans**: 2 plans
-  - [ ] 119-01-PLAN.md — End-to-end diagnosis: DB data audit, API/CORS smoke tests, frontend predicate inspection; produce 119-DIAGNOSIS.md
-  - [ ] 119-02-PLAN.md — Apply diagnosed fixes + zero-state empty message (D-06) + production verification checkpoint
+  - [x] 119-01-PLAN.md — End-to-end diagnosis: DB data audit, API/CORS smoke tests, frontend predicate inspection; produce 119-DIAGNOSIS.md
+  - [x] 119-02-PLAN.md — Apply diagnosed fixes + zero-state empty message (D-06) + production verification checkpoint
 **UI hint**: yes
 
 ### Phase 120: Contested-Race Bio + Photo Authoring
@@ -157,7 +157,7 @@
 | 116. Quick Correctness Fixes | 1/1 | Complete   | 2026-04-15 |
 | 117. Candidate Stub Resolution + Data Import | 0/? | Not started | - |
 | 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
-| 119. Read & Rank Location Filter Repair | 0/2 | Not started | - |
+| 119. Read & Rank Location Filter Repair | 2/2 | Complete   | 2026-04-16 |
 | 120. Contested-Race Bio + Photo Authoring | 0/? | Not started | - |
 | 121. County Council D1→D4 Geofence Repair | 0/? | Not started | - |
 | 122. Cross-App Loop Polish | 0/? | Not started | - |
