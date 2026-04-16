@@ -185,8 +185,8 @@ FAIL — No CSS regression. Badges are not hidden; they simply never mount becau
 - `essentials/src/lib/compass.js` (fetchUserVerdicts `item.verdict`, line 269)
 
 **One-line fix summary:**
-1. `fetchUserVerdicts`: replace `item.verdict` with `item.supported === true ? 'agreed' : 'disagreed'`.
-2. Quote-to-topic matching: change `/essentials/quotes` to return `issue: topic_key` (slug) instead of `issue: topic_id` (UUID), so StanceAccordion's `q.issue === topic.topic_key` comparison works.
+1. `fetchUserVerdicts`: replace `item.verdict` with `item.supported === true ? 'agreed' : 'disagreed'`. — FIXED in essentials commit f444780
+2. Quote-to-topic matching: change `/essentials/quotes` to return `issue: topic_key` (slug) instead of `issue: topic_id` (UUID), and add `topic_key` to compass topics API response, so StanceAccordion's `q.issue === topic.topic_key` comparison works. — FIXED in ev-accounts commit e71984d
 
 **Commit that introduced it:**
 - Bug A: Phase 50 built the quotes endpoint for Read & Rank (UUID-keyed topics). Phase 81 built StanceAccordion expecting topic_key slugs. The two were never validated together — no single "introducing commit", rather a design assumption gap.
