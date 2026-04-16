@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2026.4.4
 milestone_name: milestone
 status: executing
-stopped_at: Phase 119 UI-SPEC approved
-last_updated: "2026-04-16T01:29:08.304Z"
-last_activity: 2026-04-16
+stopped_at: Phase 120 context gathered
+last_updated: "2026-04-16T15:15:01.400Z"
+last_activity: 2026-04-16 -- Phase 119 execution started
 progress:
   total_phases: 11
   completed_phases: 2
   total_plans: 13
-  completed_plans: 4
-  percent: 31
+  completed_plans: 5
+  percent: 38
 ---
 
 # Project State
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-14)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 118 — read-rank-verdict-badge-fix
+**Current focus:** Phase 119 — read-rank-location-filter-repair
 
 ## Current Position
 
-Phase: 119
-Plan: Not started
-Status: Ready to execute
-Last activity: 2026-04-16
+Phase: 119 (read-rank-location-filter-repair) — EXECUTING
+Plan: 1 of 2
+Status: Executing Phase 119
+Last activity: 2026-04-16 -- Phase 119 execution started
 
 ```
 [░░░░░░░░░░░░░░░░░░░░] 0% (0/11 phases)
@@ -75,4 +75,4 @@ Last activity: 2026-04-16
 ## Session Continuity
 
 Last activity: 2026-04-14 — Roadmap created for v2026.4.4. 11 phases (116–126), 25/25 requirements mapped.
-Stopped at: Phase 119 UI-SPEC approved
+Stopped at: Phase 120 context gathered
