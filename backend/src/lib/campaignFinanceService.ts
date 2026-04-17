@@ -604,7 +604,7 @@ export async function getSummary(
            WHEN 'MEDIUM'    THEN 2
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END) AS confidence_level_n,
-       (array_agg(c.raw_record ORDER BY c.amount DESC))[1] AS raw_record
+       MIN(c.raw_record::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
