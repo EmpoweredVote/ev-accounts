@@ -104,8 +104,8 @@
   1. The Kirkwood Ave Bloomington test address resolves to the correct Monroe County Council district (D4, not D1) in the API response.
   2. The fix is validated using the same Kirkwood test address documented in MATRIX.md Dim 1 and the geofence smoke test script.
 **Plans**: 4 plans
-  - [ ] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [ ] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
+  - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
+  - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
   - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
   - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
 
@@ -118,8 +118,8 @@
   2. The Compass compare page includes working links to Essentials politician profile pages for each politician in the picker.
   3. The Essentials→Treasury handoff is functional — relevant budget data is accessible from the Essentials context where documented (G-114-030, G-114-031).
 **Plans**: 4 plans
-  - [ ] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [ ] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
+  - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
+  - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
   - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
   - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
 **UI hint**: yes
@@ -186,7 +186,7 @@
 | 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
 | 119. Read & Rank Location Filter Repair | 2/2 | Complete    | 2026-04-16 |
 | 120. Contested-Race Bio + Photo Authoring | 2/3 | In Progress|  |
-| 121. County Council D1→D4 Geofence Repair | 0/4 | Not started | - |
+| 121. County Council D1→D4 Geofence Repair | 2/4 | In Progress|  |
 | 122. Cross-App Loop Polish | 0/? | Not started | - |
 | 123. Photo Coverage Expansion | 0/? | Not started | - |
 | 124. App-Wide Bio Authoring | 0/? | Not started | - |
