@@ -35,8 +35,16 @@ type: reference
 | criminalization-of-homelessness | 1 | Opposed SB285; advocates treatment not criminalization |
 | childcare | 2 | Top 3 affordability issue; wants significant public expansion |
 
+| campaign-finance | 2 | Advocates small-donor reform, called out majority party for blocking reform (Journal Gazette 2022) |
+
 ## Skipped Topics (insufficient evidence for state legislator)
-- tariffs, ukraine-support, medicare, social-security, religious-freedom, misinformation
+- tariffs: no evidence of any statement on federal tariff policy
+- ukraine-support: no evidence; state-level role makes this unlikely to be documented
+- medicare: no evidence on this federal program from state legislative record
+- social-security: no evidence on this federal program from state legislative record
+- religious-freedom: almost certainly voted no on Indiana RFRA 2015 (26 House Dems voted no, he's not on the yes list) but no verifiable individual vote record or direct quote found
+- misinformation: SB 199 (2026) comment was about bill structure, not the misinformation/algorithm policy question
+- jail-capacity: not a standard topic_key in the 21 topics; no direct evidence of Pierce's stance on jail capacity expansion (Monroe County jail is a county-level issue he has not commented on publicly)
 
 ## Key Sources
 - Indiana House Democrats newsroom: https://www.indianahousedemocrats.org/news/category/Rep.+Matt+Pierce

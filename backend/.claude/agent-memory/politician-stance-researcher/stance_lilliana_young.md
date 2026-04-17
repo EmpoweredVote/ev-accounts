@@ -29,8 +29,18 @@ type: reference
 - data-centers: 1 — opposed to data center expansion; concerned about electric rate spikes
 - homelessness-criminalization: 1 — called SB 285 "heinous and inhumane"; wants repeal; fund shelters instead
 
-## Skipped Topics (insufficient evidence for first-time state candidate)
-- abortion, tariffs, ukraine-support, social-security, ai-regulation, voting-rights, campaign-finance, misinformation, redistricting, childcare
+## Skipped Topics (insufficient evidence — confirmed after exhaustive search 2026-04-10)
+- abortion: Self-identified democratic socialist progressive in Bloomington; Indiana has near-total abortion ban. Strong inferential signal she opposes it, but no direct quote or statement found in any source.
+- tariffs: Federal issue; not raised at any Indiana District 61 state legislative forum or in any media coverage.
+- ukraine-support: Federal foreign policy; not raised at any forum or in any media coverage.
+- voting-rights: Matt Pierce raised student ID suppression at March 23 forum; Young made no statements on this topic.
+- social-security: Federal issue; not raised at any forum or in any media coverage.
+- ai-regulation: Not raised at any forum or in any media coverage.
+- campaign-finance: Not raised at any forum or in any media coverage.
+- misinformation: Not raised at any forum or in any media coverage.
+- redistricting: Not raised at any forum or in any media coverage.
+- childcare: Mentioned only by Commissioner candidate Deckard at March 23 forum; Young did not address it.
+- jail-capacity: Discussion at March 23 forum was among Monroe County Commissioner candidates only; Young (District 61) did not address it.
 
 ## Key Direct Quotes
 - Trans rights: "I want to see all of the anti-trans legislation in the state get repealed. I want to pursue codifying into the state constitution LGBTQ protections." (IDS, Oct 2025)
