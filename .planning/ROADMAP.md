@@ -19,7 +19,7 @@
 - [ ] **Phase 120: Contested-Race Bio + Photo Authoring** — Author bios and source headshots for ~5–10 contested-race candidates
 - [x] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district (completed 2026-04-17)
 - [x] **Phase 122: Cross-App Loop Polish** — Repair remaining Compass→Read & Rank→Essentials integration gaps (completed 2026-04-17)
-- [ ] **Phase 123: Photo Coverage Expansion** — Extend headshot pipeline to fill remaining 62-candidate photo gap
+- [x] **Phase 123: Photo Coverage Expansion** — Extend headshot pipeline to fill remaining 62-candidate photo gap (completed 2026-04-17)
 - [ ] **Phase 124: App-Wide Bio Authoring** — Author bios for ~45 remaining linked candidates
 - [ ] **Phase 125: Tier 2 UX Polish Bundle** — Address 21 Tier 2 minor/confusing UX gaps
 - [ ] **Phase 126: Geofence Hardening** — Repair rural address geocoding failures and import 11 missing township geofences
@@ -127,11 +127,11 @@
 **Requirements**: PHOTO-01
 **Success Criteria** (what must be TRUE):
   1. The headshot scraping/sourcing pipeline is extended to cover non-contested-race linked candidates, reducing the unphoted candidate count from 62 toward zero.
-**Plans**: 4 plans
-  - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
-  - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
-  - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
+**Plans**: 3 plans
+  - [x] 123-01-PLAN.md — Wave 1: Adapt audit-112-headshots.ts into audit-123-photo-gap.ts (broadened query, linked + missing default photo); capture authoritative CSV into phase dir
+  - [x] 123-02-PLAN.md — Wave 2: Research photos per-candidate (Ballotpedia + 1 search, D-04), compile 123-REVIEW-DATA.md, user approval checkpoint (D-07/D-08)
+  - [x] 123-03-PLAN.md — Wave 3: Build import-123-photo-expansion.ts (photo-only clone of import-120, D-09), materialize import-123-data.json, dry-run, --commit checkpoint + re-audit + production render verify
+
 
 ### Phase 124: App-Wide Bio Authoring
 **Goal**: Bios for the remaining ~45 linked candidates not covered by Phase 120 are authored and live, closing the platform-wide 0/51 bio gap that drives EV's lowest competitive matrix score.
@@ -185,7 +185,7 @@
 | 120. Contested-Race Bio + Photo Authoring | 2/3 | In Progress|  |
 | 121. County Council D1→D4 Geofence Repair | 4/4 | Complete   | 2026-04-17 |
 | 122. Cross-App Loop Polish | 1/1 | Complete    | 2026-04-17 |
-| 123. Photo Coverage Expansion | 0/? | Not started | - |
+| 123. Photo Coverage Expansion | 3/3 | Complete   | 2026-04-17 |
 | 124. App-Wide Bio Authoring | 0/? | Not started | - |
 | 125. Tier 2 UX Polish Bundle | 0/? | Not started | - |
 | 126. Geofence Hardening | 0/? | Not started | - |
