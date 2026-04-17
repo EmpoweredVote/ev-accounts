@@ -185,7 +185,7 @@
 | 120. Contested-Race Bio + Photo Authoring | 2/3 | In Progress|  |
 | 121. County Council D1→D4 Geofence Repair | 4/4 | Complete   | 2026-04-17 |
 | 122. Cross-App Loop Polish | 1/1 | Complete    | 2026-04-17 |
-| 123. Photo Coverage Expansion | 3/3 | Complete   | 2026-04-17 |
+| 123. Photo Coverage Expansion | 3/3 | Complete    | 2026-04-17 |
 | 124. App-Wide Bio Authoring | 0/? | Not started | - |
 | 125. Tier 2 UX Polish Bundle | 0/? | Not started | - |
 | 126. Geofence Hardening | 0/? | Not started | - |
