@@ -50,11 +50,11 @@ completed: 2026-04-17
 
 # Phase 122 Plan 01: Cross-App Loop Polish Summary
 
-**INTG-01 guest-cache fallback fix, INTG-02 verified closed, INTG-03 Treasury CTA added to Essentials Results page — full cross-app voter loop implemented, awaiting production smoke**
+**INTG-01 guest-cache fallback fix, INTG-02 verified closed, INTG-03 Treasury CTA added to Essentials Results page — full cross-app voter loop verified on production**
 
 ## Status
 
-**PAUSED AT CHECKPOINT 3.3** — All code complete, awaiting human production smoke verification before plan closes. Render deploy required (see Checkpoint Details below).
+**COMPLETE** — All 3 INTGs verified on production (2026-04-17).
 
 ## Performance
 
