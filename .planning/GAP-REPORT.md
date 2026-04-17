@@ -523,10 +523,27 @@ Per D-07, the synthesis surfaces root-cause patterns spanning multiple G-114 and
 ### PATTERN-004 — County Council D1→D4 Geofence Binding Bug (benchmark-derived gap per D-06)
 - **Tier:** 1
 - **Type:** cross-cutting pattern (data — geofence binding)
-- **Root cause:** A Kirkwood Bloomington address that should resolve to County Council District 1 returns District 4 instead. The geofence row exists (per AUDIT-01 race table linking CC D1) but the polygon binding is incorrect.
+- **Root cause:** A Kirkwood Bloomington address (200 W Kirkwood Ave, Bloomington IN 47404;
+  lat=39.166646, lng=-86.534947) resolves to all four Monroe County Council District races
+  (D1/D2/D3/D4) instead of exactly one. The authoritative district for this address is **D4**
+  (Jennifer Crossley) per two independent GIS sources (Monroe County GIS FeatureServer +
+  IN Statewide Admin Boundaries FeatureServer). The bug is structural, not a polygon coordinate
+  error: all four MCC District offices in `essentials.offices` are linked to the shared
+  county-wide `geo_id='18105'` district row, so any Monroe County address inside the county
+  polygon matches all four races at once. See
+  `.planning/phases/121-county-council-d1-d4-geofence-repair/evidence/ground-truth-attestation.md`
+  for the preserved FeatureServer URLs and query responses.
+- **Correction (Phase 121):** An earlier draft of this entry described the bug as "should
+  resolve to D1, returns D4." That framing was derived from Ballotpedia's sample-ballot tool,
+  which displays all four council districts for every Monroe County address as a superset
+  listing — not an authoritative per-voter district assignment. Ballotpedia listing D1 first
+  was mistakenly treated as ground truth. Verified 2026-04-16 via Monroe County GIS
+  (`gis.co.monroe.in.us`) and IN state GIS (`gisdata.in.gov`): Kirkwood = D4. ROADMAP.md
+  §Phase 121 success criteria #1 wording ("D4, not D1") is therefore correct and is left
+  unchanged.
 - **Constituent gaps:** MATRIX.md Dim 1 footnote (concrete falsifiable miss), AUDIT-08 (geofence resolution test) implicit support
 - **Benchmark context:** Dual evidence per D-06 — MATRIX.md Dim 1 cell observed the wrong district returned for the canonical Kirkwood test address ("EV's one detectable miss is structurally different from the other two: a failure to bind the voter to the correct County Council district, not a failure to include the race"), AND AUDIT-REPORT-112 AUDIT-08 row confirms CC D1→D4 binding bug observed. This satisfies the D-06 benchmark-derived gap exception (evidenced by both MATRIX.md AND AUDIT row).
-- **Tier rationale:** Severity = blocker (voter is shown the wrong race — they see the CC D4 candidate when they should see the CC D1 candidate). Feasibility = S/M — single geofence polygon repair, possibly a coordinate/MTFCC issue in the TIGER 2024 import. Tier 1 per D-01 + D-02.
+- **Tier rationale:** Severity = blocker (voter is shown all four MCC District races for any Monroe County address — they cannot identify their specific council representative). Feasibility = S/M — per-district geofence polygon import + office re-linking. Tier 1 per D-01 + D-02.
 - **Note:** This is a NEW finding created by the synthesis per D-06. It was not identified in any single audit phase output as a named gap.
 
 ---
