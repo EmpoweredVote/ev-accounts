@@ -251,12 +251,19 @@ function normalizeRecords(
     const conEmpr = (rec['con_empr'] as string | undefined) ?? '';
 
     // Enrich raw record with optional fields for storage.
+    // Standard field names (contributor_*) are aliases so campaignFinanceService
+    // can extract them without source-specific knowledge.
     const enrichedRec: Record<string, unknown> = {
       ...rec,
       con_city_nm: conCityNm,
       con_state_nm: conStateNm,
       con_occp: conOccp,
       con_empr: conEmpr,
+      contributor_name: conName,
+      contributor_occupation: conOccp,
+      contributor_employer: conEmpr,
+      contributor_city: conCityNm,
+      contributor_state: conStateNm,
     };
 
     contributions.push({

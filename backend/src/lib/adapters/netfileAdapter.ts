@@ -334,6 +334,16 @@ function normalizeRows(
     const tranNamF = String(row['Tran_NamF'] ?? '');
     const rawDonorName = `${tranNamL} ${tranNamF}`.trim();
 
+    // Enrich raw record with standard field names that campaignFinanceService expects.
+    const enrichedRow: Record<string, unknown> = {
+      ...row,
+      contributor_name: rawDonorName,
+      contributor_occupation: String(row['Tran_Occ'] ?? ''),
+      contributor_employer: String(row['Tran_Emp'] ?? ''),
+      contributor_city: String(row['Tran_City'] ?? ''),
+      contributor_state: String(row['Tran_ST'] ?? ''),
+    };
+
     contributions.push({
       politician_source_id: ps.id,
       donor_id: null,
@@ -344,7 +354,7 @@ function normalizeRows(
       confidence_level: 'MEDIUM',
       data_source: 'la_county_netfile',
       source_transaction_id: sourceTransactionId,
-      raw_record: row,
+      raw_record: enrichedRow,
       donor_name_normalized: normalizeDonorName(rawDonorName || null),
     });
   }

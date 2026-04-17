@@ -2,7 +2,7 @@
 
 **Audience:** Claude working in the `empowered-validation-quests` codebase
 **Accounts API:** `https://accounts.empowered.vote`
-**Last updated:** 2026-03-18 (v1.5 — profile.empowered.vote canonical, referral codes, corrected /me shape)
+**Last updated:** 2026-04-13 (v1.6 — essentials ingest endpoint added for Phase 33)
 
 ---
 
@@ -20,6 +20,7 @@ Empowered Accounts is the shared identity and permission layer for the platform.
 | Public profile | Accounts | `GET /api/account/profile/:userId` |
 | Stance confirmation | Accounts | `POST /api/vq/confirm-stance` with service key |
 | VR adjustment (Yellow quests) | Accounts | `POST /api/vq/adjust-vr` with service key |
+| Essentials data ingest | Accounts | `POST /api/essentials/ingest/quest-verified` with service key |
 
 ---
 
@@ -56,9 +57,10 @@ const response = await fetch('https://accounts.empowered.vote/api/xp/award', {
 
 **Key setup:** Chris sets matching values in both VQ's Render environment (`QUEST_SERVICE_KEY`, `VQ_SERVICE_KEY`) and the accounts API environment. VQ doesn't register keys — just uses the values Chris provides.
 
-**Two separate keys:**
+**Three separate keys:**
 - `QUEST_SERVICE_KEY` — for `POST /api/xp/award` only
-- `VQ_SERVICE_KEY` — for `POST /api/vq/confirm-stance` and `POST /api/vq/adjust-vr` (confirm-stance requires `red` gem permission)
+- `VQ_SERVICE_KEY` — for `POST /api/vq/confirm-stance`, `POST /api/vq/adjust-vr`, and `POST /api/essentials/ingest/quest-verified`
+  - confirm-stance requires `red` gem permission (same key, different authorization layer)
 
 ---
 
@@ -602,6 +604,157 @@ After the user creates an account or signs in, they are redirected back to the U
 
 ---
 
+## Essentials Data Ingest (Phase 33)
+
+When a VQ quest reaches finalization and produces a crowd-verified officeholder fact,
+call this endpoint to push the data into Essentials. Data lands in a review queue
+(`status = 'pending_review'`) — accounts admins review and promote it to live politician
+tables. It does **not** write directly to `politician_stances` or any other production table.
+
+### Endpoint
+
+```
+POST /api/essentials/ingest/quest-verified
+X-Service-Key: <VQ_SERVICE_KEY>
+Content-Type: application/json
+```
+
+### Request Body
+
+| Field | Type | Required | Constraints | Notes |
+|-------|------|----------|-------------|-------|
+| `consensus_record_id` | string | Yes | max 255 chars | Your internal consensus/finalization record ID — idempotency key |
+| `quest_id` | string | Yes | max 255 chars | The quest that produced this result |
+| `question_text` | string | Yes | max 2000 chars | The question asked to VQ participants |
+| `verified_answer` | string | Yes | max 2000 chars | The crowd-verified answer |
+| `confidence_level` | number | Yes | 0.0 – 1.0 | Confidence score from VQ's consensus algorithm |
+| `total_submissions` | number | Yes | Positive integer | Number of submissions that went into this consensus |
+| `jurisdiction_name` | string | Yes | max 500 chars | Human-readable jurisdiction (e.g., "Los Angeles City Council District 4") |
+| `politician_id` | string (UUID) | No | Valid UUID | Pass if you can resolve it; null = accounts will attempt manual match |
+
+### Response
+
+```typescript
+// 201 — stored successfully
+{ is_duplicate: false, id: string }  // id = accounts' UUID for this record
+
+// 200 — already ingested (duplicate consensus_record_id)
+{ is_duplicate: true, id: string }   // id of the existing record
+
+// 401 — invalid or missing X-Service-Key
+{ error: "Missing or invalid X-Service-Key" }
+
+// 422 — validation failure
+{ code: "VALIDATION_ERROR", message: string, fields: object }
+```
+
+### Idempotency
+
+`consensus_record_id` is the idempotency key — one finalization event = one record. Safe
+to retry on 5xx: duplicate POSTs return `200 { is_duplicate: true }` with no second write.
+
+Derive `consensus_record_id` from your internal finalization/consensus record ID:
+
+```typescript
+const consensus_record_id = `vq-consensus-${consensusRecord.id}`;
+```
+
+### What happens to the data
+
+After ingest, the record sits at `status = 'pending_review'` in `essentials.quest_verified_facts`.
+Accounts admins see it in the review queue and decide whether to:
+- **Accept** — promotes the answer into the appropriate essentials table (e.g., `politician_stances`, `quotes`)
+- **Reject** — marks the record as rejected with notes; no production data changed
+
+VQ does not need to track the review outcome. If the answer is rejected, accounts will
+reach out if the data pattern needs to change.
+
+### `politician_id` — pass it when you have it
+
+If your quest is associated with a specific politician (e.g., "What is Councilmember X's
+position on housing?"), look up the `politician_id` from your own records or from the
+accounts essentials API (`GET /api/essentials/politicians?name=...`) and include it.
+
+If the quest is jurisdiction-scoped without a known politician, omit it. Accounts will
+attempt to match based on `jurisdiction_name`.
+
+### Example
+
+```typescript
+async function ingestVerifiedFact(opts: {
+  consensusRecordId: string;
+  questId: string;
+  questionText: string;
+  verifiedAnswer: string;
+  confidenceLevel: number;
+  totalSubmissions: number;
+  jurisdictionName: string;
+  politicianId?: string;
+}): Promise<{ is_duplicate: boolean; id: string }> {
+  const res = await fetch(`${ACCOUNTS_URL}/api/essentials/ingest/quest-verified`, {
+    method: 'POST',
+    headers: {
+      'X-Service-Key': process.env.VQ_SERVICE_KEY!,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      consensus_record_id: opts.consensusRecordId,
+      quest_id: opts.questId,
+      question_text: opts.questionText,
+      verified_answer: opts.verifiedAnswer,
+      confidence_level: opts.confidenceLevel,
+      total_submissions: opts.totalSubmissions,
+      jurisdiction_name: opts.jurisdictionName,
+      politician_id: opts.politicianId,
+    }),
+  });
+
+  if (!res.ok) {
+    const err = await res.json();
+    throw new Error(`essentials ingest failed: ${res.status} ${JSON.stringify(err)}`);
+  }
+
+  return res.json();
+}
+
+// Usage — called once at quest finalization
+const result = await ingestVerifiedFact({
+  consensusRecordId: `vq-consensus-${consensus.id}`,
+  questId: quest.id,
+  questionText: quest.questionText,
+  verifiedAnswer: consensus.verifiedAnswer,
+  confidenceLevel: consensus.confidenceScore,
+  totalSubmissions: consensus.submissionCount,
+  jurisdictionName: quest.jurisdictionName,
+  politicianId: quest.politicianId ?? undefined,
+});
+
+if (result.is_duplicate) {
+  // already ingested — safe to ignore
+}
+```
+
+### Sequencing with other finalization steps
+
+Essentials ingest is independent of XP award and stance confirmation. Call them in parallel
+or in any order — they use different idempotency keys and different endpoints:
+
+```typescript
+// At quest finalization — all three calls are independent
+await Promise.allSettled([
+  // 1. Award XP to correct participants
+  awardQuestXp(userId, submissionId, questId),
+
+  // 2. Confirm stance + award Red Gems (if applicable)
+  confirmStance({ ... }),
+
+  // 3. Push verified fact into Essentials
+  ingestVerifiedFact({ ... }),
+]);
+```
+
+---
+
 ## Error Handling
 
 | Status | Meaning | Action |
@@ -621,7 +774,7 @@ After the user creates an account or signs in, they are redirected back to the U
 |----------|---------|--------------|
 | `ACCOUNTS_URL` | Base URL for accounts API | `https://accounts.empowered.vote` |
 | `QUEST_SERVICE_KEY` | XP award auth (`X-Service-Key`) | Chris provides; must match accounts API env |
-| `VQ_SERVICE_KEY` | Stance confirmation auth (`X-Service-Key`, needs `red` gem permission) | Chris provides; must match accounts API `GEMS_SERVICE_KEYS` env |
+| `VQ_SERVICE_KEY` | Stance confirmation, VR adjustment, and essentials ingest auth (`X-Service-Key`) | Chris provides; must match accounts API `VQ_SERVICE_KEY` env and `GEMS_SERVICE_KEYS` for Red gem permission |
 
 ---
 

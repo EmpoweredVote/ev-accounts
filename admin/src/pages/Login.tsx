@@ -86,11 +86,11 @@ export default function Login() {
 
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
 
-        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Sign in</h2>
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Log in</h2>
 
         {appName && (
           <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
-            You'll be returned to {appName} after signing in
+            You'll be returned to {appName} after logging in
           </div>
         )}
 
@@ -137,7 +137,7 @@ export default function Login() {
             disabled={isSubmitting}
             className="w-full py-3 px-4 bg-ev-teal dark:bg-ev-teal-light hover:bg-ev-teal/90 dark:hover:bg-ev-teal-light/90 disabled:opacity-60 text-white dark:text-ev-black font-semibold rounded-xl text-sm transition-colors"
           >
-            {isSubmitting ? 'Signing in…' : 'Sign in'}
+            {isSubmitting ? 'Logging in…' : 'Log in'}
           </button>
         </form>
 

@@ -312,6 +312,7 @@ interface FecRawRecord {
   contributor_occupation?: string;
   contributor_employer?: string;
   contributor_name?: string;
+  [key: string]: unknown;
 }
 
 function parseRawRecord(rawRecord: string | null): FecRawRecord {
@@ -334,15 +335,24 @@ function extractDonorType(rawRecord: string | null): string {
 }
 
 function extractOccupation(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_occupation ?? '';
+  const rec = parseRawRecord(rawRecord);
+  return (rec.contributor_occupation ?? (rec['con_occp'] as string | undefined)) ?? '';
 }
 
 function extractEmployer(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_employer ?? '';
+  const rec = parseRawRecord(rawRecord);
+  return (rec.contributor_employer ?? (rec['con_empr'] as string | undefined)) ?? '';
 }
 
 function extractContributorName(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_name ?? '';
+  const rec = parseRawRecord(rawRecord);
+  if (rec.contributor_name) return rec.contributor_name;
+  const socrataName = rec['con_name'] as string | undefined;
+  if (socrataName) return socrataName;
+  // Netfile: composite last + first
+  const last = (rec['Tran_NamL'] as string | undefined) ?? '';
+  const first = (rec['Tran_NamF'] as string | undefined) ?? '';
+  return `${last} ${first}`.trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -557,7 +567,7 @@ export async function getSummary(
   // Query occupations for sector breakdown (TypeScript-side classification)
   const occResult = await pool.query<OccupationRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_occupation', '') AS occupation,
+       COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
        c.amount
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
@@ -586,7 +596,7 @@ export async function getSummary(
   // Query top donors
   const donorResult = await pool.query<DonorRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_name', '') AS contributor_name,
+       COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), '') AS contributor_name,
        SUM(c.amount) AS total_amount,
        COUNT(*) AS contribution_count,
        MIN(CASE c.confidence_level
@@ -601,7 +611,7 @@ export async function getSummary(
        AND c.election_cycle = $2
        AND ps.research_status = 'confirmed'
        ${confidenceClause}
-     GROUP BY c.raw_record->>'contributor_name'
+     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''))
      ORDER BY total_amount DESC
      LIMIT 20`,
     baseParams
@@ -1589,9 +1599,9 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
         json_agg(json_build_object(
           'date', c.contribution_date,
           'amount', c.amount,
-          'employer', c.raw_record->>'contributor_employer',
-          'city', c.raw_record->>'contributor_city',
-          'state', c.raw_record->>'contributor_state',
+          'employer', COALESCE(c.raw_record->>'contributor_employer', c.raw_record->>'con_empr'),
+          'city', COALESCE(c.raw_record->>'contributor_city', c.raw_record->>'con_city_nm'),
+          'state', COALESCE(c.raw_record->>'contributor_state', c.raw_record->>'con_state_nm'),
           'confidence_level', c.confidence_level
         ) ORDER BY c.contribution_date DESC) AS contributions
       FROM transparent_motivations.contributions c
