@@ -153,10 +153,10 @@
 **Success Criteria** (what must be TRUE):
   1. All 17 identified G-114 Tier 2 UX gaps (G-114-001/002/004/005/008/011/013/014/015/017/019/020/021/022/023/024/025) are resolved and verified in production.
 **Plans**: 4 plans
-  - [ ] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [ ] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
-  - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
-  - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
+  - [ ] 125-01-PLAN.md — Wave 1 (Essentials): G-114-001 prod-verify, G-114-002 title-case address, G-114-004 Reps↔Elections cross-reference annotation
+  - [ ] 125-02-PLAN.md — Wave 2 (Compass): G-114-014 NULLIF SQL fix in compassService, G-114-011 Tier 1 cross-app evUserAddress bridge + picker geo-default
+  - [ ] 125-03-PLAN.md — Wave 3a (Read & Rank + Treasury): G-114-020 tab title, G-114-021 Featured communities, G-114-023 FY notice, G-114-024 prod-verify
+  - [ ] 125-04-PLAN.md — Wave 3b (Treasury sunburst): G-114-025 Path A labels (≤2hr) → Path B remove toggle fallback; FINAL phase signoff
 **UI hint**: yes
 
 ### Phase 126: Geofence Hardening
