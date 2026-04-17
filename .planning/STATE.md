@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-04-06 after v1.9 milestone)
 
 **Core value:** Every platform feature can answer "does this user have permission to do X?" with a single join to the appropriate tier table — no flag chains, no application guesses, no partial states.
-**Current focus:** Quick-019 (rename accounts.empowered.vote → login.empowered.vote) shipped 2026-04-15. Infra steps (DNS, Render, Supabase, CORS) must be completed before deploying — see INFRA-CHECKLIST.md. Ready for v2.0 milestone planning.
+**Current focus:** Quick-020 (FC post history tab on DashboardPage) shipped 2026-04-17. Quick-019 (rename accounts.empowered.vote → login.empowered.vote) shipped 2026-04-15. Infra steps (DNS, Render, Supabase, CORS) must be completed before deploying — see INFRA-CHECKLIST.md. Ready for v2.0 milestone planning.
 **Quick tasks:** 009-add-weekly-district-staleness-check-cron complete (2026-03-29); 010-fix-bug-01-restore-cicero-districts-quarant complete (2026-03-30); 011-fix-bug-03-city-officials-in-representatives complete (2026-03-30); 012-fix-ca-national-upper-senators-padilla-geofence complete (2026-03-30); 013-phase-43-integration-documentation complete (2026-03-29); 014-add-city-council-district-to-jurisdiction complete (2026-04-09); 015-session-polling-cross-app-logout-sync complete (2026-04-09); 016-ca-sos-challenger-ingestion complete (2026-04-13); 017-import-verified-2026-la-county-primary-c complete (2026-04-13); 018-add-municipality-geo-id-support-so-la-ci complete (2026-04-13)
 
 ## Current Position
@@ -431,6 +431,7 @@ v1.6 constraints and decisions to carry forward:
 | 017 | Import verified 2026 LA County primary candidates | 2026-04-13 | — | [017-import-verified-2026-la-county-primary-c](./quick/017-import-verified-2026-la-county-primary-c/) |
 | 018 | Add municipality_geo_id support so LA City races display for LA residents | 2026-04-13 | — | [018-add-municipality-geo-id-support-so-la-ci](./quick/018-add-municipality-geo-id-support-so-la-ci/) |
 | 019 | Rename accounts.empowered.vote → login.empowered.vote in runtime code | 2026-04-15 | ac151ef | [019-rename-accounts-to-login-empowered-vote](./quick/019-rename-accounts-to-login-empowered-vote/) |
+| 020 | FC post history tab on DashboardPage — PostHistory component with cursor pagination | 2026-04-17 | 0da4072 | [020-build-fc-post-history-feature-on-account](./quick/020-build-fc-post-history-feature-on-account/) |
 
 ### Pending Todos
 
