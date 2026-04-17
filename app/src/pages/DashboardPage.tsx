@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
+import PostHistory from '../components/PostHistory';
 
 interface XP {
   total: number;
@@ -185,7 +186,7 @@ export default function DashboardPage() {
   const [labelInput, setLabelInput] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [showSignedOutToast, setShowSignedOutToast] = useState(false);
-  const [activeTab, setActiveTab] = useState<'profile' | 'referrals'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts'>('profile');
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -318,6 +319,14 @@ export default function DashboardPage() {
               className={`pb-2 border-b-2 font-medium text-sm transition-colors ${activeTab === 'referrals' ? 'border-ev-teal text-ev-teal' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
             >
               Referrals
+            </button>
+          )}
+          {cp && (
+            <button
+              onClick={() => setActiveTab('posts')}
+              className={`pb-2 border-b-2 font-medium text-sm transition-colors ${activeTab === 'posts' ? 'border-ev-teal text-ev-teal' : 'border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+            >
+              Posts
             </button>
           )}
           <Link to="/contributor" className="pb-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm">Contributor</Link>
@@ -561,6 +570,11 @@ export default function DashboardPage() {
               </div>
             )}
           </div>
+        )}
+
+        {/* Posts tab content */}
+        {activeTab === 'posts' && cp && (
+          <PostHistory />
         )}
 
         {/* Connected Spaces — profile tab only */}
