@@ -238,6 +238,30 @@ async function main() {
     }
 
     console.error(`Address ${i + 1} (${addr.label}): ${rows.length} races resolved`);
+
+    // Phase 121 GEO-01/GEO-02 exclusivity assertion — Kirkwood must resolve to
+    // exactly one Monroe County Council race (D4 per Monroe County GIS ground truth).
+    if (addr.label === 'Bloomington City Center') {
+      const councilRaces = rows.filter((r) =>
+        typeof r.position_name === 'string' &&
+        r.position_name.startsWith('Monroe County Council District'),
+      );
+      if (councilRaces.length !== 1) {
+        console.error(
+          `[121-geo] FAIL: Expected exactly 1 MCC Council race for Kirkwood, got ${councilRaces.length}`,
+        );
+        if (councilRaces.length > 0) {
+          console.error(
+            `[121-geo]   Races: ${councilRaces.map((r) => r.position_name).join(', ')}`,
+          );
+        }
+        process.exitCode = 2; // non-zero exit signals failing smoke test
+      } else {
+        console.error(
+          `[121-geo] PASS: Kirkwood returns exactly 1 MCC Council race: ${councilRaces[0].position_name}`,
+        );
+      }
+    }
   }
 
   // Step 6: Output unlinked races section
