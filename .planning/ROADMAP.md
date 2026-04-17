@@ -17,8 +17,8 @@
 - [x] **Phase 118: Read & Rank Verdict Badge Fix** — Restore verdict badges on politician profile pages in production (completed 2026-04-16)
 - [x] **Phase 119: Read & Rank Location Filter Repair** — Restore Monroe County location filter (both filter mechanisms broken) (completed 2026-04-16)
 - [ ] **Phase 120: Contested-Race Bio + Photo Authoring** — Author bios and source headshots for ~5–10 contested-race candidates
-- [ ] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district
-- [ ] **Phase 122: Cross-App Loop Polish** — Repair remaining Compass→Read & Rank→Essentials integration gaps
+- [x] **Phase 121: County Council D1→D4 Geofence Repair** — Fix Kirkwood Ave Bloomington address resolving to wrong council district (completed 2026-04-17)
+- [x] **Phase 122: Cross-App Loop Polish** — Repair remaining Compass→Read & Rank→Essentials integration gaps (completed 2026-04-17)
 - [ ] **Phase 123: Photo Coverage Expansion** — Extend headshot pipeline to fill remaining 62-candidate photo gap
 - [ ] **Phase 124: App-Wide Bio Authoring** — Author bios for ~45 remaining linked candidates
 - [ ] **Phase 125: Tier 2 UX Polish Bundle** — Address 21 Tier 2 minor/confusing UX gaps
@@ -107,7 +107,7 @@
   - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
   - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
   - [x] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
-  - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
+  - [x] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
 
 ### Phase 122: Cross-App Loop Polish
 **Goal**: The full Compass → Read & Rank → Essentials voter loop works without integration gaps — CompassCard state relays correctly, Compass links to Essentials profiles, and the Essentials→Treasury handoff is functional.
@@ -117,11 +117,8 @@
   1. CompassCard state relay works across app boundaries — data passed from Compass renders correctly on Essentials profile cards.
   2. The Compass compare page includes working links to Essentials politician profile pages for each politician in the picker.
   3. The Essentials→Treasury handoff is functional — relevant budget data is accessible from the Essentials context where documented (G-114-030, G-114-031).
-**Plans**: 4 plans
-  - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
-  - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
-  - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
+**Plans**: 1 plan
+  - [x] 122-01-PLAN.md — Single-plan 3-wave fix for INTG-01/02/03: Wave 0 diagnostic probe + /api/treasury/cities contract test; Wave 1 diagnose + fix CompassCard state relay (D-02/D-04); Wave 2 verify Compass→Essentials picker links (evidence-first per D-07); Wave 3 add Treasury CTA under matched local-tier sections in essentials Results (D-08/D-09/D-10/D-11/D-12); prod smoke per D-13
 **UI hint**: yes
 
 ### Phase 123: Photo Coverage Expansion
@@ -144,8 +141,8 @@
   1. Bios are authored and persisted in the DB for approximately 45 linked candidates not covered by Phase 120.
   2. A bio authoring methodology document exists in `.planning/` covering sourcing approach, tone, length, and antipartisan constraints — repeatable for future imports.
 **Plans**: 4 plans
-  - [ ] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
-  - [ ] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
+  - [x] 121-01-PLAN.md — Wave 0 diagnosis: read-only MCC state dump, extend audit-112 smoke with Kirkwood exclusivity assertion, record ground-truth attestation
+  - [x] 121-02-PLAN.md — Wave 1 polygon import: fetch 4 MCC polygons from Monroe County GIS FeatureServer, insert 4 geofence_boundaries + 4 districts rows (idempotent)
   - [ ] 121-03-PLAN.md — Wave 2 re-link + local smoke: edit link-monroe-county-races-to-geofences.sql §2a/§2e/§3f, run green smoke on dev DB
   - [ ] 121-04-PLAN.md — Wave 3 doc correction + prod verify: correct GAP-REPORT.md PATTERN-004 wording, human-gated prod DB promotion + api.empowered.vote smoke
 
@@ -186,8 +183,8 @@
 | 118. Read & Rank Verdict Badge Fix | 3/3 | Complete    | 2026-04-16 |
 | 119. Read & Rank Location Filter Repair | 2/2 | Complete    | 2026-04-16 |
 | 120. Contested-Race Bio + Photo Authoring | 2/3 | In Progress|  |
-| 121. County Council D1→D4 Geofence Repair | 3/4 | In Progress|  |
-| 122. Cross-App Loop Polish | 0/? | Not started | - |
+| 121. County Council D1→D4 Geofence Repair | 4/4 | Complete   | 2026-04-17 |
+| 122. Cross-App Loop Polish | 1/1 | Complete    | 2026-04-17 |
 | 123. Photo Coverage Expansion | 0/? | Not started | - |
 | 124. App-Wide Bio Authoring | 0/? | Not started | - |
 | 125. Tier 2 UX Polish Bundle | 0/? | Not started | - |
