@@ -108,7 +108,7 @@ export async function getCompassTopics() {
   const { data: topics, error: topicsError } = await supabaseAnon
     .schema('inform')
     .from('compass_topics')
-    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope')
+    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope,fc_community_slug')
     .eq('is_live', true)
     .order('created_at', { ascending: true });
 

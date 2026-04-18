@@ -940,6 +940,7 @@ export type Database = {
       compass_topics: {
         Row: {
           created_at: string
+          fc_community_slug: string | null
           id: string
           is_active: boolean | null
           is_live: boolean
@@ -954,6 +955,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          fc_community_slug?: string | null
           id?: string
           is_active?: boolean | null
           is_live?: boolean
@@ -968,6 +970,7 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          fc_community_slug?: string | null
           id?: string
           is_active?: boolean | null
           is_live?: boolean
