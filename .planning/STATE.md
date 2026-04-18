@@ -1,78 +1,69 @@
 ---
 gsd_state_version: 1.0
-milestone: v2026.4.4
+milestone: v2026.4.5
 milestone_name: milestone
-status: executing
-stopped_at: "125-03 checkpoint: Wave 3a tasks 1-2 complete, awaiting human verification (Task 3)"
-last_updated: "2026-04-18T01:53:23.199Z"
-last_activity: 2026-04-17 -- Phase 125 execution started
+status: planning
+stopped_at: "v2026.4.4 milestone complete — planning next milestone"
+last_updated: "2026-04-18T00:00:00.000Z"
+last_activity: 2026-04-18
 progress:
-  total_phases: 11
-  completed_phases: 6
-  total_plans: 28
-  completed_plans: 19
-  percent: 68
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-14)
+See: .planning/PROJECT.md (updated 2026-04-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 125 — tier-2-ux-polish-bundle
+**Current focus:** Planning next milestone — deferred items from v2026.4.4 are candidates
 
 ## Current Position
 
-Phase: 125 (tier-2-ux-polish-bundle) — EXECUTING
-Plan: 1 of 4
-Status: Executing Phase 125
-Last activity: 2026-04-17 -- Phase 125 execution started
-
-```
-[█████████░░░░░░░░░░░] 45% (5/11 phases)
-```
+Milestone v2026.4.4 archived. Ready for `/gsd-new-milestone`.
 
 ## Performance Metrics
 
+**Velocity (v2026.4.4):** 7 phases, 20 plans, 4 days
 **Velocity (v2026.4.3):** 5 phases, 19 plans, 3 days
 **Velocity (v2026.4.2):** 6 phases, 11 plans, 2 days
 **Velocity (v2026.4.1):** 5 phases, 11 plans, 1 day
 **Velocity (v2026.3.8):** 5 phases, 12 plans, 3 days
-**Velocity (v2026.3.6):** 7 phases, 15 plans, 3 days
 
 *Updated after each plan completion*
 
+## Deferred Items
+
+Items acknowledged and deferred at milestone close on 2026-04-18:
+
+| Category | Item | Status |
+|----------|------|--------|
+| phase | Phase 117 (CAND-01–CAND-05): Candidate stub resolution + data import | Not started — user confirmed some resolved externally |
+| phase | Phase 120-03 (CONT-01–CONT-02): Contested-race bio import execution | Content researched (120-02 done), import script not run |
+| phase | Phase 124 (BIO-01–BIO-02): App-wide bio authoring (~45 candidates) | Not started |
+| phase | Phase 126 (INFRA-01–INFRA-02): Rural geocoding + township geofence import | Not started |
+
+Known deferred items at close: 4 (see above)
+
 ## Accumulated Context
-
-### Decisions
-
-- **Tier 1 deadline:** Phases 116–121 must ship by May 1, 2026 (4 days before May 5 Indiana primary).
-- **Phase 117 feasibility gate:** Data sourcing for ~30 stub candidates must be evaluated BEFORE code work. If sourcing slips past April 25, scope down to highest-impact 5–10 candidates only.
-- **Tier 2 in roadmap:** Phases 122–126 are in the roadmap but explicitly post-primary. Do not let them block Tier 1.
-- **Source:** All 11 phases derived from BACKLOG.md (Phase 115 output) — gaps documented in GAP-REPORT.md.
-- **Sequencing note:** Start Phase 117 first (data-sourcing lead time), run Phase 116 in parallel. Phases 118–121 can follow independently.
-- [Phase 116]: CORR-01 + CORR-03 closed as misflags after deep code reads; CORR-02 fixed via ev-ui@0.4.1 SiteHeader patch through standard auto-bump pipeline
 
 ### Pending Todos
 
 - 12 politicians have no Read & Rank quotes (carried from v1.8)
 - PROF-04: Compass stance data imports for candidates (deferred)
 - PROF-05: Sourced quote imports for candidates (deferred)
+- Phase 120-03: Contested-race bio import script still needs production run (content ready in 120-REVIEW-DATA.md)
 
 ### Blockers/Concerns
 
 (None)
 
-### Quick Tasks Completed
-
-| # | Description | Date | Commit | Directory |
-|---|-------------|------|--------|-----------|
-| 260412-lqd | Center calibration question title in CompassV2 full mode | 2026-04-12 | a621e1b | [260412-lqd-center-calibration-question-title-in-com](./quick/260412-lqd-center-calibration-question-title-in-com/) |
-| Phase 116 P01 | 45min | 4 tasks | 2 files |
-
 ## Session Continuity
 
-Last activity: 2026-04-14 — Roadmap created for v2026.4.4. 11 phases (116–126), 25/25 requirements mapped.
-Stopped at: 125-03 checkpoint: Wave 3a tasks 1-2 complete, awaiting human verification (Task 3)
+Last activity: 2026-04-18 — v2026.4.4 milestone archived. 7/11 phases shipped; 4 phase groups deferred.
+Next: `/gsd-new-milestone` to define v2026.4.5 scope

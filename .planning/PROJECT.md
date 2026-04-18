@@ -193,49 +193,21 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Compass-first card prototype at /prototype with 3 layout variants — v2026.4.1
 - ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
 - ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
+- ✓ ev-ui@0.4.1 SiteHeader nav fix — removed 3 broken links, corrected 2 stale dropdown URLs via auto-bump pipeline — v2026.4.4
+- ✓ Read & Rank verdict badge repair — UUID/slug mismatch + item.supported shape bug fixed; badges render on politician profiles — v2026.4.4
+- ✓ Read & Rank location filter repair — geocoding wiring + filter predicate both fixed; Monroe County candidates correctly scoped — v2026.4.4
+- ✓ Monroe County Council D1→D4 geofence repair — 4 district polygons imported, races re-linked; Kirkwood resolves D4 exclusively in production — v2026.4.4
+- ✓ Cross-app voter loop (Compass→ReadRank→Essentials) — CompassCard guest-cache fallback, Essentials picker links, Treasury CTA on Results page — v2026.4.4
+- ✓ 55-candidate photo gap confirmed unfindable via Ballotpedia+search; ev-ui initials fallback accepted — v2026.4.4
+- ✓ 21 Tier 2 UX polish items — Google Places Autocomplete on landing, address normalization, cross-reference annotations, Compass SQL NULLIF headshot fix, cross-app address bridge — v2026.4.4
 
-## Current Milestone: v2026.4.4 Indiana Primary Fix Wave
+## Last Milestone: v2026.4.4 Indiana Primary Fix Wave (Shipped 2026-04-18)
 
-**Goal:** Ship Tier 1 gap fixes before the May 5 Indiana primary — correct wrong data, repair broken features, and import minimum viable candidate data for Monroe County voters.
+**Delivered:** Pre-primary correctness fixes, verdict badge + location filter repair, Monroe County Council D1→D4 geofence fix, cross-app voter loop polish, 55-candidate photo gap audit (confirmed initials fallback), and 21 Tier 2 UX polish items across essentials, CompassV2, read-rank, and ev-ui. 7 phases, 20 plans, 4 days.
 
-**Target features:**
+**Deferred to v2026.4.5:** Candidate stub resolution (Phase 117), contested-race bio import execution (Phase 120-03), app-wide bio authoring (Phase 124), geofence hardening (Phase 126).
 
-Tier 1 (ship by May 1, 2026):
-- Phase 116 — Quick correctness fixes (wrong election date, broken nav links, wrong default tab)
-- Phase 117 — Candidate stub resolution + data import (~30 stub candidates for contested Monroe County races)
-- Phase 118 — Read & Rank verdict badge display fix (quotes in DB not rendering on profiles)
-- Phase 119 — Read & Rank location filter repair (both filter mechanisms broken)
-- Phase 120 — Contested-race bio + photo authoring (~5–10 candidates)
-- Phase 121 — County Council D1→D4 geofence repair (Kirkwood Bloomington resolves wrong district)
-
-Tier 2 (post-primary):
-- Phase 122 — Cross-app loop polish (Compass→ReadRank→Essentials integration gaps)
-- Phase 123 — Photo coverage expansion (62 remaining candidates)
-- Phase 124 — App-wide bio authoring (~45 candidates)
-- Phase 125 — Tier 2 UX polish bundle (21 minor gaps)
-- Phase 126 — Geofence hardening (rural addresses + 11 missing township geofences)
-
-### Active
-
-- [ ] Phase 116 — Quick correctness fixes
-- [ ] Phase 117 — Candidate stub resolution + data import (CRITICAL: data-sourcing feasibility check first)
-- [ ] Phase 118 — Read & Rank verdict badge fix
-- [ ] Phase 119 — Read & Rank location filter repair
-- [ ] Phase 120 — Contested-race bio + photo authoring
-- [ ] Phase 121 — County Council geofence repair
-
-### Future
-
-- [ ] Compass stance data imports for candidates (PROF-04 — deferred from v2026.3.8)
-- [ ] Sourced quote imports for candidates (PROF-05 — deferred from v2026.3.8)
-- [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
-- [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
-- [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
-- [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
-- [ ] Politician self-calibrated compass with toggle view on profiles
-- [ ] Multi-politician comparison (2-3 overlays at once)
-
-## Last Milestone: v2026.4.3 Indiana Primary Election Readiness Audit (Shipped 2026-04-14)
+## Previous Milestone: v2026.4.3 Indiana Primary Election Readiness Audit (Shipped 2026-04-14)
 
 **Delivered:** Full voter experience audit for Monroe County IN — competitive benchmarking vs BallotReady/VoteSmart/Vote411/Ballotpedia, data completeness audit (46 races, 81 candidates), UX gap analysis, and tiered gap report + execution backlog. 5 phases, 19 plans.
 
@@ -309,4 +281,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-14 — milestone v2026.4.4 started*
+*Last updated: 2026-04-18 — after v2026.4.4 milestone*

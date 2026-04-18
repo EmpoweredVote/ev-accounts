@@ -1,5 +1,33 @@
 # Milestones
 
+## v2026.4.4 Indiana Primary Fix Wave (Shipped: 2026-04-18)
+
+**Phases completed:** 7 shipped phases (116, 118–123, 125), 20 plans
+**Timeline:** 4 days (2026-04-15 — 2026-04-18)
+**Requirements:** 14/25 satisfied; 11 deferred (see Known Gaps)
+**Repos:** ev-ui, essentials, ev-accounts, CompassV2, read-rank
+
+**Delivered:** Pre-primary correctness fixes, verdict badge repair, location filter repair, Monroe County Council district geofence fix, cross-app loop polish, photo coverage expansion (55-candidate audit confirming initials fallback), and 21 Tier 2 UX polish items.
+
+**Key accomplishments:**
+
+1. ev-ui@0.4.1 SiteHeader nav fix — removed 3 broken links, corrected 2 stale dropdown URLs, shipped via auto-bump pipeline; CORR-01/CORR-03 confirmed misflags (already correct in production)
+2. Read & Rank verdict badge repair — fixed UUID/slug mismatch in StanceAccordion + `item.verdict` vs `item.supported` shape bug; badges now render on politician profiles in production
+3. Read & Rank location filter repair — both geocoding wiring and filter predicate logic fixed; Monroe County candidates now correctly scoped in quote list
+4. Monroe County Council D1→D4 geofence repair — 4 MCC district polygons fetched from Monroe County GIS, inserted via idempotent scripts, races re-linked through per-district offices; Kirkwood address now resolves to D4 exclusively in production
+5. Cross-app voter loop closed — CompassCard guest-cache fallback fixed (INTG-01), Compass→Essentials picker links verified (INTG-02), Treasury CTA added to Essentials Results page below matched local-tier sections (INTG-03)
+6. Photo gap audit — 55 NO_PHOTO candidates confirmed unfindable via Ballotpedia + search; initials fallback accepted as correct UX; PHOTO-01 closed
+7. Tier 2 UX polish (21 items) — Google Places Autocomplete on landing page, address normalization, cross-reference annotations, Compass SQL NULLIF headshot fix, cross-app localStorage address bridge, and more
+
+**Known Gaps (deferred at milestone close):**
+
+- Phase 117 (CAND-01–CAND-05): Candidate stub resolution — user confirmed some resolved externally, remainder deferred to next milestone
+- Phase 120-03 (CONT-01–CONT-02): Contested-race bio import script — content researched, import execution deferred
+- Phase 124 (BIO-01–BIO-02): App-wide bio authoring (~45 candidates) — deferred
+- Phase 126 (INFRA-01–INFRA-02): Rural geocoding + township geofence import — deferred
+
+---
+
 ## v2026.4.1 Essentials Visual Polish & Election Improvements (Shipped: 2026-04-04)
 
 **Phases completed:** 5 phases, 11 plans, 17 tasks
