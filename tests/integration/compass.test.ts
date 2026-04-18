@@ -92,4 +92,17 @@ describe('Compass routes — architecture enforcement (CI-safe)', () => {
     );
     expect(serviceSource).not.toContain('supabaseAdmin');
   });
+
+  it('compassService.ts wraps photo_custom_url and photo_origin_url with NULLIF to prevent empty-string short-circuit (G-114-014)', () => {
+    // Source-level check: verify the NULLIF fix is present in the SQL template string.
+    // Full DB-level regression (insert politician with photo_origin_url='', verify fallthrough
+    // to politician_images.url) requires a live Supabase connection and is not feasible in CI.
+    // See G-114-014 in RESEARCH.md for root cause and manual verification steps.
+    const serviceSource = fs.readFileSync(
+      path.resolve(BACKEND_SRC, 'lib/compassService.ts'),
+      'utf-8'
+    );
+    expect(serviceSource).toContain("NULLIF(p.photo_custom_url, '')");
+    expect(serviceSource).toContain("NULLIF(p.photo_origin_url, '')");
+  });
 });

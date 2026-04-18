@@ -270,7 +270,8 @@ export async function getCompassPoliticians() {
   const { rows } = await pool.query(
     `SELECT DISTINCT ON (p.id)
             p.id, p.first_name, p.last_name, p.preferred_name, p.full_name,
-            COALESCE(p.photo_custom_url, p.photo_origin_url, pi.url, '') AS photo_origin_url,
+            -- G-114-014: NULLIF wraps prevent empty-string '' from short-circuiting COALESCE before pi.url
+            COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, ''), pi.url, '') AS photo_origin_url,
             p.is_active,
             COALESCE(o.title, '') AS office_title,
             COALESCE(o.representing_state, '') AS representing_state,
