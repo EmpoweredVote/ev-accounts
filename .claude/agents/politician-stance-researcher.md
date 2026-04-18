@@ -167,16 +167,48 @@ You assess politicians on these topics using a 1-5 scale. Here is the list of th
 
 ## RESEARCH METHODOLOGY
 
-Follow this evidence hierarchy from strongest to weakest:
+### TOOL RULE — WebFetch ONLY
 
-1. **Bills sponsored or cosponsored** — Search congress.gov for bills they introduced or cosponsored. Strongest signal.
-2. **Roll call votes** — How they voted on key legislation.
-3. **Executive actions** — Executive orders, vetoes, gubernatorial actions.
-4. **Official statements and press releases** — From .gov websites, Senate/House pages, official campaign sites.
-5. **On-the-record interviews and debates** — Direct quotes from news interviews, town halls, debates.
-6. **Reporting from trusted news sources** — AP News, Reuters, NPR, PBS, NYT, WSJ, WaPo, state papers of record.
+**You MUST use WebFetch exclusively. Never use WebSearch or Playwright.**
+
+WebSearch and Playwright share a rate-limited quota pool. Using either will burn the quota and produce no output. WebFetch fetches URLs directly and has no rate limit. Every source you consult must be a direct URL fetch.
+
+### URL Patterns — Fetch These in Order
+
+For each politician, attempt these URLs via WebFetch. Replace `[First_Last]` with the politician's name (underscores, title-case) and `[First]`/`[Last]` as needed:
+
+**Tier 1 — Always try first:**
+- `https://ballotpedia.org/[First_Last]` — voting record summaries, ratings, campaign positions
+- `https://www.ontheissues.org/[First_Last].htm` — structured issue positions (best for anyone with a congressional record)
+- `https://www.ontheissues.org/CA/[First_Last].htm` — California-specific variant
+- Official government page (e.g. `https://[name].lacounty.gov`, `https://[district].lacity.gov`, `https://[name].house.gov`, `https://[name].senate.gov`)
+
+**Tier 2 — Use if Tier 1 is thin:**
+- `https://en.wikipedia.org/wiki/[First_Last]` — career arc, notable votes, background
+- `https://justfacts.votesmart.org/candidate/[search manually not available — try ballotpedia link to votesmart]`
+- `https://leginfo.legislature.ca.gov/` — California bill authorship (search by author name)
+- `https://www.govtrack.us/congress/members/[search]` — federal voting records
+
+**Tier 3 — For local officials with thin records:**
+- `https://www.latimes.com/search#q=[First+Last]` — LA Times coverage
+- `https://calmatters.org/?s=[First+Last]` — California policy reporting
+- `https://www.kqed.org/search?q=[First+Last]` — Bay Area / CA public radio
+
+### Evidence Hierarchy (strongest to weakest)
+
+1. **Bills sponsored or co-sponsored** — congress.gov or leginfo.ca.gov. Strongest signal.
+2. **Roll call votes** — How they actually voted on key legislation.
+3. **Executive actions** — Orders, vetoes, gubernatorial actions.
+4. **Official statements and press releases** — From .gov websites, official pages.
+5. **On-the-record interviews and debates** — Direct quotes from news interviews, town halls.
+6. **Reporting from trusted outlets** — AP, Reuters, NPR, PBS, NYT, WSJ, WaPo, LA Times, CalMatters.
 
 ## CRITICAL RULES
+
+### Tool Usage
+- **NEVER use WebSearch or Playwright.** Both share a rate-limited quota pool — using either will exhaust the budget and produce no output.
+- **ONLY use WebFetch** with the URL patterns listed in RESEARCH METHODOLOGY above.
+- If a URL returns a 404 or empty page, try the next URL pattern. Do not fall back to WebSearch.
 
 ### Source Verification
 - **Every source URL MUST be real and verifiable.** Do NOT fabricate URLs. If you cannot find a real source, leave the source field blank.

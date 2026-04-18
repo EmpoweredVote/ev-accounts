@@ -166,6 +166,12 @@ function App() {
         const res = await fetch(SESSION_URL, { credentials: 'include' });
         if (res.status === 401) {
           clearAuth();
+        } else if (res.ok) {
+          const data = await res.json() as { access_token: string; refresh_token: string };
+          if (data.access_token && data.access_token !== accessToken) {
+            localStorage.setItem('ev_token', data.access_token);
+            useAuthStore.setState({ accessToken: data.access_token });
+          }
         }
       } catch {
         // Network error — don't log out (transient failure)

@@ -25,6 +25,7 @@ import type {
   ContributionInsert,
 } from './adapterInterface.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
 
 // ---------------------------------------------------------------------------
 // Socrata SODA API constants — dataset m6g2-gc6c (LA City contributions)
@@ -250,12 +251,19 @@ function normalizeRecords(
     const conEmpr = (rec['con_empr'] as string | undefined) ?? '';
 
     // Enrich raw record with optional fields for storage.
+    // Standard field names (contributor_*) are aliases so campaignFinanceService
+    // can extract them without source-specific knowledge.
     const enrichedRec: Record<string, unknown> = {
       ...rec,
       con_city_nm: conCityNm,
       con_state_nm: conStateNm,
       con_occp: conOccp,
       con_empr: conEmpr,
+      contributor_name: conName,
+      contributor_occupation: conOccp,
+      contributor_employer: conEmpr,
+      contributor_city: conCityNm,
+      contributor_state: conStateNm,
     };
 
     contributions.push({
@@ -269,6 +277,7 @@ function normalizeRecords(
       data_source: 'la_socrata',
       source_transaction_id: sourceTransactionId,
       raw_record: enrichedRec,
+      donor_name_normalized: normalizeDonorName(conName || null),
     });
   }
 
@@ -335,11 +344,11 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
       }
 
       // raw_record needs its own set of params with jsonb cast.
-      // Rebuild: interleave raw_record as $10, $20, etc.
+      // Rebuild: interleave raw_record as $10, donor_name_normalized as $11, etc.
       const params2: unknown[] = [];
       const valuePlaceholders2 = batch.map((_, rowIdx) => {
-        const base = rowIdx * 10;
-        return `($${base + 1},$${base + 2},$${base + 3},$${base + 4},$${base + 5},$${base + 6},$${base + 7},$${base + 8},$${base + 9},$${base + 10})`;
+        const base = rowIdx * 11;
+        return `($${base + 1},$${base + 2},$${base + 3},$${base + 4},$${base + 5},$${base + 6},$${base + 7},$${base + 8},$${base + 9},$${base + 10},$${base + 11})`;
       });
 
       for (const c of batch) {
@@ -353,17 +362,21 @@ async function upsertContributions(contributions: ContributionInsert[]): Promise
           c.confidence_level,
           c.data_source,
           c.source_transaction_id,
-          JSON.stringify(c.raw_record)
+          JSON.stringify(c.raw_record),
+          c.donor_name_normalized
         );
       }
 
       const sql = `
         INSERT INTO transparent_motivations.contributions
           (politician_source_id, donor_id, committee_id, amount, contribution_date,
-           election_cycle, confidence_level, data_source, source_transaction_id, raw_record)
+           election_cycle, confidence_level, data_source, source_transaction_id, raw_record,
+           donor_name_normalized)
         VALUES ${valuePlaceholders2.join(',')}
         ON CONFLICT (data_source, source_transaction_id)
-          DO UPDATE SET updated_at = NOW()
+          DO UPDATE SET
+            updated_at = NOW(),
+            donor_name_normalized = EXCLUDED.donor_name_normalized
         RETURNING (xmax = 0) AS inserted`;
 
       const result = await pool.query<{ inserted: boolean }>(sql, params2);

@@ -16,6 +16,7 @@
  */
 
 import { pool } from './db.js';
+import { normalizeDonorName } from './adapters/normalizeDonorName.js';
 
 // ---------------------------------------------------------------------------
 // TypeScript interfaces — ported from models.go
@@ -311,6 +312,7 @@ interface FecRawRecord {
   contributor_occupation?: string;
   contributor_employer?: string;
   contributor_name?: string;
+  [key: string]: unknown;
 }
 
 function parseRawRecord(rawRecord: string | null): FecRawRecord {
@@ -333,15 +335,24 @@ function extractDonorType(rawRecord: string | null): string {
 }
 
 function extractOccupation(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_occupation ?? '';
+  const rec = parseRawRecord(rawRecord);
+  return (rec.contributor_occupation ?? (rec['con_occp'] as string | undefined)) ?? '';
 }
 
 function extractEmployer(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_employer ?? '';
+  const rec = parseRawRecord(rawRecord);
+  return (rec.contributor_employer ?? (rec['con_empr'] as string | undefined)) ?? '';
 }
 
 function extractContributorName(rawRecord: string | null): string {
-  return parseRawRecord(rawRecord).contributor_name ?? '';
+  const rec = parseRawRecord(rawRecord);
+  if (rec.contributor_name) return rec.contributor_name;
+  const socrataName = rec['con_name'] as string | undefined;
+  if (socrataName) return socrataName;
+  // Netfile: composite last + first
+  const last = (rec['Tran_NamL'] as string | undefined) ?? '';
+  const first = (rec['Tran_NamF'] as string | undefined) ?? '';
+  return `${last} ${first}`.trim();
 }
 
 // ---------------------------------------------------------------------------
@@ -556,7 +567,7 @@ export async function getSummary(
   // Query occupations for sector breakdown (TypeScript-side classification)
   const occResult = await pool.query<OccupationRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_occupation', '') AS occupation,
+       COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '') AS occupation,
        c.amount
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
@@ -585,7 +596,7 @@ export async function getSummary(
   // Query top donors
   const donorResult = await pool.query<DonorRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_name', '') AS contributor_name,
+       COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), '') AS contributor_name,
        SUM(c.amount) AS total_amount,
        COUNT(*) AS contribution_count,
        MIN(CASE c.confidence_level
@@ -593,14 +604,14 @@ export async function getSummary(
            WHEN 'MEDIUM'    THEN 2
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END) AS confidence_level_n,
-       (array_agg(c.raw_record ORDER BY c.amount DESC))[1] AS raw_record
+       MIN(c.raw_record::text)::jsonb AS raw_record
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ps.research_status = 'confirmed'
        ${confidenceClause}
-     GROUP BY c.raw_record->>'contributor_name'
+     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''))
      ORDER BY total_amount DESC
      LIMIT 20`,
     baseParams
@@ -1503,4 +1514,148 @@ export async function markUnresolvedActive(
     [adapterName, externalId]
   );
   return result.rowCount ?? 0;
+}
+
+// ---------------------------------------------------------------------------
+// Donor Search — types + service function
+// ---------------------------------------------------------------------------
+
+export interface DonorContributionRow {
+  date: string | null;
+  amount: number;
+  employer: string;
+  city: string;
+  state: string;
+  confidence_level: string;
+}
+
+export interface DonorSearchGroup {
+  politician_id: string;
+  politician_name: string;
+  office_title: string | null;
+  jurisdiction: string | null;
+  district: string | null;
+  total_donated: number;
+  contribution_count: number;
+  mode_confidence: string;
+  contributions: DonorContributionRow[];
+}
+
+export interface DonorSearchResponse {
+  query: string;
+  politicians: DonorSearchGroup[];
+}
+
+/**
+ * modeConfidence returns the confidence_level value that appears most often
+ * across a set of contribution rows. Falls back to 'HIGH' if list is empty.
+ */
+function modeConfidence(contributions: Array<{ confidence_level: string }>): string {
+  const counts: Record<string, number> = {};
+  for (const c of contributions) {
+    counts[c.confidence_level] = (counts[c.confidence_level] ?? 0) + 1;
+  }
+  return Object.entries(counts).sort(([, a], [, b]) => b - a)[0]?.[0] ?? 'HIGH';
+}
+
+/**
+ * searchDonors — public donor name search, cycle-agnostic.
+ *
+ * Normalizes the raw query via normalizeDonorName() before any SQL, uses
+ * pg_trgm word_similarity with a GIN index for fuzzy, word-order-insensitive
+ * matching, and returns results grouped by politician.
+ *
+ * politician_source_id is NEVER exposed in any response field.
+ */
+export async function searchDonors(rawQuery: string): Promise<DonorSearchResponse> {
+  const normalized = normalizeDonorName(rawQuery);
+
+  // Anonymous donors carry no useful information — return empty immediately.
+  if (normalized === 'anonymous') {
+    return { query: rawQuery, politicians: [] };
+  }
+
+  // Calibrate similarity threshold by normalized query length.
+  const threshold =
+    normalized.length <= 4 ? 0.15 :
+    normalized.length <= 7 ? 0.20 :
+    0.25;
+
+  const sql = `
+    WITH donor_matches AS (
+      SELECT DISTINCT c.donor_name_normalized
+      FROM transparent_motivations.contributions c
+      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+      WHERE c.donor_name_normalized operator(extensions.%>) $1
+        AND extensions.word_similarity($1, c.donor_name_normalized) >= ${threshold}
+        AND ps.research_status = 'confirmed'
+      LIMIT 50
+    ),
+    grouped AS (
+      SELECT
+        ps.essentials_politician_id,
+        SUM(c.amount) AS total_donated,
+        COUNT(*) AS contribution_count,
+        json_agg(json_build_object(
+          'date', c.contribution_date,
+          'amount', c.amount,
+          'employer', COALESCE(c.raw_record->>'contributor_employer', c.raw_record->>'con_empr'),
+          'city', COALESCE(c.raw_record->>'contributor_city', c.raw_record->>'con_city_nm'),
+          'state', COALESCE(c.raw_record->>'contributor_state', c.raw_record->>'con_state_nm'),
+          'confidence_level', c.confidence_level
+        ) ORDER BY c.contribution_date DESC) AS contributions
+      FROM transparent_motivations.contributions c
+      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+      JOIN donor_matches dm ON c.donor_name_normalized = dm.donor_name_normalized
+      WHERE ps.research_status = 'confirmed'
+      GROUP BY ps.essentials_politician_id
+    )
+    SELECT p.id AS politician_id, p.full_name AS politician_name,
+      o.title AS office_title, g.name AS jurisdiction, d.label AS district,
+      gr.total_donated, gr.contribution_count, gr.contributions
+    FROM grouped gr
+    JOIN essentials.politicians p ON p.id = gr.essentials_politician_id
+    LEFT JOIN essentials.offices o ON o.politician_id = p.id AND o.is_vacant = false
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    LEFT JOIN essentials.governments g ON g.id = ch.government_id
+    ORDER BY gr.total_donated DESC
+  `;
+
+  const result = await pool.query(sql, [normalized]);
+
+  const politicians: DonorSearchGroup[] = result.rows.map((row) => {
+    // pg returns json_agg as a parsed JS array already
+    const rawContribs: Array<{
+      date: string | null;
+      amount: string | number;
+      employer: string | null;
+      city: string | null;
+      state: string | null;
+      confidence_level: string;
+    }> = Array.isArray(row.contributions) ? row.contributions : [];
+
+    const contributions: DonorContributionRow[] = rawContribs.map((c) => ({
+      date: c.date ?? null,
+      amount: Number(c.amount),
+      employer: c.employer ?? '',
+      city: c.city ?? '',
+      state: c.state ?? '',
+      confidence_level: c.confidence_level,
+    }));
+
+    return {
+      politician_id: row.politician_id as string,
+      politician_name: row.politician_name as string,
+      office_title: (row.office_title as string | null) ?? null,
+      jurisdiction: (row.jurisdiction as string | null) ?? null,
+      district: (row.district as string | null) ?? null,
+      total_donated: Number(row.total_donated),
+      contribution_count: Number(row.contribution_count),
+      mode_confidence: modeConfidence(contributions),
+      contributions,
+    };
+  });
+
+  return { query: rawQuery, politicians };
 }

@@ -74,10 +74,9 @@ await pool.end();
 For each politician, dispatch a `politician-stance-researcher` agent using the Agent tool.
 
 **Dispatch rules:**
-- One agent per politician for well-known politicians (federal, state-level)
-- Batches of 2-3 per agent for lesser-known politicians (local officials)
-- Run agents **in parallel** — use multiple Agent tool calls in a single message
-- Maximum 5 concurrent agents to stay within reasonable limits
+- **Always dispatch ONE agent at a time.** Never run agents in parallel.
+- Wait for each agent to complete and confirm the CSV was written before dispatching the next.
+- Running parallel agents burns the WebSearch/Playwright rate limit quota instantly, producing no usable output.
 
 **Agent prompt template:**
 
@@ -102,9 +101,14 @@ Do NOT invent your own topic_key slugs.
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
-Important:
+TOOL RULE — CRITICAL:
+- Use WebFetch ONLY. Never use WebSearch or Playwright — both share a rate-limited quota pool.
+- Fetch URLs directly using the URL patterns in your agent definition (Ballotpedia, ontheissues.org, official pages, Wikipedia, CalMatters, LA Times).
+- If a URL 404s, try the next pattern. Do not fall back to WebSearch.
+
+Other rules:
 - Skip any topic where you cannot find sufficient evidence
-- Every source URL must be real and verifiable
+- Every source URL must be real and verifiable — only include URLs you actually fetched successfully
 - Use the full 1-5 range based on evidence, not party affiliation
 ```
 

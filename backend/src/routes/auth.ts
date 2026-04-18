@@ -499,7 +499,7 @@ router.post('/request-access', authLimiter, async (req: Request, res: Response):
         html: `<p>Someone just requested access to Empowered Vote.</p>
                <p><strong>Email:</strong> ${parsed.data.email}</p>
                <p><strong>Time:</strong> ${new Date().toISOString()}</p>
-               <p>Review in the <a href="https://accounts.empowered.vote/admin/access-requests">admin panel</a>.</p>`,
+               <p>Review in the <a href="https://login.empowered.vote/admin/access-requests">admin panel</a>.</p>`,
       });
     }
 

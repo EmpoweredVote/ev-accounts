@@ -84,7 +84,7 @@ export default function LoginPage() {
           </div>
         )}
 
-        <h2 className="text-lg font-semibold text-white">Sign in</h2>
+        <h2 className="text-lg font-semibold text-white">Log in</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
@@ -118,7 +118,7 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-ev-teal-light text-ev-black rounded-xl py-3 font-bold text-base hover:bg-ev-teal-light/90 disabled:opacity-40 transition-colors"
           >
-            {loading ? 'Signing in…' : 'Sign in'}
+            {loading ? 'Logging in…' : 'Log in'}
           </button>
         </form>
 

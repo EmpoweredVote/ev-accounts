@@ -69,6 +69,7 @@ export interface ContributionInsert {
   data_source: string;
   source_transaction_id: string;
   raw_record: Record<string, unknown>;
+  donor_name_normalized: string;
 }
 
 // ---------------------------------------------------------------------------

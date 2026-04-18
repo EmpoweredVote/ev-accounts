@@ -21,6 +21,9 @@ if (env.ADMIN_SERVICE_KEY) {
 if (env.ESSENTIALS_SERVICE_KEY) {
   SERVICE_KEY_MAP[env.ESSENTIALS_SERVICE_KEY] = ['essentials-rep-lookup'];
 }
+if (env.VQ_SERVICE_KEY) {
+  SERVICE_KEY_MAP[env.VQ_SERVICE_KEY] = ['vq_ingest'];
+}
 
 /**
  * requireServiceKey — validate X-Service-Key header and attach permitted sources.

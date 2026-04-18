@@ -18,6 +18,7 @@ import {
   getSummary,
   getContributions,
   validateConfidence,
+  searchDonors,
 } from '../lib/campaignFinanceService.js';
 import { searchPoliticians } from '../lib/campaignFinanceSearchService.js';
 
@@ -57,6 +58,31 @@ router.get('/search', async (req: Request, res: Response): Promise<void> => {
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /campaign-finance/search] error:', err);
+    res.status(500).json({ code: 'SEARCH_ERROR', message: 'Internal search error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/campaign-finance/donors/search?q=
+// Public donor name search — no auth required
+// ---------------------------------------------------------------------------
+
+router.get('/donors/search', async (req: Request, res: Response): Promise<void> => {
+  const q = ((req.query.q as string) || '').trim();
+
+  if (q.length < 2) {
+    res.status(400).json({
+      code: 'QUERY_TOO_SHORT',
+      message: 'Search query must be at least 2 characters',
+    });
+    return;
+  }
+
+  try {
+    const result = await searchDonors(q);
+    res.status(200).json(result);
+  } catch (err) {
+    console.error('[GET /campaign-finance/donors/search] error:', err);
     res.status(500).json({ code: 'SEARCH_ERROR', message: 'Internal search error' });
   }
 });
