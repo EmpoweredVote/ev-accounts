@@ -471,6 +471,39 @@
 
 ---
 
+## Milestone: v2026.4.4 — Indiana Primary Fix Wave
+
+**Shipped:** 2026-04-18
+**Phases:** 7 shipped (116, 118–123, 125) | **Plans:** 20
+
+### What Was Built
+- ev-ui@0.4.1 SiteHeader nav cleanup (3 broken links removed, 2 stale URLs fixed) via auto-bump pipeline
+- Read & Rank verdict badge repair — two compounding bugs: UUID/slug mismatch in StanceAccordion + `item.verdict` vs `item.supported` API shape mismatch
+- Read & Rank location filter repair — geocoding wiring and filter predicate both fixed
+- Monroe County Council D1→D4 geofence fix — 4 district polygons from Monroe County GIS, idempotent import + race re-link SQL
+- Cross-app voter loop polish — CompassCard guest-cache fallback, Compass→Essentials picker links verified, Treasury CTA on Essentials Results
+- 55-candidate photo gap audit — confirmed all NO_PHOTO via Ballotpedia + search; initials fallback accepted
+- 21 Tier 2 UX items — Google Places Autocomplete on landing, address normalization, Compass SQL NULLIF fix, cross-app address localStorage bridge
+
+### What Worked
+- Hypothesis-first diagnosis (H1–H5) for verdict badge (Phase 118) avoided guessing; root cause pinpointed before any code written
+- Wave structure (Wave 0 diagnosis → Wave 1 fix → Wave 2 verify) consistently produced clean, production-verified fixes
+- Geofence repair via authoritative GIS source (Monroe County FeatureServer) rather than manual polygon construction — idempotent script ran cleanly
+- Accepting NO_PHOTO as the correct outcome (Phase 123) rather than forcing low-quality photos — saved time and improved UX
+
+### What Was Inefficient
+- 4 phases deferred (117, 120-03, 124, 126) — milestone scope was too broad relative to primary deadline pressure
+- REQUIREMENTS.md checkboxes not kept in sync with phase completions; required manual reconciliation at close
+- Phase 124/126 plan details in ROADMAP.md mistakenly copied from Phase 121 — stale data went unnoticed until close
+
+### Key Lessons
+1. Milestone scope should match available time — 11 phases with a 2-week deadline was aggressive; 7 shipped is still a win
+2. Diagnosis-before-fix is worth the extra plan; saves rework on subtle compound bugs (verdict badge took 2 compounding fixes)
+3. "Fixed externally" is a valid outcome — track these explicitly so future requirements accounting is accurate
+4. Idempotent import scripts with per-record try/catch are the right default for any DB seeding
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
