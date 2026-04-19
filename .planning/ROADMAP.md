@@ -62,7 +62,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
   4. Component props accept a politician object, the user's compass answers, and tier/branch visuals; a prototype harness demonstrates all three
 **Plans**: 3 plans
 - [x] 127-01-PLAN.md — Scaffold @floating-ui peer dep + port PlaceholderRadar + port IconOverlay (leaf primitives)
-- [ ] 127-02-PLAN.md — Build CompassCardHorizontal + Meta + compassHelpers; add barrel exports
+- [x] 127-02-PLAN.md — Build CompassCardHorizontal + Meta + compassHelpers; add barrel exports
 - [ ] 127-03-PLAN.md — Update essentials Prototype harness + view toggle persistence + human-verify checkpoint
 **UI hint**: yes
 
@@ -107,6 +107,6 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 | 124. App-Wide Bio Authoring | v2026.4.4 | 0/4 | Deferred | - |
 | 125. Tier 2 UX Polish Bundle | v2026.4.4 | 4/4 | Complete | 2026-04-18 |
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
-| 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 1/3 | In Progress|  |
+| 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 2/3 | In Progress|  |
 | 128. Empty & Non-Compass Variants | v2026.4.5 | 0/0 | Not started | - |
 | 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 0/0 | Not started | - |
