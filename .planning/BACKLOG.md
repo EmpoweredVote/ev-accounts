@@ -100,6 +100,12 @@ Each phase entry below is ROADMAP-ready per D-08. To start v2026.4.4, copy these
 
 
 
+### Treasury: Geo-match address to available budgets (PostGIS)
+**Goal:** When a user arrives at Treasury Tracker with an `evUserAddress` cookie, use the address to run a proper geofence match (ST_Intersects, same pattern as Essentials) against treasury municipality boundaries — returning only the township, city, and county that actually contain the address, rather than all municipalities in the same state.
+**Context:** Current "Near you" section filters by state only, which surfaces every municipality in that state. A real address like "123 Kirkwood Ave, Bloomington IN" should match Monroe County + Bloomington City (and maybe Perry Township) — not all IN municipalities as we add more. Requires storing lat/lng in the `evUserAddress` cookie (or geocoding on the Treasury backend) and maintaining PostGIS boundaries for each treasury municipality.
+**Depends on:** Nothing — already needed. Treasury has both Indiana and California municipalities, so state-level filtering already shows all CA municipalities to any California user, which will be overwhelming as coverage grows. Should be prioritized before adding more municipalities.
+
+
 ## Excluded from Backlog (per D-02 feasibility ceiling)
 
 The following benchmark-derived gaps are NOT in this backlog because they cannot plausibly ship by May 1 AND they represent new product surface area, not fixes:

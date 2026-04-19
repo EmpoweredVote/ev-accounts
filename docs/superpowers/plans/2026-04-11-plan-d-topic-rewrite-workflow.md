@@ -1935,16 +1935,27 @@ If either count mismatches, stop and investigate **before** running any further 
 - [ ] **Step 5: Verify voter-facing API still returns exactly one live version of the topic**
 
 ```bash
+# Note: /api/compass/topics does not return topic_key — filter by the new
+# title you just published instead. Substitute NEW_TITLE_SUBSTRING with a
+# unique snippet from the new title (e.g. "Artificial Intelligence Oversight").
 curl -s "https://api.empowered.vote/api/compass/topics" | python3 -c "
 import sys, json
 data = json.load(sys.stdin)
-hits = [t for t in data if t.get('topic_key') == 'TEST_TOPIC_KEY']
+needle = 'NEW_TITLE_SUBSTRING'
+hits = [t for t in data if needle in (t.get('title') or '')]
 print(f'live topic rows returned: {len(hits)}')
-print(hits[0] if hits else 'MISSING')
+if hits:
+    h = hits[0]
+    print(json.dumps({k: h.get(k) for k in ['id','title','short_title','question_text','version','is_live']}, indent=2))
+    print('stances:')
+    for s in h.get('stances', []):
+        print(f\"  {s.get('value')}: {s.get('text')}\")
+else:
+    print('MISSING')
 "
 ```
 
-Expected: exactly one row with the " [TEST REWRITE]" question text.
+Expected: exactly one row with the new framing (new title, question_text, and 5 new stances).
 
 - [ ] **Step 6: Clean up the test (optional — Chris's call)**
 

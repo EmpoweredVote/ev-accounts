@@ -11,6 +11,7 @@ import invitesRouter from './routes/invites.js';
 import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import compassAdminRouter from './routes/compassAdmin.js';
+import topicRewritesRouter from './routes/topicRewrites.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
@@ -29,6 +30,7 @@ import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
+import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
@@ -93,6 +95,7 @@ app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
 // GET /api/essentials/candidates/:zip
@@ -107,6 +110,7 @@ app.use('/api/candidates', candidatesRouter);
 // GET /api/essentials/chambers/:id
 // GET /api/essentials/districts/:id
 // NOTE: /candidates, /politicians, /browse mounts must come BEFORE /essentials to prevent path capture
+app.use('/api/essentials/ingest', essentialsIngestRouter);
 app.use('/api/essentials/browse', essentialsBrowseRouter);
 app.use('/api/essentials/bodies', essentialsBodiesRouter);
 app.use('/api/essentials/candidates', essentialsCandidatesRouter);
