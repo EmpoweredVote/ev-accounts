@@ -47,7 +47,7 @@ Declared values sourced from `ev-ui/src/tokens.js` `spacing` export (4px base un
 **Exceptions:**
 - Radar wrapper: fixed at 260px wide (250px radar + 10px label bleed) — not a spacing token, a dimensional constraint inherited from variant C
 - Touch target minimum: 44px height enforced on the card itself via `minHeight: '44px'` (matches existing `CompassFirstCard` convention)
-- Affordance icon hit area: 5px inset padding around each icon (from `IconOverlay` pattern — `padding: '5px'`)
+- Affordance icon hit area: `padding: '4px'` (xs token) around each icon. The 44px card `minHeight` guarantees touch-target safety independently, so 4px padding is sufficient. Source `IconOverlay.jsx` uses 5px — ev-ui implementation uses 4px (xs token) to conform to the 4px scale.
 
 **Source:** `ev-ui/src/tokens.js` spacing export; `essentials/src/components/CompassFirstCard.jsx` VARIANT_CONFIG.C
 
@@ -62,7 +62,11 @@ All type is Manrope. Weights are sourced from `ev-ui/src/tokens.js` `fontWeights
 | Name | 18px (`fontSizes.lg`) | 600 semibold | 1.4 | Politician full name — meta column heading |
 | Label | 14px (`fontSizes.sm`) | 600 semibold | 1.4 | Office title (representatives surface) or "Position running for" (elections surface) |
 | Caption | 14px (`fontSizes.sm`) | 400 regular | 1.5 | District/ward subtitle below title |
-| Micro | 12px (`fontSizes.xs`) | 500 medium | 1.4 | "Running unopposed" banner text; tooltip copy |
+| Micro | 12px (`fontSizes.xs`) | 400 regular | 1.4 | "Running unopposed" banner text; tooltip copy |
+
+**Declared weights: 400 (Caption + Micro) and 600 (Name + Label). Maximum 2 weights.**
+
+"Running unopposed" banner text remains visually distinct from Caption via its 12px size, accent color `#00657C`, and banded background context — a third weight is not needed.
 
 **Constraints:**
 - Office title is clamped at 2 lines (`WebkitLineClamp: 2`) — overflow is truncated, not scrolled
@@ -88,6 +92,8 @@ All type is Manrope. Weights are sourced from `ev-ui/src/tokens.js` `fontWeights
 │                      │  "Running unopposed" banner   │
 └──────────────────────────────────────────────────────┘
 ```
+
+**Primary visual anchor:** left radar/portrait slot (260px, dominant by width). Secondary anchor: politician name in accent color `#00657C`.
 
 - **Direction:** `flexDirection: 'row'`, `alignItems: 'center'`
 - **Radar slot width:** 260px fixed, `flexShrink: 0`, overflow hidden
@@ -250,7 +256,7 @@ This section is load-bearing for the executor. It defines the exact prop surface
    - Left border: `3px solid #00657C`
    - Border-radius: `borderRadius.md` (8px)
    - Padding: `4px 8px`
-   - Text: "Running unopposed" — 12px, weight 500, color `#00657C`
+   - Text: "Running unopposed" — 12px, weight 400, color `#00657C`
 
 **Source:** D-07, D-08, D-09; CONTEXT.md §Decisions; DISCUSSION-LOG.md §Metadata parity layout
 
