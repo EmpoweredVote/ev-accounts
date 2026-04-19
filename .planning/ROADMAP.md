@@ -36,7 +36,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 **Granularity:** standard
 **Requirements coverage:** 10/10 v1 requirements mapped
 
-- [ ] **Phase 127: CompassCardHorizontal in ev-ui** — Publish the horizontal compass-first card component with dual-view toggle and preserved affordances
+- [x] **Phase 127: CompassCardHorizontal in ev-ui** — Publish the horizontal compass-first card component with dual-view toggle and preserved affordances (completed 2026-04-19)
 - [ ] **Phase 128: Empty & Non-Compass Variants** — Add placeholder, administrative, and judicial variants for cases where a compass doesn't apply
 - [ ] **Phase 129: Essentials Adoption & Prototype Retirement** — Replace existing cards on Representatives and Elections pages; retire `/prototype`; ship via auto-bump
 
@@ -63,7 +63,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 **Plans**: 3 plans
 - [x] 127-01-PLAN.md — Scaffold @floating-ui peer dep + port PlaceholderRadar + port IconOverlay (leaf primitives)
 - [x] 127-02-PLAN.md — Build CompassCardHorizontal + Meta + compassHelpers; add barrel exports
-- [ ] 127-03-PLAN.md — Update essentials Prototype harness + view toggle persistence + human-verify checkpoint
+- [x] 127-03-PLAN.md — Update essentials Prototype harness + view toggle persistence + human-verify checkpoint
 **UI hint**: yes
 
 ### Phase 128: Empty & Non-Compass Variants
@@ -107,6 +107,6 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 | 124. App-Wide Bio Authoring | v2026.4.4 | 0/4 | Deferred | - |
 | 125. Tier 2 UX Polish Bundle | v2026.4.4 | 4/4 | Complete | 2026-04-18 |
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
-| 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 2/3 | In Progress|  |
+| 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
 | 128. Empty & Non-Compass Variants | v2026.4.5 | 0/0 | Not started | - |
 | 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 0/0 | Not started | - |
