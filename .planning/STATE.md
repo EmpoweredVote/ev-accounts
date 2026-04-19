@@ -2,14 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2026.4.5
 milestone_name: Compass-First Politician Card
-status: Roadmap drafted, awaiting plan decomposition via `/gsd-plan-phase 127`
-last_updated: "2026-04-19T01:39:36.912Z"
-last_activity: 2026-04-18 — Milestone v2026.4.5 roadmap created (phases 127, 128, 129)
+status: executing
+last_updated: "2026-04-19T02:20:39.537Z"
+last_activity: 2026-04-19 -- Phase 127 execution started
 progress:
   total_phases: 2
   completed_phases: 0
-  total_plans: 0
+  total_plans: 3
   completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -19,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** v2026.4.5 Compass-First Politician Card — CompassCardHorizontal component → variants → Essentials adoption
+**Current focus:** Phase 127 — compass-card-horizontal-ev-ui
 
 ## Current Position
 
-Phase: 127 — CompassCardHorizontal in ev-ui (not started)
-Plan: —
-Status: Roadmap drafted, awaiting plan decomposition via `/gsd-plan-phase 127`
-Last activity: 2026-04-18 — Milestone v2026.4.5 roadmap created (phases 127, 128, 129)
+Phase: 127 (compass-card-horizontal-ev-ui) — EXECUTING
+Plan: 1 of 3
+Status: Executing Phase 127
+Last activity: 2026-04-19 -- Phase 127 execution started
 
 ## Performance Metrics
 
