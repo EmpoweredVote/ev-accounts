@@ -60,7 +60,10 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
   2. A user viewing a rendered card can toggle between compass (radar) view and portrait/photo view, and the toggle choice sticks while the user stays on the page (or across sessions per decision in discuss-phase)
   3. A card rendered for a politician with tier/branch/term data shows all current PoliticianCard affordances (tier/branch badges, elected/appointed marker, unopposed icon, term dates, years-in-office, chamber/district subtitle, initials fallback) with no regression versus today
   4. Component props accept a politician object, the user's compass answers, and tier/branch visuals; a prototype harness demonstrates all three
-**Plans**: TBD
+**Plans**: 3 plans
+- [ ] 127-01-PLAN.md — Scaffold @floating-ui peer dep + port PlaceholderRadar + port IconOverlay (leaf primitives)
+- [ ] 127-02-PLAN.md — Build CompassCardHorizontal + Meta + compassHelpers; add barrel exports
+- [ ] 127-03-PLAN.md — Update essentials Prototype harness + view toggle persistence + human-verify checkpoint
 **UI hint**: yes
 
 ### Phase 128: Empty & Non-Compass Variants
