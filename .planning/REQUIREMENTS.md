@@ -36,7 +36,20 @@
 
 ## Traceability
 
-Filled by roadmapper in ROADMAP.md.
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| CARD-01 | Phase 127 | Pending |
+| CARD-02 | Phase 127 | Pending |
+| CARD-03 | Phase 127 | Pending |
+| STATE-01 | Phase 128 | Pending |
+| STATE-02 | Phase 128 | Pending |
+| STATE-03 | Phase 128 | Pending |
+| ADOPT-01 | Phase 129 | Pending |
+| ADOPT-02 | Phase 129 | Pending |
+| ADOPT-03 | Phase 129 | Pending |
+| ADOPT-04 | Phase 129 | Pending |
+
+**Coverage:** 10/10 requirements mapped, no orphans, no duplicates.
 
 ---
 

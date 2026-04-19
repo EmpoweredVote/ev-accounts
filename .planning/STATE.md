@@ -1,13 +1,13 @@
 ---
 gsd_state_version: 1.0
 milestone: v2026.4.5
-milestone_name: milestone
+milestone_name: Compass-First Politician Card
 status: planning
-stopped_at: "v2026.4.5 milestone started — defining requirements"
+stopped_at: "v2026.4.5 roadmap drafted — ready to plan Phase 127"
 last_updated: "2026-04-18T00:00:00.000Z"
 last_activity: 2026-04-18
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone — deferred items from v2026.4.4 are candidates
+**Current focus:** v2026.4.5 Compass-First Politician Card — CompassCardHorizontal component → variants → Essentials adoption
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 127 — CompassCardHorizontal in ev-ui (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-04-18 — Milestone v2026.4.5 Compass-First Politician Card started
+Status: Roadmap drafted, awaiting plan decomposition via `/gsd-plan-phase 127`
+Last activity: 2026-04-18 — Milestone v2026.4.5 roadmap created (phases 127, 128, 129)
 
 ## Performance Metrics
 
@@ -42,7 +42,7 @@ Last activity: 2026-04-18 — Milestone v2026.4.5 Compass-First Politician Card 
 
 ## Deferred Items
 
-Items acknowledged and deferred at milestone close on 2026-04-18:
+Items acknowledged and deferred at v2026.4.4 close on 2026-04-18 (not in v2026.4.5 scope unless explicitly re-added):
 
 | Category | Item | Status |
 |----------|------|--------|
@@ -75,5 +75,5 @@ Known deferred items at close: 4 (see above)
 
 ## Session Continuity
 
-Last activity: 2026-04-18 - Completed quick task 260418-tlq: Fix Nicole Bolden display — city clerk reclassified before council-chamber check
-Next: `/gsd-new-milestone` to define v2026.4.5 scope
+Last activity: 2026-04-18 — v2026.4.5 roadmap created; phases 127, 128, 129 defined with 100% requirement coverage (10/10)
+Next: `/gsd-plan-phase 127` to decompose CompassCardHorizontal into plans
