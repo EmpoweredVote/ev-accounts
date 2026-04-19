@@ -8,6 +8,18 @@ A civic engagement platform helping voters make informed decisions through an in
 
 Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
 
+## Current Milestone: v2026.4.5 Compass-First Politician Card
+
+**Goal:** Ship a compass-first horizontal politician card across Essentials (and ev-ui), based on the existing prototype, while preserving current card metadata and handling cases where a compass doesn't apply.
+
+**Target features:**
+- Promote horizontal compass-first card from `/prototype` to the primary Essentials card on Representatives and Elections pages
+- View toggle between compass (radar) view and photo/portrait view
+- Preserve existing card affordances (unopposed, elected/appointed, term dates, tier/branch badges, contextual icons)
+- User-side empty state when compass isn't complete — guided path to build one
+- Non-compass variant for administrative roles (clerks, auditors, etc.) and judges — content TBD during discuss/plan
+- Shared `feat/compass-first-card` branch across essentials, ev-ui, and CompassV2 to signal in-flight work
+
 ## Requirements
 
 ### Validated
@@ -281,4 +293,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-18 — after v2026.4.4 milestone*
+*Last updated: 2026-04-18 — v2026.4.5 milestone started*
