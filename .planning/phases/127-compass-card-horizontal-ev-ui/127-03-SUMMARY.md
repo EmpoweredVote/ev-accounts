@@ -213,3 +213,21 @@ No new security surface introduced:
 - [x] Commit df4d213 exists in essentials repo (main branch)
 - [x] ev-ui version 0.4.4 unchanged
 - [x] No git tag pushed
+
+## Human Verification — APPROVED
+
+**Checkpoint completed:** 2026-04-19
+
+**Sign-off:** All 8 scenarios approved with the following notes:
+
+### Fixes applied during verification
+- `PlaceholderRadar.jsx`: added missing `import React` (caused crash on load)
+- `CompassCardHorizontal.jsx`: `compareData` defaulted to `{}` not `null` (Object.keys crash)
+- Portrait/initials: slot made bleed edge-to-edge (removed card padding, `overflow:hidden` clips corners)
+- Portrait slot: fixed to 260×260 square matching compass dimensions
+- "Running Unopposed" overlay: matched ElectionsView style (full-width semi-transparent bar), positioned 15px from bottom, 12px font, `rgba(0,0,0,0.35)`
+- IconOverlay: `-4px` left margin so icons align flush with text
+
+### Open notes (for future phases)
+- **PlaceholderRadar visual**: user not fully satisfied with empty-data treatment — addressed in Phase 128+
+- **Compass icon**: will be retired from IconOverlay in a future phase (compass is now native to the card); ballot and branch icons remain
