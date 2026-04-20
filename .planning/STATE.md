@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2026.4.5
 milestone_name: Compass-First Politician Card
 status: executing
-last_updated: "2026-04-19T05:00:00.000Z"
-last_activity: 2026-04-19 -- Phase 127 complete (3/3 plans, VERIFICATION PASS, REVIEW PASS WITH NOTES)
+last_updated: "2026-04-20T01:00:12Z"
+last_activity: 2026-04-20 -- Quick task 260419-szc complete (LOCAL admin officer sub-group split, 5/5 tests pass)
 progress:
   total_phases: 2
   completed_phases: 1
@@ -71,8 +71,9 @@ Known deferred items at close: 4 (see above)
 | 260418-t6w | Change compass radar chart colors to Dusk/Sage scheme and add white border to data points | 2026-04-19 | 81ab11f | [260418-t6w-change-compass-radar-chart-colors-to-dus](./quick/260418-t6w-change-compass-radar-chart-colors-to-dus/) |
 | 260418-tlq | Fix Nicole Bolden display — show as City Official (City Clerk reclassification) | 2026-04-18 | e13a918 (essentials) | [260418-tlq-fix-nicole-bolden-display-show-as-city-o](./quick/260418-tlq-fix-nicole-bolden-display-show-as-city-o/) |
 | 260418-tqy | Elections tab label enhancement and glowing dot eager-load fix in essentials | 2026-04-19 | da0a440 (essentials) | [260418-tqy-elections-tab-label-and-glowing-dot-fix-](./quick/260418-tqy-elections-tab-label-and-glowing-dot-fix-/) |
+| 260419-szc | Fix Nicole Bolden grouping — split LOCAL admin officers into own sub-group in groupHierarchy.js (5/5 tests pass) | 2026-04-20 | 415a932 (essentials) | [260419-szc-fix-nicole-bolden-classification-show-as](./quick/260419-szc-fix-nicole-bolden-classification-show-as/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-19 - Phase 127 complete (3/3 plans, VERIFICATION PASS WITH NOTES)
+Last activity: 2026-04-20 - Quick task 260419-szc complete (LOCAL admin officer sub-group split, human-verified)
 Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
