@@ -12,6 +12,7 @@ import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import compassAdminRouter from './routes/compassAdmin.js';
 import topicRewritesRouter from './routes/topicRewrites.js';
+import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
@@ -96,6 +97,7 @@ app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
+app.use('/api/admin/source-verifications', sourceVerificationsRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
 // GET /api/essentials/candidates/:zip
