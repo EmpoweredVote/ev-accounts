@@ -27,7 +27,10 @@ const listQuerySchema = z.object({
   entity_type: z.enum(['compass_stance', 'readrank_quote']).optional(),
   limit: z.coerce.number().int().min(1).max(200).optional(),
   offset: z.coerce.number().int().min(0).optional(),
-  include_unfixable: z.coerce.boolean().optional(),
+  include_unfixable: z
+    .enum(['true', 'false'])
+    .optional()
+    .transform((v) => v === 'true'),
 });
 
 router.get('/', async (req: Request, res: Response): Promise<void> => {
