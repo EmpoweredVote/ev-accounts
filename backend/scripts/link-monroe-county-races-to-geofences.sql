@@ -164,15 +164,14 @@ WHERE name = '2026 Indiana Primary'
   AND state = 'IN';
 
 -- 2a: County-wide offices (linked to COUNTY district)
+-- NOTE: Monroe County Council District 1/2/3/4 moved to 2e (per-district geofences)
+-- per Phase 121 to fix the D1→D4 binding bug (all 4 districts previously resolved
+-- to the shared county-wide polygon, matching every county address at once).
 INSERT INTO essentials.offices (district_id, politician_id, title, representing_state, is_appointed_position, is_vacant)
 SELECT d.id, NULL, v.title, 'IN', false, false
 FROM essentials.districts d,
 (VALUES
   ('Monroe County Commissioner District 1'),
-  ('Monroe County Council District 1'),
-  ('Monroe County Council District 2'),
-  ('Monroe County Council District 3'),
-  ('Monroe County Council District 4'),
   ('Monroe County Assessor'),
   ('Monroe County Clerk'),
   ('Monroe County Recorder'),
@@ -256,6 +255,24 @@ AND NOT EXISTS (
   WHERE o.district_id = d.id AND o.title = v.title
 );
 
+-- 2e: Monroe County Council District offices (per-district geofences)
+-- Created by Phase 121 — each MCC District race links to its own polygon
+-- (sourced from Monroe County GIS FeatureServer, imported as geo_id='18105-mcc-d{N}'
+-- with mtfcc='X-MCC-DIST' by scripts/import-mcc-district-polygons.ts).
+INSERT INTO essentials.offices (district_id, politician_id, title, representing_state, is_appointed_position, is_vacant)
+SELECT d.id, NULL, v.title, 'IN', false, false
+FROM essentials.districts d
+JOIN (VALUES
+  ('Monroe County Council District 1', 'election-mcc-d1'),
+  ('Monroe County Council District 2', 'election-mcc-d2'),
+  ('Monroe County Council District 3', 'election-mcc-d3'),
+  ('Monroe County Council District 4', 'election-mcc-d4')
+) AS v(title, did) ON d.district_id = v.did
+WHERE NOT EXISTS (
+  SELECT 1 FROM essentials.offices o
+  WHERE o.district_id = d.id AND o.title = v.title
+);
+
 -- =============================================================================
 -- Step 3: Link races to offices
 --
@@ -310,6 +327,27 @@ SET office_id = o.id, updated_at = now()
 FROM essentials.offices o
 JOIN essentials.districts d ON d.id = o.district_id
 WHERE d.district_id = 'election-place-ellettsville'
+  AND o.title = r.position_name
+  AND r.election_id = (SELECT election_id FROM election_ref)
+  AND r.office_id IS NULL;
+
+-- 3f: Monroe County Council District races → per-district offices
+-- First, null out any existing link for the 4 MCC races so the re-link UPDATE
+-- below can run. This handles the case where a previous run of this script
+-- (before Phase 121's 2a/2e split) linked them to the shared county office.
+-- Per Phase 121 Pitfall 5: the r.office_id IS NULL guard in 3a wouldn't fire
+-- if the races were already linked.
+UPDATE essentials.races r
+SET office_id = NULL, updated_at = now()
+WHERE r.position_name LIKE 'Monroe County Council District%'
+  AND r.election_id = (SELECT election_id FROM election_ref);
+
+-- Now link each of the 4 council district races to its per-district office.
+UPDATE essentials.races r
+SET office_id = o.id, updated_at = now()
+FROM essentials.offices o
+JOIN essentials.districts d ON d.id = o.district_id
+WHERE d.district_id LIKE 'election-mcc-d%'
   AND o.title = r.position_name
   AND r.election_id = (SELECT election_id FROM election_ref)
   AND r.office_id IS NULL;
