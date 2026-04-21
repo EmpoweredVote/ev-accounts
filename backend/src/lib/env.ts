@@ -19,6 +19,7 @@ const envSchema = z.object({
   // existing integration tests (health, auth, account) don't break at startup.
   QUEST_SERVICE_KEY: z.string().optional(),
   TRIVIA_SERVICE_KEY: z.string().optional(),
+  LISTENING_XP_KEY: z.string().optional(),
   ADMIN_SERVICE_KEY: z.string().optional(),
   ESSENTIALS_SERVICE_KEY: z.string().optional(),
   // VQ_SERVICE_KEY: used by Validation Quests to POST crowd-verified officeholder
