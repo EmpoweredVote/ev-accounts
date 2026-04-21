@@ -18,6 +18,9 @@ if (env.TRIVIA_SERVICE_KEY) {
 if (env.ADMIN_SERVICE_KEY) {
   SERVICE_KEY_MAP[env.ADMIN_SERVICE_KEY] = ['admin_gift'];
 }
+if (env.LISTENING_XP_KEY) {
+  SERVICE_KEY_MAP[env.LISTENING_XP_KEY] = ['empowered_listening_session'];
+  }
 if (env.ESSENTIALS_SERVICE_KEY) {
   SERVICE_KEY_MAP[env.ESSENTIALS_SERVICE_KEY] = ['essentials-rep-lookup'];
 }
