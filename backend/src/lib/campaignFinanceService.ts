@@ -611,7 +611,7 @@ export async function getSummary(
        AND c.election_cycle = $2
        AND ps.research_status = 'confirmed'
        ${confidenceClause}
-     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''))
+     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), '')
      ORDER BY total_amount DESC
      LIMIT 20`,
     baseParams
