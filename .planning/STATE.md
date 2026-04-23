@@ -72,8 +72,9 @@ Known deferred items at close: 4 (see above)
 | 260418-tlq | Fix Nicole Bolden display — show as City Official (City Clerk reclassification) | 2026-04-18 | e13a918 (essentials) | [260418-tlq-fix-nicole-bolden-display-show-as-city-o](./quick/260418-tlq-fix-nicole-bolden-display-show-as-city-o/) |
 | 260418-tqy | Elections tab label enhancement and glowing dot eager-load fix in essentials | 2026-04-19 | da0a440 (essentials) | [260418-tqy-elections-tab-label-and-glowing-dot-fix-](./quick/260418-tqy-elections-tab-label-and-glowing-dot-fix-/) |
 | 260419-szc | Fix Nicole Bolden grouping — split LOCAL admin officers into own sub-group in groupHierarchy.js (5/5 tests pass) | 2026-04-20 | 415a932 (essentials) | [260419-szc-fix-nicole-bolden-classification-show-as](./quick/260419-szc-fix-nicole-bolden-classification-show-as/) |
+| 260422-upn | Fix Circuit Court category: Nicole Brown as Circuit Court Officials, judges as Circuit Court Judges, remove inapplicable treasury link | 2026-04-23 | c7c3041 (essentials) | [260422-upn-fix-circuit-court-category-nicole-brown-](./quick/260422-upn-fix-circuit-court-category-nicole-brown-/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-20 - Quick task 260419-szc complete (LOCAL admin officer sub-group split, human-verified)
+Last activity: 2026-04-23 - Completed quick task 260422-upn: Fix Circuit Court category (Nicole Brown as Circuit Court Officials, judges split, treasury link removed)
 Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
