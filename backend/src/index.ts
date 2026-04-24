@@ -23,6 +23,7 @@ import rolesRouter from './routes/roles.js';
 import contributorRouter from './routes/contributor.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import essentialsDiscoveryRouter from './routes/essentialsDiscovery.js';
 import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
@@ -94,6 +95,9 @@ app.use('/api/referral', referralRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
+// Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
+// because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
+app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/candidates', candidatesRouter);
