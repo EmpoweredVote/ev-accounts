@@ -131,14 +131,18 @@ export async function runDiscoveryAgent(
   const MAX_TURNS = 5; // safety cap: 1 search turn + up to 4 continuations
 
   for (let turn = 0; turn < MAX_TURNS; turn++) {
+    // On the first turn Claude may search; on continuations strip web_search so
+    // max_uses doesn't reset per-request and Claude is forced to report.
+    const isFirstTurn = turn === 0;
     const response = await client.messages.create({
       model: 'claude-opus-4-6',
       max_tokens: 4096,
-      tools: [
-        webSearchTool as any,           // SDK type union does not yet include server-side tool types
-        REPORT_CANDIDATES_TOOL as any,
-      ],
-      tool_choice: { type: 'any' } as any,
+      tools: isFirstTurn
+        ? [webSearchTool as any, REPORT_CANDIDATES_TOOL as any]   // search or report
+        : [REPORT_CANDIDATES_TOOL as any],                        // report only
+      tool_choice: isFirstTurn
+        ? ({ type: 'any' } as any)                                // let Claude pick
+        : ({ type: 'tool', name: 'report_candidates' } as any),   // must report now
       messages,
     });
 
