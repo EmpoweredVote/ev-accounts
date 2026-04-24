@@ -30,6 +30,7 @@
 
 import { distance } from 'fastest-levenshtein';
 import { pool } from './db.js';
+import { sendEmail } from './emailService.js';
 import {
   runDiscoveryAgent,
   type DiscoveredCandidate,
@@ -119,6 +120,43 @@ export function isDomainAllowlisted(url: string, allowedDomains: string[] | null
     const ad = d.toLowerCase().replace(/^www\./, '');
     return host === ad || host.endsWith('.' + ad);
   });
+}
+
+// ---------------------------------------------------------------------------
+// Email helpers
+// ---------------------------------------------------------------------------
+
+function buildReviewEmailHtml(args: {
+  jurisdictionName: string;
+  uncertainStaged: number;
+  matchedStaged: number;
+  officialStaged: number;
+  withdrawalsStaged: number;
+  reviewUrl: string;
+  daysUntilElection: number | null;
+}): string {
+  const urgencyLine =
+    args.daysUntilElection !== null && args.daysUntilElection <= 30
+      ? `<p><strong>Election is ${args.daysUntilElection} day(s) away.</strong></p>`
+      : '';
+  return `
+    <div style="font-family: system-ui, sans-serif; max-width: 560px;">
+      <h2 style="margin: 0 0 8px 0;">Candidates need review — ${args.jurisdictionName}</h2>
+      ${urgencyLine}
+      <ul style="line-height: 1.6;">
+        <li><strong>${args.uncertainStaged}</strong> uncertain</li>
+        <li><strong>${args.matchedStaged}</strong> matched</li>
+        <li><strong>${args.officialStaged}</strong> official</li>
+        ${args.withdrawalsStaged > 0 ? `<li><strong>${args.withdrawalsStaged}</strong> possible withdrawal(s)</li>` : ''}
+      </ul>
+      <p>
+        <a href="${args.reviewUrl}"
+           style="display:inline-block;padding:10px 16px;background:#1f6feb;color:#fff;border-radius:6px;text-decoration:none;">
+          Review queue
+        </a>
+      </p>
+    </div>
+  `;
 }
 
 // ---------------------------------------------------------------------------
@@ -365,6 +403,61 @@ export async function runDiscoveryForJurisdiction(
         }),
       ]
     );
+
+    // --- 7b. Email notifications (post-completion) ---
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const reviewUrl = process.env.ADMIN_REVIEW_URL ?? 'https://essentials.empowered.vote/admin/staging';
+
+    if (adminEmail) {
+      const daysUntilElection = Math.ceil((cfg.election_date.getTime() - Date.now()) / 86400000);
+
+      // Review notification — fires when any candidates were staged
+      if (candidatesStaged > 0) {
+        const isUrgent = daysUntilElection <= 30;
+        const subject = isUrgent
+          ? `[URGENT] ${uncertainStaged} candidates need review — ${cfg.jurisdiction_name} election in ${daysUntilElection} days`
+          : `${uncertainStaged} candidates need review — ${cfg.jurisdiction_name}`;
+        const html = buildReviewEmailHtml({
+          jurisdictionName: cfg.jurisdiction_name,
+          uncertainStaged,
+          matchedStaged,
+          officialStaged,
+          withdrawalsStaged,
+          reviewUrl,
+          daysUntilElection: isUrgent ? daysUntilElection : null,
+        });
+        await sendEmail({ to: adminEmail, subject, html });
+      }
+
+      // Zero-candidate regression alert — fires when this run returned zero but a previous run did not
+      if (agentResult.candidates.length === 0) {
+        const prevResult = await pool.query<{ candidates_found: number }>(
+          `SELECT candidates_found
+             FROM essentials.discovery_runs
+            WHERE discovery_jurisdiction_id = $1
+              AND status = 'completed'
+              AND id <> $2
+            ORDER BY completed_at DESC NULLS LAST
+            LIMIT 1`,
+          [cfg.id, runId]
+        );
+        const prevCount = prevResult.rows[0]?.candidates_found ?? null;
+        if (prevCount !== null && prevCount > 0) {
+          await sendEmail({
+            to: adminEmail,
+            subject: `Zero candidates returned — ${cfg.jurisdiction_name} (was ${prevCount})`,
+            html: `
+              <div style="font-family: system-ui, sans-serif; max-width: 560px;">
+                <h2 style="margin: 0 0 8px 0;">Zero candidates returned</h2>
+                <p>Jurisdiction: <strong>${cfg.jurisdiction_name}</strong></p>
+                <p>This run found 0 candidates. The previous completed run found <strong>${prevCount}</strong>.</p>
+                <p>This may indicate an upstream source change. Investigate the allowed_domains source pages.</p>
+              </div>
+            `,
+          });
+        }
+      }
+    }
 
     return {
       runId,
