@@ -7,12 +7,13 @@
  * return a citation-backed list of candidates found on official sources.
  * No database access — all DB writes happen in discoveryService.ts.
  *
- * WHY tool_choice: { type: 'tool', name: 'report_candidates' }:
- * This is the only reliable way to get a typed JSON response back.
- * - tool_choice: { type: 'any' } lets Claude pick web_search as its final
- *   call, hitting max_tokens without a structured response.
- * - tool_choice: { type: 'auto' } has the same problem.
- * - Forcing report_candidates guarantees the output tool is called exactly once.
+ * WHY tool_choice: { type: 'any' }:
+ * Forces Claude to call at least one tool, but lets it choose which.
+ * Claude calls web_search first (server-side, handled by Anthropic), processes
+ * the results, then calls report_candidates with structured output.
+ * tool_choice: { type: 'tool', name: 'report_candidates' } was tried first but
+ * forces Claude to call report_candidates IMMEDIATELY, skipping web search
+ * entirely — resulting in 0 candidates every time.
  *
  * WHY server-side web_search_20250305:
  * Claude executes it internally, returns citation URLs in its chain of thought
@@ -126,19 +127,20 @@ export async function runDiscoveryAgent(
       webSearchTool as any,           // SDK type union does not yet include server-side tool types
       REPORT_CANDIDATES_TOOL as any,
     ],
-    tool_choice: { type: 'tool', name: 'report_candidates' } as any,
+    tool_choice: { type: 'any' } as any,
     messages: [{ role: 'user', content: prompt }],
   });
 
-  // Extract the report_candidates tool_use block. Claude is forced to call it,
-  // so it MUST be present. If not, something changed in the SDK/API contract.
+  // Extract the report_candidates tool_use block. Claude searches first via
+  // web_search, then calls report_candidates with structured results. If it's
+  // absent, Claude finished without reporting (prompt or web search failure).
   const toolUseBlock = response.content.find(
     (block: any) => block.type === 'tool_use' && block.name === 'report_candidates'
   );
 
   if (!toolUseBlock || toolUseBlock.type !== 'tool_use') {
     throw new Error(
-      '[discoveryAgentRunner] Claude did not invoke report_candidates despite forced tool_choice. ' +
+      '[discoveryAgentRunner] Claude did not invoke report_candidates. ' +
         'Raw stop_reason: ' + String(response.stop_reason)
     );
   }
