@@ -126,7 +126,7 @@ export async function runDiscoveryAgent(
   const messages: any[] = [{ role: 'user', content: prompt }];
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
-  let lastModel = 'claude-haiku-4-5-20251001';
+  let lastModel = 'claude-sonnet-4-6';
   let lastStopReason: string | null = null;
   const MAX_TURNS = 5; // safety cap: 1 search turn + up to 4 continuations
 
@@ -135,7 +135,7 @@ export async function runDiscoveryAgent(
     // max_uses doesn't reset per-request and Claude is forced to report.
     const isFirstTurn = turn === 0;
     const response = await client.messages.create({
-      model: 'claude-haiku-4-5-20251001',
+      model: 'claude-sonnet-4-6',
       max_tokens: 4096,
       tools: isFirstTurn
         ? [webSearchTool as any, REPORT_CANDIDATES_TOOL as any]   // search or report
