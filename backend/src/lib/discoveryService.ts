@@ -130,6 +130,9 @@ export interface DiscoveryRunSummary {
   jurisdictionId: string;
   candidatesFound: number;
   candidatesStaged: number;
+  uncertainStaged: number;
+  matchedStaged: number;
+  officialStaged: number;
   withdrawalsStaged: number;
   status: 'completed' | 'failed';
   errorMessage: string | null;
@@ -239,6 +242,9 @@ export async function runDiscoveryForJurisdiction(
     // --- 5. Stage each discovered candidate ---
     const allowedDomains = cfg.allowed_domains;
     let candidatesStaged = 0;
+    let uncertainStaged = 0;
+    let matchedStaged = 0;
+    let officialStaged = 0;
     const discoveredByRaceId = new Map<string, DiscoveredCandidate[]>();
 
     for (const cand of agentResult.candidates) {
@@ -291,6 +297,9 @@ export async function runDiscoveryForJurisdiction(
         ]
       );
       candidatesStaged++;
+      if (confidence === 'uncertain') uncertainStaged++;
+      else if (confidence === 'matched') matchedStaged++;
+      else officialStaged++;
 
       if (raceId) {
         const arr = discoveredByRaceId.get(raceId) ?? [];
@@ -362,6 +371,9 @@ export async function runDiscoveryForJurisdiction(
       jurisdictionId: cfg.id,
       candidatesFound: agentResult.candidates.length,
       candidatesStaged,
+      uncertainStaged,
+      matchedStaged,
+      officialStaged,
       withdrawalsStaged,
       status: 'completed',
       errorMessage: null,
