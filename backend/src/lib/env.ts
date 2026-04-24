@@ -36,6 +36,10 @@ const envSchema = z.object({
   SQS_INGEST_QUEUE_URL: z.string().optional(),
   // SOCRATA_APP_TOKEN: optional app token for LA Socrata API requests.
   SOCRATA_APP_TOKEN: z.string().optional(),
+  // ANTHROPIC_API_KEY: powers the v2.1 Claude candidate discovery agent (discoveryAgentRunner).
+  // Optional: absent = discovery endpoints return 503. Web search must be enabled org-wide
+  // in the Claude Console before this works (console.anthropic.com/settings/privacy).
+  ANTHROPIC_API_KEY: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
