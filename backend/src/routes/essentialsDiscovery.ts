@@ -73,6 +73,83 @@ router.post('/discover/jurisdiction/:id', async (req: Request, res: Response): P
 });
 
 // ---------------------------------------------------------------------------
+// POST /discover/race/:id
+// Auth: requireAdminToken (applied at mount in index.ts)
+// Resolves the discovery_jurisdictions row that covers this race by JOINing
+// races → elections → discovery_jurisdictions on (election_date, state), then
+// delegates to runDiscoveryForJurisdiction. There is no race_id column on
+// discovery_jurisdictions — discovery is jurisdiction-scoped at the agent level.
+// Returns 202 immediately; run continues in background.
+// ---------------------------------------------------------------------------
+router.post('/discover/race/:id', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const raceId = req.params.id as string;
+
+    if (!raceId || !UUID_REGEX.test(raceId)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid race id (expected UUID)' });
+      return;
+    }
+
+    // Resolve the covering discovery_jurisdictions row.
+    // Assumes at most one discovery_jurisdictions row covers a given (election_date, state).
+    // If multiple rows match (e.g. overlapping county + city jurisdictions), the first is used.
+    const resolveResult = await pool.query<{
+      race_exists: boolean;
+      jurisdiction_id: string | null;
+      jurisdiction_name: string | null;
+    }>(
+      `WITH race_row AS (
+         SELECT r.id AS race_id, r.election_id, e.election_date, e.state
+           FROM essentials.races r
+           JOIN essentials.elections e ON e.id = r.election_id
+          WHERE r.id = $1
+       )
+       SELECT
+         (SELECT true FROM race_row) AS race_exists,
+         dj.id   AS jurisdiction_id,
+         dj.jurisdiction_name
+         FROM race_row rr
+         LEFT JOIN essentials.discovery_jurisdictions dj
+           ON dj.election_date = rr.election_date AND dj.state = rr.state`,
+      [raceId]
+    );
+
+    if (resolveResult.rows.length === 0) {
+      // The CTE returned no rows → the race itself doesn't exist
+      res.status(404).json({ code: 'RACE_NOT_FOUND', message: 'Race not found' });
+      return;
+    }
+
+    const row = resolveResult.rows[0];
+    if (!row.jurisdiction_id) {
+      res.status(404).json({
+        code: 'NO_DISCOVERY_JURISDICTION',
+        message: 'No discovery_jurisdictions row covers this race. Register a jurisdiction with matching election_date + state first.',
+      });
+      return;
+    }
+
+    const jurisdictionId = row.jurisdiction_id;
+    const jurisdictionName = row.jurisdiction_name;
+
+    // Fire-and-forget; run row persists status='running' immediately, so callers can poll.
+    runDiscoveryForJurisdiction(jurisdictionId, { triggeredBy: 'on_demand' }).catch((err) => {
+      console.error('[discoverRace] background run failed for raceId=' + raceId + ' jurisdictionId=' + jurisdictionId + ':', err);
+    });
+
+    res.status(202).json({
+      status: 'accepted',
+      raceId,
+      jurisdictionId,
+      jurisdictionName,
+    });
+  } catch (err) {
+    console.error('[POST /discover/race/:id] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // POST /discovery/staging/:id/approve
 // Auth: requireAdminToken
 // Body (optional): { reviewerName?: string }
