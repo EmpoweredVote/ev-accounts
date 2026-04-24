@@ -480,6 +480,25 @@ export async function runDiscoveryForJurisdiction(
         WHERE id = $1`,
       [runId, message]
     );
+
+    // --- 8b. Failure email (fire-and-forget semantics via sendEmail's internal try/catch) ---
+    const adminEmail = process.env.ADMIN_EMAIL;
+    if (adminEmail) {
+      await sendEmail({
+        to: adminEmail,
+        subject: `Discovery run failed — ${cfg.jurisdiction_name}`,
+        html: `
+          <div style="font-family: system-ui, sans-serif; max-width: 560px;">
+            <h2 style="margin: 0 0 8px 0;">Discovery run failed</h2>
+            <p>Jurisdiction: <strong>${cfg.jurisdiction_name}</strong></p>
+            <p>Run ID: <code>${runId}</code></p>
+            <p>Error:</p>
+            <pre style="background:#f5f5f5;padding:10px;border-radius:4px;white-space:pre-wrap;">${message}</pre>
+          </div>
+        `,
+      });
+    }
+
     throw err;
   }
 }
