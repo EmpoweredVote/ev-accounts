@@ -120,53 +120,78 @@ export async function runDiscoveryAgent(
       : {}),
   };
 
-  const response = await client.messages.create({
-    model: 'claude-opus-4-6',
-    max_tokens: 4096,
-    tools: [
-      webSearchTool as any,           // SDK type union does not yet include server-side tool types
-      REPORT_CANDIDATES_TOOL as any,
-    ],
-    tool_choice: { type: 'any' } as any,
-    messages: [{ role: 'user', content: prompt }],
-  });
+  // Agentic loop: web_search_20250305 is a server-side tool that pauses mid-turn
+  // (stop_reason='pause_turn'). We append the assistant response and continue until
+  // Claude calls report_candidates or exhausts its search quota.
+  const messages: any[] = [{ role: 'user', content: prompt }];
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+  let lastModel = 'claude-opus-4-6';
+  let lastStopReason: string | null = null;
+  const MAX_TURNS = 5; // safety cap: 1 search turn + up to 4 continuations
 
-  // Extract the report_candidates tool_use block. Claude searches first via
-  // web_search, then calls report_candidates with structured results. If it's
-  // absent, Claude finished without reporting (prompt or web search failure).
-  const toolUseBlock = response.content.find(
-    (block: any) => block.type === 'tool_use' && block.name === 'report_candidates'
-  );
+  for (let turn = 0; turn < MAX_TURNS; turn++) {
+    const response = await client.messages.create({
+      model: 'claude-opus-4-6',
+      max_tokens: 4096,
+      tools: [
+        webSearchTool as any,           // SDK type union does not yet include server-side tool types
+        REPORT_CANDIDATES_TOOL as any,
+      ],
+      tool_choice: { type: 'any' } as any,
+      messages,
+    });
 
-  if (!toolUseBlock || toolUseBlock.type !== 'tool_use') {
-    throw new Error(
-      '[discoveryAgentRunner] Claude did not invoke report_candidates. ' +
-        'Raw stop_reason: ' + String(response.stop_reason)
+    lastModel = response.model;
+    lastStopReason = response.stop_reason ?? null;
+    totalInputTokens += response.usage.input_tokens;
+    totalOutputTokens += response.usage.output_tokens;
+
+    // Check for report_candidates in this turn's content.
+    const toolUseBlock = response.content.find(
+      (block: any) => block.type === 'tool_use' && block.name === 'report_candidates'
     );
+
+    if (toolUseBlock) {
+      const toolInput = (toolUseBlock as any).input as { candidates?: DiscoveredCandidate[] };
+      const candidates = Array.isArray(toolInput.candidates) ? toolInput.candidates : [];
+
+      // Belt-and-suspenders: drop any candidate missing citation_url.
+      // The input_schema marks it required, but a schema drift or bad shim
+      // would otherwise let a hallucination through.
+      const validated = candidates.filter(
+        (c) =>
+          c &&
+          typeof c.full_name === 'string' &&
+          typeof c.citation_url === 'string' &&
+          c.citation_url.trim().length > 0 &&
+          typeof c.race_hint === 'string'
+      );
+
+      return {
+        model: lastModel,
+        inputTokens: totalInputTokens,
+        outputTokens: totalOutputTokens,
+        candidates: validated,
+        stopReason: lastStopReason,
+      };
+    }
+
+    // pause_turn means the model executed a server-side tool and paused.
+    // Append its response and continue so it can process results.
+    if (response.stop_reason === 'pause_turn') {
+      messages.push({ role: 'assistant', content: response.content });
+      continue;
+    }
+
+    // Any other stop reason (end_turn, max_tokens, etc.) without report_candidates = failure.
+    break;
   }
 
-  const toolInput = (toolUseBlock as any).input as { candidates?: DiscoveredCandidate[] };
-  const candidates = Array.isArray(toolInput.candidates) ? toolInput.candidates : [];
-
-  // Belt-and-suspenders: drop any candidate missing citation_url.
-  // The input_schema marks it required, but a schema drift or bad shim
-  // would otherwise let a hallucination through.
-  const validated = candidates.filter(
-    (c) =>
-      c &&
-      typeof c.full_name === 'string' &&
-      typeof c.citation_url === 'string' &&
-      c.citation_url.trim().length > 0 &&
-      typeof c.race_hint === 'string'
+  throw new Error(
+    '[discoveryAgentRunner] Claude did not invoke report_candidates. ' +
+      'Raw stop_reason: ' + String(lastStopReason)
   );
-
-  return {
-    model: response.model,
-    inputTokens: response.usage.input_tokens,
-    outputTokens: response.usage.output_tokens,
-    candidates: validated,
-    stopReason: response.stop_reason ?? null,
-  };
 }
 
 // ---------------------------------------------------------------------------
