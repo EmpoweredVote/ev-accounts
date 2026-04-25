@@ -9,9 +9,9 @@
  *     The discovery_runs row tracks outcome (status, counts, raw_output).
  *
  *   POST /discovery/staging/:id/approve
- *     Marks a pending staging row as approved (status='approved').
- *     Does NOT auto-promote to race_candidates — auto-upsert deferred to Phase 7.
- *     If race_id is NULL, approval succeeds with a warning in the response.
+ *     Marks a pending staging row as approved and upserts the candidate to
+ *     race_candidates (source='discovery_admin') when race_id is not null and
+ *     action != 'withdrawal'. Returns upsertResult: inserted|already_present|skipped_*.
  *
  *   POST /discovery/staging/:id/dismiss
  *     Marks a pending staging row as dismissed (status='dismissed').
