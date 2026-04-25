@@ -208,7 +208,12 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
         ct.question_text        AS topic_question
       FROM essentials.quotes q
       JOIN essentials.politicians p ON p.id = q.politician_id AND p.is_active = true
-      LEFT JOIN essentials.offices o ON o.politician_id = p.id
+      LEFT JOIN LATERAL (
+        SELECT title FROM essentials.offices
+        WHERE politician_id = p.id
+        ORDER BY id DESC
+        LIMIT 1
+      ) o ON true
       LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
       ORDER BY p.full_name, q.topic_key
     `);
