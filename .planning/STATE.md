@@ -10,12 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 60 in progress — plan 02 complete**
+**Phase 60 in progress — plan 03 complete**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
-Phase 60 has plans 01–06. Plans 01–02 complete.
+Phase 60 has plans 01–06. Plans 01–03 complete.
 
-Next step: Execute plans 60-03, 60-04 (wave 2 parallel), then 60-05, 60-06.
+Next step: Execute plan 60-04 (wave 2), then 60-05, 60-06.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -23,7 +23,7 @@ Next step: Execute plans 60-03, 60-04 (wave 2 parallel), then 60-05, 60-06.
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 2/6 plans ████░░░░░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 3/6 plans ██████░░░░░░░░░░░░░░
 
 ## Performance Metrics
 
@@ -38,6 +38,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.0 Component Patterns (from 60-02, 60-03)
+
+**Button components (60-03):**
+- **PrimaryButton palette**: `bg-ev-blue text-white` / hover: `bg-ev-blue/90` / shape: `w-full rounded-xl py-3 font-bold text-base`
+- **SecondaryButton palette**: `bg-gray-800 text-white border border-gray-700` / hover: `bg-gray-700` — gray-800 chosen (not ev-navy) so it layers above AuthCard's gray-900 background
+- **Prop parity**: both buttons share identical interface (children/onClick/type/disabled/className with same defaults) — swap by changing only the import name
+- **type defaults to 'button'**: forms must explicitly pass `type="submit"` — prevents accidental submission outside form context
+- **No loading prop**: loading text is consumer responsibility via children
 
 ### v2.0 Component Patterns (from 60-02)
 
@@ -118,6 +127,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-25T20:13:00Z
-Stopped at: Completed 60-02-PLAN.md (AuthCard + AuthInput components)
+Last session: 2026-04-25T20:04:32Z
+Stopped at: Completed 60-03-PLAN.md (PrimaryButton + SecondaryButton components)
 Resume file: None
