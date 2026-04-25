@@ -194,6 +194,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
       SELECT
         q.id                    AS quote_id,
         q.quote_text,
+        COALESCE(q.deidentified_text, q.quote_text) AS text,
         q.politician_id,
         q.source_url,
         q.source_name,
@@ -217,7 +218,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
       .filter((r) => r.topic_id !== null)
       .map((r) => ({
         id: r.quote_id as string,
-        text: r.quote_text as string,
+        text: r.text as string,
         candidateId: r.politician_id as string,
         issue: r.topic_key as string,
         sourceUrl: r.source_url as string | null ?? undefined,
