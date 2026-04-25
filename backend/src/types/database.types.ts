@@ -587,6 +587,7 @@ export type Database = {
           p_user_id: string
           p_legal_name: string
           p_invite_code: string
+          p_display_name: string
         }
         Returns: Json
       }
