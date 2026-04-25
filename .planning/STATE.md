@@ -10,13 +10,13 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 61 in progress — 61-01, 61-02, 61-03, 61-04, 61-05 complete**
+**Phase 61 complete ✅ — Phase 62 ready to plan**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
-Phase 61 (Auth Flow Restyle) in progress: 5/? plans complete.
+Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 
-Last activity: 2026-04-25 — Completed 61-04-PLAN.md (SignupPage restyle: 5-field form with AppNav + StepProgress + AuthCard + AuthInput + PrimaryButton + display_name in API body)
+Next step: `/gsd:plan-phase 62`
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -24,7 +24,7 @@ Last activity: 2026-04-25 — Completed 61-04-PLAN.md (SignupPage restyle: 5-fie
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ███░░░░░░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 pending ░░░░░░░░░░░░░░░
 
 ## Performance Metrics
 
@@ -39,6 +39,14 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.0 Copy Decisions (from Phase 61)
+
+- **AppNav**: No "Civic Platform" text — logo only. Wordmark belongs to auth pages, not the nav chrome.
+- **Signup heading**: "Create your Connected Account" — names the tier (Connected) explicitly.
+- **Legal name copy**: "During Alpha, your identity is verified through our invite network — one person, one voice." — "Never shown publicly" removed because legal name may surface on Empowered accounts in future features.
+- **WelcomeScreen heading**: "Join to participate" — invitational, not "Get started" or conversion-funnel language.
+- **AuthInput inputClassName**: escape-hatch for per-field styling (e.g., `font-mono tracking-wider` on invite code) without touching base styles.
 
 ### v2.0 Component Patterns (from 60-02, 60-03, 60-04)
 

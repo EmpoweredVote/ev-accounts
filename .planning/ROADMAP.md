@@ -583,18 +583,19 @@ Plans:
 
 **Requirements:** AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06
 
-**Plans:** 4 plans
+**Plans:** 5 plans
 
 Plans:
-- [ ] 61-01-PLAN.md — Patch AuthInput to accept inputClassName prop (foundation for invite-code mono styling)
-- [ ] 61-02-PLAN.md — Build WelcomeScreen at /welcome with three options and invitational copy (AUTH-01)
-- [ ] 61-03-PLAN.md — Restyle LoginPage with AppNav + AuthCard + AuthInput + PrimaryButton (AUTH-06)
-- [ ] 61-04-PLAN.md — Restyle SignupPage form + check-email screen with StepProgress and alpha-trust copy (AUTH-02–05)
+- [x] 61-01-PLAN.md — Patch AuthInput to accept inputClassName prop (foundation for invite-code mono styling)
+- [x] 61-02-PLAN.md — Build WelcomeScreen at /welcome with three options and invitational copy (AUTH-01)
+- [x] 61-03-PLAN.md — Restyle LoginPage with AppNav + AuthCard + AuthInput + PrimaryButton (AUTH-06)
+- [x] 61-04-PLAN.md — Restyle SignupPage form + check-email screen with StepProgress and alpha-trust copy (AUTH-02–05)
+- [x] 61-05-PLAN.md — Backend: add display_name to signup_with_invite RPC + Zod schema (migration 071)
 
 **Success Criteria:**
 
 1. Navigating to `/welcome` shows a centered card with three clear options — Create account, Log in, and "Continue exploring" — and the copy uses invitational framing; no pressure language appears anywhere on the screen.
-2. The signup page renders `AppNav`, `StepProgress` (Step 1 of 4), an `AuthCard` containing `AuthInput` fields for email, password, display name, legal name, and invite code; all fields use the dark input style with blue focus ring.
+2. The signup page renders `AppNav`, `StepProgress` (Step 1 of 4), an `AuthCard` containing `AuthInput` fields for email, password, civic name, legal name, and invite code — five fields total; all use the dark input style with blue focus ring. The civic name (display_name) is stored on `connected_profiles` at account creation via migration 071.
 3. The legal name field on signup displays inline copy explaining the invite-network identity model ("During Alpha, your identity is verified through our invite network — one person, one voice") and a "never shown publicly" note visible before the user types.
 4. The invite code field displays a shield icon and an inline alpha-trust explanation; the check-email confirmation screen shows the user's email address with a magic-link explanation and a sign-in link.
 5. The login page renders `AppNav`, an `AuthCard` with dark fields and a blue CTA, and an "Already have account? Sign In" link — matching the Figma design language throughout.
@@ -736,7 +737,7 @@ Plans:
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
 | 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
 | 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
-| 61. Auth Flow Restyle | v2.0 | 0/? | Pending | — |
+| 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
 | 62. Onboarding Restyle | v2.0 | 0/? | Pending | — |
 | 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |

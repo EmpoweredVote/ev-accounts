@@ -17,12 +17,12 @@
 
 ### Authentication
 
-- [ ] **AUTH-01**: `WelcomeScreen` page at `/welcome` — centered "Join to participate" card with Create account, Log in, and "Continue exploring" options; copy is invitational, never pressured
-- [ ] **AUTH-02**: `SignupPage` restyled to match Figma — `AppNav`, `StepProgress` (Step 1 of 4), `AuthCard` with dark fields, blue CTA
-- [ ] **AUTH-03**: Legal name field retained on `SignupPage` with inline explanation of why it's required ("During Alpha, your identity is verified through our invite network — one person, one voice") and "never shown publicly" note
-- [ ] **AUTH-04**: Invite code field has shield icon and inline alpha-trust explanation ("Access is invite-only during Alpha to ensure trusted participation. This trust-based system builds accountability in our community.")
-- [ ] **AUTH-05**: "Check your email" confirmation screen restyled — shows email address, magic-link explanation, link to sign in (magic-link flow retained, no OTP)
-- [ ] **AUTH-06**: `LoginPage` restyled to match Figma design language — `AppNav`, `AuthCard`, dark fields, blue CTA, "Already have account? Sign In" link
+- [x] **AUTH-01**: `WelcomeScreen` page at `/welcome` — centered "Join to participate" card with Create account, Log in, and "Continue exploring" options; copy is invitational, never pressured
+- [x] **AUTH-02**: `SignupPage` restyled — `AppNav`, `StepProgress` (Step 1 of 4), `AuthCard` with dark fields, blue CTA; heading "Create your Connected Account"
+- [x] **AUTH-03**: Legal name field on `SignupPage` with inline explanation ("During Alpha, your identity is verified through our invite network — one person, one voice"); "never shown publicly" note removed — legal name may surface on Empowered accounts
+- [x] **AUTH-04**: Invite code field has shield icon and inline alpha-trust explanation
+- [x] **AUTH-05**: "Check your email" screen restyled — shows email address, magic-link explanation, sign-in link
+- [x] **AUTH-06**: `LoginPage` restyled — `AppNav`, `AuthCard`, dark fields, blue CTA
 
 ### Onboarding
 
@@ -97,12 +97,12 @@
 | DSGN-04 | Phase 60 | Pending |
 | DSGN-05 | Phase 60 | Pending |
 | DSGN-06 | Phase 60 | Pending |
-| AUTH-01 | Phase 61 | Pending |
-| AUTH-02 | Phase 61 | Pending |
-| AUTH-03 | Phase 61 | Pending |
-| AUTH-04 | Phase 61 | Pending |
-| AUTH-05 | Phase 61 | Pending |
-| AUTH-06 | Phase 61 | Pending |
+| AUTH-01 | Phase 61 | Complete |
+| AUTH-02 | Phase 61 | Complete |
+| AUTH-03 | Phase 61 | Complete |
+| AUTH-04 | Phase 61 | Complete |
+| AUTH-05 | Phase 61 | Complete |
+| AUTH-06 | Phase 61 | Complete |
 | ONBD-01 | Phase 62 | Pending |
 | ONBD-02 | Phase 62 | Pending |
 | ONBD-03 | Phase 62 | Pending |
