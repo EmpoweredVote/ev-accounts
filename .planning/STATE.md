@@ -10,12 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 60 in progress — plan 01 complete**
+**Phase 60 in progress — plan 02 complete**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
-Phase 60 has plans 01–06. Plan 01 (Design Foundation: tokens + logo) complete.
+Phase 60 has plans 01–06. Plans 01–02 complete.
 
-Next step: Execute plan 60-02.
+Next step: Execute plans 60-03, 60-04 (wave 2 parallel), then 60-05, 60-06.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -23,7 +23,7 @@ Next step: Execute plan 60-02.
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 1/6 plans ██░░░░░░░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 2/6 plans ████░░░░░░░░░░░░░░░░
 
 ## Performance Metrics
 
@@ -38,6 +38,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.0 Component Patterns (from 60-02)
+
+- **AuthCard base classes**: `bg-gray-900 rounded-2xl border border-gray-800 p-6 space-y-5` — no width; parent owns sizing
+- **AuthCard background**: `bg-gray-900` not `bg-ev-navy` — card must contrast against navy page background
+- **AuthInput onChange**: `(value: string) => void` — component extracts e.target.value; caller receives string
+- **AuthInput focus ring**: `focus:ring-ev-blue` solid (no opacity variant) per design spec
+- **AuthInput error state**: switches to `border-ev-red focus:ring-ev-red` + renders `<p className="text-ev-red">` below input
+- **Component export convention**: named `export function X`, `interface` for props — matches AuthGuard.tsx pattern
 
 ### v2.0 Design Constraints
 
@@ -109,6 +118,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-25T19:59:55Z
-Stopped at: Completed 60-01-PLAN.md (design tokens + logo asset)
+Last session: 2026-04-25T20:13:00Z
+Stopped at: Completed 60-02-PLAN.md (AuthCard + AuthInput components)
 Resume file: None
