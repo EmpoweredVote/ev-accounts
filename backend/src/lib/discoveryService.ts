@@ -123,6 +123,45 @@ export function isDomainAllowlisted(url: string, allowedDomains: string[] | null
 }
 
 // ---------------------------------------------------------------------------
+// Auto-upsert helper
+// ---------------------------------------------------------------------------
+
+/**
+ * Idempotent insert of a high-confidence candidate into race_candidates.
+ * Uses SELECT-then-INSERT (no ON CONFLICT) because race_candidates has no
+ * unique index on (race_id, full_name) — only a partial unique on external_id.
+ *
+ * Returns 'inserted' when a new row is created, 'already_present' when an
+ * existing row with the same race_id + lower(full_name) is found.
+ */
+async function autoUpsertToRaceCandidates(args: {
+  raceId: string;
+  fullName: string;
+}): Promise<'inserted' | 'already_present'> {
+  const existing = await pool.query<{ exists: boolean }>(
+    `SELECT 1 FROM essentials.race_candidates
+      WHERE race_id = $1 AND lower(full_name) = lower($2)
+      LIMIT 1`,
+    [args.raceId, args.fullName]
+  );
+  if (existing.rows.length > 0) {
+    return 'already_present';
+  }
+
+  const tokens = args.fullName.trim().split(/\s+/);
+  const firstName = tokens[0] ?? null;
+  const lastName = tokens.length > 1 ? tokens.slice(1).join(' ') : null;
+
+  await pool.query(
+    `INSERT INTO essentials.race_candidates
+       (race_id, full_name, first_name, last_name, last_verified_at, source)
+     VALUES ($1, $2, $3, $4, now(), 'discovery_cron')`,
+    [args.raceId, args.fullName, firstName, lastName]
+  );
+  return 'inserted';
+}
+
+// ---------------------------------------------------------------------------
 // Email helpers
 // ---------------------------------------------------------------------------
 
@@ -171,6 +210,7 @@ export interface DiscoveryRunSummary {
   uncertainStaged: number;
   matchedStaged: number;
   officialStaged: number;
+  autoUpserted: number;
   withdrawalsStaged: number;
   status: 'completed' | 'failed';
   errorMessage: string | null;
@@ -200,7 +240,11 @@ export interface DiscoveryRunSummary {
  */
 export async function runDiscoveryForJurisdiction(
   discoveryJurisdictionId: string,
-  opts: { triggeredBy?: string } = {}
+  opts: {
+    triggeredBy?: string;
+    autoUpsert?: boolean;       // If true, high-confidence candidates with a resolved raceId are inserted directly into race_candidates
+    suppressRunEmail?: boolean; // If true, the per-run review email is skipped (zero-candidate regression alert + failure email still fire)
+  } = {}
 ): Promise<DiscoveryRunSummary> {
   // --- 1. Load config ---
   const cfgResult = await pool.query<{
@@ -283,6 +327,7 @@ export async function runDiscoveryForJurisdiction(
     let uncertainStaged = 0;
     let matchedStaged = 0;
     let officialStaged = 0;
+    let autoUpserted = 0;
     const discoveredByRaceId = new Map<string, DiscoveredCandidate[]>();
 
     for (const cand of agentResult.candidates) {
@@ -314,26 +359,62 @@ export async function runDiscoveryForJurisdiction(
       const flagged = raceId === null;
       const flagReason = flagged ? 'no matching race in DB' : null;
 
-      await pool.query(
-        `INSERT INTO essentials.candidate_staging
-           (run_id, discovery_jurisdiction_id, full_name, normalized_name,
-            citation_url, race_hint, race_id, matched_candidate_id,
-            confidence, action, flagged, flag_reason, status)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'new', $10, $11, 'pending')`,
-        [
-          runId,
-          cfg.id,
-          cand.full_name,
-          normalizeName(cand.full_name),
-          cand.citation_url,
-          cand.race_hint,
-          raceId,
-          bestMatch?.candidateId ?? null,
-          confidence,
-          flagged,
-          flagReason,
-        ]
-      );
+      // Determine whether this candidate qualifies for auto-upsert into race_candidates.
+      // Eligibility: autoUpsert flag set AND race resolved AND confidence is official or matched.
+      // Uncertain candidates and unflagged-race candidates always go to pending staging.
+      const eligibleForAutoUpsert =
+        opts.autoUpsert === true &&
+        raceId !== null &&
+        (confidence === 'official' || confidence === 'matched');
+
+      if (eligibleForAutoUpsert) {
+        // Auto-upsert path: write to race_candidates first, then log an approved staging audit row
+        const upsertResult = await autoUpsertToRaceCandidates({ raceId: raceId!, fullName: cand.full_name });
+        if (upsertResult === 'inserted') autoUpserted++;
+
+        await pool.query(
+          `INSERT INTO essentials.candidate_staging
+             (run_id, discovery_jurisdiction_id, full_name, normalized_name,
+              citation_url, race_hint, race_id, matched_candidate_id,
+              confidence, action, flagged, flag_reason, status, reviewed_by, reviewed_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'new', $10, $11, 'approved', 'cron', now())`,
+          [
+            runId,
+            cfg.id,
+            cand.full_name,
+            normalizeName(cand.full_name),
+            cand.citation_url,
+            cand.race_hint,
+            raceId,
+            bestMatch?.candidateId ?? null,
+            confidence,
+            flagged,
+            flagReason,
+          ]
+        );
+      } else {
+        // Default path: write staging row with status='pending' for human review
+        await pool.query(
+          `INSERT INTO essentials.candidate_staging
+             (run_id, discovery_jurisdiction_id, full_name, normalized_name,
+              citation_url, race_hint, race_id, matched_candidate_id,
+              confidence, action, flagged, flag_reason, status)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, 'new', $10, $11, 'pending')`,
+          [
+            runId,
+            cfg.id,
+            cand.full_name,
+            normalizeName(cand.full_name),
+            cand.citation_url,
+            cand.race_hint,
+            raceId,
+            bestMatch?.candidateId ?? null,
+            confidence,
+            flagged,
+            flagReason,
+          ]
+        );
+      }
       candidatesStaged++;
       if (confidence === 'uncertain') uncertainStaged++;
       else if (confidence === 'matched') matchedStaged++;
@@ -411,8 +492,10 @@ export async function runDiscoveryForJurisdiction(
     if (adminEmail) {
       const daysUntilElection = Math.ceil((cfg.election_date.getTime() - Date.now()) / 86400000);
 
-      // Review notification — fires when any candidates were staged
-      if (candidatesStaged > 0) {
+      // Review notification — fires when any candidates were staged AND per-run email is not suppressed.
+      // suppressRunEmail=true is used by cron sweeps that auto-upsert, to avoid email noise per jurisdiction.
+      // Zero-candidate regression alert and failure email are NOT gated by this flag.
+      if (candidatesStaged > 0 && !opts.suppressRunEmail) {
         const isUrgent = daysUntilElection <= 30;
         const subject = isUrgent
           ? `[URGENT] ${uncertainStaged} candidates need review — ${cfg.jurisdiction_name} election in ${daysUntilElection} days`
@@ -467,6 +550,7 @@ export async function runDiscoveryForJurisdiction(
       uncertainStaged,
       matchedStaged,
       officialStaged,
+      autoUpserted,
       withdrawalsStaged,
       status: 'completed',
       errorMessage: null,
