@@ -610,13 +610,20 @@ Plans:
 
 **Requirements:** ONBD-01, ONBD-02, ONBD-03, ONBD-04, ONBD-05
 
+**Plans:** 3 plans
+
+Plans:
+- [ ] 62-01-PLAN.md — Restyle LocationStep with v2.0 chrome (AppNav + StepProgress 2/3 + AuthCard + 4 AuthInput fields); remove reveal gate and Learn More link; preserve isUpdate path for UpdateLocationPage
+- [ ] 62-02-PLAN.md — Restyle LocationCelebrationStep with green-checkmark badge + 3 milestone items; absorb POST /auth/complete-onboarding from PseudonymStep so onboarding terminates here
+- [ ] 62-03-PLAN.md — Simplify OnboardingPage to two-step flow with resumption useEffect; update SignupPage step counter 1-of-4 → 1-of-3; delete WelcomeStep.tsx and PseudonymStep.tsx
+
 **Success Criteria:**
 
-1. All three active onboarding steps (`PseudonymStep`, `LocationStep`, `LocationCelebrationStep`) render the shared `AppNav` and `StepProgress` bar at the top; the step counter increments correctly across steps.
-2. The civic name step shows an avatar icon, the label "Choose your civic name", the copy "This is how your voice appears in civic spaces and discussions", and an `AuthInput` for the civic name — with Continue and Back buttons.
-3. The location step shows a pin icon, the label "Find your civic community", the copy "We use your location to connect you with your local civic space. Learn More.", and four `AuthInput` fields for street, city, state, and ZIP — with Continue and Back buttons; no ZIP-only shortcut is offered.
-4. The "You're connected" celebration step shows a green checkmark icon and three milestone items confirming account creation, location match, and readiness to participate; a "Go to dashboard" CTA navigates the user forward.
-5. The old `WelcomeStep` component is removed from the onboarding route sequence; new users entering onboarding land directly on the civic name step; `/welcome` is the only pre-entry value pitch screen.
+1. The two active onboarding steps (`LocationStep`, `LocationCelebrationStep`) render the shared `AppNav` and `StepProgress` bar at the top; the step counter increments correctly: SignupPage=1/3, LocationStep=2/3, LocationCelebrationStep=3/3.
+2. The civic name (`display_name`) is captured on SignupPage already (Phase 61); the legacy `PseudonymStep` is removed and onboarding does NOT re-prompt for a civic name.
+3. The location step shows a pin icon, the label "Find your civic community", the copy "We use your location to connect you with your local civic space." with NO "Learn More" link, and four `AuthInput` fields for street, city, state, and ZIP visible immediately (no reveal gate); "Find my representatives" CTA + "Back" button below; no skip option.
+4. The "You're connected" celebration step shows a green checkmark icon and three locked milestone items — "Your Connected Account is live", "Your civic community is located", "You're ready to participate" — with a "Go to dashboard" CTA that calls POST /auth/complete-onboarding and navigates to /.
+5. The old `WelcomeStep` and `PseudonymStep` components are removed from the onboarding flow and from disk; new users entering onboarding land directly on the location step; `/welcome` is the only pre-entry value pitch screen.
 
 ---
 
@@ -738,7 +745,7 @@ Plans:
 | 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
 | 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
 | 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
-| 62. Onboarding Restyle | v2.0 | 0/? | Pending | — |
+| 62. Onboarding Restyle | v2.0 | 0/3 | Pending | — |
 | 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
