@@ -10,14 +10,14 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 62 in progress — plan 62-01 complete**
+**Phase 62 in progress — plans 62-01 and 62-02 complete (Wave 1 done)**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
-Phase 62 (Onboarding Restyle) in progress: plan 62-01 complete (2026-04-25) — LocationStep restyle
+Phase 62 (Onboarding Restyle) in progress: Wave 1 complete (62-01 LocationStep, 62-02 LocationCelebrationStep)
 
-Last activity: 2026-04-25 — Completed 62-01-PLAN.md (LocationStep v2.0 restyle)
+Last activity: 2026-04-25 — Completed 62-02-PLAN.md (LocationCelebrationStep restyle + complete-onboarding absorbed)
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -25,7 +25,7 @@ Last activity: 2026-04-25 — Completed 62-01-PLAN.md (LocationStep v2.0 restyle
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 🔄 (1/? plans) ░░░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 🔄 (2/? plans) ░░░░░░░░░░░░░░
 
 ## Performance Metrics
 
