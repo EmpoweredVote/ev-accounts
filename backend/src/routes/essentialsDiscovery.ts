@@ -29,6 +29,7 @@ import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
 import { runDiscoveryForJurisdiction } from '../lib/discoveryService.js';
+import { acquireRunLock, releaseRunLock } from '../lib/discoveryCron.js';
 
 const router = Router();
 
@@ -59,11 +60,24 @@ router.post('/discover/jurisdiction/:id', async (req: Request, res: Response): P
       return;
     }
 
-    // Fire-and-forget. The run row persists status='running' immediately, so callers can poll.
-    // The .catch handler prevents unhandled promise rejection from crashing the process.
-    runDiscoveryForJurisdiction(id, { triggeredBy: 'on_demand' }).catch((err) => {
-      console.error('[discoverJurisdiction] background run failed for id=' + id + ':', err);
-    });
+    // Atomically acquire the run lock. If held (cron sweep or another manual trigger
+    // running), return 409 immediately.
+    if (!acquireRunLock()) {
+      res.status(409).json({
+        code: 'ALREADY_RUNNING',
+        message: 'A discovery run is already in progress. Try again after it completes.',
+      });
+      return;
+    }
+
+    // Fire-and-forget. Lock is released regardless of success/failure.
+    runDiscoveryForJurisdiction(id, { triggeredBy: 'on_demand' })
+      .catch((err) => {
+        console.error('[discoverJurisdiction] background run failed for id=' + id + ':', err);
+      })
+      .finally(() => {
+        releaseRunLock();
+      });
 
     res.status(202).json({ status: 'accepted', jurisdictionId: id });
   } catch (err) {
@@ -132,10 +146,23 @@ router.post('/discover/race/:id', async (req: Request, res: Response): Promise<v
     const jurisdictionId = row.jurisdiction_id;
     const jurisdictionName = row.jurisdiction_name;
 
+    // Atomically acquire the run lock. Same semantics as POST /discover/jurisdiction/:id.
+    if (!acquireRunLock()) {
+      res.status(409).json({
+        code: 'ALREADY_RUNNING',
+        message: 'A discovery run is already in progress. Try again after it completes.',
+      });
+      return;
+    }
+
     // Fire-and-forget; run row persists status='running' immediately, so callers can poll.
-    runDiscoveryForJurisdiction(jurisdictionId, { triggeredBy: 'on_demand' }).catch((err) => {
-      console.error('[discoverRace] background run failed for raceId=' + raceId + ' jurisdictionId=' + jurisdictionId + ':', err);
-    });
+    runDiscoveryForJurisdiction(jurisdictionId, { triggeredBy: 'on_demand' })
+      .catch((err) => {
+        console.error('[discoverRace] background run failed for raceId=' + raceId + ' jurisdictionId=' + jurisdictionId + ':', err);
+      })
+      .finally(() => {
+        releaseRunLock();
+      });
 
     res.status(202).json({
       status: 'accepted',
