@@ -3,7 +3,7 @@ phase: 128-empty-non-compass-variants
 plan: "03"
 subsystem: essentials/prototype
 tags: [react, CompassCardHorizontal, computeVariant, prototype, ev-ui, deep-link]
-status: checkpoint-paused
+status: complete
 
 dependency_graph:
   requires:
