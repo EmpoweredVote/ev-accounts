@@ -47,6 +47,7 @@ Exceptions:
 - Radar slot: fixed `260×260px` square (inherited from Phase 127 `SLOT_WIDTH = 260` / `RADAR_SIZE = 250`) — no change to slot dimensions in this phase
 - CTA touch target minimum: 44px height (accessibility requirement for the "Build your compass" button)
 - Plate text vertical centering: plate fills the full 260×260 slot; text is centered using `display: flex; alignItems: center; justifyContent: center`
+- CTA bottom offset: `bottom: 12px` — 12px bottom offset preserves visual balance within the 260px slot without crowding the PlaceholderRadar lower octagon vertices; 8px (sm) sits too close to the SVG path and 16px (md) pushes the button too high relative to the slot midpoint
 
 ---
 
@@ -57,11 +58,12 @@ All sizes from `ev-ui/src/tokens.js` `textStyles` map. Font: Manrope.
 | Role | Size | Weight | Line Height | Token |
 |------|------|--------|-------------|-------|
 | Body | 16px | 400 (regular) | 1.5 | `textStyles.body` |
-| Label | 14px | 500 (medium) | 1.4 | `textStyles.label` |
-| Plate message | 14px | 500 (medium) | 1.4 | `textStyles.label` — for "Compass currently unavailable for this role." |
+| Plate message | 14px | 600 (semibold) | 1.4 | `textStyles.label` weight override to 600 — heavier weight aids legibility at small size in a bounded slot |
 | CTA button | 14px | 600 (semibold) | 1.4 | `textStyles.label` weight override to 600 |
 
-**Plate message treatment:** `textStyles.label` (14px / 500 / lh 1.4) in `colors.textMuted` (#718096). Centered within the 260×260 slot. No icon accompanies the text — uniform minimal treatment per D-05.
+**Two weights only:** 400 (regular) for body text; 600 (semibold) for CTA button and plate message text. No weight 500 (medium) is used in this phase.
+
+**Plate message treatment:** 14px / semibold (600) / lh 1.4 in `colors.textMuted` (#718096). Centered within the 260×260 slot. No icon accompanies the text — uniform minimal treatment per D-05. The `#005366` CTA button background provides strong visual differentiation for the CTA without requiring a third weight tier.
 
 **CTA button text:** 14px / semibold (600) / lh 1.4. White text on `semanticTokens.light.buttonPrimary.background.default` (#005366).
 
@@ -121,14 +123,16 @@ Three new render paths added to `CompassCardHorizontal` via the new `variant` pr
 
 **Slot content (compass view):**
 - Plate: full 260×260 slot filled with `colorScales.teal['050']` background, border-radius matching card (`borderRadius.xl`)
-- Plate text: **"Compass currently unavailable for this role."** — centered, `textStyles.label` at `colors.textMuted`, max-width `180px`, `textAlign: 'center'`
+- Plate text: **"Compass currently unavailable for this role."** — centered, 14px semibold (600), `colors.textMuted`, max-width `180px`, `textAlign: 'center'`
 - No icon, no link, no role-specific copy
+- **Focal point:** Plate text is the sole focal element; no other visual anchor competes in this slot.
 
 **Portrait view:** Standard portrait render — identical to Phase 127 portrait behavior.
 
 ### 3. Judicial Variant (`variant='judicial'`)
 
 **Slot content (compass view):** Identical plate to administrative variant — same background, same copy, same dimensions. No visual distinction between judicial and administrative plates.
+- **Focal point:** Plate text is the sole focal element; no other visual anchor competes in this slot.
 
 **Portrait view:** Standard portrait render — identical to Phase 127 portrait behavior.
 
