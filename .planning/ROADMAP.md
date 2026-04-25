@@ -557,6 +557,14 @@ Plans:
 
 **Requirements:** DSGN-01, DSGN-02, DSGN-03, DSGN-04, DSGN-05, DSGN-06
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 60-01-PLAN.md — Add ev-blue and ev-navy tokens to app/src and admin/src index.css; copy logo asset to app/public
+- [ ] 60-02-PLAN.md — Build AuthCard and AuthInput components (DSGN-02, DSGN-03)
+- [ ] 60-03-PLAN.md — Build PrimaryButton and SecondaryButton components (DSGN-04)
+- [ ] 60-04-PLAN.md — Build StepProgress and AppNav components (DSGN-05, DSGN-06)
+
 **Success Criteria:**
 
 1. `ev-blue` (`#3B82F6`) and `ev-navy` (`#020618`) color tokens are declared in `app/src/index.css` and resolve correctly in Tailwind v4 class names (e.g., `bg-ev-blue`, `text-ev-navy`); `ev-blue` is also added to `admin/src/index.css`.
@@ -719,7 +727,7 @@ Plans:
 | 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
 | 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
-| 60. Design Foundation | v2.0 | 0/? | Pending | — |
+| 60. Design Foundation | v2.0 | 0/4 | Pending | — |
 | 61. Auth Flow Restyle | v2.0 | 0/? | Pending | — |
 | 62. Onboarding Restyle | v2.0 | 0/? | Pending | — |
 | 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
