@@ -1,11 +1,10 @@
 import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
-import { AppNav } from '../components/AppNav';
+import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 import { PrimaryButton } from '../components/PrimaryButton';
-import { StepProgress } from '../components/StepProgress';
 
 const ERROR_MESSAGES: Record<string, string> = {
   INVALID_INVITE_CODE: 'That invite code is invalid or has already been used.',
@@ -71,11 +70,8 @@ export default function SignupPage() {
 
   if (done) {
     return (
-      <div className="min-h-screen bg-ev-navy flex flex-col">
-        <AppNav />
-        <div className="flex-1 flex items-center justify-center px-4 py-12">
-          <div className="w-full max-w-sm">
-            <AuthCard>
+      <AuthPageLayout>
+        <AuthCard>
               <div className="flex justify-center">
                 <div className="w-16 h-16 rounded-full bg-ev-blue/10 flex items-center justify-center">
                   <svg
@@ -108,20 +104,13 @@ export default function SignupPage() {
                 Go to sign in
               </PrimaryButton>
             </AuthCard>
-          </div>
-        </div>
-      </div>
+      </AuthPageLayout>
     );
   }
 
   return (
-    <div className="min-h-screen bg-ev-navy flex flex-col">
-      <AppNav />
-      <div className="flex-1 px-4 py-8">
-        <div className="max-w-sm mx-auto space-y-6">
-          <StepProgress currentStep={1} totalSteps={3} />
-
-          <AuthCard>
+    <AuthPageLayout step={{ current: 1, total: 3 }}>
+      <AuthCard>
             <div className="space-y-1">
               <h2 className="text-lg font-semibold text-white">Create your Connected Account</h2>
               <p className="text-sm text-gray-400">Step 1 of 3 — set up your sign-in.</p>
@@ -228,9 +217,7 @@ export default function SignupPage() {
                 Sign in
               </Link>
             </p>
-          </AuthCard>
-        </div>
-      </div>
-    </div>
+      </AuthCard>
+    </AuthPageLayout>
   );
 }

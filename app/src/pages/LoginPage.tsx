@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
 import { useAuthStore, type User } from '../store/authStore';
-import { AppNav } from '../components/AppNav';
+import { AuthPageLayout } from '../components/AuthPageLayout';
 import { AuthCard } from '../components/AuthCard';
 import { AuthInput } from '../components/AuthInput';
 import { PrimaryButton } from '../components/PrimaryButton';
@@ -73,54 +73,51 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-ev-navy flex flex-col">
-      <AppNav />
-      <div className="flex-1 flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-sm space-y-6">
-          {redirectUrl && (
-            <div className="p-3 bg-ev-blue/10 border border-ev-blue/30 rounded-lg text-sm text-gray-300 text-center">
-              We've made some improvements. Please log in again to continue.
-            </div>
-          )}
+    <AuthPageLayout>
+      <div className="space-y-6">
+        {redirectUrl && (
+          <div className="p-3 bg-ev-blue/10 border border-ev-blue/30 rounded-lg text-sm text-gray-300 text-center">
+            We've made some improvements. Please log in again to continue.
+          </div>
+        )}
 
-          <AuthCard>
-            <h2 className="text-lg font-semibold text-white">Log in</h2>
+        <AuthCard>
+          <h2 className="text-lg font-semibold text-white">Log in</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <AuthInput
-                label="Email"
-                type="email"
-                value={email}
-                onChange={setEmail}
-                autoComplete="email"
-                required
-              />
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <AuthInput
+              label="Email"
+              type="email"
+              value={email}
+              onChange={setEmail}
+              autoComplete="email"
+              required
+            />
 
-              <AuthInput
-                label="Password"
-                type="password"
-                value={password}
-                onChange={setPassword}
-                autoComplete="current-password"
-                required
-              />
+            <AuthInput
+              label="Password"
+              type="password"
+              value={password}
+              onChange={setPassword}
+              autoComplete="current-password"
+              required
+            />
 
-              {error && <p className="text-ev-red text-sm">{error}</p>}
+            {error && <p className="text-ev-red text-sm">{error}</p>}
 
-              <PrimaryButton type="submit" disabled={loading}>
-                {loading ? 'Logging in…' : 'Log in'}
-              </PrimaryButton>
-            </form>
+            <PrimaryButton type="submit" disabled={loading}>
+              {loading ? 'Logging in…' : 'Log in'}
+            </PrimaryButton>
+          </form>
 
-            <p className="text-center text-sm text-gray-500">
-              Don't have an account?{' '}
-              <Link to="/signup" className="text-ev-teal-light font-medium hover:underline">
-                Create account
-              </Link>
-            </p>
-          </AuthCard>
-        </div>
+          <p className="text-center text-sm text-gray-500">
+            Don't have an account?{' '}
+            <Link to="/signup" className="text-ev-teal-light font-medium hover:underline">
+              Create account
+            </Link>
+          </p>
+        </AuthCard>
       </div>
-    </div>
+    </AuthPageLayout>
   );
 }

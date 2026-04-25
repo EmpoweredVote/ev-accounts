@@ -2,8 +2,7 @@ import { useState } from 'react';
 import type { LocationResult } from './LocationStep';
 import { apiFetch } from '../../../lib/api';
 import { useAuthStore } from '../../../store/authStore';
-import { AppNav } from '../../../components/AppNav';
-import { StepProgress } from '../../../components/StepProgress';
+import { AuthPageLayout } from '../../../components/AuthPageLayout';
 import { AuthCard } from '../../../components/AuthCard';
 import { PrimaryButton } from '../../../components/PrimaryButton';
 
@@ -32,12 +31,8 @@ export function LocationCelebrationStep({ onComplete }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-ev-navy flex flex-col">
-      <AppNav />
-      <div className="flex-1 px-4 py-8">
-        <div className="max-w-sm mx-auto space-y-6">
-          <StepProgress currentStep={3} totalSteps={3} />
-          <AuthCard>
+    <AuthPageLayout step={{ current: 3, total: 3 }}>
+      <AuthCard>
             {/* Green checkmark badge */}
             <div className="flex justify-center">
               <div className="w-16 h-16 rounded-full bg-green-500/15 flex items-center justify-center">
@@ -82,9 +77,7 @@ export function LocationCelebrationStep({ onComplete }: Props) {
             <PrimaryButton onClick={handleGoToDashboard} disabled={loading}>
               {loading ? 'Finalizing…' : 'Go to dashboard'}
             </PrimaryButton>
-          </AuthCard>
-        </div>
-      </div>
-    </div>
+      </AuthCard>
+    </AuthPageLayout>
   );
 }

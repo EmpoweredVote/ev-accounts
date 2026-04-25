@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../../lib/api';
-import { AppNav } from '../../../components/AppNav';
-import { StepProgress } from '../../../components/StepProgress';
+import { AuthPageLayout } from '../../../components/AuthPageLayout';
 import { AuthCard } from '../../../components/AuthCard';
 import { AuthInput } from '../../../components/AuthInput';
 import { PrimaryButton } from '../../../components/PrimaryButton';
@@ -126,23 +125,25 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
           required
         />
 
-        <AuthInput
-          label="City"
-          value={city}
-          onChange={setCity}
-          placeholder="Indianapolis"
-          autoComplete="address-level2"
-          required
-        />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <AuthInput
+            label="City"
+            value={city}
+            onChange={setCity}
+            placeholder="Indianapolis"
+            autoComplete="address-level2"
+            required
+          />
 
-        <AuthInput
-          label="State"
-          value={state}
-          onChange={(value) => setState(value.toUpperCase().slice(0, 2))}
-          placeholder="IN"
-          autoComplete="address-level1"
-          required
-        />
+          <AuthInput
+            label="State"
+            value={state}
+            onChange={(value) => setState(value.toUpperCase().slice(0, 2))}
+            placeholder="IN"
+            autoComplete="address-level1"
+            required
+          />
+        </div>
 
         <AuthInput
           label="ZIP code"
@@ -176,14 +177,8 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-ev-navy flex flex-col">
-      <AppNav />
-      <div className="flex-1 px-4 py-8">
-        <div className="max-w-sm mx-auto space-y-6">
-          <StepProgress currentStep={2} totalSteps={3} />
-          {cardContent}
-        </div>
-      </div>
-    </div>
+    <AuthPageLayout step={{ current: 2, total: 3 }}>
+      {cardContent}
+    </AuthPageLayout>
   );
 }
