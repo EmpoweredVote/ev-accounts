@@ -49,10 +49,13 @@ router.get('/discovery/staging', requireAuth as any, requireAdmin as any, async 
       SELECT
         cs.id, cs.full_name, cs.confidence, cs.action, cs.flagged, cs.flag_reason,
         cs.citation_url, cs.race_hint, cs.run_id, cs.created_at, cs.race_id,
+        cs.matched_candidate_id,
+        rc_match.full_name AS matched_name,
         r.position_name AS race_name,
         e.id AS election_id, e.election_date, e.name AS election_name, e.state, e.jurisdiction_level,
         dj.id AS discovery_jurisdiction_id, dj.jurisdiction_name
       FROM essentials.candidate_staging cs
+      LEFT JOIN essentials.race_candidates rc_match ON rc_match.id = cs.matched_candidate_id
       LEFT JOIN essentials.races r ON r.id = cs.race_id
       LEFT JOIN essentials.elections e ON e.id = r.election_id
       LEFT JOIN essentials.discovery_jurisdictions dj ON dj.id = cs.discovery_jurisdiction_id
