@@ -298,6 +298,21 @@ export async function runDiscoveryForJurisdiction(
         ).rows.map((r) => ({ id: r.candidate_id, raceId: r.race_id, fullName: r.full_name }))
       : [];
 
+  // Load name aliases for all candidates in scope so the match loop can resolve
+  // alternate official-ballot spellings (e.g. "Karen Bass" ↔ "Karen Ruth Bass").
+  const aliasRows: Array<{ alias: string; candidateId: string; raceId: string }> =
+    knownRaces.length
+      ? (
+          await pool.query<{ alias: string; candidate_id: string; race_id: string }>(
+            `SELECT pa.alias, rc.id AS candidate_id, rc.race_id
+               FROM essentials.politician_name_aliases pa
+               JOIN essentials.race_candidates rc ON rc.politician_id = pa.politician_id
+              WHERE rc.race_id = ANY($1::uuid[])`,
+            [knownRaces.map((r) => r.race_id)]
+          )
+        ).rows.map((r) => ({ alias: r.alias, candidateId: r.candidate_id, raceId: r.race_id }))
+      : [];
+
   // --- 3. Start run row ---
   const runInsert = await pool.query<{ id: string }>(
     `INSERT INTO essentials.discovery_runs
@@ -335,12 +350,19 @@ export async function runDiscoveryForJurisdiction(
     for (const cand of agentResult.candidates) {
       const domainOK = isDomainAllowlisted(cand.citation_url, allowedDomains);
 
-      // Fuzzy match against existing candidates for confidence + matched_candidate_id
+      // Fuzzy match against existing candidates (direct name) and aliases.
+      // Aliases cover alternate official-ballot spellings for known politicians.
       let bestMatch: { candidateId: string; raceId: string; score: number } | null = null;
       for (const ex of existingCandidates) {
         const s = nameSimilarity(cand.full_name, ex.fullName);
         if (s >= NAME_MATCH_THRESHOLD && (!bestMatch || s > bestMatch.score)) {
           bestMatch = { candidateId: ex.id, raceId: ex.raceId, score: s };
+        }
+      }
+      for (const a of aliasRows) {
+        const s = nameSimilarity(cand.full_name, a.alias);
+        if (s >= NAME_MATCH_THRESHOLD && (!bestMatch || s > bestMatch.score)) {
+          bestMatch = { candidateId: a.candidateId, raceId: a.raceId, score: s };
         }
       }
 
