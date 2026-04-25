@@ -2,6 +2,10 @@ import { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
 import { useAuthStore, type User } from '../store/authStore';
+import { AppNav } from '../components/AppNav';
+import { AuthCard } from '../components/AuthCard';
+import { AuthInput } from '../components/AuthInput';
+import { PrimaryButton } from '../components/PrimaryButton';
 
 interface LoginResponse {
   access_token: string;
@@ -69,65 +73,53 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-ev-black px-4 py-12">
-      {/* Wordmark */}
-      <div className="mb-8 text-center space-y-1">
-        <h1 className="text-3xl font-bold text-ev-teal-light tracking-tight">empowered.vote</h1>
-        <p className="text-gray-500 text-sm">Your civic profile</p>
-      </div>
+    <div className="min-h-screen bg-ev-navy flex flex-col">
+      <AppNav />
+      <div className="flex-1 flex items-center justify-center px-4 py-12">
+        <div className="w-full max-w-sm space-y-6">
+          {redirectUrl && (
+            <div className="p-3 bg-ev-blue/10 border border-ev-blue/30 rounded-lg text-sm text-gray-300 text-center">
+              We've made some improvements. Please log in again to continue.
+            </div>
+          )}
 
-      {/* Card */}
-      <div className="w-full max-w-sm bg-gray-900 rounded-2xl border border-gray-800 p-6 space-y-5">
-        {redirectUrl && (
-          <div className="p-3 bg-ev-teal/10 border border-ev-teal/30 rounded-lg text-sm text-gray-300 text-center">
-            We've made some improvements. Please log in again to continue.
-          </div>
-        )}
+          <AuthCard>
+            <h2 className="text-lg font-semibold text-white">Log in</h2>
 
-        <h2 className="text-lg font-semibold text-white">Log in</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <AuthInput
+                label="Email"
+                type="email"
+                value={email}
+                onChange={setEmail}
+                autoComplete="email"
+                required
+              />
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1.5">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              autoComplete="email"
-              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-teal-light text-base"
-            />
-          </div>
+              <AuthInput
+                label="Password"
+                type="password"
+                value={password}
+                onChange={setPassword}
+                autoComplete="current-password"
+                required
+              />
 
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-1.5">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              autoComplete="current-password"
-              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-teal-light text-base"
-            />
-          </div>
+              {error && <p className="text-ev-red text-sm">{error}</p>}
 
-          {error && <p className="text-ev-red text-sm">{error}</p>}
+              <PrimaryButton type="submit" disabled={loading}>
+                {loading ? 'Logging in…' : 'Log in'}
+              </PrimaryButton>
+            </form>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-ev-teal-light text-ev-black rounded-xl py-3 font-bold text-base hover:bg-ev-teal-light/90 disabled:opacity-40 transition-colors"
-          >
-            {loading ? 'Logging in…' : 'Log in'}
-          </button>
-        </form>
-
-        <p className="text-center text-sm text-gray-500">
-          Have an invite code?{' '}
-          <Link to="/signup" className="text-ev-teal-light font-medium hover:underline">
-            Create account
-          </Link>
-        </p>
+            <p className="text-center text-sm text-gray-500">
+              Don't have an account?{' '}
+              <Link to="/signup" className="text-ev-teal-light font-medium hover:underline">
+                Create account
+              </Link>
+            </p>
+          </AuthCard>
+        </div>
       </div>
     </div>
   );
