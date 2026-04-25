@@ -59,6 +59,7 @@ const authBodySchema = z.object({
 const signUpBodySchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+  display_name: z.string().min(1).max(100),
   legal_name: z.string().min(1).max(200).optional(),
   invite_code: z.string().min(9).max(9).optional(),
   guest_state: z.object({
@@ -92,7 +93,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
-  const { email, password, guest_state, legal_name, invite_code } = parsed.data;
+  const { email, password, display_name, guest_state, legal_name, invite_code } = parsed.data;
 
   // Phase 24: Pre-validate invite code BEFORE creating the auth user.
   // If the code is absent or invalid, bail out early — this prevents orphaned
@@ -205,6 +206,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
           p_user_id: data.user.id,
           p_legal_name: legal_name,
           p_invite_code: invite_code,
+          p_display_name: display_name,
         },
         'connect'
       );
