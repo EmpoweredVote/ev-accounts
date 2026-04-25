@@ -52,7 +52,7 @@ export default function OnboardingPage() {
       {step === 'location-celebration' && locationResult && (
         <LocationCelebrationStep
           result={locationResult}
-          onContinue={() => setStep('pseudonym')}
+          onComplete={handleOnboardingComplete}
         />
       )}
 
