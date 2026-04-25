@@ -10,12 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 60 in progress — plan 03 complete**
+**Phase 60 in progress — plan 04 complete**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
-Phase 60 has plans 01–06. Plans 01–03 complete.
+Phase 60 has plans 01–06. Plans 01–04 complete.
 
-Next step: Execute plan 60-04 (wave 2), then 60-05, 60-06.
+Next step: Execute plan 60-05, then 60-06.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -23,7 +23,7 @@ Next step: Execute plan 60-04 (wave 2), then 60-05, 60-06.
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 3/6 plans ██████░░░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 4/6 plans ████████░░░░░░░░░░░░
 
 ## Performance Metrics
 
@@ -38,6 +38,15 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.0 Component Patterns (from 60-02, 60-03, 60-04)
+
+**Chrome components (60-04):**
+- **StepProgress bar height**: `h-1.5` (6px) — thinner than DashboardPage XP bar (`h-2`) per v2.0 spec
+- **StepProgress fill**: `bg-ev-blue` (NOT ev-teal) — v2.0 primary CTA blue palette
+- **Conditional slot pattern**: `{children && <div className="flex items-center gap-3">{children}</div>}` — avoids empty flex spacing
+- **No Link/a on logo**: AppNav logo has no wrapper — navigation belongs to the consumer page
+- **AppNav dimensions**: `max-w-lg` container, `h-14` height (56px), `sticky top-0 z-10` — matches DashboardPage header
 
 ### v2.0 Component Patterns (from 60-02, 60-03)
 
@@ -127,6 +136,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-25T20:04:32Z
-Stopped at: Completed 60-03-PLAN.md (PrimaryButton + SecondaryButton components)
+Last session: 2026-04-25T20:07:38Z
+Stopped at: Completed 60-04-PLAN.md (StepProgress + AppNav chrome components)
 Resume file: None
