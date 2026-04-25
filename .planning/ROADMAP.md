@@ -583,6 +583,14 @@ Plans:
 
 **Requirements:** AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06
 
+**Plans:** 4 plans
+
+Plans:
+- [ ] 61-01-PLAN.md — Patch AuthInput to accept inputClassName prop (foundation for invite-code mono styling)
+- [ ] 61-02-PLAN.md — Build WelcomeScreen at /welcome with three options and invitational copy (AUTH-01)
+- [ ] 61-03-PLAN.md — Restyle LoginPage with AppNav + AuthCard + AuthInput + PrimaryButton (AUTH-06)
+- [ ] 61-04-PLAN.md — Restyle SignupPage form + check-email screen with StepProgress and alpha-trust copy (AUTH-02–05)
+
 **Success Criteria:**
 
 1. Navigating to `/welcome` shows a centered card with three clear options — Create account, Log in, and "Continue exploring" — and the copy uses invitational framing; no pressure language appears anywhere on the screen.
