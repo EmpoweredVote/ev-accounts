@@ -134,9 +134,10 @@ export function isDomainAllowlisted(url: string, allowedDomains: string[] | null
  * Returns 'inserted' when a new row is created, 'already_present' when an
  * existing row with the same race_id + lower(full_name) is found.
  */
-async function autoUpsertToRaceCandidates(args: {
+export async function autoUpsertToRaceCandidates(args: {
   raceId: string;
   fullName: string;
+  source?: string;
 }): Promise<'inserted' | 'already_present'> {
   const existing = await pool.query<{ exists: boolean }>(
     `SELECT 1 FROM essentials.race_candidates
@@ -151,12 +152,13 @@ async function autoUpsertToRaceCandidates(args: {
   const tokens = args.fullName.trim().split(/\s+/);
   const firstName = tokens[0] ?? null;
   const lastName = tokens.length > 1 ? tokens.slice(1).join(' ') : null;
+  const source = args.source ?? 'discovery_cron';
 
   await pool.query(
     `INSERT INTO essentials.race_candidates
        (race_id, full_name, first_name, last_name, last_verified_at, source)
-     VALUES ($1, $2, $3, $4, now(), 'discovery_cron')`,
-    [args.raceId, args.fullName, firstName, lastName]
+     VALUES ($1, $2, $3, $4, now(), $5)`,
+    [args.raceId, args.fullName, firstName, lastName, source]
   );
   return 'inserted';
 }

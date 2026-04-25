@@ -28,7 +28,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
-import { runDiscoveryForJurisdiction } from '../lib/discoveryService.js';
+import { autoUpsertToRaceCandidates, runDiscoveryForJurisdiction } from '../lib/discoveryService.js';
 import { acquireRunLock, releaseRunLock } from '../lib/discoveryCron.js';
 
 const router = Router();
@@ -178,10 +178,10 @@ router.post('/discover/race/:id', async (req: Request, res: Response): Promise<v
 
 // ---------------------------------------------------------------------------
 // POST /discovery/staging/:id/approve
-// Auth: requireAdminToken
+// Auth: requireAdminToken (applied at mount in index.ts)
 // Body (optional): { reviewerName?: string }
-// Marks a pending staging row as approved (status='approved').
-// Does NOT auto-promote to race_candidates (STAG-02 deferred to Phase 7).
+// Marks pending staging row approved and upserts to race_candidates when race_id is not null
+// and action != 'withdrawal'. Returns upsertResult in the response body.
 // ---------------------------------------------------------------------------
 router.post('/discovery/staging/:id/approve', async (req: Request, res: Response): Promise<void> => {
   try {
@@ -226,9 +226,17 @@ router.post('/discovery/staging/:id/approve', async (req: Request, res: Response
     }
 
     const row = result.rows[0];
-    const warning = row.race_id === null
-      ? 'Staging row approved, but race_id is NULL. Auto-promotion to race_candidates is deferred to Phase 7. A matching essentials.races row must exist before any promotion.'
-      : null;
+
+    let upsertResult: 'inserted' | 'already_present' | 'skipped_no_race' | 'skipped_withdrawal' = 'skipped_no_race';
+    if (row.race_id !== null && row.action !== 'withdrawal') {
+      upsertResult = await autoUpsertToRaceCandidates({
+        raceId: row.race_id,
+        fullName: row.full_name,
+        source: 'discovery_admin',
+      });
+    } else if (row.action === 'withdrawal') {
+      upsertResult = 'skipped_withdrawal';
+    }
 
     res.status(200).json({
       id: row.id,
@@ -236,7 +244,7 @@ router.post('/discovery/staging/:id/approve', async (req: Request, res: Response
       status: 'approved',
       confidence: row.confidence,
       action: row.action,
-      warning,
+      upsertResult,
     });
   } catch (err) {
     console.error('[POST /discovery/staging/:id/approve] error:', err);

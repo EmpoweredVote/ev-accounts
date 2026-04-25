@@ -9,15 +9,15 @@
  *     Sorted by election_date ASC (soonest first), then confidence ASC, then created_at ASC.
  *
  *   POST /discovery/staging/:id/approve
- *     Marks a pending staging row as approved (status='approved').
- *     Does NOT auto-promote to race_candidates — auto-upsert deferred to Phase 7.
- *     If race_id is NULL, approval succeeds with a warning in the response.
+ *     Marks a pending staging row as approved and upserts the candidate to
+ *     race_candidates (source='discovery_admin') when race_id is not null and
+ *     action != 'withdrawal'. Returns upsertResult: inserted|already_present|skipped_*.
  *
  *   POST /discovery/staging/:id/dismiss
  *     Marks a pending staging row as dismissed (status='dismissed').
  *     Requires a non-empty `reason` string in the request body.
  *
- * Auth: requireAuth + requireAdmin are applied at mount time in index.ts (NOT in this file).
+ * Auth: requireAuth + requireAdmin are applied per-route inside this file (NOT at mount time).
  * This is the dual-router pattern: this router serves browser JWT requests while the existing
  * essentialsDiscoveryRouter continues to serve server-to-server X-Admin-Token requests.
  *
@@ -29,6 +29,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
+import { autoUpsertToRaceCandidates } from '../lib/discoveryService.js';
 import { requireAuth } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 
@@ -38,7 +39,7 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 
 // ---------------------------------------------------------------------------
 // GET /discovery/staging
-// Auth: requireAuth + requireAdmin (applied at mount in index.ts)
+// Auth: requireAuth + requireAdmin (per-route)
 // Returns all pending staged candidates grouped/ordered by election date.
 // Uses LEFT JOIN so rows with race_id = NULL are still included.
 // ---------------------------------------------------------------------------
@@ -68,10 +69,10 @@ router.get('/discovery/staging', requireAuth as any, requireAdmin as any, async 
 
 // ---------------------------------------------------------------------------
 // POST /discovery/staging/:id/approve
-// Auth: requireAuth + requireAdmin (applied at mount in index.ts)
+// Auth: requireAuth + requireAdmin (per-route)
 // Body (optional): { reviewerName?: string }
-// Marks a pending staging row as approved (status='approved').
-// Does NOT auto-promote to race_candidates (STAG-02 deferred to Phase 7).
+// Marks pending staging row approved and upserts to race_candidates when race_id is not null
+// and action != 'withdrawal'. Returns upsertResult in the response body.
 // ---------------------------------------------------------------------------
 router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
   try {
@@ -116,9 +117,17 @@ router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin a
     }
 
     const row = result.rows[0];
-    const warning = row.race_id === null
-      ? 'Staging row approved, but race_id is NULL. Auto-promotion to race_candidates is deferred to Phase 7. A matching essentials.races row must exist before any promotion.'
-      : null;
+
+    let upsertResult: 'inserted' | 'already_present' | 'skipped_no_race' | 'skipped_withdrawal' = 'skipped_no_race';
+    if (row.race_id !== null && row.action !== 'withdrawal') {
+      upsertResult = await autoUpsertToRaceCandidates({
+        raceId: row.race_id,
+        fullName: row.full_name,
+        source: 'discovery_admin',
+      });
+    } else if (row.action === 'withdrawal') {
+      upsertResult = 'skipped_withdrawal';
+    }
 
     res.status(200).json({
       id: row.id,
@@ -126,7 +135,7 @@ router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin a
       status: 'approved',
       confidence: row.confidence,
       action: row.action,
-      warning,
+      upsertResult,
     });
   } catch (err) {
     console.error('[POST /discovery/staging/:id/approve] error:', err);
@@ -136,7 +145,7 @@ router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin a
 
 // ---------------------------------------------------------------------------
 // POST /discovery/staging/:id/dismiss
-// Auth: requireAuth + requireAdmin (applied at mount in index.ts)
+// Auth: requireAuth + requireAdmin (per-route)
 // Body: { reason: string } — required; stored on dismissed_reason
 // ---------------------------------------------------------------------------
 router.post('/discovery/staging/:id/dismiss', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
