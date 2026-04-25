@@ -119,12 +119,12 @@ export default function SignupPage() {
       <AppNav />
       <div className="flex-1 px-4 py-8">
         <div className="max-w-sm mx-auto space-y-6">
-          <StepProgress currentStep={1} totalSteps={4} />
+          <StepProgress currentStep={1} totalSteps={3} />
 
           <AuthCard>
             <div className="space-y-1">
               <h2 className="text-lg font-semibold text-white">Create your Connected Account</h2>
-              <p className="text-sm text-gray-400">Step 1 of 4 — set up your sign-in.</p>
+              <p className="text-sm text-gray-400">Step 1 of 3 — set up your sign-in.</p>
             </div>
 
             {error && (
