@@ -14,6 +14,7 @@ interface AuthInputProps {
     InputHTMLAttributes<HTMLInputElement>,
     'type' | 'value' | 'onChange' | 'placeholder' | 'autoComplete' | 'required' | 'autoFocus'
   >;
+  inputClassName?: string;
 }
 
 export function AuthInput({
@@ -27,6 +28,7 @@ export function AuthInput({
   required,
   autoFocus,
   inputProps,
+  inputClassName = '',
 }: AuthInputProps) {
   const borderClass = error
     ? 'border-ev-red focus:ring-ev-red'
@@ -44,7 +46,7 @@ export function AuthInput({
         autoComplete={autoComplete}
         required={required}
         autoFocus={autoFocus}
-        className={`w-full bg-gray-800 border ${borderClass} rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 text-base`}
+        className={`w-full bg-gray-800 border ${borderClass} rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 text-base ${inputClassName}`.trim()}
       />
       {error && <p className="mt-1.5 text-ev-red text-sm">{error}</p>}
     </div>
