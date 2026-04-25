@@ -1,5 +1,12 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../../../lib/api';
+import { AppNav } from '../../../components/AppNav';
+import { StepProgress } from '../../../components/StepProgress';
+import { AuthCard } from '../../../components/AuthCard';
+import { AuthInput } from '../../../components/AuthInput';
+import { PrimaryButton } from '../../../components/PrimaryButton';
+import { SecondaryButton } from '../../../components/SecondaryButton';
 
 export interface LocationResult {
   location_consent: boolean;
@@ -35,7 +42,7 @@ interface Props {
 }
 
 export function LocationStep({ isUpdate = false, onSuccess }: Props) {
-  const [revealed, setRevealed] = useState(isUpdate); // skip reveal animation for update flow
+  const navigate = useNavigate();
   const [street, setStreet] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
@@ -68,129 +75,114 @@ export function LocationStep({ isUpdate = false, onSuccess }: Props) {
     }
   }
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-6">
-      <div className="max-w-md w-full space-y-8">
+  const cardContent = (
+    <AuthCard>
+      {!isUpdate && (
+        <div className="flex justify-center">
+          <div className="w-16 h-16 rounded-full bg-ev-blue/10 flex items-center justify-center">
+            <svg
+              className="w-8 h-8 text-ev-blue"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25s-7.5-4.108-7.5-11.25a7.5 7.5 0 1115 0z"
+              />
+            </svg>
+          </div>
+        </div>
+      )}
+
+      <div className={isUpdate ? 'space-y-1' : 'space-y-2 text-center'}>
+        <h2 className="text-2xl font-bold text-white">
+          {isUpdate ? 'Update your location' : 'Find your civic community'}
+        </h2>
+        <p className="text-sm text-gray-400 leading-relaxed">
+          {isUpdate
+            ? "Moved? We'll refresh your district connections."
+            : 'We use your location to connect you with your local civic space.'}
+        </p>
+      </div>
+
+      {error && (
+        <div className="bg-red-950/40 border border-red-800/60 rounded-xl px-4 py-3">
+          <p className="text-sm text-ev-red">{error}</p>
+        </div>
+      )}
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <AuthInput
+          label="Street address"
+          value={street}
+          onChange={setStreet}
+          placeholder="123 Main St"
+          autoComplete="address-line1"
+          autoFocus
+          required
+        />
+
+        <AuthInput
+          label="City"
+          value={city}
+          onChange={setCity}
+          placeholder="Indianapolis"
+          autoComplete="address-level2"
+          required
+        />
+
+        <AuthInput
+          label="State"
+          value={state}
+          onChange={(value) => setState(value.toUpperCase().slice(0, 2))}
+          placeholder="IN"
+          autoComplete="address-level1"
+          required
+        />
+
+        <AuthInput
+          label="ZIP code"
+          value={zip}
+          onChange={(value) => setZip(value.replace(/\D/g, '').slice(0, 5))}
+          placeholder="46201"
+          autoComplete="postal-code"
+          required
+          inputProps={{ inputMode: 'numeric' }}
+        />
+
+        <PrimaryButton type="submit" disabled={loading || !isComplete}>
+          {loading
+            ? 'Finding your community…'
+            : isUpdate
+            ? 'Update location'
+            : 'Find my representatives'}
+        </PrimaryButton>
 
         {!isUpdate && (
-          <div className="space-y-2 text-center">
-            <h2 className="text-2xl font-bold text-ev-black dark:text-white">
-              One more thing.
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">Step 2 of 3</p>
-          </div>
+          <SecondaryButton onClick={() => navigate('/welcome')}>
+            Back
+          </SecondaryButton>
         )}
+      </form>
+    </AuthCard>
+  );
 
-        {isUpdate && (
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold text-ev-black dark:text-white">
-              Update your location
-            </h2>
-            <p className="text-gray-500 dark:text-gray-400 text-sm">
-              Moved? We'll refresh your district connections.
-            </p>
-          </div>
-        )}
+  if (isUpdate) {
+    return cardContent;
+  }
 
-        {/* Context-first — shown before the input is revealed */}
-        <div className="bg-ev-teal/5 border border-ev-teal/20 rounded-2xl p-5 space-y-3">
-          <p className="text-ev-black dark:text-white font-medium leading-snug">
-            To connect you to your representatives, we need to know where you live.
-          </p>
-          <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-            Your address is encrypted and never shared. We use it only to identify
-            your voting districts and the civic communities closest to you.
-          </p>
-          {!revealed && (
-            <button
-              onClick={() => setRevealed(true)}
-              className="text-ev-teal text-sm font-semibold hover:underline"
-            >
-              I understand — show the input →
-            </button>
-          )}
+  return (
+    <div className="min-h-screen bg-ev-navy flex flex-col">
+      <AppNav />
+      <div className="flex-1 px-4 py-8">
+        <div className="max-w-sm mx-auto space-y-6">
+          <StepProgress currentStep={2} totalSteps={3} />
+          {cardContent}
         </div>
-
-        {/* Address input — revealed after context */}
-        {revealed && (
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div>
-              <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
-                Street address
-              </label>
-              <input
-                type="text"
-                value={street}
-                onChange={(e) => setStreet(e.target.value)}
-                placeholder="123 Main St"
-                autoFocus
-                autoComplete="address-line1"
-                className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
-              />
-            </div>
-
-            <div className="flex gap-2">
-              <div className="flex-1">
-                <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
-                  City
-                </label>
-                <input
-                  type="text"
-                  value={city}
-                  onChange={(e) => setCity(e.target.value)}
-                  placeholder="Indianapolis"
-                  autoComplete="address-level2"
-                  className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
-                />
-              </div>
-              <div className="w-20">
-                <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
-                  State
-                </label>
-                <input
-                  type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value.toUpperCase().slice(0, 2))}
-                  placeholder="IN"
-                  autoComplete="address-level1"
-                  className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base text-center"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-ev-black dark:text-white mb-1.5">
-                ZIP code
-              </label>
-              <input
-                type="text"
-                value={zip}
-                onChange={(e) => setZip(e.target.value.replace(/\D/g, '').slice(0, 5))}
-                placeholder="46201"
-                autoComplete="postal-code"
-                inputMode="numeric"
-                className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 bg-white dark:bg-gray-900 text-ev-black dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal text-base"
-              />
-            </div>
-
-            {error && (
-              <p className="text-sm text-ev-red leading-snug">{error}</p>
-            )}
-
-            <p className="text-xs text-gray-400 leading-relaxed">
-              Your congressional representative votes on federal legislation that affects your
-              life. Knowing who they are is step one.
-            </p>
-
-            <button
-              type="submit"
-              disabled={loading || !isComplete}
-              className="w-full bg-ev-teal text-white rounded-xl py-3.5 font-semibold text-base hover:bg-ev-teal/90 disabled:opacity-40 transition-colors"
-            >
-              {loading ? 'Finding your community…' : isUpdate ? 'Update location' : 'Find my representatives'}
-            </button>
-          </form>
-        )}
       </div>
     </div>
   );
