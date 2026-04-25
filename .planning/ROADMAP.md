@@ -75,7 +75,11 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
   2. A user viewing a clerk, auditor, recorder, treasurer, or similar administrative role sees a portrait-forward non-compass variant with role-appropriate content replacing the radar (content spec finalized during discuss-phase)
   3. A user viewing a judicial role sees a judge-appropriate non-compass variant (e.g., retention history, court level, appointment source — spec finalized during discuss-phase)
   4. A user viewing the representatives page sees retention judges appear in both elected and appointed filter views, matching existing dual-appearance behavior
-**Plans**: TBD
+**Plans**: 4 plans
+- [ ] 128-01-PLAN.md — Wave 0: export computeVariant from classify.js + Vitest coverage for STATE-01/02/03
+- [ ] 128-02-PLAN.md — Wave 1: extend ev-ui CompassCardHorizontal with variant + onBuildCompass props (empty CTA + unavailable plate render paths)
+- [ ] 128-03-PLAN.md — Wave 2: switch essentials Prototype.jsx to CompassCardHorizontal + computeVariant + COMPASS_URL deep-link handler
+- [ ] 128-04-PLAN.md — Wave 3: bump ev-ui to next minor (new public API) and verify auto-bump pipeline reaches consumers
 **UI hint**: yes
 
 ### Phase 129: Essentials Adoption & Prototype Retirement
@@ -108,5 +112,5 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 | 125. Tier 2 UX Polish Bundle | v2026.4.4 | 4/4 | Complete | 2026-04-18 |
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
 | 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
-| 128. Empty & Non-Compass Variants | v2026.4.5 | 0/0 | Not started | - |
+| 128. Empty & Non-Compass Variants | v2026.4.5 | 0/4 | Planned | - |
 | 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 0/0 | Not started | - |
