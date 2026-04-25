@@ -12,6 +12,7 @@
 - ✅ **v1.7 Cross-App SSO** — Phases 44–48 (shipped 2026-04-02)
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
+- 📋 **v2.0 Civic Account Experience** — Phases 60–65 (planned 2026-04-25)
 
 ## Phases
 
@@ -114,14 +115,6 @@ Plans:
 - [x] 34-01-PLAN.md — Pre-flight verification: enumerate tables, detect user_id columns, capture row counts
 - [x] 34-02-PLAN.md — RLS migrations for 5 public-read schemas (essentials, meetings, treasury, transparent_motivations, compass)
 - [x] 34-03-PLAN.md — RLS migration for staging (authenticated-only read) + comprehensive verification
-
-**Plans:** 4 plans
-
-Plans:
-- [ ] 58-01-PLAN.md � Backend micro-tasks (granted_at + essentials_data_editor politician list)
-- [ ] 58-02-PLAN.md � Dashboard shell, routes, tab navigation, grant cards
-- [ ] 58-03-PLAN.md � Compass Editor + Campaign Manager (Candidate Coordinator) pages
-- [ ] 58-04-PLAN.md � Essentials Editor page + end-to-end verification
 
 **Success Criteria:**
 
@@ -552,6 +545,117 @@ Plans:
 
 ---
 
+### v2.0 Civic Account Experience (Phases 60–65)
+
+---
+
+#### Phase 60: Design Foundation
+
+**Goal:** The shared design language for the Civic Account Experience exists as a component library — color tokens, atomic input/button/card components, progress bar, and nav shell are all implemented in `app/src` and ready for use in every subsequent phase.
+
+**Dependencies:** None (all v2.0 phases depend on this phase)
+
+**Requirements:** DSGN-01, DSGN-02, DSGN-03, DSGN-04, DSGN-05, DSGN-06
+
+**Success Criteria:**
+
+1. `ev-blue` (`#3B82F6`) and `ev-navy` (`#020618`) color tokens are declared in `app/src/index.css` and resolve correctly in Tailwind v4 class names (e.g., `bg-ev-blue`, `text-ev-navy`); `ev-blue` is also added to `admin/src/index.css`.
+2. An `AuthCard` component renders a dark rounded card with a visible border and consistent padding; swapping in `AuthCard` for any auth or onboarding screen requires no layout code in the consuming page.
+3. An `AuthInput` component renders a labeled dark field with placeholder text, inline error message slot, and a blue focus ring on focus — matching the design spec.
+4. `PrimaryButton` renders a full-width blue button and `SecondaryButton` renders a full-width dark button; both accept `disabled` and `onClick` props; neither button requires additional style overrides at usage sites.
+5. `StepProgress` renders a "Step X of Y" label, a percentage-computed blue filled track, and accepts `step` and `total` numeric props; `AppNav` renders the logo mark and wordmark on the left and an optional right-slot for auth controls.
+
+---
+
+#### Phase 61: Auth Flow Restyle
+
+**Goal:** Every screen in the auth sequence — welcome, signup, email confirmation, and login — uses the new design language and copy so that the first impression a prospective user has of the platform is trust-first and invitational, never coercive.
+
+**Dependencies:** Phase 60 (AuthCard, AuthInput, PrimaryButton, AppNav, StepProgress must exist)
+
+**Requirements:** AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06
+
+**Success Criteria:**
+
+1. Navigating to `/welcome` shows a centered card with three clear options — Create account, Log in, and "Continue exploring" — and the copy uses invitational framing; no pressure language appears anywhere on the screen.
+2. The signup page renders `AppNav`, `StepProgress` (Step 1 of 4), an `AuthCard` containing `AuthInput` fields for email, password, display name, legal name, and invite code; all fields use the dark input style with blue focus ring.
+3. The legal name field on signup displays inline copy explaining the invite-network identity model ("During Alpha, your identity is verified through our invite network — one person, one voice") and a "never shown publicly" note visible before the user types.
+4. The invite code field displays a shield icon and an inline alpha-trust explanation; the check-email confirmation screen shows the user's email address with a magic-link explanation and a sign-in link.
+5. The login page renders `AppNav`, an `AuthCard` with dark fields and a blue CTA, and an "Already have account? Sign In" link — matching the Figma design language throughout.
+
+---
+
+#### Phase 62: Onboarding Restyle
+
+**Goal:** The three active onboarding steps — civic name, location, and you're connected — are visually consistent with the new design language and carry copy that frames civic participation as meaningful, not transactional. The old `WelcomeStep` is removed from the flow.
+
+**Dependencies:** Phase 60 (AppNav, StepProgress, AuthCard, AuthInput, PrimaryButton must exist); Phase 61 (WelcomeScreen at `/welcome` must exist to absorb the removed WelcomeStep)
+
+**Requirements:** ONBD-01, ONBD-02, ONBD-03, ONBD-04, ONBD-05
+
+**Success Criteria:**
+
+1. All three active onboarding steps (`PseudonymStep`, `LocationStep`, `LocationCelebrationStep`) render the shared `AppNav` and `StepProgress` bar at the top; the step counter increments correctly across steps.
+2. The civic name step shows an avatar icon, the label "Choose your civic name", the copy "This is how your voice appears in civic spaces and discussions", and an `AuthInput` for the civic name — with Continue and Back buttons.
+3. The location step shows a pin icon, the label "Find your civic community", the copy "We use your location to connect you with your local civic space. Learn More.", and four `AuthInput` fields for street, city, state, and ZIP — with Continue and Back buttons; no ZIP-only shortcut is offered.
+4. The "You're connected" celebration step shows a green checkmark icon and three milestone items confirming account creation, location match, and readiness to participate; a "Go to dashboard" CTA navigates the user forward.
+5. The old `WelcomeStep` component is removed from the onboarding route sequence; new users entering onboarding land directly on the civic name step; `/welcome` is the only pre-entry value pitch screen.
+
+---
+
+#### Phase 63: Profile Page + Activity Feed
+
+**Goal:** The profile page at `login.empowered.vote/profile` matches the new design — name, level, XP bar, gem icons, recent activity, invite section, and VR display are all rendered — and the backend delivers a real activity feed endpoint so the Recent Activity section shows live data.
+
+**Dependencies:** Phase 60 (design tokens must exist for the profile reskin); no auth-flow dependency
+
+**Requirements:** PROF-01, PROF-02, PROF-03, PROF-04, PROF-05, PROF-06, API-01, FIX-01
+
+**Success Criteria:**
+
+1. The profile page renders the user's display name as a large heading, a Level badge, and an XP progress bar showing the format "Level N — X / Y XP" with the bar correctly filled based on `xp_in_level` / `xp_to_next_level`.
+2. The gems section displays three large colored gem icons (yellow, blue, red) with the numeric balance beneath each; balances update when the page is refreshed.
+3. The Recent Activity section shows the last 4 XP transactions drawn from `GET /api/account/me/activity`, each displaying the activity name, date, and "+N XP" amount in teal; the section is absent or shows an empty state if the user has no XP history.
+4. The invite section renders a locked state ("Reach level 2 to unlock your first referral code") for users below level 2, and an active state showing the invite code with a copy button for eligible users; Verification Rating is displayed as "X / 150" with explanatory copy.
+5. `GET /api/account/me/activity` returns the last 20 XP transactions for the authenticated user with `source`, `amount`, `description`, and `created_at` per entry; requires Connected tier (non-Connected requests receive 403); generating a new invite code from the DashboardPage correctly sends `optional_name` in the request body.
+
+---
+
+#### Phase 64: InformLanding
+
+**Goal:** Unauthenticated visitors to `app.empowered.vote` see a genuinely useful homepage that explains the platform and its features — without a signup wall, without funnel copy, and with a clear invitation to participate when they are ready.
+
+**Dependencies:** Phase 60 (AppNav with auth links must exist); authenticated users must be routed to `DashboardPage` instead
+
+**Requirements:** LAND-01, LAND-02, LAND-03, LAND-04, LAND-05
+
+**Success Criteria:**
+
+1. Unauthenticated users who visit `app.empowered.vote/` see `InformLandingPage`; authenticated users who visit the same URL are shown `DashboardPage` — routing is tier-aware with no flash of the wrong page.
+2. The hero section renders the "Understand your world" headline, a subtitle, a "No account required" note, and a feature card grid showing Empowered Essentials, Empowered Compass, Treasury Tracker, Fallacy Finders, and Empowered Badges.
+3. The "Participate with your community" section shows civic spaces icons (Civic Spaces, Common Ground, Symposium) and explains the Connected account value proposition without pressure language; no CTA button appears in this section.
+4. The "Join the conversation" bottom section shows Create account and Sign in buttons; copy frames Connected as "for those seeking shared solutions" — not a conversion funnel.
+5. `AppNav` on `InformLandingPage` renders the logo and wordmark on the left with Sign In and Create account links in the right slot.
+
+---
+
+#### Phase 65: Dashboard Redesign
+
+**Goal:** The dashboard at `app.empowered.vote/` for authenticated users is a coherent home screen — a continue card surfaces the last-used feature, a stats bar gives a live snapshot of the user's standing, and the feature grid organizes Inform and Connect capabilities by tier with the Empowered upgrade CTA at the bottom for eligible users.
+
+**Dependencies:** Phase 60 (design tokens and shared components); Phase 63 (activity feed API needed for continue card recency data); Phase 64 (routing logic distinguishes authenticated vs. unauthenticated landing)
+
+**Requirements:** DASH-01, DASH-02, DASH-03, DASH-04
+
+**Success Criteria:**
+
+1. The dashboard renders a "Continue where you left off" card showing the name and icon of the last-used feature with a Continue button; the card derives its state from stored last-used data and does not appear if no feature has been used yet.
+2. An inline stats bar below the nav displays the user's display name, level badge, XP progress bar, gem counts (yellow/blue/red), VR score, and a "View full profile →" link — all drawn from the existing `/account/me` response.
+3. The explore features grid renders an Inform section (visible to all tiers) and a Connect section (visible to Connected+ users with full interactivity; dimmed and locked for Inform-tier users); tier-gated features show a clear locked indicator without hiding the feature name.
+4. A "Ready to go public?" Empowered upgrade CTA section renders at the page bottom for Connected users; the section is not rendered for Empowered users or Inform-tier users.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -614,4 +718,10 @@ Plans:
 | 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
-| 59. Referral Code System | — | 0/4 | Planning | — |
+| 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
+| 60. Design Foundation | v2.0 | 0/? | Pending | — |
+| 61. Auth Flow Restyle | v2.0 | 0/? | Pending | — |
+| 62. Onboarding Restyle | v2.0 | 0/? | Pending | — |
+| 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
+| 64. InformLanding | v2.0 | 0/? | Pending | — |
+| 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |

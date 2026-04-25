@@ -83,7 +83,16 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 ### Active (v2.0)
 
-*(No active requirements defined yet — run `/gsd:new-milestone` to define v2.0 scope)*
+**Milestone: v2.0 Civic Account Experience** — First complete UX overhaul. Match the colleague design system (dark navy, blue CTA) across the full user-facing flow: WelcomeScreen, signup, onboarding, profile, InformLanding, and dashboard.
+
+- [ ] DSGN-01–06: Design foundation — `ev-blue`/`ev-navy` tokens + shared AuthCard, AuthInput, Button, StepProgress, AppNav components
+- [ ] AUTH-01–06: Auth flow restyle — WelcomeScreen, SignupPage (with legal name trust copy), check-email, LoginPage
+- [ ] ONBD-01–05: Onboarding restyle — civic name, location, you're connected steps in new progress bar shell
+- [ ] PROF-01–06: Profile page redesign — name/level/XP bar, gem icons, recent activity, invite section, VR display
+- [ ] API-01: `GET /api/account/me/activity` endpoint for recent XP transactions
+- [ ] FIX-01: Fix invite code generation bug (optional_name not sent)
+- [ ] LAND-01–05: InformLanding — unauthenticated homepage; invitational, not a funnel
+- [ ] DASH-01–04: Dashboard redesign — continue card, stats bar, tiered feature grid
 
 ### Deferred to v2.0
 
@@ -200,5 +209,20 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
+## Current Milestone: v2.0 Civic Account Experience
+
+**Goal:** Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma — dark navy, blue CTAs, trust-first copy — without sacrificing any existing backend functionality.
+
+**Anti-funnel principle:** Most users are Inform-tier observers; that is expected and good. Copy and flows must invite, never pressure. Connected = Shared Solutions, not a conversion metric.
+
+**Target features:**
+- Design foundation tokens + shared components (AuthCard, StepProgress, AppNav, etc.)
+- Auth flow: WelcomeScreen → Signup (legal name + trust copy) → magic-link confirmation → Login
+- Onboarding: civic name → location → you're connected (in new progress bar shell)
+- Profile page: name/level/XP bar, gem icons, activity feed, invite section, VR display, upgrade CTA
+- InformLanding: unauthenticated homepage that is genuinely useful without a signup wall
+- Dashboard: continue card, stats bar, Inform/Connect feature grid
+- Backend: activity feed endpoint + invite code bug fix
+
 ---
-*Last updated: 2026-04-06 after v1.9 milestone*
+*Last updated: 2026-04-25 after v2.0 milestone start*
