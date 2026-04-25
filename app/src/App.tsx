@@ -4,6 +4,7 @@ import { AuthGuard } from './components/AuthGuard';
 import { OnboardingGuard } from './components/OnboardingGuard';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
+import WelcomeScreen from './pages/WelcomeScreen';
 import DashboardPage from './pages/DashboardPage';
 import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
@@ -186,6 +187,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
+      <Route path="/welcome" element={<WelcomeScreen />} />
 
       {/* Authenticated */}
       <Route element={<AuthGuard />}>
