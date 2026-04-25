@@ -29,6 +29,8 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { pool } from '../lib/db.js';
+import { requireAuth } from '../middleware/auth.js';
+import { requireAdmin } from '../middleware/requireAdmin.js';
 
 const router = Router();
 
@@ -40,7 +42,7 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // Returns all pending staged candidates grouped/ordered by election date.
 // Uses LEFT JOIN so rows with race_id = NULL are still included.
 // ---------------------------------------------------------------------------
-router.get('/discovery/staging', async (req: Request, res: Response): Promise<void> => {
+router.get('/discovery/staging', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
   try {
     const result = await pool.query(`
       SELECT
@@ -71,7 +73,7 @@ router.get('/discovery/staging', async (req: Request, res: Response): Promise<vo
 // Marks a pending staging row as approved (status='approved').
 // Does NOT auto-promote to race_candidates (STAG-02 deferred to Phase 7).
 // ---------------------------------------------------------------------------
-router.post('/discovery/staging/:id/approve', async (req: Request, res: Response): Promise<void> => {
+router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id as string;
     if (!id || !UUID_REGEX.test(id)) {
@@ -137,7 +139,7 @@ router.post('/discovery/staging/:id/approve', async (req: Request, res: Response
 // Auth: requireAuth + requireAdmin (applied at mount in index.ts)
 // Body: { reason: string } — required; stored on dismissed_reason
 // ---------------------------------------------------------------------------
-router.post('/discovery/staging/:id/dismiss', async (req: Request, res: Response): Promise<void> => {
+router.post('/discovery/staging/:id/dismiss', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id as string;
     if (!id || !UUID_REGEX.test(id)) {

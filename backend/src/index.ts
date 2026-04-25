@@ -99,10 +99,9 @@ app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
 // JWT-gated staging review endpoints for the browser admin UI (STAG-06).
-// MUST be mounted before the requireAdminToken mount below — mount order matters
-// because Express checks mounts in registration order and the token-auth mount
-// would otherwise 401 every browser request.
-app.use('/api/admin', requireAuth as any, requireAdmin as any, stagingQueueAdminRouter);
+// Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
+// X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
+app.use('/api/admin', stagingQueueAdminRouter);
 // Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
 // because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
 app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
