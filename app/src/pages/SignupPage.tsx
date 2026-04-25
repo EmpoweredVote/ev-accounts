@@ -123,7 +123,7 @@ export default function SignupPage() {
 
           <AuthCard>
             <div className="space-y-1">
-              <h2 className="text-lg font-semibold text-white">Create your account</h2>
+              <h2 className="text-lg font-semibold text-white">Create your Connected Account</h2>
               <p className="text-sm text-gray-400">Step 1 of 4 — set up your sign-in.</p>
             </div>
 
@@ -181,7 +181,6 @@ export default function SignupPage() {
                 <p className="text-xs text-gray-400 leading-relaxed">
                   During Alpha, your identity is verified through our invite network — one person, one voice.
                 </p>
-                <p className="text-xs text-gray-500">Never shown publicly.</p>
               </div>
 
               <div className="space-y-1.5">

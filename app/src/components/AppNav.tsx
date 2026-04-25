@@ -14,9 +14,6 @@ export function AppNav({ children }: AppNavProps) {
             alt="Empowered Vote"
             className="h-6 w-auto"
           />
-          <span className="text-sm font-semibold text-white/70">
-            Civic Platform
-          </span>
         </div>
         {children && (
           <div className="flex items-center gap-3">
