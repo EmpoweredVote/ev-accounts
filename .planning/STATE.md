@@ -10,13 +10,13 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 61 in progress — 61-01, 61-02, 61-03, 61-05 complete**
+**Phase 61 in progress — 61-01, 61-02, 61-03, 61-04, 61-05 complete**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
-Phase 61 (Auth Flow Restyle) in progress: 4/? plans complete.
+Phase 61 (Auth Flow Restyle) in progress: 5/? plans complete.
 
-Last activity: 2026-04-25 — Completed 61-05-PLAN.md (backend display_name signup support: migration 071 + auth.ts Zod schema + database.types.ts)
+Last activity: 2026-04-25 — Completed 61-04-PLAN.md (SignupPage restyle: 5-field form with AppNav + StepProgress + AuthCard + AuthInput + PrimaryButton + display_name in API body)
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -137,6 +137,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-25T20:53:52Z
-Stopped at: Completed 61-05-PLAN.md (backend display_name signup support)
+Last session: 2026-04-25T20:58:39Z
+Stopped at: Completed 61-04-PLAN.md (SignupPage restyle — AUTH-02 through AUTH-05)
 Resume file: None
