@@ -75,8 +75,9 @@ Known deferred items at close: 4 (see above)
 | 260419-szc | Fix Nicole Bolden grouping — split LOCAL admin officers into own sub-group in groupHierarchy.js (5/5 tests pass) | 2026-04-20 | 415a932 (essentials) | [260419-szc-fix-nicole-bolden-classification-show-as](./quick/260419-szc-fix-nicole-bolden-classification-show-as/) |
 | 260422-upn | Fix Circuit Court category: Nicole Brown as Circuit Court Officials, judges as Circuit Court Judges, remove inapplicable treasury link | 2026-04-23 | c7c3041 (essentials) | [260422-upn-fix-circuit-court-category-nicole-brown-](./quick/260422-upn-fix-circuit-court-category-nicole-brown-/) |
 | 260420-rh4 | Read-Rank quote curation (max 2 per politician/topic, 22 deletes) + LLM-assisted deidentification (13 quotes rewritten with bracketed edits) | 2026-04-20 | be4719a, 31e7d6c | [260420-rh4-readrank-quote-limit-deid](./quick/260420-rh4-readrank-quote-limit-deid/) |
+| 260425-ri7 | update the first page of the onboarding flow for compass because we changed the default colors to a green and purple, so we want the image on the first page to match that | 2026-04-25 | 0c94b53 (CompassV2) | [260425-ri7-update-the-first-page-of-the-onboarding-](./quick/260425-ri7-update-the-first-page-of-the-onboarding-/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-20 - Completed quick task 260420-rh4: Read-Rank quote curation + deidentification
+Last activity: 2026-04-25 - Completed quick task 260425-ri7: update compass onboarding welcome step SVG to Dusk/Sage colors
 Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
