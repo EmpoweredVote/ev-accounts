@@ -1,0 +1,68 @@
+[
+  {
+    "id": "list_ids",
+    "name": "list_ids",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "",
+    "name": "cmd",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "",
+    "name": "goto",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "",
+    "name": "errors_to",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "format_mime",
+    "name": "format",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "custom_source",
+    "name": "custom_source",
+    "type": "hidden",
+    "placeholder": ""
+  },
+  {
+    "id": "email",
+    "name": "email",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "id": "first_name",
+    "name": "first_name",
+    "type": "text",
+    "placeholder": ""
+  },
+  {
+    "id": "",
+    "name": "",
+    "type": "submit",
+    "placeholder": ""
+  },
+  {
+    "id": "searchInput",
+    "name": "search",
+    "type": "search",
+    "placeholder": "Search the Encyclopedia of American Politics"
+  },
+  {
+    "id": "mw-searchButton",
+    "name": "go",
+    "type": "submit",
+    "placeholder": ""
+  }
+]

@@ -1,293 +1,112 @@
-# Roadmap: Empowered Vote
+# Roadmap — Empowered Vote Platform
 
 ## Milestones
 
-- ✅ **v1.0 Quality & Consolidation** — Phases 1-7 (shipped 2026-02-18)
-- ✅ **v1.1 Essentials UX Polish** — Phases 8-10 (shipped 2026-02-19)
-- ✅ **v1.2 Compass Onboarding & UX** — Phases 11-16 (shipped 2026-02-20)
-- ✅ **v1.3 Compass Bug Fixes & Title Standardization** — Phases 17-20 (shipped 2026-02-21)
-- ✅ **v1.4 Compass Polish & Tech Debt** — Phases 21-25 (shipped 2026-02-22)
-- ✅ **v1.5 Address Verification & BallotReady Independence** — Phases 26-31 (shipped 2026-02-23)
-- ✅ **v1.6 LA County Full Coverage** — Phases 32-38 (shipped 2026-02-24)
-- ✅ **v1.7 LA County Data Enrichment** — Phases 39-44 (shipped 2026-02-26)
-- ✅ **v1.8 Compass Data & Politician Research** — Phases 45-50 (shipped 2026-02-27)
-- ✅ **v1.9 Compare UX & Search Fixes** — Phases 51-53 (shipped 2026-02-28)
-- ✅ **v2026.3 Legislative Profile Data** — Phases 54-59 (shipped 2026-03-05)
-- ✅ **v2026.4 State Data Completion & Image Coverage** — Phases 60-66 (shipped 2026-03-06)
-- ✅ **v2026.3.2 Compass on Profiles** — Phases 67-71 (shipped 2026-03-08)
-- ✅ **v2026.3.3 Local Government Organization** — Phases 72-76 (shipped 2026-03-11)
-- ✅ **v2026.3.4 Read & Rank Integration** — Phases 77-82 (shipped 2026-03-12)
-- ✅ **v2026.3.5 Unified Navigation Header** — Phases 83-85 (shipped 2026-03-13)
-- ✅ **v2026.3.6 Read & Rank Redesign** — Phases 86-91 (shipped 2026-03-16)
-- ✅ **v2026.3.7 Treasury Tracker Expansion** — Phases 92-96 (shipped 2026-03-23)
-- ✅ **v2026.3.8 Essentials Election Central** — Phases 97-101 (shipped 2026-03-31)
-- ✅ **v2026.4.1 Essentials Visual Polish & Election Improvements** — Phases 102-106 (shipped 2026-04-04)
+- ✅ **v2026.4.4 Indiana Primary Fix Wave** — Phases 116–125 (shipped 2026-04-18)
+- 📋 **v2026.4.5 Compass-First Politician Card** — Phases 127–129 (planning, 2026-04-18)
+
+---
 
 ## Phases
 
 <details>
-<summary>✅ v1.0 Quality & Consolidation (Phases 1-7) — SHIPPED 2026-02-18</summary>
+<summary>✅ v2026.4.4 Indiana Primary Fix Wave (Phases 116–125) — SHIPPED 2026-04-18</summary>
 
-- [x] Phase 1: Auth Safety Audit (1/1 plans)
-- [x] Phase 2: Guest-First Auth (3/3 plans)
-- [x] Phase 3: Compass Visual Fixes (2/2 plans)
-- [x] Phase 4: Compass UX Enhancements (8/8 plans)
-- [x] Phase 5: Essentials Improvements (5/5 plans)
-- [x] Phase 6: Audit Gap Closure (1/1 plan)
-- [x] Phase 7: Integration Polish (1/1 plan)
+- [x] Phase 116: Quick Correctness Fixes (1/1 plans) — completed 2026-04-15
+- [ ] Phase 117: Candidate Stub Resolution + Data Import — deferred to next milestone
+- [x] Phase 118: Read & Rank Verdict Badge Fix (3/3 plans) — completed 2026-04-16
+- [x] Phase 119: Read & Rank Location Filter Repair (2/2 plans) — completed 2026-04-16
+- [~] Phase 120: Contested-Race Bio + Photo Authoring (2/3 plans) — content researched, import deferred
+- [x] Phase 121: County Council D1→D4 Geofence Repair (4/4 plans) — completed 2026-04-17
+- [x] Phase 122: Cross-App Loop Polish (1/1 plans) — completed 2026-04-17
+- [x] Phase 123: Photo Coverage Expansion (3/3 plans) — completed 2026-04-17
+- [ ] Phase 124: App-Wide Bio Authoring — deferred to next milestone
+- [x] Phase 125: Tier 2 UX Polish Bundle (4/4 plans) — completed 2026-04-18
+- [ ] Phase 126: Geofence Hardening — deferred to next milestone
 
-Full details: `.planning/milestones/v1.0-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.1 Essentials UX Polish (Phases 8-10) — SHIPPED 2026-02-19</summary>
-
-- [x] Phase 8: Layout (1/1 plans)
-- [x] Phase 9: Building Imagery (1/1 plans)
-- [x] Phase 10: Term Dates (1/1 plans)
-
-Full details: `.planning/milestones/v1.1-ROADMAP.md`
+See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP.md)
 
 </details>
 
-<details>
-<summary>✅ v1.2 Compass Onboarding & UX (Phases 11-16) — SHIPPED 2026-02-20</summary>
-
-- [x] Phase 11: Tech Debt Cleanup (1/1 plans)
-- [x] Phase 12: Quick UX Fixes (2/2 plans)
-- [x] Phase 13: Topic Selection Enforcement (2/2 plans)
-- [x] Phase 14: Guided Onboarding Flow (4/4 plans)
-- [x] Phase 15: Help Page Update (2/2 plans)
-- [x] Phase 16: Audit Bug Fixes (1/1 plan)
-
-Full details: `.planning/milestones/v1.2-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.3 Compass Bug Fixes & Title Standardization (Phases 17-20) — SHIPPED 2026-02-21</summary>
-
-- [x] Phase 17: Title Standardization (Backend) (2/2 plans)
-- [x] Phase 18: Title Display (Frontend) (2/2 plans)
-- [x] Phase 19: Calibration Flow Fixes (2/2 plans)
-- [x] Phase 20: Compare Bug Fix (1/1 plan)
-
-Full details: `.planning/milestones/v1.3-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.4 Compass Polish & Tech Debt (Phases 21-25) — SHIPPED 2026-02-22</summary>
-
-- [x] Phase 21: Guest Flow Fix (1/1 plans)
-- [x] Phase 22: Radar Label Fixes (2/2 plans)
-- [x] Phase 23: UX Cleanup (2/2 plans)
-- [x] Phase 24: Tech Debt Cleanup (2/2 plans)
-- [x] Phase 25: Onboarding-to-Calibration Redirect (2/2 plans)
-
-Full details: `.planning/milestones/v1.4-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.5 Address Verification & BallotReady Independence (Phases 26-31) — SHIPPED 2026-02-23</summary>
-
-- [x] Phase 26: Geofence-Only Search (2/2 plans)
-- [x] Phase 27: Cache-Only Candidates & Warmer Cleanup (2/2 plans)
-- [x] Phase 28: Address Autocomplete (2/2 plans)
-- [x] Phase 29: Validation, Polish & Key Removal (2/2 plans)
-- [x] Phase 30: Fix Compass Calibration Layout & Write-in (2/2 plans)
-- [x] Phase 31: Essentials Profile & District Data Fixes (3/3 plans)
-
-Full details: `.planning/milestones/v1.5-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.6 LA County Full Coverage (Phases 32-38) — SHIPPED 2026-02-24</summary>
-
-- [x] Phase 32: Schema Fixes and Lookup Bug Correction (1/1 plans)
-- [x] Phase 33: Pipeline Infrastructure (1/1 plans)
-- [x] Phase 34: TIGER Geofences (1/1 plans)
-- [x] Phase 35: LA County ArcGIS Geofences (2/2 plans)
-- [x] Phase 36: Politician Gap-Fill — Supervisors and LA City Council (2/2 plans)
-- [x] Phase 37: Politician Gap-Fill — City Councils and School Boards (2/2 plans)
-- [x] Phase 38: Validation and Performance (2/2 plans)
-
-Full details: `.planning/milestones/v1.6-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.7 LA County Data Enrichment (Phases 39-44) — SHIPPED 2026-02-26</summary>
-
-- [x] Phase 39: Schema and Infrastructure Preparation (2/2 plans)
-- [x] Phase 40: High-Value Headshots (2/2 plans)
-- [x] Phase 41: Building Photos, Term Data, Contact Enrichment (3/3 plans)
-- [x] Phase 42: City Council Headshot Pipeline (5/6 plans, 1 deferred)
-- [x] Phase 43: Go API and Frontend Updates (2/2 plans)
-- [x] Phase 44: Coverage Validation (1/1 plan)
-
-Full details: `.planning/milestones/v1.7-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.8 Compass Data & Politician Research (Phases 45-50) — SHIPPED 2026-02-27</summary>
-
-- [x] Phase 45: Legacy Cleanup (1/1 plans)
-- [x] Phase 46: Research Infrastructure & State Officials (2/2 plans)
-- [x] Phase 47: Federal Officials Research (12/12 plans)
-- [x] Phase 48: Mayors Research (2/2 plans)
-- [x] Phase 49: Quote Collection (8/8 plans)
-- [x] Phase 50: Data Import Scripts (3/3 plans)
-
-Full details: `.planning/milestones/v1.8-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v1.9 Compare UX & Search Fixes (Phases 51-53) — SHIPPED 2026-02-28</summary>
-
-- [x] Phase 51: Compare Inline Picker (2/2 plans) — completed 2026-02-28
-- [x] Phase 52: Compare Politician List Filters (2/2 plans) — completed 2026-02-28
-- [x] Phase 53: Search Accuracy & Bug Fix (2/2 plans) — completed 2026-02-28
-
-Full details: `.planning/milestones/v1.9-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3 Legislative Profile Data (Phases 54-59) — SHIPPED 2026-03-05</summary>
-
-- [x] Phase 54: Schema Foundation (2/2 plans) — completed 2026-03-02
-- [x] Phase 55: Federal Committees & Leadership (3/3 plans) — completed 2026-03-02
-- [x] Phase 56: Federal Bills, Votes & API Endpoints (4/4 plans) — completed 2026-03-02
-- [x] Phase 57: State Data Pipeline (3/3 plans) — completed 2026-03-04
-- [x] Phase 58: Local Data Pipeline (3/3 plans) — completed 2026-03-03
-- [x] Phase 59: Frontend Profile Sections (4/4 plans) — completed 2026-03-03
-
-Full details: `.planning/milestones/v2026.3-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.4 State Data Completion & Image Coverage (Phases 60-66) — SHIPPED 2026-03-06</summary>
-
-- [x] Phase 60: Indiana & California Committee Import (2/2 plans) — completed 2026-03-05
-- [x] Phase 61: State Data Verification & Gap-Fill (1/1 plans) — completed 2026-03-05
-- [x] Phase 62: State Data Documentation & Accessibility (2/2 plans) — completed 2026-03-05
-- [x] Phase 63: Headshot Research Sprint (8/8 plans) — completed 2026-03-06
-- [x] Phase 64: Headshot Upload & Coverage Validation (2/2 plans) — completed 2026-03-06
-- [x] Phase 65: Fix Compass page refresh (2/2 plans) — completed 2026-03-06
-- [x] Phase 66: Improve onboarding flow (4/4 plans) — completed 2026-03-06
-
-Full details: `.planning/milestones/v2026.4-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.2 Compass on Profiles (Phases 67-71) — SHIPPED 2026-03-08</summary>
-
-- [x] Phase 67: Compass API Integration (3/3 plans) — completed 2026-03-07
-- [x] Phase 68: Guest Data Bridge (2/2 plans) — completed 2026-03-07
-- [x] Phase 69: Compass Card Shell (1/1 plans) — completed 2026-03-08
-- [x] Phase 70: Radar Chart Integration (1/1 plans) — completed 2026-03-08
-- [x] Phase 71: Stance Breakdown Panel (1/1 plans) — completed 2026-03-08
-
-Full details: `.planning/milestones/v2026.3.2-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.3 Local Government Organization (Phases 72-76) — SHIPPED 2026-03-11</summary>
-
-- [x] Phase 72: DB Audit (1/1 plans) — completed 2026-03-11
-- [x] Phase 73: Backend GovernmentBody Table (2/2 plans) — completed 2026-03-11
-- [x] Phase 74: Data Seeding (1/1 plans) — completed 2026-03-11
-- [x] Phase 75: ev-ui CategorySection Update (1/1 plans) — completed 2026-03-11
-- [x] Phase 76: Frontend Results Integration (1/1 plans) — completed 2026-03-11
-
-Full details: `.planning/milestones/v2026.3.3-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.4 Read & Rank Integration (Phases 77-82) — SHIPPED 2026-03-12</summary>
-
-- [x] Phase 77: Standalone Extraction (2/2 plans) — completed 2026-03-12
-- [x] Phase 78: Visual Refresh (3/3 plans) — completed 2026-03-12
-- [x] Phase 79: Backend Verdict Endpoints (2/2 plans) — completed 2026-03-12
-- [x] Phase 80: ev-ui Verdict Badge (1/1 plans) — completed 2026-03-12
-- [x] Phase 81: Profile Integration (3/3 plans) — completed 2026-03-12
-- [x] Phase 82: Logged-In Sync (2/2 plans) — completed 2026-03-12
-
-Full details: `.planning/milestones/v2026.3.4-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.5 Unified Navigation Header (Phases 83-85) — SHIPPED 2026-03-13</summary>
-
-- [x] Phase 83: ev-ui SiteHeader URL Update (1/1 plans) — completed 2026-03-13
-- [x] Phase 84: Essentials Header Integration (2/2 plans) — completed 2026-03-13
-- [x] Phase 85: ReadRank Header Auth (2/2 plans) — completed 2026-03-13
-
-Full details: `.planning/milestones/v2026.3.5-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.6 Read & Rank Redesign (Phases 86-91) — SHIPPED 2026-03-16</summary>
-
-- [x] Phase 86: Chrome Cleanup + Store Migration (2/2 plans) — completed 2026-03-15
-- [x] Phase 87: Unified EvaluatePhase + InlineRankPanel (2/2 plans) — completed 2026-03-15
-- [x] Phase 87.1: Head-to-Head Matchup Ranking (2/2 plans) — completed 2026-03-15
-- [x] Phase 88: Practice Round (2/2 plans) — completed 2026-03-15
-- [x] Phase 89: Coach Marks (2/2 plans) — completed 2026-03-16
-- [x] Phase 90: Location-Based Filtering (2/2 plans) — completed 2026-03-16
-- [x] Phase 91: Results Polish + Visual Redesign (3/3 plans) — completed 2026-03-16
-
-Full details: `.planning/milestones/v2026.3.6-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.7 Treasury Tracker Expansion (Phases 92-96) — SHIPPED 2026-03-23</summary>
-
-- [x] Phase 92: Schema Foundation & Bloomington Migration (3/3 plans) — completed 2026-03-22
-- [x] Phase 93: Indiana Data Import (1/1 plans) — completed 2026-03-22
-- [x] Phase 94: LA Data Import (2/2 plans) — completed 2026-03-23
-- [x] Phase 95: Entity Switcher (2/2 plans) — completed 2026-03-23
-- [x] Phase 96: Visual Refresh (3/3 plans) — completed 2026-03-23
-
-Full details: `.planning/milestones/v2026.3.7-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.3.8 Essentials Election Central (Phases 97-101) — SHIPPED 2026-03-31</summary>
-
-- [x] Phase 97: Schema Foundation & Data Audit (3/3 plans) — completed 2026-03-29
-- [x] Phase 98: Election Data Import (2/2 plans) — completed 2026-03-29
-- [x] Phase 99: Election Central Page (2/2 plans) — completed 2026-03-30
-- [x] Phase 100: Elected/Appointed Filter (2/2 plans) — completed 2026-03-30
-- [x] Phase 101: Candidate Profiles (2/2 plans) — completed 2026-03-31
-
-Full details: `.planning/milestones/v2026.3.8-ROADMAP.md`
-
-</details>
-
-<details>
-<summary>✅ v2026.4.1 Essentials Visual Polish & Election Improvements (Phases 102-106) — SHIPPED 2026-04-04</summary>
-
-- [x] Phase 102: ev-ui Foundation + Quick Wins (2/2 plans) — completed 2026-04-04
-- [x] Phase 103: Essentials Wiring + Landing Page (4/4 plans) — completed 2026-04-04
-- [x] Phase 104: Compass-First Card Prototype (2/2 plans) — completed 2026-04-04
-- [x] Phase 105: Seed SQL Fix & Doc Cleanup (1/1 plans) — completed 2026-04-04
-- [x] Phase 106: Tier Background Hues & Branch Icons (2/2 plans) — completed 2026-04-04
-
-Full details: `.planning/milestones/v2026.4.1-ROADMAP.md`
-
-</details>
+### 📋 v2026.4.5 Compass-First Politician Card (Planning)
+
+**Milestone goal:** Ship a compass-first horizontal politician card across Essentials (and ev-ui), based on the existing `/prototype` variant C, while preserving current card metadata and handling cases where a compass doesn't apply.
+
+**Shared branch:** `feat/compass-first-card` (essentials, ev-ui, CompassV2)
+**Granularity:** standard
+**Requirements coverage:** 10/10 v1 requirements mapped
+
+- [x] **Phase 127: CompassCardHorizontal in ev-ui** — Publish the horizontal compass-first card component with dual-view toggle and preserved affordances (completed 2026-04-19)
+- [ ] **Phase 128: Empty & Non-Compass Variants** — Add placeholder, administrative, and judicial variants for cases where a compass doesn't apply
+- [ ] **Phase 129: Essentials Adoption & Prototype Retirement** — Replace existing cards on Representatives and Elections pages; retire `/prototype`; ship via auto-bump
+
+**Deferred carryovers (not in v2026.4.5 scope unless explicitly re-added):**
+
+- Phase 117: Candidate Stub Resolution + Data Import (CAND-01–CAND-05)
+- Phase 120-03: Contested-Race Bio Import Execution (content ready in 120-REVIEW-DATA.md)
+- Phase 124: App-Wide Bio Authoring — ~45 candidates (BIO-01, BIO-02)
+- Phase 126: Geofence Hardening — rural addresses + 11 missing townships (INFRA-01, INFRA-02)
+
+---
+
+## Phase Details (v2026.4.5)
+
+### Phase 127: CompassCardHorizontal in ev-ui
+**Goal**: A production-ready horizontal compass-first card component is available in `@empoweredvote/ev-ui` with view toggle and full metadata parity with the existing PoliticianCard.
+**Depends on**: Nothing (first phase of milestone)
+**Requirements**: CARD-01, CARD-02, CARD-03
+**Success Criteria** (what must be TRUE):
+  1. A consumer app importing `CompassCardHorizontal` from `@empoweredvote/ev-ui` can render a card with radar on the left and politician metadata on the right, matching the `/prototype` variant C layout
+  2. A user viewing a rendered card can toggle between compass (radar) view and portrait/photo view, and the toggle choice sticks while the user stays on the page (or across sessions per decision in discuss-phase)
+  3. A card rendered for a politician with tier/branch/term data shows all current PoliticianCard affordances (tier/branch badges, elected/appointed marker, unopposed icon, term dates, years-in-office, chamber/district subtitle, initials fallback) with no regression versus today
+  4. Component props accept a politician object, the user's compass answers, and tier/branch visuals; a prototype harness demonstrates all three
+**Plans**: 3 plans
+- [x] 127-01-PLAN.md — Scaffold @floating-ui peer dep + port PlaceholderRadar + port IconOverlay (leaf primitives)
+- [x] 127-02-PLAN.md — Build CompassCardHorizontal + Meta + compassHelpers; add barrel exports
+- [x] 127-03-PLAN.md — Update essentials Prototype harness + view toggle persistence + human-verify checkpoint
+**UI hint**: yes
+
+### Phase 128: Empty & Non-Compass Variants
+**Goal**: Users see an appropriate card variant for every politician, including those where a compass doesn't apply (low user answers, administrative roles, judicial roles).
+**Depends on**: Phase 127
+**Requirements**: STATE-01, STATE-02, STATE-03
+**Success Criteria** (what must be TRUE):
+  1. A user with fewer than 3 compass topics answered sees a placeholder radar on every compass-eligible card with a "Build your compass" CTA that deep-links into CompassV2 calibration for the relevant topics
+  2. A user viewing a clerk, auditor, recorder, treasurer, or similar administrative role sees a portrait-forward non-compass variant with role-appropriate content replacing the radar (content spec finalized during discuss-phase)
+  3. A user viewing a judicial role sees a judge-appropriate non-compass variant (e.g., retention history, court level, appointment source — spec finalized during discuss-phase)
+  4. A user viewing the representatives page sees retention judges appear in both elected and appointed filter views, matching existing dual-appearance behavior
+**Plans**: TBD
+**UI hint**: yes
+
+### Phase 129: Essentials Adoption & Prototype Retirement
+**Goal**: The compass-first card is the live card on Essentials Representatives and Elections pages, the `/prototype` route is retired or reduced, and the ev-ui bump reaches production via the auto-bump pipeline without breaking CompassV2 or the compare picker.
+**Depends on**: Phase 127, Phase 128
+**Requirements**: ADOPT-01, ADOPT-02, ADOPT-03, ADOPT-04
+**Success Criteria** (what must be TRUE):
+  1. A user visiting the Essentials representatives page sees the new compass-first card for every politician, with existing sort/filter controls, elected/appointed filter, and scroll-spy tier background bands still functioning
+  2. A user visiting the Essentials elections page sees incumbents rendered with the full compass card and challengers rendered with the appropriate empty/minimal variant
+  3. A user visiting `/prototype` on production Essentials is either redirected away or sees only an internal reference note — the duplicate UI surface no longer exists for end users
+  4. After the ev-ui version is bumped via the auto-bump pipeline and merged on `main`, both Essentials (live card) and CompassV2 (compare picker) render correctly in production without visual or functional regression
+**Plans**: TBD
+**UI hint**: yes
+
+---
+
+## Progress
+
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 116. Quick Correctness Fixes | v2026.4.4 | 1/1 | Complete | 2026-04-15 |
+| 117. Candidate Stub Resolution | v2026.4.4 | 0/7 | Deferred | - |
+| 118. Read & Rank Verdict Badge Fix | v2026.4.4 | 3/3 | Complete | 2026-04-16 |
+| 119. Read & Rank Location Filter Repair | v2026.4.4 | 2/2 | Complete | 2026-04-16 |
+| 120. Contested-Race Bio + Photo Authoring | v2026.4.4 | 2/3 | Partial | - |
+| 121. County Council D1→D4 Geofence Repair | v2026.4.4 | 4/4 | Complete | 2026-04-17 |
+| 122. Cross-App Loop Polish | v2026.4.4 | 1/1 | Complete | 2026-04-17 |
+| 123. Photo Coverage Expansion | v2026.4.4 | 3/3 | Complete | 2026-04-17 |
+| 124. App-Wide Bio Authoring | v2026.4.4 | 0/4 | Deferred | - |
+| 125. Tier 2 UX Polish Bundle | v2026.4.4 | 4/4 | Complete | 2026-04-18 |
+| 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
+| 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
+| 128. Empty & Non-Compass Variants | v2026.4.5 | 0/0 | Not started | - |
+| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 0/0 | Not started | - |

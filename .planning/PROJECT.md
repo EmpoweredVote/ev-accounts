@@ -8,6 +8,18 @@ A civic engagement platform helping voters make informed decisions through an in
 
 Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
 
+## Current Milestone: v2026.4.5 Compass-First Politician Card
+
+**Goal:** Ship a compass-first horizontal politician card across Essentials (and ev-ui), based on the existing prototype, while preserving current card metadata and handling cases where a compass doesn't apply.
+
+**Target features:**
+- Promote horizontal compass-first card from `/prototype` to the primary Essentials card on Representatives and Elections pages
+- View toggle between compass (radar) view and photo/portrait view
+- Preserve existing card affordances (unopposed, elected/appointed, term dates, tier/branch badges, contextual icons)
+- User-side empty state when compass isn't complete — guided path to build one
+- Non-compass variant for administrative roles (clerks, auditors, etc.) and judges — content TBD during discuss/plan
+- Shared `feat/compass-first-card` branch across essentials, ev-ui, and CompassV2 to signal in-flight work
+
 ## Requirements
 
 ### Validated
@@ -193,26 +205,31 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Compass-first card prototype at /prototype with 3 layout variants — v2026.4.1
 - ✓ Edge-to-edge tier background bands (Federal/State/Local visual shift) — v2026.4.1
 - ✓ Branch-specific icons (executive/legislative/judicial) visible without hover — v2026.4.1
+- ✓ ev-ui@0.4.1 SiteHeader nav fix — removed 3 broken links, corrected 2 stale dropdown URLs via auto-bump pipeline — v2026.4.4
+- ✓ Read & Rank verdict badge repair — UUID/slug mismatch + item.supported shape bug fixed; badges render on politician profiles — v2026.4.4
+- ✓ Read & Rank location filter repair — geocoding wiring + filter predicate both fixed; Monroe County candidates correctly scoped — v2026.4.4
+- ✓ Monroe County Council D1→D4 geofence repair — 4 district polygons imported, races re-linked; Kirkwood resolves D4 exclusively in production — v2026.4.4
+- ✓ Cross-app voter loop (Compass→ReadRank→Essentials) — CompassCard guest-cache fallback, Essentials picker links, Treasury CTA on Results page — v2026.4.4
+- ✓ 55-candidate photo gap confirmed unfindable via Ballotpedia+search; ev-ui initials fallback accepted — v2026.4.4
+- ✓ 21 Tier 2 UX polish items — Google Places Autocomplete on landing, address normalization, cross-reference annotations, Compass SQL NULLIF headshot fix, cross-app address bridge — v2026.4.4
 
-### Active
+## Last Milestone: v2026.4.4 Indiana Primary Fix Wave (Shipped 2026-04-18)
 
-### Future
+**Delivered:** Pre-primary correctness fixes, verdict badge + location filter repair, Monroe County Council D1→D4 geofence fix, cross-app voter loop polish, 55-candidate photo gap audit (confirmed initials fallback), and 21 Tier 2 UX polish items across essentials, CompassV2, read-rank, and ev-ui. 7 phases, 20 plans, 4 days.
 
-- [ ] Compass stance data imports for candidates (PROF-04 — deferred from v2026.3.8)
-- [ ] Sourced quote imports for candidates (PROF-05 — deferred from v2026.3.8)
-- [ ] County council at-large vs district members distinguished in display (carried from v2026.3.3)
-- [ ] State-configurable body structure for California Board of Supervisors (carried from v2026.3.3)
-- [ ] LA County bodies seeded with official website URLs (carried from v2026.3.3)
-- [ ] "My reps" surfacing on compare page (Essentials address → Compass compare)
-- [ ] Politician self-calibrated compass with toggle view on profiles
-- [ ] Multi-politician comparison (2-3 overlays at once)
+**Deferred to v2026.4.5:** Candidate stub resolution (Phase 117), contested-race bio import execution (Phase 120-03), app-wide bio authoring (Phase 124), geofence hardening (Phase 126).
 
-## Last Milestone: v2026.4.1 Essentials Visual Polish & Election Improvements (Shipped 2026-04-04)
+## Previous Milestone: v2026.4.3 Indiana Primary Election Readiness Audit (Shipped 2026-04-14)
 
-**Delivered:** Visual polish across Essentials — tier background bands, branch-specific icons, icon overlay badges with tooltips, landing page with coverage areas and shortcut navigation, election page restructured with position-first grouping, compass-first card prototype, headshot audit CLI. 5 phases, 11 plans, 13/13 requirements satisfied.
+**Delivered:** Full voter experience audit for Monroe County IN — competitive benchmarking vs BallotReady/VoteSmart/Vote411/Ballotpedia, data completeness audit (46 races, 81 candidates), UX gap analysis, and tiered gap report + execution backlog. 5 phases, 19 plans.
+
+## Previous Milestone: v2026.4.2 CouncilScribe Speaker Identification via Essentials (Shipped 2026-04-12)
+
+**Delivered:** CouncilScribe voice profiles keyed to essentials politicians via live roster API — body roster endpoints, roster client + CLI, per-meeting body tagging, profile schema v3, roster-driven identification. 6 phases, 11 plans, 22/22 requirements satisfied.
 
 ## Previous Milestones
 
+- **v2026.4.1 Essentials Visual Polish & Election Improvements** (Shipped 2026-04-04) — 5 phases, 11 plans
 - **v2026.3.8 Essentials Election Central** (Shipped 2026-03-31) — 5 phases, 12 plans
 - **v2026.3.7 Treasury Tracker Expansion** (Shipped 2026-03-23) — 5 phases, 11 plans
 - **v2026.3.6 Read & Rank Redesign** (Shipped 2026-03-16) — 7 phases, 15 plans
@@ -276,4 +293,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-04 after v2026.4.1 milestone*
+*Last updated: 2026-04-18 — v2026.4.5 milestone started*

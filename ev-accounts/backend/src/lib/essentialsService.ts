@@ -100,10 +100,13 @@ export interface PoliticianFlatRecord {
   government_name: string;
   government_body_name: string;
   government_body_url: string;
+  chamber_url: string;
+  government_type: string;
   is_elected: boolean;
   is_appointed: boolean;
   faces_retention_vote: boolean;
   election_frequency: string;
+  policy_engagement_level: 'full' | 'record_only' | 'none';
   committees: Array<{ name: string; position: string; urls: string[] }>;
   bio_text: string | null;
   slug: string | null;
@@ -417,9 +420,12 @@ export async function getPoliticiansFlatList(
            d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
+           ch.policy_engagement_level,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -475,10 +481,13 @@ export async function getPoliticiansFlatList(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
@@ -544,9 +553,12 @@ export async function getRepresentativesByAddress(
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
+           ch.policy_engagement_level,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.geofence_boundaries gb
     JOIN essentials.districts d ON d.geo_id = gb.geo_id
@@ -601,9 +613,12 @@ export async function getRepresentativesByAddress(
            d.mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
+           ch.policy_engagement_level,
            g.name AS government_name,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.districts d
     JOIN essentials.offices o ON o.district_id = d.id
@@ -663,10 +678,13 @@ export async function getRepresentativesByAddress(
     government_name: row.government_name ?? '',
     government_body_name: row.government_body_name ?? '',
     government_body_url: row.government_body_url ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     is_elected: !row.is_appointed_position,
     is_appointed: row.is_appointed ?? false,
     faces_retention_vote: row.faces_retention_vote ?? false,
     election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     committees: [],
     bio_text: row.bio_text ?? null,
     slug: row.slug ?? null,
@@ -794,9 +812,12 @@ export interface PoliticianDetail {
   chamber_name: string;
   chamber_name_formal: string;
   election_frequency: string;
+  policy_engagement_level: 'full' | 'record_only' | 'none';
   // Government details
   government_id: string | null;
   government_name: string;
+  chamber_url: string;
+  government_type: string;
   // Nested arrays
   committees: Array<{ name: string; position: string; urls: string[] }>;
   contacts: PoliticianContact[];
@@ -882,9 +903,12 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            d.mtfcc, d.state AS district_state,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency,
+           ch.policy_engagement_level,
            g.name AS government_name, g.id AS government_id,
+           g.type AS government_type,
            COALESCE(gvb.display_name, '') AS government_body_name,
            COALESCE(gvb.website_url, '') AS government_body_url,
+           COALESCE(ch.website_url, '') AS chamber_url,
            upcoming.next_primary_date, upcoming.next_general_date
     FROM essentials.politicians p
     LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -1061,8 +1085,11 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     chamber_name_formal: row.chamber_name_formal ?? '',
     // election_frequency is on chambers, not governments.
     election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     government_id: row.government_id ?? null,
     government_name: row.government_name ?? '',
+    chamber_url: row.chamber_url ?? '',
+    government_type: row.government_type ?? '',
     committees,
     contacts,
     images,
@@ -1101,6 +1128,7 @@ export interface ChamberSummary {
   name_formal: string;
   type: string;
   election_frequency: string;
+  policy_engagement_level: 'full' | 'record_only' | 'none';
 }
 
 /**
@@ -1136,7 +1164,7 @@ export async function getGovernmentById(id: string): Promise<GovernmentDetail | 
       [id]
     ),
     pool.query(
-      `SELECT id, name, name_formal, type, election_frequency
+      `SELECT id, name, name_formal, type, election_frequency, policy_engagement_level
        FROM essentials.chambers
        WHERE government_id = $1
        ORDER BY name`,
@@ -1156,6 +1184,7 @@ export async function getGovernmentById(id: string): Promise<GovernmentDetail | 
     name_formal: r.name_formal ?? '',
     type: r.type ?? '',
     election_frequency: r.election_frequency ?? '',
+    policy_engagement_level: (r.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
   }));
 
   return {
@@ -1189,6 +1218,7 @@ export interface ChamberDetail {
   name_formal: string;
   type: string;
   election_frequency: string;
+  policy_engagement_level: 'full' | 'record_only' | 'none';
   government: GovernmentSummary;
 }
 
@@ -1203,6 +1233,7 @@ export interface ChamberDetail {
 export async function getChamberById(id: string): Promise<ChamberDetail | null> {
   const { rows } = await pool.query(
     `SELECT ch.id, ch.name, ch.name_formal, ch.type, ch.election_frequency,
+            ch.policy_engagement_level,
             g.id AS gov_id, g.name AS gov_name, g.type AS gov_type,
             g.state AS gov_state, g.city AS gov_city
      FROM essentials.chambers ch
@@ -1223,6 +1254,7 @@ export async function getChamberById(id: string): Promise<ChamberDetail | null> 
     name_formal: row.name_formal ?? '',
     type: row.type ?? '',
     election_frequency: row.election_frequency ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     government: {
       id: row.gov_id ?? '',
       name: row.gov_name ?? '',
@@ -1403,9 +1435,12 @@ export async function getRepresentativesByJurisdiction(
     p.is_appointed, o.faces_retention_vote,
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
+    ch.policy_engagement_level,
     g.name AS government_name,
+    g.type AS government_type,
     COALESCE(gvb.display_name, '') AS government_body_name,
     COALESCE(gvb.website_url, '') AS government_body_url,
+    COALESCE(ch.website_url, '') AS chamber_url,
     upcoming.next_primary_date, upcoming.next_general_date
   `;
 
@@ -1499,10 +1534,13 @@ export async function getRepresentativesByJurisdiction(
     government_name: (row.government_name as string) ?? '',
     government_body_name: (row.government_body_name as string) ?? '',
     government_body_url: (row.government_body_url as string) ?? '',
+    chamber_url: (row.chamber_url as string) ?? '',
+    government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
     election_frequency: (row.election_frequency as string) ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     committees: [],
     bio_text: (row.bio_text as string | null) ?? null,
     slug: (row.slug as string | null) ?? null,
@@ -1565,9 +1603,12 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     p.is_appointed, o.faces_retention_vote,
     d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
     ch.name AS chamber_name, ch.name_formal AS chamber_name_formal, ch.election_frequency,
+    ch.policy_engagement_level,
     g.name AS government_name,
+    g.type AS government_type,
     COALESCE(gvb.display_name, '') AS government_body_name,
     COALESCE(gvb.website_url, '') AS government_body_url,
+    COALESCE(ch.website_url, '') AS chamber_url,
     upcoming.next_primary_date, upcoming.next_general_date
   `;
 
@@ -1623,10 +1664,13 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     government_name: (row.government_name as string) ?? '',
     government_body_name: (row.government_body_name as string) ?? '',
     government_body_url: (row.government_body_url as string) ?? '',
+    chamber_url: (row.chamber_url as string) ?? '',
+    government_type: (row.government_type as string) ?? '',
     is_elected: !(row.is_appointed_position as boolean),
     is_appointed: (row.is_appointed as boolean) ?? false,
     faces_retention_vote: (row.faces_retention_vote as boolean) ?? false,
     election_frequency: (row.election_frequency as string) ?? '',
+    policy_engagement_level: (row.policy_engagement_level as 'full' | 'record_only' | 'none') ?? 'full',
     committees: [],
     bio_text: (row.bio_text as string | null) ?? null,
     slug: (row.slug as string | null) ?? null,

@@ -1,0 +1,73 @@
+URL: https://essentials.empowered.vote/results?q=7333%20W%20Mt%20Tabor%20Rd%2C%20Bloomington%2C%20IN%2047404
+TITLE: Empowered Essentials
+
+=== INNER TEXT ===
+About Us
+Features
+Volunteer
+FAQ
+Donate
+
+Group
+
+All
+Local
+State
+Federal
+
+Type
+
+All
+Elected
+Appointed
+Search by Address
+Browse by Location
+Search
+Representatives
+Elections
+We couldn't find that address. Please enter a full street address (e.g. "123 Main St, Los Angeles, CA").
+LOCAL
+
+Local representative data is not yet available for this area.
+
+STATE
+
+State representative data is not yet available for this area.
+
+No results found for this location.
+
+=== LINKS ===
+[] -> https://essentials.empowered.vote/
+[About Us] -> https://empowered.vote/about
+[Features] -> https://essentials.empowered.vote/results?q=7333%20W%20Mt%20Tabor%20Rd%2C%20Bloomington%2C%20IN%2047404#
+[Volunteer] -> https://empowered.vote/volunteer
+[FAQ] -> https://empowered.vote/faq
+[Donate] -> https://empowered.vote/donate
+[About Us] -> https://empowered.vote/about
+[Political Compass] -> https://compass.empowered.vote/
+[Find Representatives] -> https://essentials.empowered.vote/
+[Read & Rank] -> https://readrank.empowered.vote/?address=7333%20W%20Mt%20Tabor%20Rd%2C%20Bloomington%2C%20IN%2047404
+[Treasury Tracker] -> https://ev-prototypes.netlify.app/treasury-tracker/dist
+[Empowered Badges] -> https://ev-prototypes.netlify.app/empowered-badges/dist
+[Volunteer] -> https://empowered.vote/volunteer
+[FAQ] -> https://empowered.vote/faq
+[Donate] -> https://empowered.vote/donate
+
+=== INPUTS ===
+BUTTON type=submit name= id= placeholder= text=""
+BUTTON type=submit name= id= placeholder= text=""
+BUTTON type=submit name= id= placeholder= text="Sign in"
+INPUT type=radio name=tier-filter id= placeholder= text="All"
+INPUT type=radio name=tier-filter id= placeholder= text="Local"
+INPUT type=radio name=tier-filter id= placeholder= text="State"
+INPUT type=radio name=tier-filter id= placeholder= text="Federal"
+BUTTON type=submit name= id= placeholder= text="All"
+BUTTON type=submit name= id= placeholder= text="Elected"
+BUTTON type=submit name= id= placeholder= text="Appointed"
+INPUT type=text name= id= placeholder=Search representative text=""
+BUTTON type=submit name= id= placeholder= text="Search by Address"
+BUTTON type=submit name= id= placeholder= text="Browse by Location"
+INPUT type=text name= id= placeholder=Enter your full street address text="7333 W Mt Tabor Rd, Bloomington, IN 47404"
+BUTTON type=submit name= id= placeholder= text="Search"
+BUTTON type=submit name= id= placeholder= text="Representatives"
+BUTTON type=submit name= id= placeholder= text="Elections"

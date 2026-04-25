@@ -1,235 +1,255 @@
 # Domain Pitfalls
 
-**Domain:** Visual polish, icon systems, and tier hue differentiation on existing multi-app civic engagement platform
-**Researched:** 2026-04-02
-**Scope:** v2026.4.1 — icon system, tier colors, compass-first card, headshot fixes, election page polish
+**Domain:** Indiana Primary Election Readiness Audit — adding election audit and competitive benchmarking to an existing civic engagement platform
+**Researched:** 2026-04-11
+**Scope:** v2026.4.3 — Monroe County IN primary readiness audit, competitive benchmarking, data gap analysis
 
 ---
 
 ## Critical Pitfalls
 
-Mistakes that require rewrites, break multiple apps simultaneously, or violate the antipartisan principle.
+Mistakes that invalidate the audit, produce false confidence, or create antipartisan violations.
 
 ---
 
-### Pitfall 1: ev-ui Change Breaks All Three Consumer Apps Simultaneously
+### Pitfall 1: Treating the Current 12 Races / 18 Candidates as the Baseline for Completeness
 
-**What goes wrong:** A change to `PoliticianCard`, `CategorySection`, or any shared component in ev-ui — even visually "safe" changes like adding a new prop or changing default styling — gets published and immediately breaks the visual contract in CompassV2, essentials, and EV-readrank. The apps do not pin to a specific minor version; they pull the latest published version when rebuilt. Cloudflare Pages rebuilds happen on every push to `main` per app.
+**What goes wrong:** The audit begins by asking "how complete are we?" against the 12 imported races and 18 candidates. But completeness must be measured against the full ballot for a Monroe County address on May 5, 2026 — not against what was already imported. Using the existing import as the denominator creates false confidence: "we cover 100% of our races" is true but meaningless if the full ballot has 30+ races.
 
-**Why it happens:** ev-ui uses a single entry point (`src/index.js`) that barrel-exports everything. The tsup build configuration (`splitting: false`) bundles all components into one `index.js`/`index.mjs` — no per-component chunking. There is no tree-shaking at the library level. A changed internal layout in `PoliticianCard` ships alongside every other component. If the new `PoliticianCard` expects a `tierColor` prop that wasn't there before and existing call sites don't pass it, the card silently falls back to whatever the default is — which may render incorrectly across all pages that use it.
+**Why it happens:** The natural anchor for an audit is the data that exists. Starting from what's imported feels like starting from a solid foundation. In practice, the election schema was bootstrapped from Indiana SoS Excel data at a single point in time, and the import did not necessarily capture every down-ballot race.
 
-**Consequences:** Three apps broken at once. Rollback requires re-publishing the previous ev-ui version AND redeploying all three apps. Emergency fix path is slow: bump ev-ui version → rebuild → publish to GitHub npm → `npm update` in each consumer → push → wait for Cloudflare Pages build × 3.
+**Consequences:** The gap report underestimates missing races. Critical down-ballot races (township trustees, advisory board seats, prosecutor) appear as "future work" when they are May 5 primary races. Voters searching a Monroe County address get an incomplete election picture with no indication it is incomplete.
 
 **Prevention:**
-- Treat `PoliticianCard` changes as a minor-version bump minimum, not a patch. If the visual contract changes in any way, bump minor.
-- Add the new tier-color prop as **optional with a safe fallback** (no tier color = current behavior). Never make a new prop required if existing call sites won't pass it.
-- Before publishing, manually verify the component renders correctly without the new prop (the null/fallback state).
-- Test in essentials dev before publishing — it is the primary consumer.
+- Phase 1 of the audit must start from authoritative external sources: (a) Monroe County Clerk ballot certification, (b) Indiana SoS candidate list for Monroe County, (c) confirmed list from the bsquare Bulletin / local coverage.
+- Build the "full ballot" list first, then compare against the database. Completeness = (races in DB) / (races on actual ballot).
+- Confirmed May 5 races that are NOT in the current 12: County Assessor, County Clerk, County Commissioner District 1, County Prosecutor, Clear Creek Township Board, Clear Creek Township Trustee, Perry Township Board, Perry Township Trustee, Richland Township Board, Indian Creek Township Trustee, state legislative districts covering Monroe County (IN House District 62 etc.).
 
-**Detection:** Check that `essentials/src/components/ElectionsView.jsx` and `essentials/src/pages/Results.jsx` still render correctly without passing any new props. These two files call `PoliticianCard` the most.
+**Detection:** Query the elections schema for all races where `election_date = '2026-05-05'` and `state = 'IN'`. Cross-reference against the bsquare Bulletin race list (confirmed as of April 2026) and the Indiana Citizen primary candidate list.
 
-**Phase:** Must be addressed in Phase 1 (icon system research and PoliticianCard changes) before any ev-ui publish.
+**Phase:** Must be addressed in Phase 1 (data completeness audit). This is the single most important finding the audit must produce.
 
 ---
 
-### Pitfall 2: Tier Hue Differentiation Introduces Partisan Color Associations
+### Pitfall 2: School Board Races Are Absent from the Primary Ballot by Design — But Absent from the Schema for a Different Reason
 
-**What goes wrong:** Using common political color associations — red/blue for party affiliations — even accidentally through tier hues, violates the antipartisan principle baked into the schema (antipartisan enforcement at schema and ingestion layers) and design system. The platform explicitly excludes party affiliation from all data display. If "state" tier gets blue and "federal" tier gets red, or if any hue system maps to recognizable political parties, it undermines user trust and the platform's core value.
+**What goes wrong:** The audit flags "school board races missing" as a data gap to fill before the primary. In Indiana 2026, school board candidates do NOT appear on the May 5 primary ballot at all — the filing window for school board candidates opens May 19 (14 days after the primary) under the new Senate Bill 177 schedule, with elections in November. Importing or displaying school board races as "May 5 primary" content would be factually wrong and potentially misleading to voters.
 
-**Why it happens:** The natural instinct when designing government-level differentiation is to reach for the US political color vocabulary (red = Republican = conservative, blue = Democrat = liberal). This is so deeply embedded in US civic visual culture that it happens unintentionally — a designer picks "government blue" for federal, "state red" for state-level, and the result reads as partisan even without intent.
+**Why it happens:** School board races are typically down-ballot and often appear near township races and county races. An audit that does not know about the 2025 partisan school board law (SB 287 + SB 177) will assume they are missing data rather than missing by design. Indiana is now the 10th state with partisan school board elections, but the transition means NO school board primaries in 2026 — candidates file post-primary for November placement.
 
-**Consequences:** Perceived bias by users. Loss of trust. Contradicts the documented antipartisan principle. May require full visual redesign of tier system post-launch.
+**Consequences:** Importing school board data for May 5 sends voters to a race that does not exist. Or the audit incorrectly escalates school boards to a "critical gap before the primary" when it should be a "November election work item."
 
 **Prevention:**
-- Use the existing EV brand palette only: teal scale for civic/government, coral for action/elections, yellow for inform, skyblue for secondary differentiation. These are brand colors without partisan connotations.
-- The `tokens.js` `colorScales` provides a full teal scale (050–950) and skyblue scale — use **lightness/shade variation within a single non-partisan hue** for tier differentiation rather than distinct hues per tier.
-- A safe pattern: federal = teal-700 (darkest, most authoritative), state = teal-500 (mid-brand), local = teal-200 (lightest, most approachable). All teal, no partisan reads.
-- Run any tier-color proposal past the antipartisan filter: "Could this hue be read as favoring one political party?" If yes, reject it.
+- Flag school board races as November 2026 work, not May 5 primary work. Filing window opens May 19 — candidate data will not exist until after the primary.
+- The new partisan school board system creates a secondary antipartisan compliance concern: when school board races DO appear in November, Indiana law requires displaying party affiliation (or an explicit nonpartisan/no-disclosure label) on the ballot. The platform's antipartisan enforcement must decide how to handle this before November.
+- Do not import school board candidates as part of primary election readiness work.
 
-**Detection:** Show the color palette to someone unfamiliar with the project. If they associate the hues with political parties, redesign before shipping.
+**Detection:** Check any election import job targeting `mccsc` or `monroe county community school` for a May 5 election date — this indicates a misclassification.
 
-**Phase:** Phase 1 (tier hue design decisions). Lock the palette before implementing — do not design it during implementation.
+**Phase:** Phase 1 (data completeness audit). Flag clearly as November scope. Create a future work item for antipartisan handling of partisan school board display.
 
 ---
 
-### Pitfall 3: buildTitleAndSubtitle() Logic Diverges Between ev-ui and essentials
+### Pitfall 3: Competitive Benchmarking Scores BallotReady/Vote411 Features Without Accounting for Their Actual Monroe County Coverage
 
-**What goes wrong:** `buildTitleAndSubtitle()` exists in two places: `ev-ui/src/PoliticianProfile.jsx` and `essentials/src/pages/Results.jsx`. The essentials version is more sophisticated — it includes `qualifyLocalTitle()`, `simplifyForBody()`, and `splitByBodyName()` which handle local government specifics. A visual redesign that touches how titles/subtitles are displayed on cards may motivate updating one version and not the other, causing permanent divergence.
+**What goes wrong:** The benchmarking audit scores competitor platforms on features (candidate bios, stance questionnaires, sample ballot accuracy) in general, then concludes "we should build X feature." But BallotReady's and Vote411's coverage of Monroe County IN may already have gaps. If BallotReady has no data for Clear Creek Township Trustee races and neither does the platform, the platform is not "behind" BallotReady on that race — both are at zero. Benchmarking against the feature set rather than Monroe County spot-check results leads to building features that would only be differentiated if the underlying data existed.
 
-**Why it happens:** The CLAUDE.md documents this explicitly: "changes to district/title display must be applied in both places." But during fast visual iteration — especially when adding icons next to titles or changing subtitle styling — it is easy to modify the component you are looking at and forget the duplicate.
+**Why it happens:** Benchmarking is easier to do by reading documentation and feature lists than by doing live spot-checks with a Monroe County address. The natural shortcut is "BallotReady has candidate questionnaires, we don't." But the real question is: does BallotReady have questionnaire data for Clear Creek Township Trustee Steven Hinds? Very likely no.
 
-**Consequences:** Representatives page and profile pages display different title formats for the same politician. Local government titles that needed `qualifyLocalTitle()` stop being qualified correctly on whichever version gets missed.
+**Consequences:** The execution backlog prioritizes feature parity (building questionnaire infrastructure) over data coverage (actually importing the missing 15+ races). Features built on empty data provide no voter value.
 
 **Prevention:**
-- Do not touch `buildTitleAndSubtitle()` logic during this milestone unless fixing a documented bug.
-- If a display change requires modifying title formatting, update both files in the same commit and include a comment referencing the other file.
-- Any icon added next to the title should use absolute/overlay positioning rather than reflowing the title text — avoid layout changes that force title logic changes.
+- Every competitor benchmark must include a live spot-check: enter a Monroe County address (e.g., 401 N Morton St, Bloomington IN 47404) in BallotReady, Vote411, VoteSmart, and Ballotpedia. Screenshot or document what each returns.
+- Score each platform on: races shown (count), candidate coverage (count), biography/bio text, stance data, photos, contact information.
+- Note where competitors also have gaps — this calibrates the audit. "BallotReady shows 8 races, we show 6" is more actionable than "BallotReady has questionnaires."
+- BallotReady was previously removed from the platform (BALLOTREADY_API_KEY decommissioned in v1.5). Do not re-engage their data pipeline for this milestone — benchmarking is read-only.
 
-**Detection:** Compare the subtitle of a local government politician (e.g., "Ellettsville Town Council") between the representatives list card and the profile page header. They should match. If they diverge, the functions have drifted.
+**Detection:** If the benchmark analysis does not include a live Monroe County address test for each competitor, the analysis is incomplete.
 
-**Phase:** Applies across all phases. Flag this as a mandatory dual-edit check whenever title display code is touched.
+**Phase:** Phase 1 (competitive benchmarking). Live spot-check is mandatory, not optional.
+
+---
+
+### Pitfall 4: Antipartisan Violation in Benchmarking Documentation or Gap Reports
+
+**What goes wrong:** The competitive benchmarking analysis notes that BallotReady or Vote411 "shows party affiliation on candidate cards." The gap report gets written as "we don't show party affiliation — gap vs BallotReady." This is not a gap to fill; it is an intentional antipartisan design choice. If "party affiliation display" is listed as a gap, it creates pressure to add partisan data to close the benchmark gap.
+
+**Why it happens:** Mechanical feature checklists treat "shows party affiliation" as a neutral feature. An analyst ticking off BallotReady features without knowledge of the antipartisan principle will list it as missing.
+
+**Consequences:** Party affiliation data gets imported as part of the gap-filling work. Even if not displayed publicly, the presence of partisan data in the database creates future pressure to display it. The antipartisan enforcement documented at the schema and ingestion layers gets bypassed.
+
+**Prevention:**
+- All benchmarking templates must have an explicit "antipartisan exclusion" category. Features that display party affiliations, partisan ratings, partisan endorsements, or political leaning scores are not gaps — they are intentional omissions.
+- Document in the benchmark report: "EV platform intentionally omits: party affiliation display, partisan color coding, party-aligned voter guides."
+- Flag Indiana school board partisan labeling as a future November-scope antipartisan compliance decision, not a current gap.
+- The antipartisan principle is documented in project MEMORY (feedback_antipartisan.md) — reference it explicitly in the benchmark methodology.
+
+**Detection:** Review every item in the benchmark gap list. Any item that involves displaying, storing, or linking to party affiliation should be moved to the "intentional omission" column.
+
+**Phase:** Applies to all benchmarking and gap-report phases. Lock the exclusion list before writing any gap report.
 
 ---
 
 ## Moderate Pitfalls
 
-Mistakes that require rework of a specific feature but do not cascade to all apps.
+Mistakes that produce incorrect gap assessments or wasted data import work.
 
 ---
 
-### Pitfall 4: Icon System Bloats ev-ui Bundle for All Consumers
+### Pitfall 5: Township Trustee and Advisory Board Candidates Are Treated as Low-Priority Because They Are Unfamiliar
 
-**What goes wrong:** Adding a third-party icon library (react-icons, lucide-react, etc.) as a dependency to ev-ui, then importing icons throughout multiple components, adds the entire icon library to every consumer's bundle — even if that consumer only uses one or two icons. With `splitting: false` in tsup.config.js, ev-ui builds as a single bundle. A 200KB icon library becomes 200KB added to every page of every app.
+**What goes wrong:** The audit de-prioritizes township trustee races because the office is obscure and the candidates are local figures with no public profile. The gap report puts them in "future" tier. In practice, township trustees control local government services (poor relief, fire protection in some jurisdictions), and these races have directly contested primaries in Monroe County in May 2026 — Clear Creek Township Trustee (3 Republican primary candidates) and Perry Township Trustee (2 Democratic primary candidates) are active contested races. A voter searching their address in May gets no information about a race they will literally vote in.
 
-**Why it happens:** ev-ui's tsup config has `splitting: false` — all components bundle together without per-component chunking. Named imports from a barrel export do not tree-shake at the library level; tree-shaking happens in the consuming app's bundler (Vite), but only if the library ships proper ESM with `sideEffects: false` in package.json. ev-ui's current package.json does not declare `sideEffects: false`.
+**Why it happens:** Prioritization instincts favor name recognition. Governor, US Senate, state legislature feel more important than township trustee. But from a voter's perspective, all five primary races on their ballot matter equally.
 
-**Consequences:** Cloudflare Pages bundle size grows for CompassV2, essentials, and EV-readrank. Core Web Vitals degradation. Unnecessary load time added for pages that do not use icons at all.
+**Consequences:** The platform shows federal and state races correctly but is silent on the contested township primary that is actually on the May 5 ballot. This is a direct failure of the core value ("helping voters make informed decisions").
 
 **Prevention:**
-- Preferred approach: inline SVG icons as React components directly in `PoliticianCard.jsx` and `CategorySection.jsx`. The existing compass icon in `PoliticianCard.jsx` (lines 168-205) already uses this pattern and works well. Add 3-5 more inline SVGs the same way.
-- If a library is required for scale, use Lucide React with individual named imports (`import { Building2 } from 'lucide-react'`), which tree-shakes correctly in Vite consumers. Measure bundle impact before committing.
-- Never do `import * as Icons from 'lucide-react'` or add a library to ev-ui's `dependencies` that ships as CJS-only.
-- Add `"sideEffects": false` to ev-ui's package.json whenever adding new icons to enable consumer tree-shaking.
+- Treat "contested before May 5" as the prioritization criterion, not "name recognition" or "scope of office."
+- All confirmed contested May 5 primaries in Monroe County must be in the platform before primary day — regardless of how obscure the office.
+- Separate the data work: importing races and candidates is fast (schema exists); importing stances and bios is slow and optional. Import the races with minimal candidate data first; leave bio/stance enrichment as follow-up.
 
-**Detection:** Run `npm run build` in essentials and check the Vite bundle output for large icon library chunks. Icon library chunks should not appear as large standalone artifacts separate from the component code.
+**Detection:** For every May 5 primary race identified in external sources, confirm it exists in the `essentials.elections` schema before the primary. A race with zero candidates is still better than no race record — it tells the voter "this race is happening" even if candidate data is thin.
 
-**Phase:** Phase 1 (icon system selection). Decide the approach before writing any icon code.
+**Phase:** Phase 2 (gap prioritization). Township races must be in the "before primary" tier, not "future."
 
 ---
 
-### Pitfall 5: Tier Color Uses Color as the Sole Visual Differentiator (WCAG 1.4.1 Failure)
+### Pitfall 6: Assuming the Indiana SoS Excel Export Contains All Races
 
-**What goes wrong:** Using subtle hue tinting (e.g., a faint background wash on the card header or colored border-left) to differentiate federal/state/local tiers without a secondary non-color cue. Color cannot be the **only** visual signal that conveys meaning. If tier is communicated only through background tint, colorblind users cannot distinguish tiers.
+**What goes wrong:** The existing election import pipeline was built using Indiana SoS Excel data. The SoS candidate filing list is authoritative for state and federal races but may not include all township trustee and advisory board races, which are filed at the county clerk level rather than the state level. An audit that relies solely on the SoS Excel export will miss county-clerk-administered races.
 
-**Why it happens:** Designers reach for color as an elegant tier differentiator. The `tokens.js` file includes WCAG contrast notes warning that coral (3.14:1), light blue (2.49:1), and yellow (1.46:1) fail on white for body text. A faint background tint is even lower contrast than the brand colors at full opacity. The W3C explicitly states: if a non-color cue only appears on hover, it is still a failure.
+**Why it happens:** The SoS is the canonical state-level source. It is easy to treat the SoS download as "complete." Indiana election administration distributes filing between the state (legislative, statewide offices) and county (local offices, township offices). Township races are not on the SoS candidate list.
 
-**Consequences:** WCAG 1.4.1 (Use of Color) violation. Civic users who are colorblind cannot distinguish government tiers.
+**Consequences:** The audit concludes the SoS data is complete and stops there. Township trustee races are never imported. Voters in Clear Creek or Perry townships see no election data for their local primary.
 
 **Prevention:**
-- Every tier indicator must have a second non-color differentiator: a text label ("Federal," "State," "Local") or a distinct icon shape, in addition to any color tint.
-- Never rely on border-left color or background tint alone. Pair color with shape or text.
-- Use the accessible text alternatives from `tokens.js` when any tier text must be readable: teal (`#00657C` at 6.66:1) is the only brand color that passes AA on white without a darkened variant.
-- Test with browser devtools grayscale filter — the tiers must still be visually distinct in grayscale.
+- The complete source set for Monroe County races is: (1) Indiana SoS candidate filing list (state/federal), (2) Monroe County Clerk or Board of Elections (county and township races), (3) local media cross-check (bsquare Bulletin, Herald-Times) to catch anything missed.
+- The Monroe County Clerk website or direct contact is required to get the complete local candidate list.
+- Use the confirmed bsquare Bulletin race coverage as a completeness check against SoS data.
 
-**Detection:** Apply `filter: grayscale(100%)` via browser devtools to the representatives page. All tier sections must still be distinguishable without color.
+**Detection:** Compare the SoS candidate list count against the bsquare Bulletin race list. Any race in the local press that does not appear in the SoS list is a county-clerk-administered race.
 
-**Phase:** Phase 2 (tier hue implementation). Verify accessibility before publishing ev-ui changes.
+**Phase:** Phase 1 (data completeness audit). Identify the gap between SoS data and full ballot before scoring completeness.
 
 ---
 
-### Pitfall 6: Hover-Only Icon Tooltips Are Inaccessible on Touch Devices
+### Pitfall 7: Stance Data and Quote Imports Attempted on a 3-Week Timeline for New Candidates
 
-**What goes wrong:** The plan calls for "small subtle icons replacing badges (on ballot, compass available, branch type) with hover details." If the hover tooltip is the only way to understand what an icon means, mobile users (who cannot hover) and keyboard users get an incomplete experience. `CategorySection.jsx` already has a tooltip implemented via `onMouseEnter`/`onMouseLeave` — this pattern works on desktop but provides no feedback on mobile.
+**What goes wrong:** The gap report identifies that township and county candidates have no stance data or quotes for Read & Rank. The team attempts to research and import stances for all 30+ new candidates before the primary. With the existing CSV research workflow and Go CLI import process, a typical politician takes 1-3 hours of research per person (finding reliable sources, verifying URLs, avoiding hallucinated sources). Thirty candidates at 2 hours each is 60 hours of research work — beyond the team's capacity in 3 weeks alongside other gap-filling work.
 
-**Why it happens:** Hover-first UI patterns are designed on desktop and assumed acceptable for "subtle" indicators. The design goal of "small subtle icons" implies the text label is secondary — but on mobile the icon text is the only meaning available, so it must be accessible without hover.
+**Why it happens:** The stance data gap is real. The instinct is to fill every gap before the primary. Down-ballot township candidates have almost no public stance record — township trustees do not give speeches, write op-eds, or have legislative voting records.
 
-**Consequences:** Mobile users (likely the majority of civic voters checking their reps on a phone) see icons with no explanation. WCAG 1.4.13 requires hover-triggered content to be dismissible, hoverable, and persistent — but the right fix is ensuring meaning does not require hover at all.
+**Consequences:** The team spreads effort too thin. No import reaches production quality by the primary. The v1.8 lesson (700+ hallucinated URLs cleared from the data) applies here: rushed stance research produces bad data.
 
 **Prevention:**
-- Icons must be self-evident or paired with a visible label below/beside them in the default state.
-- For truly icon-only indicators, add `aria-label` and visually-hidden text so screen readers announce the meaning.
-- Tooltips should supplement detail ("On ballot: May 6, 2026 Primary") not provide the primary label. The label must be visible without interaction.
-- The existing `CategorySection.jsx` tooltip already handles `onFocus`/`onBlur` for keyboard — use it as the baseline pattern.
+- Stance data for township and county candidates should be "future" tier in the gap report. These candidates have minimal public records.
+- Prioritize in this order: (1) import missing races and candidates with minimal data (name, party if applicable, office), (2) add photos where available from candidate websites or local press, (3) stance data only for candidates with clear public records (incumbent legislators, county-level offices with documented voting history).
+- The Read & Rank value for township trustee candidates is low — there are no quotes to evaluate. Do not force stance imports where the underlying public record does not exist.
+- Explicitly state in the gap report: "Stance coverage for township candidates deferred — insufficient public record exists."
 
-**Detection:** Test on a real iPhone with Safari. All icon meanings should be clear without tapping or hovering.
+**Detection:** Before assigning stance research tasks, check whether the candidate has any public presence: website, news coverage, documented public statements. If a web search returns zero results for a candidate, stance research is impossible and should be deferred.
 
-**Phase:** Phase 2 (icon implementation). Design the icon+label pairing before coding, not after.
+**Phase:** Phase 3 (gap prioritization / execution planning). Lock the "before primary" scope to race+candidate import, not stance enrichment.
 
 ---
 
-### Pitfall 7: Removing "Incumbent" Marker Without Accidentally Removing is_incumbent Branching Logic
+### Pitfall 8: The Election Central Page Showing an Incomplete Ballot Without a Completeness Signal
 
-**What goes wrong:** The milestone calls for removing the "incumbent" marker from candidate cards. The incumbent/challenger branching in `CandidateProfile.jsx` uses the `is_incumbent` flag to decide whether to render the full politician profile (with CompassCard, legislative data, etc.) or the minimal challenger view. Removing the visual badge does not remove this branching — but if a developer misunderstands the scope and removes the `is_incumbent` prop pass-through as part of the "remove incumbent marker" task, the entire CandidateProfile page breaks.
+**What goes wrong:** After the audit, some races get imported and others do not. The Election Central page for a Monroe County address shows 6 primary races when the actual ballot has 14+. A voter trusts the platform is showing "their ballot" and goes to vote having researched only the races displayed. The missing races are invisible — there is no "we may be missing races in your area" indicator.
 
-**Why it happens:** "Remove the incumbent marker" sounds like a simple badge deletion. The word "marker" is ambiguous — it could mean the badge, the prop, or the branching logic. Without explicit scope boundaries, a developer touching `PoliticianCard.jsx` might remove the `badge` prop from the call site in `ElectionsView.jsx` (correct), then continue and remove `is_incumbent` from `CandidateProfile.jsx` routing (incorrect).
+**Why it happens:** The platform presents election data as a curated voter guide, not as a guarantee of completeness. But the UX does not communicate this distinction. The election page header implies completeness.
 
-**Consequences:** All challenger candidate profiles render with the full legislator template (404 on legislative data fetches, empty CompassCard, broken layout), or all incumbent profiles render as minimal challenger views, hiding their full data.
+**Consequences:** Voter proceeds to the polls unprepared for township races they had no way to research on the platform. This is a trust and mission failure even if the platform delivered accurate data for the races it did show.
 
 **Prevention:**
-- Explicitly scope the task: "Remove the 'INCUMBENT' badge text from the PoliticianCard `badge` prop passed in ElectionsView.jsx. Do NOT touch CandidateProfile.jsx is_incumbent branching logic."
-- Add a comment to `CandidateProfile.jsx` at the `is_incumbent` branch: `// is_incumbent drives full/minimal profile routing — badge display removed in v2026.4.1 but this logic stays`.
+- Add a completeness caveat to the Election Central page: "Coverage for this area is ongoing. For a complete official ballot, visit the Monroe County Clerk or Indiana Secretary of State website" with a direct link.
+- This is a one-line copy addition, not a feature build. It should be in the "before primary" execution scope regardless of how complete the data becomes.
+- Do not remove the caveat even after importing all known races — election data can always have gaps.
 
-**Detection:** After removing the badge, verify that navigating to an incumbent candidate profile still shows the full legislator profile with CompassCard and legislative sections.
+**Detection:** Check the Election Central page for a Monroe County address immediately before the primary. Verify the caveat copy and the official ballot link are present and point to valid URLs.
 
-**Phase:** Phase 1 (election page changes). Scope this task explicitly before implementation.
+**Phase:** Phase 2 (UX gap analysis). The completeness caveat is a fast fix that should ship in the same deployment as any new race imports.
 
 ---
 
-### Pitfall 8: Compass-First Card Prototype Mutates the Shared PoliticianCard Contract
+### Pitfall 9: Benchmarking Against Ballotpedia's Full Scope Rather Than Their Monroe County Spot-Check Performance
 
-**What goes wrong:** The "compass-first card prototype (real reps, explore removing photos from results)" implies a significant visual departure from `PoliticianCard`. If the prototype is built by directly modifying `PoliticianCard` in ev-ui rather than creating a new component, it changes the shared component for all pages. The existing `PoliticianCard` with a headshot photo is used on elections, representatives, candidate profiles, and compass compare pages.
+**What goes wrong:** Ballotpedia is treated as the gold standard for election completeness. The gap report lists features from Ballotpedia's national coverage (judicial elections, legislative voting records, PAC donations, endorsements) as features to match. In practice, Ballotpedia's coverage of Monroe County judicial retention and township races may be thin or absent. The platform's scope is specifically Monroe County — where hyper-local coverage is the differentiator.
 
-**Why it happens:** The path of least resistance is to add a `compassFirst` variant to `PoliticianCard` (it already has `horizontal | vertical` variants). But "explore removing photos" means the new variant has fundamentally different layout assumptions that are hard to express cleanly as a third variant without significant conditional complexity in the component.
+**Why it happens:** Ballotpedia's brand is comprehensive election data. It is natural to use their national feature set as the benchmark ceiling.
 
-**Consequences:** A prototype that becomes hard to undo. ev-ui complexity increases. The existing photo variant may visually regress if the shared style object is modified to accommodate the new variant's different sizing assumptions.
+**Consequences:** The gap report overestimates required work. Features that Ballotpedia "has" nationally but does not have for Monroe County specifically are treated as competitive gaps when they are not.
 
 **Prevention:**
-- Build the compass-first card as a **new component** in essentials: `CompassFirstCard.jsx` (local component, not in ev-ui). Treat it as a throw-away prototype.
-- Only migrate it to ev-ui if the prototype is validated and intended to replace `PoliticianCard` in production.
-- Do not add a third variant to `PoliticianCard` until the design is finalized and the prototype decision is made.
+- Benchmark only on Monroe County spot-check results: enter a Bloomington IN address in each competitor and document exactly what they return.
+- Ballotpedia likely has: federal races, state legislative races, appellate judicial retention. Ballotpedia likely lacks: Clear Creek Township Trustee candidates, Perry Township Board candidates, Monroe County Assessor primary candidates.
+- If Ballotpedia does not have data for a race, that race is a local-first opportunity for the platform, not a gap vs Ballotpedia.
 
-**Detection:** After implementing the prototype, verify that `ElectionsView.jsx` and all existing `PoliticianCard` usage still renders identically to before.
+**Detection:** The benchmark report must include a column "Available on Ballotpedia for Monroe County" not just "Ballotpedia has this feature globally."
 
-**Phase:** Phase 3 (compass-first prototype). Start as a local component, not an ev-ui change.
+**Phase:** Phase 1 (competitive benchmarking). The benchmark methodology must be Monroe County-specific from the start.
+
+---
+
+### Pitfall 10: Judicial Races Treated as Uniform When Indiana Has Multiple Judicial Selection Methods
+
+**What goes wrong:** Indiana judicial races are not uniform. State appellate judges face retention elections (November 2026). Monroe County Circuit Court judges face partisan elections (Monroe County is not among the counties with merit-selection). A data import or audit that treats "judges" as a single category will either import retention-only data and miss contested partisan judicial primaries, or import partisan judicial race data and then display it incorrectly for retention judges (who are not contested).
+
+**Why it happens:** Judicial selection systems vary by state and county. The schema has `faces_retention_vote` on the races table (introduced in v2026.3.8), but whether that flag is set correctly for all Indiana judicial races requires verification.
+
+**Consequences:** A retention judge (yes/no vote) is displayed as having opponents. Or a contested circuit court race is treated as a retention vote. Both are wrong in ways that confuse voters.
+
+**Prevention:**
+- For Indiana: state appellate judges (Supreme Court, Court of Appeals) = retention elections in November 2026. Monroe County trial court judges = partisan election cycle (check Monroe County Clerk for 2026 races).
+- Verify `faces_retention_vote` flag on any judicial races in the schema.
+- If no Monroe County Circuit Court race exists on the primary ballot, do not create a placeholder — an empty retention record for a non-election-year judge is worse than no record.
+
+**Detection:** Cross-check Indiana Judicial Branch retention schedule against any judicial entries in the races table. Confirm the `faces_retention_vote` flag is correctly set.
+
+**Phase:** Phase 1 (data completeness audit). Judicial races must be individually verified, not imported as a category.
 
 ---
 
 ## Minor Pitfalls
 
-Mistakes that cause visual glitches or minor rework but do not break functionality.
+Mistakes that create rework or inconsistency but do not invalidate the audit.
 
 ---
 
-### Pitfall 9: Headshot Cropping Fix Applied to CDN Images Instead of CSS object-position
+### Pitfall 11: Competitor Spot-Check Screenshots Taken at Different Times Are Not Comparable
 
-**What goes wrong:** The headshot cropping audit may reveal that some headshots look bad because the source is portrait-oriented with space above the head, or a wide landscape image. The impulse is to re-download and re-upload all affected CDN images with a different crop. This creates unnecessary data migration work and risks losing original images.
-
-**Why it happens:** Cropping feels like an image-editing task, not a CSS task.
+**What goes wrong:** The benchmarking analysis is done over several days. BallotReady is checked on day 1, Vote411 on day 3, Ballotpedia on day 5. Competitor data changes daily as new candidates file and data teams import content. The benchmark report compares platforms at different snapshots, producing misleading comparisons.
 
 **Prevention:**
-- Use CSS first: `object-fit: cover; object-position: top center` on the `<img>` element covers ~90% of bad headshot crops with one line.
-- `PoliticianCard.jsx` already uses `objectFit: 'cover'` with no `objectPosition` set — adding `objectPosition: 'top'` to `styles.image` is a one-line change.
-- Only re-upload images if the source image itself is fundamentally broken (corrupted, wrong person, or so poorly framed that CSS cannot salvage it).
+- Complete all competitor spot-checks in a single session, same address, documented with timestamps.
+- Note the spot-check date clearly in the benchmark report.
 
-**Detection:** After adding `object-position: top`, scan known bad-crop politicians. If faces are still cut off, those specific images may need `object-position: center 20%` or re-upload.
-
-**Phase:** Phase 2 (headshot audit). CSS fix first, image re-upload as last resort.
+**Phase:** Phase 1 (competitive benchmarking). Do all spot-checks in one sitting.
 
 ---
 
-### Pitfall 10: Tailwind Classes in essentials Cannot Override ev-ui Inline Styles
+### Pitfall 12: The Gap Report Mixes "Missing Data" Gaps with "Missing Features" Gaps
 
-**What goes wrong:** essentials uses Tailwind CSS 4; ev-ui components use JavaScript inline style objects referencing `tokens.js`. When building tier hue differentiation, a developer writes Tailwind classes on a container wrapping an ev-ui component, expecting to style the tier indicator — but ev-ui's inline styles have the highest CSS specificity and silently win over Tailwind utility classes on the same element.
-
-**Why it happens:** ev-ui `CategorySection` and `PoliticianCard` apply styles via JavaScript style objects, which become inline `style=""` attributes in the DOM. Inline styles cannot be overridden by external class-based styles without `!important`. You cannot override ev-ui component internal styles with Tailwind classes from essentials.
-
-**Consequences:** Tier color tinting appears to have no effect, or requires `!important` hacks that create long-term maintenance debt.
+**What goes wrong:** The gap report lists "no stance data for Clear Creek Township Trustee" (data gap) alongside "no candidate questionnaire infrastructure" (feature gap) in the same list, both labeled as gaps. The execution backlog then has data tasks and feature build tasks interleaved, making prioritization unclear.
 
 **Prevention:**
-- Use the `style` prop that `CategorySection` already accepts: `<CategorySection style={{ borderLeftColor: tierColor }}>`. This merges correctly with the component's internal styles.
-- If a tier-color prop is needed in `PoliticianCard`, add it as an explicit named prop (e.g., `tierAccent`) that the component internally applies — do not rely on consumers wrapping with Tailwind classes.
-- Never use `!important` to override ev-ui component internals.
+- Separate the gap report into three columns: (1) Data gaps — races/candidates not imported, (2) Feature gaps — UI/UX capabilities not present, (3) Intentional omissions — antipartisan choices and out-of-scope features.
+- Feature gaps generally take longer to ship than data gaps. For a 3-week primary timeline, data gaps are higher value.
 
-**Detection:** Open DevTools and inspect the element. If a style appears in the `style=""` attribute it is from ev-ui inline styles and cannot be overridden by Tailwind from outside the component.
-
-**Phase:** Applies across all phases where tier color is added to ev-ui components.
+**Phase:** Phase 1 (gap report structure). Set the template before filling in findings.
 
 ---
 
-### Pitfall 11: New Icons Added to ev-ui Without Recording Them in the Design System
+### Pitfall 13: Treasury Data Relevance Check Expands Scope Unnecessarily
 
-**What goes wrong:** New icons added to ev-ui for this milestone (on-ballot indicator, compass-available indicator, branch-type indicator) are implemented as inline SVG React components but never documented in the Penpot design system. Future design work does not know these icons exist in the codebase, leading to inconsistent icon choices in future milestones.
-
-**Why it happens:** The dev-to-design sync is optional and easily skipped under time pressure. The `sync-penpot` script exists (`npm run sync-penpot`) but only syncs tokens, not icon components.
+**What goes wrong:** The treasury relevance check is listed as part of the audit scope. Municipal budget data for Bloomington is in the platform. The relevance check concludes "voters might care about this before an election" and the execution backlog adds treasury integration to the election page. This is a reasonable long-term goal but a distraction on a 3-week primary timeline.
 
 **Prevention:**
-- After finalizing new icons, add a comment block in the component file naming each icon and its intended usage context.
-- If inline SVGs stay in `PoliticianCard.jsx`, note: `// Icon: CompassAvailableIcon — shown when onCompassClick prop is present`.
-- Add icon names and usage to the next Penpot design system update.
+- Scope the treasury relevance check as: "Does any May 5 primary candidate's platform explicitly relate to the treasury data we have?" If yes, note it for stance research. If no, defer.
+- The treasury tracker is a separate surface — cross-linking it from Election Central is future work.
 
-**Detection:** After shipping, confirm a designer starting fresh can identify all icon assets used across the platform without reading source code.
-
-**Phase:** Phase 1 wrap-up, before publishing ev-ui changes.
+**Phase:** Audit phase only. No feature work on treasury-election integration before the primary.
 
 ---
 
@@ -237,31 +257,30 @@ Mistakes that cause visual glitches or minor rework but do not break functionali
 
 | Phase Topic | Likely Pitfall | Mitigation |
 |-------------|---------------|------------|
-| Icon system selection | Bundle bloat from icon library added to ev-ui | Use inline SVG components (follow existing PoliticianCard compass icon pattern) — 4-5 icons do not need a library |
-| Tier hue design | Inadvertent partisan color associations | Use teal lightness scale only; run antipartisan color check before implementation |
-| PoliticianCard tier-color prop | Breaking all three consumer apps | Add as optional prop with safe null/undefined fallback; test without prop first |
-| Removing "incumbent" badge | Accidentally removing is_incumbent branching in CandidateProfile | Scope task to badge text removal only; add code comment to CandidateProfile branching |
-| Compass-first card prototype | Mutating shared PoliticianCard contract | Build as local CompassFirstCard.jsx in essentials, not as ev-ui variant |
-| Headshot cropping audit | Re-uploading 503 images unnecessarily | CSS object-position fix first; re-upload only for fundamentally broken source images |
-| Icon tooltips | Hover-only meaning inaccessible on mobile | Pair every icon with visible text label or aria-label; tooltip provides detail, not the primary label |
-| buildTitleAndSubtitle() | Logic drift between ev-ui and essentials copies | Dual-edit policy: any touch to title logic updates both files in same commit |
-| ev-ui publish | Consumers pulling latest, breaking builds | Bump version consciously; verify optional-prop fallback renders safely before publish |
-| Tier color contrast | Faint tints failing WCAG 1.4.1 | Verify with grayscale filter; always pair color with shape or text label |
-| Tailwind + inline style conflict | Consumer Tailwind classes silently losing to ev-ui inline styles | Use ev-ui's `style` prop pass-through or add explicit named props; never rely on external class overrides |
+| Data completeness audit | Using 12 races as denominator instead of full ballot | Start from external authoritative ballot sources, not existing DB count |
+| Data source identification | Assuming SoS Excel contains all races | Township races are county-clerk-administered; contact Monroe County Clerk separately |
+| School board handling | Importing school board races for May 5 | School board filing doesn't open until May 19; these are November races only |
+| Competitive benchmarking | Scoring features globally rather than Monroe County spot-check | Live address test required for each competitor; document what they return for Bloomington IN |
+| Gap report writing | Listing party affiliation display as a gap vs BallotReady | Party data is an intentional antipartisan omission; use an exclusion column in the gap report |
+| Indiana partisan school board law | Treating future partisan labels as antipartisan violation to prevent | Decide October 2026 display approach now; do not import school board data before the primary |
+| Judicial race imports | Applying uniform "judicial" category to mixed retention/partisan system | Verify each judge's selection method; set `faces_retention_vote` correctly per race |
+| Gap prioritization | Putting township races in "future" tier | Contested May 5 primary races are all "before primary" tier regardless of name recognition |
+| Stance research under time pressure | Attempting 30+ candidate stances in 3 weeks | Race+candidate import is the goal; stance research only where public record exists |
+| Election Central UX | Showing partial ballot without completeness signal | Ship caveat copy and official ballot link in same deploy as new race imports |
+| Benchmark scope creep | Matching Ballotpedia's full national feature set | Benchmark ceiling is Monroe County spot-check results, not Ballotpedia's global coverage |
+| Treasury relevance check | Expanding scope to election-treasury integration | Treat as an informational check only; no feature builds before the primary |
 
 ---
 
 ## Sources
 
-- WCAG 1.4.1 Use of Color: [W3C Understanding SC 1.4.1](https://www.w3.org/WAI/WCAG21/Understanding/use-of-color.html)
-- WCAG 1.4.13 Content on Hover or Focus: [W3C](https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus.html)
-- Color-only failure, hover cue still fails: [W3C F73](https://www.w3.org/TR/WCAG20-TECHS/F73.html)
-- Icon tooltip accessibility: [Accessibly Blog](https://accessiblyapp.com/blog/tooltip-accessibility/)
-- tsup tree-shaking guide: [dorshinar.me](https://dorshinar.me/posts/treeshaking-with-tsup)
-- Lucide React bundle benchmarks: [CodeToDeploy/Medium](https://medium.com/codetodeploy/the-hidden-bundle-cost-of-react-icons-why-lucide-wins-in-2026-1ddb74c1a86c)
-- Component library versioning pitfalls: [Antler Digital](https://antler.digital/blog/best-practices-for-component-versioning-in-react)
-- USWDS color design for civic apps: [USWDS Color Overview](https://designsystem.digital.gov/design-tokens/color/overview/)
-- ev-ui tokens: `/Users/chrisandrews/Documents/GitHub/ev-ui/src/tokens.js`
-- ev-ui PoliticianCard: `/Users/chrisandrews/Documents/GitHub/ev-ui/src/PoliticianCard.jsx`
-- ev-ui tsup config: `/Users/chrisandrews/Documents/GitHub/ev-ui/tsup.config.js`
-- Antipartisan principle: project MEMORY.md (feedback_antipartisan.md)
+- Monroe County 2026 primary race list: [bsquare Bulletin](https://bsquarebulletin.com/election-2026-contested-local-primaries-some-november-matchups-take-shape-across-monroe-county/)
+- Indiana school board partisan election law (SB 287 + SB 177): [Chalkbeat Indiana](https://www.chalkbeat.org/indiana/2026/04/07/primary-election-ballot-changes-exclude-education-races-and-referendums/) | [Chalkbeat 2025](https://www.chalkbeat.org/indiana/2025/04/24/partisan-school-board-election-bill-passes/)
+- Indiana primary date (May 5, 2026): [WFYI](https://www.wfyi.org/statewide/2026-04-06/how-to-vote-early-in-indianas-2026-primary-election)
+- Indiana judicial retention elections 2026: [Indiana Judicial Branch](https://www.in.gov/courts/retention/)
+- Indiana 2026 candidate guide: [Indiana SoS](https://www.in.gov/sos/elections/files/2026-Candidate-Guide.FINAL.pdf)
+- Ballot information problem (civic data gaps for down-ballot): [PBS Preserving Democracy](https://www.pbs.org/wnet/preserving-democracy/2024/02/27/the-ballot-information-problem/)
+- BallotReady voter guide features: [BallotReady Support](https://support.ballotready.org/article/771-ballotreadys-voter-guide)
+- Indiana 2026 primary candidates: [Indiana Citizen](https://indianacitizen.org/2026-indiana-primary-candidate-list/)
+- 2026 Indiana election calendar: [Indiana SoS](https://www.in.gov/counties/clarkcountyclerkofcourts/voting-and-elections/files/2026-Indiana-Election-Calendar.pdf)
+- Antipartisan principle: project MEMORY (feedback_antipartisan.md)

@@ -1,16 +1,15 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: Milestone v2026.4.1 shipped
-stopped_at: Completed quick task 260405-ez5
-last_updated: "2026-04-05T00:00:00Z"
-last_activity: 2026-04-05
+milestone: v2026.4.5
+milestone_name: Compass-First Politician Card
+status: completed
+last_updated: "2026-04-25T16:18:02.506Z"
+last_activity: 2026-04-19 -- Phase 127 complete
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 11
-  completed_plans: 11
+  total_phases: 3
+  completed_phases: 1
+  total_plans: 3
+  completed_plans: 3
   percent: 100
 ---
 
@@ -18,40 +17,48 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-04)
+See: .planning/PROJECT.md (updated 2026-04-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Planning next milestone
+**Current focus:** Phase 127 — compass-card-horizontal-ev-ui
 
 ## Current Position
 
-Phase: —
-Plan: —
-Status: Milestone v2026.4.1 shipped
-Last activity: 2026-04-05 - Completed quick task 260404-w7r: Move icon overlay from bottom-right to left-aligned below text on politician cards
-
-Progress: [██████████] 100%
+Phase: 128 (empty-non-compass-variants) — NOT STARTED
+Status: Phase 127 complete — ready for Phase 128
+Last activity: 2026-04-19 -- Phase 127 complete
 
 ## Performance Metrics
 
+**Velocity (v2026.4.4):** 7 phases, 20 plans, 4 days
+**Velocity (v2026.4.3):** 5 phases, 19 plans, 3 days
+**Velocity (v2026.4.2):** 6 phases, 11 plans, 2 days
 **Velocity (v2026.4.1):** 5 phases, 11 plans, 1 day
 **Velocity (v2026.3.8):** 5 phases, 12 plans, 3 days
-**Velocity (v2026.3.7):** 5 phases, 11 plans
-**Velocity (v2026.3.6):** 7 phases, 15 plans, 3 days
 
 *Updated after each plan completion*
 
+## Deferred Items
+
+Items acknowledged and deferred at v2026.4.4 close on 2026-04-18 (not in v2026.4.5 scope unless explicitly re-added):
+
+| Category | Item | Status |
+|----------|------|--------|
+| phase | Phase 117 (CAND-01–CAND-05): Candidate stub resolution + data import | Not started — user confirmed some resolved externally |
+| phase | Phase 120-03 (CONT-01–CONT-02): Contested-race bio import execution | Content researched (120-02 done), import script not run |
+| phase | Phase 124 (BIO-01–BIO-02): App-wide bio authoring (~45 candidates) | Not started |
+| phase | Phase 126 (INFRA-01–INFRA-02): Rural geocoding + township geofence import | Not started |
+
+Known deferred items at close: 4 (see above)
+
 ## Accumulated Context
-
-### Decisions
-
-(Cleared — see .planning/milestones/v2026.4.1-ROADMAP.md for milestone decisions)
 
 ### Pending Todos
 
 - 12 politicians have no Read & Rank quotes (carried from v1.8)
-- PROF-04: Compass stance data imports for candidates (deferred to future milestone)
-- PROF-05: Sourced quote imports for candidates (deferred to future milestone)
+- PROF-04: Compass stance data imports for candidates (deferred)
+- PROF-05: Sourced quote imports for candidates (deferred)
+- Phase 120-03: Contested-race bio import script still needs production run (content ready in 120-REVIEW-DATA.md)
 
 ### Blockers/Concerns
 
@@ -61,16 +68,14 @@ Progress: [██████████] 100%
 
 | # | Description | Date | Commit | Directory |
 |---|-------------|------|--------|-----------|
-| 260404-p5t | Fix Dorothy Granger headshot cropping issue | 2026-04-04 | 5cb51e0 | [260404-p5t-fix-dorothy-granger-headshot-cropping-is](./quick/260404-p5t-fix-dorothy-granger-headshot-cropping-is/) |
-| 260404-sla | Fix ballot icon tooltip to show next election date instead of term end, and clarify position is on ballot not person | 2026-04-05 | cd34a70 | [260404-sla-fix-ballot-icon-tooltip-to-show-next-ele](./quick/260404-sla-fix-ballot-icon-tooltip-to-show-next-ele/) |
-| 260404-t49 | Ballot tooltip shows real primary/general election dates from DB instead of heuristic term-end computation | 2026-04-05 | 6a2cf90, 4345bff | [260404-t49-ballot-tooltip-show-primary-date-until-p](./quick/260404-t49-ballot-tooltip-show-primary-date-until-p/) |
-| 260404-vqs | Remove duplicate large compass icon from politician cards; small icon in overlay strip now clickable | 2026-04-04 | 5a4a94f, 1af2d9b | [260404-vqs-remove-duplicate-large-compass-icon-from](./quick/260404-vqs-remove-duplicate-large-compass-icon-from/) |
-| 260404-w7r | Move icon overlay from bottom-right to left-aligned below text on politician cards | 2026-04-05 | ed12358, f3b1e02 | [260404-w7r-move-icon-overlay-from-bottom-right-to-l](./quick/260404-w7r-move-icon-overlay-from-bottom-right-to-l/) |
-| 260405-doq | Fix ballot icon showing for all politicians — filter by actual race/candidate participation | 2026-04-05 | 6db60d7 | [260405-doq-fix-on-the-ballot-icon-showing-for-all-p](./quick/260405-doq-fix-on-the-ballot-icon-showing-for-all-p/) |
-| 260405-ez5 | Fix politician card height inconsistency — all cards in a grid row now match the tallest card | 2026-04-05 | ev-ui@b1b0c58,c96b22c; essentials@7b6a2bd,c60c265 | [260405-ez5-fix-politician-card-height-inconsistency](./quick/260405-ez5-fix-politician-card-height-inconsistency/) |
+| 260418-t6w | Change compass radar chart colors to Dusk/Sage scheme and add white border to data points | 2026-04-19 | 81ab11f | [260418-t6w-change-compass-radar-chart-colors-to-dus](./quick/260418-t6w-change-compass-radar-chart-colors-to-dus/) |
+| 260418-tlq | Fix Nicole Bolden display — show as City Official (City Clerk reclassification) | 2026-04-18 | e13a918 (essentials) | [260418-tlq-fix-nicole-bolden-display-show-as-city-o](./quick/260418-tlq-fix-nicole-bolden-display-show-as-city-o/) |
+| 260418-tqy | Elections tab label enhancement and glowing dot eager-load fix in essentials | 2026-04-19 | da0a440 (essentials) | [260418-tqy-elections-tab-label-and-glowing-dot-fix-](./quick/260418-tqy-elections-tab-label-and-glowing-dot-fix-/) |
+| 260419-szc | Fix Nicole Bolden grouping — split LOCAL admin officers into own sub-group in groupHierarchy.js (5/5 tests pass) | 2026-04-20 | 415a932 (essentials) | [260419-szc-fix-nicole-bolden-classification-show-as](./quick/260419-szc-fix-nicole-bolden-classification-show-as/) |
+| 260422-upn | Fix Circuit Court category: Nicole Brown as Circuit Court Officials, judges as Circuit Court Judges, remove inapplicable treasury link | 2026-04-23 | c7c3041 (essentials) | [260422-upn-fix-circuit-court-category-nicole-brown-](./quick/260422-upn-fix-circuit-court-category-nicole-brown-/) |
+| 260420-rh4 | Read-Rank quote curation (max 2 per politician/topic, 22 deletes) + LLM-assisted deidentification (13 quotes rewritten with bracketed edits) | 2026-04-20 | be4719a, 31e7d6c | [260420-rh4-readrank-quote-limit-deid](./quick/260420-rh4-readrank-quote-limit-deid/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-05 - Completed quick task 260405-ez5: Fix politician card height inconsistency
-Stopped at: Completed quick task 260405-ez5
-Resume file: None
+Last activity: 2026-04-20 - Completed quick task 260420-rh4: Read-Rank quote curation + deidentification
+Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants

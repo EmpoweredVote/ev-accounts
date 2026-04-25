@@ -1,352 +1,553 @@
 # Architecture Patterns
 
-**Domain:** Visual polish — icon system, tier hues, compass-first cards, headshot validation
-**Researched:** 2026-04-02
-**Milestone:** v2026.4.1 Essentials Visual Polish & Election Improvements
-**Overall confidence:** HIGH — all findings from direct source inspection
+**Domain:** Indiana Primary Election Readiness Audit — v2026.4.3
+**Researched:** 2026-04-11
+**Milestone:** v2026.4.3 Indiana Primary Election Readiness Audit
+**Overall confidence:** HIGH — all findings from direct code inspection of the live codebase
 
 ---
 
-## Current Component Map
+## Existing Architecture Snapshot
 
-### ev-ui (shared library, v0.1.54)
+The audit milestone operates entirely within the existing stack. No new services, schemas, or API
+layers are required. The work is additive: audit scripts, SQL queries, and gap-report documents
+that read from the existing schema.
 
-| Component | File | What it does |
-|-----------|------|-------------|
-| `PoliticianCard` | `PoliticianCard.jsx` | Horizontal/vertical card with image, name, title, subtitle, badge pill, compass button. Inline SVG compass icon. All styles via `tokens.js` inline objects (not Tailwind classes). |
-| `CategorySection` | `CategorySection.jsx` | Section wrapper with title pill, info tooltip, external website link. Styles via `tokens.js`. Grid layout with `auto-fill minmax(250px)`. |
-| `PoliticianProfile` | `PoliticianProfile.jsx` | Full politician profile view. Contains its own `buildTitleAndSubtitle()` — duplicates logic from Results.jsx. |
-| `tokens.js` | `tokens.js` | Single source of truth: brand colors, full color scales (050-950 per hue), pillar themes (inform/connect/empower), semantic tokens, data viz palette, spacing, typography, shadows, motion. |
-| `tailwind-preset.js` | `tailwind-preset.js` | Tailwind theme config consuming tokens. Flattens color scales to `ev-coral-500`, `ev-teal-300`, etc. |
+### Repos touched by this milestone
 
-### essentials (app, React 19 + Tailwind CSS 4)
-
-| File | Role |
-|------|------|
-| `src/pages/Results.jsx` | Main page: address search, two-panel layout, representatives + elections tabs. Contains its own title/subtitle/qualification logic that partially duplicates `PoliticianProfile.jsx`. |
-| `src/pages/Landing.jsx` | Single address input box with Search button. No location shortcuts or coverage messaging. |
-| `src/lib/classify.js` | `classifyCategory(pol)` returns `{ tier: "Federal"|"State"|"Local", group: string }`. Exports ordered group arrays (`FEDERAL_ORDER`, `STATE_ORDER`, `LOCAL_ORDER`) and a display name map. |
-| `src/components/ElectionsView.jsx` | Elections tab renderer. Uses `CategorySection` + `PoliticianCard` from ev-ui. Has its own simpler `getTier()` that maps `district_type` prefix to Federal/State/Local. |
-| `src/components/PoliticianCard.jsx` | Separate, older vertical-layout card used in PoliticianGrid. Different visual and props from ev-ui's `PoliticianCard`. No tier color logic. |
-| `src/components/CompassPreview.jsx` | Popover showing mini radar chart triggered from compass button. |
-| `src/components/LocationBrowser.jsx` | Browse-by-location dropdown used in Results.jsx for non-address searches. |
+| Repo | Role in audit | What changes |
+|------|--------------|--------------|
+| `ev-accounts` | Backend + audit scripts | New scripts in `backend/scripts/`; possibly new data via SQL |
+| `essentials` | Voter-facing app being audited | No code changes (audit observes it, doesn't modify it) |
+| `CompassV2` | Compass experience being audited | No code changes |
+| `EV-readrank` | Read & Rank experience being audited | No code changes |
 
 ---
 
-## Integration Points by Feature
+## Data Model: What the Audit Reads
 
-### 1. Icon System
-
-**Where icons currently appear:**
-- `PoliticianCard` (ev-ui) — one hard-coded inline SVG (compass/radar icon inside the teal compass button). The `badge` prop renders a coral text pill (e.g., "On Ballot", "Candidate", "Vacant").
-- `CategorySection` (ev-ui) — no icon slots exist.
-- `ElectionsView.jsx` (essentials) — tier separator rows show plain text ("Federal", "State", "Local") with a horizontal rule.
-
-**Proposed icon slots and ownership:**
-
-| Surface | Icon type | Where it lives | Integration point |
-|---------|-----------|---------------|------------------|
-| PoliticianCard | "On Ballot", "Compass Available", branch type | ev-ui | Add `icons?: string[]` prop alongside existing `badge`. Render as 16px SVG glyphs with tooltip on hover. |
-| CategorySection title | Branch indicator (legislative/executive/judicial) | ev-ui | Add optional `icon?: React.ReactNode` prop rendered left of the title pill. |
-| ElectionsView tier headers | Federal/State/Local tier icon | essentials | Keep local — `getTier()` is essentials-only; add icon beside the tier label. |
-
-**New file: `ev-ui/src/icons.js`**
-
-Export named SVG function components (e.g., `BallotIcon`, `CompassIcon`, `LegislativeIcon`, `ExecutiveIcon`, `JudicialIcon`). Pattern matches the existing inline `CompassIcon` inside PoliticianCard — simple 24x24 paths, `currentColor`, no external dependency.
-
-**Signal sources in Results.jsx (already available):**
-- `politicianIdsWithStances.has(pol.id)` → "Compass Available" icon
-- `getSeatBallotStatus(pol.term_end, pol.term_date_precision)` → "On Ballot" icon (currently renders as text badge)
-- `pol.district_type` → branch type (NATIONAL_EXEC/STATE_EXEC/LOCAL_EXEC = Executive; NATIONAL_UPPER/LOWER/STATE_UPPER/LOWER/LOCAL = Legislative; JUDICIAL = Judicial)
-
-**Backward compatibility:** The `badge` prop stays. `icons[]` is additive. Existing callsites that pass only `badge="On Ballot"` continue working unchanged.
-
----
-
-### 2. Tier Hue Differentiation
-
-**Current state:** No tier hue logic anywhere. `classifyCategory()` returns tier strings used only for filtering/ordering. `CategorySection` title pill has uniform `colors.bgWhite` background and `colors.borderMedium` border — no color variation.
-
-**Where tier hue logic belongs — `tokens.js`:**
-
-`tokens.js` already has `colorScales` (full per-hue scales) and a `pillars` map (inform/connect/empower). Add a new `tierColors` export alongside `pillars`:
-
-```js
-// tokens.js addition
-export const tierColors = {
-  Federal: {
-    accent: colorScales.teal['500'],       // #00657C
-    light:  colorScales.teal['050'],       // #F5F9FA
-    border: colorScales.teal['200'],       // #C0E8F2
-    text:   colorScales.teal['700'],       // #003E4D — AA-safe
-  },
-  State: {
-    accent: colorScales.skyblue['500'],    // #59B0C4
-    light:  colorScales.skyblue['050'],    // #F6F8F8
-    border: colorScales.skyblue['200'],    // #CDE0E5
-    text:   colorScales.skyblue['700'],    // #327E8F — AA-safe
-  },
-  Local: {
-    accent: colorScales.yellow['600'],     // #FAC400
-    light:  colorScales.yellow['050'],     // #FAF9F5
-    border: colorScales.yellow['200'],     // #F1E7C0
-    text:   colorScales.yellow['900'],     // #7B640E — AA-safe
-  },
-};
-```
-
-**Propagation to CategorySection:**
-
-Add an optional `tier?: 'Federal' | 'State' | 'Local'` prop. When present, apply `tierColors[tier].light` as titlePill background and `tierColors[tier].border` as titlePill border. When absent, use existing neutral defaults — backward compatible.
-
-**Where `tier` comes from:**
-
-`classify.js` `classifyCategory()` already produces `{ tier, group }`. In Results.jsx, the render loop maps groups to `CategorySection` calls. The `tier` is already in scope at the call site; it just needs to be passed down.
-
-**Why not Tailwind classes:** All `PoliticianCard` and `CategorySection` styles are inline objects resolved from `tokens.js` (not Tailwind classes). Dynamic Tailwind class strings (e.g., `bg-ev-teal-050`) are not safe with Tailwind 4's static analyzer. The inline-from-tokens pattern is correct and consistent.
-
----
-
-### 3. Compass-First Card
-
-**Current situation:** `PoliticianCard` (ev-ui) is photo-first. The compass button is a small teal circle in the far right. The compass is a secondary affordance even when stances are available.
-
-**Component decision — new local component in essentials:**
-
-| Option | Verdict |
-|--------|---------|
-| New `CompassFirstCard` in essentials | Prototype here first. Fast, zero library publish cycle, can be iterated without affecting CompassV2 or EV-readrank. |
-| Variant prop on ev-ui `PoliticianCard` | Risks making an already complex component (horizontal + vertical + 3 badge states) harder to maintain before the design is confirmed. |
-| New component directly in ev-ui | Premature. ev-ui is published to npm; API churn during prototyping requires version bumps and consumer updates. |
-
-**Recommended:** Build `CompassFirstCard.jsx` in `essentials/src/components/`. Promote to ev-ui in a follow-up milestone once the layout is confirmed. This follows the precedent of `CompassPreview.jsx` (still local to essentials).
-
-**Data flow for compass-first card:**
-
-All signals are already available in Results.jsx:
-- `politicianIdsWithStances.has(pol.id)` — whether compass data exists
-- `onCompassClick` handler — opens `CompassPreview` popover
-- `getImageUrl(pol)` — optional (photo becomes secondary or omitted)
-- `pol.first_name`, `pol.last_name`, `cardTitle`, `subtitle` — identity text
-
-The compass-first card uses the radar mini-preview as the primary visual block (replacing the photo slot), with the politician name and title below. When no stances exist, falls back to the standard photo layout.
-
-**Feature flag approach:** Add a toggle button in the ResultsHeader area (similar to the existing "Search by Address / Browse by Location" mode toggle). Store in local state (`useState`) — no persistence needed for prototype phase.
-
----
-
-### 4. Headshot Crop Validation
-
-**Current handling:** `PoliticianCard` (ev-ui) uses `objectFit: 'cover'` on an 80px-wide × 96px-tall container (horizontal variant). No crop validation exists. An `onError` handler falls back to initials. There is no aspect-ratio checking or focal point control.
-
-**The problem:** 503 CDN-hosted headshots vary in crop quality — landscape photos, portrait shots with excessive headroom, low-resolution thumbnails all render poorly at 80×96 with center-crop.
-
-**Recommended two-phase approach:**
-
-Phase A — Immediate improvement with no data changes:
-
-Add an `imageFocalPoint?: { x: number, y: number }` prop to `PoliticianCard` (ev-ui). Apply as `objectPosition: '${x*100}% ${y*100}%'` on the `<img>` element. Default the prop to `{ x: 0.5, y: 0.15 }` — top-weighted center. Politicians' faces appear in the upper portion of most headshot photos; this default improves rendering across all 503 images without any per-image data.
-
-Phase B — Audit script (one-time, runs against Supabase):
-
-Write a Node.js script that fetches each CDN URL from `essentials.politician_images`, downloads the image via `sharp`, checks aspect ratio and minimum dimension, and flags outliers. Output: a markdown report identifying images needing re-crop or replacement. No automated changes — human reviews and re-uploads as needed.
-
-**Validation approach comparison:**
-
-| Approach | Complexity | When | Notes |
-|----------|-----------|------|-------|
-| Default top-weighted `objectPosition` | Low | Immediate | Improves most headshots; no data changes |
-| One-time audit script + manual fixes | Medium | One-time | Catches true outliers; doesn't scale with 503 images |
-| Runtime face detection (browser ML) | High | Per render | Overkill; adds large bundle |
-| Build-time automated crop correction | High | CI | Requires server-side image processing infrastructure |
-
----
-
-### 5. Landing Page Location Buttons
-
-**Current state:** `Landing.jsx` is 74 lines — a centered heading, subtitle, and single address input. No coverage area messaging, no location shortcuts.
-
-**Recommended implementation:** Hardcoded coverage area buttons added below the search input. Two buttons for the two supported areas (Monroe County IN / LA County CA). Each calls `handleSearch()` with a representative address that will resolve to the correct geofence set.
-
-No new components needed. No API changes. The `LocationBrowser` component (used in Results.jsx browse mode) is not appropriate for the landing page — it is a dropdown for browsing all bodies, not a "quick start" affordance.
-
-**Simple implementation:**
-
-```jsx
-// Below the search input in Landing.jsx
-<div className="flex gap-3 justify-center mt-4">
-  <button onClick={() => navigate('/results?q=Bloomington%2C%20IN')}>
-    Monroe County, IN
-  </button>
-  <button onClick={() => navigate('/results?q=Los%20Angeles%2C%20CA')}>
-    Los Angeles County, CA
-  </button>
-</div>
-```
-
-Pair with a short coverage disclaimer: "Currently covering Monroe County, IN and Los Angeles County, CA."
-
----
-
-## Component Boundaries (Revised for v2026.4.1)
+### Election + Candidate Layer (`essentials` schema)
 
 ```
-ev-ui (npm library)
-├── tokens.js         MODIFY: add tierColors export
-├── icons.js          NEW: named SVG icon exports (BallotIcon, CompassIcon, etc.)
-├── PoliticianCard    MODIFY: add icons[] prop, imageFocalPoint prop
-├── CategorySection   MODIFY: add optional tier prop for hue
-└── (unchanged: PoliticianProfile, RadarChartCore, SiteHeader, StanceAccordion, ...)
+essentials.elections
+  id, name, election_date, election_type, jurisdiction_level, state
 
-essentials (app)
-├── pages/Landing.jsx            MODIFY: add location buttons + coverage text
-├── pages/Results.jsx            MODIFY: pass tier to CategorySection; pass icons to PoliticianCard
-├── components/CompassFirstCard  NEW: compass-first layout prototype (local, not ev-ui yet)
-├── components/ElectionsView     MODIFY: add tier icons to separator rows; remove incumbent subtitle
-└── (unchanged: CompassPreview, LocationBrowser, SegmentedControl, ...)
+essentials.races
+  id, election_id, office_id (nullable), position_name, primary_party,
+  seats, district_type, description
+
+essentials.race_candidates
+  id, race_id, politician_id (nullable — NULL for pure challengers),
+  full_name, first_name, last_name,
+  is_incumbent, candidate_status, source, photo_url
+```
+
+**Already populated for Monroe County 2026 Primary:**
+- Election seeded via `seed-monroe-county-2026-primary.sql` (797 lines, idempotent)
+- Races: county-wide offices, judicial, town council, township trustees, township advisory boards
+- Incumbents linked via `link-monroe-candidates-to-politicians.sql` — `politician_id` set where match found
+- All antipartisan constraints observed: `primary_party` lives on `races`, never on `race_candidates`
+
+### Stance + Compass Layer (`inform` schema)
+
+```
+inform.politician_answers
+  politician_id, topic_id, value (NUMERIC 3,1 — half-step scale)
+
+inform.politician_context
+  politician_id, topic_id, context_text, source_url (reasoning behind stance)
+
+essentials.quotes
+  id, politician_id, topic_key, quote_text, source_url, source_date
+  (joined to inform.compass_topics via topic_key — migration 055)
+```
+
+**Existing Monroe County coverage (from `push-monroe-county-research.ts` and CSV files in `backend/data/stance-research/`):**
+- `2026-04-10-monroe-county-commissioner.csv` — stances for Trent Deckard + David Henry
+- `2026-04-10-monroe-county-commissioner-quotes.csv` — 40 quotes, 1 flagged
+- Bloomington council batch CSVs for Beckwith, Bloomington council, Pierce, Thomson, Young
+- These have been pushed to production via `push-monroe-county-research.ts`
+
+### Politician Layer (`essentials` schema)
+
+```
+essentials.politicians
+  id, first_name, last_name, slug, bio_text, bioguide_id, total_years_in_office,
+  is_appointed (critical for elected/appointed filter)
+
+essentials.politician_images
+  politician_id, url, type (CDN-hosted headshots)
+
+essentials.politician_contacts
+  politician_id, contact_type, value
 ```
 
 ---
 
-## Data Flow
+## Audit Query Architecture
 
-### Icon signal resolution (Results.jsx → PoliticianCard)
+All audit queries run as READ-ONLY scripts from `ev-accounts/backend/scripts/` using the existing
+`pg.Pool` / `DATABASE_URL` pattern established by `auditHeadshots.ts` and `audit-is-appointed.ts`.
 
-```
-For each pol in renderPoliticianCard():
+### Pattern: Standalone audit script
 
-  icons = []
+```typescript
+// ev-accounts/backend/scripts/audit-<target>.ts
+import dotenv from 'dotenv';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import pg from 'pg';
 
-  politicianIdsWithStances.has(pol.id)
-    → true: icons.push('compass')
+// Load .env relative to script location (established pattern)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
-  getSeatBallotStatus(pol.term_end, pol.term_date_precision)
-    → truthy: icons.push('ballot')  [replaces badge="On Ballot"]
+const pool = new pg.Pool({
+  connectionString: process.env.DATABASE_URL,
+  max: 3,
+  ssl: { rejectUnauthorized: false },
+});
 
-  pol.district_type ends with _EXEC
-    → icons.push('executive')
-  pol.district_type contains UPPER or LOWER
-    → icons.push('legislative')
-  pol.district_type === 'JUDICIAL'
-    → icons.push('judicial')
+// READ-ONLY queries only — no UPDATE/INSERT/DELETE
+// Output: structured text or CSV to stdout
+// Progress: stderr
 
-  <PoliticianCard icons={icons} ... />
-```
-
-### Tier color flow
-
-```
-classify.js
-  classifyCategory(pol) → { tier: "Federal"|"State"|"Local", group: string }
-
-Results.jsx
-  for each (tier, groups) in displayedPoliticians:
-    <CategorySection tier={tier} ... />   // passes tier down
-
-CategorySection
-  import { tierColors } from './tokens'
-  const hue = tierColors[tier]            // resolved from tokens.js
-  titlePill style: { background: hue?.light, borderColor: hue?.border }
-  (if no tier prop → existing neutral defaults unchanged)
+async function main() { ... }
+main().finally(() => pool.end());
 ```
 
-### Compass-first card data flow
+**Invocation:**
+```bash
+cd ev-accounts/backend
+npx tsx scripts/audit-<target>.ts
+npx tsx scripts/audit-<target>.ts > /tmp/audit-output.txt   # pipe to file
+```
+
+---
+
+## Core Audit Queries
+
+### 1. Race + Candidate Coverage
+
+Answers: "How many races exist, how many have candidates, how many candidates are linked to politicians?"
+
+```sql
+-- Races with candidate counts, by tier
+SELECT
+  r.position_name,
+  r.primary_party,
+  electionService_inferDistrictType_logic AS district_type,
+  COUNT(rc.id)            AS total_candidates,
+  COUNT(rc.politician_id) AS linked_to_politician,
+  COUNT(rc.id) - COUNT(rc.politician_id) AS unlinked_challengers
+FROM essentials.races r
+JOIN essentials.elections e ON e.id = r.election_id
+LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.election_date = '2026-05-05'
+  AND e.state = 'IN'
+GROUP BY r.position_name, r.primary_party
+ORDER BY r.position_name, r.primary_party;
+```
+
+### 2. Stance Data Completeness
+
+Answers: "Which Monroe County primary candidates have compass stances? Which have zero?"
+
+```sql
+-- Candidates with/without compass stances
+SELECT
+  rc.full_name,
+  r.position_name,
+  p.id AS politician_id,
+  COUNT(pa.topic_id) AS stance_count
+FROM essentials.race_candidates rc
+JOIN essentials.races r ON r.id = rc.race_id
+JOIN essentials.elections e ON e.id = r.election_id
+LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
+LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.state = 'IN'
+GROUP BY rc.full_name, r.position_name, p.id
+ORDER BY stance_count ASC, r.position_name;
+```
+
+### 3. Quote Coverage for Read & Rank
+
+Answers: "Which candidates have quotes available for Read & Rank?"
+
+```sql
+-- Candidates with quote counts
+SELECT
+  rc.full_name,
+  r.position_name,
+  COUNT(q.id) AS quote_count
+FROM essentials.race_candidates rc
+JOIN essentials.races r ON r.id = rc.race_id
+JOIN essentials.elections e ON e.id = r.election_id
+LEFT JOIN essentials.quotes q ON q.politician_id = rc.politician_id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.state = 'IN'
+GROUP BY rc.full_name, r.position_name
+ORDER BY quote_count ASC, r.position_name;
+```
+
+### 4. Headshot Coverage for Monroe County Candidates
+
+Answers: "Which candidates have photos? Which will show the initials avatar?"
+
+```sql
+-- Headshot availability per candidate
+SELECT
+  rc.full_name,
+  r.position_name,
+  rc.politician_id,
+  CASE WHEN pi.url IS NOT NULL THEN 'CDN photo'
+       WHEN rc.photo_url IS NOT NULL THEN 'local photo'
+       ELSE 'no photo' END AS photo_status,
+  pi.url AS cdn_url
+FROM essentials.race_candidates rc
+JOIN essentials.races r ON r.id = rc.race_id
+JOIN essentials.elections e ON e.id = r.election_id
+LEFT JOIN essentials.politician_images pi
+  ON pi.politician_id = rc.politician_id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.state = 'IN'
+ORDER BY photo_status, r.position_name;
+```
+
+### 5. Profile Completeness (bio, contacts, education)
+
+Answers: "Do linked politicians have bio text and contacts populated?"
+
+```sql
+-- Profile field completeness for Monroe County incumbents
+SELECT
+  p.first_name || ' ' || p.last_name AS name,
+  p.slug,
+  CASE WHEN p.bio_text IS NOT NULL AND length(p.bio_text) > 50 THEN 'yes' ELSE 'no' END AS has_bio,
+  COUNT(DISTINCT pc.id) AS contact_count,
+  COUNT(DISTINCT d.id)  AS degree_count,
+  COUNT(DISTINCT ex.id) AS experience_count
+FROM essentials.race_candidates rc
+JOIN essentials.elections e ON e.id = (
+  SELECT r.election_id FROM essentials.races r WHERE r.id = rc.race_id
+)
+JOIN essentials.politicians p ON p.id = rc.politician_id
+LEFT JOIN essentials.politician_contacts pc ON pc.politician_id = p.id
+LEFT JOIN essentials.degrees d ON d.politician_id = p.id
+LEFT JOIN essentials.experiences ex ON ex.politician_id = p.id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.state = 'IN'
+  AND rc.politician_id IS NOT NULL
+GROUP BY p.id, p.first_name, p.last_name, p.slug, p.bio_text
+ORDER BY name;
+```
+
+### 6. Geofence Coverage Check
+
+Answers: "Can a Monroe County address resolve to the expected races via ST_Covers?"
+
+```sql
+-- Geofences covering a test address in Monroe County
+-- (geocode first via Census Geocoder, then test point-in-polygon)
+SELECT
+  g.geo_id,
+  g.mtfcc,
+  d.district_type,
+  ch.name AS chamber_name
+FROM essentials.geofences g
+JOIN essentials.districts d ON d.geofence_id = g.id
+JOIN essentials.chambers ch ON ch.id = d.chamber_id
+WHERE ST_Covers(
+  g.geom,
+  ST_SetSRID(ST_MakePoint(-86.5264, 39.1653), 4326)  -- Bloomington, IN center
+)
+ORDER BY d.district_type;
+```
+
+### 7. Electoral Race-to-Geofence Linkage
+
+Answers: "Are races linked to offices? Are offices linked to geofenced districts?"
+
+```sql
+-- Race linkage audit
+SELECT
+  r.position_name,
+  r.primary_party,
+  r.office_id,
+  o.title AS office_title,
+  d.district_type,
+  g.geo_id AS geofence_geo_id
+FROM essentials.races r
+JOIN essentials.elections e ON e.id = r.election_id
+LEFT JOIN essentials.offices o ON o.id = r.office_id
+LEFT JOIN essentials.districts d ON d.id = o.district_id
+LEFT JOIN essentials.geofences g ON g.id = d.geofence_id
+WHERE e.name = '2026 Indiana Primary'
+  AND e.state = 'IN'
+ORDER BY r.office_id IS NULL DESC, r.position_name;
+```
+
+---
+
+## Competitive Benchmark Data Structure
+
+Competitor analysis (BallotReady, VoteSmart, Vote411, Ballotpedia) is captured as a structured
+document, not a database table. It informs the gap report but does not feed back into the schema.
+
+### Where benchmark data lives
 
 ```
-Results.jsx state:
-  [compassMode, setCompassMode] = useState(false)   // toggle
-
-  if (compassMode && politicianIdsWithStances.has(pol.id)):
-    render <CompassFirstCard pol={pol} onCompassClick={...} onClick={...} />
-  else:
-    render <PoliticianCard ... />   // unchanged path
+.planning/research/
+  COMPETITOR-BENCHMARK.md   # Feature checklist × competitor matrix
+  GAP-REPORT.md             # Tiered gap list (before-primary vs future)
 ```
+
+### Benchmark schema (document format)
+
+```markdown
+## Monroe County Spot-Check Results
+
+| Feature | EV Status | BallotReady | VoteSmart | Vote411 | Ballotpedia |
+|---------|-----------|-------------|-----------|---------|-------------|
+| Race list (county) | complete | ... | ... | ... | ... |
+| Race list (township) | complete | ... | ... | ... | ... |
+| Candidate photos | partial | ... | ... | ... | ... |
+| Candidate bios | partial | ... | ... | ... | ... |
+| Candidate stances | 2 of N | ... | ... | ... | ... |
+| Q&A / voter guides | 0 | ... | ... | ... | ... |
+| Sample ballot | none | ... | ... | ... | ... |
+```
+
+Competitive data is researcher-collected (manual spot-check), not scraped. It informs priorities
+for the execution backlog but has no schema implications.
+
+---
+
+## Gap Report Location and Structure
+
+Gap reports live in `.planning/` as planning documents, not as runtime database tables.
+
+### Tiered gap report document
+
+```
+.planning/
+  GAP-REPORT-v2026.4.3.md    # Tier 1 (before primary) vs Tier 2 (future)
+```
+
+### Gap report structure
+
+```markdown
+## Tier 1: Ship Before Primary (~2 weeks, by ~April 25)
+
+### Data gaps
+- [ ] Missing candidate headshots: [list]
+- [ ] Missing stances for [position]: [candidates]
+- [ ] Missing quotes for Read & Rank: [candidates]
+
+### UX gaps
+- [ ] Election Central does not show township board races
+- [ ] Candidate profile for [name] shows empty profile (no bio/stances)
+
+### Functionality gaps
+- [ ] Geofence resolution for [address pattern] returns wrong district
+
+## Tier 2: Future Improvements
+
+- [ ] Voter guide Q&A integration (Vote411-style)
+- [ ] Sample ballot PDF link
+```
+
+Gap items feed directly into phase plans for follow-on milestones. They are not stored in the
+database.
+
+---
+
+## Component Boundaries
+
+### What already exists (no changes needed for audit phase)
+
+```
+ev-accounts/backend/
+  src/lib/electionService.ts      Fetches elections by geofence; inferDistrictType(); full race+candidate query
+  src/lib/essentialsBrowseService.ts  Browse by location
+  src/lib/compassService.ts       Politician stances (inform.politician_answers)
+  src/routes/essentials.ts        /elections, /elections-by-address, /quotes endpoints
+  src/routes/candidates.ts        /candidates/:slug, /candidates/:slug/answers
+
+essentials/ (frontend)
+  src/pages/CandidateProfile.jsx  Incumbent/challenger branching — uses politician data or raw candidate fields
+  src/components/ElectionsView.jsx  Tier-grouped race display with countdown
+
+CompassV2/
+  src/pages/Compare.jsx           Politician stances as radar overlay
+```
+
+### What the audit milestone adds
+
+```
+ev-accounts/backend/scripts/
+  audit-monroe-county-readiness.ts   NEW — composite READ-ONLY report
+    • Race + candidate coverage
+    • Stance completeness per candidate
+    • Quote coverage per candidate
+    • Headshot status per candidate
+    • Profile field completeness (bio, contacts)
+    • Geofence resolution test
+    Output: structured text to stdout, pipe to .planning/ for archiving
+
+.planning/research/
+  COMPETITOR-BENCHMARK.md    NEW — manual spot-check matrix
+  GAP-REPORT-v2026.4.3.md    NEW — tiered gap list
+```
+
+---
+
+## Data Flow for the Audit
+
+```
+1. Run audit-monroe-county-readiness.ts
+   → Reads: essentials.races, race_candidates, elections
+   → Reads: inform.politician_answers (stance coverage)
+   → Reads: essentials.quotes (quote coverage)
+   → Reads: essentials.politician_images (headshot coverage)
+   → Reads: essentials.politicians (bio, slug)
+   → Reads: essentials.geofences (spatial query)
+   → Output: structured text report (pipe to /tmp/ or .planning/)
+
+2. Researcher runs manual spot-checks on competitor sites
+   → Monroe County address entered on BallotReady, Vote411, VoteSmart, Ballotpedia
+   → Results recorded in COMPETITOR-BENCHMARK.md
+
+3. Gap analysis synthesizes audit output + benchmark
+   → GAP-REPORT-v2026.4.3.md partitioned by Tier 1 / Tier 2
+   → Tier 1 items become phase plans in subsequent milestone
+```
+
+---
+
+## Integration Points with Existing CLI Tools
+
+### Existing tools that inform the audit baseline
+
+| Script | What it tells us |
+|--------|-----------------|
+| `seed-monroe-county-2026-primary.sql` | Canonical race + candidate list for 2026 primary — ground truth for completeness checks |
+| `link-monroe-candidates-to-politicians.sql` | Shows which candidates have politician_id set — defines the "linked incumbent" population |
+| `push-monroe-county-research.ts` | Shows which politicians already have stances/quotes pushed |
+| `auditHeadshots.ts` | Existing headshot audit — can be filtered to Monroe County candidates |
+| `audit-is-appointed.ts` | Pattern for READ-ONLY structured reporting (used as the code template) |
+| `confirm-indiana.ts` | Shows Indiana-specific data classification patterns |
+
+### New audit script vs existing tools
+
+The new `audit-monroe-county-readiness.ts` is a **composite** audit that combines checks from
+multiple existing tools into a single Monroe County-scoped run. It does not replace any existing
+script; it adds a focused read-only report for the election context.
+
+There is **no need** to modify `electionService.ts` or `candidateService.ts` for the audit — the
+audit queries the database directly via `pg.Pool`, not via the Express service layer. This mirrors
+the established `auditHeadshots.ts` / `audit-is-appointed.ts` pattern.
+
+---
+
+## Build Order for the Audit Milestone
+
+| Step | Work | Location | Dependency |
+|------|------|----------|-----------|
+| 1 | Write `audit-monroe-county-readiness.ts` | `backend/scripts/` | Nothing (read-only DB queries) |
+| 2 | Run script against production DB | — | Step 1 |
+| 3 | Manual competitor spot-checks (BallotReady, Vote411, etc.) | researcher | Parallel with step 2 |
+| 4 | Synthesize: write `COMPETITOR-BENCHMARK.md` | `.planning/research/` | Step 3 |
+| 5 | Synthesize: write `GAP-REPORT-v2026.4.3.md` | `.planning/` | Steps 2 + 4 |
+| 6 | Prioritize gap items into Tier 1 / Tier 2 | `.planning/` | Step 5 |
+| 7 | Write phase plans for Tier 1 execution items | `.planning/phases/` | Step 6 |
+
+Steps 2 and 3 are independent and can run in parallel. Steps 4 and 5 both depend on their inputs
+completing. Step 7 is the deliverable that feeds subsequent milestone phases.
 
 ---
 
 ## Anti-Patterns to Avoid
 
-### Anti-Pattern 1: Dynamic Tailwind class interpolation for tier hues
+### Anti-Pattern 1: Modifying service layer for audit queries
 
-**What:** `` className={`bg-ev-${tier.toLowerCase()}-050`} ``
+**What:** Adding `getMonroeCountyAuditReport()` to `electionService.ts` or creating a new
+`/api/admin/audit` endpoint.
 
-**Why bad:** Tailwind 4 uses static analysis to build the CSS output. Dynamic string construction means the class is never included in the output. The element will have no background.
+**Why bad:** Audit queries are one-shot operational scripts. Putting them in the service layer
+adds dead API surface that has no frontend consumer, requires auth middleware wiring, and pollutes
+the production API.
 
-**Instead:** Inline styles with `tierColors[tier].light` from tokens.js, or a pre-enumerated static lookup object mapping tier strings to full Tailwind class strings.
-
----
-
-### Anti-Pattern 2: Adding an icon library dependency to ev-ui
-
-**What:** Installing Heroicons, Lucide, Phosphor, etc. in ev-ui.
-
-**Why bad:** ev-ui has zero icon dependencies today. Adding one increases the bundle size for all three consumers (CompassV2, essentials, EV-readrank). Heroicons adds ~15KB min+gz for the full set.
-
-**Instead:** Inline SVG components exported from `ev-ui/src/icons.js`. The compass button in PoliticianCard is already an inline SVG — this is the established pattern in the codebase.
+**Instead:** Standalone `npx tsx scripts/audit-*.ts` scripts that connect directly via `pg.Pool`.
+This is the established pattern in `auditHeadshots.ts` and `audit-is-appointed.ts`.
 
 ---
 
-### Anti-Pattern 3: Runtime image crop detection in the browser
+### Anti-Pattern 2: Storing competitive benchmark data in the database
 
-**What:** Face-detection API, canvas pixel analysis, or ML model to validate headshots at render time.
+**What:** Creating a `public.competitor_benchmarks` table and inserting BallotReady feature
+comparisons as rows.
 
-**Why bad:** Adds significant JS weight, delays rendering, fires on every image load, and adds latency for a problem that is better solved once at import time.
+**Why bad:** Benchmark data is disposable research that becomes stale the moment competitors
+update their products. It has no foreign keys to the application schema, no users querying it
+at runtime, and no need for ACID guarantees.
 
-**Instead:** Default top-weighted `objectPosition: '50% 15%'` on PoliticianCard images (catches 80% of cases), plus a one-time offline audit script for the remaining outliers.
-
----
-
-### Anti-Pattern 4: Promoting CompassFirstCard to ev-ui during prototype
-
-**What:** Adding the compass-first card layout to ev-ui while its API is still being iterated.
-
-**Why bad:** ev-ui publishes to GitHub Packages npm registry. Breaking or changing a component's prop interface requires bumping the version and running `npm update @chrisandrewsedu/ev-ui` in all three consuming apps. Prototype churn is expensive to propagate.
-
-**Instead:** Keep CompassFirstCard in essentials until the design is confirmed across at least one full release cycle. Then promote to ev-ui with a stable prop API.
+**Instead:** Markdown table in `.planning/research/COMPETITOR-BENCHMARK.md`. Manually updated,
+version-controlled in git alongside the milestone.
 
 ---
 
-### Anti-Pattern 5: Hardcoded tier colors in components (not tokens.js)
+### Anti-Pattern 3: Gap report as a database table
 
-**What:** Writing `backgroundColor: '#F5F9FA'` directly in CategorySection for Federal.
+**What:** `public.gap_items` table with severity, tier, status columns.
 
-**Why bad:** Color values must stay in tokens.js — that is the single source of truth synced to Penpot. Direct hex values in components break the design system and cannot be updated centrally.
+**Why bad:** Gap items are planning artifacts, not runtime data. They map to GitHub issues or
+phase plans — not to anything a user sees. Storing them in Supabase adds schema complexity with
+zero runtime value.
 
-**Instead:** Always reference `tierColors[tier].light` (or equivalent) from `tokens.js`.
+**Instead:** `GAP-REPORT-v2026.4.3.md` in `.planning/`. Individual gap items become phase plan
+files in `.planning/phases/` when they enter the execution queue.
 
 ---
 
-## Build Order (Dependency-Ordered)
+### Anti-Pattern 4: Running audit queries against the dev database
 
-| Step | Work | Location | Dependency |
-|------|------|----------|-----------|
-| 1 | Add `tierColors` to `tokens.js` | ev-ui | Nothing — first |
-| 2 | Create `icons.js` with SVG exports | ev-ui | Nothing — parallel with step 1 |
-| 3 | Add `tier` prop to `CategorySection` | ev-ui | Step 1 |
-| 4 | Add `icons[]` prop to `PoliticianCard` | ev-ui | Step 2 |
-| 5 | Add `imageFocalPoint` prop to `PoliticianCard` | ev-ui | Independent; batch with step 4 |
-| 6 | Publish ev-ui v0.1.55 | npm | Steps 1-5 complete |
-| 7 | Update essentials to ev-ui v0.1.55 | essentials | Step 6 |
-| 8 | Wire `tier` into CategorySection calls in Results.jsx | essentials | Step 7 |
-| 9 | Wire `icons[]` into PoliticianCard calls in Results.jsx + ElectionsView.jsx | essentials | Step 7 |
-| 10 | Add location buttons + coverage text to Landing.jsx | essentials | Independent; no ev-ui dep |
-| 11 | Remove incumbent subtitle from ElectionsView | essentials | Independent |
-| 12 | Run headshot audit script | scripts | Independent; batch with steps 10-11 |
-| 13 | Build `CompassFirstCard.jsx` prototype | essentials | Steps 7-9 (card patterns finalized) |
+**What:** Pointing `DATABASE_URL` at `EV-Backend-Dev` for audit queries.
 
-Steps 1+2 and 3+4+5 can be done in parallel. Steps 10, 11, and 12 are independent of each other.
+**Why bad:** The dev database does not have the full Monroe County seed data. Audit results
+against dev would misrepresent actual coverage. The `audit-is-appointed.ts` precedent explicitly
+runs against production.
+
+**Instead:** Use the production `DATABASE_URL` (Supabase project `kxsdzaojfaibhuzmclfq`).
+
+---
+
+### Anti-Pattern 5: Inferring stance gaps from `politician_answers` count = 0
+
+**What:** Treating zero rows in `inform.politician_answers` as "no stance data exists."
+
+**Why bad:** A candidate with `politician_id = NULL` (unlinked challenger) has no
+`politician_answers` rows by definition — not because stances are missing, but because no
+politician record was linked. The audit must distinguish:
+1. Unlinked challenger — `politician_id IS NULL` → stance data structurally impossible
+2. Linked incumbent — `politician_id IS NOT NULL` AND `stance_count = 0` → genuine gap
+
+**Instead:** Filter `WHERE rc.politician_id IS NOT NULL` when computing stance gaps. Report
+unlinked challengers separately as a candidate-linkage gap, not a stance gap.
 
 ---
 
 ## Scalability Considerations
 
-| Concern | Now | After v2026.4.1 |
-|---------|-----|----------------|
-| Icon bundle size | 0 (1 inline SVG) | ~2-4KB (handful of inline SVGs in icons.js) |
-| Tier color tokens | None | 12 color values in tokens.js |
-| ev-ui consumers affected | 3 | 3 — new props are optional, no breaking changes |
-| Headshot validation overhead | None | Zero runtime cost (objectPosition is CSS-only) |
-| CompassFirstCard maintenance | N/A | Local to essentials; no cross-app impact until promoted |
+| Concern | Now | Notes |
+|---------|-----|-------|
+| Audit query performance | Fast — small dataset | Monroe County has ~100 candidates; all joins are indexed |
+| Audit script runtime | ~5-10 seconds | Single DB connection, sequential reads |
+| Gap report maintenance | Manual | One document per milestone — not intended to be automated |
+| Competitor benchmark staleness | High | BallotReady/Vote411 update continuously; snapshot at time of audit only |
 
 ---
 
@@ -354,15 +555,15 @@ Steps 1+2 and 3+4+5 can be done in parallel. Steps 10, 11, and 12 are independen
 
 All findings from direct code inspection — no external verification required for integration questions.
 
-- `ev-ui/src/PoliticianCard.jsx` — prop interface, styling approach, existing inline SVG pattern
-- `ev-ui/src/CategorySection.jsx` — prop interface, styling approach
-- `ev-ui/src/tokens.js` — colorScales, colors, pillars, semantic tokens, spacing
-- `ev-ui/src/tailwind-preset.js` — how tokens map to Tailwind class names
-- `ev-ui/src/index.js` / `index.jsx` — exported public API
-- `ev-ui/package.json` — current version: 0.1.54
-- `essentials/src/pages/Results.jsx` — renderPoliticianCard(), classify flow, compass integration, tier loop
-- `essentials/src/pages/Landing.jsx` — current state (74 lines, single input)
-- `essentials/src/lib/classify.js` — classifyCategory(), tier/group taxonomy
-- `essentials/src/components/ElectionsView.jsx` — getTier(), tier separator rendering
-- `essentials/src/components/PoliticianCard.jsx` — legacy vertical card (separate from ev-ui)
-- `.planning/PROJECT.md` — v2026.4.1 target features
+- `ev-accounts/backend/scripts/seed-monroe-county-2026-primary.sql` — ground-truth race/candidate structure
+- `ev-accounts/backend/scripts/link-monroe-candidates-to-politicians.sql` — candidate linking pattern
+- `ev-accounts/backend/scripts/push-monroe-county-research.ts` — existing stance/quote push pattern
+- `ev-accounts/backend/scripts/auditHeadshots.ts` — audit script pattern (Pool, dotenv, stdout, stderr)
+- `ev-accounts/backend/scripts/audit-is-appointed.ts` — read-only audit pattern with structured output
+- `ev-accounts/backend/src/lib/electionService.ts` — inferDistrictType(), election query shapes
+- `ev-accounts/backend/src/lib/compassService.ts` — `inform.politician_answers` schema usage
+- `ev-accounts/backend/migrations/026_inform_schema_repair_and_candidates.sql` — `politician_answers`, `politician_context` table definitions
+- `ev-accounts/backend/migrations/042_election_schema.sql` — `elections`, `races`, `race_candidates` table definitions
+- `ev-accounts/backend/migrations/038_compass_additions.sql` — `compass.quote_verdicts` and `essentials.quotes` FK
+- `ev-accounts/backend/migrations/055_compass_topic_key.sql` — `essentials.quotes.topic_key` column (key join field)
+- `.planning/PROJECT.md` — v2026.4.3 milestone goals

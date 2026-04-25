@@ -1,0 +1,79 @@
+section,col1,col2,col3,col4,col5
+BOUNDARIES,geo_id,name,mtfcc,state,
+BOUNDARIES,18105,Monroe,G4020,18,
+BOUNDARIES,1810500,South Putnam Community Schools,G5420,18,
+BOUNDARIES,1810500001,Monroe County Council District 1,X0001,IN,
+BOUNDARIES,1810500002,Monroe County Council District 2,X0001,IN,
+BOUNDARIES,1810500003,Monroe County Council District 3,X0001,IN,
+BOUNDARIES,1810500004,Monroe County Council District 4,X0001,IN,
+BOUNDARIES,1810503808,Bean Blossom,G4040,18,
+BOUNDARIES,1810504816,Benton,G4040,18,
+BOUNDARIES,1810505878,Bloomington,G4040,18,
+BOUNDARIES,1810513420,Clear Creek,G4040,18,
+BOUNDARIES,1810530,South Ripley Community School Corporation,G5420,18,
+BOUNDARIES,1810536072,Indian Creek,G4040,18,
+BOUNDARIES,1810558,Carrollton,G4210,18,
+BOUNDARIES,1810559112,Perry,G4040,18,
+BOUNDARIES,1810560,South Spencer County School Corporation,G5420,18,
+BOUNDARIES,1810560984,Polk,G4040,18,
+BOUNDARIES,1810564152,Richland,G4040,18,
+BOUNDARIES,1810567590,Salt Creek,G4040,18,
+BOUNDARIES,1810578542,Van Buren,G4040,18,
+BOUNDARIES,1810580828,Washington,G4040,18,
+BOUNDARIES,1810590,South Vermillion Community School Corporation,G5420,18,
+BOUNDARIES,1810594,Cartersburg,G4210,18,
+OFFICES,title,geo_id,district_type,label,district_mtfcc
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Circuit Court Clerk,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,District 3,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,At-Large,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,District 1,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Auditor,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Surveyor,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Prosecuting Attorney,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Sheriff,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Assessor,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Recorder,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Coroner,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,District 2,G4020
+OFFICES,Monroe County Council District 1,18105,COUNTY,Monroe County Treasurer,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,District 1,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Prosecuting Attorney,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Auditor,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Surveyor,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,District 2,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Sheriff,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,At-Large,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Recorder,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Treasurer,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Coroner,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Assessor,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,District 3,G4020
+OFFICES,Monroe County Council District 2,18105,COUNTY,Monroe County Circuit Court Clerk,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,District 3,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Circuit Court Clerk,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,District 2,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Auditor,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Prosecuting Attorney,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Sheriff,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Recorder,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,At-Large,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Treasurer,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Coroner,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Assessor,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,District 1,G4020
+OFFICES,Monroe County Council District 3,18105,COUNTY,Monroe County Surveyor,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Surveyor,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Recorder,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,District 1,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Coroner,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,District 3,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Assessor,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Sheriff,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,At-Large,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Treasurer,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Prosecuting Attorney,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,District 2,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Auditor,G4020
+OFFICES,Monroe County Council District 4,18105,COUNTY,Monroe County Circuit Court Clerk,G4020
+KIRKWOOD,position_name,primary_party,geo_id,district_type,
+KIRKWOOD,Monroe County Council District 4,Democratic,1810500004,COUNTY,
