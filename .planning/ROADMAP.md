@@ -560,10 +560,10 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
-- [ ] 60-01-PLAN.md — Add ev-blue and ev-navy tokens to app/src and admin/src index.css; copy logo asset to app/public
-- [ ] 60-02-PLAN.md — Build AuthCard and AuthInput components (DSGN-02, DSGN-03)
-- [ ] 60-03-PLAN.md — Build PrimaryButton and SecondaryButton components (DSGN-04)
-- [ ] 60-04-PLAN.md — Build StepProgress and AppNav components (DSGN-05, DSGN-06)
+- [x] 60-01-PLAN.md — Add ev-blue and ev-navy tokens to app/src and admin/src index.css; copy logo asset to app/public
+- [x] 60-02-PLAN.md — Build AuthCard and AuthInput components (DSGN-02, DSGN-03)
+- [x] 60-03-PLAN.md — Build PrimaryButton and SecondaryButton components (DSGN-04)
+- [x] 60-04-PLAN.md — Build StepProgress and AppNav components (DSGN-05, DSGN-06)
 
 **Success Criteria:**
 
@@ -727,7 +727,7 @@ Plans:
 | 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
 | 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
-| 60. Design Foundation | v2.0 | 0/4 | Pending | — |
+| 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
 | 61. Auth Flow Restyle | v2.0 | 0/? | Pending | — |
 | 62. Onboarding Restyle | v2.0 | 0/? | Pending | — |
 | 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |

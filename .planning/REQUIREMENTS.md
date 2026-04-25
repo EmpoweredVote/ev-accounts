@@ -8,12 +8,12 @@
 
 ### Design Foundation
 
-- [ ] **DSGN-01**: `ev-blue` (#3B82F6) and `ev-navy` (#020618) color tokens defined in `app/src/index.css` (and `ev-blue` in `admin/src/index.css`)
-- [ ] **DSGN-02**: Reusable `AuthCard` component — dark rounded card with border, consistent padding, used across all auth and onboarding screens
-- [ ] **DSGN-03**: Reusable `AuthInput` component — dark field with label, placeholder, error state, and blue focus ring
-- [ ] **DSGN-04**: `PrimaryButton` and `SecondaryButton` shared components — blue primary (full width), dark secondary (full width)
-- [ ] **DSGN-05**: `StepProgress` component — "Step X of Y" label + percentage + blue filled progress track
-- [ ] **DSGN-06**: `AppNav` component — logo mark + "Civic Platform" wordmark on left; right slot for auth controls
+- [x] **DSGN-01**: `ev-blue` (#3B82F6) and `ev-navy` (#020618) color tokens defined in `app/src/index.css` (and `ev-blue` in `admin/src/index.css`)
+- [x] **DSGN-02**: Reusable `AuthCard` component — dark rounded card with border, consistent padding, used across all auth and onboarding screens
+- [x] **DSGN-03**: Reusable `AuthInput` component — dark field with label, placeholder, error state, and blue focus ring
+- [x] **DSGN-04**: `PrimaryButton` and `SecondaryButton` shared components — blue primary (full width), dark secondary (full width)
+- [x] **DSGN-05**: `StepProgress` component — "Step X of Y" label + percentage + blue filled progress track
+- [x] **DSGN-06**: `AppNav` component — logo mark + "Civic Platform" wordmark on left; right slot for auth controls
 
 ### Authentication
 

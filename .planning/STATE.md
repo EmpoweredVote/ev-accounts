@@ -10,12 +10,12 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 60 in progress — plan 04 complete**
+**Phase 60 complete ✅ — Phase 61 ready to plan**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
-Phase 60 has plans 01–06. Plans 01–04 complete.
+Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 
-Next step: Execute plan 60-05, then 60-06.
+Next step: `/gsd:plan-phase 61`
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -23,7 +23,7 @@ Next step: Execute plan 60-05, then 60-06.
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60: 4/6 plans ████████░░░░░░░░░░░░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 pending ░░░░░░░░░░░░░░░░░░░░
 
 ## Performance Metrics
 
