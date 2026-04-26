@@ -38,7 +38,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 
 - [x] **Phase 127: CompassCardHorizontal in ev-ui** — Publish the horizontal compass-first card component with dual-view toggle and preserved affordances (completed 2026-04-19)
 - [ ] **Phase 128: Empty & Non-Compass Variants** — Add placeholder, administrative, and judicial variants for cases where a compass doesn't apply
-- [ ] **Phase 129: Essentials Adoption & Prototype Retirement** — Replace existing cards on Representatives and Elections pages; retire `/prototype`; ship via auto-bump
+- [x] **Phase 129: Essentials Adoption & Prototype Retirement** — Replace existing cards on Representatives and Elections pages; retire `/prototype`; ship via auto-bump (completed 2026-04-26)
 
 **Deferred carryovers (not in v2026.4.5 scope unless explicitly re-added):**
 
@@ -95,7 +95,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 Plans:
 - [x] 129-01-PLAN.md — Retire /prototype route and delete prototype-only files
 - [x] 129-02-PLAN.md — Remove CompassPreview popover from Results.jsx and delete component
-- [ ] 129-03-PLAN.md — End-to-end verification (build + Reps/Elections smoke-test)
+- [x] 129-03-PLAN.md — End-to-end verification (build + Reps/Elections smoke-test)
 **UI hint**: yes
 
 ---
@@ -117,4 +117,4 @@ Plans:
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
 | 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
 | 128. Empty & Non-Compass Variants | v2026.4.5 | 3/4 | In Progress|  |
-| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 2/3 | In Progress|  |
+| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 3/3 | Complete   | 2026-04-26 |
