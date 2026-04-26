@@ -82,8 +82,9 @@ Known deferred items at close: 4 (see above)
 | 260425-srx | Fix Nicole Browne (Circuit Court Clerk) routing — data fix: district_type COUNTY→JUDICIAL + chamber name_formal corrected → now appears in Monroe Circuit Court accordion as "Circuit Court Officials" | 2026-04-25 | DB-only | [260425-nicole-bolden-circuit-court-category](./quick/260425-nicole-bolden-circuit-court-category/) |
 | 260426-dgb | essentials Elections tab works in browse-by-location mode (county/state) — new POST /api/essentials/browse/elections-by-area endpoint + branched fetch in Results.jsx | 2026-04-26 | aacfbe4 / c4a206c (essentials) | [260426-dgb-essentials-elections-tab-should-work-for](./quick/260426-dgb-essentials-elections-tab-should-work-for/) |
 | 260426-eob | remove compass icon from compass first cards on essentials since we are moving to a compass first view | 2026-04-26 | essentials (untracked) | [260426-eob-remove-compass-icon-from-compass-first-c](./quick/260426-eob-remove-compass-icon-from-compass-first-c/) |
+| 260426-mc5 | authed users write through ev-context as a cache for cross-subdomain hydration (ev-ui authed-slice helpers + wired into CompassV2/essentials/read-rank/treasury-tracker) | 2026-04-26 | 178d13c (ev-ui), b6f52d1 (CompassV2), ab51cef (essentials), ccb28e4 (read-rank), 83136d4 (EV-prototypes) | [260426-mc5-authed-users-write-through-ev-context-as](./quick/260426-mc5-authed-users-write-through-ev-context-as/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-26 - Completed 129-02-PLAN.md: stripped CompassPreview floating popover from Results.jsx and deleted CompassPreview.jsx; build passes clean
+Last activity: 2026-04-26 - Completed quick task 260426-mc5: authed users write through ev-context as a cache for cross-subdomain hydration
 Next: Execute 129-03-PLAN.md
