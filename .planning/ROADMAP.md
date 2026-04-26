@@ -613,9 +613,9 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
-- [ ] 62-01-PLAN.md — Restyle LocationStep with v2.0 chrome (AppNav + StepProgress 2/3 + AuthCard + 4 AuthInput fields); remove reveal gate and Learn More link; preserve isUpdate path for UpdateLocationPage
-- [ ] 62-02-PLAN.md — Restyle LocationCelebrationStep with green-checkmark badge + 3 milestone items; absorb POST /auth/complete-onboarding from PseudonymStep so onboarding terminates here
-- [ ] 62-03-PLAN.md — Simplify OnboardingPage to two-step flow with resumption useEffect; update SignupPage step counter 1-of-4 → 1-of-3; delete WelcomeStep.tsx and PseudonymStep.tsx
+- [x] 62-01-PLAN.md — Restyle LocationStep with v2.0 chrome (AppNav + StepProgress 2/3 + AuthCard + 4 AuthInput fields); remove reveal gate and Learn More link; preserve isUpdate path for UpdateLocationPage
+- [x] 62-02-PLAN.md — Restyle LocationCelebrationStep with green-checkmark badge + 3 milestone items; absorb POST /auth/complete-onboarding from PseudonymStep so onboarding terminates here
+- [x] 62-03-PLAN.md — Simplify OnboardingPage to two-step flow with resumption useEffect; update SignupPage step counter 1-of-4 → 1-of-3; delete WelcomeStep.tsx and PseudonymStep.tsx
 
 **Success Criteria:**
 
@@ -745,7 +745,7 @@ Plans:
 | 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
 | 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
 | 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
-| 62. Onboarding Restyle | v2.0 | 0/3 | Pending | — |
+| 62. Onboarding Restyle | v2.0 | 3/3 | Complete | 2026-04-25 |
 | 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |

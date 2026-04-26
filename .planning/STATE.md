@@ -17,7 +17,7 @@ Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verifie
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
 
-Last activity: 2026-04-25 — Completed 62-03-PLAN.md (OnboardingPage simplification, WelcomeStep/PseudonymStep deleted, SignupPage counter 4→3)
+Last activity: 2026-04-25 — Phase 62 complete, responsive AuthPageLayout shipped to production (mobile AppNav bar / desktop floating logo, max-w-md card, city+state side-by-side)
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
