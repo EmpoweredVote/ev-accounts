@@ -76,8 +76,10 @@ Known deferred items at close: 4 (see above)
 | 260422-upn | Fix Circuit Court category: Nicole Brown as Circuit Court Officials, judges as Circuit Court Judges, remove inapplicable treasury link | 2026-04-23 | c7c3041 (essentials) | [260422-upn-fix-circuit-court-category-nicole-brown-](./quick/260422-upn-fix-circuit-court-category-nicole-brown-/) |
 | 260420-rh4 | Read-Rank quote curation (max 2 per politician/topic, 22 deletes) + LLM-assisted deidentification (13 quotes rewritten with bracketed edits) | 2026-04-20 | be4719a, 31e7d6c | [260420-rh4-readrank-quote-limit-deid](./quick/260420-rh4-readrank-quote-limit-deid/) |
 | 260425-ri7 | update the first page of the onboarding flow for compass because we changed the default colors to a green and purple, so we want the image on the first page to match that | 2026-04-25 | 0c94b53 (CompassV2) | [260425-ri7-update-the-first-page-of-the-onboarding-](./quick/260425-ri7-update-the-first-page-of-the-onboarding-/) |
+| 260425-srx | Fix Nicole Browne (Circuit Court Clerk) routing — data fix: district_type COUNTY→JUDICIAL + chamber name_formal corrected → now appears in Monroe Circuit Court accordion as "Circuit Court Officials" | 2026-04-25 | DB-only | [260425-nicole-bolden-circuit-court-category](./quick/260425-nicole-bolden-circuit-court-category/) |
+| 260426-dgb | essentials Elections tab works in browse-by-location mode (county/state) — new POST /api/essentials/browse/elections-by-area endpoint + branched fetch in Results.jsx | 2026-04-26 | aacfbe4 / c4a206c (essentials) | [260426-dgb-essentials-elections-tab-should-work-for](./quick/260426-dgb-essentials-elections-tab-should-work-for/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-25 - Completed quick task 260425-ri7: update compass onboarding welcome step SVG to Dusk/Sage colors
+Last activity: 2026-04-26 - Completed quick task 260426-dgb: essentials Elections tab works for browse-by-location
 Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
