@@ -2,6 +2,45 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2026.4.5 — Compass-First Politician Card
+
+**Shipped:** 2026-04-26
+**Phases:** 3 (127–129) | **Plans:** 9
+
+### What Was Built
+
+- `CompassCardHorizontal` / `CompassCardVertical` in ev-ui with @floating-ui tooltips, PlaceholderRadar, IconOverlay, dual-view toggle (compass ↔ portrait), and localStorage persistence
+- `computeVariant()` classifier in essentials classify.js — TDD pure function for 'compass'|'empty'|'administrative'|'judicial' variants with full Vitest coverage
+- CompassCardHorizontal variant extension: empty CTA (Build Your Compass deep-link), administrative plate, judicial plate
+- Prototype route + all prototype-only files retired from essentials (Prototype.jsx, CompassFirstCard.jsx, mockCompassData.js)
+- CompassPreview floating popover removed from Results.jsx / essentials
+- CompassCardVertical wired in Representatives page (Results.jsx) and Elections page (ElectionsView.jsx) with live userAnswers + computeVariant
+- ev-ui v0.6.1 shipped via auto-bump pipeline; essentials #23 and CompassV2 auto-merged; both confirmed on ^0.6.1
+
+### What Worked
+
+- Phase sequencing: ev-ui component first (127) → variant system (128) → adoption + retirement (129) — clean dependency chain with no backtracking
+- TDD for computeVariant (128-01): writing tests before implementation made the STATE-01/02/03 branches explicit and prevented ambiguity about variant boundary conditions
+- Folding 128-04 scope into Phase 129 execution: the ev-ui minor bump and auto-bump pipeline verification were naturally part of the adoption plan — didn't need a standalone plan
+
+### What Was Inefficient
+
+- Requirement checkboxes for CARD-01/02/03 and STATE-01/02/03 were never updated after phase completion — added friction at milestone close (had to manually verify all 6 were functionally done)
+- CompassCardHorizontal vs CompassCardVertical naming: the dual-export alias adds confusion; should have picked one name at component authoring time
+
+### Patterns Established
+
+- `computeVariant()` as a pure function in classify.js (not in ev-ui) — card variant logic belongs in the consumer app where politician classification lives, not in the shared library
+- `variant` prop on ev-ui card components as the extension point for non-compass states — avoids conditional imports in consumer apps
+
+### Key Lessons
+
+1. Update REQUIREMENTS.md checkboxes when you complete a phase — stale checkboxes cause audit confusion at milestone close
+2. Component naming decisions made in ev-ui are hard to rename later (consumers pin the export name) — think carefully before publishing a dual-export alias
+3. Phase scope folding is fine (128-04 → 129) but document the decision in STATE.md at the time so milestone completion doesn't need archaeological reconstruction
+
+---
+
 ## Milestone: v1.7 — LA County Data Enrichment
 
 **Shipped:** 2026-02-26
