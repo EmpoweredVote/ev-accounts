@@ -12,7 +12,9 @@ import {
   getStatesWithData,
   getAreasForState,
   getPoliticiansByArea,
+  getOverlappingGeoIdsForArea,
 } from '../lib/essentialsBrowseService.js';
+import { getElectionsByGeoIds } from '../lib/electionService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -81,6 +83,41 @@ router.post('/by-area', optionalAuth, async (req: Request, res: Response): Promi
   } catch (err) {
     console.error('[POST /essentials/browse/by-area] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/essentials/browse/elections-by-area
+// Find upcoming elections + races + candidates for an area, using the same
+// PostGIS area intersection that powers /by-area (no geocoding required).
+// Body: { geo_id: string, mtfcc: string }
+// Returns: { elections: ElectionResult[] }
+// Header: X-Data-Status = 'no-geofence-data' | 'fresh'
+// ---------------------------------------------------------------------------
+
+router.post('/elections-by-area', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { geo_id, mtfcc } = req.body as { geo_id?: string; mtfcc?: string };
+
+    if (!geo_id || typeof geo_id !== 'string' || !geo_id.trim()) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'geo_id is required' });
+      return;
+    }
+    if (!mtfcc || typeof mtfcc !== 'string' || !mtfcc.trim()) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'mtfcc is required' });
+      return;
+    }
+
+    const { geoIds, stateAbbrev } = await getOverlappingGeoIdsForArea(geo_id.trim(), mtfcc.trim());
+
+    const dataStatus = geoIds.length === 0 ? 'no-geofence-data' : 'fresh';
+    res.setHeader('X-Data-Status', dataStatus);
+
+    const elections = await getElectionsByGeoIds(geoIds, stateAbbrev);
+    res.status(200).json({ elections });
+  } catch (err) {
+    console.error('[POST /essentials/browse/elections-by-area] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
   }
 });
 
