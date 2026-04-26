@@ -71,9 +71,39 @@ router.get('/discovery/staging', requireAuth as any, requireAdmin as any, async 
 });
 
 // ---------------------------------------------------------------------------
+// GET /discovery/staging/races-for-jurisdiction/:jurisdictionId
+// Auth: requireAuth + requireAdmin (per-route)
+// Returns all races for the election matching the given discovery_jurisdiction row,
+// used to populate the race picker when approving a candidate with no matched race.
+// ---------------------------------------------------------------------------
+router.get('/discovery/staging/races-for-jurisdiction/:jurisdictionId', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { jurisdictionId } = req.params;
+    if (!UUID_REGEX.test(jurisdictionId)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid jurisdiction id' });
+      return;
+    }
+    const result = await pool.query(`
+      SELECT r.id, r.position_name
+      FROM essentials.races r
+      JOIN essentials.elections e ON e.id = r.election_id
+      JOIN essentials.discovery_jurisdictions dj
+        ON dj.election_date = e.election_date AND dj.state = e.state
+      WHERE dj.id = $1
+      ORDER BY r.position_name
+    `, [jurisdictionId]);
+    res.status(200).json(result.rows);
+  } catch (err) {
+    console.error('[GET /discovery/staging/races-for-jurisdiction] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // POST /discovery/staging/:id/approve
 // Auth: requireAuth + requireAdmin (per-route)
-// Body (optional): { reviewerName?: string }
+// Body (optional): { reviewerName?: string, race_id?: UUID }
+// If race_id is provided and the staging row has no race_id, patches it first.
 // Marks pending staging row approved and upserts to race_candidates when race_id is not null
 // and action != 'withdrawal'. Returns upsertResult in the response body.
 // ---------------------------------------------------------------------------
@@ -85,13 +115,24 @@ router.post('/discovery/staging/:id/approve', requireAuth as any, requireAdmin a
       return;
     }
 
-    const bodySchema = z.object({ reviewerName: z.string().trim().min(1).max(200).optional() });
+    const bodySchema = z.object({
+      reviewerName: z.string().trim().min(1).max(200).optional(),
+      race_id: z.string().regex(UUID_REGEX).optional(),
+    });
     const body = bodySchema.safeParse(req.body ?? {});
     if (!body.success) {
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid body', issues: body.error.flatten() });
       return;
     }
     const reviewedBy = body.data.reviewerName ?? 'admin';
+
+    // Patch race_id if provided and the row currently has none
+    if (body.data.race_id) {
+      await pool.query(
+        `UPDATE essentials.candidate_staging SET race_id = $1 WHERE id = $2 AND race_id IS NULL AND status = 'pending'`,
+        [body.data.race_id, id]
+      );
+    }
 
     const result = await pool.query(
       `UPDATE essentials.candidate_staging
