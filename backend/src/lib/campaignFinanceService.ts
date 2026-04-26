@@ -557,12 +557,13 @@ export async function getSummary(
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END), 0) AS confidence_level_n,
        COALESCE(SUM(CASE
-           WHEN c.raw_record->>'entity_type' LIKE 'IND%'
-             OR c.raw_record->>'type' IN ('direct', 'in_kind')
+           WHEN c.raw_record->>'type' IN ('direct', 'in_kind')
+             OR c.raw_record->>'entity_type' LIKE 'IND%'
            THEN c.amount ELSE 0 END), 0) AS individual_total,
        COALESCE(SUM(CASE
-           WHEN c.raw_record->>'entity_type' NOT LIKE 'IND%'
-             AND c.raw_record->>'type' NOT IN ('direct', 'in_kind')
+           WHEN c.raw_record->>'type' IN ('pac', 'corporate_direct')
+             OR (COALESCE(c.raw_record->>'entity_type', '') != ''
+                 AND c.raw_record->>'entity_type' NOT LIKE 'IND%')
            THEN c.amount ELSE 0 END), 0) AS pac_total
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
