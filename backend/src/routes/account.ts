@@ -315,6 +315,40 @@ router.get('/me/jurisdiction', requireAuth, requireConnected, async (req, res: R
 });
 
 // ---------------------------------------------------------------------------
+// GET /api/account/me/activity
+// Returns the last 20 XP transactions for the authenticated Connected user.
+// Reads connect.xp_transactions directly via pool.query (PostgREST does not
+// expose the connect schema). Inform-tier callers receive 403 from
+// requireConnected before any DB work runs.
+// ---------------------------------------------------------------------------
+router.get('/me/activity', requireAuth, requireConnected, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { rows } = await pool.query<{ source: string; amount: number; created_at: string }>(
+      `SELECT source, amount, created_at
+       FROM connect.xp_transactions
+       WHERE user_id = $1
+       ORDER BY created_at DESC
+       LIMIT 20`,
+      [authReq.userId]
+    );
+
+    const activity = rows.map((row) => ({
+      source: row.source,
+      amount: row.amount,
+      description: row.source,
+      created_at: row.created_at,
+    }));
+
+    res.status(200).json({ activity });
+  } catch (err) {
+    console.error('[GET /api/account/me/activity] Unexpected error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // PATCH /api/account/me
 // Middleware chain: requireAuth → requireVerified → requireConnected
 //   requireAuth:      Validates JWT, sets req.userId and req.accessToken
