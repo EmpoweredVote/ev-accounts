@@ -78,7 +78,7 @@ router.get('/discovery/staging', requireAuth as any, requireAdmin as any, async 
 // ---------------------------------------------------------------------------
 router.get('/discovery/staging/races-for-jurisdiction/:jurisdictionId', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { jurisdictionId } = req.params;
+    const jurisdictionId = req.params.jurisdictionId as string;
     if (!UUID_REGEX.test(jurisdictionId)) {
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid jurisdiction id' });
       return;
