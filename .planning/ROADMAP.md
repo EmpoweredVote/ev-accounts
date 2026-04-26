@@ -78,7 +78,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 **Plans**: 4 plans
 - [x] 128-01-PLAN.md — Wave 0: export computeVariant from classify.js + Vitest coverage for STATE-01/02/03
 - [x] 128-02-PLAN.md — Wave 1: extend ev-ui CompassCardHorizontal with variant + onBuildCompass props (empty CTA + unavailable plate render paths)
-- [ ] 128-03-PLAN.md — Wave 2: switch essentials Prototype.jsx to CompassCardHorizontal + computeVariant + COMPASS_URL deep-link handler
+- [x] 128-03-PLAN.md — Wave 2: switch essentials Prototype.jsx to CompassCardHorizontal + computeVariant + COMPASS_URL deep-link handler
 - [ ] 128-04-PLAN.md — Wave 3: bump ev-ui to next minor (new public API) and verify auto-bump pipeline reaches consumers
 **UI hint**: yes
 
@@ -91,7 +91,11 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
   2. A user visiting the Essentials elections page sees incumbents rendered with the full compass card and challengers rendered with the appropriate empty/minimal variant
   3. A user visiting `/prototype` on production Essentials is either redirected away or sees only an internal reference note — the duplicate UI surface no longer exists for end users
   4. After the ev-ui version is bumped via the auto-bump pipeline and merged on `main`, both Essentials (live card) and CompassV2 (compare picker) render correctly in production without visual or functional regression
-**Plans**: TBD
+**Plans**: 3 plans
+Plans:
+- [ ] 129-01-PLAN.md — Retire /prototype route and delete prototype-only files
+- [ ] 129-02-PLAN.md — Remove CompassPreview popover from Results.jsx and delete component
+- [ ] 129-03-PLAN.md — End-to-end verification (build + Reps/Elections smoke-test)
 **UI hint**: yes
 
 ---
@@ -112,5 +116,5 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 | 125. Tier 2 UX Polish Bundle | v2026.4.4 | 4/4 | Complete | 2026-04-18 |
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
 | 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
-| 128. Empty & Non-Compass Variants | v2026.4.5 | 2/4 | In Progress|  |
+| 128. Empty & Non-Compass Variants | v2026.4.5 | 3/4 | In Progress|  |
 | 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 0/0 | Not started | - |
