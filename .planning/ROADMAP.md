@@ -746,6 +746,6 @@ Plans:
 | 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
 | 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
 | 62. Onboarding Restyle | v2.0 | 3/3 | Complete | 2026-04-25 |
-| 63. Profile Page + Activity Feed | v2.0 | 0/? | Pending | — |
+| 63. Profile Page + Activity Feed | v2.0 | 0/2 | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
