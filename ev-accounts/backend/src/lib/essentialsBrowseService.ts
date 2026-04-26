@@ -100,20 +100,21 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
 }
 
 /**
- * Find all politicians whose districts overlap with a given area boundary.
- * Uses the same bidirectional PostGIS intersection logic as the Go backend.
+ * Compute all overlapping district geo_ids for a given area boundary, plus the
+ * area's resolved state abbreviation.
  *
- * 1. Sub-districts whose center falls WITHIN the area
- * 2. Larger districts that CONTAIN the area's center (excluding city boundaries)
- * 3. Legislative districts that INTERSECT the area
+ * Extracted from getPoliticiansByArea so it can be shared with elections lookups.
+ * Uses the same bidirectional PostGIS intersection logic:
+ *   1. Sub-districts whose center falls WITHIN the area
+ *   2. Larger non-city districts that CONTAIN the area's center
+ *   3. Legislative districts that INTERSECT the area
  *
- * Then supplements with statewide officials (senators, governor).
+ * The returned `geoIds` array always includes the input `geoId` itself first.
  */
-export async function getPoliticiansByArea(
+export async function getOverlappingGeoIdsForArea(
   geoId: string,
   mtfcc: string
-): Promise<PoliticianFlatRecord[]> {
-  // Step 1: Find all overlapping district geo_ids via area intersection
+): Promise<{ geoIds: string[]; stateAbbrev: string | null }> {
   const intersectionQuery = `
     SELECT DISTINCT gb2.geo_id, gb2.mtfcc
     FROM essentials.geofence_boundaries gb1
@@ -132,9 +133,35 @@ export async function getPoliticiansByArea(
   `;
 
   const { rows: geoMatches } = await pool.query(intersectionQuery, [geoId, mtfcc]);
+  const geoIds = [geoId, ...geoMatches.map((r) => r.geo_id as string)];
 
-  // Include the area itself in matches
-  const allGeoIds = [geoId, ...geoMatches.map((r) => r.geo_id as string)];
+  const { rows: areaRows } = await pool.query(
+    `SELECT state FROM essentials.geofence_boundaries WHERE geo_id = $1 AND mtfcc = $2 LIMIT 1`,
+    [geoId, mtfcc]
+  );
+
+  const stateFips = areaRows.length > 0 ? (areaRows[0].state as string) : null;
+  const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] ?? null : null;
+
+  return { geoIds, stateAbbrev };
+}
+
+/**
+ * Find all politicians whose districts overlap with a given area boundary.
+ * Uses the same bidirectional PostGIS intersection logic as the Go backend.
+ *
+ * 1. Sub-districts whose center falls WITHIN the area
+ * 2. Larger districts that CONTAIN the area's center (excluding city boundaries)
+ * 3. Legislative districts that INTERSECT the area
+ *
+ * Then supplements with statewide officials (senators, governor).
+ */
+export async function getPoliticiansByArea(
+  geoId: string,
+  mtfcc: string
+): Promise<PoliticianFlatRecord[]> {
+  // Step 1: Compute all overlapping district geo_ids + resolved state via shared helper
+  const { geoIds: allGeoIds, stateAbbrev } = await getOverlappingGeoIdsForArea(geoId, mtfcc);
 
   if (allGeoIds.length === 0) return [];
 
@@ -176,15 +203,7 @@ export async function getPoliticiansByArea(
 
   const { rows: polRows } = await pool.query(politicianQuery, [allGeoIds]);
 
-  // Step 3: Get state from the area boundary to add statewide officials
-  const { rows: areaRows } = await pool.query(
-    `SELECT state FROM essentials.geofence_boundaries WHERE geo_id = $1 AND mtfcc = $2 LIMIT 1`,
-    [geoId, mtfcc]
-  );
-
-  const stateFips = areaRows.length > 0 ? (areaRows[0].state as string) : null;
-  const stateAbbrev = stateFips ? FIPS_TO_ABBREV[stateFips] : null;
-
+  // Step 3: Use stateAbbrev (resolved by getOverlappingGeoIdsForArea) to add statewide officials
   let statewideRows: typeof polRows = [];
   if (stateAbbrev) {
     const statewideQuery = `
