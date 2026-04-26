@@ -23,6 +23,8 @@ import rolesRouter from './routes/roles.js';
 import contributorRouter from './routes/contributor.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import essentialsDiscoveryRouter from './routes/essentialsDiscovery.js';
+import stagingQueueAdminRouter from './routes/stagingQueueAdmin.js';
 import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
@@ -35,6 +37,8 @@ import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
 import { requireAdminToken } from './middleware/adminTokenAuth.js';
+import { requireAuth } from './middleware/auth.js';
+import { requireAdmin } from './middleware/requireAdmin.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
@@ -94,6 +98,13 @@ app.use('/api/referral', referralRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
+// JWT-gated staging review endpoints for the browser admin UI (STAG-06).
+// Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
+// X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
+app.use('/api/admin', stagingQueueAdminRouter);
+// Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
+// because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
+app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/candidates', candidatesRouter);
