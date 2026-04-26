@@ -10,14 +10,15 @@ See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
 
 ## Current Position
 
-**Phase 62 complete — all 3 plans done**
+**Phase 63 in progress — 1/? plans done**
 
 v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
+Phase 63 (Profile Page + Activity Feed) in progress: 63-01 complete (API-01 + FIX-01 closed).
 
-Last activity: 2026-04-25 — Phase 62 complete, responsive AuthPageLayout shipped to production (mobile AppNav bar / desktop floating logo, max-w-md card, city+state side-by-side)
+Last activity: 2026-04-26 — Completed 63-01-PLAN.md: GET /api/account/me/activity endpoint added; FIX-01 (invite label round-trip) confirmed closed by code inspection
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -25,7 +26,7 @@ Last activity: 2026-04-25 — Phase 62 complete, responsive AuthPageLayout shipp
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ░ Phase 64 ░ Phase 65 ░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 🔄 Phase 64 ░ Phase 65 ░
 
 ## Performance Metrics
 
@@ -83,8 +84,9 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 - **No Framer** — end-user frontend is the `/app` React app in this repo, not Framer. All v2.0 UI work goes in `app/src`.
 - **Tailwind v4 `@theme`** — color tokens defined via `@theme` block in index.css, same pattern as existing `ev-red`, `ev-teal`, etc. in admin.
 - **InformLanding routing** — unauthenticated root (`/`) renders `InformLandingPage`; authenticated root renders `DashboardPage`. Phase 64 owns the routing split.
-- **Activity feed endpoint** — `GET /api/account/me/activity` reads from `connect.xp_transactions` (the existing append-only ledger). Returns last 20 entries. Requires Connected tier.
-- **FIX-01 scope** — invite code generation bug: `optional_name` field value not being sent in the `POST /api/invites/generate` request body from DashboardPage. Backend fix only (data already saved correctly once the field is passed).
+- **Activity feed endpoint** — `GET /api/account/me/activity` reads from `connect.xp_transactions` (the existing append-only ledger). Returns last 20 entries. Requires Connected tier. Shipped 63-01.
+- **FIX-01 CLOSED (63-01)** — invite label round-trip confirmed working end-to-end: DashboardPage sends `label`, invites.ts reads it, inviteQuotaService passes it as `$2` to the RPC. Phase 59 rename (`optional_name` → `label`) already resolved the bug. No code change needed.
+- **`description` aliases `source` in /me/activity (63-01)** — `xp_transactions` has no `description` column; API maps `source` into `description` to keep contract clean and decouple frontend from schema column names.
 
 ### v2.0 Phase Dependencies
 
@@ -146,6 +148,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-25T23:02:00Z
-Stopped at: Completed 62-03-PLAN.md (OnboardingPage simplification — ONBD-02 + ONBD-04 + ONBD-05). Phase 62 complete.
+Last session: 2026-04-26T15:18:51Z
+Stopped at: Completed 63-01-PLAN.md (GET /me/activity endpoint + FIX-01 closed). Phase 63 in progress.
 Resume file: None
