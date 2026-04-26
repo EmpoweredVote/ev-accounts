@@ -316,8 +316,9 @@ interface FecRawRecord {
   [key: string]: unknown;
 }
 
-function parseRawRecord(rawRecord: string | null): FecRawRecord {
+function parseRawRecord(rawRecord: string | object | null): FecRawRecord {
   if (!rawRecord) return {};
+  if (typeof rawRecord === 'object') return rawRecord as FecRawRecord;
   try {
     return JSON.parse(rawRecord) as FecRawRecord;
   } catch {
@@ -325,7 +326,7 @@ function parseRawRecord(rawRecord: string | null): FecRawRecord {
   }
 }
 
-function extractDonorType(rawRecord: string | null): string {
+function extractDonorType(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   // Indiana CFA-4 data uses a simple 'type' field set at ingest time
   const simpleType = (rec.type as string | undefined)?.toLowerCase();
@@ -340,17 +341,17 @@ function extractDonorType(rawRecord: string | null): string {
   return 'unknown';
 }
 
-function extractOccupation(rawRecord: string | null): string {
+function extractOccupation(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   return (rec.contributor_occupation ?? (rec['con_occp'] as string | undefined)) ?? '';
 }
 
-function extractEmployer(rawRecord: string | null): string {
+function extractEmployer(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   return (rec.contributor_employer ?? (rec['con_empr'] as string | undefined)) ?? '';
 }
 
-function extractContributorName(rawRecord: string | null): string {
+function extractContributorName(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   if (rec.contributor_name) return rec.contributor_name;
   const socrataName = rec['con_name'] as string | undefined;
