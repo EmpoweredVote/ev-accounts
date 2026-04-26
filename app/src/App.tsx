@@ -6,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import WelcomeScreen from './pages/WelcomeScreen';
 import DashboardPage from './pages/DashboardPage';
+import ProfilePage from './pages/ProfilePage';
 import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
 import { useAuthStore, getStoredToken, User } from './store/authStore';
@@ -198,6 +199,7 @@ function App() {
         {/* Requires completed onboarding for connected/empowered users */}
         <Route element={<OnboardingGuard />}>
           <Route path="/" element={<DashboardPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings/location" element={<UpdateLocationPage />} />
           <Route path="/contributor" element={<ContributorLayout />}>
             <Route index element={<ContributorDashboard />} />
