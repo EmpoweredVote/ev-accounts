@@ -211,6 +211,7 @@ interface ContribRow {
   confidence_level: string;
   data_source: string;
   raw_record: string | null;  // jsonb -> string
+  donor_name_normalized: string | null;
 }
 
 interface MetaRow {
@@ -326,6 +327,11 @@ function parseRawRecord(rawRecord: string | null): FecRawRecord {
 
 function extractDonorType(rawRecord: string | null): string {
   const rec = parseRawRecord(rawRecord);
+  // Indiana CFA-4 data uses a simple 'type' field set at ingest time
+  const simpleType = (rec.type as string | undefined)?.toLowerCase();
+  if (simpleType === 'pac' || simpleType === 'corporate_direct') return 'pac';
+  if (simpleType === 'direct' || simpleType === 'in_kind') return 'individual';
+  // FEC / Socrata / Netfile use entity_type
   const entityType = (rec.entity_type ?? '').toUpperCase().trim();
   if (entityType.startsWith('IND')) return 'individual';
   if (entityType.startsWith('COM') || entityType.startsWith('PAC')) return 'pac';
@@ -549,8 +555,14 @@ export async function getSummary(
            WHEN 'MEDIUM'    THEN 2
            WHEN 'ESTIMATED' THEN 3
            ELSE 4 END), 0) AS confidence_level_n,
-       COALESCE(SUM(CASE WHEN c.raw_record->>'entity_type' LIKE 'IND%' THEN c.amount ELSE 0 END), 0) AS individual_total,
-       COALESCE(SUM(CASE WHEN c.raw_record->>'entity_type' NOT LIKE 'IND%' OR c.raw_record->>'entity_type' IS NULL THEN c.amount ELSE 0 END), 0) AS pac_total
+       COALESCE(SUM(CASE
+           WHEN c.raw_record->>'entity_type' LIKE 'IND%'
+             OR c.raw_record->>'type' IN ('direct', 'in_kind')
+           THEN c.amount ELSE 0 END), 0) AS individual_total,
+       COALESCE(SUM(CASE
+           WHEN c.raw_record->>'entity_type' NOT LIKE 'IND%'
+             AND c.raw_record->>'type' NOT IN ('direct', 'in_kind')
+           THEN c.amount ELSE 0 END), 0) AS pac_total
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
@@ -596,7 +608,7 @@ export async function getSummary(
   // Query top donors
   const donorResult = await pool.query<DonorRow>(
     `SELECT
-       COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), '') AS contributor_name,
+       COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '') AS contributor_name,
        SUM(c.amount) AS total_amount,
        COUNT(*) AS contribution_count,
        MIN(CASE c.confidence_level
@@ -611,7 +623,7 @@ export async function getSummary(
        AND c.election_cycle = $2
        AND ps.research_status = 'confirmed'
        ${confidenceClause}
-     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), '')
+     GROUP BY COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', NULLIF(trim(concat(c.raw_record->>'Tran_NamL', ' ', c.raw_record->>'Tran_NamF')), ''), c.donor_name_normalized, '')
      ORDER BY total_amount DESC
      LIMIT 20`,
     baseParams
@@ -741,7 +753,8 @@ export async function getContributions(
        c.election_cycle,
        c.confidence_level,
        c.data_source,
-       c.raw_record
+       c.raw_record,
+       c.donor_name_normalized
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
      WHERE ps.essentials_politician_id = $1
@@ -763,7 +776,7 @@ export async function getContributions(
     const occ = extractOccupation(row.raw_record);
     return {
       id: row.id,
-      donor_name: extractContributorName(row.raw_record),
+      donor_name: row.donor_name_normalized || extractContributorName(row.raw_record),
       donor_type: extractDonorType(row.raw_record),
       employer: extractEmployer(row.raw_record),
       occupation: occ,
