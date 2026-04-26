@@ -254,6 +254,38 @@ npm run build
 - **read-rank:** Zustand with localStorage persistence
 - **essentials:** Local component state
 
+### Cross-subdomain shared state (ev-context)
+
+Guest-user state that should follow the user across EV subdomains lives in **ev-context**, a hidden-iframe broker hosted at `https://ev-context.empowered.vote`. Compass answers, address, read-rank verdicts, and any other client-only state that isn't tied to a logged-in account belongs here.
+
+**Use it:**
+```js
+import { evContext } from '@empoweredvote/ev-ui';
+
+// Read once at app load
+const shared = await evContext.get();   // -> { compass: {...}, address: {...}, ... } | null
+
+// Merge writes — preserve other apps' top-level keys
+const current = await evContext.get();
+await evContext.set({ ...current, address: { formatted, lat, lng } });
+
+// Live updates from other tabs / subdomains
+const unsubscribe = evContext.subscribe((value) => { /* re-hydrate */ });
+```
+
+**Conventions:**
+- Each app owns its own top-level key (`compass`, `address`, `verdicts`, …) and merges back the whole object on writes.
+- Logged-in users use the API as source of truth; the broker is for guests. Skip broker writes when `isLoggedIn`.
+- Keep same-origin `localStorage` as a fallback so the app still works if the broker is down.
+- Don't put auth tokens or anything sensitive in ev-context — it's a shared guest cache, not a credential store.
+
+**When NOT to use it:**
+- App-specific UI state (sidebar collapsed, last filter, etc.) → local `localStorage` / session storage.
+- Anything tied to a logged-in account → API.
+- Anything sensitive → API + cookie.
+
+Broker repo: [`EmpoweredVote/ev-context`](https://github.com/EmpoweredVote/ev-context). Already wired in CompassV2 and essentials CompassContext as of 2026-04-25.
+
 ### API Endpoints
 All frontends connect to `https://api.empowered.vote` (ev-accounts Express backend; `accounts.empowered.vote` is the admin SPA, not the API):
 - `/api/auth/*` - Authentication (signup, login, logout, onboarding)
@@ -317,3 +349,9 @@ Treasury backend, data entry tool, PostGIS geofence migration, legislative data 
 
 **Performance Monitoring**
 - Address search uses PostGIS ST_Intersects — responses should be fast (DB-only, no external API)
+
+**ev-context follow-ups** (deferred, not blocking)
+- *Compass guest → authed promotion via ev-context.* Today the Connected onboarding writes a `compass_import_draft` and `promoteCompassImportDraft()` lazily moves it into `inform.compass_responses`. Guests who calibrate on read-rank/essentials and later sign up *outside* the Connected onboarding flow (no draft) won't have their compass auto-promoted. Future fix: when essentials sees `isLoggedIn && empty API answers && ev-context.compass exists`, surface a "Save this compass to your account?" prompt (mirrors the existing `suggestedSaveAddress` pattern) and POST to `/compass/answers/batch`.
+- *Drop the legacy `evUserAddress` cookie write.* `saveUserAddress` currently mirrors to both the `.empowered.vote` cookie and ev-context for back-compat. Once all consumers (CompassV2 `InlinePoliticianPicker`, anything else reading the raw cookie) have been verified to read ev-context first, drop the cookie write entirely.
+- *Read-rank ev-context allowlist on prod.* Read-rank's address auto-apply works locally; verify it still works once read-rank is served from `readrank.empowered.vote` (origin should already match the broker allowlist).
+- *Decide on horizontal vs vertical CompassCardHorizontal default* in essentials Phase 129 wiring; the toggle in `Prototype.jsx` is a prototyping affordance only.

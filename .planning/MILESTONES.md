@@ -1,5 +1,32 @@
 # Milestones
 
+## v2026.4.5 Compass-First Politician Card (Shipped: 2026-04-26)
+
+**Phases completed:** 3 phases (127–129), 9 plans
+**Timeline:** 8 days (2026-04-19 — 2026-04-26)
+**Requirements:** 10/10 functionally satisfied; 6 requirement checkboxes stale (acknowledged at close)
+**Repos:** ev-ui, essentials, CompassV2
+
+**Delivered:** Compass-first horizontal politician card (`CompassCardHorizontal` / `CompassCardVertical`) shipped in `@empoweredvote/ev-ui` and adopted as the production card across Essentials Representatives and Elections pages — replacing the old `/prototype` harness and the floating `CompassPreview` popover. Card includes a dual-view toggle (compass radar ↔ portrait), full affordance parity with the legacy card, and a variant system for empty-compass, administrative, and judicial politicians. ev-ui v0.6.1 shipped via the auto-bump pipeline with both essentials and CompassV2 confirmed on `^0.6.1`.
+
+**Key accomplishments:**
+
+1. `CompassCardHorizontal` published in ev-ui — horizontal radar-left/meta-right layout with @floating-ui tooltips, `PlaceholderRadar` dashed SVG octagon, `IconOverlay`, and `SegmentedControl` view toggle (compass ↔ portrait) with localStorage persistence
+2. `computeVariant()` classifier — TDD pure function mapping (pol, userAnswers) → `'compass' | 'empty' | 'administrative' | 'judicial'`; full Vitest coverage of STATE-01/02/03 branches
+3. `CompassCardHorizontal` variant extension — empty CTA ("Build Your Compass" + COMPASS_URL deep-link), administrative plate, and judicial plate render paths wired in ev-ui
+4. Prototype route and files retired — `/prototype` route, `Prototype.jsx`, `CompassFirstCard.jsx`, `mockCompassData.js` all deleted; 0 residual references in `essentials/src/`
+5. `CompassPreview` floating popover removed — `CompassPreview.jsx` and all popover state deleted from `Results.jsx`; `CompassCardVertical` is sole production card
+6. Essentials production adoption — `Results.jsx` (Representatives, line 904) and `ElectionsView.jsx` (Elections, line 639) both wire `CompassCardVertical` with live `userAnswers` + `computeVariant()`; sort/filter/scroll-spy/elected-appointed filter all preserved
+7. ev-ui v0.6.1 auto-bump pipeline — tag pushed; auto-bump PRs merged on essentials (#23) and CompassV2; CompassV2 compare picker smoke-tested on `^0.6.1` with no regressions
+
+**Known Gaps (at close):**
+
+- Phase 128-04 never formally executed — ev-ui minor bump was done as part of Phase 129 execution
+- CARD-01/02/03 and STATE-01/02/03 requirement checkboxes were stale (not updated at phase completion); all 10 requirements functionally verified
+- STATE-02 (administrative plate) and STATE-03 (judicial plate) ship with generic "unavailable" plate; role-specific content deferred
+
+---
+
 ## v2026.4.4 Indiana Primary Fix Wave (Shipped: 2026-04-18)
 
 **Phases completed:** 7 shipped phases (116, 118–123, 125), 20 plans

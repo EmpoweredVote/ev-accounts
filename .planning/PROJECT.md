@@ -2,23 +2,17 @@
 
 ## What This Is
 
-A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Cloudflare Pages (frontends), Render (backend), and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook. All three apps share a unified SiteHeader (from ev-ui) with auth-aware profile menu showing login state and cross-app navigation via production .empowered.vote URLs. Essentials includes an Election Central page showing upcoming races for a user's address grouped by government tier, with candidate profile pages featuring incumbent/challenger branching — incumbents reuse full politician profiles with CompassCard, challengers render minimal views. The representatives page has an elected/appointed filter with retention judge dual-appearance. Election data covers Indiana (SoS Excel) and LA County (HTML incumbent scraper) with antipartisan enforcement at the schema and ingestion layers.
+A civic engagement platform helping voters make informed decisions through an interactive political compass quiz (CompassV2), politician discovery by address (Essentials), and a standalone quote evaluation app (Read & Rank at `readrank.empowered.vote`). The platform is run by a nonprofit with a 2-3 person dev team, deployed across Render (frontends + backend) and Supabase (DB + CDN). The compass works without login (guest-first) with guided onboarding, coach mark tours, write-in stances, and full localStorage persistence; it features an inline politician picker on the compare page with level/state filters. Essentials uses Google Maps address autocomplete with PostGIS geofence matching to surface the full representative hierarchy for LA County addresses, with headshot photos (503 CDN-hosted), city hall building photos, contact info, chamber/district subtitles, and contextual term dates. Politician profiles display legislative activity (committees, leadership, bills, votes) from Congress.gov, LegiScan, Open States, and local scrapers; a compass comparison card with dual-overlay radar chart; and per-quote verdict badges from Read & Rank integrated inline under topic drill-downs in the StanceAccordion. Read & Rank verdicts flow to Essentials via URL fragment for guests (cached to localStorage) and via server-side storage for logged-in users (auto-POSTed from Read & Rank, fetched by Essentials as highest priority). Local government sections display specific body names with official website links, powered by the government_bodies table. State legislative data is verified via automated audit scripts with a documented new-session playbook. All three apps share a unified SiteHeader (from ev-ui) with auth-aware profile menu showing login state and cross-app navigation via production .empowered.vote URLs. Essentials includes an Election Central page showing upcoming races for a user's address grouped by government tier, with candidate profile pages featuring incumbent/challenger branching — incumbents reuse full politician profiles with CompassCard, challengers render minimal views. The representatives page has an elected/appointed filter with retention judge dual-appearance. Election data covers Indiana (SoS Excel) and LA County (HTML incumbent scraper) with antipartisan enforcement at the schema and ingestion layers. Essentials politician cards are compass-first (`CompassCardVertical` from ev-ui) — a horizontal radar-left/meta-right layout with a dual-view toggle (compass ↔ portrait), variant system for empty-compass/administrative/judicial politicians, and full affordance parity (badges, term dates, initiated fallback). Cross-subdomain guest state (compass answers, address, verdicts) shared via ev-context iframe broker at `ev-context.empowered.vote`.
 
 ## Core Value
 
 Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
 
-## Current Milestone: v2026.4.5 Compass-First Politician Card
+## Last Milestone: v2026.4.5 Compass-First Politician Card (Shipped 2026-04-26)
 
-**Goal:** Ship a compass-first horizontal politician card across Essentials (and ev-ui), based on the existing prototype, while preserving current card metadata and handling cases where a compass doesn't apply.
+**Delivered:** Promoted compass-first horizontal card from `/prototype` to full production — `CompassCardVertical` now the sole card on Essentials Representatives and Elections pages, with dual-view toggle (compass ↔ portrait), variant system for empty/administrative/judicial politicians, and ev-ui v0.6.1 shipped via auto-bump pipeline. `/prototype` route and all prototype-only files retired. 3 phases, 9 plans, 8 days.
 
-**Target features:**
-- Promote horizontal compass-first card from `/prototype` to the primary Essentials card on Representatives and Elections pages
-- View toggle between compass (radar) view and photo/portrait view
-- Preserve existing card affordances (unopposed, elected/appointed, term dates, tier/branch badges, contextual icons)
-- User-side empty state when compass isn't complete — guided path to build one
-- Non-compass variant for administrative roles (clerks, auditors, etc.) and judges — content TBD during discuss/plan
-- Shared `feat/compass-first-card` branch across essentials, ev-ui, and CompassV2 to signal in-flight work
+**Deferred to next milestone:** Candidate stub resolution (Phase 117), contested-race bio import execution (Phase 120-03), app-wide bio authoring (Phase 124), geofence hardening (Phase 126). Administrative/judicial card role-specific content (generic plate ships).
 
 ## Requirements
 
@@ -212,12 +206,19 @@ Users can explore political issues and discover their elected officials without 
 - ✓ Cross-app voter loop (Compass→ReadRank→Essentials) — CompassCard guest-cache fallback, Essentials picker links, Treasury CTA on Results page — v2026.4.4
 - ✓ 55-candidate photo gap confirmed unfindable via Ballotpedia+search; ev-ui initials fallback accepted — v2026.4.4
 - ✓ 21 Tier 2 UX polish items — Google Places Autocomplete on landing, address normalization, cross-reference annotations, Compass SQL NULLIF headshot fix, cross-app address bridge — v2026.4.4
+- ✓ CompassCardHorizontal / CompassCardVertical in ev-ui — horizontal radar-left/meta-right card with @floating-ui tooltips, PlaceholderRadar, IconOverlay, SegmentedControl view toggle, localStorage persistence — v2026.4.5
+- ✓ computeVariant() classifier — pure function mapping (pol, userAnswers) → compass|empty|administrative|judicial; TDD with full Vitest coverage — v2026.4.5
+- ✓ Empty-compass CTA variant — placeholder radar + "Build Your Compass" deep-link into CompassV2 calibration — v2026.4.5
+- ✓ Administrative and judicial card variants — portrait-forward unavailable plate — v2026.4.5
+- ✓ Essentials Representatives and Elections pages adopt CompassCardVertical as sole production card — v2026.4.5
+- ✓ /prototype route retired — Prototype.jsx, CompassFirstCard.jsx, mockCompassData.js deleted; 0 residual references — v2026.4.5
+- ✓ CompassPreview floating hover popover removed — CompassPreview.jsx deleted from essentials — v2026.4.5
+- ✓ ev-ui v0.6.1 auto-bump pipeline — tag pushed; essentials #23 and CompassV2 auto-merged; both on ^0.6.1 — v2026.4.5
+- ✓ Cross-subdomain guest state via ev-context iframe broker — compass answers, address, verdicts shared across EV subdomains for guests; authed users write through ev-context as cache — v2026.4.5
 
-## Last Milestone: v2026.4.4 Indiana Primary Fix Wave (Shipped 2026-04-18)
+## Previous Milestone: v2026.4.4 Indiana Primary Fix Wave (Shipped 2026-04-18)
 
 **Delivered:** Pre-primary correctness fixes, verdict badge + location filter repair, Monroe County Council D1→D4 geofence fix, cross-app voter loop polish, 55-candidate photo gap audit (confirmed initials fallback), and 21 Tier 2 UX polish items across essentials, CompassV2, read-rank, and ev-ui. 7 phases, 20 plans, 4 days.
-
-**Deferred to v2026.4.5:** Candidate stub resolution (Phase 117), contested-race bio import execution (Phase 120-03), app-wide bio authoring (Phase 124), geofence hardening (Phase 126).
 
 ## Previous Milestone: v2026.4.3 Indiana Primary Election Readiness Audit (Shipped 2026-04-14)
 
@@ -257,15 +258,13 @@ Users can explore political issues and discover their elected officials without 
 
 ## Context
 
-Shipped v2026.4.1 across 3 repos:
-- **ev-ui** (React/tsup): v0.1.60 — icon system (BallotIcon/CompassIcon/BranchIcon), tierColors token, CategorySection tier prop, imageFocalPoint
-- **essentials** (React 19): tier background bands, IconOverlay, landing page coverage cards, election position grouping, compass-first /prototype route, headshot audit CLI
-- **ev-accounts** (Node.js/Express/TypeScript): migration 049 (Ruben Marte fix), seed SQL verified
-- **CompassV2** (React 19): ~14.5K LOC — unchanged this milestone
-- **EV-readrank** (React 19 + TypeScript): ~5,990 LOC — unchanged this milestone
+Shipped v2026.4.5 across 2 repos:
+- **ev-ui** (React/tsup): v0.6.1 — `CompassCardHorizontal`/`CompassCardVertical`, `PlaceholderRadar`, `IconOverlay`, `compassHelpers.js`, variant system (empty/administrative/judicial)
+- **essentials** (React 19): `computeVariant()` in classify.js, prototype route retired, CompassPreview removed, CompassCardVertical wired in Results.jsx + ElectionsView.jsx
+- **CompassV2** (React 19): auto-bumped to ev-ui ^0.6.1; compare picker confirmed rendering
 
-Tech stack: Node.js 20/Express 4/TypeScript 5.6/Supabase PostgreSQL + React 19/Vite/Tailwind + PostGIS + Supabase Storage CDN + Cloudflare Pages.
-ev-ui published to GitHub npm registry, consumed by CompassV2, essentials, and EV-readrank.
+Tech stack: Node.js 20/Express 4/TypeScript 5.6/Supabase PostgreSQL + React 19/Vite/Tailwind CSS 4 + PostGIS + Supabase Storage CDN + Render (all frontends + backend).
+ev-ui published to public npm (@empoweredvote/ev-ui), consumed by CompassV2, essentials, read-rank, and EV-prototypes (treasury-tracker).
 
 ## Constraints
 
@@ -293,4 +292,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-18 — v2026.4.5 milestone started*
+*Last updated: 2026-04-26 after v2026.4.5 milestone*
