@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2026.4.5
 milestone_name: Compass-First Politician Card
 status: executing
-last_updated: "2026-04-26T19:50:58.940Z"
-last_activity: 2026-04-26 -- Phase 129 planning complete
+last_updated: "2026-04-26T19:55:19.028Z"
+last_activity: 2026-04-26
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 10
-  completed_plans: 6
-  percent: 60
+  completed_plans: 7
+  percent: 70
 ---
 
 # Project State
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-18)
 
 **Core value:** Users can explore political issues and discover their elected officials without friction — the experience must feel polished and trustworthy enough to demo confidently.
-**Current focus:** Phase 128 — empty-non-compass-variants
+**Current focus:** Phase 129 — essentials-adoption-prototype-retirement
 
 ## Current Position
 
-Phase: 128 (empty-non-compass-variants) — EXECUTING
-Plan: 1 of 4
+Phase: 129 (essentials-adoption-prototype-retirement) — EXECUTING
+Plan: 2 of 3
 Status: Ready to execute
-Last activity: 2026-04-26 -- Phase 129 planning complete
+Last activity: 2026-04-26
 
 ## Performance Metrics
 
@@ -51,6 +51,7 @@ Items acknowledged and deferred at v2026.4.4 close on 2026-04-18 (not in v2026.4
 | phase | Phase 126 (INFRA-01–INFRA-02): Rural geocoding + township geofence import | Not started |
 
 Known deferred items at close: 4 (see above)
+| Phase 129-essentials-adoption-prototype-retirement P01 | 2 | 2 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -82,5 +83,5 @@ Known deferred items at close: 4 (see above)
 
 ## Session Continuity
 
-Last activity: 2026-04-26 - Completed quick task 260426-eob: remove compass icon from compass first cards on essentials
-Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
+Last activity: 2026-04-26 - Completed 129-01-PLAN.md: prototype retirement (deleted Prototype.jsx, CompassFirstCard.jsx, mockCompassData.js; removed /prototype route from App.jsx)
+Next: Execute 129-02-PLAN.md
