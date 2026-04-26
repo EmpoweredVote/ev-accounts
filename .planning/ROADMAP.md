@@ -117,4 +117,4 @@ Plans:
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
 | 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
 | 128. Empty & Non-Compass Variants | v2026.4.5 | 3/4 | In Progress|  |
-| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 3/3 | Complete   | 2026-04-26 |
+| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 3/3 | Complete    | 2026-04-26 |
