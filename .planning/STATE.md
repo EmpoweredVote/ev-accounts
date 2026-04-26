@@ -78,8 +78,9 @@ Known deferred items at close: 4 (see above)
 | 260425-ri7 | update the first page of the onboarding flow for compass because we changed the default colors to a green and purple, so we want the image on the first page to match that | 2026-04-25 | 0c94b53 (CompassV2) | [260425-ri7-update-the-first-page-of-the-onboarding-](./quick/260425-ri7-update-the-first-page-of-the-onboarding-/) |
 | 260425-srx | Fix Nicole Browne (Circuit Court Clerk) routing — data fix: district_type COUNTY→JUDICIAL + chamber name_formal corrected → now appears in Monroe Circuit Court accordion as "Circuit Court Officials" | 2026-04-25 | DB-only | [260425-nicole-bolden-circuit-court-category](./quick/260425-nicole-bolden-circuit-court-category/) |
 | 260426-dgb | essentials Elections tab works in browse-by-location mode (county/state) — new POST /api/essentials/browse/elections-by-area endpoint + branched fetch in Results.jsx | 2026-04-26 | aacfbe4 / c4a206c (essentials) | [260426-dgb-essentials-elections-tab-should-work-for](./quick/260426-dgb-essentials-elections-tab-should-work-for/) |
+| 260426-eob | remove compass icon from compass first cards on essentials since we are moving to a compass first view | 2026-04-26 | essentials (untracked) | [260426-eob-remove-compass-icon-from-compass-first-c](./quick/260426-eob-remove-compass-icon-from-compass-first-c/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-26 - Completed quick task 260426-dgb: essentials Elections tab works for browse-by-location
+Last activity: 2026-04-26 - Completed quick task 260426-eob: remove compass icon from compass first cards on essentials
 Next: `/gsd-plan-phase 128` to plan empty & non-compass card variants
