@@ -82,8 +82,9 @@ Known deferred items at close: 4 (see above)
 | 260426-dgb | essentials Elections tab works in browse-by-location mode (county/state) — new POST /api/essentials/browse/elections-by-area endpoint + branched fetch in Results.jsx | 2026-04-26 | aacfbe4 / c4a206c (essentials) | [260426-dgb-essentials-elections-tab-should-work-for](./quick/260426-dgb-essentials-elections-tab-should-work-for/) |
 | 260426-eob | remove compass icon from compass first cards on essentials since we are moving to a compass first view | 2026-04-26 | essentials (untracked) | [260426-eob-remove-compass-icon-from-compass-first-c](./quick/260426-eob-remove-compass-icon-from-compass-first-c/) |
 | 260426-mc5 | authed users write through ev-context as a cache for cross-subdomain hydration (ev-ui authed-slice helpers + wired into CompassV2/essentials/read-rank/treasury-tracker) | 2026-04-26 | 178d13c (ev-ui), b6f52d1 (CompassV2), ab51cef (essentials), ccb28e4 (read-rank), 83136d4 (EV-prototypes) | [260426-mc5-authed-users-write-through-ev-context-as](./quick/260426-mc5-authed-users-write-through-ev-context-as/) |
+| 260426-mw6 | authed evContext promotion prompt — useEvContextPromotion hook + inline banners (compass/address/verdicts) on CompassV2/essentials/read-rank for authed users with empty API + populated guest ev-context | 2026-04-26 | 7ec60ad (ev-ui), ad25e89 (CompassV2), 8ef0962 (essentials), 99ae103/03116cb (read-rank) | [260426-mw6-authed-evcontext-promotion-prompt-save-g](./quick/260426-mw6-authed-evcontext-promotion-prompt-save-g/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-26 - v2026.4.5 milestone archived and tagged
+Last activity: 2026-04-26 - Completed quick task 260426-mw6: authed evContext promotion prompt
 Next: /gsd-new-milestone to plan next milestone
