@@ -94,7 +94,7 @@ See full details: [milestones/v2026.4.4-ROADMAP.md](milestones/v2026.4.4-ROADMAP
 **Plans**: 3 plans
 Plans:
 - [x] 129-01-PLAN.md — Retire /prototype route and delete prototype-only files
-- [ ] 129-02-PLAN.md — Remove CompassPreview popover from Results.jsx and delete component
+- [x] 129-02-PLAN.md — Remove CompassPreview popover from Results.jsx and delete component
 - [ ] 129-03-PLAN.md — End-to-end verification (build + Reps/Elections smoke-test)
 **UI hint**: yes
 
@@ -117,4 +117,4 @@ Plans:
 | 126. Geofence Hardening | v2026.4.4 | 0/4 | Deferred | - |
 | 127. CompassCardHorizontal in ev-ui | v2026.4.5 | 3/3 | Complete   | 2026-04-19 |
 | 128. Empty & Non-Compass Variants | v2026.4.5 | 3/4 | In Progress|  |
-| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 1/3 | In Progress|  |
+| 129. Essentials Adoption & Prototype Retirement | v2026.4.5 | 2/3 | In Progress|  |

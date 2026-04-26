@@ -18,8 +18,8 @@
 
 ### ADOPTION — Wire into Essentials
 
-- [ ] **ADOPT-01**: Representatives page politician cards replaced with the new compass-first card, preserving existing sort/filter controls, elected/appointed filter, and scroll-spy background bands
-- [ ] **ADOPT-02**: Elections page candidate cards adopt the new card — incumbents use full compass, challengers use appropriate empty/minimal variant
+- [x] **ADOPT-01**: Representatives page politician cards replaced with the new compass-first card, preserving existing sort/filter controls, elected/appointed filter, and scroll-spy background bands
+- [x] **ADOPT-02**: Elections page candidate cards adopt the new card — incumbents use full compass, challengers use appropriate empty/minimal variant
 - [x] **ADOPT-03**: `/prototype` route retired or reduced to an internal reference once adoption ships, to prevent UI drift
 - [ ] **ADOPT-04**: ev-ui version bumped via the auto-bump pipeline; essentials and CompassV2 compass picker continue to render correctly on main after merge
 
@@ -44,8 +44,8 @@
 | STATE-01 | Phase 128 | Pending |
 | STATE-02 | Phase 128 | Pending |
 | STATE-03 | Phase 128 | Pending |
-| ADOPT-01 | Phase 129 | Pending |
-| ADOPT-02 | Phase 129 | Pending |
+| ADOPT-01 | Phase 129 | Complete |
+| ADOPT-02 | Phase 129 | Complete |
 | ADOPT-03 | Phase 129 | Complete |
 | ADOPT-04 | Phase 129 | Pending |
 
