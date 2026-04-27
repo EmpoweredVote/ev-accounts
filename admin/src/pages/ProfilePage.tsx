@@ -76,8 +76,36 @@ interface FCPostsResponse {
   data: FCPost[];
   meta: { cursor: string | null; hasMore: boolean };
 }
+interface CompassStats {
+  answered: number;
+  total: number;
+}
 
-// ── Constants ─────────────────────────────────────────────────────────────────
+// ── Feature definitions ───────────────────────────────────────────────────────
+
+interface Feature {
+  name: string;
+  description: string;
+  href: string;
+  statsKey?: 'compass' | 'vr';
+}
+
+const INFORM_FEATURES: Feature[] = [
+  { name: 'Essentials', description: 'Find out who represents you and where they stand.', href: 'https://essentials.empowered.vote' },
+  { name: 'Empowered Compass', description: 'See how your values align with politicians and candidates.', href: 'https://compass.empowered.vote', statsKey: 'compass' },
+  { name: 'Treasury Tracker', description: 'Follow the money — public funds allocation and spending.', href: 'https://treasurytracker.empowered.vote' },
+  { name: 'Civic Trivia Championships', description: 'Test your knowledge on where politicians really stand.', href: 'https://ctc.empowered.vote' },
+  { name: 'Read & Rank', description: 'Put your opinion above party lines — a blind taste test.', href: 'https://readrank.empowered.vote' },
+];
+
+const CONNECT_FEATURES: Feature[] = [
+  { name: 'Validation Quests', description: 'Verify politician stances and earn Red Gems for accuracy.', href: 'https://quests.empowered.vote', statsKey: 'vr' },
+  { name: 'Civic Spaces', description: 'Engage with your local civic community online.', href: 'https://civicspaces.empowered.vote' },
+  { name: 'Focused Communities', description: 'Join issue-focused civic discussions that matter to you.', href: 'https://fc.empowered.vote' },
+  { name: 'Empowered Listening', description: 'Hear diverse perspectives and find common ground.', href: 'https://listening.empowered.vote' },
+];
+
+// ── District labels ───────────────────────────────────────────────────────────
 
 const DISTRICT_LABELS: { key: keyof Jurisdiction; label: string }[] = [
   { key: 'city_council_district_name', label: 'City Council' },
@@ -87,19 +115,6 @@ const DISTRICT_LABELS: { key: keyof Jurisdiction; label: string }[] = [
   { key: 'county_name', label: 'County' },
   { key: 'school_district_name', label: 'School District' },
 ];
-
-// All features in a single grid — dot color distinguishes Inform (yellow) vs Connect (blue)
-const ALL_FEATURES = [
-  { name: 'Essentials', description: 'Find out who represents you and where they stand.', href: 'https://essentials.empowered.vote', dot: 'bg-ev-yellow', border: 'hover:border-ev-yellow/40' },
-  { name: 'Empowered Compass', description: 'See how your values align with politicians.', href: 'https://compass.empowered.vote', dot: 'bg-ev-yellow', border: 'hover:border-ev-yellow/40' },
-  { name: 'Treasury Tracker', description: 'Follow the money — public funds allocation.', href: 'https://treasurytracker.empowered.vote', dot: 'bg-ev-yellow', border: 'hover:border-ev-yellow/40' },
-  { name: 'Civic Trivia Championships', description: 'Test your knowledge on where politicians stand.', href: 'https://ctc.empowered.vote', dot: 'bg-ev-yellow', border: 'hover:border-ev-yellow/40' },
-  { name: 'Read & Rank', description: 'Put your opinion above party lines.', href: 'https://readrank.empowered.vote', dot: 'bg-ev-yellow', border: 'hover:border-ev-yellow/40' },
-  { name: 'Validation Quests', description: 'Verify politician stances and earn Red Gems.', href: 'https://quests.empowered.vote', dot: 'bg-ev-blue', border: 'hover:border-ev-blue/40' },
-  { name: 'Civic Spaces', description: 'Engage with your local civic community.', href: 'https://civicspaces.empowered.vote', dot: 'bg-ev-blue', border: 'hover:border-ev-blue/40' },
-  { name: 'Focused Communities', description: 'Join issue-focused civic discussions.', href: 'https://fc.empowered.vote', dot: 'bg-ev-blue', border: 'hover:border-ev-blue/40' },
-  { name: 'Empowered Listening', description: 'Hear diverse perspectives and find common ground.', href: 'https://listening.empowered.vote', dot: 'bg-ev-blue', border: 'hover:border-ev-blue/40' },
-] as const;
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
 
@@ -125,6 +140,88 @@ function MoonIcon() {
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
     </svg>
+  );
+}
+
+// ── Gem pip (small, inline in header) ────────────────────────────────────────
+
+function GemPip({ count, gemStyle }: { count: number; gemStyle: React.CSSProperties }) {
+  return (
+    <div className="flex items-center gap-1.5">
+      <div className="w-5 h-5 flex-shrink-0" style={gemStyle} />
+      <span className="text-white text-sm font-semibold tabular-nums">{count.toLocaleString()}</span>
+    </div>
+  );
+}
+
+// ── Feature tile ──────────────────────────────────────────────────────────────
+
+function FeatureTile({
+  feature,
+  href,
+  dotClass,
+  borderHover,
+  compassStats,
+  vr,
+  vrPercent,
+}: {
+  feature: Feature;
+  href: string;
+  dotClass: string;
+  borderHover: string;
+  compassStats: CompassStats | null;
+  vr: number | null;
+  vrPercent: number;
+}) {
+  const statsKey = feature.statsKey;
+  const showCompass = statsKey === 'compass' && compassStats !== null;
+  const showVr = statsKey === 'vr' && vr !== null;
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
+    >
+      <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotClass}`} />
+      <p className="text-sm font-semibold text-white leading-snug">{feature.name}</p>
+      <p className="text-xs text-gray-400 leading-relaxed">{feature.description}</p>
+
+      {/* Optional stat pinned to bottom */}
+      {(showCompass || showVr) && (
+        <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
+          {showCompass && (
+            <>
+              <p className="text-xs text-gray-500">
+                <span className="text-white font-semibold tabular-nums">{compassStats!.answered}</span>
+                <span className="text-gray-400"> / {compassStats!.total} stances calibrated</span>
+              </p>
+              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+                <div
+                  className="bg-ev-yellow h-full rounded-full transition-all duration-700"
+                  style={{ width: `${compassStats!.total > 0 ? Math.round((compassStats!.answered / compassStats!.total) * 100) : 0}%` }}
+                />
+              </div>
+            </>
+          )}
+          {showVr && (
+            <>
+              <p className="text-xs text-gray-500">
+                <span className="text-white font-semibold tabular-nums">{vr}</span>
+                <span className="text-gray-400"> / 150 verification rating</span>
+              </p>
+              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+                <div
+                  className="bg-ev-teal-light h-full rounded-full transition-all duration-700"
+                  style={{ width: `${vrPercent}%` }}
+                />
+              </div>
+            </>
+          )}
+        </div>
+      )}
+    </a>
   );
 }
 
@@ -247,17 +344,6 @@ function PostHistory() {
   );
 }
 
-// ── Small gem for header row ──────────────────────────────────────────────────
-
-function GemPip({ count, style }: { count: number; style: React.CSSProperties; shape: 'square' | 'circle' }) {
-  return (
-    <div className="flex items-center gap-1.5">
-      <div className="w-5 h-5 flex-shrink-0" style={style} />
-      <span className="text-white text-sm font-semibold tabular-nums">{count.toLocaleString()}</span>
-    </div>
-  );
-}
-
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ProfilePage() {
@@ -275,6 +361,7 @@ export default function ProfilePage() {
   const [labelInput, setLabelInput] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [activity, setActivity] = useState<ActivityEntry[]>([]);
+  const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
   const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts'>('profile');
 
   const [address, setAddress] = useState('');
@@ -297,6 +384,19 @@ export default function ProfilePage() {
           apiFetch<{ activity: ActivityEntry[] }>('/account/me/activity')
             .then((r) => setActivity(r.activity))
             .catch(() => setActivity([]));
+          // Fetch compass calibration stats
+          Promise.all([
+            apiFetch<unknown>('/compass/answers'),
+            apiFetch<unknown>('/compass/topics'),
+          ]).then(([answersData, topicsData]) => {
+            const answered = Array.isArray(answersData)
+              ? answersData.length
+              : ((answersData as { answers?: unknown[] })?.answers?.length ?? 0);
+            const total = Array.isArray(topicsData)
+              ? topicsData.length
+              : ((topicsData as { topics?: unknown[] })?.topics?.length ?? 21);
+            setCompassStats({ answered, total });
+          }).catch(() => {});
         }
       })
       .catch(() => setProfileError(true));
@@ -374,9 +474,18 @@ export default function ProfilePage() {
   const xpPercent = xp && xp.xp_to_next_level > 0
     ? Math.min(100, Math.round((xp.xp_in_level / xp.xp_to_next_level) * 100))
     : 0;
+  // xp_in_level / (xp_in_level + xp_to_next_level) = gained / total needed for level
+  const xpLevelTotal = xp ? xp.xp_in_level + xp.xp_to_next_level : 0;
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
   const hasDistricts = jurisdiction && DISTRICT_LABELS.some(({ key }) => jurisdiction[key]);
+
+  // Shared tile props for FeatureTile
+  const featureTileProps = {
+    compassStats,
+    vr: cp?.verification_rating ?? null,
+    vrPercent,
+  };
 
   return (
     <div className="min-h-screen bg-gray-950 transition-colors duration-200">
@@ -452,8 +561,8 @@ export default function ProfilePage() {
           {activeTab === 'profile' && (
             <div className="space-y-3">
 
-              {/* Header card — name + XP + inline gems */}
-              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4">
+              {/* Header card — half width on desktop, left aligned */}
+              <div className="w-full md:w-1/2 bg-gray-900 rounded-2xl border border-gray-800 p-4">
                 <div className="flex items-start justify-between mb-2">
                   <h1 className="text-2xl font-bold text-white">{displayName}</h1>
                   <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full flex-shrink-0 ml-4">
@@ -463,32 +572,42 @@ export default function ProfilePage() {
 
                 {cp && xp ? (
                   <>
-                    {/* Level + XP text | Gems (right) */}
+                    {/* Level + XP text on left | Gems on right */}
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center gap-2">
                         <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">
                           Level {xp.level}
                         </span>
                         <span className="text-gray-300 text-sm tabular-nums">
-                          {xp.xp_in_level.toLocaleString()} / {xp.xp_to_next_level.toLocaleString()} XP
+                          {xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP
                         </span>
                       </div>
-                      {/* Small gems */}
-                      <div className="flex items-center gap-4">
+                      {/* Small gem pips */}
+                      <div className="flex items-center gap-3">
                         <GemPip
                           count={cp.gems.yellow}
-                          shape="square"
-                          style={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }}
+                          gemStyle={{
+                            borderRadius: '4px',
+                            background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)',
+                            boxShadow: '0 0 8px rgba(255,184,0,0.4)',
+                          }}
                         />
                         <GemPip
                           count={cp.gems.blue}
-                          shape="circle"
-                          style={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }}
+                          gemStyle={{
+                            borderRadius: '50%',
+                            background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)',
+                            boxShadow: '0 0 8px rgba(59,130,246,0.4)',
+                          }}
                         />
                         <GemPip
                           count={cp.gems.red}
-                          shape="square"
-                          style={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)' }}
+                          gemStyle={{
+                            borderRadius: '4px',
+                            background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)',
+                            boxShadow: '0 0 8px rgba(255,87,64,0.4)',
+                            transform: 'rotate(45deg)',
+                          }}
                         />
                       </div>
                     </div>
@@ -506,61 +625,86 @@ export default function ProfilePage() {
                 ) : null}
               </div>
 
-              {/* Features — square uniform tiles, wide enough for longest name */}
-              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4">
-                <div className="flex items-center gap-4 mb-3">
+              {/* Features — Inform and Connect in separate left-justified grids */}
+              {cp && (
+                <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 space-y-5">
                   <h2 className="text-sm font-semibold text-white">Empowered Vote Features</h2>
-                  <div className="flex items-center gap-3 text-xs text-gray-500">
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-ev-yellow inline-block" />Inform
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-ev-blue inline-block" />Connect
-                    </span>
+
+                  {/* Inform */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
+                    </div>
+                    {/* auto-fill with fixed 15rem columns — tiles don't stretch, empty space on right */}
+                    <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
+                      {INFORM_FEATURES.map((f) => (
+                        <FeatureTile
+                          key={f.name}
+                          feature={f}
+                          href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
+                          dotClass="bg-ev-yellow"
+                          borderHover="hover:border-ev-yellow/50"
+                          {...featureTileProps}
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Connect */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
+                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
+                    </div>
+                    <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
+                      {CONNECT_FEATURES.map((f) => (
+                        <FeatureTile
+                          key={f.name}
+                          feature={f}
+                          href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
+                          dotClass="bg-ev-blue"
+                          borderHover="hover:border-ev-blue/50"
+                          {...featureTileProps}
+                        />
+                      ))}
+                    </div>
                   </div>
                 </div>
-                {/* minmax(14rem) ensures "Civic Trivia Championships" fits on one line at text-sm */}
-                <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(14rem, 1fr))' }}>
-                  {ALL_FEATURES.map((f) => {
-                    const href = accessToken ? `${f.href}#access_token=${accessToken}` : f.href;
-                    return (
-                      <a
-                        key={f.name}
-                        href={href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-800 transition-colors ${f.border}`}
-                      >
-                        <span className={`w-2 h-2 rounded-full flex-shrink-0 ${f.dot}`} />
-                        <p className="text-sm font-semibold text-white leading-snug whitespace-nowrap overflow-hidden text-ellipsis">{f.name}</p>
-                        <p className="text-xs text-gray-400 leading-relaxed">{f.description}</p>
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
+              )}
 
-              {/* Three-col row: Verification Rating | Civic Spaces | Recent Activity */}
+              {/* Bottom row: Compass stats | Civic Spaces | Recent Activity */}
               {cp && (
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 
-                  {/* Verification Rating */}
+                  {/* Compass stats card */}
                   <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Verification Rating</p>
-                    <div className="flex items-baseline gap-1.5">
-                      <span className="text-3xl font-bold text-ev-teal-light tabular-nums">{cp.verification_rating}</span>
-                      <span className="text-base font-medium text-gray-400">/ 150</span>
-                    </div>
-                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
-                      <div
-                        className="bg-ev-teal-light h-full rounded-full transition-all duration-700"
-                        style={{ width: `${vrPercent}%` }}
-                      />
-                    </div>
-                    <p className="text-xs text-gray-400">Keep validating to increase your credibility score</p>
-                    {cp.vq_hold_active && (
-                      <p className="text-xs text-ev-red font-medium">VQ hold active — paused 30 days</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Empowered Compass</p>
+                    {compassStats ? (
+                      <>
+                        <div className="flex items-baseline gap-1.5">
+                          <span className="text-3xl font-bold text-ev-yellow tabular-nums">{compassStats.answered}</span>
+                          <span className="text-base font-medium text-gray-400">/ {compassStats.total}</span>
+                        </div>
+                        <p className="text-xs text-gray-400">Stances calibrated</p>
+                        <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
+                          <div
+                            className="bg-ev-yellow h-full rounded-full transition-all duration-700"
+                            style={{ width: `${compassStats.total > 0 ? Math.round((compassStats.answered / compassStats.total) * 100) : 0}%` }}
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      <p className="text-sm text-gray-400">Calibrate your stances to see your score.</p>
                     )}
+                    <a
+                      href={`https://compass.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-ev-yellow hover:underline mt-auto"
+                    >
+                      Open Compass &rarr;
+                    </a>
                   </div>
 
                   {/* Civic Spaces */}
@@ -596,7 +740,7 @@ export default function ProfilePage() {
                         </div>
                         <button
                           onClick={() => setShowLocationForm(!showLocationForm)}
-                          className="text-xs text-ev-teal-light hover:underline text-left"
+                          className="text-xs text-ev-teal-light hover:underline text-left mt-auto"
                         >
                           Update location &rarr;
                         </button>
@@ -611,7 +755,7 @@ export default function ProfilePage() {
                         )}
                         <button
                           onClick={() => setShowLocationForm(!showLocationForm)}
-                          className="text-xs text-ev-teal-light hover:underline text-left"
+                          className="text-xs text-ev-teal-light hover:underline text-left mt-auto"
                         >
                           {profile.location_consent ? 'Update location →' : 'Set your location →'}
                         </button>
@@ -619,7 +763,7 @@ export default function ProfilePage() {
                     )}
 
                     {showLocationForm && (
-                      <form onSubmit={handleSetLocation} className="space-y-2 mt-1 border-t border-gray-800 pt-2">
+                      <form onSubmit={handleSetLocation} className="space-y-2 border-t border-gray-800 pt-2">
                         <input
                           type="text"
                           value={address}
@@ -653,9 +797,7 @@ export default function ProfilePage() {
                   <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
                     <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Recent Activity</p>
                     {activity.length === 0 ? (
-                      <p className="text-xs text-gray-400">
-                        No XP earned yet — explore a feature to get started.
-                      </p>
+                      <p className="text-xs text-gray-400">No XP earned yet — explore a feature to get started.</p>
                     ) : (
                       <div className="divide-y divide-gray-800 flex-1">
                         {activity.slice(0, 5).map((entry, i) => (
@@ -663,9 +805,7 @@ export default function ProfilePage() {
                             <div className="min-w-0">
                               <p className="text-xs font-medium text-white truncate">{titleCase(entry.description)}</p>
                               <p className="text-[11px] text-gray-500 tabular-nums">
-                                {new Date(entry.created_at).toLocaleDateString(undefined, {
-                                  month: 'short', day: 'numeric',
-                                })}
+                                {new Date(entry.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
                               </p>
                             </div>
                             <span className="bg-ev-teal-light/15 text-ev-teal-light text-xs font-semibold px-2 py-0.5 rounded-full tabular-nums flex-shrink-0">
