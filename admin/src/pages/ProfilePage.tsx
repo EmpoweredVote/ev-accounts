@@ -24,16 +24,6 @@ interface MeResponse {
   location_consent: boolean;
   connected_profile?: MeConnectedProfile;
 }
-interface Jurisdiction {
-  city: string | null;
-  state: string | null;
-  city_council_district_name: string | null;
-  congressional_district_name: string | null;
-  state_senate_district_name: string | null;
-  state_house_district_name: string | null;
-  county_name: string | null;
-  school_district_name: string | null;
-}
 interface InviteeEntry {
   status: 'claimed' | 'pending';
   code: string;
@@ -54,12 +44,6 @@ interface InviteesData {
   can_generate: boolean;
   invitees: InviteeEntry[];
 }
-interface ActivityEntry {
-  source: string;
-  amount: number;
-  description: string;
-  created_at: string;
-}
 interface FCPost {
   postId: string;
   threadId: string;
@@ -78,6 +62,16 @@ interface FCPostsResponse {
 }
 interface CompassStats { answered: number; total: number; }
 interface ReadRankStats { ranked: number; total: number; }
+interface UserRoleGrant {
+  id: string;
+  slug: string;
+  name: string;
+  granted_at: string;
+  feature_scope: string;
+  jurisdiction_geoid: string | null;
+  resource_id: string | null;
+  granted_by_display_name: string | null;
+}
 
 // ── Feature definitions ───────────────────────────────────────────────────────
 
@@ -85,10 +79,9 @@ interface Feature {
   name: string;
   description: string;
   href: string;
-  statsKey?: 'vr' | 'election' | 'readrank';
+  statsKey?: 'vr' | 'election' | 'readrank' | 'compass';
 }
 
-// Days until the next major election (computed at render from a known upcoming date)
 const NEXT_ELECTION_DATE = new Date('2026-06-03');
 const NEXT_ELECTION_LABEL = 'June 3 Primary';
 
@@ -98,35 +91,34 @@ function daysUntilElection(): number {
 
 const INFORM_FEATURES: Feature[] = [
   { name: 'Essentials', description: 'Find out who represents you and where they stand.', href: 'https://essentials.empowered.vote', statsKey: 'election' },
-  { name: 'Compass', description: 'See how your values align with politicians and candidates.', href: 'https://compass.empowered.vote' },
+  { name: 'Compass', description: 'See how your values align with politicians and candidates.', href: 'https://compass.empowered.vote', statsKey: 'compass' },
   { name: 'Treasury Tracker', description: 'Follow the money — public funds allocation and spending.', href: 'https://treasurytracker.empowered.vote' },
   { name: 'Civic Trivia Championships', description: 'Test your knowledge on where politicians really stand.', href: 'https://ctc.empowered.vote' },
   { name: 'Read & Rank', description: 'Put your opinion above party lines — a blind taste test.', href: 'https://readrank.empowered.vote', statsKey: 'readrank' },
 ];
 
-// Civic Spaces is rendered as a special tile (CivicSpacesTile) — not in this array
 const CONNECT_FEATURES: Feature[] = [
   { name: 'Validation Quests', description: 'Verify politician stances and earn Red Gems for accuracy.', href: 'https://quests.empowered.vote', statsKey: 'vr' },
   { name: 'Focused Communities', description: 'Join issue-focused civic discussions that matter to you.', href: 'https://fc.empowered.vote' },
   { name: 'Empowered Listening', description: 'Hear diverse perspectives and find common ground.', href: 'https://listening.empowered.vote' },
 ];
 
-// ── District labels ───────────────────────────────────────────────────────────
+// ── Contributor role metadata ──────────────────────────────────────────────────
 
-const DISTRICT_LABELS: { key: keyof Jurisdiction; label: string }[] = [
-  { key: 'city_council_district_name', label: 'City Council' },
-  { key: 'congressional_district_name', label: 'U.S. Congress' },
-  { key: 'state_senate_district_name', label: 'State Senate' },
-  { key: 'state_house_district_name', label: 'State House' },
-  { key: 'county_name', label: 'County' },
-  { key: 'school_district_name', label: 'School District' },
-];
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function titleCase(str: string): string {
-  return str.split('_').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-}
+const ROLE_META: Record<string, { description: string; href: string }> = {
+  compass_stance_editor: {
+    description: 'Edit and curate politician stances in the Compass.',
+    href: 'https://app.empowered.vote/contributor/compass-editor',
+  },
+  campaign_manager: {
+    description: 'Manage campaign profiles and candidate information.',
+    href: 'https://app.empowered.vote/contributor/campaign-manager',
+  },
+  essentials_data_editor: {
+    description: 'Manage representative and office data in Essentials.',
+    href: 'https://app.empowered.vote/contributor/essentials-editor',
+  },
+};
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
 
@@ -160,39 +152,6 @@ function GemPip({ count, gemStyle }: { count: number; gemStyle: React.CSSPropert
   );
 }
 
-// ── Compass visualization (political compass SVG) ─────────────────────────────
-
-function CompassVisualization() {
-  return (
-    <div className="flex-1 flex items-center justify-center py-1">
-      <svg viewBox="0 0 160 160" className="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
-        {/* Quadrant fills */}
-        <rect x="5" y="5" width="72" height="72" fill="#3B82F6" opacity="0.07" rx="2"/>
-        <rect x="83" y="5" width="72" height="72" fill="#EF4444" opacity="0.07" rx="2"/>
-        <rect x="5" y="83" width="72" height="72" fill="#10B981" opacity="0.07" rx="2"/>
-        <rect x="83" y="83" width="72" height="72" fill="#F59E0B" opacity="0.07" rx="2"/>
-        {/* Outer border */}
-        <rect x="5" y="5" width="150" height="150" fill="none" stroke="#374151" strokeWidth="1" rx="2"/>
-        {/* Axes */}
-        <line x1="80" y1="5" x2="80" y2="155" stroke="#374151" strokeWidth="1"/>
-        <line x1="5" y1="80" x2="155" y2="80" stroke="#374151" strokeWidth="1"/>
-        {/* Concentric rings */}
-        <circle cx="80" cy="80" r="25" fill="none" stroke="#1F2937" strokeWidth="0.75" strokeDasharray="3,3"/>
-        <circle cx="80" cy="80" r="50" fill="none" stroke="#1F2937" strokeWidth="0.75" strokeDasharray="3,3"/>
-        {/* Axis labels */}
-        <text x="80" y="3"  textAnchor="middle" dominantBaseline="auto"    fill="#6B7280" fontSize="7" fontWeight="500">AUTH</text>
-        <text x="80" y="160" textAnchor="middle" dominantBaseline="hanging" fill="#6B7280" fontSize="7" fontWeight="500">LIB</text>
-        <text x="3"  y="80" textAnchor="end"   dominantBaseline="middle"   fill="#6B7280" fontSize="7" fontWeight="500">LEFT</text>
-        <text x="157" y="80" textAnchor="start" dominantBaseline="middle"  fill="#6B7280" fontSize="7" fontWeight="500">RIGHT</text>
-        {/* User position dot — centered (unknown until compass opened) */}
-        <circle cx="80" cy="80" r="14" fill="#FED12E" opacity="0.12"/>
-        <circle cx="80" cy="80" r="7"  fill="#FED12E" opacity="0.35"/>
-        <circle cx="80" cy="80" r="3.5" fill="#FED12E"/>
-      </svg>
-    </div>
-  );
-}
-
 // ── Feature tile ──────────────────────────────────────────────────────────────
 
 interface FeatureTileProps {
@@ -203,15 +162,20 @@ interface FeatureTileProps {
   vr: number | null;
   vrPercent: number;
   readRankStats: ReadRankStats | null;
+  compassStats: CompassStats | null;
 }
 
-function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats }: FeatureTileProps) {
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats }: FeatureTileProps) {
   const electionDays = feature.statsKey === 'election' ? daysUntilElection() : 0;
   const showVr = feature.statsKey === 'vr' && vr !== null;
   const showElection = feature.statsKey === 'election';
   const showReadRank = feature.statsKey === 'readrank' && readRankStats !== null;
+  const showCompass = feature.statsKey === 'compass' && compassStats !== null;
   const rrPct = readRankStats && readRankStats.total > 0
     ? Math.round((readRankStats.ranked / readRankStats.total) * 100)
+    : 0;
+  const compassPct = compassStats && compassStats.total > 0
+    ? Math.round((compassStats.answered / compassStats.total) * 100)
     : 0;
 
   return (
@@ -225,8 +189,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
       <p className="text-sm font-semibold text-white leading-snug">{feature.name}</p>
       <p className="text-xs text-gray-400 leading-relaxed">{feature.description}</p>
 
-      {/* Optional stat pinned to bottom */}
-      {(showVr || showElection || showReadRank) && (
+      {(showVr || showElection || showReadRank || showCompass) && (
         <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
           {showElection && (
             <p className="text-xs text-gray-400">
@@ -256,17 +219,26 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
               </div>
             </>
           )}
+          {showCompass && compassStats && (
+            <>
+              <p className="text-xs text-gray-400">
+                <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
+                <span> / {compassStats.total} stances calibrated</span>
+              </p>
+              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+                <div className="bg-ev-yellow h-full rounded-full" style={{ width: `${compassPct}%` }} />
+              </div>
+            </>
+          )}
         </div>
       )}
     </a>
   );
 }
 
-// ── Civic Spaces tile (combined feature + location data) ──────────────────────
+// ── Civic Spaces tile ─────────────────────────────────────────────────────────
 
 interface CivicSpacesTileProps {
-  jurisdiction: Jurisdiction | null;
-  locationConsent: boolean;
   showForm: boolean;
   onToggleForm: () => void;
   address: string;
@@ -275,58 +247,28 @@ interface CivicSpacesTileProps {
   locationLoading: boolean;
   locationSuccess: boolean;
   locationError: string | null;
-  accessToken: string | null;
 }
 
 function CivicSpacesTile({
-  jurisdiction, locationConsent, showForm, onToggleForm,
-  address, onAddressChange, onSubmit, locationLoading, locationSuccess, locationError,
-  accessToken,
+  showForm, onToggleForm, address, onAddressChange, onSubmit,
+  locationLoading, locationSuccess, locationError,
 }: CivicSpacesTileProps) {
-  const href = `https://civicspaces.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`;
-  const hasDistricts = jurisdiction && DISTRICT_LABELS.some(({ key }) => jurisdiction[key]);
-
   return (
     <div className="bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-800 transition-colors">
       <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
       <p className="text-sm font-semibold text-white leading-snug">Civic Spaces</p>
       <p className="text-xs text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
 
-      {/* Location data or prompt — at the bottom */}
-      <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
-        {hasDistricts ? (
-          <>
-            {(jurisdiction.city || jurisdiction.state) && (
-              <p className="text-xs font-semibold text-white">
-                {[jurisdiction.city, jurisdiction.state].filter(Boolean).join(', ')}
-              </p>
-            )}
-            <div className="space-y-0.5">
-              {DISTRICT_LABELS.filter(({ key }) => jurisdiction && jurisdiction[key]).slice(0, 3).map(({ key, label }) => (
-                <div key={key} className="flex items-center justify-between gap-1">
-                  <span className="text-[11px] text-gray-500 flex-shrink-0">{label}</span>
-                  <span className="text-[11px] text-gray-300 text-right truncate max-w-[55%]">{jurisdiction![key]}</span>
-                </div>
-              ))}
-            </div>
-            <div className="flex items-center gap-3 pt-0.5">
-              <a href={href} target="_blank" rel="noopener noreferrer" className="text-[11px] text-ev-blue hover:underline">Open →</a>
-              <button onClick={(e) => { e.preventDefault(); onToggleForm(); }} className="text-[11px] text-gray-500 hover:text-gray-300">Update location</button>
-            </div>
-          </>
+      <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1.5">
+        {!showForm ? (
+          <button
+            onClick={(e) => { e.preventDefault(); onToggleForm(); }}
+            className="text-xs text-ev-teal-light hover:underline text-left"
+          >
+            Update location
+          </button>
         ) : (
-          <>
-            <p className="text-xs text-gray-400">
-              {locationConsent ? 'Locating your civic spaces…' : 'Add your address to find your representatives.'}
-            </p>
-            <button onClick={(e) => { e.preventDefault(); onToggleForm(); }} className="text-xs text-ev-teal-light hover:underline text-left">
-              {locationConsent ? 'Update location →' : 'Set your location →'}
-            </button>
-          </>
-        )}
-
-        {showForm && (
-          <form onSubmit={onSubmit} className="space-y-1.5 pt-1">
+          <form onSubmit={onSubmit} className="space-y-1.5">
             <input
               type="text"
               value={address}
@@ -446,17 +388,16 @@ export default function ProfilePage() {
 
   const [profile, setProfile] = useState<MeResponse | null>(null);
   const [profileError, setProfileError] = useState(false);
-  const [jurisdiction, setJurisdiction] = useState<Jurisdiction | null>(null);
   const [inviteesData, setInviteesData] = useState<InviteesData | null>(null);
   const [generatingCode, setGeneratingCode] = useState(false);
   const [newCode, setNewCode] = useState<string | null>(null);
   const [newCodeCopied, setNewCodeCopied] = useState(false);
   const [labelInput, setLabelInput] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
-  const [activity, setActivity] = useState<ActivityEntry[]>([]);
   const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
   const [readRankStats, setReadRankStats] = useState<ReadRankStats | null>(null);
-  const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts'>('profile');
+  const [roles, setRoles] = useState<UserRoleGrant[]>([]);
+  const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts' | 'contributor'>('profile');
 
   const [address, setAddress] = useState('');
   const [locationLoading, setLocationLoading] = useState(false);
@@ -468,17 +409,11 @@ export default function ProfilePage() {
     apiFetch<MeResponse>('/account/me')
       .then((data) => {
         setProfile(data);
-        if (data.location_consent) {
-          apiFetch<{ jurisdiction: Jurisdiction }>('/account/me/jurisdiction')
-            .then((j) => setJurisdiction(j.jurisdiction))
-            .catch(() => {});
-        }
         if (data.connected_profile) {
           apiFetch<InviteesData>('/invites/my-invitees').then(setInviteesData).catch(() => {});
-          apiFetch<{ activity: ActivityEntry[] }>('/account/me/activity')
-            .then((r) => setActivity(r.activity))
-            .catch(() => setActivity([]));
-          // Compass calibration count
+          apiFetch<{ roles: UserRoleGrant[] }>('/roles/me')
+            .then((r) => setRoles(r.roles))
+            .catch(() => {});
           Promise.all([
             apiFetch<unknown>('/compass/answers'),
             apiFetch<unknown>('/compass/topics'),
@@ -491,7 +426,6 @@ export default function ProfilePage() {
               : ((topicsData as { topics?: unknown[] })?.topics?.length ?? 21);
             setCompassStats({ answered, total });
           }).catch(() => {});
-          // Read & Rank stats (graceful fallback if endpoint unavailable)
           const token = useAuthStore.getState().accessToken;
           if (token && data.id) {
             fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
@@ -526,12 +460,10 @@ export default function ProfilePage() {
     setLocationSuccess(false);
     setLocationError(null);
     try {
-      const result = await apiFetch<{ jurisdiction: Jurisdiction }>('/connect/set-location', {
+      await apiFetch('/connect/set-location', {
         method: 'POST',
         body: JSON.stringify({ address: address.trim() }),
       });
-      setJurisdiction(result.jurisdiction);
-      setProfile((prev) => prev ? { ...prev, location_consent: true } : prev);
       setLocationSuccess(true);
       setAddress('');
       setShowLocationForm(false);
@@ -576,7 +508,7 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
 
-  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats };
 
   return (
     <div className="min-h-screen bg-gray-950 transition-colors duration-200">
@@ -612,8 +544,8 @@ export default function ProfilePage() {
           {/* Tab bar — tabs left, Connected Account pill right */}
           <div className="flex items-center justify-between border-b border-gray-800 mb-5">
             <nav className="flex gap-1">
-              {(['profile', 'referrals', 'posts'] as const).map((tab) => {
-                if ((tab === 'referrals' || tab === 'posts') && !cp) return null;
+              {(['profile', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
+                if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
                 return (
                   <button
                     key={tab}
@@ -624,20 +556,11 @@ export default function ProfilePage() {
                         : 'border-transparent text-gray-500 hover:text-gray-300'
                     }`}
                   >
-                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : 'Profile'}
+                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : 'Profile'}
                   </button>
                 );
               })}
-              <a
-                href={`https://app.empowered.vote/contributor${accessToken ? `#access_token=${accessToken}` : ''}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2.5 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-300 -mb-px transition-colors"
-              >
-                Contributor ↗
-              </a>
             </nav>
-            {/* Connected Account pill — right side of tab bar */}
             <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full flex-shrink-0 mb-px">
               Connected Account
             </span>
@@ -647,28 +570,31 @@ export default function ProfilePage() {
           {activeTab === 'profile' && (
             <div className="space-y-3">
 
-              {/* Header card — compact, left-aligned, ~1/4 page width */}
-              <div className="w-full md:w-72 bg-gray-900 rounded-2xl border border-gray-800 p-4">
-                <h1 className="text-2xl font-bold text-white mb-2">{displayName}</h1>
-                {cp && xp ? (
-                  <>
-                    <div className="flex items-center justify-between">
+              {/* Header card — width of two feature tiles, height of a feature tile */}
+              <div className="w-full md:w-[30.5rem] bg-gray-900 rounded-2xl border border-gray-800 p-4 min-h-[13rem] flex flex-col justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-white mb-2">{displayName}</h1>
+                  {cp && xp ? (
+                    <>
                       <div className="flex items-center gap-2">
                         <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
                         <span className="text-gray-300 text-sm tabular-nums">{xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP</span>
                       </div>
-                    </div>
-                    {/* Gem pips below the XP row */}
-                    <div className="flex items-center gap-3 mt-2">
-                      <GemPip count={cp.gems.yellow} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
-                      <GemPip count={cp.gems.blue} gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
-                      <GemPip count={cp.gems.red} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
-                    </div>
-                    <div className="mt-3 h-1.5 rounded-full bg-gray-800 overflow-hidden">
+                      <div className="flex items-center gap-3 mt-2">
+                        <GemPip count={cp.gems.yellow} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
+                        <GemPip count={cp.gems.blue} gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
+                        <GemPip count={cp.gems.red} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
+                      </div>
+                    </>
+                  ) : null}
+                </div>
+                {cp && xp ? (
+                  <div>
+                    <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
                       <div className="bg-ev-blue h-full rounded-full transition-all duration-700" style={{ width: `${xpPercent}%`, boxShadow: '0 0 10px rgba(59,130,246,0.6)' }} />
                     </div>
                     <p className="text-xs text-gray-500 mt-1.5 tabular-nums">{xp.total.toLocaleString()} total XP earned</p>
-                  </>
+                  </div>
                 ) : null}
               </div>
 
@@ -683,7 +609,6 @@ export default function ProfilePage() {
                       <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
                       <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
                     </div>
-                    {/* Fixed 15rem columns — tiles don't stretch, empty space breathes on right */}
                     <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
                       {INFORM_FEATURES.map((f) => (
                         <FeatureTile
@@ -698,14 +623,13 @@ export default function ProfilePage() {
                     </div>
                   </div>
 
-                  {/* Connect — Civic Spaces rendered as special combined tile */}
+                  {/* Connect — Civic Spaces rendered as special tile */}
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                       <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
                     </div>
                     <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
-                      {/* Validation Quests */}
                       <FeatureTile
                         feature={CONNECT_FEATURES[0]}
                         href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
@@ -713,10 +637,7 @@ export default function ProfilePage() {
                         borderHover="hover:border-ev-blue/50"
                         {...sharedTileProps}
                       />
-                      {/* Civic Spaces — combined feature + location data */}
                       <CivicSpacesTile
-                        jurisdiction={jurisdiction}
-                        locationConsent={profile.location_consent}
                         showForm={showLocationForm}
                         onToggleForm={() => setShowLocationForm((v) => !v)}
                         address={address}
@@ -725,9 +646,7 @@ export default function ProfilePage() {
                         locationLoading={locationLoading}
                         locationSuccess={locationSuccess}
                         locationError={locationError}
-                        accessToken={accessToken}
                       />
-                      {/* Focused Communities + Empowered Listening */}
                       {CONNECT_FEATURES.slice(1).map((f) => (
                         <FeatureTile
                           key={f.name}
@@ -740,57 +659,6 @@ export default function ProfilePage() {
                       ))}
                     </div>
                   </div>
-                </div>
-              )}
-
-              {/* Bottom row: Compass visualization | Recent Activity */}
-              {cp && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-
-                  {/* Compass card — shows political compass SVG */}
-                  <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Compass</p>
-                    {compassStats && (
-                      <p className="text-xs text-gray-400">
-                        <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
-                        {' / '}{compassStats.total} stances calibrated
-                      </p>
-                    )}
-                    <CompassVisualization />
-                    <a
-                      href={`https://compass.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-ev-yellow hover:underline"
-                    >
-                      Open Compass &rarr;
-                    </a>
-                  </div>
-
-                  {/* Recent Activity */}
-                  <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Recent Activity</p>
-                    {activity.length === 0 ? (
-                      <p className="text-xs text-gray-400">No XP earned yet — explore a feature to get started.</p>
-                    ) : (
-                      <div className="divide-y divide-gray-800 flex-1">
-                        {activity.slice(0, 5).map((entry, i) => (
-                          <div key={i} className="flex items-center justify-between py-1.5 first:pt-0 gap-2">
-                            <div className="min-w-0">
-                              <p className="text-xs font-medium text-white truncate">{titleCase(entry.description)}</p>
-                              <p className="text-[11px] text-gray-500 tabular-nums">
-                                {new Date(entry.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
-                              </p>
-                            </div>
-                            <span className="bg-ev-teal-light/15 text-ev-teal-light text-xs font-semibold px-2 py-0.5 rounded-full tabular-nums flex-shrink-0">
-                              +{entry.amount}
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
                 </div>
               )}
 
@@ -895,6 +763,61 @@ export default function ProfilePage() {
           {/* ── POSTS TAB ────────────────────────────────────────────────────── */}
           {activeTab === 'posts' && cp && (
             <div className="max-w-2xl"><PostHistory /></div>
+          )}
+
+          {/* ── CONTRIBUTOR TAB ──────────────────────────────────────────────── */}
+          {activeTab === 'contributor' && cp && (
+            <div className="max-w-2xl space-y-4">
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5">
+                <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-4">Contributor Roles</p>
+                {roles.length === 0 ? (
+                  <div className="space-y-1">
+                    <p className="text-sm text-gray-400">No contributor roles assigned yet.</p>
+                    <p className="text-xs text-gray-600">Roles are granted by the Empowered Vote team.</p>
+                  </div>
+                ) : (
+                  <div className="divide-y divide-gray-800">
+                    {roles.map((role) => {
+                      const meta = ROLE_META[role.slug];
+                      const toolHref = meta
+                        ? (accessToken ? `${meta.href}#access_token=${accessToken}` : meta.href)
+                        : null;
+                      return (
+                        <div key={role.id} className="py-4 first:pt-0 last:pb-0 space-y-1">
+                          <div className="flex items-start justify-between gap-3">
+                            <div className="space-y-0.5 min-w-0">
+                              <p className="text-sm font-semibold text-white">{role.name}</p>
+                              <p className="text-xs text-gray-400">
+                                {meta?.description ?? role.feature_scope}
+                              </p>
+                              {role.jurisdiction_geoid && (
+                                <p className="text-[11px] text-gray-600">
+                                  Jurisdiction: {role.jurisdiction_geoid}
+                                </p>
+                              )}
+                              <p className="text-[11px] text-gray-600 tabular-nums">
+                                Granted {new Date(role.granted_at).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}
+                                {role.granted_by_display_name && ` by ${role.granted_by_display_name}`}
+                              </p>
+                            </div>
+                            {toolHref && (
+                              <a
+                                href={toolHref}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-shrink-0 text-xs text-ev-teal-light hover:text-white border border-ev-teal-light/30 hover:border-ev-teal-light px-3 py-1.5 rounded-lg transition-colors whitespace-nowrap"
+                              >
+                                Open tool →
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+            </div>
           )}
 
         </div>
