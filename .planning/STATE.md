@@ -20,9 +20,10 @@ Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verifie
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
 Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 closed (63-01); PROF-01–06 completed in admin/src/pages/ProfilePage.tsx (login.empowered.vote/profile, built 2026-04-26). 63-02 closed as superseded — duplicate app/src profile page not needed; canonical profile is login.empowered.vote/profile.
 Phase 64–65 (InformLanding, Dashboard): pending.
-Phase 66–68 (Inform Account Tier): roadmap complete, ready to plan.
+Phase 66 (Inform Profiles Backend Foundation): in progress — 66-01 complete (IBAK-01, IBAK-02, IBAK-06 delivered).
+Phase 67–68 (Inform Account Tier): pending.
 
-Last activity: 2026-04-27 — Phase 63 closed; moving to Phase 66 (Inform Profiles Backend Foundation).
+Last activity: 2026-04-27 — 66-01 complete: inform.inform_profiles table live, trigger active, backfill done (11/11 users), signup_with_invite gem transfer deployed.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -30,7 +31,7 @@ Last activity: 2026-04-27 — Phase 63 closed; moving to Phase 66 (Inform Profil
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 📋] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 🔄 Phase 64 ░ Phase 65 ░ Phase 66 ░ Phase 67 ░ Phase 68 ░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 📋] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 🔄 Phase 64 ░ Phase 65 ░ Phase 66 🔄(1/3) Phase 67 ░ Phase 68 ░
 
 ## Performance Metrics
 
@@ -51,6 +52,13 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.1 DB Patterns (from 66-01)
+
+- **inform.inform_profiles auto-creation**: `trg_create_inform_profile` AFTER INSERT trigger on `public.users` calls `inform.handle_new_user()` (SECURITY DEFINER, `SET search_path = ''`) — same pattern as connect/empower tier auto-profile creation.
+- **Yellow gem transfer on Connect**: `signup_with_invite` does `SELECT yellow_gem_balance FOR UPDATE` on inform_profiles (prevents concurrent award race), zeros the balance, then seeds `connected_profiles.gem_balance_yellow = COALESCE(v_inform_balance, 0)` — atomically within the RPC transaction.
+- **IF FOUND guard on zero-out**: inform_profiles UPDATE only fires when row exists — handles users created before trigger deployment.
+- **inform schema NOT in PostgREST**: all reads/writes to `inform.*` must use `pool.query()` (direct postgres), never PostgREST/supabaseAdmin.schema('inform').
 
 ### v2.0 Copy Decisions (from Phase 61)
 
@@ -175,6 +183,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-27T00:00:00Z
-Stopped at: v2.1 roadmap created — phases 66–68 written to ROADMAP.md, STATE.md updated with v2.1 coverage table.
+Last session: 2026-04-27T21:12:00Z
+Stopped at: Completed 66-01-PLAN.md — inform.inform_profiles table + trigger + backfill + signup_with_invite gem transfer deployed to production.
 Resume file: None
