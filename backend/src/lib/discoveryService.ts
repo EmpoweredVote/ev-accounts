@@ -492,13 +492,15 @@ export async function runDiscoveryForJurisdiction(
               candidates_found = $2,
               candidates_new = $3,
               candidates_withdrawn = $4,
-              raw_output = $5::jsonb
+              candidates_auto_upserted = $5,
+              raw_output = $6::jsonb
         WHERE id = $1`,
       [
         runId,
         agentResult.candidates.length,
         candidatesStaged,
         withdrawalsStaged,
+        autoUpserted,
         JSON.stringify({
           model: agentResult.model,
           input_tokens: agentResult.inputTokens,
