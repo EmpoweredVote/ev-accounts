@@ -143,11 +143,14 @@ function MoonIcon() {
 
 // ── Gem pip (small, inline in header) ────────────────────────────────────────
 
-function GemPip({ count, gemStyle }: { count: number; gemStyle: React.CSSProperties }) {
+function GemPip({ count, gemStyle, tooltip }: { count: number; gemStyle: React.CSSProperties; tooltip: string }) {
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="relative group flex items-center gap-1.5">
       <div className="w-5 h-5 flex-shrink-0" style={gemStyle} />
       <span className="text-white text-sm font-semibold tabular-nums">{count.toLocaleString()}</span>
+      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 bg-gray-800 border border-gray-700 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
+        {tooltip}
+      </div>
     </div>
   );
 }
@@ -390,8 +393,6 @@ export default function ProfilePage() {
   const [profileError, setProfileError] = useState(false);
   const [inviteesData, setInviteesData] = useState<InviteesData | null>(null);
   const [generatingCode, setGeneratingCode] = useState(false);
-  const [newCode, setNewCode] = useState<string | null>(null);
-  const [newCodeCopied, setNewCodeCopied] = useState(false);
   const [labelInput, setLabelInput] = useState('');
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
@@ -476,24 +477,17 @@ export default function ProfilePage() {
 
   const handleGenerate = useCallback(async () => {
     setGeneratingCode(true);
-    setNewCode(null);
     try {
-      const result = await apiFetch<{ code: string; active_count: number; cap: number }>(
+      await apiFetch<{ code: string; active_count: number; cap: number }>(
         '/invites/generate',
         { method: 'POST', body: JSON.stringify({ label: labelInput.trim() || null }) },
       );
-      setNewCode(result.code);
       setLabelInput('');
       const updated = await apiFetch<InviteesData>('/invites/my-invitees');
       setInviteesData(updated);
     } catch { /* CAP_REACHED or rate limit */ }
     finally { setGeneratingCode(false); }
   }, [labelInput]);
-
-  const copyNewCode = useCallback(() => {
-    if (!newCode) return;
-    navigator.clipboard.writeText(newCode).then(() => { setNewCodeCopied(true); setTimeout(() => setNewCodeCopied(false), 2000); }).catch(() => {});
-  }, [newCode]);
 
   const copyPendingCode = useCallback((code: string) => {
     navigator.clipboard.writeText(code).then(() => { setCopiedCode(code); setTimeout(() => setCopiedCode(null), 2000); }).catch(() => {});
@@ -573,19 +567,16 @@ export default function ProfilePage() {
               {/* Header card — width of two feature tiles, height of a feature tile */}
               <div className="w-full md:w-[30.5rem] bg-gray-900 rounded-2xl border border-gray-800 p-4 min-h-[13rem] flex flex-col justify-between">
                 <div>
-                  <h1 className="text-3xl font-bold text-white mb-2">{displayName}</h1>
+                  <h1 className="text-3xl font-bold text-white mb-3">{displayName}</h1>
                   {cp && xp ? (
-                    <>
-                      <div className="flex items-center gap-2">
-                        <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
-                        <span className="text-gray-300 text-sm tabular-nums">{xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP</span>
+                    <div className="flex items-center justify-between">
+                      <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
+                      <div className="flex items-center gap-3">
+                        <GemPip count={cp.gems.yellow} tooltip="Yellow Gems validate facts." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
+                        <GemPip count={cp.gems.blue} tooltip="Blue Gems to vote your values." gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
+                        <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
                       </div>
-                      <div className="flex items-center gap-3 mt-2">
-                        <GemPip count={cp.gems.yellow} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
-                        <GemPip count={cp.gems.blue} gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
-                        <GemPip count={cp.gems.red} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
-                      </div>
-                    </>
+                    </div>
                   ) : null}
                 </div>
                 {cp && xp ? (
@@ -593,7 +584,9 @@ export default function ProfilePage() {
                     <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
                       <div className="bg-ev-blue h-full rounded-full transition-all duration-700" style={{ width: `${xpPercent}%`, boxShadow: '0 0 10px rgba(59,130,246,0.6)' }} />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1.5 tabular-nums">{xp.total.toLocaleString()} total XP earned</p>
+                    <p className="text-xs text-gray-400 mt-1.5 tabular-nums text-right">
+                      {xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP
+                    </p>
                   </div>
                 ) : null}
               </div>
@@ -696,24 +689,20 @@ export default function ProfilePage() {
                     ) : (
                       <p className="text-xs text-gray-500 leading-relaxed">All invite slots filled. Level up to earn more, or wait for an invitee to reach level 2.</p>
                     )}
-                    {newCode && (
-                      <button onClick={copyNewCode} className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors">
-                        <span className="font-mono text-lg font-bold tracking-widest text-white">{newCode}</span>
-                        <span className="text-xs font-medium text-ev-teal-light">{newCodeCopied ? 'Copied!' : 'Copy'}</span>
-                      </button>
-                    )}
                     {inviteesData.invitees.some((i) => i.status === 'pending') && (
                       <div className="border-t border-gray-800 -mx-5 px-5 pt-4">
                         <p className="text-xs font-medium text-gray-400 mb-2">Pending Codes</p>
                         <div className="space-y-2">
                           {inviteesData.invitees.filter((i) => i.status === 'pending').map((entry) => (
-                            <div key={entry.code}>
-                              {entry.label && <p className="text-xs text-gray-400 mb-1 px-1">{entry.label}</p>}
-                              <button onClick={() => copyPendingCode(entry.code)} className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors">
-                                <span className="font-mono text-base font-bold tracking-widest text-white">{entry.code}</span>
-                                <span className="text-xs font-medium text-ev-teal-light">{copiedCode === entry.code ? 'Copied!' : 'Copy'}</span>
-                              </button>
-                            </div>
+                            <button key={entry.code} onClick={() => copyPendingCode(entry.code)} className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors">
+                              <div className="flex items-center gap-3 min-w-0">
+                                {entry.label && (
+                                  <span className="text-sm text-gray-300 truncate">{entry.label}</span>
+                                )}
+                                <span className="font-mono text-base font-bold tracking-widest text-white flex-shrink-0">{entry.code}</span>
+                              </div>
+                              <span className="text-xs font-medium text-ev-teal-light ml-3 flex-shrink-0">{copiedCode === entry.code ? 'Copied!' : 'Copy'}</span>
+                            </button>
                           ))}
                         </div>
                       </div>
