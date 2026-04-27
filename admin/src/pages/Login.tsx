@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
+import InformConstraintsModal from '../components/InformConstraintsModal';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -14,14 +15,20 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
 
-  // Preserve ?redirect= when linking to /signup
+  // Preserve ?redirect= when linking to /signup (Connected path)
   const signupHref = validRedirect
     ? `/signup?redirect=${encodeURIComponent(validRedirect)}`
     : '/signup';
+
+  // Preserve ?redirect= when linking to /signup/inform (Inform path)
+  const informSignupHref = validRedirect
+    ? `/signup/inform?redirect=${encodeURIComponent(validRedirect)}`
+    : '/signup/inform';
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -141,16 +148,38 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-500 dark:text-gray-500">
-          Don't have an account?{' '}
-          <Link to={signupHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
-            Create one
-          </Link>
-        </p>
+        <div className="space-y-3 pt-2">
+          <button
+            type="button"
+            onClick={() => setSignupModalOpen(true)}
+            className="w-full py-3 px-4 bg-ev-yellow hover:bg-ev-yellow/90 text-ev-black font-semibold rounded-xl text-sm transition-colors"
+          >
+            Create an Account
+          </button>
+          <p className="text-center text-xs text-gray-500 dark:text-gray-500">
+            Have an invite code?{' '}
+            <Link to={signupHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
+              Create a Connected Account
+            </Link>
+          </p>
+        </div>
         <p className="text-center text-xs text-gray-400 dark:text-gray-600 mt-2">
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
         </p>
       </div>
+
+      <InformConstraintsModal
+        open={signupModalOpen}
+        onClose={() => setSignupModalOpen(false)}
+        onContinue={() => {
+          setSignupModalOpen(false);
+          navigate(informSignupHref);
+        }}
+        onUseInviteCode={() => {
+          setSignupModalOpen(false);
+          navigate(signupHref);
+        }}
+      />
     </div>
   );
 }
