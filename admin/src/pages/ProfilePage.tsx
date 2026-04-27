@@ -242,6 +242,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
 // ── Civic Spaces tile ─────────────────────────────────────────────────────────
 
 interface CivicSpacesTileProps {
+  accessToken: string | null;
   showForm: boolean;
   onToggleForm: () => void;
   address: string;
@@ -253,16 +254,19 @@ interface CivicSpacesTileProps {
 }
 
 function CivicSpacesTile({
-  showForm, onToggleForm, address, onAddressChange, onSubmit,
+  accessToken, showForm, onToggleForm, address, onAddressChange, onSubmit,
   locationLoading, locationSuccess, locationError,
 }: CivicSpacesTileProps) {
+  const href = `https://civicspaces.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`;
   return (
-    <div className="bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-800 transition-colors">
-      <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
-      <p className="text-sm font-semibold text-white leading-snug">Civic Spaces</p>
-      <p className="text-xs text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
+    <div className="bg-gray-800/60 rounded-xl border border-gray-700 flex flex-col min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-800 transition-colors overflow-hidden">
+      <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-1.5 p-3 flex-1">
+        <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
+        <p className="text-sm font-semibold text-white leading-snug">Civic Spaces</p>
+        <p className="text-xs text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
+      </a>
 
-      <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1.5">
+      <div className="px-3 pb-3 pt-2 border-t border-gray-700/60 space-y-1.5">
         {!showForm ? (
           <button
             onClick={(e) => { e.preventDefault(); onToggleForm(); }}
@@ -631,6 +635,7 @@ export default function ProfilePage() {
                         {...sharedTileProps}
                       />
                       <CivicSpacesTile
+                        accessToken={accessToken}
                         showForm={showLocationForm}
                         onToggleForm={() => setShowLocationForm((v) => !v)}
                         address={address}
