@@ -13,6 +13,7 @@
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
 - 📋 **v2.0 Civic Account Experience** — Phases 60–65 (planned 2026-04-25)
+- 📋 **v2.1 Inform Account Tier** — Phases 66–68 (planned 2026-04-27)
 
 ## Phases
 
@@ -680,6 +681,86 @@ Plans:
 
 ---
 
+### v2.1 Inform Account Tier (Phases 66–68)
+
+---
+
+#### Phase 66: Inform Profiles Backend Foundation
+
+**Goal:** The `inform.inform_profiles` table exists and the gem-routing, location-hint, and balance-transfer contracts are enforced at the database and API layers — every subsequent phase can rely on this schema and these endpoints being correct.
+
+**Dependencies:** None (all v2.1 phases depend on this phase; Phase 68 also depends on Phase 67 for the signup flow that creates inform_profiles rows)
+
+**Requirements:** IBAK-01, IBAK-02, IBAK-03, IBAK-04, IBAK-05, IBAK-06
+
+**Plans:** TBD
+
+Plans:
+- [ ] 66-01-PLAN.md — Migration: `inform.inform_profiles` table + DB trigger auto-creating row on `public.users` INSERT
+- [ ] 66-02-PLAN.md — API updates: `GET /api/account/me` returns `inform_profile` object; `POST /api/gems/award` routes yellow gems to inform_profiles for Inform-tier users, 422 for blue/red
+- [ ] 66-03-PLAN.md — `PATCH /api/account/location-hint` endpoint + `signup_with_invite` RPC updated to transfer yellow_gem_balance atomically on Connect
+
+**Success Criteria:**
+
+1. `inform.inform_profiles` exists with a row for every `public.users` entry — including rows for users who signed up before this migration ran (backfilled by the trigger or a one-time backfill script).
+2. `GET /api/account/me` includes `inform_profile: { yellow_gem_balance, last_essentials_location }` in the response body for all authenticated users regardless of tier.
+3. `POST /api/gems/award` with `gem_type: "yellow"` and an Inform-tier recipient increments `inform_profiles.yellow_gem_balance`; the same call with `gem_type: "blue"` or `"red"` returns HTTP 422.
+4. `PATCH /api/account/location-hint` stores a JSON location payload in `inform_profiles.last_essentials_location`; requires auth; returns 403 for Connected-tier users (endpoint is Inform-only).
+5. When a user completes Connected signup via `signup_with_invite`, their `inform_profiles.yellow_gem_balance` is atomically transferred to `connected_profiles.gem_balance_yellow` and the inform balance is set to 0 — no gems are lost or duplicated.
+
+---
+
+#### Phase 67: Login Hub + Inform Signup Flow
+
+**Goal:** Any visitor to `login.empowered.vote` can create an Inform Account in under a minute — they see the login page with a clear "Create an Account" CTA, learn what Inform means before committing, and complete a three-field signup form that needs no invite code.
+
+**Dependencies:** Phase 66 (inform_profiles DB trigger must exist so signup creates the row automatically)
+
+**Requirements:** LHUB-01, LHUB-02, ISUP-01, ISUP-02, ISUP-03, ISUP-04
+
+**Plans:** TBD
+
+Plans:
+- [ ] 67-01-PLAN.md — LoginPage: add "Create an Account" CTA; build Inform constraints modal (what Inform can/cannot do, yellow gem note)
+- [ ] 67-02-PLAN.md — Inform signup form: display name + email + password fields (no invite code); yellow "Check your email" screen; post-confirm redirect to `/profile`
+- [ ] 67-03-PLAN.md — Backend: new `signup_inform` Supabase RPC (or standard Supabase signUp with display_name stored on inform_profiles); Zod validation; migration if needed
+
+**Success Criteria:**
+
+1. An unauthenticated visitor to `login.empowered.vote` sees the login form and a visible "Create an Account" CTA without scrolling.
+2. Clicking "Create an Account" opens a modal that accurately describes Inform Account capabilities — full Inform feature access, observable Connected/Empowered features (read-only), yellow gems only — with an "I have an invite code" link for users who want a Connected Account instead.
+3. The signup form following the modal collects exactly three fields — display name, email, and password — with no invite code field present anywhere on the form.
+4. After submission, a "Check your email" screen renders with yellow Inform Account theming (yellow accent color, "Inform Account" label) and shows the user's email address.
+5. After email confirmation, the user is redirected to `login.empowered.vote/profile` and their session reflects an Inform-tier account (no `connected_profiles` row exists).
+
+---
+
+#### Phase 68: Yellow Inform Profile Page + Connected Explainer
+
+**Goal:** An Inform user's profile page at `login.empowered.vote/profile` feels complete and personal — yellow-themed, showing their compass calibration and Essentials location, with Connected/Empowered tiles visible but clearly locked, and an invitational (never pressured) path toward Connected when they are ready.
+
+**Dependencies:** Phase 66 (inform_profile data on /me); Phase 67 (Inform signup creates the account that lands here)
+
+**Requirements:** IPRO-01, IPRO-02, IPRO-03, IPRO-04, IPRO-05, IPRO-06, CEXP-01, CEXP-02, CEXP-03
+
+**Plans:** TBD
+
+Plans:
+- [ ] 68-01-PLAN.md — Tier-aware profile page: detect Inform vs. Connected/Empowered tier; apply yellow color system to header, badges, and tiles for Inform users; preserve existing teal/default for Connected/Empowered
+- [ ] 68-02-PLAN.md — Inform profile header + feature tiles: display name, "Inform Account" yellow pill, yellow gem balance; Compass tile (calibration count); Essentials tile (last location or explore prompt); locked Connected/Empowered tiles
+- [ ] 68-03-PLAN.md — Connected Account explainer: "Inform Account" pill opens dialog; dialog explains Connected Accounts + invite codes in Alpha; "I have an invite code" CTA links to Connected signup; subtle "Connect your account" section at page bottom
+
+**Success Criteria:**
+
+1. An Inform-tier user viewing `login.empowered.vote/profile` sees a yellow-themed page — the "Inform Account" badge, gem display, and feature tile accents all use the `ev-yellow` (`#FED12E`) color token; the structural layout (wide desktop borders, tile grid) matches the existing Connected profile.
+2. The profile header displays the user's display name, a yellow "Inform Account" pill, and their current yellow gem balance; clicking the pill opens the Connected Account explainer dialog.
+3. The Compass tile shows the user's calibration count (e.g., "12 topics calibrated") or a prompt to start if count is 0; the Essentials tile shows the last searched location from `inform_profiles.last_essentials_location` or a "Explore Essentials" prompt if null.
+4. Connected and Empowered feature tiles are rendered in an observable locked state — the tile names and icons are visible, a lock indicator is present, but the tiles are not interactive; tiles are not hidden.
+5. The explainer dialog accurately describes what Connected Accounts are, how identity verification works in Alpha (invite network), and includes a clear "I have an invite code" CTA that links to the existing Connected signup flow.
+6. A subtle "Connect your account" section appears at the page bottom with minimal visual prominence and copy framed as "when you're ready" — no urgency language, no repeated CTAs above the fold.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -749,3 +830,6 @@ Plans:
 | 63. Profile Page + Activity Feed | v2.0 | 0/2 | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
+| 66. Inform Profiles Backend Foundation | v2.1 | 0/3 | Pending | — |
+| 67. Login Hub + Inform Signup Flow | v2.1 | 0/3 | Pending | — |
+| 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 0/3 | Pending | — |

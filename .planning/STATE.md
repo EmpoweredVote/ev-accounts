@@ -10,19 +10,19 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**v2.0 Phase 63 in progress — 1/? plans done. v2.1 roadmap being defined.**
+**v2.0 Phase 63 in progress — 1/? plans done. v2.1 roadmap created 2026-04-27.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–62 shipped. Phase 63 in progress.
-v2.1 roadmap: being created 2026-04-27. 3 phases (66–68), 21 requirements.
+v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. All requirements mapped.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
 Phase 63 (Profile Page + Activity Feed) in progress: 63-01 complete (API-01 + FIX-01 closed).
 Phase 64–65 (InformLanding, Dashboard): pending.
-Phase 66–68 (Inform Account Tier): defining now.
+Phase 66–68 (Inform Account Tier): roadmap complete, ready to plan.
 
-Last activity: 2026-04-27 — v2.1 milestone start; Inform Account Tier requirements being defined.
+Last activity: 2026-04-27 — v2.1 roadmap created; phases 66–68 defined with success criteria.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -30,7 +30,7 @@ Last activity: 2026-04-27 — v2.1 milestone start; Inform Account Tier requirem
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 🔄 Phase 64 ░ Phase 65 ░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 📋] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 🔄 Phase 64 ░ Phase 65 ░ Phase 66 ░ Phase 67 ░ Phase 68 ░
 
 ## Performance Metrics
 
@@ -39,6 +39,12 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 - Requirements: 34 (DSGN-01–06, AUTH-01–06, ONBD-01–05, PROF-01–06, API-01, FIX-01, LAND-01–05, DASH-01–04)
 - Plans complete: 0
 - Plans total: TBD (determined per phase during planning)
+
+**v2.1 Scope**
+- Phases: 3 (66–68)
+- Requirements: 21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
+- Plans complete: 0
+- Plans total: ~9 (3 plans per phase, TBD)
 
 ## Accumulated Context
 
@@ -116,6 +122,23 @@ Phase 60 (Design Foundation)
 | 65 — Dashboard Redesign | DASH-01, DASH-02, DASH-03, DASH-04 | 4 |
 | **Total** | | **34 / 34** ✓ |
 
+### v2.1 Requirement Coverage
+
+| Phase | Requirements | Count |
+|-------|-------------|-------|
+| 66 — Inform Profiles Backend Foundation | IBAK-01, IBAK-02, IBAK-03, IBAK-04, IBAK-05, IBAK-06 | 6 |
+| 67 — Login Hub + Inform Signup Flow | LHUB-01, LHUB-02, ISUP-01, ISUP-02, ISUP-03, ISUP-04 | 6 |
+| 68 — Yellow Inform Profile Page + Connected Explainer | IPRO-01, IPRO-02, IPRO-03, IPRO-04, IPRO-05, IPRO-06, CEXP-01, CEXP-02, CEXP-03 | 9 |
+| **Total** | | **21 / 21** ✓ |
+
+### v2.1 Phase Dependencies
+
+```
+Phase 66 (Inform Profiles Backend Foundation)
+  └── Phase 67 (Login Hub + Inform Signup Flow) — needs DB trigger so signup auto-creates inform_profiles row
+  └── Phase 68 (Yellow Inform Profile Page)     — needs /me inform_profile object (Phase 66) + signup creates the account (Phase 67)
+```
+
 ### Open Blockers
 
 None for v2.0 start.
@@ -152,6 +175,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-26T15:18:51Z
-Stopped at: Completed 63-01-PLAN.md (GET /me/activity endpoint + FIX-01 closed). Phase 63 in progress.
+Last session: 2026-04-27T00:00:00Z
+Stopped at: v2.1 roadmap created — phases 66–68 written to ROADMAP.md, STATE.md updated with v2.1 coverage table.
 Resume file: None
