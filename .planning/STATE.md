@@ -10,19 +10,19 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**v2.0 Phase 63 in progress — 1/? plans done. v2.1 roadmap created 2026-04-27.**
+**v2.0 Phase 63 SHIPPED. Next: Phase 66 (Inform Account Tier).**
 
-v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–62 shipped. Phase 63 in progress.
+v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. All requirements mapped.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
-Phase 63 (Profile Page + Activity Feed) in progress: 63-01 complete (API-01 + FIX-01 closed).
+Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 closed (63-01); PROF-01–06 completed in admin/src/pages/ProfilePage.tsx (login.empowered.vote/profile, built 2026-04-26). 63-02 closed as superseded — duplicate app/src profile page not needed; canonical profile is login.empowered.vote/profile.
 Phase 64–65 (InformLanding, Dashboard): pending.
 Phase 66–68 (Inform Account Tier): roadmap complete, ready to plan.
 
-Last activity: 2026-04-27 — v2.1 roadmap created; phases 66–68 defined with success criteria.
+Last activity: 2026-04-27 — Phase 63 closed; moving to Phase 66 (Inform Profiles Backend Foundation).
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
