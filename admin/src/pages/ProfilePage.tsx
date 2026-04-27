@@ -76,10 +76,8 @@ interface FCPostsResponse {
   data: FCPost[];
   meta: { cursor: string | null; hasMore: boolean };
 }
-interface CompassStats {
-  answered: number;
-  total: number;
-}
+interface CompassStats { answered: number; total: number; }
+interface ReadRankStats { ranked: number; total: number; }
 
 // ── Feature definitions ───────────────────────────────────────────────────────
 
@@ -87,20 +85,28 @@ interface Feature {
   name: string;
   description: string;
   href: string;
-  statsKey?: 'compass' | 'vr';
+  statsKey?: 'vr' | 'election' | 'readrank';
+}
+
+// Days until the next major election (computed at render from a known upcoming date)
+const NEXT_ELECTION_DATE = new Date('2026-06-03');
+const NEXT_ELECTION_LABEL = 'June 3 Primary';
+
+function daysUntilElection(): number {
+  return Math.max(0, Math.ceil((NEXT_ELECTION_DATE.getTime() - Date.now()) / 86400000));
 }
 
 const INFORM_FEATURES: Feature[] = [
-  { name: 'Essentials', description: 'Find out who represents you and where they stand.', href: 'https://essentials.empowered.vote' },
-  { name: 'Empowered Compass', description: 'See how your values align with politicians and candidates.', href: 'https://compass.empowered.vote', statsKey: 'compass' },
+  { name: 'Essentials', description: 'Find out who represents you and where they stand.', href: 'https://essentials.empowered.vote', statsKey: 'election' },
+  { name: 'Compass', description: 'See how your values align with politicians and candidates.', href: 'https://compass.empowered.vote' },
   { name: 'Treasury Tracker', description: 'Follow the money — public funds allocation and spending.', href: 'https://treasurytracker.empowered.vote' },
   { name: 'Civic Trivia Championships', description: 'Test your knowledge on where politicians really stand.', href: 'https://ctc.empowered.vote' },
-  { name: 'Read & Rank', description: 'Put your opinion above party lines — a blind taste test.', href: 'https://readrank.empowered.vote' },
+  { name: 'Read & Rank', description: 'Put your opinion above party lines — a blind taste test.', href: 'https://readrank.empowered.vote', statsKey: 'readrank' },
 ];
 
+// Civic Spaces is rendered as a special tile (CivicSpacesTile) — not in this array
 const CONNECT_FEATURES: Feature[] = [
   { name: 'Validation Quests', description: 'Verify politician stances and earn Red Gems for accuracy.', href: 'https://quests.empowered.vote', statsKey: 'vr' },
-  { name: 'Civic Spaces', description: 'Engage with your local civic community online.', href: 'https://civicspaces.empowered.vote' },
   { name: 'Focused Communities', description: 'Join issue-focused civic discussions that matter to you.', href: 'https://fc.empowered.vote' },
   { name: 'Empowered Listening', description: 'Hear diverse perspectives and find common ground.', href: 'https://listening.empowered.vote' },
 ];
@@ -154,28 +160,59 @@ function GemPip({ count, gemStyle }: { count: number; gemStyle: React.CSSPropert
   );
 }
 
+// ── Compass visualization (political compass SVG) ─────────────────────────────
+
+function CompassVisualization() {
+  return (
+    <div className="flex-1 flex items-center justify-center py-1">
+      <svg viewBox="0 0 160 160" className="w-32 h-32" xmlns="http://www.w3.org/2000/svg">
+        {/* Quadrant fills */}
+        <rect x="5" y="5" width="72" height="72" fill="#3B82F6" opacity="0.07" rx="2"/>
+        <rect x="83" y="5" width="72" height="72" fill="#EF4444" opacity="0.07" rx="2"/>
+        <rect x="5" y="83" width="72" height="72" fill="#10B981" opacity="0.07" rx="2"/>
+        <rect x="83" y="83" width="72" height="72" fill="#F59E0B" opacity="0.07" rx="2"/>
+        {/* Outer border */}
+        <rect x="5" y="5" width="150" height="150" fill="none" stroke="#374151" strokeWidth="1" rx="2"/>
+        {/* Axes */}
+        <line x1="80" y1="5" x2="80" y2="155" stroke="#374151" strokeWidth="1"/>
+        <line x1="5" y1="80" x2="155" y2="80" stroke="#374151" strokeWidth="1"/>
+        {/* Concentric rings */}
+        <circle cx="80" cy="80" r="25" fill="none" stroke="#1F2937" strokeWidth="0.75" strokeDasharray="3,3"/>
+        <circle cx="80" cy="80" r="50" fill="none" stroke="#1F2937" strokeWidth="0.75" strokeDasharray="3,3"/>
+        {/* Axis labels */}
+        <text x="80" y="3"  textAnchor="middle" dominantBaseline="auto"    fill="#6B7280" fontSize="7" fontWeight="500">AUTH</text>
+        <text x="80" y="160" textAnchor="middle" dominantBaseline="hanging" fill="#6B7280" fontSize="7" fontWeight="500">LIB</text>
+        <text x="3"  y="80" textAnchor="end"   dominantBaseline="middle"   fill="#6B7280" fontSize="7" fontWeight="500">LEFT</text>
+        <text x="157" y="80" textAnchor="start" dominantBaseline="middle"  fill="#6B7280" fontSize="7" fontWeight="500">RIGHT</text>
+        {/* User position dot — centered (unknown until compass opened) */}
+        <circle cx="80" cy="80" r="14" fill="#FED12E" opacity="0.12"/>
+        <circle cx="80" cy="80" r="7"  fill="#FED12E" opacity="0.35"/>
+        <circle cx="80" cy="80" r="3.5" fill="#FED12E"/>
+      </svg>
+    </div>
+  );
+}
+
 // ── Feature tile ──────────────────────────────────────────────────────────────
 
-function FeatureTile({
-  feature,
-  href,
-  dotClass,
-  borderHover,
-  compassStats,
-  vr,
-  vrPercent,
-}: {
+interface FeatureTileProps {
   feature: Feature;
   href: string;
   dotClass: string;
   borderHover: string;
-  compassStats: CompassStats | null;
   vr: number | null;
   vrPercent: number;
-}) {
-  const statsKey = feature.statsKey;
-  const showCompass = statsKey === 'compass' && compassStats !== null;
-  const showVr = statsKey === 'vr' && vr !== null;
+  readRankStats: ReadRankStats | null;
+}
+
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats }: FeatureTileProps) {
+  const electionDays = feature.statsKey === 'election' ? daysUntilElection() : 0;
+  const showVr = feature.statsKey === 'vr' && vr !== null;
+  const showElection = feature.statsKey === 'election';
+  const showReadRank = feature.statsKey === 'readrank' && readRankStats !== null;
+  const rrPct = readRankStats && readRankStats.total > 0
+    ? Math.round((readRankStats.ranked / readRankStats.total) * 100)
+    : 0;
 
   return (
     <a
@@ -189,39 +226,136 @@ function FeatureTile({
       <p className="text-xs text-gray-400 leading-relaxed">{feature.description}</p>
 
       {/* Optional stat pinned to bottom */}
-      {(showCompass || showVr) && (
+      {(showVr || showElection || showReadRank) && (
         <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
-          {showCompass && (
-            <>
-              <p className="text-xs text-gray-500">
-                <span className="text-white font-semibold tabular-nums">{compassStats!.answered}</span>
-                <span className="text-gray-400"> / {compassStats!.total} stances calibrated</span>
-              </p>
-              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
-                <div
-                  className="bg-ev-yellow h-full rounded-full transition-all duration-700"
-                  style={{ width: `${compassStats!.total > 0 ? Math.round((compassStats!.answered / compassStats!.total) * 100) : 0}%` }}
-                />
-              </div>
-            </>
+          {showElection && (
+            <p className="text-xs text-gray-400">
+              <span className="text-white font-semibold tabular-nums">{electionDays}</span>
+              {' '}days until {NEXT_ELECTION_LABEL}
+            </p>
           )}
           {showVr && (
             <>
-              <p className="text-xs text-gray-500">
+              <p className="text-xs text-gray-400">
                 <span className="text-white font-semibold tabular-nums">{vr}</span>
-                <span className="text-gray-400"> / 150 verification rating</span>
+                <span> / 150 verification rating</span>
               </p>
               <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
-                <div
-                  className="bg-ev-teal-light h-full rounded-full transition-all duration-700"
-                  style={{ width: `${vrPercent}%` }}
-                />
+                <div className="bg-ev-teal-light h-full rounded-full" style={{ width: `${vrPercent}%` }} />
+              </div>
+            </>
+          )}
+          {showReadRank && readRankStats && (
+            <>
+              <p className="text-xs text-gray-400">
+                <span className="text-white font-semibold tabular-nums">{readRankStats.ranked}</span>
+                <span> / {readRankStats.total} stances ranked</span>
+              </p>
+              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+                <div className="bg-ev-yellow h-full rounded-full" style={{ width: `${rrPct}%` }} />
               </div>
             </>
           )}
         </div>
       )}
     </a>
+  );
+}
+
+// ── Civic Spaces tile (combined feature + location data) ──────────────────────
+
+interface CivicSpacesTileProps {
+  jurisdiction: Jurisdiction | null;
+  locationConsent: boolean;
+  showForm: boolean;
+  onToggleForm: () => void;
+  address: string;
+  onAddressChange: (v: string) => void;
+  onSubmit: (e: React.FormEvent) => void;
+  locationLoading: boolean;
+  locationSuccess: boolean;
+  locationError: string | null;
+  accessToken: string | null;
+}
+
+function CivicSpacesTile({
+  jurisdiction, locationConsent, showForm, onToggleForm,
+  address, onAddressChange, onSubmit, locationLoading, locationSuccess, locationError,
+  accessToken,
+}: CivicSpacesTileProps) {
+  const href = `https://civicspaces.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`;
+  const hasDistricts = jurisdiction && DISTRICT_LABELS.some(({ key }) => jurisdiction[key]);
+
+  return (
+    <div className="bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-800 transition-colors">
+      <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
+      <p className="text-sm font-semibold text-white leading-snug">Civic Spaces</p>
+      <p className="text-xs text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
+
+      {/* Location data or prompt — at the bottom */}
+      <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
+        {hasDistricts ? (
+          <>
+            {(jurisdiction.city || jurisdiction.state) && (
+              <p className="text-xs font-semibold text-white">
+                {[jurisdiction.city, jurisdiction.state].filter(Boolean).join(', ')}
+              </p>
+            )}
+            <div className="space-y-0.5">
+              {DISTRICT_LABELS.filter(({ key }) => jurisdiction && jurisdiction[key]).slice(0, 3).map(({ key, label }) => (
+                <div key={key} className="flex items-center justify-between gap-1">
+                  <span className="text-[11px] text-gray-500 flex-shrink-0">{label}</span>
+                  <span className="text-[11px] text-gray-300 text-right truncate max-w-[55%]">{jurisdiction![key]}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex items-center gap-3 pt-0.5">
+              <a href={href} target="_blank" rel="noopener noreferrer" className="text-[11px] text-ev-blue hover:underline">Open →</a>
+              <button onClick={(e) => { e.preventDefault(); onToggleForm(); }} className="text-[11px] text-gray-500 hover:text-gray-300">Update location</button>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className="text-xs text-gray-400">
+              {locationConsent ? 'Locating your civic spaces…' : 'Add your address to find your representatives.'}
+            </p>
+            <button onClick={(e) => { e.preventDefault(); onToggleForm(); }} className="text-xs text-ev-teal-light hover:underline text-left">
+              {locationConsent ? 'Update location →' : 'Set your location →'}
+            </button>
+          </>
+        )}
+
+        {showForm && (
+          <form onSubmit={onSubmit} className="space-y-1.5 pt-1">
+            <input
+              type="text"
+              value={address}
+              onChange={(e) => onAddressChange(e.target.value)}
+              placeholder="Enter your address"
+              className="w-full px-2 py-1.5 border border-gray-600 rounded-lg text-xs bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-ev-teal-light"
+            />
+            <div className="flex gap-1.5">
+              <button
+                type="submit"
+                disabled={address.trim().length === 0 || locationLoading}
+                className="bg-ev-teal-light text-white text-xs font-medium px-2.5 py-1 rounded-lg disabled:opacity-50 transition-colors"
+              >
+                {locationLoading ? 'Setting…' : 'Set'}
+              </button>
+              <button
+                type="button"
+                onClick={() => onToggleForm()}
+                className="text-xs text-gray-400 hover:text-white px-1.5 py-1"
+              >
+                Cancel
+              </button>
+            </div>
+            {locationSuccess && <p className="text-[11px] text-green-400">Updated!</p>}
+            {locationError && <p className="text-[11px] text-ev-red">{locationError}</p>}
+          </form>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -266,42 +400,14 @@ function PostHistory() {
     setLoadingMore(false);
   }, [cursor, loadPage]);
 
-  if (loadState === 'loading' && posts.length === 0) {
-    return (
-      <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5 flex items-center justify-center">
-        <p className="text-sm text-gray-400">Loading your posts&hellip;</p>
-      </div>
-    );
-  }
-  if (loadState === 'error-access') {
-    return (
-      <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5">
-        <p className="text-sm font-medium text-ev-red">Access denied</p>
-        <p className="text-xs text-gray-500 mt-1">You don&apos;t have permission to view post history.</p>
-      </div>
-    );
-  }
-  if (loadState === 'error-generic') {
-    return (
-      <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5">
-        <p className="text-sm font-medium text-white">Failed to load post history</p>
-        <button
-          onClick={() => { setLoadState('loading'); loadPage(null); }}
-          className="mt-3 px-4 py-2 bg-ev-teal text-white rounded-xl text-sm font-semibold hover:bg-ev-teal/90 transition-colors"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
-  if (loadState === 'loaded' && posts.length === 0) {
-    return (
-      <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5">
-        <p className="text-sm text-gray-400">No posts yet</p>
-        <p className="text-xs text-gray-500 mt-1">When you post in a community, it&apos;ll show up here.</p>
-      </div>
-    );
-  }
+  if (loadState === 'loading' && posts.length === 0)
+    return <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5 flex items-center justify-center"><p className="text-sm text-gray-400">Loading posts…</p></div>;
+  if (loadState === 'error-access')
+    return <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5"><p className="text-sm font-medium text-ev-red">Access denied</p></div>;
+  if (loadState === 'error-generic')
+    return <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5"><p className="text-sm font-medium text-white">Failed to load posts</p><button onClick={() => { setLoadState('loading'); loadPage(null); }} className="mt-3 px-4 py-2 bg-ev-teal text-white rounded-xl text-sm font-semibold hover:bg-ev-teal/90 transition-colors">Retry</button></div>;
+  if (loadState === 'loaded' && posts.length === 0)
+    return <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5"><p className="text-sm text-gray-400">No posts yet</p></div>;
 
   return (
     <div className="space-y-3">
@@ -310,21 +416,12 @@ function PostHistory() {
           {posts.map((post) => (
             <div key={post.postId} className="p-4 space-y-1">
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">{post.communityName}</p>
-              <a
-                href={`https://fc.empowered.vote/communities/${post.communitySlug}/threads/${post.threadId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-sm font-semibold text-ev-teal-light hover:underline"
-              >
-                {post.threadTitle}
-              </a>
+              <a href={`https://fc.empowered.vote/communities/${post.communitySlug}/threads/${post.threadId}`} target="_blank" rel="noopener noreferrer" className="block text-sm font-semibold text-ev-teal-light hover:underline">{post.threadTitle}</a>
               <p className="text-sm text-white leading-snug">{post.postExcerpt}</p>
               <div className="flex items-center gap-2 text-xs text-gray-500 pt-0.5">
                 <span className="font-medium">{post.authorPseudonym}</span>
                 <span className="text-gray-700">&bull;</span>
-                <time dateTime={post.createdAt} className="tabular-nums">
-                  {new Date(post.createdAt).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })}
-                </time>
+                <time dateTime={post.createdAt} className="tabular-nums">{new Date(post.createdAt).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' })}</time>
                 {post.isEdited && <span className="ml-1 text-[11px] font-medium text-gray-400 italic">(edited)</span>}
               </div>
             </div>
@@ -332,11 +429,7 @@ function PostHistory() {
         </div>
       )}
       {hasMore && posts.length > 0 && (
-        <button
-          onClick={handleLoadMore}
-          disabled={loadingMore}
-          className="w-full py-2 px-4 bg-gray-900 border border-gray-800 text-ev-teal-light rounded-xl text-sm font-semibold hover:border-gray-600 transition-colors disabled:opacity-50"
-        >
+        <button onClick={handleLoadMore} disabled={loadingMore} className="w-full py-2 px-4 bg-gray-900 border border-gray-800 text-ev-teal-light rounded-xl text-sm font-semibold hover:border-gray-600 transition-colors disabled:opacity-50">
           {loadingMore ? 'Loading…' : 'Load more'}
         </button>
       )}
@@ -362,6 +455,7 @@ export default function ProfilePage() {
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [activity, setActivity] = useState<ActivityEntry[]>([]);
   const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
+  const [readRankStats, setReadRankStats] = useState<ReadRankStats | null>(null);
   const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts'>('profile');
 
   const [address, setAddress] = useState('');
@@ -384,7 +478,7 @@ export default function ProfilePage() {
           apiFetch<{ activity: ActivityEntry[] }>('/account/me/activity')
             .then((r) => setActivity(r.activity))
             .catch(() => setActivity([]));
-          // Fetch compass calibration stats
+          // Compass calibration count
           Promise.all([
             apiFetch<unknown>('/compass/answers'),
             apiFetch<unknown>('/compass/topics'),
@@ -397,6 +491,16 @@ export default function ProfilePage() {
               : ((topicsData as { topics?: unknown[] })?.topics?.length ?? 21);
             setCompassStats({ answered, total });
           }).catch(() => {});
+          // Read & Rank stats (graceful fallback if endpoint unavailable)
+          const token = useAuthStore.getState().accessToken;
+          if (token && data.id) {
+            fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
+              headers: { Authorization: `Bearer ${token}` },
+            })
+              .then((r) => r.ok ? r.json() as Promise<ReadRankStats> : null)
+              .then((d) => { if (d && typeof d.ranked === 'number') setReadRankStats(d); })
+              .catch(() => {});
+          }
         }
       })
       .catch(() => setProfileError(true));
@@ -456,17 +560,11 @@ export default function ProfilePage() {
 
   const copyNewCode = useCallback(() => {
     if (!newCode) return;
-    navigator.clipboard.writeText(newCode).then(() => {
-      setNewCodeCopied(true);
-      setTimeout(() => setNewCodeCopied(false), 2000);
-    }).catch(() => {});
+    navigator.clipboard.writeText(newCode).then(() => { setNewCodeCopied(true); setTimeout(() => setNewCodeCopied(false), 2000); }).catch(() => {});
   }, [newCode]);
 
   const copyPendingCode = useCallback((code: string) => {
-    navigator.clipboard.writeText(code).then(() => {
-      setCopiedCode(code);
-      setTimeout(() => setCopiedCode(null), 2000);
-    }).catch(() => {});
+    navigator.clipboard.writeText(code).then(() => { setCopiedCode(code); setTimeout(() => setCopiedCode(null), 2000); }).catch(() => {});
   }, []);
 
   const cp = profile?.connected_profile;
@@ -474,18 +572,11 @@ export default function ProfilePage() {
   const xpPercent = xp && xp.xp_to_next_level > 0
     ? Math.min(100, Math.round((xp.xp_in_level / xp.xp_to_next_level) * 100))
     : 0;
-  // xp_in_level / (xp_in_level + xp_to_next_level) = gained / total needed for level
   const xpLevelTotal = xp ? xp.xp_in_level + xp.xp_to_next_level : 0;
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
-  const hasDistricts = jurisdiction && DISTRICT_LABELS.some(({ key }) => jurisdiction[key]);
 
-  // Shared tile props for FeatureTile
-  const featureTileProps = {
-    compassStats,
-    vr: cp?.verification_rating ?? null,
-    vrPercent,
-  };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats };
 
   return (
     <div className="min-h-screen bg-gray-950 transition-colors duration-200">
@@ -494,29 +585,18 @@ export default function ProfilePage() {
       <nav className="bg-gray-900 border-b border-gray-800 px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between sticky top-0 z-10">
         <span className="font-semibold text-white">Empowered Vote</span>
         <div className="flex items-center gap-3">
-          <button
-            onClick={toggle}
-            aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="text-gray-400 hover:text-gray-200 transition-colors p-1 rounded-md"
-          >
+          <button onClick={toggle} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} className="text-gray-400 hover:text-gray-200 transition-colors p-1 rounded-md">
             {isDark ? <SunIcon /> : <MoonIcon />}
           </button>
           {user?.isAdmin && (
             <div className="relative group">
-              <a
-                href="/admin"
-                className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-ev-red/10 transition-colors"
-              >
+              <a href="/admin" className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-ev-red/10 transition-colors">
                 <img src="/Red_Admin.png" alt="Admin Hub" className="w-5 h-5 object-contain" />
               </a>
-              <div className="absolute right-0 top-full mt-2 px-2.5 py-1 bg-gray-800 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                Admin Hub
-              </div>
+              <div className="absolute right-0 top-full mt-2 px-2.5 py-1 bg-gray-800 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Admin Hub</div>
             </div>
           )}
-          <button onClick={handleSignOut} className="text-sm text-gray-400 hover:text-gray-200 transition-colors">
-            Sign out
-          </button>
+          <button onClick={handleSignOut} className="text-sm text-gray-400 hover:text-gray-200 transition-colors">Sign out</button>
         </div>
       </nav>
 
@@ -529,103 +609,70 @@ export default function ProfilePage() {
       {profile && (
         <div className="px-4 sm:px-8 lg:px-16 py-5">
 
-          {/* Tab bar */}
-          <nav className="flex gap-1 border-b border-gray-800 mb-5">
-            {(['profile', 'referrals', 'posts'] as const).map((tab) => {
-              if ((tab === 'referrals' || tab === 'posts') && !cp) return null;
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
-                    activeTab === tab
-                      ? 'border-ev-teal-light text-ev-teal-light'
-                      : 'border-transparent text-gray-500 hover:text-gray-300'
-                  }`}
-                >
-                  {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : 'Profile'}
-                </button>
-              );
-            })}
-            <a
-              href={`https://app.empowered.vote/contributor${accessToken ? `#access_token=${accessToken}` : ''}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2.5 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-300 -mb-px transition-colors"
-            >
-              Contributor ↗
-            </a>
-          </nav>
+          {/* Tab bar — tabs left, Connected Account pill right */}
+          <div className="flex items-center justify-between border-b border-gray-800 mb-5">
+            <nav className="flex gap-1">
+              {(['profile', 'referrals', 'posts'] as const).map((tab) => {
+                if ((tab === 'referrals' || tab === 'posts') && !cp) return null;
+                return (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
+                      activeTab === tab
+                        ? 'border-ev-teal-light text-ev-teal-light'
+                        : 'border-transparent text-gray-500 hover:text-gray-300'
+                    }`}
+                  >
+                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : 'Profile'}
+                  </button>
+                );
+              })}
+              <a
+                href={`https://app.empowered.vote/contributor${accessToken ? `#access_token=${accessToken}` : ''}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2.5 text-sm font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-300 -mb-px transition-colors"
+              >
+                Contributor ↗
+              </a>
+            </nav>
+            {/* Connected Account pill — right side of tab bar */}
+            <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full flex-shrink-0 mb-px">
+              Connected Account
+            </span>
+          </div>
 
           {/* ── PROFILE TAB ─────────────────────────────────────────────────── */}
           {activeTab === 'profile' && (
             <div className="space-y-3">
 
-              {/* Header card — half width on desktop, left aligned */}
-              <div className="w-full md:w-1/2 bg-gray-900 rounded-2xl border border-gray-800 p-4">
-                <div className="flex items-start justify-between mb-2">
-                  <h1 className="text-2xl font-bold text-white">{displayName}</h1>
-                  <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full flex-shrink-0 ml-4">
-                    Connected Account
-                  </span>
-                </div>
-
+              {/* Header card — compact, left-aligned, ~1/4 page width */}
+              <div className="w-full md:w-72 bg-gray-900 rounded-2xl border border-gray-800 p-4">
+                <h1 className="text-2xl font-bold text-white mb-2">{displayName}</h1>
                 {cp && xp ? (
                   <>
-                    {/* Level + XP text on left | Gems on right */}
-                    <div className="flex items-center justify-between mt-2">
+                    <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">
-                          Level {xp.level}
-                        </span>
-                        <span className="text-gray-300 text-sm tabular-nums">
-                          {xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP
-                        </span>
-                      </div>
-                      {/* Small gem pips */}
-                      <div className="flex items-center gap-3">
-                        <GemPip
-                          count={cp.gems.yellow}
-                          gemStyle={{
-                            borderRadius: '4px',
-                            background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)',
-                            boxShadow: '0 0 8px rgba(255,184,0,0.4)',
-                          }}
-                        />
-                        <GemPip
-                          count={cp.gems.blue}
-                          gemStyle={{
-                            borderRadius: '50%',
-                            background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)',
-                            boxShadow: '0 0 8px rgba(59,130,246,0.4)',
-                          }}
-                        />
-                        <GemPip
-                          count={cp.gems.red}
-                          gemStyle={{
-                            borderRadius: '4px',
-                            background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)',
-                            boxShadow: '0 0 8px rgba(255,87,64,0.4)',
-                            transform: 'rotate(45deg)',
-                          }}
-                        />
+                        <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
+                        <span className="text-gray-300 text-sm tabular-nums">{xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP</span>
                       </div>
                     </div>
-                    {/* XP bar */}
+                    {/* Gem pips below the XP row */}
+                    <div className="flex items-center gap-3 mt-2">
+                      <GemPip count={cp.gems.yellow} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
+                      <GemPip count={cp.gems.blue} gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
+                      <GemPip count={cp.gems.red} gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
+                    </div>
                     <div className="mt-3 h-1.5 rounded-full bg-gray-800 overflow-hidden">
-                      <div
-                        className="bg-ev-blue h-full rounded-full transition-all duration-700"
-                        style={{ width: `${xpPercent}%`, boxShadow: '0 0 10px rgba(59,130,246,0.6)' }}
-                      />
+                      <div className="bg-ev-blue h-full rounded-full transition-all duration-700" style={{ width: `${xpPercent}%`, boxShadow: '0 0 10px rgba(59,130,246,0.6)' }} />
                     </div>
-                    <p className="text-xs text-gray-500 mt-1.5 tabular-nums">
-                      {xp.total.toLocaleString()} total XP earned
-                    </p>
+                    <p className="text-xs text-gray-500 mt-1.5 tabular-nums">{xp.total.toLocaleString()} total XP earned</p>
                   </>
                 ) : null}
               </div>
 
-              {/* Features — Inform and Connect in separate left-justified grids */}
+              {/* Features — Inform and Connect in separate left-justified fixed-width grids */}
               {cp && (
                 <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 space-y-5">
                   <h2 className="text-sm font-semibold text-white">Empowered Vote Features</h2>
@@ -636,7 +683,7 @@ export default function ProfilePage() {
                       <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
                       <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
                     </div>
-                    {/* auto-fill with fixed 15rem columns — tiles don't stretch, empty space on right */}
+                    {/* Fixed 15rem columns — tiles don't stretch, empty space breathes on right */}
                     <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
                       {INFORM_FEATURES.map((f) => (
                         <FeatureTile
@@ -645,27 +692,50 @@ export default function ProfilePage() {
                           href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
                           dotClass="bg-ev-yellow"
                           borderHover="hover:border-ev-yellow/50"
-                          {...featureTileProps}
+                          {...sharedTileProps}
                         />
                       ))}
                     </div>
                   </div>
 
-                  {/* Connect */}
+                  {/* Connect — Civic Spaces rendered as special combined tile */}
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                       <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
                     </div>
                     <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
-                      {CONNECT_FEATURES.map((f) => (
+                      {/* Validation Quests */}
+                      <FeatureTile
+                        feature={CONNECT_FEATURES[0]}
+                        href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
+                        dotClass="bg-ev-blue"
+                        borderHover="hover:border-ev-blue/50"
+                        {...sharedTileProps}
+                      />
+                      {/* Civic Spaces — combined feature + location data */}
+                      <CivicSpacesTile
+                        jurisdiction={jurisdiction}
+                        locationConsent={profile.location_consent}
+                        showForm={showLocationForm}
+                        onToggleForm={() => setShowLocationForm((v) => !v)}
+                        address={address}
+                        onAddressChange={setAddress}
+                        onSubmit={handleSetLocation}
+                        locationLoading={locationLoading}
+                        locationSuccess={locationSuccess}
+                        locationError={locationError}
+                        accessToken={accessToken}
+                      />
+                      {/* Focused Communities + Empowered Listening */}
+                      {CONNECT_FEATURES.slice(1).map((f) => (
                         <FeatureTile
                           key={f.name}
                           feature={f}
                           href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
                           dotClass="bg-ev-blue"
                           borderHover="hover:border-ev-blue/50"
-                          {...featureTileProps}
+                          {...sharedTileProps}
                         />
                       ))}
                     </div>
@@ -673,124 +743,28 @@ export default function ProfilePage() {
                 </div>
               )}
 
-              {/* Bottom row: Compass stats | Civic Spaces | Recent Activity */}
+              {/* Bottom row: Compass visualization | Recent Activity */}
               {cp && (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
 
-                  {/* Compass stats card */}
+                  {/* Compass card — shows political compass SVG */}
                   <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
-                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Empowered Compass</p>
-                    {compassStats ? (
-                      <>
-                        <div className="flex items-baseline gap-1.5">
-                          <span className="text-3xl font-bold text-ev-yellow tabular-nums">{compassStats.answered}</span>
-                          <span className="text-base font-medium text-gray-400">/ {compassStats.total}</span>
-                        </div>
-                        <p className="text-xs text-gray-400">Stances calibrated</p>
-                        <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
-                          <div
-                            className="bg-ev-yellow h-full rounded-full transition-all duration-700"
-                            style={{ width: `${compassStats.total > 0 ? Math.round((compassStats.answered / compassStats.total) * 100) : 0}%` }}
-                          />
-                        </div>
-                      </>
-                    ) : (
-                      <p className="text-sm text-gray-400">Calibrate your stances to see your score.</p>
+                    <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Compass</p>
+                    {compassStats && (
+                      <p className="text-xs text-gray-400">
+                        <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
+                        {' / '}{compassStats.total} stances calibrated
+                      </p>
                     )}
+                    <CompassVisualization />
                     <a
                       href={`https://compass.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-ev-yellow hover:underline mt-auto"
+                      className="text-xs text-ev-yellow hover:underline"
                     >
                       Open Compass &rarr;
                     </a>
-                  </div>
-
-                  {/* Civic Spaces */}
-                  <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 flex flex-col gap-2">
-                    <div className="flex items-center justify-between">
-                      <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Civic Spaces</p>
-                      <a
-                        href="https://civicspaces.empowered.vote"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs text-ev-teal-light hover:underline"
-                      >
-                        Open &rarr;
-                      </a>
-                    </div>
-
-                    {hasDistricts ? (
-                      <>
-                        {(jurisdiction.city || jurisdiction.state) && (
-                          <p className="text-sm font-semibold text-white">
-                            {[jurisdiction.city, jurisdiction.state].filter(Boolean).join(', ')}
-                          </p>
-                        )}
-                        <div className="divide-y divide-gray-800 flex-1">
-                          {DISTRICT_LABELS.filter(({ key }) => jurisdiction && jurisdiction[key]).map(({ key, label }) => (
-                            <div key={key} className="flex items-center justify-between py-1.5 first:pt-0">
-                              <span className="text-xs text-gray-400 flex-shrink-0">{label}</span>
-                              <span className="text-xs font-medium text-white text-right ml-2 truncate max-w-[60%]">
-                                {jurisdiction![key]}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                        <button
-                          onClick={() => setShowLocationForm(!showLocationForm)}
-                          className="text-xs text-ev-teal-light hover:underline text-left mt-auto"
-                        >
-                          Update location &rarr;
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-sm text-white font-medium">
-                          {profile.location_consent ? 'Locating your civic spaces…' : 'No location set'}
-                        </p>
-                        {!profile.location_consent && (
-                          <p className="text-xs text-gray-400">Add your address to find your representatives.</p>
-                        )}
-                        <button
-                          onClick={() => setShowLocationForm(!showLocationForm)}
-                          className="text-xs text-ev-teal-light hover:underline text-left mt-auto"
-                        >
-                          {profile.location_consent ? 'Update location →' : 'Set your location →'}
-                        </button>
-                      </>
-                    )}
-
-                    {showLocationForm && (
-                      <form onSubmit={handleSetLocation} className="space-y-2 border-t border-gray-800 pt-2">
-                        <input
-                          type="text"
-                          value={address}
-                          onChange={(e) => setAddress(e.target.value)}
-                          placeholder="Enter your address"
-                          className="w-full px-3 py-2 border border-gray-700 rounded-lg text-xs bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-ev-teal-light"
-                        />
-                        <div className="flex gap-2">
-                          <button
-                            type="submit"
-                            disabled={address.trim().length === 0 || locationLoading}
-                            className="bg-ev-teal-light text-white text-xs font-medium px-3 py-1.5 rounded-lg hover:bg-ev-teal-light/90 disabled:opacity-50 transition-colors"
-                          >
-                            {locationLoading ? 'Setting…' : 'Set'}
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setShowLocationForm(false)}
-                            className="text-xs text-gray-400 hover:text-white px-2 py-1.5 transition-colors"
-                          >
-                            Cancel
-                          </button>
-                        </div>
-                        {locationSuccess && <p className="text-xs text-green-400">Updated!</p>}
-                        {locationError && <p className="text-xs text-ev-red">{locationError}</p>}
-                      </form>
-                    )}
                   </div>
 
                   {/* Recent Activity */}
@@ -828,24 +802,18 @@ export default function ProfilePage() {
             <div className="max-w-2xl space-y-4">
               <div className="bg-gray-900 rounded-2xl border border-gray-800 p-5 space-y-5">
                 <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Invite Friends</p>
-
                 {!inviteesData ? (
-                  <p className="text-sm text-gray-400">Loading&hellip;</p>
+                  <p className="text-sm text-gray-400">Loading…</p>
                 ) : (
                   <>
                     <div className="flex items-center gap-2">
                       <span className="text-3xl font-bold text-white tabular-nums">{inviteesData.active_count}</span>
-                      <span className="text-gray-400 text-sm">
-                        / {inviteesData.cap >= 2147483647 ? 'Unlimited' : inviteesData.cap} active invitees
-                      </span>
+                      <span className="text-gray-400 text-sm">/ {inviteesData.cap >= 2147483647 ? 'Unlimited' : inviteesData.cap} active invitees</span>
                     </div>
-
                     {inviteesData.cap === 0 ? (
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0 text-gray-400">
-                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                          </svg>
+                          <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
                         </div>
                         <div>
                           <p className="text-white font-semibold">Reach level 2 to start inviting</p>
@@ -854,39 +822,18 @@ export default function ProfilePage() {
                       </div>
                     ) : inviteesData.can_generate ? (
                       <div className="space-y-2">
-                        <input
-                          type="text"
-                          value={labelInput}
-                          onChange={(e) => setLabelInput(e.target.value)}
-                          onKeyDown={(e) => { if (e.key === 'Enter' && !generatingCode) handleGenerate(); }}
-                          placeholder="Who is this for? (optional)"
-                          maxLength={50}
-                          className="w-full px-3 py-2.5 text-sm border border-gray-700 rounded-xl bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-teal/30 focus:border-ev-teal transition-colors"
-                        />
-                        <button
-                          onClick={handleGenerate}
-                          disabled={generatingCode}
-                          className="w-full py-2.5 px-4 bg-ev-teal text-white rounded-xl text-sm font-semibold hover:bg-ev-teal/90 transition-colors disabled:opacity-50"
-                        >
-                          {generatingCode ? 'Generating…' : 'Generate Invite Code'}
-                        </button>
+                        <input type="text" value={labelInput} onChange={(e) => setLabelInput(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter' && !generatingCode) handleGenerate(); }} placeholder="Who is this for? (optional)" maxLength={50} className="w-full px-3 py-2.5 text-sm border border-gray-700 rounded-xl bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-teal/30 focus:border-ev-teal transition-colors"/>
+                        <button onClick={handleGenerate} disabled={generatingCode} className="w-full py-2.5 px-4 bg-ev-teal text-white rounded-xl text-sm font-semibold hover:bg-ev-teal/90 transition-colors disabled:opacity-50">{generatingCode ? 'Generating…' : 'Generate Invite Code'}</button>
                       </div>
                     ) : (
-                      <p className="text-xs text-gray-500 leading-relaxed">
-                        All invite slots filled. Level up to earn more, or wait for an invitee to reach level 2.
-                      </p>
+                      <p className="text-xs text-gray-500 leading-relaxed">All invite slots filled. Level up to earn more, or wait for an invitee to reach level 2.</p>
                     )}
-
                     {newCode && (
-                      <button
-                        onClick={copyNewCode}
-                        className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors"
-                      >
+                      <button onClick={copyNewCode} className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors">
                         <span className="font-mono text-lg font-bold tracking-widest text-white">{newCode}</span>
                         <span className="text-xs font-medium text-ev-teal-light">{newCodeCopied ? 'Copied!' : 'Copy'}</span>
                       </button>
                     )}
-
                     {inviteesData.invitees.some((i) => i.status === 'pending') && (
                       <div className="border-t border-gray-800 -mx-5 px-5 pt-4">
                         <p className="text-xs font-medium text-gray-400 mb-2">Pending Codes</p>
@@ -894,21 +841,15 @@ export default function ProfilePage() {
                           {inviteesData.invitees.filter((i) => i.status === 'pending').map((entry) => (
                             <div key={entry.code}>
                               {entry.label && <p className="text-xs text-gray-400 mb-1 px-1">{entry.label}</p>}
-                              <button
-                                onClick={() => copyPendingCode(entry.code)}
-                                className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors"
-                              >
+                              <button onClick={() => copyPendingCode(entry.code)} className="w-full flex items-center justify-between bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 hover:border-ev-teal-light/50 transition-colors">
                                 <span className="font-mono text-base font-bold tracking-widest text-white">{entry.code}</span>
-                                <span className="text-xs font-medium text-ev-teal-light">
-                                  {copiedCode === entry.code ? 'Copied!' : 'Copy'}
-                                </span>
+                                <span className="text-xs font-medium text-ev-teal-light">{copiedCode === entry.code ? 'Copied!' : 'Copy'}</span>
                               </button>
                             </div>
                           ))}
                         </div>
                       </div>
                     )}
-
                     {inviteesData.invitees.some((i) => i.status === 'claimed') && (
                       <div className="border-t border-gray-800 -mx-5 px-5 pt-4">
                         <p className="text-xs font-medium text-gray-400 mb-2">Your Invitees</p>
@@ -920,22 +861,12 @@ export default function ProfilePage() {
                             return (
                               <div key={invitee.invitee_id} className="py-3">
                                 <div className="flex items-center justify-between gap-2">
-                                  <p className={`text-sm font-medium truncate ${invitee.graduated ? 'text-gray-400' : 'text-white'}`}>
-                                    {invitee.display_name ?? invitee.label ?? '—'}
-                                  </p>
+                                  <p className={`text-sm font-medium truncate ${invitee.graduated ? 'text-gray-400' : 'text-white'}`}>{invitee.display_name ?? invitee.label ?? '—'}</p>
                                   <div className="flex items-center gap-2 flex-shrink-0">
-                                    {invitee.graduated ? (
-                                      <span className="text-xs font-medium text-ev-teal bg-ev-teal/10 px-2 py-0.5 rounded-full">Graduated ✓</span>
-                                    ) : invitee.account_standing === 'suspended' ? (
-                                      <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">Suspended</span>
-                                    ) : (
-                                      <span className="flex items-center gap-1 text-xs text-gray-500">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-green-400" />Active
-                                      </span>
-                                    )}
-                                    {isLocked && (
-                                      <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">Slot locked</span>
-                                    )}
+                                    {invitee.graduated ? <span className="text-xs font-medium text-ev-teal bg-ev-teal/10 px-2 py-0.5 rounded-full">Graduated ✓</span>
+                                      : invitee.account_standing === 'suspended' ? <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">Suspended</span>
+                                      : <span className="flex items-center gap-1 text-xs text-gray-500"><span className="w-1.5 h-1.5 rounded-full bg-green-400" />Active</span>}
+                                    {isLocked && <span className="text-xs font-medium text-ev-red bg-ev-red/10 px-2 py-0.5 rounded-full">Slot locked</span>}
                                   </div>
                                 </div>
                                 {!invitee.graduated && invitee.xp_in_level !== null && invitee.xp_to_next_level !== null && (
@@ -963,9 +894,7 @@ export default function ProfilePage() {
 
           {/* ── POSTS TAB ────────────────────────────────────────────────────── */}
           {activeTab === 'posts' && cp && (
-            <div className="max-w-2xl">
-              <PostHistory />
-            </div>
+            <div className="max-w-2xl"><PostHistory /></div>
           )}
 
         </div>
