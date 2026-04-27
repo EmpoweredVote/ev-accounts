@@ -1,10 +1,10 @@
 # Requirements: Empowered Accounts
 
 **Defined:** 2026-04-25
-**Milestone:** v2.0 Civic Account Experience
+**Milestone:** v2.0 Civic Account Experience + v2.1 Inform Account Tier
 **Core Value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
 
-## v2.0 Requirements
+## v2.0 Requirements (Phases 60–65)
 
 ### Design Foundation
 
@@ -26,11 +26,11 @@
 
 ### Onboarding
 
-- [ ] **ONBD-01**: All onboarding steps share `AppNav` and `StepProgress` bar (Step N of 4) as consistent wrapper
-- [ ] **ONBD-02**: `PseudonymStep` restyled as "Choose your civic name" — avatar icon, "This is how your voice appears in civic spaces and discussions" copy, `AuthInput` for civic name, Continue + Back
-- [ ] **ONBD-03**: `LocationStep` restyled as "Find your civic community" — pin icon, "We use your location to connect you with your local civic space. Learn More." copy, street/city/state/zip fields, Continue + Back (no ZIP-only option)
-- [ ] **ONBD-04**: `LocationCelebrationStep` restyled as "You're connected" — green checkmark icon, "We matched you to your civic district and community", three milestone items (Account created ✓, Location matched ✓, Ready to participate ✓), Go to dashboard CTA
-- [ ] **ONBD-05**: Existing `WelcomeStep` removed from onboarding flow — `WelcomeScreen` (`/welcome`) handles the pre-entry value pitch; onboarding starts directly at civic name
+- [x] **ONBD-01**: All onboarding steps share `AppNav` and `StepProgress` bar (Step N of 3) as consistent wrapper
+- [x] **ONBD-02**: `PseudonymStep` removed — display_name captured at signup (Phase 61); onboarding starts at location step
+- [x] **ONBD-03**: `LocationStep` restyled as "Find your civic community" — pin icon, four `AuthInput` fields, no reveal gate, no Learn More link
+- [x] **ONBD-04**: `LocationCelebrationStep` restyled as "You're connected" — green checkmark icon, three milestone items, Go to dashboard CTA
+- [x] **ONBD-05**: Existing `WelcomeStep` removed from onboarding flow — `WelcomeScreen` (`/welcome`) handles the pre-entry value pitch
 
 ### Profile Page
 
@@ -58,11 +58,62 @@
 
 ### Activity Feed API
 
-- [ ] **API-01**: `GET /api/account/me/activity` endpoint — returns last 20 XP transactions for authenticated user: `{ source, amount, description, created_at }` per entry; requires Connected tier
+- [x] **API-01**: `GET /api/account/me/activity` endpoint — returns last 20 XP transactions for authenticated user: `{ source, amount, description, created_at }` per entry; requires Connected tier ✓ Phase 63-01
 
 ### Bug Fix
 
-- [ ] **FIX-01**: Fix invite code generation in DashboardPage — `optional_name` field value properly included in `POST /api/invites/generate` request body and saved in `invite_codes` record
+- [x] **FIX-01**: Fix invite code generation in DashboardPage — `optional_name` field value properly included in `POST /api/invites/generate` request body ✓ Phase 63-01 (confirmed closed by code inspection)
+
+---
+
+## v2.1 Requirements (Phases 66–68)
+
+**Milestone: Inform Account Tier** — Make the Inform tier a first-class experience with yellow profile, low-friction signup, and an invitational path toward Connected.
+
+**Inform tier rules:**
+- Can fully use Inform features (Compass, Essentials)
+- Can observe Connected/Empowered features (read-only)
+- Cannot participate in Connected features (voting in Symposiums, speaking)
+- Can only earn yellow gems (anonymity constraint — no blue/red)
+- Compass stances and Essentials last location are remembered
+
+### Backend Schema (IBAK)
+
+- [ ] **IBAK-01**: `inform.inform_profiles` table — `user_id UUID PK → public.users`, `yellow_gem_balance INT DEFAULT 0`, `last_essentials_location JSONB`, `created_at TIMESTAMPTZ DEFAULT now()`
+- [ ] **IBAK-02**: DB trigger auto-creates `inform_profiles` row on every `public.users` INSERT (all signups — Inform and Connected paths)
+- [ ] **IBAK-03**: `GET /api/account/me` returns `inform_profile: { yellow_gem_balance, last_essentials_location }` for all tiers
+- [ ] **IBAK-04**: `POST /api/gems/award` routes yellow gem awards to `inform_profiles.yellow_gem_balance` for Inform-tier users (no `connected_profiles`); blue/red gem awards return 422 for Inform-tier users
+- [ ] **IBAK-05**: `PATCH /api/account/location-hint` — Essentials-callable endpoint that stores last searched location in `inform_profiles.last_essentials_location`; authenticated, Inform-tier only
+- [ ] **IBAK-06**: Connecting an account (creating `connected_profiles` via `signup_with_invite` RPC) transfers `inform_profiles.yellow_gem_balance` to `connected_profiles.gem_balance_yellow` atomically
+
+### Login Hub (LHUB)
+
+- [ ] **LHUB-01**: `login.empowered.vote` landing shows the existing login form + a "Create an Account" CTA visible to unauthenticated visitors
+- [ ] **LHUB-02**: "Create an Account" opens a modal explaining Inform Account constraints — can fully use Inform features, can observe Connected/Empowered features but not participate, can only earn yellow gems
+
+### Inform Signup (ISUP)
+
+- [ ] **ISUP-01**: Signup form (following modal) collects display name ("What should we call you?"), email, password — no invite code field
+- [ ] **ISUP-02**: No invite code required or displayed on the Inform signup path
+- [ ] **ISUP-03**: Post-signup "Check your email" screen has yellow Inform Account theming
+- [ ] **ISUP-04**: After email confirmation, user is redirected to yellow Inform profile at `login.empowered.vote/profile`
+
+### Yellow Inform Profile Page (IPRO)
+
+- [ ] **IPRO-01**: Profile page at `login.empowered.vote/profile` is tier-aware — yellow for Inform, existing teal for Connected, existing for Empowered
+- [ ] **IPRO-02**: Inform profile header: display name, "Inform Account" yellow badge/pill, yellow gem balance
+- [ ] **IPRO-03**: Compass tile (yellow theme) shows calibration count/status
+- [ ] **IPRO-04**: Essentials tile shows last searched location (if any) or prompt to explore Essentials
+- [ ] **IPRO-05**: Connected/Empowered feature tiles visible in observable state — lock indicator shown, not hidden, not interactive
+- [ ] **IPRO-06**: Subtle "Connect your account" section at page bottom — minimal prominence, framed as "when you're ready"
+
+### Connected Account Explainer (CEXP)
+
+- [ ] **CEXP-01**: Inform Account badge/pill on profile is clickable and opens an informational dialog
+- [ ] **CEXP-02**: Explainer dialog covers: what Connected Accounts are, how identity verification works, invite codes in Alpha
+- [ ] **CEXP-03**: Dialog includes "I have an invite code" CTA leading to existing Connected signup flow
+
+---
 
 ## v3 Requirements (Deferred)
 
@@ -74,48 +125,53 @@
 - **PROF-V3-01**: VR admin dashboard (distribution, holds, outliers) — deferred from v1.9
 - **PROF-V3-02**: User-to-user compass compare — deferred from v1.x
 
+### Inform Account
+- **IBAK-V3-01**: Essentials app integration for `location-hint` endpoint — Essentials calls `PATCH /api/account/location-hint` on Inform user location search; v2.1 ships the endpoint, Essentials wires it up post-v2.1
+- **IBAK-V3-02**: Yellow gem earning mechanics — Compass calibration as yellow gem source for Inform users; v2.1 ships gem routing, earning rules defined per feature
+
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| OTP email verification | Keeping magic-link flow; OTP requires backend changes and adds complexity without clear Alpha benefit |
-| ZIP code only option in location | Full address required for accurate district resolution |
-| profile.empowered.vote domain | Profile stays on login.empowered.vote/profile for Alpha; domain split deferred |
-| contributor portal reskin | Contributor portal (/contributor) is a separate surface; out of scope for v2.0 |
-| admin tool (login.empowered.vote/admin) restyle | Admin-only UI; not user-facing; out of scope |
-| Empowered account upgrade flow | Empowerment tier is admin-gated for Alpha; no self-service flow yet |
+| OTP email verification | Keeping magic-link flow; OTP adds complexity without clear Alpha benefit |
+| ZIP code only in location | Full address required for accurate district resolution |
+| profile.empowered.vote domain | Profile stays on login.empowered.vote/profile for Alpha |
+| contributor portal reskin | Separate surface; out of scope |
+| admin tool (login.empowered.vote/admin) restyle | Admin-only UI; not user-facing |
+| Empowered account upgrade flow | Admin-gated for Alpha; no self-service flow yet |
+| DNS routing empowered.vote/login → login.empowered.vote | Infrastructure work; deferred |
+| Inform account in app.empowered.vote dashboard | Phase 65 (DASH-03) handles tier-aware dashboard; separate from Inform profile at login.empowered.vote |
+| Third-party identity verification | Deferred post-Alpha; invite chain is v2 trust mechanism |
 
 ## Traceability
 
-*To be populated by gsd-roadmapper*
-
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DSGN-01 | Phase 60 | Pending |
-| DSGN-02 | Phase 60 | Pending |
-| DSGN-03 | Phase 60 | Pending |
-| DSGN-04 | Phase 60 | Pending |
-| DSGN-05 | Phase 60 | Pending |
-| DSGN-06 | Phase 60 | Pending |
+| DSGN-01 | Phase 60 | Complete |
+| DSGN-02 | Phase 60 | Complete |
+| DSGN-03 | Phase 60 | Complete |
+| DSGN-04 | Phase 60 | Complete |
+| DSGN-05 | Phase 60 | Complete |
+| DSGN-06 | Phase 60 | Complete |
 | AUTH-01 | Phase 61 | Complete |
 | AUTH-02 | Phase 61 | Complete |
 | AUTH-03 | Phase 61 | Complete |
 | AUTH-04 | Phase 61 | Complete |
 | AUTH-05 | Phase 61 | Complete |
 | AUTH-06 | Phase 61 | Complete |
-| ONBD-01 | Phase 62 | Pending |
-| ONBD-02 | Phase 62 | Pending |
-| ONBD-03 | Phase 62 | Pending |
-| ONBD-04 | Phase 62 | Pending |
-| ONBD-05 | Phase 62 | Pending |
+| ONBD-01 | Phase 62 | Complete |
+| ONBD-02 | Phase 62 | Complete |
+| ONBD-03 | Phase 62 | Complete |
+| ONBD-04 | Phase 62 | Complete |
+| ONBD-05 | Phase 62 | Complete |
 | PROF-01 | Phase 63 | Pending |
 | PROF-02 | Phase 63 | Pending |
 | PROF-03 | Phase 63 | Pending |
 | PROF-04 | Phase 63 | Pending |
 | PROF-05 | Phase 63 | Pending |
 | PROF-06 | Phase 63 | Pending |
-| API-01 | Phase 63 | Pending |
-| FIX-01 | Phase 63 | Pending |
+| API-01 | Phase 63 | Complete |
+| FIX-01 | Phase 63 | Complete |
 | LAND-01 | Phase 64 | Pending |
 | LAND-02 | Phase 64 | Pending |
 | LAND-03 | Phase 64 | Pending |
@@ -125,12 +181,34 @@
 | DASH-02 | Phase 65 | Pending |
 | DASH-03 | Phase 65 | Pending |
 | DASH-04 | Phase 65 | Pending |
+| IBAK-01 | Phase 66 | Pending |
+| IBAK-02 | Phase 66 | Pending |
+| IBAK-03 | Phase 66 | Pending |
+| IBAK-04 | Phase 66 | Pending |
+| IBAK-05 | Phase 66 | Pending |
+| IBAK-06 | Phase 66 | Pending |
+| LHUB-01 | Phase 67 | Pending |
+| LHUB-02 | Phase 67 | Pending |
+| ISUP-01 | Phase 67 | Pending |
+| ISUP-02 | Phase 67 | Pending |
+| ISUP-03 | Phase 67 | Pending |
+| ISUP-04 | Phase 67 | Pending |
+| IPRO-01 | Phase 68 | Pending |
+| IPRO-02 | Phase 68 | Pending |
+| IPRO-03 | Phase 68 | Pending |
+| IPRO-04 | Phase 68 | Pending |
+| IPRO-05 | Phase 68 | Pending |
+| IPRO-06 | Phase 68 | Pending |
+| CEXP-01 | Phase 68 | Pending |
+| CEXP-02 | Phase 68 | Pending |
+| CEXP-03 | Phase 68 | Pending |
 
 **Coverage:**
-- v2.0 requirements: 34 total
-- Mapped to phases: 34
+- v2.0 requirements: 34 total (20 complete, 14 pending)
+- v2.1 requirements: 21 total (0 complete, 21 pending)
+- Mapped to phases: 55 / 55
 - Unmapped: 0 ✓
 
 ---
-*Requirements defined: 2026-04-25*
-*Last updated: 2026-04-25 — initial v2.0 definition*
+*Requirements defined: 2026-04-25 (v2.0), 2026-04-27 (v2.1)*
+*Last updated: 2026-04-27 — v2.1 Inform Account Tier requirements added*
