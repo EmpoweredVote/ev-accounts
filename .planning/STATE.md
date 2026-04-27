@@ -2,23 +2,27 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-25 after v2.0 milestone start)
+See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.0 Civic Account Experience — Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma: dark navy, blue CTAs, trust-first copy.
-**Anti-funnel principle:** Most users are Inform-tier observers; that is expected and good. Copy and flows must invite, never pressure. Connected = Shared Solutions, not a conversion metric.
+**Current focus:** v2.1 Inform Account Tier — Make Inform a first-class experience with yellow profile, low-friction signup, and an invitational path toward Connected.
+**Anti-funnel principle:** Inform Accounts are the expected entry point for most users. "Connect" is framed as unlocking shared participation — never as a conversion goal.
 
 ## Current Position
 
-**Phase 63 in progress — 1/? plans done**
+**v2.0 Phase 63 in progress — 1/? plans done. v2.1 roadmap being defined.**
 
-v2.0 roadmap created 2026-04-25. 6 phases (60–65), 34 requirements mapped.
+v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–62 shipped. Phase 63 in progress.
+v2.1 roadmap: being created 2026-04-27. 3 phases (66–68), 21 requirements.
+
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
 Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
 Phase 63 (Profile Page + Activity Feed) in progress: 63-01 complete (API-01 + FIX-01 closed).
+Phase 64–65 (InformLanding, Dashboard): pending.
+Phase 66–68 (Inform Account Tier): defining now.
 
-Last activity: 2026-04-26 — Completed 63-01-PLAN.md: GET /api/account/me/activity endpoint added; FIX-01 (invite label round-trip) confirmed closed by code inspection
+Last activity: 2026-04-27 — v2.1 milestone start; Inform Account Tier requirements being defined.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.

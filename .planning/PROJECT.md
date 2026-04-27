@@ -81,18 +81,24 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
-### Active (v2.0)
+### Active (v2.0 + v2.1)
 
-**Milestone: v2.0 Civic Account Experience** — First complete UX overhaul. Match the colleague design system (dark navy, blue CTA) across the full user-facing flow: WelcomeScreen, signup, onboarding, profile, InformLanding, and dashboard.
+**Milestone: v2.0 Civic Account Experience** (Phases 60–65, in progress) — First complete UX overhaul. Match the colleague design system (dark navy, blue CTA) across the full user-facing flow: WelcomeScreen, signup, onboarding, profile, InformLanding, and dashboard.
 
-- [ ] DSGN-01–06: Design foundation — `ev-blue`/`ev-navy` tokens + shared AuthCard, AuthInput, Button, StepProgress, AppNav components
-- [ ] AUTH-01–06: Auth flow restyle — WelcomeScreen, SignupPage (with legal name trust copy), check-email, LoginPage
-- [ ] ONBD-01–05: Onboarding restyle — civic name, location, you're connected steps in new progress bar shell
-- [ ] PROF-01–06: Profile page redesign — name/level/XP bar, gem icons, recent activity, invite section, VR display
-- [ ] API-01: `GET /api/account/me/activity` endpoint for recent XP transactions
-- [ ] FIX-01: Fix invite code generation bug (optional_name not sent)
-- [ ] LAND-01–05: InformLanding — unauthenticated homepage; invitational, not a funnel
-- [ ] DASH-01–04: Dashboard redesign — continue card, stats bar, tiered feature grid
+- [x] DSGN-01–06: Design foundation — `ev-blue`/`ev-navy` tokens + shared AuthCard, AuthInput, Button, StepProgress, AppNav components ✓ Phase 60
+- [x] AUTH-01–06: Auth flow restyle — WelcomeScreen, SignupPage (with legal name trust copy), check-email, LoginPage ✓ Phase 61
+- [x] ONBD-01–05: Onboarding restyle — civic name, location, you're connected steps in new progress bar shell ✓ Phase 62
+- [ ] PROF-01–06, API-01, FIX-01: Profile page redesign + activity feed — Phase 63 in progress
+- [ ] LAND-01–05: InformLanding — unauthenticated homepage; invitational, not a funnel — Phase 64
+- [ ] DASH-01–04: Dashboard redesign — continue card, stats bar, tiered feature grid — Phase 65
+
+**Milestone: v2.1 Inform Account Tier** (Phases 66–68, planned 2026-04-27) — Make the Inform tier a first-class experience. Low-friction signup (email + password + display name), yellow profile page, tier-aware login hub, and a Connected Account explainer that invites without pressuring.
+
+- [ ] IBAK-01–06: inform.inform_profiles schema + yellow gem routing + /me update
+- [ ] LHUB-01–02: Login hub redesign — login form + "Create an Account" CTA + Inform constraints modal
+- [ ] ISUP-01–04: Inform signup flow — display name + email + password, yellow check-email screen, post-confirm redirect
+- [ ] IPRO-01–06: Yellow Inform profile page — tier-aware, wide-border mold, observable Connected tiles
+- [ ] CEXP-01–03: Connected Account explainer — Inform pill dialog, invite code path
 
 ### Deferred to v2.0
 
@@ -209,20 +215,34 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.0 Civic Account Experience
+## Current Milestone: v2.1 Inform Account Tier
 
-**Goal:** Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma — dark navy, blue CTAs, trust-first copy — without sacrificing any existing backend functionality.
+**Goal:** Make the Inform tier a first-class experience — a yellow-themed account that anyone can create in seconds (email + password + display name), with a profile page that feels complete and personal, and an invitational path toward Connected when the user is ready.
 
-**Anti-funnel principle:** Most users are Inform-tier observers; that is expected and good. Copy and flows must invite, never pressure. Connected = Shared Solutions, not a conversion metric.
+**Anti-funnel principle:** Inform Accounts allow people to get to know us before trusting us. The platform finds value through the Compass and Essentials. "Connect" is framed as unlocking shared participation — never as a conversion goal.
+
+**Inform tier capabilities:**
+- Can fully use Inform features (Compass, Essentials)
+- Can observe Connected/Empowered features (read-only)
+- Cannot participate in Connected features (voting, speaking in Symposiums)
+- Can only earn yellow gems (anonymity constraint)
+- Compass stances and Essentials last location are remembered
 
 **Target features:**
-- Design foundation tokens + shared components (AuthCard, StepProgress, AppNav, etc.)
-- Auth flow: WelcomeScreen → Signup (legal name + trust copy) → magic-link confirmation → Login
-- Onboarding: civic name → location → you're connected (in new progress bar shell)
-- Profile page: name/level/XP bar, gem icons, activity feed, invite section, VR display, upgrade CTA
-- InformLanding: unauthenticated homepage that is genuinely useful without a signup wall
-- Dashboard: continue card, stats bar, Inform/Connect feature grid
-- Backend: activity feed endpoint + invite code bug fix
+- `inform.inform_profiles` table — yellow gem balance + last Essentials location
+- Login hub redesign: login form + "Create an Account" CTA + Inform constraints modal
+- Inform signup: display name + email + password (no invite code)
+- Yellow-themed "Check your email" + post-confirm redirect to yellow profile
+- Yellow Inform profile page (modeled on Connected profile at login.empowered.vote/profile — wide desktop borders, tile layout)
+- Connected/Empowered tiles shown as observable (locked, not hidden)
+- Inform Account pill → Connected Account explainer dialog (what it is, auth, invite codes in Alpha)
+- Subtle "Connect your account" bottom section — invitational, never a hard sell
+
+## Previous Milestone: v2.0 Civic Account Experience (Phases 60–65, in progress)
+
+**Goal:** Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma — dark navy, blue CTAs, trust-first copy.
+
+**Status:** Phases 60–62 shipped. Phase 63 in progress. Phases 64–65 pending.
 
 ---
-*Last updated: 2026-04-25 after v2.0 milestone start*
+*Last updated: 2026-04-27 after v2.1 milestone start*
