@@ -2,7 +2,7 @@ import { Router, Response } from 'express';
 import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireVerified } from '../middleware/requireVerified.js';
-import { requireConnected } from '../middleware/tierGuards.js';
+import { requireConnected, requireInform } from '../middleware/tierGuards.js';
 import { createUserClient, adminRpc } from '../lib/supabase.js';
 import { pool } from '../lib/db.js';
 import { getLocationConsent } from '../lib/connectService.js';
@@ -75,6 +75,30 @@ router.get('/me', requireAuth, async (req, res: Response) => {
     // 4b. Check admin flag (PK lookup via service role — negligible cost).
     // Fails closed: isUserAdmin returns false if the check errors.
     const isAdmin = await isUserAdmin(authReq.userId);
+
+    // 4c. Read inform_profile for all authenticated users.
+    // inform schema is NOT in PostgREST exposed schemas — must use pool.query().
+    let informProfileData: { yellow_gem_balance: number; last_essentials_location: unknown } | null = null;
+    try {
+      const { rows: informRows } = await pool.query<{
+        yellow_gem_balance: number;
+        last_essentials_location: unknown;
+      }>(
+        `SELECT yellow_gem_balance, last_essentials_location
+         FROM inform.inform_profiles
+         WHERE user_id = $1`,
+        [authReq.userId]
+      );
+      const informRow = informRows[0];
+      if (informRow) {
+        informProfileData = {
+          yellow_gem_balance: informRow.yellow_gem_balance ?? 0,
+          last_essentials_location: informRow.last_essentials_location ?? null,
+        };
+      }
+    } catch (informErr) {
+      console.error('[GET /api/account/me] inform_profile read error:', informErr);
+    }
 
     // 5. Determine tier from child record presence.
     // Demoted users have an empowered_profiles row with is_active = false —
@@ -187,6 +211,7 @@ router.get('/me', requireAuth, async (req, res: Response) => {
       ...(empowerment_status !== undefined && { empowerment_status }),
       account_standing: connected?.account_standing ?? 'active',
       jurisdiction: jurisdictionData,
+      inform_profile: informProfileData,
       created_at: user.created_at,
       updated_at: user.updated_at,
     };
@@ -620,5 +645,49 @@ router.patch(
     }
   }
 );
+
+// ---------------------------------------------------------------------------
+// PATCH /api/account/location-hint
+// Middleware: requireAuth + requireInform (Connected users → 403)
+//
+// Stores a location hint JSON in inform_profiles.last_essentials_location.
+// Uses INSERT ON CONFLICT upsert — defensive against missing inform_profiles row.
+// ---------------------------------------------------------------------------
+
+const LocationHintBodySchema = z.object({
+  location: z.unknown().refine((v) => v !== undefined && v !== null, {
+    message: 'location is required',
+  }),
+});
+
+router.patch('/location-hint', requireAuth, requireInform, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = LocationHintBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      error: 'VALIDATION_ERROR',
+      issues: parsed.error.issues,
+    });
+    return;
+  }
+
+  const { location } = parsed.data;
+
+  try {
+    await pool.query(
+      `INSERT INTO inform.inform_profiles (user_id, last_essentials_location)
+       VALUES ($1, $2::jsonb)
+       ON CONFLICT (user_id) DO UPDATE
+         SET last_essentials_location = EXCLUDED.last_essentials_location`,
+      [authReq.userId, JSON.stringify(location)]
+    );
+
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[PATCH /api/account/location-hint] error:', err);
+    res.status(500).json({ error: 'INTERNAL_ERROR' });
+  }
+});
 
 export default router;
