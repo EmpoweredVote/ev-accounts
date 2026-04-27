@@ -21,10 +21,10 @@ Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verifi
 Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 closed (63-01); PROF-01–06 completed in admin/src/pages/ProfilePage.tsx (login.empowered.vote/profile, built 2026-04-26). 63-02 closed as superseded — duplicate app/src profile page not needed; canonical profile is login.empowered.vote/profile.
 Phase 64–65 (InformLanding, Dashboard): pending.
 Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBAK-01–06 verified. inform.inform_profiles table live, trigger active, backfill done, gem routing tier-branched, /me inform_profile field live, PATCH /location-hint live, signup_with_invite gem transfer deployed.
-Phase 67 (Login Hub + Inform Signup Flow) in progress: 67-01 complete — yellow "Create an Account" CTA + InformConstraintsModal on Login page. Plans 67-02 (Inform signup route) and 67-03 (backend inform signup endpoint) pending.
+Phase 67 (Login Hub + Inform Signup Flow) in progress: 67-01 complete — yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-03 complete — display_name persisted to public.users on Inform signup path. Plan 67-02 (Inform signup route) pending.
 Phase 68 (Yellow Inform Profile Page): pending.
 
-Last activity: 2026-04-27 — 67-01 complete. InformConstraintsModal built, Login.tsx CTA wired.
+Last activity: 2026-04-27 — 67-03 complete. display_name persisted to public.users for Inform signup path via non-fatal pool.query UPDATE.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
