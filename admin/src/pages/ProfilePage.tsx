@@ -243,6 +243,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
 
 interface CivicSpacesTileProps {
   accessToken: string | null;
+  city: string | null;
   showForm: boolean;
   onToggleForm: () => void;
   address: string;
@@ -254,7 +255,7 @@ interface CivicSpacesTileProps {
 }
 
 function CivicSpacesTile({
-  accessToken, showForm, onToggleForm, address, onAddressChange, onSubmit,
+  accessToken, city, showForm, onToggleForm, address, onAddressChange, onSubmit,
   locationLoading, locationSuccess, locationError,
 }: CivicSpacesTileProps) {
   const href = `https://civicspaces.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`;
@@ -268,12 +269,23 @@ function CivicSpacesTile({
 
       <div className="px-3 pb-3 pt-2 border-t border-gray-700/60 space-y-1.5">
         {!showForm ? (
-          <button
-            onClick={(e) => { e.preventDefault(); onToggleForm(); }}
-            className="text-xs text-ev-teal-light hover:underline text-left"
-          >
-            Update location
-          </button>
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-gray-300 font-medium">{city ?? 'Set your location'}</span>
+            <div className="relative group">
+              <button
+                onClick={onToggleForm}
+                className="flex items-center justify-center w-6 h-6 opacity-70 hover:opacity-100 transition-opacity"
+                aria-label="Update your location"
+              >
+                <svg width="16" height="16" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m118.22 175.74c0-76.098 61.68-137.8 137.78-137.8s137.78 61.699 137.78 137.78c0 73.062-75.82 162.42-128.86 212.7-5 4.7383-12.84 4.7383-17.84 0-53.039-50.281-128.86-139.64-128.86-212.68zm217.02 166.36c-2.9414 3.5586-5.8984 7.0586-8.8594 10.5 50.602 7.3398 85.301 22.34 85.301 39.641 0 24.539-69.699 44.422-155.66 44.422-85.961 0-155.66-19.879-155.66-44.422 0-17.301 34.68-32.301 85.277-39.641-2.9805-3.4414-5.918-6.9414-8.8594-10.5-67.359 10.801-114.28 34.922-114.28 62.961 0 38.102 86.621 69.004 193.5 69.004 106.86 0 193.5-30.898 193.5-69.004 0-28.039-46.922-52.164-114.26-62.961zm-79.242-229.5c-34.859 0-63.141 28.262-63.141 63.141 0 34.859 28.262 63.141 63.141 63.141 34.859 0 63.141-28.262 63.141-63.141 0-34.879-28.281-63.141-63.141-63.141z" fill="#ff563f" fillRule="evenodd"/>
+                </svg>
+              </button>
+              <div className="absolute bottom-full right-0 mb-2 px-2.5 py-1.5 bg-gray-800 border border-gray-700 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
+                Update your location
+              </div>
+            </div>
+          </div>
         ) : (
           <form onSubmit={onSubmit} className="space-y-1.5">
             <input
@@ -404,6 +416,7 @@ export default function ProfilePage() {
   const [roles, setRoles] = useState<UserRoleGrant[]>([]);
   const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts' | 'contributor'>('profile');
 
+  const [city, setCity] = useState<string | null>(null);
   const [address, setAddress] = useState('');
   const [locationLoading, setLocationLoading] = useState(false);
   const [locationSuccess, setLocationSuccess] = useState(false);
@@ -414,6 +427,11 @@ export default function ProfilePage() {
     apiFetch<MeResponse>('/account/me')
       .then((data) => {
         setProfile(data);
+        if (data.location_consent) {
+          apiFetch<{ jurisdiction: { city: string | null } }>('/account/me/jurisdiction')
+            .then((j) => setCity(j.jurisdiction.city))
+            .catch(() => {});
+        }
         if (data.connected_profile) {
           apiFetch<InviteesData>('/invites/my-invitees').then(setInviteesData).catch(() => {});
           apiFetch<{ roles: UserRoleGrant[] }>('/roles/me')
@@ -465,10 +483,11 @@ export default function ProfilePage() {
     setLocationSuccess(false);
     setLocationError(null);
     try {
-      await apiFetch('/connect/set-location', {
+      const result = await apiFetch<{ jurisdiction: { city: string | null } }>('/connect/set-location', {
         method: 'POST',
         body: JSON.stringify({ address: address.trim() }),
       });
+      setCity(result.jurisdiction.city);
       setLocationSuccess(true);
       setAddress('');
       setShowLocationForm(false);
@@ -636,6 +655,7 @@ export default function ProfilePage() {
                       />
                       <CivicSpacesTile
                         accessToken={accessToken}
+                        city={city}
                         showForm={showLocationForm}
                         onToggleForm={() => setShowLocationForm((v) => !v)}
                         address={address}
