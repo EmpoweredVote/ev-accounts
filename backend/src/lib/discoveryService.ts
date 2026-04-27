@@ -31,6 +31,7 @@
 import { distance } from 'fastest-levenshtein';
 import { pool } from './db.js';
 import { sendEmail } from './emailService.js';
+import { fetchPageContent } from './fetchPageContent.js';
 import {
   runDiscoveryAgent,
   type DiscoveredCandidate,
@@ -324,12 +325,24 @@ export async function runDiscoveryForJurisdiction(
   const runId = runInsert.rows[0].id;
 
   try {
-    // --- 4. Call agent ---
+    // --- 4. Pre-fetch source page (handles JS-rendered municipal sites) ---
+    let prefetchedContent: string | null = null;
+    if (cfg.source_url) {
+      try {
+        prefetchedContent = await fetchPageContent(cfg.source_url);
+        console.log(`[discovery] pre-fetched ${cfg.source_url} (${prefetchedContent.length} chars)`);
+      } catch (fetchErr) {
+        console.warn(`[discovery] pre-fetch failed for ${cfg.source_url}, falling back to web_search:`, fetchErr);
+      }
+    }
+
+    // --- 5. Call agent ---
     const agentInput: DiscoveryAgentInput = {
       jurisdictionName: cfg.jurisdiction_name,
       state: cfg.state,
       electionDate: electionDateStr,
       sourceUrl: cfg.source_url,
+      prefetchedContent,
       allowedDomains: cfg.allowed_domains,
       knownRaces: knownRaces.map((r) => ({
         position_name: r.position_name,

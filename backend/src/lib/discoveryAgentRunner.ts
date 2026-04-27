@@ -40,6 +40,7 @@ export interface DiscoveryAgentInput {
   state: string;                   // two-letter, e.g. "CA"
   electionDate: string;            // ISO date, e.g. "2026-11-03"
   sourceUrl?: string | null;       // optional starting URL
+  prefetchedContent?: string | null; // pre-rendered page text (skips web_search when provided)
   allowedDomains?: string[] | null; // optional allowlist for web_search bias
   knownRaces?: Array<{             // context only — agent finds ALL candidates, not just these
     position_name: string;
@@ -111,6 +112,10 @@ export async function runDiscoveryAgent(
 
   const prompt = buildPrompt(input);
 
+  // When pre-fetched content is provided, skip web_search entirely — Claude
+  // extracts candidates directly from the rendered page text.
+  const hasPrefetch = !!input.prefetchedContent;
+
   const webSearchTool = {
     type: 'web_search_20250305' as const,
     name: 'web_search',
@@ -123,6 +128,7 @@ export async function runDiscoveryAgent(
   // Agentic loop: web_search_20250305 is a server-side tool that pauses mid-turn
   // (stop_reason='pause_turn'). We append the assistant response and continue until
   // Claude calls report_candidates or exhausts its search quota.
+  // When prefetchedContent is set, we skip straight to report_candidates (no search needed).
   const messages: any[] = [{ role: 'user', content: prompt }];
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
@@ -133,14 +139,15 @@ export async function runDiscoveryAgent(
   for (let turn = 0; turn < MAX_TURNS; turn++) {
     // On the first turn Claude may search; on continuations strip web_search so
     // max_uses doesn't reset per-request and Claude is forced to report.
+    // If pre-fetched content was provided, always force report_candidates directly.
     const isFirstTurn = turn === 0;
     const response = await client.messages.create({
       model: 'claude-sonnet-4-6',
       max_tokens: 4096,
-      tools: isFirstTurn
+      tools: isFirstTurn && !hasPrefetch
         ? [webSearchTool as any, REPORT_CANDIDATES_TOOL as any]   // search or report
         : [REPORT_CANDIDATES_TOOL as any],                        // report only
-      tool_choice: isFirstTurn
+      tool_choice: (isFirstTurn && !hasPrefetch)
         ? ({ type: 'any' } as any)                                // let Claude pick
         : ({ type: 'tool', name: 'report_candidates' } as any),   // must report now
       messages,
@@ -213,6 +220,24 @@ function buildPrompt(input: DiscoveryAgentInput): string {
           )
           .join('\n')
       : '';
+
+  // When pre-fetched content is provided, embed it directly and skip web_search.
+  if (input.prefetchedContent) {
+    return (
+      `You are a candidate-discovery agent for a nonpartisan voter-information app.\n` +
+      `Your job is to find EVERY candidate listed for the upcoming ${input.electionDate} election in ` +
+      `${input.jurisdictionName}, ${input.state}.\n\n` +
+      `The following is the full text content of the official source page at ${input.sourceUrl ?? 'the election authority website'}, ` +
+      `rendered by a headless browser (JavaScript executed):\n\n` +
+      `<source_content>\n${input.prefetchedContent}\n</source_content>\n\n` +
+      `Rules:\n` +
+      `1. Only report candidates whose names appear verbatim in the source content above.\n` +
+      `2. Use ${input.sourceUrl ?? 'the source URL'} as the citation_url for every candidate — it is the page where their names appear.\n` +
+      `3. Report candidates for ALL races you find — not just the ones in the context list below.\n` +
+      `4. Call the report_candidates tool with all candidates you found.` +
+      knownRacesBlock
+    );
+  }
 
   const sourceBlock = input.sourceUrl
     ? `\n\nStarting source URL (fetch this page; follow direct same-domain links one level deep if they lead to candidate rosters):\n  ${input.sourceUrl}`
