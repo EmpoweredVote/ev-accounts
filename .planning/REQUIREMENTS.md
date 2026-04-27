@@ -79,12 +79,12 @@
 
 ### Backend Schema (IBAK)
 
-- [ ] **IBAK-01**: `inform.inform_profiles` table — `user_id UUID PK → public.users`, `yellow_gem_balance INT DEFAULT 0`, `last_essentials_location JSONB`, `created_at TIMESTAMPTZ DEFAULT now()`
-- [ ] **IBAK-02**: DB trigger auto-creates `inform_profiles` row on every `public.users` INSERT (all signups — Inform and Connected paths)
-- [ ] **IBAK-03**: `GET /api/account/me` returns `inform_profile: { yellow_gem_balance, last_essentials_location }` for all tiers
-- [ ] **IBAK-04**: `POST /api/gems/award` routes yellow gem awards to `inform_profiles.yellow_gem_balance` for Inform-tier users (no `connected_profiles`); blue/red gem awards return 422 for Inform-tier users
-- [ ] **IBAK-05**: `PATCH /api/account/location-hint` — Essentials-callable endpoint that stores last searched location in `inform_profiles.last_essentials_location`; authenticated, Inform-tier only
-- [ ] **IBAK-06**: Connecting an account (creating `connected_profiles` via `signup_with_invite` RPC) transfers `inform_profiles.yellow_gem_balance` to `connected_profiles.gem_balance_yellow` atomically
+- [x] **IBAK-01**: `inform.inform_profiles` table — `user_id UUID PK → public.users`, `yellow_gem_balance INT DEFAULT 0`, `last_essentials_location JSONB`, `created_at TIMESTAMPTZ DEFAULT now()`
+- [x] **IBAK-02**: DB trigger auto-creates `inform_profiles` row on every `public.users` INSERT (all signups — Inform and Connected paths)
+- [x] **IBAK-03**: `GET /api/account/me` returns `inform_profile: { yellow_gem_balance, last_essentials_location }` for all tiers
+- [x] **IBAK-04**: `POST /api/gems/award` routes yellow gem awards to `inform_profiles.yellow_gem_balance` for Inform-tier users (no `connected_profiles`); blue/red gem awards return 422 for Inform-tier users
+- [x] **IBAK-05**: `PATCH /api/account/location-hint` — Essentials-callable endpoint that stores last searched location in `inform_profiles.last_essentials_location`; authenticated, Inform-tier only
+- [x] **IBAK-06**: Connecting an account (creating `connected_profiles` via `signup_with_invite` RPC) transfers `inform_profiles.yellow_gem_balance` to `connected_profiles.gem_balance_yellow` atomically
 
 ### Login Hub (LHUB)
 
@@ -181,12 +181,12 @@
 | DASH-02 | Phase 65 | Pending |
 | DASH-03 | Phase 65 | Pending |
 | DASH-04 | Phase 65 | Pending |
-| IBAK-01 | Phase 66 | Pending |
-| IBAK-02 | Phase 66 | Pending |
-| IBAK-03 | Phase 66 | Pending |
-| IBAK-04 | Phase 66 | Pending |
-| IBAK-05 | Phase 66 | Pending |
-| IBAK-06 | Phase 66 | Pending |
+| IBAK-01 | Phase 66 | Complete |
+| IBAK-02 | Phase 66 | Complete |
+| IBAK-03 | Phase 66 | Complete |
+| IBAK-04 | Phase 66 | Complete |
+| IBAK-05 | Phase 66 | Complete |
+| IBAK-06 | Phase 66 | Complete |
 | LHUB-01 | Phase 67 | Pending |
 | LHUB-02 | Phase 67 | Pending |
 | ISUP-01 | Phase 67 | Pending |

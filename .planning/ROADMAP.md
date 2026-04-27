@@ -697,9 +697,9 @@ Plans:
 
 Plans:
 Plans:
-- [ ] 66-01-PLAN.md � Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
-- [ ] 66-02-PLAN.md � Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
-- [ ] 66-03-PLAN.md � requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
+- [ ] 66-01-PLAN.md � Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
+- [ ] 66-02-PLAN.md � Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
+- [ ] 66-03-PLAN.md � requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
 **Success Criteria:**
 
 1. `inform.inform_profiles` exists with a row for every `public.users` entry — including rows for users who signed up before this migration ran (backfilled by the trigger or a one-time backfill script).
@@ -830,6 +830,6 @@ Plans:
 | 63. Profile Page + Activity Feed | v2.0 | 0/2 | Pending | — |
 | 64. InformLanding | v2.0 | 0/? | Pending | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
-| 66. Inform Profiles Backend Foundation | v2.1 | 0/3 | Pending | — |
+| 66. Inform Profiles Backend Foundation | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 67. Login Hub + Inform Signup Flow | v2.1 | 0/3 | Pending | — |
 | 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 0/3 | Pending | — |
