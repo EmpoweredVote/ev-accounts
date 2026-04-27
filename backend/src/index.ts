@@ -25,6 +25,7 @@ import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
 import essentialsDiscoveryRouter from './routes/essentialsDiscovery.js';
 import stagingQueueAdminRouter from './routes/stagingQueueAdmin.js';
+import discoveryDashboardRouter from './routes/discoveryDashboard.js';
 import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
@@ -103,6 +104,11 @@ app.use('/api/social', socialRouter);
 // Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
 // X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
 app.use('/api/admin', stagingQueueAdminRouter);
+// JWT-gated discovery dashboard read endpoints for the browser admin UI (Phase 8).
+// Auth is applied per-route inside discoveryDashboard.ts (not at mount).
+// Must be mounted BEFORE essentialsDiscoveryRouter so JWT-authenticated GETs are
+// handled here and do not fall through to the X-Admin-Token route layer.
+app.use('/api/admin', discoveryDashboardRouter);
 // Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
 // because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
 app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
