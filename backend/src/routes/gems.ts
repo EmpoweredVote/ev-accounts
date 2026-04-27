@@ -76,6 +76,10 @@ router.post(
       });
     } catch (err) {
       const code = (err as { code?: string }).code;
+      if (code === 'INFORM_TIER_NO_BLUE_RED') {
+        res.status(422).json({ error: 'INFORM_TIER_NO_BLUE_RED' });
+        return;
+      }
       if (code === 'NOT_CONNECTED') {
         res.status(404).json({ error: 'User has no connected profile' });
         return;
