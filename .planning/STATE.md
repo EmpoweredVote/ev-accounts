@@ -83,8 +83,9 @@ Known deferred items at close: 4 (see above)
 | 260426-eob | remove compass icon from compass first cards on essentials since we are moving to a compass first view | 2026-04-26 | essentials (untracked) | [260426-eob-remove-compass-icon-from-compass-first-c](./quick/260426-eob-remove-compass-icon-from-compass-first-c/) |
 | 260426-mc5 | authed users write through ev-context as a cache for cross-subdomain hydration (ev-ui authed-slice helpers + wired into CompassV2/essentials/read-rank/treasury-tracker) | 2026-04-26 | 178d13c (ev-ui), b6f52d1 (CompassV2), ab51cef (essentials), ccb28e4 (read-rank), 83136d4 (EV-prototypes) | [260426-mc5-authed-users-write-through-ev-context-as](./quick/260426-mc5-authed-users-write-through-ev-context-as/) |
 | 260426-mw6 | authed evContext promotion prompt — useEvContextPromotion hook + inline banners (compass/address/verdicts) on CompassV2/essentials/read-rank for authed users with empty API + populated guest ev-context | 2026-04-26 | 7ec60ad (ev-ui), ad25e89 (CompassV2), 8ef0962 (essentials), 99ae103/03116cb (read-rank) | [260426-mw6-authed-evcontext-promotion-prompt-save-g](./quick/260426-mw6-authed-evcontext-promotion-prompt-save-g/) |
+| 260426-s0g | Elections page: correctly label multi-seat unopposed races with seat count ("Running Unopposed (N seats)") — ev-ui 0.6.4 + ElectionsView seats-aware isUnopposed logic | 2026-04-26 | e7cfca0 (ev-ui), 64abc7a (essentials) | [260426-s0g-elections-unopposed-multi-seat-label](./quick/260426-s0g-elections-unopposed-multi-seat-label/) |
 
 ## Session Continuity
 
-Last activity: 2026-04-26 - Completed quick task 260426-mw6: authed evContext promotion prompt
+Last activity: 2026-04-26 - Completed quick task 260426-s0g: elections multi-seat unopposed label
 Next: /gsd-new-milestone to plan next milestone
