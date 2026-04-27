@@ -183,13 +183,38 @@ router.get('/address-search', optionalAuth, async (req: Request, res: Response):
 // Auth: none — public endpoint (Read & Rank uses plain fetch, no Bearer token)
 // Returns { quotes, candidates, issues } — the full dataset for the Read & Rank app.
 //
-// quotes[].issue = compass_topic UUID (not topic_key slug)
-// candidates[] = deduplicated active politicians who have quotes
-// issues[] = deduplicated compass topics that have quotes
+// Optional query param: ?politician_id=<uuid>
+//   When provided, returns only quotes for that politician (used by StanceAccordion
+//   in the profile view). When absent, returns all quotes (Read & Rank behavior).
+//
+// quotes[].issue   = topic_key slug (matches compass topics)
+// quotes[].candidateId = politician UUID
+// candidates[]     = deduplicated active politicians who have quotes
+// issues[]         = deduplicated compass topics that have quotes
 // ---------------------------------------------------------------------------
 
-router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
+router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
+  // Optional single-politician filter — used by StanceAccordion on profile pages
+  const politicianIdParam = typeof req.query.politician_id === 'string'
+    ? req.query.politician_id.trim()
+    : null;
+
+  if (politicianIdParam !== null && !UUID_RE.test(politicianIdParam)) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'politician_id must be a valid UUID' });
+    return;
+  }
+
   try {
+    const queryParams: string[] = [];
+    const whereClauses: string[] = ['p.is_active = true'];
+
+    if (politicianIdParam) {
+      queryParams.push(politicianIdParam);
+      whereClauses.push(`q.politician_id = $${queryParams.length}`);
+    }
+
+    const whereSQL = whereClauses.join(' AND ');
+
     const { rows } = await pool.query(`
       SELECT
         q.id                    AS quote_id,
@@ -207,7 +232,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
         ct.short_title          AS topic_title,
         ct.question_text        AS topic_question
       FROM essentials.quotes q
-      JOIN essentials.politicians p ON p.id = q.politician_id AND p.is_active = true
+      JOIN essentials.politicians p ON p.id = q.politician_id AND ${whereSQL}
       LEFT JOIN LATERAL (
         SELECT title FROM essentials.offices
         WHERE politician_id = p.id
@@ -216,7 +241,7 @@ router.get('/quotes', async (_req: Request, res: Response): Promise<void> => {
       ) o ON true
       LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
       ORDER BY p.full_name, q.topic_key
-    `);
+    `, queryParams);
 
     // Build quotes array — only include quotes where the topic matched
     const quotes = rows
