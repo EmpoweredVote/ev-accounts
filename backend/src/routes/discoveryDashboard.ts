@@ -213,7 +213,7 @@ router.post('/discovery/trigger/:id', requireAuth as any, requireAdmin as any, a
       return;
     }
 
-    runDiscoveryForJurisdiction(id, { triggeredBy: 'on_demand' })
+    runDiscoveryForJurisdiction(id, { triggeredBy: 'on_demand', autoUpsert: true })
       .catch((err) => {
         console.error('[POST /discovery/trigger/:id] background run failed for id=' + id + ':', err);
       })
