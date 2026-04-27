@@ -718,12 +718,12 @@ Plans:
 
 **Requirements:** LHUB-01, LHUB-02, ISUP-01, ISUP-02, ISUP-03, ISUP-04
 
-**Plans:** TBD
+**Plans:** 3 plans
 
 Plans:
-- [ ] 67-01-PLAN.md — LoginPage: add "Create an Account" CTA; build Inform constraints modal (what Inform can/cannot do, yellow gem note)
-- [ ] 67-02-PLAN.md — Inform signup form: display name + email + password fields (no invite code); yellow "Check your email" screen; post-confirm redirect to `/profile`
-- [ ] 67-03-PLAN.md — Backend: new `signup_inform` Supabase RPC (or standard Supabase signUp with display_name stored on inform_profiles); Zod validation; migration if needed
+- [ ] 67-01-PLAN.md — Login page: yellow "Create an Account" CTA + InformConstraintsModal (links to /signup/inform; secondary invite-code link to /signup)
+- [ ] 67-02-PLAN.md — InformSignup.tsx page at /signup/inform: 3-field form (display name + email + password, no invite code); yellow "Check your email" success screen with Inform Account pill
+- [ ] 67-03-PLAN.md — Backend: persist display_name to public.users on Inform path via pool.query() UPDATE in POST /api/auth/signup (non-fatal; no schema change)
 
 **Success Criteria:**
 
