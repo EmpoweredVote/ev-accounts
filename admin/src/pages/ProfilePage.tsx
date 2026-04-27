@@ -82,8 +82,8 @@ interface Feature {
   statsKey?: 'vr' | 'election' | 'readrank' | 'compass';
 }
 
-const NEXT_ELECTION_DATE = new Date('2026-06-03');
-const NEXT_ELECTION_LABEL = 'June 3 Primary';
+const NEXT_ELECTION_DATE = new Date('2026-06-02');
+const NEXT_ELECTION_LABEL = 'June 2 Primary';
 
 function daysUntilElection(): number {
   return Math.max(0, Math.ceil((NEXT_ELECTION_DATE.getTime() - Date.now()) / 86400000));
