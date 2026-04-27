@@ -184,6 +184,27 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
+  // Phase 67: Inform signup path persists display_name onto public.users.
+  // The on_auth_user_created trigger inserts public.users(id) with display_name = NULL.
+  // The Connected path (below) writes display_name through signup_with_invite RPC, so
+  // we ONLY do this UPDATE when no invite_code is present (Inform path).
+  // Non-fatal: if the UPDATE fails, the user is already created — they can update
+  // display_name from the profile page later. We log and continue.
+  if (!invite_code) {
+    try {
+      await pool.query(
+        `UPDATE public.users
+           SET display_name = $2,
+               updated_at = now()
+         WHERE id = $1`,
+        [data.user.id, display_name]
+      );
+    } catch (updateErr) {
+      console.error('[auth/signup] Failed to persist display_name for Inform user:', data.user.id, updateErr);
+      // Intentionally non-fatal — proceed to 201 below.
+    }
+  }
+
   // Phase 24: If invite_code provided without legal_name, return 422 immediately.
   // Both fields are required together — invite_code alone cannot create a Connected profile.
   if (invite_code && !legal_name) {
