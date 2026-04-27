@@ -29,6 +29,8 @@ import type { Request, Response } from 'express';
 import { pool } from '../lib/db.js';
 import { requireAuth } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
+import { runDiscoveryForJurisdiction } from '../lib/discoveryService.js';
+import { acquireRunLock, releaseRunLock } from '../lib/discoveryCron.js';
 
 const router = Router();
 
@@ -174,6 +176,54 @@ router.get('/discovery/coverage', requireAuth as any, requireAdmin as any, async
     res.json(result.rows);
   } catch (err) {
     console.error('[GET /discovery/coverage] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /discovery/trigger/:id
+// Auth: requireAuth + requireAdmin (per-route, JWT Bearer)
+// JWT-gated equivalent of POST /discover/jurisdiction/:id (X-Admin-Token route).
+// Triggers a background discovery run for the given discovery_jurisdictions UUID.
+// Returns 202 immediately; run continues asynchronously.
+// ---------------------------------------------------------------------------
+router.post('/discovery/trigger/:id', requireAuth as any, requireAdmin as any, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+
+    if (!id || !UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid jurisdiction id (expected UUID)' });
+      return;
+    }
+
+    const existsResult = await pool.query(
+      'SELECT 1 FROM essentials.discovery_jurisdictions WHERE id = $1',
+      [id]
+    );
+    if (existsResult.rows.length === 0) {
+      res.status(404).json({ code: 'NOT_FOUND', message: 'discovery_jurisdictions row not found' });
+      return;
+    }
+
+    if (!acquireRunLock()) {
+      res.status(409).json({
+        code: 'ALREADY_RUNNING',
+        message: 'A discovery run is already in progress. Try again after it completes.',
+      });
+      return;
+    }
+
+    runDiscoveryForJurisdiction(id, { triggeredBy: 'on_demand' })
+      .catch((err) => {
+        console.error('[POST /discovery/trigger/:id] background run failed for id=' + id + ':', err);
+      })
+      .finally(() => {
+        releaseRunLock();
+      });
+
+    res.status(202).json({ status: 'accepted', jurisdictionId: id });
+  } catch (err) {
+    console.error('[POST /discovery/trigger/:id] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
