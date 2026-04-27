@@ -19,6 +19,7 @@ import { PromotionsPage } from './pages/admin/PromotionsPage';
 import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import InformSignup from './pages/InformSignup';
 import PrivacyPage from './pages/PrivacyPage';
 import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
@@ -67,6 +68,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/signup/inform" element={<InformSignup />} />
       <Route path="/privacy" element={<PrivacyPage />} />
 
       {/* Authenticated (any tier) */}
