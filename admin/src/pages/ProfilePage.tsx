@@ -671,14 +671,12 @@ export default function ProfilePage() {
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
                     {!cp && (
-                      <span className="text-[10px] font-medium text-gray-500 border border-gray-300 dark:border-gray-700 px-1.5 py-0.5 rounded-full">Observe Access</span>
+                      <span className="text-[10px] font-semibold border px-2 py-0.5 rounded-full border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow">Observe Access</span>
                     )}
                   </div>
                   {!cp && (
                     <p className="text-xs text-gray-600 dark:text-gray-500 mb-3 leading-relaxed">
-                      You can browse these features as an observer.{' '}
-                      <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">Upgrade to a Connected Account</a>{' '}
-                      to contribute to discussions and earn more gems.
+                      You can browse these features as an observer. <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">Upgrade to a Connected Account</a> to contribute to discussions and earn more gems.
                     </p>
                   )}
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
