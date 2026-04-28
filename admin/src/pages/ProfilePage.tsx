@@ -676,7 +676,7 @@ export default function ProfilePage() {
                   </div>
                   {!cp && (
                     <p className="text-xs text-gray-600 dark:text-gray-500 mb-3 leading-relaxed">
-                      You can browse these features as an observer. <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">Upgrade to a Connected Account</a> to contribute to discussions and earn more gems.
+                      You can browse the below features as an observer, but must <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">authenticate your identity to Connect your Account</a> in order to contribute to discussions and earn other gems.
                     </p>
                   )}
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
