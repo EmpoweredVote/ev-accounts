@@ -49,7 +49,7 @@ export default function InformConstraintsModal({
                   <span className="font-medium text-gray-900 dark:text-white">Inform Accounts can earn Yellow Gems</span>
                   {' '}that help amplify ideas.
                 </span>
-                <img src="/Yellow_Gem.png" alt="Yellow Gem" className="h-5 w-5 inline-block" />
+                <span className="w-4 h-4 shrink-0 inline-block rounded-sm" style={{ background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
               </span>
             </li>
           </ul>
