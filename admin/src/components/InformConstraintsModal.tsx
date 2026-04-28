@@ -23,7 +23,7 @@ export default function InformConstraintsModal({
           </DialogTitle>
 
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-            Inform Accounts are for anyone who wants to understand their civic world — no invite required.
+            Inform Accounts are for anyone who wants to understand their civic world — no authentication required.
             Here's what you get:
           </p>
 
@@ -31,22 +31,25 @@ export default function InformConstraintsModal({
             <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
               <span className="text-ev-yellow font-bold mt-0.5 shrink-0">✓</span>
               <span>
-                <span className="font-medium text-gray-900 dark:text-white">Full Inform access</span>
-                {' '}— Compass, Essentials, Read &amp; Rank, Civics Test
+                <span className="font-medium text-gray-900 dark:text-white">Full Access to Inform Features</span>
+                {' '}— including the Essentials, Compass, Read &amp; Rank, and Civic Trivia Championships.
               </span>
             </li>
             <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
               <span className="text-ev-yellow font-bold mt-0.5 shrink-0">✓</span>
               <span>
-                <span className="font-medium text-gray-900 dark:text-white">Observe Connected and Empowered features</span>
-                {' '}— read-only, no participation in Validation Quests or Focused Communities
+                <span className="font-medium text-gray-900 dark:text-white">Observe Access to Connect and Empower Features</span>
+                {' '}— You cannot contribute to discussions or vote on our platform until you've authenticated your account.
               </span>
             </li>
             <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
               <span className="text-ev-yellow font-bold mt-0.5 shrink-0">✓</span>
-              <span>
-                <span className="font-medium text-gray-900 dark:text-white">Earn yellow gems</span>
-                {' '}for Inform activity (no red or teal gems)
+              <span className="flex items-center gap-2 flex-wrap">
+                <span>
+                  <span className="font-medium text-gray-900 dark:text-white">Inform Accounts can earn Yellow Gems</span>
+                  {' '}that help amplify ideas.
+                </span>
+                <img src="/Yellow_Gem.png" alt="Yellow Gem" className="h-5 w-5 inline-block" />
               </span>
             </li>
           </ul>
