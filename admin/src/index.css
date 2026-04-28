@@ -8,6 +8,8 @@
   --color-ev-teal: #00657C;       /* Connect (dark / primary) */
   --color-ev-teal-light: #59B0C4; /* Connect (light mode / resonant votes) */
   --color-ev-yellow: #FED12E;     /* Inform features and Gems */
+  --color-ev-inform-section: #F5D356;  /* Inform section background */
+  --color-ev-connect-section: #7DD4E8; /* Connect section background */
   --color-ev-black: #1c1c1c;
   /* v2.0 Civic Account Experience */
   --color-ev-blue: #3B82F6;       /* v2.0 primary CTA / focus ring */

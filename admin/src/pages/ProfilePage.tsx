@@ -646,7 +646,7 @@ export default function ProfilePage() {
                 <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Empowered Vote Features</h2>
 
                 {/* Inform — always full access */}
-                <div className="rounded-xl bg-ev-yellow/10 dark:bg-ev-yellow/5 p-3">
+                <div className="rounded-xl bg-ev-inform-section/20 dark:bg-ev-inform-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Inform</span>
@@ -666,7 +666,7 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Connect — full access for Connected+, observe for Inform */}
-                <div className="rounded-xl bg-ev-blue/10 dark:bg-ev-blue/5 p-3">
+                <div className="rounded-xl bg-ev-connect-section/20 dark:bg-ev-connect-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
