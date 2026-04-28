@@ -45,8 +45,8 @@ export default function Login() {
       });
 
       if (!loginRes.ok) {
-        const body = await loginRes.json().catch(() => ({ error: 'Login failed' }));
-        throw new Error(body.error || 'Login failed');
+        const body = await loginRes.json().catch(() => ({ message: 'Login failed' }));
+        throw new Error(body.message || body.error || 'Login failed');
       }
 
       const loginData = await loginRes.json();
