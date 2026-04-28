@@ -649,7 +649,7 @@ export default function ProfilePage() {
                 <div className="rounded-xl bg-ev-inform-section/20 dark:bg-ev-inform-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
-                    <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Inform</span>
+                    <span className="text-xs font-semibold text-gray-600 dark:text-ev-yellow uppercase tracking-widest">Inform</span>
                   </div>
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
                     {INFORM_FEATURES.map((f) => (
