@@ -151,7 +151,7 @@ function GemPip({ count, gemStyle, tooltip }: { count: number; gemStyle: React.C
   return (
     <div className="relative group flex items-center gap-1.5">
       <div className="w-5 h-5 flex-shrink-0" style={gemStyle} />
-      <span className="text-white text-sm font-semibold tabular-nums">{count.toLocaleString()}</span>
+      <span className="text-gray-900 dark:text-white text-sm font-semibold tabular-nums">{count.toLocaleString()}</span>
       <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1.5 bg-gray-800 border border-gray-700 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
         {tooltip}
       </div>
@@ -190,17 +190,17 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`bg-gray-800/60 rounded-xl border border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
+      className={`bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
     >
       <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotClass}`} />
-      <p className="text-sm font-semibold text-white leading-snug">{feature.name}</p>
-      <p className="text-xs text-gray-400 leading-relaxed">{feature.description}</p>
+      <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">{feature.name}</p>
+      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{feature.description}</p>
 
       {(showVr || showElection || showReadRank || showCompass) && (
-        <div className="mt-auto pt-2 border-t border-gray-700/60 space-y-1">
+        <div className="mt-auto pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
           {showElection && (
-            <p className="text-xs text-gray-400">
-              <span className="text-white font-semibold tabular-nums">{electionDays}</span>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{electionDays}</span>
               {' '}days until {NEXT_ELECTION_LABEL}
             </p>
           )}
@@ -210,7 +210,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
                 <span className="text-white font-semibold tabular-nums">{vr}</span>
                 <span> / 150 verification rating</span>
               </p>
-              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+              <div className="h-1 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <div className="bg-ev-teal-light h-full rounded-full" style={{ width: `${vrPercent}%` }} />
               </div>
             </>
@@ -221,7 +221,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
                 <span className="text-white font-semibold tabular-nums">{readRankStats.ranked}</span>
                 <span> / {readRankStats.total} stances ranked</span>
               </p>
-              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+              <div className="h-1 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <div className="bg-ev-yellow h-full rounded-full" style={{ width: `${rrPct}%` }} />
               </div>
             </>
@@ -232,7 +232,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
                 <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
                 <span> / {compassStats.total} stances calibrated</span>
               </p>
-              <div className="h-1 rounded-full bg-gray-700 overflow-hidden">
+              <div className="h-1 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
                 <div className="bg-ev-yellow h-full rounded-full" style={{ width: `${compassPct}%` }} />
               </div>
             </>
@@ -264,17 +264,17 @@ function CivicSpacesTile({
 }: CivicSpacesTileProps) {
   const href = `https://civicspaces.empowered.vote${accessToken ? `#access_token=${accessToken}` : ''}`;
   return (
-    <div className="bg-gray-800/60 rounded-xl border border-gray-700 flex flex-col min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-800 transition-colors overflow-hidden">
+    <div className="bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col min-h-[13rem] hover:border-ev-blue/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors overflow-hidden">
       <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-1.5 p-3 flex-1">
         <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
-        <p className="text-sm font-semibold text-white leading-snug">Civic Spaces</p>
-        <p className="text-xs text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
+        <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">Civic Spaces</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
       </a>
 
-      <div className="px-3 pb-3 pt-2 border-t border-gray-700/60 space-y-1.5">
+      <div className="px-3 pb-3 pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1.5">
         {!showForm ? (
           <div className="flex items-center justify-between">
-            <span className="text-xs text-gray-300 font-medium">{city ?? 'Set your location'}</span>
+            <span className="text-xs text-gray-600 dark:text-gray-300 font-medium">{city ?? 'Set your location'}</span>
             <div className="relative group">
               <button
                 onClick={onToggleForm}
@@ -297,7 +297,7 @@ function CivicSpacesTile({
               value={address}
               onChange={(e) => onAddressChange(e.target.value)}
               placeholder="Enter your address"
-              className="w-full px-2 py-1.5 border border-gray-600 rounded-lg text-xs bg-gray-900 text-white placeholder-gray-500 focus:outline-none focus:border-ev-teal-light"
+              className="w-full px-2 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg text-xs bg-white dark:bg-gray-900 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:border-ev-teal-light"
             />
             <div className="flex gap-1.5">
               <button
@@ -532,13 +532,13 @@ export default function ProfilePage() {
   const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats };
 
   return (
-    <div className="min-h-screen bg-gray-950 transition-colors duration-200">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
 
       {/* Nav */}
-      <nav className="bg-gray-900 border-b border-gray-800 px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between sticky top-0 z-10">
-        <span className="font-semibold text-white">Empowered Vote</span>
+      <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-4 sm:px-8 lg:px-16 py-3 flex items-center justify-between sticky top-0 z-10">
+        <span className="font-semibold text-gray-900 dark:text-white">Empowered Vote</span>
         <div className="flex items-center gap-3">
-          <button onClick={toggle} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} className="text-gray-400 hover:text-gray-200 transition-colors p-1 rounded-md">
+          <button onClick={toggle} aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'} className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors p-1 rounded-md">
             {isDark ? <SunIcon /> : <MoonIcon />}
           </button>
           {user?.isAdmin && (
@@ -549,7 +549,7 @@ export default function ProfilePage() {
               <div className="absolute right-0 top-full mt-2 px-2.5 py-1 bg-gray-800 text-white text-xs rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">Admin Hub</div>
             </div>
           )}
-          <button onClick={handleSignOut} className="text-sm text-gray-400 hover:text-gray-200 transition-colors">Sign out</button>
+          <button onClick={handleSignOut} className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors">Sign out</button>
         </div>
       </nav>
 
@@ -563,18 +563,21 @@ export default function ProfilePage() {
         <div className="px-4 sm:px-8 lg:px-16 py-5">
 
           {/* Tab bar — tabs left, Connected Account pill right */}
-          <div className="flex items-center justify-between border-b border-gray-800 mb-5">
+          <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 mb-5">
             <nav className="flex gap-1">
               {(['profile', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
                 if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
+                const isActive = activeTab === tab;
                 return (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
                     className={`px-4 py-2.5 text-sm font-medium border-b-2 -mb-px transition-colors ${
-                      activeTab === tab
-                        ? 'border-ev-teal-light text-ev-teal-light'
-                        : 'border-transparent text-gray-500 hover:text-gray-300'
+                      isActive
+                        ? profile.tier === 'inform'
+                          ? 'border-ev-yellow text-ev-black dark:text-ev-yellow'
+                          : 'border-ev-teal-light text-ev-teal dark:text-ev-teal-light'
+                        : 'border-transparent text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
                     }`}
                   >
                     {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : 'Profile'}
@@ -582,12 +585,12 @@ export default function ProfilePage() {
                 );
               })}
             </nav>
-            <span className={`border text-xs px-3 py-1 rounded-full flex-shrink-0 mb-px ${
+            <span className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px ${
               profile.tier === 'inform'
-                ? 'border-ev-yellow/40 text-ev-yellow'
+                ? 'border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow'
                 : profile.tier === 'empowered'
                 ? 'border-ev-red/40 text-ev-red'
-                : 'border-gray-700 text-gray-400'
+                : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400'
             }`}>
               {profile.tier === 'inform' ? 'Inform Account' : profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
             </span>
@@ -598,9 +601,13 @@ export default function ProfilePage() {
             <div className="space-y-3">
 
               {/* Header card — width of two feature tiles, height of a feature tile */}
-              <div className="w-full md:w-[30.5rem] bg-gray-900 rounded-2xl border border-gray-800 p-4 min-h-[13rem] flex flex-col justify-between">
+              <div className={`w-full md:w-[30.5rem] bg-white dark:bg-gray-900 rounded-2xl border p-4 min-h-[13rem] flex flex-col justify-between ${
+                profile.tier === 'inform'
+                  ? 'border-ev-yellow/60 dark:border-ev-yellow/25'
+                  : 'border-gray-200 dark:border-gray-800'
+              }`}>
                 <div>
-                  <h1 className="text-3xl font-bold text-white mb-3">{displayName}</h1>
+                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">{displayName}</h1>
                   {cp && xp ? (
                     <div className="flex items-center justify-between">
                       <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
@@ -623,28 +630,26 @@ export default function ProfilePage() {
                     <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden">
                       <div className="bg-ev-blue h-full rounded-full transition-all duration-700" style={{ width: `${xpPercent}%`, boxShadow: '0 0 10px rgba(59,130,246,0.6)' }} />
                     </div>
-                    <p className="text-xs text-gray-400 mt-1.5 tabular-nums text-right">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 tabular-nums text-right">
                       {xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP
                     </p>
                   </div>
-                ) : profile.tier === 'inform' ? (
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    Earn Yellow Gems through Inform activity.{' '}
-                    <a href="/signup" className="text-ev-teal-light hover:underline">Create a Connected Account</a>{' '}
-                    to participate in Validation Quests and earn more gems.
-                  </p>
                 ) : null}
               </div>
 
               {/* Features — Inform and Connect shown for all tiers */}
-              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 space-y-5">
-                <h2 className="text-sm font-semibold text-white">Empowered Vote Features</h2>
+              <div className={`bg-white dark:bg-gray-900 rounded-2xl border p-4 space-y-5 ${
+                profile.tier === 'inform'
+                  ? 'border-ev-yellow/50 dark:border-ev-yellow/20'
+                  : 'border-gray-200 dark:border-gray-800'
+              }`}>
+                <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Empowered Vote Features</h2>
 
                 {/* Inform — always full access */}
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
+                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Inform</span>
                   </div>
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
                     {INFORM_FEATURES.map((f) => (
@@ -664,15 +669,15 @@ export default function ProfilePage() {
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
-                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
+                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Connect</span>
                     {!cp && (
-                      <span className="text-[10px] font-medium text-gray-500 border border-gray-700 px-1.5 py-0.5 rounded-full">Observe Access</span>
+                      <span className="text-[10px] font-medium text-gray-500 border border-gray-300 dark:border-gray-700 px-1.5 py-0.5 rounded-full">Observe Access</span>
                     )}
                   </div>
                   {!cp && (
                     <p className="text-xs text-gray-500 mb-3 leading-relaxed">
                       You can browse these features as an observer.{' '}
-                      <a href="/signup" className="text-ev-teal-light hover:underline">Upgrade to a Connected Account</a>{' '}
+                      <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">Upgrade to a Connected Account</a>{' '}
                       to contribute to discussions and earn more gems.
                     </p>
                   )}
