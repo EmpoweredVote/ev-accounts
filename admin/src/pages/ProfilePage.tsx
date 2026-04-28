@@ -15,6 +15,9 @@ interface MeConnectedProfile {
   vq_hold_active: boolean;
   completed_onboarding: boolean;
 }
+interface MeInformProfile {
+  yellow_gem_balance: number;
+}
 interface MeResponse {
   id: string;
   email: string;
@@ -23,6 +26,7 @@ interface MeResponse {
   is_admin: boolean;
   location_consent: boolean;
   connected_profile?: MeConnectedProfile;
+  inform_profile?: MeInformProfile | null;
 }
 interface InviteeEntry {
   status: 'claimed' | 'pending';
@@ -578,8 +582,14 @@ export default function ProfilePage() {
                 );
               })}
             </nav>
-            <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full flex-shrink-0 mb-px">
-              Connected Account
+            <span className={`border text-xs px-3 py-1 rounded-full flex-shrink-0 mb-px ${
+              profile.tier === 'inform'
+                ? 'border-ev-yellow/40 text-ev-yellow'
+                : profile.tier === 'empowered'
+                ? 'border-ev-red/40 text-ev-red'
+                : 'border-gray-700 text-gray-400'
+            }`}>
+              {profile.tier === 'inform' ? 'Inform Account' : profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
             </span>
           </div>
 
@@ -600,6 +610,12 @@ export default function ProfilePage() {
                         <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
                       </div>
                     </div>
+                  ) : profile.tier === 'inform' && profile.inform_profile != null ? (
+                    <GemPip
+                      count={profile.inform_profile.yellow_gem_balance}
+                      tooltip="Yellow Gems amplify ideas."
+                      gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }}
+                    />
                   ) : null}
                 </div>
                 {cp && xp ? (
@@ -611,48 +627,64 @@ export default function ProfilePage() {
                       {xp.xp_in_level.toLocaleString()} / {xpLevelTotal.toLocaleString()} XP
                     </p>
                   </div>
+                ) : profile.tier === 'inform' ? (
+                  <p className="text-xs text-gray-600 leading-relaxed">
+                    Earn Yellow Gems through Inform activity.{' '}
+                    <a href="/signup" className="text-ev-teal-light hover:underline">Create a Connected Account</a>{' '}
+                    to participate in Validation Quests and earn more gems.
+                  </p>
                 ) : null}
               </div>
 
-              {/* Features — Inform and Connect in separate left-justified fixed-width grids */}
-              {cp && (
-                <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 space-y-5">
-                  <h2 className="text-sm font-semibold text-white">Empowered Vote Features</h2>
+              {/* Features — Inform and Connect shown for all tiers */}
+              <div className="bg-gray-900 rounded-2xl border border-gray-800 p-4 space-y-5">
+                <h2 className="text-sm font-semibold text-white">Empowered Vote Features</h2>
 
-                  {/* Inform */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
-                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
-                    </div>
-                    <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
-                      {INFORM_FEATURES.map((f) => (
-                        <FeatureTile
-                          key={f.name}
-                          feature={f}
-                          href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
-                          dotClass="bg-ev-yellow"
-                          borderHover="hover:border-ev-yellow/50"
-                          {...sharedTileProps}
-                        />
-                      ))}
-                    </div>
+                {/* Inform — always full access */}
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
+                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Inform</span>
                   </div>
-
-                  {/* Connect — Civic Spaces rendered as special tile */}
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
-                      <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
-                    </div>
-                    <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
+                  <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
+                    {INFORM_FEATURES.map((f) => (
                       <FeatureTile
-                        feature={CONNECT_FEATURES[0]}
-                        href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
-                        dotClass="bg-ev-blue"
-                        borderHover="hover:border-ev-blue/50"
+                        key={f.name}
+                        feature={f}
+                        href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
+                        dotClass="bg-ev-yellow"
+                        borderHover="hover:border-ev-yellow/50"
                         {...sharedTileProps}
                       />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Connect — full access for Connected+, observe for Inform */}
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
+                    <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Connect</span>
+                    {!cp && (
+                      <span className="text-[10px] font-medium text-gray-500 border border-gray-700 px-1.5 py-0.5 rounded-full">Observe Access</span>
+                    )}
+                  </div>
+                  {!cp && (
+                    <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+                      You can browse these features as an observer.{' '}
+                      <a href="/signup" className="text-ev-teal-light hover:underline">Upgrade to a Connected Account</a>{' '}
+                      to contribute to discussions and earn more gems.
+                    </p>
+                  )}
+                  <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
+                    <FeatureTile
+                      feature={CONNECT_FEATURES[0]}
+                      href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
+                      dotClass="bg-ev-blue"
+                      borderHover="hover:border-ev-blue/50"
+                      {...sharedTileProps}
+                    />
+                    {cp && (
                       <CivicSpacesTile
                         accessToken={accessToken}
                         city={city}
@@ -665,20 +697,20 @@ export default function ProfilePage() {
                         locationSuccess={locationSuccess}
                         locationError={locationError}
                       />
-                      {CONNECT_FEATURES.slice(1).map((f) => (
-                        <FeatureTile
-                          key={f.name}
-                          feature={f}
-                          href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
-                          dotClass="bg-ev-blue"
-                          borderHover="hover:border-ev-blue/50"
-                          {...sharedTileProps}
-                        />
-                      ))}
-                    </div>
+                    )}
+                    {CONNECT_FEATURES.slice(1).map((f) => (
+                      <FeatureTile
+                        key={f.name}
+                        feature={f}
+                        href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
+                        dotClass="bg-ev-blue"
+                        borderHover="hover:border-ev-blue/50"
+                        {...sharedTileProps}
+                      />
+                    ))}
                   </div>
                 </div>
-              )}
+              </div>
 
             </div>
           )}
