@@ -687,7 +687,7 @@ export default function ProfilePage() {
                       borderHover="hover:border-ev-blue/50"
                       {...sharedTileProps}
                     />
-                    {cp && (
+                    {cp ? (
                       <CivicSpacesTile
                         accessToken={accessToken}
                         city={city}
@@ -699,6 +699,14 @@ export default function ProfilePage() {
                         locationLoading={locationLoading}
                         locationSuccess={locationSuccess}
                         locationError={locationError}
+                      />
+                    ) : (
+                      <FeatureTile
+                        feature={{ name: 'Civic Spaces', description: 'Engage with your local civic community online.', href: 'https://civicspaces.empowered.vote' }}
+                        href={accessToken ? `https://civicspaces.empowered.vote#access_token=${accessToken}` : 'https://civicspaces.empowered.vote'}
+                        dotClass="bg-ev-blue"
+                        borderHover="hover:border-ev-blue/50"
+                        {...sharedTileProps}
                       />
                     )}
                     {CONNECT_FEATURES.slice(1).map((f) => (
