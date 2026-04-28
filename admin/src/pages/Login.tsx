@@ -72,7 +72,7 @@ export default function Login() {
       });
 
       // Step 3: route — pass token via hash fragment so profile can auto-authenticate
-      const target = validRedirect || 'https://profile.empowered.vote';
+      const target = validRedirect || 'https://login.empowered.vote/profile';
       window.location.href = `${target}#access_token=${token}`;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
