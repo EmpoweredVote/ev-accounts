@@ -676,7 +676,7 @@ export default function ProfilePage() {
                   </div>
                   {!cp && (
                     <p className="text-xs text-gray-600 dark:text-gray-500 mb-3 leading-relaxed">
-                      You can browse the below features as an <span className="text-yellow-700 dark:text-ev-yellow font-semibold">observer</span>, but must first authenticate your identity in order to Connect your Account. This unlocks social features, granting permission to contribute to discussions, vote on internal deliberations, and earn other gems.
+                      You can browse the below features as an <span className="text-yellow-700 dark:text-ev-yellow font-semibold">observer</span>, but must first <a href="/signup" className="text-ev-teal dark:text-ev-teal-light font-medium hover:underline">authenticate your identity in order to Connect your Account</a>. This unlocks social features, with members able to vote on our internal deliberations.
                     </p>
                   )}
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
