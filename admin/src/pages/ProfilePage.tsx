@@ -194,12 +194,12 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
     >
       <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotClass}`} />
       <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">{feature.name}</p>
-      <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{feature.description}</p>
+      <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
 
       {(showVr || showElection || showReadRank || showCompass) && (
         <div className="mt-auto pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
           {showElection && (
-            <p className="text-xs text-gray-500 dark:text-gray-400">
+            <p className="text-xs text-gray-600 dark:text-gray-400">
               <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{electionDays}</span>
               {' '}days until {NEXT_ELECTION_LABEL}
             </p>
@@ -268,7 +268,7 @@ function CivicSpacesTile({
       <a href={href} target="_blank" rel="noopener noreferrer" className="flex flex-col gap-1.5 p-3 flex-1">
         <span className="w-2 h-2 rounded-full flex-shrink-0 bg-ev-blue" />
         <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">Civic Spaces</p>
-        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
+        <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Engage with your local civic community online.</p>
       </a>
 
       <div className="px-3 pb-3 pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1.5">
@@ -646,10 +646,10 @@ export default function ProfilePage() {
                 <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Empowered Vote Features</h2>
 
                 {/* Inform — always full access */}
-                <div>
+                <div className="rounded-xl bg-ev-yellow/10 dark:bg-ev-yellow/5 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
-                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Inform</span>
+                    <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Inform</span>
                   </div>
                   <div className="grid gap-2" style={{ gridTemplateColumns: 'repeat(auto-fill, 15rem)' }}>
                     {INFORM_FEATURES.map((f) => (
@@ -666,16 +666,16 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Connect — full access for Connected+, observe for Inform */}
-                <div>
+                <div className="rounded-xl bg-ev-blue/10 dark:bg-ev-blue/5 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
-                    <span className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">Connect</span>
+                    <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
                     {!cp && (
                       <span className="text-[10px] font-medium text-gray-500 border border-gray-300 dark:border-gray-700 px-1.5 py-0.5 rounded-full">Observe Access</span>
                     )}
                   </div>
                   {!cp && (
-                    <p className="text-xs text-gray-500 mb-3 leading-relaxed">
+                    <p className="text-xs text-gray-600 dark:text-gray-500 mb-3 leading-relaxed">
                       You can browse these features as an observer.{' '}
                       <a href="/signup" className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">Upgrade to a Connected Account</a>{' '}
                       to contribute to discussions and earn more gems.
