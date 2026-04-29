@@ -17,9 +17,9 @@
  *     Marks a pending staging row as dismissed (status='dismissed').
  *     Requires a non-empty `reason` string in the request body.
  *
- * Auth: requireAdminToken is applied via router.use() at the top of this file.
- * It must NOT be applied at mount time in index.ts because multiple routers share
- * the /api/admin prefix — mount-level middleware bleeds into all of them.
+ * Auth: requireAdminToken is applied per-route (not router.use or mount-level).
+ * router.use() and mount-level middleware both run even when no route matches,
+ * which would block all /api/admin/* routes in sibling routers.
  *
  * IMPORTANT: The essentials schema is NOT in PostgREST. All DB writes use
  * pool.query() directly — never the supabase client.
@@ -35,10 +35,6 @@ import { requireAdminToken } from '../middleware/adminTokenAuth.js';
 
 const router = Router();
 
-// Gate all discovery routes with X-Admin-Token — applied here (not at mount) so
-// this middleware doesn't bleed into other /api/admin/* routers.
-router.use(requireAdminToken);
-
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 // ---------------------------------------------------------------------------
@@ -47,7 +43,7 @@ const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12
 // Triggers a discovery run for the given discovery_jurisdictions.id.
 // Returns 202 immediately; run continues in background.
 // ---------------------------------------------------------------------------
-router.post('/discover/jurisdiction/:id', async (req: Request, res: Response): Promise<void> => {
+router.post('/discover/jurisdiction/:id', requireAdminToken, async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id as string;
 
@@ -101,7 +97,7 @@ router.post('/discover/jurisdiction/:id', async (req: Request, res: Response): P
 // discovery_jurisdictions — discovery is jurisdiction-scoped at the agent level.
 // Returns 202 immediately; run continues in background.
 // ---------------------------------------------------------------------------
-router.post('/discover/race/:id', async (req: Request, res: Response): Promise<void> => {
+router.post('/discover/race/:id', requireAdminToken, async (req: Request, res: Response): Promise<void> => {
   try {
     const raceId = req.params.id as string;
 
@@ -189,7 +185,7 @@ router.post('/discover/race/:id', async (req: Request, res: Response): Promise<v
 // Marks pending staging row approved and upserts to race_candidates when race_id is not null
 // and action != 'withdrawal'. Returns upsertResult in the response body.
 // ---------------------------------------------------------------------------
-router.post('/discovery/staging/:id/approve', async (req: Request, res: Response): Promise<void> => {
+router.post('/discovery/staging/:id/approve', requireAdminToken, async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id as string;
     if (!id || !UUID_REGEX.test(id)) {
@@ -263,7 +259,7 @@ router.post('/discovery/staging/:id/approve', async (req: Request, res: Response
 // Auth: requireAdminToken
 // Body: { reason: string } — required; stored on dismissed_reason
 // ---------------------------------------------------------------------------
-router.post('/discovery/staging/:id/dismiss', async (req: Request, res: Response): Promise<void> => {
+router.post('/discovery/staging/:id/dismiss', requireAdminToken, async (req: Request, res: Response): Promise<void> => {
   try {
     const id = req.params.id as string;
     if (!id || !UUID_REGEX.test(id)) {
