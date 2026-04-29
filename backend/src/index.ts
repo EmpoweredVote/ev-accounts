@@ -109,9 +109,10 @@ app.use('/api/admin', stagingQueueAdminRouter);
 // Must be mounted BEFORE essentialsDiscoveryRouter so JWT-authenticated GETs are
 // handled here and do not fall through to the X-Admin-Token route layer.
 app.use('/api/admin', discoveryDashboardRouter);
-// Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
-// because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
-app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
+// Discovery routes use X-Admin-Token (not JWT). Auth is applied inside the router
+// via router.use(requireAdminToken) — NOT at mount — so it doesn't bleed into other
+// /api/admin/* routers that share the same prefix.
+app.use('/api/admin', essentialsDiscoveryRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/candidates', candidatesRouter);

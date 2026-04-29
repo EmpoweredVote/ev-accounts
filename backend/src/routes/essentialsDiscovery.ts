@@ -17,8 +17,9 @@
  *     Marks a pending staging row as dismissed (status='dismissed').
  *     Requires a non-empty `reason` string in the request body.
  *
- * Auth: requireAdminToken is applied at mount time in index.ts (NOT in this file).
- * This mirrors the batchIngestHandler pattern — keeps the router auth-agnostic.
+ * Auth: requireAdminToken is applied via router.use() at the top of this file.
+ * It must NOT be applied at mount time in index.ts because multiple routers share
+ * the /api/admin prefix — mount-level middleware bleeds into all of them.
  *
  * IMPORTANT: The essentials schema is NOT in PostgREST. All DB writes use
  * pool.query() directly — never the supabase client.
@@ -30,8 +31,13 @@ import { z } from 'zod';
 import { pool } from '../lib/db.js';
 import { autoUpsertToRaceCandidates, runDiscoveryForJurisdiction } from '../lib/discoveryService.js';
 import { acquireRunLock, releaseRunLock } from '../lib/discoveryCron.js';
+import { requireAdminToken } from '../middleware/adminTokenAuth.js';
 
 const router = Router();
+
+// Gate all discovery routes with X-Admin-Token — applied here (not at mount) so
+// this middleware doesn't bleed into other /api/admin/* routers.
+router.use(requireAdminToken);
 
 const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
