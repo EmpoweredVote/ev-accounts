@@ -41,9 +41,8 @@ export async function requireAuth(
   const token = authHeader.slice(7);
 
   try {
-    const expectedIssuer = `${env.SUPABASE_URL}/auth/v1`;
     const { payload } = await verifyJwt(token, {
-      issuer: expectedIssuer,
+      issuer: `${env.SUPABASE_URL}/auth/v1`,
       audience: 'authenticated',
     });
 
@@ -83,20 +82,7 @@ export async function requireAuth(
     (req as AuthenticatedRequest).tokenIat = tokenIat;
     (req as AuthenticatedRequest).tokenExp = tokenExp;
     next();
-  } catch (err) {
-    // Decode the token payload without verification to log the actual issuer
-    try {
-      const [, b64] = token.split('.');
-      const decoded = JSON.parse(Buffer.from(b64, 'base64url').toString('utf8')) as Record<string, unknown>;
-      console.error('[requireAuth] JWT verification failed. expected_issuer=%s token_iss=%s token_aud=%s err=%s',
-        `${env.SUPABASE_URL}/auth/v1`,
-        decoded.iss,
-        decoded.aud,
-        err instanceof Error ? err.message : String(err),
-      );
-    } catch {
-      console.error('[requireAuth] JWT verification failed (could not decode token):', err instanceof Error ? err.message : String(err));
-    }
+  } catch {
     res.status(401).json({ error: 'Invalid or expired token' });
   }
 }
