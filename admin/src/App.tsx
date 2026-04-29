@@ -40,7 +40,10 @@ function App() {
         completed_onboarding: boolean;
       }>('/account/me')
         .then((me) => {
-          setAuth(token, {
+          // Use the store's current token — apiFetch may have refreshed it since
+          // we read `token` from sessionStorage above.
+          const currentToken = useAuthStore.getState().accessToken ?? token;
+          setAuth(currentToken, {
             id: me.id ?? '',
             email: me.email ?? '',
             isAdmin: me.is_admin ?? false,

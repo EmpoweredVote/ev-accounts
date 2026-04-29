@@ -71,9 +71,12 @@ export default function Login() {
         completedOnboarding: meData.completed_onboarding ?? false,
       });
 
-      // Step 3: route — pass token via hash fragment so profile can auto-authenticate
+      // Step 3: persist token synchronously before navigating — the useEffect that
+      // writes to sessionStorage won't fire before window.location.href tears down the page.
+      sessionStorage.setItem('admin_token', token);
+
       const target = validRedirect || 'https://login.empowered.vote/profile';
-      window.location.href = `${target}#access_token=${token}`;
+      window.location.href = target;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
