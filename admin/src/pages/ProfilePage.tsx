@@ -27,7 +27,15 @@ interface MeResponse {
   location_consent: boolean;
   connected_profile?: MeConnectedProfile;
   inform_profile?: MeInformProfile | null;
-  jurisdiction?: { state: string | null } | null;
+  jurisdiction?: {
+    state: string | null;
+    county: string | null;
+    congressional_district: string | null;
+    state_senate_district: string | null;
+    state_house_district: string | null;
+    city_council_district: string | null;
+    school_district: string | null;
+  } | null;
 }
 interface InviteeEntry {
   status: 'claimed' | 'pending';
@@ -87,20 +95,32 @@ interface Feature {
   statsKey?: 'vr' | 'election' | 'readrank' | 'compass';
 }
 
-// Upcoming primary dates by state abbreviation.
-// Only states where we have election data in Essentials are listed.
-// Entries are removed once the election date passes (daysUntil returns 0 and showElection gates on > 0).
-const STATE_ELECTIONS: Record<string, { date: Date; label: string }> = {
-  CA: { date: new Date('2026-06-02'), label: 'June 2 Primary' },
-};
+// Each entry matches when ANY of the user's jurisdiction geo IDs appears in geoIds.
+// geoIds can be state abbreviations (e.g. 'CA'), county FIPS codes (e.g. '18105'),
+// or any other geo ID from the jurisdiction object.
+// To add a new election: append an entry. Entries are hidden once days reaches 0.
+const UPCOMING_ELECTIONS: { date: Date; label: string; geoIds: string[] }[] = [
+  { date: new Date('2026-05-05'), label: 'May 5 Primary',  geoIds: ['18105'] },       // Monroe County, IN
+  { date: new Date('2026-06-02'), label: 'June 2 Primary', geoIds: ['CA'] },           // California
+];
 
-function electionForState(state: string | null | undefined): { days: number; label: string } | null {
-  if (!state) return null;
-  const entry = STATE_ELECTIONS[state.toUpperCase()];
-  if (!entry) return null;
-  const days = Math.max(0, Math.ceil((entry.date.getTime() - Date.now()) / 86400000));
-  if (days === 0) return null;
-  return { days, label: entry.label };
+type MeJurisdiction = NonNullable<MeResponse['jurisdiction']>;
+
+function electionForJurisdiction(j: MeJurisdiction | null | undefined): { days: number; label: string } | null {
+  if (!j) return null;
+  const userIds = new Set(
+    [j.state?.toUpperCase(), j.county, j.congressional_district,
+     j.state_senate_district, j.state_house_district,
+     j.city_council_district, j.school_district]
+    .filter(Boolean) as string[]
+  );
+  const now = Date.now();
+  const match = UPCOMING_ELECTIONS
+    .filter(e => e.geoIds.some(id => userIds.has(id)))
+    .map(e => ({ label: e.label, days: Math.max(0, Math.ceil((e.date.getTime() - now) / 86400000)) }))
+    .filter(e => e.days > 0)
+    .sort((a, b) => a.days - b.days)[0];
+  return match ?? null;
 }
 
 const INFORM_FEATURES: Feature[] = [
@@ -180,11 +200,11 @@ interface FeatureTileProps {
   vrPercent: number;
   readRankStats: ReadRankStats | null;
   compassStats: CompassStats | null;
-  jurisdictionState?: string | null;
+  jurisdiction?: MeJurisdiction | null;
 }
 
-function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdictionState }: FeatureTileProps) {
-  const election = feature.statsKey === 'election' ? electionForState(jurisdictionState) : null;
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdiction }: FeatureTileProps) {
+  const election = feature.statsKey === 'election' ? electionForJurisdiction(jurisdiction) : null;
   const showVr = feature.statsKey === 'vr' && vr !== null;
   const showElection = election !== null;
   const showReadRank = feature.statsKey === 'readrank' && readRankStats !== null;
@@ -540,7 +560,7 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
 
-  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdictionState: profile?.jurisdiction?.state ?? null };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdiction: profile?.jurisdiction ?? null };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
