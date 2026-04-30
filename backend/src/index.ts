@@ -43,6 +43,7 @@ import { requireAdmin } from './middleware/requireAdmin.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
+import feedbackRouter from './routes/feedback.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -149,6 +150,7 @@ app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
+app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
 
 export { app }; // For testing
 

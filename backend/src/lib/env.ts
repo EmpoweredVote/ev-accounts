@@ -40,6 +40,15 @@ const envSchema = z.object({
   // Optional: absent = discovery endpoints return 503. Web search must be enabled org-wide
   // in the Claude Console before this works (console.anthropic.com/settings/privacy).
   ANTHROPIC_API_KEY: z.string().optional(),
+  // Feedback pipeline (quick-260428-fp1) — all optional so server starts without them in dev.
+  // LINEAR_API_KEY: Personal API key from linear.app Settings → API.
+  LINEAR_API_KEY: z.string().optional(),
+  // LINEAR_TEAM_ID: UUID from Linear Settings → General → Team ID.
+  LINEAR_TEAM_ID: z.string().optional(),
+  // LINEAR_PROJECT_ID: UUID from the project URL in Linear (/project/<uuid>).
+  LINEAR_PROJECT_ID: z.string().optional(),
+  // RESEND_API_KEY: API key from resend.com for sending feedback notification emails.
+  RESEND_API_KEY: z.string().optional(),
 });
 
 const parsed = envSchema.safeParse(process.env);
