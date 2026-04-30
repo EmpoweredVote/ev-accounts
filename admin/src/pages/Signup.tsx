@@ -20,6 +20,7 @@ export default function Signup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const [legalName, setLegalName] = useState('');
   const [inviteCode, setInviteCode] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -49,6 +50,7 @@ export default function Signup() {
         body: JSON.stringify({
           email,
           password,
+          display_name: displayName,
           legal_name: legalName,
           invite_code: normalizedCode,
         }),
@@ -69,14 +71,14 @@ export default function Signup() {
         if (code === 'SELF_INVITE_BLOCKED') {
           throw new Error('You cannot use your own invite code');
         }
-        throw new Error(body.error || 'Validation error');
+        throw new Error(body.message || body.error || 'Validation error');
       }
 
       if (res.status === 409) {
         throw new Error('An account with this email already exists');
       }
 
-      throw new Error(body.error || 'An unexpected error occurred');
+      throw new Error(body.message || body.error || 'An unexpected error occurred');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
@@ -209,6 +211,24 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="At least 8 characters"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Display name
+            </label>
+            <input
+              id="displayName"
+              type="text"
+              required
+              minLength={1}
+              maxLength={100}
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              autoComplete="nickname"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
+              placeholder="What should we call you?"
             />
           </div>
 
