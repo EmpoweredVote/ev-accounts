@@ -51,6 +51,9 @@ const envSchema = z.object({
   // notifications etc.). Not used by the feedback path — feedback emails
   // are sent natively by Linear via project subscribers.
   RESEND_API_KEY: z.string().optional(),
+  // LOGIN_URL: base URL of the login frontend. Used as the base for auth email
+  // redirect URLs (confirmation, password reset). Defaults to production URL.
+  LOGIN_URL: z.string().url().default('https://login.empowered.vote'),
 });
 
 const parsed = envSchema.safeParse(process.env);

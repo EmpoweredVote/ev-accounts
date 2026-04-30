@@ -122,7 +122,11 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     }
   }
 
-  const { data, error } = await signUpWithEmail(email, password);
+  const { data, error } = await signUpWithEmail(
+    email,
+    password,
+    `${env.LOGIN_URL}/login?confirmed=true`,
+  );
 
   if (error) {
     // Email already registered
@@ -550,10 +554,9 @@ router.post('/forgot-password', authLimiter, async (req: Request, res: Response)
     return;
   }
 
-  const loginUrl = process.env.LOGIN_URL ?? 'https://login.empowered.vote';
   try {
     await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
-      redirectTo: `${loginUrl}/reset-password`,
+      redirectTo: `${env.LOGIN_URL}/reset-password`,
     });
   } catch (err) {
     console.error('[auth/forgot-password] error:', err);
