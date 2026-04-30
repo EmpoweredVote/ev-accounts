@@ -47,7 +47,9 @@ const envSchema = z.object({
   LINEAR_TEAM_ID: z.string().optional(),
   // LINEAR_PROJECT_ID: UUID from the project URL in Linear (/project/<uuid>).
   LINEAR_PROJECT_ID: z.string().optional(),
-  // RESEND_API_KEY: API key from resend.com for sending feedback notification emails.
+  // RESEND_API_KEY: API key from resend.com for transactional email (admin
+  // notifications etc.). Not used by the feedback path — feedback emails
+  // are sent natively by Linear via project subscribers.
   RESEND_API_KEY: z.string().optional(),
 });
 
