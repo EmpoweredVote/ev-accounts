@@ -27,6 +27,7 @@ interface MeResponse {
   location_consent: boolean;
   connected_profile?: MeConnectedProfile;
   inform_profile?: MeInformProfile | null;
+  jurisdiction?: { state: string | null } | null;
 }
 interface InviteeEntry {
   status: 'claimed' | 'pending';
@@ -86,11 +87,20 @@ interface Feature {
   statsKey?: 'vr' | 'election' | 'readrank' | 'compass';
 }
 
-const NEXT_ELECTION_DATE = new Date('2026-06-02');
-const NEXT_ELECTION_LABEL = 'June 2 Primary';
+// Upcoming primary dates by state abbreviation.
+// Only states where we have election data in Essentials are listed.
+// Entries are removed once the election date passes (daysUntil returns 0 and showElection gates on > 0).
+const STATE_ELECTIONS: Record<string, { date: Date; label: string }> = {
+  CA: { date: new Date('2026-06-02'), label: 'June 2 Primary' },
+};
 
-function daysUntilElection(): number {
-  return Math.max(0, Math.ceil((NEXT_ELECTION_DATE.getTime() - Date.now()) / 86400000));
+function electionForState(state: string | null | undefined): { days: number; label: string } | null {
+  if (!state) return null;
+  const entry = STATE_ELECTIONS[state.toUpperCase()];
+  if (!entry) return null;
+  const days = Math.max(0, Math.ceil((entry.date.getTime() - Date.now()) / 86400000));
+  if (days === 0) return null;
+  return { days, label: entry.label };
 }
 
 const INFORM_FEATURES: Feature[] = [
@@ -170,12 +180,13 @@ interface FeatureTileProps {
   vrPercent: number;
   readRankStats: ReadRankStats | null;
   compassStats: CompassStats | null;
+  jurisdictionState?: string | null;
 }
 
-function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats }: FeatureTileProps) {
-  const electionDays = feature.statsKey === 'election' ? daysUntilElection() : 0;
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdictionState }: FeatureTileProps) {
+  const election = feature.statsKey === 'election' ? electionForState(jurisdictionState) : null;
   const showVr = feature.statsKey === 'vr' && vr !== null;
-  const showElection = feature.statsKey === 'election';
+  const showElection = election !== null;
   const showReadRank = feature.statsKey === 'readrank' && readRankStats !== null;
   const showCompass = feature.statsKey === 'compass' && compassStats !== null;
   const rrPct = readRankStats && readRankStats.total > 0
@@ -198,10 +209,10 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
 
       {(showVr || showElection || showReadRank || showCompass) && (
         <div className="mt-auto pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
-          {showElection && (
+          {showElection && election && (
             <p className="text-xs text-gray-600 dark:text-gray-400">
-              <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{electionDays}</span>
-              {' '}days until {NEXT_ELECTION_LABEL}
+              <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{election.days}</span>
+              {' '}days until {election.label}
             </p>
           )}
           {showVr && (
@@ -529,7 +540,7 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
 
-  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdictionState: profile?.jurisdiction?.state ?? null };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
