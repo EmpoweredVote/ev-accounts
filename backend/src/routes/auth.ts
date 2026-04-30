@@ -533,4 +533,108 @@ router.post('/request-access', authLimiter, async (req: Request, res: Response):
   }
 });
 
+/**
+ * POST /api/auth/forgot-password
+ *
+ * Sends a password reset email via Supabase. Always returns 200 regardless
+ * of whether the email is registered — prevents user enumeration (OWASP).
+ */
+const forgotPasswordSchema = z.object({
+  email: z.string().email(),
+});
+
+router.post('/forgot-password', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = forgotPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Valid email required' });
+    return;
+  }
+
+  const loginUrl = process.env.LOGIN_URL ?? 'https://login.empowered.vote';
+  try {
+    await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+      redirectTo: `${loginUrl}/reset-password`,
+    });
+  } catch (err) {
+    console.error('[auth/forgot-password] error:', err);
+    // Never surface this — always 200 to prevent enumeration
+  }
+
+  res.status(200).json({ message: 'If that email is registered, a password reset link has been sent.' });
+});
+
+/**
+ * POST /api/auth/reset-password
+ *
+ * Exchanges a Supabase recovery token_hash for a session, then updates
+ * the user's password. The token_hash comes from the ?token_hash= param
+ * in the reset email link.
+ */
+const resetPasswordSchema = z.object({
+  token_hash: z.string().min(1),
+  password: z.string().min(8),
+});
+
+router.post('/reset-password', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = resetPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0];
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: firstIssue?.message ?? 'Invalid request' });
+    return;
+  }
+
+  const { token_hash, password } = parsed.data;
+
+  const { data: verifyData, error: verifyError } = await supabaseAdmin.auth.verifyOtp({
+    token_hash,
+    type: 'recovery',
+  });
+
+  if (verifyError || !verifyData.user) {
+    res.status(422).json({ code: 'INVALID_RESET_TOKEN', message: 'Reset link is invalid or has expired' });
+    return;
+  }
+
+  const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(verifyData.user.id, { password });
+
+  if (updateError) {
+    if (updateError.code === 'weak_password') {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Password is too weak' });
+      return;
+    }
+    console.error('[auth/reset-password] updateUserById error:', updateError.message);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    return;
+  }
+
+  res.status(200).json({ message: 'Password updated successfully' });
+});
+
+/**
+ * POST /api/auth/resend-confirmation
+ *
+ * Resends the signup confirmation email. Always returns 200 regardless of
+ * whether the email is registered or already confirmed (OWASP enumeration).
+ */
+const resendConfirmationSchema = z.object({
+  email: z.string().email(),
+});
+
+router.post('/resend-confirmation', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = resendConfirmationSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Valid email required' });
+    return;
+  }
+
+  try {
+    await supabaseAdmin.auth.resend({ type: 'signup', email: parsed.data.email });
+  } catch (err) {
+    console.error('[auth/resend-confirmation] error:', err);
+    // Always 200 — never reveal account state
+  }
+
+  res.status(200).json({ message: 'Confirmation email resent' });
+});
+
 export default router;

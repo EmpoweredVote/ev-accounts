@@ -16,6 +16,12 @@ export default function Login() {
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [signupModalOpen, setSignupModalOpen] = useState(false);
+  const [showUnverifiedResend, setShowUnverifiedResend] = useState(false);
+  const [resendSent, setResendSent] = useState(false);
+  const [forgotOpen, setForgotOpen] = useState(false);
+  const [forgotEmail, setForgotEmail] = useState('');
+  const [forgotSubmitting, setForgotSubmitting] = useState(false);
+  const [forgotSent, setForgotSent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
@@ -46,6 +52,9 @@ export default function Login() {
 
       if (!loginRes.ok) {
         const body = await loginRes.json().catch(() => ({ message: 'Login failed' }));
+        if (body.code === 'EMAIL_NOT_VERIFIED') {
+          setShowUnverifiedResend(true);
+        }
         throw new Error(body.message || body.error || 'Login failed');
       }
 
@@ -84,6 +93,28 @@ export default function Login() {
     }
   }
 
+  async function handleResendConfirmation() {
+    setResendSent(false);
+    await fetch(`${API_BASE}/auth/resend-confirmation`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
+    setResendSent(true);
+  }
+
+  async function handleForgotSubmit(e: FormEvent) {
+    e.preventDefault();
+    setForgotSubmitting(true);
+    await fetch(`${API_BASE}/auth/forgot-password`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: forgotEmail }),
+    }).catch(() => {});
+    setForgotSubmitting(false);
+    setForgotSent(true);
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
 
@@ -105,8 +136,15 @@ export default function Login() {
         )}
 
         {error && (
-          <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm">
-            {error}
+          <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm space-y-2">
+            <p>{error}</p>
+            {showUnverifiedResend && (
+              resendSent
+                ? <p className="text-green-700 dark:text-green-400 font-medium">Confirmation email sent — check your inbox.</p>
+                : <button type="button" onClick={handleResendConfirmation} className="underline font-medium hover:no-underline">
+                    Resend confirmation email
+                  </button>
+            )}
           </div>
         )}
 
@@ -128,9 +166,18 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Password
-            </label>
+            <div className="flex justify-between items-center mb-1.5">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Password
+              </label>
+              <button
+                type="button"
+                onClick={() => { setForgotOpen(true); setForgotEmail(email); setForgotSent(false); }}
+                className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline"
+              >
+                Forgot your password?
+              </button>
+            </div>
             <input
               id="password"
               type="password"
@@ -150,6 +197,39 @@ export default function Login() {
             {isSubmitting ? 'Logging in…' : 'Log in'}
           </button>
         </form>
+
+        {/* Forgot password inline panel */}
+        {forgotOpen && (
+          <div className="p-4 bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 rounded-xl space-y-3">
+            <p className="text-sm font-medium text-gray-700 dark:text-gray-200">Reset your password</p>
+            {forgotSent ? (
+              <p className="text-sm text-green-700 dark:text-green-400">
+                If that email is registered, a reset link is on its way.
+              </p>
+            ) : (
+              <form onSubmit={handleForgotSubmit} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={forgotEmail}
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  className="flex-1 px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
+                />
+                <button
+                  type="submit"
+                  disabled={forgotSubmitting}
+                  className="px-4 py-2 bg-ev-teal dark:bg-ev-teal-light hover:bg-ev-teal/90 disabled:opacity-60 text-white dark:text-ev-black font-medium rounded-lg text-sm transition-colors whitespace-nowrap"
+                >
+                  {forgotSubmitting ? 'Sending…' : 'Send link'}
+                </button>
+              </form>
+            )}
+            <button type="button" onClick={() => setForgotOpen(false)} className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+              Cancel
+            </button>
+          </div>
+        )}
 
         <div className="space-y-3 pt-2">
           <button

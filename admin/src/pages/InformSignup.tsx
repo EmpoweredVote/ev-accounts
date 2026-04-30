@@ -10,18 +10,35 @@ export default function InformSignup() {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [resendSent, setResendSent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
   const loginHref = validRedirect ? `/login?redirect=${encodeURIComponent(validRedirect)}` : '/login';
   const connectedSignupHref = validRedirect ? `/signup?redirect=${encodeURIComponent(validRedirect)}` : '/signup';
 
+  async function handleResend() {
+    await fetch(`${API_BASE}/auth/resend-confirmation`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
+    setResendSent(true);
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
     setIsSubmitting(true);
     try {
       const res = await fetch(`${API_BASE}/auth/signup`, {
@@ -78,6 +95,16 @@ export default function InformSignup() {
             We sent a confirmation link to <strong className="text-gray-900 dark:text-white">{email}</strong>.
             Click it to activate your Inform Account.
           </p>
+          {resendSent ? (
+            <p className="text-sm text-green-700 dark:text-green-400">Another confirmation email is on its way.</p>
+          ) : (
+            <p className="text-sm text-gray-500 dark:text-gray-500">
+              Didn't get it?{' '}
+              <button type="button" onClick={handleResend} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
+                Resend email
+              </button>
+            </p>
+          )}
           <p className="text-sm text-gray-500 dark:text-gray-500">
             Already confirmed?{' '}
             <Link to={loginHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
@@ -155,18 +182,45 @@ export default function InformSignup() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Password
-            </label>
+            <div className="flex justify-between items-center mb-1.5">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Password
+              </label>
+              <button type="button" onClick={() => setShowPassword(v => !v)} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
             <input
               id="password"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               required
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="new-password"
               placeholder="At least 8 characters"
+              className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-yellow focus:border-transparent"
+            />
+          </div>
+
+          <div>
+            <div className="flex justify-between items-center mb-1.5">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Confirm password
+              </label>
+              <button type="button" onClick={() => setShowConfirmPassword(v => !v)} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+                {showConfirmPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            <input
+              id="confirmPassword"
+              type={showConfirmPassword ? 'text' : 'password'}
+              required
+              minLength={8}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              autoComplete="new-password"
+              placeholder="Repeat your password"
               className="w-full px-4 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-xl text-sm text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-ev-yellow focus:border-transparent"
             />
           </div>
