@@ -20,6 +20,7 @@ import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InformSignup from './pages/InformSignup';
+import EmailConfirmed from './pages/EmailConfirmed';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import PrivacyPage from './pages/PrivacyPage';
@@ -74,6 +75,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signup/inform" element={<InformSignup />} />
+      <Route path="/email-confirmed" element={<EmailConfirmed />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/privacy" element={<PrivacyPage />} />

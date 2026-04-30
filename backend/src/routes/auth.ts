@@ -125,7 +125,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
   const { data, error } = await signUpWithEmail(
     email,
     password,
-    `${env.LOGIN_URL}/login?confirmed=true`,
+    `${env.LOGIN_URL}/email-confirmed`,
   );
 
   if (error) {

@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { useNavigate, Link, useSearchParams } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
 import InformConstraintsModal from '../components/InformConstraintsModal';
@@ -10,8 +10,6 @@ const API_BASE = import.meta.env.VITE_API_URL
 
 export default function Login() {
   const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
-  const emailConfirmed = searchParams.get('confirmed') === 'true';
   const { setAuth } = useAuthStore();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -110,12 +108,6 @@ export default function Login() {
       <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6 w-full max-w-sm space-y-5">
 
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Log in</h2>
-
-        {emailConfirmed && (
-          <div className="p-3 bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800/60 rounded-xl text-green-700 dark:text-green-400 text-sm">
-            Email confirmed! You can now log in.
-          </div>
-        )}
 
         {appName && (
           <div className="p-3 bg-ev-teal/10 dark:bg-ev-teal-light/10 border border-ev-teal/20 dark:border-ev-teal-light/20 rounded-xl text-sm text-ev-teal dark:text-ev-teal-light text-center">
