@@ -165,3 +165,106 @@ describe('createPageFetcher', () => {
     expect(calls).toBe(1);
   });
 });
+
+import { verifyEvidence, type StanceRow, type EvidenceRow } from './researchVerifier.js';
+import type { PageFetcher as _PageFetcher } from './researchVerifier.js';
+
+describe('verifyEvidence', () => {
+  const longSnippet = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
+
+  const stanceRows: StanceRow[] = [
+    { full_name: 'Brad Sherman', topic_key: 'healthcare', value: 2, reasoning: 'public option', external_id: '' },
+  ];
+
+  it('partitions verified rows into pushable bucket', async () => {
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: longSnippet, snippet_index: 0 },
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://b.example', snippet: longSnippet, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async (url) => ({
+      ok: true,
+      text: `prefix Brad Sherman: ${longSnippet} suffix from ${url}`,
+    });
+    const result = await verifyEvidence({
+      stanceRows,
+      evidenceRows,
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } },
+    });
+    expect(result.pushable).toHaveLength(1);
+    expect(result.pushable[0].verifiedSources).toHaveLength(2);
+    expect(result.needsReResearch).toHaveLength(0);
+    expect(result.reviewQueue).toHaveLength(0);
+  });
+
+  it('routes below-threshold rows to needsReResearch', async () => {
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: longSnippet, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text: `Brad Sherman: ${longSnippet}` });
+    const result = await verifyEvidence({
+      stanceRows,
+      evidenceRows,
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } },
+    });
+    expect(result.needsReResearch).toHaveLength(1);
+    expect(result.needsReResearch[0].verifiedSources).toHaveLength(1);
+    expect(result.pushable).toHaveLength(0);
+  });
+
+  it('drops a source whose snippets all fail and counts remaining sources', async () => {
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://good.example', snippet: longSnippet, snippet_index: 0 },
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://bad.example', snippet: longSnippet, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async (url) => {
+      if (url === 'https://bad.example') return { ok: true, text: 'unrelated content not containing the snippet at all' };
+      return { ok: true, text: `Brad Sherman: ${longSnippet}` };
+    };
+    const result = await verifyEvidence({
+      stanceRows,
+      evidenceRows,
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } },
+    });
+    expect(result.needsReResearch).toHaveLength(1);
+    expect(result.needsReResearch[0].verifiedSources).toHaveLength(1);
+    expect(result.needsReResearch[0].failedSources).toHaveLength(1);
+    expect(result.needsReResearch[0].failedSources[0].url).toBe('https://bad.example');
+  });
+
+  it('keeps source verified if at least one of its snippets verifies', async () => {
+    const otherLongSnippet = 'Completely different paragraph that nonetheless has at least twenty five words in it so the minimum length check passes for this snippet here.';
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: otherLongSnippet, snippet_index: 0 },
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: longSnippet, snippet_index: 1 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text: `Brad Sherman said: ${longSnippet}` });
+    const result = await verifyEvidence({
+      stanceRows,
+      evidenceRows,
+      fetcher,
+      threshold: 1,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } },
+    });
+    expect(result.pushable).toHaveLength(1);
+    expect(result.pushable[0].verifiedSources).toHaveLength(1);
+  });
+
+  it('routes stance rows with zero evidence rows directly to review queue', async () => {
+    const fetcher: _PageFetcher = async () => { throw new Error('should not be called'); };
+    const result = await verifyEvidence({
+      stanceRows,
+      evidenceRows: [],
+      fetcher,
+      threshold: 2,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } },
+    });
+    expect(result.needsReResearch).toHaveLength(1);
+    expect(result.needsReResearch[0].verifiedSources).toHaveLength(0);
+  });
+});

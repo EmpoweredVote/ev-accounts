@@ -158,3 +158,123 @@ export function createPageFetcher(
     return result;
   };
 }
+
+export interface StanceRow {
+  full_name: string;
+  external_id: string;
+  topic_key: string;
+  value: number | null;
+  reasoning: string;
+}
+
+export interface EvidenceRow {
+  full_name: string;
+  topic_key: string;
+  source_url: string;
+  snippet: string;
+  snippet_index: number;
+}
+
+export interface VerifiedSnippet {
+  snippet: string;
+  snippet_index: number;
+  verdict: SnippetVerdict;
+}
+
+export interface VerifiedSource {
+  url: string;
+  snippets: VerifiedSnippet[];
+}
+
+export interface VerifiedRow {
+  stance: StanceRow;
+  verifiedSources: VerifiedSource[];
+  failedSources: VerifiedSource[];
+}
+
+export interface VerifyResult {
+  pushable: VerifiedRow[];
+  needsReResearch: VerifiedRow[];
+  reviewQueue: VerifiedRow[];
+}
+
+export interface PoliticianNames {
+  [fullName: string]: { fullName: string; lastName: string };
+}
+
+function rowKey(fullName: string, topicKey: string): string {
+  return `${fullName} ${topicKey}`;
+}
+
+export async function verifyEvidence(args: {
+  stanceRows: StanceRow[];
+  evidenceRows: EvidenceRow[];
+  fetcher: PageFetcher;
+  threshold: number;
+  politicianNames: PoliticianNames;
+}): Promise<VerifyResult> {
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames } = args;
+
+  const grouped = new Map<string, Map<string, EvidenceRow[]>>();
+  for (const ev of evidenceRows) {
+    const key = rowKey(ev.full_name, ev.topic_key);
+    if (!grouped.has(key)) grouped.set(key, new Map());
+    const bySource = grouped.get(key)!;
+    if (!bySource.has(ev.source_url)) bySource.set(ev.source_url, []);
+    bySource.get(ev.source_url)!.push(ev);
+  }
+
+  const pushable: VerifiedRow[] = [];
+  const needsReResearch: VerifiedRow[] = [];
+
+  for (const stance of stanceRows) {
+    const key = rowKey(stance.full_name, stance.topic_key);
+    const bySource = grouped.get(key) ?? new Map<string, EvidenceRow[]>();
+    const names = politicianNames[stance.full_name];
+    if (!names) {
+      needsReResearch.push({ stance, verifiedSources: [], failedSources: [] });
+      continue;
+    }
+
+    const verifiedSources: VerifiedSource[] = [];
+    const failedSources: VerifiedSource[] = [];
+
+    for (const [url, snippets] of bySource.entries()) {
+      const fetched = await fetcher(url);
+      const judged: VerifiedSnippet[] = [];
+      if (!fetched.ok) {
+        for (const ev of snippets) {
+          judged.push({
+            snippet: ev.snippet,
+            snippet_index: ev.snippet_index,
+            verdict: { verdict: 'url_broken', reason: fetched.reason },
+          });
+        }
+      } else {
+        for (const ev of snippets) {
+          const matchVerdict = matchSnippet(ev.snippet, fetched.text);
+          if (matchVerdict.verdict !== 'verified') {
+            judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: matchVerdict });
+            continue;
+          }
+          const proxVerdict = checkNameProximity({
+            fullName: names.fullName,
+            lastName: names.lastName,
+            pageText: fetched.text,
+            matchOffsetInNormalized: matchVerdict.matchOffset,
+          });
+          judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict });
+        }
+      }
+      const anyVerified = judged.some((s) => s.verdict.verdict === 'verified');
+      if (anyVerified) verifiedSources.push({ url, snippets: judged });
+      else failedSources.push({ url, snippets: judged });
+    }
+
+    const row: VerifiedRow = { stance, verifiedSources, failedSources };
+    if (verifiedSources.length >= threshold) pushable.push(row);
+    else needsReResearch.push(row);
+  }
+
+  return { pushable, needsReResearch, reviewQueue: [] };
+}
