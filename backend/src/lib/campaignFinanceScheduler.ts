@@ -376,6 +376,64 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
   }
 }
 
+/**
+ * runAdapterForSources runs the cal_access ingestion pipeline for a specific list
+ * of politician_sources row IDs (UUIDs from politician_sources.id).
+ *
+ * Use this for targeted ingest of newly seeded politicians — avoids re-processing
+ * all 7k+ confirmed sources and the per-source TSV re-parse cost.
+ *
+ * Only supports cal_access — other adapters don't have the same bulk-parse bottleneck.
+ */
+export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
+  if (sourceIds.length === 0) {
+    console.warn('[campaignFinanceScheduler] runAdapterForSources: no source IDs provided');
+    return;
+  }
+
+  const placeholders = sourceIds.map((_, i) => `$${i + 1}`).join(', ');
+  const result = await pool.query<PoliticianSourceRow>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE id IN (${placeholders})
+       AND research_status = 'confirmed'`,
+    sourceIds
+  );
+
+  const sources = result.rows;
+  if (sources.length === 0) {
+    console.warn('[campaignFinanceScheduler] runAdapterForSources: no confirmed sources found for provided IDs');
+    return;
+  }
+
+  console.log(`[campaignFinanceScheduler] runAdapterForSources: running ${sources.length} cal_access source(s)`);
+
+  const adapter = createCalAccessAdapter();
+
+  for (const ps of sources) {
+    try {
+      await runIngestion(adapter, ps, '');
+      console.log(`[campaignFinanceScheduler] cal_access: source=${ps.id} (${ps.external_id}) done`);
+    } catch (err) {
+      console.error(
+        `[campaignFinanceScheduler] cal_access: source=${ps.id} error:`,
+        err instanceof Error ? err.message : String(err)
+      );
+    }
+  }
+
+  if (adapter.zipWasSkipped()) {
+    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
+    return;
+  }
+
+  // Intentionally do NOT save the ETag here. Targeted runs only process a subset
+  // of sources, so saving the ETag would cause subsequent targeted runs to 304-skip
+  // and miss their data. ETag ownership belongs to the full scheduled run only.
+  console.log('[campaignFinanceScheduler] runAdapterForSources: complete (ETag not saved — owned by full scheduler)');
+}
+
 // ---------------------------------------------------------------------------
 // FEC Scheduled Job — acquires Redis lock, runs FEC, releases lock
 // ---------------------------------------------------------------------------
