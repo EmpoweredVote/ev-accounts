@@ -37,3 +37,29 @@ export function normalizeText(input: string): string {
   // Trim
   return out.trim();
 }
+
+export const MIN_SNIPPET_WORDS = 25;
+
+export type SnippetVerdict =
+  | { verdict: 'verified'; matchOffset: number }
+  | { verdict: 'snippet_not_found' }
+  | { verdict: 'snippet_too_short' }
+  | { verdict: 'name_not_present' }
+  | { verdict: 'url_broken'; reason: string };
+
+export function matchSnippet(
+  snippet: string,
+  pageText: string,
+): SnippetVerdict {
+  const wordCount = snippet.trim().split(/\s+/).filter(Boolean).length;
+  if (wordCount < MIN_SNIPPET_WORDS) {
+    return { verdict: 'snippet_too_short' };
+  }
+  const normalizedSnippet = normalizeText(snippet);
+  const normalizedPage = normalizeText(pageText);
+  const offset = normalizedPage.indexOf(normalizedSnippet);
+  if (offset === -1) {
+    return { verdict: 'snippet_not_found' };
+  }
+  return { verdict: 'verified', matchOffset: offset };
+}
