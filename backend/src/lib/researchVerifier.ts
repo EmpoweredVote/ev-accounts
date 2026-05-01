@@ -128,3 +128,33 @@ export function checkNameProximity(args: {
 
   return { verdict: 'name_not_present' };
 }
+
+export type PageFetchResult =
+  | { ok: true; text: string }
+  | { ok: false; reason: string };
+
+export type PageFetcher = (url: string) => Promise<PageFetchResult>;
+
+/**
+ * createPageFetcher — wraps an underlying fetch fn with per-URL caching for
+ * the lifetime of one verifier batch. Failures are cached too so we don't
+ * retry obviously-broken URLs across multiple snippets in the same batch.
+ */
+export function createPageFetcher(
+  rawFetch: (url: string) => Promise<string>,
+): PageFetcher {
+  const cache = new Map<string, PageFetchResult>();
+  return async (url: string) => {
+    const cached = cache.get(url);
+    if (cached) return cached;
+    let result: PageFetchResult;
+    try {
+      const text = await rawFetch(url);
+      result = { ok: true, text };
+    } catch (err: any) {
+      result = { ok: false, reason: err?.message ?? String(err) };
+    }
+    cache.set(url, result);
+    return result;
+  };
+}

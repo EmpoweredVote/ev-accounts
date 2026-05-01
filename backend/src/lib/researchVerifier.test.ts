@@ -132,3 +132,36 @@ describe('checkNameProximity', () => {
     }).verdict).toBe('verified');
   });
 });
+
+import { createPageFetcher } from './researchVerifier.js';
+
+describe('createPageFetcher', () => {
+  it('caches results per URL within a batch', async () => {
+    let calls = 0;
+    const fakeFetch = async (url: string) => {
+      calls++;
+      return `content for ${url}`;
+    };
+    const fetcher = createPageFetcher(fakeFetch);
+    expect(await fetcher('https://a.example')).toEqual({ ok: true, text: 'content for https://a.example' });
+    expect(await fetcher('https://a.example')).toEqual({ ok: true, text: 'content for https://a.example' });
+    expect(await fetcher('https://b.example')).toEqual({ ok: true, text: 'content for https://b.example' });
+    expect(calls).toBe(2);
+  });
+
+  it('maps thrown errors to url_broken with a reason', async () => {
+    const fakeFetch = async () => { throw new Error('ENOTFOUND'); };
+    const fetcher = createPageFetcher(fakeFetch);
+    const result = await fetcher('https://broken.example');
+    expect(result).toEqual({ ok: false, reason: 'ENOTFOUND' });
+  });
+
+  it('caches failures too, to avoid hammering broken URLs', async () => {
+    let calls = 0;
+    const fakeFetch = async () => { calls++; throw new Error('boom'); };
+    const fetcher = createPageFetcher(fakeFetch);
+    await fetcher('https://x.example');
+    await fetcher('https://x.example');
+    expect(calls).toBe(1);
+  });
+});
