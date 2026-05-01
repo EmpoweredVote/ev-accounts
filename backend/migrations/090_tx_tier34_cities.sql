@@ -9,6 +9,9 @@
 -- than an incorporated municipality. If confirmed incorporated, add it
 -- in a follow-up migration with the correct council structure.
 --
+-- Note: slug is a generated column on essentials.chambers derived from name_formal.
+-- Do not include slug in INSERT statements.
+--
 -- TIER 3 cities (8):
 --   Anna:        1 government + 1 chamber + 7 offices (Mayor + Place 1-6)
 --   Melissa:     1 government + 1 chamber + 7 offices (Mayor + Place 1-6)
@@ -43,13 +46,13 @@ BEGIN
   VALUES ('City of Anna, Texas, US', 'LOCAL', 'TX', NULL, '4803300')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Anna City Council', 7, 'anna-city-council', 'full', 'https://www.annatexas.gov')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Anna City Council', 7, 'full', 'https://www.annatexas.gov')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
   VALUES
-    (v_chamber_id, 'Mayor',                'Anna', 'TX', 'Mayor',          1, NULL, false),
+    (v_chamber_id, 'Mayor',                  'Anna', 'TX', 'Mayor',          1, NULL, false),
     (v_chamber_id, 'Council Member Place 1', 'Anna', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 2', 'Anna', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 3', 'Anna', 'TX', 'Council Member', 1, NULL, false),
@@ -70,8 +73,8 @@ BEGIN
   VALUES ('City of Melissa, Texas, US', 'LOCAL', 'TX', NULL, '4847496')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Melissa City Council', 7, 'melissa-city-council', 'full', 'https://www.cityofmelissa.com')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Melissa City Council', 7, 'full', 'https://www.cityofmelissa.com')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -97,8 +100,8 @@ BEGIN
   VALUES ('City of Princeton, Texas, US', 'LOCAL', 'TX', NULL, '4863432')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Princeton City Council', 8, 'princeton-city-council', 'full', 'https://www.princetontx.gov')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Princeton City Council', 8, 'full', 'https://www.princetontx.gov')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -125,13 +128,13 @@ BEGIN
   VALUES ('City of Lucas, Texas, US', 'LOCAL', 'TX', NULL, '4845012')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Lucas City Council', 7, 'lucas-city-council', 'full', 'https://www.lucastexas.us')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Lucas City Council', 7, 'full', 'https://www.lucastexas.us')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
   VALUES
-    (v_chamber_id, 'Mayor',                 'Lucas', 'TX', 'Mayor',          1, NULL, false),
+    (v_chamber_id, 'Mayor',                  'Lucas', 'TX', 'Mayor',          1, NULL, false),
     (v_chamber_id, 'Council Member Place 1', 'Lucas', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 2', 'Lucas', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 3', 'Lucas', 'TX', 'Council Member', 1, NULL, false),
@@ -152,13 +155,13 @@ BEGIN
   VALUES ('City of Lavon, Texas, US', 'LOCAL', 'TX', NULL, '4841800')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Lavon City Council', 6, 'lavon-city-council', 'full', 'https://www.lavontexas.org')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Lavon City Council', 6, 'full', 'https://www.lavontexas.org')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
   VALUES
-    (v_chamber_id, 'Mayor',                 'Lavon', 'TX', 'Mayor',          1, NULL, false),
+    (v_chamber_id, 'Mayor',                  'Lavon', 'TX', 'Mayor',          1, NULL, false),
     (v_chamber_id, 'Council Member Place 1', 'Lavon', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 2', 'Lavon', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 3', 'Lavon', 'TX', 'Council Member', 1, NULL, false),
@@ -179,19 +182,19 @@ BEGIN
   VALUES ('Town of Fairview, Texas, US', 'LOCAL', 'TX', NULL, '4825224')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'Town Council', 'Fairview Town Council', 7, 'fairview-town-council', 'full', 'https://www.fairviewtexas.org')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'Town Council', 'Fairview Town Council', 7, 'full', 'https://www.fairviewtexas.org')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
   VALUES
-    (v_chamber_id, 'Mayor',                   'Fairview', 'TX', 'Mayor',          1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 1',   'Fairview', 'TX', 'Council Member', 1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 2',   'Fairview', 'TX', 'Council Member', 1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 3',   'Fairview', 'TX', 'Council Member', 1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 4',   'Fairview', 'TX', 'Council Member', 1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 5',   'Fairview', 'TX', 'Council Member', 1, NULL, false),
-    (v_chamber_id, 'Council Member Seat 6',   'Fairview', 'TX', 'Council Member', 1, NULL, false);
+    (v_chamber_id, 'Mayor',                 'Fairview', 'TX', 'Mayor',          1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 1', 'Fairview', 'TX', 'Council Member', 1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 2', 'Fairview', 'TX', 'Council Member', 1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 3', 'Fairview', 'TX', 'Council Member', 1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 4', 'Fairview', 'TX', 'Council Member', 1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 5', 'Fairview', 'TX', 'Council Member', 1, NULL, false),
+    (v_chamber_id, 'Council Member Seat 6', 'Fairview', 'TX', 'Council Member', 1, NULL, false);
 END $$;
 
 -- ---------------------------------------------------------------------------
@@ -206,8 +209,8 @@ BEGIN
   VALUES ('City of Van Alstyne, Texas, US', 'LOCAL', 'TX', NULL, '4875960')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Van Alstyne City Council', 7, 'van-alstyne-city-council', 'full', 'https://www.vanalstyne.org')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Van Alstyne City Council', 7, 'full', 'https://www.vanalstyne.org')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -233,8 +236,8 @@ BEGIN
   VALUES ('City of Farmersville, Texas, US', 'LOCAL', 'TX', NULL, '4825488')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Farmersville City Council', 6, 'farmersville-city-council', 'full', 'https://www.farmersvilletx.com')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Farmersville City Council', 6, 'full', 'https://www.farmersvilletx.com')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -259,13 +262,13 @@ BEGIN
   VALUES ('City of Parker, Texas, US', 'LOCAL', 'TX', NULL, '4855152')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Parker City Council', 6, 'parker-city-council', 'full', 'https://www.parkertexas.us')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Parker City Council', 6, 'full', 'https://www.parkertexas.us')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
   VALUES
-    (v_chamber_id, 'Mayor',                 'Parker', 'TX', 'Mayor',          1, NULL, false),
+    (v_chamber_id, 'Mayor',                  'Parker', 'TX', 'Mayor',          1, NULL, false),
     (v_chamber_id, 'Council Member Place 1', 'Parker', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 2', 'Parker', 'TX', 'Council Member', 1, NULL, false),
     (v_chamber_id, 'Council Member Place 3', 'Parker', 'TX', 'Council Member', 1, NULL, false),
@@ -285,8 +288,8 @@ BEGIN
   VALUES ('City of Saint Paul, Texas, US', 'LOCAL', 'TX', NULL, '4864220')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Saint Paul City Council', 6, 'saint-paul-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Saint Paul City Council', 6, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -311,8 +314,8 @@ BEGIN
   VALUES ('City of Nevada, Texas, US', 'LOCAL', 'TX', NULL, '4850760')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Nevada City Council', 6, 'nevada-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Nevada City Council', 6, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -337,8 +340,8 @@ BEGIN
   VALUES ('City of Weston, Texas, US', 'LOCAL', 'TX', NULL, '4877740')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Weston City Council', 5, 'weston-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Weston City Council', 5, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -362,8 +365,8 @@ BEGIN
   VALUES ('City of Lowry Crossing, Texas, US', 'LOCAL', 'TX', NULL, '4844308')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Lowry Crossing City Council', 5, 'lowry-crossing-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Lowry Crossing City Council', 5, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -387,8 +390,8 @@ BEGIN
   VALUES ('City of Josephine, Texas, US', 'LOCAL', 'TX', NULL, '4838068')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Josephine City Council', 5, 'josephine-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Josephine City Council', 5, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -412,8 +415,8 @@ BEGIN
   VALUES ('City of Blue Ridge, Texas, US', 'LOCAL', 'TX', NULL, '4808872')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Blue Ridge City Council', 5, 'blue-ridge-city-council', 'full', NULL)
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Blue Ridge City Council', 5, 'full', NULL)
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
