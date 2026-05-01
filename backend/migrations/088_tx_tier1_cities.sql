@@ -25,8 +25,8 @@ BEGIN
   VALUES ('City of Plano, Texas, US', 'LOCAL', 'TX', NULL, '4863000')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Plano City Council', 9, 'plano-city-council', 'full', 'https://www.plano.gov/164/City-Council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Plano City Council', 9, 'full', 'https://www.plano.gov/164/City-Council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -54,8 +54,8 @@ BEGIN
   VALUES ('City of McKinney, Texas, US', 'LOCAL', 'TX', NULL, '4845744')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'McKinney City Council', 7, 'mckinney-city-council', 'full', 'https://www.mckinneytexas.org/394/City-Council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'McKinney City Council', 7, 'full', 'https://www.mckinneytexas.org/394/City-Council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -81,8 +81,8 @@ BEGIN
   VALUES ('City of Allen, Texas, US', 'LOCAL', 'TX', NULL, '4801924')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Allen City Council', 7, 'allen-city-council', 'full', 'https://www.cityofallen.org/139/City-Council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Allen City Council', 7, 'full', 'https://www.cityofallen.org/139/City-Council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -108,8 +108,8 @@ BEGIN
   VALUES ('City of Frisco, Texas, US', 'LOCAL', 'TX', NULL, '4827684')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Frisco City Council', 7, 'frisco-city-council', 'full', 'https://www.friscotexas.gov/102/City-Council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Frisco City Council', 7, 'full', 'https://www.friscotexas.gov/102/City-Council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
