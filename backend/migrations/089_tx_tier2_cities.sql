@@ -4,6 +4,8 @@
 -- Cities: Murphy, Celina, Prosper (legally a Town), Richardson (Collin County, TX)
 -- All are nonpartisan municipalities — partisan_type = NULL on all offices.
 --
+-- Note: slug is a generated column on essentials.chambers derived from name_formal.
+--
 -- Counts:
 --   Murphy:     1 government + 1 chamber + 7 offices (Mayor + Place 1-6)
 --   Celina:     1 government + 1 chamber + 7 offices (Mayor + Place 1-6)
@@ -25,8 +27,8 @@ BEGIN
   VALUES ('City of Murphy, Texas, US', 'LOCAL', 'TX', NULL, '4850100')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Murphy City Council', 7, 'murphy-city-council', 'full', 'https://www.murphytx.org/government/city-council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Murphy City Council', 7, 'full', 'https://www.murphytx.org/government/city-council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -52,8 +54,8 @@ BEGIN
   VALUES ('City of Celina, Texas, US', 'LOCAL', 'TX', NULL, '4813684')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Celina City Council', 7, 'celina-city-council', 'full', 'https://www.celinatx.gov/government/city-council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Celina City Council', 7, 'full', 'https://www.celinatx.gov/government/city-council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -79,8 +81,8 @@ BEGIN
   VALUES ('Town of Prosper, Texas, US', 'LOCAL', 'TX', NULL, '4863276')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'Town Council', 'Prosper Town Council', 7, 'prosper-town-council', 'full', 'https://www.prospertx.gov/government/town-council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'Town Council', 'Prosper Town Council', 7, 'full', 'https://www.prospertx.gov/government/town-council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
@@ -107,8 +109,8 @@ BEGIN
   VALUES ('City of Richardson, Texas, US', 'LOCAL', 'TX', NULL, '4863500')
   RETURNING id INTO v_gov_id;
 
-  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, slug, policy_engagement_level, website_url)
-  VALUES (v_gov_id, 'City Council', 'Richardson City Council', 7, 'richardson-city-council', 'full', 'https://www.cor.net/government/city-council')
+  INSERT INTO essentials.chambers (government_id, name, name_formal, official_count, policy_engagement_level, website_url)
+  VALUES (v_gov_id, 'City Council', 'Richardson City Council', 7, 'full', 'https://www.cor.net/government/city-council')
   RETURNING id INTO v_chamber_id;
 
   INSERT INTO essentials.offices (chamber_id, title, representing_city, representing_state, normalized_position_name, seats, partisan_type, is_appointed_position)
