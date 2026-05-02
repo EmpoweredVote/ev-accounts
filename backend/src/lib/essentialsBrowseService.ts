@@ -439,6 +439,9 @@ export async function getPoliticiansByGovernmentList(
     term_end: row.term_end as string ?? '',
     term_date_precision: row.term_date_precision as string ?? '',
     appointment_date: row.appointment_date as string ?? '',
+    office_description: '',
+    next_primary_date: '',
+    next_general_date: '',
     images: [],
     is_vacant: row.is_vacant as boolean ?? false,
     vacant_since: row.vacant_since as string ?? '',
@@ -448,14 +451,14 @@ export async function getPoliticiansByGovernmentList(
   if (politicians.length > 0) {
     const ids = politicians.map((p) => p.id);
     const { rows: imgRows } = await pool.query(
-      `SELECT politician_id, url, type, photo_license FROM essentials.politician_images WHERE politician_id = ANY($1)`,
+      `SELECT id, politician_id, url, type, COALESCE(photo_license, '') AS photo_license, focal_point FROM essentials.politician_images WHERE politician_id = ANY($1)`,
       [ids]
     );
-    const imageMap = new Map<string, Array<{ url: string; type: string; photo_license: string }>>();
+    const imageMap = new Map<string, Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>>();
     for (const r of imgRows) {
       const pid = r.politician_id as string;
       if (!imageMap.has(pid)) imageMap.set(pid, []);
-      imageMap.get(pid)!.push({ url: r.url, type: r.type, photo_license: r.photo_license });
+      imageMap.get(pid)!.push({ id: r.id as string, url: r.url, type: r.type, photo_license: r.photo_license, focal_point: (r.focal_point as string) ?? null });
     }
     for (const p of politicians) p.images = imageMap.get(p.id) ?? [];
   }
