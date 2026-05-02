@@ -12,6 +12,7 @@ import {
   getStatesWithData,
   getAreasForState,
   getPoliticiansByArea,
+  getPoliticiansByGovernmentList,
   getOverlappingGeoIdsForArea,
 } from '../lib/essentialsBrowseService.js';
 import { getElectionsByGeoIds } from '../lib/electionService.js';
@@ -118,6 +119,36 @@ router.post('/elections-by-area', optionalAuth, async (req: Request, res: Respon
   } catch (err) {
     console.error('[POST /essentials/browse/elections-by-area] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/essentials/browse/by-government-list
+// Find all politicians for an explicit list of government geo_ids.
+// Bypasses geofence/district infrastructure — for jurisdictions whose city
+// boundaries haven't been loaded into geofence_boundaries.
+// Body: { government_geo_ids: string[] }
+// ---------------------------------------------------------------------------
+
+router.post('/by-government-list', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { government_geo_ids } = req.body as { government_geo_ids?: unknown };
+
+    if (!Array.isArray(government_geo_ids) || government_geo_ids.length === 0) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must be a non-empty array' });
+      return;
+    }
+    const ids = (government_geo_ids as unknown[]).filter((id): id is string => typeof id === 'string' && id.trim().length > 0);
+    if (ids.length === 0) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must contain valid strings' });
+      return;
+    }
+
+    const politicians = await getPoliticiansByGovernmentList(ids);
+    res.status(200).json(politicians);
+  } catch (err) {
+    console.error('[POST /essentials/browse/by-government-list] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
 
