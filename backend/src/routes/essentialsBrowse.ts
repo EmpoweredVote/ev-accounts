@@ -15,7 +15,7 @@ import {
   getPoliticiansByGovernmentList,
   getOverlappingGeoIdsForArea,
 } from '../lib/essentialsBrowseService.js';
-import { getElectionsByGeoIds } from '../lib/electionService.js';
+import { getElectionsByGeoIds, getElectionsByGovernmentGeoIds } from '../lib/electionService.js';
 import type { Request, Response } from 'express';
 
 const router = Router();
@@ -149,6 +149,36 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
   } catch (err) {
     console.error('[POST /essentials/browse/by-government-list] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/essentials/browse/elections-by-government-list
+// Find upcoming elections + races + candidates for an explicit list of governments.
+// Mirrors /by-government-list but returns election data instead of politicians.
+// Body: { government_geo_ids: string[] }
+// Returns: { elections: ElectionResult[] }
+// ---------------------------------------------------------------------------
+
+router.post('/elections-by-government-list', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { government_geo_ids } = req.body as { government_geo_ids?: unknown };
+
+    if (!Array.isArray(government_geo_ids) || government_geo_ids.length === 0) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must be a non-empty array' });
+      return;
+    }
+    const ids = (government_geo_ids as unknown[]).filter((id): id is string => typeof id === 'string' && id.trim().length > 0);
+    if (ids.length === 0) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must contain valid strings' });
+      return;
+    }
+
+    const elections = await getElectionsByGovernmentGeoIds(ids);
+    res.status(200).json({ elections });
+  } catch (err) {
+    console.error('[POST /essentials/browse/elections-by-government-list] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
   }
 });
 
