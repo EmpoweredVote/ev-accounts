@@ -147,7 +147,11 @@ router.post('/elections-by-area', optionalAuth, async (req: Request, res: Respon
 
 router.post('/by-government-list', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { government_geo_ids, state } = req.body as { government_geo_ids?: unknown; state?: unknown };
+    const { government_geo_ids, state, county_geo_id } = req.body as {
+      government_geo_ids?: unknown;
+      state?: unknown;
+      county_geo_id?: unknown;
+    };
 
     if (!Array.isArray(government_geo_ids) || government_geo_ids.length === 0) {
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must be a non-empty array' });
@@ -158,12 +162,24 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must contain valid strings' });
       return;
     }
+
+    // Validate optional county_geo_id (Census FIPS county code, e.g. "48085" for Collin County TX)
+    if (county_geo_id !== undefined && county_geo_id !== null) {
+      if (typeof county_geo_id !== 'string' || county_geo_id.length < 2 || county_geo_id.length > 15) {
+        res.status(400).json({ error: 'Invalid county_geo_id' });
+        return;
+      }
+    }
+    const countyGeoId = (typeof county_geo_id === 'string' && county_geo_id.length > 0)
+      ? county_geo_id
+      : undefined;
+
     // Accept explicit state from body, or derive from first geo_id's Census FIPS prefix
     const stateAbbrev = (typeof state === 'string' && state.trim().length > 0)
       ? state.trim().toUpperCase()
       : STATE_FIPS[ids[0]?.slice(0, 2) ?? ''];
 
-    const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev);
+    const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev, { countyGeoId });
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[POST /essentials/browse/by-government-list] error:', err);
