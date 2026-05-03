@@ -363,7 +363,8 @@ export async function getPoliticiansByArea(
  * city boundaries and district records haven't been loaded).
  */
 export async function getPoliticiansByGovernmentList(
-  governmentGeoIds: string[]
+  governmentGeoIds: string[],
+  stateAbbrev?: string
 ): Promise<PoliticianFlatRecord[]> {
   if (governmentGeoIds.length === 0) return [];
 
@@ -406,7 +407,56 @@ export async function getPoliticiansByGovernmentList(
     ORDER BY p.id
   `, [governmentGeoIds]);
 
-  const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
+  // Supplemental query: add state-wide and federal officials (same as by-area Step 3)
+  let statewideRows: typeof rows = [];
+  if (stateAbbrev) {
+    const { rows: swRows } = await pool.query<Record<string, unknown>>(`
+      SELECT DISTINCT ON (p.id)
+             p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+             p.preferred_name, p.name_suffix, p.party,
+             COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+             p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             COALESCE(p.valid_from, '') AS term_start,
+             COALESCE(p.valid_to, '') AS term_end,
+             COALESCE(p.term_date_precision, '') AS term_date_precision,
+             COALESCE(p.appointment_date::text, '') AS appointment_date,
+             o.title AS office_title, o.representing_state, o.representing_city,
+             o.is_appointed_position, o.is_vacant, o.vacant_since,
+             p.is_appointed, o.faces_retention_vote,
+             d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
+             ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+             ch.election_frequency, ch.policy_engagement_level,
+             g.name AS government_name, g.type AS government_type,
+             COALESCE(gvb.display_name, '') AS government_body_name,
+             COALESCE(gvb.website_url, '') AS government_body_url,
+             COALESCE(ch.website_url, '') AS chamber_url
+      FROM essentials.districts d
+      JOIN essentials.offices o ON o.district_id = d.id
+      JOIN essentials.politicians p ON o.politician_id = p.id
+      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+      LEFT JOIN essentials.governments g ON g.id = ch.government_id
+      LEFT JOIN essentials.government_bodies gvb
+        ON gvb.state = d.state
+        AND gvb.geo_id = d.geo_id
+        AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+      WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
+        AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
+        AND p.is_active = true
+      ORDER BY p.id
+    `, [stateAbbrev]);
+    statewideRows = swRows;
+  }
+
+  // Merge and deduplicate by politician ID
+  const seen = new Set<string>();
+  const allRows = [...rows, ...statewideRows].filter((r) => {
+    const id = r.id as string;
+    if (seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+
+  const politicians: PoliticianFlatRecord[] = allRows.map((row) => ({
     id: row.id as string,
     external_id: row.external_id != null ? Number(row.external_id) : null,
     first_name: row.first_name as string ?? '',
@@ -424,15 +474,15 @@ export async function getPoliticiansByGovernmentList(
     representing_state: row.representing_state as string ?? '',
     representing_city: row.representing_city as string ?? '',
     district_type: row.district_type as string ?? '',
-    district_label: '',
-    district_id: '',
+    district_label: row.district_label as string ?? '',
+    district_id: row.district_id as string ?? '',
     geo_id: row.geo_id as string ?? '',
-    mtfcc: '',
+    mtfcc: row.mtfcc as string ?? '',
     chamber_name: row.chamber_name as string ?? '',
     chamber_name_formal: row.chamber_name_formal as string ?? '',
     government_name: row.government_name as string ?? '',
-    government_body_name: '',
-    government_body_url: '',
+    government_body_name: row.government_body_name as string ?? '',
+    government_body_url: row.government_body_url as string ?? '',
     chamber_url: row.chamber_url as string ?? '',
     government_type: row.government_type as string ?? '',
     is_elected: !(row.is_appointed_position as boolean),

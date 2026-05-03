@@ -132,7 +132,7 @@ router.post('/elections-by-area', optionalAuth, async (req: Request, res: Respon
 
 router.post('/by-government-list', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const { government_geo_ids } = req.body as { government_geo_ids?: unknown };
+    const { government_geo_ids, state } = req.body as { government_geo_ids?: unknown; state?: unknown };
 
     if (!Array.isArray(government_geo_ids) || government_geo_ids.length === 0) {
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must be a non-empty array' });
@@ -143,8 +143,9 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must contain valid strings' });
       return;
     }
+    const stateAbbrev = typeof state === 'string' && state.trim().length > 0 ? state.trim().toUpperCase() : undefined;
 
-    const politicians = await getPoliticiansByGovernmentList(ids);
+    const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev);
     res.status(200).json(politicians);
   } catch (err) {
     console.error('[POST /essentials/browse/by-government-list] error:', err);
