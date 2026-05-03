@@ -40,3 +40,7 @@ supabase/.temp/
 # Stance research and topic draft outputs (keep dirs via .gitkeep)
 backend/data/stance-research/*.csv
 backend/data/topic-drafts/*.json
+
+# TIGER/Line shapefiles downloaded by boundary loader scripts
+backend/tl_2024_*/
+backend/tl_2024_*.zip
