@@ -8,6 +8,21 @@
 
 import { Router } from 'express';
 import { optionalAuth } from '../middleware/auth.js';
+
+// US Census state FIPS → 2-letter abbreviation
+const STATE_FIPS: Record<string, string> = {
+  '01': 'AL', '02': 'AK', '04': 'AZ', '05': 'AR', '06': 'CA',
+  '08': 'CO', '09': 'CT', '10': 'DE', '11': 'DC', '12': 'FL',
+  '13': 'GA', '15': 'HI', '16': 'ID', '17': 'IL', '18': 'IN',
+  '19': 'IA', '20': 'KS', '21': 'KY', '22': 'LA', '23': 'ME',
+  '24': 'MD', '25': 'MA', '26': 'MI', '27': 'MN', '28': 'MS',
+  '29': 'MO', '30': 'MT', '31': 'NE', '32': 'NV', '33': 'NH',
+  '34': 'NJ', '35': 'NM', '36': 'NY', '37': 'NC', '38': 'ND',
+  '39': 'OH', '40': 'OK', '41': 'OR', '42': 'PA', '44': 'RI',
+  '45': 'SC', '46': 'SD', '47': 'TN', '48': 'TX', '49': 'UT',
+  '50': 'VT', '51': 'VA', '53': 'WA', '54': 'WV', '55': 'WI',
+  '56': 'WY',
+};
 import {
   getStatesWithData,
   getAreasForState,
@@ -143,7 +158,10 @@ router.post('/by-government-list', optionalAuth, async (req: Request, res: Respo
       res.status(422).json({ code: 'VALIDATION_ERROR', message: 'government_geo_ids must contain valid strings' });
       return;
     }
-    const stateAbbrev = typeof state === 'string' && state.trim().length > 0 ? state.trim().toUpperCase() : undefined;
+    // Accept explicit state from body, or derive from first geo_id's Census FIPS prefix
+    const stateAbbrev = (typeof state === 'string' && state.trim().length > 0)
+      ? state.trim().toUpperCase()
+      : STATE_FIPS[ids[0]?.slice(0, 2) ?? ''];
 
     const politicians = await getPoliticiansByGovernmentList(ids, stateAbbrev);
     res.status(200).json(politicians);
