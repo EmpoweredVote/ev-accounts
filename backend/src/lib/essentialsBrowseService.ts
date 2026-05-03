@@ -364,9 +364,11 @@ export async function getPoliticiansByArea(
  */
 export async function getPoliticiansByGovernmentList(
   governmentGeoIds: string[],
-  stateAbbrev?: string
+  stateAbbrev?: string,
+  options: { countyGeoId?: string } = {}
 ): Promise<PoliticianFlatRecord[]> {
   if (governmentGeoIds.length === 0) return [];
+  const { countyGeoId } = options;
 
   const { rows } = await pool.query<Record<string, unknown>>(`
     SELECT DISTINCT ON (p.id)
@@ -447,9 +449,56 @@ export async function getPoliticiansByGovernmentList(
     statewideRows = swRows;
   }
 
+  // Third query: PostGIS intersection for US House (NATIONAL_LOWER) reps
+  // whose congressional district boundary (G5200) intersects the given county boundary (G4020).
+  // Only runs when countyGeoId is provided — zero impact on existing callers.
+  let congressionalRows: typeof rows = [];
+  if (countyGeoId) {
+    const { rows: cdRows } = await pool.query<Record<string, unknown>>(`
+      SELECT DISTINCT ON (p.id)
+             p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+             p.preferred_name, p.name_suffix, p.party,
+             COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+             p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             COALESCE(p.valid_from, '') AS term_start,
+             COALESCE(p.valid_to, '') AS term_end,
+             COALESCE(p.term_date_precision, '') AS term_date_precision,
+             COALESCE(p.appointment_date::text, '') AS appointment_date,
+             o.title AS office_title, o.representing_state, o.representing_city,
+             o.is_appointed_position, o.is_vacant, o.vacant_since,
+             p.is_appointed, o.faces_retention_vote,
+             d.district_type, d.label AS district_label, d.district_id, d.geo_id, d.mtfcc,
+             ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
+             ch.election_frequency, ch.policy_engagement_level,
+             g.name AS government_name, g.type AS government_type,
+             COALESCE(gvb.display_name, '') AS government_body_name,
+             COALESCE(gvb.website_url, '') AS government_body_url,
+             COALESCE(ch.website_url, '') AS chamber_url
+      FROM essentials.geofence_boundaries county_gb
+      JOIN essentials.geofence_boundaries cd_gb
+        ON public.ST_Intersects(county_gb.geometry, cd_gb.geometry)
+       AND cd_gb.mtfcc = 'G5200'
+      JOIN essentials.districts d
+        ON d.geo_id = cd_gb.geo_id
+       AND d.district_type = 'NATIONAL_LOWER'
+      JOIN essentials.offices o ON o.district_id = d.id
+      JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
+      LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
+      LEFT JOIN essentials.governments g ON g.id = ch.government_id
+      LEFT JOIN essentials.government_bodies gvb
+        ON gvb.state = d.state
+       AND gvb.geo_id = d.geo_id
+       AND gvb.body_key = COALESCE(NULLIF(ch.name_formal, ''), ch.name, '')
+      WHERE county_gb.geo_id = $1
+        AND county_gb.mtfcc = 'G4020'
+      ORDER BY p.id
+    `, [countyGeoId]);
+    congressionalRows = cdRows;
+  }
+
   // Merge and deduplicate by politician ID
   const seen = new Set<string>();
-  const allRows = [...rows, ...statewideRows].filter((r) => {
+  const allRows = [...rows, ...statewideRows, ...congressionalRows].filter((r) => {
     const id = r.id as string;
     if (seen.has(id)) return false;
     seen.add(id);
