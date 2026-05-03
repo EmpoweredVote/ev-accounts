@@ -380,7 +380,16 @@ export async function getPoliticiansByGovernmentList(
            o.title AS office_title, o.representing_state, o.representing_city,
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
-           '' AS district_type, '' AS district_label, '' AS district_id,
+           CASE
+             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township')
+                  AND LOWER(o.title) ~ '(mayor|city manager|city administrator|city secretary)'
+               THEN 'LOCAL_EXEC'
+             WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township') THEN 'LOCAL'
+             WHEN g.type = 'County' THEN 'COUNTY'
+             WHEN g.type = 'School District' THEN 'SCHOOL'
+             ELSE ''
+           END AS district_type,
+           '' AS district_label, '' AS district_id,
            g.geo_id, '' AS mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency, ch.policy_engagement_level,
@@ -414,7 +423,7 @@ export async function getPoliticiansByGovernmentList(
     office_title: row.office_title as string ?? '',
     representing_state: row.representing_state as string ?? '',
     representing_city: row.representing_city as string ?? '',
-    district_type: '',
+    district_type: row.district_type as string ?? '',
     district_label: '',
     district_id: '',
     geo_id: row.geo_id as string ?? '',
