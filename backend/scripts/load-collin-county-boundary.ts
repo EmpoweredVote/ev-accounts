@@ -22,8 +22,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
 import * as shapefile from 'shapefile';
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const AdmZip = require('adm-zip') as typeof import('adm-zip');
+import AdmZip from 'adm-zip';
 import { Pool } from 'pg';
 
 // ─── Config ──────────────────────────────────────────────────────────────────
