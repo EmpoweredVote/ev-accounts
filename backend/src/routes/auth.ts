@@ -188,6 +188,17 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
+  // Supabase returns status 200 (no error) for repeated signups when email confirmation
+  // is enabled — identities is an empty array in this case. Detect and surface as 409
+  // so the frontend can direct the user to sign in or reset their password.
+  if (!data.user.identities || data.user.identities.length === 0) {
+    res.status(409).json({
+      code: 'EMAIL_EXISTS',
+      message: 'An account with this email already exists',
+    });
+    return;
+  }
+
   // Phase 67: Inform signup path persists display_name onto public.users.
   // The on_auth_user_created trigger inserts public.users(id) with display_name = NULL.
   // The Connected path (below) writes display_name through signup_with_invite RPC, so
