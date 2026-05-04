@@ -477,10 +477,10 @@ export async function getPoliticiansByGovernmentList(
       FROM essentials.geofence_boundaries county_gb
       JOIN essentials.geofence_boundaries cd_gb
         ON public.ST_Intersects(county_gb.geometry, cd_gb.geometry)
-       AND cd_gb.mtfcc = 'G5200'
+       AND cd_gb.mtfcc IN ('G5200', 'G5210', 'G5220')
       JOIN essentials.districts d
         ON d.geo_id = cd_gb.geo_id
-       AND d.district_type = 'NATIONAL_LOWER'
+       AND d.mtfcc = cd_gb.mtfcc
       JOIN essentials.offices o ON o.district_id = d.id
       JOIN essentials.politicians p ON p.id = o.politician_id AND p.is_active = true
       LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
