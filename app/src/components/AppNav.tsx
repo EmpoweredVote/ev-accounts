@@ -6,14 +6,16 @@ interface AppNavProps {
 
 export function AppNav({ children }: AppNavProps) {
   return (
-    <header className="bg-ev-navy border-b border-white/10 sticky top-0 z-10">
+    <header className="bg-white dark:bg-ev-navy border-b border-gray-200 dark:border-white/10 sticky top-0 z-10">
       <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img
-            src="/logo.png"
-            alt="Empowered Vote"
-            className="h-6 w-auto"
-          />
+          <a href="https://login.empowered.vote/profile">
+            <img
+              src="/logo.png"
+              alt="Empowered Vote"
+              className="h-6 w-auto dark:invert-0 invert"
+            />
+          </a>
         </div>
         {children && (
           <div className="flex items-center gap-3">
