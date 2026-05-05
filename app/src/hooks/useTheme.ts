@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+const KEY = 'ev:color-scheme';
+
 export function useTheme() {
   const [isDark, setIsDark] = useState(
     () => document.documentElement.classList.contains('dark')
@@ -9,7 +11,7 @@ export function useTheme() {
     const next = !isDark;
     setIsDark(next);
     document.documentElement.classList.toggle('dark', next);
-    localStorage.setItem('ev-theme', next ? 'dark' : 'light');
+    localStorage.setItem(KEY, next ? 'dark' : 'light');
   }
 
   return { isDark, toggle };

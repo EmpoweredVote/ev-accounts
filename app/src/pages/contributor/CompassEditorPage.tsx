@@ -246,13 +246,13 @@ export default function CompassEditorPage() {
       <nav className="flex gap-6 border-b border-gray-200 dark:border-gray-800 mb-6">
         <Link
           to="/"
-          className="pb-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm"
+          className="pb-2 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm"
         >
           Profile
         </Link>
         <Link
           to="/contributor"
-          className="pb-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm"
+          className="pb-2 border-b-2 border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 font-medium text-sm"
         >
           Contributor
         </Link>
@@ -294,7 +294,7 @@ export default function CompassEditorPage() {
             </div>
           ) : politicians.length === 0 ? (
             <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-100 dark:border-gray-800 p-6 text-center">
-              <p className="text-gray-500 text-sm">No politicians in your jurisdiction scope.</p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">No politicians in your jurisdiction scope.</p>
             </div>
           ) : (
             <div className="space-y-3">
@@ -326,7 +326,7 @@ export default function CompassEditorPage() {
                     <p className="text-sm font-semibold text-ev-black dark:text-white truncate">
                       {politicianDisplayName(politician)}
                     </p>
-                    <p className="text-xs text-gray-500 truncate">{politician.office_title}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{politician.office_title}</p>
                   </div>
 
                   {/* CTA */}
@@ -353,7 +353,7 @@ export default function CompassEditorPage() {
                 setSelectedPolitician(null);
                 setChangedStances({});
               }}
-              className="text-sm text-gray-500 hover:text-ev-teal flex items-center gap-1 transition-colors"
+              className="text-sm text-gray-500 dark:text-gray-400 hover:text-ev-teal dark:hover:text-ev-teal-light flex items-center gap-1 transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -364,7 +364,7 @@ export default function CompassEditorPage() {
             <p className="text-sm font-semibold text-ev-black dark:text-white">
               {politicianDisplayName(selectedPolitician)}
             </p>
-            <span className="text-xs text-gray-500">{selectedPolitician.office_title}</span>
+            <span className="text-xs text-gray-500 dark:text-gray-400">{selectedPolitician.office_title}</span>
           </div>
 
           {loadingEditor ? (
@@ -388,7 +388,7 @@ export default function CompassEditorPage() {
                       <div className="flex items-start justify-between gap-2">
                         <div>
                           <p className="text-sm font-bold text-ev-black dark:text-white">{topic.title}</p>
-                          <p className="text-xs text-gray-500 mt-0.5 leading-relaxed">{topic.question_text}</p>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 leading-relaxed">{topic.question_text}</p>
                         </div>
                         {currentValue !== null && (
                           <button
