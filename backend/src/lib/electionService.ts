@@ -166,7 +166,7 @@ export async function getElectionsByGovernmentGeoIds(
     JOIN essentials.chambers ch ON ch.id = o.chamber_id
     JOIN essentials.governments g ON g.id = ch.government_id
     WHERE g.geo_id = ANY($1::text[])
-      AND e.election_date >= CURRENT_DATE
+      AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
   `;
 
@@ -221,7 +221,7 @@ export async function getElectionsByGovernmentGeoIds(
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND e.election_date >= CURRENT_DATE
+        AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(statewideQueryText, [stateAbbrev]);
@@ -382,7 +382,7 @@ export async function getElectionsByGeoIds(
       JOIN essentials.offices o ON o.id = r.office_id
       JOIN essentials.districts d ON d.id = o.district_id
       WHERE d.geo_id = ANY($1::text[])
-        AND e.election_date >= CURRENT_DATE
+        AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(districtQueryText, [activeGeoIds]);
@@ -422,7 +422,7 @@ export async function getElectionsByGeoIds(
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND e.election_date >= CURRENT_DATE
+        AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(statewideQueryText, [state]);
@@ -512,7 +512,8 @@ export async function getElectionsByGeoIds(
  * so $1 = lng, $2 = lat
  *
  * Withdrawn candidates are excluded from all results.
- * Only future elections (election_date >= CURRENT_DATE) are returned.
+ * Elections within the past 7 days are included so election-day and post-election
+ * results remain visible even after midnight UTC (database timezone).
  */
 export async function getElectionsByCoordinate(lat: number, lng: number): Promise<ElectionResult[]> {
   // Part A: Geofence-matched district-specific races
@@ -557,7 +558,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         gb.geometry,
         public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
       )
-      AND e.election_date >= CURRENT_DATE
+      AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
   `;
 
@@ -617,7 +618,7 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND e.election_date >= CURRENT_DATE
+        AND e.election_date >= CURRENT_DATE - INTERVAL '7 days'
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const statewideResult = await pool.query<ElectionRow>(statewideQueryText, [stateCode]);
