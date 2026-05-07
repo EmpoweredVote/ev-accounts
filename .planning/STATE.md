@@ -10,7 +10,7 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**Phase 68 (Yellow Inform Profile Page) — pending. Phase 67 fully shipped, pending verification.**
+**Phase 68 (Yellow Inform Profile Page) — in progress. Plan 68-01 complete (ConnectedExplainerModal). Phase 67 fully shipped.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. 12/21 requirements complete.
@@ -22,7 +22,7 @@ Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 clos
 Phase 64–65 (InformLanding, Dashboard): pending.
 Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBAK-01–06 verified. inform.inform_profiles table live, trigger active, backfill done, gem routing tier-branched, /me inform_profile field live, PATCH /location-hint live, signup_with_invite gem transfer deployed.
 Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path. Pending formal /gsd:verify-work.
-Phase 68 (Yellow Inform Profile Page): pending.
+Phase 68 (Yellow Inform Profile Page): in progress — Plan 01 of ~3 complete.
 
 Last activity: 2026-04-29 — discovered 67-02 was committed 2026-04-27 outside GSD flow; wrote 67-02-SUMMARY.md; STATE updated. Phase 67 fully shipped.
 
@@ -32,7 +32,7 @@ Last activity: 2026-04-29 — discovered 67-02 was committed 2026-04-27 outside 
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 🔄
 
 ## Performance Metrics
 
@@ -184,6 +184,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-04-27T22:16:49Z
-Stopped at: Completed 67-01-PLAN.md — InformConstraintsModal + Login.tsx CTA wired. LHUB-01 + LHUB-02 UI complete, awaiting human verify + plans 67-02/03 for signup route + backend.
+Last session: 2026-05-07T07:26:35Z
+Stopped at: Completed 68-01-PLAN.md — ConnectedExplainerModal created. CEXP-02 + CEXP-03 complete.
 Resume file: None
