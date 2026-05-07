@@ -203,9 +203,11 @@ interface FeatureTileProps {
   readRankStats: ReadRankStats | null;
   compassStats: CompassStats | null;
   jurisdiction?: MeJurisdiction | null;
+  lastEssentialsLocation?: unknown;
+  locked?: boolean;
 }
 
-function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdiction }: FeatureTileProps) {
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdiction, lastEssentialsLocation, locked }: FeatureTileProps) {
   const election = feature.statsKey === 'election' ? electionForJurisdiction(jurisdiction) : null;
   const showVr = feature.statsKey === 'vr' && vr !== null;
   const showElection = election !== null;
@@ -218,23 +220,51 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
     ? Math.round((compassStats.answered / compassStats.total) * 100)
     : 0;
 
+  const locationLabel = (() => {
+    if (feature.statsKey !== 'election') return null;
+    if (!lastEssentialsLocation) return null;
+    const loc = lastEssentialsLocation as Record<string, unknown>;
+    return (typeof loc.city === 'string' && loc.city)
+      || (typeof loc.name === 'string' && loc.name)
+      || (typeof loc.label === 'string' && loc.label)
+      || 'Location saved';
+  })();
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
+      className={`relative bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
     >
+      {locked && (
+        <span
+          className="absolute top-2 right-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-ev-yellow/20 dark:bg-ev-yellow/15 border border-ev-yellow/50 text-yellow-700 dark:text-ev-yellow"
+          aria-label="Observe access only — Connect your account to participate"
+          title="Observe access only"
+        >
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="4" y="11" width="16" height="10" rx="2" />
+            <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+          </svg>
+        </span>
+      )}
       <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotClass}`} />
       <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">{feature.name}</p>
       <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
 
-      {(showVr || showElection || showReadRank || showCompass) && (
+      {(showVr || showElection || showReadRank || showCompass || (!showElection && locationLabel)) && (
         <div className="mt-auto pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
           {showElection && election && (
             <p className="text-xs text-gray-600 dark:text-gray-400">
               <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{election.days}</span>
               {' '}days until {election.label}
+            </p>
+          )}
+          {!showElection && locationLabel && (
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              <span className="text-gray-900 dark:text-white font-semibold">{locationLabel}</span>
+              {' '}— last searched
             </p>
           )}
           {showVr && (
@@ -565,7 +595,7 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
 
-  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdiction: profile?.jurisdiction ?? null };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdiction: profile?.jurisdiction ?? null, lastEssentialsLocation: profile?.inform_profile?.last_essentials_location ?? null };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
@@ -721,6 +751,7 @@ export default function ProfilePage() {
                       href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
                       dotClass="bg-ev-blue"
                       borderHover="hover:border-ev-blue/50"
+                      locked={!cp}
                       {...sharedTileProps}
                     />
                     {cp ? (
@@ -742,6 +773,7 @@ export default function ProfilePage() {
                         href={accessToken ? `https://civicspaces.empowered.vote#access_token=${accessToken}` : 'https://civicspaces.empowered.vote'}
                         dotClass="bg-ev-blue"
                         borderHover="hover:border-ev-blue/50"
+                        locked={!cp}
                         {...sharedTileProps}
                       />
                     )}
@@ -752,6 +784,7 @@ export default function ProfilePage() {
                         href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
                         dotClass="bg-ev-blue"
                         borderHover="hover:border-ev-blue/50"
+                        locked={!cp}
                         {...sharedTileProps}
                       />
                     ))}
