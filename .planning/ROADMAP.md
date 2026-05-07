@@ -743,12 +743,11 @@ Plans:
 
 **Requirements:** IPRO-01, IPRO-02, IPRO-03, IPRO-04, IPRO-05, IPRO-06, CEXP-01, CEXP-02, CEXP-03
 
-**Plans:** TBD
+**Plans:** 2 plans
 
 Plans:
-- [ ] 68-01-PLAN.md — Tier-aware profile page: detect Inform vs. Connected/Empowered tier; apply yellow color system to header, badges, and tiles for Inform users; preserve existing teal/default for Connected/Empowered
-- [ ] 68-02-PLAN.md — Inform profile header + feature tiles: display name, "Inform Account" yellow pill, yellow gem balance; Compass tile (calibration count); Essentials tile (last location or explore prompt); locked Connected/Empowered tiles
-- [ ] 68-03-PLAN.md — Connected Account explainer: "Inform Account" pill opens dialog; dialog explains Connected Accounts + invite codes in Alpha; "I have an invite code" CTA links to Connected signup; subtle "Connect your account" section at page bottom
+- [ ] 68-01-PLAN.md — Create ConnectedExplainerModal.tsx: focused dialog explaining Connected tier (identity verification, Alpha invite codes) with "I have an invite code →" CTA to /signup
+- [ ] 68-02-PLAN.md — Extend ProfilePage.tsx for Inform tier: type, compass fetch enablement, clickable Inform badge, locked Connect tiles, last-essentials-location display, IPRO-06 bottom section, modal wiring
 
 **Success Criteria:**
 
