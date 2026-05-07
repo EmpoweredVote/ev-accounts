@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
 import { useTheme } from '../hooks/useTheme';
+import ConnectedExplainerModal from '../components/ConnectedExplainerModal';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -17,6 +18,7 @@ interface MeConnectedProfile {
 }
 interface MeInformProfile {
   yellow_gem_balance: number;
+  last_essentials_location: unknown; // raw JSONB — may be null or an object whose shape is defined by the Essentials app
 }
 interface MeResponse {
   id: string;
@@ -457,6 +459,7 @@ export default function ProfilePage() {
   const [locationSuccess, setLocationSuccess] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
   const [showLocationForm, setShowLocationForm] = useState(false);
+  const [explainerOpen, setExplainerOpen] = useState(false);
 
   useEffect(() => {
     apiFetch<MeResponse>('/account/me')
@@ -472,6 +475,17 @@ export default function ProfilePage() {
           apiFetch<{ roles: UserRoleGrant[] }>('/roles/me')
             .then((r) => setRoles(r.roles))
             .catch(() => {});
+          const token = useAuthStore.getState().accessToken;
+          if (token && data.id) {
+            fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
+              headers: { Authorization: `Bearer ${token}` },
+            })
+              .then((r) => r.ok ? r.json() as Promise<ReadRankStats> : null)
+              .then((d) => { if (d && typeof d.ranked === 'number') setReadRankStats(d); })
+              .catch(() => {});
+          }
+        }
+        if (data.connected_profile || data.tier === 'inform') {
           Promise.all([
             apiFetch<unknown>('/compass/answers'),
             apiFetch<unknown>('/compass/topics'),
@@ -484,15 +498,6 @@ export default function ProfilePage() {
               : ((topicsData as { topics?: unknown[] })?.topics?.length ?? 21);
             setCompassStats({ answered, total });
           }).catch(() => {});
-          const token = useAuthStore.getState().accessToken;
-          if (token && data.id) {
-            fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
-              headers: { Authorization: `Bearer ${token}` },
-            })
-              .then((r) => r.ok ? r.json() as Promise<ReadRankStats> : null)
-              .then((d) => { if (d && typeof d.ranked === 'number') setReadRankStats(d); })
-              .catch(() => {});
-          }
         }
       })
       .catch(() => setProfileError(true));
