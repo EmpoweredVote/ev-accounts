@@ -155,12 +155,17 @@ export async function getCompassTopics() {
     const applies_local = hasAnyRoleRows
       ? topicRoles.some(r => r.role_scope === 'local')
       : true;
+    // CRITICAL: fallback is false (not true) — existing cross-cutting topics must NOT appear on judicial profiles
+    const applies_judicial = hasAnyRoleRows
+      ? topicRoles.some(r => r.role_scope === 'judicial')
+      : false;
 
     return {
       ...topic,
       applies_federal,
       applies_state,
       applies_local,
+      applies_judicial,
       stances: (stancesRes.data ?? [])
         .filter(s => s.topic_id === topic.id)
         .map(({ topic_id: _tid, ...s }) => s),
@@ -218,12 +223,14 @@ export async function getCompassCategories() {
   const tierFlagsFor = (topicId: string) => {
     const scopes = rolesByTopicId.get(topicId);
     if (!scopes || scopes.size === 0) {
-      return { applies_federal: true, applies_state: true, applies_local: true };
+      // CRITICAL: applies_judicial defaults to false — cross-cutting topics must NOT appear on judicial profiles
+      return { applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false };
     }
     return {
-      applies_federal: scopes.has('federal'),
-      applies_state:   scopes.has('state'),
-      applies_local:   scopes.has('local'),
+      applies_federal:  scopes.has('federal'),
+      applies_state:    scopes.has('state'),
+      applies_local:    scopes.has('local'),
+      applies_judicial: scopes.has('judicial'),
     };
   };
 
