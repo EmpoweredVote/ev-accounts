@@ -392,8 +392,9 @@ export async function getPoliticiansByGovernmentList(
              WHEN g.type = 'School District' THEN 'SCHOOL'
              ELSE ''
            END AS district_type,
-           '' AS district_label, '' AS district_id,
-           g.geo_id, '' AS mtfcc,
+           COALESCE(d.label, '') AS district_label,
+           COALESCE(d.district_id, '') AS district_id,
+           COALESCE(d.geo_id, g.geo_id) AS geo_id, COALESCE(d.mtfcc, '') AS mtfcc,
            ch.name AS chamber_name, ch.name_formal AS chamber_name_formal,
            ch.election_frequency, ch.policy_engagement_level,
            g.name AS government_name, g.type AS government_type,
@@ -403,6 +404,7 @@ export async function getPoliticiansByGovernmentList(
     JOIN essentials.chambers ch ON ch.government_id = g.id
     JOIN essentials.offices o ON o.chamber_id = ch.id
     JOIN essentials.politicians p ON p.id = o.politician_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
     WHERE g.geo_id = ANY($1)
       AND p.is_active = true
       AND p.is_vacant = false
