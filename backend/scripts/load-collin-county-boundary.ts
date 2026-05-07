@@ -1,4 +1,17 @@
 /**
+ * Superseded by `load-state-tiger-boundaries.ts` (Phase 130, v2026.5.0).
+ * Kept as a documented one-off for the Phase 19-04 PIP-query reference and to
+ * preserve git-blame history for the original Collin County import.
+ *
+ * To re-run county loads via the generalized loader (once a future phase wires
+ * the G4020 → COUNTY MTFCC map into the address-lookup query):
+ *   npx tsx backend/scripts/load-state-tiger-boundaries.ts \
+ *     --state TX --fips 48 --layers county
+ *
+ * Do NOT add new functionality here.
+ */
+
+/**
  * load-collin-county-boundary.ts
  *
  * Downloads the TIGER/Line 2024 national county shapefile and inserts the
