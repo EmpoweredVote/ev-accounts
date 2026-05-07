@@ -651,15 +651,24 @@ export default function ProfilePage() {
                 );
               })}
             </nav>
-            <span className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px ${
-              profile.tier === 'inform'
-                ? 'border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow'
-                : profile.tier === 'empowered'
-                ? 'border-ev-red/40 text-ev-red'
-                : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400'
-            }`}>
-              {profile.tier === 'inform' ? 'Inform Account' : profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
-            </span>
+            {profile.tier === 'inform' ? (
+              <button
+                type="button"
+                onClick={() => setExplainerOpen(true)}
+                className="border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow hover:bg-ev-yellow/25 dark:hover:bg-ev-yellow/20 transition-colors"
+                aria-label="Learn about Connected Accounts"
+              >
+                Inform Account
+              </button>
+            ) : (
+              <span className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px ${
+                profile.tier === 'empowered'
+                  ? 'border-ev-red/40 text-ev-red'
+                  : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400'
+              }`}>
+                {profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
+              </span>
+            )}
           </div>
 
           {/* ── PROFILE TAB ─────────────────────────────────────────────────── */}
@@ -791,6 +800,21 @@ export default function ProfilePage() {
                   </div>
                 </div>
               </div>
+
+              {profile.tier === 'inform' && (
+                <div className="text-center py-4 space-y-1.5">
+                  <p className="text-xs text-gray-500 dark:text-gray-600">
+                    Ready to participate? Connect your account when you are —
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setExplainerOpen(true)}
+                    className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline font-medium"
+                  >
+                    Learn about Connected Accounts →
+                  </button>
+                </div>
+              )}
 
             </div>
           )}
@@ -948,6 +972,8 @@ export default function ProfilePage() {
 
         </div>
       )}
+
+      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} />
     </div>
   );
 }
