@@ -62,6 +62,7 @@ interface TierCardProps {
 function TierCard({ headerBg, circleBg, icon, name, subtitle, subtitleClass, identity, dotBg, login, interaction, whyExists }: TierCardProps) {
   return (
     <div className="rounded-xl overflow-hidden flex flex-col">
+      {/* Header stays light-pastel in both modes — same as the original dark HTML */}
       <div className={`p-5 ${headerBg}`}>
         <div className={`w-11 h-11 rounded-full flex items-center justify-center mb-4 ${circleBg}`}>
           {icon}
@@ -69,24 +70,25 @@ function TierCard({ headerBg, circleBg, icon, name, subtitle, subtitleClass, ide
         <h3 className="text-xl font-bold text-gray-900 tracking-tight mb-0.5">{name}</h3>
         <p className={`text-xs font-semibold ${subtitleClass}`}>{subtitle}</p>
       </div>
-      <div className="bg-gray-50 flex-1 p-4 space-y-3">
+      {/* Detail area — dark in dark mode, light in light mode */}
+      <div className="bg-gray-50 dark:bg-[#1e1e1e] flex-1 p-4 space-y-3">
         <div>
-          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">IDENTITY</span>
-          <span className="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-full px-2.5 py-0.5 text-xs text-gray-700 font-medium">
+          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 dark:text-[#4a4a4a] mb-1">IDENTITY</span>
+          <span className="inline-flex items-center gap-1.5 bg-white dark:bg-[#2a2a2a] border border-gray-200 dark:border-gray-700 rounded-full px-2.5 py-0.5 text-xs text-gray-700 dark:text-gray-300 font-medium">
             <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${dotBg}`} />
             {identity}
           </span>
         </div>
         <div>
-          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">LOGIN</span>
-          <p className="text-xs text-gray-700">{login}</p>
+          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 dark:text-[#4a4a4a] mb-1">LOGIN</span>
+          <p className="text-xs text-gray-700 dark:text-gray-300">{login}</p>
         </div>
         <div>
-          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">INTERACTION</span>
-          <p className="text-xs text-gray-700">{interaction}</p>
+          <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 dark:text-[#4a4a4a] mb-1">INTERACTION</span>
+          <p className="text-xs text-gray-700 dark:text-gray-300">{interaction}</p>
         </div>
-        <p className="text-[11px] text-gray-400 leading-relaxed">
-          <span className="font-semibold text-gray-500">Why: </span>{whyExists}
+        <p className="text-[11px] text-gray-400 dark:text-gray-500 leading-relaxed">
+          <span className="font-semibold text-gray-500 dark:text-gray-400">Why: </span>{whyExists}
         </p>
       </div>
     </div>
@@ -116,17 +118,17 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
       <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
-          <DialogPanel className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl">
+          <DialogPanel className="w-full max-w-4xl bg-white dark:bg-[#111] rounded-2xl shadow-2xl">
 
             {/* Header */}
             <div className="px-8 pt-8 pb-5 text-center">
               <p className="text-[10px] font-bold tracking-widest uppercase text-ev-teal-light mb-2">
                 EMPOWERED VOTE · PLATFORM OVERVIEW
               </p>
-              <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-1.5">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white tracking-tight mb-1.5">
                 How participation works
               </h2>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 Three levels of engagement — go as far as you choose
               </p>
             </div>
@@ -138,7 +140,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
                 <div className="flex-1 rounded-full bg-ev-teal-light" />
                 <div className="flex-1 rounded-full" style={{ background: '#FF7A65' }} />
               </div>
-              <div className="flex text-[8.5px] font-bold tracking-wider uppercase text-gray-400">
+              <div className="flex text-[8.5px] font-bold tracking-wider uppercase text-gray-400 dark:text-gray-500">
                 <span className="flex-1 text-center">ANONYMOUS</span>
                 <span className="flex-1 text-center">VERIFIED &amp; PRIVATE</span>
                 <span className="flex-1 text-center">PUBLIC &amp; TRANSPARENT</span>
@@ -189,25 +191,25 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
             </div>
 
             {/* Bottom tagline */}
-            <div className="px-8 pt-4 pb-5 flex items-center border-t border-gray-100">
+            <div className="px-8 pt-4 pb-5 flex items-center border-t border-gray-100 dark:border-gray-800">
               <div className="flex-1 flex flex-col items-center gap-0.5">
                 <span className="text-[9px] font-bold tracking-widest uppercase text-ev-yellow">INFORM</span>
-                <span className="text-sm font-medium text-gray-700">Explore freely</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Explore freely</span>
               </div>
-              <span className="text-gray-300 px-1 text-lg leading-none">→</span>
+              <span className="text-gray-300 dark:text-gray-600 px-1 text-lg leading-none">→</span>
               <div className="flex-1 flex flex-col items-center gap-0.5">
                 <span className="text-[9px] font-bold tracking-widest uppercase text-ev-teal-light">CONNECT</span>
-                <span className="text-sm font-medium text-gray-700">Join the conversation</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Join the conversation</span>
               </div>
-              <span className="text-gray-300 px-1 text-lg leading-none">→</span>
+              <span className="text-gray-300 dark:text-gray-600 px-1 text-lg leading-none">→</span>
               <div className="flex-1 flex flex-col items-center gap-0.5">
                 <span className="text-[9px] font-bold tracking-widest uppercase" style={{ color: '#FF7A65' }}>EMPOWER</span>
-                <span className="text-sm font-medium text-gray-700">Lead publicly</span>
+                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Lead publicly</span>
               </div>
             </div>
 
             {/* CTA area */}
-            <div className="px-8 py-6 border-t border-gray-100 space-y-3">
+            <div className="px-8 py-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
               {!connectClicked ? (
                 <button
                   type="button"
@@ -218,32 +220,32 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
                 </button>
               ) : (
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold text-gray-900">To connect your account:</p>
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white">To connect your account:</p>
                   <ul className="space-y-3">
-                    <li className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
+                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 dark:bg-ev-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckIcon />
                       </span>
                       <span>
-                        <span className="font-semibold text-gray-900">Verified identity, kept private.</span>{' '}
+                        <span className="font-semibold text-gray-900 dark:text-white">Verified identity, kept private.</span>{' '}
                         Your identity is confirmed but your participation remains pseudonymous.
                       </span>
                     </li>
-                    <li className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
+                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 dark:bg-ev-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckIcon />
                       </span>
                       <span>
-                        <span className="font-semibold text-gray-900">Each person gets one voice.</span>{' '}
+                        <span className="font-semibold text-gray-900 dark:text-white">Each person gets one voice.</span>{' '}
                         Verified accounts ensure every voice counts equally — no duplicates, no bots.
                       </span>
                     </li>
-                    <li className="flex items-start gap-2.5 text-sm text-gray-700">
-                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <li className="flex items-start gap-2.5 text-sm text-gray-700 dark:text-gray-300">
+                      <span className="w-5 h-5 rounded-full bg-ev-teal/10 dark:bg-ev-teal/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <CheckIcon />
                       </span>
                       <span>
-                        <span className="font-semibold text-gray-900">Invite code required during Alpha.</span>{' '}
+                        <span className="font-semibold text-gray-900 dark:text-white">Invite code required during Alpha.</span>{' '}
                         Access is invite-only while we build responsibly.
                       </span>
                     </li>
@@ -260,7 +262,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
               <button
                 type="button"
                 onClick={handleClose}
-                className="block w-full text-center py-2 text-sm text-gray-400 hover:text-gray-600 transition-colors"
+                className="block w-full text-center py-2 text-sm text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
               >
                 Close
               </button>
