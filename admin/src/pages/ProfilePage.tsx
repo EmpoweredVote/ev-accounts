@@ -655,7 +655,7 @@ export default function ProfilePage() {
               <button
                 type="button"
                 onClick={() => setExplainerOpen(true)}
-                className="border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow hover:bg-ev-yellow/25 dark:hover:bg-ev-yellow/20 transition-colors"
+                className="border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer bg-ev-yellow border-ev-yellow text-ev-black dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow hover:bg-ev-yellow/90 dark:hover:bg-ev-yellow/20 transition-colors"
                 aria-label="Learn about Connected Accounts"
               >
                 Inform Account
@@ -746,7 +746,7 @@ export default function ProfilePage() {
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
                     {!cp && (
-                      <span className="text-[10px] font-semibold border px-2 py-0.5 rounded-full border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow">Observe Access</span>
+                      <span className="text-[10px] font-semibold border px-2 py-0.5 rounded-full bg-ev-yellow border-ev-yellow text-ev-black dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow">Observe Access</span>
                     )}
                   </div>
                   {!cp && (
