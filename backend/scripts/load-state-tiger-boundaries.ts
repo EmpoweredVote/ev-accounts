@@ -32,10 +32,25 @@ dotenv.config();
 // are safe for that state.
 //
 const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
-  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'elsd', 'scsd', 'place']),
+  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place']),
   TX: new Set(['cd', 'sldu', 'sldl', 'county']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
+};
+
+// STATE_CITY_ASSERTIONS: place-layer vintage gate (Phase 131 D-03..D-06)
+// Fires for any state listed here when processing the 'place' layer.
+// Each string is a case-insensitive substring to match against NAMELSAD.
+// Adding a new state is a code change, on purpose.
+const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
+  UT: ['Magna', 'Kearns', 'Copperton', 'Emigration Canyon', 'White City'],
+};
+
+// STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
+// When a state is absent, the fallback `layer === 'place'` rule applies (preserving
+// CA byte-equivalence). When present, every layer in the Set receives ST_MakeValid.
+const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
+  UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
 };
 
 // Globally hard-rejected layers (D-05). PLSS township/range polygons collapsed
@@ -192,29 +207,6 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     filterByStatefp: false,
     skipDistrictCodes: new Set<string>(),
     writeDistrictRow: false /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (Operational-parity recommendation, line "unsd: writeDistricts=false (Python sets the precedent; school-board ingestion creates SCHOOL districts rows separately)") */,
-  },
-  // Elementary School Districts (G5400) and Secondary School Districts (G5410).
-  // Added to fill coverage gaps in areas served by separate K-8 + 9-12 districts
-  // rather than Unified School Districts (e.g., Antelope Valley, Santa Clarita).
-  // Same writeDistrictRow=false convention as unsd — SCHOOL districts rows are
-  // created by separate school-board ingestion, not by this TIGER loader.
-  elsd: {
-    mtfcc: 'G5400', district_type: 'SCHOOL', ocdKey: 'school_district',
-    geoIdSource: 'GEOID',
-    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/ELSD/tl_${v}_${f}_elsd.zip`,
-    districtNumField: null,
-    filterByStatefp: false,
-    skipDistrictCodes: new Set<string>(),
-    writeDistrictRow: false,
-  },
-  scsd: {
-    mtfcc: 'G5410', district_type: 'SCHOOL', ocdKey: 'school_district',
-    geoIdSource: 'GEOID',
-    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/SCSD/tl_${v}_${f}_scsd.zip`,
-    districtNumField: null,
-    filterByStatefp: false,
-    skipDistrictCodes: new Set<string>(),
-    writeDistrictRow: false,
   },
   place: {
     mtfcc: 'G4110', district_type: 'LOCAL', ocdKey: 'place',
@@ -485,6 +477,41 @@ async function processLayer(
 
   console.log(`  [${layer}] streaming ${shpFile}`);
 
+  // ── STATE_CITY_ASSERTIONS pre-write gate (Phase 131 D-04, D-05, D-06) ───────
+  // Two-pass approach: re-read the (already extracted) shapefile to collect NAMELSAD
+  // values into seenNamelsad, assert all required cities present, THEN proceed to
+  // the existing upsert pass. Fires only when state has assertions defined.
+  if (layer === 'place' && STATE_CITY_ASSERTIONS[abbrevUpper]) {
+    const seenNamelsad = new Set<string>();
+    await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+      // Apply the same MTFCC filter the upsert pass uses (G4110 only).
+      const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+      if (mtfccRaw && mtfccRaw !== 'G4110') return;
+      const namelsadCol = resolveColumn(props as Record<string, unknown>, NAMELSAD_CANDIDATES);
+      const v = props[namelsadCol];
+      if (typeof v === 'string' && v.length > 0) {
+        seenNamelsad.add(v);
+      }
+    });
+
+    const required = STATE_CITY_ASSERTIONS[abbrevUpper];
+    const missing = required.filter(
+      (city) => !Array.from(seenNamelsad).some(
+        (n) => n.toLowerCase().includes(city.toLowerCase())
+      )
+    );
+    if (missing.length > 0) {
+      process.stderr.write(
+        `[place] STATE_CITY_ASSERTIONS gate FAILED for ${abbrevUpper}.\n` +
+        `Missing cities: ${JSON.stringify(missing)}\n` +
+        `Seen NAMELSAD values (sample): ${Array.from(seenNamelsad).slice(0, 10).join(', ')}\n` +
+        `Escalate to user per CONTEXT.md D-06. No rows written.\n`
+      );
+      process.exit(1);
+    }
+    console.log(`  [${layer}] STATE_CITY_ASSERTIONS gate PASSED for ${abbrevUpper} (${required.length} cities verified).`);
+  }
+
   // ── Stream records ──────────────────────────────────────────────────────────
   await streamShapefile(shpPath, dbfPath, async (geom, props) => {
     try {
@@ -595,8 +622,10 @@ async function processLayer(
       // Insert into geofence_boundaries.
       // The state: fipsArg named-key form (kept on a single line) makes the
       // 130-04 D-01 grep-verifiable: `upsertGeofence(client, { ... state: fipsArg ... })`.
+      // D-09 single resolution point: registry lookup with place-only fallback (CA byte-equivalence preserved).
+      const runMakeValid = STATE_RUN_MAKEVALID[abbrevUpper]?.has(layer) ?? (layer === 'place');
       // eslint-disable-next-line max-len
-      const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid: layer === 'place' });
+      const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid });
       if (upsertResult.inserted) {
         totals.inserted_boundary++;
       } else {
@@ -834,6 +863,8 @@ main().catch((err) => {
 // ─── Exports for testing (no-op at runtime) ──────────────────────────────────
 export {
   STATE_LAYER_ALLOWLIST,
+  STATE_CITY_ASSERTIONS,
+  STATE_RUN_MAKEVALID,
   UNSAFE_LAYERS,
   FIPS_TO_STATE,
   LAYER_DISPATCH,
