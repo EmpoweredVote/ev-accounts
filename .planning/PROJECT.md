@@ -148,7 +148,7 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 - **Auth**: Supabase Auth only. No custom auth. Service role key server-side only, never client-exposed.
 - **Cost**: Unfunded nonprofit. Free tiers first. No paid verification services in v1. Minimize operational cost.
 - **Security**: Privacy by default. Collect only what is necessary. tolerance_rating, legal_name, verification_method are internal-only fields — enforced at RLS and API layers.
-- **Repo**: `empowered-accounts` on GitHub. `main` is production. `.env.example` always included.
+- **Repo**: `empowered-accounts` on GitHub. `master` is production. `.env.example` always included.
 
 ## Key Decisions
 
