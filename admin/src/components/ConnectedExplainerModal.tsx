@@ -62,14 +62,14 @@ interface TierCardProps {
 function TierCard({ headerBg, circleBg, icon, name, subtitle, subtitleClass, identity, dotBg, login, interaction, whyExists }: TierCardProps) {
   return (
     <div className="rounded-xl overflow-hidden flex flex-col">
-      <div className={`p-4 ${headerBg}`}>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-3 ${circleBg}`}>
+      <div className={`p-5 ${headerBg}`}>
+        <div className={`w-11 h-11 rounded-full flex items-center justify-center mb-4 ${circleBg}`}>
           {icon}
         </div>
         <h3 className="text-xl font-bold text-gray-900 tracking-tight mb-0.5">{name}</h3>
         <p className={`text-xs font-semibold ${subtitleClass}`}>{subtitle}</p>
       </div>
-      <div className="bg-gray-50 flex-1 p-3 space-y-2.5">
+      <div className="bg-gray-50 flex-1 p-4 space-y-3">
         <div>
           <span className="block text-[9px] font-bold tracking-widest uppercase text-gray-400 mb-1">IDENTITY</span>
           <span className="inline-flex items-center gap-1.5 bg-white border border-gray-200 rounded-full px-2.5 py-0.5 text-xs text-gray-700 font-medium">
@@ -116,14 +116,14 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
       <div className="fixed inset-0 bg-black/50" aria-hidden="true" />
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4">
-          <DialogPanel className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl">
+          <DialogPanel className="w-full max-w-3xl bg-white rounded-2xl shadow-2xl">
 
             {/* Header */}
-            <div className="px-6 pt-6 pb-4 text-center">
-              <p className="text-[10px] font-bold tracking-widest uppercase text-ev-teal-light mb-1.5">
+            <div className="px-8 pt-8 pb-5 text-center">
+              <p className="text-[10px] font-bold tracking-widest uppercase text-ev-teal-light mb-2">
                 EMPOWERED VOTE · PLATFORM OVERVIEW
               </p>
-              <h2 className="text-2xl font-bold text-gray-900 tracking-tight mb-1">
+              <h2 className="text-3xl font-bold text-gray-900 tracking-tight mb-1.5">
                 How participation works
               </h2>
               <p className="text-sm text-gray-500">
@@ -132,7 +132,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
             </div>
 
             {/* Progress bar */}
-            <div className="px-6 mb-4">
+            <div className="px-8 mb-5">
               <div className="flex h-1.5 gap-1 mb-1.5">
                 <div className="flex-1 rounded-full bg-ev-yellow" />
                 <div className="flex-1 rounded-full bg-ev-teal-light" />
@@ -146,7 +146,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
             </div>
 
             {/* Tier cards */}
-            <div className="px-4 pb-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="px-6 pb-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
               <TierCard
                 headerBg="bg-[#F0E5A2]"
                 circleBg="bg-ev-yellow"
@@ -189,7 +189,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
             </div>
 
             {/* Bottom tagline */}
-            <div className="px-6 pt-3 pb-4 flex items-center border-t border-gray-100">
+            <div className="px-8 pt-4 pb-5 flex items-center border-t border-gray-100">
               <div className="flex-1 flex flex-col items-center gap-0.5">
                 <span className="text-[9px] font-bold tracking-widest uppercase text-ev-yellow">INFORM</span>
                 <span className="text-sm font-medium text-gray-700">Explore freely</span>
@@ -207,7 +207,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
             </div>
 
             {/* CTA area */}
-            <div className="px-6 py-5 border-t border-gray-100 space-y-3">
+            <div className="px-8 py-6 border-t border-gray-100 space-y-3">
               {!connectClicked ? (
                 <button
                   type="button"
