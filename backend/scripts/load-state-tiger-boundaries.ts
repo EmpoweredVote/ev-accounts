@@ -32,7 +32,7 @@ dotenv.config();
 // are safe for that state.
 //
 const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
-  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place']),
+  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'elsd', 'scsd', 'place']),
   TX: new Set(['cd', 'sldu', 'sldl', 'county']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
@@ -192,6 +192,29 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     filterByStatefp: false,
     skipDistrictCodes: new Set<string>(),
     writeDistrictRow: false /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (Operational-parity recommendation, line "unsd: writeDistricts=false (Python sets the precedent; school-board ingestion creates SCHOOL districts rows separately)") */,
+  },
+  // Elementary School Districts (G5400) and Secondary School Districts (G5410).
+  // Added to fill coverage gaps in areas served by separate K-8 + 9-12 districts
+  // rather than Unified School Districts (e.g., Antelope Valley, Santa Clarita).
+  // Same writeDistrictRow=false convention as unsd — SCHOOL districts rows are
+  // created by separate school-board ingestion, not by this TIGER loader.
+  elsd: {
+    mtfcc: 'G5400', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/ELSD/tl_${v}_${f}_elsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
+  },
+  scsd: {
+    mtfcc: 'G5410', district_type: 'SCHOOL', ocdKey: 'school_district',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/SCSD/tl_${v}_${f}_scsd.zip`,
+    districtNumField: null,
+    filterByStatefp: false,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
   },
   place: {
     mtfcc: 'G4110', district_type: 'LOCAL', ocdKey: 'place',
