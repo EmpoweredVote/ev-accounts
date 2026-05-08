@@ -93,9 +93,9 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
   // Local
   if (p.includes('mayor'))
     return 'LOCAL_EXEC';
-  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor'))
+  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor') || p.includes('controller') || (p.includes('attorney') && !p.includes('attorney general')))
     return 'LOCAL';
-  if (p.includes('county'))
+  if (p.includes('county') || p.includes('supervisor'))
     return 'COUNTY';
   if (p.includes('school') || p.includes('education'))
     return 'SCHOOL';
@@ -107,6 +107,7 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
     federal: 'NATIONAL_EXEC',
     state: 'STATE_EXEC',
     local: 'LOCAL_EXEC',
+    county: 'COUNTY',
   };
   return levelMap[jurisdictionLevel] ?? null;
 }
