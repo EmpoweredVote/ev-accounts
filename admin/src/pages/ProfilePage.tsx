@@ -691,13 +691,15 @@ export default function ProfilePage() {
                   {cp && xp ? (
                     <div className="flex items-center justify-between">
                       <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
-                      <div className="flex items-center gap-3">
-                        <GemPip count={cp.gems.yellow} tooltip="Yellow Gems validate facts." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
-                        <GemPip count={cp.gems.blue} tooltip="Blue Gems to vote your values." gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
-                        <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
-                      </div>
+                      {(cp.gems.yellow > 0 || cp.gems.blue > 0 || cp.gems.red > 0) && (
+                        <div className="flex items-center gap-3">
+                          {cp.gems.yellow > 0 && <GemPip count={cp.gems.yellow} tooltip="Yellow Gems validate facts." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />}
+                          {cp.gems.blue > 0 && <GemPip count={cp.gems.blue} tooltip="Blue Gems to vote your values." gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />}
+                          {cp.gems.red > 0 && <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />}
+                        </div>
+                      )}
                     </div>
-                  ) : profile.tier === 'inform' && profile.inform_profile != null ? (
+                  ) : profile.tier === 'inform' && profile.inform_profile != null && profile.inform_profile.yellow_gem_balance > 0 ? (
                     <GemPip
                       count={profile.inform_profile.yellow_gem_balance}
                       tooltip="Yellow Gems amplify ideas."
