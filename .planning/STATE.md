@@ -10,10 +10,10 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**Phase 68 (Yellow Inform Profile Page) — in progress. Plan 68-01 complete (ConnectedExplainerModal). Plan 68-02 auto tasks complete, awaiting human verification. Phase 67 fully shipped.**
+**v2.1 complete. All 3 phases (66–68) shipped. 21/21 requirements verified. Next: v2.0 phases 64–65 (InformLanding, Dashboard) OR /gsd:audit-milestone for v2.1.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
-v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. 12/21 requirements complete.
+v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -21,10 +21,10 @@ Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verifi
 Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 closed (63-01); PROF-01–06 completed in admin/src/pages/ProfilePage.tsx (login.empowered.vote/profile, built 2026-04-26). 63-02 closed as superseded — duplicate app/src profile page not needed; canonical profile is login.empowered.vote/profile.
 Phase 64–65 (InformLanding, Dashboard): pending.
 Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBAK-01–06 verified. inform.inform_profiles table live, trigger active, backfill done, gem routing tier-branched, /me inform_profile field live, PATCH /location-hint live, signup_with_invite gem transfer deployed.
-Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path. Pending formal /gsd:verify-work.
-Phase 68 (Yellow Inform Profile Page): in progress — Plan 02 auto tasks complete, checkpoint awaiting human verification.
+Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path.
+Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
 
-Last activity: 2026-04-29 — discovered 67-02 was committed 2026-04-27 outside GSD flow; wrote 67-02-SUMMARY.md; STATE updated. Phase 67 fully shipped.
+Last activity: 2026-05-09 — Phase 68 UAT complete, all gaps fixed and verified. v2.1 milestone fully shipped.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -32,7 +32,7 @@ Last activity: 2026-04-29 — discovered 67-02 was committed 2026-04-27 outside 
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 🔄
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅
 
 ## Performance Metrics
 
