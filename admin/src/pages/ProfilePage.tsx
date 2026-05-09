@@ -292,7 +292,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
           {showCompass && compassStats && (
             <>
               <p className="text-xs text-gray-400">
-                <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
+                <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{compassStats.answered}</span>
                 <span> / {compassStats.total} stances calibrated</span>
               </p>
               <div className="h-1 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
@@ -661,13 +661,18 @@ export default function ProfilePage() {
                 Inform Account
               </button>
             ) : (
-              <span className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px ${
-                profile.tier === 'empowered'
-                  ? 'border-ev-red/40 text-ev-red'
-                  : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400'
-              }`}>
+              <button
+                type="button"
+                onClick={() => setExplainerOpen(true)}
+                className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer transition-colors ${
+                  profile.tier === 'empowered'
+                    ? 'border-ev-red/40 text-ev-red hover:bg-ev-red/10'
+                    : 'border-ev-blue/40 text-ev-blue dark:border-ev-blue/30 dark:text-ev-blue/80 hover:bg-ev-blue/10'
+                }`}
+                aria-label="Learn about account tiers"
+              >
                 {profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
-              </span>
+              </button>
             )}
           </div>
 
@@ -721,7 +726,7 @@ export default function ProfilePage() {
                 <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Empowered Vote Features</h2>
 
                 {/* Inform — always full access */}
-                <div className="rounded-xl bg-ev-inform-section/20 dark:bg-ev-inform-section/8 p-3">
+                <div className="rounded-xl bg-ev-inform-section/40 dark:bg-ev-inform-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-ev-yellow uppercase tracking-widest">Inform</span>
@@ -741,7 +746,7 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Connect — full access for Connected+, observe for Inform */}
-                <div className="rounded-xl bg-ev-connect-section/20 dark:bg-ev-connect-section/8 p-3">
+                <div className="rounded-xl bg-ev-connect-section/40 dark:bg-ev-connect-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
