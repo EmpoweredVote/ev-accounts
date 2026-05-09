@@ -42,11 +42,47 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 - Plans complete: 0
 - Plans total: TBD (determined per phase during planning)
 
-**v2.1 Scope**
-- Phases: 3 (66–68)
-- Requirements: 21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
+**v2.1 Scope — COMPLETE**
+- Phases: 3 (66–68) ✅
+- Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
+
+**v2.2 Scope — TIGER District Geofencing**
+- Phases: 3 (69–71)
+- Requirements: 14 (GEO-01–14)
 - Plans complete: 0
-- Plans total: ~9 (3 plans per phase, TBD)
+- Plans total: TBD
+
+### v2.2 Requirements
+
+| Req | Phase | Description |
+|-----|-------|-------------|
+| GEO-01 | 69 | PostGIS confirmed enabled; `essentials.geo_districts` table with layer discriminator + GIST index |
+| GEO-02 | 69 | `connect.user_districts` table — cached district resolution per user, upsertable by layer |
+| GEO-03 | 69 | `tiger_geoid` column added to `essentials.districts` |
+| GEO-04 | 69 | `essentials.resolve_user_districts(lat, lng, layers[])` RPC — point-in-polygon, returns matching rows |
+| GEO-05 | 69 | `essentials.cache_user_districts(user_id, lat, lng)` RPC — resolves and upserts into user_districts |
+| GEO-06 | 69 | CA Assembly (80 districts) imported from TIGER 2024 SLDL shapefile |
+| GEO-07 | 69 | CA Senate (40 districts) imported from TIGER 2024 SLDU shapefile |
+| GEO-08 | 69 | US House CA (52 districts) imported from TIGER 2024 CD118 shapefile |
+| GEO-09 | 69 | `tiger_geoid` backfilled on existing `essentials.districts` records for all 3 layers |
+| GEO-10 | 70 | Location-set flow calls `cache_user_districts` after saving lat/lng |
+| GEO-11 | 70 | `GET /api/account/districts` endpoint returns cached district results for authenticated users |
+| GEO-12 | 70 | Politicians-representing-me query joins via `tiger_geoid` — no live geo lookup after first resolution |
+| GEO-13 | 71 | School districts (unified, elementary, secondary) imported from TIGER 2024 |
+| GEO-14 | 71 | School districts surface on profile + wire into politicians-representing-me query |
+
+### v2.2 Spec
+
+Full spec written: `.planning/quick/tiger-geofencing-spec.md`
+
+**Phase 69 — TIGER Schema + Data Import**
+Schema migrations (089, 090), TIGER import for CA Assembly/Senate + US House, tiger_geoid backfill. Requires `gdal` locally + Supabase direct DB connection.
+
+**Phase 70 — Geofencing Backend Integration**
+Wire `cache_user_districts` into location-set flow, add `GET /api/account/districts`, update politicians-representing-me to use `tiger_geoid` join.
+
+**Phase 71 — School Districts + Profile Display (Phase 2)**
+Unified/elementary/secondary school district import, profile display, politician link. School boards not yet in `essentials.politicians` — link when they are.
 
 ## Accumulated Context
 
