@@ -980,7 +980,7 @@ export default function ProfilePage() {
         </div>
       )}
 
-      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} />
+      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} tier={profile.tier} />
     </div>
   );
 }

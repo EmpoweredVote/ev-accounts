@@ -6,6 +6,7 @@ import { apiFetch } from '../lib/api';
 interface ConnectedExplainerModalProps {
   open: boolean;
   onClose: () => void;
+  tier?: 'inform' | 'connect' | 'empower';
 }
 
 // ── Icons ─────────────────────────────────────────────────────────────────────
@@ -97,7 +98,7 @@ function TierCard({ headerBg, circleBg, icon, name, subtitle, subtitleClass, ide
 
 // ── Modal ─────────────────────────────────────────────────────────────────────
 
-export default function ConnectedExplainerModal({ open, onClose }: ConnectedExplainerModalProps) {
+export default function ConnectedExplainerModal({ open, onClose, tier = 'inform' }: ConnectedExplainerModalProps) {
   const [connectClicked, setConnectClicked] = useState(false);
 
   function handleConnectClick() {
@@ -210,7 +211,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
 
             {/* CTA area */}
             <div className="px-8 py-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
-              {!connectClicked ? (
+              {tier === 'inform' && !connectClicked ? (
                 <button
                   type="button"
                   onClick={handleConnectClick}
@@ -218,7 +219,7 @@ export default function ConnectedExplainerModal({ open, onClose }: ConnectedExpl
                 >
                   Connect Account
                 </button>
-              ) : (
+              ) : tier === 'inform' && connectClicked ? (
                 <div className="space-y-4">
                   <p className="text-sm font-semibold text-gray-900 dark:text-white">To connect your account:</p>
                   <ul className="space-y-3">
