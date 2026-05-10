@@ -10,10 +10,11 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**v2.1 complete. All 3 phases (66–68) shipped. 21/21 requirements verified. Next: v2.0 phases 64–65 (InformLanding, Dashboard) OR /gsd:audit-milestone for v2.1.**
+**Phase 69 Plan 01 complete. GEO-01 through GEO-05 shipped. geo_districts + user_districts tables live, RPCs deployed. Ready for Plan 69-02 (TIGER shapefile import).**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
+v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). Phase 69 in progress (Plan 01 of 2 complete).
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -23,8 +24,9 @@ Phase 64–65 (InformLanding, Dashboard): pending.
 Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBAK-01–06 verified. inform.inform_profiles table live, trigger active, backfill done, gem routing tier-branched, /me inform_profile field live, PATCH /location-hint live, signup_with_invite gem transfer deployed.
 Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path.
 Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
+Phase 69 Plan 01 (TIGER Schema): 2/2 tasks complete 2026-05-09 — migrations 089 + 090 applied. GEO-01 through GEO-05 live.
 
-Last activity: 2026-05-09 — Phase 68 UAT complete, all gaps fixed and verified. v2.1 milestone fully shipped.
+Last activity: 2026-05-09 — Phase 69 Plan 01 complete. geo_districts + user_districts + resolve/cache RPCs deployed to Supabase.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -32,7 +34,7 @@ Last activity: 2026-05-09 — Phase 68 UAT complete, all gaps fixed and verified
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 🔄(1/2)
 
 ## Performance Metrics
 
@@ -48,8 +50,8 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 
 **v2.2 Scope — TIGER District Geofencing**
 - Phases: 3 (69–71)
-- Requirements: 14 (GEO-01–14)
-- Plans complete: 0
+- Requirements: 14 (GEO-01–14); GEO-01 through GEO-05 complete
+- Plans complete: 1 (69-01)
 - Plans total: TBD
 
 ### v2.2 Requirements
@@ -89,6 +91,14 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.2 Geospatial Patterns (from 69-01)
+
+- **PostGIS calls inside SECURITY DEFINER functions with SET search_path = ''**: ALL PostGIS functions must be schema-prefixed as `public.ST_Contains`, `public.ST_SetSRID`, `public.ST_MakePoint`. Without `public.` prefix they are unresolvable when search_path is empty.
+- **ST_MakePoint argument order**: `ST_MakePoint(lng, lat)` — X then Y (longitude first). Never reverse.
+- **GIST index mandatory on geom column**: Without it, `ST_Contains` does a full table scan — unacceptable for point-in-polygon lookups across thousands of polygons.
+- **Layer discriminator pattern**: Single `essentials.geo_districts` table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — allows adding new district types (school districts in Phase 71) without schema changes.
+- **Migration apply method (2026-05-09)**: Local Docker/Supabase not running; applied migrations directly via `psql` to remote Supabase using pooler DATABASE_URL. DDL transactions work correctly with the pooler at port 5432.
 
 ### v2.1 DB Patterns (from 66-01)
 
@@ -220,6 +230,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-05-07T08:00:00Z
-Stopped at: 68-02-PLAN.md auto tasks complete — checkpoint reached (human-verify). Resume after approval.
-Resume file: None
+Last session: 2026-05-10T00:09:58Z
+Stopped at: Completed 69-01-PLAN.md — migrations 089 + 090 applied, GEO-01 through GEO-05 live.
+Resume file: .planning/phases/69-tiger-schema-data-import/69-02-PLAN.md
