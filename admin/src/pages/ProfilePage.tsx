@@ -36,6 +36,7 @@ interface MeResponse {
     state_senate_district: string | null;
     state_house_district: string | null;
     city_council_district: string | null;
+    city_council_district_name: string | null;
     school_district: string | null;
   } | null;
 }
@@ -942,6 +943,14 @@ export default function ProfilePage() {
                         <p className="text-sm text-gray-800 dark:text-gray-200">
                           District {districts.us_house.district_number}
                           {districts.us_house.name ? ` — ${districts.us_house.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                    {profile.jurisdiction?.city_council_district_name && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">City Council</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          {profile.jurisdiction.city_council_district_name}
                         </p>
                       </div>
                     )}
