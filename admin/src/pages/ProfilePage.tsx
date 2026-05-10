@@ -482,6 +482,61 @@ function PostHistory() {
   );
 }
 
+// ── SchoolDistrictSection ─────────────────────────────────────────────────────
+
+function SchoolDistrictSection({ data }: { data: SchoolDistrictData | null }) {
+  if (!data) return null;
+  const { school_unified, school_elementary, school_secondary } = data;
+  if (!school_unified && !school_elementary && !school_secondary) return null;
+
+  const makeLink = (name: string | null, geoid: string) => {
+    const label = name ?? `School District ${geoid}`;
+    const url = `https://www.google.com/search?q=${encodeURIComponent(label)}`;
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-ev-teal dark:text-ev-teal-light hover:underline text-sm"
+      >
+        {label}
+      </a>
+    );
+  };
+
+  // CONTEXT decision: unified district takes precedence — single combined entry
+  if (school_unified) {
+    return (
+      <div>
+        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">School District</p>
+        {makeLink(school_unified.name, school_unified.geoid)}
+      </div>
+    );
+  }
+
+  // Elementary + secondary (no unified) — two labeled sub-entries
+  return (
+    <div className="space-y-1.5">
+      {school_elementary && (
+        <div>
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+            Elementary School District
+          </p>
+          {makeLink(school_elementary.name, school_elementary.geoid)}
+        </div>
+      )}
+      {school_secondary && (
+        <div>
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+            Secondary School District
+          </p>
+          {makeLink(school_secondary.name, school_secondary.geoid)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ProfilePage() {
@@ -859,10 +914,85 @@ export default function ProfilePage() {
 
           {/* ── LOCATION TAB ─────────────────────────────────────────────────── */}
           {activeTab === 'location' && (
-            <div className="space-y-6">
-              {/* Location tab content — districts, address, school district, recalibration */}
-              {/* Populated in Task 2 */}
-              <p className="text-sm text-gray-500">Loading location data...</p>
+            <div className="space-y-6 max-w-lg">
+              {/* Legislative districts */}
+              {districts && (
+                <div className="space-y-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Your districts</h3>
+                  <div className="space-y-2">
+                    {districts.ca_assembly && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">CA Assembly</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.ca_assembly.district_number}
+                          {districts.ca_assembly.name ? ` — ${districts.ca_assembly.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                    {districts.ca_senate && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">CA Senate</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.ca_senate.district_number}
+                          {districts.ca_senate.name ? ` — ${districts.ca_senate.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                    {districts.us_house && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">US House</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.us_house.district_number}
+                          {districts.us_house.name ? ` — ${districts.us_house.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* School district — hidden entirely when no school rows (SchoolDistrictSection returns null) */}
+              <SchoolDistrictSection data={schoolDistrict} />
+
+              {/* Saved location summary */}
+              {(city || profile.inform_profile?.last_essentials_location != null) && (
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Saved location</h3>
+                  {city && (
+                    <p className="text-sm text-gray-800 dark:text-gray-200">{city}</p>
+                  )}
+                  {profile.inform_profile?.last_essentials_location != null && !city && (
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Last Essentials search location on file</p>
+                  )}
+                </div>
+              )}
+
+              {/* Location recalibration — Connected tier only */}
+              {cp && (
+                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Update your location</h3>
+                  <form onSubmit={handleSetLocation} className="space-y-1.5">
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="Enter your address"
+                        className="flex-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal-light"
+                      />
+                      <button
+                        type="submit"
+                        disabled={address.trim().length === 0 || locationLoading}
+                        className="bg-ev-teal-light text-white text-sm font-medium px-4 py-2 rounded-lg disabled:opacity-50 hover:bg-ev-teal transition-colors"
+                      >
+                        {locationLoading ? 'Setting…' : 'Set'}
+                      </button>
+                    </div>
+                    {locationSuccess && <p className="text-xs text-green-400 mt-1.5">Updated!</p>}
+                    {locationError && <p className="text-xs text-ev-red mt-1.5">{locationError}</p>}
+                  </form>
+                </div>
+              )}
             </div>
           )}
 
