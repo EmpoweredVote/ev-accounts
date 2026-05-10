@@ -635,12 +635,15 @@ export default function ProfilePage() {
     try {
       const result = await apiFetch<{ jurisdiction: { city: string | null } }>('/connect/set-location', {
         method: 'POST',
-        body: JSON.stringify({ address: address.trim() }),
+        body: JSON.stringify({ address: address.trim(), force: true }),
       });
       setCity(result.jurisdiction.city);
       setLocationSuccess(true);
       setAddress('');
       setShowLocationForm(false);
+      // Refetch districts + school district after location update
+      apiFetch<DistrictsData>('/account/districts').then(setDistricts).catch(() => {});
+      apiFetch<SchoolDistrictData>('/account/school-district').then(setSchoolDistrict).catch(() => {});
     } catch (err: unknown) {
       setLocationError((err instanceof Error ? err.message : null) || 'Failed to set location');
     } finally {
@@ -712,12 +715,7 @@ export default function ProfilePage() {
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 mb-5">
             <nav className="flex gap-1">
               {(['profile', 'location', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
-                if (tab === 'location') {
-                  const hasLocation =
-                    profile.location_consent === true ||
-                    (profile.inform_profile?.last_essentials_location != null);
-                  if (!hasLocation) return null;
-                }
+                if (tab === 'location' && !cp) return null;
                 if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
                 const isActive = activeTab === tab;
                 return (
