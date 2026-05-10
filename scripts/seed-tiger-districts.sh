@@ -62,8 +62,8 @@ download_if_missing() {
 echo "[1/3] Downloading TIGER 2024 shapefiles..."
 download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_06_sldl.zip"  "sldl.zip"
 download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_06_sldu.zip"  "sldu.zip"
-# CD118 is a national file (no state-specific variant on census.gov)
-download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_us_cd118.zip"   "cd118.zip"
+# CD119 is state-specific in TIGER2024 (Census switched from 118th to 119th Congress; CA=06)
+download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_06_cd119.zip"   "cd119.zip"
 echo
 
 # ---------------------------------------------------------------------------
@@ -118,8 +118,8 @@ import_layer() {
 
 import_layer "$WORK_DIR/tl_2024_06_sldl.shp"  "ca_assembly" "SLDLST"
 import_layer "$WORK_DIR/tl_2024_06_sldu.shp"  "ca_senate"   "SLDUST"
-# National CD118 file — filter to CA (STATEFP = '06') to get 52 CA districts
-import_layer "$WORK_DIR/tl_2024_us_cd118.shp" "us_house"    "CD118FP" "STATEFP = '06'"
+# CA-specific CD119 file (TIGER2024 uses 119th Congress, state-specific files)
+import_layer "$WORK_DIR/tl_2024_06_cd119.shp" "us_house"    "CD119FP"
 
 # ---------------------------------------------------------------------------
 # Step 3: Verify row counts + spot-check LA City Hall
