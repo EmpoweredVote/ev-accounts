@@ -980,7 +980,7 @@ export default function ProfilePage() {
         </div>
       )}
 
-      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} tier={profile.tier} />
+      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} tier={profile?.tier === 'connected' ? 'connect' : profile?.tier === 'empowered' ? 'empower' : profile?.tier} />
     </div>
   );
 }

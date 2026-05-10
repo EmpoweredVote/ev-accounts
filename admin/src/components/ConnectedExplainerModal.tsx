@@ -259,7 +259,7 @@ export default function ConnectedExplainerModal({ open, onClose, tier = 'inform'
                     I have an invite code →
                   </Link>
                 </div>
-              )}
+              ) : null}
               <button
                 type="button"
                 onClick={handleClose}
