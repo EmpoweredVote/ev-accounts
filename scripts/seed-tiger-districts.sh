@@ -62,7 +62,8 @@ download_if_missing() {
 echo "[1/3] Downloading TIGER 2024 shapefiles..."
 download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/SLDL/tl_2024_06_sldl.zip"  "sldl.zip"
 download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/SLDU/tl_2024_06_sldu.zip"  "sldu.zip"
-download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_06_cd118.zip"   "cd118.zip"
+# CD118 is a national file (no state-specific variant on census.gov)
+download_if_missing "https://www2.census.gov/geo/tiger/TIGER2024/CD/tl_2024_us_cd118.zip"   "cd118.zip"
 echo
 
 # ---------------------------------------------------------------------------
@@ -74,12 +75,18 @@ import_layer() {
   local shp="$1"           # e.g. /tmp/tiger/tl_2024_06_sldl.shp
   local layer_name="$2"    # e.g. ca_assembly
   local district_col="$3"  # SLDLST | SLDUST | CD118FP
+  local where_clause="${4:-}"  # optional WHERE filter (used for national files)
 
   echo "[2/3] Importing $layer_name from $(basename "$shp")..."
 
   # Drop any leftover stage table from a previous failed run
   psql "$DB_URL" -v ON_ERROR_STOP=1 -c \
     "DROP TABLE IF EXISTS essentials.geo_districts_stage;" >/dev/null
+
+  local sql_query="SELECT GEOID, ${district_col} AS district_num, NAMELSAD AS name FROM $(basename "$shp" .shp)"
+  if [[ -n "$where_clause" ]]; then
+    sql_query="$sql_query WHERE $where_clause"
+  fi
 
   # ogr2ogr: shapefile -> stage table, reprojected to 4326, geom column named 'geom'
   # -nlt MULTIPOLYGON forces consistent geometry type (some TIGER rows are POLYGON)
@@ -92,7 +99,7 @@ import_layer() {
     -lco GEOMETRY_NAME=geom \
     -lco SCHEMA=essentials \
     -overwrite \
-    -sql "SELECT GEOID, ${district_col} AS district_num, NAMELSAD AS name FROM $(basename "$shp" .shp)"
+    -sql "$sql_query"
 
   # Idempotent merge into the canonical table
   psql "$DB_URL" -v ON_ERROR_STOP=1 -c "
@@ -111,7 +118,8 @@ import_layer() {
 
 import_layer "$WORK_DIR/tl_2024_06_sldl.shp"  "ca_assembly" "SLDLST"
 import_layer "$WORK_DIR/tl_2024_06_sldu.shp"  "ca_senate"   "SLDUST"
-import_layer "$WORK_DIR/tl_2024_06_cd118.shp" "us_house"    "CD118FP"
+# National CD118 file — filter to CA (STATEFP = '06') to get 52 CA districts
+import_layer "$WORK_DIR/tl_2024_us_cd118.shp" "us_house"    "CD118FP" "STATEFP = '06'"
 
 # ---------------------------------------------------------------------------
 # Step 3: Verify row counts + spot-check LA City Hall
