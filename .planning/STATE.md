@@ -68,8 +68,8 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 | GEO-07 | 69 ✅ | CA Senate (40 districts) imported from TIGER 2024 SLDU shapefile |
 | GEO-08 | 69 ✅ | US House CA (52 districts) imported from TIGER 2024 CD119 shapefile |
 | GEO-09 | 69 ✅ | `tiger_geoid` backfilled on existing `essentials.districts` records for all 3 layers |
-| GEO-10 | 70 | Location-set flow calls `cache_user_districts` after saving lat/lng |
-| GEO-11 | 70 | `GET /api/account/districts` endpoint returns cached district results for authenticated users |
+| GEO-10 | 70 ✅ | Location-set flow calls `cache_user_districts` after saving lat/lng |
+| GEO-11 | 70 ✅ | `GET /api/account/districts` endpoint returns cached district results for authenticated users |
 | GEO-12 | 70 ✅ | Politicians-representing-me query joins via `tiger_geoid` — no live geo lookup after first resolution |
 | GEO-13 | 71 | School districts (unified, elementary, secondary) imported from TIGER 2024 |
 | GEO-14 | 71 | School districts surface on profile + wire into politicians-representing-me query |
