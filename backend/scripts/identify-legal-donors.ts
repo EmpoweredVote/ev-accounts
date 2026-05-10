@@ -14,8 +14,13 @@
 import 'dotenv/config';
 import * as fs from 'fs';
 import * as path from 'path';
+import { fileURLToPath } from 'url';
 import { Pool } from 'pg';
 import { distance } from 'fastest-levenshtein';
+
+// ESM-compatible __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 if (!process.env.DATABASE_URL) {
   console.error('ERROR: DATABASE_URL is not set');
