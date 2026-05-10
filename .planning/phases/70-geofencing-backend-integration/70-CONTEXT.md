@@ -18,7 +18,7 @@ Covers GEO-10, GEO-11, GEO-12.
 ### Caching trigger behavior
 - `cache_user_districts` runs **synchronously** within the location-save request — districts are ready when the response returns, no second call needed
 - **Fail-open** on caching error: location saves successfully regardless; district caching failure is logged but does not block or rollback the location write
-- Location-set endpoint returns the resolved districts in its response body (data is already in memory from the sync call)
+- Location-set endpoint **does NOT** return resolved districts in its response body — existing jurisdiction response shape is unchanged. Clients fetch districts separately via `GET /api/account/districts`. Security decision: address data flows in, gets encrypted and stored; it is never re-surfaced in response bodies.
 - **Any location write** triggers re-cache — both initial set and subsequent updates (Connected location-set flow + Inform location-hint flow)
 
 ### Districts endpoint shape

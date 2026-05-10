@@ -2,11 +2,11 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
+See: .planning/PROJECT.md (updated 2026-05-10 after v2.2 milestone completion)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.1 Inform Account Tier — Make Inform a first-class experience with yellow profile, low-friction signup, and an invitational path toward Connected.
-**Anti-funnel principle:** Inform Accounts are the expected entry point for most users. "Connect" is framed as unlocking shared participation — never as a conversion goal.
+**Current focus:** v2.0 completion — Phases 64 (InformLanding) + 65 (Dashboard Redesign) remain; then `/gsd:new-milestone` for v2.3.
+**Last shipped:** v2.2 TIGER District Geofencing — CA TIGER geofencing live, Path 0 fast path, school districts on Profile Location tab.
 
 ## Current Position
 
@@ -28,7 +28,7 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-location live for Inform tier. Phase 70 fully closed.
+Last activity: 2026-05-10 — v2.2 milestone archived. Git tag v2.2 created.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -36,7 +36,7 @@ Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-l
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄 64-65 remain][v2.1 ✅][v2.2 ✅ archived] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅
 
 ## Performance Metrics
 

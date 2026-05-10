@@ -18,6 +18,7 @@
 
 ## Phases
 
+
 <details>
 <summary>✅ v1.0 MVP (Phases 1–8) — SHIPPED 2026-02-28</summary>
 
@@ -761,60 +762,16 @@ Plans:
 
 ---
 
-### v2.2 TIGER District Geofencing (Phases 69–71)
+<details>
+<summary>✅ v2.2 TIGER District Geofencing (Phases 69–71) — SHIPPED 2026-05-10</summary>
 
----
+- [x] Phase 69: TIGER Schema + Data Import (2/2 plans) — completed 2026-05-10
+- [x] Phase 70: Geofencing Backend Integration (4/4 plans) — completed 2026-05-10
+- [x] Phase 71: School Districts + Profile Display (2/2 plans) — completed 2026-05-10
 
-#### Phase 70: Geofencing Backend Integration
+Full details: `.planning/milestones/v2.2-ROADMAP.md`
 
-**Goal:** Every authenticated user — Connected or Inform — has their CA TIGER districts (assembly, senate, US house) cached in `connect.user_districts` after any location write, can read those districts via a single endpoint, and the existing representatives feed serves them via a fast `tiger_geoid`-based join with no live PostGIS lookup on the hot path.
-
-**Dependencies:** Phase 69 (geo_districts + user_districts tables, cache_user_districts RPC, tiger_geoid column all live)
-
-**Requirements:** GEO-10, GEO-11, GEO-12
-
-**Plans:** 3 plans
-
-Plans:
-- [ ] 70-01-PLAN.md — Wire essentials.cache_user_districts into POST /api/connect/set-location and PATCH /api/account/location-hint (fail-open); add GET /api/account/districts (GEO-10, GEO-11)
-- [ ] 70-02-PLAN.md — Add Path 0 to GET /api/essentials/representatives/me: read connect.user_districts, join essentials.districts on (tiger_geoid, district_type), pass resolved geo_ids to existing getRepresentativesByJurisdiction (GEO-12)
-- [ ] 70-03-PLAN.md — Migration 092 (essentials.recache_user_districts_for_user + _bulk SQL functions) + backend/scripts/recache-user-districts.ts admin orchestrator (operator workflow for redistricting / TIGER re-imports)
-
-**Success Criteria:**
-
-1. After `POST /api/connect/set-location` succeeds, `connect.user_districts` has 1–3 rows for the user (one per matched layer); the location response itself is unchanged and still returns 200 even if the cache call fails (fail-open).
-2. After `PATCH /api/account/location-hint` with a `{ lat, lng }` payload, `connect.user_districts` has rows for the Inform user; payloads without numeric lat/lng still save the hint and return 200 (cache call skipped silently).
-3. `GET /api/account/districts` (auth-only, both tiers) returns `{ ca_assembly, ca_senate, us_house }` grouped by layer for users with cached districts; returns 204 No Content when there are none.
-4. `GET /api/essentials/representatives/me` serves users with rows in `connect.user_districts` via Path 0 — joining `essentials.districts` on `(tiger_geoid, district_type)` — without calling `resolve_user_jurisdiction`. Same-numbered SLDL/SLDU districts (e.g. assembly D20 + senate D20 both at `tiger_geoid='06020'`) resolve to distinct `geo_id`s. Path 1 / Path 1.5 / 204 fallbacks are unchanged for pre-Phase-70 users.
-5. Operator running `npx tsx backend/scripts/recache-user-districts.ts [--before=YYYY-MM-DD]` refreshes `user_districts` for affected users; coordinates are decrypted only inside Postgres (never exposed to Node.js); idempotent across reruns.
-
----
-
-#### Phase 71: School Districts + Profile Display
-
-**Goal:** California school district TIGER polygons (unified, elementary, secondary) live in `essentials.geo_districts`, every authenticated user sees their resolved school district by name on a new Location tab on `login.empowered.vote/profile` (with a Google search link), and the Path 0 representatives feed is forward-wired to surface school board members in the main "All" feed once a future ingestion phase populates `essentials.politicians`.
-
-**Dependencies:** Phase 69 (geo_districts schema + tiger_geoid column live), Phase 70 (Path 0 + cache_user_districts wired into both location-write flows)
-
-**Requirements:** GEO-13, GEO-14
-
-**Plans:** 2 plans
-
-Plans:
-- [ ] 71-01-PLAN.md — Backend: migration 093 extending cache_user_districts default p_layers to 6 layers; seed-tiger-school-districts.sh import script (NAME not NAMELSAD); GET /api/account/school-district endpoint; layerTypeMap extension in essentials.ts (forward-compat — joins return zero until school board ingestion)
-- [ ] 71-02-PLAN.md — Frontend: add Location tab to ProfilePage.tsx (tier-aware visibility, yellow indicator for Inform / teal-light for Connected); SchoolDistrictSection component with unified vs. elementary+secondary display logic; Google search links; recalibration controls integration
-
-**Success Criteria:**
-
-1. `essentials.geo_districts` contains rows for all three CA school district layers (`school_unified`, `school_elementary`, `school_secondary`); LA City Hall coordinate (34.0537, -118.2430) resolves via `essentials.resolve_user_districts` to at least "Los Angeles Unified School District".
-2. After migration 093 applies, both `essentials.cache_user_districts` and `essentials.resolve_user_districts` have 6-layer default `p_layers` arrays. All existing 3-arg call sites (in connect.ts and account.ts) inherit the new default automatically — no Node.js code changes required for set-location flows.
-3. `GET /api/account/school-district` (auth-only, both tiers) returns `{ school_unified, school_elementary, school_secondary }` for users with school rows; returns 204 No Content otherwise. `GET /api/account/districts` response shape stays legislative-only (unchanged).
-4. The Location tab is visible on `login.empowered.vote/profile` for any user with location data on file (`location_consent === true` OR `inform_profile.last_essentials_location != null`), with a tier-aware active-indicator color. The tab is hidden for users without location data.
-5. A user inside a unified school district sees one "School District" entry; a user inside elementary + secondary (no unified) sees two labeled entries; a user outside CA sees no school district section at all (no placeholder, no "not available" message).
-6. School district names are clickable links to `https://www.google.com/search?q=<encoded name>` opening in a new tab with `rel="noopener noreferrer"`.
-7. `GET /api/essentials/representatives/me` response shape is unchanged for current users — the `layerTypeMap` extension is forward-compatible: school joins return zero rows until a future school board ingestion phase populates `essentials.politicians` and `essentials.districts` rows with district_type `SCHOOL_UNIFIED` / `SCHOOL_ELEMENTARY` / `SCHOOL_SECONDARY`.
-
----
+</details>
 
 ## Progress
 
@@ -888,6 +845,6 @@ Plans:
 | 66. Inform Profiles Backend Foundation | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 67. Login Hub + Inform Signup Flow | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 2/2 | Complete | 2026-05-09 |
-| 69. TIGER Schema + Data Import | v2.2 | 2/2 | Complete | 2026-05-10 |
-| 70. Geofencing Backend Integration | v2.2 | 4/4 | Complete | 2026-05-10 |
-| 71. School Districts + Profile Display | v2.2 | 2/2 | Complete | 2026-05-10 |
+| 69. TIGER Schema + Data Import | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
+| 70. Geofencing Backend Integration | v2.2 ✅ | 4/4 | Complete | 2026-05-10 |
+| 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
