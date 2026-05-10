@@ -10,7 +10,7 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**Phase 70 COMPLETE (all 4 plans done 2026-05-10). GEO-10 through GEO-13 shipped. Phase 71 is next.**
+**Phase 71 in progress — 71-01 complete 2026-05-10. GEO-13 + GEO-14 backend layer shipped. Plan 71-02 (Location tab frontend) is next.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -26,6 +26,7 @@ Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete
 Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
 Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrations 089, 090, 091 applied. GEO-01 through GEO-09 live. 172-row TIGER import (80 ca_assembly + 40 ca_senate + 52 us_house). tiger_geoid backfilled on all CA STATE_LOWER/STATE_UPPER/NATIONAL_LOWER rows. Verified 10/10 must-haves.
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
+Phase 71 (School Districts + Profile Display): Plan 71-01 COMPLETE 2026-05-10. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 (Location tab frontend) is next.
 
 Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-location live for Inform tier. Phase 70 fully closed.
 
@@ -35,7 +36,7 @@ Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-l
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ░
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 🔄 (71-01 ✅ 71-02 ░)
 
 ## Performance Metrics
 
@@ -248,6 +249,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-05-10T04:22:08Z
-Stopped at: Completed 70-03-PLAN.md — migration 092 (recache_user_districts_for_user + _bulk) + recache-user-districts.ts operator CLI shipped.
-Resume file: .planning/phases/70-geofencing-backend-integration/70-02-PLAN.md
+Last session: 2026-05-10
+Stopped at: Completed 71-01-PLAN.md — migration 093 (6-layer RPC defaults), school district import (975 rows), GET /api/account/school-district, Path 0 layerTypeMap extension.
+Resume file: .planning/phases/71-school-districts-profile-display/71-02-PLAN.md
