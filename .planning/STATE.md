@@ -10,7 +10,7 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**Phase 70 in progress (plan 70-01 complete). GEO-10 + GEO-11 shipped. cache_user_districts wired into both location-write flows; GET /api/account/districts live.**
+**Phase 70 in progress (plan 70-03 complete). GEO-10 + GEO-11 + redistricting tooling shipped. Plans 70-01 and 70-03 done; plans 70-02 and 70-04 pending.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -25,9 +25,9 @@ Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBA
 Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path.
 Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
 Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrations 089, 090, 091 applied. GEO-01 through GEO-09 live. 172-row TIGER import (80 ca_assembly + 40 ca_senate + 52 us_house). tiger_geoid backfilled on all CA STATE_LOWER/STATE_UPPER/NATIONAL_LOWER rows. Verified 10/10 must-haves.
-Phase 70 (Geofencing Backend Integration): plan 70-01 complete 2026-05-10 — GEO-10 + GEO-11 shipped. cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live (requireAuth, both tiers). Plans 70-02 through 70-04 pending.
+Phase 70 (Geofencing Backend Integration): plans 70-01 + 70-03 complete 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. Plans 70-02 and 70-04 pending.
 
-Last activity: 2026-05-10 — Phase 70 plan 01 complete. GEO-10 + GEO-11 live.
+Last activity: 2026-05-10 — Phase 70 plan 03 complete. Migration 092 + recache-user-districts.ts operator CLI live.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -92,6 +92,13 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.2 Redistricting Patterns (from 70-03)
+
+- **Operator bulk re-cache CLI pattern**: per-user RPC + bulk RPC + Node.js orchestrator with `--dry-run`, `--before=YYYY-MM-DD`, `--user=<uuid>` flags. Dry-run replicates SQL HAVING clause inline — no separate read RPC needed.
+- **Bulk RPC exception isolation**: wrap each per-row call in `BEGIN … EXCEPTION WHEN OTHERS THEN RETURN QUERY SELECT uid, 0, 'error: '||SQLERRM END` so one bad user never aborts the batch.
+- **`status='no_coords'` pattern**: Return a clean status row (not RAISE) when a user lacks consent or stored coords — lets batch callers tally without exception handling.
+- **`layers_resolved=0` with status='ok'**: Signals out-of-CA (point resolved but matched zero TIGER districts). Node.js script logs UUID and tallies separately from errors.
 
 ### v2.2 Geospatial Patterns (from 69-01)
 
@@ -233,6 +240,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-05-10T04:19:54Z
-Stopped at: Completed 70-01-PLAN.md — GEO-10 + GEO-11 shipped. cache_user_districts wired into both location-write flows; GET /api/account/districts live.
+Last session: 2026-05-10T04:22:08Z
+Stopped at: Completed 70-03-PLAN.md — migration 092 (recache_user_districts_for_user + _bulk) + recache-user-districts.ts operator CLI shipped.
 Resume file: .planning/phases/70-geofencing-backend-integration/70-02-PLAN.md
