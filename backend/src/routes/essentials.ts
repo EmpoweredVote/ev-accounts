@@ -492,9 +492,12 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
 
     if (districtRows.length > 0) {
       const layerTypeMap: Record<string, string> = {
-        ca_assembly: 'STATE_LOWER',
-        ca_senate:   'STATE_UPPER',
-        us_house:    'NATIONAL_LOWER',
+        ca_assembly:       'STATE_LOWER',
+        ca_senate:         'STATE_UPPER',
+        us_house:          'NATIONAL_LOWER',
+        school_unified:    'SCHOOL_UNIFIED',     // Phase 71: forward-compat — no rows in essentials.districts yet
+        school_elementary: 'SCHOOL_ELEMENTARY',  // Phase 71: forward-compat — same
+        school_secondary:  'SCHOOL_SECONDARY',   // Phase 71: forward-compat — same
       };
 
       // Build OR conditions: (tiger_geoid = $N AND district_type = $N+1) per layer
