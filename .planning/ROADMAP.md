@@ -790,6 +790,32 @@ Plans:
 
 ---
 
+#### Phase 71: School Districts + Profile Display
+
+**Goal:** California school district TIGER polygons (unified, elementary, secondary) live in `essentials.geo_districts`, every authenticated user sees their resolved school district by name on a new Location tab on `login.empowered.vote/profile` (with a Google search link), and the Path 0 representatives feed is forward-wired to surface school board members in the main "All" feed once a future ingestion phase populates `essentials.politicians`.
+
+**Dependencies:** Phase 69 (geo_districts schema + tiger_geoid column live), Phase 70 (Path 0 + cache_user_districts wired into both location-write flows)
+
+**Requirements:** GEO-13, GEO-14
+
+**Plans:** 2 plans
+
+Plans:
+- [ ] 71-01-PLAN.md — Backend: migration 093 extending cache_user_districts default p_layers to 6 layers; seed-tiger-school-districts.sh import script (NAME not NAMELSAD); GET /api/account/school-district endpoint; layerTypeMap extension in essentials.ts (forward-compat — joins return zero until school board ingestion)
+- [ ] 71-02-PLAN.md — Frontend: add Location tab to ProfilePage.tsx (tier-aware visibility, yellow indicator for Inform / teal-light for Connected); SchoolDistrictSection component with unified vs. elementary+secondary display logic; Google search links; recalibration controls integration
+
+**Success Criteria:**
+
+1. `essentials.geo_districts` contains rows for all three CA school district layers (`school_unified`, `school_elementary`, `school_secondary`); LA City Hall coordinate (34.0537, -118.2430) resolves via `essentials.resolve_user_districts` to at least "Los Angeles Unified School District".
+2. After migration 093 applies, both `essentials.cache_user_districts` and `essentials.resolve_user_districts` have 6-layer default `p_layers` arrays. All existing 3-arg call sites (in connect.ts and account.ts) inherit the new default automatically — no Node.js code changes required for set-location flows.
+3. `GET /api/account/school-district` (auth-only, both tiers) returns `{ school_unified, school_elementary, school_secondary }` for users with school rows; returns 204 No Content otherwise. `GET /api/account/districts` response shape stays legislative-only (unchanged).
+4. The Location tab is visible on `login.empowered.vote/profile` for any user with location data on file (`location_consent === true` OR `inform_profile.last_essentials_location != null`), with a tier-aware active-indicator color. The tab is hidden for users without location data.
+5. A user inside a unified school district sees one "School District" entry; a user inside elementary + secondary (no unified) sees two labeled entries; a user outside CA sees no school district section at all (no placeholder, no "not available" message).
+6. School district names are clickable links to `https://www.google.com/search?q=<encoded name>` opening in a new tab with `rel="noopener noreferrer"`.
+7. `GET /api/essentials/representatives/me` response shape is unchanged for current users — the `layerTypeMap` extension is forward-compatible: school joins return zero rows until a future school board ingestion phase populates `essentials.politicians` and `essentials.districts` rows with district_type `SCHOOL_UNIFIED` / `SCHOOL_ELEMENTARY` / `SCHOOL_SECONDARY`.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -864,4 +890,4 @@ Plans:
 | 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 2/2 | Complete | 2026-05-09 |
 | 69. TIGER Schema + Data Import | v2.2 | 2/2 | Complete | 2026-05-10 |
 | 70. Geofencing Backend Integration | v2.2 | 4/4 | Complete | 2026-05-10 |
-| 71. School Districts + Profile Display | v2.2 | 0/? | Pending | — |
+| 71. School Districts + Profile Display | v2.2 | 0/2 | Pending | — |
