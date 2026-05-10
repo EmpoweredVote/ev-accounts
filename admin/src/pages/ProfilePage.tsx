@@ -946,15 +946,17 @@ export default function ProfilePage() {
                         </p>
                       </div>
                     )}
-                    {profile.jurisdiction?.city_council_district_name && (
-                      <div>
-                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">City Council</p>
-                        <p className="text-sm text-gray-800 dark:text-gray-200">
-                          {profile.jurisdiction.city_council_district_name}
-                        </p>
-                      </div>
-                    )}
                   </div>
+                </div>
+              )}
+
+              {/* City Council — sourced from /account/me jurisdiction, not TIGER cache */}
+              {profile.jurisdiction?.city_council_district_name && (
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">City Council</h3>
+                  <p className="text-sm text-gray-800 dark:text-gray-200 mt-1">
+                    {profile.jurisdiction.city_council_district_name}
+                  </p>
                 </div>
               )}
 
