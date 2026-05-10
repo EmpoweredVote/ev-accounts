@@ -39,6 +39,23 @@ interface MeResponse {
     school_district: string | null;
   } | null;
 }
+interface SchoolDistrictEntry {
+  name: string | null;
+  geoid: string;
+}
+
+interface SchoolDistrictData {
+  school_unified:    SchoolDistrictEntry | null;
+  school_elementary: SchoolDistrictEntry | null;
+  school_secondary:  SchoolDistrictEntry | null;
+}
+
+interface DistrictsData {
+  ca_assembly: { district_number: string; name: string | null; tiger_geoid: string } | null;
+  ca_senate:   { district_number: string; name: string | null; tiger_geoid: string } | null;
+  us_house:    { district_number: string; name: string | null; tiger_geoid: string } | null;
+}
+
 interface InviteeEntry {
   status: 'claimed' | 'pending';
   code: string;
@@ -481,7 +498,7 @@ export default function ProfilePage() {
   const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
   const [readRankStats, setReadRankStats] = useState<ReadRankStats | null>(null);
   const [roles, setRoles] = useState<UserRoleGrant[]>([]);
-  const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts' | 'contributor'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'location' | 'referrals' | 'posts' | 'contributor'>('profile');
 
   const [city, setCity] = useState<string | null>(null);
   const [address, setAddress] = useState('');
@@ -490,6 +507,8 @@ export default function ProfilePage() {
   const [locationError, setLocationError] = useState<string | null>(null);
   const [showLocationForm, setShowLocationForm] = useState(false);
   const [explainerOpen, setExplainerOpen] = useState(false);
+  const [districts, setDistricts] = useState<DistrictsData | null>(null);
+  const [schoolDistrict, setSchoolDistrict] = useState<SchoolDistrictData | null>(null);
 
   useEffect(() => {
     apiFetch<MeResponse>('/account/me')
@@ -500,6 +519,12 @@ export default function ProfilePage() {
             .then((j) => setCity(j.jurisdiction.city))
             .catch(() => {});
         }
+        apiFetch<DistrictsData>('/account/districts')
+          .then(setDistricts)
+          .catch(() => {}); // 204 throws SyntaxError (no body) — leaves state null, section hidden
+        apiFetch<SchoolDistrictData>('/account/school-district')
+          .then(setSchoolDistrict)
+          .catch(() => {}); // 204 throws SyntaxError (no body) — leaves state null, section hidden
         if (data.connected_profile) {
           apiFetch<InviteesData>('/invites/my-invitees').then(setInviteesData).catch(() => {});
           apiFetch<{ roles: UserRoleGrant[] }>('/roles/me')
@@ -631,7 +656,13 @@ export default function ProfilePage() {
           {/* Tab bar — tabs left, Connected Account pill right */}
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 mb-5">
             <nav className="flex gap-1">
-              {(['profile', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
+              {(['profile', 'location', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
+                if (tab === 'location') {
+                  const hasLocation =
+                    profile.location_consent === true ||
+                    (profile.inform_profile?.last_essentials_location != null);
+                  if (!hasLocation) return null;
+                }
                 if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
                 const isActive = activeTab === tab;
                 return (
@@ -646,7 +677,7 @@ export default function ProfilePage() {
                         : 'border-transparent text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
                     }`}
                   >
-                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : 'Profile'}
+                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : tab === 'location' ? 'Location' : 'Profile'}
                   </button>
                 );
               })}
@@ -823,6 +854,15 @@ export default function ProfilePage() {
                 </div>
               )}
 
+            </div>
+          )}
+
+          {/* ── LOCATION TAB ─────────────────────────────────────────────────── */}
+          {activeTab === 'location' && (
+            <div className="space-y-6">
+              {/* Location tab content — districts, address, school district, recalibration */}
+              {/* Populated in Task 2 */}
+              <p className="text-sm text-gray-500">Loading location data...</p>
             </div>
           )}
 
