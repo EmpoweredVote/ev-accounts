@@ -683,10 +683,83 @@ router.patch('/location-hint', requireAuth, requireInform, async (req, res: Resp
       [authReq.userId, JSON.stringify(location)]
     );
 
+    // District cache (fail-open): extract lat/lng from opaque JSONB payload, then cache.
+    // location is z.unknown() — Essentials frontend passes { lat, lng, ... } objects,
+    // but the schema is not enforced. Defensive type narrowing.
+    const loc = location as Record<string, unknown> | null;
+    const hintLat = loc && typeof loc.lat === 'number' ? loc.lat : null;
+    const hintLng = loc && typeof loc.lng === 'number' ? loc.lng : null;
+
+    if (hintLat !== null && hintLng !== null) {
+      try {
+        await pool.query(
+          `SELECT essentials.cache_user_districts($1, $2, $3)`,
+          [authReq.userId, hintLat, hintLng]
+        );
+      } catch (cacheErr) {
+        console.warn('[location-hint] district cache failed (non-fatal):', cacheErr);
+      }
+    } else {
+      console.warn('[location-hint] no lat/lng in payload — skipping district cache');
+    }
+
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error('[PATCH /api/account/location-hint] error:', err);
     res.status(500).json({ error: 'INTERNAL_ERROR' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/account/districts
+// Auth: requireAuth (both Inform and Connected tiers — Essentials is foundational)
+//
+// Returns the user's cached TIGER districts grouped by layer.
+// Source of truth: connect.user_districts (populated by essentials.cache_user_districts).
+// Joins to essentials.geo_districts on (layer, geoid) for the human-readable name.
+// Returns 204 No Content when the user has no cached districts (no location set yet,
+// or location resolved to zero matches — e.g. out-of-CA users).
+// ---------------------------------------------------------------------------
+
+router.get('/districts', requireAuth, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { rows } = await pool.query<{
+      layer: string;
+      geoid: string;
+      district_num: string;
+      name: string | null;
+    }>(
+      `SELECT ud.layer, ud.geoid, ud.district_num, gd.name
+       FROM connect.user_districts ud
+       LEFT JOIN essentials.geo_districts gd
+         ON gd.layer = ud.layer AND gd.geoid = ud.geoid
+       WHERE ud.user_id = $1`,
+      [authReq.userId]
+    );
+
+    if (rows.length === 0) {
+      res.status(204).end();
+      return;
+    }
+
+    const byLayer: Record<string, { district_number: string; name: string | null; tiger_geoid: string }> =
+      Object.fromEntries(
+        rows.map((r) => [
+          r.layer,
+          { district_number: r.district_num, name: r.name ?? null, tiger_geoid: r.geoid },
+        ])
+      );
+
+    res.status(200).json({
+      ca_assembly: byLayer['ca_assembly'] ?? null,
+      ca_senate:   byLayer['ca_senate']   ?? null,
+      us_house:    byLayer['us_house']    ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /api/account/districts] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
 
