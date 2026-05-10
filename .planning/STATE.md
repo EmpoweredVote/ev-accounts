@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-04-27 after v2.1 milestone start)
 
 ## Current Position
 
-**Phase 71 in progress — 71-01 + 71-02 Tasks 1–2 complete 2026-05-10. GEO-13 + GEO-14 backend + frontend shipped. Plan 71-02 awaiting checkpoint:human-verify UAT.**
+**Phase 71 COMPLETE 2026-05-10 — all 2 plans done. GEO-13 + GEO-14 shipped. v2.2 complete.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
-v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). Phase 69 complete. Phase 70 complete. Phase 71 pending.
+v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -26,7 +26,7 @@ Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete
 Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
 Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrations 089, 090, 091 applied. GEO-01 through GEO-09 live. 172-row TIGER import (80 ca_assembly + 40 ca_senate + 52 us_house). tiger_geoid backfilled on all CA STATE_LOWER/STATE_UPPER/NATIONAL_LOWER rows. Verified 10/10 must-haves.
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
-Phase 71 (School Districts + Profile Display): Plan 71-01 COMPLETE 2026-05-10. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 Tasks 1–2 COMPLETE 2026-05-10: Location tab added to ProfilePage with tier-aware visibility, SchoolDistrictSection component, legislative districts display, saved location summary, Connected-only recalibration form. Awaiting checkpoint:human-verify UAT (Task 3).
+Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
 Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-location live for Inform tier. Phase 70 fully closed.
 
@@ -36,7 +36,7 @@ Last activity: 2026-05-10 — Phase 70 plan 04 complete. POST /api/account/set-l
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 🔄 (71-01 ✅ 71-02 🔄 awaiting UAT)
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 🔄][v2.1 ✅][v2.2 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 ░ Phase 65 ░ Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅
 
 ## Performance Metrics
 
@@ -50,11 +50,9 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 - Phases: 3 (66–68) ✅
 - Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
 
-**v2.2 Scope — TIGER District Geofencing**
-- Phases: 3 (69–71)
-- Requirements: 14 (GEO-01–14); GEO-01 through GEO-09 complete (Phase 69 done)
-- Plans complete: 1 (69-01)
-- Plans total: TBD
+**v2.2 Scope — TIGER District Geofencing — COMPLETE**
+- Phases: 3 (69–71) ✅
+- Requirements: 14/14 (GEO-01–14) ✅
 
 ### v2.2 Requirements
 
@@ -72,8 +70,8 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 | GEO-10 | 70 ✅ | Location-set flow calls `cache_user_districts` after saving lat/lng |
 | GEO-11 | 70 ✅ | `GET /api/account/districts` endpoint returns cached district results for authenticated users |
 | GEO-12 | 70 ✅ | Politicians-representing-me query joins via `tiger_geoid` — no live geo lookup after first resolution |
-| GEO-13 | 71 | School districts (unified, elementary, secondary) imported from TIGER 2024 |
-| GEO-14 | 71 | School districts surface on profile + wire into politicians-representing-me query |
+| GEO-13 | 71 ✅ | School districts (unified, elementary, secondary) imported from TIGER 2024 |
+| GEO-14 | 71 ✅ | School districts surface on profile + wire into politicians-representing-me query |
 
 ### v2.2 Spec
 
@@ -93,6 +91,11 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.2 Migration Signature-Change Pattern (from 71-02)
+
+- **When changing a PostgreSQL function's parameter count**: `CREATE OR REPLACE FUNCTION` can only replace a function with the EXACT SAME signature. Adding or removing parameters creates a second overload. Always `DROP FUNCTION IF EXISTS schema.fn(old, arg, types)` first, then create the new version. Failing to drop creates two overloads — Postgres refuses to resolve ambiguous calls with "function is not unique", and if the Node backend swallows errors the failure is silent and hard to diagnose.
+- **Migration 094 fixed migration 093**: 093 added a 4-arg `cache_user_districts` using CREATE OR REPLACE without dropping the 3-arg version → silent district-cache failures for all users. 094 applied `DROP FUNCTION IF EXISTS essentials.cache_user_districts(uuid, numeric, numeric)` to resolve.
 
 ### v2.2 Path 0 Fast Path Pattern (from 70-02)
 
@@ -250,5 +253,5 @@ None for v2.0 start.
 ## Session Continuity
 
 Last session: 2026-05-10
-Stopped at: 71-02 Tasks 1–2 complete. Location tab + SchoolDistrictSection built. Awaiting checkpoint:human-verify at Task 3.
-Resume file: .planning/phases/71-school-districts-profile-display/71-02-PLAN.md (Task 3 checkpoint)
+Stopped at: Phase 71 complete. Plan 71-02 UAT approved. v2.2 fully shipped.
+Resume file: None
