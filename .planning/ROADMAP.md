@@ -14,6 +14,7 @@
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
 - 📋 **v2.0 Civic Account Experience** — Phases 60–65 (planned 2026-04-25)
 - 📋 **v2.1 Inform Account Tier** — Phases 66–68 (planned 2026-04-27)
+- 📋 **v2.2 TIGER District Geofencing** — Phases 69–71 (planned 2026-05-09)
 
 ## Phases
 
@@ -760,6 +761,35 @@ Plans:
 
 ---
 
+### v2.2 TIGER District Geofencing (Phases 69–71)
+
+---
+
+#### Phase 70: Geofencing Backend Integration
+
+**Goal:** Every authenticated user — Connected or Inform — has their CA TIGER districts (assembly, senate, US house) cached in `connect.user_districts` after any location write, can read those districts via a single endpoint, and the existing representatives feed serves them via a fast `tiger_geoid`-based join with no live PostGIS lookup on the hot path.
+
+**Dependencies:** Phase 69 (geo_districts + user_districts tables, cache_user_districts RPC, tiger_geoid column all live)
+
+**Requirements:** GEO-10, GEO-11, GEO-12
+
+**Plans:** 3 plans
+
+Plans:
+- [ ] 70-01-PLAN.md — Wire essentials.cache_user_districts into POST /api/connect/set-location and PATCH /api/account/location-hint (fail-open); add GET /api/account/districts (GEO-10, GEO-11)
+- [ ] 70-02-PLAN.md — Add Path 0 to GET /api/essentials/representatives/me: read connect.user_districts, join essentials.districts on (tiger_geoid, district_type), pass resolved geo_ids to existing getRepresentativesByJurisdiction (GEO-12)
+- [ ] 70-03-PLAN.md — Migration 092 (essentials.recache_user_districts_for_user + _bulk SQL functions) + backend/scripts/recache-user-districts.ts admin orchestrator (operator workflow for redistricting / TIGER re-imports)
+
+**Success Criteria:**
+
+1. After `POST /api/connect/set-location` succeeds, `connect.user_districts` has 1–3 rows for the user (one per matched layer); the location response itself is unchanged and still returns 200 even if the cache call fails (fail-open).
+2. After `PATCH /api/account/location-hint` with a `{ lat, lng }` payload, `connect.user_districts` has rows for the Inform user; payloads without numeric lat/lng still save the hint and return 200 (cache call skipped silently).
+3. `GET /api/account/districts` (auth-only, both tiers) returns `{ ca_assembly, ca_senate, us_house }` grouped by layer for users with cached districts; returns 204 No Content when there are none.
+4. `GET /api/essentials/representatives/me` serves users with rows in `connect.user_districts` via Path 0 — joining `essentials.districts` on `(tiger_geoid, district_type)` — without calling `resolve_user_jurisdiction`. Same-numbered SLDL/SLDU districts (e.g. assembly D20 + senate D20 both at `tiger_geoid='06020'`) resolve to distinct `geo_id`s. Path 1 / Path 1.5 / 204 fallbacks are unchanged for pre-Phase-70 users.
+5. Operator running `npx tsx backend/scripts/recache-user-districts.ts [--before=YYYY-MM-DD]` refreshes `user_districts` for affected users; coordinates are decrypted only inside Postgres (never exposed to Node.js); idempotent across reruns.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -833,5 +863,5 @@ Plans:
 | 67. Login Hub + Inform Signup Flow | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 2/2 | Complete | 2026-05-09 |
 | 69. TIGER Schema + Data Import | v2.2 | 2/2 | Complete | 2026-05-10 |
-| 70. Geofencing Backend Integration | v2.2 | 0/? | Pending | — |
+| 70. Geofencing Backend Integration | v2.2 | 0/3 | Pending | — |
 | 71. School Districts + Profile Display | v2.2 | 0/? | Pending | — |
