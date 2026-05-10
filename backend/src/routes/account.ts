@@ -5,6 +5,7 @@ import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected, requireInform } from '../middleware/tierGuards.js';
 import { createUserClient, adminRpc } from '../lib/supabase.js';
 import { pool } from '../lib/db.js';
+import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { getLocationConsent } from '../lib/connectService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 
@@ -759,6 +760,113 @@ router.get('/districts', requireAuth, async (req, res: Response) => {
     });
   } catch (err) {
     console.error('[GET /api/account/districts] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/account/set-location
+// Auth: requireAuth + requireInform (Connected users get 403 — they use
+//       POST /api/connect/set-location instead, which has tier-specific writes
+//       to connected_profiles).
+//
+// Inform-tier equivalent of POST /api/connect/set-location: accepts an address
+// string from the Accounts app, geocodes it server-side, stores the result as
+// JSONB on inform.inform_profiles.last_essentials_location, and caches the
+// user's TIGER districts.
+//
+// Security decision (Phase 70): the response body is exactly { ok: true }.
+// Address, lat/lng, and matchedAddress NEVER appear in the response — address
+// data stays server-side. This mirrors the Connected endpoint decision.
+// ---------------------------------------------------------------------------
+
+const SetLocationBodySchema = z.object({
+  address: z.string().min(1),
+});
+
+router.post('/set-location', requireAuth, requireInform, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = SetLocationBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      error: 'VALIDATION_ERROR',
+      issues: parsed.error.issues,
+    });
+    return;
+  }
+
+  const { address } = parsed.data;
+
+  // 1) Geocode. GeocodingError.code maps directly to HTTP status.
+  let lat: number;
+  let lng: number;
+  let city: string;
+  let state: string;
+  let matchedAddress: string;
+
+  try {
+    const coords = await geocodeAddress(address);
+    lat = coords.lat;
+    lng = coords.lng;
+    city = coords.city;
+    state = coords.state;
+    matchedAddress = coords.matchedAddress;
+  } catch (err) {
+    if (err instanceof GeocodingError) {
+      // Per planning spec: ADDRESS_NOT_FOUND -> 400, GEOCODER_UNAVAILABLE -> 503.
+      // Note: GeocodingErrorCode also includes 'PO_BOX_REJECTED' (see
+      // backend/src/lib/geocodingService.ts) — treat it as a 400 input error too.
+      if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'PO_BOX_REJECTED') {
+        res.status(400).json({ code: err.code, message: err.message });
+        return;
+      }
+      if (err.code === 'GEOCODER_UNAVAILABLE') {
+        res.status(503).json({
+          code: 'GEOCODER_UNAVAILABLE',
+          message: 'Address lookup temporarily unavailable.',
+        });
+        return;
+      }
+      // Defensive: unknown future GeocodingError code falls through to 500.
+      console.error('[POST /api/account/set-location] unknown geocoding error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+    // Non-GeocodingError thrown from geocodeAddress — let outer catch handle it.
+    throw err;
+  }
+
+  // 2) Persist the geocoded result as JSONB on inform_profiles, then cache
+  //    districts (fail-open). Wrap both in an outer try/catch so any unexpected
+  //    DB error returns 500 with the standard envelope.
+  try {
+    const location = { lat, lng, city, state, matchedAddress };
+
+    await pool.query(
+      `INSERT INTO inform.inform_profiles (user_id, last_essentials_location)
+       VALUES ($1, $2::jsonb)
+       ON CONFLICT (user_id) DO UPDATE
+         SET last_essentials_location = EXCLUDED.last_essentials_location`,
+      [authReq.userId, JSON.stringify(location)]
+    );
+
+    // District cache (fail-open): never block the location save on a PostGIS error.
+    // essentials.cache_user_districts is in the essentials schema, which is NOT
+    // in PostgREST's exposed schema list — MUST use pool.query, not adminRpc.
+    try {
+      await pool.query(
+        `SELECT essentials.cache_user_districts($1, $2, $3)`,
+        [authReq.userId, lat, lng]
+      );
+    } catch (cacheErr) {
+      console.error('[POST /api/account/set-location] district cache failed (non-fatal):', cacheErr);
+    }
+
+    // Security: response body is { ok: true } only — no address/lat/lng echo.
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[POST /api/account/set-location] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
