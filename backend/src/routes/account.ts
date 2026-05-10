@@ -765,6 +765,63 @@ router.get('/districts', requireAuth, async (req, res: Response) => {
 });
 
 // ---------------------------------------------------------------------------
+// GET /api/account/school-district
+// Auth: requireAuth (both Inform and Connected tiers)
+//
+// Returns the user's cached school districts grouped by school layer.
+// Source of truth: connect.user_districts filtered to layer IN
+// (school_unified, school_elementary, school_secondary).
+// Joins to essentials.geo_districts on (layer, geoid) for the human-readable
+// name. Returns 204 No Content when the user has no school-layer rows
+// (out-of-CA users, location not yet set, or coordinate didn't fall inside
+// any school district polygon).
+//
+// Phase 71: separate from GET /districts because the legislative endpoint
+// shape is intentionally stable (ca_assembly, ca_senate, us_house only).
+// School district display is surfaced on the profile Location tab via this
+// dedicated endpoint.
+// ---------------------------------------------------------------------------
+
+router.get('/school-district', requireAuth, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { rows } = await pool.query<{
+      layer: string;
+      geoid: string;
+      name: string | null;
+    }>(
+      `SELECT ud.layer, ud.geoid, gd.name
+       FROM connect.user_districts ud
+       LEFT JOIN essentials.geo_districts gd
+         ON gd.layer = ud.layer AND gd.geoid = ud.geoid
+       WHERE ud.user_id = $1
+         AND ud.layer IN ('school_unified', 'school_elementary', 'school_secondary')`,
+      [authReq.userId]
+    );
+
+    if (rows.length === 0) {
+      res.status(204).end();
+      return;
+    }
+
+    const byLayer: Record<string, { name: string | null; geoid: string }> =
+      Object.fromEntries(
+        rows.map((r) => [r.layer, { name: r.name ?? null, geoid: r.geoid }])
+      );
+
+    res.status(200).json({
+      school_unified:    byLayer['school_unified']    ?? null,
+      school_elementary: byLayer['school_elementary'] ?? null,
+      school_secondary:  byLayer['school_secondary']  ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /api/account/school-district] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
 // POST /api/account/set-location
 // Auth: requireAuth + requireInform (Connected users get 403 — they use
 //       POST /api/connect/set-location instead, which has tier-specific writes
