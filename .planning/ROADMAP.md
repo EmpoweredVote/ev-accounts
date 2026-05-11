@@ -12,7 +12,7 @@
 - ✅ **v1.7 Cross-App SSO** — Phases 44–48 (shipped 2026-04-02)
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
-- 📋 **v2.0 Civic Account Experience** — Phases 60–65 (planned 2026-04-25)
+- ✅ **v2.0 Civic Account Experience** — Phases 60–65 (shipped 2026-05-10)
 - 📋 **v2.1 Inform Account Tier** — Phases 66–68 (planned 2026-04-27)
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
 
@@ -656,20 +656,9 @@ Plans:
 
 ---
 
-#### Phase 65: Dashboard Redesign
+#### Phase 65: Dashboard Redesign — SKIPPED (2026-05-10)
 
-**Goal:** The dashboard at `app.empowered.vote/` for authenticated users is a coherent home screen — a continue card surfaces the last-used feature, a stats bar gives a live snapshot of the user's standing, and the feature grid organizes Inform and Connect capabilities by tier with the Empowered upgrade CTA at the bottom for eligible users.
-
-**Dependencies:** Phase 60 (design tokens and shared components); Phase 63 (activity feed API needed for continue card recency data); Phase 64 (routing logic distinguishes authenticated vs. unauthenticated landing)
-
-**Requirements:** DASH-01, DASH-02, DASH-03, DASH-04
-
-**Success Criteria:**
-
-1. The dashboard renders a "Continue where you left off" card showing the name and icon of the last-used feature with a Continue button; the card derives its state from stored last-used data and does not appear if no feature has been used yet.
-2. An inline stats bar below the nav displays the user's display name, level badge, XP progress bar, gem counts (yellow/blue/red), VR score, and a "View full profile →" link — all drawn from the existing `/account/me` response.
-3. The explore features grid renders an Inform section (visible to all tiers) and a Connect section (visible to Connected+ users with full interactivity; dimmed and locked for Inform-tier users); tier-gated features show a clear locked indicator without hiding the feature name.
-4. A "Ready to go public?" Empowered upgrade CTA section renders at the page bottom for Connected users; the section is not rendered for Empowered users or Inform-tier users.
+**Decision:** Skipped. Users navigate directly to `login.empowered.vote/profile` — `app.empowered.vote` is no longer a primary user destination. The profile page already surfaces level, XP, gems, VR, and feature cards. No dashboard redesign needed.
 
 ---
 
@@ -829,9 +818,9 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 | 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
 | 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
 | 62. Onboarding Restyle | v2.0 | 3/3 | Complete | 2026-04-25 |
-| 63. Profile Page + Activity Feed | v2.0 | 0/2 | Pending | — |
+| 63. Profile Page + Activity Feed | v2.0 | 2/2 | Complete | 2026-04-27 |
 | 64. InformLanding | v2.0 | — | Skipped | — |
-| 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
+| 65. Dashboard Redesign | v2.0 | — | Skipped | — |
 | 66. Inform Profiles Backend Foundation | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 67. Login Hub + Inform Signup Flow | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 2/2 | Complete | 2026-05-09 |

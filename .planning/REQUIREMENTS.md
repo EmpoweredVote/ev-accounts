@@ -34,19 +34,16 @@
 
 ### Profile Page
 
-- [ ] **PROF-01**: `ProfilePage` (admin app, `/profile`) restyled — user's display name as large heading, Level badge + XP progress bar (e.g. "Level 1 — 100 / 1000 XP")
-- [ ] **PROF-02**: Gems section displays large colored gem icons (yellow, blue, red) with numeric count beneath each
-- [ ] **PROF-03**: Recent Activity section shows last 4 XP transactions (activity name, date, +XP amount in teal)
-- [ ] **PROF-04**: Invite section — locked state shows "Reach level 2 to unlock your first referral code"; active state shows invite code with copy button
-- [ ] **PROF-05**: Verification Rating displayed as "0 / 150" with explanatory text ("Keep validating to increase your credibility score")
-- [ ] **PROF-06**: "Ready to go public?" Empowered upgrade CTA section at page bottom for Connected users
+- [x] **PROF-01**: `ProfilePage` (admin app, `/profile`) restyled — user's display name as large heading, Level badge + XP progress bar (e.g. "Level 1 — 100 / 1000 XP") ✓ Phase 63
+- [x] **PROF-02**: Gems section displays large colored gem icons (yellow, blue, red) with numeric count beneath each ✓ Phase 63
+- [x] **PROF-03**: Recent Activity section shows last 4 XP transactions (activity name, date, +XP amount in teal) ✓ Phase 63
+- [x] **PROF-04**: Invite section — locked state shows "Reach level 2 to unlock your first referral code"; active state shows invite code with copy button ✓ Phase 63
+- [x] **PROF-05**: Verification Rating displayed as "0 / 150" with explanatory text ("Keep validating to increase your credibility score") ✓ Phase 63
+- [x] **PROF-06**: "Ready to go public?" Empowered upgrade CTA section at page bottom for Connected users ✓ Phase 63
 
-### Dashboard
+### Dashboard — SKIPPED (2026-05-10)
 
-- [ ] **DASH-01**: `DashboardPage` (app, `/`) redesigned — top "Continue where you left off" card showing last-used feature with Continue button
-- [ ] **DASH-02**: Inline stats bar below nav — display name, level badge, XP progress, gem counts, VR score, "View full profile →" link
-- [ ] **DASH-03**: Explore features grid — Inform features section (available to all tiers) + Connect features section (Connected+ only; locked/dimmed for Inform tier users)
-- [ ] **DASH-04**: "Ready to go public?" Empowered upgrade CTA at page bottom for Connected users
+- [~] **DASH-01** through **DASH-04**: Superseded. Users navigate directly to `login.empowered.vote/profile` which already surfaces level, XP, gems, VR, and feature cards. `app.empowered.vote` is no longer a primary user destination.
 
 ### InformLanding — SKIPPED (2026-05-10)
 
@@ -160,12 +157,12 @@
 | ONBD-03 | Phase 62 | Complete |
 | ONBD-04 | Phase 62 | Complete |
 | ONBD-05 | Phase 62 | Complete |
-| PROF-01 | Phase 63 | Pending |
-| PROF-02 | Phase 63 | Pending |
-| PROF-03 | Phase 63 | Pending |
-| PROF-04 | Phase 63 | Pending |
-| PROF-05 | Phase 63 | Pending |
-| PROF-06 | Phase 63 | Pending |
+| PROF-01 | Phase 63 | Complete |
+| PROF-02 | Phase 63 | Complete |
+| PROF-03 | Phase 63 | Complete |
+| PROF-04 | Phase 63 | Complete |
+| PROF-05 | Phase 63 | Complete |
+| PROF-06 | Phase 63 | Complete |
 | API-01 | Phase 63 | Complete |
 | FIX-01 | Phase 63 | Complete |
 | LAND-01 | Phase 64 | Skipped |
@@ -173,10 +170,10 @@
 | LAND-03 | Phase 64 | Skipped |
 | LAND-04 | Phase 64 | Skipped |
 | LAND-05 | Phase 64 | Skipped |
-| DASH-01 | Phase 65 | Pending |
-| DASH-02 | Phase 65 | Pending |
-| DASH-03 | Phase 65 | Pending |
-| DASH-04 | Phase 65 | Pending |
+| DASH-01 | Phase 65 | Skipped |
+| DASH-02 | Phase 65 | Skipped |
+| DASH-03 | Phase 65 | Skipped |
+| DASH-04 | Phase 65 | Skipped |
 | IBAK-01 | Phase 66 | Complete |
 | IBAK-02 | Phase 66 | Complete |
 | IBAK-03 | Phase 66 | Complete |
@@ -200,8 +197,8 @@
 | CEXP-03 | Phase 68 | Pending |
 
 **Coverage:**
-- v2.0 requirements: 34 total (20 complete, 14 pending)
-- v2.1 requirements: 21 total (0 complete, 21 pending)
+- v2.0 requirements: 34 total (26 complete, 9 skipped, 0 pending) ✓
+- v2.1 requirements: 21 total (21 complete, 0 pending) ✓
 - Mapped to phases: 55 / 55
 - Unmapped: 0 ✓
 
