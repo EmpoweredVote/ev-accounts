@@ -2,10 +2,10 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { AuthGuard } from './components/AuthGuard';
 import { OnboardingGuard } from './components/OnboardingGuard';
-import { RootRoute } from './components/RootRoute';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
 import WelcomeScreen from './pages/WelcomeScreen';
+import DashboardPage from './pages/DashboardPage';
 import ProfilePage from './pages/ProfilePage';
 import OnboardingPage from './pages/onboarding/OnboardingPage';
 import UpdateLocationPage from './pages/settings/UpdateLocationPage';
@@ -190,9 +190,6 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/welcome" element={<WelcomeScreen />} />
 
-      {/* Root — tier-aware split, public access */}
-      <Route path="/" element={<RootRoute />} />
-
       {/* Authenticated */}
       <Route element={<AuthGuard />}>
 
@@ -201,6 +198,7 @@ function App() {
 
         {/* Requires completed onboarding for connected/empowered users */}
         <Route element={<OnboardingGuard />}>
+          <Route path="/" element={<DashboardPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/settings/location" element={<UpdateLocationPage />} />
           <Route path="/contributor" element={<ContributorLayout />}>
