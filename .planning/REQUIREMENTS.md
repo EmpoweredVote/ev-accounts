@@ -48,13 +48,9 @@
 - [ ] **DASH-03**: Explore features grid — Inform features section (available to all tiers) + Connect features section (Connected+ only; locked/dimmed for Inform tier users)
 - [ ] **DASH-04**: "Ready to go public?" Empowered upgrade CTA at page bottom for Connected users
 
-### InformLanding
+### InformLanding — SKIPPED (2026-05-10)
 
-- [ ] **LAND-01**: `InformLandingPage` component — served at app.empowered.vote root (`/`) for unauthenticated users; authenticated users see `DashboardPage` instead
-- [ ] **LAND-02**: Hero section — "Understand your world" headline, subtitle, "No account required" note, feature card grid (Empowered Essentials, Empowered Compass, Treasury Tracker, Fallacy Finders, Empowered Badges)
-- [ ] **LAND-03**: "Participate with your community" section — civic spaces icons (Civic Spaces, Common Ground, Symposium), Connected account value prop explained without pressure
-- [ ] **LAND-04**: "Join the conversation" bottom section — Create account + Sign in buttons; copy frames Connected as "for those seeking shared solutions", not a funnel
-- [ ] **LAND-05**: `AppNav` on InformLanding with Sign In and Create account links in right slot
+- [~] **LAND-01** through **LAND-05**: Superseded by `login.empowered.vote/profile`, which already serves as the platform explainer for unauthenticated visitors. No separate `InformLandingPage` will be built. Unauthenticated visits to `app.empowered.vote/` continue to redirect to `login.empowered.vote/login`.
 
 ### Activity Feed API
 
@@ -172,11 +168,11 @@
 | PROF-06 | Phase 63 | Pending |
 | API-01 | Phase 63 | Complete |
 | FIX-01 | Phase 63 | Complete |
-| LAND-01 | Phase 64 | Pending |
-| LAND-02 | Phase 64 | Pending |
-| LAND-03 | Phase 64 | Pending |
-| LAND-04 | Phase 64 | Pending |
-| LAND-05 | Phase 64 | Pending |
+| LAND-01 | Phase 64 | Skipped |
+| LAND-02 | Phase 64 | Skipped |
+| LAND-03 | Phase 64 | Skipped |
+| LAND-04 | Phase 64 | Skipped |
+| LAND-05 | Phase 64 | Skipped |
 | DASH-01 | Phase 65 | Pending |
 | DASH-02 | Phase 65 | Pending |
 | DASH-03 | Phase 65 | Pending |

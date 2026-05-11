@@ -648,21 +648,11 @@ Plans:
 
 ---
 
-#### Phase 64: InformLanding
+#### Phase 64: InformLanding — SKIPPED (2026-05-10)
 
-**Goal:** Unauthenticated visitors to `app.empowered.vote` see a genuinely useful homepage that explains the platform and its features — without a signup wall, without funnel copy, and with a clear invitation to participate when they are ready.
+**Decision:** Skipped. `login.empowered.vote/profile` already serves as the platform explainer — more thorough than a separate landing page would be. Unauthenticated visitors to `app.empowered.vote/` continue to be redirected to `login.empowered.vote/login` via `AuthGuard` (existing behavior).
 
-**Dependencies:** Phase 60 (AppNav with auth links must exist); authenticated users must be routed to `DashboardPage` instead
-
-**Requirements:** LAND-01, LAND-02, LAND-03, LAND-04, LAND-05
-
-**Success Criteria:**
-
-1. Unauthenticated users who visit `app.empowered.vote/` see `InformLandingPage`; authenticated users who visit the same URL are shown `DashboardPage` — routing is tier-aware with no flash of the wrong page.
-2. The hero section renders the "Understand your world" headline, a subtitle, a "No account required" note, and a feature card grid showing Empowered Essentials, Empowered Compass, Treasury Tracker, Fallacy Finders, and Empowered Badges.
-3. The "Participate with your community" section shows civic spaces icons (Civic Spaces, Common Ground, Symposium) and explains the Connected account value proposition without pressure language; no CTA button appears in this section.
-4. The "Join the conversation" bottom section shows Create account and Sign in buttons; copy frames Connected as "for those seeking shared solutions" — not a conversion funnel.
-5. `AppNav` on `InformLandingPage` renders the logo and wordmark on the left with Sign In and Create account links in the right slot.
+**Requirements:** LAND-01 through LAND-05 — superseded by existing profile page.
 
 ---
 
@@ -840,7 +830,7 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 | 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
 | 62. Onboarding Restyle | v2.0 | 3/3 | Complete | 2026-04-25 |
 | 63. Profile Page + Activity Feed | v2.0 | 0/2 | Pending | — |
-| 64. InformLanding | v2.0 | 0/? | Pending | — |
+| 64. InformLanding | v2.0 | — | Skipped | — |
 | 65. Dashboard Redesign | v2.0 | 0/? | Pending | — |
 | 66. Inform Profiles Backend Foundation | v2.1 | 3/3 | Complete | 2026-04-27 |
 | 67. Login Hub + Inform Signup Flow | v2.1 | 3/3 | Complete | 2026-04-27 |
