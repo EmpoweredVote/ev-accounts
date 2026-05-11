@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-05-10 after v2.2 milestone completion)
 
 ## Current Position
 
-**Phase 64 IN PROGRESS — plan 64-01 complete. LAND-01 (tier-aware routing) shipped.**
+**Phase 71 COMPLETE 2026-05-10 — all 2 plans done. GEO-13 + GEO-14 shipped. v2.2 complete.**
 
-v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64 in progress (1/2 plans done). Phase 65 pending.
+v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
 
@@ -28,7 +28,7 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Last activity: 2026-05-11 — Completed 64-01-PLAN.md. RootRoute + InformLandingPage stub created. LAND-01 satisfied.
+Last activity: 2026-05-10 — v2.2 milestone archived. Git tag v2.2 created.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -252,6 +252,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-05-11
-Stopped at: Phase 64 plan 64-01 complete. RootRoute + routing surgery done. Next: plan 64-02 (build real InformLandingPage).
+Last session: 2026-05-10
+Stopped at: Phase 71 complete. Plan 71-02 UAT approved. v2.2 fully shipped.
 Resume file: None
