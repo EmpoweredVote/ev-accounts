@@ -285,7 +285,9 @@ export async function getCompassPoliticians() {
             COALESCE(d.label, '') AS district_label,
             COALESCE(d.district_type, '') AS district_type,
             (SELECT COUNT(*)::int FROM inform.politician_answers
-             WHERE politician_id = p.id AND value != 0) AS answer_count
+             WHERE politician_id = p.id AND value != 0) AS answer_count,
+            (SELECT array_agg(topic_id) FROM inform.politician_answers
+             WHERE politician_id = p.id AND value != 0) AS answered_topic_ids
      FROM essentials.politicians p
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -312,6 +314,7 @@ export async function getCompassPoliticians() {
     district_label: r.district_label ?? '',
     district_type: r.district_type ?? '',
     answer_count: r.answer_count ?? 0,
+    answered_topic_ids: (r.answered_topic_ids ?? []) as string[],
   }));
 }
 
