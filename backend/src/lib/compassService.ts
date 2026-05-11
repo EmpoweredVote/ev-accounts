@@ -277,14 +277,15 @@ export async function getCompassPoliticians() {
   const { rows } = await pool.query(
     `SELECT DISTINCT ON (p.id)
             p.id, p.first_name, p.last_name, p.preferred_name, p.full_name,
-            -- G-114-014: NULLIF wraps prevent empty-string '' from short-circuiting COALESCE before pi.url
-            COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, ''), pi.url, '') AS photo_origin_url,
+            COALESCE(NULLIF(p.photo_custom_url, ''), pi.url, NULLIF(p.photo_origin_url, ''), '') AS photo_origin_url,
             p.is_active,
             COALESCE(o.title, '') AS office_title,
             COALESCE(o.representing_state, '') AS representing_state,
             COALESCE(o.representing_city, '') AS representing_city,
             COALESCE(d.label, '') AS district_label,
-            COALESCE(d.district_type, '') AS district_type
+            COALESCE(d.district_type, '') AS district_type,
+            (SELECT COUNT(*)::int FROM inform.politician_answers
+             WHERE politician_id = p.id AND value != 0) AS answer_count
      FROM essentials.politicians p
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -310,6 +311,7 @@ export async function getCompassPoliticians() {
     representing_city: r.representing_city ?? '',
     district_label: r.district_label ?? '',
     district_type: r.district_type ?? '',
+    answer_count: r.answer_count ?? 0,
   }));
 }
 
