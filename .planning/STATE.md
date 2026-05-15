@@ -250,9 +250,10 @@ None for v2.0 start.
 | 018 | Add municipality_geo_id support so LA City races display for LA residents | 2026-04-13 | — | [018-add-municipality-geo-id-support-so-la-ci](./quick/018-add-municipality-geo-id-support-so-la-ci/) |
 | 019 | Rename accounts.empowered.vote → login.empowered.vote in runtime code | 2026-04-15 | ac151ef | [019-rename-accounts-to-login-empowered-vote](./quick/019-rename-accounts-to-login-empowered-vote/) |
 | 020 | FC post history tab on DashboardPage — PostHistory component with cursor pagination | 2026-04-17 | 0da4072 | [020-build-fc-post-history-feature-on-account](./quick/020-build-fc-post-history-feature-on-account/) |
+| 021 | Add candidate support to compass compare — getCandidates()/getCandidateAnswers() + GET /candidates/:id/answers + GET /politicians?include_candidates=true | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
 
 ## Session Continuity
 
-Last session: 2026-05-10
-Stopped at: Phase 71 complete. Plan 71-02 UAT approved. v2.2 fully shipped.
+Last session: 2026-05-14
+Stopped at: Quick task 021 complete — candidate compass compare support shipped.
 Resume file: None
