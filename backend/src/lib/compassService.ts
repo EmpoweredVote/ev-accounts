@@ -321,8 +321,8 @@ export async function getCompassPoliticians() {
 /**
  * getCandidates
  * Returns active election candidates that have at least one compass answer via
- * their empowered_profile. Rows are shaped like getCompassPoliticians() output
- * plus is_candidate: true and is_incumbent from race_candidates.is_incumbent.
+ * either their empowered_profile (Path A: compass_responses) or researched stances
+ * (Path B: politician_answers). Rows include stance_source: 'empowered' | 'researched'.
  * Uses pool.query() — essentials and empower are not in the PostgREST exposed schema list.
  */
 export async function getCandidates() {
@@ -340,16 +340,38 @@ export async function getCandidates() {
       COALESCE(o.representing_city, '') AS representing_city,
       COALESCE(d.label, '') AS district_label,
       COALESCE(d.district_type, '') AS district_type,
-      (
-        SELECT COUNT(*)::int FROM inform.compass_responses cr
-        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
-        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
-      ) AS answer_count,
-      (
-        SELECT array_agg(cr.topic_id) FROM inform.compass_responses cr
-        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
-        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
-      ) AS answered_topic_ids,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN (
+          SELECT COUNT(*)::int FROM inform.compass_responses cr
+          JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        ELSE (
+          SELECT COUNT(*)::int FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      END AS answer_count,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN (
+          SELECT array_agg(cr.topic_id) FROM inform.compass_responses cr
+          JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        ELSE (
+          SELECT array_agg(pa.topic_id) FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      END AS answered_topic_ids,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN 'empowered'
+        ELSE 'researched'
+      END AS stance_source,
       true AS is_candidate,
       rc.is_incumbent
     FROM essentials.race_candidates rc
@@ -361,10 +383,16 @@ export async function getCandidates() {
       AND e.election_date >= CURRENT_DATE
       AND rc.politician_id IS NOT NULL
       AND (
-        SELECT COUNT(*) FROM inform.compass_responses cr
-        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
-        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
-      ) > 0`
+        EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep
+          JOIN inform.compass_responses cr ON cr.user_id = ep.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        OR EXISTS (
+          SELECT 1 FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      )`
   );
 
   return rows.map((r) => ({
@@ -382,6 +410,7 @@ export async function getCandidates() {
     district_type: (r.district_type ?? '') as string,
     answer_count: (r.answer_count ?? 0) as number,
     answered_topic_ids: ((r.answered_topic_ids ?? []) as string[]),
+    stance_source: (r.stance_source ?? 'researched') as 'empowered' | 'researched',
     is_candidate: true as const,
     is_incumbent: (r.is_incumbent ?? false) as boolean,
   }));
@@ -389,9 +418,10 @@ export async function getCandidates() {
 
 /**
  * getCandidateAnswers
- * Three-step lookup: race_candidate → politician_id → empowered_profile user_id
- * → compass_responses. Returns null if the candidate is not found or has no
- * empowered_profile. Uses pool.query() exclusively.
+ * Dual-path lookup: tries empowered_profiles → compass_responses (Path A),
+ * falls back to politician_answers (Path B).
+ * Returns null if the candidate is not found or has no answers on either path.
+ * Uses pool.query() exclusively.
  */
 export async function getCandidateAnswers(
   candidateId: string
@@ -404,24 +434,34 @@ export async function getCandidateAnswers(
   if (candidateRes.rows.length === 0 || !candidateRes.rows[0].politician_id) return null;
   const politicianId = candidateRes.rows[0].politician_id;
 
-  // Step 2: resolve user_id from empowered_profiles
+  // Step 2: try Path A — empowered_profiles → compass_responses
   const profileRes = await pool.query<{ user_id: string }>(
     `SELECT user_id FROM empower.empowered_profiles WHERE politician_id = $1`,
     [politicianId]
   );
-  if (profileRes.rows.length === 0) return null;
-  const userId = profileRes.rows[0].user_id;
+  if (profileRes.rows.length > 0) {
+    const userId = profileRes.rows[0].user_id;
+    const answersRes = await pool.query<{ topic_id: string; value: number }>(
+      `SELECT topic_id, value
+       FROM inform.compass_responses
+       WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
+       ORDER BY topic_id ASC`,
+      [userId]
+    );
+    if (answersRes.rows.length > 0) return answersRes.rows;
+  }
 
-  // Step 3: fetch compass answers
-  const answersRes = await pool.query<{ topic_id: string; value: number }>(
+  // Step 3: fall back to Path B — politician_answers (researched stances)
+  const researchedRes = await pool.query<{ topic_id: string; value: number }>(
     `SELECT topic_id, value
-     FROM inform.compass_responses
-     WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
+     FROM inform.politician_answers
+     WHERE politician_id = $1 AND value != 0
      ORDER BY topic_id ASC`,
-    [userId]
+    [politicianId]
   );
+  if (researchedRes.rows.length > 0) return researchedRes.rows;
 
-  return answersRes.rows;
+  return null;
 }
 
 /**
