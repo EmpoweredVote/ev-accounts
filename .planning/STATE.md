@@ -251,9 +251,10 @@ None for v2.0 start.
 | 019 | Rename accounts.empowered.vote → login.empowered.vote in runtime code | 2026-04-15 | ac151ef | [019-rename-accounts-to-login-empowered-vote](./quick/019-rename-accounts-to-login-empowered-vote/) |
 | 020 | FC post history tab on DashboardPage — PostHistory component with cursor pagination | 2026-04-17 | 0da4072 | [020-build-fc-post-history-feature-on-account](./quick/020-build-fc-post-history-feature-on-account/) |
 | 021 | Add candidate support to compass compare — getCandidates()/getCandidateAnswers() + GET /candidates/:id/answers + GET /politicians?include_candidates=true | 2026-05-14 | 5eb3852 | [021-add-candidate-support-to-compass-compar](./quick/021-add-candidate-support-to-compass-compar/) |
+| 022 | Fix Malik inversion bug, run 24 stance ingest scripts (255 rows), extend compassService dual-path fallback to politician_answers | 2026-05-15 | 01b3bfe | [022-run-pending-stance-ingest-and-extend-ca](./quick/022-run-pending-stance-ingest-and-extend-ca/) |
 
 ## Session Continuity
 
-Last session: 2026-05-14
-Stopped at: Quick task 021 complete — candidate compass compare support shipped.
+Last session: 2026-05-15
+Stopped at: Quick task 022 complete — 24 ingest scripts run, compassService politician_answers fallback shipped.
 Resume file: None
