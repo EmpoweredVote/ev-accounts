@@ -319,6 +319,112 @@ export async function getCompassPoliticians() {
 }
 
 /**
+ * getCandidates
+ * Returns active election candidates that have at least one compass answer via
+ * their empowered_profile. Rows are shaped like getCompassPoliticians() output
+ * plus is_candidate: true and is_incumbent from race_candidates.is_incumbent.
+ * Uses pool.query() — essentials and empower are not in the PostgREST exposed schema list.
+ */
+export async function getCandidates() {
+  const { rows } = await pool.query(
+    `SELECT
+      rc.id,
+      rc.first_name,
+      rc.last_name,
+      NULL::text AS preferred_name,
+      rc.full_name,
+      rc.photo_url AS photo_origin_url,
+      NULL::text AS photo_custom_url,
+      r.position_name AS office_title,
+      COALESCE(o.representing_state, e.state::text, '') AS representing_state,
+      COALESCE(o.representing_city, '') AS representing_city,
+      COALESCE(d.label, '') AS district_label,
+      COALESCE(d.district_type, '') AS district_type,
+      (
+        SELECT COUNT(*)::int FROM inform.compass_responses cr
+        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+      ) AS answer_count,
+      (
+        SELECT array_agg(cr.topic_id) FROM inform.compass_responses cr
+        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+      ) AS answered_topic_ids,
+      true AS is_candidate,
+      rc.is_incumbent
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+    LEFT JOIN essentials.offices o ON o.id = r.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    WHERE rc.candidate_status = 'active'
+      AND e.election_date >= CURRENT_DATE
+      AND rc.politician_id IS NOT NULL
+      AND (
+        SELECT COUNT(*) FROM inform.compass_responses cr
+        JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+        WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+      ) > 0`
+  );
+
+  return rows.map((r) => ({
+    id: r.id as string,
+    first_name: r.first_name ?? null,
+    last_name: r.last_name ?? null,
+    preferred_name: (r.preferred_name ?? null) as string | null,
+    full_name: r.full_name ?? null,
+    photo_origin_url: (r.photo_origin_url ?? '') as string,
+    is_active: true,
+    office_title: (r.office_title ?? '') as string,
+    representing_state: (r.representing_state ?? '') as string,
+    representing_city: (r.representing_city ?? '') as string,
+    district_label: (r.district_label ?? '') as string,
+    district_type: (r.district_type ?? '') as string,
+    answer_count: (r.answer_count ?? 0) as number,
+    answered_topic_ids: ((r.answered_topic_ids ?? []) as string[]),
+    is_candidate: true as const,
+    is_incumbent: (r.is_incumbent ?? false) as boolean,
+  }));
+}
+
+/**
+ * getCandidateAnswers
+ * Three-step lookup: race_candidate → politician_id → empowered_profile user_id
+ * → compass_responses. Returns null if the candidate is not found or has no
+ * empowered_profile. Uses pool.query() exclusively.
+ */
+export async function getCandidateAnswers(
+  candidateId: string
+): Promise<Array<{ topic_id: string; value: number }> | null> {
+  // Step 1: resolve politician_id from race_candidates
+  const candidateRes = await pool.query<{ politician_id: string }>(
+    `SELECT politician_id FROM essentials.race_candidates WHERE id = $1`,
+    [candidateId]
+  );
+  if (candidateRes.rows.length === 0 || !candidateRes.rows[0].politician_id) return null;
+  const politicianId = candidateRes.rows[0].politician_id;
+
+  // Step 2: resolve user_id from empowered_profiles
+  const profileRes = await pool.query<{ user_id: string }>(
+    `SELECT user_id FROM empower.empowered_profiles WHERE politician_id = $1`,
+    [politicianId]
+  );
+  if (profileRes.rows.length === 0) return null;
+  const userId = profileRes.rows[0].user_id;
+
+  // Step 3: fetch compass answers
+  const answersRes = await pool.query<{ topic_id: string; value: number }>(
+    `SELECT topic_id, value
+     FROM inform.compass_responses
+     WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
+     ORDER BY topic_id ASC`,
+    [userId]
+  );
+
+  return answersRes.rows;
+}
+
+/**
  * getPoliticianAnswers
  * Returns a politician's stances on all topics they have answered.
  */
