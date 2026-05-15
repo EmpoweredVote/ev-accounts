@@ -9,6 +9,8 @@ import {
   getCompassTopics,
   getCompassCategories,
   getCompassPoliticians,
+  getCandidates,
+  getCandidateAnswers,
   getPoliticianAnswers,
   getPoliticianContext,
   getPoliticianContextAll,
@@ -448,15 +450,71 @@ router.post('/verdicts', requireAuth, async (req: Request, res: Response): Promi
 });
 
 // ---------------------------------------------------------------------------
+// GET /api/compass/candidates/:id/answers
+// Auth: optional — public, no PII
+// Returns topic/value pairs for a candidate identified by race_candidates.id.
+// Returns 404 if the candidateId is not found or has no empowered_profile.
+// IMPORTANT: registered BEFORE /politicians routes to avoid Express routing
+// conflicts where "candidates" might be captured as a :id param.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/candidates/:id/answers',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    try {
+      const candidateId = req.params.id as string;
+      if (!UUID_REGEX.test(candidateId)) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid candidate ID format' });
+        return;
+      }
+
+      const data = await getCandidateAnswers(candidateId);
+      if (data === null) {
+        res.status(404).json({ code: 'NOT_FOUND', message: 'Candidate not found or has no compass answers' });
+        return;
+      }
+      res.status(200).json(data);
+    } catch (err) {
+      console.error('[GET /compass/candidates/:id/answers] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
 // GET /api/compass/politicians
 // Auth: optional — works unauthenticated
 // Returns all active politicians ordered by name.
+// Optional query param: include_candidates=true — merges active election
+// candidates (with compass answers via empowered_profile) into the result.
+// When include_candidates=true, all records include is_candidate and is_incumbent
+// fields; incumbents get is_candidate:false, is_incumbent:true.
 // ---------------------------------------------------------------------------
 
 router.get('/politicians', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   try {
-    const data = await getCompassPoliticians();
-    res.status(200).json(data);
+    const includeCandidates = req.query.include_candidates === 'true';
+
+    if (!includeCandidates) {
+      const data = await getCompassPoliticians();
+      res.status(200).json(data);
+      return;
+    }
+
+    // Merge incumbents and candidates in parallel
+    const [incumbents, candidates] = await Promise.all([
+      getCompassPoliticians(),
+      getCandidates(),
+    ]);
+
+    const incumbentsWithFlags = incumbents.map((p) => ({
+      ...p,
+      is_candidate: false,
+      is_incumbent: true,
+    }));
+
+    res.status(200).json([...incumbentsWithFlags, ...candidates]);
   } catch (err) {
     console.error('[GET /compass/politicians] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
