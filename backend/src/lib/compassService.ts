@@ -333,7 +333,7 @@ export async function getCandidates() {
       rc.last_name,
       NULL::text AS preferred_name,
       rc.full_name,
-      rc.photo_url AS photo_origin_url,
+      COALESCE(NULLIF(p.photo_custom_url, ''), pi.url, NULLIF(p.photo_origin_url, ''), NULLIF(rc.photo_url, ''), '') AS photo_origin_url,
       NULL::text AS photo_custom_url,
       r.position_name AS office_title,
       COALESCE(o.representing_state, e.state::text, '') AS representing_state,
@@ -379,6 +379,11 @@ export async function getCandidates() {
     JOIN essentials.elections e ON e.id = r.election_id
     LEFT JOIN essentials.offices o ON o.id = r.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = rc.politician_id AND type = 'default' LIMIT 1
+    ) pi ON true
     WHERE rc.candidate_status = 'active'
       AND e.election_date >= CURRENT_DATE
       AND rc.politician_id IS NOT NULL
