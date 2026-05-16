@@ -523,7 +523,7 @@ async function processLayer(
       cd:    9,    // 9 MA congressional districts
       sldu: 40,    // 40 MA Senate districts
       sldl: 160,   // 160 MA House districts
-      place: 351,  // 351 incorporated G4110 places (excludes G4210 CDPs)
+      place: 58,   // 58 MA G4110 incorporated cities (towns are G4040 COUSUB, not loaded in Phase 38)
       county: 14,  // 14 MA counties
     };
     if (layer in EXPECTED_MA_MTFCC) {
