@@ -382,11 +382,7 @@ export async function getCandidates() {
     WHERE rc.candidate_status = 'active'
       AND e.election_date >= CURRENT_DATE
       AND rc.politician_id IS NOT NULL
-      AND NOT EXISTS (
-        SELECT 1 FROM essentials.politicians p
-        JOIN inform.politician_answers pa ON pa.politician_id = p.id
-        WHERE p.id = rc.politician_id AND p.is_active = true AND pa.value != 0
-      )
+      AND rc.is_incumbent = false
       AND (
         EXISTS (
           SELECT 1 FROM empower.empowered_profiles ep
