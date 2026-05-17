@@ -51,11 +51,11 @@ const NOV_2026_BALLOT: CandidateEntry[] = [
   // Statewide — all Cambridge residents vote on all of these
   // -------------------------------------------------------------------------
   { cpfId: 15710, expectedName: 'Healey, Maura T.',      office: 'Governor',                    raceType: 'statewide',    district: null },
-  { cpfId: -1,    expectedName: 'Driscoll, Kimberley',   office: 'Lieutenant Governor',          raceType: 'statewide',    district: null },
-  { cpfId: -1,    expectedName: 'Campbell, Andrea J.',   office: 'Attorney General',             raceType: 'statewide',    district: null },
+  { cpfId: 15268, expectedName: 'Driscoll, Kimberley',   office: 'Lieutenant Governor',          raceType: 'statewide',    district: null },
+  { cpfId: 15931, expectedName: 'Campbell, Andrea J.',   office: 'Attorney General',             raceType: 'statewide',    district: null },
   { cpfId: 10176, expectedName: 'Galvin, William F.',    office: 'Secretary of the Commonwealth',raceType: 'statewide',    district: null },
-  { cpfId: -1,    expectedName: 'Goldberg, Deborah B.',  office: 'Treasurer',                    raceType: 'statewide',    district: null },
-  { cpfId: -1,    expectedName: 'DiZoglio, Diana',       office: 'State Auditor',                raceType: 'statewide',    district: null },
+  { cpfId: 14385, expectedName: 'Goldberg, Deborah B.',  office: 'Treasurer',                    raceType: 'statewide',    district: null },
+  { cpfId: 15465, expectedName: 'DiZoglio, Diana',       office: 'State Auditor',                raceType: 'statewide',    district: null },
 
   // -------------------------------------------------------------------------
   // MA House — Cambridge spans three districts
@@ -63,9 +63,9 @@ const NOV_2026_BALLOT: CandidateEntry[] = [
   //               25th Middlesex (Central/West Cambridge),
   //               26th Middlesex (North Cambridge + Somerville border)
   // -------------------------------------------------------------------------
-  { cpfId: -1,    expectedName: 'Rogers, David M.',      office: 'State Representative',         raceType: 'state_house',  district: '24th Middlesex' },
+  { cpfId: 15483, expectedName: 'Rogers, David M.',      office: 'State Representative',         raceType: 'state_house',  district: '24th Middlesex' },
   { cpfId: 13736, expectedName: 'Decker, Marjorie C.',   office: 'State Representative',         raceType: 'state_house',  district: '25th Middlesex' },
-  { cpfId: -1,    expectedName: 'Connolly, Michael E.',  office: 'State Representative',         raceType: 'state_house',  district: '26th Middlesex' },
+  { cpfId: 15470, expectedName: 'Connolly, Michael L.',  office: 'State Representative',         raceType: 'state_house',  district: '26th Middlesex' },
 
   // -------------------------------------------------------------------------
   // MA Senate — Cambridge falls in two senate districts
@@ -80,6 +80,25 @@ const NOV_2026_BALLOT: CandidateEntry[] = [
 //   Ed Markey      (US Senate Class 2)      — FEC ID S2MA00170
 //   Katherine Clark (US House MA-5)          — FEC ID H4MA05049  (parts of Cambridge)
 //   Ayanna Pressley (US House MA-7)          — FEC ID H8MA07150  (most of Cambridge)
+
+// ---------------------------------------------------------------------------
+// Office IDs for Nov 2026 Cambridge ballot races (looked up 2026-05-17)
+// These map raceType+district → existing essentials.offices.id
+// ---------------------------------------------------------------------------
+
+const OFFICE_ID_MAP: Record<string, string> = {
+  'statewide|Governor':                       '21f9e818-904d-4a19-879b-438f447bcd68',
+  'statewide|Lieutenant Governor':            '66c34aa8-db37-4aed-a369-fa5729f62b4a',
+  'statewide|Attorney General':               'acff6f85-1bc2-4f50-94e6-58294f5f096a',
+  'statewide|Secretary of the Commonwealth':  'ab2cdc0b-7762-4818-b923-8e006e762466',
+  'statewide|Treasurer':                      '3367d772-6a6b-4c51-9a74-c294ed1dbfdc',
+  'statewide|State Auditor':                  '58d289a0-a95e-474f-9c6e-b50fc7e93b04',
+  'state_house|24th Middlesex':               '30aaa2be-1f7c-4570-8af1-4fd2fe873467',
+  'state_house|25th Middlesex':               'a0e18b1e-478f-49b7-8ffb-351dc338875c',
+  'state_house|26th Middlesex':               '06e4afe2-cbcf-421c-a569-c15b7d55a236',
+  'state_senate|2nd Middlesex':               'b1ed4e2a-4a9c-4b41-9e46-8500f608e026',
+  'state_senate|Middlesex & Suffolk':         'c3ea7a34-f13d-4804-9db7-7e3f62238cfc',
+};
 
 // ---------------------------------------------------------------------------
 // Types
@@ -255,11 +274,52 @@ async function seedNov2026(pool: pg.Pool): Promise<void> {
       unmatched++;
 
       if (ADD_UNMATCHED && !DRY_RUN) {
-        // Insert into essentials.politicians — requires office_id lookup or creation
-        // For statewide candidates, representing_city is null (statewide office)
-        // For state house/senate, representing_city is the district name
-        console.log(`    → --add-unmatched: inserting "${parsedName}" (not yet implemented for state-level offices)`);
-        console.log(`       State-level inserts need office_id resolution — run /gsd:quick to implement`);
+        const officeKey = `${candidate.raceType}|${candidate.district ?? candidate.office}`;
+        const officeId = OFFICE_ID_MAP[officeKey];
+        if (!officeId) {
+          console.log(`    → --add-unmatched: no office_id mapping for key "${officeKey}" — skipping`);
+          continue;
+        }
+
+        // Parse "First [Middle] Last" from parsedName
+        const nameParts = parsedName.trim().split(/\s+/);
+        const firstName = nameParts[0] ?? '';
+        const lastName = nameParts[nameParts.length - 1] ?? '';
+        const middleInitial = nameParts.length > 2 ? nameParts.slice(1, -1).join(' ') : null;
+
+        const insertResult = await pool.query<{ id: string }>(
+          `INSERT INTO essentials.politicians
+             (full_name, first_name, last_name, middle_initial, office_id, party, is_active, is_incumbent, data_source)
+           VALUES ($1, $2, $3, $4, $5, 'Democrat', true, true, 'ocpf_seed')
+           ON CONFLICT DO NOTHING
+           RETURNING id`,
+          [parsedName, firstName, lastName, middleInitial, officeId]
+        );
+
+        if ((insertResult.rowCount ?? 0) === 0) {
+          console.log(`    → --add-unmatched: politician already exists (conflict) — skipping`);
+          continue;
+        }
+
+        const newPoliticianId = insertResult.rows[0]!.id;
+        addedNew++;
+        console.log(`    → --add-unmatched: inserted politician "${parsedName}" (${newPoliticianId})`);
+
+        const srcResult = await pool.query(
+          `INSERT INTO transparent_motivations.politician_sources
+             (essentials_politician_id, source_system, external_id, research_status, notes)
+           VALUES ($1, 'ocpf', $2, 'confirmed', $3)
+           ON CONFLICT (essentials_politician_id, source_system, external_id) DO NOTHING`,
+          [
+            newPoliticianId,
+            String(candidate.cpfId),
+            `Nov 2026 ballot seed — ${label} — OCPF filer: ${candidate.expectedName}`,
+          ]
+        );
+        if ((srcResult.rowCount ?? 0) > 0) {
+          inserted++;
+          console.log(`    → Inserted politician_sources row`);
+        }
       }
       continue;
     }
