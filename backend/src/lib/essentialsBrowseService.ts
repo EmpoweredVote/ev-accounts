@@ -371,8 +371,7 @@ export async function getPoliticiansByGovernmentList(
   const { countyGeoId } = options;
 
   const { rows } = await pool.query<Record<string, unknown>>(`
-    SELECT DISTINCT ON (p.id)
-           p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
+    SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
@@ -384,6 +383,7 @@ export async function getPoliticiansByGovernmentList(
            o.is_appointed_position, o.is_vacant, o.vacant_since,
            p.is_appointed, o.faces_retention_vote,
            CASE
+             WHEN d.district_type = 'SCHOOL' THEN 'SCHOOL'
              WHEN g.type IN ('LOCAL', 'City', 'Town', 'Township')
                   AND LOWER(o.title) ~ '(mayor|city manager|city administrator|city secretary)'
                THEN 'LOCAL_EXEC'
@@ -399,7 +399,8 @@ export async function getPoliticiansByGovernmentList(
            ch.election_frequency, ch.policy_engagement_level,
            g.name AS government_name, g.type AS government_type,
            COALESCE(ch.website_url, '') AS chamber_url,
-           '' AS government_body_name, '' AS government_body_url
+           CASE WHEN d.district_type = 'SCHOOL' THEN COALESCE(ch.name_formal, ch.name, '') ELSE '' END AS government_body_name,
+           '' AS government_body_url
     FROM essentials.governments g
     JOIN essentials.chambers ch ON ch.government_id = g.id
     JOIN essentials.offices o ON o.chamber_id = ch.id
