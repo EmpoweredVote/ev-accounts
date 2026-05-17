@@ -55,4 +55,20 @@ export function startCampaignFinanceCron(): void {
     }
   );
   console.log('[cron] Campaign finance Netfile ingest job registered (monthly, 1st at 03:00 UTC)');
+
+  cron.schedule(
+    '0 4 1 * *',
+    async () => {
+      try {
+        await runAdapterForAll('ocpf');
+      } catch (err) {
+        console.error('[cron] Unhandled error in OCPF ingest job:', err);
+      }
+    },
+    {
+      timezone: 'UTC',
+      name: 'ocpf-ingest',
+    }
+  );
+  console.log('[cron] Campaign finance OCPF ingest job registered (monthly, 1st at 04:00 UTC)');
 }

@@ -33,6 +33,7 @@ import { createIndianaAdapter } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { createNetfileAdapter } from './adapters/netfileAdapter.js';
+import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
@@ -371,6 +372,22 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
       break;
     }
 
+    case 'ocpf': {
+      const adapter = createOcpfAdapter();
+      for (const ps of sources) {
+        try {
+          await runIngestion(adapter, ps, '');
+          console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} done`);
+        } catch (err) {
+          console.error(
+            `[campaignFinanceScheduler] ocpf: source=${ps.id} error:`,
+            err instanceof Error ? err.message : String(err)
+          );
+        }
+      }
+      break;
+    }
+
     default:
       throw new Error(`[campaignFinanceScheduler] unknown adapter: ${adapterName}`);
   }
@@ -489,7 +506,7 @@ interface SqsIngestMessage {
 }
 
 /** Valid adapter names accepted in SQS messages */
-const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata', 'la_county_netfile']);
+const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata', 'la_county_netfile', 'ocpf']);
 
 /**
  * startSqsWorker launches a background long-poll loop that reads from the
