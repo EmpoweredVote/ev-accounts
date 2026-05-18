@@ -3,7 +3,9 @@
  * Base URL: https://api.ocpf.us
  * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
  * No auth required. Paginate until items.length < pageSize.
- * Export: createOcpfAdapter() — factory function.
+ * Export: createOcpfAdapter(year?: number) — factory function.
+ *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
+ *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
  */
 
 import { pool } from '../db.js';
@@ -55,16 +57,23 @@ interface OcpfItem {
 // Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, year?: number): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
   let pageNumber = 1;
+
+  // Year filter: when provided, scope the API call to a single calendar year.
+  // OCPF expects MM/DD/YYYY format — slashes are safe in query-string values (no encoding needed).
+  const yearFilter = typeof year === 'number'
+    ? `&StartDate=01/01/${year}&EndDate=12/31/${year}`
+    : '';
 
   for (;;) {
     const url =
       `${OCPF_BASE}/search/items` +
       `?SearchTypeId=1&SearchTypeCategory=receipts` +
       `&CpfId=${encodeURIComponent(cpfId)}` +
-      `&pageNumber=${pageNumber}&pageSize=${PAGE_SIZE}`;
+      `&pageNumber=${pageNumber}&pageSize=${PAGE_SIZE}` +
+      yearFilter;
 
     let response: Response;
     try {
@@ -73,13 +82,13 @@ async function fetchOcpfReceipts(cpfId: string): Promise<Record<string, unknown>
       });
     } catch (err) {
       throw new Error(
-        `[ocpfAdapter] fetch error cpfId=${cpfId} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
+        `[ocpfAdapter] fetch error cpfId=${cpfId} year=${year ?? 'all'} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
       );
     }
 
     if (response.status !== 200) {
       throw new Error(
-        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} page=${pageNumber}`
+        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} year=${year ?? 'all'} page=${pageNumber}`
       );
     }
 
@@ -285,13 +294,19 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
 // ---------------------------------------------------------------------------
 
 class OcpfAdapter implements SourceAdapter {
+  private readonly year?: number;
+
+  constructor(year?: number) {
+    this.year = year;
+  }
+
   name(): string {
     return 'ocpf';
   }
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId);
+    const records = await fetchOcpfReceipts(cpfId, this.year);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -330,7 +345,11 @@ class OcpfAdapter implements SourceAdapter {
  * createOcpfAdapter returns an OcpfAdapter implementing SourceAdapter.
  * The adapter fetches OCPF receipts from api.ocpf.us for the given cpfId
  * (stored as politician_sources.external_id).
+ *
+ * @param year - Optional calendar year to scope the fetch. When provided, the adapter
+ *   appends StartDate=01/01/{year}&EndDate=12/31/{year} to the OCPF API URL, limiting
+ *   results to that single year. Omit to fetch the filer's full history (original behavior).
  */
-export function createOcpfAdapter(): SourceAdapter {
-  return new OcpfAdapter();
+export function createOcpfAdapter(year?: number): SourceAdapter {
+  return new OcpfAdapter(year);
 }

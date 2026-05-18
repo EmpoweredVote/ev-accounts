@@ -373,14 +373,50 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'ocpf': {
-      const adapter = createOcpfAdapter();
+      const OCPF_START_YEAR = 2001;
+      const currentYear = new Date().getUTCFullYear();
+
       for (const ps of sources) {
         try {
-          await runIngestion(adapter, ps, '');
-          console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} done`);
+          // Query years already successfully completed for this source.
+          // Regex guard '^[0-9]{4}$' ignores legacy empty-string election_cycle rows
+          // left by the old all-history runs, so they don't mark any year as done.
+          const completedYearsResult = await pool.query<{ election_cycle: string }>(
+            `SELECT DISTINCT election_cycle
+               FROM transparent_motivations.ingestion_runs
+               WHERE adapter_name = 'ocpf'
+                 AND politician_source_id = $1
+                 AND status IN ('completed', 'completed_with_warning')
+                 AND election_cycle ~ '^[0-9]{4}$'`,
+            [ps.id]
+          );
+          const completedYears = new Set<string>(
+            completedYearsResult.rows.map((r) => r.election_cycle)
+          );
+
+          for (let year = OCPF_START_YEAR; year <= currentYear; year++) {
+            const yearStr = String(year);
+            // Always re-run the current year (catches late filings); skip prior completed years
+            if (year !== currentYear && completedYears.has(yearStr)) {
+              continue;
+            }
+            try {
+              const adapter = createOcpfAdapter(year);
+              await runIngestion(adapter, ps, yearStr);
+              console.log(
+                `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} done`
+              );
+            } catch (err) {
+              console.error(
+                `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} error:`,
+                err instanceof Error ? err.message : String(err)
+              );
+              // Non-aborting: continue to next year
+            }
+          }
         } catch (err) {
           console.error(
-            `[campaignFinanceScheduler] ocpf: source=${ps.id} error:`,
+            `[campaignFinanceScheduler] ocpf: source=${ps.id} pre-flight error:`,
             err instanceof Error ? err.message : String(err)
           );
         }
