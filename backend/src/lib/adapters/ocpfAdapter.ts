@@ -3,9 +3,10 @@
  * Base URL: https://api.ocpf.us
  * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
  * No auth required. Paginate until items.length < pageSize.
- * Export: createOcpfAdapter(year?: number, signal?: AbortSignal) — factory function.
+ * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4) — factory function.
  *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
- *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-year timeout).
+ *   Pass a year + quarter to scope to a single calendar quarter (e.g. Q2 = Apr 1 – Jun 30).
+ *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-quarter timeout).
  *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
  */
 
@@ -55,18 +56,46 @@ interface OcpfItem {
 }
 
 // ---------------------------------------------------------------------------
+// Quarter helper
+// ---------------------------------------------------------------------------
+
+type Quarter = 1 | 2 | 3 | 4;
+
+/**
+ * quarterDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
+ * given calendar quarter. Slashes in query-string values are safe (no encoding).
+ */
+function quarterDateRange(year: number, quarter: Quarter): { start: string; end: string } {
+  switch (quarter) {
+    case 1: return { start: `01/01/${year}`, end: `03/31/${year}` };
+    case 2: return { start: `04/01/${year}`, end: `06/30/${year}` };
+    case 3: return { start: `07/01/${year}`, end: `09/30/${year}` };
+    case 4: return { start: `10/01/${year}`, end: `12/31/${year}` };
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
   let pageNumber = 1;
 
-  // Year filter: when provided, scope the API call to a single calendar year.
-  // OCPF expects MM/DD/YYYY format — slashes are safe in query-string values (no encoding needed).
-  const yearFilter = typeof year === 'number'
-    ? `&StartDate=01/01/${year}&EndDate=12/31/${year}`
-    : '';
+  // Date filter: per-quarter when both year and quarter are provided; per-year when only year;
+  // omitted for full-history fetches. OCPF expects MM/DD/YYYY format.
+  let dateFilter = '';
+  if (typeof year === 'number' && typeof quarter === 'number') {
+    const { start, end } = quarterDateRange(year, quarter);
+    dateFilter = `&StartDate=${start}&EndDate=${end}`;
+  } else if (typeof year === 'number') {
+    dateFilter = `&StartDate=01/01/${year}&EndDate=12/31/${year}`;
+  }
+
+  // Cycle label for error messages
+  const cycleLabel = typeof quarter === 'number'
+    ? `${year}-Q${quarter}`
+    : (typeof year === 'number' ? String(year) : 'all');
 
   for (;;) {
     const url =
@@ -74,7 +103,7 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
       `?SearchTypeId=1&SearchTypeCategory=receipts` +
       `&CpfId=${encodeURIComponent(cpfId)}` +
       `&pageNumber=${pageNumber}&pageSize=${PAGE_SIZE}` +
-      yearFilter;
+      dateFilter;
 
     let response: Response;
     try {
@@ -84,13 +113,13 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
       response = await fetch(url, { signal: pageSignal });
     } catch (err) {
       throw new Error(
-        `[ocpfAdapter] fetch error cpfId=${cpfId} year=${year ?? 'all'} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
+        `[ocpfAdapter] fetch error cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
       );
     }
 
     if (response.status !== 200) {
       throw new Error(
-        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} year=${year ?? 'all'} page=${pageNumber}`
+        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}`
       );
     }
 
@@ -298,10 +327,12 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
 class OcpfAdapter implements SourceAdapter {
   private readonly year?: number;
   private readonly externalSignal?: AbortSignal;
+  private readonly quarter?: Quarter;
 
-  constructor(year?: number, externalSignal?: AbortSignal) {
+  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter) {
     this.year = year;
     this.externalSignal = externalSignal;
+    this.quarter = quarter;
   }
 
   name(): string {
@@ -310,7 +341,7 @@ class OcpfAdapter implements SourceAdapter {
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal);
+    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -355,8 +386,11 @@ class OcpfAdapter implements SourceAdapter {
  *   results to that single year. Omit to fetch the filer's full history (original behavior).
  * @param signal - Optional external AbortSignal. When provided, combined with the per-page
  *   30-second timeout via AbortSignal.any — whichever fires first cancels the in-flight fetch.
- *   Use with AbortController in the scheduler for per-year cancellation without heap leaks.
+ *   Use with AbortController in the scheduler for per-quarter cancellation without heap leaks.
+ * @param quarter - Optional 1-4. When provided alongside `year`, narrows StartDate/EndDate to
+ *   that calendar quarter. Used by the scheduler to chunk high-volume statewide sources into
+ *   ~37-second windows instead of ~295-page full-year fetches that exceed the 3-minute budget.
  */
-export function createOcpfAdapter(year?: number, signal?: AbortSignal): SourceAdapter {
-  return new OcpfAdapter(year, signal);
+export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1 | 2 | 3 | 4): SourceAdapter {
+  return new OcpfAdapter(year, signal, quarter);
 }
