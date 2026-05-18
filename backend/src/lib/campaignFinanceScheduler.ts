@@ -401,45 +401,28 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
             if (year !== currentYear && completedYears.has(yearStr)) {
               continue;
             }
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(new Error(
+              `[ocpf] per-year timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} year=${year}`
+            )), PER_YEAR_TIMEOUT_MS);
             try {
-              const adapter = createOcpfAdapter(year);
-              const timeoutPromise = new Promise<never>((_, reject) =>
-                setTimeout(
-                  () =>
-                    reject(
-                      new Error(
-                        `[ocpf] per-year timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} year=${year}`
-                      )
-                    ),
-                  PER_YEAR_TIMEOUT_MS
-                )
-              );
-              await Promise.race([runIngestion(adapter, ps, yearStr), timeoutPromise]);
-              console.log(
-                `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} done`
-              );
+              await runIngestion(createOcpfAdapter(year, controller.signal), ps, yearStr);
+              console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} done`);
             } catch (err) {
               console.error(
                 `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} error:`,
                 err instanceof Error ? err.message : String(err)
               );
-              // Clean zombie ingestion_run left by timeout (non-fatal)
-              await pool
-                .query(
-                  `UPDATE transparent_motivations.ingestion_runs
-                   SET status = 'failed', completed_at = NOW(), notes = $1
-                   WHERE status = 'running'
-                     AND politician_source_id = $2
-                     AND election_cycle = $3`,
-                  [err instanceof Error ? err.message : String(err), ps.id, yearStr]
-                )
-                .catch((cleanupErr: unknown) => {
-                  console.warn(
-                    `[campaignFinanceScheduler] ocpf: zombie cleanup failed (non-fatal):`,
-                    cleanupErr
-                  );
-                });
-              // Non-aborting: continue to next year
+              await pool.query(
+                `UPDATE transparent_motivations.ingestion_runs
+                 SET status = 'failed', completed_at = NOW(), notes = $1
+                 WHERE status = 'running'
+                   AND politician_source_id = $2
+                   AND election_cycle = $3`,
+                [err instanceof Error ? err.message : String(err), ps.id, yearStr]
+              ).catch((e: unknown) => console.warn('[campaignFinanceScheduler] ocpf: zombie cleanup failed:', e));
+            } finally {
+              clearTimeout(timeoutId);
             }
           }
         } catch (err) {

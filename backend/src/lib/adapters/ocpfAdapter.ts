@@ -3,8 +3,9 @@
  * Base URL: https://api.ocpf.us
  * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
  * No auth required. Paginate until items.length < pageSize.
- * Export: createOcpfAdapter(year?: number) — factory function.
+ * Export: createOcpfAdapter(year?: number, signal?: AbortSignal) — factory function.
  *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
+ *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-year timeout).
  *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
  */
 
@@ -57,7 +58,7 @@ interface OcpfItem {
 // Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string, year?: number): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
   let pageNumber = 1;
 
@@ -77,9 +78,10 @@ async function fetchOcpfReceipts(cpfId: string, year?: number): Promise<Record<s
 
     let response: Response;
     try {
-      response = await fetch(url, {
-        signal: AbortSignal.timeout(30_000),
-      });
+      const pageSignal = externalSignal
+        ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
+        : AbortSignal.timeout(30_000);
+      response = await fetch(url, { signal: pageSignal });
     } catch (err) {
       throw new Error(
         `[ocpfAdapter] fetch error cpfId=${cpfId} year=${year ?? 'all'} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
@@ -295,9 +297,11 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
 
 class OcpfAdapter implements SourceAdapter {
   private readonly year?: number;
+  private readonly externalSignal?: AbortSignal;
 
-  constructor(year?: number) {
+  constructor(year?: number, externalSignal?: AbortSignal) {
     this.year = year;
+    this.externalSignal = externalSignal;
   }
 
   name(): string {
@@ -306,7 +310,7 @@ class OcpfAdapter implements SourceAdapter {
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.year);
+    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -349,7 +353,10 @@ class OcpfAdapter implements SourceAdapter {
  * @param year - Optional calendar year to scope the fetch. When provided, the adapter
  *   appends StartDate=01/01/{year}&EndDate=12/31/{year} to the OCPF API URL, limiting
  *   results to that single year. Omit to fetch the filer's full history (original behavior).
+ * @param signal - Optional external AbortSignal. When provided, combined with the per-page
+ *   30-second timeout via AbortSignal.any — whichever fires first cancels the in-flight fetch.
+ *   Use with AbortController in the scheduler for per-year cancellation without heap leaks.
  */
-export function createOcpfAdapter(year?: number): SourceAdapter {
-  return new OcpfAdapter(year);
+export function createOcpfAdapter(year?: number, signal?: AbortSignal): SourceAdapter {
+  return new OcpfAdapter(year, signal);
 }
