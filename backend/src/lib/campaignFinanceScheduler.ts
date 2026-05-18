@@ -375,6 +375,7 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     case 'ocpf': {
       const OCPF_START_YEAR = 2001;
       const currentYear = new Date().getUTCFullYear();
+      const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, year)
 
       for (const ps of sources) {
         try {
@@ -402,7 +403,18 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
             }
             try {
               const adapter = createOcpfAdapter(year);
-              await runIngestion(adapter, ps, yearStr);
+              const timeoutPromise = new Promise<never>((_, reject) =>
+                setTimeout(
+                  () =>
+                    reject(
+                      new Error(
+                        `[ocpf] per-year timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} year=${year}`
+                      )
+                    ),
+                  PER_YEAR_TIMEOUT_MS
+                )
+              );
+              await Promise.race([runIngestion(adapter, ps, yearStr), timeoutPromise]);
               console.log(
                 `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} done`
               );
@@ -411,6 +423,22 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
                 `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} error:`,
                 err instanceof Error ? err.message : String(err)
               );
+              // Clean zombie ingestion_run left by timeout (non-fatal)
+              await pool
+                .query(
+                  `UPDATE transparent_motivations.ingestion_runs
+                   SET status = 'failed', completed_at = NOW(), notes = $1
+                   WHERE status = 'running'
+                     AND politician_source_id = $2
+                     AND election_cycle = $3`,
+                  [err instanceof Error ? err.message : String(err), ps.id, yearStr]
+                )
+                .catch((cleanupErr: unknown) => {
+                  console.warn(
+                    `[campaignFinanceScheduler] ocpf: zombie cleanup failed (non-fatal):`,
+                    cleanupErr
+                  );
+                });
               // Non-aborting: continue to next year
             }
           }
