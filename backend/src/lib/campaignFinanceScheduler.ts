@@ -177,6 +177,24 @@ export function currentFecCycle(): string {
 }
 
 // ---------------------------------------------------------------------------
+// OCPF quarter helper
+// ---------------------------------------------------------------------------
+
+/**
+ * isFutureQuarter returns true when the given (year, quarter) has not started yet
+ * as of `now`. Used to avoid creating ingestion_runs rows for quarters that
+ * cannot possibly have data yet (e.g. Q3 2026 in May 2026).
+ *
+ * A quarter is considered "arrived" once its first day has passed in UTC.
+ * Quarter start months: Q1=Jan (0), Q2=Apr (3), Q3=Jul (6), Q4=Oct (9).
+ */
+function isFutureQuarter(year: number, quarter: 1 | 2 | 3 | 4, now: Date): boolean {
+  const startMonth = (quarter - 1) * 3;
+  const quarterStart = Date.UTC(year, startMonth, 1);
+  return now.getTime() < quarterStart;
+}
+
+// ---------------------------------------------------------------------------
 // Adapter dispatch — runAdapterForAll
 // ---------------------------------------------------------------------------
 
@@ -374,55 +392,83 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
 
     case 'ocpf': {
       const OCPF_START_YEAR = 2001;
-      const currentYear = new Date().getUTCFullYear();
-      const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, year)
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, cycleKey)
 
       for (const ps of sources) {
         try {
-          // Query years already successfully completed for this source.
-          // Regex guard '^[0-9]{4}$' ignores legacy empty-string election_cycle rows
-          // left by the old all-history runs, so they don't mark any year as done.
-          const completedYearsResult = await pool.query<{ election_cycle: string }>(
+          // Query all completed cycle keys for this source. The regex matches BOTH
+          // legacy full-year entries ('YYYY') and new per-quarter entries ('YYYY-QN').
+          // Legacy empty-string election_cycle rows (very old all-history runs) are
+          // intentionally excluded by the regex so they don't mask any quarter.
+          const completedResult = await pool.query<{ election_cycle: string }>(
             `SELECT DISTINCT election_cycle
                FROM transparent_motivations.ingestion_runs
                WHERE adapter_name = 'ocpf'
                  AND politician_source_id = $1
                  AND status IN ('completed', 'completed_with_warning')
-                 AND election_cycle ~ '^[0-9]{4}$'`,
+                 AND election_cycle ~ '^[0-9]{4}(-Q[1-4])?$'`,
             [ps.id]
           );
-          const completedYears = new Set<string>(
-            completedYearsResult.rows.map((r) => r.election_cycle)
+          const completedCycles = new Set<string>(
+            completedResult.rows.map((r) => r.election_cycle)
           );
 
           for (let year = OCPF_START_YEAR; year <= currentYear; year++) {
             const yearStr = String(year);
-            // Always re-run the current year (catches late filings); skip prior completed years
-            if (year !== currentYear && completedYears.has(yearStr)) {
+
+            // Backward-compat: if a full-year run completed previously, treat all
+            // four quarters of that year as done. Do NOT re-fetch them.
+            // Exception: always continue into current year (catches late filings).
+            if (year !== currentYear && completedCycles.has(yearStr)) {
               continue;
             }
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(new Error(
-              `[ocpf] per-year timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} year=${year}`
-            )), PER_YEAR_TIMEOUT_MS);
-            try {
-              await runIngestion(createOcpfAdapter(year, controller.signal), ps, yearStr);
-              console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} done`);
-            } catch (err) {
-              console.error(
-                `[campaignFinanceScheduler] ocpf: source=${ps.id} year=${year} error:`,
-                err instanceof Error ? err.message : String(err)
-              );
-              await pool.query(
-                `UPDATE transparent_motivations.ingestion_runs
-                 SET status = 'failed', completed_at = NOW(), notes = $1
-                 WHERE status = 'running'
-                   AND politician_source_id = $2
-                   AND election_cycle = $3`,
-                [err instanceof Error ? err.message : String(err), ps.id, yearStr]
-              ).catch((e: unknown) => console.warn('[campaignFinanceScheduler] ocpf: zombie cleanup failed:', e));
-            } finally {
-              clearTimeout(timeoutId);
+
+            // Active quarter of the current year (1-4, UTC month-based)
+            const activeQuarter = (Math.floor(now.getUTCMonth() / 3) + 1) as 1 | 2 | 3 | 4;
+
+            for (let q = 1 as 1 | 2 | 3 | 4; q <= 4; q = (q + 1) as 1 | 2 | 3 | 4) {
+              // Skip quarters whose first calendar day has not arrived yet
+              if (isFutureQuarter(year, q, now)) continue;
+
+              const cycleKey = `${year}-Q${q}`;
+
+              // Skip already-completed quarters, EXCEPT for the active quarter of the
+              // current year which is re-run on every tick to catch late filings.
+              const isCurrentActiveQuarter = (year === currentYear && q === activeQuarter);
+              if (completedCycles.has(cycleKey) && !isCurrentActiveQuarter) {
+                continue;
+              }
+
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(new Error(
+                `[ocpf] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
+              )), PER_YEAR_TIMEOUT_MS);
+
+              try {
+                await runIngestion(
+                  createOcpfAdapter(year, controller.signal, q),
+                  ps,
+                  cycleKey
+                );
+                console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} cycle=${cycleKey} done`);
+              } catch (err) {
+                console.error(
+                  `[campaignFinanceScheduler] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
+                  err instanceof Error ? err.message : String(err)
+                );
+                await pool.query(
+                  `UPDATE transparent_motivations.ingestion_runs
+                   SET status = 'failed', completed_at = NOW(), notes = $1
+                   WHERE status = 'running'
+                     AND politician_source_id = $2
+                     AND election_cycle = $3`,
+                  [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
+                ).catch((e: unknown) => console.warn('[campaignFinanceScheduler] ocpf: zombie cleanup failed:', e));
+              } finally {
+                clearTimeout(timeoutId);
+              }
             }
           }
         } catch (err) {
