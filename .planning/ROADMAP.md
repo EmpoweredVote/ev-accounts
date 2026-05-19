@@ -784,7 +784,11 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 
 **Requirements:** SENA-01, SENA-02, SENA-03
 
-**Plans:** 1–2 plans expected
+**Plans:** 2 plans
+
+Plans:
+- [ ] 73-01-PLAN.md — migration 175: insert 42 new senators (AK–MS) + photo backfill for 4 existing CA/IN senators
+- [ ] 73-02-PLAN.md — migration 176: insert 44 new senators (MT–WY, incl. 2 appointed) + photo backfill for 6 existing MA/ME/TX senators
 
 **Success Criteria:**
 
