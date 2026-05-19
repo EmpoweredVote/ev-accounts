@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.3 US Senate Coverage — Phases 72–74. Run `/gsd:plan-phase 72` to start.
+**Current focus:** v2.3 US Senate Coverage — Phase 72 complete. Run `/gsd:plan-phase 73` to continue.
 **Last shipped:** v2.2 TIGER District Geofencing — CA TIGER geofencing live, Path 0 fast path, school districts on Profile Location tab.
 
 ## Current Position
 
-**Phase 72 Plan 01 COMPLETE 2026-05-19 — migration 174 applied, 50 NATIONAL_UPPER districts with government_id FKs live.**
+**Phase 72 COMPLETE 2026-05-19 — migration 174 applied, 50 NATIONAL_UPPER districts + government_id FK column live. Phase 73 next.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
-v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. DEFINED 2026-05-19. Phase 72 next.
+v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. Phase 72 complete 2026-05-19. Phase 73 next.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -30,7 +30,9 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Last activity: 2026-05-19 — Phase 72 Plan 01 complete. Migration 174 applied: 50 NATIONAL_UPPER districts + government_id column + 46 government stubs + CA/IN cleanup.
+Phase 72 (Senate Infrastructure) COMPLETE 2026-05-19: 1/1 plans, SINF-01 + SINF-02 verified. Migration 174 applied — essentials.districts.government_id column added, 46 government stubs (MA + 45 states) created, 45 NATIONAL_UPPER districts added (CA/IN/MA/ME/TX already existed), CA junk row deleted, IN orphan row deleted + Todd Young reassigned. 50 NATIONAL_UPPER districts total, all FK'd to government rows. Phase 73 can now create 100 senator offices.
+
+Last activity: 2026-05-19 — Phase 72 complete. Phase 73 (Senator Records) is next.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -38,14 +40,14 @@ Last activity: 2026-05-19 — Phase 72 Plan 01 complete. Migration 174 applied: 
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 🔄(1/1 plans done) Phase 73 — Phase 74 —
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 — Phase 74 —
 
 ## Performance Metrics
 
 **v2.3 Scope — US Senate Coverage — IN PROGRESS**
 - Phases: 3 (72–74)
 - Requirements: 8 (SINF-01–02, SENA-01–03, SSTA-01–03)
-- Plans complete: 0
+- Plans complete: 1 (Phase 72: 1/1)
 - Plans total: TBD (determined per phase during planning)
 
 **v2.2 Scope — TIGER District Geofencing — COMPLETE**

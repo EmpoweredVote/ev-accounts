@@ -8,8 +8,8 @@
 
 ### Senate Infrastructure (SINF)
 
-- [ ] **SINF-01**: NATIONAL_UPPER district records exist in `essentials.districts` for all 50 US states — 45 new state entries added alongside the existing CA, IN, MA, ME, TX entries
-- [ ] **SINF-02**: Government records exist in `essentials.governments` for all 50 states, providing the anchor rows the NATIONAL_UPPER districts FK to (minimal stubs for states without existing full government records)
+- [x] **SINF-01**: NATIONAL_UPPER district records exist in `essentials.districts` for all 50 US states — 45 new state entries added alongside the existing CA, IN, MA, ME, TX entries
+- [x] **SINF-02**: Government records exist in `essentials.governments` for all 50 states, providing the anchor rows the NATIONAL_UPPER districts FK to (minimal stubs for states without existing full government records)
 
 ### Senator Records (SENA)
 
@@ -52,8 +52,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SINF-01 | Phase 72 | Pending |
-| SINF-02 | Phase 72 | Pending |
+| SINF-01 | Phase 72 | Complete |
+| SINF-02 | Phase 72 | Complete |
 | SENA-01 | Phase 73 | Pending |
 | SENA-02 | Phase 73 | Pending |
 | SENA-03 | Phase 73 | Pending |

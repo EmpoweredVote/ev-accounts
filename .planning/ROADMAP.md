@@ -890,6 +890,6 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 | 69. TIGER Schema + Data Import | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
 | 70. Geofencing Backend Integration | v2.2 ✅ | 4/4 | Complete | 2026-05-10 |
 | 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
-| 72. Senate Infrastructure | v2.3 | 0/? | Pending | — |
+| 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
 | 73. Senator Records | v2.3 | 0/? | Pending | — |
 | 74. Stance Research + Ingestion | v2.3 | 0/? | Pending | — |
