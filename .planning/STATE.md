@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.3 US Senate Coverage — Phase 72 complete. Run `/gsd:plan-phase 73` to continue.
+**Current focus:** v2.3 US Senate Coverage — Phase 73 plan 01 complete. Run plan 73-02 to add the remaining 48 senators (MT–WY).
 **Last shipped:** v2.2 TIGER District Geofencing — CA TIGER geofencing live, Path 0 fast path, school districts on Profile Location tab.
 
 ## Current Position
 
-**Phase 72 COMPLETE 2026-05-19 — migration 174 applied, 50 NATIONAL_UPPER districts + government_id FK column live. Phase 73 next.**
+**Phase 73 plan 01 COMPLETE 2026-05-19 — migration 175 applied, 42 new senators (AK-MS) + offices + photos live. Plan 73-02 next.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
-v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. Phase 72 complete 2026-05-19. Phase 73 next.
+v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. Phase 72 complete 2026-05-19. Phase 73 plan 01 complete 2026-05-19.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -31,8 +31,9 @@ Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
 Phase 72 (Senate Infrastructure) COMPLETE 2026-05-19: 1/1 plans, SINF-01 + SINF-02 verified. Migration 174 applied — essentials.districts.government_id column added, 46 government stubs (MA + 45 states) created, 45 NATIONAL_UPPER districts added (CA/IN/MA/ME/TX already existed), CA junk row deleted, IN orphan row deleted + Todd Young reassigned. 50 NATIONAL_UPPER districts total, all FK'd to government rows. Phase 73 can now create 100 senator offices.
+Phase 73 (Senator Records) plan 01 COMPLETE 2026-05-19: Migration 175 applied — 42 new senator rows (AK-MS, external_ids -400001 to -400042), 42 office rows on correct NATIONAL_UPPER districts, all 42 have GitHub CDN photos, Adam B. Schiff + Todd Young + Jim Banks photo backfill done. Total NATIONAL_UPPER senators: 52. Bioguide correction: Cindy Hyde-Smith H001102→H001079. Plan 73-02 next (48 senators MT-WY + 6 existing-senator photo backfills for MA/ME/TX).
 
-Last activity: 2026-05-19 — Phase 72 complete. Phase 73 (Senator Records) is next.
+Last activity: 2026-05-19 — Phase 73 plan 01 complete. Run plan 73-02 to continue senator ingestion (MT-WY).
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -131,6 +132,14 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 - **government_id FK on NATIONAL_UPPER districts**: `essentials.districts.government_id UUID REFERENCES essentials.governments(id)` added in migration 174. All 50 NATIONAL_UPPER rows are now FK'd to a canonical state government row. Phase 73 senator office inserts should join through `NATIONAL_UPPER.state` to find the correct `district_id`.
 - **IN duplicate governments**: Indiana has 22 identical "State of Indiana" rows in `essentials.governments`. Queries that resolve `government_id` for IN must use `ORDER BY g.id LIMIT 1` to avoid ambiguity. Do not attempt to deduplicate — these rows may have downstream references.
 - **Migration number correction**: Original plan said 172; corrected to 174 because quick tasks 52-01 and 52-02 consumed 172 and 173 after the plan was authored. Always verify last applied migration before writing a new one.
+
+### v2.3 Senator Records Patterns (from 73-01)
+
+- **Bioguide pre-verification**: Before writing any senator migration, curl HEAD-check each flagged bioguide ID against `https://unitedstates.github.io/images/congress/225x275/{BIOGUIDE}.jpg`. If 404, fetch `legislators-current.yaml` from unitedstates/congress-legislators repo and grep for the senator's name to get the authoritative bioguide. H001102 for Cindy Hyde-Smith returned 404; correct ID is H001079 per legislators-current.yaml.
+- **DB full_name check before name-based backfill SQL**: Always query the live DB (`SELECT p.full_name FROM essentials.politicians p JOIN essentials.offices o ... WHERE d.district_type = 'NATIONAL_UPPER'`) before writing `WHERE p.full_name = '...'` conditions. Adam Schiff's DB row is `'Adam B. Schiff'` (not `'Adam Schiff'`); wrong name silently matches 0 rows.
+- **External_id range -400001 to -400042 consumed by 73-01 (AK-MS)**. Plan 73-02 must use -400043 onward (or any distinct range not overlapping -400001 to -400042).
+- **Alex Padilla existing photo**: Padilla's row has a city-of-Inglewood URL (non-null). The IS NULL OR = '' guard correctly skips it. Verification by non-null count still passes. Acceptable.
+- **Next migration number**: 176 (migration 175 consumed by plan 73-01).
 
 ### v2.2 Migration Signature-Change Pattern (from 71-02)
 
@@ -304,5 +313,5 @@ None for v2.3 start.
 ## Session Continuity
 
 Last session: 2026-05-19
-Stopped at: Phase 72 Plan 01 complete — migration 174 applied and verified. Run `/gsd:plan-phase 73` to begin Senator Records.
+Stopped at: Phase 73 Plan 01 complete — migration 175 applied and verified. 42 senators (AK-MS) + offices + photos live. Run plan 73-02 for the remaining 48 senators (MT-WY).
 Resume file: None
