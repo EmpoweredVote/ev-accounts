@@ -13,9 +13,9 @@
 
 ### Senator Records (SENA)
 
-- [ ] **SENA-01**: All 100 sitting 119th Congress US Senators have politician records in `essentials.politicians` (90 new records; CA, IN, MA, ME, TX senators already exist)
-- [ ] **SENA-02**: All 100 senators have office records in `essentials.offices` with correct `district_id` linking to their state's NATIONAL_UPPER district row
-- [ ] **SENA-03**: All 100 senators have `photo_origin_url` populated from an official Senate source or Wikipedia (empty string replaced with actual URL)
+- [x] **SENA-01**: All 100 sitting 119th Congress US Senators have politician records in `essentials.politicians` (90 new records; CA, IN, MA, ME, TX senators already exist)
+- [x] **SENA-02**: All 100 senators have office records in `essentials.offices` with correct `district_id` linking to their state's NATIONAL_UPPER district row
+- [x] **SENA-03**: All 100 senators have `photo_origin_url` populated from an official Senate source or Wikipedia (empty string replaced with actual URL)
 
 ### Stance Data (SSTA)
 
@@ -54,9 +54,9 @@
 |-------------|-------|--------|
 | SINF-01 | Phase 72 | Complete |
 | SINF-02 | Phase 72 | Complete |
-| SENA-01 | Phase 73 | Pending |
-| SENA-02 | Phase 73 | Pending |
-| SENA-03 | Phase 73 | Pending |
+| SENA-01 | Phase 73 | Complete |
+| SENA-02 | Phase 73 | Complete |
+| SENA-03 | Phase 73 | Complete |
 | SSTA-01 | Phase 74 | Pending |
 | SSTA-02 | Phase 74 | Pending |
 | SSTA-03 | Phase 74 | Pending |

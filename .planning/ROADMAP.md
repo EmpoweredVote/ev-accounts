@@ -787,8 +787,8 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 **Plans:** 2 plans
 
 Plans:
-- [ ] 73-01-PLAN.md — migration 175: insert 42 new senators (AK–MS) + photo backfill for 4 existing CA/IN senators
-- [ ] 73-02-PLAN.md — migration 176: insert 44 new senators (MT–WY, incl. 2 appointed) + photo backfill for 6 existing MA/ME/TX senators
+- [x] 73-01-PLAN.md — migration 175: insert 42 new senators (AK–MS) + photo backfill for 4 existing CA/IN senators
+- [x] 73-02-PLAN.md — migration 176: insert 48 new senators (MT–WY, incl. 2 appointed) + photo backfill for 6 existing MA/ME/TX senators
 
 **Success Criteria:**
 
@@ -895,5 +895,5 @@ Plans:
 | 70. Geofencing Backend Integration | v2.2 ✅ | 4/4 | Complete | 2026-05-10 |
 | 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
 | 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
-| 73. Senator Records | v2.3 | 0/? | Pending | — |
+| 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
 | 74. Stance Research + Ingestion | v2.3 | 0/? | Pending | — |
