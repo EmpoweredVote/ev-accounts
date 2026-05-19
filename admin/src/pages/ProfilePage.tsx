@@ -716,7 +716,7 @@ export default function ProfilePage() {
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 mb-5">
             <nav className="flex gap-1">
               {(['profile', 'location', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
-                if (tab === 'location' && !cp) return null;
+                if (tab === 'location' && !cp && !profile.inform_profile?.last_essentials_location) return null;
                 if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
                 const isActive = activeTab === tab;
                 return (
