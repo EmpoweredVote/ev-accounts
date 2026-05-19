@@ -19,8 +19,9 @@ SELECT mtfcc, COUNT(*) AS row_count
 FROM essentials.geofence_boundaries
 WHERE state = '25'
 GROUP BY mtfcc ORDER BY mtfcc;
--- Expected: G4020|14, G4110|58, G5200|9, G5210|40, G5220|160
+-- Expected: G4020|14, G4040|293, G4110|58, G5200|9, G5210|40, G5220|160
 -- NOTE: G4110=58 (58 incorporated cities with city charters; 293 MA towns are G4040 COUSUB, not loaded in Phase 38)
+-- NOTE: G4040=293 loaded in Phase 48 (MA towns via COUSUB, FUNCSTAT='A')
 
 -- Cambridge place boundary (MAGEO-03)
 SELECT geo_id, name, mtfcc
@@ -73,3 +74,42 @@ WHERE state = '25'
   AND ST_Covers(geometry, ST_SetSRID(ST_MakePoint(-71.0990, 42.3790), 4326))
   AND mtfcc = 'G4110';
 -- Expected: 1 row with name='Somerville city' (geo_id='2562535')
+
+-- ─── Phase 48: G4040 COUSUB town gates ──────────────────────────────────────
+
+-- MACOUSUB-01: Total active town count — MUST return exactly 293
+SELECT COUNT(*) AS cousub_count
+FROM essentials.geofence_boundaries
+WHERE state = '25' AND mtfcc = 'G4040';
+-- Expected: 293
+
+-- MACOUSUB-02: Cambridge MUST NOT appear in G4040 (FUNCSTAT='F' correctly excluded)
+SELECT COUNT(*) AS cambridge_cousub_count
+FROM essentials.geofence_boundaries
+WHERE state = '25' AND mtfcc = 'G4040' AND geo_id = '2501711000';
+-- Expected: 0
+
+-- MACOUSUB-03: Lexington town boundary present
+SELECT geo_id, name, mtfcc
+FROM essentials.geofence_boundaries
+WHERE state = '25' AND mtfcc = 'G4040' AND geo_id = '2501735215';
+-- Expected: 1 row, name includes 'Lexington'
+
+-- MACOUSUB-04: Concord town boundary present
+SELECT geo_id, name, mtfcc
+FROM essentials.geofence_boundaries
+WHERE state = '25' AND mtfcc = 'G4040' AND geo_id = '2501715060';
+-- Expected: 1 row, name includes 'Concord'
+
+-- MACOUSUB-05: No invalid geometries in G4040 layer
+SELECT COUNT(*) AS invalid_cousub_count
+FROM essentials.geofence_boundaries
+WHERE state = '25' AND mtfcc = 'G4040' AND NOT ST_IsValid(geometry);
+-- Expected: 0
+
+-- MACOUSUB-06: Complete MA picture after Phase 48
+SELECT mtfcc, COUNT(*) AS row_count
+FROM essentials.geofence_boundaries
+WHERE state = '25'
+GROUP BY mtfcc ORDER BY mtfcc;
+-- Expected: G4020|14, G4040|293, G4110|58, G5200|9, G5210|40, G5220|160
