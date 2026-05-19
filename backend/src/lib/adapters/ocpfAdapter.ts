@@ -95,16 +95,16 @@ function monthDateRange(year: number, month: Month): { start: string; end: strin
 // Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
   let pageNumber = 1;
 
-  // Date filter: month takes precedence over quarter when both are provided.
-  // Per-month when year+month; per-quarter when year+quarter; per-year when only year;
-  // omitted for full-history fetches. OCPF expects MM/DD/YYYY format.
+  // Date filter: dateOverride takes precedence over all other params.
+  // Otherwise: month > quarter > year > full-history. OCPF expects MM/DD/YYYY.
   let dateFilter = '';
-  if (typeof year === 'number' && typeof month === 'number') {
-    // month takes precedence over quarter when both are provided
+  if (dateOverride) {
+    dateFilter = `&StartDate=${dateOverride.start}&EndDate=${dateOverride.end}`;
+  } else if (typeof year === 'number' && typeof month === 'number') {
     const { start, end } = monthDateRange(year, month);
     dateFilter = `&StartDate=${start}&EndDate=${end}`;
   } else if (typeof year === 'number' && typeof quarter === 'number') {
@@ -353,12 +353,14 @@ class OcpfAdapter implements SourceAdapter {
   private readonly externalSignal?: AbortSignal;
   private readonly quarter?: Quarter;
   private readonly month?: Month;
+  private readonly dateOverride?: { start: string; end: string };
 
-  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month) {
+  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }) {
     this.year = year;
     this.externalSignal = externalSignal;
     this.quarter = quarter;
     this.month = month;
+    this.dateOverride = dateOverride;
   }
 
   name(): string {
@@ -367,7 +369,7 @@ class OcpfAdapter implements SourceAdapter {
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter, this.month);
+    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter, this.month, this.dateOverride);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -420,7 +422,9 @@ class OcpfAdapter implements SourceAdapter {
  *   that single calendar month. month takes precedence over quarter when both are provided.
  *   Used by the high-volume ingest script to split statewide filers (~75k/quarter = ~25k/month)
  *   into ~50-second windows, well within the 3-minute timeout budget.
+ * @param dateOverride - Optional explicit {start, end} in MM/DD/YYYY format. Overrides all
+ *   other date params. Used for week-granularity chunks on extremely high-volume filers.
  */
-export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month): SourceAdapter {
-  return new OcpfAdapter(year, signal, quarter, month);
+export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month, dateOverride?: { start: string; end: string }): SourceAdapter {
+  return new OcpfAdapter(year, signal, quarter, month, dateOverride);
 }

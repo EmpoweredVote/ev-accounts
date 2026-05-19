@@ -38,6 +38,12 @@ const HIGH_VOLUME_CPFIDS = new Set<string>([
   '15931', '15710', '15483', '13736', '10176',
 ]);
 
+/**
+ * Subset that are so large they time out even at monthly granularity (~300 pages/month).
+ * These use 7-day weekly chunks (~70 pages/week = ~35s) with cycle keys YYYY-WNN.
+ */
+const WEEK_GRANULARITY_CPFIDS = new Set<string>(['15931', '15710']);
+
 const OCPF_START_YEAR = 2001;
 const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // kept for naming consistency with cambridge script
 
@@ -52,6 +58,38 @@ const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // kept for naming consistency with c
 function isFutureMonth(year: number, month: Month, now: Date): boolean {
   const monthStart = Date.UTC(year, month - 1, 1);
   return now.getTime() < monthStart;
+}
+
+/**
+ * weekWindows returns all 7-day windows for a calendar year as
+ * { weekNum, start, end } objects. The last window extends to Dec 31
+ * to avoid leaving a gap. Dates are in MM/DD/YYYY format for the OCPF API.
+ */
+function weekWindows(year: number): Array<{ weekNum: number; start: string; end: string }> {
+  const fmt = (d: Date) => {
+    const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+    const dd = String(d.getUTCDate()).padStart(2, '0');
+    return `${mm}/${dd}/${d.getUTCFullYear()}`;
+  };
+  const windows: Array<{ weekNum: number; start: string; end: string }> = [];
+  let cursor = new Date(Date.UTC(year, 0, 1)); // Jan 1
+  const yearEnd = new Date(Date.UTC(year, 11, 31)); // Dec 31
+  let weekNum = 1;
+  while (cursor <= yearEnd) {
+    const windowStart = new Date(cursor);
+    const windowEnd = new Date(Date.UTC(cursor.getUTCFullYear(), cursor.getUTCMonth(), cursor.getUTCDate() + 6));
+    const effectiveEnd = windowEnd > yearEnd ? yearEnd : windowEnd;
+    windows.push({ weekNum, start: fmt(windowStart), end: fmt(effectiveEnd) });
+    cursor = new Date(Date.UTC(effectiveEnd.getUTCFullYear(), effectiveEnd.getUTCMonth(), effectiveEnd.getUTCDate() + 1));
+    weekNum++;
+  }
+  return windows;
+}
+
+function isFutureWeek(weekEnd: string, now: Date): boolean {
+  // weekEnd is MM/DD/YYYY
+  const [mm, dd, yyyy] = weekEnd.split('/').map(Number);
+  return now.getTime() < Date.UTC(yyyy, mm - 1, dd + 1);
 }
 
 // ---------------------------------------------------------------------------
@@ -146,74 +184,123 @@ for (const ps of filteredSources) {
     //   - new per-month entries ('YYYY-MNN')
     // Legacy empty-string election_cycle rows (very old all-history runs) are
     // intentionally excluded by the regex so they don't mask any month.
+    // Regex matches all supported cycle key formats including new YYYY-WNN
     const completedResult = await pool.query<{ election_cycle: string }>(
       `SELECT DISTINCT election_cycle
          FROM transparent_motivations.ingestion_runs
          WHERE adapter_name = 'ocpf'
            AND politician_source_id = $1
            AND status IN ('completed', 'completed_with_warning')
-           AND election_cycle ~ '^[0-9]{4}(-Q[1-4]|-M(0[1-9]|1[0-2]))?$'`,
+           AND election_cycle ~ '^[0-9]{4}(-Q[1-4]|-M(0[1-9]|1[0-2])|-W[0-9]{2})?$'`,
       [ps.id]
     );
     const completedCycles = new Set<string>(
       completedResult.rows.map((r) => r.election_cycle)
     );
 
+    const useWeekly = WEEK_GRANULARITY_CPFIDS.has(ps.external_id);
+
     for (let year = OCPF_START_YEAR; year <= currentYear; year++) {
       const yearStr = String(year);
 
-      // Backward-compat: full-year run already completed — skip all months
+      // Backward-compat: full-year run already completed — skip everything
       if (year !== currentYear && completedCycles.has(yearStr)) {
         continue;
       }
 
-      const activeMonth = (now.getUTCMonth() + 1) as Month;
+      if (useWeekly) {
+        // ── Weekly path for extremely high-volume sources ──────────────────
+        for (const { weekNum, start, end } of weekWindows(year)) {
+          if (isFutureWeek(end, now)) continue;
 
-      for (let m = 1; m <= 12; m++) {
-        const month = m as Month;
+          const cycleKey = `${year}-W${String(weekNum).padStart(2, '0')}`;
 
-        if (isFutureMonth(year, month, now)) continue;
+          // Backward-compat: if the month containing this week's start date
+          // was already completed at monthly granularity, skip.
+          const [mm] = start.split('/').map(Number);
+          const monthKey = `${year}-M${String(mm).padStart(2, '0')}`;
+          const quarter = Math.ceil(mm / 3) as 1|2|3|4;
+          const quarterKey = `${year}-Q${quarter}`;
 
-        const cycleKey = `${year}-M${String(month).padStart(2, '0')}`;
+          if (completedCycles.has(cycleKey) || completedCycles.has(monthKey) || completedCycles.has(quarterKey)) {
+            continue;
+          }
 
-        // Backward-compat: quarter that contains this month was already completed
-        const quarter = Math.ceil(month / 3) as 1 | 2 | 3 | 4;
-        const quarterKey = `${year}-Q${quarter}`;
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(new Error(
+            `[ocpf-highvolume] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
+          )), PER_YEAR_TIMEOUT_MS);
 
-        const isCurrentActiveMonth = (year === currentYear && month === activeMonth);
-
-        // Skip if: full-quarter done, or this exact month done — unless it's the active month
-        if (!isCurrentActiveMonth && (completedCycles.has(quarterKey) || completedCycles.has(cycleKey))) {
-          continue;
+          try {
+            await runIngestion(
+              createOcpfAdapter(undefined, controller.signal, undefined, undefined, { start, end }),
+              ps,
+              cycleKey
+            );
+            console.log(`[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} done`);
+          } catch (err) {
+            console.error(
+              `[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
+              err instanceof Error ? err.message : String(err)
+            );
+            await pool.query(
+              `UPDATE transparent_motivations.ingestion_runs
+               SET status = 'failed', completed_at = NOW(), notes = $1
+               WHERE status = 'running'
+                 AND politician_source_id = $2
+                 AND election_cycle = $3`,
+              [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
+            ).catch((e: unknown) => console.warn('[run-highvolume-ocpf] zombie cleanup failed:', e));
+          } finally {
+            clearTimeout(timeoutId);
+          }
         }
+      } else {
+        // ── Monthly path for regular high-volume sources ───────────────────
+        const activeMonth = (now.getUTCMonth() + 1) as Month;
 
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(new Error(
-          `[ocpf-highvolume] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
-        )), PER_YEAR_TIMEOUT_MS);
+        for (let m = 1; m <= 12; m++) {
+          const month = m as Month;
 
-        try {
-          await runIngestion(
-            createOcpfAdapter(year, controller.signal, undefined, month),
-            ps,
-            cycleKey
-          );
-          console.log(`[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} done`);
-        } catch (err) {
-          console.error(
-            `[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
-            err instanceof Error ? err.message : String(err)
-          );
-          await pool.query(
-            `UPDATE transparent_motivations.ingestion_runs
-             SET status = 'failed', completed_at = NOW(), notes = $1
-             WHERE status = 'running'
-               AND politician_source_id = $2
-               AND election_cycle = $3`,
-            [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
-          ).catch((e: unknown) => console.warn('[run-highvolume-ocpf] zombie cleanup failed:', e));
-        } finally {
-          clearTimeout(timeoutId);
+          if (isFutureMonth(year, month, now)) continue;
+
+          const cycleKey = `${year}-M${String(month).padStart(2, '0')}`;
+          const quarter = Math.ceil(month / 3) as 1 | 2 | 3 | 4;
+          const quarterKey = `${year}-Q${quarter}`;
+          const isCurrentActiveMonth = (year === currentYear && month === activeMonth);
+
+          if (!isCurrentActiveMonth && (completedCycles.has(quarterKey) || completedCycles.has(cycleKey))) {
+            continue;
+          }
+
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(new Error(
+            `[ocpf-highvolume] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
+          )), PER_YEAR_TIMEOUT_MS);
+
+          try {
+            await runIngestion(
+              createOcpfAdapter(year, controller.signal, undefined, month),
+              ps,
+              cycleKey
+            );
+            console.log(`[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} done`);
+          } catch (err) {
+            console.error(
+              `[run-highvolume-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
+              err instanceof Error ? err.message : String(err)
+            );
+            await pool.query(
+              `UPDATE transparent_motivations.ingestion_runs
+               SET status = 'failed', completed_at = NOW(), notes = $1
+               WHERE status = 'running'
+                 AND politician_source_id = $2
+                 AND election_cycle = $3`,
+              [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
+            ).catch((e: unknown) => console.warn('[run-highvolume-ocpf] zombie cleanup failed:', e));
+          } finally {
+            clearTimeout(timeoutId);
+          }
         }
       }
     }
