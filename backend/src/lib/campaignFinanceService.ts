@@ -1692,6 +1692,9 @@ export interface CouncilVotesResponse {
   politician_id: string;
   votes: CouncilVote[];
   total: number;
+  yes_total: number;
+  no_total: number;
+  absent_total: number;
 }
 
 /**
@@ -1705,14 +1708,22 @@ export async function getCouncilVotes(
   const limit = Math.min(options.limit ?? 50, 100);
   const offset = options.offset ?? 0;
 
-  const countResult = await pool.query<{ cnt: string }>(
-    `SELECT COUNT(*) AS cnt FROM meetings.la_council_votes WHERE politician_id = $1`,
+  const countResult = await pool.query<{ cnt: string; yes_cnt: string; no_cnt: string; absent_cnt: string }>(
+    `SELECT
+       COUNT(*) AS cnt,
+       COUNT(*) FILTER (WHERE vote = 'YES') AS yes_cnt,
+       COUNT(*) FILTER (WHERE vote = 'NO') AS no_cnt,
+       COUNT(*) FILTER (WHERE vote = 'ABSENT') AS absent_cnt
+     FROM meetings.la_council_votes WHERE politician_id = $1`,
     [politicianId]
   );
   const total = Number(countResult.rows[0]?.cnt ?? 0);
+  const yes_total = Number(countResult.rows[0]?.yes_cnt ?? 0);
+  const no_total = Number(countResult.rows[0]?.no_cnt ?? 0);
+  const absent_total = Number(countResult.rows[0]?.absent_cnt ?? 0);
 
   if (total === 0) {
-    return { politician_id: politicianId, votes: [], total: 0 };
+    return { politician_id: politicianId, votes: [], total: 0, yes_total: 0, no_total: 0, absent_total: 0 };
   }
 
   const result = await pool.query<{
@@ -1740,5 +1751,5 @@ export async function getCouncilVotes(
     item_number: r.item_number ?? '',
   }));
 
-  return { politician_id: politicianId, votes, total };
+  return { politician_id: politicianId, votes, total, yes_total, no_total, absent_total };
 }
