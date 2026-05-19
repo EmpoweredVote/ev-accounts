@@ -3,9 +3,10 @@
  * Base URL: https://api.ocpf.us
  * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
  * No auth required. Paginate until items.length < pageSize.
- * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4) — factory function.
+ * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month) — factory function.
  *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
  *   Pass a year + quarter to scope to a single calendar quarter (e.g. Q2 = Apr 1 – Jun 30).
+ *   Pass a year + month to scope to a single calendar month (month takes precedence over quarter).
  *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-quarter timeout).
  *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
  */
@@ -56,10 +57,11 @@ interface OcpfItem {
 }
 
 // ---------------------------------------------------------------------------
-// Quarter helper
+// Quarter and Month helpers
 // ---------------------------------------------------------------------------
 
 type Quarter = 1 | 2 | 3 | 4;
+export type Month = 1|2|3|4|5|6|7|8|9|10|11|12;
 
 /**
  * quarterDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
@@ -74,18 +76,38 @@ function quarterDateRange(year: number, quarter: Quarter): { start: string; end:
   }
 }
 
+/**
+ * monthDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
+ * given calendar month. Uses new Date(year, month, 0).getDate() for correct
+ * last-day-of-month calculation including leap years.
+ */
+function monthDateRange(year: number, month: Month): { start: string; end: string } {
+  const mm = String(month).padStart(2, '0');
+  const lastDay = new Date(year, month, 0).getDate();
+  const dd = String(lastDay).padStart(2, '0');
+  return {
+    start: `${mm}/01/${year}`,
+    end:   `${mm}/${dd}/${year}`,
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter): Promise<Record<string, unknown>[]> {
+async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month): Promise<Record<string, unknown>[]> {
   const allItems: Record<string, unknown>[] = [];
   let pageNumber = 1;
 
-  // Date filter: per-quarter when both year and quarter are provided; per-year when only year;
+  // Date filter: month takes precedence over quarter when both are provided.
+  // Per-month when year+month; per-quarter when year+quarter; per-year when only year;
   // omitted for full-history fetches. OCPF expects MM/DD/YYYY format.
   let dateFilter = '';
-  if (typeof year === 'number' && typeof quarter === 'number') {
+  if (typeof year === 'number' && typeof month === 'number') {
+    // month takes precedence over quarter when both are provided
+    const { start, end } = monthDateRange(year, month);
+    dateFilter = `&StartDate=${start}&EndDate=${end}`;
+  } else if (typeof year === 'number' && typeof quarter === 'number') {
     const { start, end } = quarterDateRange(year, quarter);
     dateFilter = `&StartDate=${start}&EndDate=${end}`;
   } else if (typeof year === 'number') {
@@ -93,9 +115,11 @@ async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: 
   }
 
   // Cycle label for error messages
-  const cycleLabel = typeof quarter === 'number'
-    ? `${year}-Q${quarter}`
-    : (typeof year === 'number' ? String(year) : 'all');
+  const cycleLabel = typeof month === 'number'
+    ? `${year}-M${String(month).padStart(2, '0')}`
+    : (typeof quarter === 'number'
+        ? `${year}-Q${quarter}`
+        : (typeof year === 'number' ? String(year) : 'all'));
 
   for (;;) {
     const url =
@@ -328,11 +352,13 @@ class OcpfAdapter implements SourceAdapter {
   private readonly year?: number;
   private readonly externalSignal?: AbortSignal;
   private readonly quarter?: Quarter;
+  private readonly month?: Month;
 
-  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter) {
+  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month) {
     this.year = year;
     this.externalSignal = externalSignal;
     this.quarter = quarter;
+    this.month = month;
   }
 
   name(): string {
@@ -341,7 +367,7 @@ class OcpfAdapter implements SourceAdapter {
 
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
     const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter);
+    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter, this.month);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
@@ -390,7 +416,11 @@ class OcpfAdapter implements SourceAdapter {
  * @param quarter - Optional 1-4. When provided alongside `year`, narrows StartDate/EndDate to
  *   that calendar quarter. Used by the scheduler to chunk high-volume statewide sources into
  *   ~37-second windows instead of ~295-page full-year fetches that exceed the 3-minute budget.
+ * @param month - Optional 1-12. When provided alongside `year`, narrows StartDate/EndDate to
+ *   that single calendar month. month takes precedence over quarter when both are provided.
+ *   Used by the high-volume ingest script to split statewide filers (~75k/quarter = ~25k/month)
+ *   into ~50-second windows, well within the 3-minute timeout budget.
  */
-export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1 | 2 | 3 | 4): SourceAdapter {
-  return new OcpfAdapter(year, signal, quarter);
+export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month): SourceAdapter {
+  return new OcpfAdapter(year, signal, quarter, month);
 }
