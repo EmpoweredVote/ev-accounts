@@ -291,7 +291,7 @@ export async function summarizeBill(
       model: 'claude-haiku-4-5',
       max_tokens: 150,
       system:
-        'You summarize LA City Council legislation for ordinary residents. Write in plain English at a 6th-grade reading level. Be specific about what the bill does, not just its topic area.',
+        'You summarize LA City Council legislation for ordinary residents. Write in plain English at a 6th-grade reading level. Be specific about what the bill does, not just its topic area. Do not use hashtags, labels, or any prefix — start directly with the summary.',
       messages: [
         {
           role: 'user',
@@ -448,7 +448,7 @@ export async function getCouncilFileDetail(cfn: string): Promise<CouncilFileDeta
     pdf_links: row.pdf_links ?? [],
     cfms_url: row.cfms_url ?? null,
     granicus_clip_id: clipId,
-    ai_summary: row.ai_summary ?? null,
+    ai_summary: row.ai_summary ? row.ai_summary.replace(/^#\w+\s*/i, '') : null,
     enriched_at: row.enriched_at ? new Date(row.enriched_at).toISOString() : null,
     ai_summary_at: row.ai_summary_at ? new Date(row.ai_summary_at).toISOString() : null,
     video_url: clipId
