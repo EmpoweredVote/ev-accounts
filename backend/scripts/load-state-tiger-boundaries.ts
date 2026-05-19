@@ -37,6 +37,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
+  ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
 };
 
 // STATE_CITY_ASSERTIONS: place-layer vintage gate (Phase 131 D-03..D-06)
@@ -46,6 +47,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
 const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   UT: ['Magna', 'Kearns', 'Copperton', 'Emigration Canyon', 'White City'],
   MA: ['Cambridge city'],
+  ME: ['Portland city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -54,6 +56,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
 const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
+  ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
 };
 
 // Globally hard-rejected layers (D-05). PLSS township/range polygons collapsed
@@ -569,6 +572,49 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] MA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── ME MTFCC pre-flight assertion (Phase 49) ────────────────────────────────
+  // For ME (state='23'), count records satisfying the same filters as the upsert
+  // pass BEFORE any DB write. Assertion failure is named and fatal.
+  if (fipsArg === '23') {
+    const EXPECTED_ME_MTFCC: Record<string, number> = {
+      cd119: 2,   // 2 ME congressional districts
+      sldu:  35,  // 35 ME Senate districts
+      sldl:  151, // 151 ME House districts
+      place: 23,  // 23 ME G4110 incorporated cities
+      county: 16, // 16 ME counties
+    };
+    if (layer in EXPECTED_ME_MTFCC) {
+      const expected = EXPECTED_ME_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        // Apply the same filter logic as the upsert pass below.
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[ME MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 23 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] ME MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
