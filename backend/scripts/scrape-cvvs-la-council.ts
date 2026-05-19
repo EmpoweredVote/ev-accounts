@@ -107,6 +107,7 @@ async function fetchVoteIds(
   }
 
   async function safeContent(): Promise<string> {
+    await sleep(800); // let CF page settle after load event
     try {
       return await page.content();
     } catch {
@@ -123,7 +124,6 @@ async function fetchVoteIds(
       (document.querySelector('form[name="form"]') as HTMLFormElement).submit();
     }, [startDate, endDate] as [string, string]);
     await page.waitForLoadState('load');
-    await sleep(500);
 
     let html = await safeContent();
 
@@ -142,19 +142,13 @@ async function fetchVoteIds(
     const totalPages = pageMatch ? parseInt(pageMatch[1], 10) : 1;
 
     for (let p = 2; p <= totalPages; p++) {
-      // pagejump(n) on the results page sets CurrentPage and submits the form.
-      // JS is disabled for page scripts, so we replicate it via CDP eval.
+      // pagejump(n) sets form.action to results.cfm?page=N and submits.
+      // Since JS is disabled for page scripts, replicate this via CDP eval.
       const submitted: boolean = await page.evaluate((n: number) => {
         const form = document.querySelector('form[name="form"]') as HTMLFormElement | null;
         if (!form) return false;
-        let pageInput = form.querySelector('input[name="CurrentPage"]') as HTMLInputElement | null;
-        if (!pageInput) {
-          pageInput = document.createElement('input') as HTMLInputElement;
-          pageInput.type = 'hidden';
-          pageInput.name = 'CurrentPage';
-          form.appendChild(pageInput);
-        }
-        pageInput.value = String(n);
+        const base = 'results.cfm';
+        form.action = `${base}?page=${n}`;
         form.submit();
         return true;
       }, p);
@@ -165,7 +159,6 @@ async function fetchVoteIds(
       }
 
       await page.waitForLoadState('load');
-      await sleep(400);
       html = await safeContent();
       extractFromHtml(html);
     }
