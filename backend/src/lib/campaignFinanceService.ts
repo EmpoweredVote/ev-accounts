@@ -1681,7 +1681,7 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
 
 export interface CouncilVote {
   vote_date: string;           // YYYY-MM-DD
-  council_file_number: string;
+  council_file_number: string | null;
   description: string;
   vote: 'YES' | 'NO' | 'ABSENT' | 'ABSTAIN' | 'RECUSE' | 'PRESENT';
   meeting_type: string;
@@ -1703,10 +1703,11 @@ export interface CouncilVotesResponse {
  */
 export async function getCouncilVotes(
   politicianId: string,
-  options: { limit?: number; offset?: number } = {}
+  options: { limit?: number; offset?: number; voteFilter?: string } = {}
 ): Promise<CouncilVotesResponse> {
   const limit = Math.min(options.limit ?? 50, 100);
   const offset = options.offset ?? 0;
+  const voteFilter = options.voteFilter && options.voteFilter !== 'ALL' ? options.voteFilter : null;
 
   const countResult = await pool.query<{ cnt: string; yes_cnt: string; no_cnt: string; absent_cnt: string }>(
     `SELECT
@@ -1736,15 +1737,15 @@ export async function getCouncilVotes(
   }>(
     `SELECT vote_date, council_file_number, agenda_description, vote, meeting_type, item_number
      FROM meetings.la_council_votes
-     WHERE politician_id = $1
+     WHERE politician_id = $1 AND ($2::text IS NULL OR vote = $2::text)
      ORDER BY vote_date DESC, item_number ASC
-     LIMIT $2 OFFSET $3`,
-    [politicianId, limit, offset]
+     LIMIT $3 OFFSET $4`,
+    [politicianId, voteFilter, limit, offset]
   );
 
   const votes: CouncilVote[] = result.rows.map(r => ({
     vote_date: r.vote_date,
-    council_file_number: r.council_file_number ?? '',
+    council_file_number: r.council_file_number ?? null,
     description: r.agenda_description ?? '',
     vote: r.vote as CouncilVote['vote'],
     meeting_type: r.meeting_type ?? '',

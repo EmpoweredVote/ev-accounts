@@ -216,9 +216,10 @@ router.get(
 
     const limit = Math.min(Math.max(parseInt(req.query.limit as string, 10) || 50, 1), 100);
     const offset = Math.max(parseInt(req.query.offset as string, 10) || 0, 0);
+    const voteFilter = typeof req.query.vote === 'string' ? req.query.vote.toUpperCase() : undefined;
 
     try {
-      const result = await getCouncilVotes(id, { limit, offset });
+      const result = await getCouncilVotes(id, { limit, offset, voteFilter });
       res.status(200).json(result);
     } catch (err) {
       console.error('[GET /campaign-finance/politician/:id/council-votes] error:', err);
