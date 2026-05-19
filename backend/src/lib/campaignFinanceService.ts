@@ -1674,3 +1674,71 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
 
   return { query: rawQuery, politicians };
 }
+
+// ---------------------------------------------------------------------------
+// getCouncilVotes — LA City Council voting record for a politician
+// ---------------------------------------------------------------------------
+
+export interface CouncilVote {
+  vote_date: string;           // YYYY-MM-DD
+  council_file_number: string;
+  description: string;
+  vote: 'YES' | 'NO' | 'ABSENT' | 'ABSTAIN' | 'RECUSE' | 'PRESENT';
+  meeting_type: string;
+  item_number: string;
+}
+
+export interface CouncilVotesResponse {
+  politician_id: string;
+  votes: CouncilVote[];
+  total: number;
+}
+
+/**
+ * getCouncilVotes returns recent LA City Council vote records for a politician.
+ * Reads from meetings.la_council_votes — up to 100 most recent, most recent first.
+ */
+export async function getCouncilVotes(
+  politicianId: string,
+  options: { limit?: number; offset?: number } = {}
+): Promise<CouncilVotesResponse> {
+  const limit = Math.min(options.limit ?? 50, 100);
+  const offset = options.offset ?? 0;
+
+  const countResult = await pool.query<{ cnt: string }>(
+    `SELECT COUNT(*) AS cnt FROM meetings.la_council_votes WHERE politician_id = $1`,
+    [politicianId]
+  );
+  const total = Number(countResult.rows[0]?.cnt ?? 0);
+
+  if (total === 0) {
+    return { politician_id: politicianId, votes: [], total: 0 };
+  }
+
+  const result = await pool.query<{
+    vote_date: string;
+    council_file_number: string | null;
+    agenda_description: string | null;
+    vote: string;
+    meeting_type: string | null;
+    item_number: string | null;
+  }>(
+    `SELECT vote_date, council_file_number, agenda_description, vote, meeting_type, item_number
+     FROM meetings.la_council_votes
+     WHERE politician_id = $1
+     ORDER BY vote_date DESC, item_number ASC
+     LIMIT $2 OFFSET $3`,
+    [politicianId, limit, offset]
+  );
+
+  const votes: CouncilVote[] = result.rows.map(r => ({
+    vote_date: r.vote_date,
+    council_file_number: r.council_file_number ?? '',
+    description: r.agenda_description ?? '',
+    vote: r.vote as CouncilVote['vote'],
+    meeting_type: r.meeting_type ?? '',
+    item_number: r.item_number ?? '',
+  }));
+
+  return { politician_id: politicianId, votes, total };
+}
