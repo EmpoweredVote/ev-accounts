@@ -1,23 +1,30 @@
 /**
- * run-cambridge-ocpf-ingest.ts
+ * run-missed-cambridge-ingest.ts
  *
- * Cambridge-targeted OCPF ingest. Ingests contributions for confirmed Cambridge
- * city-council sources only, skipping the 12 known high-volume statewide MA
- * candidates (Healey, Galvin, Campbell, etc.) that generate 75k+ contributions
- * per quarter and time out repeatedly before the Cambridge sources are reached.
+ * One-shot ingest for three Cambridge city councillors missed by
+ * run-cambridge-ocpf-ingest.ts due to incorrect HIGH_VOLUME skip list placement:
+ *   - Al-Zubi  (cpfId=18454) — elected Nov 2023
+ *   - Flaherty (cpfId=13239) — elected Nov 2023
+ *   - Azeem    (cpfId=17206) — in office since 2021 (Vice Mayor)
  *
- * Semantics are identical to campaignFinanceScheduler.ts case 'ocpf':
- *   - Per-quarter chunks (2001–present)
+ * Al-Zubi and Flaherty were removed from HIGH_VOLUME_CPFIDS in
+ * run-cambridge-ocpf-ingest.ts on 2026-05-18. Azeem was missing from
+ * politician_sources entirely and is seeded by this script if absent.
+ *
+ * Semantics are identical to run-cambridge-ocpf-ingest.ts (and by extension
+ * campaignFinanceScheduler.ts case 'ocpf'):
+ *   - Per-quarter chunks (OCPF_START_YEAR–present)
  *   - isFutureQuarter guard
  *   - Resume-skip on completed cycle keys
  *   - 3-min AbortController timeout per cycle
  *   - Per-cycle zombie cleanup on error
  *
- * Does NOT call runAdapterForAll — that would re-include statewide filers via
- * the scheduler's own unfiltered SELECT.
+ * OCPF_START_YEAR = 2021 (Azeem's earliest relevant data).
+ * Al-Zubi and Flaherty were elected Nov 2023; pre-2024 quarters will return
+ * zero rows and complete instantly — this is expected and harmless.
  *
  * Usage (from C:\EV-Accounts\backend):
- *   npx tsx scripts/run-cambridge-ocpf-ingest.ts
+ *   npx tsx scripts/run-missed-cambridge-ingest.ts
  */
 
 import 'dotenv/config';
@@ -34,22 +41,11 @@ if (!process.env['DATABASE_URL']) {
 // Constants
 // ---------------------------------------------------------------------------
 
-/**
- * 10 high-volume statewide MA filers to skip.
- * Each takes 75k+ contributions per quarter and reliably times out before
- * the Cambridge city-council sources are reached in the full ingest.
- *
- * NOTE: 18454 (Al-Zubi) and 13239 (Flaherty) were removed 2026-05-18 —
- * both are Cambridge city councillors (elected Nov 2023) with minimal
- * contribution history; they were mistakenly included in the original list.
- */
-const HIGH_VOLUME_CPFIDS = new Set<string>([
-  '13783', '12008', '15470', '15465', '15268',
-  '15931', '15710', '15483', '13736', '10176',
-]);
+/** The three missed councillors — targeted ingest only, no skip-list needed. */
+const TARGET_CPFIDS = ['18454', '13239', '17206'];
 
-const OCPF_START_YEAR = 2001;
-const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, cycleKey)
+const OCPF_START_YEAR = 2021;
+const PER_CYCLE_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, cycleKey)
 
 // ---------------------------------------------------------------------------
 // isFutureQuarter — copied verbatim from campaignFinanceScheduler.ts (not exported)
@@ -91,12 +87,12 @@ interface PoliticianSourceRow {
 const pool = new pg.Pool({ connectionString: process.env['DATABASE_URL'] });
 
 // ---------------------------------------------------------------------------
-// Step 1: Query filtered sources (exclude HIGH_VOLUME_CPFIDS)
+// Step 1: Query the three target sources
 // ---------------------------------------------------------------------------
 
-console.log('[run-cambridge-ocpf] Step 1: Querying Cambridge OCPF sources (skipping statewide filers)...');
+console.log('[run-missed-cambridge] Step 1: Querying the three missed Cambridge OCPF sources...');
 
-const skipPlaceholders = Array.from(HIGH_VOLUME_CPFIDS).map((_, i) => `$${i + 1}`).join(', ');
+const targetPlaceholders = TARGET_CPFIDS.map((_, i) => `$${i + 1}`).join(', ');
 
 const sourcesResult = await pool.query<PoliticianSourceRow>(
   `SELECT id, essentials_politician_id, source_system, external_id,
@@ -104,43 +100,51 @@ const sourcesResult = await pool.query<PoliticianSourceRow>(
    FROM transparent_motivations.politician_sources
    WHERE source_system = 'ocpf'
      AND research_status = 'confirmed'
-     AND external_id NOT IN (${skipPlaceholders})`,
-  Array.from(HIGH_VOLUME_CPFIDS)
+     AND external_id IN (${targetPlaceholders})`,
+  TARGET_CPFIDS
 );
 
-const filteredSources = sourcesResult.rows;
+const targetSources = sourcesResult.rows;
 
-if (filteredSources.length === 0) {
-  console.log('[run-cambridge-ocpf] No Cambridge sources found — nothing to ingest. Exiting.');
+if (targetSources.length === 0) {
+  console.log('[run-missed-cambridge] No target sources found — nothing to ingest. Exiting.');
   await pool.end();
   process.exit(0);
 }
 
-console.log(`[run-cambridge-ocpf] Found ${filteredSources.length} source(s) to process:`);
-filteredSources.forEach((ps) => console.log(`  id=${ps.id} external_id=${ps.external_id}`));
+console.log(`[run-missed-cambridge] Found ${targetSources.length} source(s) to process:`);
+targetSources.forEach((ps) =>
+  console.log(`  id=${ps.id} external_id=${ps.external_id}`)
+);
+
+if (targetSources.length < TARGET_CPFIDS.length) {
+  const foundIds = targetSources.map((ps) => ps.external_id);
+  const missing = TARGET_CPFIDS.filter((id) => !foundIds.includes(id));
+  console.warn(`[run-missed-cambridge] WARNING: ${missing.length} target cpfId(s) not found in politician_sources: ${missing.join(', ')}`);
+}
 
 // ---------------------------------------------------------------------------
-// Step 2: Clean zombie runs scoped to filtered source UUIDs only
+// Step 2: Clean zombie runs scoped to target source UUIDs only
 // ---------------------------------------------------------------------------
 
-console.log('\n[run-cambridge-ocpf] Step 2: Cleaning zombie ingestion_runs for Cambridge sources...');
+console.log('\n[run-missed-cambridge] Step 2: Cleaning zombie ingestion_runs for target sources...');
 
-const filteredSourceIds = filteredSources.map((ps) => ps.id);
+const targetSourceIds = targetSources.map((ps) => ps.id);
 
 const zombieResult = await pool.query(
   `UPDATE transparent_motivations.ingestion_runs
    SET status = 'failed', completed_at = NOW(),
-       notes = 'Marked failed by run-cambridge-ocpf-ingest.ts — prior interrupted run'
+       notes = 'Marked failed by run-missed-cambridge-ingest.ts — prior interrupted run'
    WHERE status = 'running'
      AND politician_source_id = ANY($1::uuid[])
    RETURNING id, politician_source_id`,
-  [filteredSourceIds]
+  [targetSourceIds]
 );
 
 if (zombieResult.rowCount === 0) {
-  console.log('[run-cambridge-ocpf] No zombie runs found — already clean.');
+  console.log('[run-missed-cambridge] No zombie runs found — already clean.');
 } else {
-  console.log(`[run-cambridge-ocpf] Marked ${zombieResult.rowCount} zombie run(s) as failed:`);
+  console.log(`[run-missed-cambridge] Marked ${zombieResult.rowCount} zombie run(s) as failed:`);
   zombieResult.rows.forEach((r: Record<string, unknown>) =>
     console.log(`  run id=${r['id']} politician_source_id=${r['politician_source_id']}`)
   );
@@ -150,12 +154,12 @@ if (zombieResult.rowCount === 0) {
 // Step 3: Per-source ingest loop (identical semantics to case 'ocpf': in scheduler)
 // ---------------------------------------------------------------------------
 
-console.log('\n[run-cambridge-ocpf] Step 3: Beginning per-source ingest loop...');
+console.log('\n[run-missed-cambridge] Step 3: Beginning per-source ingest loop...');
 
 const now = new Date();
 const currentYear = now.getUTCFullYear();
 
-for (const ps of filteredSources) {
+for (const ps of targetSources) {
   try {
     // Query all completed cycle keys for this source. The regex matches BOTH
     // legacy full-year entries ('YYYY') and new per-quarter entries ('YYYY-QN').
@@ -202,8 +206,8 @@ for (const ps of filteredSources) {
 
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(new Error(
-          `[ocpf] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
-        )), PER_YEAR_TIMEOUT_MS);
+          `[ocpf] per-cycle timeout (${PER_CYCLE_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
+        )), PER_CYCLE_TIMEOUT_MS);
 
         try {
           await runIngestion(
@@ -211,10 +215,10 @@ for (const ps of filteredSources) {
             ps,
             cycleKey
           );
-          console.log(`[run-cambridge-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} done`);
+          console.log(`[run-missed-cambridge] ocpf: source=${ps.id} external_id=${ps.external_id} cycle=${cycleKey} done`);
         } catch (err) {
           console.error(
-            `[run-cambridge-ocpf] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
+            `[run-missed-cambridge] ocpf: source=${ps.id} external_id=${ps.external_id} cycle=${cycleKey} error:`,
             err instanceof Error ? err.message : String(err)
           );
           await pool.query(
@@ -224,7 +228,9 @@ for (const ps of filteredSources) {
                AND politician_source_id = $2
                AND election_cycle = $3`,
             [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
-          ).catch((e: unknown) => console.warn('[run-cambridge-ocpf] ocpf: zombie cleanup failed:', e));
+          ).catch((e: unknown) =>
+            console.warn('[run-missed-cambridge] ocpf: zombie cleanup failed:', e)
+          );
         } finally {
           clearTimeout(timeoutId);
         }
@@ -232,7 +238,7 @@ for (const ps of filteredSources) {
     }
   } catch (err) {
     console.error(
-      `[run-cambridge-ocpf] ocpf: source=${ps.id} pre-flight error:`,
+      `[run-missed-cambridge] ocpf: source=${ps.id} external_id=${ps.external_id} pre-flight error:`,
       err instanceof Error ? err.message : String(err)
     );
   }
@@ -243,4 +249,4 @@ for (const ps of filteredSources) {
 // ---------------------------------------------------------------------------
 
 await pool.end();
-console.log('[run-cambridge-ocpf] Complete.');
+console.log('[run-missed-cambridge] Complete.');
