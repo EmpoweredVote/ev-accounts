@@ -225,12 +225,17 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Focus: v2.0 Completion (Phases 64–65)
+## Current Milestone: v2.3 US Senate Coverage (Phases 72–74)
 
-**Phases remaining:** 64 (InformLanding) + 65 (Dashboard Redesign)
-**Requirements:** LAND-01–05 + DASH-01–04 (9 requirements)
+**Goal:** Complete civic profiles for all 100 sitting US Senators — state infrastructure, politician records, office links, photos, and full sourced stance data across all applicable CompassV2 topics — so any user in any US state sees their senators in the Representatives feed with complete compass data.
 
-**Goal:** Complete the v2.0 Civic Account Experience — unauthenticated landing page (`InformLandingPage`) and dashboard redesign (continue card, stats bar, tiered feature grid).
+**Target features:**
+- NATIONAL_UPPER district records for all 50 states (45 new)
+- Government stubs for all 50 states to anchor districts
+- All 100 senator politician records + offices (90 new)
+- Photos (photo_origin_url) for all 100 senators
+- Sourced stance data for all applicable CompassV2 topics (of 43 total, filtering local-tier)
+- Existing 8 senators with partial stances completed to full coverage
 
 ## Previous Milestone: v2.2 TIGER District Geofencing (Phases 69–71, shipped 2026-05-10)
 
@@ -247,4 +252,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 **Status:** Phases 60–63 shipped. Phases 64–65 pending (InformLanding + Dashboard Redesign).
 
 ---
-*Last updated: 2026-05-10 after v2.2 milestone completion*
+*Last updated: 2026-05-19 after v2.3 milestone start*

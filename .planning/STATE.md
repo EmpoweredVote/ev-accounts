@@ -2,19 +2,20 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-10 after v2.2 milestone completion)
+See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.0 complete — Phases 64 + 65 skipped (superseded by login.empowered.vote/profile, which is now the primary user destination). Run `/gsd:new-milestone` to define v2.3.
+**Current focus:** v2.3 US Senate Coverage — Phases 72–74. Run `/gsd:plan-phase 72` to start.
 **Last shipped:** v2.2 TIGER District Geofencing — CA TIGER geofencing live, Path 0 fast path, school districts on Profile Location tab.
 
 ## Current Position
 
-**Phase 71 COMPLETE 2026-05-10 — all 2 plans done. GEO-13 + GEO-14 shipped. v2.2 complete.**
+**Phase 71 COMPLETE 2026-05-10 — v2.2 archived. v2.3 defined 2026-05-19. Phase 72 not yet started.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
+v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. DEFINED 2026-05-19. Phase 72 next.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -29,7 +30,7 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Last activity: 2026-05-10 — v2.2 milestone archived. Git tag v2.2 created.
+Last activity: 2026-05-19 — v2.3 roadmap defined. Phases 72–74 ready for planning.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -37,23 +38,53 @@ Last activity: 2026-05-10 — v2.2 milestone archived. Git tag v2.2 created.
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 📋] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 — Phase 73 — Phase 74 —
 
 ## Performance Metrics
 
-**v2.0 Scope**
-- Phases: 6 (60–65)
-- Requirements: 34 (DSGN-01–06, AUTH-01–06, ONBD-01–05, PROF-01–06, API-01, FIX-01, LAND-01–05, DASH-01–04)
+**v2.3 Scope — US Senate Coverage — IN PROGRESS**
+- Phases: 3 (72–74)
+- Requirements: 8 (SINF-01–02, SENA-01–03, SSTA-01–03)
 - Plans complete: 0
 - Plans total: TBD (determined per phase during planning)
+
+**v2.2 Scope — TIGER District Geofencing — COMPLETE**
+- Phases: 3 (69–71) ✅
+- Requirements: 14/14 (GEO-01–14) ✅
 
 **v2.1 Scope — COMPLETE**
 - Phases: 3 (66–68) ✅
 - Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
 
-**v2.2 Scope — TIGER District Geofencing — COMPLETE**
-- Phases: 3 (69–71) ✅
-- Requirements: 14/14 (GEO-01–14) ✅
+### v2.3 Requirements
+
+| Req | Phase | Description |
+|-----|-------|-------------|
+| SINF-01 | 72 | NATIONAL_UPPER district records for all 50 states in essentials.districts |
+| SINF-02 | 72 | Government records in essentials.governments for all 50 states (stubs for missing states) |
+| SENA-01 | 73 | All 100 119th Congress senators in essentials.politicians (90 new) |
+| SENA-02 | 73 | All 100 senators have office records in essentials.offices with correct district_id |
+| SENA-03 | 73 | All 100 senators have photo_origin_url from official Senate source or Wikipedia |
+| SSTA-01 | 74 | All 100 senators have stances in inform.politician_answers for >= 30 applicable topics |
+| SSTA-02 | 74 | Every stance paired with inform.politician_context containing at least one source URL |
+| SSTA-03 | 74 | 8 existing senators with partial stances filled to full applicable-topic coverage |
+
+### v2.3 Phase Dependencies
+
+```
+Phase 72 (Senate Infrastructure)
+  └── Phase 73 (Senator Records)   — needs NATIONAL_UPPER districts for office FK
+        └── Phase 74 (Stance Research + Ingestion) — needs politician records for FK targets
+```
+
+### v2.3 Scope Notes
+
+- 10 senators already exist (CA: Padilla + Schiff, IN: Young + Banks, MA: Warren + Markey, ME: Collins + King, TX: Cornyn + Cruz)
+- 8 of those 10 have partial stance data — Phase 74 fills gaps
+- Last migration applied: 170; next migration is 171
+- Of 43 total CompassV2 topics, ~30+ apply to federal officials (local-tier topics excluded)
+- Stances in inform.politician_answers; sources in inform.politician_context (sources TEXT[] column)
+- Use research-stances skill for Phase 74; batch by party or alphabetically (A–M, N–Z)
 
 ### v2.2 Requirements
 
@@ -217,9 +248,18 @@ Phase 66 (Inform Profiles Backend Foundation)
   └── Phase 68 (Yellow Inform Profile Page)     — needs /me inform_profile object (Phase 66) + signup creates the account (Phase 67)
 ```
 
+### v2.3 Requirement Coverage
+
+| Phase | Requirements | Count |
+|-------|-------------|-------|
+| 72 — Senate Infrastructure | SINF-01, SINF-02 | 2 |
+| 73 — Senator Records | SENA-01, SENA-02, SENA-03 | 3 |
+| 74 — Stance Research + Ingestion | SSTA-01, SSTA-02, SSTA-03 | 3 |
+| **Total** | | **8 / 8** ✓ |
+
 ### Open Blockers
 
-None for v2.0 start.
+None for v2.3 start.
 
 **Carried forward from v1.9 (non-blocking):**
 - Verify `app.empowered.vote` in Render `CORS_ORIGIN` env var
@@ -255,6 +295,6 @@ None for v2.0 start.
 
 ## Session Continuity
 
-Last session: 2026-05-15
-Stopped at: Quick task 022 complete — 24 ingest scripts run, compassService politician_answers fallback shipped.
+Last session: 2026-05-19
+Stopped at: v2.3 roadmap defined — Phases 72–74 created. Run `/gsd:plan-phase 72` to begin Senate Infrastructure.
 Resume file: None

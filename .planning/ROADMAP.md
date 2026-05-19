@@ -15,6 +15,7 @@
 - ✅ **v2.0 Civic Account Experience** — Phases 60–65 (shipped 2026-05-10)
 - 📋 **v2.1 Inform Account Tier** — Phases 66–68 (planned 2026-04-27)
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
+- 📋 **v2.3 US Senate Coverage** — Phases 72–74 (defined 2026-05-19)
 
 ## Phases
 
@@ -678,9 +679,9 @@ Plans:
 
 Plans:
 Plans:
-- [ ] 66-01-PLAN.md � Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
-- [ ] 66-02-PLAN.md � Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
-- [ ] 66-03-PLAN.md � requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
+- [ ] 66-01-PLAN.md — Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
+- [ ] 66-02-PLAN.md — Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
+- [ ] 66-03-PLAN.md — requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
 **Success Criteria:**
 
 1. `inform.inform_profiles` exists with a row for every `public.users` entry — including rows for users who signed up before this migration ran (backfilled by the trigger or a one-time backfill script).
@@ -751,6 +752,68 @@ Plans:
 Full details: `.planning/milestones/v2.2-ROADMAP.md`
 
 </details>
+
+### v2.3 US Senate Coverage (Phases 72–74)
+
+---
+
+#### Phase 72: Senate Infrastructure
+
+**Goal:** All 50 US states have the district and government records needed to anchor senator office links — NATIONAL_UPPER districts and government stubs are in place for every state so Phase 73 can create offices without FK gaps.
+
+**Dependencies:** None (foundation phase; Phase 73 depends on this)
+
+**Requirements:** SINF-01, SINF-02
+
+**Plans:** 1 plan expected
+
+**Success Criteria:**
+
+1. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'NATIONAL_UPPER'` returns exactly 50 — one row per US state, including the 45 new state entries added alongside the existing CA, IN, MA, ME, TX rows.
+2. Every NATIONAL_UPPER district row has a valid `government_id` FK — `SELECT COUNT(*) FROM essentials.districts d LEFT JOIN essentials.governments g ON g.id = d.government_id WHERE d.district_type = 'NATIONAL_UPPER' AND g.id IS NULL` returns 0.
+3. All 50 states have a row in `essentials.governments` — states that previously had no record have minimal stubs sufficient for the FK constraint (name + state abbreviation at minimum).
+4. All migrations apply cleanly in sequence starting from migration 171 with no FK violations or constraint errors.
+
+---
+
+#### Phase 73: Senator Records
+
+**Goal:** All 100 sitting 119th Congress US Senators exist as politician records with offices, district links, and photos — the data layer is complete so compass stances written in Phase 74 have valid FK targets and Essentials can surface senators in the representatives feed.
+
+**Dependencies:** Phase 72 (NATIONAL_UPPER districts and government stubs must exist before offices can FK to them)
+
+**Requirements:** SENA-01, SENA-02, SENA-03
+
+**Plans:** 1–2 plans expected
+
+**Success Criteria:**
+
+1. `SELECT COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER'` returns exactly 100 — two senators per state, all 50 states covered.
+2. Every senator office row has a `district_id` that resolves to a `NATIONAL_UPPER` district — `SELECT COUNT(*) FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER' AND d.id IS NULL` returns 0.
+3. `SELECT COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER' AND (p.photo_origin_url IS NULL OR p.photo_origin_url = '')` returns 0 — every senator has a non-empty photo URL from the official Senate website or Wikipedia.
+4. The 10 existing CA, IN, MA, ME, TX senators appear in the result set and have not been duplicated — total senator count remains exactly 100.
+
+---
+
+#### Phase 74: Stance Research + Ingestion
+
+**Goal:** All 100 US Senators have sourced stance data across every applicable CompassV2 topic — users in any US state can open the compass compare view and see their senators' positions with citations, and the 8 existing senators with partial data have their gaps filled.
+
+**Dependencies:** Phase 73 (all 100 senator politician records must exist before `inform.politician_answers` and `inform.politician_context` rows can reference them)
+
+**Requirements:** SSTA-01, SSTA-02, SSTA-03
+
+**Plans:** 2–3 plans expected (batched by party, state grouping, or alphabetically)
+
+**Success Criteria:**
+
+1. `SELECT COUNT(DISTINCT politician_id) FROM inform.politician_answers pa JOIN essentials.offices o ON o.politician_id = pa.politician_id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER'` returns 100 — every senator has at least one stance record.
+2. For each senator, `SELECT COUNT(*) FROM inform.politician_answers WHERE politician_id = <id>` returns >= 30 — all applicable federal-tier CompassV2 topics are covered; local-only topics (city council, school board) are intentionally excluded.
+3. Every stance record has a paired context row: `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT DISTINCT politician_id FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER')` returns 0.
+4. Every context row has at least one source URL: `SELECT COUNT(*) FROM inform.politician_context WHERE politician_id IN (...senators...) AND (sources IS NULL OR array_length(sources, 1) = 0)` returns 0.
+5. The 8 existing senators with partial stances (CA, IN, MA, ME, TX minus the 2 fully covered) show stance counts >= 30, matching the full coverage of newly added senators — no senator has a lower topic count than any other.
+
+---
 
 ## Progress
 
@@ -827,3 +890,6 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 | 69. TIGER Schema + Data Import | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
 | 70. Geofencing Backend Integration | v2.2 ✅ | 4/4 | Complete | 2026-05-10 |
 | 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
+| 72. Senate Infrastructure | v2.3 | 0/? | Pending | — |
+| 73. Senator Records | v2.3 | 0/? | Pending | — |
+| 74. Stance Research + Ingestion | v2.3 | 0/? | Pending | — |
