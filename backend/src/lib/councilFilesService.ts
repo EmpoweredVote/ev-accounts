@@ -57,6 +57,7 @@ export type CouncilFileDetail = {
 export type VoteRosterEntry = {
   name: string;
   vote: string;
+  politician_id: string;
 };
 
 // ---------------------------------------------------------------------------
@@ -468,7 +469,7 @@ export async function getCouncilFileDetail(cfn: string): Promise<CouncilFileDeta
  */
 export async function getVoteRoster(cfn: string): Promise<VoteRosterEntry[]> {
   const result = await pool.query(
-    `SELECT p.first_name || ' ' || p.last_name AS name, v.vote
+    `SELECT p.first_name || ' ' || p.last_name AS name, v.vote, p.id AS politician_id
      FROM meetings.la_council_votes v
      JOIN essentials.politicians p ON p.id = v.politician_id
      WHERE v.council_file_number = $1
@@ -479,5 +480,6 @@ export async function getVoteRoster(cfn: string): Promise<VoteRosterEntry[]> {
   return result.rows.map((r) => ({
     name: r.name as string,
     vote: r.vote as string,
+    politician_id: r.politician_id as string,
   }));
 }
