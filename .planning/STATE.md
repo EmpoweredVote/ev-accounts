@@ -10,7 +10,7 @@ See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 ## Current Position
 
-**Phase 71 COMPLETE 2026-05-10 — v2.2 archived. v2.3 defined 2026-05-19. Phase 72 not yet started.**
+**Phase 72 Plan 01 COMPLETE 2026-05-19 — migration 174 applied, 50 NATIONAL_UPPER districts with government_id FKs live.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -30,7 +30,7 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Last activity: 2026-05-19 — v2.3 roadmap defined. Phases 72–74 ready for planning.
+Last activity: 2026-05-19 — Phase 72 Plan 01 complete. Migration 174 applied: 50 NATIONAL_UPPER districts + government_id column + 46 government stubs + CA/IN cleanup.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -38,7 +38,7 @@ Last activity: 2026-05-19 — v2.3 roadmap defined. Phases 72–74 ready for pla
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 📋] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 — Phase 73 — Phase 74 —
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 🔄(1/1 plans done) Phase 73 — Phase 74 —
 
 ## Performance Metrics
 
@@ -123,6 +123,12 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.3 Senate Infrastructure Patterns (from 72-01)
+
+- **government_id FK on NATIONAL_UPPER districts**: `essentials.districts.government_id UUID REFERENCES essentials.governments(id)` added in migration 174. All 50 NATIONAL_UPPER rows are now FK'd to a canonical state government row. Phase 73 senator office inserts should join through `NATIONAL_UPPER.state` to find the correct `district_id`.
+- **IN duplicate governments**: Indiana has 22 identical "State of Indiana" rows in `essentials.governments`. Queries that resolve `government_id` for IN must use `ORDER BY g.id LIMIT 1` to avoid ambiguity. Do not attempt to deduplicate — these rows may have downstream references.
+- **Migration number correction**: Original plan said 172; corrected to 174 because quick tasks 52-01 and 52-02 consumed 172 and 173 after the plan was authored. Always verify last applied migration before writing a new one.
 
 ### v2.2 Migration Signature-Change Pattern (from 71-02)
 
@@ -296,5 +302,5 @@ None for v2.3 start.
 ## Session Continuity
 
 Last session: 2026-05-19
-Stopped at: v2.3 roadmap defined — Phases 72–74 created. Run `/gsd:plan-phase 72` to begin Senate Infrastructure.
+Stopped at: Phase 72 Plan 01 complete — migration 174 applied and verified. Run `/gsd:plan-phase 73` to begin Senator Records.
 Resume file: None
