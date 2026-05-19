@@ -95,4 +95,12 @@ BEGIN
   RAISE NOTICE 'Migration 167 OK: 1 Cambridge G4110/MA district, % offices correctly linked', v_offices_correct;
 END $$;
 
+-- Step 4: INSERT government_bodies rows so frontend groups City Council and
+-- School Committee into separate sections (body_key must match chamber.name_formal)
+INSERT INTO essentials.government_bodies (state, geo_id, body_key, display_name, website_url)
+VALUES
+  ('MA', '2511000', 'Cambridge City Council',     'Cambridge City Council',     'https://www.cambridgema.gov/Departments/citycouncil'),
+  ('MA', '2511000', 'Cambridge School Committee', 'Cambridge School Committee', 'https://www.cpsd.us/school_committee')
+ON CONFLICT (state, geo_id, body_key) DO NOTHING;
+
 COMMIT;
