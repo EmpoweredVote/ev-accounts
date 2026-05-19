@@ -36,7 +36,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   TX: new Set(['cd', 'sldu', 'sldl', 'county']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
-  MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county']),
+  MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
 };
 
 // STATE_CITY_ASSERTIONS: place-layer vintage gate (Phase 131 D-03..D-06)
@@ -53,7 +53,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
 // CA byte-equivalence). When present, every layer in the Set receives ST_MakeValid.
 const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
-  MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county']),
+  MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
 };
 
 // Globally hard-rejected layers (D-05). PLSS township/range polygons collapsed
@@ -231,6 +231,15 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     filterByStatefp: true,
     skipDistrictCodes: new Set<string>(),
     writeDistrictRow: true /* ARCHITECTURE.md §2.2 default (county not in 130-01 audit's CA-only Python scope; existing load-collin-county-boundary.ts:216 writes the districts row); Operational-parity recommendation extended to county per ARCHITECTURE.md §2.2 */,
+  },
+  cousub: {
+    mtfcc: 'G4040', district_type: 'LOCAL', ocdKey: 'cousub',
+    geoIdSource: 'GEOID',
+    urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/COUSUB/tl_${v}_${f}_cousub.zip`,
+    districtNumField: null,
+    filterByStatefp: false,  // file is already per-state (filename includes FIPS)
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,  // matches place pattern — no essentials.districts row needed
   },
 };
 
@@ -525,6 +534,7 @@ async function processLayer(
       sldl: 160,   // 160 MA House districts
       place: 58,   // 58 MA G4110 incorporated cities (towns are G4040 COUSUB, not loaded in Phase 38)
       county: 14,  // 14 MA counties
+      cousub: 293,  // 293 active MA towns (FUNCSTAT='A'); 64 FUNCSTAT='F' placeholders skipped
     };
     if (layer in EXPECTED_MA_MTFCC) {
       const expected = EXPECTED_MA_MTFCC[layer];
@@ -538,6 +548,10 @@ async function processLayer(
         if (layer === 'place') {
           const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
           if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layer === 'cousub') {
+          const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
+          if (funcstatVal !== 'A') return;
         }
         if (layerDef.districtNumField) {
           const fpKey = resolveColumn(props, layerDef.districtNumField);
@@ -576,6 +590,18 @@ async function processLayer(
       if (layer === 'place') {
         const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
         if (mtfccRaw && mtfccRaw !== 'G4110') {
+          totals.skipped++;
+          return;
+        }
+      }
+
+      // COUSUB layer: only load FUNCSTAT='A' (active towns).
+      // FUNCSTAT='F' records are placeholder entries for incorporated cities that
+      // already have G4110 rows from Phase 38. Loading them would create duplicate
+      // LOCAL boundaries for the same geography.
+      if (layer === 'cousub') {
+        const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
+        if (funcstatVal !== 'A') {
           totals.skipped++;
           return;
         }
