@@ -1,31 +1,44 @@
 ---
-name: Todd Young stance memory
-description: Verified stances for Todd Young, U.S. Senator Indiana (R), researched 2026-04-13; DB value conflict on trans-athletes (5→4)
-type: reference
+name: stance_todd_young
+description: Todd Young, US Sen IN (R); 20 topics scored 2026-05-19; moderate conservative, voted for Respect for Marriage Act and Bipartisan Safer Communities Act; young.senate.gov press release URLs work via /newsroom/press-releases/ format
+metadata:
+  type: reference
 ---
 
-# Todd Young — U.S. Senator, Indiana (R)
-politician_id: 102b239c-0a3d-44b9-ae32-88d8179197e2
-Researched: 2026-04-13
-Term: 2017–2028
+Todd Young, US Senator Indiana (R), elected 2016, re-elected 2022. Former US House member.
 
-## Verified Stances
+## Scores (2026-05-19)
 
-### misinformation — value: 4
-Confirmed DB value. Young consistently advocates for protecting free speech from government interference. Spoke on Senate floor on importance of free exchange of ideas. In Sept 2025 rebuked FCC Chair Brendan Carr's pressure on ABC/Disney over Jimmy Kimmel, posting "we must cherish and protect free speech." No record of supporting platform fact-checking mandates or algorithmic regulation.
-- Source: https://www.young.senate.gov/newsroom/press-releases/video-young-importance-of-free-speech-for-hoosiers/
-- Source: https://www.yahoo.com/news/articles/todd-young-urges-americans-protect-191323801.html
+- abortion=4 (100% NRLC; Dobbs monumental; SAVE Moms Act; Title X Prohibition Act 2026; supports IVF -- not total ban)
+- ai-regulation=2 (Future of AI Innovation Act = voluntary NIST standards; CREATE AI Act; innovation-first not mandates)
+- campaign-finance=4 (Protect Charitable Donor Privacy Act with Lankford 2026; opposes disclosure)
+- civil-rights=4 (2% HRC 2016; opposed gender identity as protected class; no expanded affirmative action)
+- climate-change=5 (No Climate Tax Pledge; questioned consensus 2014; opposed NASA climate agenda)
+- deportation=4 (Laken Riley Act; border wall; criminal-history-first)
+- fossil-fuels=4 (AFP pledge; domestic drilling; opposed EPA GHG regs)
+- healthcare=4 (Fairness for American Families Act 2013; opposes ACA; tort reform + market)
+- housing=3 (LIHTC bipartisan; Neighborhood Homes Investment Act; zoning deregulation; targeted tax credits)
+- immigration=4 (opposes DREAM Act; 100% FAIR rating; merit-based; Laken Riley Act)
+- medicare/aid=4 (Ryan Budget framework / Medicare choice / partial privatization; not full phase-out)
+- religious-freedom=4 (faith-based exemptions; RFRA-aligned)
+- same-sex-marriage=2 (voted to advance Respect for Marriage Act Nov 2022 -- one of 12 R senators; RMA has religious liberty protections)
+- school-vouchers=5 (Vouchers break link of low-income and low-quality schools)
+- social-security=5 (OTI: strongly favors privatization; private investment accounts)
+- tariffs=4 (Young-Brown trade remedy bill vs. China dumping; USMCA; selective not universal)
+- taxes=4 (Taxpayer Protection Pledge; opposes IRS expansion; reduce corporate rates; not explicit flat tax)
+- trans-athletes=4 (opposes gender identity as protected class; consistent record)
+- ukraine-support=2 (voted 2022 aid; Ukraine Human Rights Policy Act; called Putin actions genocide)
+- voting-rights=4 (voting has never been easier; photo ID; opposes automatic registration)
 
-### redistricting — value: 4
-Confirmed DB value. Opposed For the People Act (S.1, 2021) which mandated independent redistricting commissions — called it "drastic, draconian and desperate election reforms meant to keep Democrats in power." Expressed strategic (not principled) concern about mid-cycle gerrymandering in Indiana 2025 debate, telling Punchbowl News that spreading Republican votes too thin causes seat instability. Supports state-legislature control over redistricting.
-- Source: https://www.953mnc.com/2021/06/20/senator-todd-young-not-happy-with-for-the-people-act/
-- Source: https://doggett.house.gov/media/in-the-news/punchbowl-news-trumps-hoosier-state-hurdles
+## Skipped
 
-### trans-athletes — value: 4 (DB had 5 — CONFLICT, corrected to 4)
-Voted Yea on Senate Roll Call Vote 100 (March 3, 2025) — cloture on S.9, Protection of Women and Girls in Sports Act of 2025. Bill requires athletes to compete based on biological sex at federally funded schools (party-line 51-45). This is stance 4 (require competing by biological sex), not stance 5 (complete ban from all organized sports competitions).
-- Source: https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.htm
+misinformation, redistricting, childcare, homelessness (city-level), homelessness-response, public-safety-approach, economic-development, jail-capacity, judicial-criminal-justice, judicial-interpretation -- all insufficient evidence or city-level
 
-## Notes
-- Young is a relatively moderate Republican who sometimes breaks with party (voted for Respect for Marriage Act 2022, supports bipartisan foreign policy). Heritage Action score jumped from 68% (117th) to 94% (119th) — has moved right.
-- His free speech position is principled (opposes government censorship from both parties) — opposed FCC under Trump AND supported free speech principles against Democratic overreach.
-- Opposed Trump's 2024 presidential campaign endorsement.
+## Key notes
+
+- More moderate than average Senate R: voted for RMA, Bipartisan Safer Communities Act, declined to endorse Trump 2024
+- Ranked 9th most bipartisan senator 115th Congress (Lugar Center)
+- young.senate.gov press releases: https://www.young.senate.gov/newsroom/press-releases/[slug]/ (working)
+- young.senate.gov/issues/* all 404
+- ontheissues.org/IN/Todd_Young.htm works with good data
+- Wikipedia has solid policy record
