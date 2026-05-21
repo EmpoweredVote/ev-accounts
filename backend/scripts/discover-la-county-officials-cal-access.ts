@@ -43,16 +43,29 @@ const pool = new Pool({
 // ─── Hard-coded target list ───────────────────────────────────────────────────
 
 // Each entry: the full_name as it should appear in essentials.politicians, plus office context.
+// Optional secondarySearch: if the primary needs_research pass returns no matches, a secondary
+// last-name+role search is performed across ALL research_status values (including confirmed).
+// Used for Robert Luna whose LUNA FOR SHERIFF committees were already confirmed before this script ran.
 // If the script can't resolve a name, it prints a fatal error and exits non-zero.
-const TARGET_DEFINITIONS: Array<{ full_name: string; office: string }> = [
+const TARGET_DEFINITIONS: Array<{
+  full_name: string;
+  office: string;
+  secondarySearch?: { lastName: string; roleKeyword: string };
+}> = [
   { full_name: 'Hilda L. Solis',    office: 'Supervisor District 1' },
   { full_name: 'Holly J. Mitchell', office: 'Supervisor District 2' },
   { full_name: 'Lindsey P. Horvath',office: 'Supervisor District 3' },
   { full_name: 'Janice Hahn',       office: 'Supervisor District 4' },
   { full_name: 'Kathryn Barger',    office: 'Supervisor District 5' },
   { full_name: 'Nathan Hochman',    office: 'District Attorney' },
-  { full_name: 'Robert Luna',       office: 'Sheriff' },
-  { full_name: 'Jeff Prang',         office: 'Assessor' },
+  {
+    full_name: 'Robert Luna',
+    office: 'Sheriff',
+    // Primary pass matches only needs_research rows by first+last name — misses confirmed rows.
+    // Secondary pass: query ALL rows for "LUNA" + "SHERIFF" to recover confirmed sheriff committees.
+    secondarySearch: { lastName: 'luna', roleKeyword: 'sheriff' },
+  },
+  { full_name: 'Jeff Prang',        office: 'Assessor' },
 ];
 
 // ─── Normalization ────────────────────────────────────────────────────────────
@@ -93,6 +106,7 @@ interface TargetPolitician {
   id: string;
   full_name: string;
   office: string;
+  secondarySearch?: { lastName: string; roleKeyword: string };
 }
 
 interface CommitteeRow {
@@ -166,6 +180,38 @@ async function fetchCalAccessCommittees(): Promise<CommitteeRow[]> {
     committee_name: r.committee_name,
     normalized: normalize(r.committee_name),
   }));
+}
+
+/**
+ * Secondary pass: fetch Cal-Access rows (any research_status) whose notes->committee_name
+ * contains a given last name AND a role keyword. Used to recover officials like Robert Luna
+ * whose SHERIFF committees were already confirmed and thus excluded from the primary pass.
+ *
+ * Returns rows as CommitteeRow[] using the notes->'committee_name' field (the actual filing name).
+ */
+async function fetchCalAccessByLastNameAndRole(
+  lastName: string,
+  roleKeyword: string,
+  politicianFullName: string
+): Promise<CommitteeRow[]> {
+  const res = await pool.query<{ filer_id: string; committee_name: string }>(`
+    SELECT DISTINCT ps.external_id AS filer_id,
+           ps.notes::json->>'committee_name' AS committee_name
+    FROM transparent_motivations.politician_sources ps
+    JOIN essentials.politicians p ON p.id = ps.essentials_politician_id
+    WHERE ps.source_system = 'cal_access'
+      AND LOWER(p.full_name) = LOWER($1)
+      AND LOWER(ps.notes::json->>'committee_name') LIKE $2
+      AND LOWER(ps.notes::json->>'committee_name') LIKE $3
+  `, [politicianFullName, `%${lastName.toLowerCase()}%`, `%${roleKeyword.toLowerCase()}%`]);
+
+  return res.rows
+    .filter(r => r.committee_name) // skip rows with null committee_name
+    .map(r => ({
+      filer_id: r.filer_id,
+      committee_name: r.committee_name,
+      normalized: normalize(r.committee_name),
+    }));
 }
 
 // ─── Matching ─────────────────────────────────────────────────────────────────
@@ -257,6 +303,7 @@ async function main(): Promise<void> {
         id: row.id,
         full_name: row.full_name,
         office: def.office,
+        secondarySearch: def.secondarySearch,
       });
       console.log(`  Resolved: "${row.full_name}" -> id=${row.id}`);
     }
@@ -280,7 +327,35 @@ async function main(): Promise<void> {
   const results: MatchResult[] = [];
 
   for (const politician of resolvedPoliticians) {
-    const result = matchPolitician(politician, uniqueCommittees);
+    let result = matchPolitician(politician, uniqueCommittees);
+
+    // Secondary pass: if primary failed AND the definition specifies a last-name+role search,
+    // query ALL cal_access rows (including confirmed) for that politician filtered by role keyword.
+    // This recovers officials like Robert Luna whose sheriff committees were already confirmed.
+    if (result.status === 'no_match' && politician.secondarySearch) {
+      const { lastName, roleKeyword } = politician.secondarySearch;
+      console.log(`  [secondary pass] ${politician.full_name}: searching by last_name="${lastName}" + role="${roleKeyword}" across all statuses...`);
+      const secondaryRows = await fetchCalAccessByLastNameAndRole(
+        lastName,
+        roleKeyword,
+        politician.full_name
+      );
+
+      if (secondaryRows.length > 0) {
+        console.log(`  [secondary pass] Found ${secondaryRows.length} committees for ${politician.full_name}:`);
+        for (const r of secondaryRows) {
+          console.log(`    [${r.filer_id}] ${r.committee_name}`);
+        }
+        result = {
+          politician,
+          matches: secondaryRows.map(r => ({ filer_id: r.filer_id, committee_name: r.committee_name })),
+          status: 'matched',
+        };
+      } else {
+        console.log(`  [secondary pass] No results for ${politician.full_name} — remains no_match`);
+      }
+    }
+
     results.push(result);
   }
 
