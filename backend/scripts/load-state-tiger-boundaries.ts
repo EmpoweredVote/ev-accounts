@@ -33,7 +33,7 @@ dotenv.config();
 //
 const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place']),
-  TX: new Set(['cd', 'sldu', 'sldl', 'county']),
+  TX: new Set(['cd', 'sldu', 'sldl', 'county', 'place']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
@@ -46,6 +46,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
 // Adding a new state is a code change, on purpose.
 const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   UT: ['Magna', 'Kearns', 'Copperton', 'Emigration Canyon', 'White City'],
+  TX: ['Longview city', 'Houston city', 'Dallas city', 'Austin city'],
   MA: ['Cambridge city'],
   ME: ['Portland city'],
 };
@@ -55,6 +56,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
 // CA byte-equivalence). When present, every layer in the Set receives ST_MakeValid.
 const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
+  TX: new Set(['place', 'county']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
 };
@@ -615,6 +617,45 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] ME MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── TX MTFCC pre-flight assertion (Phase TX-place) ───────────────────────────
+  // For TX (state='48'), count G4110 incorporated places before any DB write.
+  // TX TIGER 2024: 1,228 G4110 records (0 G4150 CDPs, 635 G4210 consolidated cities filtered).
+  if (fipsArg === '48') {
+    const EXPECTED_TX_MTFCC: Record<string, number> = {
+      place: 1228,
+      county: 254,
+    };
+    if (layer in EXPECTED_TX_MTFCC) {
+      const expected = EXPECTED_TX_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[TX MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 48 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] TX MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
