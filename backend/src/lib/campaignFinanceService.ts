@@ -453,11 +453,14 @@ const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ES
  *   - 'no_data'            — federal/state office with no sources on file
  */
 async function detectCoverageStatus(politicianId: string): Promise<string> {
-  // Check if politician_sources rows exist (needs_research or otherwise)
+  // Count candidate_committee sources only — ie_committee rows represent PAC/IE spending
+  // linked to this politician's race, not the politician's own fundraising committee.
+  // A politician with only ie_committee sources has genuinely no candidate fundraising.
   const sourceCountResult = await pool.query<{ cnt: string }>(
     `SELECT COUNT(*) AS cnt
      FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1`,
+     WHERE essentials_politician_id = $1
+       AND source_type = 'candidate_committee'`,
     [politicianId]
   );
   const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
