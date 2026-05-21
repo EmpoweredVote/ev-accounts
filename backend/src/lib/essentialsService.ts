@@ -132,6 +132,7 @@ export interface AddressSearchResult {
     mtfcc: string;
   } | null;
   matchedAddress: string;
+  tribal_land: { on_reservation: boolean; name?: string };
 }
 
 export interface PoliticianRecord {
@@ -571,7 +572,11 @@ export async function getRepresentativesByAddress(
         OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G4110', 'G4120') AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')
-        OR (gb.mtfcc LIKE 'X%' AND d.district_type IN ('LOCAL', 'COUNTY'))
+        OR (gb.mtfcc = 'X0001' AND d.district_type IN ('LOCAL', 'COUNTY'))
+        OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
+        OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
+        -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
+        OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id
         OR (gb.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420')
             AND gb.mtfcc NOT LIKE 'X%')
@@ -640,15 +645,40 @@ export async function getRepresentativesByAddress(
     ORDER BY COALESCE(p.id, o.id)
   `;
 
+  // D-06 / Pitfall 5: narrow tribal-lands lookup, always-present block.
+  const tribalQueryText = `
+    SELECT geo_id, name
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc = 'X0004'
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+  `;
+
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
-  const [districtResult, statewideResult] = await Promise.all([
+  const [districtResult, statewideResult, tribalResult] = await Promise.all([
     pool.query(districtQueryText, [lng, lat]),
     state ? pool.query(statewideQueryText, [state]) : Promise.resolve({ rows: [] as unknown[] }),
+    pool.query(tribalQueryText, [lng, lat]),
   ]);
   const rows = [...districtResult.rows, ...(statewideResult.rows as typeof districtResult.rows)];
 
+  // Default to off-reservation; flip to on-reservation only if the X0004 query matches.
+  let tribal_land: { on_reservation: boolean; name?: string } = { on_reservation: false };
+  if (tribalResult.rows.length > 0) {
+    tribal_land = { on_reservation: true, name: tribalResult.rows[0].name as string };
+  }
+
   if (rows.length === 0) {
-    return { politicians: [], jurisdiction: null, matchedAddress };
+    // Early-return path: explicit tribal_land defaulting to on_reservation: false when no district match.
+    return {
+      politicians: [],
+      jurisdiction: null,
+      matchedAddress,
+      tribal_land: tribal_land ?? { on_reservation: false },
+    };
   }
 
   const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
@@ -711,7 +741,7 @@ export async function getRepresentativesByAddress(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  return { politicians, jurisdiction, matchedAddress };
+  return { politicians, jurisdiction, matchedAddress, tribal_land };
 }
 
 // ---------------------------------------------------------------------------

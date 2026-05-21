@@ -8,7 +8,13 @@ export default defineConfig({
   test: {
     environment: 'node',
     globals: true,
-    include: ['../tests/**/*.{test,spec}.{ts,js}'],
+    include: [
+      '../tests/**/*.{test,spec}.{ts,js}',
+      'test/**/*.{test,spec}.{ts,js}',
+    ],
+    testTimeout: 30000,
+    hookTimeout: 30000,
+    pool: 'forks',
   },
   resolve: {
     alias: {

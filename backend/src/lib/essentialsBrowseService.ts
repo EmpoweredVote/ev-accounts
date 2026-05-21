@@ -79,7 +79,7 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
     SELECT DISTINCT gb.geo_id, gb.name, gb.mtfcc
     FROM essentials.geofence_boundaries gb
     WHERE gb.state = $1
-    AND gb.mtfcc IN ('G4020', 'G4110', 'G4120', 'G4040')
+    AND gb.mtfcc IN ('G4020', 'G4110', 'G4120', 'G4040', 'X0001', 'X0002', 'X0003')
     ORDER BY gb.mtfcc, gb.name
   `, [fips]);
 
@@ -89,6 +89,9 @@ export async function getAreasForState(stateAbbrev: string): Promise<BrowseArea[
     if (mtfcc === 'G4020') area_type = 'county';
     else if (mtfcc === 'G4110' || mtfcc === 'G4120') area_type = 'city';
     else if (mtfcc === 'G4040') area_type = 'township';
+    else if (mtfcc === 'X0001') area_type = 'council_district';
+    else if (mtfcc === 'X0002') area_type = 'school_subdistrict';
+    else if (mtfcc === 'X0003') area_type = 'sboe';
 
     return {
       geo_id: r.geo_id as string,

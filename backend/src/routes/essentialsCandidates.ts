@@ -108,7 +108,14 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
     const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
     res.setHeader('X-Formatted-Address', result.matchedAddress);
-    res.status(200).json(result.politicians);
+    // SCHEMA-03 (Phase 132 D-06): wrap response so tribal_land block reaches the frontend.
+    // Backward-compatible — clients that previously read the bare politicians array can now
+    // read response.politicians instead. tribal_land is always present (on_reservation:false
+    // for non-tribal addresses) so consumers do not need to null-check.
+    res.status(200).json({
+      politicians: result.politicians,
+      tribal_land: result.tribal_land ?? { on_reservation: false },
+    });
   } catch (err: unknown) {
     const code = (err as { code?: string }).code;
     if (code === 'ADDRESS_NOT_FOUND' || code === 'PO_BOX_REJECTED') {

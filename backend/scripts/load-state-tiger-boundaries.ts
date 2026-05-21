@@ -34,11 +34,41 @@ dotenv.config();
 const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place']),
   TX: new Set(['cd', 'sldu', 'sldl', 'county', 'place']),
-  UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
+  UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county', 'aiannh']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
 };
+
+// UT_TRIBE_NAMELSAD_ALLOWLIST (Phase 132 GEO-07 / D-05 hybrid path)
+//
+// Pitfall 2 (132-RESEARCH §"Pitfall 2: Navajo Nation Cross-State Polygon"):
+// the TIGER aiannh national layer's STATEFP field designates the *primary*
+// state, not all touching states. A naive `STATEFP='49'` filter would EXCLUDE
+// Navajo Nation (whose primary state is AZ) entirely. Filter by NAMELSAD
+// allowlist instead. Verify exact strings on dry-run if the count drifts;
+// loader prints distinct NAMELSAD touching the allowlist when --dry-run.
+// Exact NAMELSAD strings from TIGER 2024 (verified 2026-05-09 via dry-run probe
+// against tl_2024_us_aiannh.dbf). Covers all UT-touching tribal entities:
+//   - 6 reservations (G2101, LSAD=86 "Reservation")
+//   - 4 off-reservation trust lands (G2102, LSAD=OT) for tribes with scattered
+//     parcels held in federal trust outside the main reservation
+// Ute Mountain's primary state is CO/NM but its land touches SE Utah; included
+// so addresses in that corner correctly resolve on_reservation:true.
+const UT_TRIBE_NAMELSAD_ALLOWLIST: Set<string> = new Set([
+  // Reservations
+  'Navajo Nation Reservation',
+  'Uintah and Ouray Reservation',
+  'Goshute Reservation',
+  'Skull Valley Reservation',
+  'Northwestern Shoshone Reservation',
+  'Paiute (UT) Reservation',
+  'Ute Mountain Reservation',
+  // Off-Reservation Trust Lands
+  'Navajo Nation Off-Reservation Trust Land',
+  'Uintah and Ouray Off-Reservation Trust Land',
+  'Ute Mountain Off-Reservation Trust Land',
+]);
 
 // STATE_CITY_ASSERTIONS: place-layer vintage gate (Phase 131 D-03..D-06)
 // Fires for any state listed here when processing the 'place' layer.
@@ -55,7 +85,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
 // When a state is absent, the fallback `layer === 'place'` rule applies (preserving
 // CA byte-equivalence). When present, every layer in the Set receives ST_MakeValid.
 const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
-  UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county']),
+  UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county', 'aiannh']),
   TX: new Set(['place', 'county']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
@@ -157,6 +187,13 @@ type LayerDef = {
    *  Field type below uses `true | false` (not `boolean`) so the literal-only grep
    *  in 130-04 acceptance criteria stays clean. */
   writeDistrictRow: true | false;
+  /** Phase 132 D-05/D-09 hybrid aiannh path. Per-row NAMELSAD allowlist filter
+   *  (Pitfall 2: Navajo cross-state can't use STATEFP). When set, layers ignore
+   *  STATEFP and admit only records whose NAMELSAD is in the Set. */
+  namelsadAllowlist?: Set<string>;
+  /** Phase 132 D-05 hybrid source string override; replaces 'census_tiger_2024'
+   *  in upsertGeofence for layers (e.g. aiannh) sourced from a TIGER+UGRC composite. */
+  sourceString?: string;
 };
 
 // LA City Mayor risk callout: gap_fill_geo_ids.py:141 hardcodes
@@ -242,9 +279,27 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     geoIdSource: 'GEOID',
     urlTemplate: (v, f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/COUSUB/tl_${v}_${f}_cousub.zip`,
     districtNumField: null,
-    filterByStatefp: false,  // file is already per-state (filename includes FIPS)
+    filterByStatefp: false,
     skipDistrictCodes: new Set<string>(),
-    writeDistrictRow: false,  // matches place pattern — no essentials.districts row needed
+    writeDistrictRow: false,
+  },
+  aiannh: {
+    // Phase 132 GEO-07 / D-05 hybrid path: TIGER aiannh national layer for the
+    // polygon, UGRC tribal-lands FeatureServer for metadata enrichment.
+    // D-10: stored under synthetic mtfcc='X0004' (not TIGER native G2100).
+    // D-11: tribal does NOT join essentials.districts; surfaces via tribal_land
+    // response field instead.
+    mtfcc: 'X0004',
+    district_type: 'TRIBAL',
+    ocdKey: 'tribe',
+    geoIdSource: 'NAMELSAD',
+    urlTemplate: (v, _f, _c) => `https://www2.census.gov/geo/tiger/TIGER${v}/AIANNH/tl_${v}_us_aiannh.zip`,
+    districtNumField: null,
+    filterByStatefp: false /* Pitfall 2: Navajo cross-state */,
+    skipDistrictCodes: new Set<string>(),
+    writeDistrictRow: false,
+    namelsadAllowlist: UT_TRIBE_NAMELSAD_ALLOWLIST,
+    sourceString: 'tiger_2024_aiannh+ugrc_sgid_tribal_metadata',
   },
 };
 
@@ -338,6 +393,9 @@ async function upsertGeofence(client: Client, params: {
    *  Setting this on for non-place layers would alter geometries that the
    *  Python pipeline left alone and break byte-equivalence. */
   runMakeValid?: boolean;
+  /** Phase 132 D-05 hybrid: composite source override (e.g. for aiannh).
+   *  Defaults to 'census_tiger_2024' when omitted. */
+  sourceString?: string;
 }): Promise<{ inserted: boolean }> {
   const geomExpr = params.runMakeValid
     ? `ST_MakeValid(ST_SetSRID(ST_Force2D(ST_GeomFromGeoJSON($6)), 4326))`
@@ -348,7 +406,7 @@ async function upsertGeofence(client: Client, params: {
       (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
     VALUES ($1, $2, $3, $4, $5,
       ${geomExpr},
-      'census_tiger_2024', now())
+      $7, now())
     ON CONFLICT (geo_id, mtfcc) DO NOTHING
     `,
     [
@@ -358,6 +416,7 @@ async function upsertGeofence(client: Client, params: {
       params.state,
       params.mtfcc,
       JSON.stringify(params.geometryGeoJson),
+      params.sourceString ?? 'census_tiger_2024',
     ],
   );
   return { inserted: (result.rowCount ?? 0) > 0 };
@@ -464,6 +523,50 @@ async function processLayer(
     console.log(`  [dry-run] URL: ${url}`);
     console.log(`  [dry-run] writeDistrictRow=${layerDef.writeDistrictRow}, filterByStatefp=${layerDef.filterByStatefp}`);
     console.log(`  [dry-run] would write rows for layer ${layer} (skip rules: ${Array.from(layerDef.skipDistrictCodes).join(',') || 'none'}).`);
+
+    // Phase 132 GEO-07 dry-run safeguard: when scanning aiannh, download
+    // the layer (cached) and print distinct NAMELSAD values that pass the
+    // allowlist + a sample of the rest, so the operator can verify the
+    // allowlist matches actual TIGER vintage NAMELSAD strings. This guards
+    // against threat T-132-05-01 (NAMELSAD drift between TIGER vintages).
+    if (layer === 'aiannh' && layerDef.namelsadAllowlist) {
+      try {
+        const tmpRoot = path.join(process.cwd(), `.tmp-tiger-${vintage}-${fips}`);
+        fs.mkdirSync(tmpRoot, { recursive: true });
+        const baseName = path.basename(url, '.zip');
+        const zipPath = path.join(tmpRoot, `${baseName}.zip`);
+        const destDir = path.join(tmpRoot, baseName);
+        await downloadWithRedirects(url, zipPath);
+        extractZip(zipPath, destDir);
+        const entries = fs.readdirSync(destDir);
+        const shpFile = entries.find((e) => e.toLowerCase().endsWith('.shp'));
+        const dbfFile = entries.find((e) => e.toLowerCase().endsWith('.dbf'));
+        if (shpFile && dbfFile) {
+          const seenAllowed = new Set<string>();
+          const seenOther = new Set<string>();
+          await streamShapefile(
+            path.join(destDir, shpFile),
+            path.join(destDir, dbfFile),
+            async (_g, props) => {
+              const namelsadKey = resolveColumn(props as Record<string, unknown>, NAMELSAD_CANDIDATES);
+              const v = String(props[namelsadKey] ?? '');
+              if (!v) return;
+              if (layerDef.namelsadAllowlist!.has(v)) seenAllowed.add(v);
+              else if (seenOther.size < 20) seenOther.add(v);
+            },
+          );
+          console.log(`  [dry-run] aiannh NAMELSAD allowlist hits (${seenAllowed.size}):`);
+          for (const v of Array.from(seenAllowed).sort()) console.log(`    ✓ ${v}`);
+          const missing = Array.from(layerDef.namelsadAllowlist).filter((v) => !seenAllowed.has(v));
+          if (missing.length > 0) {
+            console.log(`  [dry-run] MISSING from allowlist (drift?): ${missing.join(' | ')}`);
+          }
+          console.log(`  [dry-run] sample of other NAMELSAD (first 20): ${Array.from(seenOther).slice(0, 20).join(' | ')}`);
+        }
+      } catch (err) {
+        console.warn(`  [dry-run] aiannh scan failed: ${(err as Error).message}`);
+      }
+    }
     return totals;
   }
 
@@ -672,6 +775,18 @@ async function processLayer(
         }
       }
 
+      // NAMELSAD allowlist filter — Phase 132 GEO-07 / D-05 (aiannh hybrid).
+      // Pitfall 2: STATEFP filter would drop Navajo Nation (its primary STATEFP is AZ),
+      // so aiannh ignores filterByStatefp and gates on NAMELSAD instead.
+      if (layerDef.namelsadAllowlist) {
+        const namelsadKey = resolveColumn(props, NAMELSAD_CANDIDATES);
+        const namelsad = String(props[namelsadKey] ?? '');
+        if (!layerDef.namelsadAllowlist.has(namelsad)) {
+          totals.skipped++;
+          return;
+        }
+      }
+
       // PLACE layer: hard-filter MTFCC === 'G4110' per 130-01 audit
       // §"place layer" "Skip rules" (excludes G4150 CDP, G4210, etc.).
       if (layer === 'place') {
@@ -716,6 +831,13 @@ async function processLayer(
       if (layer === 'place') {
         const geoidKey = resolveColumn(props, GEOID_CANDIDATES);
         geo_id = String(props[geoidKey] ?? '');
+      } else if (layer === 'aiannh') {
+        // Phase 132 GEO-07 / D-09: tribal geo_id is OCD-format
+        // `ocd-division/country:us/state:ut/tribe:{slug}` derived from NAMELSAD,
+        // NOT raw TIGER GEOID. Predictable for the Phase 133 politician join.
+        const namelsadKey = resolveColumn(props, NAMELSAD_CANDIDATES);
+        const slug = slugifyName(String(props[namelsadKey] ?? ''));
+        geo_id = buildOcdId('UT', 'tribe', slug);
       } else if (layerDef.geoIdSource === 'NAMELSAD') {
         const namelsadKey = resolveColumn(props, NAMELSAD_CANDIDATES);
         geo_id = String(props[namelsadKey] ?? '');
@@ -774,6 +896,11 @@ async function processLayer(
           // ocd_id key, so unsd baseline rows have ocd_id NULL.
           ocd_id = null;
           break;
+        case 'aiannh':
+          // Phase 132 GEO-07 / D-09: ocd_id mirrors geo_id (both are the
+          // OCD-format `ocd-division/country:us/state:ut/tribe:{slug}` string).
+          ocd_id = geo_id;
+          break;
         default:
           ocd_id = null;
       }
@@ -784,7 +911,7 @@ async function processLayer(
       // D-09 single resolution point: registry lookup with place-only fallback (CA byte-equivalence preserved).
       const runMakeValid = STATE_RUN_MAKEVALID[abbrevUpper]?.has(layer) ?? (layer === 'place');
       // eslint-disable-next-line max-len
-      const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid });
+      const upsertResult = await upsertGeofence(client, { geo_id, ocd_id, name, state: fipsArg, mtfcc: layerDef.mtfcc, geometryGeoJson: geom, runMakeValid, sourceString: layerDef.sourceString });
       if (upsertResult.inserted) {
         totals.inserted_boundary++;
       } else {
@@ -1024,6 +1151,7 @@ export {
   STATE_LAYER_ALLOWLIST,
   STATE_CITY_ASSERTIONS,
   STATE_RUN_MAKEVALID,
+  UT_TRIBE_NAMELSAD_ALLOWLIST,
   UNSAFE_LAYERS,
   FIPS_TO_STATE,
   LAYER_DISPATCH,
