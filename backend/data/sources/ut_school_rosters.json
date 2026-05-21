@@ -3,9 +3,9 @@
     "district_geo_id": "ocd-division/country:us/state:ut/school_district:alpine",
     "district_name": "Alpine School District",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "has_subdistrict_polygons": false,
-    "status": "active",
+    "status": "manual_csv",
     "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
   },
   {
@@ -39,9 +39,9 @@
     "district_geo_id": "ocd-division/country:us/state:ut/school_district:canyons",
     "district_name": "Canyons School District",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "has_subdistrict_polygons": false,
-    "status": "active",
+    "status": "manual_csv",
     "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
   },
   {
@@ -66,9 +66,9 @@
     "district_geo_id": "ocd-division/country:us/state:ut/school_district:davis",
     "district_name": "Davis School District",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "has_subdistrict_polygons": false,
-    "status": "active",
+    "status": "manual_csv",
     "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
   },
   {
@@ -111,9 +111,9 @@
     "district_geo_id": "ocd-division/country:us/state:ut/school_district:granite",
     "district_name": "Granite School District",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "has_subdistrict_polygons": false,
-    "status": "active",
+    "status": "manual_csv",
     "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
   },
   {
@@ -129,9 +129,9 @@
     "district_geo_id": "ocd-division/country:us/state:ut/school_district:jordan",
     "district_name": "Jordan School District",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "has_subdistrict_polygons": false,
-    "status": "active",
+    "status": "manual_csv",
     "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
   },
   {
@@ -185,7 +185,7 @@
     "source": "manual_csv",
     "source_url": null,
     "has_subdistrict_polygons": false,
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -266,7 +266,7 @@
     "source": "manual_csv",
     "source_url": null,
     "has_subdistrict_polygons": false,
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {

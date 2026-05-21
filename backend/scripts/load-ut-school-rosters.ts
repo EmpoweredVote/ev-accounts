@@ -53,15 +53,28 @@ async function resolveSchoolDistrict(
   geoId: string,
   label: string,
 ): Promise<string> {
+  // The SCHOOL district row's geo_id MUST equal the TIGER G5420 UNSD geofence's
+  // geo_id (a FIPS code like '4900360') — essentialsService.ts joins
+  // geofence_boundaries.geo_id = districts.geo_id. The G5420 row has no ocd_id,
+  // so match it by name (UNSD names equal district_name exactly) and adopt its geo_id.
+  let effectiveGeoId = geoId;
+  const place = await client.query<{ geo_id: string }>(
+    `SELECT geo_id FROM essentials.geofence_boundaries
+      WHERE state='49' AND mtfcc='G5420' AND name ILIKE $1 LIMIT 1`,
+    [label],
+  );
+  if (place.rowCount && place.rowCount > 0) {
+    effectiveGeoId = place.rows[0].geo_id;
+  }
   const found = await client.query<{ id: string }>(
     `SELECT id FROM essentials.districts WHERE state ILIKE 'ut' AND district_type='SCHOOL' AND geo_id=$1 LIMIT 1`,
-    [geoId],
+    [effectiveGeoId],
   );
   if (found.rowCount && found.rowCount > 0) return found.rows[0].id;
   const ins = await client.query<{ id: string }>(
     `INSERT INTO essentials.districts (ocd_id, label, district_type, state, geo_id)
-     VALUES ($1, $2, 'SCHOOL', 'ut', $1) RETURNING id`,
-    [geoId, label],
+     VALUES ($1, $2, 'SCHOOL', 'ut', $3) RETURNING id`,
+    [geoId, label, effectiveGeoId],
   );
   return ins.rows[0].id;
 }
@@ -109,7 +122,8 @@ async function loadDistrict(pool: pg.Pool, district: SchoolRecord): Promise<Dist
 
       // D-07 hash key: scope by district + role so 'Board Member Seat 1' in Granite != Jordan.
       const hashRole = `school_${slug}_${slugify(row.role)}`;
-      const { external_id } = await assignExternalId(pool, district.district_geo_id, hashRole, { dataSource: dataSource, fullName: row.full_name });
+      const dataSource = `ut-school-${slug}`;
+      const { external_id } = await assignExternalId(pool, district.district_geo_id, hashRole, { dataSource, fullName: row.full_name });
 
       if (DRY_RUN) {
         await client.query('ROLLBACK');
@@ -119,7 +133,6 @@ async function loadDistrict(pool: pg.Pool, district: SchoolRecord): Promise<Dist
 
       const [first, ...rest] = row.full_name.split(' ');
       const last = rest.join(' ') || first;
-      const dataSource = `ut-school-${slug}`;
       const { inserted } = await upsertPolitician(
         client,
         {
