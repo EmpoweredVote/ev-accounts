@@ -1,0 +1,19 @@
+{
+  "roster_url": "https://schools.utah.gov/board/utah/members.php",
+  "member_count": 15,
+  "geo_id_template": "ocd-division/country:us/state:ut/sboe:{N}",
+  "scraper": {
+    "engine": "cheerio",
+    "card_selector": "TBD — confirm via WebFetch in W2 (cards include name anchor + district number + img)",
+    "fields": {
+      "name": "TBD",
+      "district_number": "TBD",
+      "photo": "TBD",
+      "profile_link": "TBD"
+    }
+  },
+  "email_probe": {
+    "status": "open_question_2",
+    "notes": "RESEARCH Open Question 2: profile pages may have machine-readable email. W2 task: probe 3 profile pages; if stable selector exists, scrape; else mark email=null."
+  }
+}

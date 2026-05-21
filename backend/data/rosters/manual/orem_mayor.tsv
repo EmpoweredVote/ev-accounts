@@ -1,0 +1,5 @@
+# Phase 133 / POL-03 stub — fill in mayor row then remove PENDING_RESEARCH name.
+# city: Orem
+# external_id + geo_id are auto-computed by loader (leave blank for mayor — loader resolves to LOCAL_EXEC place row).
+external_id	full_name	role	geo_id	email	phone	term_start	term_end	photo_url	source
+	PENDING_RESEARCH_mayor	Mayor							https://orem.utah.gov/mayor
