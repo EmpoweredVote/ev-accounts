@@ -5,7 +5,7 @@
     "source": "featureserver",
     "source_url": "https://services.arcgis.com/mMBpeYj0vPFotzbe/arcgis/rest/services/Salt_Lake_City_Council_Districts/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
     "fields": {
-      "district_number": "DISTRICT",
+      "district_number": "CITYCOUNCIL_ID",
       "council_member": "CITYCOUNCIL_MEMBER",
       "email": null,
       "phone": null,
@@ -15,7 +15,7 @@
     "status": "active",
     "expected_seats": 7,
     "mayor_district_type": "LOCAL_EXEC",
-    "notes": "FeatureServer field CITYCOUNCIL_MEMBER verified in 132 arcgis_sources.json. Mayor sourced via data/rosters/manual/salt_lake_city_mayor.tsv (loader auto-resolves geo_id to jurisdiction_id for LOCAL_EXEC). W-3 cleanup 2026-05-14: removed dead `mayor_geo_id` field — loader derives mayor geo_id from jurisdiction_id."
+    "notes": "FeatureServer field CITYCOUNCIL_MEMBER verified in 132 arcgis_sources.json. Mayor sourced via data/rosters/manual/salt_lake_city_mayor.tsv (loader auto-resolves geo_id to jurisdiction_id for LOCAL_EXEC). W-3 cleanup 2026-05-14: removed dead `mayor_geo_id` field \u2014 loader derives mayor geo_id from jurisdiction_id."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:provo",
@@ -23,7 +23,7 @@
     "source": "featureserver",
     "source_url": "https://gispublicweb.provo.org/ArcGIS/rest/services/Council/Council_Districts/FeatureServer/3/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
     "fields": {
-      "district_number": "ward",
+      "district_number": "DISTRICT",
       "council_member": "COUNCIL_MEMBER",
       "email": "EMAIL",
       "phone": "PHONE",
@@ -34,22 +34,22 @@
     "status": "active",
     "expected_seats": 7,
     "mayor_district_type": "LOCAL_EXEC",
-    "notes": "Provo FeatureServer (132 verified path) — COUNCIL_MEMBER, EMAIL, PHONE, TERM_EXPIRES, picture. 5 ward + 2 at-large. Mayor sourced via data/rosters/manual/provo_mayor.tsv (loader derives geo_id from jurisdiction_id)."
+    "notes": "Provo FeatureServer (132 verified path) \u2014 COUNCIL_MEMBER, EMAIL, PHONE, TERM_EXPIRES, picture. 5 ward + 2 at-large. Mayor sourced via data/rosters/manual/provo_mayor.tsv (loader derives geo_id from jurisdiction_id)."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:ogden",
     "city_name": "Ogden",
     "source": "scrape",
-    "source_url": "TBD — W2 source-audit task",
+    "source_url": "TBD \u2014 W2 source-audit task",
     "status": "manual_csv",
-    "notes": "LOW confidence; likely manual TSV. RESEARCH §External Sources lists Ogden in 'likely candidates'."
+    "notes": "LOW confidence; likely manual TSV. RESEARCH \u00a7External Sources lists Ogden in 'likely candidates'."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
     "city_name": "Sandy",
     "source": "scrape",
     "source_url": "TBD",
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LOW confidence; manual TSV expected; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -73,7 +73,7 @@
     "city_name": "Orem",
     "source": "scrape",
     "source_url": "TBD",
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -81,7 +81,7 @@
     "city_name": "Layton",
     "source": "scrape",
     "source_url": "TBD",
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -89,7 +89,7 @@
     "city_name": "Lehi",
     "source": "scrape",
     "source_url": "TBD",
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -97,7 +97,7 @@
     "city_name": "St. George",
     "source": "scrape",
     "source_url": "TBD",
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   }
 ]

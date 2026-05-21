@@ -58,17 +58,36 @@ async function fetchFeatures(url: string): Promise<Array<{ properties?: Record<s
 
 async function resolveDistrict(
   client: pg.PoolClient, geoId: string, districtType: string,
-  label: string, districtNum?: string,
+  label: string, districtNum?: string, cityName?: string,
 ): Promise<string> {
+  // For whole-place attachments (city council at-large / mayor), the district
+  // row's geo_id MUST equal the TIGER G4110 place geofence's geo_id (a 7-digit
+  // FIPS place code like '4955980') — essentialsService.ts joins
+  // geofence_boundaries.geo_id = districts.geo_id. The G4110 row has no ocd_id,
+  // so we match it by name ("{City} city" / "{City} town") and adopt its geo_id.
+  let effectiveGeoId = geoId;
+  const isWholePlace = !geoId.includes('/ward:');
+  if (isWholePlace && cityName) {
+    const place = await client.query<{ geo_id: string }>(
+      `SELECT geo_id FROM essentials.geofence_boundaries
+        WHERE state='49' AND mtfcc='G4110'
+          AND (name ILIKE $1 OR name ILIKE $2)
+        LIMIT 1`,
+      [`${cityName} city`, `${cityName} town`],
+    );
+    if (place.rowCount && place.rowCount > 0) {
+      effectiveGeoId = place.rows[0].geo_id;
+    }
+  }
   const found = await client.query<{ id: string }>(
     `SELECT id FROM essentials.districts WHERE state ILIKE 'ut' AND geo_id=$1 AND district_type=$2 LIMIT 1`,
-    [geoId, districtType],
+    [effectiveGeoId, districtType],
   );
   if (found.rowCount && found.rowCount > 0) return found.rows[0].id;
   const ins = await client.query<{ id: string }>(
     `INSERT INTO essentials.districts (ocd_id, label, district_type, district_id, state, geo_id)
-     VALUES ($1, $2, $3, $4, 'UT', $1) RETURNING id`,
-    [geoId, label, districtType, districtNum ?? null],
+     VALUES ($1, $2, $3, $4, 'ut', $5) RETURNING id`,
+    [geoId, label, districtType, districtNum ?? null, effectiveGeoId],
   );
   return ins.rows[0].id;
 }
@@ -88,11 +107,14 @@ async function ingest(
     await client.query('BEGIN');
     const districtLabel = `${city.city_name} ${role}`;
     const districtNum = role.match(/\b(\d+|AL|At-Large)\b/i)?.[1] ?? undefined;
-    const districtId = await resolveDistrict(client, targetGeoId, districtType, districtLabel, districtNum);
+    const districtId = await resolveDistrict(client, targetGeoId, districtType, districtLabel, districtNum, city.city_name);
 
     const slug = placeSlug(city.jurisdiction_id);
     const hashRole = `city_${slug}_${slugify(role)}`;
-    const { external_id } = await assignExternalId(pool, targetGeoId, hashRole, { dataSource: `ut-city-${slug}`, fullName: row.full_name });
+    // Identity dataSource MUST equal the data_source used in the upsert
+    // (opts.sourceSlug) — mayors use `ut-city-{slug}-mayor`, council uses
+    // `ut-city-{slug}`. Mismatch breaks idempotent re-run dedup.
+    const { external_id } = await assignExternalId(pool, targetGeoId, hashRole, { dataSource: opts.sourceSlug, fullName });
 
     if (DRY_RUN) {
       console.error(`[dry] ${fullName} (${role}) -> ${targetGeoId} ext=${external_id}`);

@@ -1,12 +1,8 @@
-# Phase 133 / POL-03 stub — fill in council member rows then remove PENDING_RESEARCH names.
-# city: Sandy   jurisdiction: ocd-division/country:us/state:ut/place:sandy
-# Per RESEARCH §External Sources POL-03 — Sandy structure (ward vs at-large) UNVERIFIED at scaffold time.
-# If wards exist: set geo_id=ocd-division/country:us/state:ut/place:sandy/ward:N and role='Council Ward N'.
-# If at-large: leave geo_id blank (loader resolves to whole-place ocd-division/country:us/state:ut/place:sandy) and role='Council At-Large'.
-# external_id is auto-computed by loader (leave blank). Add or remove rows to match actual seat count.
 external_id	full_name	role	geo_id	email	phone	term_start	term_end	photo_url	source
-	PENDING_RESEARCH_seat_1	Council At-Large							https://sandy.utah.gov/council
-	PENDING_RESEARCH_seat_2	Council At-Large							https://sandy.utah.gov/council
-	PENDING_RESEARCH_seat_3	Council At-Large							https://sandy.utah.gov/council
-	PENDING_RESEARCH_seat_4	Council At-Large							https://sandy.utah.gov/council
-	PENDING_RESEARCH_seat_5	Council At-Large							https://sandy.utah.gov/council
+	Mike Applegarth	City Council							manual_research_2026-05
+	Jim Bennett	City Council							manual_research_2026-05
+	Brooke Christensen	City Council							manual_research_2026-05
+	Marci Houseman	City Council							manual_research_2026-05
+	Ronald T. Jones	City Council							manual_research_2026-05
+	Kris Nicholl	City Council							manual_research_2026-05
+	Linda Saville	City Council							manual_research_2026-05
