@@ -460,7 +460,7 @@ async function main(): Promise<void> {
       await client.query('BEGIN');
       for (const r of toUpdate) {
         const res = await client.query(
-          'UPDATE essentials.offices SET title = $1, updated_at = NOW() WHERE id = $2 AND title = $3',
+          'UPDATE essentials.offices SET title = $1 WHERE id = $2 AND title = $3',
           [r.proposed_title, r.office_id, 'Indiana Elected Official']
         );
         rowsUpdated += res.rowCount ?? 0;
