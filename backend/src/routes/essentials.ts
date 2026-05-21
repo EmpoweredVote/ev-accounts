@@ -240,7 +240,7 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
         ORDER BY id DESC
         LIMIT 1
       ) o ON true
-      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
+      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
       ORDER BY p.full_name, q.topic_key
     `, queryParams);
 

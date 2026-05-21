@@ -289,7 +289,6 @@ None for v2.3 start.
 - Verify `app.empowered.vote` in Render `CORS_ORIGIN` env var
 - Smoke-test admin grant UI → adminRouter → grant_role RPC chain end-to-end in production
 - Backport district-join approach to `getMatchingGrant` (compass_stance_editor — currently fail-open)
-- `medicare` topic_key mismatch in `essentials.quotes` (pre-existing)
 - v1.6 phases 42–43 (Decommission + DNS, Integration Documentation) still pending
 
 ### Quick Tasks Completed
