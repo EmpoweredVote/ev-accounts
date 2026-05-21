@@ -194,7 +194,7 @@
     "source": "manual_csv",
     "source_url": null,
     "has_subdistrict_polygons": false,
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   },
   {
@@ -365,7 +365,7 @@
     "source": "manual_csv",
     "source_url": null,
     "has_subdistrict_polygons": false,
-    "status": "deferred",
+    "status": "manual_csv",
     "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
   }
 ]
