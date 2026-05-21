@@ -148,6 +148,7 @@ export interface SummaryResponse {
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
   coverage_status?: string;
+  outside_spending: OutsideSpendingResponse;
 }
 
 export interface ContributionResult {
@@ -517,7 +518,10 @@ export async function getSummary(
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
-    const coverageStatus = await detectCoverageStatus(politicianId);
+    const [coverageStatus, outsideSpending] = await Promise.all([
+      detectCoverageStatus(politicianId),
+      getOutsideSpendingForPolitician(politicianId),
+    ]);
     return {
       summary: {
         politician_id: politicianId,
@@ -533,6 +537,7 @@ export async function getSummary(
         sector_breakdown: [],
         top_donors: [],
         coverage_status: coverageStatus,
+        outside_spending: outsideSpending,
       },
       updatedAt: null,
     };
@@ -678,6 +683,9 @@ export async function getSummary(
   );
   const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
 
+  // Fetch outside spending in parallel with the final data source metadata query
+  const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
+
   const summary: SummaryResponse = {
     politician_id: politicianId,
     cycle: effectiveCycle,
@@ -691,6 +699,7 @@ export async function getSummary(
     pac_total: Number(tRow?.pac_total ?? 0),
     sector_breakdown: sectorBreakdown,
     top_donors: topDonors,
+    outside_spending: outsideSpending,
   };
 
   return { summary, updatedAt: lastSyncAt };
@@ -1673,6 +1682,120 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
   });
 
   return { query: rawQuery, politicians };
+}
+
+// ---------------------------------------------------------------------------
+// Outside spending types and helper
+// ---------------------------------------------------------------------------
+
+export interface OutsideSpendingCommittee {
+  cmt_id: string;
+  cmt_nm: string;
+  total_amount: number;
+  contribution_count: number;
+  top_donors: Array<{ donor_name: string; amount: number }>;
+}
+
+export interface OutsideSpendingResponse {
+  committees: OutsideSpendingCommittee[];
+}
+
+// DB row types for outside spending queries
+
+interface IeCommitteeTotalsRow {
+  cmt_id: string;
+  cmt_nm: string;
+  total_amount: string;  // numeric -> string
+  contribution_count: string; // bigint -> string
+}
+
+interface IeTopDonorRow {
+  cmt_id: string;
+  donor_name: string | null;
+  amount: string; // numeric -> string
+}
+
+/**
+ * getOutsideSpendingForPolitician returns IE committee spending data linked to a politician.
+ *
+ * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee'
+ * and research_status='confirmed'. Contribution rows are linked via politician_source_id.
+ *
+ * cmt_id is stored in politician_sources.external_id.
+ * cmt_nm is stored in politician_sources.notes as JSON text (notes::jsonb->>'cmt_nm').
+ *
+ * Returns { committees: [] } when no IE sources exist — never omits the key.
+ */
+async function getOutsideSpendingForPolitician(
+  politicianId: string
+): Promise<OutsideSpendingResponse> {
+  // Query IE committee totals
+  const totalsResult = await pool.query<IeCommitteeTotalsRow>(
+    `WITH ie_sources AS (
+       SELECT id,
+              external_id AS cmt_id,
+              notes::jsonb->>'cmt_nm' AS cmt_nm
+         FROM transparent_motivations.politician_sources
+        WHERE essentials_politician_id = $1
+          AND source_type = 'ie_committee'
+          AND research_status = 'confirmed'
+     )
+     SELECT s.cmt_id,
+            s.cmt_nm,
+            COALESCE(SUM(c.amount), 0)::numeric AS total_amount,
+            COUNT(c.*) AS contribution_count
+       FROM ie_sources s
+       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = s.id
+      GROUP BY s.cmt_id, s.cmt_nm
+      ORDER BY total_amount DESC`,
+    [politicianId]
+  );
+
+  if (totalsResult.rows.length === 0) {
+    return { committees: [] };
+  }
+
+  // Query top donors per IE committee (top 10 per committee, UI shows top 5)
+  const topDonorsResult = await pool.query<IeTopDonorRow>(
+    `WITH ie_sources AS (
+       SELECT id, external_id AS cmt_id
+         FROM transparent_motivations.politician_sources
+        WHERE essentials_politician_id = $1
+          AND source_type = 'ie_committee'
+          AND research_status = 'confirmed'
+     )
+     SELECT s.cmt_id,
+            c.donor_name_normalized AS donor_name,
+            SUM(c.amount)::numeric AS amount
+       FROM ie_sources s
+       JOIN transparent_motivations.contributions c ON c.politician_source_id = s.id
+      GROUP BY s.cmt_id, c.donor_name_normalized
+      ORDER BY s.cmt_id, amount DESC`,
+    [politicianId]
+  );
+
+  // Group top donors by cmt_id
+  const donorsByCmtId = new Map<string, Array<{ donor_name: string; amount: number }>>();
+  for (const row of topDonorsResult.rows) {
+    const existing = donorsByCmtId.get(row.cmt_id) ?? [];
+    if (existing.length < 10) {
+      existing.push({
+        donor_name: row.donor_name ?? '',
+        amount: Number(row.amount),
+      });
+      donorsByCmtId.set(row.cmt_id, existing);
+    }
+  }
+
+  const committees: OutsideSpendingCommittee[] = totalsResult.rows.map((row) => ({
+    cmt_id: row.cmt_id,
+    cmt_nm: row.cmt_nm ?? '',
+    total_amount: Number(row.total_amount),
+    contribution_count: Number(row.contribution_count),
+    top_donors: donorsByCmtId.get(row.cmt_id) ?? [],
+  }));
+
+  return { committees };
 }
 
 // ---------------------------------------------------------------------------
