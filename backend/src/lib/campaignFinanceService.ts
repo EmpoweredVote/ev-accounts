@@ -1729,24 +1729,34 @@ interface IeTopDonorRow {
 async function getOutsideSpendingForPolitician(
   politicianId: string
 ): Promise<OutsideSpendingResponse> {
-  // Query IE committee totals
+  // Query IE committee totals.
+  // Join through external_id (cmt_id) rather than politician_source_id directly — the unique
+  // constraint on (data_source, source_transaction_id) means contributions land on whichever
+  // politician_source row ingested first. All politician_sources sharing the same cmt_id must
+  // be checked so every politician linked to the committee sees the same totals.
   const totalsResult = await pool.query<IeCommitteeTotalsRow>(
-    `WITH ie_sources AS (
-       SELECT id,
-              external_id AS cmt_id,
+    `WITH ie_cmt_ids AS (
+       SELECT external_id AS cmt_id,
               notes::jsonb->>'cmt_nm' AS cmt_nm
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+     ),
+     ie_all_sources AS (
+       SELECT ps.id, ps.external_id AS cmt_id
+         FROM transparent_motivations.politician_sources ps
+         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
+        WHERE ps.source_system = 'la_socrata'
      )
-     SELECT s.cmt_id,
-            s.cmt_nm,
+     SELECT ic.cmt_id,
+            ic.cmt_nm,
             COALESCE(SUM(c.amount), 0)::numeric AS total_amount,
             COUNT(c.*) AS contribution_count
-       FROM ie_sources s
-       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = s.id
-      GROUP BY s.cmt_id, s.cmt_nm
+       FROM ie_cmt_ids ic
+       LEFT JOIN ie_all_sources ias ON ias.cmt_id = ic.cmt_id
+       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
+      GROUP BY ic.cmt_id, ic.cmt_nm
       ORDER BY total_amount DESC`,
     [politicianId]
   );
@@ -1757,20 +1767,26 @@ async function getOutsideSpendingForPolitician(
 
   // Query top donors per IE committee (top 10 per committee, UI shows top 5)
   const topDonorsResult = await pool.query<IeTopDonorRow>(
-    `WITH ie_sources AS (
-       SELECT id, external_id AS cmt_id
+    `WITH ie_cmt_ids AS (
+       SELECT external_id AS cmt_id
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+     ),
+     ie_all_sources AS (
+       SELECT ps.id, ps.external_id AS cmt_id
+         FROM transparent_motivations.politician_sources ps
+         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
+        WHERE ps.source_system = 'la_socrata'
      )
-     SELECT s.cmt_id,
+     SELECT ias.cmt_id,
             c.donor_name_normalized AS donor_name,
             SUM(c.amount)::numeric AS amount
-       FROM ie_sources s
-       JOIN transparent_motivations.contributions c ON c.politician_source_id = s.id
-      GROUP BY s.cmt_id, c.donor_name_normalized
-      ORDER BY s.cmt_id, amount DESC`,
+       FROM ie_all_sources ias
+       JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
+      GROUP BY ias.cmt_id, c.donor_name_normalized
+      ORDER BY ias.cmt_id, amount DESC`,
     [politicianId]
   );
 
