@@ -225,17 +225,20 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.3 US Senate Coverage (Phases 72–74)
+## Current Milestone: v2.4 2026 Senate Candidates (Phases 75+)
 
-**Goal:** Complete civic profiles for all 100 sitting US Senators — state infrastructure, politician records, office links, photos, and full sourced stance data across all applicable CompassV2 topics — so any user in any US state sees their senators in the Representatives feed with complete compass data.
+**Goal:** Full national coverage of all declared candidates in all 34 Class 2 Senate races — incumbents reuse existing politician records (flagged as candidates), non-incumbents get new politician records, and stances are researched for all notable candidates via the research-stances skill. Primaries are ongoing; catalog now and update nominees post-primary.
 
 **Target features:**
-- NATIONAL_UPPER district records for all 50 states (45 new)
-- Government stubs for all 50 states to anchor districts
-- All 100 senator politician records + offices (90 new)
-- Photos (photo_origin_url) for all 100 senators
-- Sourced stance data for all applicable CompassV2 topics (of 43 total, filtering local-tier)
-- Existing 8 senators with partial stances completed to full coverage
+- Catalog all declared candidates in all 34 Class 2 Senate races
+- Incumbent senators running for re-election: add is_candidate flag to existing records
+- Non-incumbent candidates: new politician records with "Candidate for U.S. Senate — [State]" title
+- Sourced stance data for all notable candidates via research-stances skill
+- Post-primary update path: mark nominees, retire other candidates
+
+## Previous Milestone: v2.3 US Senate Coverage (Phases 72–74, shipped 2026-05-21)
+
+**Goal:** Complete civic profiles for all 100 sitting US Senators — state infrastructure, politician records, office links, photos, and full sourced stance data across all applicable CompassV2 topics — so any user in any US state sees their senators in the Representatives feed with complete compass data.
 
 ## Previous Milestone: v2.2 TIGER District Geofencing (Phases 69–71, shipped 2026-05-10)
 
@@ -252,4 +255,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 **Status:** Phases 60–63 shipped. Phases 64–65 pending (InformLanding + Dashboard Redesign).
 
 ---
-*Last updated: 2026-05-19 after v2.3 milestone start*
+*Last updated: 2026-05-21 after v2.4 milestone start*
