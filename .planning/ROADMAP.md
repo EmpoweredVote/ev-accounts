@@ -854,7 +854,13 @@ Plans:
 
 **Requirements:** SRES-01, SRES-02, SRES-03
 
-**Plans:** 2–4 plans expected (batched by candidate grouping or race)
+**Plans:** 4 plans
+
+Plans:
+- [ ] 76-01-PLAN.md — Batch 1: 15 candidates (AL-IA, -400101 to -400115) + Migration 197
+- [ ] 76-02-PLAN.md — Batch 2: 13 candidates (KY-MN, -400116 to -400128) + Migration 198
+- [ ] 76-03-PLAN.md — Batch 3: 15 candidates (MS-WY, -400129 to -400143) + Migration 199
+- [ ] 76-04-PLAN.md — Armstrong + Husted gap-fill (119th Congress 2nd session evidence) + Migration 200
 
 **Success Criteria:**
 
