@@ -13,9 +13,9 @@
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
 - ✅ **v2.0 Civic Account Experience** — Phases 60–65 (shipped 2026-05-10)
-- 📋 **v2.1 Inform Account Tier** — Phases 66–68 (planned 2026-04-27)
+- ✅ **v2.1 Inform Account Tier** — Phases 66–68 (shipped 2026-05-09)
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
-- 📋 **v2.3 US Senate Coverage** — Phases 72–74 (defined 2026-05-19)
+- ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
 
 ## Phases
 
@@ -896,4 +896,4 @@ Plans:
 | 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
 | 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
 | 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
-| 74. Stance Research + Ingestion | v2.3 | 0/? | Pending | — |
+| 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |

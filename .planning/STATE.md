@@ -5,17 +5,17 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.3 US Senate Coverage — Phase 73 COMPLETE (100 senators live). Run /gsd:plan-phase 74 to begin Phase 74 stance research and ingestion.
-**Last shipped:** v2.3 Senator Records — Phase 73 complete 2026-05-19: 100 US senators across all 50 states, 0 missing photos, appointed flags on Husted (OH) and Armstrong (OK). Next: Phase 74 (Stance Research + Ingestion).
+**Current focus:** v2.3 COMPLETE — 100 US senators with sourced stances live. Run /gsd:new-milestone to define v2.4.
+**Last shipped:** v2.3 US Senate Coverage — Phase 74 complete 2026-05-21: all 100 senators have stance data across applicable CompassV2 topics, every stance paired with sourced politician_context. Mullin (now DHS Secretary) replaced by Armstrong (OK, appointed March 2026).
 
 ## Current Position
 
-**Phase 73 COMPLETE 2026-05-19 — migration 176 applied, 48 new senators (MT-WY) + offices + photos live. Phase 73 done: 100 senators total. Phase 74 next.**
+**v2.3 COMPLETE 2026-05-21 — all 100 US senators with stances live. Define v2.4 next.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
 v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
-v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. Phase 72 complete 2026-05-19. Phase 73 complete 2026-05-19 (SENA-01, SENA-02, SENA-03 closed).
+v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. ALL COMPLETE 2026-05-21. SINF-01–02, SENA-01–03, SSTA-01–03 all closed.
 
 Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
 Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
@@ -30,13 +30,14 @@ Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrati
 Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
 Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
 
-Phase 72 (Senate Infrastructure) COMPLETE 2026-05-19: 1/1 plans, SINF-01 + SINF-02 verified. Migration 174 applied — essentials.districts.government_id column added, 46 government stubs (MA + 45 states) created, 45 NATIONAL_UPPER districts added (CA/IN/MA/ME/TX already existed), CA junk row deleted, IN orphan row deleted + Todd Young reassigned. 50 NATIONAL_UPPER districts total, all FK'd to government rows. Phase 73 can now create 100 senator offices.
+Phase 72 (Senate Infrastructure) COMPLETE 2026-05-19: 1/1 plans, SINF-01 + SINF-02 verified. Migration 174 applied — essentials.districts.government_id column added, 46 government stubs (MA + 45 states) created, 45 NATIONAL_UPPER districts added (CA/IN/MA/ME/TX already existed), CA junk row deleted, IN orphan row deleted + Todd Young reassigned. 50 NATIONAL_UPPER districts total, all FK'd to government rows.
+Phase 74 (Stance Research + Ingestion) COMPLETE 2026-05-21: 15 research batches dispatched via research-stances skill. All 100 senators covered — 53 Republicans (batches 1–12 + Armstrong OK), 47 Democrats/Independents (batches 13–15). 1,006 Dem stances + Armstrong 14 stances pushed via typed push scripts. Armstrong (OK, appointed March 2026) replaced Mullin (resigned to become DHS Secretary). SSTA-01, SSTA-02, SSTA-03 closed.
 Phase 73 (Senator Records) COMPLETE 2026-05-19:
   Plan 01: Migration 175 — 42 new senator rows (AK-MS, external_ids -400001 to -400042), 42 office rows, 42 photos (GitHub CDN). Bioguide correction: Cindy Hyde-Smith H001102→H001079.
   Plan 02: Migration 176 — 48 new senator rows (MT-WY, external_ids -400043 to -400090), 48 office rows, 48 photos. Bill Hagerty bioguide H001099→H000601. Husted (OH) + Armstrong (OK) appointed flags set. MA/ME/TX photo no-ops (already have Wikipedia URLs). SENA-01, SENA-02, SENA-03 closed.
   Final state: 100 senators, all 50 states × 2, 0 missing photos. Next migration: 177.
 
-Last activity: 2026-05-19 — Phase 73 complete. Run /gsd:plan-phase 74 for Phase 74 (Stance Research + Ingestion).
+Last activity: 2026-05-21 — v2.3 complete. All 100 US senators with sourced stances. Run /gsd:new-milestone to define v2.4.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -44,16 +45,15 @@ Last activity: 2026-05-19 — Phase 73 complete. Run /gsd:plan-phase 74 for Phas
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 —
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅
 
 ## Performance Metrics
 
-**v2.3 Scope — US Senate Coverage — IN PROGRESS**
+**v2.3 Scope — US Senate Coverage — COMPLETE ✅**
 - Phases: 3 (72–74)
-- Requirements: 8 (SINF-01–02, SENA-01–03, SSTA-01–03)
-- Plans complete: 4 (Phase 72: 1/1, Phase 73: 2/2)
-- SINF-01, SINF-02, SENA-01, SENA-02, SENA-03 CLOSED ✅
-- Remaining: SSTA-01–03 (Phase 74)
+- Requirements: 8/8 (SINF-01–02, SENA-01–03, SSTA-01–03) — all closed
+- Plans complete: 7 (Phase 72: 1/1, Phase 73: 2/2, Phase 74: 3/3 + script work)
+- Shipped: 2026-05-21
 
 **v2.2 Scope — TIGER District Geofencing — COMPLETE**
 - Phases: 3 (69–71) ✅
