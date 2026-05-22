@@ -44,3 +44,10 @@ backend/data/topic-drafts/*.json
 # TIGER/Line shapefiles downloaded by boundary loader scripts
 backend/tl_2024_*/
 backend/tl_2024_*.zip
+
+# Python — validator script runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.venv
