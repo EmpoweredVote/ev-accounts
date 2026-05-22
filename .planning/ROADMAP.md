@@ -16,6 +16,7 @@
 - ✅ **v2.1 Inform Account Tier** — Phases 66–68 (shipped 2026-05-09)
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
 - ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
+- 🔄 **v2.4 2026 Senate Candidates** — Phases 75–76 (in progress)
 
 ## Phases
 
@@ -819,6 +820,49 @@ Plans:
 
 ---
 
+### v2.4 2026 Senate Candidates (Phases 75–76)
+
+---
+
+#### Phase 75: Race Catalog + Candidate Records
+
+**Goal:** All 34 Class 2 Senate races are documented and every major non-incumbent declared candidate has a politician record, office record, and photo URL in the database — the data foundation needed for stance research in Phase 76.
+
+**Dependencies:** Phase 73 (senator records and NATIONAL_UPPER districts must exist so candidate office rows can FK to the correct state district)
+
+**Requirements:** RACE-01, CAND-01, CAND-02, CAND-03
+
+**Plans:** 1–2 plans expected
+
+**Success Criteria:**
+
+1. A research artifact exists cataloging all 34 Class 2 races — each entry includes state, incumbent name, major declared non-incumbent candidates, primary date, and current status (primary/general/uncontested); this artifact drives the migration in the same phase.
+2. `SELECT * FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%'` returns rows for all major non-incumbent candidates across the 34 races — no declared major candidate is missing a record.
+3. Every candidate row has a corresponding office record in `essentials.offices` with `is_current = false` and a `district_id` that resolves to the correct state's `NATIONAL_UPPER` district row.
+4. `SELECT COUNT(*) FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%' AND (photo_origin_url IS NULL OR photo_origin_url = '')` returns 0 or has a documented explicit-null list — every candidate either has a photo URL or has a recorded "no source found" determination.
+
+---
+
+#### Phase 76: Candidate Stance Research
+
+**Goal:** Every non-incumbent Senate candidate from Phase 75 has sourced stance data across all applicable CompassV2 topics, and the two appointed incumbents (Armstrong OK, Husted OH) have their stance coverage extended with new 119th Congress 2nd session roll call evidence — users can open the compass compare view and see candidates alongside incumbents with citations.
+
+**Dependencies:** Phase 75 (candidate politician records must exist before `inform.politician_answers` and `inform.politician_context` rows can reference them)
+
+**Requirements:** SRES-01, SRES-02, SRES-03
+
+**Plans:** 2–4 plans expected (batched by candidate grouping or race)
+
+**Success Criteria:**
+
+1. Every candidate added in Phase 75 has at least 10 rows in `inform.politician_answers` — candidates with sparse public records meet a lower floor; no candidate has zero stances.
+2. Every stance row for a Phase 75 candidate has a paired row in `inform.politician_context` with at least one non-empty source URL — `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT id FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%')` returns 0.
+3. Armstrong (OK) and Husted (OH) each have additional stance rows beyond their original 14 — at least one new stance per senator from a 119th Congress 2nd session roll call vote that post-dates v2.3 ingestion.
+4. Every new Armstrong and Husted stance has a paired `inform.politician_context` row with a source URL pointing to a 119th Congress 2nd session vote record.
+5. The compass compare view in CompassV2 can surface at least one non-incumbent Senate candidate alongside an incumbent senator — the FK chain from `inform.politician_answers` → `essentials.politicians` → `essentials.offices` → `essentials.districts` resolves without errors for all Phase 75 candidates.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -897,3 +941,5 @@ Plans:
 | 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
 | 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
+| 75. Race Catalog + Candidate Records | v2.4 | 0/? | Pending | — |
+| 76. Candidate Stance Research | v2.4 | 0/? | Pending | — |

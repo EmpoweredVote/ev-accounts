@@ -5,12 +5,12 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.4 — 2026 Senate Candidates. Defining requirements and roadmap (phases from 75).
+**Current focus:** v2.4 — 2026 Senate Candidates. Roadmap created (Phase 75: Race Catalog + Candidate Records; Phase 76: Candidate Stance Research). Ready for plan-phase 75.
 **Last shipped:** v2.3 US Senate Coverage — Phase 74 complete 2026-05-21: all 100 senators have stance data across applicable CompassV2 topics, every stance paired with sourced politician_context. Mullin (now DHS Secretary) replaced by Armstrong (OK, appointed March 2026).
 
 ## Current Position
 
-**v2.4 STARTED 2026-05-21 — 2026 Senate Candidates. Defining requirements (phases from 75).**
+**v2.4 ROADMAP CREATED 2026-05-21 — 2026 Senate Candidates. Phase 75 and 76 defined. Ready to plan-phase 75.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -37,7 +37,7 @@ Phase 73 (Senator Records) COMPLETE 2026-05-19:
   Plan 02: Migration 176 — 48 new senator rows (MT-WY, external_ids -400043 to -400090), 48 office rows, 48 photos. Bill Hagerty bioguide H001099→H000601. Husted (OH) + Armstrong (OK) appointed flags set. MA/ME/TX photo no-ops (already have Wikipedia URLs). SENA-01, SENA-02, SENA-03 closed.
   Final state: 100 senators, all 50 states × 2, 0 missing photos. Next migration: 177.
 
-Last activity: 2026-05-21 — v2.4 started. Defining requirements and roadmap for 2026 Senate Candidates coverage (phases from 75).
+Last activity: 2026-05-21 — v2.4 roadmap created. Phase 75 (Race Catalog + Candidate Records) and Phase 76 (Candidate Stance Research) defined. 7 requirements mapped (RACE-01, CAND-01-03, SRES-01-03). Run plan-phase 75 to begin.
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -45,9 +45,15 @@ Last activity: 2026-05-21 — v2.4 started. Defining requirements and roadmap fo
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 — Phase 76 —
 
 ## Performance Metrics
+
+**v2.4 Scope — 2026 Senate Candidates — IN PROGRESS**
+- Phases: 2 (75–76)
+- Requirements: 0/7 (RACE-01, CAND-01–03, SRES-01–03) — all pending
+- Plans complete: 0
+- Started: 2026-05-21
 
 **v2.3 Scope — US Senate Coverage — COMPLETE ✅**
 - Phases: 3 (72–74)
