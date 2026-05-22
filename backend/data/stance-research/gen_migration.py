@@ -275,6 +275,20 @@ BATCH3_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-batch3-byrd.csv",
 ]
 
+# ============================================================================
+# GAP-FILL: 2 appointed incumbent senators, migration 210
+# ============================================================================
+
+GAPFILL_CANDIDATES = [
+    ("Alan Armstrong", "abbe5ec0-94fb-4230-bc7c-4b890e4e6387"),
+    ("Jon Husted",     "d5740b38-9b65-431a-9e33-645d432dec61"),
+]
+
+GAPFILL_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-armstrong-gapfill.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-husted-gapfill.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -296,4 +310,14 @@ if __name__ == '__main__':
         candidate_inventory=BATCH3_CANDIDATES,
         csv_files=BATCH3_CSVS,
         outpath=os.path.join(base, "207_us_senate_candidate_stances_batch3.sql"),
+    )
+
+    print()
+    print("Generating migration 210 (gap-fill: Armstrong OK + Husted OH)...")
+    generate_migration(
+        migration_num=210,
+        batch_label="Appointed Senator Gap-Fill (Armstrong OK + Husted OH)",
+        candidate_inventory=GAPFILL_CANDIDATES,
+        csv_files=GAPFILL_CSVS,
+        outpath=os.path.join(base, "210_appointed_senator_gapfill_stances.sql"),
     )
