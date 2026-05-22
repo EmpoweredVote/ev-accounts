@@ -1,0 +1,141 @@
+{
+  "state": "UT",
+  "fips": "49",
+  "description": "Utah validation addresses — v2026.5.0. Assertions match Phase 133 SHIPPED coverage, not idealized. Known gaps (backlogged counties, un-imported city councils) are encoded as {exact:0} — these are EXPECTED PASS outcomes per D-08. No federal tier: UT Congressional members not yet in PIP join path.",
+  "addresses": [
+    {
+      "label": "SLC Capitol — 451 S State St",
+      "lat": 40.761,
+      "lng": -111.891,
+      "notes": "Full-stack capital: state legis, SBOE, county, city council+mayor, school. Phase 133 verified 62 officials. No federal (UT Congress not in PIP path).",
+      "assertions": {
+        "city":           { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Fort Duchesne (Uintah & Ouray Reservation)",
+      "lat": 40.281,
+      "lng": -109.860,
+      "notes": "Tribal-land case — on Uintah and Ouray Reservation. Uintah County is backlogged (no county/city officials imported). X0004 auxiliary query confirms tribal coverage. Phase 133 verified tribal_land.on_reservation=true.",
+      "assertions": {
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 },
+        "tribal_land":    { "expect": true }
+      }
+    },
+    {
+      "label": "Provo City Hall — 445 W Center St",
+      "lat": 40.234,
+      "lng": -111.659,
+      "notes": "Provo city council wards imported Phase 133 (ArcGIS FeatureServer). city:2 = council member + mayor. Utah County commissioners present.",
+      "assertions": {
+        "city":           { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Park City — 445 Marsac Ave",
+      "lat": 40.646,
+      "lng": -111.498,
+      "notes": "Park City city council NOT imported (no ArcGIS source found Phase 133) — city:0 is PASS (D-08). Summit County commissioners and Park City SD present.",
+      "assertions": {
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Antelope Island (Davis County — unincorporated)",
+      "lat": 41.000,
+      "lng": -112.200,
+      "notes": "Confirmed unincorporated: no LOCAL/LOCAL_EXEC polygon. Davis County G4020 only. No city tier expected — definitive unincorporated test case (Antelope Island chosen over Emigration Canyon which has a LOCAL council district).",
+      "assertions": {
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Magna — 2510 S 8400 W, Magna UT",
+      "lat": 40.710,
+      "lng": -112.100,
+      "notes": "Magna metro-township (HB 356) — its own council imported Phase 131. city:1 = Magna council rep. Salt Lake County (15 officials).",
+      "assertions": {
+        "city":           { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Fillmore (Millard County — gap city)",
+      "lat": 38.969,
+      "lng": -112.323,
+      "notes": "county:0 and city:0 are EXPECTED PASS outcome (D-08). Millard County is a backlogged tail county (19 unimported). Fillmore is the county seat but its council was not imported. state_board:1 from SBOE sub-district.",
+      "assertions": {
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 },
+        "county":         { "exact": 0 },
+        "city":           { "exact": 0 }
+      }
+    },
+    {
+      "label": "Temple Square — 50 W North Temple, SLC",
+      "lat": 40.770,
+      "lng": -111.892,
+      "notes": "Within SLC boundaries — same SBOE District 6, same SLC council coverage as SLC Capitol (address #1). Confirms SLC polygon covers tourist/religious landmark area.",
+      "assertions": {
+        "city":           { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "East Millcreek (Salt Lake County — SBOE District 6)",
+      "lat": 40.695,
+      "lng": -111.795,
+      "notes": "Exercises classify_tier() STATE_BOARD branch (Pitfall 4). SBOE District 6 (Carol Lear) confirmed by geofence query. city:1 = Salt Lake County Council D4 rep (LOCAL district_type maps to city tier).",
+      "assertions": {
+        "city":           { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    },
+    {
+      "label": "Richmond (Cache County — small town)",
+      "lat": 41.921,
+      "lng": -111.804,
+      "notes": "Cache County is one of 10 covered counties (Phase 133). county:25 = large Cache County commission roster. Richmond City Council NOT imported — city:0 is PASS (D-08). Cache County SD imported (7 board members).",
+      "assertions": {
+        "county":         { "min": 1 },
+        "school":         { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "state_board":    { "exact": 1 },
+        "state_senate":   { "min": 1 }
+      }
+    }
+  ]
+}
