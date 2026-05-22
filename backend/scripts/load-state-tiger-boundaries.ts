@@ -32,7 +32,7 @@ dotenv.config();
 // are safe for that state.
 //
 const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
-  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place']),
+  CA: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'county', 'cousub']),
   TX: new Set(['cd', 'sldu', 'sldl', 'county', 'place']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county', 'aiannh']),
   IN: new Set(['cd', 'sldu', 'sldl', 'unsd', 'place', 'cousub']),
@@ -85,6 +85,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
 // When a state is absent, the fallback `layer === 'place'` rule applies (preserving
 // CA byte-equivalence). When present, every layer in the Set receives ST_MakeValid.
 const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
+  CA: new Set(['place', 'county', 'cousub']),
   UT: new Set(['cd119', 'sldu', 'sldl', 'unsd', 'place', 'county', 'aiannh']),
   TX: new Set(['place', 'county']),
   MA: new Set(['cd', 'sldu', 'sldl', 'place', 'county', 'cousub']),
@@ -762,6 +763,45 @@ async function processLayer(
     }
   }
 
+  // ── CA MTFCC pre-flight assertion (Phase 57) ────────────────────────────────
+  // For CA (state='06'), count records satisfying the same filters as the upsert
+  // pass BEFORE any DB write. Assertion failure is named and fatal.
+  // CA cousub are CCDs (FUNCSTAT='S') — NO FUNCSTAT filter applied here.
+  if (fipsArg === '06') {
+    const EXPECTED_CA_MTFCC: Record<string, number> = {
+      county: 58,   // 58 California counties
+      cousub: 404,  // 404 CA Census County Divisions in TIGER 2024 (CCDs, FUNCSTAT='S')
+                    // NOTE: TIGERweb BAS25 dataset shows 1,057 but TIGER 2024 file has 404.
+                    // Verified 2026-05-21: all 404 records are FUNCSTAT='S' (statistical CCDs).
+    };
+    if (layer in EXPECTED_CA_MTFCC) {
+      const expected = EXPECTED_CA_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        // NO FUNCSTAT filter: CA cousub are CCDs with FUNCSTAT='S' (statistical).
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[CA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 06 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] CA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Stream records ──────────────────────────────────────────────────────────
   await streamShapefile(shpPath, dbfPath, async (geom, props) => {
     try {
@@ -797,11 +837,13 @@ async function processLayer(
         }
       }
 
-      // COUSUB layer: only load FUNCSTAT='A' (active towns).
-      // FUNCSTAT='F' records are placeholder entries for incorporated cities that
-      // already have G4110 rows from Phase 38. Loading them would create duplicate
-      // LOCAL boundaries for the same geography.
-      if (layer === 'cousub') {
+      // COUSUB layer: FUNCSTAT filter is state-conditional.
+      // MA county subdivisions are MCDs (Minor Civil Divisions, active governments, FUNCSTAT='A').
+      // CA county subdivisions are CCDs (Census County Divisions, statistical, FUNCSTAT='S').
+      // Filtering CCDs to FUNCSTAT='A' would skip ALL CA records (see Phase 57 RESEARCH).
+      // Add a state to this set ONLY if its TIGER COUSUB shapefile contains active MCDs.
+      const COUSUB_FUNCSTAT_STATES = new Set(['MA']);
+      if (layer === 'cousub' && COUSUB_FUNCSTAT_STATES.has(abbrevUpper)) {
         const funcstatVal = String(props['FUNCSTAT'] ?? props['funcstat'] ?? '');
         if (funcstatVal !== 'A') {
           totals.skipped++;
