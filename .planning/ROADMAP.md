@@ -832,7 +832,10 @@ Plans:
 
 **Requirements:** RACE-01, CAND-01, CAND-02, CAND-03
 
-**Plans:** 1–2 plans expected
+**Plans:** 1 plan
+
+Plans:
+- [ ] 75-01-PLAN.md — Migration 196: 43 non-incumbent 2026 Senate candidate politicians + offices + photos (single-wave, idempotent)
 
 **Success Criteria:**
 
@@ -941,5 +944,5 @@ Plans:
 | 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
 | 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
-| 75. Race Catalog + Candidate Records | v2.4 | 0/? | Pending | — |
+| 75. Race Catalog + Candidate Records | v2.4 | 0/1 | Pending | — |
 | 76. Candidate Stance Research | v2.4 | 0/? | Pending | — |
