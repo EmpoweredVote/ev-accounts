@@ -5,12 +5,12 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.4 — 2026 Senate Candidates. Phase 75 complete. Phase 76 (Candidate Stance Research) is next.
-**Last shipped:** Phase 75 complete 2026-05-22: migration 196 applied — 43 non-incumbent Senate candidates (external_ids -400101 to -400143) across 35 races, each with NATIONAL_UPPER office FK. 35/43 photos verified, 8 explicit-null documented. RACE-01, CAND-01, CAND-02, CAND-03 verified. Phase 76 unblocked.
+**Current focus:** v2.4 — 2026 Senate Candidates. Phase 76 complete 2026-05-22.
+**Last shipped:** Phase 76 complete 2026-05-22: 715 stance rows across 43 non-incumbent Senate candidates (migrations 197, 198, 207). Armstrong (OK) 14→17 stances, Husted (OH) 24→30 stances (migration 210). SRES-01, SRES-02, SRES-03 verified. James Byrd (WY, D) at 5 stances — documented floor case (no evidence available). v2.4 milestone complete.
 
 ## Current Position
 
-**Phase 75 COMPLETE 2026-05-22. Phase 76 (Candidate Stance Research) is next — run /gsd:plan-phase 76.**
+**Phase 76 COMPLETE 2026-05-22. v2.4 milestone (2026 Senate Candidates) is complete. Run /gsd:new-milestone to define v2.5 or /gsd:audit-milestone to audit v2.4.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -45,15 +45,15 @@ Last activity: 2026-05-21 — v2.4 roadmap created. Phase 75 (Race Catalog + Can
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 ✅ Phase 76 —
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 ✅] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 ✅ Phase 76 ✅
 
 ## Performance Metrics
 
-**v2.4 Scope — 2026 Senate Candidates — IN PROGRESS**
+**v2.4 Scope — 2026 Senate Candidates — COMPLETE ✅**
 - Phases: 2 (75–76)
-- Requirements: 4/7 (RACE-01, CAND-01–03 complete; SRES-01–03 pending Phase 76)
-- Plans complete: 1 (Phase 75: 1/1)
-- Started: 2026-05-21
+- Requirements: 7/7 (RACE-01, CAND-01–03, SRES-01–03 all closed)
+- Plans complete: 5 (Phase 75: 1/1, Phase 76: 4/4)
+- Shipped: 2026-05-22
 
 **v2.3 Scope — US Senate Coverage — COMPLETE ✅**
 - Phases: 3 (72–74)
