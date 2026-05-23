@@ -5,8 +5,9 @@ import csv
 import sys
 import re
 
-# Canonical topic UUID mapping (from migration 197 + compass-topics-reference.md)
+# Canonical topic UUID mapping (from migration 197 + compass-topics-reference.md + DB query)
 TOPIC_UUIDS = {
+    # Federal / state topics
     'abortion':                'af2fdfd6-02c4-49df-b09c-cf8536f4773f',
     'ai-regulation':           '666bf03d-81fc-4138-ab15-69ae734c9023',
     'campaign-finance':        '92730f69-ae57-401c-8ad1-2d07834a895d',
@@ -22,8 +23,8 @@ TOPIC_UUIDS = {
     'housing':                 '669cac97-66a6-4087-b036-936fbe62efb3',
     'immigration':             '4e2c69ce-591e-4197-9cd5-7aceff79d390',
     'jail-capacity':           'c267e137-0ff9-4e7d-9d13-e3cea1756cd0',
-    'judicial-criminal-justice': '9db07b16-1076-4b7d-ad89-ebe7b51f4336',
-    'judicial-interpretation': '448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee',
+    'judicial-criminal-justice':     '9db07b16-1076-4b7d-ad89-ebe7b51f4336',
+    'judicial-interpretation':       '448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee',
     'medicare/aid':            'cab61e8a-64fe-4bbd-bc08-fe9914d0091b',
     'misinformation':          'ddd65d64-9dc7-4208-a30f-59f4b9c0653d',
     'public-safety-approach':  'e9ebefcd-c496-45e8-b816-a79f8442ba85',
@@ -37,10 +38,27 @@ TOPIC_UUIDS = {
     'trans-athletes':          'd1618b9c-0b9e-45af-b986-bb33d270b8e4',
     'ukraine-support':         '24e9212c-b011-422a-865c-093e35050901',
     'voting-rights':           'd1792200-1d3b-4955-a0b7-0e6980d7a7b2',
+    # City / local topics
+    'city-sanitation':                 '7687de4f-4d0b-462a-b803-bdfb23b16b42',
+    'growth-and-development':          'fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4',
+    'judicial-access-to-justice':      '9d45acaf-1ba4-4cb8-95e1-5ed985223b91',
+    'judicial-bail-pretrial':          '1fab5edf-6151-4da0-9704-a7f2113ba54c',
+    'judicial-government-deference':   'e5e48f0e-8f3a-40e1-8080-889fea389603',
+    'judicial-police-accountability':  '7bad33eb-e93e-4d94-8822-97212d49bde5',
+    'judicial-prosecution-priorities': 'abb99d95-cbb1-4617-8f8b-f220ef6028ca',
+    'judicial-transparency':           '6674d87e-999d-433a-aab7-3f626f59fd5f',
+    'local-environment':               '1935979c-b290-42e4-baa5-8cb0138b4ffa',
+    'local-immigration':               'b9ccee94-ad96-4f10-b655-889d8e5abe92',
+    'rent-regulation':                 'c308e8e8-caac-44f5-ab04-dbfecf40bbe2',
+    'residential-zoning':              'd4f18138-a2e0-4110-b925-7387d9d0d16d',
+    'transportation-priorities':       'ba59337e-30e2-4aba-a39a-426b3366eb27',
 }
 
-# EXCLUDED topics (city-level only, not federal)
-EXCLUDED_TOPICS = {'data-centers', 'local-immigration', 'transportation-priorities'}
+# Default excluded topics for federal/senate batches (city-level only, not applicable to federal officials)
+EXCLUDED_TOPICS_FEDERAL = {'data-centers', 'local-immigration', 'transportation-priorities'}
+
+# No exclusions for local officials (all topics are fair game)
+EXCLUDED_TOPICS_LOCAL = {'data-centers'}
 
 
 def dollar_quote(text):
@@ -65,15 +83,17 @@ def build_sources_array(row):
     return f"ARRAY[{', '.join(sources)}]::text[]"
 
 
-def read_csv_stances(csv_files):
+def read_csv_stances(csv_files, excluded_topics=None):
     """Read stances from one or more CSV files. Returns list of row dicts."""
+    if excluded_topics is None:
+        excluded_topics = EXCLUDED_TOPICS_FEDERAL
     rows = []
     for path in csv_files:
         with open(path, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 topic_key = row.get('topic_key', '').strip()
-                if not topic_key or topic_key in EXCLUDED_TOPICS:
+                if not topic_key or topic_key in excluded_topics:
                     continue
                 if topic_key not in TOPIC_UUIDS:
                     print(f"  WARNING: Unknown topic_key '{topic_key}' in {path} — skipping", file=sys.stderr)
@@ -88,9 +108,10 @@ def read_csv_stances(csv_files):
     return rows
 
 
-def generate_migration(migration_num, batch_label, candidate_inventory, csv_files, outpath):
+def generate_migration(migration_num, batch_label, candidate_inventory, csv_files, outpath,
+                       excluded_topics=None, header_scope_note=None):
     """Generate a migration SQL file."""
-    rows = read_csv_stances(csv_files)
+    rows = read_csv_stances(csv_files, excluded_topics=excluded_topics)
 
     # Group by politician (using full_name + politician_id)
     from collections import defaultdict
@@ -107,12 +128,12 @@ def generate_migration(migration_num, batch_label, candidate_inventory, csv_file
 
     # Header
     lines.append(f"-- {'=' * 76}")
-    lines.append(f"-- Migration {migration_num}: U.S. Senate Candidate Stances — {batch_label}")
+    lines.append(f"-- Migration {migration_num}: {batch_label}")
     lines.append(f"-- {'=' * 76}")
-    lines.append(f"-- Purpose: Insert/upsert federal stance data for {len(candidate_inventory)} non-incumbent 2026")
-    lines.append(f"--   Senate candidates.")
+    lines.append(f"-- Purpose: Insert/upsert stance data for {len(candidate_inventory)} politicians.")
     lines.append(f"--")
-    lines.append(f"-- Topic scope: 30 federal-applicable topics (excludes city-level keys; data-centers excluded)")
+    scope = header_scope_note or "All applicable topics."
+    lines.append(f"-- Topic scope: {scope}")
     lines.append(f"--")
     lines.append(f"-- Post-state: ~{total_stances} rows expected")
     lines.append(f"--")
@@ -289,6 +310,56 @@ GAPFILL_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-husted-gapfill.csv",
 ]
 
+# ============================================================================
+# SF OFFICIALS: 20 San Francisco elected/appointed officials, migration 216
+# ============================================================================
+
+SF_CANDIDATES = [
+    ("Daniel Lurie",     "708db738-2bf1-4a6f-b8a5-7ac23d171b33"),
+    ("Brooke Jenkins",   "969f1ca4-4766-44fd-8638-ef813b1835e7"),
+    ("David Chiu",       "86c12b33-cb76-41da-bdf0-6b58a0cbbed6"),
+    ("Paul Miyamoto",    "c1a5fe0a-5c9a-490d-9d2d-71bd8b3f22d1"),
+    ("Rafael Mandelman", "d2596e4d-f491-449e-b112-40be13418112"),
+    ("Myrna Melgar",     "72621ac9-bcdb-4ea3-aeec-1b1f50c9f996"),
+    ("Matt Dorsey",      "68845df3-7103-45d9-8429-7ef51ee6ada3"),
+    ("Bilal Mahmood",    "d3c5004c-9ca0-444e-96d9-107d4315abcb"),
+    ("Alan Wong",        "6273727a-26e0-495d-9fda-f827b88029b3"),
+    ("Danny Sauter",     "d1a320a9-39e9-4152-85a0-11cab602fdc9"),
+    ("Stephen Sherrill", "54e564e7-4788-4913-b75e-95382896d509"),
+    ("Connie Chan",      "f3f21e38-d8e6-41d2-9d74-0360a5f679b9"),
+    ("Jackie Fielder",   "02f88a57-ccf5-4fe1-a693-7fc949321fb1"),
+    ("Shamann Walton",   "eab7b830-c831-45f9-bca8-11b079f42680"),
+    ("Chyanne Chen",     "8f59c9fd-03f9-4652-bc4a-418bd8764a1f"),
+    ("José Cisneros",    "94035c6d-d6b2-4223-bdeb-e93e2ec26198"),
+    ("Joaquín Torres",   "f0a54f0a-c1e5-457a-97af-8c2c9e1adf1a"),
+    ("Manohar Raju",     "aa35ed62-a5a7-47fd-99d3-0ceb3336e405"),
+    ("Greg Wagner",      "c3627dfd-6f20-40e8-b9af-55c4af048d92"),
+    ("Carmen Chu",       "f82edba8-5f6b-4c00-af78-b782426f05a2"),
+]
+
+SF_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-lurie.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-jenkins.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-chiu.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-miyamoto.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-mandelman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-melgar.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-dorsey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-mahmood.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-wong.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-sauter.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-sherrill.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-chan.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-fielder.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-walton.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-chyanne-chen.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-cisneros.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-torres.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-raju.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-wagner.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-chu.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -320,4 +391,16 @@ if __name__ == '__main__':
         candidate_inventory=GAPFILL_CANDIDATES,
         csv_files=GAPFILL_CSVS,
         outpath=os.path.join(base, "210_appointed_senator_gapfill_stances.sql"),
+    )
+
+    print()
+    print("Generating migration 216 (SF officials stances)...")
+    generate_migration(
+        migration_num=216,
+        batch_label="SF Officials Stances — 20 San Francisco Politicians",
+        candidate_inventory=SF_CANDIDATES,
+        csv_files=SF_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_LOCAL,
+        header_scope_note="All 43 compass topics (city + federal); only data-centers excluded.",
+        outpath=os.path.join(base, "216_sf_officials_stances.sql"),
     )
