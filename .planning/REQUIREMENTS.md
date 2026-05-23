@@ -32,7 +32,7 @@
 
 ### Campaign Finance (FINA)
 
-- [ ] **FINA-01**: Schema for campaign finance summary — `finance_summary` JSONB column on `inform.politicians` storing `{ total_raised, top_donors: [{ name, amount }], top_industries: [{ name, amount }], cycle, source }` — migration applied
+- [ ] **FINA-01**: Schema for campaign finance summary — `finance_summary` JSONB column on `essentials.politicians` storing `{ total_raised, top_donors: [{ name, amount }], top_industries: [{ name, amount }], cycle, source }` — migration applied
 - [ ] **FINA-02**: Finance data ingested for all new city officials and top-priority existing politicians (senators, SF officials) using FEC API (federal) and FPPC Cal-Access (CA state/local); stored via `gen_migration.py`-equivalent ingestion
 - [ ] **FINA-03**: Finance summary surfaced on `GET /api/essentials/politicians` response — new `finance_summary` field included when non-null; backward-compatible (null for politicians with no data)
 

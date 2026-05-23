@@ -912,13 +912,13 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 **Requirements:** FINA-01, FINA-02, FINA-03
 
 **Waves:**
-- Wave 1: Schema migration — `finance_summary` JSONB column on `inform.politicians` (FINA-01)
+- Wave 1: Schema migration — `finance_summary` JSONB column on `essentials.politicians` (FINA-01)
 - Wave 2: Finance data ingestion for all target politicians — federal (FEC) and CA state/local (FPPC Cal-Access) (FINA-02)
 - Wave 3: API update — include `finance_summary` in `GET /api/essentials/politicians` response (FINA-03)
 
 **Success Criteria:**
 
-1. Migration applied: `SELECT column_name FROM information_schema.columns WHERE table_schema = 'inform' AND table_name = 'politicians' AND column_name = 'finance_summary'` returns one row — the column exists and accepts JSONB values with the shape `{ total_raised, top_donors, top_industries, cycle, source }`.
+1. Migration applied: `SELECT column_name FROM information_schema.columns WHERE table_schema = 'essentials' AND table_name = 'politicians' AND column_name = 'finance_summary'` returns one row — the column exists and accepts JSONB values with the shape `{ total_raised, top_donors, top_industries, cycle, source }`.
 2. Finance data is populated for all new city officials from Phase 77 and for top-priority existing politicians (US Senators + SF officials) — `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (target politician ids) AND finance_summary IS NULL` returns 0 for the agreed target set.
 3. `GET /api/essentials/politicians` returns a `finance_summary` field for every politician in the response — the field is `null` when no data has been ingested (backward-compatible), and contains the full JSONB object when data is present; no existing field is removed or renamed.
 4. A spot-check of one senator (FEC source) and one SF official (FPPC source) confirms the `top_donors` array contains at least 3 named donors with amounts, and `total_raised` is a positive integer matching the source data.
