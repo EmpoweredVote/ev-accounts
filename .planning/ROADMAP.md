@@ -16,7 +16,8 @@
 - ✅ **v2.1 Inform Account Tier** — Phases 66–68 (shipped 2026-05-09)
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
 - ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
-- 🔄 **v2.4 2026 Senate Candidates** — Phases 75–76 (in progress)
+- ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
+- 🔄 **v2.5 City Officials Expansion** — Phases 77–80 (current)
 
 ## Phases
 
@@ -820,55 +821,107 @@ Plans:
 
 ---
 
-### v2.4 2026 Senate Candidates (Phases 75–76)
+<details>
+<summary>✅ v2.4 2026 Senate Candidates (Phases 75–76) — SHIPPED 2026-05-22</summary>
+
+- [x] Phase 75: Race Catalog + Candidate Records (1/1 plans) — completed 2026-05-22
+- [x] Phase 76: Candidate Stance Research (4/4 plans) — completed 2026-05-22
+
+Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone close)
+
+</details>
+
+### v2.5 City Officials Expansion (Phases 77–80) — CURRENT
 
 ---
 
-#### Phase 75: Race Catalog + Candidate Records
+#### Phase 77: City Infrastructure + Official Records
 
-**Goal:** All 34 Class 2 Senate races are documented and every major non-incumbent declared candidate has a politician record, office record, and photo URL in the database — the data foundation needed for stance research in Phase 76.
+**Goal:** San Jose, San Diego, Berkeley, and Fremont each have a government stub, a full set of city council district seats, and politician + office records for every mayor, council member, and key appointed role — the data foundation needed for stance research in Phase 78.
 
-**Dependencies:** Phase 73 (senator records and NATIONAL_UPPER districts must exist so candidate office rows can FK to the correct state district)
+**Dependencies:** None (foundation phase for v2.5; Phase 78 depends on this)
 
-**Requirements:** RACE-01, CAND-01, CAND-02, CAND-03
+**Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
 
-**Plans:** 1 plan
-
-Plans:
-- [x] 75-01-PLAN.md — Migration 196: 43 non-incumbent 2026 Senate candidate politicians + offices + photos (single-wave, idempotent)
+**Waves:**
+- Wave 1: Government stubs + CITY_COUNCIL district records for all 4 cities (CITY-01, CITY-02)
+- Wave 2: Politician + office records for San Jose and San Diego officials (CITY-03, CITY-04, CITY-07, CITY-08)
+- Wave 3: Politician + office records for Berkeley and Fremont officials (CITY-05, CITY-06, CITY-07, CITY-08)
 
 **Success Criteria:**
 
-1. A research artifact exists cataloging all 34 Class 2 races — each entry includes state, incumbent name, major declared non-incumbent candidates, primary date, and current status (primary/general/uncontested); this artifact drives the migration in the same phase.
-2. `SELECT * FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%'` returns rows for all major non-incumbent candidates across the 34 races — no declared major candidate is missing a record.
-3. Every candidate row has a corresponding office record in `essentials.offices` with `is_current = false` and a `district_id` that resolves to the correct state's `NATIONAL_UPPER` district row.
-4. `SELECT COUNT(*) FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%' AND (photo_origin_url IS NULL OR photo_origin_url = '')` returns 0 or has a documented explicit-null list — every candidate either has a photo URL or has a recorded "no source found" determination.
+1. `SELECT name FROM essentials.governments WHERE name IN ('City of San Jose', 'City of San Diego', 'City of Berkeley', 'City of Fremont')` returns 4 rows — each city has exactly one government stub row, with no duplicates.
+2. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'CITY_COUNCIL' AND government_id IN (SELECT id FROM essentials.governments WHERE name IN ('City of San Jose', 'City of San Diego', 'City of Berkeley', 'City of Fremont'))` returns the correct total seat count across all 4 cities (San Jose 10 + San Diego 9 + Berkeley 8 + Fremont 7 = 34, or the verified current counts), with every district row FK'd to its city's government row.
+3. Every new politician record has a corresponding office row in `essentials.offices` linked to the correct city council district (or a city-wide `CITY_COUNCIL` district for mayor and at-large seats) — `SELECT COUNT(*) FROM essentials.offices o LEFT JOIN essentials.districts d ON d.id = o.district_id WHERE o.politician_id IN (new city politicians) AND d.id IS NULL` returns 0.
+4. `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (new city politicians) AND (photo_origin_url IS NULL OR photo_origin_url = '')` returns 0 — every new official has a non-empty photo URL, or has a documented "no source found" entry noted in the migration comments.
 
 ---
 
-#### Phase 76: Candidate Stance Research
+#### Phase 78: City Stance Research
 
-**Goal:** Every non-incumbent Senate candidate from Phase 75 has sourced stance data across all applicable CompassV2 topics, and the two appointed incumbents (Armstrong OK, Husted OH) have their stance coverage extended with new 119th Congress 2nd session roll call evidence — users can open the compass compare view and see candidates alongside incumbents with citations.
+**Goal:** Every San Jose, San Diego, Berkeley, and Fremont official has sourced stance data across all applicable CompassV2 topics — users in those cities can open the compass compare view and see local officials' positions with citations, mirroring the SF officials pattern established in Phase 76.
 
-**Dependencies:** Phase 75 (candidate politician records must exist before `inform.politician_answers` and `inform.politician_context` rows can reference them)
+**Dependencies:** Phase 77 (politician records must exist in `essentials.politicians` before `inform.politician_answers` rows can reference them)
 
-**Requirements:** SRES-01, SRES-02, SRES-03
+**Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
 
-**Plans:** 4 plans
-
-Plans:
-- [x] 76-01-PLAN.md — Batch 1: 15 candidates (AL-IA, -400101 to -400115) + Migration 197 — COMPLETE c20cac2
-- [x] 76-02-PLAN.md — Batch 2: 13 candidates (KY-MN, -400116 to -400128) + Migration 198 — COMPLETE c46b8bd
-- [x] 76-03-PLAN.md — Batch 3: 15 candidates (MS-WY, -400129 to -400143) + Migration 207 — COMPLETE 5586938
-- [x] 76-04-PLAN.md — Armstrong + Husted gap-fill (119th Congress 2nd session evidence) + Migration 210 — COMPLETE a168e49
+**Waves:**
+- Wave 1: San Jose stance research + migration (CSTA-01)
+- Wave 2: San Diego stance research + migration (CSTA-02)
+- Wave 3: Berkeley stance research + migration (CSTA-03)
+- Wave 4: Fremont stance research + migration (CSTA-04)
+- Wave 5: Context row audit — verify all stances have paired context rows with source URLs (CSTA-05)
 
 **Success Criteria:**
 
-1. Every candidate added in Phase 75 has at least 10 rows in `inform.politician_answers` — candidates with sparse public records meet a lower floor; no candidate has zero stances.
-2. Every stance row for a Phase 75 candidate has a paired row in `inform.politician_context` with at least one non-empty source URL — `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT id FROM essentials.politicians WHERE office_title LIKE 'Candidate for U.S. Senate%')` returns 0.
-3. Armstrong (OK) and Husted (OH) each have additional stance rows beyond their original 14 — at least one new stance per senator from a 119th Congress 2nd session roll call vote that post-dates v2.3 ingestion.
-4. Every new Armstrong and Husted stance has a paired `inform.politician_context` row with a source URL pointing to a 119th Congress 2nd session vote record.
-5. The compass compare view in CompassV2 can surface at least one non-incumbent Senate candidate alongside an incumbent senator — the FK chain from `inform.politician_answers` → `essentials.politicians` → `essentials.offices` → `essentials.districts` resolves without errors for all Phase 75 candidates.
+1. Every official added in Phase 77 has at least one row in `inform.politician_answers` — no official from any of the 4 cities has zero stances.
+2. For each city official, all 43 CompassV2 topics were attempted; where evidence was unavailable the researcher documented a "no evidence" determination — officials with thin public records meet a minimum of 5 stances rather than zero.
+3. Every stance row for a Phase 77 official has a paired row in `inform.politician_context` — `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT id FROM essentials.politicians WHERE id IN (phase 77 politician ids))` returns 0.
+4. Every `inform.politician_context` row for these officials has at least one non-empty source URL in the `sources` array — `SELECT COUNT(*) FROM inform.politician_context WHERE politician_id IN (phase 77 politician ids) AND (sources IS NULL OR array_length(sources, 1) = 0)` returns 0.
+5. Researcher agents ran one at a time per city batch — no parallel launches; each batch's migration was applied and verified before the next batch began.
+
+---
+
+#### Phase 79: Gap-fill Existing Politicians
+
+**Goal:** Every politician in the database who has sparse stance coverage and where additional evidence is plausibly available has been identified and brought up to the coverage floor — the compass compare view shows no politician with embarrassingly thin data when better data exists.
+
+**Dependencies:** Phase 78 (city stances should be ingested first so the gap-fill audit includes new city officials alongside existing politicians)
+
+**Requirements:** GAPF-01, GAPF-02
+
+**Waves:**
+- Wave 1: Audit — SQL query to identify all politicians with < 10 stances; produce a prioritized target list (GAPF-01)
+- Wave 2: Research + ingestion for all identified targets (GAPF-02)
+
+**Success Criteria:**
+
+1. A gap-fill audit artifact exists listing every politician in the database with fewer than 10 stances, annotated with: politician name, current stance count, priority tier (high/medium/low based on profile — SF officials and senators first), and a determination of whether additional evidence is likely available.
+2. Every politician flagged as high-priority in the audit (SF officials with < 10 stances, any senator below floor) has new stance rows ingested — `SELECT p.full_name, COUNT(pa.id) FROM essentials.politicians p LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id GROUP BY p.id HAVING COUNT(pa.id) < 10` returns zero high-priority politicians after gap-fill completes.
+3. Every new stance row ingested in this phase has a paired `inform.politician_context` row with at least one source URL.
+4. Politicians in the audit where "no additional evidence available" was determined are documented with that status in the audit artifact — the floor for those cases is accepted as the current count.
+
+---
+
+#### Phase 80: Campaign Finance Schema + Ingestion + API
+
+**Goal:** Campaign finance summaries are stored on politician records and surfaced via the essentials API — any partner app can display total raised, top donors, and top industries for a politician without a separate finance lookup, using FEC data for federal officials and FPPC Cal-Access data for CA state and local officials.
+
+**Dependencies:** Phase 77 (new city officials must have politician records before their finance data can be ingested); Phase 78 is not a hard dependency but finance ingestion typically follows stance research in the same work session
+
+**Requirements:** FINA-01, FINA-02, FINA-03
+
+**Waves:**
+- Wave 1: Schema migration — `finance_summary` JSONB column on `inform.politicians` (FINA-01)
+- Wave 2: Finance data ingestion for all target politicians — federal (FEC) and CA state/local (FPPC Cal-Access) (FINA-02)
+- Wave 3: API update — include `finance_summary` in `GET /api/essentials/politicians` response (FINA-03)
+
+**Success Criteria:**
+
+1. Migration applied: `SELECT column_name FROM information_schema.columns WHERE table_schema = 'inform' AND table_name = 'politicians' AND column_name = 'finance_summary'` returns one row — the column exists and accepts JSONB values with the shape `{ total_raised, top_donors, top_industries, cycle, source }`.
+2. Finance data is populated for all new city officials from Phase 77 and for top-priority existing politicians (US Senators + SF officials) — `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (target politician ids) AND finance_summary IS NULL` returns 0 for the agreed target set.
+3. `GET /api/essentials/politicians` returns a `finance_summary` field for every politician in the response — the field is `null` when no data has been ingested (backward-compatible), and contains the full JSONB object when data is present; no existing field is removed or renamed.
+4. A spot-check of one senator (FEC source) and one SF official (FPPC source) confirms the `top_donors` array contains at least 3 named donors with amounts, and `total_raised` is a positive integer matching the source data.
 
 ---
 
@@ -950,5 +1003,9 @@ Plans:
 | 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
 | 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
-| 75. Race Catalog + Candidate Records | v2.4 | 1/1 | Complete | 2026-05-22 |
-| 76. Candidate Stance Research | v2.4 | 4/4 | Complete | 2026-05-22 |
+| 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
+| 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
+| 77. City Infrastructure + Official Records | v2.5 | 0/? | Pending | — |
+| 78. City Stance Research | v2.5 | 0/? | Pending | — |
+| 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
+| 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
