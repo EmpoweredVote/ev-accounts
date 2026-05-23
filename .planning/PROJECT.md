@@ -225,16 +225,19 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.4 2026 Senate Candidates (Phases 75+)
+## Current Milestone: v2.5 City Officials Expansion (Phases 77+)
 
-**Goal:** Full national coverage of all declared candidates in all 34 Class 2 Senate races — incumbents reuse existing politician records (flagged as candidates), non-incumbents get new politician records, and stances are researched for all notable candidates via the research-stances skill. Primaries are ongoing; catalog now and update nominees post-primary.
+**Goal:** Expand local government coverage to four CA cities (San Jose, San Diego, Berkeley, Fremont) with full city council + key roles, gap-fill missing topics for politicians already in DB, and add a campaign finance summary layer (FEC/FPPC) to politician profiles.
 
 **Target features:**
-- Catalog all declared candidates in all 34 Class 2 Senate races
-- Incumbent senators running for re-election: add is_candidate flag to existing records
-- Non-incumbent candidates: new politician records with "Candidate for U.S. Senate — [State]" title
-- Sourced stance data for all notable candidates via research-stances skill
-- Post-primary update path: mark nominees, retire other candidates
+- Full city council + key roles for San Jose, San Diego, Berkeley, and Fremont (comparable to SF batch)
+- Sourced stance data for all new city officials across all 43 compass topics
+- Gap-fill missing topic stances for politicians already in DB (sparse coverage)
+- Campaign finance summary display — top donors and total raised per politician (FEC / FPPC data)
+
+## Previous Milestone: v2.4 2026 Senate Candidates (Phases 75–76, shipped 2026-05-22)
+
+**Goal:** Full national coverage of all declared candidates in all 34 Class 2 Senate races — incumbents reuse existing politician records (flagged as candidates), non-incumbents get new politician records, and stances are researched for all notable candidates via the research-stances skill. Primaries are ongoing; catalog now and update nominees post-primary.
 
 ## Previous Milestone: v2.3 US Senate Coverage (Phases 72–74, shipped 2026-05-21)
 
@@ -255,4 +258,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 **Status:** Phases 60–63 shipped. Phases 64–65 pending (InformLanding + Dashboard Redesign).
 
 ---
-*Last updated: 2026-05-21 after v2.4 milestone start*
+*Last updated: 2026-05-22 after v2.5 milestone start*
