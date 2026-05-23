@@ -843,10 +843,13 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 
 **Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
 
-**Waves:**
-- Wave 1: Government stubs + CITY_COUNCIL district records for all 4 cities (CITY-01, CITY-02)
-- Wave 2: Politician + office records for San Jose and San Diego officials (CITY-03, CITY-04, CITY-07, CITY-08)
-- Wave 3: Politician + office records for Berkeley and Fremont officials (CITY-05, CITY-06, CITY-07, CITY-08)
+**Plans:** 2 plans
+
+Plans:
+- [ ] 77-01-PLAN.md — Apply SJ government + officials + headshots (SD/Berkeley/Fremont already shipped in migrations 207–215)
+- [ ] 77-02-PLAN.md — Verify CITY-01 through CITY-08 across all 4 cities
+
+**Planner note (2026-05-23):** Original 3-wave sketch consolidated into 2 plans because San Diego, Berkeley, and Fremont infrastructure was already applied in migrations 207–215 during prior work sessions. Only San Jose work remains. Wave structure in PLAN.md files reflects this: 77-01 (Wave 1, SJ work), 77-02 (Wave 2, verification across all 4 cities). District type uses LOCAL + LOCAL_EXEC (existing schema) rather than CITY_COUNCIL (which is not a valid enum value).
 
 **Success Criteria:**
 
