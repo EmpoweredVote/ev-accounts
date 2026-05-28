@@ -21,7 +21,6 @@
 
 ## Phases
 
-
 <details>
 <summary>✅ v1.0 MVP (Phases 1–8) — SHIPPED 2026-02-28</summary>
 
@@ -118,6 +117,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 **Plans:** 3 plans
 
 Plans:
+
 - [x] 34-01-PLAN.md — Pre-flight verification: enumerate tables, detect user_id columns, capture row counts
 - [x] 34-02-PLAN.md — RLS migrations for 5 public-read schemas (essentials, meetings, treasury, transparent_motivations, compass)
 - [x] 34-03-PLAN.md — RLS migration for staging (authenticated-only read) + comprehensive verification
@@ -142,6 +142,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 35-01-PLAN.md — Atomic migration: bridge table, FK reassignment, RPC rebuilds, DROP inform.politicians
 - [x] 35-02-PLAN.md — Application code updates: schema switch to essentials + PostgREST fix
 
@@ -165,6 +166,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 36-01-PLAN.md — Treasury service layer and routes (5 public reads + 4 admin writes)
 - [x] 36-02-PLAN.md — Meetings service layer and routes (5 public reads + 3 admin writes)
 
@@ -188,6 +190,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 37-01-PLAN.md — Migrations (staging_reviewer role + status defaults) + requireStagingReviewer middleware
 - [x] 37-02-PLAN.md — Staging service: politician CRUD, review, lock, merge, auto-promotion
 - [x] 37-03-PLAN.md — Staging service: stance + building photo CRUD, review, auto-promotion
@@ -212,6 +215,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
+
 - [x] 38-01-PLAN.md — Schema investigation + Census Geocoder rewrite + env.ts update
 - [x] 38-02-PLAN.md — Address-search endpoint + politicians list Go-parity rewrite
 - [x] 38-03-PLAN.md — Politician detail endpoint (GET /politicians/:id)
@@ -238,6 +242,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [x] 39-01-PLAN.md — Database migration: value range, verdicts table, updated RPCs
 - [x] 39-02-PLAN.md — Public routes: compare, verdicts, batch politician answers
 - [x] 39-03-PLAN.md — Admin compass routes at Go-compatible /api/compass/* paths
@@ -262,6 +267,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
+
 - [x] 40-01-PLAN.md — Auth Hub redirect-after-login + re-auth banner
 - [x] 40-02-PLAN.md — CompassV2 Bearer token migration (20+ files)
 - [x] 40-03-PLAN.md — Essentials Bearer token migration + Sign In link
@@ -290,6 +296,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 41-01-PLAN.md — Pre-flight inspection: enumerate tables, row counts, FK gap analysis, Trivia connection model
 - [x] 41-02-PLAN.md — trivia_service role creation + GET /api/trivia/leaderboard-profiles endpoint
 - [x] 41-03-PLAN.md — RLS migration for validation_quests and trivia tables
@@ -315,6 +322,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 42-01-PLAN.md — URL cleanup and decommission runbook creation
 - [ ] 42-02-PLAN.md — Cutover execution (human-gated dashboard operations)
 
@@ -359,6 +367,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 44-01-PLAN.md — Login cookie issuance: set httpOnly `ev_session` on `.empowered.vote` at login; `POST /api/auth/logout` clears cookie + revokes Supabase session
 - [ ] 44-02-PLAN.md — `GET /api/auth/session` endpoint: CORS config for `*.empowered.vote`, cookie read, Supabase token exchange, 401 fast-fail on missing cookie
 
@@ -382,6 +391,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 45-01-PLAN.md — Profile Hub (`app/src`): silent session check in AuthInitializer before rendering unauthenticated state; wire existing auth store to accept tokens from session exchange
 - [ ] 45-02-PLAN.md — CTC (`C:\Project Test\frontend`): silent session check if no `ev_refresh_token` in localStorage; logout calls `POST /api/auth/logout` to clear shared cookie
 
@@ -405,6 +415,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
 - [x] 46-02-PLAN.md — CompassV2 (`C:\EV-CompassV2`): `git pull` first; silent session check in AuthInitializer / `publicFetch` flow; logout calls `POST /api/auth/logout`
 
@@ -428,6 +439,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 47-01-PLAN.md — SSO session check: add isAuthChecking state, initSso() with GET /api/auth/session + setSession(), PrivateRoute gate
 - [ ] 47-02-PLAN.md — Logout coordination: upgrade signOut() to POST /api/auth/logout before supabase.auth.signOut()
 
@@ -451,6 +463,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 48-01-PLAN.md — Privacy disclosure: add `ev_session` cookie documentation to privacy policy / cookie disclosure on `accounts.empowered.vote`; classify as strictly necessary (no consent banner required)
 - [ ] 48-02-PLAN.md — Cross-app smoke test: manual E2E verification — login at accounts, confirm session inheritance at all five apps, confirm single-logout clears session everywhere
 
@@ -476,6 +489,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [ ] 49-01-PLAN.md — Schema: add 5 GEO ID columns + state + city to connected_profiles; migrate existing users via resolve_user_jurisdiction backfill
 - [ ] 49-02-PLAN.md — Backend: update set-location to write GEO IDs; return jurisdiction object on /account/me; update /representatives/me to use stored GEO IDs directly
 - [ ] 49-03-PLAN.md — Frontend updates: Read & Rank reads jurisdiction.state; CTC extends AccountProfile type; Essentials uses prefilled jurisdiction on load
@@ -499,6 +513,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 50-01-PLAN.md — Add Path 1.5 to /representatives/me route
 - [x] 50-02-PLAN.md — Backfill script for pre-Phase-49 users
 
@@ -537,6 +552,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 59-01-PLAN.md — Database migration: schema columns + quota RPCs (generate_invite_code_if_allowed, get_my_invitees, sanction_invitee)
 - [x] 59-02-PLAN.md — Backend service layer + API routes (quota-aware /generate, /my-invitees, admin overrides, sanction integration)
 - [x] 59-03-PLAN.md — App UI: expanded Referrals section on DashboardPage (quota display, code generation, invitee list)
@@ -566,6 +582,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 60-01-PLAN.md — Add ev-blue and ev-navy tokens to app/src and admin/src index.css; copy logo asset to app/public
 - [x] 60-02-PLAN.md — Build AuthCard and AuthInput components (DSGN-02, DSGN-03)
 - [x] 60-03-PLAN.md — Build PrimaryButton and SecondaryButton components (DSGN-04)
@@ -592,6 +609,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
+
 - [x] 61-01-PLAN.md — Patch AuthInput to accept inputClassName prop (foundation for invite-code mono styling)
 - [x] 61-02-PLAN.md — Build WelcomeScreen at /welcome with three options and invitational copy (AUTH-01)
 - [x] 61-03-PLAN.md — Restyle LoginPage with AppNav + AuthCard + AuthInput + PrimaryButton (AUTH-06)
@@ -619,6 +637,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [x] 62-01-PLAN.md — Restyle LocationStep with v2.0 chrome (AppNav + StepProgress 2/3 + AuthCard + 4 AuthInput fields); remove reveal gate and Learn More link; preserve isUpdate path for UpdateLocationPage
 - [x] 62-02-PLAN.md — Restyle LocationCelebrationStep with green-checkmark badge + 3 milestone items; absorb POST /auth/complete-onboarding from PseudonymStep so onboarding terminates here
 - [x] 62-03-PLAN.md — Simplify OnboardingPage to two-step flow with resumption useEffect; update SignupPage step counter 1-of-4 → 1-of-3; delete WelcomeStep.tsx and PseudonymStep.tsx
@@ -681,9 +700,11 @@ Plans:
 
 Plans:
 Plans:
+
 - [ ] 66-01-PLAN.md — Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
 - [ ] 66-02-PLAN.md — Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
 - [ ] 66-03-PLAN.md — requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
+
 **Success Criteria:**
 
 1. `inform.inform_profiles` exists with a row for every `public.users` entry — including rows for users who signed up before this migration ran (backfilled by the trigger or a one-time backfill script).
@@ -705,6 +726,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [ ] 67-01-PLAN.md — Login page: yellow "Create an Account" CTA + InformConstraintsModal (links to /signup/inform; secondary invite-code link to /signup)
 - [ ] 67-02-PLAN.md — InformSignup.tsx page at /signup/inform: 3-field form (display name + email + password, no invite code); yellow "Check your email" success screen with Inform Account pill
 - [ ] 67-03-PLAN.md — Backend: persist display_name to public.users on Inform path via pool.query() UPDATE in POST /api/auth/signup (non-fatal; no schema change)
@@ -730,6 +752,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 68-01-PLAN.md — Create ConnectedExplainerModal.tsx: focused dialog explaining Connected tier (identity verification, Alpha invite codes) with "I have an invite code →" CTA to /signup
 - [ ] 68-02-PLAN.md — Extend ProfilePage.tsx for Inform tier: type, compass fetch enablement, clickable Inform badge, locked Connect tiles, last-essentials-location display, IPRO-06 bottom section, modal wiring
 
@@ -789,6 +812,7 @@ Full details: `.planning/milestones/v2.2-ROADMAP.md`
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 73-01-PLAN.md — migration 175: insert 42 new senators (AK–MS) + photo backfill for 4 existing CA/IN senators
 - [x] 73-02-PLAN.md — migration 176: insert 48 new senators (MT–WY, incl. 2 appointed) + photo backfill for 6 existing MA/ME/TX senators
 
@@ -843,10 +867,11 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 
 **Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
 
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 
 Plans:
-- [ ] 77-01-PLAN.md — Apply SJ government + officials + headshots (SD/Berkeley/Fremont already shipped in migrations 207–215)
+
+- [x] 77-01-PLAN.md — Apply SJ government + officials + headshots (SD/Berkeley/Fremont already shipped in migrations 207–215)
 - [ ] 77-02-PLAN.md — Verify CITY-01 through CITY-08 across all 4 cities
 
 **Planner note (2026-05-23):** Original 3-wave sketch consolidated into 2 plans because San Diego, Berkeley, and Fremont infrastructure was already applied in migrations 207–215 during prior work sessions. Only San Jose work remains. Wave structure in PLAN.md files reflects this: 77-01 (Wave 1, SJ work), 77-02 (Wave 2, verification across all 4 cities). District type uses LOCAL + LOCAL_EXEC (existing schema) rather than CITY_COUNCIL (which is not a valid enum value).
@@ -869,6 +894,7 @@ Plans:
 **Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
 
 **Waves:**
+
 - Wave 1: San Jose stance research + migration (CSTA-01)
 - Wave 2: San Diego stance research + migration (CSTA-02)
 - Wave 3: Berkeley stance research + migration (CSTA-03)
@@ -894,6 +920,7 @@ Plans:
 **Requirements:** GAPF-01, GAPF-02
 
 **Waves:**
+
 - Wave 1: Audit — SQL query to identify all politicians with < 10 stances; produce a prioritized target list (GAPF-01)
 - Wave 2: Research + ingestion for all identified targets (GAPF-02)
 
@@ -915,6 +942,7 @@ Plans:
 **Requirements:** FINA-01, FINA-02, FINA-03
 
 **Waves:**
+
 - Wave 1: Schema migration — `finance_summary` JSONB column on `essentials.politicians` (FINA-01)
 - Wave 2: Finance data ingestion for all target politicians — federal (FEC) and CA state/local (FPPC Cal-Access) (FINA-02)
 - Wave 3: API update — include `finance_summary` in `GET /api/essentials/politicians` response (FINA-03)
@@ -1008,7 +1036,7 @@ Plans:
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
-| 77. City Infrastructure + Official Records | v2.5 | 0/? | Pending | — |
+| 77. City Infrastructure + Official Records | v2.5 | 1/2 | In Progress|  |
 | 78. City Stance Research | v2.5 | 0/? | Pending | — |
 | 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
 | 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |

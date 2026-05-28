@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.6
+milestone_name: Platform Consolidation
+status: unknown
+stopped_at: "v2.5 roadmap created — phases 77–80 defined. Run /gsd:plan-phase 77 to begin Phase 77 (City Infrastructure + Official Records)."
+last_updated: "2026-05-28T06:53:33.412Z"
+last_activity: 2026-05-28 -- Phase 77 execution started
+progress:
+  total_phases: 34
+  completed_phases: 24
+  total_plans: 84
+  completed_plans: 72
+  percent: 71
+---
+
 # Project State
 
 ## Project Reference
@@ -5,11 +21,13 @@
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.5 — City Officials Expansion. Roadmap created 2026-05-22. Run `/gsd:plan-phase 77` to begin.
+**Current focus:** Phase 77 — city-infrastructure-official-records
 **Last shipped:** Phase 76 complete 2026-05-22: 715 stance rows across 43 non-incumbent Senate candidates (migrations 197, 198, 207). Armstrong (OK) 14→17 stances, Husted (OH) 24→30 stances (migration 210). SRES-01, SRES-02, SRES-03 verified. James Byrd (WY, D) at 5 stances — documented floor case (no evidence available). v2.4 milestone complete.
 
 ## Current Position
 
+Phase: 77 (city-infrastructure-official-records) — EXECUTING
+Plan: 1 of 2
 **v2.5 City Officials Expansion — roadmap created 2026-05-22. 4 phases (77–80), 18 requirements. Run /gsd:plan-phase 77 to begin.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
@@ -42,7 +60,7 @@ Phase 73 (Senator Records) COMPLETE 2026-05-19:
 Phase 75 (Race Catalog + Candidate Records) COMPLETE 2026-05-22: 1/1 plans. Migration 196 applied — 43 non-incumbent 2026 Senate candidate politicians + offices + photos. RACE-01, CAND-01–03 closed.
 Phase 76 (Candidate Stance Research) COMPLETE 2026-05-22: 4/4 plans. Migrations 197, 198, 207 (43 candidates, 715 stances) + migration 210 (Armstrong OK 14→17, Husted OH 24→30). SRES-01, SRES-02, SRES-03 closed. v2.4 milestone complete.
 
-Last activity: 2026-05-22 — v2.5 roadmap created. Phase 77–80 defined. 18 requirements mapped (CITY-01–08, CSTA-01–05, GAPF-01–02, FINA-01–03). Run /gsd:plan-phase 77 to begin.
+Last activity: 2026-05-28 -- Phase 77 execution started
 
 **v1.9 Roles — SHIPPED 2026-04-06 ✅**
 8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
@@ -55,28 +73,33 @@ Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄
 ## Performance Metrics
 
 **v2.5 Scope — City Officials Expansion — IN PROGRESS**
+
 - Phases: 4 (77–80)
 - Requirements: 0/18 closed (CITY-01–08, CSTA-01–05, GAPF-01–02, FINA-01–03)
 - Plans complete: 0
 - Started: 2026-05-22
 
 **v2.4 Scope — 2026 Senate Candidates — COMPLETE ✅**
+
 - Phases: 2 (75–76)
 - Requirements: 7/7 (RACE-01, CAND-01–03, SRES-01–03 all closed)
 - Plans complete: 5 (Phase 75: 1/1, Phase 76: 4/4)
 - Shipped: 2026-05-22
 
 **v2.3 Scope — US Senate Coverage — COMPLETE ✅**
+
 - Phases: 3 (72–74)
 - Requirements: 8/8 (SINF-01–02, SENA-01–03, SSTA-01–03) — all closed
 - Plans complete: 7 (Phase 72: 1/1, Phase 73: 2/2, Phase 74: 3/3 + script work)
 - Shipped: 2026-05-21
 
 **v2.2 Scope — TIGER District Geofencing — COMPLETE**
+
 - Phases: 3 (69–71) ✅
 - Requirements: 14/14 (GEO-01–14) ✅
 
 **v2.1 Scope — COMPLETE**
+
 - Phases: 3 (66–68) ✅
 - Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
 
@@ -255,6 +278,7 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 ### v2.0 Component Patterns (from 60-02, 60-03, 60-04)
 
 **Chrome components (60-04):**
+
 - **StepProgress bar height**: `h-1.5` (6px) — thinner than DashboardPage XP bar (`h-2`) per v2.0 spec
 - **StepProgress fill**: `bg-ev-blue` (NOT ev-teal) — v2.0 primary CTA blue palette
 - **Conditional slot pattern**: `{children && <div className="flex items-center gap-3">{children}</div>}` — avoids empty flex spacing
@@ -264,6 +288,7 @@ Full key decisions log in PROJECT.md. All prior milestone decisions archived in 
 ### v2.0 Component Patterns (from 60-02, 60-03)
 
 **Button components (60-03):**
+
 - **PrimaryButton palette**: `bg-ev-blue text-white` / hover: `bg-ev-blue/90` / shape: `w-full rounded-xl py-3 font-bold text-base`
 - **SecondaryButton palette**: `bg-gray-800 text-white border border-gray-700` / hover: `bg-gray-700` — gray-800 chosen (not ev-navy) so it layers above AuthCard's gray-900 background
 - **Prop parity**: both buttons share identical interface (children/onClick/type/disabled/className with same defaults) — swap by changing only the import name
@@ -355,6 +380,7 @@ Phase 66 (Inform Profiles Backend Foundation)
 None for v2.5 start.
 
 **Carried forward from v1.9 (non-blocking):**
+
 - Verify `app.empowered.vote` in Render `CORS_ORIGIN` env var
 - Smoke-test admin grant UI → adminRouter → grant_role RPC chain end-to-end in production
 - Backport district-join approach to `getMatchingGrant` (compass_stance_editor — currently fail-open)
