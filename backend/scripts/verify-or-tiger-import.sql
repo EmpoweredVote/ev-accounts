@@ -23,7 +23,7 @@ GROUP BY mtfcc ORDER BY mtfcc;
 -- (G4110 count confirmed via dry-run 2026-05-28: 241 OR G4110 incorporated cities)
 
 -- Gate 4: Portland OR sentinel (GEO-OR-05 prerequisite)
--- Note: geo_id '4159000' is ASSUMED (STATEFP='41' + PLACEFP='59000'); confirm after place layer loads
+-- CONFIRMED 2026-05-28: geo_id='4159000' (STATEFP='41' + PLACEFP='59000'); name='Portland city', mtfcc='G4110'
 SELECT geo_id, name, mtfcc
 FROM essentials.geofence_boundaries
 WHERE state = '41' AND geo_id = '4159000';
@@ -42,6 +42,7 @@ GROUP BY state, district_type ORDER BY state, district_type;
 -- (OR has no pre-existing uppercase rows unlike CA; IN clause covers both cases for robustness)
 
 -- Gate 6: Multnomah County sentinel (Portland's county)
+-- CONFIRMED 2026-05-28: geo_id='41051', name='Multnomah County', mtfcc='G4020'
 SELECT geo_id, name, mtfcc
 FROM essentials.geofence_boundaries
 WHERE state = '41' AND mtfcc = 'G4020' AND geo_id = '41051';
