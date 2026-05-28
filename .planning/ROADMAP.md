@@ -887,19 +887,40 @@ Plans:
 
 #### Phase 78: City Stance Research
 
-**Goal:** Every San Jose, San Diego, Berkeley, and Fremont official has sourced stance data across all applicable CompassV2 topics — users in those cities can open the compass compare view and see local officials' positions with citations, mirroring the SF officials pattern established in Phase 76.
+**Goal:** Every San Jose, San Diego, Berkeley, Sacramento, and Fremont official has sourced stance data across all 42 applicable CompassV2 topics (data-centers excluded for city officials) — users in those cities can open the compass compare view and see local officials' positions with citations, mirroring the SF officials pattern established in Phase 76. Fremont (CSTA-04) is pre-completed via migration 219 (56 stances); Sacramento is added as an informal 5th city extending CSTA-04 per CONTEXT.md D-01.
 
 **Dependencies:** Phase 77 (politician records must exist in `essentials.politicians` before `inform.politician_answers` rows can reference them)
 
 **Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
 
-**Waves:**
+**Plans:** 6 plans
+Plans:
+**Wave 1**
 
-- Wave 1: San Jose stance research + migration (CSTA-01)
-- Wave 2: San Diego stance research + migration (CSTA-02)
-- Wave 3: Berkeley stance research + migration (CSTA-03)
-- Wave 4: Fremont stance research + migration (CSTA-04)
-- Wave 5: Context row audit — verify all stances have paired context rows with source URLs (CSTA-05)
+- [ ] 78-01-PLAN.md — Wave 0: Verify Sacramento headshots (audit-only; promote to numbered migration if not yet live)
+- [ ] 78-02-PLAN.md — Wave 1: San Jose stance research + migration (CSTA-01, 11 officials)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 78-03-PLAN.md — Wave 2: San Diego stance research + migration (CSTA-02, 11 officials)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 78-04-PLAN.md — Wave 3: Berkeley stance research + migration (CSTA-03, 10 officials)
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
+- [ ] 78-05-PLAN.md — Wave 4: Sacramento stance research + migration (CSTA-04 extension, 9 officials; Fremont untouched)
+
+**Wave 5** *(blocked on Wave 4 completion)*
+
+- [ ] 78-06-PLAN.md — Wave 5: CSTA-05 context audit across SJ, SD, Berkeley, Sacramento (Fremont out of scope)
+
+**Cross-cutting constraints:**
+
+- Every researched stance has a paired inform.politician_context row with at least one source URL
+
+**Planner note (2026-05-28):** Original 5-wave sketch expanded to 6 waves to (a) add Wave 0 for Sacramento headshot verification before stance research begins (D-02), (b) replace the Fremont stance wave with a Sacramento stance wave since CSTA-04 / Fremont is already closed via migration 219 (D-04), and (c) preserve the CSTA-05 audit as its own final wave per D-09. Research executes one city at a time (D-05) — no parallel research-stances dispatch. Migration numbers assigned at apply time per D-08 (last confirmed applied: 220).
 
 **Success Criteria:**
 
@@ -1037,6 +1058,6 @@ Plans:
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete    | 2026-05-28 |
-| 78. City Stance Research | v2.5 | 0/? | Pending | — |
+| 78. City Stance Research | v2.5 | 0/6 | Planned | — |
 | 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
 | 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
