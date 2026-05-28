@@ -82,6 +82,7 @@
 ## v3 Requirements (Deferred)
 
 ### Additional Federal Coverage
+
 - **FED-01**: US House Representatives coverage (435 members) — same infrastructure pattern as Senate; deferred until Senate is complete
 - **FED-02**: Extend TIGER geofencing to all 50 states — current CA-only; deferred until federal coverage warrants it
 
@@ -140,6 +141,7 @@
 | FINA-03 | Phase 80 | Pending |
 
 **Coverage:**
+
 - v2.5 requirements: 18 total
 - Mapped to phases: 18
 - Unmapped: 0 ✓

@@ -1036,7 +1036,7 @@ Plans:
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
-| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete   | 2026-05-28 |
+| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete    | 2026-05-28 |
 | 78. City Stance Research | v2.5 | 0/? | Pending | — |
 | 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
 | 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
