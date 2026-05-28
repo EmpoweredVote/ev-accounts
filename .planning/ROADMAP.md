@@ -867,12 +867,12 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 
 **Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
 
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 
 - [x] 77-01-PLAN.md — Apply SJ government + officials + headshots (SD/Berkeley/Fremont already shipped in migrations 207–215)
-- [ ] 77-02-PLAN.md — Verify CITY-01 through CITY-08 across all 4 cities
+- [x] 77-02-PLAN.md — Verify CITY-01 through CITY-08 across all 4 cities
 
 **Planner note (2026-05-23):** Original 3-wave sketch consolidated into 2 plans because San Diego, Berkeley, and Fremont infrastructure was already applied in migrations 207–215 during prior work sessions. Only San Jose work remains. Wave structure in PLAN.md files reflects this: 77-01 (Wave 1, SJ work), 77-02 (Wave 2, verification across all 4 cities). District type uses LOCAL + LOCAL_EXEC (existing schema) rather than CITY_COUNCIL (which is not a valid enum value).
 
@@ -1036,7 +1036,7 @@ Plans:
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
-| 77. City Infrastructure + Official Records | v2.5 | 1/2 | In Progress|  |
+| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete   | 2026-05-28 |
 | 78. City Stance Research | v2.5 | 0/? | Pending | — |
 | 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
 | 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
