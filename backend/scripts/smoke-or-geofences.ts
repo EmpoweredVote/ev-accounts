@@ -43,11 +43,11 @@ const TEST_ADDRESSES: AddressTest[] = [
   },
   {
     // Bend OR rural point — unincorporated Deschutes County outside city limits
-    // This coordinate is chosen to be outside Bend city limits; if it falls inside
-    // Bend city limits when tested, update to lon: -121.4, lat: 44.12 (firmly rural)
+    // Original coordinate (-121.3153, 44.0582) fell inside Bend city limits (G4110 returned).
+    // Updated to plan-specified fallback: lon: -121.4, lat: 44.12 (firmly rural Deschutes County)
     label: 'Bend OR (unincorporated Deschutes County)',
-    lon: -121.3153,
-    lat: 44.0582,
+    lon: -121.4,
+    lat: 44.12,
     expectedMtfcc: ['G4020', 'G5200', 'G5210', 'G5220'],
     forbiddenMtfcc: ['G4110'],
   },
