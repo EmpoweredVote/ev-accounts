@@ -893,12 +893,12 @@ Plans:
 
 **Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
 
-**Plans:** 1/6 plans executed
+**Plans:** 2/6 plans executed
 Plans:
 **Wave 1**
 
 - [x] 78-01-PLAN.md — Wave 0: Verify Sacramento headshots (audit-only; promote to numbered migration if not yet live)
-- [ ] 78-02-PLAN.md — Wave 1: San Jose stance research + migration (CSTA-01, 11 officials)
+- [x] 78-02-PLAN.md — Wave 1: San Jose stance research + migration (CSTA-01, 11 officials)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -1058,6 +1058,6 @@ Plans:
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete    | 2026-05-28 |
-| 78. City Stance Research | v2.5 | 1/6 | In Progress|  |
+| 78. City Stance Research | v2.5 | 2/6 | In Progress|  |
 | 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
 | 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
