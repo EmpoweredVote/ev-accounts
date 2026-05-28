@@ -346,8 +346,8 @@ Per "accuracy over completeness," no photos guessed. **All 12 UT school district
 
 ### OPEN ACCURACY FLAGS
 
-- **Orem:** Dave Young (stale, left office) still in DB as `ut-city-orem` with no contacts. Jenn Gale added as replacement. Manual DELETE of Dave Young's office row needed before next city loader run.
-- **Cache County:** Gina Worthen, Karl Ward, Barbara Tidwell are stale (Kathryn Beus, Keegan Garrity, JoAnn Bennett are current). Their DB records have no contacts (safe but inaccurate). Needs cleanup.
+- ~~**Orem:** Dave Young (stale, left office) still in DB.~~ **RESOLVED 2026-05-28** — fully deleted (see Stale cleanup below). Orem council now correct 6 + mayor.
+- ~~**Cache County:** Gina Worthen, Karl Ward, Barbara Tidwell are stale.~~ **RESOLVED 2026-05-28** — fully deleted + 3 verified replacements loaded (see Stale cleanup below). Cache council now correct 7.
 - ~~**DISPLAY ISSUE (new):** Utah city councils loaded at-large have label "Orem City Council" etc. but city name not prominent in front-end display for address searches.~~ **FIXED 2026-05-28**: See "Display fix" section below.
 
 ### LOADER FLAG NOTE
@@ -379,3 +379,30 @@ always sets `representing_city = city.city_name`, so now:
 members are truly at-large. District councils (Ogden, West Jordan, West Valley) encode the seat
 in `office_title` (e.g., "Council District 4 (Vice Chair)") which now surfaces correctly with
 city name prepended. No label-level data change needed.
+
+---
+
+## Stale cleanup (2026-05-28)
+
+**Approach decision:** Prior stale removals (Sandy City, SLC Mano/Eva) **fully deleted** the
+politician record. Office-only deletion is insufficient because the flat-list / name-search query
+(`essentialsService.ts` getPoliticiansFlatList) is `LEFT JOIN offices WHERE p.is_active = true` —
+an office-less but active politician still appears in name search with blank office info. So all
+4 stale records were **fully deleted** (politician row + offices; none had contacts/images/etc.).
+
+**Deleted (4):**
+- **Dave Young** (`ut-city-orem`) — left office, replaced by Jenn Gale (already loaded). Orem
+  council now correct: 6 at-large council + Mayor Karen McCandless.
+- **Gina Worthen, Karl Ward, Barbara Tidwell** (`ut-county-cache`) — left Cache County Council.
+
+**Cache County Council replacements (3, loaded):** Verified against cachecounty.gov/countycouncil
+(HIGH confidence) — photos validated `curl -sI` → 200/image:
+- **Kathryn A. Beus** — Southeast District (now **Vice Chair**) — (435) 512-5680 + photo
+- **Keegan Garrity** — Logan Seat 1 (replaced Ward) — (435) 512-7905 + photo
+- **JoAnn Bennett** — Logan Seat 2 (replaced Tidwell; appointed Jan 2026) — (801) 825-9866 + photo
+- Also updated **Sandi Goodlander** → Logan Seat 3, **Chair** (was plain member; old Chair Worthen gone).
+
+Loaded via `load-ut-county-rosters.ts --county cache` (ins=3, upd=12, err=0). Cache County
+Council now the full, correct 7 members — all with phones + headshots. `cache_county.tsv` updated
+(stale rows removed, replacements added). Full deletion freed the `Logan Seat 1/2` external-id
+slots so Garrity/Bennett got canonical IDs (no collision-walk).
