@@ -813,7 +813,7 @@ async function processLayer(
       cd119: 6,   // 6 OR congressional districts (post-2022 redistricting)
       sldu:  30,  // 30 OR Senate districts
       sldl:  60,  // 60 OR House districts
-      place: 242, // 242 OR G4110 incorporated cities (MEDIUM confidence — update after dry-run)
+      place: 241, // 241 OR G4110 incorporated cities (confirmed via dry-run 2026-05-28)
       county: 36, // 36 OR counties
     };
     if (layer in EXPECTED_OR_MTFCC) {

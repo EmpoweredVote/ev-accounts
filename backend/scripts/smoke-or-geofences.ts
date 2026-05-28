@@ -104,7 +104,7 @@ async function main() {
     );
     const expectedCounts: Record<string, number> = {
       G4020: 36,   // counties
-      G4110: 242,  // incorporated cities (update if dry-run confirmed a different count)
+      G4110: 241,  // incorporated cities (confirmed via dry-run 2026-05-28)
       G5200: 6,    // congressional districts
       G5210: 30,   // state senate districts
       G5220: 60,   // state house districts

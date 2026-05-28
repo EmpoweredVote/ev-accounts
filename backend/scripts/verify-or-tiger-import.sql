@@ -19,8 +19,8 @@ SELECT mtfcc, COUNT(*) AS row_count
 FROM essentials.geofence_boundaries
 WHERE state = '41'
 GROUP BY mtfcc ORDER BY mtfcc;
--- Expected: G4020|36, G4110|242, G5200|6, G5210|30, G5220|60
--- (G4110 count subject to dry-run confirmation; update if actual count differs from 242)
+-- Expected: G4020|36, G4110|241, G5200|6, G5210|30, G5220|60
+-- (G4110 count confirmed via dry-run 2026-05-28: 241 OR G4110 incorporated cities)
 
 -- Gate 4: Portland OR sentinel (GEO-OR-05 prerequisite)
 -- Note: geo_id '4159000' is ASSUMED (STATEFP='41' + PLACEFP='59000'); confirm after place layer loads
