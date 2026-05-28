@@ -319,15 +319,63 @@ All 9 Washington County officials (3 commissioners + 6 officers) verified in pro
 | Weber School District | 7 | 7 | 0 | 7 | **DONE** — wsd.net |
 | Provo School District | 7 | 0 | 0 | 7 | **DONE** — contact-forms only, no direct emails |
 
-### School districts still pending (10 of 12)
+### School districts — Wave 2 batch (executed 2026-05-28)
 
-Salt Lake City, Nebo, Washington, Box Elder, Cache, Tooele, Iron, Murray, Park City, Logan
+All 10 remaining districts enriched. Researched via parallel agent fan-out
+(slcschools.org, USBA 2025 directory, washk12.org, besd.net, district board pages,
+Ballotpedia/Apptegy CDN photos). All 32 photo URLs validated `curl -sI` → 200 + image
+content-type before load. Loaded via `load-ut-school-rosters.ts --district <slug>`
+(ins=0, upd=61, err=0). Contacts source = `ut-school-<slug>`.
+
+| District | Members | Emails | Phones | Headshots | Notes |
+|---|---|---|---|---|---|
+| Salt Lake City | 7 | 7 | 7 | 7 | Individual emails + direct phones + ParentSquare CDN photos |
+| Nebo | 5 | 5 | 5 | 2 | USBA directory; Rowley/Wilson have personal (non-.edu) emails; 3 no headshot |
+| Washington | 7 | 7 | 7 | 0 | washk12.org (NOT washington.k12.ut.us — defunct); group photo only, no individual headshots; shared district phone |
+| Box Elder | 7 | 6 | 6 | 7 | besd.net; DeFilippis no email (townnews.com photo) |
+| Cache | 7 | 7 | 7 | 0 | cachecountyschools.org; JS-rendered, no accessible photos |
+| Tooele | 7 | 7 | 7 | 0 | tooelesd.org; no accessible individual photos |
+| Iron | 7 | 7 | 7 | 7 | ironschools.org; full Apptegy CDN photos |
+| Murray | 4 | 4 | 4 | 4 | murrayschools.org; full S3 photos |
+| Park City | 5 | 5 | 5 | 0 | pcschools.us; no accessible individual photos |
+| Logan | 5 | 5 | 5 | 5 | loganschools.org; ParentSquare CDN photos |
+
+**Totals: 61 members, 60 emails, 60 phones, 32 photos.** Photo gaps are where boards
+publish only group photos or JS-render their member pages without crawlable image URLs.
+Per "accuracy over completeness," no photos guessed. **All 12 UT school districts now DONE.**
 
 ### OPEN ACCURACY FLAGS
 
 - **Orem:** Dave Young (stale, left office) still in DB as `ut-city-orem` with no contacts. Jenn Gale added as replacement. Manual DELETE of Dave Young's office row needed before next city loader run.
 - **Cache County:** Gina Worthen, Karl Ward, Barbara Tidwell are stale (Kathryn Beus, Keegan Garrity, JoAnn Bennett are current). Their DB records have no contacts (safe but inaccurate). Needs cleanup.
-- **DISPLAY ISSUE (new):** Utah city councils loaded at-large have label "Orem City Council" etc. but city name not prominent in front-end display for address searches. At-large Utah councils also lack seat/position labels (unlike Bloomington, IN wards). See handoff prompt for fix scope.
+- ~~**DISPLAY ISSUE (new):** Utah city councils loaded at-large have label "Orem City Council" etc. but city name not prominent in front-end display for address searches.~~ **FIXED 2026-05-28**: See "Display fix" section below.
 
 ### LOADER FLAG NOTE
 Both `load-ut-city-rosters.ts` and `load-ut-school-rosters.ts` now support `--city <slug>` and `--district <slug>` flags respectively (added Wave 2 to prevent re-running stale SLC FeatureServer data).
+
+---
+
+## Display fix (2026-05-28)
+
+**Root cause:** `qualifyLocalTitle()` in both `essentials/src/pages/Results.jsx` and
+`ev-ui/src/PoliticianProfile.jsx` returned `baseTitle` unchanged when `government_name` was
+empty. Utah at-large city councils have `chamber_id = null` (the loader writes offices without
+creating a chamber→government link), so `government_name = ""` — causing Orem council members
+to display as just "City Council" instead of "Orem City Council".
+
+**Fix:** Added `pol.representing_city` as fallback in `qualifyLocalTitle()`. The city loader
+always sets `representing_city = city.city_name`, so now:
+- "City Council" → "Orem City Council" ✓
+- "Mayor" → "Orem Mayor" ✓
+- "Council District 1" → "Ogden Council District 1" ✓
+- "Council At-Large Seat A" → "Ogden Council At-Large Seat A" ✓
+- Bloomington (has government_name) → unchanged ✓
+
+**Status:**
+- `essentials/src/pages/Results.jsx` — committed on branch `phase-133-state-board-tribal-land` (cards on results page)
+- `ev-ui/src/PoliticianProfile.jsx` — committed on `ev-ui` main, **needs publish to go live on profile pages**. Publish: `cd ev-ui && npm version 0.8.13 && git push origin main --follow-tags` (triggers auto-bump PRs in 4 consumer repos)
+
+**Seat labels:** At-large councils (Orem, Lehi, St. George, Layton) have no seat numbers — all
+members are truly at-large. District councils (Ogden, West Jordan, West Valley) encode the seat
+in `office_title` (e.g., "Council District 4 (Vice Chair)") which now surfaces correctly with
+city name prepended. No label-level data change needed.
