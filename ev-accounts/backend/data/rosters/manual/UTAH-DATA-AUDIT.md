@@ -481,9 +481,59 @@ evidence (personal signature + family circulated Prop 4 repeal petition). Half-s
 CSVs: `2026-05-28-ut-topup-{lee,curtis,moore,owens,kennedy,maloy}.csv`
 
 ### Wave 2 — Utah Governor + state executives
-Pending. Politicians to add: Gov. Spencer Cox, Lt. Gov. Deidre Henderson,
-AG Derek Brown, Treasurer Marlo Oaks, State Auditor Tina Cannon (district_type STATE_EXEC;
-currently 0 STATE_EXEC politicians for UT). Pattern: per-role districts (e.g. "Utah
-Governor"), geo_id="49", STATE_EXEC — same as Indiana model. Need to:
-1. Direct SQL inserts (no STATE_EXEC loader exists)
-2. Research stances across 24 national topics via /research-stances
+**Status: PENDING — start here in the next session.**
+
+**Officeholders (verified 2026-05-28):**
+| Office | Person |
+|---|---|
+| Governor | Spencer Cox |
+| Lieutenant Governor | Deidre Henderson |
+| Attorney General | Derek Brown |
+| State Treasurer | Marlo Oaks |
+| State Auditor | Tina Cannon |
+
+**Step 1 — Insert STATE_EXEC politicians (direct SQL, no loader exists).**
+
+Pattern confirmed from Indiana (already in DB): one district per office, all geo_id='49',
+district_type='STATE_EXEC', government_id='bd6d107e-2df4-4770-aa0d-155b00c84ce0'
+(= "State of Utah", type=STATE, verified in production).
+
+Reference Indiana rows for shape:
+- district label = "Indiana Governor", office title = "Indiana Governor"
+- Use same shape: label = "Utah Governor", office title = "Governor" (or "Utah Governor")
+
+Example SQL pattern (repeat for each of the 5 offices):
+```sql
+-- 1. Insert district
+INSERT INTO essentials.districts (id, label, district_type, geo_id, state, government_id)
+VALUES (gen_random_uuid(), 'Utah Governor', 'STATE_EXEC', '49', 'UT',
+        'bd6d107e-2df4-4770-aa0d-155b00c84ce0');
+
+-- 2. Insert politician
+INSERT INTO essentials.politicians (id, first_name, last_name, is_active)
+VALUES (gen_random_uuid(), 'Spencer', 'Cox', true);
+
+-- 3. Insert office linking politician to district
+INSERT INTO essentials.offices (id, politician_id, district_id, title, is_appointed_position)
+VALUES (gen_random_uuid(), '<politician_id>', '<district_id>', 'Governor', false);
+```
+
+Do all 5 politicians. Verify each appears in `essentials.politicians` before running
+/research-stances (the skill will report "could not find NAME" if the insert missed).
+
+**Step 2 — Run /research-stances.**
+
+```
+/research-stances Spencer Cox, Deidre Henderson, Derek Brown, Marlo Oaks, Tina Cannon
+```
+
+All 5 are statewide executive roles → use the full 24 national topics (same set as UT
+federal politicians). The skill will fetch topics live from the DB.
+
+**Step 3 — Verify in compass.**
+
+After DB push: `GET /api/compass/politicians` should return all 5 new politicians.
+
+**Note on address surfacing:** STATE_EXEC politicians surface for all Utah addresses
+(whole-state geofence). Verify this works after inserts if testing essentials address
+search — the Indiana politicians confirm the pattern works in production.
