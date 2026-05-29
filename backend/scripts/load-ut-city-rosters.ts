@@ -23,6 +23,10 @@ const __dirname = path.dirname(__filename);
 const MANIFEST = path.resolve(__dirname, '../data/sources/ut_city_rosters.json');
 const ROSTERS_DIR = path.resolve(__dirname, '../data/rosters/manual');
 const DRY_RUN = process.argv.includes('--dry-run');
+const CITY_FILTER = (() => {
+  const idx = process.argv.indexOf('--city');
+  return idx >= 0 ? process.argv[idx + 1] ?? null : null;
+})();
 
 interface CityRecord {
   jurisdiction_id: string;
@@ -106,7 +110,13 @@ async function ingest(
   try {
     await client.query('BEGIN');
     const districtLabel = `${city.city_name} ${role}`;
-    const districtNum = role.match(/\b(\d+|AL|At-Large)\b/i)?.[1] ?? undefined;
+    // district_id drives the card subtitle: a numeric ward/district number, or '0'
+    // for at-large council seats (whole-place attachment) so the frontend renders
+    // "At-Large". Mayors/officers (non-LOCAL) keep null.
+    const explicitNum = role.match(/\b(\d+)\b/)?.[1];
+    const isWholePlaceCouncil =
+      districtType === 'LOCAL' && /council/i.test(role) && !targetGeoId.includes('/ward:');
+    const districtNum = explicitNum ?? (isWholePlaceCouncil ? '0' : undefined);
     const districtId = await resolveDistrict(client, targetGeoId, districtType, districtLabel, districtNum, city.city_name);
 
     const slug = placeSlug(city.jurisdiction_id);
@@ -241,7 +251,17 @@ async function loadMayorTsv(pool: pg.Pool, city: CityRecord): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const cities: CityRecord[] = JSON.parse(fs.readFileSync(MANIFEST, 'utf-8'));
+  let cities: CityRecord[] = JSON.parse(fs.readFileSync(MANIFEST, 'utf-8'));
+  if (CITY_FILTER) {
+    cities = cities.filter((c) => placeSlug(c.jurisdiction_id) === CITY_FILTER);
+    if (cities.length === 0) {
+      const available = (JSON.parse(fs.readFileSync(MANIFEST, 'utf-8')) as CityRecord[])
+        .map((c) => placeSlug(c.jurisdiction_id)).join(', ');
+      console.error(`[ut-city] No city found with slug "${CITY_FILTER}". Available: ${available}`);
+      process.exit(1);
+    }
+    console.error(`[ut-city] --city filter: processing ${cities[0].city_name} only`);
+  }
   const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
   for (const c of cities) {
     try {
