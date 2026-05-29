@@ -459,10 +459,31 @@ campaign statements. Flagged in per-topic reasoning.
 6 UT federal politicians: Blake Moore, Burgess Owens, Celeste Maloy, John Curtis, Mike Kennedy,
 Mike Lee. Wave 1 complete. ✅
 
+**Federal politician top-up (executed 2026-05-28) — 3 new national topics:**
+
+Three national topics added to the live compass since Wave 1 (`childcare`, `data-centers`,
+`homelessness`) created gaps for all 6 UT federal politicians. Top-up pushed 16 stances.
+
+| Politician | Before | Added | Now | Still missing |
+|---|---|---|---|---|
+| Mike Lee | 23 | childcare(4), data-centers(5), homelessness(4) | 26 | none (24 national + 2 judicial) |
+| John Curtis | 22 | data-centers(4), homelessness(3) | 24 | none |
+| Blake Moore | 21 | childcare(3), data-centers(4), homelessness(3) | 24 | none |
+| Burgess Owens | 21 | childcare(3), data-centers(4) | 23 | homelessness (no evidence) |
+| Mike Kennedy | 20 | childcare(4), redistricting(5↑) | 22 | data-centers, homelessness (no evidence) |
+| Celeste Maloy | 17 | childcare(3), religious-freedom(4), data-centers(3), homelessness(4) | 21 | campaign-finance, civil-rights, same-sex-marriage (no evidence) |
+
+Notes: data-centers scale is 1=moratorium→5=welcome/minimal barriers. Lee scored 5 (ENR
+Chair, NEPA reform, max deregulation). Kennedy redistricting upgraded 4→5 based on new
+evidence (personal signature + family circulated Prop 4 repeal petition). Half-step values
+(3.5) rounded to nearest integer per data quality standard.
+
+CSVs: `2026-05-28-ut-topup-{lee,curtis,moore,owens,kennedy,maloy}.csv`
+
 ### Wave 2 — Utah Governor + state executives
 Pending. Politicians to add: Gov. Spencer Cox, Lt. Gov. Deidre Henderson,
 AG Derek Brown, Treasurer Marlo Oaks, State Auditor Tina Cannon (district_type STATE_EXEC;
-currently 0 STATE_EXEC politicians for UT). Need to:
-1. Verify current officeholders + district setup
-2. Direct SQL inserts following House rep pattern (no STATE_EXEC loader exists)
-3. Research stances across 21 federal topics via /research-stances
+currently 0 STATE_EXEC politicians for UT). Pattern: per-role districts (e.g. "Utah
+Governor"), geo_id="49", STATE_EXEC — same as Indiana model. Need to:
+1. Direct SQL inserts (no STATE_EXEC loader exists)
+2. Research stances across 24 national topics via /research-stances
