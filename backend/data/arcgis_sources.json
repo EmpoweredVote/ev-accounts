@@ -1718,12 +1718,12 @@
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:ogden",
     "layer_class": "city_ward",
-    "source_url": null,
-    "field_map": null,
+    "source_url": "https://data.ogdencity.com/server/rest/services/Ogden_Municipal_District/FeatureServer/0/query?where=DISTRICTID%20IN%20('1','2','3','4')&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "DISTRICTID", "name": "NAME" },
     "mtfcc": "X0001",
-    "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (Ogden city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/OgdenCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "geo_id_template": "ocd-division/country:us/state:ut/place:ogden/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via Ogden City GIS (data.ogdencity.com, AGO org 5bEsxSBu0dtu5rkP). FeatureServer/0 returns 8 features (4 districts + 3 at-large A/B/C + mayor DISTRICTID=0); the where clause filters to the 4 geographic districts. Fields DISTRICTID('1'-'4'), NAME('Municipal District N'), OFFICE, REPNAME. At-large + mayor surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/OgdenCouncilDistricts) was wrong org — 400."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:orangeville",
@@ -2504,12 +2504,12 @@
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_jordan",
     "layer_class": "city_ward",
-    "source_url": null,
-    "field_map": null,
+    "source_url": "https://services1.arcgis.com/yznraL2FyB2Sm732/arcgis/rest/services/Council_Districts_22/FeatureServer/5/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "District_Quad", "name": "Council_Member" },
     "mtfcc": "X0001",
-    "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (West Jordan city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/WestJordanCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "geo_id_template": "ocd-division/country:us/state:ut/place:west_jordan/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via West Jordan City GIS (AGO org yznraL2FyB2Sm732, layer WJC_Council_Boundary2022). 4 district polygons; fields District_Quad('1'-'4'), Council_Member. 3 at-large seats surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/WestJordanCouncilDistricts) was wrong org — 400."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_point",

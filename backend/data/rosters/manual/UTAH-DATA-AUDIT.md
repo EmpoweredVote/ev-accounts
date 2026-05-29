@@ -247,8 +247,361 @@ Sources: slc.gov/district{N}/ (emails Cloudflare-decoded), provo.gov/government/
 Script: `scripts/enrich-ut-slc-provo-councils.ts --commit`
 Note: orphan contact for Erika Carlsen (source=slc.gov/district5, from Phase 3 direct SQL) cleaned up via DELETE.
 
+---
+
+## Phase 2 Wave 2 results (executed 2026-05-28) — Washington County officers
+
+**Washington County officers added (6 seats):**
+
+| Office | Officeholder | Confidence | Source |
+|---|---|---|---|
+| Sheriff | Barry Golding | HIGH | news.washeriff.net (official WCSO site) |
+| County Attorney | Jerry Jaeger | HIGH | washco.utah.gov/departments/attorney |
+| Clerk/Auditor | Ryan Sullivan | HIGH | washco.utah.gov/departments/clerk-auditor |
+| Recorder/Surveyor | Gary Christensen | HIGH | washco.utah.gov/departments/recorder |
+| Assessor | Tom Durrant | HIGH | washco.utah.gov/departments/assessor |
+| Treasurer | David Whitehead | HIGH | washco.utah.gov/departments/treasurer |
+
+**Office structure decisions:**
+- **Clerk/Auditor is a combined office** — washco.utah.gov presents a single "Clerk/Auditor"
+  department; Ryan Sullivan self-identifies as "Washington County Clerk/Auditor" in election
+  notices. Modeled as one row (matches Weber County pattern).
+- **Recorder/Surveyor is a combined office** — county navigation lists "Recorder/Surveyor" as a
+  single department. Modeled as one row (matches Weber, Tooele, Summit pattern).
+
+**Sheriff vacancy note:** Nate Brooksby (2024 election winner) resigned March 27, 2026.
+Undersheriff Barry Golding was formally chosen by the Washington County Republican Party
+Central Committee on May 6, 2026 (~75% of vote) to fill the vacancy through end of term
+(January 2027, when Johnny Heppler takes office). Golding is the current officeholder per
+the midterm vacancy procedure (Utah Code); modeled as "Sheriff" consistent with the Davis
+County appointee precedent (Parke & Brady).
+
+**Earlier conflict resolved:** The 2024 election "Clerk/Auditor Special 2-Year Seat" was a
+genuine mid-term vacancy fill for the combined Clerk/Auditor office. Ryan Sullivan is the
+current holder per the live department page — no separate Clerk and Auditor offices exist.
+
+Loaded via `load-ut-county-rosters.ts --county washington` (ins=6, upd=3, err=0).
+All 9 Washington County officials (3 commissioners + 6 officers) verified in production DB
+(district COUNTY / geo_id=49053 / ocd-division/country:us/state:ut/county:washington).
+
 ~~Wave 1 still pending (SLC/Provo) — resolved above.~~
 
-### Wave 2 (not started)
-Cities: Ogden, Orem, Lehi, Layton, St. George. Counties (enrichment): Box Elder, Cache,
-Davis, Iron, Summit, Tooele, Washington. Remaining 12 school districts.
+---
+
+## Wave 2 results (executed 2026-05-28) — cities + county enrichment + schools (partial)
+
+### Cities enriched
+
+| Jurisdiction | Members | Emails | Phones | Headshots | Notes |
+|---|---|---|---|---|---|
+| St. George (5 council + mayor) | 6 | 6 | 6 | 6 | All from sgcityutah.gov |
+| Orem (6 council + mayor) | 7 | 7 | 1 (mayor only) | 7 | Council: no individual phones published. Dave Young STALE → Jenn Gale added; Dave Young remains in DB unenriched (**needs manual DELETE**) |
+| Ogden (7 council + mayor) | 8 | 8 | 8 | 8 | All from ogdencity.gov |
+| Lehi (5 council + mayor) | 6 | 6 | 6 | 6 | All from lehi-ut.gov |
+| Layton (5 council + mayor) | 6 | 1 (mayor only) | 1 (mayor only) | 6 | Council: no individual emails/phones published on laytoncityutah.gov |
+
+### Counties enriched (contacts + headshots added to existing officials)
+
+| County | Officials | With contact | With photo | Notes |
+|---|---|---|---|---|
+| Washington | 3 | 3 (phone only) | 0 | No public emails; photos hotlink-protected |
+| Box Elder | 10 | 10 | 0 | 3 commissioners with .gov emails; officers with dept phones only |
+| Cache | 15 | 5 | 4 | 4 serving council + Exec Daines email; 3 STALE (Worthen, Ward, Tidwell → Garrity, Bennett, Beus; **needs cleanup**) |
+| Davis | 11 | 10 | 0 | Dept phones only (JS-rendered site, no public emails) |
+| Iron | 10 | 3 | 0 | Site under migration; general phone only |
+| Summit | 12 | 11 | 0 | 5 council + 5 officers with individual emails+phones; Margaret Olson (Attorney) no directory entry |
+| Tooele | 12 | 12 | 5 | 5 council photos; 5 officers with individual emails+phones |
+
+### School districts enriched
+
+| District | Members | Emails | Phones | Headshots | Status |
+|---|---|---|---|---|---|
+| Weber School District | 7 | 7 | 0 | 7 | **DONE** — wsd.net |
+| Provo School District | 7 | 0 | 0 | 7 | **DONE** — contact-forms only, no direct emails |
+
+### School districts — Wave 2 batch (executed 2026-05-28)
+
+All 10 remaining districts enriched. Researched via parallel agent fan-out
+(slcschools.org, USBA 2025 directory, washk12.org, besd.net, district board pages,
+Ballotpedia/Apptegy CDN photos). All 32 photo URLs validated `curl -sI` → 200 + image
+content-type before load. Loaded via `load-ut-school-rosters.ts --district <slug>`
+(ins=0, upd=61, err=0). Contacts source = `ut-school-<slug>`.
+
+| District | Members | Emails | Phones | Headshots | Notes |
+|---|---|---|---|---|---|
+| Salt Lake City | 7 | 7 | 7 | 7 | Individual emails + direct phones + ParentSquare CDN photos |
+| Nebo | 5 | 5 | 5 | 2 | USBA directory; Rowley/Wilson have personal (non-.edu) emails; 3 no headshot |
+| Washington | 7 | 7 | 7 | 0 | washk12.org (NOT washington.k12.ut.us — defunct); group photo only, no individual headshots; shared district phone |
+| Box Elder | 7 | 6 | 6 | 7 | besd.net; DeFilippis no email (townnews.com photo) |
+| Cache | 7 | 7 | 7 | 0 | cachecountyschools.org; JS-rendered, no accessible photos |
+| Tooele | 7 | 7 | 7 | 0 | tooelesd.org; no accessible individual photos |
+| Iron | 7 | 7 | 7 | 7 | ironschools.org; full Apptegy CDN photos |
+| Murray | 4 | 4 | 4 | 4 | murrayschools.org; full S3 photos |
+| Park City | 5 | 5 | 5 | 0 | pcschools.us; no accessible individual photos |
+| Logan | 5 | 5 | 5 | 5 | loganschools.org; ParentSquare CDN photos |
+
+**Totals: 61 members, 60 emails, 60 phones, 32 photos.** Photo gaps are where boards
+publish only group photos or JS-render their member pages without crawlable image URLs.
+Per "accuracy over completeness," no photos guessed. **All 12 UT school districts now DONE.**
+
+### OPEN ACCURACY FLAGS
+
+- ~~**Orem:** Dave Young (stale, left office) still in DB.~~ **RESOLVED 2026-05-28** — fully deleted (see Stale cleanup below). Orem council now correct 6 + mayor.
+- ~~**Cache County:** Gina Worthen, Karl Ward, Barbara Tidwell are stale.~~ **RESOLVED 2026-05-28** — fully deleted + 3 verified replacements loaded (see Stale cleanup below). Cache council now correct 7.
+- ~~**DISPLAY ISSUE (new):** Utah city councils loaded at-large have label "Orem City Council" etc. but city name not prominent in front-end display for address searches.~~ **FIXED 2026-05-28**: See "Display fix" section below.
+
+### LOADER FLAG NOTE
+Both `load-ut-city-rosters.ts` and `load-ut-school-rosters.ts` now support `--city <slug>` and `--district <slug>` flags respectively (added Wave 2 to prevent re-running stale SLC FeatureServer data).
+
+---
+
+## Display fix (2026-05-28)
+
+**Root cause:** `qualifyLocalTitle()` in both `essentials/src/pages/Results.jsx` and
+`ev-ui/src/PoliticianProfile.jsx` returned `baseTitle` unchanged when `government_name` was
+empty. Utah at-large city councils have `chamber_id = null` (the loader writes offices without
+creating a chamber→government link), so `government_name = ""` — causing Orem council members
+to display as just "City Council" instead of "Orem City Council".
+
+**Fix:** Added `pol.representing_city` as fallback in `qualifyLocalTitle()`. The city loader
+always sets `representing_city = city.city_name`, so now:
+- "City Council" → "Orem City Council" ✓
+- "Mayor" → "Orem Mayor" ✓
+- "Council District 1" → "Ogden Council District 1" ✓
+- "Council At-Large Seat A" → "Ogden Council At-Large Seat A" ✓
+- Bloomington (has government_name) → unchanged ✓
+
+**Status:**
+- `essentials/src/pages/Results.jsx` — committed on branch `phase-133-state-board-tribal-land` (cards on results page)
+- `ev-ui/src/PoliticianProfile.jsx` — committed on `ev-ui` main, **needs publish to go live on profile pages**. Publish: `cd ev-ui && npm version 0.8.13 && git push origin main --follow-tags` (triggers auto-bump PRs in 4 consumer repos)
+
+**Seat labels:** At-large councils (Orem, Lehi, St. George, Layton) have no seat numbers — all
+members are truly at-large. District councils (Ogden, West Jordan, West Valley) encode the seat
+in `office_title` (e.g., "Council District 4 (Vice Chair)") which now surfaces correctly with
+city name prepended. No label-level data change needed.
+
+---
+
+## Stale cleanup (2026-05-28)
+
+**Approach decision:** Prior stale removals (Sandy City, SLC Mano/Eva) **fully deleted** the
+politician record. Office-only deletion is insufficient because the flat-list / name-search query
+(`essentialsService.ts` getPoliticiansFlatList) is `LEFT JOIN offices WHERE p.is_active = true` —
+an office-less but active politician still appears in name search with blank office info. So all
+4 stale records were **fully deleted** (politician row + offices; none had contacts/images/etc.).
+
+**Deleted (4):**
+- **Dave Young** (`ut-city-orem`) — left office, replaced by Jenn Gale (already loaded). Orem
+  council now correct: 6 at-large council + Mayor Karen McCandless.
+- **Gina Worthen, Karl Ward, Barbara Tidwell** (`ut-county-cache`) — left Cache County Council.
+
+**Cache County Council replacements (3, loaded):** Verified against cachecounty.gov/countycouncil
+(HIGH confidence) — photos validated `curl -sI` → 200/image:
+- **Kathryn A. Beus** — Southeast District (now **Vice Chair**) — (435) 512-5680 + photo
+- **Keegan Garrity** — Logan Seat 1 (replaced Ward) — (435) 512-7905 + photo
+- **JoAnn Bennett** — Logan Seat 2 (replaced Tidwell; appointed Jan 2026) — (801) 825-9866 + photo
+- Also updated **Sandi Goodlander** → Logan Seat 3, **Chair** (was plain member; old Chair Worthen gone).
+
+Loaded via `load-ut-county-rosters.ts --county cache` (ins=3, upd=12, err=0). Cache County
+Council now the full, correct 7 members — all with phones + headshots. `cache_county.tsv` updated
+(stale rows removed, replacements added). Full deletion freed the `Logan Seat 1/2` external-id
+slots so Garrity/Bennett got canonical IDs (no collision-walk).
+
+---
+
+## Compass stances (2026-05-28)
+
+**Goal:** Utah federal politicians appear in `GET /api/compass/politicians` (requires ≥1 stance in
+`inform.politician_answers` with value != 0). Scope: the ~21 national/federal topic_keys.
+
+### Wave 1 — Utah federal (executed 2026-05-28)
+
+**Pre-existing senators (Mike Lee, John Curtis) — topped up to full federal set:**
+
+| Politician | Was | Added | Now |
+|---|---|---|---|
+| Mike Lee | 20 | campaign-finance(1), redistricting(1), trans-athletes(5) | 23 |
+| John Curtis | 18 | campaign-finance(2), misinformation(3), redistricting(2), trans-athletes(5) | 22 |
+
+Reasoning + 3 sources per topic upserted to `inform.politician_context`.
+CSVs: `2026-05-28-ut-senators-topup-lee.csv`, `2026-05-28-ut-senators-topup-curtis.csv`
+
+**Utah House reps — inserted into essentials.politicians (direct SQL):**
+
+All 4 districts already existed (geo_ids 4901–4904). Used existing `U.S. House of Representatives`
+chamber (`c2facc31-7b13-428c-b7b9-32d0d3b95f76`). Burgess Owens (UT-04) is still serving through
+Jan 3, 2027 despite announcing non-reelection (Mar 2026).
+
+| Rep | District | Politician ID |
+|---|---|---|
+| Blake Moore | UT-01 (Congressional District 1) | e365a1d4-2de3-4fb6-b416-d78227836553 |
+| Celeste Maloy | UT-02 (Congressional District 2) | a7983eb6-bae0-4269-856b-f4554fb5ce29 |
+| Mike Kennedy | UT-03 (Congressional District 3) | 9e3164d5-ce71-4c50-9220-b969265ce551 |
+| Burgess Owens | UT-04 (Congressional District 4) | cb87ddbb-5a83-45b7-b67a-789e63f0e58b |
+
+**Utah House reps — stance research (executed 2026-05-28):**
+
+| Rep | Topics pushed | Skipped (reason) |
+|---|---|---|
+| Blake Moore | 21/21 | none |
+| Celeste Maloy | 17/21 | campaign-finance, civil-rights, religious-freedom, same-sex-marriage (no solid evidence) |
+| Mike Kennedy | 20/21 | redistricting (weak evidence — RSC membership inference only) |
+| Burgess Owens | 21/21 | none |
+
+**79 stances pushed** (politician_answers + politician_context with 3 sources each).
+CSVs: `2026-05-28-ut-house-moore.csv`, `2026-05-28-ut-house-maloy.csv`,
+       `2026-05-28-ut-house-kennedy.csv`, `2026-05-28-ut-house-owens.csv`
+
+Note: Kennedy is a freshman (Jan 2025); some evidence from UT state legislative record +
+campaign statements. Flagged in per-topic reasoning.
+
+**Verification:** `GET /api/compass/politicians` (inner-join politician_answers) now returns all
+6 UT federal politicians: Blake Moore, Burgess Owens, Celeste Maloy, John Curtis, Mike Kennedy,
+Mike Lee. Wave 1 complete. ✅
+
+**Federal politician top-up (executed 2026-05-28) — 3 new national topics:**
+
+Three national topics added to the live compass since Wave 1 (`childcare`, `data-centers`,
+`homelessness`) created gaps for all 6 UT federal politicians. Top-up pushed 16 stances.
+
+| Politician | Before | Added | Now | Still missing |
+|---|---|---|---|---|
+| Mike Lee | 23 | childcare(4), data-centers(5), homelessness(4) | 26 | none (24 national + 2 judicial) |
+| John Curtis | 22 | data-centers(4), homelessness(3) | 24 | none |
+| Blake Moore | 21 | childcare(3), data-centers(4), homelessness(3) | 24 | none |
+| Burgess Owens | 21 | childcare(3), data-centers(4) | 23 | homelessness (no evidence) |
+| Mike Kennedy | 20 | childcare(4), redistricting(5↑) | 22 | data-centers, homelessness (no evidence) |
+| Celeste Maloy | 17 | childcare(3), religious-freedom(4), data-centers(3), homelessness(4) | 21 | campaign-finance, civil-rights, same-sex-marriage (no evidence) |
+
+Notes: data-centers scale is 1=moratorium→5=welcome/minimal barriers. Lee scored 5 (ENR
+Chair, NEPA reform, max deregulation). Kennedy redistricting upgraded 4→5 based on new
+evidence (personal signature + family circulated Prop 4 repeal petition). Half-step values
+(3.5) rounded to nearest integer per data quality standard.
+
+CSVs: `2026-05-28-ut-topup-{lee,curtis,moore,owens,kennedy,maloy}.csv`
+
+### Wave 2 — Utah Governor + state executives
+**Status: COMPLETE (executed 2026-05-28)**
+
+**Officeholders (verified 2026-05-28):**
+| Office | Person |
+|---|---|
+| Governor | Spencer Cox |
+| Lieutenant Governor | Deidre Henderson |
+| Attorney General | Derek Brown |
+| State Treasurer | Marlo Oaks |
+| State Auditor | Tina Cannon |
+
+**Step 1 — Insert STATE_EXEC politicians (direct SQL, no loader exists).**
+
+Pattern confirmed from Indiana (already in DB): one district per office, all geo_id='49',
+district_type='STATE_EXEC', government_id='bd6d107e-2df4-4770-aa0d-155b00c84ce0'
+(= "State of Utah", type=STATE, verified in production).
+
+Reference Indiana rows for shape:
+- district label = "Indiana Governor", office title = "Indiana Governor"
+- Use same shape: label = "Utah Governor", office title = "Governor" (or "Utah Governor")
+
+Example SQL pattern (repeat for each of the 5 offices):
+```sql
+-- 1. Insert district
+INSERT INTO essentials.districts (id, label, district_type, geo_id, state, government_id)
+VALUES (gen_random_uuid(), 'Utah Governor', 'STATE_EXEC', '49', 'UT',
+        'bd6d107e-2df4-4770-aa0d-155b00c84ce0');
+
+-- 2. Insert politician
+INSERT INTO essentials.politicians (id, first_name, last_name, is_active)
+VALUES (gen_random_uuid(), 'Spencer', 'Cox', true);
+
+-- 3. Insert office linking politician to district
+INSERT INTO essentials.offices (id, politician_id, district_id, title, is_appointed_position)
+VALUES (gen_random_uuid(), '<politician_id>', '<district_id>', 'Governor', false);
+```
+
+Do all 5 politicians. Verify each appears in `essentials.politicians` before running
+/research-stances (the skill will report "could not find NAME" if the insert missed).
+
+**Step 2 — Run /research-stances.**
+
+```
+/research-stances Spencer Cox, Deidre Henderson, Derek Brown, Marlo Oaks, Tina Cannon
+```
+
+All 5 are statewide executive roles → use the full 24 national topics (same set as UT
+federal politicians). The skill will fetch topics live from the DB.
+
+**Step 3 — Verify in compass.**
+
+After DB push: `GET /api/compass/politicians` should return all 5 new politicians.
+
+**Note on address surfacing:** STATE_EXEC politicians surface for all Utah addresses
+(whole-state geofence). Verify this works after inserts if testing essentials address
+search — the Indiana politicians confirm the pattern works in production.
+
+### Wave 2 results (executed 2026-05-28)
+
+**5 STATE_EXEC politicians inserted + stances pushed:**
+
+| Politician | Office | Politician ID | Stances |
+|---|---|---|---|
+| Spencer Cox | Utah Governor | b86213f8-abd8-46e7-80b6-3ae7bd2bf1a6 | 23 |
+| Deidre Henderson | Utah Lieutenant Governor | f72689da-fe02-4bdd-977f-bb7760a42fb2 | 24 |
+| Derek Brown | Utah Attorney General | 1844a5e3-8ea5-4ee5-9377-066378b25b49 | 15 |
+| Marlo Oaks | Utah State Treasurer | 919b82e8-bac3-428f-9896-423832e4538f | 6 |
+| Tina Cannon | Utah State Auditor | 9eac661a-e4c5-4bdf-9883-ee612dab53a8 | 14 |
+
+**Total: 82 stances** (84 researched, 2 dropped for insufficient evidence:
+Cox/campaign-finance — no sources; Cannon/ai-regulation — operational tool use ≠ policy stance).
+
+Districts all use `district_type=STATE_EXEC`, `geo_id='49'`, `state='UT'`,
+`government_id='bd6d107e-2df4-4770-aa0d-155b00c84ce0'` (State of Utah).
+
+CSVs: `data/stance-research/2026-05-28-ut-state-exec-{cox,henderson,brown,oaks,cannon}.csv`
+Push script: `scripts/push-ut-state-exec-stances.ts`
+
+---
+
+## Ward/District + At-Large surfacing pass (2026-05-29)
+
+**Problem:** many UT city/county council members showed a wrong or missing ward/district
+label on their card. Two independent root causes:
+
+**(1) Display — fixed.** The card subtitle was derived only from `district_id` (numeric →
+"District N", `'0'` → "At-Large") or a `' - '` suffix in `office_title`; it ignored the seat
+designation already in `office_title` ("Council Ward 3", "Council District 2 (Chair)",
+"Council At-Large Seat A"). Added `deriveSeatSubtitle()` (scoped to LOCAL/COUNTY), which parses
+the office title for Ward N / District N / At-Large and takes priority over `district_id`, so
+each jurisdiction keeps its own term (SLC/Provo "Ward N"; Ogden/WJ/WVC/SL County "District N").
+Mirrored in `essentials/src/pages/Results.jsx` (committed to main) and
+`ev-ui/src/PoliticianProfile.jsx` (published **ev-ui 0.8.14** → auto-bump consumers).
+
+**(2) At-large signal — fixed.** The 5 all-at-large councils (Layton, Lehi, Orem, Sandy,
+St. George) had `office_title='City Council'` (no marker) + `district_id=NULL`, so nothing
+rendered. Set `district_id='0'` on those 5 LOCAL council district rows (prod) so the at-large
+path fires; made `load-ut-city-rosters.ts` write `'0'` for at-large councils (whole-place
+attachment) durably. SL County at-large seats ("Council At-Large Seat A/B/C") render via the
+office-title parse, no data change. Mayors (LOCAL_EXEC) unaffected.
+
+**(3) Geofence routing — Ogden + West Jordan done; West Valley City deferred.**
+Ogden, WJ, WVC each had all council members lumped onto one whole-city district row with no
+per-district boundary (an address returned *all* members). Sourced real council-district
+polygons and split:
+- **Ogden** (4 districts + 3 at-large): boundaries from Ogden City GIS
+  `data.ogdencity.com/.../Ogden_Municipal_District/FeatureServer/0` (filtered DISTRICTID 1–4).
+- **West Jordan** (4 districts + 3 at-large): boundaries from WJ City GIS org `yznraL2FyB2Sm732`,
+  layer `Council_Districts_22/FeatureServer/5`.
+- Both wired into `data/arcgis_sources.json` (status `active`, mtfcc X0001,
+  geo_id_template `.../place:<city>/ward:{N}`), imported via `load-arcgis-from-config.ts`
+  (4+4 valid polygons). District offices re-pointed to per-ward rows; the old lumped row
+  relabeled "<City> City Council" `district_id='0'` for the at-large seats. TSV `geo_id`
+  columns updated so `load-ut-city-rosters.ts --city <slug>` reproduces the split.
+  Verified end-to-end: an interior point of a ward returns exactly that district member +
+  at-large + mayor (and the correct SL County council rep for WJ).
+- **West Valley City — DEFERRED.** Its only authoritative council-district layer is
+  `gis.wvc-ut.gov/.../AGOL/CouncilDistricts/MapServer/0` (fields DISTRICT, LABEL, HOLDER), which
+  is IP-restricted / firewalled and unreachable from the dev environment (and from the research
+  agent's network). SL County only publishes WVC precinct-level election layers for districts
+  1 & 3 (missing 2 & 4) — unsuitable. WVC display labels are already correct via root cause (1);
+  only address-routing remains lumped. Resolve by fetching the GeoJSON from a network that can
+  reach `gis.wvc-ut.gov` (then drop into `data/geo/` as manual_geojson, or flip the record to
+  active), or hand-digitize from the official WVC district map.
