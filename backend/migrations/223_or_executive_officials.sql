@@ -45,14 +45,16 @@ BEGIN
 END $$;
 
 -- ===== STEP 2: Insert STATE_EXEC district (shared by all 5 executives) =====
--- state='or' lowercase (matches ME STATE_* pattern: districts.state lowercase for
--- STATE/COUNTY tiers; uppercase only for NATIONAL tiers per STATE.md decision).
+-- state='OR' uppercase (matches all other STATE_EXEC rows: CA, IN, MA, ME, TX, UT).
+-- district_id='' empty string (matches MA/ME/TX multi-position STATE_EXEC pattern).
+-- NOTE: Original migration applied with state='or'/district_id='Oregon (Statewide)';
+-- corrected in production via migration 223a_or_executive_district_fix.
 INSERT INTO essentials.districts (id, district_type, state, geo_id, label, district_id, mtfcc)
-SELECT gen_random_uuid(), 'STATE_EXEC', 'or', '41', 'Oregon (Statewide)', 'Oregon (Statewide)', ''
+SELECT gen_random_uuid(), 'STATE_EXEC', 'OR', '41', 'Oregon (Statewide)', '', ''
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.districts
   WHERE district_type = 'STATE_EXEC'
-    AND state = 'or'
+    AND state = 'OR'
     AND geo_id = '41'
 );
 
