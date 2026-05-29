@@ -40,6 +40,11 @@
  *
  * IDEMPOTENCY: ON CONFLICT (geo_id, mtfcc) DO NOTHING ensures safe re-runs.
  *
+ * ST_MakeValid: Required for Portland district polygons — Districts 1 and 4
+ * have self-intersections in the source GeoJSON that cause ST_IsValid to return
+ * false. Without ST_MakeValid, ST_Covers returns incorrect results for points
+ * inside those districts. ST_MakeValid is applied after ST_ForcePolygonCCW.
+ *
  * Usage (from C:/EV-Accounts/backend):
  *   npx tsx scripts/load-portland-council-boundaries.ts --dry-run
  *   npx tsx scripts/load-portland-council-boundaries.ts
@@ -209,8 +214,10 @@ async function main() {
         INSERT INTO essentials.geofence_boundaries
           (geo_id, ocd_id, name, state, mtfcc, geometry, source, imported_at)
         VALUES ($1, $2, $3, $4, $5,
-          public.ST_ForcePolygonCCW(
-            public.ST_SetSRID(public.ST_Force2D(public.ST_GeomFromGeoJSON($6)), 4326)
+          public.ST_MakeValid(
+            public.ST_ForcePolygonCCW(
+              public.ST_SetSRID(public.ST_Force2D(public.ST_GeomFromGeoJSON($6)), 4326)
+            )
           ),
           $7, now())
         ON CONFLICT (geo_id, mtfcc) DO NOTHING
