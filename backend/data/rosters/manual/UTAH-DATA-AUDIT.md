@@ -582,7 +582,7 @@ path fires; made `load-ut-city-rosters.ts` write `'0'` for at-large councils (wh
 attachment) durably. SL County at-large seats ("Council At-Large Seat A/B/C") render via the
 office-title parse, no data change. Mayors (LOCAL_EXEC) unaffected.
 
-**(3) Geofence routing — Ogden + West Jordan done; West Valley City deferred.**
+**(3) Geofence routing — all three done (Ogden, West Jordan, West Valley City).**
 Ogden, WJ, WVC each had all council members lumped onto one whole-city district row with no
 per-district boundary (an address returned *all* members). Sourced real council-district
 polygons and split:
@@ -590,18 +590,16 @@ polygons and split:
   `data.ogdencity.com/.../Ogden_Municipal_District/FeatureServer/0` (filtered DISTRICTID 1–4).
 - **West Jordan** (4 districts + 3 at-large): boundaries from WJ City GIS org `yznraL2FyB2Sm732`,
   layer `Council_Districts_22/FeatureServer/5`.
-- Both wired into `data/arcgis_sources.json` (status `active`, mtfcc X0001,
+- **West Valley City** (4 districts + 2 at-large): boundaries from WVC City GIS
+  `gisserver.wvc-ut.gov/.../CityWebsite/CouncilDistrictsCityWebsite/MapServer/0`. (Found via the
+  city's Experience Builder app on `gisportal.wvc-ut.gov` → web map e2a6525fb78540b5b6b8a07ebf80f077.
+  NOTE: the AGOL web map's host `gis.wvc-ut.gov` is IP-restricted/unreachable; `gisserver.wvc-ut.gov`
+  is the reachable one. SL County only publishes WVC *precinct* layers for districts 1 & 3 —
+  unsuitable.)
+- All three wired into `data/arcgis_sources.json` (status `active`, mtfcc X0001,
   geo_id_template `.../place:<city>/ward:{N}`), imported via `load-arcgis-from-config.ts`
-  (4+4 valid polygons). District offices re-pointed to per-ward rows; the old lumped row
+  (4+4+4 valid polygons). District offices re-pointed to per-ward rows; the old lumped row
   relabeled "<City> City Council" `district_id='0'` for the at-large seats. TSV `geo_id`
   columns updated so `load-ut-city-rosters.ts --city <slug>` reproduces the split.
   Verified end-to-end: an interior point of a ward returns exactly that district member +
-  at-large + mayor (and the correct SL County council rep for WJ).
-- **West Valley City — DEFERRED.** Its only authoritative council-district layer is
-  `gis.wvc-ut.gov/.../AGOL/CouncilDistricts/MapServer/0` (fields DISTRICT, LABEL, HOLDER), which
-  is IP-restricted / firewalled and unreachable from the dev environment (and from the research
-  agent's network). SL County only publishes WVC precinct-level election layers for districts
-  1 & 3 (missing 2 & 4) — unsuitable. WVC display labels are already correct via root cause (1);
-  only address-routing remains lumped. Resolve by fetching the GeoJSON from a network that can
-  reach `gis.wvc-ut.gov` (then drop into `data/geo/` as manual_geojson, or flip the record to
-  active), or hand-digitize from the official WVC district map.
+  at-large + mayor (plus the correct SL County council rep for WJ/WVC, which sit in SL County).

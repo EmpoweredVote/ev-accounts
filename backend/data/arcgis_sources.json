@@ -2524,12 +2524,12 @@
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_valley_city",
     "layer_class": "city_ward",
-    "source_url": null,
-    "field_map": null,
+    "source_url": "https://gisserver.wvc-ut.gov/server/rest/services/CityWebsite/CouncilDistrictsCityWebsite/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "DISTRICT", "name": "LABEL" },
     "mtfcc": "X0001",
-    "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (West Valley City city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/WestValleyCityCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "geo_id_template": "ocd-division/country:us/state:ut/place:west_valley_city/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via WVC City GIS (gisserver.wvc-ut.gov; found via the city's Experience Builder app on gisportal.wvc-ut.gov → web map e2a6525fb78540b5b6b8a07ebf80f077). 4 district polygons; fields DISTRICT(1-4 int), LABEL('District N'), HOLDER. 2 at-large (Christensen, Nordfelt) are attributes, not features — they surface via the whole-city G4110 geofence. NOTE: the alternate host gis.wvc-ut.gov (AGOL web map) is IP-restricted/unreachable; use gisserver.wvc-ut.gov. Prior UGRC guess was wrong org — 400."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:white_city_metro",
