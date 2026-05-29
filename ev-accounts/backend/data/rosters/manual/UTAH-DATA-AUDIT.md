@@ -406,3 +406,63 @@ Loaded via `load-ut-county-rosters.ts --county cache` (ins=3, upd=12, err=0). Ca
 Council now the full, correct 7 members — all with phones + headshots. `cache_county.tsv` updated
 (stale rows removed, replacements added). Full deletion freed the `Logan Seat 1/2` external-id
 slots so Garrity/Bennett got canonical IDs (no collision-walk).
+
+---
+
+## Compass stances (2026-05-28)
+
+**Goal:** Utah federal politicians appear in `GET /api/compass/politicians` (requires ≥1 stance in
+`inform.politician_answers` with value != 0). Scope: the ~21 national/federal topic_keys.
+
+### Wave 1 — Utah federal (executed 2026-05-28)
+
+**Pre-existing senators (Mike Lee, John Curtis) — topped up to full federal set:**
+
+| Politician | Was | Added | Now |
+|---|---|---|---|
+| Mike Lee | 20 | campaign-finance(1), redistricting(1), trans-athletes(5) | 23 |
+| John Curtis | 18 | campaign-finance(2), misinformation(3), redistricting(2), trans-athletes(5) | 22 |
+
+Reasoning + 3 sources per topic upserted to `inform.politician_context`.
+CSVs: `2026-05-28-ut-senators-topup-lee.csv`, `2026-05-28-ut-senators-topup-curtis.csv`
+
+**Utah House reps — inserted into essentials.politicians (direct SQL):**
+
+All 4 districts already existed (geo_ids 4901–4904). Used existing `U.S. House of Representatives`
+chamber (`c2facc31-7b13-428c-b7b9-32d0d3b95f76`). Burgess Owens (UT-04) is still serving through
+Jan 3, 2027 despite announcing non-reelection (Mar 2026).
+
+| Rep | District | Politician ID |
+|---|---|---|
+| Blake Moore | UT-01 (Congressional District 1) | e365a1d4-2de3-4fb6-b416-d78227836553 |
+| Celeste Maloy | UT-02 (Congressional District 2) | a7983eb6-bae0-4269-856b-f4554fb5ce29 |
+| Mike Kennedy | UT-03 (Congressional District 3) | 9e3164d5-ce71-4c50-9220-b969265ce551 |
+| Burgess Owens | UT-04 (Congressional District 4) | cb87ddbb-5a83-45b7-b67a-789e63f0e58b |
+
+**Utah House reps — stance research (executed 2026-05-28):**
+
+| Rep | Topics pushed | Skipped (reason) |
+|---|---|---|
+| Blake Moore | 21/21 | none |
+| Celeste Maloy | 17/21 | campaign-finance, civil-rights, religious-freedom, same-sex-marriage (no solid evidence) |
+| Mike Kennedy | 20/21 | redistricting (weak evidence — RSC membership inference only) |
+| Burgess Owens | 21/21 | none |
+
+**79 stances pushed** (politician_answers + politician_context with 3 sources each).
+CSVs: `2026-05-28-ut-house-moore.csv`, `2026-05-28-ut-house-maloy.csv`,
+       `2026-05-28-ut-house-kennedy.csv`, `2026-05-28-ut-house-owens.csv`
+
+Note: Kennedy is a freshman (Jan 2025); some evidence from UT state legislative record +
+campaign statements. Flagged in per-topic reasoning.
+
+**Verification:** `GET /api/compass/politicians` (inner-join politician_answers) now returns all
+6 UT federal politicians: Blake Moore, Burgess Owens, Celeste Maloy, John Curtis, Mike Kennedy,
+Mike Lee. Wave 1 complete. ✅
+
+### Wave 2 — Utah Governor + state executives
+Pending. Politicians to add: Gov. Spencer Cox, Lt. Gov. Deidre Henderson,
+AG Derek Brown, Treasurer Marlo Oaks, State Auditor Tina Cannon (district_type STATE_EXEC;
+currently 0 STATE_EXEC politicians for UT). Need to:
+1. Verify current officeholders + district setup
+2. Direct SQL inserts following House rep pattern (no STATE_EXEC loader exists)
+3. Research stances across 21 federal topics via /research-stances
