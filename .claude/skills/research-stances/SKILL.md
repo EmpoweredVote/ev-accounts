@@ -1,6 +1,6 @@
 ---
 name: research-stances
-description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on the 21 Empowered Vote policy topics. Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
+description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on Empowered Vote policy topics (national, state, and local city-level). Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
 argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
 ---
 
@@ -46,26 +46,28 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-Fetch the current live topics to validate any `--topics` filter:
+**ALWAYS fetch live topics fresh from the DB before every research run. Never use a hardcoded list — the topic set grows over time.**
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT id, title, short_title, topic_key, question_text
+  SELECT id, topic_key, title, short_title, question_text
   FROM inform.compass_topics
   WHERE is_live = true
-  ORDER BY created_at
+  ORDER BY topic_key
 \`);
 console.log(JSON.stringify(rows, null, 2));
 await pool.end();
 "
 ```
 
+Pass the **full output of this query** to each researcher agent prompt — topic_keys AND UUIDs. Never hardcode. As of 2026-05-16 there are 43 live topics; this number will grow.
+
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
 - Topics in scope (all or filtered)
-- Estimated scope (e.g., "3 politicians x 21 topics = up to 63 stance assessments")
+- Estimated scope (e.g., "3 politicians x 43 topics = up to 129 stance assessments")
 
 ---
 
@@ -89,15 +91,17 @@ Only research these topics: [TOPIC_LIST]
 [If --topics was NOT specified:]
 Research all current policy topics.
 
-IMPORTANT — Use these exact topic_key values from the database (fetched in STEP 0):
-[Paste the topic_key values from the Topic Resolution query, e.g.:]
-healthcare, abortion, tariffs, taxes, same-sex-marriage, religious-freedom, trans-athletes,
-ukraine-support, medicare/aid, fossil-fuels, voting-rights, deportation, social-security,
-ai-regulation, climate-change, civil-rights, housing, campaign-finance, immigration,
-misinformation, redistricting, school-vouchers, data-centers, homelessness, childcare
+IMPORTANT — Use ONLY these exact topic_key values (fetched live from DB in STEP 0):
+[PASTE THE FULL JSON ROWS FROM THE TOPIC RESOLUTION QUERY HERE — topic_key AND id for every live topic]
 
 The topic_key in your CSV output MUST exactly match one of these values.
 Do NOT invent your own topic_key slugs.
+Do NOT use any topic_key not in the above list — the list is fetched fresh each run.
+
+City-level topics to SKIP for state/federal candidates (unless explicitly requested):
+transportation-priorities, economic-development, homelessness-response, residential-zoning,
+city-sanitation, local-immigration, rent-regulation, growth-and-development, local-environment,
+public-safety-approach, jail-capacity, city-sanitation, judicial-*
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
@@ -177,7 +181,13 @@ const { rows } = await pool.query(\`
          t.id as topic_id, t.title as topic_title
   FROM essentials.politicians p
   CROSS JOIN inform.compass_topics t
-  WHERE p.full_name = ANY(\$1)
+  WHERE (
+    lower(p.full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+    OR EXISTS (
+      SELECT 1 FROM unnest(p.alternate_names) AS alt
+      WHERE lower(alt) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+    )
+  )
     AND t.is_live = true
   ORDER BY p.full_name, t.created_at
 \`, [process.argv.slice(2)]);

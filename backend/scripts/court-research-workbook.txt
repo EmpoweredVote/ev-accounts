@@ -1,0 +1,657 @@
+================================================================================
+DONOR-COURT CONFLICT MAP — RESEARCH WORKBOOK
+Generated: 2026-05-10T03:23:43 UTC
+================================================================================
+
+PURPOSE
+-------
+For each law firm that donated to a City Attorney candidate, search lacourt.org
+to find whether that firm appears as a party in LA Superior Court cases.
+A City Attorney is the City's lawyer — firms that appear in those cases could
+create a recusal-worthy conflict if the CA is elected.
+
+SEARCH SITES
+------------
+Civil party search:    https://www.lacourt.org/paos/v2public/CivilIndex/
+Criminal defendant:    https://www.lacourt.org/paos/v2public/CriminalIndex/
+Case summary (by #):   https://www.lacourt.ca.gov/casesummary/v2web3/
+Pricing: $1.00/search (registered) | $4.75 flat (guest)
+
+GENERAL INSTRUCTIONS
+--------------------
+1. Search the raw_firm_name column (shown in CAPS) as a PARTY NAME.
+2. Focus on cases filed 2021–present (5-year look-back).
+3. Record up to 10 case numbers; if more exist set court_appearances_capped=true.
+4. For each case note case type (Civil/Criminal) and appearance dates.
+5. Update court-research-results.json — replace "PENDING" researcher_notes with
+   a plain note: "Searched '<raw_name>' as party; N civil cases 2021–2024."
+6. PENDING entries are acceptable — Plan 03 loads them as zero appearances.
+
+SKIP RULES (do NOT search these)
+---------------------------------
+  city of los angeles  — incumbent office colleagues donating to their boss;
+                         NOT a private law firm active in courts.
+  self / self employed — solo attorney donors; no firm to search.
+  non-law employers    — e.g. Disney, tech companies, government offices.
+                         Mark court_appearances_found=0 and note "SKIPPED: not a law firm".
+
+
+================================================================================
+CANDIDATE: Hydee Feldstein Soto
+  is_city_attorney : true
+  politician_id    : 3f90952e-7d1b-413d-a0e1-e319fb23fa05
+  grand_total      : $2,708,297.93
+  threshold_cutoff : $406,244.69 (top 15% cumulative)
+  firms to research: 212
+
+  *** NOTE: 212 firms is a very large list. Consider starting with the top 50
+  *** by total_donated (sorted descending, already in that order below).
+  *** "City of Los Angeles" (top entry) is SKIPPED — see SKIP RULES above.
+--------------------------------------------------------------------------------
+
+  # NORMALIZED FIRM                         RAW NAME (search this)                              DONATED  DONORS
+  -------------------------------------------------------------------------------------------------------------
+  1   city of los angeles                     City Of Los Angeles                              $75,774.24      20
+       *** SKIP: incumbent colleagues donating to incumbent CA — not a private law firm active in courts ***
+       occupations: ASSISTANT CITY ATTORNEY | ATTORNEY | ATTORNEY/ADVISOR ...
+  2   self                                    Self                                              $9,841.00      21
+       *** SKIP: incumbent colleagues donating to incumbent CA — not a private law firm active in courts ***
+       occupations: ATTORNEY | CRIMINAL DEFENSE ATTORNEY | CRIMINAL JUSTICE ATTORNEY AND PROFESSOR ...
+  3   sullivan cromwell                       Sullivan & Cromwell Llp                           $9,809.94       8
+       occupations: ATTORNEY | ATTORNEY/SENIOR COUNSEL | LAWYER ...
+  4   paul hastings                           Paul Hastings Llp                                 $7,156.26      10
+       occupations: ATTORNEY | ATTORNEY, OF COUNSEL | ATTORNEY, PARTNER ...
+  5   glaser weil                             Glaser Weil Llp                                   $7,100.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | ATTORNEY/PARTNER | PARTNER
+  6   latham and watkins                      Latham And Watkins                                $6,550.00       6
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER | PARTNER
+  7   buchalter                               Buchalter                                         $6,022.14      10
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | ATTORNEY, CHIEF RISK OFFICER | ATTORNEY, SHAREHOLDER ...
+  8   milbank                                 Milbank                                           $5,964.00       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER
+  9   the walt disney company                 The Walt Disney Company                           $5,919.24       4
+       occupations: ATTORNEY | ATTORNEY, ASSOCIATE GENERAL COUNSEL | ATTORNEY/ASSISTANT GENERAL COUNSEL ...
+  10  self employed                           Self Employed                                     $5,700.00       5
+       *** SKIP: incumbent colleagues donating to incumbent CA — not a private law firm active in courts ***
+       occupations: ATTORNEY | LAWYER
+  11  martinian lawyers                       Martinian Lawyers Inc                             $5,400.00       3
+       occupations: LAWYER | LAWYERS | PARALEGAL
+  12  greenberg glusker                       Greenberg Glusker                                 $4,805.10       3
+       occupations: ATTORNEY
+  13  k l gates                               K&L Gates Llp                                     $4,800.00       1
+       occupations: ATTORNEY | LAWYER | LAWYER, PARTNER
+  14  gibson dunn                             Gibson Dunn                                       $4,600.00       4
+       occupations: ATTORNEY | LAWYER
+  15  pachulski stang ziehl jones             Pachulski Stang Ziehl & Jones LLP                 $4,560.00       3
+       occupations: ATTORNEY | ATTORNEY, SHAREHOLDER | LAWYER
+  16  musick peeler garrett                   Musick Peeler & Garrett                           $4,419.37       2
+       occupations: ATTORNEY | ATTORNEY, PARTNER
+  17  ktbs law                                KTBS Law LLP                                      $4,060.00       3
+       occupations: ATTORNEY | ATTORNEY/PARTNER | LAWYER
+  18  winston strawn                          Winston & Strawn Llp                              $4,012.30       4
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER | PARTNER
+  19  ziffren brittenham                      Ziffren Brittenham LLP                            $3,600.00       2
+       occupations: ATTORNEY
+  20  retired                                 Retired                                           $3,546.96       8
+       occupations: RETIRED ATTORNEY | RETIRED PARTNER, ARNOLD & PORTEWR KAYE SCHOLER LLP | RETIRED, FORMER SENIOR PARTNER, MILBANK LLP ...
+  21  ervin cohen jessup                      Ervin Cohen & Jessup, Llp                         $3,500.00       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  22  dla piper                               Dla Piper                                         $3,300.00       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  23  the freedman firm                       The Freedman Firm                                 $3,300.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  24  miller barondess                        Miller Barondess, LLP                             $3,250.00       3
+       occupations: ATTORNEY/PARTNER | LAWYER | LAWYER, PARTNER
+  25  mcguirewoods                            Mcguirewoods Llp                                  $3,214.00       2
+       occupations: ATTORNEY | ATTORNEY, PARTNER
+  26  kirkland ellis                          Kirkland & Ellis Llp                              $3,000.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER, PARTNER
+  27  quinn emanuel urquhart sullivan         Quinn Emanuel Urquhart & Sullivan                 $3,000.00       2
+       occupations: ATTORNEY
+  28  susman godfrey l l p                    Susman Godfrey L L P                              $3,000.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  29  susman godfrey                          Susman Godfrey Llp                                $3,000.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER
+  30  bronster fujichaku robbins              Bronster Fujichaku Robbins                        $2,800.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER
+  31  keller benvenutti kim                   Keller Benvenutti Kim LLP                         $2,800.00       2
+       occupations: ATTORNEY | PARTNER
+  32  gibson dunn crutcher                    Gibson Dunn & Crutcher Llp                        $2,750.00       3
+       occupations: ATTORNEY | ATTORNEY, PARTNER
+  33  blank rome                              Blank Rome Llp                                    $2,600.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | ATTORNEY, PARTNER | LAWYER
+  34  morgan lewis                            Morgan Lewis                                      $2,547.64       2
+       occupations: ATTORNEY, PARTNER | LAWYER
+  35  latham watkins                          Latham & Watkins                                  $2,312.30       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER
+  36  los angeles city attorney               Los Angeles City Attorney                         $2,300.00       4
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | DEPUTY CITY ATTORNEY
+  37  kane law firm                           Kane Law Firm                                     $2,214.00       1
+       occupations: ATTORNEY | LAWYER | LAWYER, OWNER
+  38  los angeles city attorneyoffice         Los Angeles City Attorneyoffice                   $2,161.64       6
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER | ATTORNEY | PROSECUTOR ...
+  39  baker hostetler                         Baker Hostetler                                   $2,050.00       2
+       occupations: LAWYER | ATTORNEY
+  40  davis wright tremaine                   Davis Wright Tremaine Llp                         $2,024.08       4
+       occupations: ATTORNEY | CONSTITUTIONAL RIGHTS ATTORNEY
+  41  skadden                                 Skadden                                           $2,000.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER | LAWYER, PARTNER
+  42  reed smith                              Reed Smith                                        $1,900.00       2
+       occupations: ATTORNEY | LAWYER
+  43  proskauer rose                          Proskauer Rose Llp                                $1,862.30       3
+       occupations: ATTORNEY | ATTORNEY, PARTNER | LAWYER, PARTNER
+  44  abington emerson                        Abington Emerson                                  $1,800.00       1
+       occupations: PARTNER
+  45  brad lee aplc                           Brad Lee Aplc                                     $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  46  davidovich stein law group              Davidovich Stein Law Group Llp                    $1,800.00       1
+       occupations: ATTORNEY
+  47  ellis george                            Ellis George LLP                                  $1,800.00       1
+       occupations: ATTORNEY
+  48  garb jaffe and associates legal placem  Garb Jaffe And Associates Legal Placement L       $1,800.00       1
+       occupations: ATTORNEY LEGAL RECRUITER
+  49  glaser weil et al                       Glaser Weil et al                                 $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  50  hampton legal                           Hampton Legal Llp                                 $1,800.00       1
+       occupations: ATTORNEY
+  51  jon l                                   Jon  L Inc                                        $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: MANAGING PARTNER
+  52  kirkland and ellis                      Kirkland And Ellis Llp                            $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER
+  53  law firm                                Law Firm                                          $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  54  lnbyg                                   Lnbyg                                             $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  55  noel hyun minor                         Noel Hyun Minor                                   $1,800.00       1
+       occupations: ATTORNEY
+  56  philadelphia district attorney          Philadelphia District Attorney                    $1,800.00       1
+       occupations: ASSISTANT DISTRICT ATTORNEY
+  57  sidley austin                           Sidley Austin Llp                                 $1,800.00       1
+       occupations: ATTORNEY
+  58  steinbrecher and span                   Steinbrecher And Span Llp                         $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  59  the zabetian firm                       The Zabetian Firm                                 $1,800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  60  university of west los angeles          University Of West Los Angeles                    $1,800.00       1
+       occupations: PRESIDENTCEO ATTORNEY
+  61  sutton pakfar courtney                  Sutton, Pakfar & Courtney Llp                     $1,678.00       2
+       occupations: ATTORNEY | ATTORNEY, PARTNER | LAWYER
+  62  eric m. epstein                         Eric M. Epstein, Apc                              $1,664.00       2
+       occupations: ATTORNEY | ATTORNEY, PRESIDENT
+  63  ibm                                     IBM                                               $1,605.24       2
+       occupations: ATTORNEY, SENIOR COUNSEL | LAWYER
+  64  schulte roth zabel                      Schulte Roth & Zabel LLP                          $1,600.00       2
+       occupations: ATTORNEY | OF COUNSEL
+  65  sheppard mullin                         Sheppard, Mullin                                  $1,600.00       2
+       occupations: ATTORNEY
+  66  shearman sterling                       Shearman & Sterling                               $1,524.08       1
+       occupations: ATTORNEY, PARTNER | ATTORNEY/PARTNER
+  67  aequum law                              Aequum Law, Llc                                   $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  68  alderlaw                                Alderlaw                                          $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER
+  69  alston and bird                         Alston And Bird                                   $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER
+  70  barack ferrazzano kirschbaum nagelberg  Barack Ferrazzano Kirschbaum & Nagelberg Ll       $1,500.00       1
+       occupations: ATTORNEY
+  71  brad lee law aplc                       Brad Lee Law Aplc                                 $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY AT LAW
+  72  bronster fujichaku robbins a law        Bronster Fujichaku Robbins A Law Corp.            $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  73  dana cole                               Dana Cole                                         $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  74  dla piper (us)                          Dla Piper Llp (Us)                                $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY, PARTNER
+  75  egc                                     Egc                                               $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  76  eisner                                  Eisner, LLP                                       $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  77  geragos geragos                         Geragos & Geragos                                 $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER
+  78  hattis lukacs                           Hattis & Lukacs                                   $1,500.00       1
+       occupations: ATTORNEY
+  79  hogan lovells                           Hogan Lovells                                     $1,500.00       1
+       occupations: ATTORNEY
+  80  hueston hennigan                        Hueston Hennigan Llp                              $1,500.00       1
+       occupations: ATTORNEY
+  81  jung yuen                               Jung & Yuen, Llp                                  $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  82  latham                                  Latham                                            $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  83  law office of michael d. mcevoy         Law Office Of Michael D. Mcevoy                   $1,500.00       1
+       occupations: ATTORNEY
+  84  law offices of alicia minana            Law Offices Of Alicia Minana                      $1,500.00       1
+       occupations: LAWYER, SOLE PROPRIETOR
+  85  law offices of christine chang          Law Offices Of Christine Chang                    $1,500.00       1
+       occupations: ATTORNEY
+  86  law offices of hirji chau               Law Offices Of Hirji & Chau Llp                   $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  87  law offices of michael a goldstein      Law Offices Of Michael A Goldstein                $1,500.00       1
+       occupations: LAWYER
+  88  los angeles                             Los Angeles                                       $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  89  los angeles city atty's office          Los Angeles City Atty's Office                    $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: DEPUTY CITY ATTORNEY
+  90  louis miller                            Louis Miller                                      $1,500.00       1
+       occupations: LAWYER
+  91  lowestein weatherwax                    Lowestein & Weatherwax LLP                        $1,500.00       1
+       occupations: ATTORNEY
+  92  merino yebri                            Merino Yebri Llp                                  $1,500.00       1
+       occupations: ATTORNEY | LAWYER
+  93  morrison forester                       Morrison Forester                                 $1,500.00       1
+       occupations: LAWYER
+  94  o'melveny                               O'Melveny                                         $1,500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  95  orange county superior court            Orange County Superior Court                      $1,500.00       1
+       occupations: ATTORNEY, SENIOR RESEARCH ATTORNEY
+  96  reliq capital                           Reliq Capital                                     $1,500.00       1
+       occupations: REAL ESTATE MANAGING PARTNER
+  97  self carl w. robertson                  Self, Carl W. Robertson                           $1,500.00       1
+       occupations: LAWYER
+  98  troutman pepper hamilton sanders        Troutman Pepper Hamilton Sanders Llp              $1,500.00       1
+       occupations: ATTORNEY, PARTNER
+  99  unemployed                              Unemployed                                        $1,500.00       1
+       occupations: LAWYER
+  100  viacomcbs                               ViacomCBS                                         $1,500.00       1
+       occupations: ATTORNEY
+  101  geragos and geragos                     Geragos And Geragos                               $1,497.91       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: LAWYER
+  102  greenberg traurig                       Greenberg Traurig Llp                             $1,437.55       1
+       occupations: ATTORNEY
+  103  mitchell fox                            Mitchell Fox                                      $1,335.32       1
+       occupations: ATTORNEY
+  104  law offices of pat harris               Law Offices Of Pat Harris                         $1,285.86       2
+       occupations: ATTORNEY
+  105  law office mario trujillo               Law Office Mario Trujillo                         $1,250.00       2
+       occupations: ATTORNEY
+  106  none                                    None                                              $1,249.00       2
+       occupations: ATTORNEY
+  107  louis lipofsky                          Louis Lipofsky                                    $1,066.00       1
+       occupations: ATTORNEY
+  108  loeb                                    Loeb                                              $1,048.16       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY, PARTNER
+  109  self-employed michael foreman           Self-Employed, Michael Foreman                    $1,047.64       1
+       occupations: LAWYER/CONSULTANT
+  110  white case                              White & Case Llp                                  $1,047.64       1
+       occupations: ATTORNEY AT LAW, PARTNER
+  111  carl mckinzie                           Carl McKinzie                                     $1,024.08       1
+       occupations: ATTORNEY/EXECUTIVE
+  112  genga associates                        Genga & Associates                                $1,024.08       1
+       occupations: LAWYER,OWNER/MANAGING ATTORNEY
+  113  360 business management                 360 Business Management                           $1,000.00       1
+       occupations: OWNER  MANAGING PARTNER
+  114  at home                                 At Home                                           $1,000.00       1
+       occupations: ATTORNEY
+  115  burke williams sorensen                 Burke, Williams & Sorensen, Llp                   $1,000.00       1
+       occupations: ATTORNEY
+  116  city of sparks                          City Of Sparks                                    $1,000.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  117  ivie mcneil wiatt                       Ivie,McNeil &Wiatt                                $1,000.00       1
+       occupations: ATTORNEY
+  118  law offices of kahlil j mcalpin         Law Offices Of Kahlil J Mcalpin                   $1,000.00       1
+       occupations: ATTORNEY
+  119  law offices of meghan blanco            Law Offices Of Meghan Blanco                      $1,000.00       1
+       occupations: LAWYER
+  120  law offices of robert hertzberg         Law Offices Of Robert Hertzberg                   $1,000.00       1
+       occupations: LAWYER
+  121  loeb loeb                               Loeb & Loeb                                       $1,000.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  122  martin blank                            Martin Blank                                      $1,000.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  123  the weg law group                       The Weg Law Group                                 $1,000.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  124  united talent agency                    United Talent Agency                              $1,000.00       1
+       occupations: ATTORNEY
+  125  venable                                 Venable Llp                                       $1,000.00       1
+       occupations: ATTORNEY
+  126  whiteford taylor preston                Whiteford Taylor & Preston Llp                    $1,000.00       1
+       occupations: ATTORNEY, SENIOR COUNSEL
+  127  wolf rifkin shapiro schulman rabkin     Wolf Rifkin Shapiro Schulman Rabkin LLP           $1,000.00       1
+       occupations: ATTORNEY AT LAW, OF COUNSEL
+  128  kingsley kingsley                       Kingsley & Kingsley                                 $999.00       1
+       occupations: LAWYER
+  129  alston bird                             Alston & Bird                                       $819.24       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER, SENIOR COUNSEL
+  130  city of los angeles city attorney       City Of Los Angeles, City Attorney                  $814.00       1
+       occupations: LAWYER
+  131  ervin cohen and jessup                  Ervin Cohen And Jessup                              $800.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  132  parker hudson rainer dobbs              Parker, Hudson, Rainer & Dobbs Llp                  $800.00       1
+       occupations: ATTORNEY | ATTORNEY, PARTNER
+  133  maynard cooper gale                     Maynard Cooper Gale                                 $786.38       1
+       occupations: ATTORNEY, OF COUNSEL
+  134  levene neale bender yoo brill l.l.p.    Levene, Neale, Bender, Yoo & Brill L.L.P.           $785.86       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY, MANAGING PARTNER
+  135  cox castle nicholson                    Cox Castle & Nicholson                              $750.00       2
+       occupations: ATTORNEY | LAWYER, PARTNER
+  136  lewis brisbois bisgaard smith           Lewis Brisbois Bisgaard Smith                       $750.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  137  manatt phelps and phillips              Manatt Phelps And Phillips Llp                      $750.00       2
+       occupations: ATTORNEY
+  138  robins kaplan                           Robins Kaplan                                       $750.00       1
+       occupations: ATTORNEY
+  139  the forest road company                 The Forest Road Company                             $750.00       1
+       occupations: ATTORNEY, GENERAL COUNSEL
+  140  winston and strawn                      Winston And Strawn Llp                              $750.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  141  brown white osborn                      Brown White & Osborn LLP                            $714.00       2
+       occupations: ATTORNEY | PARTNER
+  142  cbinsolvency                            Cbinsolvency LLC                                    $709.95       1
+       occupations: LAWYER, MANAGING MEMBER
+  143  paramount                               Paramount                                           $693.00       1
+       occupations: ATTORNEY
+  144  squire patton boggs us                  Squire Patton Boggs Us LLP                          $524.60       2
+       occupations: ATTORNEY, PARTNER
+  145  dentons us                              Dentons Us Llp                                      $524.08       1
+       occupations: ATTORNEY, PARTNER
+  146  disability rights legal center          Disability Rights Legal Center                      $524.08       1
+       occupations: ATTORNEY
+  147  jones day                               Jones Day                                           $524.08       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY, OF COUNSEL
+  148  margaret bertisch                       Margaret Bertisch                                   $524.08       1
+       occupations: ATTORNEY OF COUNSEL
+  149  self vince ravine                       Self, Vince Ravine                                  $524.08       1
+       occupations: ATTORNEY
+  150  mitchell m. tsai attorney at law        Mitchell M. Tsai, Attorney At Law Pc                $512.30       1
+       occupations: ATTORNEY | ATTORNEY, PRINCIPAL
+  151  steinbrecher span                       Steinbrecher & Span Llp                             $512.30       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  152  albert justin lum                       Albert Justin Lum                                   $500.00       1
+       occupations: ATTORNEY
+  153  arnold porter                           Arnold & Porter                                     $500.00       1
+       occupations: ATTORNEY, SENIOR COUNSEL
+  154  bet tzedek legal services               Bet Tzedek Legal Services                           $500.00       1
+       occupations: ATTORNEY
+  155  channel law group                       Channel Law Group                                   $500.00       1
+       occupations: ATTORNEY
+  156  city of la                              City Of La                                          $500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: DEPUTY CITY ATTORNEY
+  157  damian martin                           Damian Martin                                       $500.00       1
+       occupations: ATTORNEY
+  158  diana sparagna                          Diana Sparagna                                      $500.00       1
+       occupations: ATTORNEY
+  159  douglas emmett                          Douglas Emmett                                      $500.00       1
+       occupations: ATTORNEY
+  160  freeman lee                             Freeman Lee                                         $500.00       1
+       occupations: ATTORNEY
+  161  glass house brands                      Glass House Brands                                  $500.00       1
+       occupations: ATTORNEY
+  162  hjw advisor                             HJW Advisor                                         $500.00       1
+       occupations: CONSULTANT AND ATTORNEY, FOUNDER
+  163  individual contribution                 Individual Contribution                             $500.00       1
+       occupations: PARTNER
+  164  joel r. mogy investment counsel         Joel R. Mogy Investment Counsel Inc                 $500.00       1
+       occupations: INVESTMENT COUNSEL
+  165  joseph a. eisenberg professional        Joseph A. Eisenberg Professional Corp.              $500.00       1
+       occupations: ATTORNEY
+  166  joseph stanley sanders                  Joseph Stanley Sanders                              $500.00       1
+       occupations: ATTORNEY
+  167  katten muchin rosenman                  Katten Muchin Rosenman Llp                          $500.00       1
+       occupations: LAWYER, PARTNER
+  168  kendall brill kelly                     Kendall Brill Kelly Llp                             $500.00       1
+       occupations: ATTORNEY
+  169  law office of wayne avrashow            Law Office Of Wayne Avrashow                        $500.00       1
+       occupations: ATTORNEY
+  170  levene neale et. al levene mediation    Levene Neale et. al Levene Mediation                $500.00       1
+       occupations: ATTORNEY AND MEDIATOR
+  171  lewis brisbois bisgaard and smith       Lewis Brisbois Bisgaard And Smith                   $500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  172  liang ly                                Liang Ly Llp                                        $500.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  173  mayer brown                             Mayer Brown Llp                                     $500.00       1
+       occupations: LAWYER, PARTNER
+  174  office of the los angeles city attorne  Office Of The Los Angeles City Attorney             $500.00       1
+       occupations: LAWYER
+  175  pillsbury winthrop                      Pillsbury Winthrop                                  $500.00       1
+       occupations: LAWYER, PARTNER
+  176  public interest law firm                Public Interest Law Firm                            $500.00       1
+       occupations: ATTORNEY
+  177  robert schwartz                         Robert Schwartz                                     $500.00       1
+       occupations: ATTORNEY
+  178  schall law firm                         Schall Law Firm                                     $500.00       1
+       occupations: ATTORNEY
+  179  self daniel wright                      Self, Daniel Wright                                 $500.00       1
+       occupations: ATTORNEY, PRINCIPAL
+  180  sunset west legal group                 Sunset West Legal Group                             $500.00       1
+       occupations: ATTORNEY
+  181  united states - department of justice   United States - Department Of Justice               $500.00       1
+       occupations: ATTORNEY
+  182  department of justice                   Department Of Justice                               $464.00       1
+       occupations: ATTORNEY
+  183  peter weinberger                        Peter Weinberger                                    $464.00       1
+       occupations: ATTORNEY
+  184  richard zbur                            Richard Zbur                                        $464.00       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  185  jeffer mangels butler mitchell          Jeffer Mangels Butler & Mitchell, LLP               $424.61       2
+       occupations: ATTORNEY, PARTNER | LAWYER
+  186  david nahai associates                  David Nahai Associates Inc                          $400.00       1
+       occupations: ATTORNEY
+  187  lewis brisbois                          Lewis Brisbois Llp                                  $400.00       1
+       occupations: ATTORNEY
+  188  joshua stein                            Joshua Stein Pllc                                   $380.00       2
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  189  goodwin procter                         Goodwin Procter                                     $350.00       2
+       occupations: ATTORNEY | LAWYER
+  190  jay weitzler                            Jay Weitzler                                        $324.61       1
+       occupations: ATTORNEY
+  191  linda blank                             Linda Blank                                         $315.72       1
+       occupations: ATTORNEY
+  192  richard olshansky                       Richard Olshansky                                   $314.66       1
+       occupations: LAWYER
+  193  law offices of grace e. yoo             Law Offices Of Grace E. Yoo                         $314.00       1
+       occupations: ATTORNEY
+  194  gerald m yaroslow                       Gerald M Yaroslow                                   $300.00       1
+       occupations: ATTORNEY
+  195  howard berman                           Howard Berman                                       $300.00       1
+       occupations: ATTORNEY
+  196  manatt                                  Manatt                                              $288.67       1
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  197  law office of daniel wright             Law Office Of Daniel Wright                         $272.00       1
+       occupations: ATTORNEY
+  198  leap of faith partners                  Leap of Faith Partners                              $266.00       1
+       occupations: ATTORNEY
+  199  pazzani sandhu                          Pazzani Sandhu LLP                                  $266.00       1
+       occupations: ATTORNEY
+  200  capstone law                            Capstone Law Apc                                    $262.30       1
+       occupations: ATTORNEY
+  201  cooley                                  Cooley Llp                                          $262.30       1
+       occupations: ATTORNEY
+  202  gresham savage nolan tilden             Gresham Savage Nolan & Tilden, Pc                   $262.30       1
+       occupations: ATTORNEY, SENIOR COUNSEL
+  203  karen fairbank                          Karen Fairbank                                      $262.30       1
+       occupations: LAWYER/ATTORNEY
+  204  phelanlaw                               Phelanlaw                                           $262.30       1
+       occupations: ATTORNEY
+  205  self joseph reichmann                   Self, Joseph Reichmann                              $262.30       1
+       occupations: ATTORNEY
+  206  wachtell lipton                         Wachtell Lipton                                     $262.30       1
+       occupations: ATTORNEY, PARTNER
+  207  hecker fink                             Hecker Fink                                         $257.00       1
+       occupations: LAWYER
+  208  and asset management                    And Asset Management                                $250.00       1
+       occupations: ATTORNEY
+  209  beach point capital management          Beach Point Capital Management                      $250.00       1
+       occupations: ATTORNEY
+  210  bird marella                            Bird Marella                                        $250.00       1
+       occupations: ATTORNEY
+  211  burke williams                          Burke, Williams                                     $250.00       1
+       occupations: ATTORNEY
+  212  college circuit                         College Circuit                                     $250.00       1
+       occupations: COLLEGE COUNSELOR
+
+  Search URL: https://www.lacourt.org/paos/v2public/CivilIndex/
+  Also check: https://www.lacourt.org/paos/v2public/CriminalIndex/
+
+
+================================================================================
+CANDIDATE: Aida Ashouri
+  is_city_attorney : true
+  politician_id    : 0f6484bd-2fc1-4071-9648-d7b8a950d29c
+  grand_total      : $14,079.64
+  threshold_cutoff : $2,111.95 (top 15% cumulative)
+  firms to research: 8
+--------------------------------------------------------------------------------
+
+  # NORMALIZED FIRM                         RAW NAME (search this)                              DONATED  DONORS
+  -------------------------------------------------------------------------------------------------------------
+  1   life sciences patent law firm           Life Sciences Patent Law Firm                       $300.00       1
+       occupations: ATTORNEY
+  2   india bodien                            India Bodien                                        $250.00       1
+       occupations: LAWYER
+  3   goodwin procter                         Goodwin Procter                                     $143.00       1
+       occupations: ATTORNEY
+  4   aron laub                               Aron Laub                                           $100.00       1
+       occupations: ATTORNEY
+  5   basta universal                         BASTA Universal                                     $100.00       1
+       occupations: ATTORNEY
+  6   cola                                    COLA                                                $100.00       1
+       occupations: ATTORNEY
+  7   none                                    None                                                $100.00       1
+       occupations: LAWYER
+  8   private university                      Private university                                  $100.00       1
+       occupations: ATTORNEY
+
+  Search URL: https://www.lacourt.org/paos/v2public/CivilIndex/
+  Also check: https://www.lacourt.org/paos/v2public/CriminalIndex/
+
+
+================================================================================
+CANDIDATE: John McKinney
+  is_city_attorney : true
+  politician_id    : 6cd2e87b-7366-429a-a049-990751bd647f
+  grand_total      : $72,714.00
+  threshold_cutoff : $10,907.10 (top 15% cumulative)
+  firms to research: 3
+--------------------------------------------------------------------------------
+
+  # NORMALIZED FIRM                         RAW NAME (search this)                              DONATED  DONORS
+  -------------------------------------------------------------------------------------------------------------
+  1   la county da's office                   LA County DA's Office                             $5,400.00       1
+       occupations: LAWYER
+  2   glaser weil                             Glaser Weil                                       $4,657.00       7
+       occupations: ATTORNEY
+  3   los angeles county                      Los Angeles County                                $3,900.00       8
+       occupations: ATTORNEY | DEPUTY DISTRICT ATTORNEY | LAWYER
+
+  Search URL: https://www.lacourt.org/paos/v2public/CivilIndex/
+  Also check: https://www.lacourt.org/paos/v2public/CriminalIndex/
+
+
+================================================================================
+CANDIDATE: Marissa Roy
+  is_city_attorney : true
+  politician_id    : 7157dd95-0f1b-4e05-bd4f-39317345b47c
+  grand_total      : $994,427.27
+  threshold_cutoff : $149,164.09 (top 15% cumulative)
+  firms to research: 14
+--------------------------------------------------------------------------------
+
+  # NORMALIZED FIRM                         RAW NAME (search this)                              DONATED  DONORS
+  -------------------------------------------------------------------------------------------------------------
+  1   california department of justice        California Department Of Justice                 $41,053.00      13
+       occupations: ATTORNEY | DEPUTY ATTORNEY GENERAL | LAWYER
+  2   cotchett pitre mccarthy                 Cotchett, Pitre & McCarthy                       $15,900.00      16
+       occupations: ATTORNEY
+  3   singleton schreiber                     Singleton Schreiber, LLP                         $14,857.00       9
+       occupations: ATTORNEY | FOUNDING PARTNER | LAWYER
+  4   dreyer babich buccola wood campora      Dreyer Babich Buccola Wood Campora LLP           $11,600.00       8
+       occupations: ASSOCIATE ATTORNEY | ATTORNEY | LAWYER
+  5   o'melveny myers                         O'Melveny & Myers LLP                            $10,407.00      19
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | ATTORNEY AT LAW | LAWYER
+  6   acts law                                Acts Law                                          $9,500.00       5
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER
+  7   walkup melodia                          Walkup Melodia                                    $7,400.00       4
+       occupations: ATTORNEY
+  8   walkup melodia kelly schoenberger       Walkup, Melodia, Kelly & Schoenberger             $7,200.00       3
+       occupations: ATTORNEY | MANAGING PARTNER
+  9   taylor ring                             Taylor & Ring                                     $6,057.00       7
+       occupations: ATTORNEY | LAWYER
+  10  fiore legal                             Fiore Legal, Inc.                                 $5,500.00       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY | LAWYER | PARALEGAL
+  11  panish shea ravipudi                    Panish , Shea , Ravipudi LLP                      $5,400.00       3
+       occupations: ATTORNEY
+  12  walker law                              Walker Law Pc                                     $5,400.00       3
+       *** NEEDS REVIEW: fuzzy dedup matched similar names — confirm this is ONE firm before searching ***
+       occupations: ATTORNEY
+  13  hueston hennigan                        Hueston Hennigan LLP                              $5,100.00       5
+       occupations: ATTORNEY | LAWYER
+  14  city of los angeles                     City Of Los Angeles                               $4,664.00       8
+       *** SKIP: incumbent colleagues donating to incumbent CA — not a private law firm active in courts ***
+       occupations: ATTORNEY | DEPUTY CITY ATTORNEY | LAWYER
+
+  Search URL: https://www.lacourt.org/paos/v2public/CivilIndex/
+  Also check: https://www.lacourt.org/paos/v2public/CriminalIndex/
+
+================================================================================
+JUDGE CHALLENGERS (28 candidates) — SKIPPED
+--------------------------------------------------------------------------------
+No LA Ethics Commission contribution data ingested for judicial races.
+These candidates have no firms in court-research-input.json.
+All 28 will appear in court-research-results.json with empty firm lists.
+
+================================================================================
+END OF WORKBOOK
+================================================================================

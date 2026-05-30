@@ -72,8 +72,8 @@ export async function isTokenRevoked(userId: string, tokenIat: number): Promise<
  * data.session will be null — this is NOT an error. Route handlers must
  * check data.user (not data.session) to determine success.
  */
-export async function signUpWithEmail(email: string, password: string) {
-  return supabaseAdmin.auth.signUp({ email, password });
+export async function signUpWithEmail(email: string, password: string, emailRedirectTo?: string) {
+  return supabaseAdmin.auth.signUp({ email, password, options: { emailRedirectTo } });
 }
 
 /**

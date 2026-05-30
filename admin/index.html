@@ -6,12 +6,7 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>Empowered Accounts Admin</title>
     <script>
-      (function () {
-        var stored = localStorage.getItem('ev-theme');
-        if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
+      (function(){var s=localStorage.getItem('ev:color-scheme');if(s==='dark'||(!s&&!window.matchMedia('(prefers-color-scheme: light)').matches))document.documentElement.classList.add('dark')})();
     </script>
   </head>
   <body>

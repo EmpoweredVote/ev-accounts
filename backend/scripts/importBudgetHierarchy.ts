@@ -595,7 +595,7 @@ async function main() {
   try {
     // 1. Look up municipality
     const { rows: muniRows } = await pool.query(
-      `SELECT id, name, state, entity_type FROM treasury.municipalities
+      `SELECT id, name, state, entity_type, geo_id FROM treasury.municipalities
        WHERE LOWER(name) = LOWER($1) AND LOWER(state) = LOWER($2)`,
       [args.municipality, args.state],
     );
@@ -617,6 +617,25 @@ async function main() {
     const municipalityId = cityRow.id;
     console.log(`\nMunicipality: ${cityRow.name}, ${cityRow.state} (${cityRow.entity_type})`);
     console.log(`ID:           ${municipalityId}`);
+
+    // Ensure the municipality is linked to the TIGER geofence backbone. Future data
+    // pulls flow through this rebuild, so resolve+set geo_id here if it's missing
+    // (self-healing; never overwrites an existing geo_id). Skipped on --dry-run.
+    if (!cityRow.geo_id && !args.dryRun) {
+      const { resolveTreasuryGeoId } = await import('../src/lib/treasuryService.js');
+      const geoId = await resolveTreasuryGeoId(cityRow.name, cityRow.state, cityRow.entity_type);
+      if (geoId) {
+        await pool.query(
+          `UPDATE treasury.municipalities SET geo_id = $1, updated_at = now() WHERE id = $2 AND geo_id IS NULL`,
+          [geoId, municipalityId],
+        );
+        console.log(`geo_id:       ${geoId} (resolved + set)`);
+      } else {
+        console.log(`geo_id:       (unresolved — no TIGER geofence match)`);
+      }
+    } else if (cityRow.geo_id) {
+      console.log(`geo_id:       ${cityRow.geo_id}`);
+    }
     console.log(`Datasets:     ${args.datasets.join(', ')}`);
     console.log(`Year filter:  ${args.year || 'all'}`);
     console.log(`Dry run:      ${args.dryRun}`);

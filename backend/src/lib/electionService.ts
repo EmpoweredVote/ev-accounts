@@ -93,9 +93,9 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
   // Local
   if (p.includes('mayor'))
     return 'LOCAL_EXEC';
-  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor'))
+  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor') || p.includes('controller') || (p.includes('attorney') && !p.includes('attorney general')))
     return 'LOCAL';
-  if (p.includes('county'))
+  if (p.includes('county') || p.includes('supervisor'))
     return 'COUNTY';
   if (p.includes('school') || p.includes('education'))
     return 'SCHOOL';
@@ -107,6 +107,7 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
     federal: 'NATIONAL_EXEC',
     state: 'STATE_EXEC',
     local: 'LOCAL_EXEC',
+    county: 'COUNTY',
   };
   return levelMap[jurisdictionLevel] ?? null;
 }
@@ -122,6 +123,188 @@ export interface CandidateDetail {
   position_name: string;
   election_date: string | null;
   election_type: string | null;
+}
+
+/**
+ * Returns upcoming elections for an explicit list of government geo_ids.
+ * Joins through governments → chambers → offices → races → elections,
+ * bypassing the geofence/district infrastructure.
+ */
+export async function getElectionsByGovernmentGeoIds(
+  governmentGeoIds: string[]
+): Promise<ElectionResult[]> {
+  if (governmentGeoIds.length === 0) return [];
+
+  const districtQueryText = `
+    SELECT DISTINCT
+      e.id           AS election_id,
+      e.name         AS election_name,
+      e.election_date,
+      e.election_type,
+      e.jurisdiction_level,
+      r.id           AS race_id,
+      r.position_name,
+      r.primary_party,
+      r.seats,
+      rc.id          AS candidate_id,
+      rc.full_name,
+      rc.first_name,
+      rc.last_name,
+      COALESCE(rc.photo_url, pi.url) AS photo_url,
+      rc.is_incumbent,
+      rc.candidate_status,
+      rc.politician_id,
+      NULL::text AS district_type
+    FROM essentials.elections e
+    JOIN essentials.races r ON r.election_id = e.id
+    LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = rc.politician_id AND type = 'default'
+      LIMIT 1
+    ) pi ON rc.politician_id IS NOT NULL
+    JOIN essentials.offices o ON o.id = r.office_id
+    JOIN essentials.chambers ch ON ch.id = o.chamber_id
+    JOIN essentials.governments g ON g.id = ch.government_id
+    WHERE g.geo_id = ANY($1::text[])
+      AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
+    ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+  `;
+
+  const stateQueryText = `
+    SELECT o.representing_state
+    FROM essentials.governments g
+    JOIN essentials.chambers ch ON ch.government_id = g.id
+    JOIN essentials.offices o ON o.chamber_id = ch.id
+    WHERE g.geo_id = ANY($1::text[])
+      AND o.representing_state IS NOT NULL
+      AND o.representing_state != ''
+    LIMIT 1
+  `;
+
+  const [districtResult, stateResult] = await Promise.all([
+    pool.query<ElectionRow>(districtQueryText, [governmentGeoIds]),
+    pool.query<{ representing_state: string }>(stateQueryText, [governmentGeoIds]),
+  ]);
+
+  const districtRows = districtResult.rows;
+  const stateAbbrev = stateResult.rows[0]?.representing_state ?? null;
+
+  let statewideRows: ElectionRow[] = [];
+  if (stateAbbrev) {
+    const statewideQueryText = `
+      SELECT DISTINCT
+        e.id           AS election_id,
+        e.name         AS election_name,
+        e.election_date,
+        e.election_type,
+        e.jurisdiction_level,
+        r.id           AS race_id,
+        r.position_name,
+        r.primary_party,
+        r.seats,
+        rc.id          AS candidate_id,
+        rc.full_name,
+        rc.first_name,
+        rc.last_name,
+        COALESCE(rc.photo_url, pi.url) AS photo_url,
+        rc.is_incumbent,
+        rc.candidate_status,
+        rc.politician_id,
+        NULL::text AS district_type
+      FROM essentials.elections e
+      JOIN essentials.races r ON r.election_id = e.id
+      LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      LEFT JOIN LATERAL (
+        SELECT url FROM essentials.politician_images
+        WHERE politician_id = rc.politician_id AND type = 'default'
+        LIMIT 1
+      ) pi ON rc.politician_id IS NOT NULL
+      WHERE r.office_id IS NULL
+        AND e.state = $1
+        AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
+      ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
+    `;
+    const result = await pool.query<ElectionRow>(statewideQueryText, [stateAbbrev]);
+    statewideRows = result.rows;
+  }
+
+  const allRows = [...districtRows, ...statewideRows];
+  const seenCandidates = new Set<string>();
+  const dedupedRows = allRows.filter((row) => {
+    if (row.candidate_id !== null) {
+      if (seenCandidates.has(row.candidate_id)) return false;
+      seenCandidates.add(row.candidate_id);
+    }
+    return true;
+  });
+
+  if (dedupedRows.length === 0) return [];
+
+  const electionsMap = new Map<string, ElectionResult>();
+  const racesMap = new Map<string, ElectionRace>();
+
+  for (const row of dedupedRows) {
+    const electionDate =
+      row.election_date instanceof Date
+        ? row.election_date.toISOString().split('T')[0]
+        : String(row.election_date).split('T')[0];
+
+    if (!electionsMap.has(row.election_id)) {
+      electionsMap.set(row.election_id, {
+        election_id: row.election_id,
+        election_name: row.election_name,
+        election_date: electionDate,
+        election_type: row.election_type,
+        jurisdiction_level: row.jurisdiction_level,
+        races: [],
+      });
+    }
+
+    if (!racesMap.has(row.race_id)) {
+      const race: ElectionRace = {
+        race_id: row.race_id,
+        position_name: row.position_name,
+        primary_party: row.primary_party,
+        seats: row.seats,
+        district_type: row.district_type,
+        candidates: [],
+      };
+      racesMap.set(row.race_id, race);
+      electionsMap.get(row.election_id)!.races.push(race);
+    }
+
+    if (row.candidate_id !== null) {
+      racesMap.get(row.race_id)!.candidates.push({
+        candidate_id: row.candidate_id,
+        full_name: row.full_name!,
+        first_name: row.first_name,
+        last_name: row.last_name,
+        photo_url: row.photo_url,
+        is_incumbent: row.is_incumbent!,
+        candidate_status: row.candidate_status!,
+        politician_id: row.politician_id,
+      });
+    }
+  }
+
+  for (const election of electionsMap.values()) {
+    for (const race of election.races) {
+      if (!race.district_type) {
+        race.district_type = inferDistrictType(race.position_name, election.jurisdiction_level);
+      }
+    }
+  }
+
+  return Array.from(electionsMap.values()).sort((a, b) =>
+    a.election_date.localeCompare(b.election_date)
+  );
 }
 
 /**
@@ -206,7 +389,10 @@ export async function getElectionsByGeoIds(
       JOIN essentials.offices o ON o.id = r.office_id
       JOIN essentials.districts d ON d.id = o.district_id
       WHERE d.geo_id = ANY($1::text[])
-        AND e.election_date >= CURRENT_DATE
+        AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(districtQueryText, [activeGeoIds]);
@@ -246,7 +432,10 @@ export async function getElectionsByGeoIds(
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND e.election_date >= CURRENT_DATE
+        AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(statewideQueryText, [state]);
@@ -336,7 +525,9 @@ export async function getElectionsByGeoIds(
  * so $1 = lng, $2 = lat
  *
  * Withdrawn candidates are excluded from all results.
- * Only future elections (election_date >= CURRENT_DATE) are returned.
+ * Post-election visibility windows (UTC-safe):
+ * - Primaries / other: 30 days after election_date
+ * - General elections: through Dec 31 of the election year (until Jan 1)
  */
 export async function getElectionsByCoordinate(lat: number, lng: number): Promise<ElectionResult[]> {
   // Part A: Geofence-matched district-specific races
@@ -381,7 +572,10 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
         gb.geometry,
         public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
       )
-      AND e.election_date >= CURRENT_DATE
+      AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
     ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
   `;
 
@@ -404,7 +598,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     pool.query<{ state: string }>(stateQueryText, [lng, lat]),
   ]);
 
-  const stateCode = stateResult.rows[0]?.state ?? null;
+  // Normalize to uppercase — districts.state has mixed case ('ut' vs 'UT') but
+  // elections.state is always uppercase. Without this, Part B returns nothing.
+  const stateCode = stateResult.rows[0]?.state?.toUpperCase() ?? null;
 
   // Part B: Statewide/at-large races (office_id IS NULL) for the matched state
   // These are races for positions like Governor, US Senator that span the whole state
@@ -441,7 +637,10 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       ) pi ON rc.politician_id IS NOT NULL
       WHERE r.office_id IS NULL
         AND e.state = $1
-        AND e.election_date >= CURRENT_DATE
+        AND (
+        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+      )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const statewideResult = await pool.query<ElectionRow>(statewideQueryText, [stateCode]);

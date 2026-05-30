@@ -18,23 +18,21 @@ export default function Login() {
   const [signupModalOpen, setSignupModalOpen] = useState(false);
   const [showUnverifiedResend, setShowUnverifiedResend] = useState(false);
   const [resendSent, setResendSent] = useState(false);
-  const [forgotOpen, setForgotOpen] = useState(false);
-  const [forgotEmail, setForgotEmail] = useState('');
-  const [forgotSubmitting, setForgotSubmitting] = useState(false);
-  const [forgotSent, setForgotSent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
 
-  // Preserve ?redirect= when linking to /signup (Connected path)
   const signupHref = validRedirect
     ? `/signup?redirect=${encodeURIComponent(validRedirect)}`
     : '/signup';
 
-  // Preserve ?redirect= when linking to /signup/inform (Inform path)
   const informSignupHref = validRedirect
     ? `/signup/inform?redirect=${encodeURIComponent(validRedirect)}`
     : '/signup/inform';
+
+  const forgotHref = email
+    ? `/forgot-password?email=${encodeURIComponent(email)}`
+    : '/forgot-password';
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -42,7 +40,6 @@ export default function Login() {
     setIsSubmitting(true);
 
     try {
-      // Step 1: authenticate
       const loginRes = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         credentials: 'include',
@@ -61,7 +58,6 @@ export default function Login() {
       const loginData = await loginRes.json();
       const token: string = loginData.access_token;
 
-      // Step 2: get full user info (tier, onboarding, admin status)
       const meRes = await fetch(`${API_BASE}/account/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -80,8 +76,6 @@ export default function Login() {
         completedOnboarding: meData.completed_onboarding ?? false,
       });
 
-      // Step 3: persist token synchronously before navigating — the useEffect that
-      // writes to sessionStorage won't fire before window.location.href tears down the page.
       sessionStorage.setItem('admin_token', token);
 
       const target = validRedirect || 'https://login.empowered.vote/profile';
@@ -94,7 +88,6 @@ export default function Login() {
   }
 
   async function handleResendConfirmation() {
-    setResendSent(false);
     await fetch(`${API_BASE}/auth/resend-confirmation`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -103,23 +96,10 @@ export default function Login() {
     setResendSent(true);
   }
 
-  async function handleForgotSubmit(e: FormEvent) {
-    e.preventDefault();
-    setForgotSubmitting(true);
-    await fetch(`${API_BASE}/auth/forgot-password`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: forgotEmail }),
-    }).catch(() => {});
-    setForgotSubmitting(false);
-    setForgotSent(true);
-  }
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
 
-      {/* Wordmark */}
-      <div className="mb-8 text-center space-y-1">
+      <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
           empowered.vote
         </h1>
@@ -170,13 +150,9 @@ export default function Login() {
               <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                 Password
               </label>
-              <button
-                type="button"
-                onClick={() => { setForgotOpen(true); setForgotEmail(email); setForgotSent(false); }}
-                className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline"
-              >
+              <Link to={forgotHref} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
                 Forgot your password?
-              </button>
+              </Link>
             </div>
             <input
               id="password"
@@ -198,39 +174,6 @@ export default function Login() {
           </button>
         </form>
 
-        {/* Forgot password inline panel */}
-        {forgotOpen && (
-          <div className="p-4 bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 rounded-xl space-y-3">
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-200">Reset your password</p>
-            {forgotSent ? (
-              <p className="text-sm text-green-700 dark:text-green-400">
-                If that email is registered, a reset link is on its way.
-              </p>
-            ) : (
-              <form onSubmit={handleForgotSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  required
-                  value={forgotEmail}
-                  onChange={(e) => setForgotEmail(e.target.value)}
-                  placeholder="your@email.com"
-                  className="flex-1 px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-sm text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent"
-                />
-                <button
-                  type="submit"
-                  disabled={forgotSubmitting}
-                  className="px-4 py-2 bg-ev-teal dark:bg-ev-teal-light hover:bg-ev-teal/90 disabled:opacity-60 text-white dark:text-ev-black font-medium rounded-lg text-sm transition-colors whitespace-nowrap"
-                >
-                  {forgotSubmitting ? 'Sending…' : 'Send link'}
-                </button>
-              </form>
-            )}
-            <button type="button" onClick={() => setForgotOpen(false)} className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-              Cancel
-            </button>
-          </div>
-        )}
-
         <div className="space-y-3 pt-2">
           <button
             type="button"
@@ -246,7 +189,8 @@ export default function Login() {
             </Link>
           </p>
         </div>
-        <p className="text-center text-xs text-gray-400 dark:text-gray-600 mt-2">
+
+        <p className="text-center text-xs text-gray-400 dark:text-gray-600">
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
         </p>
       </div>

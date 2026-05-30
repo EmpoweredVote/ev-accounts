@@ -148,6 +148,7 @@ export interface SummaryResponse {
   sector_breakdown: SectorEntry[];
   top_donors: TopDonorEntry[];
   coverage_status?: string;
+  outside_spending: OutsideSpendingResponse;
 }
 
 export interface ContributionResult {
@@ -452,11 +453,14 @@ const confidenceLabel: Record<number, string> = { 1: 'HIGH', 2: 'MEDIUM', 3: 'ES
  *   - 'no_data'            — federal/state office with no sources on file
  */
 async function detectCoverageStatus(politicianId: string): Promise<string> {
-  // Check if politician_sources rows exist (needs_research or otherwise)
+  // Count candidate_committee sources only — ie_committee rows represent PAC/IE spending
+  // linked to this politician's race, not the politician's own fundraising committee.
+  // A politician with only ie_committee sources has genuinely no candidate fundraising.
   const sourceCountResult = await pool.query<{ cnt: string }>(
     `SELECT COUNT(*) AS cnt
      FROM transparent_motivations.politician_sources
-     WHERE essentials_politician_id = $1`,
+     WHERE essentials_politician_id = $1
+       AND source_type = 'candidate_committee'`,
     [politicianId]
   );
   const sourceCount = Number(sourceCountResult.rows[0]?.cnt ?? 0);
@@ -517,7 +521,10 @@ export async function getSummary(
 
   // Return zero-state when no data found — not 404
   if (availableCycles.length === 0) {
-    const coverageStatus = await detectCoverageStatus(politicianId);
+    const [coverageStatus, outsideSpending] = await Promise.all([
+      detectCoverageStatus(politicianId),
+      getOutsideSpendingForPolitician(politicianId),
+    ]);
     return {
       summary: {
         politician_id: politicianId,
@@ -533,6 +540,7 @@ export async function getSummary(
         sector_breakdown: [],
         top_donors: [],
         coverage_status: coverageStatus,
+        outside_spending: outsideSpending,
       },
       updatedAt: null,
     };
@@ -678,6 +686,9 @@ export async function getSummary(
   );
   const lastSyncAt = metaResult.rows[0]?.last_sync_at ?? null;
 
+  // Fetch outside spending in parallel with the final data source metadata query
+  const outsideSpending = await getOutsideSpendingForPolitician(politicianId);
+
   const summary: SummaryResponse = {
     politician_id: politicianId,
     cycle: effectiveCycle,
@@ -691,6 +702,7 @@ export async function getSummary(
     pac_total: Number(tRow?.pac_total ?? 0),
     sector_breakdown: sectorBreakdown,
     top_donors: topDonors,
+    outside_spending: outsideSpending,
   };
 
   return { summary, updatedAt: lastSyncAt };
@@ -1673,4 +1685,214 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
   });
 
   return { query: rawQuery, politicians };
+}
+
+// ---------------------------------------------------------------------------
+// Outside spending types and helper
+// ---------------------------------------------------------------------------
+
+export interface OutsideSpendingCommittee {
+  cmt_id: string;
+  cmt_nm: string;
+  total_amount: number;
+  contribution_count: number;
+  top_donors: Array<{ donor_name: string; amount: number }>;
+}
+
+export interface OutsideSpendingResponse {
+  committees: OutsideSpendingCommittee[];
+}
+
+// DB row types for outside spending queries
+
+interface IeCommitteeTotalsRow {
+  cmt_id: string;
+  cmt_nm: string;
+  total_amount: string;  // numeric -> string
+  contribution_count: string; // bigint -> string
+}
+
+interface IeTopDonorRow {
+  cmt_id: string;
+  donor_name: string | null;
+  amount: string; // numeric -> string
+}
+
+/**
+ * getOutsideSpendingForPolitician returns IE committee spending data linked to a politician.
+ *
+ * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee'
+ * and research_status='confirmed'. Contribution rows are linked via politician_source_id.
+ *
+ * cmt_id is stored in politician_sources.external_id.
+ * cmt_nm is stored in politician_sources.notes as JSON text (notes::jsonb->>'cmt_nm').
+ *
+ * Returns { committees: [] } when no IE sources exist — never omits the key.
+ */
+async function getOutsideSpendingForPolitician(
+  politicianId: string
+): Promise<OutsideSpendingResponse> {
+  // Query IE committee totals.
+  // Join through external_id (cmt_id) rather than politician_source_id directly — the unique
+  // constraint on (data_source, source_transaction_id) means contributions land on whichever
+  // politician_source row ingested first. All politician_sources sharing the same cmt_id must
+  // be checked so every politician linked to the committee sees the same totals.
+  const totalsResult = await pool.query<IeCommitteeTotalsRow>(
+    `WITH ie_cmt_ids AS (
+       SELECT external_id AS cmt_id,
+              notes::jsonb->>'cmt_nm' AS cmt_nm
+         FROM transparent_motivations.politician_sources
+        WHERE essentials_politician_id = $1
+          AND source_type = 'ie_committee'
+          AND research_status = 'confirmed'
+     ),
+     ie_all_sources AS (
+       SELECT ps.id, ps.external_id AS cmt_id
+         FROM transparent_motivations.politician_sources ps
+         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
+        WHERE ps.source_system = 'la_socrata'
+     )
+     SELECT ic.cmt_id,
+            ic.cmt_nm,
+            COALESCE(SUM(c.amount), 0)::numeric AS total_amount,
+            COUNT(c.*) AS contribution_count
+       FROM ie_cmt_ids ic
+       LEFT JOIN ie_all_sources ias ON ias.cmt_id = ic.cmt_id
+       LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
+      GROUP BY ic.cmt_id, ic.cmt_nm
+      ORDER BY total_amount DESC`,
+    [politicianId]
+  );
+
+  if (totalsResult.rows.length === 0) {
+    return { committees: [] };
+  }
+
+  // Query top donors per IE committee (top 10 per committee, UI shows top 5)
+  const topDonorsResult = await pool.query<IeTopDonorRow>(
+    `WITH ie_cmt_ids AS (
+       SELECT external_id AS cmt_id
+         FROM transparent_motivations.politician_sources
+        WHERE essentials_politician_id = $1
+          AND source_type = 'ie_committee'
+          AND research_status = 'confirmed'
+     ),
+     ie_all_sources AS (
+       SELECT ps.id, ps.external_id AS cmt_id
+         FROM transparent_motivations.politician_sources ps
+         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
+        WHERE ps.source_system = 'la_socrata'
+     )
+     SELECT ias.cmt_id,
+            c.donor_name_normalized AS donor_name,
+            SUM(c.amount)::numeric AS amount
+       FROM ie_all_sources ias
+       JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
+      GROUP BY ias.cmt_id, c.donor_name_normalized
+      ORDER BY ias.cmt_id, amount DESC`,
+    [politicianId]
+  );
+
+  // Group top donors by cmt_id
+  const donorsByCmtId = new Map<string, Array<{ donor_name: string; amount: number }>>();
+  for (const row of topDonorsResult.rows) {
+    const existing = donorsByCmtId.get(row.cmt_id) ?? [];
+    if (existing.length < 10) {
+      existing.push({
+        donor_name: row.donor_name ?? '',
+        amount: Number(row.amount),
+      });
+      donorsByCmtId.set(row.cmt_id, existing);
+    }
+  }
+
+  const committees: OutsideSpendingCommittee[] = totalsResult.rows.map((row) => ({
+    cmt_id: row.cmt_id,
+    cmt_nm: row.cmt_nm ?? '',
+    total_amount: Number(row.total_amount),
+    contribution_count: Number(row.contribution_count),
+    top_donors: donorsByCmtId.get(row.cmt_id) ?? [],
+  }));
+
+  return { committees };
+}
+
+// ---------------------------------------------------------------------------
+// getCouncilVotes — LA City Council voting record for a politician
+// ---------------------------------------------------------------------------
+
+export interface CouncilVote {
+  vote_date: string;           // YYYY-MM-DD
+  council_file_number: string | null;
+  description: string;
+  vote: 'YES' | 'NO' | 'ABSENT' | 'ABSTAIN' | 'RECUSE' | 'PRESENT';
+  meeting_type: string;
+  item_number: string;
+}
+
+export interface CouncilVotesResponse {
+  politician_id: string;
+  votes: CouncilVote[];
+  total: number;
+  yes_total: number;
+  no_total: number;
+  absent_total: number;
+}
+
+/**
+ * getCouncilVotes returns recent LA City Council vote records for a politician.
+ * Reads from meetings.la_council_votes — up to 100 most recent, most recent first.
+ */
+export async function getCouncilVotes(
+  politicianId: string,
+  options: { limit?: number; offset?: number; voteFilter?: string } = {}
+): Promise<CouncilVotesResponse> {
+  const limit = Math.min(options.limit ?? 50, 100);
+  const offset = options.offset ?? 0;
+  const voteFilter = options.voteFilter && options.voteFilter !== 'ALL' ? options.voteFilter : null;
+
+  const countResult = await pool.query<{ cnt: string; yes_cnt: string; no_cnt: string; absent_cnt: string }>(
+    `SELECT
+       COUNT(*) AS cnt,
+       COUNT(*) FILTER (WHERE vote = 'YES') AS yes_cnt,
+       COUNT(*) FILTER (WHERE vote = 'NO') AS no_cnt,
+       COUNT(*) FILTER (WHERE vote = 'ABSENT') AS absent_cnt
+     FROM meetings.la_council_votes WHERE politician_id = $1`,
+    [politicianId]
+  );
+  const total = Number(countResult.rows[0]?.cnt ?? 0);
+  const yes_total = Number(countResult.rows[0]?.yes_cnt ?? 0);
+  const no_total = Number(countResult.rows[0]?.no_cnt ?? 0);
+  const absent_total = Number(countResult.rows[0]?.absent_cnt ?? 0);
+
+  if (total === 0) {
+    return { politician_id: politicianId, votes: [], total: 0, yes_total: 0, no_total: 0, absent_total: 0 };
+  }
+
+  const result = await pool.query<{
+    vote_date: string;
+    council_file_number: string | null;
+    agenda_description: string | null;
+    vote: string;
+    meeting_type: string | null;
+    item_number: string | null;
+  }>(
+    `SELECT vote_date, council_file_number, agenda_description, vote, meeting_type, item_number
+     FROM meetings.la_council_votes
+     WHERE politician_id = $1 AND ($2::text IS NULL OR vote = $2::text)
+     ORDER BY vote_date DESC, item_number ASC
+     LIMIT $3 OFFSET $4`,
+    [politicianId, voteFilter, limit, offset]
+  );
+
+  const votes: CouncilVote[] = result.rows.map(r => ({
+    vote_date: r.vote_date,
+    council_file_number: r.council_file_number ?? null,
+    description: r.agenda_description ?? '',
+    vote: r.vote as CouncilVote['vote'],
+    meeting_type: r.meeting_type ?? '',
+    item_number: r.item_number ?? '',
+  }));
+
+  return { politician_id: politicianId, votes, total, yes_total, no_total, absent_total };
 }

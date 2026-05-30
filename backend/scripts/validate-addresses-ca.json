@@ -1,0 +1,223 @@
+{
+  "state": "CA",
+  "fips": "06",
+  "description": "California / LA County validation addresses — Phase 38 baseline. Required-subset semantics: every listed tier must be present (min:1); extra tiers are ignored. No behavior change from validate_la_county.py.",
+  "addresses": [
+    {
+      "label": "Pasadena City Hall (incorporated)",
+      "lat": 34.1478,
+      "lng": -118.1445,
+      "notes": "6-tier: mid-size city with wards (Supervisor D5 Barger)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "East LA (unincorporated)",
+      "lat": 34.0239,
+      "lng": -118.1726,
+      "notes": "5-tier: no city — unincorporated (Supervisor D1 Solis)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Pasadena/Arcadia boundary edge",
+      "lat": 34.1161,
+      "lng": -118.1003,
+      "notes": "Boundary edge: at least federal+state — must not return empty",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 }
+      }
+    },
+    {
+      "label": "LA City Hall (Downtown)",
+      "lat": 34.0537,
+      "lng": -118.2427,
+      "notes": "LA City council + mayor + LAUSD (7 board members expected)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Long Beach City Hall",
+      "lat": 33.7701,
+      "lng": -118.1937,
+      "notes": "Long Beach council wards (imported Phase 35)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Glendale City Hall",
+      "lat": 34.1425,
+      "lng": -118.2551,
+      "notes": "Glendale USD school board check",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Compton City Hall",
+      "lat": 33.8958,
+      "lng": -118.2201,
+      "notes": "South county: Supervisor D2 (Mitchell)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Lancaster City Hall",
+      "lat": 34.6987,
+      "lng": -118.1365,
+      "notes": "North county: Supervisor D5 (Barger)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Malibu City Hall",
+      "lat": 34.0319,
+      "lng": -118.6896,
+      "notes": "West county: small city",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Inglewood City Hall",
+      "lat": 33.9617,
+      "lng": -118.3531,
+      "notes": "Inglewood (geometry_dissolved — Phase 35)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Torrance City Hall",
+      "lat": 33.8361,
+      "lng": -118.3406,
+      "notes": "Torrance council wards (imported Phase 35)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "West Covina City Hall",
+      "lat": 34.0686,
+      "lng": -117.939,
+      "notes": "East county: West Covina council wards (Phase 35)",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "city":           { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Willowbrook (unincorporated)",
+      "lat": 33.9158,
+      "lng": -118.2226,
+      "notes": "Unincorporated: no city tier expected",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Santa Clarita City Hall",
+      "lat": 34.3917,
+      "lng": -118.5426,
+      "notes": "Gap city: no council boundaries (Phase 35) — city tier absent expected",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Altadena (unincorporated)",
+      "lat": 34.19,
+      "lng": -118.132,
+      "notes": "Unincorporated near Pasadena — no city tier expected",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    },
+    {
+      "label": "Marina del Rey (unincorporated)",
+      "lat": 33.9804,
+      "lng": -118.4517,
+      "notes": "Unincorporated coastal — no city tier expected",
+      "assertions": {
+        "federal":        { "min": 1 },
+        "state_senate":   { "min": 1 },
+        "state_assembly": { "min": 1 },
+        "county":         { "min": 1 },
+        "school":         { "min": 1 }
+      }
+    }
+  ]
+}

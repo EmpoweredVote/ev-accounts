@@ -11,7 +11,11 @@ export default defineConfig({
     include: [
       '../tests/**/*.{test,spec}.{ts,js}',
       'src/**/*.{test,spec}.{ts,js}',
+      'test/**/*.{test,spec}.{ts,js}',
     ],
+    testTimeout: 30000,
+    hookTimeout: 30000,
+    pool: 'forks',
   },
   resolve: {
     alias: {

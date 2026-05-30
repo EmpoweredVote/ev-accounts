@@ -128,9 +128,9 @@ const TARGET_POLITICIANS: TargetPolitician[] = [
     office: 'CD-3',
   },
   {
-    // DB full_name: "Katy Young Yaroslavsky"
+    // DB full_name: "Katy Yaroslavsky" (not "Katy Young Yaroslavsky" — middle name absent)
     // Use 'katy' + 'yaroslavsky' to exclude Zev Yaroslavsky (former Supervisor) committees
-    fullName: 'Katy Young Yaroslavsky',
+    fullName: 'Katy Yaroslavsky',
     searchTerms: ['katy', 'yaroslavsky'],
     requireAllTerms: true,
     office: 'CD-5',

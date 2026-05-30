@@ -1,5 +1,32 @@
 # Project Milestones: Empowered Accounts
 
+## v2.2 TIGER District Geofencing (Shipped: 2026-05-10)
+
+**Delivered:** Full CA TIGER district geofencing pipeline — 1,147 polygon layers imported (assembly, senate, US house, school districts), cached per-user in PostGIS, with a zero-live-lookup Path 0 fast path in the representatives feed, a new Profile Location tab, and an operator recache CLI for redistricting events.
+
+**Phases completed:** 69–71 (8 plans total)
+
+**Key accomplishments:**
+
+- TIGER 2024 schema — `essentials.geo_districts` (GIST-indexed point-in-polygon table with layer discriminator) + `connect.user_districts` (per-user cache), `resolve_user_districts` + `cache_user_districts` RPCs (SECURITY DEFINER, SET search_path='', coordinates never leave Postgres)
+- Legislative import — 172 CA polygons: 80 CA Assembly, 40 CA Senate, 52 US House (CD119); `tiger_geoid` backfilled on all existing `essentials.districts` records for 3 CA layers
+- Path 0 in `GET /representatives/me` — joins `connect.user_districts → essentials.districts` on `(tiger_geoid, district_type)` with no live PostGIS lookup; pre-Phase-70 users self-promote via Path 1.5 fire-and-forget backfill
+- Geofencing fail-open into both location-write flows — Connected `POST /set-location` and Inform `PATCH /location-hint` both call `cache_user_districts`; `GET /api/account/districts` endpoint live for both tiers
+- School district import — 975 CA polygons (346 unified, 517 elementary, 112 secondary); migration 093 extends default p_layers to 6 layers; `GET /api/account/school-district` endpoint
+- Profile Location tab — tier-aware tab on `login.empowered.vote/profile`: `SchoolDistrictSection` (Google search links), City Council display (outside TIGER guard), recalibration controls; 6-layer caching via migration 094 overload fix
+
+**Stats:**
+
+- 49 files changed, ~16,450 insertions, 37 deletions
+- 3 phases, 8 plans, 14/14 requirements (GEO-01–14)
+- 2 days (2026-05-09 → 2026-05-10)
+
+**Git range:** `e0b3c58` → `e796e28`
+
+**What's next:** v2.0 completion (Phases 64–65) and v2.3 planning — run `/gsd:new-milestone`
+
+---
+
 ## v1.9 Roles (Shipped: 2026-04-06)
 
 **Delivered:** Delegated authority system — geo-scoped and resource-scoped roles, a full audit trail, role-gated contributor endpoints for compass stances / campaign management / essentials editing, and a contributor portal at `app.empowered.vote/contributor`.

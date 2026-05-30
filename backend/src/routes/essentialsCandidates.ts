@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { optionalAuth } from '../middleware/auth.js';
 import { getCandidatesByZip } from '../lib/candidateService.js';
-import { getRepresentativesByAddress } from '../lib/essentialsService.js';
+import { getRepresentativesByAddress, getPoliticiansFlatList } from '../lib/essentialsService.js';
 import type { Request, Response } from 'express';
 
 /**
@@ -20,6 +20,38 @@ import type { Request, Response } from 'express';
 const router = Router();
 
 const ZIP_REGEX = /^\d{5}(-\d{4})?$/;
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/candidates/search-by-name?q=...
+// Auth: optional — public endpoint, public data
+// Returns up to 20 politicians matching q on full_name/first_name/last_name (ILIKE).
+// Requires q >= 2 characters; returns 422 for shorter queries.
+// IMPORTANT: Must be registered BEFORE GET /:zip or the ZIP wildcard swallows it.
+// ---------------------------------------------------------------------------
+
+router.get('/search-by-name', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const qRaw = (req.query.q ?? '') as string;
+    const q = typeof qRaw === 'string' ? qRaw.trim() : '';
+
+    if (q.length < 2) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: 'q must be at least 2 characters',
+      });
+      return;
+    }
+
+    // Cap at 20 results — this is a typeahead, not pagination.
+    // Pass true for includeCandidates so challengers appear alongside incumbents.
+    const results = await getPoliticiansFlatList(true, { q, limit: 20 });
+    res.setHeader('Cache-Control', 'public, max-age=30');
+    res.status(200).json(results);
+  } catch (err) {
+    console.error('[GET /essentials/candidates/search-by-name] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // GET /api/essentials/candidates/:zip
@@ -76,7 +108,14 @@ router.post('/search', optionalAuth, async (req: Request, res: Response): Promis
     const dataStatus = result.politicians.length === 0 ? 'no-geofence-data' : 'fresh';
     res.setHeader('X-Data-Status', dataStatus);
     res.setHeader('X-Formatted-Address', result.matchedAddress);
-    res.status(200).json(result.politicians);
+    // SCHEMA-03 (Phase 132 D-06): wrap response so tribal_land block reaches the frontend.
+    // Backward-compatible — clients that previously read the bare politicians array can now
+    // read response.politicians instead. tribal_land is always present (on_reservation:false
+    // for non-tribal addresses) so consumers do not need to null-check.
+    res.status(200).json({
+      politicians: result.politicians,
+      tribal_land: result.tribal_land ?? { on_reservation: false },
+    });
   } catch (err: unknown) {
     const code = (err as { code?: string }).code;
     if (code === 'ADDRESS_NOT_FOUND' || code === 'PO_BOX_REJECTED') {

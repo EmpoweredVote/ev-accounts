@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { apiFetch } from '../lib/api';
 import { useTheme } from '../hooks/useTheme';
+import ConnectedExplainerModal from '../components/ConnectedExplainerModal';
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -17,6 +18,7 @@ interface MeConnectedProfile {
 }
 interface MeInformProfile {
   yellow_gem_balance: number;
+  last_essentials_location: unknown; // raw JSONB — may be null or an object whose shape is defined by the Essentials app
 }
 interface MeResponse {
   id: string;
@@ -27,7 +29,34 @@ interface MeResponse {
   location_consent: boolean;
   connected_profile?: MeConnectedProfile;
   inform_profile?: MeInformProfile | null;
+  jurisdiction?: {
+    state: string | null;
+    county: string | null;
+    congressional_district: string | null;
+    state_senate_district: string | null;
+    state_house_district: string | null;
+    city_council_district: string | null;
+    city_council_district_name: string | null;
+    school_district: string | null;
+  } | null;
 }
+interface SchoolDistrictEntry {
+  name: string | null;
+  geoid: string;
+}
+
+interface SchoolDistrictData {
+  school_unified:    SchoolDistrictEntry | null;
+  school_elementary: SchoolDistrictEntry | null;
+  school_secondary:  SchoolDistrictEntry | null;
+}
+
+interface DistrictsData {
+  ca_assembly: { district_number: string; name: string | null; tiger_geoid: string } | null;
+  ca_senate:   { district_number: string; name: string | null; tiger_geoid: string } | null;
+  us_house:    { district_number: string; name: string | null; tiger_geoid: string } | null;
+}
+
 interface InviteeEntry {
   status: 'claimed' | 'pending';
   code: string;
@@ -86,11 +115,32 @@ interface Feature {
   statsKey?: 'vr' | 'election' | 'readrank' | 'compass';
 }
 
-const NEXT_ELECTION_DATE = new Date('2026-06-02');
-const NEXT_ELECTION_LABEL = 'June 2 Primary';
+// Each entry matches when ANY of the user's jurisdiction geo IDs appears in geoIds.
+// geoIds can be state abbreviations (e.g. 'CA'), county FIPS codes (e.g. '18105'),
+// or any other geo ID from the jurisdiction object.
+// To add a new election: append an entry. Entries are hidden once days reaches 0.
+const UPCOMING_ELECTIONS: { date: Date; label: string; geoIds: string[] }[] = [
+  { date: new Date('2026-05-05'), label: 'May 5 Primary',  geoIds: ['18105'] },       // Monroe County, IN
+  { date: new Date('2026-06-02'), label: 'June 2 Primary', geoIds: ['CA'] },           // California
+];
 
-function daysUntilElection(): number {
-  return Math.max(0, Math.ceil((NEXT_ELECTION_DATE.getTime() - Date.now()) / 86400000));
+type MeJurisdiction = NonNullable<MeResponse['jurisdiction']>;
+
+function electionForJurisdiction(j: MeJurisdiction | null | undefined): { days: number; label: string } | null {
+  if (!j) return null;
+  const userIds = new Set(
+    [j.state?.toUpperCase(), j.county, j.congressional_district,
+     j.state_senate_district, j.state_house_district,
+     j.city_council_district, j.school_district]
+    .filter(Boolean) as string[]
+  );
+  const now = Date.now();
+  const match = UPCOMING_ELECTIONS
+    .filter(e => e.geoIds.some(id => userIds.has(id)))
+    .map(e => ({ label: e.label, days: Math.max(0, Math.ceil((e.date.getTime() - now) / 86400000)) }))
+    .filter(e => e.days > 0)
+    .sort((a, b) => a.days - b.days)[0];
+  return match ?? null;
 }
 
 const INFORM_FEATURES: Feature[] = [
@@ -170,12 +220,15 @@ interface FeatureTileProps {
   vrPercent: number;
   readRankStats: ReadRankStats | null;
   compassStats: CompassStats | null;
+  jurisdiction?: MeJurisdiction | null;
+  lastEssentialsLocation?: unknown;
+  locked?: boolean;
 }
 
-function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats }: FeatureTileProps) {
-  const electionDays = feature.statsKey === 'election' ? daysUntilElection() : 0;
+function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, readRankStats, compassStats, jurisdiction, lastEssentialsLocation, locked }: FeatureTileProps) {
+  const election = feature.statsKey === 'election' ? electionForJurisdiction(jurisdiction) : null;
   const showVr = feature.statsKey === 'vr' && vr !== null;
-  const showElection = feature.statsKey === 'election';
+  const showElection = election !== null;
   const showReadRank = feature.statsKey === 'readrank' && readRankStats !== null;
   const showCompass = feature.statsKey === 'compass' && compassStats !== null;
   const rrPct = readRankStats && readRankStats.total > 0
@@ -185,23 +238,51 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
     ? Math.round((compassStats.answered / compassStats.total) * 100)
     : 0;
 
+  const locationLabel = (() => {
+    if (feature.statsKey !== 'election') return null;
+    if (!lastEssentialsLocation) return null;
+    const loc = lastEssentialsLocation as Record<string, unknown>;
+    return (typeof loc.city === 'string' && loc.city)
+      || (typeof loc.name === 'string' && loc.name)
+      || (typeof loc.label === 'string' && loc.label)
+      || 'Location saved';
+  })();
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
+      className={`relative bg-gray-50 dark:bg-gray-800/60 rounded-xl border border-gray-200 dark:border-gray-700 p-3 flex flex-col gap-1.5 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors min-h-[13rem] ${borderHover}`}
     >
+      {locked && (
+        <span
+          className="absolute top-2 right-2 inline-flex items-center justify-center w-5 h-5 rounded-full bg-ev-yellow/20 dark:bg-ev-yellow/15 border border-ev-yellow/50 text-yellow-700 dark:text-ev-yellow"
+          aria-label="Observe access only — Connect your account to participate"
+          title="Observe access only"
+        >
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="4" y="11" width="16" height="10" rx="2" />
+            <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+          </svg>
+        </span>
+      )}
       <span className={`w-2 h-2 rounded-full flex-shrink-0 ${dotClass}`} />
       <p className="text-sm font-semibold text-gray-900 dark:text-white leading-snug">{feature.name}</p>
       <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">{feature.description}</p>
 
-      {(showVr || showElection || showReadRank || showCompass) && (
+      {(showVr || showElection || showReadRank || showCompass || (!showElection && locationLabel)) && (
         <div className="mt-auto pt-2 border-t border-gray-200 dark:border-gray-700/60 space-y-1">
-          {showElection && (
+          {showElection && election && (
             <p className="text-xs text-gray-600 dark:text-gray-400">
-              <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{electionDays}</span>
-              {' '}days until {NEXT_ELECTION_LABEL}
+              <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{election.days}</span>
+              {' '}days until {election.label}
+            </p>
+          )}
+          {!showElection && locationLabel && (
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              <span className="text-gray-900 dark:text-white font-semibold">{locationLabel}</span>
+              {' '}— last searched
             </p>
           )}
           {showVr && (
@@ -229,7 +310,7 @@ function FeatureTile({ feature, href, dotClass, borderHover, vr, vrPercent, read
           {showCompass && compassStats && (
             <>
               <p className="text-xs text-gray-400">
-                <span className="text-white font-semibold tabular-nums">{compassStats.answered}</span>
+                <span className="text-gray-900 dark:text-white font-semibold tabular-nums">{compassStats.answered}</span>
                 <span> / {compassStats.total} stances calibrated</span>
               </p>
               <div className="h-1 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
@@ -402,6 +483,61 @@ function PostHistory() {
   );
 }
 
+// ── SchoolDistrictSection ─────────────────────────────────────────────────────
+
+function SchoolDistrictSection({ data }: { data: SchoolDistrictData | null }) {
+  if (!data) return null;
+  const { school_unified, school_elementary, school_secondary } = data;
+  if (!school_unified && !school_elementary && !school_secondary) return null;
+
+  const makeLink = (name: string | null, geoid: string) => {
+    const label = name ?? `School District ${geoid}`;
+    const url = `https://www.google.com/search?q=${encodeURIComponent(label)}`;
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-ev-teal dark:text-ev-teal-light hover:underline text-sm"
+      >
+        {label}
+      </a>
+    );
+  };
+
+  // CONTEXT decision: unified district takes precedence — single combined entry
+  if (school_unified) {
+    return (
+      <div>
+        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">School District</p>
+        {makeLink(school_unified.name, school_unified.geoid)}
+      </div>
+    );
+  }
+
+  // Elementary + secondary (no unified) — two labeled sub-entries
+  return (
+    <div className="space-y-1.5">
+      {school_elementary && (
+        <div>
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+            Elementary School District
+          </p>
+          {makeLink(school_elementary.name, school_elementary.geoid)}
+        </div>
+      )}
+      {school_secondary && (
+        <div>
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400">
+            Secondary School District
+          </p>
+          {makeLink(school_secondary.name, school_secondary.geoid)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ── Page ──────────────────────────────────────────────────────────────────────
 
 export default function ProfilePage() {
@@ -418,7 +554,7 @@ export default function ProfilePage() {
   const [compassStats, setCompassStats] = useState<CompassStats | null>(null);
   const [readRankStats, setReadRankStats] = useState<ReadRankStats | null>(null);
   const [roles, setRoles] = useState<UserRoleGrant[]>([]);
-  const [activeTab, setActiveTab] = useState<'profile' | 'referrals' | 'posts' | 'contributor'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'location' | 'referrals' | 'posts' | 'contributor'>('profile');
 
   const [city, setCity] = useState<string | null>(null);
   const [address, setAddress] = useState('');
@@ -426,6 +562,9 @@ export default function ProfilePage() {
   const [locationSuccess, setLocationSuccess] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
   const [showLocationForm, setShowLocationForm] = useState(false);
+  const [explainerOpen, setExplainerOpen] = useState(false);
+  const [districts, setDistricts] = useState<DistrictsData | null>(null);
+  const [schoolDistrict, setSchoolDistrict] = useState<SchoolDistrictData | null>(null);
 
   useEffect(() => {
     apiFetch<MeResponse>('/account/me')
@@ -436,11 +575,28 @@ export default function ProfilePage() {
             .then((j) => setCity(j.jurisdiction.city))
             .catch(() => {});
         }
+        apiFetch<DistrictsData>('/account/districts')
+          .then(setDistricts)
+          .catch(() => {}); // 204 throws SyntaxError (no body) — leaves state null, section hidden
+        apiFetch<SchoolDistrictData>('/account/school-district')
+          .then(setSchoolDistrict)
+          .catch(() => {}); // 204 throws SyntaxError (no body) — leaves state null, section hidden
         if (data.connected_profile) {
           apiFetch<InviteesData>('/invites/my-invitees').then(setInviteesData).catch(() => {});
           apiFetch<{ roles: UserRoleGrant[] }>('/roles/me')
             .then((r) => setRoles(r.roles))
             .catch(() => {});
+          const token = useAuthStore.getState().accessToken;
+          if (token && data.id) {
+            fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
+              headers: { Authorization: `Bearer ${token}` },
+            })
+              .then((r) => r.ok ? r.json() as Promise<ReadRankStats> : null)
+              .then((d) => { if (d && typeof d.ranked === 'number') setReadRankStats(d); })
+              .catch(() => {});
+          }
+        }
+        if (data.connected_profile || data.tier === 'inform') {
           Promise.all([
             apiFetch<unknown>('/compass/answers'),
             apiFetch<unknown>('/compass/topics'),
@@ -453,15 +609,6 @@ export default function ProfilePage() {
               : ((topicsData as { topics?: unknown[] })?.topics?.length ?? 21);
             setCompassStats({ answered, total });
           }).catch(() => {});
-          const token = useAuthStore.getState().accessToken;
-          if (token && data.id) {
-            fetch(`https://readrank.empowered.vote/api/users/${data.id}/stats`, {
-              headers: { Authorization: `Bearer ${token}` },
-            })
-              .then((r) => r.ok ? r.json() as Promise<ReadRankStats> : null)
-              .then((d) => { if (d && typeof d.ranked === 'number') setReadRankStats(d); })
-              .catch(() => {});
-          }
         }
       })
       .catch(() => setProfileError(true));
@@ -489,12 +636,15 @@ export default function ProfilePage() {
     try {
       const result = await apiFetch<{ jurisdiction: { city: string | null } }>('/connect/set-location', {
         method: 'POST',
-        body: JSON.stringify({ address: address.trim() }),
+        body: JSON.stringify({ address: address.trim(), force: true }),
       });
       setCity(result.jurisdiction.city);
       setLocationSuccess(true);
       setAddress('');
       setShowLocationForm(false);
+      // Refetch districts + school district after location update
+      apiFetch<DistrictsData>('/account/districts').then(setDistricts).catch(() => {});
+      apiFetch<SchoolDistrictData>('/account/school-district').then(setSchoolDistrict).catch(() => {});
     } catch (err: unknown) {
       setLocationError((err instanceof Error ? err.message : null) || 'Failed to set location');
     } finally {
@@ -529,7 +679,7 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
   const displayName = profile?.display_name ?? user?.email?.split('@')[0] ?? 'Member';
 
-  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats };
+  const sharedTileProps = { vr: cp?.verification_rating ?? null, vrPercent, readRankStats, compassStats, jurisdiction: profile?.jurisdiction ?? null, lastEssentialsLocation: profile?.inform_profile?.last_essentials_location ?? null };
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 transition-colors duration-200">
@@ -565,7 +715,8 @@ export default function ProfilePage() {
           {/* Tab bar — tabs left, Connected Account pill right */}
           <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-800 mb-5">
             <nav className="flex gap-1">
-              {(['profile', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
+              {(['profile', 'location', 'referrals', 'posts', 'contributor'] as const).map((tab) => {
+                if (tab === 'location' && !cp && !profile.inform_profile?.last_essentials_location) return null;
                 if ((tab === 'referrals' || tab === 'posts' || tab === 'contributor') && !cp) return null;
                 const isActive = activeTab === tab;
                 return (
@@ -580,20 +731,34 @@ export default function ProfilePage() {
                         : 'border-transparent text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
                     }`}
                   >
-                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : 'Profile'}
+                    {tab === 'referrals' ? 'Referrals' : tab === 'posts' ? 'Posts' : tab === 'contributor' ? 'Contributor' : tab === 'location' ? 'Location' : 'Profile'}
                   </button>
                 );
               })}
             </nav>
-            <span className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px ${
-              profile.tier === 'inform'
-                ? 'border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow'
-                : profile.tier === 'empowered'
-                ? 'border-ev-red/40 text-ev-red'
-                : 'border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-400'
-            }`}>
-              {profile.tier === 'inform' ? 'Inform Account' : profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
-            </span>
+            {profile.tier === 'inform' ? (
+              <button
+                type="button"
+                onClick={() => setExplainerOpen(true)}
+                className="border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer bg-ev-yellow border-ev-yellow text-ev-black dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow hover:bg-ev-yellow/90 dark:hover:bg-ev-yellow/20 transition-colors"
+                aria-label="Learn about Connected Accounts"
+              >
+                Inform Account
+              </button>
+            ) : (
+              <button
+                type="button"
+                onClick={() => setExplainerOpen(true)}
+                className={`border text-xs font-semibold px-3 py-1 rounded-full flex-shrink-0 mb-px cursor-pointer transition-colors ${
+                  profile.tier === 'empowered'
+                    ? 'border-ev-red/40 text-ev-red hover:bg-ev-red/10'
+                    : 'border-ev-blue/40 text-ev-blue dark:border-ev-blue/30 dark:text-ev-blue/80 hover:bg-ev-blue/10'
+                }`}
+                aria-label="Learn about account tiers"
+              >
+                {profile.tier === 'empowered' ? 'Empowered Account' : 'Connected Account'}
+              </button>
+            )}
           </div>
 
           {/* ── PROFILE TAB ─────────────────────────────────────────────────── */}
@@ -611,13 +776,15 @@ export default function ProfilePage() {
                   {cp && xp ? (
                     <div className="flex items-center justify-between">
                       <span className="bg-ev-blue text-white text-xs font-bold px-2.5 py-1 rounded-full">Level {xp.level}</span>
-                      <div className="flex items-center gap-3">
-                        <GemPip count={cp.gems.yellow} tooltip="Yellow Gems validate facts." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />
-                        <GemPip count={cp.gems.blue} tooltip="Blue Gems to vote your values." gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />
-                        <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />
-                      </div>
+                      {(cp.gems.yellow > 0 || cp.gems.blue > 0 || cp.gems.red > 0) && (
+                        <div className="flex items-center gap-3">
+                          {cp.gems.yellow > 0 && <GemPip count={cp.gems.yellow} tooltip="Yellow Gems validate facts." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FFE566 0%, #FFB800 55%, #E07000 100%)', boxShadow: '0 0 8px rgba(255,184,0,0.4)' }} />}
+                          {cp.gems.blue > 0 && <GemPip count={cp.gems.blue} tooltip="Blue Gems to vote your values." gemStyle={{ borderRadius: '50%', background: 'radial-gradient(circle at 35% 30%, #BFDBFE 0%, #60A5FA 35%, #3B82F6 65%, #1E40AF 100%)', boxShadow: '0 0 8px rgba(59,130,246,0.4)' }} />}
+                          {cp.gems.red > 0 && <GemPip count={cp.gems.red} tooltip="Red Gems amplify your impact." gemStyle={{ borderRadius: '4px', background: 'linear-gradient(145deg, #FF9A8B 0%, #FF5740 50%, #C41E00 100%)', boxShadow: '0 0 8px rgba(255,87,64,0.4)', transform: 'rotate(45deg)' }} />}
+                        </div>
+                      )}
                     </div>
-                  ) : profile.tier === 'inform' && profile.inform_profile != null ? (
+                  ) : profile.tier === 'inform' && profile.inform_profile != null && profile.inform_profile.yellow_gem_balance > 0 ? (
                     <GemPip
                       count={profile.inform_profile.yellow_gem_balance}
                       tooltip="Yellow Gems amplify ideas."
@@ -646,7 +813,7 @@ export default function ProfilePage() {
                 <h2 className="text-sm font-semibold text-gray-900 dark:text-white">Empowered Vote Features</h2>
 
                 {/* Inform — always full access */}
-                <div className="rounded-xl bg-ev-inform-section/20 dark:bg-ev-inform-section/8 p-3">
+                <div className="rounded-xl bg-ev-inform-section/40 dark:bg-ev-inform-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-yellow flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-ev-yellow uppercase tracking-widest">Inform</span>
@@ -666,12 +833,12 @@ export default function ProfilePage() {
                 </div>
 
                 {/* Connect — full access for Connected+, observe for Inform */}
-                <div className="rounded-xl bg-ev-connect-section/20 dark:bg-ev-connect-section/8 p-3">
+                <div className="rounded-xl bg-ev-connect-section/40 dark:bg-ev-connect-section/8 p-3">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="w-2 h-2 rounded-full bg-ev-blue flex-shrink-0" />
                     <span className="text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-widest">Connect</span>
                     {!cp && (
-                      <span className="text-[10px] font-semibold border px-2 py-0.5 rounded-full border-ev-yellow bg-ev-yellow/15 text-yellow-700 dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow">Observe Access</span>
+                      <span className="text-[10px] font-semibold border px-2 py-0.5 rounded-full bg-ev-yellow border-ev-yellow text-ev-black dark:bg-ev-yellow/10 dark:border-ev-yellow/50 dark:text-ev-yellow">Observe Access</span>
                     )}
                   </div>
                   {!cp && (
@@ -685,6 +852,7 @@ export default function ProfilePage() {
                       href={accessToken ? `${CONNECT_FEATURES[0].href}#access_token=${accessToken}` : CONNECT_FEATURES[0].href}
                       dotClass="bg-ev-blue"
                       borderHover="hover:border-ev-blue/50"
+                      locked={!cp}
                       {...sharedTileProps}
                     />
                     {cp ? (
@@ -706,6 +874,7 @@ export default function ProfilePage() {
                         href={accessToken ? `https://civicspaces.empowered.vote#access_token=${accessToken}` : 'https://civicspaces.empowered.vote'}
                         dotClass="bg-ev-blue"
                         borderHover="hover:border-ev-blue/50"
+                        locked={!cp}
                         {...sharedTileProps}
                       />
                     )}
@@ -716,6 +885,7 @@ export default function ProfilePage() {
                         href={accessToken ? `${f.href}#access_token=${accessToken}` : f.href}
                         dotClass="bg-ev-blue"
                         borderHover="hover:border-ev-blue/50"
+                        locked={!cp}
                         {...sharedTileProps}
                       />
                     ))}
@@ -723,6 +893,115 @@ export default function ProfilePage() {
                 </div>
               </div>
 
+              {profile.tier === 'inform' && (
+                <div className="text-center py-4 space-y-1.5">
+                  <p className="text-xs text-gray-500 dark:text-gray-600">
+                    Ready to participate? Connect your account when you are —
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setExplainerOpen(true)}
+                    className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline font-medium"
+                  >
+                    Learn about Connected Accounts →
+                  </button>
+                </div>
+              )}
+
+            </div>
+          )}
+
+          {/* ── LOCATION TAB ─────────────────────────────────────────────────── */}
+          {activeTab === 'location' && (
+            <div className="space-y-6 max-w-lg">
+              {/* Legislative districts */}
+              {districts && (
+                <div className="space-y-3">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">Your districts</h3>
+                  <div className="space-y-2">
+                    {districts.ca_assembly && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">CA Assembly</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.ca_assembly.district_number}
+                          {districts.ca_assembly.name ? ` — ${districts.ca_assembly.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                    {districts.ca_senate && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">CA Senate</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.ca_senate.district_number}
+                          {districts.ca_senate.name ? ` — ${districts.ca_senate.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                    {districts.us_house && (
+                      <div>
+                        <p className="text-xs font-medium text-gray-500 dark:text-gray-400">US House</p>
+                        <p className="text-sm text-gray-800 dark:text-gray-200">
+                          District {districts.us_house.district_number}
+                          {districts.us_house.name ? ` — ${districts.us_house.name}` : ''}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* City Council — sourced from /account/me jurisdiction, not TIGER cache */}
+              {profile.jurisdiction?.city_council_district_name && (
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">City Council</h3>
+                  <p className="text-sm text-gray-800 dark:text-gray-200 mt-1">
+                    {profile.jurisdiction.city_council_district_name}
+                  </p>
+                </div>
+              )}
+
+              {/* School district — hidden entirely when no school rows (SchoolDistrictSection returns null) */}
+              <SchoolDistrictSection data={schoolDistrict} />
+
+              {/* Saved location summary */}
+              {(city || profile.inform_profile?.last_essentials_location != null) && (
+                <div>
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1">Saved location</h3>
+                  {city && (
+                    <p className="text-sm text-gray-800 dark:text-gray-200">{city}</p>
+                  )}
+                  {profile.inform_profile?.last_essentials_location != null && !city && (
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Last Essentials search location on file</p>
+                  )}
+                </div>
+              )}
+
+              {/* Location recalibration — Connected tier only */}
+              {cp && (
+                <div className="pt-4 border-t border-gray-200 dark:border-gray-800">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">Update your location</h3>
+                  <form onSubmit={handleSetLocation} className="space-y-1.5">
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        value={address}
+                        onChange={(e) => setAddress(e.target.value)}
+                        placeholder="Enter your address"
+                        className="flex-1 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-ev-teal-light"
+                      />
+                      <button
+                        type="submit"
+                        disabled={address.trim().length === 0 || locationLoading}
+                        className="bg-ev-teal-light text-white text-sm font-medium px-4 py-2 rounded-lg disabled:opacity-50 hover:bg-ev-teal transition-colors"
+                      >
+                        {locationLoading ? 'Setting…' : 'Set'}
+                      </button>
+                    </div>
+                    {locationSuccess && <p className="text-xs text-green-400 mt-1.5">Updated!</p>}
+                    {locationError && <p className="text-xs text-ev-red mt-1.5">{locationError}</p>}
+                  </form>
+                </div>
+              )}
             </div>
           )}
 
@@ -879,6 +1158,8 @@ export default function ProfilePage() {
 
         </div>
       )}
+
+      <ConnectedExplainerModal open={explainerOpen} onClose={() => setExplainerOpen(false)} tier={profile?.tier === 'connected' ? 'connect' : profile?.tier === 'empowered' ? 'empower' : profile?.tier} />
     </div>
   );
 }

@@ -37,6 +37,7 @@ import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
+import councilFilesRouter from './routes/councilFiles.js';
 import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import { requireAuth } from './middleware/auth.js';
 import { requireAdmin } from './middleware/requireAdmin.js';
@@ -44,6 +45,7 @@ import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import feedbackRouter from './routes/feedback.js';
+import eventsRouter from './routes/events.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -147,10 +149,12 @@ app.use('/api/campaign-finance', campaignFinanceAdminRouter);
 // (no /api/campaign-finance prefix). Auth via X-Admin-Token (not JWT).
 // Used by SQS workers, EventBridge, curl, and manual one-off triggers.
 app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
+app.use('/api/council-files', councilFilesRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
 app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
+app.use('/api/events', eventsRouter);   // CTA event telemetry
 
 export { app }; // For testing
 

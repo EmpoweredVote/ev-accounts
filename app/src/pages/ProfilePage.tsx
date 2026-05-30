@@ -2,6 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { apiFetch } from '../lib/api';
 import { AppNav } from '../components/AppNav';
+import { useTheme } from '../hooks/useTheme';
 
 interface XP {
   total: number;
@@ -49,6 +50,30 @@ function titleCase(str: string): string {
     .join(' ');
 }
 
+function SunIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
+}
+
 function YellowGem({ count }: { count: number }) {
   return (
     <div className="flex flex-col items-center gap-3">
@@ -59,8 +84,8 @@ function YellowGem({ count }: { count: number }) {
           boxShadow: '0 0 28px rgba(255, 184, 0, 0.45)',
         }}
       />
-      <span className="text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
-      <span className="text-gray-400 text-xs">Research</span>
+      <span className="text-gray-900 dark:text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
+      <span className="text-gray-500 dark:text-gray-400 text-xs">Research</span>
     </div>
   );
 }
@@ -75,8 +100,8 @@ function BlueGem({ count }: { count: number }) {
           boxShadow: '0 0 28px rgba(59, 130, 246, 0.5)',
         }}
       />
-      <span className="text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
-      <span className="text-gray-400 text-xs">Voting</span>
+      <span className="text-gray-900 dark:text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
+      <span className="text-gray-500 dark:text-gray-400 text-xs">Voting</span>
     </div>
   );
 }
@@ -91,8 +116,8 @@ function RedGem({ count }: { count: number }) {
           boxShadow: '0 0 28px rgba(255, 87, 64, 0.45)',
         }}
       />
-      <span className="text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
-      <span className="text-gray-400 text-xs">Validation</span>
+      <span className="text-gray-900 dark:text-white text-2xl font-bold tabular-nums">{count.toLocaleString()}</span>
+      <span className="text-gray-500 dark:text-gray-400 text-xs">Validation</span>
     </div>
   );
 }
@@ -131,6 +156,7 @@ export default function ProfilePage() {
   const [referral, setReferral] = useState<ReferralState | null>(null);
   const [activity, setActivity] = useState<ActivityEntry[]>([]);
   const [copied, setCopied] = useState(false);
+  const { isDark, toggle } = useTheme();
 
   useEffect(() => {
     apiFetch<MeFull>('/account/me').then(setMe).catch(() => {});
@@ -153,10 +179,20 @@ export default function ProfilePage() {
     }).catch(() => {});
   }, [referral?.code]);
 
+  const themeToggle = (
+    <button
+      onClick={toggle}
+      className="w-8 h-8 flex items-center justify-center rounded-full text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+      aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+    >
+      {isDark ? <SunIcon /> : <MoonIcon />}
+    </button>
+  );
+
   if (!me) {
     return (
-      <div className="bg-ev-navy min-h-screen">
-        <AppNav />
+      <div className="bg-gray-100 dark:bg-ev-navy min-h-screen">
+        <AppNav>{themeToggle}</AppNav>
       </div>
     );
   }
@@ -169,38 +205,38 @@ export default function ProfilePage() {
   const vrPercent = cp ? Math.min(100, Math.round((cp.verification_rating / 150) * 100)) : 0;
 
   return (
-    <div className="bg-ev-navy min-h-screen">
-      <AppNav />
+    <div className="bg-gray-100 dark:bg-ev-navy min-h-screen">
+      <AppNav>{themeToggle}</AppNav>
 
       {/* Page header */}
       <div className="px-4 sm:px-6 lg:px-8 pt-8 pb-4">
-        <Link to="/" className="text-white text-2xl font-bold hover:text-gray-300 transition-colors inline-block">
+        <Link to="/" className="text-gray-900 dark:text-white text-2xl font-bold hover:text-gray-600 dark:hover:text-gray-300 transition-colors inline-block">
           &lt; Your Profile
         </Link>
-        <p className="text-gray-400 text-sm mt-1">View your progress, stats, and account details</p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">View your progress, stats, and account details</p>
       </div>
 
       <main className="px-4 sm:px-6 lg:px-8 pb-10 space-y-4">
 
         {/* Header card — welcome + name + level + XP bar */}
         {cp && xp ? (
-          <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
             <div className="flex items-start justify-between mb-4">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-medium">Welcome back</p>
-              <span className="border border-gray-700 text-gray-400 text-xs px-3 py-1 rounded-full">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium">Welcome back</p>
+              <span className="border border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 text-xs px-3 py-1 rounded-full">
                 Private Account
               </span>
             </div>
-            <h2 className="text-5xl font-bold text-white">{me.display_name ?? 'Member'}</h2>
+            <h2 className="text-5xl font-bold text-gray-900 dark:text-white">{me.display_name ?? 'Member'}</h2>
             <div className="flex items-center gap-3 mt-4">
               <span className="bg-ev-blue text-white text-sm font-bold px-3 py-1.5 rounded-full">
                 Level {xp.level}
               </span>
-              <span className="text-gray-300 text-sm tabular-nums">
+              <span className="text-gray-600 dark:text-gray-300 text-sm tabular-nums">
                 {xp.xp_in_level.toLocaleString()} / {xp.xp_to_next_level.toLocaleString()} XP
               </span>
             </div>
-            <div className="mt-4 h-2 rounded-full bg-gray-800 overflow-hidden">
+            <div className="mt-4 h-2 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden">
               <div
                 className="bg-ev-blue h-full rounded-full transition-all duration-700"
                 style={{
@@ -209,15 +245,15 @@ export default function ProfilePage() {
                 }}
               />
             </div>
-            <p className="text-xs text-gray-500 mt-2 tabular-nums">
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-2 tabular-nums">
               {xp.total.toLocaleString()} total XP earned
             </p>
           </div>
         ) : (
           /* Inform-tier header — no XP data */
-          <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-            <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-4">Welcome back</p>
-            <h2 className="text-5xl font-bold text-white">{me.display_name ?? 'Member'}</h2>
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+            <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-4">Welcome back</p>
+            <h2 className="text-5xl font-bold text-gray-900 dark:text-white">{me.display_name ?? 'Member'}</h2>
           </div>
         )}
 
@@ -225,8 +261,8 @@ export default function ProfilePage() {
         {cp && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Gems */}
-            <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-6">Your Gems</p>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-6">Your Gems</p>
               <div className="flex justify-around items-end">
                 <YellowGem count={cp.gems.yellow} />
                 <BlueGem count={cp.gems.blue} />
@@ -235,23 +271,23 @@ export default function ProfilePage() {
             </div>
 
             {/* Verification Rating */}
-            <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-4">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-4">
                 Verification Rating
               </p>
               <div className="flex items-baseline gap-2 mb-4">
                 <span className="text-ev-teal-light text-6xl font-bold tabular-nums">
                   {cp.verification_rating}
                 </span>
-                <span className="text-white text-xl font-medium">/ 150</span>
+                <span className="text-gray-900 dark:text-white text-xl font-medium">/ 150</span>
               </div>
-              <div className="h-1.5 rounded-full bg-gray-800 overflow-hidden mb-3">
+              <div className="h-1.5 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden mb-3">
                 <div
                   className="bg-ev-teal-light h-full rounded-full transition-all duration-700"
                   style={{ width: `${vrPercent}%` }}
                 />
               </div>
-              <p className="text-sm text-gray-400">Keep validating to increase your credibility score</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Keep validating to increase your credibility score</p>
             </div>
           </div>
         )}
@@ -260,28 +296,28 @@ export default function ProfilePage() {
         {cp && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Invite a Friend */}
-            <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-4">Invite a Friend</p>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-4">Invite a Friend</p>
               {!referral?.unlocked ? (
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0 text-gray-400">
+                  <div className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-gray-400 dark:text-gray-400">
                     <LockIcon />
                   </div>
                   <div>
-                    <p className="text-white font-semibold">Reach level 2 to unlock</p>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-gray-900 dark:text-white font-semibold">Reach level 2 to unlock</p>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                       Keep earning XP to get your first referral code
                     </p>
                   </div>
                 </div>
               ) : referral?.code ? (
-                <div className="bg-gray-800 rounded-xl px-4 py-3 flex items-center justify-between">
+                <div className="bg-gray-100 dark:bg-gray-800 rounded-xl px-4 py-3 flex items-center justify-between">
                   <code className="font-mono text-ev-teal-light text-xl tracking-widest">
                     {referral.code}
                   </code>
                   <button
                     onClick={copyCode}
-                    className="text-sm text-ev-teal-light hover:text-white transition-colors ml-4"
+                    className="text-sm text-ev-teal-light hover:text-ev-teal dark:hover:text-white transition-colors ml-4"
                   >
                     {copied ? 'Copied!' : 'Copy'}
                   </button>
@@ -290,29 +326,29 @@ export default function ProfilePage() {
             </div>
 
             {/* Civic Spaces */}
-            <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-              <p className="text-xs text-gray-500 uppercase tracking-widest font-medium mb-4">Your Civic Spaces</p>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase tracking-widest font-medium mb-4">Your Civic Spaces</p>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-xl bg-gray-800 flex items-center justify-center flex-shrink-0 text-ev-teal-light">
+                <div className="w-10 h-10 rounded-xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 text-ev-teal-light">
                   <PinIcon />
                 </div>
                 <div>
                   {me.location_consent ? (
                     <>
-                      <p className="text-white font-semibold">Location Set</p>
+                      <p className="text-gray-900 dark:text-white font-semibold">Location Set</p>
                       <Link
                         to="/settings/location"
-                        className="text-ev-teal-light text-sm hover:text-white transition-colors"
+                        className="text-ev-teal-light text-sm hover:text-ev-teal dark:hover:text-white transition-colors"
                       >
                         Update location →
                       </Link>
                     </>
                   ) : (
                     <>
-                      <p className="text-white font-semibold">No location set</p>
+                      <p className="text-gray-900 dark:text-white font-semibold">No location set</p>
                       <Link
                         to="/settings/location"
-                        className="text-ev-teal-light text-sm hover:text-white transition-colors"
+                        className="text-ev-teal-light text-sm hover:text-ev-teal dark:hover:text-white transition-colors"
                       >
                         Set your location →
                       </Link>
@@ -326,13 +362,13 @@ export default function ProfilePage() {
 
         {/* Recent Activity — full width */}
         {cp && (
-          <div className="bg-gray-900 rounded-2xl border border-gray-800 p-6">
-            <div className="flex items-center gap-3 mb-5 text-white">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-6">
+            <div className="flex items-center gap-3 mb-5 text-gray-900 dark:text-white">
               <CalendarIcon />
               <h2 className="text-xl font-semibold">Recent Activity</h2>
             </div>
             {activity.length === 0 ? (
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
                 No XP earned yet — explore an Empowered Vote feature to get started.
               </p>
             ) : (
@@ -340,11 +376,11 @@ export default function ProfilePage() {
                 {activity.slice(0, 4).map((entry, i) => (
                   <div
                     key={i}
-                    className="flex items-center justify-between bg-gray-800/60 rounded-xl px-4 py-3"
+                    className="flex items-center justify-between bg-gray-50 dark:bg-gray-800/60 rounded-xl px-4 py-3"
                   >
                     <div>
-                      <p className="text-white text-sm font-medium">{titleCase(entry.description)}</p>
-                      <p className="text-gray-400 text-xs mt-0.5">
+                      <p className="text-gray-900 dark:text-white text-sm font-medium">{titleCase(entry.description)}</p>
+                      <p className="text-gray-500 dark:text-gray-400 text-xs mt-0.5">
                         {new Date(entry.created_at).toLocaleDateString(undefined, {
                           month: 'long',
                           day: 'numeric',

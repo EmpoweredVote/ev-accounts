@@ -122,7 +122,11 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     }
   }
 
-  const { data, error } = await signUpWithEmail(email, password);
+  const { data, error } = await signUpWithEmail(
+    email,
+    password,
+    `${env.LOGIN_URL}/email-confirmed`,
+  );
 
   if (error) {
     // Email already registered
@@ -180,6 +184,17 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     res.status(500).json({
       code: 'INTERNAL_ERROR',
       message: 'An unexpected error occurred',
+    });
+    return;
+  }
+
+  // Supabase returns status 200 (no error) for repeated signups when email confirmation
+  // is enabled — identities is an empty array in this case. Detect and surface as 409
+  // so the frontend can direct the user to sign in or reset their password.
+  if (!data.user.identities || data.user.identities.length === 0) {
+    res.status(409).json({
+      code: 'EMAIL_EXISTS',
+      message: 'An account with this email already exists',
     });
     return;
   }
@@ -550,10 +565,9 @@ router.post('/forgot-password', authLimiter, async (req: Request, res: Response)
     return;
   }
 
-  const loginUrl = process.env.LOGIN_URL ?? 'https://login.empowered.vote';
   try {
     await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
-      redirectTo: `${loginUrl}/reset-password`,
+      redirectTo: `${env.LOGIN_URL}/reset-password`,
     });
   } catch (err) {
     console.error('[auth/forgot-password] error:', err);

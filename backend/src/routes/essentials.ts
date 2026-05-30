@@ -11,6 +11,7 @@ import {
   getChamberById,
   getDistrictById,
 } from '../lib/essentialsService.js';
+import type { JurisdictionGeoIds } from '../lib/essentialsService.js';
 import { getElectionsByCoordinate, getElectionsByGeoIds, getCandidateById } from '../lib/electionService.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
@@ -239,7 +240,7 @@ router.get('/quotes', async (req: Request, res: Response): Promise<void> => {
         ORDER BY id DESC
         LIMIT 1
       ) o ON true
-      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key)
+      LEFT JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
       ORDER BY p.full_name, q.topic_key
     `, queryParams);
 
@@ -473,6 +474,104 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
   ).catch(() => ({ rows: [] as any[] }));
   const j = rows[0];
 
+  // --- Path 0: TIGER user_districts cache — fastest path (added in Phase 70) ---
+  // Source: connect.user_districts populated by essentials.cache_user_districts on
+  // every location write. Joins via (tiger_geoid, district_type) — BOTH required
+  // because tiger_geoid is non-unique across SLDL/SLDU layers (e.g. assembly D20
+  // and senate D20 both have tiger_geoid='06020').
+  //
+  // districtRows is hoisted to handler scope so Path 1.5 can read its length to
+  // decide whether to fire opportunistic backfill (see Change B below).
+  let districtRows: Array<{ layer: string; geoid: string }> = [];
+  try {
+    const result = await pool.query<{ layer: string; geoid: string }>(
+      `SELECT layer, geoid FROM connect.user_districts WHERE user_id = $1`,
+      [userId]
+    );
+    districtRows = result.rows;
+
+    if (districtRows.length > 0) {
+      const layerTypeMap: Record<string, string> = {
+        ca_assembly:       'STATE_LOWER',
+        ca_senate:         'STATE_UPPER',
+        us_house:          'NATIONAL_LOWER',
+        school_unified:    'SCHOOL_UNIFIED',     // Phase 71: forward-compat — no rows in essentials.districts yet
+        school_elementary: 'SCHOOL_ELEMENTARY',  // Phase 71: forward-compat — same
+        school_secondary:  'SCHOOL_SECONDARY',   // Phase 71: forward-compat — same
+      };
+
+      // Build OR conditions: (tiger_geoid = $N AND district_type = $N+1) per layer
+      const params: string[] = [];
+      const conditions: string[] = [];
+      for (const row of districtRows) {
+        const distType = layerTypeMap[row.layer];
+        if (!distType) continue;
+        params.push(row.geoid, distType);
+        conditions.push(
+          `(d.tiger_geoid = $${params.length - 1} AND d.district_type = $${params.length})`
+        );
+      }
+
+      if (conditions.length > 0) {
+        const { rows: geoRows } = await pool.query<{
+          district_type: string;
+          geo_id: string;
+        }>(
+          `SELECT d.district_type, d.geo_id
+             FROM essentials.districts d
+            WHERE ${conditions.join(' OR ')}`,
+          params
+        );
+
+        const typeToField: Record<string, keyof JurisdictionGeoIds> = {
+          NATIONAL_LOWER: 'congressional',
+          STATE_UPPER:    'state_senate',
+          STATE_LOWER:    'state_house',
+        };
+        const jurisdiction: JurisdictionGeoIds = {
+          congressional:   null,
+          state_senate:    null,
+          state_house:     null,
+          county:          null,
+          school_district: null,
+        };
+        for (const r of geoRows) {
+          const field = typeToField[r.district_type];
+          if (field) jurisdiction[field] = r.geo_id;
+        }
+
+        if (jurisdiction.congressional || jurisdiction.state_senate) {
+          const [politicians, localOfficials] = await Promise.all([
+            getRepresentativesByJurisdiction(jurisdiction),
+            getLocalOfficialsByUserId(userId),
+          ]);
+
+          const seenIds = new Set(politicians.map((p) => p.id));
+          const uniqueLocals = localOfficials.filter((p) => !seenIds.has(p.id));
+          const merged = [...politicians, ...uniqueLocals];
+
+          const dataStatus = merged.length === 0 ? 'no-geofence-data' : 'fresh';
+          res.setHeader('X-Data-Status', dataStatus);
+          res.setHeader(
+            'X-Formatted-Address',
+            [j?.jurisdiction_city, j?.jurisdiction_state].filter(Boolean).join(', ')
+          );
+          res.status(200).json(merged);
+          return;
+        }
+      }
+    }
+  } catch (err) {
+    // Path 0 failure (PostGIS hiccup, missing geo_districts row, etc.) — fall
+    // through to Path 1. Path 1 / 1.5 will handle the request. Log at warn level
+    // so persistent failures show up in operator dashboards but don't pollute
+    // info-level logs for every Inform-tier (no-cache) request.
+    console.warn(
+      '[representatives/me] Path 0 failed, falling to Path 1:',
+      err instanceof Error ? err.message : String(err)
+    );
+  }
+
   // --- Path 1: stored jurisdiction GEO IDs — fast direct lookup ---
   if (j && (j.congressional_geo_id || j.state_senate_geo_id)) {
     try {
@@ -555,6 +654,24 @@ router.get('/representatives/me', requireAuth, requireConnected, async (req: Req
           res.setHeader('X-Data-Status', dataStatus);
           res.setHeader('X-Formatted-Address', [j.jurisdiction_city, j.jurisdiction_state].filter(Boolean).join(', '));
           res.status(200).json(merged);
+
+          // Opportunistic backfill (Phase 70): if this user had NO user_districts
+          // rows when the request arrived, populate the cache now so their NEXT
+          // call lands on Path 0. Fire-and-forget — response is already on the
+          // wire; do NOT await. Errors are swallowed via .catch() — this is a
+          // best-effort cache warm and must never affect this response.
+          if (districtRows.length === 0) {
+            void pool.query(
+              `SELECT essentials.recache_user_districts_for_user($1)`,
+              [userId]
+            ).catch((e: Error) =>
+              console.warn(
+                '[representatives/me] Path 1.5 opportunistic backfill failed:',
+                e.message
+              )
+            );
+          }
+
           return;
         }
         // All-null from RPC (no boundary match) — fall through to 204

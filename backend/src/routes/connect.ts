@@ -637,6 +637,18 @@ router.post('/set-location', requireAuth, requireConnected, async (req: Request,
       console.error('[set-location] jurisdiction write error:', e);
     }
 
+    // District cache (fail-open): never block location save on PostGIS error.
+    // essentials.cache_user_districts is in the essentials schema, which is NOT in
+    // PostgREST's exposed schema list — MUST use pool.query, not adminRpc.
+    try {
+      await pool.query(
+        `SELECT essentials.cache_user_districts($1, $2, $3)`,
+        [userId, lat, lng]
+      );
+    } catch (cacheErr) {
+      console.error('[connect/set-location] district cache failed (non-fatal):', cacheErr);
+    }
+
     const j = jData;
 
     res.status(200).json({

@@ -15,6 +15,7 @@ const navItems = [
   { label: 'Topics', to: '/admin/topics' },
   { label: 'Politicians', to: '/admin/politicians' },
   { label: 'Categories', to: '/admin/categories' },
+  { label: 'Coverage', to: '/admin/coverage' },
 ];
 
 export function AdminLayout() {

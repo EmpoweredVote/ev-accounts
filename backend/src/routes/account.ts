@@ -5,6 +5,7 @@ import { requireVerified } from '../middleware/requireVerified.js';
 import { requireConnected, requireInform } from '../middleware/tierGuards.js';
 import { createUserClient, adminRpc } from '../lib/supabase.js';
 import { pool } from '../lib/db.js';
+import { geocodeAddress, GeocodingError } from '../lib/geocodingService.js';
 import { getLocationConsent } from '../lib/connectService.js';
 import { isUserAdmin } from '../lib/adminService.js';
 
@@ -683,10 +684,247 @@ router.patch('/location-hint', requireAuth, requireInform, async (req, res: Resp
       [authReq.userId, JSON.stringify(location)]
     );
 
+    // District cache (fail-open): extract lat/lng from opaque JSONB payload, then cache.
+    // location is z.unknown() — Essentials frontend passes { lat, lng, ... } objects,
+    // but the schema is not enforced. Defensive type narrowing.
+    const loc = location as Record<string, unknown> | null;
+    const hintLat = loc && typeof loc.lat === 'number' ? loc.lat : null;
+    const hintLng = loc && typeof loc.lng === 'number' ? loc.lng : null;
+
+    if (hintLat !== null && hintLng !== null) {
+      try {
+        await pool.query(
+          `SELECT essentials.cache_user_districts($1, $2, $3)`,
+          [authReq.userId, hintLat, hintLng]
+        );
+      } catch (cacheErr) {
+        console.warn('[location-hint] district cache failed (non-fatal):', cacheErr);
+      }
+    } else {
+      console.warn('[location-hint] no lat/lng in payload — skipping district cache');
+    }
+
     res.status(200).json({ ok: true });
   } catch (err) {
     console.error('[PATCH /api/account/location-hint] error:', err);
     res.status(500).json({ error: 'INTERNAL_ERROR' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/account/districts
+// Auth: requireAuth (both Inform and Connected tiers — Essentials is foundational)
+//
+// Returns the user's cached TIGER districts grouped by layer.
+// Source of truth: connect.user_districts (populated by essentials.cache_user_districts).
+// Joins to essentials.geo_districts on (layer, geoid) for the human-readable name.
+// Returns 204 No Content when the user has no cached districts (no location set yet,
+// or location resolved to zero matches — e.g. out-of-CA users).
+// ---------------------------------------------------------------------------
+
+router.get('/districts', requireAuth, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { rows } = await pool.query<{
+      layer: string;
+      geoid: string;
+      district_num: string;
+      name: string | null;
+    }>(
+      `SELECT ud.layer, ud.geoid, ud.district_num, gd.name
+       FROM connect.user_districts ud
+       LEFT JOIN essentials.geo_districts gd
+         ON gd.layer = ud.layer AND gd.geoid = ud.geoid
+       WHERE ud.user_id = $1`,
+      [authReq.userId]
+    );
+
+    if (rows.length === 0) {
+      res.status(204).end();
+      return;
+    }
+
+    const byLayer: Record<string, { district_number: string; name: string | null; tiger_geoid: string }> =
+      Object.fromEntries(
+        rows.map((r) => [
+          r.layer,
+          { district_number: r.district_num, name: r.name ?? null, tiger_geoid: r.geoid },
+        ])
+      );
+
+    res.status(200).json({
+      ca_assembly: byLayer['ca_assembly'] ?? null,
+      ca_senate:   byLayer['ca_senate']   ?? null,
+      us_house:    byLayer['us_house']    ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /api/account/districts] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/account/school-district
+// Auth: requireAuth (both Inform and Connected tiers)
+//
+// Returns the user's cached school districts grouped by school layer.
+// Source of truth: connect.user_districts filtered to layer IN
+// (school_unified, school_elementary, school_secondary).
+// Joins to essentials.geo_districts on (layer, geoid) for the human-readable
+// name. Returns 204 No Content when the user has no school-layer rows
+// (out-of-CA users, location not yet set, or coordinate didn't fall inside
+// any school district polygon).
+//
+// Phase 71: separate from GET /districts because the legislative endpoint
+// shape is intentionally stable (ca_assembly, ca_senate, us_house only).
+// School district display is surfaced on the profile Location tab via this
+// dedicated endpoint.
+// ---------------------------------------------------------------------------
+
+router.get('/school-district', requireAuth, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  try {
+    const { rows } = await pool.query<{
+      layer: string;
+      geoid: string;
+      name: string | null;
+    }>(
+      `SELECT ud.layer, ud.geoid, gd.name
+       FROM connect.user_districts ud
+       LEFT JOIN essentials.geo_districts gd
+         ON gd.layer = ud.layer AND gd.geoid = ud.geoid
+       WHERE ud.user_id = $1
+         AND ud.layer IN ('school_unified', 'school_elementary', 'school_secondary')`,
+      [authReq.userId]
+    );
+
+    if (rows.length === 0) {
+      res.status(204).end();
+      return;
+    }
+
+    const byLayer: Record<string, { name: string | null; geoid: string }> =
+      Object.fromEntries(
+        rows.map((r) => [r.layer, { name: r.name ?? null, geoid: r.geoid }])
+      );
+
+    res.status(200).json({
+      school_unified:    byLayer['school_unified']    ?? null,
+      school_elementary: byLayer['school_elementary'] ?? null,
+      school_secondary:  byLayer['school_secondary']  ?? null,
+    });
+  } catch (err) {
+    console.error('[GET /api/account/school-district] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// POST /api/account/set-location
+// Auth: requireAuth + requireInform (Connected users get 403 — they use
+//       POST /api/connect/set-location instead, which has tier-specific writes
+//       to connected_profiles).
+//
+// Inform-tier equivalent of POST /api/connect/set-location: accepts an address
+// string from the Accounts app, geocodes it server-side, stores the result as
+// JSONB on inform.inform_profiles.last_essentials_location, and caches the
+// user's TIGER districts.
+//
+// Security decision (Phase 70): the response body is exactly { ok: true }.
+// Address, lat/lng, and matchedAddress NEVER appear in the response — address
+// data stays server-side. This mirrors the Connected endpoint decision.
+// ---------------------------------------------------------------------------
+
+const SetLocationBodySchema = z.object({
+  address: z.string().min(1),
+});
+
+router.post('/set-location', requireAuth, requireInform, async (req, res: Response) => {
+  const authReq = req as AuthenticatedRequest;
+
+  const parsed = SetLocationBodySchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      error: 'VALIDATION_ERROR',
+      issues: parsed.error.issues,
+    });
+    return;
+  }
+
+  const { address } = parsed.data;
+
+  // 1) Geocode. GeocodingError.code maps directly to HTTP status.
+  let lat: number;
+  let lng: number;
+  let city: string;
+  let state: string;
+  let matchedAddress: string;
+
+  try {
+    const coords = await geocodeAddress(address);
+    lat = coords.lat;
+    lng = coords.lng;
+    city = coords.city;
+    state = coords.state;
+    matchedAddress = coords.matchedAddress;
+  } catch (err) {
+    if (err instanceof GeocodingError) {
+      // Per planning spec: ADDRESS_NOT_FOUND -> 400, GEOCODER_UNAVAILABLE -> 503.
+      // Note: GeocodingErrorCode also includes 'PO_BOX_REJECTED' (see
+      // backend/src/lib/geocodingService.ts) — treat it as a 400 input error too.
+      if (err.code === 'ADDRESS_NOT_FOUND' || err.code === 'PO_BOX_REJECTED') {
+        res.status(400).json({ code: err.code, message: err.message });
+        return;
+      }
+      if (err.code === 'GEOCODER_UNAVAILABLE') {
+        res.status(503).json({
+          code: 'GEOCODER_UNAVAILABLE',
+          message: 'Address lookup temporarily unavailable.',
+        });
+        return;
+      }
+      // Defensive: unknown future GeocodingError code falls through to 500.
+      console.error('[POST /api/account/set-location] unknown geocoding error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+      return;
+    }
+    // Non-GeocodingError thrown from geocodeAddress — let outer catch handle it.
+    throw err;
+  }
+
+  // 2) Persist the geocoded result as JSONB on inform_profiles, then cache
+  //    districts (fail-open). Wrap both in an outer try/catch so any unexpected
+  //    DB error returns 500 with the standard envelope.
+  try {
+    const location = { lat, lng, city, state, matchedAddress };
+
+    await pool.query(
+      `INSERT INTO inform.inform_profiles (user_id, last_essentials_location)
+       VALUES ($1, $2::jsonb)
+       ON CONFLICT (user_id) DO UPDATE
+         SET last_essentials_location = EXCLUDED.last_essentials_location`,
+      [authReq.userId, JSON.stringify(location)]
+    );
+
+    // District cache (fail-open): never block the location save on a PostGIS error.
+    // essentials.cache_user_districts is in the essentials schema, which is NOT
+    // in PostgREST's exposed schema list — MUST use pool.query, not adminRpc.
+    try {
+      await pool.query(
+        `SELECT essentials.cache_user_districts($1, $2, $3)`,
+        [authReq.userId, lat, lng]
+      );
+    } catch (cacheErr) {
+      console.error('[POST /api/account/set-location] district cache failed (non-fatal):', cacheErr);
+    }
+
+    // Security: response body is { ok: true } only — no address/lat/lng echo.
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[POST /api/account/set-location] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
 

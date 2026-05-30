@@ -1,0 +1,371 @@
+[
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:alpine",
+    "district_name": "Alpine School District",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:beaver",
+    "district_name": "Beaver School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:box_elder",
+    "district_name": "Box Elder School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:cache",
+    "district_name": "Cache School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:canyons",
+    "district_name": "Canyons School District",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:carbon",
+    "district_name": "Carbon School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:daggett",
+    "district_name": "Daggett School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:davis",
+    "district_name": "Davis School District",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:duchesne",
+    "district_name": "Duchesne School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:emery",
+    "district_name": "Emery School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:garfield",
+    "district_name": "Garfield School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:grand",
+    "district_name": "Grand School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:granite",
+    "district_name": "Granite School District",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:iron",
+    "district_name": "Iron School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:jordan",
+    "district_name": "Jordan School District",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "Large district; W2 source-audit may yield stable HTML scrape. Falls back to whole-district G5420 attachment (POL-04 floor)."
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:juab",
+    "district_name": "Juab School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:kane",
+    "district_name": "Kane School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:logan",
+    "district_name": "Logan School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:millard",
+    "district_name": "Millard School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:morgan",
+    "district_name": "Morgan School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:murray",
+    "district_name": "Murray School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:nebo",
+    "district_name": "Nebo School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:north_sanpete",
+    "district_name": "North Sanpete School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:north_summit",
+    "district_name": "North Summit School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:ogden",
+    "district_name": "Ogden School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:park_city",
+    "district_name": "Park City School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:piute",
+    "district_name": "Piute School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:provo",
+    "district_name": "Provo School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:rich",
+    "district_name": "Rich School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:salt_lake_city",
+    "district_name": "Salt Lake City School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:san_juan",
+    "district_name": "San Juan School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:sevier",
+    "district_name": "Sevier School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:south_sanpete",
+    "district_name": "South Sanpete School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:south_summit",
+    "district_name": "South Summit School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:tintic",
+    "district_name": "Tintic School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:tooele",
+    "district_name": "Tooele School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:uintah",
+    "district_name": "Uintah School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:wasatch",
+    "district_name": "Wasatch School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:washington",
+    "district_name": "Washington School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:wayne",
+    "district_name": "Wayne School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "deferred",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "district_geo_id": "ocd-division/country:us/state:ut/school_district:weber",
+    "district_name": "Weber School District",
+    "source": "manual_csv",
+    "source_url": null,
+    "has_subdistrict_polygons": false,
+    "status": "manual_csv",
+    "notes": "LAUSD pattern: whole-district attachment via G5420 geofence (POL-04 floor). Hand-curated TSV in data/rosters/manual/.; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  }
+]

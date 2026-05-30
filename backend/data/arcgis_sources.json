@@ -1,0 +1,2597 @@
+[
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/_meta:tribal_lands_source",
+    "layer_class": "tribal_metadata",
+    "source_url": "https://maps.slc.gov/server/rest/services/Hosted/Boundaries/FeatureServer/13/query?where=1%3D1&outFields=name&f=geojson",
+    "field_map": {
+      "district_num": "<N/A — metadata only>",
+      "name": "name"
+    },
+    "mtfcc": "X0004",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "UGRC tribal-lands metadata FeatureServer for Wave 3 hybrid loader (D-05). Used by load-state-tiger-boundaries.ts aiannh post-insert UPDATE step. status=no_source because this record is metadata-only — TIGER provides the polygon. PROVENANCE: UGRC SGID political category was probed 2026-05-08 (no Indian/Tribal/Reservation entries found at gis.utah.gov/products/sgid/political/); substantive fallback located at SLC's hosted 'Utah Federal American Indian Reservation' FeatureServer (8 features: Ute Mountain, Paiute (UT), Kaibab, Uintah and Ouray, Northwestern Shoshone, Navajo Nation, Goshute, Skull Valley; last edit 2025-01-08). Research §'Sources Secondary' explicitly identified this layer as a viable alternate for the tribal polygon source path. Wave 3's loader should slugify `name` (e.g. 'Uintah and Ouray Reservation' → 'uintah_and_ouray_reservation') and UPDATE matching geofence_boundaries rows where mtfcc='X0004'."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/county:salt_lake",
+    "layer_class": "county_council",
+    "source_url": "https://services1.arcgis.com/DJP723NX3ukQ2LtF/arcgis/rest/services/Salt_Lake_County_Council_Boundaries/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": {
+      "district_num": "FID",
+      "name": "NAME"
+    },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/county:salt_lake/council_district:{N}",
+    "status": "active",
+    "notes": "VERIFIED via SLCo Web Map operationalLayers (2026-05-09); 6 features, fields FID/NAME/Rep. Was reactively flipped to no_source in 132-04 due to wrong host guess; corrected here."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:alpine",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Alpine city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:alta",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Alta town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:altamont",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Altamont town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:alton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Alton town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:amalga",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Amalga town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:american_fork",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (American Fork city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:annabella",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Annabella town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:antimony",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Antimony town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:apple_valley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Apple Valley town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:aurora",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Aurora city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ballard",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Ballard town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bear_river_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bear River City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:beaver",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Beaver city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bicknell",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bicknell town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:big_water",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Big Water town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:blanding",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Blanding city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bluff",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bluff town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bluffdale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bluffdale city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:boulder",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Boulder town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bountiful",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bountiful city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:brian_head",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Brian Head town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:brigham_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Brigham City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:brighton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Brighton town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bryce_canyon_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Bryce Canyon City town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cannonville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cannonville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:castle_dale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Castle Dale city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:castle_valley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Castle Valley town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cedar_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cedar City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cedar_fort",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cedar Fort town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cedar_hills",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cedar Hills city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:centerfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Centerfield town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:centerville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Centerville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:central_valley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Central Valley town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:charleston",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Charleston town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:circleville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Circleville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:clarkston",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Clarkston town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:clawson",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Clawson town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:clearfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Clearfield city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cleveland",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cleveland town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:clinton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Clinton city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:coalville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Coalville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:copperton_metro",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Copperton metro township); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:corinne",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Corinne city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cornish",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cornish town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cottonwood_heights",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Cottonwood Heights city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:daniel",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Daniel town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:delta",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Delta city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:deweyville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Deweyville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:draper",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Draper city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:duchesne",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Duchesne city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:dutch_john",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Dutch John town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:eagle_mountain",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Eagle Mountain city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:east_carbon",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (East Carbon city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:elk_ridge",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Elk Ridge city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:elmo",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Elmo town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:elsinore",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Elsinore town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:elwood",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Elwood town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:emery",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Emery town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:emigration_canyon_metro",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Emigration Canyon metro township); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:enoch",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Enoch city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:enterprise",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Enterprise city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ephraim",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Ephraim city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:erda",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Erda city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:escalante",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Escalante city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:eureka",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Eureka city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fairfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fairfield town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fairview",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fairview city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:farmington",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Farmington city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:farr_west",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Farr West city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fayette",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fayette town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ferron",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Ferron city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fielding",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fielding town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fillmore",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fillmore city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fountain_green",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fountain Green city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:francis",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Francis town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:fruit_heights",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Fruit Heights city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:garden_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Garden City town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:garland",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Garland city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:genola",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Genola town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:glendale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Glendale town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:glenwood",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Glenwood town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:goshen",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Goshen town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:grantsville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Grantsville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:green_river",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Green River city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:gunnison",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Gunnison city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hanksville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hanksville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:harrisville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Harrisville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hatch",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hatch town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:heber",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Heber city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:helper",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Helper city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:henefer",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Henefer town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:henrieville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Henrieville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:herriman",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Herriman city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hideout",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hideout town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:highland",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Highland city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hildale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hildale city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hinckley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hinckley town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:holden",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Holden town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:holladay",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Holladay city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:honeyville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Honeyville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hooper",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hooper city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:howell",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Howell town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:huntington",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Huntington city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:huntsville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Huntsville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hurricane",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hurricane city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hyde_park",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hyde Park city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:hyrum",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Hyrum city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:independence",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Independence town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:interlaken",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Interlaken town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ivins",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Ivins city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:joseph",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Joseph town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:junction",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Junction town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kamas",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kamas city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kanab",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kanab city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kanarraville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kanarraville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kanosh",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kanosh town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kaysville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kaysville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kearns_metro",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kearns metro township); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:kingston",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Kingston town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:koosharem",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Koosharem town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:la_verkin",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (La Verkin city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lake_point",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Lake Point city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:laketown",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Laketown town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:layton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Layton city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LaytonCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:leamington",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Leamington town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:leeds",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Leeds town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lehi",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Lehi city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LehiCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:levan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Levan town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lewiston",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Lewiston city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lindon",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Lindon city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:loa",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Loa town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:logan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Logan city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LoganCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lyman",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Lyman town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lynndyl",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Lynndyl town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:magna_metro",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Magna metro township); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:manila",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Manila town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:manti",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Manti city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mantua",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mantua town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mapleton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mapleton city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:marriott_slaterville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Marriott-Slaterville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:marysvale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Marysvale town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mayfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mayfield town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:meadow",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Meadow town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mendon",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mendon city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:midvale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Midvale city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:midway",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Midway city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:milford",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Milford city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:millcreek",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Millcreek city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:millville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Millville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:minersville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Minersville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:moab",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Moab city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mona",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mona city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:monroe",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Monroe city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:monticello",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Monticello city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:morgan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Morgan city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:moroni",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Moroni city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mount_pleasant",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Mount Pleasant city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:murray",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Murray city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/MurrayCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:myton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Myton city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:naples",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Naples city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:nephi",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Nephi city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:new_harmony",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (New Harmony town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:newton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Newton town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:nibley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Nibley city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:north_logan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (North Logan city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:north_ogden",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (North Ogden city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:north_salt_lake",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (North Salt Lake city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:oak_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Oak City town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:oakley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Oakley city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ogden",
+    "layer_class": "city_ward",
+    "source_url": "https://data.ogdencity.com/server/rest/services/Ogden_Municipal_District/FeatureServer/0/query?where=DISTRICTID%20IN%20('1','2','3','4')&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "DISTRICTID", "name": "NAME" },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/place:ogden/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via Ogden City GIS (data.ogdencity.com, AGO org 5bEsxSBu0dtu5rkP). FeatureServer/0 returns 8 features (4 districts + 3 at-large A/B/C + mayor DISTRICTID=0); the where clause filters to the 4 geographic districts. Fields DISTRICTID('1'-'4'), NAME('Municipal District N'), OFFICE, REPNAME. At-large + mayor surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/OgdenCouncilDistricts) was wrong org — 400."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:orangeville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Orangeville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:orderville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Orderville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:orem",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Orem city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/OremCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:panguitch",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Panguitch city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:paradise",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Paradise town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:paragonah",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Paragonah town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:park_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Park City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:parowan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Parowan city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:payson",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Payson city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:perry",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Perry city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:plain_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Plain City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:pleasant_grove",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Pleasant Grove city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:pleasant_view",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Pleasant View city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:plymouth",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Plymouth town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:portage",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Portage town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:price",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Price city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:providence",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Providence city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:provo",
+    "layer_class": "city_ward",
+    "source_url": "data/geo/provo-wards-2026.geojson",
+    "field_map": {
+      "district_num": "ward",
+      "name": "name"
+    },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/place:provo/ward:{N}",
+    "status": "manual_geojson",
+    "notes": "Hand-digitized from https://maps.provo.org/downloads/provo_council_precincts.pdf accessed 2026-05-08; 5 wards (2 of 7 council seats are at-large, covered by G4110 place geofence)"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:randolph",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Randolph town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:redmond",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Redmond town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:richfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Richfield city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:richmond",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Richmond city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:river_heights",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (River Heights city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:riverdale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Riverdale city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:riverton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Riverton city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:rockville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Rockville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:rocky_ridge",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Rocky Ridge town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:roosevelt",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Roosevelt city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:roy",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Roy city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:rush_valley",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Rush Valley town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:salem",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Salem city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:salina",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Salina city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:salt_lake_city",
+    "layer_class": "city_ward",
+    "source_url": "https://services.arcgis.com/mMBpeYj0vPFotzbe/arcgis/rest/services/Salt_Lake_City_Council_Districts/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": {
+      "district_num": "CITYCOUNCIL_ID",
+      "name": "CITYCOUNCIL_MEMBER"
+    },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/place:salt_lake_city/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED via gis-slcgov.opendata.arcgis.com hub search (2026-05-09); 7 features, fields CITYCOUNCIL_ID/CITYCOUNCIL_MEMBER/LABEL. Was reactively flipped to no_source in 132-04; corrected here."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Sandy city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/SandyCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:santa_clara",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Santa Clara city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:santaquin",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Santaquin city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:saratoga_springs",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Saratoga Springs city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:scipio",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Scipio town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:scofield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Scofield town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:sigurd",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Sigurd town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:smithfield",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Smithfield city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:snowville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Snowville town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_jordan",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (South Jordan city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/SouthJordanCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_ogden",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (South Ogden city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_salt_lake",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (South Salt Lake city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_weber",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (South Weber city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:spanish_fork",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Spanish Fork city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:spring_city",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Spring City city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:springdale",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Springdale town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:springville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Springville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:st_george",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (St. George city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/StGeorgeCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:sterling",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Sterling town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:stockton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Stockton town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:sunset",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Sunset city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:syracuse",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Syracuse city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:tabiona",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Tabiona town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:taylorsville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "no_source",
+    "notes": "VERIFY URL + field names at run time (Taylorsville city); fall back to status=no_source if 404 — see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) — reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/TaylorsvilleCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:tooele",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Tooele city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:toquerville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Toquerville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:torrey",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Torrey town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:tremonton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Tremonton city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:trenton",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Trenton town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:tropic",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Tropic town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:uintah",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Uintah town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:vernal",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Vernal city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:vernon",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Vernon town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:vineyard",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Vineyard town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:virgin",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Virgin town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:wales",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Wales town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:wallsburg",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Wallsburg town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:washington",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Washington city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:washington_terrace",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Washington Terrace city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:wellington",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Wellington city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:wellsville",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Wellsville city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:wendover",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Wendover city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_bountiful",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (West Bountiful city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_haven",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (West Haven city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_jordan",
+    "layer_class": "city_ward",
+    "source_url": "https://services1.arcgis.com/yznraL2FyB2Sm732/arcgis/rest/services/Council_Districts_22/FeatureServer/5/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "District_Quad", "name": "Council_Member" },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/place:west_jordan/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via West Jordan City GIS (AGO org yznraL2FyB2Sm732, layer WJC_Council_Boundary2022). 4 district polygons; fields District_Quad('1'-'4'), Council_Member. 3 at-large seats surface via the whole-city G4110 geofence. Prior UGRC guess (99lidPhWCzftIe9K/WestJordanCouncilDistricts) was wrong org — 400."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_point",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (West Point city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_valley_city",
+    "layer_class": "city_ward",
+    "source_url": "https://gisserver.wvc-ut.gov/server/rest/services/CityWebsite/CouncilDistrictsCityWebsite/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "field_map": { "district_num": "DISTRICT", "name": "LABEL" },
+    "mtfcc": "X0001",
+    "geo_id_template": "ocd-division/country:us/state:ut/place:west_valley_city/ward:{N}",
+    "status": "active",
+    "notes": "VERIFIED 2026-05-29 via WVC City GIS (gisserver.wvc-ut.gov; found via the city's Experience Builder app on gisportal.wvc-ut.gov → web map e2a6525fb78540b5b6b8a07ebf80f077). 4 district polygons; fields DISTRICT(1-4 int), LABEL('District N'), HOLDER. 2 at-large (Christensen, Nordfelt) are attributes, not features — they surface via the whole-city G4110 geofence. NOTE: the alternate host gis.wvc-ut.gov (AGOL web map) is IP-restricted/unreachable; use gisserver.wvc-ut.gov. Prior UGRC guess was wrong org — 400."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:white_city_metro",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (White City metro township); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:willard",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Willard city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:woodland_hills",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Woodland Hills city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:woodruff",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Woodruff town); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:woods_cross",
+    "layer_class": "city_ward",
+    "source_url": null,
+    "field_map": null,
+    "mtfcc": "X0001",
+    "geo_id_template": null,
+    "status": "at_large",
+    "notes": "Default at-large classification per D-04 audit (Woods Cross city); verify at Phase 133 politician import time"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/sboe",
+    "layer_class": "sboe",
+    "source_url": "https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/UtahSchoolBoardDistricts2022to2032/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson",
+    "field_map": {
+      "district_num": "DIST",
+      "name": "DIST"
+    },
+    "mtfcc": "X0003",
+    "geo_id_template": "ocd-division/country:us/state:ut/sboe:{N}",
+    "status": "active",
+    "notes": "VERIFIED FeatureServer URL + DIST field via UGRC SGID page (2026-05-08)"
+  }
+]

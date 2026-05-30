@@ -1,0 +1,31 @@
+{
+  "api": {
+    "base_url": "https://glen.le.utah.gov",
+    "token_env": "LE_UTAH_DEV_TOKEN",
+    "endpoints": {
+      "all_legislators": "/legislators/{TOKEN}",
+      "by_id": "/legislator/{LegislatorID}/{TOKEN}",
+      "by_chamber_district": "/legislator/{Chamber}/{District}/{TOKEN}"
+    },
+    "rate_limit_note": "Run no more than once per day per le.utah.gov developer docs",
+    "expected_field_shape_assumed": {
+      "legislatorId": "string|number",
+      "firstName": "string",
+      "lastName": "string",
+      "chamber": "H|S",
+      "district": "number",
+      "email": "string?",
+      "phone": "string?",
+      "pictureUrl": "string?"
+    },
+    "field_shape_status": "ASSUMED — verify on first roster fetch and update this manifest"
+  },
+  "fallback": {
+    "source": "openstates_pluralpolicy",
+    "url": "https://open.pluralpolicy.com/api/v3/people?jurisdiction=ut&per_page=100",
+    "auth_env": "PLURAL_POLICY_API_KEY",
+    "status": "stub",
+    "notes": "Per D-10 and RESEARCH Pitfall 3, fallback is stubbed v1; wire only if glen.le.utah.gov is unreachable. Auth model unverified."
+  },
+  "expected_counts": { "senate": 29, "house": 75 }
+}

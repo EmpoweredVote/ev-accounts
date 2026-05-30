@@ -73,6 +73,11 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ `docs/ESSENTIALS-INTEGRATION.md` — 654-line integration reference: three-branch `detectUserState()` (inform / connected_with_jurisdiction / connected_no_jurisdiction), "Inform is the unconditional baseline" principle, opt-in XP/gem award endpoints, all 10 jurisdiction fields with TIGER/Line GEOID formats and production examples — v1.5
 
 - ✓ `ESSENTIALS_SERVICE_KEY` provisioned in Render + `.env.example` updated; `POST /api/xp/award` smoke-tested HTTP 200 with `"essentials-rep-lookup"` source — v1.9
+
+- ✓ TIGER 2024 PostGIS geofencing pipeline — `essentials.geo_districts` (GIST-indexed), `connect.user_districts` (per-user cache), `resolve_user_districts` + `cache_user_districts` RPCs; 172 CA legislative polygons (80 Assembly + 40 Senate + 52 US House CD119) + 975 school district polygons (unified/elementary/secondary) — v2.2
+- ✓ Path 0 in `GET /representatives/me` — `tiger_geoid` join on `(tiger_geoid, district_type)`; eliminates live PostGIS on hot path for cached users; fire-and-forget self-promotion from Path 1.5 — v2.2
+- ✓ Geofencing wired fail-open into both location-write flows — `POST /connect/set-location` (Connected) + `PATCH /account/location-hint` (Inform); `GET /api/account/districts` + `GET /api/account/school-district` endpoints; Inform `POST /account/set-location` — v2.2
+- ✓ Profile Location tab — tier-aware on `login.empowered.vote/profile`; `SchoolDistrictSection` with Google search links; City Council display; recalibration controls; operator recache CLI (`--dry-run/--before/--user`) — v2.2
 - ✓ Role infrastructure: `feature_scope` + `jurisdiction_geoid` + `resource_id` on `public.user_roles`; `grant_role`/`revoke_role`/`get_user_roles` SECURITY DEFINER RPCs; `public.role_audit_log` table; 5 role types seeded — v1.9
 - ✓ `requireRole()` middleware factory with NULL-safe jurisdiction check (`IS NULL OR IS NOT DISTINCT FROM`) and Redis-backed caching; `checkRole()` pure function tested across all scope combinations; `GET /api/contributor/me` + `POST /api/roles/check` endpoints — v1.9
 - ✓ Admin grant/revoke UI — role assignment form with user typeahead, jurisdiction chips from stored districts, politician picker for campaign_manager; global audit dashboard filterable by feature_scope/jurisdiction/date — v1.9
@@ -124,7 +129,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v1.9):** ~62,000 lines of TypeScript (project-wide). 58 phases, 77+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg. Admin: Vite + React + Tailwind v4 (dark mode). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). All migrations 026–058 in production. 21 live compass topics, 2,577 politicians, full role system live. `requireRole()` middleware with Redis caching. Five role types: `compass_stance_editor`, `campaign_manager`, `ctc_content_editor`, `essentials_data_editor`, `volunteer`. ESSENTIALS_SERVICE_KEY provisioned. v1.6 phases 42–43 (Decommission + DNS) remain open planning items.
+**Current state (v2.5):** ~78,000 lines of TypeScript (project-wide). 77 phases, 90+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–219 applied to production. 21 live compass topics, 2,616+ politicians (100 senators + 43 2026 candidates + 39 city officials across 4 CA cities), full role system live. CA TIGER geofencing live: 1,147 polygon layers (172 legislative + 975 school districts), per-user district cache, Path 0 fast path. inform.inform_profiles live, yellow Inform profile page live. Phase 77 complete: 4-city infrastructure verified (San Jose, San Diego, Berkeley, Fremont) — CITY-01–08 all green, Phase 78 go/no-go GREEN.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -148,7 +153,7 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 - **Auth**: Supabase Auth only. No custom auth. Service role key server-side only, never client-exposed.
 - **Cost**: Unfunded nonprofit. Free tiers first. No paid verification services in v1. Minimize operational cost.
 - **Security**: Privacy by default. Collect only what is necessary. tolerance_rating, legal_name, verification_method are internal-only fields — enforced at RLS and API layers.
-- **Repo**: `empowered-accounts` on GitHub. `main` is production. `.env.example` always included.
+- **Repo**: `empowered-accounts` on GitHub. `master` is production. `.env.example` always included.
 
 ## Key Decisions
 
@@ -199,6 +204,11 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | fail-open for compass_stance_editor, fail-CLOSED for essentials_data_editor | Compass has console.warn + null return when politician geoid is missing (Alpha acceptable). Essentials returns 403 always on NULL geoid — bio edits are higher-stakes. Different security profiles for different risk levels. | ✓ Good — intentional asymmetry documented; backport to compass is v2.0 tech debt; v1.9 |
 | Contributor portal embedded in app/ (not standalone Vite app) | Alpha has app/ already running; separate contributors.empowered.vote would require new Render service, DNS, and CI. Acceptable for pilot scale. | ⚠ Revisit — standalone domain (contributors.empowered.vote) if portal grows beyond Alpha; v1.9 |
 | GET /api/contributor/me filters to 3 contributor roles only | Portal only serves compass_stance_editor, campaign_manager, essentials_data_editor. CTC (ctc_content_editor) and Civic Spaces (volunteer) use GET /api/roles/me or POST /api/roles/check. Prevents portal from becoming a catch-all. | ✓ Good — clean separation; integration guide documents correct endpoints per consumer; v1.9 |
+| PostGIS calls in SECURITY DEFINER must use `public.` prefix | `SET search_path = ''` means no implicit schema; all PostGIS functions must be `public.ST_Contains`, `public.ST_SetSRID`, etc. | ✓ Good — established as geospatial standard; v2.2 |
+| `tiger_geoid` non-unique — always join on `(tiger_geoid, district_type)` | SLDL and SLDU share geoid format (06NNN); assembly D20 + senate D20 both have `tiger_geoid='06020'`. Single-column join silently drops rows. | ✓ Good — mandatory dual-column join; documented in Path 0 implementation; v2.2 |
+| `DROP FUNCTION IF EXISTS` before changing function arity | `CREATE OR REPLACE` does not remove old arity overloads — creates ambiguous set that PostgreSQL refuses to resolve. Migration 094 fixed 093 silently-failing overload. | ✓ Good — added as migration checklist item; v2.2 |
+| Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
+| Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
 ---
 ## Previous Milestone: v1.9 Roles (Phases 51–58, shipped 2026-04-06)
@@ -215,34 +225,37 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.1 Inform Account Tier
+## Current Milestone: v2.5 City Officials Expansion (Phases 77+)
 
-**Goal:** Make the Inform tier a first-class experience — a yellow-themed account that anyone can create in seconds (email + password + display name), with a profile page that feels complete and personal, and an invitational path toward Connected when the user is ready.
-
-**Anti-funnel principle:** Inform Accounts allow people to get to know us before trusting us. The platform finds value through the Compass and Essentials. "Connect" is framed as unlocking shared participation — never as a conversion goal.
-
-**Inform tier capabilities:**
-- Can fully use Inform features (Compass, Essentials)
-- Can observe Connected/Empowered features (read-only)
-- Cannot participate in Connected features (voting, speaking in Symposiums)
-- Can only earn yellow gems (anonymity constraint)
-- Compass stances and Essentials last location are remembered
+**Goal:** Expand local government coverage to four CA cities (San Jose, San Diego, Berkeley, Fremont) with full city council + key roles, gap-fill missing topics for politicians already in DB, and add a campaign finance summary layer (FEC/FPPC) to politician profiles.
 
 **Target features:**
-- `inform.inform_profiles` table — yellow gem balance + last Essentials location
-- Login hub redesign: login form + "Create an Account" CTA + Inform constraints modal
-- Inform signup: display name + email + password (no invite code)
-- Yellow-themed "Check your email" + post-confirm redirect to yellow profile
-- Yellow Inform profile page (modeled on Connected profile at login.empowered.vote/profile — wide desktop borders, tile layout)
-- Connected/Empowered tiles shown as observable (locked, not hidden)
-- Inform Account pill → Connected Account explainer dialog (what it is, auth, invite codes in Alpha)
-- Subtle "Connect your account" bottom section — invitational, never a hard sell
+- Full city council + key roles for San Jose, San Diego, Berkeley, and Fremont (comparable to SF batch)
+- Sourced stance data for all new city officials across all 43 compass topics
+- Gap-fill missing topic stances for politicians already in DB (sparse coverage)
+- Campaign finance summary display — top donors and total raised per politician (FEC / FPPC data)
 
-## Previous Milestone: v2.0 Civic Account Experience (Phases 60–65, in progress)
+## Previous Milestone: v2.4 2026 Senate Candidates (Phases 75–76, shipped 2026-05-22)
+
+**Goal:** Full national coverage of all declared candidates in all 34 Class 2 Senate races — incumbents reuse existing politician records (flagged as candidates), non-incumbents get new politician records, and stances are researched for all notable candidates via the research-stances skill. Primaries are ongoing; catalog now and update nominees post-primary.
+
+## Previous Milestone: v2.3 US Senate Coverage (Phases 72–74, shipped 2026-05-21)
+
+**Goal:** Complete civic profiles for all 100 sitting US Senators — state infrastructure, politician records, office links, photos, and full sourced stance data across all applicable CompassV2 topics — so any user in any US state sees their senators in the Representatives feed with complete compass data.
+
+## Previous Milestone: v2.2 TIGER District Geofencing (Phases 69–71, shipped 2026-05-10)
+
+**Goal:** Full CA TIGER district geofencing pipeline — PostGIS schema, polygon import, per-user district cache, Path 0 fast path in representatives feed, Profile Location tab with school districts.
+
+## Previous Milestone: v2.1 Inform Account Tier (Phases 66–68, shipped 2026-04-27)
+
+**Goal:** Make the Inform tier a first-class experience — yellow-themed account, low-friction signup, yellow profile page, and an invitational path toward Connected.
+
+## Previous Milestone: v2.0 Civic Account Experience (Phases 60–65, partially shipped)
 
 **Goal:** Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma — dark navy, blue CTAs, trust-first copy.
 
-**Status:** Phases 60–62 shipped. Phase 63 in progress. Phases 64–65 pending.
+**Status:** Phases 60–63 shipped. Phases 64–65 pending (InformLanding + Dashboard Redesign).
 
 ---
-*Last updated: 2026-04-27 after v2.1 milestone start*
+*Last updated: 2026-05-22 after v2.5 milestone start*

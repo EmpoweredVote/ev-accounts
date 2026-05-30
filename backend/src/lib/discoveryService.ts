@@ -128,31 +128,54 @@ export function isDomainAllowlisted(url: string, allowedDomains: string[] | null
 // ---------------------------------------------------------------------------
 
 /**
+ * Strip middle initials from a name so "ANDREJ A. SELIVRA" normalizes to
+ * "andrej selivra" for duplicate detection. Tokens that are a single letter
+ * (optionally followed by a period) are treated as middle initials and dropped.
+ * Only interior tokens are eligible — first and last are always kept.
+ */
+function stripMiddleInitials(name: string): string {
+  const tokens = name.trim().toLowerCase().replace(/\./g, '').split(/\s+/);
+  if (tokens.length <= 2) return tokens.join(' ');
+  const [first, ...rest] = tokens;
+  const last = rest[rest.length - 1];
+  const middle = rest.slice(0, -1).filter(t => t.length > 1);
+  return [first, ...middle, last].join(' ');
+}
+
+/**
  * Idempotent insert of a high-confidence candidate into race_candidates.
  * Uses SELECT-then-INSERT (no ON CONFLICT) because race_candidates has no
  * unique index on (race_id, full_name) — only a partial unique on external_id.
  *
  * Returns 'inserted' when a new row is created, 'already_present' when an
- * existing row with the same race_id + lower(full_name) is found.
+ * existing row with the same race_id + normalized name is found.
+ * Normalization strips middle initials so "ANDREJ A. SELIVRA" matches "Andrej Selivra".
  */
 export async function autoUpsertToRaceCandidates(args: {
   raceId: string;
   fullName: string;
   source?: string;
 }): Promise<'inserted' | 'already_present'> {
+  const normalizedIncoming = stripMiddleInitials(args.fullName);
+
+  // Check for existing row using normalized comparison on both sides.
+  // regexp_replace strips single-letter+dot middle tokens from stored names.
   const existing = await pool.query<{ exists: boolean }>(
     `SELECT 1 FROM essentials.race_candidates
-      WHERE race_id = $1 AND lower(full_name) = lower($2)
+      WHERE race_id = $1
+        AND lower(regexp_replace(full_name, '\\m[A-Za-z]\\.?\\M\\s*', '', 'g')) = $2
       LIMIT 1`,
-    [args.raceId, args.fullName]
+    [args.raceId, normalizedIncoming]
   );
   if (existing.rows.length > 0) {
     return 'already_present';
   }
 
+  // Parse first/last from the original name, skipping middle-initial tokens.
   const tokens = args.fullName.trim().split(/\s+/);
   const firstName = tokens[0] ?? null;
-  const lastName = tokens.length > 1 ? tokens.slice(1).join(' ') : null;
+  // Last name = last token; skip any single-letter (middle initial) tokens in between.
+  const lastName = tokens.length > 1 ? tokens[tokens.length - 1] : null;
   const source = args.source ?? 'discovery_cron';
 
   await pool.query(
