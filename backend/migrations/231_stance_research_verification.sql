@@ -1,4 +1,4 @@
--- 087_stance_research_verification.sql
+-- 231_stance_research_verification.sql
 -- New tables for the snippet-based stance research verification pipeline.
 -- See docs/superpowers/specs/2026-04-30-stance-research-verification-design.md
 
