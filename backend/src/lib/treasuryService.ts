@@ -120,6 +120,7 @@ export interface TreasuryCity {
   state: string;
   entity_type: string | null;
   population: number | null;
+  population_year: number | null;
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
@@ -204,6 +205,7 @@ interface CityRow {
   state: string;
   entity_type: string | null;
   population: string | null; // bigint returned as string by pg driver
+  population_year: string | null; // INTEGER returned as string by node-postgres
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
@@ -295,6 +297,7 @@ function mapCity(row: CityRow): TreasuryCity {
     state: row.state,
     entity_type: row.entity_type,
     population: row.population !== null ? Number(row.population) : null,
+    population_year: row.population_year !== null ? Number(row.population_year) : null,
     hero_image_url: row.hero_image_url,
     created_at: row.created_at,
     updated_at: row.updated_at,
@@ -373,7 +376,7 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
  */
 export async function getCities(): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.hero_image_url,
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
@@ -395,7 +398,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
  */
 export async function getCityById(id: string): Promise<TreasuryCity | null> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.hero_image_url,
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
