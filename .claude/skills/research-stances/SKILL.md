@@ -1,6 +1,6 @@
 ---
 name: research-stances
-description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on the 21 Empowered Vote policy topics. Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
+description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on Empowered Vote compass topics. Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
 argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
 ---
 
@@ -27,7 +27,7 @@ If the input looks like a legislative body (e.g., "Bloomington City Council", "C
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT p.id, p.full_name, o.title, c.name as chamber_name
+  SELECT p.id, p.full_name, p.last_stances_researched_at, o.title, c.name as chamber_name
   FROM essentials.politicians p
   JOIN essentials.offices o ON o.politician_id = p.id
   JOIN essentials.chambers c ON c.id = o.chamber_id
@@ -45,26 +45,76 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-Fetch the current live topics to validate any `--topics` filter:
+Fetch the current live topics — grouped by scope from `compass_topic_roles` — to validate any `--topics` filter. This produces the **canonical topic lists** you will inject into every agent prompt in Step 1. Never use a hardcoded list.
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT id, title, short_title, topic_key, question_text
-  FROM inform.compass_topics
-  WHERE is_live = true
-  ORDER BY created_at
+  SELECT
+    t.id, t.topic_key, t.title, t.short_title, t.question_text,
+    ARRAY_AGG(DISTINCT r.role_scope ORDER BY r.role_scope)
+      FILTER (WHERE r.role_scope IS NOT NULL) AS scopes
+  FROM inform.compass_topics t
+  LEFT JOIN inform.compass_topic_roles r ON r.topic_id = t.id
+  WHERE t.is_live = true
+  GROUP BY t.id, t.topic_key, t.title, t.short_title, t.question_text, t.created_at
+  ORDER BY t.created_at
 \`);
+
+const byScope = (scope) => rows.filter(r => r.scopes?.includes(scope)).map(r => r.topic_key);
+const unscoped = rows.filter(r => !r.scopes?.length).map(r => r.topic_key);
+
+console.log('NATIONAL TOPICS (federal/state): ' + byScope('federal').join(', '));
+console.log('LOCAL TOPICS: ' + byScope('local').filter(k => !byScope('federal').includes(k)).join(', '));
+console.log('JUDICIAL TOPICS: ' + byScope('judicial').join(', '));
+if (unscoped.length) console.log('WARNING - unscoped topics (add to compass_topic_roles):', unscoped.join(', '));
+console.log('\nALL TOPIC KEYS (' + rows.length + ' total): ' + rows.map(r => r.topic_key).join(', '));
 console.log(JSON.stringify(rows, null, 2));
 await pool.end();
 "
 ```
 
+Save the output lines — you will inject them into Step 1 agent prompts. If any `WARNING - unscoped` topics appear, add them to `inform.compass_topic_roles` before proceeding.
+
 **Confirm before proceeding.** Show the user:
-- List of politicians to research
-- Topics in scope (all or filtered)
-- Estimated scope (e.g., "3 politicians x 21 topics = up to 63 stance assessments")
+- List of politicians to research, including their `last_stances_researched_at` date (show "Never" if null)
+- ⚠️ Flag any politician researched within the last **30 days** — show their date and note they may not need re-research. Still include them unless the user says to skip.
+- Topics in scope (all or filtered), noting which topics are relevant to each politician's jurisdiction level
+- Estimated scope (e.g., "3 politicians x 26 national topics = up to 78 stance assessments")
+
+---
+
+## STEP 0.5 — Apply Jurisdiction Rules
+
+Some jurisdictions have legal rules that make a topic inapplicable to **every** official there (e.g. Utah Code §57-20-1 bans municipal rent control statewide, so no UT official can act on `rent-regulation`). These live in the coverage tracker at `ev-accounts/backend/data/coverage/<state>.yaml` under `rules.skip_topics`, and you MUST honor them **before** dispatching agents.
+
+1. **Determine the state code** for this batch — the 2-letter code (e.g. `ut`) from the resolved politicians' `representing_state` / the body name.
+
+2. **Read the skip rules** (no-op if the file doesn't exist — behave exactly as before):
+
+Replace `STATE_CODE` with the batch's 2-letter code (e.g. `ut`):
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import fs from 'node:fs';
+import yaml from 'js-yaml';
+const state = 'STATE_CODE'.toLowerCase();
+const f = 'data/coverage/' + state + '.yaml';
+if (!fs.existsSync(f)) { console.log('NO_COVERAGE_RULES'); process.exit(0); }
+const doc = yaml.load(fs.readFileSync(f, 'utf8'));
+for (const r of (doc.rules?.skip_topics ?? [])) {
+  console.log('SKIP\t' + r.topic_key + '\t' + (r.applies_to || []).join(',') + '\t' + r.reason);
+}
+"
+```
+
+3. **Map each politician's office to a coverage level**: `NATIONAL_*`/`STATE_*` → `state`, `COUNTY` → `county`, `LOCAL*` → `local`, `SCHOOL` → `school`, `JUDICIAL` → `judicial`.
+
+4. **For each `SKIP` line whose `applies_to` includes a level present in this batch**, REMOVE that `topic_key` from the NATIONAL / LOCAL / JUDICIAL topic lists you saved in STEP 0 (so it is never injected into a Step 1 agent), and print a warning, e.g.:
+   > ⚠️ Skipping `rent-regulation` for UT — Utah Code §57-20-1 prohibits municipal rent control. (rule: data/coverage/ut.yaml)
+
+   If a batch mixes levels and a rule applies to only some of them, split the batch by level so non-matching politicians still get the topic. Include the skipped topics in the confirmation summary shown to the user.
 
 ---
 
@@ -89,15 +139,22 @@ Only research these topics: [TOPIC_LIST]
 [If --topics was NOT specified:]
 Research all current policy topics.
 
-IMPORTANT — Use these exact topic_key values from the database (fetched in STEP 0):
-[Paste the topic_key values from the Topic Resolution query, e.g.:]
-healthcare, abortion, tariffs, taxes, same-sex-marriage, religious-freedom, trans-athletes,
-ukraine-support, medicare/aid, fossil-fuels, voting-rights, deportation, social-security,
-ai-regulation, climate-change, civil-rights, housing, campaign-finance, immigration,
-misinformation, redistricting, school-vouchers, data-centers, homelessness, childcare
+IMPORTANT — Use ONLY these exact topic_key values (fetched live from the database in STEP 0 — NOT a hardcoded list):
+
+National topics (federal/state politicians):
+[INSERT THE "NATIONAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
+
+Local topics (city council, county, municipal officials):
+[INSERT THE "LOCAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
+
+Judicial topics (judges, prosecutors, district attorneys):
+[INSERT THE "JUDICIAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
 
 The topic_key in your CSV output MUST exactly match one of these values.
 Do NOT invent your own topic_key slugs.
+
+Only research topics relevant to this politician's jurisdiction — use the scope groupings above.
+Skip topics outside their jurisdiction unless they have taken a clear public position on them.
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
@@ -218,12 +275,30 @@ await pool.end();
 " '[JSON_ARRAY_OF_RESOLVED_STANCES]'
 ```
 
-### 4c. Report results
+### 4c. Stamp last_stances_researched_at
+
+After a successful push, update the timestamp for every politician who had at least one stance upserted:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const ids = process.argv.slice(2);
+await pool.query(
+  'UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY(\$1::uuid[])',
+  [ids]
+);
+console.log('Stamped ' + ids.length + ' politicians');
+await pool.end();
+" -- [SPACE-SEPARATED LIST OF POLITICIAN UUIDs]
+```
+
+### 4d. Report results
 
 After DB push:
 > "Pushed [N] stances to the database for [politician names].
 > - [N] politician_answers upserted
 > - [N] politician_context entries with reasoning and sources
+> - last_stances_researched_at stamped for [M] politicians
 > - CSV preserved at: [file path]
 >
 > Skipped: [list any unmatched politicians or rejected rows]"

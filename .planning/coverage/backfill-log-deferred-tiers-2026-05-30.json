@@ -1,0 +1,1263 @@
+{
+  "captured": "2026-05-30",
+  "tier": "deferred (LOCAL/SCHOOL/COUNTY)",
+  "count": 157,
+  "districts": [
+    {
+      "id": "01b5126d-6967-41b6-a999-df50d1f71845",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:8"
+    },
+    {
+      "id": "01b6cfd1-d2e4-44ab-8cc3-3de909c70cd1",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-9",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:9"
+    },
+    {
+      "id": "06507850-08e9-4564-9835-ceeda336ad87",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000003",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:3"
+    },
+    {
+      "id": "0883d9af-a043-4e33-9636-35fc5f50eb13",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:7"
+    },
+    {
+      "id": "091f03cb-3f8a-4d6a-a6af-24c0ffe20c72",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:4"
+    },
+    {
+      "id": "09dea96f-1e15-497b-a313-adf96d2b33c3",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:5"
+    },
+    {
+      "id": "0a741987-6d8d-4a36-a6b1-bc7fd8da80ba",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:5"
+    },
+    {
+      "id": "0b2912b5-11bb-4416-b31a-eb7eb32a5a67",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:3"
+    },
+    {
+      "id": "1108f898-0457-48b0-8900-f521fa5eb3a2",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:7"
+    },
+    {
+      "id": "11b149c6-96e9-49b6-811e-c42b3973a202",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:2"
+    },
+    {
+      "id": "12026291-cf3a-447e-bbba-42a51ba5bc2b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0622230",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:el_monte"
+    },
+    {
+      "id": "15458750-78aa-4b9a-ade4-247e28bc25c2",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0608954",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:burbank"
+    },
+    {
+      "id": "1946c2e2-a863-45fd-a2d7-56f20c7201ae",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0658072",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pomona"
+    },
+    {
+      "id": "222a811c-38fe-474f-94a1-053d702466e7",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "22ff630a-c5d5-4b13-a4a6-88d5b35389aa",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0619766",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:downey"
+    },
+    {
+      "id": "24c0aa7c-3c7c-463c-bb8f-b7a4c00d975a",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:1"
+    },
+    {
+      "id": "257a1018-1532-42ea-b23b-d5054648b4a0",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:1"
+    },
+    {
+      "id": "2a250c33-2dff-49f1-8315-9f9a09f5cf3f",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:3"
+    },
+    {
+      "id": "2bec7989-db39-4d4d-9863-32e3e518a3a8",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:7"
+    },
+    {
+      "id": "302ce5a0-7d1c-47f5-9d38-4029c04e902e",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0680000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:torrance"
+    },
+    {
+      "id": "33a2b859-90e7-4ea6-bfd7-355bd2015ff2",
+      "district_type": "LOCAL",
+      "state": "or",
+      "geo_id": "portland-or-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:portland/ward:4"
+    },
+    {
+      "id": "3538e2eb-e820-42ed-bcb7-dd4264d2ffc8",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:3"
+    },
+    {
+      "id": "35e2fd7a-2d5a-4987-a5c3-d724d985d206",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:5"
+    },
+    {
+      "id": "37b0f435-e511-4f60-a86c-014c4ebcc3fd",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000006",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:6"
+    },
+    {
+      "id": "39aa80a3-76d5-4f00-8e58-aef4a5a02e08",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:1"
+    },
+    {
+      "id": "3a213f0d-bcbd-4243-b576-b9c18c621520",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0658072",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pomona"
+    },
+    {
+      "id": "3b572a06-15cc-4ef3-a7d1-dd49cafdbf66",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "45bc9726-e9af-414f-8b61-4a028a8f3aab",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2302795",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:bangor"
+    },
+    {
+      "id": "474eadf7-bee6-4cc9-84cf-b5a9386ef017",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-9",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:9"
+    },
+    {
+      "id": "47809510-41a8-422c-af30-1c8786826801",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:3"
+    },
+    {
+      "id": "4961e1bd-160d-4f3c-a690-fad2e0173849",
+      "district_type": "LOCAL",
+      "state": "or",
+      "geo_id": "portland-or-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:portland/ward:3"
+    },
+    {
+      "id": "4a9749f8-b8f3-42e3-b699-c54f13cc7a56",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:1"
+    },
+    {
+      "id": "4c08b6d3-a63c-4125-bc52-3b7d35ab94a3",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0656000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pasadena"
+    },
+    {
+      "id": "502e8617-178a-417a-8a9d-fd59d5121e46",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:2"
+    },
+    {
+      "id": "550852d9-c36f-4ac8-b8f9-eed814a87359",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "577805d8-ecaf-4eca-9ee3-37659ed13386",
+      "district_type": "LOCAL",
+      "state": "or",
+      "geo_id": "portland-or-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:portland/ward:2"
+    },
+    {
+      "id": "5b24e423-9dad-4655-814f-6c4954d91943",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0636546",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:inglewood"
+    },
+    {
+      "id": "5bb0dbb6-b6ca-438c-b096-2584c893cde4",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0669088",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:santa_clarita"
+    },
+    {
+      "id": "5bb79df7-028e-43b7-a4cf-6a587c1bbada",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0656000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pasadena"
+    },
+    {
+      "id": "63d01cea-17b9-44f1-93b1-c0fe236fc0ae",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0636546",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:inglewood"
+    },
+    {
+      "id": "651cd199-2d4e-4a30-9a15-2515de92912b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:4"
+    },
+    {
+      "id": "6534bccd-0572-4ecf-88af-730026b35c56",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:5"
+    },
+    {
+      "id": "6ad1e005-cf20-4cca-aa16-0e50eb1521da",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0655156",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:palmdale"
+    },
+    {
+      "id": "6cfca7c9-9f49-458b-968d-755d0401cd97",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-11",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:11"
+    },
+    {
+      "id": "717a7d6d-24ea-48ad-afe0-9890afb700d2",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0622230",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:el_monte"
+    },
+    {
+      "id": "738b8cd8-5fe8-442b-8371-74f6781072aa",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0680000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:torrance"
+    },
+    {
+      "id": "78dbf7a8-538f-4296-a1e5-121db356f068",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:8"
+    },
+    {
+      "id": "79c8676c-7c43-416f-9ac1-b0cd04abed0e",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:4"
+    },
+    {
+      "id": "7c83ec34-3024-4c44-a9e2-7a36710d8420",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:2"
+    },
+    {
+      "id": "7fe09a06-620f-45b6-ae56-78af65600cec",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0655156",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:palmdale"
+    },
+    {
+      "id": "811f012a-7574-4ef0-add5-0b519ce89690",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:8"
+    },
+    {
+      "id": "84bd92f3-1123-4d89-a09a-72960bdf7881",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-9",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:9"
+    },
+    {
+      "id": "85817d95-d3f2-4b75-89ac-6a1fe05a249d",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0684200",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:west_covina"
+    },
+    {
+      "id": "89783302-1710-4470-9288-76188a881890",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2371990",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:south_portland"
+    },
+    {
+      "id": "8e640b6f-2d14-4da9-99ab-e521ba5c3e09",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:7"
+    },
+    {
+      "id": "91e386c4-4562-4a56-bc36-cf3e15cbf581",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0680000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:torrance"
+    },
+    {
+      "id": "95177e7e-78e2-4139-a82b-9469bbcb7965",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0680000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:torrance"
+    },
+    {
+      "id": "970809db-0230-46d3-85ea-ebe85eb6b290",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0684200",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:west_covina"
+    },
+    {
+      "id": "9747b1a0-438d-495e-b369-049711aa9646",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0656000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pasadena"
+    },
+    {
+      "id": "98bb0066-86c9-4ccd-a3c1-22d42a38efcb",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "9a93f63c-18ef-4f30-b236-4120b77cceba",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:4"
+    },
+    {
+      "id": "9ac39731-43a3-4fbb-9ad5-e4758c7fcffc",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:6"
+    },
+    {
+      "id": "9c06376f-3510-40ee-be67-ca8d84d6ad9e",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0619766",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:downey"
+    },
+    {
+      "id": "9e7698e1-de3e-41c8-ae26-92dea29c2804",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-10",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:10"
+    },
+    {
+      "id": "9e9b89cd-f353-4d26-9e06-565cb649c36b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0640130",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:lancaster"
+    },
+    {
+      "id": "9ed389bc-f1d6-4ccd-8194-cb24eeb3ac3d",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:3"
+    },
+    {
+      "id": "9f4b2406-4e1f-4d90-87b7-29c9fd0e0106",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:5"
+    },
+    {
+      "id": "a1238d7a-79ac-4288-a31c-a3eb4dcd8397",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:4"
+    },
+    {
+      "id": "a1d3e3bf-e2d8-4c6d-8277-acac261a6f1f",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0655156",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:palmdale"
+    },
+    {
+      "id": "a3672d07-b485-4a77-94a7-1f56c4741a4b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:2"
+    },
+    {
+      "id": "a536da67-f77c-4d52-b998-8bd724258656",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-10",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:10"
+    },
+    {
+      "id": "a56231f2-c221-4514-81c1-c2affd336bf5",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:2"
+    },
+    {
+      "id": "a5e2fbc3-f59c-43dc-8ed7-578192dc7d5b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:3"
+    },
+    {
+      "id": "aa8c99e1-22d7-441c-8c08-a17bca94004a",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:6"
+    },
+    {
+      "id": "adf5b635-a285-4be8-967b-8e3546ea26c5",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0684200",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:west_covina"
+    },
+    {
+      "id": "ae7e6109-d3dc-44ed-b543-9dd832ae7805",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:6"
+    },
+    {
+      "id": "af3f7f53-9654-499e-a8b7-afeefd47d196",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2304860",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:biddeford"
+    },
+    {
+      "id": "b075b17b-fc60-4380-a6d5-27d7ea8b5d81",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sd-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_diego/ward:2"
+    },
+    {
+      "id": "b41cef46-ce55-4cf1-bb52-9c34b17b368d",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:1"
+    },
+    {
+      "id": "b495f759-9335-4609-85b9-761e9a2831fb",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:6"
+    },
+    {
+      "id": "b5e83442-308d-46e7-bfb7-8ae8f94dbfea",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:6"
+    },
+    {
+      "id": "b8f9ba37-9540-44e4-9d1f-076c1b87c916",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0656000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pasadena"
+    },
+    {
+      "id": "bac61e20-5682-4bac-8133-6d7e23c20db8",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:4"
+    },
+    {
+      "id": "bb6bdc6a-b2a5-4587-aa41-b616c903edd8",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0669088",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:santa_clarita"
+    },
+    {
+      "id": "bffc9c27-8eb0-4a8a-87e0-9f9361170ebd",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0636000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:huntington_beach"
+    },
+    {
+      "id": "c39c033b-ccfa-408e-bfc7-4887cd9c4a6c",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:1"
+    },
+    {
+      "id": "cd647e3c-e2d6-40a0-b8db-b9dfbe6f597d",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000005",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:5"
+    },
+    {
+      "id": "ce0a9c5f-f023-4d79-b425-557d49d423a4",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "cf02da1f-6e49-4649-9d92-eeeeb6e2ec63",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:7"
+    },
+    {
+      "id": "cf3274f9-48c3-4e96-8273-3f6574add756",
+      "district_type": "LOCAL",
+      "state": "MA",
+      "geo_id": "2511000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ma/place:cambridge"
+    },
+    {
+      "id": "d3690d9d-c70a-426d-9826-074d01f05fc5",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0636546",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:inglewood"
+    },
+    {
+      "id": "d3c37140-c958-4c20-8837-b23c1db6ac61",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sf-supervisor-district-8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_francisco/ward:8"
+    },
+    {
+      "id": "d614f88b-914d-48b1-8e9c-dcffcb8f7952",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2302060",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:auburn"
+    },
+    {
+      "id": "d88287fc-a517-4ccf-ae19-3a1157e9a355",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "de4a7e07-b71d-41f9-86f8-bf1312a50421",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-8",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:8"
+    },
+    {
+      "id": "ded42cc8-1b22-4523-bd38-692f08caab64",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2338740",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:lewiston"
+    },
+    {
+      "id": "e0afe043-dca0-4741-9e5a-978ec36aef55",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "berkeley-council-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:berkeley/ward:6"
+    },
+    {
+      "id": "e1c0c7a5-ed86-4ef1-9353-1d927ecb7788",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "e282b5d3-b1dc-4966-ad72-9f0629660f79",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0658072",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pomona"
+    },
+    {
+      "id": "eb22f5c3-9b93-4b00-846c-e198816ae206",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sj-council-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:san_jose/ward:2"
+    },
+    {
+      "id": "eca4e438-fa74-4c2d-aa89-958553884d91",
+      "district_type": "LOCAL",
+      "state": "IN",
+      "geo_id": "180586000004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/place:bloomington/ward:4"
+    },
+    {
+      "id": "ee308098-73d3-4275-b592-483f579b4bd8",
+      "district_type": "LOCAL",
+      "state": "or",
+      "geo_id": "portland-or-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:or/place:portland/ward:1"
+    },
+    {
+      "id": "f2c28800-aec2-4701-afd9-a9c88e4dd524",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0643000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:long_beach"
+    },
+    {
+      "id": "f34e6ce9-f96b-4937-a003-58ad0fa01bbd",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0656000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:pasadena"
+    },
+    {
+      "id": "f3d392d8-d5c7-4ba0-a086-1fff0501fdee",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "fremont-council-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:fremont/ward:1"
+    },
+    {
+      "id": "f58183f6-1cd3-4184-81c4-a624093d00ed",
+      "district_type": "LOCAL",
+      "state": "me",
+      "geo_id": "2360545",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:me/place:portland"
+    },
+    {
+      "id": "f58a8ca8-cf3a-495f-a12c-1e36576d4f7b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "sacramento-council-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:sacramento/ward:5"
+    },
+    {
+      "id": "f9e8037d-e311-4583-9623-3201259ba7e4",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0652526",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:norwalk"
+    },
+    {
+      "id": "fdfb8511-2403-4cdf-ac1f-5567fdf30d57",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0630000",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:glendale"
+    },
+    {
+      "id": "fe5dee96-f3d4-43e5-86e7-a6c68cfa414b",
+      "district_type": "LOCAL",
+      "state": "CA",
+      "geo_id": "0669088",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/place:santa_clarita"
+    },
+    {
+      "id": "083b1892-0408-46aa-a84c-e436f856d8ff",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-3",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "0eb01f5f-83b4-4a2d-a458-6c5c2b28264a",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1806510",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan"
+    },
+    {
+      "id": "104f0ac3-629a-404f-8a19-fd0f5a6d83af",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "458bcd16-460e-4e62-8049-60f02a99f0ea",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-6",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "5490c02e-2710-42fe-8821-e6e95498f217",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1809480",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:rbbcsc"
+    },
+    {
+      "id": "74abc6b2-0d56-440e-bfe0-6af5ef2a55e3",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-1",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "76d0828f-b78f-417d-9c49-21b129ba05b9",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1809480",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:rbbcsc"
+    },
+    {
+      "id": "7a771dda-0e7a-452e-a173-61f63d2f2d25",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1806510",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan"
+    },
+    {
+      "id": "7b3a659e-e757-4256-aaee-792afeccc0eb",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-5",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "8686a24e-84d0-44b6-9c18-3e64ad1de3fa",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-2",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "88479c8c-ab22-4610-86d9-d1737e2df3e1",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180477000002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "8cfd00ae-c984-40e7-b185-3e61fc7be0a3",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1806510",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan"
+    },
+    {
+      "id": "92f17f97-6a0b-4fc7-83b6-8a4511821e75",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "a2c00ac4-0e1b-4a91-b670-4d6b3ef09c6e",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1809480",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:rbbcsc"
+    },
+    {
+      "id": "a403dab2-da87-4e95-9c7a-95a95266fd0f",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180477000005",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "a5bf9c9a-4ca0-43ea-8f1c-2d1c7106bda6",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180477000004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "a8642582-a29d-4ef0-a36f-4ebb1b94583c",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180477000001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "acd6c04c-bee0-4e9b-871a-cf73845b0432",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1804770",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "acdaac21-c8a2-46bc-900d-dda847e47861",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000003",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "ace8379e-6685-4404-b3f6-b96190dc9fe1",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1806510",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan"
+    },
+    {
+      "id": "bba03714-38e7-44b9-ab77-6d57e3896c86",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000005",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "cb72f712-d68a-4dff-930c-92f07c457c81",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1804770",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:indianapolis_public_schools"
+    },
+    {
+      "id": "cba5978b-cf89-435e-b785-69bdf27b06d6",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "d255dd51-98ff-4a47-9ebb-009798584761",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-4",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "e97bf09f-6943-4aa0-8a3d-f955d635b0b9",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1806510",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:martinsville_schools_metropolitan"
+    },
+    {
+      "id": "e9a84482-a647-4324-b93e-8ec1e2e84624",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "1803330",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:eminence_community_school_corporation"
+    },
+    {
+      "id": "ef88b78d-8f1c-4aec-9b1c-ce906534347c",
+      "district_type": "SCHOOL",
+      "state": "06",
+      "geo_id": "lausd-board-district-7",
+      "old_ocd_id": null,
+      "new_ocd_id": "ocd-division/country:us/state:ca/school_district:los_angeles_unified"
+    },
+    {
+      "id": "f635802b-f3cb-4a76-a0da-000580970a4a",
+      "district_type": "SCHOOL",
+      "state": "IN",
+      "geo_id": "180063000006",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/school_district:mccsc"
+    },
+    {
+      "id": "26cc2f29-01e2-4f7b-a680-29b1d7a8310e",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809300002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:lawrence"
+    },
+    {
+      "id": "2af14486-e240-4aa4-bf25-1771c2f35266",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809700012",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:marion"
+    },
+    {
+      "id": "31752516-281b-4ed1-b721-28368d3d5b20",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809300003",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:lawrence"
+    },
+    {
+      "id": "514e01b3-a06a-490e-9e89-da16aec083a3",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809700013",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:marion"
+    },
+    {
+      "id": "58c7e560-957d-444a-9c8e-cd798a4bbb50",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809700014",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:marion"
+    },
+    {
+      "id": "5c363e73-cf7a-453c-95cf-500dfb0c7419",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1807100001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:jackson"
+    },
+    {
+      "id": "5d49971e-fcc4-424a-9844-f363a14d2b5f",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1805500001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:greene"
+    },
+    {
+      "id": "6a9fb33d-d7f1-4631-b147-3e3b16c20ad5",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1805500003",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:greene"
+    },
+    {
+      "id": "6ca360f2-45f5-44aa-94bb-0340a5b5adc1",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809300004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:lawrence"
+    },
+    {
+      "id": "7867f1a3-78b4-4bc5-b0d1-ca6893cae309",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1810900004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:morgan"
+    },
+    {
+      "id": "abce55c8-f6c2-40cb-b920-1c4f38d5a5dc",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809700008",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:marion"
+    },
+    {
+      "id": "b03d0fd2-70f9-434b-aabf-d6fca9ae6be7",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809300001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:lawrence"
+    },
+    {
+      "id": "b3b12418-17fa-4d97-bb7e-0578ab428d87",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1810500001",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:monroe"
+    },
+    {
+      "id": "b83fa86d-58da-4cd0-b1f4-772c2ff28cb7",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1810500003",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:monroe"
+    },
+    {
+      "id": "cf3de5f7-2500-4c51-9f24-bc2c349e8ca7",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1809700018",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:marion"
+    },
+    {
+      "id": "d70d25b5-993e-4bca-b754-2fb811a142d4",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1805500004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:greene"
+    },
+    {
+      "id": "d7999055-9288-42f5-ba72-06802d453bee",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1805500002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:greene"
+    },
+    {
+      "id": "dc5ef8f3-d5aa-47bb-bd25-cc5cfa22a426",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1810500002",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:monroe"
+    },
+    {
+      "id": "f19e032f-9d90-4f62-bf12-1bcf9b4276b3",
+      "district_type": "COUNTY",
+      "state": "IN",
+      "geo_id": "1810500004",
+      "old_ocd_id": "",
+      "new_ocd_id": "ocd-division/country:us/state:in/county:monroe"
+    }
+  ]
+}

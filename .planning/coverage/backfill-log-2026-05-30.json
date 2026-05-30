@@ -1,0 +1,553 @@
+{
+  "captured": "2026-05-30",
+  "tier": "statewide (NATIONAL_UPPER, STATE_EXEC, LOCAL_EXEC)",
+  "count": 78,
+  "districts": [
+    {
+      "id": "0d584c80-b9d6-42ec-93c0-c91967f3f7ee",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0664000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "22ebdde5-9e8d-4a2c-9646-9509e7c6707b",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0619766",
+      "old_ocd_id": null
+    },
+    {
+      "id": "b80bb280-2a59-4fd6-b920-998b3c8404b8",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0606000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "c4323968-3262-417c-a221-107173f4623b",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0626000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "c5aa62ab-e395-4428-9860-58430adb04ac",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0666000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "d2e4346b-28d1-461b-ab64-3c39dce63af5",
+      "district_type": "LOCAL_EXEC",
+      "state": "or",
+      "geo_id": "4159000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "fcacfbe0-8561-4687-8c55-b54d692d9a6a",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0667000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "ff5ce346-93b5-454a-8ca0-a1bd251c77c7",
+      "district_type": "LOCAL_EXEC",
+      "state": "CA",
+      "geo_id": "0668000",
+      "old_ocd_id": null
+    },
+    {
+      "id": "0518bcc4-777b-4f41-82f9-d7fc26f6bfc0",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NM",
+      "geo_id": "35",
+      "old_ocd_id": null
+    },
+    {
+      "id": "0b8a7177-94a5-428e-b88e-4fdbc894cb14",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NV",
+      "geo_id": "32",
+      "old_ocd_id": null
+    },
+    {
+      "id": "0d49e9b1-1b8b-475d-affa-2139465abef8",
+      "district_type": "NATIONAL_UPPER",
+      "state": "WA",
+      "geo_id": "53",
+      "old_ocd_id": null
+    },
+    {
+      "id": "12f53749-5ab5-4bd9-90cc-817802246239",
+      "district_type": "NATIONAL_UPPER",
+      "state": "AZ",
+      "geo_id": "04",
+      "old_ocd_id": null
+    },
+    {
+      "id": "1552f454-5342-4460-9127-57ee0973f5e3",
+      "district_type": "NATIONAL_UPPER",
+      "state": "OR",
+      "geo_id": "41",
+      "old_ocd_id": null
+    },
+    {
+      "id": "1e3fca98-6beb-42bd-a78b-dde33c7e84eb",
+      "district_type": "NATIONAL_UPPER",
+      "state": "WI",
+      "geo_id": "55",
+      "old_ocd_id": null
+    },
+    {
+      "id": "213f3506-09e3-4ea8-8f2a-2648e9ffcd14",
+      "district_type": "NATIONAL_UPPER",
+      "state": "CO",
+      "geo_id": "08",
+      "old_ocd_id": null
+    },
+    {
+      "id": "2e50740f-cbff-4a29-82b4-052da58cc2b9",
+      "district_type": "NATIONAL_UPPER",
+      "state": "FL",
+      "geo_id": "12",
+      "old_ocd_id": null
+    },
+    {
+      "id": "3d62922f-3c42-4bef-9c69-9b6dc13741db",
+      "district_type": "NATIONAL_UPPER",
+      "state": "VA",
+      "geo_id": "51",
+      "old_ocd_id": null
+    },
+    {
+      "id": "3dbdac4a-e3de-4749-b95b-0534d1b6c2d3",
+      "district_type": "NATIONAL_UPPER",
+      "state": "RI",
+      "geo_id": "44",
+      "old_ocd_id": null
+    },
+    {
+      "id": "3f977f5b-fac3-4869-8c87-6d83d92a5099",
+      "district_type": "NATIONAL_UPPER",
+      "state": "WY",
+      "geo_id": "56",
+      "old_ocd_id": null
+    },
+    {
+      "id": "4136d3b1-5035-49bc-829e-6df8f09a1eef",
+      "district_type": "NATIONAL_UPPER",
+      "state": "AK",
+      "geo_id": "02",
+      "old_ocd_id": null
+    },
+    {
+      "id": "43a6fe93-4a7f-44e9-bcc3-fe531a0855bb",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MD",
+      "geo_id": "24",
+      "old_ocd_id": null
+    },
+    {
+      "id": "499af755-b552-4439-a8ad-04c40d42674d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "CT",
+      "geo_id": "09",
+      "old_ocd_id": null
+    },
+    {
+      "id": "510c83f1-9d5b-404e-90d3-0c78084adf11",
+      "district_type": "NATIONAL_UPPER",
+      "state": "OK",
+      "geo_id": "40",
+      "old_ocd_id": null
+    },
+    {
+      "id": "53c1bd40-fb71-47a5-b5a0-c180cd750a65",
+      "district_type": "NATIONAL_UPPER",
+      "state": "GA",
+      "geo_id": "13",
+      "old_ocd_id": null
+    },
+    {
+      "id": "57fb7b0c-d942-4929-92d5-7283f94c4a0f",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NY",
+      "geo_id": "36",
+      "old_ocd_id": null
+    },
+    {
+      "id": "5b85b33d-8805-4a69-859c-6f21e8d6fee3",
+      "district_type": "NATIONAL_UPPER",
+      "state": "KY",
+      "geo_id": "21",
+      "old_ocd_id": null
+    },
+    {
+      "id": "5c392114-9945-4998-b0ce-c9d9f8bc30b3",
+      "district_type": "NATIONAL_UPPER",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "5d31a6b4-48d9-4dd2-9abc-6c4188de0e3d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "ND",
+      "geo_id": "38",
+      "old_ocd_id": null
+    },
+    {
+      "id": "5f265c53-0008-4c76-a045-f125d12852a5",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MT",
+      "geo_id": "30",
+      "old_ocd_id": null
+    },
+    {
+      "id": "62e1a346-b2bf-46eb-9084-bfb91f84a7e9",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MO",
+      "geo_id": "29",
+      "old_ocd_id": null
+    },
+    {
+      "id": "645fb870-8ace-4608-a5e7-fadc0af4ea49",
+      "district_type": "NATIONAL_UPPER",
+      "state": "SC",
+      "geo_id": "45",
+      "old_ocd_id": null
+    },
+    {
+      "id": "66e2cbcf-ee95-4add-be75-195d95cf6be2",
+      "district_type": "NATIONAL_UPPER",
+      "state": "LA",
+      "geo_id": "22",
+      "old_ocd_id": null
+    },
+    {
+      "id": "73bae1ba-3ed1-4d28-8447-ec8e2e915f35",
+      "district_type": "NATIONAL_UPPER",
+      "state": "AR",
+      "geo_id": "05",
+      "old_ocd_id": null
+    },
+    {
+      "id": "76487e13-e5f2-4157-bdee-abf418ec31d5",
+      "district_type": "NATIONAL_UPPER",
+      "state": "SD",
+      "geo_id": "46",
+      "old_ocd_id": null
+    },
+    {
+      "id": "76a62b58-7b74-42ae-84e6-c44606889f9d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "ME",
+      "geo_id": "23",
+      "old_ocd_id": null
+    },
+    {
+      "id": "7714fda7-fd44-435b-82c8-266cbe2aae36",
+      "district_type": "NATIONAL_UPPER",
+      "state": "IL",
+      "geo_id": "17",
+      "old_ocd_id": null
+    },
+    {
+      "id": "7b0f9ff8-d1a1-4795-b79f-2d59d9c72b2d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "TN",
+      "geo_id": "47",
+      "old_ocd_id": null
+    },
+    {
+      "id": "8294fc98-f4cf-451b-9e3b-6e2a0d2cce27",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NJ",
+      "geo_id": "34",
+      "old_ocd_id": null
+    },
+    {
+      "id": "86167228-14b2-4b81-bb5e-6105a29d48b7",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MI",
+      "geo_id": "26",
+      "old_ocd_id": null
+    },
+    {
+      "id": "8a9194c9-8263-4d2f-a3e0-5e7cf07235a7",
+      "district_type": "NATIONAL_UPPER",
+      "state": "PA",
+      "geo_id": "42",
+      "old_ocd_id": null
+    },
+    {
+      "id": "aa80539d-f125-4543-99d4-86521d709a87",
+      "district_type": "NATIONAL_UPPER",
+      "state": "DE",
+      "geo_id": "10",
+      "old_ocd_id": null
+    },
+    {
+      "id": "b289149d-a2aa-4beb-9bcd-05469f4dae68",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MS",
+      "geo_id": "28",
+      "old_ocd_id": null
+    },
+    {
+      "id": "b38614eb-5320-4f4e-acc0-7142696a737d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "OH",
+      "geo_id": "39",
+      "old_ocd_id": null
+    },
+    {
+      "id": "b667b5fd-e68c-4b68-8ca9-eca6a18c657a",
+      "district_type": "NATIONAL_UPPER",
+      "state": "WV",
+      "geo_id": "54",
+      "old_ocd_id": null
+    },
+    {
+      "id": "bdf1d28e-82ac-457b-bffc-ffaadce0b59e",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MN",
+      "geo_id": "27",
+      "old_ocd_id": null
+    },
+    {
+      "id": "c6434bbd-d2c4-4325-a198-c7a79ced6f47",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NE",
+      "geo_id": "31",
+      "old_ocd_id": null
+    },
+    {
+      "id": "c6f7a896-b05f-4266-bddd-da65199e82ec",
+      "district_type": "NATIONAL_UPPER",
+      "state": "ID",
+      "geo_id": "16",
+      "old_ocd_id": null
+    },
+    {
+      "id": "cabfe0e3-baf0-4c5b-a5a8-3c3ec3e3f8b2",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NH",
+      "geo_id": "33",
+      "old_ocd_id": null
+    },
+    {
+      "id": "cc69a6ea-c431-44b0-b6d6-f827f402c657",
+      "district_type": "NATIONAL_UPPER",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "d4f7ea16-3248-4f52-aa08-d36114f04d97",
+      "district_type": "NATIONAL_UPPER",
+      "state": "HI",
+      "geo_id": "15",
+      "old_ocd_id": null
+    },
+    {
+      "id": "e40e4182-73ce-4460-addc-5b624d1c4f0d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "KS",
+      "geo_id": "20",
+      "old_ocd_id": null
+    },
+    {
+      "id": "e7beff0f-97f8-45e0-bd6d-e8de81721e94",
+      "district_type": "NATIONAL_UPPER",
+      "state": "AL",
+      "geo_id": "01",
+      "old_ocd_id": null
+    },
+    {
+      "id": "ea6c2676-9d12-4a62-bb2d-a848ae0f968a",
+      "district_type": "NATIONAL_UPPER",
+      "state": "IA",
+      "geo_id": "19",
+      "old_ocd_id": null
+    },
+    {
+      "id": "f2c9697e-67fb-498a-8c43-66ac7046de3d",
+      "district_type": "NATIONAL_UPPER",
+      "state": "NC",
+      "geo_id": "37",
+      "old_ocd_id": null
+    },
+    {
+      "id": "fd703947-1394-4e95-9401-bf0df7851cc8",
+      "district_type": "NATIONAL_UPPER",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "fe146a82-bbd5-4e1b-9822-15aa1fead326",
+      "district_type": "NATIONAL_UPPER",
+      "state": "VT",
+      "geo_id": "50",
+      "old_ocd_id": null
+    },
+    {
+      "id": "13c39570-47d5-4f73-9c11-3f7e451084bf",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "192f9d68-1dc3-4eef-866c-2e257de2caef",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "1b8fc61b-d86f-4f64-83f9-cb71809930d2",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "274a0eba-7eaa-4ef4-bbc0-8af0992ae256",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "282b0367-5f8f-41b3-910e-bf6e952410c6",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "29aa83bb-e93d-47ba-a324-bfa8bfbacce3",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "2e24a8cf-b124-4fe3-90f4-4ec045a5173f",
+      "district_type": "STATE_EXEC",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "2f812014-89b6-4e7e-b526-b87022a8e58d",
+      "district_type": "STATE_EXEC",
+      "state": "OR",
+      "geo_id": "41",
+      "old_ocd_id": null
+    },
+    {
+      "id": "3822a5cd-e988-48ce-bca6-e8957990b3fc",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "3bc0aa0f-6c05-445e-b027-df0fb4dc8c5a",
+      "district_type": "STATE_EXEC",
+      "state": "TX",
+      "geo_id": "48",
+      "old_ocd_id": null
+    },
+    {
+      "id": "67c52a6b-92a9-429a-8a94-8f153539ccb7",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "6a36c76b-6920-4b75-bf3c-317ff986e868",
+      "district_type": "STATE_EXEC",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "751f63de-6197-4b50-ac65-7e1c4cded453",
+      "district_type": "STATE_EXEC",
+      "state": "ME",
+      "geo_id": "23",
+      "old_ocd_id": null
+    },
+    {
+      "id": "81e2fdbc-efb1-499c-867f-1cfe3f80002d",
+      "district_type": "STATE_EXEC",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "956f0498-f4b8-48c7-9ddb-9a3a1bbd99cf",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "9bfe81a7-ae35-4a8d-836d-f0495361ed71",
+      "district_type": "STATE_EXEC",
+      "state": "ME",
+      "geo_id": "23",
+      "old_ocd_id": null
+    },
+    {
+      "id": "a0767a2d-255e-4134-9a15-fe20aefd499b",
+      "district_type": "STATE_EXEC",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "abea3453-1fa9-4f9a-9c51-96e442f72215",
+      "district_type": "STATE_EXEC",
+      "state": "ME",
+      "geo_id": "23",
+      "old_ocd_id": null
+    },
+    {
+      "id": "ba9a7250-2427-44ad-861a-a7bc1637f93c",
+      "district_type": "STATE_EXEC",
+      "state": "ME",
+      "geo_id": "23",
+      "old_ocd_id": null
+    },
+    {
+      "id": "ce1fd1b9-f075-4b10-a5df-4b7178404074",
+      "district_type": "STATE_EXEC",
+      "state": "UT",
+      "geo_id": "49",
+      "old_ocd_id": null
+    },
+    {
+      "id": "e0261f1c-e4ae-469b-8b55-a3f7f26c59d6",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    },
+    {
+      "id": "f44ed12a-6096-4cd1-bae8-856ea48f61fd",
+      "district_type": "STATE_EXEC",
+      "state": "MA",
+      "geo_id": "25",
+      "old_ocd_id": null
+    }
+  ]
+}
