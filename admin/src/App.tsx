@@ -15,6 +15,7 @@ import { RoleAuditPage } from './pages/admin/RoleAuditPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
+import { CoverageTrackerPage } from './pages/admin/CoverageTrackerPage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import Login from './pages/Login';
@@ -103,6 +104,7 @@ function App() {
           <Route path="topics" element={<TopicsPage />} />
           <Route path="politicians" element={<PoliticiansPage />} />
           <Route path="categories" element={<CategoriesPage />} />
+          <Route path="coverage" element={<CoverageTrackerPage />} />
         </Route>
       </Route>
 

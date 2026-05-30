@@ -64,6 +64,7 @@ import {
   listRoles,
   getAccountJurisdictions,
 } from '../lib/adminService.js';
+import { getCoverage, listCoverageStates } from '../lib/coverageService.js';
 
 const router = Router();
 
@@ -114,6 +115,33 @@ router.get('/dashboard', async (_req, res) => {
     res.json(stats);
   } catch (err) {
     console.error('[admin/dashboard] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Data coverage tracker
+// ---------------------------------------------------------------------------
+
+/**
+ * GET /api/admin/coverage?state=ut
+ * Returns the per-jurisdiction coverage rows + jurisdiction rules for a state,
+ * with the auto columns (populated/headshots/stances/last_researched) recomputed
+ * live from the DB. Also returns the list of states that have a coverage file.
+ */
+router.get('/coverage', async (req, res) => {
+  try {
+    const states = listCoverageStates();
+    if (states.length === 0) {
+      res.json({ states: [], coverage: null });
+      return;
+    }
+    const requested = String(req.query.state ?? states[0]).toLowerCase();
+    const state = states.includes(requested) ? requested : states[0];
+    const coverage = await getCoverage(state);
+    res.json({ states, coverage });
+  } catch (err) {
+    console.error('[admin/coverage] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

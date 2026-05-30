@@ -41,6 +41,11 @@ supabase/.temp/
 backend/data/stance-research/*.csv
 backend/data/topic-drafts/*.json
 
+# Coverage tracker data — version-controlled source of truth.
+# (Overrides the broad `coverage/` test-output rule above, which otherwise
+# matches data/coverage/ by directory name.)
+!backend/data/coverage/
+
 # TIGER/Line shapefiles downloaded by boundary loader scripts
 backend/tl_2024_*/
 backend/tl_2024_*.zip
