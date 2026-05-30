@@ -13,6 +13,9 @@ WORKDIR /app
 COPY package.json package-lock.json* ./
 RUN npm ci --omit=dev
 COPY --from=build /app/dist ./dist
+# Coverage tracker reads data/coverage/<state>.yaml at runtime (see coverageService.ts).
+# Only this small subtree of data/ is needed in the image.
+COPY data/coverage ./data/coverage
 
 EXPOSE 3000
 CMD ["node", "--dns-result-order=ipv4first", "dist/index.js"]
