@@ -22,6 +22,10 @@ const __dirname = path.dirname(__filename);
 const MANIFEST = path.resolve(__dirname, '../data/sources/ut_school_rosters.json');
 const ROSTERS_DIR = path.resolve(__dirname, '../data/rosters/manual');
 const DRY_RUN = process.argv.includes('--dry-run');
+const DISTRICT_FILTER = (() => {
+  const idx = process.argv.indexOf('--district');
+  return idx >= 0 ? process.argv[idx + 1] ?? null : null;
+})();
 
 interface SchoolRecord {
   district_geo_id: string;
@@ -202,7 +206,17 @@ async function loadDistrict(pool: pg.Pool, district: SchoolRecord): Promise<Dist
 }
 
 async function main(): Promise<void> {
-  const districts: SchoolRecord[] = JSON.parse(fs.readFileSync(MANIFEST, 'utf-8'));
+  let districts: SchoolRecord[] = JSON.parse(fs.readFileSync(MANIFEST, 'utf-8'));
+  if (DISTRICT_FILTER) {
+    districts = districts.filter((d) => districtSlug(d.district_name) === DISTRICT_FILTER);
+    if (districts.length === 0) {
+      const available = (JSON.parse(fs.readFileSync(MANIFEST, 'utf-8')) as SchoolRecord[])
+        .map((d) => districtSlug(d.district_name)).join(', ');
+      console.error(`[ut-school] No district found with slug "${DISTRICT_FILTER}". Available: ${available}`);
+      process.exit(1);
+    }
+    console.error(`[ut-school] --district filter: processing ${districts[0].district_name} only`);
+  }
   const pool = new pg.Pool({
     connectionString: process.env.DATABASE_URL,
     ssl: { rejectUnauthorized: false },

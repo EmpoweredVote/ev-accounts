@@ -598,7 +598,9 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     pool.query<{ state: string }>(stateQueryText, [lng, lat]),
   ]);
 
-  const stateCode = stateResult.rows[0]?.state ?? null;
+  // Normalize to uppercase — districts.state has mixed case ('ut' vs 'UT') but
+  // elections.state is always uppercase. Without this, Part B returns nothing.
+  const stateCode = stateResult.rows[0]?.state?.toUpperCase() ?? null;
 
   // Part B: Statewide/at-large races (office_id IS NULL) for the matched state
   // These are races for positions like Governor, US Senator that span the whole state

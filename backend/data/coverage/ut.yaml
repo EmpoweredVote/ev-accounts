@@ -1,0 +1,606 @@
+# Empowered Vote — Data Coverage Tracker: Utah
+#
+# SOURCE OF TRUTH for how complete EV's data is per Utah jurisdiction, and the
+# jurisdiction-specific research rules the `research-stances` skill must obey.
+#
+# Two audiences:
+#   • Humans  -> rendered as the visual admin page at /admin/coverage
+#   • Machines-> `research-stances` reads `rules.skip_topics`; coverage-sync.ts
+#                refreshes the `auto` columns from the live DB.
+#
+# FIELD OWNERSHIP
+#   manual (hand-edited here):  expected_seats, geofenced, donors, candidates, status
+#   auto   (written by sync):   populated, headshots, stances, last_researched, treasury
+# Run `npx tsx scripts/coverage-sync.ts --state ut` after a data load to refresh
+# the auto columns. See data/coverage/README.md for the full schema.
+
+state: UT
+state_name: Utah
+synced_at: 2026-05-30
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Universe — the FULL set of jurisdictions in the state, used to show progress
+# toward completing the whole state ("10 / 255 cities populated"). Totals and the
+# "remaining" list are computed live from essentials.geofence_boundaries (TIGER):
+#   counties = G4020, cities/towns = G4110, school districts = G5420.
+# Only the state FIPS code and the tribal list (no geofences loaded yet) live here.
+# ─────────────────────────────────────────────────────────────────────────────
+universe:
+  state_fips: "49"
+  # Utah's 8 federally recognized tribal nations (no boundary/roster data yet — Wave 3).
+  tribes:
+    - Confederated Tribes of the Goshute Reservation
+    - Navajo Nation
+    - Northwestern Band of the Shoshone Nation
+    - Paiute Indian Tribe of Utah
+    - Skull Valley Band of Goshute
+    - Ute Indian Tribe of the Uintah & Ouray Reservation
+    - Ute Mountain Ute Tribe
+    - San Juan Southern Paiute Tribe
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Jurisdiction research rules — MACHINE-READ by research-stances (STEP 0.5).
+# A rule removes its topic_key from the topic list for any office level named in
+# `applies_to` BEFORE researcher agents are dispatched, and prints a warning.
+# ─────────────────────────────────────────────────────────────────────────────
+rules:
+  skip_topics:
+    - topic_key: rent-regulation
+      reason: "Utah Code §57-20-1 prohibits municipal rent control statewide, so no UT official can act on rent regulation."
+      source: "https://le.utah.gov/xcode/Title57/Chapter20/57-20-S1.html"
+      applies_to: [state, county, local, school]
+  notes:
+    - "School-board races are nonpartisan (already enforced by EV's antipartisan default)."
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Coverage rows — one per TRACKED jurisdiction. Add a row when work begins;
+# mark not-yet-started jurisdictions `status: deferred`. Do NOT enumerate all
+# ~245 UT municipalities. The statewide row is the roll-up (state:ut subtree).
+#
+# levels:    state | county | local | school
+# status:    active | in_progress | deferred
+# expected_seats: full-roster target. A jurisdiction is "complete" when active
+#            politicians ≥ expected_seats. null = unknown (can't confirm complete).
+#            Counties: from ut_county_rosters.json (commissioners/council + officers)
+#            — this is why Washington & Weber show 9/10. Cities & schools: seeded at
+#            the current loaded roster (baseline) — VERIFY against official sizes.
+# donors/candidates/treasury: none | partial | full
+# headshots: none | partial | full   (auto, from photos/total)
+# stances:   { researched, total }   (auto; researched = last_stances_researched_at IS NOT NULL)
+# ─────────────────────────────────────────────────────────────────────────────
+locations:
+  # ── Statewide roll-up (federal delegation + state exec/leg + everything below) ──
+  - ocd_id: ocd-division/country:us/state:ut
+    name: Utah (statewide roll-up)
+    level: state
+    status: active
+    expected_seats: null
+    geofenced: true
+    donors: none
+    candidates: partial      # 2026 primary candidates seeded for select counties
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 13, total: 421 }
+    last_researched: 2026-05-30
+
+  # ── Counties (10 active) ──────────────────────────────────────────────────
+  - ocd_id: ocd-division/country:us/state:ut/county:box_elder
+    name: Box Elder County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 10 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:cache
+    name: Cache County
+    level: county
+    status: active
+    expected_seats: 12
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 15 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:davis
+    name: Davis County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 11 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:iron
+    name: Iron County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 10 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:salt_lake
+    name: Salt Lake County
+    level: county
+    status: active
+    expected_seats: 16
+    geofenced: true
+    donors: none
+    candidates: partial
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 18 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:summit
+    name: Summit County
+    level: county
+    status: active
+    expected_seats: 12
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 12 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:tooele
+    name: Tooele County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 12 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:utah
+    name: Utah County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: partial
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 6, total: 11 }
+    last_researched: 2026-05-30
+
+  - ocd_id: ocd-division/country:us/state:ut/county:washington
+    name: Washington County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 9 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/county:weber
+    name: Weber County
+    level: county
+    status: active
+    expected_seats: 10
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 9 }
+    last_researched: null
+
+  # ── Cities / municipalities (10 active) ───────────────────────────────────
+  - ocd_id: ocd-division/country:us/state:ut/place:layton
+    name: Layton
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:lehi
+    name: Lehi
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:ogden
+    name: Ogden
+    level: local
+    status: active
+    expected_seats: 8
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 8 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:orem
+    name: Orem
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 7, total: 7 }
+    last_researched: 2026-05-30
+
+  - ocd_id: ocd-division/country:us/state:ut/place:provo
+    name: Provo
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:salt_lake_city
+    name: Salt Lake City
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:sandy
+    name: Sandy
+    level: local
+    status: active
+    expected_seats: 8
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 8 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:st_george
+    name: St. George
+    level: local
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:west_jordan
+    name: West Jordan
+    level: local
+    status: active
+    expected_seats: 8
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 8 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/place:west_valley_city
+    name: West Valley City
+    level: local
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  # ── School districts (17 active) ──────────────────────────────────────────
+  - ocd_id: ocd-division/country:us/state:ut/school_district:alpine
+    name: Alpine School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:box_elder
+    name: Box Elder School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:cache
+    name: Cache County School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:canyons
+    name: Canyons School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:davis
+    name: Davis School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:granite
+    name: Granite School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:iron
+    name: Iron County School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:jordan
+    name: Jordan School District
+    level: school
+    status: active
+    expected_seats: 6
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 6 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:logan
+    name: Logan School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:murray
+    name: Murray School District
+    level: school
+    status: active
+    expected_seats: 4
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 4 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:nebo
+    name: Nebo School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:park_city
+    name: Park City School District
+    level: school
+    status: active
+    expected_seats: 5
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 5 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:provo
+    name: Provo City School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:salt_lake_city
+    name: Salt Lake City School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:tooele
+    name: Tooele County School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:washington
+    name: Washington County School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut/school_district:weber
+    name: Weber School District
+    level: school
+    status: active
+    expected_seats: 7
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: none
+    stances: { researched: 0, total: 7 }
+    last_researched: null
