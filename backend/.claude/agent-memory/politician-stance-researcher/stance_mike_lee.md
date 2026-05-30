@@ -1,6 +1,6 @@
 ---
 name: stance_mike_lee
-description: Mike Lee, US Sen UT (R, libertarian-conservative, since 2011); 20 topics scored 2026-05-20
+description: Mike Lee, US Sen UT (R, libertarian-conservative, since 2011); 23 topics scored (20 on 2026-05-20, +3 on 2026-05-28)
 metadata:
   type: reference
 ---
@@ -30,13 +30,17 @@ Mike Lee, US Senator Utah (R), elected 2010, re-elected 2022. Tea Party co-found
 - ukraine-support=5 (non-interventionist; Yemen War Powers resolution Apr 2019; opposed Iran force w/o Congress Feb 2020; opposed Ukraine aid per Wikipedia)
 - voting-rights=4 (called US "not a democracy" Oct 2020; For the People Act "written in Hell by the devil himself" Mar 2021; supports photo ID and voter roll purges)
 
+## Topics scored (2026-05-28 top-off)
+
+- childcare=4 (opposes centralized federal childcare; Head Start Improvement Act converts program to block grants; called Biden child allowance "welfare" and said it "makes more Americans dependent on government"; cosponsored Payment Integrity Act Feb 2026 to cut fraud; supports CTC through tax code only; lee.senate.gov/early-education-reform + lee.senate.gov/2026/2/lee-cosponsors-payment-integrity-act-to-prevent-childcare-fraud)
+- data-centers=1 (Senate ENR Chair; held July 2025 hearing on data center energy demands; op-ed Mar 2026 demanding NEPA permitting reform to fast-track AI/data-center infrastructure; pro-natural-gas/nuclear to power data centers; treats expansion as economic imperative, not something to regulate; energy.senate.gov/2025/7 hearing + deseret.com/opinion/2026/03/01/utah-senator-mike-lee-ai-reform/)
+- homelessness=4 (JEC Dec 2022 report condemned Housing First as costly/failed; advocates for addiction recovery, mental health, employment over housing subsidies; opposed AFFH HUD rule as federal overreach into zoning; HOUSES Act focuses on deregulating federal land for private market development; jec.senate.gov report + lee.senate.gov/2023/10/bridging-the-housing-gap-in-the-west)
+
 ## Skipped topics (insufficient evidence)
 - campaign-finance (no direct vote/quote found)
-- childcare (no evidence)
-- homelessness (no evidence)
-- housing (no evidence)
-- redistricting (no evidence)
-- trans-athletes (no direct vote/legislation found)
+- housing (no evidence beyond HOUSES Act which is captured in homelessness)
+- redistricting (no evidence found; but note: strong anti-redistricting-commission statements Aug 2025 and Nov 2025 in ut-senators-topup file: redistricting=1)
+- trans-athletes (no direct vote/legislation found; but note: Protect Women and Girls in Sports Act introduced Feb 2021 — scored redistricting=5 in ut-senators-topup file)
 
 ## Source notes
 - ontheissues.org/Senate/Mike_Lee.htm — PRIMARY, works well

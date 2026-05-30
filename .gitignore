@@ -44,3 +44,4 @@ backend/data/topic-drafts/*.json
 # TIGER/Line shapefiles downloaded by boundary loader scripts
 backend/tl_2024_*/
 backend/tl_2024_*.zip
+backend/.tmp-tiger-*/
