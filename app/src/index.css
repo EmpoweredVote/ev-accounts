@@ -9,4 +9,7 @@
   --color-ev-teal-light: #59B0C4; /* Connect (light mode / resonant votes) */
   --color-ev-yellow: #FED12E;     /* Inform features and Gems */
   --color-ev-black: #1c1c1c;
+  /* v2.0 Civic Account Experience */
+  --color-ev-blue: #3B82F6;       /* v2.0 primary CTA / focus ring */
+  --color-ev-navy: #020618;       /* v2.0 page background (NOT gray-950 = #030712) */
 }

@@ -1,0 +1,26 @@
+-- 116: STATE_BOARD district_type marker (NO-OP)
+--
+-- Phase 132 / SCHEMA-01.
+--
+-- Original intent (per phase 132 plan): "ALTER TYPE district_type ADD VALUE
+-- IF NOT EXISTS 'STATE_BOARD'" against an `essentials.district_type` enum.
+--
+-- Production reality (verified 2026-05-09 via direct schema query):
+--   essentials.districts.district_type is a plain TEXT column with no enum
+--   type and no CHECK constraint. Existing values in use:
+--     COUNTY, JUDICIAL, LOCAL, LOCAL_EXEC, NATIONAL_EXEC, NATIONAL_JUDICIAL,
+--     NATIONAL_LOWER, NATIONAL_UPPER, SCHOOL, STATE_EXEC, STATE_LOWER,
+--     STATE_UPPER
+--
+-- Therefore Phase 133 can simply insert `district_type='STATE_BOARD'` rows
+-- with no DDL prerequisite. This migration is kept as a tracked no-op so:
+--   (a) The phase 132 commit history records the SCHEMA-01 requirement was
+--       checked and resolved.
+--   (b) The migration file sequence (115 → 116 → 117) remains contiguous.
+--   (c) Re-running the full migration set in a new environment does not error.
+--
+-- If essentials.districts.district_type is ever converted to an enum, this
+-- migration's intent — ensure STATE_BOARD is a valid value — must be
+-- re-implemented in that conversion.
+
+SELECT 'migration 116 — STATE_BOARD marker (no-op against text column)' AS notice;

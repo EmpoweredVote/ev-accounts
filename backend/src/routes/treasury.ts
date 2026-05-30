@@ -279,6 +279,7 @@ const createCitySchema = z.object({
   name: z.string().min(1),
   state: z.string().min(1),
   population: z.number().int().positive().optional().nullable(),
+  entityType: z.string().min(1).optional().nullable(), // enables TIGER geo_id resolution at insert
 });
 
 router.post(

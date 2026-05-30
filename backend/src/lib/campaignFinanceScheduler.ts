@@ -33,6 +33,7 @@ import { createIndianaAdapter } from './adapters/indianaAdapter.js';
 import { writeUnresolved } from './adapters/indianaAdapter.js';
 import { createSocrataAdapter } from './adapters/socrataAdapter.js';
 import { createNetfileAdapter } from './adapters/netfileAdapter.js';
+import { createOcpfAdapter } from './adapters/ocpfAdapter.js';
 import { pool } from './db.js';
 
 const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
@@ -173,6 +174,24 @@ export function pingHealthcheck(url: string | undefined): void {
 export function currentFecCycle(): string {
   const year = new Date().getFullYear();
   return String(year % 2 !== 0 ? year + 1 : year);
+}
+
+// ---------------------------------------------------------------------------
+// OCPF quarter helper
+// ---------------------------------------------------------------------------
+
+/**
+ * isFutureQuarter returns true when the given (year, quarter) has not started yet
+ * as of `now`. Used to avoid creating ingestion_runs rows for quarters that
+ * cannot possibly have data yet (e.g. Q3 2026 in May 2026).
+ *
+ * A quarter is considered "arrived" once its first day has passed in UTC.
+ * Quarter start months: Q1=Jan (0), Q2=Apr (3), Q3=Jul (6), Q4=Oct (9).
+ */
+function isFutureQuarter(year: number, quarter: 1 | 2 | 3 | 4, now: Date): boolean {
+  const startMonth = (quarter - 1) * 3;
+  const quarterStart = Date.UTC(year, startMonth, 1);
+  return now.getTime() < quarterStart;
 }
 
 // ---------------------------------------------------------------------------
@@ -371,9 +390,158 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
       break;
     }
 
+    case 'ocpf': {
+      const OCPF_START_YEAR = 2001;
+      const now = new Date();
+      const currentYear = now.getUTCFullYear();
+      const PER_YEAR_TIMEOUT_MS = 3 * 60 * 1000; // 3-min hard limit per (source, cycleKey)
+
+      for (const ps of sources) {
+        try {
+          // Query all completed cycle keys for this source. The regex matches BOTH
+          // legacy full-year entries ('YYYY') and new per-quarter entries ('YYYY-QN').
+          // Legacy empty-string election_cycle rows (very old all-history runs) are
+          // intentionally excluded by the regex so they don't mask any quarter.
+          const completedResult = await pool.query<{ election_cycle: string }>(
+            `SELECT DISTINCT election_cycle
+               FROM transparent_motivations.ingestion_runs
+               WHERE adapter_name = 'ocpf'
+                 AND politician_source_id = $1
+                 AND status IN ('completed', 'completed_with_warning')
+                 AND election_cycle ~ '^[0-9]{4}(-Q[1-4])?$'`,
+            [ps.id]
+          );
+          const completedCycles = new Set<string>(
+            completedResult.rows.map((r) => r.election_cycle)
+          );
+
+          for (let year = OCPF_START_YEAR; year <= currentYear; year++) {
+            const yearStr = String(year);
+
+            // Backward-compat: if a full-year run completed previously, treat all
+            // four quarters of that year as done. Do NOT re-fetch them.
+            // Exception: always continue into current year (catches late filings).
+            if (year !== currentYear && completedCycles.has(yearStr)) {
+              continue;
+            }
+
+            // Active quarter of the current year (1-4, UTC month-based)
+            const activeQuarter = (Math.floor(now.getUTCMonth() / 3) + 1) as 1 | 2 | 3 | 4;
+
+            for (let q = 1 as 1 | 2 | 3 | 4; q <= 4; q = (q + 1) as 1 | 2 | 3 | 4) {
+              // Skip quarters whose first calendar day has not arrived yet
+              if (isFutureQuarter(year, q, now)) continue;
+
+              const cycleKey = `${year}-Q${q}`;
+
+              // Skip already-completed quarters, EXCEPT for the active quarter of the
+              // current year which is re-run on every tick to catch late filings.
+              const isCurrentActiveQuarter = (year === currentYear && q === activeQuarter);
+              if (completedCycles.has(cycleKey) && !isCurrentActiveQuarter) {
+                continue;
+              }
+
+              const controller = new AbortController();
+              const timeoutId = setTimeout(() => controller.abort(new Error(
+                `[ocpf] per-cycle timeout (${PER_YEAR_TIMEOUT_MS}ms): source=${ps.id} cycle=${cycleKey}`
+              )), PER_YEAR_TIMEOUT_MS);
+
+              try {
+                await runIngestion(
+                  createOcpfAdapter(year, controller.signal, q),
+                  ps,
+                  cycleKey
+                );
+                console.log(`[campaignFinanceScheduler] ocpf: source=${ps.id} cycle=${cycleKey} done`);
+              } catch (err) {
+                console.error(
+                  `[campaignFinanceScheduler] ocpf: source=${ps.id} cycle=${cycleKey} error:`,
+                  err instanceof Error ? err.message : String(err)
+                );
+                await pool.query(
+                  `UPDATE transparent_motivations.ingestion_runs
+                   SET status = 'failed', completed_at = NOW(), notes = $1
+                   WHERE status = 'running'
+                     AND politician_source_id = $2
+                     AND election_cycle = $3`,
+                  [err instanceof Error ? err.message : String(err), ps.id, cycleKey]
+                ).catch((e: unknown) => console.warn('[campaignFinanceScheduler] ocpf: zombie cleanup failed:', e));
+              } finally {
+                clearTimeout(timeoutId);
+              }
+            }
+          }
+        } catch (err) {
+          console.error(
+            `[campaignFinanceScheduler] ocpf: source=${ps.id} pre-flight error:`,
+            err instanceof Error ? err.message : String(err)
+          );
+        }
+      }
+      break;
+    }
+
     default:
       throw new Error(`[campaignFinanceScheduler] unknown adapter: ${adapterName}`);
   }
+}
+
+/**
+ * runAdapterForSources runs the cal_access ingestion pipeline for a specific list
+ * of politician_sources row IDs (UUIDs from politician_sources.id).
+ *
+ * Use this for targeted ingest of newly seeded politicians — avoids re-processing
+ * all 7k+ confirmed sources and the per-source TSV re-parse cost.
+ *
+ * Only supports cal_access — other adapters don't have the same bulk-parse bottleneck.
+ */
+export async function runAdapterForSources(sourceIds: string[]): Promise<void> {
+  if (sourceIds.length === 0) {
+    console.warn('[campaignFinanceScheduler] runAdapterForSources: no source IDs provided');
+    return;
+  }
+
+  const placeholders = sourceIds.map((_, i) => `$${i + 1}`).join(', ');
+  const result = await pool.query<PoliticianSourceRow>(
+    `SELECT id, essentials_politician_id, source_system, external_id,
+            research_status, notes, created_at, updated_at
+     FROM transparent_motivations.politician_sources
+     WHERE id IN (${placeholders})
+       AND research_status = 'confirmed'`,
+    sourceIds
+  );
+
+  const sources = result.rows;
+  if (sources.length === 0) {
+    console.warn('[campaignFinanceScheduler] runAdapterForSources: no confirmed sources found for provided IDs');
+    return;
+  }
+
+  console.log(`[campaignFinanceScheduler] runAdapterForSources: running ${sources.length} cal_access source(s)`);
+
+  const adapter = createCalAccessAdapter();
+
+  for (const ps of sources) {
+    try {
+      await runIngestion(adapter, ps, '');
+      console.log(`[campaignFinanceScheduler] cal_access: source=${ps.id} (${ps.external_id}) done`);
+    } catch (err) {
+      console.error(
+        `[campaignFinanceScheduler] cal_access: source=${ps.id} error:`,
+        err instanceof Error ? err.message : String(err)
+      );
+    }
+  }
+
+  if (adapter.zipWasSkipped()) {
+    console.log('[campaignFinanceScheduler] runAdapterForSources: ZIP unchanged (304), no data processed');
+    return;
+  }
+
+  // Intentionally do NOT save the ETag here. Targeted runs only process a subset
+  // of sources, so saving the ETag would cause subsequent targeted runs to 304-skip
+  // and miss their data. ETag ownership belongs to the full scheduled run only.
+  console.log('[campaignFinanceScheduler] runAdapterForSources: complete (ETag not saved — owned by full scheduler)');
 }
 
 // ---------------------------------------------------------------------------
@@ -431,7 +599,7 @@ interface SqsIngestMessage {
 }
 
 /** Valid adapter names accepted in SQS messages */
-const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata', 'la_county_netfile']);
+const VALID_SQS_ADAPTERS = new Set(['fec', 'cal_access', 'indiana', 'la_socrata', 'la_county_netfile', 'ocpf']);
 
 /**
  * startSqsWorker launches a background long-poll loop that reads from the

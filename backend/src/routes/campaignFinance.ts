@@ -19,6 +19,7 @@ import {
   getContributions,
   validateConfidence,
   searchDonors,
+  getCouncilVotes,
 } from '../lib/campaignFinanceService.js';
 import { searchPoliticians } from '../lib/campaignFinanceSearchService.js';
 
@@ -193,6 +194,35 @@ router.get(
       res.status(200).json(response);
     } catch (err) {
       console.error('[GET /campaign-finance/politician/:id/contributions] error:', err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/campaign-finance/politician/:id/council-votes
+// Query params: ?limit=50&offset=0
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/politician/:id/council-votes',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'INVALID_ID', message: 'Invalid UUID format' });
+      return;
+    }
+
+    const limit = Math.min(Math.max(parseInt(req.query.limit as string, 10) || 50, 1), 100);
+    const offset = Math.max(parseInt(req.query.offset as string, 10) || 0, 0);
+    const voteFilter = typeof req.query.vote === 'string' ? req.query.vote.toUpperCase() : undefined;
+
+    try {
+      const result = await getCouncilVotes(id, { limit, offset, voteFilter });
+      res.status(200).json(result);
+    } catch (err) {
+      console.error('[GET /campaign-finance/politician/:id/council-votes] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
     }
   }

@@ -249,6 +249,76 @@ export async function getJudicialRecord(
 }
 
 // ---------------------------------------------------------------------------
+// Legal Donor Activity
+// ---------------------------------------------------------------------------
+
+export interface LegalDonorFirm {
+  firm_name: string;        // raw employer name (display value)
+  total_donated: number;
+  donor_count: number;
+  occupations_seen: string[];
+}
+
+export interface LegalDonorActivityResult {
+  politician_id: string;
+  firms: LegalDonorFirm[];
+  total_legal_donors: number;
+}
+
+/**
+ * Fetch legal professional donor firms for a politician.
+ * Queries transparent_motivations.contributions at runtime — no migration needed.
+ * Filters to donors with legal occupations (attorney, lawyer, counsel, etc.)
+ * grouped by normalized employer/firm name, sorted by total donated DESC.
+ */
+export async function getLegalDonorFirms(
+  politicianId: string
+): Promise<LegalDonorActivityResult> {
+  const queryText = `
+    SELECT
+      COALESCE(
+        NULLIF(TRIM(c.raw_record->>'contributor_employer'), ''),
+        NULLIF(TRIM(c.raw_record->>'con_empr'), ''),
+        'Unknown Firm'
+      ) AS firm_name,
+      SUM(c.amount)::float8 AS total_donated,
+      COUNT(DISTINCT COALESCE(c.raw_record->>'contributor_name', c.raw_record->>'con_name', c.donor_name_normalized)) AS donor_count,
+      array_agg(DISTINCT UPPER(TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')))
+        ORDER BY UPPER(TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')))
+      ) FILTER (WHERE TRIM(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')) <> '') AS occupations_seen
+    FROM transparent_motivations.contributions c
+    JOIN transparent_motivations.politician_sources ps ON c.politician_source_id = ps.id
+    WHERE ps.essentials_politician_id = $1
+      AND ps.research_status = 'confirmed'
+      AND (
+        lower(COALESCE(c.raw_record->>'contributor_occupation', c.raw_record->>'con_occp', '')) LIKE ANY(ARRAY[
+          '%attorney%', '%lawyer%', '%counsel%', '%partner%',
+          '%esquire%', '%esq%', '%solicitor%', '%litigator%',
+          '%paralegal%', '%public defender%', '%district attorney%', '%prosecutor%'
+        ])
+      )
+    GROUP BY 1
+    ORDER BY total_donated DESC
+    LIMIT 50
+  `;
+
+  const { rows } = await pool.query(queryText, [politicianId]);
+
+  const firms: LegalDonorFirm[] = rows.map((r) => ({
+    firm_name: r.firm_name ?? 'Unknown Firm',
+    total_donated: typeof r.total_donated === 'number' ? r.total_donated : parseFloat(r.total_donated ?? '0'),
+    donor_count: Number(r.donor_count ?? 0),
+    occupations_seen: Array.isArray(r.occupations_seen) ? r.occupations_seen : [],
+  }));
+
+  return {
+    politician_id: politicianId,
+    firms,
+    total_legal_donors: firms.length,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // Stances
 // ---------------------------------------------------------------------------
 

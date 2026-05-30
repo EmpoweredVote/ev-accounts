@@ -15,10 +15,15 @@ import { RoleAuditPage } from './pages/admin/RoleAuditPage';
 import { TopicsPage } from './pages/admin/TopicsPage';
 import { PoliticiansPage } from './pages/admin/PoliticiansPage';
 import { CategoriesPage } from './pages/admin/CategoriesPage';
+import { CoverageTrackerPage } from './pages/admin/CoverageTrackerPage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import InformSignup from './pages/InformSignup';
+import EmailConfirmed from './pages/EmailConfirmed';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import PrivacyPage from './pages/PrivacyPage';
 import ProfilePage from './pages/ProfilePage';
 import { useAuthStore } from './store/authStore';
@@ -39,7 +44,10 @@ function App() {
         completed_onboarding: boolean;
       }>('/account/me')
         .then((me) => {
-          setAuth(token, {
+          // Use the store's current token — apiFetch may have refreshed it since
+          // we read `token` from sessionStorage above.
+          const currentToken = useAuthStore.getState().accessToken ?? token;
+          setAuth(currentToken, {
             id: me.id ?? '',
             email: me.email ?? '',
             isAdmin: me.is_admin ?? false,
@@ -67,6 +75,10 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/signup/inform" element={<InformSignup />} />
+      <Route path="/email-confirmed" element={<EmailConfirmed />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/privacy" element={<PrivacyPage />} />
 
       {/* Authenticated (any tier) */}
@@ -92,6 +104,7 @@ function App() {
           <Route path="topics" element={<TopicsPage />} />
           <Route path="politicians" element={<PoliticiansPage />} />
           <Route path="categories" element={<CategoriesPage />} />
+          <Route path="coverage" element={<CoverageTrackerPage />} />
         </Route>
       </Route>
 

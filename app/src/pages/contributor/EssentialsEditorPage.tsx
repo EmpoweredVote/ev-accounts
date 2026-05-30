@@ -112,13 +112,13 @@ export default function EssentialsEditorPage() {
         <div className="flex items-center gap-3">
           <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Essentials Editor</h1>
           {!loading && politicians.length > 0 && (
-            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-ev-teal/15 text-ev-teal">
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-ev-teal/15 dark:bg-ev-teal-light/20 text-ev-teal dark:text-ev-teal-light">
               {getJurisdictionLabel(politicians)}
             </span>
           )}
         </div>
         {!selected && (
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Select a politician to update their biographical information.
           </p>
         )}
@@ -143,7 +143,7 @@ export default function EssentialsEditorPage() {
         <>
           {politicians.length === 0 ? (
             <div className="rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 p-6 text-center">
-              <p className="text-sm text-gray-500">No politicians found for your jurisdiction.</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">No politicians found for your jurisdiction.</p>
             </div>
           ) : (
             <div className="grid gap-4 sm:grid-cols-2">
@@ -161,8 +161,8 @@ export default function EssentialsEditorPage() {
                         className="w-12 h-12 rounded-full object-cover flex-shrink-0 bg-gray-100 dark:bg-gray-800"
                       />
                     ) : (
-                      <div className="w-12 h-12 rounded-full flex-shrink-0 bg-ev-teal/10 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-ev-teal" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+                      <div className="w-12 h-12 rounded-full flex-shrink-0 bg-ev-teal/10 dark:bg-ev-teal-light/15 flex items-center justify-center">
+                        <svg className="w-6 h-6 text-ev-teal dark:text-ev-teal-light" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                         </svg>
                       </div>
@@ -171,7 +171,7 @@ export default function EssentialsEditorPage() {
                       <p className="text-sm font-bold text-ev-black dark:text-white truncate">
                         {pol.full_name ?? (`${pol.first_name ?? ''} ${pol.last_name ?? ''}`.trim() || 'Unknown')}
                       </p>
-                      <p className="text-xs text-gray-500 truncate">{pol.office_title}</p>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{pol.office_title}</p>
                     </div>
                   </div>
 
@@ -195,7 +195,7 @@ export default function EssentialsEditorPage() {
           <div className="flex items-center gap-3">
             <button
               onClick={handleBack}
-              className="flex items-center gap-1.5 text-sm text-ev-teal hover:text-ev-teal/80 font-medium transition-colors"
+              className="flex items-center gap-1.5 text-sm text-ev-teal dark:text-ev-teal-light hover:text-ev-teal/80 dark:hover:text-ev-teal-light/80 font-medium transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -214,7 +214,7 @@ export default function EssentialsEditorPage() {
 
             {/* Preferred Name */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Preferred Name
               </label>
               <input
@@ -228,7 +228,7 @@ export default function EssentialsEditorPage() {
 
             {/* Bio */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Bio
               </label>
               <textarea
@@ -241,7 +241,7 @@ export default function EssentialsEditorPage() {
 
             {/* Photo URL */}
             <div className="space-y-1.5">
-              <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider">
+              <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Photo URL
               </label>
               <input

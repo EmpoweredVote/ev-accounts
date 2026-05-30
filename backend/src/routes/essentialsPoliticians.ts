@@ -14,6 +14,7 @@ import {
   getElectionsByPolitician,
   getJudicialRecord,
   getStancesByPolitician,
+  getLegalDonorFirms,
 } from '../lib/essentialsProfileService.js';
 import type { Request, Response } from 'express';
 import type { AuthenticatedRequest } from '../middleware/auth.js';
@@ -317,6 +318,27 @@ router.get('/:id/judicial-record', optionalAuth, async (req: Request, res: Respo
     res.status(200).json(data);
   } catch (err) {
     console.error('[GET /essentials/politicians/:id/judicial-record] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/politicians/:id/legal-donor-activity
+// Returns legal professional donor firms grouped by employer.
+// Queries transparent_motivations.contributions at runtime — no migration needed.
+// ---------------------------------------------------------------------------
+
+router.get('/:id/legal-donor-activity', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id as string;
+    if (!UUID_REGEX.test(id)) {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+      return;
+    }
+    const data = await getLegalDonorFirms(id);
+    res.status(200).json(data);
+  } catch (err) {
+    console.error('[GET /essentials/politicians/:id/legal-donor-activity] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

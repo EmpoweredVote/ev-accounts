@@ -59,6 +59,7 @@ const authBodySchema = z.object({
 const signUpBodySchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
+  display_name: z.string().min(1).max(100),
   legal_name: z.string().min(1).max(200).optional(),
   invite_code: z.string().min(9).max(9).optional(),
   guest_state: z.object({
@@ -92,7 +93,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
-  const { email, password, guest_state, legal_name, invite_code } = parsed.data;
+  const { email, password, display_name, guest_state, legal_name, invite_code } = parsed.data;
 
   // Phase 24: Pre-validate invite code BEFORE creating the auth user.
   // If the code is absent or invalid, bail out early — this prevents orphaned
@@ -121,7 +122,11 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     }
   }
 
-  const { data, error } = await signUpWithEmail(email, password);
+  const { data, error } = await signUpWithEmail(
+    email,
+    password,
+    `${env.LOGIN_URL}/email-confirmed`,
+  );
 
   if (error) {
     // Email already registered
@@ -183,6 +188,38 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
     return;
   }
 
+  // Supabase returns status 200 (no error) for repeated signups when email confirmation
+  // is enabled — identities is an empty array in this case. Detect and surface as 409
+  // so the frontend can direct the user to sign in or reset their password.
+  if (!data.user.identities || data.user.identities.length === 0) {
+    res.status(409).json({
+      code: 'EMAIL_EXISTS',
+      message: 'An account with this email already exists',
+    });
+    return;
+  }
+
+  // Phase 67: Inform signup path persists display_name onto public.users.
+  // The on_auth_user_created trigger inserts public.users(id) with display_name = NULL.
+  // The Connected path (below) writes display_name through signup_with_invite RPC, so
+  // we ONLY do this UPDATE when no invite_code is present (Inform path).
+  // Non-fatal: if the UPDATE fails, the user is already created — they can update
+  // display_name from the profile page later. We log and continue.
+  if (!invite_code) {
+    try {
+      await pool.query(
+        `UPDATE public.users
+           SET display_name = $2,
+               updated_at = now()
+         WHERE id = $1`,
+        [data.user.id, display_name]
+      );
+    } catch (updateErr) {
+      console.error('[auth/signup] Failed to persist display_name for Inform user:', data.user.id, updateErr);
+      // Intentionally non-fatal — proceed to 201 below.
+    }
+  }
+
   // Phase 24: If invite_code provided without legal_name, return 422 immediately.
   // Both fields are required together — invite_code alone cannot create a Connected profile.
   if (invite_code && !legal_name) {
@@ -205,6 +242,7 @@ router.post('/signup', authLimiter, async (req: Request, res: Response): Promise
           p_user_id: data.user.id,
           p_legal_name: legal_name,
           p_invite_code: invite_code,
+          p_display_name: display_name,
         },
         'connect'
       );
@@ -508,6 +546,109 @@ router.post('/request-access', authLimiter, async (req: Request, res: Response):
     console.error('[auth/request-access] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
+});
+
+/**
+ * POST /api/auth/forgot-password
+ *
+ * Sends a password reset email via Supabase. Always returns 200 regardless
+ * of whether the email is registered — prevents user enumeration (OWASP).
+ */
+const forgotPasswordSchema = z.object({
+  email: z.string().email(),
+});
+
+router.post('/forgot-password', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = forgotPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Valid email required' });
+    return;
+  }
+
+  try {
+    await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+      redirectTo: `${env.LOGIN_URL}/reset-password`,
+    });
+  } catch (err) {
+    console.error('[auth/forgot-password] error:', err);
+    // Never surface this — always 200 to prevent enumeration
+  }
+
+  res.status(200).json({ message: 'If that email is registered, a password reset link has been sent.' });
+});
+
+/**
+ * POST /api/auth/reset-password
+ *
+ * Exchanges a Supabase recovery token_hash for a session, then updates
+ * the user's password. The token_hash comes from the ?token_hash= param
+ * in the reset email link.
+ */
+const resetPasswordSchema = z.object({
+  token_hash: z.string().min(1),
+  password: z.string().min(8),
+});
+
+router.post('/reset-password', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = resetPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    const firstIssue = parsed.error.issues[0];
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: firstIssue?.message ?? 'Invalid request' });
+    return;
+  }
+
+  const { token_hash, password } = parsed.data;
+
+  const { data: verifyData, error: verifyError } = await supabaseAdmin.auth.verifyOtp({
+    token_hash,
+    type: 'recovery',
+  });
+
+  if (verifyError || !verifyData.user) {
+    res.status(422).json({ code: 'INVALID_RESET_TOKEN', message: 'Reset link is invalid or has expired' });
+    return;
+  }
+
+  const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(verifyData.user.id, { password });
+
+  if (updateError) {
+    if (updateError.code === 'weak_password') {
+      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Password is too weak' });
+      return;
+    }
+    console.error('[auth/reset-password] updateUserById error:', updateError.message);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    return;
+  }
+
+  res.status(200).json({ message: 'Password updated successfully' });
+});
+
+/**
+ * POST /api/auth/resend-confirmation
+ *
+ * Resends the signup confirmation email. Always returns 200 regardless of
+ * whether the email is registered or already confirmed (OWASP enumeration).
+ */
+const resendConfirmationSchema = z.object({
+  email: z.string().email(),
+});
+
+router.post('/resend-confirmation', authLimiter, async (req: Request, res: Response): Promise<void> => {
+  const parsed = resendConfirmationSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Valid email required' });
+    return;
+  }
+
+  try {
+    await supabaseAdmin.auth.resend({ type: 'signup', email: parsed.data.email });
+  } catch (err) {
+    console.error('[auth/resend-confirmation] error:', err);
+    // Always 200 — never reveal account state
+  }
+
+  res.status(200).json({ message: 'Confirmation email resent' });
 });
 
 export default router;

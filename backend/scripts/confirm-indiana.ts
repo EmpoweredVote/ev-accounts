@@ -16,7 +16,9 @@
  *   6. If normalize(lastName) in normalize(committeeName) AND signal word present -> AUTO-CONFIRM
  *   7. If normalize(lastName) in normalize(committeeName) but NO signal word -> AMBIGUOUS
  *
- * Signal words: FOR, COMMITTEE, CAMPAIGN, ELECT, OFFICEHOLDER, EXPLORATORY
+ * Signal words: FOR, COMMITTEE, CAMPAIGN, ELECT, OFFICEHOLDER, EXPLORATORY, FRIENDS, VOTE,
+ *               SUPPORTERS, VICTORY, SENATE, HOUSE, REPRESENTATIVE, HOOSIERS, CTE, SENATOR,
+ *               MAYOR, COUNCIL, TRUSTEE
  *
  * DB status values (respect CHECK constraint):
  *   confirmed     -> research_status = 'confirmed'
@@ -119,7 +121,11 @@ const CSV_HEADERS = ['politician_name', 'office_title', 'committee_name', 'exter
 
 // ─── Signal words ─────────────────────────────────────────────────────────────
 
-const SIGNAL_WORDS = ['for', 'committee', 'campaign', 'elect', 'officeholder', 'exploratory'];
+const SIGNAL_WORDS = [
+  'for', 'committee', 'campaign', 'elect', 'officeholder', 'exploratory',
+  'friends', 'vote', 'supporters', 'victory', 'senate', 'house', 'representative',
+  'hoosiers', 'hoosier', 'cte', 'senator', 'mayor', 'council', 'trustee',
+];
 
 function hasSignalWord(committeeName: string): boolean {
   const normalized = normalize(committeeName);

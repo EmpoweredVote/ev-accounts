@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuthStore } from '../store/authStore';
 import { getValidRedirect, getAppNameFromRedirect } from '../lib/redirect';
+import InformConstraintsModal from '../components/InformConstraintsModal';
 
 const API_BASE = import.meta.env.VITE_API_URL
   ? `${import.meta.env.VITE_API_URL}/api`
@@ -14,14 +15,24 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [signupModalOpen, setSignupModalOpen] = useState(false);
+  const [showUnverifiedResend, setShowUnverifiedResend] = useState(false);
+  const [resendSent, setResendSent] = useState(false);
 
   const validRedirect = getValidRedirect();
   const appName = validRedirect ? getAppNameFromRedirect(validRedirect) : null;
 
-  // Preserve ?redirect= when linking to /signup
   const signupHref = validRedirect
     ? `/signup?redirect=${encodeURIComponent(validRedirect)}`
     : '/signup';
+
+  const informSignupHref = validRedirect
+    ? `/signup/inform?redirect=${encodeURIComponent(validRedirect)}`
+    : '/signup/inform';
+
+  const forgotHref = email
+    ? `/forgot-password?email=${encodeURIComponent(email)}`
+    : '/forgot-password';
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -29,7 +40,6 @@ export default function Login() {
     setIsSubmitting(true);
 
     try {
-      // Step 1: authenticate
       const loginRes = await fetch(`${API_BASE}/auth/login`, {
         method: 'POST',
         credentials: 'include',
@@ -38,14 +48,16 @@ export default function Login() {
       });
 
       if (!loginRes.ok) {
-        const body = await loginRes.json().catch(() => ({ error: 'Login failed' }));
-        throw new Error(body.error || 'Login failed');
+        const body = await loginRes.json().catch(() => ({ message: 'Login failed' }));
+        if (body.code === 'EMAIL_NOT_VERIFIED') {
+          setShowUnverifiedResend(true);
+        }
+        throw new Error(body.message || body.error || 'Login failed');
       }
 
       const loginData = await loginRes.json();
       const token: string = loginData.access_token;
 
-      // Step 2: get full user info (tier, onboarding, admin status)
       const meRes = await fetch(`${API_BASE}/account/me`, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -64,9 +76,10 @@ export default function Login() {
         completedOnboarding: meData.completed_onboarding ?? false,
       });
 
-      // Step 3: route — pass token via hash fragment so profile can auto-authenticate
-      const target = validRedirect || 'https://profile.empowered.vote';
-      window.location.href = `${target}#access_token=${token}`;
+      sessionStorage.setItem('admin_token', token);
+
+      const target = validRedirect || 'https://login.empowered.vote/profile';
+      window.location.href = target;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
@@ -74,11 +87,19 @@ export default function Login() {
     }
   }
 
+  async function handleResendConfirmation() {
+    await fetch(`${API_BASE}/auth/resend-confirmation`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
+    setResendSent(true);
+  }
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 dark:bg-ev-black px-4 py-12">
 
-      {/* Wordmark */}
-      <div className="mb-8 text-center space-y-1">
+      <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-ev-teal dark:text-ev-teal-light tracking-tight">
           empowered.vote
         </h1>
@@ -95,8 +116,15 @@ export default function Login() {
         )}
 
         {error && (
-          <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm">
-            {error}
+          <div className="p-3 bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 rounded-xl text-red-700 dark:text-ev-red text-sm space-y-2">
+            <p>{error}</p>
+            {showUnverifiedResend && (
+              resendSent
+                ? <p className="text-green-700 dark:text-green-400 font-medium">Confirmation email sent — check your inbox.</p>
+                : <button type="button" onClick={handleResendConfirmation} className="underline font-medium hover:no-underline">
+                    Resend confirmation email
+                  </button>
+            )}
           </div>
         )}
 
@@ -118,9 +146,14 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-              Password
-            </label>
+            <div className="flex justify-between items-center mb-1.5">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Password
+              </label>
+              <Link to={forgotHref} className="text-xs text-ev-teal dark:text-ev-teal-light hover:underline">
+                Forgot your password?
+              </Link>
+            </div>
             <input
               id="password"
               type="password"
@@ -141,16 +174,39 @@ export default function Login() {
           </button>
         </form>
 
-        <p className="text-center text-sm text-gray-500 dark:text-gray-500">
-          Don't have an account?{' '}
-          <Link to={signupHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
-            Create one
-          </Link>
-        </p>
-        <p className="text-center text-xs text-gray-400 dark:text-gray-600 mt-2">
+        <div className="space-y-3 pt-2">
+          <button
+            type="button"
+            onClick={() => setSignupModalOpen(true)}
+            className="w-full py-3 px-4 bg-ev-yellow hover:bg-ev-yellow/90 text-ev-black font-semibold rounded-xl text-sm transition-colors"
+          >
+            Create an Account
+          </button>
+          <p className="text-center text-xs text-gray-500 dark:text-gray-500">
+            Have an invite code?{' '}
+            <Link to={signupHref} className="text-ev-teal dark:text-ev-teal-light hover:underline font-medium">
+              Create a Connected Account
+            </Link>
+          </p>
+        </div>
+
+        <p className="text-center text-xs text-gray-400 dark:text-gray-600">
           <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
         </p>
       </div>
+
+      <InformConstraintsModal
+        open={signupModalOpen}
+        onClose={() => setSignupModalOpen(false)}
+        onContinue={() => {
+          setSignupModalOpen(false);
+          navigate(informSignupHref);
+        }}
+        onUseInviteCode={() => {
+          setSignupModalOpen(false);
+          navigate(signupHref);
+        }}
+      />
     </div>
   );
 }

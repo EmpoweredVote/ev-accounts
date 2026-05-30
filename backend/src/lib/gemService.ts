@@ -16,6 +16,7 @@
  */
 
 import { supabaseAdmin, adminRpc } from './supabase.js';
+import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -184,6 +185,51 @@ export interface AwardGemsResult {
   is_duplicate: boolean;
 }
 
+// ---------------------------------------------------------------------------
+// awardInformYellowGem (private helper)
+// ---------------------------------------------------------------------------
+
+/**
+ * Award yellow gems to an Inform-tier user via the inform.award_inform_yellow_gem RPC.
+ * Called from awardGems() when the user has no connected_profiles row.
+ */
+async function awardInformYellowGem(params: AwardGemsParams): Promise<AwardGemsResult> {
+  const { rows } = await pool.query<{
+    gem_type: string;
+    amount: number;
+    balance_after: number;
+    is_duplicate: boolean;
+  }>(
+    `SELECT gem_type, amount, balance_after, is_duplicate
+     FROM inform.award_inform_yellow_gem(
+       $1, $2, $3, $4, $5
+     )`,
+    [
+      params.userId,
+      params.amount,
+      params.idempotencyKey,
+      params.transactionType ?? 'service_award',
+      params.sourceRef ?? null,
+    ]
+  );
+
+  const row = rows[0];
+  if (!row) {
+    throw new Error('award_inform_yellow_gem returned no rows');
+  }
+
+  return {
+    gem_type: row.gem_type,
+    amount: row.amount,
+    new_balance: row.balance_after,
+    is_duplicate: row.is_duplicate,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// awardGems
+// ---------------------------------------------------------------------------
+
 /**
  * Award gems to a user via the award_gems SECURITY DEFINER RPC.
  *
@@ -192,8 +238,32 @@ export interface AwardGemsResult {
  *
  * Called exclusively by POST /api/gems/award (external service endpoint).
  * Internal/cron gem grants continue to use creditGems() → credit_gems RPC.
+ *
+ * Tier-aware: Inform-tier users (no connected_profiles row) are routed to
+ * awardInformYellowGem(). Blue/red gem requests for Inform-tier users throw
+ * INFORM_TIER_NO_BLUE_RED.
  */
 export async function awardGems(params: AwardGemsParams): Promise<AwardGemsResult> {
+  // Tier check: Inform-tier users (no connected_profiles row) go to inform-schema RPC.
+  // Connected-tier users continue to the existing award_gems RPC.
+  const { rows: tierRows } = await pool.query<{ is_connected: boolean }>(
+    `SELECT EXISTS(
+       SELECT 1 FROM connect.connected_profiles WHERE user_id = $1
+     ) AS is_connected`,
+    [params.userId]
+  );
+  const isConnected = tierRows[0]?.is_connected === true;
+
+  if (!isConnected) {
+    if (params.gemType !== 'yellow') {
+      throw Object.assign(
+        new Error('Inform-tier users can only earn yellow gems'),
+        { code: 'INFORM_TIER_NO_BLUE_RED' }
+      );
+    }
+    return awardInformYellowGem(params);
+  }
+
   const { data, error } = await adminRpc(
     'award_gems',
     {

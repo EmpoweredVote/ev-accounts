@@ -12,6 +12,12 @@
 - ✅ **v1.7 Cross-App SSO** — Phases 44–48 (shipped 2026-04-02)
 - ✅ **v1.8 Location Identity** — Phases 49–50 (shipped 2026-04-01)
 - ✅ **v1.9 Roles** — Phases 51–58 (shipped 2026-04-06)
+- ✅ **v2.0 Civic Account Experience** — Phases 60–65 (shipped 2026-05-10)
+- ✅ **v2.1 Inform Account Tier** — Phases 66–68 (shipped 2026-05-09)
+- ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
+- ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
+- ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
+- 🔄 **v2.5 City Officials Expansion** — Phases 77–80 (current)
 
 ## Phases
 
@@ -111,17 +117,10 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 **Plans:** 3 plans
 
 Plans:
+
 - [x] 34-01-PLAN.md — Pre-flight verification: enumerate tables, detect user_id columns, capture row counts
 - [x] 34-02-PLAN.md — RLS migrations for 5 public-read schemas (essentials, meetings, treasury, transparent_motivations, compass)
 - [x] 34-03-PLAN.md — RLS migration for staging (authenticated-only read) + comprehensive verification
-
-**Plans:** 4 plans
-
-Plans:
-- [ ] 58-01-PLAN.md � Backend micro-tasks (granted_at + essentials_data_editor politician list)
-- [ ] 58-02-PLAN.md � Dashboard shell, routes, tab navigation, grant cards
-- [ ] 58-03-PLAN.md � Compass Editor + Campaign Manager (Candidate Coordinator) pages
-- [ ] 58-04-PLAN.md � Essentials Editor page + end-to-end verification
 
 **Success Criteria:**
 
@@ -143,6 +142,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 35-01-PLAN.md — Atomic migration: bridge table, FK reassignment, RPC rebuilds, DROP inform.politicians
 - [x] 35-02-PLAN.md — Application code updates: schema switch to essentials + PostgREST fix
 
@@ -166,6 +166,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 36-01-PLAN.md — Treasury service layer and routes (5 public reads + 4 admin writes)
 - [x] 36-02-PLAN.md — Meetings service layer and routes (5 public reads + 3 admin writes)
 
@@ -189,6 +190,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 37-01-PLAN.md — Migrations (staging_reviewer role + status defaults) + requireStagingReviewer middleware
 - [x] 37-02-PLAN.md — Staging service: politician CRUD, review, lock, merge, auto-promotion
 - [x] 37-03-PLAN.md — Staging service: stance + building photo CRUD, review, auto-promotion
@@ -213,6 +215,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
+
 - [x] 38-01-PLAN.md — Schema investigation + Census Geocoder rewrite + env.ts update
 - [x] 38-02-PLAN.md — Address-search endpoint + politicians list Go-parity rewrite
 - [x] 38-03-PLAN.md — Politician detail endpoint (GET /politicians/:id)
@@ -239,6 +242,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [x] 39-01-PLAN.md — Database migration: value range, verdicts table, updated RPCs
 - [x] 39-02-PLAN.md — Public routes: compare, verdicts, batch politician answers
 - [x] 39-03-PLAN.md — Admin compass routes at Go-compatible /api/compass/* paths
@@ -263,6 +267,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
+
 - [x] 40-01-PLAN.md — Auth Hub redirect-after-login + re-auth banner
 - [x] 40-02-PLAN.md — CompassV2 Bearer token migration (20+ files)
 - [x] 40-03-PLAN.md — Essentials Bearer token migration + Sign In link
@@ -291,6 +296,7 @@ Plans:
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 41-01-PLAN.md — Pre-flight inspection: enumerate tables, row counts, FK gap analysis, Trivia connection model
 - [x] 41-02-PLAN.md — trivia_service role creation + GET /api/trivia/leaderboard-profiles endpoint
 - [x] 41-03-PLAN.md — RLS migration for validation_quests and trivia tables
@@ -316,6 +322,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 42-01-PLAN.md — URL cleanup and decommission runbook creation
 - [ ] 42-02-PLAN.md — Cutover execution (human-gated dashboard operations)
 
@@ -360,6 +367,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 44-01-PLAN.md — Login cookie issuance: set httpOnly `ev_session` on `.empowered.vote` at login; `POST /api/auth/logout` clears cookie + revokes Supabase session
 - [ ] 44-02-PLAN.md — `GET /api/auth/session` endpoint: CORS config for `*.empowered.vote`, cookie read, Supabase token exchange, 401 fast-fail on missing cookie
 
@@ -383,6 +391,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 45-01-PLAN.md — Profile Hub (`app/src`): silent session check in AuthInitializer before rendering unauthenticated state; wire existing auth store to accept tokens from session exchange
 - [ ] 45-02-PLAN.md — CTC (`C:\Project Test\frontend`): silent session check if no `ev_refresh_token` in localStorage; logout calls `POST /api/auth/logout` to clear shared cookie
 
@@ -406,6 +415,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 46-01-PLAN.md — Essentials (`C:\Transparent Motivations\essentials`): silent session check in auth bootstrap; logout calls `POST /api/auth/logout`
 - [x] 46-02-PLAN.md — CompassV2 (`C:\EV-CompassV2`): `git pull` first; silent session check in AuthInitializer / `publicFetch` flow; logout calls `POST /api/auth/logout`
 
@@ -429,6 +439,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 47-01-PLAN.md — SSO session check: add isAuthChecking state, initSso() with GET /api/auth/session + setSession(), PrivateRoute gate
 - [ ] 47-02-PLAN.md — Logout coordination: upgrade signOut() to POST /api/auth/logout before supabase.auth.signOut()
 
@@ -452,6 +463,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [ ] 48-01-PLAN.md — Privacy disclosure: add `ev_session` cookie documentation to privacy policy / cookie disclosure on `accounts.empowered.vote`; classify as strictly necessary (no consent banner required)
 - [ ] 48-02-PLAN.md — Cross-app smoke test: manual E2E verification — login at accounts, confirm session inheritance at all five apps, confirm single-logout clears session everywhere
 
@@ -477,6 +489,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [ ] 49-01-PLAN.md — Schema: add 5 GEO ID columns + state + city to connected_profiles; migrate existing users via resolve_user_jurisdiction backfill
 - [ ] 49-02-PLAN.md — Backend: update set-location to write GEO IDs; return jurisdiction object on /account/me; update /representatives/me to use stored GEO IDs directly
 - [ ] 49-03-PLAN.md — Frontend updates: Read & Rank reads jurisdiction.state; CTC extends AccountProfile type; Essentials uses prefilled jurisdiction on load
@@ -500,6 +513,7 @@ Plans:
 **Plans:** 2 plans
 
 Plans:
+
 - [x] 50-01-PLAN.md — Add Path 1.5 to /representatives/me route
 - [x] 50-02-PLAN.md — Backfill script for pre-Phase-49 users
 
@@ -538,6 +552,7 @@ Full details: `.planning/milestones/v1.9-ROADMAP.md`
 **Plans:** 4 plans
 
 Plans:
+
 - [x] 59-01-PLAN.md — Database migration: schema columns + quota RPCs (generate_invite_code_if_allowed, get_my_invitees, sanction_invitee)
 - [x] 59-02-PLAN.md — Backend service layer + API routes (quota-aware /generate, /my-invitees, admin overrides, sanction integration)
 - [x] 59-03-PLAN.md — App UI: expanded Referrals section on DashboardPage (quota display, code generation, invitee list)
@@ -549,6 +564,416 @@ Plans:
 2. When an invitee is suspended, the inviter's slot is locked for 60 days (or until reinstatement), TR is adjusted, and the inviter receives an in-app notification.
 3. Admins can set per-user invite cap overrides (including unlimited) from the AccountDetailPage and see all active overrides on a dedicated list page.
 4. The DashboardPage Referrals section shows quota (active/cap), a generate button, new code display with copy, and a compact invitee list with standing/level/graduation/lock status.
+
+---
+
+### v2.0 Civic Account Experience (Phases 60–65)
+
+---
+
+#### Phase 60: Design Foundation
+
+**Goal:** The shared design language for the Civic Account Experience exists as a component library — color tokens, atomic input/button/card components, progress bar, and nav shell are all implemented in `app/src` and ready for use in every subsequent phase.
+
+**Dependencies:** None (all v2.0 phases depend on this phase)
+
+**Requirements:** DSGN-01, DSGN-02, DSGN-03, DSGN-04, DSGN-05, DSGN-06
+
+**Plans:** 4 plans
+
+Plans:
+
+- [x] 60-01-PLAN.md — Add ev-blue and ev-navy tokens to app/src and admin/src index.css; copy logo asset to app/public
+- [x] 60-02-PLAN.md — Build AuthCard and AuthInput components (DSGN-02, DSGN-03)
+- [x] 60-03-PLAN.md — Build PrimaryButton and SecondaryButton components (DSGN-04)
+- [x] 60-04-PLAN.md — Build StepProgress and AppNav components (DSGN-05, DSGN-06)
+
+**Success Criteria:**
+
+1. `ev-blue` (`#3B82F6`) and `ev-navy` (`#020618`) color tokens are declared in `app/src/index.css` and resolve correctly in Tailwind v4 class names (e.g., `bg-ev-blue`, `text-ev-navy`); `ev-blue` is also added to `admin/src/index.css`.
+2. An `AuthCard` component renders a dark rounded card with a visible border and consistent padding; swapping in `AuthCard` for any auth or onboarding screen requires no layout code in the consuming page.
+3. An `AuthInput` component renders a labeled dark field with placeholder text, inline error message slot, and a blue focus ring on focus — matching the design spec.
+4. `PrimaryButton` renders a full-width blue button and `SecondaryButton` renders a full-width dark button; both accept `disabled` and `onClick` props; neither button requires additional style overrides at usage sites.
+5. `StepProgress` renders a "Step X of Y" label, a percentage-computed blue filled track, and accepts `step` and `total` numeric props; `AppNav` renders the logo mark and wordmark on the left and an optional right-slot for auth controls.
+
+---
+
+#### Phase 61: Auth Flow Restyle
+
+**Goal:** Every screen in the auth sequence — welcome, signup, email confirmation, and login — uses the new design language and copy so that the first impression a prospective user has of the platform is trust-first and invitational, never coercive.
+
+**Dependencies:** Phase 60 (AuthCard, AuthInput, PrimaryButton, AppNav, StepProgress must exist)
+
+**Requirements:** AUTH-01, AUTH-02, AUTH-03, AUTH-04, AUTH-05, AUTH-06
+
+**Plans:** 5 plans
+
+Plans:
+
+- [x] 61-01-PLAN.md — Patch AuthInput to accept inputClassName prop (foundation for invite-code mono styling)
+- [x] 61-02-PLAN.md — Build WelcomeScreen at /welcome with three options and invitational copy (AUTH-01)
+- [x] 61-03-PLAN.md — Restyle LoginPage with AppNav + AuthCard + AuthInput + PrimaryButton (AUTH-06)
+- [x] 61-04-PLAN.md — Restyle SignupPage form + check-email screen with StepProgress and alpha-trust copy (AUTH-02–05)
+- [x] 61-05-PLAN.md — Backend: add display_name to signup_with_invite RPC + Zod schema (migration 071)
+
+**Success Criteria:**
+
+1. Navigating to `/welcome` shows a centered card with three clear options — Create account, Log in, and "Continue exploring" — and the copy uses invitational framing; no pressure language appears anywhere on the screen.
+2. The signup page renders `AppNav`, `StepProgress` (Step 1 of 4), an `AuthCard` containing `AuthInput` fields for email, password, civic name, legal name, and invite code — five fields total; all use the dark input style with blue focus ring. The civic name (display_name) is stored on `connected_profiles` at account creation via migration 071.
+3. The legal name field on signup displays inline copy explaining the invite-network identity model ("During Alpha, your identity is verified through our invite network — one person, one voice") and a "never shown publicly" note visible before the user types.
+4. The invite code field displays a shield icon and an inline alpha-trust explanation; the check-email confirmation screen shows the user's email address with a magic-link explanation and a sign-in link.
+5. The login page renders `AppNav`, an `AuthCard` with dark fields and a blue CTA, and an "Already have account? Sign In" link — matching the Figma design language throughout.
+
+---
+
+#### Phase 62: Onboarding Restyle
+
+**Goal:** The three active onboarding steps — civic name, location, and you're connected — are visually consistent with the new design language and carry copy that frames civic participation as meaningful, not transactional. The old `WelcomeStep` is removed from the flow.
+
+**Dependencies:** Phase 60 (AppNav, StepProgress, AuthCard, AuthInput, PrimaryButton must exist); Phase 61 (WelcomeScreen at `/welcome` must exist to absorb the removed WelcomeStep)
+
+**Requirements:** ONBD-01, ONBD-02, ONBD-03, ONBD-04, ONBD-05
+
+**Plans:** 3 plans
+
+Plans:
+
+- [x] 62-01-PLAN.md — Restyle LocationStep with v2.0 chrome (AppNav + StepProgress 2/3 + AuthCard + 4 AuthInput fields); remove reveal gate and Learn More link; preserve isUpdate path for UpdateLocationPage
+- [x] 62-02-PLAN.md — Restyle LocationCelebrationStep with green-checkmark badge + 3 milestone items; absorb POST /auth/complete-onboarding from PseudonymStep so onboarding terminates here
+- [x] 62-03-PLAN.md — Simplify OnboardingPage to two-step flow with resumption useEffect; update SignupPage step counter 1-of-4 → 1-of-3; delete WelcomeStep.tsx and PseudonymStep.tsx
+
+**Success Criteria:**
+
+1. The two active onboarding steps (`LocationStep`, `LocationCelebrationStep`) render the shared `AppNav` and `StepProgress` bar at the top; the step counter increments correctly: SignupPage=1/3, LocationStep=2/3, LocationCelebrationStep=3/3.
+2. The civic name (`display_name`) is captured on SignupPage already (Phase 61); the legacy `PseudonymStep` is removed and onboarding does NOT re-prompt for a civic name.
+3. The location step shows a pin icon, the label "Find your civic community", the copy "We use your location to connect you with your local civic space." with NO "Learn More" link, and four `AuthInput` fields for street, city, state, and ZIP visible immediately (no reveal gate); "Find my representatives" CTA + "Back" button below; no skip option.
+4. The "You're connected" celebration step shows a green checkmark icon and three locked milestone items — "Your Connected Account is live", "Your civic community is located", "You're ready to participate" — with a "Go to dashboard" CTA that calls POST /auth/complete-onboarding and navigates to /.
+5. The old `WelcomeStep` and `PseudonymStep` components are removed from the onboarding flow and from disk; new users entering onboarding land directly on the location step; `/welcome` is the only pre-entry value pitch screen.
+
+---
+
+#### Phase 63: Profile Page + Activity Feed
+
+**Goal:** The profile page at `login.empowered.vote/profile` matches the new design — name, level, XP bar, gem icons, recent activity, invite section, and VR display are all rendered — and the backend delivers a real activity feed endpoint so the Recent Activity section shows live data.
+
+**Dependencies:** Phase 60 (design tokens must exist for the profile reskin); no auth-flow dependency
+
+**Requirements:** PROF-01, PROF-02, PROF-03, PROF-04, PROF-05, PROF-06, API-01, FIX-01
+
+**Success Criteria:**
+
+1. The profile page renders the user's display name as a large heading, a Level badge, and an XP progress bar showing the format "Level N — X / Y XP" with the bar correctly filled based on `xp_in_level` / `xp_to_next_level`.
+2. The gems section displays three large colored gem icons (yellow, blue, red) with the numeric balance beneath each; balances update when the page is refreshed.
+3. The Recent Activity section shows the last 4 XP transactions drawn from `GET /api/account/me/activity`, each displaying the activity name, date, and "+N XP" amount in teal; the section is absent or shows an empty state if the user has no XP history.
+4. The invite section renders a locked state ("Reach level 2 to unlock your first referral code") for users below level 2, and an active state showing the invite code with a copy button for eligible users; Verification Rating is displayed as "X / 150" with explanatory copy.
+5. `GET /api/account/me/activity` returns the last 20 XP transactions for the authenticated user with `source`, `amount`, `description`, and `created_at` per entry; requires Connected tier (non-Connected requests receive 403); generating a new invite code from the DashboardPage correctly sends `optional_name` in the request body.
+
+---
+
+#### Phase 64: InformLanding — SKIPPED (2026-05-10)
+
+**Decision:** Skipped. `login.empowered.vote/profile` already serves as the platform explainer — more thorough than a separate landing page would be. Unauthenticated visitors to `app.empowered.vote/` continue to be redirected to `login.empowered.vote/login` via `AuthGuard` (existing behavior).
+
+**Requirements:** LAND-01 through LAND-05 — superseded by existing profile page.
+
+---
+
+#### Phase 65: Dashboard Redesign — SKIPPED (2026-05-10)
+
+**Decision:** Skipped. Users navigate directly to `login.empowered.vote/profile` — `app.empowered.vote` is no longer a primary user destination. The profile page already surfaces level, XP, gems, VR, and feature cards. No dashboard redesign needed.
+
+---
+
+### v2.1 Inform Account Tier (Phases 66–68)
+
+---
+
+#### Phase 66: Inform Profiles Backend Foundation
+
+**Goal:** The `inform.inform_profiles` table exists and the gem-routing, location-hint, and balance-transfer contracts are enforced at the database and API layers — every subsequent phase can rely on this schema and these endpoints being correct.
+
+**Dependencies:** None (all v2.1 phases depend on this phase; Phase 68 also depends on Phase 67 for the signup flow that creates inform_profiles rows)
+
+**Requirements:** IBAK-01, IBAK-02, IBAK-03, IBAK-04, IBAK-05, IBAK-06
+
+**Plans:** 3 plans
+
+Plans:
+Plans:
+
+- [ ] 66-01-PLAN.md — Migrations 084 + 085: inform.inform_profiles table, trigger, backfill; signup_with_invite yellow gem transfer (IBAK-01, IBAK-02, IBAK-06)
+- [ ] 66-02-PLAN.md — Migration 086 + gemService tier-branching: award_inform_yellow_gem RPC, Inform-tier yellow gem routing, 422 for blue/red (IBAK-04)
+- [ ] 66-03-PLAN.md — requireInform middleware; GET /me inform_profile field; PATCH /account/location-hint upsert (IBAK-03, IBAK-05)
+
+**Success Criteria:**
+
+1. `inform.inform_profiles` exists with a row for every `public.users` entry — including rows for users who signed up before this migration ran (backfilled by the trigger or a one-time backfill script).
+2. `GET /api/account/me` includes `inform_profile: { yellow_gem_balance, last_essentials_location }` in the response body for all authenticated users regardless of tier.
+3. `POST /api/gems/award` with `gem_type: "yellow"` and an Inform-tier recipient increments `inform_profiles.yellow_gem_balance`; the same call with `gem_type: "blue"` or `"red"` returns HTTP 422.
+4. `PATCH /api/account/location-hint` stores a JSON location payload in `inform_profiles.last_essentials_location`; requires auth; returns 403 for Connected-tier users (endpoint is Inform-only).
+5. When a user completes Connected signup via `signup_with_invite`, their `inform_profiles.yellow_gem_balance` is atomically transferred to `connected_profiles.gem_balance_yellow` and the inform balance is set to 0 — no gems are lost or duplicated.
+
+---
+
+#### Phase 67: Login Hub + Inform Signup Flow
+
+**Goal:** Any visitor to `login.empowered.vote` can create an Inform Account in under a minute — they see the login page with a clear "Create an Account" CTA, learn what Inform means before committing, and complete a three-field signup form that needs no invite code.
+
+**Dependencies:** Phase 66 (inform_profiles DB trigger must exist so signup creates the row automatically)
+
+**Requirements:** LHUB-01, LHUB-02, ISUP-01, ISUP-02, ISUP-03, ISUP-04
+
+**Plans:** 3 plans
+
+Plans:
+
+- [ ] 67-01-PLAN.md — Login page: yellow "Create an Account" CTA + InformConstraintsModal (links to /signup/inform; secondary invite-code link to /signup)
+- [ ] 67-02-PLAN.md — InformSignup.tsx page at /signup/inform: 3-field form (display name + email + password, no invite code); yellow "Check your email" success screen with Inform Account pill
+- [ ] 67-03-PLAN.md — Backend: persist display_name to public.users on Inform path via pool.query() UPDATE in POST /api/auth/signup (non-fatal; no schema change)
+
+**Success Criteria:**
+
+1. An unauthenticated visitor to `login.empowered.vote` sees the login form and a visible "Create an Account" CTA without scrolling.
+2. Clicking "Create an Account" opens a modal that accurately describes Inform Account capabilities — full Inform feature access, observable Connected/Empowered features (read-only), yellow gems only — with an "I have an invite code" link for users who want a Connected Account instead.
+3. The signup form following the modal collects exactly three fields — display name, email, and password — with no invite code field present anywhere on the form.
+4. After submission, a "Check your email" screen renders with yellow Inform Account theming (yellow accent color, "Inform Account" label) and shows the user's email address.
+5. After email confirmation, the user is redirected to `login.empowered.vote/profile` and their session reflects an Inform-tier account (no `connected_profiles` row exists).
+
+---
+
+#### Phase 68: Yellow Inform Profile Page + Connected Explainer
+
+**Goal:** An Inform user's profile page at `login.empowered.vote/profile` feels complete and personal — yellow-themed, showing their compass calibration and Essentials location, with Connected/Empowered tiles visible but clearly locked, and an invitational (never pressured) path toward Connected when they are ready.
+
+**Dependencies:** Phase 66 (inform_profile data on /me); Phase 67 (Inform signup creates the account that lands here)
+
+**Requirements:** IPRO-01, IPRO-02, IPRO-03, IPRO-04, IPRO-05, IPRO-06, CEXP-01, CEXP-02, CEXP-03
+
+**Plans:** 2 plans
+
+Plans:
+
+- [ ] 68-01-PLAN.md — Create ConnectedExplainerModal.tsx: focused dialog explaining Connected tier (identity verification, Alpha invite codes) with "I have an invite code →" CTA to /signup
+- [ ] 68-02-PLAN.md — Extend ProfilePage.tsx for Inform tier: type, compass fetch enablement, clickable Inform badge, locked Connect tiles, last-essentials-location display, IPRO-06 bottom section, modal wiring
+
+**Success Criteria:**
+
+1. An Inform-tier user viewing `login.empowered.vote/profile` sees a yellow-themed page — the "Inform Account" badge, gem display, and feature tile accents all use the `ev-yellow` (`#FED12E`) color token; the structural layout (wide desktop borders, tile grid) matches the existing Connected profile.
+2. The profile header displays the user's display name, a yellow "Inform Account" pill, and their current yellow gem balance; clicking the pill opens the Connected Account explainer dialog.
+3. The Compass tile shows the user's calibration count (e.g., "12 topics calibrated") or a prompt to start if count is 0; the Essentials tile shows the last searched location from `inform_profiles.last_essentials_location` or a "Explore Essentials" prompt if null.
+4. Connected and Empowered feature tiles are rendered in an observable locked state — the tile names and icons are visible, a lock indicator is present, but the tiles are not interactive; tiles are not hidden.
+5. The explainer dialog accurately describes what Connected Accounts are, how identity verification works in Alpha (invite network), and includes a clear "I have an invite code" CTA that links to the existing Connected signup flow.
+6. A subtle "Connect your account" section appears at the page bottom with minimal visual prominence and copy framed as "when you're ready" — no urgency language, no repeated CTAs above the fold.
+
+---
+
+<details>
+<summary>✅ v2.2 TIGER District Geofencing (Phases 69–71) — SHIPPED 2026-05-10</summary>
+
+- [x] Phase 69: TIGER Schema + Data Import (2/2 plans) — completed 2026-05-10
+- [x] Phase 70: Geofencing Backend Integration (4/4 plans) — completed 2026-05-10
+- [x] Phase 71: School Districts + Profile Display (2/2 plans) — completed 2026-05-10
+
+Full details: `.planning/milestones/v2.2-ROADMAP.md`
+
+</details>
+
+### v2.3 US Senate Coverage (Phases 72–74)
+
+---
+
+#### Phase 72: Senate Infrastructure
+
+**Goal:** All 50 US states have the district and government records needed to anchor senator office links — NATIONAL_UPPER districts and government stubs are in place for every state so Phase 73 can create offices without FK gaps.
+
+**Dependencies:** None (foundation phase; Phase 73 depends on this)
+
+**Requirements:** SINF-01, SINF-02
+
+**Plans:** 1 plan expected
+
+**Success Criteria:**
+
+1. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'NATIONAL_UPPER'` returns exactly 50 — one row per US state, including the 45 new state entries added alongside the existing CA, IN, MA, ME, TX rows.
+2. Every NATIONAL_UPPER district row has a valid `government_id` FK — `SELECT COUNT(*) FROM essentials.districts d LEFT JOIN essentials.governments g ON g.id = d.government_id WHERE d.district_type = 'NATIONAL_UPPER' AND g.id IS NULL` returns 0.
+3. All 50 states have a row in `essentials.governments` — states that previously had no record have minimal stubs sufficient for the FK constraint (name + state abbreviation at minimum).
+4. All migrations apply cleanly in sequence starting from migration 171 with no FK violations or constraint errors.
+
+---
+
+#### Phase 73: Senator Records
+
+**Goal:** All 100 sitting 119th Congress US Senators exist as politician records with offices, district links, and photos — the data layer is complete so compass stances written in Phase 74 have valid FK targets and Essentials can surface senators in the representatives feed.
+
+**Dependencies:** Phase 72 (NATIONAL_UPPER districts and government stubs must exist before offices can FK to them)
+
+**Requirements:** SENA-01, SENA-02, SENA-03
+
+**Plans:** 2 plans
+
+Plans:
+
+- [x] 73-01-PLAN.md — migration 175: insert 42 new senators (AK–MS) + photo backfill for 4 existing CA/IN senators
+- [x] 73-02-PLAN.md — migration 176: insert 48 new senators (MT–WY, incl. 2 appointed) + photo backfill for 6 existing MA/ME/TX senators
+
+**Success Criteria:**
+
+1. `SELECT COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER'` returns exactly 100 — two senators per state, all 50 states covered.
+2. Every senator office row has a `district_id` that resolves to a `NATIONAL_UPPER` district — `SELECT COUNT(*) FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER' AND d.id IS NULL` returns 0.
+3. `SELECT COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER' AND (p.photo_origin_url IS NULL OR p.photo_origin_url = '')` returns 0 — every senator has a non-empty photo URL from the official Senate website or Wikipedia.
+4. The 10 existing CA, IN, MA, ME, TX senators appear in the result set and have not been duplicated — total senator count remains exactly 100.
+
+---
+
+#### Phase 74: Stance Research + Ingestion
+
+**Goal:** All 100 US Senators have sourced stance data across every applicable CompassV2 topic — users in any US state can open the compass compare view and see their senators' positions with citations, and the 8 existing senators with partial data have their gaps filled.
+
+**Dependencies:** Phase 73 (all 100 senator politician records must exist before `inform.politician_answers` and `inform.politician_context` rows can reference them)
+
+**Requirements:** SSTA-01, SSTA-02, SSTA-03
+
+**Plans:** 2–3 plans expected (batched by party, state grouping, or alphabetically)
+
+**Success Criteria:**
+
+1. `SELECT COUNT(DISTINCT politician_id) FROM inform.politician_answers pa JOIN essentials.offices o ON o.politician_id = pa.politician_id JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER'` returns 100 — every senator has at least one stance record.
+2. For each senator, `SELECT COUNT(*) FROM inform.politician_answers WHERE politician_id = <id>` returns >= 30 — all applicable federal-tier CompassV2 topics are covered; local-only topics (city council, school board) are intentionally excluded.
+3. Every stance record has a paired context row: `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT DISTINCT politician_id FROM essentials.offices o JOIN essentials.districts d ON d.id = o.district_id WHERE d.district_type = 'NATIONAL_UPPER')` returns 0.
+4. Every context row has at least one source URL: `SELECT COUNT(*) FROM inform.politician_context WHERE politician_id IN (...senators...) AND (sources IS NULL OR array_length(sources, 1) = 0)` returns 0.
+5. The 8 existing senators with partial stances (CA, IN, MA, ME, TX minus the 2 fully covered) show stance counts >= 30, matching the full coverage of newly added senators — no senator has a lower topic count than any other.
+
+---
+
+<details>
+<summary>✅ v2.4 2026 Senate Candidates (Phases 75–76) — SHIPPED 2026-05-22</summary>
+
+- [x] Phase 75: Race Catalog + Candidate Records (1/1 plans) — completed 2026-05-22
+- [x] Phase 76: Candidate Stance Research (4/4 plans) — completed 2026-05-22
+
+Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone close)
+
+</details>
+
+### v2.5 City Officials Expansion (Phases 77–80) — CURRENT
+
+---
+
+#### Phase 77: City Infrastructure + Official Records
+
+**Goal:** San Jose, San Diego, Berkeley, and Fremont each have a government stub, a full set of city council district seats, and politician + office records for every mayor, council member, and key appointed role — the data foundation needed for stance research in Phase 78.
+
+**Dependencies:** None (foundation phase for v2.5; Phase 78 depends on this)
+
+**Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
+
+**Plans:** 2/2 plans complete
+
+Plans:
+
+- [x] 77-01-PLAN.md — Apply SJ government + officials + headshots (SD/Berkeley/Fremont already shipped in migrations 207–215)
+- [x] 77-02-PLAN.md — Verify CITY-01 through CITY-08 across all 4 cities
+
+**Planner note (2026-05-23):** Original 3-wave sketch consolidated into 2 plans because San Diego, Berkeley, and Fremont infrastructure was already applied in migrations 207–215 during prior work sessions. Only San Jose work remains. Wave structure in PLAN.md files reflects this: 77-01 (Wave 1, SJ work), 77-02 (Wave 2, verification across all 4 cities). District type uses LOCAL + LOCAL_EXEC (existing schema) rather than CITY_COUNCIL (which is not a valid enum value).
+
+**Success Criteria:**
+
+1. `SELECT name FROM essentials.governments WHERE name IN ('City of San Jose', 'City of San Diego', 'City of Berkeley', 'City of Fremont')` returns 4 rows — each city has exactly one government stub row, with no duplicates.
+2. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'CITY_COUNCIL' AND government_id IN (SELECT id FROM essentials.governments WHERE name IN ('City of San Jose', 'City of San Diego', 'City of Berkeley', 'City of Fremont'))` returns the correct total seat count across all 4 cities (San Jose 10 + San Diego 9 + Berkeley 8 + Fremont 7 = 34, or the verified current counts), with every district row FK'd to its city's government row.
+3. Every new politician record has a corresponding office row in `essentials.offices` linked to the correct city council district (or a city-wide `CITY_COUNCIL` district for mayor and at-large seats) — `SELECT COUNT(*) FROM essentials.offices o LEFT JOIN essentials.districts d ON d.id = o.district_id WHERE o.politician_id IN (new city politicians) AND d.id IS NULL` returns 0.
+4. `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (new city politicians) AND (photo_origin_url IS NULL OR photo_origin_url = '')` returns 0 — every new official has a non-empty photo URL, or has a documented "no source found" entry noted in the migration comments.
+
+---
+
+#### Phase 78: City Stance Research
+
+**Goal:** Every San Jose, San Diego, Berkeley, Sacramento, and Fremont official has sourced stance data across all 42 applicable CompassV2 topics (data-centers excluded for city officials) — users in those cities can open the compass compare view and see local officials' positions with citations, mirroring the SF officials pattern established in Phase 76. Fremont (CSTA-04) is pre-completed via migration 219 (56 stances); Sacramento is added as an informal 5th city extending CSTA-04 per CONTEXT.md D-01.
+
+**Dependencies:** Phase 77 (politician records must exist in `essentials.politicians` before `inform.politician_answers` rows can reference them)
+
+**Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
+
+**Plans:** 2/6 plans executed
+Plans:
+**Wave 1**
+
+- [x] 78-01-PLAN.md — Wave 0: Verify Sacramento headshots (audit-only; promote to numbered migration if not yet live)
+- [x] 78-02-PLAN.md — Wave 1: San Jose stance research + migration (CSTA-01, 11 officials)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 78-03-PLAN.md — Wave 2: San Diego stance research + migration (CSTA-02, 11 officials)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 78-04-PLAN.md — Wave 3: Berkeley stance research + migration (CSTA-03, 10 officials)
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
+- [ ] 78-05-PLAN.md — Wave 4: Sacramento stance research + migration (CSTA-04 extension, 9 officials; Fremont untouched)
+
+**Wave 5** *(blocked on Wave 4 completion)*
+
+- [ ] 78-06-PLAN.md — Wave 5: CSTA-05 context audit across SJ, SD, Berkeley, Sacramento (Fremont out of scope)
+
+**Cross-cutting constraints:**
+
+- Every researched stance has a paired inform.politician_context row with at least one source URL
+
+**Planner note (2026-05-28):** Original 5-wave sketch expanded to 6 waves to (a) add Wave 0 for Sacramento headshot verification before stance research begins (D-02), (b) replace the Fremont stance wave with a Sacramento stance wave since CSTA-04 / Fremont is already closed via migration 219 (D-04), and (c) preserve the CSTA-05 audit as its own final wave per D-09. Research executes one city at a time (D-05) — no parallel research-stances dispatch. Migration numbers assigned at apply time per D-08 (last confirmed applied: 220).
+
+**Success Criteria:**
+
+1. Every official added in Phase 77 has at least one row in `inform.politician_answers` — no official from any of the 4 cities has zero stances.
+2. For each city official, all 43 CompassV2 topics were attempted; where evidence was unavailable the researcher documented a "no evidence" determination — officials with thin public records meet a minimum of 5 stances rather than zero.
+3. Every stance row for a Phase 77 official has a paired row in `inform.politician_context` — `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT id FROM essentials.politicians WHERE id IN (phase 77 politician ids))` returns 0.
+4. Every `inform.politician_context` row for these officials has at least one non-empty source URL in the `sources` array — `SELECT COUNT(*) FROM inform.politician_context WHERE politician_id IN (phase 77 politician ids) AND (sources IS NULL OR array_length(sources, 1) = 0)` returns 0.
+5. Researcher agents ran one at a time per city batch — no parallel launches; each batch's migration was applied and verified before the next batch began.
+
+---
+
+#### Phase 79: Gap-fill Existing Politicians
+
+**Goal:** Every politician in the database who has sparse stance coverage and where additional evidence is plausibly available has been identified and brought up to the coverage floor — the compass compare view shows no politician with embarrassingly thin data when better data exists.
+
+**Dependencies:** Phase 78 (city stances should be ingested first so the gap-fill audit includes new city officials alongside existing politicians)
+
+**Requirements:** GAPF-01, GAPF-02
+
+**Waves:**
+
+- Wave 1: Audit — SQL query to identify all politicians with < 10 stances; produce a prioritized target list (GAPF-01)
+- Wave 2: Research + ingestion for all identified targets (GAPF-02)
+
+**Success Criteria:**
+
+1. A gap-fill audit artifact exists listing every politician in the database with fewer than 10 stances, annotated with: politician name, current stance count, priority tier (high/medium/low based on profile — SF officials and senators first), and a determination of whether additional evidence is likely available.
+2. Every politician flagged as high-priority in the audit (SF officials with < 10 stances, any senator below floor) has new stance rows ingested — `SELECT p.full_name, COUNT(pa.id) FROM essentials.politicians p LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id GROUP BY p.id HAVING COUNT(pa.id) < 10` returns zero high-priority politicians after gap-fill completes.
+3. Every new stance row ingested in this phase has a paired `inform.politician_context` row with at least one source URL.
+4. Politicians in the audit where "no additional evidence available" was determined are documented with that status in the audit artifact — the floor for those cases is accepted as the current count.
+
+---
+
+#### Phase 80: Campaign Finance Schema + Ingestion + API
+
+**Goal:** Campaign finance summaries are stored on politician records and surfaced via the essentials API — any partner app can display total raised, top donors, and top industries for a politician without a separate finance lookup, using FEC data for federal officials and FPPC Cal-Access data for CA state and local officials.
+
+**Dependencies:** Phase 77 (new city officials must have politician records before their finance data can be ingested); Phase 78 is not a hard dependency but finance ingestion typically follows stance research in the same work session
+
+**Requirements:** FINA-01, FINA-02, FINA-03
+
+**Waves:**
+
+- Wave 1: Schema migration — `finance_summary` JSONB column on `essentials.politicians` (FINA-01)
+- Wave 2: Finance data ingestion for all target politicians — federal (FEC) and CA state/local (FPPC Cal-Access) (FINA-02)
+- Wave 3: API update — include `finance_summary` in `GET /api/essentials/politicians` response (FINA-03)
+
+**Success Criteria:**
+
+1. Migration applied: `SELECT column_name FROM information_schema.columns WHERE table_schema = 'essentials' AND table_name = 'politicians' AND column_name = 'finance_summary'` returns one row — the column exists and accepts JSONB values with the shape `{ total_raised, top_donors, top_industries, cycle, source }`.
+2. Finance data is populated for all new city officials from Phase 77 and for top-priority existing politicians (US Senators + SF officials) — `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (target politician ids) AND finance_summary IS NULL` returns 0 for the agreed target set.
+3. `GET /api/essentials/politicians` returns a `finance_summary` field for every politician in the response — the field is `null` when no data has been ingested (backward-compatible), and contains the full JSONB object when data is present; no existing field is removed or renamed.
+4. A spot-check of one senator (FEC source) and one SF official (FPPC source) confirms the `top_donors` array contains at least 3 named donors with amounts, and `total_raised` is a positive integer matching the source data.
 
 ---
 
@@ -614,4 +1039,25 @@ Plans:
 | 56. Essentials Data Editor Endpoint | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 57. CTC + Civic Spaces Integration | v1.9 | 2/2 | Complete | 2026-04-04 |
 | 58. Contributor Portal | v1.9 | 5/5 | Complete | 2026-04-06 |
-| 59. Referral Code System | — | 0/4 | Planning | — |
+| 59. Referral Code System | — | 4/4 | Complete | 2026-04-08 |
+| 60. Design Foundation | v2.0 | 4/4 | Complete | 2026-04-25 |
+| 61. Auth Flow Restyle | v2.0 | 5/5 | Complete | 2026-04-25 |
+| 62. Onboarding Restyle | v2.0 | 3/3 | Complete | 2026-04-25 |
+| 63. Profile Page + Activity Feed | v2.0 | 2/2 | Complete | 2026-04-27 |
+| 64. InformLanding | v2.0 | — | Skipped | — |
+| 65. Dashboard Redesign | v2.0 | — | Skipped | — |
+| 66. Inform Profiles Backend Foundation | v2.1 | 3/3 | Complete | 2026-04-27 |
+| 67. Login Hub + Inform Signup Flow | v2.1 | 3/3 | Complete | 2026-04-27 |
+| 68. Yellow Inform Profile Page + Connected Explainer | v2.1 | 2/2 | Complete | 2026-05-09 |
+| 69. TIGER Schema + Data Import | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
+| 70. Geofencing Backend Integration | v2.2 ✅ | 4/4 | Complete | 2026-05-10 |
+| 71. School Districts + Profile Display | v2.2 ✅ | 2/2 | Complete | 2026-05-10 |
+| 72. Senate Infrastructure | v2.3 | 1/1 | Complete | 2026-05-19 |
+| 73. Senator Records | v2.3 | 2/2 | Complete | 2026-05-19 |
+| 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
+| 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
+| 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
+| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete    | 2026-05-28 |
+| 78. City Stance Research | v2.5 | 2/6 | In Progress|  |
+| 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
+| 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |

@@ -108,7 +108,7 @@ export async function getCompassTopics() {
   const { data: topics, error: topicsError } = await supabaseAnon
     .schema('inform')
     .from('compass_topics')
-    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope')
+    .select('id,topic_key,title,short_title,question_text,is_live,version,office_scope,fc_community_slug,judicial_role')
     .eq('is_live', true)
     .order('created_at', { ascending: true });
 
@@ -155,12 +155,17 @@ export async function getCompassTopics() {
     const applies_local = hasAnyRoleRows
       ? topicRoles.some(r => r.role_scope === 'local')
       : true;
+    // CRITICAL: fallback is false (not true) — existing cross-cutting topics must NOT appear on judicial profiles
+    const applies_judicial = hasAnyRoleRows
+      ? topicRoles.some(r => r.role_scope === 'judicial')
+      : false;
 
     return {
       ...topic,
       applies_federal,
       applies_state,
       applies_local,
+      applies_judicial,
       stances: (stancesRes.data ?? [])
         .filter(s => s.topic_id === topic.id)
         .map(({ topic_id: _tid, ...s }) => s),
@@ -218,12 +223,14 @@ export async function getCompassCategories() {
   const tierFlagsFor = (topicId: string) => {
     const scopes = rolesByTopicId.get(topicId);
     if (!scopes || scopes.size === 0) {
-      return { applies_federal: true, applies_state: true, applies_local: true };
+      // CRITICAL: applies_judicial defaults to false — cross-cutting topics must NOT appear on judicial profiles
+      return { applies_federal: true, applies_state: true, applies_local: true, applies_judicial: false };
     }
     return {
-      applies_federal: scopes.has('federal'),
-      applies_state:   scopes.has('state'),
-      applies_local:   scopes.has('local'),
+      applies_federal:  scopes.has('federal'),
+      applies_state:    scopes.has('state'),
+      applies_local:    scopes.has('local'),
+      applies_judicial: scopes.has('judicial'),
     };
   };
 
@@ -270,14 +277,17 @@ export async function getCompassPoliticians() {
   const { rows } = await pool.query(
     `SELECT DISTINCT ON (p.id)
             p.id, p.first_name, p.last_name, p.preferred_name, p.full_name,
-            -- G-114-014: NULLIF wraps prevent empty-string '' from short-circuiting COALESCE before pi.url
-            COALESCE(NULLIF(p.photo_custom_url, ''), NULLIF(p.photo_origin_url, ''), pi.url, '') AS photo_origin_url,
+            COALESCE(NULLIF(p.photo_custom_url, ''), pi.url, NULLIF(p.photo_origin_url, ''), '') AS photo_origin_url,
             p.is_active,
             COALESCE(o.title, '') AS office_title,
             COALESCE(o.representing_state, '') AS representing_state,
             COALESCE(o.representing_city, '') AS representing_city,
             COALESCE(d.label, '') AS district_label,
-            COALESCE(d.district_type, '') AS district_type
+            COALESCE(d.district_type, '') AS district_type,
+            (SELECT COUNT(*)::int FROM inform.politician_answers
+             WHERE politician_id = p.id AND value != 0) AS answer_count,
+            (SELECT array_agg(topic_id) FROM inform.politician_answers
+             WHERE politician_id = p.id AND value != 0) AS answered_topic_ids
      FROM essentials.politicians p
      JOIN inform.politician_answers pa ON pa.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.politician_id = p.id
@@ -303,7 +313,161 @@ export async function getCompassPoliticians() {
     representing_city: r.representing_city ?? '',
     district_label: r.district_label ?? '',
     district_type: r.district_type ?? '',
+    answer_count: r.answer_count ?? 0,
+    answered_topic_ids: (r.answered_topic_ids ?? []) as string[],
   }));
+}
+
+/**
+ * getCandidates
+ * Returns active election candidates that have at least one compass answer via
+ * either their empowered_profile (Path A: compass_responses) or researched stances
+ * (Path B: politician_answers). Rows include stance_source: 'empowered' | 'researched'.
+ * Uses pool.query() — essentials and empower are not in the PostgREST exposed schema list.
+ */
+export async function getCandidates() {
+  const { rows } = await pool.query(
+    `SELECT
+      rc.id,
+      rc.first_name,
+      rc.last_name,
+      NULL::text AS preferred_name,
+      rc.full_name,
+      COALESCE(NULLIF(p.photo_custom_url, ''), pi.url, NULLIF(p.photo_origin_url, ''), NULLIF(rc.photo_url, ''), '') AS photo_origin_url,
+      NULL::text AS photo_custom_url,
+      r.position_name AS office_title,
+      COALESCE(o.representing_state, e.state::text, '') AS representing_state,
+      COALESCE(o.representing_city, '') AS representing_city,
+      COALESCE(d.label, '') AS district_label,
+      COALESCE(d.district_type, '') AS district_type,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN (
+          SELECT COUNT(*)::int FROM inform.compass_responses cr
+          JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        ELSE (
+          SELECT COUNT(*)::int FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      END AS answer_count,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN (
+          SELECT array_agg(cr.topic_id) FROM inform.compass_responses cr
+          JOIN empower.empowered_profiles ep ON ep.user_id = cr.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        ELSE (
+          SELECT array_agg(pa.topic_id) FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      END AS answered_topic_ids,
+      CASE
+        WHEN EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep WHERE ep.politician_id = rc.politician_id
+        ) THEN 'empowered'
+        ELSE 'researched'
+      END AS stance_source,
+      true AS is_candidate,
+      rc.is_incumbent
+    FROM essentials.race_candidates rc
+    JOIN essentials.races r ON r.id = rc.race_id
+    JOIN essentials.elections e ON e.id = r.election_id
+    LEFT JOIN essentials.offices o ON o.id = r.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.politicians p ON p.id = rc.politician_id
+    LEFT JOIN LATERAL (
+      SELECT url FROM essentials.politician_images
+      WHERE politician_id = rc.politician_id AND type = 'default' LIMIT 1
+    ) pi ON true
+    WHERE rc.candidate_status = 'active'
+      AND e.election_date >= CURRENT_DATE
+      AND rc.politician_id IS NOT NULL
+      AND rc.is_incumbent = false
+      AND (
+        EXISTS (
+          SELECT 1 FROM empower.empowered_profiles ep
+          JOIN inform.compass_responses cr ON cr.user_id = ep.user_id
+          WHERE ep.politician_id = rc.politician_id AND cr.deleted_at IS NULL AND cr.value != 0
+        )
+        OR EXISTS (
+          SELECT 1 FROM inform.politician_answers pa
+          WHERE pa.politician_id = rc.politician_id AND pa.value != 0
+        )
+      )`
+  );
+
+  return rows.map((r) => ({
+    id: r.id as string,
+    first_name: r.first_name ?? null,
+    last_name: r.last_name ?? null,
+    preferred_name: (r.preferred_name ?? null) as string | null,
+    full_name: r.full_name ?? null,
+    photo_origin_url: (r.photo_origin_url ?? '') as string,
+    is_active: true,
+    office_title: (r.office_title ?? '') as string,
+    representing_state: (r.representing_state ?? '') as string,
+    representing_city: (r.representing_city ?? '') as string,
+    district_label: (r.district_label ?? '') as string,
+    district_type: (r.district_type ?? '') as string,
+    answer_count: (r.answer_count ?? 0) as number,
+    answered_topic_ids: ((r.answered_topic_ids ?? []) as string[]),
+    stance_source: (r.stance_source ?? 'researched') as 'empowered' | 'researched',
+    is_candidate: true as const,
+    is_incumbent: (r.is_incumbent ?? false) as boolean,
+  }));
+}
+
+/**
+ * getCandidateAnswers
+ * Dual-path lookup: tries empowered_profiles → compass_responses (Path A),
+ * falls back to politician_answers (Path B).
+ * Returns null if the candidate is not found or has no answers on either path.
+ * Uses pool.query() exclusively.
+ */
+export async function getCandidateAnswers(
+  candidateId: string
+): Promise<Array<{ topic_id: string; value: number }> | null> {
+  // Step 1: resolve politician_id from race_candidates
+  const candidateRes = await pool.query<{ politician_id: string }>(
+    `SELECT politician_id FROM essentials.race_candidates WHERE id = $1`,
+    [candidateId]
+  );
+  if (candidateRes.rows.length === 0 || !candidateRes.rows[0].politician_id) return null;
+  const politicianId = candidateRes.rows[0].politician_id;
+
+  // Step 2: try Path A — empowered_profiles → compass_responses
+  const profileRes = await pool.query<{ user_id: string }>(
+    `SELECT user_id FROM empower.empowered_profiles WHERE politician_id = $1`,
+    [politicianId]
+  );
+  if (profileRes.rows.length > 0) {
+    const userId = profileRes.rows[0].user_id;
+    const answersRes = await pool.query<{ topic_id: string; value: number }>(
+      `SELECT topic_id, value
+       FROM inform.compass_responses
+       WHERE user_id = $1 AND deleted_at IS NULL AND value != 0
+       ORDER BY topic_id ASC`,
+      [userId]
+    );
+    if (answersRes.rows.length > 0) return answersRes.rows;
+  }
+
+  // Step 3: fall back to Path B — politician_answers (researched stances)
+  const researchedRes = await pool.query<{ topic_id: string; value: number }>(
+    `SELECT topic_id, value
+     FROM inform.politician_answers
+     WHERE politician_id = $1 AND value != 0
+     ORDER BY topic_id ASC`,
+    [politicianId]
+  );
+  if (researchedRes.rows.length > 0) return researchedRes.rows;
+
+  return null;
 }
 
 /**

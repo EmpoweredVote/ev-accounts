@@ -1,0 +1,430 @@
+/**
+ * ocpfAdapter — Massachusetts OCPF adapter implementing SourceAdapter.
+ * Base URL: https://api.ocpf.us
+ * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageNumber={n}&pageSize=250
+ * No auth required. Paginate until items.length < pageSize.
+ * Export: createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month) — factory function.
+ *   Pass a year to scope the fetch to a single calendar year (StartDate/EndDate filters).
+ *   Pass a year + quarter to scope to a single calendar quarter (e.g. Q2 = Apr 1 – Jun 30).
+ *   Pass a year + month to scope to a single calendar month (month takes precedence over quarter).
+ *   Pass a signal to cancel in-flight fetches from an external AbortController (e.g. per-quarter timeout).
+ *   Omit year to fetch the filer's full history (old behavior, preserved for compatibility).
+ */
+
+import { pool } from '../db.js';
+import type {
+  SourceAdapter,
+  FetchResult,
+  NormalizeResult,
+  UpsertResult,
+  ContributionInsert,
+} from './adapterInterface.js';
+import type { PoliticianSource } from '../campaignFinanceService.js';
+import { normalizeDonorName } from './normalizeDonorName.js';
+
+// ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+const OCPF_BASE = 'https://api.ocpf.us';
+const PAGE_SIZE = 250;
+
+const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
+
+// ---------------------------------------------------------------------------
+// OCPF API response types
+// ---------------------------------------------------------------------------
+
+interface OcpfSearchResponse {
+  items: OcpfItem[];
+  // No total count — paginate until items.length < pageSize
+}
+
+interface OcpfItem {
+  id: number;                       // unique transaction id
+  cpfId: number;                    // filer's CPF ID (matches external_id in politician_sources)
+  amount: string;                   // "$50.00" — strip "$", parse to Number
+  date: string;                     // "MM/DD/YYYY"
+  firstName: string;
+  lastName: string;
+  contributorAddress: string;
+  contributorCity: string;
+  contributorState: string;
+  contributorZip: string;
+  recordTypeDescription: string;    // "Individual", "Committee", "PAC", etc.
+  officeDescription: string;
+  electionYear: number;
+}
+
+// ---------------------------------------------------------------------------
+// Quarter and Month helpers
+// ---------------------------------------------------------------------------
+
+type Quarter = 1 | 2 | 3 | 4;
+export type Month = 1|2|3|4|5|6|7|8|9|10|11|12;
+
+/**
+ * quarterDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
+ * given calendar quarter. Slashes in query-string values are safe (no encoding).
+ */
+function quarterDateRange(year: number, quarter: Quarter): { start: string; end: string } {
+  switch (quarter) {
+    case 1: return { start: `01/01/${year}`, end: `03/31/${year}` };
+    case 2: return { start: `04/01/${year}`, end: `06/30/${year}` };
+    case 3: return { start: `07/01/${year}`, end: `09/30/${year}` };
+    case 4: return { start: `10/01/${year}`, end: `12/31/${year}` };
+  }
+}
+
+/**
+ * monthDateRange returns OCPF-formatted MM/DD/YYYY date boundaries for a
+ * given calendar month. Uses new Date(year, month, 0).getDate() for correct
+ * last-day-of-month calculation including leap years.
+ */
+function monthDateRange(year: number, month: Month): { start: string; end: string } {
+  const mm = String(month).padStart(2, '0');
+  const lastDay = new Date(year, month, 0).getDate();
+  const dd = String(lastDay).padStart(2, '0');
+  return {
+    start: `${mm}/01/${year}`,
+    end:   `${mm}/${dd}/${year}`,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Fetch — paginate OCPF receipts endpoint until items.length < PAGE_SIZE
+// ---------------------------------------------------------------------------
+
+async function fetchOcpfReceipts(cpfId: string, year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }): Promise<Record<string, unknown>[]> {
+  const allItems: Record<string, unknown>[] = [];
+  let pageNumber = 1;
+
+  // Date filter: dateOverride takes precedence over all other params.
+  // Otherwise: month > quarter > year > full-history. OCPF expects MM/DD/YYYY.
+  let dateFilter = '';
+  if (dateOverride) {
+    dateFilter = `&StartDate=${dateOverride.start}&EndDate=${dateOverride.end}`;
+  } else if (typeof year === 'number' && typeof month === 'number') {
+    const { start, end } = monthDateRange(year, month);
+    dateFilter = `&StartDate=${start}&EndDate=${end}`;
+  } else if (typeof year === 'number' && typeof quarter === 'number') {
+    const { start, end } = quarterDateRange(year, quarter);
+    dateFilter = `&StartDate=${start}&EndDate=${end}`;
+  } else if (typeof year === 'number') {
+    dateFilter = `&StartDate=01/01/${year}&EndDate=12/31/${year}`;
+  }
+
+  // Cycle label for error messages
+  const cycleLabel = typeof month === 'number'
+    ? `${year}-M${String(month).padStart(2, '0')}`
+    : (typeof quarter === 'number'
+        ? `${year}-Q${quarter}`
+        : (typeof year === 'number' ? String(year) : 'all'));
+
+  for (;;) {
+    const url =
+      `${OCPF_BASE}/search/items` +
+      `?SearchTypeId=1&SearchTypeCategory=receipts` +
+      `&CpfId=${encodeURIComponent(cpfId)}` +
+      `&pageNumber=${pageNumber}&pageSize=${PAGE_SIZE}` +
+      dateFilter;
+
+    let response: Response;
+    try {
+      const pageSignal = externalSignal
+        ? AbortSignal.any([externalSignal, AbortSignal.timeout(30_000)])
+        : AbortSignal.timeout(30_000);
+      response = await fetch(url, { signal: pageSignal });
+    } catch (err) {
+      throw new Error(
+        `[ocpfAdapter] fetch error cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}: ${err instanceof Error ? err.message : String(err)}`
+      );
+    }
+
+    if (response.status !== 200) {
+      throw new Error(
+        `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} cycle=${cycleLabel} page=${pageNumber}`
+      );
+    }
+
+    const body = await response.json() as OcpfSearchResponse;
+    const items = body.items ?? [];
+
+    for (const item of items) {
+      allItems.push(item as unknown as Record<string, unknown>);
+    }
+
+    if (items.length < PAGE_SIZE) {
+      // Last page
+      break;
+    }
+
+    pageNumber++;
+    // Polite delay between pages — no documented rate limit, be conservative
+    await sleep(500);
+  }
+
+  return allItems;
+}
+
+// ---------------------------------------------------------------------------
+// Normalize — convert OcpfItem fields to ContributionInsert
+// ---------------------------------------------------------------------------
+
+/**
+ * parseOcpfDate parses OCPF "MM/DD/YYYY" date strings.
+ * Returns null on parse failure.
+ */
+function parseOcpfDate(dateStr: string): Date | null {
+  if (!dateStr) return null;
+  const parts = dateStr.split('/');
+  if (parts.length !== 3) return null;
+  const month = parseInt(parts[0], 10);
+  const day = parseInt(parts[1], 10);
+  const year = parseInt(parts[2], 10);
+  if (isNaN(month) || isNaN(day) || isNaN(year)) return null;
+  const d = new Date(Date.UTC(year, month - 1, day));
+  if (isNaN(d.getTime())) return null;
+  return d;
+}
+
+/**
+ * nextEvenYear rounds a year up to the next even year.
+ * Used for election_cycle derivation when electionYear is absent.
+ * e.g. 2025 → 2026, 2026 → 2026
+ */
+function nextEvenYear(year: number): number {
+  return year % 2 !== 0 ? year + 1 : year;
+}
+
+function normalizeOcpfItem(
+  item: OcpfItem,
+  ps: PoliticianSource
+): ContributionInsert | null {
+  // --- Amount: strip leading "$", parse float ---
+  const rawAmount = typeof item.amount === 'string'
+    ? item.amount.replace(/^\$/, '')
+    : String(item.amount ?? '');
+  const amount = parseFloat(rawAmount);
+  if (isNaN(amount)) {
+    console.warn(`[ocpfAdapter] normalize: skip item id=${item.id} — cannot parse amount "${item.amount}"`);
+    return null;
+  }
+
+  // --- Date: parse MM/DD/YYYY ---
+  const contributionDate = parseOcpfDate(item.date);
+
+  // --- Election cycle ---
+  let electionCycle: string;
+  if (item.electionYear && item.electionYear > 0) {
+    electionCycle = String(item.electionYear);
+  } else {
+    // Derive from contribution date year, round up to next even year
+    const baseYear = contributionDate
+      ? contributionDate.getUTCFullYear()
+      : new Date().getUTCFullYear();
+    electionCycle = String(nextEvenYear(baseYear));
+  }
+
+  // --- Source transaction ID: ocpf|{id}, truncated to 128 chars ---
+  let sourceTxId = `ocpf|${item.id}`;
+  if (sourceTxId.length > 128) {
+    sourceTxId = sourceTxId.slice(0, 128);
+  }
+
+  // --- Donor name ---
+  const rawName = `${item.firstName ?? ''} ${item.lastName ?? ''}`.trim();
+  const donorNameNormalized = normalizeDonorName(rawName);
+
+  return {
+    politician_source_id: ps.id,
+    donor_id: null,
+    committee_id: null,
+    amount,
+    contribution_date: contributionDate,
+    election_cycle: electionCycle,
+    confidence_level: 'HIGH', // OCPF is the authoritative MA state system
+    data_source: 'ocpf',
+    source_transaction_id: sourceTxId,
+    raw_record: item as unknown as Record<string, unknown>,
+    donor_name_normalized: donorNameNormalized,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Upsert — ON CONFLICT (data_source, source_transaction_id) DO UPDATE
+// ---------------------------------------------------------------------------
+
+async function upsertBatch(
+  batch: ContributionInsert[]
+): Promise<{ batchInserted: number; batchSkipped: number }> {
+  if (batch.length === 0) return { batchInserted: 0, batchSkipped: 0 };
+
+  // Deduplicate within batch by source_transaction_id
+  const seen = new Set<string>();
+  batch = batch.filter((c) => {
+    if (seen.has(c.source_transaction_id)) return false;
+    seen.add(c.source_transaction_id);
+    return true;
+  });
+
+  const params: unknown[] = [];
+  const valuePlaceholders: string[] = [];
+  const COLS_PER_ROW = 9;
+
+  for (let idx = 0; idx < batch.length; idx++) {
+    const c = batch[idx];
+    const base = idx * COLS_PER_ROW + 1;
+    valuePlaceholders.push(
+      `($${base}, $${base + 1}, $${base + 2}, $${base + 3}, $${base + 4}, $${base + 5}, $${base + 6}, $${base + 7}::jsonb, $${base + 8})`
+    );
+    params.push(
+      c.politician_source_id,
+      c.amount,
+      c.contribution_date ? c.contribution_date.toISOString() : null,
+      c.election_cycle,
+      c.confidence_level,
+      c.data_source,
+      c.source_transaction_id,
+      JSON.stringify(c.raw_record),
+      c.donor_name_normalized
+    );
+  }
+
+  const sql = `
+    INSERT INTO transparent_motivations.contributions
+      (politician_source_id, amount, contribution_date, election_cycle,
+       confidence_level, data_source, source_transaction_id, raw_record,
+       donor_name_normalized)
+    VALUES ${valuePlaceholders.join(', ')}
+    ON CONFLICT (data_source, source_transaction_id)
+    DO UPDATE SET
+      updated_at = NOW(),
+      donor_name_normalized = EXCLUDED.donor_name_normalized
+    RETURNING (xmax = 0) AS is_insert
+  `;
+
+  const result = await pool.query<{ is_insert: boolean }>(sql, params);
+
+  let batchInserted = 0;
+  let batchSkipped = 0;
+  for (const row of result.rows) {
+    if (row.is_insert) {
+      batchInserted++;
+    } else {
+      batchSkipped++;
+    }
+  }
+
+  return { batchInserted, batchSkipped };
+}
+
+async function upsertContributions(normalized: NormalizeResult): Promise<UpsertResult> {
+  if (normalized.contributions.length === 0) {
+    return { inserted: 0, skipped: 0, unresolved: 0, errors: 0 };
+  }
+
+  let inserted = 0;
+  let skipped = 0;
+  let errors = 0;
+
+  const batchSize = 100;
+  for (let i = 0; i < normalized.contributions.length; i += batchSize) {
+    const batch = normalized.contributions.slice(i, i + batchSize);
+    try {
+      const { batchInserted, batchSkipped } = await upsertBatch(batch);
+      inserted += batchInserted;
+      skipped += batchSkipped;
+    } catch (err) {
+      errors += batch.length;
+      console.error(`[ocpfAdapter] upsert batch error at offset ${i}:`, err);
+    }
+  }
+
+  return { inserted, skipped, unresolved: 0, errors };
+}
+
+// ---------------------------------------------------------------------------
+// OcpfAdapter — implements SourceAdapter
+// ---------------------------------------------------------------------------
+
+class OcpfAdapter implements SourceAdapter {
+  private readonly year?: number;
+  private readonly externalSignal?: AbortSignal;
+  private readonly quarter?: Quarter;
+  private readonly month?: Month;
+  private readonly dateOverride?: { start: string; end: string };
+
+  constructor(year?: number, externalSignal?: AbortSignal, quarter?: Quarter, month?: Month, dateOverride?: { start: string; end: string }) {
+    this.year = year;
+    this.externalSignal = externalSignal;
+    this.quarter = quarter;
+    this.month = month;
+    this.dateOverride = dateOverride;
+  }
+
+  name(): string {
+    return 'ocpf';
+  }
+
+  async fetch(ps: PoliticianSource): Promise<FetchResult> {
+    const cpfId = ps.external_id;
+    const records = await fetchOcpfReceipts(cpfId, this.year, this.externalSignal, this.quarter, this.month, this.dateOverride);
+    return {
+      records,
+      totalExpected: 0, // OCPF does not return a total count
+      totalFetched: records.length,
+    };
+  }
+
+  async normalize(raw: FetchResult, ps: PoliticianSource): Promise<NormalizeResult> {
+    const contributions: ContributionInsert[] = [];
+    let skipped = 0;
+    const totalParsed = raw.records.length;
+
+    for (const rec of raw.records) {
+      const item = rec as unknown as OcpfItem;
+      const contrib = normalizeOcpfItem(item, ps);
+      if (contrib === null) {
+        skipped++;
+        continue;
+      }
+      contributions.push(contrib);
+    }
+
+    return { contributions, skipped, totalParsed };
+  }
+
+  async upsert(normalized: NormalizeResult): Promise<UpsertResult> {
+    return upsertContributions(normalized);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Factory function
+// ---------------------------------------------------------------------------
+
+/**
+ * createOcpfAdapter returns an OcpfAdapter implementing SourceAdapter.
+ * The adapter fetches OCPF receipts from api.ocpf.us for the given cpfId
+ * (stored as politician_sources.external_id).
+ *
+ * @param year - Optional calendar year to scope the fetch. When provided, the adapter
+ *   appends StartDate=01/01/{year}&EndDate=12/31/{year} to the OCPF API URL, limiting
+ *   results to that single year. Omit to fetch the filer's full history (original behavior).
+ * @param signal - Optional external AbortSignal. When provided, combined with the per-page
+ *   30-second timeout via AbortSignal.any — whichever fires first cancels the in-flight fetch.
+ *   Use with AbortController in the scheduler for per-quarter cancellation without heap leaks.
+ * @param quarter - Optional 1-4. When provided alongside `year`, narrows StartDate/EndDate to
+ *   that calendar quarter. Used by the scheduler to chunk high-volume statewide sources into
+ *   ~37-second windows instead of ~295-page full-year fetches that exceed the 3-minute budget.
+ * @param month - Optional 1-12. When provided alongside `year`, narrows StartDate/EndDate to
+ *   that single calendar month. month takes precedence over quarter when both are provided.
+ *   Used by the high-volume ingest script to split statewide filers (~75k/quarter = ~25k/month)
+ *   into ~50-second windows, well within the 3-minute timeout budget.
+ * @param dateOverride - Optional explicit {start, end} in MM/DD/YYYY format. Overrides all
+ *   other date params. Used for week-granularity chunks on extremely high-volume filers.
+ */
+export function createOcpfAdapter(year?: number, signal?: AbortSignal, quarter?: 1|2|3|4, month?: Month, dateOverride?: { start: string; end: string }): SourceAdapter {
+  return new OcpfAdapter(year, signal, quarter, month, dateOverride);
+}

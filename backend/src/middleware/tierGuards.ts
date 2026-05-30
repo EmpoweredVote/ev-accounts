@@ -52,3 +52,24 @@ export async function requireEmpowered(
 
   next();
 }
+
+export async function requireInform(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  const authReq = req as AuthenticatedRequest;
+  const { data } = await supabaseAdmin
+    .schema('connect')
+    .from('connected_profiles')
+    .select('id')
+    .eq('user_id', authReq.userId)
+    .maybeSingle();
+
+  if (data) {
+    res.status(403).json({ error: 'Inform-tier account required' });
+    return;
+  }
+
+  next();
+}

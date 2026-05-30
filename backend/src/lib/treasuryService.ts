@@ -20,6 +20,92 @@
 import { pool } from './db.js';
 
 // ---------------------------------------------------------------------------
+// geo_id resolution — link treasury.municipalities to the TIGER geofence backbone
+// ---------------------------------------------------------------------------
+// treasury.municipalities.state is a 2-letter code (CA/IN); essentials.geofence_boundaries.state
+// is FIPS (06/18). This mirrors the FIPS↔abbr maps in scripts/backfill-district-ocd.ts
+// (FIPS_TO_ABBR) and scripts/coverage-init.ts (STATE_FIPS) — keep in sync when a new
+// state is onboarded.
+export const STATE_ABBR_TO_FIPS: Record<string, string> = {
+  al: '01', ak: '02', az: '04', ar: '05', ca: '06', co: '08', ct: '09', de: '10',
+  dc: '11', fl: '12', ga: '13', hi: '15', id: '16', il: '17', in: '18', ia: '19',
+  ks: '20', ky: '21', la: '22', me: '23', md: '24', ma: '25', mi: '26', mn: '27',
+  ms: '28', mo: '29', mt: '30', ne: '31', nv: '32', nh: '33', nj: '34', nm: '35',
+  ny: '36', nc: '37', nd: '38', oh: '39', ok: '40', or: '41', pa: '42', ri: '44',
+  sc: '45', sd: '46', tn: '47', tx: '48', ut: '49', vt: '50', va: '51', wa: '53',
+  wv: '54', wi: '55', wy: '56',
+};
+
+// entity_type → TIGER MTFCC layer. ONLY these entity types map to a geofence;
+// townships, libraries, special/nonprofit/conservancy districts have no TIGER place
+// geometry, so their geo_id legitimately stays NULL.
+export const TREASURY_ENTITY_MTFCC: Record<string, string> = {
+  city: 'G4110',
+  town: 'G4110',
+  municipality: 'G4110',
+  county: 'G4020',
+  school_district: 'G5420',
+};
+
+function slugify(s: string): string {
+  return s
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, "") // strip diacritics: accented letters -> ASCII (e.g. "La Cañada" -> "La Canada")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+}
+
+/**
+ * Treasury-side name slug. Kept whole except counties strip a trailing " County".
+ * Mirrors coverageService.treasurySlug() so geo_id parity is ≥ the old name-match
+ * (e.g. "Culver City" stays "culver_city", not "culver").
+ */
+export function treasuryNameSlug(name: string, entityType: string): string {
+  const cleaned = entityType === 'county' ? name.replace(/ county$/i, '') : name;
+  return slugify(cleaned);
+}
+
+// Geofence-side: strip the TIGER layer suffix for the row's mtfcc before slugging.
+const GEOFENCE_STRIP: Record<string, RegExp> = {
+  G4110: / (city|town|village|borough|cdp|municipality)$/i,
+  G4020: / county$/i,
+  G5420: / school district$/i,
+};
+
+/** Geofence-side name slug for a given mtfcc (strips the TIGER suffix). */
+export function geofenceNameSlug(name: string, mtfcc: string): string {
+  return slugify(name.replace(GEOFENCE_STRIP[mtfcc] ?? /$/, ''));
+}
+
+/**
+ * Resolve the TIGER geo_id for a treasury municipality by normalized name + state,
+ * scoped to the mtfcc for its entity_type. Returns null for unmatched rows
+ * (townships/libraries/special/nonprofit, or a genuine name mismatch) and for
+ * ambiguous matches (>1 geofence with the same slug — conservative).
+ *
+ * Used by the budget importers (createCity, importCambridge, importBudgetHierarchy)
+ * so new municipalities get a geo_id at insert time and future data pulls stay linked.
+ */
+export async function resolveTreasuryGeoId(
+  name: string,
+  state: string,
+  entityType: string | null,
+): Promise<string | null> {
+  const mtfcc = entityType ? TREASURY_ENTITY_MTFCC[entityType] : undefined;
+  if (!mtfcc) return null;
+  const fips = STATE_ABBR_TO_FIPS[state.toLowerCase()];
+  if (!fips) return null;
+  const target = treasuryNameSlug(name, entityType!);
+  const { rows } = await pool.query<{ geo_id: string; name: string }>(
+    `SELECT geo_id, name FROM essentials.geofence_boundaries WHERE state = $1 AND mtfcc = $2`,
+    [fips, mtfcc],
+  );
+  const matches = rows.filter((r) => geofenceNameSlug(r.name, mtfcc) === target);
+  return matches.length === 1 ? matches[0].geo_id : null;
+}
+
+// ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
@@ -34,6 +120,7 @@ export interface TreasuryCity {
   state: string;
   entity_type: string | null;
   population: number | null;
+  population_year: number | null;
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
@@ -118,6 +205,7 @@ interface CityRow {
   state: string;
   entity_type: string | null;
   population: string | null; // bigint returned as string by pg driver
+  population_year: string | null; // INTEGER returned as string by node-postgres
   hero_image_url: string | null;
   created_at: string;
   updated_at: string;
@@ -209,6 +297,7 @@ function mapCity(row: CityRow): TreasuryCity {
     state: row.state,
     entity_type: row.entity_type,
     population: row.population !== null ? Number(row.population) : null,
+    population_year: row.population_year !== null ? Number(row.population_year) : null,
     hero_image_url: row.hero_image_url,
     created_at: row.created_at,
     updated_at: row.updated_at,
@@ -287,7 +376,7 @@ function mapLineItem(row: LineItemRow): TreasuryBudgetLineItem {
  */
 export async function getCities(): Promise<TreasuryCity[]> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.hero_image_url,
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
@@ -309,7 +398,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
  */
 export async function getCityById(id: string): Promise<TreasuryCity | null> {
   const { rows } = await pool.query<CityRow>(
-    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.hero_image_url,
+    `SELECT m.id, m.name, m.state, m.entity_type, m.population, m.population_year, m.hero_image_url,
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
@@ -888,12 +977,16 @@ export async function createCity(data: {
   name: string;
   state: string;
   population?: number | null;
+  entityType?: string | null;
 }): Promise<TreasuryCity> {
+  // Resolve the TIGER geo_id at insert time so the row links to the geofence
+  // backbone (coverage join) without a later backfill. Null for unmappable types.
+  const geoId = await resolveTreasuryGeoId(data.name, data.state, data.entityType ?? null);
   const { rows } = await pool.query<CityRow>(
-    `INSERT INTO treasury.municipalities (name, state, population)
-     VALUES ($1, $2, $3)
-     RETURNING id, name, state, population, created_at, updated_at`,
-    [data.name, data.state, data.population ?? null]
+    `INSERT INTO treasury.municipalities (name, state, population, entity_type, geo_id)
+     VALUES ($1, $2, $3, $4, $5)
+     RETURNING id, name, state, entity_type, population, hero_image_url, created_at, updated_at`,
+    [data.name, data.state, data.population ?? null, data.entityType ?? null, geoId]
   );
   return mapCity(rows[0]);
 }

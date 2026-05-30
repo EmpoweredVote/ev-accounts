@@ -1,50 +1,65 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { apiFetch } from '../../lib/api';
 import { useAuthStore } from '../../store/authStore';
-import { WelcomeStep } from './steps/WelcomeStep';
 import { LocationStep, type LocationResult } from './steps/LocationStep';
 import { LocationCelebrationStep } from './steps/LocationCelebrationStep';
-import { PseudonymStep } from './steps/PseudonymStep';
 
-type Step = 'welcome' | 'location' | 'location-celebration' | 'pseudonym';
-
-function initialStep(locationConsent: boolean): Step {
-  // Resumption: if they already set location, skip straight to pseudonym
-  if (locationConsent) return 'pseudonym';
-  return 'welcome';
-}
+type Step = 'location' | 'location-celebration';
 
 export default function OnboardingPage() {
   const { user, updateUser } = useAuthStore();
   const navigate = useNavigate();
 
-  const [step, setStep] = useState<Step>(
-    initialStep(user?.locationConsent ?? false)
-  );
+  const initialLocationConsent = user?.locationConsent ?? false;
+  const [step, setStep] = useState<Step>('location');
   const [locationResult, setLocationResult] = useState<LocationResult | null>(null);
+  const [resuming, setResuming] = useState(initialLocationConsent);
+
+  // Resumption: user already has locationConsent=true but no completedOnboarding —
+  // finish onboarding silently and bounce to dashboard. We can't show the celebration
+  // step because we don't have a fresh LocationResult on remount.
+  useEffect(() => {
+    if (!initialLocationConsent) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        await apiFetch('/auth/complete-onboarding', { method: 'POST' });
+        if (cancelled) return;
+        updateUser({ completedOnboarding: true });
+        navigate('/', { replace: true });
+      } catch {
+        // If complete-onboarding fails, fall back to showing the location step
+        // so the user has SOMETHING to do; they can re-submit and try again.
+        if (!cancelled) setResuming(false);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function handleLocationSuccess(result: LocationResult) {
     updateUser({ locationConsent: true });
     setLocationResult(result);
-    if (result.first_location) {
-      setStep('location-celebration');
-    } else {
-      // Shouldn't happen in onboarding (first_location always true here),
-      // but handle gracefully
-      setStep('pseudonym');
-    }
+    setStep('location-celebration');
   }
 
   function handleOnboardingComplete() {
     navigate('/', { replace: true });
   }
 
-  return (
-    <div className="bg-white dark:bg-ev-black min-h-screen">
-      {step === 'welcome' && (
-        <WelcomeStep onContinue={() => setStep('location')} />
-      )}
+  if (resuming) {
+    return (
+      <div className="min-h-screen bg-ev-navy flex items-center justify-center">
+        <p className="text-gray-400 text-sm">Finalizing your account…</p>
+      </div>
+    );
+  }
 
+  return (
+    <>
       {step === 'location' && (
         <LocationStep onSuccess={handleLocationSuccess} />
       )}
@@ -52,16 +67,9 @@ export default function OnboardingPage() {
       {step === 'location-celebration' && locationResult && (
         <LocationCelebrationStep
           result={locationResult}
-          onContinue={() => setStep('pseudonym')}
-        />
-      )}
-
-      {step === 'pseudonym' && (
-        <PseudonymStep
-          currentDisplayName={user?.displayName ?? null}
           onComplete={handleOnboardingComplete}
         />
       )}
-    </div>
+    </>
   );
 }

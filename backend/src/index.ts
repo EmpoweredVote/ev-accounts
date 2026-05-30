@@ -24,6 +24,9 @@ import rolesRouter from './routes/roles.js';
 import contributorRouter from './routes/contributor.js';
 import socialRouter from './routes/social.js';
 import adminRouter from './routes/admin.js';
+import essentialsDiscoveryRouter from './routes/essentialsDiscovery.js';
+import stagingQueueAdminRouter from './routes/stagingQueueAdmin.js';
+import discoveryDashboardRouter from './routes/discoveryDashboard.js';
 import candidatesRouter from './routes/candidates.js';
 import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
@@ -35,13 +38,19 @@ import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
+import councilFilesRouter from './routes/councilFiles.js';
 import { requireAdminToken } from './middleware/adminTokenAuth.js';
+import { requireAuth } from './middleware/auth.js';
+import { requireAdmin } from './middleware/requireAdmin.js';
 import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
+import feedbackRouter from './routes/feedback.js';
+import eventsRouter from './routes/events.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
+import { startDiscoverySweepCron } from './cron/discoverySweep.js';
 import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 
@@ -95,6 +104,19 @@ app.use('/api/referral', referralRouter);
 app.use('/api/roles', rolesRouter);
 app.use('/api/contributor', contributorRouter);
 app.use('/api/social', socialRouter);
+// JWT-gated staging review endpoints for the browser admin UI (STAG-06).
+// Auth is applied per-route inside stagingQueueAdmin.ts (not at mount) so that
+// X-Admin-Token requests to /discover/* fall through to essentialsDiscoveryRouter below.
+app.use('/api/admin', stagingQueueAdminRouter);
+// JWT-gated discovery dashboard read endpoints for the browser admin UI (Phase 8).
+// Auth is applied per-route inside discoveryDashboard.ts (not at mount).
+// Must be mounted BEFORE essentialsDiscoveryRouter so JWT-authenticated GETs are
+// handled here and do not fall through to the X-Admin-Token route layer.
+app.use('/api/admin', discoveryDashboardRouter);
+// Discovery routes use X-Admin-Token (not JWT). Auth is applied inside the router
+// via router.use(requireAdminToken) — NOT at mount — so it doesn't bleed into other
+// /api/admin/* routers that share the same prefix.
+app.use('/api/admin', essentialsDiscoveryRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/admin/source-verifications', sourceVerificationsRouter);
@@ -129,9 +151,12 @@ app.use('/api/campaign-finance', campaignFinanceAdminRouter);
 // (no /api/campaign-finance prefix). Auth via X-Admin-Token (not JWT).
 // Used by SQS workers, EventBridge, curl, and manual one-off triggers.
 app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
+app.use('/api/council-files', councilFilesRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
+app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
+app.use('/api/events', eventsRouter);   // CTA event telemetry
 
 export { app }; // For testing
 
@@ -156,6 +181,7 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
     startCalibrationLapseCron();
     startCampaignFinanceCron();
     startDistrictStalenessCron();
+    startDiscoverySweepCron();   // Phase 7 — weekly candidate discovery sweep
     startSqsWorker();
 
     // Graceful shutdown — Render sends SIGTERM before replacing instances.

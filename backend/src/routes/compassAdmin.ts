@@ -537,4 +537,48 @@ router.put('/politicians/:id/answers', async (req, res): Promise<void> => {
   }
 });
 
+// ---------------------------------------------------------------------------
+// PATCH /api/compass/politicians/:id/photo
+// Admin: set photo_custom_url (always wins over all other photo sources).
+// ---------------------------------------------------------------------------
+
+const PoliticianPhotoSchema = z.object({
+  photo_custom_url: z.string().url().or(z.literal('')),
+});
+
+router.patch('/politicians/:id/photo', async (req, res): Promise<void> => {
+  const id = req.params.id as string;
+
+  if (!UUID_REGEX.test(id)) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID format' });
+    return;
+  }
+
+  const parsed = PoliticianPhotoSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(422).json({
+      code: 'VALIDATION_ERROR',
+      message: parsed.error.issues[0]?.message ?? 'Invalid request body',
+    });
+    return;
+  }
+
+  try {
+    await pool.query(
+      `UPDATE essentials.politicians SET photo_custom_url = $1 WHERE id = $2`,
+      [parsed.data.photo_custom_url || null, id]
+    );
+
+    await logAdminAction(actorId(req), 'compass:politician:photo:update', null, {
+      politician_id: id,
+      photo_custom_url: parsed.data.photo_custom_url,
+    });
+
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error('[PATCH /compass/politicians/:id/photo] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
 export default router;

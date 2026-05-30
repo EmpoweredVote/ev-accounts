@@ -19,6 +19,7 @@ const envSchema = z.object({
   // existing integration tests (health, auth, account) don't break at startup.
   QUEST_SERVICE_KEY: z.string().optional(),
   TRIVIA_SERVICE_KEY: z.string().optional(),
+  LISTENING_XP_KEY: z.string().optional(),
   ADMIN_SERVICE_KEY: z.string().optional(),
   ESSENTIALS_SERVICE_KEY: z.string().optional(),
   // VQ_SERVICE_KEY: used by Validation Quests to POST crowd-verified officeholder
@@ -35,6 +36,24 @@ const envSchema = z.object({
   SQS_INGEST_QUEUE_URL: z.string().optional(),
   // SOCRATA_APP_TOKEN: optional app token for LA Socrata API requests.
   SOCRATA_APP_TOKEN: z.string().optional(),
+  // ANTHROPIC_API_KEY: powers the v2.1 Claude candidate discovery agent (discoveryAgentRunner).
+  // Optional: absent = discovery endpoints return 503. Web search must be enabled org-wide
+  // in the Claude Console before this works (console.anthropic.com/settings/privacy).
+  ANTHROPIC_API_KEY: z.string().optional(),
+  // Feedback pipeline (quick-260428-fp1) — all optional so server starts without them in dev.
+  // LINEAR_API_KEY: Personal API key from linear.app Settings → API.
+  LINEAR_API_KEY: z.string().optional(),
+  // LINEAR_TEAM_ID: UUID from Linear Settings → General → Team ID.
+  LINEAR_TEAM_ID: z.string().optional(),
+  // LINEAR_PROJECT_ID: UUID from the project URL in Linear (/project/<uuid>).
+  LINEAR_PROJECT_ID: z.string().optional(),
+  // RESEND_API_KEY: API key from resend.com for transactional email (admin
+  // notifications etc.). Not used by the feedback path — feedback emails
+  // are sent natively by Linear via project subscribers.
+  RESEND_API_KEY: z.string().optional(),
+  // LOGIN_URL: base URL of the login frontend. Used as the base for auth email
+  // redirect URLs (confirmation, password reset). Defaults to production URL.
+  LOGIN_URL: z.string().url().default('https://login.empowered.vote'),
 });
 
 const parsed = envSchema.safeParse(process.env);

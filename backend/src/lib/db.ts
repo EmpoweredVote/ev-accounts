@@ -1,9 +1,9 @@
 import { Pool } from 'pg';
 import { env } from './env.js';
 
-// Direct connection to Supabase database (bypasses Supavisor pooler).
-// IPv4 add-on required — Render free tier has no IPv6 routing.
-// --dns-result-order=ipv4first set in Node start command (package.json).
+// Session Pooler (pooler.supabase.com:5432) — sticky sessions, compatible with
+// pg.Pool BEGIN/COMMIT and SET search_path. Routes over IPv6 (no Render IPv4 add-on needed).
+// Transaction Pooler (port 6543) is NOT safe here — PgBouncer resets sessions between transactions.
 // ssl: rejectUnauthorized false required for Supabase's self-signed cert chain.
 export const pool = new Pool({
   connectionString: env.DATABASE_URL,

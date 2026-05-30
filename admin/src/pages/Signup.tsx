@@ -20,8 +20,13 @@ export default function Signup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [displayName, setDisplayName] = useState('');
   const [legalName, setLegalName] = useState('');
   const [inviteCode, setInviteCode] = useState('');
+  const [resendSent, setResendSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,9 +37,22 @@ export default function Signup() {
   const [requestStatus, setRequestStatus] = useState<'idle' | 'submitting' | 'done'>('idle');
   const [requestError, setRequestError] = useState<string | null>(null);
 
+  async function handleResend() {
+    await fetch(`${API_BASE}/auth/resend-confirmation`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    }).catch(() => {});
+    setResendSent(true);
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
+    if (password !== confirmPassword) {
+      setError('Passwords do not match');
+      return;
+    }
     setIsSubmitting(true);
 
     try {
@@ -49,6 +67,7 @@ export default function Signup() {
         body: JSON.stringify({
           email,
           password,
+          display_name: displayName,
           legal_name: legalName,
           invite_code: normalizedCode,
         }),
@@ -69,14 +88,14 @@ export default function Signup() {
         if (code === 'SELF_INVITE_BLOCKED') {
           throw new Error('You cannot use your own invite code');
         }
-        throw new Error(body.error || 'Validation error');
+        throw new Error(body.message || body.error || 'Validation error');
       }
 
       if (res.status === 409) {
         throw new Error('An account with this email already exists');
       }
 
-      throw new Error(body.error || 'An unexpected error occurred');
+      throw new Error(body.message || body.error || 'An unexpected error occurred');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
     } finally {
@@ -130,7 +149,18 @@ export default function Signup() {
             We sent a confirmation link to <strong>{email}</strong>. Click it to activate your
             account.
           </p>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+            {resendSent ? (
+              <span className="text-green-700 dark:text-green-400">Another email is on its way.</span>
+            ) : (
+              <>Didn't get it?{' '}
+                <button type="button" onClick={handleResend} className="text-ev-teal hover:underline font-medium">
+                  Resend email
+                </button>
+              </>
+            )}
+          </p>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
             Already confirmed?{' '}
             <button
               onClick={() => navigate(loginHref)}
@@ -197,18 +227,62 @@ export default function Signup() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-              Password
-            </label>
+            <div className="flex justify-between items-center mb-1">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Password
+              </label>
+              <button type="button" onClick={() => setShowPassword(v => !v)} className="text-xs text-ev-teal hover:underline">
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
             <input
               id="password"
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               required
               minLength={8}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
               placeholder="At least 8 characters"
+            />
+          </div>
+
+          <div>
+            <div className="flex justify-between items-center mb-1">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                Confirm password
+              </label>
+              <button type="button" onClick={() => setShowConfirmPassword(v => !v)} className="text-xs text-ev-teal hover:underline">
+                {showConfirmPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+            <input
+              id="confirmPassword"
+              type={showConfirmPassword ? 'text' : 'password'}
+              required
+              minLength={8}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
+              placeholder="Repeat your password"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="displayName" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+              Display name
+            </label>
+            <input
+              id="displayName"
+              type="text"
+              required
+              minLength={1}
+              maxLength={100}
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              autoComplete="nickname"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ev-teal focus:border-transparent dark:bg-gray-800 dark:border-gray-600 dark:text-white dark:placeholder-gray-500"
+              placeholder="What should we call you?"
             />
           </div>
 
