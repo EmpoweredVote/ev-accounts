@@ -279,13 +279,18 @@ async function ensureMunicipality(pool: pg.Pool): Promise<string> {
     return rows[0].id;
   }
 
+  // Resolve the TIGER geo_id at insert time so the row links to the geofence backbone
+  // (coverage join). Dynamic import keeps src/lib out of module-load (dotenv runs first).
+  const { resolveTreasuryGeoId } = await import('../src/lib/treasuryService.js');
+  const geoId = await resolveTreasuryGeoId('Cambridge', 'MA', 'city');
+
   const id = crypto.randomUUID();
   await pool.query(
-    `INSERT INTO treasury.municipalities (id, name, state, entity_type, population)
-     VALUES ($1, 'Cambridge', 'MA', 'city', 118403)`,
-    [id],
+    `INSERT INTO treasury.municipalities (id, name, state, entity_type, population, geo_id)
+     VALUES ($1, 'Cambridge', 'MA', 'city', 118403, $2)`,
+    [id, geoId],
   );
-  console.log(`Created municipality: ${id}`);
+  console.log(`Created municipality: ${id}${geoId ? ` (geo_id ${geoId})` : ''}`);
   return id;
 }
 
