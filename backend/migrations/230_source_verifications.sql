@@ -1,4 +1,4 @@
--- 070_source_verifications.sql
+-- 230_source_verifications.sql
 -- Per-URL verification tracking for compass stance sources and read-rank quote sources.
 -- Shared audit trail table; feeds both the verify-sources skill and the admin review UI.
 
