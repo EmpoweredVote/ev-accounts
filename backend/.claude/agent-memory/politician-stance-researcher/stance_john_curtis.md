@@ -27,7 +27,14 @@ John Curtis, US Senator from Utah (R), elected Nov 2024. Sworn in Jan 3, 2025. F
 - ukraine-support=2 (bipartisan Ukraine resolution Feb 2025, Russia sanctions Apr 2025, supports military equipment sales)
 - voting-rights=4 (no same-day registration, no holiday voting, supports photo ID)
 
-**Skipped:** trans-athletes (no evidence), campaign-finance (no evidence), housing (no evidence), misinformation (no evidence), redistricting (no evidence), homelessness, homelessness-response, public-safety-approach, economic-development, jail-capacity, judicial-criminal-justice, judicial-interpretation (all city-level or no evidence)
+- data-centers=4 (pro-expansion, supply-side energy solutions, ratepayer protection via more supply not regulation; Co-Location Energy Act; did not cosponsor GRID Act)
+- homelessness=3 (S.890 Choice in Affordable Housing Act cosponsor; Build HUBS Act lead sponsor Jan 2026; vouchers+transit-oriented development+supply-side approach)
+- campaign-finance=2 (NAY-ForThePeopleAct-H.R.1-2021)
+- misinformation=3 (Algorithm Accountability Act S.3193 + Kids Off Social Media Act; platform liability not government labeling)
+- redistricting=2 (signed amicus brief against Utah independent commission, defended partisan gerrymandering)
+- trans-athletes=5 (S.9-YEA-cloture, Mountain West Conference letter, 2022 debate quote)
+
+**Skipped:** housing (no evidence), homelessness-response, public-safety-approach, economic-development, jail-capacity, judicial-criminal-justice, judicial-interpretation (all city-level or no evidence)
 
 **Key sources:**
 - Wikipedia: https://en.wikipedia.org/wiki/John_Curtis_(politician)
