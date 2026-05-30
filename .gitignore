@@ -50,3 +50,10 @@ backend/data/topic-drafts/*.json
 backend/tl_2024_*/
 backend/tl_2024_*.zip
 backend/.tmp-tiger-*/
+
+# Python — validator script runtime artifacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.venv
