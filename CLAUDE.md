@@ -238,6 +238,12 @@ npm run build
 - `contact_type` values: `primary` (official .gov), `office`, `campaign`, `personal`, `central`, `district`, `city_website`, `office_website`, `other`
 - Contact types display capitalized on frontend via `capitalize()` in PoliticianProfile.jsx
 
+### Treasury ↔ TIGER geofence link (`treasury.municipalities.geo_id`)
+- `treasury.municipalities.geo_id` (migration 194, nullable) links budget data to the same TIGER backbone `essentials` uses (`geofence_boundaries` / `districts` key on `geo_id`: G4110 places, G4020 counties, G5420 school districts). **Must be populated on import** so the coverage tracker joins exactly instead of by fuzzy name+state.
+- **How it's resolved:** `resolveTreasuryGeoId(name, state, entityType)` in `backend/src/lib/treasuryService.ts` — entity_type→mtfcc (city/town/municipality→G4110, county→G4020, school_district→G5420), 2-letter state→FIPS, normalized name match against `essentials.geofence_boundaries`. Townships/libraries/special/nonprofit have no TIGER place geometry → `geo_id` stays NULL (expected).
+- **Importers already wired:** `createCity()` (resolves at insert), `importCambridge.ts`, `importBudgetHierarchy.ts` (self-heals NULL geo_id on rebuild). Backfill existing rows with `npx tsx backend/scripts/backfill-treasury-geo-id.ts [--write]` (dry-run by default).
+- **Consumer:** `coverageService.ts::computeTreasuryForState()` prefers the exact `geo_id` join (treasury.geo_id ↔ a coverage location's district geo_id via `resolveLocationGeoIds()`), falling back to the name slug only for NULL-geo_id rows.
+
 ### Design System
 - **Colors:** `ev-coral` (#ff5740), `ev-muted-blue` (#00657c), `ev-light-blue` (#59b0c4), `ev-yellow` (#fed12e)
 - **Font:** Manrope (Google Fonts)
