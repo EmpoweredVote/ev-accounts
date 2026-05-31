@@ -49,18 +49,20 @@ export interface AxisWeights {
 /**
  * Default weighting — roster + stances dominate; the rest are lighter signals.
  * NOTE: in the map universe every jurisdiction is geofenced (the universe IS the
- * geofence table), so the `geofenced` axis is effectively a constant baseline —
- * it's kept small and surfaced as a visible breakdown column rather than relied
- * on to differentiate jurisdictions. Tune freely.
+ * geofence table), so `geofenced` is effectively a constant. It's kept at a TINY
+ * weight — a boundary-only county should read as ~empty (near 0%), barely nudged
+ * above "not started", and any county with even one official should clearly
+ * outrank it. Surfaced as a breakdown column rather than relied on for colour.
+ * Tune freely.
  */
 export const DEFAULT_WEIGHTS: AxisWeights = {
-  roster: 0.3,
-  stances: 0.25,
-  headshots: 0.1,
+  roster: 0.35,
+  stances: 0.3,
   populated: 0.1,
-  geofenced: 0.1,
+  headshots: 0.1,
   treasury: 0.1,
-  donors: 0.05,
+  donors: 0.03,
+  geofenced: 0.02,
 };
 
 const TRISTATE_VALUE: Record<Tristate, number> = { none: 0, partial: 0.5, full: 1 };
