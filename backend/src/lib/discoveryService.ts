@@ -150,12 +150,28 @@ function stripMiddleInitials(name: string): string {
  * Returns 'inserted' when a new row is created, 'already_present' when an
  * existing row with the same race_id + normalized name is found.
  * Normalization strips middle initials so "ANDREJ A. SELIVRA" matches "Andrej Selivra".
+ *
+ * existingRaceCandidateId: when provided (alias match), skip insert if that
+ * race_candidates row is already in the race — prevents duplicate rows when a
+ * discovered name (e.g. "Karen Bass") is an alias for a stored full name
+ * ("Karen Ruth Bass") that the middle-initial normalization can't reconcile.
  */
 export async function autoUpsertToRaceCandidates(args: {
   raceId: string;
   fullName: string;
+  existingRaceCandidateId?: string;
   source?: string;
 }): Promise<'inserted' | 'already_present'> {
+  // Fast path: if we matched via alias, check the known candidate ID directly.
+  if (args.existingRaceCandidateId) {
+    const aliasCheck = await pool.query(
+      `SELECT 1 FROM essentials.race_candidates
+        WHERE id = $1 AND race_id = $2 LIMIT 1`,
+      [args.existingRaceCandidateId, args.raceId]
+    );
+    if (aliasCheck.rows.length > 0) return 'already_present';
+  }
+
   const normalizedIncoming = stripMiddleInitials(args.fullName);
 
   // Check for existing row using normalized comparison on both sides.
@@ -429,7 +445,7 @@ export async function runDiscoveryForJurisdiction(
 
       if (eligibleForAutoUpsert) {
         // Auto-upsert path: write to race_candidates first, then log an approved staging audit row
-        const upsertResult = await autoUpsertToRaceCandidates({ raceId: raceId!, fullName: cand.full_name });
+        const upsertResult = await autoUpsertToRaceCandidates({ raceId: raceId!, fullName: cand.full_name, existingRaceCandidateId: bestMatch?.candidateId });
         if (upsertResult === 'inserted') autoUpserted++;
 
         await pool.query(
