@@ -7,9 +7,11 @@ import { env } from './env.js';
 // ssl: rejectUnauthorized false required for Supabase's self-signed cert chain.
 export const pool = new Pool({
   connectionString: env.DATABASE_URL,
-  max: 5,
+  max: 10,
   idleTimeoutMillis: 30_000,
   connectionTimeoutMillis: 5_000,
+  keepAlive: true,
+  keepAliveInitialDelayMillis: 10_000,
   ssl: { rejectUnauthorized: false },
 });
 

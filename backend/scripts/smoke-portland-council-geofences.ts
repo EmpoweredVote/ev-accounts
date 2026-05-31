@@ -130,8 +130,8 @@ async function main() {
             AND d.state = 'or'
         )
     `);
-    if (splitRes.rowCount && splitRes.rowCount > 0) {
-      const msg = `SC4 FAIL: ${splitRes.rowCount} section-split orphan(s): ${splitRes.rows.map(r => r.geo_id).join(', ')}`;
+    if (splitRes.rows.length > 0) {
+      const msg = `SC4 FAIL: ${splitRes.rows.length} section-split orphan(s): ${splitRes.rows.map(r => r.geo_id).join(', ')}`;
       console.log(`  FAIL: ${msg}`);
       errors.push(msg);
       allPassed = false;
