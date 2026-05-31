@@ -55,14 +55,18 @@ interface CountyScore {
 }
 
 // ── colour ramp ──────────────────────────────────────────────────────────────
-const NOT_STARTED = '#e5e7eb'; // gray-200 — untracked / no score
-// light → EV muted-blue. Scores cluster low today, so even ~20% reads as a tint.
-const RAMP_FROM = [0xee, 0xf6, 0xf8];
-const RAMP_TO = [0x00, 0x65, 0x7c];
+const NOT_STARTED = '#e5e7eb'; // gray-200 — untracked / no coverage at all
+// Saturated light teal → deep teal. The floor is deliberately well clear of the
+// grey so "some coverage" never washes out into "not started".
+const RAMP_FROM = [0x8c, 0xcd, 0xd9]; // light teal
+const RAMP_TO = [0x00, 0x4e, 0x63]; // deep teal
 
 function scoreColor(score: number | undefined): string {
-  if (score == null) return NOT_STARTED;
-  const t = Math.max(0, Math.min(1, score / 100));
+  if (score == null || score <= 0) return NOT_STARTED;
+  // Scores cluster low (most jurisdictions ~10–35%), so expand the low end with a
+  // gamma curve and start from a saturated floor — otherwise everything reads as
+  // near-grey and a 5% county looks the same as a not-started one.
+  const t = Math.pow(Math.min(1, score / 100), 0.55);
   const ch = (i: number) => Math.round(RAMP_FROM[i] + (RAMP_TO[i] - RAMP_FROM[i]) * t);
   return `rgb(${ch(0)}, ${ch(1)}, ${ch(2)})`;
 }
@@ -83,7 +87,8 @@ export function CoverageMapPage() {
   const [center, setCenter] = useState<[number, number]>([-96, 38]);
   const [zoom, setZoom] = useState(1);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false); // county-level fetch
+  const [statesLoading, setStatesLoading] = useState(true); // initial US fetch (can take a while uncached)
 
   // Captured from the Geographies render-prop — the live projection is the same
   // for both topojson sources, so we can use it to fit a clicked state exactly.
@@ -114,11 +119,13 @@ export function CoverageMapPage() {
     setZoom(Math.min(12, Math.max(1, k)));
   }, []);
 
-  // US-level scores
+  // US-level scores (uncached, this aggregates every tracked state — can take ~10s)
   useEffect(() => {
+    setStatesLoading(true);
     apiFetch<{ states: StateScore[] }>(`/admin/coverage/map?level=state`)
       .then((res) => setStates(res.states))
-      .catch((err) => setError(err.message));
+      .catch((err) => setError(err.message))
+      .finally(() => setStatesLoading(false));
   }, []);
 
   const stateByFips = useMemo(() => {
@@ -200,7 +207,18 @@ export function CoverageMapPage() {
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {/* Map */}
         <div className="relative lg:col-span-2">
-          <div className="overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+          <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+            {(statesLoading || loading) && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 bg-white/70 backdrop-blur-sm dark:bg-gray-900/70">
+                <div className="h-8 w-8 animate-spin rounded-full border-2 border-gray-300 border-t-ev-teal dark:border-gray-600 dark:border-t-ev-teal-light" />
+                <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                  {statesLoading ? 'Loading coverage data…' : 'Loading counties…'}
+                </p>
+                {statesLoading && (
+                  <p className="text-xs text-gray-400">First load aggregates every tracked state — this can take a few seconds.</p>
+                )}
+              </div>
+            )}
             <ComposableMap projection="geoAlbersUsa" width={MAP_W} height={MAP_H} style={{ width: '100%', height: 'auto' }}>
               <ZoomableGroup center={center} zoom={zoom} minZoom={1} maxZoom={12}>
                 {!selected ? (
@@ -275,14 +293,21 @@ export function CoverageMapPage() {
                 <span className="text-gray-400">{selected ? 'Click a county for detail' : 'Click a state to drill in'}</span>
               )}
             </div>
-            <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-              <span>0%</span>
-              <div
-                className="h-2 w-24 rounded-full"
-                style={{ background: `linear-gradient(to right, ${scoreColor(0)}, ${scoreColor(50)}, ${scoreColor(100)})` }}
-              />
-              <span>100%</span>
-              {loading && <span className="ml-2 animate-pulse">loading…</span>}
+            <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+              <span className="inline-flex items-center gap-1.5">
+                <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NOT_STARTED }} />
+                not started
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <span>low</span>
+                <div
+                  className="h-2 w-24 rounded-full"
+                  style={{
+                    background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(20)}, ${scoreColor(45)}, ${scoreColor(75)}, ${scoreColor(100)})`,
+                  }}
+                />
+                <span>high</span>
+              </span>
             </div>
           </div>
         </div>
