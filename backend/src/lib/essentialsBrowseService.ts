@@ -242,6 +242,7 @@ export async function getPoliticiansByArea(
       WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC')
       AND (d.state = $1 OR d.district_type = 'NATIONAL_EXEC')
       AND p.is_active = true
+      AND p.is_incumbent = true
       ORDER BY p.id
     `;
     const result = await pool.query(statewideQuery, [stateAbbrev]);
@@ -450,6 +451,7 @@ export async function getPoliticiansByGovernmentList(
       WHERE d.district_type IN ('NATIONAL_UPPER', 'STATE_EXEC', 'NATIONAL_EXEC', 'NATIONAL_JUDICIAL')
         AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
         AND p.is_active = true
+        AND p.is_incumbent = true
       ORDER BY p.id
     `, [stateAbbrev]);
     statewideRows = swRows;
