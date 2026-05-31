@@ -4,6 +4,9 @@ Per-jurisdiction view of how complete EV's data is, **plus** the jurisdiction-sp
 research rules the `research-stances` skill must obey. One YAML file per state
 (`ut.yaml`, `in.yaml`, …). This file is the **version-controlled source of truth**.
 
+> **Looking for how the `/admin/coverage/map` % is calculated** (what counts toward the
+> score — stances, donors, treasury, etc.)? See [`COVERAGE-MAP.md`](./COVERAGE-MAP.md).
+
 ## Who reads it
 
 | Consumer | Reads | Purpose |
