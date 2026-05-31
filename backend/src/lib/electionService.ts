@@ -89,6 +89,11 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
       p.includes('superintendent of public instruction') ||
       p.includes('superintendent of schools'))
     return 'STATE_EXEC';
+  // State Board of Education — elected by district but a state-level body. Must precede
+  // the SCHOOL catch-all below, whose 'education'/'school' match would pull these into
+  // the Local tier (matches essentials.districts.district_type = 'STATE_BOARD').
+  if (p.includes('state board of education') || p.includes('state school board'))
+    return 'STATE_BOARD';
 
   // Local
   if (p.includes('mayor'))

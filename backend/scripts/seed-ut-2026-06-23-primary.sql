@@ -59,8 +59,10 @@ DO UPDATE SET
 
 -- =============================================================================
 -- Step 2: Upsert all races
--- One row per (position_name, primary_party). office_id = NULL for all races
--- (will be backfilled once district geofences are confirmed).
+-- One row per (position_name, primary_party). office_id = NULL on insert;
+-- district-scoped races (e.g. Utah State Board of Education) are linked to their
+-- office at the end of this step so they surface via electionService Part A
+-- (geofence-matched) under the correct tier, not Part B (statewide).
 -- =============================================================================
 
 WITH election AS (
@@ -223,6 +225,25 @@ DO UPDATE SET
   seats = EXCLUDED.seats,
   description = EXCLUDED.description,
   updated_at = now();
+
+-- Link Utah State Board of Education races to their STATE_BOARD offices (one per
+-- district 1-15). USBE is a STATE-level body elected by geographic district — it
+-- must geofence-match (Part A) so each address sees only its own board race under
+-- the State tier. Without this, inferDistrictType() reads "...Board of Education..."
+-- as SCHOOL → Local. Idempotent via the office_id IS NULL guard.
+-- (Standalone equivalent: scripts/fix-ut-state-board-race-office-ids.sql)
+UPDATE essentials.races r
+SET office_id = o.id,
+    updated_at = now()
+FROM essentials.elections e,
+     essentials.offices o
+     JOIN essentials.districts d ON d.id = o.district_id
+WHERE r.election_id = e.id
+  AND e.state = 'UT'
+  AND r.office_id IS NULL
+  AND r.position_name LIKE 'Utah State Board of Education District %'
+  AND d.district_type = 'STATE_BOARD'
+  AND substring(r.position_name from 'District ([0-9]+)') = d.district_id;
 
 -- =============================================================================
 -- Step 3: Insert candidates (idempotent via NOT EXISTS on race_id + full_name)
