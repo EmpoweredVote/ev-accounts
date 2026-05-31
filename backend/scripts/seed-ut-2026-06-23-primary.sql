@@ -245,6 +245,32 @@ WHERE r.election_id = e.id
   AND d.district_type = 'STATE_BOARD'
   AND substring(r.position_name from 'District ([0-9]+)') = d.district_id;
 
+-- Link district-scoped legislative races (U.S. House, State Senate, State House)
+-- to their district office so they geofence-match (Part A) instead of showing for
+-- every Utah address via Part B. Matched by district label.
+-- (Standalone equivalent: scripts/fix-ut-legislative-race-office-ids.sql)
+UPDATE essentials.races r
+SET office_id = o.id,
+    updated_at = now()
+FROM essentials.elections e,
+     essentials.districts d
+     JOIN essentials.offices o ON o.district_id = d.id
+WHERE r.election_id = e.id
+  AND e.state = 'UT'
+  AND r.office_id IS NULL
+  AND lower(d.state) = 'ut'
+  AND (
+       (r.position_name LIKE 'U.S. House District %'
+          AND d.district_type = 'NATIONAL_LOWER'
+          AND d.label = 'Congressional District ' || substring(r.position_name from 'District ([0-9]+)'))
+    OR (r.position_name LIKE 'Utah State Senate District %'
+          AND d.district_type = 'STATE_UPPER'
+          AND d.label = 'State Senate District ' || substring(r.position_name from 'District ([0-9]+)'))
+    OR (r.position_name LIKE 'Utah State House District %'
+          AND d.district_type = 'STATE_LOWER'
+          AND d.label = 'State House District ' || substring(r.position_name from 'District ([0-9]+)'))
+  );
+
 -- =============================================================================
 -- Step 3: Insert candidates (idempotent via NOT EXISTS on race_id + full_name)
 --
