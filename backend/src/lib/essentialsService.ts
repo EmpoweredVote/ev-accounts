@@ -386,7 +386,7 @@ export async function getPoliticiansFlatList(
   if (options?.q) {
     params.push(`%${options.q}%`);
     const idx = params.length;
-    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.preferred_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx})`;
+    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.preferred_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx} OR CONCAT(p.first_name, ' ', p.last_name) ILIKE $${idx})`;
   }
 
   if (options?.state) {
