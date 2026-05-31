@@ -65,6 +65,7 @@ import {
   getAccountJurisdictions,
 } from '../lib/adminService.js';
 import { getCoverage, listCoverageStates } from '../lib/coverageService.js';
+import { getStateScores, getCountyScores } from '../lib/coverageMapService.js';
 
 const router = Router();
 
@@ -142,6 +143,40 @@ router.get('/coverage', async (req, res) => {
     res.json({ states, coverage });
   } catch (err) {
     console.error('[admin/coverage] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+/**
+ * GET /api/admin/coverage/map?level=state
+ * GET /api/admin/coverage/map?level=county&state=ut
+ * Choropleth scores: one composite-completeness % per geography. `level=state`
+ * returns a score per tracked state (untracked states omitted → client paints
+ * them "not started"); `level=county` returns per-county scores + the
+ * jurisdictions inside each county for the drill-down panel. ?refresh=1 busts
+ * the in-process cache.
+ */
+router.get('/coverage/map', async (req, res) => {
+  try {
+    const level = String(req.query.level ?? 'state');
+    const refresh = req.query.refresh === '1' || req.query.refresh === 'true';
+    if (level === 'county') {
+      const state = String(req.query.state ?? '').toLowerCase();
+      if (!state) {
+        res.status(400).json({ error: 'state query param required for level=county' });
+        return;
+      }
+      const data = await getCountyScores(state, { refresh });
+      if (!data) {
+        res.json({ state, state_fips: null, counties: [] });
+        return;
+      }
+      res.json(data);
+      return;
+    }
+    res.json({ states: await getStateScores({ refresh }) });
+  } catch (err) {
+    console.error('[admin/coverage/map] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

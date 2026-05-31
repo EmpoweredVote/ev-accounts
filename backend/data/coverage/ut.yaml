@@ -69,9 +69,76 @@ rules:
 # stances:   { researched, total }   (auto; researched = last_stances_researched_at IS NOT NULL)
 # ─────────────────────────────────────────────────────────────────────────────
 locations:
-  # ── Statewide roll-up (federal delegation + state exec/leg + everything below) ──
+  # ── Federal delegation (2) ──
   - ocd_id: ocd-division/country:us/state:ut
-    name: Utah (statewide roll-up)
+    ocd_kind: cd
+    match: kind
+    name: U.S. House delegation
+    level: federal
+    status: active
+    expected_seats: 4
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 4 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut
+    match: title
+    office_title_like: "U.S. Senate%"
+    name: U.S. Senate
+    level: federal
+    status: active
+    expected_seats: 2
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: false
+    headshots: none
+    stances: { researched: 0, total: 0 }
+    last_researched: null
+
+  # ── State government (3) ──
+  - ocd_id: ocd-division/country:us/state:ut
+    ocd_kind: sldu
+    match: kind
+    name: State Senate
+    level: state
+    status: active
+    expected_seats: 29
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 29 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut
+    ocd_kind: sldl
+    match: kind
+    name: State House
+    level: state
+    status: active
+    expected_seats: 75
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: partial
+    stances: { researched: 0, total: 75 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:ut
+    match: exact
+    exclude_title_like: "U.S. Senate%"
+    name: Statewide offices (Gov, officers)
     level: state
     status: active
     expected_seats: null
@@ -81,8 +148,8 @@ locations:
     treasury: none
     populated: true
     headshots: partial
-    stances: { researched: 13, total: 421 }
-    last_researched: 2026-05-30
+    stances: { researched: 0, total: 7 }
+    last_researched: null
 
   # ── Counties (10 active) ──────────────────────────────────────────────────
   - ocd_id: ocd-division/country:us/state:ut/county:box_elder

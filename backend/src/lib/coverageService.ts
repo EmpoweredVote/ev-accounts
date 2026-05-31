@@ -32,7 +32,7 @@ export type CoverageStatus = 'active' | 'in_progress' | 'deferred';
  *  - exact:   ocd_id = X exactly      (statewide offices at the bare state OCD)
  *  - kind:    all districts of ocd_kind in the state (chamber aggregates: cd/sldu/sldl)
  */
-export type CoverageMatch = 'subtree' | 'exact' | 'kind';
+export type CoverageMatch = 'subtree' | 'exact' | 'kind' | 'title';
 
 export interface SkipTopicRule {
   topic_key: string;
@@ -51,6 +51,8 @@ export interface CoverageLocationFile {
   ocd_id: string;
   ocd_kind?: string | null; // for match: 'kind' — the OCD segment to aggregate (cd | sldu | sldl)
   match?: CoverageMatch; // default 'subtree'
+  office_title_like?: string | null; // for match: 'title' — ILIKE pattern on offices.title (e.g. 'U.S. Senate%')
+  exclude_title_like?: string | null; // for match: 'exact' — drop offices whose title ILIKE this (e.g. de-dupe senators out of the statewide bucket)
   name: string;
   level: CoverageLevel;
   status: CoverageStatus;
@@ -184,6 +186,8 @@ export interface LocationStatSpec {
   ocd_id: string;
   ocd_kind?: string | null;
   match?: CoverageMatch;
+  office_title_like?: string | null;
+  exclude_title_like?: string | null;
 }
 
 /**
@@ -197,10 +201,21 @@ export async function computeLocationStats(spec: LocationStatSpec): Promise<Loca
   if (match === 'exact') {
     where = 'd.ocd_id = $1';
     params = [spec.ocd_id];
+    // Optionally drop offices by title — e.g. exclude U.S. Senators from the
+    // statewide bucket once they have their own 'title'-matched row.
+    if (spec.exclude_title_like) {
+      where += ' AND o.title NOT ILIKE $2';
+      params.push(spec.exclude_title_like);
+    }
   } else if (match === 'kind') {
     // all districts of a kind under the state prefix, e.g. .../state:tx/sldl:NN
     where = `d.ocd_id LIKE $1 || '/%' AND d.ocd_id ~ ('/' || $2 || ':')`;
     params = [spec.ocd_id, spec.ocd_kind ?? ''];
+  } else if (match === 'title') {
+    // statewide-elected officials with no distinct district (e.g. U.S. Senators
+    // share the bare .../state:<code> OCD with the governor) — filter by office title.
+    where = 'd.ocd_id = $1 AND o.title ILIKE $2';
+    params = [spec.ocd_id, spec.office_title_like ?? ''];
   } else {
     where = `(d.ocd_id = $1 OR d.ocd_id LIKE $1 || '/%')`;
     params = [spec.ocd_id];
@@ -442,12 +457,34 @@ export function locationTreasury(
  * Read the coverage file for a state and overlay live DB stats onto each row.
  * This is what GET /api/admin/coverage returns.
  */
+/**
+ * Run an async mapper over items with BOUNDED concurrency. The pg pool is small
+ * (max 5), so a plain Promise.all over a large YAML (e.g. CA has ~181 tracked
+ * locations) would request far more connections than exist and every query past
+ * the 5th would time out waiting to connect → 500. A handful of workers draining
+ * a shared cursor keeps in-flight queries ≤ limit.
+ */
+async function mapWithConcurrency<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results: R[] = new Array(items.length);
+  let next = 0;
+  const worker = async (): Promise<void> => {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await fn(items[i]);
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
+}
+
 export async function getCoverage(state: string): Promise<CoverageResponse> {
   const file = readCoverageFile(state);
   const treasury = await computeTreasuryForState(state);
   const geoIdByOcd = await resolveLocationGeoIds(file.locations);
-  const locations: CoverageLocationResolved[] = await Promise.all(
-    file.locations.map(async (loc) => {
+  const locations: CoverageLocationResolved[] = await mapWithConcurrency(
+    file.locations,
+    4, // ≤ pool max (5), leaving headroom
+    async (loc) => {
       const stats = await computeLocationStats(loc);
       const rosterComplete =
         loc.expected_seats != null && stats.stances.total > 0 && stats.stances.total >= loc.expected_seats;
@@ -462,7 +499,7 @@ export async function getCoverage(state: string): Promise<CoverageResponse> {
         roster_actual: stats.stances.total,
         roster_complete: rosterComplete,
       };
-    }),
+    },
   );
   const universe = await computeUniverse(file, locations);
 

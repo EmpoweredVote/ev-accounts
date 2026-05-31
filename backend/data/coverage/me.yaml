@@ -17,11 +17,27 @@ rules:
   notes: []
 
 locations:
-  # ── Federal delegation (1) ──
+  # ── Federal delegation (2) ──
   - ocd_id: ocd-division/country:us/state:me
     ocd_kind: cd
     match: kind
     name: U.S. House delegation
+    level: federal
+    status: active
+    expected_seats: 2
+    geofenced: true
+    donors: none
+    candidates: none
+    treasury: none
+    populated: true
+    headshots: full
+    stances: { researched: 0, total: 2 }
+    last_researched: null
+
+  - ocd_id: ocd-division/country:us/state:me
+    match: title
+    office_title_like: "U.S. Senate%"
+    name: U.S. Senate
     level: federal
     status: active
     expected_seats: 2
@@ -69,7 +85,8 @@ locations:
 
   - ocd_id: ocd-division/country:us/state:me
     match: exact
-    name: Statewide offices (Gov, U.S. Senate, officers)
+    exclude_title_like: "U.S. Senate%"
+    name: Statewide offices (Gov, officers)
     level: state
     status: active
     expected_seats: null

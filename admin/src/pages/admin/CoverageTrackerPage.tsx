@@ -1,7 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
+import { Link } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
+import { Bool, Chip, Stances, Roster, type Tristate } from './coverageCells';
 
-type Tristate = 'none' | 'partial' | 'full';
 type Level = 'federal' | 'state' | 'county' | 'local' | 'school';
 
 interface SkipTopicRule {
@@ -65,52 +66,6 @@ const LEVEL_LABEL: Record<Level, string> = {
 };
 const LEVEL_ORDER: Level[] = ['federal', 'state', 'county', 'local', 'school'];
 
-function Bool({ value }: { value: boolean }) {
-  return value ? (
-    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400">
-      ✓
-    </span>
-  ) : (
-    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600">
-      ✕
-    </span>
-  );
-}
-
-function Chip({ value }: { value: Tristate }) {
-  const map: Record<Tristate, string> = {
-    full: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400',
-    partial: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-400',
-    none: 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600',
-  };
-  return (
-    <span className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium capitalize ${map[value]}`}>
-      {value}
-    </span>
-  );
-}
-
-function Stances({ s, stale }: { s: { researched: number; total: number }; stale: boolean }) {
-  const pct = s.total > 0 ? Math.round((s.researched / s.total) * 100) : 0;
-  const done = s.total > 0 && s.researched >= s.total;
-  const bar = done ? 'bg-emerald-500' : s.researched > 0 ? 'bg-amber-500' : 'bg-gray-300 dark:bg-gray-700';
-  return (
-    <div className="flex items-center gap-2">
-      <div className="h-1.5 w-20 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
-        <div className={`h-full ${bar}`} style={{ width: `${pct}%` }} />
-      </div>
-      <span className="tabular-nums text-xs text-gray-600 dark:text-gray-400">
-        {s.researched}/{s.total}
-      </span>
-      {stale && (
-        <span className="rounded bg-amber-100 px-1 text-[10px] font-medium text-amber-700 dark:bg-amber-900/40 dark:text-amber-400">
-          stale
-        </span>
-      )}
-    </div>
-  );
-}
-
 function UniverseCard({ cat }: { cat: UniverseCategory }) {
   const [open, setOpen] = useState(false);
   const completePct = cat.total > 0 ? (cat.complete / cat.total) * 100 : 0;
@@ -170,21 +125,6 @@ function UniverseCard({ cat }: { cat: UniverseCategory }) {
   );
 }
 
-function Roster({ actual, expected, complete }: { actual: number; expected: number | null; complete: boolean }) {
-  const cls = complete
-    ? 'text-emerald-700 dark:text-emerald-400'
-    : actual > 0
-      ? 'text-amber-700 dark:text-amber-400'
-      : 'text-gray-400 dark:text-gray-600';
-  return (
-    <span className={`tabular-nums text-xs font-medium ${cls}`}>
-      {actual}
-      <span className="text-gray-400">/{expected ?? '—'}</span>
-      {complete && ' ✓'}
-    </span>
-  );
-}
-
 const STATUS_STYLE: Record<CoverageLocation['status'], string> = {
   active: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
   in_progress: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
@@ -222,7 +162,15 @@ export function CoverageTrackerPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Data Coverage</h1>
+        <div className="flex items-center gap-3">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Data Coverage</h1>
+          <Link
+            to="/admin/coverage/map"
+            className="rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
+          >
+            Map view →
+          </Link>
+        </div>
         {data && data.states.length > 0 && (
           <select
             value={state ?? ''}
@@ -377,8 +325,12 @@ export function CoverageTrackerPage() {
                           {LEVEL_LABEL[level]}
                         </td>
                       </tr>,
-                      ...rows.map((l) => (
-                        <tr key={l.ocd_id} className="hover:bg-gray-50 dark:hover:bg-gray-800/40">
+                      ...rows.map((l, i) => (
+                        // ocd_id is NOT unique — a state's federal/state rows (US House,
+                        // State Senate, State House, Statewide) all share `.../state:<code>`.
+                        // Key on level+name+index so switching states reconciles cleanly
+                        // (duplicate keys left stale rows from the previous state on screen).
+                        <tr key={`${level}-${l.ocd_id}-${l.name}-${i}`} className="hover:bg-gray-50 dark:hover:bg-gray-800/40">
                           <td className="px-4 py-2.5">
                             <div className="flex items-center gap-2">
                               <span className="font-medium text-gray-900 dark:text-white">{l.name}</span>

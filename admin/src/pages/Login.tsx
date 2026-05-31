@@ -78,7 +78,10 @@ export default function Login() {
 
       sessionStorage.setItem('admin_token', token);
 
-      const target = validRedirect || 'https://login.empowered.vote/profile';
+      // In local dev, stay on the local SPA instead of bouncing to production.
+      const isLocal =
+        window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+      const target = validRedirect || (isLocal ? '/admin' : 'https://login.empowered.vote/profile');
       window.location.href = target;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unexpected error occurred');
