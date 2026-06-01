@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-06-01T17:30:00.000Z",
+  "phase": "78",
+  "phase_name": "city-stance-research",
+  "phase_dir": ".planning/phases/78-city-stance-research",
+  "plan": 4,
+  "task": 1,
+  "total_tasks": 3,
+  "status": "paused",
+  "completed_tasks": [
+    {"id": 1, "name": "Plan 78-01: SJ research setup", "status": "done", "commit": "prior session"},
+    {"id": 2, "name": "Plan 78-02: SJ Mayor Mahan 12 stances (migration 221)", "status": "done", "commit": "prior session"},
+    {"id": 3, "name": "Plan 78-03: SD 11 officials 184 stances (migrations 244+250)", "status": "done", "commit": "this session"}
+  ],
+  "remaining_tasks": [
+    {"id": 4, "name": "Plan 78-04: Berkeley stances (10 officials)", "status": "not_started"},
+    {"id": 5, "name": "Plan 78-05: CSTA-05 context audit + headshots gap-fill", "status": "not_started"},
+    {"id": 6, "name": "Plan 78-06: Phase verification and wrap-up", "status": "not_started"}
+  ],
+  "blockers": [],
+  "human_actions_pending": [],
+  "decisions": [
+    {"decision": "Heather Ferbert replaced Mara Elliott as SD City Attorney in roster", "rationale": "Ferbert took office Jan 2025", "phase": "78"},
+    {"decision": "Two-migration approach: 244 initial + 250 corrections", "rationale": "Initial migration applied before correction table was finalized; avoid for Berkeley — produce corrections first", "phase": "78"},
+    {"decision": "10 SJ council members excluded", "rationale": "User decision — no direct evidence, adjacent-evidence only", "phase": "78"},
+    {"decision": "data-centers topic excluded from all city migrations", "rationale": "Per D-06 convention established at SF (migration 216)", "phase": "78"}
+  ],
+  "uncommitted_files": [
+    ".planning/phases/78-city-stance-research/.continue-here.md",
+    ".planning/phases/78-city-stance-research/78-03-SUMMARY.md",
+    ".planning/STATE.md",
+    ".planning/HANDOFF.json",
+    "backend/migrations/250_sd_stances_corrections.sql"
+  ],
+  "next_action": "Run research-stances skill for Berkeley officials: batch 1 (Mayor Arreguin + City Auditor Wong). Confirm UUIDs via external_id -680001 and -680002 first. Review output against scale_direction_anchors.md before approving. Next migration: 251.",
+  "context_notes": "Scale inversion fix is in researcher agent memory but manual review still required for every value. For Berkeley, produce corrected-values table BEFORE writing migration SQL — don't repeat the two-migration pattern from SD."
+}
