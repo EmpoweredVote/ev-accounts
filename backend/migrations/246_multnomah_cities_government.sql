@@ -90,7 +90,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Travis Stovall', 'Travis', 'Stovall', NULL,
           true, false, false, true, -4131251)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -109,7 +110,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL_EXEC'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -122,7 +122,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Kayla Brown', 'Kayla', 'Brown', NULL,
           true, false, false, true, -4131252)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -141,7 +142,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -154,7 +154,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Eddy Morales', 'Eddy', 'Morales', NULL,
           true, false, false, true, -4131253)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -173,7 +174,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -186,7 +186,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Cathy Keathley', 'Cathy', 'Keathley', NULL,
           true, false, false, true, -4131254)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -205,7 +206,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -218,7 +218,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jerry Hinton', 'Jerry', 'Hinton', NULL,
           true, false, false, true, -4131255)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -237,7 +238,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -250,7 +250,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Sue Piazza', 'Sue', 'Piazza', NULL,
           true, false, false, true, -4131256)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -269,7 +270,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -282,7 +282,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Janine Gladfelter', 'Janine', 'Gladfelter', NULL,
           true, false, false, true, -4131257)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -301,7 +302,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4131250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -360,7 +360,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'David Ripma', 'David', 'Ripma', NULL,
           true, false, false, true, -4174851)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -379,7 +380,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL_EXEC'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -392,7 +392,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Carol Allen', 'Carol', 'Allen', NULL,
           true, false, false, true, -4174852)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -411,7 +412,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -424,7 +424,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jesse Davidson', 'Jesse', 'Davidson', NULL,
           true, false, false, true, -4174853)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -443,7 +444,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -456,7 +456,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'John Leamy', 'John', 'Leamy', NULL,
           true, false, false, true, -4174854)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -475,7 +476,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -488,7 +488,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Glenn White', 'Glenn', 'White', NULL,
           true, false, false, true, -4174855)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -507,7 +508,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -520,7 +520,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Geoffrey Wunn', 'Geoffrey', 'Wunn', NULL,
           true, false, false, true, -4174856)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -539,7 +540,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -552,7 +552,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Zach Andrews', 'Zach', 'Andrews', NULL,
           true, false, false, true, -4174857)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -571,7 +572,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4174850'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -631,7 +631,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Keith Kudrna', 'Keith', 'Kudrna', NULL,
           true, false, false, true, -4124251)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -650,7 +651,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL_EXEC'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -663,7 +663,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jeff Dennerline', 'Jeff', 'Dennerline', NULL,
           true, false, false, true, -4124252)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -682,7 +683,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -695,7 +695,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Steve Marker', 'Steve', 'Marker', NULL,
           true, false, false, true, -4124253)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -714,7 +715,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -728,7 +728,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'E''an Todd', 'E''an', 'Todd', NULL,
           true, false, false, true, -4124254)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -747,7 +748,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -760,7 +760,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jenni Weber', 'Jenni', 'Weber', NULL,
           true, false, false, true, -4124255)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -779,7 +780,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -792,7 +792,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Steve Owen', 'Steve', 'Owen', NULL,
           true, false, false, true, -4124256)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -811,7 +812,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -824,7 +824,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Paul Copeland', 'Paul', 'Copeland', NULL,
           true, false, false, true, -4124257)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -843,7 +844,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4124250'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -904,7 +904,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jairo Rios-Campos', 'Jairo', 'Rios-Campos', NULL,
           true, true, false, true, -4183951)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -923,7 +924,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4183950'
   AND d.district_type = 'LOCAL_EXEC'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -936,7 +936,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Dara Tan', 'Dara', 'Tan', NULL,
           true, false, false, true, -4183952)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -955,7 +956,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4183950'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -968,7 +968,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'John Miner', 'John', 'Miner', NULL,
           true, false, false, true, -4183953)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -987,7 +988,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4183950'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1001,7 +1001,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Charlene Gothard', 'Charlene', 'Gothard', NULL,
           true, true, false, true, -4183954)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1020,7 +1021,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4183950'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1033,7 +1033,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Patricia Smith', 'Patricia', 'Smith', NULL,
           true, false, false, true, -4183955)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1052,7 +1053,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4183950'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1112,7 +1112,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jim Akers', 'Jim', 'Akers', NULL,
           true, true, false, true, -4146731)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1131,7 +1132,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4146730'
   AND d.district_type = 'LOCAL_EXEC'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1144,7 +1144,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Kevin Bussema', 'Kevin', 'Bussema', NULL,
           true, false, false, true, -4146732)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1163,7 +1164,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4146730'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1176,7 +1176,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Jeff Baltzell', 'Jeff', 'Baltzell', NULL,
           true, false, false, true, -4146733)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1195,7 +1196,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4146730'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1208,7 +1208,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Miriam Berman', 'Miriam', 'Berman', NULL,
           true, false, false, true, -4146734)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1227,7 +1228,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4146730'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
@@ -1240,7 +1240,8 @@ WITH ins_p AS (
      is_vacant, is_incumbent, external_id)
   VALUES (gen_random_uuid(), 'Thomas Welander', 'Thomas', 'Welander', NULL,
           true, false, false, true, -4146735)
-  ON CONFLICT (external_id) DO NOTHING
+  ON CONFLICT (external_id) DO UPDATE
+    SET is_active = EXCLUDED.is_active
   RETURNING id
 )
 INSERT INTO essentials.offices
@@ -1259,7 +1260,6 @@ CROSS JOIN ins_p p
 WHERE d.geo_id = '4146730'
   AND d.district_type = 'LOCAL'
   AND d.state = 'or'
-  AND p.id IS NOT NULL
   AND NOT EXISTS (
     SELECT 1 FROM essentials.offices o
     WHERE o.district_id = d.id AND o.politician_id = p.id
