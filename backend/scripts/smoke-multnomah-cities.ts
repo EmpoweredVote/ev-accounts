@@ -173,6 +173,7 @@ async function main() {
       console.error(
         `Pre-flight FAIL: not all 5 G4110 city boundaries loaded (found ${pfCount}) — Phase 72 must be re-applied`,
       );
+      await client.end();
       process.exit(1);
     }
     console.log(`  All 5 G4110 city boundaries confirmed`);
