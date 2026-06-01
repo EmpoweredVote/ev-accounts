@@ -21,7 +21,7 @@
 BEGIN;
 
 -- =============================================================================
--- Pre-flight: RAISE NOTICE if any city government row already exists (idempotency guard)
+-- Pre-flight: RAISE EXCEPTION if any city government row already exists (hard abort guard)
 -- =============================================================================
 DO $$
 BEGIN
@@ -33,7 +33,7 @@ BEGIN
         'City of Wood Village, Oregon, US',
         'City of Maywood Park, Oregon, US'
       )) > 0 THEN
-    RAISE NOTICE 'One or more city government rows already exist — idempotent re-run';
+    RAISE EXCEPTION 'Migration 246 already applied — aborting re-run';
   END IF;
 END $$;
 
