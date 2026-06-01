@@ -382,6 +382,42 @@ Use these for any politician running for or serving on the LA City Council or as
 - **Do not infer from party affiliation.** Base assessment on actual evidence.
 - **Use the full 1-5 range.** Differentiate moderates from extremes within the same party.
 - **If position has shifted, use MOST RECENT position** but note the shift in reasoning.
+
+### Scale Direction — Inversion Traps (MANDATORY self-check before returning any value)
+
+**There is no universal rule like "1=oppose, 5=support."** The direction is different per topic. Before finalising any value, confirm it against this table:
+
+| topic_key | value=1 | value=5 |
+|---|---|---|
+| abortion | PRO-choice (legal, accessible, publicly funded at all stages) | ANTI-choice (complete ban + criminal penalties) |
+| ai-regulation | NO regulation (free market, no government interference) | STRICT regulation (government approval + bans) — **Democrats who favor oversight score HIGHER than Republicans** |
+| campaign-finance | BAN all private money; publicly fund campaigns | ELIMINATE all campaign finance laws |
+| civil-rights | MOST progressive (mandate equity/reparations) | MOST conservative (eliminate affirmative action) — **civil rights champions get LOW scores** |
+| climate-change | Declare emergency / ban all carbon activities | Reject climate policies entirely — **aggressive climate champions get LOW scores** |
+| deportation | STOP all deportations | DEPORT everyone regardless of ties |
+| fossil-fuels | BAN all new drilling | MAXIMIZE extraction — **politicians who OPPOSE fossil fuels get LOW scores (1–2)** |
+| healthcare | FREE universal single-payer | FULLY private; no government role |
+| housing | Guarantee housing as a right; public housing for all | Stay out entirely; private market only |
+| immigration | Easier legal immigration; full public services for all | Stop most legal immigration; block services for undocumented |
+| medicare/aid | EXPAND Medicare to cover everyone | PHASE OUT Medicare and Medicaid |
+| misinformation | REQUIRE platforms to remove false info (interventionist) | BAN government from content moderation — **interventionists score LOW** |
+| redistricting | SUPPORTS independent citizens' commission | OPPOSES reform; party draws maps — **good-government reformers get LOW scores** |
+| same-sex-marriage | SUPPORTS SSM (require all states to recognize) | OPPOSES SSM (make it illegal) — **pro-SSM politicians get LOW scores** |
+| school-vouchers | OPPOSES vouchers / fully funds public schools | SUPPORTS universal vouchers — **pro-voucher Republicans get HIGH scores; public-schools Democrats get LOW scores** |
+| social-security | EXPAND benefits; remove income cap | PRIVATIZE to individual accounts |
+| taxes | RAISE taxes on wealthy (liberal) | CUT taxes / shrink government (conservative) — **tax-the-rich advocates get LOW scores** |
+| trans-athletes | ALLOW all trans athletes (most liberal) | COMPLETE BAN (most conservative) — **Republicans opposing trans inclusion get HIGH scores** |
+| ukraine-support | MAXIMUM military aid until victory | END all aid immediately |
+| voting-rights | AUTO-register all citizens; online voting | In-person only + strict photo ID |
+
+**City-level inversion traps:**
+- `homelessness-response`: 1=housing-first/no criminalization · 5=enforcement/camping bans — **camping ban authors get HIGH scores**
+- `jail-capacity`: 1=redirect funding to community programs · 5=expand jail capacity as primary response
+- `local-immigration`: 1=sanctuary/refuse ICE · 5=full ICE cooperation — **most blue-city officials score 1–2**
+- `public-safety-approach`: 1=redirect police budget to social services · 5=expand police budget above all else
+- `rent-regulation`: 1=expand rent control · 5=oppose rent control entirely
+- `residential-zoning`: 1=protect neighborhood character strictly · 5=eliminate single-family zoning citywide
+- `judicial-interpretation`: 1=living constitutionalism · 5=originalism — **conservative judges get HIGH scores**
 - **SKIP a topic entirely** if you cannot find sufficient evidence. Do not guess.
 
 ### Reasoning Quality
