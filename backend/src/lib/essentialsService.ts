@@ -62,6 +62,20 @@ const UPCOMING_ELECTIONS_LATERAL = `
 `;
 export { GeocodingError };
 
+/**
+ * Enclave-city alias map.
+ * Some cities are entirely enclosed within a larger USPS city boundary,
+ * so Census TIGER / the geocoder returns the surrounding city name.
+ * When the user's address string contains the enclave city name but the
+ * geocoder returns the host city, substitute the enclave's G4110 centroid.
+ *
+ * Structure: { enclaveNameLower: { hostCity: string; lat: number; lng: number } }
+ * Add new entries here as new enclave cities are onboarded.
+ */
+const ENCLAVE_CITY_ALIASES: Record<string, { hostCity: string; lat: number; lng: number }> = {
+  'maywood park': { hostCity: 'portland', lat: 45.5525170, lng: -122.5617782 },
+};
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -534,6 +548,21 @@ export async function getRepresentativesByAddress(
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
   const { lat, lng, matchedAddress, state } = await geocodeAddress(address);
 
+  // Enclave-city alias override: some cities have streets stored under a
+  // surrounding city's USPS name in Census TIGER. If the address string
+  // names an enclave city but the geocoder returned its host city, substitute
+  // the enclave's G4110 centroid so PostGIS hits the correct boundary.
+  let resolvedLat = lat;
+  let resolvedLng = lng;
+  const addrLower = address.toLowerCase();
+  for (const [enclaveName, alias] of Object.entries(ENCLAVE_CITY_ALIASES)) {
+    if (addrLower.includes(enclaveName) && (matchedAddress.toLowerCase().includes(alias.hostCity) || state.toLowerCase() === 'or')) {
+      resolvedLat = alias.lat;
+      resolvedLng = alias.lng;
+      break;
+    }
+  }
+
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
   const districtQueryText = `
@@ -660,9 +689,9 @@ export async function getRepresentativesByAddress(
 
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
   const [districtResult, statewideResult, tribalResult] = await Promise.all([
-    pool.query(districtQueryText, [lng, lat]),
+    pool.query(districtQueryText, [resolvedLng, resolvedLat]),
     state ? pool.query(statewideQueryText, [state]) : Promise.resolve({ rows: [] as unknown[] }),
-    pool.query(tribalQueryText, [lng, lat]),
+    pool.query(tribalQueryText, [resolvedLng, resolvedLat]),
   ]);
   const rows = [...districtResult.rows, ...(statewideResult.rows as typeof districtResult.rows)];
 
