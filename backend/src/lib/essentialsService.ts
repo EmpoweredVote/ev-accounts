@@ -546,17 +546,22 @@ export async function getRepresentativesByAddress(
   { includeChallengers = false }: { includeChallengers?: boolean } = {}
 ): Promise<AddressSearchResult> {
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
-  const { lat, lng, matchedAddress, state } = await geocodeAddress(address);
+  const { lat, lng, matchedAddress, state, city } = await geocodeAddress(address);
 
   // Enclave-city alias override: some cities have streets stored under a
   // surrounding city's USPS name in Census TIGER. If the address string
   // names an enclave city but the geocoder returned its host city, substitute
   // the enclave's G4110 centroid so PostGIS hits the correct boundary.
+  // Dual-condition: raw address must name the enclave AND geocoder must have
+  // returned the host city (checked via matchedAddress OR addressComponents.city).
   let resolvedLat = lat;
   let resolvedLng = lng;
   const addrLower = address.toLowerCase();
   for (const [enclaveName, alias] of Object.entries(ENCLAVE_CITY_ALIASES)) {
-    if (addrLower.includes(enclaveName) && (matchedAddress.toLowerCase().includes(alias.hostCity) || state.toLowerCase() === 'or')) {
+    if (
+      addrLower.includes(enclaveName) &&
+      (matchedAddress.toLowerCase().includes(alias.hostCity) || city.toLowerCase() === alias.hostCity)
+    ) {
       resolvedLat = alias.lat;
       resolvedLng = alias.lng;
       break;
