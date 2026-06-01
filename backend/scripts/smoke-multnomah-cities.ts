@@ -134,6 +134,7 @@ async function queryLocalOfficials(
      JOIN essentials.offices o ON o.politician_id = p.id
      JOIN essentials.districts d ON d.id = o.district_id
      JOIN essentials.geofence_boundaries gb ON gb.geo_id = d.geo_id
+                                            AND gb.mtfcc = 'G4110'
      WHERE gb.state = '41'
        AND d.district_type IN ('LOCAL', 'LOCAL_EXEC')
        AND ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint($1, $2), 4326))
