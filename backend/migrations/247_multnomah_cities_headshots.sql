@@ -18,6 +18,12 @@
 -- Note: Gresham thumbnails served as WebP from /globalassets/ CDN despite .jpg extension.
 --   All other sources: Troutdale = WebP; Wood Village = JPEG/PNG.
 
+-- Safety guard: this file is AUDIT-ONLY. Abort if run directly.
+DO $$
+BEGIN
+  RAISE EXCEPTION 'Migration 247 is AUDIT-ONLY and must not be applied. Actual DB writes happened live via scripts/_tmp-cities-headshots.py.';
+END $$;
+
 -- ============================================================
 -- GRESHAM (7 officials)
 -- ============================================================
