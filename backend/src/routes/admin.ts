@@ -66,6 +66,7 @@ import {
 } from '../lib/adminService.js';
 import { getCoverage, listCoverageStates } from '../lib/coverageService.js';
 import { getStateScores, getCountyScores } from '../lib/coverageMapService.js';
+import { getElectionsStateScores, getElectionsCountyScores } from '../lib/electionsMapService.js';
 
 const router = Router();
 
@@ -155,23 +156,34 @@ router.get('/coverage', async (req, res) => {
  * them "not started"); `level=county` returns per-county scores + the
  * jurisdictions inside each county for the drill-down panel. ?refresh=1 busts
  * the in-process cache.
+ * ?metric=elections switches to the elections overlay: race coverage (races with
+ * >=1 candidate) for each state's nearest upcoming election + that election's date.
  */
 router.get('/coverage/map', async (req, res) => {
   try {
     const level = String(req.query.level ?? 'state');
+    const metric = String(req.query.metric ?? 'completeness');
     const refresh = req.query.refresh === '1' || req.query.refresh === 'true';
+    const elections = metric === 'elections';
+
     if (level === 'county') {
       const state = String(req.query.state ?? '').toLowerCase();
       if (!state) {
         res.status(400).json({ error: 'state query param required for level=county' });
         return;
       }
-      const data = await getCountyScores(state, { refresh });
-      if (!data) {
-        res.json({ state, state_fips: null, counties: [] });
+      if (elections) {
+        const data = await getElectionsCountyScores(state, { refresh });
+        res.json(data ?? { state, state_fips: null, election_date: null, election_type: null, counties: [] });
         return;
       }
-      res.json(data);
+      const data = await getCountyScores(state, { refresh });
+      res.json(data ?? { state, state_fips: null, counties: [] });
+      return;
+    }
+
+    if (elections) {
+      res.json({ states: await getElectionsStateScores({ refresh }) });
       return;
     }
     res.json({ states: await getStateScores({ refresh }) });

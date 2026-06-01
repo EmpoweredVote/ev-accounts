@@ -8,6 +8,10 @@
  * Tracked states/counties get a teal gradient; untracked geographies render in
  * neutral grey ("not started"). TopoJSON (us-atlas) is fetched from CDN, so no
  * polygons are bundled and none ship through our API.
+ *
+ * Two modes are available via a toggle:
+ *   "completeness" — original behaviour (composite % per jurisdiction)
+ *   "elections"    — upcoming-election coverage (races with candidates %)
  */
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
@@ -19,6 +23,7 @@ const STATES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json';
 const COUNTIES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json';
 
 type MapLevel = 'county' | 'local' | 'school';
+type Metric = 'completeness' | 'elections';
 
 interface StateScore {
   fips: string;
@@ -54,8 +59,35 @@ interface CountyScore {
   jurisdictions: JurisdictionScore[];
 }
 
+interface StateElection {
+  fips: string;
+  code: string;
+  election_date: string;
+  election_type: string;
+  coverage: number;
+  races_total: number;
+  races_covered: number;
+}
+
+interface ElectionRace {
+  race_id: string;
+  position_name: string;
+  seats: number;
+  candidate_count: number;
+  ocd_id: string | null;
+}
+
+interface CountyElection {
+  fips: string;
+  name: string;
+  status: 'unknown' | 'scored';
+  coverage: number;
+  races: ElectionRace[];
+}
+
 // ── colour ramp ──────────────────────────────────────────────────────────────
 const NOT_STARTED = '#e5e7eb'; // gray-200 — untracked / no coverage at all
+const NO_RACE_DATA = '#3f3f46'; // zinc-700 — distinct from NOT_STARTED grey ("no races resolve here")
 // Saturated light teal → deep teal. The floor is deliberately well clear of the
 // grey so "some coverage" never washes out into "not started".
 const RAMP_FROM = [0x8c, 0xcd, 0xd9]; // light teal
@@ -71,6 +103,17 @@ function scoreColor(score: number | undefined): string {
   return `rgb(${ch(0)}, ${ch(1)}, ${ch(2)})`;
 }
 
+function electionStateColor(s: StateElection | undefined): string {
+  if (!s) return NOT_STARTED; // no upcoming election
+  return scoreColor(s.coverage);
+}
+
+function electionCountyColor(c: CountyElection | undefined): string {
+  if (!c) return NOT_STARTED;
+  if (c.status === 'unknown') return NO_RACE_DATA;
+  return scoreColor(c.coverage <= 0 ? 0.01 : c.coverage); // 0%-covered still reads as teal floor, not grey
+}
+
 const LEVEL_LABEL: Record<MapLevel, string> = { county: 'County govt', local: 'City / Town', school: 'School District' };
 
 // ComposableMap viewBox dimensions — used to fit a state to the viewport.
@@ -79,11 +122,21 @@ const MAP_H = 600;
 
 // ── component ─────────────────────────────────────────────────────────────────
 export function CoverageMapPage() {
+  // ── completeness mode state ──────────────────────────────────────────────
   const [states, setStates] = useState<StateScore[]>([]);
   const [selected, setSelected] = useState<{ fips: string; name: string; code?: string } | null>(null);
   const [counties, setCounties] = useState<CountyScore[]>([]);
   const [selectedCounty, setSelectedCounty] = useState<CountyScore | null>(null);
-  const [hover, setHover] = useState<{ name: string; score?: number } | null>(null);
+
+  // ── elections mode state ─────────────────────────────────────────────────
+  const [metric, setMetric] = useState<Metric>('completeness');
+  const [elecStates, setElecStates] = useState<StateElection[]>([]);
+  const [elecCounties, setElecCounties] = useState<CountyElection[]>([]);
+  const [elecDate, setElecDate] = useState<{ date: string; type: string } | null>(null);
+  const [selectedElecCounty, setSelectedElecCounty] = useState<CountyElection | null>(null);
+
+  // ── shared state ─────────────────────────────────────────────────────────
+  const [hover, setHover] = useState<{ name: string; score?: number; noRaceData?: boolean } | null>(null);
   const [center, setCenter] = useState<[number, number]>([-96, 38]);
   const [zoom, setZoom] = useState(1);
   const [error, setError] = useState<string | null>(null);
@@ -119,7 +172,7 @@ export function CoverageMapPage() {
     setZoom(Math.min(12, Math.max(1, k)));
   }, []);
 
-  // US-level scores (uncached, this aggregates every tracked state — can take ~10s)
+  // US-level completeness scores (uncached — can take ~10s on first load)
   useEffect(() => {
     setStatesLoading(true);
     apiFetch<{ states: StateScore[] }>(`/admin/coverage/map?level=state`)
@@ -127,6 +180,16 @@ export function CoverageMapPage() {
       .catch((err) => setError(err.message))
       .finally(() => setStatesLoading(false));
   }, []);
+
+  // US-level elections scores — fetched lazily when elections mode is first toggled on
+  useEffect(() => {
+    if (metric !== 'elections' || elecStates.length > 0) return;
+    setStatesLoading(true);
+    apiFetch<{ states: StateElection[] }>(`/admin/coverage/map?metric=elections&level=state`)
+      .then((res) => setElecStates(res.states))
+      .catch((err) => setError(err.message))
+      .finally(() => setStatesLoading(false));
+  }, [metric, elecStates.length]);
 
   const stateByFips = useMemo(() => {
     const m = new Map<string, StateScore>();
@@ -140,27 +203,70 @@ export function CoverageMapPage() {
     return m;
   }, [counties]);
 
+  const elecStatesByFips = useMemo(() => new Map(elecStates.map((s) => [s.fips, s])), [elecStates]);
+  const elecCountiesByFips = useMemo(() => new Map(elecCounties.map((c) => [c.fips, c])), [elecCounties]);
+
+  // Fetch counties for the given state code under the current metric.
+  // Extracted so it can be called both from enterState and from the
+  // metric-toggle effect (re-fetch when the user flips completeness ↔ elections
+  // while already drilled into a state).
+  const loadCounties = useCallback((code: string) => {
+    if (metric === 'completeness') {
+      setLoading(true);
+      apiFetch<{ counties: CountyScore[] }>(`/admin/coverage/map?level=county&state=${code}`)
+        .then((res) => setCounties(res.counties))
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false));
+    } else {
+      setLoading(true);
+      apiFetch<{ election_date: string | null; election_type: string | null; counties: CountyElection[] }>(
+        `/admin/coverage/map?metric=elections&level=county&state=${code}`,
+      )
+        .then((res) => {
+          setElecCounties(res.counties);
+          setElecDate(res.election_date ? { date: res.election_date, type: res.election_type ?? '' } : null);
+        })
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false));
+    }
+  }, [metric]);
+
   const enterState = useCallback((fips: string, name: string, geo: unknown) => {
-    const code = stateByFips.get(fips)?.code;
+    const code = metric === 'completeness'
+      ? stateByFips.get(fips)?.code
+      : elecStatesByFips.get(fips)?.code ?? stateByFips.get(fips)?.code;
     setSelected({ fips, name, code });
     setSelectedCounty(null);
+    setSelectedElecCounty(null);
     setHover(null);
     fitToFeature(geo); // frame the state using its projected bounds
+
     if (!code) {
       setCounties([]);
       return;
     }
-    setLoading(true);
-    apiFetch<{ counties: CountyScore[] }>(`/admin/coverage/map?level=county&state=${code}`)
-      .then((res) => setCounties(res.counties))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, [stateByFips, fitToFeature]);
+    loadCounties(code);
+  }, [metric, stateByFips, elecStatesByFips, fitToFeature, loadCounties]);
+
+  // Re-fetch counties when the user flips the metric toggle while already
+  // drilled into a state. The US-level elections lazy fetch handles the US
+  // view separately, so this effect is only needed when a state is selected.
+  useEffect(() => {
+    if (selected?.code) loadCounties(selected.code);
+    // Re-fetch the selected state's counties when the metric flips. Deliberately
+    // keyed on [metric] only: loadCounties already closes over the current metric,
+    // and selected.code is only read synchronously here (never in cleanup), so the
+    // omitted deps are safe.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [metric]);
 
   const backToUS = useCallback(() => {
     setSelected(null);
     setCounties([]);
     setSelectedCounty(null);
+    setElecCounties([]);
+    setElecDate(null);
+    setSelectedElecCounty(null);
     setHover(null);
     setCenter([-96, 38]);
     setZoom(1);
@@ -178,6 +284,18 @@ export function CoverageMapPage() {
           >
             ← Table view
           </Link>
+          {/* Metric toggle */}
+          <div className="inline-flex overflow-hidden rounded-md border border-gray-300 text-xs dark:border-gray-600">
+            {(['completeness', 'elections'] as Metric[]).map((m) => (
+              <button
+                key={m}
+                onClick={() => { setMetric(m); setSelectedCounty(null); setSelectedElecCounty(null); }}
+                className={`px-2.5 py-1 font-medium capitalize ${metric === m ? 'bg-ev-teal text-white dark:bg-ev-teal-light dark:text-gray-900' : 'text-gray-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-800'}`}
+              >
+                {m}
+              </button>
+            ))}
+          </div>
         </div>
         <nav className="text-sm text-gray-500 dark:text-gray-400">
           <button onClick={backToUS} className="hover:text-ev-teal dark:hover:text-ev-teal-light">
@@ -193,6 +311,12 @@ export function CoverageMapPage() {
             <>
               <span className="px-1.5">›</span>
               <span className="font-medium text-gray-900 dark:text-white">{selectedCounty.name}</span>
+            </>
+          )}
+          {metric === 'elections' && selectedElecCounty && (
+            <>
+              <span className="px-1.5">›</span>
+              <span className="font-medium text-gray-900 dark:text-white">{selectedElecCounty.name}</span>
             </>
           )}
         </nav>
@@ -228,17 +352,19 @@ export function CoverageMapPage() {
                       projRef.current = projection;
                       return geographies.map((geo) => {
                         const sc = stateByFips.get(geo.id as string);
+                        const es = elecStatesByFips.get(geo.id as string);
+                        const fill = metric === 'elections' ? electionStateColor(es) : scoreColor(sc?.score);
                         return (
                           <Geography
                             key={geo.rsmKey}
                             geography={geo}
-                            onMouseEnter={() => setHover({ name: geo.properties.name, score: sc?.score })}
+                            onMouseEnter={() => setHover({ name: geo.properties.name, score: metric === 'elections' ? es?.coverage : sc?.score })}
                             onMouseLeave={() => setHover(null)}
                             onClick={() => enterState(geo.id as string, geo.properties.name, geo)}
                             style={{
-                              default: { fill: scoreColor(sc?.score), stroke: '#fff', strokeWidth: 0.5, outline: 'none' },
-                              hover: { fill: scoreColor(sc?.score), stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
-                              pressed: { fill: scoreColor(sc?.score), outline: 'none' },
+                              default: { fill, stroke: '#fff', strokeWidth: 0.5, outline: 'none' },
+                              hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
+                              pressed: { fill, outline: 'none' },
                             }}
                           />
                         );
@@ -254,18 +380,34 @@ export function CoverageMapPage() {
                         .filter((geo) => (geo.id as string).startsWith(selected.fips))
                         .map((geo) => {
                           const cs = countyByFips.get(geo.id as string);
-                          const isSel = selectedCounty?.fips === geo.id;
+                          const ec = elecCountiesByFips.get(geo.id as string);
+                          const fill = metric === 'elections' ? electionCountyColor(ec) : scoreColor(cs?.score);
+                          const isSelCompleteness = selectedCounty?.fips === geo.id;
+                          const isSelElections = selectedElecCounty?.fips === geo.id;
+                          const isSel = metric === 'elections' ? isSelElections : isSelCompleteness;
                           return (
                             <Geography
                               key={geo.rsmKey}
                               geography={geo}
-                              onMouseEnter={() => setHover({ name: geo.properties.name, score: cs?.score })}
+                              onMouseEnter={() => setHover({
+                                name: geo.properties.name,
+                                score: metric === 'elections'
+                                  ? (ec?.status === 'unknown' ? undefined : ec?.coverage)
+                                  : cs?.score,
+                                noRaceData: metric === 'elections' ? ec?.status === 'unknown' : false,
+                              })}
                               onMouseLeave={() => setHover(null)}
-                              onClick={() => cs && setSelectedCounty(cs)}
+                              onClick={() => {
+                                if (metric === 'elections') {
+                                  setSelectedElecCounty(ec ?? null);
+                                } else {
+                                  if (cs) setSelectedCounty(cs);
+                                }
+                              }}
                               style={{
-                                default: { fill: scoreColor(cs?.score), stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
-                                hover: { fill: scoreColor(cs?.score), stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: cs ? 'pointer' : 'default' },
-                                pressed: { fill: scoreColor(cs?.score), outline: 'none' },
+                                default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
+                                hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: (metric === 'elections' ? ec : cs) ? 'pointer' : 'default' },
+                                pressed: { fill, outline: 'none' },
                               }}
                             />
                           );
@@ -283,7 +425,9 @@ export function CoverageMapPage() {
               {hover ? (
                 <>
                   <span className="font-medium">{hover.name}</span>
-                  {hover.score != null ? (
+                  {hover.noRaceData ? (
+                    <span className="ml-2 text-gray-400">no race data</span>
+                  ) : hover.score != null ? (
                     <span className="ml-2 tabular-nums text-gray-500 dark:text-gray-400">{hover.score}%</span>
                   ) : (
                     <span className="ml-2 text-gray-400">not started</span>
@@ -293,28 +437,51 @@ export function CoverageMapPage() {
                 <span className="text-gray-400">{selected ? 'Click a county for detail' : 'Click a state to drill in'}</span>
               )}
             </div>
-            <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
-              <span className="inline-flex items-center gap-1.5">
-                <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NOT_STARTED }} />
-                not started
-              </span>
-              <span className="inline-flex items-center gap-1.5">
-                <span>low</span>
-                <div
-                  className="h-2 w-24 rounded-full"
-                  style={{
-                    background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(20)}, ${scoreColor(45)}, ${scoreColor(75)}, ${scoreColor(100)})`,
-                  }}
-                />
-                <span>high</span>
-              </span>
-            </div>
+            {metric === 'elections' ? (
+              <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                {elecDate && (
+                  <span className="font-medium capitalize text-gray-600 dark:text-gray-300">
+                    {elecDate.type} · {elecDate.date}
+                  </span>
+                )}
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NO_RACE_DATA }} />
+                  no race data
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span>low</span>
+                  <div
+                    className="h-2 w-24 rounded-full"
+                    style={{ background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(45)}, ${scoreColor(100)})` }}
+                  />
+                  <span>high</span>
+                </span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                <span className="inline-flex items-center gap-1.5">
+                  <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NOT_STARTED }} />
+                  not started
+                </span>
+                <span className="inline-flex items-center gap-1.5">
+                  <span>low</span>
+                  <div
+                    className="h-2 w-24 rounded-full"
+                    style={{
+                      background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(20)}, ${scoreColor(45)}, ${scoreColor(75)}, ${scoreColor(100)})`,
+                    }}
+                  />
+                  <span>high</span>
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
         {/* Detail panel */}
         <div className="lg:col-span-1">
-          {!selected && (
+          {/* Completeness: tracked states list (no state selected) */}
+          {metric === 'completeness' && !selected && (
             <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
               <h2 className="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Tracked states</h2>
               <ul className="space-y-1 text-sm">
@@ -329,7 +496,24 @@ export function CoverageMapPage() {
             </div>
           )}
 
-          {selected && !selectedCounty && (
+          {/* Elections: states with upcoming elections (no state selected) */}
+          {metric === 'elections' && !selected && (
+            <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+              <h2 className="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">Upcoming elections</h2>
+              <ul className="space-y-1 text-sm">
+                {elecStates.length === 0 && <li className="text-gray-400">{statesLoading ? 'Loading…' : 'No upcoming elections found.'}</li>}
+                {[...elecStates].sort((a, b) => b.coverage - a.coverage).map((s) => (
+                  <li key={s.fips} className="flex items-center justify-between">
+                    <span className="text-gray-700 dark:text-gray-300">{s.code}</span>
+                    <span className="tabular-nums text-gray-500 dark:text-gray-400">{s.coverage}%</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Completeness: counties list (state selected, no county selected) */}
+          {metric === 'completeness' && selected && !selectedCounty && (
             <div className="rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
               <h2 className="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 {selected.name} — counties
@@ -356,7 +540,8 @@ export function CoverageMapPage() {
             </div>
           )}
 
-          {selectedCounty && (
+          {/* Completeness: county detail panel */}
+          {metric === 'completeness' && selectedCounty && (
             <div className="rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
               <div className="flex items-center justify-between border-b border-gray-100 p-4 dark:border-gray-800">
                 <div>
@@ -412,6 +597,55 @@ export function CoverageMapPage() {
                   </tbody>
                 </table>
               </div>
+            </div>
+          )}
+
+          {/* Elections: race-list drill-down panel */}
+          {metric === 'elections' && selectedElecCounty && (
+            <div className="rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+              <div className="border-b border-gray-100 p-4 dark:border-gray-800">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-sm font-semibold text-gray-900 dark:text-white">{selectedElecCounty.name}</h2>
+                  <button
+                    onClick={() => setSelectedElecCounty(null)}
+                    className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {selectedElecCounty.status === 'unknown'
+                    ? 'No races resolve to this county yet'
+                    : `${selectedElecCounty.coverage}% of races have candidates · ${selectedElecCounty.races.length} races`}
+                </p>
+              </div>
+              {selectedElecCounty.races.length > 0 && (
+                <div className="max-h-[26rem] overflow-auto">
+                  <table className="w-full text-sm">
+                    <thead className="sticky top-0 border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+                      <tr>
+                        {['Race', 'Seats', 'Candidates', ''].map((h) => (
+                          <th key={h} className="px-3 py-2 text-left font-medium text-gray-500 dark:text-gray-400">{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+                      {selectedElecCounty.races.map((r) => (
+                        <tr key={r.race_id} className="hover:bg-gray-50 dark:hover:bg-gray-800/40">
+                          <td className="px-3 py-2 text-gray-900 dark:text-white">{r.position_name}</td>
+                          <td className="px-3 py-2 tabular-nums text-gray-600 dark:text-gray-400">{r.seats}</td>
+                          <td className="px-3 py-2 tabular-nums text-gray-600 dark:text-gray-400">{r.candidate_count}</td>
+                          <td className="px-3 py-2">
+                            {r.candidate_count > 0
+                              ? <span className="text-emerald-600 dark:text-emerald-400">✓</span>
+                              : <span className="text-gray-300 dark:text-gray-600">✕</span>}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
           )}
         </div>

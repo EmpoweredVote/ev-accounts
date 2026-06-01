@@ -1,0 +1,175 @@
+/**
+ * electionsMapService.ts — "elections mode" for the coverage map.
+ *
+ * Recolors geographies by RACE COVERAGE (races with ≥1 candidate ÷ total) for each
+ * state's NEAREST upcoming election DATE. State % composites every race at that date
+ * (all levels); county % counts only races that resolve to the county. See
+ * docs/superpowers/specs/2026-05-31-elections-mode-design.md.
+ */
+import { pool } from './db.js';
+import { STATE_ABBR_TO_FIPS } from './treasuryService.js';
+import { toSlug, PLACE_STRIP, raceCoverage, resolveRaceCountyFips, classifyCounty, type RaceRow } from './electionsMap.js';
+
+export interface StateElection {
+  fips: string;
+  code: string;
+  election_date: string;
+  election_type: string;
+  coverage: number;
+  races_total: number;
+  races_covered: number;
+}
+
+export interface CountyElection {
+  fips: string;
+  name: string;
+  status: 'unknown' | 'scored';
+  coverage: number;
+  races: RaceRow[];
+}
+
+/** Nearest upcoming election date for a state (2-letter), or null. */
+export async function nextElectionDate(stateAbbr: string): Promise<{ date: string; type: string } | null> {
+  const { rows } = await pool.query<{ election_date: string; election_type: string }>(
+    `SELECT to_char(election_date,'YYYY-MM-DD') AS election_date, election_type
+       FROM essentials.elections
+      WHERE state = $1 AND election_date >= CURRENT_DATE
+      ORDER BY election_date, election_type
+      LIMIT 1`,
+    [stateAbbr],
+  );
+  return rows[0] ? { date: rows[0].election_date, type: rows[0].election_type } : null;
+}
+
+/** All races (any level) across every elections row on a given date for a state. */
+export async function racesForStateDate(stateAbbr: string, date: string): Promise<RaceRow[]> {
+  const { rows } = await pool.query<{
+    race_id: string; position_name: string; seats: number; candidate_count: string; ocd_id: string | null;
+  }>(
+    `SELECT r.id AS race_id, r.position_name, r.seats,
+            COUNT(rc.id) AS candidate_count, d.ocd_id
+       FROM essentials.elections e
+       JOIN essentials.races r ON r.election_id = e.id
+       LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+       LEFT JOIN essentials.offices o ON o.id = r.office_id
+       LEFT JOIN essentials.districts d ON d.id = o.district_id
+      WHERE e.state = $1 AND e.election_date = $2
+      GROUP BY r.id, r.position_name, r.seats, d.ocd_id`,
+    [stateAbbr, date],
+  );
+  return rows.map((r) => ({
+    race_id: r.race_id,
+    position_name: r.position_name,
+    seats: Number(r.seats),
+    candidate_count: Number(r.candidate_count),
+    ocd_id: r.ocd_id,
+  }));
+}
+
+/** county OCD → 5-digit FIPS for a state (FIPS string). */
+export async function countyOcdToFips(stateFips: string): Promise<Map<string, string>> {
+  const { rows } = await pool.query<{ ocd_id: string; geo_id: string }>(
+    `SELECT ocd_id, geo_id FROM essentials.geofence_boundaries
+      WHERE state = $1 AND mtfcc = 'G4020' AND ocd_id IS NOT NULL`,
+    [stateFips],
+  );
+  return new Map(rows.map((r) => [r.ocd_id, r.geo_id]));
+}
+
+/** place slug → county FIPS (largest boundary overlap). Places lack ocd_id, so slug from name. */
+export async function placeSlugToFips(stateFips: string): Promise<Map<string, string>> {
+  const { rows } = await pool.query<{ name: string; county_fips: string | null }>(
+    `SELECT p.name,
+       (SELECT c.geo_id FROM essentials.geofence_boundaries c
+         WHERE c.state = $1 AND c.mtfcc = 'G4020' AND ST_Intersects(c.geometry, p.geometry)
+         ORDER BY ST_Area(ST_Intersection(c.geometry, p.geometry)) DESC LIMIT 1) AS county_fips
+       FROM essentials.geofence_boundaries p
+      WHERE p.state = $1 AND p.mtfcc = 'G4110'`,
+    [stateFips],
+  );
+  const m = new Map<string, string>();
+  for (const r of rows) if (r.county_fips) m.set(toSlug(r.name, PLACE_STRIP), r.county_fips);
+  return m;
+}
+
+/** county FIPS → TIGER county name (for labels). */
+export async function countyNames(stateFips: string): Promise<Map<string, string>> {
+  const { rows } = await pool.query<{ geo_id: string; name: string }>(
+    `SELECT geo_id, name FROM essentials.geofence_boundaries WHERE state = $1 AND mtfcc = 'G4020'`,
+    [stateFips],
+  );
+  return new Map(rows.map((r) => [r.geo_id, r.name]));
+}
+
+const CACHE_TTL_MS = 10 * 60 * 1000;
+const cache = new Map<string, { at: number; data: unknown }>();
+function cached<T>(key: string, refresh: boolean, build: () => Promise<T>): Promise<T> {
+  const hit = cache.get(key);
+  if (!refresh && hit && Date.now() - hit.at < CACHE_TTL_MS) return Promise.resolve(hit.data as T);
+  return build().then((data) => { cache.set(key, { at: Date.now(), data }); return data; });
+}
+
+/** Lowercase 2-letter codes of states that have ≥1 upcoming election. */
+async function statesWithUpcomingElections(): Promise<string[]> {
+  const { rows } = await pool.query<{ state: string }>(
+    `SELECT DISTINCT state FROM essentials.elections WHERE election_date >= CURRENT_DATE`,
+  );
+  return rows.map((r) => r.state.toLowerCase());
+}
+
+/** US choropleth: race coverage for each state's nearest upcoming election. */
+export async function getElectionsStateScores(opts: { refresh?: boolean } = {}): Promise<StateElection[]> {
+  return cached('elections:us', !!opts.refresh, async () => {
+    const out: StateElection[] = [];
+    for (const code of await statesWithUpcomingElections()) {
+      const fips = STATE_ABBR_TO_FIPS[code];
+      if (!fips) continue;
+      const nd = await nextElectionDate(code.toUpperCase());
+      if (!nd) continue;
+      const races = await racesForStateDate(code.toUpperCase(), nd.date);
+      const covered = races.filter((r) => r.candidate_count > 0).length;
+      out.push({
+        fips, code,
+        election_date: nd.date, election_type: nd.type,
+        coverage: raceCoverage(races),
+        races_total: races.length, races_covered: covered,
+      });
+    }
+    return out;
+  });
+}
+
+/** County choropleth + race drill-down for one state's nearest upcoming election. */
+export async function getElectionsCountyScores(
+  stateCode: string,
+  opts: { refresh?: boolean } = {},
+): Promise<{ state: string; state_fips: string; election_date: string | null; election_type: string | null; counties: CountyElection[] } | null> {
+  const code = stateCode.toLowerCase();
+  const fips = STATE_ABBR_TO_FIPS[code];
+  if (!fips) return null;
+  return cached(`elections:county:${code}`, !!opts.refresh, async () => {
+    const nd = await nextElectionDate(code.toUpperCase());
+    if (!nd) return { state: code, state_fips: fips, election_date: null, election_type: null, counties: [] };
+    const [races, countyMap, placeMap, names] = await Promise.all([
+      racesForStateDate(code.toUpperCase(), nd.date),
+      countyOcdToFips(fips),
+      placeSlugToFips(fips),
+      countyNames(fips),
+    ]);
+    // bucket county-resolvable races by county fips
+    const byCounty = new Map<string, RaceRow[]>();
+    for (const r of races) {
+      const cf = resolveRaceCountyFips(r.ocd_id, countyMap, placeMap);
+      if (!cf) continue;
+      const arr = byCounty.get(cf) ?? [];
+      arr.push(r);
+      byCounty.set(cf, arr);
+    }
+    // every county in the state, classified (unknown if no resolvable races)
+    const counties: CountyElection[] = [...names.entries()].map(([cf, name]) => {
+      const c = classifyCounty(byCounty.get(cf) ?? []);
+      return { fips: cf, name, status: c.status, coverage: c.coverage, races: c.races };
+    }).sort((a, b) => a.name.localeCompare(b.name));
+    return { state: code, state_fips: fips, election_date: nd.date, election_type: nd.type, counties };
+  });
+}

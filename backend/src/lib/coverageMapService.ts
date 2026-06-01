@@ -35,6 +35,7 @@
 
 import { pool } from './db.js';
 import { listCoverageStates, readCoverageFile, type Tristate } from './coverageService.js';
+import { toSlug, PLACE_STRIP } from './electionsMap.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -118,16 +119,6 @@ function cached<T>(key: string, refresh: boolean, build: () => Promise<T>): Prom
   });
 }
 
-// TIGER name → OCD-style slug. Mirrors coverageService.toSlug (kept local to
-// avoid widening that module's export surface; keep the two in sync).
-function toSlug(name: string, strip: RegExp): string {
-  return name
-    .replace(strip, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '_')
-    .replace(/^_+|_+$/g, '');
-}
-const PLACE_STRIP = / (city|town)$/i;
 const SCHOOL_STRIP = / school district$/i;
 
 interface JurisStats {

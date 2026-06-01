@@ -103,11 +103,18 @@ jurisdictions inside it**:
 
 ---
 
-## Planned: "Elections mode" (not built yet)
+## Elections mode
 
-Candidates are intentionally **not** in the completeness score. The plan is a separate
-**elections toggle** on the map that recolors by election readiness instead of data
-completeness — e.g. % of races with candidates loaded, surfaced alongside the primary
-election date. This would read from `essentials.elections / races / race_candidates`
-(see the `research-utah-elections` skill) rather than the completeness axes above. Design
-is still open — see the team discussion / a future spec.
+Toggle the map to **Elections** to recolor by **race coverage** — `races with ≥1
+candidate ÷ total races` — for each state's **nearest upcoming election date** (all
+`elections` rows on that date, every level). State % composites all races; county %
+counts only races resolving to that county (`…/county:X` or `…/place:Y`, including nested sub-district races like `…/county:X/council_district:N`). Counties
+where no races resolve show **"no race data"** (a distinct neutral fill, not 0%); a
+state with no upcoming election is grey.
+
+- **Backend:** `electionsMapService.ts` (rollup + 10-min cache) + pure helpers in
+  `electionsMap.ts`. Endpoint: `GET /api/admin/coverage/map?metric=elections&level=state|county&state=<code>`.
+- **Data:** `essentials.elections / races / race_candidates`; a race maps to geography
+  via `races.office_id → offices.district_id → districts.ocd_id`. Races that don't
+  resolve to a county (federal / state / legislative-district) count toward the state %
+  only. `?refresh=1` busts the cache.
