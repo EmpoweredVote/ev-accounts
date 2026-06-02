@@ -46,23 +46,30 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-**ALWAYS fetch live topics fresh from the DB before every research run. Never use a hardcoded list — the topic set grows over time.**
+**ALWAYS fetch live topics AND their stance texts fresh from the DB before every research run. Never use a hardcoded list — the topic set grows over time.**
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT id, topic_key, title, short_title, question_text
-  FROM inform.compass_topics
-  WHERE is_live = true
-  ORDER BY topic_key
+  SELECT
+    t.id, t.topic_key, t.title, t.question_text,
+    json_agg(
+      json_build_object('value', s.value, 'text', s.text)
+      ORDER BY s.value
+    ) AS stances
+  FROM inform.compass_topics t
+  JOIN inform.compass_stances s ON s.topic_id = t.id
+  WHERE t.is_live = true
+  GROUP BY t.id, t.topic_key, t.title, t.question_text
+  ORDER BY t.topic_key
 \`);
 console.log(JSON.stringify(rows, null, 2));
 await pool.end();
 "
 ```
 
-Pass the **full output of this query** to each researcher agent prompt — topic_keys AND UUIDs. Never hardcode. As of 2026-05-16 there are 43 live topics; this number will grow.
+Pass the **full output of this query** to each researcher agent prompt — including the stance texts for every value. Never hardcode. As of 2026-05-16 there are 43 live topics; this number will grow.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
@@ -91,17 +98,51 @@ Only research these topics: [TOPIC_LIST]
 [If --topics was NOT specified:]
 Research all current policy topics.
 
-IMPORTANT — Use ONLY these exact topic_key values (fetched live from DB in STEP 0):
-[PASTE THE FULL JSON ROWS FROM THE TOPIC RESOLUTION QUERY HERE — topic_key AND id for every live topic]
+FIVE-CHAIRS FRAMING — READ BEFORE ASSIGNING ANY VALUE:
 
-The topic_key in your CSV output MUST exactly match one of these values.
+Each compass topic has five pre-written stances — one per position on the spoke. These
+aren't degree-of-agreement markers. They are five distinct, substantive positions a real
+person could hold, defend in a conversation, and point to a policy that reflects it.
+
+Think of them as five named chairs in a room. A politician's public record places them in
+one of those chairs. Your job is to find which chair fits the documented evidence — not to
+infer a chair from party affiliation or directional assumption.
+
+The spoke has no correct end. Value=1 is not "conservative" and value=5 is not
+"progressive" — the direction varies by topic. Read the written text at each value level
+for this topic. Find sources that document this politician's position. Match the
+documented record to the chair whose text fits.
+
+When a voter matches a politician on a topic, the system must be able to say exactly why:
+not "they both scored a 2 on Climate," but "they both support rapidly transitioning to
+renewable energy and phasing out fossil fuels by 2030." That claim requires your value
+assignment to be defensible with the specific written text — not just a directional
+approximation.
+
+Do NOT pick a value based on party expectation. Do NOT assume direction. For every stance
+you record, ask: "Does this politician's documented position match the EXACT TEXT at this
+value?" If not, pick a different value or skip the topic.
+
+TOPIC SCALE REFERENCE — assign values by matching to exact stance text:
+[PASTE THE FULL JSON OUTPUT FROM THE TOPIC RESOLUTION QUERY HERE — including id, topic_key, question_text, and the stances array with value+text for each of the 5 levels]
+
+Format each topic for the agent like this:
+  [topic_key] (id: [uuid])
+  Question: "[question_text]"
+    1 = "[stance text for value 1]"
+    2 = "[stance text for value 2]"
+    3 = "[stance text for value 3]"
+    4 = "[stance text for value 4]"
+    5 = "[stance text for value 5]"
+
+The topic_key in your CSV output MUST exactly match one of the topic_key values above.
 Do NOT invent your own topic_key slugs.
-Do NOT use any topic_key not in the above list — the list is fetched fresh each run.
+Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
 
 City-level topics to SKIP for state/federal candidates (unless explicitly requested):
 transportation-priorities, economic-development, homelessness-response, residential-zoning,
 city-sanitation, local-immigration, rent-regulation, growth-and-development, local-environment,
-public-safety-approach, jail-capacity, city-sanitation, judicial-*
+public-safety-approach, jail-capacity, judicial-*
 
 --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
 
@@ -113,7 +154,7 @@ TOOL RULE — CRITICAL:
 Other rules:
 - Skip any topic where you cannot find sufficient evidence
 - Every source URL must be real and verifiable — only include URLs you actually fetched successfully
-- Use the full 1-5 range based on evidence, not party affiliation
+- Use the full 1-5 range; match to stance text, not political alignment
 ```
 
 Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
