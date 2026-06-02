@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.5
-milestone_name: City Officials Expansion
-status: In progress
-stopped_at: 78-04 complete (2026-06-01)
-last_updated: "2026-06-01T00:00:00.000Z"
-last_activity: 2026-06-01 -- Phase 78-04 Berkeley stances complete (migration 256, 128 rows, CSTA-03 closed)
+milestone: v2.6
+milestone_name: Data Quality & Elections
+status: planning
+last_updated: "2026-06-02T18:43:57.876Z"
+last_activity: 2026-06-02
 progress:
-  total_phases: 34
-  completed_phases: 25
-  total_plans: 90
-  completed_plans: 78
-  percent: 74
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -21,71 +20,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 78 — city-stance-research
+**Current focus:** Phase 79 — gap-fill-audit
 **Last shipped:** Phase 76 complete 2026-05-22: 715 stance rows across 43 non-incumbent Senate candidates (migrations 197, 198, 207). Armstrong (OK) 14→17 stances, Husted (OH) 24→30 stances (migration 210). SRES-01, SRES-02, SRES-03 verified. James Byrd (WY, D) at 5 stances — documented floor case (no evidence available). v2.4 milestone complete.
 
 ## Current Position
 
-Phase: 78 (city-stance-research) — COMPLETE in DB; 78-05/78-06 admin pending
-**Next: Phase 79 (gap-fill audit) or fix CA Assembly/Senate orphan context rows (32 rows across 5 politicians)**
-
-**v2.5 City Officials Expansion — 4 phases (77–80), 18 requirements.**
-
-- Phase 77 (City Infrastructure): COMPLETE ✅
-- Phase 78 (City Stance Research): COMPLETE in DB — CSTA-01 partial (Matt Mahan only), CSTA-02 ✅ SD, CSTA-03 ✅ Berkeley, CSTA-04 ✅ Fremont; CSTA-05 passes for city officials (0 orphans); 78-04 SUMMARY pending write
-- Phase 79 (Gap-fill): NOT STARTED
-- Phase 80 (Campaign Finance): NOT STARTED
-
-**Beyond v2.5 (done in parallel sessions):**
-
-- Phase 82–84 (Multnomah County + smaller cities setup): COMPLETE ✅ (committed)
-- Phase 85 (Multnomah elections + discovery): COMPLETE ✅ migrations 251-252 (committed 2026-06-01)
-- Phase 99 (Elections page frontend): COMPLETE — human verify pending at /elections
-- CA Assembly stances (migration 233): COMPLETE ✅
-- CA State Senate stances (migration 234): COMPLETE ✅ (32 orphan context rows need fixing — Grayson 13, Niello 14, Elhawary/Zbur/Schiavo 1 each)
-- Elections Coverage Map mode (PR #18): MERGED ✅
-
-**Last migration applied: 252. Next migration: 253.**
-
-v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
-v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
-v2.2 roadmap: TIGER District Geofencing. 3 phases (69–71). ALL COMPLETE 2026-05-10. GEO-01 through GEO-14 shipped.
-v2.3 roadmap: US Senate Coverage. 3 phases (72–74). 8 requirements. ALL COMPLETE 2026-05-21. SINF-01–02, SENA-01–03, SSTA-01–03 all closed.
-v2.4 roadmap: 2026 Senate Candidates. 2 phases (75–76). 7 requirements. ALL COMPLETE 2026-05-22. RACE-01, CAND-01–03, SRES-01–03 all closed.
-v2.5 roadmap: City Officials Expansion. 4 phases (77–80). 18 requirements. PENDING.
-
-Phase 60 (Design Foundation) shipped 2026-04-25: 4/4 plans, DSGN-01–06 verified.
-Phase 61 (Auth Flow Restyle) shipped 2026-04-25: 5/5 plans, AUTH-01–06 verified.
-Phase 62 (Onboarding Restyle) shipped 2026-04-25: 3/3 plans, ONBD-01–05 verified.
-Phase 63 (Profile Page + Activity Feed) shipped 2026-04-27: API-01 + FIX-01 closed (63-01); PROF-01–06 completed in admin/src/pages/ProfilePage.tsx (login.empowered.vote/profile, built 2026-04-26). 63-02 closed as superseded — duplicate app/src profile page not needed; canonical profile is login.empowered.vote/profile.
-Phase 64 (InformLanding): SKIPPED 2026-05-10 — superseded by login.empowered.vote/profile.
-Phase 65 (Dashboard Redesign): SKIPPED 2026-05-10 — users go to login.empowered.vote/profile, not app.empowered.vote.
-Phase 66 (Inform Profiles Backend Foundation) shipped 2026-04-27: 3/3 plans, IBAK-01–06 verified. inform.inform_profiles table live, trigger active, backfill done, gem routing tier-branched, /me inform_profile field live, PATCH /location-hint live, signup_with_invite gem transfer deployed.
-Phase 67 (Login Hub + Inform Signup Flow) shipped 2026-04-27: 3/3 plans complete, LHUB-01–02 + ISUP-01–04 closed. 67-01: yellow "Create an Account" CTA + InformConstraintsModal on Login page. 67-02: InformSignup.tsx at /signup/inform — three-field form, yellow theming, posts to /api/auth/signup without invite_code. 67-03: display_name persisted to public.users on Inform signup path.
-Phase 68 (Yellow Inform Profile Page + Connected Explainer) shipped 2026-05-09: 2/2 plans, IPRO-01–06 + CEXP-01–03 verified. Yellow Inform profile branch complete — tier pill, compass stat, lock badges, location label, bottom CTA, ConnectedExplainerModal (full infographic with dark mode, CTA analytics, limitations flow). Connected/Empowered pills now also open modal. UAT: 10/10 passed.
-Phase 69 (TIGER Schema + Data Import): 2/2 plans complete 2026-05-10 — migrations 089, 090, 091 applied. GEO-01 through GEO-09 live. 172-row TIGER import (80 ca_assembly + 40 ca_senate + 52 us_house). tiger_geoid backfilled on all CA STATE_LOWER/STATE_UPPER/NATIONAL_LOWER rows. Verified 10/10 must-haves.
-Phase 70 (Geofencing Backend Integration): ALL 4 PLANS COMPLETE 2026-05-10. GEO-10 + GEO-11 shipped (70-01): cache_user_districts wired into set-location (Connected) and location-hint (Inform); GET /api/account/districts live. GEO-12 shipped (70-02): Path 0 TIGER fast path added to GET /representatives/me — reads connect.user_districts, joins essentials.districts on (tiger_geoid, district_type), no live PostGIS lookup for cached users; Path 1.5 gains opportunistic backfill so pre-Phase-70 users self-promote to Path 0. Redistricting tooling (70-03): migration 092 applied — essentials.recache_user_districts_for_user + _bulk live; backend/scripts/recache-user-districts.ts operator CLI with --dry-run/--before/--user flags. 70-04: POST /api/account/set-location live for Inform tier (geocoding + JSONB persist + fail-open district cache + { ok: true } response). Phase 70 complete.
-Phase 71 (School Districts + Profile Display): ALL 2 PLANS COMPLETE 2026-05-10. GEO-13 + GEO-14 shipped. Migration 093 applied — both resolve_user_districts and cache_user_districts now default to 6 layers (adds school_unified, school_elementary, school_secondary). CA school districts imported: 346 unified, 517 elementary, 112 secondary. GET /api/account/school-district endpoint live (204 on empty, 200 with { school_unified, school_elementary, school_secondary }). Path 0 layerTypeMap extended with SCHOOL_UNIFIED/SCHOOL_ELEMENTARY/SCHOOL_SECONDARY. Plan 71-02 COMPLETE (UAT approved): Location tab added to ProfilePage for all Connected users, SchoolDistrictSection component, legislative districts + City Council district display, school district Google search links, Connected-only recalibration form with force:true. Migration 094 applied — dropped ambiguous 3-arg cache_user_districts overload that caused "function is not unique" silent failures. v2.2 roadmap fully complete.
-
-Phase 72 (Senate Infrastructure) COMPLETE 2026-05-19: 1/1 plans, SINF-01 + SINF-02 verified. Migration 174 applied — essentials.districts.government_id column added, 46 government stubs (MA + 45 states) created, 45 NATIONAL_UPPER districts added (CA/IN/MA/ME/TX already existed), CA junk row deleted, IN orphan row deleted + Todd Young reassigned. 50 NATIONAL_UPPER districts total, all FK'd to government rows.
-Phase 74 (Stance Research + Ingestion) COMPLETE 2026-05-21: 15 research batches dispatched via research-stances skill. All 100 senators covered — 53 Republicans (batches 1–12 + Armstrong OK), 47 Democrats/Independents (batches 13–15). 1,006 Dem stances + Armstrong 14 stances pushed via typed push scripts. Armstrong (OK, appointed March 2026) replaced Mullin (resigned to become DHS Secretary). SSTA-01, SSTA-02, SSTA-03 closed.
-Phase 73 (Senator Records) COMPLETE 2026-05-19:
-  Plan 01: Migration 175 — 42 new senator rows (AK-MS, external_ids -400001 to -400042), 42 office rows, 42 photos (GitHub CDN). Bioguide correction: Cindy Hyde-Smith H001102→H001079.
-  Plan 02: Migration 176 — 48 new senator rows (MT-WY, external_ids -400043 to -400090), 48 office rows, 48 photos. Bill Hagerty bioguide H001099→H000601. Husted (OH) + Armstrong (OK) appointed flags set. MA/ME/TX photo no-ops (already have Wikipedia URLs). SENA-01, SENA-02, SENA-03 closed.
-  Final state: 100 senators, all 50 states × 2, 0 missing photos. Next migration: 177.
-
-Phase 75 (Race Catalog + Candidate Records) COMPLETE 2026-05-22: 1/1 plans. Migration 196 applied — 43 non-incumbent 2026 Senate candidate politicians + offices + photos. RACE-01, CAND-01–03 closed.
-Phase 76 (Candidate Stance Research) COMPLETE 2026-05-22: 4/4 plans. Migrations 197, 198, 207 (43 candidates, 715 stances) + migration 210 (Armstrong OK 14→17, Husted OH 24→30). SRES-01, SRES-02, SRES-03 closed. v2.4 milestone complete.
-
-Last activity: 2026-05-28 -- Phase 78 execution started
-
-**v1.9 Roles — SHIPPED 2026-04-06 ✅**
-8 phases, 19 plans, 17/17 requirements. Archived to `.planning/milestones/v1.9-ROADMAP.md`.
-
-**Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
-4 plans complete. Level-gated invite quota system with social accountability live.
-
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 ✅][v2.5 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 ✅ Phase 76 ✅ Phase 77 ✅ Phase 78 🔄 Phase 79 ⬜ Phase 80 ⬜ Phase 85 ✅ Phase 99 🔄
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-02 — Milestone v2.6 started
 
 ## Performance Metrics
 
@@ -392,6 +335,35 @@ Phase 66 (Inform Profiles Backend Foundation)
 | 74 — Stance Research + Ingestion | SSTA-01, SSTA-02, SSTA-03 | 3 |
 | **Total** | | **8 / 8** ✓ |
 
+### v2.6 Stance Accuracy Retro — Audit Findings (2026-06-02)
+
+Statistical audit across ~1,049 politicians, ~13,700 rows. ~204 flagged (1.5%). Problem is concentrated.
+
+**Confirmed systematic inversions — full re-research needed (Phase 81):**
+
+- Jeff Gonzalez (R, CA Assembly) — 17 flags, all stances read as progressive Democrat
+- Roger Niello (R, CA State Sen.) — 11 flags, same pattern
+- Angie Nixon (D, FL Senate cand.) — 10 flags, every topic locked at =4
+- Alex Vindman (D, FL Senate cand.) — 9 flags, abortion=5 religious-freedom=5
+- Tim Grayson (D, CA State Sen.) — 9 flags, civil-rights=5 climate=5 SSM=5
+- Ashley Hinson (R, IA Senate cand.) — 9 flags, abortion=2 climate=2 immigration=2
+- Derek Dooley (R, GA Senate cand.) — 9 flags, same pattern as Hinson
+- Adam Hinojosa (listed as D) — 6 flags, values look Republican — party tag may be wrong
+
+**Legitimate despite flags — do NOT correct:**
+
+- Collins, Murkowski, Tillis, Young, Capito: SSM=2 ✓ (all voted for Respect for Marriage Act)
+- Gary VanDeaver (R-TX): school-vouchers=2 ✓ (voted against TX voucher bills)
+
+**Ukraine-support: 26 Republicans at value=2** — needs individual verification (Phase 82)
+**Party string inconsistency:** "Democrat" vs "Democratic" — needs normalization (Phase 82)
+
+**Proposed v2.6 structure:**
+
+- Phase 81: Re-research 8 confirmed inversions
+- Phase 82: Borderline cases + ukraine-support audit + party string cleanup
+- Phase 83: Embed "five chairs" framing into researcher agent system prompt
+
 ### Open Blockers
 
 None for v2.5 start.
@@ -430,6 +402,6 @@ None for v2.5 start.
 
 ## Session Continuity
 
-Last session: 2026-06-02T00:50:40.725Z
-Stopped at: context exhaustion at 76% (2026-06-02)
+Last session: 2026-06-02T18:30:59.631Z
+Stopped at: context exhaustion at 77% (2026-06-02)
 Resume file: None

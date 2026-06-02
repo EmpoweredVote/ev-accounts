@@ -86,24 +86,18 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
-### Active (v2.0 + v2.1)
+### Active (v2.6)
 
-**Milestone: v2.0 Civic Account Experience** (Phases 60–65, in progress) — First complete UX overhaul. Match the colleague design system (dark navy, blue CTA) across the full user-facing flow: WelcomeScreen, signup, onboarding, profile, InformLanding, and dashboard.
+**Milestone: v2.6 Data Quality & Elections** (Phases 87+) — Full stance accuracy audit with individual reassessment per flagged politician, gap-fill sparse coverage, campaign finance layer, and elections page end-to-end.
 
-- [x] DSGN-01–06: Design foundation — `ev-blue`/`ev-navy` tokens + shared AuthCard, AuthInput, Button, StepProgress, AppNav components ✓ Phase 60
-- [x] AUTH-01–06: Auth flow restyle — WelcomeScreen, SignupPage (with legal name trust copy), check-email, LoginPage ✓ Phase 61
-- [x] ONBD-01–05: Onboarding restyle — civic name, location, you're connected steps in new progress bar shell ✓ Phase 62
-- [ ] PROF-01–06, API-01, FIX-01: Profile page redesign + activity feed — Phase 63 in progress
-- [ ] LAND-01–05: InformLanding — unauthenticated homepage; invitational, not a funnel — Phase 64
-- [ ] DASH-01–04: Dashboard redesign — continue card, stats bar, tiered feature grid — Phase 65
-
-**Milestone: v2.1 Inform Account Tier** (Phases 66–68, planned 2026-04-27) — Make the Inform tier a first-class experience. Low-friction signup (email + password + display name), yellow profile page, tier-aware login hub, and a Connected Account explainer that invites without pressuring.
-
-- [ ] IBAK-01–06: inform.inform_profiles schema + yellow gem routing + /me update
-- [ ] LHUB-01–02: Login hub redesign — login form + "Create an Account" CTA + Inform constraints modal
-- [ ] ISUP-01–04: Inform signup flow — display name + email + password, yellow check-email screen, post-confirm redirect
-- [ ] IPRO-01–06: Yellow Inform profile page — tier-aware, wide-border mold, observable Connected tiles
-- [ ] CEXP-01–03: Connected Account explainer — Inform pill dialog, invite code path
+- [ ] SACC-01–NN: Stance accuracy audit — ~204 flagged politicians individually reassessed with real sources; 8 confirmed inversions prioritized first; ukraine-support (26 Rs) individually verified; party string normalization
+- [ ] SACC-AG: Five-chairs framing baked into researcher agent system prompt
+- [ ] GAPF-01: Audit all existing politicians for < 10 stances; produce prioritized target list — carried from v2.5
+- [ ] GAPF-02: Research and ingest missing stances for all identified targets — carried from v2.5
+- [ ] FINA-01: finance_summary JSONB column added to inform.politicians; migration applied — carried from v2.5
+- [ ] FINA-02: Finance data ingested for city officials + top-priority existing politicians (FEC/FPPC) — carried from v2.5
+- [ ] FINA-03: Finance summary surfaced on GET /api/essentials/politicians; backward-compatible — carried from v2.5
+- [ ] ELEC-01–NN: Elections page human verification + issue resolution; elections feature declared complete
 
 ### Deferred to v2.0
 
@@ -225,15 +219,19 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.5 City Officials Expansion (Phases 77+)
+## Current Milestone: v2.6 Data Quality & Elections (Phases 87+)
 
-**Goal:** Expand local government coverage to four CA cities (San Jose, San Diego, Berkeley, Fremont) with full city council + key roles, gap-fill missing topics for politicians already in DB, and add a campaign finance summary layer (FEC/FPPC) to politician profiles.
+**Goal:** Full stance accuracy audit with individual reassessment per flagged politician, close coverage gaps across existing politicians, add a campaign finance summary layer, and ship the elections page end-to-end.
 
 **Target features:**
-- Full city council + key roles for San Jose, San Diego, Berkeley, and Fremont (comparable to SF batch)
-- Sourced stance data for all new city officials across all 43 compass topics
-- Gap-fill missing topic stances for politicians already in DB (sparse coverage)
-- Campaign finance summary display — top donors and total raised per politician (FEC / FPPC data)
+- Stance accuracy — full audit of ~204 flagged politicians; each individually reassessed with real sources; 8 confirmed inversions prioritized; ukraine-support (26 Rs) individually verified; party string normalization; five-chairs framing in researcher agent
+- Gap-fill — audit all politicians < 10 stances, research and ingest missing stances (carried from v2.5)
+- Campaign finance — finance_summary JSONB on politicians, FEC/FPPC ingestion, backward-compatible API (carried from v2.5)
+- Elections page — human-verify Phase 99 output, fix any found issues, declare elections feature complete
+
+## Previous Milestone: v2.5 City Officials Expansion (Phases 77–78, shipped 2026-06-02)
+
+**Goal:** Expand local government coverage to four CA cities (San Jose, San Diego, Berkeley, Fremont) with full city council + key roles and sourced stance data for all new officials. Phases 79 (gap-fill) and 80 (campaign finance) carried forward into v2.6.
 
 ## Previous Milestone: v2.4 2026 Senate Candidates (Phases 75–76, shipped 2026-05-22)
 
@@ -258,4 +256,4 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 **Status:** Phases 60–63 shipped. Phases 64–65 pending (InformLanding + Dashboard Redesign).
 
 ---
-*Last updated: 2026-05-22 after v2.5 milestone start*
+*Last updated: 2026-06-02 after v2.6 milestone start*
