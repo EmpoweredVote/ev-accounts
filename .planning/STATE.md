@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.6
-milestone_name: Platform Consolidation
-status: Milestone complete
-stopped_at: paused after Plan 03 complete (2026-06-01)
-last_updated: "2026-06-01T17:30:00.000Z"
-last_activity: 2026-06-01 -- Phase 78 Plan 03 (SD stances) complete; migrations 244+250 applied; CSTA-02 closed
+milestone: v2.5
+milestone_name: City Officials Expansion
+status: In progress
+stopped_at: 78-04 complete (2026-06-01)
+last_updated: "2026-06-01T00:00:00.000Z"
+last_activity: 2026-06-01 -- Phase 78-04 Berkeley stances complete (migration 256, 128 rows, CSTA-03 closed)
 progress:
-  total_phases: 10
-  completed_phases: 8
-  total_plans: 30
-  completed_plans: 29
-  percent: 80
+  total_phases: 34
+  completed_phases: 25
+  total_plans: 90
+  completed_plans: 78
+  percent: 74
 ---
 
 # Project State
@@ -26,9 +26,26 @@ See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
 
 ## Current Position
 
-Phase: 78 (city-stance-research) — EXECUTING
-Plan: 1 of 6
-**v2.5 City Officials Expansion — roadmap created 2026-05-22. 4 phases (77–80), 18 requirements. Run /gsd:plan-phase 77 to begin.**
+Phase: 78 (city-stance-research) — COMPLETE in DB; 78-05/78-06 admin pending
+**Next: Phase 79 (gap-fill audit) or fix CA Assembly/Senate orphan context rows (32 rows across 5 politicians)**
+
+**v2.5 City Officials Expansion — 4 phases (77–80), 18 requirements.**
+
+- Phase 77 (City Infrastructure): COMPLETE ✅
+- Phase 78 (City Stance Research): COMPLETE in DB — CSTA-01 partial (Matt Mahan only), CSTA-02 ✅ SD, CSTA-03 ✅ Berkeley, CSTA-04 ✅ Fremont; CSTA-05 passes for city officials (0 orphans); 78-04 SUMMARY pending write
+- Phase 79 (Gap-fill): NOT STARTED
+- Phase 80 (Campaign Finance): NOT STARTED
+
+**Beyond v2.5 (done in parallel sessions):**
+
+- Phase 82–84 (Multnomah County + smaller cities setup): COMPLETE ✅ (committed)
+- Phase 85 (Multnomah elections + discovery): COMPLETE ✅ migrations 251-252 (committed 2026-06-01)
+- Phase 99 (Elections page frontend): COMPLETE — human verify pending at /elections
+- CA Assembly stances (migration 233): COMPLETE ✅
+- CA State Senate stances (migration 234): COMPLETE ✅ (32 orphan context rows need fixing — Grayson 13, Niello 14, Elhawary/Zbur/Schiavo 1 each)
+- Elections Coverage Map mode (PR #18): MERGED ✅
+
+**Last migration applied: 252. Next migration: 253.**
 
 v2.0 roadmap: 6 phases (60–65), 34 requirements. Phase 60–63 shipped. Phase 64–65 pending.
 v2.1 roadmap: created 2026-04-27. 3 phases (66–68), 21 requirements. ALL COMPLETE.
@@ -68,7 +85,7 @@ Last activity: 2026-05-28 -- Phase 78 execution started
 **Phase 59 (Referral Code System) — SHIPPED 2026-04-08 ✅**
 4 plans complete. Level-gated invite quota system with social accountability live.
 
-Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 ✅][v2.5 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 ✅ Phase 76 ✅ Phase 77 ⬜ Phase 78 ⬜ Phase 79 ⬜ Phase 80 ⬜
+Progress: [v1.0 ✅][v1.1 ✅][v1.2 ✅][v1.3 ✅][v1.4 ✅][v1.5 ✅][v1.6 🔄][v1.7 ✅][v1.8 ✅][v1.9 ✅][v2.0 ✅][v2.1 ✅][v2.2 ✅][v2.3 ✅][v2.4 ✅][v2.5 🔄] Phase 60 ✅ Phase 61 ✅ Phase 62 ✅ Phase 63 ✅ Phase 64 — Phase 65 — Phase 66 ✅ Phase 67 ✅ Phase 68 ✅ Phase 69 ✅ Phase 70 ✅ Phase 71 ✅ Phase 72 ✅ Phase 73 ✅ Phase 74 ✅ Phase 75 ✅ Phase 76 ✅ Phase 77 ✅ Phase 78 🔄 Phase 79 ⬜ Phase 80 ⬜ Phase 85 ✅ Phase 99 🔄
 
 ## Performance Metrics
 
@@ -413,6 +430,6 @@ None for v2.5 start.
 
 ## Session Continuity
 
-Last session: 2026-06-01T16:58:30.800Z
-Stopped at: context exhaustion at 79% (2026-06-01)
+Last session: 2026-06-02T00:50:40.725Z
+Stopped at: context exhaustion at 76% (2026-06-02)
 Resume file: None
