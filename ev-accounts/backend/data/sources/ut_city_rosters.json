@@ -1,0 +1,123 @@
+[
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:salt_lake_city",
+    "city_name": "Salt Lake City",
+    "source": "featureserver",
+    "source_url": "https://services.arcgis.com/mMBpeYj0vPFotzbe/arcgis/rest/services/Salt_Lake_City_Council_Districts/FeatureServer/1/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "fields": {
+      "district_number": "CITYCOUNCIL_ID",
+      "council_member": "CITYCOUNCIL_MEMBER",
+      "email": null,
+      "phone": null,
+      "photo": null
+    },
+    "geo_id_template": "ocd-division/country:us/state:ut/place:salt_lake_city/ward:{N}",
+    "status": "active",
+    "expected_seats": 7,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "FeatureServer field CITYCOUNCIL_MEMBER verified in 132 arcgis_sources.json. Mayor sourced via data/rosters/manual/salt_lake_city_mayor.tsv (loader auto-resolves geo_id to jurisdiction_id for LOCAL_EXEC). W-3 cleanup 2026-05-14: removed dead `mayor_geo_id` field \u2014 loader derives mayor geo_id from jurisdiction_id."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:provo",
+    "city_name": "Provo",
+    "source": "featureserver",
+    "source_url": "https://gispublicweb.provo.org/ArcGIS/rest/services/Council/Council_Districts/FeatureServer/3/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+    "fields": {
+      "district_number": "DISTRICT",
+      "council_member": "COUNCIL_MEMBER",
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "photo": "picture",
+      "term_expires": "TERM_EXPIRES"
+    },
+    "geo_id_template": "ocd-division/country:us/state:ut/place:provo/ward:{N}",
+    "status": "active",
+    "expected_seats": 7,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "Provo FeatureServer (132 verified path) \u2014 COUNCIL_MEMBER, EMAIL, PHONE, TERM_EXPIRES, picture. 5 ward + 2 at-large. Mayor sourced via data/rosters/manual/provo_mayor.tsv (loader derives geo_id from jurisdiction_id)."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:ogden",
+    "city_name": "Ogden",
+    "source": "scrape",
+    "source_url": "TBD \u2014 W2 source-audit task",
+    "status": "manual_csv",
+    "notes": "LOW confidence; likely manual TSV. RESEARCH \u00a7External Sources lists Ogden in 'likely candidates'."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
+    "city_name": "Sandy",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence; manual TSV expected; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_valley_city",
+    "city_name": "West Valley City",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_jordan",
+    "city_name": "West Jordan",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:orem",
+    "city_name": "Orem",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:layton",
+    "city_name": "Layton",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lehi",
+    "city_name": "Lehi",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:st_george",
+    "city_name": "St. George",
+    "source": "scrape",
+    "source_url": "TBD",
+    "status": "manual_csv",
+    "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:saratoga_springs",
+    "city_name": "Saratoga Springs",
+    "source": "scrape",
+    "source_url": "https://www.saratogasprings-ut.gov/437/Mayor-City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats, no ward subdivisions). Christopher Carn elected Mayor Nov 2025 (term Jan 2026-Jan 2030). Edon Davenport appointed Jan 2026 to fill vacancy (term ends Jan 2028). Photo URLs use CivicPlus ImageRepository pattern. All officials share main city hall phone 801-766-9793. Source: saratogasprings-ut.gov/437/Mayor-City-Council"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:santaquin",
+    "city_name": "Santaquin",
+    "source": "scrape",
+    "source_url": "https://www.santaquin.gov/citycouncil",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Fifth-class city. Mayor Dan Olson + Siddoway/Adcock re-elected unopposed Nov 2025 (terms Jan 2026-Jan 2030). Keel/Del Rosario/Mecham elected Nov 2023 (terms Jan 2024-Jan 2028). CAUTION: mayor photo URL contains filename vanausdal.jpg (CivicPlus CMS artifact from prior official) but correctly serves Olson photo \u2014 verify visually after rehost. Source: santaquin.gov/citycouncil"
+  }
+]
