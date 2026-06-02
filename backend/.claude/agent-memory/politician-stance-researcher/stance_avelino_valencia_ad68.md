@@ -1,0 +1,8 @@
+---
+name: stance_avelino_valencia_ad68
+description: Valencia(CA-AD68-D,OrangeCounty/Anaheim/GardenGrove/SantaAna,elected-2022,AssemblyLatinoCaucus-cofounder,running-CA-State-Senate-2026)=22 topics researched
+metadata:
+  type: reference
+---
+
+Valencia(CA-AD68-D,OrangeCounty/Anaheim/GardenGrove/SantaAna,elected-2022,AssemblyLatinoCaucus-cofounder,running-CA-State-Senate-2026)=22 topics; abortion=2(AYE-AB54+AYE-AB2099),ai-reg=3(NVR-SB1047+NVR-AB1018+AYE-SB942),campaign=2(AYE-SB42),childcare=2(AYE-AB752+AYE-AB2258),civil=2(AYE-SB403+AYE-AB1078),climate=2(AYE-AB900+AYE-AB2716+AYE-AB942),data-centers=3(AYE-AB93+NVR-AB1577),deportation=2(AYE-AB4+AYE-AB2164+AYE-AB2230),fossil=3(NVR-AB3233+AYE-AB2716),healthcare=2(AYE-AB4+AYE-SB729+AYE-AB618),homelessness=2(AYE-AB1285+AYE-AB1817+AYE-AB348),housing=2(AYE-AB1287+AYE-SB684+AYE-AB1840+AYE-AB609+AYE-AB2480),immigration=2(AYE-AB4+AYE-AB2240+AYE-AB2164),jail=2(AYE-AB1360-HopeCA-treatment-over-incarceration),medicare=2(AYE-SB729+AYE-AB618+AYE-AB1629),misinfo=2(AYE-AB886+AYE-AB3211+AYE-SB942),redistricting=2(AYE-AB1248),ssm=1(AYE-ACA5-67-0),tariffs=1(NVR-SJR7-2023+AYE-AJR14-2024+AYE-SJR7-2026+AYE-AJR14-2025),taxes=2(AYE-ACA13),trans=2(AYE-SB760+AYE-AB957),voting=2(AYE-SB1174+AYE-SB3+AYE-AB2230); SKIPPED:school-vouchers,ukraine,religious-freedom,social-security,public-safety,local-topics(city-level); ballotpedia=EMPTY; wikipedia=career-only; ad68.asmdc.org=ECONNREFUSED; leginfo-billVotesClient=PRIMARY; NOTABLE:NVR-AB3233(fossil-fuels-ban)-one-of-few-OC-Dems-not-supporting; NVR-SB1047+NVR-AB1018(AI-abstentions); politician_id=a1467b58-9cc8-4611-a03e-07defc1679bf

@@ -1,0 +1,8 @@
+---
+name: stance_susan_rubio_sd22
+description: Rubio(CA-SD22-D,WestCovina/SanGabrielValley,elected-2018,Senate-Insurance-Chair,domestic-violence-focus)=21 topics researched
+metadata:
+  type: reference
+---
+
+Rubio(CA-SD22-D,WestCovina/SanGabrielValley,elected-Dec2018,Senate-Insurance-Cmte-Chair,Wildfire-Working-Group-co-chair,authored-SB273-Phoenix-Act,authored-SB1276-child-exploitation)=21 topics; abortion=2(YES-SB245-2022/YES-SB1142-2022/YES-AB2099-2024),ai=3(YES-SB1047/YES-SB942-AI-Transparency),campaign=2(YES-SB42-2025-26-public-financing),childcare=2(YES-SB271/district-family-focus),civil=2(YES-AB1078/YES-SB403-caste),climate=2(YES-SB261-financial-disclosure/YES-SB4),data-centers=3(YES-AB222-2025-26-cost-shifts),deportation=2(Latino-Caucus-ICE-opposition/district-website),fossil=3(no-direct-fossil-permit-vote/climate-consistent),healthcare=2(YES-SB729-Medi-Cal-fertility/YES-SB525/YES-SB1120),homelessness=2(YES-SB773-CalWORKs/YES-SB246-ICoH),housing=2(YES-SB4/YES-SB684/YES-SB567/YES-AB1893),immigration=2(Latino-Caucus-ICE-opposition/wrongful-detention),medicare=2(YES-SB729/YES-SB1120/YES-SB1397),misinfo=2(YES-SB942/YES-AB3211),redistricting=2(YES-AB1248),ssm=1(YES-ACA5-31-0),tariffs=1(YES-SJR7-2025-26),taxes=2(YES-SB42-public-financing/labor-support),trans=2(YES-AB957/YES-SB760),voting=2(YES-SB1174); SKIPPED:religious-freedom,school-vouchers,social-security,ukraine; ballotpedia=EMPTY(empty-page); sd22.senate.ca.gov=works-limited-content; leginfo-billVotesClient=PRIMARY; wikipedia=career-only; NOTE:bill-number-confusion-many-bills-share-numbers-across-sessions(confirm-session-year)

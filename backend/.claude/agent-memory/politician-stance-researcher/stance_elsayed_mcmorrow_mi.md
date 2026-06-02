@@ -1,0 +1,21 @@
+---
+name: stance_elsayed_mcmorrow_mi
+description: Abdul El-Sayed and Mallory McMorrow, 2026 US Sen MI (D primary challengers); stances scored 2026-05-22
+metadata:
+  type: project
+---
+
+## Abdul El-Sayed (ec0cfeae-a512-4ce2-a8f2-a25b00112b9b), external_id -400122
+- Former Detroit Health Commissioner and Wayne County health director; physician, Rhodes Scholar; ran for MI Gov 2018; 2026 US Senate primary challenger
+- 21 topics scored: healthcare=1(M4A-book-author),medicare=1(anti-privatize/no-cuts),abortion=1,campaign=1(no-corp-money/Citizens-United/public-financing),taxes=1(billionaire-wealth-tax/cap-gains/inherit-tax),ss=1(remove-payroll-cap),climate=2(100%-renewable-2030),fossil=2(anti-new-permits/clean-energy),immigration=1(pathway/abolish-ICE),deportation=2(anti-ICE/targeted-enforcement),housing=1(ban-corp-homebuying/rent-control-support),vouchers=1(explicit-oppose),tariffs=3(targeted-smart/anti-NAFTA),voting=1(auto-reg/absentee/filibuster-abolish),redistricting=1(federal-nonpartisan-committee),ssm=1(LGBTQ-rights/Hard-Core-Liberal),religious=1(strict-separation-church-state),civil=1(systemic-inequality/union-member),misinformation=2(platform-accountability/anti-AI-insurance),ukraine=3(humanitarian-aid/diplomacy-first/supports-Ukraine-as-exception),ai=4(consumer-protection/anti-monopoly-not-pre-approval),childcare=2(priorities-page)
+- Key sources: abdulforsenate.com/priorities (works), /priority/medicare-for-all-the-path-to-a-healthier-america (works), /priority/money-out-of-politics (works), /priority/money-in-your-pocket (works); ontheissues.org/senate/Abdul_El-Sayed.htm (works, Hard-Core-Liberal rating); en.wikipedia.org/wiki/Abdul_El-Sayed (works, best single source)
+- NOTE: Ballotpedia page returned empty; OTI MI variant 404; campaign site redirects abdulelsayed.com → abdulforsenate.com
+- Skipped: trans-athletes, jail-capacity, judicial-criminal-justice, judicial-interpretation, homelessness, homelessness-response, public-safety-approach, economic-development (insufficient state-level evidence for state topics)
+
+## Mallory McMorrow (3bdf2b9e-7512-4cc6-93f5-252078fae92c), external_id -400123
+- Michigan State Senate Minority Leader (District 8, Royal Oak); known for viral 2022 floor speech defending LGBTQ+ youth; first elected 2018; 2026 US Senate candidate; describes herself as a pragmatist
+- 18 topics scored: abortion=1(Repro-Health-Act-2019/personal-D&C/1931-ban-repeal),healthcare=2(public-option-not-M4A),medicare=2(expand-access/anti-privatize),campaign=2(anti-dark-money/pragmatic-not-public-funding),civil=2(viral-LGBTQ-speech/Pride-Month-cosponsor),ssm=1(LGBTQ-rights-defender),voting=2(SB-339-ballot-tracking/Prop2-implementation),climate=2(Energy-Env-Committee/clean-energy),childcare=2(Tri-Share-bills-May2026/bills-Mar2026),misinformation=2(Kids-Over-Clicks-Big-Tech-bill),taxes=2(stock-buyback-ban-for-state-subsidy-recipients),housing=2(community-investment/economic-dev-from-ground-up),immigration=3(no-explicit-federal-stance/pragmatist),vouchers=1(public-education-investment),ss=2(opposes-Republican-cuts/protect-not-privatize),ukraine=2(aid-support/condition-offensive-weapons-on-humanitarian-aid),redistricting=2(MI-Prop2-independent-commission-supporter)
+- Key sources: senatedems.com/mcmorrow/ (works), /news (newsletter archive works), /reproductive-health (works), /voting-rights (works); en.wikipedia.org/wiki/Mallory_McMorrow (works, best single source); wdet.org/2025/04/08/mallory-mcmorrow-talks-us-senate-bid/ (works); mallorymcmorrow.com = 401 Unauthorized
+- NOTE: Ballotpedia page returned empty; OTI MI variant 404; mallorymcmorrow.com all sub-pages return 401; senatedems.com/mcmorrow issue sub-pages (climate, immigration, housing, taxes) return 404; all evidence from Wikipedia, WDET interview, and senatedems.com newsletter/press archive
+- Skipped: tariffs, trans-athletes, fossil-fuels, deportation, jail-capacity, judicial-criminal-justice, judicial-interpretation, homelessness, homelessness-response, public-safety-approach, economic-development, religious-freedom (insufficient specific evidence)
+- KEY DISTINCTION from El-Sayed: McMorrow = public option (not M4A); pragmatist self-description; immigration position unclear; fewer hard-left positions overall
