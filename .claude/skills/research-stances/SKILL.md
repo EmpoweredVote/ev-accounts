@@ -255,26 +255,33 @@ import { pool } from './src/lib/db.js';
 
 const stances = JSON.parse(process.argv[2]);
 
-for (const s of stances) {
-  // Upsert politician answer
-  await pool.query(\`
-    INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-    VALUES (\$1, \$2, \$3)
-    ON CONFLICT (politician_id, topic_id)
-    DO UPDATE SET value = EXCLUDED.value
-  \`, [s.politician_id, s.topic_id, s.value]);
+await pool.query('BEGIN');
+try {
+  for (const s of stances) {
+    // Upsert politician answer
+    await pool.query(\`
+      INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+      VALUES (\$1, \$2, \$3)
+      ON CONFLICT (politician_id, topic_id)
+      DO UPDATE SET value = EXCLUDED.value
+    \`, [s.politician_id, s.topic_id, s.value]);
 
-  // Upsert politician context (reasoning + sources)
-  const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
-  await pool.query(\`
-    INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-    VALUES (\$1, \$2, \$3, \$4)
-    ON CONFLICT (politician_id, topic_id)
-    DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
-  \`, [s.politician_id, s.topic_id, s.reasoning, sources]);
+    // Upsert politician context (reasoning + sources)
+    const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
+    await pool.query(\`
+      INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+      VALUES (\$1, \$2, \$3, \$4)
+      ON CONFLICT (politician_id, topic_id)
+      DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
+    \`, [s.politician_id, s.topic_id, s.reasoning, sources]);
+  }
+  await pool.query('COMMIT');
+  console.log('Done: ' + stances.length + ' stances upserted');
+} catch (err) {
+  await pool.query('ROLLBACK');
+  console.error('Rolled back due to error:', err.message);
+  process.exit(1);
 }
-
-console.log('Done: ' + stances.length + ' stances upserted');
 await pool.end();
 " '[JSON_ARRAY_OF_RESOLVED_STANCES]'
 ```
