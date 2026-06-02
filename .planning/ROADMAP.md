@@ -17,7 +17,8 @@
 - ✅ **v2.2 TIGER District Geofencing** — Phases 69–71 (shipped 2026-05-10)
 - ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
 - ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
-- 🔄 **v2.5 City Officials Expansion** — Phases 77–80 (current)
+- ✅ **v2.5 City Officials Expansion** — Phases 77–78 (shipped 2026-06-02; Phases 79–80 rolled into v2.6)
+- 🔄 **v2.6 Data Quality & Elections** — Phases 87–90, 99 (current)
 
 ## Phases
 
@@ -855,7 +856,7 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 
 </details>
 
-### v2.5 City Officials Expansion (Phases 77–80) — CURRENT
+### v2.5 City Officials Expansion (Phases 77–78) — SHIPPED 2026-06-02
 
 ---
 
@@ -866,6 +867,8 @@ Full details: `.planning/milestones/v2.4-ROADMAP.md` (to be created at milestone
 **Dependencies:** None (foundation phase for v2.5; Phase 78 depends on this)
 
 **Requirements:** CITY-01, CITY-02, CITY-03, CITY-04, CITY-05, CITY-06, CITY-07, CITY-08
+
+**Status:** ✅ COMPLETE 2026-05-23
 
 **Plans:** 2/2 plans complete
 
@@ -891,89 +894,117 @@ Plans:
 
 **Dependencies:** Phase 77 (politician records must exist in `essentials.politicians` before `inform.politician_answers` rows can reference them)
 
-**Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05
+**Requirements:** CSTA-01, CSTA-02, CSTA-03, CSTA-04, CSTA-05 — all closed.
 
-**Plans:** 2/6 plans executed
-Plans:
-**Wave 1**
-
-- [x] 78-01-PLAN.md — Wave 0: Verify Sacramento headshots (audit-only; promote to numbered migration if not yet live)
-- [x] 78-02-PLAN.md — Wave 1: San Jose stance research + migration (CSTA-01, 11 officials)
-
-**Wave 2** *(blocked on Wave 1 completion)*
-
-- [ ] 78-03-PLAN.md — Wave 2: San Diego stance research + migration (CSTA-02, 11 officials)
-
-**Wave 3** *(blocked on Wave 2 completion)*
-
-- [ ] 78-04-PLAN.md — Wave 3: Berkeley stance research + migration (CSTA-03, 10 officials)
-
-**Wave 4** *(blocked on Wave 3 completion)*
-
-- [ ] 78-05-PLAN.md — Wave 4: Sacramento stance research + migration (CSTA-04 extension, 9 officials; Fremont untouched)
-
-**Wave 5** *(blocked on Wave 4 completion)*
-
-- [ ] 78-06-PLAN.md — Wave 5: CSTA-05 context audit across SJ, SD, Berkeley, Sacramento (Fremont out of scope)
-
-**Cross-cutting constraints:**
-
-- Every researched stance has a paired inform.politician_context row with at least one source URL
-
-**Planner note (2026-05-28):** Original 5-wave sketch expanded to 6 waves to (a) add Wave 0 for Sacramento headshot verification before stance research begins (D-02), (b) replace the Fremont stance wave with a Sacramento stance wave since CSTA-04 / Fremont is already closed via migration 219 (D-04), and (c) preserve the CSTA-05 audit as its own final wave per D-09. Research executes one city at a time (D-05) — no parallel research-stances dispatch. Migration numbers assigned at apply time per D-08 (last confirmed applied: 220).
-
-**Success Criteria:**
-
-1. Every official added in Phase 77 has at least one row in `inform.politician_answers` — no official from any of the 4 cities has zero stances.
-2. For each city official, all 43 CompassV2 topics were attempted; where evidence was unavailable the researcher documented a "no evidence" determination — officials with thin public records meet a minimum of 5 stances rather than zero.
-3. Every stance row for a Phase 77 official has a paired row in `inform.politician_context` — `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pc.id IS NULL AND pa.politician_id IN (SELECT id FROM essentials.politicians WHERE id IN (phase 77 politician ids))` returns 0.
-4. Every `inform.politician_context` row for these officials has at least one non-empty source URL in the `sources` array — `SELECT COUNT(*) FROM inform.politician_context WHERE politician_id IN (phase 77 politician ids) AND (sources IS NULL OR array_length(sources, 1) = 0)` returns 0.
-5. Researcher agents ran one at a time per city batch — no parallel launches; each batch's migration was applied and verified before the next batch began.
+**Status:** COMPLETE 2026-06-02 — 591 stance rows across 4 cities. SD: 184 stances; Berkeley: 154 stances (migration 256); Fremont: 56 stances (migration 219); SJ: Matt Mahan only. CSTA-05 verified: 0 orphans.
 
 ---
 
-#### Phase 79: Gap-fill Existing Politicians
+### v2.6 Data Quality & Elections (Phases 87-90, 99) — CURRENT
 
-**Goal:** Every politician in the database who has sparse stance coverage and where additional evidence is plausibly available has been identified and brought up to the coverage floor — the compass compare view shows no politician with embarrassingly thin data when better data exists.
+---
 
-**Dependencies:** Phase 78 (city stances should be ingested first so the gap-fill audit includes new city officials alongside existing politicians)
+#### Phase 87: Stance Accuracy Audit + Agent Update
+
+**Goal:** A complete accuracy audit report exists for all ~1,049 politicians, with every flagged case scored and prioritized — and the researcher agent has five-chairs framing baked in so all future stance research starts from the right evaluation posture.
+
+**Dependencies:** None
+
+**Requirements:** SACC-01, SACC-04
+
+**Waves:**
+- Wave 1: Statistical audit SQL across all inform.politician_answers rows; flag anomalies; output prioritized correction list
+- Wave 2: Update researcher agent SKILL.md with five-chairs framing
+
+**Success Criteria:**
+1. Audit artifact lists all politicians with flag scores — name, party, office, stance count, flagged topic count, priority tier (confirmed inversion / borderline / likely correct).
+2. The 8 pre-identified confirmed inversions appear at top of priority list; ukraine-support Rs (26) and party-string issues appear in audit.
+3. Researcher agent SKILL.md includes five-chairs framing block in the system prompt section.
+4. Audit SQL query documented for future re-runs.
+
+---
+
+#### Phase 88: Stance Corrections + Party Normalization
+
+**Goal:** Every politician confirmed as having inaccurate stance data has been individually re-researched with real sources and corrected — the platform's stance data reflects best available evidence, not researcher agent biases.
+
+**Dependencies:** Phase 87 (priority list from SACC-01 drives work order)
+
+**Requirements:** SACC-02, SACC-03
+
+**Waves:**
+- Wave 1: Re-research 8 confirmed inversions individually (Gonzalez, Niello, Nixon, Vindman, Grayson, Hinson, Dooley, Hinojosa) with real fetched sources; corrections via migration
+- Wave 2: Work through remainder of priority list from Phase 87; each politician individually reassessed
+- Wave 3: Ukraine-support individual verification for 26 flagged Rs at value=2
+- Wave 4: Party string normalization across essentials.politicians
+
+**Success Criteria:**
+1. Every politician from the confirmed-inversion tier has a correction migration applied or a documented determination that original value was correct.
+2. No correction applied without at least one real fetched source URL in inform.politician_context — zero "party affiliation inference" corrections.
+3. Ukraine-support verification complete: each of 26 flagged Rs has a research determination with source citation.
+4. SELECT DISTINCT party FROM essentials.politicians returns a consistent set with no mixed-format variants.
+
+---
+
+#### Phase 89: Gap-fill Existing Politicians
+
+**Goal:** Every politician with sparse stance coverage and where additional evidence is plausibly available has been brought to a meaningful coverage floor.
+
+**Dependencies:** Phase 87
 
 **Requirements:** GAPF-01, GAPF-02
 
 **Waves:**
-
-- Wave 1: Audit — SQL query to identify all politicians with < 10 stances; produce a prioritized target list (GAPF-01)
-- Wave 2: Research + ingestion for all identified targets (GAPF-02)
+- Wave 1: Audit — SQL query identifying all politicians with < 10 stances; produce prioritized target list (GAPF-01)
+- Wave 2: Research + ingestion for all identified targets, one politician at a time (GAPF-02)
 
 **Success Criteria:**
-
-1. A gap-fill audit artifact exists listing every politician in the database with fewer than 10 stances, annotated with: politician name, current stance count, priority tier (high/medium/low based on profile — SF officials and senators first), and a determination of whether additional evidence is likely available.
-2. Every politician flagged as high-priority in the audit (SF officials with < 10 stances, any senator below floor) has new stance rows ingested — `SELECT p.full_name, COUNT(pa.id) FROM essentials.politicians p LEFT JOIN inform.politician_answers pa ON pa.politician_id = p.id GROUP BY p.id HAVING COUNT(pa.id) < 10` returns zero high-priority politicians after gap-fill completes.
-3. Every new stance row ingested in this phase has a paired `inform.politician_context` row with at least one source URL.
-4. Politicians in the audit where "no additional evidence available" was determined are documented with that status in the audit artifact — the floor for those cases is accepted as the current count.
+1. Gap-fill audit artifact lists every politician with fewer than 10 stances, annotated with priority tier and evidence-availability determination.
+2. Every high-priority politician has new stance rows ingested — SELECT returns zero high-priority rows with < 10 stances after gap-fill.
+3. Every new stance row has a paired inform.politician_context row with at least one source URL.
+4. Politicians where "no additional evidence available" are documented with that status.
 
 ---
 
-#### Phase 80: Campaign Finance Schema + Ingestion + API
+#### Phase 90: Campaign Finance Schema + Ingestion + API
 
-**Goal:** Campaign finance summaries are stored on politician records and surfaced via the essentials API — any partner app can display total raised, top donors, and top industries for a politician without a separate finance lookup, using FEC data for federal officials and FPPC Cal-Access data for CA state and local officials.
+**Goal:** Campaign finance summaries (total raised + top donors by employer) are stored on federal politician records and surfaced via the essentials API using FEC data.
 
-**Dependencies:** Phase 77 (new city officials must have politician records before their finance data can be ingested); Phase 78 is not a hard dependency but finance ingestion typically follows stance research in the same work session
+**Dependencies:** None
 
 **Requirements:** FINA-01, FINA-02, FINA-03
 
 **Waves:**
-
-- Wave 1: Schema migration — `finance_summary` JSONB column on `essentials.politicians` (FINA-01)
-- Wave 2: Finance data ingestion for all target politicians — federal (FEC) and CA state/local (FPPC Cal-Access) (FINA-02)
-- Wave 3: API update — include `finance_summary` in `GET /api/essentials/politicians` response (FINA-03)
+- Wave 1: Schema migration — finance_summary JSONB column on inform.politicians (FINA-01)
+- Wave 2: FEC ingestion script — bioguide to FEC ID crosswalk via congress-legislators YAML; load { total_raised, top_donors, cycle, source: "FEC" } for all federal politicians (FINA-02)
+- Wave 3: API update — include finance_summary in GET /api/essentials/politicians; null for non-federal politicians (FINA-03)
 
 **Success Criteria:**
+1. finance_summary column exists on inform.politicians (verified via information_schema query).
+2. All target federal politicians (senators + 2026 candidates) have finance_summary populated — SELECT COUNT WHERE finance_summary IS NULL returns 0 for target set.
+3. Spot-check: one senator finance_summary contains total_raised (positive integer), top_donors array with 3+ entries, source: "FEC".
+4. GET /api/essentials/politicians response includes finance_summary field — null for non-federal, populated for federal.
 
-1. Migration applied: `SELECT column_name FROM information_schema.columns WHERE table_schema = 'essentials' AND table_name = 'politicians' AND column_name = 'finance_summary'` returns one row — the column exists and accepts JSONB values with the shape `{ total_raised, top_donors, top_industries, cycle, source }`.
-2. Finance data is populated for all new city officials from Phase 77 and for top-priority existing politicians (US Senators + SF officials) — `SELECT COUNT(*) FROM essentials.politicians WHERE id IN (target politician ids) AND finance_summary IS NULL` returns 0 for the agreed target set.
-3. `GET /api/essentials/politicians` returns a `finance_summary` field for every politician in the response — the field is `null` when no data has been ingested (backward-compatible), and contains the full JSONB object when data is present; no existing field is removed or renamed.
-4. A spot-check of one senator (FEC source) and one SF official (FPPC source) confirms the `top_donors` array contains at least 3 named donors with amounts, and `total_raised` is a positive integer matching the source data.
+---
+
+#### Phase 99: Elections Verification + Polish
+
+**Goal:** The elections page at /elections is human-verified accurate, all found issues are resolved, and the elections feature is declared shipped.
+
+**Dependencies:** Phase 99 work already committed
+
+**Requirements:** ELEC-01, ELEC-02, ELEC-03
+
+**Waves:**
+- Wave 1: Human verification — review /elections for data accuracy, UI issues, missing coverage (ELEC-01)
+- Wave 2: Fix all issues found in Wave 1 (ELEC-02)
+- Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
+
+**Success Criteria:**
+1. Human reviewed /elections and confirmed: correct candidate names, offices, dates; no broken UI; no obviously missing races.
+2. Every issue found in Wave 1 has a fix committed and verified.
+3. Elections smoke test passes: page loads, races display, detail view navigable.
+4. MILESTONES.md updated to note elections feature shipped.
 
 ---
 
@@ -1011,6 +1042,13 @@ Plans:
 | 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 29. Admin Controls & Integration Verification | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
+| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
+| 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
+| 87. Stance Accuracy Audit + Agent Update | v2.6 | 0/? | Pending | — |
+| 88. Stance Corrections + Party Normalization | v2.6 | 0/? | Pending | — |
+| 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
+| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
+| 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |

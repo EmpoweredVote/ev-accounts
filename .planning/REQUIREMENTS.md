@@ -1,40 +1,57 @@
 # Requirements: Empowered Accounts
 
-**Defined:** 2026-05-22 (v2.5)
-**Milestone:** v2.5 City Officials Expansion
+**Defined:** 2026-06-02 (v2.6)
+**Milestone:** v2.6 Data Quality & Elections
 **Core Value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
 
-## v2.5 Requirements (Phases 77–80)
+## v2.6 Requirements (Phases 87–90, 99)
 
-### City Infrastructure (CITY)
+### Stance Accuracy (SACC)
 
-- [ ] **CITY-01**: Government stub records for San Jose, San Diego, Berkeley, and Fremont in `essentials.governments` (create if not present; reuse existing rows if already present)
-- [ ] **CITY-02**: City council district records for all 4 cities in `essentials.districts` — full seat count per city, typed as `CITY_COUNCIL`, FK'd to their government row
-- [ ] **CITY-03**: Politician records for all San Jose city officials (mayor + full council + key appointed roles such as City Attorney, City Clerk, City Administrator)
-- [ ] **CITY-04**: Politician records for all San Diego city officials
-- [ ] **CITY-05**: Politician records for all Berkeley city officials
-- [ ] **CITY-06**: Politician records for all Fremont city officials
-- [ ] **CITY-07**: Office records for all new officials linked to their correct city council district (or city-wide seat for mayor and at-large roles)
-- [ ] **CITY-08**: `photo_origin_url` populated for all new officials from official city sites, Wikipedia, or Ballotpedia
-
-### City Stances (CSTA)
-
-- [ ] **CSTA-01**: Stance research for all San Jose officials — all 43 topics attempted; city-level topics included; `data-centers` excluded; migration applied
-- [ ] **CSTA-02**: Stance research for all San Diego officials (same scope)
-- [ ] **CSTA-03**: Stance research for all Berkeley officials (same scope)
-- [ ] **CSTA-04**: Stance research for all Fremont officials (same scope)
-- [ ] **CSTA-05**: Every stance row paired with a context row in `inform.politician_context` containing at least one source URL
+- [ ] **SACC-01**: Audit script produces a complete accuracy report across all ~1,049 politicians — flag scores, prioritized correction list, and evidence summary for each flagged case
+- [ ] **SACC-02**: All politicians confirmed as having accuracy issues are individually re-researched with real sources and corrected via migration(s); each correction requires at least one fetched source URL
+- [ ] **SACC-03**: Party string inconsistency resolved — all politicians have a normalized party value (no mixed "Democrat" / "Democratic" entries)
+- [ ] **SACC-04**: Researcher agent (`SKILL.md`) updated with five-chairs framing to prevent future stance inversions
 
 ### Gap-fill (GAPF)
 
-- [ ] **GAPF-01**: Audit existing politicians for sparse topic coverage — identify records with < 10 stances where additional evidence is plausibly available (priority: SF officials just ingested with low counts; secondary: any politician in DB with thin coverage)
-- [ ] **GAPF-02**: Research and ingest missing topics for all identified politicians; every new stance row paired with a context row
+- [ ] **GAPF-01**: Audit all existing politicians for < 10 stances; produce a prioritized target list (sorted by politician prominence + coverage gap size)
+- [ ] **GAPF-02**: Research and ingest missing stances for all identified targets; every new stance row paired with a context row containing at least one source URL
 
 ### Campaign Finance (FINA)
 
-- [ ] **FINA-01**: Schema for campaign finance summary — `finance_summary` JSONB column on `essentials.politicians` storing `{ total_raised, top_donors: [{ name, amount }], top_industries: [{ name, amount }], cycle, source }` — migration applied
-- [ ] **FINA-02**: Finance data ingested for all new city officials and top-priority existing politicians (senators, SF officials) using FEC API (federal) and FPPC Cal-Access (CA state/local); stored via `gen_migration.py`-equivalent ingestion
-- [ ] **FINA-03**: Finance summary surfaced on `GET /api/essentials/politicians` response — new `finance_summary` field included when non-null; backward-compatible (null for politicians with no data)
+- [ ] **FINA-01**: `finance_summary` JSONB column added to `inform.politicians` storing `{ total_raised, top_donors: [{ name, amount }], cycle, source }`; migration applied
+- [ ] **FINA-02**: FEC API ingestion script built and run; finance data loaded for all federal politicians (senators + 2026 candidates) with `total_raised`, `top_donors` (top 10 by employer string), `cycle`, `source: "FEC"`; uses `congress-legislators` YAML for bioguide → FEC ID crosswalk
+- [ ] **FINA-03**: `GET /api/essentials/politicians` and single-politician endpoints return `finance_summary` when non-null; `null` for politicians with no data; fully backward-compatible
+
+### Elections (ELEC)
+
+- [ ] **ELEC-01**: Elections page at `/elections` human-verified — all displayed politicians, races, and dates confirmed accurate
+- [ ] **ELEC-02**: All issues found during ELEC-01 verification resolved (UI bugs, data errors, or missing coverage)
+- [ ] **ELEC-03**: Elections feature declared shipped — smoke test passes; feature noted in MILESTONES.md
+
+---
+
+## v2.5 Requirements (Phases 77–78) — COMPLETE
+
+### City Infrastructure (CITY)
+
+- [x] **CITY-01**: Government stub records for San Jose, San Diego, Berkeley, and Fremont in `essentials.governments`
+- [x] **CITY-02**: City council district records for all 4 cities in `essentials.districts` — full seat count per city, typed as `CITY_COUNCIL`, FK'd to their government row
+- [x] **CITY-03**: Politician records for all San Jose city officials
+- [x] **CITY-04**: Politician records for all San Diego city officials
+- [x] **CITY-05**: Politician records for all Berkeley city officials
+- [x] **CITY-06**: Politician records for all Fremont city officials
+- [x] **CITY-07**: Office records for all new officials linked to their correct city council district
+- [x] **CITY-08**: `photo_origin_url` populated for all new officials
+
+### City Stances (CSTA)
+
+- [x] **CSTA-01**: Stance research for San Jose officials — Matt Mahan only; SJ council deferred due to evidence gaps
+- [x] **CSTA-02**: Stance research for all San Diego officials (184 stances, migration applied)
+- [x] **CSTA-03**: Stance research for all Berkeley officials (154 stances, migration applied)
+- [x] **CSTA-04**: Stance research for all Fremont officials (56 stances, migration applied)
+- [x] **CSTA-05**: Every stance row paired with context row containing at least one source URL — verified 0 orphans across 591 rows
 
 ---
 
@@ -42,19 +59,19 @@
 
 ### Race Catalog (RACE)
 
-- [x] **RACE-01**: All 34 Class 2 Senate races cataloged — state, current seat holder, major declared candidates, primary date, and current status (primary/general)
+- [x] **RACE-01**: All 34 Class 2 Senate races cataloged — state, current seat holder, major declared candidates, primary date, and current status
 
 ### Candidate Records (CAND)
 
-- [x] **CAND-01**: New politician records for all major non-incumbent declared candidates (`office_title = "Candidate for U.S. Senate — [State]"`, same schema as sitting senators)
-- [x] **CAND-02**: Office records for non-incumbents linked to their state's NATIONAL_UPPER district (`is_current = false` since they don't hold the seat yet)
-- [x] **CAND-03**: Photos (`photo_origin_url`) for non-incumbent candidates — best-effort from Wikipedia, Ballotpedia, or official campaign sites
+- [x] **CAND-01**: New politician records for all major non-incumbent declared candidates
+- [x] **CAND-02**: Office records for non-incumbents linked to their state's NATIONAL_UPPER district
+- [x] **CAND-03**: Photos (`photo_origin_url`) for non-incumbent candidates
 
 ### Stance Research (SRES)
 
-- [x] **SRES-01**: Stances researched for all non-incumbent candidates via research-stances skill — using WebFetch against vote records, ontheissues.org, Ballotpedia, and official sources
-- [x] **SRES-02**: Every candidate stance paired with a context row in `inform.politician_context` containing at least one source URL
-- [x] **SRES-03**: Stance gaps filled for newly-appointed incumbents running for re-election (Armstrong OK, Husted OH) where new roll call vote evidence now exists in the 119th Congress 2nd session record
+- [x] **SRES-01**: Stances researched for all non-incumbent candidates via research-stances skill
+- [x] **SRES-02**: Every candidate stance paired with a context row containing at least one source URL
+- [x] **SRES-03**: Stance gaps filled for newly-appointed incumbents running for re-election (Armstrong OK, Husted OH)
 
 ---
 
@@ -62,20 +79,20 @@
 
 ### Senate Infrastructure (SINF)
 
-- [x] **SINF-01**: NATIONAL_UPPER district records exist in `essentials.districts` for all 50 US states — 45 new state entries added alongside the existing CA, IN, MA, ME, TX entries
-- [x] **SINF-02**: Government records exist in `essentials.governments` for all 50 states, providing the anchor rows the NATIONAL_UPPER districts FK to (minimal stubs for states without existing full government records)
+- [x] **SINF-01**: NATIONAL_UPPER district records for all 50 US states in `essentials.districts`
+- [x] **SINF-02**: Government records in `essentials.governments` for all 50 states
 
 ### Senator Records (SENA)
 
-- [x] **SENA-01**: All 100 sitting 119th Congress US Senators have politician records in `essentials.politicians` (90 new records; CA, IN, MA, ME, TX senators already exist)
-- [x] **SENA-02**: All 100 senators have office records in `essentials.offices` with correct `district_id` linking to their state's NATIONAL_UPPER district row
-- [x] **SENA-03**: All 100 senators have `photo_origin_url` populated from an official Senate source or Wikipedia (empty string replaced with actual URL)
+- [x] **SENA-01**: All 100 119th Congress US Senators have politician records
+- [x] **SENA-02**: All 100 senators have office records with correct `district_id`
+- [x] **SENA-03**: All 100 senators have `photo_origin_url` from official Senate source or Wikipedia
 
 ### Stance Data (SSTA)
 
-- [x] **SSTA-01**: All 100 senators have stance values in `inform.politician_answers` for all CompassV2 topics applicable to federal officials (of the 43 total topics, local-tier topics are skipped; target ≥ 30 applicable topics per senator)
-- [x] **SSTA-02**: Every stance record is paired with a context row in `inform.politician_context` containing at least one source URL (citation) per topic
-- [x] **SSTA-03**: The 8 existing senators with partial stance data have gaps filled to match the full applicable-topic coverage of newly added senators
+- [x] **SSTA-01**: All 100 senators have stances for all applicable CompassV2 topics (≥ 30 per senator)
+- [x] **SSTA-02**: Every stance record paired with a context row containing at least one source URL
+- [x] **SSTA-03**: 8 existing senators with partial stances filled to full applicable-topic coverage
 
 ---
 
@@ -83,8 +100,15 @@
 
 ### Additional Federal Coverage
 
-- **FED-01**: US House Representatives coverage (435 members) — same infrastructure pattern as Senate; deferred until Senate is complete
-- **FED-02**: Extend TIGER geofencing to all 50 states — current CA-only; deferred until federal coverage warrants it
+- **FED-01**: US House Representatives coverage (435 members) — deferred until Senate is complete
+- **FED-02**: Extend TIGER geofencing to all 50 states — deferred until federal coverage warrants it
+
+### Campaign Finance (Deferred from v2.6)
+
+- **FINA-CA**: Cal-Access ingestion for CA state officials (Assembly + Senate) — deferred; requires bulk download + join pipeline
+- **FINA-CITY**: City-level finance ingestion via per-city NetFile portals (SF Ethics, SD Open Data, Berkeley/Fremont/SJ NetFile API) — deferred; different source per city, partially undocumented APIs
+- **FINA-OR**: Multnomah County finance via ORESTAR — deferred; no API, manual export only
+- **FINA-IND**: `top_industries` field in finance_summary — deferred; requires OpenSecrets bulk data access (must apply; API discontinued Apr 2025)
 
 ---
 
@@ -92,13 +116,12 @@
 
 | Feature | Reason |
 |---------|--------|
-| Full state government infrastructure (chambers, state legislature) for all 50 states | Federal stubs only; full state coverage comes with dedicated state-level milestone |
-| City officials outside CA | v2.5 focuses on CA cities that already have TIGER geofencing context; other states deferred |
-| Automated finance data scraping / scheduled refresh | Manual FEC/FPPC ingestion for Alpha scale; automated pipeline deferred |
-| Finance data display UI (politician profile page) | Display belongs in partner apps (CompassV2, Essentials); accounts repo owns the API + data |
-| Post-primary nominee update automation | Manual update post-primary via admin tool; automated nomination tracking is future work |
-| US House Representatives coverage | Deferred — scope is city officials expansion for v2.5 |
-| CompassV2 topic creation (new topics beyond 43) | All 43 topics already exist; this milestone populates stances only |
+| Full state government infrastructure for all 50 states | Federal stubs only; full state coverage in a dedicated state-level milestone |
+| Automated finance data scheduled refresh | Manual FEC ingestion for Alpha scale; automated pipeline deferred |
+| Finance data display UI (politician profile page) | Display belongs in partner apps (CompassV2, Essentials); accounts repo owns API + data |
+| Post-primary nominee update automation | Manual update post-primary; automated nomination tracking is future work |
+| US House Representatives coverage | Deferred — Senate + city officials first |
+| CompassV2 topic creation (new topics beyond 43) | All 43 topics already exist; this milestone populates and corrects stances only |
 
 ---
 
@@ -106,46 +129,33 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SINF-01 | Phase 72 | Complete |
-| SINF-02 | Phase 72 | Complete |
-| SENA-01 | Phase 73 | Complete |
-| SENA-02 | Phase 73 | Complete |
-| SENA-03 | Phase 73 | Complete |
-| SSTA-01 | Phase 74 | Complete |
-| SSTA-02 | Phase 74 | Complete |
-| SSTA-03 | Phase 74 | Complete |
+| SACC-01 | Phase 87 | Pending |
+| SACC-04 | Phase 87 | Pending |
+| SACC-02 | Phase 88 | Pending |
+| SACC-03 | Phase 88 | Pending |
+| GAPF-01 | Phase 89 | Pending |
+| GAPF-02 | Phase 89 | Pending |
+| FINA-01 | Phase 90 | Pending |
+| FINA-02 | Phase 90 | Pending |
+| FINA-03 | Phase 90 | Pending |
+| ELEC-01 | Phase 99 | Pending |
+| ELEC-02 | Phase 99 | Pending |
+| ELEC-03 | Phase 99 | Pending |
+| CITY-01–08 | Phase 77 | Complete |
+| CSTA-01–05 | Phase 78 | Complete |
 | RACE-01 | Phase 75 | Complete |
-| CAND-01 | Phase 75 | Complete |
-| CAND-02 | Phase 75 | Complete |
-| CAND-03 | Phase 75 | Complete |
-| SRES-01 | Phase 76 | Complete |
-| SRES-02 | Phase 76 | Complete |
-| SRES-03 | Phase 76 | Complete |
-| CITY-01 | Phase 77 | Pending |
-| CITY-02 | Phase 77 | Pending |
-| CITY-03 | Phase 77 | Pending |
-| CITY-04 | Phase 77 | Pending |
-| CITY-05 | Phase 77 | Pending |
-| CITY-06 | Phase 77 | Pending |
-| CITY-07 | Phase 77 | Pending |
-| CITY-08 | Phase 77 | Pending |
-| CSTA-01 | Phase 78 | Pending |
-| CSTA-02 | Phase 78 | Pending |
-| CSTA-03 | Phase 78 | Pending |
-| CSTA-04 | Phase 78 | Pending |
-| CSTA-05 | Phase 78 | Pending |
-| GAPF-01 | Phase 79 | Pending |
-| GAPF-02 | Phase 79 | Pending |
-| FINA-01 | Phase 80 | Pending |
-| FINA-02 | Phase 80 | Pending |
-| FINA-03 | Phase 80 | Pending |
+| CAND-01–03 | Phase 75 | Complete |
+| SRES-01–03 | Phase 76 | Complete |
+| SINF-01–02 | Phase 72 | Complete |
+| SENA-01–03 | Phase 73 | Complete |
+| SSTA-01–03 | Phase 74 | Complete |
 
 **Coverage:**
 
-- v2.5 requirements: 18 total
-- Mapped to phases: 18
+- v2.6 requirements: 12 total
+- Mapped to phases: 12
 - Unmapped: 0 ✓
 
 ---
-*Requirements defined: 2026-05-19 (v2.3) / 2026-05-21 (v2.4) / 2026-05-22 (v2.5)*
-*Last updated: 2026-05-22 — v2.5 requirements added; v2.4 marked complete*
+*Requirements defined: 2026-05-19 (v2.3) / 2026-05-21 (v2.4) / 2026-05-22 (v2.5) / 2026-06-02 (v2.6)*
+*Last updated: 2026-06-02 — v2.6 requirements defined; v2.5 CITY+CSTA marked complete; GAPF+FINA carried forward with updated scope*
