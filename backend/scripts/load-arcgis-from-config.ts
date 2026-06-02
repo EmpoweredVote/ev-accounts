@@ -33,7 +33,7 @@ interface SourceRecord {
   jurisdiction_id: string;
   layer_class: 'county_council' | 'city_ward' | 'sboe' | 'school_subdistrict';
   source_url: string | null;
-  field_map: { district_num: string; name: string } | null;
+  field_map: { district_num: string; name: string; district_num_transform?: 'extract_int' } | null;
   mtfcc: string;
   geo_id_template: string | null;
   status: 'active' | 'no_source' | 'at_large' | 'manual_geojson';
@@ -94,7 +94,7 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
 
   const json =
     rec.status === 'manual_geojson'
-      ? JSON.parse(fs.readFileSync(path.resolve(rec.source_url), 'utf-8'))
+      ? JSON.parse(fs.readFileSync(path.resolve(path.dirname(SOURCES_PATH), rec.source_url), 'utf-8'))
       : await fetchArcGisJson(rec.source_url);
 
   if (!Array.isArray(json.features) || json.features.length === 0) {
@@ -120,7 +120,11 @@ async function loadOne(client: pg.PoolClient, rec: SourceRecord, counters: Count
       process.exit(1);
     }
 
-    const geoId = rec.geo_id_template.replace('{N}', String(districtNum));
+    const rawNum = String(districtNum);
+    const resolvedNum = rec.field_map?.district_num_transform === 'extract_int'
+      ? rawNum.replace(/\D+/g, '')
+      : rawNum;
+    const geoId = rec.geo_id_template.replace('{N}', resolvedNum);
     const ocdId = geoId; // OCD-ID equals geo_id for these layers (D-09)
     const nameStr = String(name ?? `${rec.layer_class} ${districtNum}`);
 
