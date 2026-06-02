@@ -27,12 +27,16 @@ If the input looks like a legislative body (e.g., "Bloomington City Council", "C
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT p.id, p.full_name, o.title, c.name as chamber_name
+  SELECT p.id, p.full_name,
+         (SELECT o2.title FROM essentials.offices o2
+          WHERE o2.politician_id = p.id LIMIT 1) AS title,
+         c.name as chamber_name
   FROM essentials.politicians p
-  JOIN essentials.offices o ON o.politician_id = p.id
-  JOIN essentials.chambers c ON c.id = o.chamber_id
-  WHERE c.name ILIKE '%' || \$1 || '%'
-    AND o.is_current = true
+  JOIN essentials.chambers c ON c.name ILIKE '%' || \$1 || '%'
+  WHERE EXISTS (
+    SELECT 1 FROM essentials.offices o3
+    WHERE o3.politician_id = p.id
+  )
   ORDER BY p.full_name
 \`, [process.argv[2]]);
 console.log(JSON.stringify(rows, null, 2));
