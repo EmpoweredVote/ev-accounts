@@ -90,8 +90,8 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 **Milestone: v2.6 Data Quality & Elections** (Phases 87+) — Full stance accuracy audit with individual reassessment per flagged politician, gap-fill sparse coverage, campaign finance layer, and elections page end-to-end.
 
-- [ ] SACC-01–NN: Stance accuracy audit — ~204 flagged politicians individually reassessed with real sources; 8 confirmed inversions prioritized first; ukraine-support (26 Rs) individually verified; party string normalization
-- [ ] SACC-AG: Five-chairs framing baked into researcher agent system prompt
+- ✓ SACC-04: Five-chairs framing baked into researcher agent (research-stances SKILL.md) — Phase 87; topic-scale stance texts embedded in agent prompt at dispatch time; SCALE RULE block removed
+- [ ] SACC-01–NN: Stance accuracy audit — 255 flagged politicians individually reassessed with real sources; 8 confirmed inversions (Tier 1) prioritized first; 21 borderline (Tier 2) second; ukraine-support (26 Rs) individually verified; party string normalization
 - [ ] GAPF-01: Audit all existing politicians for < 10 stances; produce prioritized target list — carried from v2.5
 - [ ] GAPF-02: Research and ingest missing stances for all identified targets — carried from v2.5
 - [ ] FINA-01: finance_summary JSONB column added to inform.politicians; migration applied — carried from v2.5
