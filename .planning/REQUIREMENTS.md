@@ -8,10 +8,10 @@
 
 ### Stance Accuracy (SACC)
 
-- [ ] **SACC-01**: Audit script produces a complete accuracy report across all ~1,049 politicians — flag scores, prioritized correction list, and evidence summary for each flagged case
+- [x] **SACC-01**: Audit script produces a complete accuracy report across all ~1,049 politicians — flag scores, prioritized correction list, and evidence summary for each flagged case
 - [ ] **SACC-02**: All politicians confirmed as having accuracy issues are individually re-researched with real sources and corrected via migration(s); each correction requires at least one fetched source URL
 - [ ] **SACC-03**: Party string inconsistency resolved — all politicians have a normalized party value (no mixed "Democrat" / "Democratic" entries)
-- [ ] **SACC-04**: Researcher agent (`SKILL.md`) updated with five-chairs framing to prevent future stance inversions
+- [x] **SACC-04**: Researcher agent (`SKILL.md`) updated with five-chairs framing to prevent future stance inversions
 
 ### Gap-fill (GAPF)
 
@@ -129,8 +129,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SACC-01 | Phase 87 | Pending |
-| SACC-04 | Phase 87 | Pending |
+| SACC-01 | Phase 87 | Complete |
+| SACC-04 | Phase 87 | Complete |
 | SACC-02 | Phase 88 | Pending |
 | SACC-03 | Phase 88 | Pending |
 | GAPF-01 | Phase 89 | Pending |

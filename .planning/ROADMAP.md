@@ -1055,7 +1055,7 @@ Plans:
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
-| 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete   | 2026-06-02 |
+| 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 0/? | Pending | — |
 | 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
