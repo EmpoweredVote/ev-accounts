@@ -126,15 +126,6 @@ value?" If not, pick a different value or skip the topic.
 TOPIC SCALE REFERENCE — assign values by matching to exact stance text:
 [PASTE THE FULL JSON OUTPUT FROM THE TOPIC RESOLUTION QUERY HERE — including id, topic_key, question_text, and the stances array with value+text for each of the 5 levels]
 
-Format each topic for the agent like this:
-  [topic_key] (id: [uuid])
-  Question: "[question_text]"
-    1 = "[stance text for value 1]"
-    2 = "[stance text for value 2]"
-    3 = "[stance text for value 3]"
-    4 = "[stance text for value 4]"
-    5 = "[stance text for value 5]"
-
 The topic_key in your CSV output MUST exactly match one of the topic_key values above.
 Do NOT invent your own topic_key slugs.
 Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
@@ -156,6 +147,16 @@ Other rules:
 - Every source URL must be real and verifiable — only include URLs you actually fetched successfully
 - Use the full 1-5 range; match to stance text, not political alignment
 ```
+
+> **Orchestrator note:** When pasting the JSON output into the `TOPIC SCALE REFERENCE` placeholder above, format each topic entry as:
+>
+>     [topic_key] (id: [uuid])
+>     Question: "[question_text]"
+>       1 = "[stance text for value 1]"
+>       2 = "[stance text for value 2]"
+>       3 = "[stance text for value 3]"
+>       4 = "[stance text for value 4]"
+>       5 = "[stance text for value 5]"
 
 Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
 
