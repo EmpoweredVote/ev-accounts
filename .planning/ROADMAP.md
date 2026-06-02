@@ -912,11 +912,14 @@ Plans:
 
 **Requirements:** SACC-01, SACC-04
 
-**Waves:**
-- Wave 1: Statistical audit SQL across all inform.politician_answers rows; flag anomalies; output prioritized correction list
-- Wave 2: Update researcher agent SKILL.md with five-chairs framing
+**Plans:** 2 plans
+Plans:
+
+- [ ] 87-01-PLAN.md — Audit SQL + 87-AUDIT-REPORT.md generation (SACC-01)
+- [ ] 87-02-PLAN.md — Replace SCALE RULE block in research-stances/SKILL.md with five-chairs framing (SACC-04)
 
 **Success Criteria:**
+
 1. Audit artifact lists all politicians with flag scores — name, party, office, stance count, flagged topic count, priority tier (confirmed inversion / borderline / likely correct).
 2. The 8 pre-identified confirmed inversions appear at top of priority list; ukraine-support Rs (26) and party-string issues appear in audit.
 3. Researcher agent SKILL.md includes five-chairs framing block in the system prompt section.
@@ -933,12 +936,14 @@ Plans:
 **Requirements:** SACC-02, SACC-03
 
 **Waves:**
+
 - Wave 1: Re-research 8 confirmed inversions individually (Gonzalez, Niello, Nixon, Vindman, Grayson, Hinson, Dooley, Hinojosa) with real fetched sources; corrections via migration
 - Wave 2: Work through remainder of priority list from Phase 87; each politician individually reassessed
 - Wave 3: Ukraine-support individual verification for 26 flagged Rs at value=2
 - Wave 4: Party string normalization across essentials.politicians
 
 **Success Criteria:**
+
 1. Every politician from the confirmed-inversion tier has a correction migration applied or a documented determination that original value was correct.
 2. No correction applied without at least one real fetched source URL in inform.politician_context — zero "party affiliation inference" corrections.
 3. Ukraine-support verification complete: each of 26 flagged Rs has a research determination with source citation.
@@ -955,10 +960,12 @@ Plans:
 **Requirements:** GAPF-01, GAPF-02
 
 **Waves:**
+
 - Wave 1: Audit — SQL query identifying all politicians with < 10 stances; produce prioritized target list (GAPF-01)
 - Wave 2: Research + ingestion for all identified targets, one politician at a time (GAPF-02)
 
 **Success Criteria:**
+
 1. Gap-fill audit artifact lists every politician with fewer than 10 stances, annotated with priority tier and evidence-availability determination.
 2. Every high-priority politician has new stance rows ingested — SELECT returns zero high-priority rows with < 10 stances after gap-fill.
 3. Every new stance row has a paired inform.politician_context row with at least one source URL.
@@ -975,11 +982,13 @@ Plans:
 **Requirements:** FINA-01, FINA-02, FINA-03
 
 **Waves:**
+
 - Wave 1: Schema migration — finance_summary JSONB column on inform.politicians (FINA-01)
 - Wave 2: FEC ingestion script — bioguide to FEC ID crosswalk via congress-legislators YAML; load { total_raised, top_donors, cycle, source: "FEC" } for all federal politicians (FINA-02)
 - Wave 3: API update — include finance_summary in GET /api/essentials/politicians; null for non-federal politicians (FINA-03)
 
 **Success Criteria:**
+
 1. finance_summary column exists on inform.politicians (verified via information_schema query).
 2. All target federal politicians (senators + 2026 candidates) have finance_summary populated — SELECT COUNT WHERE finance_summary IS NULL returns 0 for target set.
 3. Spot-check: one senator finance_summary contains total_raised (positive integer), top_donors array with 3+ entries, source: "FEC".
@@ -996,11 +1005,13 @@ Plans:
 **Requirements:** ELEC-01, ELEC-02, ELEC-03
 
 **Waves:**
+
 - Wave 1: Human verification — review /elections for data accuracy, UI issues, missing coverage (ELEC-01)
 - Wave 2: Fix all issues found in Wave 1 (ELEC-02)
 - Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
 
 **Success Criteria:**
+
 1. Human reviewed /elections and confirmed: correct candidate names, offices, dates; no broken UI; no obviously missing races.
 2. Every issue found in Wave 1 has a fix committed and verified.
 3. Elections smoke test passes: page loads, races display, detail view navigable.
@@ -1044,7 +1055,7 @@ Plans:
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
-| 87. Stance Accuracy Audit + Agent Update | v2.6 | 0/? | Pending | — |
+| 87. Stance Accuracy Audit + Agent Update | v2.6 | 0/2 | Pending | — |
 | 88. Stance Corrections + Party Normalization | v2.6 | 0/? | Pending | — |
 | 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
