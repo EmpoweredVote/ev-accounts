@@ -33,7 +33,7 @@ const { rows } = await pool.query(\`
   JOIN essentials.chambers c ON c.id = o.chamber_id
   WHERE c.name ILIKE '%' || \$1 || '%'
   ORDER BY p.full_name
-\`, [process.argv[2]]);
+\`, [process.argv.slice(1).filter(a => a !== '--' && a !== '[eval]')[0]]);  // node -e puts the first arg at argv[1], not argv[2]
 console.log(JSON.stringify(rows, null, 2));
 await pool.end();
 " -- "SEARCH_TERM"
@@ -107,7 +107,9 @@ Before confirming, resolve every politician to their `essentials.politicians.id`
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 import fs from 'node:fs';
-const names = process.argv.slice(2);
+// node -e exposes the first script arg at argv[1] (no script-path slot), so
+// slice(1) — slice(2) would silently drop the first politician in the batch.
+const names = process.argv.slice(1).filter(a => a !== '--' && a !== '[eval]');
 const { rows: pols } = await pool.query(\`
   SELECT id, full_name, last_stances_researched_at
   FROM essentials.politicians
@@ -361,7 +363,7 @@ const { rows } = await pool.query(\`
   FROM inform.stance_research_review
   WHERE batch_id = \$1 AND status = 'pending'
   ORDER BY full_name_raw, topic_key
-\`, [process.argv[2]]);
+\`, [process.argv.slice(1).filter(a => a !== '--' && a !== '[eval]')[0]]);  // node -e: first arg is argv[1]
 for (const r of rows) console.log('  ' + r.status + '\t' + r.full_name_raw + '\t' + r.topic_key + '\tvalue=' + (r.proposed_value ?? 'null') + '\tverified=' + r.verified_source_count + '/' + r.threshold);
 console.log('\n' + rows.length + ' rows pending review for this batch.');
 await pool.end();
@@ -418,7 +420,7 @@ pending proposals queue:
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
-const rewriteId = process.argv[2];
+const rewriteId = process.argv.slice(1).filter(a => a !== '--' && a !== '[eval]')[0];  // node -e: first arg is argv[1]
 const { rows: detail } = await pool.query(\`
   SELECT r.*,
          ot.title AS old_title, ot.question_text AS old_question_text, ot.version AS old_version,

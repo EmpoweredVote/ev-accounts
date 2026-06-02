@@ -60,6 +60,20 @@ describe('matchSnippet', () => {
     });
     expect(MIN_SNIPPET_WORDS).toBe(25);
   });
+
+  it('verifies via a >=25-word contiguous run when the snippet has agent framing/punctuation around it', () => {
+    // Agent stitched a headline + date + its own "stated:" wrapper around the
+    // real passage; only the passage itself is verbatim on the page.
+    const framed = `President Adams responded to the ruling. August 1, 2024. He stated: ${longSnippet}`;
+    const page = `nav home about newsroom ${longSnippet} more footer links`;
+    expect(matchSnippet(framed, page)).toEqual({ verdict: 'verified', matchOffset: expect.any(Number) });
+  });
+
+  it('still rejects a paraphrase that shares no 25-word verbatim run with the page', () => {
+    const paraphrase = 'The senator broadly backs a government insurance choice for medical coverage and has repeatedly sponsored measures expanding elder healthcare access without lifting middle income tax burdens over recent years in office.';
+    const page = `prefix ${longSnippet} suffix`;
+    expect(matchSnippet(paraphrase, page).verdict).toBe('snippet_not_found');
+  });
 });
 
 describe('checkNameProximity', () => {

@@ -115,7 +115,16 @@ full_name,topic_key,source_url,snippet,snippet_index
 
 **No snippet → no source.** If you cannot copy an exact passage from the cited page that mentions the politician's position on the topic, you do not have that source — do not put the URL in evidence.csv. A downstream **deterministic verifier fetches every URL and string-matches your snippet against the page**, then confirms the politician's name appears within ~500 characters of it. Invented snippets, snippets not actually on the page, and articles that merely mention the politician in an unrelated paragraph are all dropped automatically — and a stance left with too few verified sources is sent to a human review queue, not published.
 
-So: paste **real** text. Don't paraphrase the snippet, don't trim it below 25 words, and don't summarize the page in the snippet field. Multiple snippets per source are encouraged when the politician is quoted in several paragraphs — a source counts as verified if **any** one of its snippets verifies.
+**A snippet is a single, contiguous, character-for-character copy of ONE passage as it appears on the page** — same words, same order, same punctuation. The verifier requires a run of at least ~25 consecutive words from your snippet to appear verbatim on the page, so:
+
+- **Do NOT add framing.** Never write `Senator X stated: "…"` — the words `Senator X stated:` aren't on the page. Copy the passage that already contains the statement.
+- **Do NOT stitch fragments.** Don't join the headline + date + body, or two different paragraphs, into one snippet — that string isn't contiguous on the page. Pick ONE unbroken run of the article's prose (a sentence or two, or one full quoted paragraph).
+- **Do NOT edit punctuation or insert `…`/`[...]`.** Don't add periods between a headline and a date, don't "clean up" quotes. Copy exactly.
+- **Do NOT summarize or add facts** (vote counts, dates, your gloss) inside the snippet field — that belongs in `reasoning`, not `evidence.csv`.
+- **Reach 25 words with the page's OWN words.** If the only direct quote is short, extend the snippet with the surrounding verbatim article sentence(s) — never pad with your own words.
+- **Cite the article that discusses the position, not a bio/landing page.** An org's "person/<name>" page or a politician's homepage rarely contains a verbatim passage about the specific topic — it'll fail verification. Use the press release, bill page, or news story that actually states the position.
+
+Paste **real** text. Multiple snippets per source are encouraged when the politician is quoted in several paragraphs — a source counts as verified if **any** one of its snippets verifies. Aim for 2+ sources that each clear this bar per stance.
 
 If you cannot ground a stance in real snippets from real sources, **leave `value` blank** in stances.csv and explain the gap in `reasoning`. An honest blank beats an unverifiable score.
 

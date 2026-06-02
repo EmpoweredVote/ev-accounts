@@ -51,17 +51,33 @@ export function matchSnippet(
   snippet: string,
   pageText: string,
 ): SnippetVerdict {
-  const wordCount = snippet.trim().split(/\s+/).filter(Boolean).length;
-  if (wordCount < MIN_SNIPPET_WORDS) {
+  const normalizedSnippet = normalizeText(snippet);
+  const words = normalizedSnippet.split(' ').filter(Boolean);
+  if (words.length < MIN_SNIPPET_WORDS) {
     return { verdict: 'snippet_too_short' };
   }
-  const normalizedSnippet = normalizeText(snippet);
   const normalizedPage = normalizeText(pageText);
-  const offset = normalizedPage.indexOf(normalizedSnippet);
-  if (offset === -1) {
-    return { verdict: 'snippet_not_found' };
+
+  // Fast path: the whole snippet appears verbatim on the page.
+  const full = normalizedPage.indexOf(normalizedSnippet);
+  if (full !== -1) {
+    return { verdict: 'verified', matchOffset: full };
   }
-  return { verdict: 'verified', matchOffset: offset };
+
+  // Otherwise require a contiguous verbatim run of at least MIN_SNIPPET_WORDS
+  // words from the snippet to appear on the page. This tolerates agent-added
+  // framing/punctuation around a real passage (e.g. a stitched "Headline. Date.
+  // <verbatim statement>" or a "Sen. X said: <verbatim quote>" wrapper) while
+  // still demanding substantial verbatim grounding — a fabricated or paraphrased
+  // snippet has no 25-word run that appears verbatim on the page.
+  for (let i = 0; i + MIN_SNIPPET_WORDS <= words.length; i++) {
+    const window = words.slice(i, i + MIN_SNIPPET_WORDS).join(' ');
+    const off = normalizedPage.indexOf(window);
+    if (off !== -1) {
+      return { verdict: 'verified', matchOffset: off };
+    }
+  }
+  return { verdict: 'snippet_not_found' };
 }
 
 
