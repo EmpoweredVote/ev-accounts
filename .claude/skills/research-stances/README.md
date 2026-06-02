@@ -7,7 +7,7 @@ Durable, code-adjacent description of how the stance-research pipeline works and
 Three stages between operator intent and production data:
 
 1. **Research with evidence capture** — the `politician-stance-researcher` agent emits two CSVs into a batch directory (`data/stance-research/<BATCH_ID>/`): `stances.csv` (one row per politician+topic) and `evidence.csv` (one row per snippet). The agent must capture at least one verbatim snippet (25–300 words) for every source URL it cites. **No snippet → no source.**
-2. **Deterministic verification** — `scripts/verify-stance-research.ts` parses both CSVs, fetches each cited URL with headless Chromium (`fetchPageContent.ts` → Playwright), normalizes whitespace/quotes/dashes/case, string-matches the snippet against the page, and confirms the politician's name appears within 500 characters of the match. **No LLM in the loop.**
+2. **Deterministic verification** — `scripts/verify-stance-research.ts` parses both CSVs, fetches each cited URL through a tiered ladder (`verificationFetch.ts`: plain HTTP → headless Chromium → Wayback snapshot), normalizes whitespace/quotes/dashes/case, string-matches the snippet against the page, and confirms the politician's name appears within 500 characters of the match. **No LLM in the loop.**
 3. **Gated DB push + review queue** — rows with at least N verified sources (default N=2) push to `inform.politician_answers`, `inform.politician_context`, and `inform.politician_context_evidence`. Rows below threshold get one bounded re-research attempt; if still short, they go to `inform.stance_research_review`.
 
 ## The two CSVs
@@ -70,7 +70,7 @@ npx tsx scripts/verify-stance-research.ts --dir data/stance-research/<BATCH_ID> 
 - **Threshold:** default 2 verified sources per row. `--threshold N` on the runner.
 - **Name proximity window:** 500 chars — `NAME_PROXIMITY_CHARS` in `researchVerifier.ts`.
 - **Min snippet words:** 25 — `MIN_SNIPPET_WORDS` in `researchVerifier.ts`.
-- **Page fetch:** `fetchPageContent.ts` (Playwright Chromium). Render build needs `npx playwright install chromium --with-deps`.
+- **Page fetch:** `verificationFetch.ts` — a token-free ladder (plain HTTP → headless Chromium via `fetchPageContent.ts` → Wayback snapshot), reusing one browser across the batch. Escalates only when a page looks like a stub/bot-challenge (`looksLikeRealPage`), so legit sources behind Cloudflare/paywalls are still checked against their archive snapshot instead of failing to re-research. Render build needs `npx playwright install chromium --with-deps`.
 
 ## `/verify-sources` integration (live)
 

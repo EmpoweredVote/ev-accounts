@@ -274,7 +274,7 @@ cd ev-accounts/backend && set -a && source .env && set +a && \
   npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 2
 ```
 
-It fetches each URL with headless Chromium, string-matches every snippet (after normalizing whitespace/quotes/dashes/case), checks the politician's name is within ~500 chars of the match, and prints three buckets:
+It fetches each URL through a tiered ladder (plain HTTP → headless Chromium → Wayback snapshot, so sites that block headless requests are still checked against their archive), string-matches every snippet (after normalizing whitespace/quotes/dashes/case), checks the politician's name is within ~500 chars of the match, and prints three buckets:
 - **PUSH** — rows with ≥ threshold (default 2) verified sources. Ready for the DB.
 - **RE-RESEARCH** — rows below threshold whose politician resolved. Each line includes an `exclude-urls=` list (the sources that failed verification).
 - **UNRESOLVED→REVIEW** / **SKIP** — politician not in `essentials.politicians` (→ review queue), or `value=null` (dropped, not pushed).
@@ -594,7 +594,7 @@ import { join } from 'node:path';
 import { pool } from '../src/lib/db.js';
 import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.js';
 import { verifyEvidence, createPageFetcher, type PoliticianNames } from '../src/lib/researchVerifier.js';
-import { fetchPageContent } from '../src/lib/fetchPageContent.js';
+import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
 
 const REWRITE_ID = '[REWRITE_UUID]';        // orchestrator substitutes
 const ACTOR_ID = '[ACTOR_UUID]';             // same id that created the rewrite
@@ -614,10 +614,12 @@ const idByName = new Map(stances.map(s => [s.full_name, s.politician_id]));
 const scored = stances.filter(s => s.value !== null);
 const nullRows = stances.filter(s => s.value === null);
 
-const fetcher = createPageFetcher(fetchPageContent);
+const fetchSession = createVerificationFetchSession(); // HTTP → Chromium → Wayback ladder
+const fetcher = createPageFetcher(fetchSession.fetch);
 const { pushable, needsReResearch } = await verifyEvidence({
   stanceRows: scored, evidenceRows: evidence, fetcher, threshold: THRESHOLD, politicianNames,
 });
+await fetchSession.close();
 
 let upserted = 0, approved = 0, rejected = 0;
 const errors: string[] = [];

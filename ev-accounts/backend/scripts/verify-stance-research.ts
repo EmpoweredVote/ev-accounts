@@ -32,7 +32,7 @@ import {
   type PoliticianNames,
   type VerifiedRow,
 } from '../src/lib/researchVerifier.js';
-import { fetchPageContent } from '../src/lib/fetchPageContent.js';
+import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
 import {
   buildEvidenceRowsForInsert,
   buildReviewRowForInsert,
@@ -105,7 +105,10 @@ const { rows: topicRows } = await pool.query<{ topic_id: string; topic_key: stri
 const topicIdByKey = new Map(topicRows.map((t) => [t.topic_key, t.topic_id]));
 
 // ---------------------------------------------------------------- verify
-const fetcher = createPageFetcher(fetchPageContent);
+// Tiered fetch ladder (HTTP → headless Chromium → Wayback), reusing one browser
+// across the batch. No LLM in the loop.
+const fetchSession = createVerificationFetchSession();
+const fetcher = createPageFetcher(fetchSession.fetch);
 const { pushable, needsReResearch } = await verifyEvidence({
   stanceRows,
   evidenceRows,
@@ -113,6 +116,7 @@ const { pushable, needsReResearch } = await verifyEvidence({
   threshold: THRESHOLD,
   politicianNames,
 });
+await fetchSession.close();
 
 // A below-threshold row is re-researchable only if its politician resolved; an
 // unresolved politician can never push, so it routes straight to review.

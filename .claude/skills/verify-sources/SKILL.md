@@ -76,13 +76,15 @@ If the row has `stored_snippets` (non-empty — populated by `/research-stances`
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { matchSnippet } from './src/lib/researchVerifier.js';
-import { fetchPageContent } from './src/lib/fetchPageContent.js';
+import { fetchForVerification } from './src/lib/verificationFetch.js';
 const [url, ...snips] = process.argv.slice(2);
-let page; try { page = await fetchPageContent(url); } catch (e) { console.log('FETCH_FAILED\t' + (e?.message ?? e)); process.exit(0); }
+let page; try { page = await fetchForVerification(url); } catch (e) { console.log('FETCH_FAILED\t' + (e?.message ?? e)); process.exit(0); }
 const anyVerified = snips.some(s => matchSnippet(s, page).verdict === 'verified');
 console.log(anyVerified ? 'SNIPPET_VERIFIED' : 'SNIPPET_NOT_FOUND');
 " -- "<URL>" "<STORED_SNIPPET_1>" "<STORED_SNIPPET_2>" ...
 ```
+
+(`fetchForVerification` runs the same HTTP → headless-Chromium → Wayback ladder the pre-push verifier uses, so a live site that blocks headless requests is still checked against its archive snapshot rather than failing outright.)
 
 - `SNIPPET_VERIFIED` → the page still contains the exact evidence passage. The **content-supports check is satisfied deterministically** — do NOT ask an LLM. Proceed to the reputable + trusted checks below (auto-verify only if all three hold).
 - `SNIPPET_NOT_FOUND` → the page no longer contains the stored passage (page changed, or the snippet was wrong). Mark `needs_review` with note "stored evidence snippet no longer found on page".
