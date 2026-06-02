@@ -38,7 +38,22 @@ export function normalizeText(input: string): string {
   return out.trim();
 }
 
+// Default minimum snippet length (words). Stances want a bit of context, so 25;
+// callers like read-rank (concise verbatim quotes) can pass a lower minWords.
 export const MIN_SNIPPET_WORDS = 25;
+// Verbatim n-gram size used to test whether the snippet's content appears on the
+// page. 6 consecutive words is distinctive enough that a paraphrase won't match.
+export const SHINGLE_WORDS = 6;
+// Fraction of the snippet's shingles that must appear on the page WITHIN one
+// bounded passage for the snippet to count as grounded.
+export const MIN_SHINGLE_COVERAGE = 0.6;
+
+export interface MatchOptions {
+  /** Minimum snippet length in words (default MIN_SNIPPET_WORDS = 25). */
+  minWords?: number;
+  /** Fraction of shingles that must cluster in one passage (default MIN_SHINGLE_COVERAGE). */
+  minCoverage?: number;
+}
 
 export type SnippetVerdict =
   | { verdict: 'verified'; matchOffset: number }
@@ -47,13 +62,31 @@ export type SnippetVerdict =
   | { verdict: 'name_not_present' }
   | { verdict: 'url_broken'; reason: string };
 
+/**
+ * Verify a snippet is genuinely drawn from ONE passage of the page.
+ *
+ * The snippet does NOT have to be a single contiguous copy — agents legitimately
+ * drop a few words, keep an ellipsis, or wrap a real quote in light framing. But
+ * it must not be paraphrased, and it must not stitch together comments from
+ * far-apart parts of the article. So we require that a large fraction of the
+ * snippet's 6-word verbatim shingles appear on the page packed into a single
+ * bounded window (one passage) — not scattered across it.
+ *
+ * - Paraphrase  → few exact shingles match            → snippet_not_found
+ * - Stitched far-apart comments → shingles match but don't cluster → snippet_not_found
+ * - Real excerpt (± minor framing / dropped words)    → shingles cluster → verified
+ */
 export function matchSnippet(
   snippet: string,
   pageText: string,
+  opts: MatchOptions = {},
 ): SnippetVerdict {
+  const minWords = opts.minWords ?? MIN_SNIPPET_WORDS;
+  const minCoverage = opts.minCoverage ?? MIN_SHINGLE_COVERAGE;
+
   const normalizedSnippet = normalizeText(snippet);
   const words = normalizedSnippet.split(' ').filter(Boolean);
-  if (words.length < MIN_SNIPPET_WORDS) {
+  if (words.length < minWords) {
     return { verdict: 'snippet_too_short' };
   }
   const normalizedPage = normalizeText(pageText);
@@ -64,18 +97,50 @@ export function matchSnippet(
     return { verdict: 'verified', matchOffset: full };
   }
 
-  // Otherwise require a contiguous verbatim run of at least MIN_SNIPPET_WORDS
-  // words from the snippet to appear on the page. This tolerates agent-added
-  // framing/punctuation around a real passage (e.g. a stitched "Headline. Date.
-  // <verbatim statement>" or a "Sen. X said: <verbatim quote>" wrapper) while
-  // still demanding substantial verbatim grounding — a fabricated or paraphrased
-  // snippet has no 25-word run that appears verbatim on the page.
-  for (let i = 0; i + MIN_SNIPPET_WORDS <= words.length; i++) {
-    const window = words.slice(i, i + MIN_SNIPPET_WORDS).join(' ');
-    const off = normalizedPage.indexOf(window);
+  // (a) A single contiguous verbatim run of >= minWords words. Strong, distinctive
+  // grounding; tolerates light framing around a real quote, and cannot be forged
+  // by stitching two far-apart comments (the stitch point breaks contiguity).
+  for (let i = 0; i + minWords <= words.length; i++) {
+    const off = normalizedPage.indexOf(words.slice(i, i + minWords).join(' '));
     if (off !== -1) {
       return { verdict: 'verified', matchOffset: off };
     }
+  }
+
+  // (b) Otherwise, accept a real excerpt that isn't perfectly contiguous (a few
+  // words dropped mid-passage) by requiring most of its 6-word shingles to appear
+  // CLUSTERED in one bounded passage. A paraphrase shares too few exact shingles;
+  // a snippet stitched from far-apart comments fails the span window.
+  const k = Math.min(SHINGLE_WORDS, words.length);
+  const total = words.length - k + 1;
+  if (total <= 0) {
+    return { verdict: 'snippet_not_found' };
+  }
+  const hits: number[] = [];
+  for (let i = 0; i < total; i++) {
+    const off = normalizedPage.indexOf(words.slice(i, i + k).join(' '));
+    if (off !== -1) hits.push(off);
+  }
+  if (hits.length === 0) {
+    return { verdict: 'snippet_not_found' };
+  }
+
+  const maxSpan = Math.min(4000, Math.max(600, normalizedSnippet.length * 2));
+  hits.sort((a, b) => a - b);
+  let best = 0;
+  let bestStart = hits[0];
+  let lo = 0;
+  for (let hi = 0; hi < hits.length; hi++) {
+    while (hits[hi] - hits[lo] > maxSpan) lo++;
+    const count = hi - lo + 1;
+    if (count > best) {
+      best = count;
+      bestStart = hits[lo];
+    }
+  }
+
+  if (best / total >= minCoverage) {
+    return { verdict: 'verified', matchOffset: bestStart };
   }
   return { verdict: 'snippet_not_found' };
 }
@@ -228,8 +293,10 @@ export async function verifyEvidence(args: {
   fetcher: PageFetcher;
   threshold: number;
   politicianNames: PoliticianNames;
+  /** Snippet match tuning. Defaults: minWords 25, minCoverage 0.6. */
+  match?: MatchOptions;
 }): Promise<VerifyResult> {
-  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames } = args;
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match } = args;
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
@@ -268,7 +335,7 @@ export async function verifyEvidence(args: {
         }
       } else {
         for (const ev of snippets) {
-          const matchVerdict = matchSnippet(ev.snippet, fetched.text);
+          const matchVerdict = matchSnippet(ev.snippet, fetched.text, match);
           if (matchVerdict.verdict !== 'verified') {
             judged.push({ snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: matchVerdict });
             continue;
