@@ -45,43 +45,122 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-Fetch the current live topics — grouped by scope from `compass_topic_roles` — to validate any `--topics` filter. This produces the **canonical topic lists** you will inject into every agent prompt in Step 1. Never use a hardcoded list.
+Fetch the current live topics — grouped by scope from `compass_topic_roles`, **with their full 1–5 stance scales** — to validate any `--topics` filter and to give each agent the authoritative scale to score against. This produces (a) the **canonical topic-key lists** you inject into every Step 1 prompt and (b) **per-scope scale reference files** in `/tmp/` that agents Read at dispatch time. Never use a hardcoded topic list or hardcoded scales — the database is the only source of truth, and it has drifted far from any list baked into an agent.
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
+import fs from 'node:fs';
 const { rows } = await pool.query(\`
   SELECT
-    t.id, t.topic_key, t.title, t.short_title, t.question_text,
+    t.id, t.topic_key, t.title, t.question_text,
     ARRAY_AGG(DISTINCT r.role_scope ORDER BY r.role_scope)
-      FILTER (WHERE r.role_scope IS NOT NULL) AS scopes
+      FILTER (WHERE r.role_scope IS NOT NULL) AS scopes,
+    (SELECT json_agg(json_build_object('value', s.value, 'text', s.text) ORDER BY s.value)
+       FROM inform.compass_stances s WHERE s.topic_id = t.id) AS stances
   FROM inform.compass_topics t
   LEFT JOIN inform.compass_topic_roles r ON r.topic_id = t.id
   WHERE t.is_live = true
-  GROUP BY t.id, t.topic_key, t.title, t.short_title, t.question_text, t.created_at
+  GROUP BY t.id, t.topic_key, t.title, t.question_text, t.created_at
   ORDER BY t.created_at
 \`);
 
-const byScope = (scope) => rows.filter(r => r.scopes?.includes(scope)).map(r => r.topic_key);
-const unscoped = rows.filter(r => !r.scopes?.length).map(r => r.topic_key);
+const has = (r, scope) => r.scopes?.includes(scope);
+const national = rows.filter(r => has(r, 'federal'));
+const local = rows.filter(r => has(r, 'local') && !has(r, 'federal'));
+const judicial = rows.filter(r => has(r, 'judicial'));
+const unscoped = rows.filter(r => !r.scopes?.length);
 
-console.log('NATIONAL TOPICS (federal/state): ' + byScope('federal').join(', '));
-console.log('LOCAL TOPICS: ' + byScope('local').filter(k => !byScope('federal').includes(k)).join(', '));
-console.log('JUDICIAL TOPICS: ' + byScope('judicial').join(', '));
-if (unscoped.length) console.log('WARNING - unscoped topics (add to compass_topic_roles):', unscoped.join(', '));
+const block = (r) => {
+  const out = ['### ' + r.topic_key + ' — ' + r.title];
+  if (r.question_text) out.push('Q: ' + r.question_text);
+  for (const s of (r.stances || [])) out.push(s.value + ' = ' + s.text);
+  return out.join('\n');
+};
+const writeScope = (name, list) =>
+  fs.writeFileSync('/tmp/ev-stance-scales-' + name + '.txt', list.map(block).join('\n\n') + '\n');
+writeScope('national', national);
+writeScope('local', local);
+writeScope('judicial', judicial);
+
+const keys = (list) => list.map(r => r.topic_key).join(', ');
+console.log('NATIONAL TOPICS (federal/state): ' + keys(national));
+console.log('LOCAL TOPICS: ' + keys(local));
+console.log('JUDICIAL TOPICS: ' + keys(judicial));
+if (unscoped.length) console.log('WARNING - unscoped topics (add to compass_topic_roles): ' + keys(unscoped));
 console.log('\nALL TOPIC KEYS (' + rows.length + ' total): ' + rows.map(r => r.topic_key).join(', '));
-console.log(JSON.stringify(rows, null, 2));
+console.log('\nScale reference files written to /tmp/:');
+console.log('  ev-stance-scales-national.txt  (' + national.length + ' topics)');
+console.log('  ev-stance-scales-local.txt     (' + local.length + ' topics)');
+console.log('  ev-stance-scales-judicial.txt  (' + judicial.length + ' topics)');
 await pool.end();
 "
 ```
 
-Save the output lines — you will inject them into Step 1 agent prompts. If any `WARNING - unscoped` topics appear, add them to `inform.compass_topic_roles` before proceeding.
+Save the printed topic-key lines — you inject them into Step 1 prompts (after STEP 0.5 removes any skipped keys). The `/tmp/ev-stance-scales-*.txt` files hold the full scale each agent scores against; you pass the matching path(s) into each dispatch. If any `WARNING - unscoped` topics appear, add them to `inform.compass_topic_roles` before proceeding.
+
+### Resolve politician IDs and pre-load prior research
+
+Before confirming, resolve every politician to their `essentials.politicians.id` and pull any stances already in the DB. This (a) gives each agent a stable `politician_id` to thread through the CSV — so STEP 4 never has to re-match fragile names — and (b) lets agents **update** prior research instead of re-researching from scratch (much faster, like rewrite mode). Prior stances are written to per-politician files agents Read at dispatch.
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+import fs from 'node:fs';
+const names = process.argv.slice(2);
+const { rows: pols } = await pool.query(\`
+  SELECT id, full_name, last_stances_researched_at
+  FROM essentials.politicians
+  WHERE full_name = ANY(\$1)
+     OR lower(full_name) = ANY(SELECT lower(n) FROM unnest(\$1::text[]) AS n)
+\`, [names]);
+const byName = new Map(pols.map(p => [p.full_name.toLowerCase(), p]));
+
+const ids = pols.map(p => p.id);
+const { rows: prior } = ids.length ? await pool.query(\`
+  SELECT pa.politician_id, t.topic_key, pa.value, pc.reasoning, pc.sources
+  FROM inform.politician_answers pa
+  JOIN inform.compass_topics t ON t.id = pa.topic_id
+  LEFT JOIN inform.politician_context pc
+    ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+  WHERE pa.politician_id = ANY(\$1)
+  ORDER BY pa.politician_id, t.created_at
+\`, [ids]) : { rows: [] };
+
+const priorByPol = new Map();
+for (const r of prior) {
+  if (!priorByPol.has(r.politician_id)) priorByPol.set(r.politician_id, []);
+  priorByPol.get(r.politician_id).push(r);
+}
+for (const [pid, list] of priorByPol) {
+  const body = list.map(r =>
+    '### ' + r.topic_key + '  (prior value: ' + r.value + ')\n' +
+    'Prior reasoning: ' + (r.reasoning || '(none)') + '\n' +
+    'Prior sources: ' + ((r.sources || []).join(' | ') || '(none)')
+  ).join('\n\n');
+  fs.writeFileSync('/tmp/ev-prior-' + pid + '.txt', body + '\n');
+}
+
+console.log('RESOLVED (politician_id | name | last researched | prior stances):');
+for (const n of names) {
+  const p = byName.get(n.toLowerCase());
+  if (!p) { console.log('  UNMATCHED | ' + n + ' | — | not in essentials.politicians (research only, cannot push)'); continue; }
+  const cnt = (priorByPol.get(p.id) || []).length;
+  const last = p.last_stances_researched_at ? new Date(p.last_stances_researched_at).toISOString().slice(0,10) : 'Never';
+  console.log('  ' + p.id + ' | ' + p.full_name + ' | ' + last + ' | ' + cnt + (cnt ? '  -> /tmp/ev-prior-' + p.id + '.txt' : ''));
+}
+await pool.end();
+" -- "Name1" "Name2"
+```
+
+Pass each politician's name as a trailing arg. Save the printed `politician_id` per name — you inject it into Step 1 and it flows through the CSV to Step 4. For any `UNMATCHED` politician, research can still run but the rows cannot be pushed (flag it in the confirmation). For politicians with a prior file, pass that path into their dispatch.
 
 **Confirm before proceeding.** Show the user:
-- List of politicians to research, including their `last_stances_researched_at` date (show "Never" if null)
+- List of politicians to research, with `politician_id` (or ⚠️ `UNMATCHED` — can't push) and their `last_stances_researched_at` date (show "Never" if null)
 - ⚠️ Flag any politician researched within the last **30 days** — show their date and note they may not need re-research. Still include them unless the user says to skip.
+- Note which politicians have **prior stances** to update (incremental) vs. need full fresh research
 - Topics in scope (all or filtered), noting which topics are relevant to each politician's jurisdiction level
-- Estimated scope (e.g., "3 politicians x 26 national topics = up to 78 stance assessments")
+- Estimated scope (e.g., "3 politicians × 24 national topics = up to 72 stance assessments")
 
 ---
 
@@ -139,178 +218,167 @@ Only research these topics: [TOPIC_LIST]
 [If --topics was NOT specified:]
 Research all current policy topics.
 
-IMPORTANT — Use ONLY these exact topic_key values (fetched live from the database in STEP 0 — NOT a hardcoded list):
+[Per politician in this dispatch — repeat this identity block for each one in a batch:]
+politician_id: [UUID from STEP 0, or UNMATCHED if not in the DB]
+Put this politician_id verbatim in the politician_id column of every CSV row for this politician (leave blank if UNMATCHED).
 
-National topics (federal/state politicians):
-[INSERT THE "NATIONAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
+[If a prior-research file exists for this politician (STEP 0 printed a /tmp/ev-prior-<id>.txt path):]
+Prior research file: /tmp/ev-prior-[UUID].txt — Read it FIRST. It lists this politician's existing stances (prior value, reasoning, sources) from an earlier run. Confirm or update each one efficiently against the CURRENT scale, and concentrate fresh research on topics that aren't listed or where prior evidence is thin. If you change a prior value, say so and why in the reasoning. (If no prior file is named, do full fresh research.)
 
-Local topics (city council, county, municipal officials):
-[INSERT THE "LOCAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
+IMPORTANT — Score ONLY these topics (fetched live from the database in STEP 0, after STEP 0.5 jurisdiction skips — NOT a hardcoded list). Inject only the line(s) matching THIS politician's level:
 
-Judicial topics (judges, prosecutors, district attorneys):
-[INSERT THE "JUDICIAL TOPICS" LINE FROM THE STEP 0 OUTPUT HERE]
+[INSERT the relevant topic-key line(s) for this politician's jurisdiction — "NATIONAL TOPICS" for federal/state officials, "LOCAL TOPICS" for city/county/municipal, "JUDICIAL TOPICS" for judges/prosecutors — copied from STEP 0, MINUS any keys STEP 0.5 removed.]
 
-The topic_key in your CSV output MUST exactly match one of these values.
-Do NOT invent your own topic_key slugs.
+The exact 1–5 stance scale for every topic above is in this reference file (written live from the DB in STEP 0):
 
-Only research topics relevant to this politician's jurisdiction — use the scope groupings above.
-Skip topics outside their jurisdiction unless they have taken a clear public position on them.
+[INSERT the matching path(s): /tmp/ev-stance-scales-national.txt and/or /tmp/ev-stance-scales-local.txt and/or /tmp/ev-stance-scales-judicial.txt]
 
---output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv
+Read that file IN FULL before scoring anything. Score each topic against the EXACT numbered stance text in it — do NOT rely on any scale you remember; topics and scales change. Your `value` must correspond to one of that topic's numbered stances.
+
+The topic_key in your CSV output MUST exactly match one of the keys listed above. Do NOT invent slugs, and do NOT score any topic not in the list above (the scale file may contain more topics than you were asked to score — the list above governs).
+
+Skip topics outside this politician's jurisdiction unless they have taken a clear public position on them.
+
+--output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/[BATCH_ID]
+
+(Choose a stable BATCH_ID slug for this run, e.g. `2026-06-02-bloomington-council`. EVERY agent in the batch — including re-research dispatches — writes its two CSVs into this same directory: `stances.csv` and `evidence.csv`, appending without repeating headers.)
 
 Important:
-- Skip any topic where you cannot find sufficient evidence
-- Every source URL must be real and verifiable
-- Use the full 1-5 range based on evidence, not party affiliation
+- For every source you cite, capture a **verbatim 25–300 word snippet** in evidence.csv — **no snippet = no source.** A deterministic verifier fetches each URL and drops any snippet it can't find on the page (or whose subject isn't near it).
+- If you cannot ground a stance in real snippets from real sources, leave `value` **blank** rather than guess.
+- Use the full 1-5 range based on evidence, not party affiliation.
 ```
 
 Use `subagent_type: "politician-stance-researcher"` in the Agent tool call.
 
 ---
 
-## STEP 2 — Collect and Merge Results
+## STEP 2 — Collect agent output
 
-After all agents complete:
+After all agents complete, the batch directory `data/stance-research/[BATCH_ID]/` should contain:
+- `stances.csv` — `full_name,politician_id,topic_key,value,reasoning`
+- `evidence.csv` — `full_name,topic_key,source_url,snippet,snippet_index`
 
-1. Read the CSV file(s) generated by the agents
-2. If multiple agents wrote to the same file, verify no duplicate headers
-3. If agents returned results in their response text instead of writing to file, manually compile into the CSV file using the Write tool
-4. Count total stances collected vs. expected (politicians x topics)
+1. Confirm both files exist with a single clean header each (agents append; check for duplicate header rows and remove any).
+2. If an agent returned CSVs in its response text instead of writing files, save them into the batch dir with the Write tool.
+3. Sanity-check: stance rows ≈ politicians × in-scope topics; every `source_url` in evidence.csv has at least one snippet row.
+
+---
+
+## STEP 2.5 — Verify evidence (the gate)
+
+No data reaches the database until a **deterministic verifier** confirms each cited snippet actually appears on its page with the politician's name nearby. No LLM in this loop — it is pure string-matching, so it is cheap and auditable. Run it dry first:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && \
+  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 2
+```
+
+It fetches each URL with headless Chromium, string-matches every snippet (after normalizing whitespace/quotes/dashes/case), checks the politician's name is within ~500 chars of the match, and prints three buckets:
+- **PUSH** — rows with ≥ threshold (default 2) verified sources. Ready for the DB.
+- **RE-RESEARCH** — rows below threshold whose politician resolved. Each line includes an `exclude-urls=` list (the sources that failed verification).
+- **UNRESOLVED→REVIEW** / **SKIP** — politician not in `essentials.politicians` (→ review queue), or `value=null` (dropped, not pushed).
+
+### Bounded re-research — one pass only
+
+For each **RE-RESEARCH** row, dispatch ONE `politician-stance-researcher` agent in **RE-RESEARCH MODE** for that single (politician, topic). In the dispatch prompt include:
+- the same `--output-dir data/stance-research/[BATCH_ID]` (it appends to the same CSVs),
+- `--exclude-urls <the failed URLs from that row>`,
+- the failure summary from the verifier line, the politician's `politician_id`, and that topic's scale block (from the matching `/tmp/ev-stance-scales-*.txt`).
+
+Run **at most one** re-research pass per row per batch. After those agents finish, **re-run the verifier dry** (same command) to see the updated partition. Rows still below threshold after this pass go to the review queue in STEP 4 — do not loop again.
 
 ---
 
 ## STEP 3 — Present Approval Summary
 
-Show the user a formatted summary table:
+From the latest verifier run, show the user the verification outcome and the stance table:
 
 ```
-## Research Results: [BATCH_NAME]
+## Research Results: [BATCH_ID]
 
-| Politician | Topics Found | Topics Skipped |
-|-----------|-------------|---------------|
-| Name 1    | 19/21       | ai-regulation, redistricting |
-| Name 2    | 21/21       | none |
+Verification (threshold = 2 verified sources):
+- ✅ auto-verified (push-ready):        N
+- ♻️  verified after re-research:        N
+- 🚩 review queue (insufficient / unresolved): N
+- ⏭️  skipped (value blank):             N
 
 ### Stance Overview
 
-| Politician | Topic | Value | Reasoning (preview) |
-|-----------|-------|-------|-------------------|
-| Name 1 | healthcare | 2 | "Cosponsored the Public Option..." |
-| Name 1 | abortion | 1 | "Voted against every restrict..." |
-| ...    | ...        | ... | ... |
+| Politician | Topic | Value | Assigned stance (value → text) | Verified sources | Reasoning (preview) |
+|-----------|-------|-------|-------------------------------|------------------|-------------------|
+| Name 1 | healthcare | 2 | "public option alongside private insurance" | 2 | "Cosponsored the Public Option... — best matches stance 2" |
+| Name 1 | abortion | 1 | "legal, accessible, publicly funded at all stages" | 3 | "Voted against every restrict... — best matches stance 1" |
+| ...    | ...        | ... | ... | ... | ... |
 
-CSV saved to: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv`
+Batch dir: `ev-accounts/backend/data/stance-research/[BATCH_ID]/`
 ```
 
+- The **Assigned stance** column is the text of the stance the agent's `value` selected — look it up from `/tmp/ev-stance-scales-*.txt`. Value next to its real stance text makes scale inversions (a `1` that should be a `5`) obvious at a glance.
+- **Verified sources** is the count from the verifier (rows below threshold are the 🚩 ones).
+- List the 🚩 review-queue rows separately with the failure reason per source (`snippet_not_found` / `name_not_present` / `url_broken`) so the user sees *why* each was held back.
+
 Then ask:
-> "Review the stances above. You can:
-> 1. **Approve all** — push everything to the database
-> 2. **Reject specific rows** — tell me which politician/topic pairs to remove
-> 3. **Edit values** — tell me which rows to change (e.g., 'change Sherman/healthcare to 3')
-> 4. **Skip DB push** — keep the CSV only, don't write to database
+> "Review above. You can:
+> 1. **Approve & push** — write the verified rows to the DB; the rest go to the review queue
+> 2. **Reject specific rows** — name politician/topic pairs to drop before pushing
+> 3. **Edit values** — e.g. 'change Sherman/healthcare to 3' (edit `stances.csv` in the batch dir; a value change doesn't need re-verification, but the reasoning should still match the new stance)
+> 4. **Skip DB push** — keep the CSVs only
 >
 > What would you like to do?"
 
+For rejects/edits, modify `stances.csv` in the batch dir before STEP 4.
+
 ---
 
-## STEP 4 — Push to Database
+## STEP 4 — Push to database (gated by verification)
 
-For each approved row, push to the database in two steps:
+The push is the **same verifier script** with `--apply`. It re-verifies, then in one atomic-per-row pass writes the verified rows to production and everything else to the review queue — you do not hand-write any SQL:
 
-### 4a. Resolve IDs
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && \
+  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 2 --apply --re-researched
+```
 
-Look up `politician_id` and `topic_id`:
+(`--re-researched` stamps review rows as having had their one re-research attempt — include it only after STEP 2.5's re-research pass ran.) Per PUSH row it upserts `inform.politician_answers` + `inform.politician_context` (storing the **verified** source URLs) and replaces `inform.politician_context_evidence` with the verified snippets, then stamps `last_stances_researched_at`. Per below-threshold / unresolved row it upserts `inform.stance_research_review`.
+
+If the user chose to **reject** or **edit** rows in STEP 3, apply those to `stances.csv` first (delete rejected rows; change values). The runner only pushes what's in the CSVs and still verifies.
+
+Report what the script printed:
+> "Pushed [N] verified stances for [politicians]. [E] snippets persisted as evidence. [R] rows sent to the review queue. [M] politicians stamped. CSVs at `data/stance-research/[BATCH_ID]/`."
+
+---
+
+## STEP 5 — Surface the review queue
+
+Show the rows that didn't clear the gate so a human can act on them:
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT p.id as politician_id, p.full_name,
-         t.id as topic_id, t.title as topic_title
-  FROM essentials.politicians p
-  CROSS JOIN inform.compass_topics t
-  WHERE p.full_name = ANY(\$1)
-    AND t.is_live = true
-  ORDER BY p.full_name, t.created_at
-\`, [process.argv.slice(2)]);
-console.log(JSON.stringify(rows, null, 2));
+  SELECT full_name_raw, topic_key, proposed_value, verified_source_count, threshold, status
+  FROM inform.stance_research_review
+  WHERE batch_id = \$1 AND status = 'pending'
+  ORDER BY full_name_raw, topic_key
+\`, [process.argv[2]]);
+for (const r of rows) console.log('  ' + r.status + '\t' + r.full_name_raw + '\t' + r.topic_key + '\tvalue=' + (r.proposed_value ?? 'null') + '\tverified=' + r.verified_source_count + '/' + r.threshold);
+console.log('\n' + rows.length + ' rows pending review for this batch.');
 await pool.end();
-" -- "Name1" "Name2"
+" -- "[BATCH_ID]"
 ```
 
-If a politician name doesn't match any row in `essentials.politicians`, report it:
-> "Could not find '[NAME]' in the politicians table. Their CSV data is preserved but won't be pushed to DB. You may need to create this politician first via the admin panel."
-
-### 4b. Upsert answers and context
-
-For each matched row, call the admin service functions via a script:
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-
-const stances = JSON.parse(process.argv[2]);
-
-for (const s of stances) {
-  // Upsert politician answer
-  await pool.query(\`
-    INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-    VALUES (\$1, \$2, \$3)
-    ON CONFLICT (politician_id, topic_id)
-    DO UPDATE SET value = EXCLUDED.value
-  \`, [s.politician_id, s.topic_id, s.value]);
-
-  // Upsert politician context (reasoning + sources)
-  const sources = [s.source_url_1, s.source_url_2, s.source_url_3].filter(Boolean);
-  await pool.query(\`
-    INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-    VALUES (\$1, \$2, \$3, \$4)
-    ON CONFLICT (politician_id, topic_id)
-    DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources
-  \`, [s.politician_id, s.topic_id, s.reasoning, sources]);
-}
-
-console.log('Done: ' + stances.length + ' stances upserted');
-await pool.end();
-" '[JSON_ARRAY_OF_RESOLVED_STANCES]'
-```
-
-### 4c. Stamp last_stances_researched_at
-
-After a successful push, update the timestamp for every politician who had at least one stance upserted:
-
-```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
-import { pool } from './src/lib/db.js';
-const ids = process.argv.slice(2);
-await pool.query(
-  'UPDATE essentials.politicians SET last_stances_researched_at = NOW() WHERE id = ANY(\$1::uuid[])',
-  [ids]
-);
-console.log('Stamped ' + ids.length + ' politicians');
-await pool.end();
-" -- [SPACE-SEPARATED LIST OF POLITICIAN UUIDs]
-```
-
-### 4d. Report results
-
-After DB push:
-> "Pushed [N] stances to the database for [politician names].
-> - [N] politician_answers upserted
-> - [N] politician_context entries with reasoning and sources
-> - last_stances_researched_at stamped for [M] politicians
-> - CSV preserved at: [file path]
->
-> Skipped: [list any unmatched politicians or rejected rows]"
+These rows are **not** in production. Each carries the full per-snippet verdict audit trail in its `evidence` jsonb column, so the failure mode is visible without re-running anything. Resolving them — manual research, creating a missing politician record, or rejecting — is a separate human/admin step (a future admin UI will surface them; for now they're queryable here).
 
 ---
 
 ## ERROR HANDLING
 
 - If an agent fails or times out, report which politician failed and offer to retry just that one
-- If the CSV file can't be written, fall back to showing results in conversation and offer to retry the file write
-- If DB push fails for a specific row, report the error, skip that row, and continue with the rest
-- Never lose data — the CSV is the source of truth; DB push is additive
+- If the CSVs can't be written, fall back to showing both (stances + evidence) in conversation and offer to retry the file write
+- If the verifier can't fetch a URL (paywall, timeout, 4xx/5xx) it counts as unverified — that's expected, not an error; the row falls back to re-research or the review queue
+- If `--apply` fails for a specific row, the script logs it and continues; re-running `--apply` is safe (idempotent upserts)
+- Never lose data — the batch-dir CSVs are the source of truth; verified rows push to production, the rest go to the review queue (nothing is silently dropped except `value=null` rows)
 
 ---
 
@@ -328,14 +396,16 @@ In this mode, the skill:
    for the rewrite.
 2. Fetches BOTH the old and new topic framing and passes them to
    the agent so each politician gets re-scored under the new scale.
-3. Pushes proposed values to `admin_upsert_stance_proposal` instead
-   of direct inserts on `politician_context`.
-4. Auto-approves each proposal via `admin_approve_stance_proposal`
-   (the workflow's human gate is intentionally bypassed by
-   auto-approval — the audit trail in `topic_rewrites` provides
-   rollback safety).
-5. Skips the STEP 3 approval summary prompt (nothing to approve —
-   everything auto-approves).
+3. Runs the same deterministic verifier as normal mode, then pushes
+   proposed values to `admin_upsert_stance_proposal` instead of direct
+   inserts on `politician_context`.
+4. Auto-approves each **verified** proposal via
+   `admin_approve_stance_proposal` and auto-**rejects** any proposal
+   that is null-value or falls below the verification threshold (the
+   workflow's human gate is bypassed by this automated verify-gate —
+   the audit trail in `topic_rewrites` provides rollback safety).
+5. Skips the STEP 3 approval summary prompt (the verifier decides
+   approve vs reject — nothing to hand-approve).
 
 ## STEP 0 (rewrite mode) — Parse and fetch rewrite detail
 
@@ -470,146 +540,129 @@ NEW reasoning, and NEW sources under the new scale.
 
 ## Output format
 
-For each politician, produce one CSV row:
+Produce the SAME two CSVs as normal mode, joined on (full_name, topic_key):
 
-full_name,politician_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3
+stances.csv:  full_name,politician_id,topic_key,value,reasoning
+evidence.csv: full_name,topic_key,source_url,snippet,snippet_index
 
-Write to --output-file [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-rewrite-[TOPIC_KEY].csv
+Write both to --output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/[BATCH_ID]
+(e.g. BATCH_ID = YYYY-MM-DD-rewrite-[TOPIC_KEY]).
 
-Important: The politician_id column is new in this mode — include
-the UUID from the batch input for each row.
+Important:
+- Include the politician_id UUID from the batch input on every stances.csv row — the apply step keys on it.
+- The snippet rule applies here too: every source_url in evidence.csv needs a verbatim 25–300 word snippet. The verifier runs on rewrite output, and proposals whose new-scale value isn't backed by ≥2 verified sources are auto-rejected.
 ```
 
 ## STEP 2 (rewrite mode) — Collect results (same as normal mode)
 
-Same as STEP 2 in normal mode, just with politician_id column.
+Same as STEP 2 in normal mode: the batch dir holds `stances.csv` + `evidence.csv` (stances.csv carries the politician_id from the proposals batch).
 
 ## STEP 3 (rewrite mode) — SKIPPED
 
-No approval prompt. In rewrite mode, the workflow auto-approves
-every proposal. The audit trail lives in the `topic_rewrites` table
-and every change is reversible (old topic row stays with
-is_live=false for easy rollback).
+No human approval prompt. In rewrite mode the verifier decides:
+verified proposals are auto-approved, unverified/null ones auto-rejected
+(STEP 4). The audit trail lives in the `topic_rewrites` table and every
+change is reversible (old topic row stays with is_live=false for easy
+rollback).
 
 ## STEP 4 (rewrite mode) — Push proposals, auto-approve, and auto-reject
 
 Every pending proposal must resolve before `admin_mark_rewrite_publish_ready`
 will succeed — any proposal left `pending` blocks publish with a
-`PROPOSALS_PENDING` error. That means null-value rows (insufficient
-evidence) MUST be rejected here, not just skipped.
+`PROPOSALS_PENDING` error. So every proposal is either **approved** (verified)
+or **rejected** (unverified / null) here.
 
-For each re-evaluated row, the script handles three outcomes:
-1. **Has a value** → upsert proposal, then auto-approve.
-2. **Null value** → auto-reject with an insufficient-evidence note.
-3. **Upsert/approve fails** → log error, continue, report at end.
+The same deterministic verifier from normal-mode STEP 2.5 runs first. Each
+re-evaluated row resolves to one of three outcomes:
+1. **Value present AND ≥ threshold (2) verified sources** → upsert proposal (with the verified source URLs) → auto-approve.
+2. **Value present but below threshold** → auto-reject as unverified (the new-scale score isn't grounded).
+3. **Null value** → auto-reject with an insufficient-evidence note.
 
-### 4a. Parse CSV batches and apply in one script
+### 4a. Verify, then apply, in one script
 
-Read every `YYYY-MM-DD-rewrite-[TOPIC_KEY]-batch*.csv` file the agents
-produced. Parse them with `csv-parse/sync` (already installed in the
-backend). Do NOT try to inline a JSON payload on the command line —
-the reasoning fields contain commas, quotes, and special characters
-that break shell escaping.
-
-Write the script to `ev-accounts/backend/scripts/apply-rewrite-[TOPIC_KEY].ts`
-so there's a permanent audit trail of what was applied:
+The apply script imports the verifier directly so verification and the
+proposal RPCs happen in one pass. Write it to
+`ev-accounts/backend/scripts/apply-rewrite-[TOPIC_KEY].ts` for a permanent
+audit trail. (Note: evidence snippets are NOT persisted to
+`politician_context_evidence` in rewrite mode — that table FKs to live
+`politician_context`, which the new topic doesn't have until publish. The
+verified source URLs ride along on the proposal.)
 
 ```typescript
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { parse } from 'csv-parse/sync';
 import { pool } from '../src/lib/db.js';
+import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.js';
+import { verifyEvidence, createPageFetcher, type PoliticianNames } from '../src/lib/researchVerifier.js';
+import { fetchPageContent } from '../src/lib/fetchPageContent.js';
 
 const REWRITE_ID = '[REWRITE_UUID]';        // orchestrator substitutes
 const ACTOR_ID = '[ACTOR_UUID]';             // same id that created the rewrite
-const CSV_DIR = join(process.cwd(), 'data/stance-research');
-const CSV_PREFIX = '[YYYY-MM-DD]-rewrite-[TOPIC_KEY]-batch';
+const THRESHOLD = 2;
+const DIR = join(process.cwd(), 'data/stance-research/[BATCH_ID]');
 
-type Row = {
-  full_name: string;
-  politician_id: string;
-  topic_key: string;
-  value: string;
-  reasoning: string;
-  source_url_1: string;
-  source_url_2: string;
-  source_url_3: string;
-};
+const stances = parseStancesCsv(readFileSync(join(DIR, 'stances.csv'), 'utf8'));
+const evidence = existsSync(join(DIR, 'evidence.csv'))
+  ? parseEvidenceCsv(readFileSync(join(DIR, 'evidence.csv'), 'utf8'))
+  : [];
 
-const files = readdirSync(CSV_DIR)
-  .filter(f => f.startsWith(CSV_PREFIX) && f.endsWith('.csv'))
-  .sort();
+const lastToken = (n: string) => n.trim().split(/\s+/).filter(Boolean).slice(-1)[0] ?? n;
+const politicianNames: PoliticianNames = {};
+for (const s of stances) politicianNames[s.full_name] = { fullName: s.full_name, lastName: lastToken(s.full_name) };
+const idByName = new Map(stances.map(s => [s.full_name, s.politician_id]));
 
-const allRows: Row[] = [];
-for (const f of files) {
-  const content = readFileSync(join(CSV_DIR, f), 'utf8');
-  const rows = parse(content, {
-    columns: true,
-    skip_empty_lines: true,
-    relax_column_count: true,
-  }) as Row[];
-  allRows.push(...rows);
-}
+const scored = stances.filter(s => s.value !== null);
+const nullRows = stances.filter(s => s.value === null);
 
-let upserted = 0;
-let approved = 0;
-let rejected = 0;
+const fetcher = createPageFetcher(fetchPageContent);
+const { pushable, needsReResearch } = await verifyEvidence({
+  stanceRows: scored, evidenceRows: evidence, fetcher, threshold: THRESHOLD, politicianNames,
+});
+
+let upserted = 0, approved = 0, rejected = 0;
 const errors: string[] = [];
 
-for (const r of allRows) {
-  const isNull = !r.value || r.value.trim() === '' || r.value === 'null';
-
-  if (isNull) {
-    // Null value → auto-reject. Reasoning field from the agent
-    // explains WHY evidence was insufficient; surface that as the
-    // rejection note so the audit trail preserves the explanation.
-    try {
-      await pool.query(
-        `SELECT inform.admin_reject_stance_proposal($1::uuid, $2::uuid, $3::uuid, $4::text)`,
-        [REWRITE_ID, r.politician_id, ACTOR_ID,
-         `Insufficient evidence under new scale: ${r.reasoning || 'agent returned null'}`]
-      );
-      rejected++;
-      console.log(`REJECT ${r.full_name}`);
-    } catch (e: any) {
-      errors.push(`REJECT ${r.full_name}: ${e.message}`);
-    }
-    continue;
-  }
-
-  // Has a value → upsert + approve
-  const value = Number(r.value);
-  const sources = [r.source_url_1, r.source_url_2, r.source_url_3]
-    .map(s => s?.trim()).filter(Boolean);
+async function reject(pid: string, fullName: string, note: string) {
   try {
-    await pool.query(
-      `SELECT inform.admin_upsert_stance_proposal($1::uuid, $2::uuid, $3::numeric, $4::text, $5::text[])`,
-      [REWRITE_ID, r.politician_id, value, r.reasoning, sources]
-    );
-    upserted++;
-    console.log(`UPSERT ${r.full_name} value=${value}`);
-  } catch (e: any) {
-    errors.push(`UPSERT ${r.full_name}: ${e.message}`);
-    continue;
-  }
-  try {
-    await pool.query(
-      `SELECT inform.admin_approve_stance_proposal($1::uuid, $2::uuid, $3::uuid, $4::text)`,
-      [REWRITE_ID, r.politician_id, ACTOR_ID,
-       'auto-approved by research-stances rewrite mode']
-    );
-    approved++;
-    console.log(`APPROVE ${r.full_name}`);
-  } catch (e: any) {
-    errors.push(`APPROVE ${r.full_name}: ${e.message}`);
-  }
+    await pool.query(`SELECT inform.admin_reject_stance_proposal($1::uuid,$2::uuid,$3::uuid,$4::text)`,
+      [REWRITE_ID, pid, ACTOR_ID, note]);
+    rejected++; console.log('REJECT ' + fullName);
+  } catch (e: any) { errors.push('REJECT ' + fullName + ': ' + e.message); }
 }
 
-console.log(`\nSUMMARY: upserted=${upserted} approved=${approved} rejected=${rejected} errors=${errors.length}`);
-if (errors.length) {
-  errors.forEach(e => console.log('  ' + e));
-  process.exitCode = 1;
+// 1. Verified → upsert (verified source URLs) + approve
+for (const row of pushable) {
+  const pid = idByName.get(row.stance.full_name)!;
+  const sources = row.verifiedSources.map(s => s.url);
+  try {
+    await pool.query(`SELECT inform.admin_upsert_stance_proposal($1::uuid,$2::uuid,$3::numeric,$4::text,$5::text[])`,
+      [REWRITE_ID, pid, Number(row.stance.value), row.stance.reasoning, sources]);
+    upserted++; console.log('UPSERT ' + row.stance.full_name + ' value=' + row.stance.value);
+  } catch (e: any) { errors.push('UPSERT ' + row.stance.full_name + ': ' + e.message); continue; }
+  try {
+    await pool.query(`SELECT inform.admin_approve_stance_proposal($1::uuid,$2::uuid,$3::uuid,$4::text)`,
+      [REWRITE_ID, pid, ACTOR_ID, 'auto-approved (verified ' + sources.length + ' sources) by research-stances rewrite mode']);
+    approved++; console.log('APPROVE ' + row.stance.full_name);
+  } catch (e: any) { errors.push('APPROVE ' + row.stance.full_name + ': ' + e.message); }
 }
+
+// 2. Below threshold → reject as unverified
+for (const row of needsReResearch) {
+  const pid = idByName.get(row.stance.full_name);
+  if (!pid) { errors.push('NO_ID ' + row.stance.full_name); continue; }
+  await reject(pid, row.stance.full_name,
+    'Unverified under new scale: only ' + row.verifiedSources.length + '/' + THRESHOLD + ' sources verified. ' + (row.stance.reasoning || ''));
+}
+
+// 3. Null value → reject as insufficient evidence
+for (const s of nullRows) {
+  const pid = idByName.get(s.full_name);
+  if (!pid) { errors.push('NO_ID ' + s.full_name); continue; }
+  await reject(pid, s.full_name, 'Insufficient evidence under new scale: ' + (s.reasoning || 'agent returned null'));
+}
+
+console.log('\nSUMMARY: upserted=' + upserted + ' approved=' + approved + ' rejected=' + rejected + ' errors=' + errors.length);
+if (errors.length) { errors.forEach(e => console.log('  ' + e)); process.exitCode = 1; }
 await pool.end();
 ```
 
