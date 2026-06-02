@@ -912,11 +912,11 @@ Plans:
 
 **Requirements:** SACC-01, SACC-04
 
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 Plans:
 
-- [ ] 87-01-PLAN.md — Audit SQL + 87-AUDIT-REPORT.md generation (SACC-01)
-- [ ] 87-02-PLAN.md — Replace SCALE RULE block in research-stances/SKILL.md with five-chairs framing (SACC-04)
+- [x] 87-01-PLAN.md — Audit SQL + 87-AUDIT-REPORT.md generation (SACC-01)
+- [x] 87-02-PLAN.md — Replace SCALE RULE block in research-stances/SKILL.md with five-chairs framing (SACC-04)
 
 **Success Criteria:**
 
@@ -1055,7 +1055,7 @@ Plans:
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
-| 87. Stance Accuracy Audit + Agent Update | v2.6 | 0/2 | Pending | — |
+| 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete   | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 0/? | Pending | — |
 | 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
