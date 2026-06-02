@@ -73,12 +73,12 @@ await pool.end();
 "
 ```
 
-Pass the **full output of this query** to each researcher agent prompt — including the stance texts for every value. Never hardcode. As of 2026-05-16 there are 43 live topics; this number will grow.
+Pass the **full output of this query** to each researcher agent prompt — including the stance texts for every value. Never hardcode. As of 2026-06-02 there are 44 live topics; this number will grow.
 
 **Confirm before proceeding.** Show the user:
 - List of politicians to research
 - Topics in scope (all or filtered)
-- Estimated scope (e.g., "3 politicians x 43 topics = up to 129 stance assessments")
+- Estimated scope (e.g., "3 politicians x 44 topics = up to 132 stance assessments")
 
 ---
 
