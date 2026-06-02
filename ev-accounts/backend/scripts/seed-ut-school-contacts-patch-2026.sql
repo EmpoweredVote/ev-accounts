@@ -60,6 +60,7 @@ SELECT id, 'manual', 'primary', url, email, phone FROM (VALUES
   ('f1a7a02b-0a73-44f2-bd60-4e2850e091e5'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL), -- Douglas Hurst
   ('b93b1087-e304-4bbf-a57c-d2000682ef34'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL), -- Jan Burrell
   ('9548e9ae-4762-4651-a864-2cae9f359ad2'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL), -- Janis Christensen
+  ('9399f6ca-53a0-41ce-875f-0a9c19c8437c'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL), -- Kelly Larson
   ('af65e96b-5ada-4d2f-84bd-65f5e027e659'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL), -- Paul Widdison
   ('ecb989f4-4d1a-46ae-a574-092be1740bfa'::uuid, 'https://www.wsd.net/page/board-members/', NULL, NULL)  -- Wyle Williams
 ) AS v(id, url, email, phone)
