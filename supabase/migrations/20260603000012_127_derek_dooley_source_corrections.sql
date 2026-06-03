@@ -53,3 +53,8 @@ COMMIT;
 --   WHERE politician_id = 'b841a475-41b4-4f19-9ad1-13769b1f4eef'
 --   ORDER BY topic_key;
 -- Expected: 7 rows; none with the _(American_football) URL; none citing Angie_Nixon.htm
+
+-- Also applied inline (same session): Brian W. Jones ukraine-support context cleanup
+-- Removed party-inference language ("he likely supports..."); replaced with plain
+-- "no direct statement found — value unverified" note. Value=2 unchanged.
+-- politician_id: ee130fd3-649d-49e1-bda4-13d9bbed2f6c
