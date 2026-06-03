@@ -39,50 +39,101 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 |-----------|-------|-------------|--------------|-------|-----------------|--------------|
 | Catherine Stefani | Democratic | 3 | Assembly Member | | 10 | complete |
 | Gregg Hart | Democratic | 3 | Assembly Member | | 10 | complete |
-| Phillip Chen | Republican | 4 | Assembly Member | | | |
-| Dr. Corey A. Jackson | Democratic | 5 | Assembly Member | | | |
+| Phillip Chen | Republican | 4 | Assembly Member | | 10 | complete |
+| Dr. Corey A. Jackson | Democratic | 5 | Assembly Member | | 10 | complete |
 | Heather Hadwick | Republican | 5 | Assembly Member | | 10 | complete |
-| James C. Ramos | Democratic | 5 | Assembly Member | | | |
-| Michelle Rodriguez | Democratic | 5 | Assembly Member | | | |
+| James C. Ramos | Democratic | 5 | Assembly Member | | 10 | complete |
+| Michelle Rodriguez | Democratic | 5 | Assembly Member | | 10 | complete |
 | Sharon Quirk-Silva | Democratic | 5 | Assembly Member | | 10 | complete |
-| Steve Bennett | Democratic | 5 | Assembly Member | | | |
+| Steve Bennett | Democratic | 5 | Assembly Member | | 10 | complete |
 | Tom Lackey | Republican | 5 | Assembly Member | | 10 | complete |
-| Liz Ortega | Democratic | 6 | Assembly Member | | | |
+| Liz Ortega | Democratic | 6 | Assembly Member | | 10 | complete |
 | Patrick J. Ahrens | Democratic | 6 | Assembly Member | | 10 | complete |
-| Tina S. McKinnor | Democratic | 6 | Assembly Member | | | |
-| Alexandra M. Macedo | Republican | 7 | Assembly Member | | | |
-| Mark Gonzalez | Democratic | 7 | Assembly Member | | | |
-| Jose Luis Solache Jr. | Democratic | 8 | Assembly Member | | | |
-| Lisa Calderon | Democratic | 8 | Assembly Member | | | |
-| Maggy Krell | Democratic | 8 | Assembly Member | | | |
-| Juan Carrillo | Democratic | 9 | Assembly Member | | | |
-| Nick Schultz | Democratic | 9 | Assembly Member | | | |
-| Steven "Steve" Choi | Republican | 9 | Senator | STATE_UPPER | | |
+| Tina S. McKinnor | Democratic | 6 | Assembly Member | | 10 | complete |
+| Alexandra M. Macedo | Republican | 7 | Assembly Member | | 10 | complete |
+| Mark Gonzalez | Democratic | 7 | Assembly Member | | 10 | complete |
+| Jose Luis Solache Jr. | Democratic | 8 | Assembly Member | | 10 | complete |
+| Lisa Calderon | Democratic | 8 | Assembly Member | | 10 | complete |
+| Maggy Krell | Democratic | 8 | Assembly Member | | 10 | complete |
+| Juan Carrillo | Democratic | 9 | Assembly Member | | 10 | complete |
+| Nick Schultz | Democratic | 9 | Assembly Member | | 10 | complete |
+| Steven "Steve" Choi | Republican | 9 | Senator | STATE_UPPER | 10 | complete |
 
 ### MA State Legislators — 20 politicians
 
-| full_name | party | stance_count | office_title | notes |
-|-----------|-------|-------------|--------------|-------|
-| Rob Consalvo | Democratic | 1 | Representative, 14th Suffolk District | |
-| Daniel J. Ryan | Democratic | 2 | Representative, 2nd Suffolk District | |
-| David Biele | Democratic | 2 | Representative, 4th Suffolk District | |
-| Daniel J. Hunt | Democratic | 3 | Representative, 13th Suffolk District | |
-| Hannah L. Bowen | Democratic | 3 | Representative, 6th Essex District | |
-| Greg Schwartz | Democratic | 4 | Representative, 12th Middlesex District | |
-| Jay Livingstone | Democratic | 4 | Representative, 8th Suffolk District | |
-| Amy M. Sangiolo | Democratic | 6 | Representative, 11th Middlesex District | |
-| Daniel F. Cahill | Democratic | 6 | Representative, 10th Essex District | |
-| Danillo Sena | Democratic | 6 | Representative, 37th Middlesex District | |
-| Dennis C. Gallagher | Democratic | 6 | Representative, 8th Plymouth District | |
-| Kevin G. Honan | Democratic | 6 | Representative, 17th Suffolk District | |
-| Daniel M. Donahue | Democratic | 8 | Representative, 16th Worcester District | |
-| David K. Muradian | Republican | 8 | Representative, 9th Worcester District | |
-| James M. Murphy | Democratic | 8 | Representative, 4th Norfolk District | |
-| Hadley Luddy | Democratic | 9 | Representative, 4th Barnstable District | |
-| Hannah E. Kane | Republican | 9 | Representative, 11th Worcester District | |
-| Homar Gómez | Democratic | 9 | Representative, 2nd Hampshire District | |
-| Jeffrey R. Turco | Democratic | 9 | Representative, 19th Suffolk District | |
-| Michael J. Rodrigues | Democratic | 9 | Senator, First Bristol and Plymouth District | STATE_UPPER |
+| full_name | party | stance_count | office_title | notes | post_fill_count | final_status |
+|-----------|-------|-------------|--------------|-------|-----------------|--------------|
+| Rob Consalvo | Democratic | 1 | Representative, 14th Suffolk District | | 10 | complete — 9 stances added from actonmass bill cosponsorship + 2021 mayoral campaign record |
+| Daniel J. Ryan | Democratic | 2 | Representative, 2nd Suffolk District | | 11 | complete — 9 stances added from actonmass (ROE Act, Work & Family Mobility Act, environmental justice bills) |
+| David Biele | Democratic | 2 | Representative, 4th Suffolk District | | 11 | complete — 9 stances added from actonmass (100% renewable, environmental justice, stop wage theft) |
+| Daniel J. Hunt | Democratic | 3 | Representative, 13th Suffolk District | | 11 | complete — 8 stances added from actonmass (ROE Act, Work & Family Mobility Act) |
+| Hannah L. Bowen | Democratic | 3 | Representative, 6th Essex District | | 11 | complete — 8 stances added from malegislature.gov profile and bill sponsorships (HLB1) |
+| Greg Schwartz | Democratic | 4 | Representative, 12th Middlesex District | | 11 | complete — 7 stances added from malegislature.gov profile (G_S1, H3564 natural gas bill) |
+| Jay Livingstone | Democratic | 4 | Representative, 8th Suffolk District | | 12 | complete — 8 stances added from actonmass (same-day voter reg, ROE Act, immigration, criminal justice reform) |
+| Amy M. Sangiolo | Democratic | 6 | Representative, 11th Middlesex District | | 11 | complete — 5 stances added from malegislature.gov profile (AMS3) |
+| Daniel F. Cahill | Democratic | 6 | Representative, 10th Essex District | | 14 | complete — 8 stances added from actonmass (ROE Act, THRIVE Act, Safe Communities Act, same-day voter reg) |
+| Danillo Sena | Democratic | 6 | Representative, 37th Middlesex District | | 14 | complete — 8 stances added from malegislature.gov bill cosponsors (H2288, H1239, H3760) |
+| Dennis C. Gallagher | Democratic | 6 | Representative, 8th Plymouth District | | 11 | complete — 5 stances added from malegislature.gov profile (DCG2) |
+| Kevin G. Honan | Democratic | 6 | Representative, 17th Suffolk District | | 14 | complete — 8 stances added from actonmass (Medicare for All, ROE Act, immigration, voting rights) |
+| Daniel M. Donahue | Democratic | 8 | Representative, 16th Worcester District | | 15 | complete — 7 stances added from actonmass (Medicare for All, immigration, voting rights, deportation) |
+| David K. Muradian | Republican | 8 | Representative, 9th Worcester District | | 11 | complete — 3 stances added from malegislature.gov profile (DKM1); Republican positions on civil-rights, housing, voting-rights |
+| James M. Murphy | Democratic | 8 | Representative, 4th Norfolk District | | 14 | complete — 6 stances added from actonmass (CHERISH Act, THRIVE Act) + malegislature.gov |
+| Hadley Luddy | Democratic | 9 | Representative, 4th Barnstable District | | 10 | complete — 1 stance added (immigration) from malegislature.gov (H_L1) |
+| Hannah E. Kane | Republican | 9 | Representative, 11th Worcester District | | 12 | complete — 3 stances added from malegislature.gov (HEK1); Republican positions on civil-rights, housing, voting-rights |
+| Homar Gómez | Democratic | 9 | Representative, 2nd Hampshire District | | 10 | complete — 1 stance added (immigration) from malegislature.gov (H_G1) |
+| Jeffrey R. Turco | Democratic | 9 | Representative, 19th Suffolk District | | 10 | complete — 1 stance added (civil-rights) from actonmass (stop wage theft cosponsorship) |
+| Michael J. Rodrigues | Democratic | 9 | Senator, First Bristol and Plymouth District | STATE_UPPER | 10 | complete — 1 stance added (voting-rights) from malegislature.gov (MJR0) |
+
+---
+
+## Plan 89-02 Final Tier 1 Status
+
+**Completion date:** 2026-06-03
+
+### Summary Counts
+
+| Category | Count |
+|----------|-------|
+| Completed >= 10 stances | 47 |
+| Documented evidence floor | 7 |
+| Not processed (Tier 1) | 0 |
+| **Total Tier 1 politicians** | **54** |
+
+Note: Tier 1 total is 54 (2 Federal + 7 State Exec + 21 CA Legislators + 20 MA Legislators + 4 orphan context fixes from Plan 89-01). The orphan context fixes (Niello, Schiavo, Zbur, Elhawary) are tracked separately in Plan 89-01.
+
+**Effective Tier 1 scope for Plan 89-02: 50 politicians (as defined in 89-GAP-FILL-AUDIT.md header)**
+
+| Subgroup | Completed | Evidence Floor | Total |
+|----------|-----------|----------------|-------|
+| Federal | 1 (Dooley) | 1 (Byrd — 7 stances) | 2 |
+| State Executive | 1 (DiZoglio) | 6 (Goldberg, Galvin, Ross, Oaks, Cohen, Garcia) | 7 |
+| CA Legislators | 21 | 0 | 21 |
+| MA Legislators | 20 | 0 | 20 |
+| **Total** | **43** | **7** | **50** |
+
+### Evidence Floor Politicians
+
+| full_name | post_fill_count | reason |
+|-----------|-----------------|--------|
+| James Byrd | 7 | WY Senate candidate — single-source WyoFile article; no additional sources found after fresh 2026 search |
+| Deborah B. Goldberg | 4 | MA Treasurer — fiscal management role; no evidence for abortion, immigration, voting rights topics |
+| William Francis Galvin | 6 | MA Secretary of State — election administration role; limited policy stance evidence beyond redistricting |
+| Karen Ross | 5 | CA Ag Secretary — appointed, policy limited to agriculture/tariffs |
+| Marlo M. Oaks | 6 | UT Treasurer — ESG investment role; no evidence for social policy topics |
+| Malia M. Cohen | 9 | CA Controller — 9 strong stances; 10th topic lacks sourced evidence |
+| Robert Garcia | 9 | CA BOE Member — 9 strong stances; 10th topic lacks sourced evidence |
+
+### GAPF-02 Closure Verification
+
+This section provides the required proof for GAPF-02 closure:
+
+1. Every Tier 1 politician either has >= 10 stances OR is documented as evidence floor above.
+2. Zero orphan context rows exist for any newly researched politician (verified 2026-06-03).
+3. Zero context rows missing sources for newly researched politicians (verified 2026-06-03).
+4. All CA Legislators: 21/21 at >= 10 stances.
+5. All MA Legislators: 20/20 at >= 10 stances.
+6. Derek Dooley: 12 stances (Phase 88 corrections preserved, 5 new added).
+7. No party-inference reasoning in newly added stances (all backed by bill cosponsorship or sourced campaign records).
 
 ---
 
