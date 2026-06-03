@@ -391,15 +391,16 @@ function countyBreakdown(list: JurisdictionScore[]) {
   const photoTotal = sum((j) => j.headshots.total);
   const stancePart = sum((j) => j.stances.researched);
   const stanceTotal = sum((j) => j.stances.total);
-  const rosterActual = sum((j) => (j.expected_seats ? j.roster_actual : 0));
+  const rosterActual = sum((j) => (j.expected_seats != null ? j.roster_actual : 0));
   const rosterExpected = sum((j) => j.expected_seats ?? 0);
   const treasuryFull = populated.filter((j) => j.treasury === 'full').length;
   const treasuryAny = populated.filter((j) => j.treasury !== 'none').length;
   const donorsFull = populated.filter((j) => j.donors === 'full').length;
   const donorsAny = populated.filter((j) => j.donors !== 'none').length;
 
-  const fracTristate = (part: number, total: number): Tristate => ratioTristate(part, total);
-  const anyFullTristate = (full: number, any: number, n: number): Tristate =>
+  // treasury/donors are jurisdiction-level flags: 'full' only when EVERY populated
+  // jurisdiction has it, 'partial' when some do, 'none' when none do.
+  const allFullTristate = (full: number, any: number, n: number): Tristate =>
     n === 0 || any === 0 ? 'none' : full >= n ? 'full' : 'partial';
 
   return {
@@ -410,11 +411,11 @@ function countyBreakdown(list: JurisdictionScore[]) {
     cities_total: cities.length,
     schools_started: schools.filter((s) => s.populated).length,
     schools_total: schools.length,
-    roster: rosterExpected > 0 ? fracTristate(rosterActual, rosterExpected) : 'none',
-    stances: fracTristate(stancePart, stanceTotal),
-    photos: fracTristate(photoPart, photoTotal),
-    treasury: anyFullTristate(treasuryFull, treasuryAny, populated.length),
-    donors: anyFullTristate(donorsFull, donorsAny, populated.length),
+    roster: rosterExpected > 0 ? ratioTristate(rosterActual, rosterExpected) : 'none',
+    stances: ratioTristate(stancePart, stanceTotal),
+    photos: ratioTristate(photoPart, photoTotal),
+    treasury: allFullTristate(treasuryFull, treasuryAny, populated.length),
+    donors: allFullTristate(donorsFull, donorsAny, populated.length),
   };
 }
 
