@@ -943,23 +943,23 @@ Plans:
 - Wave 3: Ukraine-support individual verification for 25 flagged Rs at value=2
 - Wave 4: Party string normalization across essentials.politicians
 
-**Plans:** 5 plans
+**Plans:** 4/5 plans executed
 Plans:
 **Wave 1**
 
-- [ ] 88-01-PLAN.md — Tier 1 batch A: re-research and correct Gonzalez, Niello, Nixon, Vindman (Wave 1)
+- [x] 88-01-PLAN.md — Tier 1 batch A: re-research and correct Gonzalez, Niello, Nixon, Vindman (Wave 1)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 88-02-PLAN.md — Tier 1 batch B: re-research and correct Grayson, Hinson, Dooley, Hinojosa (Wave 1; Hinojosa migration may also correct party tag)
+- [x] 88-02-PLAN.md — Tier 1 batch B: re-research and correct Grayson, Hinson, Dooley, Hinojosa (Wave 1; Hinojosa migration may also correct party tag)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 88-03-PLAN.md — Tier 2 borderline: MA value=3 cluster investigation + per-politician determinations for all 21 Tier 2 cases (Wave 2)
+- [x] 88-03-PLAN.md — Tier 2 borderline: MA value=3 cluster investigation + per-politician determinations for all 21 Tier 2 cases (Wave 2)
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 88-04-PLAN.md — Ukraine-support verification: per-politician determination for 25 Republicans at value=2 (Wave 3)
+- [x] 88-04-PLAN.md — Ukraine-support verification: per-politician determination for 25 Republicans at value=2 (Wave 3)
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
@@ -1084,7 +1084,7 @@ Plans:
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
-| 88. Stance Corrections + Party Normalization | v2.6 | 0/5 | Planned | — |
+| 88. Stance Corrections + Party Normalization | v2.6 | 4/5 | In Progress|  |
 | 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
