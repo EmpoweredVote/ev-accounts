@@ -36,6 +36,7 @@
 import { pool } from './db.js';
 import { listCoverageStates, readCoverageFile, type Tristate } from './coverageService.js';
 import { toSlug, PLACE_STRIP } from './electionsMap.js';
+import { aggregateUnits, type Unit } from './coverageBivariate.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -100,6 +101,19 @@ export interface CountyScore {
   jurisdiction_count: number;
   populated_count: number;
   jurisdictions: JurisdictionScore[];
+  // Bivariate + hover breakdown (completeness mode):
+  breadth: number; // 0..1 — populated_count ÷ jurisdiction_count
+  depth: number;   // 0..100 — mean composite over populated jurisdictions only
+  county_govt_started: boolean;
+  cities_started: number;
+  cities_total: number;
+  schools_started: number;
+  schools_total: number;
+  roster: Tristate;
+  stances: Tristate;
+  photos: Tristate;
+  treasury: Tristate;
+  donors: Tristate;
 }
 
 export interface StateScore {
@@ -356,6 +370,54 @@ function mean(nums: number[]): number {
   return Math.round((nums.reduce((s, n) => s + n, 0) / nums.length) * 10) / 10;
 }
 
+/**
+ * Roll a county's jurisdiction list into the bivariate + hover breakdown.
+ * breadth/depth come from the pure aggregator (started = populated, depth =
+ * composite score). The axis tristates summarise the populated jurisdictions
+ * only, so empty white space doesn't read as a hard ✕ on every axis.
+ */
+function countyBreakdown(list: JurisdictionScore[]) {
+  const units: Unit[] = list.map((j) => ({ started: j.populated, depth: j.score }));
+  const { breadth, depth } = aggregateUnits(units);
+  const populated = list.filter((j) => j.populated);
+
+  const cities = list.filter((j) => j.level === 'local');
+  const schools = list.filter((j) => j.level === 'school');
+  const countyGovt = list.find((j) => j.level === 'county');
+
+  // Axis tristates over the populated set.
+  const sum = (sel: (j: JurisdictionScore) => number) => populated.reduce((s, j) => s + sel(j), 0);
+  const photoPart = sum((j) => j.headshots.withPhoto);
+  const photoTotal = sum((j) => j.headshots.total);
+  const stancePart = sum((j) => j.stances.researched);
+  const stanceTotal = sum((j) => j.stances.total);
+  const rosterActual = sum((j) => (j.expected_seats ? j.roster_actual : 0));
+  const rosterExpected = sum((j) => j.expected_seats ?? 0);
+  const treasuryFull = populated.filter((j) => j.treasury === 'full').length;
+  const treasuryAny = populated.filter((j) => j.treasury !== 'none').length;
+  const donorsFull = populated.filter((j) => j.donors === 'full').length;
+  const donorsAny = populated.filter((j) => j.donors !== 'none').length;
+
+  const fracTristate = (part: number, total: number): Tristate => ratioTristate(part, total);
+  const anyFullTristate = (full: number, any: number, n: number): Tristate =>
+    n === 0 || any === 0 ? 'none' : full >= n ? 'full' : 'partial';
+
+  return {
+    breadth,
+    depth,
+    county_govt_started: !!countyGovt?.populated,
+    cities_started: cities.filter((c) => c.populated).length,
+    cities_total: cities.length,
+    schools_started: schools.filter((s) => s.populated).length,
+    schools_total: schools.length,
+    roster: rosterExpected > 0 ? fracTristate(rosterActual, rosterExpected) : 'none',
+    stances: fracTristate(stancePart, stanceTotal),
+    photos: fracTristate(photoPart, photoTotal),
+    treasury: anyFullTristate(treasuryFull, treasuryAny, populated.length),
+    donors: anyFullTristate(donorsFull, donorsAny, populated.length),
+  };
+}
+
 /** County choropleth + drill-down data for one state. */
 export async function getCountyScores(
   stateCode: string,
@@ -383,16 +445,18 @@ export async function getCountyScores(
     const counties: CountyScore[] = [];
     for (const [fips, list] of byCounty) {
       const county = list.find((l) => l.level === 'county');
+      const sorted = list.sort((a, b) => {
+        const order = { county: 0, local: 1, school: 2 } as const;
+        return order[a.level] - order[b.level] || a.name.localeCompare(b.name);
+      });
       counties.push({
         fips,
         name: county?.name ?? fips,
         score: mean(list.map((l) => l.score)),
         jurisdiction_count: list.length,
         populated_count: list.filter((l) => l.populated).length,
-        jurisdictions: list.sort((a, b) => {
-          const order = { county: 0, local: 1, school: 2 } as const;
-          return order[a.level] - order[b.level] || a.name.localeCompare(b.name);
-        }),
+        jurisdictions: sorted,
+        ...countyBreakdown(list),
       });
     }
     counties.sort((a, b) => a.name.localeCompare(b.name));
