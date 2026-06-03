@@ -16,10 +16,10 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 
 ### Federal (NATIONAL_UPPER, NATIONAL_LOWER) — 2 politicians
 
-| full_name | party | stance_count | office_title | notes |
-|-----------|-------|-------------|--------------|-------|
-| James Byrd | Democratic | 5 | Candidate for U.S. Senate — Wyoming | single-source evidence floor — re-attempt with 2026 campaign sources |
-| Derek Dooley | Republican | 7 | Candidate for U.S. Senate — Georgia | post-Phase 88; migration 127 fixed source URLs — gap-fill from 7 to >=10 |
+| full_name | party | stance_count | office_title | notes | post_fill_count | final_status |
+|-----------|-------|-------------|--------------|-------|-----------------|--------------|
+| James Byrd | Democratic | 5 | Candidate for U.S. Senate — Wyoming | single-source evidence floor — re-attempt with 2026 campaign sources | 7 | evidence floor — no additional sources found beyond WyoFile announcement article; deportation and immigration stances added from protest attendance, all other topics lack sourceable evidence |
+| Derek Dooley | Republican | 7 | Candidate for U.S. Senate — Georgia | post-Phase 88; migration 127 fixed source URLs — gap-fill from 7 to >=10 | 12 | complete — 5 new stances added (deportation, fossil-fuels, taxes, social-security, medicare/aid, ukraine-support) from dooleyforgeorgia.com campaign platform |
 
 ### State Executive — 7 politicians
 
