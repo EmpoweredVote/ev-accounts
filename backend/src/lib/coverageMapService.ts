@@ -123,6 +123,18 @@ export interface StateScore {
   score: number; // 0..100
   jurisdiction_count: number;
   populated_count: number;
+  // Bivariate + hover breakdown (completeness mode):
+  breadth: number; // 0..1 — counties with ≥1 started unit ÷ total counties
+  depth: number;   // 0..100 — mean of started counties' depth
+  counties_started: number;
+  counties_total: number;
+  cities_started: number;
+  cities_total: number;
+  schools_started: number;
+  schools_total: number;
+  roster_pct: number;  // 0..100 over started units
+  stances_pct: number; // 0..100 over started units
+  photo_pct: number;   // 0..100 over started units
 }
 
 const CACHE_TTL_MS = 10 * 60 * 1000;
@@ -465,6 +477,62 @@ export async function getCountyScores(
   });
 }
 
+/**
+ * Roll a whole state's flat jurisdiction list into the bivariate + hover
+ * breakdown. Breadth/depth are computed over COUNTY rollups (a county is a
+ * "unit"; started = any jurisdiction inside it populated; its depth = mean
+ * composite over its populated jurisdictions). This is why a state with one
+ * built-out county and many empty ones reads low-breadth / high-depth (teal),
+ * instead of the old single mean that washed out to near-empty.
+ */
+function stateBreakdown(jur: JurisdictionScore[]) {
+  // Group by county for the county-rollup units.
+  const byCounty = new Map<string, JurisdictionScore[]>();
+  for (const j of jur) {
+    if (!j.county_fips) continue;
+    const arr = byCounty.get(j.county_fips) ?? [];
+    arr.push(j);
+    byCounty.set(j.county_fips, arr);
+  }
+  const countyUnits: Unit[] = [];
+  for (const [, list] of byCounty) {
+    const populated = list.filter((j) => j.populated);
+    const started = populated.length > 0;
+    const depth = populated.length > 0 ? populated.reduce((s, j) => s + j.score, 0) / populated.length : 0;
+    countyUnits.push({ started, depth });
+  }
+  const { breadth, depth } = aggregateUnits(countyUnits);
+
+  const cities = jur.filter((j) => j.level === 'local');
+  const schools = jur.filter((j) => j.level === 'school');
+  const counties = jur.filter((j) => j.level === 'county');
+
+  // Depth summary over ALL populated units (state-wide), as percentages.
+  const populated = jur.filter((j) => j.populated);
+  const sum = (sel: (j: JurisdictionScore) => number) => populated.reduce((s, j) => s + sel(j), 0);
+  const photoPart = sum((j) => j.headshots.withPhoto);
+  const photoTotal = sum((j) => j.headshots.total);
+  const stancePart = sum((j) => j.stances.researched);
+  const stanceTotal = sum((j) => j.stances.total);
+  const rosterActual = sum((j) => (j.expected_seats != null ? j.roster_actual : 0));
+  const rosterExpected = sum((j) => j.expected_seats ?? 0);
+  const pct = (part: number, total: number) => (total > 0 ? Math.round((part / total) * 1000) / 10 : 0);
+
+  return {
+    breadth,
+    depth,
+    counties_started: countyUnits.filter((u) => u.started).length,
+    counties_total: counties.length,
+    cities_started: cities.filter((c) => c.populated).length,
+    cities_total: cities.length,
+    schools_started: schools.filter((s) => s.populated).length,
+    schools_total: schools.length,
+    roster_pct: pct(Math.min(rosterActual, rosterExpected), rosterExpected),
+    stances_pct: pct(stancePart, stanceTotal),
+    photo_pct: pct(photoPart, photoTotal),
+  };
+}
+
 /** US choropleth: one score per tracked state. Untracked states are omitted. */
 export async function getStateScores(
   opts: { refresh?: boolean; weights?: AxisWeights } = {},
@@ -484,6 +552,7 @@ export async function getStateScores(
         score: mean(jur.map((j) => j.score)),
         jurisdiction_count: jur.length,
         populated_count: jur.filter((j) => j.populated).length,
+        ...stateBreakdown(jur),
       });
     }
     return out;
