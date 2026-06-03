@@ -314,7 +314,7 @@ This is a data-correction phase. No renamed strings, no rebrand. Skipping this s
 | WebFetch | research-stances agents | Yes | Claude built-in | — |
 | psql / DATABASE_URL | Applying migration files | Yes (session pooler pattern) | — | — |
 
-**Migration number:** Last applied migration filename prefix is `20260516000018` (migration 115 in sequential numbering). **Next sequential migration number is 257** (the last applied was 256 per STATE.md v2.5 infrastructure notes — migrations 207–256 were applied during Phases 77–87 work). Verify exact next number before writing: `ls supabase/migrations | sort | tail -1`.
+**Migration number:** Last applied migration filename prefix is `20260516000018` (migration 115 in sequential numbering per filename). **Next sequential migration number is 116** (verified by reading `supabase/migrations/` directory — last file is `20260516000018_115_estuardo_mazariegos_full_coverage_sprint.sql`). Verify exact next number before writing: `ls supabase/migrations | sort | tail -1`.
 
 ---
 
@@ -350,26 +350,28 @@ No security-relevant changes in this phase. All writes are admin/service-role SQ
 | # | Claim | Section | Risk if Wrong |
 |---|-------|---------|---------------|
 | A1 | "Democratic" is the preferred canonical party name (official party name) | Party Normalization pattern | If "Democrat" is preferred, normalization direction reverses — low impact either way |
-| A2 | Next migration number is 257 | Migration numbering | Wrong number causes migration ordering conflict — verify with `ls supabase/migrations \| sort \| tail -1` before writing |
+| A2 | Next migration number is 116 (last is 115) | Migration numbering | Wrong number causes migration ordering conflict — verify with `ls supabase/migrations \| sort \| tail -1` before writing |
 | A3 | Tim Grayson's stances are inverted toward progressive (should be moderate-conservative) | Tier 1 work queue | If Grayson is genuinely progressive (e.g., was a Democrat who became more progressive after audit), no correction needed — research will determine |
 | A4 | The 25 Ukraine Rs at value=2 may include some that are still accurate | Ukraine pattern | If most have shifted, a larger batch correction is warranted; if most are still accurate, no change needed |
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Party normalization direction: "Democrat" or "Democratic"?**
    - What we know: 496 "Democrat" + 280 "Democratic" exist. Both are used in audit tier logic.
    - My read: Normalize to "Democratic" — it is the official name of the party (Democratic Party, not Democrat Party). Aligns with how senators like Alex Padilla and Sherrod Brown are already stored ("Democratic").
-   - Planner can lock this as a decision.
+   - **RESOLVED:** Plan 88-05 normalizes to "Democratic". `UPDATE essentials.politicians SET party = 'Democratic' WHERE party = 'Democrat'`.
 
 2. **Wave 4 timing: before or after stance corrections?**
    - What we know: Party normalization is independent of stance corrections.
    - Recommendation: Run Wave 4 (party normalization) last, after Waves 1–3 are complete, so all re-research agents work with consistent party strings during research.
+   - **RESOLVED:** 88-05 is wave 5 (after all stance corrections in waves 1–4).
 
 3. **Adam Hinojosa — what if he's actually a Republican?**
    - What we know: DB has party = "Democrat"; his 6 stances all look Republican.
    - Recommendation: Verify via official sources (Texas legislature, official bio). If Republican, correct `essentials.politicians.party` in the same migration that corrects his stances. Document both changes with sources.
+   - **RESOLVED:** 88-02 Task 2 handles Hinojosa with a conditional path — if research confirms Republican, the migration corrects both party tag and stances atomically with source URLs.
 
 ---
 
