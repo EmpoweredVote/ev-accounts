@@ -3,7 +3,7 @@ import { buildEvidenceRowsForInsert, buildReviewRowForInsert } from './researchE
 import type { VerifiedRow } from './researchVerifier.js';
 
 const exampleRow: VerifiedRow = {
-  stance: { full_name: 'Brad Sherman', external_id: '', topic_key: 'healthcare', value: 2, reasoning: 'public option' },
+  stance: { full_name: 'Brad Sherman', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: 'public option' },
   verifiedSources: [
     {
       url: 'https://a.example',

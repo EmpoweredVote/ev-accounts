@@ -60,6 +60,43 @@ describe('matchSnippet', () => {
     });
     expect(MIN_SNIPPET_WORDS).toBe(25);
   });
+
+  it('verifies a real excerpt wrapped in light agent framing (clusters in one passage)', () => {
+    // Light "Headline. Date. He stated:" wrapper around a real passage; the
+    // wrapper words aren't on the page but the bulk of the snippet is.
+    const framed = `President Adams responded. August 1, 2024. He stated: ${longSnippet}`;
+    const page = `nav home about newsroom ${longSnippet} more footer links`;
+    expect(matchSnippet(framed, page)).toEqual({ verdict: 'verified', matchOffset: expect.any(Number) });
+  });
+
+  it('verifies a non-contiguous excerpt with interior words dropped (no 25-word run, but shingles cluster)', () => {
+    const pagePassage = 'The senator told reporters she strongly supports a robust public option for healthcare coverage and has personally cosponsored several major bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+    // Drops "robust" and "major" mid-passage, so no contiguous 25-word run survives.
+    const snippetDropped = 'The senator told reporters she strongly supports a public option for healthcare coverage and has personally cosponsored several bills since the year 2021 to expand Medicare access for many older Americans without ever raising taxes on middle class families.';
+    const page = `nav links ${pagePassage} footer`;
+    expect(matchSnippet(snippetDropped, page).verdict).toBe('verified');
+  });
+
+  it('rejects a snippet stitched from two far-apart passages', () => {
+    const passageA = 'She voted against the income tax cut bill because it favored large corporations over middle class families this year';
+    const passageB = 'On housing she proposed building thousands of new affordable units across the state to ease the shortage statewide';
+    const farApart = `intro ${passageA} ${'filler word '.repeat(500)} ${passageB} outro`;
+    const stitched = `${passageA} ${passageB}`; // two real comments, far apart on the page
+    expect(matchSnippet(stitched, farApart).verdict).toBe('snippet_not_found');
+  });
+
+  it('rejects a paraphrase that shares little verbatim text with the page', () => {
+    const paraphrase = 'The senator broadly backs a government insurance choice for medical coverage and has repeatedly sponsored measures expanding elder healthcare access without lifting middle income tax burdens over recent years in office.';
+    const page = `prefix ${longSnippet} suffix`;
+    expect(matchSnippet(paraphrase, page).verdict).toBe('snippet_not_found');
+  });
+
+  it('honors a lower minWords for concise quotes (e.g. read-rank)', () => {
+    const shortQuote = 'she strongly supports a public option for healthcare expansion right now';
+    const page = `The mayor said she strongly supports a public option for healthcare expansion right now during the debate.`;
+    expect(matchSnippet(shortQuote, page).verdict).toBe('snippet_too_short'); // default floor 25
+    expect(matchSnippet(shortQuote, page, { minWords: 8 })).toEqual({ verdict: 'verified', matchOffset: expect.any(Number) });
+  });
 });
 
 describe('checkNameProximity', () => {
@@ -173,7 +210,7 @@ describe('verifyEvidence', () => {
   const longSnippet = 'The senator strongly supports a public option for healthcare and has cosponsored multiple bills since 2021 to expand Medicare access for older Americans without raising taxes on the middle class.';
 
   const stanceRows: StanceRow[] = [
-    { full_name: 'Brad Sherman', topic_key: 'healthcare', value: 2, reasoning: 'public option', external_id: '' },
+    { full_name: 'Brad Sherman', topic_key: 'healthcare', value: 2, reasoning: 'public option', politician_id: '' },
   ];
 
   it('partitions verified rows into pushable bucket', async () => {

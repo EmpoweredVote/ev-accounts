@@ -1,0 +1,24 @@
+# Agent Memory Index
+
+- [ann_millner_ut_senate.md](ann_millner_ut_senate.md) — Ann Millner, UT Senate District 5 (R-Ogden), researched 2026-06-02; 7 topics scored
+- [calvin_musselman_ut_senate.md](calvin_musselman_ut_senate.md) — Calvin R. Musselman, UT Senate District 4 (R-West Haven), researched 2026-06-02; 10 topics scored
+- [john_d_johnson_ut_senate.md](john_d_johnson_ut_senate.md) — John D. Johnson, UT Senate District 3 (R-North Ogden/Weber), researched 2026-06-02; 13 topics scored
+- [sandall-scott-d.md](sandall-scott-d.md) — Scott D. Sandall, UT Senate District 1 (R-Tremonton), researched 2026-06-02; 11 topics scored
+- [chris_h_wilson_ut_senate.md](chris_h_wilson_ut_senate.md) — Chris H. Wilson, UT Senate District 2 (R-Logan/Cache), Senate Majority Whip, researched 2026-06-02; 12 topics scored
+- [lincoln_fillmore_ut_senate.md](lincoln_fillmore_ut_senate.md) — Lincoln Fillmore, UT Senate District 17 (R-South Jordan/Herriman), researched 2026-06-03; 13 topics scored
+- [ronald_winterton_ut_senate.md](ronald_winterton_ut_senate.md) — Ronald M. Winterton, UT Senate District 20 (R-Roosevelt/Duchesne/Uinta Basin), researched 2026-06-03; 10 topics scored
+- [wayne_a_harper_ut_senate.md](wayne_a_harper_ut_senate.md) — Wayne A. Harper, UT Senate District 16 (R-West Jordan/Taylorsville), Senate Pro Tem, researched 2026-06-03; 11 topics scored
+- [keven_stratton_ut_senate.md](keven_stratton_ut_senate.md) — Keven J. Stratton, UT Senate District 24 (R-Orem/Utah County), attorney, researched 2026-06-03; 14 topics scored
+- [heidi_balderree_ut_senate.md](heidi_balderree_ut_senate.md) — Heidi Balderree, UT Senate District 22 (R-Saratoga Springs), appointed 2023, researched 2026-06-03; 9 topics scored
+- [evan_vickers_ut_senate.md](evan_vickers_ut_senate.md) — Evan J. Vickers, UT Senate District 28 (R-Cedar City), Senate Majority Leader, pharmacist, researched 2026-06-03; 12 topics scored
+- [michael_k_mckell_ut_senate.md](michael_k_mckell_ut_senate.md) — Michael K. McKell, UT Senate District 25 (R-Spanish Fork/Utah County), Senate Majority Asst. Whip, attorney, researched 2026-06-03; 11 topics scored
+- [david_p_hinkins_ut_senate.md](david_p_hinkins_ut_senate.md) — David P. Hinkins, UT Senate District 26 (R-Ferron), rancher from rural central/eastern Utah, researched 2026-06-03; 13 topics scored
+- [derrin_owens_ut_senate.md](derrin_owens_ut_senate.md) — Derrin R. Owens, UT Senate District 27 (R-Fountain Green/Millard County), former educator/rancher, researched 2026-06-03; 8 topics scored
+- [don_l_ipson_ut_senate.md](don_l_ipson_ut_senate.md) — Don L. Ipson, UT Senate District 29 (R-St. George/Washington County), CEO/trucker, energy committee chair, researched 2026-06-03; 17 topics scored
+- [daniel_mccay_ut_senate.md](daniel_mccay_ut_senate.md) — Daniel McCay, UT Senate District 18 (R-Riverton/South Jordan), attorney, SB174 abortion trigger sponsor, researched 2026-06-03; 11 topics scored
+- [brady_brammer_ut_senate.md](brady_brammer_ut_senate.md) — Brady Brammer, UT Senate District 21 (R-Highland/Alpine), attorney, researched 2026-06-03; 19 topics scored
+- [karen_kwan_ut_senate.md](karen_kwan_ut_senate.md) — Karen Kwan, UT Senate District 12 (D-Taylorsville/Murray), Senate Minority Whip, researched 2026-06-03; 12 topics scored
+- [jen_plumb_ut_senate.md](jen_plumb_ut_senate.md) — Jen Plumb, UT Senate District 9 (D-Salt Lake City), pediatric ER physician, researched 2026-06-03; 18 topics scored
+- [stephanie_pitcher_ut_senate.md](stephanie_pitcher_ut_senate.md) — Stephanie Pitcher, UT Senate District 14 (D-Millcreek), attorney, most productive Dem in 2025 session, researched 2026-06-03; 21 topics scored
+- [keith_grover_ut_senate.md](keith_grover_ut_senate.md) — Keith Grover, UT Senate District 23 (R-Provo/Utah County), Senate floor sponsor of anti-DEI HB261, researched 2026-06-03; 14 topics scored
+- [kirk_cullimore_ut_senate.md](kirk_cullimore_ut_senate.md) — Kirk A. Cullimore, UT Senate District 19 (R-Sandy/Draper), Senate Majority Leader, attorney, researched 2026-06-03; 13 topics scored

@@ -3,14 +3,14 @@ import { parseStancesCsv, parseEvidenceCsv, writeStancesCsv, writeEvidenceCsv } 
 
 describe('parseStancesCsv', () => {
   it('parses header + rows, coerces value to number, leaves null when blank', () => {
-    const csv = `full_name,external_id,topic_key,value,reasoning
+    const csv = `full_name,politician_id,topic_key,value,reasoning
 "Brad Sherman",,healthcare,2,"Cosponsored public option bill"
 "Maxine Waters",,abortion,,"Insufficient recent record"
 `;
     const rows = parseStancesCsv(csv);
     expect(rows).toEqual([
-      { full_name: 'Brad Sherman', external_id: '', topic_key: 'healthcare', value: 2, reasoning: 'Cosponsored public option bill' },
-      { full_name: 'Maxine Waters', external_id: '', topic_key: 'abortion', value: null, reasoning: 'Insufficient recent record' },
+      { full_name: 'Brad Sherman', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: 'Cosponsored public option bill' },
+      { full_name: 'Maxine Waters', politician_id: '', topic_key: 'abortion', value: null, reasoning: 'Insufficient recent record' },
     ]);
   });
 });
@@ -32,7 +32,7 @@ describe('parseEvidenceCsv', () => {
 describe('writeStancesCsv', () => {
   it('produces a parseable CSV with quoted fields', () => {
     const csv = writeStancesCsv([
-      { full_name: 'Brad, Sherman', external_id: '', topic_key: 'healthcare', value: 2, reasoning: 'has "quotes" inside' },
+      { full_name: 'Brad, Sherman', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: 'has "quotes" inside' },
     ]);
     const reparsed = parseStancesCsv(csv);
     expect(reparsed[0].full_name).toBe('Brad, Sherman');
