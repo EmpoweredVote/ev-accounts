@@ -35,29 +35,29 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 
 ### CA State Legislators (STATE_LOWER + STATE_UPPER) — 21 politicians
 
-| full_name | party | stance_count | office_title | notes |
-|-----------|-------|-------------|--------------|-------|
-| Catherine Stefani | Democratic | 3 | Assembly Member | |
-| Gregg Hart | Democratic | 3 | Assembly Member | |
-| Phillip Chen | Republican | 4 | Assembly Member | |
-| Dr. Corey A. Jackson | Democratic | 5 | Assembly Member | |
-| Heather Hadwick | Republican | 5 | Assembly Member | |
-| James C. Ramos | Democratic | 5 | Assembly Member | |
-| Michelle Rodriguez | Democratic | 5 | Assembly Member | |
-| Sharon Quirk-Silva | Democratic | 5 | Assembly Member | |
-| Steve Bennett | Democratic | 5 | Assembly Member | |
-| Tom Lackey | Republican | 5 | Assembly Member | |
-| Liz Ortega | Democratic | 6 | Assembly Member | |
-| Patrick J. Ahrens | Democratic | 6 | Assembly Member | |
-| Tina S. McKinnor | Democratic | 6 | Assembly Member | |
-| Alexandra M. Macedo | Republican | 7 | Assembly Member | |
-| Mark Gonzalez | Democratic | 7 | Assembly Member | |
-| Jose Luis Solache Jr. | Democratic | 8 | Assembly Member | |
-| Lisa Calderon | Democratic | 8 | Assembly Member | |
-| Maggy Krell | Democratic | 8 | Assembly Member | |
-| Juan Carrillo | Democratic | 9 | Assembly Member | |
-| Nick Schultz | Democratic | 9 | Assembly Member | |
-| Steven "Steve" Choi | Republican | 9 | Senator | STATE_UPPER |
+| full_name | party | stance_count | office_title | notes | post_fill_count | final_status |
+|-----------|-------|-------------|--------------|-------|-----------------|--------------|
+| Catherine Stefani | Democratic | 3 | Assembly Member | | 10 | complete |
+| Gregg Hart | Democratic | 3 | Assembly Member | | 10 | complete |
+| Phillip Chen | Republican | 4 | Assembly Member | | | |
+| Dr. Corey A. Jackson | Democratic | 5 | Assembly Member | | | |
+| Heather Hadwick | Republican | 5 | Assembly Member | | 10 | complete |
+| James C. Ramos | Democratic | 5 | Assembly Member | | | |
+| Michelle Rodriguez | Democratic | 5 | Assembly Member | | | |
+| Sharon Quirk-Silva | Democratic | 5 | Assembly Member | | 10 | complete |
+| Steve Bennett | Democratic | 5 | Assembly Member | | | |
+| Tom Lackey | Republican | 5 | Assembly Member | | 10 | complete |
+| Liz Ortega | Democratic | 6 | Assembly Member | | | |
+| Patrick J. Ahrens | Democratic | 6 | Assembly Member | | 10 | complete |
+| Tina S. McKinnor | Democratic | 6 | Assembly Member | | | |
+| Alexandra M. Macedo | Republican | 7 | Assembly Member | | | |
+| Mark Gonzalez | Democratic | 7 | Assembly Member | | | |
+| Jose Luis Solache Jr. | Democratic | 8 | Assembly Member | | | |
+| Lisa Calderon | Democratic | 8 | Assembly Member | | | |
+| Maggy Krell | Democratic | 8 | Assembly Member | | | |
+| Juan Carrillo | Democratic | 9 | Assembly Member | | | |
+| Nick Schultz | Democratic | 9 | Assembly Member | | | |
+| Steven "Steve" Choi | Republican | 9 | Senator | STATE_UPPER | | |
 
 ### MA State Legislators — 20 politicians
 
