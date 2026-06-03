@@ -16,7 +16,7 @@
 ### Gap-fill (GAPF)
 
 - [ ] **GAPF-01**: Audit all existing politicians for < 10 stances; produce a prioritized target list (sorted by politician prominence + coverage gap size)
-- [ ] **GAPF-02**: Research and ingest missing stances for all identified targets; every new stance row paired with a context row containing at least one source URL
+- [x] **GAPF-02**: Research and ingest missing stances for all identified targets; every new stance row paired with a context row containing at least one source URL
 
 ### Campaign Finance (FINA)
 
@@ -134,7 +134,7 @@
 | SACC-02 | Phase 88 | Complete |
 | SACC-03 | Phase 88 | Complete |
 | GAPF-01 | Phase 89 | Pending |
-| GAPF-02 | Phase 89 | Pending |
+| GAPF-02 | Phase 89 | Complete |
 | FINA-01 | Phase 90 | Pending |
 | FINA-02 | Phase 90 | Pending |
 | FINA-03 | Phase 90 | Pending |
