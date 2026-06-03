@@ -67,6 +67,24 @@ export const DEFAULT_WEIGHTS: AxisWeights = {
   geofenced: 0.02,
 };
 
+/**
+ * True number of counties (+ county-equivalents) per state, keyed by 2-digit
+ * state FIPS — the denominator for STATE breadth. The geofence table can be an
+ * incomplete county universe in prod (e.g. Indiana has only Monroe loaded), so
+ * denominating breadth by loaded geofences would overstate coverage. These are
+ * the fixed US Census county-equivalent counts (TIGER 2024); states absent here
+ * fall back to the loaded-geofence count. Tunable.
+ */
+export const US_COUNTY_COUNTS: Record<string, number> = {
+  '01': 67,  '02': 30,  '04': 15,  '05': 75,  '06': 58,  '08': 64,  '09': 9,   '10': 3,
+  '11': 1,   '12': 67,  '13': 159, '15': 5,   '16': 44,  '17': 102, '18': 92,  '19': 99,
+  '20': 105, '21': 120, '22': 64,  '23': 16,  '24': 24,  '25': 14,  '26': 83,  '27': 87,
+  '28': 82,  '29': 115, '30': 56,  '31': 93,  '32': 17,  '33': 10,  '34': 21,  '35': 33,
+  '36': 62,  '37': 100, '38': 53,  '39': 88,  '40': 77,  '41': 36,  '42': 67,  '44': 5,
+  '45': 46,  '46': 66,  '47': 95,  '48': 254, '49': 29,  '50': 14,  '51': 133, '53': 39,
+  '54': 55,  '55': 72,  '56': 23,
+};
+
 const TRISTATE_VALUE: Record<Tristate, number> = { none: 0, partial: 0.5, full: 1 };
 
 /** part/total → tristate (none if 0, full if all, partial otherwise). */
@@ -485,7 +503,7 @@ export async function getCountyScores(
  * built-out county and many empty ones reads low-breadth / high-depth (teal),
  * instead of the old single mean that washed out to near-empty.
  */
-function stateBreakdown(jur: JurisdictionScore[]) {
+function stateBreakdown(jur: JurisdictionScore[], stateFips: string) {
   // Group by county for the county-rollup units.
   const byCounty = new Map<string, JurisdictionScore[]>();
   for (const j of jur) {
@@ -501,11 +519,17 @@ function stateBreakdown(jur: JurisdictionScore[]) {
     const depth = populated.length > 0 ? populated.reduce((s, j) => s + j.score, 0) / populated.length : 0;
     countyUnits.push({ started, depth });
   }
-  const { breadth, depth } = aggregateUnits(countyUnits);
+  // Use aggregateUnits only for depth — breadth is overridden below using the
+  // true county count so that states with an incomplete geofence universe (e.g.
+  // Indiana with only Monroe County loaded) don't read as fully broad.
+  const { depth } = aggregateUnits(countyUnits);
+  const countiesStarted = countyUnits.filter((u) => u.started).length;
+  const counties = jur.filter((j) => j.level === 'county');
+  const countiesTotal = US_COUNTY_COUNTS[stateFips] || counties.length;
+  const breadth = countiesTotal > 0 ? Math.min(1, countiesStarted / countiesTotal) : 0;
 
   const cities = jur.filter((j) => j.level === 'local');
   const schools = jur.filter((j) => j.level === 'school');
-  const counties = jur.filter((j) => j.level === 'county');
 
   // Depth summary over ALL populated units (state-wide), as percentages.
   const populated = jur.filter((j) => j.populated);
@@ -521,8 +545,8 @@ function stateBreakdown(jur: JurisdictionScore[]) {
   return {
     breadth,
     depth,
-    counties_started: countyUnits.filter((u) => u.started).length,
-    counties_total: counties.length,
+    counties_started: countiesStarted,
+    counties_total: countiesTotal,
     cities_started: cities.filter((c) => c.populated).length,
     cities_total: cities.length,
     schools_started: schools.filter((s) => s.populated).length,
@@ -552,7 +576,7 @@ export async function getStateScores(
         score: mean(jur.map((j) => j.score)),
         jurisdiction_count: jur.length,
         populated_count: jur.filter((j) => j.populated).length,
-        ...stateBreakdown(jur),
+        ...stateBreakdown(jur, fips),
       });
     }
     return out;
