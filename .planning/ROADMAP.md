@@ -943,7 +943,7 @@ Plans:
 - Wave 3: Ukraine-support individual verification for 25 flagged Rs at value=2
 - Wave 4: Party string normalization across essentials.politicians
 
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 Plans:
 **Wave 1**
 
@@ -963,7 +963,7 @@ Plans:
 
 **Wave 5** *(blocked on Wave 4 completion)*
 
-- [ ] 88-05-PLAN.md — Party string normalization: UPDATE essentials.politicians SET party = 'Democratic' WHERE party = 'Democrat' (Wave 4)
+- [x] 88-05-PLAN.md — Party string normalization: UPDATE essentials.politicians SET party = 'Democratic' WHERE party = 'Democrat' (Wave 4)
 
 **Cross-cutting constraints:**
 
@@ -1084,7 +1084,7 @@ Plans:
 | 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
-| 88. Stance Corrections + Party Normalization | v2.6 | 4/5 | In Progress|  |
+| 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete   | 2026-06-03 |
 | 89. Gap-fill Existing Politicians | v2.6 | 0/? | Pending | — |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
