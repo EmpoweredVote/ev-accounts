@@ -23,15 +23,15 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 
 ### State Executive — 7 politicians
 
-| full_name | party | stance_count | office_title | state |
-|-----------|-------|-------------|--------------|-------|
-| Deborah B. Goldberg | Democratic | 2 | Treasurer and Receiver-General | MA |
-| William Francis Galvin | Democratic | 4 | Secretary of the Commonwealth | MA |
-| Karen Ross | Unknown | 5 | Secretary of Agriculture | CA |
-| Marlo M. Oaks | Unknown | 6 | Utah State Treasurer | UT |
-| Diana DiZoglio | Democratic | 7 | Auditor of the Commonwealth | MA |
-| Malia M. Cohen | Democratic | 9 | Controller | CA |
-| Robert Garcia | Democratic | 9 | Board of Equalization Member | CA |
+| full_name | party | stance_count | office_title | state | post_fill_count | final_status |
+|-----------|-------|-------------|--------------|-------|-----------------|--------------|
+| Deborah B. Goldberg | Democratic | 2 | Treasurer and Receiver-General | MA | 4 | evidence floor — MA Treasurer role is fiscal management/ESG; no direct evidence for abortion, immigration, voting-rights, etc. |
+| William Francis Galvin | Democratic | 4 | Secretary of the Commonwealth | MA | 6 | evidence floor — MA Secretary of State role focused on election administration; redistricting and immigration stances added from 2026 reelection statement; no evidence for other topics |
+| Karen Ross | Unknown | 5 | Secretary of Agriculture | CA | 5 | evidence floor — appointed CA Ag Secretary; policy positions limited to agriculture/tariffs; no Ballotpedia page; no evidence for social topics |
+| Marlo M. Oaks | Unknown | 6 | Utah State Treasurer | UT | 6 | evidence floor — UT Treasurer role focused on investment/ESG opposition; anti-ESG stances already captured; no evidence for abortion, immigration, voting-rights, etc. |
+| Diana DiZoglio | Democratic | 7 | Auditor of the Commonwealth | MA | 10 | complete — 3 new stances added (climate-change, fossil-fuels, civil-rights) from Ballotpedia campaign survey statements |
+| Malia M. Cohen | Democratic | 9 | Controller | CA | 9 | evidence floor — strong documentation for 9 stances; 10th stance lacks specific sourced evidence; no party-inference used |
+| Robert Garcia | Democratic | 9 | Board of Equalization Member | CA | 9 | evidence floor — BOE Member + Assembly Member; existing 9 stances cover major topics; no specific sourced evidence for 10th stance found |
 
 ### CA State Legislators (STATE_LOWER + STATE_UPPER) — 21 politicians
 
