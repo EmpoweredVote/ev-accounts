@@ -356,6 +356,16 @@ The full per-politician list is in `89-GAP-FILL-AUDIT.csv` (all 170 rows have `t
 
 ---
 
+## Unfixable Orphans (No Sources Found)
+
+The following (politician, topic) pairs had existing stance values in `inform.politician_answers` but no defensible source could be located to support that value. Context rows were NOT inserted for these topics. The existing stance value remains in the DB unchanged — these entries are flagged here for future review.
+
+| politician | politician_id | topic_key | existing_value | null_reason |
+|------------|---------------|-----------|---------------|-------------|
+| Roger Niello | 22152e41-31b9-4700-9226-4e274c616f37 | immigration | 2.0 | No defensible source found supporting value=2. Available evidence (NO vote on AB-1306 blocking ICE cooperation) is more consistent with value=4-5. Cannot fabricate sources for the existing value=2 assignment. Flagged as potential inversion requiring re-research. |
+
+---
+
 ## Wave 2 Work Order
 
 Wave 2 executor works this list top-to-bottom. No additional judgment needed — the tier classification is deterministic.
