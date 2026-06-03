@@ -24,11 +24,11 @@ A jurisdiction's score is a **weighted average of 7 axes**, each normalized to 0
 | Axis | Weight | Tracked? | Where the value comes from |
 |------|-------:|----------|----------------------------|
 | **roster** | 0.35 | ✅ live | active politicians loaded ÷ `expected_seats` (capped at 1). **N/A** when `expected_seats` is unknown — then it's dropped and the other weights renormalize. |
-| **stances** | 0.30 | ✅ live | fraction of the jurisdiction's active politicians whose stances have been researched. **Keyed on `essentials.politicians.last_stances_researched_at IS NOT NULL`** — not on the count of stance rows (see "Gotchas"). |
+| **stances** | 0.30 | ✅ live | fraction of the jurisdiction's active politicians with **≥1 compass answer in `inform.politician_answers`**. (Was keyed on `last_stances_researched_at`, but that timestamp is unstamped for bulk-loaded states — CA/OR showed 0 despite hundreds with answers — so it now counts the actual answer rows.) |
 | **populated** | 0.10 | ✅ live | 1 if the jurisdiction has ≥1 active politician, else 0. |
 | **headshots** | 0.10 | ✅ live | fraction of the jurisdiction's active politicians that have a photo. |
 | **treasury** | 0.10 | ✅ live + YAML | `full` if the jurisdiction's `geo_id` has ≥1 loaded budget in the `treasury` schema; otherwise falls back to the YAML `treasury` flag. |
-| **donors** | 0.03 | ✅ YAML only | the per-jurisdiction `donors` flag in the state YAML (`none`/`partial`/`full`). Untracked jurisdictions = `none` = 0. |
+| **donors** | 0.03 | ✅ live | fraction of the jurisdiction's politicians with **≥1 contribution**, joined `transparent_motivations.contributions → politician_sources.essentials_politician_id`. (Was a YAML-only flag that read `none` everywhere even though e.g. CA has 260 politicians with donor data.) |
 | **geofenced** | 0.02 | ✅ (≈ constant) | 1 if a TIGER boundary exists. In the map every jurisdiction is geofenced by definition, so this is a tiny near-constant floor — intentionally small (see below). |
 | **candidates** | — | ❌ **NOT counted** | Deliberately excluded from the map score today. (Candidate/election coverage is a planned separate "elections mode" — see end of doc.) |
 
@@ -86,20 +86,24 @@ jurisdictions inside it**:
 
 ## Data freshness & gotchas
 
-- **Live from the DB.** roster/stances/populated/headshots/treasury are computed from
-  `essentials.*` (and the `treasury` schema) on every request — **no `coverage-sync`
-  or YAML edit is needed** for new data to appear. (`coverage-sync` only snapshots the
-  *table* view's columns; the map ignores those snapshots.)
+- **Live from the DB.** roster/stances/populated/headshots/treasury/donors are computed
+  from `essentials.*` + `inform.politician_answers` + the `treasury` and
+  `transparent_motivations` schemas on every request — **no `coverage-sync` or YAML edit
+  is needed** for new data to appear. (`coverage-sync` only snapshots the *table* view's
+  columns; the map ignores those snapshots.)
 - **10-minute cache.** Results are cached in-process per state for 10 minutes. New data
   appears within ~10 min, or immediately via `?refresh=1` on the endpoint, or after a
   redeploy (which clears the cache).
-- **Stances gotcha (important).** The stances axis counts politicians where
-  `last_stances_researched_at` is set — **not** raw stance rows. If you load stances
-  without stamping that timestamp, the map won't move. The stance-apply scripts (e.g.
-  `scripts/apply-salt-lake-county-stances.ts`) already do
-  `UPDATE essentials.politicians SET last_stances_researched_at = NOW()`.
-- **donors is YAML-only.** It reflects the hand-maintained `donors` flag in the state
-  YAML, not any live donor table. Untracked jurisdictions always read `none`.
+- **Stances = answer rows, not the timestamp.** The stances axis counts politicians with
+  ≥1 row in `inform.politician_answers`. The table's "Last Researched" *date* still comes
+  from `last_stances_researched_at`, so a jurisdiction can show stance coverage with a
+  blank date when the answers were bulk-loaded without stamping the timestamp (honest:
+  "we have the stances, date unknown" — we don't fabricate a date).
+- **Donors = live contributions.** The donors axis is the fraction of a jurisdiction's
+  politicians with ≥1 row in `transparent_motivations.contributions` (joined via
+  `politician_sources.essentials_politician_id`). The old YAML `donors` flag is no longer
+  used by the map. Donor data is FEC-sourced and currently concentrated in CA (~260
+  politicians); states with no contribution data correctly read `none`.
 
 ---
 

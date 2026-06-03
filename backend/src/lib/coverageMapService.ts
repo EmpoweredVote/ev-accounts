@@ -68,6 +68,12 @@ export const DEFAULT_WEIGHTS: AxisWeights = {
 
 const TRISTATE_VALUE: Record<Tristate, number> = { none: 0, partial: 0.5, full: 1 };
 
+/** part/total → tristate (none if 0, full if all, partial otherwise). */
+function ratioTristate(part: number, total: number): Tristate {
+  if (total === 0 || part === 0) return 'none';
+  return part >= total ? 'full' : 'partial';
+}
+
 export type MapLevel = 'county' | 'local' | 'school';
 
 /** Per-jurisdiction summary used both in the rollup and the drill-down panel. */
@@ -125,6 +131,7 @@ interface JurisStats {
   total: number;
   withPhoto: number;
   researched: number;
+  withDonors: number;
 }
 
 /**
@@ -132,6 +139,15 @@ interface JurisStats {
  * OCD key (.../county:x | .../place:y | .../school_district:z). District rows
  * that aren't under one of those kinds (state-exec, legislative) yield a null
  * key and are dropped — they aren't part of the county rollup.
+ *
+ * Signals (these come from the ACTUAL data, not proxy flags):
+ *   researched — politician has ≥1 compass answer in inform.politician_answers.
+ *     NOT politicians.last_stances_researched_at: that timestamp is unstamped for
+ *     bulk-loaded states (CA/OR have 0 stamped despite 228/108 with answers), so
+ *     it badly under-reported stance coverage.
+ *   withDonors — politician has ≥1 contribution. The contributions table keys on
+ *     politician_source_id, which is NOT an essentials id — it joins through
+ *     transparent_motivations.politician_sources.essentials_politician_id.
  */
 async function statsByJurisdiction(stateCode: string): Promise<Map<string, JurisStats>> {
   const { rows } = await pool.query<{
@@ -139,6 +155,7 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
     total: string;
     with_photos: string;
     researched: string;
+    with_donors: string;
   }>(
     `SELECT
        (regexp_match(d.ocd_id,
@@ -148,11 +165,19 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
          WHERE img.politician_id IS NOT NULL
             OR p.photo_origin_url IS NOT NULL
             OR p.photo_custom_url IS NOT NULL)                                      AS with_photos,
-       COUNT(DISTINCT p.id) FILTER (WHERE p.last_stances_researched_at IS NOT NULL) AS researched
+       COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)            AS researched,
+       COUNT(DISTINCT p.id) FILTER (WHERE don.politician_id IS NOT NULL)            AS with_donors
      FROM essentials.politicians p
      JOIN essentials.offices   o ON o.politician_id = p.id
      JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
+     LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
+            ON ans.politician_id = p.id
+     LEFT JOIN (
+       SELECT DISTINCT ps.essentials_politician_id AS politician_id
+         FROM transparent_motivations.politician_sources ps
+         JOIN transparent_motivations.contributions c ON c.politician_source_id = ps.id
+     ) don ON don.politician_id = p.id
      WHERE p.is_active = true
        AND d.ocd_id LIKE 'ocd-division/country:us/state:' || $1 || '/%'
      GROUP BY juris_ocd`,
@@ -165,6 +190,7 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
       total: Number(r.total),
       withPhoto: Number(r.with_photos),
       researched: Number(r.researched),
+      withDonors: Number(r.with_donors),
     });
   }
   return map;
@@ -269,7 +295,7 @@ async function buildJurisdictions(
   const out: JurisdictionScore[] = [];
 
   const push = (ocd_id: string, name: string, level: MapLevel, county_fips: string | null, geoId: string) => {
-    const s = stats.get(ocd_id) ?? { total: 0, withPhoto: 0, researched: 0 };
+    const s = stats.get(ocd_id) ?? { total: 0, withPhoto: 0, researched: 0, withDonors: 0 };
     const y = yaml.get(ocd_id);
     const exp = y?.expected ?? null;
     // Every jurisdiction here comes from the geofence table, so it's geofenced.
@@ -277,7 +303,10 @@ async function buildJurisdictions(
     // Treasury: live signal (a loaded budget for this geo_id) wins; fall back to
     // the YAML flag for jurisdictions tracked but not yet in the treasury schema.
     const treasury: Tristate = treasurySet.has(geoId) ? 'full' : y?.treasury ?? 'none';
-    const donors: Tristate = y?.donors ?? 'none';
+    // Donors: live contribution data (transparent_motivations) — fraction of the
+    // jurisdiction's politicians with ≥1 contribution. Was YAML-only, which read
+    // 'none' everywhere even though e.g. CA has 260 politicians with donor data.
+    const donors: Tristate = ratioTristate(s.withDonors, s.total);
     const score = compositeScore(
       {
         populated: s.total > 0,

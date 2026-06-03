@@ -232,12 +232,19 @@ export async function computeLocationStats(spec: LocationStatSpec): Promise<Loca
          WHERE img.politician_id IS NOT NULL
             OR p.photo_origin_url IS NOT NULL
             OR p.photo_custom_url IS NOT NULL)                                 AS with_photos,
-       COUNT(DISTINCT p.id) FILTER (WHERE p.last_stances_researched_at IS NOT NULL) AS researched,
+       -- "researched" = politician has ≥1 compass answer (the real data), NOT the
+       -- last_stances_researched_at timestamp, which is unstamped for bulk-loaded
+       -- states (CA/OR show 0 stamped despite hundreds with answers). The date
+       -- column below still comes from the timestamp, so it stays blank when the
+       -- true research date is unknown rather than fabricating one.
+       COUNT(DISTINCT p.id) FILTER (WHERE ans.politician_id IS NOT NULL)       AS researched,
        to_char(MAX(p.last_stances_researched_at), 'YYYY-MM-DD')                AS last_researched
      FROM essentials.politicians p
      JOIN essentials.offices   o ON o.politician_id = p.id
      JOIN essentials.districts d ON d.id = o.district_id
      LEFT JOIN essentials.politician_images img ON img.politician_id = p.id
+     LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
+            ON ans.politician_id = p.id
      WHERE p.is_active = true
        AND ${where}`,
     params,
