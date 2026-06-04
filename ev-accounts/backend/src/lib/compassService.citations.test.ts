@@ -59,8 +59,8 @@ describe('groupCitationRows', () => {
 
   it('tracks last_verified_at as the max across all citations', () => {
     const rows = [
-      { ...base, verified_at: '2026-03-01T00:00:00Z' },
       { ...base, source_url: 'https://b.example', snippet: 'other', verified_at: '2026-05-15T00:00:00Z' },
+      { ...base, verified_at: '2026-03-01T00:00:00Z' },
     ];
     const blocks = groupCitationRows(rows);
     expect(blocks[0].last_verified_at).toBe('2026-05-15T00:00:00Z');

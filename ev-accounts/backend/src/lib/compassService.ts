@@ -827,7 +827,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        pc.reasoning,
        pce.source_url,
        pce.snippet,
-       pce.verified_at,
+       pce.verified_at::text AS verified_at,
        (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
      FROM inform.politician_context_evidence pce
      JOIN inform.compass_topics ct
