@@ -19,8 +19,8 @@ const SRC_NC = stripComments(SRC);
 
 describe('essentialsService finance_summary surface (FINA-03)', () => {
   it('PoliticianFlatRecord interface declares finance_summary', () => {
-    // Scoped match: starts at PoliticianFlatRecord, non-greedy up to next export interface or end of block
-    const match = /export interface PoliticianFlatRecord\s*\{([\s\S]*?)(?=\nexport |\nfunction |\nconst |\nclass )/.exec(SRC_NC);
+    // Scoped match: starts at PoliticianFlatRecord, non-greedy up to closing brace or next declaration
+    const match = /export interface PoliticianFlatRecord\s*\{([\s\S]*?)(?=\n\}|\nexport |\nfunction |\nconst |\nclass )/.exec(SRC_NC);
     expect(match, 'PoliticianFlatRecord interface not found in source').toBeTruthy();
     const interfaceBody = match![1];
     expect(interfaceBody).toMatch(/finance_summary\s*:/i);
@@ -52,7 +52,7 @@ describe('essentialsService finance_summary surface (FINA-03)', () => {
 
   it('row mappers project finance_summary into the returned record', () => {
     // Both mappers (getPoliticiansFlatList row.map and getPoliticianById return object) must contain
-    // finance_summary: row.finance_summary — allow optional ?? null or JSON.parse wrapper (Pitfall 6)
+    // finance_summary: row.finance_summary -- allow optional ?? null or JSON.parse wrapper (Pitfall 6)
     expect(SRC_NC).toMatch(/finance_summary:\s*row\.finance_summary/);
   });
 });
