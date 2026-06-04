@@ -1,7 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import { apiFetch } from '../../lib/api';
 import { Bool, Chip, Stances, Roster, ratioToTristate, type Tristate } from './coverageCells';
-import { type CountyScore } from './coverageTypes';
+import { type CountyScore, type StateScore } from './coverageTypes';
+import { bivariateColor } from './coverageBivariate';
 
 // ---------------------------------------------------------------------------
 // Types — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
@@ -154,16 +155,80 @@ const STATUS_STYLE: Record<CoverageLocation['status'], string> = {
 const COUNTY_LEVEL_LABEL = { county: 'County govt', local: 'City / Town', school: 'School District' } as const;
 
 // ---------------------------------------------------------------------------
+// US overview — every tracked state, shown on the first page (no state selected)
+// ---------------------------------------------------------------------------
+
+const US_COLS = ['State', 'Composite', 'Breadth', 'Depth', 'Counties', 'Cities', 'Schools', 'Stances', 'Photos'];
+
+function UsOverviewTable({ states, loading, onPick }: { states: StateScore[]; loading: boolean; onPick: (fips: string, name: string) => void }) {
+  const sorted = [...states].sort((a, b) => b.score - a.score);
+  return (
+    <div className="overflow-hidden rounded-lg bg-white shadow dark:bg-gray-900">
+      <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3 dark:border-gray-800">
+        <h2 className="text-sm font-semibold text-gray-900 dark:text-white">
+          All tracked states <span className="font-normal text-gray-400">({states.length})</span>
+        </h2>
+        {states.length > 0 && <span className="text-xs text-gray-400">click a row to drill in</span>}
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead className="border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+            <tr>
+              {US_COLS.map((h, i) => (
+                <th key={h} className={`px-3 py-2 font-medium text-gray-500 dark:text-gray-400 ${i === 0 ? 'text-left' : 'text-right'}`}>{h}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+            {loading && states.length === 0 ? (
+              Array.from({ length: 6 }).map((_, i) => (
+                <tr key={i} className="animate-pulse">
+                  <td colSpan={US_COLS.length} className="px-3 py-2"><div className="h-4 w-full rounded bg-gray-200 dark:bg-gray-700" /></td>
+                </tr>
+              ))
+            ) : states.length === 0 ? (
+              <tr><td colSpan={US_COLS.length} className="px-3 py-6 text-center text-gray-400">No tracked states yet.</td></tr>
+            ) : (
+              sorted.map((s) => (
+                <tr key={s.fips} onClick={() => onPick(s.fips, s.name)} className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/40">
+                  <td className="px-3 py-2">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-block h-3.5 w-3.5 shrink-0 rounded-sm" style={{ background: bivariateColor(s.breadth, s.depth) }} title="bivariate breadth × depth" />
+                      <span className="font-medium text-gray-900 dark:text-white">{s.name}</span>
+                    </div>
+                  </td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.score}%</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{Math.round(s.breadth * 100)}%</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.depth}%</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.counties_started}/{s.counties_total}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.cities_started}/{s.cities_total}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.schools_started}/{s.schools_total}</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.stances_pct}%</td>
+                  <td className="px-3 py-2 text-right tabular-nums text-gray-600 dark:text-gray-400">{s.photo_pct}%</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// ---------------------------------------------------------------------------
 // CoverageTable
 // ---------------------------------------------------------------------------
 
 interface Props {
+  states: StateScore[];              // all tracked states — drives the US overview table
+  statesLoading: boolean;            // US-level fetch in flight
   state: string | null;              // lowercase state code from the map selection; null = none chosen
   focusCounty: CountyScore | null;   // when set, show this county's jurisdiction breakdown instead of the state tracker
   onClearCounty: () => void;
+  onPickState: (fips: string, name: string) => void; // US-overview row → select that state
 }
 
-export function CoverageTable({ state, focusCounty, onClearCounty }: Props) {
+export function CoverageTable({ states, statesLoading, state, focusCounty, onClearCounty, onPickState }: Props) {
   const [data, setData] = useState<CoverageResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
@@ -224,8 +289,8 @@ export function CoverageTable({ state, focusCounty, onClearCounty }: Props) {
     );
   }
 
-  // No state selected
-  if (!state) return <p className="text-sm text-gray-400">Select a state on the map to see its coverage breakdown.</p>;
+  // No state selected — show the US-wide overview of every tracked state
+  if (!state) return <UsOverviewTable states={states} loading={statesLoading} onPick={onPickState} />;
 
   const cov = data?.coverage ?? null;
   const syncedStale =
