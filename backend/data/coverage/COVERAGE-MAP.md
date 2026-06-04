@@ -1,18 +1,23 @@
 # Coverage Map — how the % is calculated
 
-The coverage map (`/admin/coverage/map`) colors each geography (US states → counties
-→ jurisdictions) by a single **0–100% composite completeness score**. This doc explains
-exactly what that number counts, so there's no guessing about whether a column is
-"really" tracked.
+The coverage map lives at `/admin/coverage` (stacked above the tabular tracker — the two
+were merged into one tab; `/admin/coverage/map` now redirects there). In **completeness**
+mode it colors each geography (US states → counties → jurisdictions) by a **bivariate
+breadth × depth** encoding (see "Bivariate coloring" below). It still also computes the
+single **0–100% composite completeness score** per geography — the *table* uses that
+score; the *map fill* uses breadth/depth. This doc explains exactly what those numbers
+count, so there's no guessing about whether a column is "really" tracked.
 
-- **Backend:** `backend/src/lib/coverageMapService.ts`
+- **Backend:** `backend/src/lib/coverageMapService.ts` (rollup + breadth/depth) and
+  `backend/src/lib/coverageBivariate.ts` (pure breadth/depth aggregation, unit-tested)
 - **Endpoint:** `GET /api/admin/coverage/map?level=state` and `?level=county&state=<code>` (admin-gated)
-- **Frontend:** `admin/src/pages/admin/CoverageMapPage.tsx`
+- **Frontend:** `admin/src/pages/admin/CoveragePage.tsx` (orchestrator) →
+  `CoverageMap.tsx` (map) + `CoverageTable.tsx` (table); bivariate color/bucketing in
+  `admin/src/pages/admin/coverageBivariate.ts` (unit-tested)
 
-This is **separate** from the tabular coverage tracker (`/admin/coverage`,
-`coverageService.ts`, the per-state `*.yaml` files). The map reuses some of the same
-signals but computes its own rollup score. The YAML schema is documented in
-[`README.md`](./README.md).
+This shares the per-state `*.yaml` files + `coverageService.ts` with the tabular
+tracker, but the map computes its own rollup score and breadth/depth. The YAML schema is
+documented in [`README.md`](./README.md).
 
 ---
 
@@ -81,6 +86,47 @@ jurisdictions inside it**:
 - **Faint teal (~3%)** = tracked, but the jurisdiction has only its boundary, no people.
 - **Darker teal** = real coverage. The color ramp uses a gamma curve so the clustered
   low scores still separate visually.
+
+> The single composite `score` above still drives the **table** and the elections-mode
+> ramp. The **completeness map fill** uses the bivariate encoding below instead, because a
+> single mean conflates breadth and depth (e.g. Indiana looked "covered" because one
+> county — Monroe — is built out while no others are).
+
+---
+
+## Bivariate coloring (completeness map fill)
+
+The completeness map fill encodes **two** dimensions instead of one mean:
+
+- **Breadth** = fraction of the geography's child units that are *started* (≥1 active
+  politician). **State** → over its counties; **County** → over its jurisdictions
+  (county govt + cities + school districts).
+- **Depth** = mean composite completeness over the **started units only** — white space
+  is carried by *breadth*, not by dragging *depth* toward zero.
+
+Each axis is bucketed low / med / high and mapped to a **3×3 Teal × Amber** grid
+(X = breadth, Y = depth): **teal** = deep & narrow, **amber** = broad & shallow,
+**olive** = both high, **near-white** = tracked-but-empty (0 started). Antipartisan —
+deliberately no red/blue. An untracked state (no YAML) stays the neutral **grey**,
+distinct from the near-white empty cell.
+
+- **Thresholds (tunable):** breadth `<10% / 10–50% / ≥50%`; depth `<33 / 33–66 / ≥66`
+  (0–100). Buckets + the 3×3 hex palette live in
+  `admin/src/pages/admin/coverageBivariate.ts`; the breadth/depth aggregation lives in
+  `backend/src/lib/coverageBivariate.ts` (both unit-tested).
+- **Breadth denominator = true county count.** A state's county *geofence* universe can
+  be incomplete (e.g. Indiana has only Monroe geofenced, 1 of 92). Denominating state
+  breadth by loaded geofences would make Indiana read 1/1 = fully broad — the opposite of
+  the truth. So state breadth uses the **true US county count per state**
+  (`US_COUNTY_COUNTS` in `coverageMapService.ts`), so Indiana correctly reads
+  narrow-but-deep (1/92 → teal). States absent from that table fall back to the loaded
+  count.
+- **Hover cards** convey *what's* covered: state → `n/N counties` + breadth bars
+  (counties / cities / schools started) + `Rosters X% · Stances Y% · Photos Z%`; county →
+  `n/N populated` + jurisdictions inside (county govt, cities X/Y, schools X/Y) + axis
+  chips (Roster / Stances / Photos / Treasury / Donors). These fields ride alongside
+  `score` in the same endpoint response. **Bivariate + hover apply to completeness only**
+  — elections mode keeps its single-hue race-coverage ramp + race-list drill-down.
 
 ---
 
