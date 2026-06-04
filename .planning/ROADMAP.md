@@ -944,7 +944,8 @@ Plans:
 - Wave 4: Party string normalization across essentials.politicians
 
 **Plans:** 5/5 plans complete
-Plans:
+
+Plans:
 **Wave 1**
 
 - [x] 88-01-PLAN.md — Tier 1 batch A: re-research and correct Gonzalez, Niello, Nixon, Vindman (Wave 1)
@@ -1047,6 +1048,13 @@ Plans:
 - Wave 1: Human verification — review /elections for data accuracy, UI issues, missing coverage (ELEC-01)
 - Wave 2: Fix all issues found in Wave 1 (ELEC-02)
 - Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
+
+**Plans:** 3 plans
+
+Plans:
+- [ ] 99-03-PLAN.md — Utah migration 267 + Playwright verification
+- [ ] 99-04-PLAN.md — Fix all issues from verification
+- [ ] 99-05-PLAN.md — Smoke test + ship declaration
 
 **Success Criteria:**
 
