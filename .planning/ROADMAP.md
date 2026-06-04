@@ -1020,7 +1020,7 @@ Plans:
 
 **Requirements:** FINA-01, FINA-02, FINA-03
 
-**Plans:** 1/3 plans executed
+**Plans:** 2/3 plans executed
 Plans:
 **Wave 1**
 
@@ -1028,7 +1028,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 90-02-PLAN.md — Build and run run-fec-finance-summary.ts: FEC ingestion for federal politicians via two-path crosswalk (FINA-02)
+- [x] 90-02-PLAN.md — Build and run run-fec-finance-summary.ts: FEC ingestion for federal politicians via two-path crosswalk (FINA-02)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -1119,7 +1119,7 @@ Plans:
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
 | 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete    | 2026-06-04 |
-| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 1/3 | In Progress|  |
+| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 2/3 | In Progress|  |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
