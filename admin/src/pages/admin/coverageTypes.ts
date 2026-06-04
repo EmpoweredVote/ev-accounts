@@ -15,6 +15,7 @@ export interface JurisdictionScore {
   ocd_id: string; name: string; level: MapLevel; county_fips: string | null;
   score: number; populated: boolean; roster_actual: number; expected_seats: number | null;
   headshots: { withPhoto: number; total: number }; stances: { researched: number; total: number };
+  donors_n: { withDonors: number; total: number };
   geofenced: boolean; treasury: 'none' | 'partial' | 'full'; donors: 'none' | 'partial' | 'full';
 }
 
@@ -23,8 +24,8 @@ export interface CountyScore {
   jurisdiction_count: number; populated_count: number; jurisdictions: JurisdictionScore[];
   breadth: number; depth: number; county_govt_started: boolean;
   cities_started: number; cities_total: number; schools_started: number; schools_total: number;
-  roster: 'none' | 'partial' | 'full'; stances: 'none' | 'partial' | 'full'; photos: 'none' | 'partial' | 'full';
-  treasury: 'none' | 'partial' | 'full'; donors: 'none' | 'partial' | 'full';
+  roster_pct: number; stances_pct: number; photo_pct: number; donors_pct: number;
+  treasury: 'none' | 'partial' | 'full';
 }
 
 export interface StateElection {
