@@ -1,6 +1,6 @@
 /**
- * Shared coverage cell components — used by both the tabular CoverageTrackerPage
- * and the CoverageMapPage drill-down panel so the two stay visually in sync.
+ * Shared coverage cell components — used by both the CoverageTable tracker body
+ * and the CoverageMap county drill-down so the two stay visually in sync.
  */
 
 export type Tristate = 'none' | 'partial' | 'full';

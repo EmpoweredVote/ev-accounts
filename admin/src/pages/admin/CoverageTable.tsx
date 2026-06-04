@@ -1,7 +1,11 @@
 import { useEffect, useState, useCallback } from 'react';
-import { Link } from 'react-router-dom';
 import { apiFetch } from '../../lib/api';
-import { Bool, Chip, Stances, Roster, type Tristate } from './coverageCells';
+import { Bool, Chip, Stances, Roster, ratioToTristate, type Tristate } from './coverageCells';
+import { type CountyScore } from './coverageTypes';
+
+// ---------------------------------------------------------------------------
+// Types — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
+// ---------------------------------------------------------------------------
 
 type Level = 'federal' | 'state' | 'county' | 'local' | 'school';
 
@@ -57,6 +61,10 @@ interface CoverageResponse {
   coverage: Coverage | null;
 }
 
+// ---------------------------------------------------------------------------
+// Constants — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
+// ---------------------------------------------------------------------------
+
 const LEVEL_LABEL: Record<Level, string> = {
   federal: 'Federal Delegation',
   state: 'State Government',
@@ -65,6 +73,10 @@ const LEVEL_LABEL: Record<Level, string> = {
   school: 'School Districts',
 };
 const LEVEL_ORDER: Level[] = ['federal', 'state', 'county', 'local', 'school'];
+
+// ---------------------------------------------------------------------------
+// UniverseCard — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
+// ---------------------------------------------------------------------------
 
 function UniverseCard({ cat }: { cat: UniverseCategory }) {
   const [open, setOpen] = useState(false);
@@ -125,34 +137,95 @@ function UniverseCard({ cat }: { cat: UniverseCategory }) {
   );
 }
 
+// ---------------------------------------------------------------------------
+// STATUS_STYLE — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
+// ---------------------------------------------------------------------------
+
 const STATUS_STYLE: Record<CoverageLocation['status'], string> = {
   active: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400',
   in_progress: 'bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400',
   deferred: 'bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-500',
 };
 
-export function CoverageTrackerPage() {
+// ---------------------------------------------------------------------------
+// County-focus level label map
+// ---------------------------------------------------------------------------
+
+const COUNTY_LEVEL_LABEL = { county: 'County govt', local: 'City / Town', school: 'School District' } as const;
+
+// ---------------------------------------------------------------------------
+// CoverageTable
+// ---------------------------------------------------------------------------
+
+interface Props {
+  state: string | null;              // lowercase state code from the map selection; null = none chosen
+  focusCounty: CountyScore | null;   // when set, show this county's jurisdiction breakdown instead of the state tracker
+  onClearCounty: () => void;
+}
+
+export function CoverageTable({ state, focusCounty, onClearCounty }: Props) {
   const [data, setData] = useState<CoverageResponse | null>(null);
-  const [state, setState] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const fetchCoverage = useCallback(() => {
-    setLoading(true);
-    setError(null);
-    const qs = state ? `?state=${state}` : '';
-    apiFetch<CoverageResponse>(`/admin/coverage${qs}`)
-      .then((res) => {
-        setData(res);
-        if (!state && res.coverage) setState(res.coverage.state.toLowerCase());
-      })
+    if (!state) { setData(null); return; }
+    setLoading(true); setError(null);
+    apiFetch<CoverageResponse>(`/admin/coverage?state=${state}`)
+      .then(setData)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, [state]);
 
-  useEffect(() => {
-    fetchCoverage();
-  }, [fetchCoverage]);
+  useEffect(() => { fetchCoverage(); }, [fetchCoverage]);
+
+  // County focus branch — replaces the state tracker while a county is selected
+  if (focusCounty) {
+    return (
+      <div className="rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
+        <div className="flex items-center justify-between border-b border-gray-100 p-4 dark:border-gray-800">
+          <div>
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-white">{focusCounty.name}</h2>
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              {focusCounty.populated_count}/{focusCounty.jurisdiction_count} jurisdictions populated · depth {focusCounty.depth}%
+            </p>
+          </div>
+          <button onClick={onClearCounty} className="text-xs text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">← back to state</button>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead className="border-b border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-800">
+              <tr>
+                {['Jurisdiction', 'Geofenced', 'Roster', 'Headshots', 'Stances', 'Treasury', 'Donors', 'Score'].map((h) => (
+                  <th key={h} className="whitespace-nowrap px-3 py-2 text-left font-medium text-gray-500 dark:text-gray-400">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
+              {focusCounty.jurisdictions.map((j) => (
+                <tr key={j.ocd_id} className="hover:bg-gray-50 dark:hover:bg-gray-800/40">
+                  <td className="px-3 py-2">
+                    <div className="font-medium text-gray-900 dark:text-white">{j.name}</div>
+                    <div className="text-[10px] uppercase tracking-wide text-gray-400">{COUNTY_LEVEL_LABEL[j.level]}</div>
+                  </td>
+                  <td className="px-3 py-2"><Bool value={j.geofenced} /></td>
+                  <td className="px-3 py-2"><Roster actual={j.roster_actual} expected={j.expected_seats} complete={j.expected_seats != null && j.roster_actual >= j.expected_seats} /></td>
+                  <td className="px-3 py-2"><Chip value={ratioToTristate(j.headshots.withPhoto, j.headshots.total)} /></td>
+                  <td className="px-3 py-2"><Stances s={j.stances} /></td>
+                  <td className="px-3 py-2"><Chip value={j.treasury} /></td>
+                  <td className="px-3 py-2"><Chip value={j.donors} /></td>
+                  <td className="px-3 py-2 tabular-nums text-gray-600 dark:text-gray-400">{j.score}%</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  }
+
+  // No state selected
+  if (!state) return <p className="text-sm text-gray-400">Select a state on the map to see its coverage breakdown.</p>;
 
   const cov = data?.coverage ?? null;
   const syncedStale =
@@ -161,31 +234,6 @@ export function CoverageTrackerPage() {
 
   return (
     <div>
-      <div className="mb-6 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Data Coverage</h1>
-          <Link
-            to="/admin/coverage/map"
-            className="rounded-md border border-gray-300 px-2.5 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-800"
-          >
-            Map view →
-          </Link>
-        </div>
-        {data && data.states.length > 0 && (
-          <select
-            value={state ?? ''}
-            onChange={(e) => setState(e.target.value)}
-            className="rounded-md border border-gray-300 bg-white px-3 py-1.5 text-sm dark:border-gray-600 dark:bg-gray-900 dark:text-gray-200"
-          >
-            {data.states.map((s) => (
-              <option key={s} value={s}>
-                {s.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        )}
-      </div>
-
       {error && (
         <div className="mb-4 rounded border border-red-200 bg-red-50 p-4 text-sm text-red-700 dark:border-red-800/60 dark:bg-red-950/40 dark:text-red-400">
           {error}

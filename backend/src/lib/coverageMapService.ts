@@ -36,6 +36,7 @@
 import { pool } from './db.js';
 import { listCoverageStates, readCoverageFile, type Tristate } from './coverageService.js';
 import { toSlug, PLACE_STRIP } from './electionsMap.js';
+import { aggregateUnits, type Unit } from './coverageBivariate.js';
 
 export interface AxisWeights {
   geofenced: number;
@@ -64,6 +65,24 @@ export const DEFAULT_WEIGHTS: AxisWeights = {
   treasury: 0.1,
   donors: 0.03,
   geofenced: 0.02,
+};
+
+/**
+ * True number of counties (+ county-equivalents) per state, keyed by 2-digit
+ * state FIPS — the denominator for STATE breadth. The geofence table can be an
+ * incomplete county universe in prod (e.g. Indiana has only Monroe loaded), so
+ * denominating breadth by loaded geofences would overstate coverage. These are
+ * the fixed US Census county-equivalent counts (TIGER 2024); states absent here
+ * fall back to the loaded-geofence count. Tunable.
+ */
+export const US_COUNTY_COUNTS: Record<string, number> = {
+  '01': 67,  '02': 30,  '04': 15,  '05': 75,  '06': 58,  '08': 64,  '09': 9,   '10': 3,
+  '11': 1,   '12': 67,  '13': 159, '15': 5,   '16': 44,  '17': 102, '18': 92,  '19': 99,
+  '20': 105, '21': 120, '22': 64,  '23': 16,  '24': 24,  '25': 14,  '26': 83,  '27': 87,
+  '28': 82,  '29': 115, '30': 56,  '31': 93,  '32': 17,  '33': 10,  '34': 21,  '35': 33,
+  '36': 62,  '37': 100, '38': 53,  '39': 88,  '40': 77,  '41': 36,  '42': 67,  '44': 5,
+  '45': 46,  '46': 66,  '47': 95,  '48': 254, '49': 29,  '50': 14,  '51': 133, '53': 39,
+  '54': 55,  '55': 72,  '56': 23,
 };
 
 const TRISTATE_VALUE: Record<Tristate, number> = { none: 0, partial: 0.5, full: 1 };
@@ -100,6 +119,19 @@ export interface CountyScore {
   jurisdiction_count: number;
   populated_count: number;
   jurisdictions: JurisdictionScore[];
+  // Bivariate + hover breakdown (completeness mode):
+  breadth: number; // 0..1 — populated_count ÷ jurisdiction_count
+  depth: number;   // 0..100 — mean composite over populated jurisdictions only
+  county_govt_started: boolean;
+  cities_started: number;
+  cities_total: number;
+  schools_started: number;
+  schools_total: number;
+  roster: Tristate;
+  stances: Tristate;
+  photos: Tristate;
+  treasury: Tristate;
+  donors: Tristate;
 }
 
 export interface StateScore {
@@ -109,6 +141,18 @@ export interface StateScore {
   score: number; // 0..100
   jurisdiction_count: number;
   populated_count: number;
+  // Bivariate + hover breakdown (completeness mode):
+  breadth: number; // 0..1 — counties with ≥1 started unit ÷ total counties
+  depth: number;   // 0..100 — mean of started counties' depth
+  counties_started: number;
+  counties_total: number;
+  cities_started: number;
+  cities_total: number;
+  schools_started: number;
+  schools_total: number;
+  roster_pct: number;  // 0..100 over started units
+  stances_pct: number; // 0..100 over started units
+  photo_pct: number;   // 0..100 over started units
 }
 
 const CACHE_TTL_MS = 10 * 60 * 1000;
@@ -356,6 +400,55 @@ function mean(nums: number[]): number {
   return Math.round((nums.reduce((s, n) => s + n, 0) / nums.length) * 10) / 10;
 }
 
+/**
+ * Roll a county's jurisdiction list into the bivariate + hover breakdown.
+ * breadth/depth come from the pure aggregator (started = populated, depth =
+ * composite score). The axis tristates summarise the populated jurisdictions
+ * only, so empty white space doesn't read as a hard ✕ on every axis.
+ */
+function countyBreakdown(list: JurisdictionScore[]) {
+  const units: Unit[] = list.map((j) => ({ started: j.populated, depth: j.score }));
+  const { breadth, depth } = aggregateUnits(units);
+  const populated = list.filter((j) => j.populated);
+
+  const cities = list.filter((j) => j.level === 'local');
+  const schools = list.filter((j) => j.level === 'school');
+  const countyGovt = list.find((j) => j.level === 'county');
+
+  // Axis tristates over the populated set.
+  const sum = (sel: (j: JurisdictionScore) => number) => populated.reduce((s, j) => s + sel(j), 0);
+  const photoPart = sum((j) => j.headshots.withPhoto);
+  const photoTotal = sum((j) => j.headshots.total);
+  const stancePart = sum((j) => j.stances.researched);
+  const stanceTotal = sum((j) => j.stances.total);
+  const rosterActual = sum((j) => (j.expected_seats != null ? j.roster_actual : 0));
+  const rosterExpected = sum((j) => j.expected_seats ?? 0);
+  const treasuryFull = populated.filter((j) => j.treasury === 'full').length;
+  const treasuryAny = populated.filter((j) => j.treasury !== 'none').length;
+  const donorsFull = populated.filter((j) => j.donors === 'full').length;
+  const donorsAny = populated.filter((j) => j.donors !== 'none').length;
+
+  // treasury/donors are jurisdiction-level flags: 'full' only when EVERY populated
+  // jurisdiction has it, 'partial' when some do, 'none' when none do.
+  const allFullTristate = (full: number, any: number, n: number): Tristate =>
+    n === 0 || any === 0 ? 'none' : full >= n ? 'full' : 'partial';
+
+  return {
+    breadth,
+    depth,
+    county_govt_started: !!countyGovt?.populated,
+    cities_started: cities.filter((c) => c.populated).length,
+    cities_total: cities.length,
+    schools_started: schools.filter((s) => s.populated).length,
+    schools_total: schools.length,
+    roster: rosterExpected > 0 ? ratioTristate(rosterActual, rosterExpected) : 'none',
+    stances: ratioTristate(stancePart, stanceTotal),
+    photos: ratioTristate(photoPart, photoTotal),
+    treasury: allFullTristate(treasuryFull, treasuryAny, populated.length),
+    donors: allFullTristate(donorsFull, donorsAny, populated.length),
+  };
+}
+
 /** County choropleth + drill-down data for one state. */
 export async function getCountyScores(
   stateCode: string,
@@ -383,21 +476,92 @@ export async function getCountyScores(
     const counties: CountyScore[] = [];
     for (const [fips, list] of byCounty) {
       const county = list.find((l) => l.level === 'county');
+      const sorted = list.sort((a, b) => {
+        const order = { county: 0, local: 1, school: 2 } as const;
+        return order[a.level] - order[b.level] || a.name.localeCompare(b.name);
+      });
       counties.push({
         fips,
         name: county?.name ?? fips,
         score: mean(list.map((l) => l.score)),
         jurisdiction_count: list.length,
         populated_count: list.filter((l) => l.populated).length,
-        jurisdictions: list.sort((a, b) => {
-          const order = { county: 0, local: 1, school: 2 } as const;
-          return order[a.level] - order[b.level] || a.name.localeCompare(b.name);
-        }),
+        jurisdictions: sorted,
+        ...countyBreakdown(list),
       });
     }
     counties.sort((a, b) => a.name.localeCompare(b.name));
     return { state: code, state_fips: stateFips!, counties };
   });
+}
+
+/**
+ * Roll a whole state's flat jurisdiction list into the bivariate + hover
+ * breakdown. Breadth/depth are computed over COUNTY rollups (a county is a
+ * "unit"; started = any jurisdiction inside it populated; its depth = mean
+ * composite over its populated jurisdictions). This is why a state with one
+ * built-out county and many empty ones reads low-breadth / high-depth (teal),
+ * instead of the old single mean that washed out to near-empty.
+ *
+ * Note: the breadth rollup groups by county_fips and skips jurisdictions with a
+ * null county_fips (the rare case where ST_Intersects found no county). Those
+ * rows are still counted in the state-wide cities/schools hover bars (which are
+ * intentionally state-wide, not per-county), so a null-county city can show in
+ * cities_total without contributing to any county's started flag. This is
+ * negligible in practice and only affects the hover counts, not the breadth color.
+ */
+function stateBreakdown(jur: JurisdictionScore[], stateFips: string) {
+  // Group by county for the county-rollup units.
+  const byCounty = new Map<string, JurisdictionScore[]>();
+  for (const j of jur) {
+    if (!j.county_fips) continue;
+    const arr = byCounty.get(j.county_fips) ?? [];
+    arr.push(j);
+    byCounty.set(j.county_fips, arr);
+  }
+  const countyUnits: Unit[] = [];
+  for (const [, list] of byCounty) {
+    const populated = list.filter((j) => j.populated);
+    const started = populated.length > 0;
+    const depth = populated.length > 0 ? populated.reduce((s, j) => s + j.score, 0) / populated.length : 0;
+    countyUnits.push({ started, depth });
+  }
+  // Use aggregateUnits only for depth — breadth is overridden below using the
+  // true county count so that states with an incomplete geofence universe (e.g.
+  // Indiana with only Monroe County loaded) don't read as fully broad.
+  const { depth } = aggregateUnits(countyUnits);
+  const countiesStarted = countyUnits.filter((u) => u.started).length;
+  const counties = jur.filter((j) => j.level === 'county');
+  const countiesTotal = US_COUNTY_COUNTS[stateFips] || counties.length;
+  const breadth = countiesTotal > 0 ? Math.min(1, countiesStarted / countiesTotal) : 0;
+
+  const cities = jur.filter((j) => j.level === 'local');
+  const schools = jur.filter((j) => j.level === 'school');
+
+  // Depth summary over ALL populated units (state-wide), as percentages.
+  const populated = jur.filter((j) => j.populated);
+  const sum = (sel: (j: JurisdictionScore) => number) => populated.reduce((s, j) => s + sel(j), 0);
+  const photoPart = sum((j) => j.headshots.withPhoto);
+  const photoTotal = sum((j) => j.headshots.total);
+  const stancePart = sum((j) => j.stances.researched);
+  const stanceTotal = sum((j) => j.stances.total);
+  const rosterActual = sum((j) => (j.expected_seats != null ? j.roster_actual : 0));
+  const rosterExpected = sum((j) => j.expected_seats ?? 0);
+  const pct = (part: number, total: number) => (total > 0 ? Math.round((part / total) * 1000) / 10 : 0);
+
+  return {
+    breadth,
+    depth,
+    counties_started: countiesStarted,
+    counties_total: countiesTotal,
+    cities_started: cities.filter((c) => c.populated).length,
+    cities_total: cities.length,
+    schools_started: schools.filter((s) => s.populated).length,
+    schools_total: schools.length,
+    roster_pct: pct(Math.min(rosterActual, rosterExpected), rosterExpected),
+    stances_pct: pct(stancePart, stanceTotal),
+    photo_pct: pct(photoPart, photoTotal),
+  };
 }
 
 /** US choropleth: one score per tracked state. Untracked states are omitted. */
@@ -419,6 +583,7 @@ export async function getStateScores(
         score: mean(jur.map((j) => j.score)),
         jurisdiction_count: jur.length,
         populated_count: jur.filter((j) => j.populated).length,
+        ...stateBreakdown(jur, fips),
       });
     }
     return out;
