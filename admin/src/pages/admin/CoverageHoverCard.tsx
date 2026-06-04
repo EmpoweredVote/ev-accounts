@@ -1,7 +1,7 @@
 /**
- * Hover cards for the bivariate completeness map. They convey WHAT is covered,
- * not just a %: breadth bars (how many child units started) + a one-line depth
- * summary (state) or axis chips (county).
+ * Hover cards for the completeness map. They convey WHAT is covered, not just a
+ * %: breadth bars (how many child units started) + a one-line per-axis summary
+ * (state and county both show Rosters/Stances/Photos[/Donors] percentages).
  */
 import { Chip, type Tristate } from './coverageCells';
 

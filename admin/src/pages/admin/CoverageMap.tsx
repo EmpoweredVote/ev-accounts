@@ -3,9 +3,9 @@
  * the parent passes the score maps + selection (which state/county is active,
  * to drive the breadcrumb + table) and gets onSelectState/onSelectCounty back.
  *
- * Completeness mode: BIVARIATE fill (breadth × depth) + a cursor-following hover
- * card + a 2D legend overlaid in the map. Elections mode: original single-hue
- * fill + text readout (unchanged).
+ * Completeness mode: honest single-gradient fill (composite score → sage→purple
+ * →yellow) + a cursor-following hover card + a gradient legend overlaid in the
+ * map. Elections mode: original single-hue fill + text readout (unchanged).
  *
  * The map auto-frames the selected state from its county geometry, so selecting
  * a state via the US table (not just clicking the map) also zooms the map in.
