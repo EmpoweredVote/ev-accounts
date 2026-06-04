@@ -987,7 +987,7 @@ Plans:
 
 **Requirements:** GAPF-01, GAPF-02
 
-**Plans:** 2/2 plans complete
+**Plans:** 3/3 plans complete
 Plans:
 **Wave 1**
 
@@ -1095,7 +1095,7 @@ Plans:
 | 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
-| 89. Gap-fill Existing Politicians | v2.6 | 2/2 | Complete   | 2026-06-03 |
+| 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete   | 2026-06-04 |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
