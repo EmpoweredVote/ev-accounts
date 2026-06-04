@@ -9,7 +9,7 @@
  */
 
 import { pool } from './db.js';
-import type { PoliticianFlatRecord } from './essentialsService.js';
+import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 
 // FIPS → state abbreviation mapping
 const FIPS_TO_ABBREV: Record<string, string> = {
@@ -174,6 +174,7 @@ export async function getPoliticiansByArea(
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -214,6 +215,7 @@ export async function getPoliticiansByArea(
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
              p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -307,7 +309,7 @@ export async function getPoliticiansByArea(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
-    finance_summary: null,
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   // Batch-fetch images and committees
@@ -380,6 +382,7 @@ export async function getPoliticiansByGovernmentList(
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -426,6 +429,7 @@ export async function getPoliticiansByGovernmentList(
              p.preferred_name, p.name_suffix, p.party,
              COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
              p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             p.finance_summary,
              COALESCE(p.valid_from, '') AS term_start,
              COALESCE(p.valid_to, '') AS term_end,
              COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -469,6 +473,7 @@ export async function getPoliticiansByGovernmentList(
              p.preferred_name, p.name_suffix, p.party,
              COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
              p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+             p.finance_summary,
              COALESCE(p.valid_from, '') AS term_start,
              COALESCE(p.valid_to, '') AS term_end,
              COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -517,6 +522,7 @@ export async function getPoliticiansByGovernmentList(
       p.preferred_name, p.name_suffix, p.party,
       COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
       p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+      p.finance_summary,
       COALESCE(p.valid_from, '') AS term_start,
       COALESCE(p.valid_to, '') AS term_end,
       COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -612,8 +618,8 @@ export async function getPoliticiansByGovernmentList(
     next_general_date: '',
     images: [],
     is_vacant: row.is_vacant as boolean ?? false,
-    vacant_since: row.vacant_since as string ?? '',
-    finance_summary: null,
+    vacant_since: (row.vacant_since as string | null) ?? null,
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   // Attach images
