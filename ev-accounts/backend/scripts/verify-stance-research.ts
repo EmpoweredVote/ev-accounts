@@ -222,6 +222,12 @@ for (const row of [...reResearch, ...unresolved]) {
     );
     reviewed++;
     console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key} (${pid ? 'pending' : 'unresolved_politician'})`);
+    // Persist verified snippets even when below threshold — as long as politician resolves
+    if (pid && tid && row.verifiedSources.length > 0) {
+      const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
+      await accumulateEvidence(evRows);
+      evidenceWritten += evRows.length;
+    }
   } catch (e: any) {
     errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
   }
