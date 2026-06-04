@@ -170,9 +170,12 @@ export function CoveragePage() {
       {/* TABLE (below) — completeness only; whole page scrolls (no inner scroll box) */}
       {metric === 'completeness' && (
         <CoverageTable
+          states={states}
+          statesLoading={statesLoading}
           state={selected?.code ?? null}
           focusCounty={selectedCounty}
           onClearCounty={() => setSelectedCounty(null)}
+          onPickState={onSelectState}
         />
       )}
     </div>

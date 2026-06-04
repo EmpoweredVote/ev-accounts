@@ -3,8 +3,12 @@
  * the parent passes the score maps + selection (which state/county is active,
  * to drive the breadcrumb + table) and gets onSelectState/onSelectCounty back.
  *
- * Completeness mode: BIVARIATE fill (breadth × depth) + rich hover cards + 2D
- * legend. Elections mode: original single-hue fill + text readout (unchanged).
+ * Completeness mode: BIVARIATE fill (breadth × depth) + a cursor-following hover
+ * card + a 2D legend overlaid in the map. Elections mode: original single-hue
+ * fill + text readout (unchanged).
+ *
+ * The map auto-frames the selected state from its county geometry, so selecting
+ * a state via the US table (not just clicking the map) also zooms the map in.
  */
 import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
@@ -18,6 +22,8 @@ const COUNTIES_TOPO = 'https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json
 const NO_RACE_DATA = '#3f3f46';
 const MAP_W = 800;
 const MAP_H = 600;
+// Cap the rendered map height so the table below it stays visible without scrolling.
+const MAP_MAX_HEIGHT_VH = 56;
 
 // Elections single-hue ramp (UNCHANGED from the old map).
 const RAMP_FROM = [0x8c, 0xcd, 0xd9];
@@ -60,6 +66,37 @@ export function CoverageMap(props: Props) {
   const pathRef = useRef<any>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const projRef = useRef<any>(null);
+  // Which state we've already framed — prevents re-fitting on every re-render.
+  const framedFipsRef = useRef<string | null>(null);
+
+  // Hover-card positioning is done by direct DOM writes (no per-mousemove
+  // setState) so dragging the cursor across thousands of counties stays smooth.
+  const mapRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const posRef = useRef({ x: 0, y: 0, w: 0, h: 0 });
+
+  const positionCard = useCallback(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const { x, y, w, h } = posRef.current;
+    const cw = el.offsetWidth || 256;
+    const ch = el.offsetHeight || 180;
+    const pad = 14;
+    let nx = x + pad;
+    let ny = y + pad;
+    if (nx + cw > w) nx = x - cw - pad; // flip to the left of the cursor near the right edge
+    if (nx < 4) nx = 4;
+    if (ny + ch > h) ny = Math.max(4, h - ch); // keep the card inside the map vertically
+    el.style.left = `${nx}px`;
+    el.style.top = `${ny}px`;
+  }, []);
+
+  const onMouseMove = useCallback((e: React.MouseEvent) => {
+    const r = mapRef.current?.getBoundingClientRect();
+    if (!r) return;
+    posRef.current = { x: e.clientX - r.left, y: e.clientY - r.top, w: r.width, h: r.height };
+    positionCard();
+  }, [positionCard]);
 
   const fitToFeature = useCallback((geo: unknown) => {
     const path = pathRef.current;
@@ -77,14 +114,17 @@ export function CoverageMap(props: Props) {
 
   // Reset framing + hover when the parent clears the selection (back to US).
   useEffect(() => {
-    if (!selected) { setCenter([-96, 38]); setZoom(1); setHover(null); }
+    if (!selected) {
+      setCenter([-96, 38]);
+      setZoom(1);
+      setHover(null);
+      framedFipsRef.current = null;
+    }
   }, [selected]);
 
-  const handleSelectState = (fips: string, name: string, geo: unknown) => {
-    setHover(null);
-    fitToFeature(geo); // frame the clicked state using its projected bounds
-    props.onSelectState(fips, name);
-  };
+  // Re-place the card whenever its contents change (hover enter / level switch),
+  // using the last known cursor position.
+  useEffect(() => { positionCard(); }, [hover, positionCard]);
 
   // Completeness hover card.
   let hoverCard: ReactNode = null;
@@ -122,8 +162,27 @@ export function CoverageMap(props: Props) {
 
   return (
     <div className="relative">
-      <div className="relative overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900">
-        {hoverCard && <div className="pointer-events-none absolute left-3 top-3 z-20">{hoverCard}</div>}
+      <div
+        ref={mapRef}
+        onMouseMove={onMouseMove}
+        onMouseLeave={() => setHover(null)}
+        className="relative mx-auto overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
+        style={{ maxWidth: `calc(${MAP_MAX_HEIGHT_VH}vh * ${MAP_W} / ${MAP_H})` }}
+      >
+        {/* Cursor-following hover card (completeness) */}
+        {hoverCard && (
+          <div ref={cardRef} className="pointer-events-none absolute z-30" style={{ left: 0, top: 0 }}>
+            {hoverCard}
+          </div>
+        )}
+
+        {/* Legend overlay (completeness) */}
+        {metric === 'completeness' && (
+          <div className="absolute bottom-3 left-3 z-20 rounded-md border border-gray-200/70 bg-white/85 px-3 py-2 shadow-sm backdrop-blur-sm dark:border-gray-700/70 dark:bg-gray-900/85">
+            <BivariateLegend />
+          </div>
+        )}
+
         <ComposableMap projection="geoAlbersUsa" width={MAP_W} height={MAP_H} style={{ width: '100%', height: 'auto' }}>
           <ZoomableGroup center={center} zoom={zoom} minZoom={1} maxZoom={12}>
             {!selected ? (
@@ -141,7 +200,7 @@ export function CoverageMap(props: Props) {
                         geography={geo}
                         onMouseEnter={() => setHover({ level: 'state', fips: geo.id as string, name: geo.properties.name })}
                         onMouseLeave={() => setHover(null)}
-                        onClick={() => handleSelectState(geo.id as string, geo.properties.name, geo)}
+                        onClick={() => { setHover(null); props.onSelectState(geo.id as string, geo.properties.name); }}
                         style={{
                           default: { fill, stroke: '#fff', strokeWidth: 0.5, outline: 'none' },
                           hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
@@ -157,28 +216,33 @@ export function CoverageMap(props: Props) {
                 {({ geographies, path, projection }) => {
                   pathRef.current = path;
                   projRef.current = projection;
-                  return geographies
-                    .filter((geo) => (geo.id as string).startsWith(selected.fips))
-                    .map((geo) => {
-                      const cs = countyByFips.get(geo.id as string);
-                      const ec = elecCountiesByFips.get(geo.id as string);
-                      const fill = metric === 'elections' ? electionCountyColor(ec) : (cs ? bivariateColor(cs.breadth, cs.depth) : NOT_STARTED);
-                      const isSel = selectedCountyFips === geo.id;
-                      return (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          onMouseEnter={() => setHover({ level: 'county', fips: geo.id as string, name: geo.properties.name })}
-                          onMouseLeave={() => setHover(null)}
-                          onClick={() => props.onSelectCounty(geo.id as string)}
-                          style={{
-                            default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
-                            hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
-                            pressed: { fill, outline: 'none' },
-                          }}
-                        />
-                      );
-                    });
+                  const stateGeos = geographies.filter((geo) => (geo.id as string).startsWith(selected.fips));
+                  // Frame the state once (covers both map-click and US-table selection).
+                  if (framedFipsRef.current !== selected.fips && stateGeos.length > 0) {
+                    framedFipsRef.current = selected.fips;
+                    const fc = { type: 'FeatureCollection', features: stateGeos };
+                    queueMicrotask(() => fitToFeature(fc));
+                  }
+                  return stateGeos.map((geo) => {
+                    const cs = countyByFips.get(geo.id as string);
+                    const ec = elecCountiesByFips.get(geo.id as string);
+                    const fill = metric === 'elections' ? electionCountyColor(ec) : (cs ? bivariateColor(cs.breadth, cs.depth) : NOT_STARTED);
+                    const isSel = selectedCountyFips === geo.id;
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        onMouseEnter={() => setHover({ level: 'county', fips: geo.id as string, name: geo.properties.name })}
+                        onMouseLeave={() => setHover(null)}
+                        onClick={() => props.onSelectCounty(geo.id as string)}
+                        style={{
+                          default: { fill, stroke: isSel ? '#00657c' : '#fff', strokeWidth: isSel ? 1.5 : 0.5, outline: 'none' },
+                          hover: { fill, stroke: '#00657c', strokeWidth: 1.2, outline: 'none', cursor: 'pointer' },
+                          pressed: { fill, outline: 'none' },
+                        }}
+                      />
+                    );
+                  });
                 }}
               </Geographies>
             )}
@@ -186,23 +250,19 @@ export function CoverageMap(props: Props) {
         </ComposableMap>
       </div>
 
-      {/* Readout (elections) + legend */}
-      <div className="mt-2 flex items-center justify-between text-sm">
-        <div className="text-gray-600 dark:text-gray-300">
-          {metric === 'elections'
-            ? (elecReadout ?? <span className="text-gray-400">{selected ? 'Hover a county' : 'Hover a state'}</span>)
-            : <span className="text-gray-400">{selected ? 'Click a county; hover for detail' : 'Click a state to drill in; hover for detail'}</span>}
-        </div>
-        {metric === 'completeness' ? (
-          <BivariateLegend />
-        ) : (
+      {/* Elections readout + legend (completeness uses the in-map hover card + overlay legend) */}
+      {metric === 'elections' && (
+        <div className="mt-2 flex items-center justify-between text-sm">
+          <div className="text-gray-600 dark:text-gray-300">
+            {elecReadout ?? <span className="text-gray-400">{selected ? 'Hover a county' : 'Hover a state'}</span>}
+          </div>
           <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
             {props.elecDate && <span className="font-medium capitalize text-gray-600 dark:text-gray-300">{props.elecDate.type} · {props.elecDate.date}</span>}
             <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: NO_RACE_DATA }} /> no race data</span>
             <span className="inline-flex items-center gap-1.5"><span>low</span><div className="h-2 w-24 rounded-full" style={{ background: `linear-gradient(to right, ${scoreColor(5)}, ${scoreColor(45)}, ${scoreColor(100)})` }} /><span>high</span></span>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
