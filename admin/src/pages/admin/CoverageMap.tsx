@@ -3,17 +3,17 @@
  * the parent passes the score maps + selection (which state/county is active,
  * to drive the breadcrumb + table) and gets onSelectState/onSelectCounty back.
  *
- * Completeness mode: BIVARIATE fill (breadth × depth) + a cursor-following hover
- * card + a 2D legend overlaid in the map. Elections mode: original single-hue
- * fill + text readout (unchanged).
+ * Completeness mode: honest single-gradient fill (composite score → sage→purple
+ * →yellow) + a cursor-following hover card + a gradient legend overlaid in the
+ * map. Elections mode: original single-hue fill + text readout (unchanged).
  *
  * The map auto-frames the selected state from its county geometry, so selecting
  * a state via the US table (not just clicking the map) also zooms the map in.
  */
 import { useEffect, useRef, useState, useCallback, type ReactNode } from 'react';
 import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
-import { bivariateColor, NOT_STARTED } from './coverageBivariate';
-import { BivariateLegend } from './BivariateLegend';
+import { completenessColor, NOT_STARTED } from './completenessColor';
+import { CompletenessLegend } from './CompletenessLegend';
 import { StateHoverCard, CountyHoverCard } from './CoverageHoverCard';
 import type { StateScore, CountyScore, StateElection, CountyElection, Metric } from './coverageTypes';
 
@@ -179,7 +179,7 @@ export function CoverageMap(props: Props) {
         {/* Legend overlay (completeness) */}
         {metric === 'completeness' && (
           <div className="absolute bottom-3 left-3 z-20 rounded-md border border-gray-200/70 bg-white/85 px-3 py-2 shadow-sm backdrop-blur-sm dark:border-gray-700/70 dark:bg-gray-900/85">
-            <BivariateLegend />
+            <CompletenessLegend />
           </div>
         )}
 
@@ -193,7 +193,7 @@ export function CoverageMap(props: Props) {
                   return geographies.map((geo) => {
                     const sc = stateByFips.get(geo.id as string);
                     const es = elecStatesByFips.get(geo.id as string);
-                    const fill = metric === 'elections' ? electionStateColor(es) : (sc ? bivariateColor(sc.breadth, sc.depth) : NOT_STARTED);
+                    const fill = metric === 'elections' ? electionStateColor(es) : completenessColor(sc?.score ?? null);
                     return (
                       <Geography
                         key={geo.rsmKey}
@@ -226,7 +226,7 @@ export function CoverageMap(props: Props) {
                   return stateGeos.map((geo) => {
                     const cs = countyByFips.get(geo.id as string);
                     const ec = elecCountiesByFips.get(geo.id as string);
-                    const fill = metric === 'elections' ? electionCountyColor(ec) : (cs ? bivariateColor(cs.breadth, cs.depth) : NOT_STARTED);
+                    const fill = metric === 'elections' ? electionCountyColor(ec) : completenessColor(cs?.score ?? null);
                     const isSel = selectedCountyFips === geo.id;
                     return (
                       <Geography

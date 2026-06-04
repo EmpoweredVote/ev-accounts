@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from 'react';
 import { apiFetch } from '../../lib/api';
-import { Bool, Chip, Stances, Roster, ratioToTristate, type Tristate } from './coverageCells';
+import { Bool, Chip, Stances, Roster, CountBar, type Tristate } from './coverageCells';
 import { type CountyScore, type StateScore } from './coverageTypes';
-import { bivariateColor } from './coverageBivariate';
+import { completenessColor } from './completenessColor';
 
 // ---------------------------------------------------------------------------
 // Types — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
@@ -193,7 +193,7 @@ function UsOverviewTable({ states, loading, onPick }: { states: StateScore[]; lo
                 <tr key={s.fips} onClick={() => onPick(s.fips, s.name)} className="cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/40">
                   <td className="px-3 py-2">
                     <div className="flex items-center gap-2">
-                      <span className="inline-block h-3.5 w-3.5 shrink-0 rounded-sm" style={{ background: bivariateColor(s.breadth, s.depth) }} title="bivariate breadth × depth" />
+                      <span className="inline-block h-3.5 w-3.5 shrink-0 rounded-sm" style={{ background: completenessColor(s.score) }} title="completeness" />
                       <span className="font-medium text-gray-900 dark:text-white">{s.name}</span>
                     </div>
                   </td>
@@ -275,10 +275,10 @@ export function CoverageTable({ states, statesLoading, state, focusCounty, onCle
                   </td>
                   <td className="px-3 py-2"><Bool value={j.geofenced} /></td>
                   <td className="px-3 py-2"><Roster actual={j.roster_actual} expected={j.expected_seats} complete={j.expected_seats != null && j.roster_actual >= j.expected_seats} /></td>
-                  <td className="px-3 py-2"><Chip value={ratioToTristate(j.headshots.withPhoto, j.headshots.total)} /></td>
+                  <td className="px-3 py-2"><CountBar have={j.headshots.withPhoto} total={j.headshots.total} /></td>
                   <td className="px-3 py-2"><Stances s={j.stances} /></td>
                   <td className="px-3 py-2"><Chip value={j.treasury} /></td>
-                  <td className="px-3 py-2"><Chip value={j.donors} /></td>
+                  <td className="px-3 py-2"><CountBar have={j.donors_n.withDonors} total={j.donors_n.total} /></td>
                   <td className="px-3 py-2 tabular-nums text-gray-600 dark:text-gray-400">{j.score}%</td>
                 </tr>
               ))}

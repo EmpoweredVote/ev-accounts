@@ -107,6 +107,7 @@ export interface JurisdictionScore {
   expected_seats: number | null;
   headshots: { withPhoto: number; total: number };
   stances: { researched: number; total: number };
+  donors_n: { withDonors: number; total: number };
   geofenced: boolean;
   treasury: Tristate;
   donors: Tristate;
@@ -127,11 +128,11 @@ export interface CountyScore {
   cities_total: number;
   schools_started: number;
   schools_total: number;
-  roster: Tristate;
-  stances: Tristate;
-  photos: Tristate;
-  treasury: Tristate;
-  donors: Tristate;
+  roster_pct: number;   // 0..100 over populated jurisdictions
+  stances_pct: number;  // 0..100
+  photo_pct: number;    // 0..100
+  donors_pct: number;   // 0..100 — politicians with ≥1 contribution ÷ total
+  treasury: Tristate;   // categorical: any/all populated jurisdictions with a budget
 }
 
 export interface StateScore {
@@ -328,7 +329,7 @@ async function buildJurisdictions(
            ORDER BY ST_Area(ST_Intersection(c.geometry, child.geometry)) DESC
            LIMIT 1) AS county_fips
          FROM essentials.geofence_boundaries child
-        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420')`,
+        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420', 'G5400', 'G5410')`,
       [stateFips],
     ),
     statsByJurisdiction(stateCode),
@@ -375,6 +376,7 @@ async function buildJurisdictions(
       expected_seats: exp,
       headshots: { withPhoto: s.withPhoto, total: s.total },
       stances: { researched: s.researched, total: s.total },
+      donors_n: { withDonors: s.withDonors, total: s.total },
       geofenced,
       treasury,
       donors,
@@ -403,8 +405,9 @@ function mean(nums: number[]): number {
 /**
  * Roll a county's jurisdiction list into the bivariate + hover breakdown.
  * breadth/depth come from the pure aggregator (started = populated, depth =
- * composite score). The axis tristates summarise the populated jurisdictions
- * only, so empty white space doesn't read as a hard ✕ on every axis.
+ * composite score). Per-axis values are percentages over the POPULATED
+ * jurisdictions, so empty white space doesn't drag them to zero. Treasury stays
+ * categorical (a budget is loaded per jurisdiction, not a per-politician ratio).
  */
 function countyBreakdown(list: JurisdictionScore[]) {
   const units: Unit[] = list.map((j) => ({ started: j.populated, depth: j.score }));
@@ -415,23 +418,22 @@ function countyBreakdown(list: JurisdictionScore[]) {
   const schools = list.filter((j) => j.level === 'school');
   const countyGovt = list.find((j) => j.level === 'county');
 
-  // Axis tristates over the populated set.
   const sum = (sel: (j: JurisdictionScore) => number) => populated.reduce((s, j) => s + sel(j), 0);
   const photoPart = sum((j) => j.headshots.withPhoto);
   const photoTotal = sum((j) => j.headshots.total);
   const stancePart = sum((j) => j.stances.researched);
   const stanceTotal = sum((j) => j.stances.total);
+  const donorPart = sum((j) => j.donors_n.withDonors);
+  const donorTotal = sum((j) => j.donors_n.total);
   const rosterActual = sum((j) => (j.expected_seats != null ? j.roster_actual : 0));
   const rosterExpected = sum((j) => j.expected_seats ?? 0);
+  const pct = (part: number, total: number) => (total > 0 ? Math.round((part / total) * 1000) / 10 : 0);
+
   const treasuryFull = populated.filter((j) => j.treasury === 'full').length;
   const treasuryAny = populated.filter((j) => j.treasury !== 'none').length;
-  const donorsFull = populated.filter((j) => j.donors === 'full').length;
-  const donorsAny = populated.filter((j) => j.donors !== 'none').length;
-
-  // treasury/donors are jurisdiction-level flags: 'full' only when EVERY populated
-  // jurisdiction has it, 'partial' when some do, 'none' when none do.
-  const allFullTristate = (full: number, any: number, n: number): Tristate =>
-    n === 0 || any === 0 ? 'none' : full >= n ? 'full' : 'partial';
+  // 'full' only when every populated jurisdiction has a budget, 'partial' when some do.
+  const treasury: Tristate =
+    populated.length === 0 || treasuryAny === 0 ? 'none' : treasuryFull >= populated.length ? 'full' : 'partial';
 
   return {
     breadth,
@@ -441,11 +443,11 @@ function countyBreakdown(list: JurisdictionScore[]) {
     cities_total: cities.length,
     schools_started: schools.filter((s) => s.populated).length,
     schools_total: schools.length,
-    roster: rosterExpected > 0 ? ratioTristate(rosterActual, rosterExpected) : 'none',
-    stances: ratioTristate(stancePart, stanceTotal),
-    photos: ratioTristate(photoPart, photoTotal),
-    treasury: allFullTristate(treasuryFull, treasuryAny, populated.length),
-    donors: allFullTristate(donorsFull, donorsAny, populated.length),
+    roster_pct: pct(Math.min(rosterActual, rosterExpected), rosterExpected),
+    stances_pct: pct(stancePart, stanceTotal),
+    photo_pct: pct(photoPart, photoTotal),
+    donors_pct: pct(donorPart, donorTotal),
+    treasury,
   };
 }
 
