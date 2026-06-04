@@ -1,20 +1,31 @@
 ---
 name: research-stances
 description: "Research politician stances on compass topics. Use when the user wants to research, look up, or generate stance data for politicians on Empowered Vote compass topics. Produces a reviewable CSV and optionally pushes approved stances to the database. Triggers on: 'research stances', 'look up stances', 'politician positions', 'stance data for', 'compass research'."
-argument-hint: "\"Politician Name(s)\" [--topics topic1,topic2] "
+argument-hint: "\"Politician Name(s) or body\" [--force]"
 ---
 
 # /research-stances — Politician Stance Research Orchestrator
 
 You are running the **research-stances** skill. Your job is to research politician stances on existing Empowered Vote compass topics, produce a reviewable CSV, and optionally push approved data to the database.
 
+## Cost knobs (read once)
+
+Two settings control cost; both have cheap defaults and are configured **once**, not per-run:
+
+- **Research model** — env var `RESEARCH_STANCES_MODEL`. If set, pass it as the `model` on every Step 1 agent dispatch (it overrides the agent's frontmatter default). If unset, the agent's default model is used. Set it to a cheaper model (e.g. `haiku`) for cost mode, or to another provider's model id when running this skill outside Claude Code — so the model choice is never hardcoded or edited per run.
+- **Verification threshold** — how many independent verified sources a stance needs to publish. Defaults to **1** (cheap mode: one deterministically-verified source is enough, which avoids the expensive re-research wave). Raise it with `--threshold N` or the `RESEARCH_STANCES_THRESHOLD` env var for hot-button topics where you want corroboration.
+
+## Topic scope (always all in-scope topics)
+
+This skill **always researches every topic in the politician's jurisdiction scope** — never a subset. Scope is decided by the role, not by the user: federal/state officials get all NATIONAL topics, city/county/municipal officials get all LOCAL topics, and **JUDICIAL topics go only to judicial officials** (judges, prosecutors, DAs) — a non-judicial official is never scored on judicial topics, and a judicial official is never scored on the others. There is no topic-limiting flag in normal mode.
+
 ---
 
 ## STEP 0 — Parse Input
 
 Parse `$ARGUMENTS` for:
-- **Politician names**: comma-separated list (e.g., `"Brad Sherman, Maxine Waters"`)
-- **--topics**: optional comma-separated topic_keys to limit scope (defaults to all topics)
+- **Politician names**: comma-separated list (e.g., `"Brad Sherman, Maxine Waters"`) or a legislative body (e.g., `"Utah State Senate"`)
+- **--force**: optional flag. By default, politicians researched within the last 30 days are **skipped** (already current). `--force` re-researches them anyway.
 
 If `$ARGUMENTS` is empty, ask the user:
 > "Which politician(s) would you like me to research? You can provide names (e.g., 'Brad Sherman, Maxine Waters') or a body (e.g., 'Bloomington City Council')."
@@ -45,7 +56,7 @@ If no results, tell the user and ask them to provide specific names instead.
 
 ### Topic Resolution
 
-Fetch the current live topics — grouped by scope from `compass_topic_roles`, **with their full 1–5 stance scales** — to validate any `--topics` filter and to give each agent the authoritative scale to score against. This produces (a) the **canonical topic-key lists** you inject into every Step 1 prompt and (b) **per-scope scale reference files** in `/tmp/` that agents Read at dispatch time. Never use a hardcoded topic list or hardcoded scales — the database is the only source of truth, and it has drifted far from any list baked into an agent.
+Fetch the current live topics — grouped by scope from `compass_topic_roles`, **with their full 1–5 stance scales** — to give each agent the complete in-scope topic list and the authoritative scale to score against. This produces (a) the **canonical topic-key lists** you inject into every Step 1 prompt and (b) **per-scope scale reference files** in `/tmp/` that agents Read at dispatch time. Never use a hardcoded topic list or hardcoded scales — the database is the only source of truth, and it has drifted far from any list baked into an agent.
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
@@ -157,12 +168,14 @@ await pool.end();
 
 Pass each politician's name as a trailing arg. Save the printed `politician_id` per name — you inject it into Step 1 and it flows through the CSV to Step 4. For any `UNMATCHED` politician, research can still run but the rows cannot be pushed (flag it in the confirmation). For politicians with a prior file, pass that path into their dispatch.
 
+**Skip recently-researched politicians (unless `--force`).** By default, **drop from the batch** any politician whose `last_stances_researched_at` is within the last **30 days** — they're already current and re-researching them burns tokens for nothing. List them as "skipped (researched YYYY-MM-DD)". If `--force` was passed, keep them and re-research (incremental, using their prior file). This is the default cost guard for big runs.
+
 **Confirm before proceeding.** Show the user:
-- List of politicians to research, with `politician_id` (or ⚠️ `UNMATCHED` — can't push) and their `last_stances_researched_at` date (show "Never" if null)
-- ⚠️ Flag any politician researched within the last **30 days** — show their date and note they may not need re-research. Still include them unless the user says to skip.
-- Note which politicians have **prior stances** to update (incremental) vs. need full fresh research
-- Topics in scope (all or filtered), noting which topics are relevant to each politician's jurisdiction level
-- Estimated scope (e.g., "3 politicians × 24 national topics = up to 72 stance assessments")
+- List of politicians that WILL be researched, with `politician_id` (or ⚠️ `UNMATCHED` — can't push) and their `last_stances_researched_at` date (show "Never" if null)
+- The list of politicians **skipped as recently-researched** (with their date), and a note that `--force` would include them
+- Which politicians have **prior stances** to update (incremental) vs. need full fresh research
+- The in-scope topics for each jurisdiction level present in the batch (always the full scope list — see "Topic scope" above)
+- Estimated scope (e.g., "3 politicians × all 24 national topics = up to 72 stance assessments")
 
 ---
 
@@ -208,17 +221,15 @@ For each politician, dispatch a `politician-stance-researcher` agent using the A
 - Batches of 2-3 per agent for lesser-known politicians (local officials)
 - Run agents **in parallel** — use multiple Agent tool calls in a single message
 - Maximum 5 concurrent agents to stay within reasonable limits
+- **Each agent writes to its OWN subdir** `data/stance-research/[BATCH_ID]/<lastname>/` (two CSVs), then you merge each wave's subdirs into the batch-root `stances.csv`/`evidence.csv` before STEP 2.5 — parallel agents writing the same file would clobber each other.
+- **Model:** if the `RESEARCH_STANCES_MODEL` env var is set, pass it as the `model` option on every Agent tool call (overrides the agent's default); if unset, omit `model` and the agent's default applies.
 
 **Agent prompt template:**
 
 ```
 Research the political stances of [POLITICIAN_NAME] ([OFFICE/TITLE if known]).
 
-[If --topics was specified:]
-Only research these topics: [TOPIC_LIST]
-
-[If --topics was NOT specified:]
-Research all current policy topics.
+Research ALL policy topics in this politician's jurisdiction scope — every topic in the injected list below, never a subset.
 
 [Per politician in this dispatch — repeat this identity block for each one in a batch:]
 politician_id: [UUID from STEP 0, or UNMATCHED if not in the DB]
@@ -273,7 +284,7 @@ No data reaches the database until a **deterministic verifier** confirms each ci
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && \
-  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 2
+  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 1
 ```
 
 It fetches each URL through a tiered ladder (plain HTTP → headless Chromium → Wayback snapshot, so sites that block headless requests are still checked against their archive), string-matches every snippet (after normalizing whitespace/quotes/dashes/case), checks the politician's name is within ~500 chars of the match, and prints three buckets:
@@ -299,7 +310,7 @@ From the latest verifier run, show the user the verification outcome and the sta
 ```
 ## Research Results: [BATCH_ID]
 
-Verification (threshold = 2 verified sources):
+Verification (threshold = 1 verified source — raise with --threshold for corroboration):
 - ✅ auto-verified (push-ready):        N
 - ♻️  verified after re-research:        N
 - 🚩 review queue (insufficient / unresolved): N
@@ -339,7 +350,7 @@ The push is the **same verifier script** with `--apply`. It re-verifies, then in
 
 ```bash
 cd ev-accounts/backend && set -a && source .env && set +a && \
-  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 2 --apply --re-researched
+  npx tsx scripts/verify-stance-research.ts --dir data/stance-research/[BATCH_ID] --threshold 1 --apply --re-researched
 ```
 
 (`--re-researched` stamps review rows as having had their one re-research attempt — include it only after STEP 2.5's re-research pass ran.) Per PUSH row it upserts `inform.politician_answers` + `inform.politician_context` (storing the **verified** source URLs) and replaces `inform.politician_context_evidence` with the verified snippets, then stamps `last_stances_researched_at`. Per below-threshold / unresolved row it upserts `inform.stance_research_review`.
@@ -600,7 +611,7 @@ import { createVerificationFetchSession } from '../src/lib/verificationFetch.js'
 
 const REWRITE_ID = '[REWRITE_UUID]';        // orchestrator substitutes
 const ACTOR_ID = '[ACTOR_UUID]';             // same id that created the rewrite
-const THRESHOLD = 2;
+const THRESHOLD = 1;
 const DIR = join(process.cwd(), 'data/stance-research/[BATCH_ID]');
 
 const stances = parseStancesCsv(readFileSync(join(DIR, 'stances.csv'), 'utf8'));

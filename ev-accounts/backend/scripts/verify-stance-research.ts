@@ -54,7 +54,9 @@ if (!DIR) {
   console.error('ERROR: --dir <batch directory> is required');
   process.exit(2);
 }
-const THRESHOLD = Number(opt('--threshold', '2'));
+// Default 1 verified source (cheap mode — avoids a re-research wave). Override
+// with --threshold or the RESEARCH_STANCES_THRESHOLD env var.
+const THRESHOLD = Number(opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1'));
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
 const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
