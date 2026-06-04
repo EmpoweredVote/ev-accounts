@@ -819,7 +819,7 @@ export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] 
 export async function getPoliticianCitations(politicianId: string): Promise<TopicCitationBlock[]> {
   const { rows } = await pool.query<RawCitationRow>(
     `SELECT
-       ct.key                                                         AS topic_key,
+       ct.topic_key                                                   AS topic_key,
        COALESCE(ct.question_text, ct.short_title)                    AS topic_title,
        ct.short_title                                                 AS topic_tension_name,
        pa.value                                                       AS stance_value,
@@ -839,7 +839,7 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
      LEFT JOIN inform.politician_context pc
        ON pc.politician_id = pce.politician_id AND pc.topic_id = pce.topic_id
      WHERE pce.politician_id = $1
-     ORDER BY ct.key ASC,
+     ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
               pce.verified_at DESC`,
     [politicianId],
