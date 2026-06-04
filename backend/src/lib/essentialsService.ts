@@ -81,6 +81,18 @@ const ENCLAVE_CITY_ALIASES: Record<string, { hostCity: string; lat: number; lng:
 // ---------------------------------------------------------------------------
 
 /**
+ * Campaign finance summary sourced from FEC data ingested by run-fec-finance-summary.ts.
+ * Stored as JSONB on essentials.politicians.finance_summary.
+ * null for non-federal politicians and federal politicians without matched FEC IDs.
+ */
+export interface FinanceSummary {
+  total_raised: number;
+  top_donors: Array<{ employer: string; amount: number; count: number }>;
+  cycle: string;
+  source: 'FEC';
+}
+
+/**
  * Go-parity flat politician record.
  *
  * Field naming follows the Go server response shape exactly so that frontends
@@ -135,6 +147,7 @@ export interface PoliticianFlatRecord {
   next_primary_date: string;
   next_general_date: string;
   images: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>;
+  finance_summary: FinanceSummary | null;
 }
 
 export interface AddressSearchResult {
@@ -424,6 +437,7 @@ export async function getPoliticiansFlatList(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -517,6 +531,7 @@ export async function getPoliticiansFlatList(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
+    finance_summary: row.finance_summary ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -764,6 +779,7 @@ export async function getRepresentativesByAddress(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
+    finance_summary: row.finance_summary ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -909,6 +925,7 @@ export interface PoliticianDetail {
   notes: string[];
   next_primary_date: string;
   next_general_date: string;
+  finance_summary: FinanceSummary | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -956,7 +973,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
-           p.is_active, p.office_id, p.notes,
+           p.is_active, p.office_id, p.notes, p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -1180,6 +1197,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     notes: row.notes ?? [],
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
+    finance_summary: row.finance_summary ?? null,
   };
 }
 
@@ -1621,6 +1639,7 @@ export async function getRepresentativesByJurisdiction(
     next_primary_date: (row.next_primary_date as string) ?? '',
     next_general_date: (row.next_general_date as string) ?? '',
     images: [],
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -1751,6 +1770,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     next_primary_date: (row.next_primary_date as string) ?? '',
     next_general_date: (row.next_general_date as string) ?? '',
     images: [],
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);

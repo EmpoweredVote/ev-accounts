@@ -307,6 +307,7 @@ export async function getPoliticiansByArea(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
+    finance_summary: null,
   }));
 
   // Batch-fetch images and committees
@@ -612,6 +613,7 @@ export async function getPoliticiansByGovernmentList(
     images: [],
     is_vacant: row.is_vacant as boolean ?? false,
     vacant_since: row.vacant_since as string ?? '',
+    finance_summary: null,
   }));
 
   // Attach images
