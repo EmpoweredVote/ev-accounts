@@ -1020,11 +1020,11 @@ Plans:
 
 **Requirements:** FINA-01, FINA-02, FINA-03
 
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 Plans:
 **Wave 1**
 
-- [ ] 90-01-PLAN.md — Migration 268: add finance_summary JSONB column to essentials.politicians + Wave-0 RED test scaffold (FINA-01)
+- [x] 90-01-PLAN.md — Migration 268: add finance_summary JSONB column to essentials.politicians + Wave-0 RED test scaffold (FINA-01)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -1119,7 +1119,7 @@ Plans:
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
 | 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete    | 2026-06-04 |
-| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/3 | Pending | — |
+| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 1/3 | In Progress|  |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
