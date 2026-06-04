@@ -632,18 +632,18 @@ router.get(
   '/politicians/:id/citations',
   optionalAuth,
   async (req: Request, res: Response): Promise<void> => {
+    const politicianId = req.params.id as string;
     try {
-      const politicianId = req.params.id as string;
       if (!UUID_REGEX.test(politicianId)) {
-        res.status(400).json({ error: 'Invalid politician ID' });
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID' });
         return;
       }
 
       const citations = await getPoliticianCitations(politicianId);
-      res.json(citations);
+      res.status(200).json(citations);
     } catch (err) {
-      console.error('[GET /compass/politicians/:id/citations] error:', err);
-      res.status(500).json({ error: 'Internal server error' });
+      console.error(`[GET /compass/politicians/${politicianId}/citations] error:`, err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Internal server error' });
     }
   }
 );
