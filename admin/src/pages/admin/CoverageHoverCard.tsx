@@ -19,7 +19,7 @@ export interface CountyHover {
   county_govt_started: boolean;
   cities_started: number; cities_total: number;
   schools_started: number; schools_total: number;
-  roster: Tristate; stances: Tristate; photos: Tristate; treasury: Tristate; donors: Tristate;
+  roster_pct: number; stances_pct: number; photo_pct: number; donors_pct: number; treasury: Tristate;
 }
 
 function Bar({ label, started, total }: { label: string; started: number; total: number }) {
@@ -66,14 +66,11 @@ export function CountyHoverCard({ c }: { c: CountyHover }) {
         <li>Cities {c.cities_started}/{c.cities_total}</li>
         <li>School districts {c.schools_started}/{c.schools_total}</li>
       </ul>
-      <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-gray-100 pt-1.5 dark:border-gray-800">
-        {([['Roster', c.roster], ['Stances', c.stances], ['Photos', c.photos], ['Treasury', c.treasury], ['Donors', c.donors]] as [string, Tristate][]).map(
-          ([label, v]) => (
-            <span key={label} className="inline-flex items-center gap-1 text-[10px] text-gray-500 dark:text-gray-400">
-              {label}<Chip value={v} />
-            </span>
-          ),
-        )}
+      <div className="mt-2 border-t border-gray-100 pt-1.5 text-[11px] text-gray-500 dark:border-gray-800 dark:text-gray-400">
+        Rosters {c.roster_pct}% · Stances {c.stances_pct}% · Photos {c.photo_pct}% · Donors {c.donors_pct}%
+      </div>
+      <div className="mt-1 flex items-center gap-1 text-[10px] text-gray-500 dark:text-gray-400">
+        Treasury<Chip value={c.treasury} />
       </div>
     </div>
   );
