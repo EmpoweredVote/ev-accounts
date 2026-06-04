@@ -13,7 +13,8 @@
  * Crosswalk strategy (two-path lookup):
  *   Path 2 (primary): transparent_motivations.politician_sources WHERE source_system LIKE 'fec%'
  *                     AND research_status = 'confirmed'
- *   Path 1 (fallback): bioguide_id -> congress-legislators JSON -> id.fec[] filtered by chamber
+ *   Path 1 (fallback): bioguide_id -> congress-legislators YAML -> id.fec[] filtered by chamber
+ *                     (YAML source used: theunitedstates.io JSON returned 410 Gone)
  *
  * FEC API calls per politician:
  *   1. GET /v1/candidates/search/?candidate_id=X  -> committee_id
@@ -24,6 +25,7 @@
  */
 
 import 'dotenv/config';
+import { load as yamlLoad } from 'js-yaml';
 import { pool } from '../src/lib/db.js';
 
 // ---------------------------------------------------------------------------
@@ -33,8 +35,12 @@ import { pool } from '../src/lib/db.js';
 const SLEEP_BETWEEN_FEC_CALLS_MS = 1500; // stay well under 1000 req/hr (matches fecResearch.ts)
 const FEC_CYCLE = '2026';
 const TOP_DONORS_LIMIT = 10;
-const LEGISLATORS_JSON_URL =
-  'https://theunitedstates.io/congress-legislators/legislators-current.json';
+// Note: theunitedstates.io/congress-legislators/legislators-current.json returned HTTP 410 (Gone) on 2026-06-04.
+// Using YAML source from unitedstates/congress-legislators GitHub repo instead (same authoritative data).
+// js-yaml is already in backend/package.json (^4.1.1) — no new dependency.
+// RESEARCH.md fallback path A1: "Fall back to YAML + js-yaml package; same data, extra parsing step"
+const LEGISLATORS_YAML_URL =
+  'https://raw.githubusercontent.com/unitedstates/congress-legislators/main/legislators-current.yaml';
 
 const FEC_BASE = 'https://api.open.fec.gov/v1';
 const FEC_SEARCH_URL = `${FEC_BASE}/candidates/search/`;
@@ -62,6 +68,7 @@ interface FinanceSummary {
 
 interface Legislator {
   id: { bioguide: string; fec?: string[] };
+  name: { first: string; last: string; official_full?: string };
   terms: Array<{ type: 'sen' | 'rep'; start: string; end: string; state: string }>;
 }
 
@@ -84,21 +91,40 @@ function sleep(ms: number): Promise<void> {
 // Crosswalk builders
 // ---------------------------------------------------------------------------
 
+interface CrosswalkMaps {
+  bioguideMap: Map<string, string>;
+  /** Lowercase normalized full-name -> FEC ID. Covers senators without bioguide_id in our DB. */
+  nameMap: Map<string, string>;
+}
+
 /**
- * Builds a map from bioguide_id -> FEC candidate_id using the congress-legislators JSON endpoint.
+ * Builds bioguide -> FEC candidate_id AND full-name -> FEC candidate_id maps from the
+ * congress-legislators YAML source.
+ *
+ * Background: The theunitedstates.io JSON endpoint returned HTTP 410 Gone on 2026-06-04.
+ * YAML from unitedstates/congress-legislators GitHub is the same authoritative data.
+ *
+ * Most Phase 73-added senators have NULL bioguide_id in the DB — the name map provides
+ * a fallback so "Amy Klobuchar" in our DB can match "Amy Klobuchar" in YAML.
+ *
  * Filters FEC IDs by chamber (S-prefix for senators, H-prefix for House members).
  * Per Pitfall 4: a legislator can have multiple FEC IDs across chambers — pick the chamber-correct one.
  */
-async function buildBioguideToFecMap(): Promise<Map<string, string>> {
-  console.log('[crosswalk] Fetching congress-legislators JSON...');
-  const resp = await fetch(LEGISLATORS_JSON_URL, {
-    signal: AbortSignal.timeout(30_000),
+async function buildCrosswalkMaps(): Promise<CrosswalkMaps> {
+  console.log('[crosswalk] Fetching congress-legislators YAML from GitHub...');
+  const resp = await fetch(LEGISLATORS_YAML_URL, {
+    signal: AbortSignal.timeout(60_000),
   });
   if (!resp.ok) {
-    throw new Error(`Failed to fetch legislators-current.json: HTTP ${resp.status}`);
+    throw new Error(`Failed to fetch legislators-current.yaml: HTTP ${resp.status}`);
   }
-  const legislators: Legislator[] = (await resp.json()) as Legislator[];
-  const map = new Map<string, string>();
+  const yamlText = await resp.text();
+  const legislators = yamlLoad(yamlText) as Legislator[];
+  if (!Array.isArray(legislators)) {
+    throw new Error('legislators-current.yaml did not parse to an array');
+  }
+  const bioguideMap = new Map<string, string>();
+  const nameMap = new Map<string, string>();
   for (const leg of legislators) {
     if (!leg.id.fec || leg.id.fec.length === 0) continue;
     const lastTerm = leg.terms[leg.terms.length - 1];
@@ -108,10 +134,23 @@ async function buildBioguideToFecMap(): Promise<Map<string, string>> {
     const fecId =
       leg.id.fec.find(id => (isSenate ? id.startsWith('S') : id.startsWith('H'))) ??
       leg.id.fec[0];
-    if (fecId) map.set(leg.id.bioguide, fecId);
+    if (!fecId) continue;
+    bioguideMap.set(leg.id.bioguide, fecId);
+    // Also add name variants for senators and representatives without bioguide in DB
+    const firstName = leg.name.first;
+    const lastName = leg.name.last;
+    const officialFull = leg.name.official_full;
+    // Standard "First Last" format (covers most cases like "Amy Klobuchar")
+    nameMap.set(`${firstName} ${lastName}`.toLowerCase(), fecId);
+    // Official full name (e.g. "Bernard Sanders" for Bernie Sanders)
+    if (officialFull) {
+      nameMap.set(officialFull.toLowerCase(), fecId);
+    }
   }
-  console.log(`[crosswalk] Built bioguide->fec map with ${map.size} entries.`);
-  return map;
+  console.log(
+    `[crosswalk] Built maps: bioguide=${bioguideMap.size}, name=${nameMap.size} entries.`,
+  );
+  return { bioguideMap, nameMap };
 }
 
 // ---------------------------------------------------------------------------
@@ -165,24 +204,30 @@ async function lookupFecIdViaSources(politicianId: string): Promise<string | nul
 }
 
 /**
- * Resolves FEC candidate ID using two-path lookup:
- *   Path 2 first (politician_sources confirmed rows)
- *   Path 1 fallback (bioguide -> congress-legislators map, filtered by chamber prefix)
- * Returns null if neither path yields an ID.
+ * Resolves FEC candidate ID using three-path lookup:
+ *   Path 2 first (politician_sources confirmed rows — highest confidence)
+ *   Path 1a (bioguide -> congress-legislators map, filtered by chamber prefix)
+ *   Path 1b (full-name -> congress-legislators name map — for senators without bioguide_id in DB)
+ * Returns null if all paths fail.
  */
 async function resolveFecId(
   p: FederalPolitician,
-  bioguideMap: Map<string, string>,
+  crosswalk: CrosswalkMaps,
 ): Promise<string | null> {
   // Path 2: politician_sources (primary — catches 2026 candidates already matched)
   const fromSources = await lookupFecIdViaSources(p.id);
   if (fromSources) return fromSources;
 
-  // Path 1: bioguide -> congress-legislators crosswalk (incumbents)
-  if (p.bioguide_id) {
-    const fromMap = bioguideMap.get(p.bioguide_id);
-    if (fromMap) return fromMap;
+  // Path 1a: bioguide -> congress-legislators crosswalk (incumbents with bioguide in DB)
+  if (p.bioguide_id && p.bioguide_id.trim() !== '') {
+    const fromBioguide = crosswalk.bioguideMap.get(p.bioguide_id);
+    if (fromBioguide) return fromBioguide;
   }
+
+  // Path 1b: name-based match for senators/reps without bioguide_id in DB
+  // Phase 73 inserted 100 senators without bioguide_id — this path covers them
+  const fromName = crosswalk.nameMap.get(p.full_name.toLowerCase());
+  if (fromName) return fromName;
 
   return null;
 }
@@ -304,8 +349,8 @@ async function main(): Promise<void> {
 
   const startMs = Date.now();
 
-  // Build crosswalk (Path 1)
-  const bioguideMap = await buildBioguideToFecMap();
+  // Build crosswalk maps (Path 1a bioguide + Path 1b name-based)
+  const crosswalk = await buildCrosswalkMaps();
 
   // Query federal politicians
   const politicians = await getFederalPoliticiansFromDb();
@@ -325,7 +370,7 @@ async function main(): Promise<void> {
 
     try {
       // Resolve FEC ID
-      const fecId = await resolveFecId(p, bioguideMap);
+      const fecId = await resolveFecId(p, crosswalk);
       if (!fecId) {
         console.warn(
           `  [SKIP] No FEC ID found for ${p.full_name} (politician_sources + congress-legislators both empty)`,
