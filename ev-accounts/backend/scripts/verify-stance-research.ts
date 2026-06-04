@@ -36,7 +36,7 @@ import { createVerificationFetchSession } from '../src/lib/verificationFetch.js'
 import {
   buildEvidenceRowsForInsert,
   buildReviewRowForInsert,
-  replaceEvidence,
+  accumulateEvidence,
   upsertReviewRow,
 } from '../src/lib/researchEvidenceService.js';
 
@@ -196,7 +196,7 @@ for (const row of pushable) {
       [pid, tid, row.stance.reasoning, sources],
     );
     const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-    await replaceEvidence(evRows);
+    await accumulateEvidence(evRows);
     pushed++;
     evidenceWritten += evRows.length;
     pushedPoliticianIds.add(pid);

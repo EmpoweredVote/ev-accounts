@@ -93,22 +93,19 @@ export function buildReviewRowForInsert(args: {
 }
 
 /**
- * Replace evidence for a (politician, topic) and insert fresh snippets.
- * Idempotent across re-runs of the same batch.
+ * Accumulate evidence for a (politician, topic) — upserts each snippet, deduped
+ * by the unique index on (politician_id, topic_id, source_url, snippet_index).
+ * Never deletes existing rows; safe to re-run with the same or updated batches.
  */
-export async function replaceEvidence(rows: EvidenceInsertRow[]): Promise<void> {
+export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<void> {
   if (rows.length === 0) return;
   const { pool } = await import('./db.js');
-  const { politician_id, topic_id } = rows[0];
-  await pool.query(
-    `DELETE FROM inform.politician_context_evidence WHERE politician_id=$1 AND topic_id=$2`,
-    [politician_id, topic_id],
-  );
   for (const r of rows) {
     await pool.query(
       `INSERT INTO inform.politician_context_evidence
-        (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
-       VALUES ($1, $2, $3, $4, $5, $6)`,
+         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
+       VALUES ($1, $2, $3, $4, $5, $6)
+       ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
       [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id],
     );
   }
