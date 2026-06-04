@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v2.6
 milestone_name: Data Quality & Elections
 status: planning
-last_updated: "2026-06-04T03:25:52.012Z"
+last_updated: "2026-06-04T00:00:00.000Z"
 last_activity: 2026-06-04
 progress:
   total_phases: 5
   completed_phases: 3
-  total_plans: 10
+  total_plans: 13
   completed_plans: 12
   percent: 60
 ---
