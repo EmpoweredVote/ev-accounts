@@ -12,7 +12,7 @@ You are running the **research-stances** skill. Your job is to research politici
 
 Two settings control cost; both have cheap defaults and are configured **once**, not per-run:
 
-- **Research model** — env var `RESEARCH_STANCES_MODEL`. If set, pass it as the `model` on every Step 1 agent dispatch (it overrides the agent's frontmatter default). If unset, the agent's default model is used. Set it to a cheaper model (e.g. `haiku`) for cost mode, or to another provider's model id when running this skill outside Claude Code — so the model choice is never hardcoded or edited per run.
+- **Research model** — set once via env var `RESEARCH_STANCES_MODEL` in `ev-accounts/backend/.env` (e.g. `RESEARCH_STANCES_MODEL=haiku` for cost mode). STEP 1 reads it and passes it as the `model` on every agent dispatch (overriding the agent's frontmatter default); unset = the agent default (`sonnet`). Valid values are the Agent-tool tiers **`sonnet` / `opus` / `haiku`**. The user can also just say "use haiku for research" in the invocation. (See the README "Choosing the model" — note this env var is a Claude-Code convention; the model-agnostic part that ports to other providers is the verifier TS + prompts, not the agent dispatch.)
 - **Verification threshold** — how many independent verified sources a stance needs to publish. Defaults to **1** (cheap mode: one deterministically-verified source is enough, which avoids the expensive re-research wave). Raise it with `--threshold N` or the `RESEARCH_STANCES_THRESHOLD` env var for hot-button topics where you want corroboration.
 
 ## Topic scope (always all in-scope topics)
@@ -222,7 +222,7 @@ For each politician, dispatch a `politician-stance-researcher` agent using the A
 - Run agents **in parallel** — use multiple Agent tool calls in a single message
 - Maximum 5 concurrent agents to stay within reasonable limits
 - **Each agent writes to its OWN subdir** `data/stance-research/[BATCH_ID]/<lastname>/` (two CSVs), then you merge each wave's subdirs into the batch-root `stances.csv`/`evidence.csv` before STEP 2.5 — parallel agents writing the same file would clobber each other.
-- **Model:** if the `RESEARCH_STANCES_MODEL` env var is set, pass it as the `model` option on every Agent tool call (overrides the agent's default); if unset, omit `model` and the agent's default applies.
+- **Model:** read the configured model with `cd ev-accounts/backend && set -a && source .env && set +a && echo "model=${RESEARCH_STANCES_MODEL:-<agent default>}"`. If it printed a value (`sonnet`/`opus`/`haiku`), pass it as the `model` option on every Agent tool call (overrides the agent's default). If the user named a model in the invocation ("use haiku"), that wins. Otherwise omit `model` and the agent's default applies.
 
 **Agent prompt template:**
 
