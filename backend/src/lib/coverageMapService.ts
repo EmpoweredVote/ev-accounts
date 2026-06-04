@@ -328,7 +328,7 @@ async function buildJurisdictions(
            ORDER BY ST_Area(ST_Intersection(c.geometry, child.geometry)) DESC
            LIMIT 1) AS county_fips
          FROM essentials.geofence_boundaries child
-        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420')`,
+        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420', 'G5400', 'G5410')`,
       [stateFips],
     ),
     statsByJurisdiction(stateCode),
