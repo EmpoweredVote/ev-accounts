@@ -751,6 +751,11 @@ export interface CitationEntry {
   is_primary: boolean;
 }
 
+export interface StanceOption {
+  value: number;
+  text: string;
+}
+
 export interface TopicCitationBlock {
   topic_key: string;
   topic_title: string;
@@ -758,6 +763,7 @@ export interface TopicCitationBlock {
   has_stance: boolean;
   stance_value: number | null;
   stance_text: string | null;
+  all_stances: StanceOption[];
   reasoning: string | null;
   last_verified_at: string;
   citations: CitationEntry[];
@@ -791,6 +797,7 @@ export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] 
         has_stance: r.stance_value != null,
         stance_value: r.stance_value ?? null,
         stance_text: r.stance_text ?? null,
+        all_stances: [],
         reasoning: r.reasoning ?? null,
         last_verified_at: r.verified_at,
         citations: [],
@@ -844,5 +851,25 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
               pce.verified_at DESC`,
     [politicianId],
   );
-  return groupCitationRows(rows);
+  const blocks = groupCitationRows(rows);
+  if (blocks.length === 0) return blocks;
+
+  const topicKeys = blocks.map((b) => b.topic_key);
+  const { rows: stanceRows } = await pool.query<{ topic_key: string; value: number; text: string }>(
+    `SELECT ct.topic_key, cs.value, cs.text
+     FROM inform.compass_stances cs
+     JOIN inform.compass_topics ct ON ct.id = cs.topic_id
+     WHERE ct.topic_key = ANY($1)
+     ORDER BY ct.topic_key, cs.value ASC`,
+    [topicKeys],
+  );
+  const stancesByTopic = new Map<string, StanceOption[]>();
+  for (const s of stanceRows) {
+    if (!stancesByTopic.has(s.topic_key)) stancesByTopic.set(s.topic_key, []);
+    stancesByTopic.get(s.topic_key)!.push({ value: Number(s.value), text: s.text });
+  }
+  for (const block of blocks) {
+    block.all_stances = stancesByTopic.get(block.topic_key) ?? [];
+  }
+  return blocks;
 }
