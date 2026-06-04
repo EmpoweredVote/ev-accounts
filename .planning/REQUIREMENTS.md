@@ -26,9 +26,9 @@
 
 ### Elections (ELEC)
 
-- [ ] **ELEC-01**: Elections page at `/elections` human-verified — all displayed politicians, races, and dates confirmed accurate
-- [ ] **ELEC-02**: All issues found during ELEC-01 verification resolved (UI bugs, data errors, or missing coverage)
-- [ ] **ELEC-03**: Elections feature declared shipped — smoke test passes; feature noted in MILESTONES.md
+- [x] **ELEC-01**: Elections page at `/elections` human-verified — all displayed politicians, races, and dates confirmed accurate
+- [x] **ELEC-02**: All issues found during ELEC-01 verification resolved (UI bugs, data errors, or missing coverage)
+- [x] **ELEC-03**: Elections feature declared shipped — smoke test passes; feature noted in MILESTONES.md
 
 ---
 

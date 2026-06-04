@@ -1,5 +1,28 @@
 # Project Milestones: Empowered Accounts
 
+## v2.6 Elections Central (Shipped: 2026-06-04)
+
+**Delivered:** Elections discovery page at `/elections` — users enter a street address and see all upcoming elections on their ballot, grouped by tier (Federal / State / Local), with race cards and candidate cards. Backed by a new `GET /api/essentials/elections-by-address` endpoint that geocodes the address, runs a PostGIS geofence join for district-matched races plus a statewide fallback, and returns a grouped elections → races → candidates hierarchy. Utah 2026 Primary (June 23) seeded as first major test data set via migration 267.
+
+**Phases completed:** 99 (5 plans: backend endpoint, frontend component, data migration + verification, fix loop, ship declaration)
+
+**Key accomplishments:**
+
+- `GET /api/essentials/elections-by-address` endpoint — geocodes address via `geocodeAddress()`, two-query approach: PostGIS ST_Covers join for geofence-matched races + state-code join for statewide/at-large races; merges with dedup; returns `{ elections }` hierarchy; graceful 200 `{ elections: [] }` on geocoder failures
+- `/elections` route in essentials app — redirects to `/results?prefilled=true&view=elections`; `fetchElectionsByAddress()` in api.jsx using `publicFetch` (public data, no auth required); `ElectionsView.jsx` renders tier-grouped (Federal/State/Local) race cards with candidate cards, UNOPPOSED badge, compass-compare link for stanced candidates, branch icon chips
+- Migration 267: UT 2026 Primary — 1 election (June 23, 2026), 138 races, 171 candidates (19 linked to known politician UUIDs); `source = https://vote.utah.gov/2026-candidate-filings/`; all idempotent via ON CONFLICT
+- Playwright browser verification (PASS): SLC test address returns Local (Salt Lake County Executive + Legislative), State (Senate D9, House D22, SBE D5), and Federal (US House D1) races; mobile 375px clean; zero JS errors
+
+**Stats:**
+
+- 3 phases (99-01 backend, 99-02 frontend, 99-03 migration/verify), 5 plans total
+- 3/3 requirements closed (ELEC-01, ELEC-02, ELEC-03)
+- No Wave 2 fixes required — Wave 1 verification passed clean
+
+**Requirements closed:** ELEC-01, ELEC-02, ELEC-03
+
+---
+
 ## v2.2 TIGER District Geofencing (Shipped: 2026-05-10)
 
 **Delivered:** Full CA TIGER district geofencing pipeline — 1,147 polygon layers imported (assembly, senate, US house, school districts), cached per-user in PostGIS, with a zero-live-lookup Path 0 fast path in the representatives feed, a new Profile Location tab, and an operator recache CLI for redistricting events.
