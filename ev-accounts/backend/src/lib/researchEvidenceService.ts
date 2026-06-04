@@ -1,8 +1,7 @@
 /**
- * researchEvidenceService — pure helpers that shape VerifiedRow objects into
- * rows ready for `inform.politician_context_evidence` and
- * `inform.stance_research_review`. The actual SQL execution lives in the
- * skill orchestrator; this module is unit-testable on its own.
+ * researchEvidenceService — helpers for the stance research verification pipeline.
+ * Pure data-shaping functions (buildEvidenceRowsForInsert, buildReviewRowForInsert)
+ * plus DB-executing functions (accumulateEvidence, upsertReviewRow).
  */
 
 import type { VerifiedRow } from './researchVerifier.js';
