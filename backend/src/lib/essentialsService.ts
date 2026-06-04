@@ -1588,7 +1588,10 @@ export async function getRepresentativesByJurisdiction(
   // Deduplicate: same politician may appear via multiple district matches
   const seen = new Set<string>();
   const uniqueRows = allRows.filter((row) => {
-    const key = (row.id as string) ?? String(row.external_id);
+    const key = (row.id as string | null) != null
+      ? (row.id as string)
+      : `vacant-${row.geo_id ?? ''}-${row.district_id ?? ''}`;
+
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
