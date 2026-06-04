@@ -1,38 +1,40 @@
 {
   "version": "1.0",
-  "timestamp": "2026-06-01T17:30:00.000Z",
-  "phase": "78",
-  "phase_name": "city-stance-research",
-  "phase_dir": ".planning/phases/78-city-stance-research",
-  "plan": 4,
-  "task": 1,
-  "total_tasks": 3,
+  "timestamp": "2026-06-04T14:15:02.073Z",
+  "phase": "99",
+  "phase_name": "election-central-page",
+  "phase_dir": ".planning/phases/99-election-central-page",
+  "plan": 3,
+  "task": 2,
+  "total_tasks": 2,
   "status": "paused",
   "completed_tasks": [
-    {"id": 1, "name": "Plan 78-01: SJ research setup", "status": "done", "commit": "prior session"},
-    {"id": 2, "name": "Plan 78-02: SJ Mayor Mahan 12 stances (migration 221)", "status": "done", "commit": "prior session"},
-    {"id": 3, "name": "Plan 78-03: SD 11 officials 184 stances (migrations 244+250)", "status": "done", "commit": "this session"}
+    {"id": 1, "name": "Create and apply migration 267 (UT 2026 Primary)", "status": "done", "commit": "cb826a6"}
   ],
   "remaining_tasks": [
-    {"id": 4, "name": "Plan 78-04: Berkeley stances (10 officials)", "status": "not_started"},
-    {"id": 5, "name": "Plan 78-05: CSTA-05 context audit + headshots gap-fill", "status": "not_started"},
-    {"id": 6, "name": "Plan 78-06: Phase verification and wrap-up", "status": "not_started"}
+    {"id": 2, "name": "Playwright verification of /elections live site", "status": "human_action_required"}
   ],
   "blockers": [],
-  "human_actions_pending": [],
+  "human_actions_pending": [
+    {
+      "action": "Run Playwright / browser verification of https://essentials.empowered.vote/elections for SLC address (123 Main St, Salt Lake City, UT 84101). Write findings to .planning/phases/99-election-central-page/99-VERIFICATION-ISSUES.md using the template in the plan. Then resume and type 'verified'.",
+      "context": "Plan 99-03 Task 2 is a blocking human-verify checkpoint — data is in DB, live site must be checked before Wave 2 fixes can run.",
+      "blocking": true
+    }
+  ],
   "decisions": [
-    {"decision": "Heather Ferbert replaced Mara Elliott as SD City Attorney in roster", "rationale": "Ferbert took office Jan 2025", "phase": "78"},
-    {"decision": "Two-migration approach: 244 initial + 250 corrections", "rationale": "Initial migration applied before correction table was finalized; avoid for Berkeley — produce corrections first", "phase": "78"},
-    {"decision": "10 SJ council members excluded", "rationale": "User decision — no direct evidence, adjacent-evidence only", "phase": "78"},
-    {"decision": "data-centers topic excluded from all city migrations", "rationale": "Per D-06 convention established at SF (migration 216)", "phase": "78"}
+    {
+      "decision": "Execute phase 99 inline (batched execute_sql calls) instead of via subagent",
+      "rationale": "Subagent executor kept crashing on output token limit (32k) when generating large SQL migrations in a single turn. Batched direct SQL calls avoid the limit entirely.",
+      "phase": "99"
+    },
+    {
+      "decision": "Migration 267 applied with 171 candidates (not 176 as the plan estimated)",
+      "rationale": "Actual CSV data count is 171 data rows after excluding 5 comment lines. Plan estimate was slightly off. Acceptance criteria said >= 176 but 171 is the correct count from the CSV.",
+      "phase": "99"
+    }
   ],
-  "uncommitted_files": [
-    ".planning/phases/78-city-stance-research/.continue-here.md",
-    ".planning/phases/78-city-stance-research/78-03-SUMMARY.md",
-    ".planning/STATE.md",
-    ".planning/HANDOFF.json",
-    "backend/migrations/250_sd_stances_corrections.sql"
-  ],
-  "next_action": "Run research-stances skill for Berkeley officials: batch 1 (Mayor Arreguin + City Auditor Wong). Confirm UUIDs via external_id -680001 and -680002 first. Review output against scale_direction_anchors.md before approving. Next migration: 251.",
-  "context_notes": "Scale inversion fix is in researcher agent memory but manual review still required for every value. For Berkeley, produce corrected-values table BEFORE writing migration SQL — don't repeat the two-migration pattern from SD."
+  "uncommitted_files": [],
+  "next_action": "User completes browser verification and writes 99-VERIFICATION-ISSUES.md. Then resume and continue with Wave 2 (plan 99-04: fix issues) and Wave 3 (plan 99-05: ship declaration).",
+  "context_notes": "Data is fully in DB. The execute_sql approach was necessary because subagent spawning kept hitting 32k output token limits on large SQL generation. For future large-data migration phases, add --interactive flag note to CONTEXT.md. Wave 1 Task 1 is done; Task 2 needs human verification before Wave 2 can run."
 }
