@@ -454,8 +454,8 @@ async function main(): Promise<void> {
   process.exit(0);
 }
 
-main().catch(err => {
+main().catch(async (err) => {
   console.error('[run-fec-finance-summary] Fatal error:', err);
-  void pool.end();
+  try { await pool.end(); } catch { /* ignore pool close errors on fatal path */ }
   process.exit(1);
 });
