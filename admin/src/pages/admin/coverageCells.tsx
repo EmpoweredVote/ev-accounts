@@ -71,3 +71,17 @@ export function ratioToTristate(part: number, total: number): Tristate {
   if (total === 0 || part === 0) return 'none';
   return part >= total ? 'full' : 'partial';
 }
+
+/** A colored "have/total" count — green=full, amber=partial, grey=none. */
+export function CountBar({ have, total }: { have: number; total: number }) {
+  const t = ratioToTristate(have, total);
+  const cls =
+    t === 'full' ? 'text-emerald-700 dark:text-emerald-400'
+    : t === 'partial' ? 'text-amber-700 dark:text-amber-400'
+    : 'text-gray-400 dark:text-gray-600';
+  return (
+    <span className={`tabular-nums text-xs font-medium ${cls}`}>
+      {have}<span className="text-gray-400">/{total}</span>
+    </span>
+  );
+}
