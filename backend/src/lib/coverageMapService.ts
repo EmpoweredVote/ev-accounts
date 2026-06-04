@@ -502,6 +502,13 @@ export async function getCountyScores(
  * composite over its populated jurisdictions). This is why a state with one
  * built-out county and many empty ones reads low-breadth / high-depth (teal),
  * instead of the old single mean that washed out to near-empty.
+ *
+ * Note: the breadth rollup groups by county_fips and skips jurisdictions with a
+ * null county_fips (the rare case where ST_Intersects found no county). Those
+ * rows are still counted in the state-wide cities/schools hover bars (which are
+ * intentionally state-wide, not per-county), so a null-county city can show in
+ * cities_total without contributing to any county's started flag. This is
+ * negligible in practice and only affects the hover counts, not the breadth color.
  */
 function stateBreakdown(jur: JurisdictionScore[], stateFips: string) {
   // Group by county for the county-rollup units.

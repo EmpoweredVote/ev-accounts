@@ -82,7 +82,10 @@ export function CoveragePage() {
     loadCounties(code);
   }, [metric, stateByFips, elecStatesByFips, loadCounties]);
 
-  // Re-fetch the selected state's counties when the metric flips.
+  // Re-fetch the selected state's counties when the metric flips. Keyed on
+  // [metric] only and intentionally omitting loadCounties/selected: loadCounties
+  // already closes over the current metric, and onSelectState handles the click
+  // path — adding them would double-fetch on every state click.
   useEffect(() => {
     if (selected?.code) loadCounties(selected.code);
     // eslint-disable-next-line react-hooks/exhaustive-deps

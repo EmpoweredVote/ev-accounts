@@ -46,7 +46,8 @@ interface Props {
   elecDate: { date: string; type: string } | null;
   selected: { fips: string; name: string; code?: string } | null;
   selectedCountyFips: string | null;
-  onSelectState: (fips: string, name: string, geo: unknown) => void;
+  // geo is consumed internally for viewport framing — the parent only needs fips + name.
+  onSelectState: (fips: string, name: string) => void;
   onSelectCounty: (fips: string) => void;
 }
 
@@ -81,8 +82,8 @@ export function CoverageMap(props: Props) {
 
   const handleSelectState = (fips: string, name: string, geo: unknown) => {
     setHover(null);
-    fitToFeature(geo);
-    props.onSelectState(fips, name, geo);
+    fitToFeature(geo); // frame the clicked state using its projected bounds
+    props.onSelectState(fips, name);
   };
 
   // Completeness hover card.

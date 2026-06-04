@@ -4,7 +4,7 @@ import { Bool, Chip, Stances, Roster, ratioToTristate, type Tristate } from './c
 import { type CountyScore } from './coverageTypes';
 
 // ---------------------------------------------------------------------------
-// Types — ported verbatim from CoverageTrackerPage.tsx
+// Types — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
 // ---------------------------------------------------------------------------
 
 type Level = 'federal' | 'state' | 'county' | 'local' | 'school';
@@ -62,7 +62,7 @@ interface CoverageResponse {
 }
 
 // ---------------------------------------------------------------------------
-// Constants — ported verbatim from CoverageTrackerPage.tsx
+// Constants — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
 // ---------------------------------------------------------------------------
 
 const LEVEL_LABEL: Record<Level, string> = {
@@ -75,7 +75,7 @@ const LEVEL_LABEL: Record<Level, string> = {
 const LEVEL_ORDER: Level[] = ['federal', 'state', 'county', 'local', 'school'];
 
 // ---------------------------------------------------------------------------
-// UniverseCard — ported verbatim from CoverageTrackerPage.tsx
+// UniverseCard — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
 // ---------------------------------------------------------------------------
 
 function UniverseCard({ cat }: { cat: UniverseCategory }) {
@@ -138,7 +138,7 @@ function UniverseCard({ cat }: { cat: UniverseCategory }) {
 }
 
 // ---------------------------------------------------------------------------
-// STATUS_STYLE — ported verbatim from CoverageTrackerPage.tsx
+// STATUS_STYLE — extracted from the previous CoverageTrackerPage (removed in coverage-bivariate-redesign)
 // ---------------------------------------------------------------------------
 
 const STATUS_STYLE: Record<CoverageLocation['status'], string> = {
