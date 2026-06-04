@@ -41,7 +41,7 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 | Gregg Hart | Democratic | 3 | Assembly Member | | 10 | complete |
 | Phillip Chen | Republican | 4 | Assembly Member | | 10 | complete |
 | Dr. Corey A. Jackson | Democratic | 5 | Assembly Member | | 10 | complete |
-| Heather Hadwick | Republican | 5 | Assembly Member | | 10 | complete |
+| Heather Hadwick | Republican | 5 | Assembly Member | | 8 | updated (8 final — housing and voting-rights stances removed 89-03; no independent sources found; party-inference only) |
 | James C. Ramos | Democratic | 5 | Assembly Member | | 10 | complete |
 | Michelle Rodriguez | Democratic | 5 | Assembly Member | | 10 | complete |
 | Sharon Quirk-Silva | Democratic | 5 | Assembly Member | | 10 | complete |
@@ -63,7 +63,7 @@ Politicians where evidence is plausibly available and prominence warrants it. To
 
 | full_name | party | stance_count | office_title | notes | post_fill_count | final_status |
 |-----------|-------|-------------|--------------|-------|-----------------|--------------|
-| Rob Consalvo | Democratic | 1 | Representative, 14th Suffolk District | | 10 | complete — 9 stances added from actonmass bill cosponsorship + 2021 mayoral campaign record |
+| Rob Consalvo | Democratic | 1 | Representative, 14th Suffolk District | | 9 | complete (9 final — voting-rights stance removed 89-03; no independent source found for voting-rights) |
 | Daniel J. Ryan | Democratic | 2 | Representative, 2nd Suffolk District | | 11 | complete — 9 stances added from actonmass (ROE Act, Work & Family Mobility Act, environmental justice bills) |
 | David Biele | Democratic | 2 | Representative, 4th Suffolk District | | 11 | complete — 9 stances added from actonmass (100% renewable, environmental justice, stop wage theft) |
 | Daniel J. Hunt | Democratic | 3 | Representative, 13th Suffolk District | | 11 | complete — 8 stances added from actonmass (ROE Act, Work & Family Mobility Act) |
@@ -442,18 +442,27 @@ The following (politician, topic) pairs had existing stance values in `inform.po
 
 ### Gap 2: Party-Inference Row Remediation (6 rows across 2 CSVs)
 
-See Task 2 completion below. Status column: UPDATED = reasoning updated to remove party-inference language; DELETED = row removed from DB (no independent source found).
+**Completed:** 2026-06-03
 
-| # | Politician | Topic | CSV File | Action | Evidence Found | New Reasoning Summary |
-|---|-----------|-------|----------|--------|---------------|----------------------|
-| 1 | Daniel F. Cahill | healthcare | ma-legislators | PENDING | — | — |
-| 2 | Daniel J. Hunt | healthcare | ma-legislators | PENDING | — | — |
-| 3 | Hadley Luddy | abortion | ma-legislators | PENDING | — | — |
-| 4 | Rob Consalvo | voting-rights | ma-legislators | PENDING | — | — |
-| 5 | Heather Hadwick | housing | ca-legislators | PENDING | — | — |
-| 6 | Heather Hadwick | voting-rights | ca-legislators | PENDING | — | — |
+Status column: UPDATED = reasoning updated to remove party-inference language; DELETED = row removed from DB (no independent source found).
 
-*This table will be updated when Task 2 completes.*
+| # | Politician | Topic | CSV File | Action | Evidence Found | Result |
+|---|-----------|-------|----------|--------|---------------|--------|
+| 1 | Daniel F. Cahill | healthcare | ma-legislators | UPDATED | Actonmass tracker confirms Cahill did NOT cosponsor Medicare for All (H.1239). Non-cosponsorship is independent evidence. | Party phrase "As a Democrat he supports ACA-level protections" removed. Reasoning now cites bill tracker only. value=3 retained. |
+| 2 | Daniel J. Hunt | healthcare | ma-legislators | UPDATED | Actonmass tracker confirms Hunt did NOT cosponsor Medicare for All or any priority healthcare bills. | Party phrase "as a Democrat but has maintained a moderate, procedurally focused legislative profile" removed. Reasoning now cites bill tracker only. value=3 retained. |
+| 3 | Hadley Luddy | abortion | ma-legislators | UPDATED | malegislature.gov/H_L1/Bills confirms no abortion cosponsorship found. No ROE Act or Abortion Access Act cosponsorship in bill list. | Party phrase "As a Democrat who did not sign on, default to current access" removed. Reasoning now cites absence of cosponsorship only. value=3 retained. |
+| 4 | Rob Consalvo | voting-rights | ma-legislators | DELETED | Actonmass tracker shows Consalvo cosponsored: driver-license, healthy-youth-act, prison-moratorium, stop-wage-theft. No voting-rights bill found. | Row deleted from both inform.politician_answers and inform.politician_context. No independent source found. Consalvo final count: 9 (was 10). |
+| 5 | Heather Hadwick | housing | ca-legislators | DELETED | votehadwick.com/issues is a Wix JS-rendered site; static HTML does not contain policy text. Unable to verify specific housing-policy quote. General anti-regulation claim is inferential, not housing-specific. | Row deleted from both tables. No housing-specific independent source found. |
+| 6 | Heather Hadwick | voting-rights | ca-legislators | DELETED | Ballotpedia confirms Hadwick is CA Republican Assembly member but shows no voting-rights bill votes in static HTML. AB-7 (civil rights) and SB-7 (AI regulation) votes cited in original reasoning are not voting-rights bills. | Row deleted from both tables. No voting-rights-specific source found. Hadwick final count: 8 (was 10). |
+
+**Final verification:**
+- Global orphan count after all changes: 0 (confirmed via SQL)
+- MA CSV party-inference grep: 0 matches
+- CA CSV party-inference grep: 0 matches
+
+**Updated politician stance counts:**
+- Rob Consalvo: post_fill_count updated from 10 → 9 (voting-rights removed; no independent source)
+- Heather Hadwick: post_fill_count updated from 10 → 8 (housing and voting-rights removed; no independent sources)
 
 ---
 
