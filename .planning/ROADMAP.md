@@ -1020,15 +1020,23 @@ Plans:
 
 **Requirements:** FINA-01, FINA-02, FINA-03
 
+**Plans:** 3 plans
+
+Plans:
+
+- [ ] 90-01-PLAN.md — Migration 268: add finance_summary JSONB column to essentials.politicians + Wave-0 RED test scaffold (FINA-01)
+- [ ] 90-02-PLAN.md — Build and run run-fec-finance-summary.ts: FEC ingestion for federal politicians via two-path crosswalk (FINA-02)
+- [ ] 90-03-PLAN.md — Surface finance_summary in essentialsService list + detail endpoints; flip Wave-0 tests to GREEN (FINA-03)
+
 **Waves:**
 
-- Wave 1: Schema migration — finance_summary JSONB column on inform.politicians (FINA-01)
-- Wave 2: FEC ingestion script — bioguide to FEC ID crosswalk via congress-legislators YAML; load { total_raised, top_donors, cycle, source: "FEC" } for all federal politicians (FINA-02)
-- Wave 3: API update — include finance_summary in GET /api/essentials/politicians; null for non-federal politicians (FINA-03)
+- Wave 1: Schema migration — finance_summary JSONB column on essentials.politicians (FINA-01) — column lives on essentials.politicians, NOT inform.politicians; REQUIREMENTS.md text predates Phase 35 deduplication
+- Wave 2: FEC ingestion script — bioguide to FEC ID crosswalk via congress-legislators JSON (Path 1) and transparent_motivations.politician_sources (Path 2); load { total_raised, top_donors, cycle, source: "FEC" } for all federal politicians (FINA-02)
+- Wave 3: API update — include finance_summary in GET /api/essentials/politicians and /:id; null for non-federal politicians (FINA-03)
 
 **Success Criteria:**
 
-1. finance_summary column exists on inform.politicians (verified via information_schema query).
+1. finance_summary column exists on essentials.politicians (verified via information_schema query).
 2. All target federal politicians (senators + 2026 candidates) have finance_summary populated — SELECT COUNT WHERE finance_summary IS NULL returns 0 for target set.
 3. Spot-check: one senator finance_summary contains total_raised (positive integer), top_donors array with 3+ entries, source: "FEC".
 4. GET /api/essentials/politicians response includes finance_summary field — null for non-federal, populated for federal.
@@ -1104,7 +1112,7 @@ Plans:
 | 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
 | 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
 | 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete    | 2026-06-04 |
-| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/? | Pending | — |
+| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 0/3 | Pending | — |
 | 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
