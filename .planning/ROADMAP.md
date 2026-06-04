@@ -1021,11 +1021,17 @@ Plans:
 **Requirements:** FINA-01, FINA-02, FINA-03
 
 **Plans:** 3 plans
-
 Plans:
+**Wave 1**
 
 - [ ] 90-01-PLAN.md — Migration 268: add finance_summary JSONB column to essentials.politicians + Wave-0 RED test scaffold (FINA-01)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 90-02-PLAN.md — Build and run run-fec-finance-summary.ts: FEC ingestion for federal politicians via two-path crosswalk (FINA-02)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 90-03-PLAN.md — Surface finance_summary in essentialsService list + detail endpoints; flip Wave-0 tests to GREEN (FINA-03)
 
 **Waves:**
@@ -1060,6 +1066,7 @@ Plans:
 **Plans:** 3 plans
 
 Plans:
+
 - [ ] 99-03-PLAN.md — Utah migration 267 + Playwright verification
 - [ ] 99-04-PLAN.md — Fix all issues from verification
 - [ ] 99-05-PLAN.md — Smoke test + ship declaration

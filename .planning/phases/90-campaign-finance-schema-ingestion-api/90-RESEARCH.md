@@ -576,22 +576,16 @@ Many senators already have confirmed FEC IDs from Phase 73-76 `run-fec-auto-matc
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should "NOT EMPLOYED" / "SELF EMPLOYED" top-donor entries be included?**
-   - What we know: FEC by_employer returns these as valid employer strings with large totals (e.g., "NOT EMPLOYED" = $2.7M for Cantwell 2024)
-   - What's unclear: Are they useful to display, or just noise?
-   - Recommendation: Include them. They accurately reflect grass-roots small-donor base. The planner can add a filter if product decides otherwise.
+   - RESOLVED: Include them. They accurately reflect grass-roots small-donor base. Filter only null/empty employer strings.
 
 2. **Which cycle to use for incumbent senators?**
-   - What we know: Most senators' most recent active cycle is 2026 (Class 2 up for election). Others are Class 1/3 (their last election was 2022/2024).
-   - What's unclear: Should we always use `cycle=2026` (current), or use the senator's most recent competitive cycle?
-   - Recommendation: Always use `cycle=2026` for all politicians. This reflects current fundraising status and is consistent across the 143-politician set.
+   - RESOLVED: Always use `cycle=2026` for all politicians. Consistent across the 143-politician set and reflects current fundraising status.
 
 3. **Does `bioguide_id` column actually exist on `essentials.politicians` in the live DB?**
-   - What we know: Referenced in `fecResearch.ts` and `dedup-essentials-politicians.ts`. No migration file found that adds it.
-   - What's unclear: Whether it exists in the live DB (may have been added directly or bundled in an untracked migration).
-   - Recommendation: Script should handle `bioguide_id IS NULL` gracefully. If the column doesn't exist, the script can still use Path 2 (politician_sources).
+   - RESOLVED: Script handles `bioguide_id IS NULL` gracefully — falls back to Path 2 (politician_sources) for any politician where bioguide_id is null. No blocking dependency on column existence.
 
 ---
 
