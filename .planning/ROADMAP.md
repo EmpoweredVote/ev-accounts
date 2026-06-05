@@ -955,11 +955,11 @@ Plans:
 
 **Depends on:** Phase 100 (target list required to scope this phase)
 **Requirements:** FEDX-01, QUAL-01, QUAL-02
-**Plans:** 2 plans
+**Plans:** 1/2 plans executed
 Plans:
 **Wave 1**
 
-- [ ] 101-01-PLAN.md — Senator-specific source triage: weak-source + unsourced query against NATIONAL_UPPER senators; outputs 101-TRIAGE-REPORT.md and 101-SENATOR-TARGETS.csv (scopes Plan 02)
+- [x] 101-01-PLAN.md — Senator-specific source triage: weak-source + unsourced query against NATIONAL_UPPER senators; outputs 101-TRIAGE-REPORT.md and 101-SENATOR-TARGETS.csv (scopes Plan 02)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -1113,7 +1113,7 @@ Plans:
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete | 2026-06-04 |
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
-| 101. Federal Senate Remediation | v2.7 | 0/? | Not started | — |
+| 101. Federal Senate Remediation | v2.7 | 1/2 | In Progress|  |
 | 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |

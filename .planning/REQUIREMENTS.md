@@ -12,7 +12,7 @@
 
 ### FEDX — Federal Remediation
 
-- [ ] **FEDX-01**: Every US Senator stance: re-researched with Chair methodology → has real source URL in `politician_context`, or has been deleted from `politician_answers`
+- [x] **FEDX-01**: Every US Senator stance: re-researched with Chair methodology → has real source URL in `politician_context`, or has been deleted from `politician_answers`
 - [ ] **FEDX-02**: Every US House representative stance: re-researched with Chair methodology → has real source URL, or has been deleted
 
 ### STAX — State + Local Remediation
@@ -55,7 +55,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | SRCA-01 | 100 | Complete |
 | SRCA-02 | 100 | Complete |
-| FEDX-01 | 101 | Pending |
+| FEDX-01 | 101 | Complete |
 | FEDX-02 | 102 | Pending |
 | STAX-01 | 103 | Pending |
 | STAX-02 | 103 | Pending |
