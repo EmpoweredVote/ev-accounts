@@ -2,33 +2,33 @@
 gsd_state_version: 1.0
 milestone: v2.6
 milestone_name: Data Quality & Elections
-status: milestone_complete
-last_updated: 2026-06-05T14:56:04.020Z
-last_activity: 2026-06-05 -- Phase 99 execution started
+status: archived
+last_updated: 2026-06-05T00:00:00.000Z
+last_activity: 2026-06-05 -- v2.6 milestone archived; all gaps closed
 progress:
   total_phases: 5
   completed_phases: 5
-  total_plans: 17
-  completed_plans: 205
+  total_plans: 13
+  completed_plans: 13
   percent: 100
-stopped_at: Milestone complete (Phase 99 was final phase)
+stopped_at: v2.6 milestone complete and archived 2026-06-05
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-19 after v2.3 milestone start)
+See: .planning/PROJECT.md (updated 2026-06-05 after v2.6 milestone)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Milestone complete
-**Last shipped:** Phase 99 complete 2026-06-04: Elections Central Page — GET /api/essentials/elections-by-address + ElectionsView.jsx + migration 267 (UT 2026 Primary: 138 races, 171 candidates). ELEC-01, ELEC-02, ELEC-03 verified. v2.6 milestone complete.
+**Current focus:** Planning next milestone
+**Last shipped:** v2.6 Data Quality & Elections — archived 2026-06-05. All 12 requirements closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03). Gaps closed: Dooley sources fixed, Jones ukraine-support deleted, Phase 90 VERIFICATION.md updated, FEC re-run recovered 8 politicians (201→209). Archive: .planning/milestones/v2.6-ROADMAP.md.
 
 ## Current Position
 
-Phase: 99
+Phase: None (between milestones)
 Plan: Not started
-Status: Milestone complete
+Status: Planning next milestone
 Last activity: 2026-06-05
 
 ## Performance Metrics

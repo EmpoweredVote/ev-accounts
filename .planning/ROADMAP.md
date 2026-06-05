@@ -18,7 +18,7 @@
 - ✅ **v2.3 US Senate Coverage** — Phases 72–74 (shipped 2026-05-21)
 - ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
 - ✅ **v2.5 City Officials Expansion** — Phases 77–78 (shipped 2026-06-02; Phases 79–80 rolled into v2.6)
-- 🔄 **v2.6 Data Quality & Elections** — Phases 87–90, 99 (current)
+- ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
 
 ## Phases
 
@@ -900,191 +900,18 @@ Plans:
 
 ---
 
-### v2.6 Data Quality & Elections (Phases 87-90, 99) — CURRENT
+<details>
+<summary>✅ v2.6 Data Quality & Elections (Phases 87–90, 99) — SHIPPED 2026-06-05</summary>
 
----
+- [x] Phase 87: Stance Accuracy Audit + Agent Update (2/2 plans) — completed 2026-06-02
+- [x] Phase 88: Stance Corrections + Party Normalization (5/5 plans) — completed 2026-06-03
+- [x] Phase 89: Gap-fill Existing Politicians (3/3 plans) — completed 2026-06-04
+- [x] Phase 90: Campaign Finance Schema + Ingestion + API (3/3 plans) — completed 2026-06-04
+- [x] Phase 99: Elections Verification + Polish (6/4 plans) — completed 2026-06-05
 
-#### Phase 87: Stance Accuracy Audit + Agent Update
+Full details: `.planning/milestones/v2.6-ROADMAP.md`
 
-**Goal:** A complete accuracy audit report exists for all ~1,049 politicians, with every flagged case scored and prioritized — and the researcher agent has five-chairs framing baked in so all future stance research starts from the right evaluation posture.
-
-**Dependencies:** None
-
-**Requirements:** SACC-01, SACC-04
-
-**Plans:** 2/2 plans complete
-
-Plans:
-
-- [x] 87-01-PLAN.md — Audit SQL + 87-AUDIT-REPORT.md generation (SACC-01)
-- [x] 87-02-PLAN.md — Replace SCALE RULE block in research-stances/SKILL.md with five-chairs framing (SACC-04)
-
-**Success Criteria:**
-
-1. Audit artifact lists all politicians with flag scores — name, party, office, stance count, flagged topic count, priority tier (confirmed inversion / borderline / likely correct).
-2. The 8 pre-identified confirmed inversions appear at top of priority list; ukraine-support Rs (26) and party-string issues appear in audit.
-3. Researcher agent SKILL.md includes five-chairs framing block in the system prompt section.
-4. Audit SQL query documented for future re-runs.
-
----
-
-#### Phase 88: Stance Corrections + Party Normalization
-
-**Goal:** Every politician confirmed as having inaccurate stance data has been individually re-researched with real sources and corrected — the platform's stance data reflects best available evidence, not researcher agent biases.
-
-**Dependencies:** Phase 87 (priority list from SACC-01 drives work order)
-
-**Requirements:** SACC-02, SACC-03
-
-**Waves:**
-
-- Wave 1: Re-research 8 confirmed inversions individually (Gonzalez, Niello, Nixon, Vindman, Grayson, Hinson, Dooley, Hinojosa) with real fetched sources; corrections via migration
-- Wave 2: Work through remainder of priority list from Phase 87; each politician individually reassessed
-- Wave 3: Ukraine-support individual verification for 25 flagged Rs at value=2
-- Wave 4: Party string normalization across essentials.politicians
-
-**Plans:** 5/5 plans complete
-
-Plans:
-**Wave 1**
-
-- [x] 88-01-PLAN.md — Tier 1 batch A: re-research and correct Gonzalez, Niello, Nixon, Vindman (Wave 1)
-
-**Wave 2** *(blocked on Wave 1 completion)*
-
-- [x] 88-02-PLAN.md — Tier 1 batch B: re-research and correct Grayson, Hinson, Dooley, Hinojosa (Wave 1; Hinojosa migration may also correct party tag)
-
-**Wave 3** *(blocked on Wave 2 completion)*
-
-- [x] 88-03-PLAN.md — Tier 2 borderline: MA value=3 cluster investigation + per-politician determinations for all 21 Tier 2 cases (Wave 2)
-
-**Wave 4** *(blocked on Wave 3 completion)*
-
-- [x] 88-04-PLAN.md — Ukraine-support verification: per-politician determination for 25 Republicans at value=2 (Wave 3)
-
-**Wave 5** *(blocked on Wave 4 completion)*
-
-- [x] 88-05-PLAN.md — Party string normalization: UPDATE essentials.politicians SET party = 'Democratic' WHERE party = 'Democrat' (Wave 4)
-
-**Cross-cutting constraints:**
-
-- Every corrected stance has a paired inform.politician_context row with sources array of length >= 1
-- Zero corrections rely on party-affiliation inference
-
-**Success Criteria:**
-
-1. Every politician from the confirmed-inversion tier has a correction migration applied or a documented determination that original value was correct.
-2. No correction applied without at least one real fetched source URL in inform.politician_context — zero "party affiliation inference" corrections.
-3. Ukraine-support verification complete: each of 26 flagged Rs has a research determination with source citation.
-4. SELECT DISTINCT party FROM essentials.politicians returns a consistent set with no mixed-format variants.
-
----
-
-#### Phase 89: Gap-fill Existing Politicians
-
-**Goal:** Every politician with sparse stance coverage and where additional evidence is plausibly available has been brought to a meaningful coverage floor.
-
-**Dependencies:** Phase 87
-
-**Requirements:** GAPF-01, GAPF-02
-
-**Plans:** 3/3 plans complete
-Plans:
-**Wave 1**
-
-- [x] 89-01-PLAN.md — Wave 1: audit SQL produces 89-GAP-FILL-AUDIT.md with tier+evidence classification; orphan-context fix for Niello/Schiavo/Zbur/Elhawary (GAPF-01)
-
-**Wave 2** *(blocked on Wave 1 completion)*
-
-- [x] 89-02-PLAN.md — Wave 2: research + ingestion for all Tier 1 politicians (Federal, State Exec, CA legislators, MA legislators) — each politician >= 10 stances or documented evidence floor (GAPF-02)
-
-**Waves:**
-
-- Wave 1: Audit — SQL query identifying all politicians with < 10 stances; produce prioritized target list (GAPF-01); fix 4 orphan-context politicians as side-task
-- Wave 2: Research + ingestion for all Tier 1 politicians, one at a time (GAPF-02)
-
-**Success Criteria:**
-
-1. Gap-fill audit artifact lists every politician with fewer than 10 stances, annotated with priority tier and evidence-availability determination.
-2. Every high-priority politician has new stance rows ingested — SELECT returns zero high-priority rows with < 10 stances after gap-fill.
-3. Every new stance row has a paired inform.politician_context row with at least one source URL.
-4. Politicians where "no additional evidence available" are documented with that status.
-
----
-
-#### Phase 90: Campaign Finance Schema + Ingestion + API
-
-**Goal:** Campaign finance summaries (total raised + top donors by employer) are stored on federal politician records and surfaced via the essentials API using FEC data.
-
-**Dependencies:** None
-
-**Requirements:** FINA-01, FINA-02, FINA-03
-
-**Plans:** 3/3 plans complete
-Plans:
-**Wave 1**
-
-- [x] 90-01-PLAN.md — Migration 268: add finance_summary JSONB column to essentials.politicians + Wave-0 RED test scaffold (FINA-01)
-
-**Wave 2** *(blocked on Wave 1 completion)*
-
-- [x] 90-02-PLAN.md — Build and run run-fec-finance-summary.ts: FEC ingestion for federal politicians via two-path crosswalk (FINA-02)
-
-**Wave 3** *(blocked on Wave 2 completion)*
-
-- [x] 90-03-PLAN.md — Surface finance_summary in essentialsService list + detail endpoints; flip Wave-0 tests to GREEN (FINA-03)
-
-**Waves:**
-
-- Wave 1: Schema migration — finance_summary JSONB column on essentials.politicians (FINA-01) — column lives on essentials.politicians, NOT inform.politicians; REQUIREMENTS.md text predates Phase 35 deduplication
-- Wave 2: FEC ingestion script — bioguide to FEC ID crosswalk via congress-legislators JSON (Path 1) and transparent_motivations.politician_sources (Path 2); load { total_raised, top_donors, cycle, source: "FEC" } for all federal politicians (FINA-02)
-- Wave 3: API update — include finance_summary in GET /api/essentials/politicians and /:id; null for non-federal politicians (FINA-03)
-
-**Success Criteria:**
-
-1. finance_summary column exists on essentials.politicians (verified via information_schema query).
-2. All target federal politicians (senators + 2026 candidates) have finance_summary populated — SELECT COUNT WHERE finance_summary IS NULL returns 0 for target set.
-3. Spot-check: one senator finance_summary contains total_raised (positive integer), top_donors array with 3+ entries, source: "FEC".
-4. GET /api/essentials/politicians response includes finance_summary field — null for non-federal, populated for federal.
-
----
-
-#### Phase 99: Elections Verification + Polish
-
-**Goal:** The elections page at /elections is human-verified accurate, all found issues are resolved, and the elections feature is declared shipped.
-
-**Dependencies:** Phase 99 work already committed
-
-**Requirements:** ELEC-01, ELEC-02, ELEC-03
-
-**Waves:**
-
-- Wave 1: Human verification — review /elections for data accuracy, UI issues, missing coverage (ELEC-01)
-- Wave 2: Fix all issues found in Wave 1 (ELEC-02)
-- Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
-
-**Plans:** 6/4 plans complete
-Plans:
-**Wave 1**
-
-- [x] 99-03-PLAN.md — Utah migration 267 + Playwright verification
-
-**Wave 2** *(blocked on Wave 1 completion)*
-
-- [x] 99-04-PLAN.md — Fix all issues from verification
-
-**Wave 3** *(blocked on Wave 2 completion)*
-
-- [x] 99-05-PLAN.md — Smoke test + ship declaration
-
-**Success Criteria:**
-
-1. Human reviewed /elections and confirmed: correct candidate names, offices, dates; no broken UI; no obviously missing races.
-2. Every issue found in Wave 1 has a fix committed and verified.
-3. Elections smoke test passes: page loads, races display, detail view navigable.
-4. MILESTONES.md updated to note elections feature shipped.
-
----
+</details>
 
 ## Progress
 

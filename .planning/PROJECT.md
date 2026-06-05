@@ -86,18 +86,22 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
-### Active (v2.6)
+### Validated (v2.6)
 
-**Milestone: v2.6 Data Quality & Elections** (Phases 87+) — Full stance accuracy audit with individual reassessment per flagged politician, gap-fill sparse coverage, campaign finance layer, and elections page end-to-end.
+**Milestone: v2.6 Data Quality & Elections** (Phases 87–90, 99) — shipped 2026-06-05.
 
-- ✓ SACC-04: Five-chairs framing baked into researcher agent (research-stances SKILL.md) — Phase 87; topic-scale stance texts embedded in agent prompt at dispatch time; SCALE RULE block removed
-- [ ] SACC-01–NN: Stance accuracy audit — 255 flagged politicians individually reassessed with real sources; 8 confirmed inversions (Tier 1) prioritized first; 21 borderline (Tier 2) second; ukraine-support (26 Rs) individually verified; party string normalization
-- [ ] GAPF-01: Audit all existing politicians for < 10 stances; produce prioritized target list — carried from v2.5
-- [ ] GAPF-02: Research and ingest missing stances for all identified targets — carried from v2.5
-- [ ] FINA-01: finance_summary JSONB column added to inform.politicians; migration applied — carried from v2.5
-- [ ] FINA-02: Finance data ingested for city officials + top-priority existing politicians (FEC/FPPC) — carried from v2.5
-- [ ] FINA-03: Finance summary surfaced on GET /api/essentials/politicians; backward-compatible — carried from v2.5
-- [ ] ELEC-01–NN: Elections page human verification + issue resolution; elections feature declared complete
+- ✓ SACC-01: Stance accuracy audit covering all ~1,049 politicians — 255 flagged, three priority tiers — Phase 87
+- ✓ SACC-02: All confirmed-inversion politicians individually re-researched and corrected with real sources — Phase 88
+- ✓ SACC-03: Party string normalized — Democrat → Democratic, 775 rows, SELECT DISTINCT party clean — Phase 88
+- ✓ SACC-04: Five-chairs framing baked into researcher agent (research-stances SKILL.md) — Phase 87
+- ✓ GAPF-01: Gap-fill audit — 440 politicians with < 10 stances, all classified (Tier 1/2/3) — Phase 89
+- ✓ GAPF-02: Missing stances ingested for all 50 Tier 1 politicians; every stance has context + source — Phase 89
+- ✓ FINA-01: finance_summary JSONB column on essentials.politicians (migration 268) — Phase 90
+- ✓ FINA-02: FEC ingestion for 209/258 federal politicians (44 no FEC ID, 5 persistent timeouts) — Phase 90
+- ✓ FINA-03: GET /api/essentials/politicians returns finance_summary; null for non-federal — Phase 90
+- ✓ ELEC-01: Elections page human-verified via Playwright (SLC address: Local + State + Federal races) — Phase 99
+- ✓ ELEC-02: All verification issues resolved (zero issues found in Wave 1) — Phase 99
+- ✓ ELEC-03: Elections feature declared shipped; MILESTONES.md updated — Phase 99
 
 ### Deferred to v2.0
 
@@ -123,7 +127,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.5):** ~78,000 lines of TypeScript (project-wide). 77 phases, 90+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–219 applied to production. 21 live compass topics, 2,616+ politicians (100 senators + 43 2026 candidates + 39 city officials across 4 CA cities), full role system live. CA TIGER geofencing live: 1,147 polygon layers (172 legislative + 975 school districts), per-user district cache, Path 0 fast path. inform.inform_profiles live, yellow Inform profile page live. Phase 77 complete: 4-city infrastructure verified (San Jose, San Diego, Berkeley, Fremont) — CITY-01–08 all green, Phase 78 go/no-go GREEN.
+**Current state (v2.6):** ~80,000 lines of TypeScript (project-wide). 90 phases, 100+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–268 applied to production. 21 live compass topics, ~1,049 politicians with stance data (100 senators + 43 2026 candidates + 39 city officials across 4 CA cities + state/local officials), full role system live. CA TIGER geofencing live: 1,147 polygon layers (172 legislative + 975 school districts), per-user district cache, Path 0 fast path. inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians. Elections Central page live at `/elections` with Utah 2026 Primary seeded.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -219,15 +223,15 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Log in once at any Empowered Vote app and remain authenticated across all apps for the duration of the session — via a shared httpOnly session cookie on `.empowered.vote`.
 
-## Current Milestone: v2.6 Data Quality & Elections (Phases 87+)
+## Previous Milestone: v2.6 Data Quality & Elections (Phases 87–90, 99, shipped 2026-06-05)
 
 **Goal:** Full stance accuracy audit with individual reassessment per flagged politician, close coverage gaps across existing politicians, add a campaign finance summary layer, and ship the elections page end-to-end.
 
-**Target features:**
-- Stance accuracy — full audit of ~204 flagged politicians; each individually reassessed with real sources; 8 confirmed inversions prioritized; ukraine-support (26 Rs) individually verified; party string normalization; five-chairs framing in researcher agent
-- Gap-fill — audit all politicians < 10 stances, research and ingest missing stances (carried from v2.5)
-- Campaign finance — finance_summary JSONB on politicians, FEC/FPPC ingestion, backward-compatible API (carried from v2.5)
-- Elections page — human-verify Phase 99 output, fix any found issues, declare elections feature complete
+**Delivered:**
+- Stance accuracy — 255 flagged politicians audited; 8 confirmed inversions corrected with real sources; party strings normalized (Democrat → Democratic, 775 rows); five-chairs framing baked into researcher agent
+- Gap-fill — 440 politicians with < 10 stances audited; all 50 Tier 1 politicians brought to >= 10 stances or documented as evidence-floor
+- Campaign finance — `finance_summary` JSONB on `essentials.politicians`; FEC ingestion for 209/258 federal politicians; surfaced on all API endpoints (null for non-federal)
+- Elections Central — `/elections` page with geofenced race data, antipartisan headers, address-based auto-fetch; Utah 2026 Primary seeded (138 races, 171 candidates)
 
 ## Previous Milestone: v2.5 City Officials Expansion (Phases 77–78, shipped 2026-06-02)
 
@@ -253,7 +257,7 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Goal:** Replace the functional-but-unstyled user-facing flows with a fully designed experience matching the colleague Figma — dark navy, blue CTAs, trust-first copy.
 
-**Status:** Phase 88 complete — SACC-02 closed (8 Tier 1 inversions corrected, 21 Tier 2 confirmed correct, 4 Ukraine-Rs updated, 1 flagged insufficient-evidence), SACC-03 closed (Democrat→Democratic normalization, 775 rows). Next: Phase 99 (election-central-page).
+**Status:** v2.6 complete — all 12 requirements closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03). Next milestone: planning phase.
 
 ---
-*Last updated: 2026-06-03 after Phase 88 completion*
+*Last updated: 2026-06-05 after v2.6 milestone*

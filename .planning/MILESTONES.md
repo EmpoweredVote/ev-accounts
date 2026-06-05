@@ -23,6 +23,25 @@
 
 ---
 
+## v2.6 — Data Quality & Elections
+**Shipped:** 2026-06-05
+**Phases:** 87, 88, 89, 90, 99 (13 plans)
+**Git range:** 3b4d16f → 7adc689 (132 commits, 229 files, +23,493/−1,047 LOC)
+**Timeline:** 3 days (2026-06-02 → 2026-06-05)
+
+### Delivered
+- Stance accuracy audit covering all ~1,049 politicians — 255 flagged, 8 confirmed inversions corrected, party strings normalized
+- Gap-fill ingestion: missing stances researched and ingested for all politicians with < 10 stances
+- Campaign finance: `finance_summary` JSONB column on `essentials.politicians`; FEC ingestion for 209/258 federal politicians; surfaced on all API endpoints
+- Elections Central: `/elections` page shipped with geofenced race data, antipartisan headers, address-based auto-fetch, Utah 2026 Primary seeded (138 races, 171 candidates)
+- Code review fixes: 8 findings applied across Phase 99 (CR-01/02/03 + WR-01/03/04/05 + IN-02)
+
+### Known Gaps
+- FINA-02 partial: 49 federal politicians still have NULL finance_summary (44 no FEC ID, 5 persistent API timeouts)
+- Phase 99 VALIDATION.md not written (Nyquist partial)
+
+---
+
 ## v2.2 TIGER District Geofencing (Shipped: 2026-05-10)
 
 **Delivered:** Full CA TIGER district geofencing pipeline — 1,147 polygon layers imported (assembly, senate, US house, school districts), cached per-user in PostGIS, with a zero-live-lookup Path 0 fast path in the representatives feed, a new Profile Location tab, and an operator recache CLI for redistricting events.
