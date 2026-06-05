@@ -1,6 +1,6 @@
 # Phase 100 — Source Coverage Audit Report
 
-Generated: 2026-06-05 20:49:04 UTC
+Generated: 2026-06-05 21:29:04 UTC
 
 ---
 
@@ -34,7 +34,7 @@ Generated: 2026-06-05 20:49:04 UTC
 | v2.3 — US Senators (100 senators) | 3040 | 3039 | 1 | 100% |
 | v2.4 — 2026 Senate Candidates (43 candidates) | 719 | 719 | 0 | 100% |
 | v2.5 — City Officials (SF, SJ, SD, Berkeley, Fremont) | 893 | 893 | 0 | 100% |
-| Migrations 269–271 — MD Officials (Wes Moore, Aruna Miller, Anthony Brown, Brooke Lierman, Dereck Davis) | 0 | 0 | 0 | 0.0 (0 stances — Phase 103 STAX-02 scope)% |
+| Migrations 269–271 — MD Officials (Wes Moore, Aruna Miller, Anthony Brown, Brooke Lierman, Dereck Davis) [Phase 103 STAX-02 scope] | 0 | 0 | 0 | 0.0% |
 
 ---
 
@@ -91,7 +91,7 @@ DB full_names (with middle initials where applicable): see table below.
 ## Methodology Notes
 
 - **Database:** Live Supabase production database (connection via `DATABASE_URL` in `backend/.env`)
-- **Run date:** 2026-06-05 20:49:04 UTC
+- **Run date:** 2026-06-05 21:29:04 UTC
 - **Query patterns:** See `100-RESEARCH.md` Patterns 1–5 for the SQL templates used here
 - **All queries use `pool.query()`** — the `inform` schema is not in the PostgREST exposed schema list; PostgREST calls silently fail for `inform.*`
 - **Active politicians only:** All queries filter `WHERE p.is_active = true` to exclude historical/inactive records
