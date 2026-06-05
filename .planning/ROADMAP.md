@@ -935,10 +935,10 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 
 **Depends on:** Nothing (this phase gates all remediation phases)
 **Requirements:** SRCA-01, SRCA-02
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 
-- [ ] 100-01-PLAN.md — Build run-source-coverage-audit.ts; run against live DB; produce 100-AUDIT-REPORT.md (SRCA-01) and 100-TARGET-LIST.csv (SRCA-02)
+- [x] 100-01-PLAN.md — Build run-source-coverage-audit.ts; run against live DB; produce 100-AUDIT-REPORT.md (SRCA-01) and 100-TARGET-LIST.csv (SRCA-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1104,7 +1104,7 @@ Plans:
 | 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete | 2026-06-04 |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete | 2026-06-04 |
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
-| 100. Source Coverage Audit | v2.7 | 0/? | Not started | — |
+| 100. Source Coverage Audit | v2.7 | 1/1 | Complete   | 2026-06-05 |
 | 101. Federal Senate Remediation | v2.7 | 0/? | Not started | — |
 | 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
