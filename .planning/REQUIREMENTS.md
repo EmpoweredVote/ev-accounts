@@ -138,9 +138,9 @@
 | FINA-01 | Phase 90 | Pending |
 | FINA-02 | Phase 90 | Pending |
 | FINA-03 | Phase 90 | Pending |
-| ELEC-01 | Phase 99 | Pending |
-| ELEC-02 | Phase 99 | Pending |
-| ELEC-03 | Phase 99 | Pending |
+| ELEC-01 | Phase 99 | Complete |
+| ELEC-02 | Phase 99 | Complete |
+| ELEC-03 | Phase 99 | Complete |
 | CITY-01–08 | Phase 77 | Complete |
 | CSTA-01–05 | Phase 78 | Complete |
 | RACE-01 | Phase 75 | Complete |
