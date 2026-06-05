@@ -1,0 +1,61 @@
+{
+  "politician_id": "236fb3c1-b473-407f-b8a0-d76039b28087",
+  "stances": [
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Co-authored a May 2026 op-ed advocating for publicly owned social housing and praised municipal housing vouchers. Her approach centers on public funding mechanisms and rent protections over market-rate supply expansion.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 2,
+      "reasoning": "Supports 20% inclusionary zoning requirements but opposed the citywide upzoning ordinance on environmental grounds. Endorsed by the Cambridge Residents Alliance (neighborhood-preservation group), not A Better Cambridge — reflecting modest density with strong design review and neighborhood input.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 2,
+      "reasoning": "Wanted environmental amendments added to the upzoning reform before approval and advocates controlled growth with community benefit conditions. Her approach reflects allowing growth only where existing infrastructure supports it rather than streamlined permitting across the board.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "local-environment",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "value": 2,
+      "reasoning": "Explicitly cited environmental concerns about the upzoning ordinance, arguing amendments were needed to be 'more reflective of an equitable way to address environmental concerns.' Reflects strict protection of existing green space and tree canopy with required environmental offsets before development approval.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "value": 1,
+      "reasoning": "Earned bike champion status; authored the Garden Street policy order keeping the one-way street with bike lanes, prevailing in a contested 5-4 council vote. Reflects a transit-first, pedestrian and cycling infrastructure priority over car throughput.",
+      "sources": ["https://www.cambridgeday.com/2026/04/29/garden-street-tight-vote/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Voted unanimously with the full council for sanctuary city amendments barring ICE from city property (April 2026). Her Palestinian-American background and community organizing roots reinforce consistent sanctuary city support — refusing all ICE cooperation on city property.",
+      "sources": ["https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Stated 'when I see veteran councillors walking back a legacy of standing up for human rights, that is chilling'; received Our Revolution endorsement. Her community organizing background and campaign platform center on strengthening civil rights enforcement and addressing systemic discrimination.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "economic-development",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "value": 1,
+      "reasoning": "Proposed a city-owned grocery store and advocates for social housing over corporate tax incentives. Her economic development approach centers on public investment in community services rather than any corporate subsidies or tax abatements.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

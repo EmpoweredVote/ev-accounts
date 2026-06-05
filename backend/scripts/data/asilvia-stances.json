@@ -1,0 +1,125 @@
+{
+  "politician_id": "a646d95b-7341-4181-a25b-87b5abcf0a6c",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act (red X on Act on Mass). No anti-abortion sponsorships found either. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (red X on AOM). Sponsored H.1323-1326 (insurance for autism, prescription drug pricing, generic drug access) — improving the current system rather than replacing it with single-payer.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/",
+        "https://malegislature.gov/Legislators/Profile/A_S1/Bills"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per Act on Mass. Sponsored prescription drug access bills for retirees (H.2965) — improving Medicaid/Medicare benefits within current structure.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/",
+        "https://malegislature.gov/Legislators/Profile/A_S1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 (red X on AOM). No major climate sponsorships found. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 (red X on AOM). No fossil fuel expansion or elimination advocacy found.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No immigration advocacy or enforcement advocacy found.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No local enforcement-related sponsorships. Middle position.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No sanctuary or enforcement-expansion evidence.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 (both red X on AOM). Sponsored HD.5406 (violent persons mental health information system) — public safety focused, not prison expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/",
+        "https://malegislature.gov/Legislators/Profile/A_S1/Bills"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration Act (red X on AOM). No voting expansion or restriction advocacy.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). No progressive revenue bills sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed) per Act on Mass. Supports public higher education investment over voucher diversion.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections (red X on AOM). No housing-specific bills found in sponsored legislation.",
+      "sources": [
+        "https://actonmass.org/legislators/alan-silvia/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "politician_id": "95d5e111-b7dd-4440-8b51-070b72e33126",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) per Act on Mass tracker, supporting single-payer healthcare.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per Act on Mass tracker; default moderate Democrat position.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring Act per Act on Mass tracker, which taxes corporations that offshore jobs and raises revenue.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per Act on Mass tracker, though co-sponsored Environmental Justice bill.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act per Act on Mass tracker, which creates pathways and limits state immigration enforcement cooperation.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act per Act on Mass tracker, which restricts local police from assisting ICE.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, limiting state cooperation with deportation enforcement except for serious violent crimes.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All per Act on Mass tracker, supporting expansion of Medicare coverage to all residents.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass tracker; no evidence of alternative incarceration stance.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections per Act on Mass tracker; no evidence of stronger housing stance.",
+      "sources": [
+        "https://actonmass.org/legislators/james-hawkins/"
+      ]
+    }
+  ]
+}

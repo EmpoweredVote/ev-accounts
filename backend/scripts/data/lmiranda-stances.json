@@ -1,0 +1,154 @@
+{
+  "politician_id": "2f7d598c-c3d7-48ba-ac9c-fb059e032bfe",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 2,
+      "reasoning": "Did not co-sponsor the Abortion Access Act tracked by Act on Mass, despite being endorsed by Reproductive Equity NOW. MA law already guarantees broad abortion access through the ROE Act; not co-sponsoring the further expansion suggests support for current strong protections without additional public funding at all stages.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda",
+        "https://en.wikipedia.org/wiki/Liz_Miranda"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Co-sponsored the Sunlight Act, which is focused on legislative transparency and public records rather than campaign finance limits per se — indicating support for disclosure and accountability norms.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored Environmental Justice legislation and was lead author of 2021 police reform omnibus legislation; designated Progressive Legislator of the Year by Progressive Massachusetts for criminal justice and racial equity work.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda",
+        "https://en.wikipedia.org/wiki/Liz_Miranda"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045, but did co-sponsor Environmental Justice legislation, suggesting support for environmental protection with a more gradual or targeted climate approach.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which ends state law enforcement cooperation with ICE and prohibits asking about immigration status — limiting deportation support to serious violent crime contexts.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045; co-sponsored Environmental Justice; position suggests maintaining current environmental regulations without an explicit new-permits ban.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), establishing a single-payer system covering all MA residents with comprehensive benefits including reproductive care, funded through payroll taxes.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda",
+        "https://actonmass.org/bills/medicare-for-all/"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Overdose Prevention Centers; no other direct evidence on decriminalization of public sleeping or harm reduction approach — position appears closer to standard service provision.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Co-sponsored Lift the Ban on Local Tenant Protections, which would restore municipal authority to enact rent stabilization and stronger tenant protections.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which bars police from asking about immigration status and ends state ICE cooperation — consistent with keeping services open to all regardless of status.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 1,
+      "reasoning": "Co-sponsored both Prison Moratorium (5-year pause on jail/prison construction) and Age of Criminal Majority to 21 (diverting young adults to juvenile system) — the strongest available position on reducing incarceration.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda",
+        "https://actonmass.org/bills/prison-moratorium/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act, which would prohibit local law enforcement from cooperating with ICE, asking about immigration status, or sharing immigration information.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All, which would cover all MA residents regardless of age through a single-payer system — the maximum expansion of public health coverage.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating strong priority for public education investment.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring, which closes multinational tax loopholes and generates progressive revenue by taxing GILTI income from offshore profit-shifting.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda",
+        "https://actonmass.org/bills/stop-corporate-offshoring/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act despite Act on Mass requesting co-sponsorship — no evidence of push for automatic registration or significant voting access expansion beyond current law.",
+      "sources": [
+        "https://actonmass.org/legislators/liz-miranda"
+      ]
+    }
+  ]
+}

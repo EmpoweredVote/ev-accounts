@@ -1,0 +1,146 @@
+{
+  "politician_id": "77ceaab2-846e-4bc8-b09d-faff40ddbc60",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (H.1239/S.744) per Act on Mass tracker. Sponsored H.3208 (digital ad sales tax) and H.3196 shows interest in cost reform but no single-payer co-sponsorship, indicating support for current regulated insurance system.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All, which would indicate support for expanding Medicare beyond current scope. No bills found that address Medicare or Medicaid expansion. Default to current program support without expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act (H.1599/S.1114) per Act on Mass tracker. As a Democrat who did not sign on, this suggests support for current legal access without actively pushing expanded funding or access. No public anti-abortion statements found.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per Act on Mass tracker. Was selected as an Energy & Environment Innovation Fellow (Future Caucus, 2025), indicating awareness of climate issues but a more measured approach than the progressive bloc.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://en.wikipedia.org/wiki/Francisco_Paulino"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 or Environmental Justice bills. Energy & Environment Innovation Fellow background suggests engagement with clean energy transitions without committing to stop new permits or phase-out legislation.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act per Act on Mass tracker. Serves on Public Safety and Homeland Security committee. No bills advocating for open borders or significantly expanded immigration. Default moderate.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act (H.2288/S.1510), which would end state and local involvement in civil immigration enforcement. Serves on Public Safety committee suggesting deference to current law rather than sanctuary expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act, which is the key bill limiting deportation cooperation. No evidence of extreme deportation stance either way. Default moderate.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring Act per Act on Mass (confirmed appearing with red X on Revenue committee page). Sponsored H.3208 (digital advertising sales tax) which would raise revenue but is a specific levy, not a broad progressive tax bill.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://actonmass.org/bills/stop-corporate-offshoring/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Cherish Act (H.1260/S.816) for fully funded public higher education per Act on Mass. No evidence of support for or against voucher programs specifically.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 2,
+      "reasoning": "Co-sponsored Age of Criminal Majority to 21 per Act on Mass tracker. This bill would raise the age of criminal majority, reducing the incarcerated population through diversion of young offenders — aligns with reducing incarceration rather than building new capacity.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections. No housing-specific legislation found in own bill list. Default moderate.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    },
+    {
+      "topic_key": "ai-regulation",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "value": 4,
+      "reasoning": "Sponsored H.94 — 'An Act to ensure accountability and transparency in artificial intelligence systems' — indicating support for AI oversight including transparency requirements. However, transparency/accountability framing falls short of heavy pre-approval regulation, suggesting targeted oversight.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/FEP1/Bills",
+        "https://malegislature.gov/Bills/194/H94"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration per Act on Mass. No specific voting rights bills authored. Default current standards.",
+      "sources": [
+        "https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ]
+    }
+  ]
+}

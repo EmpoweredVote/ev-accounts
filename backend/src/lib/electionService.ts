@@ -98,7 +98,7 @@ function inferDistrictType(positionName: string, jurisdictionLevel: string): str
   // Local
   if (p.includes('mayor'))
     return 'LOCAL_EXEC';
-  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor') || p.includes('controller') || (p.includes('attorney') && !p.includes('attorney general')))
+  if (p.includes('council') || p.includes('commissioner') || p.includes('trustee') || p.includes('clerk') || p.includes('auditor') || p.includes('treasurer') || p.includes('assessor') || p.includes('recorder') || p.includes('coroner') || p.includes('sheriff') || p.includes('surveyor') || p.includes('prosecutor') || p.includes('controller') || (p.includes('attorney') && !p.includes('attorney general') && !p.includes('county')))
     return 'LOCAL';
   if (p.includes('county') || p.includes('supervisor'))
     return 'COUNTY';
@@ -231,9 +231,9 @@ export async function getElectionsByGovernmentGeoIds(
       WHERE r.office_id IS NULL
         AND e.state = $1
         AND (
-        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
-        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
-      )
+          (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+          OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+        )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(statewideQueryText, [stateAbbrev]);
@@ -244,8 +244,9 @@ export async function getElectionsByGovernmentGeoIds(
   const seenCandidates = new Set<string>();
   const dedupedRows = allRows.filter((row) => {
     if (row.candidate_id !== null) {
-      if (seenCandidates.has(row.candidate_id)) return false;
-      seenCandidates.add(row.candidate_id);
+      const key = `${row.race_id}:${row.candidate_id}`;
+      if (seenCandidates.has(key)) return false;
+      seenCandidates.add(key);
     }
     return true;
   });
@@ -288,12 +289,12 @@ export async function getElectionsByGovernmentGeoIds(
     if (row.candidate_id !== null) {
       racesMap.get(row.race_id)!.candidates.push({
         candidate_id: row.candidate_id,
-        full_name: row.full_name!,
+        full_name: row.full_name ?? '',
         first_name: row.first_name,
         last_name: row.last_name,
         photo_url: row.photo_url,
-        is_incumbent: row.is_incumbent!,
-        candidate_status: row.candidate_status!,
+        is_incumbent: row.is_incumbent ?? false,
+        candidate_status: row.candidate_status ?? 'unknown',
         politician_id: row.politician_id,
       });
     }
@@ -395,9 +396,9 @@ export async function getElectionsByGeoIds(
       JOIN essentials.districts d ON d.id = o.district_id
       WHERE d.geo_id = ANY($1::text[])
         AND (
-        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
-        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
-      )
+          (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+          OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+        )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(districtQueryText, [activeGeoIds]);
@@ -438,9 +439,9 @@ export async function getElectionsByGeoIds(
       WHERE r.office_id IS NULL
         AND e.state = $1
         AND (
-        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
-        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
-      )
+          (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+          OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+        )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const result = await pool.query<ElectionRow>(statewideQueryText, [state]);
@@ -451,8 +452,9 @@ export async function getElectionsByGeoIds(
   const seenCandidates = new Set<string>();
   const dedupedRows = allRows.filter((row) => {
     if (row.candidate_id !== null) {
-      if (seenCandidates.has(row.candidate_id)) return false;
-      seenCandidates.add(row.candidate_id);
+      const key = `${row.race_id}:${row.candidate_id}`;
+      if (seenCandidates.has(key)) return false;
+      seenCandidates.add(key);
     }
     return true;
   });
@@ -495,12 +497,12 @@ export async function getElectionsByGeoIds(
     if (row.candidate_id !== null) {
       racesMap.get(row.race_id)!.candidates.push({
         candidate_id: row.candidate_id,
-        full_name: row.full_name!,
+        full_name: row.full_name ?? '',
         first_name: row.first_name,
         last_name: row.last_name,
         photo_url: row.photo_url,
-        is_incumbent: row.is_incumbent!,
-        candidate_status: row.candidate_status!,
+        is_incumbent: row.is_incumbent ?? false,
+        candidate_status: row.candidate_status ?? 'unknown',
         politician_id: row.politician_id,
       });
     }
@@ -643,22 +645,23 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
       WHERE r.office_id IS NULL
         AND e.state = $1
         AND (
-        (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
-        OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
-      )
+          (e.election_type != 'general' AND e.election_date >= CURRENT_DATE - INTERVAL '30 days')
+          OR (e.election_type = 'general' AND e.election_date >= DATE_TRUNC('year', CURRENT_DATE::date))
+        )
       ORDER BY e.election_date, r.position_name, rc.is_incumbent DESC
     `;
     const statewideResult = await pool.query<ElectionRow>(statewideQueryText, [stateCode]);
     statewideRows = statewideResult.rows;
   }
 
-  // Merge Part A + Part B, deduplicate by candidate_id
+  // Merge Part A + Part B, deduplicate by (race_id, candidate_id)
   const allRows = [...geofenceResult.rows, ...statewideRows];
   const seenCandidates = new Set<string>();
   const dedupedRows = allRows.filter((row) => {
     if (row.candidate_id !== null) {
-      if (seenCandidates.has(row.candidate_id)) return false;
-      seenCandidates.add(row.candidate_id);
+      const key = `${row.race_id}:${row.candidate_id}`;
+      if (seenCandidates.has(key)) return false;
+      seenCandidates.add(key);
     }
     return true;
   });
@@ -705,12 +708,12 @@ export async function getElectionsByCoordinate(lat: number, lng: number): Promis
     if (row.candidate_id !== null) {
       const candidate: ElectionCandidate = {
         candidate_id: row.candidate_id,
-        full_name: row.full_name!,
+        full_name: row.full_name ?? '',
         first_name: row.first_name,
         last_name: row.last_name,
         photo_url: row.photo_url,
-        is_incumbent: row.is_incumbent!,
-        candidate_status: row.candidate_status!,
+        is_incumbent: row.is_incumbent ?? false,
+        candidate_status: row.candidate_status ?? 'unknown',
         politician_id: row.politician_id,
       };
       racesMap.get(row.race_id)!.candidates.push(candidate);

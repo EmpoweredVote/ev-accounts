@@ -79,8 +79,8 @@ router.get('/elections', optionalAuth, async (req: Request, res: Response): Prom
   const lat = parseFloat(req.query.lat as string);
   const lng = parseFloat(req.query.lng as string);
 
-  if (isNaN(lat) || isNaN(lng)) {
-    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'lat and lng query parameters are required (numeric)' });
+  if (isNaN(lat) || isNaN(lng) || lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'lat must be in [-90, 90] and lng must be in [-180, 180]' });
     return;
   }
 

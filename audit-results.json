@@ -1,0 +1,2472 @@
+[
+  {
+    "name": "Kate Hogan",
+    "party": "Democrat",
+    "office": "Representative, 3rd Middlesex District",
+    "stance_count": 16,
+    "flagged_count": 16,
+    "flag_ratio_pct": 100,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Val Hoyle",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 20,
+    "flagged_count": 19,
+    "flag_ratio_pct": 95,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, same-sex-marriage, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Andrea Salinas",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 18,
+    "flagged_count": 17,
+    "flag_ratio_pct": 94,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, same-sex-marriage, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Mark C. Montigny",
+    "party": "Democrat",
+    "office": "Senator, Second Bristol and Plymouth District",
+    "stance_count": 18,
+    "flagged_count": 17,
+    "flag_ratio_pct": 94,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, school-vouchers, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Alyson Sullivan-Almeida",
+    "party": "Republican",
+    "office": "Representative, 7th Plymouth District",
+    "stance_count": 16,
+    "flagged_count": 15,
+    "flag_ratio_pct": 94,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Peter J. Durant",
+    "party": "Republican",
+    "office": "Senator, Worcester and Hampshire District",
+    "stance_count": 15,
+    "flagged_count": 14,
+    "flag_ratio_pct": 93,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, religious-freedom, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "David Robertson",
+    "party": "Democrat",
+    "office": "Representative, 19th Middlesex District",
+    "stance_count": 15,
+    "flagged_count": 14,
+    "flag_ratio_pct": 93,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, childcare, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  },
+  {
+    "name": "Suzanne Bonamici",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 24,
+    "flagged_count": 22,
+    "flag_ratio_pct": 92,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, tariffs, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Kelly A. Dooner",
+    "party": "Republican",
+    "office": "Senator, Third Bristol and Plymouth District",
+    "stance_count": 21,
+    "flagged_count": 19,
+    "flag_ratio_pct": 90,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, religious-freedom, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Steve Padilla",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 18,
+    "flag_ratio_pct": 90,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Emily Buss",
+    "party": "Unknown",
+    "office": "State Senator District 11",
+    "stance_count": 20,
+    "flagged_count": 18,
+    "flag_ratio_pct": 90,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, climate-change, deportation, economic-development, fossil-fuels, growth-and-development, healthcare, homelessness, immigration, medicare/aid, redistricting, religious-freedom, school-vouchers, taxes, trans-athletes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "John C. Velis",
+    "party": "Democrat",
+    "office": "Senator, Hampden and Hampshire District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Cynthia F. Friedman",
+    "party": "Democrat",
+    "office": "Senator, Fourth Middlesex District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, local-immigration, medicare/aid, redistricting, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "John J. Cronin",
+    "party": "Democrat",
+    "office": "Senator, Worcester and Middlesex District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Royce White",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — Minnesota",
+    "stance_count": 16,
+    "flagged_count": 14,
+    "flag_ratio_pct": 88,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, misinformation, religious-freedom, same-sex-marriage, school-vouchers, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Danielle W. Gregoire",
+    "party": "Democrat",
+    "office": "Representative, 4th Middlesex District",
+    "stance_count": 16,
+    "flagged_count": 14,
+    "flag_ratio_pct": 88,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Andy Kim",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 20,
+    "flag_ratio_pct": 87,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "José Cisneros",
+    "party": "Unknown",
+    "office": "Treasurer",
+    "stance_count": 15,
+    "flagged_count": 13,
+    "flag_ratio_pct": 87,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, economic-development, fossil-fuels, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, taxes"
+  },
+  {
+    "name": "Joan B. Lovely",
+    "party": "Democrat",
+    "office": "Senator, Second Essex District",
+    "stance_count": 15,
+    "flagged_count": 13,
+    "flag_ratio_pct": 87,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, voting-rights"
+  },
+  {
+    "name": "Aaron L. Saunders",
+    "party": "Democrat",
+    "office": "Representative, 7th Hampden District",
+    "stance_count": 15,
+    "flagged_count": 13,
+    "flag_ratio_pct": 87,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  },
+  {
+    "name": "Stan Ellis",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 18,
+    "flag_ratio_pct": 86,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, data-centers, deportation, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, religious-freedom, social-security, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Thomas Umberg",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 18,
+    "flag_ratio_pct": 86,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Diane Papan",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 20,
+    "flagged_count": 17,
+    "flag_ratio_pct": 85,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Gilbert Cisneros",
+    "party": "Unknown",
+    "office": null,
+    "stance_count": 19,
+    "flagged_count": 16,
+    "flag_ratio_pct": 84,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, religious-freedom, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Jay Obernolte",
+    "party": "Republican",
+    "office": "Representative",
+    "stance_count": 29,
+    "flagged_count": 24,
+    "flag_ratio_pct": 83,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, medicare/aid, misinformation, public-safety-approach, religious-freedom, school-vouchers, tariffs, taxes, trans-athletes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Marissa Roy",
+    "party": "Unknown",
+    "office": null,
+    "stance_count": 24,
+    "flagged_count": 20,
+    "flag_ratio_pct": 83,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, economic-development, fossil-fuels, growth-and-development, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, local-environment, public-safety-approach, religious-freedom, rent-regulation, residential-zoning"
+  },
+  {
+    "name": "Mayes Middleton",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 19,
+    "flag_ratio_pct": 83,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, ukraine-support"
+  },
+  {
+    "name": "Tasha Boerner",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 23,
+    "flagged_count": 19,
+    "flag_ratio_pct": 83,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, immigration, jail-capacity, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Christopher M. Ward",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 23,
+    "flagged_count": 19,
+    "flag_ratio_pct": 83,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, medicare/aid, misinformation, redistricting, social-security, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Sherrod Brown",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Ohio",
+    "stance_count": 18,
+    "flagged_count": 15,
+    "flag_ratio_pct": 83,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Sal N. DiDomenico",
+    "party": "Democrat",
+    "office": "Senator, Middlesex and Suffolk District",
+    "stance_count": 18,
+    "flagged_count": 15,
+    "flag_ratio_pct": 83,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, taxes, voting-rights"
+  },
+  {
+    "name": "David A. Alvarez",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 18,
+    "flag_ratio_pct": 82,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, jail-capacity, local-environment, medicare/aid, misinformation, redistricting, same-sex-marriage, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Cottie Petrie-Norris",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 18,
+    "flag_ratio_pct": 82,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, medicare/aid, misinformation, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Aaron Michlewitz",
+    "party": "Democrat",
+    "office": "Representative, 3rd Suffolk District",
+    "stance_count": 17,
+    "flagged_count": 14,
+    "flag_ratio_pct": 82,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Kate Sanchez",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 17,
+    "flagged_count": 14,
+    "flag_ratio_pct": 82,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, redistricting, rent-regulation, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Ronald Mariano",
+    "party": "Democrat",
+    "office": "Representative, 3rd Norfolk District",
+    "stance_count": 17,
+    "flagged_count": 14,
+    "flag_ratio_pct": 82,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, childcare, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, taxes, voting-rights"
+  },
+  {
+    "name": "Nithya Raman",
+    "party": "Democratic",
+    "office": "Council Member",
+    "stance_count": 26,
+    "flagged_count": 21,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, economic-development, fossil-fuels, growth-and-development, homelessness, homelessness-response, housing, immigration, local-environment, medicare/aid, public-safety-approach, rent-regulation, residential-zoning, taxes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Gail Pellerin",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 17,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Shelli Yoder",
+    "party": "Democratic",
+    "office": "Indiana State Senate - District 40",
+    "stance_count": 21,
+    "flagged_count": 17,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, medicare/aid, religious-freedom, school-vouchers, tariffs, taxes, voting-rights"
+  },
+  {
+    "name": "Matt Haney",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 17,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, social-security, taxes, trans-athletes, ukraine-support"
+  },
+  {
+    "name": "Christopher J. Worrell",
+    "party": "Democrat",
+    "office": "Representative, 5th Suffolk District",
+    "stance_count": 16,
+    "flagged_count": 13,
+    "flag_ratio_pct": 81,
+    "dominant_value": 3,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, local-immigration, medicare/aid, taxes, voting-rights"
+  },
+  {
+    "name": "Rhodesia Ransom",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 16,
+    "flagged_count": 13,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, housing, immigration, medicare/aid, social-security, tariffs, voting-rights"
+  },
+  {
+    "name": "Natasha Johnson",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 16,
+    "flagged_count": 13,
+    "flag_ratio_pct": 81,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, immigration, jail-capacity, local-immigration, medicare/aid, tariffs"
+  },
+  {
+    "name": "Lori D. Wilson",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 16,
+    "flagged_count": 13,
+    "flag_ratio_pct": 81,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, same-sex-marriage, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Angela Alsobrooks",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 16,
+    "flag_ratio_pct": 80,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, redistricting, social-security, taxes, ukraine-support"
+  },
+  {
+    "name": "John Sununu",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — New Hampshire",
+    "stance_count": 20,
+    "flagged_count": 16,
+    "flag_ratio_pct": 80,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, immigration, medicare/aid, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Harriet Hageman",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — Wyoming",
+    "stance_count": 20,
+    "flagged_count": 16,
+    "flag_ratio_pct": 80,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, judicial-criminal-justice, judicial-interpretation, misinformation, public-safety-approach, religious-freedom, same-sex-marriage, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Andrea Joy Campbell",
+    "party": "Democrat",
+    "office": "Attorney General",
+    "stance_count": 20,
+    "flagged_count": 16,
+    "flag_ratio_pct": 80,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-bail-pretrial, judicial-criminal-justice, judicial-government-deference, judicial-interpretation, judicial-police-accountability, judicial-transparency, trans-athletes"
+  },
+  {
+    "name": "Josh Hoover",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 15,
+    "flagged_count": 12,
+    "flag_ratio_pct": 80,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, medicare/aid, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Michael Whatley",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — North Carolina",
+    "stance_count": 15,
+    "flagged_count": 12,
+    "flag_ratio_pct": 80,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, religious-freedom, same-sex-marriage, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Dawne Shand",
+    "party": "Democrat",
+    "office": "Representative, 1st Essex District",
+    "stance_count": 15,
+    "flagged_count": 12,
+    "flag_ratio_pct": 80,
+    "dominant_value": 3,
+    "flagged_topics": "childcare, climate-change, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  },
+  {
+    "name": "Robert Nichols",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 12,
+    "flag_ratio_pct": 80,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, same-sex-marriage, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Peter Welch",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 19,
+    "flag_ratio_pct": 79,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Patty Murray",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 19,
+    "flag_ratio_pct": 79,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Roger Wicker",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 19,
+    "flagged_count": 15,
+    "flag_ratio_pct": 79,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, religious-freedom, social-security, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jeff Merkley",
+    "party": "Democrat",
+    "office": "U.S. Senate - Oregon",
+    "stance_count": 23,
+    "flagged_count": 18,
+    "flag_ratio_pct": 78,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Michael D. Brady",
+    "party": "Democrat",
+    "office": "Senator, Second Plymouth and Norfolk District",
+    "stance_count": 18,
+    "flagged_count": 14,
+    "flag_ratio_pct": 78,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, homelessness, housing, immigration, jail-capacity, local-immigration, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Joni Ernst",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 14,
+    "flag_ratio_pct": 78,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, deportation, fossil-fuels, healthcare, immigration, medicare/aid, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Alex Padilla",
+    "party": "Democratic",
+    "office": "U.S. Senate - California",
+    "stance_count": 35,
+    "flagged_count": 27,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, economic-development, fossil-fuels, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, judicial-police-accountability, local-environment, misinformation, public-safety-approach, religious-freedom, rent-regulation, school-vouchers, social-security, tariffs, taxes, trans-athletes, transportation-priorities, ukraine-support"
+  },
+  {
+    "name": "Jon Husted",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 30,
+    "flagged_count": 23,
+    "flag_ratio_pct": 77,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, judicial-interpretation, medicare/aid, public-safety-approach, redistricting, religious-freedom, school-vouchers, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jack Reed",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 20,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, redistricting, religious-freedom, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Christopher Murphy",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 20,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, redistricting, religious-freedom, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Chuck Grassley",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 17,
+    "flag_ratio_pct": 77,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, deportation, fossil-fuels, healthcare, immigration, judicial-interpretation, medicare/aid, religious-freedom, same-sex-marriage, school-vouchers, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Avelino Valencia",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 17,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, jail-capacity, medicare/aid, misinformation, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Marc Berman",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 17,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Esmeralda Z. Soria",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 17,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, same-sex-marriage, social-security, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jivan Sobrinho-Wheeler",
+    "party": "Unknown",
+    "office": "City Councillor",
+    "stance_count": 22,
+    "flagged_count": 17,
+    "flag_ratio_pct": 77,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, city-sanitation, civil-rights, climate-change, deportation, economic-development, fossil-fuels, homelessness, homelessness-response, housing, immigration, jail-capacity, local-environment, local-immigration, public-safety-approach, rent-regulation, transportation-priorities"
+  },
+  {
+    "name": "Susan M. Collins",
+    "party": "Republican",
+    "office": "U.S. Senate - Maine",
+    "stance_count": 25,
+    "flagged_count": 19,
+    "flag_ratio_pct": 76,
+    "dominant_value": 3,
+    "flagged_topics": "ai-regulation, childcare, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, religious-freedom, school-vouchers, social-security, tariffs, taxes, voting-rights"
+  },
+  {
+    "name": "Buffy Wicks",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Mike Braun",
+    "party": "Republican",
+    "office": "Indiana Governor",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, misinformation, religious-freedom, same-sex-marriage, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Heather Hutt",
+    "party": "Democratic",
+    "office": "Council Member",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, economic-development, fossil-fuels, homelessness, homelessness-response, housing, immigration, local-environment, local-immigration, rent-regulation, taxes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Lola Smallwood-Cuevas",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Micah Beckwith",
+    "party": "Republican",
+    "office": "Indiana Lieutenant Governor",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, immigration, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, taxes, trans-athletes"
+  },
+  {
+    "name": "Mike Crapo",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, deportation, fossil-fuels, healthcare, immigration, jail-capacity, judicial-criminal-justice, medicare/aid, religious-freedom, school-vouchers, social-security, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Dr. LaShae Sharp-Collins",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, medicare/aid, misinformation, social-security, voting-rights"
+  },
+  {
+    "name": "John Hickenlooper",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, deportation, healthcare, housing, immigration, medicare/aid, redistricting, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Dr. Joaquin Arambula",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 16,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, medicare/aid, misinformation, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Mallory McMorrow",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Michigan",
+    "stance_count": 17,
+    "flagged_count": 13,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, healthcare, housing, medicare/aid, misinformation, redistricting, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Mia Bonta",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 17,
+    "flagged_count": 13,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, voting-rights"
+  },
+  {
+    "name": "Royce West",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 17,
+    "flagged_count": 13,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, voting-rights"
+  },
+  {
+    "name": "Anamarie Avila Farias",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 17,
+    "flagged_count": 13,
+    "flag_ratio_pct": 76,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, voting-rights"
+  },
+  {
+    "name": "Brad Sherman",
+    "party": "Democratic",
+    "office": "Representative",
+    "stance_count": 28,
+    "flagged_count": 21,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, medicare/aid, misinformation, religious-freedom, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Katherine Clark",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 28,
+    "flagged_count": 21,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, medicare/aid, misinformation, religious-freedom, social-security, ukraine-support"
+  },
+  {
+    "name": "Mazie Hirono",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Richard Blumenthal",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Tammy Duckworth",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Lisa Blunt Rochester",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Tina Smith",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Sheldon Whitehouse",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 18,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Rebecca Bauer-Kahan",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 20,
+    "flagged_count": 15,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Kevin Hern",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — Oklahoma",
+    "stance_count": 20,
+    "flagged_count": 15,
+    "flag_ratio_pct": 75,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, fossil-fuels, healthcare, immigration, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Julia Brownley",
+    "party": "Democratic",
+    "office": "Representative",
+    "stance_count": 20,
+    "flagged_count": 15,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, religious-freedom, social-security, tariffs, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Juan \"Chuy\" Hinojosa",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 16,
+    "flagged_count": 12,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, immigration, medicare/aid, same-sex-marriage, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Susan Rubio",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 16,
+    "flagged_count": 12,
+    "flag_ratio_pct": 75,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, healthcare, homelessness, housing, medicare/aid, misinformation, redistricting, voting-rights"
+  },
+  {
+    "name": "Tri Ta",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 27,
+    "flagged_count": 20,
+    "flag_ratio_pct": 74,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness-response, immigration, medicare/aid, misinformation, public-safety-approach, redistricting, rent-regulation, residential-zoning, tariffs, taxes, trans-athletes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Haley Stevens",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Michigan",
+    "stance_count": 27,
+    "flagged_count": 20,
+    "flag_ratio_pct": 74,
+    "dominant_value": 2,
+    "flagged_topics": "ai-regulation, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, medicare/aid, public-safety-approach, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Dawn Addis",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 23,
+    "flagged_count": 17,
+    "flag_ratio_pct": 74,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Hugo Soto-Martinez",
+    "party": "Democratic",
+    "office": "Council Member",
+    "stance_count": 23,
+    "flagged_count": 17,
+    "flag_ratio_pct": 74,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, civil-rights, deportation, economic-development, growth-and-development, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-police-accountability, local-environment, public-safety-approach, residential-zoning, taxes, transportation-priorities"
+  },
+  {
+    "name": "Jeanne Shaheen",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 19,
+    "flag_ratio_pct": 73,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, redistricting, same-sex-marriage, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Tammy Baldwin",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 16,
+    "flag_ratio_pct": 73,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Alex Lee",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 16,
+    "flag_ratio_pct": 73,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, homelessness, housing, immigration, misinformation, redistricting, social-security, trans-athletes, voting-rights"
+  },
+  {
+    "name": "José Menéndez",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 11,
+    "flag_ratio_pct": 73,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, immigration, medicare/aid, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Donna Campbell",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 11,
+    "flag_ratio_pct": 73,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, immigration, religious-freedom, same-sex-marriage, school-vouchers, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Maria Elena Durazo",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 18,
+    "flag_ratio_pct": 72,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Catherine S. Blakespear",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 18,
+    "flag_ratio_pct": 72,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Jerry McNerney",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 18,
+    "flag_ratio_pct": 72,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Jesse Arreguín",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 13,
+    "flag_ratio_pct": 72,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Paul Bettencourt",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 13,
+    "flag_ratio_pct": 72,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, immigration, medicare/aid, same-sex-marriage, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Norma Torres",
+    "party": "Democratic",
+    "office": "Representative",
+    "stance_count": 28,
+    "flagged_count": 20,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, medicare/aid, misinformation, religious-freedom, social-security, tariffs, taxes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Richard Durbin",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 17,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Elissa Slotkin",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 17,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, healthcare, housing, judicial-criminal-justice, judicial-interpretation, medicare/aid, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Chris Coons",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 17,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, judicial-criminal-justice, medicare/aid, misinformation, redistricting, religious-freedom, social-security, taxes, ukraine-support"
+  },
+  {
+    "name": "Tim Kaine",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 17,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Ron Wyden",
+    "party": "Democrat",
+    "office": "U.S. Senate - Oregon",
+    "stance_count": 24,
+    "flagged_count": 17,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Bill Cassidy",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 15,
+    "flag_ratio_pct": 71,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, climate-change, deportation, fossil-fuels, healthcare, immigration, medicare/aid, religious-freedom, same-sex-marriage, school-vouchers, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Gary Peters",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 15,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, healthcare, housing, immigration, judicial-criminal-justice, medicare/aid, redistricting, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Maria Cantwell",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 15,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "George Whitesides",
+    "party": "Democratic",
+    "office": "Representative",
+    "stance_count": 21,
+    "flagged_count": 15,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, ai-regulation, campaign-finance, civil-rights, fossil-fuels, healthcare, housing, immigration, religious-freedom, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Josh Becker",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 15,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Timothy Peck",
+    "party": "Unknown",
+    "office": "U.S. Representative",
+    "stance_count": 17,
+    "flagged_count": 12,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, immigration, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Andres X. Vargas",
+    "party": "Democrat",
+    "office": "Representative, 3rd Essex District",
+    "stance_count": 17,
+    "flagged_count": 12,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, immigration, jail-capacity, medicare/aid, taxes, trans-athletes"
+  },
+  {
+    "name": "Sumbul Siddiqui",
+    "party": "Unknown",
+    "office": "Mayor",
+    "stance_count": 17,
+    "flagged_count": 12,
+    "flag_ratio_pct": 71,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, civil-rights, deportation, economic-development, homelessness, homelessness-response, housing, immigration, local-environment, public-safety-approach, rent-regulation, transportation-priorities"
+  },
+  {
+    "name": "Alan Armstrong",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 17,
+    "flagged_count": 12,
+    "flag_ratio_pct": 71,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, deportation, fossil-fuels, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jim Banks",
+    "party": "Republican",
+    "office": "U.S. Senate - Indiana",
+    "stance_count": 30,
+    "flagged_count": 21,
+    "flag_ratio_pct": 70,
+    "dominant_value": 4,
+    "flagged_topics": "ai-regulation, campaign-finance, childcare, deportation, economic-development, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, medicare/aid, misinformation, redistricting, religious-freedom, school-vouchers, social-security, tariffs, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Tommy Tuberville",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 30,
+    "flagged_count": 21,
+    "flag_ratio_pct": 70,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, immigration, jail-capacity, judicial-criminal-justice, judicial-interpretation, misinformation, public-safety-approach, redistricting, religious-freedom, school-vouchers, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Rachel Fetty Anderson",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — West Virginia",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, homelessness, homelessness-response, immigration, judicial-criminal-justice, medicare/aid, public-safety-approach, school-vouchers, taxes, ukraine-support"
+  },
+  {
+    "name": "Jon Ossoff",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Seth Moulton",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Massachusetts",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, jail-capacity, medicare/aid, redistricting, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "John Laird",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Roy Cooper",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — North Carolina",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "E. Denise Simmons",
+    "party": "Unknown",
+    "office": "City Councillor",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, city-sanitation, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-environment, local-immigration, medicare/aid, rent-regulation, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "John Kennedy",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 16,
+    "flag_ratio_pct": 70,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, deportation, healthcare, homelessness, housing, immigration, medicare/aid, religious-freedom, school-vouchers, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Jacky Rosen",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 14,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, judicial-criminal-justice, medicare/aid, same-sex-marriage, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Kerry Thomson",
+    "party": "Democratic",
+    "office": "City Mayor",
+    "stance_count": 20,
+    "flagged_count": 14,
+    "flag_ratio_pct": 70,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, redistricting, religious-freedom, taxes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Hilda L. Solis",
+    "party": "Democratic",
+    "office": "Supervisor",
+    "stance_count": 32,
+    "flagged_count": 22,
+    "flag_ratio_pct": 69,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, local-environment, local-immigration, medicare/aid, public-safety-approach, rent-regulation, same-sex-marriage, school-vouchers, social-security, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Catherine Cortez Masto",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 18,
+    "flag_ratio_pct": 69,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Amy Klobuchar",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 18,
+    "flag_ratio_pct": 69,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, healthcare, homelessness, housing, immigration, judicial-criminal-justice, judicial-interpretation, medicare/aid, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Matt Mahan",
+    "party": "Unknown",
+    "office": "Mayor",
+    "stance_count": 16,
+    "flagged_count": 11,
+    "flag_ratio_pct": 69,
+    "dominant_value": 4,
+    "flagged_topics": "city-sanitation, data-centers, economic-development, growth-and-development, homelessness, homelessness-response, housing, jail-capacity, public-safety-approach, residential-zoning, taxes"
+  },
+  {
+    "name": "Karen Kwan",
+    "party": "Unknown",
+    "office": "State Senator District 12",
+    "stance_count": 16,
+    "flagged_count": 11,
+    "flag_ratio_pct": 69,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, redistricting, taxes"
+  },
+  {
+    "name": "Adrin Nazarian",
+    "party": "Democratic",
+    "office": "Council Member",
+    "stance_count": 37,
+    "flagged_count": 25,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, city-sanitation, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-bail-pretrial, judicial-criminal-justice, judicial-government-deference, judicial-interpretation, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, local-environment, redistricting, rent-regulation, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Kathryn Barger",
+    "party": "Republican",
+    "office": "Supervisor",
+    "stance_count": 28,
+    "flagged_count": 19,
+    "flag_ratio_pct": 68,
+    "dominant_value": 4,
+    "flagged_topics": "city-sanitation, climate-change, deportation, economic-development, growth-and-development, healthcare, housing, immigration, jail-capacity, judicial-bail-pretrial, judicial-criminal-justice, judicial-prosecution-priorities, local-immigration, public-safety-approach, religious-freedom, residential-zoning, taxes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Tracy Miller",
+    "party": "Unknown",
+    "office": "State Representative District 45",
+    "stance_count": 28,
+    "flagged_count": 19,
+    "flag_ratio_pct": 68,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, jail-capacity, medicare/aid, misinformation, redistricting, religious-freedom, rent-regulation, same-sex-marriage, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Katy Hall",
+    "party": "Unknown",
+    "office": "State Representative District 11",
+    "stance_count": 28,
+    "flagged_count": 19,
+    "flag_ratio_pct": 68,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, climate-change, deportation, fossil-fuels, growth-and-development, homelessness, immigration, jail-capacity, medicare/aid, misinformation, redistricting, rent-regulation, same-sex-marriage, school-vouchers, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Marsha Blackburn",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, jail-capacity, judicial-criminal-justice, judicial-interpretation, public-safety-approach, religious-freedom, same-sex-marriage, school-vouchers, social-security, trans-athletes"
+  },
+  {
+    "name": "Seth Moulton",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, redistricting, religious-freedom, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Angelique Ashby",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, same-sex-marriage, school-vouchers, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Laura Richardson",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, school-vouchers, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Eloise Gómez Reyes",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Rafael Mandelman",
+    "party": "Unknown",
+    "office": "Supervisor",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "city-sanitation, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, judicial-criminal-justice, local-environment, local-immigration, medicare/aid, religious-freedom, rent-regulation, transportation-priorities"
+  },
+  {
+    "name": "Lori Trahan",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, social-security, ukraine-support"
+  },
+  {
+    "name": "Jake Auchincloss",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, ai-regulation, campaign-finance, civil-rights, healthcare, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-transparency, misinformation, redistricting, religious-freedom, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Caroline Menjivar",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 17,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Ash Kalra",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, misinformation, redistricting, social-security, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Monique Limón",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Kirsten Gillibrand",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Raphael Warnock",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Angie Craig",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Minnesota",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, healthcare, housing, judicial-criminal-justice, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Todd Young",
+    "party": "Republican",
+    "office": "U.S. Senate - Indiana",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, redistricting, religious-freedom, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Lena Gonzalez",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 22,
+    "flagged_count": 15,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Kevin Cramer",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 19,
+    "flagged_count": 13,
+    "flag_ratio_pct": 68,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, religious-freedom, same-sex-marriage, school-vouchers, social-security, trans-athletes"
+  },
+  {
+    "name": "Estuardo Mazariegos",
+    "party": "Unknown",
+    "office": null,
+    "stance_count": 19,
+    "flagged_count": 13,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "city-sanitation, civil-rights, climate-change, deportation, economic-development, growth-and-development, housing, immigration, jail-capacity, local-environment, rent-regulation, taxes, transportation-priorities"
+  },
+  {
+    "name": "Bill Keating",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 19,
+    "flagged_count": 13,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, fossil-fuels, healthcare, jail-capacity, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Dr. Darshana R. Patel",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 19,
+    "flagged_count": 13,
+    "flag_ratio_pct": 68,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, data-centers, deportation, healthcare, housing, immigration, medicare/aid, misinformation, social-security, voting-rights"
+  },
+  {
+    "name": "David Chiu",
+    "party": "Unknown",
+    "office": "City Attorney",
+    "stance_count": 42,
+    "flagged_count": 28,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-bail-pretrial, judicial-criminal-justice, judicial-interpretation, judicial-police-accountability, judicial-transparency, local-environment, medicare/aid, redistricting, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Ashley Moody",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 30,
+    "flagged_count": 20,
+    "flag_ratio_pct": 67,
+    "dominant_value": 5,
+    "flagged_topics": "civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, homelessness, homelessness-response, immigration, jail-capacity, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, public-safety-approach, redistricting, religious-freedom, same-sex-marriage, school-vouchers, voting-rights"
+  },
+  {
+    "name": "Dave Cortese",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 16,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Mike McGuire",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 14,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, immigration, medicare/aid, misinformation, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "James Risch",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 14,
+    "flag_ratio_pct": 67,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, deportation, fossil-fuels, healthcare, immigration, medicare/aid, religious-freedom, school-vouchers, social-security, tariffs, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Charles Schwertner",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 14,
+    "flag_ratio_pct": 67,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, data-centers, healthcare, homelessness, housing, medicare/aid, misinformation, religious-freedom, same-sex-marriage, taxes, trans-athletes"
+  },
+  {
+    "name": "Ayah A. Al-Zubi",
+    "party": "Unknown",
+    "office": "City Councillor",
+    "stance_count": 18,
+    "flagged_count": 12,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, growth-and-development, homelessness, homelessness-response, housing, immigration, local-environment, public-safety-approach, rent-regulation, residential-zoning"
+  },
+  {
+    "name": "Chris Pappas",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — New Hampshire",
+    "stance_count": 18,
+    "flagged_count": 12,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, civil-rights, climate-change, fossil-fuels, healthcare, medicare/aid, redistricting, religious-freedom, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Damon Connolly",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 18,
+    "flagged_count": 12,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, housing, immigration, misinformation, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Roland Gutierrez",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 12,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, taxes, voting-rights"
+  },
+  {
+    "name": "Ben Bartlett",
+    "party": "Unknown",
+    "office": "Council Member (District 3)",
+    "stance_count": 15,
+    "flagged_count": 10,
+    "flag_ratio_pct": 67,
+    "dominant_value": 5,
+    "flagged_topics": "ai-regulation, civil-rights, climate-change, homelessness-response, housing, jail-capacity, local-environment, local-immigration, public-safety-approach, rent-regulation"
+  },
+  {
+    "name": "Tim Sheehy",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 10,
+    "flag_ratio_pct": 67,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, climate-change, deportation, fossil-fuels, immigration, medicare/aid, school-vouchers, taxes, trans-athletes, ukraine-support"
+  },
+  {
+    "name": "James Gallagher",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 15,
+    "flagged_count": 10,
+    "flag_ratio_pct": 67,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, healthcare, medicare/aid, misinformation, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Mai Vang",
+    "party": "Unknown",
+    "office": "Council Member (District 8)",
+    "stance_count": 15,
+    "flagged_count": 10,
+    "flag_ratio_pct": 67,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, deportation, economic-development, homelessness, homelessness-response, housing, immigration, public-safety-approach, rent-regulation"
+  },
+  {
+    "name": "James Lankford",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 29,
+    "flagged_count": 19,
+    "flag_ratio_pct": 66,
+    "dominant_value": 4,
+    "flagged_topics": "campaign-finance, childcare, deportation, fossil-fuels, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, medicare/aid, misinformation, public-safety-approach, redistricting, school-vouchers, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "William N. Brownsberger",
+    "party": "Democrat",
+    "office": "Senator, Suffolk and Middlesex District",
+    "stance_count": 29,
+    "flagged_count": 19,
+    "flag_ratio_pct": 66,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, deportation, healthcare, homelessness, immigration, jail-capacity, judicial-bail-pretrial, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, medicare/aid, public-safety-approach, taxes, trans-athletes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Rob Bonta",
+    "party": "Democratic",
+    "office": "Attorney General",
+    "stance_count": 40,
+    "flagged_count": 26,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, economic-development, fossil-fuels, homelessness, homelessness-response, housing, jail-capacity, judicial-access-to-justice, judicial-bail-pretrial, judicial-criminal-justice, judicial-interpretation, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, medicare/aid, misinformation, public-safety-approach, rent-regulation, residential-zoning, social-security, ukraine-support, voting-rights"
+  },
+  {
+    "name": "John Thune",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 17,
+    "flag_ratio_pct": 65,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, medicare/aid, misinformation, public-safety-approach, redistricting, religious-freedom, school-vouchers, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Kevin McCarty",
+    "party": "Unknown",
+    "office": "Mayor",
+    "stance_count": 23,
+    "flagged_count": 15,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, judicial-criminal-justice, judicial-police-accountability, local-environment, local-immigration, rent-regulation, taxes, transportation-priorities"
+  },
+  {
+    "name": "Spencer J. Cox",
+    "party": "Unknown",
+    "office": "Utah Governor",
+    "stance_count": 23,
+    "flagged_count": 15,
+    "flag_ratio_pct": 65,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, data-centers, deportation, fossil-fuels, healthcare, homelessness, immigration, medicare/aid, redistricting, religious-freedom, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Lois Kolkhorst",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 15,
+    "flag_ratio_pct": 65,
+    "dominant_value": 4,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, medicare/aid, school-vouchers, social-security, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "John Fleming",
+    "party": "Republican",
+    "office": "Candidate for U.S. Senate — Louisiana",
+    "stance_count": 20,
+    "flagged_count": 13,
+    "flag_ratio_pct": 65,
+    "dominant_value": 5,
+    "flagged_topics": "childcare, civil-rights, climate-change, fossil-fuels, healthcare, housing, immigration, misinformation, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes"
+  },
+  {
+    "name": "Sarah Eckhardt",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 13,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, medicare/aid, redistricting, taxes, voting-rights"
+  },
+  {
+    "name": "Bradley Meyer",
+    "party": "Unknown",
+    "office": "U.S. Representative",
+    "stance_count": 20,
+    "flagged_count": 13,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, misinformation, redistricting, voting-rights"
+  },
+  {
+    "name": "Michael Bennet",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 13,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, healthcare, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Diane B. Dixon",
+    "party": "Republican",
+    "office": "Assembly Member",
+    "stance_count": 17,
+    "flagged_count": 11,
+    "flag_ratio_pct": 65,
+    "dominant_value": 4,
+    "flagged_topics": "civil-rights, climate-change, data-centers, fossil-fuels, homelessness, homelessness-response, public-safety-approach, redistricting, tariffs, trans-athletes, voting-rights"
+  },
+  {
+    "name": "James B. Eldridge",
+    "party": "Democrat",
+    "office": "Senator, Middlesex and Worcester District",
+    "stance_count": 17,
+    "flagged_count": 11,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, voting-rights"
+  },
+  {
+    "name": "Jacqui Irwin",
+    "party": "Democratic",
+    "office": "Assembly Member",
+    "stance_count": 17,
+    "flagged_count": 11,
+    "flag_ratio_pct": 65,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, healthcare, homelessness, immigration, medicare/aid, misinformation, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Erin Houchin",
+    "party": "Republican",
+    "office": "U.S. House of Representatives - Indiana 9th Congressional District",
+    "stance_count": 25,
+    "flagged_count": 16,
+    "flag_ratio_pct": 64,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, childcare, civil-rights, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, medicare/aid, misinformation, religious-freedom, tariffs, taxes, trans-athletes, ukraine-support"
+  },
+  {
+    "name": "Henry Stern",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 16,
+    "flag_ratio_pct": 64,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Maura Healey",
+    "party": "Democrat",
+    "office": "Governor",
+    "stance_count": 25,
+    "flagged_count": 16,
+    "flag_ratio_pct": 64,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, redistricting, religious-freedom, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Brian W. Jones",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 16,
+    "flag_ratio_pct": 64,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, immigration, medicare/aid, religious-freedom, same-sex-marriage, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jasmeet Kaur Bains",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 22,
+    "flagged_count": 14,
+    "flag_ratio_pct": 64,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, healthcare, homelessness, housing, jail-capacity, local-environment, medicare/aid, public-safety-approach, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "Abdul El-Sayed",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — Michigan",
+    "stance_count": 22,
+    "flagged_count": 14,
+    "flag_ratio_pct": 64,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, healthcare, housing, immigration, medicare/aid, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Mike Kennedy",
+    "party": "Unknown",
+    "office": "Representative",
+    "stance_count": 22,
+    "flagged_count": 14,
+    "flag_ratio_pct": 64,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, immigration, medicare/aid, redistricting, religious-freedom, same-sex-marriage, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Marni von Wilpert",
+    "party": "Unknown",
+    "office": "Council Member",
+    "stance_count": 32,
+    "flagged_count": 20,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, immigration, jail-capacity, local-environment, medicare/aid, redistricting, social-security, tariffs, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Rick Scott",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 30,
+    "flagged_count": 19,
+    "flag_ratio_pct": 63,
+    "dominant_value": 5,
+    "flagged_topics": "childcare, civil-rights, climate-change, economic-development, fossil-fuels, healthcare, homelessness, housing, jail-capacity, judicial-criminal-justice, judicial-interpretation, medicare/aid, misinformation, public-safety-approach, religious-freedom, same-sex-marriage, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Edward J. Markey",
+    "party": "Democrat",
+    "office": "U.S. Senate - Massachusetts",
+    "stance_count": 30,
+    "flagged_count": 19,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, misinformation, religious-freedom, social-security, ukraine-support"
+  },
+  {
+    "name": "Bob Archuleta",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 15,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, same-sex-marriage, school-vouchers, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Mark Warner",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 15,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Maggie Hassan",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 15,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, healthcare, homelessness, housing, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Martin Heinrich",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 24,
+    "flagged_count": 15,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Xavier Becerra",
+    "party": "Unknown",
+    "office": null,
+    "stance_count": 24,
+    "flagged_count": 15,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, trans-athletes, ukraine-support"
+  },
+  {
+    "name": "John Hoeven",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 19,
+    "flagged_count": 12,
+    "flag_ratio_pct": 63,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, healthcare, immigration, medicare/aid, religious-freedom, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Steve Daines",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 19,
+    "flagged_count": 12,
+    "flag_ratio_pct": 63,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, fossil-fuels, immigration, medicare/aid, school-vouchers, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Al Muratsuchi",
+    "party": "Democratic",
+    "office": "Assembly Member",
+    "stance_count": 19,
+    "flagged_count": 12,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, healthcare, homelessness, immigration, medicare/aid, misinformation, redistricting, taxes, voting-rights"
+  },
+  {
+    "name": "Faizah Malik",
+    "party": "Democratic",
+    "office": null,
+    "stance_count": 19,
+    "flagged_count": 12,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, homelessness, homelessness-response, housing, immigration, judicial-police-accountability, local-immigration, rent-regulation, transportation-priorities"
+  },
+  {
+    "name": "Shelley Moore Capito",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 16,
+    "flagged_count": 10,
+    "flag_ratio_pct": 63,
+    "dominant_value": 4,
+    "flagged_topics": "civil-rights, climate-change, deportation, healthcare, immigration, medicare/aid, religious-freedom, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Megan Dahle",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 16,
+    "flagged_count": 10,
+    "flag_ratio_pct": 63,
+    "dominant_value": 5,
+    "flagged_topics": "abortion, civil-rights, climate-change, data-centers, fossil-fuels, healthcare, medicare/aid, redistricting, same-sex-marriage, trans-athletes"
+  },
+  {
+    "name": "Blanca Pacheco",
+    "party": "Democratic",
+    "office": "Assembly Member",
+    "stance_count": 16,
+    "flagged_count": 10,
+    "flag_ratio_pct": 63,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, voting-rights"
+  },
+  {
+    "name": "Robert Rivas",
+    "party": "Democrat",
+    "office": "Assembly Member",
+    "stance_count": 29,
+    "flagged_count": 18,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-environment, medicare/aid, misinformation, redistricting, rent-regulation, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Gavin Newsom",
+    "party": "Democratic",
+    "office": "Governor",
+    "stance_count": 29,
+    "flagged_count": 18,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, housing, medicare/aid, misinformation, religious-freedom, social-security, tariffs, taxes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Brian Schatz",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 16,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-criminal-justice, medicare/aid, misinformation, redistricting, religious-freedom, ukraine-support"
+  },
+  {
+    "name": "Chuck Schumer",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 26,
+    "flagged_count": 16,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-criminal-justice, medicare/aid, misinformation, redistricting, religious-freedom, ukraine-support"
+  },
+  {
+    "name": "Melissa Hurtado",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, redistricting, school-vouchers, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Isaac G. Bryan",
+    "party": "Democratic",
+    "office": "Assembly Member",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, social-security, taxes"
+  },
+  {
+    "name": "Aisha Wahab",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, homelessness, housing, immigration, medicare/aid, same-sex-marriage, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Thom Tillis",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, ai-regulation, campaign-finance, civil-rights, deportation, fossil-fuels, judicial-criminal-justice, judicial-interpretation, medicare/aid, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Karen E. Spilka",
+    "party": "Democrat",
+    "office": "Senator, Middlesex and Norfolk District",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, religious-freedom, taxes"
+  },
+  {
+    "name": "Ruben Gallego",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 21,
+    "flagged_count": 13,
+    "flag_ratio_pct": 62,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, healthcare, housing, medicare/aid, redistricting, social-security, taxes, trans-athletes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Annie Andrews",
+    "party": "Democratic",
+    "office": "Candidate for U.S. Senate — South Carolina",
+    "stance_count": 28,
+    "flagged_count": 17,
+    "flag_ratio_pct": 61,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, housing, immigration, judicial-criminal-justice, medicare/aid, religious-freedom, social-security, voting-rights"
+  },
+  {
+    "name": "Candice B. Pierucci",
+    "party": "Unknown",
+    "office": "State Representative District 49",
+    "stance_count": 28,
+    "flagged_count": 17,
+    "flag_ratio_pct": 61,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, fossil-fuels, growth-and-development, healthcare, homelessness, jail-capacity, medicare/aid, misinformation, religious-freedom, rent-regulation, same-sex-marriage, social-security, taxes, voting-rights"
+  },
+  {
+    "name": "Linda T. Sanchez",
+    "party": "Democratic",
+    "office": "Representative",
+    "stance_count": 28,
+    "flagged_count": 17,
+    "flag_ratio_pct": 61,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, fossil-fuels, healthcare, homelessness, homelessness-response, housing, medicare/aid, misinformation, public-safety-approach, religious-freedom, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Mitch McConnell",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 23,
+    "flagged_count": 14,
+    "flag_ratio_pct": 61,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, deportation, fossil-fuels, immigration, judicial-criminal-justice, medicare/aid, misinformation, religious-freedom, same-sex-marriage, school-vouchers, social-security, taxes, trans-athletes"
+  },
+  {
+    "name": "Richard Neal",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 23,
+    "flagged_count": 14,
+    "flag_ratio_pct": 61,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, healthcare, homelessness, housing, immigration, jail-capacity, medicare/aid, redistricting, religious-freedom, same-sex-marriage, social-security, voting-rights"
+  },
+  {
+    "name": "Christopher Cabaldon",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 11,
+    "flag_ratio_pct": 61,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, trans-athletes"
+  },
+  {
+    "name": "Michael J. Moran",
+    "party": "Democrat",
+    "office": "Representative, 18th Suffolk District",
+    "stance_count": 18,
+    "flagged_count": 11,
+    "flag_ratio_pct": 61,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, childcare, climate-change, fossil-fuels, housing, immigration, jail-capacity, local-immigration, religious-freedom, taxes, voting-rights"
+  },
+  {
+    "name": "Matt Dorsey",
+    "party": "Unknown",
+    "office": "Supervisor",
+    "stance_count": 18,
+    "flagged_count": 11,
+    "flag_ratio_pct": 61,
+    "dominant_value": 4,
+    "flagged_topics": "city-sanitation, deportation, homelessness, homelessness-response, immigration, jail-capacity, judicial-criminal-justice, local-immigration, misinformation, public-safety-approach, rent-regulation"
+  },
+  {
+    "name": "Cindy Hyde-Smith",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 18,
+    "flagged_count": 11,
+    "flag_ratio_pct": 61,
+    "dominant_value": 4,
+    "flagged_topics": "campaign-finance, deportation, healthcare, immigration, jail-capacity, medicare/aid, redistricting, religious-freedom, tariffs, taxes, ukraine-support"
+  },
+  {
+    "name": "Lindsey P. Horvath",
+    "party": "Democratic",
+    "office": "Supervisor",
+    "stance_count": 35,
+    "flagged_count": 21,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, deportation, economic-development, fossil-fuels, healthcare, homelessness, housing, immigration, judicial-access-to-justice, judicial-bail-pretrial, judicial-criminal-justice, judicial-transparency, local-environment, medicare/aid, public-safety-approach, redistricting, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Jim McGovern",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 30,
+    "flagged_count": 18,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, jail-capacity, judicial-access-to-justice, judicial-criminal-justice, judicial-police-accountability, judicial-prosecution-priorities, judicial-transparency, misinformation, religious-freedom, ukraine-support, voting-rights"
+  },
+  {
+    "name": "John Boozman",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 30,
+    "flagged_count": 18,
+    "flag_ratio_pct": 60,
+    "dominant_value": 4,
+    "flagged_topics": "campaign-finance, childcare, deportation, economic-development, healthcare, homelessness, homelessness-response, housing, immigration, jail-capacity, judicial-criminal-justice, medicare/aid, misinformation, public-safety-approach, social-security, tariffs, taxes, voting-rights"
+  },
+  {
+    "name": "Chris Van Hollen",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 15,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, judicial-criminal-justice, judicial-interpretation, misinformation, redistricting, religious-freedom, trans-athletes, ukraine-support"
+  },
+  {
+    "name": "César Blanco",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 25,
+    "flagged_count": 15,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, deportation, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Lilliana Young",
+    "party": "Unknown",
+    "office": "Indiana State Representative",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, religious-freedom"
+  },
+  {
+    "name": "Akilah Weber Pierson",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, deportation, healthcare, immigration, medicare/aid, taxes, voting-rights"
+  },
+  {
+    "name": "Phil King",
+    "party": "Republican",
+    "office": "Senator",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, data-centers, deportation, healthcare, immigration, same-sex-marriage, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Donna Howard",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, childcare, civil-rights, climate-change, deportation, healthcare, immigration, taxes, voting-rights"
+  },
+  {
+    "name": "Pamela Campos",
+    "party": "Unknown",
+    "office": "Council Member (District 2)",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 3,
+    "flagged_topics": "city-sanitation, climate-change, economic-development, growth-and-development, homelessness, homelessness-response, local-environment, public-safety-approach, residential-zoning"
+  },
+  {
+    "name": "Rae Chen Huang",
+    "party": "Unknown",
+    "office": null,
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 1,
+    "flagged_topics": "climate-change, homelessness-response, housing, immigration, local-immigration, public-safety-approach, rent-regulation, taxes, transportation-priorities"
+  },
+  {
+    "name": "Shirley N. Weber",
+    "party": "Democratic",
+    "office": "Secretary of State",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, civil-rights, immigration, redistricting, same-sex-marriage, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "John Harabedian",
+    "party": "Democratic",
+    "office": "Assembly Member",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, homelessness, housing, immigration, taxes, voting-rights"
+  },
+  {
+    "name": "Derek Brown",
+    "party": "Unknown",
+    "office": "Utah Attorney General",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 5,
+    "flagged_topics": "civil-rights, climate-change, deportation, fossil-fuels, immigration, redistricting, religious-freedom, school-vouchers, trans-athletes"
+  },
+  {
+    "name": "Patricia M. Nolan",
+    "party": "Unknown",
+    "office": "City Councillor",
+    "stance_count": 15,
+    "flagged_count": 9,
+    "flag_ratio_pct": 60,
+    "dominant_value": 2,
+    "flagged_topics": "civil-rights, climate-change, fossil-fuels, homelessness, homelessness-response, housing, jail-capacity, local-environment, public-safety-approach"
+  }
+]

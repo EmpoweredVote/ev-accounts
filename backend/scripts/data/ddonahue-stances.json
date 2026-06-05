@@ -1,0 +1,79 @@
+{
+  "politician_id": "71aa11da-0fa1-49d2-bcbd-3bce7d0bad2b",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239, 'An Act to establish Medicare for all in Massachusetts') per malegislature.gov co-sponsor list. This is the strongest signal of supporting a universal single-payer system.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) which would expand Medicare to cover all Massachusetts residents regardless of age, per co-sponsor list on malegislature.gov.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045 and Environmental Justice bills per Act on Mass tracker — consistent with rapidly transitioning to renewable energy and phasing out fossil fuels.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill per Act on Mass tracker, signaling support for stopping new fossil fuel permits as part of a renewable transition.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass tracker, indicating strong prioritization of public education funding over voucher programs.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per Act on Mass tracker despite co-sponsoring several other progressive bills. Aligns with maintaining existing MA abortion protections (current law through second trimester) without actively championing further expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Co-sponsored Age of Criminal Majority to 21 (raising the adult criminal threshold) but did NOT co-sponsor the Prison Moratorium per Act on Mass tracker. Supports some criminal justice reform but not a moratorium on new incarceration infrastructure.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "Co-sponsored the Healthy Youth Act (LGBTQ+-inclusive comprehensive sex ed) per Act on Mass tracker. As a Worcester Democrat there is no evidence of opposition to same-sex marriage protections under federal and MA law.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-donahue"
+      ]
+    }
+  ]
+}

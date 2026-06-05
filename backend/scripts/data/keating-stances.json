@@ -1,0 +1,179 @@
+{
+  "politician_id": "0d97085c-eca6-4530-9fc7-512ca05487b9",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 2,
+      "reasoning": "Keating is strongly pro-choice — rated 0% by Massachusetts Citizens for Life and 100% by NARAL Pro-Choice Massachusetts. He voted against the Protect Life Act and No Taxpayer Funding for Abortion Act and stated funding abortion prevents discrimination against lower-income women. His record supports legal abortion access through at least the second trimester with funding access.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 2,
+      "reasoning": "Keating created a \"My Voice Voucher\" small-donor campaign finance system, requires full disclosure of independent expenditures, supported banning Congressional insider trading, and forced Massachusetts Senate President to accept term limits. His record strongly favors limiting corporate and dark money.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Keating endorsed marriage equality, sponsored Equal Rights Amendment ratification, backed Violence Against Women Act reauthorization, advocates enforcing anti-discrimination protections based on gender, sexual orientation, and race, and sponsored facial recognition technology oversight to combat racial bias.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Keating scored 96% lifetime and 100% in 2025 from the LCV, voted against Continental Shelf and Gulf of Mexico offshore drilling, and supports Cape Wind and offshore renewable energy. He backs EPA greenhouse gas regulation and renewable energy tax credits — reflecting gradual clean-energy transition rather than an emergency carbon ban.",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=MA&chamber=House",
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Keating \"opposes amnesty; enforce our laws; secure our borders\" but voted to legalize DREAMers via military service and sponsored legislation blocking religion-based immigration bans. His mixed enforcement-with-pathways record aligns with prioritizing deportation of recent border crossers while allowing established long-term residents to seek legal status.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Keating voted NO on opening the Outer Continental Shelf to oil drilling and YES on banning Gulf of Mexico offshore drilling. His 96% lifetime LCV score and consistent environmental record place him closer to stopping new fossil fuel permits rather than maintaining current production levels.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm",
+        "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=MA&chamber=House"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 2,
+      "reasoning": "Keating opposes Medicare privatization and the Ryan Budget, supports ACA expansion including Prevention and Public Health funding, and has sponsored Alzheimer's care benefit expansions. His record reflects support for affordable coverage through public programs plus regulated private insurance.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Keating \"opposes amnesty; enforce our laws; secure our borders\" but supports visa programs enabling foreign workers to remain, voted to legalize DREAMers via military service, and sponsored a bill blocking religion-based immigration bans. His record balances enforcement with maintaining current legal immigration levels and pathways for certain groups.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 2,
+      "reasoning": "Keating sponsored stricter police accountability rules and supported the January 6 investigation commission. His record on criminal justice emphasizes accountability for specific high-harm offenders (pill mills, predators) while backing structural reforms — reflecting a diversion and accountability approach over jail expansion.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 2,
+      "reasoning": "Keating strongly opposes Medicare privatization and the Ryan Budget, supports ACA expansion, and defends Medicare and Medicaid against benefit cuts. His record aligns with expanding Medicare coverage and lowering thresholds, stopping short of full Medicare for All.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "redistricting",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "value": 2,
+      "reasoning": "Keating is classified as a \"Hard-Core Liberal\" on OnTheIssues, supported the January 6 investigation commission, certified the 2020 election, and consistently backs democratic accountability measures, suggesting support for independent redistricting commissions with bipartisan representation.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "Keating promised \"nationwide anti-discrimination laws and marriage rights for gays and lesbians\" and strongly backed ending Don't Ask Don't Tell. In March 2025 he verbally sparred with the House Foreign Affairs Committee chair over misgendering Rep. Sarah McBride, demonstrating strong commitment to requiring all states to recognize same-sex marriages with full federal protections.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bill_Keating_(politician)",
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Keating clearly stated \"Oppose private and religious school voucher programs\" (Oct 2015), voted NO on DC opportunity scholarship program, and is rated 100% by the National Education Association. His position is to fully fund public schools and eliminate vouchers.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "social-security",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "value": 2,
+      "reasoning": "Keating stated in 2010 it is a \"bad idea to privatize; or to raise retirement age,\" sponsored a bill keeping the standard CPI for benefits (rejecting chained CPI), and is rated 100% pro-Trust Fund by senior advocates. His record reflects opposing cuts while supporting modest benefit improvements.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "tariffs",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "value": 3,
+      "reasoning": "Keating supports imposing tariffs against currency-manipulating countries and backed USMCA, while rated 38% by free-trade advocates. His record indicates a selective tariffs approach to protect American industries and respond to unfair traders rather than broad protectionism or pure free trade.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 2,
+      "reasoning": "Keating advocates raising estate taxes to 1990s levels and notes that reducing tax rates \"balloons deficits and cuts programs.\" His 100% AFL-CIO rating and progressive economic record reflect support for modestly increasing taxes on high earners.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    },
+    {
+      "topic_key": "trans-athletes",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "value": 2,
+      "reasoning": "In March 2025, Keating verbally sparred with the House Foreign Affairs Committee chair over misgendering freshman Democratic representative Sarah McBride, demonstrating strong support for transgender rights and inclusion. His overall pro-LGBTQ+ record and defense of transgender colleagues supports transgender athletes competing on teams matching their gender identity after basic documentation.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bill_Keating_(politician)"
+      ]
+    },
+    {
+      "topic_key": "ukraine-support",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "value": 2,
+      "reasoning": "Keating serves on the House Foreign Affairs Committee as Ranking Member of the Europe, Eurasia and Emerging Threats Subcommittee, making Ukraine policy a central part of his work. As a committed multilateralist focused on European security, his role and record suggest consistent support for current levels of Ukraine military and economic aid.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Bill_Keating_(politician)"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Keating supports automatic voter registration, making Election Day a national holiday, requires full disclosure of independent campaign expenditures, and backed DC statehood. His record reflects expanding early voting and no-excuse mail-in ballot access.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Bill_Keating.htm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa",
+  "stances": [
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, committing to a clean-energy phase-out of fossil fuels and a rapid renewable energy transition — aligns with the rapid transition / stop new fossil fuel permits position.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-ryan"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, signaling support for halting new fossil fuel permits as part of a state-level clean-energy mandate.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-ryan"
+      ]
+    }
+  ]
+}

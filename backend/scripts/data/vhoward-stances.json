@@ -1,0 +1,161 @@
+{
+  "politician_id": "c947719a-cd1a-497a-8fc9-d9c4d434b18f",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act, which expands abortion access to all stages and includes public funding provisions — the strongest pro-choice bill tracked by Act on Mass.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored Environmental Justice and Safe Communities Act, and supports indigenous peoples' rights legislation, reflecting a commitment to addressing systemic discrimination beyond just maintaining current law.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which calls for a rapid phase-out of fossil fuels and a full clean-energy transition by mid-century.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which ends state cooperation with ICE and prohibits local law enforcement from aiding civil immigration enforcement — limiting deportation support to serious violent crime contexts.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which would stop new fossil fuel permits and mandate a full transition to renewables, consistent with halting new fossil fuel expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), which would create a single-payer system covering all MA residents with no premiums, copays, or deductibles, funded by payroll taxes.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard",
+        "https://actonmass.org/bills/medicare-for-all/"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Co-sponsored Overdose Prevention Centers bill, establishing supervised consumption sites with a harm-reduction approach — treating addiction as a public health matter and connecting people to housing and social services rather than criminalization.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Co-sponsored Lift the Ban on Local Tenant Protections, which would allow municipalities to enact rent stabilization and stronger tenant protections — a pro-renter housing policy stance.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which prohibits police from asking about immigration status and ends state cooperation with ICE — supporting access to services regardless of immigration status.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 1,
+      "reasoning": "Co-sponsored the Prison Moratorium (H.1795/S.1979), which would impose a 5-year pause on new prison or jail construction and redirect resources to community-based alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard",
+        "https://actonmass.org/bills/prison-moratorium/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act, which would prohibit local law enforcement from cooperating with ICE, asking about immigration status, or sharing immigration information with federal agencies.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All, which would expand the single-payer system to cover all MA residents regardless of age, eliminating the current age-restricted Medicare structure.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "Co-sponsored the Healthy Youth Act, which requires LGBTQ-inclusive sex education affirming different sexual orientations and gender identities — consistent with full recognition and equal treatment for same-sex couples.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, signaling strong commitment to public education funding over private alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708/S.1925), which closes multinational corporate tax loopholes and raises an estimated $400 million in progressive revenue by taxing GILTI income.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard",
+        "https://actonmass.org/bills/stop-corporate-offshoring/"
+      ]
+    },
+    {
+      "topic_key": "trans-athletes",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "value": 1,
+      "reasoning": "Co-sponsored the Healthy Youth Act, which mandates affirmative LGBTQ-inclusive education acknowledging different gender identities and expressions — consistent with full inclusion of transgender athletes.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act despite Act on Mass requesting co-sponsorship, suggesting a position at or near the current legal standard rather than proactive expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/vanna-howard"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "politician_id": "30b6b674-509f-46f6-a9aa-aa3dbefc2f42",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 2,
+      "reasoning": "DiZoglio described herself as a 'strong supporter of abortion rights' in the 2022 Democratic auditor primary. MassEquality director cited her 'decade-long record of voting in support of LGBTQ and reproductive rights' when endorsing her. No evidence of a position supporting public funding at all stages; standard pro-choice Democratic alignment through second trimester with exceptions.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/abortion-gaining-currency-in-down-ballot-races/",
+        "https://commonwealthbeacon.org/politics/super-pac-takes-aim-at-dizoglio-on-lgbt-issues/"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "MassEquality and Bay State Stonewall Democrats both endorsed DiZoglio in the 2022 auditor general election, with MassEquality director stating 'I know that she has been on our side when we've needed her.' Her campaign cited a 'decade-long record of voting in support of LGBTQ and reproductive rights' since entering the legislature in 2013. She is a strong proponent of legislation banning conversion therapy.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/super-pac-takes-aim-at-dizoglio-on-lgbt-issues/"
+      ]
+    },
+    {
+      "topic_key": "trans-athletes",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "value": 2,
+      "reasoning": "Despite a 2013 procedural vote that Republicans characterized as opposing transgender student facility access, DiZoglio's campaign clarified she objected to 'House leaders' effort to bury the matter' rather than opposing the gender identity guidelines themselves. MassEquality endorsed her and stated she 'has been a staunch supporter of LGBT rights since entering the Legislature as a state representative in 2013.' This record supports transgender athletes competing consistent with gender identity with standard documentation, not restrictions.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/super-pac-takes-aim-at-dizoglio-on-lgbt-issues/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "DiZoglio's immigration record is pragmatic rather than progressive. In 2014 she stated she believed 'we need to make sure that everybody is documented and here legally before providing state resources.' In 2020 she voted to advance a driver's license bill for undocumented immigrants but justified it as helping law enforcement, citing police chiefs who supported it. This reflects maintaining current levels and rules rather than expanding or restricting immigration.",
+      "sources": [
+        "https://commonwealthbeacon.org/transportation/dizoglio-defends-shift-on-immigrant-license-bill/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "DiZoglio voted in favor of advancing a driver's license bill for undocumented immigrants in 2020, but explicitly framed it as helping law enforcement: 'I voted yes in solidarity with our major city police chiefs association because the provisions in the bill would help law enforcement officers identify criminals who are here unlawfully and get them off the streets.' Her 2014 position also prioritized legal status verification before state resources. This suggests a focus on recent arrivals and criminal history over blanket deportation but not a sanctuary stance.",
+      "sources": [
+        "https://commonwealthbeacon.org/transportation/dizoglio-defends-shift-on-immigrant-license-bill/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "DiZoglio voted for the MBTA Communities Act as a state senator but as Auditor found it constituted an 'unfunded mandate,' concluding the law's language 'should've included a provision for funding.' She supports the goal of expanding multifamily housing but believes municipalities should not bear unfunded compliance costs. This reflects targeted subsidies and infrastructure investment approach rather than rent caps or fully public housing.",
+      "sources": [
+        "https://commonwealthbeacon.org/housing/a-new-wrinkle-in-mbta-communities-rebellion-courtesy-of-dizoglio/"
+      ]
+    },
+    {
+      "topic_key": "religious-freedom",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "value": 3,
+      "reasoning": "DiZoglio worked as a youth counselor at an evangelical church in Alabama as a teenager. She broke with the church's teachings as a young adult and built a 'decade-long record of voting in support of LGBTQ and reproductive rights.' MassEquality was satisfied enough with her record to endorse her. This trajectory — religious background navigated into strong civil rights support — reflects a balance between religious practices and equal treatment under law, not either extreme.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/super-pac-takes-aim-at-dizoglio-on-lgbt-issues/"
+      ]
+    }
+  ]
+}

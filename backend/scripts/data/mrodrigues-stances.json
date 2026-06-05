@@ -1,0 +1,88 @@
+{
+  "politician_id": "f865995d-ad3a-4d2d-827f-ed8a1a67af18",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Rodrigues did not co-sponsor Medicare for All, and his role as Ways and Means chair shows a focus on fiscal sustainability. He supported free community college and transit subsidies in Senate budgets, indicating investment in social programs while maintaining the existing insurance structure.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored",
+        "https://commonwealthbeacon.org/?s=michael+rodrigues+senate"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Rodrigues is a Catholic Democrat from Fall River representing a socially conservative district, and did not co-sponsor the Abortion Access Act. His likely position reflects support for abortion access in the first trimester and for rape/incest/health cases without backing full public funding at all stages.",
+      "sources": [
+        "https://actonmass.org/bills/abortion-protection/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 2,
+      "reasoning": "As Senate Ways and Means chair, Rodrigues has steered budgets that support expanded social services and education investment funded through the Fair Share Amendment surtax framework. His approach is modestly progressive on revenue without dramatically raising taxes across the board.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored",
+        "https://commonwealthbeacon.org/?s=michael+rodrigues+senate"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Rodrigues did not co-sponsor 100% Renewable Energy by 2045 and his sponsored legislation focuses on local community and fiscal issues. His budget work has included climate resilience funding, suggesting investment in clean energy while gradually reducing fossil fuel reliance.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Rodrigues' bills focus on property tax relief for seniors and local governance. He has not co-sponsored tenant protection expansion legislation, indicating a targeted-subsidy approach to housing rather than broad rent control or market-only solutions.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Rodrigues did not co-sponsor the Safe Communities Act. Representing Fall River — a district with significant immigrant communities — his posture is likely to maintain current immigration levels and rules without significant expansion or restriction.",
+      "sources": [
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Rodrigues did not co-sponsor the Safe Communities Act, which would prohibit local police from cooperating with ICE. He likely follows federal law without directing active cooperation or proactive enforcement.",
+      "sources": [
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Rodrigues has sponsored S.507 on campaign finance reporting improvements for ballot question committees, indicating support for disclosure requirements as the core reform priority rather than more sweeping limits on private money.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "As a senior MA Senate Democrat and budget chair who has steered education spending toward public higher education (free community college), Rodrigues opposes diverting public funds to private school vouchers, consistent with Massachusetts Democratic mainstream.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/MJR0/BillsSponsored"
+      ]
+    }
+  ]
+}

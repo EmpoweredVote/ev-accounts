@@ -1,0 +1,95 @@
+{
+  "politician_id": "3ea88aee-8bc7-4ddf-b897-5aa8111fadc8",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Not found on Act on Mass (slug 404). No Medicare for All co-sponsorship found. No healthcare legislation in sponsored bill list. Sponsored H.1174 (direct dental care agreements) which is about dental access outside insurance — incremental rather than systemic.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Sponsored H.1557 — 'Establishing an Office of Tenant Protections' — which would create a state office to defend tenant rights and enforce housing protections. Also sponsored charter school reimbursement reform (shows interest in accountability). Creating an Office of Tenant Protections aligns with expanding rental assistance and tenant protections.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H1557"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 3,
+      "reasoning": "Sponsored H.126 (community fridges to address food insecurity) showing concern for food access and poverty. No specific homelessness legislation beyond community fridge bill. H.3498 (expand low-income home energy assistance) addresses energy poverty. Limited but present attention to homelessness-adjacent issues.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H126"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Sponsored H.835 — authorizing Easthampton to adopt ranked choice voting — demonstrating active support for expanding voting access and democratic participation. Ranked choice voting authorization is a voting rights expansion measure.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H835"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Sponsored H.587 (mandatory training on microaggressions and implicit bias for extracurricular staff) and H.776 (actually authored by Luddy — removed), and H.126 (community fridges for food insecurity). Anti-bias training mandate for educational staff reflects active stance on addressing systemic discrimination.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H587"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Sponsored H.3498 (expand low-income home energy assistance program) — focused on energy affordability for poor families rather than fossil fuel policy. No renewable energy legislation or anti-fossil fuel bills found. Default maintain current regulations.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "No 100% Renewable Energy or Environmental Justice co-sponsorship found. H.3498 (home energy assistance) is about affordability not climate policy. Insufficient evidence for stronger score. Default moderate.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "No Stop Corporate Offshoring co-sponsorship found. No progressive revenue bills authored. Default current rates.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "No Prison Moratorium or Age of Criminal Majority co-sponsorship found. Sponsored H.3670 (regulating dangerous high-speed pursuits) which limits police pursuits — a mild reform. Insufficient evidence for stronger score.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H3670"
+      ]
+    }
+  ]
+}

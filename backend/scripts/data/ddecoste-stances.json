@@ -1,0 +1,97 @@
+{
+  "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a",
+  "stances": [
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Surprisingly co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass despite being a Republican — this bill focuses on tuition-free public higher education rather than vouchers, which DeCoste may support as a local-control measure.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Sponsored H.1662 (coerced abortion restrictions), H.1663 (fetal injury/termination protections), and H.1665 (prohibiting abortions sought because of Down syndrome diagnosis) in the 194th session — consistent with restricting abortion to cases of rape, incest, or serious threats to the mother's life.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DFD1/Bills",
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Medicare for All or any public health expansion bills per Act on Mass. As a Republican, sponsors legislation suggesting limited government role in healthcare rather than market-based approach.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per Act on Mass tracker. Republican representing Plymouth County with no evidence of support for sanctuary policies.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 4,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. Republican in a Plymouth district with no evidence of sanctuary stance; likely supports ICE detainer compliance.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 4,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 or Environmental Justice per Act on Mass. Republican who has not supported climate transition legislation — consistent with letting market forces drive energy transition.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 4,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy or Environmental Justice bills per Act on Mass. No evidence of support for restricting fossil fuel permits.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring per Act on Mass. Republican whose sponsored bills focus on tax relief (exemptions for seniors and veterans) rather than raising corporate taxes.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste",
+        "https://malegislature.gov/Legislators/Profile/DFD1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. Republican who sponsored bills on firearms regulations and law enforcement, consistent with prioritizing incarceration capacity over alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration per Act on Mass. Sponsored H.550 (parental consent for sex ed) and other conservative education measures — consistent with supporting stricter voter ID requirements.",
+      "sources": [
+        "https://actonmass.org/legislators/david-decoste"
+      ]
+    }
+  ]
+}

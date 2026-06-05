@@ -1,0 +1,117 @@
+{
+  "politician_id": "9b3772d3-3602-457a-82e7-479b5e557b13",
+  "stances": [
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education), which opposes diversion of public funds to private institutions. This signals strong support for public ed over vouchers.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/",
+        "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (H.1239) per Act on Mass tracker. No evidence of single-payer support. MA House baseline for non-co-sponsors is regulated private insurance system.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "No co-sponsorship of Medicare for All or Medicare expansion bills found. Baseline for MA House Democrats without M4A co-sponsorship is maintaining current programs with modest improvements.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per Act on Mass tracker. As a MA House Democrat without that co-sponsorship, baseline is first-trimester access within current legal framework.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per Act on Mass. Co-sponsored H.3406 (reducing transportation sector emissions) which signals some climate action but not full decarbonization commitment.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/",
+        "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable by 2045. Transportation emissions bill (H.3406) indicates interest in reducing fossil fuel use in transportation but not a full fossil fuel phase-out stance.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/",
+        "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per Act on Mass tracker. No evidence of expansive immigration reform support. MA House baseline is maintaining current legal immigration levels.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act, which would limit local cooperation with federal immigration enforcement. No evidence supporting sanctuary policies or active ICE cooperation.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "No Safe Communities Act co-sponsorship. No evidence of strong anti-deportation stance. Baseline for MA House Dems without SCA is prioritizing recent crossers while allowing long-term residents to apply.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Co-sponsored H.305 (zoning ordinances to expand housing opportunities) and H.4021 (municipal housing zoning requirements), indicating moderate housing reform support without strong tenant protection focus.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. Co-sponsored H.1937 (further regulating bail process) which signals engagement with criminal justice but not abolition-leaning stance.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/",
+        "https://malegislature.gov/Legislators/Profile/AJP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring per Act on Mass. No evidence of progressive tax support. MA House baseline without that co-sponsorship is maintaining current tax structure.",
+      "sources": [
+        "https://actonmass.org/legislators/angelo-puppolo/"
+      ]
+    }
+  ]
+}

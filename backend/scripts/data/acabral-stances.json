@@ -1,0 +1,121 @@
+{
+  "politician_id": "5e27127a-4df3-4d16-a1a4-2bf081c92842",
+  "stances": [
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education), which prioritizes public institutional funding and opposes diversion of taxpayer money to private schools.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) per Act on Mass tracker. Sponsored H.1114 (Massachusetts public bank), indicating systemic progressive economic reform orientation aligned with single-payer healthcare.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsorship of Medicare for All (H.1239) implies support for expanding Medicare to cover all regardless of age — the strongest possible Medicare expansion position.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring bill per Act on Mass tracker. Sponsored H.3037 (tax refund contribution to climate-vulnerable countries) and H.2072 (minimum wage for municipal employees), all reflecting progressive taxation and labor priorities.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per Act on Mass tracker. MA House Democrat baseline without that co-sponsorship is first-trimester access under current law.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable by 2045 per Act on Mass. Sponsored H.3454 (offshore wind energy generation) and H.3631 (EV charging in municipal parking), indicating climate engagement but not full decarbonization commitment.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable by 2045 per Act on Mass. Offshore wind and EV charging sponsorships signal interest in alternatives but no explicit fossil fuel phase-out stance found.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per Act on Mass. No evidence of expansive open-borders or high-immigration stance. Represents gateway city (New Bedford) with large immigrant community.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per Act on Mass. Also sponsored H.2575 (law enforcement federal immigration agreements), which regulates but does not prohibit such agreements.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. Sponsored H.1599 (youth restorative justice fund) and H.1597 (prison labor regulation), indicating criminal justice reform interest but not moratorium-level stance.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored the Healthy Youth Act (LGBTQ+ rights) per Act on Mass tracker. Sponsored H.519 (vocational school admissions equity) and H.520 (school interpreter training). Consistent civil rights enforcement focus across multiple bills.",
+      "sources": [
+        "https://actonmass.org/legislators/antonio-cabral/",
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Sponsored H.297 (neighborhood stabilization and economic development), H.298 (school-centered neighborhood development), and H.3039 (housing development incentive program). Moderate housing reform without tenant protection focus.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AFC1/Bills"
+      ]
+    }
+  ]
+}

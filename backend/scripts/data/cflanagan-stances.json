@@ -1,0 +1,127 @@
+{
+  "politician_id": "516feaaa-7086-4382-8cfa-9463f508dd74",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per AOM tracker. No single-payer legislation co-sponsored. Sponsors constituent-service healthcare bills (MassHealth estate recovery, medical facility accessibility) per malegislature.gov.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/",
+        "https://malegislature.gov/Legislators/Profile/CRF1/194th"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per AOM tracker. No abortion access legislation co-sponsored. Cape Cod Democrat representing a mixed district.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per AOM tracker. Sponsors coastal resiliency and greenhouse gas emission analysis bills per malegislature.gov.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/",
+        "https://malegislature.gov/Legislators/Profile/CRF1/194th"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per AOM tracker. Sponsors greenhouse gas emissions incentive cost burden analysis bill.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/",
+        "https://malegislature.gov/Legislators/Profile/CRF1/194th"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per AOM tracker. No Medicare expansion legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per AOM tracker. No immigration legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per AOM tracker. No immigrant protection legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per AOM tracker. No sanctuary-related legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Sponsors veteran housing zoning and rural housing tax credit legislation per malegislature.gov. No progressive tenant protection legislation co-sponsored per AOM.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/",
+        "https://malegislature.gov/Legislators/Profile/CRF1/194th"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring per AOM tracker. Sponsors rural housing tax credit and other targeted tax provisions per malegislature.gov.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/",
+        "https://malegislature.gov/Legislators/Profile/CRF1/194th"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act, which would fully fund public higher education, signaling opposition to diverting public funds to private institutions.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per AOM tracker. No criminal justice reform legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration per AOM tracker. No voting expansion legislation co-sponsored.",
+      "sources": [
+        "https://actonmass.org/legislators/christopher-flanagan/"
+      ]
+    }
+  ]
+}

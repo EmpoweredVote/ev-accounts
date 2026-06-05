@@ -1,0 +1,95 @@
+{
+  "politician_id": "03e35156-c179-4dd5-9c8c-8d418976914e",
+  "stances": [
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Sponsored H.2904 (fossil fuel divestment for independent retirement systems), H.2488 (dry cask spent nuclear fuel monitoring), and H.2661 (public health standards for nuclear power plant communities). Pattern of bills restricting fossil fuel investment and nuclear safety oversight consistent with rapid clean energy transition.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Sponsored H.2904 (fossil fuel divestment from retirement systems) and environmental legislation showing strong preference for moving away from fossil fuels. Cape Cod context also motivates strong environmental protection stances.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Bills/194/H2904"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Sponsored extensive housing legislation including H.4410 and H.4411 (housing in seasonal communities), H.4288-H.4291 (housing trust funds in Chatham), H.4311 (year-round rental housing trust in Provincetown), H.4318 (attainable housing in Harwich), and H.4576-H.4577 (real estate transfer fees). Consistent with building affordable housing units and expanding rental assistance.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Sponsored H.776 — 'An Act regarding racial and ethnic status protections for seniors' — which adds protections for seniors based on race, ethnicity, sexual orientation, gender identity, and HIV status. Also sponsored H.3433 (Commission on the Status of Women). Active in expanding civil rights protections.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Bills/194/H776"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "No Medicare for All co-sponsorship found. Sponsored H.2489 (inflammatory breast cancer awareness in nursing education) and H.5188 (special commission on unemployment insurance access). Healthcare bills are narrow/incremental rather than systemic. New legislator (2025) with limited record.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "No Safe Communities Act co-sponsorship found. No immigration-specific legislation in bill list. New legislator focused heavily on Cape Cod local issues. Insufficient evidence for stronger score.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "No Abortion Access Act co-sponsorship found. No abortion-specific legislation authored. New legislator (2025) with thin record. As a Democrat who did not sign on, default to current access without active expansion.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "No Voting Rights Restoration co-sponsorship found. Sponsored H.835 (ranked choice voting for Easthampton) shows willingness to expand voting options at the local level — but actually that is Gómez's bill. No RCV or voting access bills by Luddy found. Default current standards.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "No Stop Corporate Offshoring co-sponsorship found. Cape Cod-focused local bills do not address tax policy broadly. No progressive revenue bills authored. Default current rates.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ]
+    }
+  ]
+}

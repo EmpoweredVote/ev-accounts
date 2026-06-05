@@ -1,0 +1,105 @@
+{
+  "politician_id": "1e83f9fc-43c9-4568-937d-94383acdc117",
+  "stances": [
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker. Signals priority for public institutional funding and opposition to diverting taxpayer money to private institutions.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/",
+        "https://malegislature.gov/Legislators/Profile/BMA1/Bills"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) per Act on Mass tracker. This is the strongest healthcare coverage position — support for a single-payer system covering all Americans.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsorship of Medicare for All (H.1239) implies support for expanding Medicare to cover everyone regardless of age — the most expansive Medicare position.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 2,
+      "reasoning": "Co-sponsored Age of Criminal Majority to 21 per Act on Mass tracker. Did not co-sponsor the Prison Moratorium. Signals support for reducing incarceration through diversion rather than outright ban on new capacity.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act per Act on Mass. MA House Democrat baseline without that co-sponsorship is first-trimester access under current law.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable by 2045 per Act on Mass. No sponsored bills found addressing climate policy systematically. Baseline for non-co-sponsors is maintaining current energy policy.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable by 2045. No evidence of strong fossil fuel expansion or phase-out stance. Baseline for MA House Dems without renewable co-sponsorship.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act per Act on Mass. No evidence of expansive immigration reform position. Baseline for MA House Democrats.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No evidence of sanctuary policy support or ICE cooperation stance.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring per Act on Mass. No progressive tax co-sponsorships found. Sponsored H.1080 (copay assistance for branded drugs) — consumer protection focus rather than progressive revenue.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "No co-sponsorship of tenant protection bills found. No housing-specific bills in sponsored legislation. Baseline for MA House Dems without tenant protection co-sponsorships.",
+      "sources": [
+        "https://actonmass.org/legislators/brian-ashe/"
+      ]
+    }
+  ]
+}

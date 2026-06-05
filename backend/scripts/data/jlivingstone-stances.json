@@ -1,0 +1,41 @@
+{
+  "politician_id": "852e4a21-5750-4ac8-ba06-0376c5a31685",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act (H.1599), which would ensure legal access to abortion at all stages of pregnancy with public funding — mapping to the most expansive access position on the scale.",
+      "sources": [
+        "https://actonmass.org/legislators/jay-livingstone"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which commits Massachusetts to phasing out fossil fuels and rapidly transitioning to renewable energy — aligning with a 2045 clean-energy deadline rather than an immediate ban.",
+      "sources": [
+        "https://actonmass.org/legislators/jay-livingstone"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, signaling support for stopping new fossil fuel permits as part of a clean-energy transition rather than maintaining current production levels.",
+      "sources": [
+        "https://actonmass.org/legislators/jay-livingstone"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 1,
+      "reasoning": "Co-sponsored the Prison Moratorium bill, which would halt new prison and jail construction and redirect resources to community-based alternatives — the most expansive reform position on the scale.",
+      "sources": [
+        "https://actonmass.org/legislators/jay-livingstone"
+      ]
+    }
+  ]
+}

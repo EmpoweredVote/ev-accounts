@@ -1,0 +1,23 @@
+{
+  "politician_id": "f5ab360a-7ec0-4af9-8d9a-1eb17e842b9f",
+  "stances": [
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which commits Massachusetts to a full transition to renewable energy by 2045 and away from fossil fuel dependence.",
+      "sources": [
+        "https://actonmass.org/legislators/david-biele"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which implies phasing out new fossil fuel permits as the state transitions to 100% renewable energy.",
+      "sources": [
+        "https://actonmass.org/legislators/david-biele"
+      ]
+    }
+  ]
+}

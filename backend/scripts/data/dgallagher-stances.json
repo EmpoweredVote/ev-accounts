@@ -1,0 +1,60 @@
+{
+  "politician_id": "17035eb6-e7d3-4372-9b96-0741adb57468",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Not tracked by Act on Mass. Sponsored H.1703 (prison mitigation fund) and local municipal bills. No evidence of healthcare-specific legislation for or against M4A. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DCG2"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Sponsored H.5525 (tax exemption for veterans clubs). No progressive revenue or tax-cut legislation found. Limited legislative record focused on local and veterans issues.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DCG2/Bills"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "No election legislation found in sponsored bills. Not tracked by Act on Mass. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DCG2"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Sponsored H.1703 (prison mitigation fund for municipalities hosting correctional facilities), indicating pragmatic engagement with incarceration costs but no reform or moratorium legislation. Moderate default.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/H1703",
+        "https://malegislature.gov/Legislators/Profile/DCG2/Bills"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "No housing legislation found in sponsored bills beyond municipal infrastructure (H.3997 suburban infrastructure fund). Not on Act on Mass tracker. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DCG2/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Not tracked by Act on Mass. No immigration legislation found in sponsored bills. Moderate Democrat default for a district-focused legislator.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/DCG2"
+      ]
+    }
+  ]
+}

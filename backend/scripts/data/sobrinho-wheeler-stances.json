@@ -1,0 +1,75 @@
+{
+  "politician_id": "ad060f52-145c-41e3-8bd1-c454ac1ed46c",
+  "stances": [
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 4,
+      "reasoning": "Co-sponsored the 3+3 amendment allowing 4 stories citywide with no lot-size minimum, and tabled a neighborhood-feedback requirement citing lawsuit-delay risk (Jan 2025). His push for the most permissive upzoning proposal reflects a strong pro-density position with streamlined approvals.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 4,
+      "reasoning": "Pushed the most permissive upzoning proposal on the council and explicitly opposed procedural steps (neighborhood feedback requirements) that could slow housing construction. His framing centers on removing barriers to development rather than managing growth pace.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "rent-regulation",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "value": 2,
+      "reasoning": "Co-chairs the Housing Committee that held broker-fee regulation hearings; his 3+3 zoning argument centered on anti-displacement — protecting affordable triple-deckers from demolition. His record reflects strengthening tenant protections and extending stabilization coverage alongside supply expansion.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/", "https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/"]
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "value": 2,
+      "reasoning": "Voted NO on restoring two-way car traffic on Garden Street (Apr 2025), defending protected two-way bike lanes and pedestrian safety. Consistent support for multimodal investment and bike infrastructure over car-centric road design.",
+      "sources": ["https://www.cambridgeday.com/2026/04/29/garden-street-tight-vote/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "homelessness-response",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "value": 2,
+      "reasoning": "Pushed a 'yes and' framing against shelter closure in April 2025, advocating for expanding services rather than accepting budget cuts to homelessness programs. Reflects shelter and services as the primary strategy with no support for enforcement-first approaches.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "value": 2,
+      "reasoning": "Voted NO on police surveillance tech (LPRs and phone hacker) in the 6-3 February 2025 vote; challenged a false police claim about gun mandate requirements; questioned arming school resource officers. Favors maintaining staffing while shifting non-violent responses rather than expanding police budget.",
+      "sources": ["https://www.cambridgeday.com/2025/02/04/fears-of-increasingly-totalitarian-government-cited-when-cambridge-police-ask-for-more-tech/", "https://www.cambridgeday.com/2025/03/30/answers-expected-on-police-request-for-new-guns-are-delayed-again-until-mondays-council-meeting/"]
+    },
+    {
+      "topic_key": "economic-development",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "value": 2,
+      "reasoning": "Backed the Rise Up Cambridge revival (direct guaranteed income for ~2,000 families) over corporate tax incentives as the primary economic development tool. His economic approach centers on direct support for residents rather than subsidies to attract large employers.",
+      "sources": ["https://www.cambridgeday.com/2025/04/28/cambridge-leaders-weigh-reviving-cash-program-for-lower-income-families-in-the-next-fiscal-year/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 2,
+      "reasoning": "Aligned with Cambridge sanctuary policy; explicitly framed the council's role as standing up for residents against Trump administration immigration enforcement. Consistent with court-ordered-detainer-only compliance and protection of undocumented community members.",
+      "sources": ["https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/", "https://www.cambridgeday.com/2025/02/03/know-your-rights-trainings-draw-hundreds-worried-over-trump-attacks-on-immigrants/"]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Championed the 3+3 amendment for more affordable units in the zoning ordinance; backed 96 permanent supportive housing units; supported the Rise Up Cambridge revival. His approach combines publicly funded housing, affordability requirements on new development, and supply expansion.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/04/28/cambridge-leaders-weigh-reviving-cash-program-for-lower-income-families-in-the-next-fiscal-year/"]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Challenged an anti-LGBT/anti-Muslim advisory board reappointment in November 2024; aligned with city resistance to DEI grant conditions. Consistent pattern of strengthening civil rights enforcement and addressing systemic discrimination.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

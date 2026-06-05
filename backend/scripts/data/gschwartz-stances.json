@@ -1,0 +1,45 @@
+{
+  "politician_id": "8167ef8d-b8c8-44aa-86a2-9128c9078547",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Not found on Act on Mass (new legislator, 12th Middlesex, elected 2024). Sponsored multiple healthcare access bills including H.285 (healthcare quality for youth), H.2537 (primary care access), H.2229 (substance abuse disorder equity). No Medicare for All co-sponsorship found. Focused on access within current system.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/G_S1",
+        "https://malegislature.gov/Legislators/Profile/G_S1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Not found on Act on Mass. Sponsored H.1046 (eliminate combined sewer overflows) and H.3564 (natural gas infrastructure replacement projects). H.3564 addresses gas infrastructure replacement for safety/reliability rather than phaseout. No 100% Renewable co-sponsorship found.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/G_S1",
+        "https://malegislature.gov/Legislators/Profile/G_S1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "H.3564 (natural gas infrastructure replacement projects) addresses infrastructure safety, not a fossil fuel ban. No evidence of sponsoring renewable energy legislation or anti-fossil fuel bills. Default maintain current production with regulations.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/G_S1",
+        "https://malegislature.gov/Bills/194/H3564"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "No progressive criminal justice legislation found. H.1955 (decriminalization of fentanyl test strips) shows harm-reduction orientation but is not a decarceration bill. No Prison Moratorium or Age of Criminal Majority co-sponsorship found.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/G_S1",
+        "https://malegislature.gov/Legislators/Profile/G_S1/Bills"
+      ]
+    }
+  ]
+}

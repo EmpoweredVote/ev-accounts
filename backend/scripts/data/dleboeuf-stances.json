@@ -1,0 +1,155 @@
+{
+  "politician_id": "3ca6c1b2-eec3-4e28-991d-fce8b6b67354",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) per malegislature.gov co-sponsor list — among the most progressive positions on healthcare.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) which expands Medicare to all residents regardless of age.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring bill per Act on Mass tracker — the most progressive position on taxing corporations and closing loopholes.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored both the 100% Renewable Energy by 2045 bill and Environmental Justice bill per Act on Mass tracker.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill per Act on Mass, indicating support for stopping new fossil fuel permits as part of a transition.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored Safe Communities Act (H.2288) per malegislature.gov — prohibits local immigration enforcement cooperation with federal agencies.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored Safe Communities Act (H.2288) which significantly limits ICE deportation cooperation.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored H.2288 (Safe Communities Act) prohibiting local law enforcement cooperation with federal immigration enforcement.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Co-sponsored Lift the Ban on Local Tenant Protections per Act on Mass tracker, supporting building millions of affordable units and stronger tenant protections.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "rent-regulation",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "value": 2,
+      "reasoning": "Co-sponsored Lift the Ban on Local Tenant Protections per Act on Mass tracker — this bill would remove the state preemption of local rent control, consistent with strengthening rent stabilization.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 1,
+      "reasoning": "Co-sponsored the Prison Moratorium (H.1795) per Act on Mass tracker — a moratorium on building new prisons or jails for 5 years, aligning with redirecting incarceration funding into community programs.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf",
+        "https://actonmass.org/bills/prison-moratorium"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Co-sponsored Voting Rights Restoration per Act on Mass tracker, indicating support for expanding early voting and mail-in voting access.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass tracker.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Despite being one of the most progressive co-sponsors overall, did NOT co-sponsor the Abortion Access Act per Act on Mass tracker. Aligns with maintaining current MA abortion protections without actively championing further expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "Co-sponsored the Healthy Youth Act (LGBTQ+-inclusive sex ed) per Act on Mass tracker. Strong LGBTQ+ supporter consistent with full federal protections for same-sex marriage.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Co-sponsored the Sunlight Act and Public Records Law per Act on Mass tracker, indicating support for transparency in political spending rather than banning or drastically limiting private money.",
+      "sources": [
+        "https://actonmass.org/legislators/david-leboeuf"
+      ]
+    }
+  ]
+}

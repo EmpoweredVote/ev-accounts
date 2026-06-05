@@ -1,0 +1,81 @@
+{
+  "politician_id": "891030da-39e2-496f-8a20-72aeb27093ba",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships on any Act on Mass bills including Medicare for All. As Third Assistant Minority Leader (Republican), consistent with limited government healthcare assistance only for those who cannot afford it.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian",
+        "https://malegislature.gov/Legislators/Profile/DKM1"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring per Act on Mass. Sponsored H.3200 (pet adoption tax credits), H.3202 (sales tax exemption for personal safety devices), H.3203 (gun safe tax deduction) — favoring targeted tax cuts rather than corporate tax increases.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian",
+        "https://malegislature.gov/Legislators/Profile/DKM1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 4,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 or Environmental Justice per Act on Mass. Republican who sits on the Global Warming and Climate Change committee but has sponsored no climate legislation — consistent with letting market forces drive the transition.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian",
+        "https://malegislature.gov/Legislators/Profile/DKM1"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 4,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy per Act on Mass. No evidence of support for restricting fossil fuel permits.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Safe Communities Act per Act on Mass. Republican who has not supported immigrant-protective legislation.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. Sponsored H.1906 (felony threshold increase for theft) suggesting pragmatic criminal justice approach but not reform-oriented on incarceration.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian",
+        "https://malegislature.gov/Legislators/Profile/DKM1/Bills"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Did not co-sponsor Abortion Access Act per Act on Mass. As Republican Minority Leadership member with zero progressive co-sponsorships, consistent with restricting abortion to limited exceptions.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 4,
+      "reasoning": "Did not co-sponsor the Cherish Act per Act on Mass. Republican leadership position consistent with expanding school choice and voucher programs.",
+      "sources": [
+        "https://actonmass.org/legislators/david-muradian"
+      ]
+    }
+  ]
+}

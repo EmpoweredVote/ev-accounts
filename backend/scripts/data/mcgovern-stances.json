@@ -1,0 +1,75 @@
+{
+  "politician_id": "a8f48816-2ebc-4ae4-9667-a12d4c18f5ec",
+  "stances": [
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 4,
+      "reasoning": "Voted for 9-0 multifamily upzoning (Feb 2025); backed the Affordable Housing Overlay (AHO); supported raising inclusionary requirements to 20%; endorsed by A Better Cambridge (pro-density YIMBY group). Named as one of three key leaders of the upzoning push.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 4,
+      "reasoning": "Supported an 8-0 permit streamlining vote (Feb 2024) and backed removing regulatory barriers to housing development. Consistently supports proactive permitting reform and reduced fees to grow the city's housing supply.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/", "https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/"]
+    },
+    {
+      "topic_key": "rent-regulation",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "value": 3,
+      "reasoning": "No documented rent control advocacy; supply-side orientation via A Better Cambridge endorsement. Prefers housing vouchers and inclusionary zoning (AHO) over price controls, reflecting maintenance of current tenant protections while allowing market rents on new construction.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "value": 2,
+      "reasoning": "Lead sponsor of the Cycling Safety Ordinance; earned Cambridge Bicycle Safety champion designation; voted against bike lane delay (Apr 2024) and voted to preserve the bike lane on Garden Street (Apr 2026). Consistent multimodal investment record.",
+      "sources": ["https://www.cambridgeday.com/2026/04/29/garden-street-tight-vote/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "homelessness-response",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "value": 2,
+      "reasoning": "Founded the Winter Warmth Drive (raised ~$200K for shelter); led the Ad Hoc Working Group on Homelessness proposing a low-threshold 24/7 drop-in center; made a final public plea to keep a 58-bed shelter open (Apr 2025). Shelter and services as primary strategy, with enforcement only after services offered.",
+      "sources": ["https://www.cambridgeday.com/2022/11/29/in-handling-homelessness-and-substance-abuse-foundation-exists-for-easing-the-crisis-staff-says/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "value": 3,
+      "reasoning": "Voted YES on police surveillance tech 6-3 (Feb 2025) and YES on the $570K police firearms procurement; also supports the unarmed CARE co-responder team and harm reduction programs. A moderate position — neither defund nor police-budget-expansion-first.",
+      "sources": ["https://www.cambridgeday.com/2025/02/04/fears-of-increasingly-totalitarian-government-cited-when-cambridge-police-ask-for-more-tech/", "https://www.cambridgeday.com/2025/03/30/answers-expected-on-police-request-for-new-guns-are-delayed-again-until-mondays-council-meeting/"]
+    },
+    {
+      "topic_key": "economic-development",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "value": 3,
+      "reasoning": "Pushed for local and minority vendor equity in city contracting and pressed on vacant storefronts. His economic development approach centers on targeted community-benefit agreements rather than open corporate subsidies or maximum incentives.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 2,
+      "reasoning": "Supported a welcoming community ordinance (Jul 2025) prohibiting ICE cooperation; acknowledged the current climate as 'horrible and scary' and backed Cambridge's sanctuary policy. Consistent with court-ordered-detainer-only compliance and protection of undocumented residents.",
+      "sources": ["https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/", "https://www.cambridgeday.com/2025/02/03/know-your-rights-trainings-draw-hundreds-worried-over-trump-attacks-on-immigrants/"]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Championed the Affordable Housing Overlay (AHO), raised inclusionary requirements to 20%, explored housing vouchers, and pushed permit streamlining — all combining public funding mechanisms with affordability mandates on new development.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/", "https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/"]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored the cease-fire resolution; pushed minority vendor equity in city contracting; supported the welcoming community ordinance; frames social equity through his background as a licensed social worker. Consistent pattern of strengthening civil rights enforcement and addressing systemic discrimination.",
+      "sources": ["https://www.cambridgeday.com/2024/01/30/cease-fire-resolution-is-approved-in-cambridge-protesters-police-are-biggest-city-hall-presences/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

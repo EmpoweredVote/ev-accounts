@@ -1,0 +1,2 @@
+folderName,candidateName,pdfFilename,pageNumber,scheduleType,donorName,amount,contributionDate,confidence,reasonForLowConfidence,recommendedAction
+"Stevens, Jenny",Jenny Olmes-Stevens,"CFA-4_Final2026.pdf, CFA-4_Pre-Primary2026.pdf",0,,,0,,,,"DB insert failed: new row for relation ""contributions"" violates check constraint ""chk_transparent_motivations_contributions_confidence_level"""

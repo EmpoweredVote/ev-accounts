@@ -1,0 +1,8 @@
+folderName,candidateName,pdfFilename,pageNumber,scheduleType,donorName,amount,contributionDate,confidence,reasonForLowConfidence,recommendedAction
+"Davis, Joe",Joe Davis,CFA-4_Pre-Primary2026.pdf,2,A-1,Joseph L Davis,1.08,2026-01-10,low,Amount appears unusually low and handwriting is difficult to read with certainty; date format suggests 1-10-26,Review and manually insert if valid
+"Deckard, Trent",Trent Deckard,"CFA-11_2026.pdf, CFA-4_Pre-Primary2026.pdf",0,,,0,,,,"DB insert failed: date/time field value out of range: ""2026-02-29"""
+"Oliphant, Erika",Erika Oliphant,CFA-4_Pre-Primary2026.pdf,4,A-1,Same as above,260.15,2026-02-19,low,Entry marked 'Same as above' without clear donor name; In-Kind description illegible,Review and manually insert if valid
+"Oliphant, Erika",Erika Oliphant,CFA-4_Pre-Primary2026.pdf,4,A-1,Same as above,8645.4,2026-07-19,low,Entry marked 'Same as above' without clear donor name; multiple dates listed; In-Kind description unclear,Review and manually insert if valid
+"Oliphant, Erika",Erika Oliphant,CFA-4_Pre-Primary2026.pdf,4,A-1,Same as above,1000.3,2026-03-19,low,Entry marked 'Same as above' without clear donor name; In-Kind description partially illegible,Review and manually insert if valid
+"Oliphant, Erika",Erika Oliphant,CFA-4_Pre-Primary2026.pdf,0,,,0,,,,"DB insert failed: date/time field value out of range: ""2026-02-29"""
+"Stevens, Jenny",Jenny Olmes-Stevens,CFA-4_Pre-Primary2026.pdf,2,unknown,Jenny for Bloomington,1035.7,2026-02-17,low,"This appears to be a recipient name rather than a donor; the form is Schedule B (expenditures), not contributions. The entry shows 'Sr. Research Acct.' as occupation and Jenny for Bloomington as recipient entity.",Review and manually insert if valid

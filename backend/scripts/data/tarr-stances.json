@@ -1,0 +1,159 @@
+{
+  "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+  "stances": [
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Tarr has filed multiple bills across sessions to reduce the state income tax rate and a constitutional amendment (S.12, 194th session) to cap the state income tax. He co-sponsored income tax reduction bills with Fattman and others. No support for progressive revenue measures; opposed the Stop Corporate Offshoring bill (Act on Mass tracker shows no co-sponsorships on revenue bills).",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S12",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+income+tax&Page=1",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Tarr filed S.1272 to restrict emergency shelter eligibility to US citizens and lawfully present immigrants with 12+ months of MA residency, capping benefits at 6 months. He also filed S.1776 to empower law enforcement to transfer convicted immigrants to ICE and has repeatedly filed anti-sanctuary measures. Did not co-sponsor Safe Communities Act.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S1272",
+        "https://malegislature.gov/Bills/194/S1776",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 4,
+      "reasoning": "Tarr's S.1272 restricts emergency shelter to citizens and lawful immigrants with continuous MA residency, effectively targeting undocumented migrants. S.1776 empowers law enforcement to transfer convicted immigrants to ICE custody with supervisory approval based on public safety concerns. Focus is on criminal immigrants first but aims to reduce undocumented access to services.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S1272",
+        "https://malegislature.gov/Bills/194/S1776"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 4,
+      "reasoning": "Tarr filed S.1776 requiring law enforcement to cooperate with ICE to transfer convicted criminals and S.1272 restricting emergency assistance to lawful residents. His immigration enforcement cooperation bills go beyond court-ordered detainers and proactively empower police to coordinate with ICE for convicted felons and those posing public safety threats.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S1776",
+        "https://malegislature.gov/Bills/194/S1272"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Tarr has repeatedly filed S.908 (and prior versions) establishing a healthcare insurance premium payment pool for working families — a subsidy/assistance approach that maintains the private insurance system while helping those who cannot afford coverage. He has not co-sponsored Medicare for All or a public option. Positions squarely in a regulated private market with targeted assistance framework.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S908",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Tarr has filed bills on sustaining natural lands as carbon sinks (S.669), renewable energy production technologies (S.2321), and clean energy (S.2834). He has engaged on environmental conservation but his approach is market-friendly and gradualist rather than emergency-oriented. Did not co-sponsor the 100% Renewable Energy by 2045 bill. Supports clean energy investments without declaring climate emergency or fossil fuel phase-out deadlines.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S669",
+        "https://malegislature.gov/Bills/194/S2321",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Tarr's clean energy bill (S.2834) promotes alternatives to fossil fuels including geothermal, hydrogen, and nuclear fusion. He has not filed bills to expand fossil fuel drilling or remove environmental regulations. His repeated natural lands carbon sequestration bills show acceptance of emissions-reduction goals. No ban on new permits but no expansion agenda either — consistent with maintaining current levels.",
+      "sources": [
+        "https://malegislature.gov/Bills/192/S2834",
+        "https://malegislature.gov/Bills/194/S669"
+      ]
+    },
+    {
+      "topic_key": "redistricting",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "value": 2,
+      "reasoning": "Tarr has filed independent redistricting commission bills (S.324 in multiple sessions). The commission he proposed uses direct appointments by the Governor, AG, and Secretary of State plus nominees from each legislative caucus leader (House Speaker, House Minority Leader, Senate President, Senate Minority Leader), creating a hybrid bipartisan model with equal party representation rather than a pure citizens commission.",
+      "sources": [
+        "https://malegislature.gov/Bills/187/S324",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+redistricting&Page=1"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 4,
+      "reasoning": "Tarr's housing approach consistently emphasizes streamlining permitting and removing regulatory barriers (S.1025 and prior versions in 187th–194th General Courts). He filed S.616 on Housing Priority Zones to allow development without zoning variances. His MBTA compliance bill proposes alternative paths to avoid mandatory multi-family zoning. No support for rent caps or significant public funding of housing.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S1025",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+housing+permitting&Page=1"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 4,
+      "reasoning": "Tarr has filed voter ID bills (S.320, S.339 in 187th–188th sessions) requiring identification to receive a ballot, with social security cards explicitly excluded as acceptable ID. He has not co-sponsored Voting Rights Restoration (Act on Mass tracker). His early voting funding bill (S.535) addresses municipal funding mechanics but does not broadly expand access.",
+      "sources": [
+        "https://malegislature.gov/Bills/187/S320",
+        "https://malegislature.gov/Bills/194/S535",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Tarr co-sponsored a campaign finance task force bill (SD.2647) with Fattman to investigate integrity and accountability. He filed S.507 improving reporting requirements for ballot question committees (which received a favorable committee report and was substituted with S.2898). His approach favors disclosure and transparency rather than either banning private money or removing all limits.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S507",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+campaign+finance&Page=1"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 4,
+      "reasoning": "Tarr's S.1272 caps emergency shelter at 6 months, creates criminal history screening, and requires proof of citizenship or lawful status with 12-month MA residency. It does not decriminalize homelessness or guarantee right to sleep in public, and creates an Inspector General unit to oversee migrant shelter spending. Approach emphasizes limits and oversight rather than expanding shelter access.",
+      "sources": [
+        "https://malegislature.gov/Bills/194/S1272",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+shelter+migrant&Page=1"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 3,
+      "reasoning": "Tarr has not co-sponsored progressive civil rights bills tracked by Act on Mass, including racial equity or reparations-type measures. His redistricting commission bills mention civil rights expertise as a requirement for commissioners. No bills on reparations or mandatory racial equity requirements. He operates within existing civil rights law framework without expansion or rollback.",
+      "sources": [
+        "https://actonmass.org/legislators/bruce-tarr/",
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+civil+rights&Page=1"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 3,
+      "reasoning": "Tarr filed school choice bills (S.324, S.333) in the 190th and 191st General Courts and has engaged with charter school reform. His approach appears to support some school choice mechanisms while maintaining public school funding structures — did not support the full Cherish Act (public school funding expansion) but also has not proposed universal vouchers.",
+      "sources": [
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+school+choice&Page=1",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 4,
+      "reasoning": "Tarr has filed repeated bills to expand pretrial detention for dangerous persons (S.1270, S.1271) and to expand the state DNA database across multiple sessions. His approach favors tighter pretrial detention rules, not bail reform or alternatives to incarceration. He did not co-sponsor Age of Criminal Majority, Life without Parole reform, Prison Moratorium, or Voting Rights Restoration bills.",
+      "sources": [
+        "https://malegislature.gov/Bills/Search?SearchTerms=Tarr+bail+pretrial&Page=1",
+        "https://actonmass.org/legislators/bruce-tarr/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act. As a long-serving moderate Democrat and Assistant Majority Leader who chairs Senate Rules, she has not championed expanded abortion access legislation; MA's 2020 ROE Act passed without her as lead sponsor.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All. Has sponsored health insurance transparency and patient reimbursement equity bills (S.780-S.784), indicating support for reforming the current system rather than replacing it.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely",
+        "https://malegislature.gov/Legislators/Profile/JBL0"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708/S.1925), targeting large multinational corporations' offshore tax avoidance with up to $400 million in new revenue.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating support for public school funding over private voucher diversion.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the 100% Renewable Energy by 2045 bill. Serves on the Senate Committee on Global Warming and Climate Change, suggesting engagement with climate issues but without endorsing a mandate for rapid fossil fuel phase-out.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045. No evidence of supporting fossil fuel expansion either; position consistent with maintaining current regulations and gradual transition.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No evidence of proactive ICE cooperation or sanctuary ordinance support; position consistent with following federal law without proactive local enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No public statements indicating a position at either extreme on deportation enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No evidence of bills to significantly expand or restrict legal immigration.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Prison Moratorium or Age of Criminal Majority to 21. Sits on the Senate Committee on Juvenile and Emerging Adult Justice, suggesting engagement with criminal justice without endorsing major incarceration reduction mandates.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections. Sponsored Massachusetts rental voucher program modifications (S.1008) and elder housing bills, reflecting targeted assistance within the existing system.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely",
+        "https://malegislature.gov/Legislators/Profile/JBL0"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act. No evidence of automatic registration or expanded early voting sponsorships.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Overdose Prevention Centers bill. No homelessness-specific legislation identified beyond elder care bills.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 3,
+      "reasoning": "Did not co-sponsor major civil rights expansion bills. Co-sponsored the Healthy Youth Act (comprehensive sex ed) and service animal discrimination protections; a moderate posture of maintaining current civil rights laws.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Co-sponsored the Sunlight Act (S.1963), which requires public disclosure of committee testimony, committee votes, and subjects the Governor's office to Public Records Law — a transparency/disclosure stance.",
+      "sources": [
+        "https://actonmass.org/legislators/joan-lovely",
+        "https://actonmass.org/bills/sunlight-act"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "politician_id": "44ca0b25-e4b9-4409-8407-f5119568be3e",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships on all Act on Mass tracked bills including Medicare for All. As a Republican with a minimal legislative footprint (one local retirement bill), maintains current regulated system by default.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/",
+        "https://malegislature.gov/Legislators/Profile/DHW1"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships of any healthcare expansion. As a Republican with minimal legislation, no evidence of privatization push. Moderate Republican default maintaining current programs.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships including Abortion Access Act. As a Republican who declines all progressive legislation, aligns with restrictive abortion stance consistent with GOP caucus. No public statements found.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships including Healthy Youth Act. As a Republican who declines all LGBTQ+ bills but has no anti-LGBTQ legislation, moderate Republican default of state-level determination without federal mandate.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "trans-athletes",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "value": 4,
+      "reasoning": "Declined Healthy Youth Act and all LGBTQ+ rights legislation. As a Republican who co-sponsors nothing progressive, aligns with requiring athletes to compete based on biological sex assigned at birth.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships including 100% Renewable Energy by 2045. No fossil-fuel-expansion legislation either. Minimal legislative footprint; moderate Republican default of market-driven transition.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Declined 100% Renewable Energy by 2045 and Environmental Justice bills. No drilling-expansion legislation. Minimal record supports market-forces default.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships including Safe Communities Act. Republican who declines all progressive immigration legislation. Consistent with reduced legal immigration and prioritizing enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships including Safe Communities Act. Republican caucus member with no local-immigration legislation. Consistent with honoring ICE detainers and sharing information with federal agencies.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships including Stop Corporate Offshoring. Republican who declines all progressive revenue legislation. Consistent with lower tax rates across income levels.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships including Voting Rights Restoration. Republican who declines all election-access expansion bills. Consistent with photo ID requirements and stricter voter roll maintenance.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships including Prison Moratorium. No criminal justice reform legislation. Minimal legislative record supports moderate default of upgrading facilities only as needed.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Zero co-sponsorships including Lift the Ban on Local Tenant Protections. No housing legislation found. Moderate Republican default allowing private developers to address shortages.",
+      "sources": [
+        "https://actonmass.org/legislators/donald-wong/"
+      ]
+    }
+  ]
+}

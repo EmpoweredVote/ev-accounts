@@ -1,0 +1,96 @@
+{
+  "politician_id": "d54b9791-0668-4397-b488-160d06f7c420",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Republican, Act on Mass confirmed no progressive healthcare co-sponsorships. Sponsored H.1212 (emergency insulin access), H.1215 (merged market for insured health coverage), H.1376 (healthcare oversight agency budgets) — all within current insurance system framework. Also Ranking Minority on Joint Committee on Health Care Financing.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1",
+        "https://en.wikipedia.org/wiki/Hannah_Kane"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Republican with no progressive bill co-sponsorships per Act on Mass. Serves on Public Health and Health Care Financing committees (Ranking Minority), with no reproductive rights bills authored. Republican affiliation with no abortion access support — evidence suggests restricting to cases of rape, incest, or serious health threats rather than full ban.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 4,
+      "reasoning": "Republican who co-sponsored Campaign Childcare only — no environmental bills. No 100% Renewable Energy co-sponsorship. Republican affiliation with no climate legislation suggests letting market forces drive any transition rather than active government policy.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 4,
+      "reasoning": "Republican with no climate-related legislation found. No renewable energy bills. Business owner background (Beaton Kane Construction). Conservative stance suggests expanding permits over restrictions.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Republican legislator. Sponsored H.3152 (elimination of contingency fee auditors), H.3153 (state tax return filings for annuities), H.3155 (business interest income tax deduction), and H.3154 (tax credit for food donations). Pattern of tax reduction and business-friendly tax treatment. No progressive tax bills.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Republican with no Safe Communities Act co-sponsorship and no immigration legal services bills. No evidence of immigrant-friendly legislation. Republican affiliation suggests reducing immigration and prioritizing enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Sponsored H.1987 (rape statute of limitations and DNA exception rule) — a victim's rights bill extending prosecution windows. No Prison Moratorium or Age of Criminal Majority co-sponsorship. Republican, but evidence is insufficient to score as strongly pro-incarceration. Default moderate.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 3,
+      "reasoning": "No Cherish Act co-sponsorship. Sponsored H.617 (task force to review state mandates on public schools). Republican affiliation might lean toward choice, but no voucher-specific bills found. Default moderate.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    },
+    {
+      "topic_key": "childcare",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "value": 3,
+      "reasoning": "Co-sponsored Campaign Childcare (Act on Mass) — a bipartisan bill making it easier for candidates with young children to use campaign funds for childcare. Sponsored H.615 (child care health and safety standards regulations). Evidence is limited to regulatory standards, not subsidy expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ]
+    }
+  ]
+}

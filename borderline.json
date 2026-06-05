@@ -1,0 +1,212 @@
+[
+  {
+    "name": "Kate Hogan",
+    "party": "Democrat",
+    "office": "Representative, 3rd Middlesex District",
+    "stance_count": 16,
+    "flagged_count": 16,
+    "flag_ratio_pct": 100,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Val Hoyle",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 20,
+    "flagged_count": 19,
+    "flag_ratio_pct": 95,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, economic-development, fossil-fuels, healthcare, housing, immigration, medicare/aid, redistricting, same-sex-marriage, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Andrea Salinas",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 18,
+    "flagged_count": 17,
+    "flag_ratio_pct": 94,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, same-sex-marriage, social-security, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Mark C. Montigny",
+    "party": "Democrat",
+    "office": "Senator, Second Bristol and Plymouth District",
+    "stance_count": 18,
+    "flagged_count": 17,
+    "flag_ratio_pct": 94,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, school-vouchers, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Alyson Sullivan-Almeida",
+    "party": "Republican",
+    "office": "Representative, 7th Plymouth District",
+    "stance_count": 16,
+    "flagged_count": 15,
+    "flag_ratio_pct": 94,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Peter J. Durant",
+    "party": "Republican",
+    "office": "Senator, Worcester and Hampshire District",
+    "stance_count": 15,
+    "flagged_count": 14,
+    "flag_ratio_pct": 93,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, religious-freedom, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "David Robertson",
+    "party": "Democrat",
+    "office": "Representative, 19th Middlesex District",
+    "stance_count": 15,
+    "flagged_count": 14,
+    "flag_ratio_pct": 93,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, childcare, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  },
+  {
+    "name": "Suzanne Bonamici",
+    "party": "Democrat",
+    "office": "Representative",
+    "stance_count": 24,
+    "flagged_count": 22,
+    "flag_ratio_pct": 92,
+    "dominant_value": 1,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, tariffs, taxes, trans-athletes, transportation-priorities, ukraine-support, voting-rights"
+  },
+  {
+    "name": "Kelly A. Dooner",
+    "party": "Republican",
+    "office": "Senator, Third Bristol and Plymouth District",
+    "stance_count": 21,
+    "flagged_count": 19,
+    "flag_ratio_pct": 90,
+    "dominant_value": 4,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, religious-freedom, school-vouchers, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Steve Padilla",
+    "party": "Democrat",
+    "office": "Senator",
+    "stance_count": 20,
+    "flagged_count": 18,
+    "flag_ratio_pct": 90,
+    "dominant_value": 2,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, social-security, taxes, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Emily Buss",
+    "party": "Unknown",
+    "office": "State Senator District 11",
+    "stance_count": 20,
+    "flagged_count": 18,
+    "flag_ratio_pct": 90,
+    "dominant_value": 2,
+    "flagged_topics": "campaign-finance, childcare, climate-change, deportation, economic-development, fossil-fuels, growth-and-development, healthcare, homelessness, immigration, medicare/aid, redistricting, religious-freedom, school-vouchers, taxes, trans-athletes, transportation-priorities, voting-rights"
+  },
+  {
+    "name": "John C. Velis",
+    "party": "Democrat",
+    "office": "Senator, Hampden and Hampshire District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Cynthia F. Friedman",
+    "party": "Democrat",
+    "office": "Senator, Fourth Middlesex District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, local-immigration, medicare/aid, redistricting, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "John J. Cronin",
+    "party": "Democrat",
+    "office": "Senator, Worcester and Middlesex District",
+    "stance_count": 18,
+    "flagged_count": 16,
+    "flag_ratio_pct": 89,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, redistricting, trans-athletes, voting-rights"
+  },
+  {
+    "name": "Danielle W. Gregoire",
+    "party": "Democrat",
+    "office": "Representative, 4th Middlesex District",
+    "stance_count": 16,
+    "flagged_count": 14,
+    "flag_ratio_pct": 88,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, deportation, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Joan B. Lovely",
+    "party": "Democrat",
+    "office": "Senator, Second Essex District",
+    "stance_count": 15,
+    "flagged_count": 13,
+    "flag_ratio_pct": 87,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, campaign-finance, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, voting-rights"
+  },
+  {
+    "name": "Aaron L. Saunders",
+    "party": "Democrat",
+    "office": "Representative, 7th Hampden District",
+    "stance_count": 15,
+    "flagged_count": 13,
+    "flag_ratio_pct": 87,
+    "dominant_value": 3,
+    "flagged_topics": "abortion, climate-change, deportation, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  },
+  {
+    "name": "Aaron Michlewitz",
+    "party": "Democrat",
+    "office": "Representative, 3rd Suffolk District",
+    "stance_count": 17,
+    "flagged_count": 14,
+    "flag_ratio_pct": 82,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, childcare, civil-rights, climate-change, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, school-vouchers, taxes, voting-rights"
+  },
+  {
+    "name": "Ronald Mariano",
+    "party": "Democrat",
+    "office": "Representative, 3rd Norfolk District",
+    "stance_count": 17,
+    "flagged_count": 14,
+    "flag_ratio_pct": 82,
+    "dominant_value": 3,
+    "flagged_topics": "campaign-finance, childcare, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, jail-capacity, local-immigration, medicare/aid, taxes, voting-rights"
+  },
+  {
+    "name": "Christopher J. Worrell",
+    "party": "Democrat",
+    "office": "Representative, 5th Suffolk District",
+    "stance_count": 16,
+    "flagged_count": 13,
+    "flag_ratio_pct": 81,
+    "dominant_value": 3,
+    "flagged_topics": "childcare, civil-rights, climate-change, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, local-immigration, medicare/aid, taxes, voting-rights"
+  },
+  {
+    "name": "Dawne Shand",
+    "party": "Democrat",
+    "office": "Representative, 1st Essex District",
+    "stance_count": 15,
+    "flagged_count": 12,
+    "flag_ratio_pct": 80,
+    "dominant_value": 3,
+    "flagged_topics": "childcare, climate-change, fossil-fuels, healthcare, housing, immigration, jail-capacity, local-immigration, medicare/aid, rent-regulation, taxes, voting-rights"
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "politician_id": "1d78debb-efd5-45e8-9204-06aab3076b2a",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act, which expands abortion access in Massachusetts and removes restrictions on abortion at all stages of pregnancy.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/abortion-access-act"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Co-sponsored the State House Union bill but not the Sunlight Act or other dark money/campaign finance transparency bills. No evidence of support for stronger corporate money restrictions. Scores at maintaining full disclosure requirements.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored the CARE Act (Commission for Anti-Racism and Equity in Education), which establishes systemic anti-racism review in public education — reflecting active commitment to addressing systemic discrimination.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045 and the Environmental Justice bill, reflecting support for a rapid mandatory renewable energy transition with equity considerations.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act (H.2288), which ends state and local involvement in civil immigration enforcement — effectively limiting deportation cooperation to serious criminal cases.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which requires a mandatory transition away from fossil fuels — consistent with opposing new fossil fuel permits.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239), which establishes a single-payer healthcare system covering all Massachusetts residents with no premiums, co-pays, or deductibles.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/medicare-for-all"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Co-sponsored Overdose Prevention Centers (H.1981), which establishes harm reduction facilities and connects drug users to social services including housing — a signal of decriminalization and service-based approach over criminalization.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Co-sponsored Lift the Ban on Local Tenant Protections (H.1304), which allows municipalities to enact rent control and tenant protection laws — consistent with rent caps, affordable housing requirements, and public funding approaches.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act (H.2288), which limits state immigration enforcement cooperation and protects undocumented immigrants' access to police protection and courts.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 1,
+      "reasoning": "Co-sponsored the Prison Moratorium (H.1795), the Age of Criminal Majority to 21, and Life without Parole reform — a comprehensive set of criminal justice reform bills that redirect resources away from incarceration and toward community alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/prison-moratorium"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act (H.2288), which explicitly prohibits local law enforcement from cooperating with ICE, bars immigration status inquiries, and prohibits sharing immigration status information with federal authorities.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239), which expands a single-payer system to all residents regardless of age — going beyond lowering the Medicare age to universal coverage.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/medicare-for-all"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 2,
+      "reasoning": "Co-sponsored the Healthy Youth Act (H.544), which mandates LGBTQ+-inclusive sex education. Support for LGBTQ+-affirming legislation in a state that has recognized same-sex marriage since 2004 reflects affirmation of full legal recognition.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Education), which prioritizes full public funding — consistent with opposing voucher programs that divert taxpayer money to private institutions.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708), which closes offshore tax loopholes for multinational corporations and raises approximately $400 million in progressive revenue.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens",
+        "https://actonmass.org/bills/stop-corporate-offshoring"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act (H.724). No evidence of support for expanding early voting or automatic registration. Absence on tracked voting rights bills places him at maintaining current system.",
+      "sources": [
+        "https://actonmass.org/legislators/steve-owens"
+      ]
+    }
+  ]
+}

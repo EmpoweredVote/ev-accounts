@@ -1,0 +1,61 @@
+{
+  "politician_id": "f8986c05-2e32-4184-bfb2-9d4c244ffd3a",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) per malegislature.gov co-sponsor list — supports establishing a universal single-payer system in Massachusetts.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239) which would expand Medicare to cover all residents regardless of age.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H1239/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act (H.2288) per malegislature.gov, which prohibits state and local involvement in federal immigration enforcement — consistent with significantly expanding legal protections for undocumented immigrants.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored H.2288 (Safe Communities Act) which limits cooperation with ICE deportation operations. Also co-sponsored H.3760 (higher education fairness/access bill). Strong immigrant-protective stance.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://malegislature.gov/Bills/193/H3760/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored H.2288 (Safe Communities Act) prohibiting local law enforcement cooperation with federal immigration enforcement.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored H.3760, a higher education access/fairness bill, consistent with prioritizing public education funding. Acts as a Middlesex Democrat supporting public institutions.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H3760/Cosponsor"
+      ]
+    }
+  ]
+}

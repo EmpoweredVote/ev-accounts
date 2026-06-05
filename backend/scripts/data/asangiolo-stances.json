@@ -1,0 +1,59 @@
+{
+  "politician_id": "2dcaf90d-f476-4fcf-af03-3d0a7aa5d3bf",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Not tracked on Act on Mass (new 2024 member). No abortion-related bills sponsored. No anti-abortion bills found either. Default status-quo position without evidence of the Abortion Access Act co-sponsorship.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Not tracked on Act on Mass. Sponsored H.1317 (breast pump access in financial services context) and H.1319 (behavioral health insurance) — incremental improvements to the current system. No single-payer advocacy.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Sponsored H.3938 (Massachusetts Flood Management and Mitigation Authority) — climate adaptation focused. Sponsored H.3564 (natural gas infrastructure replacement) — maintains gas infrastructure. Sponsored H.4722 (zero-emission vehicle tax credit). Mixed signals — modest climate engagement without aggressive transition stance.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Sponsored H.3564 (natural gas infrastructure replacement) — maintains existing gas infrastructure rather than phasing it out. Sponsored H.4722 (zero-emission vehicle tax) showing some clean energy support. Current-levels position.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Sponsored H.1553 (rental housing fees) — procedural housing bill. Sponsored H.5314 (condominium conversion of two-unit buildings) — market-level housing activity. No rent control advocacy or major affordability expansion bills found.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Sponsored H.1984 (juvenile custodial interrogation statements — procedural protection) and H.1985 (civil commitments and appeals). These suggest concern for due process but not a decarceration or prison expansion stance. Status-quo.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ]
+    }
+  ]
+}

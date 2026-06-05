@@ -1,0 +1,34 @@
+{
+  "politician_id": "5c36a94c-9006-4550-a37e-978a65d2725c",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Has not co-sponsored any Act on Mass priority bills including Medicare for All per the AOM tracker. Represents 13th Suffolk (Boston) as a Democrat but has maintained a moderate, procedurally focused legislative profile without backing the single-payer bill.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-hunt",
+        "https://malegislature.gov/Legislators/Profile/DJH1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Has not co-sponsored the 100% Renewable Energy by 2045 bill per Act on Mass tracker. Did sponsor H.3350 (bicycle lane expansion bill) suggesting some environmental interest but not a strong climate policy stance.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-hunt",
+        "https://malegislature.gov/Bills/193/H3350/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Has not co-sponsored the 100% Renewable Energy by 2045 bill or Environmental Justice bill per Act on Mass. Sponsored bicycle infrastructure legislation (H.3350) but has not taken a strong stance on fossil fuel policy.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-hunt"
+      ]
+    }
+  ]
+}

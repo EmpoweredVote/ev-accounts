@@ -1,0 +1,133 @@
+{
+  "politician_id": "2c53dc2c-38ae-4f39-873d-9ea1841b1c4c",
+  "stances": [
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 3,
+      "reasoning": "Co-sponsored Environmental Justice legislation, but voted against the original police reform bill (30-7 Senate vote) before supporting the compromise version — reflecting a moderate position that maintains current civil rights laws without aggressive systemic reform.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins",
+        "https://en.wikipedia.org/wiki/Nick_Collins_(politician)"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which calls for rapid clean energy transition and phase-out of fossil fuels by mid-century — one of the few progressive bills he supports.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act; no evidence of ICE cooperation either — position appears to be following federal immigration law without active state-level restriction or facilitation.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, indicating support for transitioning away from fossil fuels as part of the clean energy mandate.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All or Overdose Prevention Centers; no positive healthcare expansion signal beyond existing programs — position reflects maintaining current insurance-based system with limited assistance for those who cannot afford it.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Overdose Prevention Centers; no evidence supporting decriminalization of public sleeping or harm reduction approach — suggests reliance on existing services without active expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections; no evidence of support for rent stabilization or large-scale affordable housing mandates — position appears to favor market-based approaches.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act; no other immigration stance evidence — position reflects maintaining current federal immigration law and rules without expansion or restriction.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21; no criminal justice reform signal — position reflects maintaining current jail capacity levels with constitutional standards.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act; no evidence of active ICE cooperation but also no evidence of refusing ICE detainers — position appears to follow federal law without proactive enforcement or active resistance.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All; no Medicaid expansion signal — position reflects maintaining current Medicare/Medicaid programs without significant expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating prioritization of public education investment over private alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring, which closes multinational corporate tax loopholes and generates progressive revenue — one of the few economic-progressive bills he supports.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins",
+        "https://actonmass.org/bills/stop-corporate-offshoring/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration; no other voting access expansion signal — position appears to maintain current voter registration and access rules.",
+      "sources": [
+        "https://actonmass.org/legislators/nick-collins"
+      ]
+    }
+  ]
+}

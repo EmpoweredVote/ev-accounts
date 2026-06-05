@@ -1,0 +1,122 @@
+{
+  "politician_id": "ab975fdf-b4f1-4955-94a4-97681a2a8d08",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor Medicare for All. His sponsored bills (S.727 for living organ donors, S.728 IVF insurance coverage, S.726 mobile integrated health) show targeted healthcare coverage expansions within the existing insurance framework rather than a public takeover.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor the Abortion Access Act. His S.728 bill on IVF insurance coverage indicates he supports reproductive healthcare within the existing insurance system. As a moderate Democrat from a diverse Milton/Randolph district, his position likely reflects first-trimester access with rape/incest/health exceptions.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Driscoll co-sponsored 100% Renewable Energy by 2045 and sponsored S.2263 (clean heat standard and greenhouse gas reductions), S.2261 (green infrastructure), S.2262 (solar and energy storage permits), and S.2264 (consumer protection for residential solar). This comprehensive clean energy legislative portfolio indicates support for rapidly transitioning to renewable energy.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/100-renewable-energy-by-2045/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045 and sponsored a clean heat standard bill (S.2263). His overall legislative record on energy strongly suggests he supports stopping new fossil fuel permits and accelerating the renewable transition.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://malegislature.gov/Legislators/Profile/WJD0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 2,
+      "reasoning": "Driscoll has not co-sponsored Stop Corporate Offshoring but as a Democratic senator his budget votes align with the Democratic caucus. His sponsored consumer protection and green energy bills reflect alignment with modest tax increases on high earners while maintaining current rates for the middle class.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor Lift the Ban on Local Tenant Protections but represents a suburban district with significant housing pressure (Milton/Randolph). His sponsored legislation on senior housing and disability access suggests targeted subsidies and assistance for homebuyers rather than broad rent control.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/end-home-rule/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor the Safe Communities Act. His moderate Democratic record and suburban constituency suggest maintaining current immigration levels and rules without significant expansion or restriction.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act, which would prohibit local police from cooperating with ICE. His moderate Democratic positioning suggests following federal law as required without directing proactive enforcement or active resistance.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor Voting Rights Restoration. His moderate Democratic mainstream profile suggests support for standardizing voter ID requirements while ensuring free IDs are available to all eligible citizens.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/voting-rights-restoration/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Driscoll did not co-sponsor the Prison Moratorium or Age of Criminal Majority to 21. As chair of the Joint Committee on Emergency Preparedness and Management, his focus is on system readiness rather than expansion or abolition of incarceration.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll",
+        "https://actonmass.org/bills/prison-moratorium/"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "As a MA Democratic senator who co-sponsored the 100% Renewable Energy bill (indicating alignment with progressive Democratic caucus positions), Driscoll's position on school vouchers is consistent with the Massachusetts Democratic mainstream — prioritizing public school funding and opposing diversion to private vouchers.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Driscoll's Democratic record and his district's diversity (Milton/Randolph with significant Black communities) suggest strong support for strengthening civil rights enforcement and addressing systemic discrimination, though no specific bill co-sponsorships were found on Act on Mass.",
+      "sources": [
+        "https://actonmass.org/legislators/william-driscoll"
+      ]
+    }
+  ]
+}

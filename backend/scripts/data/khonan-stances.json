@@ -1,0 +1,59 @@
+{
+  "politician_id": "c7c8d91f-156b-42ea-93f1-7dac0c4080a4",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act (H.1599), which would enshrine legal abortion at all stages with public funding — the most expansive access position on the scale.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239), which would create a publicly funded single-payer system covering all Massachusetts residents regardless of insurance status.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239), which would expand Medicare to cover everyone regardless of age — the most expansive Medicare expansion position on the scale.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, committing to a full fossil-fuel phase-out and rapid renewable energy transition by 2045.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill, which implies ceasing new fossil fuel permits as the state transitions to clean energy.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Co-sponsored Overdose Prevention Centers legislation, which decriminalizes supervised drug consumption and represents an investment in harm-reduction services over enforcement — aligning with decriminalizing public substance use and expanding services.",
+      "sources": [
+        "https://actonmass.org/legislators/kevin-honan"
+      ]
+    }
+  ]
+}

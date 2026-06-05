@@ -1,0 +1,35 @@
+{
+  "politician_id": "b651cf67-37b4-4cbf-afcd-088010247788",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Very new legislator (2025, 6th Essex). Not found on Act on Mass. Only 2 bills found on malegislature.gov. Committees include Housing, Labor, and Transportation — no healthcare committee. Insufficient evidence for any score other than default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/HLB1",
+        "https://en.wikipedia.org/wiki/Hannah_Bowen"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Sponsored H.4568 (expanding access to the family self-sufficiency program), which supports housing stability for low-income families. Committee assignment on Joint Committee on Housing. No Lift the Ban co-sponsorship found. Aligns with providing assistance to those who need it rather than full affordable housing guarantee.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/HLB1",
+        "https://malegislature.gov/Bills/194/H4568"
+      ]
+    },
+    {
+      "topic_key": "childcare",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "value": 3,
+      "reasoning": "H.4568 (family self-sufficiency program) includes wraparound services that touch on childcare access for low-income families. No targeted childcare legislation found. Housing and Labor committee assignments. Insufficient evidence for stronger score.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/HLB1",
+        "https://malegislature.gov/Bills/194/H4568"
+      ]
+    }
+  ]
+}

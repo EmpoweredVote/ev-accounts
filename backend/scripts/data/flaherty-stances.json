@@ -1,0 +1,40 @@
+{
+  "politician_id": "34da113e-e5dc-4637-9be1-9d42a6feea93",
+  "stances": [
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 2,
+      "reasoning": "Pledged to repeal the February 2025 citywide four-plus-two upzoning, calling it something that 'makes absolutely no sense.' Advocates density near transit corridors only, not citywide by-right multifamily — reflecting modest density with design review and strong neighborhood input.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 2,
+      "reasoning": "Opposed citywide upzoning and advocates managed, transit-corridor-focused growth with financial incentives rather than blanket deregulation. His approach favors growth only where infrastructure supports it rather than streamlined permitting across the board.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "value": 3,
+      "reasoning": "Supports bike lanes 'in some cases' but has expressed parking concerns and was not endorsed by Cambridge Bicycle Safety; did not commit to completing the Cycling Safety Ordinance. Reflects a maintain-roads-while-selectively-adding-transit position rather than a transit-first approach.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "value": 3,
+      "reasoning": "Proposed a youth violence prevention program (ages 16–24) integrating Cognitive Behavioral Therapy to reduce incarceration — adding crisis-response capacity alongside existing police rather than redirecting the police budget. Reflects current funding plus crisis response teams.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Advocates financial incentives for office-to-residential conversion and transit-corridor-focused housing development — targeted subsidies and easier permitting in specific areas rather than either direct public housing construction or purely market-driven supply.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

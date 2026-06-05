@@ -1,0 +1,43 @@
+{
+  "politician_id": "a0e4e813-6c10-45d8-8f59-f444c6747b61",
+  "stances": [
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Galvin implemented no-excuse mail-in voting during COVID-19 (made permanent via the VOTES Act) and championed its implementation, stating 'It doesn't come at any cost to election integrity.' He also filed a 2025 initiative petition for same-sex day voter registration after repeated legislative failures. Massachusetts under his tenure does not require photo ID to vote.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/sjc-upholds-no-excuse-voting-by-mail/",
+        "https://commonwealthbeacon.org/politics/galvin-pursuing-ballot-question-on-same-day-voter-registration/",
+        "https://www.sec.state.ma.us/divisions/elections/voting-information/identification-requirements.htm"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 2,
+      "reasoning": "In his 2018 primary race, Galvin unilaterally stated: 'under no conditions will I take or benefit from dark money.' He urged his challenger to take a similar pledge and has enforced campaign finance disclosure requirements through his office. His position reflects strong opposition to outside dark money spending in elections.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/anatomy-of-a-smear/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 2,
+      "reasoning": "At the 2022 Secretary of State debate, Galvin stated abortion 'is a personal decision of the woman' and disputed characterizations of him as anti-abortion. Though Catholic, he has not made abortion restrictions a policy priority and has not supported legislation limiting access. His position aligns with the Massachusetts Democratic mainstream of broad legal access.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/tanisha-sullivan-bill-galvin-go-head-to-head-in-testy-debate/"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "At the 2022 Secretary of State debate Galvin stated his 'record on civil rights is pristine' and noted his work to ensure minority communities have access to voting and are counted in the Census. He has actively used his office to ensure election integrity in communities of color and has defended his office against civil rights lawsuits while maintaining these voter access programs.",
+      "sources": [
+        "https://commonwealthbeacon.org/politics/tanisha-sullivan-bill-galvin-go-head-to-head-in-testy-debate/"
+      ]
+    }
+  ]
+}

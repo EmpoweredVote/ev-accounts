@@ -1,0 +1,136 @@
+{
+  "politician_id": "f530be83-6f1b-4b04-a8c4-3a83dc35099f",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act, which ensures abortion is legal and accessible with public funding at all stages of pregnancy in Massachusetts.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), the Massachusetts single-payer bill that would provide comprehensive healthcare to all residents without premiums, co-pays, or deductibles.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708/S.1925), which would tax GILTI income to close corporate offshore tax loopholes and raise up to $400 million from large multinational corporations.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act, which supports fully funded public higher education, aligning with opposition to diverting public education funds to private institutions.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the 100% Renewable Energy by 2045 bill, but has sponsored multiple solar development, EV charging, and energy efficiency bills (S.2296-S.2302), indicating support for clean energy investment without committing to a full fossil fuel phase-out mandate.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark",
+        "https://malegislature.gov/Legislators/Profile/PWM0"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045, but filed multiple renewable energy and efficiency bills for western MA; position reflects gradual transition rather than an immediate ban on new permits or drilling.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark",
+        "https://malegislature.gov/Legislators/Profile/PWM0"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Lift the Ban on Local Tenant Protections bill; sponsored rural community development housing legislation (S.1009), suggesting a targeted subsidy and permit-easing approach rather than rent control.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark",
+        "https://malegislature.gov/Legislators/Profile/PWM0"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act, which would prevent local police from cooperating with ICE. Absence of co-sponsorship from a progressive rural Democrat suggests a follow-federal-law-but-no-proactive-enforcement posture.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No evidence of actively supporting mass deportation; the non-co-sponsorship signals focus on recent arrivals or compliance with federal law rather than sanctuary or mass deportation stances.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act. No bill sponsorships or public statements indicating a push to significantly expand or restrict legal immigration pathways.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor either the Prison Moratorium or the Age of Criminal Majority to 21 bill. No evidence of supporting jail expansion either; consistent with maintaining current programs while controlling costs.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act. Sponsored campaign finance reform bills (S.8/S.523) for voluntary expenditure caps, but no evidence of automatic voter registration or expanded mail-in voting advocacy.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark",
+        "https://malegislature.gov/Legislators/Profile/PWM0"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Overdose Prevention Centers bill; no other homelessness-specific legislation identified. Position inferred as maintaining existing services without criminalization or decriminalization mandate.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Sponsored S.8 and S.523 for voluntary campaign expenditure caps for statewide candidates — a moderate disclosure and limit approach, not a full ban on private money or strict corporate donation limits.",
+      "sources": [
+        "https://actonmass.org/legislators/paul-mark",
+        "https://malegislature.gov/Legislators/Profile/PWM0"
+      ]
+    }
+  ]
+}

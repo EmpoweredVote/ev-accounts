@@ -1,0 +1,124 @@
+{
+  "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor Medicare for All. His own bills (S.896-S.899) focus on healthcare cost accountability, hospital price transparency, and profit fairness — indicating he supports regulating costs within the existing insurance system rather than moving to a single-payer model.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://malegislature.gov/Legislators/Profile/MOM0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor the Abortion Access Act (which provides publicly funded abortion at all stages). His moderate Democratic profile from a central Massachusetts district suggests support for abortion access in the first trimester and in cases of rape/incest/health risk.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/abortion-protection/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor 100% Renewable Energy by 2045 but sponsored S.2185 on reducing emissions in transportation and multiple environmental bills (pesticide regulation, PFAS fund). This indicates investment in clean energy with gradual fossil fuel reduction rather than rapid phase-out.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://malegislature.gov/Legislators/Profile/MOM0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045. His environmental legislation focuses on specific pollutants (PFAS, pesticides, coal tar sealers) and transportation emissions, suggesting maintaining current fossil fuel levels with regulations rather than expanding or banning extraction.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://malegislature.gov/Legislators/Profile/MOM0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 2,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708/S.1925), which closes offshore tax loopholes and raises up to $400 million in new revenue. His own bills include small business tax provisions and targeted exemptions, indicating a modestly progressive approach to taxation.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/stop-corporate-offshoring/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Moore sponsored S.1016 targeting algorithmic rent fixing in rental housing and S.1015 on emergency assistance for non-residents, showing targeted intervention in housing. He did not co-sponsor the broad Lift the Ban on Local Tenant Protections bill.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://malegislature.gov/Legislators/Profile/MOM0/BillsSponsored"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor the Safe Communities Act. His record shows no bills explicitly addressing immigration, suggesting he maintains current immigration levels and rules without major expansion or restriction.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Safe Communities Act, which would restrict local police from cooperating with ICE. His record suggests following federal law without proactive enforcement or active resistance to immigration authorities.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/safe-communities-act/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor Voting Rights Restoration. His Democratic mainstream profile and central Massachusetts district suggest support for current voting laws with standardized reforms but not blanket automatic registration or enfranchising incarcerated persons.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/voting-rights-restoration/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Moore did not co-sponsor the Prison Moratorium or Age of Criminal Majority to 21 bill. His moderate Democratic record indicates support for upgrading facilities to constitutional standards without significant expansion or abolition of incarceration.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/prison-moratorium/"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Moore co-sponsored the Healthy Youth Act (inclusive LGBTQ+ sex education) and the CARE Act (anti-racism and equity in education commission), indicating active support for strengthening civil rights enforcement and addressing systemic discrimination in education.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (H.1260/S.816), which allocates $600 million in new public higher education funding and freezes tuition. This strong investment in public education reflects opposition to diverting public funds to private school vouchers.",
+      "sources": [
+        "https://actonmass.org/legislators/michael-moore",
+        "https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+      ]
+    }
+  ]
+}

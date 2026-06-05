@@ -1,0 +1,95 @@
+{
+  "politician_id": "73afbe36-aa0c-4474-a2fc-6ff13bf20d71",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Not tracked by Act on Mass. Sponsors bills on telehealth parity, cancer screening insurance coverage, and medical aid in dying — showing engagement with healthcare access within the current insurance system without single-payer advocacy.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "No Medicare expansion or privatization legislation found. Healthcare bills focus on insurance coverage improvements within current system. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Not tracked by Act on Mass. Sponsored legislation on voting rights for permanent resident aliens in Sharon (local), suggesting progressive on civic inclusion. No abortion-specific legislation found; moderate Democrat default under existing MA law.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Sponsored multiple environmental bills (plastic reduction, water contamination, mattress recycling) showing environmental consciousness. Not a full decarbonization advocate but more active than the median. Moderate-to-progressive on environment.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Environmental legislation focuses on plastics and water quality, not fossil fuel restrictions. No evidence of support for new drilling or fossil fuel bans. Moderate default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "No housing legislation found in sponsored bills. Not tracked by Act on Mass. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "No progressive revenue or tax-cut legislation found. Not tracked by Act on Mass. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Sponsored legislation allowing voting rights for permanent resident aliens in the town of Sharon — a notably progressive local voting rights measure. Suggests strong support for expanding voter access beyond current standards.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "No criminal justice legislation found in sponsored bills. Not tracked by Act on Mass. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "No immigration legislation found in sponsored bills. Sponsored local voting rights bill for permanent resident aliens, suggesting openness to immigrant civic participation. Moderate Democrat default.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ]
+    }
+  ]
+}

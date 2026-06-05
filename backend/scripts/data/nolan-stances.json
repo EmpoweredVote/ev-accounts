@@ -1,0 +1,68 @@
+{
+  "politician_id": "eeaaf186-3dc4-4ae3-b28f-6a0a0d54c585",
+  "stances": [
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 4,
+      "reasoning": "Voted YES on the 4-story citywide upzoning ordinance in February 2025 (8-1 majority) and had backed broad multifamily upzoning since 2020. Her support for citywide upzoning with streamlined approvals places her at stance 4.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 3,
+      "reasoning": "Led an Alewife development moratorium to ensure comprehensive planning before approval, framing it as 'take the time to do it better.' Supports proactive infrastructure investment ahead of growth rather than unrestricted permitting or growth limits.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "rent-regulation",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "value": 3,
+      "reasoning": "Voted yes on a real estate transfer tax (framed as a local control housing revenue tool) and supported housing vouchers, but no specific rent stabilization or rent control advocacy found. Reflects maintaining current tenant protections while allowing market rents for new construction.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "local-environment",
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "value": 2,
+      "reasoning": "Co-authored the July 2021 policy order with Siddiqui and Zondervan redefining trees as essential city infrastructure, requiring city reporting on any project affecting the tree canopy. Reflects strict protection of existing parks and canopy with required environmental offsets.",
+      "sources": ["https://www.cambridgeday.com/2021/07/30/rally-for-cambridge-trees-takes-place-monday-before-an-order-to-strengthen-the-citys-canopy/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "transportation-priorities",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "value": 3,
+      "reasoning": "Self-described 'bike supporter' but not 'bike champion'; voted in April 2024 to delay a bike lane installation while supporting the final configuration. Voted in April 2025 for a Garden Street reversion that retained the bike lane. Reflects selective transit and pedestrian improvements rather than a full transit-first posture.",
+      "sources": ["https://www.cambridgeday.com/2026/04/29/garden-street-tight-vote/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "homelessness-response",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "value": 2,
+      "reasoning": "Stated that council indecision on homelessness was 'not a respectful way to deal with people who are really struggling'; backed the unarmed CARE co-responder team as primary response. Reflects expanding shelter and services as the primary strategy.",
+      "sources": ["https://www.cambridgeday.com/2022/11/29/in-handling-homelessness-and-substance-abuse-foundation-exists-for-easing-the-crisis-staff-says/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "value": 2,
+      "reasoning": "Voted NO on police license plate readers and GrayKey phone hacker in the 6-3 February 2025 vote (progressive bloc). Proposed an unarmed CARE co-responder team as the primary tool for non-violent calls. Favors maintaining core staffing while shifting non-violent responses to alternative responders.",
+      "sources": ["https://www.cambridgeday.com/2025/02/04/fears-of-increasingly-totalitarian-government-cited-when-cambridge-police-ask-for-more-tech/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "economic-development",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "value": 3,
+      "reasoning": "Chairs the Finance Committee with a pragmatic community-benefit framing; supported broadband infrastructure investment. Her economic development approach reflects targeted incentives with community benefit requirements rather than open corporate subsidies.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Voted yes on upzoning projected to produce 660 affordable units, supported a real estate transfer tax for housing revenue, backed housing vouchers, and pushed for faster permitting. Her approach combines public funding mechanisms with affordability mandates on new development.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

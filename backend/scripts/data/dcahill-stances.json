@@ -1,0 +1,63 @@
+{
+  "politician_id": "ca6d9c06-e613-46a1-b938-0d89d488b583",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (H.1239) per Act on Mass tracker, indicating support for the current system with some regulation rather than a single-payer approach. As a Democrat he supports ACA-level protections but has not backed a full public system.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-cahill"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher ed) per Act on Mass tracker, signaling strong support for public education funding over private alternatives.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-cahill",
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored H.2288 (Safe Communities Act, 'An Act to protect the civil rights and safety of all Massachusetts residents') which prohibits local involvement in federal immigration enforcement — aligns with significantly expanding protections for undocumented immigrants.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-cahill",
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act (H.2288) which limits state cooperation with ICE deportation operations, indicating support for protecting long-term residents from deportation except for serious crimes.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://actonmass.org/legislators/daniel-cahill"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored H.2288 (Safe Communities Act) which prohibits local law enforcement from cooperating with federal immigration enforcement — a strong sanctuary position.",
+      "sources": [
+        "https://malegislature.gov/Bills/193/H2288/Cosponsor",
+        "https://actonmass.org/legislators/daniel-cahill"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 1,
+      "reasoning": "Co-sponsored the Healthy Youth Act (LGBTQ+ inclusive sex ed) per Act on Mass tracker. As a Massachusetts Democrat representing Essex County he operates in a state that has led on LGBTQ+ rights; no evidence of opposition to same-sex marriage protections.",
+      "sources": [
+        "https://actonmass.org/legislators/daniel-cahill"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "politician_id": "f392e7c6-0ab2-4834-9a57-df86541f55d3",
+  "stances": [
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per Act on Mass tracker. Sponsored H.1076 (colon cancer screening) and H.2192 (behavioral health care) — incremental healthcare improvements. No single-payer co-sponsorship indicates preference for regulated insurance system.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All. No Medicare or Medicaid expansion bills found. Default current program support without expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Abortion Access Act per Act on Mass tracker. No abortion-related legislation found. As a Democrat who did not sign on, likely supports current legal access without active expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045 and Environmental Justice per Act on Mass tracker. These co-sponsorships indicate support for rapid transition to renewable energy and phasing out fossil fuels.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045 per Act on Mass, indicating support for stopping new fossil fuel permits and transitioning to clean energy. Environmental Justice co-sponsorship reinforces this stance.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://actonmass.org/bills/100-renewable-energy-by-2045/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring Act per Act on Mass. No progressive tax legislation found. Sponsored H.479 (LLC fees) — a business-related provision. Default current rates.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (fully funded public higher education) per Act on Mass tracker. The Cherish Act would provide full public funding for higher education, reducing the role of private institutions and opposing diversion of public funds to private schools.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://actonmass.org/bills/cherish-act-fully-funded-public-higher-ed/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act per Act on Mass. No immigration-specific legislation found in bill list. Default current levels.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act. No bills addressing local immigration enforcement found. Default current law compliance.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections (confirmed red X on committee roster per Act on Mass). No housing legislation in own bill list. Default current programs with incremental support.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://actonmass.org/bills/end-home-rule/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 per Act on Mass. No criminal justice reform bills in own list. Co-sponsored Thrive Act (education reform) shows some equity orientation but no direct decarceration bills.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration per Act on Mass. No voting rights legislation found. Default current standards.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 3,
+      "reasoning": "Co-sponsored THRIVE Act (Moratorium on High-Stakes Testing) and CARE Act (Commission for Anti-Racism and Equity in Education), suggesting attention to equity in education. Co-sponsored Environmental Justice bill. Strengthens civil rights in education domain but no broad anti-discrimination legislation found.",
+      "sources": [
+        "https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ]
+    }
+  ]
+}

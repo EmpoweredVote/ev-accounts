@@ -1,0 +1,54 @@
+{
+  "politician_id": "00565708-5520-418d-afec-58a295d0d8ec",
+  "stances": [
+    {
+      "topic_key": "residential-zoning",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "value": 3,
+      "reasoning": "The February 2025 landmark zoning ordinance (four-story multifamily citywide) passed 8-1 with only Zusy dissenting — Simmons voted yes. She is noted as more moderate on density than YIMBY colleagues; she supported the four-story compromise rather than more expansive proposals, reflecting multifamily near corridors while protecting most residential zones.",
+      "sources": ["https://www.cambridgeday.com/2025/09/30/we-compromised-on-zoning-reform-because-it-was-better-for-cambridge/", "https://en.wikipedia.org/wiki/E._Denise_Simmons"]
+    },
+    {
+      "topic_key": "growth-and-development",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "value": 3,
+      "reasoning": "Voted 9-0 on BioMed Realty lab rezoning in East Cambridge with community benefit package ($20M to East End House, affordable housing contributions). Consistent support for development with community benefit conditions rather than unrestricted permitting or growth limits.",
+      "sources": ["https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/", "https://en.wikipedia.org/wiki/E._Denise_Simmons"]
+    },
+    {
+      "topic_key": "homelessness-response",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "value": 3,
+      "reasoning": "Led a May 2025 substitute budget order preserving emergency and mixed-status housing vouchers for 172 people at imminent homelessness risk, while cutting the Transition Wellness Center shelter and Rise Up program on fiscal grounds. Reflects investment in targeted shelter and outreach with enforcement of reasonable public space rules — services-first but fiscally constrained.",
+      "sources": ["https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/", "https://en.wikipedia.org/wiki/E._Denise_Simmons"]
+    },
+    {
+      "topic_key": "public-safety-approach",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "value": 4,
+      "reasoning": "Voted 6-3 YES on $570,000 police weaponry upgrade (April 2025), calling it 'modernization and not militarism.' Voted against delaying the firearms procurement and voted yes on the police budget in Finance Committee (May 2025). Consistently sides with the pro-police-budget bloc against the progressive bloc.",
+      "sources": ["https://www.cambridgeday.com/2025/03/30/answers-expected-on-police-request-for-new-guns-are-delayed-again-until-mondays-council-meeting/", "https://www.cambridgeday.com/2025/02/04/fears-of-increasingly-totalitarian-government-cited-when-cambridge-police-ask-for-more-tech/"]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 2,
+      "reasoning": "As mayor, organized internal city meetings in January 2025 to coordinate responses to ICE raids; Cambridge police refused to assist ICE agents at headquarters (May 2025). Spoke at a 2017 Cambridge City Hall anti-enforcement rally. Consistent with court-ordered-detainer-only sanctuary protection rather than proactive ICE cooperation.",
+      "sources": ["https://www.cambridgeday.com/2025/05/30/cambridge-and-somerville-are-named-on-list-identifying-sanctuary-jurisdictions-by-feds/", "https://en.wikipedia.org/wiki/E._Denise_Simmons"]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Prioritized emergency and mixed-status housing vouchers in May 2025 budget cuts to prevent families from losing housing, stating abandoning those at imminent risk 'would be a moral failure.' Decades of affordable housing advocacy including publicly funded housing preservation documented throughout her career.",
+      "sources": ["https://en.wikipedia.org/wiki/E._Denise_Simmons", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "First openly gay Black woman elected mayor in New England. Led 1980s diversity work in Cambridge school faculty. Promoted minority business owner networking throughout her tenure. Long career reflects consistent strengthening of civil rights enforcement and addressing systemic discrimination.",
+      "sources": ["https://en.wikipedia.org/wiki/E._Denise_Simmons", "https://www.cambridgeday.com/2025/10/30/cambridge-city-council-election-guide-2025/"]
+    }
+  ]
+}

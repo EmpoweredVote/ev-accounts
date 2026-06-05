@@ -1,0 +1,167 @@
+{
+  "politician_id": "ccb7cc4c-2c8f-4590-a3a2-f8e4bfbd64d5",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act on Act on Mass (which would ensure abortion access at all stages), while supporting other progressive health bills. Absence from this specific bill suggests support for abortion rights in most circumstances but not the most expansive access at all stages.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Sunlight Act or transparency-related bills on Act on Mass. Did not sign the transparency pledge. Absence of co-sponsorship places him at disclosure-only rather than actively limiting dark money or private political spending.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "childcare",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "value": 2,
+      "reasoning": "Co-sponsored Campaign Childcare on Act on Mass, indicating support for significant childcare subsidies and access expansion for low- and middle-income families.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored the Environmental Justice bill and Healthy Youth Act on Act on Mass, reflecting support for strengthening civil rights enforcement and addressing systemic discrimination in environmental and LGBTQ+ contexts. Also co-sponsored indigenous rights bills not yet confirmed; did co-sponsor Environmental Justice and Healthy Youth Act.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored both 100% Renewable Energy by 2045 and the Environmental Justice bill on Act on Mass, signaling support for a rapid transition away from fossil fuels with equity considerations.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill on Act on Mass, which would stop issuing new fossil fuel permits as part of a clean energy transition.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All on Act on Mass, indicating support for universal public healthcare covering all Massachusetts residents.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Co-sponsored Overdose Prevention Centers on Act on Mass — harm reduction infrastructure that pairs with shelter and service investment. Signals support for decriminalizing public health crises and investing in services over enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections on Act on Mass, which would have enabled rent stabilization. Co-sponsorship of other housing bills is absent. Consistent with targeted housing subsidies rather than rent caps or public housing mandates.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act on Act on Mass, which limits state cooperation with federal immigration enforcement and provides services to immigrants regardless of status. Aligns with keeping legal immigration open and providing services irrespective of documentation.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Prison Moratorium or Age of Criminal Majority to 21 on Act on Mass. Did not co-sponsor Life without Parole reform. Absence from all major criminal justice reduction bills places him at maintaining current facilities without expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act on Act on Mass, which explicitly directs Massachusetts law enforcement not to honor ICE detainers and prohibits sharing immigration status information with federal agencies.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All on Act on Mass, which would expand Medicare to cover everyone regardless of age.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "redistricting",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "value": 3,
+      "reasoning": "No evidence of co-sponsorship on independent redistricting commission legislation. Did not sign transparency pledge. No specific redistricting bills in his Senate sponsor record.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored The Cherish Act on Act on Mass — a bill to fully fund public higher education that explicitly opposes diverting taxpayer funds to private institutions.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring on Act on Mass, a progressive revenue bill targeting corporate tax avoidance to significantly raise taxes on large corporations.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "trans-athletes",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "value": 2,
+      "reasoning": "Co-sponsored the Healthy Youth Act on Act on Mass, which protects transgender youth in educational settings including school sports participation with documentation of transition.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration on Act on Mass. No co-sponsorship of automatic registration or expanded mail-in voting bills. Consistent with maintaining current voting access standards.",
+      "sources": [
+        "https://actonmass.org/legislators/jacob-oliveira"
+      ]
+    }
+  ]
+}

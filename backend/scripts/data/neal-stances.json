@@ -1,0 +1,219 @@
+{
+  "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Neal has a distinctly conservative abortion record for a Massachusetts Democrat: he voted for partial-birth abortion bans in 2000 and 2003, voted for the Stupak-Pitts Amendment restricting abortion funding in the ACA, and stated \"I have always opposed taxpayer funding of abortion. I'd keep Roe v. Wade and restrict it.\" He co-sponsored the Women's Health Protection Act in 2021 but his overall record over decades of votes places him closest to stance 4 — supporting legal abortion only in cases of rape, incest, or serious health threats.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "ai-regulation",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "value": 3,
+      "reasoning": "Neal's record as Ways and Means Ranking Member reflects mainstream Democratic positions on tech and finance accountability. He has not been a leading AI regulation voice; his 100% Biden alignment and economic record suggest support for basic safety standards and liability frameworks rather than either a free-market or heavy government-approval approach.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal"
+      ]
+    },
+    {
+      "topic_key": "campaign-finance",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "value": 2,
+      "reasoning": "Neal supports banning soft money contributions, disclosure of independent expenditures, and transparency measures. He was criticized for a $5,000-per-person Cape Cod fundraiser in 2010, showing tension between reform positions and practice. His legislative stance consistently favors limiting corporate and dark money influence.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "childcare",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "value": 2,
+      "reasoning": "Neal voted YES on paid parental leave for federal employees and his consistently progressive economic record — 100% Americans for Democratic Action rating, opposition to welfare work requirements, support for SNAP — reflects support for significantly expanding childcare subsidies for low- and middle-income families.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Neal has been rated 97% by the NAACP and 88% by the Human Rights Campaign. He supports the Equal Rights Amendment and has consistently backed anti-discrimination enforcement and affirmative action, earning a \"Hard-Core Liberal\" classification on OnTheIssues for his overall record.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Neal scored 94% lifetime and 100% in 2025 from the LCV, opposes offshore drilling and ANWR development, and supports 50% clean/carbon-free electricity by 2030. His record shows investment in clean energy and gradual fossil fuel reduction rather than an emergency ban or immediate 2030 phase-out.",
+      "sources": [
+        "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=MA&chamber=House",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Neal is rated 0% by FAIR (immigration restrictionists), supports pathway to citizenship for undocumented immigrants, and opposes border fencing. His pro-immigration record suggests a focus on deporting recent crossers while allowing long-term residents to apply for legal status rather than mass deportation.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Neal opposes offshore oil drilling and ANWR development but his Ways and Means Committee record does not show advocacy for halting all new permits. His 94% lifetime LCV score reflects maintaining current environmental regulations with incentives for renewables rather than an immediate ban on new fossil fuel extraction.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm",
+        "https://www.lcv.org/congressional-scorecard/members-of-congress/?state=MA&chamber=House"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 2,
+      "reasoning": "Neal explicitly opposed Medicare for All, telling Democrats it was \"wrong on policy and a political loser,\" and instead championed ACA expansion with pre-existing condition protections and out-of-pocket caps. He supports affordable coverage through public programs alongside regulated private insurance.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Neal's consistent support for anti-poverty programs — opposing welfare work requirements, backing SNAP expansion, supporting earned income tax credit increases — reflects a decriminalize-and-invest approach to homelessness, favoring shelter and service investment over enforcement.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 2,
+      "reasoning": "Neal voted YES on Section 8 housing voucher funding and supports revitalizing severely distressed public housing. His 97% NAACP rating and progressive economic record reflect support for rent assistance, affordable unit mandates, and public housing investment.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Neal is rated 0% by FAIR, voted to legalize DREAMers via military service, opposes border fencing, supports pathway to citizenship, and backs increased visa caps for high-skill and family-based immigration. He supports keeping legal immigration open with services available regardless of immigration status.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 2,
+      "reasoning": "Neal has sponsored stricter police accountability rules, is rated 78% by CURE (pro-rehabilitation), opposes the death penalty and supports replacing it with life imprisonment, and favors alternative sentencing over prison expansion. His record reflects strong preference for diversion and rehabilitation over expanding incarceration.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 2,
+      "reasoning": "Neal strongly opposes privatizing Medicare — voted against the Ryan Budget — and voted for SCHIP expansion. He moved to the Social Security subcommittee to fight privatization and consistently defends Medicare and Medicaid, aligning with lowering the eligibility age and expanding Medicaid rather than Medicare for All.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "redistricting",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "value": 2,
+      "reasoning": "Neal is a \"Hard-Core Liberal\" on OnTheIssues with 100% Biden alignment and a record supporting democratic accountability measures. His consistent positions on electoral fairness suggest support for independent redistricting commissions with equal party representation.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "religious-freedom",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "value": 2,
+      "reasoning": "Neal is rated 15% by the Christian Coalition, opposes school prayer and federal funding for faith-based organizations, and has consistently taken secular positions that hold religious freedom does not override civil anti-discrimination law.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "same-sex-marriage",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "value": 2,
+      "reasoning": "Neal voted twice against the Federal Marriage Amendment and consistently supports same-sex marriage. His 88% HRC rating and opposition to defining marriage as between one man and one woman reflect firm support for nationwide recognition with full federal benefits.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Neal is rated 100% by the National Education Association, opposes private and religious school vouchers, voted NO on DC opportunity scholarships, and supports free community college as an alternative. His position is to fully fund public schools and eliminate voucher programs.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "social-security",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "value": 2,
+      "reasoning": "Neal moved to the Social Security subcommittee in 2005 specifically to fight privatization, is rated 100% by Alliance for Retired Americans, and introduced the SECURE Act (2019) expanding retirement planning. He opposes raising the retirement age or privatizing and supports modest improvements to the program.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "tariffs",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "value": 3,
+      "reasoning": "Neal voted against NAFTA (1993) and fast-track bills (1995, 2002) but for the Peru FTA (2007). As Ways and Means Ranking Member he supports using tariffs selectively against currency manipulators to protect American jobs while favoring managed trade over pure protectionism.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal",
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Neal voted NO on Bush tax cuts repeatedly, is rated 100% by Citizens for Tax Justice, and supports raising estate taxes to 1990s levels. As Ways and Means Ranking Member he has consistently championed significantly raising taxes on wealthy individuals and corporations to fund public programs.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    },
+    {
+      "topic_key": "ukraine-support",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "value": 4,
+      "reasoning": "In 2023, Neal was among 49 House Democrats who voted for a measure to ban sending cluster munitions to Ukraine, breaking with the Biden administration's Ukraine weapons policy. While his overall record is not isolationist, this specific dissent from Ukraine military aid policy warrants a stance 4 (reduce aid, focus domestic priorities).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Richard_Neal"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 2,
+      "reasoning": "Neal has sponsored legislation expanding voter registration access, supports automatic voter registration, favors making Election Day a national holiday, and opposes voter ID requirements. His record reflects expanding early voting and no-excuse mail-in ballot access.",
+      "sources": [
+        "https://www.ontheissues.org/ma/Richard_Neal.htm"
+      ]
+    }
+  ]
+}

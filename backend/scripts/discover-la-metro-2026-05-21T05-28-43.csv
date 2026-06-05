@@ -1,0 +1,42 @@
+politician_id,full_name,city,office,match_count,filer_ids,committee_names,status
+f9877088-2efa-4db3-9055-1f3750318d40,Noya Wang,Alhambra,Council Member,0,,,no_match
+a12c2ac8-8b80-42cb-9299-daf06c039d16,Mary Schickling,Avalon,Council Member,0,,,no_match
+b487822a-9f5a-4d20-8bf1-16c83ecf9076,Michael Ponce,Avalon,Council Member,0,,,no_match
+eeb8aa35-04e4-4b7a-862b-b3f3f7f9895f,Yesenia De La,Avalon,Council Member,0,,,ambiguous_name
+55cc57ed-a9c0-4303-80ff-35309b9b968a,Andrew N. Mendez,Azusa,Council Member,0,,,no_match
+0226381e-8146-44c6-a1e0-d7ac1a15b79f,Alicia Romero,Bell,Council Member,0,,,no_match
+b58259bf-8703-4ddd-b487-668074a9b8ee,Jorgel Chavez,Bell Gardens,Council Member,0,,,no_match
+f56a4c3b-82a1-4879-8a99-6ff6b5fdf5bf,Leon Sanchez,Bell Gardens,Council Member,0,,,no_match
+56f1b5c2-8330-413f-b220-2816048b72bc,Melodie Szymkowski,Bradbury,Council Member,0,,,no_match
+d8973879-336a-48c7-b87c-4a3749af803b,Richard G. Barakat,Bradbury,Council Member,0,,,no_match
+c47e19eb-53cc-4de3-a0f2-d2c6882addea,Lillie Darden -,Compton,Council Member,0,,,ambiguous_name
+46b11d60-167a-4c2d-bf40-4b1df8df1dd4,Amanda Gomez,Cudahy,Council Member,0,,,no_match
+f5f6cfde-f4ee-4bdf-8b01-7f797c53ed39,Yasmine-Imani McMorrin,Culver City,Council Member,0,,,no_match
+06b1dae6-5fcf-4a1f-ba89-d06cbae5c19d,Mario Trujillo -,Downey,Council Member,0,,,ambiguous_name
+e39b0a67-2447-4d25-b207-6a6c20307d94,Martin Herrera,El Monte,Council Member,0,,,no_match
+f0ac4372-89cd-48ab-9e71-fa8364323a0c,Raymond Jackson,Hermosa Beach,Council Member,0,,,no_match
+a2c6ca8b-b596-447b-bbef-8b1698a6be9e,Larry G. Weber,Hidden Hills,Mayor,0,,,no_match
+e7a155f4-eb21-4e0f-b901-695f64ccb5cb,Casey McKeon,Huntington Beach,Council Member,0,,,no_match
+01f9f586-aac2-4c17-8f1c-faf031f7de29,Don Kennedy,Huntington Beach,Council Member,0,,,no_match
+1a228795-a2b3-4995-8fc1-bd3d141dc8c8,Mark Radecki,Industry,Council Member,0,,,no_match
+21df8452-8fcb-4d3e-aac4-09aeec996e16,Newell Ruggles,Industry,Council Member,0,,,no_match
+b095ef0c-5662-4176-b7db-9af888cdd927,Mark A. Breceda,Irwindale,Council Member,0,,,no_match
+0fbe4554-7b46-4773-9601-6d32b865e1e3,Stephanie Fossan,La Canada Flintridge,Council Member,0,,,no_match
+e1e05ece-6241-4fd2-9d44-796e908cf4bd,John Pespisa,La Habra Heights,Mayor,0,,,no_match
+c2431cc7-d700-4327-918b-867854b170ae,Sirley Cuevas,Lawndale,Council Member,0,,,no_match
+9ca53692-35ab-4445-80b0-241e3f6f2e2c,Jordan Nefulda,Los Alamitos,Council Member,0,,,no_match
+0e1d1f05-8cef-4e33-9847-d27100ddb2d4,Eddie De La,Maywood,Council Member,0,,,ambiguous_name
+9c58fb34-4148-4a48-845d-516eee02c8ca,Henry Lo,Monterey Park,Council Member,0,,,ambiguous_name
+090a9148-f355-47a3-b87d-ff56c5b6ec1c,Leah Mirsch,Rolling Hills,Council Member,0,,,no_match
+73928e53-9fd2-40ca-b340-7c545f87be3d,Pam Brown Schachter,Rolling Hills Estates,Council Member,0,,,no_match
+7fe63cdf-13a0-4150-a378-7ec6d4e0def1,Steven Ly,Rosemead,Council Member,0,,,ambiguous_name
+1d1839db-1906-4498-af2f-8ba0a255f2a3,Calvin Lo,San Marino,Council Member,0,,,ambiguous_name
+ab1dbed5-c17a-4f05-8021-8abaa5732aaf,Hunter Chang,San Marino,Council Member,0,,,no_match
+d3550d8d-754a-4966-b1b0-4b8036e75da2,William K. Rounds,Santa Fe Springs,Mayor,0,,,no_match
+c6118014-119c-419d-b996-12c563438482,Charlie Honeycutt,Signal Hill,Council Member,0,,,no_match
+a3f864ad-c303-4549-8471-fd1a7519184c,Janet Braun (District 5),South Pasadena,Mayor,0,,,ambiguous_name
+01317eb5-e154-4d54-b7f4-fc87c8be935d,Omari Ferguson,South Pasadena,Council Member,0,,,no_match
+fe1a0166-233b-4776-8824-1b6e07567ece,Leticia Lopez,Vernon,Mayor,0,,,no_match
+3f238e45-43ca-4691-bc74-0c2496823a00,Allen Wu,Walnut,Council Member,0,,,ambiguous_name
+2872d7a4-612b-4d9d-9531-699e3c344002,Letty Lopez-Viado,West Covina,Councilmember,0,,,no_match
+1bb5c062-9b9d-44de-820b-c3efe0d08222,Tony Wu,West Covina,Councilmember,0,,,ambiguous_name

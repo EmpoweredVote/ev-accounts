@@ -1,0 +1,126 @@
+{
+  "politician_id": "c0852fa6-8184-4f2d-b1cf-fde8cbf3c4b2",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act (red X on Act on Mass). No anti-abortion sponsorships found. Status-quo position — baseline for MA House Democrats who declined that bill.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (H.1239) per Act on Mass. Sponsored H.1407 (MassHealth rate parity) and H.2233 (behavioral health access), showing support for improving the current system rather than replacing it.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/",
+        "https://malegislature.gov/Legislators/Profile/AJS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per Act on Mass. Sponsored MassHealth rate parity bill (H.1407), indicating support for improving Medicaid within current structure rather than expanding eligibility.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/",
+        "https://malegislature.gov/Legislators/Profile/AJS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 (red X on AOM). No major climate bill co-sponsorships evident. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 (red X on AOM). No fossil fuel expansion or ban advocacy found.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No strong immigration advocacy or enforcement advocacy found.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No local ICE-related sponsorships. Middle position.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No sanctuary or enforcement-expansion sponsorships found.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium or Age of Criminal Majority to 21 (both red X on AOM). No prison expansion advocacy either. Status-quo.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration Act (red X on AOM). No voting expansion or restriction advocacy found.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). Sponsored H.3234-3241 (senior property tax relief, municipal tax reform), suggesting modest targeted adjustments not broad progressive revenue.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/",
+        "https://malegislature.gov/Legislators/Profile/AJS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed) per Act on Mass. Supports public education investment over voucher diversion.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections (red X on AOM). Sponsored H.5686 (housing bill) — content unclear but engaged with housing. No strong rent control stance evident.",
+      "sources": [
+        "https://actonmass.org/legislators/adam-scanlon/",
+        "https://malegislature.gov/Legislators/Profile/AJS1/Bills"
+      ]
+    }
+  ]
+}

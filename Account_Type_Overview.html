@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empowered Vote · Platform Overview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      padding: 64px 24px 72px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+
+    .eyebrow {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      color: #59B0C4;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 44px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.025em;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 52px;
+    }
+
+    /* ── Progress bar ────────────────────────────────────────────────── */
+
+    .progress-bar {
+      display: flex;
+      height: 6px;
+      gap: 4px;
+      margin-bottom: 10px;
+    }
+
+    .segment {
+      flex: 1;
+      border-radius: 999px;
+    }
+
+    .seg-yellow { background: #FED12E; }
+    .seg-teal   { background: #59B0C4; }
+    .seg-red    { background: #FF7A65; }
+
+    .progress-labels {
+      display: flex;
+      margin-bottom: 28px;
+    }
+
+    .progress-labels span {
+      flex: 1;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #555;
+      text-align: center;
+    }
+
+    /* ── Cards ───────────────────────────────────────────────────────── */
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 26px 24px 22px;
+    }
+
+    .inform .card-header { background: #F0E5A2; }
+    .connect .card-header { background: #B5E3EE; }
+    .empower .card-header { background: #FFD0C8; }
+
+    .icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .icon-circle svg { width: 26px; height: 26px; }
+
+    .circle-yellow { background: #FED12E; }
+    .circle-teal   { background: #00657C; }
+    .circle-red    { background: #FF5740; }
+
+    .card-header h2 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #1c1c1c;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .card-subtitle {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .inform .card-subtitle  { color: #9A6800; }
+    .connect .card-subtitle { color: #00657C; }
+    .empower .card-subtitle { color: #C03820; }
+
+    /* Card detail area */
+
+    .card-details {
+      background: #1e1e1e;
+      padding: 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      margin-bottom: 5px;
+    }
+
+    .detail-value {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ccc;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #2a2a2a;
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: 13px;
+      color: #ccc;
+      font-weight: 500;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-yellow { background: #FED12E; }
+    .dot-teal   { background: #59B0C4; }
+    .dot-red    { background: #FF5740; }
+
+    .why-exists {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .why-exists strong {
+      color: #888;
+      font-weight: 600;
+    }
+
+    /* ── Bottom row ──────────────────────────────────────────────────── */
+
+    .bottom-row {
+      display: flex;
+      align-items: center;
+    }
+
+    .pillar-tagline {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .pillar-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .label-inform  { color: #FED12E; }
+    .label-connect { color: #59B0C4; }
+    .label-empower { color: #FF7A65; }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .arrow {
+      color: #444;
+      font-size: 20px;
+      padding: 0 4px;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <p class="eyebrow">EMPOWERED VOTE · PLATFORM OVERVIEW</p>
+  <h1>How participation works</h1>
+  <p class="subtitle">Three levels of engagement — go as far as you choose</p>
+
+  <!-- Progress bar -->
+  <div class="progress-bar">
+    <div class="segment seg-yellow"></div>
+    <div class="segment seg-teal"></div>
+    <div class="segment seg-red"></div>
+  </div>
+  <div class="progress-labels">
+    <span>ANONYMOUS</span>
+    <span>VERIFIED &amp; PRIVATE</span>
+    <span>PUBLIC &amp; TRANSPARENT</span>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards">
+
+    <!-- Inform -->
+    <div class="card inform">
+      <div class="card-header">
+        <div class="icon-circle circle-yellow">
+          <!-- Eye icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <h2>Inform</h2>
+        <p class="card-subtitle">For everyone</p>
+      </div>
+      <div class="card-details">
+        <div>
+          <span class="detail-label">IDENTITY</span>
+          <div class="badge"><span class="dot dot-yellow"></span>Anonymous</div>
+        </div>
+        <div>
+          <span class="detail-label">LOGIN REQUIRED</span>
+          <p class="detail-value">No — open access</p>
+        </div>
+        <div>
+          <span class="detail-label">INTERACTION</span>
+          <p class="detail-value">Browse &amp; read only</p>
+        </div>
+        <div class="why-exists">
+          <strong>Why it exists:</strong> Broad access to trustworthy civic information — no barriers, no account needed.
+        </div>
+      </div>
+    </div>
+
+    <!-- Connect -->
+    <div class="card connect">
+      <div class="card-header">
+        <div class="icon-circle circle-teal">
+          <!-- Chat bubble icon -->
+          <svg viewBox="0 0 24 24" fill="white">
+            <path d="M20 2H4C2.9 2 2 2.9 2 4v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+          </svg>
+        </div>
+        <h2>Connect</h2>
+        <p class="card-subtitle">Optional participation</p>
+      </div>
+      <div class="card-details">
+        <div>
+          <span class="detail-label">IDENTITY</span>
+          <div class="badge"><span class="dot dot-teal"></span>Verified · private</div>
+        </div>
+        <div>
+          <span class="detail-label">LOGIN REQUIRED</span>
+          <p class="detail-value">Yes — authenticated account</p>
+        </div>
+        <div>
+          <span class="detail-label">INTERACTION</span>
+          <p class="detail-value">Pseudonym · 1 person = 1 voice</p>
+        </div>
+        <div class="why-exists">
+          <strong>Why it exists:</strong> Healthier, accountable conversations — real people, protected identities.
+        </div>
+      </div>
+    </div>
+
+    <!-- Empower -->
+    <div class="card empower">
+      <div class="card-header">
+        <div class="icon-circle circle-red">
+          <!-- Bullhorn / megaphone icon (replaces star) -->
+          <svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <h2>Empower</h2>
+        <p class="card-subtitle">Choose public visibility</p>
+      </div>
+      <div class="card-details">
+        <div>
+          <span class="detail-label">IDENTITY</span>
+          <div class="badge"><span class="dot dot-red"></span>Public · real name</div>
+        </div>
+        <div>
+          <span class="detail-label">LOGIN REQUIRED</span>
+          <p class="detail-value">Yes — authenticated account</p>
+        </div>
+        <div>
+          <span class="detail-label">INTERACTION</span>
+          <p class="detail-value">Public stances · discoverable</p>
+        </div>
+        <div class="why-exists">
+          <strong>Why it exists:</strong> Public accountability — help people find leaders whose values align with theirs.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom row — centered under each pillar -->
+  <div class="bottom-row">
+    <div class="pillar-tagline">
+      <span class="pillar-label label-inform">INFORM</span>
+      <span class="tagline">Explore freely</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="pillar-tagline">
+      <span class="pillar-label label-connect">CONNECT</span>
+      <span class="tagline">Join the conversation</span>
+    </div>
+    <div class="arrow">→</div>
+    <div class="pillar-tagline">
+      <span class="pillar-label label-empower">EMPOWER</span>
+      <span class="tagline">Lead publicly</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

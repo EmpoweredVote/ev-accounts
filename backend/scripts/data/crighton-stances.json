@@ -1,0 +1,140 @@
+{
+  "politician_id": "99457307-afa4-4045-aebf-06ee8b39d28f",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 1,
+      "reasoning": "Co-sponsored the Abortion Access Act, which ensures abortion is legal and publicly funded at all stages of pregnancy.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 1,
+      "reasoning": "Co-sponsored Medicare for All (H.1239/S.744), the Massachusetts single-payer bill providing comprehensive healthcare to all residents with no premiums, co-pays, or deductibles.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://actonmass.org/bills/medicare-for-all"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 1,
+      "reasoning": "Co-sponsored Stop Corporate Offshoring (H.2708/S.1925), targeting corporate GILTI income to raise up to $400 million from large multinationals using offshore tax shelters.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act for fully funded public higher education, indicating opposition to diverting public education funds to private vouchers.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 2,
+      "reasoning": "Co-sponsored the 100% Renewable Energy by 2045 bill and Environmental Justice bill. Also sponsored nature-based climate resiliency legislation (S.558) and rail electrification and EV infrastructure bills.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 2,
+      "reasoning": "Co-sponsored 100% Renewable Energy by 2045, which would stop new fossil fuel permits and rapidly transition to renewables. Also sponsored renewable energy transition and EV infrastructure legislation.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 1,
+      "reasoning": "Co-sponsored the Safe Communities Act, which would prevent local police from cooperating with ICE, prohibit immigration status inquiries, and protect immigrants from racial profiling.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which limits deportation to serious violent criminal cases while protecting long-term residents and immigrants who have not committed violent crimes.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 2,
+      "reasoning": "Co-sponsored the Safe Communities Act, which maintains immigrant access to services regardless of status and removes local law enforcement from civil immigration enforcement.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://actonmass.org/bills/safe-communities-act"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 2,
+      "reasoning": "Co-sponsored Age of Criminal Majority to 21 and chairs the Senate Committee on Juvenile and Emerging Adult Justice. Did not co-sponsor the Prison Moratorium; also sponsored postsecondary education in correctional facilities.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ]
+    },
+    {
+      "topic_key": "homelessness",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "value": 2,
+      "reasoning": "Co-sponsored the Overdose Prevention Centers bill and sponsored homelessness prevention assistance (S.961); chairs Transportation committee with focus on transit equity. Supports service investment and harm reduction over criminalization.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Lift the Ban on Local Tenant Protections bill. Sponsored a YIMBY-style 'Yes in My Back Yard' development bill (S.962) and green retrofit for low-income housing — reflecting a supply-expansion rather than rent-control approach.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton",
+        "https://malegislature.gov/Legislators/Profile/BPC0"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Voting Rights Restoration Act. Sponsored voting time-off protections for workers but no evidence of automatic registration or expanded mail-in voting legislation.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton"
+      ]
+    },
+    {
+      "topic_key": "civil-rights",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "value": 2,
+      "reasoning": "Co-sponsored the THRIVE Act and CARE Act, and sponsored curriculum inclusivity legislation. Chairs Juvenile and Emerging Adult Justice Committee. Consistent support for addressing systemic discrimination.",
+      "sources": [
+        "https://actonmass.org/legislators/brendan-crighton"
+      ]
+    }
+  ]
+}

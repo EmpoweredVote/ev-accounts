@@ -1,0 +1,146 @@
+{
+  "politician_id": "e2daa3aa-02b6-4a4d-859b-fb75f674625b",
+  "stances": [
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 3,
+      "reasoning": "Did not co-sponsor the Abortion Access Act (red X on Act on Mass). No evidence of restrictive anti-abortion sponsorships either. Default status-quo position for a MA House Democrat who declined the progressive bill.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All (H.1239) per Act on Mass. No single-payer advocacy found. Status-quo position — baseline for MA House Democrats who declined that bill.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Medicare for All per Act on Mass. No evidence of expansion advocacy or privatization advocacy. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 per Act on Mass. Sponsored H.3569 (carbon emissions and nuclear energy) and H.2331 (solar energy zoning), suggesting engagement with energy policy but not at the aggressive transition level.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Did not co-sponsor 100% Renewable Energy by 2045 (red X on AOM). Sponsored H.3569 on carbon emissions/nuclear and H.3568 (forest clearcutting prohibition), suggesting incremental environmental engagement without a drilling ban stance.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No strong immigration advocacy or enforcement sponsorships found. Sponsored H.4148 (noncitizen voting in Shutesbury — local), suggesting some openness to immigrant inclusion but declining the major immigration reform bill.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "local-immigration",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM), which would limit local ICE cooperation. No ICE-enforcement sponsorships either. Middle position — not limiting cooperation but not mandating it.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "deportation",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Safe Communities Act (red X on AOM). No evidence of either sanctuary-style protections or enhanced enforcement advocacy.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Prison Moratorium (red X on AOM). No co-sponsorship of Age of Criminal Majority to 21. No prison expansion advocacy either. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Voting Rights Restoration Act (red X on AOM). Sponsored H.4148 allowing noncitizen voting in Shutesbury, suggesting some expansion interest but declined the main voting rights bill.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Stop Corporate Offshoring (red X on AOM). No progressive revenue bills sponsored. Status-quo position.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 1,
+      "reasoning": "Co-sponsored the Cherish Act (Fully Funded Public Higher Ed) per Act on Mass. This bill prioritizes public education funding over voucher diversion.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections (red X on AOM). Sponsored H.1565 (mobile home rent control board training), showing modest engagement with tenant issues without endorsing the full rent control expansion.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "rent-regulation",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "value": 3,
+      "reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections (red X on AOM). Sponsored H.1565 on mobile home park rent control training — modest, not a full rent control expansion stance.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/",
+        "https://malegislature.gov/Legislators/Profile/ALS1/Bills"
+      ]
+    },
+    {
+      "topic_key": "childcare",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "value": 2,
+      "reasoning": "Co-sponsored the Cherish Act (public higher ed funding) and THRIVE Act. No Campaign Childcare co-sponsorship per AOM, but no evidence of opposition to childcare subsidies. Modest progressive posture based on education investment bills.",
+      "sources": [
+        "https://actonmass.org/legislators/aaron-saunders/"
+      ]
+    }
+  ]
+}

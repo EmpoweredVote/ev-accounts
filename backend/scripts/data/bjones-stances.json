@@ -1,0 +1,118 @@
+{
+  "politician_id": "a6e1a867-1e4e-449f-bb10-4f55449762bf",
+  "stances": [
+    {
+      "topic_key": "school-vouchers",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "value": 4,
+      "reasoning": "As Republican Minority Leader with zero progressive bill co-sponsorships, Jones does not support publicly funded higher education expansions. His education bills (H.609-H.614) focus on school funding frameworks and AI guidance without opposing private school choice.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "healthcare",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "value": 4,
+      "reasoning": "As Republican Minority Leader, Jones has not co-sponsored any progressive healthcare bills. His healthcare bills (H.1206 epinephrine injectors, H.1374 drug repository) focus on targeted interventions rather than systemic coverage expansion.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "medicare/aid",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "value": 4,
+      "reasoning": "No co-sponsorship of Medicare expansion bills. Republican Minority Leader whose healthcare bills focus on specific targeted interventions, not systemic program expansion. Consistent with partial privatization preference.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "abortion",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "value": 4,
+      "reasoning": "Sponsored H.1793 (fetal homicide crime establishment), which criminalizes harm to a fetus — a signature anti-abortion legislative move. Zero progressive co-sponsorships; Republican Minority Leader. Consistent with restricting abortion to limited circumstances.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "climate-change",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "value": 3,
+      "reasoning": "Sponsored H.3535 (zero-emission vehicle sales promotion) and H.974 (solar panel recycling), showing market-oriented climate engagement. Also sponsored H.3512 (small modular reactors study) — technology-neutral rather than fossil fuel maximization.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills"
+      ]
+    },
+    {
+      "topic_key": "fossil-fuels",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "value": 3,
+      "reasoning": "Sponsored H.3535 (ZEV sales promotion) and H.3512 (small modular reactor study). Market-driven approach to energy transition rather than pro-fossil-fuel extraction or renewable mandate.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills"
+      ]
+    },
+    {
+      "topic_key": "taxes",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "value": 4,
+      "reasoning": "Sponsored H.3141-H.3151 (business tax exemptions, inventory tax elimination, conservation credits), reflecting across-the-board tax reduction priority. Republican Minority Leader with no progressive revenue co-sponsorships.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills",
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "immigration",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships of progressive immigration bills including Safe Communities Act. Republican Minority Leader; consistent with reducing immigration and stricter enforcement stance.",
+      "sources": [
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "housing",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "value": 4,
+      "reasoning": "Sponsored H.1527-H.1536 (multiple housing bills emphasizing local control over state mandates). Approach favors market solutions and local regulatory authority rather than state-mandated affordable housing.",
+      "sources": [
+        "https://malegislature.gov/Legislators/Profile/BHJ1/Bills"
+      ]
+    },
+    {
+      "topic_key": "jail-capacity",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships of criminal justice reform bills. Republican Minority Leader with conservative public safety stance. No Prison Moratorium or Age of Criminal Majority co-sponsorships.",
+      "sources": [
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "voting-rights",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "value": 4,
+      "reasoning": "Zero co-sponsorships of election reform or voting rights bills per Act on Mass. Republican Minority Leader consistent with requiring stricter voter ID and limiting mail-in voting expansions.",
+      "sources": [
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    },
+    {
+      "topic_key": "redistricting",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "value": 4,
+      "reasoning": "As Republican Minority Leader, Jones has not co-sponsored independent redistricting commission bills. Republican approach typically supports legislative control with court oversight rather than independent commissions.",
+      "sources": [
+        "https://actonmass.org/legislators/bradley-jones/"
+      ]
+    }
+  ]
+}
