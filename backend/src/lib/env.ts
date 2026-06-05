@@ -11,9 +11,17 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),
   SUPABASE_JWT_SECRET: z.string().optional(),
-  // Deprecated: replaced by Census Geocoder in Phase 38. Kept optional to avoid
-  // startup failures on environments that still have the key set.
+  // Geocoding was replaced by Census Geocoder in Phase 38, but this key is now
+  // reused as the fallback for the Civic Information API (see GOOGLE_CIVIC_API_KEY).
+  // Kept optional to avoid startup failures on environments without it.
   GOOGLE_MAPS_API_KEY: z.string().optional(),
+  // GOOGLE_CIVIC_API_KEY: powers /api/essentials/voter-info (Google Civic
+  // Information API voterInfoQuery — VIP voting locations + sample-ballot URLs).
+  // Optional — if unset, voterInfoService falls back to GOOGLE_MAPS_API_KEY (same
+  // Google Cloud key as Places). Absent entirely = voter-info returns a safe empty
+  // payload and the UI hides the card. Requires the Civic Information API enabled
+  // on the project and a key NOT restricted to HTTP referrers (server-side call).
+  GOOGLE_CIVIC_API_KEY: z.string().optional(),
   // XP service keys — one per feature repo. Optional: undefined key = not in
   // SERVICE_KEY_MAP = 401 on all requests from that repo. Kept optional so
   // existing integration tests (health, auth, account) don't break at startup.

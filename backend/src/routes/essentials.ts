@@ -13,6 +13,7 @@ import {
 } from '../lib/essentialsService.js';
 import type { JurisdictionGeoIds } from '../lib/essentialsService.js';
 import { getElectionsByCoordinate, getElectionsByGeoIds, getCandidateById } from '../lib/electionService.js';
+import { getVoterInfo } from '../lib/voterInfoService.js';
 import { GeocodingError, geocodeAddress } from '../lib/geocodingService.js';
 import { pool } from '../lib/db.js';
 import { adminRpc } from '../lib/supabase.js';
@@ -130,6 +131,29 @@ router.get('/elections-by-address', optionalAuth, async (req: Request, res: Resp
     console.error('[GET /essentials/elections-by-address] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Failed to fetch election data' });
   }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/essentials/voter-info?address=...
+// Auth: optional — public data
+// Proxies Google Civic voterInfoQuery (VIP) for in-person voting locations and
+// official sample-ballot / election-info URLs keyed to the voter's address.
+// Always returns 200 with a normalized payload; off-cycle/no-live-election and
+// upstream errors degrade to a safe empty payload (the UI falls back to links).
+//
+// Error codes:
+//   422 VALIDATION_ERROR  — missing or empty address query parameter
+// ---------------------------------------------------------------------------
+
+router.get('/voter-info', optionalAuth, async (req: Request, res: Response): Promise<void> => {
+  const address = typeof req.query.address === 'string' ? req.query.address.trim() : null;
+  if (!address) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: 'address query parameter is required' });
+    return;
+  }
+
+  const voterInfo = await getVoterInfo(address);
+  res.json(voterInfo);
 });
 
 // ---------------------------------------------------------------------------
