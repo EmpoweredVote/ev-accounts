@@ -293,11 +293,11 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
   const mdTotal = parseInt(mdRow.total, 10);
   const mdSourced = parseInt(mdRow.sourced, 10);
   cohorts.push({
-    cohort: 'Migrations 269–271 — MD Officials (Wes Moore, Aruna Miller, Anthony Brown, Brooke Lierman, Dereck Davis)',
+    cohort: 'Migrations 269–271 — MD Officials (Wes Moore, Aruna Miller, Anthony Brown, Brooke Lierman, Dereck Davis) [Phase 103 STAX-02 scope]',
     total_stances: mdRow.total,
     sourced_stances: mdRow.sourced,
     unsourced_stances: String(mdTotal - mdSourced),
-    pct_sourced: '0.0 (0 stances — Phase 103 STAX-02 scope)',
+    pct_sourced: mdTotal > 0 ? String(Math.round((mdSourced / mdTotal) * 1000) / 10) : '0.0',
   });
 
   return cohorts;
