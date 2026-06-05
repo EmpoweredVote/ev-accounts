@@ -205,9 +205,15 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
       AND pc.topic_id = pa.topic_id
-    JOIN essentials.offices o ON o.politician_id = pa.politician_id AND o.is_vacant = false
-    JOIN essentials.districts d ON d.id = o.district_id AND d.district_type = 'NATIONAL_UPPER'
     JOIN essentials.politicians p ON p.id = pa.politician_id AND p.is_active = true
+    WHERE EXISTS (
+      SELECT 1
+      FROM essentials.offices o
+      JOIN essentials.districts d ON d.id = o.district_id
+      WHERE o.politician_id = pa.politician_id
+        AND o.is_vacant = false
+        AND d.district_type = 'NATIONAL_UPPER'
+    )
   `);
   const senRow = senResult.rows[0];
   const senTotal = parseInt(senRow.total, 10);
