@@ -629,3 +629,21 @@ All 1 senator fits in a single batch. Task 2 dispatches one research-stances age
 - **Deb Fischer politician_id:** `3149d855-8d85-4080-b0d6-fb83be500533`
 - **ai-regulation topic_id:** `666bf03d-81fc-4138-ab15-69ae734c9023`
 - **Current ai-regulation value:** `3.0` (unsourced — no context row / no sources)
+
+---
+
+## Batch 1 Research Log (Task 2)
+
+**Agent dispatched:** 2026-06-05, Deb Fischer / ai-regulation only
+**CSV output:** `backend/data/stance-research/2026-06-06-senator-remediation.csv`
+**CSV lines:** 1 (header only — no data rows)
+
+| Senator | Topic | Outcome | Note |
+|---------|-------|---------|------|
+| Deb Fischer | ai-regulation | **SKIPPED** | Extensive research (212+ press release pages, Senate Commerce Committee AI pages, Senate Armed Services, Wikipedia, Ballotpedia, multiple news outlets) found no direct statement, vote, or bill sponsorship where Fischer expressed a position on AI regulatory oversight. One AI-adjacent appearance (Fox News / Cavuto, July 2023) discussed AI only through a national security lens — insufficient to match any of the five Chair texts. |
+
+### Topics Skipped (Deletion Candidates for Task 3)
+
+| full_name | topic_key | former value | reason |
+|-----------|-----------|-------------|--------|
+| Deb Fischer | ai-regulation | 3 | no evidence found |
