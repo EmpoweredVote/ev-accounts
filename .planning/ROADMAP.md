@@ -19,8 +19,20 @@
 - ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
 - ✅ **v2.5 City Officials Expansion** — Phases 77–78 (shipped 2026-06-02; Phases 79–80 rolled into v2.6)
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
+- 🔄 **v2.7 Source Integrity** — Phases 100–104 (in progress)
 
 ## Phases
+
+<details>
+<summary>🔄 v2.7 Source Integrity (Phases 100–104) — IN PROGRESS</summary>
+
+- [ ] **Phase 100: Source Coverage Audit** — Audit report + prioritized target list
+- [ ] **Phase 101: Federal Senate Remediation** — All 100 senator stances sourced or deleted
+- [ ] **Phase 102: Federal House Remediation** — All US House rep stances sourced or deleted
+- [ ] **Phase 103: State Remediation — CA + MD** — CA legislators sourced or deleted; MD officials researched from scratch
+- [ ] **Phase 104: Local Remediation — City Officials** — All city official stances sourced or deleted; deletion log finalized
+
+</details>
 
 <details>
 <summary>✅ v1.0 MVP (Phases 1–8) — SHIPPED 2026-02-28</summary>
@@ -913,6 +925,90 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 
 </details>
 
+### v2.7 Source Integrity (Phases 100–104)
+
+---
+
+#### Phase 100: Source Coverage Audit
+
+**Goal:** The true scope of unsourced stances is known with precision — a DB audit report surfaces total stances, the % sourced, and tier breakdown; a ranked target list tells us exactly which politicians to tackle first.
+
+**Depends on:** Nothing (this phase gates all remediation phases)
+**Requirements:** SRCA-01, SRCA-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+1. A query-based audit report exists showing: total rows in `inform.politician_answers`, count and percentage of rows with at least one non-placeholder URL in the paired `inform.politician_context.sources[]`, broken down by politician tier (Federal / State / Local / City).
+2. The definition of "sourced" is operationalized and documented — a stance counts as sourced only when its context row exists AND `sources` is non-null AND contains at least one URL that is not empty or a placeholder string.
+3. A prioritized target list exists naming every politician with any unsourced stances, ranked federal → state → local → city within tier, with a flag on politicians where the majority of stances are unsourced (likely requiring full re-research rather than spot remediation).
+4. Politicians added in v2.3 (senators, 100 politicians), v2.4 (2026 candidates), v2.5 (city officials), and migration 269–271 (MD officials) are each explicitly represented in the report so their sourcing state is visible before remediation begins.
+
+---
+
+#### Phase 101: Federal Senate Remediation
+
+**Goal:** Every US Senator stance is backed by a real primary source URL or has been permanently deleted — no senator has a stance row in the DB that cannot be traced to a specific Chair text.
+
+**Depends on:** Phase 100 (target list required to scope this phase)
+**Requirements:** FEDX-01, QUAL-01, QUAL-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+1. `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pa.politician_id IN (senators) AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources,1) = 0)` returns 0 — every remaining senator stance has at least one source URL.
+2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic — the senator's known position matches the exact stance text, not just directional lean (QUAL-01 applied).
+3. A deletion log entry exists for every stance deleted during this phase, recording: politician full_name, topic_key, former value, and reason ("no evidence found" or "value incorrect and no correcting source found") — QUAL-02 applied.
+4. No senator has a source URL that is a placeholder, a Wikipedia disambiguation page, or a non-specific landing page — every URL links to a primary source (official statement, vote record, press release, floor speech).
+
+---
+
+#### Phase 102: Federal House Remediation
+
+**Goal:** Every US House representative stance is backed by a real primary source URL or has been permanently deleted — no House rep has a stance row that cannot be traced to a specific Chair text.
+
+**Depends on:** Phase 100 (target list scopes this phase); Phase 101 not required but typically sequential
+**Requirements:** FEDX-02, QUAL-01, QUAL-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+1. `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pa.politician_id IN (house reps) AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources,1) = 0)` returns 0 — every remaining House rep stance has at least one source URL.
+2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic — not directional inference (QUAL-01 applied).
+3. A deletion log entry exists for every stance deleted during this phase, with politician full_name, topic_key, former value, and reason (QUAL-02 applied).
+4. No House rep has a source URL that is a placeholder or non-specific page — every URL links to a primary source.
+
+---
+
+#### Phase 103: State Remediation — CA + MD
+
+**Goal:** Every CA state legislator (Assembly + Senate) stance is sourced or deleted; all MD officials added in migrations 269–271 have brand-new, fully-sourced stance coverage researched from scratch.
+
+**Depends on:** Phase 100 (target list scopes CA remediation; MD officials confirmed in DB)
+**Requirements:** STAX-01, STAX-02, QUAL-01, QUAL-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+1. Every CA Assembly member and CA State Senator stance row has a paired `inform.politician_context` row with at least one real source URL, or the stance row has been deleted — zero unsourced CA state legislator stances remain.
+2. Every MD official added in migrations 269–271 (MD executive branch) has stances researched and ingested from scratch using the Chair methodology — each stance paired with at least one real primary source URL in `inform.politician_context`.
+3. Every stance value added or retained for CA legislators during this phase was verified against the specific Chair text (QUAL-01 applied); every MD stance added is likewise verified against Chair text, not inferred from party affiliation.
+4. A deletion log entry exists for every CA legislator stance deleted during this phase, with politician full_name, topic_key, former value, and reason (QUAL-02 applied).
+
+---
+
+#### Phase 104: Local Remediation — City Officials
+
+**Goal:** Every city official (SF, San Jose, San Diego, Berkeley, Fremont) stance is sourced or deleted; the complete deletion log for the entire v2.7 milestone is finalized and committed.
+
+**Depends on:** Phase 100 (target list confirms city official sourcing state)
+**Requirements:** STAX-03, QUAL-01, QUAL-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+1. Every SF, San Jose, San Diego, Berkeley, and Fremont city official stance row has a paired `inform.politician_context` row with at least one real source URL, or the stance has been deleted — zero unsourced city official stances remain.
+2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic (QUAL-01 applied).
+3. The complete v2.7 deletion log is finalized — it covers every stance deleted across all remediation phases (101–104), with politician full_name, topic_key, former value, and reason per entry, and is committed to the repo or recorded in a migration comment (QUAL-02 final).
+4. A final source-coverage query run after Phase 104 confirms the overall % sourced metric increased from the Phase 100 baseline — the milestone's core goal is measurably achieved.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -947,13 +1043,6 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 | 28. VQ Confirmation Flow | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 29. Admin Controls & Integration Verification | v1.4 | 2/2 | Complete | 2026-03-15 |
 | 30. Profile Hub UI | v1.4 | 2/2 | Complete | 2026-03-16 |
-| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-23 |
-| 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
-| 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete    | 2026-06-02 |
-| 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
-| 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete    | 2026-06-04 |
-| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete   | 2026-06-04 |
-| 99. Elections Verification + Polish | v2.6 | 6/4 | Complete    | 2026-06-05 |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
@@ -1000,7 +1089,15 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 | 74. Stance Research + Ingestion | v2.3 ✅ | 3/3 | Complete | 2026-05-21 |
 | 75. Race Catalog + Candidate Records | v2.4 ✅ | 1/1 | Complete | 2026-05-22 |
 | 76. Candidate Stance Research | v2.4 ✅ | 4/4 | Complete | 2026-05-22 |
-| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete    | 2026-05-28 |
-| 78. City Stance Research | v2.5 | 2/6 | In Progress|  |
-| 79. Gap-fill Existing Politicians | v2.5 | 0/? | Pending | — |
-| 80. Campaign Finance Schema + Ingestion + API | v2.5 | 0/? | Pending | — |
+| 77. City Infrastructure + Official Records | v2.5 | 2/2 | Complete | 2026-05-28 |
+| 78. City Stance Research | v2.5 | 6/6 | Complete | 2026-06-02 |
+| 87. Stance Accuracy Audit + Agent Update | v2.6 | 2/2 | Complete | 2026-06-02 |
+| 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete | 2026-06-03 |
+| 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete | 2026-06-04 |
+| 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete | 2026-06-04 |
+| 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
+| 100. Source Coverage Audit | v2.7 | 0/? | Not started | — |
+| 101. Federal Senate Remediation | v2.7 | 0/? | Not started | — |
+| 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
+| 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
+| 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |

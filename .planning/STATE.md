@@ -6,7 +6,7 @@ status: planning
 last_updated: "2026-06-05T18:43:05.520Z"
 last_activity: 2026-06-05
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,24 +20,31 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-05 after v2.6 milestone)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Planning next milestone
+**Current focus:** v2.7 Source Integrity — Phase 100 (Source Coverage Audit)
 **Last shipped:** v2.6 Data Quality & Elections — archived 2026-06-05. All 12 requirements closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03). Gaps closed: Dooley sources fixed, Jones ukraine-support deleted, Phase 90 VERIFICATION.md updated, FEC re-run recovered 8 politicians (201→209). Archive: .planning/milestones/v2.6-ROADMAP.md.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-06-05 — Milestone v2.7 started
+Phase: 100 — Source Coverage Audit
+Plan: Not started
+Status: Roadmap defined; ready to plan Phase 100
+Last activity: 2026-06-05 — v2.7 roadmap written (Phases 100–104)
 
 ## Performance Metrics
 
-**v2.5 Scope — City Officials Expansion — IN PROGRESS**
+**v2.7 Scope — Source Integrity — IN PROGRESS**
 
-- Phases: 4 (77–80)
-- Requirements: 0/18 closed (CITY-01–08, CSTA-01–05, GAPF-01–02, FINA-01–03)
+- Phases: 5 (100–104)
+- Requirements: 0/9 closed (SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02)
 - Plans complete: 0
-- Started: 2026-05-22
+- Started: 2026-06-05
+
+**v2.6 Scope — Data Quality & Elections — COMPLETE ✅**
+
+- Phases: 5 (87, 88, 89, 90, 99)
+- Requirements: 12/12 closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03)
+- Plans complete: 19
+- Shipped: 2026-06-05
 
 **v2.4 Scope — 2026 Senate Candidates — COMPLETE ✅**
 
@@ -62,6 +69,43 @@ Last activity: 2026-06-05 — Milestone v2.7 started
 
 - Phases: 3 (66–68) ✅
 - Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
+
+### v2.7 Requirements
+
+| Req | Phase | Description |
+|-----|-------|-------------|
+| SRCA-01 | 100 | DB audit report — total stances, % sourced, breakdown by tier |
+| SRCA-02 | 100 | Prioritized target list — politicians with unsourced stances, ranked by tier + prominence |
+| FEDX-01 | 101 | Every US Senator stance: sourced or deleted (Chair methodology) |
+| FEDX-02 | 102 | Every US House rep stance: sourced or deleted (Chair methodology) |
+| STAX-01 | 103 | Every CA state legislator (assembly + senate) stance: sourced or deleted |
+| STAX-02 | 103 | MD officials in DB (migrations 269–271): research and add stances with sources from scratch |
+| STAX-03 | 104 | Every city official (SF, SJ, SD, Berkeley, Fremont) stance: sourced or deleted |
+| QUAL-01 | 101, 102, 103, 104 | Every stance updated/added: value verified against specific Chair text |
+| QUAL-02 | 101, 102, 103, 104 | Deletion log produced (politician full_name, topic_key, former value, reason) |
+
+### v2.7 Phase Dependencies
+
+```
+Phase 100 (Source Coverage Audit)
+  └── Phase 101 (Federal Senate Remediation)     — target list from 100 scopes senate work
+  └── Phase 102 (Federal House Remediation)      — target list from 100 scopes house work
+  └── Phase 103 (State Remediation — CA + MD)    — target list from 100 scopes CA work; MD is new research
+  └── Phase 104 (Local Remediation — City)       — target list from 100 confirms city state; final log here
+```
+
+### v2.7 Requirement Coverage
+
+| Phase | Requirements | Count |
+|-------|-------------|-------|
+| 100 — Source Coverage Audit | SRCA-01, SRCA-02 | 2 |
+| 101 — Federal Senate Remediation | FEDX-01, QUAL-01, QUAL-02 | 3 |
+| 102 — Federal House Remediation | FEDX-02, QUAL-01, QUAL-02 | 3 |
+| 103 — State Remediation — CA + MD | STAX-01, STAX-02, QUAL-01, QUAL-02 | 4 |
+| 104 — Local Remediation — City Officials | STAX-03, QUAL-01, QUAL-02 | 3 |
+| **Total unique** | | **9 / 9** ✓ |
+
+Note: QUAL-01 and QUAL-02 are cross-cutting methodology requirements. They are assigned to every remediation phase (101–104) because each phase is responsible for applying the Chair verification standard and logging deletions. They are not a separate deliverable phase.
 
 ### v2.5 Requirements
 
@@ -164,6 +208,14 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.7 Source Integrity Patterns (established 2026-06-05)
+
+- **"Sourced" definition**: A stance counts as sourced only when `inform.politician_context` row exists AND `sources` is non-null AND contains at least one URL that is not empty or a placeholder string. This operationalized standard was defined in Phase 100.
+- **Chair methodology**: Every stance value verified against the specific stance text for that Chair position — the politician's known position must match the exact text, not just directional lean. Never infer from party affiliation.
+- **Deletion log format**: Each deleted stance records: politician full_name, topic_key, former value, reason ("no evidence found" or "value incorrect and no correcting source found"). Log committed to repo (migration comment or standalone file).
+- **QUAL-01/QUAL-02 are cross-cutting**: These methodology requirements apply to every remediation phase. Each phase that does remediation is responsible for applying them — they are not a separate phase.
+- **Phase 100 gates all remediation**: Never start 101–104 without the target list from Phase 100. The audit reveals actual scale — remediation phases may be split further or batched differently based on what the audit finds.
 
 ### v2.5 Infrastructure Patterns (carry-forward from SF officials, migration 216)
 
@@ -367,7 +419,7 @@ Statistical audit across ~1,049 politicians, ~13,700 rows. ~204 flagged (1.5%). 
 
 ### Open Blockers
 
-None for v2.5 start.
+None for v2.7 start.
 
 **Carried forward from v1.9 (non-blocking):**
 
@@ -404,7 +456,7 @@ None for v2.5 start.
 ## Session Continuity
 
 Last session: 2026-06-05T18:19:38.606Z
-Stopped at: context exhaustion at 78% (2026-06-05)
+Stopped at: v2.7 roadmap written
 Resume file: None
 
 ## Decisions

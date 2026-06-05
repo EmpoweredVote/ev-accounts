@@ -53,21 +53,21 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SRCA-01 | — | Pending |
-| SRCA-02 | — | Pending |
-| FEDX-01 | — | Pending |
-| FEDX-02 | — | Pending |
-| STAX-01 | — | Pending |
-| STAX-02 | — | Pending |
-| STAX-03 | — | Pending |
-| QUAL-01 | — | Pending |
-| QUAL-02 | — | Pending |
+| SRCA-01 | 100 | Pending |
+| SRCA-02 | 100 | Pending |
+| FEDX-01 | 101 | Pending |
+| FEDX-02 | 102 | Pending |
+| STAX-01 | 103 | Pending |
+| STAX-02 | 103 | Pending |
+| STAX-03 | 104 | Pending |
+| QUAL-01 | 101, 102, 103, 104 | Pending |
+| QUAL-02 | 101, 102, 103, 104 | Pending |
 
 **Coverage:**
 - v2.7 requirements: 9 total
-- Mapped to phases: 0 (pending roadmap)
-- Unmapped: 9 ⚠
+- Mapped to phases: 9 ✓
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-05*
-*Last updated: 2026-06-05 after initial definition*
+*Last updated: 2026-06-05 — traceability filled after roadmap creation*
