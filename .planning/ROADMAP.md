@@ -935,9 +935,13 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 
 **Depends on:** Nothing (this phase gates all remediation phases)
 **Requirements:** SRCA-01, SRCA-02
-**Plans:** TBD
+**Plans:** 1 plan
+Plans:
+
+- [ ] 100-01-PLAN.md — Build run-source-coverage-audit.ts; run against live DB; produce 100-AUDIT-REPORT.md (SRCA-01) and 100-TARGET-LIST.csv (SRCA-02)
 
 **Success Criteria** (what must be TRUE):
+
 1. A query-based audit report exists showing: total rows in `inform.politician_answers`, count and percentage of rows with at least one non-placeholder URL in the paired `inform.politician_context.sources[]`, broken down by politician tier (Federal / State / Local / City).
 2. The definition of "sourced" is operationalized and documented — a stance counts as sourced only when its context row exists AND `sources` is non-null AND contains at least one URL that is not empty or a placeholder string.
 3. A prioritized target list exists naming every politician with any unsourced stances, ranked federal → state → local → city within tier, with a flag on politicians where the majority of stances are unsourced (likely requiring full re-research rather than spot remediation).
@@ -954,6 +958,7 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 **Plans:** TBD
 
 **Success Criteria** (what must be TRUE):
+
 1. `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pa.politician_id IN (senators) AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources,1) = 0)` returns 0 — every remaining senator stance has at least one source URL.
 2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic — the senator's known position matches the exact stance text, not just directional lean (QUAL-01 applied).
 3. A deletion log entry exists for every stance deleted during this phase, recording: politician full_name, topic_key, former value, and reason ("no evidence found" or "value incorrect and no correcting source found") — QUAL-02 applied.
@@ -970,6 +975,7 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 **Plans:** TBD
 
 **Success Criteria** (what must be TRUE):
+
 1. `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pa.politician_id IN (house reps) AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources,1) = 0)` returns 0 — every remaining House rep stance has at least one source URL.
 2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic — not directional inference (QUAL-01 applied).
 3. A deletion log entry exists for every stance deleted during this phase, with politician full_name, topic_key, former value, and reason (QUAL-02 applied).
@@ -986,6 +992,7 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 **Plans:** TBD
 
 **Success Criteria** (what must be TRUE):
+
 1. Every CA Assembly member and CA State Senator stance row has a paired `inform.politician_context` row with at least one real source URL, or the stance row has been deleted — zero unsourced CA state legislator stances remain.
 2. Every MD official added in migrations 269–271 (MD executive branch) has stances researched and ingested from scratch using the Chair methodology — each stance paired with at least one real primary source URL in `inform.politician_context`.
 3. Every stance value added or retained for CA legislators during this phase was verified against the specific Chair text (QUAL-01 applied); every MD stance added is likewise verified against Chair text, not inferred from party affiliation.
@@ -1002,6 +1009,7 @@ Full details: `.planning/milestones/v2.6-ROADMAP.md`
 **Plans:** TBD
 
 **Success Criteria** (what must be TRUE):
+
 1. Every SF, San Jose, San Diego, Berkeley, and Fremont city official stance row has a paired `inform.politician_context` row with at least one real source URL, or the stance has been deleted — zero unsourced city official stances remain.
 2. Every stance value added or retained during this phase was verified against the specific Chair text for that topic (QUAL-01 applied).
 3. The complete v2.7 deletion log is finalized — it covers every stance deleted across all remediation phases (101–104), with politician full_name, topic_key, former value, and reason per entry, and is committed to the repo or recorded in a migration comment (QUAL-02 final).
