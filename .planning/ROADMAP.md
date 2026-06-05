@@ -955,7 +955,15 @@ Plans:
 
 **Depends on:** Phase 100 (target list required to scope this phase)
 **Requirements:** FEDX-01, QUAL-01, QUAL-02
-**Plans:** TBD
+**Plans:** 2 plans
+Plans:
+**Wave 1**
+
+- [ ] 101-01-PLAN.md — Senator-specific source triage: weak-source + unsourced query against NATIONAL_UPPER senators; outputs 101-TRIAGE-REPORT.md and 101-SENATOR-TARGETS.csv (scopes Plan 02)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 101-02-PLAN.md — Research + migration + deletion log: run research-stances for flagged senators (one at a time), write migration 128 with UPSERTs and DELETEs, apply via psql, commit 101-DELETION-LOG.md and 101-VERIFICATION.md
 
 **Success Criteria** (what must be TRUE):
 
