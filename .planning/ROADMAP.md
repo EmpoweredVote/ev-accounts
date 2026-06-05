@@ -1064,11 +1064,17 @@ Plans:
 - Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
 
 **Plans:** 3 plans
-
 Plans:
+**Wave 1**
 
 - [ ] 99-03-PLAN.md — Utah migration 267 + Playwright verification
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 99-04-PLAN.md — Fix all issues from verification
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
 - [ ] 99-05-PLAN.md — Smoke test + ship declaration
 
 **Success Criteria:**
