@@ -1063,19 +1063,19 @@ Plans:
 - Wave 2: Fix all issues found in Wave 1 (ELEC-02)
 - Wave 3: Declare shipped — smoke test, update MILESTONES.md (ELEC-03)
 
-**Plans:** 3 plans
+**Plans:** 6/4 plans complete
 Plans:
 **Wave 1**
 
-- [ ] 99-03-PLAN.md — Utah migration 267 + Playwright verification
+- [x] 99-03-PLAN.md — Utah migration 267 + Playwright verification
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 99-04-PLAN.md — Fix all issues from verification
+- [x] 99-04-PLAN.md — Fix all issues from verification
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 99-05-PLAN.md — Smoke test + ship declaration
+- [x] 99-05-PLAN.md — Smoke test + ship declaration
 
 **Success Criteria:**
 
@@ -1126,7 +1126,7 @@ Plans:
 | 88. Stance Corrections + Party Normalization | v2.6 | 5/5 | Complete    | 2026-06-03 |
 | 89. Gap-fill Existing Politicians | v2.6 | 3/3 | Complete    | 2026-06-04 |
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete   | 2026-06-04 |
-| 99. Elections Verification + Polish | v2.6 | 0/? | Pending | — |
+| 99. Elections Verification + Polish | v2.6 | 6/4 | Complete    | 2026-06-05 |
 | 31. Referral Dashboard Card | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 32. CompassV2 Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
 | 33. Essentials Integration Guide | v1.5 | 1/1 | Complete | 2026-03-19 |
