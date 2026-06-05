@@ -7,8 +7,8 @@
 
 ### SRCA — Source Coverage Audit
 
-- [ ] **SRCA-01**: DB audit report produced — total stances in `inform.politician_answers`, count and % with a real source URL (non-empty `sources[]` in `inform.politician_context` with at least one non-placeholder URL), breakdown by tier (Federal / State / Local / City); defines the operationalized "sourced" standard for the rest of the milestone
-- [ ] **SRCA-02**: Prioritized target list produced — all politicians with any unsourced stances ranked by tier (federal → state → local → city) then prominence within tier; politicians with majority of stances unsourced flagged as likely old-methodology seeding requiring full re-research pass
+- [x] **SRCA-01**: DB audit report produced — total stances in `inform.politician_answers`, count and % with a real source URL (non-empty `sources[]` in `inform.politician_context` with at least one non-placeholder URL), breakdown by tier (Federal / State / Local / City); defines the operationalized "sourced" standard for the rest of the milestone
+- [x] **SRCA-02**: Prioritized target list produced — all politicians with any unsourced stances ranked by tier (federal → state → local → city) then prominence within tier; politicians with majority of stances unsourced flagged as likely old-methodology seeding requiring full re-research pass
 
 ### FEDX — Federal Remediation
 
@@ -53,8 +53,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SRCA-01 | 100 | Pending |
-| SRCA-02 | 100 | Pending |
+| SRCA-01 | 100 | Complete |
+| SRCA-02 | 100 | Complete |
 | FEDX-01 | 101 | Pending |
 | FEDX-02 | 102 | Pending |
 | STAX-01 | 103 | Pending |
