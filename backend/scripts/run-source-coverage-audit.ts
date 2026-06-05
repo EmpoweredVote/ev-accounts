@@ -25,7 +25,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import pg from 'pg';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync } from 'node:fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -721,6 +721,7 @@ async function main() {
   const reportPath = path.resolve(phaseDir, '100-AUDIT-REPORT.md');
   const csvPath = path.resolve(phaseDir, '100-TARGET-LIST.csv');
 
+  mkdirSync(phaseDir, { recursive: true });
   writeFileSync(reportPath, report, 'utf8');
   console.error(`  Written: ${reportPath}`);
 
