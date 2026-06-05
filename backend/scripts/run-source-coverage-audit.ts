@@ -110,6 +110,24 @@ const SOURCED_CASE = `
     ELSE 0
   END`;
 
+// Logical inverse of SOURCED_CASE — a stance is unsourced when any of:
+//   - no context row exists (pc.politician_id IS NULL)
+//   - sources IS NULL
+//   - sources is an empty array (array_length returns NULL)
+//   - all URL elements are blank
+const UNSOURCED_CASE = `
+  CASE
+    WHEN pc.politician_id IS NULL
+         OR pc.sources IS NULL
+         OR array_length(pc.sources, 1) IS NULL
+         OR NOT EXISTS (
+           SELECT 1 FROM unnest(pc.sources) AS s(url)
+           WHERE url IS NOT NULL AND trim(url) <> ''
+         )
+    THEN 1
+    ELSE 0
+  END`;
+
 // ---------------------------------------------------------------------------
 // Query A — Total & Sourced Count (SRCA-01 executive summary)
 // ---------------------------------------------------------------------------
@@ -330,49 +348,13 @@ async function queryTargetList(): Promise<TargetRow[]> {
       COALESCE(tier_subq.tier, 'Unknown') AS tier,
       COALESCE(tier_subq.tier_rank, 4)::text AS tier_rank,
       COUNT(pa.topic_id)::text AS total_stances,
-      SUM(
-        CASE
-          WHEN pc.politician_id IS NULL
-               OR pc.sources IS NULL
-               OR array_length(pc.sources, 1) IS NULL
-               OR NOT EXISTS (
-                 SELECT 1 FROM unnest(pc.sources) AS s(url)
-                 WHERE url IS NOT NULL AND trim(url) <> ''
-               )
-          THEN 1
-          ELSE 0
-        END
-      )::text AS unsourced_count,
+      SUM(${UNSOURCED_CASE})::text AS unsourced_count,
       ROUND(
-        SUM(
-          CASE
-            WHEN pc.politician_id IS NULL
-                 OR pc.sources IS NULL
-                 OR array_length(pc.sources, 1) IS NULL
-                 OR NOT EXISTS (
-                   SELECT 1 FROM unnest(pc.sources) AS s(url)
-                   WHERE url IS NOT NULL AND trim(url) <> ''
-                 )
-            THEN 1.0
-            ELSE 0.0
-          END
-        ) / NULLIF(COUNT(pa.topic_id), 0) * 100,
+        SUM(${UNSOURCED_CASE}) / NULLIF(COUNT(pa.topic_id), 0) * 100,
         1
       )::text AS unsourced_pct,
       (
-        SUM(
-          CASE
-            WHEN pc.politician_id IS NULL
-                 OR pc.sources IS NULL
-                 OR array_length(pc.sources, 1) IS NULL
-                 OR NOT EXISTS (
-                   SELECT 1 FROM unnest(pc.sources) AS s(url)
-                   WHERE url IS NOT NULL AND trim(url) <> ''
-                 )
-            THEN 1
-            ELSE 0
-          END
-        ) > COUNT(pa.topic_id) / 2.0
+        SUM(${UNSOURCED_CASE}) > COUNT(pa.topic_id) / 2.0
       ) AS majority_unsourced
     FROM inform.politician_answers pa
     JOIN essentials.politicians p ON p.id = pa.politician_id AND p.is_active = true
@@ -425,49 +407,11 @@ async function queryTargetList(): Promise<TargetRow[]> {
     ) tier_subq ON tier_subq.pid = p.id
     WHERE p.is_active = true
     GROUP BY p.full_name, p.id, tier_subq.tier, tier_subq.tier_rank
-    HAVING SUM(
-      CASE
-        WHEN pc.politician_id IS NULL
-             OR pc.sources IS NULL
-             OR array_length(pc.sources, 1) IS NULL
-             OR NOT EXISTS (
-               SELECT 1 FROM unnest(pc.sources) AS s(url)
-               WHERE url IS NOT NULL AND trim(url) <> ''
-             )
-        THEN 1
-        ELSE 0
-      END
-    ) > 0
+    HAVING SUM(${UNSOURCED_CASE}) > 0
     ORDER BY
       COALESCE(tier_subq.tier_rank, 4) ASC NULLS LAST,
-      (
-        SUM(
-          CASE
-            WHEN pc.politician_id IS NULL
-                 OR pc.sources IS NULL
-                 OR array_length(pc.sources, 1) IS NULL
-                 OR NOT EXISTS (
-                   SELECT 1 FROM unnest(pc.sources) AS s(url)
-                   WHERE url IS NOT NULL AND trim(url) <> ''
-                 )
-            THEN 1
-            ELSE 0
-          END
-        ) > COUNT(pa.topic_id) / 2.0
-      ) DESC,
-      SUM(
-        CASE
-          WHEN pc.politician_id IS NULL
-               OR pc.sources IS NULL
-               OR array_length(pc.sources, 1) IS NULL
-               OR NOT EXISTS (
-                 SELECT 1 FROM unnest(pc.sources) AS s(url)
-                 WHERE url IS NOT NULL AND trim(url) <> ''
-               )
-          THEN 1
-          ELSE 0
-        END
-      ) DESC,
+      (SUM(${UNSOURCED_CASE}) > COUNT(pa.topic_id) / 2.0) DESC,
+      SUM(${UNSOURCED_CASE}) DESC,
       p.full_name ASC
   `);
   return result.rows;
