@@ -31,6 +31,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, '..', '.env') });
 
+if (!process.env.DATABASE_URL) {
+  console.error('Fatal: DATABASE_URL is not set. Ensure backend/.env exists and contains DATABASE_URL.');
+  process.exit(1);
+}
+
 const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
 const DRY_RUN = process.argv.includes('--dry-run');
 
