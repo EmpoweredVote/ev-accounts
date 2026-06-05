@@ -113,9 +113,9 @@ async function queryTotal(): Promise<TotalRow> {
   const result = await pool.query<TotalRow>(`
     SELECT
       COUNT(pa.topic_id)::text AS total_stances,
-      SUM(${SOURCED_CASE})::text AS sourced_stances,
-      (COUNT(pa.topic_id) - SUM(${SOURCED_CASE}))::text AS unsourced_stances,
-      ROUND(SUM(${SOURCED_CASE}) * 100.0 / NULLIF(COUNT(pa.topic_id), 0), 1)::text AS pct_sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced_stances,
+      (COUNT(pa.topic_id) - COALESCE(SUM(${SOURCED_CASE}), 0))::text AS unsourced_stances,
+      ROUND(COALESCE(SUM(${SOURCED_CASE}), 0) * 100.0 / NULLIF(COUNT(pa.topic_id), 0), 1)::text AS pct_sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
@@ -174,9 +174,9 @@ async function queryTierBreakdown(): Promise<TierRow[]> {
       ta.tier,
       ta.tier_rank::text,
       COUNT(pa.topic_id)::text AS total_stances,
-      SUM(${SOURCED_CASE})::text AS sourced_stances,
-      (COUNT(pa.topic_id) - SUM(${SOURCED_CASE}))::text AS unsourced_stances,
-      ROUND(SUM(${SOURCED_CASE}) * 100.0 / NULLIF(COUNT(pa.topic_id), 0), 1)::text AS pct_sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced_stances,
+      (COUNT(pa.topic_id) - COALESCE(SUM(${SOURCED_CASE}), 0))::text AS unsourced_stances,
+      ROUND(COALESCE(SUM(${SOURCED_CASE}), 0) * 100.0 / NULLIF(COUNT(pa.topic_id), 0), 1)::text AS pct_sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
@@ -196,10 +196,11 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
   const cohorts: CohortRow[] = [];
 
   // v2.3 senators: district_type = 'NATIONAL_UPPER'
+  // COALESCE on SUM to handle 0-row case where SUM returns NULL, not 0
   const senResult = await pool.query<{ total: string; sourced: string }>(`
     SELECT
       COUNT(pa.topic_id)::text AS total,
-      SUM(${SOURCED_CASE})::text AS sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
@@ -223,7 +224,7 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
   const candResult = await pool.query<{ total: string; sourced: string }>(`
     SELECT
       COUNT(pa.topic_id)::text AS total,
-      SUM(${SOURCED_CASE})::text AS sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
@@ -243,26 +244,25 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
     pct_sourced: candTotal > 0 ? String(Math.round((candSourced / candTotal) * 1000) / 10) : '0.0',
   });
 
-  // v2.5 city officials: government is one of the 5 known CA cities
+  // v2.5 city officials: SF (block 63), SJ (block 64), SD (block 65),
+  // Fremont (block 67), Berkeley (block 68).
+  // Note: CA city officials do NOT have government_id set on their districts,
+  // so government-name joins don't work for them. Use external_id ranges instead.
+  // District labels confirm: block 63 = SF (Citywide), 64 = SJ, 65 = SD (Citywide),
+  // 67 = Fremont (Citywide), 68 = Berkeley (Citywide). Block 66 = Sacramento (not in v2.5).
+  // Ranges: 63xx (-630001 to -630999), 64xx (-640001 to -640999), 65xx (-650001 to -650999),
+  //         67xx (-670001 to -670999), 68xx (-680001 to -680999).
   const cityResult = await pool.query<{ total: string; sourced: string }>(`
     SELECT
       COUNT(pa.topic_id)::text AS total,
-      SUM(${SOURCED_CASE})::text AS sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
       AND pc.topic_id = pa.topic_id
     JOIN essentials.politicians p ON p.id = pa.politician_id AND p.is_active = true
-    JOIN essentials.offices o ON o.politician_id = pa.politician_id AND o.is_vacant = false
-    JOIN essentials.districts d ON d.id = o.district_id
-    JOIN essentials.governments g ON g.id = d.government_id
-      AND g.name IN (
-        'City of San Francisco',
-        'City of San Jose',
-        'City of San Diego',
-        'City of Berkeley',
-        'City of Fremont'
-      )
+    WHERE p.external_id BETWEEN -689999 AND -630000
+      AND p.external_id NOT BETWEEN -669999 AND -660000
   `);
   const cityRow = cityResult.rows[0];
   const cityTotal = parseInt(cityRow.total, 10);
@@ -281,7 +281,7 @@ async function queryMilestoneCohorts(): Promise<CohortRow[]> {
   const mdResult = await pool.query<{ total: string; sourced: string }>(`
     SELECT
       COUNT(pa.topic_id)::text AS total,
-      SUM(${SOURCED_CASE})::text AS sourced
+      COALESCE(SUM(${SOURCED_CASE}), 0)::text AS sourced
     FROM inform.politician_answers pa
     LEFT JOIN inform.politician_context pc
       ON pc.politician_id = pa.politician_id
@@ -624,11 +624,11 @@ ${mdTable}
 - **Active politicians only:** All queries filter \`WHERE p.is_active = true\` to exclude historical/inactive records
 - **Tier classification source:** \`essentials.districts.district_type\` via offices join — never from \`essentials.offices.title\` (title="Senator" matches both US and State senators)
 - **DISTINCT ON in tier subquery:** Prevents multi-office Cartesian product inflation (a politician with multiple office rows produces only one tier assignment, using the highest-priority tier rank)
-- **City vs Local distinction:** City = LOCAL/LOCAL_EXEC district where \`essentials.governments.name ILIKE 'City of %'\`
+- **City vs Local distinction in Tier Breakdown:** City = LOCAL/LOCAL_EXEC district where \`essentials.governments.name ILIKE 'City of %'\` AND \`government_id\` is NOT NULL. NOTE: CA city officials (SF, SJ, SD, Berkeley, Fremont) do NOT have \`government_id\` set on their districts — they appear as "Local" in the tier breakdown, not "City". The "City" rows in the tier breakdown reflect TX cities (Plano, McKinney, Frisco, Allen, Richardson, etc.) which do have \`government_id\` populated.
 - **Cohort scoping:**
   - v2.3 senators: \`district_type = 'NATIONAL_UPPER'\`
   - v2.4 candidates: \`external_id BETWEEN -400143 AND -400101\`
-  - v2.5 city officials: government name IN ('City of San Francisco', 'City of San Jose', 'City of San Diego', 'City of Berkeley', 'City of Fremont')
+  - v2.5 city officials: \`external_id BETWEEN -689999 AND -630000 EXCEPT -669999 TO -660000\` (blocks 63=SF, 64=SJ, 65=SD, 67=Fremont, 68=Berkeley; block 66=Sacramento excluded). CA city districts lack \`government_id\` so government-name joins fail; external_id ranges are authoritative.
   - MD officials: \`external_id BETWEEN -240005 AND -240001\`
 `;
 }
