@@ -208,6 +208,18 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
+## Current Milestone: v2.7 Source Integrity
+
+**Goal:** Audit every existing politician stance for real source URL coverage, re-research unsourced stances using the Chair methodology, correct incorrect values, and delete any stance that cannot be backed by a real primary source.
+
+**Target features:**
+- Source coverage audit: DB report (total stances, % sourced, breakdown by tier); ranked politician target list (federal first)
+- Federal remediation: all senators + US House reps — every stance sourced or deleted
+- State + local remediation: CA state legislators, MD officials, city council officials — every stance sourced or deleted
+- Chair methodology enforcement: every re-researched stance verified against specific stance text, not just directional
+
+**Active requirements:** SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02
+
 ---
 ## Previous Milestone: v1.9 Roles (Phases 51–58, shipped 2026-04-06)
 
@@ -259,5 +271,22 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 
 **Status:** v2.6 complete — all 12 requirements closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03). Next milestone: planning phase.
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd-transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd-complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-06-05 after v2.6 milestone*
+*Last updated: 2026-06-05 — v2.7 Source Integrity started*
