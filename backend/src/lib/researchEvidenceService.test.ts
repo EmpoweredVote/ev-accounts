@@ -1,6 +1,12 @@
-import { describe, it, expect } from 'vitest';
-import { buildEvidenceRowsForInsert, buildReviewRowForInsert } from './researchEvidenceService.js';
+import { vi, describe, it, expect, beforeEach } from 'vitest';
 import type { VerifiedRow } from './researchVerifier.js';
+
+const mockQuery = vi.fn().mockResolvedValue({ rows: [] });
+vi.mock('./db.js', () => ({
+  pool: { query: mockQuery },
+}));
+
+import { buildEvidenceRowsForInsert, buildReviewRowForInsert } from './researchEvidenceService.js';
 
 const exampleRow: VerifiedRow = {
   stance: { full_name: 'Brad Sherman', politician_id: '', topic_key: 'healthcare', value: 2, reasoning: 'public option' },
@@ -71,5 +77,36 @@ describe('buildReviewRowForInsert', () => {
     });
     expect(review.status).toBe('unresolved_politician');
     expect(review.full_name_raw).toBe('Brad Sherman');
+  });
+});
+
+describe('accumulateEvidence', () => {
+  beforeEach(() => mockQuery.mockClear());
+
+  it('is exported as accumulateEvidence (replaceEvidence is gone)', async () => {
+    const mod = await import('./researchEvidenceService.js');
+    expect(typeof (mod as any).accumulateEvidence).toBe('function');
+    expect((mod as any).replaceEvidence).toBeUndefined();
+  });
+
+  it('uses INSERT ON CONFLICT DO NOTHING — no DELETE', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    await accumulateEvidence([{
+      politician_id: '11111111-1111-1111-1111-111111111111',
+      topic_id: '22222222-2222-2222-2222-222222222222',
+      source_url: 'https://a.example',
+      snippet: 'test snippet',
+      snippet_index: 0,
+      batch_id: 'test-batch',
+    }]);
+    const sqls = mockQuery.mock.calls.map((c: any[]) => String(c[0]).toUpperCase());
+    expect(sqls.some(s => s.includes('ON CONFLICT') && s.includes('DO NOTHING'))).toBe(true);
+    expect(sqls.some(s => s.startsWith('DELETE'))).toBe(false);
+  });
+
+  it('returns without querying when rows array is empty', async () => {
+    const { accumulateEvidence } = await import('./researchEvidenceService.js');
+    await accumulateEvidence([]);
+    expect(mockQuery).not.toHaveBeenCalled();
   });
 });

@@ -4,16 +4,16 @@ import { apiFetch } from '../../lib/api';
 
 interface StagingStance {
   id: string;
-  context_key: string;
-  politician_name: string;
-  topic_key: string;
+  contextKey: string;
+  politicianName: string;
+  topicKey: string;
   value: number;
   reasoning: string | null;
   sources: string[];
   status: string;
-  added_by: string;
-  review_count: number;
-  reviewed_by: string[];
+  addedBy: string;
+  reviewCount: number;
+  reviewedBy: string[];
   lockedBy: string | null;
   lockedAt: string | null;
 }
@@ -103,7 +103,7 @@ export function StanceReviewPage() {
       }
 
       const topicsData = await apiFetch<{ topics: CompassTopic[] }>('/admin/compass/topics');
-      const matched = topicsData.topics.find((t) => t.topic_key === stanceData.topic_key);
+      const matched = topicsData.topics.find((t) => t.topic_key === stanceData.topicKey);
       if (matched) {
         setTopic(matched);
         const options = await apiFetch<StanceOption[]>(`/admin/compass/topics/${matched.id}/stances`);
@@ -198,10 +198,10 @@ export function StanceReviewPage() {
           ← Review Queue
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
-          {stance.politician_name}
+          {stance.politicianName}
         </h1>
         <p className="text-gray-500 dark:text-gray-400 text-sm">
-          {topic?.short_title ?? topic?.title ?? stance.topic_key}
+          {topic?.short_title ?? topic?.title ?? stance.topicKey}
         </p>
       </div>
 
@@ -232,11 +232,11 @@ export function StanceReviewPage() {
         <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400 pb-4 border-b border-gray-100 dark:border-gray-800">
           <span>
             Added by{' '}
-            <strong className="text-gray-700 dark:text-gray-300">{stance.added_by}</strong>
+            <strong className="text-gray-700 dark:text-gray-300">{stance.addedBy}</strong>
           </span>
-          {stance.review_count > 0 && <span>{stance.review_count}/2 approvals</span>}
-          {stance.reviewed_by?.length > 0 && (
-            <span>Reviewed by: {stance.reviewed_by.join(', ')}</span>
+          {stance.reviewCount > 0 && <span>{stance.reviewCount}/2 approvals</span>}
+          {stance.reviewedBy?.length > 0 && (
+            <span>Reviewed by: {stance.reviewedBy.join(', ')}</span>
           )}
         </div>
 

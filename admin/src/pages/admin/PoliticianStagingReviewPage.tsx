@@ -58,22 +58,22 @@ interface ExperienceEntry { title: string; organization: string; type?: string; 
 
 interface StagingPolitician {
   id: string;
-  full_name: string;
+  fullName: string;
   party: string;
   office: string;
-  office_level: string;
+  officeLevel: string;
   state: string;
   district: string;
-  bio_text?: string;
-  photo_url?: string;
+  bioText?: string;
+  photoUrl?: string;
   contacts?: ContactEntry[];
   degrees?: DegreeEntry[];
   experiences?: ExperienceEntry[];
   status: string;
-  added_by: string;
-  review_count: number;
-  reviewed_by: string[];
-  created_at: string;
+  addedBy: string;
+  reviewCount: number;
+  reviewedBy: string[];
+  createdAt: string;
   lockedBy: string | null;
   lockedAt: string | null;
 }
@@ -147,14 +147,14 @@ export function PoliticianStagingReviewPage() {
   }, [id]);
 
   function populateForm(p: StagingPolitician) {
-    setFullName(p.full_name ?? '');
+    setFullName(p.fullName ?? '');
     setParty(p.party ?? '');
     setOffice(p.office ?? '');
-    setOfficeLevel(p.office_level ?? '');
+    setOfficeLevel(p.officeLevel ?? '');
     setState(p.state ?? '');
     setDistrict(p.district ?? '');
-    setBioText(p.bio_text ?? '');
-    setPhotoUrl(p.photo_url ?? '');
+    setBioText(p.bioText ?? '');
+    setPhotoUrl(p.photoUrl ?? '');
     setContacts(Array.isArray(p.contacts) ? p.contacts : []);
     setDegrees(Array.isArray(p.degrees) ? p.degrees : []);
     setExperiences(Array.isArray(p.experiences) ? p.experiences : []);
@@ -323,7 +323,7 @@ export function PoliticianStagingReviewPage() {
           ← Review Queue
         </Link>
         <h1 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
-          {politician.full_name}
+          {politician.fullName}
         </h1>
         <p className="text-gray-500 dark:text-gray-400 text-sm">
           {politician.office}
@@ -358,39 +358,39 @@ export function PoliticianStagingReviewPage() {
         <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400 pb-4 border-b border-gray-100 dark:border-gray-800">
           <span>
             Added by{' '}
-            <strong className="text-gray-700 dark:text-gray-300">{politician.added_by}</strong>
+            <strong className="text-gray-700 dark:text-gray-300">{politician.addedBy}</strong>
           </span>
-          {politician.review_count > 0 && <span>{politician.review_count}/2 approvals</span>}
-          {politician.reviewed_by?.length > 0 && (
-            <span>Reviewed by: {politician.reviewed_by.join(', ')}</span>
+          {politician.reviewCount > 0 && <span>{politician.reviewCount}/2 approvals</span>}
+          {politician.reviewedBy?.length > 0 && (
+            <span>Reviewed by: {politician.reviewedBy.join(', ')}</span>
           )}
         </div>
 
         {mode === 'view' && (
           <>
             <Section title="Core Info">
-              <Field label="Full Name" value={politician.full_name} />
+              <Field label="Full Name" value={politician.fullName} />
               <Field label="Party" value={politician.party || 'Not specified'} />
               <Field label="Office" value={politician.office} />
               <Field
                 label="Level"
-                value={OFFICE_LEVEL_LABELS[politician.office_level] ?? politician.office_level}
+                value={OFFICE_LEVEL_LABELS[politician.officeLevel] ?? politician.officeLevel}
               />
               <Field label="State" value={politician.state} />
               {politician.district && <Field label="District" value={politician.district} />}
             </Section>
 
-            {(politician.bio_text || politician.photo_url) && (
+            {(politician.bioText || politician.photoUrl) && (
               <Section title="Bio & Photo">
-                {politician.photo_url && (
+                {politician.photoUrl && (
                   <img
-                    src={politician.photo_url}
-                    alt={politician.full_name}
+                    src={politician.photoUrl}
+                    alt={politician.fullName}
                     className="w-20 h-20 rounded-md object-cover"
                   />
                 )}
-                {politician.bio_text && (
-                  <p className="text-sm text-gray-700 dark:text-gray-300">{politician.bio_text}</p>
+                {politician.bioText && (
+                  <p className="text-sm text-gray-700 dark:text-gray-300">{politician.bioText}</p>
                 )}
               </Section>
             )}

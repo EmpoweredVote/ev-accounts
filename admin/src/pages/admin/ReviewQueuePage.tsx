@@ -4,21 +4,21 @@ import { apiFetch } from '../../lib/api';
 
 interface StagingStance {
   id: string;
-  politician_name: string;
-  topic_key: string;
+  politicianName: string;
+  topicKey: string;
   value: number;
-  review_count: number;
-  added_by: string;
+  reviewCount: number;
+  addedBy: string;
 }
 
 interface StagingPolitician {
   id: string;
-  full_name: string;
+  fullName: string;
   office: string;
   state: string;
-  office_level: string;
-  review_count: number;
-  added_by: string;
+  officeLevel: string;
+  reviewCount: number;
+  addedBy: string;
 }
 
 export function ReviewQueuePage() {
@@ -119,13 +119,13 @@ export function ReviewQueuePage() {
                 className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-ev-red dark:hover:border-ev-red transition-colors"
               >
                 <div>
-                  <p className="font-medium text-gray-900 dark:text-white">{stance.politician_name}</p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{stance.topic_key}</p>
+                  <p className="font-medium text-gray-900 dark:text-white">{stance.politicianName}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{stance.topicKey}</p>
                 </div>
                 <div className="text-right text-sm text-gray-500 dark:text-gray-400">
-                  <p>by {stance.added_by}</p>
-                  {stance.review_count > 0 && (
-                    <p className="text-xs">{stance.review_count}/2 approvals</p>
+                  <p>by {stance.addedBy}</p>
+                  {stance.reviewCount > 0 && (
+                    <p className="text-xs">{stance.reviewCount}/2 approvals</p>
                   )}
                 </div>
               </Link>
@@ -145,16 +145,16 @@ export function ReviewQueuePage() {
               className="flex items-center justify-between p-4 bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-700 hover:border-ev-red dark:hover:border-ev-red transition-colors"
             >
               <div>
-                <p className="font-medium text-gray-900 dark:text-white">{politician.full_name}</p>
+                <p className="font-medium text-gray-900 dark:text-white">{politician.fullName}</p>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   {politician.office}
                   {politician.state ? ` — ${politician.state}` : ''}
                 </p>
               </div>
               <div className="text-right text-sm text-gray-500 dark:text-gray-400">
-                <p>by {politician.added_by}</p>
-                {politician.review_count > 0 && (
-                  <p className="text-xs">{politician.review_count}/2 approvals</p>
+                <p>by {politician.addedBy}</p>
+                {politician.reviewCount > 0 && (
+                  <p className="text-xs">{politician.reviewCount}/2 approvals</p>
                 )}
               </div>
             </Link>

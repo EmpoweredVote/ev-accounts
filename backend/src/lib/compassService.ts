@@ -740,154 +740,136 @@ export async function getBatchPoliticianAnswers(
 }
 
 // ---------------------------------------------------------------------------
-// getCitationsForPolitician
+// Citations library — types and service functions
 // ---------------------------------------------------------------------------
 
-interface CitationItem {
+export interface CitationEntry {
   source_url: string;
   domain: string;
-  verified_at: string | null;
-  snippet: string | null;
+  snippet: string;
+  verified_at: string;
   is_primary: boolean;
 }
 
-interface CitationTopic {
+export interface StanceOption {
+  value: number;
+  text: string;
+}
+
+export interface TopicCitationBlock {
   topic_key: string;
   topic_title: string;
-  topic_tension_name: null;
+  topic_tension_name: string;
   has_stance: boolean;
   stance_value: number | null;
   stance_text: string | null;
-  all_stances: { value: number; text: string }[];
+  all_stances: StanceOption[];
   reasoning: string | null;
-  citations: CitationItem[];
+  last_verified_at: string;
+  citations: CitationEntry[];
 }
 
-function extractDomain(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, '');
-  } catch {
-    return url;
-  }
+interface RawCitationRow {
+  topic_key: string;
+  topic_title: string;
+  topic_tension_name: string;
+  stance_value: number | null;
+  stance_text: string | null;
+  reasoning: string | null;
+  source_url: string;
+  snippet: string;
+  verified_at: string;
+  is_primary: boolean;
 }
 
 /**
- * getCitationsForPolitician
- *
- * Returns all sourced positions for a politician, enriched with stance options,
- * reasoning, and per-URL citation metadata (domain, snippet, verified_at).
- *
- * Only topics where the politician has a politician_context row are included.
- * Topics with zero source URLs but a reasoning string are included (reasoning-only).
- *
- * Uses four parallel queries after the initial context fetch:
- *   1. compass_stances — all stance options for the relevant topics
- *   2. source_verifications — verified_at per URL
- *   3. politician_context_evidence — first snippet per URL
+ * Pure grouping helper — exported for unit testing.
+ * Takes flat DB rows (one per snippet) and groups them into TopicCitationBlocks.
  */
-export async function getCitationsForPolitician(politicianId: string): Promise<CitationTopic[]> {
-  const { rows: contextRows } = await pool.query<{
-    topic_id: string;
-    topic_key: string;
-    topic_title: string;
-    stance_value: string | null;
-    reasoning: string | null;
-    sources: string[] | null;
-  }>(
-    `SELECT
-       ct.id           AS topic_id,
-       ct.topic_key,
-       ct.title        AS topic_title,
-       pa.value::text  AS stance_value,
-       pc.reasoning,
-       pc.sources
-     FROM inform.compass_topics ct
-     JOIN inform.politician_context pc
-       ON pc.topic_id = ct.id AND pc.politician_id = $1
-     LEFT JOIN inform.politician_answers pa
-       ON pa.topic_id = ct.id AND pa.politician_id = $1
-     WHERE ct.is_live = true
-     ORDER BY ct.went_live_at ASC NULLS LAST, ct.created_at ASC`,
-    [politicianId]
-  );
-
-  if (contextRows.length === 0) return [];
-
-  const topicIds = contextRows.map(r => r.topic_id);
-
-  const [stancesResult, verificationsResult, snippetsResult] = await Promise.all([
-    pool.query<{ topic_id: string; value: string; text: string }>(
-      `SELECT topic_id, value::text, text
-       FROM inform.compass_stances
-       WHERE topic_id = ANY($1::uuid[])
-       ORDER BY value ASC`,
-      [topicIds]
-    ),
-    pool.query<{ topic_id: string; url: string; verified_at: string | null }>(
-      `SELECT topic_id, url, verified_at
-       FROM public.source_verifications
-       WHERE politician_id = $1
-         AND entity_type = 'compass_stance'
-         AND topic_id = ANY($2::uuid[])`,
-      [politicianId, topicIds]
-    ),
-    pool.query<{ topic_id: string; source_url: string; snippet: string }>(
-      `SELECT topic_id, source_url, snippet
-       FROM inform.politician_context_evidence
-       WHERE politician_id = $1
-         AND topic_id = ANY($2::uuid[])
-       ORDER BY snippet_index ASC`,
-      [politicianId, topicIds]
-    ),
-  ]);
-
-  const stancesByTopic = new Map<string, { value: number; text: string }[]>();
-  for (const s of stancesResult.rows) {
-    const arr = stancesByTopic.get(s.topic_id) ?? [];
-    arr.push({ value: parseFloat(s.value), text: s.text });
-    stancesByTopic.set(s.topic_id, arr);
-  }
-
-  const verifiedAtMap = new Map<string, string | null>();
-  for (const v of verificationsResult.rows) {
-    verifiedAtMap.set(`${v.topic_id}|${v.url}`, v.verified_at);
-  }
-
-  const snippetMap = new Map<string, string>();
-  for (const s of snippetsResult.rows) {
-    const key = `${s.topic_id}|${s.source_url}`;
-    if (!snippetMap.has(key)) snippetMap.set(key, s.snippet);
-  }
-
-  return contextRows
-    .filter(row => (row.sources ?? []).length > 0 || row.reasoning)
-    .map(row => {
-      const allStances = stancesByTopic.get(row.topic_id) ?? [];
-      const stanceVal = row.stance_value != null ? parseFloat(row.stance_value) : null;
-      const hasStance = stanceVal !== null && stanceVal !== 0;
-      const stanceText = hasStance
-        ? (allStances.find(s => s.value === stanceVal)?.text ?? null)
-        : null;
-
-      const sources = row.sources ?? [];
-      const citations: CitationItem[] = sources.map((url, idx) => ({
-        source_url: url,
-        domain: extractDomain(url),
-        verified_at: verifiedAtMap.get(`${row.topic_id}|${url}`) ?? null,
-        snippet: snippetMap.get(`${row.topic_id}|${url}`) ?? null,
-        is_primary: idx === 0,
-      }));
-
-      return {
-        topic_key: row.topic_key,
-        topic_title: row.topic_title,
-        topic_tension_name: null,
-        has_stance: hasStance,
-        stance_value: hasStance ? stanceVal : null,
-        stance_text: stanceText,
-        all_stances: allStances,
-        reasoning: row.reasoning ?? null,
-        citations,
-      };
+export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] {
+  const blockMap = new Map<string, TopicCitationBlock>();
+  for (const r of rows) {
+    if (!blockMap.has(r.topic_key)) {
+      blockMap.set(r.topic_key, {
+        topic_key: r.topic_key,
+        topic_title: r.topic_title,
+        topic_tension_name: r.topic_tension_name,
+        has_stance: r.stance_value != null,
+        stance_value: r.stance_value ?? null,
+        stance_text: r.stance_text ?? null,
+        all_stances: [],
+        reasoning: r.reasoning ?? null,
+        last_verified_at: r.verified_at,
+        citations: [],
+      });
+    }
+    const block = blockMap.get(r.topic_key)!;
+    if (r.verified_at > block.last_verified_at) block.last_verified_at = r.verified_at;
+    let domain = r.source_url;
+    try { domain = new URL(r.source_url).hostname; } catch { /* keep raw url as fallback */ }
+    block.citations.push({
+      source_url: r.source_url,
+      domain,
+      snippet: r.snippet,
+      verified_at: r.verified_at,
+      is_primary: Boolean(r.is_primary),
     });
+  }
+  return [...blockMap.values()];
+}
+
+/**
+ * Returns all verified citation blocks for a politician, grouped by topic.
+ * Only includes topics where at least one verified snippet exists.
+ * Topics with evidence but no published answer have has_stance = false.
+ */
+export async function getPoliticianCitations(politicianId: string): Promise<TopicCitationBlock[]> {
+  const { rows } = await pool.query<RawCitationRow>(
+    `SELECT
+       ct.topic_key                                                   AS topic_key,
+       COALESCE(ct.question_text, ct.short_title)                    AS topic_title,
+       ct.short_title                                                 AS topic_tension_name,
+       pa.value                                                       AS stance_value,
+       cs.text                                                        AS stance_text,
+       pc.reasoning,
+       pce.source_url,
+       pce.snippet,
+       pce.verified_at::text AS verified_at,
+       (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
+     FROM inform.politician_context_evidence pce
+     JOIN inform.compass_topics ct
+       ON ct.id = pce.topic_id AND ct.is_live = true
+     LEFT JOIN inform.politician_answers pa
+       ON pa.politician_id = pce.politician_id AND pa.topic_id = pce.topic_id
+     LEFT JOIN inform.compass_stances cs
+       ON cs.topic_id = pce.topic_id AND cs.value = pa.value
+     LEFT JOIN inform.politician_context pc
+       ON pc.politician_id = pce.politician_id AND pc.topic_id = pce.topic_id
+     WHERE pce.politician_id = $1
+     ORDER BY ct.topic_key ASC,
+              (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
+              pce.verified_at DESC`,
+    [politicianId],
+  );
+  const blocks = groupCitationRows(rows);
+  if (blocks.length === 0) return blocks;
+
+  const topicKeys = blocks.map((b) => b.topic_key);
+  const { rows: stanceRows } = await pool.query<{ topic_key: string; value: number; text: string }>(
+    `SELECT ct.topic_key, cs.value, cs.text
+     FROM inform.compass_stances cs
+     JOIN inform.compass_topics ct ON ct.id = cs.topic_id
+     WHERE ct.topic_key = ANY($1)
+     ORDER BY ct.topic_key, cs.value ASC`,
+    [topicKeys],
+  );
+  const stancesByTopic = new Map<string, StanceOption[]>();
+  for (const s of stanceRows) {
+    if (!stancesByTopic.has(s.topic_key)) stancesByTopic.set(s.topic_key, []);
+    stancesByTopic.get(s.topic_key)!.push({ value: Number(s.value), text: s.text });
+  }
+  for (const block of blocks) {
+    block.all_stances = stancesByTopic.get(block.topic_key) ?? [];
+  }
+  return blocks;
 }

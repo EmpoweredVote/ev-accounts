@@ -15,7 +15,7 @@
     "status": "active",
     "expected_seats": 7,
     "mayor_district_type": "LOCAL_EXEC",
-    "notes": "FeatureServer field CITYCOUNCIL_MEMBER verified in 132 arcgis_sources.json. Mayor sourced via data/rosters/manual/salt_lake_city_mayor.tsv (loader auto-resolves geo_id to jurisdiction_id for LOCAL_EXEC). W-3 cleanup 2026-05-14: removed dead `mayor_geo_id` field \u2014 loader derives mayor geo_id from jurisdiction_id."
+    "notes": "FeatureServer field CITYCOUNCIL_MEMBER verified in 132 arcgis_sources.json. Mayor sourced via data/rosters/manual/salt_lake_city_mayor.tsv (loader auto-resolves geo_id to jurisdiction_id for LOCAL_EXEC). W-3 cleanup 2026-05-14: removed dead `mayor_geo_id` field — loader derives mayor geo_id from jurisdiction_id."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:provo",
@@ -34,39 +34,45 @@
     "status": "active",
     "expected_seats": 7,
     "mayor_district_type": "LOCAL_EXEC",
-    "notes": "Provo FeatureServer (132 verified path) \u2014 COUNCIL_MEMBER, EMAIL, PHONE, TERM_EXPIRES, picture. 5 ward + 2 at-large. Mayor sourced via data/rosters/manual/provo_mayor.tsv (loader derives geo_id from jurisdiction_id)."
+    "notes": "Provo FeatureServer (132 verified path) — COUNCIL_MEMBER, EMAIL, PHONE, TERM_EXPIRES, picture. 5 ward + 2 at-large. Mayor sourced via data/rosters/manual/provo_mayor.tsv (loader derives geo_id from jurisdiction_id)."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:ogden",
     "city_name": "Ogden",
     "source": "scrape",
-    "source_url": "TBD \u2014 W2 source-audit task",
+    "source_url": "TBD — W2 source-audit task",
     "status": "manual_csv",
-    "notes": "LOW confidence; likely manual TSV. RESEARCH \u00a7External Sources lists Ogden in 'likely candidates'."
+    "notes": "LOW confidence; likely manual TSV. RESEARCH §External Sources lists Ogden in 'likely candidates'."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:sandy",
     "city_name": "Sandy",
     "source": "scrape",
-    "source_url": "TBD",
+    "source_url": "https://sandy.utah.gov/569/Council-Members",
     "status": "manual_csv",
-    "notes": "LOW confidence; manual TSV expected; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+    "expected_seats": 7,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (D1-D4, ocd ward geo_ids) + 3 at-large. Mayor Monica Zoltanski re-elected Nov 2025 (second term). Photos not directly accessible via CDN — profile pages only. Source: sandy.utah.gov/569/Council-Members."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_valley_city",
     "city_name": "West Valley City",
     "source": "scrape",
-    "source_url": "TBD",
+    "source_url": "https://www.wvc-ut.gov/97/City-Council-Members",
     "status": "manual_csv",
-    "notes": "LOW confidence"
+    "expected_seats": 6,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (ocd ward geo_ids) + 2 at-large. Mayor Karen Lang re-elected Nov 2025 (second term). D2 (Harmon) and D3 (Whetstone) term-end dates uncertain — re-election Nov 2025 unconfirmed; WVC results PDF returned 404. Source: wvc-ut.gov/97/City-Council-Members."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:west_jordan",
     "city_name": "West Jordan",
     "source": "scrape",
-    "source_url": "TBD",
+    "source_url": "https://www.westjordan.utah.gov/citycouncil/councilmembers/",
     "status": "manual_csv",
-    "notes": "LOW confidence"
+    "expected_seats": 7,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (ocd ward geo_ids) + 3 at-large (sworn Jan 2026). Mayor Dirk Burton (term 2024-2027). Photos available via WP media URLs. Source: westjordan.utah.gov/citycouncil/councilmembers/."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:orem",
@@ -99,5 +105,265 @@
     "source_url": "TBD",
     "status": "manual_csv",
     "notes": "LOW confidence; v2026.5.0 scope: deferred per Option C (top-5 only); see BACKLOG.md v2026.5.0 follow-ups"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:saratoga_springs",
+    "city_name": "Saratoga Springs",
+    "source": "scrape",
+    "source_url": "https://www.saratogasprings-ut.gov/437/Mayor-City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats, no ward subdivisions). Christopher Carn elected Mayor Nov 2025 (term Jan 2026-Jan 2030). Edon Davenport appointed Jan 2026 to fill vacancy (term ends Jan 2028). Photo URLs use CivicPlus ImageRepository pattern. All officials share main city hall phone 801-766-9793. Source: saratogasprings-ut.gov/437/Mayor-City-Council"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:santaquin",
+    "city_name": "Santaquin",
+    "source": "scrape",
+    "source_url": "https://www.santaquin.gov/citycouncil",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Fifth-class city. Mayor Dan Olson + Siddoway/Adcock re-elected unopposed Nov 2025 (terms Jan 2026-Jan 2030). Keel/Del Rosario/Mecham elected Nov 2023 (terms Jan 2024-Jan 2028). CAUTION: mayor photo URL contains filename vanausdal.jpg (CivicPlus CMS artifact from prior official) but correctly serves Olson photo — verify visually after rehost. Source: santaquin.gov/citycouncil"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:draper",
+    "city_name": "Draper",
+    "source": "scrape",
+    "source_url": "https://www.draperutah.gov/city-government/mayor-and-council/",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "All 5 council seats at-large (no ward geofences needed). Mayor Troy Walker re-elected Nov 2025 (second term, Jan 2026-Jan 2030). Direct photo URLs confirmed on draperutah.gov. Source: draperutah.gov/city-government/mayor-and-council/."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:murray",
+    "city_name": "Murray",
+    "source": "scrape",
+    "source_url": "https://www.murray.utah.gov/683/Council-Members",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Brett Hales re-election Nov 2025 assumed (campaign site active). Clark Bullen (D3) has shortened term ending Dec 2027 per city site. All council members have direct phone numbers listed. Source: murray.utah.gov/683/Council-Members."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_jordan",
+    "city_name": "South Jordan",
+    "source": "scrape",
+    "source_url": "https://www.sjc.utah.gov/241/City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Dawn Ramsey re-sworn Jan 6, 2026 (3rd term). Shelton (D3) and McGuire (D5) re-sworn Jan 2026 for 4-year terms. No individual phone numbers published. Source: sjc.utah.gov/241/City-Council."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:herriman",
+    "city_name": "Herriman",
+    "source": "scrape",
+    "source_url": "https://www.herriman.gov/city-council",
+    "status": "manual_csv",
+    "expected_seats": 4,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (D1-D4, ocd ward geo_ids). Mayor Lorin Palmer elected Nov 2025. Terrah Anderson (D4) won special election Nov 2025 to fill vacancy — shortened term to 2028 (not full 4 years). All officials share city hall phone 801-446-5323. Source: herriman.gov/city-council."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:riverton",
+    "city_name": "Riverton",
+    "source": "scrape",
+    "source_url": "https://www.rivertonutah.gov/government/city-council/index.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Tish Buroker sworn Jan 6, 2026 (first female mayor). Troy McDougal (D2) also serves as Mayor Pro Tempore. Direct phone numbers per member. Photos via Revize CMS. Source: rivertonutah.gov/government/city-council/."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:midvale",
+    "city_name": "Midvale",
+    "source": "scrape",
+    "source_url": "https://www.midvale.utah.gov/government/city_council.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Dustin Gettel appointed Dec 2024, won full term Nov 2025. Email domain @midvaleut.gov. Direct phone numbers per member. Photos via city gallery. Source: midvale.utah.gov/government/city_council.php."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cottonwood_heights",
+    "city_name": "Cottonwood Heights",
+    "source": "scrape",
+    "source_url": "https://www.cottonwoodheights.utah.gov/your-government/elected-officials",
+    "status": "manual_csv",
+    "expected_seats": 4,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (D1-D4, ocd ward geo_ids). Mayor Gay Lynn Bennion elected Nov 2025 (first female mayor; former UT House HD-46). Site returns HTTP 403 — no emails or photos retrievable. Email domain likely @ch.utah.gov. FOLLOW-UP: obtain contact info by calling 801-944-7000. Source: cottonwoodheights.utah.gov/elected-officials."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:millcreek",
+    "city_name": "Millcreek",
+    "source": "scrape",
+    "source_url": "https://www.millcreekut.gov/180/City-Council",
+    "status": "manual_csv",
+    "expected_seats": 4,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "4 district seats (D1-D4, ocd ward geo_ids). Mayor Cheri Jackson appointed by council vote Nov 2025 (9 years as D3 member). Nicole Handy (D3) appointed Feb 2026 to fill Jackson's vacancy — term ends 2027. Email domain @millcreekut.gov. Source: millcreekut.gov/180/City-Council."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:holladay",
+    "city_name": "Holladay",
+    "source": "scrape",
+    "source_url": "https://holladayut.gov/government/mayor_and_council/",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Paul Fotheringham elected Nov 2025 (former D3 member). D1 (Sundwall) and D3 (Bradley) are new members sworn Jan 8, 2026. D2/D4/D5 mid-term through ~2027. Email domain @holladayut.gov. Source: holladayut.gov/government/mayor_and_council/."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:taylorsville",
+    "city_name": "Taylorsville",
+    "source": "scrape",
+    "source_url": "https://www.taylorsvilleut.gov/government/elected-officials",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "5 district seats (D1-D5, ocd ward geo_ids). Mayor Kristie Overson re-elected unopposed Nov 2025. Harker (D4) and Knudsen (D5) re-elected Nov 2025. Emails for D2 (Cochran), D3 (Barbieri), D4 (Harker) are inferred from pattern [first initial][last]@taylorsvilleut.gov — verify by calling 801-963-5400. Site blocks scraping (403). Source: taylorsvilleut.gov/government/elected-officials."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:bluffdale",
+    "city_name": "Bluffdale",
+    "source": "scrape",
+    "source_url": "https://www.bluffdale.gov/390/Members",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "All 5 council seats at-large (no ward geofences needed). Mayor Natalie Hall elected Nov 2025. Wilding/Austin/Lord elected 2023 (terms 2024-2027). Hall/Aston/Smith elected 2025 (terms 2026-2029). Email domain @bluffdale.gov. Source: bluffdale.gov/390/Members."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:south_salt_lake",
+    "city_name": "South Salt Lake",
+    "source": "scrape",
+    "source_url": "https://sslc.gov/160/City-Council",
+    "status": "manual_csv",
+    "expected_seats": 7,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "Hybrid: 5 district seats (D1-D5) + 2 at-large. Joy Glad (D1) and Irvin Jones (D5) are appointed to fill vacancies (term ends 2027). Clarissa Williams at-large re-election Nov 2025 unconfirmed — verify. No individual emails published; contact via forms only. FOLLOW-UP: confirm Williams re-election and update if incorrect. Source: sslc.gov/160/City-Council."
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:eagle_mountain",
+    "city_name": "Eagle Mountain",
+    "source": "scrape",
+    "source_url": "https://eaglemountain.gov/government/mayor-city-council/",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Mayor Jared Gray elected Nov 2025 (former council member). Zachory Huish appointed Jan 2026 to fill Gray's vacated council seat (term ends Dec 2027). Email pattern firstinitial+lastname@eaglemountain.gov confirmed for all members. Photos lazy-loaded (SVG placeholders in HTML) — no CDN URLs obtainable. Source: eaglemountain.gov/government/mayor-city-council/"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:spanish_fork",
+    "city_name": "Spanish Fork",
+    "source": "scrape",
+    "source_url": "https://www.spanishfork.gov/government/mayor_and_city_council/index.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). CAUTION: Mayor Mendenhall and council members Marshall/Oyler show term_end 2025-12-31 (expired). The spanishfork.gov site had not been updated with 2025 election winners as of research date (2026-06-01). Beck/Cardon/Tooke (2024-2027) are confirmed current. FOLLOW-UP: verify who won the Nov 2025 mayor race and the 2 open council seats and update TSV. Email domain inconsistency: some members use @spanishfork.gov, others @spanishfork.org. Source: spanishfork.gov/government/mayor_and_city_council/"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:pleasant_grove",
+    "city_name": "Pleasant Grove",
+    "source": "scrape",
+    "source_url": "https://www.pgcityutah.gov/government/mayor_council.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Official site is pgcityutah.gov (pleasantgrove.utah.gov refused connections). Mayor Eric Jensen elected Nov 2025 (defeated incumbent Cyd LeMone 55.7%-44.3%). LeMone retains council seat through 2028. Dustin Phillips appointed Feb 2026 to fill vacancy — no email found. Email pattern firstinitial+lastname@pgcityutah.gov confirmed for named members. Source: pgcityutah.gov/government/mayor_council.php"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:american_fork",
+    "city_name": "American Fork",
+    "source": "scrape",
+    "source_url": "https://www.americanfork.gov/678/Mayor-City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Mayor Brad Frost re-elected Nov 2025 (third term). Staci Carroll and Ryan Hunter also re-elected Nov 2025. Email pattern firstinitial+lastname@americanfork.gov confirmed directly on city website for all members. Photo URLs use CivicPlus ImageRepository pattern. Source: americanfork.gov/678/Mayor-City-Council"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:springville",
+    "city_name": "Springville",
+    "source": "scrape",
+    "source_url": "https://www.springvilleutah.gov/government/",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats, explicitly staggered 4-year terms per city site). Official domain is springvilleutah.gov (springville.org and springvillecity.com both redirect). Mayor Matt Packard elected Nov 2025. Ellingson and Snelson elected Nov 2025. Email pattern firstinitiallastname@springvilleutah.gov confirmed per-member on individual profile pages. No individual phone numbers or photos published. Source: springvilleutah.gov/government/"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:payson",
+    "city_name": "Payson",
+    "source": "scrape",
+    "source_url": "https://www.paysonutah.gov/169/Mayor-City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Fourth-class city. Mayor Bill Wright ran uncontested in Nov 2025. Hulet/Rowley/Moss elected Nov 2023; Provstgaard/Smith elected Nov 2025. No individual emails published — city uses web contact form only. All officials share city hall main line (801) 465-5200. Photo URLs use CivicPlus ImageRepository pattern (documentId). Source: paysonutah.gov/169/Mayor-City-Council"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:vineyard",
+    "city_name": "Vineyard",
+    "source": "scrape",
+    "source_url": "https://www.vineyardutah.gov/government/city_council2.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Mayor Zack Stratton elected Nov 2025. Ezra Nair and Parker McCumber hold shortened remainder terms ending Dec 2027 (likely filled vacancy or partial-cycle seats). Email pattern firstname+lastname@vineyardutah.gov confirmed for all members. Only mayor photo URL retrievable (Revize CMS). Source: vineyardutah.gov/government/city_council2.php"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:alpine",
+    "city_name": "Alpine",
+    "source": "scrape",
+    "source_url": "https://www.alpineut.gov/178/Mayor-City-Council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Official domain is alpineut.gov (not alpinecity.org). Mayor Carla Merrill re-elected Nov 2025 (ran unopposed). Smuin/Hannemann/Rummler elected Nov 2021 — directory shows term expiration Dec 2027 (legislative calendar shift extended 2021 class beyond typical 4 years). Blackwell/Young elected Nov 2025. Only Brent Rummler's email published. Direct phone numbers per member from staff directory. Photos via CivicPlus ImageRepository. Source: alpineut.gov/directory.aspx"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:lindon",
+    "city_name": "Lindon",
+    "source": "scrape",
+    "source_url": "https://lindon.gov/elected-officials",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). lindon.gov returns HTTP 403 for all direct fetches — no emails, phones, or photos obtainable from the city website. Mayor Carolyn Lundberg re-elected Nov 2025. Broderick/Hoyt re-elected Nov 2025. Stewart/Hooley/Jacobs elected Nov 2023. Names and terms verified via Utah County election results and cached search snippets. FOLLOW-UP: call (801) 785-5043 to obtain contact info. Source: lindon.gov/elected-officials"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:cedar_hills",
+    "city_name": "Cedar Hills",
+    "source": "scrape",
+    "source_url": "https://www.cedarhills.org/page/mayor-and-city-council",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Mayor Denise Andersen re-elected Nov 2025 (ran unopposed). Ellison and Price elected Nov 2025. Geddes/Morgan/Smith elected Nov 2023. Email domain is @cedarhillsutah.gov (not @cedarhills.org). Direct phone numbers per member confirmed from directory and meeting minutes. No photo URLs obtainable (site truncates content). Source: cedarhills.org/page/mayor-and-city-council"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:mapleton",
+    "city_name": "Mapleton",
+    "source": "scrape",
+    "source_url": "https://www.mapleton.org/_government/mayor___city_council/index.php",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Official domain is mapleton.org (mapletoncity.org is unrelated). Mayor Therin Garrett elected Nov 2025 (former council member). Melanie Bott appointed Jan 7, 2026 to fill Garrett's vacated council seat (term ends Jan 2028). Beck/Lake also elected Nov 2025. Egbert/Jones elected Nov 2023. All emails confirmed from staff directory. Photos via Revize CMS (cms9files.revize.com/mapletonut/). All officials share city hall main line 801-489-5655. Source: mapleton.org/_government/mayor___city_council/"
+  },
+  {
+    "jurisdiction_id": "ocd-division/country:us/state:ut/place:salem",
+    "city_name": "Salem",
+    "source": "scrape",
+    "source_url": "https://www.salemutah.gov/mayor--city-council.htm",
+    "status": "manual_csv",
+    "expected_seats": 5,
+    "mayor_district_type": "LOCAL_EXEC",
+    "notes": "At-large council (5 seats). Mayor Cristy Simons elected Nov 2025 (former council member). Sacco and Snyder elected Nov 2025. De Graw/Deveraux Rees/Paul Taylor elected Nov 2023. salemutah.gov is JavaScript-rendered — no emails or photos retrievable. Names/terms verified via Utah PMN official notice and Utah County election results. General city email salemcity@salemcity.org, phone (801) 423-2770. Source: salemutah.gov/mayor--city-council.htm + utah.gov/pmn/sitemap/notice/1048943.html"
   }
 ]
