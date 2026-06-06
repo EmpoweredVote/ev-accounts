@@ -67,6 +67,12 @@ import {
 import { getCoverage, listCoverageStates } from '../lib/coverageService.js';
 import { getStateScores, getCountyScores } from '../lib/coverageMapService.js';
 import { getElectionsStateScores, getElectionsCountyScores } from '../lib/electionsMapService.js';
+import {
+  listPendingResearchReview,
+  getResearchReviewById,
+  resolveResearchReview,
+  rejectResearchReview,
+} from '../lib/researchEvidenceService.js';
 
 const router = Router();
 
@@ -1232,6 +1238,53 @@ router.delete('/accounts/:userId', async (req, res) => {
       return;
     }
     console.error('[admin/delete-account] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// Research review queue
+
+router.get('/research-review', async (_req, res) => {
+  try {
+    const rows = await listPendingResearchReview();
+    res.json(rows);
+  } catch (err) {
+    console.error('[admin/research-review] GET error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.get('/research-review/:id', async (req, res) => {
+  try {
+    const row = await getResearchReviewById(req.params.id);
+    if (!row) { res.status(404).json({ error: 'Not found' }); return; }
+    res.json(row);
+  } catch (err) {
+    console.error('[admin/research-review/:id] GET error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.post('/research-review/:id/resolve', async (req: any, res) => {
+  try {
+    await resolveResearchReview(req.params.id, actorId(req));
+    res.json({ ok: true });
+  } catch (err: any) {
+    if (err.code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }
+    if (err.code === 'INCOMPLETE') { res.status(422).json({ error: err.message }); return; }
+    console.error('[admin/research-review/:id/resolve] error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+router.post('/research-review/:id/reject', async (req: any, res) => {
+  try {
+    const { notes } = (req.body ?? {}) as { notes?: string };
+    await rejectResearchReview(req.params.id, actorId(req), notes);
+    res.json({ ok: true });
+  } catch (err) {
+    console.error('[admin/research-review/:id/reject] error:', err);
     res.status(500).json({ error: 'Internal server error' });
   }
 });

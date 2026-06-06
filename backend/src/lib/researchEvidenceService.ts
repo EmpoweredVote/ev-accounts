@@ -110,6 +110,111 @@ export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<voi
   }
 }
 
+// ── Read / resolve helpers (used by admin review UI) ─────────────────────────
+
+export interface ResearchReviewRow {
+  id: string;
+  batchId: string;
+  politicianId: string | null;
+  fullNameRaw: string;
+  topicId: string | null;
+  topicKey: string;
+  proposedValue: number | null;
+  proposedReasoning: string;
+  evidence: Array<{
+    url: string;
+    snippets: Array<{
+      snippet_index: number;
+      snippet: string;
+      verdict: string;
+      reason?: string;
+    }>;
+  }>;
+  verifiedSourceCount: number;
+  threshold: number;
+  status: string;
+  reResearchAttempted: boolean;
+  createdAt: string;
+}
+
+function mapReviewRow(row: any): ResearchReviewRow {
+  return {
+    id: row.id,
+    batchId: row.batch_id,
+    politicianId: row.politician_id,
+    fullNameRaw: row.full_name_raw,
+    topicId: row.topic_id,
+    topicKey: row.topic_key,
+    proposedValue: row.proposed_value,
+    proposedReasoning: row.proposed_reasoning,
+    evidence: row.evidence ?? [],
+    verifiedSourceCount: row.verified_source_count,
+    threshold: row.threshold,
+    status: row.status,
+    reResearchAttempted: row.re_research_attempted,
+    createdAt: row.created_at,
+  };
+}
+
+export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> {
+  const { pool } = await import('./db.js');
+  const { rows } = await pool.query(
+    `SELECT * FROM inform.stance_research_review
+     WHERE status = 'pending'
+     ORDER BY full_name_raw, topic_key`,
+  );
+  return rows.map(mapReviewRow);
+}
+
+export async function getResearchReviewById(id: string): Promise<ResearchReviewRow | null> {
+  const { pool } = await import('./db.js');
+  const { rows } = await pool.query(
+    `SELECT * FROM inform.stance_research_review WHERE id = $1`,
+    [id],
+  );
+  return rows[0] ? mapReviewRow(rows[0]) : null;
+}
+
+export async function resolveResearchReview(id: string, resolvedBy: string): Promise<void> {
+  const { pool } = await import('./db.js');
+  const row = await getResearchReviewById(id);
+  if (!row) throw Object.assign(new Error('Not found'), { code: 'NOT_FOUND' });
+  if (!row.politicianId || !row.topicId || row.proposedValue === null) {
+    throw Object.assign(new Error('Row is missing politician_id, topic_id, or proposed_value'), { code: 'INCOMPLETE' });
+  }
+
+  await pool.query(
+    `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+     VALUES ($1, $2, $3)
+     ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
+    [row.politicianId, row.topicId, row.proposedValue],
+  );
+  await pool.query(
+    `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+     VALUES ($1, $2, $3, $4)
+     ON CONFLICT (politician_id, topic_id)
+     DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
+    [row.politicianId, row.topicId, row.proposedReasoning,
+      row.evidence.filter((e) => e.snippets.some((s) => s.verdict === 'verified')).map((e) => e.url)],
+  );
+  await pool.query(
+    `UPDATE inform.stance_research_review
+     SET status = 'resolved', resolved_at = NOW(), resolved_by = $2
+     WHERE id = $1`,
+    [id, resolvedBy],
+  );
+}
+
+export async function rejectResearchReview(id: string, resolvedBy: string, notes?: string): Promise<void> {
+  const { pool } = await import('./db.js');
+  await pool.query(
+    `UPDATE inform.stance_research_review
+     SET status = 'rejected', resolved_at = NOW(), resolved_by = $2, notes = COALESCE($3, notes)
+     WHERE id = $1`,
+    [id, resolvedBy, notes ?? null],
+  );
+}
+
 /**
  * Idempotent upsert into the review queue keyed on (batch_id, politician_id-or-name, topic_key).
  */

@@ -21,6 +21,7 @@ import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
 import { ReviewQueuePage } from './pages/admin/ReviewQueuePage';
 import { StanceReviewPage } from './pages/admin/StanceReviewPage';
 import { PoliticianStagingReviewPage } from './pages/admin/PoliticianStagingReviewPage';
+import { ResearchReviewPage } from './pages/admin/ResearchReviewPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InformSignup from './pages/InformSignup';
@@ -112,6 +113,7 @@ function App() {
           <Route path="review" element={<ReviewQueuePage />} />
           <Route path="review/stances/:id" element={<StanceReviewPage />} />
           <Route path="review/politicians/:id" element={<PoliticianStagingReviewPage />} />
+          <Route path="review/research/:id" element={<ResearchReviewPage />} />
         </Route>
       </Route>
 
