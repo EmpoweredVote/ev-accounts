@@ -18,6 +18,9 @@ import { CategoriesPage } from './pages/admin/CategoriesPage';
 import { CoveragePage } from './pages/admin/CoveragePage';
 import { PromotionsPage } from './pages/admin/PromotionsPage';
 import { InviteOverridesPage } from './pages/admin/InviteOverridesPage';
+import { ReviewQueuePage } from './pages/admin/ReviewQueuePage';
+import { StanceReviewPage } from './pages/admin/StanceReviewPage';
+import { PoliticianStagingReviewPage } from './pages/admin/PoliticianStagingReviewPage';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import InformSignup from './pages/InformSignup';
@@ -106,6 +109,9 @@ function App() {
           <Route path="categories" element={<CategoriesPage />} />
           <Route path="coverage" element={<CoveragePage />} />
           <Route path="coverage/map" element={<Navigate to="/admin/coverage" replace />} />
+          <Route path="review" element={<ReviewQueuePage />} />
+          <Route path="review/stances/:id" element={<StanceReviewPage />} />
+          <Route path="review/politicians/:id" element={<PoliticianStagingReviewPage />} />
         </Route>
       </Route>
 
