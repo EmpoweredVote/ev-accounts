@@ -277,6 +277,83 @@ Per MEMORY.md rate-limit rule and Phase 101 D-02: dispatch ONE research-stances 
 | 2 | Hallie Shoffner | AR | Democratic | campaign-finance, climate-change, economic-development, housing, taxes (5 topics) | Task 2 — Agent 2 |
 | 3 | Kurt Alme | MT | Republican | abortion, fossil-fuels, religious-freedom, same-sex-marriage, social-security, tariffs, trans-athletes, voting-rights (8 topics) | Task 2 — Agent 3 |
 
+---
+
+## Task 2 Research Logs (per-candidate)
+
+### Derek Dooley (GA, Republican) — Agent 1 complete
+
+**Topics sourced (CSV rows — 3):**
+| topic_key | value | source_url_1 |
+|-----------|-------|--------------|
+| healthcare | 4 | https://dooleyforgeorgia.com/priorities/putting-patients-and-doctors-first |
+| immigration | 4 | https://dooleyforgeorgia.com/priorities/safe-communities |
+| climate-change | 5 | https://dooleyforgeorgia.com/priorities/more-jobs-higher-wages |
+
+**Topics skipped — deletion candidates (3):**
+| topic_key | current_value | reason |
+|-----------|---------------|--------|
+| abortion | 4.0 | No statement found on campaign website or accessible news coverage; site deliberately omits social issues |
+| civil-rights | 4.0 | No statement found anywhere |
+| voting-rights | 4.0 | No statement found; DC Business as Usual page covers congressional reform only |
+
+**Value changes from DB:** healthcare 4→4 (same), immigration 4→4 (same), climate-change 4→5 (upgraded from 4 to 5 — "unleash American energy," zero climate policy language matches chair 5 not chair 4)
+
+---
+
+### Hallie Shoffner (AR, Democratic) — Agent 2 complete
+
+**Topics sourced (CSV rows — 2):**
+| topic_key | value | source_url_1 |
+|-----------|-------|--------------|
+| taxes | 2 | https://www.hallieshoffner.com/priorities |
+| economic-development | 2 | https://www.hallieshoffner.com/priorities |
+
+**Topics skipped — deletion candidates (3):**
+| topic_key | current_value | reason |
+|-----------|---------------|--------|
+| campaign-finance | 2.0 | Zero content found on site or accessible news |
+| climate-change | 2.0 | No content found; priorities page has 12 sections, none address energy/environment |
+| housing | 2.0 | Only passing mention grouping housing costs with groceries; no specific policy proposals |
+
+**Value changes from DB:** taxes 2→2 (same), economic-development 2→2 (same, confirmed with specific URL)
+
+---
+
+### Kurt Alme (MT, Republican) — Agent 3 complete
+
+**Topics sourced (CSV rows — 2):**
+| topic_key | value | source_url_1 |
+|-----------|-------|--------------|
+| abortion | 5 (was 5.0) | https://sbaprolife.org/candidate-fund/leading-natl-pro-life-group-endorses-kurt-alme-for-mt-sen |
+| fossil-fuels | 4 (was 5.0) | https://mtbeef.org/montana-agricultural-political-action-committee-announces-2026-primary-election-endorsements/ |
+
+**Topics skipped — deletion candidates (6):**
+| topic_key | current_value | reason |
+|-----------|---------------|--------|
+| religious-freedom | 5.0 | No specific statements, AG actions, or endorsements found |
+| same-sex-marriage | 5.0 | No position found; no legislative record, no public statements |
+| social-security | 4.0 | Not mentioned in any fetched source |
+| tariffs | 4.0 | "America First" alignment too indirect; no specific tariff position found |
+| trans-athletes | 4.0 | No statements, endorsements, or AG-era actions found |
+| voting-rights | 4.0 | No specific position found |
+
+**Value changes from DB:** abortion 5→4 (corrected: SBA endorsement matches chair 4, not full chair 5 ban-with-criminal-penalties), fossil-fuels 5→4 (corrected: ag/energy expansion evidence matches chair 4 expand-permits, not chair 5 remove-all-environmental-restrictions)
+
+---
+
+## Disposition Summary
+
+| Candidate | Sourced (keep) | Skipped (delete) | Total flagged |
+|-----------|---------------|------------------|---------------|
+| Derek Dooley | 3 | 3 | 6 |
+| Hallie Shoffner | 2 | 3 | 5 |
+| Kurt Alme | 2 | 6 | 8 |
+| **Total** | **7** | **12** | **19** |
+
+Cross-check: 7 + 12 = 19 = Plan 01 flagged-stance count ✓
+CSV path: `backend/data/stance-research/2026-06-06-candidate-remediation.csv`
+
 **Output file for all 3 agents:** `backend/data/stance-research/2026-06-06-candidate-remediation.csv`
 
 Each agent appends to the same file. After every agent completes, verify the CSV has exactly one header row (no duplicate headers).
