@@ -1,0 +1,12 @@
+full_name,politician_id,state,district_type,party,total_stances,unsourced_count,weak_count,affected_topic_keys,classification
+"Akilah Weber Pierson",e5470008-3c0d-4970-a485-053621d8f0a6,CA,STATE_UPPER,Democratic,15,0,1,"fossil-fuels",weak_only
+"Caroline Menjivar",4baa73c2-d38b-4d07-894f-1577d5ba43a3,CA,STATE_UPPER,Democratic,25,0,1,"homelessness",weak_only
+"Catherine Stefani",0649630c-bd6d-40fe-8f66-e026e6f6c83e,CA,STATE_LOWER,Democratic,10,0,1,"immigration",weak_only
+"Eloise Gómez Reyes",1571da4a-b832-4792-917c-184c155b1700,CA,STATE_UPPER,Democratic,25,0,3,"campaign-finance|religious-freedom|ukraine-support",weak_only
+"Gregg Hart",21940b7c-2424-47e9-a649-077b0f827c2c,CA,STATE_LOWER,Democratic,10,0,1,"homelessness",weak_only
+"Henry Stern",f3671de4-514f-441c-8ad4-4a9ab7c65ae6,CA,STATE_UPPER,Democratic,25,0,3,"religious-freedom|social-security|ukraine-support",weak_only
+"Natasha Johnson",3f200d93-74aa-4191-a275-77b64ff5b219,CA,STATE_LOWER,Republican,16,0,1,"school-vouchers",weak_only
+"Rob Bonta",8b183a30-3afb-4d9e-aa40-aa2ad2c674aa,CA,STATE_EXEC,Democratic,40,0,1,"ukraine-support",weak_only
+"Gavin Newsom",f26309c8-2525-49b2-bdaf-62980cbb1853,CA,STATE_EXEC,Democratic,29,4,0,"medicare/aid|redistricting|religious-freedom|same-sex-marriage",unsourced_only
+"Juan Carrillo",b959d608-5674-467e-a1c8-3572c76a729b,CA,STATE_LOWER,Democratic,10,1,0,"childcare",unsourced_only
+"Lisa Calderon",0afa998d-94e9-4af4-ba00-256c38869398,CA,STATE_LOWER,Democratic,10,1,0,"campaign-finance",unsourced_only
