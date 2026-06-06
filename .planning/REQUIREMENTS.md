@@ -23,8 +23,8 @@
 
 ### QUAL — Quality Methodology
 
-- [ ] **QUAL-01**: Every stance updated, confirmed, or added during this milestone: value verified against the specific Chair text for that topic — the politician's known position must match the exact stance text for that value, not just the directional lean
-- [ ] **QUAL-02**: Deletion log produced — each deleted stance records politician full_name, topic_key, former value, and reason ("no evidence found" or "value incorrect and no correcting source found")
+- [x] **QUAL-01**: Every stance updated, confirmed, or added during this milestone: value verified against the specific Chair text for that topic — the politician's known position must match the exact stance text for that value, not just the directional lean
+- [x] **QUAL-02**: Deletion log produced — each deleted stance records politician full_name, topic_key, former value, and reason ("no evidence found" or "value incorrect and no correcting source found")
 
 ## Future Requirements
 
@@ -60,8 +60,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | STAX-01 | 103 | Pending |
 | STAX-02 | 103 | Pending |
 | STAX-03 | 104 | Pending |
-| QUAL-01 | 101, 102, 103, 104 | Pending |
-| QUAL-02 | 101, 102, 103, 104 | Pending |
+| QUAL-01 | 101, 102, 103, 104 | Complete |
+| QUAL-02 | 101, 102, 103, 104 | Complete |
 
 **Coverage:**
 - v2.7 requirements: 9 total

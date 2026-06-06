@@ -27,7 +27,7 @@
 <summary>🔄 v2.7 Source Integrity (Phases 100–104) — IN PROGRESS</summary>
 
 - [x] **Phase 100: Source Coverage Audit** — Audit report + prioritized target list (completed 2026-06-05)
-- [ ] **Phase 101: Federal Senate Remediation** — All 100 senator stances sourced or deleted
+- [x] **Phase 101: Federal Senate Remediation** — All 100 senator stances sourced or deleted (completed 2026-06-06)
 - [ ] **Phase 102: Federal House Remediation** — All US House rep stances sourced or deleted
 - [ ] **Phase 103: State Remediation — CA + MD** — CA legislators sourced or deleted; MD officials researched from scratch
 - [ ] **Phase 104: Local Remediation — City Officials** — All city official stances sourced or deleted; deletion log finalized
@@ -1113,7 +1113,7 @@ Plans:
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete | 2026-06-04 |
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
-| 101. Federal Senate Remediation | v2.7 | 2/2 | Complete   | 2026-06-06 |
+| 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
