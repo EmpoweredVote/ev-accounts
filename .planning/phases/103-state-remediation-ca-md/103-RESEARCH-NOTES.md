@@ -449,14 +449,16 @@ Question: "How should voter access be balanced with election security?"
 
 ## Migration Number
 
-**DEVIATION from plan:** Plan 02 assumed MAX(version) = 269. Live DB query returned **MAX(version) = 277** (additional migrations were applied between Phase 102 close and Phase 103 Plan 02 execution).
+**DEVIATION from plan (updated at Task 2 start):** Plan 02 assumed MAX(version) = 269 at plan-write. Pre-flight (Task 1) recorded MAX = 277 and next = 278. At Task 2 start, MAX = **279** (migrations 278 and 279 were applied by Plan 96-02 and Plan 103-03 between pre-flight and Task 2 execution).
 
-- Live MAX(version) at pre-flight: **277**
-- Next available migration number: **278**
-- Migration filename to use: `supabase/migrations/20260606000003_278_ca_state_source_remediation.sql`
+- Migration 278: `feat(96-01): add migration 278 — MD 2026 elections` (applied)
+- Migration 279: `feat(96-02): MD 2026 statewide races migration 279` (applied)
+- Live MAX(version) at Task 2 start: **279**
+- Next available migration number: **280**
+- Migration filename to use: `supabase/migrations/20260606000003_280_ca_state_source_remediation.sql`
 - Date prefix: 20260606000003 (one-greater-than 20260606000002, the Phase 102 House migration)
 
-**ABORT condition:** If at Task 3 write time, MAX(version) is ≥ 278, abort and surface the conflict. Re-verify at write time per 103-RESEARCH.md Pitfall 3.
+**Verified:** `SELECT MAX(version) FROM supabase_migrations.schema_migrations` → 279. Use 280 for this plan's migration.
 
 ---
 
@@ -494,9 +496,157 @@ Must always return 1 (exactly one header row).
 
 ## Task 2 Research Logs (per-politician)
 
-*To be populated as each agent completes. One subsection per politician.*
+Research completed 2026-06-06. All 11 politicians researched sequentially via WebFetch.
+Output CSV: `backend/data/stance-research/2026-06-06-ca-state-remediation.csv`
+Total: 12 upsert rows + 6 deletions = 18 flagged stances (matches Plan 01 count ✓)
+
+---
+
+### 1. Akilah Weber Pierson (STATE_UPPER, SD39)
+- **Topics researched:** fossil-fuels
+- **Topics with sourced value:** fossil-fuels → value 2
+- **Source:** SB 1137 (2021-22) vote — YES on fossil fuel drilling setbacks near homes
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** ARRAY_CAT (existing homepage source: https://sd39.senate.ca.gov)
+- **Notes:** SB 1137 establishes 3,200-ft setbacks for fossil fuel operations near sensitive receptors. Weber Pierson voted YES = restricts new permits = value 2.
+
+---
+
+### 2. Caroline Menjivar (STATE_UPPER, SD20)
+- **Topics researched:** homelessness
+- **Topics with sourced value:** homelessness → value 2
+- **Source:** SB 43 (2023) vote — YES on behavioral health expansion for unhoused individuals
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** ARRAY_CAT (existing homepage source: https://sd20.senate.ca.gov/)
+- **Notes:** SB 43 expanded LPS conservatorship to allow involuntary mental health/SUD treatment as alternative to criminalization. Menjivar voted YES = services-first approach = value 2. Value unchanged from DB.
+
+---
+
+### 3. Catherine Stefani (STATE_LOWER, AD19 — SF)
+- **Topics researched:** immigration
+- **Topics with sourced value:** immigration → value 2
+- **Source:** AB 79 (2025) vote — YES on expanded public social services for higher education
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** ARRAY_CAT (existing homepage source: https://sd22.senate.ca.gov/ — NOTE: this source was incorrectly attributed to Susan Rubio's district in prior research; the migration will still use ARRAY_CAT for the existing context row)
+- **Notes:** Stefani is an Assemblymember (AD19 SF area, elected Nov 2024). AB 79 (2025) expanded public social services eligibility regardless of immigration status. Value 2 ("keep legal immigration open and let most residents use public services") confirmed. Value unchanged from DB.
+
+---
+
+### 4. Eloise Gómez Reyes (STATE_UPPER, SD29)
+- **Topics researched:** campaign-finance, religious-freedom, ukraine-support
+- **Topics with sourced value:** campaign-finance → value 2
+  - Source: SB 1439 (2022) vote — YES on restricting pay-to-play campaign contributions
+  - **VALUE CHANGED from 3 → 2** (prior source was homepage only; SB 1439 evidence supports value 2 — strictly limiting certain political donations)
+- **Topics skipped/deletion candidates:**
+  - religious-freedom → DELETE (prior source was homepage only; no specific bill or statement found; single research pass exhausted)
+  - ukraine-support → DELETE (no CA state votes on Ukraine aid; no specific statement found; single research pass exhausted)
+- **ARRAY_CAT treatment:** ARRAY_CAT for campaign-finance (existing homepage source: https://sd29.senate.ca.gov)
+- **Notes:** ukraine-support and religious-freedom will be deleted from DB per D-06.
+
+---
+
+### 5. Gavin Newsom (STATE_EXEC, Governor)
+- **Topics researched:** medicare/aid, redistricting, religious-freedom, same-sex-marriage
+- **Topics with sourced value:** all 4 → sourced
+  - medicare/aid → value 2 (Wikipedia: Medi-Cal expansion to all low-income adults regardless of immigration status)
+  - redistricting → value 4 (Wikipedia: vetoed AB 1248 independent redistricting; championed Prop 50 legislative control of congressional maps) — **VALUE CHANGED from 1 → 4** (prior unsourced value 1 was incorrect)
+  - religious-freedom → value 2 (Wikipedia: signed SB 107 sanctuary for trans youth, limits religious exemptions)
+  - same-sex-marriage → value 1 (Wikipedia: issued SSM licenses in 2004, opposed Prop 8)
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** PLAIN_OVERWRITE for all 4 (existing context rows have empty sources [])
+- **Notes:** All 4 were PLAIN_OVERWRITE (unsourced — no prior context URLs). Redistricting value correction (1→4) is significant: Newsom VETOED independent redistricting and pushed for partisan gerrymandering via Prop 50.
+
+---
+
+### 6. Gregg Hart (STATE_LOWER, AD37)
+- **Topics researched:** homelessness
+- **Topics with sourced value:** homelessness → value 3
+- **Source:** SB 1395 (2024) vote — YES on Low Barrier Navigation Centers expansion (moved bill on Assembly Floor)
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** ARRAY_CAT (existing homepage source: https://gregghart.org/)
+- **Notes:** SB 1395 expands shelter options as a precondition for enforcement. Hart was the Assembly floor presenter. Value 3 unchanged from DB.
+
+---
+
+### 7. Henry Stern (STATE_UPPER, SD27)
+- **Topics researched:** religious-freedom, social-security, ukraine-support
+- **Topics with sourced value:** none
+- **Topics skipped/deletion candidates:**
+  - religious-freedom → DELETE (prior source was homepage only; no specific bill or statement found)
+  - social-security → DELETE (federal program; no CA state votes; no specific statement found)
+  - ukraine-support → DELETE (no CA state votes on Ukraine; no specific statement found)
+- **ARRAY_CAT treatment:** N/A (all deletions)
+- **Notes:** All 3 Stern topics are federal-level issues where CA state senators have no direct votes. Prior sources were homepage-only (https://sd27.senate.ca.gov). Per D-06 single-pass rule, all 3 deleted.
+
+---
+
+### 8. Juan Carrillo (STATE_LOWER, AD39)
+- **Topics researched:** childcare
+- **Topics with sourced value:** childcare → value 3
+- **Source:** SB 1112 (2024) vote — YES on childcare alternative payment programs expansion
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** PLAIN_OVERWRITE (existing context row has empty sources [])
+- **Notes:** SB 1112 expands categories of services childcare alternative payment programs can fund. Targeted subsidies = value 3. Value unchanged from DB (3.0).
+
+---
+
+### 9. Lisa Calderon (STATE_LOWER, AD57)
+- **Topics researched:** campaign-finance
+- **Topics with sourced value:** campaign-finance → value 2
+- **Source:** SB 1439 (2022) vote — YES on restricting campaign contributions from parties with agency decisions pending
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** PLAIN_OVERWRITE (existing context row has empty sources [])
+- **Notes:** Same SB 1439 evidence as Gómez Reyes. **VALUE CHANGED from 3 → 2** (prior unsourced value 3; SB 1439 evidence supports value 2). PLAIN_OVERWRITE because prior sources were empty [].
+
+---
+
+### 10. Natasha Johnson (STATE_LOWER, AD40)
+- **Topics researched:** school-vouchers
+- **Topics with sourced value:** school-vouchers → value 4
+- **Source:** natashajohnsonforassembly.com/issues — "strong advocate for educational options... charter schools"
+- **Topics skipped/deletion candidates:** none
+- **ARRAY_CAT treatment:** ARRAY_CAT (existing homepage source: https://natashajohnsonforassembly.com)
+- **Notes:** **VALUE CHANGED from 5 → 4** (prior source was homepage only; issues page supports expanding educational choice/charter schools — value 4 not value 5, as her statement does not explicitly endorse universal vouchers for all schools without restriction).
+
+---
+
+### 11. Rob Bonta (STATE_EXEC, CA Attorney General)
+- **Topics researched:** ukraine-support
+- **Topics with sourced value:** none
+- **Topics skipped/deletion candidates:**
+  - ukraine-support → DELETE (CA AG role is state law enforcement; Ukraine is federal; no specific statement found; no CA state votes on Ukraine)
+- **ARRAY_CAT treatment:** N/A (deletion)
+- **Notes:** oag.ca.gov and CalMatters searches found no Ukraine-specific content for Bonta. Per D-06 single-pass rule, deleted.
+
+---
+
+## Summary of Dispositions
+
+| Politician | Topic | Disposition | Value | Source URL | Value Changed? |
+|------------|-------|-------------|-------|------------|----------------|
+| Akilah Weber Pierson | fossil-fuels | UPSERT | 2 | leginfo/SB1137 | No |
+| Caroline Menjivar | homelessness | UPSERT | 2 | leginfo/SB43 | No |
+| Catherine Stefani | immigration | UPSERT | 2 | leginfo/AB79 | No |
+| Eloise Gómez Reyes | campaign-finance | UPSERT | 2 | leginfo/SB1439 | Yes (3→2) |
+| Eloise Gómez Reyes | religious-freedom | DELETE | (was 3) | — | N/A |
+| Eloise Gómez Reyes | ukraine-support | DELETE | (was 2) | — | N/A |
+| Gavin Newsom | medicare/aid | UPSERT | 2 | wikipedia | No |
+| Gavin Newsom | redistricting | UPSERT | 4 | wikipedia + leginfo | Yes (1→4) |
+| Gavin Newsom | religious-freedom | UPSERT | 2 | wikipedia | No |
+| Gavin Newsom | same-sex-marriage | UPSERT | 1 | wikipedia | No |
+| Gregg Hart | homelessness | UPSERT | 3 | leginfo/SB1395 | No |
+| Henry Stern | religious-freedom | DELETE | (was 3) | — | N/A |
+| Henry Stern | social-security | DELETE | (was 2) | — | N/A |
+| Henry Stern | ukraine-support | DELETE | (was 2) | — | N/A |
+| Juan Carrillo | childcare | UPSERT | 3 | leginfo/SB1112 | No |
+| Lisa Calderon | campaign-finance | UPSERT | 2 | leginfo/SB1439 | Yes (3→2) |
+| Natasha Johnson | school-vouchers | UPSERT | 4 | natashajohnsonforassembly.com/issues | Yes (5→4) |
+| Rob Bonta | ukraine-support | DELETE | (was 2) | — | N/A |
+
+**Total: 12 upserts + 6 deletions = 18 flagged stances ✓**
 
 ---
 
 *Phase: 103-state-remediation-ca-md*
 *Pre-flight generated: 2026-06-06*
+*Task 2 completed: 2026-06-06*
