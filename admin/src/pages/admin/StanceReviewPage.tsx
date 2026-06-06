@@ -14,6 +14,8 @@ interface StagingStance {
   added_by: string;
   review_count: number;
   reviewed_by: string[];
+  lockedBy: string | null;
+  lockedAt: string | null;
 }
 
 interface StanceOption {
@@ -40,6 +42,7 @@ export function StanceReviewPage() {
   const [topic, setTopic] = useState<CompassTopic | null>(null);
   const [stanceOptions, setStanceOptions] = useState<StanceOption[]>([]);
   const [lockAcquired, setLockAcquired] = useState(false);
+  const [lockConflict, setLockConflict] = useState<{ lockedBy: string; lockedAt: string } | null>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -64,9 +67,23 @@ export function StanceReviewPage() {
     if (id) load();
   }, [id]);
 
+  async function takeover() {
+    if (!id) return;
+    try {
+      await apiFetch(`/staging/stances/${id}/lock`, { method: 'DELETE' });
+      await apiFetch(`/staging/stances/${id}/lock`, { method: 'POST' });
+      setLockConflict(null);
+      setLockAcquired(true);
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to take over lock');
+    }
+  }
+
   async function load() {
     setLoading(true);
     setError(null);
+    setLockConflict(null);
     try {
       const stanceData = await apiFetch<StagingStance>(`/staging/stances/${id}`);
       setStance(stanceData);
@@ -77,8 +94,12 @@ export function StanceReviewPage() {
       try {
         await apiFetch(`/staging/stances/${id}/lock`, { method: 'POST' });
         setLockAcquired(true);
-      } catch (lockErr: unknown) {
-        setError(lockErr instanceof Error ? lockErr.message : 'Could not acquire lock — stance may be open elsewhere');
+      } catch {
+        if (stanceData.lockedBy) {
+          setLockConflict({ lockedBy: stanceData.lockedBy, lockedAt: stanceData.lockedAt ?? '' });
+        } else {
+          setError('Could not acquire lock — stance may be open elsewhere');
+        }
       }
 
       const topicsData = await apiFetch<{ topics: CompassTopic[] }>('/admin/compass/topics');
@@ -183,6 +204,23 @@ export function StanceReviewPage() {
           {topic?.short_title ?? topic?.title ?? stance.topic_key}
         </p>
       </div>
+
+      {lockConflict && (
+        <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-300 rounded-md text-sm flex items-center justify-between gap-4">
+          <span>
+            Locked by <strong>{lockConflict.lockedBy}</strong>
+            {lockConflict.lockedAt && (
+              <> since {new Date(lockConflict.lockedAt).toLocaleTimeString()}</>
+            )}
+          </span>
+          <button
+            onClick={takeover}
+            className="shrink-0 px-3 py-1 bg-yellow-100 hover:bg-yellow-200 dark:bg-yellow-800/40 dark:hover:bg-yellow-800/60 text-yellow-900 dark:text-yellow-200 text-xs font-medium rounded transition-colors"
+          >
+            Take over
+          </button>
+        </div>
+      )}
 
       {error && (
         <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 rounded-md text-sm">
