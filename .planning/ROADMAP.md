@@ -955,7 +955,7 @@ Plans:
 
 **Depends on:** Phase 100 (target list required to scope this phase)
 **Requirements:** FEDX-01, QUAL-01, QUAL-02
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 **Wave 1**
 
@@ -963,7 +963,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 101-02-PLAN.md — Research + migration + deletion log: run research-stances for flagged senators (one at a time), write migration 128 with UPSERTs and DELETEs, apply via psql, commit 101-DELETION-LOG.md and 101-VERIFICATION.md
+- [x] 101-02-PLAN.md — Research + migration + deletion log: run research-stances for flagged senators (one at a time), write migration 128 with UPSERTs and DELETEs, apply via psql, commit 101-DELETION-LOG.md and 101-VERIFICATION.md
 
 **Success Criteria** (what must be TRUE):
 
@@ -1113,7 +1113,7 @@ Plans:
 | 90. Campaign Finance Schema + Ingestion + API | v2.6 | 3/3 | Complete | 2026-06-04 |
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
-| 101. Federal Senate Remediation | v2.7 | 1/2 | In Progress|  |
+| 101. Federal Senate Remediation | v2.7 | 2/2 | Complete   | 2026-06-06 |
 | 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
