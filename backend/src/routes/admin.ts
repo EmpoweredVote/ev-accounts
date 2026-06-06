@@ -1268,7 +1268,8 @@ router.get('/research-review/:id', async (req, res) => {
 
 router.post('/research-review/:id/resolve', async (req: any, res) => {
   try {
-    await resolveResearchReview(req.params.id, actorId(req));
+    const { humanVerifiedUrls } = (req.body ?? {}) as { humanVerifiedUrls?: string[] };
+    await resolveResearchReview(req.params.id, actorId(req), humanVerifiedUrls ?? []);
     res.json({ ok: true });
   } catch (err: any) {
     if (err.code === 'NOT_FOUND') { res.status(404).json({ error: 'Not found' }); return; }

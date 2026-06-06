@@ -175,13 +175,23 @@ export async function getResearchReviewById(id: string): Promise<ResearchReviewR
   return rows[0] ? mapReviewRow(rows[0]) : null;
 }
 
-export async function resolveResearchReview(id: string, resolvedBy: string): Promise<void> {
+export async function resolveResearchReview(
+  id: string,
+  resolvedBy: string,
+  humanVerifiedUrls: string[] = [],
+): Promise<void> {
   const { pool } = await import('./db.js');
   const row = await getResearchReviewById(id);
   if (!row) throw Object.assign(new Error('Not found'), { code: 'NOT_FOUND' });
   if (!row.politicianId || !row.topicId || row.proposedValue === null) {
     throw Object.assign(new Error('Row is missing politician_id, topic_id, or proposed_value'), { code: 'INCOMPLETE' });
   }
+
+  // All sources to attach: machine-verified + human-verified (deduped)
+  const machineVerifiedUrls = row.evidence
+    .filter((e) => e.snippets.some((s) => s.verdict === 'verified'))
+    .map((e) => e.url);
+  const allSources = [...new Set([...machineVerifiedUrls, ...humanVerifiedUrls])];
 
   await pool.query(
     `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
@@ -194,9 +204,21 @@ export async function resolveResearchReview(id: string, resolvedBy: string): Pro
      VALUES ($1, $2, $3, $4)
      ON CONFLICT (politician_id, topic_id)
      DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
-    [row.politicianId, row.topicId, row.proposedReasoning,
-      row.evidence.filter((e) => e.snippets.some((s) => s.verdict === 'verified')).map((e) => e.url)],
+    [row.politicianId, row.topicId, row.proposedReasoning, allSources],
   );
+
+  // Write human-verified URLs to politician_context_evidence so they appear in citations
+  const batchId = `human-review-${id}`;
+  for (const url of humanVerifiedUrls) {
+    await pool.query(
+      `INSERT INTO inform.politician_context_evidence
+         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
+       VALUES ($1, $2, $3, $4, 0, $5)
+       ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
+      [row.politicianId, row.topicId, url, '[Human verified during review]', batchId],
+    );
+  }
+
   await pool.query(
     `UPDATE inform.stance_research_review
      SET status = 'resolved', resolved_at = NOW(), resolved_by = $2
