@@ -42,6 +42,8 @@ export function ResearchReviewPage() {
   const [rejectNote, setRejectNote] = useState('');
   const [showReject, setShowReject] = useState(false);
   const [humanVerified, setHumanVerified] = useState<Set<string>>(new Set());
+  const [editValue, setEditValue] = useState<string>('');
+  const [editReasoning, setEditReasoning] = useState<string>('');
 
   useEffect(() => {
     if (id) load();
@@ -53,6 +55,8 @@ export function ResearchReviewPage() {
     try {
       const data = await apiFetch<ResearchReviewRow>(`/admin/research-review/${id}`);
       setRow(data);
+      setEditValue(data.proposedValue !== null ? String(data.proposedValue) : '');
+      setEditReasoning(data.proposedReasoning);
       // Pre-check any sources the machine already verified
       const preVerified = new Set(
         data.evidence
@@ -80,9 +84,14 @@ export function ResearchReviewPage() {
     setSaving(true);
     setError(null);
     try {
+      const parsedValue = editValue !== '' ? Number(editValue) : null;
       await apiFetch(`/admin/research-review/${id}/resolve`, {
         method: 'POST',
-        body: JSON.stringify({ humanVerifiedUrls: [...humanVerified] }),
+        body: JSON.stringify({
+          humanVerifiedUrls: [...humanVerified],
+          valueOverride: parsedValue,
+          reasoningOverride: editReasoning || undefined,
+        }),
       });
       navigate('/admin/review?tab=research');
     } catch (err) {
@@ -119,7 +128,7 @@ export function ResearchReviewPage() {
     );
   }
 
-  const canApprove = !!row.politicianId && !!row.topicId && row.proposedValue !== null;
+  const canApprove = !!row.politicianId && !!row.topicId && editValue !== '' && !isNaN(Number(editValue));
   const totalVerified = humanVerified.size;
   const meetsThreshold = totalVerified >= row.threshold;
 
@@ -148,7 +157,7 @@ export function ResearchReviewPage() {
             ? 'Politician could not be matched to a DB record — approve is disabled.'
             : !row.topicId
             ? 'Topic could not be matched — approve is disabled.'
-            : 'No proposed value — approve is disabled.'}
+            : 'Enter a valid value to enable approve.'}
         </div>
       )}
 
@@ -166,18 +175,28 @@ export function ResearchReviewPage() {
 
         {/* Proposed stance */}
         <div>
-          <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
-            Proposed Value
-          </p>
-          <p className="text-3xl font-bold text-gray-900 dark:text-white">{row.proposedValue ?? '—'}</p>
+          <label className="block text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+            Value
+          </label>
+          <input
+            type="number"
+            value={editValue}
+            onChange={(e) => setEditValue(e.target.value)}
+            className="w-24 px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-2xl font-bold text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-ev-red"
+          />
         </div>
 
         {/* Reasoning */}
         <div>
-          <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
+          <label className="block text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
             Reasoning
-          </p>
-          <p className="text-sm text-gray-700 dark:text-gray-300">{row.proposedReasoning}</p>
+          </label>
+          <textarea
+            value={editReasoning}
+            onChange={(e) => setEditReasoning(e.target.value)}
+            rows={4}
+            className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm text-gray-700 dark:text-gray-300 resize-y focus:outline-none focus:ring-1 focus:ring-ev-red"
+          />
         </div>
 
         {/* Sources */}

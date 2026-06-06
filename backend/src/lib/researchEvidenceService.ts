@@ -179,12 +179,18 @@ export async function resolveResearchReview(
   id: string,
   resolvedBy: string,
   humanVerifiedUrls: string[] = [],
+  valueOverride?: number | null,
+  reasoningOverride?: string,
 ): Promise<void> {
   const { pool } = await import('./db.js');
   const row = await getResearchReviewById(id);
   if (!row) throw Object.assign(new Error('Not found'), { code: 'NOT_FOUND' });
-  if (!row.politicianId || !row.topicId || row.proposedValue === null) {
-    throw Object.assign(new Error('Row is missing politician_id, topic_id, or proposed_value'), { code: 'INCOMPLETE' });
+
+  const finalValue = valueOverride !== undefined && valueOverride !== null ? valueOverride : row.proposedValue;
+  const finalReasoning = reasoningOverride || row.proposedReasoning;
+
+  if (!row.politicianId || !row.topicId || finalValue === null) {
+    throw Object.assign(new Error('Row is missing politician_id, topic_id, or value'), { code: 'INCOMPLETE' });
   }
 
   // All sources to attach: machine-verified + human-verified (deduped)
@@ -197,14 +203,14 @@ export async function resolveResearchReview(
     `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
      VALUES ($1, $2, $3)
      ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
-    [row.politicianId, row.topicId, row.proposedValue],
+    [row.politicianId, row.topicId, finalValue],
   );
   await pool.query(
     `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
      VALUES ($1, $2, $3, $4)
      ON CONFLICT (politician_id, topic_id)
      DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
-    [row.politicianId, row.topicId, row.proposedReasoning, allSources],
+    [row.politicianId, row.topicId, finalReasoning, allSources],
   );
 
   // Write human-verified URLs to politician_context_evidence so they appear in citations
