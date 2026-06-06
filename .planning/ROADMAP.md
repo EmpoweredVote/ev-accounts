@@ -1008,7 +1008,7 @@ Plans:
 
 **Depends on:** Phase 100 (target list scopes CA remediation; MD officials confirmed in DB)
 **Requirements:** STAX-01, STAX-02, QUAL-01, QUAL-02
-**Plans:** TBD
+**Plans:** 1/3 plans executed
 
 **Success Criteria** (what must be TRUE):
 
@@ -1126,5 +1126,5 @@ Plans:
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
 | 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 102. Federal House Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
-| 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
+| 103. State Remediation — CA + MD | v2.7 | 1/3 | In Progress|  |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
