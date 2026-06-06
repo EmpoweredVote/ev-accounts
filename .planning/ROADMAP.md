@@ -956,7 +956,8 @@ Plans:
 **Depends on:** Phase 100 (target list required to scope this phase)
 **Requirements:** FEDX-01, QUAL-01, QUAL-02
 **Plans:** 2/2 plans complete
-Plans:
+
+Plans:
 **Wave 1**
 
 - [x] 101-01-PLAN.md — Senator-specific source triage: weak-source + unsourced query against NATIONAL_UPPER senators; outputs 101-TRIAGE-REPORT.md and 101-SENATOR-TARGETS.csv (scopes Plan 02)
@@ -980,7 +981,17 @@ Plans:
 
 **Depends on:** Phase 100 (target list scopes this phase); Phase 101 not required but typically sequential
 **Requirements:** FEDX-02, QUAL-01, QUAL-02
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+
+**Wave 1**
+
+- [ ] 102-01-PLAN.md — Build run-house-source-triage.ts covering NATIONAL_LOWER (expects 0 flagged) and deferred NATIONAL_UPPER candidates (Dooley/Shoffner/Alme — expects 3 flagged, 19 weak stances); outputs 102-TRIAGE-REPORT.md and 102-HOUSE-TARGETS.csv
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 102-02-PLAN.md — Research + migration + deletion log: run research-stances for the 3 deferred candidates (one at a time), write migration 269 with UPSERTs and DELETEs, apply via psql, commit 102-DELETION-LOG.md and 102-VERIFICATION.md (closes Phase 101 V2=19 deferred issue)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1114,6 +1125,6 @@ Plans:
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
 | 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
-| 102. Federal House Remediation | v2.7 | 0/? | Not started | — |
+| 102. Federal House Remediation | v2.7 | 0/2 | Ready to execute | — |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
