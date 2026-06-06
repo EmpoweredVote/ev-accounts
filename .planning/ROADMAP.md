@@ -28,7 +28,7 @@
 
 - [x] **Phase 100: Source Coverage Audit** — Audit report + prioritized target list (completed 2026-06-05)
 - [x] **Phase 101: Federal Senate Remediation** — All 100 senator stances sourced or deleted (completed 2026-06-06)
-- [ ] **Phase 102: Federal House Remediation** — All US House rep stances sourced or deleted
+- [x] **Phase 102: Federal House Remediation** — All US House rep stances sourced or deleted (completed 2026-06-06)
 - [ ] **Phase 103: State Remediation — CA + MD** — CA legislators sourced or deleted; MD officials researched from scratch
 - [ ] **Phase 104: Local Remediation — City Officials** — All city official stances sourced or deleted; deletion log finalized
 
@@ -981,7 +981,7 @@ Plans:
 
 **Depends on:** Phase 100 (target list scopes this phase); Phase 101 not required but typically sequential
 **Requirements:** FEDX-02, QUAL-01, QUAL-02
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 
@@ -991,7 +991,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 102-02-PLAN.md — Research + migration + deletion log: run research-stances for the 3 deferred candidates (one at a time), write migration 269 with UPSERTs and DELETEs, apply via psql, commit 102-DELETION-LOG.md and 102-VERIFICATION.md (closes Phase 101 V2=19 deferred issue)
+- [x] 102-02-PLAN.md — Research + migration + deletion log: run research-stances for the 3 deferred candidates (one at a time), write migration 269 with UPSERTs and DELETEs, apply via psql, commit 102-DELETION-LOG.md and 102-VERIFICATION.md (closes Phase 101 V2=19 deferred issue)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1125,6 +1125,6 @@ Plans:
 | 99. Elections Verification + Polish | v2.6 | 6/4 | Complete | 2026-06-05 |
 | 100. Source Coverage Audit | v2.7 | 1/1 | Complete    | 2026-06-05 |
 | 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
-| 102. Federal House Remediation | v2.7 | 1/2 | In Progress|  |
+| 102. Federal House Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 103. State Remediation — CA + MD | v2.7 | 0/? | Not started | — |
 | 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
