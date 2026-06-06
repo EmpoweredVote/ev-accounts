@@ -48,6 +48,7 @@ VALUES ('279')
 ON CONFLICT (version) DO NOTHING;
 
 -- Post-verification: confirm exactly 12 MD statewide race rows were seeded
+-- Note: only checks rows inserted by this migration (non-legislative races)
 DO $$
 DECLARE
   v_count INT;
@@ -55,7 +56,15 @@ BEGIN
   SELECT COUNT(*) INTO v_count
   FROM essentials.races r
   JOIN essentials.elections e ON e.id = r.election_id
-  WHERE e.state = 'MD' AND e.name = '2026 Maryland General Election';
+  WHERE e.state = 'MD' AND e.name = '2026 Maryland General Election'
+    AND r.position_name IN (
+      'Governor of Maryland',
+      'Attorney General of Maryland',
+      'Comptroller of Maryland',
+      'U.S. Senate Maryland',
+      'U.S. House MD-01', 'U.S. House MD-02', 'U.S. House MD-03', 'U.S. House MD-04',
+      'U.S. House MD-05', 'U.S. House MD-06', 'U.S. House MD-07', 'U.S. House MD-08'
+    );
   IF v_count <> 12 THEN
     RAISE EXCEPTION 'Expected 12 MD statewide race rows, found %', v_count;
   END IF;
