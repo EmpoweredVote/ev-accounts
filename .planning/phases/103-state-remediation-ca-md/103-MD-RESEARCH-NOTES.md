@@ -716,6 +716,89 @@ Each agent appends to the same file. Verify no duplicate header rows after each 
 
 ---
 
+---
+
+## Per-Official Research Log
+
+### 1. Wes Moore (Governor)
+
+**Topics researched:** 8
+**Topics with value (sourced):** 8 (abortion, climate-change, immigration, civil-rights, tariffs, childcare, fossil-fuels, taxes)
+**Topics skipped (no evidence):** 17 (ai-regulation, campaign-finance, data-centers, deportation, healthcare, homelessness, housing, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, trans-athletes, ukraine-support, voting-rights)
+
+**Sources used:** OnTheIssues governor profile pages (confirmed fetched), 2022 campaign website (via archived OnTheIssues citations)
+
+**Notable value choices:**
+- tariffs=3: Moore called tariffs "a tool, not an ideology" — explicitly rejects both full free trade (1-2) AND blanket high tariffs (4-5). Confirmed via OnTheIssues/CBS Face the Nation.
+- climate-change=3 (not 2): Moore pledged bold action but has not declared a climate emergency or pledged to phase out fossil fuels by 2030. His approach is investment-focused.
+
+---
+
+### 2. Aruna Miller (Lt. Governor)
+
+**Topics researched:** 5
+**Topics with value (sourced):** 5 (same-sex-marriage, climate-change, fossil-fuels, healthcare, civil-rights)
+**Topics skipped (no evidence):** 20 (abortion, ai-regulation, campaign-finance, childcare, data-centers, deportation, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, school-vouchers, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights)
+
+**Sources used:** Wikipedia (Aruna Miller) — confirmed fetched with policy-specific content including her fracking ban cosponsor, Civil Marriage Protection Act vote, healthcare positions
+
+**Notable value choices:**
+- fossil-fuels=2: Co-sponsoring Maryland's fracking ban (which she initiated in 2011) is a clear "stop issuing new permits" position.
+- healthcare=2: Explicitly stated support for moving toward single-payer during 2018 campaign, confirmed via Wikipedia.
+
+---
+
+### 3. Anthony G. Brown (Attorney General)
+
+**Topics researched:** 3
+**Topics with value (sourced):** 3 (civil-rights, immigration, abortion)
+**Topics skipped (no evidence):** 22 (ai-regulation, campaign-finance, childcare, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights)
+
+**Sources used:** Wikipedia (Anthony Brown Maryland politician) — confirmed fetched with AG tenure section describing civil rights enforcement, immigration lawsuits against Trump administration
+
+**Notable value choices:**
+- civil-rights=2: As AG his documented record centers on enforcement of civil rights laws, prosecuting civil rights violations. Not a reparations/racial equity mandate (value 1) but active enforcement (value 2).
+- immigration=2: Filed lawsuits against Trump immigration restrictions as AG. Clearly anti-restriction but not calling for stopping all deportations.
+
+---
+
+### 4. Brooke Lierman (Comptroller)
+
+**Topics researched:** 5
+**Topics with value (sourced):** 5 (abortion, climate-change, immigration, civil-rights, school-vouchers)
+**Topics skipped (no evidence):** 20 (ai-regulation, campaign-finance, childcare, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, social-security, tariffs, taxes, trans-athletes, ukraine-support, voting-rights)
+
+**Sources used:** Wikipedia (Brooke Lierman) — confirmed fetched with detailed "Political positions" sections covering Education, Environment, Immigration, Social issues, Labor
+
+**Notable value choices:**
+- immigration=2 (not 1): Her documented position is opposing 287(g) agreements with ICE — limiting local enforcement cooperation, not refusing all ICE detainers. This fits value 2 more than value 1.
+- school-vouchers=2: Consistently supports public school funding increases and opposes diversion to private schools, though her documented position stops short of eliminating vouchers entirely.
+
+---
+
+### 5. Dereck E. Davis (Treasurer)
+
+**Topics researched:** 2
+**Topics with value (sourced):** 2 (civil-rights, taxes)
+**Topics skipped (no evidence):** 23 (abortion, ai-regulation, campaign-finance, childcare, climate-change, data-centers, deportation, fossil-fuels, healthcare, homelessness, housing, immigration, medicare/aid, misinformation, redistricting, religious-freedom, same-sex-marriage, school-vouchers, social-security, tariffs, trans-athletes, ukraine-support, voting-rights)
+
+**Sources used:** Wikipedia (Dereck E. Davis) — confirmed fetched; Davis is described as a centrist with limited public policy record on national compass topics beyond his role as Economic Matters Committee Chair and Treasurer
+
+**Notable value choices:**
+- taxes=3: Wikipedia explicitly describes Davis as a "centrist." His record shows moderate fiscal positions supporting working-class legislation but not major tax increases on wealthy. Centrist tax position = value 3.
+- Note: Davis opposed same-sex marriage legislation while in the House of Delegates — but the Wikipedia article mentions this only in passing ("opposed bills to legalize same-sex marriage in Maryland"). Without a specific confirmed source URL and given the Wikipedia article doesn't fully verify the extent of his opposition (it was a 2011 bill, before MD legalized it in 2012), I am NOT assigning same-sex-marriage stance — per SKILL.md rule: "Skip any topic where you cannot find sufficient evidence." The passage could be re-read as referring to earlier bills before the final 2012 passage.
+
+---
+
+## CSV Output Summary
+
+**File:** `backend/data/stance-research/2026-06-06-md-officials.csv`
+**Total rows:** 23 data rows + 1 header
+**All 5 officials represented:** Confirmed (5 distinct full_names)
+**No city-level topics:** Confirmed
+**No blank source_url_1:** Confirmed
+
 *Phase: 103-state-remediation-ca-md*
 *Plan: 03*
 *Pre-flight completed: 2026-06-06*
+*Research dispatch completed: 2026-06-06*
