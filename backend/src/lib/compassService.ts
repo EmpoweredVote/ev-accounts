@@ -738,3 +738,156 @@ export async function getBatchPoliticianAnswers(
     value: parseFloat(r.value),
   }));
 }
+
+// ---------------------------------------------------------------------------
+// getCitationsForPolitician
+// ---------------------------------------------------------------------------
+
+interface CitationItem {
+  source_url: string;
+  domain: string;
+  verified_at: string | null;
+  snippet: string | null;
+  is_primary: boolean;
+}
+
+interface CitationTopic {
+  topic_key: string;
+  topic_title: string;
+  topic_tension_name: null;
+  has_stance: boolean;
+  stance_value: number | null;
+  stance_text: string | null;
+  all_stances: { value: number; text: string }[];
+  reasoning: string | null;
+  citations: CitationItem[];
+}
+
+function extractDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
+
+/**
+ * getCitationsForPolitician
+ *
+ * Returns all sourced positions for a politician, enriched with stance options,
+ * reasoning, and per-URL citation metadata (domain, snippet, verified_at).
+ *
+ * Only topics where the politician has a politician_context row are included.
+ * Topics with zero source URLs but a reasoning string are included (reasoning-only).
+ *
+ * Uses four parallel queries after the initial context fetch:
+ *   1. compass_stances — all stance options for the relevant topics
+ *   2. source_verifications — verified_at per URL
+ *   3. politician_context_evidence — first snippet per URL
+ */
+export async function getCitationsForPolitician(politicianId: string): Promise<CitationTopic[]> {
+  const { rows: contextRows } = await pool.query<{
+    topic_id: string;
+    topic_key: string;
+    topic_title: string;
+    stance_value: string | null;
+    reasoning: string | null;
+    sources: string[] | null;
+  }>(
+    `SELECT
+       ct.id           AS topic_id,
+       ct.topic_key,
+       ct.title        AS topic_title,
+       pa.value::text  AS stance_value,
+       pc.reasoning,
+       pc.sources
+     FROM inform.compass_topics ct
+     JOIN inform.politician_context pc
+       ON pc.topic_id = ct.id AND pc.politician_id = $1
+     LEFT JOIN inform.politician_answers pa
+       ON pa.topic_id = ct.id AND pa.politician_id = $1
+     WHERE ct.is_live = true
+     ORDER BY ct.went_live_at ASC NULLS LAST, ct.created_at ASC`,
+    [politicianId]
+  );
+
+  if (contextRows.length === 0) return [];
+
+  const topicIds = contextRows.map(r => r.topic_id);
+
+  const [stancesResult, verificationsResult, snippetsResult] = await Promise.all([
+    pool.query<{ topic_id: string; value: string; text: string }>(
+      `SELECT topic_id, value::text, text
+       FROM inform.compass_stances
+       WHERE topic_id = ANY($1::uuid[])
+       ORDER BY value ASC`,
+      [topicIds]
+    ),
+    pool.query<{ topic_id: string; url: string; verified_at: string | null }>(
+      `SELECT topic_id, url, verified_at
+       FROM public.source_verifications
+       WHERE politician_id = $1
+         AND entity_type = 'compass_stance'
+         AND topic_id = ANY($2::uuid[])`,
+      [politicianId, topicIds]
+    ),
+    pool.query<{ topic_id: string; source_url: string; snippet: string }>(
+      `SELECT topic_id, source_url, snippet
+       FROM inform.politician_context_evidence
+       WHERE politician_id = $1
+         AND topic_id = ANY($2::uuid[])
+       ORDER BY snippet_index ASC`,
+      [politicianId, topicIds]
+    ),
+  ]);
+
+  const stancesByTopic = new Map<string, { value: number; text: string }[]>();
+  for (const s of stancesResult.rows) {
+    const arr = stancesByTopic.get(s.topic_id) ?? [];
+    arr.push({ value: parseFloat(s.value), text: s.text });
+    stancesByTopic.set(s.topic_id, arr);
+  }
+
+  const verifiedAtMap = new Map<string, string | null>();
+  for (const v of verificationsResult.rows) {
+    verifiedAtMap.set(`${v.topic_id}|${v.url}`, v.verified_at);
+  }
+
+  const snippetMap = new Map<string, string>();
+  for (const s of snippetsResult.rows) {
+    const key = `${s.topic_id}|${s.source_url}`;
+    if (!snippetMap.has(key)) snippetMap.set(key, s.snippet);
+  }
+
+  return contextRows
+    .filter(row => (row.sources ?? []).length > 0 || row.reasoning)
+    .map(row => {
+      const allStances = stancesByTopic.get(row.topic_id) ?? [];
+      const stanceVal = row.stance_value != null ? parseFloat(row.stance_value) : null;
+      const hasStance = stanceVal !== null && stanceVal !== 0;
+      const stanceText = hasStance
+        ? (allStances.find(s => s.value === stanceVal)?.text ?? null)
+        : null;
+
+      const sources = row.sources ?? [];
+      const citations: CitationItem[] = sources.map((url, idx) => ({
+        source_url: url,
+        domain: extractDomain(url),
+        verified_at: verifiedAtMap.get(`${row.topic_id}|${url}`) ?? null,
+        snippet: snippetMap.get(`${row.topic_id}|${url}`) ?? null,
+        is_primary: idx === 0,
+      }));
+
+      return {
+        topic_key: row.topic_key,
+        topic_title: row.topic_title,
+        topic_tension_name: null,
+        has_stance: hasStance,
+        stance_value: hasStance ? stanceVal : null,
+        stance_text: stanceText,
+        all_stances: allStances,
+        reasoning: row.reasoning ?? null,
+        citations,
+      };
+    });
+}
