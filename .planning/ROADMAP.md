@@ -20,8 +20,18 @@
 - ✅ **v2.5 City Officials Expansion** — Phases 77–78 (shipped 2026-06-02; Phases 79–80 rolled into v2.6)
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
 - ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
+- 🔄 **v2.8 District of Columbia Coverage** — Phases 105–107 (in progress)
 
 ## Phases
+
+<details>
+<summary>🔄 v2.8 District of Columbia Coverage (Phases 105–107) — IN PROGRESS</summary>
+
+- [ ] **Phase 105: DC Infrastructure + Official Records** — DC government stub, ward + SBOE + EHN districts, TIGER ward polygons, all ~26 politician records with photos
+- [ ] **Phase 106: DC Stance Research** — Sourced stances for all DC officials across body-appropriate topic sets
+- [ ] **Phase 107: DC Finance** — FEC data for EHN; DC OCF data for Mayor + Council where accessible
+
+</details>
 
 <details>
 <summary>✅ v2.7 Source Integrity (Phases 100–104) — SHIPPED 2026-06-07</summary>
@@ -1039,6 +1049,61 @@ Plans:
 
 ---
 
+### v2.8 District of Columbia Coverage (Phases 105–107)
+
+---
+
+#### Phase 105: DC Infrastructure + Official Records
+
+**Goal:** DC government has a complete data foundation — government stub, all district records, ward boundary polygons for geofencing, and ~26 politician + office records with photos — so stance research and finance phases have valid FK targets and DC users can be geofenced to their ward.
+
+**Depends on:** Nothing (foundation phase; Phases 106 and 107 depend on this)
+**Requirements:** DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. `SELECT name FROM essentials.governments WHERE name = 'District of Columbia'` returns exactly 1 row — the DC government stub exists with no duplicates.
+2. `SELECT district_type, COUNT(*) FROM essentials.districts WHERE government_id = (SELECT id FROM essentials.governments WHERE name = 'District of Columbia') GROUP BY district_type` shows 8 CITY_COUNCIL ward rows, 9 SCHOOL_BOARD rows, and 1 NATIONAL_LOWER row for the EHN at-large delegate seat — all FK'd to the DC government.
+3. `SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'dc_ward'` returns 8 — TIGER 2024 ward boundary polygons are imported with a GIST index; a point known to be in Ward 3 (e.g., Chevy Chase) resolves to the correct ward district via point-in-polygon lookup.
+4. Every DC ward district has `tiger_geoid` populated so the `(tiger_geoid, district_type)` dual-column Path 0 join resolves DC users to their ward representative without a live PostGIS lookup.
+5. `SELECT COUNT(*) FROM essentials.politicians p JOIN essentials.offices o ON o.politician_id = p.id JOIN essentials.districts d ON d.id = o.district_id WHERE d.government_id = (SELECT id FROM essentials.governments WHERE name = 'District of Columbia') AND (p.photo_origin_url IS NULL OR p.photo_origin_url = '')` returns 0 — every DC official record has a non-empty photo URL.
+
+---
+
+#### Phase 106: DC Stance Research
+
+**Goal:** Every DC elected official has sourced stances calibrated to the appropriate topic scope for their body — city-scoped topics for the Mayor, Council, and AG; education-focused topics for SBOE; DC statehood and voting rights focus for Shadow Senators and EHN — so DC users can compare their officials' positions in the compass.
+
+**Depends on:** Phase 105 (all politician records must exist as FK targets)
+**Requirements:** DCST-01, DCST-02, DCST-03
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Every DC Council member, Mayor Bowser, and AG Schwalb has stance rows in `inform.politician_answers` for at least the 8 city-scope topics (housing, homelessness, climate, civil rights, childcare, immigration, taxes, voting), each paired with an `inform.politician_context` row containing at least one real source URL.
+2. Every SBOE member has stance rows for at least the 3 education-scope topics (school vouchers, childcare, civil rights), each paired with a context row containing at least one real source URL.
+3. Shadow Senators Paul Strauss and Michael D. Brown, and Eleanor Holmes Norton, each have stance rows for DC statehood / voting rights topics, each paired with a context row containing at least one real source URL; EHN's existing stances are verified and any gaps on applicable federal topics are filled.
+4. `SELECT COUNT(*) FROM inform.politician_answers pa LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id WHERE pa.politician_id IN (DC officials) AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources, 1) = 0)` returns 0 — zero unsourced DC official stances.
+
+---
+
+#### Phase 107: DC Finance
+
+**Goal:** Eleanor Holmes Norton has FEC finance data on her politician record, and DC Mayor + Council members have DC OCF data populated where the OCF exposes machine-readable data — giving DC users the same finance transparency layer available for federal officials.
+
+**Depends on:** Phase 105 (politician records must exist before finance_summary can be written to them)
+**Requirements:** DCFI-01, DCFI-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Eleanor Holmes Norton's `essentials.politicians.finance_summary` JSONB column is non-null and contains FEC data (total raised, total spent, cash on hand, cycle) fetched via the existing FEC ingestion script — `GET /api/essentials/politicians/:id` returns `finance_summary` for her record.
+2. DC OCF data availability is assessed and documented — if machine-readable data is accessible, `finance_summary` is populated for Mayor Bowser and at least the DC Council members with available data; if OCF does not expose structured data, the assessment result is recorded and DCFI-02 is marked complete with the documented finding.
+3. No DC official's `finance_summary` is populated with fabricated or placeholder data — every populated field comes from a fetched real source (FEC API or DC OCF), or the field is null with the gap documented.
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -1131,3 +1196,6 @@ Plans:
 | 102. Federal House Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 103. State Remediation — CA + MD | v2.7 | 3/3 | Complete    | 2026-06-07 |
 | 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
+| 105. DC Infrastructure + Official Records | v2.8 | 0/? | Not started | — |
+| 106. DC Stance Research | v2.8 | 0/? | Not started | — |
+| 107. DC Finance | v2.8 | 0/? | Not started | — |

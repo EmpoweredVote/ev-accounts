@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: District of Columbia Coverage
 status: planning
-last_updated: "2026-06-07T16:58:32.721Z"
+last_updated: "2026-06-07T17:00:00.000Z"
 last_activity: 2026-06-07
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -17,20 +17,29 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-05 after v2.6 milestone)
+See: .planning/PROJECT.md (updated 2026-06-07 after v2.8 milestone initialized)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Milestone complete
-**Last shipped:** v2.6 Data Quality & Elections — archived 2026-06-05. All 12 requirements closed (SACC-01/02/03/04, GAPF-01/02, FINA-01/02/03, ELEC-01/02/03). Gaps closed: Dooley sources fixed, Jones ukraine-support deleted, Phase 90 VERIFICATION.md updated, FEC re-run recovered 8 politicians (201→209). Archive: .planning/milestones/v2.6-ROADMAP.md.
+**Current focus:** v2.8 District of Columbia Coverage — Phase 105 next
+**Last shipped:** v2.7 Source Integrity — Phases 100–104, shipped 2026-06-07. All 9 requirements closed (SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02). MASTER-DELETION-LOG.md finalized. Archive: .planning/milestones/v2.7-ROADMAP.md (to be created at milestone close).
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 105 — DC Infrastructure + Official Records
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-07 — Milestone v2.8 started
+Status: Not started
+Last activity: 2026-06-07 — Milestone v2.8 roadmap created
+
+**Progress bar:** `[ ] [ ] [ ]` 0/3 phases complete
 
 ## Performance Metrics
+
+**v2.8 Scope — District of Columbia Coverage — IN PROGRESS**
+
+- Phases: 3 (105–107)
+- Requirements: 0/13 closed (DCIN-01/02/03/04, DCOF-01/02/03/04, DCST-01/02/03, DCFI-01/02)
+- Plans complete: 0
+- Started: 2026-06-07
 
 **v2.7 Scope — Source Integrity — COMPLETE ✅**
 
@@ -70,6 +79,41 @@ Last activity: 2026-06-07 — Milestone v2.8 started
 
 - Phases: 3 (66–68) ✅
 - Requirements: 21/21 (IBAK-01–06, LHUB-01–02, ISUP-01–04, IPRO-01–06, CEXP-01–03)
+
+### v2.8 Requirements
+
+| Req | Phase | Description |
+|-----|-------|-------------|
+| DCIN-01 | 105 | `essentials.governments` stub for Washington D.C. |
+| DCIN-02 | 105 | District records — 8 CITY_COUNCIL ward districts, 9 SCHOOL_BOARD seats, 1 NATIONAL_LOWER for EHN |
+| DCIN-03 | 105 | TIGER 2024 DC ward boundary polygons (8 wards) imported into `essentials.geo_districts` (CITY_COUNCIL layer) with GIST index |
+| DCIN-04 | 105 | `tiger_geoid` backfilled on DC ward district records for Path 0 dual-column join |
+| DCOF-01 | 105 | Politician + office records for Mayor Bowser + all 13 DC Council members |
+| DCOF-02 | 105 | Politician + office records for AG Schwalb + 2 Shadow Senators |
+| DCOF-03 | 105 | Politician + office records for all 9 SBOE members |
+| DCOF-04 | 105 | `photo_origin_url` populated for all new DC officials; EHN verified and updated if missing |
+| DCST-01 | 106 | Sourced stances for Mayor + DC Council + AG — city-scope topics (housing, homelessness, climate, civil rights, childcare, immigration, taxes, voting) |
+| DCST-02 | 106 | Sourced stances for all 9 SBOE members — education topics (school vouchers, childcare, civil rights) |
+| DCST-03 | 106 | Sourced stances for Shadow Senators + EHN — DC statehood / voting rights focus; EHN gaps filled |
+| DCFI-01 | 107 | FEC `finance_summary` fetched and stored for Eleanor Holmes Norton |
+| DCFI-02 | 107 | DC OCF data researched for Mayor + Council; populated where accessible machine-readable data exists |
+
+### v2.8 Phase Dependencies
+
+```
+Phase 105 (DC Infrastructure + Official Records)
+  └── Phase 106 (DC Stance Research)   — needs politician records as FK targets
+  └── Phase 107 (DC Finance)           — needs politician records for finance_summary writes
+```
+
+### v2.8 Requirement Coverage
+
+| Phase | Requirements | Count |
+|-------|-------------|-------|
+| 105 — DC Infrastructure + Official Records | DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04 | 8 |
+| 106 — DC Stance Research | DCST-01, DCST-02, DCST-03 | 3 |
+| 107 — DC Finance | DCFI-01, DCFI-02 | 2 |
+| **Total unique** | | **13 / 13** ✓ |
 
 ### v2.7 Requirements
 
@@ -210,6 +254,16 @@ Unified/elementary/secondary school district import, profile display, politician
 ### Key Decisions
 
 Full key decisions log in PROJECT.md. All prior milestone decisions archived in milestones/.
+
+### v2.8 Scope Notes (established 2026-06-07)
+
+- **DC official count**: ~26 new politician records — Mayor (1), DC Council (13: Chairman + 8 ward + 4 at-large), AG (1), Shadow Senators (2), SBOE (9). Eleanor Holmes Norton already exists; verify and update.
+- **District types**: CITY_COUNCIL for ward seats (8), SCHOOL_BOARD for SBOE seats (9), NATIONAL_LOWER for EHN at-large delegate seat (1). All FK to the DC government stub.
+- **TIGER layer name**: Use `dc_ward` as the layer discriminator in `essentials.geo_districts` (consistent with `ca_assembly`, `ca_senate`, `us_house` pattern).
+- **Topic scope by body**: Mayor + Council + AG → city-scope (housing, homelessness, climate, civil rights, childcare, immigration, taxes, voting). SBOE → education-scope (school vouchers, childcare, civil rights). Shadow Senators + EHN → DC statehood / voting rights focus + applicable federal topics for EHN.
+- **FEC ingestion**: Use existing `backend/scripts/fix-fec-name-mismatches.ts` or the FEC ingestion script from Phase 90 for EHN. Her FEC committee ID should be resolvable by name search.
+- **DC OCF**: DC Office of Campaign Finance (`ocf.dc.gov`) — assess whether structured/machine-readable data is accessible before attempting ingestion. If not, document and close DCFI-02 with the finding.
+- **Migration numbers**: Last applied is 283 (from Phase 104). Next available: 284. (Note: migrations 282–283 are visible in git status as untracked — verify they are applied before writing 284.)
 
 ### v2.7 Source Integrity Patterns (established 2026-06-05)
 
@@ -421,7 +475,7 @@ Statistical audit across ~1,049 politicians, ~13,700 rows. ~204 flagged (1.5%). 
 
 ### Open Blockers
 
-None for v2.7 start.
+None for v2.8 start.
 
 **Carried forward from v1.9 (non-blocking):**
 
@@ -457,8 +511,8 @@ None for v2.7 start.
 
 ## Session Continuity
 
-Last session: 2026-06-07T15:34:26.369Z
-Stopped at: Phase 104 context gathered
+Last session: 2026-06-07T17:00:00.000Z
+Stopped at: v2.8 roadmap created
 Resume file: None
 
 ## Decisions

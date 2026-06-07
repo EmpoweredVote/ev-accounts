@@ -51,8 +51,9 @@
 
 ## Traceability
 
-| Phase | Requirements |
-|-------|-------------|
-| 105 — DC Infrastructure + Official Records | DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04 |
-| 106 — DC Stance Research | DCST-01, DCST-02, DCST-03 |
-| 107 — DC Finance | DCFI-01, DCFI-02 |
+| Phase | Requirements | Count |
+|-------|-------------|-------|
+| 105 — DC Infrastructure + Official Records | DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04 | 8 |
+| 106 — DC Stance Research | DCST-01, DCST-02, DCST-03 | 3 |
+| 107 — DC Finance | DCFI-01, DCFI-02 | 2 |
+| **Total** | | **13 / 13** ✓ |
