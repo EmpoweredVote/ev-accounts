@@ -1271,8 +1271,8 @@
     "field_map": null,
     "mtfcc": "X0001",
     "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (Layton city); fall back to status=no_source if 404 \u2014 see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) \u2014 reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LaytonCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "status": "at_large",
+    "notes": "At-large council confirmed 2026-06-01: Layton City council members are elected at-large. No ward/district boundaries exist. Prior URL guess for LaytonCouncilDistricts returned HTTP 400 (probed 2026-05-09)."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:leamington",
@@ -1301,8 +1301,8 @@
     "field_map": null,
     "mtfcc": "X0001",
     "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (Lehi city); fall back to status=no_source if 404 \u2014 see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) \u2014 reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LehiCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "status": "at_large",
+    "notes": "At-large council confirmed 2026-06-01: Lehi City has 5 council members elected at-large city-wide with staggered 4-year terms. No ward/district boundaries exist. Prior URL guess for LehiCouncilDistricts returned HTTP 400 (probed 2026-05-09) \u2014 confirmed no district structure."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:levan",
@@ -1351,8 +1351,8 @@
     "field_map": null,
     "mtfcc": "X0001",
     "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (Logan city); fall back to status=no_source if 404 \u2014 see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) \u2014 reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/LoganCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "status": "at_large",
+    "notes": "At-large council confirmed 2026-06-01: Logan City council members are elected at-large city-wide with 4-year terms. No ward/district boundaries exist. Prior URL guess for LoganCouncilDistricts returned HTTP 400 (probed 2026-05-09)."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:lyman",
@@ -1774,8 +1774,8 @@
     "field_map": null,
     "mtfcc": "X0001",
     "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (Orem city); fall back to status=no_source if 404 \u2014 see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) \u2014 reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/OremCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "status": "at_large",
+    "notes": "At-large council confirmed 2026-06-01: Orem City has 6 council members all elected at-large since January 1, 1982 (per orem.gov/form-of-government). No ward/district boundaries exist. Prior URL guess for OremCouncilDistricts returned HTTP 400 (probed 2026-05-09) \u2014 confirmed no district structure."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:panguitch",
@@ -2273,8 +2273,8 @@
     "field_map": null,
     "mtfcc": "X0001",
     "geo_id_template": null,
-    "status": "no_source",
-    "notes": "VERIFY URL + field names at run time (St. George city); fall back to status=no_source if 404 \u2014 see Pitfall 1; URL guess returned HTTP 400 from services1.arcgis.com/99lidPhWCzftIe9K (probed 2026-05-09 via reachability check) \u2014 reactive reclassification per Plan 132-04 Task 4.1; prior URL: https://services1.arcgis.com/99lidPhWCzftIe9K/ArcGIS/rest/services/StGeorgeCouncilDistricts/FeatureServer/0/query?where=1%3D1&outFields=*&f=geojson"
+    "status": "at_large",
+    "notes": "At-large council confirmed 2026-06-01: St. George City has mayor + 5 council members all elected at-large to staggered 4-year terms. No ward/district boundaries exist. Prior URL guess for StGeorgeCouncilDistricts returned HTTP 400 (probed 2026-05-09)."
   },
   {
     "jurisdiction_id": "ocd-division/country:us/state:ut/place:sterling",

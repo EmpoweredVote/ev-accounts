@@ -20,7 +20,7 @@ import {
   compareWithPoliticians,
   getUserVerdicts,
   getBatchPoliticianAnswers,
-  getCitationsForPolitician,
+  getPoliticianCitations,
 } from '../lib/compassService.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import type { Request, Response } from 'express';
@@ -593,34 +593,6 @@ router.get(
 );
 
 // ---------------------------------------------------------------------------
-// GET /api/compass/politicians/:id/citations
-// Auth: optional — works unauthenticated (frontend uses publicFetch)
-// Returns all sourced positions for a politician: each live topic with context
-// gets back its stance options, reasoning, and enriched citation objects
-// (domain, snippet, verified_at, is_primary). Empty array when none exist.
-// MUST be registered before /politicians/:id/:topicId/context.
-// ---------------------------------------------------------------------------
-
-router.get(
-  '/politicians/:id/citations',
-  optionalAuth,
-  async (req: Request, res: Response): Promise<void> => {
-    try {
-      const politicianId = req.params.id as string;
-      if (!UUID_REGEX.test(politicianId)) {
-        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID' });
-        return;
-      }
-      const data = await getCitationsForPolitician(politicianId);
-      res.status(200).json(data);
-    } catch (err) {
-      console.error('[GET /compass/politicians/:id/citations] error:', err);
-      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
-    }
-  }
-);
-
-// ---------------------------------------------------------------------------
 // GET /api/compass/politicians/:id/context
 // Auth: optional — works unauthenticated
 // Returns all context rows for a politician (all topics in one call).
@@ -643,6 +615,35 @@ router.get(
     } catch (err) {
       console.error('[GET /compass/politicians/:id/context] error:', err);
       res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+    }
+  }
+);
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/politicians/:id/citations
+// Auth: optional — public data, no login required
+// Returns all citation blocks for a politician grouped by topic.
+// Returns [] (HTTP 200) when the politician has no evidence — not a 404.
+// MUST be registered BEFORE /politicians/:id/:topicId/context to prevent
+// Express from capturing "citations" as the :topicId param segment.
+// ---------------------------------------------------------------------------
+
+router.get(
+  '/politicians/:id/citations',
+  optionalAuth,
+  async (req: Request, res: Response): Promise<void> => {
+    const politicianId = req.params.id as string;
+    try {
+      if (!UUID_REGEX.test(politicianId)) {
+        res.status(422).json({ code: 'VALIDATION_ERROR', message: 'Invalid politician ID' });
+        return;
+      }
+
+      const citations = await getPoliticianCitations(politicianId);
+      res.status(200).json(citations);
+    } catch (err) {
+      console.error(`[GET /compass/politicians/${politicianId}/citations] error:`, err);
+      res.status(500).json({ code: 'INTERNAL_ERROR', message: 'Internal server error' });
     }
   }
 );

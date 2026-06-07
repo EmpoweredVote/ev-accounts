@@ -77,7 +77,9 @@ interface CountyScore {
 **Aggregation semantics (locked):**
 - A **county** is "started" iff ≥1 jurisdiction inside it is populated.
 - **County depth** = mean of `j.score` over its *populated* jurisdictions (0 if none) — white space is carried by breadth, not by dragging depth down.
-- **State breadth** = started counties ÷ total counties. **State depth** = mean of *started counties'* county-depth (0 if none). This makes Indiana (only Monroe built out) read **low breadth / high depth → teal**, the headline acceptance case.
+- **State breadth** = started counties ÷ **true total counties in the state**. **State depth** = mean of *started counties'* county-depth (0 if none). This makes Indiana (only Monroe built out) read **low breadth / high depth → teal**, the headline acceptance case.
+
+**Breadth denominator (decided 2026-06-03):** The state's county geofence universe can be incomplete in production — e.g. Indiana has only 1 of its 92 counties geofenced (Monroe), while CA (58/58) and UT (29/29) are complete. Denominating breadth by *loaded* county geofences would make Indiana read 1/1 = 1.0 (olive/both-high), the exact "looks more covered than it is" failure the redesign targets. So `counties_total` (and thus state breadth) is denominated by the **true US county count per state**, from a static `US_COUNTY_COUNTS` table (keyed by 2-digit state FIPS) in `coverageMapService.ts`. States missing from the table fall back to the loaded-geofence count. County **depth** is still over *started* (loaded, populated) counties — only the breadth denominator uses the true total.
 
 ---
 

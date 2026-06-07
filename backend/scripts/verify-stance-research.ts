@@ -36,7 +36,7 @@ import { createVerificationFetchSession } from '../src/lib/verificationFetch.js'
 import {
   buildEvidenceRowsForInsert,
   buildReviewRowForInsert,
-  replaceEvidence,
+  accumulateEvidence,
   upsertReviewRow,
 } from '../src/lib/researchEvidenceService.js';
 
@@ -54,7 +54,9 @@ if (!DIR) {
   console.error('ERROR: --dir <batch directory> is required');
   process.exit(2);
 }
-const THRESHOLD = Number(opt('--threshold', '2'));
+// Default 1 verified source (cheap mode — avoids a re-research wave). Override
+// with --threshold or the RESEARCH_STANCES_THRESHOLD env var.
+const THRESHOLD = Number(opt('--threshold', process.env.RESEARCH_STANCES_THRESHOLD ?? '1'));
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
 const RE_RESEARCHED = flag('--re-researched'); // stamp review rows as re_research_attempted
@@ -194,7 +196,7 @@ for (const row of pushable) {
       [pid, tid, row.stance.reasoning, sources],
     );
     const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
-    await replaceEvidence(evRows);
+    await accumulateEvidence(evRows);
     pushed++;
     evidenceWritten += evRows.length;
     pushedPoliticianIds.add(pid);
@@ -220,6 +222,12 @@ for (const row of [...reResearch, ...unresolved]) {
     );
     reviewed++;
     console.log(`  REVIEW ${row.stance.full_name}/${row.stance.topic_key} (${pid ? 'pending' : 'unresolved_politician'})`);
+    // Persist verified snippets even when below threshold — as long as politician resolves
+    if (pid && tid && row.verifiedSources.length > 0) {
+      const evRows = buildEvidenceRowsForInsert({ row, politicianId: pid, topicId: tid, batchId: BATCH_ID });
+      await accumulateEvidence(evRows);
+      evidenceWritten += evRows.length;
+    }
   } catch (e: any) {
     errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: ${e.message}`);
   }

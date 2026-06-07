@@ -1,8 +1,7 @@
 /**
- * researchEvidenceService — pure helpers that shape VerifiedRow objects into
- * rows ready for `inform.politician_context_evidence` and
- * `inform.stance_research_review`. The actual SQL execution lives in the
- * skill orchestrator; this module is unit-testable on its own.
+ * researchEvidenceService — helpers for the stance research verification pipeline.
+ * Pure data-shaping functions (buildEvidenceRowsForInsert, buildReviewRowForInsert)
+ * plus DB-executing functions (accumulateEvidence, upsertReviewRow).
  */
 
 import type { VerifiedRow } from './researchVerifier.js';
@@ -93,25 +92,155 @@ export function buildReviewRowForInsert(args: {
 }
 
 /**
- * Replace evidence for a (politician, topic) and insert fresh snippets.
- * Idempotent across re-runs of the same batch.
+ * Accumulate evidence for a (politician, topic) — upserts each snippet, deduped
+ * by the unique index on (politician_id, topic_id, source_url, snippet_index).
+ * Never deletes existing rows; safe to re-run with the same or updated batches.
  */
-export async function replaceEvidence(rows: EvidenceInsertRow[]): Promise<void> {
+export async function accumulateEvidence(rows: EvidenceInsertRow[]): Promise<void> {
   if (rows.length === 0) return;
   const { pool } = await import('./db.js');
-  const { politician_id, topic_id } = rows[0];
-  await pool.query(
-    `DELETE FROM inform.politician_context_evidence WHERE politician_id=$1 AND topic_id=$2`,
-    [politician_id, topic_id],
-  );
   for (const r of rows) {
     await pool.query(
       `INSERT INTO inform.politician_context_evidence
-        (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
-       VALUES ($1, $2, $3, $4, $5, $6)`,
+         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
+       VALUES ($1, $2, $3, $4, $5, $6)
+       ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
       [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id],
     );
   }
+}
+
+// ── Read / resolve helpers (used by admin review UI) ─────────────────────────
+
+export interface ResearchReviewRow {
+  id: string;
+  batchId: string;
+  politicianId: string | null;
+  fullNameRaw: string;
+  topicId: string | null;
+  topicKey: string;
+  proposedValue: number | null;
+  proposedReasoning: string;
+  evidence: Array<{
+    url: string;
+    snippets: Array<{
+      snippet_index: number;
+      snippet: string;
+      verdict: string;
+      reason?: string;
+    }>;
+  }>;
+  verifiedSourceCount: number;
+  threshold: number;
+  status: string;
+  reResearchAttempted: boolean;
+  createdAt: string;
+}
+
+function mapReviewRow(row: any): ResearchReviewRow {
+  return {
+    id: row.id,
+    batchId: row.batch_id,
+    politicianId: row.politician_id,
+    fullNameRaw: row.full_name_raw,
+    topicId: row.topic_id,
+    topicKey: row.topic_key,
+    proposedValue: row.proposed_value,
+    proposedReasoning: row.proposed_reasoning,
+    evidence: row.evidence ?? [],
+    verifiedSourceCount: row.verified_source_count,
+    threshold: row.threshold,
+    status: row.status,
+    reResearchAttempted: row.re_research_attempted,
+    createdAt: row.created_at,
+  };
+}
+
+export async function listPendingResearchReview(): Promise<ResearchReviewRow[]> {
+  const { pool } = await import('./db.js');
+  const { rows } = await pool.query(
+    `SELECT * FROM inform.stance_research_review
+     WHERE status = 'pending'
+     ORDER BY full_name_raw, topic_key`,
+  );
+  return rows.map(mapReviewRow);
+}
+
+export async function getResearchReviewById(id: string): Promise<ResearchReviewRow | null> {
+  const { pool } = await import('./db.js');
+  const { rows } = await pool.query(
+    `SELECT * FROM inform.stance_research_review WHERE id = $1`,
+    [id],
+  );
+  return rows[0] ? mapReviewRow(rows[0]) : null;
+}
+
+export async function resolveResearchReview(
+  id: string,
+  resolvedBy: string,
+  humanVerifiedUrls: string[] = [],
+  valueOverride?: number | null,
+  reasoningOverride?: string,
+): Promise<void> {
+  const { pool } = await import('./db.js');
+  const row = await getResearchReviewById(id);
+  if (!row) throw Object.assign(new Error('Not found'), { code: 'NOT_FOUND' });
+
+  const finalValue = valueOverride !== undefined && valueOverride !== null ? valueOverride : row.proposedValue;
+  const finalReasoning = reasoningOverride || row.proposedReasoning;
+
+  if (!row.politicianId || !row.topicId || finalValue === null) {
+    throw Object.assign(new Error('Row is missing politician_id, topic_id, or value'), { code: 'INCOMPLETE' });
+  }
+
+  // All sources to attach: machine-verified + human-verified (deduped)
+  const machineVerifiedUrls = row.evidence
+    .filter((e) => e.snippets.some((s) => s.verdict === 'verified'))
+    .map((e) => e.url);
+  const allSources = [...new Set([...machineVerifiedUrls, ...humanVerifiedUrls])];
+
+  await pool.query(
+    `INSERT INTO inform.politician_answers (politician_id, topic_id, value)
+     VALUES ($1, $2, $3)
+     ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value`,
+    [row.politicianId, row.topicId, finalValue],
+  );
+  await pool.query(
+    `INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
+     VALUES ($1, $2, $3, $4)
+     ON CONFLICT (politician_id, topic_id)
+     DO UPDATE SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources`,
+    [row.politicianId, row.topicId, finalReasoning, allSources],
+  );
+
+  // Write human-verified URLs to politician_context_evidence so they appear in citations
+  const batchId = `human-review-${id}`;
+  for (const url of humanVerifiedUrls) {
+    await pool.query(
+      `INSERT INTO inform.politician_context_evidence
+         (politician_id, topic_id, source_url, snippet, snippet_index, batch_id)
+       VALUES ($1, $2, $3, $4, 0, $5)
+       ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
+      [row.politicianId, row.topicId, url, '[Human verified during review]', batchId],
+    );
+  }
+
+  await pool.query(
+    `UPDATE inform.stance_research_review
+     SET status = 'resolved', resolved_at = NOW(), resolved_by = $2
+     WHERE id = $1`,
+    [id, resolvedBy],
+  );
+}
+
+export async function rejectResearchReview(id: string, resolvedBy: string, notes?: string): Promise<void> {
+  const { pool } = await import('./db.js');
+  await pool.query(
+    `UPDATE inform.stance_research_review
+     SET status = 'rejected', resolved_at = NOW(), resolved_by = $2, notes = COALESCE($3, notes)
+     WHERE id = $1`,
+    [id, resolvedBy, notes ?? null],
+  );
 }
 
 /**
