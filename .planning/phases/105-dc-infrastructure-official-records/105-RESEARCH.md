@@ -636,21 +636,16 @@ Trayon White, Sr. (Ward 8) has been indicted for bribery (federal charges) and w
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **At-large Council district: add or use NULL?**
-   - What we know: 5 at-large council members (Chairman + 4) have no ward-based district. D-09 doesn't create an at-large CITY_COUNCIL row.
-   - What's unclear: Should the planner add a 19th district (consistent with D-07 SBOE at-large pattern) or set `district_id = NULL` for at-large offices?
-   - Recommendation: Add a `dc-council-at-large` CITY_COUNCIL district with `tiger_geoid = NULL`. Consistent with D-07, cleanly represents the at-large seats, and keeps all Council offices in the same district_type for querying.
+   - RESOLVED: Add `dc-council-at-large` CITY_COUNCIL district (19th district total). Plan 105-01 Task 1 creates it with `tiger_geoid = NULL`, consistent with D-07 (SBOE at-large pattern). All 5 at-large Council offices FK to this district.
 
 2. **Should `load-state-tiger-boundaries.ts` also write to `geo_districts`?**
-   - What we know: Currently writes only to `geofence_boundaries`. Phase 69 used a separate bash script to write to `geo_districts`.
-   - What's unclear: Whether the planner should unify these writes in the TypeScript script (for future states) or keep the separate bash pattern.
-   - Recommendation: Keep separate for Phase 105 (lower blast radius). The bash script approach for `geo_districts` is working and well-understood. Unifying is a future refactor.
+   - RESOLVED: Keep separate. Plan 105-01 Task 3 runs the TypeScript script for `geofence_boundaries` and a separate `seed-dc-ward-geo-districts.sh` for `geo_districts`. Unifying is a future Phase 130 refactor.
 
 3. **DC government `type` value**
-   - What we know: Prior cities use 'LOCAL'. DC is unique (not a city, not a state, not a county).
-   - Recommendation: Verify via `SELECT DISTINCT type FROM essentials.governments ORDER BY type` in the pre-flight step of the migration.
+   - RESOLVED: Use `'LOCAL'` (same as San Jose/SF). Plan 105-01 Task 1 includes a pre-flight `SELECT DISTINCT type FROM essentials.governments` verification before writing the INSERT.
 
 ---
 
