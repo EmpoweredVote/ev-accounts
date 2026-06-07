@@ -113,14 +113,12 @@ def generate_migration(migration_num, batch_label, candidate_inventory, csv_file
     """Generate a migration SQL file."""
     rows = read_csv_stances(csv_files, excluded_topics=excluded_topics)
 
-    # Group by politician (using full_name + politician_id)
+    # Group by politician using full_name only (simplified CSV format has no politician_id column)
     from collections import defaultdict
     by_candidate = defaultdict(list)
     for row in rows:
-        pid = row.get('politician_id', '').strip()
         name = row.get('full_name', '').strip()
-        key = (name, pid)
-        by_candidate[key].append(row)
+        by_candidate[name].append(row)
 
     total_stances = sum(len(v) for v in by_candidate.values())
 
@@ -150,8 +148,7 @@ def generate_migration(migration_num, batch_label, candidate_inventory, csv_file
 
     # Per-candidate blocks
     for name, pid in sorted(candidate_inventory, key=lambda x: x[0].split()[-1]):
-        key = (name, pid)
-        stances = by_candidate.get(key, [])
+        stances = by_candidate.get(name, [])
         info = f"{name}"
         lines.append(f"-- {'=' * 60}")
         lines.append(f"-- {info}")
@@ -217,7 +214,7 @@ def generate_migration(migration_num, batch_label, candidate_inventory, csv_file
 
     print(f"Written: {outpath}")
     print(f"  {len(by_candidate)} candidates, {total_stances} total stances")
-    for (name, pid), stances in sorted(by_candidate.items(), key=lambda x: x[0][0].split()[-1]):
+    for name, stances in sorted(by_candidate.items(), key=lambda x: x[0].split()[-1]):
         print(f"  {name}: {len(stances)} stances")
 
 
@@ -360,6 +357,108 @@ SF_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-05-22-sf-chu.csv",
 ]
 
+# ============================================================================
+# MD EXEC: 5 MD Constitutional Officers, migration 282
+# ============================================================================
+
+MD_EXEC_CANDIDATES = [
+    ("Wes Moore",        "21e534c8-c0c0-42f5-b52b-5eb2f246d632"),
+    ("Aruna Miller",     "ea9fc2d6-3b26-469a-978c-e8c846d2d49a"),
+    ("Anthony G. Brown", "60329719-1d5b-4bb4-8295-38ea18f6f378"),
+    ("Brooke Lierman",   "b26fb5d2-90eb-4108-8ce5-838df719473d"),
+    ("Dereck E. Davis",  "75378a96-8886-46eb-b0c1-37cbe2579265"),
+]
+
+MD_EXEC_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-exec-moore.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-exec-miller.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-exec-brown.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-exec-lierman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-exec-davis.csv",
+]
+
+# ============================================================================
+# MD SENATORS BATCH A: SD-01 through SD-15, migration 283
+# ============================================================================
+
+MD_SENATORS_A_CANDIDATES = [
+    ("Mike McKay",           "f88cd73d-1970-4da1-9bea-2142a25999a7"),
+    ("Paul D. Corderman",    "5127f8d8-ca40-40aa-8773-4c1abad66f41"),
+    ("Karen Lewis Young",    "1f78b5e2-b192-4aae-8112-19338aaa891d"),
+    ("William G. Folden",    "4a5241b7-8737-4a58-adf2-c5335111d3c4"),
+    ("Justin Ready",         "493c5d0c-1986-40d4-9fff-3a3bc3fe62e8"),
+    ("Johnny Ray Salling",   "9f8d0005-c5ff-42f8-b158-cdb6e4eee872"),
+    ("J.B. Jennings",        "5927d5ab-2fd7-4454-bcc3-34e494821aac"),
+    ("Carl Jackson",         "2fbad601-c2da-4f99-b04f-d28ae30b80f7"),
+    ("Katie Fry Hester",     "6da20195-1b0c-43f2-b1b3-7a3954326fe6"),
+    ("Benjamin Brooks",      "a16b94b0-dd22-40a9-af91-03295ea27986"),
+    ("Shelly Hettleman",     "3089c813-f0a8-46af-9a7b-1699129037e9"),
+    ("Clarence K. Lam",      "fc23b939-0dfd-4968-ab19-fc1e7745e997"),
+    ("Guy Guzzone",          "f0fafa0e-3dd9-4d50-bc5e-c96315f766d7"),
+    ("Craig J. Zucker",      "82145bc2-770a-421e-a2a1-0e79aae5b643"),
+    ("Brian J. Feldman",     "d423151e-8477-470d-8f73-ba7d2092f714"),
+]
+
+MD_SENATORS_A_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d01-mckay.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d02-corderman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d03-young.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d04-folden.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d05-ready.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d06-salling.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d07-jennings.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d08-jackson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d09-hester.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d10-brooks.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d11-hettleman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d12-lam.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d13-guzzone.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d14-zucker.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d15-feldman.csv",
+]
+
+# ============================================================================
+# MD SENATORS BATCH B: SD-16 through SD-31, migration 284
+# ============================================================================
+
+MD_SENATORS_B_CANDIDATES = [
+    ("Sara Love",              "c5d2cd24-170a-4f87-8fde-84216fe62806"),  # SD-16
+    ("Cheryl C. Kagan",        "e35d5990-55c7-42e2-94bc-27cb1c49b5f1"),  # SD-17
+    ("Jeff Waldstreicher",     "da75c207-bb23-477e-b3c0-7c462394b570"),  # SD-18
+    ("Benjamin F. Kramer",     "7a2d1548-3268-4767-97a8-bb8b142d5a33"),  # SD-19
+    ("William C. Smith, Jr.",  "b05ff6cb-1ea9-4904-8ecd-5d9aba5c61fc"),  # SD-20
+    ("Jim Rosapepe",           "9c400214-f007-4a8d-92fe-5f5d23b3838e"),  # SD-21
+    ("Alonzo T. Washington",   "8c8b0896-dfd0-4d3c-8492-e594d93b78ca"),  # SD-22
+    ("Ron Watson",             "9aef8bfb-8e0c-4f00-9898-c738abe4970c"),  # SD-23
+    ("Joanne C. Benson",       "4a7dc8a6-2138-4472-8197-8b878034f029"),  # SD-24
+    ("Nick Charles",           "cf190bac-9369-4175-bd4b-8ba776697d9c"),  # SD-25
+    ("C. Anthony Muse",        "47823046-7dea-4a4f-a11b-0c5890539891"),  # SD-26
+    ("Kevin M. Harris",        "8c6327bf-2eb4-4788-91f7-c5518ab5a3f1"),  # SD-27
+    ("Arthur Ellis",           "4754dede-4a3b-4280-a8b1-7497530107f7"),  # SD-28
+    ("Jack Bailey",            "0abc8345-1fbb-4994-b39c-c3c4f4eefc9f"),  # SD-29
+    ("Shaneka Henson",         "05c9b5b9-cb2b-4387-ab6b-350b69553fac"),  # SD-30
+    ("Bryan W. Simonaire",     "4aa50ee7-aeed-48ae-96e7-142bd9ac731b"),  # SD-31
+]
+
+MD_SENATORS_B_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d16-love.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d17-kagan.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d18-waldstreicher.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d19-kramer.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d20-smith.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d21-rosapepe.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d22-washington.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d23-watson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d24-benson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d25-charles.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d26-muse.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d27-harris.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d28-ellis.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d29-bailey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d30-henson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d31-simonaire.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -403,4 +502,40 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_LOCAL,
         header_scope_note="All 43 compass topics (city + federal); only data-centers excluded.",
         outpath=os.path.join(base, "216_sf_officials_stances.sql"),
+    )
+
+    print()
+    print("Generating migration 282 (MD exec stances)...")
+    generate_migration(
+        migration_num=282,
+        batch_label="MD Executive Stances — 5 Constitutional Officers",
+        candidate_inventory=MD_EXEC_CANDIDATES,
+        csv_files=MD_EXEC_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "282_md_exec_stances.sql"),
+    )
+
+    print()
+    print("Generating migration 283 (MD senators batch A: SD-01 through SD-15)...")
+    generate_migration(
+        migration_num=283,
+        batch_label="MD Senators Batch A — Districts 1-15",
+        candidate_inventory=MD_SENATORS_A_CANDIDATES,
+        csv_files=MD_SENATORS_A_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "283_md_senators_batch_a.sql"),
+    )
+
+    print()
+    print("Generating migration 284 (MD senators batch B: SD-16 through SD-31)...")
+    generate_migration(
+        migration_num=284,
+        batch_label="MD Senators Batch B — Districts 16-31",
+        candidate_inventory=MD_SENATORS_B_CANDIDATES,
+        csv_files=MD_SENATORS_B_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "284_md_senators_batch_b.sql"),
     )
