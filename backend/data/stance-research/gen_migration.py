@@ -703,6 +703,52 @@ MD_DELEGATES_D_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d27c-fisher.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH E: HD-28 through HD-33, migration 290
+# ============================================================================
+
+MD_DELEGATES_E_CANDIDATES = [
+    ("Debra Davis",                    "1cc5a555-4b8a-4573-8525-9ad2c7c0bf46"),  # HD-28
+    ("Edith J. Patterson",             "b9c61fea-fcb1-45cc-8e2c-e5b3046b7266"),  # HD-28
+    ("C. T. Wilson",                   "69870c10-cea2-43c2-8cf9-bfcaf0b82265"),  # HD-28
+    ("Matthew Morgan",                 "c4e4d811-1e14-45fe-9335-7521f1603856"),  # HD-29A (distinct from Todd B. Morgan)
+    ("Brian M. Crosby",                "898845f9-cb93-4162-b0ed-6842eacda5d6"),  # HD-29B
+    ("Todd B. Morgan",                 "7d79931f-101c-415b-a6a0-b7a919f70905"),  # HD-29C (distinct from Matthew Morgan)
+    ("Dylan Behler",                   "3f45bad5-b856-4d8e-b3d9-8c03623e030a"),  # HD-30A
+    ("Dana Jones",                     "d8eabd9b-2aa8-40de-94ce-06ce6ef167cf"),  # HD-30A
+    ("Seth A. Howard",                 "2fe3f655-c28e-40c3-a2f9-48ea9eb8b498"),  # HD-30B
+    ("Brian Chisholm",                 "cfc704da-dd6c-40b0-97fa-0c5ece8d3976"),  # HD-31
+    ("Nicholaus R. Kipke",             "0e0bdc53-b5a2-4292-aeb7-341a4c5bed08"),  # HD-31 (former Minority Leader)
+    ("LaToya Nkongolo",                "13462ee2-0dd9-4f70-809f-a813c23951d4"),  # HD-31
+    ("J. Sandy Bartlett",              "7d818044-a989-47e1-b6cf-d482ebad0600"),  # HD-32
+    ("Mark S. Chang",                  "4a409af4-8568-42c3-bb72-7bb7500c96ce"),  # HD-32
+    ("Mike Rogers",                    "24980735-6a39-4e48-94b0-7318cac8dfde"),  # HD-32
+    ("Andrew C. Pruski",               "ddfd43d3-023d-417e-9b68-af5a693e601e"),  # HD-33A
+    ("Stuart Michael Schmidt, Jr.",    "55d9d0b6-78a3-460b-97b9-87913ffc8e85"),  # HD-33B (comma in name)
+    ("Heather Bagnall",                "41749b94-11b8-4047-8421-95db0900d4b2"),  # HD-33C
+]
+
+MD_DELEGATES_E_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d28-davis.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d28-patterson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d28-wilson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d29a-morgan-m.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d29b-crosby.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d29c-morgan-t.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d30a-behler.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d30a-jones.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d30b-howard.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d31-chisholm.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d31-kipke.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d31-nkongolo.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d32-bartlett.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d32-chang.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d32-rogers.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d33a-pruski.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d33b-schmidt.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d33c-bagnall.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -842,4 +888,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "289_md_delegates_batch_d.sql"),
+    )
+
+    print()
+    print("Generating migration 290 (MD delegates batch E: HD-28 through HD-33)...")
+    generate_migration(
+        migration_num=290,
+        batch_label="MD Delegates Batch E — Districts 28-33",
+        candidate_inventory=MD_DELEGATES_E_CANDIDATES,
+        csv_files=MD_DELEGATES_E_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "290_md_delegates_batch_e.sql"),
     )
