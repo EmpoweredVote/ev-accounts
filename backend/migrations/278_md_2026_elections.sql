@@ -11,3 +11,7 @@ ON CONFLICT (name, election_date, state) DO NOTHING;
 INSERT INTO essentials.elections (name, election_date, election_type, jurisdiction_level, state)
 VALUES ('2026 Maryland General Election', '2026-11-03', 'general', 'state', 'MD')
 ON CONFLICT (name, election_date, state) DO NOTHING;
+
+INSERT INTO supabase_migrations.schema_migrations (version)
+VALUES ('278')
+ON CONFLICT (version) DO NOTHING;
