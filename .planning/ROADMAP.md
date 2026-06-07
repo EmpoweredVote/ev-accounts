@@ -1059,7 +1059,11 @@ Plans:
 
 **Depends on:** Nothing (foundation phase; Phases 106 and 107 depend on this)
 **Requirements:** DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 105-01-PLAN.md — DCIN infrastructure: DC government stub, 19 district rows, TIGER ward import (geofence_boundaries + geo_districts), tiger_geoid backfill, RPC default extension (DCIN-01 through DCIN-04)
+- [ ] 105-02-PLAN.md — DCOF official records: 27 DC politician + office records with photos (Mayor, Council, AG, Shadow Senators, EHN, SBOE) (DCOF-01 through DCOF-04)
 
 **Success Criteria** (what must be TRUE):
 
