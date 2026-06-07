@@ -17,7 +17,7 @@
 
 ### STAX — State + Local Remediation
 
-- [ ] **STAX-01**: Every CA state legislator (CA Assembly + CA Senate) stance: sourced or deleted
+- [x] **STAX-01**: Every CA state legislator (CA Assembly + CA Senate) stance: sourced or deleted
 - [ ] **STAX-02**: All MD politicians in DB (added in migrations 269–271 — MD executive branch officials): stances do not yet exist; research and add full stance coverage using Chair methodology with at least one real source URL per stance
 - [ ] **STAX-03**: Every city official (SF, San Jose, San Diego, Berkeley, Fremont) stance: sourced or deleted
 
@@ -57,7 +57,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SRCA-02 | 100 | Complete |
 | FEDX-01 | 101 | Complete |
 | FEDX-02 | 102 | Complete |
-| STAX-01 | 103 | Pending |
+| STAX-01 | 103 | Complete |
 | STAX-02 | 103 | Pending |
 | STAX-03 | 104 | Pending |
 | QUAL-01 | 101, 102, 103, 104 | Complete |
