@@ -1023,9 +1023,12 @@ Plans:
 
 **Goal:** Every city official (SF, San Jose, San Diego, Berkeley, Fremont) stance is sourced or deleted; the complete deletion log for the entire v2.7 milestone is finalized and committed.
 
-**Depends on:** Phase 100 (target list confirms city official sourcing state)
+**Depends on:** Phase 100 (target list confirms city official sourcing state); Phases 101/102/103 deletion logs (MASTER-DELETION-LOG.md merges all four)
 **Requirements:** STAX-03, QUAL-01, QUAL-02
-**Plans:** TBD
+**Plans:** 1 plan
+Plans:
+
+- [ ] 104-01-PLAN.md — Research 2 weak-source city-official stances (Mahmood/abortion, Moreno/city-sanitation); migration 283; 104-DELETION-LOG.md; compile MASTER-DELETION-LOG.md (QUAL-02 final, v2.7 milestone)
 
 **Success Criteria** (what must be TRUE):
 
