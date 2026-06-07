@@ -398,7 +398,15 @@ export async function getCities(): Promise<TreasuryCity[]> {
 }
 
 /**
- * Fetch a single city by UUID. Returns null if not found.
+ * Fetch a single city by UUID. Returns null if not found OR if the municipality
+ * has no associated budgets.
+ *
+ * CONTRACT: matches getCities() — only returns municipalities with at least one
+ * budget (HAVING COUNT(b.id) > 0). If the municipality exists in the DB but has
+ * no budget rows, this returns null rather than an entity with an empty
+ * available_datasets array. This prevents URL-based navigation from resolving to
+ * an entity that the EntitySwitcher would hide (its available_datasets guard)
+ * while the budget load silently fails.
  */
 export async function getCityById(id: string): Promise<TreasuryCity | null> {
   const { rows } = await pool.query<CityRow>(
@@ -414,7 +422,8 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      WHERE m.id = $1
-     GROUP BY m.id`,
+     GROUP BY m.id
+     HAVING COUNT(b.id) > 0`,
     [id]
   );
   return rows.length > 0 ? mapCity(rows[0]) : null;
