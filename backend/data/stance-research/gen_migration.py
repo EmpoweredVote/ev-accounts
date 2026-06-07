@@ -501,6 +501,58 @@ MD_SENATORS_C_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d47-augustine.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH A: HD-1 through HD-7, migration 286
+# ============================================================================
+
+MD_DELEGATES_A_CANDIDATES = [
+    ("Jim Hinebaugh, Jr.",       "3817ad52-3f43-4bd3-8525-e7dcd0816153"),  # HD-1A
+    ("Jason C. Buckel",          "5260bd6f-e70a-46f1-aa7d-49eaf22192cf"),  # HD-1B
+    ("Terry L. Baker",           "d049cf3e-6577-4f8d-ba7e-768ac2b78d66"),  # HD-1C
+    ("William Valentine",        "cdf746c1-8311-416b-9ad3-2684a83b6992"),  # HD-2A
+    ("William J. Wivell",        "df6fe96f-7795-4934-9acc-2b9f8f0aa8f7"),  # HD-2A
+    ("Matthew J. Schindler",     "18c6abb4-7b4b-4e21-a7fe-008e43d6f3e5"),  # HD-2B
+    ("Kris Fair",                "dfb9ae21-4605-4c58-94e8-84b1eb1a30c1"),  # HD-3
+    ("Kenneth Kerr",             "c0abb4fa-be8d-4fbe-9b6d-6319a8ecd255"),  # HD-3
+    ("Karen Simpson",            "5946ad0c-ddf5-4674-840e-6968105042cd"),  # HD-3
+    ("Barrie S. Ciliberti",      "00a1eaeb-157c-42f8-a6e5-9a9d02decbe9"),  # HD-4
+    ("April Miller",             "b389687f-817b-4fda-8770-a888029f4629"),  # HD-4
+    ("Jesse T. Pippy",           "ce2fc441-abd5-4d8f-9c56-114e31c4d43c"),  # HD-4
+    ("Christopher Eric Bouchat", "c12bb600-318a-4541-bcdd-8260f1ba172e"),  # HD-5
+    ("April Rose",               "5967c703-2583-466f-a438-c3ac182111d5"),  # HD-5
+    ("Chris Tomlinson",          "6e5ac4b7-73fd-497d-a4e9-7d5124c3d904"),  # HD-5
+    ("Robin L. Grammer, Jr.",    "0608cc7a-72ed-4d24-b966-3eee82075bf1"),  # HD-6
+    ("Robert B. Long",           "eadb65c9-74b6-40c3-b9e7-159c5734c59f"),  # HD-6
+    ("Ric Metzgar",              "ba85b633-32cf-4617-923c-3a325f39894e"),  # HD-6
+    ("Ryan Nawrocki",            "f5224e0c-0761-4ca7-a889-ed44517e2b91"),  # HD-7A
+    ("Kathy Szeliga",            "0945acd2-cb51-49ad-a22f-6043d2e61520"),  # HD-7A
+    ("Lauren Arikan",            "6a04e5b9-d532-4e80-bbca-6677a35620e5"),  # HD-7B
+]
+
+MD_DELEGATES_A_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d01a-hinebaugh.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d01b-buckel.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d01c-baker.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d02a-valentine.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d02a-wivell.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d02b-schindler.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d03-fair.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d03-kerr.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d03-simpson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d04-ciliberti.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d04-miller.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d04-pippy.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d05-bouchat.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d05-rose.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d05-tomlinson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d06-grammer.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d06-long.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d06-metzgar.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d07a-nawrocki.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d07a-szeliga.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d07b-arikan.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -592,4 +644,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "285_md_senators_batch_c.sql"),
+    )
+
+    print()
+    print("Generating migration 286 (MD delegates batch A: HD-1 through HD-7)...")
+    generate_migration(
+        migration_num=286,
+        batch_label="MD Delegates Batch A — Districts 1-7",
+        candidate_inventory=MD_DELEGATES_A_CANDIDATES,
+        csv_files=MD_DELEGATES_A_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "286_md_delegates_batch_a.sql"),
     )
