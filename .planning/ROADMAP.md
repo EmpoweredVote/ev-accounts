@@ -19,18 +19,18 @@
 - ✅ **v2.4 2026 Senate Candidates** — Phases 75–76 (shipped 2026-05-22)
 - ✅ **v2.5 City Officials Expansion** — Phases 77–78 (shipped 2026-06-02; Phases 79–80 rolled into v2.6)
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
-- 🔄 **v2.7 Source Integrity** — Phases 100–104 (in progress)
+- ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
 
 ## Phases
 
 <details>
-<summary>🔄 v2.7 Source Integrity (Phases 100–104) — IN PROGRESS</summary>
+<summary>✅ v2.7 Source Integrity (Phases 100–104) — SHIPPED 2026-06-07</summary>
 
 - [x] **Phase 100: Source Coverage Audit** — Audit report + prioritized target list (completed 2026-06-05)
 - [x] **Phase 101: Federal Senate Remediation** — All 100 senator stances sourced or deleted (completed 2026-06-06)
 - [x] **Phase 102: Federal House Remediation** — All US House rep stances sourced or deleted (completed 2026-06-06)
 - [x] **Phase 103: State Remediation — CA + MD** — CA legislators sourced or deleted; MD officials researched from scratch (completed 2026-06-07)
-- [ ] **Phase 104: Local Remediation — City Officials** — All city official stances sourced or deleted; deletion log finalized
+- [x] **Phase 104: Local Remediation — City Officials** — All city official stances sourced or deleted; MASTER-DELETION-LOG.md (20 entries) finalizes QUAL-02 for v2.7 (completed 2026-06-07)
 
 </details>
 
@@ -1025,10 +1025,10 @@ Plans:
 
 **Depends on:** Phase 100 (target list confirms city official sourcing state); Phases 101/102/103 deletion logs (MASTER-DELETION-LOG.md merges all four)
 **Requirements:** STAX-03, QUAL-01, QUAL-02
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 
-- [ ] 104-01-PLAN.md — Research 2 weak-source city-official stances (Mahmood/abortion, Moreno/city-sanitation); migration 283; 104-DELETION-LOG.md; compile MASTER-DELETION-LOG.md (QUAL-02 final, v2.7 milestone)
+- [x] 104-01-PLAN.md — Research 2 weak-source city-official stances (Mahmood/abortion, Moreno/city-sanitation); migration 283; 104-DELETION-LOG.md; compile MASTER-DELETION-LOG.md (QUAL-02 final, v2.7 milestone)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1130,4 +1130,4 @@ Plans:
 | 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 102. Federal House Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 103. State Remediation — CA + MD | v2.7 | 3/3 | Complete    | 2026-06-07 |
-| 104. Local Remediation — City Officials | v2.7 | 0/? | Not started | — |
+| 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete   | 2026-06-07 |
