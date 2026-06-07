@@ -740,8 +740,10 @@ export async function getLinkedTransactions(
       matchParams = [budgetId, txDeptName];
     }
   } else {
-    // No alias — try exact prefix match (works when formats align)
-    matchWhere = `t.budget_id = $1 AND LOWER(t.link_key) >= $2 AND LOWER(t.link_key) < ($2 || '}')`;
+    // No alias — match exact link_key or any child key (pipe-delimited prefix)
+    // Use explicit LIKE rather than a range bound to avoid capturing keys with
+    // characters above '|' (ASCII 124) such as '}' (125) or '~' (126).
+    matchWhere = `t.budget_id = $1 AND (LOWER(t.link_key) = $2 OR LOWER(t.link_key) LIKE $2 || '|%')`;
     matchParams = [budgetId, linkKey.toLowerCase()];
   }
 
