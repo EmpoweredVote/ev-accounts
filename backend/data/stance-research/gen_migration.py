@@ -553,6 +553,52 @@ MD_DELEGATES_A_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d07b-arikan.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH B: HD-8 through HD-13, migration 287
+# ============================================================================
+
+MD_DELEGATES_B_CANDIDATES = [
+    ("Nick Allen",              "a1f58b34-76ee-43ce-b152-4843c42f4f79"),  # HD-8
+    ("Harry Bhandari",          "6d95657c-6c46-4aab-886f-f9688adc7b33"),  # HD-8
+    ("Kim Ross",                "5d17e3ea-9d63-4a96-8848-9e293ac05fdb"),  # HD-8
+    ("Chao Wu",                 "7ced90a8-39dc-447e-ba33-e3af4cd47473"),  # HD-9A
+    ("Natalie Ziegler",         "38b5030a-aa8b-4363-8b62-3ec384d22088"),  # HD-9A
+    ("Courtney Watson",         "a4b61b58-9006-4e58-952d-abeb2521cda0"),  # HD-9B
+    ("Adrienne A. Jones",       "760cd4a7-235c-472f-a0ba-fb07098dfd57"),  # HD-10 (Speaker)
+    ("N. Scott Phillips",       "04eb4549-ad64-4ddc-ad53-8f90217f905f"),  # HD-10
+    ("Jennifer White Holland",  "d80816fc-da1d-48f4-95c9-467f8831933c"),  # HD-10
+    ("Cheryl E. Pasteur",       "b5aee428-9b2e-4c87-9a5c-63d44f58e1d8"),  # HD-11A
+    ("Jon S. Cardin",           "631dac5c-fb86-41f5-a82d-5963164a9142"),  # HD-11B
+    ("Dana Stein",              "e94337e1-4776-4058-87b4-32dfeb7732a0"),  # HD-11B
+    ("Jessica Feldmark",        "fdb9f7d3-93db-4436-bd82-5d7fd853f05e"),  # HD-12A
+    ("Terri L. Hill",           "f6a237a0-34ff-4a93-b05a-335ec38b6da3"),  # HD-12A
+    ("Gary Simmons",            "69cbeb94-6978-4f3f-b8b7-735f789c6d3c"),  # HD-12B
+    ("Pam Lanman Guzzone",      "589ed7af-602a-4ec9-8072-448b05446772"),  # HD-13
+    ("Gabriel M. Moreno",       "c0ec0d09-db8f-49fe-b4b6-0221a59ab7ec"),  # HD-13
+    ("Jen Terrasa",             "f45e2178-2a05-4974-8af8-379662412060"),  # HD-13
+]
+
+MD_DELEGATES_B_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d08-allen.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d08-bhandari.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d08-ross.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d09a-wu.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d09a-ziegler.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d09b-watson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d10-jones.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d10-phillips.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d10-holland.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d11a-pasteur.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d11b-cardin.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d11b-stein.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d12a-feldmark.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d12a-hill.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d12b-simmons.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d13-guzzone.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d13-moreno.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d13-terrasa.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -656,4 +702,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "286_md_delegates_batch_a.sql"),
+    )
+
+    print()
+    print("Generating migration 287 (MD delegates batch B: HD-8 through HD-13)...")
+    generate_migration(
+        migration_num=287,
+        batch_label="MD Delegates Batch B — Districts 8-13",
+        candidate_inventory=MD_DELEGATES_B_CANDIDATES,
+        csv_files=MD_DELEGATES_B_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "287_md_delegates_batch_b.sql"),
     )
