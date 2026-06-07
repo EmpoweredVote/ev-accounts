@@ -599,6 +599,58 @@ MD_DELEGATES_B_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d13-terrasa.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH C: HD-14 through HD-20, migration 288
+# ============================================================================
+
+MD_DELEGATES_C_CANDIDATES = [
+    ("Anne R. Kaiser",        "bfd0f15f-abb1-4d28-b1f4-e06875adce16"),  # HD-14
+    ("Bernice Mireku-North",  "8abee534-5db0-4950-a2b9-d0d1e8088cc7"),  # HD-14
+    ("Pam Queen",             "a11c027a-ef25-4a09-8df7-e9b7c60bea90"),  # HD-14
+    ("Linda Foley",           "b80a680a-9f79-4d56-994b-00ce24ec7ef3"),  # HD-15
+    ("David Fraser-Hidalgo",  "ab8aa19a-42c3-445e-9632-a5c7f05458ee"),  # HD-15
+    ("Lily Qi",               "e00e72f9-6b53-46a7-a1e4-74ab7b91d68d"),  # HD-15
+    ("Marc Korman",           "e76d0654-b0c6-43dc-9159-e929e480d070"),  # HD-16
+    ("Sarah Wolek",           "4db476f3-bc84-484c-9440-666028942469"),  # HD-16
+    ("Teresa Woorman",        "36171e41-704b-4bf9-b300-755afe4ee06f"),  # HD-16
+    ("Julie Palakovich Carr", "70d58d4b-4203-4fc2-b36f-32e6231c4339"),  # HD-17
+    ("Ryan Spiegel",          "203a0228-7a63-4a6a-b26d-fa45ba139472"),  # HD-17
+    ("Joe Vogel",             "458a60ba-a235-4b36-80bb-8b537375a4ff"),  # HD-17
+    ("Aaron M. Kaufman",      "bc703231-6af8-48c6-8ae6-4a93fc60b18f"),  # HD-18
+    ("Emily Shetty",          "d1a30768-52e8-4a0d-badc-3e5f2f5792c7"),  # HD-18
+    ("Jared Solomon",         "c0bf0c64-6254-40a7-b810-8717977759dd"),  # HD-18
+    ("Charlotte Crutchfield", "98d6a17e-59dc-4d11-a342-869603862f10"),  # HD-19
+    ("Bonnie Cullison",       "17c22fec-63a4-4f5d-8607-0c364ddffd71"),  # HD-19
+    ("Vaughn Stewart",        "ac558ee8-ecae-47b6-a25e-46307521b4af"),  # HD-19
+    ("Lorig Charkoudian",     "9c5e1ac7-8a39-4c6e-8b20-0788a92f8607"),  # HD-20
+    ("David Moon",            "96876928-53f8-4ed5-b2de-deab3a456d83"),  # HD-20
+    ("Jheanelle K. Wilkins",  "cf68a5cd-f375-4296-8a87-1828d903baea"),  # HD-20
+]
+
+MD_DELEGATES_C_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d14-kaiser.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d14-mireku-north.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d14-queen.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d15-foley.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d15-fraser-hidalgo.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d15-qi.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d16-korman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d16-wolek.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d16-woorman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d17-palakovich-carr.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d17-spiegel.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d17-vogel.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d18-kaufman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d18-shetty.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d18-solomon.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d19-crutchfield.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d19-cullison.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d19-stewart.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d20-charkoudian.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d20-moon.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d20-wilkins.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -714,4 +766,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "287_md_delegates_batch_b.sql"),
+    )
+
+    print()
+    print("Generating migration 288 (MD delegates batch C: HD-14 through HD-20)...")
+    generate_migration(
+        migration_num=288,
+        batch_label="MD Delegates Batch C — Districts 14-20",
+        candidate_inventory=MD_DELEGATES_C_CANDIDATES,
+        csv_files=MD_DELEGATES_C_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "288_md_delegates_batch_c.sql"),
     )
