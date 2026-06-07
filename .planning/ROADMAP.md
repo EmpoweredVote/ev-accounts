@@ -1130,4 +1130,4 @@ Plans:
 | 101. Federal Senate Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 102. Federal House Remediation | v2.7 | 2/2 | Complete    | 2026-06-06 |
 | 103. State Remediation — CA + MD | v2.7 | 3/3 | Complete    | 2026-06-07 |
-| 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete   | 2026-06-07 |
+| 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
