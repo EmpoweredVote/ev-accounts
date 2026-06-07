@@ -1,73 +1,58 @@
-# Requirements: Empowered Accounts — v2.7 Source Integrity
+# Requirements: Empowered Accounts — v2.8 District of Columbia Coverage
 
-**Defined:** 2026-06-05
-**Core Value:** Every stance in the DB can be traced to a real primary source — no unverifiable claims, no directional guesses passed off as confirmed positions.
+**Defined:** 2026-06-07
+**Core Value:** Every DC elected official — Mayor, Council, AG, School Board, Shadow Senators — has a complete civic profile (photo, sourced stances, finance data) and DC users are geofenced to their ward so they see the right representatives.
 
-## v2.7 Requirements
+## v2.8 Requirements
 
-### SRCA — Source Coverage Audit
+### DCIN — DC Infrastructure
 
-- [x] **SRCA-01**: DB audit report produced — total stances in `inform.politician_answers`, count and % with a real source URL (non-empty `sources[]` in `inform.politician_context` with at least one non-placeholder URL), breakdown by tier (Federal / State / Local / City); defines the operationalized "sourced" standard for the rest of the milestone
-- [x] **SRCA-02**: Prioritized target list produced — all politicians with any unsourced stances ranked by tier (federal → state → local → city) then prominence within tier; politicians with majority of stances unsourced flagged as likely old-methodology seeding requiring full re-research pass
+- [ ] **DCIN-01**: `essentials.governments` stub created for Washington D.C. (DC)
+- [ ] **DCIN-02**: `essentials.districts` records created — 8 CITY_COUNCIL ward districts (Ward 1–8), 9 SCHOOL_BOARD seat districts (Wards 1–8 + 1 at-large), 1 NATIONAL_LOWER at-large delegate seat for EHN; all FK'd to DC government
+- [ ] **DCIN-03**: TIGER 2024 DC ward boundary polygons (8 wards) imported into `essentials.geo_districts` (CITY_COUNCIL layer) with GIST index, so point-in-polygon geofencing resolves DC users to their ward
+- [ ] **DCIN-04**: `tiger_geoid` backfilled on DC ward district records so `(tiger_geoid, district_type)` dual-column Path 0 join works for DC users
 
-### FEDX — Federal Remediation
+### DCOF — DC Official Records
 
-- [x] **FEDX-01**: Every US Senator stance: re-researched with Chair methodology → has real source URL in `politician_context`, or has been deleted from `politician_answers`
-- [x] **FEDX-02**: Every US House representative stance: re-researched with Chair methodology → has real source URL, or has been deleted
+- [ ] **DCOF-01**: Politician records created for Mayor Muriel Bowser + all 13 DC Council members (Chairman Phil Mendelson + 8 ward + 4 at-large); office records FK'd to correct ward district
+- [ ] **DCOF-02**: Politician records created for Attorney General Brian Schwalb + 2 DC Shadow Senators (Paul Strauss, Michael D. Brown); office records FK'd to DC government
+- [ ] **DCOF-03**: Politician records created for all 9 DC School Board (SBOE) members; office records FK'd to SCHOOL_BOARD district records
+- [ ] **DCOF-04**: `photo_origin_url` populated for all new DC officials (official council/DC.gov pages or Wikipedia); Eleanor Holmes Norton record verified in DB and `photo_origin_url` updated if missing
 
-### STAX — State + Local Remediation
+### DCST — DC Stance Research
 
-- [x] **STAX-01**: Every CA state legislator (CA Assembly + CA Senate) stance: sourced or deleted
-- [x] **STAX-02**: All MD politicians in DB (added in migrations 269–271 — MD executive branch officials): stances do not yet exist; research and add full stance coverage using Chair methodology with at least one real source URL per stance
-- [x] **STAX-03**: Every city official (SF, San Jose, San Diego, Berkeley, Fremont) stance: sourced or deleted
+- [ ] **DCST-01**: Stances + `inform.politician_context` rows (at least one real source URL each) for Mayor Bowser + all 13 DC Council members + AG Schwalb — city-scope topics: housing, homelessness, climate, civil rights, childcare, immigration, taxes, voting
+- [ ] **DCST-02**: Stances + context rows for all 9 SBOE members — education-focused topics: school vouchers, childcare, civil rights
+- [ ] **DCST-03**: Stances + context rows for Shadow Senators — DC statehood/voting rights focus; Eleanor Holmes Norton stances verified and gaps filled
 
-### QUAL — Quality Methodology
+### DCFI — DC Finance
 
-- [x] **QUAL-01**: Every stance updated, confirmed, or added during this milestone: value verified against the specific Chair text for that topic — the politician's known position must match the exact stance text for that value, not just the directional lean
-- [x] **QUAL-02**: Deletion log produced — each deleted stance records politician full_name, topic_key, former value, and reason ("no evidence found" or "value incorrect and no correcting source found")
+- [ ] **DCFI-01**: FEC `finance_summary` fetched and stored for Eleanor Holmes Norton using existing FEC ingestion script; `finance_summary` column updated on her politician record
+- [ ] **DCFI-02**: DC Office of Campaign Finance (OCF) data researched for Mayor Bowser + DC Council members; `finance_summary` populated for officials where accessible machine-readable data exists
 
 ## Future Requirements
 
-### Source Monitoring
+### DC Elections
 
-- **SMON-01**: Automated URL health check — flag context rows whose source URLs return 404 or redirect unexpectedly
-- **SMON-02**: Source quality scoring — distinguish primary sources (official statements, legislative votes) from secondary (news reporting, endorsements)
+- **DCEL-01**: DC elections seeded (next is November 2026 general); DC ward races surfaced via Elections Central geofencing
+- **DCEL-02**: DC primary results (2026) ingested once filed
 
-### API Source Transparency
+### DC Geofencing Expansion
 
-- **APIX-01**: `has_source: boolean` derived field on `GET /api/essentials/politicians/:id/stances` — allows frontends to visually distinguish sourced vs. pending stances without changing the data model
+- **DCGF-01**: DC users see all geofenced representatives (ward council member, shadow senators, EHN) in `/representatives/me` without manual setup
+- **DCGF-02**: DC school board members surfaced in school district section of Profile Location tab
 
 ## Out of Scope
 
-| Feature | Reason |
-|---------|--------|
-| Adding stances for politicians not currently in DB | New politician records are outside v2.7 scope; MD officials (269–271) are the only exception per milestone definition |
-| Automated web scraping or NLP source extraction | Manual research with research-stances skill is the established methodology; automation is a future project |
-| Election data source integrity | Elections have a different schema (`essentials.elections`) and separate data pipeline |
-| Finance data source integrity | `finance_summary` is FEC-sourced by definition; out of scope for this audit |
-| Re-researching stances that already have sources | Audit only — if a stance has a real source URL already, it is not touched unless the value is clearly wrong |
+- DC statehood debate as a compass topic (outside the 21 existing CompassV2 topics)
+- DC budget / Treasury Tracker integration (separate repo: `C:\treasury-tracker`)
+- DC Advisory Neighborhood Commission (ANC) members — hyper-local, 345 commissioners, out of scope for Alpha
+- Non-elected DC appointed officials (agency heads, DCPS superintendent, etc.)
 
 ## Traceability
 
-Which phases cover which requirements. Updated during roadmap creation.
-
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| SRCA-01 | 100 | Complete |
-| SRCA-02 | 100 | Complete |
-| FEDX-01 | 101 | Complete |
-| FEDX-02 | 102 | Complete |
-| STAX-01 | 103 | Complete |
-| STAX-02 | 103 | Complete |
-| STAX-03 | 104 | Complete |
-| QUAL-01 | 101, 102, 103, 104 | Complete |
-| QUAL-02 | 101, 102, 103, 104 | Complete |
-
-**Coverage:**
-- v2.7 requirements: 9 total
-- Mapped to phases: 9 ✓
-- Unmapped: 0 ✓
-
----
-*Requirements defined: 2026-06-05*
-*Last updated: 2026-06-05 — traceability filled after roadmap creation*
+| Phase | Requirements |
+|-------|-------------|
+| 105 — DC Infrastructure + Official Records | DCIN-01, DCIN-02, DCIN-03, DCIN-04, DCOF-01, DCOF-02, DCOF-03, DCOF-04 |
+| 106 — DC Stance Research | DCST-01, DCST-02, DCST-03 |
+| 107 — DC Finance | DCFI-01, DCFI-02 |
