@@ -40,6 +40,14 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  DC: new Set(['sldl']),
+};
+
+// STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
+// call when a state uses a non-standard district type for a TIGER layer.
+// DC sldl polygons are ward boundaries (CITY_COUNCIL), not STATE_LOWER.
+const STATE_LAYER_TYPE_MAP: Record<string, Record<string, string>> = {
+  DC: { sldl: 'CITY_COUNCIL' },
 };
 
 // UT_TRIBE_NAMELSAD_ALLOWLIST (Phase 132 GEO-07 / D-05 hybrid path)
@@ -96,6 +104,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  DC: new Set(['sldl']),
 };
 
 // Globally hard-rejected layers (D-05). PLSS township/range polygons collapsed
@@ -895,6 +904,38 @@ async function processLayer(
     }
   }
 
+  // For DC (FIPS '11'): 8 ward polygons in the sldl layer (TIGER 2024).
+  if (fipsArg === '11') {
+    const EXPECTED_DC_MTFCC: Record<string, number> = {
+      sldl: 8,  // 8 DC ward polygons (TIGER 2024 FIPS 11, mtfcc G5220)
+    };
+    if (layer in EXPECTED_DC_MTFCC) {
+      const expected = EXPECTED_DC_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[DC MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 11 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] DC MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
   // ── Stream records ──────────────────────────────────────────────────────────
   await streamShapefile(shpPath, dbfPath, async (geom, props) => {
     try {
@@ -1057,8 +1098,9 @@ async function processLayer(
       // The state: abbrev named-key form (kept on a single line) makes the
       // 130-04 D-02 grep-verifiable: `insertDistrictIfMissing(client, { ... state: abbrev ... })`.
       if (layerDef.writeDistrictRow && ocd_id !== null) {
+        const effectiveDistrictType = STATE_LAYER_TYPE_MAP[abbrevUpper]?.[layer] ?? layerDef.district_type;
         // eslint-disable-next-line max-len
-        const districtResult = await insertDistrictIfMissing(client, { geo_id, ocd_id, name, state: abbrev, district_type: layerDef.district_type, mtfcc: layerDef.mtfcc });
+        const districtResult = await insertDistrictIfMissing(client, { geo_id, ocd_id, name, state: abbrev, district_type: effectiveDistrictType, mtfcc: layerDef.mtfcc });
         if (districtResult.inserted) {
           totals.inserted_district++;
         }
