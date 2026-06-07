@@ -756,44 +756,73 @@ export async function getLinkedTransactions(
     matchParams = [budgetId, linkKey.toLowerCase()];
   }
 
-  // Count + aggregate
-  const { rows: summaryRows } = await pool.query(
-    `SELECT
-       COUNT(*)::int AS transaction_count,
-       COALESCE(SUM(t.amount), 0) AS total_amount,
-       COUNT(DISTINCT t.vendor_id)::int AS vendor_count
-     FROM treasury.transactions t
-     WHERE ${matchWhere}`,
-    matchParams
-  );
+  // Run all three queries inside a single READ COMMITTED snapshot transaction so
+  // that summary.transaction_count, the top-vendors list, and the preview rows
+  // are all computed against the same point-in-time view of the table. Without
+  // the transaction a concurrent INSERT/DELETE between queries could produce a
+  // count that disagrees with the rows actually returned (confusing "Showing 20
+  // of 0 transactions" UI) or a wrong hasMore value.
+  const client = await pool.connect();
+  let summaryRows: Array<{ transaction_count: number; total_amount: string; vendor_count: number }>;
+  let vendorRows: Array<{ name: string; amount: string; count: number }>;
+  let txRows: TransactionRow[];
+  try {
+    await client.query('BEGIN');
+
+    // Count + aggregate
+    const summaryResult = await client.query(
+      `SELECT
+         COUNT(*)::int AS transaction_count,
+         COALESCE(SUM(t.amount), 0) AS total_amount,
+         COUNT(DISTINCT t.vendor_id)::int AS vendor_count
+       FROM treasury.transactions t
+       WHERE ${matchWhere}`,
+      matchParams
+    );
+    summaryRows = summaryResult.rows;
+
+    const summary = summaryRows[0];
+    if (!summary || summary.transaction_count === 0) {
+      await client.query('COMMIT');
+      return null;
+    }
+
+    // Top 5 vendors by total amount
+    const vendorResult = await client.query(
+      `SELECT v.name, SUM(t.amount) AS amount, COUNT(*)::int AS count
+       FROM treasury.transactions t
+       JOIN treasury.vendors v ON v.id = t.vendor_id
+       WHERE ${matchWhere}
+       GROUP BY v.name
+       ORDER BY SUM(t.amount) DESC
+       LIMIT 5`,
+      matchParams
+    );
+    vendorRows = vendorResult.rows;
+
+    // Preview transactions (most recent first)
+    const txResult = await client.query<TransactionRow>(
+      `SELECT t.amount, t.description, t.payment_date, t.payment_method,
+              t.invoice_number, t.fund, t.expense_category,
+              v.name AS vendor_name
+       FROM treasury.transactions t
+       LEFT JOIN treasury.vendors v ON v.id = t.vendor_id
+       WHERE ${matchWhere}
+       ORDER BY t.payment_date DESC
+       LIMIT $${matchParams.length + 1}`,
+      [...matchParams, limit]
+    );
+    txRows = txResult.rows;
+
+    await client.query('COMMIT');
+  } catch (err) {
+    await client.query('ROLLBACK');
+    throw err;
+  } finally {
+    client.release();
+  }
 
   const summary = summaryRows[0];
-  if (!summary || summary.transaction_count === 0) return null;
-
-  // Top 5 vendors by total amount
-  const { rows: vendorRows } = await pool.query(
-    `SELECT v.name, SUM(t.amount) AS amount, COUNT(*)::int AS count
-     FROM treasury.transactions t
-     JOIN treasury.vendors v ON v.id = t.vendor_id
-     WHERE ${matchWhere}
-     GROUP BY v.name
-     ORDER BY SUM(t.amount) DESC
-     LIMIT 5`,
-    matchParams
-  );
-
-  // Preview transactions (most recent first)
-  const { rows: txRows } = await pool.query<TransactionRow>(
-    `SELECT t.amount, t.description, t.payment_date, t.payment_method,
-            t.invoice_number, t.fund, t.expense_category,
-            v.name AS vendor_name
-     FROM treasury.transactions t
-     LEFT JOIN treasury.vendors v ON v.id = t.vendor_id
-     WHERE ${matchWhere}
-     ORDER BY t.payment_date DESC
-     LIMIT $${matchParams.length + 1}`,
-    [...matchParams, limit]
-  );
 
   return {
     totalAmount: Number(summary.total_amount),
