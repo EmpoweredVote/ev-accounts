@@ -459,6 +459,48 @@ MD_SENATORS_B_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d31-simonaire.csv",
 ]
 
+# ============================================================================
+# MD SENATORS BATCH C: SD-32 through SD-47, migration 285
+# ============================================================================
+
+MD_SENATORS_C_CANDIDATES = [
+    ("Pamela Beidle",           "409ad653-a4fc-41d0-bb61-a933c5bc45c7"),  # SD-32
+    ("Dawn Gile",               "ff266ecf-9ea5-4282-b729-9830cc8abfa3"),  # SD-33
+    ("Mary-Dulany James",       "18313901-28d8-464c-9368-2873577e9d44"),  # SD-34
+    ("Jason C. Gallion",        "e2ca1bfd-255d-417b-a9d7-424e6c10749d"),  # SD-35
+    ("Stephen S. Hershey, Jr.", "72287137-7faf-4570-8d9e-c6f8d162f4e0"),  # SD-36
+    ("Johnny Mautz",            "34c94aa4-11b7-4594-9c3e-c506f10309f6"),  # SD-37
+    ("Mary Beth Carozza",       "9b2fe9e6-21bf-4aee-b351-a841f3f382b9"),  # SD-38
+    ("Nancy J. King",           "81b8bae9-0b0f-43de-8079-c0b605e12cec"),  # SD-39
+    ("Antonio Hayes",           "04e1a744-acf5-4453-9172-7135b6bfce96"),  # SD-40
+    ("Dalya Attar",             "fb714c92-166f-4cc1-bb6b-19988a81cefe"),  # SD-41
+    ("Chris West",              "fc06c2bb-db76-43fa-8e2e-91a4c34e57ae"),  # SD-42
+    ("Mary Washington",         "38404814-7be0-40e3-b044-062f98b2a5b0"),  # SD-43
+    ("Charles E. Sydnor, III",  "30f96c7e-7bf0-4270-bfbb-ee4c520a7344"),  # SD-44
+    ("Cory V. McCray",          "54ea8c48-d8d0-43e2-83fe-2f91cac71fdd"),  # SD-45
+    ("Bill Ferguson",           "6e3c30f5-52be-48b0-b5b4-383e5d745c57"),  # SD-46
+    ("Malcolm Augustine",       "9d191d69-084f-4941-bc0a-c59d336f032e"),  # SD-47
+]
+
+MD_SENATORS_C_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d32-beidle.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d33-gile.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d34-james.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d35-gallion.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d36-hershey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d37-mautz.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d38-carozza.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d39-king.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d40-hayes.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d41-attar.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d42-west.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d43-washington.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d44-sydnor.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d45-mccray.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d46-ferguson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-senator-d47-augustine.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -538,4 +580,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "284_md_senators_batch_b.sql"),
+    )
+
+    print()
+    print("Generating migration 285 (MD senators batch C: SD-32 through SD-47)...")
+    generate_migration(
+        migration_num=285,
+        batch_label="MD Senators Batch C — Districts 32-47",
+        candidate_inventory=MD_SENATORS_C_CANDIDATES,
+        csv_files=MD_SENATORS_C_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "285_md_senators_batch_c.sql"),
     )
