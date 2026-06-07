@@ -749,6 +749,58 @@ MD_DELEGATES_E_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d33c-bagnall.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH F: HD-34 through HD-40, migration 291
+# ============================================================================
+
+MD_DELEGATES_F_CANDIDATES = [
+    ("Andre V. Johnson, Jr.",   "b592e432-6411-48b3-bca3-d5596d0d81e9"),  # HD-34A (comma in name — distinct from Steve Johnson)
+    ("Steve Johnson",           "dbb1c600-c87b-449c-bd3b-1c236287c00f"),  # HD-34A (distinct from Andre V. Johnson, Jr.)
+    ("Susan K. McComas",        "58d0ff82-631f-475f-889a-9a4ebb39fc07"),  # HD-34B
+    ("Mike Griffith",           "0c789b27-d50c-4822-95ff-409ecb7db08a"),  # HD-35A
+    ("Teresa E. Reilly",        "547841f2-3476-4e83-9344-0cac984d44e8"),  # HD-35A
+    ("Kevin B. Hornberger",     "96a6d696-50fd-4393-a0f6-19e69dc15716"),  # HD-35B
+    ("Steven J. Arentz",        "fee8a413-a3a8-4568-ad9b-db00f94f5ac2"),  # HD-36
+    ("Jefferson L. Ghrist",     "eca530ff-628d-417d-a3dc-b858dc7c2376"),  # HD-36
+    ("Jay A. Jacobs",           "8b43dd9c-26c3-48bb-ac60-d95f8a39349a"),  # HD-36
+    ("Sheree Sample-Hughes",    "a1c2b55c-df7d-487c-ad90-7f7e2c2e6951"),  # HD-37A (Speaker Pro Tem; hyphenated last name)
+    ("Christopher T. Adams",    "1eada938-f28c-46b9-bd21-df241656cd2b"),  # HD-37B
+    ("Thomas S. Hutchinson",    "fb1fe811-b340-42d3-88ee-97b5364117cd"),  # HD-37B
+    ("H. Kevin Anderson",       "d17104a7-8a35-4bcd-8879-76ceb997df6a"),  # HD-38A
+    ("Barry Beauchamp",         "bc7ee014-a452-4eaf-81e9-2f4c55d3eaea"),  # HD-38B
+    ("Wayne A. Hartman",        "1ff2bb96-0e55-4893-8a4c-b675dfbb79f6"),  # HD-38C
+    ("Gabriel Acevero",         "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820"),  # HD-39 (progressive caucus)
+    ("Lesley J. Lopez",         "2fa68ca4-00b5-4518-a692-d12447d7fec3"),  # HD-39
+    ("Greg Wims",               "b7e2aa8f-a301-4004-81e9-d1f857c81075"),  # HD-39
+    ("Marlon Amprey",           "62bed8b6-beb2-4c41-b234-dc6427bfc9c0"),  # HD-40
+    ("Frank M. Conaway, Jr.",   "94855fb3-0e08-45ac-8c67-ba668ef67c4b"),  # HD-40 (comma in name)
+    ("Melissa Wells",           "7217c1b4-6fae-447d-9566-f2513319fa94"),  # HD-40
+]
+
+MD_DELEGATES_F_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d34a-johnson-a.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d34a-johnson-s.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d34b-mccomas.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d35a-griffith.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d35a-reilly.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d35b-hornberger.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d36-arentz.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d36-ghrist.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d36-jacobs.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d37a-sample-hughes.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d37b-adams.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d37b-hutchinson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d38a-anderson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d38b-beauchamp.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d38c-hartman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d39-acevero.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d39-lopez.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d39-wims.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d40-amprey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d40-conaway.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d40-wells.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -900,4 +952,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "290_md_delegates_batch_e.sql"),
+    )
+
+    print()
+    print("Generating migration 291 (MD delegates batch F: HD-34 through HD-40)...")
+    generate_migration(
+        migration_num=291,
+        batch_label="MD Delegates Batch F — Districts 34-40",
+        candidate_inventory=MD_DELEGATES_F_CANDIDATES,
+        csv_files=MD_DELEGATES_F_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "291_md_delegates_batch_f.sql"),
     )
