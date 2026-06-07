@@ -391,6 +391,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
      FROM treasury.municipalities m
      LEFT JOIN treasury.budgets b ON b.municipality_id = m.id
      GROUP BY m.id
+     HAVING COUNT(b.id) > 0
      ORDER BY m.name`
   );
   return rows.map(mapCity);
