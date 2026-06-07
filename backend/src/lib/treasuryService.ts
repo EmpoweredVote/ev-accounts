@@ -319,9 +319,9 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     dataset_type: row.dataset_type,
     total_budget: Number(row.total_budget),
     data_source: row.data_source,
-    data_source_info: row.ds_display_name ? {
+    data_source_info: row.ds_display_name && row.ds_url ? {
       displayName: row.ds_display_name,
-      url: row.ds_url!,
+      url: row.ds_url,
     } : null,
     hierarchy: row.hierarchy,
     generated_at: row.generated_at,
