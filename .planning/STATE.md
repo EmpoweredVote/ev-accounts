@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.7
-milestone_name: Source Integrity
-status: milestone_complete
-last_updated: 2026-06-07T15:43:04.587Z
+milestone: v2.8
+milestone_name: District of Columbia Coverage
+status: planning
+last_updated: "2026-06-07T16:58:32.721Z"
 last_activity: 2026-06-07
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 9
-  completed_plans: 213
-  percent: 100
-stopped_at: Milestone complete (Phase 104 was final phase)
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -26,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-05 after v2.6 milestone)
 
 ## Current Position
 
-Phase: 104
-Plan: Not started
-Status: Milestone complete
-Last activity: 2026-06-07
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-07 — Milestone v2.8 started
 
 ## Performance Metrics
 

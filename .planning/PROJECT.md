@@ -208,17 +208,22 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
-## Current Milestone: v2.7 Source Integrity
+## Current Milestone: v2.8 District of Columbia Coverage
 
-**Goal:** Audit every existing politician stance for real source URL coverage, re-research unsourced stances using the Chair methodology, correct incorrect values, and delete any stance that cannot be backed by a real primary source.
+**Goal:** Full civic profiles for DC government — all elected officials across every DC body, sourced stances, headshots, ward-level geofencing, and FEC finance data for federal filers — making DC a first-class city in the platform.
 
 **Target features:**
-- Source coverage audit: DB report (total stances, % sourced, breakdown by tier); ranked politician target list (federal first)
-- Federal remediation: all senators + US House reps — every stance sourced or deleted
-- State + local remediation: CA state legislators, MD officials, city council officials — every stance sourced or deleted
-- Chair methodology enforcement: every re-researched stance verified against specific stance text, not just directional
+- DC infrastructure: government stub, 8 ward districts + SBOE seats, TIGER DC ward boundary import for geofencing
+- DC official records: ~26 new politician records + photos (Mayor, DC Council ×13, AG, SBOE ×9, Shadow Senators ×2); verify/update Eleanor Holmes Norton
+- DC stance research: sourced stances for all officials; topic scope varies by body
+- DC finance: FEC data for Eleanor Holmes Norton; DC OCFO data for local officials where available
 
-**Active requirements:** SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02
+**Active requirements:** DCIN-01/02/03/04, DCOF-01/02/03/04, DCST-01/02/03, DCFI-01/02
+
+---
+## Previous Milestone: v2.7 Source Integrity (Phases 100–104, shipped 2026-06-07)
+
+**Goal:** Audit every existing politician stance for real source URL coverage, re-research unsourced stances using the Chair methodology, correct incorrect values, and delete any stance that cannot be backed by a real primary source.
 
 ---
 ## Previous Milestone: v1.9 Roles (Phases 51–58, shipped 2026-04-06)
@@ -289,4 +294,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-05 — v2.7 Phase 100 complete: source coverage audit baseline established (13,920 stances, 99.8% sourced, SRCA-01/02 delivered)*
+*Last updated: 2026-06-07 — v2.8 started: District of Columbia Coverage milestone initialized*
