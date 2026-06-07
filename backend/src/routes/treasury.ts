@@ -378,7 +378,10 @@ router.post(
 );
 
 // POST /api/treasury/budgets/:id/line-items
+// Route :id is the budget UUID; categoryId must be supplied in the request body
+// as a valid budget_categories.id for the FK constraint to succeed.
 const createBudgetLineItemSchema = z.object({
+  categoryId: z.string().uuid(),  // required — must be a valid budget_categories.id
   description: z.string().min(1),
   approvedAmount: z.number().optional().nullable(),
   actualAmount: z.number().optional().nullable(),
@@ -412,20 +415,8 @@ router.post(
       return;
     }
 
-    // For line items, we need a category_id, but the route param is a budget id.
-    // The plan specifies: POST /budgets/:id/line-items → createBudgetLineItem(id, data)
-    // where id is treated as the budget_id. However, createBudgetLineItem expects a categoryId.
-    // Since the plan says "createBudgetLineItem(id, data)" with id from the route param,
-    // and the route is /budgets/:id/line-items, we pass the budget id as a direct
-    // category_id lookup is not done here — the caller must provide categoryId in the body
-    // OR the route id serves as the parent. Per the plan spec, we pass id directly as categoryId.
-    // NOTE: In practice, callers will POST to /budgets/:budgetId/line-items with a categoryId
-    // in the body. The service INSERT uses the categoryId parameter for category_id column.
-    // The route :id here is the budget id; the body should contain a categoryId field.
-    // To keep it simple and match the plan exactly ("createBudgetLineItem(id, data)"),
-    // we use the route :id as the categoryId parameter.
     try {
-      const lineItem = await createBudgetLineItem(id, parsed.data);
+      const lineItem = await createBudgetLineItem(parsed.data.categoryId, parsed.data);
       res.status(201).json(lineItem);
     } catch (err) {
       console.error('[POST /treasury/budgets/:id/line-items] error:', err);
