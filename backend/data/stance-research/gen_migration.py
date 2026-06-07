@@ -651,6 +651,58 @@ MD_DELEGATES_C_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d20-wilkins.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH D: HD-21 through HD-27, migration 289
+# ============================================================================
+
+MD_DELEGATES_D_CANDIDATES = [
+    ("Ben Barnes",                "590b56b2-1473-4e86-ba96-0490e172f6ff"),  # HD-21 (Approps Chair)
+    ("Mary A. Lehman",            "251a2047-372b-480e-aa09-231f9a5edeca"),  # HD-21
+    ("Joseline Peña-Melnyk",      "00cd05cc-75de-4d9a-ab23-9f53441bc186"),  # HD-21 (Speaker Pro Tem)
+    ("Anne Healey",               "4436b432-a63f-4946-919a-f30c41f899e4"),  # HD-22
+    ("Ashanti Martinez",          "d8eee978-cec3-492d-9867-9d40b2a50a9d"),  # HD-22
+    ("Nicole A. Williams",        "5c24446e-c9d6-4dda-9703-e3c049798315"),  # HD-22
+    ("Adrian Boafo",              "1da26040-98b4-4eb0-aa1f-3ec05b297a29"),  # HD-23
+    ("Marvin E. Holmes, Jr.",     "b8e331fa-d58e-479f-b076-8fda0b0604c5"),  # HD-23 (comma in name)
+    ("Kym Taylor",                "9273ed81-2052-428a-b39d-849abeef270b"),  # HD-23
+    ("Tiffany T. Alston",         "2e809682-2d95-480c-885e-d2174b811cfe"),  # HD-24
+    ("Derrick Coley",             "8fab5ff7-603d-4ab0-a05c-a7070d187a48"),  # HD-24
+    ("Andrea Fletcher Harrison",  "d61a670a-7626-4464-93dc-c1e21d7b26da"),  # HD-24
+    ("Kent Roberson",             "338210ee-b9ab-4820-bfce-98f5354837af"),  # HD-25
+    ("Denise Roberts",            "d5999df9-83b8-4870-a170-4d13f40473e2"),  # HD-25
+    ("Karen Toles",               "cd422f8c-913b-4280-987b-9383ead34e85"),  # HD-25
+    ("Veronica Turner",           "7a76712a-38cd-41de-b260-cd0127284f16"),  # HD-26
+    ("Kriselda Valderrama",       "768ac1cf-a599-4ddb-943c-c985fafb2607"),  # HD-26
+    ("Jamila J. Woods",           "916afe40-4061-476f-9a54-b271b32778d2"),  # HD-26
+    ("Darrell Odom",              "0e238dbf-5b4e-4e95-8a94-e02d97a136f5"),  # HD-27A
+    ("Jeffrie E. Long, Jr.",      "70f63959-f51d-4411-adc1-f1c429bbc397"),  # HD-27B (comma in name)
+    ("Mark N. Fisher",            "71542618-59c8-4b06-a765-e3df60cca763"),  # HD-27C
+]
+
+MD_DELEGATES_D_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d21-barnes.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d21-lehman.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d21-pena-melnyk.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d22-healey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d22-martinez.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d22-williams.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d23-boafo.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d23-holmes.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d23-taylor.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d24-alston.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d24-coley.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d24-harrison.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d25-roberson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d25-roberts.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d25-toles.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d26-turner.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d26-valderrama.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d26-woods.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d27a-odom.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d27b-long.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d27c-fisher.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -778,4 +830,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "288_md_delegates_batch_c.sql"),
+    )
+
+    print()
+    print("Generating migration 289 (MD delegates batch D: HD-21 through HD-27)...")
+    generate_migration(
+        migration_num=289,
+        batch_label="MD Delegates Batch D — Districts 21-27",
+        candidate_inventory=MD_DELEGATES_D_CANDIDATES,
+        csv_files=MD_DELEGATES_D_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "289_md_delegates_batch_d.sql"),
     )
