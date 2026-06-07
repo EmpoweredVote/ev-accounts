@@ -167,4 +167,17 @@ Per D-04 (one agent at a time) and MEMORY.md rate-limit rule:
 
 ## Migration Apply Log
 
-*(To be populated after Task 2 migration apply)*
+**Command:** `cd backend && npx tsx scripts/_apply-migration-283.ts`
+**Executed:** 2026-06-07
+
+**Full stdout:**
+```
+Migration 283 applied successfully
+V1 city-cohort unsourced count: 0 (target: 0)
+V2 city-cohort weak-source count: 0 (target: 0)
+STAX-03 SATISFIED: V1=0, V2=0
+```
+
+**V1 result (city cohort unsourced count):** 0 — target = 0 ✓
+**V2 result (city cohort weak-source count):** 0 — target = 0 ✓
+**STAX-03 status:** SATISFIED
