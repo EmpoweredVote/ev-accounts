@@ -801,6 +801,57 @@ MD_DELEGATES_F_CSVS = [
     r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d40-wells.csv",
 ]
 
+# ============================================================================
+# MD DELEGATES BATCH G: HD-41 through HD-47B, migration 292
+# ============================================================================
+
+MD_DELEGATES_G_CANDIDATES = [
+    ("Samuel I. Rosenberg",  "36eecaff-4677-441a-b36e-a323e87d9158"),  # HD-41 (senior delegate)
+    ("Malcolm P. Ruff",      "7e1dfb66-1eff-4c8d-b3fe-d39f990b99c4"),  # HD-41
+    ("Sean A. Stinnett",     "012af8f7-693a-4ddc-b0bc-953dae8d2bc2"),  # HD-41
+    ("Vacant",               "67acad60-5839-4a8a-95ac-c881c3ca39a9"),  # HD-42A (vacant — no CSV)
+    ("Michele Guyton",       "bb180c23-b965-4bba-a2b9-73febd484d21"),  # HD-42B
+    ("Joshua J. Stonko",     "656a8bc9-348e-4ffc-819c-2f4611b3ddc8"),  # HD-42C
+    ("Regina T. Boyce",      "027a2610-1160-4525-a5c1-469fe85d46e1"),  # HD-43A
+    ("Elizabeth Embry",      "03a161cf-1da8-4c34-9c08-d91bbf958987"),  # HD-43A
+    ("Catherine M. Forbes",  "c017b328-4469-45c4-aa8a-7b9035c77e22"),  # HD-43B
+    ("Eric Ebersole",        "22610d7f-eaca-4802-b486-0e48544e6e7d"),  # HD-44A
+    ("Aletheia McCaskill",   "fcfa1844-032e-4dba-9ae0-c52b82447fa8"),  # HD-44B
+    ("Sheila Ruth",          "df1a05a1-2a70-4e40-a0c6-5b3f81632c7e"),  # HD-44B
+    ("Jackie Addison",       "01aaf4ba-c8ec-4a50-bd56-8d181d35e903"),  # HD-45
+    ("Stephanie Smith",      "848ac881-004b-436a-9a17-dfacbd33de5a"),  # HD-45
+    ("Caylin Young",         "92075c9b-6c7e-4763-981f-5a42a8afddf5"),  # HD-45
+    ("Luke Clippinger",      "ad1aaa25-0ef6-4c88-9d78-d75aec7398c7"),  # HD-46 (Judiciary Chair)
+    ("Mark Edelson",         "bec4b395-bb4b-4740-ac1c-8e89f12608a2"),  # HD-46
+    ("Robbyn Lewis",         "9285f590-79b5-48de-a1c0-a022629e6ebb"),  # HD-46
+    ("Diana M. Fennell",     "192e8ffb-e576-41f1-915a-dbc0c30d4769"),  # HD-47A
+    ("Julian Ivey",          "69bf6043-4546-4804-ae04-311cff54a986"),  # HD-47A
+    ("Deni Taveras",         "a92085b6-642a-4cf6-a73e-c985a6fd09fa"),  # HD-47B
+]
+
+MD_DELEGATES_G_CSVS = [
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d41-rosenberg.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d41-ruff.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d41-stinnett.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d42b-guyton.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d42c-stonko.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d43a-boyce.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d43a-embry.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d43b-forbes.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d44a-ebersole.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d44b-mccaskill.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d44b-ruth.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d45-addison.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d45-smith.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d45-young.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d46-clippinger.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d46-edelson.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d46-lewis.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d47a-fennell.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d47a-ivey.csv",
+    r"C:\EV-Accounts\backend\data\stance-research\2026-06-07-md-delegate-d47b-taveras.csv",
+]
+
 if __name__ == '__main__':
     import os
     base = r"C:\EV-Accounts\backend\migrations"
@@ -964,4 +1015,16 @@ if __name__ == '__main__':
         excluded_topics=EXCLUDED_TOPICS_FEDERAL,
         header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
         outpath=os.path.join(base, "291_md_delegates_batch_f.sql"),
+    )
+
+    print()
+    print("Generating migration 292 (MD delegates batch G: HD-41 through HD-47B)...")
+    generate_migration(
+        migration_num=292,
+        batch_label="MD Delegates Batch G — Districts 41-47",
+        candidate_inventory=MD_DELEGATES_G_CANDIDATES,
+        csv_files=MD_DELEGATES_G_CSVS,
+        excluded_topics=EXCLUDED_TOPICS_FEDERAL,
+        header_scope_note="Federal/state topics only; data-centers, local-immigration, transportation-priorities excluded.",
+        outpath=os.path.join(base, "292_md_delegates_batch_g.sql"),
     )
