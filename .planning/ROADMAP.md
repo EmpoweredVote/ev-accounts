@@ -28,7 +28,7 @@
 <details>
 <summary>🔄 v2.9 LA County Expansion (Phases 108–109) — IN PROGRESS</summary>
 
-- [ ] **Phase 108: LA County City Officials** — Fill all politician gaps for existing partial cities + add top ~20 major unstarted cities; photo_origin_url for all new politicians
+- [x] **Phase 108: LA County City Officials** — Fill all politician gaps for existing partial cities + add top ~20 major unstarted cities; photo_origin_url for all new politicians (completed 2026-06-08)
 - [ ] **Phase 109: LA County Finance Data** — Wire CAL-ACCESS (county/state officials) + Netfile (city races) finance data into finance_summary on politician records
 
 Full details: `.planning/milestones/v2.9-ROADMAP.md`
