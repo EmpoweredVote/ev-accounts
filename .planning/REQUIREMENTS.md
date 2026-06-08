@@ -22,8 +22,8 @@
 ### DCST — DC Stance Research
 
 - [x] **DCST-01**: Stances + `inform.politician_context` rows (at least one real source URL each) for Mayor Bowser + all 13 DC Council members + AG Schwalb — city-scope topics: housing, homelessness, climate, civil rights, childcare, immigration, taxes, voting
-- [ ] **DCST-02**: Stances + context rows for all 9 SBOE members — education-focused topics: school vouchers, childcare, civil rights
-- [ ] **DCST-03**: Stances + context rows for Shadow Senators — DC statehood/voting rights focus; Eleanor Holmes Norton stances verified and gaps filled
+- [x] **DCST-02**: Stances + context rows for all 9 SBOE members — education-focused topics: school vouchers, childcare, civil rights
+- [x] **DCST-03**: Stances + context rows for Shadow Senators — DC statehood/voting rights focus; Eleanor Holmes Norton stances verified and gaps filled
 
 ### DCFI — DC Finance
 
