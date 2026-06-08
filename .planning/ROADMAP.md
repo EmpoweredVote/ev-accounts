@@ -28,7 +28,7 @@
 <summary>🔄 v2.8 District of Columbia Coverage (Phases 105–107) — IN PROGRESS</summary>
 
 - [ ] **Phase 105: DC Infrastructure + Official Records** — DC government stub, ward + SBOE + EHN districts, TIGER ward polygons, all ~26 politician records with photos
-- [ ] **Phase 106: DC Stance Research** — Sourced stances for all DC officials across body-appropriate topic sets
+- [x] **Phase 106: DC Stance Research** — Sourced stances for all DC officials across body-appropriate topic sets (completed 2026-06-08)
 - [ ] **Phase 107: DC Finance** — FEC data for EHN; DC OCF data for Mayor + Council where accessible
 
 </details>
@@ -1108,7 +1108,10 @@ Plans:
 
 **Depends on:** Phase 105 (politician records must exist before finance_summary can be written to them)
 **Requirements:** DCFI-01, DCFI-02
-**Plans:** TBD
+**Plans:** 1 plan
+Plans:
+
+- [ ] 107-01-PLAN.md — EHN FEC ingestion script + DC OCF assessment/ingestion (DCFI-01, DCFI-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1211,5 +1214,5 @@ Plans:
 | 103. State Remediation — CA + MD | v2.7 | 3/3 | Complete    | 2026-06-07 |
 | 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
 | 105. DC Infrastructure + Official Records | v2.8 | 0/? | Not started | — |
-| 106. DC Stance Research | v2.8 | 3/3 | Complete   | 2026-06-08 |
+| 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
 | 107. DC Finance | v2.8 | 0/? | Not started | — |
