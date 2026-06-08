@@ -1,0 +1,92 @@
+BEGIN;
+
+-- =============================================================================
+-- Migration 300: Wave 2 Pre-flight Documentation
+-- Phase 108-la-county-city-officials, Plan 02 (Wave 2)
+-- Run date: 2026-06-08
+-- =============================================================================
+-- This migration contains ONLY SQL comments documenting the pre-flight state
+-- captured by running backend/scripts/preflight-la-wave2.sql against the live DB.
+-- Zero non-comment DDL/DML between BEGIN and COMMIT.
+-- =============================================================================
+
+-- Q1 RESULTS — Beverly Hills office row count (Open Question 2)
+-- bh_office_count: 4
+-- bh_existing_titles: [Council Member, Council Member, Council Member, Mayor]
+--
+-- BH LOCAL district (geo_id=0606308): id=e0822ebc-4c84-4e12-820c-15051c11d4b6, label='At-Large'
+-- BH LOCAL_EXEC district (geo_id=0606308): id=83e88f71-8b20-493c-851a-2e96e7feccbc, label='Beverly Hills Mayor'
+--
+-- BH existing politicians:
+--   LOCAL district: Craig A. Corman (-201154), John A. Mirisch (-201153), Mary N. Wells (-201155)
+--   LOCAL_EXEC district: Lester Friedman (-200589) as Mayor
+--
+-- IMPLICATION for T2 (migration 301):
+--   - bh_office_count = 4 (< 6 required for 5 council + 1 treasurer)
+--   - Need to INSERT 1 additional Council Member office row for Sharona R. Nazarian
+--   - Need to INSERT 1 City Treasurer office row for Howard Fisher (requires new chamber)
+--   - BH government name in DB is 'City of Beverly Hills, California, US'
+--     (id=d319e00d-07c4-44b3-99f5-390ea6453d59) — NOT 'City of Beverly Hills'
+--   - BH City Council chamber exists: id=9c1ac8de-42ef-4cf1-90ee-b5e8d9f5f5d6
+--   - No City Treasurer chamber exists for BH — must create it
+
+-- Q2 RESULTS — Santa Monica office row count
+-- sm_office_count: 6
+-- sm_existing_titles: [Council Member x6]
+--
+-- SM LOCAL district (geo_id=0670000): id=407f8312-2f5b-4841-bebd-0f569efd6906, label='At-Large'
+-- SM LOCAL_EXEC district (geo_id=0670000): id=406e3d46-5009-4e2f-9d49-7dfd9f91ce39, label='Santa Monica Mayor'
+--
+-- SM existing politicians (6 of 7 current + prior members):
+--   Phil Brock (-201400), Lana Negrete (-201401), Christine Parra (-201403),
+--   Caroline Torosis (-201404), Oscar de la Torre (-201402), Jesse Zwick (-201405)
+--
+-- Current 7 members per RESEARCH.md (Dec 2024 sworn-in):
+--   Lana Negrete (already present), Jesse Zwick (already present),
+--   Caroline Torosis (already present), Dan Hall (MISSING),
+--   Ellis Raskin (MISSING), Barry Snell (MISSING), Natalya Zernitskaya (MISSING)
+-- Phil Brock, Christine Parra, Oscar de la Torre are former/term-expiring members (still in DB per D-03)
+--
+-- IMPLICATION for T3 (migration 302):
+--   - sm_office_count = 6 (need 10+ for all 7 current members)
+--   - INSERT 4 new politicians: Dan Hall, Ellis Raskin, Barry Snell, Natalya Zernitskaya
+--   - Each gets a new office row via the CTE pattern
+--   - SM government name: 'City of Santa Monica, California, US' (id=6adde220-8840-4e90-a005-49d51a7c1cd8)
+--   - SM City Council chamber: id=821c8683-0844-44aa-9b1e-f26dc3897db1
+
+-- Q3 RESULTS — LA City Clerk office existence
+-- city_clerk_office_exists: TRUE
+-- LA City Clerk office: id=cc009928-ff2a-467f-8c90-7d42e397ee70
+--   district_id=feeb6b8c-f099-47b8-80eb-f984560d3d6e (LOCAL_EXEC, geo_id=0644000)
+--   chamber_id=NULL (no chamber currently set on the Clerk office)
+--   politician_id=NULL (vacant — confirmed)
+--
+-- LA City government: name='Los Angeles, California, US' (id=dcc0355c-a8f5-4b21-8936-43543b4a3f83)
+--   No 'City Clerk' chamber exists for this government yet
+--
+-- IMPLICATION for T4 (migration 303):
+--   - city_clerk_office_exists = TRUE → use UPDATE path (not create+link path)
+--   - Insert Patrice Lattimore as politician, then UPDATE cc009928 office row to set politician_id
+--   - Must also create City Clerk chamber (no City Clerk chamber exists for LA govt)
+--   - UPDATE office to set chamber_id as well
+
+-- Q4 RESULTS — LA City Controller and City Attorney occupancy
+-- DEVIATION FOUND: Both offices already have politician_id set (contrary to plan expectation)
+--
+-- city_attorney_office_politician_id: 3f90952e-7d1b-413d-a0e1-e319fb23fa05
+--   → Hydee Feldstein Soto (already linked, is_incumbent=true, external_id=NULL)
+--   → She lost June 2026 primary but is still in DB. Per plan: DO NOT touch City Attorney.
+--
+-- city_controller_office_politician_id: 590fd6ec-3194-43af-97fc-25490490c565
+--   → Kenneth Mejia (already linked, is_incumbent=true, external_id=NULL, office_id=NULL)
+--   → Re-elected June 2026 per RESEARCH.md Critical Finding 3. He is the correct incumbent.
+--   → IMPLICATION: T4 must not INSERT a duplicate row but instead UPDATE the existing row:
+--       SET external_id = -700001 WHERE id = '590fd6ec-3194-43af-97fc-25490490c565'
+--       Then backfill office_id on the politician row.
+--   → The ON CONFLICT (external_id) DO NOTHING pattern will NO-OP on re-run (idempotent).
+
+-- Q5 RESULTS — External_id range clean for -700001..-700049
+-- external_id_range_used: 0
+-- CONFIRMED: Range -700001 to -700049 is clean. Wave 2 may proceed.
+
+COMMIT;
