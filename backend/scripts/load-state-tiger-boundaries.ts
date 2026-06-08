@@ -922,6 +922,9 @@ async function processLayer(
   // pass BEFORE any DB write. Assertion failure is named and fatal.
   // sldl and place values are set to 0 so dry-run MtfccAssertionError reveals actual count.
   // Plan 02 updates these values before the live load.
+  //
+  // sldl and sldu TIGER shapefiles are state-scoped (FIPS 51 in filename);
+  // filterByStatefp is false for these layers — no STATEFP filter in pre-flight count.
   if (fipsArg === '51') {
     const EXPECTED_VA_MTFCC: Record<string, number> = {
       cd119: 11,   // 11 VA congressional districts (post-2022 redistricting)
