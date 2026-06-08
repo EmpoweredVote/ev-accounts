@@ -21,8 +21,19 @@
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
 - ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
 - ✅ **v2.8 District of Columbia Coverage** — Phases 105–107 (shipped 2026-06-08)
+- 🔄 **v2.9 LA County Expansion** — Phases 108–109 (in progress)
 
 ## Phases
+
+<details>
+<summary>🔄 v2.9 LA County Expansion (Phases 108–109) — IN PROGRESS</summary>
+
+- [ ] **Phase 108: LA County City Officials** — Fill all politician gaps for existing partial cities + add top ~20 major unstarted cities; photo_origin_url for all new politicians
+- [ ] **Phase 109: LA County Finance Data** — Wire CAL-ACCESS (county/state officials) + Netfile (city races) finance data into finance_summary on politician records
+
+Full details: `.planning/milestones/v2.9-ROADMAP.md`
+
+</details>
 
 <details>
 <summary>✅ v2.8 District of Columbia Coverage (Phases 105–107) — SHIPPED 2026-06-08</summary>
