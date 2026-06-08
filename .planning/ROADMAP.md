@@ -21,15 +21,20 @@
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
 - ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
 - ✅ **v2.8 District of Columbia Coverage** — Phases 105–107 (shipped 2026-06-08)
-- 🔄 **v2.9 LA County Expansion** — Phases 108–109 (in progress)
+- ✅ **v2.9 LA County Expansion** — Phase 108 (shipped 2026-06-08; Phase 109 deferred)
 
 ## Phases
 
 <details>
-<summary>🔄 v2.9 LA County Expansion (Phases 108–109) — IN PROGRESS</summary>
+<summary>✅ v2.9 LA County Expansion (Phase 108) — SHIPPED 2026-06-08</summary>
 
-- [x] **Phase 108: LA County City Officials** — Fill all politician gaps for existing partial cities + add top ~20 major unstarted cities; photo_origin_url for all new politicians (completed 2026-06-08)
-- [ ] **Phase 109: LA County Finance Data** — Wire CAL-ACCESS (county/state officials) + Netfile (city races) finance data into finance_summary on politician records
+- [x] Phase 108: LA County City Officials (5/5 plans) — completed 2026-06-08
+  - Wave 1: 14 Tier 1 partial cities gap-filled with Census FIPS geo_ids
+  - Wave 2: Beverly Hills (6), Santa Monica (10), LA City Controller + Clerk
+  - Wave 3: 10 new cities from scratch — 52 new politicians
+  - Wave 4: Phase gate SQL (8 assertions) + representatives-me smoke test
+
+Phase 109 (LA County Finance — CAL-ACCESS + Netfile) deferred to future milestone.
 
 Full details: `.planning/milestones/v2.9-ROADMAP.md`
 

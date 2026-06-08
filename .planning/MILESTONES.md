@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v2.9 LA County Expansion (Shipped: 2026-06-08)
+
+**Delivered:** Complete LA County civic data layer — full elected governing bodies for 27 cities across 4 waves: gap-fill for 14 partial Tier 1 cities, Beverly Hills + Santa Monica structure completion + LA City Controller + Clerk, 10 new cities built from scratch, plus a phase gate SQL script (8 assertions) and smoke test confirming representatives-me surfaces all Phase 108 officials.
+
+**Phases completed:** 1 phase (108), 5 plans
+**Phase 109 (LA County Finance) deferred** to future milestone.
+
+**Key accomplishments:**
+
+- Wave 1 gap-fill: 14 Tier 1 partial LA County cities (Long Beach, Glendale, Pasadena, Burbank, Downey, El Monte, Inglewood, Lancaster, Norwalk, Palmdale, Pomona, Santa Clarita, Torrance, West Covina) now have complete elected governing bodies; Census FIPS geo_ids backfilled on all 14 city district rows for Path 0 geofencing
+- Wave 2 structure completion: Beverly Hills 6 politicians (3 pre-existing + Mayor + Sharona Nazarian + Treasurer Howard Fisher), Santa Monica 10 politicians (6 pre-existing + 4 new council members), LA City Controller Kenneth Mejia + appointed City Clerk Patrice Lattimore — City Attorney office explicitly left vacant pending November 2026 runoff per RESEARCH.md Critical Finding 1
+- Wave 3 new cities: 10 new `essentials.governments` rows + full chamber/district/politician/office stack — 52 new politicians across South Gate, Compton, Carson, Hawthorne, Whittier, Alhambra, Gardena, Culver City, West Hollywood, El Segundo; West Hollywood FIPS 0684410 verified via Census Geocoder API (corrected from inferred value 0684346)
+- Phase gate + verification: `backend/scripts/verify-la-county-108.sql` (8 labeled assertions covering all 6 LAOF requirements) + `backend/scripts/smoke-la-representatives-me.ts`; Assertion 7 join bug (WR-07) caught in review and fixed in 108-05 gap plan
+
+**Stats:**
+
+- 1 phase (108), 5 plans
+- 53 files changed (+11,813/−42 LOC)
+- 1 day (2026-06-08)
+
+**Git range:** `9427edb` → `641762c`
+
+**Requirements closed:** LAOF-01, LAOF-02, LAOF-03, LAOF-04, LAOF-05, LAOF-06 (6/6 ✓)
+
+**What's next:** Phase 109 (LA County Finance — CAL-ACCESS + Netfile) deferred to future milestone.
+
+---
+
 ## v2.8 District of Columbia Coverage (Shipped: 2026-06-08)
 
 **Delivered:** Complete DC civic data layer — government stub, 8 TIGER ward boundary polygons (geofencing), 19 district records, 27 politician + office records with photos, sourced stances for all researched officials, and FEC finance data for Eleanor Holmes Norton.

@@ -2,27 +2,27 @@
 gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: LA County Expansion
-status: milestone_complete
+status: archived
 last_updated: 2026-06-08T23:31:26.427Z
 last_activity: 2026-06-08
 progress:
-  total_phases: 2
+  total_phases: 1
   completed_phases: 1
-  total_plans: 4
-  completed_plans: 11
-  percent: 50
-stopped_at: Milestone complete (Phase 108 was final phase)
+  total_plans: 5
+  completed_plans: 5
+  percent: 100
+stopped_at: Milestone v2.9 archived — Phase 108 shipped; Phase 109 deferred
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-07 after v2.8 milestone initialized)
+See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Milestone complete
-**Last shipped:** v2.7 Source Integrity — Phases 100–104, shipped 2026-06-07. All 9 requirements closed (SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02). MASTER-DELETION-LOG.md finalized. Archive: .planning/milestones/v2.7-ROADMAP.md (to be created at milestone close).
+**Current focus:** Planning next milestone
+**Last shipped:** v2.9 LA County Expansion — Phase 108, shipped 2026-06-08. All 6 requirements closed (LAOF-01–06). Archive: .planning/milestones/v2.9-ROADMAP.md.
 
 ## Current Position
 
