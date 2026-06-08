@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.8
-milestone_name: District of Columbia Coverage
-status: Awaiting next milestone
-last_updated: "2026-06-08T17:15:03.333Z"
-last_activity: 2026-06-08 — Milestone v2.8 completed and archived
+milestone: v2.9
+milestone_name: LA County Expansion
+status: In progress — Phase 108 context captured
+last_updated: "2026-06-08"
+last_activity: 2026-06-08 — Phase 108 context captured; ready to plan
 progress:
   total_phases: 3
   completed_phases: 3
@@ -511,9 +511,9 @@ None for v2.8 start.
 
 ## Session Continuity
 
-Last session: 2026-06-08T14:59:05.219Z
-Stopped at: Phase 107 context gathered
-Resume file: .planning/phases/107-dc-finance/107-CONTEXT.md
+Last session: 2026-06-08
+Stopped at: Phase 108 context captured
+Resume file: .planning/phases/108-la-county-city-officials/108-CONTEXT.md
 
 ## Decisions
 
@@ -521,4 +521,5 @@ Resume file: .planning/phases/107-dc-finance/107-CONTEXT.md
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- `/clear` then `/gsd-plan-phase 108` — plan LA County city officials
+- Phase 109 (LA County Finance) to be discussed after Phase 108 ships
