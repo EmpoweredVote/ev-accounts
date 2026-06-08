@@ -124,10 +124,13 @@ describe('treasury 3-level tree infrastructure (TREE-01/02/03)', () => {
 
   afterAll(async () => {
     // T-34-01 mitigation: delete test budget — FK cascade removes categories + line items
-    if (testBudgetId) {
-      await pool.query('DELETE FROM treasury.budgets WHERE id = $1', [testBudgetId]);
+    if (testBudgetId && pool) {
+      const res = await pool.query('DELETE FROM treasury.budgets WHERE id = $1', [testBudgetId]);
+      if (res.rowCount === 0) {
+        console.warn(`[afterAll] FY=9999 test budget ${testBudgetId} was NOT deleted — manual cleanup required`);
+      }
     }
-    await pool.end();
+    if (pool) await pool.end();
   });
 
   // ── TREE-01: 3-level RPC submit ─────────────────────────────────────────────
