@@ -1108,10 +1108,10 @@ Plans:
 
 **Depends on:** Phase 105 (politician records must exist before finance_summary can be written to them)
 **Requirements:** DCFI-01, DCFI-02
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
 
-- [ ] 107-01-PLAN.md — EHN FEC ingestion script + DC OCF assessment/ingestion (DCFI-01, DCFI-02)
+- [x] 107-01-PLAN.md — EHN FEC ingestion script + DC OCF assessment/ingestion (DCFI-01, DCFI-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1215,4 +1215,4 @@ Plans:
 | 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
 | 105. DC Infrastructure + Official Records | v2.8 | 0/? | Not started | — |
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
-| 107. DC Finance | v2.8 | 0/? | Not started | — |
+| 107. DC Finance | v2.8 | 1/1 | Complete   | 2026-06-08 |
