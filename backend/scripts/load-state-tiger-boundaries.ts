@@ -329,8 +329,11 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
  * Follows 301/302 redirects. Pattern copied verbatim from
  * load-tx-state-boundaries.ts:88.
  */
-function downloadWithRedirects(url: string, destPath: string): Promise<void> {
+function downloadWithRedirects(url: string, destPath: string, redirectDepth = 0): Promise<void> {
   return new Promise((resolve, reject) => {
+    if (redirectDepth > 5) {
+      return reject(new Error(`Too many redirects (>5) for ${url}`));
+    }
     if (fs.existsSync(destPath)) {
       return resolve();
     }
@@ -339,7 +342,11 @@ function downloadWithRedirects(url: string, destPath: string): Promise<void> {
       if (response.statusCode === 301 || response.statusCode === 302) {
         file.close();
         if (fs.existsSync(destPath)) fs.unlinkSync(destPath);
-        return downloadWithRedirects(response.headers.location!, destPath).then(resolve).catch(reject);
+        const location = response.headers.location;
+        if (!location) {
+          return reject(new Error(`Redirect response (${response.statusCode}) for ${url} missing Location header`));
+        }
+        return downloadWithRedirects(location, destPath, redirectDepth + 1).then(resolve).catch(reject);
       }
       if (response.statusCode !== 200) {
         file.close();
