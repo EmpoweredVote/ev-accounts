@@ -29,10 +29,12 @@ files_reviewed_list:
   - backend/scripts/verify-west-hollywood-fips.sh
 findings:
   critical: 5
-  warning: 7
+  warning: 6
   info: 3
-  total: 15
+  total: 14
 status: issues_found
+resolved:
+  - WR-07: Fixed by plan 108-05 (correct join via chambers)
 ---
 
 # Phase 108: Code Review Report
@@ -358,13 +360,13 @@ VALUES (gen_random_uuid(), 'Angie Reyes-English', 'Angie', 'Reyes-English', ...)
 
 ---
 
-### WR-07: ASSERTION 7 in verify-la-county-108.sql joins on `districts.government_id` which may not exist
+### WR-07: ASSERTION 7 in verify-la-county-108.sql joins on `districts.government_id` which may not exist ✓ RESOLVED (108-05)
 
 **File:** `backend/scripts/verify-la-county-108.sql:196-208`
 
 **Issue:** ASSERTION 7 joins `essentials.governments g JOIN essentials.districts d ON d.government_id = g.id`. The `essentials.districts` table in this codebase does not have a `government_id` column based on the district insert patterns throughout all migrations — districts are linked to governments only through the `offices → chamber → government_id` chain, not via a direct `districts.government_id` FK. All district inserts across migrations 305-309 use `(geo_id, district_type, label, state)` with no `government_id` column. If this column does not exist, the entire assertion query would fail with a column-not-found error, making the verification gate non-executable for ASSERTION 7.
 
-**Fix:** Rewrite ASSERTION 7 to traverse the correct join path:
+**Fix applied in plan 108-05:** Rewrote ASSERTION 7 to traverse the correct join path:
 ```sql
 SELECT
   g.name,
