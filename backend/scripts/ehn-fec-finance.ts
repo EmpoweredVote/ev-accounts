@@ -187,7 +187,8 @@ async function fetchTopDonorsByEmployer(
     throw new Error(`FEC schedule_a/by_employer HTTP ${resp.status} for ${committeeId}`);
   }
   const data = (await resp.json()) as { results: FecEmployerRow[] };
-  return data.results
+  const rows = data.results ?? [];
+  return rows
     .filter((r): r is FecEmployerRow & { employer: string } =>
       r.employer != null && r.employer.trim() !== '',
     )
