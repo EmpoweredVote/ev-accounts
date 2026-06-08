@@ -295,10 +295,9 @@ describe('treasury 3-level tree infrastructure (TREE-01/02/03)', () => {
     expect(tree.length, 'Sacramento tree must have at least 1 root category').toBeGreaterThan(0);
     const root = tree[0];
     expect(root.subcategories, 'Sacramento root must have subcategories (Level 2 exists — confirmed max_depth=1)').toBeDefined();
-    expect(
-      root.subcategories![0].subcategories,
-      'Sacramento Level-2 nodes must NOT have subcategories (2-level city — backward compat proof)'
-    ).toBeUndefined();
+    // Assert the entire category set stays within depth 1 (covers all roots, not just tree[0])
+    const maxDepth = catRows.reduce((m, r) => Math.max(m, r.depth), 0);
+    expect(maxDepth, 'No category should reach depth 2 in a 2-level city (backward compat)').toBeLessThanOrEqual(1);
   });
 
   it('TREE-03: Plano TX operating budget returns a 2-level tree (no depth-2 subcategories)', async () => {
@@ -324,10 +323,9 @@ describe('treasury 3-level tree infrastructure (TREE-01/02/03)', () => {
     expect(tree.length, 'Plano tree must have at least 1 root category').toBeGreaterThan(0);
     const root = tree[0];
     expect(root.subcategories, 'Plano root must have subcategories (Level 2 exists — confirmed max_depth=1)').toBeDefined();
-    expect(
-      root.subcategories![0].subcategories,
-      'Plano Level-2 nodes must NOT have subcategories (2-level city — backward compat proof)'
-    ).toBeUndefined();
+    // Assert the entire category set stays within depth 1 (covers all roots, not just tree[0])
+    const maxDepth = catRows.reduce((m, r) => Math.max(m, r.depth), 0);
+    expect(maxDepth, 'No category should reach depth 2 in a 2-level city (backward compat)').toBeLessThanOrEqual(1);
   });
 
   it('TREE-03: Allen TX operating budget returns a 2-level tree (no depth-2 subcategories)', async () => {
@@ -353,9 +351,8 @@ describe('treasury 3-level tree infrastructure (TREE-01/02/03)', () => {
     expect(tree.length, 'Allen tree must have at least 1 root category').toBeGreaterThan(0);
     const root = tree[0];
     expect(root.subcategories, 'Allen root must have subcategories (Level 2 exists — confirmed max_depth=1)').toBeDefined();
-    expect(
-      root.subcategories![0].subcategories,
-      'Allen Level-2 nodes must NOT have subcategories (2-level city — backward compat proof)'
-    ).toBeUndefined();
+    // Assert the entire category set stays within depth 1 (covers all roots, not just tree[0])
+    const maxDepth = catRows.reduce((m, r) => Math.max(m, r.depth), 0);
+    expect(maxDepth, 'No category should reach depth 2 in a 2-level city (backward compat)').toBeLessThanOrEqual(1);
   });
 });
