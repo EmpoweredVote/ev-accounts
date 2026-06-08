@@ -409,27 +409,10 @@ ON CONFLICT (politician_id, topic_id) DO UPDATE
   SET reasoning = EXCLUDED.reasoning,
       sources   = EXCLUDED.sources;
 
--- ---- Eleanor Holmes Norton / misinformation / value=2 ----
-INSERT INTO inform.politician_answers (politician_id, topic_id, value)
-VALUES (
-  '4dbc8de1-9984-42a5-b2aa-5445bf0619b9',
-  (SELECT id FROM inform.compass_topics WHERE topic_key = 'misinformation'),
-  2
-)
-ON CONFLICT (politician_id, topic_id) DO UPDATE SET value = EXCLUDED.value;
-
-INSERT INTO inform.politician_context (politician_id, topic_id, reasoning, sources)
-VALUES (
-  '4dbc8de1-9984-42a5-b2aa-5445bf0619b9',
-  (SELECT id FROM inform.compass_topics WHERE topic_key = 'misinformation'),
-  'Norton''s voting record reflects support for platform accountability and transparency. She has cosponsored bills requiring transparency in political advertising and disclosure of independent campaign expenditures (''Require full disclosure of independent campaign expenditures,'' Feb 2012). While her specific position on algorithmic misinformation policy is not extensively documented in public records, her consistent support for democratic transparency and disclosure requirements, combined with opposition to unlimited dark money influence, aligns with value 2: ''mandate fact-checking and transparency in how algorithms promote content.''',
-  ARRAY(SELECT u FROM unnest(ARRAY[
-    'https://www.ontheissues.org/House/Eleanor_Holmes_Norton.htm'
-  ]) AS u WHERE u IS NOT NULL AND trim(u) != '')
-)
-ON CONFLICT (politician_id, topic_id) DO UPDATE
-  SET reasoning = EXCLUDED.reasoning,
-      sources   = EXCLUDED.sources;
+-- ---- Eleanor Holmes Norton / misinformation / SKIPPED (D-06) ----
+-- No directly documented stance on algorithmic misinformation policy found.
+-- Reasoning in CSV inferred from unrelated campaign-finance transparency bills — D-06 violation.
+-- Row removed per code review CR-02 / WR-02.
 
 -- ---- Eleanor Holmes Norton / redistricting / value=1 ----
 INSERT INTO inform.politician_answers (politician_id, topic_id, value)
@@ -610,14 +593,14 @@ ON CONFLICT (politician_id, topic_id) DO UPDATE
   SET reasoning = EXCLUDED.reasoning,
       sources   = EXCLUDED.sources;
 
-COMMIT;
-
 DO $$ BEGIN
   RAISE NOTICE 'Migration 291 complete:';
   RAISE NOTICE '  Paul Strauss (-600016): 0 stances (D-09 honest skip — no documentable positions on 44 compass topics)';
   RAISE NOTICE '  Ankit Jain (-600017): 6 stances (abortion=1, climate-change=3, housing=4, immigration=2, redistricting=1, voting-rights=2)';
-  RAISE NOTICE '  Eleanor Holmes Norton (-600030): 19 stances (gap-fill — 0 prior stances in DB, full research pass)';
+  RAISE NOTICE '  Eleanor Holmes Norton (-600030): 18 stances (gap-fill — 0 prior stances in DB; misinformation skipped per D-06)';
   RAISE NOTICE '  EHN previously-sourced topics retained (untouched): NONE (pre-flight returned 0 rows)';
-  RAISE NOTICE '  Total rows added by migration: 25 (6 Jain + 19 EHN)';
+  RAISE NOTICE '  Total rows added by migration: 24 (6 Jain + 18 EHN)';
   RAISE NOTICE '  DCST-03: CLOSED';
 END $$;
+
+COMMIT;

@@ -615,7 +615,7 @@ VALUES (
   'd38df660-3481-45d2-98cb-682d0404de80',
   (SELECT id FROM inform.compass_topics WHERE topic_key = 'public-safety-approach'),
   'Allen codified many of MPD''s General Orders into law including banning neck restraints and removed disciplinary processes for officer misconduct from collective bargaining agreements making it easier to fire officers guilty of serious misconduct. The Police Union criticized Allen for these reforms. Value=2 matches ''Maintain current police staffing but shift non-violent calls to unarmed mental health co-responders.''',
-  ARRAY(SELECT u FROM unnest(ARRAY['https://en.wikipedia.org/wiki/Charles_Allen_(Washington', '_D.C.', '_politician)']) AS u WHERE u IS NOT NULL AND trim(u) != '')
+  ARRAY(SELECT u FROM unnest(ARRAY['https://en.wikipedia.org/wiki/Charles_Allen_(Washington%2C_D.C.%2C_politician)']) AS u WHERE u IS NOT NULL AND trim(u) != '')
 )
 ON CONFLICT (politician_id, topic_id) DO UPDATE
   SET reasoning = EXCLUDED.reasoning,
@@ -635,7 +635,7 @@ VALUES (
   'd38df660-3481-45d2-98cb-682d0404de80',
   (SELECT id FROM inform.compass_topics WHERE topic_key = 'campaign-finance'),
   'Allen championed campaign finance reform and was a supporter of DC''s Initiative 70 in 2012. He opted for a campaign model that did not accept corporate donations. Value=1 matches ''ban all private money in politics and publicly fund campaigns.''',
-  ARRAY(SELECT u FROM unnest(ARRAY['https://en.wikipedia.org/wiki/Charles_Allen_(Washington', '_D.C.', '_politician)']) AS u WHERE u IS NOT NULL AND trim(u) != '')
+  ARRAY(SELECT u FROM unnest(ARRAY['https://en.wikipedia.org/wiki/Charles_Allen_(Washington%2C_D.C.%2C_politician)']) AS u WHERE u IS NOT NULL AND trim(u) != '')
 )
 ON CONFLICT (politician_id, topic_id) DO UPDATE
   SET reasoning = EXCLUDED.reasoning,
