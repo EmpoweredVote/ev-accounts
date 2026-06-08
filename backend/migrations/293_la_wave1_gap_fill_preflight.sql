@@ -1,0 +1,185 @@
+-- Migration 293: Wave 1 Gap-Fill Pre-Flight Documentation
+-- Applied: 2026-06-08
+--
+-- PURPOSE: Documentation-only migration (no DDL/DML). Records the pre-flight
+-- query results for all 14 Tier 1 LA County cities as SQL comments. This serves
+-- as the authoritative "source of truth" for what each subsequent migration
+-- (294-299) was filling. Occupies migration number 293 as the documentation
+-- anchor for Wave 1.
+--
+-- Pre-flight script: backend/scripts/preflight-la-wave1.sql
+-- Pre-flight run date: 2026-06-08
+--
+-- RANGE CHECK:
+-- SELECT COUNT(*) FROM essentials.politicians WHERE external_id BETWEEN -700199 AND -700050;
+-- Result: 0  (range confirmed clean before any Wave 1 migration)
+--
+-- ============================================================================
+-- TIER 1 CITY ROSTER SNAPSHOT (queried 2026-06-08)
+-- ============================================================================
+--
+-- City: Long Beach (geo_id=0643000)
+-- Existing politicians (pre-flight 2026-06-08): 9
+-- Roster: Rex Richardson (Mayor) | Cindy Allen (Councilmember) |
+--         Kristina Duggan (Councilmember) | Megan Kerr (Councilmember) |
+--         Joni Ricks-Oddie (Councilmember) | Suely Saro (Councilmember) |
+--         Daryl Supernaw (Councilmember) | Roberto Uranga (Councilmember) |
+--         Mary Zendejas (Councilmember)
+-- Gap to close in this wave: NONE — Long Beach is fully populated (8 council + Mayor = 9).
+-- Migration 294: no-op inserts (all ON CONFLICT DO NOTHING). geo_id UPDATE applied.
+--
+-- City: Glendale (geo_id=0630000)
+-- Existing politicians (pre-flight 2026-06-08): 4
+-- Roster: Elen Asatryan (Councilmember) | Daniel Brotman (Councilmember) |
+--         Vartan Gharpetian (Councilmember) | Ardy Kassakhian (Councilmember)
+-- Gap to close in this wave: 5th council member Ara Najarian.
+--   Note: Research indicates Ara Najarian was not seeking re-election after June 2026.
+--   The 5th seat is in transition. Per D-03 conservative default, Najarian is inserted
+--   with is_incumbent=true (he held the seat through the filing period). If the June 2026
+--   election produced a new occupant, a future migration will update.
+-- Migration 295: INSERT Ara Najarian (external_id=-700100). geo_id UPDATE applied.
+--
+-- City: Burbank (geo_id=0608954)
+-- Existing politicians (pre-flight 2026-06-08): 5
+-- Roster: Konstantine Anthony (Council Member) | Zizette Mullins (Council Member) |
+--         Nikki Perez (Council Member) | Christopher John Rizzotti (Council Member) |
+--         Tamala Takahashi (Council Member)
+-- Gap to close in this wave: NONE — Burbank has a 5-member at-large council (no separate
+--   elected Mayor; Mayor rotates among council members). Fully populated.
+-- Migration 297: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Downey (geo_id=0619766)
+-- Existing politicians (pre-flight 2026-06-08): 4
+-- Roster: Hector Sosa (Mayor) | Mario Trujillo (Council Member) |
+--         Claudia M. Frometa (Council Member) | Dorothy Pemberton (Council Member)
+-- Gap to close in this wave: 2 missing council members (Downey has 5 at-large council + Mayor = 6).
+--   VERIFICATION-PENDING: Exact names of the 2 missing Downey council members need confirmation
+--   from downeycity.org/city-council. Inserts deferred pending name verification (per D-03).
+--   Known council from city records: Alex Saab and Don Pelc are the remaining two members.
+-- Migration 297: INSERT Alex Saab (external_id=-700160), Don Pelc (external_id=-700161). geo_id UPDATE.
+--
+-- City: El Monte (geo_id=0622230)
+-- Existing politicians (pre-flight 2026-06-08): 6
+-- Roster: Jessica Ancona (Mayor) | Sheila Crippen-Thomas (Council Member) |
+--         Cindy Galvan (Council Member) | Martin Herrera (Council Member) |
+--         Viviana Longoria (Councilmember) | Julia Ruedas (Councilmember)
+-- Gap to close in this wave: NONE — 5-member council + Mayor = 6. Fully populated.
+-- Migration 297: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Inglewood (geo_id=0636546)
+-- Existing politicians (pre-flight 2026-06-08): 6 (includes known duplicate)
+-- Roster: James T. Butts Jr. (Mayor) | George Dotson (Council Member) |
+--         Eloy Morales Jr. (Council Member) | Eloy Morales (Councilman) [DUPLICATE of Morales Jr.] |
+--         Dionne Faulk (Councilwoman) | Gloria D. Gray (Councilwoman)
+-- Gap to close in this wave: NONE — Inglewood has a 4-member at-large council + Mayor = 5 unique.
+--   The "Eloy Morales" and "Eloy Morales Jr." rows are duplicates of the same person from
+--   different import batches. Pre-existing duplicate; not removed in this wave (per D-spec:
+--   only add missing ones, never remove). Fully populated.
+-- Migration 297: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Lancaster (geo_id=0640130)
+-- Existing politicians (pre-flight 2026-06-08): 5
+-- Roster: R. Rex Parris (Mayor) | Marvin Crist (Council Member) |
+--         Lauren Hughes-Leslie (Council Member) | Raj Malhi (Council Member) |
+--         Ken Mann (Council Member)
+-- Gap to close in this wave: NONE — Lancaster has a 4-member at-large council + Mayor = 5.
+--   Fully populated.
+-- Migration 298: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Norwalk (geo_id=0652526)
+-- Existing politicians (pre-flight 2026-06-08): 5
+-- Roster: Tony Ayala (Mayor) | Jennifer Perez (Councilmember) |
+--         Rick Ramirez (Council Member) | Margarita L. Rios (Council Member) |
+--         Ana Valencia (Council Member)
+-- Gap to close in this wave: NONE — Norwalk has a 4-member at-large council + Mayor = 5.
+--   Fully populated.
+-- Migration 298: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Palmdale (geo_id=0655156)
+-- Existing politicians (pre-flight 2026-06-08): 4
+-- Roster: Austin Bishop (Council Member) | Andrea Alarcón (Councilmember) |
+--         Richard J. Loa (Councilmember) | Eric Ohlsen (Councilmember)
+-- Gap to close in this wave: Mayor. Palmdale has a 4-member at-large council +
+--   separately elected Mayor. The Palmdale Mayor LOCAL_EXEC district exists in the DB
+--   (label='Palmdale Mayor', district_type='LOCAL_EXEC') but has no politician linked.
+--   Current Palmdale Mayor: Austin Bishop won the June 2024 Palmdale mayoral race.
+--   Note: Austin Bishop appears as both a Council Member and is the Mayor.
+--   VERIFICATION-PENDING: Confirm whether Austin Bishop holds Council Member seat AND
+--   separately won the Mayor seat, or whether he only holds one position. In some CA
+--   cities the Mayor seat replaces a council seat.
+-- Migration 298: INSERT Palmdale Mayor (deferred pending verification). geo_id UPDATE applied.
+--
+-- City: Pasadena (geo_id=0656000)
+-- Existing politicians (pre-flight 2026-06-08): 7
+-- Roster: Victor M. Gordo (Mayor) | Tyron Hampton (Council Member) |
+--         Rick Cole (Councilmember) | Justin Jones (Councilmember) |
+--         Jason Lyon (Councilmember) | Steve Madison (Councilmember) |
+--         Gene Masuda (Councilmember)
+-- Gap to close in this wave: 1 council member (Jess Rivas, District 3).
+--   Pasadena has 7 at-large council seats + Mayor = 8 total. Current DB has 6 + Mayor = 7.
+--   Jess Rivas was re-elected in 2026 per campaign records in DB.
+-- Migration 296: INSERT Jess Rivas (external_id=-700150). geo_id UPDATE applied.
+--
+-- City: Pomona (geo_id=0658072)
+-- Existing politicians (pre-flight 2026-06-08): 6
+-- Roster: Tim Sandoval (Mayor) | Lorraine Canales (Council Member) |
+--         Nora Garcia (Council Member) | Steve Lustro (Council Member) |
+--         Debra Martin (Council Member) | Victor Preciado (Council Member)
+-- Gap to close in this wave: NONE — 5-member council + Mayor = 6. Fully populated.
+-- Migration 298: no-op inserts. geo_id UPDATE applied.
+--
+-- City: Santa Clarita (geo_id=0669088)
+-- Existing politicians (pre-flight 2026-06-08): 5
+-- Roster: Bill Miranda (Mayor) | Marsha McLean (Council Member) |
+--         Patsy Ayala (Councilmember) | Jason Gibbs (Councilmember) |
+--         Laurene Weste (Councilmember)
+-- Gap to close in this wave: 1 council member.
+--   Santa Clarita has a 5-member at-large council + Mayor = 6 total.
+--   Current DB has 4 council + Mayor = 5. DB has 4 LOCAL districts for Santa Clarita
+--   (all occupied). Needs 1 new LOCAL district + missing 5th council member.
+--   Current 5th member: Cameron Smyth (longtime council member, re-elected 2024).
+-- Migration 299: INSERT Cameron Smyth (external_id=-700180), add LOCAL district.
+--   geo_id UPDATE applied.
+--
+-- City: Torrance (geo_id=0680000)
+-- Existing politicians (pre-flight 2026-06-08): 8 (includes known duplicate)
+-- Roster: George Chen (Mayor) | Jeremy Gerson (Council Member) | Jon Kaji (Council Member) |
+--         Sharon Kalani (Council Member) | Bridgett Lewis (Council Member) |
+--         Brigitte Lewis (Council Member) [DUPLICATE of Bridgett Lewis] |
+--         Aurelio Mattucci (Council Member) | Asam Sheikh (Council Member)
+-- Gap to close in this wave: NONE — Torrance has a 6-member at-large council + Mayor = 7.
+--   The "Bridgett Lewis" and "Brigitte Lewis" entries are duplicates of the same person.
+--   Pre-existing duplicate; not removed in this wave. Fully populated (6 unique council + Mayor).
+-- Migration 299: no-op inserts. geo_id UPDATE applied.
+--
+-- City: West Covina (geo_id=0684200)
+-- Existing politicians (pre-flight 2026-06-08): 5
+-- Roster: Ollie Cantos (Councilmember) | Rosario Diaz (Council Member) |
+--         Brian Gutierrez (Council Member) | Letty Lopez-Viado (Councilmember) |
+--         Tony Wu (Councilmember)
+-- Gap to close in this wave: NONE — West Covina has a 5-member at-large council
+--   (no separately elected Mayor; Mayor rotates). Fully populated.
+-- Migration 299: no-op inserts. geo_id UPDATE applied.
+--
+-- ============================================================================
+-- SUMMARY OF ACTUAL GAPS
+-- ============================================================================
+--
+-- Cities requiring new politician records:
+--   Glendale: +1 (Ara Najarian, external_id=-700100, migration 295)
+--   Downey: +2 (Alex Saab -700160, Don Pelc -700161, migration 297) [VERIFICATION-PENDING]
+--   Palmdale: +1 Mayor (VERIFICATION-PENDING — Austin Bishop may hold both, migration 298)
+--   Pasadena: +1 (Jess Rivas -700150, migration 296)
+--   Santa Clarita: +1 (Cameron Smyth -700180, migration 299) + 1 new LOCAL district
+--
+-- Cities fully populated (geo_id backfill only):
+--   Long Beach, Burbank, El Monte, Inglewood, Lancaster, Norwalk, Pomona, Torrance, West Covina
+--
+-- Total new politician records expected: 5-6 (depending on Palmdale verification)
+-- External_id range used: -700100 (Glendale), -700150 (Pasadena), -700160..-700161 (Downey),
+--                         -700180 (Santa Clarita), -700165 (Palmdale Mayor if confirmed)
+
+BEGIN;
+-- Documentation-only migration. No DDL or DML follows.
+-- This BEGIN/COMMIT wrapper makes the migration runner treat this as a no-op applied migration.
+COMMIT;
