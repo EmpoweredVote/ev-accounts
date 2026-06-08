@@ -208,6 +208,27 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
+## Current Milestone: v2.10 Virginia Coverage + LA County Finance
+
+**Goal:** Complete Virginia's full civic data layer — official records, geofencing, stances, and finance — while closing the LA County Finance gap deferred from v2.9.
+
+**Target features:**
+- VA Official Records — 100 House delegates (migration 308) + 11 federal House reps (migration 311); state executives + 40 senators already committed
+- VA TIGER Geofencing — SLDL + SLDU boundary polygons imported for Path 0 geofencing of VA users
+- VA Stances — sourced stances for all VA officials (executives, senators, delegates, federal reps) using Chair methodology
+- VA Campaign Finance — FEC data for VA House reps; VPAP assessment for state officials; finance_summary JSONB column already exists
+- LA County Finance — CAL-ACCESS + Netfile ingestion for ~72 LA County city officials seeded in Phase 108
+
+---
+
+## Previous Milestone: v2.9 LA County Expansion (Phase 108, shipped 2026-06-08)
+
+**Goal:** Full elected governing bodies for 27 LA County cities across 4 waves.
+
+**Delivered:** 14 Tier 1 gap-fills (Long Beach, Glendale, Pasadena, Burbank, Downey, El Monte, Inglewood, Lancaster, Norwalk, Palmdale, Pomona, Santa Clarita, Torrance, West Covina); Beverly Hills + Santa Monica structure completion + LA City Controller Kenneth Mejia + Clerk Patrice Lattimore; 10 new cities (South Gate, Compton, Carson, Hawthorne, Whittier, Alhambra, Gardena, Culver City, West Hollywood, El Segundo); 8-assertion phase gate SQL script. Phase 109 (LA County Finance) deferred to v2.10.
+
+---
+
 ## Previous Milestone: v2.8 District of Columbia Coverage (Phases 105–107, shipped 2026-06-08)
 
 **Goal:** Full civic profiles for DC government — 27 officials across every DC body, sourced stances, ward-level geofencing, and FEC finance data for Eleanor Holmes Norton.
@@ -288,4 +309,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-08 — Phase 108 complete: LA County City Officials seeded (65 politicians, 24 cities, verification gate passing)*
+*Last updated: 2026-06-08 — Milestone v2.10 started: Virginia Coverage + LA County Finance*

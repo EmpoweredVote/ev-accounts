@@ -1,17 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.9
-milestone_name: LA County Expansion
-status: archived
-last_updated: 2026-06-08T23:31:26.427Z
+milestone: v2.10
+milestone_name: Virginia Coverage + LA County Finance
+status: planning
+last_updated: "2026-06-08T23:50:36.921Z"
 last_activity: 2026-06-08
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 5
-  completed_plans: 5
-  percent: 100
-stopped_at: Milestone v2.9 archived — Phase 108 shipped; Phase 109 deferred
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -26,10 +25,10 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 ## Current Position
 
-Phase: 108
-Plan: Not started
-Status: Milestone complete
-Last activity: 2026-06-08
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-08 — Milestone v2.10 started
 
 ## Performance Metrics
 
