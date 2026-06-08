@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: District of Columbia Coverage
-status: verifying
-last_updated: "2026-06-08T06:15:21.802Z"
+status: planning
+last_updated: "2026-06-08T14:59:05.230Z"
 last_activity: 2026-06-08
 progress:
   total_phases: 3
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-07 after v2.8 milestone initialized)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 106 — dc-stance-research
+**Current focus:** Phase 107 — dc finance
 **Last shipped:** v2.7 Source Integrity — Phases 100–104, shipped 2026-06-07. All 9 requirements closed (SRCA-01/02, FEDX-01/02, STAX-01/02/03, QUAL-01/02). MASTER-DELETION-LOG.md finalized. Archive: .planning/milestones/v2.7-ROADMAP.md (to be created at milestone close).
 
 ## Current Position
 
-Phase: 106 (dc-stance-research) — EXECUTING
-Plan: 3 of 3
-Status: Phase complete — ready for verification
+Phase: 107
+Plan: Not started
+Status: Ready to plan
 Last activity: 2026-06-08
 
 **Progress bar:** `[ ] [ ] [ ]` 0/3 phases complete
@@ -513,9 +513,9 @@ None for v2.8 start.
 
 ## Session Continuity
 
-Last session: 2026-06-08T06:15:21.792Z
-Stopped at: Phase 106 context gathered
-Resume file: None
+Last session: 2026-06-08T14:59:05.219Z
+Stopped at: Phase 107 context gathered
+Resume file: .planning/phases/107-dc-finance/107-CONTEXT.md
 
 ## Decisions
 
