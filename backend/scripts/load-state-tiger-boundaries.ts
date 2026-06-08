@@ -612,7 +612,7 @@ async function processLayer(
 
   // ── Extract ──────────────────────────────────────────────────────────────────
   console.log(`  [${layer}] extracting ${path.basename(zipPath)}`);
-  extractZip(zipPath, destDir);
+  extractZip(zipPath, destDir); // cleanup() intentionally not called — extracted dirs cached for re-runs
 
   // Find .shp and .dbf inside destDir
   const entries = fs.readdirSync(destDir);
