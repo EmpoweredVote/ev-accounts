@@ -190,10 +190,11 @@ SELECT
   d.label,
   COUNT(p.id) AS wave3_politicians_in_local_exec
 FROM essentials.governments g
-JOIN essentials.districts d ON d.government_id = g.id
-LEFT JOIN essentials.offices o ON o.district_id = d.id
+JOIN essentials.chambers ch ON ch.government_id = g.id
+JOIN essentials.offices o ON o.chamber_id = ch.id
+JOIN essentials.districts d ON d.id = o.district_id
 LEFT JOIN essentials.politicians p
-  ON p.office_id = o.id
+  ON p.id = o.politician_id
   AND p.external_id BETWEEN -700699 AND -700200
 WHERE g.name IN (
   'City of Alhambra',
