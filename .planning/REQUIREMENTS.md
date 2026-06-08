@@ -27,8 +27,8 @@
 
 ### DCFI — DC Finance
 
-- [ ] **DCFI-01**: FEC `finance_summary` fetched and stored for Eleanor Holmes Norton using existing FEC ingestion script; `finance_summary` column updated on her politician record
-- [ ] **DCFI-02**: DC Office of Campaign Finance (OCF) data researched for Mayor Bowser + DC Council members; `finance_summary` populated for officials where accessible machine-readable data exists
+- [x] **DCFI-01**: FEC `finance_summary` fetched and stored for Eleanor Holmes Norton using existing FEC ingestion script; `finance_summary` column updated on her politician record
+- [x] **DCFI-02**: DC Office of Campaign Finance (OCF) data researched for Mayor Bowser + DC Council members; `finance_summary` populated for officials where accessible machine-readable data exists
 
 ## Future Requirements
 

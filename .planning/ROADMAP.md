@@ -29,7 +29,7 @@
 
 - [ ] **Phase 105: DC Infrastructure + Official Records** — DC government stub, ward + SBOE + EHN districts, TIGER ward polygons, all ~26 politician records with photos
 - [x] **Phase 106: DC Stance Research** — Sourced stances for all DC officials across body-appropriate topic sets (completed 2026-06-08)
-- [ ] **Phase 107: DC Finance** — FEC data for EHN; DC OCF data for Mayor + Council where accessible
+- [x] **Phase 107: DC Finance** — FEC data for EHN; DC OCF data for Mayor + Council where accessible (completed 2026-06-08)
 
 </details>
 
@@ -1215,4 +1215,4 @@ Plans:
 | 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
 | 105. DC Infrastructure + Official Records | v2.8 | 0/? | Not started | — |
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
-| 107. DC Finance | v2.8 | 1/1 | Complete   | 2026-06-08 |
+| 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
