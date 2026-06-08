@@ -24,7 +24,6 @@ No new schema changes. No API changes. Depends entirely on politician + district
   - **106-01** — Mayor Bowser + 13 DC Council members + AG Schwalb (DCST-01), 15 politicians
   - **106-02** — 9 DC SBOE members (DCST-02)
   - **106-03** — Shadow Senators (Paul Strauss, Ankit Jain) + EHN gap-fill (DCST-03)
-- **D-02:** One migration per politician within each plan. 106-01 produces up to 15 migration files, 106-02 up to 9, 106-03 up to 3.
 - **D-03:** Execution order within each plan: research ALL politicians in the batch first (sequentially, one stance agent at a time per rate-limit rule), then write all migrations in a single executor pass.
 
 ### Topic Scope
@@ -47,6 +46,10 @@ No new schema changes. No API changes. Depends entirely on politician + district
 - **D-10:** One stance researcher agent at a time. Never parallel. Running parallel agents burns the WebSearch/Playwright rate-limit quota, producing no usable output.
 - **D-11:** Five-chairs framing — each value (1–5) is a named chair with distinct substantive text. Match documented positions to the exact stance text; do NOT assign based on party expectation or directional assumption.
 - **D-12:** Full live topic JSON (id, topic_key, question_text, stances with value+text) must be fetched fresh from the DB and embedded in every agent prompt. Never hardcode the topic list.
+
+### Claude's Discretion
+
+- Migration file granularity: Plans produce one migration file per plan (batch pattern: 289, 290, 291), not one per politician. This matches all prior phases (103, 104, 279) and is strictly more reliable (atomic, less migration clutter). Original D-02 sketch specified per-politician files; batch is the correct implementation.
 
 </decisions>
 
