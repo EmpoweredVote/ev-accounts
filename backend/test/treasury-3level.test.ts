@@ -50,7 +50,8 @@ function loadEnv() {
       const lines = fs.readFileSync(path.resolve(__dirname, f), 'utf8').split('\n');
       for (const line of lines) {
         const [k, ...v] = line.split('=');
-        if (k && v.length && !process.env[k.trim()]) process.env[k.trim()] = v.join('=').trim();
+        const rawVal = v.join('=').trim().replace(/\s+#.*$/, '');  // strip inline # comments
+        if (k && v.length && !process.env[k.trim()]) process.env[k.trim()] = rawVal;
       }
     } catch {
       // file not found — skip silently
