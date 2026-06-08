@@ -127,7 +127,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.6):** ~80,000 lines of TypeScript (project-wide). 90 phases, 100+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–268 applied to production. 21 live compass topics, ~1,049 politicians with stance data (100 senators + 43 2026 candidates + 39 city officials across 4 CA cities + state/local officials), full role system live. CA TIGER geofencing live: 1,147 polygon layers (172 legislative + 975 school districts), per-user district cache, Path 0 fast path. inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians. Elections Central page live at `/elections` with Utah 2026 Primary seeded.
+**Current state (v2.8):** ~80,000 lines of TypeScript (project-wide). 107 phases, 110+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–291 applied to production. 21 live compass topics, ~1,076 politicians with stance data (100 senators + 43 2026 candidates + 39 CA city officials + 27 DC officials + state/local officials), full role system live. CA + DC TIGER geofencing live (8 DC ward polygons added via dc_ward layer). inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians + Eleanor Holmes Norton. Elections Central page live at `/elections` with Utah 2026 Primary seeded.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -208,17 +208,11 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
-## Current Milestone: v2.8 District of Columbia Coverage
+## Previous Milestone: v2.8 District of Columbia Coverage (Phases 105–107, shipped 2026-06-08)
 
-**Goal:** Full civic profiles for DC government — all elected officials across every DC body, sourced stances, headshots, ward-level geofencing, and FEC finance data for federal filers — making DC a first-class city in the platform.
+**Goal:** Full civic profiles for DC government — 27 officials across every DC body, sourced stances, ward-level geofencing, and FEC finance data for Eleanor Holmes Norton.
 
-**Target features:**
-- DC infrastructure: government stub, 8 ward districts + SBOE seats, TIGER DC ward boundary import for geofencing
-- DC official records: ~26 new politician records + photos (Mayor, DC Council ×13, AG, SBOE ×9, Shadow Senators ×2); verify/update Eleanor Holmes Norton
-- DC stance research: sourced stances for all officials; topic scope varies by body
-- DC finance: FEC data for Eleanor Holmes Norton; DC OCFO data for local officials where available
-
-**Active requirements:** DCIN-01/02/03/04, DCOF-01/02/03/04, DCST-01/02/03, DCFI-01/02
+**Delivered:** DC government stub + 19 district records; 8 TIGER ward polygons (dc_ward layer) via DC GIS MapServer; 27 politician + office records; 33-row Mayor/Council/AG stance migration + Jain/EHN gap-fill; DC OCF assessed (non-machine-readable, DCFI-02 closed with finding); EHN FEC finance_summary confirmed in DB (source=FEC, 2026, $53,774.80).
 
 ---
 ## Previous Milestone: v2.7 Source Integrity (Phases 100–104, shipped 2026-06-07)
@@ -294,4 +288,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-07 — v2.8 started: District of Columbia Coverage milestone initialized*
+*Last updated: 2026-06-08 — v2.8 complete: District of Columbia Coverage shipped*
