@@ -109,6 +109,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     JOIN essentials.quotes q
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL
+     AND q.readrank_selected = true
     JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
     GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state
@@ -151,6 +152,7 @@ export async function getRaceBlindQuotes(raceId: string): Promise<RacePayload | 
     JOIN essentials.quotes q
       ON q.politician_id = rc.politician_id
      AND q.deidentified_text IS NOT NULL
+     AND q.readrank_selected = true
     JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
     WHERE r.id = $1
@@ -206,7 +208,7 @@ export async function computeRaceMatch(
            o.title AS office_title, ct.short_title AS topic_title, r.position_name
     FROM essentials.races r
     JOIN essentials.race_candidates rc ON rc.race_id = r.id AND rc.politician_id IS NOT NULL
-    JOIN essentials.quotes q ON q.politician_id = rc.politician_id AND q.deidentified_text IS NOT NULL
+    JOIN essentials.quotes q ON q.politician_id = rc.politician_id AND q.deidentified_text IS NOT NULL AND q.readrank_selected = true
     JOIN essentials.politicians p ON p.id = q.politician_id
     LEFT JOIN LATERAL (
       SELECT title FROM essentials.offices WHERE politician_id = p.id ORDER BY id DESC LIMIT 1
