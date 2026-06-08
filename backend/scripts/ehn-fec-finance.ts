@@ -204,10 +204,15 @@ async function fetchTopDonorsByEmployer(
  * Uses parameterized UPDATE with explicit ::jsonb cast — never string concatenation.
  */
 async function updateFinanceSummary(politicianId: string, summary: FinanceSummary): Promise<void> {
-  await pool.query(
+  const result = await pool.query(
     `UPDATE essentials.politicians SET finance_summary = $1::jsonb WHERE id = $2`,
     [JSON.stringify(summary), politicianId],
   );
+  if (result.rowCount === 0) {
+    throw new Error(
+      `UPDATE matched 0 rows — politician UUID ${politicianId} not found in essentials.politicians`,
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------
