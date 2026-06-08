@@ -231,6 +231,7 @@ async function main(): Promise<void> {
   }
 
   const apiKey = process.env.FEC_API_KEY;
+  console.log(`[ehn-fec-finance] FEC API key: ${apiKey.slice(0, 8)}...`);
   console.log('[ehn-fec-finance] EHN FEC finance ingestion');
   console.log(`[ehn-fec-finance] Politician UUID: ${EHN_POLITICIAN_UUID}`);
   console.log(`[ehn-fec-finance] Bioguide ID: ${EHN_BIOGUIDE_ID}`);
