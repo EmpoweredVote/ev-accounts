@@ -114,10 +114,11 @@ describe('treasury 3-level tree infrastructure (TREE-01/02/03)', () => {
 
   beforeAll(() => {
     const DATABASE_URL = process.env.DATABASE_URL;
-    const SUPABASE_URL = process.env.SUPABASE_URL || 'https://kxsdzaojfaibhuzmclfq.supabase.co';
+    const SUPABASE_URL = process.env.SUPABASE_URL;
     const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     if (!DATABASE_URL) throw new Error('DATABASE_URL is not set — check C:/EV-Accounts/backend/.env');
+    if (!SUPABASE_URL) throw new Error('SUPABASE_URL is not set — check C:/EV-Accounts/backend/.env');
     if (!SUPABASE_SERVICE_KEY) throw new Error('SUPABASE_SERVICE_KEY / SUPABASE_SERVICE_ROLE_KEY is not set');
 
     pool = new pg.Pool({ connectionString: DATABASE_URL, ssl: { rejectUnauthorized: false } });
