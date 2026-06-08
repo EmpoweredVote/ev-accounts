@@ -1,0 +1,574 @@
+[
+  {
+    "id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "topic_key": "abortion",
+    "title": "Reproductive Rights and Abortion Access",
+    "question_text": "What legal framework should govern abortion access?",
+    "stances": [
+      {"value": 1, "text": "ensure abortion is legal, accessible, and publicly funded at all stages of pregnancy."},
+      {"value": 2, "text": "keep abortion legal and accessible through the second trimester with rare exceptions afterward."},
+      {"value": 3, "text": "allow abortion in the first trimester and in cases of rape, incest, or maternal health risks."},
+      {"value": 4, "text": "restrict abortion to only cases involving rape, incest, or serious threats to the mother's life."},
+      {"value": 5, "text": "ban abortion completely with no exceptions and impose criminal penalties for providers and patients."}
+    ]
+  },
+  {
+    "id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+    "topic_key": "ai-regulation",
+    "title": "Artificial Intelligence Oversight",
+    "question_text": "How much should government oversee artificial intelligence development and deployment?",
+    "stances": [
+      {"value": 1, "text": "Allow AI companies to develop and deploy technology freely without government interference"},
+      {"value": 2, "text": "Suggest AI safety guidelines but let companies choose whether to follow them"},
+      {"value": 3, "text": "Require AI developers to disclose risks and be held responsible when their systems cause harm"},
+      {"value": 4, "text": "Require safety testing and ban high-risk AI uses in areas like hiring, healthcare, and policing"},
+      {"value": 5, "text": "Impose strict approval requirements and ban AI systems that could cause serious harm"}
+    ]
+  },
+  {
+    "id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "title": "Campaign Finance Reform",
+    "question_text": "What rules should govern money in political campaigns and elections?",
+    "stances": [
+      {"value": 1, "text": "ban all private money in politics and publicly fund campaigns"},
+      {"value": 2, "text": "strictly limit corporate donations and dark money groups"},
+      {"value": 3, "text": "require full disclosure of all political donations"},
+      {"value": 4, "text": "reduce restrictions on political donations and spending"},
+      {"value": 5, "text": "eliminate all campaign finance laws and limits"}
+    ]
+  },
+  {
+    "id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+    "topic_key": "childcare",
+    "title": "Childcare Affordability & Access",
+    "question_text": "How should government address the cost and availability of childcare?",
+    "stances": [
+      {"value": 1, "text": "Establishing publicly funded universal childcare so that all families have access regardless of income"},
+      {"value": 2, "text": "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"},
+      {"value": 3, "text": "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"},
+      {"value": 4, "text": "Reducing regulations on childcare providers to increase supply and lower costs, with limited subsidies reserved for the lowest-income families"},
+      {"value": 5, "text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"}
+    ]
+  },
+  {
+    "id": "7687de4f-4d0b-462a-b803-bdfb23b16b42",
+    "topic_key": "city-sanitation",
+    "title": "City Sanitation and Cleanliness",
+    "question_text": "How should your city approach street cleanliness and sanitation?",
+    "stances": [
+      {"value": 1, "text": "Significantly expand sanitation staffing, cleaning frequency, and free community disposal access; treat poor conditions as a services failure"},
+      {"value": 2, "text": "Increase sanitation crews and prioritize historically underserved neighborhoods to equalize cleanliness citywide"},
+      {"value": 3, "text": "Maintain current sanitation services while enforcing anti-dumping laws for businesses and large property owners"},
+      {"value": 4, "text": "Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible"},
+      {"value": 5, "text": "Privatize sanitation services and require residents and businesses to contract for cleanup directly"}
+    ]
+  },
+  {
+    "id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+    "topic_key": "civil-rights",
+    "title": "Civil Rights and Social Justice",
+    "question_text": "What role should government play in addressing racial and social inequality?",
+    "stances": [
+      {"value": 1, "text": "mandate racial equity requirements in all institutions and provide reparations"},
+      {"value": 2, "text": "strengthen civil rights enforcement and address systemic discrimination"},
+      {"value": 3, "text": "maintain current civil rights laws while promoting equal opportunity"},
+      {"value": 4, "text": "limit federal civil rights enforcement to clear cases of discrimination"},
+      {"value": 5, "text": "eliminate affirmative action and all race-based government programs"}
+    ]
+  },
+  {
+    "id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+    "topic_key": "climate-change",
+    "title": "Climate Change and Environmental Protection",
+    "question_text": "What priority should climate change receive in energy and economic policy?",
+    "stances": [
+      {"value": 1, "text": "declare a climate emergency and ban all activities that increase carbon emissions"},
+      {"value": 2, "text": "rapidly transition to renewable energy and phase out fossil fuels by 2030"},
+      {"value": 3, "text": "invest in clean energy while gradually reducing reliance on fossil fuels"},
+      {"value": 4, "text": "let market forces drive any transition to cleaner energy sources"},
+      {"value": 5, "text": "reject climate change policies and focus on economic growth instead"}
+    ]
+  },
+  {
+    "id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+    "topic_key": "data-centers",
+    "title": "Data Center Development & Energy Costs",
+    "question_text": "How should government manage the growth of large-scale data centers?",
+    "stances": [
+      {"value": 1, "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"},
+      {"value": 2, "text": "Requiring data centers to fund their own dedicated power generation and barring utilities from passing data center infrastructure costs to residential customers"},
+      {"value": 3, "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"},
+      {"value": 4, "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"},
+      {"value": 5, "text": "Welcoming data center investment with competitive incentives and minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"}
+    ]
+  },
+  {
+    "id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "topic_key": "deportation",
+    "title": "Deportation Priorities",
+    "question_text": "Who should be deported, and how aggressively?",
+    "stances": [
+      {"value": 1, "text": "Stop deportations entirely and protect undocumented residents from removal"},
+      {"value": 2, "text": "Only deport people convicted of serious violent crimes"},
+      {"value": 3, "text": "Focus deportation on recent arrivals while leaving long-term residents in place"},
+      {"value": 4, "text": "Deport everyone without legal status, starting with those who have criminal records"},
+      {"value": 5, "text": "Move quickly to deport all undocumented people regardless of how long they've lived here or family ties"}
+    ]
+  },
+  {
+    "id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+    "topic_key": "economic-development",
+    "title": "Economic Development Incentives",
+    "question_text": "How should your city attract businesses and support economic development?",
+    "stances": [
+      {"value": 1, "text": "No corporate tax incentives; invest in public services and infrastructure to attract business organically"},
+      {"value": 2, "text": "Small business support and local entrepreneur programs only; avoid large corporate subsidies"},
+      {"value": 3, "text": "Targeted incentives for specific industries with community benefit agreements and job quality requirements"},
+      {"value": 4, "text": "Compete actively for major employers with significant tax abatements and infrastructure investment"},
+      {"value": 5, "text": "Offer maximum incentives to attract any large employer; economic growth is the top city priority"}
+    ]
+  },
+  {
+    "id": "a22215c3-6693-4bc2-b248-01aebba14570",
+    "topic_key": "fossil-fuels",
+    "title": "Fossil Fuel Policy",
+    "question_text": "What role should fossil fuels play in the nation's energy future?",
+    "stances": [
+      {"value": 1, "text": "immediately ban all new fossil fuel drilling and extraction"},
+      {"value": 2, "text": "stop issuing new permits for fossil fuel drilling"},
+      {"value": 3, "text": "maintain current levels of fossil fuel production with existing environmental regulations"},
+      {"value": 4, "text": "expand fossil fuel drilling permits"},
+      {"value": 5, "text": "remove environmental restrictions and maximize fossil fuel extraction"}
+    ]
+  },
+  {
+    "id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "title": "Growth and Development Pace",
+    "question_text": "How should your city manage population growth and new development?",
+    "stances": [
+      {"value": 1, "text": "Impose growth limits; require voter approval for major annexations or large-scale developments"},
+      {"value": 2, "text": "Allow growth only where existing infrastructure can support it; slow approvals until capacity catches up"},
+      {"value": 3, "text": "Plan proactively — invest in infrastructure ahead of growth to support responsible expansion"},
+      {"value": 4, "text": "Streamline permitting, reduce fees, and actively recruit development to grow the city's tax base"},
+      {"value": 5, "text": "Remove regulatory barriers to development entirely; let market demand determine growth pace"}
+    ]
+  },
+  {
+    "id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "topic_key": "healthcare",
+    "title": "Healthcare Access",
+    "question_text": "What role should government play in healthcare access?",
+    "stances": [
+      {"value": 1, "text": "Make healthcare free and available to everyone, paid for and run by the public sector"},
+      {"value": 2, "text": "Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance"},
+      {"value": 3, "text": "Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else"},
+      {"value": 4, "text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"},
+      {"value": 5, "text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"}
+    ]
+  },
+  {
+    "id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "topic_key": "homelessness",
+    "title": "Criminalization of Homelessness",
+    "question_text": "How should government address people sleeping or camping in public spaces?",
+    "stances": [
+      {"value": 1, "text": "Protecting the right to sleep in public spaces and redirecting enforcement budgets toward permanent supportive housing and mental health services"},
+      {"value": 2, "text": "Decriminalizing public sleeping while investing in shelter capacity, outreach workers, and voluntary service connections"},
+      {"value": 3, "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"},
+      {"value": 4, "text": "Prohibiting encampments on public property with graduated warnings and penalties, while requiring jurisdictions to maintain basic shelter options"},
+      {"value": 5, "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order, relying on existing social services for those who seek help"}
+    ]
+  },
+  {
+    "id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+    "topic_key": "homelessness-response",
+    "title": "Homelessness Response",
+    "question_text": "What should be your city's primary strategy for addressing homelessness?",
+    "stances": [
+      {"value": 1, "text": "Housing-first: provide permanent supportive housing with no preconditions; avoid criminalization entirely"},
+      {"value": 2, "text": "Expand shelter capacity and services as the primary strategy; use enforcement only after services are offered"},
+      {"value": 3, "text": "Invest in outreach, shelter, and mental health services while enforcing reasonable public space rules"},
+      {"value": 4, "text": "Enforce anti-camping ordinances as the primary tool while maintaining basic outreach programs"},
+      {"value": 5, "text": "Prioritize strict enforcement of trespassing and camping bans; minimize city spending on homeless services"}
+    ]
+  },
+  {
+    "id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "title": "Affordable Housing",
+    "question_text": "What role should government play in making sure people can afford housing?",
+    "stances": [
+      {"value": 1, "text": "Directly build and operate public housing so anyone who needs a home can get one"},
+      {"value": 2, "text": "Use rent caps, require new developments to include affordable units, and publicly fund new housing"},
+      {"value": 3, "text": "Offer targeted help like subsidies for affordable projects, first-time buyer assistance, and easier building permits"},
+      {"value": 4, "text": "Cut regulations and zoning rules so private developers can build more housing"},
+      {"value": 5, "text": "Stay out of housing entirely and let the market decide prices and supply"}
+    ]
+  },
+  {
+    "id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+    "topic_key": "immigration",
+    "title": "Immigration and Treatment of Immigrants",
+    "question_text": "How welcoming or restrictive should government be toward immigrants?",
+    "stances": [
+      {"value": 1, "text": "Make it easier for immigrants to come here legally, and let all immigrants — including undocumented residents — fully use public services"},
+      {"value": 2, "text": "Keep legal immigration open and let most residents use public services regardless of legal status"},
+      {"value": 3, "text": "Keep immigration levels and rules about where they are now"},
+      {"value": 4, "text": "Make it harder to immigrate legally and limit public services to people with legal status"},
+      {"value": 5, "text": "Stop most legal immigration and block public services for anyone without legal status"}
+    ]
+  },
+  {
+    "id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+    "topic_key": "jail-capacity",
+    "title": "Jail Capacity and Incarceration Alternatives",
+    "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+    "stances": [
+      {"value": 1, "text": "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"},
+      {"value": 2, "text": "Reducing the incarcerated population through pretrial diversion, bail reform, and treatment alternatives rather than building new capacity"},
+      {"value": 3, "text": "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"},
+      {"value": 4, "text": "Building additional jail capacity to address overcrowding and facility deficiencies"},
+      {"value": 5, "text": "Expanding jail capacity and enforcement as the primary response to crime, prioritizing detention over alternatives"}
+    ]
+  },
+  {
+    "id": "9d45acaf-1ba4-4cb8-95e1-5ed985223b91",
+    "topic_key": "judicial-access-to-justice",
+    "title": "Access to Justice",
+    "question_text": "Should it be easy or hard to take someone to court?",
+    "stances": [
+      {"value": 1, "text": "Easy. Courts exist for everyone — not just people with expensive lawyers. Low barriers mean more access to justice."},
+      {"value": 2, "text": "Accessible. Some basic requirements are fine, but courts shouldn't be a maze that only the wealthy can navigate."},
+      {"value": 3, "text": "Reasonable standards that keep out frivolous cases without blocking legitimate ones."},
+      {"value": 4, "text": "Higher bars are fine. Too much litigation clogs the system and costs everyone money."},
+      {"value": 5, "text": "Hard. Most disputes should be settled privately. Courts should be a last resort, not a first option."}
+    ]
+  },
+  {
+    "id": "1fab5edf-6151-4da0-9704-a7f2113ba54c",
+    "topic_key": "judicial-bail-pretrial",
+    "title": "Bail and Pretrial Decisions",
+    "question_text": "Should a judge trust what prosecutors say, or watch them closely?",
+    "stances": [
+      {"value": 1, "text": "Watch closely. Prosecutors have enormous power and real incentives to win. A judge's job is to make sure that power is used fairly."},
+      {"value": 2, "text": "Be skeptical. Hold prosecution to strict standards — especially on evidence handling and plea deals."},
+      {"value": 3, "text": "Treat both sides equally and let the process work."},
+      {"value": 4, "text": "Give prosecutors reasonable deference. They're trained professionals representing the public."},
+      {"value": 5, "text": "Trust prosecutors. They represent the community and have already screened the case — judges shouldn't second-guess that judgment."}
+    ]
+  },
+  {
+    "id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+    "topic_key": "judicial-criminal-justice",
+    "title": "Criminal Justice Approach",
+    "question_text": "When someone breaks the law, what matters most?",
+    "stances": [
+      {"value": 1, "text": "Helping the person change their life and stay out of trouble in the future."},
+      {"value": 2, "text": "Giving the person a fair chance to make things right — through treatment, community service, or restitution."},
+      {"value": 3, "text": "A mix: some accountability, some support, depending on what happened."},
+      {"value": 4, "text": "Making sure others think twice before doing the same thing."},
+      {"value": 5, "text": "Punishing the behavior. Society needs to know that breaking the law has real consequences."}
+    ]
+  },
+  {
+    "id": "e5e48f0e-8f3a-40e1-8080-889fea389603",
+    "topic_key": "judicial-government-deference",
+    "title": "Judicial & Prosecutorial Discretion",
+    "question_text": "When government and a citizen clash, who gets the benefit of the doubt?",
+    "stances": [
+      {"value": 1, "text": "The citizen, almost always. Government has lawyers, money, and power. Regular people need courts to level the playing field."},
+      {"value": 2, "text": "The citizen usually — unless the government has clear legal authority on its side."},
+      {"value": 3, "text": "Neither side automatically. Look at the facts and apply the law evenly."},
+      {"value": 4, "text": "The government usually — it represents everyone, and its decisions deserve respect unless clearly wrong."},
+      {"value": 5, "text": "The government, unless it has obviously overreached. Officials make decisions for good reasons — courts shouldn't second-guess them constantly."}
+    ]
+  },
+  {
+    "id": "448b1c9a-b6f3-42b8-8f39-d3bbb5bfa9ee",
+    "topic_key": "judicial-interpretation",
+    "title": "Judicial Interpretation",
+    "question_text": "Does the law change with the times, or does it mean what it said when it was written?",
+    "stances": [
+      {"value": 1, "text": "Courts should reconsider old rulings when we know more or society has changed. Keeping bad precedent alive is its own injustice."},
+      {"value": 2, "text": "Laws were written for a purpose. When the exact words don't fit a new situation, look at what the law was trying to accomplish."},
+      {"value": 3, "text": "Follow the text closely, but use some common sense about what lawmakers were trying to do."},
+      {"value": 4, "text": "The law means what it says. Use original intent to fill gaps, but don't stretch the meaning."},
+      {"value": 5, "text": "A judge's job is to apply the law as written — not rewrite it. If society has changed, pass a new law. That's what elections are for."}
+    ]
+  },
+  {
+    "id": "7bad33eb-e93e-4d94-8822-97212d49bde5",
+    "topic_key": "judicial-police-accountability",
+    "title": "Police Accountability",
+    "question_text": "When city employees do wrong, does the office defend them or hold them accountable?",
+    "stances": [
+      {"value": 1, "text": "Investigate independently. The office works for the public — not the officials it's supposed to keep accountable."},
+      {"value": 2, "text": "Settle valid claims quickly and pursue real accountability. Defending misconduct wastes money and public trust."},
+      {"value": 3, "text": "Represent the city fairly while acknowledging when claims have merit."},
+      {"value": 4, "text": "Defend city employees vigorously. That's the job. Settlements invite more lawsuits."},
+      {"value": 5, "text": "The client is the city government. Defending its employees and decisions — aggressively when needed — is the core function."}
+    ]
+  },
+  {
+    "id": "abb99d95-cbb1-4617-8f8b-f220ef6028ca",
+    "topic_key": "judicial-prosecution-priorities",
+    "title": "Prosecution Priorities",
+    "question_text": "Does the office try to put people away, or find better solutions?",
+    "stances": [
+      {"value": 1, "text": "Prosecution should be a last resort. Connecting people to treatment, housing, or job programs does more good than a criminal record."},
+      {"value": 2, "text": "Use diversion when it's available and makes sense. Reserve prosecution for when community safety actually requires it."},
+      {"value": 3, "text": "Strong cases get prosecuted. Diversion is used when there's a clear benefit — it's a judgment call every time."},
+      {"value": 4, "text": "Prosecute all solid cases. Declination is the exception and needs a strong reason."},
+      {"value": 5, "text": "The office enforces the law — not social policy. If a case is prosecutable, prosecute it. Courts figure out the rest."}
+    ]
+  },
+  {
+    "id": "6674d87e-999d-433a-aab7-3f626f59fd5f",
+    "topic_key": "judicial-transparency",
+    "title": "Transparency in Legal Proceedings",
+    "question_text": "How much should the public know about what happens in court?",
+    "stances": [
+      {"value": 1, "text": "Everything possible should be public — hearings, evidence, rulings, and the reasoning behind them. Secrecy breeds injustice."},
+      {"value": 2, "text": "Default to open proceedings. Sealing records or closing hearings requires a compelling, documented reason."},
+      {"value": 3, "text": "Balance openness with legitimate needs for privacy — protect victims, seal juvenile records, but keep the courtroom open as a rule."},
+      {"value": 4, "text": "Courts should protect sensitive information broadly — personal details, ongoing investigations, and anything that could prejudice a fair trial."},
+      {"value": 5, "text": "The law is complicated. Public access to proceedings can distort outcomes. Broad judicial discretion to limit access protects the integrity of the process."}
+    ]
+  },
+  {
+    "id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+    "topic_key": "local-environment",
+    "title": "Environmental Protection vs. Development",
+    "question_text": "How should your city balance new development with environmental preservation?",
+    "stances": [
+      {"value": 1, "text": "Require significant green space, tree preservation, and environmental review before approving any development"},
+      {"value": 2, "text": "Protect existing parks and tree canopy strictly; require developers to fully offset any environmental impact"},
+      {"value": 3, "text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation"},
+      {"value": 4, "text": "Allow developers to pay fees in lieu of on-site preservation; prioritize economic activity over green space"},
+      {"value": 5, "text": "Remove local environmental restrictions beyond what state and federal law requires"}
+    ]
+  },
+  {
+    "id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+    "topic_key": "local-immigration",
+    "title": "Local Immigration Enforcement",
+    "question_text": "How should your city's police department relate to federal immigration enforcement?",
+    "stances": [
+      {"value": 1, "text": "Refuse all ICE detainers; prohibit city employees from sharing immigration status information with federal agencies"},
+      {"value": 2, "text": "Comply only with court-ordered detainers; protect undocumented crime victims and witnesses from referral"},
+      {"value": 3, "text": "Follow federal law as required but do not use city resources for proactive immigration enforcement"},
+      {"value": 4, "text": "Honor ICE detainers and share information proactively when federal agencies request it"},
+      {"value": 5, "text": "Direct city police to actively assist with immigration enforcement and support federal detention operations"}
+    ]
+  },
+  {
+    "id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+    "topic_key": "medicare/aid",
+    "title": "Medicare / Medicaid",
+    "question_text": "How should Medicare and Medicaid be funded and structured?",
+    "stances": [
+      {"value": 1, "text": "expand Medicare to cover everyone regardless of age"},
+      {"value": 2, "text": "lower Medicare age to 55 and expand Medicaid significantly"},
+      {"value": 3, "text": "improve current programs while controlling costs"},
+      {"value": 4, "text": "partially privatize Medicare and reduce Medicaid coverage"},
+      {"value": 5, "text": "phase out both programs and use private insurance only"}
+    ]
+  },
+  {
+    "id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "topic_key": "misinformation",
+    "title": "Misinformation and the Role of Algorithms in Democracy",
+    "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+    "stances": [
+      {"value": 1, "text": "require platforms to remove all false information and regulate algorithms"},
+      {"value": 2, "text": "mandate fact-checking and transparency in how algorithms promote content"},
+      {"value": 3, "text": "encourage voluntary standards for combating misinformation online"},
+      {"value": 4, "text": "protect free speech online and prevent government censorship"},
+      {"value": 5, "text": "ban any government involvement in content moderation decisions"}
+    ]
+  },
+  {
+    "id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "title": "Public Safety Approach",
+    "question_text": "How should your city fund and operate public safety services?",
+    "stances": [
+      {"value": 1, "text": "Redirect a significant portion of the police budget to social services, mental health, and community programs"},
+      {"value": 2, "text": "Maintain current police staffing but shift non-violent calls to unarmed mental health co-responders"},
+      {"value": 3, "text": "Keep current public safety funding while adding crisis response teams for mental health and addiction calls"},
+      {"value": 4, "text": "Increase police staffing, equipment, and pay to improve response times and deter crime"},
+      {"value": 5, "text": "Make expanding the police budget the top city spending priority over other municipal services"}
+    ]
+  },
+  {
+    "id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+    "topic_key": "redistricting",
+    "title": "State Redistricting and Gerrymandering",
+    "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+    "stances": [
+      {"value": 1, "text": "independent citizens' commissions with no elected officials involved at any level."},
+      {"value": 2, "text": "independent redistricting commissions with equal representation from both major parties."},
+      {"value": 3, "text": "bipartisan legislative committees with strict rules requiring supermajority approval."},
+      {"value": 4, "text": "state legislatures with court oversight to prevent extreme partisan bias."},
+      {"value": 5, "text": "the party that controls the state legislature without outside interference."}
+    ]
+  },
+  {
+    "id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+    "topic_key": "religious-freedom",
+    "title": "Religious Freedom",
+    "question_text": "What role should religion play in government, public institutions, and policymaking?",
+    "stances": [
+      {"value": 1, "text": "strictly separate religion from all public institutions and prohibit religious exemptions from civil rights laws."},
+      {"value": 2, "text": "protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."},
+      {"value": 3, "text": "balance protecting religious practices with maintaining equal treatment under the law for all citizens."},
+      {"value": 4, "text": "protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."},
+      {"value": 5, "text": "strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."}
+    ]
+  },
+  {
+    "id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+    "topic_key": "rent-regulation",
+    "title": "Rent Regulation",
+    "question_text": "What role should your city play in regulating rents and protecting tenants?",
+    "stances": [
+      {"value": 1, "text": "Expand rent control to all rental units with strong tenant protections and just-cause eviction requirements"},
+      {"value": 2, "text": "Strengthen existing rent stabilization and extend coverage to more units"},
+      {"value": 3, "text": "Maintain current tenant protections while allowing market rents for new construction"},
+      {"value": 4, "text": "Limit rent regulations to subsidized units; allow market rents broadly"},
+      {"value": 5, "text": "Oppose rent control entirely; rents should be set by the market without government intervention"}
+    ]
+  },
+  {
+    "id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "title": "Residential Zoning",
+    "question_text": "What should guide decisions about housing density and neighborhood character in your city?",
+    "stances": [
+      {"value": 1, "text": "Protect existing neighborhood character strictly; require community votes before any rezoning"},
+      {"value": 2, "text": "Allow modest density increases (duplexes, accessory units) with strong design review and neighborhood input"},
+      {"value": 3, "text": "Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"},
+      {"value": 4, "text": "Upzone broadly to allow multifamily by right; streamline approvals and reduce parking requirements"},
+      {"value": 5, "text": "Eliminate single-family-only zoning; allow any housing type on any lot citywide"}
+    ]
+  },
+  {
+    "id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "topic_key": "same-sex-marriage",
+    "title": "Same-Sex Marriage",
+    "question_text": "What legal recognition should same-sex marriages receive?",
+    "stances": [
+      {"value": 1, "text": "require all states to recognize same-sex marriages and provide full federal benefits and protections."},
+      {"value": 2, "text": "allow same-sex marriage nationwide while protecting some organizations' right to decline participation."},
+      {"value": 3, "text": "let each state decide its own same-sex marriage laws without federal interference."},
+      {"value": 4, "text": "recognize civil unions for same-sex couples but reserve marriage for opposite-sex couples."},
+      {"value": 5, "text": "make same-sex marriage illegal and define marriage as only between one man and one woman."}
+    ]
+  },
+  {
+    "id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "title": "School Vouchers & Public Education Funding",
+    "question_text": "What role should vouchers and school choice play in the public education system?",
+    "stances": [
+      {"value": 1, "text": "Fully funding public schools and eliminating voucher programs that divert taxpayer money to private institutions"},
+      {"value": 2, "text": "Prioritizing public school funding while restricting vouchers to low-income families who lack adequate local options"},
+      {"value": 3, "text": "Funding public schools at current levels while allowing means-tested voucher programs with accountability requirements for participating private schools"},
+      {"value": 4, "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child, while maintaining baseline public school funding"},
+      {"value": 5, "text": "Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family"}
+    ]
+  },
+  {
+    "id": "87d20824-a6e9-407b-983c-65440084a0ab",
+    "topic_key": "social-security",
+    "title": "Social Security",
+    "question_text": "How should Social Security be funded and structured for the future?",
+    "stances": [
+      {"value": 1, "text": "expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."},
+      {"value": 2, "text": "increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."},
+      {"value": 3, "text": "make small adjustments to both benefits and taxes to keep Social Security stable for future generations."},
+      {"value": 4, "text": "gradually raise the retirement age and reduce benefits for higher earners to save Social Security."},
+      {"value": 5, "text": "transition Social Security to private investment accounts that individuals control themselves."}
+    ]
+  },
+  {
+    "id": "683c8084-2281-4920-a07c-18439b2dd413",
+    "topic_key": "tariffs",
+    "title": "United States Tariff Policy",
+    "question_text": "How should trade policy balance domestic industry with global commerce?",
+    "stances": [
+      {"value": 1, "text": "eliminate all tariffs and pursue completely free trade with every country."},
+      {"value": 2, "text": "reduce most tariffs while keeping some on products that harm the environment."},
+      {"value": 3, "text": "use tariffs selectively to protect key American industries and jobs."},
+      {"value": 4, "text": "increase tariffs on countries that don't trade fairly with America."},
+      {"value": 5, "text": "impose high tariffs on all imports to bring manufacturing back to America."}
+    ]
+  },
+  {
+    "id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+    "topic_key": "taxes",
+    "title": "Taxation and Public Spending",
+    "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+    "stances": [
+      {"value": 1, "text": "Significantly raise taxes on wealthy people and large companies to fund more public services"},
+      {"value": 2, "text": "Moderately raise taxes on wealthy people and large companies to fund existing services"},
+      {"value": 3, "text": "Keep the current tax system mostly as-is with small adjustments to close unfair loopholes"},
+      {"value": 4, "text": "Cut taxes for everyone and scale back public services to match"},
+      {"value": 5, "text": "Drastically cut taxes and shrink government so people and businesses keep more of their money"}
+    ]
+  },
+  {
+    "id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "topic_key": "trans-athletes",
+    "title": "Transgender Athletes",
+    "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+    "stances": [
+      {"value": 1, "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."},
+      {"value": 2, "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."},
+      {"value": 3, "text": "create separate transgender divisions or allow case-by-case decisions based on individual circumstances and sport requirements."},
+      {"value": 4, "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."},
+      {"value": 5, "text": "completely ban all transgender athletes from competing in any organized sports competitions."}
+    ]
+  },
+  {
+    "id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "title": "Transportation Priorities",
+    "question_text": "Where should your city focus its transportation investment?",
+    "stances": [
+      {"value": 1, "text": "Prioritize pedestrian infrastructure, cycling networks, and public transit; reduce parking requirements citywide"},
+      {"value": 2, "text": "Invest equally in roads and multimodal options; require bike lanes and sidewalks on all new road projects"},
+      {"value": 3, "text": "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"},
+      {"value": 4, "text": "Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"},
+      {"value": 5, "text": "Prioritize highway access and abundant free parking as the foundation of local transportation policy"}
+    ]
+  },
+  {
+    "id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {"value": 1, "text": "significantly increase military aid to Ukraine and commit to supporting them until complete victory over Russia"},
+      {"value": 2, "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."},
+      {"value": 3, "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."},
+      {"value": 4, "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."},
+      {"value": 5, "text": "end all aid to Ukraine immediately and stay completely out of the conflict."}
+    ]
+  },
+  {
+    "id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "topic_key": "voting-rights",
+    "title": "Voting Rights and Electoral Integrity",
+    "question_text": "How should voter access be balanced with election security?",
+    "stances": [
+      {"value": 1, "text": "automatically register all eligible citizens to vote and allow online voting"},
+      {"value": 2, "text": "expand early voting periods and make mail-in voting available to all voters without requiring an excuse"},
+      {"value": 3, "text": "standardize voter ID requirements while ensuring free IDs are available to all eligible citizens"},
+      {"value": 4, "text": "require photo ID for voting and regularly update voter rolls to remove inactive registrations"},
+      {"value": 5, "text": "mandate in-person voting with strict photo ID and eliminate mail-in voting except for military overseas"}
+    ]
+  }
+]
