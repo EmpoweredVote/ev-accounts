@@ -1082,11 +1082,11 @@ Plans:
 
 **Depends on:** Phase 105 (all politician records must exist as FK targets)
 **Requirements:** DCST-01, DCST-02, DCST-03
-**Plans:** 1/3 plans executed
+**Plans:** 2/3 plans executed
 Plans:
 
 - [x] 106-01-PLAN.md — Mayor Bowser + 13 DC Council members + AG Schwalb stance research + migration 289 (DCST-01)
-- [ ] 106-02-PLAN.md — 9 DC SBOE members stance research + migration 290 (DCST-02)
+- [x] 106-02-PLAN.md — 9 DC SBOE members stance research + migration 290 (DCST-02)
 - [ ] 106-03-PLAN.md — Shadow Senators (Strauss, Jain) full pass + EHN gap-fill + migration 291 (DCST-03)
 
 **Cross-cutting constraints:**
@@ -1211,5 +1211,5 @@ Plans:
 | 103. State Remediation — CA + MD | v2.7 | 3/3 | Complete    | 2026-06-07 |
 | 104. Local Remediation — City Officials | v2.7 | 1/1 | Complete    | 2026-06-07 |
 | 105. DC Infrastructure + Official Records | v2.8 | 0/? | Not started | — |
-| 106. DC Stance Research | v2.8 | 1/3 | In Progress|  |
+| 106. DC Stance Research | v2.8 | 2/3 | In Progress|  |
 | 107. DC Finance | v2.8 | 0/? | Not started | — |
