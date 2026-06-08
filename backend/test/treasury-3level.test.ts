@@ -92,7 +92,8 @@ function buildTreeFromRows(rows: SimpleNode[], lineItemsByCategory: Map<string, 
   }
 
   function buildNode(id: string): TreeNode {
-    const node = nodeMap.get(id)!;
+    const node = nodeMap.get(id);
+    if (!node) throw new Error(`buildNode: id "${id}" not found in nodeMap — possible data inconsistency`);
     const childIds = childrenMap.get(id) ?? [];
     const subcategories = childIds.map(buildNode);
     const result: TreeNode = { name: node.name, depth: node.depth };
