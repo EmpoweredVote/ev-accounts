@@ -32,6 +32,7 @@ import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
 import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
+import readrankRouter from './routes/readrank.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import essentialsIngestRouter from './routes/essentialsIngest.js';
@@ -142,6 +143,7 @@ app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsEditorRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
+app.use('/api/readrank', readrankRouter);
 app.use('/api/treasury', treasuryRouter);
 app.use('/api/campaign-finance', campaignFinanceRouter);
 // Dual-router pattern for campaign finance: public reads on campaignFinanceRouter,
