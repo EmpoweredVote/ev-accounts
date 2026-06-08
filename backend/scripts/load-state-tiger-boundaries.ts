@@ -40,6 +40,7 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -91,6 +92,7 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   ME: ['Portland city'],
   OR: ['Portland city'],
   MD: ['Baltimore city'],
+  VA: ['Alexandria city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -104,6 +106,7 @@ const STATE_RUN_MAKEVALID: Record<string, Set<string>> = {
   ME: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   OR: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   MD: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
+  VA: new Set(['cd119', 'sldu', 'sldl', 'place', 'county']),
   DC: new Set(['sldl']),
 };
 
@@ -521,7 +524,10 @@ async function processLayer(
   // Two named-local variables for the call sites (D-01 / D-02 grep-verifiable).
   const fipsArg = fips;                       // FIPS code, e.g. '06' — passed to upsertGeofence per D-01
   const abbrev = FIPS_TO_STATE[fips];         // state abbreviation (lowercased), e.g. 'ca' — passed to insertDistrictIfMissing per D-02
-  const abbrevUpper = (abbrev ?? fips).toUpperCase(); // 'CA' — what the existing TS loaders write to essentials.districts.state
+  if (!abbrev) {
+    throw new Error(`FIPS ${fips} not found in FIPS_TO_STATE — cannot derive state abbreviation`);
+  }
+  const abbrevUpper = abbrev.toUpperCase(); // 'CA' — what the existing TS loaders write to essentials.districts.state
 
   const totals: LayerTotals = {
     inserted_boundary: 0,
@@ -901,6 +907,50 @@ async function processLayer(
         throw err;
       }
       console.log(`  [${layer}] MD MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
+    }
+  }
+
+  // ── VA MTFCC pre-flight assertion (Phase 100) ──────────────────────────────
+  // For VA (state='51'), count records satisfying the same filters as the upsert
+  // pass BEFORE any DB write. Assertion failure is named and fatal.
+  // sldl and place values are set to 0 so dry-run MtfccAssertionError reveals actual count.
+  // Plan 02 updates these values before the live load.
+  if (fipsArg === '51') {
+    const EXPECTED_VA_MTFCC: Record<string, number> = {
+      cd119: 11,   // 11 VA congressional districts (post-2022 redistricting)
+      sldu:  40,   // 40 VA Senate districts (1 senator each)
+      sldl: 100,   // confirmed via dry-run 2026-06-08 — 100 VA G5220 single-member House of Delegates polygons
+      place: 227,  // confirmed via dry-run 2026-06-08 — 227 VA G4110 incorporated places
+      county: 133, // 133 VA county-equivalents: 95 counties + 38 independent cities
+    };
+    if (layer in EXPECTED_VA_MTFCC) {
+      const expected = EXPECTED_VA_MTFCC[layer];
+      let actualCount = 0;
+      await streamShapefile(shpPath, dbfPath, async (_geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        if (layer === 'place') {
+          const mtfccRaw = (props['MTFCC'] ?? props['mtfcc'] ?? '') as string;
+          if (mtfccRaw && mtfccRaw !== 'G4110') return;
+        }
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+        }
+        actualCount++;
+      });
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[VA MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. Aborting before any DB write — verify TIGER 2024 FIPS 51 file is correct.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] VA MTFCC pre-flight assertion PASSED: ${actualCount} records (expected ${expected}).`);
     }
   }
 
