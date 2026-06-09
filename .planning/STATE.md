@@ -4,14 +4,14 @@ milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
 status: in_progress
 last_updated: 2026-06-09T00:00:00.000Z
-last_activity: 2026-06-09 -- Phase 110 partial execution
+last_activity: 2026-06-09 -- Phase 110 complete (migration 323 applied)
 progress:
   total_phases: 5
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 15
-  percent: 20
-stopped_at: Phase 110 in progress — VAGE-01/02/03 + VAIN-01/02 done; VAIN-03 (photo_origin_url, migration 323) remains
+  completed_plans: 16
+  percent: 40
+stopped_at: Phase 110 COMPLETE — all VAIN/VAGE requirements closed. Next: Phase 111 (VA state stances — senators only)
 ---
 
 # Project State
@@ -42,9 +42,7 @@ DONE (in DB, committed):
 - Also: 3 state execs (316/317), 40 senators (318), Alexandria city (312), ACPS (313)
 
 REMAINING:
-- VAIN-03: photo_origin_url on essentials.politicians for all non-senator VA officials
-  (state execs ×3, delegates ×100, federal reps ×11, Alexandria council ×7, ACPS board ×9)
-  Next migration: 323 (322 reserved for Essentials VA elections, Phase 105)
+- (none) — Phase 110 complete as of 2026-06-09
 
 Cross-team coordination (2026-06-09):
 - VAST-01 (exec stances): Essentials Phase 106 owns Spanberger/Hashmi/Jones
@@ -97,7 +95,7 @@ Cross-team coordination (2026-06-09):
 | LAFI-02 | 109 | Netfile assessed for other LA County cities; finance data ingested where accessible machine-readable data exists |
 | VAIN-01 | 110 | Politician + office records for all 100 VA House delegates committed and applied (migration 308) |
 | VAIN-02 | 110 | Politician + office records for 11 VA federal House reps committed and applied (migration 311) |
-| VAIN-03 | 110 | photo_origin_url populated for all new VA officials (executives, senators, delegates, House reps) |
+| VAIN-03 ✅ | 110 | photo_origin_url populated for all new VA officials (executives, senators, delegates, House reps) — migration 323 |
 | VAGE-01 | 110 | TIGER 2024 VA SLDL polygons (100 House delegate districts) imported into essentials.geo_districts with GIST index |
 | VAGE-02 | 110 | TIGER 2024 VA SLDU polygons (40 Senate districts) imported into essentials.geo_districts |
 | VAGE-03 | 110 | tiger_geoid backfilled on all VA essentials.districts records for dual-column Path 0 join |
