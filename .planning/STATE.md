@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
 status: executing
-last_updated: "2026-06-09T18:24:56.419Z"
+last_updated: "2026-06-09T18:54:26.419Z"
 last_activity: 2026-06-09
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 9
-  completed_plans: 5
+  completed_plans: 6
   percent: 20
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 ## Current Position
 
 Phase: 111 (va-state-stances-senators) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 Status: Ready to execute
 Last activity: 2026-06-09
 
@@ -109,6 +109,8 @@ Cross-team coordination (2026-06-09):
 | VAFI-01 | 113 | FEC finance_summary fetched and stored for all 11 VA House reps |
 | VAFI-02 | 113 | VPAP data assessed for VA state officials; finance data ingested where machine-readable |
 | Phase 111-va-state-stances-senators P01 | 90 | 4 tasks | 3 files |
+| Phase 111-va-state-stances-senators P02 | 90 | 4 tasks | 3 files |
+| Phase 111 P02 | 90min | 4 tasks | 3 files |
 
 ### v2.10 Phase Dependencies
 
@@ -206,13 +208,15 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-09T18:24:56.410Z
-Stopped at: context exhaustion at 82% (2026-06-09)
+Last session: 2026-06-09T19:30:00Z
+Stopped at: Completed 111-02 Wave 2 VA senator stances (migration 327 applied)
 Resume file: None
 
 ## Decisions
 
-(none for v2.10 yet)
+- Migration number 327 used for Wave 2 — file on disk uses 326; 326 not tracked in schema_migrations (max=325 after Wave 1 psql apply)
+- Sturtevant (SD-12) confirmed Republican via Ballotpedia 2023 Republican primary win
+- Wave 2 honest-skips: Mulchi (SD-9) and Cifers (SD-10) — new senators, no accessible policy positions
 
 ## Operator Next Steps
 
