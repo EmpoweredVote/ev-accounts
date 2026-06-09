@@ -334,7 +334,11 @@ def process_delegate(cursor, district: int) -> dict:
         print(f'  Original size: {img.width}x{img.height} mode={img.mode}')
 
         # 3. Validate minimum dimensions (skip if too small for quality crop)
-        min_dim = 200
+        # Note: VGA site serves low-res photos for some delegates (as small as 108px).
+        # Minimum is 100px on both axes — below that PIL upscaling degrades severely.
+        # Delegates with 100-200px source images will upscale to 600x750 with some blur
+        # but are still valid headshots (state site has no higher-res alternative).
+        min_dim = 100
         if img.width < min_dim or img.height < min_dim:
             raise Exception(f'Image too small: {img.width}x{img.height} (minimum {min_dim}px)')
 
