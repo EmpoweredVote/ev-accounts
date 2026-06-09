@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
-status: ready_to_plan
-last_updated: 2026-06-09T05:02:35.593Z
-last_activity: 2026-06-09 -- Phase 109 execution started
+status: in_progress
+last_updated: 2026-06-09T00:00:00.000Z
+last_activity: 2026-06-09 -- Phase 110 partial execution
 progress:
   total_phases: 5
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 4
   completed_plans: 15
-  percent: 0
-stopped_at: Phase 109 complete (4/4) — ready to discuss Phase 110
+  percent: 20
+stopped_at: Phase 110 in progress — VAGE-01/02/03 + VAIN-01/02 done; VAIN-03 (photo_origin_url, migration 323) remains
 ---
 
 # Project State
@@ -27,9 +27,30 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 ## Current Position
 
 Phase: 110
-Plan: Not started
-Status: Ready to plan
+Plan: In progress (no formal plan file — work executed directly)
+Status: Partially complete — VAIN-03 (photo_origin_url) remains
 Last activity: 2026-06-09
+
+### Phase 110 Status (as of 2026-06-09)
+
+DONE (in DB, committed):
+- VAGE-01: G5220×100 SLDL delegate polygons in geofence_boundaries ✅
+- VAGE-02: G5210×40 SLDU senate polygons in geofence_boundaries ✅
+- VAGE-03: tiger_geoid backfill applied — migration 321 (commit a217d8b) ✅
+- VAIN-01: 100 delegate records — migration 319 (Essentials) ✅
+- VAIN-02: 11 VA federal House rep records — migration 311 (committed) ✅
+- Also: 3 state execs (316/317), 40 senators (318), Alexandria city (312), ACPS (313)
+
+REMAINING:
+- VAIN-03: photo_origin_url on essentials.politicians for all non-senator VA officials
+  (state execs ×3, delegates ×100, federal reps ×11, Alexandria council ×7, ACPS board ×9)
+  Next migration: 323 (322 reserved for Essentials VA elections, Phase 105)
+
+Cross-team coordination (2026-06-09):
+- VAST-01 (exec stances): Essentials Phase 106 owns Spanberger/Hashmi/Jones
+- Phase 111 scope updated to senators only (ROADMAP updated, commit a217d8b)
+- Migration sync point: 322 = Essentials elections; 323 = our photo_origin_url
+- Next free number after both: 324
 
 ## Performance Metrics
 
