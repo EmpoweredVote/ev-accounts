@@ -1336,7 +1336,7 @@ Plans:
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
 | 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
 | 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
-| 109. LA County Finance | v2.10 | 4/4 | Complete   | 2026-06-09 |
+| 109. LA County Finance | v2.10 | 4/4 | Complete    | 2026-06-09 |
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
 | 111. VA State Stances - Executives + Senators | v2.10 | 0/? | Not started | - |
 | 112. VA Delegate Stances | v2.10 | 0/? | Not started | - |

@@ -32,8 +32,8 @@
 
 ### LAFI — LA County Finance
 
-- [ ] **LAFI-01**: CAL-ACCESS data assessed; finance data ingested for LA City Mayor + all Council members + Controller + Clerk
-- [ ] **LAFI-02**: Netfile assessed for other LA County cities; finance data ingested where accessible machine-readable data exists
+- [x] **LAFI-01**: CAL-ACCESS data assessed; finance data ingested for LA City Mayor + all Council members + Controller + Clerk
+- [x] **LAFI-02**: Netfile assessed for other LA County cities; finance data ingested where accessible machine-readable data exists
 
 ## Future Requirements
 
@@ -73,8 +73,8 @@
 | VAST-05 | Phase 111, 112, 113 | Pending |
 | VAFI-01 | Phase 113 | Pending |
 | VAFI-02 | Phase 113 | Pending |
-| LAFI-01 | Phase 109 | Pending |
-| LAFI-02 | Phase 109 | Pending |
+| LAFI-01 | Phase 109 | Complete |
+| LAFI-02 | Phase 109 | Complete |
 
 **Coverage:**
 - v2.10 requirements: 15 total
