@@ -1149,7 +1149,7 @@ Plans:
 
 **Depends on:** Phase 108 (politician records must exist as FK targets; finance_summary column already exists from v2.6)
 **Requirements:** LAFI-01, LAFI-02
-**Plans:** 1/4 plans executed
+**Plans:** 3/4 plans executed
 Plans:
 **Wave 1**
 
@@ -1157,8 +1157,8 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 109-02-PLAN.md — LA City Socrata: extend seed script for Lattimore, ingest, write finance_summary for LA City officials (LAFI-01)
-- [ ] 109-03-PLAN.md — LA County Netfile: probe 26 cities, seed confirmed sources, ingest, write finance_summary (LAFI-02)
+- [x] 109-02-PLAN.md — LA City Socrata: extend seed script for Lattimore, ingest, write finance_summary for LA City officials (LAFI-01)
+- [x] 109-03-PLAN.md — LA County Netfile: probe 26 cities, seed confirmed sources, ingest, write finance_summary (LAFI-02)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -1336,7 +1336,7 @@ Plans:
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
 | 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
 | 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
-| 109. LA County Finance | v2.10 | 1/4 | In Progress|  |
+| 109. LA County Finance | v2.10 | 3/4 | In Progress|  |
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
 | 111. VA State Stances - Executives + Senators | v2.10 | 0/? | Not started | - |
 | 112. VA Delegate Stances | v2.10 | 0/? | Not started | - |
