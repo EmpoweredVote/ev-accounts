@@ -27,7 +27,7 @@
 --
 -- Migration number: 326 (max_migration was 325 per pre-flight; shifted from plan's 324)
 -- Timestamp: 20260609000001
--- Applied: NOT YET (write-only)
+-- Applied: 2026-06-09
 
 BEGIN;
 
@@ -488,7 +488,7 @@ BEGIN
   JOIN essentials.politicians p ON p.id = pa.politician_id
   LEFT JOIN inform.politician_context pc ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
   WHERE p.external_id BETWEEN -5110008 AND -5110001
-    AND (pc.id IS NULL OR pc.sources IS NULL OR array_length(pc.sources, 1) = 0);
+    AND (pc.politician_id IS NULL OR pc.sources IS NULL OR array_length(pc.sources, 1) = 0);
   RAISE NOTICE 'Unsourced VA senator stances: %', unsourced_count;
   ASSERT unsourced_count = 0, 'Unsourced stances found — migration blocked';
 END $$;
