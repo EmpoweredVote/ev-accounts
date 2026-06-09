@@ -21,7 +21,8 @@
 - ✅ **v2.6 Data Quality & Elections** — Phases 87–90, 99 (shipped 2026-06-05)
 - ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
 - ✅ **v2.8 District of Columbia Coverage** — Phases 105–107 (shipped 2026-06-08)
-- ✅ **v2.9 LA County Expansion** — Phase 108 (shipped 2026-06-08; Phase 109 deferred)
+- ✅ **v2.9 LA County Expansion** — Phase 108 (shipped 2026-06-08)
+- [ ] **v2.10 Virginia Coverage + LA County Finance** — Phases 109–113 (in progress)
 
 ## Phases
 
@@ -34,7 +35,6 @@
   - Wave 3: 10 new cities from scratch — 52 new politicians
   - Wave 4: Phase gate SQL (8 assertions) + representatives-me smoke test
 
-Phase 109 (LA County Finance — CAL-ACCESS + Netfile) deferred to future milestone.
 
 Full details: `.planning/milestones/v2.9-ROADMAP.md`
 
@@ -1101,7 +1101,8 @@ Plans:
 **Depends on:** Phase 105 (all politician records must exist as FK targets)
 **Requirements:** DCST-01, DCST-02, DCST-03
 **Plans:** 3/3 plans complete
-Plans:
+
+Plans:
 
 - [x] 106-01-PLAN.md — Mayor Bowser + 13 DC Council members + AG Schwalb stance research + migration 289 (DCST-01)
 - [x] 106-02-PLAN.md — 9 DC SBOE members stance research + migration 290 (DCST-02)
@@ -1138,6 +1139,95 @@ Plans:
 3. No DC official's `finance_summary` is populated with fabricated or placeholder data — every populated field comes from a fetched real source (FEC API or DC OCF), or the field is null with the gap documented.
 
 ---
+
+### v2.10 Virginia Coverage + LA County Finance (Phases 109-113)
+
+---
+
+#### Phase 109: LA County Finance
+
+**Goal:** Every LA County city official seeded in Phase 108 has campaign finance data populated where accessible machine-readable sources exist.
+
+**Depends on:** Phase 108 (politician records must exist as FK targets; finance_summary column already exists from v2.6)
+**Requirements:** LAFI-01, LAFI-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. CAL-ACCESS data is assessed and ingested for LA City Mayor, all LA City Council members, the City Controller, and the City Clerk — each official's `finance_summary` JSONB column is populated with total raised, total spent, and cycle data, or the field is null with the gap documented.
+2. Netfile is assessed for other LA County cities seeded in Phase 108; finance data is ingested for every city where machine-readable data is accessible — or a documented finding explains why each unavailable source was skipped (consistent with DC OCF pattern).
+3. `GET /api/essentials/politicians/:id` returns `finance_summary` for all populated LA officials — no 500 errors, correct shape matches the existing FEC structure.
+4. No `finance_summary` field contains fabricated or placeholder data — every populated entry is traceable to a fetched real source (CAL-ACCESS or Netfile), or the field is null.
+
+---
+
+#### Phase 110: VA Official Records + Geofencing
+
+**Goal:** Virginia has a complete data foundation — 100 House delegates and 11 federal House reps committed to the DB, all officials have photos, and TIGER SLDL/SLDU polygon boundaries are imported so VA users can be geofenced to their delegate and senate districts via Path 0.
+
+**Depends on:** Nothing (foundation phase; Phases 111-113 depend on this)
+**Requirements:** VAIN-01, VAIN-02, VAIN-03, VAGE-01, VAGE-02, VAGE-03
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. SELECT on STATE_LOWER VA districts returns 100 — all VA House delegate records exist with correct office-to-district links.
+2. SELECT on NATIONAL_LOWER VA districts returns 11 — all VA federal House rep records exist.
+3. `SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'va_sldl'` returns 100 and `SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'va_sldu'` returns 40 — TIGER 2024 VA SLDL and SLDU boundary polygons are imported with GIST indexes.
+4. tiger_geoid is backfilled on all VA STATE_LOWER and STATE_UPPER district records for dual-column Path 0 join — SELECT on NULL tiger_geoid for VA legislative districts returns 0.
+5. Every new VA official (executives, senators, delegates, House reps) has a non-empty photo_origin_url — SELECT for NULL/empty photo returns 0.
+
+---
+
+#### Phase 111: VA State Stances - Executives + Senators
+
+**Goal:** Virginia's Governor, Lt. Governor, AG, and all 40 state senators have sourced stance data across applicable CompassV2 topics — every stance paired with a real source URL in politician_context.
+
+**Depends on:** Phase 110 (politician records must exist as FK targets)
+**Requirements:** VAST-01, VAST-02, VAST-05
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. The Governor, Lt. Governor, and Attorney General each have stance rows in `inform.politician_answers` for applicable state-scope CompassV2 topics (minimum 8 topics where documentable evidence exists), each paired with an `inform.politician_context` row containing at least one real source URL.
+2. Every VA state senator has at least one stance record — SELECT COUNT(DISTINCT politician_id) for STATE_UPPER VA districts in inform.politician_answers returns 40.
+3. SELECT on unsourced stances for VA execs + senators returns 0 — every stance has a paired context row with at least one real source URL.
+4. Every stance value is verified against the specific Chair text — never inferred from party affiliation; honest-skip applied where no documentable evidence exists.
+
+---
+
+#### Phase 112: VA Delegate Stances
+
+**Goal:** All 100 VA House delegates have sourced stance data across applicable CompassV2 topics — honest-skip applied where no documentable evidence exists, every retained stance backed by a real source URL.
+
+**Depends on:** Phase 110 (delegate politician records must exist as FK targets)
+**Requirements:** VAST-03, VAST-05
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Delegates with at least one documentable stance appear in `inform.politician_answers` — delegates with zero public evidence are honestly skipped and not present in that table.
+2. SELECT on unsourced stances for VA delegates returns 0 — every delegate stance that was written has at least one real source URL in inform.politician_context.
+3. Every stance value is verified against the specific Chair text — never inferred from party affiliation; honest-skip documented where no evidence found.
+4. Research is batched (one agent at a time, max 2 concurrent) — no mass parallel launches.
+
+---
+
+#### Phase 113: VA Federal Stances + Finance
+
+**Goal:** All 11 VA federal House reps have sourced stances across applicable federal CompassV2 topics and FEC finance data populated; VPAP is assessed for VA state officials and finance data ingested where machine-readable.
+
+**Depends on:** Phase 110 (VA federal House rep politician records must exist as FK targets)
+**Requirements:** VAST-04, VAST-05, VAFI-01, VAFI-02
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. All 11 VA federal House reps have stance rows in `inform.politician_answers` for applicable federal CompassV2 topics (minimum 20 topics per rep where evidence exists), each paired with an `inform.politician_context` row containing at least one real source URL.
+2. SELECT on unsourced stances for VA federal reps returns 0 — every VA federal rep stance has a paired context row with at least one real source URL.
+3. All 11 VA federal House reps have non-null `finance_summary` on `essentials.politicians` with FEC data (total raised, total spent, cash on hand, cycle) fetched via the existing FEC ingestion script.
+4. VPAP (vpap.org) is assessed for VA Governor, Lt. Governor, AG, and state senators — finance data ingested where machine-readable structured data is accessible; non-machine-readable sources documented as findings (consistent with DC OCF pattern for VAFI-02).
+
 
 ## Progress
 
@@ -1234,3 +1324,9 @@ Plans:
 | 105. DC Infrastructure + Official Records | v2.8 | 2/2 | Complete | 2026-06-07 |
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
 | 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
+| 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
+| 109. LA County Finance | v2.10 | 0/? | Not started | - |
+| 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
+| 111. VA State Stances - Executives + Senators | v2.10 | 0/? | Not started | - |
+| 112. VA Delegate Stances | v2.10 | 0/? | Not started | - |
+| 113. VA Federal Stances + Finance | v2.10 | 0/? | Not started | - |
