@@ -1191,20 +1191,21 @@ Plans:
 
 ---
 
-#### Phase 111: VA State Stances - Executives + Senators
+#### Phase 111: VA State Stances - Senators
 
-**Goal:** Virginia's Governor, Lt. Governor, AG, and all 40 state senators have sourced stance data across applicable CompassV2 topics — every stance paired with a real source URL in politician_context.
+**Goal:** All 40 VA state senators have sourced stance data across applicable CompassV2 topics — every stance paired with a real source URL in politician_context.
+
+**Note:** VAST-01 (state execs — Spanberger, Hashmi, Jones) is owned by Essentials Phase 106 per cross-team coordination (2026-06-09). Phase 111 covers senators only.
 
 **Depends on:** Phase 110 (politician records must exist as FK targets)
-**Requirements:** VAST-01, VAST-02, VAST-05
+**Requirements:** VAST-02, VAST-05
 **Plans:** TBD
 
 **Success Criteria** (what must be TRUE):
 
-1. The Governor, Lt. Governor, and Attorney General each have stance rows in `inform.politician_answers` for applicable state-scope CompassV2 topics (minimum 8 topics where documentable evidence exists), each paired with an `inform.politician_context` row containing at least one real source URL.
-2. Every VA state senator has at least one stance record — SELECT COUNT(DISTINCT politician_id) for STATE_UPPER VA districts in inform.politician_answers returns 40.
-3. SELECT on unsourced stances for VA execs + senators returns 0 — every stance has a paired context row with at least one real source URL.
-4. Every stance value is verified against the specific Chair text — never inferred from party affiliation; honest-skip applied where no documentable evidence exists.
+1. Every VA state senator has at least one stance record — SELECT COUNT(DISTINCT politician_id) for STATE_UPPER VA districts in inform.politician_answers returns 40.
+2. SELECT on unsourced stances for VA senators returns 0 — every stance has a paired context row with at least one real source URL.
+3. Every stance value is verified against the specific Chair text — never inferred from party affiliation; honest-skip applied where no documentable evidence exists.
 
 ---
 
