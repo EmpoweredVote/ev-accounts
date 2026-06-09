@@ -452,6 +452,77 @@ async function cmdApply(inPath: string, confirm: boolean): Promise<void> {
 }
 
 // ---------------------------------------------------------------------------
+// mark-clean — for quotes lacking deidentified_text that trip ZERO reveal
+// patterns, copy quote_text → deidentified_text so the hard-enforcing Read &
+// Rank endpoints will serve them. (The blind API never falls back to raw text,
+// so pattern-clean quotes must still be explicitly marked clean to be playable.)
+// Dry-run by default; --confirm applies. Optional --race <uuid> scopes to one
+// race's candidates; --limit N caps the batch.
+// ---------------------------------------------------------------------------
+
+async function cmdMarkClean(opts: { confirm: boolean; raceId?: string; limit?: number }): Promise<void> {
+  const pool = getPool();
+  try {
+    const params: unknown[] = [];
+    let raceJoin = '';
+    if (opts.raceId) {
+      params.push(opts.raceId);
+      raceJoin = `JOIN essentials.race_candidates rc ON rc.politician_id = q.politician_id AND rc.race_id = $${params.length}`;
+    }
+    const limitSQL = opts.limit ? `LIMIT ${Number(opts.limit)}` : '';
+
+    const { rows } = await pool.query<{ id: string; quote_text: string; politician_name: string }>(`
+      SELECT DISTINCT q.id, q.quote_text, p.full_name AS politician_name
+      FROM essentials.quotes q
+      JOIN essentials.politicians p ON p.id = q.politician_id
+      ${raceJoin}
+      JOIN inform.compass_topics ct ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
+      WHERE q.deidentified_text IS NULL
+      ORDER BY q.id
+      ${limitSQL}
+    `, params);
+
+    const clean = rows.filter((q) => detectReveals(q.quote_text, q.politician_name).length === 0);
+    const flagged = rows.length - clean.length;
+    console.log(`Scanned ${rows.length} quote(s) lacking deidentified_text${opts.raceId ? ' for this race' : ''}.`);
+    console.log(`  ${clean.length} are pattern-clean (safe to serve as-is); ${flagged} have reveal patterns (run scan/draft/apply on those).`);
+
+    if (clean.length === 0) {
+      console.log('Nothing to mark clean.');
+      return;
+    }
+
+    if (!opts.confirm) {
+      console.log('\nDry-run (pass --confirm to apply). Sample:');
+      for (const q of clean.slice(0, 8)) {
+        console.log(`  [${q.id.slice(0, 8)}] ${q.quote_text.slice(0, 90)}${q.quote_text.length > 90 ? '…' : ''}`);
+      }
+      return;
+    }
+
+    const client = await pool.connect();
+    try {
+      await client.query('BEGIN');
+      for (const q of clean) {
+        await client.query(
+          'UPDATE essentials.quotes SET deidentified_text = quote_text WHERE id = $1 AND deidentified_text IS NULL',
+          [q.id]
+        );
+      }
+      await client.query('COMMIT');
+      console.log(`\nMarked ${clean.length} pattern-clean quote(s) as servable (deidentified_text = quote_text).`);
+    } catch (err) {
+      await client.query('ROLLBACK');
+      throw err;
+    } finally {
+      client.release();
+    }
+  } finally {
+    await pool.end();
+  }
+}
+
+// ---------------------------------------------------------------------------
 // CLI
 // ---------------------------------------------------------------------------
 
@@ -485,11 +556,21 @@ async function main(): Promise<void> {
       await cmdApply(inPath, hasFlag('--confirm'));
       return;
     }
+    case 'mark-clean': {
+      const limitArg = getArg('--limit');
+      await cmdMarkClean({
+        confirm: hasFlag('--confirm'),
+        raceId: getArg('--race'),
+        limit: limitArg ? Number(limitArg) : undefined,
+      });
+      return;
+    }
     default:
       console.log(`Usage:
   tsx backend/scripts/deidentifyQuotes.ts scan [--out review.md]
   tsx backend/scripts/deidentifyQuotes.ts draft --in review.md [--out review.md]
   tsx backend/scripts/deidentifyQuotes.ts apply --in review.md [--confirm]
+  tsx backend/scripts/deidentifyQuotes.ts mark-clean [--race <uuid>] [--limit N] [--confirm]
 `);
       process.exit(cmd ? 1 : 0);
   }

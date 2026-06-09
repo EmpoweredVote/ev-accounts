@@ -376,6 +376,30 @@ Use these for any politician running for or serving on the LA City Council or as
 - If you cannot find the exact wording, describe what the politician said without quote marks rather than fabricating a quote.
 - Prefer quotes from official transcripts, C-SPAN, congressional records, or direct interview footage.
 
+### De-identification (quote_deidentified)
+
+Read & Rank shows quotes blind — readers must not be able to tell who said it.
+Produce `quote_deidentified` from `quote_text` with MINIMUM change — edit only the
+identity-revealing phrases.
+
+SCRUB:
+- the speaker's own name
+- explicit office claims ("as Senator", "since I came to Congress", "I'm a commissioner")
+- acts only one office can do ("I signed an executive order", "I met with President X")
+- party self-ID ("our Democratic Party", "Indiana Republicans")
+- naming the incumbent or opponent
+- narrowing a district/jurisdiction that identifies the seat
+
+KEEP (not identifying):
+- bare state/demographic names ("Indiana", "Hoosier", "California")
+- generic "we"
+- bill names without an authorship claim (SAVE Act, USMCA, Prop 1, a state RFRA)
+- broad policy advocacy
+
+If a quote cannot be de-identified without destroying the stance, leave
+`quote_deidentified` BLANK (the quote is still recorded; it just won't be served by
+Read & Rank).
+
 ### Stance Assessment
 - **Actions over words** — A vote or signed bill outweighs a campaign promise.
 - **Recency matters** — 2023-2026 actions > 2020 actions, unless the older action is more definitive.
@@ -451,7 +475,7 @@ Flag any sources that:
 When asked to produce CSV output, use these exact columns:
 
 ```
-full_name,external_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3
+full_name,external_id,topic_key,value,reasoning,source_url_1,source_url_2,source_url_3,quote_text,quote_deidentified
 ```
 
 - `full_name`: Politician's full name
@@ -460,6 +484,8 @@ full_name,external_id,topic_key,value,reasoning,source_url_1,source_url_2,source
 - `value`: Integer 1-5
 - `reasoning`: 1-3 sentences (wrap in double quotes if contains commas)
 - `source_url_1`, `source_url_2`, `source_url_3`: Real URLs only; leave blank if fewer sources
+- `quote_text`: ONE exact, verbatim quote (the politician's own words) that best documents this stance. Wrap in double quotes; escape embedded double quotes by doubling them (RFC 4180). Leave BLANK if the position is documented only by voting record/paraphrase with no quotable sentence.
+- `quote_deidentified`: the SAME quote rewritten so the speaker is not identifiable (see DE-IDENTIFICATION below). Leave BLANK if `quote_text` is blank, or if it cannot be de-identified without destroying the stance.
 
 Group all rows for a single politician together. No BOM character. Clean header row.
 
@@ -492,6 +518,7 @@ This summary helps the orchestrating skill track progress across parallel agent 
 5. **Verify all sources** — Remove any URL you're not confident is real
 6. **Compile output** in the requested format (CSV or structured report)
 7. **Self-audit** — Review for: fabricated URLs, paraphrased quotes presented as direct, unsupported stance assignments, party-affiliation-based inferences
+   - `quote_deidentified` contains NO speaker name, office claim, party self-ID, or named opponent
 
 ## WHEN EVIDENCE IS INSUFFICIENT
 

@@ -174,6 +174,7 @@ After all agents complete:
 2. If multiple agents wrote to the same file, verify no duplicate headers
 3. If agents returned results in their response text instead of writing to file, manually compile into the CSV file using the Write tool
 4. Count total stances collected vs. expected (politicians x topics)
+5. The CSV now includes `quote_text` and `quote_deidentified` columns. Parse the CSV with a real RFC-4180 parser (`csv-parse/sync`), never by splitting on commas — quote columns contain commas and embedded quotes.
 
 ---
 
@@ -200,9 +201,24 @@ Show the user a formatted summary table:
 CSV saved to: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME].csv`
 ```
 
+### Quote Overview (Read & Rank)
+
+For every row with a non-blank `quote_text`, show:
+
+| Politician | Topic | Quote (de-identified) | De-id OK? |
+|-----------|-------|----------------------|-----------|
+| Name 1 | healthcare | "..." | yes / NEEDS MANUAL DE-ID (blank) |
+
+For each (politician, topic) that ALREADY has quote(s) in `essentials.quotes`, show the
+existing de-identified quote vs the new one and ask which should be the Read & Rank pick
+(`readrank_selected`). Default: keep the current selection.
+
+Rows where `quote_text` is present but `quote_deidentified` is blank are recorded as
+library quotes but are NOT eligible to be the Read & Rank pick.
+
 Then ask:
 > "Review the stances above. You can:
-> 1. **Approve all** — push everything to the database
+> 1. **Approve all** — push stances AND quotes to the database
 > 2. **Reject specific rows** — tell me which politician/topic pairs to remove
 > 3. **Edit values** — tell me which rows to change (e.g., 'change Sherman/healthcare to 3')
 > 4. **Skip DB push** — keep the CSV only, don't write to database
@@ -286,6 +302,66 @@ await pool.end();
 " '[JSON_ARRAY_OF_RESOLVED_STANCES]'
 ```
 
+### 4d. Push quotes to essentials.quotes (Read & Rank)
+
+For each approved, name-resolved row, build a quote object:
+
+```
+{
+  politician_id, topic_key,            // topic_key lowercased
+  quote_text, quote_deidentified,      // from the CSV; may be blank
+  source_url,                          // first non-blank source_url_1..3, else null
+  full_name,                           // carried through for the leak-check
+  make_selected                        // boolean decided at STEP 3 (true for the chosen RR pick)
+}
+```
+
+Only include objects whose `quote_text` is non-blank. Then run:
+
+```bash
+cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+import { pool } from './src/lib/db.js';
+const quotes = JSON.parse(process.argv[2]);
+let inserted = 0, dupes = 0, selected = 0; const leaks = [];
+await pool.query('BEGIN');
+try {
+  for (const x of quotes) {
+    const tk = x.topic_key.toLowerCase();
+    const { rows: dup } = await pool.query(
+      'SELECT id FROM essentials.quotes WHERE politician_id=\$1 AND lower(topic_key)=\$2 AND quote_text=\$3',
+      [x.politician_id, tk, x.quote_text]
+    );
+    let quoteId;
+    if (dup.length) { quoteId = dup[0].id; dupes++; }
+    else {
+      const sourceName = x.source_url ? (()=>{ try { return new URL(x.source_url).hostname; } catch { return null; } })() : null;
+      const { rows: ins } = await pool.query(
+        'INSERT INTO essentials.quotes (politician_id, topic_key, quote_text, deidentified_text, source_url, source_name) VALUES (\$1,\$2,\$3,\$4,\$5,\$6) RETURNING id',
+        [x.politician_id, tk, x.quote_text, x.quote_deidentified || null, x.source_url || null, sourceName]
+      );
+      quoteId = ins[0].id; inserted++;
+    }
+    if (x.make_selected) {
+      if (!x.quote_deidentified) { leaks.push(x.politician_id + '/' + tk + ': no de-id text, cannot select'); continue; }
+      const surname = (x.full_name || '').trim().split(/\s+/).pop();
+      if (surname && new RegExp('\\\\b' + surname.replace(/[.*+?^\${}()|[\\]\\\\]/g,'\\\\\$&') + '\\\\b','i').test(x.quote_deidentified)) {
+        leaks.push(x.politician_id + '/' + tk + ': surname leak, not selected'); continue;
+      }
+      await pool.query('UPDATE essentials.quotes SET readrank_selected=false WHERE politician_id=\$1 AND lower(topic_key)=\$2', [x.politician_id, tk]);
+      await pool.query('UPDATE essentials.quotes SET readrank_selected=true WHERE id=\$1', [quoteId]);
+      selected++;
+    }
+  }
+  await pool.query('COMMIT');
+  console.log(JSON.stringify({ inserted, dupes, selected, leaks }, null, 2));
+} catch (e) { await pool.query('ROLLBACK'); console.error('Rolled back:', e.message); process.exit(1); }
+await pool.end();
+" '[JSON_ARRAY_OF_QUOTE_OBJECTS]'
+```
+
+The `full_name` field is required on each object for the surname leak-check; carry it
+through from the resolved row.
+
 ### 4c. Report results
 
 After DB push:
@@ -294,7 +370,12 @@ After DB push:
 > - [N] politician_context entries with reasoning and sources
 > - CSV preserved at: [file path]
 >
-> Skipped: [list any unmatched politicians or rejected rows]"
+> Skipped: [list any unmatched politicians or rejected rows]
+>
+> Quotes: [inserted] inserted, [dupes] already present, [selected] set as the Read & Rank pick.
+> Held back (no de-id / surname leak): [leaks list]
+> Reminder: a race becomes playable in Read & Rank only when ≥2 candidates in it each have
+> a readrank_selected de-identified quote on a live topic."
 
 ---
 
