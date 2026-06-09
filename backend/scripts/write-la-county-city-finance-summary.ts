@@ -82,8 +82,7 @@ async function buildFinanceSummaryFromNetfile(
        COALESCE(ABS(SUM(CASE WHEN c.amount < 0 THEN c.amount ELSE 0 END)), 0) AS total_spent,
        COUNT(*) FILTER (WHERE c.amount > 0) AS contribution_count
      FROM transparent_motivations.contributions c
-     JOIN transparent_motivations.committees cm ON cm.id = c.committee_id
-     JOIN transparent_motivations.politician_sources ps ON ps.id = cm.politician_source_id
+     JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1
        AND ps.source_system = 'la_county_netfile'
        AND ps.research_status = 'confirmed'`,
