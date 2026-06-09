@@ -1149,11 +1149,11 @@ Plans:
 
 **Depends on:** Phase 108 (politician records must exist as FK targets; finance_summary column already exists from v2.6)
 **Requirements:** LAFI-01, LAFI-02
-**Plans:** 4 plans
+**Plans:** 1/4 plans executed
 Plans:
 **Wave 1**
 
-- [ ] 109-01-PLAN.md — Scaffold verify-la-county-109.sql SQL phase gate (LAFI-01 + LAFI-02 assertions)
+- [x] 109-01-PLAN.md — Scaffold verify-la-county-109.sql SQL phase gate (LAFI-01 + LAFI-02 assertions)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -1336,7 +1336,7 @@ Plans:
 | 106. DC Stance Research | v2.8 | 3/3 | Complete    | 2026-06-08 |
 | 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
 | 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
-| 109. LA County Finance | v2.10 | 0/? | Not started | - |
+| 109. LA County Finance | v2.10 | 1/4 | In Progress|  |
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
 | 111. VA State Stances - Executives + Senators | v2.10 | 0/? | Not started | - |
 | 112. VA Delegate Stances | v2.10 | 0/? | Not started | - |
