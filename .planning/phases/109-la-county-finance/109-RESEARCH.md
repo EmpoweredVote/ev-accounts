@@ -408,22 +408,22 @@ Additionally, pre-existing Phase 108 officials (LA City Council, Mayor Bass, Cou
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Does Patrice Lattimore (City Clerk) have a Socrata committee?**
+1. **Does Patrice Lattimore (City Clerk) have a Socrata committee? (RESOLVED)**
    - What we know: She was appointed in September 2025, not elected. Appointed officials rarely have campaign committees.
    - What's unclear: Whether she registered any committee for any prior election.
-   - Recommendation: Run `seed-la-city-confirmed.ts --dry-run` first. If no match, document as "appointed official — no campaign committee expected" and leave `finance_summary = NULL`. This is valid per LAFI-01 ("or the field is null with the gap documented").
+   - **RESOLVED:** Plan 109-02 Task 1 adds a `skipFinance: true` branch for Lattimore. If no Socrata committee is found (expected), `finance_summary = NULL` is documented as "appointed official — no campaign committee expected". Valid per LAFI-01 ("or the field is null with the gap documented").
 
-2. **Which Netfile agency codes cover Beverly Hills, Santa Monica, Long Beach, Glendale, Burbank, and the other 21 cities?**
+2. **Which Netfile agency codes cover Beverly Hills, Santa Monica, Long Beach, Glendale, Burbank, and the other 21 cities? (RESOLVED)**
    - What we know: `aid=LACO` covers the County of LA. The existing `seed-la-county-netfile-officials.ts` used LACO for county supervisors (Holly Mitchell, Lindsey Horvath, Robert Luna, Jeff Prang).
-   - What's unclear: Whether city officials (mayors, city council members) file with LACO or their own city Netfile jurisdiction. Some CA cities use Netfile under their own agency code (e.g., Los Angeles city is separate from the county).
-   - Recommendation: Build a probe step into the Wave 2 script that tests QuickNameSearch for one well-known official per city (e.g., Beverly Hills Mayor Lester Friedman, Santa Monica Mayor Lana Negrete) with `aid=LACO` first, then fall back to a city-specific code if needed. Document the result per city.
+   - What's unclear: Whether city officials (mayors, city council members) file with LACO or their own city Netfile jurisdiction.
+   - **RESOLVED:** Plan 109-03 Task 1 builds a `probeAgencyCode` step that tests QuickNameSearch for one well-known official per city with `aid=LACO` first. Zero-hit cities are documented as "not accessible via LACO jurisdiction" in the assessment — not errors. Both outcomes (hit or miss) are handled correctly.
 
-3. **Should finance_summary include total_spent for Socrata/Netfile officials?**
+3. **Should finance_summary include total_spent for Socrata/Netfile officials? (RESOLVED)**
    - What we know: The FEC-based `finance_summary` only has `total_raised`. The migration 268 comment also only mentions `total_raised`, `top_donors`, `cycle`, `source`.
    - What's unclear: Whether the ROADMAP SC1 for Phase 109 ("total raised, total spent, and cycle data") implies the existing JSONB shape must be extended.
-   - Recommendation: Add `total_spent` to the JSONB for Socrata/Netfile summaries since the ROADMAP explicitly calls for it. The JSONB is schema-free — adding a field is backward-compatible. The FEC script can be updated later if needed.
+   - **RESOLVED:** Yes — include `total_spent` in the JSONB for both Socrata and Netfile summaries per ROADMAP SC1. The JSONB is schema-free; adding a field is backward-compatible. Plans 109-02 Task 3 and 109-03 Task 2 both include `total_spent` in the `FinanceSummary` type.
 
 ---
 

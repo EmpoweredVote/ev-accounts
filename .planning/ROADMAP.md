@@ -35,7 +35,6 @@
   - Wave 3: 10 new cities from scratch — 52 new politicians
   - Wave 4: Phase gate SQL (8 assertions) + representatives-me smoke test
 
-
 Full details: `.planning/milestones/v2.9-ROADMAP.md`
 
 </details>
@@ -1150,7 +1149,20 @@ Plans:
 
 **Depends on:** Phase 108 (politician records must exist as FK targets; finance_summary column already exists from v2.6)
 **Requirements:** LAFI-01, LAFI-02
-**Plans:** TBD
+**Plans:** 4 plans
+Plans:
+**Wave 1**
+
+- [ ] 109-01-PLAN.md — Scaffold verify-la-county-109.sql SQL phase gate (LAFI-01 + LAFI-02 assertions)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 109-02-PLAN.md — LA City Socrata: extend seed script for Lattimore, ingest, write finance_summary for LA City officials (LAFI-01)
+- [ ] 109-03-PLAN.md — LA County Netfile: probe 26 cities, seed confirmed sources, ingest, write finance_summary (LAFI-02)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 109-04-PLAN.md — Phase gate: run verify SQL, API smoke tests, human sign-off (LAFI-01 + LAFI-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1227,7 +1239,6 @@ Plans:
 2. SELECT on unsourced stances for VA federal reps returns 0 — every VA federal rep stance has a paired context row with at least one real source URL.
 3. All 11 VA federal House reps have non-null `finance_summary` on `essentials.politicians` with FEC data (total raised, total spent, cash on hand, cycle) fetched via the existing FEC ingestion script.
 4. VPAP (vpap.org) is assessed for VA Governor, Lt. Governor, AG, and state senators — finance data ingested where machine-readable structured data is accessible; non-machine-readable sources documented as findings (consistent with DC OCF pattern for VAFI-02).
-
 
 ## Progress
 
