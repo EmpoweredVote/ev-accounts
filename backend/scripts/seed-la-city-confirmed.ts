@@ -55,6 +55,8 @@ interface TargetPolitician {
   knownCmtIds?: string[];     // pre-researched cmt_ids — skip Socrata name matching
   alreadyConfirmed?: boolean; // skip entirely — just verify
   requireAllTerms?: boolean;  // if true, ALL searchTerms must appear in cmt_nm (AND logic)
+  skipFinance?: boolean;      // if true, skip Socrata search entirely (appointed officials)
+  skipReason?: string;        // human-readable reason for skip (used when skipFinance=true)
 }
 
 interface MatchedCommittee {
@@ -62,7 +64,7 @@ interface MatchedCommittee {
   cmtNm: string;
 }
 
-type SeedResult = 'inserted' | 'promoted' | 'already_confirmed' | 'skipped_dry_run';
+type SeedResult = 'inserted' | 'promoted' | 'already_confirmed' | 'skipped_dry_run' | 'skipped_appointed';
 
 interface PoliticianResult {
   fullName: string;
@@ -70,7 +72,7 @@ interface PoliticianResult {
   politicianId: string | null;
   matches: MatchedCommittee[];
   seedResults: Array<{ cmtId: string; result: SeedResult }>;
-  status: 'confirmed' | 'already_confirmed' | 'no_match' | 'ambiguous' | 'dry_run' | 'no_uuid';
+  status: 'confirmed' | 'already_confirmed' | 'no_match' | 'ambiguous' | 'dry_run' | 'no_uuid' | 'skipped_appointed';
   note?: string;
 }
 
@@ -196,6 +198,16 @@ const TARGET_POLITICIANS: TargetPolitician[] = [
     searchTerms: ['tim', 'mcosker'],
     requireAllTerms: true,
     office: 'CD-15',
+  },
+  {
+    // Patrice Lattimore was appointed by City Council in September 2025 (not elected).
+    // migration 303: is_appointed=true, external_id=-700002.
+    // Appointed officials do not have campaign committees — skip Socrata search entirely.
+    fullName: 'Patrice Lattimore',
+    searchTerms: [],
+    office: 'LA City Clerk (appointed)',
+    skipFinance: true,
+    skipReason: 'Appointed by City Council Sept 2025; no campaign committee expected (migration 303 is_appointed=true).',
   },
 ];
 
@@ -416,10 +428,12 @@ function printSummaryTable(results: PoliticianResult[]): void {
   const alreadyConfirmed = results.filter(r => r.status === 'already_confirmed').length;
   const noMatch = results.filter(r => r.status === 'no_match').length;
   const ambiguous = results.filter(r => r.status === 'ambiguous').length;
+  const skippedAppointed = results.filter(r => r.status === 'skipped_appointed').length;
 
   console.log(`\nInserted:          ${inserted} new rows`);
   console.log(`Promoted:          ${promoted} rows (needs_research → confirmed)`);
   console.log(`Already confirmed: ${alreadyConfirmed} politicians`);
+  console.log(`Skipped (appointed): ${skippedAppointed} politicians (no campaign committee expected)`);
   console.log(`No match:          ${noMatch} politicians (manual action needed)`);
   console.log(`Ambiguous:         ${ambiguous} politicians (manual action needed)`);
 }
@@ -481,6 +495,15 @@ async function main(): Promise<void> {
     if (!politicianId) {
       result.status = 'no_uuid';
       result.note = 'UUID not found — manual action needed';
+      results.push(result);
+      continue;
+    }
+
+    // Appointed officials — skip Socrata search, no source row inserted
+    if (politician.skipFinance) {
+      console.log(`  [SKIP] ${politician.fullName} — ${politician.skipReason ?? 'skipFinance=true'}`);
+      result.status = 'skipped_appointed';
+      result.note = politician.skipReason;
       results.push(result);
       continue;
     }
