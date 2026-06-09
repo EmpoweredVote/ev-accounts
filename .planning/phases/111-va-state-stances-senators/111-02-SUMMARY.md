@@ -149,6 +149,18 @@ VAST-05 invariant holds for Waves 1 and 2.
 - Next free migration number: 328 (max_migration after Wave 2 = 327 — but wait: migration 327 was NOT tracked in schema_migrations via the SQL file itself. Check `SELECT MAX(version)` before Wave 3 to confirm.)
 - Note: The DO $$ blocks do NOT insert into supabase_migrations.schema_migrations — that table tracks psql-applied versions via a separate mechanism. Always pre-flight to confirm actual max_migration.
 
+## Self-Check: PASSED
+
+- wave2-preflight.json: FOUND
+- wave2.csv: FOUND
+- migration 327 SQL: FOUND
+- 111-02-SUMMARY.md: FOUND
+- commit 0ddcfca (pre-flight): FOUND
+- commit a67e6e7 (CSV research): FOUND
+- commit 458bf75 (migration SQL): FOUND
+- commit 5fd429b (apply migration): FOUND
+- commit 86f4573 (docs/summary): FOUND
+
 ---
 *Phase: 111-va-state-stances-senators*
 *Completed: 2026-06-09*
