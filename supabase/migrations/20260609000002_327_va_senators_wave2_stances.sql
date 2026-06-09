@@ -32,7 +32,7 @@
 --
 -- Migration number: 327 (wave1 SQL file on disk uses 326; 327 used here to avoid naming collision)
 -- Timestamp: 20260609000002
--- Applied: NOT YET
+-- Applied: 2026-06-09
 
 BEGIN;
 
