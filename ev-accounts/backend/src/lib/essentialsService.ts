@@ -62,9 +62,35 @@ const UPCOMING_ELECTIONS_LATERAL = `
 `;
 export { GeocodingError };
 
+/**
+ * Enclave-city alias map.
+ * Some cities are entirely enclosed within a larger USPS city boundary,
+ * so Census TIGER / the geocoder returns the surrounding city name.
+ * When the user's address string contains the enclave city name but the
+ * geocoder returns the host city, substitute the enclave's G4110 centroid.
+ *
+ * Structure: { enclaveNameLower: { hostCity: string; lat: number; lng: number } }
+ * Add new entries here as new enclave cities are onboarded.
+ */
+const ENCLAVE_CITY_ALIASES: Record<string, { hostCity: string; lat: number; lng: number }> = {
+  'maywood park': { hostCity: 'portland', lat: 45.5525170, lng: -122.5617782 },
+};
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
+
+/**
+ * Campaign finance summary sourced from FEC data ingested by run-fec-finance-summary.ts.
+ * Stored as JSONB on essentials.politicians.finance_summary.
+ * null for non-federal politicians and federal politicians without matched FEC IDs.
+ */
+export interface FinanceSummary {
+  total_raised: number;
+  top_donors: Array<{ employer: string; amount: number; count: number }>;
+  cycle: string;
+  source: 'FEC';
+}
 
 /**
  * Go-parity flat politician record.
@@ -121,6 +147,7 @@ export interface PoliticianFlatRecord {
   next_primary_date: string;
   next_general_date: string;
   images: Array<{ id: string; url: string; type: string; photo_license: string; focal_point: string | null }>;
+  finance_summary: FinanceSummary | null;
 }
 
 export interface AddressSearchResult {
@@ -132,6 +159,7 @@ export interface AddressSearchResult {
     mtfcc: string;
   } | null;
   matchedAddress: string;
+  tribal_land: { on_reservation: boolean; name?: string };
 }
 
 export interface PoliticianRecord {
@@ -385,7 +413,7 @@ export async function getPoliticiansFlatList(
   if (options?.q) {
     params.push(`%${options.q}%`);
     const idx = params.length;
-    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx})`;
+    searchFilter = `AND (p.full_name ILIKE $${idx} OR p.preferred_name ILIKE $${idx} OR p.first_name ILIKE $${idx} OR p.last_name ILIKE $${idx} OR CONCAT(p.first_name, ' ', p.last_name) ILIKE $${idx})`;
   }
 
   if (options?.state) {
@@ -409,6 +437,7 @@ export async function getPoliticiansFlatList(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -502,6 +531,7 @@ export async function getPoliticiansFlatList(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
+    finance_summary: row.finance_summary ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -531,7 +561,27 @@ export async function getRepresentativesByAddress(
   { includeChallengers = false }: { includeChallengers?: boolean } = {}
 ): Promise<AddressSearchResult> {
   // Geocode via Census Geocoder. GeocodingError propagates to caller.
-  const { lat, lng, matchedAddress, state } = await geocodeAddress(address);
+  const { lat, lng, matchedAddress, state, city } = await geocodeAddress(address);
+
+  // Enclave-city alias override: some cities have streets stored under a
+  // surrounding city's USPS name in Census TIGER. If the address string
+  // names an enclave city but the geocoder returned its host city, substitute
+  // the enclave's G4110 centroid so PostGIS hits the correct boundary.
+  // Dual-condition: raw address must name the enclave AND geocoder must have
+  // returned the host city (checked via matchedAddress OR addressComponents.city).
+  let resolvedLat = lat;
+  let resolvedLng = lng;
+  const addrLower = address.toLowerCase();
+  for (const [enclaveName, alias] of Object.entries(ENCLAVE_CITY_ALIASES)) {
+    if (
+      addrLower.includes(enclaveName) &&
+      (matchedAddress.toLowerCase().includes(alias.hostCity) || city.toLowerCase() === alias.hostCity)
+    ) {
+      resolvedLat = alias.lat;
+      resolvedLng = alias.lng;
+      break;
+    }
+  }
 
   // CRITICAL: ST_MakePoint takes (longitude, latitude) = (Census x, Census y)
   // $1 = lng (Census coordinates.x), $2 = lat (Census coordinates.y)
@@ -542,6 +592,7 @@ export async function getRepresentativesByAddress(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -571,7 +622,11 @@ export async function getRepresentativesByAddress(
         OR (gb.mtfcc = 'G4040' AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G4110', 'G4120') AND d.district_type IN ('LOCAL', 'LOCAL_EXEC'))
         OR (gb.mtfcc IN ('G5400', 'G5410', 'G5420') AND d.district_type = 'SCHOOL')
-        OR (gb.mtfcc LIKE 'X%' AND d.district_type IN ('LOCAL', 'COUNTY'))
+        OR (gb.mtfcc = 'X0001' AND d.district_type IN ('LOCAL', 'COUNTY'))
+        OR (gb.mtfcc = 'X0002' AND d.district_type = 'SCHOOL')
+        OR (gb.mtfcc = 'X0003' AND d.district_type = 'STATE_BOARD')
+        -- X0004 (tribal) does NOT join to districts in v1; surfaced via tribal_land response field
+        OR (gb.mtfcc LIKE 'X%' AND gb.mtfcc NOT IN ('X0001','X0002','X0003','X0004') AND d.district_type IN ('LOCAL', 'COUNTY'))
         -- Fallback: if MTFCC not in known set, match any district type for this geo_id
         OR (gb.mtfcc NOT IN ('G5210','G5220','G5200','G4020','G4040','G4110','G4120','G5400','G5410','G5420')
             AND gb.mtfcc NOT LIKE 'X%')
@@ -602,6 +657,7 @@ export async function getRepresentativesByAddress(
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+           p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -633,6 +689,7 @@ export async function getRepresentativesByAddress(
     WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
     AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
     AND (p.is_active = true OR o.is_vacant = true)
+    AND COALESCE(p.is_incumbent, true) = true
     -- JUDICIAL: exclude county-level courts (circuit/superior) which have 5-digit
     -- county FIPS geo_ids. Those are matched via geofence intersection.
     -- State-level courts (Supreme, Appeals, Tax) have 2-digit or 7-digit geo_ids.
@@ -640,15 +697,40 @@ export async function getRepresentativesByAddress(
     ORDER BY COALESCE(p.id, o.id)
   `;
 
+  // D-06 / Pitfall 5: narrow tribal-lands lookup, always-present block.
+  const tribalQueryText = `
+    SELECT geo_id, name
+    FROM essentials.geofence_boundaries
+    WHERE mtfcc = 'X0004'
+      AND public.ST_Covers(
+        geometry,
+        public.ST_SetSRID(public.ST_MakePoint($1::float8, $2::float8), 4326)
+      )
+    LIMIT 1
+  `;
+
   // $1 = longitude (Census coordinates.x), $2 = latitude (Census coordinates.y)
-  const [districtResult, statewideResult] = await Promise.all([
-    pool.query(districtQueryText, [lng, lat]),
+  const [districtResult, statewideResult, tribalResult] = await Promise.all([
+    pool.query(districtQueryText, [resolvedLng, resolvedLat]),
     state ? pool.query(statewideQueryText, [state]) : Promise.resolve({ rows: [] as unknown[] }),
+    pool.query(tribalQueryText, [resolvedLng, resolvedLat]),
   ]);
   const rows = [...districtResult.rows, ...(statewideResult.rows as typeof districtResult.rows)];
 
+  // Default to off-reservation; flip to on-reservation only if the X0004 query matches.
+  let tribal_land: { on_reservation: boolean; name?: string } = { on_reservation: false };
+  if (tribalResult.rows.length > 0) {
+    tribal_land = { on_reservation: true, name: tribalResult.rows[0].name as string };
+  }
+
   if (rows.length === 0) {
-    return { politicians: [], jurisdiction: null, matchedAddress };
+    // Early-return path: explicit tribal_land defaulting to on_reservation: false when no district match.
+    return {
+      politicians: [],
+      jurisdiction: null,
+      matchedAddress,
+      tribal_land: tribal_land ?? { on_reservation: false },
+    };
   }
 
   const politicians: PoliticianFlatRecord[] = rows.map((row) => ({
@@ -699,6 +781,7 @@ export async function getRepresentativesByAddress(
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
     images: [],
+    finance_summary: row.finance_summary ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -711,7 +794,7 @@ export async function getRepresentativesByAddress(
     mtfcc: firstRow.mtfcc ?? '',
   };
 
-  return { politicians, jurisdiction, matchedAddress };
+  return { politicians, jurisdiction, matchedAddress, tribal_land };
 }
 
 // ---------------------------------------------------------------------------
@@ -844,6 +927,7 @@ export interface PoliticianDetail {
   notes: string[];
   next_primary_date: string;
   next_general_date: string;
+  finance_summary: FinanceSummary | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -891,7 +975,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
-           p.is_active, p.office_id, p.notes,
+           p.is_active, p.office_id, p.notes, p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
            COALESCE(p.valid_to, '') AS term_end,
            COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -1115,6 +1199,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     notes: row.notes ?? [],
     next_primary_date: row.next_primary_date ?? '',
     next_general_date: row.next_general_date ?? '',
+    finance_summary: row.finance_summary ?? null,
   };
 }
 
@@ -1426,6 +1511,7 @@ export async function getRepresentativesByJurisdiction(
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
     p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+    p.finance_summary,
     COALESCE(p.valid_from, '') AS term_start,
     COALESCE(p.valid_to, '') AS term_end,
     COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -1484,6 +1570,7 @@ export async function getRepresentativesByJurisdiction(
         WHERE d.district_type IN ('NATIONAL_UPPER', 'NATIONAL_EXEC', 'STATE_EXEC', 'NATIONAL_JUDICIAL', 'JUDICIAL')
         AND (d.state = $1 OR d.district_type IN ('NATIONAL_EXEC', 'NATIONAL_JUDICIAL'))
         AND (p.is_active = true OR o.is_vacant = true)
+        AND COALESCE(p.is_incumbent, true) = true
         AND (d.district_type != 'JUDICIAL' OR LENGTH(d.geo_id) != 5)
         ORDER BY COALESCE(p.id, o.id)
       `;
@@ -1501,7 +1588,10 @@ export async function getRepresentativesByJurisdiction(
   // Deduplicate: same politician may appear via multiple district matches
   const seen = new Set<string>();
   const uniqueRows = allRows.filter((row) => {
-    const key = (row.id as string) ?? String(row.external_id);
+    const key = (row.id as string | null) != null
+      ? (row.id as string)
+      : `vacant-${row.geo_id ?? ''}-${row.district_id ?? ''}`;
+
     if (seen.has(key)) return false;
     seen.add(key);
     return true;
@@ -1555,6 +1645,7 @@ export async function getRepresentativesByJurisdiction(
     next_primary_date: (row.next_primary_date as string) ?? '',
     next_general_date: (row.next_general_date as string) ?? '',
     images: [],
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);
@@ -1594,6 +1685,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
     p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
+    p.finance_summary,
     COALESCE(p.valid_from, '') AS term_start,
     COALESCE(p.valid_to, '') AS term_end,
     COALESCE(p.term_date_precision, '') AS term_date_precision,
@@ -1685,6 +1777,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     next_primary_date: (row.next_primary_date as string) ?? '',
     next_general_date: (row.next_general_date as string) ?? '',
     images: [],
+    finance_summary: (row.finance_summary as FinanceSummary | null) ?? null,
   }));
 
   await Promise.all([batchFetchImages(politicians), batchFetchCommittees(politicians)]);

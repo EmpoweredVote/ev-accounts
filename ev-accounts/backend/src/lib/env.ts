@@ -11,9 +11,17 @@ const envSchema = z.object({
   CORS_ORIGIN: z.string().optional(),
   COOKIE_DOMAIN: z.string().optional().default(''),
   SUPABASE_JWT_SECRET: z.string().optional(),
-  // Deprecated: replaced by Census Geocoder in Phase 38. Kept optional to avoid
-  // startup failures on environments that still have the key set.
+  // Geocoding was replaced by Census Geocoder in Phase 38, but this key is now
+  // reused as the fallback for the Civic Information API (see GOOGLE_CIVIC_API_KEY).
+  // Kept optional to avoid startup failures on environments without it.
   GOOGLE_MAPS_API_KEY: z.string().optional(),
+  // GOOGLE_CIVIC_API_KEY: powers /api/essentials/voter-info (Google Civic
+  // Information API voterInfoQuery — VIP voting locations + sample-ballot URLs).
+  // Optional — if unset, voterInfoService falls back to GOOGLE_MAPS_API_KEY (same
+  // Google Cloud key as Places). Absent entirely = voter-info returns a safe empty
+  // payload and the UI hides the card. Requires the Civic Information API enabled
+  // on the project and a key NOT restricted to HTTP referrers (server-side call).
+  GOOGLE_CIVIC_API_KEY: z.string().optional(),
   // XP service keys — one per feature repo. Optional: undefined key = not in
   // SERVICE_KEY_MAP = 401 on all requests from that repo. Kept optional so
   // existing integration tests (health, auth, account) don't break at startup.
@@ -47,10 +55,13 @@ const envSchema = z.object({
   LINEAR_TEAM_ID: z.string().optional(),
   // LINEAR_PROJECT_ID: UUID from the project URL in Linear (/project/<uuid>).
   LINEAR_PROJECT_ID: z.string().optional(),
-  // RESEND_API_KEY: API key from resend.com for sending feedback notification emails.
+  // RESEND_API_KEY: API key from resend.com for transactional email (admin
+  // notifications etc.). Not used by the feedback path — feedback emails
+  // are sent natively by Linear via project subscribers.
   RESEND_API_KEY: z.string().optional(),
-  // TURNSTILE_SECRET_KEY: Cloudflare Turnstile secret key for server-side spam verification.
-  TURNSTILE_SECRET_KEY: z.string().optional(),
+  // LOGIN_URL: base URL of the login frontend. Used as the base for auth email
+  // redirect URLs (confirmation, password reset). Defaults to production URL.
+  LOGIN_URL: z.string().url().default('https://login.empowered.vote'),
 });
 
 const parsed = envSchema.safeParse(process.env);

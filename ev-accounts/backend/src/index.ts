@@ -12,6 +12,7 @@ import connectRouter from './routes/connect.js';
 import compassRouter from './routes/compass.js';
 import compassAdminRouter from './routes/compassAdmin.js';
 import topicRewritesRouter from './routes/topicRewrites.js';
+import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
@@ -31,12 +32,15 @@ import essentialsCandidatesRouter from './routes/essentialsCandidates.js';
 import essentialsEditorRouter from './routes/essentialsEditor.js';
 import essentialsPoliticiansRouter from './routes/essentialsPoliticians.js';
 import essentialsRouter from './routes/essentials.js';
+import readrankRouter from './routes/readrank.js';
+import readrankQuotesAdminRouter from './routes/readrankQuotesAdmin.js';
 import essentialsBrowseRouter from './routes/essentialsBrowse.js';
 import essentialsBodiesRouter from './routes/essentialsBodies.js';
 import essentialsIngestRouter from './routes/essentialsIngest.js';
 import treasuryRouter from './routes/treasury.js';
 import campaignFinanceRouter from './routes/campaignFinance.js';
 import campaignFinanceAdminRouter, { batchIngestHandler } from './routes/campaignFinanceAdmin.js';
+import councilFilesRouter from './routes/councilFiles.js';
 import { requireAdminToken } from './middleware/adminTokenAuth.js';
 import { requireAuth } from './middleware/auth.js';
 import { requireAdmin } from './middleware/requireAdmin.js';
@@ -44,6 +48,7 @@ import meetingsRouter from './routes/meetings.js';
 import stagingRouter from './routes/staging.js';
 import triviaRouter from './routes/trivia.js';
 import feedbackRouter from './routes/feedback.js';
+import eventsRouter from './routes/events.js';
 import { startCalibrationLapseCron } from './cron/calibrationLapse.js';
 import { startCampaignFinanceCron } from './cron/campaignFinanceCron.js';
 import { startDistrictStalenessCron } from './cron/districtStaleness.js';
@@ -110,11 +115,14 @@ app.use('/api/admin', stagingQueueAdminRouter);
 // Must be mounted BEFORE essentialsDiscoveryRouter so JWT-authenticated GETs are
 // handled here and do not fall through to the X-Admin-Token route layer.
 app.use('/api/admin', discoveryDashboardRouter);
-// Discovery routes use X-Admin-Token (not JWT) — must be mounted BEFORE adminRouter
-// because adminRouter applies JWT requireAdmin to all /api/admin/* requests.
-app.use('/api/admin', requireAdminToken, essentialsDiscoveryRouter);
+// Discovery routes use X-Admin-Token (not JWT). Auth is applied inside the router
+// via router.use(requireAdminToken) — NOT at mount — so it doesn't bleed into other
+// /api/admin/* routers that share the same prefix.
+app.use('/api/admin', essentialsDiscoveryRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/admin/topic-rewrites', topicRewritesRouter);
+app.use('/api/admin/source-verifications', sourceVerificationsRouter);
+app.use('/api/admin/readrank-quotes', readrankQuotesAdminRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
 // GET /api/essentials/candidates/:zip
@@ -137,6 +145,7 @@ app.use('/api/essentials/candidates', essentialsCandidatesRouter);
 app.use('/api/essentials/politicians', essentialsEditorRouter);
 app.use('/api/essentials/politicians', essentialsPoliticiansRouter);
 app.use('/api/essentials', essentialsRouter);
+app.use('/api/readrank', readrankRouter);
 app.use('/api/treasury', treasuryRouter);
 app.use('/api/campaign-finance', campaignFinanceRouter);
 // Dual-router pattern for campaign finance: public reads on campaignFinanceRouter,
@@ -146,10 +155,12 @@ app.use('/api/campaign-finance', campaignFinanceAdminRouter);
 // (no /api/campaign-finance prefix). Auth via X-Admin-Token (not JWT).
 // Used by SQS workers, EventBridge, curl, and manual one-off triggers.
 app.post('/admin/ingest/:adapter', requireAdminToken, batchIngestHandler);
+app.use('/api/council-files', councilFilesRouter);
 app.use('/api/meetings', meetingsRouter);
 app.use('/api/staging', stagingRouter);
 app.use('/api/trivia', triviaRouter); // Trivia leaderboard (Phase 41)
 app.use('/api/feedback', feedbackRouter); // Feedback pipeline (quick-260428-fp1)
+app.use('/api/events', eventsRouter);   // CTA event telemetry
 
 export { app }; // For testing
 

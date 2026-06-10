@@ -587,6 +587,7 @@ export type Database = {
           p_user_id: string
           p_legal_name: string
           p_invite_code: string
+          p_display_name: string
         }
         Returns: Json
       }
@@ -944,6 +945,7 @@ export type Database = {
           id: string
           is_active: boolean | null
           is_live: boolean
+          judicial_role: string | null
           office_scope: string | null
           question_text: string
           short_title: string | null
@@ -959,6 +961,7 @@ export type Database = {
           id?: string
           is_active?: boolean | null
           is_live?: boolean
+          judicial_role?: string | null
           office_scope?: string | null
           question_text: string
           short_title?: string | null
@@ -974,6 +977,7 @@ export type Database = {
           id?: string
           is_active?: boolean | null
           is_live?: boolean
+          judicial_role?: string | null
           office_scope?: string | null
           question_text?: string
           short_title?: string | null
