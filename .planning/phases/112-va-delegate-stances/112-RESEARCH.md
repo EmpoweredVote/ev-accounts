@@ -865,22 +865,19 @@ No security-sensitive changes. This phase writes to `inform.politician_answers` 
 
 ---
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Waves 2, 3, 5 non-contiguous ranges in DO $$ verification**
    - What we know: Waves 2, 3, and 5 each cover delegates from two different geographic sub-ranges that aren't contiguous in external_id space
-   - What's unclear: Whether the planner will notice this and use IN() vs BETWEEN
-   - Recommendation: Document explicitly in the pitfalls section (done above, Pitfall 7) and provide example SQL
+   - **RESOLVED:** Plans 02, 03, and 05 explicitly mandate `IN()` (not `BETWEEN`) in the DO $$ verification block. Task 3 `<automated>` verify blocks reject `BETWEEN` with a regex check. Pitfall 7 is cited in every relevant plan.
 
 2. **Wave 8 size (13 researched delegates — larger than other waves)**
    - What we know: HD-17 to HD-30 minus HD-20 Vacant = 13 delegates
-   - What's unclear: Whether a 13-delegate wave is too large for a single plan
-   - Recommendation: Split into Wave 8a (HD-17–23, 6 delegates) and Wave 8b (HD-24–30, 7 delegates) if timing is a concern. Wave count would shift to 11 plans with migrations 331–341.
+   - **RESOLVED:** Planner kept Wave 8 as a single plan (112-08) with 13 sequential agent dispatches in Task 2. The wave is within the single-task boundary and the choice is documented. Split into 8a/8b only if execution timing becomes a concern.
 
 3. **HD-20 Vacant seat**
    - What we know: DB record has `full_name = "Vacant"` and `external_id = -5120020`
-   - What's unclear: Whether this seat will be filled during Phase 112 execution (special election possible)
-   - Recommendation: Plan 8 must check this record at pre-flight time and skip if still vacant
+   - **RESOLVED:** Plan 08 Task 1 pre-flight checks and sets `vacant_confirmed: true`; Task 2 skips HD-20 explicitly; Task 3 rejects any INSERT for the HD-20 UUID; migration header documents the deliberate skip.
 
 ---
 

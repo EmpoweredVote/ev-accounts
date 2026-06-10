@@ -1216,13 +1216,17 @@ Plans:
 **Depends on:** Phase 110 (delegate politician records must exist as FK targets)
 **Requirements:** VAST-03, VAST-05
 **Plans:** 10 plans
-
 Plans:
+**Wave 1**
+
 - [ ] 112-01-PLAN.md — Wave 1: Southwest VA HD-43–52 (migration 331)
 - [ ] 112-02-PLAN.md — Wave 2: Southwest HD-53–55 + Central HD-37–42 (migration 332, non-contiguous IN)
 - [ ] 112-03-PLAN.md — Wave 3: Central HD-31–36 + Piedmont East HD-56–59 (migration 333, non-contiguous IN)
 - [ ] 112-04-PLAN.md — Wave 4: Hampton Roads HD-60–69 (migration 334)
 - [ ] 112-05-PLAN.md — Wave 5: Hampton Roads HD-70–75 + Richmond HD-76–79 (migration 335, non-contiguous IN)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
 - [ ] 112-06-PLAN.md — Wave 6: Richmond Metro HD-80–89 (migration 336)
 - [ ] 112-07-PLAN.md — Wave 7: Richmond/Southside Hampton Roads HD-90–100 (migration 337)
 - [ ] 112-08-PLAN.md — Wave 8: NoVA Outer Suburbs HD-17–30, HD-20 Vacant skip (migration 338)
