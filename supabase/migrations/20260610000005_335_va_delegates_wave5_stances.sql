@@ -41,7 +41,7 @@
 --
 -- Migration number: 335
 -- Timestamp: 20260610000005
--- Applied: NOT YET (write-only)
+-- Applied: 2026-06-10
 
 BEGIN;
 
