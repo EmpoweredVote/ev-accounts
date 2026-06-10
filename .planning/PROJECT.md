@@ -86,6 +86,13 @@ Every platform feature can answer "does this user have permission to do X?" with
 - ✓ CTC + Civic Spaces integration: `GET /api/roles/me` (unfiltered) and `POST /api/roles/check` as canonical gate endpoints; `GET /api/contributor/me` filters to 3 contributor roles only — v1.9
 - ✓ Contributor portal at `app.empowered.vote/contributor`: dashboard with role grant cards, Compass Editor (jurisdiction-scoped), Candidate Coordinator (single-politician), Essentials Editor (field-level bio editor) — v1.9
 
+### Validated (v2.10 - in progress)
+
+**Milestone: v2.10 Virginia Coverage + LA County Finance** — Phase 111 complete 2026-06-10.
+
+- ✓ VAST-02: 182 sourced stances for 35/40 VA state senators (5 honest-skipped with no documentable record); migrations 326–330 applied — Phase 111
+- ✓ VAST-05 (Phase 111 portion): All 182 VA senator stance rows have paired `inform.politician_context` rows with real source URLs — 0 unsourced — Phase 111
+
 ### Validated (v2.6)
 
 **Milestone: v2.6 Data Quality & Elections** (Phases 87–90, 99) — shipped 2026-06-05.
@@ -127,7 +134,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.9):** ~80,000 lines of TypeScript (project-wide). 108 phases, 115+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–310 applied to production. 21 live compass topics, ~1,148 politicians with data (100 senators + 43 2026 candidates + 39 CA city officials + 27 DC officials + ~72 LA County officials added in Phase 108 + state/local officials), full role system live. CA + DC TIGER geofencing live. inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians + Eleanor Holmes Norton. Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities now have full elected governing bodies (14 gap-filled + 2 structure-completed + 3 LA City citywide offices + 10 new cities).
+**Current state (v2.10 in progress):** ~80,000 lines of TypeScript (project-wide). 111 phases, 20+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–330 applied to production. 21 live compass topics, ~1,188 politicians with data (~1,148 + 40 VA state senators), full role system live. CA + DC + VA TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs in DB (phases 110–111). inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians + Eleanor Holmes Norton. Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities now have full elected governing bodies.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -309,4 +316,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-08 — Milestone v2.10 started: Virginia Coverage + LA County Finance*
+*Last updated: 2026-06-10 after Phase 111 — VA senator stances (182 rows, 35/40 senators, VAST-02 + VAST-05 satisfied)*

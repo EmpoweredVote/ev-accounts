@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
-status: executing
-last_updated: "2026-06-10T03:17:58.563Z"
+status: ready_to_plan
+last_updated: 2026-06-10T07:55:29.064Z
 last_activity: 2026-06-10
 progress:
   total_phases: 5
   completed_phases: 1
   total_plans: 9
-  completed_plans: 8
+  completed_plans: 20
   percent: 20
+stopped_at: Phase 111 complete (5/5) — ready to discuss Phase 112
 ---
 
 # Project State
@@ -20,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 111 — va-state-stances-senators
+**Current focus:** Phase 112 — va delegate stances
 **Last shipped:** v2.9 LA County Expansion — Phase 108, shipped 2026-06-08. All 6 requirements closed (LAOF-01–06). Archive: .planning/milestones/v2.9-ROADMAP.md.
 
 ## Current Position
 
-Phase: 111 (va-state-stances-senators) — EXECUTING
-Plan: 4 of 5
-Status: Ready to execute
+Phase: 112
+Plan: Not started
+Status: Ready to plan
 Last activity: 2026-06-10
 
 ### Phase 110 Status (as of 2026-06-09)
@@ -57,8 +58,8 @@ Cross-team coordination (2026-06-09):
 **v2.10 Scope — Virginia Coverage + LA County Finance — IN PROGRESS**
 
 - Phases: 5 (109–113)
-- Requirements: 0/15 closed (LAFI-01/02, VAIN-01/02/03, VAGE-01/02/03, VAST-01/02/03/04/05, VAFI-01/02)
-- Plans complete: 0
+- Requirements: 2/15 closed (VAST-02 ✅, VAST-05 partial ✅)
+- Plans complete: 5 (Phase 111 complete)
 - Started: 2026-06-08
 
 **v2.9 Scope — LA County Expansion — COMPLETE**
@@ -101,8 +102,8 @@ Cross-team coordination (2026-06-09):
 | VAGE-01 | 110 | TIGER 2024 VA SLDL polygons (100 House delegate districts) imported into essentials.geo_districts with GIST index |
 | VAGE-02 | 110 | TIGER 2024 VA SLDU polygons (40 Senate districts) imported into essentials.geo_districts |
 | VAGE-03 | 110 | tiger_geoid backfilled on all VA essentials.districts records for dual-column Path 0 join |
-| VAST-01 | 111 | Sourced stances for VA state executives (Governor, Lt. Governor, AG) |
-| VAST-02 | 111 | Sourced stances for all 40 VA state senators |
+| VAST-01 | TBD | Sourced stances for VA state executives (Governor, Lt. Governor, AG) — descoped from Phase 111 |
+| VAST-02 ✅ | 111 | Sourced stances for all 40 VA state senators (35 with rows + 5 honest-skips) — complete |
 | VAST-03 | 112 | Sourced stances for all 100 VA House delegates (honest-skip where no documentable evidence) |
 | VAST-04 | 113 | Sourced stances for 11 VA House reps (federal topics) |
 | VAST-05 | 111, 112, 113 | Every new stance paired with inform.politician_context containing at least one real source URL |
@@ -208,15 +209,16 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-10T03:17:58.554Z
-Stopped at: Completed 111-02 Wave 2 VA senator stances (migration 327 applied)
+Last session: 2026-06-10
+Stopped at: Phase 111 complete (5/5) — UAT verified live on DB, ready to plan Phase 112
 Resume file: None
 
 ## Decisions
 
-- Migration number 327 used for Wave 2 — file on disk uses 326; 326 not tracked in schema_migrations (max=325 after Wave 1 psql apply)
-- Sturtevant (SD-12) confirmed Republican via Ballotpedia 2023 Republican primary win
-- Wave 2 honest-skips: Mulchi (SD-9) and Cifers (SD-10) — new senators, no accessible policy positions
+- Phase 111 scoped to senators only — VAST-01 (VA state executives) was descoped from Phase 111; not yet assigned to a phase
+- psql-applied wave migrations (326–330) do NOT insert rows into `supabase_migrations.schema_migrations` — always pre-flight with SELECT MAX(version) before each wave, not STATE.md cache
+- Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
+- 5 honest-skipped senators (Head SD-3, Hackworth SD-5, Mulchi SD-9, Cifers SD-10, Srinivasan SD-32) — no documentable policy positions; VAST-02 satisfied as 35/40 with 5 documented skips
 
 ## Operator Next Steps
 

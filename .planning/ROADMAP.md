@@ -1199,7 +1199,7 @@ Plans:
 
 **Depends on:** Phase 110 (politician records must exist as FK targets)
 **Requirements:** VAST-02, VAST-05
-**Plans:** 4/5 plans executed
+**Plans:** 5/5 plans complete
 
 **Success Criteria** (what must be TRUE):
 
@@ -1339,6 +1339,6 @@ Plans:
 | 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
 | 109. LA County Finance | v2.10 | 4/4 | Complete    | 2026-06-09 |
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
-| 111. VA State Stances - Executives + Senators | v2.10 | 4/5 | In Progress|  |
+| 111. VA State Stances - Executives + Senators | v2.10 | 5/5 | Complete    | 2026-06-10 |
 | 112. VA Delegate Stances | v2.10 | 0/? | Not started | - |
 | 113. VA Federal Stances + Finance | v2.10 | 0/? | Not started | - |
