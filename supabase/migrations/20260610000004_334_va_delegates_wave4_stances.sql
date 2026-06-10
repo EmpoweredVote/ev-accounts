@@ -36,7 +36,7 @@
 --
 -- Migration number: 334
 -- Timestamp: 20260610000004
--- Applied: NOT YET
+-- Applied: 2026-06-10
 
 BEGIN;
 
