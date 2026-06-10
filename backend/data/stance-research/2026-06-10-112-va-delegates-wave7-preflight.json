@@ -1,0 +1,21 @@
+{
+  "max_migration": 350,
+  "highest_file_on_disk": 336,
+  "next_free_migration": 337,
+  "topics": "SEE 2026-06-10-112-va-delegates-wave6-preflight.json — same 44 topics, unchanged",
+  "topic_count": 44,
+  "delegates": [
+    {"id": "01f1abf8-84c8-4cbc-8ff7-4d900bc6c3a6", "full_name": "James A. Leftwich, Jr.", "external_id": "-5120090"},
+    {"id": "52c621b5-2795-47cf-a7eb-8a815b3790d2", "full_name": "C. E. Hayes, Jr.", "external_id": "-5120091"},
+    {"id": "fe47cdc4-c16b-446c-b674-82fdc074370d", "full_name": "Bonita G. Anthony", "external_id": "-5120092"},
+    {"id": "57517048-31a9-4974-bb5a-f82c3563a514", "full_name": "Jackie Hope Glass", "external_id": "-5120093"},
+    {"id": "e9cd8a4e-9e2b-4962-be21-7a2f68a650ba", "full_name": "Phil M. Hernandez", "external_id": "-5120094"},
+    {"id": "9e843c9d-bd2e-431f-969f-63372d0274ca", "full_name": "Alex Q. Askew", "external_id": "-5120095"},
+    {"id": "e65fba41-a46c-407c-86b3-810f1c8ecf38", "full_name": "Kelly K. Convirs-Fowler", "external_id": "-5120096"},
+    {"id": "c0117cd0-b340-4652-996c-5f7e5ba3d3c0", "full_name": "Michael Feggans", "external_id": "-5120097"},
+    {"id": "bf40d5f0-e1d6-4582-b319-46f4b7e0a541", "full_name": "Andrew Rice", "external_id": "-5120098"},
+    {"id": "4eac03a8-a742-4dd9-8cdb-4f466df2fd24", "full_name": "Anne Ferrell H. Tata", "external_id": "-5120099"},
+    {"id": "573ef077-c62f-45d3-9a5c-189d1c5308bf", "full_name": "Robert S. Bloxom, Jr.", "external_id": "-5120100"}
+  ],
+  "existing_rows": 0
+}
