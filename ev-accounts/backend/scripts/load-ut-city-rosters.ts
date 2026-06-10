@@ -110,7 +110,13 @@ async function ingest(
   try {
     await client.query('BEGIN');
     const districtLabel = `${city.city_name} ${role}`;
-    const districtNum = role.match(/\b(\d+|AL|At-Large)\b/i)?.[1] ?? undefined;
+    // district_id drives the card subtitle: a numeric ward/district number, or '0'
+    // for at-large council seats (whole-place attachment) so the frontend renders
+    // "At-Large". Mayors/officers (non-LOCAL) keep null.
+    const explicitNum = role.match(/\b(\d+)\b/)?.[1];
+    const isWholePlaceCouncil =
+      districtType === 'LOCAL' && /council/i.test(role) && !targetGeoId.includes('/ward:');
+    const districtNum = explicitNum ?? (isWholePlaceCouncil ? '0' : undefined);
     const districtId = await resolveDistrict(client, targetGeoId, districtType, districtLabel, districtNum, city.city_name);
 
     const slug = placeSlug(city.jurisdiction_id);

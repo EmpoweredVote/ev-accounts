@@ -224,23 +224,8 @@ FROM (
 ) race,
 (VALUES
   ('Tanner Dale Branham', 'Tanner',    'Branham'),
+  ('Joe Davis',           'Joe',       'Davis'),
   ('Tree Martin Lucas',   'Tree',      'Lucas')
-) AS v(full_name, first_name, last_name)
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
-);
-
--- Monroe County Clerk (D) — withdrawn
-INSERT INTO essentials.race_candidates (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
-SELECT rid, NULL, v.full_name, v.first_name, v.last_name, false, 'withdrawn', 'county_clerk'
-FROM (
-  SELECT r.id AS rid FROM essentials.races r
-  JOIN essentials.elections e ON r.election_id = e.id
-  WHERE e.name = '2026 Indiana Primary' AND e.election_date = '2026-05-05' AND e.state = 'IN'
-    AND r.position_name = 'Monroe County Clerk' AND r.primary_party = 'Democratic'
-) race,
-(VALUES
-  ('Joe Davis',           'Joe',       'Davis')
 ) AS v(full_name, first_name, last_name)
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
@@ -507,22 +492,6 @@ FROM (
 (VALUES
   ('Levi Combs',           'Levi',     'Combs'),
   ('Leon Gordon',          'Leon',     'Gordon')
-) AS v(full_name, first_name, last_name)
-WHERE NOT EXISTS (
-  SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name
-);
-
--- Perry Township Trustee (D) — withdrawn
-INSERT INTO essentials.race_candidates (race_id, politician_id, full_name, first_name, last_name, is_incumbent, candidate_status, source)
-SELECT rid, NULL, v.full_name, v.first_name, v.last_name, false, 'withdrawn', 'county_clerk'
-FROM (
-  SELECT r.id AS rid FROM essentials.races r
-  JOIN essentials.elections e ON r.election_id = e.id
-  WHERE e.name = '2026 Indiana Primary' AND e.election_date = '2026-05-05' AND e.state = 'IN'
-    AND r.position_name = 'Perry Township Trustee' AND r.primary_party = 'Democratic'
-) race,
-(VALUES
-  ('Eric S. Petry',        'Eric',     'Petry')
 ) AS v(full_name, first_name, last_name)
 WHERE NOT EXISTS (
   SELECT 1 FROM essentials.race_candidates rc WHERE rc.race_id = rid AND rc.full_name = v.full_name

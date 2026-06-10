@@ -56,17 +56,18 @@ Dispatch research agents **in parallel** (use multiple Agent tool calls in one m
 **Source priority (authoritative first):**
 1. **Utah Lt. Governor / state elections candidate filing list** — `vote.utah.gov` / `elections.utah.gov` (the official certified filing list).
 2. **County Clerk candidate lists** — Salt Lake County Clerk (`slco.org/clerk`) and Utah County Clerk (`utahcounty.gov`) for county/local contests.
-3. **Candidate / campaign sites** — for verification and name spelling only.
+3. **Candidate / campaign sites** — for contact info, website URL, and name spelling verification.
 
 For each contest, collect:
 - `position_name` (e.g. `U.S. House District 3`, `Utah State Senate District 8`, `Salt Lake County Council District 2`)
 - `district_type` (see STEP 2 list)
 - `primary_party` (partisan mode only)
 - `seats` (default 1)
-- each candidate's `full_name`, `first_name`, `last_name`, `candidate_status`, and a `source_url`
+- each candidate's `full_name`, `first_name`, `last_name`, `candidate_status`, `campaign_website`, `campaign_email`, and a `source_url`
 
 **Rules for agents:**
 - **Never invent a candidate without a source URL.**
+- **Never fabricate contact info** — leave `campaign_website` / `campaign_email` blank if not found; do not guess or construct URLs.
 - **Exclude withdrawn candidates**, or include them with `candidate_status = withdrawn`.
 - Only research contests in the requested counties + the statewide/federal races those counties vote in.
 
@@ -77,7 +78,7 @@ For each contest, collect:
 Write to `ev-accounts/backend/data/election-research/<DATE>-utah-primary.csv` (e.g. `2026-06-23-utah-primary.csv`) with this header:
 
 ```
-jurisdiction_level,position_name,district_type,primary_party,seats,full_name,first_name,last_name,is_incumbent,candidate_status,politician_id,source_url
+jurisdiction_level,position_name,district_type,primary_party,seats,full_name,first_name,last_name,is_incumbent,candidate_status,politician_id,campaign_website,campaign_email,source_url
 ```
 
 - `primary_party`: `Republican` / `Democratic` in partisan mode; **blank** in nonpartisan mode.
@@ -120,10 +121,10 @@ Show the user a summary table before any DB write:
 ```
 ## Utah Primary Candidates — <DATE>
 
-| Contest | Party | Seats | Candidates | Incumbents matched |
-|---------|-------|-------|-----------|--------------------|
-| U.S. House District 3 | Republican | 1 | 4 | Mike Kennedy (✔ linked) |
-| ... | ... | ... | ... | ... |
+| Contest | Party | Seats | Candidates | Incumbents matched | Campaign sites found |
+|---------|-------|-------|------------|--------------------|----------------------|
+| U.S. House District 3 | Republican | 1 | 4 | Mike Kennedy (✔ linked) | 3 / 4 |
+| ... | ... | ... | ... | ... | ... |
 
 CSV: ev-accounts/backend/data/election-research/<DATE>-utah-primary.csv
 Ambiguous matches needing confirmation: <list, or "none">
@@ -172,6 +173,30 @@ DO UPDATE SET description = EXCLUDED.description, updated_at = now();
 - **Matched incumbent** → `politician_id = '<uuid>'`, `is_incumbent = true`.
 - **Challenger** → `politician_id = NULL`, `is_incumbent = false`, name carried in the candidate row.
 - Set `source` to the data origin (`sos_filing` / `county_clerk` / `manual`).
+
+**Step 4 — Insert contact info** for candidates who have a `politician_id` and a `campaign_website` or `campaign_email`. Use `ON CONFLICT (politician_id, contact_type) DO UPDATE` so re-running is safe:
+
+```sql
+-- campaign website
+INSERT INTO essentials.politician_contacts (politician_id, contact_type, value)
+SELECT '<politician_id>', 'campaign', '<campaign_website>'
+WHERE NOT EXISTS (
+  SELECT 1 FROM essentials.politician_contacts
+  WHERE politician_id = '<politician_id>' AND contact_type = 'campaign'
+);
+
+-- campaign email (if found)
+INSERT INTO essentials.politician_contacts (politician_id, contact_type, value)
+SELECT '<politician_id>', 'campaign', '<campaign_email>'
+WHERE NOT EXISTS (
+  SELECT 1 FROM essentials.politician_contacts
+  WHERE politician_id = '<politician_id>' AND contact_type = 'campaign' AND value ILIKE '%@%'
+);
+```
+
+- Only emit these inserts for rows where the CSV has a non-blank `campaign_website` / `campaign_email`.
+- **Challengers** (`politician_id = NULL`) have no politician record to attach contacts to — store the values in the CSV only; they'll be linked if/when a politician record is created.
+- Do not overwrite an existing `primary` or `office` contact for an incumbent — only add the `campaign` contact type.
 
 End the file with Monroe-style **verification queries as comments** (race count, candidate count per race).
 

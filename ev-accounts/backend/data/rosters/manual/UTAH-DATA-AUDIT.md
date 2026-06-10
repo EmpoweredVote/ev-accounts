@@ -481,7 +481,7 @@ evidence (personal signature + family circulated Prop 4 repeal petition). Half-s
 CSVs: `2026-05-28-ut-topup-{lee,curtis,moore,owens,kennedy,maloy}.csv`
 
 ### Wave 2 — Utah Governor + state executives
-**Status: PENDING — start here in the next session.**
+**Status: COMPLETE (executed 2026-05-28)**
 
 **Officeholders (verified 2026-05-28):**
 | Office | Person |
@@ -537,3 +537,69 @@ After DB push: `GET /api/compass/politicians` should return all 5 new politician
 **Note on address surfacing:** STATE_EXEC politicians surface for all Utah addresses
 (whole-state geofence). Verify this works after inserts if testing essentials address
 search — the Indiana politicians confirm the pattern works in production.
+
+### Wave 2 results (executed 2026-05-28)
+
+**5 STATE_EXEC politicians inserted + stances pushed:**
+
+| Politician | Office | Politician ID | Stances |
+|---|---|---|---|
+| Spencer Cox | Utah Governor | b86213f8-abd8-46e7-80b6-3ae7bd2bf1a6 | 23 |
+| Deidre Henderson | Utah Lieutenant Governor | f72689da-fe02-4bdd-977f-bb7760a42fb2 | 24 |
+| Derek Brown | Utah Attorney General | 1844a5e3-8ea5-4ee5-9377-066378b25b49 | 15 |
+| Marlo Oaks | Utah State Treasurer | 919b82e8-bac3-428f-9896-423832e4538f | 6 |
+| Tina Cannon | Utah State Auditor | 9eac661a-e4c5-4bdf-9883-ee612dab53a8 | 14 |
+
+**Total: 82 stances** (84 researched, 2 dropped for insufficient evidence:
+Cox/campaign-finance — no sources; Cannon/ai-regulation — operational tool use ≠ policy stance).
+
+Districts all use `district_type=STATE_EXEC`, `geo_id='49'`, `state='UT'`,
+`government_id='bd6d107e-2df4-4770-aa0d-155b00c84ce0'` (State of Utah).
+
+CSVs: `data/stance-research/2026-05-28-ut-state-exec-{cox,henderson,brown,oaks,cannon}.csv`
+Push script: `scripts/push-ut-state-exec-stances.ts`
+
+---
+
+## Ward/District + At-Large surfacing pass (2026-05-29)
+
+**Problem:** many UT city/county council members showed a wrong or missing ward/district
+label on their card. Two independent root causes:
+
+**(1) Display — fixed.** The card subtitle was derived only from `district_id` (numeric →
+"District N", `'0'` → "At-Large") or a `' - '` suffix in `office_title`; it ignored the seat
+designation already in `office_title` ("Council Ward 3", "Council District 2 (Chair)",
+"Council At-Large Seat A"). Added `deriveSeatSubtitle()` (scoped to LOCAL/COUNTY), which parses
+the office title for Ward N / District N / At-Large and takes priority over `district_id`, so
+each jurisdiction keeps its own term (SLC/Provo "Ward N"; Ogden/WJ/WVC/SL County "District N").
+Mirrored in `essentials/src/pages/Results.jsx` (committed to main) and
+`ev-ui/src/PoliticianProfile.jsx` (published **ev-ui 0.8.14** → auto-bump consumers).
+
+**(2) At-large signal — fixed.** The 5 all-at-large councils (Layton, Lehi, Orem, Sandy,
+St. George) had `office_title='City Council'` (no marker) + `district_id=NULL`, so nothing
+rendered. Set `district_id='0'` on those 5 LOCAL council district rows (prod) so the at-large
+path fires; made `load-ut-city-rosters.ts` write `'0'` for at-large councils (whole-place
+attachment) durably. SL County at-large seats ("Council At-Large Seat A/B/C") render via the
+office-title parse, no data change. Mayors (LOCAL_EXEC) unaffected.
+
+**(3) Geofence routing — all three done (Ogden, West Jordan, West Valley City).**
+Ogden, WJ, WVC each had all council members lumped onto one whole-city district row with no
+per-district boundary (an address returned *all* members). Sourced real council-district
+polygons and split:
+- **Ogden** (4 districts + 3 at-large): boundaries from Ogden City GIS
+  `data.ogdencity.com/.../Ogden_Municipal_District/FeatureServer/0` (filtered DISTRICTID 1–4).
+- **West Jordan** (4 districts + 3 at-large): boundaries from WJ City GIS org `yznraL2FyB2Sm732`,
+  layer `Council_Districts_22/FeatureServer/5`.
+- **West Valley City** (4 districts + 2 at-large): boundaries from WVC City GIS
+  `gisserver.wvc-ut.gov/.../CityWebsite/CouncilDistrictsCityWebsite/MapServer/0`. (Found via the
+  city's Experience Builder app on `gisportal.wvc-ut.gov` → web map e2a6525fb78540b5b6b8a07ebf80f077.
+  NOTE: the AGOL web map's host `gis.wvc-ut.gov` is IP-restricted/unreachable; `gisserver.wvc-ut.gov`
+  is the reachable one. SL County only publishes WVC *precinct* layers for districts 1 & 3 —
+  unsuitable.)
+- All three wired into `data/arcgis_sources.json` (status `active`, mtfcc X0001,
+  geo_id_template `.../place:<city>/ward:{N}`), imported via `load-arcgis-from-config.ts`
+  (4+4+4 valid polygons). District offices re-pointed to per-ward rows; the old lumped row
+  relabeled "<City> City Council" `district_id='0'` for the at-large seats. TSV `geo_id`
+  columns updated so `load-ut-city-rosters.ts --city <slug>` reproduces the split.
+  Verified end-to-end: an interior point of a ward returns exactly that district member +
+  at-large + mayor (plus the correct SL County council rep for WJ/WVC, which sit in SL County).
