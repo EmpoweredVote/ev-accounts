@@ -21,7 +21,7 @@
 
 - [ ] **VAST-01**: Sourced stances for VA state executives (Governor, Lt. Governor, AG)
 - [x] **VAST-02**: Sourced stances for all 40 VA state senators
-- [ ] **VAST-03**: Sourced stances for all 100 VA House delegates (honest-skip where no documentable evidence)
+- [x] **VAST-03**: Sourced stances for all 100 VA House delegates (honest-skip where no documentable evidence)
 - [ ] **VAST-04**: Sourced stances for 11 VA House reps (federal topics)
 - [x] **VAST-05**: Every new stance paired with `inform.politician_context` containing ≥1 real source URL
 
@@ -68,7 +68,7 @@
 | VAGE-03 | Phase 110 | Pending |
 | VAST-01 | Phase 111 | Pending |
 | VAST-02 | Phase 111 | Complete |
-| VAST-03 | Phase 112 | Pending |
+| VAST-03 | Phase 112 | Complete |
 | VAST-04 | Phase 113 | Pending |
 | VAST-05 | Phase 111, 112, 113 | Complete |
 | VAFI-01 | Phase 113 | Pending |

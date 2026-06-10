@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
 status: executing
-last_updated: "2026-06-10T15:35:40.725Z"
+last_updated: "2026-06-10T16:11:57.898Z"
 last_activity: 2026-06-10
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 19
-  completed_plans: 10
+  completed_plans: 11
   percent: 40
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 ## Current Position
 
 Phase: 112 (va-delegate-stances) — EXECUTING
-Plan: 2 of 10
+Plan: 3 of 10
 Status: Ready to execute
 Last activity: 2026-06-10
 
@@ -111,6 +111,7 @@ Cross-team coordination (2026-06-09):
 | Phase 111-va-state-stances-senators P01 | 90 | 4 tasks | 3 files |
 | Phase 111-va-state-stances-senators P02 | 90 | 4 tasks | 3 files |
 | Phase 111 P02 | 90min | 4 tasks | 3 files |
+| Phase 112 P02 | 120 | 4 tasks | 2 files |
 
 ### v2.10 Phase Dependencies
 
@@ -208,8 +209,8 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-10
-Stopped at: Phase 112 Plan 01 complete — Wave 1 SW VA delegates (all honest-skip), migration 331 applied
+Last session: 2026-06-10T16:11:57.889Z
+Stopped at: Completed 112-02-PLAN.md
 Resume file: None
 
 ## Decisions
@@ -219,6 +220,8 @@ Resume file: None
 - Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
 - 5 honest-skipped senators (Head SD-3, Hackworth SD-5, Mulchi SD-9, Cifers SD-10, Srinivasan SD-32) — no documentable policy positions; VAST-02 satisfied as 35/40 with 5 documented skips
 - Wave 1 SW VA delegates (HD-43–52): all 10 are full honest-skips — no documentable policy positions found; migration 331 applied with 0 rows; VAST-05 trivially satisfied
+- [Phase ?]: Wave 2 non-contiguous IN() range — HD-53/54/55 + HD-37-42 cannot use BETWEEN
+- [Phase ?]: 4 of 9 Wave 2 delegates are honest-skips: Davis/McNamara/Franklin/Ballard — no survey completions
 
 ## Operator Next Steps
 

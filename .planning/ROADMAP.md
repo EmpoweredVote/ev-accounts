@@ -1215,12 +1215,12 @@ Plans:
 
 **Depends on:** Phase 110 (delegate politician records must exist as FK targets)
 **Requirements:** VAST-03, VAST-05
-**Plans:** 1/10 plans executed
+**Plans:** 2/10 plans executed
 Plans:
 **Wave 1**
 
 - [x] 112-01-PLAN.md — Wave 1: Southwest VA HD-43–52 (migration 331)
-- [ ] 112-02-PLAN.md — Wave 2: Southwest HD-53–55 + Central HD-37–42 (migration 332, non-contiguous IN)
+- [x] 112-02-PLAN.md — Wave 2: Southwest HD-53–55 + Central HD-37–42 (migration 332, non-contiguous IN)
 - [ ] 112-03-PLAN.md — Wave 3: Central HD-31–36 + Piedmont East HD-56–59 (migration 333, non-contiguous IN)
 - [ ] 112-04-PLAN.md — Wave 4: Hampton Roads HD-60–69 (migration 334)
 - [ ] 112-05-PLAN.md — Wave 5: Hampton Roads HD-70–75 + Richmond HD-76–79 (migration 335, non-contiguous IN)
@@ -1356,5 +1356,5 @@ Plans:
 | 109. LA County Finance | v2.10 | 4/4 | Complete    | 2026-06-09 |
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
 | 111. VA State Stances - Executives + Senators | v2.10 | 5/5 | Complete    | 2026-06-10 |
-| 112. VA Delegate Stances | v2.10 | 1/10 | In Progress|  |
+| 112. VA Delegate Stances | v2.10 | 2/10 | In Progress|  |
 | 113. VA Federal Stances + Finance | v2.10 | 0/? | Not started | - |
