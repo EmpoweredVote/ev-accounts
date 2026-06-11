@@ -22,7 +22,7 @@
 - ✅ **v2.7 Source Integrity** — Phases 100–104 (shipped 2026-06-07)
 - ✅ **v2.8 District of Columbia Coverage** — Phases 105–107 (shipped 2026-06-08)
 - ✅ **v2.9 LA County Expansion** — Phase 108 (shipped 2026-06-08)
-- [ ] **v2.10 Virginia Coverage + LA County Finance** — Phases 109–113 (in progress)
+- ✅ **v2.10 Virginia Coverage + LA County Finance** — Phases 109–113 (shipped 2026-06-11)
 
 ## Phases
 
@@ -1139,7 +1139,18 @@ Plans:
 
 ---
 
-### v2.10 Virginia Coverage + LA County Finance (Phases 109-113)
+<details>
+<summary>✅ v2.10 Virginia Coverage + LA County Finance (Phases 109–113) — SHIPPED 2026-06-11</summary>
+
+- [x] Phase 109: LA County Finance (4/4 plans) — completed 2026-06-09
+- [x] Phase 110: VA Official Records + Geofencing (no formal plans, tracked in STATE.md) — completed 2026-06-09
+- [x] Phase 111: VA State Stances - Senators (5/5 plans) — completed 2026-06-10
+- [x] Phase 112: VA Delegate Stances (10/10 plans) — completed 2026-06-11
+- [x] Phase 113: VA Federal Stances + Finance (2/2 plans) — completed 2026-06-11
+
+Full details: `.planning/milestones/v2.10-ROADMAP.md`
+
+Known gap: VAST-01 (VA state executives) deferred cross-team to Essentials Phase 106.
 
 ---
 
@@ -1265,6 +1276,8 @@ Plans:
 3. All 11 VA federal House reps have non-null `finance_summary` on `essentials.politicians` with FEC data (total raised, total spent, cash on hand, cycle) fetched via the existing FEC ingestion script.
 4. VPAP (vpap.org) is assessed for VA Governor, Lt. Governor, AG, and state senators — finance data ingested where machine-readable structured data is accessible; non-machine-readable sources documented as findings (consistent with DC OCF pattern for VAFI-02).
 
+</details>
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -1362,7 +1375,7 @@ Plans:
 | 107. DC Finance | v2.8 | 1/1 | Complete    | 2026-06-08 |
 | 108. LA County City Officials | v2.9 | 5/5 | Complete | 2026-06-08 |
 | 109. LA County Finance | v2.10 | 4/4 | Complete    | 2026-06-09 |
-| 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
-| 111. VA State Stances - Executives + Senators | v2.10 | 5/5 | Complete    | 2026-06-10 |
-| 112. VA Delegate Stances | v2.10 | 5/10 | In Progress|  |
+| 110. VA Official Records + Geofencing | v2.10 | — | Complete | 2026-06-09 |
+| 111. VA State Stances - Senators | v2.10 | 5/5 | Complete | 2026-06-10 |
+| 112. VA Delegate Stances | v2.10 | 10/10 | Complete | 2026-06-11 |
 | 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
