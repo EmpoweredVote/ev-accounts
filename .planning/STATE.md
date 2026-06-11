@@ -9,8 +9,8 @@ progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 19
-  completed_plans: 14
-  percent: 40
+  completed_plans: 17
+  percent: 56
 ---
 
 # Project State
@@ -26,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 ## Current Position
 
 Phase: 112 (va-delegate-stances) — EXECUTING
-Plan: 6 of 10
-Status: Ready to execute
+Plan: 8 of 10
+Status: Ready to execute (plans 09 and 10 remaining)
 Last activity: 2026-06-10
 
 ### Phase 110 Status (as of 2026-06-09)

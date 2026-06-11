@@ -1215,7 +1215,7 @@ Plans:
 
 **Depends on:** Phase 110 (delegate politician records must exist as FK targets)
 **Requirements:** VAST-03, VAST-05
-**Plans:** 5/10 plans executed
+**Plans:** 8/10 plans executed
 Plans:
 **Wave 1**
 
@@ -1227,9 +1227,9 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 112-06-PLAN.md — Wave 6: Richmond Metro HD-80–89 (migration 336)
-- [ ] 112-07-PLAN.md — Wave 7: Richmond/Southside Hampton Roads HD-90–100 (migration 337)
-- [ ] 112-08-PLAN.md — Wave 8: NoVA Outer Suburbs HD-17–30, HD-20 Vacant skip (migration 338)
+- [x] 112-06-PLAN.md — Wave 6: Richmond Metro HD-80–89 (migration 336) — completed 2026-06-10
+- [x] 112-07-PLAN.md — Wave 7: Richmond/Southside Hampton Roads HD-90–100 (migration 337) — completed 2026-06-10
+- [x] 112-08-PLAN.md — Wave 8: NoVA Outer Suburbs HD-17–30, HD-20 Vacant skip (migration 338) — completed 2026-06-10
 - [ ] 112-09-PLAN.md — Wave 9: NoVA Core HD-1–10 (migration 339)
 - [ ] 112-10-PLAN.md — Wave 10: NoVA Fairfax/PW HD-11–16 + phase gate (migration 340)
 
