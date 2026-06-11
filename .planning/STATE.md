@@ -21,14 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 112 — va-delegate-stances (all 10 plans complete, running verification); Phase 113 VAST-04/VAST-05 done
+**Current focus:** Phase 113 — va-federal-stances (VAFI-01 FEC finance + VAFI-02 VPAP assessment remaining)
 **Last shipped:** v2.9 LA County Expansion — Phase 108, shipped 2026-06-08. All 6 requirements closed (LAOF-01–06). Archive: .planning/milestones/v2.9-ROADMAP.md.
 
 ## Current Position
 
-Phase: 112 (va-delegate-stances) — VERIFYING
-Plan: 10 of 10
-Status: All plans complete — running verification
+Phase: 112 (va-delegate-stances) — COMPLETE ✅ 2026-06-11
+Phase: 113 (va-federal-stances) — IN PROGRESS (VAST-04 ✅ VAST-05 ✅ pending VAFI-01 VAFI-02)
 Last activity: 2026-06-11
 
 Phase 113 (va-federal-stances) — PARTIAL
@@ -238,5 +237,5 @@ Resume file: None
 
 ## Operator Next Steps
 
-- Phase 112 verification in progress — VAST-03 closed (297 stances, 68/100 delegates), VAST-05 closed (0 unsourced)
-- Complete Phase 113: VAFI-01 (FEC finance for 11 VA House reps) + VAFI-02 (VPAP assessment)
+- Phase 112 COMPLETE — VAST-03 closed (297 stances, 68/100 delegates, 32 honest-skips), VAST-05 closed (0 unsourced)
+- Next: Phase 113 — VAFI-01 (FEC finance for 11 VA House reps) + VAFI-02 (VPAP assessment)
