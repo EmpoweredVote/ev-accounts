@@ -14,6 +14,12 @@ export type BoundaryResponse = BoundaryResult | { hasBoundary: false };
  * Simplified constituency geometry for the Read & Rank motif, keyed by TIGER
  * MTFCC + geo_id. Returns { hasBoundary: false } when absent so the frontend
  * falls back to the dot-field. Tolerance ~0.001 deg suits a ~64px render.
+ *
+ * Antimeridian handling: geometries that cross 180 deg longitude (Alaska's
+ * Aleutians, and the US union that contains them) otherwise report a ~359 deg
+ * envelope, which the frontend projects as a near-global sliver. When the
+ * envelope spans more than 180 deg we ST_ShiftLongitude into the 0..360 frame
+ * so the bbox and path stay tight and compact. Normal boundaries are untouched.
  */
 export async function getBoundary(layer: string, geoid: string): Promise<BoundaryResponse> {
   const { rows } = await pool.query<{
@@ -21,13 +27,20 @@ export async function getBoundary(layer: string, geoid: string): Promise<Boundar
     minx: number | null; miny: number | null; maxx: number | null; maxy: number | null;
     geojson: string | null;
   }>(
-    `SELECT geo_id, mtfcc, name,
-            ST_XMin(ST_Envelope(geometry)) AS minx, ST_YMin(ST_Envelope(geometry)) AS miny,
-            ST_XMax(ST_Envelope(geometry)) AS maxx, ST_YMax(ST_Envelope(geometry)) AS maxy,
-            ST_AsGeoJSON(ST_SimplifyPreserveTopology(geometry, 0.001)) AS geojson
-     FROM essentials.geofence_boundaries
-     WHERE mtfcc = $1 AND geo_id = $2
-     LIMIT 1`,
+    `WITH b AS (
+       SELECT geo_id, mtfcc, name,
+              CASE WHEN (ST_XMax(geometry) - ST_XMin(geometry)) > 180
+                   THEN ST_ShiftLongitude(geometry)
+                   ELSE geometry END AS geom
+       FROM essentials.geofence_boundaries
+       WHERE mtfcc = $1 AND geo_id = $2
+       LIMIT 1
+     )
+     SELECT geo_id, mtfcc, name,
+            ST_XMin(ST_Envelope(geom)) AS minx, ST_YMin(ST_Envelope(geom)) AS miny,
+            ST_XMax(ST_Envelope(geom)) AS maxx, ST_YMax(ST_Envelope(geom)) AS maxy,
+            ST_AsGeoJSON(ST_SimplifyPreserveTopology(geom, 0.001)) AS geojson
+     FROM b`,
     [layer, geoid],
   );
 
