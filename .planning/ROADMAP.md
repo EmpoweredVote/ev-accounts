@@ -1179,7 +1179,11 @@ Plans:
 
 **Depends on:** Nothing (foundation phase; Phases 111-113 depend on this)
 **Requirements:** VAIN-01, VAIN-02, VAIN-03, VAGE-01, VAGE-02, VAGE-03
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 113-01-PLAN.md — Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
+- [ ] 113-02-PLAN.md — FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1248,7 +1252,11 @@ Plans:
 
 **Depends on:** Phase 110 (VA federal House rep politician records must exist as FK targets)
 **Requirements:** VAST-04, VAST-05, VAFI-01, VAFI-02
-**Plans:** TBD
+**Plans:** 2 plans
+
+Plans:
+- [ ] 113-01-PLAN.md — Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
+- [ ] 113-02-PLAN.md — FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
 
 **Success Criteria** (what must be TRUE):
 
