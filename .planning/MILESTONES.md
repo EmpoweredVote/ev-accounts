@@ -1,5 +1,33 @@
 # Project Milestones: Empowered Accounts
 
+## v2.10 Virginia Coverage + LA County Finance (Shipped: 2026-06-11)
+
+**Delivered:** Full Virginia civic data layer + LA County Finance closure — 100 House delegates + 11 federal House reps seeded, TIGER 2024 SLDL/SLDU polygons imported for VA Path 0 geofencing, sourced stances for 40 state senators + 68/100 delegates + 11 federal House reps, 11/11 FEC finance_summary populated, VPAP HTML-only documented; plus 192 LA City officials with CAL-ACCESS finance data.
+
+**Phases completed:** 5 phases (109–113), 21 formal plans (Phase 110 informal)
+
+**Key accomplishments:**
+
+- LA County Finance: 192 LA City officials finance_summary via CAL-ACCESS/Socrata (8-assertion gate PASS); Netfile probed 26 cities — zero-contribution API gap documented; Patrice Lattimore appointed-official NULL documented
+- VA Official Records + Geofencing: 100 House delegates (migration 319) + 11 federal reps (migration 311) + 3 state execs (316/317); TIGER 2024 SLDL (100 polygons) + SLDU (40 polygons) imported; tiger_geoid backfilled (migration 321) — VA Path 0 live
+- VA State Senators: 40 senators researched — 35 with sourced stances (migrations 326–330); 5 honest-skips (Head/Hackworth/Mulchi/Cifers/Srinivasan); MA politician gap-fill bundled (migrations 359–371)
+- VA Delegate Stances: 68/100 delegates with sourced stances (297 rows), 32 honest-skips across 10 waves (migrations 331–340); Wave 1 SW VA all 10 honest-skips; full NoVA sweep no skips
+- VA Federal Stances + Finance: 11 VA House reps — 105 stance rows (migration 341); 11/11 FEC finance_summary; politician_sources crosswalk fix for 5 informal-name reps; VPAP vpap-documented
+
+**Stats:**
+
+- 5 phases (109–113), 21 formal plans
+- 210 files changed (+69,917/−460 LOC)
+- 4 days (2026-06-08 → 2026-06-11)
+
+**Git range:** `734f6637` → `69a62534`
+
+**Requirements closed:** VAIN-01, VAIN-02, VAIN-03, VAGE-01, VAGE-02, VAGE-03, VAST-02, VAST-03, VAST-04, VAST-05, VAFI-01, VAFI-02, LAFI-01, LAFI-02 (14/15 ✓)
+
+**Known gaps:** VAST-01 (VA state executives) — deferred cross-team to Essentials Phase 106
+
+---
+
 ## v2.9 LA County Expansion (Shipped: 2026-06-08)
 
 **Delivered:** Complete LA County civic data layer — full elected governing bodies for 27 cities across 4 waves: gap-fill for 14 partial Tier 1 cities, Beverly Hills + Santa Monica structure completion + LA City Controller + Clerk, 10 new cities built from scratch, plus a phase gate SQL script (8 assertions) and smoke test confirming representatives-me surfaces all Phase 108 officials.
