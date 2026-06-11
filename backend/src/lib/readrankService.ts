@@ -104,6 +104,9 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5200: 'district',  // congressional
   G5210: 'district',  // state senate
   G5220: 'district',  // state house / assembly / ward
+  G5400: 'district',  // elementary school district
+  G5410: 'district',  // secondary school district
+  G5420: 'district',  // unified school district
 };
 
 /** Tier from jurisdiction_level; scope prefers the mtfcc geometry class, else position name. */

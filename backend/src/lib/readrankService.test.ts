@@ -26,6 +26,10 @@ describe('deriveTierScope', () => {
     expect(deriveTierScope({ jurisdiction_level: 'federal', position_name: 'U.S. House', mtfcc: 'G5200' }))
       .toEqual({ tier: 'federal', scope: 'district' });
   });
+  it('G5420 school district -> local/district', () => {
+    expect(deriveTierScope({ jurisdiction_level: 'local', position_name: 'School Board', mtfcc: 'G5420' }))
+      .toEqual({ tier: 'local', scope: 'district' });
+  });
   it('G4020 -> local/county', () => {
     expect(deriveTierScope({ jurisdiction_level: 'county', position_name: 'County Commission', mtfcc: 'G4020' }))
       .toEqual({ tier: 'local', scope: 'county' });
