@@ -23,6 +23,7 @@
 - ✅ **v2.8 District of Columbia Coverage** — Phases 105–107 (shipped 2026-06-08)
 - ✅ **v2.9 LA County Expansion** — Phase 108 (shipped 2026-06-08)
 - ✅ **v2.10 Virginia Coverage + LA County Finance** — Phases 109–113 (shipped 2026-06-11)
+- 🔄 **v2.11 FEC Finance Completion + US House Geofencing** — Phases 114–116 (in progress)
 
 ## Phases
 
@@ -1278,7 +1279,61 @@ Plans:
 
 </details>
 
+### v2.11 FEC Finance Completion + US House Geofencing (Phases 114–116)
+
+---
+
+#### Phase 114: fec-script-fix-and-sitting-members
+
+**Goal:** The FEC ingestion script correctly resolves finance data for all previously-matched sitting members — committee lookup failures are patched, and LaMalfa/Swalwell are identified via direct FEC name search and ingested, reducing the NULL `finance_summary` count from ~40 to ~34.
+
+**Depends on:** Nothing (script fix is self-contained; FEC API accessible directly)
+**Requirements:** FECF-01, FECF-02, FECF-03
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. `fix-fec-name-mismatches.ts` runs end-to-end without errors — the committee lookup fallback (`GET /v1/candidate/{id}/committees/`) and prior-cycle retry (2026 → 2024 → 2022) are exercised and resolve data for Ivey, Self, Warnock, and Cruz.
+2. `essentials.politicians.finance_summary` is non-null for Glenn Ivey, Keith Self, Raphael Warnock, and Ted Cruz — each record shows total raised, total spent, cash on hand, and cycle from FEC.
+3. Doug LaMalfa and Eric Swalwell each have a non-null `finance_summary` and a `politician_sources` row with `research_status = 'confirmed'` written by the script after direct FEC name search resolves their candidate IDs.
+4. `SELECT COUNT(*) FROM essentials.politicians WHERE finance_summary IS NULL` (federal politicians scope) drops from ~40 to approximately 34 after script run — measurable reduction confirming net progress.
+
+---
+
+#### Phase 115: senate-candidate-fec-research
+
+**Goal:** Every reachable 2026 Senate candidate in the DB has a populated `finance_summary`; Paul Strauss and Ankit Jain are explicitly marked not_applicable; the NULL count for federal politicians reaches ≤ 2 (only candidates with genuinely no FEC presence remain).
+
+**Depends on:** Phase 114 (script fixes must be in place before running candidate batch; NULL baseline established)
+**Requirements:** FECF-04, FECF-05
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. Every 2026 Senate candidate in the DB who has an FEC filing has a non-null `finance_summary` — count of senate candidates with NULL `finance_summary` returns ≤ 2 after ingestion.
+2. `politician_sources` rows exist for every candidate processed — each row records the FEC candidate ID, confirmation status, and cycle used.
+3. Paul Strauss and Ankit Jain each have a `politician_sources` row with `research_status = 'not_applicable'` and a notes field explaining that DC Shadow Senators do not file campaign finance reports with the FEC.
+4. No `finance_summary` field is populated with fabricated or inferred data — every populated entry is traceable to a real FEC API response.
+
+---
+
+#### Phase 116: national-us-house-tiger
+
+**Goal:** All 435 US congressional districts exist as TIGER polygon rows in `essentials.geo_districts` (us_house layer) and every `NATIONAL_LOWER` district record has `tiger_geoid` populated — any user in any US state resolves to their correct House rep via Path 0 with no live PostGIS lookup.
+
+**Depends on:** Nothing (TIGER import is independent of FEC work; CA rows already present via ON CONFLICT guard)
+**Requirements:** UHGE-01, UHGE-02, UHGE-03
+**Plans:** TBD
+
+**Success Criteria** (what must be TRUE):
+
+1. `SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'us_house'` returns 435 — all 435 CD119 congressional district polygons are imported; existing CA rows (52) are preserved with no data loss via `ON CONFLICT DO NOTHING`.
+2. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'NATIONAL_LOWER' AND tiger_geoid IS NULL` returns 0 — every House district record across all states has `tiger_geoid` backfilled for the dual-column Path 0 join.
+3. `GET /api/essentials/representatives/me` for a user with a stored TX (or NY) congressional district returns the correct House representative via the `tiger_geoid` join — confirming the national us_house layer is live and Path 0 resolves outside CA.
+
 ## Progress
+
+
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
@@ -1379,3 +1434,6 @@ Plans:
 | 111. VA State Stances - Senators | v2.10 | 5/5 | Complete | 2026-06-10 |
 | 112. VA Delegate Stances | v2.10 | 10/10 | Complete | 2026-06-11 |
 | 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
+| 114. fec-script-fix-and-sitting-members | v2.11 | 0/? | Not started | — |
+| 115. senate-candidate-fec-research | v2.11 | 0/? | Not started | — |
+| 116. national-us-house-tiger | v2.11 | 0/? | Not started | — |

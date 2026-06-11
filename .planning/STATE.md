@@ -7,7 +7,7 @@ stopped_at: ~
 last_updated: "2026-06-11T00:00:00.000Z"
 last_activity: 2026-06-11
 progress:
-  total_phases: 0
+  total_phases: 3
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 113 — va-federal-stances (VAFI-01 FEC finance + VAFI-02 VPAP assessment remaining)
-**Last shipped:** v2.9 LA County Expansion — Phase 108, shipped 2026-06-08. All 6 requirements closed (LAOF-01–06). Archive: .planning/milestones/v2.9-ROADMAP.md.
+**Current focus:** Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03)
+**Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-06-11 — Milestone v2.11 started
+Phase: 114 — fec-script-fix-and-sitting-members
+Plan: TBD
+Status: Not started
+Last activity: 2026-06-11 — Milestone v2.11 roadmap created
 
 Phase 113 (va-federal-stances) — COMPLETE ✅
 VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
@@ -239,5 +239,16 @@ Resume file: None
 
 ## Operator Next Steps
 
-- Phase 112 COMPLETE — VAST-03 closed (297 stances, 68/100 delegates, 32 honest-skips), VAST-05 closed (0 unsourced)
-- Next: Phase 113 — VAFI-01 (FEC finance for 11 VA House reps) + VAFI-02 (VPAP assessment)
+- Phase 113 COMPLETE — VAFI-01 (11/11 VA House reps FEC finance_summary), VAFI-02 (VPAP assessed, HTML-only, documented)
+- v2.10 SHIPPED 2026-06-11 — 5 phases (109–113), 14/15 requirements closed
+- v2.11 STARTED — roadmap created with 3 phases
+- Next: Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03)
+  - Fix committee lookup fallback in fix-fec-name-mismatches.ts
+  - Populate finance_summary for Ivey/Self/Warnock/Cruz (4 already-matched politicians)
+  - Resolve LaMalfa/Swalwell via direct FEC name search; write politician_sources rows
+- Then: Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
+  - Research FEC IDs for ~32 2026 Senate candidates; batch ingest finance_summary
+  - Mark Paul Strauss + Ankit Jain as not_applicable in politician_sources
+- Then: Phase 116 — national-us-house-tiger (UHGE-01, UHGE-02, UHGE-03)
+  - Download TIGER 2024 tl_2024_us_cd119.zip; import all 435 polygons (ON CONFLICT for CA)
+  - Backfill tiger_geoid on all NATIONAL_LOWER districts; verify Path 0 for TX/NY address
