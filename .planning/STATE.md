@@ -3,14 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.10
 milestone_name: Virginia Coverage + LA County Finance
 status: executing
-last_updated: "2026-06-10T21:04:27.673Z"
-last_activity: 2026-06-10
+stopped_at: ~
+last_updated: "2026-06-11T02:30:00.000Z"
+last_activity: 2026-06-11
 progress:
-  total_phases: 5
+  total_phases: 45
   completed_phases: 2
   total_plans: 19
-  completed_plans: 17
-  percent: 56
+  completed_plans: 23
+  percent: 4
 ---
 
 # Project State
@@ -20,15 +21,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 112 — va-delegate-stances
+**Current focus:** Phase 112 — va-delegate-stances (plans 09–10 remaining); Phase 113 VAST-04/VAST-05 done
 **Last shipped:** v2.9 LA County Expansion — Phase 108, shipped 2026-06-08. All 6 requirements closed (LAOF-01–06). Archive: .planning/milestones/v2.9-ROADMAP.md.
 
 ## Current Position
 
 Phase: 112 (va-delegate-stances) — EXECUTING
 Plan: 8 of 10
-Status: Ready to execute (plans 09 and 10 remaining)
-Last activity: 2026-06-10
+Status: Plans 09 and 10 remaining
+Last activity: 2026-06-11
+
+Phase 113 (va-federal-stances) — PARTIAL
+VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
+VAST-05 ✅ (Phase 113 portion — all stances paired with context rows, ASSERT passed)
+VAFI-01 ⬜ (FEC finance for 11 VA House reps — not started)
+VAFI-02 ⬜ (VPAP assessment — not started)
 
 ### Phase 110 Status (as of 2026-06-09)
 
@@ -57,7 +64,7 @@ Cross-team coordination (2026-06-09):
 **v2.10 Scope — Virginia Coverage + LA County Finance — IN PROGRESS**
 
 - Phases: 5 (109–113)
-- Requirements: 2/15 closed (VAST-02 ✅, VAST-05 partial ✅)
+- Requirements: 3/15 closed (VAST-02 ✅, VAST-04 ✅, VAST-05 partial ✅)
 - Plans complete: 5 (Phase 111 complete)
 - Started: 2026-06-08
 
@@ -104,7 +111,7 @@ Cross-team coordination (2026-06-09):
 | VAST-01 | TBD | Sourced stances for VA state executives (Governor, Lt. Governor, AG) — descoped from Phase 111 |
 | VAST-02 ✅ | 111 | Sourced stances for all 40 VA state senators (35 with rows + 5 honest-skips) — complete |
 | VAST-03 | 112 | Sourced stances for all 100 VA House delegates (honest-skip where no documentable evidence) |
-| VAST-04 | 113 | Sourced stances for 11 VA House reps (federal topics) |
+| VAST-04 ✅ | 113 | Sourced stances for 11 VA House reps (federal topics) — migration 341, 105 rows |
 | VAST-05 | 111, 112, 113 | Every new stance paired with inform.politician_context containing at least one real source URL |
 | VAFI-01 | 113 | FEC finance_summary fetched and stored for all 11 VA House reps |
 | VAFI-02 | 113 | VPAP data assessed for VA state officials; finance data ingested where machine-readable |
@@ -210,8 +217,8 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-10T21:04:27.664Z
-Stopped at: Completed 112-02-PLAN.md
+Last session: 2026-06-11T00:44:23.419Z
+Stopped at: context exhaustion at 75% (2026-06-11)
 Resume file: None
 
 ## Decisions
@@ -225,8 +232,12 @@ Resume file: None
 - [Phase ?]: 4 of 9 Wave 2 delegates are honest-skips: Davis/McNamara/Franklin/Ballard — no survey completions
 - [Phase ?]: Wave 3 Justin L. Pence (HD-33) honest-skip — newly elected 2025, no documentable record
 - [Phase ?]: Wave 3 Hyland F. Fowler Jr. (HD-59) Family Foundation scorecard only — Ballotpedia blocked
+- [Phase 113]: Vindman (VA-07), McGuire (VA-09), Subramanyam (VA-10) limited to 1-2 stances each — sworn Jan 2025, very limited federal record; all remaining topics honest-skipped per no-party-inference constraint
+- [Phase 113]: Walkinshaw (VA-11) limited to 7 stances — special election Sept 2025, fewer months of federal record
+- [Phase 113]: Migration 341 file = 20260610000011_341_va_federal_reps_stances.sql; applied via execute_sql (not apply_migration)
 
 ## Operator Next Steps
 
-- Continue Phase 112: next wave is Plan 02 (HD-53–55 + HD-37–42, Southwest + Central VA)
-- Run: `/gsd-execute-phase 112` or target plan 02 directly
+- Continue Phase 112: plans 09 and 10 remaining (HD-?? waves)
+- Then complete Phase 113: VAFI-01 (FEC finance for 11 VA House reps) + VAFI-02 (VPAP assessment)
+- Run: `/gsd-execute-phase 112` targeting plan 09
