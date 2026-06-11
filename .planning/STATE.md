@@ -27,15 +27,15 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 ## Current Position
 
 Phase: 112 (va-delegate-stances) — COMPLETE ✅ 2026-06-11
-Phase: 113 (va-federal-stances) — EXECUTING (Wave 2 of 2 — FEC finance + VPAP assessment)
+Phase: 113 (va-federal-stances) — COMPLETE ✅ 2026-06-11
 Last activity: 2026-06-11
 
-Phase 113 (va-federal-stances) — EXECUTING (Wave 2 of 2)
+Phase 113 (va-federal-stances) — COMPLETE ✅
 VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
-VAST-05 ✅ (Phase 113 portion — all stances paired with context rows, ASSERT passed)
-VAFI-01 ⬜ (FEC finance for 11 VA House reps — 113-02-PLAN.md executing)
-VAFI-02 ⬜ (VPAP assessment — 113-02-PLAN.md executing, human checkpoint pending)
-Plans: 113-01-PLAN.md ✅ (SQL gate complete — verify-va-federal-113.sql committed), 113-02-PLAN.md ⬜ (Wave 2)
+VAST-05 ✅ (all stances paired with context rows, 0 missing context)
+VAFI-01 ✅ (11/11 VA House reps FEC finance_summary populated — source=FEC, cycle=2026)
+VAFI-02 ✅ (VPAP assessed 2026-06-11 — HTML-only, no API/CSV, documented per REQUIREMENTS.md)
+Plans: 113-01-PLAN.md ✅, 113-02-PLAN.md ✅
 
 ### Phase 110 Status (as of 2026-06-09)
 
