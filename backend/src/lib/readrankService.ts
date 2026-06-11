@@ -39,6 +39,11 @@ export interface RaceSummary {
   candidateCount: number;
   topicCount: number;
   isLocal: boolean;
+  quoteCount: number;
+  rankableTopicCount: number;
+  tier: 'federal' | 'state' | 'local';
+  scope: 'statewide' | 'district' | 'county' | 'citywide';
+  boundaryRef: { layer: string; geoid: string } | null;
 }
 
 export interface BlindQuote {
@@ -88,18 +93,76 @@ export interface RevealResult {
 // 1. Playable races
 // ---------------------------------------------------------------------------
 
+type Tier = 'federal' | 'state' | 'local';
+type Scope = 'statewide' | 'district' | 'county' | 'citywide';
+
+const MTFCC_SCOPE: Record<string, Scope> = {
+  G4000: 'statewide', // whole state
+  G4020: 'county',
+  G4040: 'district',  // county subdivision / township
+  G4110: 'citywide',  // incorporated place
+  G5200: 'district',  // congressional
+  G5210: 'district',  // state senate
+  G5220: 'district',  // state house / assembly / ward
+};
+
+/** Tier from jurisdiction_level; scope prefers the mtfcc geometry class, else position name. */
+export function deriveTierScope(input: {
+  jurisdiction_level: string | null;
+  position_name: string;
+  mtfcc: string | null;
+}): { tier: Tier; scope: Scope } {
+  const jl = (input.jurisdiction_level ?? '').toLowerCase();
+  const tier: Tier = /fed|congress|national/.test(jl)
+    ? 'federal'
+    : jl === 'state'
+      ? 'state'
+      : 'local';
+
+  let scope: Scope | undefined = input.mtfcc ? MTFCC_SCOPE[input.mtfcc] : undefined;
+  if (input.mtfcc && input.mtfcc.startsWith('X')) scope = 'district'; // custom council/ward layers
+  if (!scope) {
+    const n = input.position_name.toLowerCase();
+    if (/county commission|board of supervisors|county council|sheriff|\bcounty\b/.test(n)) scope = 'county';
+    else if (/mayor|city of /.test(n)) scope = 'citywide';
+    else if (/council|ward|\bdistrict\b|house|assembly|representative|senate district/.test(n)) scope = 'district';
+    else scope = tier === 'local' ? 'citywide' : 'statewide';
+  }
+  return { tier, scope };
+}
+
 export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSummary[]> {
   const { rows } = await pool.query<{
     race_id: string; position_name: string; election_id: string; election_name: string;
     election_date: Date | null; jurisdiction_level: string | null; state: string | null;
-    candidate_count: string; topic_count: string; politician_ids: string[];
+    boundary_layer: string | null; boundary_geoid: string | null;
+    candidate_count: string; topic_count: string; quote_count: string; rankable_topic_count: string;
+    politician_ids: string[];
   }>(`
     SELECT r.id AS race_id, r.position_name,
            e.id AS election_id, e.name AS election_name, e.election_date,
            e.jurisdiction_level, e.state,
-           COUNT(DISTINCT rc.politician_id)        AS candidate_count,
-           COUNT(DISTINCT lower(q.topic_key))      AS topic_count,
-           array_agg(DISTINCT rc.politician_id)    AS politician_ids
+           d.mtfcc AS boundary_layer,
+           COALESCE(d.geo_id, d.tiger_geoid) AS boundary_geoid,
+           COUNT(DISTINCT rc.politician_id)   AS candidate_count,
+           COUNT(DISTINCT lower(q.topic_key)) AS topic_count,
+           COUNT(q.id)                        AS quote_count,
+           (
+             SELECT COUNT(*) FROM (
+               SELECT lower(q2.topic_key) AS tk
+               FROM essentials.race_candidates rc2
+               JOIN essentials.quotes q2
+                 ON q2.politician_id = rc2.politician_id
+                AND q2.deidentified_text IS NOT NULL AND q2.readrank_selected = true
+               JOIN inform.compass_topics ct2
+                 ON ct2.topic_key = lower(q2.topic_key) AND ct2.is_live = true
+               WHERE rc2.race_id = r.id
+                 AND COALESCE(rc2.candidate_status, 'active') <> 'withdrawn'
+               GROUP BY lower(q2.topic_key)
+               HAVING COUNT(DISTINCT rc2.politician_id) >= 2
+             ) rankable
+           )                                  AS rankable_topic_count,
+           array_agg(DISTINCT rc.politician_id) AS politician_ids
     FROM essentials.races r
     JOIN essentials.elections e ON e.id = r.election_id
     JOIN essentials.race_candidates rc
@@ -112,23 +175,40 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
      AND q.readrank_selected = true
     JOIN inform.compass_topics ct
       ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
-    GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state
+    LEFT JOIN essentials.offices o ON o.id = r.office_id
+    LEFT JOIN essentials.districts d ON d.id = o.district_id
+    GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
+             d.mtfcc, COALESCE(d.geo_id, d.tiger_geoid)
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
     ORDER BY e.election_date ASC NULLS LAST
   `);
 
   const localSet = new Set(politicianIds ?? []);
-  return rows.map((r) => ({
-    raceId: r.race_id,
-    positionName: r.position_name,
-    electionName: r.election_name,
-    electionDate: r.election_date ? new Date(r.election_date).toISOString().slice(0, 10) : null,
-    state: r.state,
-    jurisdictionLevel: r.jurisdiction_level,
-    candidateCount: Number(r.candidate_count),
-    topicCount: Number(r.topic_count),
-    isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
-  }));
+  return rows.map((r) => {
+    const { tier, scope } = deriveTierScope({
+      jurisdiction_level: r.jurisdiction_level,
+      position_name: r.position_name,
+      mtfcc: r.boundary_layer,
+    });
+    return {
+      raceId: r.race_id,
+      positionName: r.position_name,
+      electionName: r.election_name,
+      electionDate: r.election_date ? new Date(r.election_date).toISOString().slice(0, 10) : null,
+      state: r.state,
+      jurisdictionLevel: r.jurisdiction_level,
+      candidateCount: Number(r.candidate_count),
+      topicCount: Number(r.topic_count),
+      quoteCount: Number(r.quote_count),
+      rankableTopicCount: Number(r.rankable_topic_count),
+      tier,
+      scope,
+      boundaryRef: r.boundary_layer && r.boundary_geoid
+        ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
+        : null,
+      isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
+    };
+  });
 }
 
 // ---------------------------------------------------------------------------
