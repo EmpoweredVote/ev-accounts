@@ -1289,7 +1289,11 @@ Plans:
 
 **Depends on:** Nothing (script fix is self-contained; FEC API accessible directly)
 **Requirements:** FECF-01, FECF-02, FECF-03
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+
+- [ ] 114-01-PLAN.md — Patch fix-fec-name-mismatches.ts with committee fallback + multi-cycle totals + LaMalfa/Swalwell direct search; run live (FECF-01, FECF-02, FECF-03)
 
 **Success Criteria** (what must be TRUE):
 
