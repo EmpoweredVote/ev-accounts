@@ -1,17 +1,17 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.10
-milestone_name: Virginia Coverage + LA County Finance
-status: archived
-stopped_at: milestone complete (2026-06-11)
+milestone: v2.11
+milestone_name: FEC Finance Completion + US House Geofencing
+status: planning
+stopped_at: ~
 last_updated: "2026-06-11T00:00:00.000Z"
 last_activity: 2026-06-11
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 21
-  completed_plans: 21
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -26,9 +26,10 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 ## Current Position
 
-Phase: 112 (va-delegate-stances) — COMPLETE ✅ 2026-06-11
-Phase: 113 (va-federal-stances) — COMPLETE ✅ 2026-06-11
-Last activity: 2026-06-11
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-11 — Milestone v2.11 started
 
 Phase 113 (va-federal-stances) — COMPLETE ✅
 VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)

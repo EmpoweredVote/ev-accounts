@@ -134,7 +134,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.10 in progress):** ~80,000 lines of TypeScript (project-wide). 111 phases, 20+ plans total. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–330 applied to production. 21 live compass topics, ~1,188 politicians with data (~1,148 + 40 VA state senators), full role system live. CA + DC + VA TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs in DB (phases 110–111). inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians + Eleanor Holmes Norton. Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities now have full elected governing bodies.
+**Current state (v2.11 starting):** ~80,000 lines of TypeScript (project-wide). 113 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–341 applied to production. 21 live compass topics, ~1,188+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians (40 NULL — target for v2.11). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -215,16 +215,18 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
-## Current Milestone: v2.10 Virginia Coverage + LA County Finance
+## Current Milestone: v2.11 FEC Finance Completion + US House Geofencing
 
-**Goal:** Complete Virginia's full civic data layer — official records, geofencing, stances, and finance — while closing the LA County Finance gap deferred from v2.9.
+**Goal:** Close all addressable FEC finance gaps and extend US House geofencing to all 50 states — every federal House rep becomes geofenceable via Path 0 and every politician with available FEC data has a populated finance_summary.
 
 **Target features:**
-- VA Official Records — 100 House delegates (migration 308) + 11 federal House reps (migration 311); state executives + 40 senators already committed
-- VA TIGER Geofencing — SLDL + SLDU boundary polygons imported for Path 0 geofencing of VA users
-- VA Stances — sourced stances for all VA officials (executives, senators, delegates, federal reps) using Chair methodology
-- VA Campaign Finance — FEC data for VA House reps; VPAP assessment for state officials; finance_summary JSONB column already exists
-- LA County Finance — CAL-ACCESS + Netfile ingestion for ~72 LA County city officials seeded in Phase 108
+- FEC Script Fix — committee lookup fallback to `/candidate/{id}/committees/` + prior-cycle support for senators not running in current cycle
+- FEC Finance for Matched Politicians — populate finance_summary for the 4 already-matched politicians (Ivey, Self, Warnock, Cruz)
+- LaMalfa + Swalwell — direct FEC API name search for 2 sitting House members missing from congress-legislators YAML
+- Senate Candidate FEC Research — direct FEC lookup + batch ingestion for ~32 Senate candidates with FEC filings but not in YAML
+- Not-Applicable Marking — mark Paul Strauss + Ankit Jain (DC Shadow Senators) as not_applicable in politician_sources
+- National CD119 TIGER Import — download tl_2024_us_cd119.zip, import all 435 congressional district polygons into geo_districts (us_house layer; CA's 52 skipped via ON CONFLICT)
+- tiger_geoid Backfill — backfill tiger_geoid on all NATIONAL_LOWER essentials.districts rows across all states
 
 ---
 
@@ -316,4 +318,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-10 after Phase 111 — VA senator stances (182 rows, 35/40 senators, VAST-02 + VAST-05 satisfied)*
+*Last updated: 2026-06-11 — milestone v2.11 started (FEC Finance Completion + US House Geofencing)*
