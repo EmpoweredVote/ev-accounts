@@ -109,6 +109,17 @@ const MTFCC_SCOPE: Record<string, Scope> = {
   G5420: 'district',  // unified school district
 };
 
+/** USPS → 2-digit state FIPS, for the statewide state-outline boundary (mtfcc G4000). */
+const USPS_TO_FIPS: Record<string, string> = {
+  AL: '01', AK: '02', AZ: '04', AR: '05', CA: '06', CO: '08', CT: '09', DE: '10',
+  DC: '11', FL: '12', GA: '13', HI: '15', ID: '16', IL: '17', IN: '18', IA: '19',
+  KS: '20', KY: '21', LA: '22', ME: '23', MD: '24', MA: '25', MI: '26', MN: '27',
+  MS: '28', MO: '29', MT: '30', NE: '31', NV: '32', NH: '33', NJ: '34', NM: '35',
+  NY: '36', NC: '37', ND: '38', OH: '39', OK: '40', OR: '41', PA: '42', RI: '44',
+  SC: '45', SD: '46', TN: '47', TX: '48', UT: '49', VT: '50', VA: '51', WA: '53',
+  WV: '54', WI: '55', WY: '56',
+};
+
 /** Tier from jurisdiction_level; scope prefers the mtfcc geometry class, else position name. */
 export function deriveTierScope(input: {
   jurisdiction_level: string | null;
@@ -206,9 +217,13 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       rankableTopicCount: Number(r.rankable_topic_count),
       tier,
       scope,
+      // Prefer the office's specific district boundary; for statewide offices
+      // (Governor, U.S. Senate) fall back to the whole-state outline (mtfcc G4000).
       boundaryRef: r.boundary_layer && r.boundary_geoid
         ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
-        : null,
+        : (scope === 'statewide' && r.state && USPS_TO_FIPS[r.state])
+          ? { layer: 'G4000', geoid: USPS_TO_FIPS[r.state] }
+          : null,
       isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
     };
   });

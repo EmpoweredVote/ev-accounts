@@ -60,7 +60,7 @@ describe('getPlayableRaces', () => {
     });
   });
 
-  it('emits boundaryRef:null when the race has no resolvable district', async () => {
+  it('falls back to the whole-state outline for a statewide race with no district', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
       race_id: 'r2', position_name: 'Governor',
       election_id: 'e2', election_name: 'IN 2026', election_date: null,
@@ -70,7 +70,21 @@ describe('getPlayableRaces', () => {
       politician_ids: ['p1', 'p2'],
     }] });
     const [race] = await getPlayableRaces();
-    expect(race.boundaryRef).toBeNull();
     expect(race).toMatchObject({ tier: 'state', scope: 'statewide' });
+    expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' }); // IN
+  });
+
+  it('emits boundaryRef:null when there is no district and the scope is not statewide', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'r3', position_name: 'City Council',
+      election_id: 'e3', election_name: 'Somewhere 2026', election_date: null,
+      jurisdiction_level: 'city', state: 'IN',
+      boundary_layer: null, boundary_geoid: null,
+      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.scope).toBe('district');
+    expect(race.boundaryRef).toBeNull();
   });
 });
