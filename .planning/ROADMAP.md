@@ -1252,11 +1252,11 @@ Plans:
 
 **Depends on:** Phase 110 (VA federal House rep politician records must exist as FK targets)
 **Requirements:** VAST-04, VAST-05, VAFI-01, VAFI-02
-**Plans:** 2 plans
+**Plans:** 2 plans ✅ COMPLETE 2026-06-11
 
 Plans:
-- [ ] 113-01-PLAN.md — Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
-- [ ] 113-02-PLAN.md — FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
+- [x] 113-01-PLAN.md — Phase gate SQL scaffold (verify-va-federal-113.sql): VAST-04, VAST-05, VAFI-01, VAFI-02 assertions
+- [x] 113-02-PLAN.md — FEC finance ingestion for 11 VA House reps (VAFI-01) + VPAP assessment (VAFI-02)
 
 **Success Criteria** (what must be TRUE):
 
@@ -1365,4 +1365,4 @@ Plans:
 | 110. VA Official Records + Geofencing | v2.10 | 0/? | Not started | - |
 | 111. VA State Stances - Executives + Senators | v2.10 | 5/5 | Complete    | 2026-06-10 |
 | 112. VA Delegate Stances | v2.10 | 5/10 | In Progress|  |
-| 113. VA Federal Stances + Finance | v2.10 | 0/? | Not started | - |
+| 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
