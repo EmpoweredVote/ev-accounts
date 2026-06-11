@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: FEC Finance Completion + US House Geofencing
-status: planning
+status: ready to execute
 stopped_at: ~
 last_updated: "2026-06-11T00:00:00.000Z"
 last_activity: 2026-06-11
 progress:
   total_phases: 3
   completed_phases: 0
-  total_plans: 0
+  total_plans: 1
   completed_plans: 0
   percent: 0
 ---
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03)
+**Current focus:** Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03) — PLANNED ✅
 **Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
 
 ## Current Position
 
 Phase: 114 — fec-script-fix-and-sitting-members
-Plan: TBD
-Status: Not started
-Last activity: 2026-06-11 — Milestone v2.11 roadmap created
+Plan: 114-01-PLAN.md (1 plan, 1 wave)
+Status: Planned — Ready to execute
+Last activity: 2026-06-11 — Phase 114 planned (1 plan)
 
 Phase 113 (va-federal-stances) — COMPLETE ✅
 VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
