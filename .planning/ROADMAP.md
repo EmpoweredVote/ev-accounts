@@ -1310,7 +1310,10 @@ Plans:
 
 **Depends on:** Phase 114 (script fixes must be in place before running candidate batch; NULL baseline established)
 **Requirements:** FECF-04, FECF-05
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 115-01-PLAN.md — Create senate-candidate-fec.ts, run live, write not_applicable rows for Strauss/Jain
 
 **Success Criteria** (what must be TRUE):
 
@@ -1327,7 +1330,10 @@ Plans:
 
 **Depends on:** Nothing (TIGER import is independent of FEC work; CA rows already present via ON CONFLICT guard)
 **Requirements:** UHGE-01, UHGE-02, UHGE-03
-**Plans:** TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 115-01-PLAN.md — Create senate-candidate-fec.ts, run live, write not_applicable rows for Strauss/Jain
 
 **Success Criteria** (what must be TRUE):
 
