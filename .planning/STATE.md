@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: FEC Finance Completion + US House Geofencing
-status: planning
-last_updated: "2026-06-12T17:38:37.141Z"
+status: complete
+last_updated: "2026-06-12"
 last_activity: 2026-06-12
 progress:
   total_phases: 3
@@ -20,15 +20,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 116 — national us house tiger
-**Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
+**Current focus:** v2.11 complete — next milestone TBD
+**Last shipped:** v2.11 FEC Finance Completion + US House Geofencing — Phases 114–116, shipped 2026-06-12. All requirements closed (FECF-01–05, UHGE-01–03).
 
 ## Current Position
 
-Phase: 116
-Plan: Not started
-Status: Ready to plan
+Phase: 116 — COMPLETE ✅
+Plan: 116-01-PLAN.md ✅
+Status: v2.11 milestone complete
 Last activity: 2026-06-12
+
+Phase 116 (national-us-house-tiger) — COMPLETE ✅
+UHGE-01 ✅ (436 us_house rows in geo_districts; 436 G5200 rows in geofence_boundaries)
+UHGE-02 ✅ (0 NATIONAL_LOWER districts with tiger_geoid IS NULL; 437 backfilled)
+UHGE-03 ✅ (Path 0 join verified for TX-1, tiger_geoid='4801', returns 1 NATIONAL_LOWER row)
+Plans: 116-01-PLAN.md ✅
+Key deviation: tl_2024_us_cd119.zip (national) returns 404 — script downloads 51 per-state files; SKIP_CODES '00' removed (at-large states use '00' for their single district)
+
+Phase 115 (senate-candidate-fec-research) — COMPLETE ✅
+FECF-04 ✅ (~32 Senate candidates FEC batch run; finance_summary populated where FEC match found)
+FECF-05 ✅ (Strauss/Jain marked not_applicable; NULL count ≤ 2)
+Plans: 115-01-PLAN.md ✅
 
 Phase 114 (fec-script-fix-and-sitting-members) — COMPLETE ✅
 FECF-01 ✅ (committee fallback + multi-cycle totals loop in fix-fec-name-mismatches.ts)

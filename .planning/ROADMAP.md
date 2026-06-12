@@ -1313,7 +1313,7 @@ Plans:
 **Plans:** 1/1 plans complete
 
 Plans:
-- [ ] 116-01-PLAN.md — Import 435 US House TIGER polygons, backfill NATIONAL_LOWER tiger_geoid, verify Path 0
+- [x] 115-01-PLAN.md — FEC batch run for ~32 Senate candidates; mark Strauss/Jain not_applicable ✅ 2026-06-12
 
 **Success Criteria** (what must be TRUE):
 
@@ -1333,7 +1333,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 116-01-PLAN.md — Import 435 US House TIGER polygons, backfill NATIONAL_LOWER tiger_geoid, verify Path 0
+- [x] 116-01-PLAN.md — Import 435 US House TIGER polygons, backfill NATIONAL_LOWER tiger_geoid, verify Path 0 ✅ 2026-06-12
 
 **Success Criteria** (what must be TRUE):
 
@@ -1446,4 +1446,4 @@ Plans:
 | 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
 | 114. fec-script-fix-and-sitting-members | v2.11 | 1/1 | Complete | 2026-06-11 |
 | 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete    | 2026-06-12 |
-| 116. national-us-house-tiger | v2.11 | 0/? | Not started | â€” |
+| 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
