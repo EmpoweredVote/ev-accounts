@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-06-12T18:50:00.000Z",
+  "phase": "117",
+  "phase_name": "ma-city-official-stances",
+  "phase_dir": ".planning/phases/117-ma-city-official-stances",
+  "plan": 1,
+  "task": 0,
+  "total_tasks": 4,
+  "status": "paused",
+  "completed_tasks": [],
+  "remaining_tasks": [
+    {"id": 1, "name": "Research Boston stances — Michelle Wu + 4 at-large councillors", "status": "not_started"},
+    {"id": 2, "name": "Research Boston stances — 9 district councillors + write/apply migration", "status": "not_started"},
+    {"id": 3, "name": "Human verify Boston migration gate", "status": "not_started"},
+    {"id": 4, "name": "Research and ingest Cambridge stances", "status": "not_started"}
+  ],
+  "blockers": [],
+  "human_actions_pending": [],
+  "decisions": [
+    {"decision": "Attempt ALL 44 topics per official, not just local-scope", "rationale": "User instruction: try for all 44, expect 10-14 to land", "phase": "117"},
+    {"decision": "ONE agent at a time, never parallel", "rationale": "Rate limit protection — mass launches cause empty output", "phase": "117"},
+    {"decision": "Chairs methodology + real fetched URLs required", "rationale": "No party-affiliation inference allowed", "phase": "117"},
+    {"decision": "Wave 1 = Boston (14) + Cambridge (~15); Wave 2 = Worcester+Springfield; Wave 3 = Lowell+Brockton+Quincy", "rationale": "Grouped by profile/documentation level", "phase": "117"},
+    {"decision": "Migration MAX was 515 at plan time", "rationale": "Next migration = 516; must re-check live before writing", "phase": "117"}
+  ],
+  "uncommitted_files": [".planning/STATE.md"],
+  "next_action": "Read SKILL.md, fetch live topics from DB (STEP 0), confirm scope with user, then dispatch ONE politician-stance-researcher agent for Michelle Wu",
+  "context_notes": "Planning complete and committed (f515adf3). No execution started. Three wave plans exist. Boston migration pattern: external_ids -2507000001 to -2507000014. MUST check SELECT MAX(version) FROM supabase_migrations.schema_migrations before any migration write — do not use cached 515 from planning time."
+}
