@@ -30,6 +30,15 @@ const LEGISLATORS_YAML_URL =
 const FEC_BASE = 'https://api.open.fec.gov/v1';
 
 // ---------------------------------------------------------------------------
+// Direct FEC ID overrides — use when congress-legislators YAML has wrong/stale FEC ID
+// Keys are lowercase full names. These bypass the YAML-based lookup entirely.
+// ---------------------------------------------------------------------------
+const DIRECT_FEC_ID_OVERRIDES: Record<string, string> = {
+  'glenn ivey':  'H2MD04232',  // YAML has H2MD04315 (stale) — verified via FEC /candidates/ API
+  'keith self':  'H2TX00064',  // YAML has H2TX03290 (stale) — verified via FEC /candidates/ API
+};
+
+// ---------------------------------------------------------------------------
 // Known nickname → formal name mappings (extend as needed)
 // ---------------------------------------------------------------------------
 const NICKNAME_MAP: Record<string, string[]> = {
@@ -96,6 +105,8 @@ async function buildNameMap(): Promise<Map<string, string>> {
 
 function resolveFecId(fullName: string, nameMap: Map<string, string>): string | null {
   const key = fullName.toLowerCase();
+  // Direct override (bypasses YAML — use when YAML has wrong/stale FEC ID)
+  if (DIRECT_FEC_ID_OVERRIDES[key]) return DIRECT_FEC_ID_OVERRIDES[key];
   // Direct match
   if (nameMap.has(key)) return nameMap.get(key)!;
   // Nickname variants
@@ -118,8 +129,9 @@ async function fetchFecData(fecId: string, apiKey: string): Promise<object | nul
   await sleep(SLEEP_MS);
   const searchResp = await fetch(searchUrl, { signal: AbortSignal.timeout(30_000) });
   if (!searchResp.ok) throw new Error(`FEC search HTTP ${searchResp.status}`);
-  const searchData = await searchResp.json() as { results?: Array<{ principal_committees?: Array<{ id: string }> }> };
-  let committeeId: string | undefined = searchData.results?.[0]?.principal_committees?.[0]?.id;
+  // NOTE: the /candidates/search/ endpoint returns principal_committees[].committee_id (not .id)
+  const searchData = await searchResp.json() as { results?: Array<{ principal_committees?: Array<{ committee_id: string }> }> };
+  let committeeId: string | undefined = searchData.results?.[0]?.principal_committees?.[0]?.committee_id;
 
   if (!committeeId) {
     await sleep(SLEEP_MS);
