@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { apiFetch } from '../../lib/api';
 
 interface AdminQuote {
@@ -10,35 +10,72 @@ interface AdminQuote {
   readrankSelected: boolean;
 }
 interface AdminTopicQuotes { topicKey: string; quotes: AdminQuote[]; }
+interface Politician {
+  id: string;
+  first_name: string;
+  last_name: string;
+  preferred_name: string | null;
+  full_name: string | null;
+  office_title: string | null;
+  is_active: boolean;
+}
+
+function politicianLabel(p: Politician): string {
+  const name = p.full_name ?? `${p.preferred_name ?? p.first_name} ${p.last_name}`;
+  return p.office_title ? `${name} — ${p.office_title}` : name;
+}
 
 export function ReadRankQuotesPage() {
-  const [politicianId, setPoliticianId] = useState('');
+  const [politicians, setPoliticians] = useState<Politician[]>([]);
+  const [query, setQuery] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedPolitician, setSelectedPolitician] = useState<Politician | null>(null);
   const [topics, setTopics] = useState<AdminTopicQuotes[] | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [savingId, setSavingId] = useState<string | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  async function load(id: string) {
-    setLoading(true); setError(null);
+  useEffect(() => {
+    apiFetch<{ politicians: Politician[] }>('/admin/compass/politicians')
+      .then((d) => setPoliticians(d.politicians))
+      .catch(() => {/* non-fatal */});
+  }, []);
+
+  const filtered = query.trim().length >= 2
+    ? politicians.filter((p) =>
+        politicianLabel(p).toLowerCase().includes(query.toLowerCase()),
+      ).slice(0, 12)
+    : [];
+
+  async function loadQuotes(p: Politician) {
+    setLoading(true); setError(null); setTopics(null);
     try {
       const data = await apiFetch<{ topics: AdminTopicQuotes[] }>(
-        `/admin/readrank-quotes?politician_id=${encodeURIComponent(id)}`,
+        `/admin/readrank-quotes?politician_id=${encodeURIComponent(p.id)}`,
       );
       setTopics(data.topics);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to load');
-      setTopics(null);
     } finally { setLoading(false); }
   }
 
+  function pickPolitician(p: Politician) {
+    setSelectedPolitician(p);
+    setQuery(politicianLabel(p));
+    setShowDropdown(false);
+    loadQuotes(p);
+  }
+
   async function select(quoteId: string) {
+    if (!selectedPolitician) return;
     setSavingId(quoteId); setError(null);
     try {
       await apiFetch('/admin/readrank-quotes/select', {
         method: 'PUT',
         body: JSON.stringify({ quote_id: quoteId }),
       });
-      await load(politicianId);
+      await loadQuotes(selectedPolitician);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Failed to select');
     } finally { setSavingId(null); }
@@ -47,18 +84,44 @@ export function ReadRankQuotesPage() {
   return (
     <div className="p-6 max-w-4xl">
       <h1 className="text-xl font-semibold mb-4">Read &amp; Rank Quotes</h1>
-      <form
-        className="flex gap-2 mb-6"
-        onSubmit={(e) => { e.preventDefault(); if (politicianId.trim()) load(politicianId.trim()); }}
-      >
+
+      <div className="relative mb-6">
         <input
-          className="border rounded px-3 py-2 flex-1"
-          placeholder="Politician ID (uuid)"
-          value={politicianId}
-          onChange={(e) => setPoliticianId(e.target.value)}
+          ref={inputRef}
+          className="border rounded px-3 py-2 w-full"
+          placeholder="Search politician by name…"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setShowDropdown(true);
+            if (selectedPolitician && politicianLabel(selectedPolitician) !== e.target.value) {
+              setSelectedPolitician(null);
+              setTopics(null);
+            }
+          }}
+          onFocus={() => setShowDropdown(true)}
+          onBlur={() => setTimeout(() => setShowDropdown(false), 150)}
+          autoComplete="off"
         />
-        <button className="px-4 py-2 bg-ev-muted-blue text-white rounded" type="submit">Load</button>
-      </form>
+        {showDropdown && filtered.length > 0 && (
+          <ul className="absolute z-10 w-full bg-white border rounded shadow mt-1 max-h-64 overflow-y-auto">
+            {filtered.map((p) => (
+              <li
+                key={p.id}
+                className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-sm"
+                onMouseDown={() => pickPolitician(p)}
+              >
+                {politicianLabel(p)}
+              </li>
+            ))}
+          </ul>
+        )}
+        {showDropdown && query.trim().length >= 2 && filtered.length === 0 && (
+          <div className="absolute z-10 w-full bg-white border rounded shadow mt-1 px-3 py-2 text-sm text-gray-500">
+            No politicians found
+          </div>
+        )}
+      </div>
 
       {loading && <p>Loading…</p>}
       {error && <p className="text-ev-coral mb-4">{error}</p>}
