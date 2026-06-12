@@ -68,6 +68,12 @@ describe('GET /api/search validation', () => {
     expect(res.status).toBe(422);
     expect(mockSearchSegments).not.toHaveBeenCalled();
   });
+
+  it('422 when page exceeds the cap', async () => {
+    const res = await request(app).get('/api/search?q=housing&page=401');
+    expect(res.status).toBe(422);
+    expect(mockSearchSegments).not.toHaveBeenCalled();
+  });
 });
 
 describe('GET /api/search results', () => {
@@ -109,5 +115,12 @@ describe('GET /api/search results', () => {
     expect(res.status).toBe(200);
     expect(res.body.totalCount).toBe(0);
     expect(res.body.results).toEqual([]);
+  });
+
+  it('500 with INTERNAL_ERROR when the service throws', async () => {
+    mockSearchSegments.mockRejectedValueOnce(new Error('db down'));
+    const res = await request(app).get('/api/search?q=housing');
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
   });
 });

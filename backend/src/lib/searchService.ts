@@ -88,6 +88,9 @@ export async function searchSegments(opts: {
   const { q, city, speaker, page } = opts;
   const offset = (page - 1) * SEARCH_PAGE_SIZE;
 
+  // No meeting-status filter: the on-the-record pipeline (sole writer) only
+  // inserts segments for meetings it publishes — the same invariant the
+  // transcript endpoint relies on. Revisit if another ingest path appears.
   const conditions: string[] = [`s.tsv @@ websearch_to_tsquery('english', $1)`];
   const params: unknown[] = [q];
   if (speaker !== undefined) {
@@ -113,7 +116,7 @@ export async function searchSegments(opts: {
          FROM meetings.segments s
          JOIN meetings.meetings m ON m.id = s.meeting_id
          WHERE ${where}
-         ORDER BY rank DESC, m.date DESC, s.segment_index
+         ORDER BY rank DESC, m.date DESC, s.meeting_id, s.segment_index
          LIMIT $${limitParam} OFFSET $${offsetParam}
        )
        SELECT meeting_id, city, meeting_type, date, segment_index,
@@ -121,7 +124,7 @@ export async function searchSegments(opts: {
               ts_headline('english', text, websearch_to_tsquery('english', $1),
                           'StartSel=[[[, StopSel=]]], MaxWords=40, MinWords=20') AS snippet
        FROM hits
-       ORDER BY rank DESC, date DESC, segment_index`,
+       ORDER BY rank DESC, date DESC, meeting_id, segment_index`,
       [...params, SEARCH_PAGE_SIZE, offset]
     ),
     pool.query<{ count: string }>(

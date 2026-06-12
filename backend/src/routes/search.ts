@@ -18,6 +18,8 @@ const router = Router();
 
 const SLUG_REGEX = /^[a-z0-9][a-z0-9_-]{0,99}$/;
 const MAX_QUERY_LENGTH = 200;
+// Caps the OFFSET an unauthenticated caller can force (page * 25 rows).
+const MAX_PAGE = 400;
 
 // GET /api/search?q=affordable+housing&city=Bloomington&speaker=john-hamilton&page=1
 router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void> => {
@@ -33,8 +35,11 @@ router.get('/', optionalAuth, async (req: Request, res: Response): Promise<void>
   let page = 1;
   if (req.query.page !== undefined) {
     const parsed = Number(req.query.page);
-    if (!Number.isInteger(parsed) || parsed < 1) {
-      res.status(422).json({ code: 'VALIDATION_ERROR', message: 'page must be a positive integer' });
+    if (!Number.isInteger(parsed) || parsed < 1 || parsed > MAX_PAGE) {
+      res.status(422).json({
+        code: 'VALIDATION_ERROR',
+        message: `page must be a positive integer at most ${MAX_PAGE}`,
+      });
       return;
     }
     page = parsed;
