@@ -315,7 +315,7 @@ async function buildJurisdictions(
   const [counties, children, stats, treasurySet] = await Promise.all([
     pool.query<{ geo_id: string; ocd_id: string | null; name: string }>(
       `SELECT geo_id, ocd_id, name FROM essentials.geofence_boundaries
-        WHERE state = $1 AND mtfcc = 'G4020'`,
+        WHERE state = $1 AND mtfcc = 'G4020' AND name IS NOT NULL`,
       [stateFips],
     ),
     // Assign each place / school to the county it OVERLAPS MOST, not by centroid.
@@ -329,7 +329,7 @@ async function buildJurisdictions(
            ORDER BY ST_Area(ST_Intersection(c.geometry, child.geometry)) DESC
            LIMIT 1) AS county_fips
          FROM essentials.geofence_boundaries child
-        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420', 'G5400', 'G5410')`,
+        WHERE child.state = $1 AND child.mtfcc IN ('G4110', 'G5420', 'G5400', 'G5410') AND child.name IS NOT NULL`,
       [stateFips],
     ),
     statsByJurisdiction(stateCode),
