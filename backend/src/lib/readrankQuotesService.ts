@@ -1,5 +1,47 @@
 import { pool } from './db.js';
 
+export interface PoliticianWithQuotes {
+  id: string;
+  name: string;
+  officeTitle: string | null;
+  state: string | null;
+  quoteCount: number;
+  selectedCount: number;
+}
+
+export async function listReadrankPoliticians(): Promise<PoliticianWithQuotes[]> {
+  const { rows } = await pool.query<{
+    id: string; name: string; office_title: string | null;
+    state: string | null; quote_count: string; selected_count: string;
+  }>(
+    `SELECT p.id,
+            COALESCE(p.full_name, TRIM(COALESCE(p.preferred_name, p.first_name) || ' ' || p.last_name)) AS name,
+            o.title AS office_title,
+            d.state,
+            COUNT(q.id)::text AS quote_count,
+            COUNT(q.id) FILTER (WHERE q.readrank_selected)::text AS selected_count
+       FROM essentials.politicians p
+       JOIN essentials.quotes q ON q.politician_id = p.id
+       LEFT JOIN LATERAL (
+         SELECT title, district_id
+           FROM essentials.offices
+          WHERE politician_id = p.id
+          ORDER BY id DESC LIMIT 1
+       ) o ON true
+       LEFT JOIN essentials.districts d ON d.id = o.district_id
+      GROUP BY p.id, p.full_name, p.preferred_name, p.first_name, p.last_name, o.title, d.state
+      ORDER BY d.state NULLS LAST, p.last_name, p.first_name`,
+  );
+  return rows.map((r) => ({
+    id: r.id,
+    name: r.name,
+    officeTitle: r.office_title,
+    state: r.state,
+    quoteCount: parseInt(r.quote_count, 10),
+    selectedCount: parseInt(r.selected_count, 10),
+  }));
+}
+
 export interface AdminQuote {
   id: string;
   quoteText: string;

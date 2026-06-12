@@ -4,10 +4,21 @@ import { z } from 'zod';
 import { requireAuth, type AuthenticatedRequest } from '../middleware/auth.js';
 import { requireAdmin } from '../middleware/requireAdmin.js';
 import { logAdminAction } from '../lib/adminService.js';
-import { listReadrankQuotes, selectReadrankQuote } from '../lib/readrankQuotesService.js';
+import { listReadrankPoliticians, listReadrankQuotes, selectReadrankQuote } from '../lib/readrankQuotesService.js';
 
 const router = Router();
 router.use(requireAuth, requireAdmin);
+
+// GET /api/admin/readrank-quotes/politicians — all politicians who have at least one quote
+router.get('/politicians', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const politicians = await listReadrankPoliticians();
+    res.status(200).json({ politicians });
+  } catch (err) {
+    console.error('[GET /admin/readrank-quotes/politicians] error:', err);
+    res.status(500).json({ error: 'Failed to list politicians' });
+  }
+});
 
 const listQuery = z.object({ politician_id: z.string().uuid() });
 
