@@ -222,10 +222,12 @@ async function main() {
 
   for (const pol of rows) {
     let fecId = resolveFecId(pol.full_name, nameMap);
+    let sourcesWritten = false;
 
     if (!fecId) {
       if (DRY_RUN) {
         console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short}) — would attempt direct search`);
+        noMatchList.push(pol.full_name);
         stats.no_match++;
         continue;
       }
@@ -262,6 +264,7 @@ async function main() {
         ON CONFLICT DO NOTHING
       `, [pol.id, 'fec_house', directId]);
       fecId = directId; // fall through to DB write path (fetchFecData + finance_summary UPDATE)
+      sourcesWritten = true;
     } else {
       console.log(`MATCH     ${pol.full_name} → ${fecId}`);
       stats.matched++;
@@ -269,13 +272,15 @@ async function main() {
 
     if (DRY_RUN) continue;
 
-    // Upsert politician_sources row so future runs of the main script also catch it
-    await pool.query(`
-      INSERT INTO transparent_motivations.politician_sources
-        (essentials_politician_id, source_system, external_id, research_status, source_type)
-      VALUES ($1, $2, $3, 'confirmed', 'candidate_committee')
-      ON CONFLICT DO NOTHING
-    `, [pol.id, pol.chamber_short === 'S' ? 'fec_senate' : 'fec_house', fecId]);
+    // Upsert politician_sources row (MATCH path only — DIRECT path already wrote this row above)
+    if (!sourcesWritten) {
+      await pool.query(`
+        INSERT INTO transparent_motivations.politician_sources
+          (essentials_politician_id, source_system, external_id, research_status, source_type)
+        VALUES ($1, $2, $3, 'confirmed', 'candidate_committee')
+        ON CONFLICT DO NOTHING
+      `, [pol.id, pol.chamber_short === 'S' ? 'fec_senate' : 'fec_house', fecId]);
+    }
 
     try {
       const summary = await fetchFecData(fecId, apiKey);

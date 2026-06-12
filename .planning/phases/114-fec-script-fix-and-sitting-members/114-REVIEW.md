@@ -1,10 +1,12 @@
 ---
 phase: 114
 plan: "01"
-status: findings
+status: fixed
 reviewed_at: 2026-06-11
+fixed_at: 2026-06-11
 effort: high
 findings_count: 6
+fixed_count: 2
 ---
 
 # Code Review — Phase 114
@@ -20,21 +22,21 @@ findings_count: 6
 
 ---
 
-### 2. CONFIRMED — DRY_RUN path never populates `noMatchList` — misleading operator output
+### 2. CONFIRMED — DRY_RUN path never populates `noMatchList` — misleading operator output ✓ FIXED
 **File:** `backend/scripts/fix-fec-name-mismatches.ts` · **Line:** 227
 
 In `DRY_RUN` mode the `!fecId` branch hits `stats.no_match++` then `continue` — never reaching `noMatchList.push()`. The final `JSON.stringify({ ...stats, no_match_list: noMatchList })` always emits `no_match_list: []` in dry-run even though `stats.no_match` reflects the real count. An operator running `--dry-run` to preview which politicians need attention sees the count but not the names.
 
-**Fix:** Add `noMatchList.push(pol.full_name)` before `continue` in the DRY_RUN branch (line 229).
+**Fix applied:** Added `noMatchList.push(pol.full_name)` before `continue` in the DRY_RUN branch.
 
 ---
 
-### 3. CONFIRMED — DIRECT path fires a redundant second INSERT at line 273 (dead no-op)
+### 3. CONFIRMED — DIRECT path fires a redundant second INSERT at line 273 (dead no-op) ✓ FIXED
 **File:** `backend/scripts/fix-fec-name-mismatches.ts` · **Line:** 273
 
 For any politician resolved via `resolveViaDirectSearch` (LaMalfa, Swalwell), lines 254–263 DELETE then INSERT `(pol.id, 'fec_house', directId)`. Code then falls through with `fecId = directId` and hits the shared INSERT at line 273 with the same `(pol.id, 'fec_house', directId)` tuple. The unique constraint on `(source_system, external_id)` causes this second INSERT to always `DO NOTHING`. No data corruption, but it's a dead write on every DIRECT-path politician and an extra DB round-trip.
 
-**Fix:** Add `continue` after the DIRECT path writes and before the shared block, or wrap the shared INSERT in `else { /* MATCH path only */ }`.
+**Fix applied:** Added `sourcesWritten` boolean flag; set to `true` in DIRECT path after INSERT; shared INSERT now guarded by `if (!sourcesWritten)`.
 
 ---
 
