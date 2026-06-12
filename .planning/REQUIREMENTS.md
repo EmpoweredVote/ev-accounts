@@ -10,9 +10,9 @@
 
 ## US House Geofencing
 
-- [ ] **UHGE-01**: TIGER 2024 national CD119 shapefile (all 435 congressional districts) imported into `essentials.geo_districts` with `layer = 'us_house'`; existing CA rows (52) are preserved via `ON CONFLICT DO NOTHING`; GIST index verified present
-- [ ] **UHGE-02**: `tiger_geoid` backfilled on all `essentials.districts` rows with `district_type = 'NATIONAL_LOWER'` across all states — every House district record has a non-null `tiger_geoid` matching the imported polygon
-- [ ] **UHGE-03**: Path 0 geofencing verified working for at least one non-CA US address (e.g. TX or NY congressional district) — `GET /api/essentials/representatives/me` for a user with stored district data returns the correct House rep via the `tiger_geoid` join, confirming the national layer is live
+- [x] **UHGE-01**: TIGER 2024 national CD119 shapefile (all 435 congressional districts) imported into `essentials.geo_districts` with `layer = 'us_house'`; existing CA rows (52) are preserved via `ON CONFLICT DO NOTHING`; GIST index verified present ✅ 2026-06-12
+- [x] **UHGE-02**: `tiger_geoid` backfilled on all `essentials.districts` rows with `district_type = 'NATIONAL_LOWER'` across all states — every House district record has a non-null `tiger_geoid` matching the imported polygon ✅ 2026-06-12
+- [x] **UHGE-03**: Path 0 geofencing verified working for at least one non-CA US address (e.g. TX or NY congressional district) — `GET /api/essentials/representatives/me` for a user with stored district data returns the correct House rep via the `tiger_geoid` join, confirming the national layer is live ✅ 2026-06-12
 
 ## Future Requirements
 

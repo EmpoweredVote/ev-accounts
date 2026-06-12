@@ -129,12 +129,22 @@ completed: 2026-06-12
 
 None — script runs with existing `DATABASE_URL`. No new environment variables needed.
 
-## Next Phase Readiness
+## Human Verification (Task 4 — checkpoint:human-verify)
 
-- UHGE-01: ✓ 436 us_house rows in geo_districts
-- UHGE-02: ✓ 437 NATIONAL_LOWER rows with tiger_geoid set (0 NULLs)
-- UHGE-03: ✓ Path 0 join verified for TX-1 (human confirmation at Task 4 checkpoint)
-- All three UHGE requirements ready to be marked [x] in REQUIREMENTS.md after Task 4 human verification
+Supabase MCP confirmed post-checkpoint:
+- `geo_districts WHERE layer='us_house'` = 436 ✓
+- `geofence_boundaries WHERE mtfcc='G5200'` = 436 ✓
+- `NATIONAL_LOWER AND tiger_geoid IS NULL` = 0 ✓
+- Path 0 join for tiger_geoid='4801' returns 1 row (NATIONAL_LOWER, TX-1) ✓
+
+All three UHGE requirements marked [x] in REQUIREMENTS.md.
+
+## Self-Check: PASSED
+
+- backend/scripts/load-national-house-districts.ts — committed c514565f / 99a5aeab
+- supabase/migrations/20260612000001_342_national_house_tiger_geoid_backfill.sql — committed afd00bd5
+- REQUIREMENTS.md UHGE-01/02/03 marked [x] ✓
+- All counts verified via Supabase MCP ✓
 
 ---
 *Phase: 116-national-us-house-tiger*
