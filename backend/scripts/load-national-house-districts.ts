@@ -37,7 +37,12 @@ const TIGER_BASE = 'https://www2.census.gov/geo/tiger/TIGER2024/CD';
 const MTFCC      = 'G5200';
 const LAYER      = 'us_house';
 const SOURCE     = 'census_tiger_2024';
-const SKIP_CODES = new Set(['ZZ', 'ZZZ', '00', '000']);
+// Skip codes for non-voting/placeholder districts.
+// NOTE: '00' is intentionally NOT in this set. At-large states (AK, DE, MT,
+// ND, SD, VT, WY) use CD119FP='00' for their single voting House member.
+// ZZ, ZZZ, 000 are TIGER placeholder codes for non-voting territories — those
+// should be skipped. Removing '00' from the plan's SKIP_CODES set is a bug fix.
+const SKIP_CODES = new Set(['ZZ', 'ZZZ', '000']);
 const EXPECTED_MIN = 435;
 
 // 50 states + DC (FIPS 11). Territories (60=AS, 66=GU, 69=MP, 72=PR, 78=VI)
