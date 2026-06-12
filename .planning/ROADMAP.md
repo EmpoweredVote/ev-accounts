@@ -1438,6 +1438,6 @@ Plans:
 | 111. VA State Stances - Senators | v2.10 | 5/5 | Complete | 2026-06-10 |
 | 112. VA Delegate Stances | v2.10 | 10/10 | Complete | 2026-06-11 |
 | 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
-| 114. fec-script-fix-and-sitting-members | v2.11 | 0/1 | Planned | — |
+| 114. fec-script-fix-and-sitting-members | v2.11 | 1/1 | Complete | 2026-06-11 |
 | 115. senate-candidate-fec-research | v2.11 | 0/? | Not started | — |
 | 116. national-us-house-tiger | v2.11 | 0/? | Not started | — |
