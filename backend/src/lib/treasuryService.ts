@@ -135,7 +135,12 @@ export interface TreasuryBudget {
   dataset_type: string;
   total_budget: number;
   data_source: string | null;
-  data_source_info: { displayName: string; url: string } | null;
+  data_source_info: {
+    displayName: string;
+    url: string;
+    datasetUrl?: string | null;   // exact dataset URL (data_sources.base_url)
+    fetchedAt?: string | null;    // last sync timestamp (data_sources.last_synced_at)
+  } | null;
   hierarchy: string[] | null;
   generated_at: string | null;
   created_at: string;
@@ -224,6 +229,8 @@ interface BudgetRow {
   data_source: string | null;
   ds_display_name: string | null;
   ds_url: string | null;
+  ds_base_url: string | null;
+  ds_last_synced_at: string | null;
   hierarchy: string[] | null;
   generated_at: string | null;
   created_at: string;
@@ -322,6 +329,8 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     data_source_info: row.ds_display_name && row.ds_url ? {
       displayName: row.ds_display_name,
       url: row.ds_url,
+      datasetUrl: row.ds_base_url ?? null,
+      fetchedAt: row.ds_last_synced_at ?? null,
     } : null,
     hierarchy: row.hierarchy,
     generated_at: row.generated_at,
@@ -440,9 +449,15 @@ export async function getBudgetsByCityId(
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
               b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
               b.hierarchy, b.generated_at, b.created_at, b.updated_at
        FROM treasury.budgets b
        LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+     LEFT JOIN LATERAL (
+       SELECT d.base_url, d.last_synced_at FROM treasury.data_sources d
+       WHERE d.name = b.data_source AND d.municipality_id = b.municipality_id
+       ORDER BY d.last_synced_at DESC NULLS LAST LIMIT 1
+     ) dsrc ON true
        WHERE b.municipality_id = $1 AND b.fiscal_year = $2
        ORDER BY b.fiscal_year DESC`,
       [cityId, fiscalYear]
@@ -453,14 +468,106 @@ export async function getBudgetsByCityId(
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
             b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
      FROM treasury.budgets b
      LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+     LEFT JOIN LATERAL (
+       SELECT d.base_url, d.last_synced_at FROM treasury.data_sources d
+       WHERE d.name = b.data_source AND d.municipality_id = b.municipality_id
+       ORDER BY d.last_synced_at DESC NULLS LAST LIMIT 1
+     ) dsrc ON true
      WHERE b.municipality_id = $1
      ORDER BY b.fiscal_year DESC`,
     [cityId]
   );
   return rows.map(mapBudget);
+}
+
+// ── Federal context (Phase 45) ───────────────────────────────────────────────
+// Serves treasury.federal_annual_summary + treasury.federal_context_metrics —
+// the always-sourced landing data for the United States entity. Every row
+// carries source_name/source_url/source_date written by the Phase 44 loaders.
+
+export interface FederalAnnualSummaryRow {
+  fiscal_year: number;
+  receipts: number;
+  outlays: number;
+  surplus_or_deficit: number;
+  mandatory: number | null;
+  discretionary_defense: number | null;
+  discretionary_nondefense: number | null;
+  net_interest: number | null;
+  source_name: string;
+  source_url: string;
+  source_date: string;
+}
+
+export interface FederalContextMetric {
+  value: number;
+  as_of_date: string;
+  label: string;
+  source_name: string;
+  source_url: string;
+  source_date: string;
+}
+
+export interface FederalContext {
+  annual_summary: FederalAnnualSummaryRow[];
+  metrics: Record<string, FederalContextMetric>;
+  source_display_names: Record<string, string>;
+}
+
+export async function getFederalContext(): Promise<FederalContext> {
+  const { rows: summaryRows } = await pool.query(
+    `SELECT fiscal_year, receipts, outlays, surplus_or_deficit, mandatory,
+            discretionary_defense, discretionary_nondefense, net_interest,
+            source_name, source_url, source_date
+     FROM treasury.federal_annual_summary
+     ORDER BY fiscal_year`
+  );
+
+  const { rows: metricRows } = await pool.query(
+    `SELECT metric_key, value, as_of_date, label, source_name, source_url, source_date
+     FROM treasury.federal_context_metrics`
+  );
+
+  const { rows: registryRows } = await pool.query(
+    `SELECT name, display_name FROM treasury.source_registry`
+  );
+
+  const num = (v: unknown) => (v === null || v === undefined ? null : Number(v));
+
+  const annual_summary: FederalAnnualSummaryRow[] = summaryRows.map((r) => ({
+    fiscal_year: Number(r.fiscal_year),
+    receipts: Number(r.receipts),
+    outlays: Number(r.outlays),
+    surplus_or_deficit: Number(r.surplus_or_deficit),
+    mandatory: num(r.mandatory),
+    discretionary_defense: num(r.discretionary_defense),
+    discretionary_nondefense: num(r.discretionary_nondefense),
+    net_interest: num(r.net_interest),
+    source_name: r.source_name,
+    source_url: r.source_url,
+    source_date: r.source_date,
+  }));
+
+  const metrics: Record<string, FederalContextMetric> = {};
+  for (const r of metricRows) {
+    metrics[r.metric_key] = {
+      value: Number(r.value),
+      as_of_date: r.as_of_date,
+      label: r.label,
+      source_name: r.source_name,
+      source_url: r.source_url,
+      source_date: r.source_date,
+    };
+  }
+
+  const source_display_names: Record<string, string> = {};
+  for (const r of registryRows) source_display_names[r.name] = r.display_name;
+
+  return { annual_summary, metrics, source_display_names };
 }
 
 // Enrichment: plain-language context for opaque fund/category names
@@ -517,9 +624,15 @@ export async function getBudgetById(
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
             b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
+            dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
      FROM treasury.budgets b
      LEFT JOIN treasury.source_registry sr ON sr.id = b.data_source_id
+     LEFT JOIN LATERAL (
+       SELECT d.base_url, d.last_synced_at FROM treasury.data_sources d
+       WHERE d.name = b.data_source AND d.municipality_id = b.municipality_id
+       ORDER BY d.last_synced_at DESC NULLS LAST LIMIT 1
+     ) dsrc ON true
      WHERE b.id = $1`,
     [id]
   );

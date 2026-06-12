@@ -32,6 +32,7 @@ import {
   createBudgetCategory,
   createBudgetLineItem,
   getEnrichmentQueueStatus,
+  getFederalContext,
 } from '../lib/treasuryService.js';
 
 const router = Router();
@@ -49,6 +50,21 @@ router.get('/cities', optionalAuth, async (_req: Request, res: Response): Promis
     res.status(200).json(cities);
   } catch (err) {
     console.error('[GET /treasury/cities] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// GET /api/treasury/federal/context
+// Federal landing data (Phase 45): 64-year annual summary (receipts/outlays/
+// deficit + BEA split) + keyed context metrics (FYTD, debt, interest, exclusion
+// disclosures). Every row carries its source columns — the always-sourced rule.
+// NOTE: registered before /cities/:id-style params; static path, no input.
+router.get('/federal/context', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const context = await getFederalContext();
+    res.status(200).json(context);
+  } catch (err) {
+    console.error('[GET /treasury/federal/context] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });
