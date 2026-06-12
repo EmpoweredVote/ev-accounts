@@ -158,8 +158,19 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     politician_ids: string[];
   }>(`
     SELECT r.id AS race_id,
-           COALESCE(o.title, r.position_name) AS clean_position_name,
-           NULLIF(TRIM(COALESCE(d.label, '')), '') AS district_label,
+           CASE
+             WHEN d.label IS NOT NULL AND d.label <> '' AND d.label <> r.position_name
+               AND r.position_name ILIKE '%' || d.label
+             THEN NULLIF(TRIM(BOTH ' -–' FROM LEFT(r.position_name, LENGTH(r.position_name) - LENGTH(d.label))), '')
+             ELSE r.position_name
+           END AS clean_position_name,
+           CASE
+             WHEN d.label IS NOT NULL AND d.label <> '' AND d.label <> r.position_name
+               AND r.position_name ILIKE '%' || d.label
+               AND NULLIF(TRIM(BOTH ' -–' FROM LEFT(r.position_name, LENGTH(r.position_name) - LENGTH(d.label))), '') IS NOT NULL
+             THEN d.label
+             ELSE NULL
+           END AS district_label,
            e.id AS election_id, e.name AS election_name, e.election_date,
            e.jurisdiction_level, e.state,
            d.mtfcc AS boundary_layer,
@@ -210,7 +221,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       ORDER BY ST_Area(fp.geometry) ASC
       LIMIT 1
     ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
-    GROUP BY r.id, r.position_name, o.title, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
+    GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
              d.mtfcc, d.label, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
     ORDER BY e.election_date ASC NULLS LAST

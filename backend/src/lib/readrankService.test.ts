@@ -161,8 +161,9 @@ describe('getPlayableRaces', () => {
     expect(race.frameRef).toEqual({ layer: 'G4110', geoid: '1805860' });
   });
 
-  it('uses offices.title as positionName when the race has an office record', async () => {
+  it('strips district label suffix from positionName and emits districtLabel separately', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
+      // SQL strips "District 1" from "Monroe County Commissioner - District 1"
       race_id: 'rd', clean_position_name: 'Monroe County Commissioner', district_label: 'District 1',
       election_id: 'e', election_name: 'IN 2025', election_date: null,
       jurisdiction_level: 'county', state: 'IN',
@@ -173,6 +174,21 @@ describe('getPlayableRaces', () => {
     const [race] = await getPlayableRaces();
     expect(race.positionName).toBe('Monroe County Commissioner');
     expect(race.districtLabel).toBe('District 1');
+  });
+
+  it('emits districtLabel:null when district label equals the full position name (messy data guard)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      // SQL: d.label = position_name → strip skipped, clean_position_name = full name, district_label = null
+      race_id: 'rm', clean_position_name: 'Indiana House of Representatives - District 61', district_label: null,
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: 'G5220', boundary_geoid: '18061', frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.positionName).toBe('Indiana House of Representatives - District 61');
+    expect(race.districtLabel).toBeNull();
   });
 
   it('emits districtLabel:null for a statewide race with no district record', async () => {
