@@ -217,6 +217,17 @@ async function main() {
         stats.no_match++;
         continue;
       }
+      // Only attempt direct FEC search for known CA House members (LaMalfa/Swalwell) —
+      // resolveViaDirectSearch hardcodes state=CA, office=H, so it is not safe for other politicians.
+      // Senate candidates not in YAML are typically 2026 challengers, not sitting members.
+      const isKnownCaHouseMember = pol.chamber_short === 'H' &&
+        ['doug lamalfa', 'eric swalwell'].includes(pol.full_name.toLowerCase());
+      if (!isKnownCaHouseMember) {
+        console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short})`);
+        noMatchList.push(pol.full_name);
+        stats.no_match++;
+        continue;
+      }
       const directId = await resolveViaDirectSearch(pol, apiKey);
       if (!directId) {
         console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short})`);
@@ -226,14 +237,17 @@ async function main() {
       }
       console.log(`DIRECT    ${pol.full_name} → ${directId}`);
       stats.matched++;
-      // Use DO UPDATE to overwrite any prior partial run that left an empty external_id
+      // Upsert: delete+insert pattern since unique constraint is on (source_system, external_id),
+      // not (essentials_politician_id, source_system). Delete any existing fec_house row first.
+      await pool.query(`
+        DELETE FROM transparent_motivations.politician_sources
+        WHERE essentials_politician_id = $1 AND source_system = $2
+      `, [pol.id, 'fec_house']);
       await pool.query(`
         INSERT INTO transparent_motivations.politician_sources
           (essentials_politician_id, source_system, external_id, research_status, source_type)
         VALUES ($1, $2, $3, 'confirmed', 'candidate_committee')
-        ON CONFLICT (essentials_politician_id, source_system)
-        DO UPDATE SET external_id = EXCLUDED.external_id,
-                      research_status = EXCLUDED.research_status
+        ON CONFLICT DO NOTHING
       `, [pol.id, 'fec_house', directId]);
       fecId = directId; // fall through to DB write path (fetchFecData + finance_summary UPDATE)
     } else {
