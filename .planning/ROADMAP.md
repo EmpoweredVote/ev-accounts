@@ -1333,7 +1333,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 115-01-PLAN.md — Create senate-candidate-fec.ts, run live, write not_applicable rows for Strauss/Jain
+- [x] 115-01-PLAN.md — Create senate-candidate-fec.ts, run live, write not_applicable rows for Strauss/Jain
 
 **Success Criteria** (what must be TRUE):
 
@@ -1445,5 +1445,5 @@ Plans:
 | 112. VA Delegate Stances | v2.10 | 10/10 | Complete | 2026-06-11 |
 | 113. VA Federal Stances + Finance | v2.10 | 2/2 | Complete    | 2026-06-11 |
 | 114. fec-script-fix-and-sitting-members | v2.11 | 1/1 | Complete | 2026-06-11 |
-| 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete   | 2026-06-12 |
+| 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete    | 2026-06-12 |
 | 116. national-us-house-tiger | v2.11 | 0/? | Not started | — |

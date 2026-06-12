@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: FEC Finance Completion + US House Geofencing
-status: executing
-stopped_at: context exhaustion at 75% (2026-06-12)
-last_updated: "2026-06-12T08:12:54.261Z"
+status: ready_to_plan
+stopped_at: Phase 115 complete (1/1) — ready to discuss Phase 116
+last_updated: 2026-06-12T16:28:28.275Z
 last_activity: 2026-06-11 — Phase 114 plan 01 complete (FECF-01, FECF-02, FECF-03)
 progress:
   total_phases: 43
   completed_phases: 1
   total_plans: 2
-  completed_plans: 7
+  completed_plans: 34
   percent: 2
 ---
 
@@ -21,15 +21,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05) — PLANNED
+**Current focus:** Phase 116 — national us house tiger
 **Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
 
 ## Current Position
 
-Phase: 115 — senate-candidate-fec-research
-Plan: 115-01-PLAN.md (1 plan, Wave 1)
-Status: Planned — ready to execute
-Last activity: 2026-06-11 — Phase 114 plan 01 complete (FECF-01, FECF-02, FECF-03)
+Phase: 116
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-06-12
 
 Phase 114 (fec-script-fix-and-sitting-members) — COMPLETE ✅
 FECF-01 ✅ (committee fallback + multi-cycle totals loop in fix-fec-name-mismatches.ts)
