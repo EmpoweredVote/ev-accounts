@@ -80,6 +80,23 @@ const ACCENT_MAP: Record<string, string> = {
   'ñ': 'n', 'ç': 'c',
 };
 
+// Common nickname -> formal name mappings for Senate candidates.
+// Keys: normalized nickname. Values: normalized formal first name(s).
+// Used in scoring when first-name prefix match fails.
+const NICKNAME_TO_FORMAL: Record<string, string[]> = {
+  'angie':  ['angela'],
+  'peggy':  ['margaret', 'peg'],
+  'chuck':  ['charles'],
+  'bernie': ['bernard'],
+  'maggie': ['margaret'],
+  'bill':   ['william'],
+  'bob':    ['robert'],
+  'jim':    ['james'],
+  'joe':    ['joseph'],
+  'mike':   ['michael'],
+  'ted':    ['edward', 'theodore'],
+};
+
 function normalize(s: string): string {
   return s
     .toLowerCase()
@@ -110,7 +127,20 @@ function parseDbName(fullName: string): { first: string; last: string } {
   return { first: tokens[0]!, last: tokens[tokens.length - 1]! };
 }
 
-/** Score a DB name against a FEC candidate name. Returns 0-1. */
+/** Extract the raw (un-normalized) last name token from a DB full_name. */
+function rawLastName(fullName: string): string {
+  const parts = fullName.trim().split(/\s+/);
+  return parts[parts.length - 1] ?? fullName;
+}
+
+/** Score a DB name against a FEC candidate name. Returns 0-1.
+ *
+ * Enhancements over base fecResearch.ts logic:
+ *   - Compound FEC last names (e.g. "FETTY ANDERSON"): accept if db.last is
+ *     the last word of fec.last (score 0.85).
+ *   - Nickname resolution: maps informal first names to formal equivalents
+ *     via NICKNAME_TO_FORMAL for prefix/exact matching (score 0.85).
+ */
 function scoreMatch(dbFullName: string, fecName: string): number {
   const db = parseDbName(dbFullName);
   const fec = parseFecName(fecName);
@@ -118,14 +148,27 @@ function scoreMatch(dbFullName: string, fecName: string): number {
   if (!db.last || !fec.last) return 0;
 
   const lastMatch = db.last === fec.last;
-  if (!lastMatch) return 0;
+  // Compound last name: FEC may store "FETTY ANDERSON" while DB has "ANDERSON"
+  const fecLastWords = fec.last.split(/\s+/);
+  const compoundLastMatch = !lastMatch && fecLastWords[fecLastWords.length - 1] === db.last;
+
+  if (!lastMatch && !compoundLastMatch) return 0;
+
+  const baseScore = compoundLastMatch ? 0.8 : 1.0; // compound match slightly penalised
 
   if (db.first && fec.first) {
-    if (db.first === fec.first) return 0.9;
-    if (fec.first.startsWith(db.first) || db.first.startsWith(fec.first)) return 0.85;
+    if (db.first === fec.first) return baseScore >= 1 ? 0.9 : 0.85;
+    if (fec.first.startsWith(db.first) || db.first.startsWith(fec.first)) {
+      return compoundLastMatch ? 0.82 : 0.85;
+    }
+    // Nickname resolution
+    const formalNames = NICKNAME_TO_FORMAL[db.first] ?? [];
+    if (formalNames.includes(fec.first) || formalNames.some(f => fec.first.startsWith(f) || f.startsWith(fec.first))) {
+      return compoundLastMatch ? 0.82 : 0.85;
+    }
   }
 
-  return 0.6;
+  return compoundLastMatch ? 0.8 : 0.6;
 }
 
 // ---------------------------------------------------------------------------
@@ -295,12 +338,14 @@ async function main() {
     }
 
     // --- FEC candidate search (skip in dry-run -- no FEC calls) ---
-    const { last: lastName } = parseDbName(pol.full_name);
+    // Use raw (non-normalized) last name for the search query so that hyphens
+    // and special characters are preserved (e.g. "El-Sayed" not "elsayed").
+    const searchLastName = rawLastName(pol.full_name);
 
     let results: FecCandidateResult[] = [];
     if (!DRY_RUN) {
       try {
-        results = await candidateSearch(lastName, stateAbbr, apiKey);
+        results = await candidateSearch(searchLastName, stateAbbr, apiKey);
       } catch (err) {
         console.error(`  [ERR] candidateSearch for ${pol.full_name}: ${(err as Error).message}`);
         stats.error++;
