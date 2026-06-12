@@ -137,6 +137,7 @@ const PERSON_SELECT = `
     LEFT JOIN essentials.chambers ch ON ch.id = o.chamber_id
     LEFT JOIN essentials.governments g ON g.id = ch.government_id
     WHERE o.politician_id = p.id AND o.is_vacant = false
+    ORDER BY o.id
     LIMIT 1
   ) off ON true
 `;
