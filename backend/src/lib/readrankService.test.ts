@@ -87,4 +87,77 @@ describe('getPlayableRaces', () => {
     expect(race.scope).toBe('district');
     expect(race.boundaryRef).toBeNull();
   });
+
+  it('federal: child = home state, frame = US (model B)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rf', position_name: 'U.S. House',
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'federal', state: 'IN',
+      boundary_layer: 'G5200', boundary_geoid: '1807',
+      frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.tier).toBe('federal');
+    expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' }); // home state
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: 'US' });
+  });
+
+  it('statewide state (Governor): frame = null (state alone)', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rg', position_name: 'Governor',
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: null, boundary_geoid: null, frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toEqual({ layer: 'G4000', geoid: '18' });
+    expect(race.frameRef).toBeNull();
+  });
+
+  it('county: frame = state', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rc', position_name: 'County Commission',
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'county', state: 'IN',
+      boundary_layer: 'G4020', boundary_geoid: '18105', frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toEqual({ layer: 'G4020', geoid: '18105' });
+    expect(race.frameRef).toEqual({ layer: 'G4000', geoid: '18' });
+  });
+
+  it('city: frame = the SQL-resolved container county', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rcity', position_name: 'Mayor',
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'city', state: 'IN',
+      boundary_layer: 'G4110', boundary_geoid: '1805860',
+      frame_layer: 'G4020', frame_geoid: '18105',
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.boundaryRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+    expect(race.frameRef).toEqual({ layer: 'G4020', geoid: '18105' });
+  });
+
+  it('ward: frame = the SQL-resolved container city', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rw', position_name: 'City Common Council',
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'city', state: 'IN',
+      boundary_layer: 'X0001', boundary_geoid: '180586000001',
+      frame_layer: 'G4110', frame_geoid: '1805860',
+      candidate_count: '2', topic_count: '2', quote_count: '6', rankable_topic_count: '2',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.frameRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+  });
 });
