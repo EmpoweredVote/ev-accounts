@@ -119,22 +119,37 @@ async function fetchFecData(fecId: string, apiKey: string): Promise<object | nul
   const searchResp = await fetch(searchUrl, { signal: AbortSignal.timeout(30_000) });
   if (!searchResp.ok) throw new Error(`FEC search HTTP ${searchResp.status}`);
   const searchData = await searchResp.json() as { results?: Array<{ principal_committees?: Array<{ id: string }> }> };
-  const committeeId = searchData.results?.[0]?.principal_committees?.[0]?.id;
+  let committeeId: string | undefined = searchData.results?.[0]?.principal_committees?.[0]?.id;
+
+  if (!committeeId) {
+    await sleep(SLEEP_MS);
+    const fbUrl = `${FEC_BASE}/candidate/${fecId}/committees/?api_key=${apiKey}&per_page=5`;
+    const fbResp = await fetch(fbUrl, { signal: AbortSignal.timeout(30_000) });
+    if (fbResp.ok) {
+      const fbData = await fbResp.json() as { results?: Array<{ committee_id: string }> };
+      committeeId = fbData.results?.[0]?.committee_id ?? undefined;
+    }
+  }
   if (!committeeId) {
     console.log(`  [skip] No committee for ${fecId}`);
     return null;
   }
 
-  // Step 2: total raised
-  const totalsUrl = `${FEC_BASE}/candidates/totals/?api_key=${apiKey}&candidate_id=${fecId}&cycle=${FEC_CYCLE}&per_page=1`;
-  await sleep(SLEEP_MS);
-  const totalsResp = await fetch(totalsUrl, { signal: AbortSignal.timeout(30_000) });
-  if (!totalsResp.ok) throw new Error(`FEC totals HTTP ${totalsResp.status}`);
-  const totalsData = await totalsResp.json() as { results?: Array<{ receipts?: number }> };
-  const totalRaised = totalsData.results?.[0]?.receipts ?? 0;
+  // Step 2: total raised (multi-cycle fallback for non-2026-ballot senators)
+  let totalRaised = 0;
+  let usedCycle = FEC_CYCLE;
+  for (const cycle of [FEC_CYCLE, '2024', '2022']) {
+    const totalsUrl = `${FEC_BASE}/candidates/totals/?api_key=${apiKey}&candidate_id=${fecId}&cycle=${cycle}&per_page=1`;
+    await sleep(SLEEP_MS);
+    const totalsResp = await fetch(totalsUrl, { signal: AbortSignal.timeout(30_000) });
+    if (!totalsResp.ok) throw new Error(`FEC totals HTTP ${totalsResp.status}`);
+    const totalsData = await totalsResp.json() as { results?: Array<{ receipts?: number }> };
+    const receipts = totalsData.results?.[0]?.receipts ?? 0;
+    if (receipts > 0) { totalRaised = receipts; usedCycle = cycle; break; }
+  }
 
   // Step 3: top donors
-  const donorsUrl = `${FEC_BASE}/schedules/schedule_a/by_employer/?api_key=${apiKey}&committee_id=${committeeId}&cycle=${FEC_CYCLE}&per_page=${TOP_DONORS_LIMIT}&sort=-total`;
+  const donorsUrl = `${FEC_BASE}/schedules/schedule_a/by_employer/?api_key=${apiKey}&committee_id=${committeeId}&cycle=${usedCycle}&per_page=${TOP_DONORS_LIMIT}&sort=-total`;
   await sleep(SLEEP_MS);
   const donorsResp = await fetch(donorsUrl, { signal: AbortSignal.timeout(30_000) });
   if (!donorsResp.ok) throw new Error(`FEC donors HTTP ${donorsResp.status}`);
@@ -145,7 +160,26 @@ async function fetchFecData(fecId: string, apiKey: string): Promise<object | nul
     count: r.count,
   }));
 
-  return { total_raised: totalRaised, top_donors: topDonors, cycle: FEC_CYCLE, source: 'FEC' };
+  return { total_raised: totalRaised, top_donors: topDonors, cycle: usedCycle, source: 'FEC' };
+}
+
+async function resolveViaDirectSearch(
+  pol: FedPolitician,
+  apiKey: string,
+): Promise<string | null> {
+  // LaMalfa (CA-01) and Swalwell (CA-14) are both California House members
+  const state = 'CA';
+  const searchUrl = `${FEC_BASE}/candidates/?api_key=${apiKey}&q=${encodeURIComponent(pol.full_name)}&state=${state}&office=H&per_page=20`;
+  await sleep(SLEEP_MS);
+  const resp = await fetch(searchUrl, { signal: AbortSignal.timeout(30_000) });
+  if (!resp.ok) throw new Error(`FEC direct search HTTP ${resp.status}`);
+  const data = await resp.json() as {
+    results?: Array<{ candidate_id: string; name: string; state: string; office: string }>
+  };
+  if (!data.results?.length) return null;
+  const lastName = pol.full_name.toLowerCase().split(' ').pop()!;
+  const best = data.results.find(r => r.name.toLowerCase().includes(lastName));
+  return best?.candidate_id ?? null;
 }
 
 async function main() {
@@ -175,17 +209,37 @@ async function main() {
   const noMatchList: string[] = [];
 
   for (const pol of rows) {
-    const fecId = resolveFecId(pol.full_name, nameMap);
+    let fecId = resolveFecId(pol.full_name, nameMap);
 
     if (!fecId) {
-      console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short})`);
-      noMatchList.push(pol.full_name);
-      stats.no_match++;
-      continue;
+      if (DRY_RUN) {
+        console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short}) — would attempt direct search`);
+        stats.no_match++;
+        continue;
+      }
+      const directId = await resolveViaDirectSearch(pol, apiKey);
+      if (!directId) {
+        console.log(`NO_MATCH  ${pol.full_name} (${pol.chamber_short})`);
+        noMatchList.push(pol.full_name);
+        stats.no_match++;
+        continue;
+      }
+      console.log(`DIRECT    ${pol.full_name} → ${directId}`);
+      stats.matched++;
+      // Use DO UPDATE to overwrite any prior partial run that left an empty external_id
+      await pool.query(`
+        INSERT INTO transparent_motivations.politician_sources
+          (essentials_politician_id, source_system, external_id, research_status, source_type)
+        VALUES ($1, $2, $3, 'confirmed', 'candidate_committee')
+        ON CONFLICT (essentials_politician_id, source_system)
+        DO UPDATE SET external_id = EXCLUDED.external_id,
+                      research_status = EXCLUDED.research_status
+      `, [pol.id, 'fec_house', directId]);
+      fecId = directId; // fall through to DB write path (fetchFecData + finance_summary UPDATE)
+    } else {
+      console.log(`MATCH     ${pol.full_name} → ${fecId}`);
+      stats.matched++;
     }
-
-    console.log(`MATCH     ${pol.full_name} → ${fecId}`);
-    stats.matched++;
 
     if (DRY_RUN) continue;
 
