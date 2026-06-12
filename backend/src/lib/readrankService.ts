@@ -32,6 +32,7 @@ function candidateToken(raceId: string, politicianId: string): string {
 export interface RaceSummary {
   raceId: string;
   positionName: string;
+  districtLabel: string | null;
   electionName: string;
   electionDate: string | null;
   state: string | null;
@@ -148,14 +149,17 @@ export function deriveTierScope(input: {
 
 export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSummary[]> {
   const { rows } = await pool.query<{
-    race_id: string; position_name: string; election_id: string; election_name: string;
+    race_id: string; clean_position_name: string; district_label: string | null;
+    election_id: string; election_name: string;
     election_date: Date | null; jurisdiction_level: string | null; state: string | null;
     boundary_layer: string | null; boundary_geoid: string | null;
     frame_layer: string | null; frame_geoid: string | null;
     candidate_count: string; topic_count: string; quote_count: string; rankable_topic_count: string;
     politician_ids: string[];
   }>(`
-    SELECT r.id AS race_id, r.position_name,
+    SELECT r.id AS race_id,
+           COALESCE(o.title, r.position_name) AS clean_position_name,
+           NULLIF(TRIM(COALESCE(d.label, '')), '') AS district_label,
            e.id AS election_id, e.name AS election_name, e.election_date,
            e.jurisdiction_level, e.state,
            d.mtfcc AS boundary_layer,
@@ -206,8 +210,8 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       ORDER BY ST_Area(fp.geometry) ASC
       LIMIT 1
     ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
-    GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
-             d.mtfcc, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
+    GROUP BY r.id, r.position_name, o.title, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
+             d.mtfcc, d.label, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
     ORDER BY e.election_date ASC NULLS LAST
   `);
@@ -216,7 +220,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
   return rows.map((r) => {
     const { tier, scope } = deriveTierScope({
       jurisdiction_level: r.jurisdiction_level,
-      position_name: r.position_name,
+      position_name: r.clean_position_name,
       mtfcc: r.boundary_layer,
     });
     const fips = r.state ? USPS_TO_FIPS[r.state] : undefined;
@@ -246,7 +250,8 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
 
     return {
       raceId: r.race_id,
-      positionName: r.position_name,
+      positionName: r.clean_position_name,
+      districtLabel: r.district_label,
       electionName: r.election_name,
       electionDate: r.election_date ? new Date(r.election_date).toISOString().slice(0, 10) : null,
       state: r.state,

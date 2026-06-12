@@ -43,7 +43,7 @@ describe('deriveTierScope', () => {
 describe('getPlayableRaces', () => {
   it('maps boundaryRef, counts and tier/scope from a joined row', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'r1', position_name: 'Mayor',
+      race_id: 'r1', clean_position_name: 'Mayor', district_label: null,
       election_id: 'e1', election_name: 'LA 2026', election_date: new Date('2026-11-03T00:00:00Z'),
       jurisdiction_level: 'county', state: 'CA',
       boundary_layer: 'G4110', boundary_geoid: '0644000',
@@ -53,7 +53,7 @@ describe('getPlayableRaces', () => {
 
     const [race] = await getPlayableRaces();
     expect(race).toMatchObject({
-      raceId: 'r1', positionName: 'Mayor', state: 'CA',
+      raceId: 'r1', positionName: 'Mayor', districtLabel: null, state: 'CA',
       candidateCount: 3, topicCount: 5, quoteCount: 24, rankableTopicCount: 4,
       tier: 'local', scope: 'citywide',
       boundaryRef: { layer: 'G4110', geoid: '0644000' },
@@ -62,7 +62,7 @@ describe('getPlayableRaces', () => {
 
   it('falls back to the whole-state outline for a statewide race with no district', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'r2', position_name: 'Governor',
+      race_id: 'r2', clean_position_name: 'Governor', district_label: null,
       election_id: 'e2', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
@@ -76,7 +76,7 @@ describe('getPlayableRaces', () => {
 
   it('emits boundaryRef:null when there is no district and the scope is not statewide', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'r3', position_name: 'City Council',
+      race_id: 'r3', clean_position_name: 'City Council', district_label: null,
       election_id: 'e3', election_name: 'Somewhere 2026', election_date: null,
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: null, boundary_geoid: null,
@@ -90,7 +90,7 @@ describe('getPlayableRaces', () => {
 
   it('federal: child = home state, frame = US (model B)', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rf', position_name: 'U.S. House',
+      race_id: 'rf', clean_position_name: 'U.S. House', district_label: null,
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'federal', state: 'IN',
       boundary_layer: 'G5200', boundary_geoid: '1807',
@@ -106,7 +106,7 @@ describe('getPlayableRaces', () => {
 
   it('statewide state (Governor): frame = null (state alone)', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rg', position_name: 'Governor',
+      race_id: 'rg', clean_position_name: 'Governor', district_label: null,
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'state', state: 'IN',
       boundary_layer: null, boundary_geoid: null, frame_layer: null, frame_geoid: null,
@@ -120,7 +120,7 @@ describe('getPlayableRaces', () => {
 
   it('county: frame = state', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rc', position_name: 'County Commission',
+      race_id: 'rc', clean_position_name: 'County Commission', district_label: null,
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'county', state: 'IN',
       boundary_layer: 'G4020', boundary_geoid: '18105', frame_layer: null, frame_geoid: null,
@@ -134,7 +134,7 @@ describe('getPlayableRaces', () => {
 
   it('city: frame = the SQL-resolved container county', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rcity', position_name: 'Mayor',
+      race_id: 'rcity', clean_position_name: 'Mayor', district_label: null,
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: 'G4110', boundary_geoid: '1805860',
@@ -149,7 +149,7 @@ describe('getPlayableRaces', () => {
 
   it('ward: frame = the SQL-resolved container city', async () => {
     mockQuery.mockResolvedValueOnce({ rows: [{
-      race_id: 'rw', position_name: 'City Common Council',
+      race_id: 'rw', clean_position_name: 'City Common Council', district_label: null,
       election_id: 'e', election_name: 'IN 2026', election_date: null,
       jurisdiction_level: 'city', state: 'IN',
       boundary_layer: 'X0001', boundary_geoid: '180586000001',
@@ -159,5 +159,32 @@ describe('getPlayableRaces', () => {
     }] });
     const [race] = await getPlayableRaces();
     expect(race.frameRef).toEqual({ layer: 'G4110', geoid: '1805860' });
+  });
+
+  it('uses offices.title as positionName when the race has an office record', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rd', clean_position_name: 'Monroe County Commissioner', district_label: 'District 1',
+      election_id: 'e', election_name: 'IN 2025', election_date: null,
+      jurisdiction_level: 'county', state: 'IN',
+      boundary_layer: 'G4020', boundary_geoid: '18105', frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '6', rankable_topic_count: '2',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.positionName).toBe('Monroe County Commissioner');
+    expect(race.districtLabel).toBe('District 1');
+  });
+
+  it('emits districtLabel:null for a statewide race with no district record', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{
+      race_id: 'rg2', clean_position_name: 'Governor', district_label: null,
+      election_id: 'e', election_name: 'IN 2026', election_date: null,
+      jurisdiction_level: 'state', state: 'IN',
+      boundary_layer: null, boundary_geoid: null, frame_layer: null, frame_geoid: null,
+      candidate_count: '2', topic_count: '3', quote_count: '8', rankable_topic_count: '3',
+      politician_ids: ['p1', 'p2'],
+    }] });
+    const [race] = await getPlayableRaces();
+    expect(race.districtLabel).toBeNull();
   });
 });
