@@ -233,7 +233,9 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     urlTemplate: (v, f, c) => `https://www2.census.gov/geo/tiger/TIGER${v}/CD/tl_${v}_${f}_cd${c}.zip`,
     districtNumField: ['CD119FP', 'CDFP', 'CD118FP'],
     filterByStatefp: true,
-    skipDistrictCodes: new Set(['ZZ', 'ZZZ', '00', '000']),
+    // '00' is NOT a placeholder — at-large states (AK, DE, MT, ND, SD, VT, WY) use CD119FP='00'
+    // for their single voting House member. Only ZZ/ZZZ/000 are TIGER placeholder codes.
+    skipDistrictCodes: new Set(['ZZ', 'ZZZ', '000']),
     writeDistrictRow: true /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (Operational-parity recommendation, line "cd: writeDistricts=true (per existing TS)") */,
   },
   cd119: {
@@ -242,7 +244,8 @@ const LAYER_DISPATCH: Record<string, LayerDef> = {
     urlTemplate: (v, f, c) => `https://www2.census.gov/geo/tiger/TIGER${v}/CD/tl_${v}_${f}_cd${c}.zip`,
     districtNumField: ['CD119FP', 'CDFP', 'CD118FP'],
     filterByStatefp: true,
-    skipDistrictCodes: new Set(['ZZ', 'ZZZ', '00', '000']),
+    // '00' is NOT a placeholder — at-large states use CD119FP='00' for their voting member.
+    skipDistrictCodes: new Set(['ZZ', 'ZZZ', '000']),
     writeDistrictRow: true /* 130-01-PYTHON-AUDIT.md §"Open questions" #4 (cd119 shares cd's TS-loader path; Operational-parity recommendation) */,
   },
   sldu: {

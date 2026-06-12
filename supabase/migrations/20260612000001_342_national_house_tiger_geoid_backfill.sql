@@ -42,8 +42,8 @@ BEGIN
   IF v_null <> 0 THEN
     RAISE EXCEPTION '% NATIONAL_LOWER rows still have tiger_geoid IS NULL after backfill', v_null;
   END IF;
-  IF v_total < 430 THEN
-    RAISE EXCEPTION 'NATIONAL_LOWER total % is suspiciously low (expected >= 430)', v_total;
+  IF v_total < 435 THEN
+    RAISE EXCEPTION 'NATIONAL_LOWER total % is suspiciously low (expected >= 435)', v_total;
   END IF;
   RAISE NOTICE 'Migration 342 complete.';
 END $$;

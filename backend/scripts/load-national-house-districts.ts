@@ -45,11 +45,11 @@ const SOURCE     = 'census_tiger_2024';
 const SKIP_CODES = new Set(['ZZ', 'ZZZ', '000']);
 const EXPECTED_MIN = 435;
 
-// 50 states + DC (FIPS 11). Territories (60=AS, 66=GU, 69=MP, 72=PR, 78=VI)
-// are excluded — they have non-voting delegates, not full House members.
-// The plan references 435 districts which correspond to the 50 states + DC.
+// 50 states only. DC (FIPS 11) and territories (60=AS, 66=GU, 69=MP, 72=PR, 78=VI)
+// are excluded — their delegates are non-voting and have no matching NATIONAL_LOWER
+// district records in essentials.districts.
 const STATE_FIPS_CODES: string[] = [
-  '01', '02', '04', '05', '06', '08', '09', '10', '11', '12',
+  '01', '02', '04', '05', '06', '08', '09', '10', '12',
   '13', '15', '16', '17', '18', '19', '20', '21', '22', '23',
   '24', '25', '26', '27', '28', '29', '30', '31', '32', '33',
   '34', '35', '36', '37', '38', '39', '40', '41', '42', '44',
@@ -320,31 +320,33 @@ async function main() {
     process.exit(0);
   }
 
-  // Assert minimum count
-  if (totalProcessed < EXPECTED_MIN) {
-    throw new Error(
-      `Processed only ${totalProcessed} districts (expected >= ${EXPECTED_MIN}). ` +
-      `Check SKIP_CODES and shapefile integrity.`
-    );
+  try {
+    // Assert minimum count
+    if (totalProcessed < EXPECTED_MIN) {
+      throw new Error(
+        `Processed only ${totalProcessed} districts (expected >= ${EXPECTED_MIN}). ` +
+        `Check SKIP_CODES and shapefile integrity.`
+      );
+    }
+
+    console.log('\n=== Summary ===');
+    console.log(`  geofence_boundaries inserted:        ${totalInsertedBoundary}`);
+    console.log(`  geofence_boundaries already existed: ${totalAlreadyExists}`);
+    console.log(`  geo_districts inserted:              ${totalInsertedGeo}  (expect ~383 new — 52 CA rows skip)`);
+    console.log(`  skipped (placeholder codes):         ${totalSkipped}`);
+    console.log(`  total processed:                     ${totalProcessed}`);
+    console.log('\nLoad complete.');
+
+    console.log('\nVerify with:');
+    console.log(`  SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'us_house';  -- expect >= 435`);
+    console.log(`  SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc = 'G5200';`);
+    console.log(`  -- Spot-check CA rows preserved:`);
+    console.log(`  SELECT geoid, district_num, name FROM essentials.geo_districts WHERE layer = 'us_house' AND geoid IN ('0601', '0630', '0652') ORDER BY geoid;`);
+    console.log(`  -- Confirm TX rows inserted:`);
+    console.log(`  SELECT geoid, district_num, name FROM essentials.geo_districts WHERE layer = 'us_house' AND geoid LIKE '48%' ORDER BY geoid LIMIT 3;`);
+  } finally {
+    await pool.end();
   }
-
-  await pool.end();
-
-  console.log('\n=== Summary ===');
-  console.log(`  geofence_boundaries inserted:        ${totalInsertedBoundary}`);
-  console.log(`  geofence_boundaries already existed: ${totalAlreadyExists}`);
-  console.log(`  geo_districts inserted:              ${totalInsertedGeo}  (expect ~383 new — 52 CA rows skip)`);
-  console.log(`  skipped (placeholder codes):         ${totalSkipped}`);
-  console.log(`  total processed:                     ${totalProcessed}`);
-  console.log('\nLoad complete.');
-
-  console.log('\nVerify with:');
-  console.log(`  SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'us_house';  -- expect >= 435`);
-  console.log(`  SELECT COUNT(*) FROM essentials.geofence_boundaries WHERE mtfcc = 'G5200';`);
-  console.log(`  -- Spot-check CA rows preserved:`);
-  console.log(`  SELECT geoid, district_num, name FROM essentials.geo_districts WHERE layer = 'us_house' AND geoid IN ('0601', '0630', '0652') ORDER BY geoid;`);
-  console.log(`  -- Confirm TX rows inserted:`);
-  console.log(`  SELECT geoid, district_num, name FROM essentials.geo_districts WHERE layer = 'us_house' AND geoid LIKE '48%' ORDER BY geoid LIMIT 3;`);
 }
 
 main().catch((err) => {
