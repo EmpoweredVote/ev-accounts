@@ -5,8 +5,8 @@
 - [x] **FECF-01**: `fix-fec-name-mismatches.ts` updated with committee lookup fallback — after `principal_committees` returns empty, script falls back to `GET /v1/candidate/{id}/committees/` and tries cycles 2026, 2024, 2022 until a committee is found ✅ 2026-06-11
 - [x] **FECF-02**: `finance_summary` populated for all 4 already-matched politicians (Glenn Ivey, Keith Self, Raphael Warnock, Ted Cruz) by re-running the fixed script live ✅ 2026-06-11
 - [x] **FECF-03**: FEC candidate IDs resolved for Doug LaMalfa and Eric Swalwell (sitting House members absent from congress-legislators YAML) via direct `GET /v1/candidates/search/?name=X&office=H`; `finance_summary` populated for both; `politician_sources` rows written with confirmed status ✅ 2026-06-11
-- [ ] **FECF-04**: FEC candidate IDs researched for all reachable 2026 Senate candidates in our DB via direct FEC API lookup; `finance_summary` populated for every candidate with an FEC filing; `politician_sources` rows written for all confirmed matches
-- [ ] **FECF-05**: Paul Strauss and Ankit Jain (DC Shadow Senators, no FEC filings) each have a `politician_sources` row with `research_status = 'not_applicable'` and a notes field explaining why (shadow delegates do not file with FEC)
+- [x] **FECF-04**: FEC candidate IDs researched for all reachable 2026 Senate candidates in our DB via direct FEC API lookup; `finance_summary` populated for every candidate with an FEC filing; `politician_sources` rows written for all confirmed matches ✅ 2026-06-12
+- [x] **FECF-05**: Paul Strauss and Ankit Jain (DC Shadow Senators, no FEC filings) each have a `politician_sources` row with `research_status = 'not_applicable'` and a notes field explaining why (shadow delegates do not file with FEC) ✅ 2026-06-12
 
 ## US House Geofencing
 
