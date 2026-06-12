@@ -2,7 +2,7 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: FEC Finance Completion + US House Geofencing
-status: ready to execute
+status: in progress
 stopped_at: ~
 last_updated: "2026-06-11T00:00:00.000Z"
 last_activity: 2026-06-11
@@ -10,8 +10,8 @@ progress:
   total_phases: 3
   completed_phases: 0
   total_plans: 1
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 33
 ---
 
 # Project State
@@ -21,15 +21,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03) — PLANNED ✅
+**Current focus:** Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
 **Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
 
 ## Current Position
 
-Phase: 114 — fec-script-fix-and-sitting-members
-Plan: 114-01-PLAN.md (1 plan, 1 wave)
-Status: Planned — Ready to execute
-Last activity: 2026-06-11 — Phase 114 planned (1 plan)
+Phase: 115 — senate-candidate-fec-research
+Plan: Next plan to execute
+Status: In Progress — Phase 114 complete, Phase 115 next
+Last activity: 2026-06-11 — Phase 114 plan 01 complete (FECF-01, FECF-02, FECF-03)
+
+Phase 114 (fec-script-fix-and-sitting-members) — COMPLETE ✅
+FECF-01 ✅ (committee fallback + multi-cycle totals loop in fix-fec-name-mismatches.ts)
+FECF-02 ✅ (Ivey/Self/Warnock/Cruz all have non-null finance_summary)
+FECF-03 ✅ (LaMalfa/Swalwell resolved via direct search; fec_house rows confirmed)
+Plans: 114-01-PLAN.md ✅
 
 Phase 113 (va-federal-stances) — COMPLETE ✅
 VAST-04 ✅ (migration 341 applied, 105 stance rows, 11 reps)
@@ -218,12 +224,16 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-11T18:54:27.646Z
-Stopped at: context exhaustion at 75% (2026-06-11)
+Last session: 2026-06-11T00:00:00.000Z
+Stopped at: Phase 114 plan 01 complete
 Resume file: None
 
 ## Decisions
 
+- [Phase 114]: FEC /candidates/search/ principal_committees uses .committee_id not .id — fix field name in fetchFecData()
+- [Phase 114]: Use DIRECT_FEC_ID_OVERRIDES for stale congress-legislators YAML entries (Ivey H2MD04232, Self H2TX00064)
+- [Phase 114]: resolveViaDirectSearch restricted to known CA House members (LaMalfa/Swalwell) — hardcodes state=CA,office=H so must not run for other politicians
+- [Phase 114]: politician_sources has no unique constraint on (essentials_politician_id, source_system) — use DELETE+INSERT for DIRECT path upsert
 - Phase 111 scoped to senators only — VAST-01 (VA state executives) was descoped from Phase 111; not yet assigned to a phase
 - psql-applied wave migrations (326–330) do NOT insert rows into `supabase_migrations.schema_migrations` — always pre-flight with SELECT MAX(version) before each wave, not STATE.md cache
 - Wave migration DO $$ verification must use `pc.politician_id IS NULL` not `pc.id IS NULL` — `inform.politician_context` has composite PK (politician_id, topic_id), no standalone `id` column
@@ -239,14 +249,9 @@ Resume file: None
 
 ## Operator Next Steps
 
-- Phase 113 COMPLETE — VAFI-01 (11/11 VA House reps FEC finance_summary), VAFI-02 (VPAP assessed, HTML-only, documented)
-- v2.10 SHIPPED 2026-06-11 — 5 phases (109–113), 14/15 requirements closed
-- v2.11 STARTED — roadmap created with 3 phases
-- Next: Phase 114 — fec-script-fix-and-sitting-members (FECF-01, FECF-02, FECF-03)
-  - Fix committee lookup fallback in fix-fec-name-mismatches.ts
-  - Populate finance_summary for Ivey/Self/Warnock/Cruz (4 already-matched politicians)
-  - Resolve LaMalfa/Swalwell via direct FEC name search; write politician_sources rows
-- Then: Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
+- Phase 114 COMPLETE — FECF-01 ✅, FECF-02 ✅, FECF-03 ✅ — 6 politicians financed, NULL count 40→34
+- v2.11 IN PROGRESS — 1/3 phases complete, 1/1 plan done
+- Next: Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
   - Research FEC IDs for ~32 2026 Senate candidates; batch ingest finance_summary
   - Mark Paul Strauss + Ankit Jain as not_applicable in politician_sources
 - Then: Phase 116 — national-us-house-tiger (UHGE-01, UHGE-02, UHGE-03)
