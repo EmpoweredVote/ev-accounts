@@ -84,7 +84,7 @@ export async function placeSlugToFips(stateFips: string): Promise<Map<string, st
          WHERE c.state = $1 AND c.mtfcc = 'G4020' AND ST_Intersects(c.geometry, p.geometry)
          ORDER BY ST_Area(ST_Intersection(c.geometry, p.geometry)) DESC LIMIT 1) AS county_fips
        FROM essentials.geofence_boundaries p
-      WHERE p.state = $1 AND p.mtfcc = 'G4110'`,
+      WHERE p.state = $1 AND p.mtfcc = 'G4110' AND p.name IS NOT NULL`,
     [stateFips],
   );
   const m = new Map<string, string>();
