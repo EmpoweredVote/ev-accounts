@@ -44,6 +44,7 @@ export interface RaceSummary {
   tier: 'federal' | 'state' | 'local';
   scope: 'statewide' | 'district' | 'county' | 'citywide';
   boundaryRef: { layer: string; geoid: string } | null;
+  frameRef: { layer: string; geoid: string } | null;
 }
 
 export interface BlindQuote {
@@ -150,6 +151,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     race_id: string; position_name: string; election_id: string; election_name: string;
     election_date: Date | null; jurisdiction_level: string | null; state: string | null;
     boundary_layer: string | null; boundary_geoid: string | null;
+    frame_layer: string | null; frame_geoid: string | null;
     candidate_count: string; topic_count: string; quote_count: string; rankable_topic_count: string;
     politician_ids: string[];
   }>(`
@@ -158,6 +160,7 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
            e.jurisdiction_level, e.state,
            d.mtfcc AS boundary_layer,
            COALESCE(d.geo_id, d.tiger_geoid) AS boundary_geoid,
+           frame.frame_layer, frame.frame_geoid,
            COUNT(DISTINCT rc.politician_id)   AS candidate_count,
            COUNT(DISTINCT lower(q.topic_key)) AS topic_count,
            COUNT(q.id)                        AS quote_count,
@@ -191,8 +194,19 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       ON ct.topic_key = lower(q.topic_key) AND ct.is_live = true
     LEFT JOIN essentials.offices o ON o.id = r.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.geofence_boundaries cb
+      ON cb.mtfcc = d.mtfcc AND cb.geo_id = COALESCE(d.geo_id, d.tiger_geoid)
+    LEFT JOIN LATERAL (
+      SELECT fp.mtfcc AS frame_layer, fp.geo_id AS frame_geoid
+      FROM essentials.geofence_boundaries fp
+      WHERE fp.mtfcc = CASE WHEN d.mtfcc = 'G4110' THEN 'G4020'
+                            WHEN d.mtfcc LIKE 'X%'  THEN 'G4110' END
+        AND ST_Contains(fp.geometry, ST_PointOnSurface(cb.geometry))
+      ORDER BY ST_Area(fp.geometry) ASC
+      LIMIT 1
+    ) frame ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
     GROUP BY r.id, r.position_name, e.id, e.name, e.election_date, e.jurisdiction_level, e.state,
-             d.mtfcc, COALESCE(d.geo_id, d.tiger_geoid)
+             d.mtfcc, COALESCE(d.geo_id, d.tiger_geoid), frame.frame_layer, frame.frame_geoid
     HAVING COUNT(DISTINCT rc.politician_id) >= 2
     ORDER BY e.election_date ASC NULLS LAST
   `);
@@ -204,6 +218,31 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       position_name: r.position_name,
       mtfcc: r.boundary_layer,
     });
+    const fips = r.state ? USPS_TO_FIPS[r.state] : undefined;
+    const stateRef = fips ? { layer: 'G4000', geoid: fips } : null;
+    const childLayer = r.boundary_layer ?? '';
+
+    // Child boundary: the office's specific district, or the whole-state outline
+    // for statewide offices. Federal offices are overridden below to the state.
+    let boundaryRef = r.boundary_layer && r.boundary_geoid
+      ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
+      : (scope === 'statewide' ? stateRef : null);
+
+    // Frame (parent to nest the child inside).
+    let frameRef: { layer: string; geoid: string } | null;
+    if (tier === 'federal') {
+      boundaryRef = stateRef;                          // model B: federal child = home state
+      frameRef = { layer: 'G4000', geoid: 'US' };
+    } else if (scope === 'statewide') {
+      frameRef = null;                                 // Governor: state alone
+    } else if (childLayer === 'G4110' || childLayer.startsWith('X')) {
+      frameRef = r.frame_layer && r.frame_geoid        // city→county / ward→city (SQL containment)
+        ? { layer: r.frame_layer, geoid: r.frame_geoid }
+        : null;
+    } else {
+      frameRef = stateRef;                             // county / state-leg / school → state
+    }
+
     return {
       raceId: r.race_id,
       positionName: r.position_name,
@@ -217,13 +256,8 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
       rankableTopicCount: Number(r.rankable_topic_count),
       tier,
       scope,
-      // Prefer the office's specific district boundary; for statewide offices
-      // (Governor, U.S. Senate) fall back to the whole-state outline (mtfcc G4000).
-      boundaryRef: r.boundary_layer && r.boundary_geoid
-        ? { layer: r.boundary_layer, geoid: r.boundary_geoid }
-        : (scope === 'statewide' && r.state && USPS_TO_FIPS[r.state])
-          ? { layer: 'G4000', geoid: USPS_TO_FIPS[r.state] }
-          : null,
+      boundaryRef,
+      frameRef,
       isLocal: localSet.size > 0 && (r.politician_ids ?? []).some((id) => localSet.has(id)),
     };
   });
