@@ -195,7 +195,8 @@ export async function getPlayableRaces(politicianIds?: string[]): Promise<RaceSu
     LEFT JOIN essentials.offices o ON o.id = r.office_id
     LEFT JOIN essentials.districts d ON d.id = o.district_id
     LEFT JOIN essentials.geofence_boundaries cb
-      ON cb.mtfcc = d.mtfcc AND cb.geo_id = COALESCE(d.geo_id, d.tiger_geoid)
+      ON (d.mtfcc = 'G4110' OR d.mtfcc LIKE 'X%')
+     AND cb.mtfcc = d.mtfcc AND cb.geo_id = COALESCE(d.geo_id, d.tiger_geoid)
     LEFT JOIN LATERAL (
       SELECT fp.mtfcc AS frame_layer, fp.geo_id AS frame_geoid
       FROM essentials.geofence_boundaries fp
