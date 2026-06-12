@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05)
+**Current focus:** Phase 115 — senate-candidate-fec-research (FECF-04, FECF-05) — PLANNED
 **Last shipped:** v2.10 Virginia Coverage + LA County Finance — Phases 109–113, shipped 2026-06-11. 14/15 requirements closed (VAST-01 deferred). Archive: .planning/milestones/v2.10-ROADMAP.md.
 
 ## Current Position
 
 Phase: 115 — senate-candidate-fec-research
-Plan: Next plan to execute
-Status: In Progress — Phase 114 complete, Phase 115 next
+Plan: 115-01-PLAN.md (1 plan, Wave 1)
+Status: Planned — ready to execute
 Last activity: 2026-06-11 — Phase 114 plan 01 complete (FECF-01, FECF-02, FECF-03)
 
 Phase 114 (fec-script-fix-and-sitting-members) — COMPLETE ✅
