@@ -262,6 +262,19 @@ interface CategoryRow {
   enrich_source_label: string | null;
   enrich_source_url: string | null;
   enrich_confidence: string | null;
+  // Joined from program_details (federal Tier 2 pilot; null elsewhere)
+  origin_program_name: string | null;
+  origin_enabling_bill: string | null;
+  origin_enabling_bill_url: string | null;
+  origin_public_law: string | null;
+  origin_public_law_url: string | null;
+  origin_enacted_year: string | null; // smallint
+  origin_sponsor: string | null;
+  origin_sponsor_url: string | null;
+  origin_cosponsors_count: string | null; // integer
+  origin_cosponsors_url: string | null;
+  origin_details: Array<{ field: string; value: string; source_url: string }> | null;
+  origin_source_api: string | null;
 }
 
 interface LineItemRow {
@@ -582,6 +595,25 @@ export interface CategoryEnrichment {
   confidence: string;    // 'high' | 'medium' | 'low'
 }
 
+// Program origins (Tier 2 details, federal pilot): enabling statute, public law,
+// sponsor — structured rows fetched from Congress.gov/GovInfo, every claim with
+// a paired URL to its official record. Sponsor fields are null for pre-1973
+// laws (no structured sponsor data exists); details carries the boundary note.
+export interface ProgramOrigins {
+  programName: string;
+  enablingBill: string | null;
+  enablingBillUrl: string | null;
+  publicLaw: string | null;
+  publicLawUrl: string | null;
+  enactedYear: number | null;
+  sponsor: string | null;
+  sponsorUrl: string | null;
+  cosponsorsCount: number | null;
+  cosponsorsUrl: string | null;
+  details: Array<{ field: string; value: string; source_url: string }> | null;
+  sourceApi: string;
+}
+
 // Nested category with subcategories and lineItems for the frontend (camelCase)
 export interface NestedCategory {
   name: string;
@@ -595,6 +627,7 @@ export interface NestedCategory {
   items: number;
   linkKey?: string;
   enrichment?: CategoryEnrichment | null;
+  programOrigins?: ProgramOrigins | null;
   subcategories?: NestedCategory[];
   lineItems?: Array<{
     description: string;
@@ -654,7 +687,19 @@ export async function getBudgetById(
             COALESCE(e_city.source,         e_univ.source)         AS enrich_source,
             COALESCE(e_city.source_label,   e_univ.source_label)   AS enrich_source_label,
             COALESCE(e_city.source_url,     e_univ.source_url)     AS enrich_source_url,
-            COALESCE(e_city.confidence,     e_univ.confidence)     AS enrich_confidence
+            COALESCE(e_city.confidence,     e_univ.confidence)     AS enrich_confidence,
+            po.program_name      AS origin_program_name,
+            po.enabling_bill     AS origin_enabling_bill,
+            po.enabling_bill_url AS origin_enabling_bill_url,
+            po.public_law        AS origin_public_law,
+            po.public_law_url    AS origin_public_law_url,
+            po.enacted_year      AS origin_enacted_year,
+            po.sponsor           AS origin_sponsor,
+            po.sponsor_url       AS origin_sponsor_url,
+            po.cosponsors_count  AS origin_cosponsors_count,
+            po.cosponsors_url    AS origin_cosponsors_url,
+            po.details           AS origin_details,
+            po.source_api        AS origin_source_api
      FROM treasury.budget_categories bc
      JOIN treasury.budgets b ON b.id = bc.budget_id
      LEFT JOIN treasury.budget_categories bc_parent ON bc_parent.id = bc.parent_id
@@ -669,6 +714,14 @@ export async function getBudgetById(
      LEFT JOIN treasury.category_enrichment e_univ
        ON e_univ.name_key = LOWER(TRIM(bc.name))
       AND e_univ.municipality_id IS NULL
+     -- Program origins (federal Tier 2 pilot): same composite-key convention,
+     -- always municipality-scoped (no universal fallback by design)
+     LEFT JOIN treasury.program_details po
+       ON po.name_key = CASE
+            WHEN bc.parent_id IS NOT NULL THEN LOWER(TRIM(bc_parent.name)) || '|' || LOWER(TRIM(bc.name))
+            ELSE LOWER(TRIM(bc.name))
+          END
+      AND po.municipality_id = b.municipality_id
      WHERE bc.budget_id = $1
      ORDER BY bc.depth, bc.sort_order`,
     [id]
@@ -724,6 +777,20 @@ export async function getBudgetById(
         sourceUrl: row.enrich_source_url,
         confidence: row.enrich_confidence ?? 'medium',
       } : null,
+      programOrigins: row.origin_program_name ? {
+        programName: row.origin_program_name,
+        enablingBill: row.origin_enabling_bill,
+        enablingBillUrl: row.origin_enabling_bill_url,
+        publicLaw: row.origin_public_law,
+        publicLawUrl: row.origin_public_law_url,
+        enactedYear: row.origin_enacted_year !== null ? Number(row.origin_enacted_year) : null,
+        sponsor: row.origin_sponsor,
+        sponsorUrl: row.origin_sponsor_url,
+        cosponsorsCount: row.origin_cosponsors_count !== null ? Number(row.origin_cosponsors_count) : null,
+        cosponsorsUrl: row.origin_cosponsors_url,
+        details: row.origin_details,
+        sourceApi: row.origin_source_api ?? '',
+      } : null,
       subcategories: [] as NestedCategory[],
       lineItems: catLineItems?.map(li => ({
         description: li.description,
@@ -771,6 +838,7 @@ export async function getBudgetById(
     if (node.historicalChange !== null) result.historicalChange = node.historicalChange;
     if (node.linkKey) result.linkKey = node.linkKey;
     if (node.enrichment) result.enrichment = node.enrichment;
+    if (node.programOrigins) result.programOrigins = node.programOrigins;
     if (subcategories.length > 0) result.subcategories = subcategories;
     if (node.lineItems && node.lineItems.length > 0) result.lineItems = node.lineItems;
     return result;
