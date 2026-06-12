@@ -134,7 +134,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.11 starting):** ~80,000 lines of TypeScript (project-wide). 113 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–341 applied to production. 21 live compass topics, ~1,188+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. inform.inform_profiles live, yellow Inform profile page live. FEC finance data live on 209/258 federal politicians (40 NULL — target for v2.11). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
+**Current state (v2.11 in progress — Phase 115 complete):** ~80,000 lines of TypeScript (project-wide). 115 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–341 applied to production. 21 live compass topics, ~1,188+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. inform.inform_profiles live, yellow Inform profile page live. FEC finance data: 31 Senate challengers populated via office=S lookup (Phase 115); NULL count for NATIONAL_UPPER dropped from 34→1 (Alan Armstrong OK, no FEC filing); Paul Strauss + Ankit Jain marked not_applicable. Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -318,4 +318,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-11 — milestone v2.11 started (FEC Finance Completion + US House Geofencing)*
+*Last updated: 2026-06-12 — Phase 115 complete (FECF-04/05); 31 Senate challengers financed, NULL NATIONAL_UPPER count 34→1*
