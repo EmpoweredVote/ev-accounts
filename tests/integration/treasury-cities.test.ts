@@ -58,4 +58,20 @@ describe('GET /api/treasury/cities — contract', () => {
       ).toBe(true);
     }
   });
+
+  // Phase 50: available_datasets entries expose period_label (null for normal
+  // annual rows; the FY1976 Transition Quarter row carries the TQ string). The
+  // frontend uses this to disambiguate FY1976 from the Transition Quarter.
+  it('available_datasets entries expose a period_label key', async () => {
+    const res = await request(app).get('/api/treasury/cities');
+    expect(res.status).toBe(200);
+    const cities = res.body as Array<Record<string, unknown>>;
+    if (cities.length === 0) return;
+    for (const city of cities) {
+      const datasets = (city['available_datasets'] as Array<Record<string, unknown>>) ?? [];
+      for (const ds of datasets) {
+        expect(ds, 'each dataset entry must carry period_label (may be null)').toHaveProperty('period_label');
+      }
+    }
+  });
 });

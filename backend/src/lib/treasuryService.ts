@@ -112,6 +112,7 @@ export async function resolveTreasuryGeoId(
 export interface TreasuryDataset {
   fiscal_year: number;
   dataset_type: string;
+  period_label: string | null; // non-null only for sub-annual periods (e.g. the FY1976 Transition Quarter)
 }
 
 export interface TreasuryCity {
@@ -133,6 +134,7 @@ export interface TreasuryBudget {
   municipality_id: string;
   fiscal_year: number;
   dataset_type: string;
+  period_label: string | null; // non-null only for sub-annual periods (e.g. the FY1976 Transition Quarter)
   total_budget: number;
   data_source: string | null;
   data_source_info: {
@@ -217,7 +219,7 @@ interface CityRow {
   created_at: string;
   updated_at: string;
   // Joined from budgets — aggregated as JSON array
-  available_datasets: Array<{ fiscal_year: string; dataset_type: string }> | null;
+  available_datasets: Array<{ fiscal_year: string; dataset_type: string; period_label: string | null }> | null;
 }
 
 interface BudgetRow {
@@ -225,6 +227,7 @@ interface BudgetRow {
   municipality_id: string;
   fiscal_year: string; // bigint returned as string
   dataset_type: string;
+  period_label: string | null;
   total_budget: string; // numeric returned as string
   data_source: string | null;
   ds_display_name: string | null;
@@ -327,6 +330,7 @@ function mapCity(row: CityRow): TreasuryCity {
     available_datasets: (row.available_datasets ?? []).map((d) => ({
       fiscal_year: Number(d.fiscal_year),
       dataset_type: d.dataset_type,
+      period_label: d.period_label ?? null,
     })),
   };
 }
@@ -337,6 +341,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     municipality_id: row.municipality_id,
     fiscal_year: Number(row.fiscal_year),
     dataset_type: row.dataset_type,
+    period_label: row.period_label ?? null,
     total_budget: Number(row.total_budget),
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url ? {
@@ -405,7 +410,7 @@ export async function getCities(): Promise<TreasuryCity[]> {
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
-                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type)
+                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type, 'period_label', b.period_label)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -436,7 +441,7 @@ export async function getCityById(id: string): Promise<TreasuryCity | null> {
             m.created_at, m.updated_at,
             COALESCE(
               json_agg(
-                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type)
+                json_build_object('fiscal_year', b.fiscal_year, 'dataset_type', b.dataset_type, 'period_label', b.period_label)
                 ORDER BY b.fiscal_year DESC
               ) FILTER (WHERE b.id IS NOT NULL),
               '[]'
@@ -460,7 +465,7 @@ export async function getBudgetsByCityId(
 ): Promise<TreasuryBudget[]> {
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
-      `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+      `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
               b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
               b.hierarchy, b.generated_at, b.created_at, b.updated_at
@@ -479,7 +484,7 @@ export async function getBudgetsByCityId(
   }
 
   const { rows } = await pool.query<BudgetRow>(
-    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
             b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
@@ -655,7 +660,7 @@ export async function getBudgetById(
   id: string
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
-    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.total_budget,
+    `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
             b.data_source, sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
             b.hierarchy, b.generated_at, b.created_at, b.updated_at
