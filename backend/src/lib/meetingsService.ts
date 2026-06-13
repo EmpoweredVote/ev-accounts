@@ -1,21 +1,19 @@
 /**
- * meetingsService — city council meeting data lookups for the meetings schema.
+ * meetingsService — city council meeting data for the meetings schema.
  *
  * WHY THIS FILE EXISTS:
- * The meetings schema is NOT in the PostgREST exposed schema list
- * (`public, connect, empower, inform, graphql_public, validation_quests`).
- * `supabaseAnon.schema('meetings')` would fail at runtime.
- * ALL meetings reads AND writes must use pool.query() (direct postgres).
+ * The meetings schema is NOT in the PostgREST exposed schema list.
+ * ALL reads AND writes must use pool.query() (direct postgres).
  *
- * Purpose: Satisfies CONS-09 — Meetings endpoints served by ev-accounts.
+ * The on-the-record pipeline (CouncilScribe) is the sole writer. This service
+ * is read-only — all write paths are in the pipeline's publish.py.
  *
  * All response objects are built from EXPLICIT field whitelists. DB rows are
  * NEVER spread into responses.
  *
- * Bigint/numeric note: The pg driver returns bigint and numeric columns as
- * JavaScript strings. Always call Number() on: segment_index, segment_count,
- * speaker_count, sort_order, start_time, end_time, timestamp, duration_seconds,
- * confidence. Use `value !== null ? Number(value) : null` for nullable columns.
+ * Bigint/numeric note: pg driver returns bigint and numeric as JavaScript
+ * strings. Always call Number() on: segment_index, segment_count,
+ * speaker_count, start_time, end_time, duration_seconds, confidence.
  */
 
 import { pool } from './db.js';
@@ -27,7 +25,7 @@ import { pool } from './db.js';
 export interface Meeting {
   id: string;
   city: string;
-  state: string;
+  state: string | null;
   date: string;
   meetingType: string;
   durationSeconds: number | null;
@@ -38,6 +36,13 @@ export interface Meeting {
   speakerCount: number | null;
   createdAt: string | null;
   updatedAt: string | null;
+  // on-the-record fields
+  bodySlug: string | null;
+  sourceUrl: string | null;
+  playbackKind: string | null;
+  slug: string | null;
+  summary: unknown | null;
+  processingMetadata: unknown | null;
 }
 
 export interface Speaker {
@@ -48,6 +53,7 @@ export interface Speaker {
   confidence: number | null;
   idMethod: string | null;
   politicianId: string | null;
+  politicianSlug: string | null;
   createdAt: string | null;
 }
 
@@ -59,6 +65,10 @@ export interface Segment {
   startTime: number;
   endTime: number;
   text: string;
+  speakerLabel: string | null;
+  speakerName: string | null;
+  politicianSlug: string | null;
+  confidence: number | null;
 }
 
 export interface MeetingSummary {
@@ -107,17 +117,23 @@ export interface VoteRecord {
 interface MeetingRow {
   id: string;
   city: string;
-  state: string;
+  state: string | null;
   date: string;
   meeting_type: string;
-  duration_seconds: string | null; // numeric → string
+  duration_seconds: string | null;
   video_url: string | null;
   audio_source: string | null;
   status: string;
-  segment_count: string | null; // bigint → string
-  speaker_count: string | null; // bigint → string
+  segment_count: string | null;
+  speaker_count: string | null;
   created_at: string | null;
   updated_at: string | null;
+  body_slug: string | null;
+  source_url: string | null;
+  playback_kind: string | null;
+  slug: string | null;
+  summary: unknown | null;
+  processing_metadata: unknown | null;
 }
 
 interface SpeakerRow {
@@ -125,9 +141,10 @@ interface SpeakerRow {
   meeting_id: string;
   label: string;
   display_name: string | null;
-  confidence: string | null; // numeric → string
+  confidence: string | null;
   id_method: string | null;
   politician_id: string | null;
+  politician_slug: string | null;
   created_at: string | null;
 }
 
@@ -135,10 +152,14 @@ interface SegmentRow {
   id: string;
   meeting_id: string;
   speaker_id: string;
-  segment_index: string; // bigint → string
-  start_time: string; // numeric → string
-  end_time: string; // numeric → string
+  segment_index: string;
+  start_time: string;
+  end_time: string;
   text: string;
+  speaker_label: string | null;
+  speaker_name: string | null;
+  politician_slug: string | null;
+  confidence: string | null;
 }
 
 interface SummaryRow {
@@ -155,9 +176,9 @@ interface SummarySectionRow {
   section_type: string;
   title: string;
   content: string;
-  start_time: string | null; // numeric → string
-  end_time: string | null; // numeric → string
-  sort_order: string | null; // bigint → string
+  start_time: string | null;
+  end_time: string | null;
+  sort_order: string | null;
 }
 
 interface VoteRow {
@@ -167,7 +188,7 @@ interface VoteRow {
   description: string | null;
   result: string;
   vote_type: string | null;
-  timestamp: string | null; // numeric → string
+  timestamp: string | null;
   created_at: string | null;
 }
 
@@ -197,6 +218,12 @@ function mapMeeting(row: MeetingRow): Meeting {
     speakerCount: row.speaker_count !== null ? Number(row.speaker_count) : null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
+    bodySlug: row.body_slug,
+    sourceUrl: row.source_url,
+    playbackKind: row.playback_kind,
+    slug: row.slug,
+    summary: row.summary,
+    processingMetadata: row.processing_metadata,
   };
 }
 
@@ -209,6 +236,7 @@ function mapSpeaker(row: SpeakerRow): Speaker {
     confidence: row.confidence !== null ? Number(row.confidence) : null,
     idMethod: row.id_method,
     politicianId: row.politician_id,
+    politicianSlug: row.politician_slug,
     createdAt: row.created_at,
   };
 }
@@ -222,6 +250,10 @@ function mapSegment(row: SegmentRow): Segment {
     startTime: Number(row.start_time),
     endTime: Number(row.end_time),
     text: row.text,
+    speakerLabel: row.speaker_label,
+    speakerName: row.speaker_name,
+    politicianSlug: row.politician_slug,
+    confidence: row.confidence !== null ? Number(row.confidence) : null,
   };
 }
 
@@ -265,10 +297,12 @@ function mapVoteRecord(row: VoteRecordRow): VoteRecord {
 // Public read functions
 // ---------------------------------------------------------------------------
 
-/**
- * Fetch meetings with optional filters. Never uses string interpolation —
- * all filter values are parameterized.
- */
+const MEETING_COLS = `
+  id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
+  status, segment_count, speaker_count, created_at, updated_at,
+  body_slug, source_url, playback_kind, slug, summary, processing_metadata
+`;
+
 export async function getMeetings(
   filters?: { city?: string; state?: string; status?: string }
 ): Promise<Meeting[]> {
@@ -291,8 +325,7 @@ export async function getMeetings(
   const whereClause = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
 
   const { rows } = await pool.query<MeetingRow>(
-    `SELECT id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
-            status, segment_count, speaker_count, created_at, updated_at
+    `SELECT ${MEETING_COLS}
      FROM meetings.meetings
      ${whereClause}
      ORDER BY date DESC`,
@@ -302,17 +335,11 @@ export async function getMeetings(
   return rows.map(mapMeeting);
 }
 
-/**
- * Fetch a single meeting by UUID with its speakers. Returns null if not found.
- */
 export async function getMeetingById(
   id: string
 ): Promise<(Meeting & { speakers: Speaker[] }) | null> {
   const { rows: meetingRows } = await pool.query<MeetingRow>(
-    `SELECT id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
-            status, segment_count, speaker_count, created_at, updated_at
-     FROM meetings.meetings
-     WHERE id = $1`,
+    `SELECT ${MEETING_COLS} FROM meetings.meetings WHERE id = $1`,
     [id]
   );
 
@@ -321,23 +348,17 @@ export async function getMeetingById(
   const meeting = mapMeeting(meetingRows[0]);
 
   const { rows: speakerRows } = await pool.query<SpeakerRow>(
-    `SELECT id, meeting_id, label, display_name, confidence, id_method, politician_id, created_at
+    `SELECT id, meeting_id, label, display_name, confidence, id_method,
+            politician_id, politician_slug, created_at
      FROM meetings.speakers
      WHERE meeting_id = $1
      ORDER BY label`,
     [id]
   );
 
-  return {
-    ...meeting,
-    speakers: speakerRows.map(mapSpeaker),
-  };
+  return { ...meeting, speakers: speakerRows.map(mapSpeaker) };
 }
 
-/**
- * Fetch paginated transcript segments for a meeting.
- * page is 1-indexed, returns 200 segments per page.
- */
 export async function getTranscriptByMeetingId(
   meetingId: string,
   page: number
@@ -347,11 +368,16 @@ export async function getTranscriptByMeetingId(
 
   const [{ rows: segmentRows }, { rows: countRows }] = await Promise.all([
     pool.query<SegmentRow>(
-      `SELECT id, meeting_id, speaker_id, segment_index, start_time, end_time, text
-       FROM meetings.segments
-       WHERE meeting_id = $1
-       ORDER BY segment_index
-       LIMIT 200 OFFSET $2`,
+      // JOIN speakers so speaker_label is available without a second query
+      `SELECT s.id, s.meeting_id, s.speaker_id, s.segment_index,
+              s.start_time, s.end_time, s.text,
+              s.speaker_name, s.politician_slug, s.confidence,
+              sp.label AS speaker_label
+       FROM meetings.segments s
+       LEFT JOIN meetings.speakers sp ON sp.id = s.speaker_id
+       WHERE s.meeting_id = $1
+       ORDER BY s.segment_index
+       LIMIT ${limit} OFFSET $2`,
       [meetingId, offset]
     ),
     pool.query<{ count: string }>(
@@ -367,9 +393,6 @@ export async function getTranscriptByMeetingId(
   };
 }
 
-/**
- * Fetch the summary (with sections) for a meeting. Returns null if none exists.
- */
 export async function getSummaryByMeetingId(
   meetingId: string
 ): Promise<MeetingSummary | null> {
@@ -403,9 +426,6 @@ export async function getSummaryByMeetingId(
   };
 }
 
-/**
- * Fetch all votes (with embedded vote records) for a meeting.
- */
 export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
   const { rows: voteRows } = await pool.query<VoteRow>(
     `SELECT id, meeting_id, resolution, description, result, vote_type, timestamp, created_at
@@ -426,16 +446,12 @@ export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
     [voteIds]
   );
 
-  // Group records by vote_id
   const recordsByVoteId = new Map<string, VoteRecord[]>();
   for (const record of recordRows) {
     const mapped = mapVoteRecord(record);
     const existing = recordsByVoteId.get(record.vote_id);
-    if (existing) {
-      existing.push(mapped);
-    } else {
-      recordsByVoteId.set(record.vote_id, [mapped]);
-    }
+    if (existing) existing.push(mapped);
+    else recordsByVoteId.set(record.vote_id, [mapped]);
   }
 
   return voteRows.map((row) => {
@@ -446,12 +462,9 @@ export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
 }
 
 // ---------------------------------------------------------------------------
-// Admin write functions
+// Admin write functions (kept for completeness; pipeline writes via psycopg2)
 // ---------------------------------------------------------------------------
 
-/**
- * Create a new meeting.
- */
 export async function createMeeting(data: {
   city: string;
   state: string;
@@ -466,8 +479,7 @@ export async function createMeeting(data: {
     `INSERT INTO meetings.meetings
        (city, state, date, meeting_type, duration_seconds, video_url, audio_source, status)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
-     RETURNING id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
-               status, segment_count, speaker_count, created_at, updated_at`,
+     RETURNING ${MEETING_COLS}`,
     [
       data.city,
       data.state,
@@ -482,10 +494,6 @@ export async function createMeeting(data: {
   return mapMeeting(rows[0]);
 }
 
-/**
- * Update a meeting by UUID. Only provided fields are changed.
- * Returns null if meeting not found.
- */
 export async function updateMeeting(
   id: string,
   data: Partial<{
@@ -502,66 +510,34 @@ export async function updateMeeting(
   const setClauses: string[] = [];
   const params: unknown[] = [];
 
-  if (data.city !== undefined) {
-    params.push(data.city);
-    setClauses.push(`city = $${params.length}`);
-  }
-  if (data.state !== undefined) {
-    params.push(data.state);
-    setClauses.push(`state = $${params.length}`);
-  }
-  if (data.date !== undefined) {
-    params.push(data.date);
-    setClauses.push(`date = $${params.length}`);
-  }
-  if (data.meetingType !== undefined) {
-    params.push(data.meetingType);
-    setClauses.push(`meeting_type = $${params.length}`);
-  }
-  if (data.durationSeconds !== undefined) {
-    params.push(data.durationSeconds);
-    setClauses.push(`duration_seconds = $${params.length}`);
-  }
-  if (data.videoUrl !== undefined) {
-    params.push(data.videoUrl);
-    setClauses.push(`video_url = $${params.length}`);
-  }
-  if (data.audioSource !== undefined) {
-    params.push(data.audioSource);
-    setClauses.push(`audio_source = $${params.length}`);
-  }
-  if (data.status !== undefined) {
-    params.push(data.status);
-    setClauses.push(`status = $${params.length}`);
-  }
+  if (data.city !== undefined) { params.push(data.city); setClauses.push(`city = $${params.length}`); }
+  if (data.state !== undefined) { params.push(data.state); setClauses.push(`state = $${params.length}`); }
+  if (data.date !== undefined) { params.push(data.date); setClauses.push(`date = $${params.length}`); }
+  if (data.meetingType !== undefined) { params.push(data.meetingType); setClauses.push(`meeting_type = $${params.length}`); }
+  if (data.durationSeconds !== undefined) { params.push(data.durationSeconds); setClauses.push(`duration_seconds = $${params.length}`); }
+  if (data.videoUrl !== undefined) { params.push(data.videoUrl); setClauses.push(`video_url = $${params.length}`); }
+  if (data.audioSource !== undefined) { params.push(data.audioSource); setClauses.push(`audio_source = $${params.length}`); }
+  if (data.status !== undefined) { params.push(data.status); setClauses.push(`status = $${params.length}`); }
 
   if (setClauses.length === 0) {
-    // Nothing to update — fetch and return current state
     return getMeetingById(id).then((r) => (r ? { ...r } : null));
   }
 
   setClauses.push(`updated_at = NOW()`);
   params.push(id);
-  const idParam = `$${params.length}`;
 
   const { rows } = await pool.query<MeetingRow>(
     `UPDATE meetings.meetings
      SET ${setClauses.join(', ')}
-     WHERE id = ${idParam}
-     RETURNING id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
-               status, segment_count, speaker_count, created_at, updated_at`,
+     WHERE id = $${params.length}
+     RETURNING ${MEETING_COLS}`,
     params
   );
 
   return rows.length > 0 ? mapMeeting(rows[0]) : null;
 }
 
-/**
- * Delete a meeting and all its child data (manual cascade).
- * Returns true if deleted, false if not found.
- */
 export async function deleteMeeting(id: string): Promise<boolean> {
-  // Manual cascade — delete child rows in dependency order
   await pool.query(
     `DELETE FROM meetings.vote_records
      WHERE vote_id IN (SELECT id FROM meetings.votes WHERE meeting_id = $1)`,
