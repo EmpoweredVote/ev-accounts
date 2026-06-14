@@ -43,6 +43,7 @@ export interface Meeting {
   slug: string | null;
   summary: unknown | null;
   processingMetadata: unknown | null;
+  summaryPreview: string | null;
 }
 
 export interface Speaker {
@@ -208,6 +209,11 @@ function mapMeeting(row: MeetingRow): Meeting {
     slug: row.slug,
     summary: row.summary,
     processingMetadata: row.processing_metadata,
+    summaryPreview: (() => {
+      const ex = (row.summary as { executive_summary?: string } | null)?.executive_summary;
+      if (!ex) return null;
+      return ex.length > 160 ? ex.slice(0, 157).trimEnd() + "…" : ex;
+    })(),
   };
 }
 
