@@ -1447,4 +1447,4 @@ Plans:
 | 114. fec-script-fix-and-sitting-members | v2.11 | 1/1 | Complete | 2026-06-11 |
 | 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete    | 2026-06-12 |
 | 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
-| 117. ma-city-official-stances | v2.12 | — | Pending | — |
+| 117. ma-city-official-stances | v2.12 | 2/2 | Complete | 2026-06-14 |

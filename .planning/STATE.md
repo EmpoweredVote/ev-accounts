@@ -1,11 +1,11 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.11
-milestone_name: FEC Finance Completion + US House Geofencing
+milestone: v2.12
+milestone_name: MA City Official Stances
 status: completed
-stopped_at: context exhaustion at 80% (2026-06-13)
-last_updated: "2026-06-13T04:23:54.658Z"
-last_activity: 2026-06-12
+stopped_at: milestone closeout
+last_updated: "2026-06-14"
+last_activity: 2026-06-14
 progress:
   total_phases: 43
   completed_phases: 3

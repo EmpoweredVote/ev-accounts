@@ -1,5 +1,59 @@
 # Project Milestones: Empowered Accounts
 
+## v2.12 MA City Official Stances (Shipped: 2026-06-14)
+
+**Delivered:** Sourced compass stance data for 43 MA city officials across Boston, Cambridge, Worcester, and Springfield — 449 total stance rows with full reasoning + source citations in `inform.politician_context`.
+
+**Phases completed:** 1 phase (117), 2 plans (117-01, 117-02)
+
+**Key accomplishments:**
+
+- Boston (migration 574): 14 officials, 162 stances — Mayor Wu + 4 At-Large + 9 District Councillors
+- Cambridge (migration 575): 10 officials with stances, 166 stances — Mayor Siddiqui + 9 Councillors; 6 school committee members correct zeros (no public policy record)
+- Worcester (migration 576): 11 officials, 86 stances — Mayor Petty + City Manager Nguyen + 9 Councillors; all 11 yielded stances
+- Springfield (migration 577): 8 officials with stances, 35 stances; 6 newly-elected 2025 ward councillors correct zeros; Perez committee-only rows dropped per editorial review
+
+**Stats:**
+
+- 1 phase (117), 2 plans
+- 4 migrations (574–577)
+- 449 stances, 43 officials with data, 6 correct zeros
+
+**Git range:** `a200d403` → `034b3066`
+
+**Requirements closed:** Phase 117 complete
+
+**Known patterns established:**
+- `BEGIN;` in one `execute_sql` call + `COMMIT;` in another = silent rollback (each call is a new connection) — use auto-commit for multi-chunk idempotent migrations
+- Boston external_id format: `-2507000001` through `-2507000014`
+- Cambridge officials: query by district_id `cf3274f9-48c3-4e96-8273-3f6574add756`, not government_id (that column is NULL on Cambridge districts)
+
+---
+
+## v2.11 FEC Finance Completion + US House Geofencing (Shipped: 2026-06-12)
+
+**Delivered:** Full FEC finance coverage for sitting senators + 2026 candidates + all VA House reps; TIGER 2024 CD119 all 435 US House districts imported for national Path 0 geofencing.
+
+**Phases completed:** 3 phases (114–116), 3 plans
+
+**Key accomplishments:**
+
+- FEC Script Fix (Phase 114): Fixed committee lookup fallback (`.committee_id` not `.id`), multi-cycle totals loop, DIRECT_FEC_ID_OVERRIDES for stale YAML entries; Ivey/Self/Warnock/Cruz/LaMalfa/Swalwell all financed
+- Senate Candidate FEC (Phase 115): ~32 2026 Senate candidates researched; Strauss/Jain marked not_applicable
+- US House TIGER (Phase 116): All 435 CD119 polygons imported (51-state per-state download after national ZIP 404); tiger_geoid backfilled on all NATIONAL_LOWER districts; Path 0 verified
+
+**Stats:**
+
+- 3 phases (114–116), 3 plans
+- 435 US House geofence polygons live
+- FEC NULL count: 40 → low single digits
+
+**Git range:** `96e0a872` → `83b87196`
+
+**Requirements closed:** FECF-01, FECF-02, FECF-03, FECF-04, FECF-05, UHGE-01, UHGE-02, UHGE-03
+
+---
+
 ## v2.10 Virginia Coverage + LA County Finance (Shipped: 2026-06-11)
 
 **Delivered:** Full Virginia civic data layer + LA County Finance closure — 100 House delegates + 11 federal House reps seeded, TIGER 2024 SLDL/SLDU polygons imported for VA Path 0 geofencing, sourced stances for 40 state senators + 68/100 delegates + 11 federal House reps, 11/11 FEC finance_summary populated, VPAP HTML-only documented; plus 192 LA City officials with CAL-ACCESS finance data.
