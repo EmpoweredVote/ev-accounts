@@ -548,12 +548,9 @@ export async function deleteMeeting(id: string): Promise<boolean> {
     [id]
   );
   await pool.query(`DELETE FROM meetings.votes WHERE meeting_id = $1`, [id]);
-  await pool.query(
-    `DELETE FROM meetings.summary_sections
-     WHERE summary_id IN (SELECT id FROM meetings.meeting_summaries WHERE meeting_id = $1)`,
-    [id]
-  );
-  await pool.query(`DELETE FROM meetings.meeting_summaries WHERE meeting_id = $1`, [id]);
+  // The summary is a JSONB column on meetings.meetings (removed with the row
+  // below); the meeting_summaries/summary_sections tables never existed. Topic
+  // tags clean up via ON DELETE CASCADE on meeting_topics.meeting_id.
   await pool.query(`DELETE FROM meetings.segments WHERE meeting_id = $1`, [id]);
   await pool.query(`DELETE FROM meetings.speakers WHERE meeting_id = $1`, [id]);
 

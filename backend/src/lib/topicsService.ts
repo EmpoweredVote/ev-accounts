@@ -49,12 +49,10 @@ export async function getTopics(): Promise<{ topics: TopicListEntry[]; uncategor
      ORDER BY item_count DESC, mt.topic_key`
   );
 
-  // Uncategorized = substantive sections (any meeting) with zero tags.
-  // Counted as meetings that have a summary but fewer tagged sections than
-  // substantive sections is non-trivial from SQL alone; expose a simple proxy:
-  // sections present in summaries with no row in meeting_topics is computed
-  // client-rarely, so we return 0 here and let the web omit the row when 0.
-  // (A precise count is deferred to the curation phase.)
+  // Uncategorized = substantive summary sections with no topic tag. Counting
+  // them precisely means comparing each meeting's summary JSONB sections against
+  // its meeting_topics rows, which isn't worth a cross-JSONB query here; the web
+  // omits the row when this is 0. A precise count is deferred to the curation phase.
   const uncategorizedCount = 0;
 
   return {
