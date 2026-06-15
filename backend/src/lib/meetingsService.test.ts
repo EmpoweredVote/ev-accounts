@@ -5,7 +5,12 @@ vi.mock('./db.js', () => ({
   pool: { query: mockQuery },
 }));
 
-import { getMeetings, getMeetingById } from './meetingsService.js';
+import {
+  createMeeting,
+  getMeetingById,
+  getMeetings,
+  updateMeeting,
+} from './meetingsService.js';
 
 // A representative meetings.meetings row with a full summary JSONB.
 const fullSummary = {
@@ -21,7 +26,9 @@ const fullSummary = {
 
 const baseRow = {
   id: 'm1',
-  city: 'Bloomington',
+  title: 'Bloomington Council Budget Hearing',
+  event_kind: 'council',
+  city: null,
   state: 'IN',
   date: '2026-02-18',
   meeting_type: 'City Council',
@@ -74,7 +81,55 @@ describe('getMeetingById (detail payload)', () => {
     const meeting = await getMeetingById('m1');
 
     expect(meeting).not.toBeNull();
+    expect(meeting!.title).toBe('Bloomington Council Budget Hearing');
+    expect(meeting!.eventKind).toBe('council');
+    expect(meeting!.city).toBeNull();
     expect(meeting!.summary).toEqual(fullSummary);
     expect(meeting!.summaryPreview).not.toBeNull();
+  });
+});
+
+describe('meeting writes', () => {
+  it('writes title, eventKind, and a null city on create', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+
+    await createMeeting({
+      city: null,
+      state: 'CA',
+      date: '2026-06-02',
+      meetingType: 'Governor Debate',
+      title: 'California Governor Debate',
+      eventKind: 'debate',
+    });
+
+    expect(mockQuery).toHaveBeenCalledWith(
+      expect.stringContaining('title, event_kind'),
+      [
+        null,
+        'CA',
+        '2026-06-02',
+        'Governor Debate',
+        null,
+        null,
+        null,
+        'processing',
+        'California Governor Debate',
+        'debate',
+      ]
+    );
+  });
+
+  it('updates title and eventKind independently', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [baseRow] });
+
+    await updateMeeting('m1', {
+      title: 'Updated title',
+      eventKind: 'forum',
+    });
+
+    expect(mockQuery).toHaveBeenCalledWith(
+      expect.stringContaining('title = $1, event_kind = $2'),
+      ['Updated title', 'forum', 'm1']
+    );
   });
 });
