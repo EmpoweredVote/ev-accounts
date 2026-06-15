@@ -17,6 +17,7 @@
  */
 
 import { pool } from './db.js';
+import type { EventKind } from './eventKinds.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -24,7 +25,9 @@ import { pool } from './db.js';
 
 export interface Meeting {
   id: string;
-  city: string;
+  title: string | null;
+  eventKind: EventKind;
+  city: string | null;
   state: string | null;
   date: string;
   meetingType: string;
@@ -43,7 +46,15 @@ export interface Meeting {
   slug: string | null;
   summary: unknown | null;
   processingMetadata: unknown | null;
+  summaryPreview: string | null;
 }
+
+/**
+ * List payload shape. Omits the full `summary` JSONB (all sections, content,
+ * key_decisions) so the meetings list endpoint only ships the short
+ * `summaryPreview`. The full `summary` rides the detail endpoint only.
+ */
+export type MeetingListItem = Omit<Meeting, 'summary'>;
 
 export interface Speaker {
   id: string;
@@ -77,6 +88,8 @@ export interface MeetingSummary {
   summaryType: string;
   model: string | null;
   createdAt: string | null;
+  executiveSummary: string;
+  keyDecisions: string[];
   sections: SummarySection[];
 }
 
@@ -89,6 +102,7 @@ export interface SummarySection {
   startTime: number | null;
   endTime: number | null;
   sortOrder: number;
+  topics: { key: string; title: string | null; status: string }[];
 }
 
 export interface Vote {
@@ -116,7 +130,9 @@ export interface VoteRecord {
 
 interface MeetingRow {
   id: string;
-  city: string;
+  title: string | null;
+  event_kind: EventKind;
+  city: string | null;
   state: string | null;
   date: string;
   meeting_type: string;
@@ -162,25 +178,6 @@ interface SegmentRow {
   confidence: string | null;
 }
 
-interface SummaryRow {
-  id: string;
-  meeting_id: string;
-  summary_type: string;
-  model: string | null;
-  created_at: string | null;
-}
-
-interface SummarySectionRow {
-  id: string;
-  summary_id: string;
-  section_type: string;
-  title: string;
-  content: string;
-  start_time: string | null;
-  end_time: string | null;
-  sort_order: string | null;
-}
-
 interface VoteRow {
   id: string;
   meeting_id: string;
@@ -206,6 +203,8 @@ interface VoteRecordRow {
 function mapMeeting(row: MeetingRow): Meeting {
   return {
     id: row.id,
+    title: row.title,
+    eventKind: row.event_kind,
     city: row.city,
     state: row.state,
     date: row.date,
@@ -224,7 +223,19 @@ function mapMeeting(row: MeetingRow): Meeting {
     slug: row.slug,
     summary: row.summary,
     processingMetadata: row.processing_metadata,
+    summaryPreview: (() => {
+      const ex = (row.summary as { executive_summary?: string } | null)?.executive_summary;
+      if (!ex) return null;
+      return ex.length > 160 ? ex.slice(0, 157).trimEnd() + "…" : ex;
+    })(),
   };
+}
+
+// List mapper: drops the full `summary` JSONB so only `summaryPreview` rides
+// the list payload. Detail paths use mapMeeting() to keep the full summary.
+function mapMeetingListItem(row: MeetingRow): MeetingListItem {
+  const { summary: _summary, ...rest } = mapMeeting(row);
+  return rest;
 }
 
 function mapSpeaker(row: SpeakerRow): Speaker {
@@ -257,19 +268,6 @@ function mapSegment(row: SegmentRow): Segment {
   };
 }
 
-function mapSummarySection(row: SummarySectionRow): SummarySection {
-  return {
-    id: row.id,
-    summaryId: row.summary_id,
-    sectionType: row.section_type,
-    title: row.title,
-    content: row.content,
-    startTime: row.start_time !== null ? Number(row.start_time) : null,
-    endTime: row.end_time !== null ? Number(row.end_time) : null,
-    sortOrder: row.sort_order !== null ? Number(row.sort_order) : 0,
-  };
-}
-
 function mapVote(row: VoteRow): Vote {
   return {
     id: row.id,
@@ -298,14 +296,15 @@ function mapVoteRecord(row: VoteRecordRow): VoteRecord {
 // ---------------------------------------------------------------------------
 
 const MEETING_COLS = `
-  id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
+  id, title, event_kind, city, state, date::text AS date, meeting_type,
+  duration_seconds, video_url, audio_source,
   status, segment_count, speaker_count, created_at, updated_at,
   body_slug, source_url, playback_kind, slug, summary, processing_metadata
 `;
 
 export async function getMeetings(
   filters?: { city?: string; state?: string; status?: string }
-): Promise<Meeting[]> {
+): Promise<MeetingListItem[]> {
   const params: string[] = [];
   const conditions: string[] = [];
 
@@ -332,7 +331,7 @@ export async function getMeetings(
     params
   );
 
-  return rows.map(mapMeeting);
+  return rows.map(mapMeetingListItem);
 }
 
 export async function getMeetingById(
@@ -396,33 +395,66 @@ export async function getTranscriptByMeetingId(
 export async function getSummaryByMeetingId(
   meetingId: string
 ): Promise<MeetingSummary | null> {
-  const { rows: summaryRows } = await pool.query<SummaryRow>(
-    `SELECT id, meeting_id, summary_type, model, created_at
-     FROM meetings.meeting_summaries
-     WHERE meeting_id = $1
-     LIMIT 1`,
+  const { rows } = await pool.query<{ summary: unknown | null }>(
+    `SELECT summary FROM meetings.meetings WHERE id = $1`,
     [meetingId]
   );
+  if (rows.length === 0 || !rows[0].summary) return null;
 
-  if (summaryRows.length === 0) return null;
+  // summary JSONB shape (written by publish.py): { executive_summary,
+  // key_decisions[], sections[], model, generated_at }
+  const s = rows[0].summary as {
+    executive_summary?: string;
+    key_decisions?: string[];
+    sections?: Array<{
+      section_type: string; title: string; content: string;
+      start_time?: number; end_time?: number;
+      start_segment?: number; end_segment?: number;
+    }>;
+    model?: string;
+    generated_at?: string;
+  };
 
-  const summaryRow = summaryRows[0];
-
-  const { rows: sectionRows } = await pool.query<SummarySectionRow>(
-    `SELECT id, summary_id, section_type, title, content, start_time, end_time, sort_order
-     FROM meetings.summary_sections
-     WHERE summary_id = $1
-     ORDER BY sort_order`,
-    [summaryRow.id]
+  // Attach topic tags by section_index (meeting_topics is the source of truth).
+  const { rows: topicRows } = await pool.query<{
+    section_index: string; topic_key: string; status: string; title: string | null;
+  }>(
+    `SELECT mt.section_index, mt.topic_key, mt.status, ct.short_title AS title
+     FROM meetings.meeting_topics mt
+     LEFT JOIN inform.compass_topics ct
+       ON ct.topic_key = mt.topic_key AND ct.is_live = true
+     WHERE mt.meeting_id = $1`,
+    [meetingId]
   );
+  const topicsByIndex = new Map<number, { key: string; title: string | null; status: string }[]>();
+  for (const r of topicRows) {
+    const idx = Number(r.section_index);
+    const list = topicsByIndex.get(idx) ?? [];
+    list.push({ key: r.topic_key, title: r.title, status: r.status });
+    topicsByIndex.set(idx, list);
+  }
+
+  const sections: SummarySection[] = (s.sections ?? []).map((sec, i) => ({
+    id: `${meetingId}:${i}`,
+    summaryId: meetingId,
+    sectionType: sec.section_type,
+    title: sec.title,
+    content: sec.content,
+    startTime: sec.start_time != null ? Number(sec.start_time) : null,
+    endTime: sec.end_time != null ? Number(sec.end_time) : null,
+    sortOrder: i,
+    topics: topicsByIndex.get(i) ?? [],
+  }));
 
   return {
-    id: summaryRow.id,
-    meetingId: summaryRow.meeting_id,
-    summaryType: summaryRow.summary_type,
-    model: summaryRow.model,
-    createdAt: summaryRow.created_at,
-    sections: sectionRows.map(mapSummarySection),
+    id: meetingId,
+    meetingId,
+    summaryType: 'meeting',
+    model: s.model ?? null,
+    createdAt: s.generated_at ?? null,
+    executiveSummary: s.executive_summary ?? '',
+    keyDecisions: s.key_decisions ?? [],
+    sections,
   };
 }
 
@@ -466,10 +498,12 @@ export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
 // ---------------------------------------------------------------------------
 
 export async function createMeeting(data: {
-  city: string;
+  city?: string | null;
   state: string;
   date: string;
   meetingType: string;
+  title?: string | null;
+  eventKind?: EventKind;
   durationSeconds?: number | null;
   videoUrl?: string | null;
   audioSource?: string | null;
@@ -477,11 +511,12 @@ export async function createMeeting(data: {
 }): Promise<Meeting> {
   const { rows } = await pool.query<MeetingRow>(
     `INSERT INTO meetings.meetings
-       (city, state, date, meeting_type, duration_seconds, video_url, audio_source, status)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+       (city, state, date, meeting_type, duration_seconds, video_url,
+        audio_source, status, title, event_kind)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
      RETURNING ${MEETING_COLS}`,
     [
-      data.city,
+      data.city ?? null,
       data.state,
       data.date,
       data.meetingType,
@@ -489,6 +524,8 @@ export async function createMeeting(data: {
       data.videoUrl ?? null,
       data.audioSource ?? null,
       data.status ?? 'processing',
+      data.title ?? null,
+      data.eventKind ?? 'council',
     ]
   );
   return mapMeeting(rows[0]);
@@ -497,7 +534,9 @@ export async function createMeeting(data: {
 export async function updateMeeting(
   id: string,
   data: Partial<{
-    city: string;
+    city: string | null;
+    title: string | null;
+    eventKind: EventKind;
     state: string;
     date: string;
     meetingType: string;
@@ -510,6 +549,8 @@ export async function updateMeeting(
   const setClauses: string[] = [];
   const params: unknown[] = [];
 
+  if (data.title !== undefined) { params.push(data.title); setClauses.push(`title = $${params.length}`); }
+  if (data.eventKind !== undefined) { params.push(data.eventKind); setClauses.push(`event_kind = $${params.length}`); }
   if (data.city !== undefined) { params.push(data.city); setClauses.push(`city = $${params.length}`); }
   if (data.state !== undefined) { params.push(data.state); setClauses.push(`state = $${params.length}`); }
   if (data.date !== undefined) { params.push(data.date); setClauses.push(`date = $${params.length}`); }
@@ -544,12 +585,9 @@ export async function deleteMeeting(id: string): Promise<boolean> {
     [id]
   );
   await pool.query(`DELETE FROM meetings.votes WHERE meeting_id = $1`, [id]);
-  await pool.query(
-    `DELETE FROM meetings.summary_sections
-     WHERE summary_id IN (SELECT id FROM meetings.meeting_summaries WHERE meeting_id = $1)`,
-    [id]
-  );
-  await pool.query(`DELETE FROM meetings.meeting_summaries WHERE meeting_id = $1`, [id]);
+  // The summary is a JSONB column on meetings.meetings (removed with the row
+  // below); the meeting_summaries/summary_sections tables never existed. Topic
+  // tags clean up via ON DELETE CASCADE on meeting_topics.meeting_id.
   await pool.query(`DELETE FROM meetings.segments WHERE meeting_id = $1`, [id]);
   await pool.query(`DELETE FROM meetings.speakers WHERE meeting_id = $1`, [id]);
 
