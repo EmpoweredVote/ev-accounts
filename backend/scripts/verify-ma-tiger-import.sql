@@ -113,3 +113,61 @@ FROM essentials.geofence_boundaries
 WHERE state = '25'
 GROUP BY mtfcc ORDER BY mtfcc;
 -- Expected: G4020|14, G4040|293, G4110|58, G5200|9, G5210|40, G5220|160
+
+-- ─── Phase 118: MA TIGER Geofencing — tiger_geoid backfill gates ──────────────
+
+-- MAGE-00: MA geofence_boundaries counts by MTFCC (post-Phase 118 baseline)
+SELECT mtfcc, COUNT(*) AS row_count
+FROM essentials.geofence_boundaries
+WHERE state = '25'
+GROUP BY mtfcc ORDER BY mtfcc;
+-- Expected: G4020|14, G4040|293, G4110|58, G5200|9, G5210|40, G5220|160, G5420|5, X0013|9
+-- (8 rows total — G5420 and X0013 are pre-existing and unaffected by Phase 118)
+
+-- MAGE-01: STATE_LOWER tiger_geoid IS NULL count = 0 — MUST return 0
+SELECT COUNT(*) AS state_lower_null
+FROM essentials.districts
+WHERE state = 'ma' AND district_type = 'STATE_LOWER' AND tiger_geoid IS NULL;
+-- Expected: 0 (migration 619 backfilled all 160 STATE_LOWER rows)
+
+-- MAGE-02: STATE_UPPER tiger_geoid IS NULL count = 0 — MUST return 0
+SELECT COUNT(*) AS state_upper_null
+FROM essentials.districts
+WHERE state = 'ma' AND district_type = 'STATE_UPPER' AND tiger_geoid IS NULL;
+-- Expected: 0 (migration 619 backfilled all 40 STATE_UPPER rows)
+
+-- MAGE-03: 6 new city LOCAL/LOCAL_EXEC tiger_geoid IS NULL count = 0 — MUST return 0
+SELECT COUNT(*) AS city_null
+FROM essentials.districts
+WHERE state = 'ma'
+  AND district_type IN ('LOCAL', 'LOCAL_EXEC')
+  AND geo_id IN ('2562535', '2537490', '2539835', '2523000', '2572600', '2545000')
+  AND tiger_geoid IS NULL;
+-- Expected: 0 (migration 622 backfilled all 12 city LOCAL + LOCAL_EXEC rows)
+-- Cities: Somerville(2562535), Lynn(2537490), Medford(2539835), Fall River(2523000),
+--         Waltham(2572600), New Bedford(2545000)
+
+-- MAGE-04: Medford geo_id corrected (2540115 was Melrose; 2539835 is Medford) — MUST return 2
+SELECT COUNT(*) AS medford_correct
+FROM essentials.districts
+WHERE state = 'ma' AND geo_id = '2539835' AND district_type IN ('LOCAL', 'LOCAL_EXEC');
+-- Expected: 2 (LOCAL + LOCAL_EXEC rows; migration 622 corrected from Melrose's FIPS code)
+
+-- MAGE-05: Path 0 smoke test — Porter Square Cambridge → MA state senate + house districts
+-- Confirms tiger_geoid join works end-to-end after backfill
+-- NOTE: subquery filters mtfcc IN ('G5210','G5220') to avoid false match on geo_id '25017'
+-- which exists in both Middlesex County (G4020) and 8th Bristol SLDL district (G5220).
+SELECT district_type, geo_id, label
+FROM essentials.districts
+WHERE tiger_geoid IN (
+  SELECT gb.geo_id
+  FROM essentials.geofence_boundaries gb
+  WHERE gb.state = '25'
+    AND ST_Covers(gb.geometry, ST_SetSRID(ST_MakePoint(-71.1190, 42.3876), 4326))
+    AND gb.mtfcc IN ('G5210', 'G5220')
+)
+AND district_type IN ('STATE_UPPER', 'STATE_LOWER')
+ORDER BY district_type;
+-- Expected: 2 rows
+--   STATE_LOWER: geo_id='25083' (25th Middlesex District — MA House)
+--   STATE_UPPER: geo_id='25D27' (Second Middlesex District — MA Senate)
