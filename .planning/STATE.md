@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.12
-milestone_name: MA City Official Stances
+milestone_name: milestone
 status: completed
-stopped_at: milestone closeout
-last_updated: "2026-06-14"
+stopped_at: context exhaustion at 75% (2026-06-15)
+last_updated: "2026-06-14T00:00:00.000Z"
 last_activity: 2026-06-14
 progress:
   total_phases: 43
@@ -25,6 +25,11 @@ See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
 **Last shipped:** v2.11 FEC Finance Completion + US House Geofencing — Phases 114–116, shipped 2026-06-12. All requirements closed (FECF-01–05, UHGE-01–03).
 
 ## Current Position
+
+Phase: 118-ma-tiger-geofencing — IN PROGRESS
+Plan: 118-01-PLAN.md ✅ COMPLETE
+Status: Phase 118 Plan 01 complete — MA state legislative tiger_geoid backfill applied (migration 619)
+Last activity: 2026-06-14
 
 Phase: 116 — COMPLETE ✅
 Plan: 116-01-PLAN.md ✅
@@ -236,12 +241,14 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-13T04:23:54.650Z
-Stopped at: context exhaustion at 80% (2026-06-13)
+Last session: 2026-06-14T00:00:00.000Z
+Stopped at: Phase 118 Plan 01 complete — starting Plan 02
 Resume file: None
 
 ## Decisions
 
+- [Phase 118-01]: Migration number 619 (not 600) — disk files 600–618 already taken by Phase 117 stance files; DB MAX was 604 at execution time; disk wins
+- [Phase 118-01]: PROJ_LIB path is C:\Program Files\GDAL\projlib (not C:\OSGeo4W\share\proj as documented in CONTEXT.md)
 - [Phase 114]: FEC /candidates/search/ principal_committees uses .committee_id not .id — fix field name in fetchFecData()
 - [Phase 114]: Use DIRECT_FEC_ID_OVERRIDES for stale congress-legislators YAML entries (Ivey H2MD04232, Self H2TX00064)
 - [Phase 114]: resolveViaDirectSearch restricted to known CA House members (LaMalfa/Swalwell) — hardcodes state=CA,office=H so must not run for other politicians
