@@ -30,6 +30,7 @@ import {
   updateMeeting,
   deleteMeeting,
 } from '../lib/meetingsService.js';
+import { EVENT_KINDS } from '../lib/eventKinds.js';
 
 const router = Router();
 
@@ -163,10 +164,12 @@ router.get('/:id', optionalAuth, async (req: Request, res: Response): Promise<vo
 
 // POST /api/meetings
 const createMeetingSchema = z.object({
-  city: z.string().min(1),
+  city: z.string().min(1).optional().nullable(),
   state: z.string().min(1),
   date: z.string().min(1),
   meetingType: z.string().min(1),
+  title: z.string().trim().min(1).optional().nullable(),
+  eventKind: z.enum(EVENT_KINDS).default('council'),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),
@@ -196,10 +199,12 @@ router.post(
 
 // PATCH /api/meetings/:id
 const updateMeetingSchema = z.object({
-  city: z.string().min(1).optional(),
+  city: z.string().min(1).optional().nullable(),
   state: z.string().min(1).optional(),
   date: z.string().min(1).optional(),
   meetingType: z.string().min(1).optional(),
+  title: z.string().trim().min(1).optional().nullable(),
+  eventKind: z.enum(EVENT_KINDS).optional(),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),

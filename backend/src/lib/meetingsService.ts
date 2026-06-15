@@ -17,6 +17,7 @@
  */
 
 import { pool } from './db.js';
+import type { EventKind } from './eventKinds.js';
 
 // ---------------------------------------------------------------------------
 // Types
@@ -24,7 +25,9 @@ import { pool } from './db.js';
 
 export interface Meeting {
   id: string;
-  city: string;
+  title: string | null;
+  eventKind: EventKind;
+  city: string | null;
   state: string | null;
   date: string;
   meetingType: string;
@@ -127,7 +130,9 @@ export interface VoteRecord {
 
 interface MeetingRow {
   id: string;
-  city: string;
+  title: string | null;
+  event_kind: EventKind;
+  city: string | null;
   state: string | null;
   date: string;
   meeting_type: string;
@@ -198,6 +203,8 @@ interface VoteRecordRow {
 function mapMeeting(row: MeetingRow): Meeting {
   return {
     id: row.id,
+    title: row.title,
+    eventKind: row.event_kind,
     city: row.city,
     state: row.state,
     date: row.date,
@@ -289,7 +296,8 @@ function mapVoteRecord(row: VoteRecordRow): VoteRecord {
 // ---------------------------------------------------------------------------
 
 const MEETING_COLS = `
-  id, city, state, date::text AS date, meeting_type, duration_seconds, video_url, audio_source,
+  id, title, event_kind, city, state, date::text AS date, meeting_type,
+  duration_seconds, video_url, audio_source,
   status, segment_count, speaker_count, created_at, updated_at,
   body_slug, source_url, playback_kind, slug, summary, processing_metadata
 `;
@@ -490,10 +498,12 @@ export async function getVotesByMeetingId(meetingId: string): Promise<Vote[]> {
 // ---------------------------------------------------------------------------
 
 export async function createMeeting(data: {
-  city: string;
+  city?: string | null;
   state: string;
   date: string;
   meetingType: string;
+  title?: string | null;
+  eventKind?: EventKind;
   durationSeconds?: number | null;
   videoUrl?: string | null;
   audioSource?: string | null;
@@ -501,11 +511,12 @@ export async function createMeeting(data: {
 }): Promise<Meeting> {
   const { rows } = await pool.query<MeetingRow>(
     `INSERT INTO meetings.meetings
-       (city, state, date, meeting_type, duration_seconds, video_url, audio_source, status)
-     VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+       (city, state, date, meeting_type, duration_seconds, video_url,
+        audio_source, status, title, event_kind)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
      RETURNING ${MEETING_COLS}`,
     [
-      data.city,
+      data.city ?? null,
       data.state,
       data.date,
       data.meetingType,
@@ -513,6 +524,8 @@ export async function createMeeting(data: {
       data.videoUrl ?? null,
       data.audioSource ?? null,
       data.status ?? 'processing',
+      data.title ?? null,
+      data.eventKind ?? 'council',
     ]
   );
   return mapMeeting(rows[0]);
@@ -521,7 +534,9 @@ export async function createMeeting(data: {
 export async function updateMeeting(
   id: string,
   data: Partial<{
-    city: string;
+    city: string | null;
+    title: string | null;
+    eventKind: EventKind;
     state: string;
     date: string;
     meetingType: string;
@@ -534,6 +549,8 @@ export async function updateMeeting(
   const setClauses: string[] = [];
   const params: unknown[] = [];
 
+  if (data.title !== undefined) { params.push(data.title); setClauses.push(`title = $${params.length}`); }
+  if (data.eventKind !== undefined) { params.push(data.eventKind); setClauses.push(`event_kind = $${params.length}`); }
   if (data.city !== undefined) { params.push(data.city); setClauses.push(`city = $${params.length}`); }
   if (data.state !== undefined) { params.push(data.state); setClauses.push(`state = $${params.length}`); }
   if (data.date !== undefined) { params.push(data.date); setClauses.push(`date = $${params.length}`); }
