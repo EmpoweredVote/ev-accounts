@@ -23,7 +23,8 @@
 - âœ… **v2.8 District of Columbia Coverage** â€” Phases 105â€“107 (shipped 2026-06-08)
 - âœ… **v2.9 LA County Expansion** â€” Phase 108 (shipped 2026-06-08)
 - âœ… **v2.10 Virginia Coverage + LA County Finance** â€” Phases 109â€“113 (shipped 2026-06-11)
-- ðŸ”„ **v2.11 FEC Finance Completion + US House Geofencing** â€” Phases 114â€“116 (in progress)
+- âœ… **v2.11 FEC Finance Completion + US House Geofencing** â€” Phases 114â€”116 (shipped 2026-06-12)
+- âœ… **v2.12 MA Expansion** â€” Phases 117â€”118 (shipped 2026-06-15)
 
 ## Phases
 
@@ -1448,3 +1449,4 @@ Plans:
 | 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete    | 2026-06-12 |
 | 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
 | 117. ma-city-official-stances | v2.12 | 2/2 | Complete | 2026-06-14 |
+| 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
