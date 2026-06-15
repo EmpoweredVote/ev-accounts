@@ -1,5 +1,32 @@
 # Project Milestones: Empowered Accounts
 
+## v2.13 MA City Council District Geofencing (Shipped: 2026-06-15)
+
+**Delivered:** Per-ward Path 0 city council geofencing for 6 MA cities — Boston, Worcester, Springfield, Lowell, Brockton, and Quincy. Each city's council district polygons imported into `geofence_boundaries` + `geo_districts`; `tiger_geoid` backfilled on all city council district rows; Path 0 verified and human-approved for all 6 cities.
+
+**Phases completed:** 1 phase (119), 4 plans (119-01 through 119-04)
+
+**Key accomplishments:**
+
+- Boston (migration 659): 9 ward polygons (MTFCC X0013) + 2 citywide district rows tiger_geoid linked; MAGE-10 ✅
+- Worcester (migration 660): 5 ward polygons (X0014) + 5 district rows re-linked; MAGE-11 ✅
+- Springfield (migration 661): ward polygons + district re-link; MAGE-12 ✅
+- Lowell (migration 662): ward polygons + district re-link; MAGE-13 ✅
+- Brockton (migration 663): ward polygons + district re-link; MAGE-14 ✅
+- Quincy (migration 664): ward polygons + district re-link; MAGE-15 ✅
+
+**Stats:**
+
+- 1 phase (119), 4 plans
+- 6 migrations (659–664)
+- MAGE-10..15 all pass; Path 0 human-approved for all 6 MA cities
+
+**Git range:** `2fd8178a` → `bfdcd8cb`
+
+**Requirements closed:** MAGE-10, MAGE-11, MAGE-12, MAGE-13, MAGE-14, MAGE-15
+
+---
+
 ## v2.12 MA Expansion (Shipped: 2026-06-15)
 
 **Delivered:** Full Massachusetts civic data expansion — sourced compass stance data for 71 city officials across 7 MA cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 total stance rows, plus MA TIGER state legislative geofencing (200 MA district tiger_geoid backfills, Medford geo_id fix, Path 0 verified for MA state legislators).

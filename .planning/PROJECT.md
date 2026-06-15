@@ -215,6 +215,26 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
+## Current Milestone: v2.14 MA City Expansion Wave 2
+
+**Goal:** Full civic data layer for 7 remaining MA cities — districts, officials, stances, and per-ward geofencing for Newton, Somerville, Lynn, Fall River, Waltham, Medford, and New Bedford.
+
+**Target features:**
+- District + official seeding for all 7 cities (chamber → districts → politicians → offices)
+- Stance research for all new officials (sourced, Chair methodology, honest-skip where no record)
+- Ward/district boundary polygon import + geofencing for all 7 cities (MAGE-16..22)
+- Phase gate SQL verification per city
+
+---
+
+## Previous Milestone: v2.13 MA City Council District Geofencing (Phase 119, shipped 2026-06-15)
+
+**Goal:** Per-ward Path 0 city council geofencing for the 6 MA cities seeded in v2.12.
+
+**Delivered:** Boston (9 ward polygons + 2 citywide, MAGE-10), Worcester (5 ward polygons, MAGE-11), Springfield/Lowell/Brockton/Quincy (29 polygons total, MAGE-12..15); migrations 659–664; all MAGE-10..15 gates pass; Path 0 human-approved for all 6 cities.
+
+---
+
 ## Previous Milestone: v2.12 MA Expansion (Phases 117–118, shipped 2026-06-15)
 
 **Goal:** Full Massachusetts civic data layer — sourced stances for 7 MA cities + MA TIGER state legislative geofencing for Path 0.
@@ -311,4 +331,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-15 — v2.12 complete (Phases 117–118); 7 MA cities stanced, MA TIGER geofencing live*
+*Last updated: 2026-06-15 — v2.14 started; v2.13 complete (Phase 119, 6 MA cities Tier 3 geofenced)*

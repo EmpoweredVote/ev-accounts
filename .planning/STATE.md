@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.13
-milestone_name: MA City Council District Geofencing
-status: Complete
-last_updated: "2026-06-15"
+milestone: v2.14
+milestone_name: MA City Expansion Wave 2
+status: planning
+last_updated: "2026-06-15T00:00:00.000Z"
 last_activity: 2026-06-15
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 4
-  completed_plans: 4
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -24,6 +24,15 @@ See: .planning/PROJECT.md (updated 2026-06-15 after v2.12 milestone archived)
 **Last shipped:** v2.12 MA Expansion — Phases 117–118, shipped 2026-06-15. 7 MA cities (512 stances, 71 officials, migrations 574–597) + MA TIGER geofencing (200 districts backfilled, migrations 619+622, all MAGE gates pass).
 
 ## Current Position
+
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-06-15 — Milestone v2.14 started
+
+---
+
+## Previous Milestone Position (v2.13 — COMPLETE ✅)
 
 Phase: 119-ma-city-council-district-geofencing — COMPLETE ✅
 Plan: 119-01-PLAN.md ✅ COMPLETE — migration 659 applied; Boston 9 X0013 + 2 citywide rows have tiger_geoid [MAGE-10]
@@ -250,8 +259,8 @@ None for v2.10 start.
 
 ## Session Continuity
 
-Last session: 2026-06-15T19:30:00.000Z
-Stopped at: Phase 119 complete — v2.13 milestone complete
+Last session: 2026-06-15T22:04:47.471Z
+Stopped at: context exhaustion at 75% (2026-06-15)
 Resume file: None
 
 ## Decisions
