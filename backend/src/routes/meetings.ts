@@ -23,6 +23,7 @@ import { z } from 'zod';
 import {
   getMeetings,
   getMeetingById,
+  getMeetingEntityState,
   getTranscriptByMeetingId,
   getSummaryByMeetingId,
   getVotesByMeetingId,
@@ -31,6 +32,7 @@ import {
   deleteMeeting,
 } from '../lib/meetingsService.js';
 import { EVENT_KINDS } from '../lib/eventKinds.js';
+import { validateEventEntities } from '../lib/eventEntityRules.js';
 
 const router = Router();
 
@@ -170,6 +172,8 @@ const createMeetingSchema = z.object({
   meetingType: z.string().min(1),
   title: z.string().trim().min(1).optional().nullable(),
   eventKind: z.enum(EVENT_KINDS).default('council'),
+  chamberId: z.string().uuid().optional().nullable(),
+  raceId: z.string().uuid().optional().nullable(),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),
@@ -188,6 +192,19 @@ router.post(
     }
 
     try {
+      const entityError = validateEventEntities({
+        eventKind: parsed.data.eventKind,
+        chamberId: parsed.data.chamberId ?? null,
+        raceId: parsed.data.raceId ?? null,
+      });
+      if (entityError) {
+        res.status(422).json({
+          code: 'VALIDATION_ERROR',
+          message: entityError,
+        });
+        return;
+      }
+
       const meeting = await createMeeting(parsed.data);
       res.status(201).json(meeting);
     } catch (err) {
@@ -205,6 +222,8 @@ const updateMeetingSchema = z.object({
   meetingType: z.string().min(1).optional(),
   title: z.string().trim().min(1).optional().nullable(),
   eventKind: z.enum(EVENT_KINDS).optional(),
+  chamberId: z.string().uuid().optional().nullable(),
+  raceId: z.string().uuid().optional().nullable(),
   durationSeconds: z.number().int().positive().optional().nullable(),
   videoUrl: z.string().url().optional().nullable(),
   audioSource: z.string().optional().nullable(),
@@ -229,6 +248,36 @@ router.patch(
     }
 
     try {
+      const current = await getMeetingEntityState(id);
+      if (!current) {
+        res.status(404).json({
+          code: 'NOT_FOUND',
+          message: 'Meeting not found',
+        });
+        return;
+      }
+
+      const nextState = {
+        eventKind: parsed.data.eventKind ?? current.eventKind,
+        chamberId:
+          parsed.data.chamberId !== undefined
+            ? parsed.data.chamberId
+            : current.chamberId,
+        raceId:
+          parsed.data.raceId !== undefined
+            ? parsed.data.raceId
+            : current.raceId,
+      };
+
+      const entityError = validateEventEntities(nextState);
+      if (entityError) {
+        res.status(422).json({
+          code: 'VALIDATION_ERROR',
+          message: entityError,
+        });
+        return;
+      }
+
       const meeting = await updateMeeting(id, parsed.data);
       if (!meeting) {
         res.status(404).json({ code: 'NOT_FOUND', message: 'Meeting not found' });
