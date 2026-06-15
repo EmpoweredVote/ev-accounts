@@ -1,30 +1,30 @@
 {
   "version": "1.0",
-  "timestamp": "2026-06-12T18:50:00.000Z",
+  "timestamp": "2026-06-14",
   "phase": "117",
   "phase_name": "ma-city-official-stances",
   "phase_dir": ".planning/phases/117-ma-city-official-stances",
-  "plan": 1,
-  "task": 0,
+  "plan": 3,
+  "task": 3,
   "total_tasks": 4,
   "status": "paused",
-  "completed_tasks": [],
+  "completed_tasks": [
+    {"id": 1, "name": "Research Lowell stances (12 officials)", "status": "done", "commit": "be5b7bc0", "notes": "21 stances, migration 584"},
+    {"id": 2, "name": "Research Brockton stances (12 officials)", "status": "done", "commit": "12ba957e", "notes": "13 stances, migration 589; 9 officials honest-skipped (Enterprise News blocked)"}
+  ],
   "remaining_tasks": [
-    {"id": 1, "name": "Research Boston stances — Michelle Wu + 4 at-large councillors", "status": "not_started"},
-    {"id": 2, "name": "Research Boston stances — 9 district councillors + write/apply migration", "status": "not_started"},
-    {"id": 3, "name": "Human verify Boston migration gate", "status": "not_started"},
-    {"id": 4, "name": "Research and ingest Cambridge stances", "status": "not_started"}
+    {"id": 3, "name": "Research Quincy stances (10 officials)", "status": "not_started", "notes": "All-new council Jan 2026; Mayor Koch most documented; high honest-skip rate expected"},
+    {"id": 4, "name": "Human checkpoint + final verification SQL + 117-03-SUMMARY.md", "status": "not_started"}
   ],
   "blockers": [],
   "human_actions_pending": [],
   "decisions": [
-    {"decision": "Attempt ALL 44 topics per official, not just local-scope", "rationale": "User instruction: try for all 44, expect 10-14 to land", "phase": "117"},
-    {"decision": "ONE agent at a time, never parallel", "rationale": "Rate limit protection — mass launches cause empty output", "phase": "117"},
-    {"decision": "Chairs methodology + real fetched URLs required", "rationale": "No party-affiliation inference allowed", "phase": "117"},
-    {"decision": "Wave 1 = Boston (14) + Cambridge (~15); Wave 2 = Worcester+Springfield; Wave 3 = Lowell+Brockton+Quincy", "rationale": "Grouped by profile/documentation level", "phase": "117"},
-    {"decision": "Migration MAX was 515 at plan time", "rationale": "Next migration = 516; must re-check live before writing", "phase": "117"}
+    {"decision": "Rodrigues homelessness/homelessness-response = 3 (not 4)", "rationale": "He was not lead sponsor of camping ban (Thompson was); platform emphasizes services alongside enforcement", "phase": "117"},
+    {"decision": "Thompson homelessness/homelessness-response = 4", "rationale": "Active advocate and lead sponsor of Nov 2024 camping ban; enforcement-first framing documented in WGBH article", "phase": "117"},
+    {"decision": "9 Brockton ward/at-large councillors honest-skipped", "rationale": "Enterprise News blocked, no accessible WGBH coverage for individual ward councillors; correct behavior", "phase": "117"},
+    {"decision": "Migration MAX = 589 as of 2026-06-14", "rationale": "Next Quincy migration = 590; must re-check live before writing", "phase": "117"}
   ],
-  "uncommitted_files": [".planning/STATE.md"],
-  "next_action": "Read SKILL.md, fetch live topics from DB (STEP 0), confirm scope with user, then dispatch ONE politician-stance-researcher agent for Michelle Wu",
-  "context_notes": "Planning complete and committed (f515adf3). No execution started. Three wave plans exist. Boston migration pattern: external_ids -2507000001 to -2507000014. MUST check SELECT MAX(version) FROM supabase_migrations.schema_migrations before any migration write — do not use cached 515 from planning time."
+  "uncommitted_files": [],
+  "next_action": "Fetch live topics from DB, then dispatch ONE researcher agent for Thomas P. Koch (Mayor Quincy, external_id=-255574501). Sources: quincyma.gov, patriotledger.com, ballotpedia.org/Thomas_Koch.",
+  "context_notes": "Brockton cleanly committed (12ba957e). Context at 76% prompted pause before Quincy. All constraints documented in .continue-here.md. Quincy geo_id = '2555745' (non-round, exact string required)."
 }
