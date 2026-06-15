@@ -1323,7 +1323,7 @@ Plans:
 - [x] 119-01-PLAN.md — Boston tiger_geoid backfill (migration 659) ✅
 - [x] 119-02-PLAN.md — Worcester boundary import script + migration 660 ✅ MAGE-11
 - [x] 119-03-PLAN.md — Springfield/Lowell/Brockton/Quincy shared script + migrations 661-664 ✅ MAGE-12..15
-- [ ] 119-04-PLAN.md — Phase gate verification (8 assertions + Path 0 spot checks for all 6 cities) 🔄
+- [x] 119-04-PLAN.md — Phase gate verification (8 assertions + Path 0 spot checks for all 6 cities) ✅ MAGE-10..15
 
 **Success Criteria** (what must be TRUE):
 
@@ -1443,4 +1443,4 @@ Plans:
 | 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
 | 117. ma-city-official-stances | v2.12 | 3/3 | Complete | 2026-06-14 |
 | 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
-| 119. MA City Council District Geofencing | v2.13 | — | Pending | — |
+| 119. MA City Council District Geofencing | v2.13 | 4/4 | Complete | 2026-06-15 |
