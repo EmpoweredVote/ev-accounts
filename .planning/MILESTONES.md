@@ -1,32 +1,37 @@
 # Project Milestones: Empowered Accounts
 
-## v2.12 MA City Official Stances (Shipped: 2026-06-14)
+## v2.12 MA Expansion (Shipped: 2026-06-15)
 
-**Delivered:** Sourced compass stance data for 43 MA city officials across Boston, Cambridge, Worcester, and Springfield — 449 total stance rows with full reasoning + source citations in `inform.politician_context`.
+**Delivered:** Full Massachusetts civic data expansion — sourced compass stance data for 71 city officials across 7 MA cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 total stance rows, plus MA TIGER state legislative geofencing (200 MA district tiger_geoid backfills, Medford geo_id fix, Path 0 verified for MA state legislators).
 
-**Phases completed:** 1 phase (117), 2 plans (117-01, 117-02)
+**Phases completed:** 2 phases (117–118), 6 plans (117-01, 117-02, 117-03, 118-01, 118-02, 118-03)
 
 **Key accomplishments:**
 
 - Boston (migration 574): 14 officials, 162 stances — Mayor Wu + 4 At-Large + 9 District Councillors
-- Cambridge (migration 575): 10 officials with stances, 166 stances — Mayor Siddiqui + 9 Councillors; 6 school committee members correct zeros (no public policy record)
-- Worcester (migration 576): 11 officials, 86 stances — Mayor Petty + City Manager Nguyen + 9 Councillors; all 11 yielded stances
-- Springfield (migration 577): 8 officials with stances, 35 stances; 6 newly-elected 2025 ward councillors correct zeros; Perez committee-only rows dropped per editorial review
+- Cambridge (migration 575): 15 officials with data, 166 stances — Mayor Siddiqui + 9 Councillors + 5 School Committee; Hudson correct zero
+- Worcester (migration 576): 11 officials, 86 stances — Mayor Petty + City Manager Nguyen + 9 Councillors
+- Springfield (migration 577): 8 officials with stances, 35 stances; 6 newly-elected 2025 councillors correct zeros
+- Lowell (migration 584): 11 officials, 21 stances — Mayor Rourke + City Manager Sheehan + 9 Councillors
+- Brockton (migration 589): 3 officials, 13 stances — Mayor Sullivan + 2 Councillors with accessible record
+- Quincy (migration 597): 9 officials, 29 stances — Mayor Koch + 8 Councillors; DiBona honest-skip
+- MA TIGER Geofencing (migrations 619, 622): 200 MA state legislative districts tiger_geoid backfilled (160 STATE_LOWER + 40 STATE_UPPER); Medford geo_id corrected; Path 0 verified (Porter Square Cambridge → STATE_LOWER 25083 + STATE_UPPER 25D27); all MAGE-00..05 gates pass
 
 **Stats:**
 
-- 1 phase (117), 2 plans
-- 4 migrations (574–577)
-- 449 stances, 43 officials with data, 6 correct zeros
+- 2 phases (117–118), 6 plans
+- 9 migrations (574–577, 584, 589, 597, 619, 622)
+- 512 stances, 71 officials with data, 200 MA state legislative districts geofencing-ready
 
-**Git range:** `a200d403` → `034b3066`
+**Git range:** `a200d403` → `c0e1c3eb`
 
-**Requirements closed:** Phase 117 complete
+**Requirements closed:** Phase 117 (7 MA cities, all gates pass) + Phase 118 (MAGE-00..05 pass, Path 0 live)
 
 **Known patterns established:**
-- `BEGIN;` in one `execute_sql` call + `COMMIT;` in another = silent rollback (each call is a new connection) — use auto-commit for multi-chunk idempotent migrations
-- Boston external_id format: `-2507000001` through `-2507000014`
-- Cambridge officials: query by district_id `cf3274f9-48c3-4e96-8273-3f6574add756`, not government_id (that column is NULL on Cambridge districts)
+- `BEGIN;` in one `execute_sql` call + `COMMIT;` in another = silent rollback — use auto-commit for multi-chunk idempotent migrations
+- MAGE-05 geo_id collision: geo_id '25017' is both Middlesex County (G4020) and 8th Bristol SLDL (G5220) — always add mtfcc IN ('G5210','G5220') filter when querying geofence_boundaries for state legislative layers
+- PROJ_LIB on this machine: C:\Program Files\GDAL\projlib (not C:\OSGeo4W\share\proj as documented)
+- Cambridge officials: query by district_id `cf3274f9-48c3-4e96-8273-3f6574add756`, not government_id (NULL on Cambridge districts)
 
 ---
 

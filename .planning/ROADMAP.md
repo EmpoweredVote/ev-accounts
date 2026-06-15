@@ -1280,67 +1280,32 @@ Plans:
 
 </details>
 
-### v2.11 FEC Finance Completion + US House Geofencing (Phases 114â€“116)
+<details>
+<summary>✅ v2.11 FEC Finance Completion + US House Geofencing (Phases 114–116) — SHIPPED 2026-06-12</summary>
 
----
+- [x] Phase 114: fec-script-fix-and-sitting-members (1/1 plan) — completed 2026-06-11
+- [x] Phase 115: senate-candidate-fec-research (1/1 plan) — completed 2026-06-12
+- [x] Phase 116: national-us-house-tiger (1/1 plan) — completed 2026-06-12
 
-#### Phase 114: fec-script-fix-and-sitting-members
+Full details: `.planning/milestones/v2.11-ROADMAP.md`
 
-**Goal:** The FEC ingestion script correctly resolves finance data for all previously-matched sitting members â€” committee lookup failures are patched, and LaMalfa/Swalwell are identified via direct FEC name search and ingested, reducing the NULL `finance_summary` count from ~40 to ~34.
+</details>
 
-**Depends on:** Nothing (script fix is self-contained; FEC API accessible directly)
-**Requirements:** FECF-01, FECF-02, FECF-03
-**Plans:** 1 plan
+<details>
+<summary>✅ v2.12 MA Expansion (Phases 117–118) — SHIPPED 2026-06-15</summary>
 
-Plans:
+- [x] Phase 117: MA City Official Stances (3/3 plans) — completed 2026-06-14
+  - Plan 01: Boston + Cambridge (migrations 574, 575)
+  - Plan 02: Worcester + Springfield (migrations 576, 577)
+  - Plan 03: Lowell + Brockton + Quincy (migrations 584, 589, 597)
+- [x] Phase 118: MA TIGER Geofencing (3/3 plans) — completed 2026-06-15
+  - Plan 01: tiger_geoid backfill for 200 MA state legislative districts (migration 619)
+  - Plan 02: Medford geo_id fix + city tiger_geoid backfill (migration 622)
+  - Plan 03: Phase gate — all MAGE-00..05 pass; Path 0 Porter Square verified
 
-- [x] 114-01-PLAN.md â€” Patch fix-fec-name-mismatches.ts with committee fallback + multi-cycle totals + LaMalfa/Swalwell direct search; run live (FECF-01, FECF-02, FECF-03) âœ… 2026-06-11
+Full details: `.planning/milestones/v2.12-ROADMAP.md`
 
-**Success Criteria** (what must be TRUE):
-
-1. `fix-fec-name-mismatches.ts` runs end-to-end without errors â€” the committee lookup fallback (`GET /v1/candidate/{id}/committees/`) and prior-cycle retry (2026 â†’ 2024 â†’ 2022) are exercised and resolve data for Ivey, Self, Warnock, and Cruz.
-2. `essentials.politicians.finance_summary` is non-null for Glenn Ivey, Keith Self, Raphael Warnock, and Ted Cruz â€” each record shows total raised, total spent, cash on hand, and cycle from FEC.
-3. Doug LaMalfa and Eric Swalwell each have a non-null `finance_summary` and a `politician_sources` row with `research_status = 'confirmed'` written by the script after direct FEC name search resolves their candidate IDs.
-4. `SELECT COUNT(*) FROM essentials.politicians WHERE finance_summary IS NULL` (federal politicians scope) drops from ~40 to approximately 34 after script run â€” measurable reduction confirming net progress.
-
----
-
-#### Phase 115: senate-candidate-fec-research
-
-**Goal:** Every reachable 2026 Senate candidate in the DB has a populated `finance_summary`; Paul Strauss and Ankit Jain are explicitly marked not_applicable; the NULL count for federal politicians reaches â‰¤ 2 (only candidates with genuinely no FEC presence remain).
-
-**Depends on:** Phase 114 (script fixes must be in place before running candidate batch; NULL baseline established)
-**Requirements:** FECF-04, FECF-05
-**Plans:** 1/1 plans complete
-
-Plans:
-- [x] 115-01-PLAN.md — FEC batch run for ~32 Senate candidates; mark Strauss/Jain not_applicable ✅ 2026-06-12
-
-**Success Criteria** (what must be TRUE):
-
-1. Every 2026 Senate candidate in the DB who has an FEC filing has a non-null `finance_summary` â€” count of senate candidates with NULL `finance_summary` returns â‰¤ 2 after ingestion.
-2. `politician_sources` rows exist for every candidate processed â€” each row records the FEC candidate ID, confirmation status, and cycle used.
-3. Paul Strauss and Ankit Jain each have a `politician_sources` row with `research_status = 'not_applicable'` and a notes field explaining that DC Shadow Senators do not file campaign finance reports with the FEC.
-4. No `finance_summary` field is populated with fabricated or inferred data â€” every populated entry is traceable to a real FEC API response.
-
----
-
-#### Phase 116: national-us-house-tiger
-
-**Goal:** All 435 US congressional districts exist as TIGER polygon rows in `essentials.geo_districts` (us_house layer) and every `NATIONAL_LOWER` district record has `tiger_geoid` populated â€” any user in any US state resolves to their correct House rep via Path 0 with no live PostGIS lookup.
-
-**Depends on:** Nothing (TIGER import is independent of FEC work; CA rows already present via ON CONFLICT guard)
-**Requirements:** UHGE-01, UHGE-02, UHGE-03
-**Plans:** 1 plan
-
-Plans:
-- [x] 116-01-PLAN.md — Import 435 US House TIGER polygons, backfill NATIONAL_LOWER tiger_geoid, verify Path 0 ✅ 2026-06-12
-
-**Success Criteria** (what must be TRUE):
-
-1. `SELECT COUNT(*) FROM essentials.geo_districts WHERE layer = 'us_house'` returns 435 â€” all 435 CD119 congressional district polygons are imported; existing CA rows (52) are preserved with no data loss via `ON CONFLICT DO NOTHING`.
-2. `SELECT COUNT(*) FROM essentials.districts WHERE district_type = 'NATIONAL_LOWER' AND tiger_geoid IS NULL` returns 0 â€” every House district record across all states has `tiger_geoid` backfilled for the dual-column Path 0 join.
-3. `GET /api/essentials/representatives/me` for a user with a stored TX (or NY) congressional district returns the correct House representative via the `tiger_geoid` join â€” confirming the national us_house layer is live and Path 0 resolves outside CA.
+</details>
 
 ## Progress
 
@@ -1448,5 +1413,6 @@ Plans:
 | 114. fec-script-fix-and-sitting-members | v2.11 | 1/1 | Complete | 2026-06-11 |
 | 115. senate-candidate-fec-research | v2.11 | 1/1 | Complete    | 2026-06-12 |
 | 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
-| 117. ma-city-official-stances | v2.12 | 2/2 | Complete | 2026-06-14 |
+| 117. ma-city-official-stances | v2.12 | 3/3 | Complete | 2026-06-14 |
+| 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
 | 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |

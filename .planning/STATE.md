@@ -1,27 +1,27 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.12
-milestone_name: Platform Consolidation
-status: verifying
-last_updated: "2026-06-15T06:39:13.039Z"
+milestone: v2.13
+milestone_name: TBD
+status: planning
+last_updated: "2026-06-15T12:00:00.000Z"
 last_activity: 2026-06-15
 progress:
-  total_phases: 43
-  completed_phases: 3
-  total_plans: 3
-  completed_plans: 9
-  percent: 7
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-08 after v2.9 milestone archived)
+See: .planning/PROJECT.md (updated 2026-06-15 after v2.12 milestone archived)
 
 **Core value:** Every user who wants to understand their civic world can do so freely; those who want to participate can do so with trust, identity, and shared purpose — at their own pace, never dragged.
-**Current focus:** v2.12 complete — next milestone TBD
-**Last shipped:** v2.12 MA Expansion — Phases 117–118, shipped 2026-06-15. MA city official stances (6 cities, migrations 580–621) + MA TIGER geofencing (tiger_geoid backfill on 200 state districts, Medford fix, Path 0 enabled).
+**Current focus:** v2.13 planning — next milestone TBD
+**Last shipped:** v2.12 MA Expansion — Phases 117–118, shipped 2026-06-15. 7 MA cities (512 stances, 71 officials, migrations 574–597) + MA TIGER geofencing (200 districts backfilled, migrations 619+622, all MAGE gates pass).
 
 ## Current Position
 

@@ -134,7 +134,7 @@ Every platform feature can answer "does this user have permission to do X?" with
 
 Part of the Empowered Vote platform — a civic infrastructure project aimed at reducing political polarization and improving democratic participation.
 
-**Current state (v2.11 in progress — Phase 115 complete):** ~80,000 lines of TypeScript (project-wide). 115 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–341 applied to production. 21 live compass topics, ~1,188+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. inform.inform_profiles live, yellow Inform profile page live. FEC finance data: 31 Senate challengers populated via office=S lookup (Phase 115); NULL count for NATIONAL_UPPER dropped from 34→1 (Alan Armstrong OK, no FEC filing); Paul Strauss + Ankit Jain marked not_applicable. Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
+**Current state (v2.12 complete — next milestone TBD):** ~80,000 lines of TypeScript (project-wide). 118 phases shipped. Backend: Express 4.x, Supabase, Upstash Redis, pg, PostGIS. Admin: Vite + React + Tailwind v4 (dark mode, login.empowered.vote). App: Vite + React (`app.empowered.vote` — includes contributor portal at `/contributor`). Migrations 026–622 applied to production. 21 live compass topics, ~1,200+ politicians with data, full role system live. CA (52 us_house + 80 assembly + 40 senate + 975 school) + DC (8 wards) + VA (100 SLDL + 40 SLDU) + MA (160 SLDL + 40 SLDU) + all 435 US House TIGER geofencing live. VA: 40 state senators + 100 delegates + 11 federal House reps + state execs with stances in DB. MA: 7 cities (Boston, Cambridge, Worcester, Springfield, Lowell, Brockton, Quincy) with 512 stances across 71 officials. FEC finance data live for all reachable federal politicians; NATIONAL_UPPER NULL count: 1 (Armstrong OK). Elections Central page live at `/elections` with Utah 2026 Primary seeded. LA County: 27 cities with full elected governing bodies; 192 officials with CAL-ACCESS finance data.
 
 **Pilot:** Bloomington, Indiana (Monroe County). Alpha cohort is small, invite-only, likely IU students and local civic participants. Data is manually curated at pilot scale.
 
@@ -215,18 +215,11 @@ Part of the Empowered Vote platform — a civic infrastructure project aimed at 
 | Layer discriminator pattern for geo_districts | Single table with `layer TEXT NOT NULL` + `UNIQUE(layer, geoid)` — adding new district types (school districts) requires no schema change. | ✓ Good — school districts added in Phase 71 with zero schema change; v2.2 |
 | Fire-and-forget backfill after res.json() | `void pool.query(...).catch(e => console.warn(...))` after response sent; `districtRows.length === 0` guard prevents re-backfilling warm users. | ✓ Good — response latency unaffected; v2.2 |
 
-## Current Milestone: v2.11 FEC Finance Completion + US House Geofencing
+## Previous Milestone: v2.12 MA Expansion (Phases 117–118, shipped 2026-06-15)
 
-**Goal:** Close all addressable FEC finance gaps and extend US House geofencing to all 50 states — every federal House rep becomes geofenceable via Path 0 and every politician with available FEC data has a populated finance_summary.
+**Goal:** Full Massachusetts civic data layer — sourced stances for 7 MA cities + MA TIGER state legislative geofencing for Path 0.
 
-**Target features:**
-- FEC Script Fix — committee lookup fallback to `/candidate/{id}/committees/` + prior-cycle support for senators not running in current cycle
-- FEC Finance for Matched Politicians — populate finance_summary for the 4 already-matched politicians (Ivey, Self, Warnock, Cruz)
-- LaMalfa + Swalwell — direct FEC API name search for 2 sitting House members missing from congress-legislators YAML
-- Senate Candidate FEC Research — direct FEC lookup + batch ingestion for ~32 Senate candidates with FEC filings but not in YAML
-- Not-Applicable Marking — mark Paul Strauss + Ankit Jain (DC Shadow Senators) as not_applicable in politician_sources
-- National CD119 TIGER Import — download tl_2024_us_cd119.zip, import all 435 congressional district polygons into geo_districts (us_house layer; CA's 52 skipped via ON CONFLICT)
-- tiger_geoid Backfill — backfill tiger_geoid on all NATIONAL_LOWER essentials.districts rows across all states
+**Delivered:** 512 stances across 71 officials in 7 MA cities (migrations 574–597); 200 MA state legislative districts tiger_geoid backfilled (migrations 619, 622); Medford geo_id corrected; all MAGE-00..05 gates pass; Path 0 verified for Porter Square Cambridge.
 
 ---
 
@@ -318,4 +311,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-12 — Phase 115 complete (FECF-04/05); 31 Senate challengers financed, NULL NATIONAL_UPPER count 34→1*
+*Last updated: 2026-06-15 — v2.12 complete (Phases 117–118); 7 MA cities stanced, MA TIGER geofencing live*
