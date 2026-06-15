@@ -46,6 +46,13 @@ export interface Meeting {
   summaryPreview: string | null;
 }
 
+/**
+ * List payload shape. Omits the full `summary` JSONB (all sections, content,
+ * key_decisions) so the meetings list endpoint only ships the short
+ * `summaryPreview`. The full `summary` rides the detail endpoint only.
+ */
+export type MeetingListItem = Omit<Meeting, 'summary'>;
+
 export interface Speaker {
   id: string;
   meetingId: string;
@@ -217,6 +224,13 @@ function mapMeeting(row: MeetingRow): Meeting {
   };
 }
 
+// List mapper: drops the full `summary` JSONB so only `summaryPreview` rides
+// the list payload. Detail paths use mapMeeting() to keep the full summary.
+function mapMeetingListItem(row: MeetingRow): MeetingListItem {
+  const { summary: _summary, ...rest } = mapMeeting(row);
+  return rest;
+}
+
 function mapSpeaker(row: SpeakerRow): Speaker {
   return {
     id: row.id,
@@ -275,14 +289,14 @@ function mapVoteRecord(row: VoteRecordRow): VoteRecord {
 // ---------------------------------------------------------------------------
 
 const MEETING_COLS = `
-  id, city, state, date, meeting_type, duration_seconds, video_url, audio_source,
+  id, city, state, date::text AS date, meeting_type, duration_seconds, video_url, audio_source,
   status, segment_count, speaker_count, created_at, updated_at,
   body_slug, source_url, playback_kind, slug, summary, processing_metadata
 `;
 
 export async function getMeetings(
   filters?: { city?: string; state?: string; status?: string }
-): Promise<Meeting[]> {
+): Promise<MeetingListItem[]> {
   const params: string[] = [];
   const conditions: string[] = [];
 
@@ -309,7 +323,7 @@ export async function getMeetings(
     params
   );
 
-  return rows.map(mapMeeting);
+  return rows.map(mapMeetingListItem);
 }
 
 export async function getMeetingById(
