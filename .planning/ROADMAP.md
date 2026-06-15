@@ -1307,6 +1307,34 @@ Full details: `.planning/milestones/v2.12-ROADMAP.md`
 
 </details>
 
+### v2.13 MA City Council District Geofencing (Phase 119)
+
+---
+
+#### Phase 119: MA City Council District Geofencing
+
+**Goal:** Boston, Worcester, Springfield, Lowell, Brockton, and Quincy city council district-based councillors are geofenced via per-ward boundary polygons so a user's address resolves to their specific ward representative (not just the citywide district). Boston's existing X0013 boundaries get a tiger_geoid backfill; the other 5 cities get new per-ward district rows, city GIS ward boundary polygons imported into geofence_boundaries, politician–district re-linking, and tiger_geoid backfill.
+
+**Depends on:** Phase 118 (MA TIGER geofencing infrastructure and tiger_geoid pattern established)
+**Requirements:** MAGE-10, MAGE-11, MAGE-12, MAGE-13, MAGE-14, MAGE-15
+**Plans:** 4 plans
+
+Plans:
+- [ ] 119-01-PLAN.md — Boston tiger_geoid backfill (migration 659)
+- [ ] 119-02-PLAN.md — Worcester boundary import script + migration 660
+- [ ] 119-03-PLAN.md — Springfield/Lowell/Brockton/Quincy shared script + migrations 661-664
+- [ ] 119-04-PLAN.md — Phase gate verification (8 assertions + Path 0 spot checks for all 6 cities)
+
+**Success Criteria** (what must be TRUE):
+
+1. Boston: all 9 district council district rows have `tiger_geoid` populated — Path 0 routes a user in District 3 (South Boston) to exactly the District 3 councillor row.
+2. Worcester, Springfield, Lowell, Brockton, Quincy: per-ward district rows exist in `essentials.districts` (one per ward/district seat), each with a matching polygon in `essentials.geofence_boundaries`, and `tiger_geoid` backfilled — Path 0 routes a user to their ward-specific councillor.
+3. At-large councillors in all 6 cities remain linked to the citywide district row (no regression).
+4. Cambridge: unchanged (at-large council, no district rows needed).
+5. `SELECT COUNT(*) FROM essentials.districts WHERE state = 'ma' AND mtfcc IS NOT NULL AND tiger_geoid IS NULL` returns 0 — no orphaned per-ward rows without a backfilled tiger_geoid.
+
+---
+
 ## Progress
 
 
@@ -1415,4 +1443,4 @@ Full details: `.planning/milestones/v2.12-ROADMAP.md`
 | 116. national-us-house-tiger | v2.11 | 1/1 | Complete | 2026-06-12 |
 | 117. ma-city-official-stances | v2.12 | 3/3 | Complete | 2026-06-14 |
 | 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
-| 118. ma-tiger-geofencing | v2.12 | 3/3 | Complete | 2026-06-15 |
+| 119. MA City Council District Geofencing | v2.13 | — | Pending | — |
